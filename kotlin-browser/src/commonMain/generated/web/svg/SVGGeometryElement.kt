@@ -15,17 +15,17 @@ private constructor() :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGGeometryElement/pathLength)
      */
-    val pathLength: SVGAnimatedNumber
+    open val pathLength: SVGAnimatedNumber
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGGeometryElement/getPointAtLength)
      */
-    fun getPointAtLength(distance: Float): DOMPoint
+    open fun getPointAtLength(distance: Float): DOMPoint
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGGeometryElement/getTotalLength)
      */
-    fun getTotalLength(): Float
+    open fun getTotalLength(): Float
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGGeometryElement/isPointInFill)

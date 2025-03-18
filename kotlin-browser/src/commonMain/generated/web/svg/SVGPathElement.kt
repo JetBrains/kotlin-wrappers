@@ -2,6 +2,8 @@
 
 package web.svg
 
+import web.geometry.DOMPoint
+
 /**
  * Corresponds to the <path> element.
  *
@@ -9,4 +11,8 @@ package web.svg
  */
 open external class SVGPathElement
 private constructor() :
-    SVGGeometryElement
+    SVGGeometryElement {
+    override val pathLength: SVGAnimatedNumber
+    override fun getPointAtLength(distance: Float): DOMPoint
+    override fun getTotalLength(): Float
+}
