@@ -10,6 +10,7 @@ import io.github.sgrishchenko.karakum.util.manyOf
 import io.github.sgrishchenko.karakum.util.ruleOf
 import js.import.import
 import js.objects.recordOf
+import node.karakum.plugins.convertAssertStrict
 import node.path.path
 import node.process.process
 import node.url.fileURLToPath
@@ -24,7 +25,7 @@ suspend fun main() {
 
     val cwd = process.cwd()
 
-    val plugins = loadExtensions<ConverterPlugin<Node>>(
+    val jsPlugins = loadExtensions<ConverterPlugin<Node>>(
         "Plugin",
         arrayOf("kotlin/plugins/*.js"),
         cwd
@@ -36,7 +37,7 @@ suspend fun main() {
         }
     }
 
-    val injections = loadExtensions<Injection<Node, Node>>(
+    val jsInjections = loadExtensions<Injection<Node, Node>>(
         "Injection",
         arrayOf("kotlin/injections/*.js"),
         cwd
@@ -48,25 +49,25 @@ suspend fun main() {
         }
     }
 
-    val annotations = loadExtensions<Annotation<Node>>(
+    val jsAnnotations = loadExtensions<Annotation<Node>>(
         "Annotation",
         arrayOf("kotlin/annotations/*.js"),
         cwd,
     )
 
-    val nameResolvers = loadExtensions<NameResolver<Node>>(
+    val jsNameResolvers = loadExtensions<NameResolver<Node>>(
         "Name Resolver",
         arrayOf("kotlin/nameResolvers/*.js"),
         cwd,
     )
 
-    val inheritanceModifiers = loadExtensions<InheritanceModifier<Node>>(
+    val jsInheritanceModifiers = loadExtensions<InheritanceModifier<Node>>(
         "Inheritance Modifier",
         arrayOf("kotlin/inheritanceModifiers/*.js"),
         cwd,
     )
 
-    val varianceModifiers = loadExtensions<VarianceModifier<Node>>(
+    val jsVarianceModifiers = loadExtensions<VarianceModifier<Node>>(
         "Variance Modifier",
         arrayOf("kotlin/varianceModifiers/*.js"),
         cwd,
@@ -74,12 +75,14 @@ suspend fun main() {
 
 
     generate {
-        this.plugins = manyOf(values = plugins)
-        this.injections = manyOf(values = injections)
-        this.annotations = manyOf(values = annotations)
-        this.nameResolvers = manyOf(values = nameResolvers)
-        this.inheritanceModifiers = manyOf(values = inheritanceModifiers)
-        this.varianceModifiers = manyOf(values = varianceModifiers)
+        plugins = manyOf(values = jsPlugins + arrayOf(
+            convertAssertStrict
+        ))
+        injections = manyOf(values = jsInjections + arrayOf())
+        annotations = manyOf(values = jsAnnotations + arrayOf())
+        nameResolvers = manyOf(values = jsNameResolvers + arrayOf())
+        inheritanceModifiers = manyOf(values = jsInheritanceModifiers + arrayOf())
+        varianceModifiers = manyOf(values = jsVarianceModifiers + arrayOf())
 
         input = manyOf("$nodePackage/**/*.d.ts")
         ignoreInput = manyOf(
