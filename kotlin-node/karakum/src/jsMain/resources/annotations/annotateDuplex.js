@@ -15,14 +15,17 @@ export default (node) => {
         sourceFileName.endsWith("stream.d.ts")
         && ts.isExpressionWithTypeArguments(node)
         && ts.isIdentifier(node.expression)
-        && node.expression.text === "Writable"
+        && (
+            node.expression.text === "Readable"
+            || node.expression.text === "Writable"
+        )
 
         && node.parent
         && ts.isHeritageClause(node.parent)
 
         && node.parent.parent
-        && ts.isClassDeclaration(node.parent.parent)
-        && node.parent.parent.name?.text === "Duplex"
+        && ts.isInterfaceDeclaration(node.parent.parent)
+        && node.parent.parent.name.text === "Duplex"
     ) {
         return `@seskar.js.JsMixin`
     }
