@@ -6,6 +6,7 @@ import js.objects.JsPlainObject
 import react.ComponentType
 import react.Key
 import react.PropsWithClassName
+import react.PropsWithRef
 import react.ReactNode
 import react.dom.events.FocusEventHandler
 import react.dom.events.KeyboardEventHandler
@@ -16,7 +17,10 @@ import web.html.HTMLElement
 import web.html.HTMLInputElement
 import web.uievents.UIEvent
 
-external interface SelectProps<Option : Any, Group : GroupBase<Option>> : PropsWithClassName {
+external interface SelectProps<Option : Any, Group : GroupBase<Option>> :
+    PropsWithRef<HTMLInputElement>,
+    PropsWithClassName {
+
     /** Focus the control when it is mounted */
     var autoFocus: Boolean?
 
