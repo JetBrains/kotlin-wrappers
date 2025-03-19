@@ -6,6 +6,7 @@ package react.select
 
 import js.array.ReadonlyArray
 import js.reflect.unsafeCast
+import js.reflect.unsafeSpecialCast
 
 sealed external interface Value<T : Any>
 
@@ -33,4 +34,10 @@ fun <T : Any> Value<T>.single(): T {
     }
 
     return unsafeCast(value)
+}
+
+fun <T : Any> Value<T>?.isNotEmpty(): Boolean {
+    val value: ReadonlyArray<Any?> = unsafeSpecialCast(this)
+
+    return value.size == 1 && value.single() != null
 }
