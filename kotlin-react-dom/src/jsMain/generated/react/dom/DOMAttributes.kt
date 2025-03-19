@@ -182,6 +182,8 @@ external interface DOMAttributes<T : Element> :
     // UI Events
     var onScroll: UIEventHandler<T>?
     var onScrollCapture: UIEventHandler<T>?
+    var onScrollEnd: UIEventHandler<T>?
+    var onScrollEndCapture: UIEventHandler<T>?
 
     // Wheel Events
     var onWheel: WheelEventHandler<T>?

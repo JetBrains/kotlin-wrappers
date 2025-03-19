@@ -94,4 +94,14 @@ external interface HTMLAttributes<T : Element> :
      * @see {@link https://html.spec.whatwg.org/multipage/custom-elements.html#attr-is}
      */
     var `is`: String?
+
+    /**
+     * @see {@link https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/exportparts}
+     */
+    var exportparts: String?
+
+    /**
+     * @see {@link https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/part}
+     */
+    var part: String?
 }
