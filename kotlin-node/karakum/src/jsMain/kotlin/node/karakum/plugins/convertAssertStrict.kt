@@ -1,21 +1,24 @@
 package node.karakum.plugins
 
+import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.createSimplePlugin
 import io.github.sgrishchenko.karakum.util.getSourceFileOrNull
 import typescript.Node
 import typescript.isIdentifier
 import typescript.isVariableDeclaration
 
-val convertAssertStrict = createSimplePlugin plugin@{ node: Node, _, _ ->
-    val sourceFileName = node.getSourceFileOrNull()?.fileName ?: "generated.d.ts"
+val convertAssertStrict = createSimplePlugin { node: Node, _, _ ->
+    nullable {
+        val sourceFileName = ensureNotNull(node.getSourceFileOrNull()?.fileName)
 
-    if (!sourceFileName.endsWith("assert.d.ts")) return@plugin null
-    if (!isVariableDeclaration(node)) return@plugin null
+        ensure(sourceFileName.endsWith("assert.d.ts"))
+        ensure(isVariableDeclaration(node))
 
-    val name = node.name
-    if (!isIdentifier(name)) return@plugin null
+        val name = node.name
+        ensure(isIdentifier(name))
 
-    if (name.text === "strict") return@plugin ""
+        ensure(name.text === "strict")
 
-    null
+        ""
+    }
 }

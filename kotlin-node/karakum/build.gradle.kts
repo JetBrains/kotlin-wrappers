@@ -7,6 +7,8 @@ dependencies {
         exclude(group = "org.jetbrains.kotlin-wrappers")
     }
 
+    jsMainImplementation(libs.arrow.core)
+
     jsMainImplementation(projects.kotlinJs)
     jsMainImplementation(projects.kotlinNode)
     jsMainImplementation(projects.kotlinTypescript)
