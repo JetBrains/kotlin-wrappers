@@ -1,6 +1,5 @@
 @file:Suppress(
     "WRONG_JS_INTEROP_TYPE",
-    "UPPER_BOUND_VIOLATED",
     "WRONG_BODY_OF_EXTERNAL_DECLARATION",
     "INLINE_EXTERNAL_DECLARATION",
     "NON_ABSTRACT_MEMBER_OF_EXTERNAL_INTERFACE",
@@ -26,10 +25,10 @@ abstract external class JsIterator<out T : JsAny?> :
     fun filter(predicate: (T) -> Boolean): JsIterator<T>
     fun find(predicate: (T) -> Boolean): T?
 
-    fun <R> flatMap(transform: (T) -> JsIterable<R>): JsIterator<R>
-    fun <R> flatMap(transform: (T) -> ReadonlyArray<R>): JsIterator<R>
+    fun <R : JsAny?> flatMap(transform: (T) -> JsIterable<R>): JsIterator<R>
+    fun <R : JsAny?> flatMap(transform: (T) -> ReadonlyArray<R>): JsIterator<R>
     fun forEach(action: (item: T) -> Unit)
-    fun <R> map(transform: (T) -> R): JsIterator<R>
+    fun <R : JsAny?> map(transform: (T) -> R): JsIterator<R>
 
     // fun reduce()
     fun some(predicate: (T) -> Boolean): Boolean
@@ -40,7 +39,7 @@ abstract external class JsIterator<out T : JsAny?> :
         iteratorFromJsIteratorLike(this)
 
     companion object {
-        fun <T> from(source: JsIteratorLike<T>): JsIterator<T>
-        fun <T> from(source: JsIterable<T>): JsIterator<T>
+        fun <T : JsAny?> from(source: JsIteratorLike<T>): JsIterator<T>
+        fun <T : JsAny?> from(source: JsIterable<T>): JsIterator<T>
     }
 }
