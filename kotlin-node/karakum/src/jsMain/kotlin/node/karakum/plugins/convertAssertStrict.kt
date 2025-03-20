@@ -3,11 +3,10 @@ package node.karakum.plugins
 import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.createSimplePlugin
 import io.github.sgrishchenko.karakum.util.getSourceFileOrNull
-import typescript.Node
 import typescript.isIdentifier
 import typescript.isVariableDeclaration
 
-val convertAssertStrict = createSimplePlugin { node: Node, _, _ ->
+val convertAssertStrict = createSimplePlugin { node, _, _ ->
     nullable {
         val sourceFileName = ensureNotNull(node.getSourceFileOrNull()?.fileName)
 

@@ -14,7 +14,6 @@ import node.karakum.plugins.convertAssertStrict
 import node.path.path
 import node.process.process
 import node.url.fileURLToPath
-import typescript.Node
 
 suspend fun main() {
     val nodePackage = import.meta.resolve("@types/node/package.json")
@@ -25,49 +24,49 @@ suspend fun main() {
 
     val cwd = process.cwd()
 
-    val jsPlugins = loadExtensions<ConverterPlugin<Node>>(
+    val jsPlugins = loadExtensions(
         "Plugin",
         arrayOf("kotlin/plugins/*.js"),
         cwd
     ) { plugin ->
         if (jsTypeOf(plugin) == "function") {
-            createSimplePlugin(plugin as SimpleConverterPlugin<Node>)
+            createSimplePlugin(plugin as SimplePlugin)
         } else {
-            plugin as ConverterPlugin<Node>
+            plugin as Plugin
         }
     }
 
-    val jsInjections = loadExtensions<Injection<Node, Node>>(
+    val jsInjections = loadExtensions(
         "Injection",
         arrayOf("kotlin/injections/*.js"),
         cwd
     ) { injection ->
         if (jsTypeOf(injection) == "function") {
-            createSimpleInjection(injection as SimpleInjection<Node>)
+            createSimpleInjection(injection as SimpleInjection)
         } else {
-            injection as Injection<Node, Node>
+            injection as Injection
         }
     }
 
-    val jsAnnotations = loadExtensions<Annotation<Node>>(
+    val jsAnnotations = loadExtensions<Annotation>(
         "Annotation",
         arrayOf("kotlin/annotations/*.js"),
         cwd,
     )
 
-    val jsNameResolvers = loadExtensions<NameResolver<Node>>(
+    val jsNameResolvers = loadExtensions<NameResolver>(
         "Name Resolver",
         arrayOf("kotlin/nameResolvers/*.js"),
         cwd,
     )
 
-    val jsInheritanceModifiers = loadExtensions<InheritanceModifier<Node>>(
+    val jsInheritanceModifiers = loadExtensions<InheritanceModifier>(
         "Inheritance Modifier",
         arrayOf("kotlin/inheritanceModifiers/*.js"),
         cwd,
     )
 
-    val jsVarianceModifiers = loadExtensions<VarianceModifier<Node>>(
+    val jsVarianceModifiers = loadExtensions<VarianceModifier>(
         "Variance Modifier",
         arrayOf("kotlin/varianceModifiers/*.js"),
         cwd,
