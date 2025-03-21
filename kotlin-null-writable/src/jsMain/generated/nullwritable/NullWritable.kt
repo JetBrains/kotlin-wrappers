@@ -10,14 +10,14 @@ import node.stream.Writable
 
 external class NullWritable : Writable {
     override fun _write(
-        _chunk: Any?,
-        _encoding: BufferEncoding,
+        chunk: Any?,
+        encoding: BufferEncoding,
         callback: (error: js.errors.JsError? /* use undefined for default */) -> Unit,
     )
 
     override val _writev: (
         (
-            _chunks: Array<node.stream.WritableWritevChunksItem>,
+        chunks: Array<node.stream.WritableWritevChunksItem>,
             callback: (error: js.errors.JsError? /* use undefined for default */) -> Unit,
         ) -> Unit
     )?
