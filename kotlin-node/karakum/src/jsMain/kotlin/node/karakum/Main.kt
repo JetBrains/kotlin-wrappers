@@ -29,9 +29,11 @@ suspend fun main() {
         arrayOf("kotlin/plugins/*.js"),
         cwd
     ) { plugin ->
-        if (jsTypeOf(plugin) == "function") {
+        if (plugin is Function<*>) {
+            @Suppress("UNCHECKED_CAST")
             createSimplePlugin(plugin as SimplePlugin)
         } else {
+            @Suppress("UNCHECKED_CAST_TO_EXTERNAL_INTERFACE")
             plugin as Plugin
         }
     }
@@ -41,9 +43,11 @@ suspend fun main() {
         arrayOf("kotlin/injections/*.js"),
         cwd
     ) { injection ->
-        if (jsTypeOf(injection) == "function") {
+        if (injection is Function<*>) {
+            @Suppress("UNCHECKED_CAST")
             createSimpleInjection(injection as SimpleInjection)
         } else {
+            @Suppress("UNCHECKED_CAST_TO_EXTERNAL_INTERFACE")
             injection as Injection
         }
     }
