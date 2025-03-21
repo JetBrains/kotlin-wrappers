@@ -30,11 +30,9 @@ suspend fun main() {
         cwd
     ) { plugin ->
         if (plugin is Function<*>) {
-            @Suppress("UNCHECKED_CAST")
-            createSimplePlugin(plugin as SimplePlugin)
+            createSimplePlugin(plugin.unsafeCast<SimplePlugin>())
         } else {
-            @Suppress("UNCHECKED_CAST_TO_EXTERNAL_INTERFACE")
-            plugin as Plugin
+            plugin.unsafeCast<Plugin>()
         }
     }
 
@@ -44,11 +42,9 @@ suspend fun main() {
         cwd
     ) { injection ->
         if (injection is Function<*>) {
-            @Suppress("UNCHECKED_CAST")
-            createSimpleInjection(injection as SimpleInjection)
+            createSimpleInjection(injection.unsafeCast<SimpleInjection>())
         } else {
-            @Suppress("UNCHECKED_CAST_TO_EXTERNAL_INTERFACE")
-            injection as Injection
+            injection.unsafeCast<Injection>()
         }
     }
 
