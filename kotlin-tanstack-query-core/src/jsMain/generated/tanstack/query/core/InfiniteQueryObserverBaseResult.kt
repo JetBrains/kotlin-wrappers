@@ -2,10 +2,10 @@
 
 package tanstack.query.core
 
+import js.objects.JsPlainObject
 import js.promise.Promise
 
-// @JsPlainObject
-// Details - https://youtrack.jetbrains.com/issue/KT-70664
+@JsPlainObject
 external interface InfiniteQueryObserverBaseResult<TData, TError>
     : QueryObserverResult<TData, TError> {
     val fetchNextPage: (options: FetchNextPageOptions?) -> Promise<InfiniteQueryObserverResult<TData, TError>>

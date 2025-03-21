@@ -2,23 +2,24 @@
 
 package tanstack.query.core
 
-// @JsPlainObject
-// Details - https://youtrack.jetbrains.com/issue/KT-70664
+import js.objects.JsPlainObject
+
+@JsPlainObject
 external interface QueryOptions<TQueryFnData, TError, TData, TQueryKey : QueryKey, TPageParam> {
-    var retry: RetryValue<TError>?
-    var retryDelay: RetryDelayValue<TError>?
-    var networkMode: NetworkMode?
-    var gcTime: JsDuration?
-    var queryFn: QueryFunctionOrSkipToken<TQueryFnData, TQueryKey, TPageParam>?
-    var persister: QueryPersister<TQueryFnData, TQueryKey, TPageParam>?
-    var queryHash: String?
-    var queryKey: TQueryKey?
-    var queryKeyHashFn: QueryKeyHashFunction<TQueryKey>?
-    var initialData: InitialDataFunction<TData> /* | TData */?
-    var initialDataUpdatedAt: Any /* number | (() => number | undefined) */?
-    var behavior: QueryBehavior<TQueryFnData, TError, TData, TQueryKey>?
-    var structuralSharing: Any /* boolean | ((oldData: unknown | undefined, newData: unknown) => unknown) */?
-    var _defaulted: Boolean?
-    var meta: QueryMeta?
-    var maxPages: Int?
+    val retry: RetryValue<TError>?
+    val retryDelay: RetryDelayValue<TError>?
+    val networkMode: NetworkMode?
+    val gcTime: JsDuration?
+    val queryFn: QueryFunctionOrSkipToken<TQueryFnData, TQueryKey, TPageParam>?
+    val persister: QueryPersister<TQueryFnData, TQueryKey, TPageParam>?
+    val queryHash: String?
+    val queryKey: TQueryKey?
+    val queryKeyHashFn: QueryKeyHashFunction<TQueryKey>?
+    val initialData: InitialDataFunction<TData> /* | TData */?
+    val initialDataUpdatedAt: Any /* number | (() => number | undefined) */?
+    val behavior: QueryBehavior<TQueryFnData, TError, TData, TQueryKey>?
+    val structuralSharing: Any /* boolean | ((oldData: unknown | undefined, newData: unknown) => unknown) */?
+    val _defaulted: Boolean?
+    val meta: QueryMeta?
+    val maxPages: Int?
 }

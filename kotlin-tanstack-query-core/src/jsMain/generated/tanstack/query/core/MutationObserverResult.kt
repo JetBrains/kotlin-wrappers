@@ -2,7 +2,8 @@
 
 package tanstack.query.core
 
-// @JsPlainObject
-// Details - https://youtrack.jetbrains.com/issue/KT-70664
+import js.objects.JsPlainObject
+
+@JsPlainObject
 external interface MutationObserverResult<TData, TError, TVariables, TContext> :
     MutationObserverBaseResult<TData, TError, TVariables, TContext>

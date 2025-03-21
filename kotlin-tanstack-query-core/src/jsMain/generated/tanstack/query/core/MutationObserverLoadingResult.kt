@@ -3,9 +3,9 @@
 package tanstack.query.core
 
 import js.core.Void
+import js.objects.JsPlainObject
 
-// @JsPlainObject
-// Details - https://youtrack.jetbrains.com/issue/KT-70664
+@JsPlainObject
 external interface MutationObserverLoadingResult<TData, TError, TVariables, TContext>
     : MutationObserverResult<TData, TError, TVariables, TContext> {
     override val data: Void

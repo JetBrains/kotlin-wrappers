@@ -3,10 +3,10 @@
 package tanstack.query.core
 
 import js.iterable.AsyncIterable
+import js.objects.JsPlainObject
 
-// @JsPlainObject
-// Details - https://youtrack.jetbrains.com/issue/KT-70664
+@JsPlainObject
 external interface StreamedQueryOptions<TQueryFnData, TQueryKey : QueryKey> {
-    var queryFn: (QueryFunctionContext<TQueryKey, *>) -> AsyncIterable<TQueryFnData>
-    var refetchMode: RefetchMode?
+    val queryFn: (QueryFunctionContext<TQueryKey, *>) -> AsyncIterable<TQueryFnData>
+    val refetchMode: RefetchMode?
 }

@@ -2,12 +2,12 @@
 
 package tanstack.react.query
 
+import js.objects.JsPlainObject
 import tanstack.query.core.InfiniteQueryObserverOptions
 import tanstack.query.core.QueryKey
 
-// @JsPlainObject
-// Details - https://youtrack.jetbrains.com/issue/KT-70664
+@JsPlainObject
 external interface UseInfiniteQueryOptions<TQueryFnData, TError, TData, TQueryData, TQueryKey : QueryKey, TPageParam>
     : InfiniteQueryObserverOptions<TQueryFnData, TError, TData, TQueryData, TQueryKey, TPageParam> {
-    var subscribed: Boolean?
+    val subscribed: Boolean?
 }

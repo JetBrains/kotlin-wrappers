@@ -2,12 +2,12 @@
 
 package tanstack.react.query
 
+import js.objects.JsPlainObject
 import tanstack.query.core.QueryKey
 import tanstack.query.core.QueryObserverOptions
 
-// @JsPlainObject
-// Details - https://youtrack.jetbrains.com/issue/KT-70664
+@JsPlainObject
 external interface UseBaseQueryOptions<TQueryFnData, TError, TData, TQueryData, TQueryKey : QueryKey>
     : QueryObserverOptions<TQueryFnData, TError, TData, TQueryData, TQueryKey, Any?> {
-    var subscribed: Boolean?
+    val subscribed: Boolean?
 }

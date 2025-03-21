@@ -2,9 +2,10 @@
 
 package tanstack.query.core
 
-// @JsPlainObject
-// Details - https://youtrack.jetbrains.com/issue/KT-70664
+import js.objects.JsPlainObject
+
+@JsPlainObject
 external interface EnsureQueryDataOptions<TQueryFnData, TError, TData, TQueryKey : QueryKey, TPageParam>
     : FetchQueryOptions<TQueryFnData, TError, TData, TQueryKey, TPageParam> {
-    var revalidateIfStale: Boolean?
+    val revalidateIfStale: Boolean?
 }

@@ -2,12 +2,12 @@
 
 package tanstack.query.core
 
+import js.objects.JsPlainObject
 import js.promise.Promise
 
-// @JsPlainObject
-// Details - https://youtrack.jetbrains.com/issue/KT-70664
+@JsPlainObject
 external interface FetchOptions<TData> {
-    var cancelRefetch: Boolean?
-    var meta: FetchMeta?
-    var initialPromise: Promise<TData>?
+    val cancelRefetch: Boolean?
+    val meta: FetchMeta?
+    val initialPromise: Promise<TData>?
 }

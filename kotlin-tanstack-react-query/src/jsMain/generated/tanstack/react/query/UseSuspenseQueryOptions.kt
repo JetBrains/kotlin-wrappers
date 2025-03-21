@@ -2,11 +2,11 @@
 
 package tanstack.react.query
 
+import js.objects.JsPlainObject
 import tanstack.query.core.QueryKey
 
-// @JsPlainObject
-// Details - https://youtrack.jetbrains.com/issue/KT-70664
+@JsPlainObject
 external interface UseSuspenseQueryOptions<TQueryFnData, TError, TData, TQueryKey : QueryKey>
     : UseQueryOptions<TQueryFnData, TError, TData, TQueryKey> {
-    /*  var queryFn: UseQueryOptions<TQueryFnData, TError, TData, TQueryKey>? */
+    /*  val queryFn: UseQueryOptions<TQueryFnData, TError, TData, TQueryKey>? */
 }
