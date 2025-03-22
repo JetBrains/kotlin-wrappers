@@ -2,4 +2,6 @@
 
 package tanstack.table.core
 
-external interface SortingOptions<TData : RowData> : SortingOptionsBase<TData>, ResolvedSortingFns
+external interface SortingOptions<TData : RowData> :
+    SortingOptionsBase<TData>,
+    ResolvedSortingFns

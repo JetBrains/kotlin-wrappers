@@ -2,4 +2,6 @@
 
 package tanstack.table.core
 
-external interface GroupingOptions<TData : RowData> : GroupingOptionsBase<TData>, ResolvedAggregationFns
+external interface GroupingOptions<TData : RowData> :
+    GroupingOptionsBase<TData>,
+    ResolvedAggregationFns

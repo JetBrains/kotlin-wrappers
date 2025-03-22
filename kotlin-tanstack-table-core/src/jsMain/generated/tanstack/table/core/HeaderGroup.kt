@@ -2,4 +2,5 @@
 
 package tanstack.table.core
 
-external interface HeaderGroup<TData : RowData> : CoreHeaderGroup<TData>
+external interface HeaderGroup<TData : RowData> :
+    CoreHeaderGroup<TData>

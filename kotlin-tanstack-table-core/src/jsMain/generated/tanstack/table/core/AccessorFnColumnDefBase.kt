@@ -2,6 +2,7 @@
 
 package tanstack.table.core
 
-external interface AccessorFnColumnDefBase<TData : RowData, TValue> : ColumnDefBase<TData, TValue> {
+external interface AccessorFnColumnDefBase<TData : RowData, TValue> :
+    ColumnDefBase<TData, TValue> {
     var accessorFn: AccessorFn<TData, TValue>
 }

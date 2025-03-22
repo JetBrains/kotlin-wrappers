@@ -4,6 +4,7 @@ package tanstack.table.core
 
 import js.array.ReadonlyArray
 
-external interface GroupColumnDefBase<TData : RowData, TValue> : ColumnDefBase<TData, TValue> {
+external interface GroupColumnDefBase<TData : RowData, TValue> :
+    ColumnDefBase<TData, TValue> {
     var columns: ReadonlyArray<ColumnDef<TData, *>>?
 }

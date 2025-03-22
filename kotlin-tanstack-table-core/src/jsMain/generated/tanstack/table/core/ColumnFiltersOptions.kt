@@ -2,4 +2,6 @@
 
 package tanstack.table.core
 
-external interface ColumnFiltersOptions<TData : RowData> : ColumnFiltersOptionsBase<TData>, ResolvedFilterFns
+external interface ColumnFiltersOptions<TData : RowData> :
+    ColumnFiltersOptionsBase<TData>,
+    ResolvedFilterFns

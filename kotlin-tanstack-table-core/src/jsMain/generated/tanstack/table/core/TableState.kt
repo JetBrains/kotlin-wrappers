@@ -2,6 +2,17 @@
 
 package tanstack.table.core
 
-external interface TableState : CoreTableState, VisibilityTableState, ColumnOrderTableState, ColumnPinningTableState,
-    RowPinningTableState, ColumnFiltersTableState, GlobalFilterTableState, SortingTableState, ExpandedTableState,
-    GroupingTableState, ColumnSizingTableState, PaginationTableState, RowSelectionTableState
+external interface TableState :
+    CoreTableState,
+    VisibilityTableState,
+    ColumnOrderTableState,
+    ColumnPinningTableState,
+    RowPinningTableState,
+    ColumnFiltersTableState,
+    GlobalFilterTableState,
+    SortingTableState,
+    ExpandedTableState,
+    GroupingTableState,
+    ColumnSizingTableState,
+    PaginationTableState,
+    RowSelectionTableState
