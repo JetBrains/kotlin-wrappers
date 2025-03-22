@@ -41,15 +41,15 @@ external class EllipseOutlineGeometry(
      */
     @JsPlainObject
     interface ConstructorOptions {
-        var center: Cartesian3
-        var semiMajorAxis: Double
-        var semiMinorAxis: Double
-        var ellipsoid: Ellipsoid?
-        var height: Double?
-        var extrudedHeight: Double?
-        var rotation: Double?
-        var granularity: Double?
-        var numberOfVerticalLines: Int?
+        val center: Cartesian3
+        val semiMajorAxis: Double
+        val semiMinorAxis: Double
+        val ellipsoid: Ellipsoid?
+        val height: Double?
+        val extrudedHeight: Double?
+        val rotation: Double?
+        val granularity: Double?
+        val numberOfVerticalLines: Int?
     }
 
     companion object : Packable<EllipseOutlineGeometry> {

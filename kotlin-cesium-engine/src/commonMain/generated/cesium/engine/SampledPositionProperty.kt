@@ -116,8 +116,8 @@ external class SampledPositionProperty(
      */
     @JsPlainObject
     interface SetInterpolationOptionsOptions {
-        var interpolationAlgorithm: InterpolationAlgorithm?
-        var interpolationDegree: Double?
+        val interpolationAlgorithm: InterpolationAlgorithm?
+        val interpolationDegree: Double?
     }
 
     /**

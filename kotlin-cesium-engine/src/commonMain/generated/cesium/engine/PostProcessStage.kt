@@ -82,16 +82,16 @@ external class PostProcessStage(
      */
     @JsPlainObject
     interface ConstructorOptions {
-        var fragmentShader: String
-        var uniforms: Any?
-        var textureScale: Double?
-        var forcePowerOfTwo: Boolean?
-        var sampleMode: PostProcessStageSampleMode?
-        var pixelFormat: PixelFormat?
-        var pixelDatatype: PixelDatatype?
-        var clearColor: Color?
-        var scissorRectangle: BoundingRectangle?
-        var name: String?
+        val fragmentShader: String
+        val uniforms: Any?
+        val textureScale: Double?
+        val forcePowerOfTwo: Boolean?
+        val sampleMode: PostProcessStageSampleMode?
+        val pixelFormat: PixelFormat?
+        val pixelDatatype: PixelDatatype?
+        val clearColor: Color?
+        val scissorRectangle: BoundingRectangle?
+        val name: String?
     }
 
     /**

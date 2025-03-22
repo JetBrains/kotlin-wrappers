@@ -27,10 +27,10 @@ external class IonGeocoderService(
      */
     @JsPlainObject
     interface ConstructorOptions {
-        var scene: Scene
-        var accessToken: String?
-        var server: Resource?
-        var geocodeProviderType: IonGeocodeProviderType?
+        val scene: Scene
+        val accessToken: String?
+        val server: Resource?
+        val geocodeProviderType: IonGeocodeProviderType?
     }
 
     /**

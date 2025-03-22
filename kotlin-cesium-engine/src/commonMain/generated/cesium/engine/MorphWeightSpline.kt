@@ -34,8 +34,8 @@ external class MorphWeightSpline(
      */
     @JsPlainObject
     interface ConstructorOptions {
-        var times: ReadonlyArray<Double>
-        var weights: ReadonlyArray<Double>
+        val times: ReadonlyArray<Double>
+        val weights: ReadonlyArray<Double>
     }
 
     /**

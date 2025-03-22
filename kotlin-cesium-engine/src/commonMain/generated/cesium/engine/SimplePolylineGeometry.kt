@@ -40,12 +40,12 @@ external class SimplePolylineGeometry(
      */
     @JsPlainObject
     interface ConstructorOptions {
-        var positions: ReadonlyArray<Cartesian3>
-        var colors: ReadonlyArray<Color>?
-        var colorsPerVertex: Boolean?
-        var arcType: ArcType?
-        var granularity: Double?
-        var ellipsoid: Ellipsoid?
+        val positions: ReadonlyArray<Cartesian3>
+        val colors: ReadonlyArray<Color>?
+        val colorsPerVertex: Boolean?
+        val arcType: ArcType?
+        val granularity: Double?
+        val ellipsoid: Ellipsoid?
     }
 
     /**

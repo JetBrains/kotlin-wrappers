@@ -10,6 +10,6 @@ import js.objects.JsPlainObject
  */
 @JsPlainObject
 external interface createElevationBandMaterialEntry {
-    var height: Double
-    var color: Color
+    val height: Double
+    val color: Color
 }

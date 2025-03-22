@@ -262,26 +262,26 @@ external class WebMapServiceImageryProvider(
      */
     @JsPlainObject
     interface ConstructorOptions {
-        var url: Resource
-        var layers: String
-        var parameters: Any?
-        var getFeatureInfoParameters: Any?
-        var enablePickFeatures: Boolean?
-        var getFeatureInfoFormats: ReadonlyArray<GetFeatureInfoFormat>?
-        var rectangle: Rectangle?
-        var tilingScheme: TilingScheme?
-        var ellipsoid: Ellipsoid?
-        var tileWidth: Int?
-        var tileHeight: Int?
-        var minimumLevel: Int?
-        var maximumLevel: Int?
-        var crs: String?
-        var srs: String?
-        var credit: Credit?
-        var subdomains: ReadonlyArray<String>?
-        var clock: Clock?
-        var times: TimeIntervalCollection?
-        var getFeatureInfoUrl: Resource?
+        val url: Resource
+        val layers: String
+        val parameters: Any?
+        val getFeatureInfoParameters: Any?
+        val enablePickFeatures: Boolean?
+        val getFeatureInfoFormats: ReadonlyArray<GetFeatureInfoFormat>?
+        val rectangle: Rectangle?
+        val tilingScheme: TilingScheme?
+        val ellipsoid: Ellipsoid?
+        val tileWidth: Int?
+        val tileHeight: Int?
+        val minimumLevel: Int?
+        val maximumLevel: Int?
+        val crs: String?
+        val srs: String?
+        val credit: Credit?
+        val subdomains: ReadonlyArray<String>?
+        val clock: Clock?
+        val times: TimeIntervalCollection?
+        val getFeatureInfoUrl: Resource?
     }
 
     companion object {

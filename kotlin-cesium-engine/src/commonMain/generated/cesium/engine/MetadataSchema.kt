@@ -28,14 +28,14 @@ external class MetadataSchema(
      */
     @JsPlainObject
     interface ConstructorOptions {
-        var id: String?
-        var name: String?
-        var description: String?
-        var version: String?
-        var classes: ReadonlyRecord<String, MetadataClass>?
-        var enums: ReadonlyRecord<String, MetadataEnum>?
-        var extras: Any?
-        var extensions: Any?
+        val id: String?
+        val name: String?
+        val description: String?
+        val version: String?
+        val classes: ReadonlyRecord<String, MetadataClass>?
+        val enums: ReadonlyRecord<String, MetadataEnum>?
+        val extras: Any?
+        val extensions: Any?
     }
 
     /**

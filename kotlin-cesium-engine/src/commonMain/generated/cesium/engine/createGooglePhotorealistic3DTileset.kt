@@ -67,6 +67,6 @@ external fun createGooglePhotorealistic3DTilesetAsync(
 
 @JsPlainObject
 external interface CreateGooglePhotorealistic3DTilesetOptions {
-    var key: String?
-    var onlyUsingWithGoogleGeocoder: Any /* true */?
+    val key: String?
+    val onlyUsingWithGoogleGeocoder: Any /* true */?
 }

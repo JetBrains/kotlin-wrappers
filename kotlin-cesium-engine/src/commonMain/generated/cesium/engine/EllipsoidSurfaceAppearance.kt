@@ -47,14 +47,14 @@ external class EllipsoidSurfaceAppearance(
      */
     @JsPlainObject
     interface ConstructorOptions {
-        var flat: Boolean?
-        var faceForward: Boolean?
-        var translucent: Boolean?
-        var aboveGround: Boolean?
-        var material: Material?
-        var vertexShaderSource: String?
-        var fragmentShaderSource: String?
-        var renderState: Any?
+        val flat: Boolean?
+        val faceForward: Boolean?
+        val translucent: Boolean?
+        val aboveGround: Boolean?
+        val material: Material?
+        val vertexShaderSource: String?
+        val fragmentShaderSource: String?
+        val renderState: Any?
     }
 
     /**

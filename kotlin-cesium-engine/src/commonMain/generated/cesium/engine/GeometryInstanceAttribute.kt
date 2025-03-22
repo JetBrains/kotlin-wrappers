@@ -41,10 +41,10 @@ external class GeometryInstanceAttribute(
      */
     @JsPlainObject
     interface ConstructorOptions {
-        var componentDatatype: ComponentDatatype
-        var componentsPerAttribute: Int
-        var normalize: Boolean?
-        var value: ReadonlyArray<Double>
+        val componentDatatype: ComponentDatatype
+        val componentsPerAttribute: Int
+        val normalize: Boolean?
+        val value: ReadonlyArray<Double>
     }
 
     /**

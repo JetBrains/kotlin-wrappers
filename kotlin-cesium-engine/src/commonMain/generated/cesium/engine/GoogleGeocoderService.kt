@@ -21,7 +21,7 @@ external class GoogleGeocoderService(
      */
     @JsPlainObject
     interface ConstructorOptions {
-        var key: String
+        val key: String
     }
 
     /**

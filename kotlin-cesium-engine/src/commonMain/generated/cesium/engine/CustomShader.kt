@@ -74,13 +74,13 @@ external class CustomShader(
      */
     @JsPlainObject
     interface ConstructorOptions {
-        var mode: CustomShaderMode?
-        var lightingModel: LightingModel?
-        var translucencyMode: CustomShaderTranslucencyMode?
-        var uniforms: ReadonlyRecord<String, UniformSpecifier>?
-        var varyings: ReadonlyRecord<String, VaryingType>?
-        var vertexShaderText: String?
-        var fragmentShaderText: String?
+        val mode: CustomShaderMode?
+        val lightingModel: LightingModel?
+        val translucencyMode: CustomShaderTranslucencyMode?
+        val uniforms: ReadonlyRecord<String, UniformSpecifier>?
+        val varyings: ReadonlyRecord<String, VaryingType>?
+        val vertexShaderText: String?
+        val fragmentShaderText: String?
     }
 
     /**

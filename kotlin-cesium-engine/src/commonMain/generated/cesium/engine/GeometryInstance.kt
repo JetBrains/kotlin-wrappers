@@ -52,10 +52,10 @@ external class GeometryInstance(
      */
     @JsPlainObject
     interface ConstructorOptions {
-        var geometry: Any /* Geometry | GeometryFactory */
-        var modelMatrix: Matrix4?
-        var id: Any?
-        var attributes: Any?
+        val geometry: Any /* Geometry | GeometryFactory */
+        val modelMatrix: Matrix4?
+        val id: Any?
+        val attributes: Any?
     }
 
     /**

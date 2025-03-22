@@ -30,9 +30,9 @@ external class BoxGeometry(
      */
     @JsPlainObject
     interface ConstructorOptions {
-        var minimum: Cartesian3
-        var maximum: Cartesian3
-        var vertexFormat: VertexFormat?
+        val minimum: Cartesian3
+        val maximum: Cartesian3
+        val vertexFormat: VertexFormat?
     }
 
     companion object : Packable<BoxGeometry> {
@@ -56,8 +56,8 @@ external class BoxGeometry(
          */
         @JsPlainObject
         interface FromDimensionsOptions {
-            var dimensions: Cartesian3
-            var vertexFormat: VertexFormat?
+            val dimensions: Cartesian3
+            val vertexFormat: VertexFormat?
         }
 
         /**

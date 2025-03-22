@@ -53,8 +53,8 @@ external class CorrelationGroup(
      */
     @JsPlainObject
     interface ConstructorOptions {
-        var groupFlags: ReadonlyArray<Boolean>
-        var rotationThetas: Cartesian3
-        var params: ReadonlyArray<Spdcf>
+        val groupFlags: ReadonlyArray<Boolean>
+        val rotationThetas: Cartesian3
+        val params: ReadonlyArray<Spdcf>
     }
 }

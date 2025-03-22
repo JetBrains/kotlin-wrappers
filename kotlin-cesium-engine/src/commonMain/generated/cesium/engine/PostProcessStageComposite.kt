@@ -76,10 +76,10 @@ external class PostProcessStageComposite(
      */
     @JsPlainObject
     interface ConstructorOptions {
-        var stages: ReadonlyArray<Any>
-        var inputPreviousStageTexture: Boolean?
-        var name: String?
-        var uniforms: Any?
+        val stages: ReadonlyArray<Any>
+        val inputPreviousStageTexture: Boolean?
+        val name: String?
+        val uniforms: Any?
     }
 
     /**

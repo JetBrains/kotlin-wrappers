@@ -36,12 +36,12 @@ external class RectangleOutlineGeometry(
      */
     @JsPlainObject
     interface ConstructorOptions {
-        var rectangle: Rectangle
-        var ellipsoid: Ellipsoid?
-        var granularity: Double?
-        var height: Double?
-        var rotation: Double?
-        var extrudedHeight: Double?
+        val rectangle: Rectangle
+        val ellipsoid: Ellipsoid?
+        val granularity: Double?
+        val height: Double?
+        val rotation: Double?
+        val extrudedHeight: Double?
     }
 
     companion object : Packable<RectangleOutlineGeometry> {

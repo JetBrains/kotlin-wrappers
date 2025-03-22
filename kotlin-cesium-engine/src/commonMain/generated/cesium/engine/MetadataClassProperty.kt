@@ -43,26 +43,26 @@ external class MetadataClassProperty(
      */
     @JsPlainObject
     interface ConstructorOptions {
-        var id: String
-        var type: MetadataType
-        var componentType: MetadataComponentType?
-        var enumType: MetadataEnum?
-        var isArray: Boolean?
-        var isVariableLengthArray: Boolean?
-        var arrayLength: Int?
-        var normalized: Boolean?
-        var min: Any /* number | number[] | number[][] */?
-        var max: Any /* number | number[] | number[][] */?
-        var offset: Any /* number | number[] | number[][] */?
-        var scale: Any /* number | number[] | number[][] */?
-        var noData: Any /* boolean | number | string | any[] */?
-        var default: Any /* boolean | number | string | any[] */?
-        var required: Boolean?
-        var name: String?
-        var description: String?
-        var semantic: String?
-        var extras: Any?
-        var extensions: Any?
+        val id: String
+        val type: MetadataType
+        val componentType: MetadataComponentType?
+        val enumType: MetadataEnum?
+        val isArray: Boolean?
+        val isVariableLengthArray: Boolean?
+        val arrayLength: Int?
+        val normalized: Boolean?
+        val min: Any /* number | number[] | number[][] */?
+        val max: Any /* number | number[] | number[][] */?
+        val offset: Any /* number | number[] | number[][] */?
+        val scale: Any /* number | number[] | number[][] */?
+        val noData: Any /* boolean | number | string | any[] */?
+        val default: Any /* boolean | number | string | any[] */?
+        val required: Boolean?
+        val name: String?
+        val description: String?
+        val semantic: String?
+        val extras: Any?
+        val extensions: Any?
     }
 
     /**

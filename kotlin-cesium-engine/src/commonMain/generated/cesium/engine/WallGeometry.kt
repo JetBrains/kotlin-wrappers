@@ -43,12 +43,12 @@ external class WallGeometry(
      */
     @JsPlainObject
     interface ConstructorOptions {
-        var positions: ReadonlyArray<Cartesian3>
-        var granularity: Double?
-        var maximumHeights: ReadonlyArray<Double>?
-        var minimumHeights: ReadonlyArray<Double>?
-        var ellipsoid: Ellipsoid?
-        var vertexFormat: VertexFormat?
+        val positions: ReadonlyArray<Cartesian3>
+        val granularity: Double?
+        val maximumHeights: ReadonlyArray<Double>?
+        val minimumHeights: ReadonlyArray<Double>?
+        val ellipsoid: Ellipsoid?
+        val vertexFormat: VertexFormat?
     }
 
     /**
@@ -123,11 +123,11 @@ external class WallGeometry(
          */
         @JsPlainObject
         interface FromConstantHeightsOptions {
-            var positions: ReadonlyArray<Cartesian3>
-            var maximumHeight: Double?
-            var minimumHeight: Double?
-            var ellipsoid: Ellipsoid?
-            var vertexFormat: VertexFormat?
+            val positions: ReadonlyArray<Cartesian3>
+            val maximumHeight: Double?
+            val minimumHeight: Double?
+            val ellipsoid: Ellipsoid?
+            val vertexFormat: VertexFormat?
         }
 
         /**

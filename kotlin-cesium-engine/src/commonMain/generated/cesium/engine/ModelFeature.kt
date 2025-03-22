@@ -34,8 +34,8 @@ private constructor() {
      */
     @JsPlainObject
     interface ConstructorOptions {
-        var model: Model
-        var featureId: Int
+        val model: Model
+        val featureId: Int
     }
 
     /**

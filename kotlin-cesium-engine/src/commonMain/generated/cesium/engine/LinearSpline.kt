@@ -36,8 +36,8 @@ external class LinearSpline(
      */
     @JsPlainObject
     interface ConstructorOptions {
-        var times: ReadonlyArray<Double>
-        var points: ReadonlyArray<Cartesian3 /* or number */>
+        val times: ReadonlyArray<Double>
+        val points: ReadonlyArray<Cartesian3 /* or number */>
     }
 
     /**

@@ -146,16 +146,16 @@ external class DynamicEnvironmentMapManager(
      */
     @JsPlainObject
     interface ConstructorOptions {
-        var enabled: Boolean?
-        var mipmapLevels: Double?
-        var maximumSecondsDifference: Double?
-        var maximumPositionEpsilon: Double?
-        var atmosphereScatteringIntensity: Double?
-        var gamma: Double?
-        var brightness: Double?
-        var saturation: Double?
-        var groundColor: Color?
-        var groundAlbedo: Double?
+        val enabled: Boolean?
+        val mipmapLevels: Double?
+        val maximumSecondsDifference: Double?
+        val maximumPositionEpsilon: Double?
+        val atmosphereScatteringIntensity: Double?
+        val gamma: Double?
+        val brightness: Double?
+        val saturation: Double?
+        val groundColor: Color?
+        val groundAlbedo: Double?
     }
 
     companion object {

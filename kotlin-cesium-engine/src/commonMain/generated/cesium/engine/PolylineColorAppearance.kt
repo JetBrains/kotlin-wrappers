@@ -46,10 +46,10 @@ external class PolylineColorAppearance(
      */
     @JsPlainObject
     interface ConstructorOptions {
-        var translucent: Boolean?
-        var vertexShaderSource: String?
-        var fragmentShaderSource: String?
-        var renderState: Any?
+        val translucent: Boolean?
+        val vertexShaderSource: String?
+        val fragmentShaderSource: String?
+        val renderState: Any?
     }
 
     /**

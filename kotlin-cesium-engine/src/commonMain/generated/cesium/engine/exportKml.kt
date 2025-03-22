@@ -56,11 +56,11 @@ external fun exportKmlAsync(options: ExportKmlOptions): Promise<Any /* exportKml
  */
 @JsPlainObject
 external interface ExportKmlOptions {
-    var entities: EntityCollection
-    var ellipsoid: Ellipsoid?
-    var modelCallback: exportKmlModelCallback?
-    var time: JulianDate?
-    var defaultAvailability: TimeInterval?
-    var sampleDuration: Int?
-    var kmz: Boolean?
+    val entities: EntityCollection
+    val ellipsoid: Ellipsoid?
+    val modelCallback: exportKmlModelCallback?
+    val time: JulianDate?
+    val defaultAvailability: TimeInterval?
+    val sampleDuration: Int?
+    val kmz: Boolean?
 }

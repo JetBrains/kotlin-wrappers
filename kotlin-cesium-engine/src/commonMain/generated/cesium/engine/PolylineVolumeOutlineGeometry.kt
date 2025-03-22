@@ -44,11 +44,11 @@ external class PolylineVolumeOutlineGeometry(
      */
     @JsPlainObject
     interface ConstructorOptions {
-        var polylinePositions: ReadonlyArray<Cartesian3>
-        var shapePositions: ReadonlyArray<Cartesian2>
-        var ellipsoid: Ellipsoid?
-        var granularity: Double?
-        var cornerType: CornerType?
+        val polylinePositions: ReadonlyArray<Cartesian3>
+        val shapePositions: ReadonlyArray<Cartesian2>
+        val ellipsoid: Ellipsoid?
+        val granularity: Double?
+        val cornerType: CornerType?
     }
 
     /**

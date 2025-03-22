@@ -14,7 +14,7 @@ import js.objects.JsPlainObject
  */
 @JsPlainObject
 external interface createElevationBandMaterialBand {
-    var entries: ReadonlyArray<createElevationBandMaterialEntry>
-    var extendDownwards: Boolean?
-    var extendUpwards: Boolean?
+    val entries: ReadonlyArray<createElevationBandMaterialEntry>
+    val extendDownwards: Boolean?
+    val extendUpwards: Boolean?
 }

@@ -151,10 +151,10 @@ external class Cesium3DTilesVoxelProvider(
      */
     @JsPlainObject
     interface RequestDataOptions {
-        var tileLevel: Int?
-        var tileX: Double?
-        var tileY: Double?
-        var tileZ: Double?
+        val tileLevel: Int?
+        val tileX: Double?
+        val tileY: Double?
+        val tileZ: Double?
     }
 
     /**
@@ -182,21 +182,21 @@ external class Cesium3DTilesVoxelProvider(
      */
     @JsPlainObject
     interface ConstructorOptions {
-        var className: String
-        var names: ReadonlyArray<String>
-        var types: ReadonlyArray<MetadataType>
-        var componentTypes: ReadonlyArray<MetadataComponentType>
-        var shape: VoxelShapeType
-        var dimensions: Cartesian3
-        var paddingBefore: Cartesian3?
-        var paddingAfter: Cartesian3?
-        var globalTransform: Matrix4?
-        var shapeTransform: Matrix4?
-        var minBounds: Cartesian3?
-        var maxBounds: Cartesian3?
-        var minimumValues: ReadonlyArray<ReadonlyArray<Double>>?
-        var maximumValues: ReadonlyArray<ReadonlyArray<Double>>?
-        var maximumTileCount: Double?
+        val className: String
+        val names: ReadonlyArray<String>
+        val types: ReadonlyArray<MetadataType>
+        val componentTypes: ReadonlyArray<MetadataComponentType>
+        val shape: VoxelShapeType
+        val dimensions: Cartesian3
+        val paddingBefore: Cartesian3?
+        val paddingAfter: Cartesian3?
+        val globalTransform: Matrix4?
+        val shapeTransform: Matrix4?
+        val minBounds: Cartesian3?
+        val maxBounds: Cartesian3?
+        val minimumValues: ReadonlyArray<ReadonlyArray<Double>>?
+        val maximumValues: ReadonlyArray<ReadonlyArray<Double>>?
+        val maximumTileCount: Double?
     }
 
     companion object {

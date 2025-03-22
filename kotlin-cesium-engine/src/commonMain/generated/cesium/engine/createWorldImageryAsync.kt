@@ -41,5 +41,5 @@ external fun createWorldImageryAsync(options: CreateWorldImageryAsyncOptions? = 
  */
 @JsPlainObject
 external interface CreateWorldImageryAsyncOptions {
-    var style: IonWorldImageryStyle?
+    val style: IonWorldImageryStyle?
 }
