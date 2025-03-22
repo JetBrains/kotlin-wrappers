@@ -8,7 +8,7 @@ package cesium.engine
  * A [CompositeProperty] which is also a [MaterialProperty].
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CompositeMaterialProperty.html">Online Documentation</a>
  */
-external class CompositeMaterialProperty :
+external class CompositeMaterialProperty() :
     MaterialProperty {
     /**
      * Gets a value indicating if this property is constant.  A property is considered

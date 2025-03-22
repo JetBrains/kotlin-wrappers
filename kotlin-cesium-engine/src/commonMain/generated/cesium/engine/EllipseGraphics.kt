@@ -11,7 +11,7 @@ package cesium.engine
  * The center point is determined by the containing [Entity].
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/EllipseGraphics.html">Online Documentation</a>
  */
-external class EllipseGraphics {
+external class EllipseGraphics() {
     /**
      * Gets the event that is raised whenever a property or sub-property is changed or modified.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/EllipseGraphics.html#definitionChanged">Online Documentation</a>

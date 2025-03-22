@@ -15,7 +15,7 @@ import cesium.engine.DefaultEvent
  * See [createCommand] to create a command from a function.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Command.html">Online Documentation</a>
  */
-abstract external class Command {
+abstract external class Command() {
     /**
      * Gets whether this command can currently be executed.  This property is observable.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Command.html#canExecute">Online Documentation</a>

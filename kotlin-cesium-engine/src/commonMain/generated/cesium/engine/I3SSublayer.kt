@@ -12,7 +12,7 @@ import js.array.ReadonlyArray
  * This object is normally not instantiated directly, use [I3SSublayer.fromData].
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/I3SSublayer.html">Online Documentation</a>
  */
-external class I3SSublayer {
+external class I3SSublayer() {
     /**
      * Gets the resource for the sublayer
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/I3SSublayer.html#resource">Online Documentation</a>

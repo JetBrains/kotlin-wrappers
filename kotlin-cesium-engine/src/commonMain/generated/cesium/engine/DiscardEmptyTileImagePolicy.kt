@@ -12,7 +12,7 @@ import web.html.HTMLImageElement
  * expected to be used in place of any empty tile images by the image loading code.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/DiscardEmptyTileImagePolicy.html">Online Documentation</a>
  */
-external class DiscardEmptyTileImagePolicy :
+external class DiscardEmptyTileImagePolicy() :
     TileDiscardPolicy {
     /**
      * Determines if the discard policy is ready to process images.

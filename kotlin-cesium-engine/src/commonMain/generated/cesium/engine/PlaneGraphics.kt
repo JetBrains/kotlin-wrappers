@@ -8,7 +8,7 @@ package cesium.engine
  * Describes a plane. The center position and orientation are determined by the containing [Entity].
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PlaneGraphics.html">Online Documentation</a>
  */
-external class PlaneGraphics {
+external class PlaneGraphics() {
     /**
      * Gets the event that is raised whenever a property or sub-property is changed or modified.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PlaneGraphics.html#definitionChanged">Online Documentation</a>

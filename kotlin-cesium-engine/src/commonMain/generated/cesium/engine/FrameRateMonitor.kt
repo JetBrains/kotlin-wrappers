@@ -11,7 +11,7 @@ package cesium.engine
  * instead of constructing an instance explicitly.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/FrameRateMonitor.html">Online Documentation</a>
  */
-external class FrameRateMonitor {
+external class FrameRateMonitor() {
     /**
      * Gets or sets the length of the sliding window over which to compute the average frame rate, in seconds.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/FrameRateMonitor.html#samplingWindow">Online Documentation</a>

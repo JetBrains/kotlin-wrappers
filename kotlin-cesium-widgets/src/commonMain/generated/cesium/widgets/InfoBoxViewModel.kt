@@ -11,7 +11,7 @@ import cesium.engine.Event
  * The view model for [InfoBox].
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/InfoBoxViewModel.html">Online Documentation</a>
  */
-external class InfoBoxViewModel {
+external class InfoBoxViewModel() {
     /**
      * Gets or sets the maximum height of the info box in pixels.  This property is observable.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/InfoBoxViewModel.html#maxHeight">Online Documentation</a>

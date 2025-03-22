@@ -11,7 +11,7 @@ package cesium.engine
  * Attributes are always stored non-interleaved in a Geometry.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GeometryAttributes.html">Online Documentation</a>
  */
-external class GeometryAttributes {
+external class GeometryAttributes() {
     /**
      * The 3D position attribute.
      *

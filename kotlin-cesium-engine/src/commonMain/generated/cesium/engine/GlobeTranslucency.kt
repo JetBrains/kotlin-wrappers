@@ -8,7 +8,7 @@ package cesium.engine
  * Properties for controlling globe translucency.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GlobeTranslucency.html">Online Documentation</a>
  */
-external class GlobeTranslucency {
+external class GlobeTranslucency() {
     /**
      * When true, the globe is rendered as a translucent surface.
      *

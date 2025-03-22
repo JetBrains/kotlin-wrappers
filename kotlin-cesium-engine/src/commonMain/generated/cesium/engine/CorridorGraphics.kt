@@ -10,7 +10,7 @@ package cesium.engine
  * and can optionally be extruded into a volume.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CorridorGraphics.html">Online Documentation</a>
  */
-external class CorridorGraphics {
+external class CorridorGraphics() {
     /**
      * Gets the event that is raised whenever a property or sub-property is changed or modified.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CorridorGraphics.html#definitionChanged">Online Documentation</a>

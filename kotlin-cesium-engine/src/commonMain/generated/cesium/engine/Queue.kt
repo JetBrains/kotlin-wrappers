@@ -8,7 +8,7 @@ package cesium.engine
  * A queue that can enqueue items at the end, and dequeue items from the front.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Queue.html">Online Documentation</a>
  */
-external class Queue {
+external class Queue() {
     /**
      * The length of the queue.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Queue.html#length">Online Documentation</a>

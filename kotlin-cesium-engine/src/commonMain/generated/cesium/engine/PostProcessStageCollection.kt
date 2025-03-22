@@ -15,7 +15,7 @@ package cesium.engine
  * If the FXAA stage is enabled, it will execute after all other stages.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PostProcessStageCollection.html">Online Documentation</a>
  */
-external class PostProcessStageCollection {
+external class PostProcessStageCollection() {
     /**
      * Determines if all of the post-process stages in the collection are ready to be executed.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PostProcessStageCollection.html#ready">Online Documentation</a>

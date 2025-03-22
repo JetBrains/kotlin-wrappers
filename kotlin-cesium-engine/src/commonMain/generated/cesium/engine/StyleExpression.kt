@@ -13,7 +13,7 @@ package cesium.engine
  * This type describes an interface and is not intended to be instantiated directly.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/StyleExpression.html">Online Documentation</a>
  */
-abstract external class StyleExpression {
+abstract external class StyleExpression() {
     /**
      * Evaluates the result of an expression, optionally using the provided feature's properties. If the result of
      * the expression in the

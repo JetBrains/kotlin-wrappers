@@ -15,7 +15,7 @@ import seskar.js.JsAsync
  * interface and is not intended to be instantiated directly.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/TerrainProvider.html">Online Documentation</a>
  */
-abstract external class TerrainProvider {
+abstract external class TerrainProvider() {
     /**
      * Gets an event that is raised when the terrain provider encounters an asynchronous error.  By subscribing
      * to the event, you will be notified of the error and can potentially recover from it.  Event listeners
