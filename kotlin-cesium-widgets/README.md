@@ -1,4 +1,4 @@
-[![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-cesium-widgets)](https://mvnrepository.com/artifact/org.jetbrains.kotlin-wrappers/kotlin-cesium-widgets)
+[![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-cesium-widgets)](https://search.maven.org/artifact/org.jetbrains.kotlin-wrappers/kotlin-cesium-widgets)
 
 # Module kotlin-cesium-widgets
 

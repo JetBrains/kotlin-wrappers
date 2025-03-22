@@ -1,4 +1,4 @@
-[![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-tanstack-react-table)](https://mvnrepository.com/artifact/org.jetbrains.kotlin-wrappers/kotlin-tanstack-react-table)
+[![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-tanstack-react-table)](https://search.maven.org/artifact/org.jetbrains.kotlin-wrappers/kotlin-tanstack-react-table)
 
 # Module kotlin-tanstack-react-table
 

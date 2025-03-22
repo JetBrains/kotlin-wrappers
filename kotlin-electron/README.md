@@ -1,4 +1,4 @@
-[![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-electron)](https://mvnrepository.com/artifact/org.jetbrains.kotlin-wrappers/kotlin-electron)
+[![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-electron)](https://search.maven.org/artifact/org.jetbrains.kotlin-wrappers/kotlin-electron)
 
 # Module kotlin-electron
 

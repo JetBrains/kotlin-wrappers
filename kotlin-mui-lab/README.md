@@ -1,4 +1,4 @@
-[![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-mui-lab)](https://mvnrepository.com/artifact/org.jetbrains.kotlin-wrappers/kotlin-mui-lab)
+[![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-mui-lab)](https://search.maven.org/artifact/org.jetbrains.kotlin-wrappers/kotlin-mui-lab)
 
 # Module kotlin-mui-lab
 

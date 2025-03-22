@@ -1,4 +1,4 @@
-[![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-tanstack-query-core)](https://mvnrepository.com/artifact/org.jetbrains.kotlin-wrappers/kotlin-tanstack-query-core)
+[![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-tanstack-query-core)](https://search.maven.org/artifact/org.jetbrains.kotlin-wrappers/kotlin-tanstack-query-core)
 
 # Module kotlin-tanstack-query-core
 

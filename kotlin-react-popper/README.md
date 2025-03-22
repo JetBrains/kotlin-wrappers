@@ -1,4 +1,4 @@
-[![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-react-popper)](https://mvnrepository.com/artifact/org.jetbrains.kotlin-wrappers/kotlin-react-popper)
+[![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-react-popper)](https://search.maven.org/artifact/org.jetbrains.kotlin-wrappers/kotlin-react-popper)
 
 # Module kotlin-react-popper
 

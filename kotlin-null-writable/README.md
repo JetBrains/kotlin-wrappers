@@ -1,4 +1,4 @@
-[![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-null-writable)](https://mvnrepository.com/artifact/org.jetbrains.kotlin-wrappers/kotlin-null-writable)
+[![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-null-writable)](https://search.maven.org/artifact/org.jetbrains.kotlin-wrappers/kotlin-null-writable)
 
 # Module kotlin-null-writable
 

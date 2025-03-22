@@ -1,4 +1,4 @@
-[![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-popperjs-core)](https://mvnrepository.com/artifact/org.jetbrains.kotlin-wrappers/kotlin-popperjs-core)
+[![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-popperjs-core)](https://search.maven.org/artifact/org.jetbrains.kotlin-wrappers/kotlin-popperjs-core)
 
 # Module kotlin-popperjs-core
 

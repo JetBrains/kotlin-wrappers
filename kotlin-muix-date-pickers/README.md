@@ -1,4 +1,4 @@
-[![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-muix-date-pickers)](https://mvnrepository.com/artifact/org.jetbrains.kotlin-wrappers/kotlin-muix-date-pickers)
+[![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-muix-date-pickers)](https://search.maven.org/artifact/org.jetbrains.kotlin-wrappers/kotlin-muix-date-pickers)
 
 # Module kotlin-muix-date-pickers
 

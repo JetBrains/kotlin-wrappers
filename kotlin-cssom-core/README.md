@@ -1,4 +1,4 @@
-[![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-cssom-core)](https://mvnrepository.com/artifact/org.jetbrains.kotlin-wrappers/kotlin-cssom-core)
+[![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-cssom-core)](https://search.maven.org/artifact/org.jetbrains.kotlin-wrappers/kotlin-cssom-core)
 
 # Module kotlin-cssom-core
 

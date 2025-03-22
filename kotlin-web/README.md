@@ -1,4 +1,4 @@
-[![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-web)](https://mvnrepository.com/artifact/org.jetbrains.kotlin-wrappers/kotlin-web)
+[![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-web)](https://search.maven.org/artifact/org.jetbrains.kotlin-wrappers/kotlin-web)
 
 # Module kotlin-web
 

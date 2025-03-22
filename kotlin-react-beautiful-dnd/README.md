@@ -1,4 +1,4 @@
-[![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-react-beautiful-dnd)](https://mvnrepository.com/artifact/org.jetbrains.kotlin-wrappers/kotlin-react-beautiful-dnd)
+[![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-react-beautiful-dnd)](https://search.maven.org/artifact/org.jetbrains.kotlin-wrappers/kotlin-react-beautiful-dnd)
 
 # Module kotlin-react-beautiful-dnd
 

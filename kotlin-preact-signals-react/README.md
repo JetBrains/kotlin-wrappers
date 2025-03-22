@@ -1,4 +1,4 @@
-[![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-preact-signals-react)](https://mvnrepository.com/artifact/org.jetbrains.kotlin-wrappers/kotlin-preact-signals-react)
+[![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-preact-signals-react)](https://search.maven.org/artifact/org.jetbrains.kotlin-wrappers/kotlin-preact-signals-react)
 
 # Module kotlin-preact-signals-react
 

@@ -1,4 +1,4 @@
-[![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-react-use)](https://mvnrepository.com/artifact/org.jetbrains.kotlin-wrappers/kotlin-react-use)
+[![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-react-use)](https://search.maven.org/artifact/org.jetbrains.kotlin-wrappers/kotlin-react-use)
 
 # Module kotlin-react-use
 

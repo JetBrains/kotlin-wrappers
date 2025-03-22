@@ -1,4 +1,4 @@
-[![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-csstype)](https://mvnrepository.com/artifact/org.jetbrains.kotlin-wrappers/kotlin-csstype)
+[![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-csstype)](https://search.maven.org/artifact/org.jetbrains.kotlin-wrappers/kotlin-csstype)
 
 # Module kotlin-csstype
 

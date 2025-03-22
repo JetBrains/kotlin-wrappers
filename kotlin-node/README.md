@@ -1,4 +1,4 @@
-[![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-node)](https://mvnrepository.com/artifact/org.jetbrains.kotlin-wrappers/kotlin-node)
+[![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-node)](https://search.maven.org/artifact/org.jetbrains.kotlin-wrappers/kotlin-node)
 
 # Module kotlin-node
 

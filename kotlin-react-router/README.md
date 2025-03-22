@@ -1,4 +1,4 @@
-[![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-react-router)](https://mvnrepository.com/artifact/org.jetbrains.kotlin-wrappers/kotlin-react-router)
+[![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-react-router)](https://search.maven.org/artifact/org.jetbrains.kotlin-wrappers/kotlin-react-router)
 
 # Module kotlin-react-router
 
