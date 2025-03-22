@@ -5,8 +5,8 @@ package tanstack.query.core
 import js.objects.JsPlainObject
 
 @JsPlainObject
-external interface MutationObserverBaseResult<TData, TError, TVariables, TContext>
-    : MutationState<TData, TError, TVariables, TContext> {
+external interface MutationObserverBaseResult<TData, TError, TVariables, TContext> :
+    MutationState<TData, TError, TVariables, TContext> {
     override val data: TData?
     override val variables: TVariables?
     override val error: TError?

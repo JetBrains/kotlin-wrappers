@@ -2,6 +2,7 @@
 
 package tanstack.react.query
 
-external interface QueryErrorResetBoundaryProps : react.Props {
+external interface QueryErrorResetBoundaryProps :
+    react.Props {
     var children: QueryErrorResetBoundaryFunction
 }

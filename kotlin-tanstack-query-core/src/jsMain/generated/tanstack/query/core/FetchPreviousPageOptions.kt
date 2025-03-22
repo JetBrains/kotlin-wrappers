@@ -5,6 +5,7 @@ package tanstack.query.core
 import js.objects.JsPlainObject
 
 @JsPlainObject
-external interface FetchPreviousPageOptions : ResultOptions {
+external interface FetchPreviousPageOptions :
+    ResultOptions {
     val cancelRefetch: Boolean?
 }

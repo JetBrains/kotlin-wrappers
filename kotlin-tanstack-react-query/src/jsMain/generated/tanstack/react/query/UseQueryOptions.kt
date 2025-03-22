@@ -6,5 +6,5 @@ import js.objects.JsPlainObject
 import tanstack.query.core.QueryKey
 
 @JsPlainObject
-external interface UseQueryOptions<TQueryFnData, TError, TData, TQueryKey : QueryKey>
-    : UseBaseQueryOptions<TQueryFnData, TError, TData, TQueryFnData, TQueryKey>
+external interface UseQueryOptions<TQueryFnData, TError, TData, TQueryKey : QueryKey> :
+    UseBaseQueryOptions<TQueryFnData, TError, TData, TQueryFnData, TQueryKey>

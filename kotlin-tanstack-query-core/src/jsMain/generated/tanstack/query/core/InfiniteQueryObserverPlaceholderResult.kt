@@ -6,8 +6,8 @@ import js.core.Void
 import js.objects.JsPlainObject
 
 @JsPlainObject
-external interface InfiniteQueryObserverPlaceholderResult<TData, TError>
-    : InfiniteQueryObserverResult<TData, TError> {
+external interface InfiniteQueryObserverPlaceholderResult<TData, TError> :
+    InfiniteQueryObserverResult<TData, TError> {
     override val data: TData
     override val isError: False
     override val error: Void

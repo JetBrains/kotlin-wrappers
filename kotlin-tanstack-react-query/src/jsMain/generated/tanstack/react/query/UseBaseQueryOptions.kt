@@ -7,7 +7,7 @@ import tanstack.query.core.QueryKey
 import tanstack.query.core.QueryObserverOptions
 
 @JsPlainObject
-external interface UseBaseQueryOptions<TQueryFnData, TError, TData, TQueryData, TQueryKey : QueryKey>
-    : QueryObserverOptions<TQueryFnData, TError, TData, TQueryData, TQueryKey, Any?> {
+external interface UseBaseQueryOptions<TQueryFnData, TError, TData, TQueryData, TQueryKey : QueryKey> :
+    QueryObserverOptions<TQueryFnData, TError, TData, TQueryData, TQueryKey, Any?> {
     val subscribed: Boolean?
 }

@@ -6,8 +6,8 @@ import js.core.Void
 import js.objects.JsPlainObject
 
 @JsPlainObject
-external interface QueryObserverLoadingErrorResult<TData, TError>
-    : QueryObserverResult<TData, TError> {
+external interface QueryObserverLoadingErrorResult<TData, TError> :
+    QueryObserverResult<TData, TError> {
     override val data: Void
     override val error: TError
     override val isError: True

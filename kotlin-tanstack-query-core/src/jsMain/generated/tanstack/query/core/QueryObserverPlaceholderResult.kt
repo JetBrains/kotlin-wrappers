@@ -6,8 +6,8 @@ import js.core.Void
 import js.objects.JsPlainObject
 
 @JsPlainObject
-external interface QueryObserverPlaceholderResult<TData, TError>
-    : QueryObserverResult<TData, TError> {
+external interface QueryObserverPlaceholderResult<TData, TError> :
+    QueryObserverResult<TData, TError> {
     override val data: TData
     override val isError: False
     override val error: Void

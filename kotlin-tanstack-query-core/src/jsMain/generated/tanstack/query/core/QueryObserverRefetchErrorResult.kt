@@ -5,8 +5,8 @@ package tanstack.query.core
 import js.objects.JsPlainObject
 
 @JsPlainObject
-external interface QueryObserverRefetchErrorResult<TData, TError>
-    : QueryObserverResult<TData, TError> {
+external interface QueryObserverRefetchErrorResult<TData, TError> :
+    QueryObserverResult<TData, TError> {
     override val data: TData
     override val error: TError
     override val isError: True

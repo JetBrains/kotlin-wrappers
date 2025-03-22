@@ -6,8 +6,8 @@ import js.objects.JsPlainObject
 import js.promise.Promise
 
 @JsPlainObject
-external interface InfiniteQueryObserverBaseResult<TData, TError>
-    : QueryObserverResult<TData, TError> {
+external interface InfiniteQueryObserverBaseResult<TData, TError> :
+    QueryObserverResult<TData, TError> {
     val fetchNextPage: (options: FetchNextPageOptions?) -> Promise<InfiniteQueryObserverResult<TData, TError>>
     val fetchPreviousPage: (options: FetchPreviousPageOptions?) -> Promise<InfiniteQueryObserverResult<TData, TError>>
     val hasNextPage: Boolean

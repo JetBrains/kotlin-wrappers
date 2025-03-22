@@ -5,7 +5,8 @@ package tanstack.query.core
 import js.objects.JsPlainObject
 
 @JsPlainObject
-external interface NotifyEventQueryAdded : NotifyEvent {
+external interface NotifyEventQueryAdded :
+    NotifyEvent {
     override val type: NotifyEventType /* 'added' */
     val query: Query<*, *, *, *>
 }

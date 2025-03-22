@@ -5,4 +5,5 @@ package tanstack.query.core
 import js.objects.JsPlainObject
 
 @JsPlainObject
-external interface InvalidateOptions : RefetchOptions
+external interface InvalidateOptions :
+    RefetchOptions

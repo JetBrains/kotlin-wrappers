@@ -6,8 +6,8 @@ import js.core.Void
 import js.objects.JsPlainObject
 
 @JsPlainObject
-external interface MutationObserverSuccessResult<TData, TError, TVariables, TContext>
-    : MutationObserverResult<TData, TError, TVariables, TContext> {
+external interface MutationObserverSuccessResult<TData, TError, TVariables, TContext> :
+    MutationObserverResult<TData, TError, TVariables, TContext> {
     override val data: TData
     override val error: Void
     override val variables: TVariables
