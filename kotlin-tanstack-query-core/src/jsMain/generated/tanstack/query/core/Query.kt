@@ -8,8 +8,9 @@ import js.array.ReadonlyArray
 import js.core.Void
 import js.promise.Promise
 
-open external class Query<TQueryFnData, TError, TData, TQueryKey : QueryKey>(config: QueryConfig<TQueryFnData, TError, TData, TQueryKey>) :
-    Removable {
+open external class Query<TQueryFnData, TError, TData, TQueryKey : QueryKey>(
+    config: QueryConfig<TQueryFnData, TError, TData, TQueryKey>,
+) : Removable {
     open var queryKey: TQueryKey
     open var queryHash: String
     open var options: QueryOptions<TQueryFnData, TError, TData, TQueryKey, *>

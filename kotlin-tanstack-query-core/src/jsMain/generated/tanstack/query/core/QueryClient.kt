@@ -9,7 +9,9 @@ import js.array.ReadonlyArray
 import js.core.Void
 import js.promise.Promise
 
-open external class QueryClient(config: QueryClientConfig = definedExternally) {
+open external class QueryClient(
+    config: QueryClientConfig = definedExternally,
+) {
     open fun mount()
     open fun unmount()
     open fun <TQueryFilters : QueryFilters<*, *, *, *>> isFetching(filters: TQueryFilters = definedExternally): Int

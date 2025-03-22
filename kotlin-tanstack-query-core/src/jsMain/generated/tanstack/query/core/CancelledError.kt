@@ -6,7 +6,9 @@ package tanstack.query.core
 
 import js.errors.JsError
 
-open external class CancelledError(options: CancelOptions = definedExternally) : JsError {
+open external class CancelledError(
+    options: CancelOptions = definedExternally,
+) : JsError {
     open var revert: Boolean?
     open var silent: Boolean?
 }

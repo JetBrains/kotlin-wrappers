@@ -6,8 +6,9 @@ package tanstack.query.core
 
 import js.promise.Promise
 
-open external class Mutation<TData, TError, TVariables, TContext>(config: MutationConfig<TData, TError, TVariables, TContext>) :
-    Removable {
+open external class Mutation<TData, TError, TVariables, TContext>(
+    config: MutationConfig<TData, TError, TVariables, TContext>,
+) : Removable {
     open var state: MutationState<TData, TError, TVariables, TContext>
     open var options: MutationOptions<TData, TError, TVariables, TContext>
     open val mutationId: Int
