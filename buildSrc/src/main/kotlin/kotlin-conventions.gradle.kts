@@ -2,10 +2,8 @@
     ExperimentalWasmDsl::class,
 )
 
-import org.gradle.util.Path.SEPARATOR
 import org.jetbrains.kotlin.gradle.ExperimentalWasmDsl
-import org.jetbrains.kotlin.gradle.tasks.Kotlin2JsCompile
-import org.jetbrains.kotlin.gradle.tasks.KotlinCompilationTask
+import org.jetbrains.kotlin.gradle.targets.js.dsl.KotlinJsTargetDsl
 
 plugins {
     kotlin("multiplatform")
@@ -13,44 +11,38 @@ plugins {
     id("kotlin-test-conventions")
 }
 
+val COMMON_FREE_COMPILER_ARGS = listOf(
+    "-Xexpect-actual-classes",
+    "-Xdont-warn-on-error-suppression",
+
+    "-Xsuppress-warning=NOTHING_TO_INLINE",
+)
+
+val COMMON_OPT_INS = listOf(
+    "kotlin.ExperimentalStdlibApi",
+    "kotlin.ExperimentalUnsignedTypes",
+    "kotlin.contracts.ExperimentalContracts",
+    "kotlin.js.ExperimentalJsExport",
+)
+
+val JS_FREE_COMPILER_ARGS = listOf(
+    "-Xir-generate-inline-anonymous-functions",
+)
+
 kotlin {
+    compilerOptions {
+        allWarningsAsErrors = true
+        freeCompilerArgs.addAll(COMMON_FREE_COMPILER_ARGS)
+        optIn.addAll(COMMON_OPT_INS)
+    }
+
     js {
-        outputModuleName = project.name
-
-        when (project.jsPlatform) {
-            JsPlatform.WEB -> {
-                browser()
-                nodejs()
-            }
-
-            JsPlatform.BROWSER -> {
-                browser()
-            }
-
-            JsPlatform.NODE -> {
-                nodejs()
-            }
-        }
+        configureJsTarget(moduleName = project.name)
     }
 
     if (project.wasmSupported) {
         wasmJs {
-            outputModuleName = project.name + "-wasm"
-
-            when (project.jsPlatform) {
-                JsPlatform.WEB -> {
-                    browser()
-                    nodejs()
-                }
-
-                JsPlatform.BROWSER -> {
-                    browser()
-                }
-
-                JsPlatform.NODE -> {
-                    nodejs()
-                }
-            }
+            configureJsTarget(moduleName = project.name + "-wasm")
         }
     }
 
@@ -69,30 +61,29 @@ kotlin {
     }
 }
 
-tasks.withType<KotlinCompilationTask<*>>().configureEach {
-    compilerOptions {
-        allWarningsAsErrors = true
+fun KotlinJsTargetDsl.configureJsTarget(
+    moduleName: String,
+) {
+    outputModuleName = moduleName
 
-        freeCompilerArgs.addAll(
-            "-Xexpect-actual-classes",
-            "-Xdont-warn-on-error-suppression",
+    when (project.jsPlatform) {
+        JsPlatform.WEB -> {
+            browser()
+            nodejs()
+        }
 
-            "-Xsuppress-warning=NOTHING_TO_INLINE",
+        JsPlatform.BROWSER -> {
+            browser()
+        }
 
-            "-opt-in=kotlin.ExperimentalStdlibApi",
-            "-opt-in=kotlin.ExperimentalUnsignedTypes",
-            "-opt-in=kotlin.contracts.ExperimentalContracts",
-            "-opt-in=kotlin.js.ExperimentalJsExport",
-        )
+        JsPlatform.NODE -> {
+            nodejs()
+        }
     }
-}
 
-tasks.withType<Kotlin2JsCompile>().configureEach {
     compilerOptions {
         target = "es2015"
 
-        freeCompilerArgs.addAll(
-            "-Xir-generate-inline-anonymous-functions",
-        )
+        freeCompilerArgs.addAll(JS_FREE_COMPILER_ARGS)
     }
 }
