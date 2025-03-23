@@ -20,9 +20,6 @@ dependencyResolutionManagement {
             library("kotlin-test", "org.jetbrains.kotlin", "kotlin-test").version(kotlinVersion)
             library("kotlin-testJunit", "org.jetbrains.kotlin", "kotlin-test-junit").version(kotlinVersion)
 
-            val seskarVersion = extra["seskar.version"] as String
-            library("seskar-core", "io.github.turansky.seskar", "seskar-core").version(seskarVersion)
-
             val coroutinesVersion = extra["kotlinx-coroutines.version"] as String
             library("coroutines-core", "org.jetbrains.kotlinx", "kotlinx-coroutines-core").version(coroutinesVersion)
             library("coroutines-test", "org.jetbrains.kotlinx", "kotlinx-coroutines-test").version(coroutinesVersion)
