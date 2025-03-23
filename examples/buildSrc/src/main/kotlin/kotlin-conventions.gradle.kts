@@ -1,6 +1,3 @@
-import org.jetbrains.kotlin.gradle.tasks.Kotlin2JsCompile
-import org.jetbrains.kotlin.gradle.tasks.KotlinCompilationTask
-
 plugins {
     kotlin("multiplatform")
     kotlin("plugin.js-plain-objects")
@@ -9,8 +6,20 @@ plugins {
 }
 
 kotlin {
+    compilerOptions {
+        allWarningsAsErrors = true
+
+        optIn.addAll(
+            "kotlin.js.ExperimentalJsExport",
+        )
+    }
+
     js {
         outputModuleName = project.name
+
+        compilerOptions {
+            target = "es2015"
+        }
 
         browser {
             commonWebpackConfig {
@@ -32,21 +41,5 @@ kotlin {
                 implementation(devNpm("style-loader", "4.0.0"))
             }
         }
-    }
-}
-
-tasks.withType<KotlinCompilationTask<*>>().configureEach {
-    compilerOptions {
-        allWarningsAsErrors = true
-
-        freeCompilerArgs.addAll(
-            "-opt-in=kotlin.js.ExperimentalJsExport",
-        )
-    }
-}
-
-tasks.withType<Kotlin2JsCompile>().configureEach {
-    compilerOptions {
-        target = "es2015"
     }
 }
