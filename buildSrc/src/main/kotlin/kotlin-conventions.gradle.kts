@@ -15,7 +15,7 @@ plugins {
 
 kotlin {
     js {
-        outputModuleName = project.path
+        outputModuleName = project.name
 
         when (project.jsPlatform) {
             JsPlatform.WEB -> {
