@@ -10,7 +10,7 @@ plugins {
 
 kotlin {
     js {
-        moduleName = project.name
+        outputModuleName = project.name
 
         browser {
             commonWebpackConfig {

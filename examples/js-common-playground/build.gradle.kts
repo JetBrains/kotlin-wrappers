@@ -11,14 +11,14 @@ plugins {
 
 kotlin {
     js {
-        moduleName = project.name
+        outputModuleName = project.name
 
         browser()
         nodejs()
     }
 
     wasmJs {
-        moduleName = project.name + "-wasm"
+        outputModuleName = project.name + "-wasm"
 
         browser()
         nodejs()

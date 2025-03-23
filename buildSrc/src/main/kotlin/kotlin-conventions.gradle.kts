@@ -15,7 +15,7 @@ plugins {
 
 kotlin {
     js {
-        moduleName = project.path
+        outputModuleName = project.path
             .removePrefix(SEPARATOR)
             .replace(SEPARATOR, "-")
 
@@ -37,7 +37,7 @@ kotlin {
 
     if (project.wasmSupported) {
         wasmJs {
-            moduleName = project.name + "-wasm"
+            outputModuleName = project.name + "-wasm"
 
             when (project.jsPlatform) {
                 JsPlatform.WEB -> {

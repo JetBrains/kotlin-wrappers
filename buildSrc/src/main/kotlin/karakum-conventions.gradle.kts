@@ -8,7 +8,7 @@ plugins {
 
 kotlin {
     js {
-        moduleName = project.path
+        outputModuleName = project.path
             .removePrefix(SEPARATOR)
             .replace(SEPARATOR, "-")
 
