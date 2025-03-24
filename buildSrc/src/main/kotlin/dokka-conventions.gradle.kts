@@ -1,11 +1,12 @@
 import org.gradle.api.tasks.PathSensitivity.RELATIVE
+import org.jetbrains.dokka.gradle.DokkaExtension
 
 plugins {
-    id("dev.adamko.dokkatoo-html")
+    id("org.jetbrains.dokka")
 }
 
-dokkatoo {
-    dokkatooSourceSets.configureEach {
+the<DokkaExtension>().apply {
+    dokkaSourceSets.configureEach {
         includes.from(prepareReadmeForDokka)
 
         val relativeProjectPath = projectDir.relativeToOrNull(rootDir)?.invariantSeparatorsPath ?: ""

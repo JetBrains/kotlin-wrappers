@@ -1,12 +1,12 @@
 plugins {
     `subproject-conventions`
-    id("dev.adamko.dokkatoo-html")
+    id("org.jetbrains.dokka")
 }
 
-dokkatoo {
+dokka {
     moduleName = "Kotlin Wrappers API Reference"
 
-    dokkatooPublications.html {
+    dokkaPublications.html {
         includes.from("README.md")
     }
 
@@ -21,7 +21,7 @@ dokkatoo {
     }
 }
 
-configurations.dokkatoo.configure {
+configurations.dokka.configure {
     dependencies.addAllLater(
         subprojectService.libraries { path ->
             project.dependencies.create(project(path))

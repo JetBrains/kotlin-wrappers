@@ -44,7 +44,7 @@ jobs:
 
       - name: Build site
         run: |
-          ./gradlew :docs:dokkatooGeneratePublicationHtml
+          ./gradlew :docs:dokkaGeneratePublicationHtml
 
       - name: Upload Dokka docs to Pages
         uses: actions/upload-pages-artifact@v3

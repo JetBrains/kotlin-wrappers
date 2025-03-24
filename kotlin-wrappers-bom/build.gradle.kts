@@ -1,7 +1,7 @@
 plugins {
     `java-platform`
     `publish-conventions`
-    id("dev.adamko.dokkatoo-html")
+    id("org.jetbrains.dokka")
 }
 
 configurations.api.configure {
