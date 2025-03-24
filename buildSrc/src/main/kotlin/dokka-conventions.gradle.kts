@@ -21,10 +21,10 @@ dokkatoo {
             }
         }
 
-        addSourceLink("src/commonMain/kotlin")
         addSourceLink("src/commonMain/generated")
-        addSourceLink("src/jsMain/kotlin")
+        addSourceLink("src/commonMain/kotlin")
         addSourceLink("src/jsMain/generated")
+        addSourceLink("src/jsMain/kotlin")
     }
 
     dokkaGeneratorIsolation = ProcessIsolation {
