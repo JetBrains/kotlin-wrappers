@@ -25,6 +25,8 @@ dokkatoo {
         addSourceLink("src/commonMain/kotlin")
         addSourceLink("src/jsMain/generated")
         addSourceLink("src/jsMain/kotlin")
+        addSourceLink("src/wasmJsMain/generated")
+        addSourceLink("src/wasmJsMain/kotlin")
     }
 
     dokkaGeneratorIsolation = ProcessIsolation {
