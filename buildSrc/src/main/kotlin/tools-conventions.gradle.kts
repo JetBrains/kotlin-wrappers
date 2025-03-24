@@ -3,10 +3,12 @@ import org.jetbrains.kotlin.gradle.targets.js.nodejs.NodeJsRootPlugin
 import org.jetbrains.kotlin.gradle.targets.js.npm.LockFileMismatchReport
 import org.jetbrains.kotlin.gradle.targets.js.npm.NpmExtension
 
+plugins {
+    id("node-conventions")
+}
+
 plugins.withType<NodeJsRootPlugin> {
     the<NodeJsRootExtension>().apply {
-        version = "22.14.0" // https://nodejs.org/en/download/package-manager
-
         versions.apply {
             webpack.version = "5.98.0" // https://www.npmjs.com/package/webpack
             webpackCli.version = "6.0.1" // https://www.npmjs.com/package/webpack-cli
