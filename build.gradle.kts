@@ -1,5 +1,4 @@
 plugins {
-    `tools-conventions`
     `react-npm-overrides`
 }
 
