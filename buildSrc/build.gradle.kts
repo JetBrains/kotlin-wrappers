@@ -22,5 +22,5 @@ dependencies {
     implementation(kotlin("gradle-plugin", version("kotlin")))
     implementation("org.jetbrains.kotlin:js-plain-objects:${version("kotlin")}")
     implementation("io.github.turansky.seskar:seskar-gradle-plugin:${version("seskar")}")
-    implementation("org.jetbrains.dokka:org.jetbrains.dokka.gradle.plugin:2.0.0")
+    implementation("org.jetbrains.dokka:org.jetbrains.dokka.gradle.plugin:${version("dokka")}")
 }
