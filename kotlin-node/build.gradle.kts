@@ -11,6 +11,6 @@ dependencies {
 
     jsMainApi(devNpm(libs.npm.types.node))
 
-    jsTestImplementation(libs.kotlin.test)
-    jsTestImplementation(libs.coroutines.test)
+    commonTestImplementation(libs.kotlin.test)
+    commonTestImplementation(libs.coroutines.test)
 }

@@ -7,6 +7,6 @@ dependencies {
 
     commonMainImplementation(libs.coroutines.core)
 
-    jsTestImplementation(libs.coroutines.test)
-    jsTestImplementation(libs.kotlin.test)
+    commonTestImplementation(libs.coroutines.test)
+    commonTestImplementation(libs.kotlin.test)
 }
