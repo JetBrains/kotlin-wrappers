@@ -30,7 +30,7 @@ suspend fun main() {
         cwd
     ) { plugin ->
         if (plugin is Function<*>) {
-            createSimplePlugin(plugin.unsafeCast<SimplePlugin>())
+            createPlugin(plugin.unsafeCast<SimplePlugin>())
         } else {
             plugin.unsafeCast<Plugin>()
         }
@@ -42,7 +42,7 @@ suspend fun main() {
         cwd
     ) { injection ->
         if (injection is Function<*>) {
-            createSimpleInjection(injection.unsafeCast<SimpleInjection>())
+            createInjection(injection.unsafeCast<SimpleInjection>())
         } else {
             injection.unsafeCast<Injection>()
         }

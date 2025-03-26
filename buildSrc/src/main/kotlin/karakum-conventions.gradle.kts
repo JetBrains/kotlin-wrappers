@@ -1,5 +1,8 @@
+import org.gradle.kotlin.dsl.withType
 import org.gradle.util.Path.SEPARATOR
+import org.jetbrains.kotlin.gradle.targets.js.nodejs.NodeJsEnvSpec
 import org.jetbrains.kotlin.gradle.targets.js.nodejs.NodeJsExec
+import org.jetbrains.kotlin.gradle.targets.js.nodejs.NodeJsPlugin
 
 plugins {
     kotlin("multiplatform")
@@ -22,7 +25,11 @@ kotlin {
     }
 }
 
-val outputPath: String = layout.projectDirectory.dir("../src/jsMain/generated").asFile.path
+plugins.withType<NodeJsPlugin> {
+    the<NodeJsEnvSpec>().version.set("22.14.0")
+}
+
+val outputPath: String = layout.projectDirectory.dir("../src/jsMain/generated2").asFile.path
 
 tasks.named<NodeJsExec>("jsNodeProductionRun") {
     args(outputPath)
