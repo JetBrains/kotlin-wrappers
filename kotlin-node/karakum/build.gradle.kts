@@ -3,15 +3,11 @@ plugins {
 }
 
 dependencies {
-    jsMainImplementation(libs.karakum) {
-        exclude(group = "org.jetbrains.kotlin-wrappers")
-    }
+    jsMainImplementation(libs.karakum)
 
     jsMainImplementation(libs.arrow.core)
 
-    jsMainImplementation(projects.kotlinJs)
-    jsMainImplementation(projects.kotlinNode)
-    jsMainImplementation(projects.kotlinTypescript)
-
-    jsMainImplementation(devNpm(libs.npm.types.node))
+    jsMainImplementation(libs.node.map {
+        devNpm(it.name, requireNotNull(it.version))
+    })
 }

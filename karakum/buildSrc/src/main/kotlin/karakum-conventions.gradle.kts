@@ -29,7 +29,7 @@ plugins.withType<NodeJsPlugin> {
     the<NodeJsEnvSpec>().version.set("22.14.0")
 }
 
-val outputPath: String = layout.projectDirectory.dir("../src/jsMain/generated2").asFile.path
+val outputPath: String = layout.projectDirectory.dir("../src/jsMain/generated").asFile.path
 
 tasks.named<NodeJsExec>("jsNodeProductionRun") {
     args(outputPath)
