@@ -47,5 +47,4 @@ sealed external interface ChildNode :
      */
     fun replaceWith(vararg nodes: Node): Unit = definedExternally
     fun replaceWith(vararg nodes: String): Unit = definedExternally
-    fun replaceWith(): Unit = definedExternally
 }
