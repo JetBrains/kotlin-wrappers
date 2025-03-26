@@ -7,7 +7,6 @@
 
 package web.dom
 
-import js.core.JsAny
 import web.html.HTMLCollection
 import web.html.HTMLElement
 import web.html.HtmlTagName
@@ -56,7 +55,8 @@ sealed external interface ParentNode :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/append)
      */
-    fun append(vararg nodes: JsAny /* Node | string */): Unit = definedExternally
+    fun append(vararg nodes: Node): Unit = definedExternally
+    fun append(vararg nodes: String): Unit = definedExternally
 
     /**
      * Inserts nodes before the first child of node, while replacing strings in nodes with equivalent Text nodes.
@@ -65,7 +65,8 @@ sealed external interface ParentNode :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/prepend)
      */
-    fun prepend(vararg nodes: JsAny /* Node | string */): Unit = definedExternally
+    fun prepend(vararg nodes: Node): Unit = definedExternally
+    fun prepend(vararg nodes: String): Unit = definedExternally
 
     /**
      * Returns the first element that is a descendant of node that matches selectors.
@@ -94,5 +95,6 @@ sealed external interface ParentNode :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/replaceChildren)
      */
-    fun replaceChildren(vararg nodes: JsAny /* Node | string */): Unit = definedExternally
+    fun replaceChildren(vararg nodes: Node): Unit = definedExternally
+    fun replaceChildren(vararg nodes: String): Unit = definedExternally
 }

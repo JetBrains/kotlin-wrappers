@@ -5,6 +5,7 @@ package web.components
 import js.array.ReadonlyArray
 import web.dom.Element
 import web.dom.Node
+import web.dom.Text
 import web.events.Event
 import web.events.EventInstance
 import web.events.JsEvent
@@ -25,7 +26,8 @@ protected constructor() :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSlotElement/assign)
      */
-    fun assign(vararg nodes: Element /* | Text */)
+    fun assign(vararg nodes: Element)
+    fun assign(vararg nodes: Text)
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSlotElement/assignedElements)
