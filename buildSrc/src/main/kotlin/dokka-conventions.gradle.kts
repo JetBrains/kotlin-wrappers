@@ -1,11 +1,10 @@
 import org.gradle.api.tasks.PathSensitivity.RELATIVE
-import org.jetbrains.dokka.gradle.DokkaExtension
 
 plugins {
     id("org.jetbrains.dokka")
 }
 
-the<DokkaExtension>().apply {
+dokka {
     dokkaSourceSets.configureEach {
         includes.from(prepareReadmeForDokka)
 
