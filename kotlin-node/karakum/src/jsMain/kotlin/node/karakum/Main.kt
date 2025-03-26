@@ -72,7 +72,6 @@ suspend fun main() {
         cwd,
     )
 
-
     generate {
         plugins = manyOf(values = jsPlugins + arrayOf(
             convertAssertStrict

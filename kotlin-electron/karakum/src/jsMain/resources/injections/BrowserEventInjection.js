@@ -1,5 +1,5 @@
 import ts from "typescript";
-import * as karakum from "karakum";
+import * as karakum from "../karakum.mjs";
 
 const eventHandlerMethods = new Set([
     "addEventListener",
@@ -103,7 +103,7 @@ function extractEventPayload(node, context) {
                     return []
                 }
 
-                const typeScriptService = context.lookupService(karakum.typeScriptServiceKey)
+                const typeScriptService = context.lookupService(karakum.typeScriptServiceKey.get())
                 const typeChecker = typeScriptService?.program.getTypeChecker()
 
                 const symbol = typeChecker?.getSymbolAtLocation(listener.type.typeName)
@@ -120,7 +120,7 @@ function extractEventPayload(node, context) {
             }
         }
 
-        const typeScriptService = context.lookupService(karakum.typeScriptServiceKey)
+        const typeScriptService = context.lookupService(karakum.typeScriptServiceKey.get())
 
         console.error(`Suspicious listener: ${typeScriptService?.printNode(listener)}`)
 
@@ -146,7 +146,7 @@ export default {
             const name = eventContainer.name
             if (!name) return null
 
-            const typeScriptService = context.lookupService(karakum.typeScriptServiceKey)
+            const typeScriptService = context.lookupService(karakum.typeScriptServiceKey.get())
             const typeChecker = typeScriptService?.program.getTypeChecker()
 
             const symbol = typeChecker?.getSymbolAtLocation(name)
@@ -176,7 +176,7 @@ export default {
     },
 
     inject(node, context, render) {
-        if (context.type !== karakum.InjectionType.MEMBER) return []
+        if (context.type !== "MEMBER") return []
 
         let name
 
@@ -188,7 +188,7 @@ export default {
 
         if (!name) return []
 
-        const typeScriptService = context.lookupService(karakum.typeScriptServiceKey)
+        const typeScriptService = context.lookupService(karakum.typeScriptServiceKey.get())
         const typeChecker = typeScriptService?.program.getTypeChecker()
 
         const symbol = typeChecker?.getSymbolAtLocation(name)

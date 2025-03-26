@@ -1,5 +1,5 @@
 import ts from "typescript";
-import * as karakum from "karakum";
+import * as karakum from "../karakum.mjs";
 
 const propertyNames = {
     modifiers: "modifier",
