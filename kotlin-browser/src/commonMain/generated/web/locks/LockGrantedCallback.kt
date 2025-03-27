@@ -2,6 +2,6 @@
 
 package web.locks
 
-typealias LockGrantedCallback = (
+typealias LockGrantedCallback<T> = (
     lock: Lock?,
-) -> Unit
+) -> T

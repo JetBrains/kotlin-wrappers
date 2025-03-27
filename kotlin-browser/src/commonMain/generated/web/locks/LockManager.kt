@@ -2,7 +2,7 @@
 
 package web.locks
 
-import js.core.Void
+import js.core.JsAny
 import js.promise.Promise
 import seskar.js.JsAsync
 import kotlin.js.JsName
@@ -29,29 +29,29 @@ private constructor() {
      */
     @JsAsync
     @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun request(
+    suspend fun <T : JsAny?> request(
         name: String,
-        callback: LockGrantedCallback,
-    )
+        callback: LockGrantedCallback<T>,
+    ): T
 
     @JsName("request")
-    fun requestAsync(
+    fun <T : JsAny?> requestAsync(
         name: String,
-        callback: LockGrantedCallback,
-    ): Promise<Void>
+        callback: LockGrantedCallback<T>,
+    ): Promise<T>
 
     @JsAsync
     @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun request(
+    suspend fun <T : JsAny?> request(
         name: String,
         options: LockOptions,
-        callback: LockGrantedCallback,
-    )
+        callback: LockGrantedCallback<T>,
+    ): T
 
     @JsName("request")
-    fun requestAsync(
+    fun <T : JsAny?> requestAsync(
         name: String,
         options: LockOptions,
-        callback: LockGrantedCallback,
-    ): Promise<Void>
+        callback: LockGrantedCallback<T>,
+    ): Promise<T>
 }
