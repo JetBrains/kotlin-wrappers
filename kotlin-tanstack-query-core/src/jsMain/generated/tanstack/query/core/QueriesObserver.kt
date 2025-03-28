@@ -22,7 +22,6 @@ open external class QueriesObserver<TCombinedResult>(
     open fun setQueries(
         queries: ReadonlyArray<QueryObserverOptions<*, *, *, *, *, *>>,
         options: QueriesObserverOptions<TCombinedResult> = definedExternally,
-        notifyOptions: NotifyOptions = definedExternally,
     )
 
     open fun getCurrentResult(): ReadonlyArray<QueryObserverResult<*, *>>

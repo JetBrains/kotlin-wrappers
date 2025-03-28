@@ -17,11 +17,7 @@ open external class QueryObserver<TQueryFnData, TError, TData, TQueryData, TQuer
     open fun shouldFetchOnReconnect(): Boolean
     open fun shouldFetchOnWindowFocus(): Boolean
     open fun destroy()
-    open fun setOptions(
-        options: QueryObserverOptions<TQueryFnData, TError, TData, TQueryData, TQueryKey, *>,
-        notifyOptions: NotifyOptions = definedExternally,
-    )
-
+    open fun setOptions(options: QueryObserverOptions<TQueryFnData, TError, TData, TQueryData, TQueryKey, *>)
     open fun getOptimisticResult(options: DefaultedQueryObserverOptions<TQueryFnData, TError, TData, TQueryData, TQueryKey>): QueryObserverResult<TData, TError>
     open fun getCurrentResult(): QueryObserverResult<TData, TError>
     open fun trackResult(
@@ -39,6 +35,6 @@ open external class QueryObserver<TQueryFnData, TError, TData, TQueryData, TQuer
         options: QueryObserverOptions<TQueryFnData, TError, TData, TQueryData, TQueryKey, *>,
     ): QueryObserverResult<TData, TError>
 
-    open fun updateResult(notifyOptions: NotifyOptions = definedExternally)
+    open fun updateResult()
     open fun onQueryUpdate()
 }
