@@ -9,7 +9,6 @@ plugins {
     kotlin("multiplatform")
     kotlin("plugin.js-plain-objects")
     id("io.github.turansky.seskar")
-    id("kotlin-test-conventions")
 }
 
 kotlin {
