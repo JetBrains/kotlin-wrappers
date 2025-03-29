@@ -1,5 +1,3 @@
-@file:JsModule("react-select")
-
 package react.select
 
 import js.objects.JsPlainObject
@@ -259,6 +257,3 @@ external interface SelectProps<Option : Any, Group : GroupBase<Option>> :
     /** Sets the form attribute on the input */
     var form: String?
 }
-
-@JsName("default")
-external val Select: ComponentType<SelectProps<*, *>>
