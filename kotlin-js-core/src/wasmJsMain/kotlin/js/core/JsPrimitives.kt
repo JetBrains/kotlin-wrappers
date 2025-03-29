@@ -1,30 +1,48 @@
 package js.core
 
-import kotlin.js.toBoolean as ktToBoolean
+import kotlin.js.toBoolean as toKotlinBoolean
+import kotlin.js.toDouble as toKotlinDouble
+import kotlin.js.toInt as toKotlinInt
 import kotlin.js.toJsBoolean as ktToJsBoolean
 import kotlin.js.toJsString as ktToJsString
-import kotlin.js.toDouble as ktToDouble
-import kotlin.js.toInt as ktToInt
-import kotlin.js.toJsNumber as ktToJsNumber
 
 actual object JsPrimitives {
-    actual fun JsBoolean.toBoolean(): Boolean = this.ktToBoolean()
-    actual fun Boolean.toJsBoolean(): JsBoolean = this.ktToJsBoolean()
+    actual fun JsBoolean.toBoolean(): Boolean =
+        toKotlinBoolean()
 
-    actual fun String.toJsString(): JsString = this.ktToJsString()
+    actual fun Boolean.toJsBoolean(): JsBoolean =
+        ktToJsBoolean()
 
-    actual fun JsFloat.toFloat(): Float = this.ktToDouble().toFloat()
-    actual fun Float.toJsFloat(): JsFloat = this.toDouble().ktToJsNumber()
+    actual fun String.toJsString(): JsString =
+        ktToJsString()
 
-    actual fun JsDouble.toDouble(): Double = this.ktToDouble()
-    actual fun Double.toJsDouble(): JsDouble = this.ktToJsNumber()
+    actual fun JsFloat.toFloat(): Float =
+        toKotlinDouble().toFloat()
 
-    actual fun JsByte.toByte(): Byte = this.ktToInt().toByte()
-    actual fun Byte.toJsByte(): JsByte = this.toInt().ktToJsNumber()
+    actual fun Float.toJsFloat(): JsFloat =
+        toDouble().toJsNumber()
 
-    actual fun JsShort.toShort(): Short = this.ktToInt().toShort()
-    actual fun Short.toJsShort(): JsShort = this.toInt().ktToJsNumber()
+    actual fun JsDouble.toDouble(): Double =
+        toKotlinDouble()
 
-    actual fun JsInt.toInt(): Int = this.ktToInt()
-    actual fun Int.toJsInt(): JsInt = this.ktToJsNumber()
+    actual fun Double.toJsDouble(): JsDouble =
+        toJsNumber()
+
+    actual fun JsByte.toByte(): Byte =
+        toKotlinInt().toByte()
+
+    actual fun Byte.toJsByte(): JsByte =
+        toInt().toJsNumber()
+
+    actual fun JsShort.toShort(): Short =
+        toKotlinInt().toShort()
+
+    actual fun Short.toJsShort(): JsShort =
+        toInt().toJsNumber()
+
+    actual fun JsInt.toInt(): Int =
+        toKotlinInt()
+
+    actual fun Int.toJsInt(): JsInt =
+        toJsNumber()
 }
