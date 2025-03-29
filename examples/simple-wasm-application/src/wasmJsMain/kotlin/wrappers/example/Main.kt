@@ -1,10 +1,11 @@
 package wrappers.example
 
+import web.blob.Blob
 import web.prompts.alert
-import web.buffer.Blob
 
 suspend fun main() {
-    Blob()
+    val blob = Blob()
 
     alert("Hello, world!")
+    alert("Blob size: ${blob.size}")
 }
