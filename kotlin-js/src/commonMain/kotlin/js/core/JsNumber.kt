@@ -4,7 +4,7 @@ import kotlin.js.JsName
 import kotlin.js.definedExternally
 
 @JsName("Number")
-external class JsNumber : JsAny {
+external class JsNumber {
     internal constructor(value: Int)
     internal constructor(value: Double)
     internal constructor(value: String)
@@ -33,17 +33,3 @@ fun Double.toExponential(): String =
 
 fun Double.toExponential(fractionDigits: Int): String =
     JsNumber(this).toExponential(fractionDigits)
-
-expect fun JsNumber.toDouble(): Double
-expect fun JsNumber.toFloat(): Float
-expect fun JsNumber.toLong(): Long
-expect fun JsNumber.toInt(): Int
-expect fun JsNumber.toByte(): Byte
-expect fun JsNumber.toShort(): Short
-
-expect fun Double.toJsNumber(): JsNumber
-expect fun Float.toJsNumber(): JsNumber
-expect fun Long.toJsNumber(): JsNumber
-expect fun Int.toJsNumber(): JsNumber
-expect fun Byte.toJsNumber(): JsNumber
-expect fun Short.toJsNumber(): JsNumber

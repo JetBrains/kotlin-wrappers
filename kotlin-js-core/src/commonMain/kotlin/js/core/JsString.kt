@@ -6,5 +6,3 @@ package js.core
 
 expect external class JsString :
     JsAny
-
-expect fun String.toJsString(): JsString
