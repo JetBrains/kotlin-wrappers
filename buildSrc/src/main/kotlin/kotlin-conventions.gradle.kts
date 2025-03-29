@@ -37,11 +37,15 @@ kotlin {
         optIn.addAll(COMMON_OPT_INS)
     }
 
-    js {
-        configureJsTarget(moduleName = project.name)
+    val jsTarget = project.jsTarget
+
+    if (jsTarget.js) {
+        js {
+            configureJsTarget(moduleName = project.name)
+        }
     }
 
-    if (project.wasmSupported) {
+    if (jsTarget.wasm) {
         wasmJs {
             configureJsTarget(moduleName = project.name + "-wasm")
         }
