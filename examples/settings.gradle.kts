@@ -20,7 +20,6 @@ dependencyResolutionManagement {
 }
 
 include("browser")
-include("js-common-playground")
 include("react")
 include("react-lazy-modules-webpack")
 include("react-router")
