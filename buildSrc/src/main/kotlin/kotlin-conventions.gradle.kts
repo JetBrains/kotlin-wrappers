@@ -71,19 +71,14 @@ fun KotlinJsTargetDsl.configureJsTarget(
 ) {
     outputModuleName = moduleName
 
-    when (project.jsPlatform) {
-        JsPlatform.WEB -> {
-            browser()
-            nodejs()
-        }
+    val jsPlatform = project.jsPlatform
 
-        JsPlatform.BROWSER -> {
-            browser()
-        }
+    if (jsPlatform.browser) {
+        browser()
+    }
 
-        JsPlatform.NODE -> {
-            nodejs()
-        }
+    if (jsPlatform.node) {
+        nodejs()
     }
 
     compilerOptions {
