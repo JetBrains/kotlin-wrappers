@@ -1,8 +1,11 @@
 package react.select
 
-sealed external interface InputActionMeta {
-    var action: InputAction
+import js.objects.JsPlainObject
+
+@JsPlainObject
+external interface InputActionMeta {
+    val action: InputAction
 
     /** The previous value of the search input. */
-    var prevInputValue: String
+    val prevInputValue: String
 }

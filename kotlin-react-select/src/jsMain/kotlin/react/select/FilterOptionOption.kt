@@ -1,7 +1,10 @@
 package react.select
 
+import js.objects.JsPlainObject
+
+@JsPlainObject
 external interface FilterOptionOption<Option> {
-    var label: String
-    var value: String
-    var data: Option
+    val label: String
+    val value: String
+    val data: Option
 }

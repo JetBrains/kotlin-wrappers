@@ -1,5 +1,8 @@
 package react.select
 
+import js.objects.JsPlainObject
+
+@JsPlainObject
 external interface HasInputValue {
-    var inputValue: String
+    val inputValue: String
 }
