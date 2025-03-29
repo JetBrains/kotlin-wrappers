@@ -5,7 +5,9 @@ package react.select
 import react.ComponentType
 import react.ReactNode
 
-external interface CreatableSelectProps<Option : Any, Group : GroupBase<Option>> : SelectProps<Option, Group> {
+external interface CreatableSelectProps<Option : Any, Group : GroupBase<Option>> :
+    SelectProps<Option, Group> {
+
     /**
      * Allow options to be created while the `isLoading` prop is true. Useful to
      * prevent the "create new ..." option being displayed while async results are

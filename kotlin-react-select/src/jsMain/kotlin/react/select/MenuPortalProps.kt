@@ -5,7 +5,9 @@ import react.dom.html.HTMLAttributes
 import web.html.HTMLDivElement
 import web.html.HTMLElement
 
-external interface MenuPortalProps<Option : Any, Group : GroupBase<Option>> : PropsWithChildren {
+external interface MenuPortalProps<Option : Any, Group : GroupBase<Option>> :
+    PropsWithChildren {
+
     var appendTo: HTMLElement?
     var controlElement: HTMLDivElement?
     var innerProps: HTMLAttributes<HTMLDivElement>

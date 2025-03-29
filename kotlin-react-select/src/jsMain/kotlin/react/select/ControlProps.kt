@@ -5,7 +5,9 @@ import react.Ref
 import react.dom.html.HTMLAttributes
 import web.html.HTMLDivElement
 
-external interface ControlProps<Option : Any, Group : GroupBase<Option>> : PropsWithChildren {
+external interface ControlProps<Option : Any, Group : GroupBase<Option>> :
+    PropsWithChildren {
+
     var innerRef: Ref<HTMLDivElement>
 
     /** The mouse down event and the innerRef to pass down to the controller element. */
