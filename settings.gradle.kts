@@ -92,6 +92,9 @@ include("kotlin-js")
 // Kotlin/JS: Helper for `kotlin-js`
 include("kotlin-js-core")
 
+// Kotlin/JS: JSZip wrappers
+include("kotlin-jszip")
+
 // Kotlin/JS: Material UI wrappers
 include("kotlin-mui-material")
 
