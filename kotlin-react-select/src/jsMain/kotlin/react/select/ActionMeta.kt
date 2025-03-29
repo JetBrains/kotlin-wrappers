@@ -1,9 +1,12 @@
 package react.select
 
+import js.objects.JsPlainObject
+
+@JsPlainObject
 sealed external interface ActionMeta<Option> {
-    var action: String
-    var option: Option?
-    var removedValue: Option?
-    var removedValues: Options<Option>?
-    var name: String?
+    val action: String
+    val option: Option?
+    val removedValue: Option?
+    val removedValues: Options<Option>?
+    val name: String?
 }
