@@ -1,23 +1,23 @@
 package js.core
 
 expect object JsPrimitives {
-    fun JsBoolean.toBoolean(): Boolean
-    fun Boolean.toJsBoolean(): JsBoolean
+    inline fun JsBoolean.toBoolean(): Boolean
+    inline fun Boolean.toJsBoolean(): JsBoolean
 
-    fun String.toJsString(): JsString
+    inline fun String.toJsString(): JsString
 
-    fun JsFloat.toFloat(): Float
-    fun Float.toJsFloat(): JsFloat
+    inline fun JsFloat.toFloat(): Float
+    inline fun Float.toJsFloat(): JsFloat
 
-    fun JsDouble.toDouble(): Double
-    fun Double.toJsDouble(): JsDouble
+    inline fun JsDouble.toDouble(): Double
+    inline fun Double.toJsDouble(): JsDouble
 
-    fun JsByte.toByte(): Byte
-    fun Byte.toJsByte(): JsByte
+    inline fun JsByte.toByte(): Byte
+    inline fun Byte.toJsByte(): JsByte
 
-    fun JsShort.toShort(): Short
-    fun Short.toJsShort(): JsShort
+    inline fun JsShort.toShort(): Short
+    inline fun Short.toJsShort(): JsShort
 
-    fun JsInt.toInt(): Int
-    fun Int.toJsInt(): JsInt
+    inline fun JsInt.toInt(): Int
+    inline fun Int.toJsInt(): JsInt
 }

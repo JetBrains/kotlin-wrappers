@@ -3,46 +3,46 @@ package js.core
 import kotlin.js.toBoolean as toKotlinBoolean
 import kotlin.js.toDouble as toKotlinDouble
 import kotlin.js.toInt as toKotlinInt
-import kotlin.js.toJsBoolean as ktToJsBoolean
-import kotlin.js.toJsString as ktToJsString
+import kotlin.js.toJsBoolean as toJavaScriptBoolean
+import kotlin.js.toJsString as toJavaScriptString
 
 actual object JsPrimitives {
-    actual fun JsBoolean.toBoolean(): Boolean =
+    actual inline fun JsBoolean.toBoolean(): Boolean =
         toKotlinBoolean()
 
-    actual fun Boolean.toJsBoolean(): JsBoolean =
-        ktToJsBoolean()
+    actual inline fun Boolean.toJsBoolean(): JsBoolean =
+        toJavaScriptBoolean()
 
-    actual fun String.toJsString(): JsString =
-        ktToJsString()
+    actual inline fun String.toJsString(): JsString =
+        toJavaScriptString()
 
-    actual fun JsFloat.toFloat(): Float =
+    actual inline fun JsFloat.toFloat(): Float =
         toKotlinDouble().toFloat()
 
-    actual fun Float.toJsFloat(): JsFloat =
+    actual inline fun Float.toJsFloat(): JsFloat =
         toDouble().toJsNumber()
 
-    actual fun JsDouble.toDouble(): Double =
+    actual inline fun JsDouble.toDouble(): Double =
         toKotlinDouble()
 
-    actual fun Double.toJsDouble(): JsDouble =
+    actual inline fun Double.toJsDouble(): JsDouble =
         toJsNumber()
 
-    actual fun JsByte.toByte(): Byte =
+    actual inline fun JsByte.toByte(): Byte =
         toKotlinInt().toByte()
 
-    actual fun Byte.toJsByte(): JsByte =
+    actual inline fun Byte.toJsByte(): JsByte =
         toInt().toJsNumber()
 
-    actual fun JsShort.toShort(): Short =
+    actual inline fun JsShort.toShort(): Short =
         toKotlinInt().toShort()
 
-    actual fun Short.toJsShort(): JsShort =
+    actual inline fun Short.toJsShort(): JsShort =
         toInt().toJsNumber()
 
-    actual fun JsInt.toInt(): Int =
+    actual inline fun JsInt.toInt(): Int =
         toKotlinInt()
 
-    actual fun Int.toJsInt(): JsInt =
+    actual inline fun Int.toJsInt(): JsInt =
         toJsNumber()
 }
