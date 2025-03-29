@@ -13,18 +13,18 @@ actual object JsPrimitives {
 
     actual fun String.toJsString(): JsString = this.ktToJsString()
 
-    actual fun JsFloat.toFloat(): Float = this.unsafeCast<JsNumber>().ktToDouble().toFloat()
-    actual fun Float.toJsFloat(): JsFloat = this.toDouble().ktToJsNumber().unsafeCast()
+    actual fun JsFloat.toFloat(): Float = this.ktToDouble().toFloat()
+    actual fun Float.toJsFloat(): JsFloat = this.toDouble().ktToJsNumber()
 
-    actual fun JsDouble.toDouble(): Double = this.unsafeCast<JsNumber>().ktToDouble()
-    actual fun Double.toJsDouble(): JsDouble = this.ktToJsNumber().unsafeCast()
+    actual fun JsDouble.toDouble(): Double = this.ktToDouble()
+    actual fun Double.toJsDouble(): JsDouble = this.ktToJsNumber()
 
-    actual fun JsByte.toByte(): Byte = this.unsafeCast<JsNumber>().ktToInt().toByte()
-    actual fun Byte.toJsByte(): JsByte = this.toInt().ktToJsNumber().unsafeCast()
+    actual fun JsByte.toByte(): Byte = this.ktToInt().toByte()
+    actual fun Byte.toJsByte(): JsByte = this.toInt().ktToJsNumber()
 
-    actual fun JsShort.toShort(): Short = this.unsafeCast<JsNumber>().ktToInt().toShort()
-    actual fun Short.toJsShort(): JsShort = this.toInt().ktToJsNumber().unsafeCast()
+    actual fun JsShort.toShort(): Short = this.ktToInt().toShort()
+    actual fun Short.toJsShort(): JsShort = this.toInt().ktToJsNumber()
 
-    actual fun JsInt.toInt(): Int = this.unsafeCast<JsNumber>().ktToInt()
-    actual fun Int.toJsInt(): JsInt = this.ktToJsNumber().unsafeCast()
+    actual fun JsInt.toInt(): Int = this.ktToInt()
+    actual fun Int.toJsInt(): JsInt = this.ktToJsNumber()
 }
