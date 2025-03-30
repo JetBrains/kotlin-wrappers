@@ -3,7 +3,7 @@ plugins {
 }
 
 dependencies {
-    jsMainApi(projects.kotlinCssomCore)
+    commonMainApi(projects.kotlinCssomCore)
     commonMainApi(projects.kotlinJs)
     commonMainApi(projects.kotlinBrowser)
 
