@@ -1,6 +1,5 @@
 package popper.core.modifiers
 
-import js.objects.jso
 import js.reflect.unsafeCast
 import popper.core.Padding
 
@@ -13,8 +12,3 @@ inline fun Padding(
     padding: Double,
 ): PaddingType =
     unsafeCast(padding)
-
-inline fun Padding(
-    block: Padding.() -> Unit,
-): PaddingType =
-    unsafeCast(jso<Padding>(block))
