@@ -1,6 +1,9 @@
 package emotion.cache
 
-sealed external interface StylisElement {
+import js.objects.JsPlainObject
+
+@JsPlainObject
+external interface StylisElement {
     val type: String
     val value: String
     val props: Any /* Array<String> | String */

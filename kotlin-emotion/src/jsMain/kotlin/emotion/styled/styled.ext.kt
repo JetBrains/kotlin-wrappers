@@ -21,9 +21,9 @@ fun <P : PropsWithClassName, T : Theme> ElementType<P>.styledWithTheme(
         builder
     }
 
-    val defaultOptions: StyledOptions = jso {
-        target = generateId()
-    }
+    val defaultOptions = StyledOptions(
+        target = generateId(),
+    )
 
     val finalOptions = Object.assign(defaultOptions, options)
 

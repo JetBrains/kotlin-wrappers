@@ -1,7 +1,10 @@
 package emotion.styled
 
+import js.objects.JsPlainObject
+
+@JsPlainObject
 external interface StyledOptions {
-    var label: String?
-    var shouldForwardProp: ((propName: String) -> Boolean)?
-    var target: String?
+    val label: String?
+    val shouldForwardProp: ((propName: String) -> Boolean)?
+    val target: String?
 }

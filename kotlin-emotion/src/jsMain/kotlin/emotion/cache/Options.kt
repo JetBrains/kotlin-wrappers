@@ -1,14 +1,16 @@
 package emotion.cache
 
 import js.array.ReadonlyArray
+import js.objects.JsPlainObject
 import web.dom.Node
 import web.html.HTMLElement
 
-sealed external interface Options {
-    var nonce: String?
-    var stylisPlugins: ReadonlyArray<StylisPlugin>?
-    var key: String
-    var container: Node?
-    var speedy: Boolean?
-    var insertionPoint: HTMLElement?
+@JsPlainObject
+external interface Options {
+    val nonce: String?
+    val stylisPlugins: ReadonlyArray<StylisPlugin>?
+    val key: String
+    val container: Node?
+    val speedy: Boolean?
+    val insertionPoint: HTMLElement?
 }
