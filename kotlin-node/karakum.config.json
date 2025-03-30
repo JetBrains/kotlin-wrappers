@@ -19,7 +19,7 @@
         "<nodeModules>/@types/node/timers.d.ts",
         "<nodeModules>/@types/node/timers/promises.d.ts"
     ],
-    "output": "src/jsMain/generated",
+    "output": "src/commonMain/generated",
     "ignoreOutput": [
         "**/_Blob.kt",
         "**/_DOMException.kt",
