@@ -5,5 +5,5 @@ plugins {
 dependencies {
     commonMainApi(projects.kotlinJs)
 
-    jsMainApi(npm(libs.npm.preact.signalsCore))
+    commonMainApi(npm(libs.npm.preact.signalsCore))
 }

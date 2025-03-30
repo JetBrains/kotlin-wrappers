@@ -5,5 +5,5 @@ plugins {
 dependencies {
     jsMainApi(projects.kotlinMuiMaterial)
 
-    jsMainApi(npm(libs.npm.mui.xTreeView))
+    commonMainApi(npm(libs.npm.mui.xTreeView))
 }

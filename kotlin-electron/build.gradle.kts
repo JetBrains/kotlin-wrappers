@@ -7,5 +7,5 @@ dependencies {
     jsMainApi(projects.kotlinNode)
     commonMainApi(projects.kotlinBrowser)
 
-    jsMainApi(npm(libs.npm.electron))
+    commonMainApi(npm(libs.npm.electron))
 }

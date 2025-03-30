@@ -25,7 +25,7 @@ dependencies {
 
     jsMainApi(libs.kotlinx.html)
 
-    jsMainApi(npm(libs.npm.inlineStylePrefixer))
+    commonMainApi(npm(libs.npm.inlineStylePrefixer))
 
     commonTestImplementation(libs.kotlin.test)
     jsTestImplementation(libs.coroutines.core)

@@ -6,5 +6,5 @@ dependencies {
     jsMainApi(projects.kotlinMuiSystem)
     jsMainApi(projects.kotlinPopperjsCore)
 
-    jsMainApi(npm(libs.npm.mui.base))
+    commonMainApi(npm(libs.npm.mui.base))
 }

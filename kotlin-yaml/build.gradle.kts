@@ -3,5 +3,5 @@ plugins {
 }
 
 dependencies {
-    jsMainApi(npm(libs.npm.yaml))
+    commonMainApi(npm(libs.npm.yaml))
 }

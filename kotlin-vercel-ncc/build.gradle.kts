@@ -5,5 +5,5 @@ plugins {
 dependencies {
     commonMainApi(projects.kotlinJs)
     jsMainApi(projects.kotlinNode)
-    jsMainApi(npm(libs.npm.vercel.ncc))
+    commonMainApi(npm(libs.npm.vercel.ncc))
 }

@@ -6,5 +6,5 @@ plugins {
 dependencies {
     commonMainApi(projects.kotlinJs)
 
-    jsMainApi(npm(libs.npm.typescript))
+    commonMainApi(npm(libs.npm.typescript))
 }

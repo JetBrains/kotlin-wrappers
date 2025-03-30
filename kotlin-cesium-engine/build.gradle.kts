@@ -6,5 +6,5 @@ dependencies {
     commonMainApi(projects.kotlinJs)
     commonMainApi(projects.kotlinBrowser)
 
-    jsMainApi(npm(libs.npm.cesium.engine))
+    commonMainApi(npm(libs.npm.cesium.engine))
 }

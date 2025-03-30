@@ -5,5 +5,5 @@ plugins {
 
 dependencies {
     jsMainApi(projects.kotlinNode)
-    jsMainApi(npm(libs.npm.nullWritable))
+    commonMainApi(npm(libs.npm.nullWritable))
 }
