@@ -3,5 +3,6 @@ plugins {
 }
 
 dependencies {
+    commonMainApi(projects.kotlinJs)
     commonMainApi(npm(libs.npm.yaml))
 }

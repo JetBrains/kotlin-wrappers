@@ -2,6 +2,9 @@
 
 package yaml
 
+import js.core.JsAny
+import js.import.JsModule
+
 /**
  * Parse an input string into JavaScript.
  *
@@ -15,4 +18,4 @@ package yaml
  *   document, so Maps become objects, Sequences arrays, and scalars result in
  *   nulls, booleans, numbers and strings.
  */
-external fun <T> parse(src: String): T
+external fun <T : JsAny?> parse(src: String): T
