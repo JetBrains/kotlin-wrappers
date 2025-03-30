@@ -6,25 +6,25 @@ import js.reflect.unsafeCast
 inline fun emptyTuple(): JsTuple =
     unsafeCast(jsArrayOf<JsAny?>())
 
-inline fun <A> tupleOf(
+inline fun <A : JsAny?> tupleOf(
     first: A,
 ): JsTuple1<A> =
     unsafeCast(jsArrayOf(first))
 
-inline fun <A, B> tupleOf(
+inline fun <A : JsAny?, B : JsAny?> tupleOf(
     first: A,
     second: B,
 ): JsTuple2<A, B> =
     unsafeCast(jsArrayOf(first, second))
 
-inline fun <A, B, C> tupleOf(
+inline fun <A : JsAny?, B : JsAny?, C : JsAny?> tupleOf(
     first: A,
     second: B,
     third: C,
 ): JsTuple3<A, B, C> =
     unsafeCast(jsArrayOf(first, second, third))
 
-inline fun <A, B, C, D> tupleOf(
+inline fun <A : JsAny?, B : JsAny?, C : JsAny?, D : JsAny?> tupleOf(
     first: A,
     second: B,
     third: C,
@@ -32,7 +32,7 @@ inline fun <A, B, C, D> tupleOf(
 ): JsTuple4<A, B, C, D> =
     unsafeCast(jsArrayOf(first, second, third, fourth))
 
-inline fun <A, B, C, D, E> tupleOf(
+inline fun <A : JsAny?, B : JsAny?, C : JsAny?, D : JsAny?, E : JsAny?> tupleOf(
     first: A,
     second: B,
     third: C,
@@ -41,7 +41,7 @@ inline fun <A, B, C, D, E> tupleOf(
 ): JsTuple5<A, B, C, D, E> =
     unsafeCast(jsArrayOf(first, second, third, fourth, fifth))
 
-inline fun <A, B, C, D, E, F> tupleOf(
+inline fun <A : JsAny?, B : JsAny?, C : JsAny?, D : JsAny?, E : JsAny?, F : JsAny?> tupleOf(
     first: A,
     second: B,
     third: C,
@@ -51,7 +51,7 @@ inline fun <A, B, C, D, E, F> tupleOf(
 ): JsTuple6<A, B, C, D, E, F> =
     unsafeCast(jsArrayOf(first, second, third, fourth, fifth, sixth))
 
-inline fun <A, B, C, D, E, F, G> tupleOf(
+inline fun <A : JsAny?, B : JsAny?, C : JsAny?, D : JsAny?, E : JsAny?, F : JsAny?, G : JsAny?> tupleOf(
     first: A,
     second: B,
     third: C,
