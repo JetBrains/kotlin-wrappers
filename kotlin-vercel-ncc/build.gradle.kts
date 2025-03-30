@@ -3,7 +3,7 @@ plugins {
 }
 
 dependencies {
-    jsMainApi(projects.kotlinJs)
+    commonMainApi(projects.kotlinJs)
     jsMainApi(projects.kotlinNode)
     jsMainApi(npm(libs.npm.vercel.ncc))
 }

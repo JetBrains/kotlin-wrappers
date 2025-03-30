@@ -4,7 +4,7 @@ plugins {
 }
 
 dependencies {
-    jsMainApi(projects.kotlinJs)
+    commonMainApi(projects.kotlinJs)
     jsMainApi(npm(libs.npm.semver))
     jsMainImplementation(devNpm(libs.npm.types.semver))
 }

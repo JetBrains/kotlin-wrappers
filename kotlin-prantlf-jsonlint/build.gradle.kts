@@ -3,6 +3,6 @@ plugins {
 }
 
 dependencies {
-    jsMainApi(projects.kotlinJs)
+    commonMainApi(projects.kotlinJs)
     jsMainApi(npm(libs.npm.prantlf.jsonlint))
 }

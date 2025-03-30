@@ -3,7 +3,7 @@ plugins {
 }
 
 dependencies {
-    jsMainApi(projects.kotlinJs)
+    commonMainApi(projects.kotlinJs)
     jsMainApi(projects.kotlinBrowser)
     jsMainApi(projects.kotlinReact)
     jsMainApi(projects.kotlinReactDom)

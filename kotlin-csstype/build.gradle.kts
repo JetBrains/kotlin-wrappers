@@ -4,7 +4,7 @@ plugins {
 
 dependencies {
     jsMainApi(projects.kotlinCssomCore)
-    jsMainApi(projects.kotlinJs)
+    commonMainApi(projects.kotlinJs)
     jsMainApi(projects.kotlinBrowser)
 
     jsMainApi(devNpm(libs.npm.csstype))
