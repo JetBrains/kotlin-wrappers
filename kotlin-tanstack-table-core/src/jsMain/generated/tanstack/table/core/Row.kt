@@ -2,6 +2,9 @@
 
 package tanstack.table.core
 
+import js.objects.JsPlainObject
+
+@JsPlainObject
 external interface Row<TData : RowData> :
     CoreRow<TData>,
     VisibilityRow<TData>,

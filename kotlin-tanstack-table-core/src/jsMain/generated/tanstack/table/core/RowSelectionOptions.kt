@@ -2,6 +2,9 @@
 
 package tanstack.table.core
 
+import js.objects.JsPlainObject
+
+@JsPlainObject
 external interface RowSelectionOptions<TData : RowData> {
     /**
      * - Enables/disables multiple row selection for all rows in the table OR

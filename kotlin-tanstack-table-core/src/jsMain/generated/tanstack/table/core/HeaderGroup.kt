@@ -2,5 +2,8 @@
 
 package tanstack.table.core
 
+import js.objects.JsPlainObject
+
+@JsPlainObject
 external interface HeaderGroup<TData : RowData> :
     CoreHeaderGroup<TData>

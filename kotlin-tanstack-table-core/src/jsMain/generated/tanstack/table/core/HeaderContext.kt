@@ -2,6 +2,9 @@
 
 package tanstack.table.core
 
+import js.objects.JsPlainObject
+
+@JsPlainObject
 external interface HeaderContext<TData : RowData, TValue> {
     /**
      * An instance of a column.

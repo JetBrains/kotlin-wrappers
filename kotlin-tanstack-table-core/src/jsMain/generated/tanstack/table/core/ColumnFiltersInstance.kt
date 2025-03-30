@@ -2,6 +2,9 @@
 
 package tanstack.table.core
 
+import js.objects.JsPlainObject
+
+@JsPlainObject
 external interface ColumnFiltersInstance<TData : RowData> {
     /**
      * Returns the row model for the table after **column** filtering has been applied.

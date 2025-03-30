@@ -2,6 +2,9 @@
 
 package tanstack.table.core
 
+import js.objects.JsPlainObject
+
+@JsPlainObject
 external interface GroupingInstance<TData : RowData> {
     /**
      * Returns the row model for the table after grouping has been applied.

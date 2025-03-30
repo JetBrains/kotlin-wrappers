@@ -3,7 +3,9 @@
 package tanstack.table.core
 
 import js.array.ReadonlyArray
+import js.objects.JsPlainObject
 
+@JsPlainObject
 external interface CoreRow<TData : RowData> {
     /**
      * The depth of the row (if nested or grouped) relative to the root row array.

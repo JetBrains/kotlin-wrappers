@@ -2,8 +2,10 @@
 
 package tanstack.table.core
 
+import js.objects.JsPlainObject
 import js.objects.ReadonlyRecord
 
+@JsPlainObject
 external interface ColumnFiltersRow<TData : RowData> {
     /**
      * The column filters map for the row. This object tracks whether a row is passing/failing specific filters by their column ID.

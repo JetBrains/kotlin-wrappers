@@ -3,7 +3,9 @@
 package tanstack.table.core
 
 import js.array.ReadonlyArray
+import js.objects.JsPlainObject
 
+@JsPlainObject
 external interface HeadersInstance<TData : RowData> {
     /**
      * Returns all header groups for the table.

@@ -2,6 +2,9 @@
 
 package tanstack.table.core
 
+import js.objects.JsPlainObject
+
+@JsPlainObject
 external interface ColumnPinningColumn {
     /**
      * Returns whether or not the column can be pinned.

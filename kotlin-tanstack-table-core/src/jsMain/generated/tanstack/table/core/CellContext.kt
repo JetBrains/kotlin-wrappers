@@ -2,6 +2,9 @@
 
 package tanstack.table.core
 
+import js.objects.JsPlainObject
+
+@JsPlainObject
 external interface CellContext<TData : RowData, TValue> {
     var cell: Cell<TData, TValue>
     var column: Column<TData, TValue>

@@ -2,6 +2,9 @@
 
 package tanstack.table.core
 
+import js.objects.JsPlainObject
+
+@JsPlainObject
 external interface GroupingCell {
     /**
      * Returns whether or not the cell is currently aggregated.

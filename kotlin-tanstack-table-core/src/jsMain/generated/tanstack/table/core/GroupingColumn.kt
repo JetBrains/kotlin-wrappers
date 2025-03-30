@@ -2,6 +2,9 @@
 
 package tanstack.table.core
 
+import js.objects.JsPlainObject
+
+@JsPlainObject
 external interface GroupingColumn<TData : RowData> {
     /**
      * Returns the aggregation function for the column.

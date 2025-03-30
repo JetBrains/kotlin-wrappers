@@ -2,6 +2,9 @@
 
 package tanstack.table.core
 
+import js.objects.JsPlainObject
+
+@JsPlainObject
 external interface VisibilityOptions {
     /**
      * Whether to enable column hiding. Defaults to `true`.

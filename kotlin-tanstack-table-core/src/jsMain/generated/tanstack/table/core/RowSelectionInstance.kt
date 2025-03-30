@@ -2,6 +2,9 @@
 
 package tanstack.table.core
 
+import js.objects.JsPlainObject
+
+@JsPlainObject
 external interface RowSelectionInstance<TData : RowData> {
     /**
      * Returns the row model of all rows that are selected after filtering has been applied.

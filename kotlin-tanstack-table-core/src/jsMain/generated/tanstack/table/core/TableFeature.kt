@@ -2,6 +2,9 @@
 
 package tanstack.table.core
 
+import js.objects.JsPlainObject
+
+@JsPlainObject
 external interface TableFeature<TData : RowData> {
     var createCell: ((cell: Cell<TData, *>, column: Column<TData, *>, row: Row<TData>, table: Table<TData>) -> Unit)?
     var createColumn: ((column: Column<TData, *>, table: Table<TData>) -> Unit)?

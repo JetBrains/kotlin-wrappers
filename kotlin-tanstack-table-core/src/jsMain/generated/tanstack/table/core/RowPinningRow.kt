@@ -2,6 +2,9 @@
 
 package tanstack.table.core
 
+import js.objects.JsPlainObject
+
+@JsPlainObject
 external interface RowPinningRow {
     /**
      * Returns whether or not the row can be pinned.

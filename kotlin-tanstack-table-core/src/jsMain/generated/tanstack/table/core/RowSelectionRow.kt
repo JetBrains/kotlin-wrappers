@@ -2,6 +2,9 @@
 
 package tanstack.table.core
 
+import js.objects.JsPlainObject
+
+@JsPlainObject
 external interface RowSelectionRow {
     /**
      * Returns whether or not the row can multi-select.
@@ -59,7 +62,8 @@ external interface RowSelectionRow {
      */
     var toggleSelected: (value: Boolean?, opts: ToggleSelectedOptions?) -> Unit
 
-    sealed interface ToggleSelectedOptions {
-        var selectChildren: Boolean?
+    @JsPlainObject
+    interface ToggleSelectedOptions {
+        val selectChildren: Boolean?
     }
 }

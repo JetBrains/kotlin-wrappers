@@ -3,7 +3,9 @@
 package tanstack.table.core
 
 import js.array.ReadonlyArray
+import js.objects.JsPlainObject
 
+@JsPlainObject
 external interface VisibilityInstance<TData : RowData> {
     /**
      * If column pinning, returns a flat array of leaf-node columns that are visible in the unpinned/center portion of the table.

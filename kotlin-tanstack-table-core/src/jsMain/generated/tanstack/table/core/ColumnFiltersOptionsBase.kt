@@ -2,6 +2,9 @@
 
 package tanstack.table.core
 
+import js.objects.JsPlainObject
+
+@JsPlainObject
 external interface ColumnFiltersOptionsBase<TData : RowData> {
     /**
      * Enables/disables **column** filtering for all columns.

@@ -2,6 +2,9 @@
 
 package tanstack.table.core
 
+import js.objects.JsPlainObject
+
+@JsPlainObject
 external interface SortingInstance<TData : RowData> {
     /**
      * Returns the row model for the table before any sorting has been applied.

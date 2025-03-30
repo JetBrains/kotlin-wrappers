@@ -3,7 +3,9 @@
 package tanstack.table.core
 
 import js.array.ReadonlyArray
+import js.objects.JsPlainObject
 
+@JsPlainObject
 external interface CoreInstance<TData : RowData> {
     /**
      * Returns all columns in the table in their normalized and nested hierarchy.

@@ -2,6 +2,9 @@
 
 package tanstack.table.core
 
+import js.objects.JsPlainObject
+
+@JsPlainObject
 external interface ExpandedInstance<TData : RowData> {
     /**
      * Returns whether there are any rows that can be expanded.

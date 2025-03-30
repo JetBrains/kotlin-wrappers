@@ -2,8 +2,10 @@
 
 package tanstack.table.core
 
+import js.objects.JsPlainObject
 import tanstack.table.core.VisibilityColumn as ColumnVisibilityColumn
 
+@JsPlainObject
 external interface Column<TData : RowData, TValue> :
     CoreColumn<TData, TValue>,
     ColumnVisibilityColumn,

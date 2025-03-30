@@ -2,6 +2,9 @@
 
 package tanstack.table.core
 
+import js.objects.JsPlainObject
+
+@JsPlainObject
 external interface GroupingRow {
     /**
      * Returns the grouping value for any row and column (including leaf rows).

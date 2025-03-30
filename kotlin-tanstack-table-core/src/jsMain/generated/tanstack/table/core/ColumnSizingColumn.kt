@@ -2,6 +2,9 @@
 
 package tanstack.table.core
 
+import js.objects.JsPlainObject
+
+@JsPlainObject
 external interface ColumnSizingColumn {
     /**
      * Returns `true` if the column can be resized.

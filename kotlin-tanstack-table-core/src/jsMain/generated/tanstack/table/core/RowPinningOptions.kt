@@ -2,6 +2,9 @@
 
 package tanstack.table.core
 
+import js.objects.JsPlainObject
+
+@JsPlainObject
 external interface RowPinningOptions<TData : RowData> {
     /**
      * Enables/disables row pinning for the table. Defaults to `true`.

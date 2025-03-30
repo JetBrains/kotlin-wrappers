@@ -2,6 +2,9 @@
 
 package tanstack.table.core
 
+import js.objects.JsPlainObject
+
+@JsPlainObject
 external interface SortingColumn<TData : RowData> {
     /**
      * Removes this column from the table's sorting state

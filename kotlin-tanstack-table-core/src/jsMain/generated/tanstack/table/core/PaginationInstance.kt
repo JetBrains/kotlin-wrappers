@@ -3,7 +3,9 @@
 package tanstack.table.core
 
 import js.array.ReadonlyArray
+import js.objects.JsPlainObject
 
+@JsPlainObject
 external interface PaginationInstance<TData : RowData> {
     /**
      * Returns whether the table can go to the next page.

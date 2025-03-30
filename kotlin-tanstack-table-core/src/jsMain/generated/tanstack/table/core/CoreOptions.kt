@@ -3,7 +3,9 @@
 package tanstack.table.core
 
 import js.array.ReadonlyArray
+import js.objects.JsPlainObject
 
+@JsPlainObject
 external interface CoreOptions<TData : RowData> {
     /**
      * An array of extra features that you can add to the table instance.

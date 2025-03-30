@@ -2,6 +2,9 @@
 
 package tanstack.table.core
 
+import js.objects.JsPlainObject
+
+@JsPlainObject
 external interface GroupingOptionsBase<TData : RowData> {
     /**
      * Enables/disables grouping for the table.

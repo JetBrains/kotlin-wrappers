@@ -2,6 +2,9 @@
 
 package tanstack.table.core
 
+import js.objects.JsPlainObject
+
+@JsPlainObject
 external interface ExpandedOptions<TData : RowData> {
     /**
      * Enable this setting to automatically reset the expanded state of the table when expanding state changes.

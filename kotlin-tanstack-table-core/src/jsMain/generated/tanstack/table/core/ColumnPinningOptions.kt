@@ -2,6 +2,9 @@
 
 package tanstack.table.core
 
+import js.objects.JsPlainObject
+
+@JsPlainObject
 external interface ColumnPinningOptions {
     /**
      * Enables/disables column pinning for the table. Defaults to `true`.

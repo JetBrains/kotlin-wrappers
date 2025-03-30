@@ -2,6 +2,9 @@
 
 package tanstack.table.core
 
+import js.objects.JsPlainObject
+
+@JsPlainObject
 external interface SortingOptionsBase<TData : RowData> {
     /**
      * Enables/disables the ability to remove multi-sorts

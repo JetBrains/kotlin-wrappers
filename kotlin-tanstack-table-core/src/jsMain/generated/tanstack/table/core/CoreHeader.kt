@@ -3,7 +3,9 @@
 package tanstack.table.core
 
 import js.array.ReadonlyArray
+import js.objects.JsPlainObject
 
+@JsPlainObject
 external interface CoreHeader<TData : RowData, TValue> {
     /**
      * The col-span for the header.

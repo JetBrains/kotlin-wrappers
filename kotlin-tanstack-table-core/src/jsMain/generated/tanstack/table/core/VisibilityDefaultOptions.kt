@@ -2,5 +2,8 @@
 
 package tanstack.table.core
 
-sealed external interface VisibilityDefaultOptions :
+import js.objects.JsPlainObject
+
+@JsPlainObject
+external interface VisibilityDefaultOptions :
     VisibilityOptions  /* Pick<VisibilityOptions, 'onColumnVisibilityChange'> */

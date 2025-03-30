@@ -4,7 +4,9 @@ package tanstack.table.core
 
 import js.array.JsTuple2
 import js.collections.JsMap
+import js.objects.JsPlainObject
 
+@JsPlainObject
 external interface FacetedColumn<TData : RowData> {
     /**
      * A function that **computes and returns** a min/max tuple derived from `column.getFacetedRowModel`. Useful for displaying faceted result values.

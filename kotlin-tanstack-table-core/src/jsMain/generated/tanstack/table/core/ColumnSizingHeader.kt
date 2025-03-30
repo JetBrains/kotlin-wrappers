@@ -2,8 +2,10 @@
 
 package tanstack.table.core
 
+import js.objects.JsPlainObject
 import web.dom.Document
 
+@JsPlainObject
 external interface ColumnSizingHeader {
     /**
      * Returns an event handler function that can be used to resize the header. It can be used as an:

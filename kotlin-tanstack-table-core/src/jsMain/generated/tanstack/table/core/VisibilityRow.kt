@@ -3,7 +3,9 @@
 package tanstack.table.core
 
 import js.array.ReadonlyArray
+import js.objects.JsPlainObject
 
+@JsPlainObject
 external interface VisibilityRow<TData : RowData> {
     /**
      * Returns an array of cells that account for column visibility for the row.

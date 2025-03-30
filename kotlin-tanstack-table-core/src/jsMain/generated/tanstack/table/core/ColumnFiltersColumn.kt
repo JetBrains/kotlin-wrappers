@@ -2,6 +2,9 @@
 
 package tanstack.table.core
 
+import js.objects.JsPlainObject
+
+@JsPlainObject
 external interface ColumnFiltersColumn<TData : RowData> {
     /**
      * Returns an automatically calculated filter function for the column based off of the columns first known value.
