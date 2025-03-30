@@ -47,9 +47,11 @@ protected constructor() :
     var height: String
 
     /**
+     * Sets or retrieves the policy for loading iframe elements that are outside the viewport.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLIFrameElement/loading)
      */
-    var loading: String
+    var loading: Loading
 
     /**
      * Sets or retrieves the frame name.
