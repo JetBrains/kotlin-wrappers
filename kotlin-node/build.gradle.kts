@@ -7,7 +7,7 @@ dependencies {
     commonMainApi(projects.kotlinJs)
     commonMainApi(projects.kotlinWeb)
 
-    jsMainImplementation(libs.coroutines.core)
+    commonMainImplementation(libs.coroutines.core)
 
     jsMainApi(devNpm(libs.npm.types.node))
 
