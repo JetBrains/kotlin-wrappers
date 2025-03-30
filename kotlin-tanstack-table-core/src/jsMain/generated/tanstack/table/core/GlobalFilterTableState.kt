@@ -3,5 +3,5 @@
 package tanstack.table.core
 
 external interface GlobalFilterTableState {
-    var globalFilter: Any
+    var globalFilter: Any?
 }

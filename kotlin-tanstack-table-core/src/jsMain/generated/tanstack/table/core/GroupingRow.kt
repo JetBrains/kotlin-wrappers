@@ -32,5 +32,5 @@ external interface GroupingRow {
      * [API Docs](https://tanstack.com/table/v8/docs/api/features/grouping#groupingvalue)
      * [Guide](https://tanstack.com/table/v8/docs/guide/grouping)
      */
-    var groupingValue: Any?
+    var groupingValue: Any??
 }
