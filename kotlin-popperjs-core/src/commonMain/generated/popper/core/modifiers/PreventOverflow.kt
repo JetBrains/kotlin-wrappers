@@ -2,6 +2,7 @@
 
 package popper.core.modifiers
 
+import js.core.JsAny
 import js.objects.JsPlainObject
 import seskar.js.JsValue
 
@@ -11,8 +12,8 @@ sealed external interface TetherOffsetType
 external interface PreventOverflowOptions {
     val mainAxis: Boolean
     val altAxis: Boolean
-    val boundary: Any /* Boundary */
-    val rootBoundary: Any /* RootBoundary */
+    val boundary: JsAny /* Boundary */
+    val rootBoundary: JsAny /* RootBoundary */
     val altBoundary: Boolean
 
     /**

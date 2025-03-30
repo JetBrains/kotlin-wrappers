@@ -3,12 +3,14 @@
 package popper.core
 
 import js.array.ReadonlyArray
+import js.core.JsAny
+import js.core.JsString
 import js.objects.JsPlainObject
 import js.objects.ReadonlyRecord
 
 @JsPlainObject
 external interface State {
-    val elements: ReadonlyRecord<String, Any> /* {
+    val elements: ReadonlyRecord<JsString, JsAny> /* {
         reference: Element | VirtualElement;
         popper: HTMLElement;
         arrow?: HTMLElement;
@@ -18,19 +20,19 @@ external interface State {
     val strategy: PositioningStrategy
     val orderedModifiers: ReadonlyArray<Modifier<*>>
     val rects: StateRects
-    val scrollParents: ReadonlyRecord<String, Any> /* {
+    val scrollParents: ReadonlyRecord<JsString, JsAny> /* {
         reference: Array<Element | Window | VisualViewport>;
         popper: Array<Element | Window | VisualViewport>;
     }; */
-    val styles: ReadonlyRecord<String, Any> /* {
+    val styles: ReadonlyRecord<JsString, JsAny> /* {
         [key: string]: Partial<CSSStyleDeclaration>;
     }; */
-    val attributes: ReadonlyRecord<String, Any> /* {
+    val attributes: ReadonlyRecord<JsString, JsAny> /* {
         [key: string]: {
             [key: string]: string | boolean;
         };
     }; */
-    val modifiersData: ReadonlyRecord<String, Any> /* {
+    val modifiersData: ReadonlyRecord<JsString, JsAny> /* {
         arrow?: {
             x?: number;
             y?: number;

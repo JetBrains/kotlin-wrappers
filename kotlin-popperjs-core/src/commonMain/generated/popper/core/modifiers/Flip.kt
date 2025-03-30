@@ -3,6 +3,7 @@
 package popper.core.modifiers
 
 import js.array.ReadonlyArray
+import js.core.JsAny
 import js.objects.JsPlainObject
 import seskar.js.JsValue
 
@@ -12,8 +13,8 @@ external interface FlipOptions {
     val altAxis: Boolean
     val fallbackPlacements: ReadonlyArray<popper.core.Placement>
     val padding: popper.core.Padding
-    val boundary: Any /* Boundary */
-    val rootBoundary: Any /* RootBoundary */
+    val boundary: JsAny /* Boundary */
+    val rootBoundary: JsAny /* RootBoundary */
     val altBoundary: Boolean
     val flipVariations: Boolean
     val allowedAutoPlacements: ReadonlyArray<popper.core.Placement>
