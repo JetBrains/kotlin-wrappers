@@ -5,7 +5,8 @@ package popper.core
 import js.objects.JsPlainObject
 
 @JsPlainObject
-external interface SideObject : Padding {
+external interface SideObject :
+    Padding {
     val top: Double?
     val left: Double?
     val right: Double?
