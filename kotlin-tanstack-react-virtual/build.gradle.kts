@@ -4,7 +4,7 @@ plugins {
 
 dependencies {
     commonMainApi(projects.kotlinJs)
-    jsMainApi(projects.kotlinBrowser)
+    commonMainApi(projects.kotlinBrowser)
     jsMainApi(projects.kotlinTanstackVirtualCore)
 
     jsMainApi(npm(libs.npm.tanstack.reactVirtual))
