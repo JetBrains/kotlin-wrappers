@@ -2,7 +2,7 @@
     "input": [
         "<nodeModules>/typescript/lib/typescript.d.ts"
     ],
-    "output": "src/jsMain/generated",
+    "output": "src/commonMain/generated",
     "ignoreOutput": [
         "**/server/**",
         "**/CompletionsTriggerCharacter.kt",
