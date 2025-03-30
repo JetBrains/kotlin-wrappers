@@ -11,8 +11,8 @@ sealed external interface TetherOffsetType
 external interface PreventOverflowOptions {
     val mainAxis: Boolean
     val altAxis: Boolean
-    val boundary: dynamic /* Boundary */
-    val rootBoundary: dynamic /* RootBoundary */
+    val boundary: Any /* Boundary */
+    val rootBoundary: Any /* RootBoundary */
     val altBoundary: Boolean
 
     /**

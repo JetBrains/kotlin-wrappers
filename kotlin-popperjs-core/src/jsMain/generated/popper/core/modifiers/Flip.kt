@@ -12,8 +12,8 @@ external interface FlipOptions {
     val altAxis: Boolean
     val fallbackPlacements: ReadonlyArray<popper.core.Placement>
     val padding: popper.core.Padding
-    val boundary: dynamic /* Boundary */
-    val rootBoundary: dynamic /* RootBoundary */
+    val boundary: Any /* Boundary */
+    val rootBoundary: Any /* RootBoundary */
     val altBoundary: Boolean
     val flipVariations: Boolean
     val allowedAutoPlacements: ReadonlyArray<popper.core.Placement>
