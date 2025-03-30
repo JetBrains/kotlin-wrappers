@@ -5,7 +5,7 @@ plugins {
 
 dependencies {
     commonMainApi(projects.kotlinJs)
-    jsMainApi(projects.kotlinWeb)
+    commonMainApi(projects.kotlinWeb)
 
     jsMainImplementation(libs.coroutines.core)
 
