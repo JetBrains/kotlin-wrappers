@@ -2,9 +2,12 @@
 
 package popper.core
 
+import js.objects.JsPlainObject
+
+@JsPlainObject
 external interface ModifierArguments<Options> {
-    var state: State
-    var instance: Instance
-    var options: Options
-    var name: String
+    val state: State
+    val instance: Instance
+    val options: Options
+    val name: String
 }

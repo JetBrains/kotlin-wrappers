@@ -2,14 +2,8 @@
 
 package popper.core
 
-import js.objects.jso
+import js.reflect.JsExternalInheritorsOnly
 
-external interface ModifierName<Options> : Name
-
-inline fun <Options> ModifierName<Options>.modifier(
-    block: Modifier<Options>.() -> Unit,
-): Modifier<Options> =
-    jso {
-        name = this@modifier
-        block()
-    }
+@JsExternalInheritorsOnly
+external interface ModifierName<Options> :
+    Name    

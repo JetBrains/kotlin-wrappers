@@ -2,12 +2,14 @@
 
 package popper.core.modifiers
 
+import js.objects.JsPlainObject
 import seskar.js.JsValue
 
 sealed external interface OffsetType
 
+@JsPlainObject
 external interface OffsetOptions {
-    var offset: OffsetType
+    val offset: OffsetType
 }
 
 @JsValue("offset")

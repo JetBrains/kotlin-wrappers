@@ -2,4 +2,7 @@
 
 package popper.core
 
+import js.reflect.JsExternalInheritorsOnly
+
+@JsExternalInheritorsOnly
 external interface Name

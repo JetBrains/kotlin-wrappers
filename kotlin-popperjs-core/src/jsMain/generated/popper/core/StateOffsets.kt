@@ -2,7 +2,10 @@
 
 package popper.core
 
+import js.objects.JsPlainObject
+
+@JsPlainObject
 external interface StateOffsets {
-    var popper: Offsets
-    var arrow: Offsets?
+    val popper: Offsets
+    val arrow: Offsets?
 }

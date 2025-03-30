@@ -2,9 +2,12 @@
 
 package popper.core
 
+import js.objects.JsPlainObject
+
+@JsPlainObject
 external interface SideObject : Padding {
-    var top: Double
-    var left: Double
-    var right: Double
-    var bottom: Double
+    val top: Double
+    val left: Double
+    val right: Double
+    val bottom: Double
 }

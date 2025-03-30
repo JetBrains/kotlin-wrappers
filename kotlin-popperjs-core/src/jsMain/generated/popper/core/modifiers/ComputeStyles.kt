@@ -2,12 +2,14 @@
 
 package popper.core.modifiers
 
+import js.objects.JsPlainObject
 import seskar.js.JsValue
 
+@JsPlainObject
 external interface ComputeStylesOptions {
-    var gpuAcceleration: Boolean
-    var adaptive: Boolean
-    var roundOffsets: Boolean /* boolean | RoundOffsets */?
+    val gpuAcceleration: Boolean
+    val adaptive: Boolean
+    val roundOffsets: Boolean /* boolean | RoundOffsets */?
 }
 
 @JsValue("computeStyles")

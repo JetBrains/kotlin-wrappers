@@ -2,7 +2,10 @@
 
 package popper.core
 
+import js.objects.JsPlainObject
+
+@JsPlainObject
 external interface VirtualElement {
-    var getBoundingClientRect: () -> web.geometry.DOMRect
-    var contextElement: web.dom.Element?
+    val getBoundingClientRect: () -> web.geometry.DOMRect
+    val contextElement: web.dom.Element?
 }

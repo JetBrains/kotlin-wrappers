@@ -2,12 +2,14 @@
 
 package popper.core
 
+import js.objects.JsPlainObject
 import js.promise.Promise
 
+@JsPlainObject
 external interface Instance {
-    var state: State
-    var destroy: () -> Unit
-    var forceUpdate: () -> Unit
-    var update: () -> Promise<State>
-    var setOptions: (SetAction<OptionsGeneric<*>>) -> Promise<State>
+    val state: State
+    val destroy: () -> Unit
+    val forceUpdate: () -> Unit
+    val update: () -> Promise<State>
+    val setOptions: (SetAction<OptionsGeneric<*>>) -> Promise<State>
 }

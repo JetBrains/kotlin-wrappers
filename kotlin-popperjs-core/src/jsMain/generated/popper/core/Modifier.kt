@@ -3,16 +3,18 @@
 package popper.core
 
 import js.array.ReadonlyArray
+import js.objects.JsPlainObject
 import js.objects.Record
 
+@JsPlainObject
 external interface Modifier<Options> {
-    var name: ModifierName<Options>
-    var enabled: Boolean
-    var phase: ModifierPhases
-    var requires: ReadonlyArray<String>?
-    var requiresIfExists: ReadonlyArray<String>?
-    var fn: (ModifierArguments<Options>) -> State?
-    var effect: (ModifierArguments<Options>) -> (() -> Unit)?
-    var options: Options?
-    var data: Record<String, *>?
+    val name: ModifierName<Options>
+    val enabled: Boolean
+    val phase: ModifierPhases
+    val requires: ReadonlyArray<String>?
+    val requiresIfExists: ReadonlyArray<String>?
+    val fn: (ModifierArguments<Options>) -> State?
+    val effect: (ModifierArguments<Options>) -> (() -> Unit)?
+    val options: Options?
+    val data: Record<String, *>?
 }

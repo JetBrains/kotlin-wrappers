@@ -2,7 +2,10 @@
 
 package popper.core
 
+import js.objects.JsPlainObject
+
+@JsPlainObject
 external interface StateRects {
-    var reference: Rect
-    var popper: Rect
+    val reference: Rect
+    val popper: Rect
 }

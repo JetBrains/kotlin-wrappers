@@ -2,10 +2,13 @@
 
 package popper.core
 
+import js.objects.JsPlainObject
+
+@JsPlainObject
 external interface VisualViewport {
-    var width: Double
-    var height: Double
-    var offsetLeft: Double
-    var offsetTop: Double
-    var scale: Double
+    val width: Double
+    val height: Double
+    val offsetLeft: Double
+    val offsetTop: Double
+    val scale: Double
 }

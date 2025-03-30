@@ -3,10 +3,12 @@
 package popper.core
 
 import js.array.ReadonlyArray
+import js.objects.JsPlainObject
 
+@JsPlainObject
 external interface Options {
-    var placement: Placement
-    var modifiers: ReadonlyArray<Modifier<*>>
-    var strategy: PositioningStrategy
-    var onFirstUpdate: UpdateCallback?
+    val placement: Placement
+    val modifiers: ReadonlyArray<Modifier<*>>
+    val strategy: PositioningStrategy
+    val onFirstUpdate: UpdateCallback?
 }

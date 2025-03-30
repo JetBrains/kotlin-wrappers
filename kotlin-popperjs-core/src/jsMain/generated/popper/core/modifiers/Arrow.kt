@@ -2,13 +2,15 @@
 
 package popper.core.modifiers
 
+import js.objects.JsPlainObject
 import seskar.js.JsValue
 
 external interface PaddingType
 
+@JsPlainObject
 external interface ArrowOptions {
-    var element: web.html.HTMLElement?
-    var padding: PaddingType
+    val element: web.html.HTMLElement?
+    val padding: PaddingType
 }
 
 @JsValue("arrow")

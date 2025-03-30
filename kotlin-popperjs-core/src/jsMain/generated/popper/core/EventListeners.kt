@@ -2,7 +2,10 @@
 
 package popper.core
 
+import js.objects.JsPlainObject
+
+@JsPlainObject
 external interface EventListeners {
-    var scroll: Boolean
-    var resize: Boolean
+    val scroll: Boolean
+    val resize: Boolean
 }

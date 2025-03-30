@@ -2,9 +2,12 @@
 
 package popper.core
 
+import js.objects.JsPlainObject
+
+@JsPlainObject
 external interface Rect {
-    var width: Double
-    var height: Double
-    var x: Double
-    var y: Double
+    val width: Double
+    val height: Double
+    val x: Double
+    val y: Double
 }

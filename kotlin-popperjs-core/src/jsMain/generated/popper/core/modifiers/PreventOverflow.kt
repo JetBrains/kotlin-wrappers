@@ -2,24 +2,26 @@
 
 package popper.core.modifiers
 
+import js.objects.JsPlainObject
 import seskar.js.JsValue
 
 sealed external interface TetherOffsetType
 
+@JsPlainObject
 external interface PreventOverflowOptions {
-    var mainAxis: Boolean
-    var altAxis: Boolean
-    var boundary: dynamic /* Boundary */
-    var rootBoundary: dynamic /* RootBoundary */
-    var altBoundary: Boolean
+    val mainAxis: Boolean
+    val altAxis: Boolean
+    val boundary: dynamic /* Boundary */
+    val rootBoundary: dynamic /* RootBoundary */
+    val altBoundary: Boolean
 
     /**
      * Allows the popper to overflow from its boundaries to keep it near its
      * reference element
      */
-    var tether: Boolean
-    var tetherOffset: TetherOffsetType
-    var padding: popper.core.Padding
+    val tether: Boolean
+    val tetherOffset: TetherOffsetType
+    val padding: popper.core.Padding
 }
 
 @JsValue("preventOverflow")

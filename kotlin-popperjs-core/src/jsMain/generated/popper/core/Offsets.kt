@@ -2,7 +2,10 @@
 
 package popper.core
 
+import js.objects.JsPlainObject
+
+@JsPlainObject
 external interface Offsets {
-    var y: Double
-    var x: Double
+    val y: Double
+    val x: Double
 }
