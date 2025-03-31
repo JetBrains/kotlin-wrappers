@@ -1,6 +1,7 @@
 package ajv
 
 import js.core.JsAny
+import js.core.JsString
 import js.objects.ReadonlyRecord
 
 external interface ErrorObject {
