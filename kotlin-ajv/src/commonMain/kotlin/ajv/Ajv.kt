@@ -6,7 +6,7 @@ import js.core.JsAny
 import js.objects.ReadonlyRecord
 
 external class Ajv(
-    opts: Options = definedExternally,
+    options: Options = definedExternally,
 ) {
     fun compile(schema: ReadonlyRecord<String, JsAny?>): ValidateFunction
 }
