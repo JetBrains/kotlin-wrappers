@@ -7,7 +7,7 @@ external interface ErrorObject {
     val keyword: String
     val instancePath: String
     val schemaPath: String
-    val params: ReadonlyRecord<String, Any?>
+    val params: ReadonlyRecord<String, JsAny?>
     val propertyName: String?
     val message: String?
     val schema: JsAny?
