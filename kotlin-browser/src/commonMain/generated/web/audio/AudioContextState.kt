@@ -13,6 +13,9 @@ sealed external interface AudioContextState {
         @JsValue("closed")
         val closed: AudioContextState
 
+        @JsValue("interrupted")
+        val interrupted: AudioContextState
+
         @JsValue("running")
         val running: AudioContextState
 
