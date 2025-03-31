@@ -1,5 +1,6 @@
 package ajv
 
+import js.core.JsAny
 import js.objects.ReadonlyRecord
 
 external interface ErrorObject {
@@ -9,7 +10,7 @@ external interface ErrorObject {
     val params: ReadonlyRecord<String, Any?>
     val propertyName: String?
     val message: String?
-    val schema: Any?
-    val parentSchema: Any?
-    val data: Any?
+    val schema: JsAny?
+    val parentSchema: JsAny?
+    val data: JsAny?
 }
