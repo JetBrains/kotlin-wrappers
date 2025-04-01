@@ -115,7 +115,7 @@ external class QuantizedMeshTerrainData(
      * Values in between 0 and 255 are allowed as well to smoothly blend between land and water.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/QuantizedMeshTerrainData.html#waterMask">Online Documentation</a>
      */
-    override var waterMask: Any /* Uint8Array | HTMLImageElement | HTMLCanvasElement */
+    override var waterMask: Any? /* Uint8Array | HTMLImageElement | HTMLCanvasElement | undefined */
 
     /**
      * Upsamples this terrain data for use by a descendant tile.  The resulting instance will contain a subset of the
@@ -159,7 +159,7 @@ external class QuantizedMeshTerrainData(
 
     /**
      * Determines if a given child tile is available, based on the
-     * [HeightmapTerrainData.childTileMask].  The given child tile coordinates are assumed
+     * [QuantizedMeshTerrainData.childTileMask].  The given child tile coordinates are assumed
      * to be one of the four children of this tile.  If non-child tile coordinates are
      * given, the availability of the southeast child tile is returned.
      * @param [thisX] The tile X coordinate of this (the parent) tile.

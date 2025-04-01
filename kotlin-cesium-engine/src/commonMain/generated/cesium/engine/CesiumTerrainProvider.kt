@@ -132,7 +132,7 @@ private constructor() :
      * is available now will not become unavailable in the future.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CesiumTerrainProvider.html#availability">Online Documentation</a>
      */
-    override val availability: TileAvailability
+    override val availability: TileAvailability?
 
     /**
      * Gets the maximum geometric error allowed in a tile at a given level.

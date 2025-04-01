@@ -57,7 +57,7 @@ abstract external class TerrainProvider() {
      * information is not available.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/TerrainProvider.html#availability">Online Documentation</a>
      */
-    abstract val availability: TileAvailability
+    abstract val availability: TileAvailability?
 
     /**
      * Requests the geometry for a given tile. The result must include terrain data and

@@ -60,7 +60,7 @@ external class GoogleEarthEnterpriseTerrainData(
      * Values in between 0 and 255 are allowed as well to smoothly blend between land and water.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GoogleEarthEnterpriseTerrainData.html#waterMask">Online Documentation</a>
      */
-    override var waterMask: Any /* Uint8Array | HTMLImageElement | HTMLCanvasElement */
+    override var waterMask: Any? /* Uint8Array | HTMLImageElement | HTMLCanvasElement | undefined */
 
     /**
      * Computes the terrain height at a specified longitude and latitude.

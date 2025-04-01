@@ -72,7 +72,7 @@ external class EllipsoidTerrainProvider(
      * information is not available.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/EllipsoidTerrainProvider.html#availability">Online Documentation</a>
      */
-    override val availability: TileAvailability
+    override val availability: TileAvailability?
 
     /**
      * Requests the geometry for a given tile. The result includes terrain

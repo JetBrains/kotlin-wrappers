@@ -22,8 +22,18 @@ external object ITwinPlatform {
 
     /**
      * Gets or sets the default iTwin access token. This token should have the <code>itwin-platform</code> scope.
+     *
+     * This value will be ignored if {@link ITwinPlatform.defaultShareKey} is defined.
      */
     var defaultAccessToken: String?
+
+    /**
+     * Gets or sets the default iTwin share key. If this value is provided it will override {@link ITwinPlatform.defaultAccessToken} in all requests.
+     *
+     * Share keys can be generated using the iTwin Shares api
+     * https://developer.bentley.com/apis/access-control-v2/operations/create-itwin-share/
+     */
+    var defaultShareKey: String?
 
     /**
      * Gets or sets the default iTwin API endpoint.

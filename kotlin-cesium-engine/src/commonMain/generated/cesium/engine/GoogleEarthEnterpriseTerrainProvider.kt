@@ -80,7 +80,7 @@ private constructor() :
      * information is not available.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GoogleEarthEnterpriseTerrainProvider.html#availability">Online Documentation</a>
      */
-    override val availability: TileAvailability
+    override val availability: TileAvailability?
 
     /**
      * Requests the geometry for a given tile.   The result must include terrain data and

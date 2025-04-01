@@ -97,12 +97,6 @@ external class Cesium3DTilesVoxelProvider(
     val componentTypes: ReadonlyArray<MetadataComponentType>
 
     /**
-     * Gets the ordering of the metadata in the buffers.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTilesVoxelProvider.html#metadataOrder">Online Documentation</a>
-     */
-    val metadataOrder: VoxelMetadataOrder
-
-    /**
      * Gets the metadata minimum values.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTilesVoxelProvider.html#minimumValues">Online Documentation</a>
      */

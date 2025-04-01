@@ -84,12 +84,6 @@ abstract external class VoxelProvider() {
     abstract val componentTypes: ReadonlyArray<MetadataComponentType>
 
     /**
-     * Gets the ordering of the metadata in the buffers.
-     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/VoxelProvider.html#metadataOrder">Online Documentation</a>
-     */
-    abstract val metadataOrder: VoxelMetadataOrder
-
-    /**
      * Gets the metadata minimum values.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/VoxelProvider.html#minimumValues">Online Documentation</a>
      */
