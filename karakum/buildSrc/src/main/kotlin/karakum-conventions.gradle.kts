@@ -23,8 +23,7 @@ kotlin {
     }
 }
 
-val outputTarget = findProperty("karakum.target") as String? ?: "jsMain"
-val outputPath: String = layout.projectDirectory.dir("../src/$outputTarget/generated").asFile.path
+val outputPath: String = layout.projectDirectory.dir("../src/commonMain/generated").asFile.path
 
 tasks.named<NodeJsExec>("jsNodeProductionRun") {
     args(outputPath)
