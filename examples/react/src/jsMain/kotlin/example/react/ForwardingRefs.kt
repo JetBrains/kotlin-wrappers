@@ -1,4 +1,4 @@
-package example
+package example.react
 
 import react.*
 import react.dom.html.ReactHTML.input
