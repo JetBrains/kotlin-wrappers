@@ -83,9 +83,6 @@ include("kotlin-csstype")
 // Kotlin/JS: Electron wrappers
 include("kotlin-electron")
 
-// Kotlin/JS: Emotion wrappers
-include("kotlin-emotion")
-
 // Kotlin/JS: Emotion Cache wrappers
 include("kotlin-emotion-cache")
 
