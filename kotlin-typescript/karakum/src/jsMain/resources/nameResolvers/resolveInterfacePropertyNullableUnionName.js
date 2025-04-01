@@ -1,11 +1,17 @@
 import ts from "typescript";
-import * as karakum from "karakum";
+import * as karakum from "../karakum.mjs";
 
 export default (node, context) => {
-    const typeScriptService = context.lookupService(karakum.typeScriptServiceKey)
+    const typeScriptService = context.lookupService(karakum.typeScriptServiceKey.get())
     const getParent = typeScriptService?.getParent.bind(typeScriptService) ?? (node => node.parent)
 
-    const property = getParent(node)
+    const union = getParent(node)
+    if (!union) return null
+    if (!ts.isUnionTypeNode(union)) return null
+    if (union.types.length < 2) return null
+    if (union.types[1].kind !== ts.SyntaxKind.UndefinedKeyword) return null
+
+    const property = getParent(union)
     if (!property) return null
     if (!ts.isPropertySignature(property)) return null
     if (!ts.isIdentifier(property.name)) return null
@@ -18,19 +24,5 @@ export default (node, context) => {
 
     const parentName = interfaceNode.name.text
 
-    if (
-        (
-            parentName === "TypeReference"
-            && propertyName === "node"
-        )
-        || (
-            parentName === "Signature"
-            && propertyName === "declaration"
-        )
-    ) {
-        return `${karakum.capitalize(parentName)}${karakum.capitalize(propertyName)}Field`
-
-    }
-
-    return null
+    return `${karakum.capitalize(parentName)}${karakum.capitalize(propertyName)}`
 }

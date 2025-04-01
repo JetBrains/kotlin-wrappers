@@ -1,8 +1,8 @@
 import ts from "typescript";
-import * as karakum from "karakum";
+import * as karakum from "../karakum.mjs";
 
 export default (node, context) => {
-    const typeScriptService = context.lookupService(karakum.typeScriptServiceKey)
+    const typeScriptService = context.lookupService(karakum.typeScriptServiceKey.get())
     const getParent = typeScriptService?.getParent.bind(typeScriptService) ?? (node => node.parent)
 
     const property = getParent(node)
@@ -16,11 +16,12 @@ export default (node, context) => {
     if (!typeLiteral) return null
     if (!ts.isTypeLiteralNode(typeLiteral)) return null
 
-    const intersection = getParent(typeLiteral)
-    if (!intersection) return null
-    if (!ts.isIntersectionTypeNode(intersection)) return null
+    const typeReference = getParent(typeLiteral)
+    if (!ts.isTypeReferenceNode(typeReference)) return null
+    if (!ts.isIdentifier(typeReference.typeName)) return null
+    if (typeReference.typeName.text !== "ChangePropertyTypes") return null
 
-    const typeAlias = getParent(intersection)
+    const typeAlias = getParent(typeReference)
     if (!typeAlias) return null
     if (!ts.isTypeAliasDeclaration(typeAlias)) return null
 

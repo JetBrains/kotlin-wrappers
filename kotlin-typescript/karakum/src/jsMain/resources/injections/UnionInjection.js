@@ -1,5 +1,5 @@
 import ts from "typescript";
-import * as karakum from "karakum";
+import * as karakum from "../karakum.mjs";
 
 function isNodeSuccessor(node, context) {
     let name
@@ -19,7 +19,7 @@ function isNodeSuccessor(node, context) {
         return true
     }
 
-    const typeScriptService = context.lookupService(karakum.typeScriptServiceKey)
+    const typeScriptService = context.lookupService(karakum.typeScriptServiceKey.get())
     const typeChecker = typeScriptService?.program.getTypeChecker()
 
     const symbol = typeChecker?.getSymbolAtLocation(name)
@@ -62,7 +62,7 @@ function isEnumMemberType(node, context, enumName) {
         return true
     }
 
-    const typeScriptService = context.lookupService(karakum.typeScriptServiceKey)
+    const typeScriptService = context.lookupService(karakum.typeScriptServiceKey.get())
     const typeChecker = typeScriptService?.program.getTypeChecker()
 
     const symbol = typeChecker?.getSymbolAtLocation(name)
@@ -87,7 +87,7 @@ const injectCommonUnionParents = (node, context, render) => {
 
     for (const enumName of ["SyntaxKind", "ScriptKind", "CommandTypes"]) {
         if (
-            context.type === karakum.InjectionType.HERITAGE_CLAUSE
+            context.type === "HERITAGE_CLAUSE"
             && ts.isUnionTypeNode(node)
             && node.types.every(type => isEnumMemberType(type, context, enumName))
         ) {
@@ -96,7 +96,7 @@ const injectCommonUnionParents = (node, context, render) => {
     }
 
     if (
-        context.type === karakum.InjectionType.HERITAGE_CLAUSE
+        context.type === "HERITAGE_CLAUSE"
         && ts.isUnionTypeNode(node)
         && node.types.every(type => isNodeSuccessor(type, context))
     ) {
@@ -104,7 +104,7 @@ const injectCommonUnionParents = (node, context, render) => {
     }
 
     if (
-        context.type === karakum.InjectionType.HERITAGE_CLAUSE
+        context.type === "HERITAGE_CLAUSE"
         && ts.isUnionTypeNode(node)
         && node.parent
         && ts.isTypeAliasDeclaration(node.parent)
@@ -114,7 +114,7 @@ const injectCommonUnionParents = (node, context, render) => {
     }
 
     if (
-        context.type === karakum.InjectionType.HERITAGE_CLAUSE
+        context.type === "HERITAGE_CLAUSE"
         && ts.isUnionTypeNode(node)
         && node.parent
         && ts.isTypeAliasDeclaration(node.parent)
@@ -124,7 +124,7 @@ const injectCommonUnionParents = (node, context, render) => {
     }
 
     if (
-        context.type === karakum.InjectionType.HERITAGE_CLAUSE
+        context.type === "HERITAGE_CLAUSE"
         && ts.isUnionTypeNode(node)
         && node.parent
         && ts.isTypeAliasDeclaration(node.parent)
@@ -134,7 +134,7 @@ const injectCommonUnionParents = (node, context, render) => {
     }
 
     if (
-        context.type === karakum.InjectionType.HERITAGE_CLAUSE
+        context.type === "HERITAGE_CLAUSE"
         && ts.isUnionTypeNode(node)
         && node.parent
         && ts.isTypeAliasDeclaration(node.parent)
@@ -144,7 +144,7 @@ const injectCommonUnionParents = (node, context, render) => {
     }
 
     if (
-        context.type === karakum.InjectionType.HERITAGE_CLAUSE
+        context.type === "HERITAGE_CLAUSE"
         && ts.isUnionTypeNode(node)
         && node.parent
         && ts.isTypeAliasDeclaration(node.parent)
@@ -157,7 +157,7 @@ const injectCommonUnionParents = (node, context, render) => {
     }
 
     if (
-        context.type === karakum.InjectionType.HERITAGE_CLAUSE
+        context.type === "HERITAGE_CLAUSE"
         && ts.isUnionTypeNode(node)
         && node.parent
         && ts.isTypeAliasDeclaration(node.parent)
@@ -167,7 +167,7 @@ const injectCommonUnionParents = (node, context, render) => {
     }
 
     if (
-        context.type === karakum.InjectionType.HERITAGE_CLAUSE
+        context.type === "HERITAGE_CLAUSE"
         && ts.isUnionTypeNode(node)
         && node.parent
         && ts.isTypeAliasDeclaration(node.parent)
@@ -177,7 +177,7 @@ const injectCommonUnionParents = (node, context, render) => {
     }
 
     if (
-        context.type === karakum.InjectionType.HERITAGE_CLAUSE
+        context.type === "HERITAGE_CLAUSE"
         && ts.isUnionTypeNode(node)
         && node.parent
         && ts.isTypeAliasDeclaration(node.parent)
@@ -187,7 +187,7 @@ const injectCommonUnionParents = (node, context, render) => {
     }
 
     if (
-        context.type === karakum.InjectionType.HERITAGE_CLAUSE
+        context.type === "HERITAGE_CLAUSE"
         && ts.isUnionTypeNode(node)
 
         && node.parent
@@ -203,7 +203,7 @@ const injectCommonUnionParents = (node, context, render) => {
     }
 
     if (
-        context.type === karakum.InjectionType.HERITAGE_CLAUSE
+        context.type === "HERITAGE_CLAUSE"
         && ts.isUnionTypeNode(node)
 
         && node.parent
@@ -219,7 +219,7 @@ const injectCommonUnionParents = (node, context, render) => {
     }
 
     if (
-        context.type === karakum.InjectionType.HERITAGE_CLAUSE
+        context.type === "HERITAGE_CLAUSE"
         && ts.isUnionTypeNode(node)
 
         && node.parent
@@ -255,7 +255,24 @@ function decorateUnionInjection(unionInjection) {
     return {
         setup: (...args) => unionInjection.setup(...args),
         traverse: (...args) => unionInjection.traverse(...args),
-        render: (...args) => unionInjection.render(...args),
+        render: (...args) => {
+            const [node] = args
+            if (
+                ts.isUnionTypeNode(node)
+
+                && node.parent
+                && ts.isPropertySignature(node.parent)
+                && ts.isIdentifier(node.parent.name)
+                && node.parent.name.text === "parent"
+
+                && node.parent.parent
+                && ts.isInterfaceDeclaration(node.parent.parent)
+                && node.parent.parent.name.text === "ArrayBindingPattern"
+            ) {
+                console.log("UnionInjection!!!", node.getText())
+            }
+            return unionInjection.render(...args);
+        },
         generate: (...args) => unionInjection.generate(...args),
 
         inject: (...args) => unionInjection.inject(...args)

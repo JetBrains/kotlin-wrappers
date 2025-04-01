@@ -138,7 +138,7 @@ sealed external interface UserPreferences {
      *
      * Default: `false`
      */
-    val organizeImportsCaseFirst: (Any /* "upper" | "lower" | false */)?
+    val organizeImportsCaseFirst: (UserPreferencesOrganizeImportsCaseFirst)?
 
     /**
      * Indicates where named type-only imports should sort. "inline" sorts named imports without regard to if the import is

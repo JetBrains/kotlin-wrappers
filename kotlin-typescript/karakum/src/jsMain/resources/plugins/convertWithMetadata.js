@@ -1,5 +1,5 @@
 import ts from "typescript"
-import * as karakum from "karakum"
+import * as karakum from "../karakum.mjs"
 
 export default function (node, context, render) {
     if (
@@ -9,7 +9,7 @@ export default function (node, context, render) {
         && node.type.types.length > 1
         && ts.isTypeLiteralNode(node.type.types[1])
     ) {
-        const inheritanceModifierService = context.lookupService(karakum.inheritanceModifierServiceKey)
+        const inheritanceModifierService = context.lookupService(karakum.inheritanceModifierServiceKey.get())
 
         const inheritanceModifier = inheritanceModifierService?.resolveInheritanceModifier(node, context)
 

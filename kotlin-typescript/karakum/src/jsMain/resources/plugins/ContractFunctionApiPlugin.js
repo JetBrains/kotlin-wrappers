@@ -1,5 +1,5 @@
 import ts from "typescript";
-import * as karakum from "karakum";
+import * as karakum from "../karakum.mjs";
 
 function isConflictingOverload(node) {
     return (
@@ -30,7 +30,7 @@ export default {
 
             && node.name
         ) {
-            const typeScriptService = context.lookupService(karakum.typeScriptServiceKey)
+            const typeScriptService = context.lookupService(karakum.typeScriptServiceKey.get())
 
             const namespace = typeScriptService?.findClosest(node, ts.isModuleDeclaration)
 

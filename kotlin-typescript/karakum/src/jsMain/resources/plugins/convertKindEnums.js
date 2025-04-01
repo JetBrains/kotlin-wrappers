@@ -1,5 +1,5 @@
 import ts from "typescript";
-import * as karakum from "karakum";
+import * as karakum from "../karakum.mjs";
 
 export default function (node, context, render) {
     if (
@@ -14,9 +14,9 @@ export default function (node, context, render) {
     ) {
         const name = render(node.name)
 
-        const injectionService = context.lookupService(karakum.injectionServiceKey)
+        const injectionService = context.lookupService(karakum.injectionServiceKey.get())
 
-        const heritageInjections = injectionService?.resolveInjections(node, karakum.InjectionType.HERITAGE_CLAUSE, context, render)
+        const heritageInjections = injectionService?.resolveInjections(node, "HERITAGE_CLAUSE", context, render)
 
         const injectedHeritageClauses = heritageInjections
             ?.filter(Boolean)
@@ -34,7 +34,7 @@ export default function (node, context, render) {
 
         const body = node.members
             .map(member => {
-                const memberHeritageInjections = injectionService?.resolveInjections(member, karakum.InjectionType.HERITAGE_CLAUSE, context, render)
+                const memberHeritageInjections = injectionService?.resolveInjections(member, "HERITAGE_CLAUSE", context, render)
 
                 const memberInjectedHeritageClauses = memberHeritageInjections
                     ?.filter(Boolean)

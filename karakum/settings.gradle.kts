@@ -21,6 +21,9 @@ dependencyResolutionManagement {
 
             val nodeVersion = extra["node.version"] as String
             library("node", "npm", "@types/node").version(nodeVersion)
+
+            val typescriptVersion = extra["typescript.version"] as String
+            library("typescript", "npm", "typescript").version(typescriptVersion)
         }
     }
 }
@@ -30,3 +33,6 @@ project(":kotlin-electron-karakum").projectDir = file("../kotlin-electron/karaku
 
 include(":kotlin-node-karakum")
 project(":kotlin-node-karakum").projectDir = file("../kotlin-node/karakum")
+
+include(":kotlin-typescript-karakum")
+project(":kotlin-typescript-karakum").projectDir = file("../kotlin-typescript/karakum")

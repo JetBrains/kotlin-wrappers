@@ -1,8 +1,8 @@
 import ts from "typescript";
-import * as karakum from "karakum";
+import * as karakum from "../karakum.mjs";
 
 const resolveTypeReference = (node, context) => {
-    const typeScriptService = context.lookupService(karakum.typeScriptServiceKey)
+    const typeScriptService = context.lookupService(karakum.typeScriptServiceKey.get())
     const getParent = typeScriptService?.getParent.bind(typeScriptService) ?? (node => node.parent)
 
     const typeReference = getParent(node)
@@ -31,7 +31,7 @@ const resolveTypeReference = (node, context) => {
 }
 
 const resolveArrayType = (node, context) => {
-    const typeScriptService = context.lookupService(karakum.typeScriptServiceKey)
+    const typeScriptService = context.lookupService(karakum.typeScriptServiceKey.get())
     const getParent = typeScriptService?.getParent.bind(typeScriptService) ?? (node => node.parent)
 
     let arrayType = getParent(node)
