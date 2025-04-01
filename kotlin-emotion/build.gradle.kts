@@ -6,6 +6,7 @@ dependencies {
     jsMainApi(projects.kotlinCsstype)
     commonMainApi(projects.kotlinBrowser)
     commonMainApi(projects.kotlinEmotionCache)
+    commonMainApi(projects.kotlinEmotionCss)
     commonMainApi(projects.kotlinEmotionUtils)
     jsMainApi(projects.kotlinReactCore)
 
