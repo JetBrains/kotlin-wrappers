@@ -3,7 +3,6 @@ plugins {
 }
 
 dependencies {
-    jsMainApi(projects.kotlinEmotion)
     jsMainApi(projects.kotlinReact)
     jsMainApi(projects.kotlinReactDom)
 
