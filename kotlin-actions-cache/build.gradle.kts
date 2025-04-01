@@ -3,7 +3,8 @@ plugins {
 }
 
 dependencies {
-    commonMainApi(projects.kotlinNode)
+    commonMainApi(projects.kotlinActionsHttpClient)
+    commonMainApi(projects.kotlinJs)
 
     commonMainApi(npm(libs.npm.actions.cache))
 }

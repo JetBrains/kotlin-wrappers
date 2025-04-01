@@ -3,7 +3,7 @@ plugins {
 }
 
 dependencies {
-    commonMainApi(projects.kotlinNode)
+    commonMainApi(projects.kotlinJs)
 
     commonMainApi(npm(libs.npm.actions.glob))
 }
