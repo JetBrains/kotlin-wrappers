@@ -1,3 +1,12 @@
+## 2025.4.0
+
+* Split `kotlin-emotion` (1 subproject for 1 NPM library):
+    * `kotlin-emotion-cache`
+    * `kotlin-emotion-css`
+    * `kotlin-emotion-react`
+    * `kotlin-emotion-styled`
+    * `kotlin-emotion-utils`
+
 ## 2025.1.0
 
 * New versioning
