@@ -86,6 +86,21 @@ include("kotlin-electron")
 // Kotlin/JS: Emotion wrappers
 include("kotlin-emotion")
 
+// Kotlin/JS: Emotion Cache wrappers
+include("kotlin-emotion-cache")
+
+// Kotlin/JS: Emotion CSS wrappers
+include("kotlin-emotion-css")
+
+// Kotlin/JS: Emotion React wrappers
+include("kotlin-emotion-react")
+
+// Kotlin/JS: Emotion Styled wrappers
+include("kotlin-emotion-styled")
+
+// Kotlin/JS: Emotion Utils wrappers
+include("kotlin-emotion-utils")
+
 // Kotlin/JS: APIs missing from the standard library
 include("kotlin-js")
 
