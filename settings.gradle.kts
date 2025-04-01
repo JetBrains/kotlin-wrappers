@@ -56,6 +56,33 @@ fun VersionCatalogBuilder.npmLibraries() {
 
 include("docs")
 
+// Kotlin/JS: GitHub Actions Artifact wrappers
+include("kotlin-actions-artifact")
+
+// Kotlin/JS: GitHub Actions Cache wrappers
+include("kotlin-actions-cache")
+
+// Kotlin/JS: GitHub Actions Core wrappers
+include("kotlin-actions-core")
+
+// Kotlin/JS: GitHub Actions Exec wrappers
+include("kotlin-actions-exec")
+
+// Kotlin/JS: GitHub Actions GitHub wrappers
+include("kotlin-actions-github")
+
+// Kotlin/JS: GitHub Actions Glob wrappers
+include("kotlin-actions-glob")
+
+// Kotlin/JS: GitHub Actions HTTP Client wrappers
+include("kotlin-actions-http-client")
+
+// Kotlin/JS: GitHub Actions IO wrappers
+include("kotlin-actions-io")
+
+// Kotlin/JS: GitHub Actions Tool Cache wrappers
+include("kotlin-actions-tool-cache")
+
 // Kotlin/JS: GitHub Actions Toolkit wrappers
 include("kotlin-actions-toolkit")
 
