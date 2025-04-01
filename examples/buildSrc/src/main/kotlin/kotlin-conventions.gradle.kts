@@ -26,20 +26,20 @@ kotlin {
         js {
             configureJsTarget(moduleName = project.name)
         }
+
+        sourceSets {
+            jsMain {
+                dependencies {
+                    implementation(devNpm("css-loader", "7.1.2"))
+                    implementation(devNpm("style-loader", "4.0.0"))
+                }
+            }
+        }
     }
 
     if (jsTarget.wasm) {
         wasmJs {
             configureJsTarget(moduleName = project.name + "-wasm")
-        }
-    }
-
-    sourceSets {
-        jsMain {
-            dependencies {
-                implementation(devNpm("css-loader", "7.1.2"))
-                implementation(devNpm("style-loader", "4.0.0"))
-            }
         }
     }
 }
