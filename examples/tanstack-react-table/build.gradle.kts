@@ -6,7 +6,7 @@ dependencies {
     jsMainImplementation(kotlinWrappers.react)
     jsMainImplementation(kotlinWrappers.reactDom)
     jsMainImplementation(kotlinWrappers.reactUse)
-    jsMainImplementation(kotlinWrappers.emotion)
+    jsMainImplementation(kotlinWrappers.emotion.react)
     jsMainImplementation(kotlinWrappers.tanstack.queryCore)
     jsMainImplementation(kotlinWrappers.tanstack.reactQuery)
     jsMainImplementation(kotlinWrappers.tanstack.tableCore)
