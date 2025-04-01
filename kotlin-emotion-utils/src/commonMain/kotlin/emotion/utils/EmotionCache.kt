@@ -1,9 +1,11 @@
 package emotion.utils
 
+import js.core.JsAny
+import js.core.JsString
 import js.objects.Record
 
 external interface EmotionCache {
-    val inserted: Record<String, Any /* string | true */>
+    val inserted: Record<JsString, JsAny /* string | true */>
     val registered: RegisteredCache
     val sheet: StyleSheet
     val key: String
