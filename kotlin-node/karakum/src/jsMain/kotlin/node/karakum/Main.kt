@@ -10,7 +10,7 @@ import io.github.sgrishchenko.karakum.util.manyOf
 import io.github.sgrishchenko.karakum.util.ruleOf
 import js.import.import
 import js.objects.recordOf
-import node.karakum.plugins.convertAssertStrict
+import node.karakum.plugins.*
 import node.path.path
 import node.process.process
 import node.url.fileURLToPath
@@ -74,7 +74,11 @@ suspend fun main() {
 
     generate {
         plugins = manyOf(values = jsPlugins + arrayOf(
-            convertAssertStrict
+            convertArgumentsTypeReferenceNode,
+            convertAssertStrict,
+            convertAssertStrictNames,
+            convertBufferBlob,
+            convertBufferReference,
         ))
         injections = manyOf(values = jsInjections + arrayOf())
         annotations = manyOf(values = jsAnnotations + arrayOf())
