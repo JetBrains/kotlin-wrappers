@@ -255,24 +255,7 @@ function decorateUnionInjection(unionInjection) {
     return {
         setup: (...args) => unionInjection.setup(...args),
         traverse: (...args) => unionInjection.traverse(...args),
-        render: (...args) => {
-            const [node] = args
-            if (
-                ts.isUnionTypeNode(node)
-
-                && node.parent
-                && ts.isPropertySignature(node.parent)
-                && ts.isIdentifier(node.parent.name)
-                && node.parent.name.text === "parent"
-
-                && node.parent.parent
-                && ts.isInterfaceDeclaration(node.parent.parent)
-                && node.parent.parent.name.text === "ArrayBindingPattern"
-            ) {
-                console.log("UnionInjection!!!", node.getText())
-            }
-            return unionInjection.render(...args);
-        },
+        render: (...args) => unionInjection.render(...args),
         generate: (...args) => unionInjection.generate(...args),
 
         inject: (...args) => unionInjection.inject(...args)
