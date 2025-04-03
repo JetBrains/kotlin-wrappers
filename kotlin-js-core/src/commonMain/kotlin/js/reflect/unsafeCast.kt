@@ -18,7 +18,7 @@ expect fun <T : JsAny> unsafeCast(
     value: Double,
 ): T
 
-expect fun <T : JsAny> unsafeCast(
+expect fun <T : JsAny> legacyUnsafeCast(
     value: Function<*>,
 ): T
 

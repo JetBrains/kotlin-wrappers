@@ -3,6 +3,7 @@
 package tanstack.table.core
 
 import js.reflect.unsafeCast
+import js.reflect.legacyUnsafeCast
 
 sealed external interface ColumnDefTemplate<TProps : Any> /* string | ((props: TProps) -> any) */
 
@@ -14,4 +15,4 @@ inline fun <TProps : Any> ColumnDefTemplate(
 inline fun <TProps : Any> ColumnDefTemplate(
     noinline source: (props: TProps) -> Any?,
 ): ColumnDefTemplate<TProps> =
-    unsafeCast(source)
+    legacyUnsafeCast(source)

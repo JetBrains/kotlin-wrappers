@@ -20,7 +20,7 @@ actual inline fun <T : Any> unsafeCast(
 ): T =
     value.unsafeCast<T>()
 
-actual inline fun <T : Any> unsafeCast(
+actual inline fun <T : Any> legacyUnsafeCast(
     value: Function<*>,
 ): T =
     value.unsafeCast<T>()

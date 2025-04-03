@@ -2,7 +2,7 @@
 
 package react.dom
 
-import js.reflect.unsafeCast
+import js.reflect.legacyUnsafeCast
 import kotlinx.html.CommonAttributeGroupFacade
 import react.dom.events.*
 
@@ -611,6 +611,6 @@ private fun CommonAttributeGroupFacade.onEvent(
     consumer.onTagEvent(
         tag = this,
         event = type,
-        value = unsafeCast(handler),
+        value = legacyUnsafeCast(handler),
     )
 }
