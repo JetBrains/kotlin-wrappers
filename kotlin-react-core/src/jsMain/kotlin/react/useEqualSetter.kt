@@ -13,7 +13,7 @@ fun <T> useEqualSetter(
 private fun <T> toEqualSetter(
     setter: StateSetter<T>,
 ): StateSetter<T> =
-    unsafeSpecialCast { source: Any? ->
+    unsafeCast { source: Any? ->
         if (source is Function<*>) {
             val transform = unsafeCast<(T) -> T>(source)
             setter { oldValue ->

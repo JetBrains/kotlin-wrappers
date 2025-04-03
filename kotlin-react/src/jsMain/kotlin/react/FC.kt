@@ -5,14 +5,14 @@ import js.reflect.unsafeCast
 fun FC(
     block: @ReactDsl ChildrenBuilder.() -> Unit,
 ): FC<Props> =
-    unsafeCast<FC<Props>> {
+    unsafeCast { ->
         createElementOrNull(block)
     }
 
 fun <P : Props> FC(
     block: @ReactDsl ChildrenBuilder.(props: P) -> Unit,
 ): FC<P> =
-    unsafeCast<FC<P>> { props: P ->
+    unsafeCast { props: P ->
         createElementOrNull { block(props) }
     }
 

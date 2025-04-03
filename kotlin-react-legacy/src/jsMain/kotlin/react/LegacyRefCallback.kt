@@ -6,7 +6,7 @@ import react.raw.useCallbackRaw
 fun <T : Any> LegacyRefCallback(
     callback: (T?) -> Unit,
 ): RefCallback<T> =
-    unsafeCast<RefCallback<T>> { value: T? ->
+    unsafeCast { value: T? ->
         callback(value)
         undefined
     }
