@@ -82,8 +82,8 @@ external class Sign : node.stream.Writable {
      * @since v0.1.92
      * @param inputEncoding The `encoding` of the `data` string.
      */
-    fun update(data: BinaryLike) /* this */
-    fun update(data: String, inputEncoding: Encoding) /* this */
+    fun update(data: BinaryLike): Unit /* this */
+    fun update(data: String, inputEncoding: Encoding): Unit /* this */
 
     /**
      * Calculates the signature on all the data passed through using either `sign.update()` or `sign.write()`.

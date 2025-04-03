@@ -175,7 +175,7 @@ external class REPLServer : _Interface {
      * @param keyword The command keyword (_without_ a leading `.` character).
      * @param cmd The function to invoke when the command is processed.
      */
-    fun defineCommand(keyword: String, cmd: REPLCommandAction)
+    fun defineCommand(keyword: String, cmd: REPLCommandAction): Unit
 
     /**
      * The `replServer.defineCommand()` method is used to add new `.`\-prefixed commands
@@ -214,7 +214,7 @@ external class REPLServer : _Interface {
      * @param keyword The command keyword (_without_ a leading `.` character).
      * @param cmd The function to invoke when the command is processed.
      */
-    fun defineCommand(keyword: String, cmd: REPLCommand)
+    fun defineCommand(keyword: String, cmd: REPLCommand): Unit
 
     /**
      * The `replServer.displayPrompt()` method readies the REPL instance for input
@@ -229,7 +229,7 @@ external class REPLServer : _Interface {
      * within the action function for commands registered using the `replServer.defineCommand()` method.
      * @since v0.1.91
      */
-    fun displayPrompt(preserveCursor: Boolean = definedExternally)
+    fun displayPrompt(preserveCursor: Boolean = definedExternally): Unit
 
     /**
      * The `replServer.clearBufferedCommand()` method clears any command that has been
@@ -237,7 +237,7 @@ external class REPLServer : _Interface {
      * called from within the action function for commands registered using the `replServer.defineCommand()` method.
      * @since v9.0.0
      */
-    fun clearBufferedCommand()
+    fun clearBufferedCommand(): Unit
 
     /**
      * Initializes a history log file for the REPL instance. When executing the
@@ -249,7 +249,7 @@ external class REPLServer : _Interface {
      * @param historyPath the path to the history file
      * @param callback called when history writes are ready or upon error
      */
-    fun setupHistory(path: String, callback: (err: js.errors.JsError?, repl: Unit /* this */) -> Unit)
+    fun setupHistory(path: String, callback: (err: js.errors.JsError?, repl: Unit /* this */) -> Unit): Unit
 
     /**
      * events.EventEmitter
@@ -263,7 +263,7 @@ external class REPLServer : _Interface {
      * 8. exit
      * 9. reset
      */
-    override fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
+    override fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
 
 
     override fun emit(event: String, vararg args: Any?): Boolean
@@ -271,22 +271,22 @@ external class REPLServer : _Interface {
     override fun emit(event: js.symbol.Symbol, vararg args: Any?): Boolean
 
 
-    override fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
+    override fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
 
 
-    override fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
+    override fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
 
 
     override fun prependListener(
         event: String,
         listener: Function<Unit>, /* (...args: any[]) => void */
-    ) /* this */
+    ): Unit /* this */
 
 
     override fun prependOnceListener(
         event: String,
         listener: Function<Unit>, /* (...args: any[]) => void */
-    ) /* this */
+    ): Unit /* this */
 
 
     @web.events.JsEvent("close")

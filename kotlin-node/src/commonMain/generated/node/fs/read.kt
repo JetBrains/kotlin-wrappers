@@ -28,7 +28,7 @@ external fun <TBuffer : js.buffer.ArrayBufferView<*>> read(
     length: Number,
     position: ReadPosition?,
     callback: (err: node.ErrnoException?, bytesRead: Double, buffer: TBuffer) -> Unit,
-)
+): Unit
 
 /**
  * Similar to the above `fs.read` function, this version takes an optional `options` object.
@@ -43,9 +43,9 @@ external fun <TBuffer : js.buffer.ArrayBufferView<*>> read(
     fd: Number,
     options: ReadAsyncOptions<TBuffer>,
     callback: (err: node.ErrnoException?, bytesRead: Double, buffer: TBuffer) -> Unit,
-)
+): Unit
 
 external fun read(
     fd: Number,
     callback: (err: node.ErrnoException?, bytesRead: Double, buffer: js.buffer.ArrayBufferView<*>) -> Unit,
-)
+): Unit

@@ -57,7 +57,7 @@ external fun appendFileSync(
     path: PathOrFileDescriptor,
     data: String,
     options: WriteFileOptions = definedExternally,
-)
+): Unit
 
 /**
  * Synchronously append data to a file, creating the file if it does not yet
@@ -110,4 +110,4 @@ external fun appendFileSync(
     path: PathOrFileDescriptor,
     data: Uint8Array<*>,
     options: WriteFileOptions = definedExternally,
-)
+): Unit

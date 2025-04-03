@@ -21,21 +21,21 @@ external class _Session : EventEmitter {
     /**
      * Connects a session to the inspector back-end.
      */
-    fun connect()
+    fun connect(): Unit
 
     /**
      * Connects a session to the inspector back-end.
      * An exception will be thrown if this API was not called on a Worker thread.
      * @since v12.11.0
      */
-    fun connectToMainThread()
+    fun connectToMainThread(): Unit
 
     /**
      * Immediately close the session. All pending message callbacks will be called with an error.
      * `session.connect()` will need to be called to be able to send messages again.
      * Reconnected session will lose all inspector state, such as enabled agents or configured breakpoints.
      */
-    fun disconnect()
+    fun disconnect(): Unit
 
     /**
      * Posts a message to the inspector back-end. `callback` will be notified when
@@ -59,13 +59,13 @@ external class _Session : EventEmitter {
     fun post(
         method: String,
         callback: (err: js.errors.JsError?, params: Any? /* use undefined for default */) -> Unit = definedExternally,
-    )
+    ): Unit
 
     fun post(
         method: String,
         params: Any = definedExternally,
         callback: (err: js.errors.JsError?, params: Any? /* use undefined for default */) -> Unit = definedExternally,
-    )
+    ): Unit
 
     /**
      * Returns supported domains.
@@ -73,7 +73,7 @@ external class _Session : EventEmitter {
     fun post(
         method: SessionMethod.SCHEMA_GETDOMAINS,
         callback: (err: js.errors.JsError?, params: node.inspector.schema.GetDomainsReturnType) -> Unit = definedExternally,
-    )
+    ): Unit
 
     /**
      * Evaluates expression on global object.
@@ -82,12 +82,12 @@ external class _Session : EventEmitter {
         method: SessionMethod.RUNTIME_EVALUATE,
         params: node.inspector.runtime.EvaluateParameterType = definedExternally,
         callback: (err: js.errors.JsError?, params: node.inspector.runtime.EvaluateReturnType) -> Unit = definedExternally,
-    )
+    ): Unit
 
     fun post(
         method: SessionMethod.RUNTIME_EVALUATE,
         callback: (err: js.errors.JsError?, params: node.inspector.runtime.EvaluateReturnType) -> Unit = definedExternally,
-    )
+    ): Unit
 
     /**
      * Add handler to promise with given promise object id.
@@ -96,12 +96,12 @@ external class _Session : EventEmitter {
         method: SessionMethod.RUNTIME_AWAITPROMISE,
         params: node.inspector.runtime.AwaitPromiseParameterType = definedExternally,
         callback: (err: js.errors.JsError?, params: node.inspector.runtime.AwaitPromiseReturnType) -> Unit = definedExternally,
-    )
+    ): Unit
 
     fun post(
         method: SessionMethod.RUNTIME_AWAITPROMISE,
         callback: (err: js.errors.JsError?, params: node.inspector.runtime.AwaitPromiseReturnType) -> Unit = definedExternally,
-    )
+    ): Unit
 
     /**
      * Calls function with given declaration on the given object. Object group of the result is inherited from the target object.
@@ -110,12 +110,12 @@ external class _Session : EventEmitter {
         method: SessionMethod.RUNTIME_CALLFUNCTIONON,
         params: node.inspector.runtime.CallFunctionOnParameterType = definedExternally,
         callback: (err: js.errors.JsError?, params: node.inspector.runtime.CallFunctionOnReturnType) -> Unit = definedExternally,
-    )
+    ): Unit
 
     fun post(
         method: SessionMethod.RUNTIME_CALLFUNCTIONON,
         callback: (err: js.errors.JsError?, params: node.inspector.runtime.CallFunctionOnReturnType) -> Unit = definedExternally,
-    )
+    ): Unit
 
     /**
      * Returns properties of a given object. Object group of the result is inherited from the target object.
@@ -124,12 +124,12 @@ external class _Session : EventEmitter {
         method: SessionMethod.RUNTIME_GETPROPERTIES,
         params: node.inspector.runtime.GetPropertiesParameterType = definedExternally,
         callback: (err: js.errors.JsError?, params: node.inspector.runtime.GetPropertiesReturnType) -> Unit = definedExternally,
-    )
+    ): Unit
 
     fun post(
         method: SessionMethod.RUNTIME_GETPROPERTIES,
         callback: (err: js.errors.JsError?, params: node.inspector.runtime.GetPropertiesReturnType) -> Unit = definedExternally,
-    )
+    ): Unit
 
     /**
      * Releases remote object with given id.
@@ -138,12 +138,12 @@ external class _Session : EventEmitter {
         method: SessionMethod.RUNTIME_RELEASEOBJECT,
         params: node.inspector.runtime.ReleaseObjectParameterType = definedExternally,
         callback: (err: js.errors.JsError?) -> Unit = definedExternally,
-    )
+    ): Unit
 
     fun post(
         method: SessionMethod.RUNTIME_RELEASEOBJECT,
         callback: (err: js.errors.JsError?) -> Unit = definedExternally,
-    )
+    ): Unit
 
     /**
      * Releases all remote objects that belong to a given group.
@@ -152,12 +152,12 @@ external class _Session : EventEmitter {
         method: SessionMethod.RUNTIME_RELEASEOBJECTGROUP,
         params: node.inspector.runtime.ReleaseObjectGroupParameterType = definedExternally,
         callback: (err: js.errors.JsError?) -> Unit = definedExternally,
-    )
+    ): Unit
 
     fun post(
         method: SessionMethod.RUNTIME_RELEASEOBJECTGROUP,
         callback: (err: js.errors.JsError?) -> Unit = definedExternally,
-    )
+    ): Unit
 
     /**
      * Tells inspected instance to run if it was waiting for debugger to attach.
@@ -165,7 +165,7 @@ external class _Session : EventEmitter {
     fun post(
         method: SessionMethod.RUNTIME_RUNIFWAITINGFORDEBUGGER,
         callback: (err: js.errors.JsError?) -> Unit = definedExternally,
-    )
+    ): Unit
 
     /**
      * Enables reporting of execution contexts creation by means of <code>executionContextCreated</code> event. When the reporting gets enabled the event will be sent immediately for each existing execution context.
@@ -173,7 +173,7 @@ external class _Session : EventEmitter {
     fun post(
         method: SessionMethod.RUNTIME_ENABLE,
         callback: (err: js.errors.JsError?) -> Unit = definedExternally,
-    )
+    ): Unit
 
     /**
      * Disables reporting of execution contexts creation.
@@ -181,7 +181,7 @@ external class _Session : EventEmitter {
     fun post(
         method: SessionMethod.RUNTIME_DISABLE,
         callback: (err: js.errors.JsError?) -> Unit = definedExternally,
-    )
+    ): Unit
 
     /**
      * Discards collected exceptions and console API calls.
@@ -189,7 +189,7 @@ external class _Session : EventEmitter {
     fun post(
         method: SessionMethod.RUNTIME_DISCARDCONSOLEENTRIES,
         callback: (err: js.errors.JsError?) -> Unit = definedExternally,
-    )
+    ): Unit
 
     /**
      * @experimental
@@ -198,12 +198,12 @@ external class _Session : EventEmitter {
         method: SessionMethod.RUNTIME_SETCUSTOMOBJECTFORMATTERENABLED,
         params: node.inspector.runtime.SetCustomObjectFormatterEnabledParameterType = definedExternally,
         callback: (err: js.errors.JsError?) -> Unit = definedExternally,
-    )
+    ): Unit
 
     fun post(
         method: SessionMethod.RUNTIME_SETCUSTOMOBJECTFORMATTERENABLED,
         callback: (err: js.errors.JsError?) -> Unit = definedExternally,
-    )
+    ): Unit
 
     /**
      * Compiles expression.
@@ -212,12 +212,12 @@ external class _Session : EventEmitter {
         method: SessionMethod.RUNTIME_COMPILESCRIPT,
         params: node.inspector.runtime.CompileScriptParameterType = definedExternally,
         callback: (err: js.errors.JsError?, params: node.inspector.runtime.CompileScriptReturnType) -> Unit = definedExternally,
-    )
+    ): Unit
 
     fun post(
         method: SessionMethod.RUNTIME_COMPILESCRIPT,
         callback: (err: js.errors.JsError?, params: node.inspector.runtime.CompileScriptReturnType) -> Unit = definedExternally,
-    )
+    ): Unit
 
     /**
      * Runs script with given id in a given context.
@@ -226,23 +226,23 @@ external class _Session : EventEmitter {
         method: SessionMethod.RUNTIME_RUNSCRIPT,
         params: node.inspector.runtime.RunScriptParameterType = definedExternally,
         callback: (err: js.errors.JsError?, params: node.inspector.runtime.RunScriptReturnType) -> Unit = definedExternally,
-    )
+    ): Unit
 
     fun post(
         method: SessionMethod.RUNTIME_RUNSCRIPT,
         callback: (err: js.errors.JsError?, params: node.inspector.runtime.RunScriptReturnType) -> Unit = definedExternally,
-    )
+    ): Unit
 
     fun post(
         method: SessionMethod.RUNTIME_QUERYOBJECTS,
         params: node.inspector.runtime.QueryObjectsParameterType = definedExternally,
         callback: (err: js.errors.JsError?, params: node.inspector.runtime.QueryObjectsReturnType) -> Unit = definedExternally,
-    )
+    ): Unit
 
     fun post(
         method: SessionMethod.RUNTIME_QUERYOBJECTS,
         callback: (err: js.errors.JsError?, params: node.inspector.runtime.QueryObjectsReturnType) -> Unit = definedExternally,
-    )
+    ): Unit
 
     /**
      * Returns all let, const and class variables from global scope.
@@ -251,12 +251,12 @@ external class _Session : EventEmitter {
         method: SessionMethod.RUNTIME_GLOBALLEXICALSCOPENAMES,
         params: node.inspector.runtime.GlobalLexicalScopeNamesParameterType = definedExternally,
         callback: (err: js.errors.JsError?, params: node.inspector.runtime.GlobalLexicalScopeNamesReturnType) -> Unit = definedExternally,
-    )
+    ): Unit
 
     fun post(
         method: SessionMethod.RUNTIME_GLOBALLEXICALSCOPENAMES,
         callback: (err: js.errors.JsError?, params: node.inspector.runtime.GlobalLexicalScopeNamesReturnType) -> Unit = definedExternally,
-    )
+    ): Unit
 
     /**
      * Enables debugger for the given page. Clients should not assume that the debugging has been enabled until the result for this command is received.
@@ -264,7 +264,7 @@ external class _Session : EventEmitter {
     fun post(
         method: SessionMethod.DEBUGGER_ENABLE,
         callback: (err: js.errors.JsError?, params: node.inspector.debugger.EnableReturnType) -> Unit = definedExternally,
-    )
+    ): Unit
 
     /**
      * Disables debugger for given page.
@@ -272,7 +272,7 @@ external class _Session : EventEmitter {
     fun post(
         method: SessionMethod.DEBUGGER_DISABLE,
         callback: (err: js.errors.JsError?) -> Unit = definedExternally,
-    )
+    ): Unit
 
     /**
      * Activates / deactivates all breakpoints on the page.
@@ -281,12 +281,12 @@ external class _Session : EventEmitter {
         method: SessionMethod.DEBUGGER_SETBREAKPOINTSACTIVE,
         params: node.inspector.debugger.SetBreakpointsActiveParameterType = definedExternally,
         callback: (err: js.errors.JsError?) -> Unit = definedExternally,
-    )
+    ): Unit
 
     fun post(
         method: SessionMethod.DEBUGGER_SETBREAKPOINTSACTIVE,
         callback: (err: js.errors.JsError?) -> Unit = definedExternally,
-    )
+    ): Unit
 
     /**
      * Makes page not interrupt on any pauses (breakpoint, exception, dom exception etc).
@@ -295,12 +295,12 @@ external class _Session : EventEmitter {
         method: SessionMethod.DEBUGGER_SETSKIPALLPAUSES,
         params: node.inspector.debugger.SetSkipAllPausesParameterType = definedExternally,
         callback: (err: js.errors.JsError?) -> Unit = definedExternally,
-    )
+    ): Unit
 
     fun post(
         method: SessionMethod.DEBUGGER_SETSKIPALLPAUSES,
         callback: (err: js.errors.JsError?) -> Unit = definedExternally,
-    )
+    ): Unit
 
     /**
      * Sets JavaScript breakpoint at given location specified either by URL or URL regex. Once this command is issued, all existing parsed scripts will have breakpoints resolved and returned in <code>locations</code> property. Further matching script parsing will result in subsequent <code>breakpointResolved</code> events issued. This logical breakpoint will survive page reloads.
@@ -309,12 +309,12 @@ external class _Session : EventEmitter {
         method: SessionMethod.DEBUGGER_SETBREAKPOINTBYURL,
         params: node.inspector.debugger.SetBreakpointByUrlParameterType = definedExternally,
         callback: (err: js.errors.JsError?, params: node.inspector.debugger.SetBreakpointByUrlReturnType) -> Unit = definedExternally,
-    )
+    ): Unit
 
     fun post(
         method: SessionMethod.DEBUGGER_SETBREAKPOINTBYURL,
         callback: (err: js.errors.JsError?, params: node.inspector.debugger.SetBreakpointByUrlReturnType) -> Unit = definedExternally,
-    )
+    ): Unit
 
     /**
      * Sets JavaScript breakpoint at a given location.
@@ -323,12 +323,12 @@ external class _Session : EventEmitter {
         method: SessionMethod.DEBUGGER_SETBREAKPOINT,
         params: node.inspector.debugger.SetBreakpointParameterType = definedExternally,
         callback: (err: js.errors.JsError?, params: node.inspector.debugger.SetBreakpointReturnType) -> Unit = definedExternally,
-    )
+    ): Unit
 
     fun post(
         method: SessionMethod.DEBUGGER_SETBREAKPOINT,
         callback: (err: js.errors.JsError?, params: node.inspector.debugger.SetBreakpointReturnType) -> Unit = definedExternally,
-    )
+    ): Unit
 
     /**
      * Removes JavaScript breakpoint.
@@ -337,12 +337,12 @@ external class _Session : EventEmitter {
         method: SessionMethod.DEBUGGER_REMOVEBREAKPOINT,
         params: node.inspector.debugger.RemoveBreakpointParameterType = definedExternally,
         callback: (err: js.errors.JsError?) -> Unit = definedExternally,
-    )
+    ): Unit
 
     fun post(
         method: SessionMethod.DEBUGGER_REMOVEBREAKPOINT,
         callback: (err: js.errors.JsError?) -> Unit = definedExternally,
-    )
+    ): Unit
 
     /**
      * Returns possible locations for breakpoint. scriptId in start and end range locations should be the same.
@@ -351,12 +351,12 @@ external class _Session : EventEmitter {
         method: SessionMethod.DEBUGGER_GETPOSSIBLEBREAKPOINTS,
         params: node.inspector.debugger.GetPossibleBreakpointsParameterType = definedExternally,
         callback: (err: js.errors.JsError?, params: node.inspector.debugger.GetPossibleBreakpointsReturnType) -> Unit = definedExternally,
-    )
+    ): Unit
 
     fun post(
         method: SessionMethod.DEBUGGER_GETPOSSIBLEBREAKPOINTS,
         callback: (err: js.errors.JsError?, params: node.inspector.debugger.GetPossibleBreakpointsReturnType) -> Unit = definedExternally,
-    )
+    ): Unit
 
     /**
      * Continues execution until specific location is reached.
@@ -365,12 +365,12 @@ external class _Session : EventEmitter {
         method: SessionMethod.DEBUGGER_CONTINUETOLOCATION,
         params: node.inspector.debugger.ContinueToLocationParameterType = definedExternally,
         callback: (err: js.errors.JsError?) -> Unit = definedExternally,
-    )
+    ): Unit
 
     fun post(
         method: SessionMethod.DEBUGGER_CONTINUETOLOCATION,
         callback: (err: js.errors.JsError?) -> Unit = definedExternally,
-    )
+    ): Unit
 
     /**
      * @experimental
@@ -379,12 +379,12 @@ external class _Session : EventEmitter {
         method: SessionMethod.DEBUGGER_PAUSEONASYNCCALL,
         params: node.inspector.debugger.PauseOnAsyncCallParameterType = definedExternally,
         callback: (err: js.errors.JsError?) -> Unit = definedExternally,
-    )
+    ): Unit
 
     fun post(
         method: SessionMethod.DEBUGGER_PAUSEONASYNCCALL,
         callback: (err: js.errors.JsError?) -> Unit = definedExternally,
-    )
+    ): Unit
 
     /**
      * Steps over the statement.
@@ -392,7 +392,7 @@ external class _Session : EventEmitter {
     fun post(
         method: SessionMethod.DEBUGGER_STEPOVER,
         callback: (err: js.errors.JsError?) -> Unit = definedExternally,
-    )
+    ): Unit
 
     /**
      * Steps into the function call.
@@ -401,12 +401,12 @@ external class _Session : EventEmitter {
         method: SessionMethod.DEBUGGER_STEPINTO,
         params: node.inspector.debugger.StepIntoParameterType = definedExternally,
         callback: (err: js.errors.JsError?) -> Unit = definedExternally,
-    )
+    ): Unit
 
     fun post(
         method: SessionMethod.DEBUGGER_STEPINTO,
         callback: (err: js.errors.JsError?) -> Unit = definedExternally,
-    )
+    ): Unit
 
     /**
      * Steps out of the function call.
@@ -414,7 +414,7 @@ external class _Session : EventEmitter {
     fun post(
         method: SessionMethod.DEBUGGER_STEPOUT,
         callback: (err: js.errors.JsError?) -> Unit = definedExternally,
-    )
+    ): Unit
 
     /**
      * Stops on the next JavaScript statement.
@@ -422,7 +422,7 @@ external class _Session : EventEmitter {
     fun post(
         method: SessionMethod.DEBUGGER_PAUSE,
         callback: (err: js.errors.JsError?) -> Unit = definedExternally,
-    )
+    ): Unit
 
     /**
      * This method is deprecated - use Debugger.stepInto with breakOnAsyncCall and Debugger.pauseOnAsyncTask instead. Steps into next scheduled async task if any is scheduled before next pause. Returns success when async task is actually scheduled, returns error if no task were scheduled or another scheduleStepIntoAsync was called.
@@ -431,7 +431,7 @@ external class _Session : EventEmitter {
     fun post(
         method: SessionMethod.DEBUGGER_SCHEDULESTEPINTOASYNC,
         callback: (err: js.errors.JsError?) -> Unit = definedExternally,
-    )
+    ): Unit
 
     /**
      * Resumes JavaScript execution.
@@ -439,7 +439,7 @@ external class _Session : EventEmitter {
     fun post(
         method: SessionMethod.DEBUGGER_RESUME,
         callback: (err: js.errors.JsError?) -> Unit = definedExternally,
-    )
+    ): Unit
 
     /**
      * Returns stack trace with given <code>stackTraceId</code>.
@@ -449,12 +449,12 @@ external class _Session : EventEmitter {
         method: SessionMethod.DEBUGGER_GETSTACKTRACE,
         params: node.inspector.debugger.GetStackTraceParameterType = definedExternally,
         callback: (err: js.errors.JsError?, params: node.inspector.debugger.GetStackTraceReturnType) -> Unit = definedExternally,
-    )
+    ): Unit
 
     fun post(
         method: SessionMethod.DEBUGGER_GETSTACKTRACE,
         callback: (err: js.errors.JsError?, params: node.inspector.debugger.GetStackTraceReturnType) -> Unit = definedExternally,
-    )
+    ): Unit
 
     /**
      * Searches for given string in script content.
@@ -463,12 +463,12 @@ external class _Session : EventEmitter {
         method: SessionMethod.DEBUGGER_SEARCHINCONTENT,
         params: node.inspector.debugger.SearchInContentParameterType = definedExternally,
         callback: (err: js.errors.JsError?, params: node.inspector.debugger.SearchInContentReturnType) -> Unit = definedExternally,
-    )
+    ): Unit
 
     fun post(
         method: SessionMethod.DEBUGGER_SEARCHINCONTENT,
         callback: (err: js.errors.JsError?, params: node.inspector.debugger.SearchInContentReturnType) -> Unit = definedExternally,
-    )
+    ): Unit
 
     /**
      * Edits JavaScript source live.
@@ -477,12 +477,12 @@ external class _Session : EventEmitter {
         method: SessionMethod.DEBUGGER_SETSCRIPTSOURCE,
         params: node.inspector.debugger.SetScriptSourceParameterType = definedExternally,
         callback: (err: js.errors.JsError?, params: node.inspector.debugger.SetScriptSourceReturnType) -> Unit = definedExternally,
-    )
+    ): Unit
 
     fun post(
         method: SessionMethod.DEBUGGER_SETSCRIPTSOURCE,
         callback: (err: js.errors.JsError?, params: node.inspector.debugger.SetScriptSourceReturnType) -> Unit = definedExternally,
-    )
+    ): Unit
 
     /**
      * Restarts particular call frame from the beginning.
@@ -491,12 +491,12 @@ external class _Session : EventEmitter {
         method: SessionMethod.DEBUGGER_RESTARTFRAME,
         params: node.inspector.debugger.RestartFrameParameterType = definedExternally,
         callback: (err: js.errors.JsError?, params: node.inspector.debugger.RestartFrameReturnType) -> Unit = definedExternally,
-    )
+    ): Unit
 
     fun post(
         method: SessionMethod.DEBUGGER_RESTARTFRAME,
         callback: (err: js.errors.JsError?, params: node.inspector.debugger.RestartFrameReturnType) -> Unit = definedExternally,
-    )
+    ): Unit
 
     /**
      * Returns source for the script with given id.
@@ -505,12 +505,12 @@ external class _Session : EventEmitter {
         method: SessionMethod.DEBUGGER_GETSCRIPTSOURCE,
         params: node.inspector.debugger.GetScriptSourceParameterType = definedExternally,
         callback: (err: js.errors.JsError?, params: node.inspector.debugger.GetScriptSourceReturnType) -> Unit = definedExternally,
-    )
+    ): Unit
 
     fun post(
         method: SessionMethod.DEBUGGER_GETSCRIPTSOURCE,
         callback: (err: js.errors.JsError?, params: node.inspector.debugger.GetScriptSourceReturnType) -> Unit = definedExternally,
-    )
+    ): Unit
 
     /**
      * Defines pause on exceptions state. Can be set to stop on all exceptions, uncaught exceptions or no exceptions. Initial pause on exceptions state is <code>none</code>.
@@ -519,12 +519,12 @@ external class _Session : EventEmitter {
         method: SessionMethod.DEBUGGER_SETPAUSEONEXCEPTIONS,
         params: node.inspector.debugger.SetPauseOnExceptionsParameterType = definedExternally,
         callback: (err: js.errors.JsError?) -> Unit = definedExternally,
-    )
+    ): Unit
 
     fun post(
         method: SessionMethod.DEBUGGER_SETPAUSEONEXCEPTIONS,
         callback: (err: js.errors.JsError?) -> Unit = definedExternally,
-    )
+    ): Unit
 
     /**
      * Evaluates expression on a given call frame.
@@ -533,12 +533,12 @@ external class _Session : EventEmitter {
         method: SessionMethod.DEBUGGER_EVALUATEONCALLFRAME,
         params: node.inspector.debugger.EvaluateOnCallFrameParameterType = definedExternally,
         callback: (err: js.errors.JsError?, params: node.inspector.debugger.EvaluateOnCallFrameReturnType) -> Unit = definedExternally,
-    )
+    ): Unit
 
     fun post(
         method: SessionMethod.DEBUGGER_EVALUATEONCALLFRAME,
         callback: (err: js.errors.JsError?, params: node.inspector.debugger.EvaluateOnCallFrameReturnType) -> Unit = definedExternally,
-    )
+    ): Unit
 
     /**
      * Changes value of variable in a callframe. Object-based scopes are not supported and must be mutated manually.
@@ -547,12 +547,12 @@ external class _Session : EventEmitter {
         method: SessionMethod.DEBUGGER_SETVARIABLEVALUE,
         params: node.inspector.debugger.SetVariableValueParameterType = definedExternally,
         callback: (err: js.errors.JsError?) -> Unit = definedExternally,
-    )
+    ): Unit
 
     fun post(
         method: SessionMethod.DEBUGGER_SETVARIABLEVALUE,
         callback: (err: js.errors.JsError?) -> Unit = definedExternally,
-    )
+    ): Unit
 
     /**
      * Changes return value in top frame. Available only at return break position.
@@ -562,12 +562,12 @@ external class _Session : EventEmitter {
         method: SessionMethod.DEBUGGER_SETRETURNVALUE,
         params: node.inspector.debugger.SetReturnValueParameterType = definedExternally,
         callback: (err: js.errors.JsError?) -> Unit = definedExternally,
-    )
+    ): Unit
 
     fun post(
         method: SessionMethod.DEBUGGER_SETRETURNVALUE,
         callback: (err: js.errors.JsError?) -> Unit = definedExternally,
-    )
+    ): Unit
 
     /**
      * Enables or disables async call stacks tracking.
@@ -576,12 +576,12 @@ external class _Session : EventEmitter {
         method: SessionMethod.DEBUGGER_SETASYNCCALLSTACKDEPTH,
         params: node.inspector.debugger.SetAsyncCallStackDepthParameterType = definedExternally,
         callback: (err: js.errors.JsError?) -> Unit = definedExternally,
-    )
+    ): Unit
 
     fun post(
         method: SessionMethod.DEBUGGER_SETASYNCCALLSTACKDEPTH,
         callback: (err: js.errors.JsError?) -> Unit = definedExternally,
-    )
+    ): Unit
 
     /**
      * Replace previous blackbox patterns with passed ones. Forces backend to skip stepping/pausing in scripts with url matching one of the patterns. VM will try to leave blackboxed script by performing 'step in' several times, finally resorting to 'step out' if unsuccessful.
@@ -591,12 +591,12 @@ external class _Session : EventEmitter {
         method: SessionMethod.DEBUGGER_SETBLACKBOXPATTERNS,
         params: node.inspector.debugger.SetBlackboxPatternsParameterType = definedExternally,
         callback: (err: js.errors.JsError?) -> Unit = definedExternally,
-    )
+    ): Unit
 
     fun post(
         method: SessionMethod.DEBUGGER_SETBLACKBOXPATTERNS,
         callback: (err: js.errors.JsError?) -> Unit = definedExternally,
-    )
+    ): Unit
 
     /**
      * Makes backend skip steps in the script in blackboxed ranges. VM will try leave blacklisted scripts by performing 'step in' several times, finally resorting to 'step out' if unsuccessful. Positions array contains positions where blackbox state is changed. First interval isn't blackboxed. Array should be sorted.
@@ -606,12 +606,12 @@ external class _Session : EventEmitter {
         method: SessionMethod.DEBUGGER_SETBLACKBOXEDRANGES,
         params: node.inspector.debugger.SetBlackboxedRangesParameterType = definedExternally,
         callback: (err: js.errors.JsError?) -> Unit = definedExternally,
-    )
+    ): Unit
 
     fun post(
         method: SessionMethod.DEBUGGER_SETBLACKBOXEDRANGES,
         callback: (err: js.errors.JsError?) -> Unit = definedExternally,
-    )
+    ): Unit
 
     /**
      * Enables console domain, sends the messages collected so far to the client by means of the <code>messageAdded</code> notification.
@@ -619,7 +619,7 @@ external class _Session : EventEmitter {
     fun post(
         method: SessionMethod.CONSOLE_ENABLE,
         callback: (err: js.errors.JsError?) -> Unit = definedExternally,
-    )
+    ): Unit
 
     /**
      * Disables console domain, prevents further console messages from being reported to the client.
@@ -627,7 +627,7 @@ external class _Session : EventEmitter {
     fun post(
         method: SessionMethod.CONSOLE_DISABLE,
         callback: (err: js.errors.JsError?) -> Unit = definedExternally,
-    )
+    ): Unit
 
     /**
      * Does nothing.
@@ -635,17 +635,17 @@ external class _Session : EventEmitter {
     fun post(
         method: SessionMethod.CONSOLE_CLEARMESSAGES,
         callback: (err: js.errors.JsError?) -> Unit = definedExternally,
-    )
+    ): Unit
 
     fun post(
         method: SessionMethod.PROFILER_ENABLE,
         callback: (err: js.errors.JsError?) -> Unit = definedExternally,
-    )
+    ): Unit
 
     fun post(
         method: SessionMethod.PROFILER_DISABLE,
         callback: (err: js.errors.JsError?) -> Unit = definedExternally,
-    )
+    ): Unit
 
     /**
      * Changes CPU profiler sampling interval. Must be called before CPU profiles recording started.
@@ -654,22 +654,22 @@ external class _Session : EventEmitter {
         method: SessionMethod.PROFILER_SETSAMPLINGINTERVAL,
         params: node.inspector.profiler.SetSamplingIntervalParameterType = definedExternally,
         callback: (err: js.errors.JsError?) -> Unit = definedExternally,
-    )
+    ): Unit
 
     fun post(
         method: SessionMethod.PROFILER_SETSAMPLINGINTERVAL,
         callback: (err: js.errors.JsError?) -> Unit = definedExternally,
-    )
+    ): Unit
 
     fun post(
         method: SessionMethod.PROFILER_START,
         callback: (err: js.errors.JsError?) -> Unit = definedExternally,
-    )
+    ): Unit
 
     fun post(
         method: SessionMethod.PROFILER_STOP,
         callback: (err: js.errors.JsError?, params: node.inspector.profiler.StopReturnType) -> Unit = definedExternally,
-    )
+    ): Unit
 
     /**
      * Enable precise code coverage. Coverage data for JavaScript executed before enabling precise code coverage may be incomplete. Enabling prevents running optimized code and resets execution counters.
@@ -678,12 +678,12 @@ external class _Session : EventEmitter {
         method: SessionMethod.PROFILER_STARTPRECISECOVERAGE,
         params: node.inspector.profiler.StartPreciseCoverageParameterType = definedExternally,
         callback: (err: js.errors.JsError?) -> Unit = definedExternally,
-    )
+    ): Unit
 
     fun post(
         method: SessionMethod.PROFILER_STARTPRECISECOVERAGE,
         callback: (err: js.errors.JsError?) -> Unit = definedExternally,
-    )
+    ): Unit
 
     /**
      * Disable precise code coverage. Disabling releases unnecessary execution count records and allows executing optimized code.
@@ -691,7 +691,7 @@ external class _Session : EventEmitter {
     fun post(
         method: SessionMethod.PROFILER_STOPPRECISECOVERAGE,
         callback: (err: js.errors.JsError?) -> Unit = definedExternally,
-    )
+    ): Unit
 
     /**
      * Collect coverage data for the current isolate, and resets execution counters. Precise code coverage needs to have started.
@@ -699,7 +699,7 @@ external class _Session : EventEmitter {
     fun post(
         method: SessionMethod.PROFILER_TAKEPRECISECOVERAGE,
         callback: (err: js.errors.JsError?, params: node.inspector.profiler.TakePreciseCoverageReturnType) -> Unit = definedExternally,
-    )
+    ): Unit
 
     /**
      * Collect coverage data for the current isolate. The coverage data may be incomplete due to garbage collection.
@@ -707,66 +707,66 @@ external class _Session : EventEmitter {
     fun post(
         method: SessionMethod.PROFILER_GETBESTEFFORTCOVERAGE,
         callback: (err: js.errors.JsError?, params: node.inspector.profiler.GetBestEffortCoverageReturnType) -> Unit = definedExternally,
-    )
+    ): Unit
 
     fun post(
         method: SessionMethod.HEAPPROFILER_ENABLE,
         callback: (err: js.errors.JsError?) -> Unit = definedExternally,
-    )
+    ): Unit
 
     fun post(
         method: SessionMethod.HEAPPROFILER_DISABLE,
         callback: (err: js.errors.JsError?) -> Unit = definedExternally,
-    )
+    ): Unit
 
     fun post(
         method: SessionMethod.HEAPPROFILER_STARTTRACKINGHEAPOBJECTS,
         params: node.inspector.heapprofiler.StartTrackingHeapObjectsParameterType = definedExternally,
         callback: (err: js.errors.JsError?) -> Unit = definedExternally,
-    )
+    ): Unit
 
     fun post(
         method: SessionMethod.HEAPPROFILER_STARTTRACKINGHEAPOBJECTS,
         callback: (err: js.errors.JsError?) -> Unit = definedExternally,
-    )
+    ): Unit
 
     fun post(
         method: SessionMethod.HEAPPROFILER_STOPTRACKINGHEAPOBJECTS,
         params: node.inspector.heapprofiler.StopTrackingHeapObjectsParameterType = definedExternally,
         callback: (err: js.errors.JsError?) -> Unit = definedExternally,
-    )
+    ): Unit
 
     fun post(
         method: SessionMethod.HEAPPROFILER_STOPTRACKINGHEAPOBJECTS,
         callback: (err: js.errors.JsError?) -> Unit = definedExternally,
-    )
+    ): Unit
 
     fun post(
         method: SessionMethod.HEAPPROFILER_TAKEHEAPSNAPSHOT,
         params: node.inspector.heapprofiler.TakeHeapSnapshotParameterType = definedExternally,
         callback: (err: js.errors.JsError?) -> Unit = definedExternally,
-    )
+    ): Unit
 
     fun post(
         method: SessionMethod.HEAPPROFILER_TAKEHEAPSNAPSHOT,
         callback: (err: js.errors.JsError?) -> Unit = definedExternally,
-    )
+    ): Unit
 
     fun post(
         method: SessionMethod.HEAPPROFILER_COLLECTGARBAGE,
         callback: (err: js.errors.JsError?) -> Unit = definedExternally,
-    )
+    ): Unit
 
     fun post(
         method: SessionMethod.HEAPPROFILER_GETOBJECTBYHEAPOBJECTID,
         params: node.inspector.heapprofiler.GetObjectByHeapObjectIdParameterType = definedExternally,
         callback: (err: js.errors.JsError?, params: node.inspector.heapprofiler.GetObjectByHeapObjectIdReturnType) -> Unit = definedExternally,
-    )
+    ): Unit
 
     fun post(
         method: SessionMethod.HEAPPROFILER_GETOBJECTBYHEAPOBJECTID,
         callback: (err: js.errors.JsError?, params: node.inspector.heapprofiler.GetObjectByHeapObjectIdReturnType) -> Unit = definedExternally,
-    )
+    ): Unit
 
     /**
      * Enables console to refer to the node with given id via $x (see Command Line API for more details $x functions).
@@ -775,44 +775,44 @@ external class _Session : EventEmitter {
         method: SessionMethod.HEAPPROFILER_ADDINSPECTEDHEAPOBJECT,
         params: node.inspector.heapprofiler.AddInspectedHeapObjectParameterType = definedExternally,
         callback: (err: js.errors.JsError?) -> Unit = definedExternally,
-    )
+    ): Unit
 
     fun post(
         method: SessionMethod.HEAPPROFILER_ADDINSPECTEDHEAPOBJECT,
         callback: (err: js.errors.JsError?) -> Unit = definedExternally,
-    )
+    ): Unit
 
     fun post(
         method: SessionMethod.HEAPPROFILER_GETHEAPOBJECTID,
         params: node.inspector.heapprofiler.GetHeapObjectIdParameterType = definedExternally,
         callback: (err: js.errors.JsError?, params: node.inspector.heapprofiler.GetHeapObjectIdReturnType) -> Unit = definedExternally,
-    )
+    ): Unit
 
     fun post(
         method: SessionMethod.HEAPPROFILER_GETHEAPOBJECTID,
         callback: (err: js.errors.JsError?, params: node.inspector.heapprofiler.GetHeapObjectIdReturnType) -> Unit = definedExternally,
-    )
+    ): Unit
 
     fun post(
         method: SessionMethod.HEAPPROFILER_STARTSAMPLING,
         params: node.inspector.heapprofiler.StartSamplingParameterType = definedExternally,
         callback: (err: js.errors.JsError?) -> Unit = definedExternally,
-    )
+    ): Unit
 
     fun post(
         method: SessionMethod.HEAPPROFILER_STARTSAMPLING,
         callback: (err: js.errors.JsError?) -> Unit = definedExternally,
-    )
+    ): Unit
 
     fun post(
         method: SessionMethod.HEAPPROFILER_STOPSAMPLING,
         callback: (err: js.errors.JsError?, params: node.inspector.heapprofiler.StopSamplingReturnType) -> Unit = definedExternally,
-    )
+    ): Unit
 
     fun post(
         method: SessionMethod.HEAPPROFILER_GETSAMPLINGPROFILE,
         callback: (err: js.errors.JsError?, params: node.inspector.heapprofiler.GetSamplingProfileReturnType) -> Unit = definedExternally,
-    )
+    ): Unit
 
     /**
      * Gets supported tracing categories.
@@ -820,7 +820,7 @@ external class _Session : EventEmitter {
     fun post(
         method: SessionMethod.NODETRACING_GETCATEGORIES,
         callback: (err: js.errors.JsError?, params: node.inspector.nodetracing.GetCategoriesReturnType) -> Unit = definedExternally,
-    )
+    ): Unit
 
     /**
      * Start trace events collection.
@@ -829,12 +829,12 @@ external class _Session : EventEmitter {
         method: SessionMethod.NODETRACING_START,
         params: node.inspector.nodetracing.StartParameterType = definedExternally,
         callback: (err: js.errors.JsError?) -> Unit = definedExternally,
-    )
+    ): Unit
 
     fun post(
         method: SessionMethod.NODETRACING_START,
         callback: (err: js.errors.JsError?) -> Unit = definedExternally,
-    )
+    ): Unit
 
     /**
      * Stop trace events collection. Remaining collected events will be sent as a sequence of
@@ -843,7 +843,7 @@ external class _Session : EventEmitter {
     fun post(
         method: SessionMethod.NODETRACING_STOP,
         callback: (err: js.errors.JsError?) -> Unit = definedExternally,
-    )
+    ): Unit
 
     /**
      * Sends protocol message over session with given id.
@@ -852,12 +852,12 @@ external class _Session : EventEmitter {
         method: SessionMethod.NODEWORKER_SENDMESSAGETOWORKER,
         params: node.inspector.nodeworker.SendMessageToWorkerParameterType = definedExternally,
         callback: (err: js.errors.JsError?) -> Unit = definedExternally,
-    )
+    ): Unit
 
     fun post(
         method: SessionMethod.NODEWORKER_SENDMESSAGETOWORKER,
         callback: (err: js.errors.JsError?) -> Unit = definedExternally,
-    )
+    ): Unit
 
     /**
      * Instructs the inspector to attach to running workers. Will also attach to new workers
@@ -867,12 +867,12 @@ external class _Session : EventEmitter {
         method: SessionMethod.NODEWORKER_ENABLE,
         params: node.inspector.nodeworker.EnableParameterType = definedExternally,
         callback: (err: js.errors.JsError?) -> Unit = definedExternally,
-    )
+    ): Unit
 
     fun post(
         method: SessionMethod.NODEWORKER_ENABLE,
         callback: (err: js.errors.JsError?) -> Unit = definedExternally,
-    )
+    ): Unit
 
     /**
      * Detaches from all running workers and disables attaching to new workers as they are started.
@@ -880,7 +880,7 @@ external class _Session : EventEmitter {
     fun post(
         method: SessionMethod.NODEWORKER_DISABLE,
         callback: (err: js.errors.JsError?) -> Unit = definedExternally,
-    )
+    ): Unit
 
     /**
      * Detached from the worker with given sessionId.
@@ -889,12 +889,12 @@ external class _Session : EventEmitter {
         method: SessionMethod.NODEWORKER_DETACH,
         params: node.inspector.nodeworker.DetachParameterType = definedExternally,
         callback: (err: js.errors.JsError?) -> Unit = definedExternally,
-    )
+    ): Unit
 
     fun post(
         method: SessionMethod.NODEWORKER_DETACH,
         callback: (err: js.errors.JsError?) -> Unit = definedExternally,
-    )
+    ): Unit
 
     /**
      * Disables network tracking, prevents network events from being sent to the client.
@@ -902,7 +902,7 @@ external class _Session : EventEmitter {
     fun post(
         method: SessionMethod.NETWORK_DISABLE,
         callback: (err: js.errors.JsError?) -> Unit = definedExternally,
-    )
+    ): Unit
 
     /**
      * Enables network tracking, network events will now be delivered to the client.
@@ -910,7 +910,7 @@ external class _Session : EventEmitter {
     fun post(
         method: SessionMethod.NETWORK_ENABLE,
         callback: (err: js.errors.JsError?) -> Unit = definedExternally,
-    )
+    ): Unit
 
     /**
      * Enable the NodeRuntime events except by `NodeRuntime.waitingForDisconnect`.
@@ -918,7 +918,7 @@ external class _Session : EventEmitter {
     fun post(
         method: SessionMethod.NODERUNTIME_ENABLE,
         callback: (err: js.errors.JsError?) -> Unit = definedExternally,
-    )
+    ): Unit
 
     /**
      * Disable NodeRuntime events
@@ -926,7 +926,7 @@ external class _Session : EventEmitter {
     fun post(
         method: SessionMethod.NODERUNTIME_DISABLE,
         callback: (err: js.errors.JsError?) -> Unit = definedExternally,
-    )
+    ): Unit
 
     /**
      * Enable the `NodeRuntime.waitingForDisconnect`.
@@ -935,14 +935,14 @@ external class _Session : EventEmitter {
         method: SessionMethod.NODERUNTIME_NOTIFYWHENWAITINGFORDISCONNECT,
         params: node.inspector.noderuntime.NotifyWhenWaitingForDisconnectParameterType = definedExternally,
         callback: (err: js.errors.JsError?) -> Unit = definedExternally,
-    )
+    ): Unit
 
     fun post(
         method: SessionMethod.NODERUNTIME_NOTIFYWHENWAITINGFORDISCONNECT,
         callback: (err: js.errors.JsError?) -> Unit = definedExternally,
-    )
+    ): Unit
 
-    fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
+    fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
     /**
      * Emitted when any notification from the V8 Inspector is received.
      */
@@ -1060,7 +1060,7 @@ external class _Session : EventEmitter {
     fun emit(event: js.symbol.Symbol, vararg args: Any?): Boolean
 
 
-    fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
+    fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
     /**
      * Emitted when any notification from the V8 Inspector is received.
      */
@@ -1173,7 +1173,7 @@ external class _Session : EventEmitter {
      * example, when inspector.waitingForDebugger is called
      */
 
-    fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
+    fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
     /**
      * Emitted when any notification from the V8 Inspector is received.
      */
@@ -1286,7 +1286,7 @@ external class _Session : EventEmitter {
      * example, when inspector.waitingForDebugger is called
      */
 
-    fun prependListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
+    fun prependListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
     /**
      * Emitted when any notification from the V8 Inspector is received.
      */
@@ -1399,7 +1399,7 @@ external class _Session : EventEmitter {
      * example, when inspector.waitingForDebugger is called
      */
 
-    fun prependOnceListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
+    fun prependOnceListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
     /**
      * Emitted when any notification from the V8 Inspector is received.
      */

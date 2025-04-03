@@ -9,14 +9,14 @@ import node.events.EventEmitter
 external interface ReadableStream : EventEmitter {
     var readable: Boolean
     fun read(size: Number = definedExternally): Any /* string | Buffer */
-    fun setEncoding(encoding: node.buffer.BufferEncoding) /* this */
-    fun pause() /* this */
-    fun resume() /* this */
+    fun setEncoding(encoding: node.buffer.BufferEncoding): Unit /* this */
+    fun pause(): Unit /* this */
+    fun resume(): Unit /* this */
     fun isPaused(): Boolean
     fun <T : WritableStream> pipe(destination: T, options: ReadableStreamPipeOptions = definedExternally): T
-    fun unpipe(destination: WritableStream = definedExternally) /* this */
-    fun unshift(chunk: String, encoding: node.buffer.BufferEncoding = definedExternally)
+    fun unpipe(destination: WritableStream = definedExternally): Unit /* this */
+    fun unshift(chunk: String, encoding: node.buffer.BufferEncoding = definedExternally): Unit
 
-    fun unshift(chunk: Uint8Array<*>, encoding: node.buffer.BufferEncoding = definedExternally)
-    fun wrap(stream: ReadableStream) /* this */
+    fun unshift(chunk: Uint8Array<*>, encoding: node.buffer.BufferEncoding = definedExternally): Unit
+    fun wrap(stream: ReadableStream): Unit /* this */
 }

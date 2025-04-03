@@ -21,7 +21,7 @@ external fun readdir(
     path: PathLike,
     options: (ReaddirStringOptions)?,
     callback: (err: node.ErrnoException?, files: js.array.ReadonlyArray<String>) -> Unit,
-)
+): Unit
 
 /**
  * Reads the contents of a directory. The callback gets two arguments `(err, files)` where `files` is an array of the names of the files in the directory excluding `'.'` and `'..'`.
@@ -40,7 +40,7 @@ external fun readdir(
     path: PathLike,
     options: node.buffer.BufferEncoding?,
     callback: (err: node.ErrnoException?, files: js.array.ReadonlyArray<String>) -> Unit,
-)
+): Unit
 
 /**
  * Asynchronous readdir(3) - read a directory.
@@ -51,7 +51,7 @@ external fun readdir(
     path: PathLike,
     options: ReaddirBufferOptions,
     callback: (err: node.ErrnoException?, files: js.array.ReadonlyArray<node.buffer.Buffer<*>>) -> Unit,
-)
+): Unit
 
 /**
  * Asynchronous readdir(3) - read a directory.
@@ -62,7 +62,7 @@ external fun readdir(
     path: PathLike,
     options: String, /* "buffer" */
     callback: (err: node.ErrnoException?, files: js.array.ReadonlyArray<node.buffer.Buffer<*>>) -> Unit,
-)
+): Unit
 
 /**
  * Asynchronous readdir(3) - read a directory.
@@ -73,7 +73,7 @@ external fun readdir(
     path: PathLike,
     options: (ReaddirOptions)?,
     callback: (err: node.ErrnoException?, files: Any /* string[] | Buffer[] */) -> Unit,
-)
+): Unit
 
 /**
  * Asynchronous readdir(3) - read a directory.
@@ -84,7 +84,7 @@ external fun readdir(
     path: PathLike,
     options: node.buffer.BufferEncoding?,
     callback: (err: node.ErrnoException?, files: Any /* string[] | Buffer[] */) -> Unit,
-)
+): Unit
 
 /**
  * Asynchronous readdir(3) - read a directory.
@@ -93,7 +93,7 @@ external fun readdir(
 external fun readdir(
     path: PathLike,
     callback: (err: node.ErrnoException?, files: js.array.ReadonlyArray<String>) -> Unit,
-)
+): Unit
 
 /**
  * Asynchronous readdir(3) - read a directory.
@@ -104,4 +104,4 @@ external fun readdir(
     path: PathLike,
     options: ReaddirWithFileTypesOptions,
     callback: (err: node.ErrnoException?, files: js.array.ReadonlyArray<Dirent>) -> Unit,
-)
+): Unit

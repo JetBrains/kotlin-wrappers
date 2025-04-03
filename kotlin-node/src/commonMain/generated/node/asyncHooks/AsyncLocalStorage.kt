@@ -69,7 +69,7 @@ external class AsyncLocalStorage<T> {
      * @since v13.10.0, v12.17.0
      * @experimental
      */
-    fun disable()
+    fun disable(): Unit
 
     /**
      * Returns the current store.
@@ -190,7 +190,7 @@ external class AsyncLocalStorage<T> {
      * @since v13.11.0, v12.17.0
      * @experimental
      */
-    fun enterWith(store: T)
+    fun enterWith(store: T): Unit
 
     companion object {
         /**

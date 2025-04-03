@@ -14,4 +14,4 @@ package node.fs
  * See the POSIX [`close(2)`](http://man7.org/linux/man-pages/man2/close.2.html) documentation for more detail.
  * @since v0.0.2
  */
-external fun close(fd: Number, callback: NoParamCallback = definedExternally)
+external fun close(fd: Number, callback: NoParamCallback = definedExternally): Unit

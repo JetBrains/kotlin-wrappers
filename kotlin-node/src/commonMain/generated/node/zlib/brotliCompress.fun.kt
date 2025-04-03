@@ -7,6 +7,6 @@ package node.zlib
 /**
  * @since v11.7.0, v10.16.0
  */
-external fun brotliCompress(buf: InputType, options: BrotliOptions, callback: CompressCallback)
+external fun brotliCompress(buf: InputType, options: BrotliOptions, callback: CompressCallback): Unit
 
-external fun brotliCompress(buf: InputType, callback: CompressCallback)
+external fun brotliCompress(buf: InputType, callback: CompressCallback): Unit

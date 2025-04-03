@@ -16,4 +16,4 @@ package node.util
  * @since v0.3.0
  * @deprecated Since v6.0.0 - Use a third party module instead.
  */
-external fun log(string: String)
+external fun log(string: String): Unit

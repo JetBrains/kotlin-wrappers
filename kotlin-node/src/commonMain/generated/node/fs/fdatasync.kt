@@ -11,4 +11,4 @@ package node.fs
  * exception are given to the completion callback.
  * @since v0.1.96
  */
-external fun fdatasync(fd: Number, callback: NoParamCallback)
+external fun fdatasync(fd: Number, callback: NoParamCallback): Unit

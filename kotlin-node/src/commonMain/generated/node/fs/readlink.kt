@@ -20,7 +20,7 @@ external fun readlink(
     path: PathLike,
     options: EncodingOption,
     callback: (err: node.ErrnoException?, linkString: String) -> Unit,
-)
+): Unit
 
 /**
  * Asynchronous readlink(2) - read value of a symbolic link.
@@ -31,7 +31,7 @@ external fun readlink(
     path: PathLike,
     options: BufferEncodingOption,
     callback: (err: node.ErrnoException?, linkString: node.buffer.Buffer<*>) -> Unit,
-)
+): Unit
 
 /**
  * Asynchronous readlink(2) - read value of a symbolic link.
@@ -42,10 +42,10 @@ external fun readlink(
     path: PathLike,
     options: EncodingOption,
     callback: (err: node.ErrnoException?, linkString: Any /* string | Buffer */) -> Unit,
-)
+): Unit
 
 /**
  * Asynchronous readlink(2) - read value of a symbolic link.
  * @param path A path to a file. If a URL is provided, it must use the `file:` protocol.
  */
-external fun readlink(path: PathLike, callback: (err: node.ErrnoException?, linkString: String) -> Unit)
+external fun readlink(path: PathLike, callback: (err: node.ErrnoException?, linkString: String) -> Unit): Unit

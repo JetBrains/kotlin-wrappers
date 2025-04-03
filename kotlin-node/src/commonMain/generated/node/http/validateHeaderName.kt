@@ -29,4 +29,4 @@ package node.http
  * @since v14.3.0
  * @param [label='Header name'] Label for error message.
  */
-external fun validateHeaderName(name: String)
+external fun validateHeaderName(name: String): Unit

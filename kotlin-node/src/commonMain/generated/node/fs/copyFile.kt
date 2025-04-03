@@ -43,6 +43,6 @@ package node.fs
  * @param dest destination filename of the copy operation
  * @param [mode=0] modifiers for copy operation.
  */
-external fun copyFile(src: PathLike, dest: PathLike, callback: NoParamCallback)
+external fun copyFile(src: PathLike, dest: PathLike, callback: NoParamCallback): Unit
 
-external fun copyFile(src: PathLike, dest: PathLike, mode: Number, callback: NoParamCallback)
+external fun copyFile(src: PathLike, dest: PathLike, mode: Number, callback: NoParamCallback): Unit

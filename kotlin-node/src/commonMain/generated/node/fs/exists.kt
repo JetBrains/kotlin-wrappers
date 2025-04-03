@@ -133,4 +133,4 @@ package node.fs
  * @since v0.0.2
  * @deprecated Since v1.0.0 - Use {@link stat} or {@link access} instead.
  */
-external fun exists(path: PathLike, callback: (exists: Boolean) -> Unit)
+external fun exists(path: PathLike, callback: (exists: Boolean) -> Unit): Unit

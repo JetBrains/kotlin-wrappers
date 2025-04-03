@@ -34,4 +34,4 @@ import js.array.ReadonlyArray
  * @since v0.11.3
  * @param servers array of [RFC 5952](https://datatracker.ietf.org/doc/html/rfc5952#section-6) formatted addresses
  */
-external fun setServers(servers: ReadonlyArray<String>)
+external fun setServers(servers: ReadonlyArray<String>): Unit

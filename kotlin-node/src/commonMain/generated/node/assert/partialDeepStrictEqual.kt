@@ -56,7 +56,7 @@ package node.assert
  * ```
  * @since v22.13.0
  */
-external fun partialDeepStrictEqual(actual: Any?, expected: Any?)
+external fun partialDeepStrictEqual(actual: Any?, expected: Any?): Unit
 
 /**
  * `assert.partialDeepStrictEqual()` Asserts the equivalence between the `actual` and `expected` parameters through a
@@ -110,7 +110,7 @@ external fun partialDeepStrictEqual(actual: Any?, expected: Any?)
  * ```
  * @since v22.13.0
  */
-external fun partialDeepStrictEqual(actual: Any?, expected: Any?, message: String = definedExternally)
+external fun partialDeepStrictEqual(actual: Any?, expected: Any?, message: String = definedExternally): Unit
 
 /**
  * `assert.partialDeepStrictEqual()` Asserts the equivalence between the `actual` and `expected` parameters through a
@@ -164,4 +164,4 @@ external fun partialDeepStrictEqual(actual: Any?, expected: Any?, message: Strin
  * ```
  * @since v22.13.0
  */
-external fun partialDeepStrictEqual(actual: Any?, expected: Any?, message: js.errors.JsError = definedExternally)
+external fun partialDeepStrictEqual(actual: Any?, expected: Any?, message: js.errors.JsError = definedExternally): Unit

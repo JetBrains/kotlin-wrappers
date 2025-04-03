@@ -11,4 +11,4 @@ package node.workerThreads
  * @param value Any arbitrary, cloneable JavaScript value that will be cloned and passed automatically to all new `Worker` instances. If `value` is passed as `undefined`, any previously set value
  * for the `key` will be deleted.
  */
-external fun setEnvironmentData(key: Serializable, value: Serializable)
+external fun setEnvironmentData(key: Serializable, value: Serializable): Unit

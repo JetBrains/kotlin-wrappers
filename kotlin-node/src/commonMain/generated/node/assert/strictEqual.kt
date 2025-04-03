@@ -41,7 +41,7 @@ package node.assert
  * instead of the `AssertionError`.
  * @since v0.1.21
  */
-external fun <T> equal(actual: Any?, expected: T) /* asserts actual is T */
+external fun <T> equal(actual: Any?, expected: T): Unit /* asserts actual is T */
 
 /**
  * Tests strict equality between the `actual` and `expected` parameters as
@@ -80,7 +80,7 @@ external fun <T> equal(actual: Any?, expected: T) /* asserts actual is T */
  * instead of the `AssertionError`.
  * @since v0.1.21
  */
-external fun <T> equal(actual: Any?, expected: T, message: String = definedExternally) /* asserts actual is T */
+external fun <T> equal(actual: Any?, expected: T, message: String = definedExternally): Unit /* asserts actual is T */
 
 /**
  * Tests strict equality between the `actual` and `expected` parameters as
@@ -123,4 +123,4 @@ external fun <T> equal(
     actual: Any?,
     expected: T,
     message: js.errors.JsError = definedExternally,
-) /* asserts actual is T */
+): Unit /* asserts actual is T */

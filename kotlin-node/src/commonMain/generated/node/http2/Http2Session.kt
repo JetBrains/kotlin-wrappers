@@ -114,7 +114,7 @@ sealed external interface Http2Session : EventEmitter {
      * If specified, the `callback` function is registered as a handler for the`'close'` event.
      * @since v9.4.0
      */
-    fun close(callback: () -> Unit = definedExternally)
+    fun close(callback: () -> Unit = definedExternally): Unit
 
     /**
      * Immediately terminates the `Http2Session` and the associated `net.Socket` or `tls.TLSSocket`.
@@ -126,7 +126,7 @@ sealed external interface Http2Session : EventEmitter {
      * @param error An `Error` object if the `Http2Session` is being destroyed due to an error.
      * @param code The HTTP/2 error code to send in the final `GOAWAY` frame. If unspecified, and `error` is not undefined, the default is `INTERNAL_ERROR`, otherwise defaults to `NO_ERROR`.
      */
-    fun destroy(error: js.errors.JsError = definedExternally, code: Number = definedExternally)
+    fun destroy(error: js.errors.JsError = definedExternally, code: Number = definedExternally): Unit
 
     /**
      * Transmits a `GOAWAY` frame to the connected peer _without_ shutting down the`Http2Session`.
@@ -139,7 +139,7 @@ sealed external interface Http2Session : EventEmitter {
         code: Number = definedExternally,
         lastStreamID: Number = definedExternally,
         opaqueData: js.buffer.ArrayBufferView<*> = definedExternally,
-    )
+    ): Unit
 
     /**
      * Sends a `PING` frame to the connected HTTP/2 peer. A `callback` function must
@@ -179,7 +179,7 @@ sealed external interface Http2Session : EventEmitter {
      * Calls `ref()` on this `Http2Session` instance's underlying `net.Socket`.
      * @since v9.4.0
      */
-    fun ref()
+    fun ref(): Unit
 
     /**
      * Sets the local endpoint's window size.
@@ -199,7 +199,7 @@ sealed external interface Http2Session : EventEmitter {
      * ```
      * @since v15.3.0, v14.18.0
      */
-    fun setLocalWindowSize(windowSize: Number)
+    fun setLocalWindowSize(windowSize: Number): Unit
 
     /**
      * Used to set a callback function that is called when there is no activity on
@@ -207,7 +207,7 @@ sealed external interface Http2Session : EventEmitter {
      * registered as a listener on the `'timeout'` event.
      * @since v8.4.0
      */
-    fun setTimeout(msecs: Number, callback: () -> Unit = definedExternally)
+    fun setTimeout(msecs: Number, callback: () -> Unit = definedExternally): Unit
 
     /**
      * Updates the current local settings for this `Http2Session` and sends a new `SETTINGS` frame to the connected HTTP/2 peer.
@@ -224,18 +224,18 @@ sealed external interface Http2Session : EventEmitter {
     fun settings(
         settings: Settings,
         callback: (err: js.errors.JsError?, settings: Settings, duration: Double) -> Unit = definedExternally,
-    )
+    ): Unit
 
     /**
      * Calls `unref()` on this `Http2Session`instance's underlying `net.Socket`.
      * @since v9.4.0
      */
-    fun unref()
+    fun unref(): Unit
 
 
-    fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
+    fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
 
-    fun addListener(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
+    fun addListener(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
 
 
     fun emit(event: String, vararg args: Any?): Boolean
@@ -243,30 +243,30 @@ sealed external interface Http2Session : EventEmitter {
     fun emit(event: js.symbol.Symbol, vararg args: Any?): Boolean
 
 
-    fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
+    fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
 
-    fun on(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
-
-
-    fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
-
-    fun once(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
+    fun on(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
 
 
-    fun prependListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
+    fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
+
+    fun once(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
+
+
+    fun prependListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
 
     fun prependListener(
         event: js.symbol.Symbol,
         listener: Function<Unit>, /* (...args: any[]) => void */
-    ) /* this */
+    ): Unit /* this */
 
 
-    fun prependOnceListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
+    fun prependOnceListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
 
     fun prependOnceListener(
         event: js.symbol.Symbol,
         listener: Function<Unit>, /* (...args: any[]) => void */
-    ) /* this */
+    ): Unit /* this */
 
     @web.events.JsEvent("close")
     val closeEvent: node.events.EventInstance<js.array.JsTuple>

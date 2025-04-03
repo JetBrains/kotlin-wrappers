@@ -13,4 +13,4 @@ package node.inspector.network
  * @since v22.7.0
  * @experimental
  */
-external fun loadingFailed(params: LoadingFailedEventDataType)
+external fun loadingFailed(params: LoadingFailedEventDataType): Unit

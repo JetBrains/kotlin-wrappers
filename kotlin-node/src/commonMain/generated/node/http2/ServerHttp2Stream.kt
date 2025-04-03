@@ -23,7 +23,7 @@ sealed external interface ServerHttp2Stream : Http2Stream {
      * Sends an additional informational `HEADERS` frame to the connected HTTP/2 peer.
      * @since v8.4.0
      */
-    fun additionalHeaders(headers: OutgoingHttpHeaders)
+    fun additionalHeaders(headers: OutgoingHttpHeaders): Unit
 
     /**
      * Initiates a push stream. The callback is invoked with the new `Http2Stream` instance created for the push stream passed as the second argument, or an `Error` passed as the first argument.
@@ -53,13 +53,13 @@ sealed external interface ServerHttp2Stream : Http2Stream {
     fun pushStream(
         headers: OutgoingHttpHeaders,
         callback: (err: js.errors.JsError?, pushStream: ServerHttp2Stream, headers: OutgoingHttpHeaders) -> Unit = definedExternally,
-    )
+    ): Unit
 
     fun pushStream(
         headers: OutgoingHttpHeaders,
         options: StreamPriorityOptions = definedExternally,
         callback: (err: js.errors.JsError?, pushStream: ServerHttp2Stream, headers: OutgoingHttpHeaders) -> Unit = definedExternally,
-    )
+    ): Unit
 
     /**
      * ```js
@@ -94,7 +94,7 @@ sealed external interface ServerHttp2Stream : Http2Stream {
     fun respond(
         headers: OutgoingHttpHeaders = definedExternally,
         options: ServerStreamResponseOptions = definedExternally,
-    )
+    ): Unit
 
     /**
      * Initiates a response whose data is read from the given file descriptor. No
@@ -177,7 +177,7 @@ sealed external interface ServerHttp2Stream : Http2Stream {
         fd: Double,
         headers: OutgoingHttpHeaders = definedExternally,
         options: ServerStreamFileResponseOptions = definedExternally,
-    )
+    ): Unit
 
     /**
      * Initiates a response whose data is read from the given file descriptor. No
@@ -260,7 +260,7 @@ sealed external interface ServerHttp2Stream : Http2Stream {
         fd: node.fs.FileHandle,
         headers: OutgoingHttpHeaders = definedExternally,
         options: ServerStreamFileResponseOptions = definedExternally,
-    )
+    ): Unit
 
     /**
      * Sends a regular file as the response. The `path` must specify a regular file
@@ -364,5 +364,5 @@ sealed external interface ServerHttp2Stream : Http2Stream {
         path: String,
         headers: OutgoingHttpHeaders = definedExternally,
         options: ServerStreamFileResponseOptionsWithError = definedExternally,
-    )
+    ): Unit
 }

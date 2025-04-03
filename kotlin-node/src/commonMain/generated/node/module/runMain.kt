@@ -4,4 +4,4 @@
 
 package node.module
 
-external fun runMain(main: String = definedExternally)
+external fun runMain(main: String = definedExternally): Unit

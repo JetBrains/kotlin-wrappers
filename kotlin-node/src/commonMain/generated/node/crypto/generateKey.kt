@@ -27,4 +27,4 @@ external fun generateKey(
     type: GenerateKeyType,
     options: GenerateKeyOptions,
     callback: (err: js.errors.JsError?, key: KeyObject) -> Unit,
-)
+): Unit

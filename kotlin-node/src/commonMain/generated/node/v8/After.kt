@@ -10,5 +10,5 @@ import js.promise.Promise
  */
 sealed external interface After {
     @seskar.js.JsNativeInvoke
-    operator fun invoke(promise: Promise<Any?>)
+    operator fun invoke(promise: Promise<Any?>): Unit
 }

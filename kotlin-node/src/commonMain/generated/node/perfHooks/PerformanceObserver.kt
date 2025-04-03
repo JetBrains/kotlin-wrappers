@@ -16,7 +16,7 @@ external class PerformanceObserver : AsyncResource {
      * Disconnects the `PerformanceObserver` instance from all notifications.
      * @since v8.5.0
      */
-    fun disconnect()
+    fun disconnect(): Unit
 
     /**
      * Subscribes the `PerformanceObserver` instance to notifications of new `PerformanceEntry` instances identified either by `options.entryTypes` or `options.type`:
@@ -37,7 +37,7 @@ external class PerformanceObserver : AsyncResource {
      * ```
      * @since v8.5.0
      */
-    fun observe(options: PerformanceObserverObserveTypesOptions)
+    fun observe(options: PerformanceObserverObserveTypesOptions): Unit
 
     /**
      * Subscribes the `PerformanceObserver` instance to notifications of new `PerformanceEntry` instances identified either by `options.entryTypes` or `options.type`:
@@ -58,7 +58,7 @@ external class PerformanceObserver : AsyncResource {
      * ```
      * @since v8.5.0
      */
-    fun observe(options: PerformanceObserverObserveTypeOptions)
+    fun observe(options: PerformanceObserverObserveTypeOptions): Unit
 
     /**
      * @since v16.0.0

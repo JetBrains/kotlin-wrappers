@@ -105,7 +105,7 @@ open external class AsyncResource {
      * never be called.
      * @return A reference to `asyncResource`.
      */
-    fun emitDestroy() /* this */
+    fun emitDestroy(): Unit /* this */
 
     /**
      * @return The unique `asyncId` assigned to the resource.

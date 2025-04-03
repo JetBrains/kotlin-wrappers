@@ -52,27 +52,27 @@ external fun lookup(
     hostname: String,
     family: Number,
     callback: (err: node.ErrnoException?, address: String, family: Double) -> Unit,
-)
+): Unit
 
 external fun lookup(
     hostname: String,
     options: LookupOneOptions,
     callback: (err: node.ErrnoException?, address: String, family: Double) -> Unit,
-)
+): Unit
 
 external fun lookup(
     hostname: String,
     options: LookupAllOptions,
     callback: (err: node.ErrnoException?, addresses: js.array.ReadonlyArray<LookupAddress>) -> Unit,
-)
+): Unit
 
 external fun lookup(
     hostname: String,
     options: LookupOptions,
     callback: (err: node.ErrnoException?, address: Any /* string | LookupAddress[] */, family: Double) -> Unit,
-)
+): Unit
 
 external fun lookup(
     hostname: String,
     callback: (err: node.ErrnoException?, address: String, family: Double) -> Unit,
-)
+): Unit

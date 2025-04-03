@@ -38,7 +38,7 @@ external fun <TBuffer : js.buffer.ArrayBufferView<*>> write(
     length: Double?,
     position: Double?,
     callback: (err: node.ErrnoException?, written: Double, buffer: TBuffer) -> Unit,
-)
+): Unit
 
 /**
  * Asynchronously writes `buffer` to the file referenced by the supplied file descriptor.
@@ -52,7 +52,7 @@ external fun <TBuffer : js.buffer.ArrayBufferView<*>> write(
     offset: Double?,
     length: Double?,
     callback: (err: node.ErrnoException?, written: Double, buffer: TBuffer) -> Unit,
-)
+): Unit
 
 /**
  * Asynchronously writes `buffer` to the file referenced by the supplied file descriptor.
@@ -64,7 +64,7 @@ external fun <TBuffer : js.buffer.ArrayBufferView<*>> write(
     buffer: TBuffer,
     offset: Double?,
     callback: (err: node.ErrnoException?, written: Double, buffer: TBuffer) -> Unit,
-)
+): Unit
 
 /**
  * Asynchronously writes `buffer` to the file referenced by the supplied file descriptor.
@@ -74,7 +74,7 @@ external fun <TBuffer : js.buffer.ArrayBufferView<*>> write(
     fd: Number,
     buffer: TBuffer,
     callback: (err: node.ErrnoException?, written: Double, buffer: TBuffer) -> Unit,
-)
+): Unit
 
 /**
  * Asynchronously writes `string` to the file referenced by the supplied file descriptor.
@@ -89,7 +89,7 @@ external fun write(
     position: Double?,
     encoding: node.buffer.BufferEncoding?,
     callback: (err: node.ErrnoException?, written: Double, str: String) -> Unit,
-)
+): Unit
 
 /**
  * Asynchronously writes `string` to the file referenced by the supplied file descriptor.
@@ -102,7 +102,7 @@ external fun write(
     string: String,
     position: Double?,
     callback: (err: node.ErrnoException?, written: Double, str: String) -> Unit,
-)
+): Unit
 
 /**
  * Asynchronously writes `string` to the file referenced by the supplied file descriptor.
@@ -113,4 +113,4 @@ external fun write(
     fd: Number,
     string: String,
     callback: (err: node.ErrnoException?, written: Double, str: String) -> Unit,
-)
+): Unit

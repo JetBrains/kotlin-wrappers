@@ -234,7 +234,7 @@ external class TLSSocket : node.net.Socket {
      * to renegotiate will trigger an `'error'` event on the `TLSSocket`.
      * @since v8.4.0
      */
-    fun disableRenegotiation()
+    fun disableRenegotiation(): Unit
 
     /**
      * When enabled, TLS packet trace information is written to `stderr`. This can be
@@ -245,7 +245,7 @@ external class TLSSocket : node.net.Socket {
      * without notice, and should not be relied on.
      * @since v12.2.0
      */
-    fun enableTrace()
+    fun enableTrace(): Unit
 
     /**
      * Returns the peer certificate as an `X509Certificate` object.
@@ -292,7 +292,7 @@ external class TLSSocket : node.net.Socket {
      * @return requested bytes of the keying material
      */
     fun exportKeyingMaterial(length: Number, label: String, context: node.buffer.Buffer<*>): node.buffer.Buffer<*>
-    override fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
+    override fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
 
 
     override fun emit(event: String, vararg args: Any?): Boolean
@@ -300,22 +300,22 @@ external class TLSSocket : node.net.Socket {
     override fun emit(event: js.symbol.Symbol, vararg args: Any?): Boolean
 
 
-    override fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
+    override fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
 
 
-    override fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
+    override fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
 
 
     override fun prependListener(
         event: String,
         listener: Function<Unit>, /* (...args: any[]) => void */
-    ) /* this */
+    ): Unit /* this */
 
 
     override fun prependOnceListener(
         event: String,
         listener: Function<Unit>, /* (...args: any[]) => void */
-    ) /* this */
+    ): Unit /* this */
 
 
     @web.events.JsEvent("OCSPResponse")

@@ -40,4 +40,4 @@ package node.http
  * @param name Header name
  * @param value Header value
  */
-external fun validateHeaderValue(name: String, value: String)
+external fun validateHeaderValue(name: String, value: String): Unit

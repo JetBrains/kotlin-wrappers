@@ -13,7 +13,7 @@ external class GCProfiler {
      * Start collecting GC data.
      * @since v19.6.0, v18.15.0
      */
-    fun start()
+    fun start(): Unit
 
     /**
      * Stop collecting GC data and return an object. The content of object

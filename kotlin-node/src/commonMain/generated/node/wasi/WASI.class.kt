@@ -52,7 +52,7 @@ external class WASI {
      * If `initialize()` is called more than once, an exception is thrown.
      * @since v14.6.0, v12.19.0
      */
-    fun initialize(instance: Any)// TODO: avoid DOM dependency until WASM moved to own lib.
+    fun initialize(instance: Any): Unit// TODO: avoid DOM dependency until WASM moved to own lib.
 
     /**
      * `wasiImport` is an object that implements the WASI system call API. This object

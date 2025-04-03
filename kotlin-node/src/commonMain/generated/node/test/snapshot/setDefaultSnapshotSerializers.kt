@@ -19,4 +19,4 @@ import js.array.ReadonlyArray
  * @since v22.3.0
  * @param serializers An array of synchronous functions used as the default serializers for snapshot tests.
  */
-external fun setDefaultSnapshotSerializers(serializers: ReadonlyArray<(value: Any?) -> Any?>)
+external fun setDefaultSnapshotSerializers(serializers: ReadonlyArray<(value: Any?) -> Any?>): Unit

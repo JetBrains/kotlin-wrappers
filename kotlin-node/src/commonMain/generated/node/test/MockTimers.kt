@@ -66,7 +66,7 @@ external class MockTimers {
      * object. It can either be a positive integer, or another Date object.
      * @since v20.4.0
      */
-    fun enable(options: MockTimersOptions = definedExternally)
+    fun enable(options: MockTimersOptions = definedExternally): Unit
 
     /**
      * You can use the `.setTime()` method to manually move the mocked date to another time. This method only accepts a positive integer.
@@ -86,7 +86,7 @@ external class MockTimers {
      * });
      * ```
      */
-    fun setTime(time: Number)
+    fun setTime(time: Number): Unit
 
     /**
      * This function restores the default behavior of all mocks that were previously
@@ -102,7 +102,7 @@ external class MockTimers {
      * ```
      * @since v20.4.0
      */
-    fun reset()
+    fun reset(): Unit
 
     /**
      * Advances time for all mocked timers.
@@ -180,7 +180,7 @@ external class MockTimers {
      * ```
      * @since v20.4.0
      */
-    fun tick(milliseconds: Number)
+    fun tick(milliseconds: Number): Unit
 
     /**
      * Triggers all pending mocked timers immediately. If the `Date` object is also
@@ -218,5 +218,5 @@ external class MockTimers {
      * clocks or actual timers outside of the mocking environment.
      * @since v20.4.0
      */
-    fun runAll()
+    fun runAll(): Unit
 }

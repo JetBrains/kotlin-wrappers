@@ -111,7 +111,7 @@ external class StatementSync {
      * @since v22.5.0
      * @param enabled Enables or disables support for binding named parameters without the prefix character.
      */
-    fun setAllowBareNamedParameters(enabled: Boolean)
+    fun setAllowBareNamedParameters(enabled: Boolean): Unit
 
     /**
      * When reading from the database, SQLite `INTEGER`s are mapped to JavaScript
@@ -123,7 +123,7 @@ external class StatementSync {
      * @since v22.5.0
      * @param enabled Enables or disables the use of `BigInt`s when reading `INTEGER` fields from the database.
      */
-    fun setReadBigInts(enabled: Boolean)
+    fun setReadBigInts(enabled: Boolean): Unit
 
     /**
      * The source SQL text of the prepared statement. This property is a

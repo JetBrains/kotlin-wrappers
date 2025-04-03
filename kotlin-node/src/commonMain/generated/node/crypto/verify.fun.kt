@@ -102,7 +102,7 @@ external fun verify(
     key: KeyLike,
     signature: js.buffer.ArrayBufferView<*>,
     callback: (error: js.errors.JsError?, result: Boolean) -> Unit,
-)
+): Unit
 
 external fun verify(
     algorithm: String?,
@@ -110,7 +110,7 @@ external fun verify(
     key: VerifyKeyObjectInput,
     signature: js.buffer.ArrayBufferView<*>,
     callback: (error: js.errors.JsError?, result: Boolean) -> Unit,
-)
+): Unit
 
 external fun verify(
     algorithm: String?,
@@ -118,7 +118,7 @@ external fun verify(
     key: VerifyPublicKeyInput,
     signature: js.buffer.ArrayBufferView<*>,
     callback: (error: js.errors.JsError?, result: Boolean) -> Unit,
-)
+): Unit
 
 external fun verify(
     algorithm: String?,
@@ -126,4 +126,4 @@ external fun verify(
     key: VerifyJsonWebKeyInput,
     signature: js.buffer.ArrayBufferView<*>,
     callback: (error: js.errors.JsError?, result: Boolean) -> Unit,
-)
+): Unit

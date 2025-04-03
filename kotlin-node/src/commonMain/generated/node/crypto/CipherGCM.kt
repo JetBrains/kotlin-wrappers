@@ -7,7 +7,7 @@ sealed external interface CipherGCM : Cipher {
     fun setAAD(
         buffer: js.buffer.ArrayBufferView<*>,
         options: CipherGCMSetAADOptions = definedExternally,
-    ) /* this */
+    ): Unit /* this */
 
     fun getAuthTag(): node.buffer.Buffer<*>
 }

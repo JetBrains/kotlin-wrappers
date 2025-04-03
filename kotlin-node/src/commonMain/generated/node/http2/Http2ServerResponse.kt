@@ -44,7 +44,7 @@ open external class Http2ServerResponse<Request : Http2ServerRequest /* default 
      * ```
      * @since v20.12.0
      */
-    fun appendHeader(name: String, value: String)
+    fun appendHeader(name: String, value: String): Unit
 
     /**
      * Append a single header value to the header object.
@@ -67,7 +67,7 @@ open external class Http2ServerResponse<Request : Http2ServerRequest /* default 
      * ```
      * @since v20.12.0
      */
-    fun appendHeader(name: String, value: js.array.ReadonlyArray<String>)
+    fun appendHeader(name: String, value: js.array.ReadonlyArray<String>): Unit
 
     /**
      * Boolean value that indicates whether the response has completed. Starts
@@ -163,7 +163,7 @@ open external class Http2ServerResponse<Request : Http2ServerRequest /* default 
      * will result in a `TypeError` being thrown.
      * @since v8.4.0
      */
-    fun addTrailers(trailers: OutgoingHttpHeaders)
+    fun addTrailers(trailers: OutgoingHttpHeaders): Unit
 
     /**
      * This method signals to the server that all of the response headers and body
@@ -176,17 +176,17 @@ open external class Http2ServerResponse<Request : Http2ServerRequest /* default 
      * is finished.
      * @since v8.4.0
      */
-    override fun end(cb: () -> Unit) /* this */
-    override fun end(data: String, cb: () -> Unit) /* this */
+    override fun end(cb: () -> Unit): Unit /* this */
+    override fun end(data: String, cb: () -> Unit): Unit /* this */
 
-    override fun end(data: Uint8Array<*>, cb: () -> Unit) /* this */
-    override fun end(str: String, encoding: node.buffer.BufferEncoding, cb: () -> Unit) /* this */
+    override fun end(data: Uint8Array<*>, cb: () -> Unit): Unit /* this */
+    override fun end(str: String, encoding: node.buffer.BufferEncoding, cb: () -> Unit): Unit /* this */
 
     fun end(
         str: Uint8Array<*>,
         encoding: node.buffer.BufferEncoding,
         cb: () -> Unit = definedExternally,
-    ) /* this */
+    ): Unit /* this */
 
     /**
      * Reads out a header that has already been queued but not sent to the client.
@@ -255,7 +255,7 @@ open external class Http2ServerResponse<Request : Http2ServerRequest /* default 
      * ```
      * @since v8.4.0
      */
-    fun removeHeader(name: String)
+    fun removeHeader(name: String): Unit
 
     /**
      * Sets a single header value for implicit headers. If this header already exists
@@ -290,7 +290,7 @@ open external class Http2ServerResponse<Request : Http2ServerRequest /* default 
      * ```
      * @since v8.4.0
      */
-    fun setHeader(name: String, value: Double)
+    fun setHeader(name: String, value: Double): Unit
 
     /**
      * Sets a single header value for implicit headers. If this header already exists
@@ -325,7 +325,7 @@ open external class Http2ServerResponse<Request : Http2ServerRequest /* default 
      * ```
      * @since v8.4.0
      */
-    fun setHeader(name: String, value: String)
+    fun setHeader(name: String, value: String): Unit
 
     /**
      * Sets a single header value for implicit headers. If this header already exists
@@ -360,7 +360,7 @@ open external class Http2ServerResponse<Request : Http2ServerRequest /* default 
      * ```
      * @since v8.4.0
      */
-    fun setHeader(name: String, value: js.array.ReadonlyArray<String>)
+    fun setHeader(name: String, value: js.array.ReadonlyArray<String>): Unit
 
     /**
      * Sets the `Http2Stream`'s timeout value to `msecs`. If a callback is
@@ -372,7 +372,7 @@ open external class Http2ServerResponse<Request : Http2ServerRequest /* default 
      * handler is assigned to the request, the response, or the server's `'timeout'` events, timed out sockets must be handled explicitly.
      * @since v8.4.0
      */
-    fun setTimeout(msecs: Number, callback: () -> Unit = definedExternally)
+    fun setTimeout(msecs: Number, callback: () -> Unit = definedExternally): Unit
 
     /**
      * If this method is called and `response.writeHead()` has not been called,
@@ -450,7 +450,7 @@ open external class Http2ServerResponse<Request : Http2ServerRequest /* default 
      * should be sent. See the `'checkContinue'` event on `Http2Server` and `Http2SecureServer`.
      * @since v8.4.0
      */
-    fun writeContinue()
+    fun writeContinue(): Unit
 
     /**
      * Sends a status `103 Early Hints` to the client with a Link header,
@@ -476,7 +476,7 @@ open external class Http2ServerResponse<Request : Http2ServerRequest /* default 
      * ```
      * @since v18.11.0
      */
-    fun writeEarlyHints(hints: js.objects.ReadonlyRecord<String, Any /* string | string[] */>)
+    fun writeEarlyHints(hints: js.objects.ReadonlyRecord<String, Any /* string | string[] */>): Unit
 
     /**
      * Sends a response header to the request. The status code is a 3-digit HTTP
@@ -525,12 +525,12 @@ open external class Http2ServerResponse<Request : Http2ServerRequest /* default 
      * will result in a `TypeError` being thrown.
      * @since v8.4.0
      */
-    fun writeHead(statusCode: Number, headers: OutgoingHttpHeaders = definedExternally) /* this */
+    fun writeHead(statusCode: Number, headers: OutgoingHttpHeaders = definedExternally): Unit /* this */
     fun writeHead(
         statusCode: Number,
         statusMessage: String,
         headers: OutgoingHttpHeaders = definedExternally,
-    ) /* this */
+    ): Unit /* this */
 
     /**
      * Call `http2stream.pushStream()` with the given headers, and wrap the
@@ -545,15 +545,15 @@ open external class Http2ServerResponse<Request : Http2ServerRequest /* default 
     fun createPushResponse(
         headers: OutgoingHttpHeaders,
         callback: (err: js.errors.JsError?, res: Http2ServerResponse<*>) -> Unit,
-    )
+    ): Unit
 
 
-    override fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
+    override fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
 
     override fun addListener(
         event: js.symbol.Symbol,
         listener: Function<Unit>, /* (...args: any[]) => void */
-    ) /* this */
+    ): Unit /* this */
 
 
     override fun emit(event: String, vararg args: Any?): Boolean
@@ -561,36 +561,36 @@ open external class Http2ServerResponse<Request : Http2ServerRequest /* default 
     override fun emit(event: js.symbol.Symbol, vararg args: Any?): Boolean
 
 
-    override fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
+    override fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
 
-    override fun on(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
+    override fun on(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
 
 
-    override fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
+    override fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
 
-    override fun once(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
+    override fun once(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
 
 
     override fun prependListener(
         event: String,
         listener: Function<Unit>, /* (...args: any[]) => void */
-    ) /* this */
+    ): Unit /* this */
 
     override fun prependListener(
         event: js.symbol.Symbol,
         listener: Function<Unit>, /* (...args: any[]) => void */
-    ) /* this */
+    ): Unit /* this */
 
 
     override fun prependOnceListener(
         event: String,
         listener: Function<Unit>, /* (...args: any[]) => void */
-    ) /* this */
+    ): Unit /* this */
 
     override fun prependOnceListener(
         event: js.symbol.Symbol,
         listener: Function<Unit>, /* (...args: any[]) => void */
-    ) /* this */
+    ): Unit /* this */
 
     @web.events.JsEvent("close")
     override val closeEvent: node.events.EventInstance<js.array.JsTuple>

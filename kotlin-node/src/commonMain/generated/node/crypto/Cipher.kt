@@ -173,5 +173,5 @@ open external class Cipher : node.stream.Transform {
      * @param [autoPadding=true]
      * @return for method chaining.
      */
-    fun setAutoPadding(autoPadding: Boolean = definedExternally) /* this */
+    fun setAutoPadding(autoPadding: Boolean = definedExternally): Unit /* this */
 }

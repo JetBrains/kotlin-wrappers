@@ -54,7 +54,7 @@ external class Channel<StoreType /* default is Any? */, ContextType /* default i
      * @since v15.1.0, v14.17.0
      * @param message The message to send to the channel subscribers
      */
-    fun publish(message: Any?)
+    fun publish(message: Any?): Unit
 
     /**
      * Register a message handler to subscribe to this channel. This message handler
@@ -74,7 +74,7 @@ external class Channel<StoreType /* default is Any? */, ContextType /* default i
      * @deprecated Since v18.7.0,v16.17.0 - Use {@link subscribe(name, onMessage)}
      * @param onMessage The handler to receive channel messages
      */
-    fun subscribe(onMessage: ChannelListener)
+    fun subscribe(onMessage: ChannelListener): Unit
 
     /**
      * Remove a message handler previously registered to this channel with `channel.subscribe(onMessage)`.
@@ -97,7 +97,7 @@ external class Channel<StoreType /* default is Any? */, ContextType /* default i
      * @param onMessage The previous subscribed handler to remove
      * @return `true` if the handler was found, `false` otherwise.
      */
-    fun unsubscribe(onMessage: ChannelListener)
+    fun unsubscribe(onMessage: ChannelListener): Unit
 
     /**
      * When `channel.runStores(context, ...)` is called, the given context data
@@ -126,7 +126,7 @@ external class Channel<StoreType /* default is Any? */, ContextType /* default i
     fun bindStore(
         store: AsyncLocalStorage<StoreType>,
         transform: (context: ContextType) -> StoreType = definedExternally,
-    )
+    ): Unit
 
     /**
      * Remove a message handler previously registered to this channel with `channel.bindStore(store)`.
@@ -147,7 +147,7 @@ external class Channel<StoreType /* default is Any? */, ContextType /* default i
      * @param store The store to unbind from the channel.
      * @return `true` if the store was found, `false` otherwise.
      */
-    fun unbindStore(store: Any?)
+    fun unbindStore(store: Any?): Unit
 
     /**
      * Applies the given data to any AsyncLocalStorage instances bound to the channel
@@ -186,5 +186,5 @@ external class Channel<StoreType /* default is Any? */, ContextType /* default i
      * @param thisArg The receiver to be used for the function call.
      * @param args Optional arguments to pass to the function.
      */
-    fun runStores()
+    fun runStores(): Unit
 }

@@ -27,4 +27,4 @@ package node.fs
  * @since v0.11.15
  * @param [mode=fs.constants.F_OK]
  */
-external fun accessSync(path: PathLike, mode: Number = definedExternally)
+external fun accessSync(path: PathLike, mode: Number = definedExternally): Unit

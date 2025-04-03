@@ -11,4 +11,4 @@ package node.fs
  * See the POSIX [`chmod(2)`](http://man7.org/linux/man-pages/man2/chmod.2.html) documentation for more detail.
  * @since v0.6.7
  */
-external fun chmodSync(path: PathLike, mode: Mode)
+external fun chmodSync(path: PathLike, mode: Mode): Unit

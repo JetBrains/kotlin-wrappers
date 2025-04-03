@@ -7,7 +7,7 @@ sealed external interface Zlib {
     val bytesRead: Double
     val bytesWritten: Double
     var shell: Any? /* boolean | string | undefined */
-    fun close(callback: () -> Unit = definedExternally)
-    fun flush(kind: Number = definedExternally, callback: () -> Unit = definedExternally)
-    fun flush(callback: () -> Unit = definedExternally)
+    fun close(callback: () -> Unit = definedExternally): Unit
+    fun flush(kind: Number = definedExternally, callback: () -> Unit = definedExternally): Unit
+    fun flush(callback: () -> Unit = definedExternally): Unit
 }

@@ -10,4 +10,4 @@ package node.v8
  * records and optimize code. This can be used in conjunction with {@link takeCoverage} if the user wants to collect the coverage on demand.
  * @since v15.1.0, v14.18.0, v12.22.0
  */
-external fun stopCoverage()
+external fun stopCoverage(): Unit

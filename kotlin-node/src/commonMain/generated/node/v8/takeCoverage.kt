@@ -14,4 +14,4 @@ package node.v8
  * disk unless {@link stopCoverage} is invoked before the process exits.
  * @since v15.1.0, v14.18.0, v12.22.0
  */
-external fun takeCoverage()
+external fun takeCoverage(): Unit

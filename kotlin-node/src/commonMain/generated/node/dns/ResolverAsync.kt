@@ -57,7 +57,7 @@ external class Resolver {
      * callbacks will be called with an error with code `ECANCELLED`.
      * @since v8.3.0
      */
-    fun cancel()
+    fun cancel(): Unit
     var getServers: () -> js.array.ReadonlyArray<String>
 
     @JsName("resolve")
@@ -334,6 +334,6 @@ external class Resolver {
      * @param [ipv4='0.0.0.0'] A string representation of an IPv4 address.
      * @param [ipv6='::0'] A string representation of an IPv6 address.
      */
-    fun setLocalAddress(ipv4: String = definedExternally, ipv6: String = definedExternally)
+    fun setLocalAddress(ipv4: String = definedExternally, ipv6: String = definedExternally): Unit
     var setServers: (servers: js.array.ReadonlyArray<String>) -> Unit
 }

@@ -10,4 +10,4 @@ package node.stream
  * @since v19.9.0
  * @param value highWaterMark value
  */
-external fun setDefaultHighWaterMark(objectMode: Boolean, value: Number)
+external fun setDefaultHighWaterMark(objectMode: Boolean, value: Number): Unit

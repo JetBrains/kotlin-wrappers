@@ -13,7 +13,7 @@ import node.stream.ReadableOptions
 external class ReadStream : node.stream.Readable {
     constructor (opts: ReadableOptions<*> = definedExternally)
 
-    fun close(callback: (err: node.ErrnoException? /* use undefined for default */) -> Unit = definedExternally)
+    fun close(callback: (err: node.ErrnoException? /* use undefined for default */) -> Unit = definedExternally): Unit
 
     /**
      * The number of bytes that have been read so far.

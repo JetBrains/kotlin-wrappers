@@ -15,6 +15,6 @@ package node.fs
  * directory and subsequent read operations.
  * @since v12.12.0
  */
-external fun opendir(path: PathLike, cb: (err: node.ErrnoException?, dir: Dir) -> Unit)
+external fun opendir(path: PathLike, cb: (err: node.ErrnoException?, dir: Dir) -> Unit): Unit
 
-external fun opendir(path: PathLike, options: OpenDirOptions, cb: (err: node.ErrnoException?, dir: Dir) -> Unit)
+external fun opendir(path: PathLike, options: OpenDirOptions, cb: (err: node.ErrnoException?, dir: Dir) -> Unit): Unit

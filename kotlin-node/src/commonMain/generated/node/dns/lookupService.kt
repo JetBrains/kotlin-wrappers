@@ -30,4 +30,4 @@ external fun lookupService(
     address: String,
     port: Number,
     callback: (err: node.ErrnoException?, hostname: String, service: String) -> Unit,
-)
+): Unit

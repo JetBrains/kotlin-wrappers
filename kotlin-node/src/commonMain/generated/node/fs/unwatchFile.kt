@@ -16,7 +16,7 @@ package node.fs
  * @since v0.1.31
  * @param listener Optional, a listener previously attached using `fs.watchFile()`
  */
-external fun unwatchFile(filename: PathLike, listener: StatsListener = definedExternally)
+external fun unwatchFile(filename: PathLike, listener: StatsListener = definedExternally): Unit
 
-external fun unwatchFile(filename: PathLike, listener: BigIntStatsListener = definedExternally)
-external fun unwatchFile(filename: PathLike)
+external fun unwatchFile(filename: PathLike, listener: BigIntStatsListener = definedExternally): Unit
+external fun unwatchFile(filename: PathLike): Unit

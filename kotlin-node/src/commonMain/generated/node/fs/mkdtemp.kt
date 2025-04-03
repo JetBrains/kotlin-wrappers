@@ -67,7 +67,7 @@ external fun mkdtemp(
     prefix: String,
     options: EncodingOption,
     callback: (err: node.ErrnoException?, folder: String) -> Unit,
-)
+): Unit
 
 /**
  * Asynchronously creates a unique temporary directory.
@@ -78,7 +78,7 @@ external fun mkdtemp(
     prefix: String,
     options: String, /* "buffer" */
     callback: (err: node.ErrnoException?, folder: node.buffer.Buffer<*>) -> Unit,
-)
+): Unit
 
 /**
  * Asynchronously creates a unique temporary directory.
@@ -89,7 +89,7 @@ external fun mkdtemp(
     prefix: String,
     options: MkdtempOptions,
     callback: (err: node.ErrnoException?, folder: node.buffer.Buffer<*>) -> Unit,
-)
+): Unit
 
 /**
  * Asynchronously creates a unique temporary directory.
@@ -100,10 +100,10 @@ external fun mkdtemp(
     prefix: String,
     options: EncodingOption,
     callback: (err: node.ErrnoException?, folder: Any /* string | Buffer */) -> Unit,
-)
+): Unit
 
 /**
  * Asynchronously creates a unique temporary directory.
  * Generates six random characters to be appended behind a required prefix to create a unique temporary directory.
  */
-external fun mkdtemp(prefix: String, callback: (err: node.ErrnoException?, folder: String) -> Unit)
+external fun mkdtemp(prefix: String, callback: (err: node.ErrnoException?, folder: String) -> Unit): Unit

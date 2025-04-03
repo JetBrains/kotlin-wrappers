@@ -18,6 +18,6 @@ package node.os
  * @param [pid=0] The process ID to set scheduling priority for.
  * @param priority The scheduling priority to assign to the process.
  */
-external fun setPriority(priority: Number)
+external fun setPriority(priority: Number): Unit
 
-external fun setPriority(pid: Number, priority: Number)
+external fun setPriority(pid: Number, priority: Number): Unit

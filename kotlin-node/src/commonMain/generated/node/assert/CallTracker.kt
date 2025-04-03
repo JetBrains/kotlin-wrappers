@@ -115,7 +115,7 @@ external class CallTracker {
      * @since v18.8.0, v16.18.0
      * @param fn a tracked function to reset.
      */
-    fun reset(fn: Function<*> = definedExternally)
+    fun reset(fn: Function<*> = definedExternally): Unit
 
     /**
      * Iterates through the list of functions passed to {@link tracker.calls()} and will throw an error for functions that
@@ -140,5 +140,5 @@ external class CallTracker {
      * ```
      * @since v14.2.0, v12.19.0
      */
-    fun verify()
+    fun verify(): Unit
 }

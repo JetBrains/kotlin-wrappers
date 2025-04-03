@@ -54,7 +54,7 @@ open external class OutgoingMessage<Request : IncomingMessage /* default is Inco
      * @since v0.9.12
      * @param callback Optional function to be called when a timeout occurs. Same as binding to the `timeout` event.
      */
-    open fun setTimeout(msecs: Number, callback: () -> Unit = definedExternally) /* this */
+    open fun setTimeout(msecs: Number, callback: () -> Unit = definedExternally): Unit /* this */
 
     /**
      * Sets a single header value. If the header already exists in the to-be-sent
@@ -64,7 +64,7 @@ open external class OutgoingMessage<Request : IncomingMessage /* default is Inco
      * @param name Header name
      * @param value Header value
      */
-    fun setHeader(name: String, value: Double) /* this */
+    fun setHeader(name: String, value: Double): Unit /* this */
 
     /**
      * Sets a single header value. If the header already exists in the to-be-sent
@@ -74,7 +74,7 @@ open external class OutgoingMessage<Request : IncomingMessage /* default is Inco
      * @param name Header name
      * @param value Header value
      */
-    fun setHeader(name: String, value: String) /* this */
+    fun setHeader(name: String, value: String): Unit /* this */
 
     /**
      * Sets a single header value. If the header already exists in the to-be-sent
@@ -84,7 +84,7 @@ open external class OutgoingMessage<Request : IncomingMessage /* default is Inco
      * @param name Header name
      * @param value Header value
      */
-    fun setHeader(name: String, value: ReadonlyArray<String>) /* this */
+    fun setHeader(name: String, value: ReadonlyArray<String>): Unit /* this */
 
     /**
      * Sets multiple header values for implicit headers. headers must be an instance of
@@ -121,7 +121,7 @@ open external class OutgoingMessage<Request : IncomingMessage /* default is Inco
      * @param name Header name
      * @param value Header value
      */
-    fun setHeaders(headers: Headers) /* this */
+    fun setHeaders(headers: Headers): Unit /* this */
 
     /**
      * Sets multiple header values for implicit headers. headers must be an instance of
@@ -158,7 +158,7 @@ open external class OutgoingMessage<Request : IncomingMessage /* default is Inco
      * @param name Header name
      * @param value Header value
      */
-    fun setHeaders(headers: Map<String, Any /* number | string | readonly string[] */>) /* this */
+    fun setHeaders(headers: Map<String, Any /* number | string | readonly string[] */>): Unit /* this */
 
     /**
      * Append a single header value to the header object.
@@ -175,7 +175,7 @@ open external class OutgoingMessage<Request : IncomingMessage /* default is Inco
      * @param name Header name
      * @param value Header value
      */
-    fun appendHeader(name: String, value: String) /* this */
+    fun appendHeader(name: String, value: String): Unit /* this */
 
     /**
      * Append a single header value to the header object.
@@ -192,7 +192,7 @@ open external class OutgoingMessage<Request : IncomingMessage /* default is Inco
      * @param name Header name
      * @param value Header value
      */
-    fun appendHeader(name: String, value: ReadonlyArray<String>) /* this */
+    fun appendHeader(name: String, value: ReadonlyArray<String>): Unit /* this */
 
     /**
      * Gets the value of the HTTP header with the given name. If that header is not
@@ -252,7 +252,7 @@ open external class OutgoingMessage<Request : IncomingMessage /* default is Inco
      * @since v0.4.0
      * @param name Header name
      */
-    fun removeHeader(name: String)
+    fun removeHeader(name: String): Unit
 
     /**
      * Adds HTTP trailers (headers but at the end of the message) to the message.
@@ -275,7 +275,7 @@ open external class OutgoingMessage<Request : IncomingMessage /* default is Inco
      * will result in a `TypeError` being thrown.
      * @since v0.3.0
      */
-    fun addTrailers(headers: OutgoingHttpHeaders)
+    fun addTrailers(headers: OutgoingHttpHeaders): Unit
 
     /**
      * Adds HTTP trailers (headers but at the end of the message) to the message.
@@ -298,7 +298,7 @@ open external class OutgoingMessage<Request : IncomingMessage /* default is Inco
      * will result in a `TypeError` being thrown.
      * @since v0.3.0
      */
-    fun addTrailers(headers: ReadonlyArray<js.array.JsTuple2<String, String>>)
+    fun addTrailers(headers: ReadonlyArray<js.array.JsTuple2<String, String>>): Unit
 
     /**
      * Flushes the message headers.
@@ -312,5 +312,5 @@ open external class OutgoingMessage<Request : IncomingMessage /* default is Inco
      * data is not sent until possibly much later. `outgoingMessage.flushHeaders()` bypasses the optimization and kickstarts the message.
      * @since v1.6.0
      */
-    fun flushHeaders()
+    fun flushHeaders(): Unit
 }

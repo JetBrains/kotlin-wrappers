@@ -26,11 +26,11 @@ external fun readv(
     fd: Number,
     buffers: ReadonlyArray<ArrayBufferView<*>>,
     cb: (err: node.ErrnoException?, bytesRead: Double, buffers: ReadonlyArray<ArrayBufferView<*>>) -> Unit,
-)
+): Unit
 
 external fun readv(
     fd: Number,
     buffers: ReadonlyArray<ArrayBufferView<*>>,
     position: Number,
     cb: (err: node.ErrnoException?, bytesRead: Double, buffers: ReadonlyArray<ArrayBufferView<*>>) -> Unit,
-)
+): Unit

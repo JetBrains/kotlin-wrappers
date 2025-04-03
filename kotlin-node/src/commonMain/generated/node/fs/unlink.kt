@@ -23,4 +23,4 @@ package node.fs
  * See the POSIX [`unlink(2)`](http://man7.org/linux/man-pages/man2/unlink.2.html) documentation for more details.
  * @since v0.0.2
  */
-external fun unlink(path: PathLike, callback: NoParamCallback)
+external fun unlink(path: PathLike, callback: NoParamCallback): Unit

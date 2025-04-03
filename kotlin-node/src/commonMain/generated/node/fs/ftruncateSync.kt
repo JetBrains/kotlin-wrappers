@@ -12,4 +12,4 @@ package node.fs
  * @since v0.8.6
  * @param [len=0]
  */
-external fun ftruncateSync(fd: Number, len: Double? = definedExternally)
+external fun ftruncateSync(fd: Number, len: Double? = definedExternally): Unit

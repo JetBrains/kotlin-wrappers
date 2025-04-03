@@ -112,7 +112,7 @@ open external class _Interface : EventEmitter {
      * The `rl.setPrompt()` method sets the prompt that will be written to `output` whenever `rl.prompt()` is called.
      * @since v0.1.98
      */
-    fun setPrompt(prompt: String)
+    fun setPrompt(prompt: String): Unit
 
     /**
      * The `rl.prompt()` method writes the `Interface` instances configured`prompt` to a new line in `output` in order to provide a user with a new
@@ -125,7 +125,7 @@ open external class _Interface : EventEmitter {
      * @since v0.1.98
      * @param preserveCursor If `true`, prevents the cursor placement from being reset to `0`.
      */
-    fun prompt(preserveCursor: Boolean = definedExternally)
+    fun prompt(preserveCursor: Boolean = definedExternally): Unit
 
     /**
      * The `rl.question()` method displays the `query` by writing it to the `output`,
@@ -170,8 +170,8 @@ open external class _Interface : EventEmitter {
      * @param query A statement or query to write to `output`, prepended to the prompt.
      * @param callback A callback function that is invoked with the user's input in response to the `query`.
      */
-    fun question(query: String, callback: (answer: String) -> Unit)
-    fun question(query: String, options: Abortable, callback: (answer: String) -> Unit)
+    fun question(query: String, callback: (answer: String) -> Unit): Unit
+    fun question(query: String, options: Abortable, callback: (answer: String) -> Unit): Unit
 
     /**
      * The `rl.pause()` method pauses the `input` stream, allowing it to be resumed
@@ -180,13 +180,13 @@ open external class _Interface : EventEmitter {
      * Calling `rl.pause()` does not immediately pause other events (including `'line'`) from being emitted by the `Interface` instance.
      * @since v0.3.4
      */
-    fun pause() /* this */
+    fun pause(): Unit /* this */
 
     /**
      * The `rl.resume()` method resumes the `input` stream if it has been paused.
      * @since v0.3.4
      */
-    fun resume() /* this */
+    fun resume(): Unit /* this */
 
     /**
      * The `rl.close()` method closes the `Interface` instance and
@@ -197,7 +197,7 @@ open external class _Interface : EventEmitter {
      * from being emitted by the `Interface` instance.
      * @since v0.1.98
      */
-    fun close()
+    fun close(): Unit
 
     /**
      * The `rl.write()` method will write either `data` or a key sequence identified
@@ -221,7 +221,7 @@ open external class _Interface : EventEmitter {
      * The `rl.write()` method will write the data to the `readline` `Interface`'s `input` _as if it were provided by the user_.
      * @since v0.1.98
      */
-    fun write(data: String, key: Key = definedExternally)
+    fun write(data: String, key: Key = definedExternally): Unit
 
     /**
      * The `rl.write()` method will write either `data` or a key sequence identified
@@ -245,10 +245,10 @@ open external class _Interface : EventEmitter {
      * The `rl.write()` method will write the data to the `readline` `Interface`'s `input` _as if it were provided by the user_.
      * @since v0.1.98
      */
-    fun write(data: node.buffer.Buffer<*>, key: Key = definedExternally)
-    fun write(data: String?, key: Key)
+    fun write(data: node.buffer.Buffer<*>, key: Key = definedExternally): Unit
+    fun write(data: String?, key: Key): Unit
 
-    fun write(data: node.buffer.Buffer<*>?, key: Key)
+    fun write(data: node.buffer.Buffer<*>?, key: Key): Unit
 
     /**
      * Returns the real position of the cursor in relation to the input
@@ -269,7 +269,7 @@ open external class _Interface : EventEmitter {
      * 7. SIGTSTP
      * 8. history
      */
-    open fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
+    open fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
 
 
     open fun emit(event: String, vararg args: Any?): Boolean
@@ -277,19 +277,19 @@ open external class _Interface : EventEmitter {
     open fun emit(event: js.symbol.Symbol, vararg args: Any?): Boolean
 
 
-    open fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
+    open fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
 
 
-    open fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
+    open fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
 
 
-    open fun prependListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
+    open fun prependListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
 
 
     open fun prependOnceListener(
         event: String,
         listener: Function<Unit>, /* (...args: any[]) => void */
-    ) /* this */
+    ): Unit /* this */
 
 
     @web.events.JsEvent("close")

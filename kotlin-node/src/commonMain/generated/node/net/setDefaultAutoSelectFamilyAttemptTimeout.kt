@@ -10,4 +10,4 @@ package node.net
  * option `--network-family-autoselection-attempt-timeout`.
  * @since v19.8.0, v18.8.0
  */
-external fun setDefaultAutoSelectFamilyAttemptTimeout(value: Number)
+external fun setDefaultAutoSelectFamilyAttemptTimeout(value: Number): Unit

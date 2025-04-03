@@ -13,4 +13,4 @@ package node.fs
  * * If the value can not be converted to a number, or is `NaN`, `Infinity`, or `-Infinity`, an `Error` will be thrown.
  * @since v0.4.2
  */
-external fun utimes(path: PathLike, atime: TimeLike, mtime: TimeLike, callback: NoParamCallback)
+external fun utimes(path: PathLike, atime: TimeLike, mtime: TimeLike, callback: NoParamCallback): Unit

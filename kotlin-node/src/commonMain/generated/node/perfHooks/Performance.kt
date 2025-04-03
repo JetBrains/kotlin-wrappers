@@ -8,21 +8,21 @@ sealed external interface Performance {
      * If `name` is provided, removes only the named mark.
      * @since v8.5.0
      */
-    fun clearMarks(name: String = definedExternally)
+    fun clearMarks(name: String = definedExternally): Unit
 
     /**
      * If `name` is not provided, removes all `PerformanceMeasure` objects from the Performance Timeline.
      * If `name` is provided, removes only the named measure.
      * @since v16.7.0
      */
-    fun clearMeasures(name: String = definedExternally)
+    fun clearMeasures(name: String = definedExternally): Unit
 
     /**
      * If `name` is not provided, removes all `PerformanceResourceTiming` objects from the Resource Timeline.
      * If `name` is provided, removes only the named resource.
      * @since v18.2.0, v16.17.0
      */
-    fun clearResourceTimings(name: String = definedExternally)
+    fun clearResourceTimings(name: String = definedExternally): Unit
 
     /**
      * eventLoopUtilization is similar to CPU utilization except that it is calculated using high precision wall-clock time.
@@ -138,7 +138,7 @@ sealed external interface Performance {
      * By default the max buffer size is set to 250.
      * @since v18.8.0
      */
-    fun setResourceTimingBufferSize(maxSize: Number)
+    fun setResourceTimingBufferSize(maxSize: Number): Unit
 
     /**
      * The [`timeOrigin`](https://w3c.github.io/hr-time/#dom-performance-timeorigin) specifies the high resolution millisecond timestamp

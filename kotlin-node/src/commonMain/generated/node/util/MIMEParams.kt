@@ -12,7 +12,7 @@ external class MIMEParams {
     /**
      * Remove all name-value pairs whose name is `name`.
      */
-    fun delete(name: String)
+    fun delete(name: String): Unit
 
     /**
      * Returns an iterator over each of the name-value pairs in the parameters.
@@ -64,7 +64,7 @@ external class MIMEParams {
      * // Prints: foo=def;bar=1;baz=xyz
      * ```
      */
-    fun set(name: String, value: String)
+    fun set(name: String, value: String): Unit
 
     /**
      * Returns an iterator over the values of each name-value pair.

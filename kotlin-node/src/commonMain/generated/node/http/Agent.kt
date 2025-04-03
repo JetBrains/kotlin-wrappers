@@ -132,5 +132,5 @@ open external class Agent : EventEmitter {
      * terminates them.
      * @since v0.11.4
      */
-    fun destroy()
+    fun destroy(): Unit
 }

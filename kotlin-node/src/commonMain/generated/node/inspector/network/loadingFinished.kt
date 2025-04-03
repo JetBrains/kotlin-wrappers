@@ -13,4 +13,4 @@ package node.inspector.network
  * @since v22.6.0
  * @experimental
  */
-external fun loadingFinished(params: LoadingFinishedEventDataType)
+external fun loadingFinished(params: LoadingFinishedEventDataType): Unit

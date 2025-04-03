@@ -43,7 +43,7 @@ external fun scrypt(
     salt: BinaryLike,
     keylen: Number,
     callback: (err: js.errors.JsError?, derivedKey: node.buffer.Buffer<*>) -> Unit,
-)
+): Unit
 
 external fun scrypt(
     password: BinaryLike,
@@ -51,4 +51,4 @@ external fun scrypt(
     keylen: Number,
     options: ScryptOptions,
     callback: (err: js.errors.JsError?, derivedKey: node.buffer.Buffer<*>) -> Unit,
-)
+): Unit

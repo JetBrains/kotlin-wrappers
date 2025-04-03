@@ -189,7 +189,7 @@ package node.assert
  * argument.
  * @since v0.1.21
  */
-external fun throws(block: () -> Any?)
+external fun throws(block: () -> Any?): Unit
 
 /**
  * Expects the function `fn` to throw an error.
@@ -376,7 +376,7 @@ external fun throws(block: () -> Any?)
  * argument.
  * @since v0.1.21
  */
-external fun throws(block: () -> Any?, message: String = definedExternally)
+external fun throws(block: () -> Any?, message: String = definedExternally): Unit
 
 /**
  * Expects the function `fn` to throw an error.
@@ -563,10 +563,10 @@ external fun throws(block: () -> Any?, message: String = definedExternally)
  * argument.
  * @since v0.1.21
  */
-external fun throws(block: () -> Any?, message: js.errors.JsError = definedExternally)
+external fun throws(block: () -> Any?, message: js.errors.JsError = definedExternally): Unit
 
-external fun throws(block: () -> Any?, error: AssertPredicate)
+external fun throws(block: () -> Any?, error: AssertPredicate): Unit
 
-external fun throws(block: () -> Any?, error: AssertPredicate, message: String = definedExternally)
+external fun throws(block: () -> Any?, error: AssertPredicate, message: String = definedExternally): Unit
 
-external fun throws(block: () -> Any?, error: AssertPredicate, message: js.errors.JsError = definedExternally)
+external fun throws(block: () -> Any?, error: AssertPredicate, message: js.errors.JsError = definedExternally): Unit
