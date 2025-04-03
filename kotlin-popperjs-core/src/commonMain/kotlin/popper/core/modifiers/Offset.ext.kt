@@ -4,6 +4,7 @@ import js.array.JsTuple2
 import js.array.tupleOf
 import js.core.JsInt
 import js.core.JsPrimitives.toJsInt
+import js.reflect.legacyUnsafeCast
 import js.reflect.unsafeCast
 
 inline fun Offset(
@@ -15,4 +16,4 @@ inline fun Offset(
 inline fun OffsetFunction(
     noinline fn: Provider<JsTuple2<JsInt?, JsInt?>>,
 ): OffsetType =
-    unsafeCast(fn)
+    legacyUnsafeCast(fn)

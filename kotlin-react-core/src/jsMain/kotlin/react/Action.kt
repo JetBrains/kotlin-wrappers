@@ -3,6 +3,7 @@ package react
 import js.core.Void
 import js.promise.Promise
 import js.reflect.unsafeCast
+import js.reflect.legacyUnsafeCast
 import react.internal.isolatedPromise
 import seskar.js.JsAsync
 import seskar.js.JsNativeInvoke
@@ -24,7 +25,7 @@ inline fun Action(
 fun <T> Action(
     value: suspend (T) -> Unit,
 ): Action<T> =
-    unsafeCast { data: T ->
+    legacyUnsafeCast { data: T ->
         isolatedPromise {
             value(data)
             undefined

@@ -6,4 +6,4 @@ package remix.run.router
 inline fun <Context /* default is Any? */> LoaderFunction(
     noinline value: (args: LoaderFunctionArgs<Context>, handlerCtx: Any? /* use undefined for default */) -> DataFunctionReturnValue,
 ): LoaderFunction<Context> =
-    js.reflect.unsafeCast(value)
+    js.reflect.legacyUnsafeCast(value)

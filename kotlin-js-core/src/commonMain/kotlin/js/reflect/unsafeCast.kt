@@ -19,10 +19,6 @@ expect fun <T : JsAny> unsafeCast(
 ): T
 
 expect fun <T : JsAny> unsafeCast(
-    value: Function<*>,
-): T
-
-expect fun <T : JsAny> unsafeCast(
     value: JsAny,
 ): T
 
