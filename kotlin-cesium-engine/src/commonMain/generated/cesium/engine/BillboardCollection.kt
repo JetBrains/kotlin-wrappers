@@ -210,7 +210,7 @@ external class BillboardCollection(
      * @return The billboard at the specified index.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BillboardCollection.html#get">Online Documentation</a>
      */
-    operator fun get(index: Int): Billboard
+    fun get(index: Int): Billboard
 
     /**
      * Called when [Viewer] or [CesiumWidget] render the scene to

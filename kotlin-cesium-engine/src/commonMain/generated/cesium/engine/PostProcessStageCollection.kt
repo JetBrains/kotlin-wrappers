@@ -135,7 +135,7 @@ external class PostProcessStageCollection() {
      * @return The post-process stage at index.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PostProcessStageCollection.html#get">Online Documentation</a>
      */
-    operator fun get(index: Int): Any /* PostProcessStage | PostProcessStageComposite */
+    fun get(index: Int): Any /* PostProcessStage | PostProcessStageComposite */
 
     /**
      * Removes all post-process stages from the collection and destroys them.

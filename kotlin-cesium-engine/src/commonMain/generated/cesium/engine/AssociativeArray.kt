@@ -43,12 +43,12 @@ external class AssociativeArray() {
      * @param [value] The value to associate with the provided key.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/AssociativeArray.html#set">Online Documentation</a>
      */
-    operator fun set(
+    fun set(
         key: String,
         value: Any,
     )
 
-    operator fun set(
+    fun set(
         key: Int,
         value: Any,
     )
@@ -59,9 +59,9 @@ external class AssociativeArray() {
      * @return The associated value, or undefined if the key does not exist in the collection.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/AssociativeArray.html#get">Online Documentation</a>
      */
-    operator fun get(key: String): Any
+    fun get(key: String): Any
 
-    operator fun get(key: Int): Any
+    fun get(key: Int): Any
 
     /**
      * Removes a key-value pair from the collection.

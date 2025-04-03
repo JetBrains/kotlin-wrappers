@@ -235,5 +235,5 @@ private constructor() {
      * @return The runtime animation at the specified index.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ModelAnimationCollection.html#get">Online Documentation</a>
      */
-    operator fun get(index: Int): ModelAnimation
+    fun get(index: Int): ModelAnimation
 }

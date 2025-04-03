@@ -79,7 +79,7 @@ external class TimeIntervalCollection(
      * @return The interval at the specified index, or `undefined` if no interval exists as that index.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/TimeIntervalCollection.html#get">Online Documentation</a>
      */
-    operator fun get(index: Int): TimeInterval?
+    fun get(index: Int): TimeInterval?
 
     /**
      * Removes all intervals from the collection.

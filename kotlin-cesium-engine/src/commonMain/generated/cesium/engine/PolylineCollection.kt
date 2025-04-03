@@ -132,7 +132,7 @@ external class PolylineCollection() {
      * @return The polyline at the specified index.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PolylineCollection.html#get">Online Documentation</a>
      */
-    operator fun get(index: Int): Polyline
+    fun get(index: Int): Polyline
 
     /**
      * Called when [Viewer] or [CesiumWidget] render the scene to

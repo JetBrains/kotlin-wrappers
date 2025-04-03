@@ -116,7 +116,7 @@ external class ClippingPolygonCollection(
      * @return The ClippingPolygon at the specified index.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ClippingPolygonCollection.html#get">Online Documentation</a>
      */
-    operator fun get(index: Int): ClippingPolygon
+    fun get(index: Int): ClippingPolygon
 
     /**
      * Checks whether this collection contains a ClippingPolygon equal to the given ClippingPolygon.

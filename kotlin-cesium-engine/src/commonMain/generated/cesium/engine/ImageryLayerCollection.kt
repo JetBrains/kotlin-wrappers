@@ -134,7 +134,7 @@ external class ImageryLayerCollection() {
      * @return The imagery layer at the given index.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ImageryLayerCollection.html#get">Online Documentation</a>
      */
-    operator fun get(index: Int): ImageryLayer
+    fun get(index: Int): ImageryLayer
 
     /**
      * Raises a layer up one position in the collection.
