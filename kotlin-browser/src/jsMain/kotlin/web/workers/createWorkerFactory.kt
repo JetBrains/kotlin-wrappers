@@ -1,7 +1,6 @@
 package web.workers
 
 import js.coroutines.internal.IsolatedCoroutineScope
-import js.reflect.unsafeCast
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.CoroutineStart
 import kotlinx.coroutines.launch
@@ -20,7 +19,7 @@ internal fun <T : AbstractWorker, S : WorkerGlobalScope> createWorkerFactory(
             block = { block(self) },
         )
 
-    return unsafeCast {
+    return {
         error("Missed plugin integration! $workerName factory shouldn't be called directly!")
-    }
+    }.unsafeCast<WorkerFactory<T>>()
 }

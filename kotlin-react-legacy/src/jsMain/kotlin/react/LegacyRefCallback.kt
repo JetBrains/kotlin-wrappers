@@ -1,15 +1,14 @@
 package react
 
-import js.reflect.unsafeCast
 import react.raw.useCallbackRaw
 
 fun <T : Any> LegacyRefCallback(
     callback: (T?) -> Unit,
 ): RefCallback<T> =
-    unsafeCast { value: T? ->
+    { value: T? ->
         callback(value)
         undefined
-    }
+    }.unsafeCast<RefCallback<T>>()
 
 fun <T : Any> useLegacyRefCallback(
     vararg dependencies: Any?,

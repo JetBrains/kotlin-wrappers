@@ -24,9 +24,9 @@ inline fun Action(
 fun <T> Action(
     value: suspend (T) -> Unit,
 ): Action<T> =
-    unsafeCast { data: T ->
+    { data: T ->
         isolatedPromise {
             value(data)
             undefined
         }
-    }
+    }.unsafeCast<Action<T>>()

@@ -22,10 +22,25 @@ actual inline fun <T : JsAny> unsafeCast(
 ): T =
     value.toJsNumber().unsafeCast()
 
-actual inline fun <T : JsAny> unsafeCast(
-    value: Function<*>,
-): T =
-    value.toJsReference().unsafeCast()
+actual fun <T : JsAny> unsafeCast(
+    value: () -> Unit,
+): T = js("value")
+
+actual fun <T : JsAny, R : JsAny> unsafeCast(
+    value: () -> R,
+): T = js("value")
+
+actual fun <T : JsAny, P : JsAny> unsafeCast(
+    value: (P) -> Unit,
+): T = js("value")
+
+actual fun <T : JsAny, P : JsAny> unsafeCast(
+    value: (P) -> Double,
+): T = js("value")
+
+actual fun <T : JsAny, P : JsAny, R : JsAny> unsafeCast(
+    value: (P) -> R,
+): T = js("value")
 
 actual inline fun <T : JsAny> unsafeCast(
     value: JsAny,

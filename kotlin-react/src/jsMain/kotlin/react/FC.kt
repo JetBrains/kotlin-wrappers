@@ -1,20 +1,18 @@
 package react
 
-import js.reflect.unsafeCast
-
 fun FC(
     block: @ReactDsl ChildrenBuilder.() -> Unit,
 ): FC<Props> =
-    unsafeCast {
+    {
         createElementOrNull(block)
-    }
+    }.unsafeCast<FC<Props>>()
 
 fun <P : Props> FC(
     block: @ReactDsl ChildrenBuilder.(props: P) -> Unit,
 ): FC<P> =
-    unsafeCast { props: P ->
+    { props: P ->
         createElementOrNull { block(props) }
-    }
+    }.unsafeCast<FC<P>>()
 
 fun FC(
     displayName: String,

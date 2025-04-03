@@ -19,7 +19,23 @@ expect fun <T : JsAny> unsafeCast(
 ): T
 
 expect fun <T : JsAny> unsafeCast(
-    value: Function<*>,
+    value: () -> Unit,
+): T
+
+expect fun <T : JsAny, R : JsAny> unsafeCast(
+    value: () -> R,
+): T
+
+expect fun <T : JsAny, P : JsAny> unsafeCast(
+    value: (P) -> Unit,
+): T
+
+expect fun <T : JsAny, P : JsAny> unsafeCast(
+    value: (P) -> Double,
+): T
+
+expect fun <T : JsAny, P : JsAny, R : JsAny> unsafeCast(
+    value: (P) -> R,
 ): T
 
 expect fun <T : JsAny> unsafeCast(
