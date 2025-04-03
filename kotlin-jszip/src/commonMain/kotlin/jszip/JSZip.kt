@@ -1,8 +1,8 @@
+package jszip
+
 import js.core.JsAny
 import js.import.JsModule
 import js.promise.Promise
-import jszip.JSZipFileOptions
-import jszip.JSZipGeneratorOptions
 import seskar.js.JsAsync
 import web.file.File
 import kotlin.js.definedExternally
