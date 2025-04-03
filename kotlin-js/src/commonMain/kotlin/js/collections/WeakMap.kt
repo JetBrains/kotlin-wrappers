@@ -9,7 +9,7 @@ open external class WeakMap<in K : JsAny, V : JsAny?>(
     entries: ReadonlyArray<JsTuple2<K, V>>? = definedExternally,
 ) {
     fun delete(key: K): Boolean
-    operator fun get(key: K): V?
+    fun get(key: K): V?
     fun has(key: K): Boolean
-    operator fun set(key: K, value: V): WeakMap<K, V>
+    fun set(key: K, value: V): WeakMap<K, V>
 }

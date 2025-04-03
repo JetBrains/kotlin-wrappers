@@ -7,5 +7,5 @@ external interface MutableMapLike<K : JsAny?, V : JsAny?> :
 
     fun clear()
     fun delete(key: K): Boolean
-    operator fun set(key: K, value: V)
+    fun set(key: K, value: V)
 }

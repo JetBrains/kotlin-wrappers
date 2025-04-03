@@ -27,7 +27,7 @@ private constructor() {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CustomElementRegistry/get)
      */
-    operator fun <T : HTMLElement> get(name: HtmlTagName<T>): CustomElementConstructor<T>?
+    fun <T : HTMLElement> get(name: HtmlTagName<T>): CustomElementConstructor<T>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CustomElementRegistry/getName)

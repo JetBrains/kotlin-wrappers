@@ -24,7 +24,7 @@ protected /* private */ constructor() :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/StylePropertyMapReadOnly/get)
      */
-    operator fun get(property: String): CSSStyleValue?
+    fun get(property: String): CSSStyleValue?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/StylePropertyMapReadOnly/getAll)

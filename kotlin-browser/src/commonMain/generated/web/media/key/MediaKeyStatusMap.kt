@@ -23,7 +23,7 @@ protected /* private */ constructor() :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeyStatusMap/get)
      */
-    override operator fun get(key: BufferSource): MediaKeyStatus?
+    override fun get(key: BufferSource): MediaKeyStatus?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeyStatusMap/has)

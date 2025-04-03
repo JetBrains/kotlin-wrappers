@@ -37,7 +37,7 @@ open external class Headers(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Headers/get)
      */
-    operator fun get(name: String): String?
+    fun get(name: String): String?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Headers/getSetCookie)
@@ -52,7 +52,7 @@ open external class Headers(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Headers/set)
      */
-    operator fun set(
+    fun set(
         name: String,
         value: String,
     )

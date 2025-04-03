@@ -23,7 +23,7 @@ open external class Table(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/WebAssembly/Reference/JavaScript_interface/Table/get)
      */
-    operator fun get(index: Int): JsAny
+    fun get(index: Int): JsAny
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/WebAssembly/Reference/JavaScript_interface/Table/grow)

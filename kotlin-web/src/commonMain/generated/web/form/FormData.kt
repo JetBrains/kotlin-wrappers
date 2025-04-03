@@ -47,7 +47,7 @@ open external class FormData(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FormData/get)
      */
-    operator fun get(name: String): FormDataEntryValue?
+    fun get(name: String): FormDataEntryValue?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FormData/getAll)
@@ -62,12 +62,12 @@ open external class FormData(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FormData/set)
      */
-    operator fun set(
+    fun set(
         name: String,
         value: String,
     )
 
-    operator fun set(
+    fun set(
         name: String,
         value: Blob,
     )

@@ -8,6 +8,6 @@ external interface ReadonlyMap<K : JsAny?, out V : JsAny?> :
 
     override val size: Int
 
-    operator fun get(key: K): V?
+    fun get(key: K): V?
     override fun has(key: K): Boolean
 }

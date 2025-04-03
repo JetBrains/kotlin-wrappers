@@ -132,8 +132,8 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBObjectStore/get)
      */
-    operator fun get(query: IDBValidKey): IDBRequest<*>
-    operator fun get(query: IDBKeyRange): IDBRequest<*>
+    fun get(query: IDBValidKey): IDBRequest<*>
+    fun get(query: IDBKeyRange): IDBRequest<*>
 
     /**
      * Retrieves the values of the records matching the given key or key range in query (up to count if given).

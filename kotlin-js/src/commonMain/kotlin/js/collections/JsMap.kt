@@ -17,10 +17,10 @@ open external class JsMap<K : JsAny?, V : JsAny?>(
     override fun delete(key: K): Boolean
     override fun entries(): JsIterator<JsTuple2<K, V>>
     override fun forEach(action: (value: V, key: K) -> Unit)
-    override operator fun get(key: K): V?
+    override fun get(key: K): V?
     override fun has(key: K): Boolean
     override fun keys(): JsIterator<K>
-    override operator fun set(key: K, value: V)
+    override fun set(key: K, value: V)
     override fun values(): JsIterator<V>
 
     companion object {
