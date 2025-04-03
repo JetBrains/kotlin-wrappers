@@ -16,7 +16,7 @@ external interface Modifier<Options : JsAny?> {
     val requires: ReadonlyArray<JsString>?
     val requiresIfExists: ReadonlyArray<JsString>?
     val fn: (ModifierArguments<Options>) -> State?
-    val effect: (ModifierArguments<Options>) -> (() -> Unit)?
+    val effect: ((ModifierArguments<Options>) -> (() -> Unit))?
     val options: Options?
     val data: Record<JsString, *>?
 }
