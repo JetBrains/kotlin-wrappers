@@ -162,7 +162,7 @@ open external class DOMException(
         val NotReadableError: JsErrorName
 
         /**
-         * The operation failed for an unknown transient reason (e.g. out of memory)
+         * The operation failed for an unknown transient reason (e.g., out of memory)
          */
         @JsValue("UnknownError")
         val UnknownError: JsErrorName
