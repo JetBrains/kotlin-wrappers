@@ -5,7 +5,12 @@ actual inline fun <T : Any> unsafeCast(
 ): T =
     value.unsafeCast<T>()
 
-actual inline fun <T : Any, P : Any> unsafeCast(
-    noinline value: (P) -> Unit,
+actual inline fun <T : Any, P1 : Any?> unsafeCast(
+    noinline value: (P1) -> Unit,
+): T =
+    value.unsafeCast<T>()
+
+actual inline fun <T : Any, P1 : Any?> unsafeCast(
+    noinline value: (P1) -> Any?,
 ): T =
     value.unsafeCast<T>()
