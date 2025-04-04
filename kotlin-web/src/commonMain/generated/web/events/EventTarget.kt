@@ -17,7 +17,7 @@ open external class EventTarget {
     )
 
     internal fun <E : Event> addEventListener(
-        type: EventType<E>,
+        type: EventType<*>,
         callback: (E) -> Unit,
         options: AddEventListenerOptions? = definedExternally,
     )
@@ -29,7 +29,7 @@ open external class EventTarget {
     )
 
     internal fun <E : Event> removeEventListener(
-        type: EventType<E>,
+        type: EventType<*>,
         callback: (E) -> Unit,
         options: EventListenerOptions? = definedExternally,
     )
@@ -140,17 +140,16 @@ fun <E : Event, C : EventTarget, D> C.addEventHandler(
 ): () -> Unit
         where D : E,
               D : HasTargets<C, EventTarget> {
-    val eventHandler: EventHandler<E, *, *> = EventHandler { e: D -> handler(e) }
     addEventListener(
         type = type,
-        callback = eventHandler,
+        callback = handler,
         options = options,
     )
 
     return {
         removeEventListener(
             type = type,
-            callback = eventHandler,
+            callback = handler,
             options = options,
         )
     }
