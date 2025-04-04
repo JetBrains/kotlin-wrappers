@@ -16,10 +16,9 @@ open external class EventTarget {
         options: AddEventListenerOptions? = definedExternally,
     )
 
-    internal fun addEventListener(
-        type: EventType<*>,
-        @Suppress("WRONG_JS_INTEROP_TYPE")
-        callback: (Nothing) -> Unit,
+    internal fun <E : Event> addEventListener(
+        type: EventType<E>,
+        callback: (E) -> Unit,
         options: AddEventListenerOptions? = definedExternally,
     )
 
@@ -29,10 +28,9 @@ open external class EventTarget {
         options: EventListenerOptions? = definedExternally,
     )
 
-    internal fun removeEventListener(
-        type: EventType<*>,
-        @Suppress("WRONG_JS_INTEROP_TYPE")
-        callback: (Nothing) -> Unit,
+    internal fun <E : Event> removeEventListener(
+        type: EventType<E>,
+        callback: (E) -> Unit,
         options: EventListenerOptions? = definedExternally,
     )
 
@@ -142,16 +140,17 @@ fun <E : Event, C : EventTarget, D> C.addEventHandler(
 ): () -> Unit
         where D : E,
               D : HasTargets<C, EventTarget> {
+    val eventHandler: EventHandler<E, *, *> = EventHandler { e: D -> handler(e) }
     addEventListener(
         type = type,
-        callback = handler,
+        callback = eventHandler,
         options = options,
     )
 
     return {
         removeEventListener(
             type = type,
-            callback = handler,
+            callback = eventHandler,
             options = options,
         )
     }
