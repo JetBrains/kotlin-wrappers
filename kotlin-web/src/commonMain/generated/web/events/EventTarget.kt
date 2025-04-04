@@ -16,10 +16,9 @@ open external class EventTarget {
         options: AddEventListenerOptions? = definedExternally,
     )
 
-    internal fun addEventListener(
+    internal fun <E : Event> addEventListener(
         type: EventType<*>,
-        @Suppress("WRONG_JS_INTEROP_TYPE")
-        callback: (Nothing) -> Unit,
+        callback: (E) -> Unit,
         options: AddEventListenerOptions? = definedExternally,
     )
 
@@ -29,10 +28,9 @@ open external class EventTarget {
         options: EventListenerOptions? = definedExternally,
     )
 
-    internal fun removeEventListener(
+    internal fun <E : Event> removeEventListener(
         type: EventType<*>,
-        @Suppress("WRONG_JS_INTEROP_TYPE")
-        callback: (Nothing) -> Unit,
+        callback: (E) -> Unit,
         options: EventListenerOptions? = definedExternally,
     )
 
