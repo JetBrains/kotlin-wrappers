@@ -1,7 +1,7 @@
 package popper.core.modifiers
 
+import js.core.JsDouble
 import js.reflect.unsafeCast
-import js.reflect.legacyUnsafeCast
 
 inline fun TetherOffset(
     x: Double,
@@ -9,6 +9,6 @@ inline fun TetherOffset(
     unsafeCast(x)
 
 inline fun TetherOffsetFunction(
-    noinline fn: Provider<Double>,
+    noinline fn: Provider<JsDouble>,
 ): TetherOffsetType =
-    legacyUnsafeCast(fn)
+    unsafeCast(fn)

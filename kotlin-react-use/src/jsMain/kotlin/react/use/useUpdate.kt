@@ -1,7 +1,7 @@
 package react.use
 
 import js.core.Void
-import js.reflect.legacyUnsafeCast
+import js.reflect.unsafeCast
 import react.useReducer
 
 private val updateReducer: (Int, Void) -> Int = { num, _ ->
@@ -14,5 +14,5 @@ private val updateReducer: (Int, Void) -> Int = { num, _ ->
 fun useUpdate(): () -> Unit {
     val (_, update) = useReducer(updateReducer, 0)
 
-    return legacyUnsafeCast(update)
+    return unsafeCast(update)
 }

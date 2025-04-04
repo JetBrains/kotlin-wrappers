@@ -1,18 +1,18 @@
 package react
 
-import js.reflect.legacyUnsafeCast
+import js.reflect.unsafeCast
 
 fun FC(
     block: @ReactDsl ChildrenBuilder.() -> Unit,
 ): FC<Props> =
-    legacyUnsafeCast {
+    unsafeCast { ->
         createElementOrNull(block)
     }
 
 fun <P : Props> FC(
     block: @ReactDsl ChildrenBuilder.(props: P) -> Unit,
 ): FC<P> =
-    legacyUnsafeCast { props: P ->
+    unsafeCast { props: P ->
         createElementOrNull { block(props) }
     }
 

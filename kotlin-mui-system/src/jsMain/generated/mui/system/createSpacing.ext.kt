@@ -4,7 +4,6 @@ package mui.system
 
 import js.array.ReadonlyArray
 import js.reflect.unsafeCast
-import js.reflect.legacyUnsafeCast
 import seskar.js.JsNativeInvoke
 
 sealed external interface SpacingOptions
@@ -22,12 +21,12 @@ inline fun SpacingOptions(
 inline fun SpacingOptions(
     noinline value: (abs: Int) -> web.cssom.Length,
 ): SpacingOptions =
-    legacyUnsafeCast(value)
+    unsafeCast(value)
 
 inline fun SpacingOptions(
     noinline value: (abs: web.cssom.Length) -> web.cssom.Length,
 ): SpacingOptions =
-    legacyUnsafeCast(value)
+    unsafeCast(value)
 
 inline fun SpacingOptions(
     value: ReadonlyArray<Int>,
