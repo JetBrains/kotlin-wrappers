@@ -1,28 +1,20 @@
 package js.core
 
 import js.array.ReadonlyArray
+import js.intl.Localizable
 import js.intl.NumberFormatOptions
+import js.intl.UnicodeBCP47LocaleIdentifier
 import kotlin.js.JsName
 import kotlin.js.definedExternally
 
 @JsName("Number")
-external class JsNumber {
+external class JsNumber : Localizable<NumberFormatOptions> {
     internal constructor(value: Int)
     internal constructor(value: Double)
     internal constructor(value: String)
 
     fun toExponential(fractionDigits: Int = definedExternally): String
     fun toFixed(digits: Int = definedExternally): String
-    fun toLocaleString(
-        locales: String = definedExternally,
-        options: NumberFormatOptions = definedExternally,
-    ): String
-
-    fun toLocaleString(
-        locales: ReadonlyArray<JsString>,
-        options: NumberFormatOptions = definedExternally,
-    ): String
-
     fun toPrecision(precision: Int = definedExternally): String
 
     companion object {
@@ -63,31 +55,43 @@ fun Double.toFixed(digits: Int): String =
 fun Int.toLocaleString(): String =
     JsNumber(this).toLocaleString()
 
-fun Int.toLocaleString(locales: String): String =
+fun Int.toLocaleString(locales: UnicodeBCP47LocaleIdentifier): String =
     JsNumber(this).toLocaleString(locales)
 
-fun Int.toLocaleString(locales: String, options: NumberFormatOptions): String =
+fun Int.toLocaleString(
+    locales: UnicodeBCP47LocaleIdentifier,
+    options: NumberFormatOptions,
+): String =
     JsNumber(this).toLocaleString(locales, options)
 
-fun Int.toLocaleString(locales: ReadonlyArray<JsString>): String =
+fun Int.toLocaleString(locales: ReadonlyArray<UnicodeBCP47LocaleIdentifier>): String =
     JsNumber(this).toLocaleString(locales)
 
-fun Int.toLocaleString(locales: ReadonlyArray<JsString>, options: NumberFormatOptions): String =
+fun Int.toLocaleString(
+    locales: ReadonlyArray<UnicodeBCP47LocaleIdentifier>,
+    options: NumberFormatOptions,
+): String =
     JsNumber(this).toLocaleString(locales, options)
 
 fun Double.toLocaleString(): String =
     JsNumber(this).toLocaleString()
 
-fun Double.toLocaleString(locales: String): String =
+fun Double.toLocaleString(locales: UnicodeBCP47LocaleIdentifier): String =
     JsNumber(this).toLocaleString(locales)
 
-fun Double.toLocaleString(locales: String, options: NumberFormatOptions): String =
+fun Double.toLocaleString(
+    locales: UnicodeBCP47LocaleIdentifier,
+    options: NumberFormatOptions,
+): String =
     JsNumber(this).toLocaleString(locales, options)
 
-fun Double.toLocaleString(locales: ReadonlyArray<JsString>): String =
+fun Double.toLocaleString(locales: ReadonlyArray<UnicodeBCP47LocaleIdentifier>): String =
     JsNumber(this).toLocaleString(locales)
 
-fun Double.toLocaleString(locales: ReadonlyArray<JsString>, options: NumberFormatOptions): String =
+fun Double.toLocaleString(
+    locales: ReadonlyArray<UnicodeBCP47LocaleIdentifier>,
+    options: NumberFormatOptions,
+): String =
     JsNumber(this).toLocaleString(locales, options)
 
 fun Int.toPrecision(): String =
