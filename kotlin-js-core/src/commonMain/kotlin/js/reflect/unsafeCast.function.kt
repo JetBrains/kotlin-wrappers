@@ -7,7 +7,7 @@ expect fun <T : JsAny> unsafeCast(
 ): T
 
 expect fun <T : JsAny> unsafeCast(
-    value: () -> JsAny?,
+    provider: () -> JsAny?,
 ): T
 
 expect fun <T : JsAny, P1 : JsAny?> unsafeCast(
@@ -15,5 +15,5 @@ expect fun <T : JsAny, P1 : JsAny?> unsafeCast(
 ): T
 
 expect fun <T : JsAny, P1 : JsAny?> unsafeCast(
-    value: (P1) -> JsAny?,
+    provider: (P1) -> JsAny?,
 ): T

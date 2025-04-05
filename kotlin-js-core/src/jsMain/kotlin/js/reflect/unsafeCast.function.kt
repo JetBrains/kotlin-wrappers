@@ -8,9 +8,9 @@ actual inline fun <T : Any> unsafeCast(
     value.unsafeCast<T>()
 
 actual inline fun <T : Any> unsafeCast(
-    noinline value: () -> JsAny?,
+    noinline provider: () -> JsAny?,
 ): T =
-    value.unsafeCast<T>()
+    provider.unsafeCast<T>()
 
 actual inline fun <T : Any, P1 : Any?> unsafeCast(
     noinline value: (P1) -> Unit,
@@ -18,6 +18,6 @@ actual inline fun <T : Any, P1 : Any?> unsafeCast(
     value.unsafeCast<T>()
 
 actual inline fun <T : Any, P1 : Any?> unsafeCast(
-    noinline value: (P1) -> Any?,
+    noinline provider: (P1) -> Any?,
 ): T =
-    value.unsafeCast<T>()
+    provider.unsafeCast<T>()

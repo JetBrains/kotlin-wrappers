@@ -5,7 +5,7 @@ actual fun <T : JsAny> unsafeCast(
 ): T = js("value")
 
 actual fun <T : JsAny> unsafeCast(
-    value: () -> JsAny?,
+    provider: () -> JsAny?,
 ): T = js("value")
 
 actual fun <T : JsAny, P1 : JsAny?> unsafeCast(
@@ -13,5 +13,5 @@ actual fun <T : JsAny, P1 : JsAny?> unsafeCast(
 ): T = js("value")
 
 actual fun <T : JsAny, P1 : JsAny?> unsafeCast(
-    value: (P1) -> JsAny?,
+    provider: (P1) -> JsAny?,
 ): T = js("value")
