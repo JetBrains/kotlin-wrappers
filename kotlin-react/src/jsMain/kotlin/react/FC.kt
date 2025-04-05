@@ -1,20 +1,24 @@
 package react
 
-import js.reflect.legacyUnsafeCast
+import js.reflect.unsafeCast
 
 fun FC(
     block: @ReactDsl ChildrenBuilder.() -> Unit,
 ): FC<Props> =
-    legacyUnsafeCast {
-        createElementOrNull(block)
-    }
+    unsafeCast(
+        provider = { ->
+            createElementOrNull(block)
+        },
+    )
 
 fun <P : Props> FC(
     block: @ReactDsl ChildrenBuilder.(props: P) -> Unit,
 ): FC<P> =
-    legacyUnsafeCast { props: P ->
-        createElementOrNull { block(props) }
-    }
+    unsafeCast(
+        provider = { props: P ->
+            createElementOrNull { block(props) }
+        },
+    )
 
 fun FC(
     displayName: String,
