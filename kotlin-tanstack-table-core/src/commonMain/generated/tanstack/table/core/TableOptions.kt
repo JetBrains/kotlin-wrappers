@@ -6,4 +6,5 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface TableOptions<TData : RowData> :
-    TableOptionsResolved<TData>
+    CoreOptions<TData>,
+    FeatureOptions<TData>
