@@ -1,6 +1,11 @@
 package js.reflect
 
 actual inline fun <T : JsAny> unsafeCast(
+    value: Boolean,
+): T =
+    value.toJsBoolean().unsafeCast()
+
+actual inline fun <T : JsAny> unsafeCast(
     value: String,
 ): T =
     value.toJsString().unsafeCast()
