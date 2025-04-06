@@ -11,5 +11,5 @@ external interface ColumnOrderOptions {
      * [API Docs](https://tanstack.com/table/v8/docs/api/features/column-ordering#oncolumnorderchange)
      * [Guide](https://tanstack.com/table/v8/docs/guide/column-ordering)
      */
-    var onColumnOrderChange: OnChangeFn<ColumnOrderState>?
+    val onColumnOrderChange: OnChangeFn<ColumnOrderState>?
 }

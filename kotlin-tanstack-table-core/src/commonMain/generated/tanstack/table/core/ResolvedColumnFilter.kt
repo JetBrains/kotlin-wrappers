@@ -6,7 +6,7 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface ResolvedColumnFilter<TData : RowData> {
-    var filterFn: FilterFn<TData>
-    var id: String
-    var resolvedValue: Any?
+    val filterFn: FilterFn<TData>
+    val id: String
+    val resolvedValue: Any?
 }

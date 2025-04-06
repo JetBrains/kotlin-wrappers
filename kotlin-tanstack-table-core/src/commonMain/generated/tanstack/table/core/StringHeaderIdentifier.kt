@@ -6,6 +6,6 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface StringHeaderIdentifier {
-    var header: String
-    var id: String?
+    val header: String
+    val id: String?
 }

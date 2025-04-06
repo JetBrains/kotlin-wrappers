@@ -6,6 +6,6 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface ColumnDefaultOptions {
-    var enableGrouping: Boolean
-    var onGroupingChange: OnChangeFn<GroupingState>
+    val enableGrouping: Boolean
+    val onGroupingChange: OnChangeFn<GroupingState>
 }

@@ -11,12 +11,12 @@ external interface ColumnOrderInstance<TData : RowData> {
      * [API Docs](https://tanstack.com/table/v8/docs/api/features/column-ordering#resetcolumnorder)
      * [Guide](https://tanstack.com/table/v8/docs/guide/column-ordering)
      */
-    var resetColumnOrder: (defaultState: Boolean?) -> Unit
+    val resetColumnOrder: (defaultState: Boolean?) -> Unit
 
     /**
      * Sets or updates the `state.columnOrder` state.
      * [API Docs](https://tanstack.com/table/v8/docs/api/features/column-ordering#setcolumnorder)
      * [Guide](https://tanstack.com/table/v8/docs/guide/column-ordering)
      */
-    var setColumnOrder: (updater: Updater<ColumnOrderState>) -> Unit
+    val setColumnOrder: (updater: Updater<ColumnOrderState>) -> Unit
 }

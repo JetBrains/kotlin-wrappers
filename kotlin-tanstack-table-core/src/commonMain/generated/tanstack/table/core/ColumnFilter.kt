@@ -6,6 +6,6 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface ColumnFilter {
-    var id: String
-    var value: Any?
+    val id: String
+    val value: Any?
 }

@@ -6,5 +6,5 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface RowPinningDefaultOptions {
-    var onRowPinningChange: OnChangeFn<RowPinningState>
+    val onRowPinningChange: OnChangeFn<RowPinningState>
 }

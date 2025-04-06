@@ -6,5 +6,5 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface ColumnPinningDefaultOptions {
-    var onColumnPinningChange: OnChangeFn<ColumnPinningState>
+    val onColumnPinningChange: OnChangeFn<ColumnPinningState>
 }

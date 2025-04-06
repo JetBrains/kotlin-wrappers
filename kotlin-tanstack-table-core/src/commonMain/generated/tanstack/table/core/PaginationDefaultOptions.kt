@@ -6,5 +6,5 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface PaginationDefaultOptions {
-    var onPaginationChange: OnChangeFn<PaginationState>
+    val onPaginationChange: OnChangeFn<PaginationState>
 }

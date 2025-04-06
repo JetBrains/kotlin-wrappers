@@ -11,33 +11,33 @@ external interface ColumnSizingOptions {
      * [API Docs](https://tanstack.com/table/v8/docs/api/features/column-sizing#columnresizemode)
      * [Guide](https://tanstack.com/table/v8/docs/guide/column-sizing)
      */
-    var columnResizeMode: ColumnResizeMode?
+    val columnResizeMode: ColumnResizeMode?
 
     /**
      * Enables or disables column resizing for the column.
      * [API Docs](https://tanstack.com/table/v8/docs/api/features/column-sizing#enablecolumnresizing)
      * [Guide](https://tanstack.com/table/v8/docs/guide/column-sizing)
      */
-    var enableColumnResizing: Boolean?
+    val enableColumnResizing: Boolean?
 
     /**
      * Enables or disables right-to-left support for resizing the column. defaults to 'ltr'.
      * [API Docs](https://tanstack.com/table/v8/docs/api/features/column-sizing#columnResizeDirection)
      * [Guide](https://tanstack.com/table/v8/docs/guide/column-sizing)
      */
-    var columnResizeDirection: ColumnResizeDirection?
+    val columnResizeDirection: ColumnResizeDirection?
 
     /**
      * If provided, this function will be called with an `updaterFn` when `state.columnSizing` changes. This overrides the default internal state management, so you will also need to supply `state.columnSizing` from your own managed state.
      * [API Docs](https://tanstack.com/table/v8/docs/api/features/column-sizing#oncolumnsizingchange)
      * [Guide](https://tanstack.com/table/v8/docs/guide/column-sizing)
      */
-    var onColumnSizingChange: OnChangeFn<ColumnSizingState>?
+    val onColumnSizingChange: OnChangeFn<ColumnSizingState>?
 
     /**
      * If provided, this function will be called with an `updaterFn` when `state.columnSizingInfo` changes. This overrides the default internal state management, so you will also need to supply `state.columnSizingInfo` from your own managed state.
      * [API Docs](https://tanstack.com/table/v8/docs/api/features/column-sizing#oncolumnsizinginfochange)
      * [Guide](https://tanstack.com/table/v8/docs/guide/column-sizing)
      */
-    var onColumnSizingInfoChange: OnChangeFn<ColumnSizingInfoState>?
+    val onColumnSizingInfoChange: OnChangeFn<ColumnSizingInfoState>?
 }

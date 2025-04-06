@@ -8,10 +8,10 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface ColumnSizingInfoState {
-    var columnSizingStart: ReadonlyArray<JsTuple2<String, Int>>
-    var deltaOffset: Int?
-    var deltaPercentage: Int?
-    var isResizingColumn: String /* false | string */
-    var startOffset: Int?
-    var startSize: Int?
+    val columnSizingStart: ReadonlyArray<JsTuple2<String, Int>>
+    val deltaOffset: Int?
+    val deltaPercentage: Int?
+    val isResizingColumn: String /* false | string */
+    val startOffset: Int?
+    val startSize: Int?
 }

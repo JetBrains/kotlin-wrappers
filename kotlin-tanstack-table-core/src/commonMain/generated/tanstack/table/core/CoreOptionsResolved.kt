@@ -12,14 +12,14 @@ external interface CoreOptionsResolved<TData : RowData> :
      * [API Docs](https://tanstack.com/table/v8/docs/api/core/table#onstatechange)
      * [Guide](https://tanstack.com/table/v8/docs/guide/tables)
      */
-    var onStateChange: (updater: Updater<TableState>) -> Unit
+    val onStateChange: (updater: Updater<TableState>) -> Unit
 
     /**
      * Value used when the desired value is not found in the data.
      * [API Docs](https://tanstack.com/table/v8/docs/api/core/table#renderfallbackvalue)
      * [Guide](https://tanstack.com/table/v8/docs/guide/tables)
      */
-    var renderFallbackValue: Any?
+    val renderFallbackValue: Any?
 
     /**
      * The `state` option can be used to optionally _control_ part or all of the table state. The state you pass here will merge with and overwrite the internal automatically-managed state to produce the final state for the table. You can also listen to state changes via the `onStateChange` option.
@@ -27,5 +27,5 @@ external interface CoreOptionsResolved<TData : RowData> :
      * [API Docs](https://tanstack.com/table/v8/docs/api/core/table#state)
      * [Guide](https://tanstack.com/table/v8/docs/guide/tables)
      */
-    var state: TableState /* Partial */
+    val state: TableState /* Partial */
 }

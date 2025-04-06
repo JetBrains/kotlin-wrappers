@@ -8,7 +8,7 @@ import js.objects.ReadonlyRecord
 
 @JsPlainObject
 external interface RowModel<TData : RowData> {
-    var rows: ReadonlyArray<Row<TData>>
-    var flatRows: ReadonlyArray<Row<TData>>
-    var rowsById: ReadonlyRecord<String, Row<TData>>
+    val rows: ReadonlyArray<Row<TData>>
+    val flatRows: ReadonlyArray<Row<TData>>
+    val rowsById: ReadonlyRecord<String, Row<TData>>
 }

@@ -6,6 +6,6 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface PaginationState {
-    var pageIndex: Int
-    var pageSize: Int
+    val pageIndex: Int
+    val pageSize: Int
 }

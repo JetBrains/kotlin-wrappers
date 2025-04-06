@@ -11,5 +11,5 @@ external interface GlobalFilterColumn {
      * [API Docs](https://tanstack.com/table/v8/docs/api/features/global-filtering#getcanglobalfilter)
      * [Guide](https://tanstack.com/table/v8/docs/guide/global-filtering)
      */
-    var getCanGlobalFilter: () -> Boolean
+    val getCanGlobalFilter: () -> Boolean
 }

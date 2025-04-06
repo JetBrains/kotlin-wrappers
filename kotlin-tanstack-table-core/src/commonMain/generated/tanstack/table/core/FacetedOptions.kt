@@ -8,7 +8,7 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface FacetedOptions<TData : RowData> {
-    var getFacetedMinMaxValues: ((table: Table<TData>, columnId: String) -> () -> JsTuple2<Int, Int>?)?
-    var getFacetedRowModel: ((table: Table<TData>, columnId: String) -> () -> RowModel<TData>)?
-    var getFacetedUniqueValues: ((table: Table<TData>, columnId: String) -> () -> JsMap<Any, Int>)?
+    val getFacetedMinMaxValues: ((table: Table<TData>, columnId: String) -> () -> JsTuple2<Int, Int>?)?
+    val getFacetedRowModel: ((table: Table<TData>, columnId: String) -> () -> RowModel<TData>)?
+    val getFacetedUniqueValues: ((table: Table<TData>, columnId: String) -> () -> JsMap<Any, Int>)?
 }

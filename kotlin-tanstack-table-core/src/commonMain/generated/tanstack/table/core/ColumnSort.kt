@@ -6,6 +6,6 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface ColumnSort {
-    var desc: Boolean
-    var id: String
+    val desc: Boolean
+    val id: String
 }

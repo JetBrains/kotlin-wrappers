@@ -7,6 +7,6 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface RowPinningState {
-    var bottom: ReadonlyArray<String>?
-    var top: ReadonlyArray<String>?
+    val bottom: ReadonlyArray<String>?
+    val top: ReadonlyArray<String>?
 }

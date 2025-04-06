@@ -14,7 +14,7 @@ external interface FacetedColumn<TData : RowData> {
      * [API Docs](https://tanstack.com/table/v8/docs/api/features/column-faceting#getfacetedminmaxvalues)
      * [Guide](https://tanstack.com/table/v8/docs/guide/column-faceting)
      */
-    var getFacetedMinMaxValues: () -> JsTuple2<Int, Int>?
+    val getFacetedMinMaxValues: () -> JsTuple2<Int, Int>?
 
     /**
      * Returns the row model with all other column filters applied, excluding its own filter. Useful for displaying faceted result counts.
@@ -22,7 +22,7 @@ external interface FacetedColumn<TData : RowData> {
      * [API Docs](https://tanstack.com/table/v8/docs/api/features/column-faceting#getfacetedrowmodel)
      * [Guide](https://tanstack.com/table/v8/docs/guide/column-faceting)
      */
-    var getFacetedRowModel: () -> RowModel<TData>
+    val getFacetedRowModel: () -> RowModel<TData>
 
     /**
      * A function that **computes and returns** a `Map` of unique values and their occurrences derived from `column.getFacetedRowModel`. Useful for displaying faceted result values.
@@ -30,5 +30,5 @@ external interface FacetedColumn<TData : RowData> {
      * [API Docs](https://tanstack.com/table/v8/docs/api/features/column-faceting#getfaceteduniquevalues)
      * [Guide](https://tanstack.com/table/v8/docs/guide/column-faceting)
      */
-    var getFacetedUniqueValues: () -> JsMap<Any, Int>
+    val getFacetedUniqueValues: () -> JsMap<Any, Int>
 }

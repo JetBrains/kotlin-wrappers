@@ -13,19 +13,19 @@ external interface GlobalFacetingInstance<TData : RowData> {
      * [API Docs](https://tanstack.com/table/v8/docs/api/features/global-faceting#getglobalautofilterfn)
      * [Guide](https://tanstack.com/table/v8/docs/guide/global-faceting)
      */
-    var getGlobalFacetedMinMaxValues: () -> JsTuple2<Int, Int>?
+    val getGlobalFacetedMinMaxValues: () -> JsTuple2<Int, Int>?
 
     /**
      * Returns the row model for the table after **global** filtering has been applied.
      * [API Docs](https://tanstack.com/table/v8/docs/api/features/global-faceting#getglobalfacetedrowmodel)
      * [Guide](https://tanstack.com/table/v8/docs/guide/global-faceting)
      */
-    var getGlobalFacetedRowModel: () -> RowModel<TData>
+    val getGlobalFacetedRowModel: () -> RowModel<TData>
 
     /**
      * Returns the faceted unique values for the global filter.
      * [API Docs](https://tanstack.com/table/v8/docs/api/features/global-faceting#getglobalfaceteduniquevalues)
      * [Guide](https://tanstack.com/table/v8/docs/guide/global-faceting)
      */
-    var getGlobalFacetedUniqueValues: () -> JsMap<Any, Int>
+    val getGlobalFacetedUniqueValues: () -> JsMap<Any, Int>
 }

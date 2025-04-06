@@ -6,10 +6,10 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface CellContext<TData : RowData, TValue> {
-    var cell: Cell<TData, TValue>
-    var column: Column<TData, TValue>
-    var getValue: Getter<TValue>
-    var renderValue: Getter<TValue?>
-    var row: Row<TData>
-    var table: Table<TData>
+    val cell: Cell<TData, TValue>
+    val column: Column<TData, TValue>
+    val getValue: Getter<TValue>
+    val renderValue: Getter<TValue?>
+    val row: Row<TData>
+    val table: Table<TData>
 }

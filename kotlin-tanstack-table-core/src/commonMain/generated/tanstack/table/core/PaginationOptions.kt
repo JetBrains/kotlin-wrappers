@@ -11,7 +11,7 @@ external interface PaginationOptions<TData : RowData> {
      * [API Docs](https://tanstack.com/table/v8/docs/api/features/pagination#autoresetpageindex)
      * [Guide](https://tanstack.com/table/v8/docs/guide/pagination)
      */
-    var autoResetPageIndex: Boolean?
+    val autoResetPageIndex: Boolean?
 
     /**
      * Returns the row model after pagination has taken place, but no further.
@@ -20,33 +20,33 @@ external interface PaginationOptions<TData : RowData> {
      * [API Docs](https://tanstack.com/table/v8/docs/api/features/pagination#getpaginationrowmodel)
      * [Guide](https://tanstack.com/table/v8/docs/guide/pagination)
      */
-    var getPaginationRowModel: ((table: Table<TData>) -> () -> RowModel<TData>)?
+    val getPaginationRowModel: ((table: Table<TData>) -> () -> RowModel<TData>)?
 
     /**
      * Enables manual pagination. If this option is set to `true`, the table will not automatically paginate rows using `getPaginationRowModel()` and instead will expect you to manually paginate the rows before passing them to the table. This is useful if you are doing server-side pagination and aggregation.
      * [API Docs](https://tanstack.com/table/v8/docs/api/features/pagination#manualpagination)
      * [Guide](https://tanstack.com/table/v8/docs/guide/pagination)
      */
-    var manualPagination: Boolean?
+    val manualPagination: Boolean?
 
     /**
      * If this function is provided, it will be called when the pagination state changes and you will be expected to manage the state yourself. You can pass the managed state back to the table via the `tableOptions.state.pagination` option.
      * [API Docs](https://tanstack.com/table/v8/docs/api/features/pagination#onpaginationchange)
      * [Guide](https://tanstack.com/table/v8/docs/guide/pagination)
      */
-    var onPaginationChange: OnChangeFn<PaginationState>?
+    val onPaginationChange: OnChangeFn<PaginationState>?
 
     /**
      * When manually controlling pagination, you can supply a total `pageCount` value to the table if you know it (Or supply a `rowCount` and `pageCount` will be calculated). If you do not know how many pages there are, you can set this to `-1`.
      * [API Docs](https://tanstack.com/table/v8/docs/api/features/pagination#pagecount)
      * [Guide](https://tanstack.com/table/v8/docs/guide/pagination)
      */
-    var pageCount: Int?
+    val pageCount: Int?
 
     /**
      * When manually controlling pagination, you can supply a total `rowCount` value to the table if you know it. The `pageCount` can be calculated from this value and the `pageSize`.
      * [API Docs](https://tanstack.com/table/v8/docs/api/features/pagination#rowcount)
      * [Guide](https://tanstack.com/table/v8/docs/guide/pagination)
      */
-    var rowCount: Int?
+    val rowCount: Int?
 }

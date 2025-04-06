@@ -12,5 +12,5 @@ external interface VisibilityRow<TData : RowData> {
      * [API Docs](https://tanstack.com/table/v8/docs/api/features/column-visibility#getvisiblecells)
      * [Guide](https://tanstack.com/table/v8/docs/guide/column-visibility)
      */
-    var getVisibleCells: () -> ReadonlyArray<Cell<TData, *>>
+    val getVisibleCells: () -> ReadonlyArray<Cell<TData, *>>
 }

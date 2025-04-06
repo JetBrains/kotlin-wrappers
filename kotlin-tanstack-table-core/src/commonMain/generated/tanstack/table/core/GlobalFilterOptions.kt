@@ -11,7 +11,7 @@ external interface GlobalFilterOptions<TData : RowData> {
      * [API Docs](https://tanstack.com/table/v8/docs/api/features/global-filtering#enableglobalfilter)
      * [Guide](https://tanstack.com/table/v8/docs/guide/global-filtering)
      */
-    var enableGlobalFilter: Boolean?
+    val enableGlobalFilter: Boolean?
 
     /**
      * If provided, this function will be called with the column and should return `true` or `false` to indicate whether this column should be used for global filtering.
@@ -20,7 +20,7 @@ external interface GlobalFilterOptions<TData : RowData> {
      * [API Docs](https://tanstack.com/table/v8/docs/api/features/global-filtering#getcolumncanglobalfilter)
      * [Guide](https://tanstack.com/table/v8/docs/guide/global-filtering)
      */
-    var getColumnCanGlobalFilter: ((column: Column<TData, *>) -> Boolean)?
+    val getColumnCanGlobalFilter: ((column: Column<TData, *>) -> Boolean)?
 
     /**
      * The filter function to use for global filtering.
@@ -30,12 +30,12 @@ external interface GlobalFilterOptions<TData : RowData> {
      * [API Docs](https://tanstack.com/table/v8/docs/api/features/global-filtering#globalfilterfn)
      * [Guide](https://tanstack.com/table/v8/docs/guide/global-filtering)
      */
-    var globalFilterFn: FilterFnOption<TData>?
+    val globalFilterFn: FilterFnOption<TData>?
 
     /**
      * If provided, this function will be called with an `updaterFn` when `state.globalFilter` changes. This overrides the default internal state management, so you will need to persist the state change either fully or partially outside of the table.
      * [API Docs](https://tanstack.com/table/v8/docs/api/features/global-filtering#onglobalfilterchange)
      * [Guide](https://tanstack.com/table/v8/docs/guide/global-filtering)
      */
-    var onGlobalFilterChange: OnChangeFn<*>?
+    val onGlobalFilterChange: OnChangeFn<*>?
 }

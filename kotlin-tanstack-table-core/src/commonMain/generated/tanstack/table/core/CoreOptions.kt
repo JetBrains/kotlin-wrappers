@@ -17,77 +17,77 @@ external interface CoreOptions<TData : RowData> {
      * [API Docs](https://tanstack.com/table/v8/docs/api/core/table#autoresetall)
      * [Guide](https://tanstack.com/table/v8/docs/guide/tables)
      */
-    var autoResetAll: Boolean?
+    val autoResetAll: Boolean?
 
     /**
      * The array of column defs to use for the table.
      * [API Docs](https://tanstack.com/table/v8/docs/api/core/table#columns)
      * [Guide](https://tanstack.com/table/v8/docs/guide/tables)
      */
-    var columns: ReadonlyArray<ColumnDef<TData, *>>
+    val columns: ReadonlyArray<ColumnDef<TData, *>>
 
     /**
      * The data for the table to display. This array should match the type you provided to `table.setRowType<...>`. Columns can access this data via string/index or a functional accessor. When the `data` option changes reference, the table will reprocess the data.
      * [API Docs](https://tanstack.com/table/v8/docs/api/core/table#data)
      * [Guide](https://tanstack.com/table/v8/docs/guide/tables)
      */
-    var data: ReadonlyArray<TData>
+    val data: ReadonlyArray<TData>
 
     /**
      * Set this option to `true` to output all debugging information to the console.
      * [API Docs](https://tanstack.com/table/v8/docs/api/core/table#debugall)
      * [Guide](https://tanstack.com/table/v8/docs/guide/tables)
      */
-    var debugAll: Boolean?
+    val debugAll: Boolean?
 
     /**
      * Set this option to `true` to output cell debugging information to the console.
      * [API Docs](https://tanstack.com/table/v8/docs/api/core/table#debugcells]
  * [Guide](https://tanstack.com/table/v8/docs/guide/tables)
      */
-    var debugCells: Boolean?
+    val debugCells: Boolean?
 
     /**
      * Set this option to `true` to output column debugging information to the console.
      * [API Docs](https://tanstack.com/table/v8/docs/api/core/table#debugcolumns)
      * [Guide](https://tanstack.com/table/v8/docs/guide/tables)
      */
-    var debugColumns: Boolean?
+    val debugColumns: Boolean?
 
     /**
      * Set this option to `true` to output header debugging information to the console.
      * [API Docs](https://tanstack.com/table/v8/docs/api/core/table#debugheaders)
      * [Guide](https://tanstack.com/table/v8/docs/guide/tables)
      */
-    var debugHeaders: Boolean?
+    val debugHeaders: Boolean?
 
     /**
      * Set this option to `true` to output row debugging information to the console.
      * [API Docs](https://tanstack.com/table/v8/docs/api/core/table#debugrows)
      * [Guide](https://tanstack.com/table/v8/docs/guide/tables)
      */
-    var debugRows: Boolean?
+    val debugRows: Boolean?
 
     /**
      * Set this option to `true` to output table debugging information to the console.
      * [API Docs](https://tanstack.com/table/v8/docs/api/core/table#debugtable)
      * [Guide](https://tanstack.com/table/v8/docs/guide/tables)
      */
-    var debugTable: Boolean?
+    val debugTable: Boolean?
 
     /**
      * Default column options to use for all column defs supplied to the table.
      * [API Docs](https://tanstack.com/table/v8/docs/api/core/table#defaultcolumn)
      * [Guide](https://tanstack.com/table/v8/docs/guide/tables)
      */
-    var defaultColumn: ColumnDef<TData, *> /* Partial */?
+    val defaultColumn: ColumnDef<TData, *> /* Partial */?
 
     /**
      * This required option is a factory for a function that computes and returns the core row model for the table.
      * [API Docs](https://tanstack.com/table/v8/docs/api/core/table#getcorerowmodel)
      * [Guide](https://tanstack.com/table/v8/docs/guide/tables)
      */
-    var getCoreRowModel: (table: Table<TData>) -> () -> RowModel<TData>
+    val getCoreRowModel: (table: Table<TData>) -> () -> RowModel<TData>
 
     /**
      * This optional function is used to derive a unique ID for any given row. If not provided the rows index is used (nested rows join together with `.` using their grandparents' index eg. `index.index.index`). If you need to identify individual rows that are originating from any server-side operations, it's suggested you use this function to return an ID that makes sense regardless of network IO/ambiguity eg. a userId, taskId, database ID field, etc.
@@ -95,7 +95,7 @@ external interface CoreOptions<TData : RowData> {
      * [API Docs](https://tanstack.com/table/v8/docs/api/core/table#getrowid)
      * [Guide](https://tanstack.com/table/v8/docs/guide/tables)
      */
-    var getRowId: ((originalRow: TData, index: Int, parent: Row<TData>?) -> String)?
+    val getRowId: ((originalRow: TData, index: Int, parent: Row<TData>?) -> String)?
 
     /**
      * This optional function is used to access the sub rows for any given row. If you are using nested rows, you will need to use this function to return the sub rows object (or undefined) from the row.
@@ -103,7 +103,7 @@ external interface CoreOptions<TData : RowData> {
      * [API Docs](https://tanstack.com/table/v8/docs/api/core/table#getsubrows)
      * [Guide](https://tanstack.com/table/v8/docs/guide/tables)
      */
-    var getSubRows: ((originalRow: TData, index: Int) -> ReadonlyArray<TData>)?
+    val getSubRows: ((originalRow: TData, index: Int) -> ReadonlyArray<TData>)?
 
     /**
      * Use this option to optionally pass initial state to the table. This state will be used when resetting various table states either automatically by the table (eg. `options.autoResetPageIndex`) or via functions like `table.resetRowSelection()`. Most reset function allow you optionally pass a flag to reset to a blank/default state instead of the initial state.
@@ -113,19 +113,19 @@ external interface CoreOptions<TData : RowData> {
      * [API Docs](https://tanstack.com/table/v8/docs/api/core/table#initialstate)
      * [Guide](https://tanstack.com/table/v8/docs/guide/tables)
      */
-    var initialState: InitialTableState?
+    val initialState: InitialTableState?
 
     /**
      * This option is used to optionally implement the merging of table options.
      * [API Docs](https://tanstack.com/table/v8/docs/api/core/table#mergeoptions)
      * [Guide](https://tanstack.com/table/v8/docs/guide/tables)
      */
-    var mergeOptions: ((defaultOptions: TableOptions<TData>, options: TableOptions<TData> /* Partial */) -> TableOptions<TData>)?
+    val mergeOptions: ((defaultOptions: TableOptions<TData>, options: TableOptions<TData> /* Partial */) -> TableOptions<TData>)?
 
     /**
      * You can pass any object to `options.meta` and access it anywhere the `table` is available via `table.options.meta`.
      * [API Docs](https://tanstack.com/table/v8/docs/api/core/table#meta)
      * [Guide](https://tanstack.com/table/v8/docs/guide/tables)
      */
-    var meta: TableMeta?
+    val meta: TableMeta?
 }

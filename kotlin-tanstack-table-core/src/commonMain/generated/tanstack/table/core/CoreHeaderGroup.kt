@@ -7,7 +7,7 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface CoreHeaderGroup<TData : RowData> {
-    var depth: Int
-    var headers: ReadonlyArray<Header<TData, *>>
-    var id: String
+    val depth: Int
+    val headers: ReadonlyArray<Header<TData, *>>
+    val id: String
 }

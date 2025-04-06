@@ -9,15 +9,15 @@ external interface HeaderContext<TData : RowData, TValue> {
     /**
      * An instance of a column.
      */
-    var column: Column<TData, TValue>
+    val column: Column<TData, TValue>
 
     /**
      * An instance of a header.
      */
-    var header: Header<TData, TValue>
+    val header: Header<TData, TValue>
 
     /**
      * The table instance.
      */
-    var table: Table<TData>
+    val table: Table<TData>
 }

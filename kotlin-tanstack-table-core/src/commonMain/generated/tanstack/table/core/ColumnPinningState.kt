@@ -7,6 +7,6 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface ColumnPinningState {
-    var left: ReadonlyArray<String>?
-    var right: ReadonlyArray<String>?
+    val left: ReadonlyArray<String>?
+    val right: ReadonlyArray<String>?
 }
