@@ -1,11 +1,11 @@
 package wrappers.example.table.simple
 
 import js.array.ReadonlyArray
-import js.objects.jso
 import react.useMemo
 import tanstack.react.table.useReactTable
 import tanstack.table.core.ColumnDef
 import tanstack.table.core.TableMeta
+import tanstack.table.core.TableOptions
 import tanstack.table.core.getCoreRowModel
 
 internal fun <D : Any> useSimpleTable(
@@ -13,14 +13,13 @@ internal fun <D : Any> useSimpleTable(
     columns: ReadonlyArray<ColumnDef<D, *>>,
     meta: TableMeta,
 ): TableInstance<D> {
-    val table = useReactTable<D>(
-        options = jso {
-            this.data = data
-            this.columns = columns
-            this.meta = meta
-
-            getCoreRowModel = getCoreRowModel()
-        }
+    val table = useReactTable(
+        options = TableOptions(
+            data = data,
+            columns = columns,
+            meta = meta,
+            getCoreRowModel = getCoreRowModel(),
+        ),
     )
 
     return useMemo(table) {
