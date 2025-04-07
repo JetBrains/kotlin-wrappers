@@ -4,7 +4,6 @@
 
 package actions.artifact
 
-import js.core.Void
 import js.promise.Promise
 import seskar.js.JsAsync
 
@@ -12,10 +11,10 @@ import seskar.js.JsAsync
 external suspend fun streamExtractExternal(
     url: String,
     directory: String,
-)
+): StreamExtractResponse
 
 @JsName("streamExtractExternal")
 external fun streamExtractExternalAsync(
     url: String,
     directory: String,
-): Promise<Void>
+): Promise<StreamExtractResponse>

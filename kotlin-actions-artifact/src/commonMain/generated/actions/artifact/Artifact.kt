@@ -26,4 +26,9 @@ external interface Artifact {
      * The time when the artifact was created
      */
     val createdAt: Date?
+
+    /**
+     * The digest of the artifact, computed at time of upload.
+     */
+    val digest: String?
 }
