@@ -4,4 +4,4 @@
 
 package tanstack.table.core
 
-external fun <TData : RowData> getPaginationRowModel(opts: dynamic = definedExternally /* { initialSync: Boolean } */): (table: Table<TData>) -> () -> RowModel<TData>
+external fun <TData : RowData> getPaginationRowModel(opts: Any = definedExternally /* { initialSync: Boolean } */): (table: Table<TData>) -> () -> RowModel<TData>
