@@ -48,7 +48,11 @@ external class Observable<T : JsAny?>(
 
     fun <R : JsAny?> map(transform: (T) -> R): Observable<R>
 
-    // fun reduce(Reducer reducer, optional any initialValue, options: SubscribeOptions? = definedExternally) : Promise<any>
+    fun <U : JsAny?> reduce(
+        operation: (previousValue: U, currentValue: T, currentIndex: Int) -> U,
+        initialValue: U,
+        options: SubscribeOptions? = definedExternally,
+    ): Promise<U>
 
     fun some(
         predicate: (T) -> Boolean,
