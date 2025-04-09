@@ -3,6 +3,7 @@ package web.observable
 import js.array.ReadonlyArray
 import js.core.JsAny
 import js.core.JsBoolean
+import js.core.Void
 import js.errors.JsError
 import js.iterable.AsyncIterable
 import js.iterable.JsIterable
@@ -34,7 +35,10 @@ external class Observable<T : JsAny?>(
 
     // fun flatMap(Mapper mapper) : Observable
 
-    // fun forEach(Visitor callback, options: SubscribeOptions? = definedExternally) : Promise<undefined>
+    fun forEach(
+        action: (item: T) -> Unit,
+        options: SubscribeOptions? = definedExternally,
+    ): Promise<Void>
 
     fun inspect(inspector: ObservableInspector<T>): Observable<T>
     fun inspect(callback: (value: T) -> Unit): Observable<T>
