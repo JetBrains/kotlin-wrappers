@@ -9,7 +9,7 @@ external class Observable<T : JsAny?>(
     callback: SubscribeCallback<T>,
 ) {
     // fun catch(CatchCallback callback) : Observable
-    // fun drop(unsigned long long amount) : Observable
+    fun drop(n: Int): Observable<T>
     // fun every(Predicate predicate, optional SubscribeOptions options = {}) : Promise<boolean>
     // fun filter(Predicate predicate) : Observable
     // fun finally(VoidFunction callback) : Observable
