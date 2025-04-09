@@ -1,8 +1,10 @@
 package web.observable
 
+import js.array.ReadonlyArray
 import js.core.JsAny
 import js.iterable.AsyncIterable
 import js.iterable.JsIterable
+import js.promise.Promise
 import kotlin.js.definedExternally
 
 external class Observable<T : JsAny?>(
@@ -42,7 +44,7 @@ external class Observable<T : JsAny?>(
     // fun switchMap(Mapper mapper) : Observable
     fun take(n: Int): Observable<T>
     // fun takeUntil(any value) : Observable
-    // fun toArray(options: SubscribeOptions? = definedExternally) : Promise<sequence<any>>
+    fun toArray(options: SubscribeOptions? = definedExternally): Promise<ReadonlyArray<T>>
 
     companion object {
         /**
