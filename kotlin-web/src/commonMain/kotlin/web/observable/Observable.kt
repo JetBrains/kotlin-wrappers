@@ -40,7 +40,7 @@ external class Observable<T : JsAny?>(
     )
 
     // fun switchMap(Mapper mapper) : Observable
-    // fun take(unsigned long long amount) : Observable
+    fun take(n: Int): Observable<T>
     // fun takeUntil(any value) : Observable
     // fun toArray(optional SubscribeOptions options = {}) : Promise<sequence<any>>
 
