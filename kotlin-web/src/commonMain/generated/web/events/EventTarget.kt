@@ -6,6 +6,7 @@
 
 package web.events
 
+import web.observable.Observable
 import kotlin.js.definedExternally
 import kotlin.js.undefined
 
@@ -37,6 +38,11 @@ open external class EventTarget {
     fun dispatchEvent(
         event: Event,
     ): Boolean
+
+    fun <T : Event> `when`(
+        type: EventType<T>,
+        options: ObservableEventListenerOptions? = definedExternally,
+    ): Observable<T>
 }
 
 // event handler
