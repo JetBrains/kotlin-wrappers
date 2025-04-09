@@ -20,7 +20,7 @@ external class Observable<T : JsAny?>(
     // fun flatMap(Mapper mapper) : Observable
     // fun forEach(Visitor callback, options: SubscribeOptions? = definedExternally) : Promise<undefined>
     // fun inspect(optional ObservableInspectorUnion inspectorUnion = {}) : Observable
-    // fun last(options: SubscribeOptions? = definedExternally) : Promise<any>
+    fun last(options: SubscribeOptions? = definedExternally): Promise<T>
     // fun map(Mapper mapper) : Observable
     // fun reduce(Reducer reducer, optional any initialValue, options: SubscribeOptions? = definedExternally) : Promise<any>
     // fun some(Predicate predicate, options: SubscribeOptions? = definedExternally) : Promise<boolean>
