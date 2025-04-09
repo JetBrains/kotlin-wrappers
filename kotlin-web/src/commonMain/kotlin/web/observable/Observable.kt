@@ -36,7 +36,7 @@ external class Observable<T : JsAny?>(
 
     fun last(options: SubscribeOptions? = definedExternally): Promise<T>
 
-    // fun map(Mapper mapper) : Observable
+    fun <R : JsAny?> map(transform: (T) -> R): Observable<R>
 
     // fun reduce(Reducer reducer, optional any initialValue, options: SubscribeOptions? = definedExternally) : Promise<any>
 
