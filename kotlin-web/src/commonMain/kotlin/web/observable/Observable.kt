@@ -24,7 +24,10 @@ external class Observable<T : JsAny?>(
 
     fun finally(callback: () -> Unit): Observable<T>
 
-    // fun find(predicate: (T) -> Boolean, options: SubscribeOptions? = definedExternally) : Promise<any>
+    fun find(
+        predicate: (T) -> Boolean,
+        options: SubscribeOptions? = definedExternally,
+    ): Promise<T>
 
     fun first(options: SubscribeOptions? = definedExternally): Promise<T>
 
