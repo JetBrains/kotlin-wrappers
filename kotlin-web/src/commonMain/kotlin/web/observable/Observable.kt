@@ -10,18 +10,18 @@ external class Observable<T : JsAny?>(
 ) {
     // fun catch(CatchCallback callback) : Observable
     fun drop(n: Int): Observable<T>
-    // fun every(Predicate predicate, optional SubscribeOptions options = {}) : Promise<boolean>
+    // fun every(Predicate predicate, options: SubscribeOptions? = definedExternally) : Promise<boolean>
     // fun filter(Predicate predicate) : Observable
     // fun finally(VoidFunction callback) : Observable
-    // fun find(Predicate predicate, optional SubscribeOptions options = {}) : Promise<any>
-    // fun first(optional SubscribeOptions options = {}) : Promise<any>
+    // fun find(Predicate predicate, options: SubscribeOptions? = definedExternally) : Promise<any>
+    // fun first(options: SubscribeOptions? = definedExternally) : Promise<any>
     // fun flatMap(Mapper mapper) : Observable
-    // fun forEach(Visitor callback, optional SubscribeOptions options = {}) : Promise<undefined>
+    // fun forEach(Visitor callback, options: SubscribeOptions? = definedExternally) : Promise<undefined>
     // fun inspect(optional ObservableInspectorUnion inspectorUnion = {}) : Observable
-    // fun last(optional SubscribeOptions options = {}) : Promise<any>
+    // fun last(options: SubscribeOptions? = definedExternally) : Promise<any>
     // fun map(Mapper mapper) : Observable
-    // fun reduce(Reducer reducer, optional any initialValue, optional SubscribeOptions options = {}) : Promise<any>
-    // fun some(Predicate predicate, optional SubscribeOptions options = {}) : Promise<boolean>
+    // fun reduce(Reducer reducer, optional any initialValue, options: SubscribeOptions? = definedExternally) : Promise<any>
+    // fun some(Predicate predicate, options: SubscribeOptions? = definedExternally) : Promise<boolean>
 
     /**
      * Subscribes to the sequence with an observer
@@ -42,7 +42,7 @@ external class Observable<T : JsAny?>(
     // fun switchMap(Mapper mapper) : Observable
     fun take(n: Int): Observable<T>
     // fun takeUntil(any value) : Observable
-    // fun toArray(optional SubscribeOptions options = {}) : Promise<sequence<any>>
+    // fun toArray(options: SubscribeOptions? = definedExternally) : Promise<sequence<any>>
 
     companion object {
         /**
