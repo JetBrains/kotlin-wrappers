@@ -79,7 +79,10 @@ external class Observable<T : JsAny?>(
 
     fun take(n: Int): Observable<T>
 
-    // fun takeUntil(any value) : Observable
+    fun takeUntil(notifier: Promise<*>): Observable<T>
+    fun takeUntil(notifier: JsIterable<*>): Observable<T>
+    fun takeUntil(notifier: AsyncIterable<*>): Observable<T>
+    fun takeUntil(notifier: Observable<*>): Observable<T>
 
     fun toArray(options: SubscribeOptions? = definedExternally): Promise<ReadonlyArray<T>>
 
