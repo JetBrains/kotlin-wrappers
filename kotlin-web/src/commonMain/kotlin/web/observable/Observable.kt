@@ -3,6 +3,7 @@ package web.observable
 import js.array.ReadonlyArray
 import js.core.JsAny
 import js.core.JsBoolean
+import js.errors.JsError
 import js.iterable.AsyncIterable
 import js.iterable.JsIterable
 import js.promise.Promise
@@ -11,7 +12,7 @@ import kotlin.js.definedExternally
 external class Observable<T : JsAny?>(
     callback: SubscribeCallback<T>,
 ) {
-    // fun catch(CatchCallback callback) : Observable
+    fun catch(callback: (JsError) -> T): Observable<T>
 
     fun drop(n: Int): Observable<T>
 
