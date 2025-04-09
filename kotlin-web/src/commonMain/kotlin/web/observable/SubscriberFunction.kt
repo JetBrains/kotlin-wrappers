@@ -1,4 +1,4 @@
-package js.observable
+package web.observable
 
 typealias SubscriberFunction<T> = (
     observer: SubscriptionObserver<T>,

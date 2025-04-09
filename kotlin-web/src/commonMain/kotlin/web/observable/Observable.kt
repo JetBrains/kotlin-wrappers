@@ -1,4 +1,4 @@
-package js.observable
+package web.observable
 
 import js.core.JsAny
 import js.errors.JsError

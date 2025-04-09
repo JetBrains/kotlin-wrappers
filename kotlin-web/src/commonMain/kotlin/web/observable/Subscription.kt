@@ -1,4 +1,4 @@
-package js.observable
+package web.observable
 
 external interface Subscription {
     /**
