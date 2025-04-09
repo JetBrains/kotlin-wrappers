@@ -14,7 +14,7 @@ external class Observable<T : JsAny?>(
     fun drop(n: Int): Observable<T>
     // fun every(Predicate predicate, options: SubscribeOptions? = definedExternally) : Promise<boolean>
     // fun filter(Predicate predicate) : Observable
-    // fun finally(VoidFunction callback) : Observable
+    fun finally(callback: () -> Unit): Observable<T>
     // fun find(Predicate predicate, options: SubscribeOptions? = definedExternally) : Promise<any>
     fun first(options: SubscribeOptions? = definedExternally): Promise<T>
     // fun flatMap(Mapper mapper) : Observable
