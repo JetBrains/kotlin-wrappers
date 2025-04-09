@@ -16,7 +16,7 @@ external class Observable<T : JsAny?>(
     // fun filter(Predicate predicate) : Observable
     // fun finally(VoidFunction callback) : Observable
     // fun find(Predicate predicate, options: SubscribeOptions? = definedExternally) : Promise<any>
-    // fun first(options: SubscribeOptions? = definedExternally) : Promise<any>
+    fun first(options: SubscribeOptions? = definedExternally): Promise<T>
     // fun flatMap(Mapper mapper) : Observable
     // fun forEach(Visitor callback, options: SubscribeOptions? = definedExternally) : Promise<undefined>
     // fun inspect(optional ObservableInspectorUnion inspectorUnion = {}) : Observable
