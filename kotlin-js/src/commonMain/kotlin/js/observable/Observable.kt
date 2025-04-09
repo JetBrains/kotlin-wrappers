@@ -2,6 +2,7 @@ package js.observable
 
 import js.core.JsAny
 import js.errors.JsError
+import js.iterable.AsyncIterable
 import js.iterable.JsIterable
 import kotlin.js.definedExternally
 
@@ -33,10 +34,17 @@ external class Observable<T : JsAny?>(
         ): Observable<T>
 
         /**
-         * Converts an observable or iterable to an Observable
+         * Converts an iterable to an Observable
          */
         fun <T : JsAny?> from(
             source: JsIterable<JsAny?>,
+        ): Observable<T>
+
+        /**
+         * Converts an async iterable to an Observable
+         */
+        fun <T : JsAny?> from(
+            source: AsyncIterable<JsAny?>,
         ): Observable<T>
     }
 }
