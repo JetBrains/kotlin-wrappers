@@ -27,13 +27,6 @@ external class Observable<T : JsAny?>(
 
     companion object {
         /**
-         * Converts items to an Observable
-         */
-        fun <T : JsAny?> of(
-            vararg items: T,
-        ): Observable<T>
-
-        /**
          * Converts an iterable to an Observable
          */
         fun <T : JsAny?> from(
