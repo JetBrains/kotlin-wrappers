@@ -30,14 +30,14 @@ external class Observable<T : JsAny?>(
          * Converts an iterable to an Observable
          */
         fun <T : JsAny?> from(
-            source: JsIterable<JsAny?>,
+            source: JsIterable<T>,
         ): Observable<T>
 
         /**
          * Converts an async iterable to an Observable
          */
         fun <T : JsAny?> from(
-            source: AsyncIterable<JsAny?>,
+            source: AsyncIterable<T>,
         ): Observable<T>
     }
 }
