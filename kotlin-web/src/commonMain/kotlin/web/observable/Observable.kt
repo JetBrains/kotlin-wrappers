@@ -7,7 +7,7 @@ import js.iterable.JsIterable
 import kotlin.js.definedExternally
 
 external class Observable<T : JsAny?>(
-    subscriber: SubscriberFunction<T>,
+    callback: SubscribeCallback<T>,
 ) {
     /**
      * Subscribes to the sequence with an observer
