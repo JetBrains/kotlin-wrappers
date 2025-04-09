@@ -5,12 +5,7 @@ import js.errors.JsError
 import js.objects.JsPlainObject
 
 @JsPlainObject
-external interface Observer<T : JsAny?> {
-    /**
-     * Receives the subscription object when `subscribe` is called
-     */
-    val start: ((subscription: Subscription) -> Unit)?
-
+external interface SubscriptionObserver<T : JsAny?> {
     /**
      * Receives the next value in the sequence
      */
