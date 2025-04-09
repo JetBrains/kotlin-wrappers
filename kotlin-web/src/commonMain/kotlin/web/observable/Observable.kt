@@ -32,7 +32,9 @@ external class Observable<T : JsAny?>(
 
     // fun forEach(Visitor callback, options: SubscribeOptions? = definedExternally) : Promise<undefined>
 
-    // fun inspect(optional ObservableInspectorUnion inspectorUnion = {}) : Observable
+    fun inspect(inspector: ObservableInspector<T>): Observable<T>
+    fun inspect(callback: (value: T) -> Unit): Observable<T>
+    fun inspect(): Observable<T>
 
     fun last(options: SubscribeOptions? = definedExternally): Promise<T>
 
