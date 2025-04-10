@@ -1,5 +1,5 @@
 // Automatically generated - do not modify!
 
-package web.scheduling
+package web.function
 
 typealias VoidFunction = () -> Unit
