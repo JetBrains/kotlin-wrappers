@@ -3,6 +3,7 @@ package web.observable
 import js.core.JsAny
 import js.errors.JsError
 import js.objects.JsPlainObject
+import web.function.VoidFunction
 
 @JsPlainObject
 external interface SubscriptionObserver<T : JsAny?> {
@@ -19,5 +20,5 @@ external interface SubscriptionObserver<T : JsAny?> {
     /**
      * Receives a completion notification
      */
-    val complete: (() -> Unit)?
+    val complete: VoidFunction?
 }

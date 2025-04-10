@@ -8,6 +8,7 @@ import js.errors.JsError
 import js.iterable.AsyncIterable
 import js.iterable.JsIterable
 import js.promise.Promise
+import web.function.VoidFunction
 import kotlin.js.definedExternally
 
 external class Observable<T : JsAny?>(
@@ -24,7 +25,7 @@ external class Observable<T : JsAny?>(
 
     fun filter(predicate: (T) -> Boolean): Observable<T>
 
-    fun finally(callback: () -> Unit): Observable<T>
+    fun finally(callback: VoidFunction): Observable<T>
 
     fun find(
         predicate: (T) -> Boolean,
