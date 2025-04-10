@@ -34,6 +34,7 @@ external class Observable<T : JsAny?>(
     fun first(options: SubscribeOptions? = definedExternally): Promise<T>
 
     fun <R : JsAny?> flatMap(transform: (T) -> ReadonlyArray<R>): Observable<R>
+    fun <R : JsAny?> flatMap(transform: (T) -> Observable<R>): Observable<R>
 
     fun forEach(
         action: (item: T) -> Unit,
@@ -76,6 +77,7 @@ external class Observable<T : JsAny?>(
     )
 
     fun <R : JsAny?> switchMap(transform: (T) -> ReadonlyArray<R>): Observable<R>
+    fun <R : JsAny?> switchMap(transform: (T) -> Observable<R>): Observable<R>
 
     fun take(n: Int): Observable<T>
 
