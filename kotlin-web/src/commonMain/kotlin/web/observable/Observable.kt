@@ -8,7 +8,9 @@ import js.errors.JsError
 import js.iterable.AsyncIterable
 import js.iterable.JsIterable
 import js.promise.Promise
+import seskar.js.JsAsync
 import web.function.VoidFunction
+import kotlin.js.JsName
 import kotlin.js.definedExternally
 
 external class Observable<T : JsAny?>(
@@ -18,7 +20,15 @@ external class Observable<T : JsAny?>(
 
     fun drop(n: Int): Observable<T>
 
-    fun every(
+    @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
+    suspend fun every(
+        predicate: (T) -> Boolean,
+        options: SubscribeOptions? = definedExternally,
+    ): Boolean
+
+    @JsName("every")
+    fun everyAsync(
         predicate: (T) -> Boolean,
         options: SubscribeOptions? = definedExternally,
     ): Promise<JsBoolean>
@@ -27,17 +37,38 @@ external class Observable<T : JsAny?>(
 
     fun finally(callback: VoidFunction): Observable<T>
 
-    fun find(
+    @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
+    suspend fun find(
+        predicate: (T) -> Boolean,
+        options: SubscribeOptions? = definedExternally,
+    ): T
+
+    @JsName("find")
+    fun findAsync(
         predicate: (T) -> Boolean,
         options: SubscribeOptions? = definedExternally,
     ): Promise<T>
 
-    fun first(options: SubscribeOptions? = definedExternally): Promise<T>
+    @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
+    suspend fun first(options: SubscribeOptions? = definedExternally): T
+
+    @JsName("first")
+    fun firstAsync(options: SubscribeOptions? = definedExternally): Promise<T>
 
     fun <R : JsAny?> flatMap(transform: (T) -> ReadonlyArray<R>): Observable<R>
     fun <R : JsAny?> flatMap(transform: (T) -> Observable<R>): Observable<R>
 
+    @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     fun forEach(
+        action: (item: T) -> Unit,
+        options: SubscribeOptions? = definedExternally,
+    )
+
+    @JsName("forEach")
+    fun forEachAsync(
         action: (item: T) -> Unit,
         options: SubscribeOptions? = definedExternally,
     ): Promise<Void>
@@ -46,17 +77,39 @@ external class Observable<T : JsAny?>(
     fun inspect(callback: (value: T) -> Unit): Observable<T>
     fun inspect(): Observable<T>
 
-    fun last(options: SubscribeOptions? = definedExternally): Promise<T>
+    @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
+    suspend fun last(options: SubscribeOptions? = definedExternally): T
+
+    @JsName("last")
+    fun lastAsync(options: SubscribeOptions? = definedExternally): Promise<T>
 
     fun <R : JsAny?> map(transform: (T) -> R): Observable<R>
 
-    fun <U : JsAny?> reduce(
+    @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
+    suspend fun <U : JsAny?> reduce(
+        operation: (previousValue: U, currentValue: T, currentIndex: Int) -> U,
+        initialValue: U,
+        options: SubscribeOptions? = definedExternally,
+    ): U
+
+    @JsName("reduce")
+    fun <U : JsAny?> reduceAsync(
         operation: (previousValue: U, currentValue: T, currentIndex: Int) -> U,
         initialValue: U,
         options: SubscribeOptions? = definedExternally,
     ): Promise<U>
 
-    fun some(
+    @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
+    suspend fun some(
+        predicate: (T) -> Boolean,
+        options: SubscribeOptions? = definedExternally,
+    ): Boolean
+
+    @JsName("some")
+    fun someAsync(
         predicate: (T) -> Boolean,
         options: SubscribeOptions? = definedExternally,
     ): Promise<JsBoolean>
@@ -87,7 +140,12 @@ external class Observable<T : JsAny?>(
     fun takeUntil(notifier: AsyncIterable<*>): Observable<T>
     fun takeUntil(notifier: Observable<*>): Observable<T>
 
-    fun toArray(options: SubscribeOptions? = definedExternally): Promise<ReadonlyArray<T>>
+    @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
+    suspend fun toArray(options: SubscribeOptions? = definedExternally): ReadonlyArray<T>
+
+    @JsName("toArray")
+    fun toArrayAsync(options: SubscribeOptions? = definedExternally): Promise<ReadonlyArray<T>>
 
     companion object {
         /**
