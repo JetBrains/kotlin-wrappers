@@ -936,6 +936,12 @@ private constructor() :
     val unloadEvent: EventInstance<Event, Window /* this */, Window /* this */>
 
     /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/visibilitychange_event)
+     */
+    @JsEvent("visibilitychange")
+    val visibilityChangeEvent: EventInstance<Event, Window /* this */, Window>
+
+    /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/wheel_event)
      */
     @JsEvent("wheel")

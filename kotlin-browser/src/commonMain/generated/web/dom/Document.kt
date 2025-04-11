@@ -254,7 +254,7 @@ open external class Document :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/visibilitychange_event)
      */
-    var onvisibilitychange: EventHandler<Event, Document, Document>?
+    var onvisibilitychange: EventHandler<Event, Document, Window>?
 
     @Suppress("WRONG_JS_INTEROP_TYPE")
     override val ownerDocument: Void
@@ -1069,7 +1069,7 @@ open external class Document :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/visibilitychange_event)
      */
     @JsEvent("visibilitychange")
-    val visibilityChangeEvent: EventInstance<Event, Document /* this */, Document /* this */>
+    val visibilityChangeEvent: EventInstance<Event, Document /* this */, Window>
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/wheel_event)
