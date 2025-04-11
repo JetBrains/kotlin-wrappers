@@ -1,7 +1,6 @@
 package vercel.ncc
 
 import seskar.js.JsValue
-import kotlin.annotation.Target
 
 sealed external interface Target {
     companion object {
