@@ -11,3 +11,10 @@ React DOM
 ./gradlew :karakum-legacy:react-kotlin:generate
 ./gradlew :kotlin-react-dom:build
 ```
+
+TanStack Query
+
+```sh
+./gradlew :karakum-legacy:react-query-kotlin:generate
+./gradlew :kotlin-tanstack-react-query:build
+```
