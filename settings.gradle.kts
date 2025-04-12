@@ -54,6 +54,8 @@ fun VersionCatalogBuilder.npmLibraries() {
     }
 }
 
+includeBuild("karakum-legacy")
+
 include("docs")
 
 // Kotlin/JS: GitHub Actions Artifact wrappers
