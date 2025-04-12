@@ -82,7 +82,7 @@ val syncActionsToolCache by tasks.registering(SyncWrappers::class) {
     into(kotlinWrappersCommonDir("kotlin-actions-tool-cache"))
 }
 
-val syncWithWrappers by tasks.registering(SyncWrappers::class) {
+val syncWithWrappers by tasks.registering {
     dependsOn(syncActionsArtifact)
     dependsOn(syncActionsCache)
     dependsOn(syncActionsCore)
