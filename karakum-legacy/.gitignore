@@ -3,7 +3,4 @@
 build/
 generated/
 
-# IDEA ignore list
-.idea/*
-!.idea/icon.png
-*.iml
+package-lock.json
