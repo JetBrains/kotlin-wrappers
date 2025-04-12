@@ -10,11 +10,11 @@ open class SyncWrappers : Sync() {
 
     @get:Internal
     val commonGeneratedDir: Directory
-        get() = project.layout.projectDirectory.dir("src/commonMain/kotlin")
+        get() = project.layout.projectDirectory.dir("src/commonMain/generated")
 
     @get:Internal
     val jsGeneratedDir: Directory
-        get() = project.layout.projectDirectory.dir("src/jsMain/kotlin")
+        get() = project.layout.projectDirectory.dir("src/jsMain/generated")
 
     fun kotlinWrappersCommonDir(
         projectName: String,
