@@ -10,7 +10,11 @@ dependencies {
     commonMainImplementation(kotlinWrappers.browser)
 }
 
-val syncWithWrappers by tasks.registering(SyncWrappers::class) {
+val syncPopperjsCore by tasks.registering(SyncWrappers::class) {
     from(commonGeneratedDir)
     into(kotlinWrappersCommonDir("kotlin-popperjs-core"))
+}
+
+val generate by tasks.registering {
+    dependsOn(syncPopperjsCore)
 }

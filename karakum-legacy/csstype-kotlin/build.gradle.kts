@@ -10,10 +10,14 @@ dependencies {
     commonMainImplementation(kotlinWrappers.js)
 }
 
-val syncWithWrappers by tasks.registering(SyncWrappers::class) {
+val syncCssomCore by tasks.registering(SyncWrappers::class) {
     from(commonGeneratedDir) {
         include("web/cssom/**")
     }
 
     into(kotlinWrappersCommonDir("kotlin-cssom-core"))
+}
+
+val generate by tasks.registering {
+    dependsOn(syncCssomCore)
 }

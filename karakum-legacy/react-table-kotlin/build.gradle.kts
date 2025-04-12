@@ -10,9 +10,13 @@ dependencies {
     commonMainImplementation(kotlinWrappers.browser)
 }
 
-val syncWithWrappers by tasks.registering(SyncWrappers::class) {
+val syncTableCore by tasks.registering(SyncWrappers::class) {
     from(commonGeneratedDir) {
         include("tanstack/table/")
     }
     into(kotlinWrappersCommonDir("kotlin-tanstack-table-core"))
+}
+
+val generate by tasks.registering {
+    dependsOn(syncTableCore)
 }
