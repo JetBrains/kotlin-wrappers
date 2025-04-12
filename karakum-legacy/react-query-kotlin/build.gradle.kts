@@ -25,7 +25,7 @@ val syncReactWrappers by tasks.registering(SyncWrappers::class) {
     into(kotlinWrappersDir("kotlin-tanstack-react-query"))
 }
 
-val syncWithWrappers by tasks.registering {
+val generate by tasks.registering {
     dependsOn(syncCoreWrappers)
     dependsOn(syncReactWrappers)
 }
