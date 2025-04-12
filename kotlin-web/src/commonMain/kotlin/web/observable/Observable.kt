@@ -13,10 +13,10 @@ import web.function.VoidFunction
 import kotlin.js.JsName
 import kotlin.js.definedExternally
 
-external class Observable<T : JsAny?>(
+external class Observable<out T : JsAny?>(
     callback: SubscribeCallback<T>,
 ) {
-    fun catch(callback: (JsError) -> T): Observable<T>
+    fun catch(callback: (JsError) -> @UnsafeVariance T): Observable<T>
 
     fun drop(n: Int): Observable<T>
 

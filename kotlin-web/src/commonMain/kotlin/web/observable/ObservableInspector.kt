@@ -6,7 +6,7 @@ import js.objects.JsPlainObject
 import web.function.VoidFunction
 
 @JsPlainObject
-external interface ObservableInspector<T : JsAny?> :
+external interface ObservableInspector<in T : JsAny?> :
     SubscriptionObserver<T> {
 
     val subscribe: VoidFunction?

@@ -6,7 +6,7 @@ import js.objects.JsPlainObject
 import web.function.VoidFunction
 
 @JsPlainObject
-external interface SubscriptionObserver<T : JsAny?> {
+external interface SubscriptionObserver<in T : JsAny?> {
     /**
      * Receives the next value in the sequence
      */
