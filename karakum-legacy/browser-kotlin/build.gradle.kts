@@ -1,6 +1,5 @@
 plugins {
     alias(kfc.plugins.library)
-    alias(libs.plugins.seskar)
     `browser-declarations`
 }
 
@@ -11,11 +10,6 @@ dependencies {
     commonMainImplementation(npmv("typescript"))
     commonMainImplementation(npmv("@webref/events"))
     commonMainImplementation(npmv("@webref/idl"))
-
-    commonMainImplementation(kotlinWrappers.js)
-    commonMainImplementation(kotlinWrappers.cssomCore)
-
-    commonMainImplementation(libs.coroutines.core)
 }
 
 object Includes {

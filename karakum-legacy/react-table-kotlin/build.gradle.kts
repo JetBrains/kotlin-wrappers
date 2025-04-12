@@ -1,13 +1,10 @@
 plugins {
     alias(kfc.plugins.library)
-    alias(libs.plugins.seskar)
     `react-table-declarations`
 }
 
 dependencies {
     commonMainImplementation(npmv("@tanstack/react-table"))
-
-    commonMainImplementation(kotlinWrappers.browser)
 }
 
 val syncTableCore by tasks.registering(SyncWrappers::class) {

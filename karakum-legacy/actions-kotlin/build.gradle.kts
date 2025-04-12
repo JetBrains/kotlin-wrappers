@@ -1,6 +1,5 @@
 plugins {
     alias(kfc.plugins.library)
-    alias(libs.plugins.seskar)
     `actions-declarations`
 }
 
@@ -14,9 +13,6 @@ dependencies {
     commonMainImplementation(npmv("@actions/http-client"))
     commonMainImplementation(npmv("@actions/io"))
     commonMainImplementation(npmv("@actions/tool-cache"))
-
-    jsMainImplementation(kotlinWrappers.node)
-    jsMainImplementation(libs.coroutines.core)
 }
 
 val syncActionsArtifact by tasks.registering(SyncWrappers::class) {

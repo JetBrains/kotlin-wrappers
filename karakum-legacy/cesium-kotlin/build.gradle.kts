@@ -1,14 +1,11 @@
 plugins {
     alias(kfc.plugins.library)
-    alias(libs.plugins.seskar)
     `cesium-declarations`
 }
 
 dependencies {
     commonMainImplementation(npmv("@cesium/engine"))
     commonMainImplementation(npmv("@cesium/widgets"))
-
-    commonMainImplementation(kotlinWrappers.browser)
 }
 
 val syncCesiumEngine by tasks.registering(SyncWrappers::class) {

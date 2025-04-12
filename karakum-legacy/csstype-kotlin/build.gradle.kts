@@ -1,13 +1,10 @@
 plugins {
     alias(kfc.plugins.library)
-    alias(libs.plugins.seskar)
     `csstype-declarations`
 }
 
 dependencies {
     commonMainImplementation(npmv("csstype"))
-
-    commonMainImplementation(kotlinWrappers.js)
 }
 
 val syncCssomCore by tasks.registering(SyncWrappers::class) {

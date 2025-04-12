@@ -1,14 +1,10 @@
 plugins {
     alias(kfc.plugins.library)
-    alias(libs.plugins.seskar)
     `react-query-declarations`
 }
 
 dependencies {
     commonMainImplementation(npmv("@tanstack/react-query"))
-
-    commonMainImplementation(kotlinWrappers.web)
-    jsMainImplementation(kotlinWrappers.reactCore)
 }
 
 val syncCoreWrappers by tasks.registering(SyncWrappers::class) {

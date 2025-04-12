@@ -1,14 +1,10 @@
 plugins {
     alias(kfc.plugins.library)
-    alias(libs.plugins.seskar)
     `react-virtual-declarations`
 }
 
 dependencies {
     commonMainImplementation(npmv("@tanstack/react-virtual"))
-
-    commonMainImplementation(kotlinWrappers.browser)
-    jsMainImplementation(kotlinWrappers.reactCore)
 }
 
 val syncCoreWrappers by tasks.registering(SyncWrappers::class) {
