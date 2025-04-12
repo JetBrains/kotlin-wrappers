@@ -6,6 +6,5 @@
 
 ### Internals
 
-Declarations in [src/commonMain/generated](./src/commonMain/generated) are generated
-by [types-kotlin](https://github.com/karakum-team/types-kotlin).
+Declarations in [src/commonMain/generated](./src/commonMain/generated) are generated.
 Manual changes are prohibited.

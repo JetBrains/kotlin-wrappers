@@ -6,6 +6,5 @@
 
 ### Internals
 
-Declarations in [src/jsMain/generated](./src/jsMain/generated) are generated
-by [types-kotlin](https://github.com/karakum-team/types-kotlin).
+Declarations in [src/jsMain/generated](./src/jsMain/generated) are generated.
 Manual changes are prohibited.
