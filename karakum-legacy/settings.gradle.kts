@@ -1,4 +1,4 @@
-rootProject.name = "types-kotlin"
+rootProject.name = "karakum-legacy"
 
 dependencyResolutionManagement {
     repositories {
