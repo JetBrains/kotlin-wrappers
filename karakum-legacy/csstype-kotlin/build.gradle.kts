@@ -14,7 +14,3 @@ val syncCssomCore by tasks.registering(SyncWrappers::class) {
 
     into(kotlinWrappersCommonDir("kotlin-cssom-core"))
 }
-
-val generate by tasks.registering {
-    dependsOn(syncCssomCore)
-}

@@ -147,9 +147,3 @@ val syncKotlinBrowser by tasks.registering(SyncWrappers::class) {
 
     into(kotlinWrappersCommonDir("kotlin-browser"))
 }
-
-val generate by tasks.registering {
-    dependsOn(syncKotlinJs)
-    dependsOn(syncKotlinWeb)
-    dependsOn(syncKotlinBrowser)
-}

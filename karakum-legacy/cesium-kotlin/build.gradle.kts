@@ -21,8 +21,3 @@ val syncCesiumWidgets by tasks.registering(SyncWrappers::class) {
     }
     into(kotlinWrappersCommonDir("kotlin-cesium-widgets"))
 }
-
-val generate by tasks.registering {
-    dependsOn(syncCesiumEngine)
-    dependsOn(syncCesiumWidgets)
-}

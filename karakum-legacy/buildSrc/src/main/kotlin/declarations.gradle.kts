@@ -6,12 +6,10 @@ val generateDeclarations by tasks.registering {
     dependsOn(":kotlinNpmInstall")
 }
 
-val compileTasks = listOfNotNull(
-    tasks.getByPath("compileKotlinMetadata"),
-    tasks.getByPath("compileKotlinJs"),
-    tasks.findByPath("compileKotlinWasmJs"),
-)
+val generate by tasks.registering {}
 
-for (task in compileTasks) {
-    task.dependsOn(generateDeclarations)
+tasks.withType<SyncWrappers>().configureEach {
+    dependsOn(generateDeclarations)
+
+    generate.get().dependsOn(this)
 }

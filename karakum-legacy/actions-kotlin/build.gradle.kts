@@ -77,15 +77,3 @@ val syncActionsToolCache by tasks.registering(SyncWrappers::class) {
     }
     into(kotlinWrappersCommonDir("kotlin-actions-tool-cache"))
 }
-
-val generate by tasks.registering {
-    dependsOn(syncActionsArtifact)
-    dependsOn(syncActionsCache)
-    dependsOn(syncActionsCore)
-    dependsOn(syncActionsExec)
-    dependsOn(syncActionsGlob)
-    dependsOn(syncActionsGitHub)
-    dependsOn(syncActionsHttpClient)
-    dependsOn(syncActionsIO)
-    dependsOn(syncActionsToolCache)
-}

@@ -13,7 +13,3 @@ val syncTableCore by tasks.registering(SyncWrappers::class) {
     }
     into(kotlinWrappersCommonDir("kotlin-tanstack-table-core"))
 }
-
-val generate by tasks.registering {
-    dependsOn(syncTableCore)
-}
