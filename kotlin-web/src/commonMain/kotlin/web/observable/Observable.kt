@@ -57,7 +57,9 @@ external class Observable<T : JsAny?>(
     @JsName("first")
     fun firstAsync(options: SubscribeOptions? = definedExternally): Promise<T>
 
+    fun <R : JsAny?> flatMap(transform: (T) -> JsIterable<R>): Observable<R>
     fun <R : JsAny?> flatMap(transform: (T) -> ReadonlyArray<R>): Observable<R>
+    fun <R : JsAny?> flatMap(transform: (T) -> AsyncIterable<R>): Observable<R>
     fun <R : JsAny?> flatMap(transform: (T) -> Observable<R>): Observable<R>
 
     @JsAsync
@@ -137,6 +139,7 @@ external class Observable<T : JsAny?>(
 
     fun takeUntil(notifier: Promise<*>): Observable<T>
     fun takeUntil(notifier: JsIterable<*>): Observable<T>
+    fun takeUntil(notifier: ReadonlyArray<*>): Observable<T>
     fun takeUntil(notifier: AsyncIterable<*>): Observable<T>
     fun takeUntil(notifier: Observable<*>): Observable<T>
 
@@ -153,6 +156,13 @@ external class Observable<T : JsAny?>(
          */
         fun <T : JsAny?> from(
             source: JsIterable<T>,
+        ): Observable<T>
+
+        /**
+         * Converts an array to an Observable
+         */
+        fun <T : JsAny?> from(
+            source: ReadonlyArray<T>,
         ): Observable<T>
 
         /**
