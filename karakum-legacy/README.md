@@ -1,9 +1,4 @@
-[![CI Status](https://github.com/turansky/react-types-kotlin/workflows/declarations/badge.svg)](https://github.com/turansky/react-types-kotlin/actions)
-[![Kotlin](https://img.shields.io/badge/kotlin-2.1.20-blue.svg?logo=kotlin)](http://kotlinlang.org)
-
-# Types [Kotlin]
-
-Generator for [kotlin-wrappers](https://github.com/JetBrains/kotlin-wrappers)
+# Legacy generators
 
 | Library                                                                                   | NPM version                                                                                                           | Version                                                                                                                                                                                                               |
 |-------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
