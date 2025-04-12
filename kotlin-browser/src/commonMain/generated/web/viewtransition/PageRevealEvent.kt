@@ -4,6 +4,7 @@ package web.viewtransition
 
 import seskar.js.JsAlias
 import seskar.js.JsAlias.Companion.THIS
+import seskar.js.JsValue
 import web.events.Event
 import web.events.EventType
 import kotlin.js.definedExternally
@@ -22,4 +23,9 @@ open external class PageRevealEvent(
 
     @JsAlias(THIS)
     override fun asInit(): PageRevealEventInit
+
+    companion object {
+        @JsValue("pagereveal")
+        val PAGE_REVEAL: EventType<PageRevealEvent>
+    }
 }

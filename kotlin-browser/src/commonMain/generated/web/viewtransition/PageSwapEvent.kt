@@ -4,6 +4,7 @@ package web.viewtransition
 
 import seskar.js.JsAlias
 import seskar.js.JsAlias.Companion.THIS
+import seskar.js.JsValue
 import web.events.Event
 import web.events.EventType
 import web.navigation.NavigationActivation
@@ -28,4 +29,9 @@ open external class PageSwapEvent(
 
     @JsAlias(THIS)
     override fun asInit(): PageSwapEventInit
+
+    companion object {
+        @JsValue("pageswap")
+        val PAGE_SWAP: EventType<PageSwapEvent>
+    }
 }

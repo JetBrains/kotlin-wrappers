@@ -16,6 +16,8 @@ import web.history.PopStateEvent
 import web.messaging.MessageEvent
 import web.promise.PromiseRejectionEvent
 import web.storage.StorageEvent
+import web.viewtransition.PageRevealEvent
+import web.viewtransition.PageSwapEvent
 import kotlin.js.definedExternally
 
 external interface WindowEventHandlers :
@@ -107,7 +109,7 @@ external interface WindowEventHandlers :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/pagereveal_event)
      */
-    var onpagereveal: EventHandler<Event, WindowEventHandlers, WindowEventHandlers>?
+    var onpagereveal: EventHandler<PageRevealEvent, WindowEventHandlers, WindowEventHandlers>?
         get() = definedExternally
         set(value) = definedExternally
 
@@ -121,7 +123,7 @@ external interface WindowEventHandlers :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/pageswap_event)
      */
-    var onpageswap: EventHandler<Event, WindowEventHandlers, WindowEventHandlers>?
+    var onpageswap: EventHandler<PageSwapEvent, WindowEventHandlers, WindowEventHandlers>?
         get() = definedExternally
         set(value) = definedExternally
 
