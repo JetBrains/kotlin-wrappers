@@ -8,7 +8,7 @@ val generateDeclarations by tasks.registering {
 
 val generate by tasks.registering {}
 
-tasks.withType<SyncWrappers>().configureEach {
+tasks.withType<SyncWrappers> {
     dependsOn(generateDeclarations)
 
     generate.get().dependsOn(this)
