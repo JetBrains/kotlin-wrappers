@@ -7,4 +7,5 @@
 ### Internals
 
 Declarations in [src/commonMain/generated](./src/commonMain/generated) are generated
-by [types-kotlin](https://github.com/karakum-team/types-kotlin). Manual changes are prohibited.
+by [types-kotlin](https://github.com/karakum-team/types-kotlin).
+Manual changes are prohibited.
