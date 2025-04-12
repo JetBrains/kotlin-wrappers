@@ -1,6 +1,7 @@
 .gradle/
 .kotlin/
 build/
+generated/
 
 # IDEA ignore list
 .idea/*
