@@ -5,7 +5,7 @@ plugins {
 tasks.named("generateDeclarations") {
     doLast {
         val definitionsDir = nodeModules.resolve("@popperjs/core/lib")
-        val sourceDir = projectDir.resolve("src/commonMain/kotlin")
+        val sourceDir = projectDir.resolve("src/commonMain/generated")
 
         delete(sourceDir)
 

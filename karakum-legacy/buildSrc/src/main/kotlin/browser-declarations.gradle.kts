@@ -4,7 +4,7 @@ plugins {
 
 tasks.named("generateDeclarations") {
     doLast {
-        val sourceDir = projectDir.resolve("src/commonMain/kotlin")
+        val sourceDir = projectDir.resolve("src/commonMain/generated")
 
         delete(sourceDir)
 
@@ -31,7 +31,7 @@ tasks.named("generateDeclarations") {
 
 val findMissedTypes by tasks.registering {
     doLast {
-        val sourceDir = projectDir.resolve("src/jsMain/kotlin")
+        val sourceDir = projectDir.resolve("src/jsMain/generated")
 
         val generatedInterfaces = fileTree(sourceDir)
             .mapNotNull { it.name.removeSuffix(".kt") }

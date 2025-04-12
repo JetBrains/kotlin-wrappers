@@ -12,7 +12,7 @@ tasks.named("generateDeclarations") {
         val reactTypesDir = tanstackDir
             .resolve("react-query/build/modern")
 
-        val sourceDir = projectDir.resolve("src/jsMain/kotlin")
+        val sourceDir = projectDir.resolve("src/jsMain/generated")
 
         delete(sourceDir)
 

@@ -5,7 +5,7 @@ plugins {
 tasks.named("generateDeclarations") {
     doLast {
         val coreDefinitionsDir = nodeModules.resolve("@tanstack/table-core/build/lib")
-        val sourceDir = projectDir.resolve("src/commonMain/kotlin")
+        val sourceDir = projectDir.resolve("src/commonMain/generated")
 
         delete(sourceDir)
 
