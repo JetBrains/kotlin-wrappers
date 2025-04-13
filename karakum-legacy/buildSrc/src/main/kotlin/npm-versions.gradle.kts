@@ -18,6 +18,5 @@ for (npmKey in parentProperties.keys.map { it as String }) {
     val value = (parentProperties[npmKey] as String)
         .removePrefix("^")
 
-    println("$key:$value")
     extensions.extraProperties[key] = value
 }
