@@ -431,6 +431,9 @@ private fun convertInterface(
     if (name == "AccessorKeyColumnDefBase")
         members = members.replace("var id: String?", "    /* var id: String? */")
 
+    if (name == "CoreOptionsResolved")
+        members = members.replace("var ", "override var ")
+
     val body = "{\n$members\n}\n"
     return ConversionResult(name, "@JsPlainObject\nexternal interface $declaration$body")
 }
@@ -455,7 +458,7 @@ private fun convertMembers(
                 @JsPlainObject
                 interface ToggleSelectedOptions {
                     val selectChildren: Boolean?
-                }    
+                }
                 """.trimIndent()
     }
 
