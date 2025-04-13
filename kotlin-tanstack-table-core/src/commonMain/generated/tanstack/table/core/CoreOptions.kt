@@ -149,5 +149,5 @@ external interface CoreOptions<TData : RowData> {
      * [API Docs](https://tanstack.com/table/v8/docs/api/core/table#state)
      * [Guide](https://tanstack.com/table/v8/docs/guide/tables)
      */
-    val state: TableState? /* Partial */
+    val state: TableState /* Partial */?
 }
