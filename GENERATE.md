@@ -18,3 +18,10 @@ TanStack Query
 ./gradlew :karakum-legacy:react-query-kotlin:generate
 ./gradlew :kotlin-tanstack-react-query:build
 ```
+
+TanStack Table
+
+```sh
+./gradlew :karakum-legacy:react-table-kotlin:generate
+./gradlew :kotlin-tanstack-react-table:build
+```
