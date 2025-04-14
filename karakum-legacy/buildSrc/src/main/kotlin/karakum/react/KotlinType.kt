@@ -53,6 +53,9 @@ internal fun kotlinType(
     if (FORM_ACTION_DECLARATION in type)
         return FORM_ACTION
 
+    if (type.startsWith("| string | DO_NOT_USE_OR_YOU_WILL_BE_FIRED_EXPERIMENTAL_"))
+        return "String"
+
     if (type.endsWith(" | undefined"))
         return kotlinType(type.removeSuffix(" | undefined"), name)
 
