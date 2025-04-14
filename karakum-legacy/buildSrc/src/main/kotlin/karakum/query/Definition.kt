@@ -47,12 +47,12 @@ fun toDeclarations(
             "setQueryData<TQueryFnData>(queryKey: QueryKey, updater: Updater<TQueryFnData | undefined, TQueryFnData | undefined>, options?: SetDataOptions): TQueryFnData | undefined;",
         )
         .replace(
-            "setQueriesData<TQueryFnData, TQueryFilters extends QueryFilters<any, any, any, any> = QueryFilters<TQueryFnData>, TInferredQueryFnData = TQueryFilters extends QueryFilters<infer TData, any, any, any> ? TData : TQueryFnData>(filters: TQueryFilters, updater: Updater<NoInfer<TInferredQueryFnData> | undefined, NoInfer<TInferredQueryFnData> | undefined>, options?: SetDataOptions): Array<[QueryKey, TInferredQueryFnData | undefined]>;",
-            "setQueriesData<TQueryFnData, TQueryFilters extends QueryFilters<*, *, *, *>>(filters: TQueryFilters, updater: Updater<TQueryFnData?, TQueryFnData?>, options?: SetDataOptions): ReadonlyArray<JsTuple2<QueryKey, TQueryFnData?>>;",
+            "setQueriesData<TQueryFnData, TQueryFilters extends QueryFilters<any> = QueryFilters>(filters: TQueryFilters, updater: Updater<NoInfer<TQueryFnData> | undefined, NoInfer<TQueryFnData> | undefined>, options?: SetDataOptions): Array<[QueryKey, TQueryFnData | undefined]>;",
+            "setQueriesData<TQueryFnData, TQueryFilters extends QueryFilters<*>>(filters: TQueryFilters, updater: Updater<TQueryFnData?, TQueryFnData?>, options?: SetDataOptions): ReadonlyArray<JsTuple2<QueryKey, TQueryFnData?>>;",
         )
         .replace(
-            "getQueriesData<TQueryFnData = unknown, TQueryFilters extends QueryFilters<any, any, any, any> = QueryFilters<TQueryFnData>, TInferredQueryFnData = TQueryFilters extends QueryFilters<infer TData, any, any, any> ? TData : TQueryFnData>(filters: TQueryFilters): Array<[QueryKey, TInferredQueryFnData | undefined]>;",
-            "getQueriesData<TQueryFnData, TQueryFilters extends QueryFilters<*, *, *, *>>(filters: TQueryFilters): ReadonlyArray<JsTuple2<QueryKey, TQueryFnData?>>;",
+            "getQueriesData<TQueryFnData = unknown, TQueryFilters extends QueryFilters<any> = QueryFilters>(filters: TQueryFilters): Array<[QueryKey, TQueryFnData | undefined]>;",
+            "getQueriesData<TQueryFnData, TQueryFilters extends QueryFilters<*>>(filters: TQueryFilters): ReadonlyArray<JsTuple2<QueryKey, TQueryFnData?>>;",
         )
         .replace(
             "getQueryState<TQueryFnData = unknown, TError = DefaultError, TTaggedQueryKey extends QueryKey = QueryKey, TInferredQueryFnData = InferDataFromTag<TQueryFnData, TTaggedQueryKey>, TInferredError = InferErrorFromTag<TError, TTaggedQueryKey>>(queryKey: TTaggedQueryKey): QueryState<TInferredQueryFnData, TInferredError> | undefined;",
@@ -60,28 +60,29 @@ fun toDeclarations(
         )
         .replace(
             "removeQueries<TQueryFnData = unknown, TError = DefaultError, TTaggedQueryKey extends QueryKey = QueryKey, TInferredQueryFnData = InferDataFromTag<TQueryFnData, TTaggedQueryKey>, TInferredError = InferErrorFromTag<TError, TTaggedQueryKey>>(filters?: QueryFilters<TInferredQueryFnData, TInferredError, TInferredQueryFnData, TTaggedQueryKey>): void;",
-            "removeQueries<TQueryFilters extends QueryFilters<*, *, *, *>>(filters?: TQueryFilters): void;",
+            "removeQueries<TQueryFilters extends QueryFilters<*>>(filters?: TQueryFilters): void;",
         )
         .replace(
             "resetQueries<TQueryFnData = unknown, TError = DefaultError, TTaggedQueryKey extends QueryKey = QueryKey, TInferredQueryFnData = InferDataFromTag<TQueryFnData, TTaggedQueryKey>, TInferredError = InferErrorFromTag<TError, TTaggedQueryKey>>(filters?: QueryFilters<TInferredQueryFnData, TInferredError, TInferredQueryFnData, TTaggedQueryKey>, options?: ResetOptions): Promise<void>;",
-            "resetQueries<TQueryFilters extends QueryFilters<*, *, *, *>>(filters?: TQueryFilters, options?: ResetOptions): Promise<void>;",
+            "resetQueries<TQueryFilters extends QueryFilters<*>>(filters?: TQueryFilters, options?: ResetOptions): Promise<void>;",
         )
         .replace(
             "cancelQueries<TQueryFnData = unknown, TError = DefaultError, TTaggedQueryKey extends QueryKey = QueryKey, TInferredQueryFnData = InferDataFromTag<TQueryFnData, TTaggedQueryKey>, TInferredError = InferErrorFromTag<TError, TTaggedQueryKey>>(filters?: QueryFilters<TInferredQueryFnData, TInferredError, TInferredQueryFnData, TTaggedQueryKey>, cancelOptions?: CancelOptions): Promise<void>;",
-            "cancelQueries<TQueryFilters extends QueryFilters<*, *, *, *>>(filters?: TQueryFilters, cancelOptions?: CancelOptions): Promise<void>;",
+            "cancelQueries<TQueryFilters extends QueryFilters<*>>(filters?: TQueryFilters, cancelOptions?: CancelOptions): Promise<void>;",
         )
         .replace(
             "invalidateQueries<TQueryFnData = unknown, TError = DefaultError, TTaggedQueryKey extends QueryKey = QueryKey, TInferredQueryFnData = InferDataFromTag<TQueryFnData, TTaggedQueryKey>, TInferredError = InferErrorFromTag<TError, TTaggedQueryKey>>(filters?: InvalidateQueryFilters<TInferredQueryFnData, TInferredError, TInferredQueryFnData, TTaggedQueryKey>, options?: InvalidateOptions): Promise<void>;",
-            "invalidateQueries<TInvalidateQueryFilters extends InvalidateQueryFilters<*, *, *, *>>(filters?: TInvalidateQueryFilters, options?: InvalidateOptions): Promise<void>;",
+            "invalidateQueries<TInvalidateQueryFilters extends InvalidateQueryFilters<*>>(filters?: TInvalidateQueryFilters, options?: InvalidateOptions): Promise<void>;",
         )
         .replace(
             "refetchQueries<TQueryFnData = unknown, TError = DefaultError, TTaggedQueryKey extends QueryKey = QueryKey, TInferredQueryFnData = InferDataFromTag<TQueryFnData, TTaggedQueryKey>, TInferredError = InferErrorFromTag<TError, TTaggedQueryKey>>(filters?: RefetchQueryFilters<TInferredQueryFnData, TInferredError, TInferredQueryFnData, TTaggedQueryKey>, options?: RefetchOptions): Promise<void>;",
-            "refetchQueries<TRefetchQueryFilters extends RefetchQueryFilters<*, *, *, *>>(filters?: TRefetchQueryFilters, options?: RefetchOptions): Promise<void>;",
+            "refetchQueries<TRefetchQueryFilters extends RefetchQueryFilters<*>>(filters?: TRefetchQueryFilters, options?: RefetchOptions): Promise<void>;",
         )
         .replace(
             "isMutating<TMutationFilters extends MutationFilters<any, any> = MutationFilters>(filters?: TMutationFilters): number;",
             "isMutating<TMutationFilters extends MutationFilters<*, *, *, *> = MutationFilters>(filters?: TMutationFilters): number;",
         )
+        .replace(" QueryFilters<any>", " QueryFilters<*>")
         .replace("\n    isDataEqual?: (oldData: TData | undefined, newData: TData) => boolean;\n", "\n")
         .replace(OPTIMISTIC_RESULT, "QueriesObserverOptimisticResult<TCombinedResult>")
         .replace(
@@ -136,7 +137,7 @@ fun toDeclarations(
             subscribe: Subscribable<InfiniteQueryObserverListener<TData, TError>>['subscribe'];
             """.trimIndent(),
             """
-            subscribe: (listener?: InfiniteQueryObserverListener<TData, TError>) -> () -> Unit  
+            subscribe: (listener?: InfiniteQueryObserverListener<TData, TError>) -> () -> Unit
             """.trimIndent()
         )
         .replace(
@@ -175,12 +176,12 @@ fun toDeclarations(
             """.trimIndent(),
             """
                 type RefetchMode = 'append' | 'reset';
-                
+
                 interface StreamedQueryOptions<TQueryFnData, TQueryKey extends QueryKey> {
                     queryFn: (QueryFunctionContext<TQueryKey, *>) => AsyncIterable<TQueryFnData>
                     refetchMode?: RefetchMode
                 }
-                
+
                 declare function streamedQuery<TQueryFnData, TQueryKey extends QueryKey>(options: StreamedQueryOptions<TQueryFnData, TQueryKey>): QueryFunction<Array<TQueryFnData>, TQueryKey, *>
             """.trimIndent(),
         )

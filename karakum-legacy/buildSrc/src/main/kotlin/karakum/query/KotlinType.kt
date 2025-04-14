@@ -47,7 +47,7 @@ private val STANDARD_TYPE_MAP = mapOf(
     "FetchOptions" to "FetchOptions<*>",
 
     "Query" to "Query<*, *, *, *>",
-    "QueryFilters" to "QueryFilters<*, *, *, *>",
+    "QueryFilters" to "QueryFilters<*>",
     "MutationFilters" to "MutationFilters<*, *, *, *>",
     "IterableIterator<Query>" to "JsIterator<Query<*, *, *, *>>",
 
