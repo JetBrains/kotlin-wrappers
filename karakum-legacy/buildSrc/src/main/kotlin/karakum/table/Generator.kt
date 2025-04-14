@@ -25,6 +25,7 @@ private val DEFAULT_IMPORTS = listOf(
     "tanstack.table.core.VisibilityColumn as ColumnVisibilityColumn",
 
     "web.dom.Document",
+    "web.events.Event",
 ).map {
     val name = it
         .substringAfterLast(" ")

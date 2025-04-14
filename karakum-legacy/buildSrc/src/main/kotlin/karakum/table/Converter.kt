@@ -144,6 +144,8 @@ private fun convertFunction(
         .replace(": Column<TData, unknown>[]", ": ReadonlyArray<Column<TData, *>>")
         .replace(": HeaderGroup<TData>[]", ": ReadonlyArray<HeaderGroup<TData>>")
         .replace("undefined | [number, number]", "JsTuple2<Int, Int>?")
+        .replace("?: Document", ": Document? = definedExternally")
+        .replace(": Document | null", ": Document?")
         .replace("?: Column<TData, unknown>", ": Column<TData, *> = definedExternally")
         .replace("?: Column<TData, TValue>", ": Column<TData, TValue> = definedExternally")
         .replace(": ColumnDef<TData>", ": ColumnDef<TData, *>")
