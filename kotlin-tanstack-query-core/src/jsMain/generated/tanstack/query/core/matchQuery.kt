@@ -5,6 +5,6 @@
 package tanstack.query.core
 
 external fun matchQuery(
-    filters: QueryFilters<*, *, *, *>,
+    filters: QueryFilters<*>,
     query: Query<*, *, *, *>,
 ): Boolean

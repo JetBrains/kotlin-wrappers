@@ -8,6 +8,6 @@ import tanstack.query.core.QueryClient
 import tanstack.query.core.QueryFilters
 
 external fun useIsFetching(
-    filters: QueryFilters<*, *, *, *> = definedExternally,
+    filters: QueryFilters<*> = definedExternally,
     queryClient: QueryClient = definedExternally,
 ): Int

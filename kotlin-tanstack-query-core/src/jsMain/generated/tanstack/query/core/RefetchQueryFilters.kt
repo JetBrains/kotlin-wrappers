@@ -5,5 +5,5 @@ package tanstack.query.core
 import js.objects.JsPlainObject
 
 @JsPlainObject
-external interface RefetchQueryFilters<TQueryFnData, TError, TData, TQueryKey : QueryKey> :
-    QueryFilters<TQueryFnData, TError, TData, TQueryKey>
+external interface RefetchQueryFilters<TQueryKey : QueryKey> :
+    QueryFilters<TQueryKey>
