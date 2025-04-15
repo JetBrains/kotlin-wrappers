@@ -10,7 +10,7 @@ import kotlin.js.definedExternally
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCIceCandidate)
  */
 open external class RTCIceCandidate(
-    init: RTCIceCandidateInit = definedExternally,
+    init: RTCLocalIceCandidateInit = definedExternally,
 ) {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCIceCandidate/address)

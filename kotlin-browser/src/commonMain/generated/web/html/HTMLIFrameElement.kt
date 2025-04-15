@@ -92,7 +92,7 @@ protected constructor() :
     var width: String
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLIframeElement/getSVGDocument)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLIFrameElement/getSVGDocument)
      */
     fun getSVGDocument(): Document?
 }

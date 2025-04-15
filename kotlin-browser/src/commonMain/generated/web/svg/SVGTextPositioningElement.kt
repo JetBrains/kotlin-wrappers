@@ -19,6 +19,10 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTextPositioningElement/dy)
      */
     val dy: SVGAnimatedLengthList
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTextPositioningElement/rotate)
+     */
     val rotate: SVGAnimatedNumberList
 
     /**

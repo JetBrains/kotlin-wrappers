@@ -178,6 +178,9 @@ open external class DOMMatrix(
         originZ: Double = definedExternally,
     ): DOMMatrix
 
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrix/scaleSelf)
+     */
     fun scaleSelf(
         scaleX: Double = definedExternally,
         scaleY: Double = definedExternally,

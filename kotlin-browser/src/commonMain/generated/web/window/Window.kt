@@ -133,6 +133,11 @@ private constructor() :
     var opener: JsAny?
 
     /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/originAgentCluster)
+     */
+    val originAgentCluster: Boolean
+
+    /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/outerHeight)
      */
     val outerHeight: Int

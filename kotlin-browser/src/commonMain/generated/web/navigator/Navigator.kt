@@ -8,6 +8,7 @@ import js.promise.Promise
 import seskar.js.JsAsync
 import web.clipboard.Clipboard
 import web.credentials.CredentialsContainer
+import web.fedcm.NavigatorLogin
 import web.gamepad.Gamepad
 import web.geolocation.Geolocation
 import web.http.BodyInit
@@ -66,6 +67,13 @@ protected /* private */ constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/geolocation)
      */
     val geolocation: Geolocation
+
+    /**
+     * Available only in secure contexts.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/login)
+     */
+    val login: NavigatorLogin
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/maxTouchPoints)

@@ -328,6 +328,10 @@ external interface ARIAMixin {
     var ariaValueText: String?
         get() = definedExternally
         set(value) = definedExternally
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/role)
+     */
     var role: String?
         get() = definedExternally
         set(value) = definedExternally

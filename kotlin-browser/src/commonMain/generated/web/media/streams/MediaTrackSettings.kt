@@ -20,5 +20,8 @@ external interface MediaTrackSettings {
     val noiseSuppression: Boolean?
     val sampleRate: Int?
     val sampleSize: Int?
+    val torch: Boolean?
+    val whiteBalanceMode: String?
     val width: Int?
+    val zoom: Double?
 }

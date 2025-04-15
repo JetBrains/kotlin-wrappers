@@ -97,7 +97,15 @@ protected constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFormElement/noValidate)
      */
     var noValidate: Boolean
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFormElement/rel)
+     */
     var rel: String
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFormElement/relList)
+     */
     val relList: DOMTokenList
 
     /**

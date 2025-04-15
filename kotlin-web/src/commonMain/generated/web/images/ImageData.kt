@@ -2,7 +2,6 @@
 
 package web.images
 
-import js.typedarrays.Uint8ClampedArray
 import web.gl.TexImageSource
 import web.gpu.GPUCopyExternalImageSource
 import kotlin.js.definedExternally
@@ -20,7 +19,7 @@ open external class ImageData(
     TexImageSource,
     GPUCopyExternalImageSource {
     constructor(
-        data: Uint8ClampedArray<*>,
+        data: ImageDataArray,
         sw: Int,
         sh: Int = definedExternally,
         settings: ImageDataSettings = definedExternally,
@@ -36,7 +35,7 @@ open external class ImageData(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageData/data)
      */
-    val data: Uint8ClampedArray<*>
+    val data: ImageDataArray
 
     /**
      * Returns the actual dimensions of the data in the ImageData object, in pixels.
