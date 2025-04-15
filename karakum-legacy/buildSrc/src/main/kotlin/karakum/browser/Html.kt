@@ -376,6 +376,10 @@ private val CREDENTIALS_TYPES = listOf(
     "CredentialsContainer",
 )
 
+private val FEDCM_TYPES = listOf(
+    "NavigatorLogin",
+)
+
 private val ABORT_TYPES = listOf(
     "AbortController",
     "AbortSignal",
@@ -1368,7 +1372,7 @@ internal fun convertInterface(
                 """
                 companion object {
                     $idDeclaration
-                }    
+                }
                 """.trimIndent()
             }
 
@@ -1456,6 +1460,7 @@ internal fun convertInterface(
 
         name.startsWith("FileSystem") -> "web.fs"
         name in FILE_SYSTEM_TYPES -> "web.fs"
+        name in FEDCM_TYPES -> "web.fedcm"
 
         name.startsWith("Blob") -> "web.blob"
 
@@ -1764,7 +1769,7 @@ internal fun convertMember(
         fun <T: HTMLElement> createElement(
             tagName: HtmlTagName<T>,
             options: ElementCreationOptions = definedExternally,
-        ): T    
+        ): T
         """.trimIndent()
 
         "createElementNS(namespaceURI: SVG_NAMESPACE, qualifiedName: string): SVGElement",
@@ -1772,7 +1777,7 @@ internal fun convertMember(
         fun <T : SVGElement> createElementNS(
             namespaceURI: SVG_NAMESPACE,
             qualifiedName: SvgTagName<T>,
-        ): T        
+        ): T
         """.trimIndent()
 
         "createElementNS(namespaceURI: MATHML_NAMESPACE, qualifiedName: string): MathMLElement",
@@ -1780,7 +1785,7 @@ internal fun convertMember(
         fun <T : MathMLElement> createElementNS(
             namespaceURI: MATHML_NAMESPACE,
             qualifiedName: MathMLTagName<T>,
-        ): T    
+        ): T
         """.trimIndent()
 
         "closest<K extends keyof HTMLElementTagNameMap>(selector: K): HTMLElementTagNameMap[K] | null",
@@ -1823,7 +1828,7 @@ internal fun convertMember(
         "getContext(contextId: string, options?: any): RenderingContext | null",
             -> return """
         fun <T : RenderingContext, O : JsAny> getContext(
-            contextId: RenderingContextId<T, O>, 
+            contextId: RenderingContextId<T, O>,
             options: O? = definedExternally,
         ): T?
         """.trimIndent()
@@ -1831,7 +1836,7 @@ internal fun convertMember(
         "getContext(contextId: OffscreenRenderingContextId, options?: any): OffscreenRenderingContext | null",
             -> return """
         fun <T : OffscreenRenderingContext, O : JsAny> getContext(
-            contextId: RenderingContextId<T, O>, 
+            contextId: RenderingContextId<T, O>,
             options: O? = definedExternally,
         ): T?
         """.trimIndent()

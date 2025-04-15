@@ -119,6 +119,7 @@ private val PKG_MAP = mapOf(
 
     "CredentialMediationRequirement" to "web.credentials",
     "SecurityPolicyViolationEventDisposition" to "web.csp",
+    "LoginStatus" to "web.fedcm",
 
     "WakeLockType" to "web.wakelock",
 
@@ -245,7 +246,7 @@ private fun convertType(
                 """
                 /**
                  * [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/$name)
-                 */    
+                 */
                 """.trimIndent()
             } else null,
             "typealias $name = $type"
@@ -272,6 +273,7 @@ private fun convertType(
             "ImageBufferSource" -> "web.codecs"
 
             "ImageBitmapSource" -> "web.images"
+            "ImageDataArray" -> "web.images"
             "CanvasImageSource" -> "web.canvas"
 
             "BlobPart" -> "web.blob"
@@ -367,6 +369,9 @@ private fun convertType(
             name == "VibratePattern" && bodySource == "number | number[]"
                 -> "ReadonlyArray<JsInt> /* | Int */"
 
+            bodySource == "Uint8ClampedArray"
+                -> "$bodySource<*>"
+
             bodySource == "string | Function"
                 -> "() -> Unit"
 
@@ -386,7 +391,7 @@ private fun convertType(
             bodySource == "`section-${'$'}{string}`"
                 -> """
             sealed interface $name
-            
+
             inline fun $name(
                 value: String,
             ): $name =
@@ -523,7 +528,7 @@ private fun valueInterface(
             """.trimIndent()
         }
 
-    val type = """    
+    val type = """
         sealed external interface $name
         """.trimIndent()
 
@@ -546,9 +551,9 @@ private fun markerInterface(
             """
             inline fun ${childType}.as${name}(): $name =
                 unsafeCast<$name>()
-                
+
             inline fun $name.as${childType}OrNull(): ${childType}? =
-                asDynamic() as? $childType    
+                asDynamic() as? $childType
             """.trimIndent()
         )
     }
@@ -571,7 +576,7 @@ private fun markerInterface(
 
     val finalDeclaration = declaration.replace("<T>", "<T : JsAny?>")
     val type = """
-        $comment    
+        $comment
         $modifiers external interface $finalDeclaration$parentDeclaration
         """.trimIndent()
 

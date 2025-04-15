@@ -144,6 +144,7 @@ private val DEFAULT_IMPORTS = Imports(
     "web.events.EventType",
     "web.events.JsEvent",
     "web.events.ProgressEvent",
+    "web.fedcm.NavigatorLogin",
     "web.file.File",
     "web.file.FileList",
     "web.form.FormControl",
@@ -426,9 +427,9 @@ fun generateKotlinDeclarations(
             import web.media.devices.MediaDevices
             import web.media.key.MediaKeySystemAccess
             import web.media.key.MediaKeySystemConfiguration
-            import web.clipboard.Clipboard       
-            import web.credentials.CredentialsContainer       
-            import web.geolocation.Geolocation       
+            import web.clipboard.Clipboard
+            import web.credentials.CredentialsContainer
+            import web.geolocation.Geolocation
             import web.gamepad.Gamepad
             import web.midi.MIDIOptions
             import web.midi.MIDIAccess
@@ -440,12 +441,12 @@ fun generateKotlinDeclarations(
             "CredentialRequestOptions",
                 -> """
             import web.authn.PublicKeyCredentialCreationOptions
-            import web.authn.PublicKeyCredentialRequestOptions    
+            import web.authn.PublicKeyCredentialRequestOptions
             """.trimIndent()
 
             "PublicKeyCredential",
                 -> """
-            import web.credentials.Credential    
+            import web.credentials.Credential
             """.trimIndent()
 
             "GlobalEventHandlers",
@@ -503,7 +504,7 @@ fun generateKotlinDeclarations(
             import web.gl.WebGLContextEvent
             import web.clipboard.ClipboardEvent
             import web.csp.SecurityPolicyViolationEvent
-            import web.device.DeviceMotionEvent    
+            import web.device.DeviceMotionEvent
             import web.device.DeviceOrientationEvent
             import web.gamepad.GamepadEvent
             import web.history.HashChangeEvent
@@ -513,10 +514,10 @@ fun generateKotlinDeclarations(
             import web.promise.PromiseRejectionEvent
             import web.push.PushEvent
             import web.rtc.RTCTransformEvent
-            import web.cssom.StyleSheetList    
-            import web.fonts.FontFaceSource    
-            import web.html.*        
-            import web.xpath.XPathEvaluatorBase    
+            import web.cssom.StyleSheetList
+            import web.fonts.FontFaceSource
+            import web.html.*
+            import web.xpath.XPathEvaluatorBase
             import web.workers.WorkerGlobalScope
             """.trimIndent()
 
