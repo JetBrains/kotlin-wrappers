@@ -73,10 +73,6 @@ internal fun String.applyPatches(): String {
         .patchInterface("EventModifierInit") {
             it.replace("    ", "    readonly ")
         }
-        // Safari
-        .patchInterface("RTCPeerConnectionIceEventInit") {
-            it.replace("\n    url?: string | null;", "")
-        }
         // FormData
         .replace(
             "\n    append(name: string, value: string | Blob): void;\n" +
