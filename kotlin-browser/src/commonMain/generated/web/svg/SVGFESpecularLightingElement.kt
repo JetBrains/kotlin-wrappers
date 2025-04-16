@@ -15,7 +15,15 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFESpecularLightingElement/in1)
      */
     val in1: SVGAnimatedString
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFESpecularLightingElement/kernelUnitLengthX)
+     */
     val kernelUnitLengthX: SVGAnimatedNumber
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFESpecularLightingElement/kernelUnitLengthY)
+     */
     val kernelUnitLengthY: SVGAnimatedNumber
 
     /**

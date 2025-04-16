@@ -19,6 +19,10 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGRadialGradientElement/cy)
      */
     val cy: SVGAnimatedLength
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGRadialGradientElement/fr)
+     */
     val fr: SVGAnimatedLength
 
     /**
