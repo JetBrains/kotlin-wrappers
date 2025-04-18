@@ -5,6 +5,7 @@ plugins {
 
 dependencies {
     commonMainImplementation(npmv("@types/web"))
+    commonMainImplementation(npmv("@types/webworker"))
     commonMainImplementation(npmv("@types/serviceworker"))
     commonMainImplementation(npmv("@types/audioworklet"))
     commonMainImplementation(npmv("typescript"))
