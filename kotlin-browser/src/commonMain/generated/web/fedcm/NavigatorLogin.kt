@@ -8,6 +8,7 @@ import seskar.js.JsAsync
 import kotlin.js.JsName
 
 /**
+ * The **`NavigatorLogin`** interface of the Federated Credential Management (FedCM) API defines login functionality for federated identity providers (IdPs).
  * Available only in secure contexts.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigatorLogin)

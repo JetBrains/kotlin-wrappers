@@ -11,6 +11,8 @@ import js.objects.ReadonlyRecord
 import kotlin.js.definedExternally
 
 /**
+ * The **`URLSearchParams`** interface defines utility methods to work with the query string of a URL.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/URLSearchParams)
  */
 open external class URLSearchParams(

@@ -13,7 +13,7 @@ import kotlin.js.JsName
 import kotlin.js.definedExternally
 
 /**
- * This Streams API interface represents a readable stream of byte data. The Fetch API offers a concrete instance of a ReadableStream through the body property of a Response object.
+ * The `ReadableStream` interface of the Streams API represents a readable stream of byte data.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStream)
  */

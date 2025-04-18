@@ -10,7 +10,7 @@ import web.events.EventType
 import kotlin.js.definedExternally
 
 /**
- * The DeviceMotionEvent provides web developers with information about the speed of changes for the device's position and orientation.
+ * The **`DeviceMotionEvent`** interface of the Device Orientation Events provides web developers with information about the speed of changes for the device's position and orientation.
  * Available only in secure contexts.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DeviceMotionEvent)

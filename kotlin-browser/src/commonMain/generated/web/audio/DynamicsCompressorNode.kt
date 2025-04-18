@@ -5,7 +5,7 @@ package web.audio
 import kotlin.js.definedExternally
 
 /**
- * Inherits properties from its parent, AudioNode.
+ * The `DynamicsCompressorNode` interface provides a compression effect, which lowers the volume of the loudest parts of the signal in order to help prevent clipping and distortion that can occur when multiple sounds are played and multiplexed together at once.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DynamicsCompressorNode)
  */

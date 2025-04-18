@@ -9,6 +9,7 @@ import web.fs.FileSystemDirectoryHandle
 import kotlin.js.JsName
 
 /**
+ * The **`StorageManager`** interface of the Storage API provides an interface for managing persistence permissions and estimating available storage.
  * Available only in secure contexts.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/StorageManager)

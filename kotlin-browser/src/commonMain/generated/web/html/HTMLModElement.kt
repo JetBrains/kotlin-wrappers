@@ -3,7 +3,7 @@
 package web.html
 
 /**
- * Provides special properties (beyond the regular methods and properties available through the HTMLElement interface they also have available to them by inheritance) for manipulating modification elements, that is <del> and <ins>.
+ * The **`HTMLModElement`** interface provides special properties (beyond the regular methods and properties available through the HTMLElement interface they also have available to them by inheritance) for manipulating modification elements, that is del and ins.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLModElement)
  */

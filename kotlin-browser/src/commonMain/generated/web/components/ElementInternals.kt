@@ -15,6 +15,8 @@ import web.validation.ValidityStateFlags
 import kotlin.js.definedExternally
 
 /**
+ * The **`ElementInternals`** interface of the Document Object Model gives web developers a way to allow custom elements to fully participate in HTML forms.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals)
  */
 external class ElementInternals

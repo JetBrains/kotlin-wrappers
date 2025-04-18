@@ -17,7 +17,7 @@ import web.uievents.DragEvent
 import web.uievents.PointerEvent
 
 /**
- * All of the SVG DOM interfaces that correspond directly to elements in the SVG language derive from the SVGElement interface.
+ * All of the SVG DOM interfaces that correspond directly to elements in the SVG language derive from the `SVGElement` interface.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGElement)
  */

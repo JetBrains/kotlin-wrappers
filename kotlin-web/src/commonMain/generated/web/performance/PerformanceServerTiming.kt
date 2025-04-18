@@ -6,6 +6,8 @@ import js.core.JsAny
 import web.time.DOMHighResTimeStamp
 
 /**
+ * The **`PerformanceServerTiming`** interface surfaces server metrics that are sent with the response in the Server-Timing HTTP header.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceServerTiming)
  */
 external class PerformanceServerTiming

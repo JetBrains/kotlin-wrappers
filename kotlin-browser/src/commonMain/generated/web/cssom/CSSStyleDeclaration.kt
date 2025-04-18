@@ -8,7 +8,7 @@ import js.iterable.JsIterable
 import kotlin.js.definedExternally
 
 /**
- * An object that is a CSS declaration block, and exposes style information and various style-related methods and properties.
+ * The **`CSSStyleDeclaration`** interface represents an object that is a CSS declaration block, and exposes style information and various style-related methods and properties.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleDeclaration)
  */

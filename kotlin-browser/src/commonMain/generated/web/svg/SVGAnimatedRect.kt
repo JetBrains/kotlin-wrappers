@@ -6,7 +6,7 @@ import web.geometry.DOMRect
 import web.geometry.DOMRectReadOnly
 
 /**
- * Used for attributes of basic SVGRect which can be animated.
+ * The `SVGAnimatedRect` interface is used for attributes of basic SVGRect which can be animated.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedRect)
  */

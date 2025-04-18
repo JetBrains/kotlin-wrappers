@@ -7,6 +7,8 @@ import web.events.JsEvent
 import web.popover.ToggleEvent
 
 /**
+ * The **`HTMLDetailsElement`** interface provides special properties (beyond the regular HTMLElement interface it also has available to it by inheritance) for manipulating details elements.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLDetailsElement)
  */
 open external class HTMLDetailsElement

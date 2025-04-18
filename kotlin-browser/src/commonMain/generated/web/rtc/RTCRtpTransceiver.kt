@@ -5,6 +5,8 @@ package web.rtc
 import js.array.ReadonlyArray
 
 /**
+ * The WebRTC interface **`RTCRtpTransceiver`** describes a permanent pairing of an RTCRtpSender and an RTCRtpReceiver, along with some shared state.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCRtpTransceiver)
  */
 external class RTCRtpTransceiver

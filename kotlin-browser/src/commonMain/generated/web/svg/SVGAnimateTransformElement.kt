@@ -3,6 +3,8 @@
 package web.svg
 
 /**
+ * The `SVGAnimateTransformElement` interface corresponds to the animateTransform element.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimateTransformElement)
  */
 open external class SVGAnimateTransformElement

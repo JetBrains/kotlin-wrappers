@@ -7,7 +7,7 @@ import js.typedarrays.Uint8Array
 import kotlin.js.definedExternally
 
 /**
- * A node able to provide real-time frequency and time-domain analysis information. It is an AudioNode that passes the audio stream unchanged from the input to the output, but allows you to take the generated data, process it, and create audio visualizations.
+ * The **`AnalyserNode`** interface represents a node able to provide real-time frequency and time-domain analysis information.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AnalyserNode)
  */

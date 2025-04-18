@@ -7,7 +7,7 @@ import js.core.JsString
 import js.iterable.JsIterable
 
 /**
- * A type returned by some APIs which contains a list of DOMString (strings).
+ * The **`DOMStringList`** interface is a legacy type returned by some APIs and represents a non-modifiable list of strings (`DOMString`).
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMStringList)
  */

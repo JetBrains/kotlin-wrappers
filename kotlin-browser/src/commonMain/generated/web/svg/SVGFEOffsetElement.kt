@@ -3,7 +3,7 @@
 package web.svg
 
 /**
- * Corresponds to the <feOffset> element.
+ * The **`SVGFEOffsetElement`** interface corresponds to the feOffset element.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFEOffsetElement)
  */

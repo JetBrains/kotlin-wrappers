@@ -3,7 +3,7 @@
 package web.html
 
 /**
- * A HTML line break element (<br>). It inherits from HTMLElement.
+ * The **`HTMLBRElement`** interface represents an HTML line break element (br).
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLBRElement)
  */

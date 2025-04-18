@@ -6,6 +6,8 @@ import js.array.ArrayLike
 import js.iterable.JsIterable
 
 /**
+ * The **`MediaList`** interface represents the media queries of a stylesheet, e.g., those set using a link element's `media` attribute.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaList)
  */
 external class MediaList

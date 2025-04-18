@@ -3,6 +3,8 @@
 package web.cssom
 
 /**
+ * The **`CSSUnitValue`** interface of the CSS Typed Object Model API represents values that contain a single unit type.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSUnitValue)
  */
 open external class CSSUnitValue(

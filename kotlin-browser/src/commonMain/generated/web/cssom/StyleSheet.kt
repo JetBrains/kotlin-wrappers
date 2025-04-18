@@ -5,7 +5,7 @@ package web.cssom
 import js.core.JsAny
 
 /**
- * A single style sheet. CSS style sheets will further implement the more specialized CSSStyleSheet interface.
+ * An object implementing the `StyleSheet` interface represents a single style sheet.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/StyleSheet)
  */

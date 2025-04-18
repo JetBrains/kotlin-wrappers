@@ -7,6 +7,8 @@ import web.dom.Element
 import kotlin.js.definedExternally
 
 /**
+ * The **`KeyframeEffect`** interface of the Web Animations API lets us create sets of animatable properties and values, called **keyframes.** These can then be played using the Animation.Animation constructor.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/KeyframeEffect)
  */
 open external class KeyframeEffect(

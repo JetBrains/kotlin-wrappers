@@ -3,7 +3,7 @@
 package web.cssom
 
 /**
- * An object representing a single CSS @namespace at-rule. It implements the CSSRule interface, with a type value of 10 (CSSRule.NAMESPACE_RULE).
+ * The **`CSSNamespaceRule`** interface describes an object representing a single CSS @namespace at-rule.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSNamespaceRule)
  */

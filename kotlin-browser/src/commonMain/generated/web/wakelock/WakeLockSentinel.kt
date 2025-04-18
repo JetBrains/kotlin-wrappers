@@ -9,6 +9,7 @@ import web.events.*
 import kotlin.js.JsName
 
 /**
+ * The **`WakeLockSentinel`** interface of the Screen Wake Lock API can be used to monitor the status of the platform screen wake lock, and manually release the lock when needed.
  * Available only in secure contexts.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WakeLockSentinel)

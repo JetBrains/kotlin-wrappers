@@ -10,7 +10,7 @@ import kotlin.js.JsName
 import kotlin.js.definedExternally
 
 /**
- * A single media track within a stream; typically, these are audio or video tracks, but other track types may exist as well.
+ * The **`MediaStreamTrack`** interface of the Media Capture and Streams API represents a single media track within a stream; typically, these are audio or video tracks, but other track types may exist as well.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStreamTrack)
  */

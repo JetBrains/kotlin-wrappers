@@ -3,6 +3,8 @@
 package web.cssom
 
 /**
+ * The **`CSSFontFaceRule`** interface represents an @font-face at-rule.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSFontFaceRule)
  */
 external class CSSFontFaceRule

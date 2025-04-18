@@ -9,7 +9,7 @@ import web.events.EventType
 import kotlin.js.definedExternally
 
 /**
- * Events that occur due to the user moving a mouse wheel or similar input device.
+ * The **`WheelEvent`** interface represents events that occur due to the user moving a mouse wheel or similar input device.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WheelEvent)
  */

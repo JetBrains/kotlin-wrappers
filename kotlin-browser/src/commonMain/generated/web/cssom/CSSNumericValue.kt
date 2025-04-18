@@ -3,6 +3,8 @@
 package web.cssom
 
 /**
+ * The **`CSSNumericValue`** interface of the CSS Typed Object Model API represents operations that all numeric values can perform.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSNumericValue)
  */
 open external class CSSNumericValue

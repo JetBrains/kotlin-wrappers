@@ -16,7 +16,7 @@ import web.rendering.RenderingContextId
 import kotlin.js.definedExternally
 
 /**
- * Provides properties and methods for manipulating the layout and presentation of <canvas> elements. The HTMLCanvasElement interface also inherits the properties and methods of the HTMLElement interface.
+ * The **`HTMLCanvasElement`** interface provides properties and methods for manipulating the layout and presentation of canvas elements.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLCanvasElement)
  */

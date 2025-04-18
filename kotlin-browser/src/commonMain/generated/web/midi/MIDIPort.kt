@@ -11,6 +11,7 @@ import web.events.JsEvent
 import kotlin.js.JsName
 
 /**
+ * The **`MIDIPort`** interface of the Web MIDI API represents a MIDI input or output port.
  * Available only in secure contexts.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MIDIPort)

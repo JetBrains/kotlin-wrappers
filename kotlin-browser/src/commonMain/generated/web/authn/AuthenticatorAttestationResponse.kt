@@ -7,6 +7,7 @@ import js.buffer.ArrayBuffer
 import js.core.JsString
 
 /**
+ * The **`AuthenticatorAttestationResponse`** interface of the Web Authentication API is the result of a WebAuthn credential registration.
  * Available only in secure contexts.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AuthenticatorAttestationResponse)

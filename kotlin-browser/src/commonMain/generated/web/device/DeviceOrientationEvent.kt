@@ -10,7 +10,7 @@ import web.events.EventType
 import kotlin.js.definedExternally
 
 /**
- * The DeviceOrientationEvent provides web developers with information from the physical orientation of the device running the web page.
+ * The **`DeviceOrientationEvent`** interface of the Device Orientation Events provides web developers with information from the physical orientation of the device running the web page.
  * Available only in secure contexts.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DeviceOrientationEvent)

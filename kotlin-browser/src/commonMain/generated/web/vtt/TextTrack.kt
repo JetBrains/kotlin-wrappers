@@ -5,7 +5,7 @@ package web.vtt
 import web.events.*
 
 /**
- * This interface also inherits properties from EventTarget.
+ * The **`TextTrack`** interface of the WebVTT API represents a text track associated with a media element.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextTrack)
  */

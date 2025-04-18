@@ -10,7 +10,7 @@ import web.events.EventType
 import kotlin.js.definedExternally
 
 /**
- * A StorageEvent is sent to a window when a storage area it has access to is changed within the context of another document.
+ * The **`StorageEvent`** interface is implemented by the Window/storage_event event, which is sent to a window when a storage area the window has access to is changed within the context of another document.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/StorageEvent)
  */

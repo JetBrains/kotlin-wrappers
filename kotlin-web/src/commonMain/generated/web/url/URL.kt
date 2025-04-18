@@ -6,7 +6,7 @@ import web.blob.Blob
 import kotlin.js.definedExternally
 
 /**
- * The URL interface represents an object providing static methods used for creating object URLs.
+ * The **`URL`** interface is used to parse, construct, normalize, and encode URL.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/URL)
  */

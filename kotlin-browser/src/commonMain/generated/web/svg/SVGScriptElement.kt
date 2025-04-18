@@ -5,7 +5,7 @@ package web.svg
 import web.dom.HTMLOrSVGScriptElement
 
 /**
- * Corresponds to the SVG <script> element.
+ * The **`SVGScriptElement`** interface corresponds to the SVG script element.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGScriptElement)
  */

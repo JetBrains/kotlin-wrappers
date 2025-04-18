@@ -7,6 +7,8 @@ import web.events.JsEvent
 import web.events.ProgressEvent
 
 /**
+ * The **`XMLHttpRequestUpload`** interface represents the upload process for a specific XMLHttpRequest.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XMLHttpRequestUpload)
  */
 external class XMLHttpRequestUpload

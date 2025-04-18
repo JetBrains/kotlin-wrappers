@@ -6,6 +6,8 @@ import js.array.ArrayLike
 import js.iterable.JsIterable
 
 /**
+ * The **`TextTrackCueList`** interface of the WebVTT API is an array-like object that represents a dynamically updating list of TextTrackCue objects.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextTrackCueList)
  */
 external class TextTrackCueList

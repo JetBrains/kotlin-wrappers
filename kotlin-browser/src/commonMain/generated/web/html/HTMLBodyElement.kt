@@ -5,7 +5,7 @@ package web.html
 import web.window.WindowEventHandlers
 
 /**
- * Provides special properties (beyond those inherited from the regular HTMLElement interface) for manipulating <body> elements.
+ * The **`HTMLBodyElement`** interface provides special properties (beyond those inherited from the regular HTMLElement interface) for manipulating body elements.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLBodyElement)
  */

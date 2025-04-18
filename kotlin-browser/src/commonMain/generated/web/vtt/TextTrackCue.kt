@@ -5,7 +5,7 @@ package web.vtt
 import web.events.*
 
 /**
- * TextTrackCues represent a string of text that will be displayed for some duration of time on a TextTrack. This includes the start and end times that the cue will be displayed. A TextTrackCue cannot be used directly, instead one of the derived types (e.g. VTTCue) must be used.
+ * The **`TextTrackCue`** interface of the WebVTT API is the abstract base class for the various derived cue types, such as VTTCue; you will work with these derived types rather than the base class.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextTrackCue)
  */

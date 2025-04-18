@@ -3,7 +3,7 @@
 package web.svg
 
 /**
- * Corresponds to the <feSpotLight> element.
+ * The **`SVGFESpotLightElement`** interface corresponds to the feSpotLight element.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFESpotLightElement)
  */

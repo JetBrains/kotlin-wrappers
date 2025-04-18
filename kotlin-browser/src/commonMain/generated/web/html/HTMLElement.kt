@@ -21,7 +21,7 @@ import web.uievents.PointerEvent
 import kotlin.js.definedExternally
 
 /**
- * Any HTML element. Some elements directly implement this interface, while others implement it via an interface that inherits it.
+ * The **`HTMLElement`** interface represents any HTML element.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement)
  */

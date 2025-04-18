@@ -5,6 +5,8 @@ package web.pip
 import web.events.*
 
 /**
+ * The **`PictureInPictureWindow`** interface represents an object able to programmatically obtain the **`width`** and **`height`** and **`resize event`** of the floating video window.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PictureInPictureWindow)
  */
 external class PictureInPictureWindow

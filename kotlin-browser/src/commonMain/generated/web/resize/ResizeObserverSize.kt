@@ -3,6 +3,8 @@
 package web.resize
 
 /**
+ * The **`ResizeObserverSize`** interface of the Resize Observer API is used by the ResizeObserverEntry interface to access the box sizing properties of the element being observed.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ResizeObserverSize)
  */
 external class ResizeObserverSize

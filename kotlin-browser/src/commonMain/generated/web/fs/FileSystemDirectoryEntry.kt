@@ -5,6 +5,8 @@ package web.fs
 import kotlin.js.definedExternally
 
 /**
+ * The **`FileSystemDirectoryEntry`** interface of the File and Directory Entries API represents a directory in a file system.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemDirectoryEntry)
  */
 external class FileSystemDirectoryEntry

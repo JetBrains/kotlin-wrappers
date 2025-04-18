@@ -11,6 +11,8 @@ import web.html.HTMLElement
 import kotlin.js.definedExternally
 
 /**
+ * The **`SubmitEvent`** interface defines the object used to represent an HTML form's HTMLFormElement.submit_event event.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubmitEvent)
  */
 open external class SubmitEvent(

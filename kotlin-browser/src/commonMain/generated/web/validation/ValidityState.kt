@@ -3,7 +3,7 @@
 package web.validation
 
 /**
- * The validity states that an element can be in, with respect to constraint validation. Together, they help explain why an element's value fails to validate, if it's not valid.
+ * The **`ValidityState`** interface represents the _validity states_ that an element can be in, with respect to constraint validation.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ValidityState)
  */

@@ -10,7 +10,7 @@ import web.events.EventType
 import kotlin.js.definedExternally
 
 /**
- * The TrackEvent interface, part of the HTML DOM specification, is used for events which represent changes to the set of available tracks on an HTML media element; these events are addtrack and removetrack.
+ * The **`TrackEvent`** interface of the HTML DOM API is used for events which represent changes to a set of available tracks on an HTML media element; these events are `addtrack` and `removetrack`.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TrackEvent)
  */

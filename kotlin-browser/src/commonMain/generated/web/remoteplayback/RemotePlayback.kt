@@ -11,6 +11,8 @@ import kotlin.js.JsName
 import kotlin.js.definedExternally
 
 /**
+ * The **`RemotePlayback`** interface of the Remote Playback API allows the page to detect availability of remote playback devices, then connect to and control playing on these devices.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RemotePlayback)
  */
 external class RemotePlayback

@@ -3,7 +3,7 @@
 package web.html
 
 /**
- * Provides special properties (beyond those of the HTMLElement interface it also has available to it by inheritance) for manipulating <hr> elements.
+ * The **`HTMLHRElement`** interface provides special properties (beyond those of the HTMLElement interface it also has available to it by inheritance) for manipulating hr elements.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLHRElement)
  */

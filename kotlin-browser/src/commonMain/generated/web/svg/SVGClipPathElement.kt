@@ -3,7 +3,7 @@
 package web.svg
 
 /**
- * Provides access to the properties of <clipPath> elements, as well as methods to manipulate them.
+ * The **`SVGClipPathElement`** interface provides access to the properties of clipPath elements, as well as methods to manipulate them.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGClipPathElement)
  */

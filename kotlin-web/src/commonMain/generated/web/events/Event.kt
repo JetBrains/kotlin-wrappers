@@ -10,7 +10,7 @@ import web.time.DOMHighResTimeStamp
 import kotlin.js.definedExternally
 
 /**
- * An event which takes place in the DOM.
+ * The **`Event`** interface represents an event which takes place on an `EventTarget`.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Event)
  */

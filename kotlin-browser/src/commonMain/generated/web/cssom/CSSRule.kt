@@ -3,7 +3,7 @@
 package web.cssom
 
 /**
- * A single CSS rule. There are several types of rules, listed in the Type constants section below.
+ * The **`CSSRule`** interface represents a single CSS rule.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSRule)
  */

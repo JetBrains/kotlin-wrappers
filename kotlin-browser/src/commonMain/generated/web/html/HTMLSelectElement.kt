@@ -14,7 +14,7 @@ import web.validation.ValidityState
 import kotlin.js.definedExternally
 
 /**
- * A <select> HTML Element. These elements also share all of the properties and methods of other HTML elements via the HTMLElement interface.
+ * The **`HTMLSelectElement`** interface represents a select HTML Element.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSelectElement)
  */

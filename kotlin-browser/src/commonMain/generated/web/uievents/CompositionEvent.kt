@@ -9,7 +9,7 @@ import web.events.EventType
 import kotlin.js.definedExternally
 
 /**
- * The DOM CompositionEvent represents events that occur due to the user indirectly entering text.
+ * The DOM **`CompositionEvent`** represents events that occur due to the user indirectly entering text.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CompositionEvent)
  */

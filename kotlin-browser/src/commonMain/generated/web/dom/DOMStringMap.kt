@@ -6,7 +6,7 @@ import js.core.JsString
 import js.objects.Record
 
 /**
- * Used by the dataset HTML attribute to represent data for custom attributes added to elements.
+ * The **`DOMStringMap`** interface is used for the HTMLElement.dataset attribute, to represent data for custom attributes added to elements.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMStringMap)
  */

@@ -13,6 +13,8 @@ import web.streams.ReadableStream
 import web.streams.WritableStream
 
 /**
+ * The **`TextEncoderStream`** interface of the Encoding API converts a stream of strings into bytes in the UTF-8 encoding.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextEncoderStream)
  */
 open external class TextEncoderStream :

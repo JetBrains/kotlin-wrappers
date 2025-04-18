@@ -3,6 +3,8 @@
 package web.navigation
 
 /**
+ * The **`NavigationActivation`** interface of the Navigation API represents a recent cross-document navigation.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigationActivation)
  */
 external class NavigationActivation

@@ -3,6 +3,8 @@
 package web.cssom
 
 /**
+ * The **`CSSCounterStyleRule`** interface represents an @counter-style at-rule.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSCounterStyleRule)
  */
 external class CSSCounterStyleRule

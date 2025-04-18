@@ -3,6 +3,8 @@
 package web.svg
 
 /**
+ * The **`SVGMarkerElement`** interface provides access to the properties of marker elements, as well as methods to manipulate them.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGMarkerElement)
  */
 open external class SVGMarkerElement

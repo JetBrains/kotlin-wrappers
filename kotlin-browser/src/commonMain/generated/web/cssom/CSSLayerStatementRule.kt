@@ -6,6 +6,8 @@ import js.array.ReadonlyArray
 import js.core.JsString
 
 /**
+ * The **`CSSLayerStatementRule`** represents a @layer statement rule.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSLayerStatementRule)
  */
 external class CSSLayerStatementRule

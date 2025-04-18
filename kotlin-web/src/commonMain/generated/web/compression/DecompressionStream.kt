@@ -13,6 +13,8 @@ import web.streams.ReadableStream
 import web.streams.WritableStream
 
 /**
+ * The **`DecompressionStream`** interface of the Compression Streams API is an API for decompressing a stream of data.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DecompressionStream)
  */
 open external class DecompressionStream(

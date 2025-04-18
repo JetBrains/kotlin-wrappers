@@ -3,7 +3,7 @@
 package web.cssom
 
 /**
- * A single condition CSS at-rule, which consists of a condition and a statement block. It is a child of CSSGroupingRule.
+ * An object implementing the **`CSSConditionRule`** interface represents a single condition CSS at-rule, which consists of a condition and a statement block.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSConditionRule)
  */

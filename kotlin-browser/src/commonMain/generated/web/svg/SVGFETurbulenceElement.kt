@@ -3,7 +3,7 @@
 package web.svg
 
 /**
- * Corresponds to the <feTurbulence> element.
+ * The **`SVGFETurbulenceElement`** interface corresponds to the feTurbulence element.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFETurbulenceElement)
  */

@@ -8,7 +8,7 @@ import web.events.JsEvent
 import web.vtt.TextTrack
 
 /**
- * The HTMLTrackElement
+ * The **`HTMLTrackElement`** interface represents an HTML track element within the DOM.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTrackElement)
  */

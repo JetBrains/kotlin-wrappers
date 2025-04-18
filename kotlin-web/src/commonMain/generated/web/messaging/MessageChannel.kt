@@ -3,7 +3,7 @@
 package web.messaging
 
 /**
- * This Channel Messaging API interface allows us to create a new message channel and send data through it via its two MessagePort properties.
+ * The **`MessageChannel`** interface of the Channel Messaging API allows us to create a new message channel and send data through it via its two MessagePort properties.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MessageChannel)
  */

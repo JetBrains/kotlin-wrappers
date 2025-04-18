@@ -7,6 +7,8 @@ import web.events.EventTarget
 import web.events.ProgressEvent
 
 /**
+ * `XMLHttpRequestEventTarget` is the interface that describes the event handlers shared on XMLHttpRequest and XMLHttpRequestUpload.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XMLHttpRequestEventTarget)
  */
 open external class XMLHttpRequestEventTarget

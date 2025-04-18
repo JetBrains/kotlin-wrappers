@@ -7,6 +7,8 @@ import web.events.EventTarget
 import web.time.DOMHighResTimeStamp
 
 /**
+ * The `PerformanceEventTiming` interface of the Event Timing API provides insights into the latency of certain event types triggered by user interaction.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceEventTiming)
  */
 external class PerformanceEventTiming

@@ -5,6 +5,8 @@ package web.permissions
 import web.events.*
 
 /**
+ * The **`PermissionStatus`** interface of the Permissions API provides the state of an object and an event handler for monitoring changes to said state.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PermissionStatus)
  */
 external class PermissionStatus

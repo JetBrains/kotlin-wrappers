@@ -9,6 +9,8 @@ import web.events.EventType
 import web.time.DOMHighResTimeStamp
 
 /**
+ * The **`BlobEvent`** interface of the MediaStream Recording API represents events associated with a Blob.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BlobEvent)
  */
 open external class BlobEvent(

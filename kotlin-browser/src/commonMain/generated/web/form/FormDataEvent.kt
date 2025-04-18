@@ -9,6 +9,8 @@ import web.events.Event
 import web.events.EventType
 
 /**
+ * The **`FormDataEvent`** interface represents a `formdata` event — such an event is fired on an HTMLFormElement object after the entry list representing the form's data is constructed.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FormDataEvent)
  */
 open external class FormDataEvent(

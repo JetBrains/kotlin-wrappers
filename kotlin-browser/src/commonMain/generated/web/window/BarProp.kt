@@ -3,6 +3,8 @@
 package web.window
 
 /**
+ * The **`BarProp`** interface of the Document Object Model represents the web browser user interface elements that are exposed to scripts in web pages.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BarProp)
  */
 external class BarProp

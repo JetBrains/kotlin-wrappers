@@ -10,6 +10,7 @@ import kotlin.js.JsName
 import kotlin.js.definedExternally
 
 /**
+ * The **`ImageDecoder`** interface of the WebCodecs API provides a way to unpack and decode encoded image data.
  * Available only in secure contexts.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageDecoder)

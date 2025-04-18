@@ -8,7 +8,7 @@ import web.geometry.DOMRect
 import kotlin.js.definedExternally
 
 /**
- * Implemented by elements that support rendering child text content. It is inherited by various text-related interfaces, such as SVGTextElement, SVGTSpanElement, SVGTRefElement, SVGAltGlyphElement and SVGTextPathElement.
+ * The **`SVGTextContentElement`** interface is implemented by elements that support rendering child text content.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTextContentElement)
  */

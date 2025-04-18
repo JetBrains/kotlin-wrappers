@@ -12,6 +12,8 @@ import web.ranges.StaticRange
 import kotlin.js.definedExternally
 
 /**
+ * The **`InputEvent`** interface represents an event notifying the user of editable content changes.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/InputEvent)
  */
 open external class InputEvent(

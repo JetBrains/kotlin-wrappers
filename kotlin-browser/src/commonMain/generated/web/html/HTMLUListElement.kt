@@ -3,7 +3,7 @@
 package web.html
 
 /**
- * Provides special properties (beyond those defined on the regular HTMLElement interface it also has available to it by inheritance) for manipulating unordered list elements.
+ * The **`HTMLUListElement`** interface provides special properties (beyond those defined on the regular HTMLElement interface it also has available to it by inheritance) for manipulating unordered list (ul) elements.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLUListElement)
  */

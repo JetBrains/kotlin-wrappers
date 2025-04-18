@@ -10,7 +10,7 @@ import web.fonts.FontFaceSource
 import web.promise.PromiseRejectionEvent
 
 /**
- * This Web Workers API interface is an interface representing the scope of any worker. Workers have no browsing context; this scope contains the information usually conveyed by Window objects — in this case event handlers, the console or the associated WorkerNavigator object. Each WorkerGlobalScope has its own event loop.
+ * The **`WorkerGlobalScope`** interface of the Web Workers API is an interface representing the scope of any worker.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WorkerGlobalScope)
  */

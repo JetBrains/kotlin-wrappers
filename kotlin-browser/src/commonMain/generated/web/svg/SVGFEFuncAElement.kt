@@ -3,7 +3,7 @@
 package web.svg
 
 /**
- * Corresponds to the <feFuncA> element.
+ * The **`SVGFEFuncAElement`** interface corresponds to the feFuncA element.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFEFuncAElement)
  */

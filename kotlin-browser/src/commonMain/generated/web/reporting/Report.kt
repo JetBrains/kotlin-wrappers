@@ -5,6 +5,8 @@ package web.reporting
 import js.core.JsAny
 
 /**
+ * The `Report` interface of the Reporting API represents a single report.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Report)
  */
 external class Report

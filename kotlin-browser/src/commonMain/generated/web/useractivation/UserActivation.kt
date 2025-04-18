@@ -3,6 +3,8 @@
 package web.useractivation
 
 /**
+ * The **`UserActivation`** interface provides information about whether a user is currently interacting with the page, or has completed an interaction since page load.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/UserActivation)
  */
 external class UserActivation

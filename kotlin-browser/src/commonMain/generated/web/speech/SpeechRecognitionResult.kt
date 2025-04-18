@@ -6,6 +6,8 @@ import js.array.ArrayLike
 import js.iterable.JsIterable
 
 /**
+ * The **`SpeechRecognitionResult`** interface of the Web Speech API represents a single recognition match, which may contain multiple SpeechRecognitionAlternative objects.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechRecognitionResult)
  */
 external class SpeechRecognitionResult

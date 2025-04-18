@@ -9,6 +9,8 @@ import kotlin.js.JsName
 import kotlin.js.definedExternally
 
 /**
+ * The **`FontFace`** interface of the CSS Font Loading API represents a single usable font face.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FontFace)
  */
 open external class FontFace(

@@ -6,6 +6,8 @@ import js.core.JsAny
 import kotlin.js.definedExternally
 
 /**
+ * A `DOMQuad` is a collection of four `DOMPoint`s defining the corners of an arbitrary quadrilateral.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMQuad)
  */
 open external class DOMQuad(

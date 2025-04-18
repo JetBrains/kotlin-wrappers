@@ -9,7 +9,7 @@ import web.serialization.StructuredSerializeOptions
 import kotlin.js.definedExternally
 
 /**
- * The Client interface represents an executable context such as a Worker, or a SharedWorker. Window clients are represented by the more-specific WindowClient. You can get Client/WindowClient objects from methods such as Clients.matchAll() and Clients.get().
+ * The `Client` interface represents an executable context such as a Worker, or a SharedWorker.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Client)
  */

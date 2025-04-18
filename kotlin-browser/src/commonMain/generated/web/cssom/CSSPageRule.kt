@@ -3,7 +3,7 @@
 package web.cssom
 
 /**
- * CSSPageRule is an interface representing a single CSS @page rule. It implements the CSSRule interface with a type value of 6 (CSSRule.PAGE_RULE).
+ * **`CSSPageRule`** represents a single CSS @page rule.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSPageRule)
  */

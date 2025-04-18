@@ -8,6 +8,8 @@ import seskar.js.JsAlias.Companion.THIS
 import kotlin.js.definedExternally
 
 /**
+ * The **`CustomEvent`** interface represents events initialized by an application for any purpose.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CustomEvent)
  */
 open external class CustomEvent<out D : JsAny?>(

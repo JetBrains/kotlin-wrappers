@@ -8,6 +8,8 @@ import js.core.JsInt
 import js.iterable.JsIterator
 
 /**
+ * The **`CSSNumericArray`** interface of the CSS Typed Object Model API contains a list of CSSNumericValue objects.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSNumericArray)
  */
 external class CSSNumericArray

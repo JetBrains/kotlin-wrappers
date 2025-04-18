@@ -8,6 +8,7 @@ import web.time.DOMHighResTimeStamp
 import kotlin.js.definedExternally
 
 /**
+ * The **`MIDIOutput`** interface of the Web MIDI API provides methods to add messages to the queue of an output device, and to clear the queue of messages.
  * Available only in secure contexts.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MIDIOutput)

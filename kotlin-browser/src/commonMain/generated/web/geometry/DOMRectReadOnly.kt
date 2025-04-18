@@ -6,6 +6,8 @@ import js.core.JsAny
 import kotlin.js.definedExternally
 
 /**
+ * The **`DOMRectReadOnly`** interface specifies the standard properties (also used by DOMRect) to define a rectangle whose properties are immutable.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMRectReadOnly)
  */
 open external class DOMRectReadOnly(

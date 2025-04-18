@@ -3,7 +3,7 @@
 package web.dom
 
 /**
- * An iterator over the members of a list of the nodes in a subtree of the DOM. The nodes will be returned in document order.
+ * The **`NodeIterator`** interface represents an iterator to traverse nodes of a DOM subtree in document order.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NodeIterator)
  */

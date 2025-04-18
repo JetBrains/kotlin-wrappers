@@ -3,6 +3,8 @@
 package web.cssom
 
 /**
+ * The **`CSSFontPaletteValuesRule`** interface represents an @font-palette-values at-rule.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSFontPaletteValuesRule)
  */
 external class CSSFontPaletteValuesRule

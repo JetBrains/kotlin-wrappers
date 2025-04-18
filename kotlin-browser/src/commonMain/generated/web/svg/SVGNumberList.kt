@@ -6,7 +6,7 @@ import js.array.ArrayLike
 import js.iterable.JsIterable
 
 /**
- * The SVGNumberList defines a list of SVGNumber objects.
+ * The **`SVGNumberList`** interface defines a list of numbers.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGNumberList)
  */

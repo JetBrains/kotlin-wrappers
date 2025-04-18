@@ -13,6 +13,7 @@ import kotlin.js.JsName
 import kotlin.js.definedExternally
 
 /**
+ * The **`ClipboardItem`** interface of the Clipboard API represents a single item format, used when reading or writing clipboard data using Clipboard.read() and Clipboard.write() respectively.
  * Available only in secure contexts.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ClipboardItem)

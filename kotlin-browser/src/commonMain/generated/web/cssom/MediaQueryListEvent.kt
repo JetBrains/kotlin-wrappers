@@ -10,6 +10,8 @@ import web.events.EventType
 import kotlin.js.definedExternally
 
 /**
+ * The `MediaQueryListEvent` object stores information on the changes that have happened to a MediaQueryList object — instances are available as the event object on a function referenced by a MediaQueryList.change_event event.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaQueryListEvent)
  */
 open external class MediaQueryListEvent(

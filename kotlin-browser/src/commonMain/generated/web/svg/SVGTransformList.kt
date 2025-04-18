@@ -8,7 +8,7 @@ import web.geometry.DOMMatrixReadOnly
 import kotlin.js.definedExternally
 
 /**
- * The SVGTransformList defines a list of SVGTransform objects.
+ * The **`SVGTransformList`** interface defines a list of SVGTransform objects.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTransformList)
  */

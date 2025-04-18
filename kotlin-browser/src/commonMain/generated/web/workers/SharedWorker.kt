@@ -11,6 +11,8 @@ import web.url.URL
 import kotlin.js.definedExternally
 
 /**
+ * The **`SharedWorker`** interface represents a specific kind of worker that can be _accessed_ from several browsing contexts, such as several windows, iframes or even workers.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SharedWorker)
  */
 open external class SharedWorker(

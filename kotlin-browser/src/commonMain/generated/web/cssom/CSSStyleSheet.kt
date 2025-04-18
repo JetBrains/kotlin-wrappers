@@ -8,7 +8,7 @@ import kotlin.js.JsName
 import kotlin.js.definedExternally
 
 /**
- * A single CSS style sheet. It inherits properties and methods from its parent, StyleSheet.
+ * The **`CSSStyleSheet`** interface represents a single CSS stylesheet, and lets you inspect and modify the list of rules contained in the stylesheet.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleSheet)
  */

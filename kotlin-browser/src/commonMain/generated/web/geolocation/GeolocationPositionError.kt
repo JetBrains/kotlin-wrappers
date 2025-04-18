@@ -3,6 +3,8 @@
 package web.geolocation
 
 /**
+ * The **`GeolocationPositionError`** interface represents the reason of an error occurring when using the geolocating device.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GeolocationPositionError)
  */
 external class GeolocationPositionError

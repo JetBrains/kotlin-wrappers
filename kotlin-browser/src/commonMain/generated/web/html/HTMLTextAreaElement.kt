@@ -13,7 +13,7 @@ import web.validation.ValidityState
 import kotlin.js.definedExternally
 
 /**
- * Provides special properties and methods for manipulating the layout and presentation of <textarea> elements.
+ * The **`HTMLTextAreaElement`** interface provides properties and methods for manipulating the layout and presentation of textarea elements.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement)
  */

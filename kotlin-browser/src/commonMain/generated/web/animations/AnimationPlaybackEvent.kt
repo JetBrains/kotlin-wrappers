@@ -10,6 +10,8 @@ import web.events.EventType
 import kotlin.js.definedExternally
 
 /**
+ * The AnimationPlaybackEvent interface of the Web Animations API represents animation events.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AnimationPlaybackEvent)
  */
 open external class AnimationPlaybackEvent(

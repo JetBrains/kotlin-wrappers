@@ -3,7 +3,7 @@
 package web.svg
 
 /**
- * Corresponds to the <pattern> element.
+ * The **`SVGPatternElement`** interface corresponds to the pattern element.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGPatternElement)
  */

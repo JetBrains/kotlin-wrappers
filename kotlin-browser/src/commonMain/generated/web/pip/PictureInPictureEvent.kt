@@ -9,6 +9,8 @@ import web.events.Event
 import web.events.EventType
 
 /**
+ * The **`PictureInPictureEvent`** interface represents picture-in-picture-related events, including HTMLVideoElement/enterpictureinpicture_event, HTMLVideoElement/leavepictureinpicture_event and PictureInPictureWindow/resize_event.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PictureInPictureEvent)
  */
 open external class PictureInPictureEvent(

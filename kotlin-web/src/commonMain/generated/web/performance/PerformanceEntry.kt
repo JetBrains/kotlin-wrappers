@@ -6,7 +6,7 @@ import js.core.JsAny
 import web.time.DOMHighResTimeStamp
 
 /**
- * Encapsulates a single performance metric that is part of the performance timeline. A performance entry can be directly created by making a performance mark or measure (for example by calling the mark() method) at an explicit point in an application. Performance entries are also created in indirect ways such as loading a resource (such as an image).
+ * The **`PerformanceEntry`** object encapsulates a single performance metric that is part of the browser's performance timeline.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceEntry)
  */

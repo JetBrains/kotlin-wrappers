@@ -9,6 +9,8 @@ import seskar.js.JsAsync
 import kotlin.js.JsName
 
 /**
+ * The `ReadableStreamBYOBReader` interface of the Streams API defines a reader for a ReadableStream that supports zero-copy reading from an underlying byte source.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStreamBYOBReader)
  */
 open external class ReadableStreamBYOBReader(

@@ -10,7 +10,7 @@ import web.events.EventType
 import kotlin.js.definedExternally
 
 /**
- * The PageTransitionEvent is fired when a document is being loaded or unloaded.
+ * The **`PageTransitionEvent`** event object is available inside handler functions for the `pageshow` and `pagehide` events, fired when a document is being loaded or unloaded.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PageTransitionEvent)
  */

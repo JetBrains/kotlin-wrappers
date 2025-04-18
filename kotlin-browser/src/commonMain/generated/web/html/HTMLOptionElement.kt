@@ -3,7 +3,7 @@
 package web.html
 
 /**
- * <option> elements and inherits all classes and methods of the HTMLElement interface.
+ * The **`HTMLOptionElement`** interface represents option elements and inherits all properties and methods of the HTMLElement interface.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOptionElement)
  */

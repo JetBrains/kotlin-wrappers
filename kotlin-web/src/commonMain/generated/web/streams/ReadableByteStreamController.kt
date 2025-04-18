@@ -8,6 +8,8 @@ import js.errors.JsError
 import kotlin.js.definedExternally
 
 /**
+ * The **`ReadableByteStreamController`** interface of the Streams API represents a controller for a readable byte stream.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableByteStreamController)
  */
 external class ReadableByteStreamController

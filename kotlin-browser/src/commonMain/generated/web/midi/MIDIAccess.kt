@@ -8,6 +8,7 @@ import web.events.EventTarget
 import web.events.JsEvent
 
 /**
+ * The **`MIDIAccess`** interface of the Web MIDI API provides methods for listing MIDI input and output devices, and obtaining access to those devices.
  * Available only in secure contexts.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MIDIAccess)

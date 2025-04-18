@@ -3,7 +3,7 @@
 package web.audio
 
 /**
- * The position and orientation of the unique person listening to the audio scene, and is used in audio spatialization. All PannerNodes spatialize in relation to the AudioListener stored in the BaseAudioContext.listener attribute.
+ * The `AudioListener` interface represents the position and orientation of the unique person listening to the audio scene, and is used in audio spatialization.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioListener)
  */

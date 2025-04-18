@@ -9,7 +9,7 @@ import web.time.EpochTimeStamp
 import kotlin.js.definedExternally
 
 /**
- * Provides information about files and allows JavaScript in a web page to access their content.
+ * The **`File`** interface provides information about files and allows JavaScript in a web page to access their content.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/File)
  */

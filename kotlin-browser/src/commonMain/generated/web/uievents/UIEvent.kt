@@ -11,7 +11,7 @@ import web.window.Window
 import kotlin.js.definedExternally
 
 /**
- * Simple user interface events.
+ * The **`UIEvent`** interface represents simple user interface events.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/UIEvent)
  */

@@ -3,7 +3,7 @@
 package web.svg
 
 /**
- * Corresponds to the <symbol> element.
+ * The **`SVGSymbolElement`** interface corresponds to the symbol element.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGSymbolElement)
  */

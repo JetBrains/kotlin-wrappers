@@ -11,7 +11,7 @@ import web.events.EventType
 import kotlin.js.definedExternally
 
 /**
- * Events providing information related to errors in scripts or in files.
+ * The **`ErrorEvent`** interface represents events providing information related to errors in scripts or in files.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ErrorEvent)
  */

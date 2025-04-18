@@ -10,6 +10,8 @@ import web.events.JsEvent
 import kotlin.js.definedExternally
 
 /**
+ * The **`Animation`** interface of the Web Animations API represents a single animation player and provides playback controls and a timeline for an animation node or source.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Animation)
  */
 open external class Animation(

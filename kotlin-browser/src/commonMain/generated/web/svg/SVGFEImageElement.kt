@@ -3,7 +3,7 @@
 package web.svg
 
 /**
- * Corresponds to the <feImage> element.
+ * The **`SVGFEImageElement`** interface corresponds to the feImage element.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFEImageElement)
  */

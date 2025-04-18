@@ -6,6 +6,7 @@ import js.core.JsAny
 import web.time.EpochTimeStamp
 
 /**
+ * The **`GeolocationPosition`** interface represents the position of the concerned device at a given time.
  * Available only in secure contexts.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GeolocationPosition)

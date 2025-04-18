@@ -12,7 +12,7 @@ import web.permissions.Permissions
 import web.serviceworker.ServiceWorkerContainer
 
 /**
- * A subset of the Navigator interface allowed to be accessed from a Worker. Such an object is initialized for each worker and is available via the WorkerGlobalScope.navigator property obtained by calling window.self.navigator.
+ * The **`WorkerNavigator`** interface represents a subset of the Navigator interface allowed to be accessed from a Worker.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WorkerNavigator)
  */

@@ -6,7 +6,7 @@ import web.dom.HTMLOrSVGImageElement
 import web.http.CrossOrigin
 
 /**
- * Corresponds to the <image> element.
+ * The **`SVGImageElement`** interface corresponds to the image element.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGImageElement)
  */

@@ -10,6 +10,8 @@ import web.events.JsEvent
 import web.messaging.MessageEvent
 
 /**
+ * The **`BroadcastChannel`** interface represents a named channel that any browsing context of a given origin can subscribe to.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BroadcastChannel)
  */
 open external class BroadcastChannel(

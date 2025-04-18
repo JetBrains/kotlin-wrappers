@@ -7,6 +7,8 @@ import js.iterable.JsIterable
 import web.events.*
 
 /**
+ * The **`TextTrackList`** interface is used to represent a list of the text tracks defined for the associated video or audio element, with each track represented by a separate textTrack object in the list.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextTrackList)
  */
 external class TextTrackList

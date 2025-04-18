@@ -5,6 +5,8 @@ package web.ranges
 import web.dom.Node
 
 /**
+ * The **`AbstractRange`** abstract interface is the base class upon which all DOM range types are defined.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AbstractRange)
  */
 open external class AbstractRange

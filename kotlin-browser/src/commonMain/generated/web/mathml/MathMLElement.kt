@@ -17,6 +17,8 @@ import web.uievents.DragEvent
 import web.uievents.PointerEvent
 
 /**
+ * The **`MathMLElement`** interface represents any MathML element.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MathMLElement)
  */
 open external class MathMLElement

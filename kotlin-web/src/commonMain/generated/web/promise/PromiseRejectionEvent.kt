@@ -11,6 +11,8 @@ import web.events.Event
 import web.events.EventType
 
 /**
+ * The **`PromiseRejectionEvent`** interface represents events which are sent to the global script context when JavaScript Promises are rejected.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PromiseRejectionEvent)
  */
 open external class PromiseRejectionEvent(

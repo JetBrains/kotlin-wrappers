@@ -7,6 +7,8 @@ import web.rendering.OffscreenRenderingContext
 import web.rendering.RenderingContextId
 
 /**
+ * The **`OffscreenCanvasRenderingContext2D`** interface is a CanvasRenderingContext2D rendering context for drawing to the bitmap of an `OffscreenCanvas` object.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OffscreenCanvasRenderingContext2D)
  */
 sealed /* final */

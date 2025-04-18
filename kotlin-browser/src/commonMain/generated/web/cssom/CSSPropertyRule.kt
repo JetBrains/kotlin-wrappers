@@ -3,6 +3,8 @@
 package web.cssom
 
 /**
+ * The **`CSSPropertyRule`** interface of the CSS Properties and Values API represents a single CSS @property rule.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSPropertyRule)
  */
 external class CSSPropertyRule

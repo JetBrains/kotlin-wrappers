@@ -18,6 +18,8 @@ import kotlin.js.JsName
 import kotlin.js.definedExternally
 
 /**
+ * The **`FontFaceSet`** interface of the CSS Font Loading API manages the loading of font-faces and querying of their download status.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FontFaceSet)
  */
 sealed external interface FontFaceSet :

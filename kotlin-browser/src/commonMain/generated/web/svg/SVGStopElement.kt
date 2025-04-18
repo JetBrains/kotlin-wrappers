@@ -3,7 +3,7 @@
 package web.svg
 
 /**
- * Corresponds to the <stop> element.
+ * The **`SVGStopElement`** interface corresponds to the stop element.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGStopElement)
  */

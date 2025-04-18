@@ -3,6 +3,8 @@
 package web.cssom
 
 /**
+ * The **`StylePropertyMap`** interface of the CSS Typed Object Model API provides a representation of a CSS declaration block that is an alternative to CSSStyleDeclaration.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/StylePropertyMap)
  */
 sealed /* final */

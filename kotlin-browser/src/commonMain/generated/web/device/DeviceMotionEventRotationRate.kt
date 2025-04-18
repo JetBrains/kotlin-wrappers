@@ -3,6 +3,7 @@
 package web.device
 
 /**
+ * A **`DeviceMotionEventRotationRate`** interface of the Device Orientation Events provides information about the rate at which the device is rotating around all three axes.
  * Available only in secure contexts.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DeviceMotionEventRotationRate)

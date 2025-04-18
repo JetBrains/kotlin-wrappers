@@ -7,7 +7,7 @@ import web.url.URL
 import kotlin.js.definedExternally
 
 /**
- * Allows manipulation of the browser session history, that is the pages visited in the tab or frame that the current page is loaded in.
+ * The **`History`** interface of the History API allows manipulation of the browser _session history_, that is the pages visited in the tab or frame that the current page is loaded in.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/History)
  */

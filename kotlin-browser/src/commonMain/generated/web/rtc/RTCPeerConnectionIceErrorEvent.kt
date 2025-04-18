@@ -9,6 +9,8 @@ import web.events.Event
 import web.events.EventType
 
 /**
+ * The **`RTCPeerConnectionIceErrorEvent`** interface—based upon the Event interface—provides details pertaining to an ICE error announced by sending an RTCPeerConnection.icecandidateerror_event event to the RTCPeerConnection object.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnectionIceErrorEvent)
  */
 open external class RTCPeerConnectionIceErrorEvent(

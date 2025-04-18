@@ -11,6 +11,8 @@ import web.events.EventType
 import kotlin.js.definedExternally
 
 /**
+ * The **`FontFaceSetLoadEvent`** interface of the CSS Font Loading API represents events fired at a FontFaceSet after it starts loading font faces.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FontFaceSetLoadEvent)
  */
 open external class FontFaceSetLoadEvent(

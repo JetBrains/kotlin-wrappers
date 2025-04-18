@@ -8,6 +8,8 @@ import web.media.streams.MediaStream
 import kotlin.js.definedExternally
 
 /**
+ * The **`MediaRecorder`** interface of the MediaStream Recording API provides functionality to easily record media.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaRecorder)
  */
 open external class MediaRecorder(

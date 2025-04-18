@@ -13,6 +13,8 @@ import web.streams.ReadableStream
 import web.streams.WritableStream
 
 /**
+ * The **`CompressionStream`** interface of the Compression Streams API is an API for compressing a stream of data.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CompressionStream)
  */
 open external class CompressionStream(

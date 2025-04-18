@@ -7,7 +7,7 @@ import js.core.JsString
 import js.iterable.JsIterable
 
 /**
- * The SVGStringList defines a list of DOMString objects.
+ * The **`SVGStringList`** interface defines a list of strings.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGStringList)
  */

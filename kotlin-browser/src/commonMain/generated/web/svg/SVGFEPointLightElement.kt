@@ -3,7 +3,7 @@
 package web.svg
 
 /**
- * Corresponds to the <fePointLight> element.
+ * The **`SVGFEPointLightElement`** interface corresponds to the fePointLight element.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFEPointLightElement)
  */

@@ -6,7 +6,7 @@ import web.cssom.LinkStyle
 import web.cssom.MediaQuery
 
 /**
- * Corresponds to the SVG <style> element.
+ * The **`SVGStyleElement`** interface corresponds to the SVG style element.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGStyleElement)
  */

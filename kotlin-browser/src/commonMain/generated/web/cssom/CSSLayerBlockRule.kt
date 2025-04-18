@@ -3,6 +3,8 @@
 package web.cssom
 
 /**
+ * The **`CSSLayerBlockRule`** represents a @layer block rule.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSLayerBlockRule)
  */
 external class CSSLayerBlockRule

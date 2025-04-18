@@ -7,6 +7,8 @@ import js.errors.JsError
 import kotlin.js.definedExternally
 
 /**
+ * The **`ReadableStreamDefaultController`** interface of the Streams API represents a controller allowing control of a ReadableStream's state and internal queue.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStreamDefaultController)
  */
 external class ReadableStreamDefaultController<R : JsAny?>

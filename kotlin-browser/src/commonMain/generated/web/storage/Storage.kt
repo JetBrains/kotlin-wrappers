@@ -3,7 +3,7 @@
 package web.storage
 
 /**
- * This Web Storage API interface provides access to a particular domain's session or local storage. It allows, for example, the addition, modification, or deletion of stored data items.
+ * The **`Storage`** interface of the Web Storage API provides access to a particular domain's session or local storage.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Storage)
  */

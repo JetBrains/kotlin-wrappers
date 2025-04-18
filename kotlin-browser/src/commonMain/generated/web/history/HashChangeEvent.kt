@@ -10,7 +10,7 @@ import web.events.EventType
 import kotlin.js.definedExternally
 
 /**
- * Events that fire when the fragment identifier of the URL has changed.
+ * The **`HashChangeEvent`** interface represents events that fire when the fragment identifier of the URL has changed.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HashChangeEvent)
  */

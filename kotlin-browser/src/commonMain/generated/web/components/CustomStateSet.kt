@@ -6,6 +6,8 @@ import js.collections.MutableSetLike
 import js.core.JsString
 
 /**
+ * The **`CustomStateSet`** interface of the Document Object Model stores a list of states for an autonomous custom element, and allows states to be added and removed from the set.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CustomStateSet)
  */
 sealed /* final */

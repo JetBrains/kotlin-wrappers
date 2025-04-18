@@ -5,7 +5,7 @@ package web.html
 import web.window.WindowTarget
 
 /**
- * Contains the base URI for a document. This object inherits all of the properties and methods as described in the HTMLElement interface.
+ * The **`HTMLBaseElement`** interface contains the base URI for a document.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLBaseElement)
  */

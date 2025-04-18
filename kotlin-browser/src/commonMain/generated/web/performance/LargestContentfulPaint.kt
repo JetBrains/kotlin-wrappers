@@ -7,6 +7,8 @@ import web.dom.Element
 import web.time.DOMHighResTimeStamp
 
 /**
+ * The `LargestContentfulPaint` interface provides timing information about the largest image or text paint before user input on a web page.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/LargestContentfulPaint)
  */
 external class LargestContentfulPaint

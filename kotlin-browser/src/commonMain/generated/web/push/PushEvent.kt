@@ -10,7 +10,7 @@ import web.serviceworker.ExtendableEvent
 import kotlin.js.definedExternally
 
 /**
- * This Push API interface represents a push message that has been received. This event is sent to the global scope of a ServiceWorker. It contains the information sent from an application server to a PushSubscription.
+ * The **`PushEvent`** interface of the Push API represents a push message that has been received.
  * Available only in secure contexts.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PushEvent)

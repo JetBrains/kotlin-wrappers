@@ -20,7 +20,7 @@ import kotlin.js.JsName
 import kotlin.js.definedExternally
 
 /**
- * Adds to HTMLElement the properties and methods needed to support basic media-related capabilities that are common to audio and video.
+ * The **`HTMLMediaElement`** interface adds to HTMLElement the properties and methods needed to support basic media-related capabilities that are common to audio and video.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement)
  */

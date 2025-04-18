@@ -3,6 +3,8 @@
 package web.cssom
 
 /**
+ * The **`CSSKeywordValue`** interface of the CSS Typed Object Model API creates an object to represent CSS keywords and other identifiers.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSKeywordValue)
  */
 open external class CSSKeywordValue(

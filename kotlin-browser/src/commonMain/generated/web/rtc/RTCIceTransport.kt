@@ -5,7 +5,7 @@ package web.rtc
 import web.events.*
 
 /**
- * Provides access to information about the ICE transport layer over which the data is being sent and received.
+ * The **`RTCIceTransport`** interface provides access to information about the ICE transport layer over which the data is being sent and received.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCIceTransport)
  */

@@ -5,6 +5,8 @@ package web.cssom
 import web.geometry.DOMMatrix
 
 /**
+ * The **`CSSTransformComponent`** interface of the CSS Typed Object Model API is part of the CSSTransformValue interface.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSTransformComponent)
  */
 open external class CSSTransformComponent

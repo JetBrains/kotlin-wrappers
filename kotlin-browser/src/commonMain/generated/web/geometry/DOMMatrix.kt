@@ -9,6 +9,8 @@ import js.typedarrays.Float64Array
 import kotlin.js.definedExternally
 
 /**
+ * The **`DOMMatrix`** interface represents 4×4 matrices, suitable for 2D and 3D operations including rotation and translation.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrix)
  */
 open external class DOMMatrix(

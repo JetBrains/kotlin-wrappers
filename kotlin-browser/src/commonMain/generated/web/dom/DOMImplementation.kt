@@ -6,7 +6,7 @@ import web.xml.XMLDocument
 import kotlin.js.definedExternally
 
 /**
- * An object providing methods which are not dependent on any particular document. Such an object is returned by the Document.implementation property.
+ * The **`DOMImplementation`** interface represents an object providing methods which are not dependent on any particular document.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMImplementation)
  */

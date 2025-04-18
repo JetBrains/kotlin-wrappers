@@ -11,6 +11,7 @@ import web.events.EventType
 import kotlin.js.definedExternally
 
 /**
+ * The **`MIDIMessageEvent`** interface of the Web MIDI API represents the event passed to the MIDIInput.midimessage_event event of the MIDIInput interface.
  * Available only in secure contexts.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MIDIMessageEvent)

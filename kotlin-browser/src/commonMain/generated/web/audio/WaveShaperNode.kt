@@ -6,7 +6,7 @@ import js.typedarrays.Float32Array
 import kotlin.js.definedExternally
 
 /**
- * A WaveShaperNode always has exactly one input and one output.
+ * The **`WaveShaperNode`** interface represents a non-linear distorter.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WaveShaperNode)
  */

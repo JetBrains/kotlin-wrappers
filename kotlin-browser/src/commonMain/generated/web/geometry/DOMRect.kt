@@ -5,6 +5,8 @@ package web.geometry
 import kotlin.js.definedExternally
 
 /**
+ * A **`DOMRect`** describes the size and position of a rectangle.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMRect)
  */
 open external class DOMRect(

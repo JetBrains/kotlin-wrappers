@@ -14,7 +14,7 @@ import web.url.URLSearchParams
 import kotlin.js.definedExternally
 
 /**
- * Use XMLHttpRequest (XHR) objects to interact with servers. You can retrieve data from a URL without having to do a full page refresh. This enables a Web page to update just part of a page without disrupting what the user is doing.
+ * `XMLHttpRequest` (XHR) objects are used to interact with servers.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest)
  */

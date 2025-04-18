@@ -3,7 +3,7 @@
 package web.html
 
 /**
- * Provides special properties (beyond the regular HTMLElement interface it also has available to it by inheritance) for manipulating <time> elements.
+ * The **`HTMLTimeElement`** interface provides special properties (beyond the regular HTMLElement interface it also has available to it by inheritance) for manipulating time elements.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTimeElement)
  */

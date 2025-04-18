@@ -8,6 +8,8 @@ import js.iterable.JsIterator
 import web.ranges.AbstractRange
 
 /**
+ * The **`Highlight`** interface of the CSS Custom Highlight API is used to represent a collection of Range instances to be styled using the API.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Highlight)
  */
 open external class Highlight(

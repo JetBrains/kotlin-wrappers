@@ -5,6 +5,8 @@ package web.rtc
 import web.events.*
 
 /**
+ * The **`RTCSctpTransport`** interface provides information which describes a Stream Control Transmission Protocol (**SCTP**) transport.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCSctpTransport)
  */
 external class RTCSctpTransport

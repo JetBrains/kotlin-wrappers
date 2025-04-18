@@ -6,7 +6,7 @@ import js.buffer.BufferSource
 import web.events.*
 
 /**
- * A chunk of media to be passed into an HTMLMediaElement and played, via a MediaSource object. This can be made up of one or several media segments.
+ * The **`SourceBuffer`** interface represents a chunk of media to be passed into an HTMLMediaElement and played, via a MediaSource object.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SourceBuffer)
  */

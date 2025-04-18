@@ -14,7 +14,7 @@ import kotlin.js.JsName
 import kotlin.js.definedExternally
 
 /**
- * An audio-processing graph built from audio modules linked together, each represented by an AudioNode.
+ * The `AudioContext` interface represents an audio-processing graph built from audio modules linked together, each represented by an AudioNode.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioContext)
  */

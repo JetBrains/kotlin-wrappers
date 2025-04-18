@@ -3,7 +3,7 @@
 package web.svg
 
 /**
- * A base interface used by the component transfer function interfaces.
+ * The **`SVGComponentTransferFunctionElement`** interface defines a base interface used by the component transfer function interfaces.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGComponentTransferFunctionElement)
  */

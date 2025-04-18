@@ -7,6 +7,8 @@ import web.errors.DOMException
 import web.events.*
 
 /**
+ * The **`IDBTransaction`** interface of the IndexedDB API provides a static, asynchronous transaction on a database using event handler attributes.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBTransaction)
  */
 external class IDBTransaction

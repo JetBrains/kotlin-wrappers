@@ -3,6 +3,7 @@
 package web.device
 
 /**
+ * The **`DeviceMotionEventAcceleration`** interface of the Device Orientation Events provides information about the amount of acceleration the device is experiencing along all three axes.
  * Available only in secure contexts.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DeviceMotionEventAcceleration)

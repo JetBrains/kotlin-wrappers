@@ -9,6 +9,8 @@ import web.rendering.RenderingContext
 import web.rendering.RenderingContextId
 
 /**
+ * The **`ImageBitmapRenderingContext`** interface is a canvas rendering context that provides the functionality to replace the canvas's contents with the given ImageBitmap.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageBitmapRenderingContext)
  */
 external class ImageBitmapRenderingContext

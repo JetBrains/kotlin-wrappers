@@ -11,7 +11,7 @@ import kotlin.js.JsName
 import kotlin.js.definedExternally
 
 /**
- * Provides access to Client objects. Access it via self.clients within a service worker.
+ * The `Clients` interface provides access to Client objects.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Clients)
  */

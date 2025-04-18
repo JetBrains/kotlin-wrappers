@@ -7,7 +7,7 @@ import web.events.EventInstance
 import web.events.JsEvent
 
 /**
- * Also inherits methods from its parents IDBRequest and EventTarget.
+ * The **`IDBOpenDBRequest`** interface of the IndexedDB API provides access to the results of requests to open or delete databases (performed using IDBFactory.open and IDBFactory.deleteDatabase), using specific event handler attributes.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBOpenDBRequest)
  */

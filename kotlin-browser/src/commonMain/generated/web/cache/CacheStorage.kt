@@ -14,7 +14,7 @@ import kotlin.js.JsName
 import kotlin.js.definedExternally
 
 /**
- * The storage for Cache objects.
+ * The **`CacheStorage`** interface represents the storage for Cache objects.
  * Available only in secure contexts.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CacheStorage)

@@ -6,7 +6,7 @@ import web.dom.Node
 import web.dom.NodeList
 
 /**
- * A MutationRecord represents an individual DOM mutation. It is the object that is passed to MutationObserver's callback.
+ * The **`MutationRecord`** is a read-only interface that represents an individual DOM mutation observed by a MutationObserver.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MutationRecord)
  */

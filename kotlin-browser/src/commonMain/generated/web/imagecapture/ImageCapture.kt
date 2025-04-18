@@ -10,6 +10,8 @@ import kotlin.js.JsName
 import kotlin.js.definedExternally
 
 /**
+ * The **`ImageCapture`** interface of the MediaStream Image Capture API provides methods to enable the capture of images or photos from a camera or other photographic device.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageCapture)
  */
 open external class ImageCapture(

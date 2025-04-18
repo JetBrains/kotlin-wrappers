@@ -10,6 +10,7 @@ import kotlin.js.JsName
 import kotlin.js.definedExternally
 
 /**
+ * The **`VideoEncoder`** interface of the WebCodecs API encodes VideoFrame objects into EncodedVideoChunks.
  * Available only in secure contexts.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoEncoder)

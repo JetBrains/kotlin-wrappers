@@ -10,7 +10,7 @@ import kotlin.js.JsName
 import kotlin.js.definedExternally
 
 /**
- * This Notifications API interface is used to configure and display desktop notifications to the user.
+ * The **`Notification`** interface of the Notifications API is used to configure and display desktop notifications to the user.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Notification)
  */

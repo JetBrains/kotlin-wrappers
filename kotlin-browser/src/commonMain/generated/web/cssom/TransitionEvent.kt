@@ -10,7 +10,7 @@ import web.events.EventType
 import kotlin.js.definedExternally
 
 /**
- * Events providing information related to transitions.
+ * The **`TransitionEvent`** interface represents events providing information related to transitions.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TransitionEvent)
  */

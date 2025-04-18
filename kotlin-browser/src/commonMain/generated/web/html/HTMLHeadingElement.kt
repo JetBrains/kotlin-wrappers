@@ -3,7 +3,7 @@
 package web.html
 
 /**
- * The different heading elements. It inherits methods and properties from the HTMLElement interface.
+ * The **`HTMLHeadingElement`** interface represents the different heading elements, `<h1>` through `<h6>`.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLHeadingElement)
  */

@@ -6,6 +6,8 @@ import web.media.streams.MediaStream
 import kotlin.js.definedExternally
 
 /**
+ * The `MediaStreamAudioDestinationNode` interface represents an audio destination consisting of a WebRTC MediaStream with a single `AudioMediaStreamTrack`, which can be used in a similar way to a `MediaStream` obtained from MediaDevices.getUserMedia.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStreamAudioDestinationNode)
  */
 open external class MediaStreamAudioDestinationNode(

@@ -3,7 +3,7 @@
 package web.svg
 
 /**
- * Correspond to the <length> basic data type.
+ * The **`SVGLength`** interface correspond to the \<length> basic data type.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGLength)
  */

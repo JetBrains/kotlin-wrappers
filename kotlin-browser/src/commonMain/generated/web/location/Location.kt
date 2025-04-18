@@ -6,7 +6,7 @@ import web.dom.DOMStringList
 import web.url.URL
 
 /**
- * The location (URL) of the object it is linked to. Changes done on it are reflected on the object it relates to. Both the Document and Window interface have such a linked Location, accessible via Document.location and Window.location respectively.
+ * The **`Location`** interface represents the location (URL) of the object it is linked to.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Location)
  */

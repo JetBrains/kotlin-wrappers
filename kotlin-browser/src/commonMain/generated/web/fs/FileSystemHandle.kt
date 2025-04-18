@@ -8,6 +8,7 @@ import seskar.js.JsAsync
 import kotlin.js.JsName
 
 /**
+ * The **`FileSystemHandle`** interface of the File System API is an object which represents a file or directory entry.
  * Available only in secure contexts.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemHandle)

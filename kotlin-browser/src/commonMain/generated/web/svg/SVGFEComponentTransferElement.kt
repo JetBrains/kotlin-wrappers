@@ -3,7 +3,7 @@
 package web.svg
 
 /**
- * Corresponds to the <feComponentTransfer> element.
+ * The **`SVGFEComponentTransferElement`** interface corresponds to the feComponentTransfer element.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFEComponentTransferElement)
  */

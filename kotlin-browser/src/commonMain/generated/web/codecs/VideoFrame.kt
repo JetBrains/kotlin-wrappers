@@ -17,6 +17,8 @@ import kotlin.js.JsName
 import kotlin.js.definedExternally
 
 /**
+ * The **`VideoFrame`** interface of the Web Codecs API represents a frame of a video.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoFrame)
  */
 open external class VideoFrame(

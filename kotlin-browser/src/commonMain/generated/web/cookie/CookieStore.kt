@@ -13,6 +13,7 @@ import kotlin.js.JsName
 import kotlin.js.definedExternally
 
 /**
+ * The **`CookieStore`** interface of the Cookie Store API provides methods for getting and setting cookies asynchronously from either a page or a service worker.
  * Available only in secure contexts.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CookieStore)

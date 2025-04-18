@@ -10,6 +10,7 @@ import web.events.EventTarget
 import kotlin.js.JsName
 
 /**
+ * The **`Clipboard`** interface of the Clipboard API provides read and write access to the contents of the system clipboard.
  * Available only in secure contexts.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Clipboard)

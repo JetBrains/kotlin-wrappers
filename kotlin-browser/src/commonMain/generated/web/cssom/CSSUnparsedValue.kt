@@ -9,6 +9,8 @@ import js.core.JsInt
 import js.iterable.JsIterator
 
 /**
+ * The **`CSSUnparsedValue`** interface of the CSS Typed Object Model API represents property values that reference custom properties.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSUnparsedValue)
  */
 open external class CSSUnparsedValue(

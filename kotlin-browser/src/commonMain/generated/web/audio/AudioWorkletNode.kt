@@ -10,6 +10,7 @@ import web.messaging.MessagePort
 import kotlin.js.definedExternally
 
 /**
+ * The **`AudioWorkletNode`** interface of the Web Audio API represents a base class for a user-defined AudioNode, which can be connected to an audio routing graph along with other nodes.
  * Available only in secure contexts.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioWorkletNode)

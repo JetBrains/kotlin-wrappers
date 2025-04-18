@@ -12,6 +12,8 @@ import web.messaging.MessageEvent
 import web.sockets.BinaryType
 
 /**
+ * The **`RTCDataChannel`** interface represents a network channel which can be used for bidirectional peer-to-peer transfers of arbitrary data.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDataChannel)
  */
 external class RTCDataChannel

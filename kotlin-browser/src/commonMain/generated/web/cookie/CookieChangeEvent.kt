@@ -11,6 +11,7 @@ import web.events.EventType
 import kotlin.js.definedExternally
 
 /**
+ * The **`CookieChangeEvent`** interface of the Cookie Store API is the event type of the CookieStore/change_event event fired at a CookieStore when any cookies are created or deleted.
  * Available only in secure contexts.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CookieChangeEvent)

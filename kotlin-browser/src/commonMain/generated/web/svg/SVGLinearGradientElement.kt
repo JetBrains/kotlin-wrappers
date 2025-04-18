@@ -3,7 +3,7 @@
 package web.svg
 
 /**
- * Corresponds to the <linearGradient> element.
+ * The **`SVGLinearGradientElement`** interface corresponds to the linearGradient element.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGLinearGradientElement)
  */

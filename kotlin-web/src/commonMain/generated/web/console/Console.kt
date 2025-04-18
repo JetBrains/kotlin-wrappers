@@ -8,6 +8,8 @@ import js.core.JsString
 import kotlin.js.definedExternally
 
 /**
+ * The **`console`** object provides access to the debugging console (e.g., the Web console in Firefox).
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/console)
  */
 sealed external interface Console {

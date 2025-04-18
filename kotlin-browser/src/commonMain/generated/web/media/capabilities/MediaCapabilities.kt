@@ -7,6 +7,8 @@ import seskar.js.JsAsync
 import kotlin.js.JsName
 
 /**
+ * The **`MediaCapabilities`** interface of the Media Capabilities API provides information about the decoding abilities of the device, system and browser.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaCapabilities)
  */
 external class MediaCapabilities

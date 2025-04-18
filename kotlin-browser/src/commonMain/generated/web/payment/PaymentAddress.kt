@@ -7,6 +7,8 @@ import js.core.JsAny
 import js.core.JsString
 
 /**
+ * The **`ContactAddress`** interface of the Contact Picker API represents a physical address.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ContactAddress)
  */
 external class PaymentAddress

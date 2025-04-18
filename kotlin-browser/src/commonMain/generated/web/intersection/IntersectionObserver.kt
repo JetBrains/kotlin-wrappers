@@ -9,7 +9,7 @@ import web.dom.ParentNode
 import kotlin.js.definedExternally
 
 /**
- * provides a way to asynchronously observe changes in the intersection of a target element with an ancestor element or with a top-level document's viewport.
+ * The **`IntersectionObserver`** interface of the Intersection Observer API provides a way to asynchronously observe changes in the intersection of a target element with an ancestor element or with a top-level document's viewport.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IntersectionObserver)
  */

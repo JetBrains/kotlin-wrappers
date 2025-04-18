@@ -9,6 +9,8 @@ import web.events.JsEvent
 import kotlin.js.definedExternally
 
 /**
+ * The **`RTCDTMFSender`** interface provides a mechanism for transmitting DTMF codes on a WebRTC RTCPeerConnection.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDTMFSender)
  */
 external class RTCDTMFSender

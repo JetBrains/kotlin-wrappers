@@ -5,6 +5,8 @@ package web.screen
 import web.events.*
 
 /**
+ * The **`ScreenOrientation`** interface of the Screen Orientation API provides information about the current orientation of the document.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ScreenOrientation)
  */
 external class ScreenOrientation

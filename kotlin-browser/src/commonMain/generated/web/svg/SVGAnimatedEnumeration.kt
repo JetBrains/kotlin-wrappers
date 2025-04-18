@@ -5,7 +5,7 @@ package web.svg
 import js.core.JsAny
 
 /**
- * Used for attributes whose value must be a constant from a particular enumeration and which can be animated.
+ * The **`SVGAnimatedEnumeration`** interface describes attribute values which are constants from a particular enumeration and which can be animated.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedEnumeration)
  */

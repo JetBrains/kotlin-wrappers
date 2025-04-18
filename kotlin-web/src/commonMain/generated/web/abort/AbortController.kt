@@ -6,7 +6,7 @@ import js.errors.JsError
 import kotlin.js.definedExternally
 
 /**
- * A controller object that allows you to abort one or more DOM requests as and when desired.
+ * The **`AbortController`** interface represents a controller object that allows you to abort one or more Web requests as and when desired.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AbortController)
  */

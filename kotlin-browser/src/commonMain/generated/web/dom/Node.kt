@@ -7,7 +7,7 @@ import web.html.HTMLElement
 import kotlin.js.definedExternally
 
 /**
- * Node is an interface from which a number of DOM API object types inherit. It allows those types to be treated similarly; for example, inheriting the same set of methods, or being tested in the same way.
+ * The DOM **`Node`** interface is an abstract base class upon which many other DOM API objects are based, thus letting those object types to be used similarly and often interchangeably.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Node)
  */

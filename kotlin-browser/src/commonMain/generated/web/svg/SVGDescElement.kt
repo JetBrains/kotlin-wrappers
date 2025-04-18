@@ -3,7 +3,7 @@
 package web.svg
 
 /**
- * Corresponds to the <desc> element.
+ * The **`SVGDescElement`** interface corresponds to the desc element.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGDescElement)
  */

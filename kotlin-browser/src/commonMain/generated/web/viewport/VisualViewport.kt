@@ -5,6 +5,8 @@ package web.viewport
 import web.events.*
 
 /**
+ * The **`VisualViewport`** interface of the Visual Viewport API represents the visual viewport for a given window.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VisualViewport)
  */
 external class VisualViewport

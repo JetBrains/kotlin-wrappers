@@ -6,7 +6,7 @@ import web.dom.DocumentFragment
 import web.html.HTMLElement
 
 /**
- * Enables access to the contents of an HTML <template> element.
+ * The **`HTMLTemplateElement`** interface enables access to the contents of an HTML template element.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTemplateElement)
  */

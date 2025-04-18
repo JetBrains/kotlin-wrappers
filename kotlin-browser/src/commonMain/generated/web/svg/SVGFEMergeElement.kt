@@ -3,7 +3,7 @@
 package web.svg
 
 /**
- * Corresponds to the <feMerge> element.
+ * The **`SVGFEMergeElement`** interface corresponds to the feMerge element.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFEMergeElement)
  */

@@ -7,7 +7,7 @@ import web.cssom.MediaQuery
 import web.dom.DOMTokenList
 
 /**
- * A <style> element. It inherits properties and methods from its parent, HTMLElement, and from LinkStyle.
+ * The **`HTMLStyleElement`** interface represents a style element.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLStyleElement)
  */

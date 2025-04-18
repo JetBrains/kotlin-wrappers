@@ -5,7 +5,7 @@ package web.svg
 import web.dom.DOMTokenList
 
 /**
- * Provides access to the properties of <a> element, as well as methods to manipulate them.
+ * The **`SVGAElement`** interface provides access to the properties of an a element, as well as methods to manipulate them.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAElement)
  */

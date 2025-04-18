@@ -7,6 +7,8 @@ import js.transferable.Transferable
 import kotlin.js.definedExternally
 
 /**
+ * The **`TransformStream`** interface of the Streams API represents a concrete implementation of the pipe chain _transform stream_ concept.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TransformStream)
  */
 open external class TransformStream<I : JsAny?, O : JsAny?>(

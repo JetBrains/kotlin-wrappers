@@ -3,7 +3,7 @@
 package web.html
 
 /**
- * Contains the title for a document. This element inherits all of the properties and methods of the HTMLElement interface.
+ * The **`HTMLTitleElement`** interface is implemented by a document's title.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTitleElement)
  */

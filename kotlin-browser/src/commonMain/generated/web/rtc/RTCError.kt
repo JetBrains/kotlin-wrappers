@@ -6,6 +6,8 @@ import web.errors.DOMException
 import kotlin.js.definedExternally
 
 /**
+ * The **`RTCError`** interface describes an error which has occurred while handling WebRTC operations.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCError)
  */
 open external class RTCError(

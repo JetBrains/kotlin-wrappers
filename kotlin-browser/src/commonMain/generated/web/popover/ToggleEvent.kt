@@ -10,6 +10,8 @@ import web.events.EventType
 import kotlin.js.definedExternally
 
 /**
+ * The **`ToggleEvent`** interface represents an event notifying the user an Element's state has changed.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ToggleEvent)
  */
 open external class ToggleEvent(

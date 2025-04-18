@@ -3,7 +3,7 @@
 package web.dom
 
 /**
- * A Node containing a doctype.
+ * The **`DocumentType`** interface represents a Node containing a doctype.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DocumentType)
  */

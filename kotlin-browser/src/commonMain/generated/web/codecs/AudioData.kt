@@ -8,6 +8,8 @@ import js.core.UInt53
 import js.transferable.Transferable
 
 /**
+ * The **`AudioData`** interface of the WebCodecs API represents an audio sample.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioData)
  */
 open external class AudioData(

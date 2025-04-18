@@ -9,7 +9,7 @@ import web.events.EventTarget
 import web.events.JsEvent
 
 /**
- * A stream of media content. A stream consists of several tracks such as video or audio tracks. Each track is specified as an instance of MediaStreamTrack.
+ * The **`MediaStream`** interface of the Media Capture and Streams API represents a stream of media content.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStream)
  */

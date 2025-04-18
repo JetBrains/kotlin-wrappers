@@ -3,6 +3,8 @@
 package web.cssom
 
 /**
+ * The **`CSSContainerRule`** interface represents a single CSS @container rule.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSContainerRule)
  */
 external class CSSContainerRule

@@ -3,7 +3,7 @@
 package web.svg
 
 /**
- * Used to represent a value that can be an <angle> or <number> value. An SVGAngle reflected through the animVal attribute is always read only.
+ * The `SVGAngle` interface is used to represent a value that can be an &lt;angle&gt; or &lt;number&gt; value.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAngle)
  */

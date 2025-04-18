@@ -9,6 +9,7 @@ import web.events.*
 import kotlin.js.JsName
 
 /**
+ * The **`AudioEncoder`** interface of the WebCodecs API encodes AudioData objects.
  * Available only in secure contexts.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioEncoder)

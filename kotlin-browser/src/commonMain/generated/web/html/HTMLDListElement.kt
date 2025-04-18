@@ -3,7 +3,7 @@
 package web.html
 
 /**
- * Provides special properties (beyond those of the regular HTMLElement interface it also has available to it by inheritance) for manipulating definition list (<dl>) elements.
+ * The **`HTMLDListElement`** interface provides special properties (beyond those of the regular HTMLElement interface it also has available to it by inheritance) for manipulating definition list (dl) elements.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLDListElement)
  */

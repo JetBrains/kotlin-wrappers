@@ -19,7 +19,7 @@ import web.window.WindowTarget
 import kotlin.js.definedExternally
 
 /**
- * A <form> element in the DOM; it allows access to and in some cases modification of aspects of the form, as well as access to its component elements.
+ * The **`HTMLFormElement`** interface represents a form element in the DOM.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFormElement)
  */

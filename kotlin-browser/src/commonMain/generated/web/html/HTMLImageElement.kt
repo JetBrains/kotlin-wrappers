@@ -14,7 +14,7 @@ import web.http.ReferrerPolicy
 import kotlin.js.JsName
 
 /**
- * Provides special properties and methods for manipulating <img> elements.
+ * The **`HTMLImageElement`** interface represents an HTML img element, providing the properties and methods used to manipulate image elements.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLImageElement)
  */

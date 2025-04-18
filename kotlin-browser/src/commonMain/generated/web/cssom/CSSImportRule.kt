@@ -3,6 +3,8 @@
 package web.cssom
 
 /**
+ * The **`CSSImportRule`** interface represents an @import at-rule.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSImportRule)
  */
 external class CSSImportRule

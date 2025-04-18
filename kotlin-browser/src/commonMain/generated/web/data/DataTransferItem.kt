@@ -6,7 +6,7 @@ import web.file.File
 import web.fs.FileSystemEntry
 
 /**
- * One drag data item. During a drag operation, each drag event has a dataTransfer property which contains a list of drag data items. Each item in the list is a DataTransferItem object.
+ * The **`DataTransferItem`** object represents one drag data item.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DataTransferItem)
  */

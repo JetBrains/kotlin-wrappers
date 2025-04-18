@@ -3,7 +3,7 @@
 package web.svg
 
 /**
- * Corresponds to the <feDiffuseLighting> element.
+ * The **`SVGFEDiffuseLightingElement`** interface corresponds to the feDiffuseLighting element.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFEDiffuseLightingElement)
  */

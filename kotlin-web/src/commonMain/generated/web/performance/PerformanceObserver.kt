@@ -7,6 +7,8 @@ import js.core.JsString
 import kotlin.js.definedExternally
 
 /**
+ * The **`PerformanceObserver`** interface is used to observe performance measurement events and be notified of new PerformanceEntry as they are recorded in the browser's _performance timeline_.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceObserver)
  */
 open external class PerformanceObserver(

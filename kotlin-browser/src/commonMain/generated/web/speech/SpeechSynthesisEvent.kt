@@ -9,7 +9,7 @@ import web.events.Event
 import web.events.EventType
 
 /**
- * This Web Speech API interface contains information about the current state of SpeechSynthesisUtterance objects that have been processed in the speech service.
+ * The **`SpeechSynthesisEvent`** interface of the Web Speech API contains information about the current state of SpeechSynthesisUtterance objects that have been processed in the speech service.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechSynthesisEvent)
  */

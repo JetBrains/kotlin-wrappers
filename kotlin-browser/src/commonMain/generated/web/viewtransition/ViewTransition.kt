@@ -6,6 +6,8 @@ import js.core.Void
 import js.promise.Promise
 
 /**
+ * The **`ViewTransition`** interface of the View Transition API represents an active view transition, and provides functionality to react to the transition reaching different states (e.g., ready to run the animation, or animation finished) or skip the transition altogether.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ViewTransition)
  */
 external class ViewTransition

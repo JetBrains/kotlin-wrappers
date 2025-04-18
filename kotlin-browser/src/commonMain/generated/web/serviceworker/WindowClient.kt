@@ -9,7 +9,7 @@ import web.url.URL
 import kotlin.js.JsName
 
 /**
- * This ServiceWorker API interface represents the scope of a service worker client that is a document in a browser context, controlled by an active worker. The service worker client independently selects and uses a service worker for its own loading and sub-resources.
+ * The `WindowClient` interface of the ServiceWorker API represents the scope of a service worker client that is a document in a browsing context, controlled by an active worker.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WindowClient)
  */

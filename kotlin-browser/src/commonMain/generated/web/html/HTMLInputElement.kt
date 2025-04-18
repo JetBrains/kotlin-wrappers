@@ -20,7 +20,7 @@ import web.window.WindowName
 import kotlin.js.definedExternally
 
 /**
- * Provides special properties and methods for manipulating the options, layout, and presentation of <input> elements.
+ * The **`HTMLInputElement`** interface provides special properties and methods for manipulating the options, layout, and presentation of input elements.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement)
  */

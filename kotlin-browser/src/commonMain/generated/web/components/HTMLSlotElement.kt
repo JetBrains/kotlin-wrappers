@@ -13,6 +13,8 @@ import web.html.HTMLElement
 import kotlin.js.definedExternally
 
 /**
+ * The **`HTMLSlotElement`** interface of the Shadow DOM API enables access to the name and assigned nodes of an HTML slot element.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSlotElement)
  */
 open external class HTMLSlotElement

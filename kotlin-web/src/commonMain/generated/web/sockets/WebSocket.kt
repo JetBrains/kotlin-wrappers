@@ -15,7 +15,7 @@ import web.url.URL
 import kotlin.js.definedExternally
 
 /**
- * Provides the API for creating and managing a WebSocket connection to a server, as well as for sending and receiving data on the connection.
+ * The `WebSocket` object provides the API for creating and managing a WebSocket connection to a server, as well as for sending and receiving data on the connection.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebSocket)
  */

@@ -7,7 +7,7 @@ import web.url.URL
 import kotlin.js.definedExternally
 
 /**
- * This Fetch API interface represents the response to a request.
+ * The **`Response`** interface of the Fetch API represents the response to a request.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Response)
  */

@@ -3,7 +3,7 @@
 package web.svg
 
 /**
- * Corresponds to the <feSpecularLighting> element.
+ * The **`SVGFESpecularLightingElement`** interface corresponds to the feSpecularLighting element.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFESpecularLightingElement)
  */

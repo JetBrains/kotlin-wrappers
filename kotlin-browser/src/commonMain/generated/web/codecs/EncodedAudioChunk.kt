@@ -7,6 +7,8 @@ import js.core.Int53
 import js.core.UInt53
 
 /**
+ * The **`EncodedAudioChunk`** interface of the WebCodecs API represents a chunk of encoded audio data.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/EncodedAudioChunk)
  */
 open external class EncodedAudioChunk(

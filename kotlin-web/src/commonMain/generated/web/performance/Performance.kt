@@ -8,7 +8,7 @@ import web.time.DOMHighResTimeStamp
 import kotlin.js.definedExternally
 
 /**
- * Provides access to performance-related information for the current page. It's part of the High Resolution Time API, but is enhanced by the Performance Timeline API, the Navigation Timing API, the User Timing API, and the Resource Timing API.
+ * The **`Performance`** interface provides access to performance-related information for the current page.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Performance)
  */

@@ -7,6 +7,8 @@ import web.geometry.DOMPointReadOnly
 import kotlin.js.definedExternally
 
 /**
+ * The `SVGGeometryElement` interface represents SVG elements whose rendering is defined by geometry with an equivalent path, and which can be filled and stroked.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGGeometryElement)
  */
 open external class SVGGeometryElement

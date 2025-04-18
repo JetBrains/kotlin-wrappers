@@ -3,7 +3,7 @@
 package web.svg
 
 /**
- * Corresponds to the <feMorphology> element.
+ * The **`SVGFEMorphologyElement`** interface corresponds to the feMorphology element.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFEMorphologyElement)
  */

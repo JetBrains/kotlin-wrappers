@@ -8,6 +8,7 @@ import seskar.js.JsAsync
 import kotlin.js.JsName
 
 /**
+ * The **`LockManager`** interface of the Web Locks API provides methods for requesting a new Lock object and querying for an existing `Lock` object.
  * Available only in secure contexts.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/LockManager)

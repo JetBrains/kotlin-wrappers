@@ -6,7 +6,7 @@ import js.array.ArrayLike
 import js.iterable.JsIterable
 
 /**
- * A list of StyleSheet.
+ * The `StyleSheetList` interface represents a list of CSSStyleSheet objects.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/StyleSheetList)
  */

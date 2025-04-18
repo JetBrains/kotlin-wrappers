@@ -3,7 +3,7 @@
 package web.svg
 
 /**
- * Used for attributes of type SVGPreserveAspectRatio which can be animated.
+ * The `SVGAnimatedPreserveAspectRatio` interface is used for attributes of type SVGPreserveAspectRatio which can be animated.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedPreserveAspectRatio)
  */

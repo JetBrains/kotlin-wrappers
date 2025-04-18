@@ -12,6 +12,8 @@ import web.media.streams.MediaStream
 import web.media.streams.MediaStreamTrack
 
 /**
+ * The WebRTC API interface **`RTCTrackEvent`** represents the RTCPeerConnection.track_event event, which is sent when a new MediaStreamTrack is added to an RTCRtpReceiver which is part of the RTCPeerConnection.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCTrackEvent)
  */
 open external class RTCTrackEvent(

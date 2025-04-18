@@ -5,6 +5,8 @@ package web.geometry
 import kotlin.js.definedExternally
 
 /**
+ * A **`DOMPoint`** object represents a 2D or 3D point in a coordinate system; it includes values for the coordinates in up to three dimensions, as well as an optional perspective value.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMPoint)
  */
 open external class DOMPoint(

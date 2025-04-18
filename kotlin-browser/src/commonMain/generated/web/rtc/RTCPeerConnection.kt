@@ -14,7 +14,7 @@ import kotlin.js.JsName
 import kotlin.js.definedExternally
 
 /**
- * A WebRTC connection between the local computer and a remote peer. It provides methods to connect to a remote peer, maintain and monitor the connection, and close the connection once it's no longer needed.
+ * The **`RTCPeerConnection`** interface represents a WebRTC connection between the local computer and a remote peer.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection)
  */

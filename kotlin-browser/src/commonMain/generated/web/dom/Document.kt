@@ -41,7 +41,7 @@ import kotlin.js.JsName
 import kotlin.js.definedExternally
 
 /**
- * Any web page loaded in the browser and serves as an entry point into the web page's content, which is the DOM tree.
+ * The **`Document`** interface represents any web page loaded in the browser and serves as an entry point into the web page's content, which is the DOM tree.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document)
  */

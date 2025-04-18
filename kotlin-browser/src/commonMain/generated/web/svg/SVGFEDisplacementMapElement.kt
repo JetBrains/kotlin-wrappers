@@ -3,7 +3,7 @@
 package web.svg
 
 /**
- * Corresponds to the <feDisplacementMap> element.
+ * The **`SVGFEDisplacementMapElement`** interface corresponds to the feDisplacementMap element.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFEDisplacementMapElement)
  */

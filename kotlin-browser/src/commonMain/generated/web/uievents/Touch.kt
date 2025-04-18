@@ -5,7 +5,7 @@ package web.uievents
 import web.events.EventTarget
 
 /**
- * A single contact point on a touch-sensitive device. The contact point is commonly a finger or stylus and the device may be a touchscreen or trackpad.
+ * The **`Touch`** interface represents a single contact point on a touch-sensitive device.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Touch)
  */

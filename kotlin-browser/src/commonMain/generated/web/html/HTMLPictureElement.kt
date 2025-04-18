@@ -3,7 +3,7 @@
 package web.html
 
 /**
- * A <picture> HTML element. It doesn't implement specific properties or methods.
+ * The **`HTMLPictureElement`** interface represents a picture HTML element.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLPictureElement)
  */

@@ -10,6 +10,8 @@ import js.typedarrays.Float64Array
 import kotlin.js.definedExternally
 
 /**
+ * The **`DOMMatrixReadOnly`** interface represents a read-only 4×4 matrix, suitable for 2D and 3D operations.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly)
  */
 open external class DOMMatrixReadOnly(

@@ -5,7 +5,7 @@ package web.audio
 import kotlin.js.definedExternally
 
 /**
- * PeriodicWave has no inputs or outputs; it is used to define custom oscillators when calling OscillatorNode.setPeriodicWave(). The PeriodicWave itself is created/returned by AudioContext.createPeriodicWave().
+ * The **`PeriodicWave`** interface defines a periodic waveform that can be used to shape the output of an OscillatorNode.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PeriodicWave)
  */

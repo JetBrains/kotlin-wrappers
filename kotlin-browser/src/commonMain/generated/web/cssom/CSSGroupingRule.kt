@@ -5,7 +5,7 @@ package web.cssom
 import kotlin.js.definedExternally
 
 /**
- * Any CSS at-rule that contains other rules nested within it.
+ * The **`CSSGroupingRule`** interface of the CSS Object Model represents any CSS at-rule that contains other rules nested within it.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSGroupingRule)
  */

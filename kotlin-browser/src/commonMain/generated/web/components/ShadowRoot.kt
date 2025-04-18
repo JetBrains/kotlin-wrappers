@@ -8,6 +8,8 @@ import web.events.EventHandler
 import kotlin.js.definedExternally
 
 /**
+ * The **`ShadowRoot`** interface of the Shadow DOM API is the root node of a DOM subtree that is rendered separately from a document's main DOM tree.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ShadowRoot)
  */
 external class ShadowRoot

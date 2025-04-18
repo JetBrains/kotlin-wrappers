@@ -16,7 +16,7 @@ import kotlin.js.JsName
 import kotlin.js.definedExternally
 
 /**
- * This Payment Request API interface is the primary access point into the API, and lets web content and apps accept payments from the end user.
+ * The Payment Request API's **`PaymentRequest`** interface is the primary access point into the API, and lets web content and apps accept payments from the end user on behalf of the operator of the site or the publisher of the app.
  * Available only in secure contexts.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentRequest)

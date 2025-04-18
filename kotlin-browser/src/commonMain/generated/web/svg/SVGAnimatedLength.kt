@@ -3,7 +3,7 @@
 package web.svg
 
 /**
- * Used for attributes of basic type <length> which can be animated.
+ * The **`SVGAnimatedLength`** interface represents attributes of type \<length> which can be animated.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedLength)
  */

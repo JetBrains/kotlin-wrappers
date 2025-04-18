@@ -13,6 +13,8 @@ import kotlin.js.JsName
 import kotlin.js.definedExternally
 
 /**
+ * The `BaseAudioContext` interface of the Web Audio API acts as a base definition for online and offline audio-processing graphs, as represented by AudioContext and OfflineAudioContext respectively.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BaseAudioContext)
  */
 open external class BaseAudioContext

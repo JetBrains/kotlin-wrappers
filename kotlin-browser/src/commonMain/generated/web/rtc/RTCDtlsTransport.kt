@@ -7,6 +7,8 @@ import js.buffer.ArrayBuffer
 import web.events.*
 
 /**
+ * The **`RTCDtlsTransport`** interface provides access to information about the Datagram Transport Layer Security (**DTLS**) transport over which a RTCPeerConnection's RTP and RTCP packets are sent and received by its RTCRtpSender and RTCRtpReceiver objects.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDtlsTransport)
  */
 external class RTCDtlsTransport

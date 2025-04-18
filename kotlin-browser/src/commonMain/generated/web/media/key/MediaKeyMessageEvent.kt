@@ -10,7 +10,7 @@ import web.events.Event
 import web.events.EventType
 
 /**
- * This EncryptedMediaExtensions API interface contains the content and related data when the content decryption module generates a message for the session.
+ * The **`MediaKeyMessageEvent`** interface of the Encrypted Media Extensions API contains the content and related data when the content decryption module generates a message for the session.
  * Available only in secure contexts.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeyMessageEvent)

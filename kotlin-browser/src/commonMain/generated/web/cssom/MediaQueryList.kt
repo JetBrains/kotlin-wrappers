@@ -8,7 +8,7 @@ import web.events.EventTarget
 import web.events.JsEvent
 
 /**
- * Stores information on a media query applied to a document, and handles sending notifications to listeners when the media query state change (i.e. when the media query test starts or stops evaluating to true).
+ * A **`MediaQueryList`** object stores information on a media query applied to a document, with support for both immediate and event-driven matching against the state of the document.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaQueryList)
  */

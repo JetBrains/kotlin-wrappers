@@ -7,6 +7,8 @@ import js.core.JsAny
 import web.events.*
 
 /**
+ * The **`NavigationHistoryEntry`** interface of the Navigation API represents a single navigation history entry.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigationHistoryEntry)
  */
 external class NavigationHistoryEntry

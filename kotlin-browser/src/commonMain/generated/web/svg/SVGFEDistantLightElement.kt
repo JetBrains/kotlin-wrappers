@@ -3,7 +3,7 @@
 package web.svg
 
 /**
- * Corresponds to the <feDistantLight> element.
+ * The **`SVGFEDistantLightElement`** interface corresponds to the feDistantLight element.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFEDistantLightElement)
  */

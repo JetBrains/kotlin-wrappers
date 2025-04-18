@@ -7,7 +7,7 @@ import web.geometry.DOMRect
 import kotlin.js.definedExternally
 
 /**
- * SVG elements whose primary purpose is to directly render graphics into a group.
+ * The **`SVGGraphicsElement`** interface represents SVG elements whose primary purpose is to directly render graphics into a group.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGGraphicsElement)
  */

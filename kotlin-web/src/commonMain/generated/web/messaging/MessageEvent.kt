@@ -12,7 +12,7 @@ import web.events.EventType
 import kotlin.js.definedExternally
 
 /**
- * A message received by a target object.
+ * The **`MessageEvent`** interface represents a message received by a target object.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MessageEvent)
  */

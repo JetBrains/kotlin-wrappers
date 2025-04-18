@@ -12,7 +12,7 @@ import web.time.EpochTimeStamp
 import kotlin.js.JsName
 
 /**
- * This EncryptedMediaExtensions API interface represents a context for message exchange with a content decryption module (CDM).
+ * The **`MediaKeySession`** interface of the Encrypted Media Extensions API represents a context for message exchange with a content decryption module (CDM).
  * Available only in secure contexts.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeySession)

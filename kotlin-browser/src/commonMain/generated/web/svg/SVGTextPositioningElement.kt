@@ -3,7 +3,7 @@
 package web.svg
 
 /**
- * Implemented by elements that support attributes that position individual text glyphs. It is inherited by SVGTextElement, SVGTSpanElement, SVGTRefElement and SVGAltGlyphElement.
+ * The **`SVGTextPositioningElement`** interface is implemented by elements that support attributes that position individual text glyphs.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTextPositioningElement)
  */

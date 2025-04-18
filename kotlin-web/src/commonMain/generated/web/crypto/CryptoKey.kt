@@ -5,7 +5,7 @@ package web.crypto
 import js.array.ReadonlyArray
 
 /**
- * The CryptoKey dictionary of the Web Crypto API represents a cryptographic key.
+ * The **`CryptoKey`** interface of the Web Crypto API represents a cryptographic key obtained from one of the SubtleCrypto methods SubtleCrypto.generateKey, SubtleCrypto.deriveKey, SubtleCrypto.importKey, or SubtleCrypto.unwrapKey.
  * Available only in secure contexts.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CryptoKey)

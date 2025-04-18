@@ -7,6 +7,8 @@ import js.iterable.JsIterable
 import web.geometry.DOMPoint
 
 /**
+ * The **`SVGPointList`** interface represents a list of SVGPoint objects.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGPointList)
  */
 external class SVGPointList

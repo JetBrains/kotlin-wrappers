@@ -8,6 +8,8 @@ import web.gl.TexImageSource
 import web.gpu.GPUCopyExternalImageSource
 
 /**
+ * The **`ImageBitmap`** interface represents a bitmap image which can be drawn to a canvas without undue latency.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageBitmap)
  */
 external class ImageBitmap

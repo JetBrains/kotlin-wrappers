@@ -3,7 +3,7 @@
 package web.svg
 
 /**
- * Corresponds to the <textPath> element.
+ * The **`SVGTextPathElement`** interface corresponds to the textPath element.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTextPathElement)
  */

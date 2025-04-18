@@ -14,7 +14,7 @@ import kotlin.js.JsName
 import kotlin.js.definedExternally
 
 /**
- * This Payment Request API interface is returned after a user selects a payment method and approves a payment request.
+ * The **`PaymentResponse`** interface of the Payment Request API is returned after a user selects a payment method and approves a payment request.
  * Available only in secure contexts.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentResponse)

@@ -5,7 +5,7 @@ package web.media.devices
 import js.core.JsAny
 
 /**
- * The MediaDevicesInfo interface contains information that describes a single media input or output device.
+ * The **`MediaDeviceInfo`** interface of the Media Capture and Streams API contains information that describes a single media input or output device.
  * Available only in secure contexts.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaDeviceInfo)

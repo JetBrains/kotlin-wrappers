@@ -7,7 +7,7 @@ import js.core.JsDouble
 import js.typedarrays.Float32Array
 
 /**
- * The Web Audio API's AudioParam interface represents an audio-related parameter, usually a parameter of an AudioNode (such as GainNode.gain).
+ * The Web Audio API's `AudioParam` interface represents an audio-related parameter, usually a parameter of an AudioNode (such as GainNode.gain).
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioParam)
  */

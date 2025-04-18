@@ -6,7 +6,7 @@ import js.array.ArrayLike
 import js.iterable.JsIterable
 
 /**
- * A CSSRuleList is an (indirect-modify only) array-like object containing an ordered collection of CSSRule objects.
+ * A `CSSRuleList` represents an ordered collection of read-only CSSRule objects.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSRuleList)
  */

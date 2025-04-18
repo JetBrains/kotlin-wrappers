@@ -9,6 +9,8 @@ import js.core.JsString
 import js.iterable.JsIterable
 
 /**
+ * The **`StylePropertyMapReadOnly`** interface of the CSS Typed Object Model API provides a read-only representation of a CSS declaration block that is an alternative to CSSStyleDeclaration.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/StylePropertyMapReadOnly)
  */
 sealed /* final */

@@ -3,6 +3,8 @@
 package web.svg
 
 /**
+ * The **`SVGFEDropShadowElement`** interface corresponds to the feDropShadow element.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFEDropShadowElement)
  */
 open external class SVGFEDropShadowElement

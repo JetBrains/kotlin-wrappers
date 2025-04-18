@@ -16,7 +16,7 @@ import web.pip.PictureInPictureWindow
 import kotlin.js.JsName
 
 /**
- * Provides special properties and methods for manipulating video objects. It also inherits properties and methods of HTMLMediaElement and HTMLElement.
+ * Implemented by the video element, the **`HTMLVideoElement`** interface provides special properties and methods for manipulating video objects.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLVideoElement)
  */

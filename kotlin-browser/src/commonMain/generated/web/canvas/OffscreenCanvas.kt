@@ -18,6 +18,8 @@ import kotlin.js.JsName
 import kotlin.js.definedExternally
 
 /**
+ * When using the canvas element or the Canvas API, rendering, animation, and user interaction usually happen on the main execution thread of a web application.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OffscreenCanvas)
  */
 open external class OffscreenCanvas(

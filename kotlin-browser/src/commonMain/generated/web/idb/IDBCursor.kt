@@ -7,7 +7,7 @@ import js.core.Void
 import kotlin.js.definedExternally
 
 /**
- * This IndexedDB API interface represents a cursor for traversing or iterating over multiple records in a database.
+ * The **`IDBCursor`** interface of the IndexedDB API represents a cursor for traversing or iterating over multiple records in a database.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBCursor)
  */

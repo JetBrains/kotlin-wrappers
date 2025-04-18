@@ -6,6 +6,8 @@ import js.core.UInt53
 import web.worklets.WorkletGlobalScope
 
 /**
+ * The **`AudioWorkletGlobalScope`** interface of the Web Audio API represents a global execution context for user-supplied code, which defines custom AudioWorkletProcessor-derived classes.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioWorkletGlobalScope)
  */
 external class AudioWorkletGlobalScope

@@ -3,7 +3,7 @@
 package web.html
 
 /**
- * Gives access to properties specific to <label> elements. It inherits methods and properties from the base HTMLElement interface.
+ * The **`HTMLLabelElement`** interface gives access to properties specific to label elements.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLLabelElement)
  */

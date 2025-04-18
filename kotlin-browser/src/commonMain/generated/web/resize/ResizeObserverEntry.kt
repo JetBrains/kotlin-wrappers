@@ -7,6 +7,8 @@ import web.dom.Element
 import web.geometry.DOMRectReadOnly
 
 /**
+ * The **`ResizeObserverEntry`** interface represents the object passed to the ResizeObserver.ResizeObserver constructor's callback function, which allows you to access the new dimensions of the Element or SVGElement being observed.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ResizeObserverEntry)
  */
 external class ResizeObserverEntry

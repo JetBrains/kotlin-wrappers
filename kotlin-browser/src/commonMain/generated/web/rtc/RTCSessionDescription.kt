@@ -3,7 +3,7 @@
 package web.rtc
 
 /**
- * One end of a connection—or potential connection—and how it's configured. Each RTCSessionDescription consists of a description type indicating which part of the offer/answer negotiation process it describes and of the SDP descriptor of the session.
+ * The **`RTCSessionDescription`** interface describes one end of a connection—or potential connection—and how it's configured.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCSessionDescription)
  */

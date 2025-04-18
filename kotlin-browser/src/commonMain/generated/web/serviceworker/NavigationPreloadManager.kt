@@ -8,6 +8,7 @@ import seskar.js.JsAsync
 import kotlin.js.JsName
 
 /**
+ * The **`NavigationPreloadManager`** interface of the Service Worker API provides methods for managing the preloading of resources in parallel with service worker bootup.
  * Available only in secure contexts.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigationPreloadManager)

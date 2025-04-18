@@ -3,7 +3,7 @@
 package web.cssom
 
 /**
- * CSSStyleRule represents a single CSS style rule. It implements the CSSRule interface with a type value of 1 (CSSRule.STYLE_RULE).
+ * The **`CSSStyleRule`** interface represents a single CSS style rule.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleRule)
  */

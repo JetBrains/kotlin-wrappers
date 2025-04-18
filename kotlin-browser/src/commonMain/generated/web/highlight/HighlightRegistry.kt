@@ -6,6 +6,8 @@ import js.collections.MutableMapLike
 import js.core.JsString
 
 /**
+ * The **`HighlightRegistry`** interface of the CSS Custom Highlight API is used to register Highlight objects to be styled using the API.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HighlightRegistry)
  */
 sealed /* final */

@@ -9,6 +9,8 @@ import web.url.URL
 import kotlin.js.definedExternally
 
 /**
+ * The **`EventSource`** interface is web content's interface to server-sent events.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/EventSource)
  */
 open external class EventSource(

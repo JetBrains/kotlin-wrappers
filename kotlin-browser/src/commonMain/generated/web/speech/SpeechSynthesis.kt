@@ -6,7 +6,7 @@ import js.array.ReadonlyArray
 import web.events.*
 
 /**
- * This Web Speech API interface is the controller interface for the speech service; this can be used to retrieve information about the synthesis voices available on the device, start and pause speech, and other commands besides.
+ * The **`SpeechSynthesis`** interface of the Web Speech API is the controller interface for the speech service; this can be used to retrieve information about the synthesis voices available on the device, start and pause speech, and other commands besides.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechSynthesis)
  */

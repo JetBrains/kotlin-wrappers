@@ -3,7 +3,7 @@
 package web.svg
 
 /**
- * Corresponds to the <feComposite> element.
+ * The **`SVGFECompositeElement`** interface corresponds to the feComposite element.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFECompositeElement)
  */

@@ -7,7 +7,7 @@ import js.iterable.JsIterable
 import web.events.*
 
 /**
- * A simple container list for multiple SourceBuffer objects.
+ * The **`SourceBufferList`** interface represents a simple container list for multiple SourceBuffer objects.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SourceBufferList)
  */

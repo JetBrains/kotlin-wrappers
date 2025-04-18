@@ -5,7 +5,7 @@ package web.parsing
 import web.dom.Document
 
 /**
- * Provides the ability to parse XML or HTML source code from a string into a DOM Document.
+ * The **`DOMParser`** interface provides the ability to parse XML or HTML source code from a string into a DOM Document.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMParser)
  */

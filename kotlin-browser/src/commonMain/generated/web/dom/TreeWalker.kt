@@ -3,7 +3,7 @@
 package web.dom
 
 /**
- * The nodes of a document subtree and a position within them.
+ * The **`TreeWalker`** object represents the nodes of a document subtree and a position within them.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TreeWalker)
  */

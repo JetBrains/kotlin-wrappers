@@ -11,7 +11,7 @@ import web.events.EventType
 import kotlin.js.definedExternally
 
 /**
- * PopStateEvent is an event handler for the popstate event on the window.
+ * **`PopStateEvent`** is an interface for the Window/popstate_event event.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PopStateEvent)
  */

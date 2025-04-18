@@ -3,6 +3,8 @@
 package web.fs
 
 /**
+ * The File and Directory Entries API interface **`FileSystem`** is used to represent a file system.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystem)
  */
 external class FileSystem

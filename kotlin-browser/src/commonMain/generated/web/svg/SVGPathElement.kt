@@ -5,7 +5,7 @@ package web.svg
 import web.geometry.DOMPoint
 
 /**
- * Corresponds to the <path> element.
+ * The **`SVGPathElement`** interface corresponds to the path element.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGPathElement)
  */

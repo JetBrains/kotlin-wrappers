@@ -3,7 +3,7 @@
 package web.html
 
 /**
- * An error which occurred while handling media in an HTML media element based on HTMLMediaElement, such as <audio> or <video>.
+ * The **`MediaError`** interface represents an error which occurred while handling media in an HTML media element based on HTMLMediaElement, such as audio or video.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaError)
  */

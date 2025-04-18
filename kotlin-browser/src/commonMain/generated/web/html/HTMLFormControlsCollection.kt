@@ -6,7 +6,7 @@ import js.core.JsAny
 import web.dom.Element
 
 /**
- * A collection of HTML form control elements.
+ * The **`HTMLFormControlsCollection`** interface represents a _collection_ of HTML _form control elements_, returned by the HTMLFormElement interface's HTMLFormElement.elements property.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFormControlsCollection)
  */

@@ -3,6 +3,8 @@
 package web.svg
 
 /**
+ * The **`SVGAnimationElement`** interface is the base interface for all of the animation element interfaces: SVGAnimateElement, SVGSetElement, SVGAnimateColorElement, SVGAnimateMotionElement and SVGAnimateTransformElement.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimationElement)
  */
 open external class SVGAnimationElement
