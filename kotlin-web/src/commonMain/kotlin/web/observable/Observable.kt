@@ -151,23 +151,14 @@ external class Observable<out T : JsAny?>(
     fun toArrayAsync(options: SubscribeOptions? = definedExternally): Promise<ReadonlyArray<T>>
 
     companion object {
-        /**
-         * Converts an iterable to an Observable
-         */
         fun <T : JsAny?> from(
             source: JsIterable<T>,
         ): Observable<T>
 
-        /**
-         * Converts an array to an Observable
-         */
         fun <T : JsAny?> from(
             source: ReadonlyArray<T>,
         ): Observable<T>
 
-        /**
-         * Converts an async iterable to an Observable
-         */
         fun <T : JsAny?> from(
             source: AsyncIterable<T>,
         ): Observable<T>
