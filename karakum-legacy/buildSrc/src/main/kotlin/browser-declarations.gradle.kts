@@ -12,6 +12,7 @@ tasks.named("generateDeclarations") {
         val eventsSourceFile = nodeModules.resolve("@webref/events/events.json")
         val definitionsDir = nodeModules.resolve("typescript/lib")
         val webDefinitionsDir = nodeModules.resolve("@types/web")
+        val webworkerDefinitionsDir = nodeModules.resolve("@types/webworker")
         val serviceworkerDefinitionsDir = nodeModules.resolve("@types/serviceworker")
         val audioWorkletDefinitionsDir = nodeModules.resolve("@types/audioworklet")
 
@@ -21,6 +22,8 @@ tasks.named("generateDeclarations") {
             definitionsDir = definitionsDir,
             webDefinitionsFile = webDefinitionsDir.resolve("index.d.ts"),
             webIterableDefinitionsFile = webDefinitionsDir.resolve("iterable.d.ts"),
+            webworkerDefinitionsFile = webworkerDefinitionsDir.resolve("index.d.ts"),
+            webworkerIterableDefinitionsFile = webworkerDefinitionsDir.resolve("iterable.d.ts"),
             serviceworkerDefinitionsFile = serviceworkerDefinitionsDir.resolve("index.d.ts"),
             serviceworkerIterableDefinitionsFile = serviceworkerDefinitionsDir.resolve("iterable.d.ts"),
             audioWorkletDefinitionsFile = audioWorkletDefinitionsDir.resolve("index.d.ts"),
@@ -40,11 +43,11 @@ val findMissedTypes by tasks.registering {
 
         val declaredInterfaces = sequenceOf(
             "@types/web",
+            "@types/webworker",
             "@types/serviceworker",
             "@types/audioworklet",
         ).map { nodeModules.resolve("$it/index.d.ts") }
             .map { it.readText() }
-            .plus(karakum.browser.WEB_WORKER_CONTENT)
             .flatMap { content ->
                 content.splitToSequence("\ninterface ")
                     .flatMap { line ->

@@ -1,16 +1,6 @@
 package karakum.browser
 
-import karakum.common.loadContent
 import java.io.File
-import java.net.URI
-
-private val WEB_WORKER_URI =
-    URI("https://raw.githubusercontent.com/microsoft/TypeScript-DOM-lib-generator/main/baselines/webworker.generated.d.ts")
-
-internal val WEB_WORKER_CONTENT by lazy {
-    loadContent(WEB_WORKER_URI)
-        .replace(", MessageEventTarget<DedicatedWorkerGlobalScope>", ", MessageEventTarget")
-}
 
 private val WORKER_TYPES = setOf(
     "DedicatedWorkerGlobalScope",
@@ -63,14 +53,17 @@ private val PKG_MAP = mapOf(
     "FrameType" to "web.serviceworker",
 )
 
-internal fun webWorkersDeclarations(): Sequence<ConversionResult> {
-    return workersDeclarations(WEB_WORKER_CONTENT, typeFilter = { it in WEB_WORKER_TYPES })
+internal fun webWorkersDeclarations(
+    definitionsFile: File,
+): Sequence<ConversionResult> {
+    val content = webWorkerContent(definitionsFile)
+    return workersDeclarations(content, typeFilter = { it in WEB_WORKER_TYPES })
 }
 
 internal fun serviceWorkersDeclarations(
     definitionsFile: File,
 ): Sequence<ConversionResult> {
-    val content = serviceWorkersContent(definitionsFile)
+    val content = serviceWorkerContent(definitionsFile)
     val interfaces = workersDeclarations(content, typeFilter = { it !in WEB_WORKER_TYPES })
 
     val types = convertTypes(
@@ -115,7 +108,14 @@ private fun workersDeclarations(
             )?.withComment(fullSource = content, source = source)
         }
 
-internal fun serviceWorkersContent(
+internal fun webWorkerContent(
+    definitionsFile: File,
+): String =
+    definitionsFile
+        .readText()
+        .replace(", MessageEventTarget<DedicatedWorkerGlobalScope>", ", MessageEventTarget")
+
+internal fun serviceWorkerContent(
     definitionsFile: File,
 ): String =
     definitionsFile

@@ -282,6 +282,8 @@ fun generateKotlinDeclarations(
     definitionsDir: File,
     webDefinitionsFile: File,
     webIterableDefinitionsFile: File,
+    webworkerDefinitionsFile: File,
+    webworkerIterableDefinitionsFile: File,
     serviceworkerDefinitionsFile: File,
     serviceworkerIterableDefinitionsFile: File,
     audioWorkletDefinitionsFile: File,
@@ -293,6 +295,7 @@ fun generateKotlinDeclarations(
     IterableRegistry.fill(
         definitionsDir,
         webIterableDefinitionsFile.withWebGPU_iterablePatch(),
+        webworkerIterableDefinitionsFile.readText(),
         serviceworkerIterableDefinitionsFile.readText(),
     )
 
@@ -307,11 +310,12 @@ fun generateKotlinDeclarations(
         .resolve("web/gl")
         .also { it.mkdirs() }
 
-    val serviceWorkersContent = serviceWorkersContent(serviceworkerDefinitionsFile)
-    val (mainEventDeclarations, knownEventTypes) = eventDeclarations(content, WEB_WORKER_CONTENT, serviceWorkersContent)
+    val webWorkerContent = webWorkerContent(webworkerDefinitionsFile)
+    val serviceWorkerContent = serviceWorkerContent(serviceworkerDefinitionsFile)
+    val (mainEventDeclarations, knownEventTypes) = eventDeclarations(content, webWorkerContent, serviceWorkerContent)
     val eventDeclarations = mainEventDeclarations +
-            webWorkersEventDeclarations(WEB_WORKER_CONTENT) +
-            serviceWorkersEventDeclarations(content, serviceWorkersContent)
+            webWorkersEventDeclarations(webWorkerContent) +
+            serviceWorkersEventDeclarations(content, serviceWorkerContent)
 
     for ((name, body, optPkg) in eventDeclarations) {
         val suppresses = mutableSetOf<Suppress>().apply {
@@ -360,9 +364,9 @@ fun generateKotlinDeclarations(
         .plus(intlDeclarations(definitionsDir))
         .plus(atomicsDeclarations(definitionsDir))
         .plus(webAssemblyDeclarations(content))
-        .plus(webWorkersDeclarations())
+        .plus(webWorkersDeclarations(webworkerDefinitionsFile))
         .plus(serviceWorkersDeclarations(serviceworkerDefinitionsFile))
-        .plus(workerFunctions(serviceWorkersContent))
+        .plus(workerFunctions(serviceWorkerContent))
         .plus(audioWorkletDeclarations(audioWorkletDefinitionsFile))
         .withEventInstances(knownEventTypes)
 
