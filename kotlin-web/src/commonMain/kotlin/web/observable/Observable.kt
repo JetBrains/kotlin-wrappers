@@ -152,6 +152,10 @@ external class Observable<out T : JsAny?>(
 
     companion object {
         fun <T : JsAny?> from(
+            source: Promise<T>,
+        ): Observable<T>
+
+        fun <T : JsAny?> from(
             source: JsIterable<T>,
         ): Observable<T>
 
@@ -161,6 +165,10 @@ external class Observable<out T : JsAny?>(
 
         fun <T : JsAny?> from(
             source: AsyncIterable<T>,
+        ): Observable<T>
+
+        fun <T : JsAny?> from(
+            source: Observable<T>,
         ): Observable<T>
     }
 }
