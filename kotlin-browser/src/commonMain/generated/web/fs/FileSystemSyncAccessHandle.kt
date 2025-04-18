@@ -7,6 +7,7 @@ import js.core.UInt53
 import kotlin.js.definedExternally
 
 /**
+ * The **`FileSystemSyncAccessHandle`** interface of the File System API represents a synchronous handle to a file system entry.
  * Available only in secure contexts.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemSyncAccessHandle)

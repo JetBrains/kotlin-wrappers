@@ -9,6 +9,8 @@ import web.events.JsEvent
 import web.messaging.MessageEvent
 
 /**
+ * The **`SharedWorkerGlobalScope`** object (the SharedWorker global scope) is accessible through the window.self keyword.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SharedWorkerGlobalScope)
  */
 external class SharedWorkerGlobalScope

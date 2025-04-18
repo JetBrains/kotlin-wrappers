@@ -14,6 +14,8 @@ import kotlin.js.JsName
 import kotlin.js.definedExternally
 
 /**
+ * The **`RTCRtpScriptTransformer`** interface of the WebRTC API provides a worker-side Stream API interface that a WebRTC Encoded Transform can use to modify encoded media frames in the incoming and outgoing WebRTC pipelines.
+ *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCRtpScriptTransformer)
  */
 external class RTCRtpScriptTransformer

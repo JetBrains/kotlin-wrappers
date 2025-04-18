@@ -7,7 +7,7 @@ import web.blob.Blob
 import kotlin.js.definedExternally
 
 /**
- * Allows to read File or Blob objects in a synchronous way.
+ * The **`FileReaderSync`** interface allows to read File or Blob objects synchronously.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileReaderSync)
  */
