@@ -82,6 +82,7 @@ private val DOM_TYPES = setOf(
     "Element",
     "CheckVisibilityOptions",
     "GetHTMLOptions",
+    "ImportNodeOptions",
 
     "DocumentAndElementEventHandlers",
     "GlobalEventHandlers",

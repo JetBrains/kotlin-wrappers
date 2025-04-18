@@ -100,6 +100,7 @@ private val DEFAULT_IMPORTS = Imports(
     "web.canvas.CanvasImageSource",
     "web.canvas.OffscreenCanvas",
     "web.components.CustomElementCallbacks",
+    "web.components.CustomElementRegistry",
     "web.components.ElementInternals",
     "web.components.HTMLSlotElement",
     "web.components.HTMLTemplateElement",

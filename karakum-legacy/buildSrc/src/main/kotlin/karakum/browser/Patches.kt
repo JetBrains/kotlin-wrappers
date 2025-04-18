@@ -114,6 +114,7 @@ internal fun String.applyPatches(): String {
             )
         }
         .splitUnion("(CSSStyleValue | string)[]", "CSSStyleValue[] | string[]")
+        .splitUnion("boolean | ImportNodeOptions")
         .splitUnion("HTMLOptionElement | HTMLOptGroupElement")
         .splitUnion("ViewTransitionUpdateCallback | StartViewTransitionOptions")
         .splitUnion("HTMLElement | number")
