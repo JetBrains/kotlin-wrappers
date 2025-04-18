@@ -115,6 +115,10 @@ internal fun String.applyPatches(): String {
         }
         .splitUnion("(CSSStyleValue | string)[]", "CSSStyleValue[] | string[]")
         .splitUnion("boolean | ImportNodeOptions")
+        .replace(
+            "importNode<T extends Node>(node: T, options?: boolean)",
+            "importNode<T extends Node>(node: T, subtree?: boolean)",
+        )
         .splitUnion("HTMLOptionElement | HTMLOptGroupElement")
         .splitUnion("ViewTransitionUpdateCallback | StartViewTransitionOptions")
         .splitUnion("HTMLElement | number")
