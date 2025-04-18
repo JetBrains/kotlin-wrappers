@@ -13,8 +13,7 @@ import kotlin.js.definedExternally
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CustomElementRegistry)
  */
-external class CustomElementRegistry
-private constructor() {
+open external class CustomElementRegistry {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CustomElementRegistry/define)
      */
