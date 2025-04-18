@@ -6,7 +6,7 @@ import js.objects.JsPlainObject
 import web.components.CustomElementRegistry
 
 @JsPlainObject
-external interface ElementCreationOptions {
+external interface ImportNodeOptions {
     val customElementRegistry: CustomElementRegistry?
-    val `is`: String?
+    val selfOnly: Boolean?
 }
