@@ -1,7 +1,7 @@
 import org.gradle.api.tasks.PathSensitivity.RELATIVE
 
 plugins {
-    id("kotlin-legacy-library-conventions")
+    id("wrappersbuild.kotlin-legacy-library-conventions")
 }
 
 kotlin {
