@@ -1,5 +1,5 @@
 plugins {
-    `react-query-declarations`
+    id("karakum.tanstack-query-declarations")
 }
 
 dependencies {

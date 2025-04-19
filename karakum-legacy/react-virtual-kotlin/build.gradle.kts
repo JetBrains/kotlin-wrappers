@@ -1,5 +1,5 @@
 plugins {
-    `react-virtual-declarations`
+    id("karakum.tanstack-virtual-declarations")
 }
 
 dependencies {

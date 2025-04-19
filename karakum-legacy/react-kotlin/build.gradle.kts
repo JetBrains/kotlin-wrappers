@@ -1,5 +1,5 @@
 plugins {
-    `react-declarations`
+    id("karakum.react-dom-declarations")
 }
 
 dependencies {

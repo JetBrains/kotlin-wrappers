@@ -1,5 +1,5 @@
 plugins {
-    `browser-declarations`
+    id("karakum.browser-declarations")
 }
 
 dependencies {

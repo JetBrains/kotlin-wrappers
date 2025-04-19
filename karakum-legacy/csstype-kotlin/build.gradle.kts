@@ -1,5 +1,5 @@
 plugins {
-    `csstype-declarations`
+    id("karakum.csstype-declarations")
 }
 
 dependencies {

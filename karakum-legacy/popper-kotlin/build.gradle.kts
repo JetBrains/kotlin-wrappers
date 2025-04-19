@@ -1,5 +1,5 @@
 plugins {
-    `popper-declarations`
+    id("karakum.popper-declarations")
 }
 
 dependencies {

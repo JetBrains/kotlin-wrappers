@@ -1,5 +1,5 @@
 plugins {
-    `react-table-declarations`
+    id("karakum.tanstack-table-declarations")
 }
 
 dependencies {

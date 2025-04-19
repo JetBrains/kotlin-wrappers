@@ -1,5 +1,5 @@
 plugins {
-    `cesium-declarations`
+    id("karakum.cesium-declarations")
 }
 
 dependencies {

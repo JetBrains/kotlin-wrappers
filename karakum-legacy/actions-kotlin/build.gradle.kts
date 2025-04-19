@@ -1,5 +1,5 @@
 plugins {
-    `actions-declarations`
+    id("karakum.actions-declarations")
 }
 
 dependencies {
