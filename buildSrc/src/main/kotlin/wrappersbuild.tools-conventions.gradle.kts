@@ -1,5 +1,5 @@
 plugins {
-    id("node-conventions")
+    id("wrappersbuild.node-conventions")
 }
 
 rootProject.pluginManager.apply("wrappersbuild.tools-root-conventions")

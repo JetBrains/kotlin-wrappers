@@ -4,7 +4,7 @@ import org.jetbrains.kotlin.gradle.targets.js.npm.LockFileMismatchReport
 import org.jetbrains.kotlin.gradle.targets.js.npm.NpmExtension
 
 plugins {
-    id("node-conventions")
+    id("wrappersbuild.node-conventions")
 }
 
 plugins.withType<NodeJsRootPlugin> {
