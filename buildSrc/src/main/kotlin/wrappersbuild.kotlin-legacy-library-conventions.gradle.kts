@@ -1,5 +1,5 @@
 plugins {
     id("kotlin-conventions")
-    id("publish-conventions")
+    id("wrappersbuild.publish-conventions")
     id("dokka-conventions")
 }

@@ -1,6 +1,6 @@
 plugins {
     `version-catalog`
-    id("publish-conventions")
+    id("wrappersbuild.publish-conventions")
 }
 
 val aliasHelper = AliasHelper(rootDir)
