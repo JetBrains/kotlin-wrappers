@@ -49,10 +49,10 @@ open external class Blob(
      */
     @JsAsync
     @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun bytes(): Uint8Array<*>
+    suspend fun bytes(): Uint8Array<ArrayBuffer>
 
     @JsName("bytes")
-    fun bytesAsync(): Promise<Uint8Array<*>>
+    fun bytesAsync(): Promise<Uint8Array<ArrayBuffer>>
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Blob/slice)
@@ -66,7 +66,7 @@ open external class Blob(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Blob/stream)
      */
-    fun stream(): ReadableStream<Uint8Array<*>>
+    fun stream(): ReadableStream<Uint8Array<ArrayBuffer>>
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Blob/text)

@@ -3,6 +3,7 @@
 package web.gl
 
 import js.buffer.AllowSharedBufferSource
+import js.buffer.ArrayBufferLike
 import js.buffer.ArrayBufferView
 
 sealed external interface WebGL2RenderingContextOverloads {
@@ -23,7 +24,7 @@ sealed external interface WebGL2RenderingContextOverloads {
 
     fun bufferData(
         target: GLenum,
-        srcData: ArrayBufferView<*>,
+        srcData: ArrayBufferView<ArrayBufferLike>,
         usage: GLenum,
         srcOffset: Int, /* GLuint */
         length: GLuint?,
@@ -41,7 +42,7 @@ sealed external interface WebGL2RenderingContextOverloads {
     fun bufferSubData(
         target: GLenum,
         dstByteOffset: GLintptr,
-        srcData: ArrayBufferView<*>,
+        srcData: ArrayBufferView<ArrayBufferLike>,
         srcOffset: Int, /* GLuint */
         length: GLuint?,
     )
@@ -67,7 +68,7 @@ sealed external interface WebGL2RenderingContextOverloads {
         width: GLsizei,
         height: GLsizei,
         border: GLint,
-        srcData: ArrayBufferView<*>,
+        srcData: ArrayBufferView<ArrayBufferLike>,
         srcOffset: Int /* GLuint */?,
         srcLengthOverride: GLuint?,
     )
@@ -95,7 +96,7 @@ sealed external interface WebGL2RenderingContextOverloads {
         width: GLsizei,
         height: GLsizei,
         format: GLenum,
-        srcData: ArrayBufferView<*>,
+        srcData: ArrayBufferView<ArrayBufferLike>,
         srcOffset: Int /* GLuint */?,
         srcLengthOverride: GLuint?,
     )
@@ -110,7 +111,7 @@ sealed external interface WebGL2RenderingContextOverloads {
         height: GLsizei,
         format: GLenum,
         type: GLenum,
-        dstData: ArrayBufferView<*>?,
+        dstData: ArrayBufferView<ArrayBufferLike>?,
     )
 
     fun readPixels(
@@ -130,7 +131,7 @@ sealed external interface WebGL2RenderingContextOverloads {
         height: GLsizei,
         format: GLenum,
         type: GLenum,
-        dstData: ArrayBufferView<*>,
+        dstData: ArrayBufferView<ArrayBufferLike>,
         dstOffset: Int, /* GLuint */
     )
 
@@ -146,7 +147,7 @@ sealed external interface WebGL2RenderingContextOverloads {
         border: GLint,
         format: GLenum,
         type: GLenum,
-        pixels: ArrayBufferView<*>?,
+        pixels: ArrayBufferView<ArrayBufferLike>?,
     )
 
     fun texImage2D(
@@ -191,7 +192,7 @@ sealed external interface WebGL2RenderingContextOverloads {
         border: GLint,
         format: GLenum,
         type: GLenum,
-        srcData: ArrayBufferView<*>,
+        srcData: ArrayBufferView<ArrayBufferLike>,
         srcOffset: Int, /* GLuint */
     )
 
@@ -207,7 +208,7 @@ sealed external interface WebGL2RenderingContextOverloads {
         height: GLsizei,
         format: GLenum,
         type: GLenum,
-        pixels: ArrayBufferView<*>?,
+        pixels: ArrayBufferView<ArrayBufferLike>?,
     )
 
     fun texSubImage2D(
@@ -253,7 +254,7 @@ sealed external interface WebGL2RenderingContextOverloads {
         height: GLsizei,
         format: GLenum,
         type: GLenum,
-        srcData: ArrayBufferView<*>,
+        srcData: ArrayBufferView<ArrayBufferLike>,
         srcOffset: Int, /* GLuint */
     )
 

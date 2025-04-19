@@ -116,7 +116,7 @@ private constructor() :
     fun send(data: String)
     fun send(data: Blob)
     fun send(data: ArrayBuffer)
-    fun send(data: ArrayBufferView<*>)
+    fun send(data: ArrayBufferView<ArrayBuffer>)
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDataChannel/bufferedamountlow_event)

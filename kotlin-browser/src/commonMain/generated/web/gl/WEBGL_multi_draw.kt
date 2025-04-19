@@ -2,6 +2,7 @@
 
 package web.gl
 
+import js.buffer.ArrayBufferLike
 import js.typedarrays.Int32Array
 
 sealed external interface WEBGL_multi_draw {
@@ -10,11 +11,11 @@ sealed external interface WEBGL_multi_draw {
      */
     fun multiDrawArraysInstancedWEBGL(
         mode: GLenum,
-        firstsList: Int32Array<*>, /*  | GLint[] */
+        firstsList: Int32Array<ArrayBufferLike>, /* | GLint[] */
         firstsOffset: Int, /* GLuint */
-        countsList: Int32Array<*>, /*  | GLsizei[] */
+        countsList: Int32Array<ArrayBufferLike>, /* | GLsizei[] */
         countsOffset: Int, /* GLuint */
-        instanceCountsList: Int32Array<*>, /*  | GLsizei[] */
+        instanceCountsList: Int32Array<ArrayBufferLike>, /* | GLsizei[] */
         instanceCountsOffset: Int, /* GLuint */
         drawcount: GLsizei,
     )
@@ -24,9 +25,9 @@ sealed external interface WEBGL_multi_draw {
      */
     fun multiDrawArraysWEBGL(
         mode: GLenum,
-        firstsList: Int32Array<*>, /*  | GLint[] */
+        firstsList: Int32Array<ArrayBufferLike>, /* | GLint[] */
         firstsOffset: Int, /* GLuint */
-        countsList: Int32Array<*>, /*  | GLsizei[] */
+        countsList: Int32Array<ArrayBufferLike>, /* | GLsizei[] */
         countsOffset: Int, /* GLuint */
         drawcount: GLsizei,
     )
@@ -36,12 +37,12 @@ sealed external interface WEBGL_multi_draw {
      */
     fun multiDrawElementsInstancedWEBGL(
         mode: GLenum,
-        countsList: Int32Array<*>, /*  | GLsizei[] */
+        countsList: Int32Array<ArrayBufferLike>, /* | GLsizei[] */
         countsOffset: Int, /* GLuint */
         type: GLenum,
-        offsetsList: Int32Array<*>, /*  | GLsizei[] */
+        offsetsList: Int32Array<ArrayBufferLike>, /* | GLsizei[] */
         offsetsOffset: Int, /* GLuint */
-        instanceCountsList: Int32Array<*>, /*  | GLsizei[] */
+        instanceCountsList: Int32Array<ArrayBufferLike>, /* | GLsizei[] */
         instanceCountsOffset: Int, /* GLuint */
         drawcount: GLsizei,
     )
@@ -51,10 +52,10 @@ sealed external interface WEBGL_multi_draw {
      */
     fun multiDrawElementsWEBGL(
         mode: GLenum,
-        countsList: Int32Array<*>, /*  | GLsizei[] */
+        countsList: Int32Array<ArrayBufferLike>, /* | GLsizei[] */
         countsOffset: Int, /* GLuint */
         type: GLenum,
-        offsetsList: Int32Array<*>, /*  | GLsizei[] */
+        offsetsList: Int32Array<ArrayBufferLike>, /* | GLsizei[] */
         offsetsOffset: Int, /* GLuint */
         drawcount: GLsizei,
     )

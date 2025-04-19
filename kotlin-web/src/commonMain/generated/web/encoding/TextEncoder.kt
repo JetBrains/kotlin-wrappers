@@ -2,6 +2,8 @@
 
 package web.encoding
 
+import js.buffer.ArrayBuffer
+import js.buffer.ArrayBufferLike
 import js.typedarrays.Uint8Array
 import kotlin.js.definedExternally
 
@@ -17,7 +19,7 @@ open external class TextEncoder :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextEncoder/encode)
      */
-    fun encode(input: String = definedExternally): Uint8Array<*>
+    fun encode(input: String = definedExternally): Uint8Array<ArrayBuffer>
 
     /**
      * Runs the UTF-8 encoder on source, stores the result of that operation into destination, and returns the progress made as an object wherein read is the number of converted code units of source and written is the number of bytes modified in destination.
@@ -26,6 +28,6 @@ open external class TextEncoder :
      */
     fun encodeInto(
         source: String,
-        destination: Uint8Array<*>,
+        destination: Uint8Array<ArrayBufferLike>,
     ): TextEncoderEncodeIntoResult
 }

@@ -2,6 +2,7 @@
 
 package web.audio
 
+import js.buffer.ArrayBuffer
 import js.typedarrays.Float32Array
 import kotlin.js.definedExternally
 
@@ -37,7 +38,7 @@ open external class AudioBuffer(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioBuffer/copyFromChannel)
      */
     fun copyFromChannel(
-        destination: Float32Array<*>,
+        destination: Float32Array<ArrayBuffer>,
         channelNumber: Int,
         bufferOffset: Int = definedExternally,
     )
@@ -46,7 +47,7 @@ open external class AudioBuffer(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioBuffer/copyToChannel)
      */
     fun copyToChannel(
-        source: Float32Array<*>,
+        source: Float32Array<ArrayBuffer>,
         channelNumber: Int,
         bufferOffset: Int = definedExternally,
     )
@@ -54,5 +55,5 @@ open external class AudioBuffer(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioBuffer/getChannelData)
      */
-    fun getChannelData(channel: Int): Float32Array<*>
+    fun getChannelData(channel: Int): Float32Array<ArrayBuffer>
 }

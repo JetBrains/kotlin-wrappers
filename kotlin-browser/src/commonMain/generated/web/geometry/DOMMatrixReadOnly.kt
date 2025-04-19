@@ -3,6 +3,7 @@
 package web.geometry
 
 import js.array.ReadonlyArray
+import js.buffer.ArrayBuffer
 import js.core.JsAny
 import js.core.JsDouble
 import js.typedarrays.Float32Array
@@ -221,12 +222,12 @@ open external class DOMMatrixReadOnly(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly/toFloat32Array)
      */
-    fun toFloat32Array(): Float32Array<*>
+    fun toFloat32Array(): Float32Array<ArrayBuffer>
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly/toFloat64Array)
      */
-    fun toFloat64Array(): Float64Array<*>
+    fun toFloat64Array(): Float64Array<ArrayBuffer>
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrixReadOnly/toJSON)
@@ -248,8 +249,8 @@ open external class DOMMatrixReadOnly(
     ): DOMMatrix
 
     companion object {
-        fun fromFloat32Array(array32: Float32Array<*>): DOMMatrixReadOnly
-        fun fromFloat64Array(array64: Float64Array<*>): DOMMatrixReadOnly
+        fun fromFloat32Array(array32: Float32Array<ArrayBuffer>): DOMMatrixReadOnly
+        fun fromFloat64Array(array64: Float64Array<ArrayBuffer>): DOMMatrixReadOnly
         fun fromMatrix(other: DOMMatrixReadOnly = definedExternally): DOMMatrixReadOnly
     }
 }

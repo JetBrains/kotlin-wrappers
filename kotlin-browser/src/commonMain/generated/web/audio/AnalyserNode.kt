@@ -2,6 +2,7 @@
 
 package web.audio
 
+import js.buffer.ArrayBuffer
 import js.typedarrays.Float32Array
 import js.typedarrays.Uint8Array
 import kotlin.js.definedExternally
@@ -43,20 +44,20 @@ open external class AnalyserNode(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AnalyserNode/getByteFrequencyData)
      */
-    fun getByteFrequencyData(array: Uint8Array<*>)
+    fun getByteFrequencyData(array: Uint8Array<ArrayBuffer>)
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AnalyserNode/getByteTimeDomainData)
      */
-    fun getByteTimeDomainData(array: Uint8Array<*>)
+    fun getByteTimeDomainData(array: Uint8Array<ArrayBuffer>)
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AnalyserNode/getFloatFrequencyData)
      */
-    fun getFloatFrequencyData(array: Float32Array<*>)
+    fun getFloatFrequencyData(array: Float32Array<ArrayBuffer>)
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AnalyserNode/getFloatTimeDomainData)
      */
-    fun getFloatTimeDomainData(array: Float32Array<*>)
+    fun getFloatTimeDomainData(array: Float32Array<ArrayBuffer>)
 }

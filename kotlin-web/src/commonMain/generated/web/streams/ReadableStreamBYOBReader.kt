@@ -2,6 +2,7 @@
 
 package web.streams
 
+import js.buffer.ArrayBuffer
 import js.buffer.ArrayBufferView
 import js.promise.Promise
 import js.typedarrays.Uint8Array
@@ -14,7 +15,7 @@ import kotlin.js.JsName
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStreamBYOBReader)
  */
 open external class ReadableStreamBYOBReader(
-    stream: ReadableStream<Uint8Array<*>>,
+    stream: ReadableStream<Uint8Array<ArrayBuffer>>,
 ) : ReadableStreamGenericReader {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStreamBYOBReader/read)

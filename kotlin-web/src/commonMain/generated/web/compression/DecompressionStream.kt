@@ -6,6 +6,7 @@
 
 package web.compression
 
+import js.buffer.ArrayBuffer
 import js.buffer.BufferSource
 import js.typedarrays.Uint8Array
 import web.streams.GenericTransformStream
@@ -20,6 +21,6 @@ import web.streams.WritableStream
 open external class DecompressionStream(
     format: CompressionFormat,
 ) : GenericTransformStream {
-    override val readable: ReadableStream<Uint8Array<*>>
+    override val readable: ReadableStream<Uint8Array<ArrayBuffer>>
     override val writable: WritableStream<BufferSource>
 }

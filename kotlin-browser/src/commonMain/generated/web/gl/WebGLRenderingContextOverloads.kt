@@ -3,6 +3,7 @@
 package web.gl
 
 import js.buffer.AllowSharedBufferSource
+import js.buffer.ArrayBufferLike
 import js.buffer.ArrayBufferView
 
 sealed external interface WebGLRenderingContextOverloads {
@@ -40,7 +41,7 @@ sealed external interface WebGLRenderingContextOverloads {
         width: GLsizei,
         height: GLsizei,
         border: GLint,
-        data: ArrayBufferView<*>,
+        data: ArrayBufferView<ArrayBufferLike>,
     )
 
     /**
@@ -54,7 +55,7 @@ sealed external interface WebGLRenderingContextOverloads {
         width: GLsizei,
         height: GLsizei,
         format: GLenum,
-        data: ArrayBufferView<*>,
+        data: ArrayBufferView<ArrayBufferLike>,
     )
 
     /**
@@ -67,7 +68,7 @@ sealed external interface WebGLRenderingContextOverloads {
         height: GLsizei,
         format: GLenum,
         type: GLenum,
-        pixels: ArrayBufferView<*>?,
+        pixels: ArrayBufferView<ArrayBufferLike>?,
     )
 
     /**
@@ -82,7 +83,7 @@ sealed external interface WebGLRenderingContextOverloads {
         border: GLint,
         format: GLenum,
         type: GLenum,
-        pixels: ArrayBufferView<*>?,
+        pixels: ArrayBufferView<ArrayBufferLike>?,
     )
 
     fun texImage2D(
@@ -106,7 +107,7 @@ sealed external interface WebGLRenderingContextOverloads {
         height: GLsizei,
         format: GLenum,
         type: GLenum,
-        pixels: ArrayBufferView<*>?,
+        pixels: ArrayBufferView<ArrayBufferLike>?,
     )
 
     fun texSubImage2D(

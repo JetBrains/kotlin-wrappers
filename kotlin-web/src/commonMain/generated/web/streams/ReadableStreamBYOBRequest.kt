@@ -2,6 +2,7 @@
 
 package web.streams
 
+import js.buffer.ArrayBuffer
 import js.buffer.ArrayBufferView
 import js.core.UInt53
 
@@ -15,7 +16,7 @@ private constructor() {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStreamBYOBRequest/view)
      */
-    val view: ArrayBufferView<*>?
+    val view: ArrayBufferView<ArrayBuffer>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStreamBYOBRequest/respond)
@@ -25,5 +26,5 @@ private constructor() {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStreamBYOBRequest/respondWithNewView)
      */
-    fun respondWithNewView(view: ArrayBufferView<*>)
+    fun respondWithNewView(view: ArrayBufferView<ArrayBuffer>)
 }

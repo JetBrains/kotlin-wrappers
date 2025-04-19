@@ -2,6 +2,7 @@
 
 package web.audio
 
+import js.buffer.ArrayBuffer
 import js.typedarrays.Float32Array
 import kotlin.js.definedExternally
 
@@ -17,7 +18,7 @@ open external class WaveShaperNode(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WaveShaperNode/curve)
      */
-    var curve: Float32Array<*>?
+    var curve: Float32Array<ArrayBuffer>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WaveShaperNode/oversample)

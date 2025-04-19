@@ -2,6 +2,7 @@
 
 package web.audio
 
+import js.buffer.ArrayBuffer
 import js.typedarrays.Float32Array
 
 /**
@@ -17,8 +18,8 @@ open external class IIRFilterNode(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IIRFilterNode/getFrequencyResponse)
      */
     fun getFrequencyResponse(
-        frequencyHz: Float32Array<*>,
-        magResponse: Float32Array<*>,
-        phaseResponse: Float32Array<*>,
+        frequencyHz: Float32Array<ArrayBuffer>,
+        magResponse: Float32Array<ArrayBuffer>,
+        phaseResponse: Float32Array<ArrayBuffer>,
     )
 }

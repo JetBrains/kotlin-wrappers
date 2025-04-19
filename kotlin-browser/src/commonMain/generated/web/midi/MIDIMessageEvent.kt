@@ -2,6 +2,7 @@
 
 package web.midi
 
+import js.buffer.ArrayBuffer
 import js.typedarrays.Uint8Array
 import seskar.js.JsAlias
 import seskar.js.JsAlias.Companion.THIS
@@ -23,7 +24,7 @@ open external class MIDIMessageEvent(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MIDIMessageEvent/data)
      */
-    val data: Uint8Array<*>?
+    val data: Uint8Array<ArrayBuffer>?
 
     @JsAlias(THIS)
     override fun asInit(): MIDIMessageEventInit

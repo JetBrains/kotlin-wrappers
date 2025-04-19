@@ -2,6 +2,7 @@
 
 package web.midi
 
+import js.buffer.ArrayBuffer
 import js.objects.JsPlainObject
 import js.typedarrays.Uint8Array
 import web.events.EventInit
@@ -9,5 +10,5 @@ import web.events.EventInit
 @JsPlainObject
 external interface MIDIMessageEventInit :
     EventInit {
-    val data: Uint8Array<*>?
+    val data: Uint8Array<ArrayBuffer>?
 }

@@ -3,6 +3,7 @@
 package web.geometry
 
 import js.array.ReadonlyArray
+import js.buffer.ArrayBuffer
 import js.core.JsDouble
 import js.typedarrays.Float32Array
 import js.typedarrays.Float64Array
@@ -217,8 +218,8 @@ open external class DOMMatrix(
     ): DOMMatrix
 
     companion object {
-        fun fromFloat32Array(array32: Float32Array<*>): DOMMatrix
-        fun fromFloat64Array(array64: Float64Array<*>): DOMMatrix
+        fun fromFloat32Array(array32: Float32Array<ArrayBuffer>): DOMMatrix
+        fun fromFloat64Array(array64: Float64Array<ArrayBuffer>): DOMMatrix
         fun fromMatrix(other: DOMMatrixReadOnly = definedExternally): DOMMatrix
     }
 }

@@ -2,6 +2,7 @@
 
 package web.streams
 
+import js.buffer.ArrayBuffer
 import js.buffer.ArrayBufferView
 import js.core.Void
 import js.errors.JsError
@@ -33,7 +34,7 @@ private constructor() :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableByteStreamController/enqueue)
      */
-    fun enqueue(chunk: ArrayBufferView<*>)
+    fun enqueue(chunk: ArrayBufferView<ArrayBuffer>)
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableByteStreamController/error)

@@ -3,7 +3,7 @@
 package web.svg
 
 /**
- * The `SVGAnimatedNumber` interface is used for attributes which take a list of numbers and which can be animated.
+ * The **`SVGAnimatedNumberList`** interface represents a list of attributes of type \<number> which can be animated.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedNumberList)
  */

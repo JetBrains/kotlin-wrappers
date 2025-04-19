@@ -22,7 +22,7 @@ sealed external interface Body {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/body)
      */
-    val body: ReadableStream<Uint8Array<*>>?
+    val body: ReadableStream<Uint8Array<ArrayBuffer>>?
         get() = definedExternally
 
     /**
@@ -56,10 +56,10 @@ sealed external interface Body {
      */
     @JsAsync
     @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun bytes(): Uint8Array<*> = definedExternally
+    suspend fun bytes(): Uint8Array<ArrayBuffer> = definedExternally
 
     @JsName("bytes")
-    fun bytesAsync(): Promise<Uint8Array<*>> = definedExternally
+    fun bytesAsync(): Promise<Uint8Array<ArrayBuffer>> = definedExternally
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/formData)
