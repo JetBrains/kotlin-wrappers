@@ -1,5 +1,5 @@
 plugins {
-    id("kotlin-conventions")
+    id("examplesbuild.kotlin-conventions")
 }
 
 dependencies {
