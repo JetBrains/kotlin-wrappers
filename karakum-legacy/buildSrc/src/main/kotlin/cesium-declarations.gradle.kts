@@ -4,14 +4,14 @@ plugins {
 
 tasks.named("generateDeclarations") {
     doLast {
-        val sourceDir = file("src/commonMain/generated")
+        val sourceDir = commonGeneratedDir
 
         delete(sourceDir)
 
         karakum.cesium.generateKotlinDeclarations(
             engineDefinitionsFile = nodeModules.resolve("@cesium/engine/index.d.ts"),
             widgetsDefinitionsFile = nodeModules.resolve("@cesium/widgets/index.d.ts"),
-            sourceDir = sourceDir,
+            sourceDir = sourceDir.asFile,
         )
     }
 }

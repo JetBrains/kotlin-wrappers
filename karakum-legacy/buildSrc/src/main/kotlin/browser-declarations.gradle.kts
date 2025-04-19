@@ -4,7 +4,7 @@ plugins {
 
 tasks.named("generateDeclarations") {
     doLast {
-        val sourceDir = projectDir.resolve("src/commonMain/generated")
+        val sourceDir = commonGeneratedDir
 
         delete(sourceDir)
 
@@ -27,7 +27,7 @@ tasks.named("generateDeclarations") {
             serviceworkerDefinitionsFile = serviceworkerDefinitionsDir.resolve("index.d.ts"),
             serviceworkerIterableDefinitionsFile = serviceworkerDefinitionsDir.resolve("iterable.d.ts"),
             audioWorkletDefinitionsFile = audioWorkletDefinitionsDir.resolve("index.d.ts"),
-            sourceDir = sourceDir,
+            sourceDir = sourceDir.asFile,
         )
     }
 }

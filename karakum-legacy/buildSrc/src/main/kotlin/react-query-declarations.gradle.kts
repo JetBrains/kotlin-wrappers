@@ -12,14 +12,14 @@ tasks.named("generateDeclarations") {
         val reactTypesDir = tanstackDir
             .resolve("react-query/build/modern")
 
-        val sourceDir = projectDir.resolve("src/jsMain/generated")
+        val sourceDir = jsGeneratedDir
 
         delete(sourceDir)
 
         karakum.query.generateKotlinDeclarations(
             coreTypesDir = coreTypesDir,
             reactTypesDir = reactTypesDir,
-            sourceDir = sourceDir,
+            sourceDir = sourceDir.asFile,
         )
     }
 }

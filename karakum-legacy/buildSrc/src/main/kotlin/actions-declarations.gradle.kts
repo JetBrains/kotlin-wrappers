@@ -4,7 +4,7 @@ plugins {
 
 tasks.named("generateDeclarations") {
     doLast {
-        val sourceDir = projectDir.resolve("src/jsMain/generated")
+        val sourceDir = jsGeneratedDir
 
         delete(sourceDir)
 
@@ -12,7 +12,7 @@ tasks.named("generateDeclarations") {
 
         karakum.actions.generateKotlinDeclarations(
             definitionsDir = definitionsDir,
-            sourceDir = sourceDir,
+            sourceDir = sourceDir.asFile,
         )
     }
 }
