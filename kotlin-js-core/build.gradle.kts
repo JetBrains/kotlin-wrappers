@@ -1,7 +1,7 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompilationTask
 
 plugins {
-    id("kotlin-library-conventions")
+    id("wrappersbuild.kotlin-library-conventions")
 }
 
 // for `definedExternally`
