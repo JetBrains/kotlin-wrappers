@@ -50,6 +50,8 @@ private val DEFAULT_IMPORTS = Imports(
     "js.intl.Locale",
     "js.intl.Localizable",
     "js.intl.UnicodeBCP47LocaleIdentifier",
+    "js.iterable.AsyncIterable",
+    "js.iterable.AsyncIterator",
     "js.iterable.JsIterable",
     "js.iterable.JsIterator",
     "js.objects.JsPlainObject",

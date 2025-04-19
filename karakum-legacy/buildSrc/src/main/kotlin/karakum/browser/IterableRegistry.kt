@@ -44,6 +44,11 @@ internal object IterableRegistry {
     }
 
     fun additionalParent(type: String): String? {
+        if (type == "ReadableStream") {
+            require(additionalParentMap[type] == null)
+            return "AsyncIterable<R>"
+        }
+
         if (type == "FileSystemDirectoryHandle") {
             require(additionalParentMap[type] == null)
             return "AsyncMapLike<String, FileSystemHandle>"
