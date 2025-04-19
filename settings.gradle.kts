@@ -54,6 +54,8 @@ fun VersionCatalogBuilder.npmLibraries() {
     }
 }
 
+includeBuild("build-logic")
+
 includeBuild("karakum-legacy")
 
 include("docs")
