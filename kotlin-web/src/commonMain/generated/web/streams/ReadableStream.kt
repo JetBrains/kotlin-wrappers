@@ -20,10 +20,15 @@ import kotlin.js.definedExternally
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStream)
  */
 open external class ReadableStream<R : JsAny?>(
-    underlyingSource: UnderlyingDefaultSource<R>,
+    underlyingSource: UnderlyingByteSource,
     strategy: QueuingStrategy<R> = definedExternally,
 ) : Transferable,
     AsyncIterable<R> {
+    constructor(
+        underlyingSource: UnderlyingDefaultSource<R>,
+        strategy: QueuingStrategy<R> = definedExternally,
+    )
+
     constructor(
         underlyingSource: UnderlyingSource<R> = definedExternally,
         strategy: QueuingStrategy<R> = definedExternally,
