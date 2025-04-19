@@ -1,5 +1,5 @@
 plugins {
-    `kotlin-library-conventions`
+    id("kotlin-library-conventions")
 }
 
 dependencies {
