@@ -8,7 +8,7 @@ import org.jetbrains.kotlin.gradle.targets.js.dsl.KotlinJsTargetDsl
 plugins {
     kotlin("multiplatform")
     kotlin("plugin.js-plain-objects")
-    id("tools-conventions")
+    id("wrappersbuild.tools-conventions")
     id("kotlin-test-conventions")
 }
 
