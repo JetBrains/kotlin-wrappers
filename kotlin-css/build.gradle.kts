@@ -1,7 +1,7 @@
 import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTargetWithSimulatorTests
 
 plugins {
-    `kotlin-legacy-library-conventions`
+    id("kotlin-legacy-library-conventions")
 }
 
 kotlin {
