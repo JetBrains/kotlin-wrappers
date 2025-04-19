@@ -4,7 +4,7 @@ import js.array.ReadonlyArray
 import js.core.JsAny
 import js.core.JsBoolean
 import js.core.Void
-import js.errors.JsError
+import js.errors.JsErrorLike
 import js.iterable.AsyncIterable
 import js.iterable.JsIterable
 import js.promise.Promise
@@ -16,7 +16,25 @@ import kotlin.js.definedExternally
 external class Observable<out T : JsAny?>(
     callback: SubscribeCallback<T>,
 ) {
-    fun catch(callback: (JsError) -> @UnsafeVariance T): Observable<T>
+    @PublishedApi
+    @JsName("catch")
+    internal fun catchInternal(transform: (JsErrorLike?) -> Promise<@UnsafeVariance T>): Observable<T>
+
+    @PublishedApi
+    @JsName("catch")
+    internal fun catchInternal(transform: (JsErrorLike?) -> JsIterable<@UnsafeVariance T>): Observable<T>
+
+    @PublishedApi
+    @JsName("catch")
+    internal fun catchInternal(transform: (JsErrorLike?) -> ReadonlyArray<@UnsafeVariance T>): Observable<T>
+
+    @PublishedApi
+    @JsName("catch")
+    internal fun catchInternal(transform: (JsErrorLike?) -> AsyncIterable<@UnsafeVariance T>): Observable<T>
+
+    @PublishedApi
+    @JsName("catch")
+    internal fun catchInternal(transform: (JsErrorLike?) -> Observable<@UnsafeVariance T>): Observable<T>
 
     fun drop(n: Int): Observable<T>
 
@@ -176,3 +194,28 @@ external class Observable<out T : JsAny?>(
         ): Observable<T>
     }
 }
+
+inline fun <T : JsAny?> Observable<T>.catch(
+    noinline transform: (JsErrorLike?) -> Promise<T>,
+): Observable<T> =
+    catchInternal(transform)
+
+inline fun <T : JsAny?> Observable<T>.catch(
+    noinline transform: (JsErrorLike?) -> JsIterable<T>,
+): Observable<T> =
+    catchInternal(transform)
+
+inline fun <T : JsAny?> Observable<T>.catch(
+    noinline transform: (JsErrorLike?) -> ReadonlyArray<T>,
+): Observable<T> =
+    catchInternal(transform)
+
+inline fun <T : JsAny?> Observable<T>.catch(
+    noinline transform: (JsErrorLike?) -> AsyncIterable<T>,
+): Observable<T> =
+    catchInternal(transform)
+
+inline fun <T : JsAny?> Observable<T>.catch(
+    noinline transform: (JsErrorLike?) -> Observable<T>,
+): Observable<T> =
+    catchInternal(transform)
