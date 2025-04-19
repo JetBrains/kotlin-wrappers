@@ -19,6 +19,8 @@ dependencyResolutionManagement {
     }
 }
 
+includeBuild("build-logic")
+
 include("browser")
 include("react")
 include("react-lazy-modules-webpack")
