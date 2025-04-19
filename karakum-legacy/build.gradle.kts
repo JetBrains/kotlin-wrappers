@@ -1,3 +1,0 @@
-plugins {
-    `npm-versions`
-}
