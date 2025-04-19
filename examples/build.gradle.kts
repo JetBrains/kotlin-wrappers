@@ -1,5 +1,5 @@
 plugins {
-    `tools-conventions`
+    id("tools-conventions")
 }
 
 tasks.wrapper {

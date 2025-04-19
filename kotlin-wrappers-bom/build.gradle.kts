@@ -1,6 +1,6 @@
 plugins {
     `java-platform`
-    `publish-conventions`
+    id("publish-conventions")
     id("org.jetbrains.dokka")
 }
 
