@@ -1,5 +1,5 @@
 plugins {
-    id("subproject-conventions")
+    id("wrappersbuild.subproject-conventions")
     id("org.jetbrains.dokka")
 }
 

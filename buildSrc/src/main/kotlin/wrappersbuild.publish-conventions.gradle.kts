@@ -2,7 +2,7 @@ plugins {
     `maven-publish`
     signing
 
-    id("subproject-conventions")
+    id("wrappersbuild.subproject-conventions")
 }
 
 project.version = publishVersion()
