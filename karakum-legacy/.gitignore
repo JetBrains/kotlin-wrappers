@@ -1,6 +1,1 @@
-.gradle/
-.kotlin/
-build/
-generated/
-
 package-lock.json
