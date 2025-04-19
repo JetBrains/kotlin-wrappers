@@ -133,7 +133,10 @@ external class Observable<out T : JsAny?>(
         options: SubscribeOptions? = definedExternally,
     )
 
+    fun <R : JsAny?> switchMap(transform: (T) -> Promise<R>): Observable<R>
+    fun <R : JsAny?> switchMap(transform: (T) -> JsIterable<R>): Observable<R>
     fun <R : JsAny?> switchMap(transform: (T) -> ReadonlyArray<R>): Observable<R>
+    fun <R : JsAny?> switchMap(transform: (T) -> AsyncIterable<R>): Observable<R>
     fun <R : JsAny?> switchMap(transform: (T) -> Observable<R>): Observable<R>
 
     fun take(n: Int): Observable<T>
