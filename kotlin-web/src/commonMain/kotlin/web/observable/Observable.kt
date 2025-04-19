@@ -57,6 +57,7 @@ external class Observable<out T : JsAny?>(
     @JsName("first")
     fun firstAsync(options: SubscribeOptions? = definedExternally): Promise<T>
 
+    fun <R : JsAny?> flatMap(transform: (T) -> Promise<R>): Observable<R>
     fun <R : JsAny?> flatMap(transform: (T) -> JsIterable<R>): Observable<R>
     fun <R : JsAny?> flatMap(transform: (T) -> ReadonlyArray<R>): Observable<R>
     fun <R : JsAny?> flatMap(transform: (T) -> AsyncIterable<R>): Observable<R>
