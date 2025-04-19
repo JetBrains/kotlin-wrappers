@@ -6,6 +6,8 @@ import js.array.JsTuple2
 import js.core.JsAny
 import js.core.Void
 import js.errors.JsError
+import js.iterable.AsyncIterable
+import js.iterable.AsyncIterator
 import js.promise.Promise
 import js.transferable.Transferable
 import seskar.js.JsAsync
@@ -20,7 +22,8 @@ import kotlin.js.definedExternally
 open external class ReadableStream<R : JsAny?>(
     underlyingSource: UnderlyingDefaultSource<R>,
     strategy: QueuingStrategy<R> = definedExternally,
-) : Transferable {
+) : Transferable,
+    AsyncIterable<R> {
     constructor(
         underlyingSource: UnderlyingSource<R> = definedExternally,
         strategy: QueuingStrategy<R> = definedExternally,
@@ -75,4 +78,5 @@ open external class ReadableStream<R : JsAny?>(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStream/tee)
      */
     fun tee(): JsTuple2<ReadableStream<R>, ReadableStream<R>>
+    fun values(options: ReadableStreamIteratorOptions = definedExternally): AsyncIterator<R>
 }
