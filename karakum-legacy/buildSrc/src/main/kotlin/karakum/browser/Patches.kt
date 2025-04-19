@@ -86,7 +86,7 @@ internal fun String.applyPatches(): String {
         )
         .replace("    getReader(options: { mode: \"byob\" }): ReadableStreamBYOBReader;\n", "")
         .replace(
-            "    new(underlyingSource: UnderlyingByteSource, strategy?: { highWaterMark?: number }): ReadableStream<Uint8Array>;\n",
+            "    new(underlyingSource: UnderlyingByteSource, strategy?: { highWaterMark?: number }): ReadableStream<Uint8Array<ArrayBuffer>>;\n",
             ""
         )
         .patchInterface("ReadableStream") {

@@ -164,7 +164,7 @@ private val ALIAS_MAP = mapOf(
     "string" to "JsString",
     "number" to "JsDouble",
 
-    "Uint8Array" to "Uint8Array<*>",
+    "Uint8Array<ArrayBuffer>" to "Uint8Array<ArrayBuffer>",
 
     "number[] | GPUColorDict" to "GPUColorDict /* number[] */",
     "GPUIntegerCoordinate[] | GPUExtent3DDict" to "GPUExtent3DDict /* GPUIntegerCoordinate[] */",
@@ -368,9 +368,6 @@ private fun convertType(
 
             name == "VibratePattern" && bodySource == "number | number[]"
                 -> "ReadonlyArray<JsInt> /* | Int */"
-
-            bodySource == "Uint8ClampedArray"
-                -> "$bodySource<*>"
 
             bodySource == "string | Function"
                 -> "() -> Unit"

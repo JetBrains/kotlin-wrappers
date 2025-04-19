@@ -2250,12 +2250,6 @@ private fun convertFunction(
                 it.replace(": number", ": ${typeProvider.getReturnType(name)}")
             } else it
         }
-        .let { src ->
-            TYPED_ARRAYS.fold(src) { acc, typedArray ->
-                acc.replace(": $typedArray", ": $typedArray<*>")
-                    .replace("<$typedArray>", "<$typedArray<*>>")
-            }
-        }
         .replace(": string", ": String")
         .replace("<string>", "<String>")
         .replace(": boolean", ": Boolean")
