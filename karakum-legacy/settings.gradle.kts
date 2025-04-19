@@ -6,6 +6,8 @@ dependencyResolutionManagement {
     }
 }
 
+includeBuild("../generate-logic-legacy")
+
 include("actions-kotlin")
 include("browser-kotlin")
 include("cesium-kotlin")
