@@ -1,3 +1,7 @@
+plugins {
+    id("io.github.turansky.kfc.library")
+}
+
 tasks.named<Delete>("clean") {
     delete("src")
 }

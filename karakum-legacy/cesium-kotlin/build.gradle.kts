@@ -1,5 +1,4 @@
 plugins {
-    alias(kfc.plugins.library)
     `cesium-declarations`
 }
 

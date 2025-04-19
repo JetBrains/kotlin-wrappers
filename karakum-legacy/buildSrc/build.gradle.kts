@@ -8,6 +8,7 @@ plugins {
 
 repositories {
     mavenCentral()
+    gradlePluginPortal()
 }
 
 val props = Properties().apply {
@@ -18,5 +19,9 @@ fun version(target: String): String =
     props.getProperty("${target}.version")
 
 dependencies {
+    implementation(kotlin("gradle-plugin", version("kotlin")))
+    implementation("org.jetbrains.kotlin:js-plain-objects:${version("kotlin")}")
+    implementation("io.github.turansky.kfc.library:io.github.turansky.kfc.library.gradle.plugin:${version("kfc")}")
+
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:${version("kotlinx-serialization")}")
 }

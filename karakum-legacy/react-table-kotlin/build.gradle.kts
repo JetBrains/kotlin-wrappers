@@ -1,5 +1,4 @@
 plugins {
-    alias(kfc.plugins.library)
     `react-table-declarations`
 }
 
