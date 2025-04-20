@@ -1,5 +1,6 @@
 package wrappers.example.hooks
 
+import js.json.stringify
 import web.http.BodyInit
 import web.http.RequestInit
 import web.http.RequestMethod
@@ -16,6 +17,6 @@ private suspend fun createUser(user: User): User =
     fetchUserData(
         init = RequestInit(
             method = RequestMethod.POST,
-            body = BodyInit(JSON.stringify(user)),
+            body = BodyInit(stringify(user)),
         )
     )

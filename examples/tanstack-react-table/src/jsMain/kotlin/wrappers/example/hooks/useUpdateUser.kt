@@ -1,5 +1,6 @@
 package wrappers.example.hooks
 
+import js.json.stringify
 import web.http.BodyInit
 import web.http.RequestInit
 import web.http.RequestMethod
@@ -17,6 +18,6 @@ private suspend fun updateUser(user: User): User =
         id = user.id,
         init = RequestInit(
             method = RequestMethod.PUT,
-            body = BodyInit(JSON.stringify(user)),
+            body = BodyInit(stringify(user)),
         )
     )
