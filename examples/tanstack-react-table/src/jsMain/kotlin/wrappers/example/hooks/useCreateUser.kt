@@ -4,19 +4,22 @@ import js.json.stringify
 import web.http.BodyInit
 import web.http.RequestInit
 import web.http.RequestMethod
+import wrappers.example.entities.CreateUserOptions
 import wrappers.example.entities.User
 
-typealias CreateUser = (User) -> Unit
+typealias CreateUser = (CreateUserOptions) -> Unit
 
 fun useCreateUser(): CreateUser =
-    useMutateUser { user ->
-        createUser(user)
+    useMutateUser { options ->
+        createUser(options)
     }
 
-private suspend fun createUser(user: User): User =
+private suspend fun createUser(
+    options: CreateUserOptions,
+): User =
     fetchUserData(
         init = RequestInit(
             method = RequestMethod.POST,
-            body = BodyInit(stringify(user)),
+            body = BodyInit(stringify(options)),
         )
     )

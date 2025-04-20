@@ -8,14 +8,13 @@ import tanstack.react.query.UseMutationOptions
 import tanstack.react.query.useMutation
 import tanstack.react.query.useQueryClient
 import wrappers.example.USERS_QUERY_KEY
-import wrappers.example.entities.User
 import wrappers.example.query.createMutationFunction
 
-fun <D, M : Function<Unit>> useMutateUser(
-    action: suspend (User) -> D,
-): M {
+fun <O, R> useMutateUser(
+    action: suspend (O) -> R,
+): (O) -> Unit {
     val queryClient = useQueryClient()
-    val mutate = useMutation<D, JsError, User, QueryKey>(
+    val mutate = useMutation<R, JsError, O, QueryKey>(
         options = UseMutationOptions(
             mutationFn = createMutationFunction(action),
             onSuccess = { _, _, _ ->
