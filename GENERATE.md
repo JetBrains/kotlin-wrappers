@@ -22,6 +22,6 @@ TanStack Query
 TanStack Table
 
 ```sh
-./gradlew :karakum-legacy:react-table-kotlin:generate
+./gradlew :kotlin-tanstack-table-karakum:generate
 ./gradlew :kotlin-tanstack-react-table:build
 ```
