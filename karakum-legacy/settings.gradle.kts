@@ -8,7 +8,6 @@ dependencyResolutionManagement {
 
 includeBuild("../generate-logic-legacy")
 
-include("cesium-kotlin")
 include("csstype-kotlin")
 include("popper-kotlin")
 include("react-query-kotlin")

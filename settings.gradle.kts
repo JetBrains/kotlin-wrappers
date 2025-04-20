@@ -105,6 +105,8 @@ include("kotlin-ajv")
 include("kotlin-browser")
 includeKarakum("kotlin-browser")
 
+includeKarakum("kotlin-cesium")
+
 // Kotlin/JS: CesiumJS wrappers
 include("kotlin-cesium-engine")
 
