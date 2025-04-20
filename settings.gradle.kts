@@ -66,6 +66,8 @@ includeBuild("karakum-legacy")
 
 include("docs")
 
+includeKarakum("kotlin-actions")
+
 // Kotlin/JS: GitHub Actions Artifact wrappers
 include("kotlin-actions-artifact")
 
