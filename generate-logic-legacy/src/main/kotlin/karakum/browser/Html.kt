@@ -1173,6 +1173,7 @@ internal fun convertInterface(
                 .replace("val writable:", "override val writable:")
 
             "PerformanceEntry",
+            "ReportBody",
                 -> result
                 .replace("fun toJSON()", "open fun toJSON()")
 
@@ -1182,6 +1183,10 @@ internal fun convertInterface(
             "LargestContentfulPaint",
                 -> result
                 .replace("val target: Node?", "val target: EventTarget /* Node */?")
+                .replace("fun toJSON()", "override fun toJSON()")
+
+            "CSPViolationReportBody",
+                -> result
                 .replace("fun toJSON()", "override fun toJSON()")
 
             "QueuingStrategy",
@@ -1285,6 +1290,7 @@ internal fun convertInterface(
 
                         name == "TextTrackCue" ||
 
+                        name == "ReportBody" ||
                         name == "XMLHttpRequestEventTarget" ||
 
                         name == "StyleSheet" ||
