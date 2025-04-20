@@ -7,6 +7,6 @@ package node.zlib
 /**
  * @since v0.6.0
  */
-external fun deflate(buf: InputType, callback: CompressCallback): Unit
+external fun deflate(buf: InputType, callback: CompressCallback)
 
-external fun deflate(buf: InputType, options: ZlibOptions, callback: CompressCallback): Unit
+external fun deflate(buf: InputType, options: ZlibOptions, callback: CompressCallback)

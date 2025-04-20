@@ -25,4 +25,4 @@ package node.crypto
  * @since v0.11.11
  * @param flags
  */
-external fun setEngine(engine: String, flags: Number = definedExternally): Unit
+external fun setEngine(engine: String, flags: Number = definedExternally)

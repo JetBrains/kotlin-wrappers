@@ -55,7 +55,7 @@ external class TracingChannel<StoreType /* default is Any? */, ContextType : Any
      * @experimental
      * @param subscribers Set of `TracingChannel Channels` subscribers
      */
-    fun subscribe(subscribers: TracingChannelSubscribers<ContextType>): Unit
+    fun subscribe(subscribers: TracingChannelSubscribers<ContextType>)
 
     /**
      * Helper to unsubscribe a collection of functions from the corresponding channels.
@@ -90,7 +90,7 @@ external class TracingChannel<StoreType /* default is Any? */, ContextType : Any
      * @param subscribers Set of `TracingChannel Channels` subscribers
      * @return `true` if all handlers were successfully unsubscribed, and `false` otherwise.
      */
-    fun unsubscribe(subscribers: TracingChannelSubscribers<ContextType>): Unit
+    fun unsubscribe(subscribers: TracingChannelSubscribers<ContextType>)
 
     /**
      * Trace a synchronous function call. This will always produce a `start event` and `end event` around the execution and may produce an `error event` if the given function throws an error.
@@ -124,7 +124,7 @@ external class TracingChannel<StoreType /* default is Any? */, ContextType : Any
         context: ContextType = definedExternally,
         thisArg: ThisArg = definedExternally,
         vararg args: Any?, /* Args */
-    ): Unit
+    )
 
     /**
      * Trace a promise-returning function call. This will always produce a `start event` and `end event` around the synchronous portion of the
@@ -160,7 +160,7 @@ external class TracingChannel<StoreType /* default is Any? */, ContextType : Any
         context: ContextType = definedExternally,
         thisArg: ThisArg = definedExternally,
         vararg args: Any?, /* Args */
-    ): Unit
+    )
 
     /**
      * Trace a callback-receiving function call. This will always produce a `start event` and `end event` around the synchronous portion of the
@@ -226,5 +226,5 @@ external class TracingChannel<StoreType /* default is Any? */, ContextType : Any
         context: ContextType = definedExternally,
         thisArg: Any? = definedExternally,
         vararg args: Any?, /* Parameters<Fn> */
-    ): Unit
+    )
 }

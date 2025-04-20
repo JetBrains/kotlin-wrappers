@@ -7,11 +7,11 @@ sealed external interface ProcessChannel {
      * This method makes the IPC channel keep the event loop of the process running if .unref() has been called before.
      * @since v7.1.0
      */
-    fun ref(): Unit
+    fun ref()
 
     /**
      * This method makes the IPC channel not keep the event loop of the process running, and lets it finish even while the channel is open.
      * @since v7.1.0
      */
-    fun unref(): Unit
+    fun unref()
 }

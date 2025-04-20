@@ -21,7 +21,7 @@ sealed external interface StatWatcher : EventEmitter {
      * called previously.
      * @since v14.3.0, v12.20.0
      */
-    fun ref(): Unit /* this */
+    fun ref() /* this */
 
     /**
      * When called, the active `fs.StatWatcher` object will not require the Node.js
@@ -31,5 +31,5 @@ sealed external interface StatWatcher : EventEmitter {
      * no effect.
      * @since v14.3.0, v12.20.0
      */
-    fun unref(): Unit /* this */
+    fun unref() /* this */
 }

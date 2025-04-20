@@ -12,25 +12,25 @@ package node.tty
 open external class WriteStream : node.net.Socket {
     constructor (fd: Number)
 
-    override fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
+    override fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
     override fun emit(event: String, vararg args: Any?): Boolean
 
     override fun emit(event: js.symbol.Symbol, vararg args: Any?): Boolean
 
-    override fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
+    override fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
-    override fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
+    override fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
     override fun prependListener(
         event: String,
         listener: Function<Unit>, /* (...args: any[]) => void */
-    ): Unit /* this */
+    ) /* this */
 
     override fun prependOnceListener(
         event: String,
         listener: Function<Unit>, /* (...args: any[]) => void */
-    ): Unit /* this */
+    ) /* this */
 
     /**
      * `writeStream.clearLine()` clears the current line of this `WriteStream` in a

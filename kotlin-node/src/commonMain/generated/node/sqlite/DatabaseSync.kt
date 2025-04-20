@@ -27,7 +27,7 @@ external class DatabaseSync {
      * open. This method is a wrapper around [`sqlite3_close_v2()`](https://www.sqlite.org/c3ref/close.html).
      * @since v22.5.0
      */
-    fun close(): Unit
+    fun close()
 
     /**
      * Loads a shared library into the database connection. This method is a wrapper
@@ -36,7 +36,7 @@ external class DatabaseSync {
      * @since v22.13.0
      * @param path The path to the shared library to load.
      */
-    fun loadExtension(path: String): Unit
+    fun loadExtension(path: String)
 
     /**
      * Enables or disables the `loadExtension` SQL function, and the `loadExtension()`
@@ -45,7 +45,7 @@ external class DatabaseSync {
      * @since v22.13.0
      * @param allow Whether to allow loading extensions.
      */
-    fun enableLoadExtension(allow: Boolean): Unit
+    fun enableLoadExtension(allow: Boolean)
 
     /**
      * This method allows one or more SQL statements to be executed without returning
@@ -54,7 +54,7 @@ external class DatabaseSync {
      * @since v22.5.0
      * @param sql A SQL string to execute.
      */
-    fun exec(sql: String): Unit
+    fun exec(sql: String)
 
     /**
      * This method is used to create SQLite user-defined functions. This method is a
@@ -69,19 +69,19 @@ external class DatabaseSync {
         name: String,
         options: FunctionOptions,
         func: Function<SupportedValueType>, /* (...args: SupportedValueType[]) => SupportedValueType */
-    ): Unit
+    )
 
     fun function(
         name: String,
         func: Function<SupportedValueType>, /* (...args: SupportedValueType[]) => SupportedValueType */
-    ): Unit
+    )
 
     /**
      * Opens the database specified in the `location` argument of the `DatabaseSync`constructor. This method should only be used when the database is not opened via
      * the constructor. An exception is thrown if the database is already open.
      * @since v22.5.0
      */
-    fun open(): Unit
+    fun open()
 
     /**
      * Compiles a SQL statement into a [prepared statement](https://www.sqlite.org/c3ref/stmt.html). This method is a wrapper

@@ -159,5 +159,5 @@ open external class Decipher : node.stream.Transform {
      * @param [autoPadding=true]
      * @return for method chaining.
      */
-    fun setAutoPadding(auto_padding: Boolean = definedExternally): Unit /* this */
+    fun setAutoPadding(auto_padding: Boolean = definedExternally) /* this */
 }

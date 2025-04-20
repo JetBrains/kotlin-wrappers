@@ -18,7 +18,7 @@ external fun writeFileSync(
     file: PathOrFileDescriptor,
     data: String,
     options: WriteFileOptions = definedExternally,
-): Unit
+)
 
 /**
  * Returns `undefined`.
@@ -34,4 +34,4 @@ external fun writeFileSync(
     file: PathOrFileDescriptor,
     data: js.buffer.ArrayBufferView<*>,
     options: WriteFileOptions = definedExternally,
-): Unit
+)

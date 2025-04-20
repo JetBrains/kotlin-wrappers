@@ -77,25 +77,25 @@ external fun sign(
     data: js.buffer.ArrayBufferView<*>,
     key: KeyLike,
     callback: (error: js.errors.JsError?, data: node.buffer.Buffer<*>) -> Unit,
-): Unit
+)
 
 external fun sign(
     algorithm: String?,
     data: js.buffer.ArrayBufferView<*>,
     key: SignKeyObjectInput,
     callback: (error: js.errors.JsError?, data: node.buffer.Buffer<*>) -> Unit,
-): Unit
+)
 
 external fun sign(
     algorithm: String?,
     data: js.buffer.ArrayBufferView<*>,
     key: SignPrivateKeyInput,
     callback: (error: js.errors.JsError?, data: node.buffer.Buffer<*>) -> Unit,
-): Unit
+)
 
 external fun sign(
     algorithm: String?,
     data: js.buffer.ArrayBufferView<*>,
     key: SignJsonWebKeyInput,
     callback: (error: js.errors.JsError?, data: node.buffer.Buffer<*>) -> Unit,
-): Unit
+)

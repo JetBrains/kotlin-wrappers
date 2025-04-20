@@ -6,25 +6,25 @@ package node.inspector
 // The method signatures differ from those of the Node.js console, and are deliberately
 // typed permissively.
 sealed external interface InspectorConsole {
-    fun debug(vararg data: Any?): Unit
-    fun error(vararg data: Any?): Unit
-    fun info(vararg data: Any?): Unit
-    fun log(vararg data: Any?): Unit
-    fun warn(vararg data: Any?): Unit
-    fun dir(vararg data: Any?): Unit
-    fun dirxml(vararg data: Any?): Unit
-    fun table(vararg data: Any?): Unit
-    fun trace(vararg data: Any?): Unit
-    fun group(vararg data: Any?): Unit
-    fun groupCollapsed(vararg data: Any?): Unit
-    fun groupEnd(vararg data: Any?): Unit
-    fun clear(vararg data: Any?): Unit
-    fun count(label: Any? = definedExternally): Unit
-    fun countReset(label: Any? = definedExternally): Unit
-    fun assert(value: Any? = definedExternally, vararg data: Any?): Unit
-    fun profile(label: Any? = definedExternally): Unit
-    fun profileEnd(label: Any? = definedExternally): Unit
-    fun time(label: Any? = definedExternally): Unit
-    fun timeLog(label: Any? = definedExternally): Unit
-    fun timeStamp(label: Any? = definedExternally): Unit
+    fun debug(vararg data: Any?)
+    fun error(vararg data: Any?)
+    fun info(vararg data: Any?)
+    fun log(vararg data: Any?)
+    fun warn(vararg data: Any?)
+    fun dir(vararg data: Any?)
+    fun dirxml(vararg data: Any?)
+    fun table(vararg data: Any?)
+    fun trace(vararg data: Any?)
+    fun group(vararg data: Any?)
+    fun groupCollapsed(vararg data: Any?)
+    fun groupEnd(vararg data: Any?)
+    fun clear(vararg data: Any?)
+    fun count(label: Any? = definedExternally)
+    fun countReset(label: Any? = definedExternally)
+    fun assert(value: Any? = definedExternally, vararg data: Any?)
+    fun profile(label: Any? = definedExternally)
+    fun profileEnd(label: Any? = definedExternally)
+    fun time(label: Any? = definedExternally)
+    fun timeLog(label: Any? = definedExternally)
+    fun timeStamp(label: Any? = definedExternally)
 }

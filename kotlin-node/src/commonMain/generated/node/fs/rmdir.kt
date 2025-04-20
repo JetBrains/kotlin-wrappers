@@ -14,6 +14,6 @@ package node.fs
  * To get a behavior similar to the `rm -rf` Unix command, use {@link rm} with options `{ recursive: true, force: true }`.
  * @since v0.0.2
  */
-external fun rmdir(path: PathLike, callback: NoParamCallback): Unit
+external fun rmdir(path: PathLike, callback: NoParamCallback)
 
-external fun rmdir(path: PathLike, options: RmDirOptions, callback: NoParamCallback): Unit
+external fun rmdir(path: PathLike, options: RmDirOptions, callback: NoParamCallback)

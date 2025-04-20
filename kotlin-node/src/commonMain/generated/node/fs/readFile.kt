@@ -74,7 +74,7 @@ external fun readFile(
     path: PathOrFileDescriptor,
     options: (ReadFileBufferOptions)?,
     callback: (err: node.ErrnoException?, data: node.buffer.Buffer<*>) -> Unit,
-): Unit
+)
 
 /**
  * Asynchronously reads the entire contents of a file.
@@ -87,7 +87,7 @@ external fun readFile(
     path: PathOrFileDescriptor,
     options: ReadFileStringOptions,
     callback: (err: node.ErrnoException?, data: String) -> Unit,
-): Unit
+)
 
 /**
  * Asynchronously reads the entire contents of a file.
@@ -100,7 +100,7 @@ external fun readFile(
     path: PathOrFileDescriptor,
     options: node.buffer.BufferEncoding,
     callback: (err: node.ErrnoException?, data: String) -> Unit,
-): Unit
+)
 
 /**
  * Asynchronously reads the entire contents of a file.
@@ -113,7 +113,7 @@ external fun readFile(
     path: PathOrFileDescriptor,
     options: (ReadFileOptions)?,
     callback: (err: node.ErrnoException?, data: Any /* string | Buffer */) -> Unit,
-): Unit
+)
 
 /**
  * Asynchronously reads the entire contents of a file.
@@ -126,7 +126,7 @@ external fun readFile(
     path: PathOrFileDescriptor,
     options: node.buffer.BufferEncoding?,
     callback: (err: node.ErrnoException?, data: Any /* string | Buffer */) -> Unit,
-): Unit
+)
 
 /**
  * Asynchronously reads the entire contents of a file.
@@ -136,4 +136,4 @@ external fun readFile(
 external fun readFile(
     path: PathOrFileDescriptor,
     callback: (err: node.ErrnoException?, data: node.buffer.Buffer<*>) -> Unit,
-): Unit
+)

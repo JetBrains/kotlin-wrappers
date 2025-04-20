@@ -13,4 +13,4 @@ package node.inspector.network
  * @since v22.6.0
  * @experimental
  */
-external fun responseReceived(params: ResponseReceivedEventDataType): Unit
+external fun responseReceived(params: ResponseReceivedEventDataType)

@@ -180,7 +180,7 @@ open external class IncomingMessage : node.stream.Readable {
      * Calls `message.socket.setTimeout(msecs, callback)`.
      * @since v0.5.9
      */
-    fun setTimeout(msecs: Number, callback: () -> Unit = definedExternally): Unit /* this */
+    fun setTimeout(msecs: Number, callback: () -> Unit = definedExternally) /* this */
 
     /**
      * **Only valid for request obtained from {@link Server}.**
@@ -255,5 +255,5 @@ open external class IncomingMessage : node.stream.Readable {
      * as an argument to any listeners on the event.
      * @since v0.3.0
      */
-    override fun destroy(error: js.errors.JsError): Unit /* this */
+    override fun destroy(error: js.errors.JsError) /* this */
 }

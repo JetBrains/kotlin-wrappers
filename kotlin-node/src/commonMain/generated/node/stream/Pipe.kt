@@ -3,8 +3,8 @@
 package node.stream
 
 sealed external interface Pipe {
-    fun close(): Unit
+    fun close()
     fun hasRef(): Boolean
-    fun ref(): Unit
-    fun unref(): Unit
+    fun ref()
+    fun unref()
 }

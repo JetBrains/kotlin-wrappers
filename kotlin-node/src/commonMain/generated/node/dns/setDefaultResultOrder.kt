@@ -19,4 +19,4 @@ package node.dns
  * @since v16.4.0, v14.18.0
  * @param order must be `'ipv4first'`, `'ipv6first'` or `'verbatim'`.
  */
-external fun setDefaultResultOrder(order: SetDefaultResultOrderOrder): Unit
+external fun setDefaultResultOrder(order: SetDefaultResultOrderOrder)

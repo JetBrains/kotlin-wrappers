@@ -14,4 +14,4 @@ package node.test.snapshot
  * test is not associated with a file (for example in the REPL), the input is
  * undefined. `fn()` must return a string specifying the location of the snapshot file.
  */
-external fun setResolveSnapshotPath(fn: (path: String?) -> String): Unit
+external fun setResolveSnapshotPath(fn: (path: String?) -> String)

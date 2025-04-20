@@ -26,4 +26,4 @@ package node.dns
 external fun resolveSrv(
     hostname: String,
     callback: (err: node.ErrnoException?, addresses: js.array.ReadonlyArray<SrvRecord>) -> Unit,
-): Unit
+)

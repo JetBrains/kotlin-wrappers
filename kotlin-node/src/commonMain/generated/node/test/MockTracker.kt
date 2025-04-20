@@ -162,7 +162,7 @@ external class MockTracker {
      * function manually is recommended.
      * @since v19.1.0, v18.13.0
      */
-    fun reset(): Unit
+    fun reset()
 
     /**
      * This function restores the default behavior of all mocks that were previously
@@ -170,6 +170,6 @@ external class MockTracker {
      * not disassociate the mocks from the `MockTracker` instance.
      * @since v19.1.0, v18.13.0
      */
-    fun restoreAll(): Unit
+    fun restoreAll()
     var timers: MockTimers
 }

@@ -18,7 +18,7 @@ import web.url.URL
  * @param parentURL f you want to resolve `specifier` relative to a base
  * URL, such as `import.meta.url`, you can pass that URL here.
  */
-external fun <Data /* default is Any? */> register(specifier: String): Unit
+external fun <Data /* default is Any? */> register(specifier: String)
 
 /* eslint-disable @definitelytyped/no-unnecessary-generics */
 /**
@@ -36,7 +36,7 @@ external fun <Data /* default is Any? */> register(
     specifier: String,
     parentURL: String = definedExternally,
     options: RegisterOptions<Data> = definedExternally,
-): Unit
+)
 
 /* eslint-disable @definitelytyped/no-unnecessary-generics */
 /**
@@ -54,7 +54,7 @@ external fun <Data /* default is Any? */> register(
     specifier: String,
     parentURL: URL = definedExternally,
     options: RegisterOptions<Data> = definedExternally,
-): Unit
+)
 
 /* eslint-disable @definitelytyped/no-unnecessary-generics */
 /**
@@ -68,7 +68,7 @@ external fun <Data /* default is Any? */> register(
  * @param parentURL f you want to resolve `specifier` relative to a base
  * URL, such as `import.meta.url`, you can pass that URL here.
  */
-external fun <Data /* default is Any? */> register(specifier: URL): Unit
+external fun <Data /* default is Any? */> register(specifier: URL)
 
 /* eslint-disable @definitelytyped/no-unnecessary-generics */
 /**
@@ -86,7 +86,7 @@ external fun <Data /* default is Any? */> register(
     specifier: URL,
     parentURL: String = definedExternally,
     options: RegisterOptions<Data> = definedExternally,
-): Unit
+)
 
 /* eslint-disable @definitelytyped/no-unnecessary-generics */
 /**
@@ -104,14 +104,14 @@ external fun <Data /* default is Any? */> register(
     specifier: URL,
     parentURL: URL = definedExternally,
     options: RegisterOptions<Data> = definedExternally,
-): Unit
+)
 
 external fun <Data /* default is Any? */> register(
     specifier: String,
     options: RegisterOptions<Data> = definedExternally,
-): Unit
+)
 
 external fun <Data /* default is Any? */> register(
     specifier: URL,
     options: RegisterOptions<Data> = definedExternally,
-): Unit
+)

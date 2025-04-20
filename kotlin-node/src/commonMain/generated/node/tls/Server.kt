@@ -23,7 +23,7 @@ open external class Server : node.net.Server {
      * @param context An object containing any of the possible properties from the {@link createSecureContext} `options` arguments (e.g. `key`, `cert`, `ca`, etc), or a TLS context object created
      * with {@link createSecureContext} itself.
      */
-    fun addContext(hostname: String, context: SecureContextOptions): Unit
+    fun addContext(hostname: String, context: SecureContextOptions)
 
     /**
      * Returns the session ticket keys.
@@ -40,7 +40,7 @@ open external class Server : node.net.Server {
      * @since v11.0.0
      * @param options An object containing any of the possible properties from the {@link createSecureContext} `options` arguments (e.g. `key`, `cert`, `ca`, etc).
      */
-    fun setSecureContext(options: SecureContextOptions): Unit
+    fun setSecureContext(options: SecureContextOptions)
 
     /**
      * Sets the session ticket keys.
@@ -52,7 +52,7 @@ open external class Server : node.net.Server {
      * @since v3.0.0
      * @param keys A 48-byte buffer containing the session ticket keys.
      */
-    fun setTicketKeys(keys: node.buffer.Buffer<*>): Unit
+    fun setTicketKeys(keys: node.buffer.Buffer<*>)
 
     /**
      * events.EventEmitter
@@ -63,7 +63,7 @@ open external class Server : node.net.Server {
      * 5. secureConnection
      * 6. keylog
      */
-    override fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
+    override fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
 
     override fun emit(event: String, vararg args: Any?): Boolean
@@ -71,22 +71,22 @@ open external class Server : node.net.Server {
     override fun emit(event: js.symbol.Symbol, vararg args: Any?): Boolean
 
 
-    override fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
+    override fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
 
-    override fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
+    override fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
 
     override fun prependListener(
         event: String,
         listener: Function<Unit>, /* (...args: any[]) => void */
-    ): Unit /* this */
+    ) /* this */
 
 
     override fun prependOnceListener(
         event: String,
         listener: Function<Unit>, /* (...args: any[]) => void */
-    ): Unit /* this */
+    ) /* this */
 
 
     @web.events.JsEvent("tlsClientError")

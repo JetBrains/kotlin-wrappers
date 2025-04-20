@@ -53,15 +53,15 @@ open external class ServerResponse<Request : IncomingMessage /* default is Incom
      * @since v18.10.0, v16.18.0
      */
     var strictContentLength: Boolean
-    fun assignSocket(socket: Socket): Unit
-    fun detachSocket(socket: Socket): Unit
+    fun assignSocket(socket: Socket)
+    fun detachSocket(socket: Socket)
 
     /**
      * Sends an HTTP/1.1 100 Continue message to the client, indicating that
      * the request body should be sent. See the `'checkContinue'` event on `Server`.
      * @since v0.3.0
      */
-    fun writeContinue(callback: () -> Unit = definedExternally): Unit
+    fun writeContinue(callback: () -> Unit = definedExternally)
 
     /**
      * Sends an HTTP/1.1 103 Early Hints message to the client with a Link header,
@@ -99,7 +99,7 @@ open external class ServerResponse<Request : IncomingMessage /* default is Incom
     fun writeEarlyHints(
         hints: js.objects.ReadonlyRecord<String, Any /* string | string[] */>,
         callback: () -> Unit = definedExternally,
-    ): Unit
+    )
 
     /**
      * Sends a response header to the request. The status code is a 3-digit HTTP
@@ -162,7 +162,7 @@ open external class ServerResponse<Request : IncomingMessage /* default is Incom
         statusCode: Number,
         statusMessage: String = definedExternally,
         headers: OutgoingHttpHeaders = definedExternally,
-    ): Unit /* this */
+    ) /* this */
 
     /**
      * Sends a response header to the request. The status code is a 3-digit HTTP
@@ -225,21 +225,21 @@ open external class ServerResponse<Request : IncomingMessage /* default is Incom
         statusCode: Number,
         statusMessage: String = definedExternally,
         headers: js.array.ReadonlyArray<OutgoingHttpHeader> = definedExternally,
-    ): Unit /* this */
+    ) /* this */
 
-    fun writeHead(statusCode: Number): Unit /* this */
+    fun writeHead(statusCode: Number) /* this */
 
-    fun writeHead(statusCode: Number, headers: OutgoingHttpHeaders = definedExternally): Unit /* this */
+    fun writeHead(statusCode: Number, headers: OutgoingHttpHeaders = definedExternally) /* this */
 
     fun writeHead(
         statusCode: Number,
         headers: js.array.ReadonlyArray<OutgoingHttpHeader> = definedExternally,
-    ): Unit /* this */
+    ) /* this */
 
     /**
      * Sends a HTTP/1.1 102 Processing message to the client, indicating that
      * the request body should be sent.
      * @since v10.0.0
      */
-    fun writeProcessing(): Unit
+    fun writeProcessing()
 }

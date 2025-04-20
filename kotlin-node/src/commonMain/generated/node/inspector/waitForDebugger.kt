@@ -10,4 +10,4 @@ package node.inspector
  * An exception will be thrown if there is no active inspector.
  * @since v12.7.0
  */
-external fun waitForDebugger(): Unit
+external fun waitForDebugger()

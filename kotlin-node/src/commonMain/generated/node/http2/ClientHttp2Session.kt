@@ -56,12 +56,12 @@ sealed external interface ClientHttp2Session : Http2Session {
     ): ClientHttp2Stream
 
 
-    override fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
+    override fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
     override fun addListener(
         event: js.symbol.Symbol,
         listener: Function<Unit>, /* (...args: any[]) => void */
-    ): Unit /* this */
+    ) /* this */
 
 
     override fun emit(event: String, vararg args: Any?): Boolean
@@ -69,36 +69,36 @@ sealed external interface ClientHttp2Session : Http2Session {
     override fun emit(event: js.symbol.Symbol, vararg args: Any?): Boolean
 
 
-    override fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
+    override fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
-    override fun on(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
+    override fun on(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
 
-    override fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
+    override fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
-    override fun once(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
+    override fun once(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
 
     override fun prependListener(
         event: String,
         listener: Function<Unit>, /* (...args: any[]) => void */
-    ): Unit /* this */
+    ) /* this */
 
     override fun prependListener(
         event: js.symbol.Symbol,
         listener: Function<Unit>, /* (...args: any[]) => void */
-    ): Unit /* this */
+    ) /* this */
 
 
     override fun prependOnceListener(
         event: String,
         listener: Function<Unit>, /* (...args: any[]) => void */
-    ): Unit /* this */
+    ) /* this */
 
     override fun prependOnceListener(
         event: js.symbol.Symbol,
         listener: Function<Unit>, /* (...args: any[]) => void */
-    ): Unit /* this */
+    ) /* this */
 
     @web.events.JsEvent("altsvc")
     val altsvcEvent: node.events.EventInstance<js.array.JsTuple3<String, String, Double>>

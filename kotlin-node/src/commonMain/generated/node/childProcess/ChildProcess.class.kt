@@ -549,7 +549,7 @@ open external class ChildProcess : EventEmitter {
      * within the child process to close the IPC channel as well.
      * @since v0.7.2
      */
-    fun disconnect(): Unit
+    fun disconnect()
 
     /**
      * By default, the parent will wait for the detached child to exit. To prevent the
@@ -570,7 +570,7 @@ open external class ChildProcess : EventEmitter {
      * ```
      * @since v0.7.10
      */
-    fun unref(): Unit
+    fun unref()
 
     /**
      * Calling `subprocess.ref()` after making a call to `subprocess.unref()` will
@@ -590,7 +590,7 @@ open external class ChildProcess : EventEmitter {
      * ```
      * @since v0.7.10
      */
-    fun ref(): Unit
+    fun ref()
 
     /**
      * events.EventEmitter
@@ -601,7 +601,7 @@ open external class ChildProcess : EventEmitter {
      * 5. message
      * 6. spawn
      */
-    fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
+    fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
 
     fun emit(event: String, vararg args: Any?): Boolean
@@ -609,16 +609,16 @@ open external class ChildProcess : EventEmitter {
     fun emit(event: js.symbol.Symbol, vararg args: Any?): Boolean
 
 
-    fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
+    fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
 
-    fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
+    fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
 
-    fun prependListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
+    fun prependListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
 
-    fun prependOnceListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
+    fun prependOnceListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
 
     @web.events.JsEvent("close")

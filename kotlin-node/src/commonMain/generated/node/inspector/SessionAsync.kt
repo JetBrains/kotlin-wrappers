@@ -22,20 +22,20 @@ external class Session : EventEmitter {
     /**
      * Connects a session to the inspector back-end.
      */
-    fun connect(): Unit
+    fun connect()
 
     /**
      * Connects a session to the inspector back-end.
      * An exception will be thrown if this API was not called on a Worker thread.
      */
-    fun connectToMainThread(): Unit
+    fun connectToMainThread()
 
     /**
      * Immediately close the session. All pending message callbacks will be called with an error.
      * `session.connect()` will need to be called to be able to send messages again.
      * Reconnected session will lose all inspector state, such as enabled agents or configured breakpoints.
      */
-    fun disconnect(): Unit
+    fun disconnect()
 
     /**
      * Posts a message to the inspector back-end.
@@ -552,7 +552,7 @@ external class Session : EventEmitter {
         params: node.inspector.noderuntime.NotifyWhenWaitingForDisconnectParameterType = definedExternally,
     ): Promise<js.core.Void>
 
-    fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
+    fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
     /**
      * Emitted when any notification from the V8 Inspector is received.
      */
@@ -670,7 +670,7 @@ external class Session : EventEmitter {
     fun emit(event: js.symbol.Symbol, vararg args: Any?): Boolean
 
 
-    fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
+    fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
     /**
      * Emitted when any notification from the V8 Inspector is received.
      */
@@ -783,7 +783,7 @@ external class Session : EventEmitter {
      * example, when inspector.waitingForDebugger is called
      */
 
-    fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
+    fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
     /**
      * Emitted when any notification from the V8 Inspector is received.
      */
@@ -896,7 +896,7 @@ external class Session : EventEmitter {
      * example, when inspector.waitingForDebugger is called
      */
 
-    fun prependListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
+    fun prependListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
     /**
      * Emitted when any notification from the V8 Inspector is received.
      */
@@ -1009,7 +1009,7 @@ external class Session : EventEmitter {
      * example, when inspector.waitingForDebugger is called
      */
 
-    fun prependOnceListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
+    fun prependOnceListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
     /**
      * Emitted when any notification from the V8 Inspector is received.
      */

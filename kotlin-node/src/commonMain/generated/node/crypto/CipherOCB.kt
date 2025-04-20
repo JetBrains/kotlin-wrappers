@@ -7,7 +7,7 @@ sealed external interface CipherOCB : Cipher {
     fun setAAD(
         buffer: js.buffer.ArrayBufferView<*>,
         options: CipherOCBSetAADOptions = definedExternally,
-    ): Unit /* this */
+    ) /* this */
 
     fun getAuthTag(): node.buffer.Buffer<*>
 }

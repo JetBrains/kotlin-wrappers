@@ -22,4 +22,4 @@ package node.v8
  * ```
  * @since v1.0.0
  */
-external fun setFlagsFromString(flags: String): Unit
+external fun setFlagsFromString(flags: String)

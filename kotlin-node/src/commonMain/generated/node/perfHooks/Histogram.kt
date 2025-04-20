@@ -88,7 +88,7 @@ sealed external interface Histogram {
      * Resets the collected histogram data.
      * @since v11.10.0
      */
-    fun reset(): Unit
+    fun reset()
 
     /**
      * The standard deviation of the recorded event loop delays.

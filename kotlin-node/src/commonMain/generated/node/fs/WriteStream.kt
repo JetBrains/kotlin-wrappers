@@ -20,7 +20,7 @@ external class WriteStream : node.stream.Writable {
      * callback that will be executed once the `writeStream`is closed.
      * @since v0.9.4
      */
-    fun close(callback: (err: node.ErrnoException? /* use undefined for default */) -> Unit = definedExternally): Unit
+    fun close(callback: (err: node.ErrnoException? /* use undefined for default */) -> Unit = definedExternally)
 
     /**
      * The number of bytes written so far. Does not include data that is still queued

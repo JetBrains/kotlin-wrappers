@@ -44,14 +44,14 @@ external class Dir : AsyncIterable<Dirent> {
      * @since v12.12.0
      */
     fun close(): Promise<js.core.Void>
-    fun close(cb: NoParamCallback): Unit
+    fun close(cb: NoParamCallback)
 
     /**
      * Synchronously close the directory's underlying resource handle.
      * Subsequent reads will result in errors.
      * @since v12.12.0
      */
-    fun closeSync(): Unit
+    fun closeSync()
 
     /**
      * Asynchronously read the next directory entry via [`readdir(3)`](http://man7.org/linux/man-pages/man3/readdir.3.html) as an `fs.Dirent`.
@@ -66,7 +66,7 @@ external class Dir : AsyncIterable<Dirent> {
      * @return containing {fs.Dirent|null}
      */
     fun read(): Promise<Dirent?>
-    fun read(cb: (err: node.ErrnoException?, dirEnt: Dirent?) -> Unit): Unit
+    fun read(cb: (err: node.ErrnoException?, dirEnt: Dirent?) -> Unit)
 
     /**
      * Synchronously read the next directory entry as an `fs.Dirent`. See the

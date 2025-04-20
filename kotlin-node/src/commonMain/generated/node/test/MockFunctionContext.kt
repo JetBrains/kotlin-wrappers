@@ -56,7 +56,7 @@ external class MockFunctionContext<F : Function<*>> {
      * @since v19.1.0, v18.13.0
      * @param implementation The function to be used as the mock's new implementation.
      */
-    fun mockImplementation(implementation: F): Unit
+    fun mockImplementation(implementation: F)
 
     /**
      * This function is used to change the behavior of an existing mock for a single
@@ -94,18 +94,18 @@ external class MockFunctionContext<F : Function<*>> {
      * @param implementation The function to be used as the mock's implementation for the invocation number specified by `onCall`.
      * @param onCall The invocation number that will use `implementation`. If the specified invocation has already occurred then an exception is thrown.
      */
-    fun mockImplementationOnce(implementation: F, onCall: Number = definedExternally): Unit
+    fun mockImplementationOnce(implementation: F, onCall: Number = definedExternally)
 
     /**
      * Resets the call history of the mock function.
      * @since v19.3.0, v18.13.0
      */
-    fun resetCalls(): Unit
+    fun resetCalls()
 
     /**
      * Resets the implementation of the mock function to its original behavior. The
      * mock can still be used after calling this function.
      * @since v19.1.0, v18.13.0
      */
-    fun restore(): Unit
+    fun restore()
 }

@@ -25,35 +25,35 @@ node.http.Server<Request, Response> {
      * Closes all connections connected to this server.
      * @since v18.2.0
      */
-    override fun closeAllConnections(): Unit
+    override fun closeAllConnections()
 
     /**
      * Closes all connections connected to this server which are not sending a request or waiting for a response.
      * @since v18.2.0
      */
-    override fun closeIdleConnections(): Unit
-    override fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
+    override fun closeIdleConnections()
+    override fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
 
     override fun emit(event: String, vararg args: Any?): Boolean
 
 
-    override fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
+    override fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
 
-    override fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
+    override fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
 
     override fun prependListener(
         event: String,
         listener: Function<Unit>, /* (...args: any[]) => void */
-    ): Unit /* this */
+    ) /* this */
 
 
     override fun prependOnceListener(
         event: String,
         listener: Function<Unit>, /* (...args: any[]) => void */
-    ): Unit /* this */
+    ) /* this */
 
 
     @web.events.JsEvent("keylog")

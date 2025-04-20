@@ -14,4 +14,4 @@ package node.dns
 external fun resolveTxt(
     hostname: String,
     callback: (err: node.ErrnoException?, addresses: js.array.ReadonlyArray<js.array.ReadonlyArray<String>>) -> Unit,
-): Unit
+)

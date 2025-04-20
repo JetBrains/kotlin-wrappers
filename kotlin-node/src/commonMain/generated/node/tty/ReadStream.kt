@@ -35,7 +35,7 @@ open external class ReadStream : node.net.Socket {
      * property will be set to the resulting mode.
      * @return The read stream instance.
      */
-    fun setRawMode(mode: Boolean): Unit /* this */
+    fun setRawMode(mode: Boolean) /* this */
 
     /**
      * A `boolean` that is always `true` for `tty.ReadStream` instances.

@@ -20,7 +20,7 @@ package node.diagnosticsChannel
  * @param name The channel name
  * @param onMessage The handler to receive channel messages
  */
-external fun subscribe(name: String, onMessage: ChannelListener): Unit
+external fun subscribe(name: String, onMessage: ChannelListener)
 
 /**
  * Register a message handler to subscribe to this channel. This message handler
@@ -38,4 +38,4 @@ external fun subscribe(name: String, onMessage: ChannelListener): Unit
  * @param name The channel name
  * @param onMessage The handler to receive channel messages
  */
-external fun subscribe(name: js.symbol.Symbol, onMessage: ChannelListener): Unit
+external fun subscribe(name: js.symbol.Symbol, onMessage: ChannelListener)

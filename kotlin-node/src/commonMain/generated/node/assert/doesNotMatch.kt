@@ -28,7 +28,7 @@ import js.regexp.RegExp
  * instance of an [Error](https://nodejs.org/docs/latest-v22.x/api/errors.html#class-error) then it will be thrown instead of the `{@link AssertionError}`.
  * @since v13.6.0, v12.16.0
  */
-external fun doesNotMatch(value: String, regExp: RegExp): Unit
+external fun doesNotMatch(value: String, regExp: RegExp)
 
 /**
  * Expects the `string` input not to match the regular expression.
@@ -52,7 +52,7 @@ external fun doesNotMatch(value: String, regExp: RegExp): Unit
  * instance of an [Error](https://nodejs.org/docs/latest-v22.x/api/errors.html#class-error) then it will be thrown instead of the `{@link AssertionError}`.
  * @since v13.6.0, v12.16.0
  */
-external fun doesNotMatch(value: String, regExp: RegExp, message: String = definedExternally): Unit
+external fun doesNotMatch(value: String, regExp: RegExp, message: String = definedExternally)
 
 /**
  * Expects the `string` input not to match the regular expression.
@@ -76,4 +76,4 @@ external fun doesNotMatch(value: String, regExp: RegExp, message: String = defin
  * instance of an [Error](https://nodejs.org/docs/latest-v22.x/api/errors.html#class-error) then it will be thrown instead of the `{@link AssertionError}`.
  * @since v13.6.0, v12.16.0
  */
-external fun doesNotMatch(value: String, regExp: RegExp, message: js.errors.JsError = definedExternally): Unit
+external fun doesNotMatch(value: String, regExp: RegExp, message: js.errors.JsError = definedExternally)

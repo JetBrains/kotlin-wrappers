@@ -114,8 +114,8 @@ external class ECDH {
      * @since v0.11.14
      * @param encoding The `encoding` of the `privateKey` string.
      */
-    fun setPrivateKey(privateKey: js.buffer.ArrayBufferView<*>): Unit
-    fun setPrivateKey(privateKey: String, encoding: BinaryToTextEncoding): Unit
+    fun setPrivateKey(privateKey: js.buffer.ArrayBufferView<*>)
+    fun setPrivateKey(privateKey: String, encoding: BinaryToTextEncoding)
 
     companion object {
         /**

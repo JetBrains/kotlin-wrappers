@@ -37,4 +37,4 @@ package node.dns
 external fun resolveAny(
     hostname: String,
     callback: (err: node.ErrnoException?, addresses: js.array.ReadonlyArray<AnyRecord>) -> Unit,
-): Unit
+)

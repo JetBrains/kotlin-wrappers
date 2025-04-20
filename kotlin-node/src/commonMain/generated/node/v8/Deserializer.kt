@@ -31,7 +31,7 @@ open external class Deserializer {
      * @param id A 32-bit unsigned integer.
      * @param arrayBuffer An `ArrayBuffer` instance.
      */
-    fun transferArrayBuffer(id: Number, arrayBuffer: ArrayBuffer): Unit
+    fun transferArrayBuffer(id: Number, arrayBuffer: ArrayBuffer)
 
     /**
      * Reads the underlying wire format version. Likely mostly to be useful to

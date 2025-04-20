@@ -25,10 +25,10 @@ package node.fs
  * @since v0.8.6
  * @param [len=0]
  */
-external fun truncate(path: PathLike, len: Double?, callback: NoParamCallback): Unit
+external fun truncate(path: PathLike, len: Double?, callback: NoParamCallback)
 
 /**
  * Asynchronous truncate(2) - Truncate a file to a specified length.
  * @param path A path to a file. If a URL is provided, it must use the `file:` protocol.
  */
-external fun truncate(path: PathLike, callback: NoParamCallback): Unit
+external fun truncate(path: PathLike, callback: NoParamCallback)

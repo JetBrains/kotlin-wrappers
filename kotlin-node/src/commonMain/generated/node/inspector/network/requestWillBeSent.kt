@@ -13,4 +13,4 @@ package node.inspector.network
  * @since v22.6.0
  * @experimental
  */
-external fun requestWillBeSent(params: RequestWillBeSentEventDataType): Unit
+external fun requestWillBeSent(params: RequestWillBeSentEventDataType)

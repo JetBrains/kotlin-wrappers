@@ -173,7 +173,7 @@ sealed external interface Process : EventEmitter {
      * This feature is not available in `Worker` threads.
      * @since v0.1.17
      */
-    fun chdir(directory: String): Unit
+    fun chdir(directory: String)
 
     /**
      * The `process.cwd()` method returns the current working directory of the Node.js
@@ -225,7 +225,7 @@ sealed external interface Process : EventEmitter {
      * module.exports.foo();
      * ```
      */
-    fun dlopen(module: Any, filename: String, flags: Number = definedExternally): Unit
+    fun dlopen(module: Any, filename: String, flags: Number = definedExternally)
 
     /**
      * The `process.emitWarning()` method can be used to emit custom or application
@@ -295,7 +295,7 @@ sealed external interface Process : EventEmitter {
      * @since v8.0.0
      * @param warning The warning to emit.
      */
-    fun emitWarning(warning: String, ctor: Function<*> = definedExternally): Unit
+    fun emitWarning(warning: String, ctor: Function<*> = definedExternally)
 
     /**
      * The `process.emitWarning()` method can be used to emit custom or application
@@ -365,32 +365,32 @@ sealed external interface Process : EventEmitter {
      * @since v8.0.0
      * @param warning The warning to emit.
      */
-    fun emitWarning(warning: js.errors.JsError, ctor: Function<*> = definedExternally): Unit
-    fun emitWarning(warning: String, type: String = definedExternally, ctor: Function<*> = definedExternally): Unit
+    fun emitWarning(warning: js.errors.JsError, ctor: Function<*> = definedExternally)
+    fun emitWarning(warning: String, type: String = definedExternally, ctor: Function<*> = definedExternally)
 
     fun emitWarning(
         warning: js.errors.JsError,
         type: String = definedExternally,
         ctor: Function<*> = definedExternally,
-    ): Unit
+    )
 
     fun emitWarning(
         warning: String,
         type: String = definedExternally,
         code: String = definedExternally,
         ctor: Function<*> = definedExternally,
-    ): Unit
+    )
 
     fun emitWarning(
         warning: js.errors.JsError,
         type: String = definedExternally,
         code: String = definedExternally,
         ctor: Function<*> = definedExternally,
-    ): Unit
+    )
 
-    fun emitWarning(warning: String, options: EmitWarningOptions = definedExternally): Unit
+    fun emitWarning(warning: String, options: EmitWarningOptions = definedExternally)
 
-    fun emitWarning(warning: js.errors.JsError, options: EmitWarningOptions = definedExternally): Unit
+    fun emitWarning(warning: js.errors.JsError, options: EmitWarningOptions = definedExternally)
 
     /**
      * The `process.env` property returns an object containing the user environment.
@@ -965,7 +965,7 @@ sealed external interface Process : EventEmitter {
      * Using this function is mutually exclusive with using the deprecated `domain` built-in module.
      * @since v9.3.0
      */
-    fun setUncaughtExceptionCaptureCallback(cb: ((err: js.errors.JsError) -> Unit)?): Unit
+    fun setUncaughtExceptionCaptureCallback(cb: ((err: js.errors.JsError) -> Unit)?)
 
     /**
      * Indicates whether a callback has been set using {@link setUncaughtExceptionCaptureCallback}.
@@ -991,7 +991,7 @@ sealed external interface Process : EventEmitter {
      * @since v16.6.0, v14.18.0
      * @experimental
      */
-    fun setSourceMapsEnabled(value: Boolean): Unit
+    fun setSourceMapsEnabled(value: Boolean)
 
     /**
      * The `process.version` property contains the Node.js version string.
@@ -1215,7 +1215,7 @@ sealed external interface Process : EventEmitter {
      * @since v20.12.0
      * @param path The path to the .env file
      */
-    fun loadEnvFile(): Unit
+    fun loadEnvFile()
 
     /**
      * Loads the environment configuration from a `.env` file into `process.env`. If
@@ -1231,7 +1231,7 @@ sealed external interface Process : EventEmitter {
      * @since v20.12.0
      * @param path The path to the .env file
      */
-    fun loadEnvFile(path: String = definedExternally): Unit
+    fun loadEnvFile(path: String = definedExternally)
 
     /**
      * Loads the environment configuration from a `.env` file into `process.env`. If
@@ -1247,7 +1247,7 @@ sealed external interface Process : EventEmitter {
      * @since v20.12.0
      * @param path The path to the .env file
      */
-    fun loadEnvFile(path: URL = definedExternally): Unit
+    fun loadEnvFile(path: URL = definedExternally)
 
     /**
      * Loads the environment configuration from a `.env` file into `process.env`. If
@@ -1263,7 +1263,7 @@ sealed external interface Process : EventEmitter {
      * @since v20.12.0
      * @param path The path to the .env file
      */
-    fun loadEnvFile(path: node.buffer.Buffer<*> = definedExternally): Unit
+    fun loadEnvFile(path: node.buffer.Buffer<*> = definedExternally)
 
     /**
      * The `process.pid` property returns the PID of the process.
@@ -1498,7 +1498,7 @@ sealed external interface Process : EventEmitter {
      * @since v0.1.26
      * @param args Additional arguments to pass when invoking the `callback`
      */
-    fun nextTick(callback: Function<*>, vararg args: Any?): Unit
+    fun nextTick(callback: Function<*>, vararg args: Any?)
 
     /**
      * This API is available through the [--permission](https://nodejs.org/api/cli.html#--permission) flag.
@@ -1593,7 +1593,7 @@ sealed external interface Process : EventEmitter {
      * If the Node.js process was not spawned with an IPC channel, `process.disconnect()` will be `undefined`.
      * @since v0.7.2
      */
-    fun disconnect(): Unit
+    fun disconnect()
 
     /**
      * If the Node.js process is spawned with an IPC channel (see the `Child Process` and `Cluster` documentation), the `process.connected` property will return `true` so long as the IPC
@@ -1721,32 +1721,32 @@ sealed external interface Process : EventEmitter {
     /* EventEmitter */
 
 
-    fun addListener(event: Signals, listener: SignalsListener): Unit /* this */
+    fun addListener(event: Signals, listener: SignalsListener) /* this */
 
 
     fun emit(event: Signals, signal: Signals = definedExternally): Boolean
 
 
-    fun on(event: Signals, listener: SignalsListener): Unit /* this */
+    fun on(event: Signals, listener: SignalsListener) /* this */
 
 
-    fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
+    fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
-    fun on(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
-
-
-    fun once(event: Signals, listener: SignalsListener): Unit /* this */
+    fun on(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
 
-    fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
-
-    fun once(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
+    fun once(event: Signals, listener: SignalsListener) /* this */
 
 
-    fun prependListener(event: Signals, listener: SignalsListener): Unit /* this */
+    fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
+
+    fun once(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
 
-    fun prependOnceListener(event: Signals, listener: SignalsListener): Unit /* this */
+    fun prependListener(event: Signals, listener: SignalsListener) /* this */
+
+
+    fun prependOnceListener(event: Signals, listener: SignalsListener) /* this */
 
 
     fun listeners(event: Signals): ReadonlyArray<SignalsListener>

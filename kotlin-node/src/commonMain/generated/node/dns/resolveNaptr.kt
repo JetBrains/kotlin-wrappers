@@ -30,4 +30,4 @@ package node.dns
 external fun resolveNaptr(
     hostname: String,
     callback: (err: node.ErrnoException?, addresses: js.array.ReadonlyArray<NaptrRecord>) -> Unit,
-): Unit
+)

@@ -40,4 +40,4 @@ package node.module
  * ```
  * @since v12.12.0
  */
-external fun syncBuiltinESMExports(): Unit
+external fun syncBuiltinESMExports()

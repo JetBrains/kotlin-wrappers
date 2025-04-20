@@ -13,4 +13,4 @@ package node.module
  * interfere with the actual operation of the application.
  * @since v22.10.0
  */
-external fun flushCompileCache(): Unit
+external fun flushCompileCache()

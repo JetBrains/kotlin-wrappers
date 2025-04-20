@@ -11,4 +11,4 @@ package node.fs
  * @param uid The file's new owner's user id.
  * @param gid The file's new group's group id.
  */
-external fun lchownSync(path: PathLike, uid: Number, gid: Number): Unit
+external fun lchownSync(path: PathLike, uid: Number, gid: Number)

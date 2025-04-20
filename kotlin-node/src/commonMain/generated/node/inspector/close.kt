@@ -7,4 +7,4 @@ package node.inspector
 /**
  * Deactivate the inspector. Blocks until there are no active connections.
  */
-external fun close(): Unit
+external fun close()

@@ -12,22 +12,22 @@ package node.fs
  * @since v19.6.0, v18.15.0
  * @param path A path to an existing file or directory on the file system to be queried.
  */
-external fun statfs(path: PathLike, callback: (err: node.ErrnoException?, stats: StatsFs) -> Unit): Unit
+external fun statfs(path: PathLike, callback: (err: node.ErrnoException?, stats: StatsFs) -> Unit)
 
 external fun statfs(
     path: PathLike,
     options: (StatfsOptions)?,
     callback: (err: node.ErrnoException?, stats: StatsFs) -> Unit,
-): Unit
+)
 
 external fun statfs(
     path: PathLike,
     options: StatfsBigIntOptions,
     callback: (err: node.ErrnoException?, stats: BigIntStatsFs) -> Unit,
-): Unit
+)
 
 external fun statfs(
     path: PathLike,
     options: StatFsOptions?,
     callback: (err: node.ErrnoException?, stats: Any /* StatsFs | BigIntStatsFs */) -> Unit,
-): Unit
+)

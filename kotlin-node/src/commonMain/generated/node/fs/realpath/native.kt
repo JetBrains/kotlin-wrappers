@@ -30,18 +30,18 @@ external fun native(
     path: PathLike,
     options: EncodingOption,
     callback: (err: node.ErrnoException?, resolvedPath: String) -> Unit,
-): Unit
+)
 
 external fun native(
     path: PathLike,
     options: BufferEncodingOption,
     callback: (err: node.ErrnoException?, resolvedPath: node.buffer.Buffer<*>) -> Unit,
-): Unit
+)
 
 external fun native(
     path: PathLike,
     options: EncodingOption,
     callback: (err: node.ErrnoException?, resolvedPath: Any /* string | Buffer */) -> Unit,
-): Unit
+)
 
-external fun native(path: PathLike, callback: (err: node.ErrnoException?, resolvedPath: String) -> Unit): Unit
+external fun native(path: PathLike, callback: (err: node.ErrnoException?, resolvedPath: String) -> Unit)

@@ -164,10 +164,10 @@ package node.fs
  * @since v0.11.15
  * @param [mode=fs.constants.F_OK]
  */
-external fun access(path: PathLike, mode: Double?, callback: NoParamCallback): Unit
+external fun access(path: PathLike, mode: Double?, callback: NoParamCallback)
 
 /**
  * Asynchronously tests a user's permissions for the file specified by path.
  * @param path A path to a file or directory. If a URL is provided, it must use the `file:` protocol.
  */
-external fun access(path: PathLike, callback: NoParamCallback): Unit
+external fun access(path: PathLike, callback: NoParamCallback)

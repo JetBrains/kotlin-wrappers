@@ -3,5 +3,5 @@
 package node.zlib
 
 sealed external interface ZlibReset {
-    fun reset(): Unit
+    fun reset()
 }

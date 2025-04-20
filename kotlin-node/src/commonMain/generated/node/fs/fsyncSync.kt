@@ -10,4 +10,4 @@ package node.fs
  * Refer to the POSIX [`fsync(2)`](http://man7.org/linux/man-pages/man2/fsync.2.html) documentation for more detail. Returns `undefined`.
  * @since v0.1.96
  */
-external fun fsyncSync(fd: Number): Unit
+external fun fsyncSync(fd: Number)

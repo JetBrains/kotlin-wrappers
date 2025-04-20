@@ -9,4 +9,4 @@ external fun pseudoRandomBytes(size: Number): node.buffer.Buffer<*>
 external fun pseudoRandomBytes(
     size: Number,
     callback: (err: js.errors.JsError?, buf: node.buffer.Buffer<*>) -> Unit,
-): Unit
+)

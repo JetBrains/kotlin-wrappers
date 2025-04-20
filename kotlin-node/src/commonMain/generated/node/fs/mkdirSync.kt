@@ -19,7 +19,7 @@ external fun mkdirSync(path: PathLike, options: MkdirSyncRecursiveOptions): Stri
  * @param options Either the file mode, or an object optionally specifying the file mode and whether parent folders
  * should be created. If a string is passed, it is parsed as an octal integer. If not specified, defaults to `0o777`.
  */
-external fun mkdirSync(path: PathLike): Unit
+external fun mkdirSync(path: PathLike)
 
 /**
  * Synchronous mkdir(2) - create a directory.
@@ -27,7 +27,7 @@ external fun mkdirSync(path: PathLike): Unit
  * @param options Either the file mode, or an object optionally specifying the file mode and whether parent folders
  * should be created. If a string is passed, it is parsed as an octal integer. If not specified, defaults to `0o777`.
  */
-external fun mkdirSync(path: PathLike, options: Mode? = definedExternally): Unit
+external fun mkdirSync(path: PathLike, options: Mode? = definedExternally)
 
 /**
  * Synchronous mkdir(2) - create a directory.
@@ -35,7 +35,7 @@ external fun mkdirSync(path: PathLike, options: Mode? = definedExternally): Unit
  * @param options Either the file mode, or an object optionally specifying the file mode and whether parent folders
  * should be created. If a string is passed, it is parsed as an octal integer. If not specified, defaults to `0o777`.
  */
-external fun mkdirSync(path: PathLike, options: (MkdirSyncOptions)? = definedExternally): Unit
+external fun mkdirSync(path: PathLike, options: (MkdirSyncOptions)? = definedExternally)
 
 /**
  * Synchronous mkdir(2) - create a directory.

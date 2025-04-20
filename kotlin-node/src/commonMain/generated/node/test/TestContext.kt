@@ -44,7 +44,7 @@ external class TestContext {
      * @param options Configuration options for the hook.
      * @since v20.1.0, v18.17.0
      */
-    fun before(fn: TestContextHookFn = definedExternally, options: HookOptions = definedExternally): Unit
+    fun before(fn: TestContextHookFn = definedExternally, options: HookOptions = definedExternally)
 
     /**
      * This function is used to create a hook running before each subtest of the current test.
@@ -53,7 +53,7 @@ external class TestContext {
      * @param options Configuration options for the hook.
      * @since v18.8.0
      */
-    fun beforeEach(fn: TestContextHookFn = definedExternally, options: HookOptions = definedExternally): Unit
+    fun beforeEach(fn: TestContextHookFn = definedExternally, options: HookOptions = definedExternally)
 
     /**
      * This function is used to create a hook that runs after the current test finishes.
@@ -62,7 +62,7 @@ external class TestContext {
      * @param options Configuration options for the hook.
      * @since v18.13.0
      */
-    fun after(fn: TestContextHookFn = definedExternally, options: HookOptions = definedExternally): Unit
+    fun after(fn: TestContextHookFn = definedExternally, options: HookOptions = definedExternally)
 
     /**
      * This function is used to create a hook running after each subtest of the current test.
@@ -71,7 +71,7 @@ external class TestContext {
      * @param options Configuration options for the hook.
      * @since v18.8.0
      */
-    fun afterEach(fn: TestContextHookFn = definedExternally, options: HookOptions = definedExternally): Unit
+    fun afterEach(fn: TestContextHookFn = definedExternally, options: HookOptions = definedExternally)
 
     /**
      * This function is used to write diagnostics to the output. Any diagnostic
@@ -86,7 +86,7 @@ external class TestContext {
      * @since v18.0.0, v16.17.0
      * @param message Message to be reported.
      */
-    fun diagnostic(message: String): Unit
+    fun diagnostic(message: String)
 
     /**
      * The absolute path of the test file that created the current test. If a test file imports
@@ -142,7 +142,7 @@ external class TestContext {
      * ```
      * @since v22.2.0
      */
-    fun plan(count: Number): Unit
+    fun plan(count: Number)
 
     /**
      * If `shouldRunOnlyTests` is truthy, the test context will only run tests that
@@ -163,7 +163,7 @@ external class TestContext {
      * @since v18.0.0, v16.17.0
      * @param shouldRunOnlyTests Whether or not to run `only` tests.
      */
-    fun runOnly(shouldRunOnlyTests: Boolean): Unit
+    fun runOnly(shouldRunOnlyTests: Boolean)
 
     /**
      * ```js
@@ -189,7 +189,7 @@ external class TestContext {
      * @since v18.0.0, v16.17.0
      * @param message Optional skip message.
      */
-    fun skip(message: String = definedExternally): Unit
+    fun skip(message: String = definedExternally)
 
     /**
      * This function adds a `TODO` directive to the test's output. If `message` is
@@ -205,7 +205,7 @@ external class TestContext {
      * @since v18.0.0, v16.17.0
      * @param message Optional `TODO` message.
      */
-    fun todo(message: String = definedExternally): Unit
+    fun todo(message: String = definedExternally)
 
     /**
      * This function is used to create subtests under the current test. This function behaves in

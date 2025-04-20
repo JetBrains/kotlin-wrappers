@@ -43,7 +43,7 @@ external class Socket : EventEmitter {
      * ```
      * @since v0.6.9
      */
-    fun addMembership(multicastAddress: String, multicastInterface: String = definedExternally): Unit
+    fun addMembership(multicastAddress: String, multicastInterface: String = definedExternally)
 
     /**
      * Returns an object containing the address information for a socket.
@@ -102,11 +102,11 @@ external class Socket : EventEmitter {
         port: Number = definedExternally,
         address: String = definedExternally,
         callback: () -> Unit = definedExternally,
-    ): Unit /* this */
+    ) /* this */
 
-    fun bind(port: Number = definedExternally, callback: () -> Unit = definedExternally): Unit /* this */
-    fun bind(callback: () -> Unit = definedExternally): Unit /* this */
-    fun bind(options: BindOptions, callback: () -> Unit = definedExternally): Unit /* this */
+    fun bind(port: Number = definedExternally, callback: () -> Unit = definedExternally) /* this */
+    fun bind(callback: () -> Unit = definedExternally) /* this */
+    fun bind(options: BindOptions, callback: () -> Unit = definedExternally) /* this */
 
     /**
      * Close the underlying socket and stop listening for data on it. If a callback is
@@ -114,7 +114,7 @@ external class Socket : EventEmitter {
      * @since v0.1.99
      * @param callback Called when the socket has been closed.
      */
-    fun close(callback: () -> Unit = definedExternally): Unit /* this */
+    fun close(callback: () -> Unit = definedExternally) /* this */
 
     /**
      * Associates the `dgram.Socket` to a remote address and port. Every
@@ -129,8 +129,8 @@ external class Socket : EventEmitter {
      * @since v12.0.0
      * @param callback Called when the connection is completed or on error.
      */
-    fun connect(port: Number, address: String = definedExternally, callback: () -> Unit = definedExternally): Unit
-    fun connect(port: Number, callback: () -> Unit): Unit
+    fun connect(port: Number, address: String = definedExternally, callback: () -> Unit = definedExternally)
+    fun connect(port: Number, callback: () -> Unit)
 
     /**
      * A synchronous function that disassociates a connected `dgram.Socket` from
@@ -138,7 +138,7 @@ external class Socket : EventEmitter {
      * disconnected socket will result in an `ERR_SOCKET_DGRAM_NOT_CONNECTED` exception.
      * @since v12.0.0
      */
-    fun disconnect(): Unit
+    fun disconnect()
 
     /**
      * Instructs the kernel to leave a multicast group at `multicastAddress` using the `IP_DROP_MEMBERSHIP` socket option. This method is automatically called by the
@@ -149,7 +149,7 @@ external class Socket : EventEmitter {
      * drop membership on all valid interfaces.
      * @since v0.6.9
      */
-    fun dropMembership(multicastAddress: String, multicastInterface: String = definedExternally): Unit
+    fun dropMembership(multicastAddress: String, multicastInterface: String = definedExternally)
 
     /**
      * This method throws `ERR_SOCKET_BUFFER_SIZE` if called on an unbound socket.
@@ -190,7 +190,7 @@ external class Socket : EventEmitter {
      * chained.
      * @since v0.9.1
      */
-    fun ref(): Unit /* this */
+    fun ref() /* this */
 
     /**
      * Returns an object containing the `address`, `family`, and `port` of the remote
@@ -298,7 +298,7 @@ external class Socket : EventEmitter {
         port: Number = definedExternally,
         address: String = definedExternally,
         callback: (error: js.errors.JsError?, bytes: Double) -> Unit = definedExternally,
-    ): Unit
+    )
 
     /**
      * Broadcasts a datagram on the socket.
@@ -398,7 +398,7 @@ external class Socket : EventEmitter {
         port: Number = definedExternally,
         address: String = definedExternally,
         callback: (error: js.errors.JsError?, bytes: Double) -> Unit = definedExternally,
-    ): Unit
+    )
 
     /**
      * Broadcasts a datagram on the socket.
@@ -498,37 +498,37 @@ external class Socket : EventEmitter {
         port: Number = definedExternally,
         address: String = definedExternally,
         callback: (error: js.errors.JsError?, bytes: Double) -> Unit = definedExternally,
-    ): Unit
+    )
 
     fun send(
         msg: String,
         port: Number = definedExternally,
         callback: (error: js.errors.JsError?, bytes: Double) -> Unit = definedExternally,
-    ): Unit
+    )
 
     fun send(
         msg: js.buffer.ArrayBufferView<*>,
         port: Number = definedExternally,
         callback: (error: js.errors.JsError?, bytes: Double) -> Unit = definedExternally,
-    ): Unit
+    )
 
     fun send(
         msg: ReadonlyArray<Any?>,
         port: Number = definedExternally,
         callback: (error: js.errors.JsError?, bytes: Double) -> Unit = definedExternally,
-    ): Unit
+    )
 
-    fun send(msg: String, callback: (error: js.errors.JsError?, bytes: Double) -> Unit = definedExternally): Unit
+    fun send(msg: String, callback: (error: js.errors.JsError?, bytes: Double) -> Unit = definedExternally)
 
     fun send(
         msg: js.buffer.ArrayBufferView<*>,
         callback: (error: js.errors.JsError?, bytes: Double) -> Unit = definedExternally,
-    ): Unit
+    )
 
     fun send(
         msg: ReadonlyArray<Any?>,
         callback: (error: js.errors.JsError?, bytes: Double) -> Unit = definedExternally,
-    ): Unit
+    )
 
     fun send(
         msg: String,
@@ -537,7 +537,7 @@ external class Socket : EventEmitter {
         port: Number = definedExternally,
         address: String = definedExternally,
         callback: (error: js.errors.JsError?, bytes: Double) -> Unit = definedExternally,
-    ): Unit
+    )
 
     fun send(
         msg: js.buffer.ArrayBufferView<*>,
@@ -546,7 +546,7 @@ external class Socket : EventEmitter {
         port: Number = definedExternally,
         address: String = definedExternally,
         callback: (error: js.errors.JsError?, bytes: Double) -> Unit = definedExternally,
-    ): Unit
+    )
 
     fun send(
         msg: String,
@@ -554,7 +554,7 @@ external class Socket : EventEmitter {
         length: Number,
         port: Number = definedExternally,
         callback: (error: js.errors.JsError?, bytes: Double) -> Unit = definedExternally,
-    ): Unit
+    )
 
     fun send(
         msg: js.buffer.ArrayBufferView<*>,
@@ -562,21 +562,21 @@ external class Socket : EventEmitter {
         length: Number,
         port: Number = definedExternally,
         callback: (error: js.errors.JsError?, bytes: Double) -> Unit = definedExternally,
-    ): Unit
+    )
 
     fun send(
         msg: String,
         offset: Number,
         length: Number,
         callback: (error: js.errors.JsError?, bytes: Double) -> Unit = definedExternally,
-    ): Unit
+    )
 
     fun send(
         msg: js.buffer.ArrayBufferView<*>,
         offset: Number,
         length: Number,
         callback: (error: js.errors.JsError?, bytes: Double) -> Unit = definedExternally,
-    ): Unit
+    )
 
     /**
      * Sets or clears the `SO_BROADCAST` socket option. When set to `true`, UDP
@@ -585,7 +585,7 @@ external class Socket : EventEmitter {
      * This method throws `EBADF` if called on an unbound socket.
      * @since v0.6.9
      */
-    fun setBroadcast(flag: Boolean): Unit
+    fun setBroadcast(flag: Boolean)
 
     /**
      * _All references to scope in this section are referring to [IPv6 Zone Indices](https://en.wikipedia.org/wiki/IPv6_address#Scoped_literal_IPv6_addresses), which are defined by [RFC
@@ -644,7 +644,7 @@ external class Socket : EventEmitter {
      * ```
      * @since v8.6.0
      */
-    fun setMulticastInterface(multicastInterface: String): Unit
+    fun setMulticastInterface(multicastInterface: String)
 
     /**
      * Sets or clears the `IP_MULTICAST_LOOP` socket option. When set to `true`,
@@ -676,7 +676,7 @@ external class Socket : EventEmitter {
      * This method throws `ERR_SOCKET_BUFFER_SIZE` if called on an unbound socket.
      * @since v8.7.0
      */
-    fun setRecvBufferSize(size: Number): Unit
+    fun setRecvBufferSize(size: Number)
 
     /**
      * Sets the `SO_SNDBUF` socket option. Sets the maximum socket send buffer
@@ -685,7 +685,7 @@ external class Socket : EventEmitter {
      * This method throws `ERR_SOCKET_BUFFER_SIZE` if called on an unbound socket.
      * @since v8.7.0
      */
-    fun setSendBufferSize(size: Number): Unit
+    fun setSendBufferSize(size: Number)
 
     /**
      * Sets the `IP_TTL` socket option. While TTL generally stands for "Time to Live",
@@ -715,7 +715,7 @@ external class Socket : EventEmitter {
      * chained.
      * @since v0.9.1
      */
-    fun unref(): Unit /* this */
+    fun unref() /* this */
 
     /**
      * Tells the kernel to join a source-specific multicast channel at the given `sourceAddress` and `groupAddress`, using the `multicastInterface` with the `IP_ADD_SOURCE_MEMBERSHIP` socket
@@ -731,7 +731,7 @@ external class Socket : EventEmitter {
         sourceAddress: String,
         groupAddress: String,
         multicastInterface: String = definedExternally,
-    ): Unit
+    )
 
     /**
      * Instructs the kernel to leave a source-specific multicast channel at the given `sourceAddress` and `groupAddress` using the `IP_DROP_SOURCE_MEMBERSHIP` socket option. This method is
@@ -747,7 +747,7 @@ external class Socket : EventEmitter {
         sourceAddress: String,
         groupAddress: String,
         multicastInterface: String = definedExternally,
-    ): Unit
+    )
 
     /**
      * events.EventEmitter
@@ -757,7 +757,7 @@ external class Socket : EventEmitter {
      * 4. listening
      * 5. message
      */
-    fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
+    fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
 
     fun emit(event: String, vararg args: Any?): Boolean
@@ -765,16 +765,16 @@ external class Socket : EventEmitter {
     fun emit(event: js.symbol.Symbol, vararg args: Any?): Boolean
 
 
-    fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
+    fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
 
-    fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
+    fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
 
-    fun prependListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
+    fun prependListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
 
-    fun prependOnceListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
+    fun prependOnceListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
 
     @web.events.JsEvent("close")

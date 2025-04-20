@@ -8,7 +8,7 @@ sealed external interface StartupSnapshot {
      * This can be used to release resources that should not or cannot be serialized or to convert user data into a form more suitable for serialization.
      * @since v18.6.0, v16.17.0
      */
-    fun addSerializeCallback(callback: StartupSnapshotCallbackFn, data: Any? = definedExternally): Unit
+    fun addSerializeCallback(callback: StartupSnapshotCallbackFn, data: Any? = definedExternally)
 
     /**
      * Add a callback that will be called when the Node.js instance is deserialized from a snapshot.
@@ -16,7 +16,7 @@ sealed external interface StartupSnapshot {
      * to re-acquire resources that the application needs when the application is restarted from the snapshot.
      * @since v18.6.0, v16.17.0
      */
-    fun addDeserializeCallback(callback: StartupSnapshotCallbackFn, data: Any? = definedExternally): Unit
+    fun addDeserializeCallback(callback: StartupSnapshotCallbackFn, data: Any? = definedExternally)
 
     /**
      * This sets the entry point of the Node.js application when it is deserialized from a snapshot. This can be called only once in the snapshot building script.
@@ -24,7 +24,7 @@ sealed external interface StartupSnapshot {
      * data (if provided), otherwise an entry point script still needs to be provided to the deserialized application.
      * @since v18.6.0, v16.17.0
      */
-    fun setDeserializeMainFunction(callback: StartupSnapshotCallbackFn, data: Any? = definedExternally): Unit
+    fun setDeserializeMainFunction(callback: StartupSnapshotCallbackFn, data: Any? = definedExternally)
 
     /**
      * Returns true if the Node.js instance is run to build a snapshot.

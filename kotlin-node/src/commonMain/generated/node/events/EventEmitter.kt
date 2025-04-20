@@ -35,7 +35,7 @@ open external class EventEmitter {
      * Alias for `emitter.on(eventName, listener)`.
      * @since v0.1.26
      */
-    fun addListener(type: EventType, listener: EventListener): Unit /* this */
+    fun addListener(type: EventType, listener: EventListener) /* this */
 
     /**
      * Adds the `listener` function to the end of the listeners array for the event
@@ -68,7 +68,7 @@ open external class EventEmitter {
      * @param eventName The name of the event.
      * @param listener The callback function
      */
-    fun on(type: EventType, listener: EventListener): Unit /* this */
+    fun on(type: EventType, listener: EventListener) /* this */
 
     /**
      * Adds a **one-time** `listener` function for the event named `eventName`. The
@@ -99,7 +99,7 @@ open external class EventEmitter {
      * @param eventName The name of the event.
      * @param listener The callback function
      */
-    fun once(type: EventType, listener: EventListener): Unit /* this */
+    fun once(type: EventType, listener: EventListener) /* this */
 
     /**
      * Removes the specified `listener` from the listener array for the event named `eventName`.
@@ -183,13 +183,13 @@ open external class EventEmitter {
      * Returns a reference to the `EventEmitter`, so that calls can be chained.
      * @since v0.1.26
      */
-    fun removeListener(type: EventType, listener: EventListener): Unit /* this */
+    fun removeListener(type: EventType, listener: EventListener) /* this */
 
     /**
      * Alias for `emitter.removeListener()`.
      * @since v10.0.0
      */
-    fun off(type: EventType, listener: EventListener): Unit /* this */
+    fun off(type: EventType, listener: EventListener) /* this */
 
     /**
      * Removes all listeners, or those of the specified `eventName`.
@@ -201,7 +201,7 @@ open external class EventEmitter {
      * Returns a reference to the `EventEmitter`, so that calls can be chained.
      * @since v0.1.26
      */
-    fun removeAllListeners(type: EventType = definedExternally): Unit /* this */
+    fun removeAllListeners(type: EventType = definedExternally) /* this */
 
     /**
      * By default `EventEmitter`s will print a warning if more than `10` listeners are
@@ -212,7 +212,7 @@ open external class EventEmitter {
      * Returns a reference to the `EventEmitter`, so that calls can be chained.
      * @since v0.3.5
      */
-    fun setMaxListeners(n: Number): Unit /* this */
+    fun setMaxListeners(n: Number) /* this */
 
     /**
      * Returns the current max listener value for the `EventEmitter` which is either
@@ -336,7 +336,7 @@ open external class EventEmitter {
      * @param eventName The name of the event.
      * @param listener The callback function
      */
-    fun prependListener(type: EventType, listener: EventListener): Unit /* this */
+    fun prependListener(type: EventType, listener: EventListener) /* this */
 
     /**
      * Adds a **one-time**`listener` function for the event named `eventName` to the _beginning_ of the listeners array. The next time `eventName` is triggered, this
@@ -353,7 +353,7 @@ open external class EventEmitter {
      * @param eventName The name of the event.
      * @param listener The callback function
      */
-    fun prependOnceListener(type: EventType, listener: EventListener): Unit /* this */
+    fun prependOnceListener(type: EventType, listener: EventListener) /* this */
 
     /**
      * Returns an array listing the events for which the emitter has registered
@@ -950,7 +950,7 @@ open external class EventEmitter {
         fun setMaxListeners(
             n: Number = definedExternally,
             vararg eventTargets: Any, /* EventTarget | NodeJS.EventEmitter */
-        ): Unit
+        )
 
         /**
          * Listens once to the `abort` event on the provided `signal`.

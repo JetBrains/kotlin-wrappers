@@ -17,7 +17,7 @@ import web.url.URL
  * @param src source path to copy.
  * @param dest destination path to copy to.
  */
-external fun cp(source: String, destination: String, callback: (err: node.ErrnoException?) -> Unit): Unit
+external fun cp(source: String, destination: String, callback: (err: node.ErrnoException?) -> Unit)
 
 /**
  * Asynchronously copies the entire directory structure from `src` to `dest`,
@@ -30,7 +30,7 @@ external fun cp(source: String, destination: String, callback: (err: node.ErrnoE
  * @param src source path to copy.
  * @param dest destination path to copy to.
  */
-external fun cp(source: String, destination: URL, callback: (err: node.ErrnoException?) -> Unit): Unit
+external fun cp(source: String, destination: URL, callback: (err: node.ErrnoException?) -> Unit)
 
 /**
  * Asynchronously copies the entire directory structure from `src` to `dest`,
@@ -43,7 +43,7 @@ external fun cp(source: String, destination: URL, callback: (err: node.ErrnoExce
  * @param src source path to copy.
  * @param dest destination path to copy to.
  */
-external fun cp(source: URL, destination: String, callback: (err: node.ErrnoException?) -> Unit): Unit
+external fun cp(source: URL, destination: String, callback: (err: node.ErrnoException?) -> Unit)
 
 /**
  * Asynchronously copies the entire directory structure from `src` to `dest`,
@@ -56,27 +56,27 @@ external fun cp(source: URL, destination: String, callback: (err: node.ErrnoExce
  * @param src source path to copy.
  * @param dest destination path to copy to.
  */
-external fun cp(source: URL, destination: URL, callback: (err: node.ErrnoException?) -> Unit): Unit
+external fun cp(source: URL, destination: URL, callback: (err: node.ErrnoException?) -> Unit)
 
 external fun cp(
     source: String,
     destination: String,
     opts: CopyOptions,
     callback: (err: node.ErrnoException?) -> Unit,
-): Unit
+)
 
 external fun cp(
     source: String,
     destination: URL,
     opts: CopyOptions,
     callback: (err: node.ErrnoException?) -> Unit,
-): Unit
+)
 
 external fun cp(
     source: URL,
     destination: String,
     opts: CopyOptions,
     callback: (err: node.ErrnoException?) -> Unit,
-): Unit
+)
 
-external fun cp(source: URL, destination: URL, opts: CopyOptions, callback: (err: node.ErrnoException?) -> Unit): Unit
+external fun cp(source: URL, destination: URL, opts: CopyOptions, callback: (err: node.ErrnoException?) -> Unit)

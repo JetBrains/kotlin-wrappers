@@ -11,4 +11,4 @@ package node.fs
  * See the POSIX [`fchown(2)`](http://man7.org/linux/man-pages/man2/fchown.2.html) documentation for more detail.
  * @since v0.4.7
  */
-external fun fchown(fd: Number, uid: Number, gid: Number, callback: NoParamCallback): Unit
+external fun fchown(fd: Number, uid: Number, gid: Number, callback: NoParamCallback)

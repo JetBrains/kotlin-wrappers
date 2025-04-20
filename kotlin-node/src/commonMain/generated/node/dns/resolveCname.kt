@@ -12,4 +12,4 @@ package node.dns
 external fun resolveCname(
     hostname: String,
     callback: (err: node.ErrnoException?, addresses: js.array.ReadonlyArray<String>) -> Unit,
-): Unit
+)

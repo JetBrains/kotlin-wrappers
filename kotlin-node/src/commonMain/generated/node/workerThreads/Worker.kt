@@ -142,7 +142,7 @@ external class Worker : EventEmitter {
      * See `port.postMessage()` for more details.
      * @since v10.5.0
      */
-    fun postMessage(value: Any?, transferList: ReadonlyArray<TransferListItem> = definedExternally): Unit
+    fun postMessage(value: Any?, transferList: ReadonlyArray<TransferListItem> = definedExternally)
 
     /**
      * Sends a value to another worker, identified by its thread ID.
@@ -169,14 +169,14 @@ external class Worker : EventEmitter {
      * no effect.
      * @since v10.5.0
      */
-    fun ref(): Unit
+    fun ref()
 
     /**
      * Calling `unref()` on a worker allows the thread to exit if this is the only
      * active handle in the event system. If the worker is already `unref()`ed calling `unref()` again has no effect.
      * @since v10.5.0
      */
-    fun unref(): Unit
+    fun unref()
 
     /**
      * Stop all JavaScript execution in the worker thread as soon as possible.
@@ -197,9 +197,9 @@ external class Worker : EventEmitter {
     fun getHeapSnapshot(): Promise<Readable>
 
 
-    fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
+    fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
-    fun addListener(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
+    fun addListener(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
 
     fun emit(event: String, vararg args: Any?): Boolean
@@ -207,43 +207,43 @@ external class Worker : EventEmitter {
     fun emit(event: js.symbol.Symbol, vararg args: Any?): Boolean
 
 
-    fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
+    fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
-    fun on(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
-
-
-    fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
-
-    fun once(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
+    fun on(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
 
-    fun prependListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
+    fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
+
+    fun once(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
+
+
+    fun prependListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
     fun prependListener(
         event: js.symbol.Symbol,
         listener: Function<Unit>, /* (...args: any[]) => void */
-    ): Unit /* this */
+    ) /* this */
 
 
-    fun prependOnceListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
+    fun prependOnceListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
     fun prependOnceListener(
         event: js.symbol.Symbol,
         listener: Function<Unit>, /* (...args: any[]) => void */
-    ): Unit /* this */
+    ) /* this */
 
 
-    fun removeListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
+    fun removeListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
     fun removeListener(
         event: js.symbol.Symbol,
         listener: Function<Unit>, /* (...args: any[]) => void */
-    ): Unit /* this */
+    ) /* this */
 
 
-    fun off(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
+    fun off(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
-    fun off(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
+    fun off(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
     @web.events.JsEvent("error")
     val errorEvent: node.events.EventInstance<js.array.JsTuple1<js.errors.JsError>>

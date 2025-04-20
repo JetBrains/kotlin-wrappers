@@ -12,4 +12,4 @@ package node.dns
 external fun resolvePtr(
     hostname: String,
     callback: (err: node.ErrnoException?, addresses: js.array.ReadonlyArray<String>) -> Unit,
-): Unit
+)

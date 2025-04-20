@@ -11,4 +11,4 @@ package node.net
  * `--no-network-family-autoselection` is provided.
  * @since v19.4.0
  */
-external fun setDefaultAutoSelectFamily(value: Boolean): Unit
+external fun setDefaultAutoSelectFamily(value: Boolean)

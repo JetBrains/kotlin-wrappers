@@ -40,7 +40,7 @@ external fun hkdf(
     info: BinaryLike,
     keylen: Number,
     callback: (err: js.errors.JsError?, derivedKey: ArrayBuffer) -> Unit,
-): Unit
+)
 
 /**
  * HKDF is a simple key derivation function defined in RFC 5869\. The given `ikm`, `salt` and `info` are used with the `digest` to derive a key of `keylen` bytes.
@@ -76,4 +76,4 @@ external fun hkdf(
     info: BinaryLike,
     keylen: Number,
     callback: (err: js.errors.JsError?, derivedKey: ArrayBuffer) -> Unit,
-): Unit
+)

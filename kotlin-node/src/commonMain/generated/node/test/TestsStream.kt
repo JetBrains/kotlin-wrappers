@@ -15,7 +15,7 @@ import node.stream.Readable
 external class TestsStream : Readable, node.ReadableStream {
 
 
-    override fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
+    override fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
 
     override fun emit(event: String, vararg args: Any?): Boolean
@@ -23,22 +23,22 @@ external class TestsStream : Readable, node.ReadableStream {
     override fun emit(event: js.symbol.Symbol, vararg args: Any?): Boolean
 
 
-    override fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
+    override fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
 
-    override fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
+    override fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
 
     override fun prependListener(
         event: String,
         listener: Function<Unit>, /* (...args: any[]) => void */
-    ): Unit /* this */
+    ) /* this */
 
 
     override fun prependOnceListener(
         event: String,
         listener: Function<Unit>, /* (...args: any[]) => void */
-    ): Unit /* this */
+    ) /* this */
 
     @web.events.JsEvent("test:coverage")
     val testCoverageEvent: node.events.EventInstance<js.array.JsTuple1<TestCoverage>>

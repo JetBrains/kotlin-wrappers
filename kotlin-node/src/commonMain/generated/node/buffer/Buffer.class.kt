@@ -1060,7 +1060,7 @@ sealed external class Buffer<TArrayBuffer : ArrayBufferLike /* default is ArrayB
      * @since v5.10.0
      * @return A reference to `buf`.
      */
-    fun swap16(): Unit /* this */
+    fun swap16() /* this */
 
     /**
      * Interprets `buf` as an array of unsigned 32-bit integers and swaps the
@@ -1087,7 +1087,7 @@ sealed external class Buffer<TArrayBuffer : ArrayBufferLike /* default is ArrayB
      * @since v5.10.0
      * @return A reference to `buf`.
      */
-    fun swap32(): Unit /* this */
+    fun swap32() /* this */
 
     /**
      * Interprets `buf` as an array of 64-bit numbers and swaps byte order _in-place_.
@@ -1114,7 +1114,7 @@ sealed external class Buffer<TArrayBuffer : ArrayBufferLike /* default is ArrayB
      * @since v6.3.0
      * @return A reference to `buf`.
      */
-    fun swap64(): Unit /* this */
+    fun swap64() /* this */
 
     /**
      * Writes `value` to `buf` at the specified `offset`. `value` must be a
@@ -1532,7 +1532,7 @@ sealed external class Buffer<TArrayBuffer : ArrayBufferLike /* default is ArrayB
         offset: Number = definedExternally,
         end: Number = definedExternally,
         encoding: BufferEncoding = definedExternally,
-    ): Unit /* this */
+    ) /* this */
 
     /**
      * Fills `buf` with the specified `value`. If the `offset` and `end` are not given,
@@ -1598,7 +1598,7 @@ sealed external class Buffer<TArrayBuffer : ArrayBufferLike /* default is ArrayB
         offset: Number = definedExternally,
         end: Number = definedExternally,
         encoding: BufferEncoding = definedExternally,
-    ): Unit /* this */
+    ) /* this */
 
     /**
      * Fills `buf` with the specified `value`. If the `offset` and `end` are not given,
@@ -1664,7 +1664,7 @@ sealed external class Buffer<TArrayBuffer : ArrayBufferLike /* default is ArrayB
         offset: Number = definedExternally,
         end: Number = definedExternally,
         encoding: BufferEncoding = definedExternally,
-    ): Unit /* this */
+    ) /* this */
 
     /**
      * If `value` is:

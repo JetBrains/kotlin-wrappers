@@ -10,7 +10,7 @@ package node.fs
 external fun glob(
     pattern: String,
     callback: (err: node.ErrnoException?, matches: js.array.ReadonlyArray<String>) -> Unit,
-): Unit
+)
 
 /**
  * Retrieves the files matching the specified pattern.
@@ -18,40 +18,40 @@ external fun glob(
 external fun glob(
     pattern: js.array.ReadonlyArray<String>,
     callback: (err: node.ErrnoException?, matches: js.array.ReadonlyArray<String>) -> Unit,
-): Unit
+)
 
 external fun glob(
     pattern: String,
     options: GlobOptionsWithFileTypes,
     callback: (err: node.ErrnoException?, matches: js.array.ReadonlyArray<Dirent>) -> Unit,
-): Unit
+)
 
 external fun glob(
     pattern: js.array.ReadonlyArray<String>,
     options: GlobOptionsWithFileTypes,
     callback: (err: node.ErrnoException?, matches: js.array.ReadonlyArray<Dirent>) -> Unit,
-): Unit
+)
 
 external fun glob(
     pattern: String,
     options: GlobOptionsWithoutFileTypes,
     callback: (err: node.ErrnoException?, matches: js.array.ReadonlyArray<String>) -> Unit,
-): Unit
+)
 
 external fun glob(
     pattern: js.array.ReadonlyArray<String>,
     options: GlobOptionsWithoutFileTypes,
     callback: (err: node.ErrnoException?, matches: js.array.ReadonlyArray<String>) -> Unit,
-): Unit
+)
 
 external fun glob(
     pattern: String,
     options: GlobOptions,
     callback: (err: node.ErrnoException?, matches: Any /* Dirent[] | string[] */) -> Unit,
-): Unit
+)
 
 external fun glob(
     pattern: js.array.ReadonlyArray<String>,
     options: GlobOptions,
     callback: (err: node.ErrnoException?, matches: Any /* Dirent[] | string[] */) -> Unit,
-): Unit
+)

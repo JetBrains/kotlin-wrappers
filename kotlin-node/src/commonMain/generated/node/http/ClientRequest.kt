@@ -140,8 +140,8 @@ external class ClientRequest : OutgoingMessage<IncomingMessage> {
      * @since v0.3.8
      * @deprecated Since v14.1.0,v13.14.0 - Use `destroy` instead.
      */
-    fun abort(): Unit
-    fun onSocket(socket: Socket): Unit
+    fun abort()
+    fun onSocket(socket: Socket)
 
     /**
      * Once a socket is assigned to this request and is connected `socket.setTimeout()` will be called.
@@ -149,19 +149,19 @@ external class ClientRequest : OutgoingMessage<IncomingMessage> {
      * @param timeout Milliseconds before a request times out.
      * @param callback Optional function to be called when a timeout occurs. Same as binding to the `'timeout'` event.
      */
-    override fun setTimeout(msecs: Number, callback: () -> Unit): Unit /* this */
+    override fun setTimeout(msecs: Number, callback: () -> Unit) /* this */
 
     /**
      * Once a socket is assigned to this request and is connected `socket.setNoDelay()` will be called.
      * @since v0.5.9
      */
-    fun setNoDelay(noDelay: Boolean = definedExternally): Unit
+    fun setNoDelay(noDelay: Boolean = definedExternally)
 
     /**
      * Once a socket is assigned to this request and is connected `socket.setKeepAlive()` will be called.
      * @since v0.5.9
      */
-    fun setSocketKeepAlive(enable: Boolean = definedExternally, initialDelay: Number = definedExternally): Unit
+    fun setSocketKeepAlive(enable: Boolean = definedExternally, initialDelay: Number = definedExternally)
 
     /**
      * Returns an array containing the unique names of the current outgoing raw
@@ -183,30 +183,30 @@ external class ClientRequest : OutgoingMessage<IncomingMessage> {
      */
 
 
-    override fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
+    override fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
     override fun addListener(
         event: js.symbol.Symbol,
         listener: Function<Unit>, /* (...args: any[]) => void */
-    ): Unit /* this */
+    ) /* this */
 
     /**
      * @deprecated
      */
 
 
-    override fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
+    override fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
-    override fun on(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
+    override fun on(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
     /**
      * @deprecated
      */
 
 
-    override fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
+    override fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
-    override fun once(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
+    override fun once(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
     /**
      * @deprecated
@@ -216,12 +216,12 @@ external class ClientRequest : OutgoingMessage<IncomingMessage> {
     override fun prependListener(
         event: String,
         listener: Function<Unit>, /* (...args: any[]) => void */
-    ): Unit /* this */
+    ) /* this */
 
     override fun prependListener(
         event: js.symbol.Symbol,
         listener: Function<Unit>, /* (...args: any[]) => void */
-    ): Unit /* this */
+    ) /* this */
 
     /**
      * @deprecated
@@ -231,12 +231,12 @@ external class ClientRequest : OutgoingMessage<IncomingMessage> {
     override fun prependOnceListener(
         event: String,
         listener: Function<Unit>, /* (...args: any[]) => void */
-    ): Unit /* this */
+    ) /* this */
 
     override fun prependOnceListener(
         event: js.symbol.Symbol,
         listener: Function<Unit>, /* (...args: any[]) => void */
-    ): Unit /* this */
+    ) /* this */
 
     @web.events.JsEvent("abort")
     val abortEvent: node.events.EventInstance<js.array.JsTuple>

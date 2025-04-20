@@ -33,5 +33,5 @@ sealed external interface Session {
      * wrapper around
      * [`sqlite3session_delete()`](https://www.sqlite.org/session/sqlite3session_delete.html).
      */
-    fun close(): Unit
+    fun close()
 }

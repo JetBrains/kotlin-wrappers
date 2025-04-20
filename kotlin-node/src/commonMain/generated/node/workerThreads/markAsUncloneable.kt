@@ -30,4 +30,4 @@ package node.workerThreads
  * There is no equivalent to this API in browsers.
  * @since v22.10.0
  */
-external fun markAsUncloneable(value: Any): Unit
+external fun markAsUncloneable(value: Any)

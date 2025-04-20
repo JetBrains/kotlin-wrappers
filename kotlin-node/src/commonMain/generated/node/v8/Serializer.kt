@@ -13,7 +13,7 @@ open external class Serializer {
     /**
      * Writes out a header, which includes the serialization format version.
      */
-    fun writeHeader(): Unit
+    fun writeHeader()
 
     /**
      * Serializes a JavaScript value and adds the serialized representation to the
@@ -36,30 +36,30 @@ open external class Serializer {
      * @param id A 32-bit unsigned integer.
      * @param arrayBuffer An `ArrayBuffer` instance.
      */
-    fun transferArrayBuffer(id: Number, arrayBuffer: ArrayBuffer): Unit
+    fun transferArrayBuffer(id: Number, arrayBuffer: ArrayBuffer)
 
     /**
      * Write a raw 32-bit unsigned integer.
      * For use inside of a custom `serializer._writeHostObject()`.
      */
-    fun writeUint32(value: Number): Unit
+    fun writeUint32(value: Number)
 
     /**
      * Write a raw 64-bit unsigned integer, split into high and low 32-bit parts.
      * For use inside of a custom `serializer._writeHostObject()`.
      */
-    fun writeUint64(hi: Number, lo: Number): Unit
+    fun writeUint64(hi: Number, lo: Number)
 
     /**
      * Write a JS `number` value.
      * For use inside of a custom `serializer._writeHostObject()`.
      */
-    fun writeDouble(value: Number): Unit
+    fun writeDouble(value: Number)
 
     /**
      * Write raw bytes into the serializer's internal buffer. The deserializer
      * will require a way to compute the length of the buffer.
      * For use inside of a custom `serializer._writeHostObject()`.
      */
-    fun writeRawBytes(buffer: js.typedarrays.TypedArray<*, *, *, *>): Unit
+    fun writeRawBytes(buffer: js.typedarrays.TypedArray<*, *, *, *>)
 }

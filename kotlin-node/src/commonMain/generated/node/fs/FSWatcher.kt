@@ -10,7 +10,7 @@ sealed external interface FSWatcher : EventEmitter {
      * Stop watching for changes on the given `fs.FSWatcher`. Once stopped, the `fs.FSWatcher` object is no longer usable.
      * @since v0.5.8
      */
-    fun close(): Unit
+    fun close()
 
     /**
      * When called, requests that the Node.js event loop _not_ exit so long as the `fs.FSWatcher` is active. Calling `watcher.ref()` multiple times will have
@@ -21,7 +21,7 @@ sealed external interface FSWatcher : EventEmitter {
      * called previously.
      * @since v14.3.0, v12.20.0
      */
-    fun ref(): Unit /* this */
+    fun ref() /* this */
 
     /**
      * When called, the active `fs.FSWatcher` object will not require the Node.js
@@ -31,7 +31,7 @@ sealed external interface FSWatcher : EventEmitter {
      * no effect.
      * @since v14.3.0, v12.20.0
      */
-    fun unref(): Unit /* this */
+    fun unref() /* this */
 
     /**
      * events.EventEmitter
@@ -39,19 +39,19 @@ sealed external interface FSWatcher : EventEmitter {
      *   2. close
      *   3. error
      */
-    fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
+    fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
 
-    fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
+    fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
 
-    fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
+    fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
 
-    fun prependListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
+    fun prependListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
 
-    fun prependOnceListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
+    fun prependOnceListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
 
     @web.events.JsEvent("change")

@@ -89,8 +89,8 @@ external class Worker : EventEmitter {
      * @since v0.9.12
      * @param [signal='SIGTERM'] Name of the kill signal to send to the worker process.
      */
-    fun kill(signal: String = definedExternally): Unit
-    fun destroy(signal: String = definedExternally): Unit
+    fun kill(signal: String = definedExternally)
+    fun destroy(signal: String = definedExternally)
 
     /**
      * In a worker, this function will close all servers, wait for the `'close'` event
@@ -154,7 +154,7 @@ external class Worker : EventEmitter {
      * @since v0.7.7
      * @return A reference to `worker`.
      */
-    fun disconnect(): Unit
+    fun disconnect()
 
     /**
      * This function returns `true` if the worker is connected to its primary via its
@@ -236,7 +236,7 @@ external class Worker : EventEmitter {
      *   5. message
      *   6. online
      */
-    fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
+    fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
 
 // the handle is a net.Socket or net.Server object, or undefined.
@@ -247,25 +247,25 @@ external class Worker : EventEmitter {
     fun emit(event: js.symbol.Symbol, vararg args: Any?): Boolean
 
 
-    fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
+    fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
 
 // the handle is a net.Socket or net.Server object, or undefined.
 
 
-    fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
+    fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
 
 // the handle is a net.Socket or net.Server object, or undefined.
 
 
-    fun prependListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
+    fun prependListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
 
 // the handle is a net.Socket or net.Server object, or undefined.
 
 
-    fun prependOnceListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
+    fun prependOnceListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
 
 // the handle is a net.Socket or net.Server object, or undefined.

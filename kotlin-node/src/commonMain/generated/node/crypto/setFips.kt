@@ -10,4 +10,4 @@ package node.crypto
  * @since v10.0.0
  * @param bool `true` to enable FIPS mode.
  */
-external fun setFips(bool: Boolean): Unit
+external fun setFips(bool: Boolean)

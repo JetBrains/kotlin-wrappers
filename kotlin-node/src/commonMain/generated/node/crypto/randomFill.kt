@@ -82,17 +82,17 @@ package node.crypto
 external fun <T : js.buffer.ArrayBufferView<*>> randomFill(
     buffer: T,
     callback: (err: js.errors.JsError?, buf: T) -> Unit,
-): Unit
+)
 
 external fun <T : js.buffer.ArrayBufferView<*>> randomFill(
     buffer: T,
     offset: Number,
     callback: (err: js.errors.JsError?, buf: T) -> Unit,
-): Unit
+)
 
 external fun <T : js.buffer.ArrayBufferView<*>> randomFill(
     buffer: T,
     offset: Number,
     size: Number,
     callback: (err: js.errors.JsError?, buf: T) -> Unit,
-): Unit
+)

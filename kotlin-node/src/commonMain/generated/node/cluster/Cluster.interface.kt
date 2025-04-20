@@ -6,7 +6,7 @@ import node.events.EventEmitter
 
 @Suppress("INTERFACE_WITH_SUPERCLASS")
 sealed external interface Cluster : EventEmitter {
-    fun disconnect(callback: () -> Unit = definedExternally): Unit
+    fun disconnect(callback: () -> Unit = definedExternally)
 
     /**
      * Spawn a new worker process.
@@ -57,7 +57,7 @@ sealed external interface Cluster : EventEmitter {
     val settings: ClusterSettings
 
     /** @deprecated since v16.0.0 - use [`.setupPrimary()`](https://nodejs.org/docs/latest-v22.x/api/cluster.html#clustersetupprimarysettings) instead. */
-    fun setupMaster(settings: ClusterSettings = definedExternally): Unit
+    fun setupMaster(settings: ClusterSettings = definedExternally)
 
     /**
      * `setupPrimary` is used to change the default 'fork' behavior. Once called, the settings will be present in `cluster.settings`.
@@ -90,7 +90,7 @@ sealed external interface Cluster : EventEmitter {
      * This can only be called from the primary process.
      * @since v16.0.0
      */
-    fun setupPrimary(settings: ClusterSettings = definedExternally): Unit
+    fun setupPrimary(settings: ClusterSettings = definedExternally)
 
     /**
      * A reference to the current worker object. Not available in the primary process.
@@ -139,7 +139,7 @@ sealed external interface Cluster : EventEmitter {
      *   6. online
      *   7. setup
      */
-    fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
+    fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
 
 // the handle is a net.Socket or net.Server object, or undefined.
@@ -150,25 +150,25 @@ sealed external interface Cluster : EventEmitter {
     fun emit(event: js.symbol.Symbol, vararg args: Any?): Boolean
 
 
-    fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
+    fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
 
 // the handle is a net.Socket or net.Server object, or undefined.
 
 
-    fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
+    fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
 
 // the handle is a net.Socket or net.Server object, or undefined.
 
 
-    fun prependListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
+    fun prependListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
 
 // the handle is a net.Socket or net.Server object, or undefined.
 
 
-    fun prependOnceListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
+    fun prependOnceListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
 
 // the handle is a net.Socket or net.Server object, or undefined.

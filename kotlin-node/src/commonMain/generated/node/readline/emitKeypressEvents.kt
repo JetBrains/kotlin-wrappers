@@ -125,4 +125,4 @@ package node.readline
  * ```
  * @since v0.7.7
  */
-external fun emitKeypressEvents(stream: node.ReadableStream, readlineInterface: _Interface = definedExternally): Unit
+external fun emitKeypressEvents(stream: node.ReadableStream, readlineInterface: _Interface = definedExternally)

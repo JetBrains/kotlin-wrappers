@@ -31,8 +31,8 @@ open external class Server<Request : IncomingMessage, Response : ServerResponse<
      * @since v0.9.12
      * @param [msecs=0 (no timeout)]
      */
-    fun setTimeout(msecs: Number = definedExternally, callback: () -> Unit = definedExternally): Unit /* this */
-    fun setTimeout(callback: () -> Unit): Unit /* this */
+    fun setTimeout(msecs: Number = definedExternally, callback: () -> Unit = definedExternally) /* this */
+    fun setTimeout(callback: () -> Unit) /* this */
 
     /**
      * Limits maximum incoming headers count. If set to 0, no limit will be applied.
@@ -114,36 +114,36 @@ open external class Server<Request : IncomingMessage, Response : ServerResponse<
      * Closes all connections connected to this server.
      * @since v18.2.0
      */
-    open fun closeAllConnections(): Unit
+    open fun closeAllConnections()
 
     /**
      * Closes all connections connected to this server which are not sending a request
      * or waiting for a response.
      * @since v18.2.0
      */
-    open fun closeIdleConnections(): Unit
-    override fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
+    open fun closeIdleConnections()
+    override fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
 
     override fun emit(event: String, vararg args: Any?): Boolean
 
 
-    override fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
+    override fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
 
-    override fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
+    override fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
 
     override fun prependListener(
         event: String,
         listener: Function<Unit>, /* (...args: any[]) => void */
-    ): Unit /* this */
+    ) /* this */
 
 
     override fun prependOnceListener(
         event: String,
         listener: Function<Unit>, /* (...args: any[]) => void */
-    ): Unit /* this */
+    ) /* this */
 
 
     @web.events.JsEvent("close")

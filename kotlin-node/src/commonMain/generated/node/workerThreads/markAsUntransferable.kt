@@ -37,4 +37,4 @@ package node.workerThreads
  * There is no equivalent to this API in browsers.
  * @since v14.5.0, v12.19.0
  */
-external fun markAsUntransferable(value: Any): Unit
+external fun markAsUntransferable(value: Any)

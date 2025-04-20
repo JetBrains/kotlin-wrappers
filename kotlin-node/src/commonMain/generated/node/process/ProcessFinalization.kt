@@ -17,7 +17,7 @@ sealed external interface ProcessFinalization {
      * @since v22.5.0
      * @experimental
      */
-    fun <T : Any> register(ref: T, callback: (ref: T, event: String /* "exit" */) -> Unit): Unit
+    fun <T : Any> register(ref: T, callback: (ref: T, event: String /* "exit" */) -> Unit)
 
     /**
      * This function behaves exactly like the `register`, except that the callback will be called when the process emits the `beforeExit` event if `ref` object was not garbage collected.
@@ -28,7 +28,7 @@ sealed external interface ProcessFinalization {
      * @since v22.5.0
      * @experimental
      */
-    fun <T : Any> registerBeforeExit(ref: T, callback: (ref: T, event: String /* "beforeExit" */) -> Unit): Unit
+    fun <T : Any> registerBeforeExit(ref: T, callback: (ref: T, event: String /* "beforeExit" */) -> Unit)
 
     /**
      * This function remove the register of the object from the finalization registry, so the callback will not be called anymore.
@@ -36,5 +36,5 @@ sealed external interface ProcessFinalization {
      * @since v22.5.0
      * @experimental
      */
-    fun unregister(ref: Any): Unit
+    fun unregister(ref: Any)
 }

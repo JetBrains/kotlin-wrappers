@@ -44,14 +44,14 @@ sealed external interface Tracing {
      * ```
      * @since v10.0.0
      */
-    fun disable(): Unit
+    fun disable()
 
     /**
      * Enables this `Tracing` object for the set of categories covered by
      * the `Tracing` object.
      * @since v10.0.0
      */
-    fun enable(): Unit
+    fun enable()
 
     /**
      * `true` only if the `Tracing` object has been enabled.

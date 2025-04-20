@@ -19,4 +19,4 @@ package node.test
  * @param fn The hook function. If the hook uses callbacks, the callback function is passed as the second argument.
  * @param options Configuration options for the hook.
  */
-external fun beforeEach(fn: HookFn = definedExternally, options: HookOptions = definedExternally): Unit
+external fun beforeEach(fn: HookFn = definedExternally, options: HookOptions = definedExternally)

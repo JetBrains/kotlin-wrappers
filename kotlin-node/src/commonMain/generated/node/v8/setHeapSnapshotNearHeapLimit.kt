@@ -10,4 +10,4 @@ package node.v8
  * @experimental
  * @since v18.10.0, v16.18.0
  */
-external fun setHeapSnapshotNearHeapLimit(limit: Number): Unit
+external fun setHeapSnapshotNearHeapLimit(limit: Number)

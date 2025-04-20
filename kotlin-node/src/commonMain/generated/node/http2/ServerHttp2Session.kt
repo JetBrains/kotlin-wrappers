@@ -47,7 +47,7 @@ sealed external interface ServerHttp2Session<Http1Request : IncomingMessage, Htt
      * @param originOrStream Either a URL string specifying the origin (or an `Object` with an `origin` property) or the numeric identifier of an active `Http2Stream` as given by the
      * `http2stream.id` property.
      */
-    fun altsvc(alt: String, originOrStream: Double): Unit
+    fun altsvc(alt: String, originOrStream: Double)
 
     /**
      * Submits an `ALTSVC` frame (as defined by [RFC 7838](https://tools.ietf.org/html/rfc7838)) to the connected client.
@@ -87,7 +87,7 @@ sealed external interface ServerHttp2Session<Http1Request : IncomingMessage, Htt
      * @param originOrStream Either a URL string specifying the origin (or an `Object` with an `origin` property) or the numeric identifier of an active `Http2Stream` as given by the
      * `http2stream.id` property.
      */
-    fun altsvc(alt: String, originOrStream: String): Unit
+    fun altsvc(alt: String, originOrStream: String)
 
     /**
      * Submits an `ALTSVC` frame (as defined by [RFC 7838](https://tools.ietf.org/html/rfc7838)) to the connected client.
@@ -127,7 +127,7 @@ sealed external interface ServerHttp2Session<Http1Request : IncomingMessage, Htt
      * @param originOrStream Either a URL string specifying the origin (or an `Object` with an `origin` property) or the numeric identifier of an active `Http2Stream` as given by the
      * `http2stream.id` property.
      */
-    fun altsvc(alt: String, originOrStream: web.url.URL): Unit
+    fun altsvc(alt: String, originOrStream: web.url.URL)
 
     /**
      * Submits an `ALTSVC` frame (as defined by [RFC 7838](https://tools.ietf.org/html/rfc7838)) to the connected client.
@@ -167,7 +167,7 @@ sealed external interface ServerHttp2Session<Http1Request : IncomingMessage, Htt
      * @param originOrStream Either a URL string specifying the origin (or an `Object` with an `origin` property) or the numeric identifier of an active `Http2Stream` as given by the
      * `http2stream.id` property.
      */
-    fun altsvc(alt: String, originOrStream: AlternativeServiceOptions): Unit
+    fun altsvc(alt: String, originOrStream: AlternativeServiceOptions)
 
     /**
      * Submits an `ORIGIN` frame (as defined by [RFC 8336](https://tools.ietf.org/html/rfc8336)) to the connected client
@@ -217,15 +217,15 @@ sealed external interface ServerHttp2Session<Http1Request : IncomingMessage, Htt
         vararg origins: Array<Any /* string | url.URL | {
     origin: string;
 } */>,
-    ): Unit
+    )
 
 
-    override fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
+    override fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
     override fun addListener(
         event: js.symbol.Symbol,
         listener: Function<Unit>, /* (...args: any[]) => void */
-    ): Unit /* this */
+    ) /* this */
 
 
     override fun emit(event: String, vararg args: Any?): Boolean
@@ -233,36 +233,36 @@ sealed external interface ServerHttp2Session<Http1Request : IncomingMessage, Htt
     override fun emit(event: js.symbol.Symbol, vararg args: Any?): Boolean
 
 
-    override fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
+    override fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
-    override fun on(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
+    override fun on(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
 
-    override fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
+    override fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
-    override fun once(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
+    override fun once(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
 
     override fun prependListener(
         event: String,
         listener: Function<Unit>, /* (...args: any[]) => void */
-    ): Unit /* this */
+    ) /* this */
 
     override fun prependListener(
         event: js.symbol.Symbol,
         listener: Function<Unit>, /* (...args: any[]) => void */
-    ): Unit /* this */
+    ) /* this */
 
 
     override fun prependOnceListener(
         event: String,
         listener: Function<Unit>, /* (...args: any[]) => void */
-    ): Unit /* this */
+    ) /* this */
 
     override fun prependOnceListener(
         event: js.symbol.Symbol,
         listener: Function<Unit>, /* (...args: any[]) => void */
-    ): Unit /* this */
+    ) /* this */
 
     @web.events.JsEvent("connect")
     val connectEvent: node.events.EventInstance<js.array.JsTuple2<ServerHttp2Session<Http1Request, Http1Response, Http2Request, Http2Response>, Any /* net.Socket | tls.TLSSocket */>>

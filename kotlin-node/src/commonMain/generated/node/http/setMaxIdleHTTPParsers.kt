@@ -9,4 +9,4 @@ package node.http
  * @since v18.8.0, v16.18.0
  * @param [max=1000]
  */
-external fun setMaxIdleHTTPParsers(max: Number): Unit
+external fun setMaxIdleHTTPParsers(max: Number)

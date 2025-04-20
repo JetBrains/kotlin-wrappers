@@ -54,7 +54,7 @@ external class EventEmitterAsyncResource : EventEmitter {
      * the resource is left to be collected by the GC then the `destroy` hooks will
      * never be called.
      */
-    fun emitDestroy(): Unit
+    fun emitDestroy()
 
     /**
      * The unique `asyncId` assigned to the resource.
