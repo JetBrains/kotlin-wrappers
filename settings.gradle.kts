@@ -54,6 +54,12 @@ fun VersionCatalogBuilder.npmLibraries() {
     }
 }
 
+fun includeKarakum(path: String) {
+    includeBuild("$path/karakum") {
+        name = "$path-karakum"
+    }
+}
+
 includeBuild("build-logic")
 
 includeBuild("karakum-legacy")
@@ -95,9 +101,7 @@ include("kotlin-ajv")
 
 // Kotlin/JS: Browser APIs missing from the standard library
 include("kotlin-browser")
-includeBuild("kotlin-browser/karakum") {
-    name = "kotlin-browser-karakum"
-}
+includeKarakum("kotlin-browser")
 
 // Kotlin/JS: CesiumJS wrappers
 include("kotlin-cesium-engine")
