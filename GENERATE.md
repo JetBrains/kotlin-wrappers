@@ -15,7 +15,7 @@ React DOM
 TanStack Query
 
 ```sh
-./gradlew :karakum-legacy:react-query-kotlin:generate
+./gradlew :kotlin-tanstack-query-karakum:generate
 ./gradlew :kotlin-tanstack-react-query:build
 ```
 
