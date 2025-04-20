@@ -1,7 +1,7 @@
 package wrappers.example.table
 
 import js.array.ReadonlyArray
-import js.objects.jso
+import js.objects.unsafeJso
 import tanstack.table.core.ColumnDef
 import tanstack.table.core.StringOrTemplateHeader
 import wrappers.example.entities.Photo
@@ -12,17 +12,17 @@ import wrappers.example.table.simple.useSimpleTable
 
 private val COLUMNS: ReadonlyArray<ColumnDef<Photo, String>> = arrayOf(
     createSelectionColumn(),
-    jso {
+    unsafeJso {
         id = "title"
         header = StringOrTemplateHeader("Title")
         accessorFn = { user, _ -> user.title }
     },
-    jso {
+    unsafeJso {
         id = "url"
         header = StringOrTemplateHeader("Url")
         accessorFn = { user, _ -> user.url }
     },
-    jso {
+    unsafeJso {
         id = "thumbnail"
         header = StringOrTemplateHeader("Thumbnail")
         accessorFn = { user, _ -> user.thumbnailUrl }

@@ -1,18 +1,18 @@
 package react
 
-import js.objects.jso
+import js.objects.unsafeJso
 import kotlin.test.Test
 import kotlin.test.assertEquals
 
 class PropsTest {
     @Test
     fun plusTest() {
-        val additionalProps: PointProps = jso {
+        val additionalProps: PointProps = unsafeJso {
             x = 5
             y = 6
         }
 
-        val props: PointProps = jso {
+        val props: PointProps = unsafeJso {
             +additionalProps
         }
 

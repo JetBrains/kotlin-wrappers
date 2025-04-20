@@ -6,7 +6,7 @@
 
 package csstype
 
-import js.objects.jso
+import js.objects.unsafeJso
 import web.cssom.*
 
 interface RuleBuilder<T : Any> : Rules {
@@ -14,14 +14,14 @@ interface RuleBuilder<T : Any> : Rules {
         query: MediaQuery,
         block: T.() -> Unit,
     ) {
-        set(Selector("@media $query"), jso(block))
+        set(Selector("@media $query"), unsafeJso(block))
     }
 
     inline fun container(
         query: ContainerQuery,
         block: T.() -> Unit,
     ) {
-        set(Selector("@container $query"), jso(block))
+        set(Selector("@container $query"), unsafeJso(block))
     }
 
     inline fun container(
@@ -29,19 +29,19 @@ interface RuleBuilder<T : Any> : Rules {
         query: ContainerQuery,
         block: T.() -> Unit,
     ) {
-        set(Selector("@container $containerName $query"), jso(block))
+        set(Selector("@container $containerName $query"), unsafeJso(block))
     }
 
     inline fun fontFace(
         block: FontFace.() -> Unit,
     ) {
-        set(Selector("@font-face"), jso(block))
+        set(Selector("@font-face"), unsafeJso(block))
     }
 
     inline operator fun Selector.invoke(
         block: T.() -> Unit,
     ) {
-        set(this, jso(block))
+        set(this, unsafeJso(block))
     }
 
     inline operator fun ClassName.invoke(

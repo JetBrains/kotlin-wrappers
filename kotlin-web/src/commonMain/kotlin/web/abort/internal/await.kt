@@ -2,7 +2,7 @@ package web.abort.internal
 
 import js.core.JsAny
 import js.objects.Object
-import js.objects.jso
+import js.objects.unsafeJso
 import js.promise.PromiseLike
 import kotlinx.coroutines.suspendCancellableCoroutine
 import web.abort.AbortController
@@ -16,7 +16,7 @@ internal fun <T : Abortable> patchAbortOptions(
         signal = safeAny(options?.signal, controller.signal)
     )
 
-    return Object.assign(jso(), options, abortOptions)
+    return Object.assign(unsafeJso(), options, abortOptions)
 }
 
 internal suspend fun <T : JsAny?> awaitPromiseLike(

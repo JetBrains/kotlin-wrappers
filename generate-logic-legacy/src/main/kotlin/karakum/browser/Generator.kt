@@ -58,7 +58,7 @@ private val DEFAULT_IMPORTS = Imports(
     "js.objects.PropertyKey",
     "js.objects.ReadonlyRecord",
     "js.objects.Record",
-    "js.objects.jso",
+    "js.objects.unsafeJso",
     "js.promise.Promise",
     "js.promise.PromiseLike",
     "js.reflect.JsClass",

@@ -3,7 +3,7 @@ package emotion.css
 import csstype.CssDsl
 import csstype.Properties
 import js.objects.Record
-import js.objects.jso
+import js.objects.unsafeJso
 import web.cssom.AnimationName
 import web.cssom.Percentage
 import web.cssom.pct
@@ -20,7 +20,7 @@ class KeyframesBuilder {
     operator fun Percentage.invoke(
         block: Properties.() -> Unit,
     ) {
-        keyframes[this] = jso(block)
+        keyframes[this] = unsafeJso(block)
     }
 
     fun from(

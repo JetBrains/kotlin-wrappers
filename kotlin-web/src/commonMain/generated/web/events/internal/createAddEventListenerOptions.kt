@@ -3,13 +3,13 @@
 package web.events.internal
 
 import js.objects.JsPlainObject
-import js.objects.jso
+import js.objects.unsafeJso
 import web.events.AddEventListenerOptions
 
 internal fun createAddEventListenerOptions(
     once: Boolean,
 ): AddEventListenerOptions =
-    jso<MutableAddEventListenerOptions> {
+    unsafeJso<MutableAddEventListenerOptions> {
         this.once = once
     }
 

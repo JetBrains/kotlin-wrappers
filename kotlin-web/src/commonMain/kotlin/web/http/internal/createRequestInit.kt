@@ -1,14 +1,14 @@
 package web.http.internal
 
 import js.objects.JsPlainObject
-import js.objects.jso
+import js.objects.unsafeJso
 import web.abort.AbortSignal
 import web.http.RequestInit
 
 internal fun createRequestInit(
     signal: AbortSignal?,
 ): RequestInit =
-    jso<MutableRequestInit> {
+    unsafeJso<MutableRequestInit> {
         this.signal = signal
     }
 

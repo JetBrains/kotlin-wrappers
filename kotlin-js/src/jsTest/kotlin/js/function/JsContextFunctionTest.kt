@@ -4,7 +4,7 @@ import js.array.JsTuple
 import js.array.JsTuple1
 import js.array.JsTuple2
 import js.array.JsTuple5
-import js.objects.jso
+import js.objects.unsafeJso
 import kotlin.test.Test
 import kotlin.test.assertEquals
 
@@ -51,7 +51,7 @@ private external interface Merger_5 {
 class JsContextFunctionTest {
     @Test
     fun adapter_0() {
-        val merger: Merger_0 = jso {
+        val merger: Merger_0 = unsafeJso {
             a = 13
             b = 42
         }
@@ -68,7 +68,7 @@ class JsContextFunctionTest {
 
     @Test
     fun adapter_1() {
-        val merger: Merger_1 = jso {
+        val merger: Merger_1 = unsafeJso {
             a = 13
             b = 42
         }
@@ -85,7 +85,7 @@ class JsContextFunctionTest {
 
     @Test
     fun adapter_2() {
-        val merger: Merger_2 = jso {
+        val merger: Merger_2 = unsafeJso {
             a = 13
             b = 42
         }
@@ -102,7 +102,7 @@ class JsContextFunctionTest {
 
     @Test
     fun adapter_5() {
-        val merger: Merger_5 = jso {
+        val merger: Merger_5 = unsafeJso {
             a = 13
             b = 42
         }

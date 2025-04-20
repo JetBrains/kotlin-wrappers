@@ -2,7 +2,7 @@ package js.objects
 
 import js.core.JsAny
 
-inline fun <T : JsAny> jso(
+inline fun <T : JsAny> unsafeJso(
     block: @JsoDsl T.() -> Unit,
 ): T =
-    jso<T>().apply(block)
+    unsafeJso<T>().apply(block)

@@ -1,13 +1,13 @@
 package emotion.css
 
 import csstype.PropertiesBuilder
-import js.objects.jso
+import js.objects.unsafeJso
 import web.cssom.ClassName
 
 inline fun ClassName(
     crossinline block: PropertiesBuilder.() -> Unit,
 ): ClassName =
-    css(jso(block))
+    css(unsafeJso(block))
 
 inline fun ClassName(
     vararg classNames: ClassName?,

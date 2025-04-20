@@ -6,11 +6,11 @@ internal const val RULE_BUILDER = "RuleBuilder"
 
 // language=Kotlin
 private val BODY = """
-import js.objects.jso
+import js.objects.unsafeJso
 import web.cssom.ContainerName
 import web.cssom.ContainerQuery
 import web.cssom.MediaQuery
-    
+
 interface $RULE_BUILDER<T : Any> : $RULES {
     inline fun media(
         query: $MEDIA_QUERY,
@@ -25,14 +25,14 @@ interface $RULE_BUILDER<T : Any> : $RULES {
     ) {
         set($SELECTOR("@container ${'$'}query"), jso(block))
     }
-    
+
     inline fun container(
         containerName: $CONTAINER_NAME,
         query: $CONTAINER_QUERY,
         block: T.() -> Unit,
     ) {
         set($SELECTOR("@container ${'$'}containerName ${'$'}query"), jso(block))
-    }    
+    }
 
     inline fun fontFace(
         block: FontFace.() -> Unit,
@@ -57,7 +57,7 @@ interface $RULE_BUILDER<T : Any> : $RULES {
     ) {
         $SELECTOR(this)(block)
     }
-    
+
     inline fun and(
         className: ClassName,
         block: T.() -> Unit,

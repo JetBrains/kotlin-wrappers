@@ -1,14 +1,14 @@
 package react
 
-import js.objects.jso
+import js.objects.unsafeJso
 
 abstract class RPureComponent<P : Props, S : State> : PureComponent<P, S> {
     constructor() : super() {
-        state = jso { init() }
+        state = unsafeJso { init() }
     }
 
     constructor(props: P) : super(props) {
-        state = jso { init(props) }
+        state = unsafeJso { init(props) }
     }
 
     open fun S.init() {}

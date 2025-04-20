@@ -3,7 +3,7 @@ package emotion.styled
 import csstype.PropertiesBuilder
 import emotion.react.Theme
 import js.objects.Object
-import js.objects.jso
+import js.objects.unsafeJso
 import react.ElementType
 import react.Props
 import react.PropsWithClassName
@@ -16,7 +16,7 @@ fun <P : PropsWithClassName, T : Theme> ElementType<P>.styledWithTheme(
     block: PropertiesBuilder.(P, T) -> Unit,
 ): StyledComponent<P> {
     val style = { props: P ->
-        val builder: PropertiesBuilder = jso()
+        val builder: PropertiesBuilder = unsafeJso()
         block(builder, props, props.getTheme())
         builder
     }

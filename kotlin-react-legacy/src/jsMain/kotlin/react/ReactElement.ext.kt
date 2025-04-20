@@ -1,6 +1,6 @@
 package react
 
-import js.objects.jso
+import js.objects.unsafeJso
 
 fun <P : Props> createElement(
     block: Render,
@@ -19,4 +19,4 @@ inline fun <P : Props> cloneElement(
     vararg children: ReactNode?,
     props: P.() -> Unit,
 ): ReactElement<P> =
-    cloneElement(element, jso(props), *children)
+    cloneElement(element, unsafeJso(props), *children)

@@ -7,7 +7,7 @@ package mui.material.styles
 import csstype.PropertiesBuilder
 import js.objects.ReadonlyRecord
 import js.objects.Record
-import js.objects.jso
+import js.objects.unsafeJso
 import react.CSSProperties
 
 external interface TypographyOptions :
@@ -17,12 +17,12 @@ external interface TypographyOptions :
 inline fun TypographyOptions(
     crossinline block: TypographyOptionsBuilder.() -> Unit,
 ): TypographyOptions =
-    jso(block)
+    unsafeJso(block)
 
 sealed interface TypographyOptionsBuilder : TypographyOptions, Record<TypographyVariant, CSSProperties> {
     inline operator fun TypographyVariant.invoke(
         block: PropertiesBuilder.() -> Unit,
     ) {
-        set(this, jso(block))
+        set(this, unsafeJso(block))
     }
 }

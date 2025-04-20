@@ -1,6 +1,6 @@
 package react
 
-import js.objects.jso
+import js.objects.unsafeJso
 import kotlin.reflect.KClass
 
 typealias Render = RBuilder.() -> Unit
@@ -23,7 +23,7 @@ interface RBuilder {
 
     fun <P : Props> child(
         type: ElementType<P>,
-        props: P = jso(),
+        props: P = unsafeJso(),
         handler: RHandler<P>? = null,
     ) {
         if (handler == null) {
@@ -100,7 +100,7 @@ fun <T : RBuilder> buildElements(builder: T, handler: T.() -> Unit): ReactNode? 
     return when (nodes.size) {
         0 -> null
         1 -> nodes.first()
-        else -> createElement(Fragment, jso(), *nodes.toTypedArray())
+        else -> createElement(Fragment, unsafeJso(), *nodes.toTypedArray())
     }
 }
 

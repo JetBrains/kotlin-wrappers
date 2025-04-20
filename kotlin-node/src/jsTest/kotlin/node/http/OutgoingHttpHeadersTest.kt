@@ -1,12 +1,12 @@
 package node.http
 
-import js.objects.jso
+import js.objects.unsafeJso
 import js.reflect.Reflect
 import kotlin.test.assertEquals
 
 class OutgoingHttpHeadersTest {
     fun contentType() {
-        val headers: OutgoingHttpHeaders = jso {
+        val headers: OutgoingHttpHeaders = unsafeJso {
             contentType = "my-content-type"
         }
 
@@ -14,7 +14,7 @@ class OutgoingHttpHeadersTest {
     }
 
     fun userAgent() {
-        val headers: OutgoingHttpHeaders = jso {
+        val headers: OutgoingHttpHeaders = unsafeJso {
             userAgent = "my-user-agent"
         }
 

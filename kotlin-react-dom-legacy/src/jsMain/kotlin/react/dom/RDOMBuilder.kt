@@ -1,6 +1,6 @@
 package react.dom
 
-import js.objects.jso
+import js.objects.unsafeJso
 import kotlinx.html.*
 import kotlinx.html.org.w3c.dom.events.Event
 import react.*
@@ -103,7 +103,7 @@ open class RDOMBuilderImpl<out T : Tag>(factory: (TagConsumer<Unit>) -> T) : RDO
                     sb.append(this)
                 }
             }.block()
-            domProps.dangerouslySetInnerHTML = jso {
+            domProps.dangerouslySetInnerHTML = unsafeJso {
                 __html = sb.toString()
             }
         }
@@ -124,7 +124,7 @@ open class RDOMBuilderImpl<out T : Tag>(factory: (TagConsumer<Unit>) -> T) : RDO
     }
 
     final override val attrs: T = factory(consumer)
-    final override val domProps: DOMProps = jso()
+    final override val domProps: DOMProps = unsafeJso()
 
     init {
         attrs.attributesEntries

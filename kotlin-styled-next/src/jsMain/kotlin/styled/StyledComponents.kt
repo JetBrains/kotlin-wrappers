@@ -1,7 +1,7 @@
 package styled
 
 import js.objects.Object
-import js.objects.jso
+import js.objects.unsafeJso
 import js.reflect.Reflect.deleteProperty
 import js.reflect.unsafeCast
 import kotlinx.css.CssBuilder
@@ -53,14 +53,14 @@ interface StyledElementBuilder<P : PropsWithClassName> : RElementBuilder<P>, Sty
     companion object {
         operator fun <P : PropsWithClassName> invoke(
             type: ElementType<P>,
-            attrs: P = jso(),
+            attrs: P = unsafeJso(),
         ): StyledElementBuilder<P> = StyledElementBuilderImpl(type, attrs)
     }
 }
 
 class StyledElementBuilderImpl<P : PropsWithClassName>(
     override val type: ElementType<P>,
-    attrs: P = jso(),
+    attrs: P = unsafeJso(),
 ) : StyledElementBuilder<P>, RElementBuilderImpl<P>(attrs) {
     override val css = CssBuilder()
 
@@ -137,7 +137,7 @@ internal fun customStyled(type: Any): ElementType<StyledProps> {
             GlobalStyles.injectScheduled()
         }
 
-        val newProps = Object.assign(jso(), props)
+        val newProps = Object.assign(unsafeJso(), props)
         className =
             listOf(props.className?.toString(), className, classes).filter { !it.isNullOrEmpty() }.joinToString(" ")
         if (className.isNotEmpty()) {

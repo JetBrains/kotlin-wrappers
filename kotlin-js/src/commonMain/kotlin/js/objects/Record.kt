@@ -19,9 +19,9 @@ external interface Record<K : JsAny, V : JsAny?> :
 }
 
 fun <K : JsAny, V : JsAny?> Record(): Record<K, V> =
-    jso()
+    unsafeJso()
 
 fun <K : JsAny, V : JsAny?> Record(
     block: Record<K, V>.() -> Unit,
 ): Record<K, V> =
-    jso(block)
+    unsafeJso(block)

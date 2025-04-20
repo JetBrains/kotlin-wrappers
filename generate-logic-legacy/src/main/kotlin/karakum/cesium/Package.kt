@@ -7,7 +7,7 @@ import js.core.Void
 import js.errors.JsError
 import js.objects.JsPlainObject
 import js.objects.ReadonlyRecord
-import js.objects.jso
+import js.objects.unsafeJso
 import js.promise.Promise
 import js.promise.PromiseResult
 import js.typedarrays.Float32Array

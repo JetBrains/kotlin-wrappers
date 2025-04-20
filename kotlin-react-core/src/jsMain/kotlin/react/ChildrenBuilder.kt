@@ -10,7 +10,7 @@
 package react
 
 import js.array.ReadonlyArray
-import js.objects.jso
+import js.objects.unsafeJso
 import js.reflect.Reflect.deleteProperty
 import js.symbol.Symbol
 
@@ -111,14 +111,14 @@ private fun <P : Props> childProps(
 ): P? {
     defaultKey ?: return props
 
-    props ?: return jso {
+    props ?: return unsafeJso {
         key = defaultKey
     }
 
     if (props.key != null)
         return props
 
-    return jso {
+    return unsafeJso {
         +props
 
         key = defaultKey
@@ -176,7 +176,7 @@ internal fun <P : Props> ChildrenBuilder.addChild(
     block: P.() -> Unit,
 ) {
     val defaultKey = getDefaultKey()
-    val props: P = jso(block)
+    val props: P = unsafeJso(block)
 
     addChildElement(
         type = type,

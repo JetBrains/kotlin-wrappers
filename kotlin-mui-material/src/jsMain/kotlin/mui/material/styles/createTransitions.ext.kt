@@ -1,10 +1,10 @@
 package mui.material.styles
 
-import js.objects.jso
+import js.objects.unsafeJso
 import web.cssom.Transition
 
 inline fun Transitions.create(
     vararg props: String,
     block: TransitionCreateOptions.() -> Unit,
 ): Transition =
-    create(props, jso(block))
+    create(props, unsafeJso(block))

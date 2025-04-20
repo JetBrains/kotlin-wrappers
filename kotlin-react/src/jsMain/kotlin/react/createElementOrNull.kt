@@ -1,12 +1,12 @@
 package react
 
 import js.array.ReadonlyArray
-import js.objects.jso
+import js.objects.unsafeJso
 
 internal fun createElementOrNull(
     block: @ReactDsl ChildrenBuilder.() -> Unit,
 ): ReactElement<*>? {
-    val children: ReadonlyArray<ReactNode?> = jso(block)
+    val children: ReadonlyArray<ReactNode?> = unsafeJso(block)
         .getChildArray()
         ?: return null
 
