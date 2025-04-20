@@ -2,7 +2,8 @@ import java.util.*
 
 val parentProperties = rootProject.layout
     .projectDirectory
-    .file("../gradle.properties")
+    .dir(if (project == project.rootProject) "../.." else "..")
+    .file("gradle.properties")
     .asFile
     .inputStream()
     .use { Properties().apply { load(it) } }
