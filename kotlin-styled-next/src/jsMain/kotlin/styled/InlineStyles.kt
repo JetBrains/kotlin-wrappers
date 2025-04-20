@@ -2,7 +2,6 @@ package styled
 
 import js.objects.Object
 import js.objects.Record
-import js.objects.jso
 import kotlinx.css.CssDeclarations
 import kotlinx.css.StyledElement
 import kotlinx.css.StyledElementBuilder
@@ -54,7 +53,7 @@ fun StyledElement.toStyle(prefix: Boolean = true): Any {
 }
 
 private fun CssDeclarations.mapToObj(): Record<String, Any> {
-    val res: Record<String, Any> = jso()
+    val res: Record<String, Any> = Record()
     forEach { (key, value) ->
         res[key] = when (value) {
             is String, is Number -> value
