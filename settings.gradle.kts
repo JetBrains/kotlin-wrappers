@@ -195,6 +195,7 @@ include("kotlin-react-core")
 
 // Kotlin/JS: React DOM wrappers
 include("kotlin-react-dom")
+includeKarakum("kotlin-react-dom")
 
 // Kotlin/JS: React DOM legacy wrappers
 include("kotlin-react-dom-legacy")

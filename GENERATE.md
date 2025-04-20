@@ -8,7 +8,7 @@ Browser
 React DOM
 
 ```sh
-./gradlew :karakum-legacy:react-kotlin:generate
+./gradlew :kotlin-react-dom-karakum:generate
 ./gradlew :kotlin-react-dom:build
 ```
 
