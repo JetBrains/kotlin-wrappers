@@ -5,6 +5,13 @@ Browser
 ./gradlew :kotlin-browser:build
 ```
 
+Cesium
+
+```sh
+./gradlew :kotlin-cesium-karakum:generate
+./gradlew :kotlin-cesium-widgets:build
+```
+
 React DOM
 
 ```sh
