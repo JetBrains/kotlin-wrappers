@@ -123,6 +123,8 @@ include("kotlin-cssom-core")
 // Kotlin/JS: Zero-runtime CSS typings
 include("kotlin-csstype")
 
+includeKarakum("kotlin-csstype")
+
 // Kotlin/JS: Electron wrappers
 include("kotlin-electron")
 

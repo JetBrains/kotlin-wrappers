@@ -8,7 +8,6 @@ dependencyResolutionManagement {
 
 includeBuild("../generate-logic-legacy")
 
-include("csstype-kotlin")
 include("react-query-kotlin")
 include("react-table-kotlin")
 include("react-virtual-kotlin")
