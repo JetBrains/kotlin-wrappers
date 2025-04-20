@@ -71,5 +71,5 @@ private constructor() :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSPViolationReportBody/toJSON)
      */
-    fun toJSON(): JsAny
+    override fun toJSON(): JsAny
 }

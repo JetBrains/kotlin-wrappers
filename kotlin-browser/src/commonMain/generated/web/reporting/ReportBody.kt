@@ -9,10 +9,10 @@ import js.core.JsAny
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReportBody)
  */
-external class ReportBody
+open external class ReportBody
 private constructor() {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReportBody/toJSON)
      */
-    fun toJSON(): JsAny
+    open fun toJSON(): JsAny
 }
