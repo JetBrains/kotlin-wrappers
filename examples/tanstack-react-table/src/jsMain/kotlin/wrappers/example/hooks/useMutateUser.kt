@@ -1,5 +1,6 @@
 package wrappers.example.hooks
 
+import js.errors.JsError
 import js.reflect.unsafeCast
 import tanstack.query.core.InvalidateQueryFilters
 import tanstack.query.core.QueryKey
@@ -14,7 +15,7 @@ fun <D, M : Function<Unit>> useMutateUser(
     action: suspend (User) -> D,
 ): M {
     val queryClient = useQueryClient()
-    val mutate = useMutation<D, Error, User, QueryKey>(
+    val mutate = useMutation<D, JsError, User, QueryKey>(
         options = UseMutationOptions(
             mutationFn = createMutationFunction(action),
             onSuccess = { _, _, _ ->

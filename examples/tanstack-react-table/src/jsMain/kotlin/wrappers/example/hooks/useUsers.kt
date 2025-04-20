@@ -1,5 +1,6 @@
 package wrappers.example.hooks
 
+import js.errors.JsError
 import tanstack.query.core.QueryKey
 import tanstack.react.query.UseQueryOptions
 import tanstack.react.query.useQuery
@@ -8,7 +9,7 @@ import wrappers.example.entities.UserList
 import wrappers.example.query.createQueryFunction
 
 fun useUsersOrNull(): UserList? {
-    val result = useQuery<UserList, Error, UserList, QueryKey>(
+    val result = useQuery<UserList, JsError, UserList, QueryKey>(
         options = UseQueryOptions(
             queryKey = USERS_QUERY_KEY,
             queryFn = createQueryFunction(::fetchUsersData),
