@@ -111,6 +111,7 @@ private val DEFAULT_IMPORTS = Imports(
     "web.components.Slottable",
     "web.cookie.CookieStore",
     "web.crypto.Algorithm",
+    "web.csp.SecurityPolicyViolationEventDisposition",
     "web.cssom.CSSStyleDeclaration",
     "web.cssom.CSSStyleSheet",
     "web.cssom.ElementCSSInlineStyle",
