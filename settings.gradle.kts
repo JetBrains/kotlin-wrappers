@@ -180,6 +180,8 @@ include("kotlin-null-writable")
 // Kotlin/JS: Popper Core wrappers
 include("kotlin-popperjs-core")
 
+includeKarakum("kotlin-popperjs-core")
+
 // Kotlin/JS: JSON Lint wrappers
 include("kotlin-prantlf-jsonlint")
 
