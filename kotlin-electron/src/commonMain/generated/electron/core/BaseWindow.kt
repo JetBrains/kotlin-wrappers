@@ -432,48 +432,48 @@ open external class BaseWindow : NodeEventEmitter {
      *
      * @platform darwin
      */
-    fun addTabbedWindow(baseWindow: BaseWindow): Unit
+    fun addTabbedWindow(baseWindow: BaseWindow)
 
     /**
      * Removes focus from the window.
      */
-    open fun blur(): Unit
+    open fun blur()
 
     /**
      * Moves window to the center of the screen.
      */
-    open fun center(): Unit
+    open fun center()
 
     /**
      * Try to close the window. This has the same effect as a user manually clicking
      * the close button of the window. The web page may cancel the close though. See
      * the close event.
      */
-    open fun close(): Unit
+    open fun close()
 
     /**
      * Closes the currently open Quick Look panel.
      *
      * @platform darwin
      */
-    open fun closeFilePreview(): Unit
+    open fun closeFilePreview()
 
     /**
      * Force closing the window, the `unload` and `beforeunload` event won't be emitted
      * for the web page, and `close` event will also not be emitted for this window,
      * but it guarantees the `closed` event will be emitted.
      */
-    open fun destroy(): Unit
+    open fun destroy()
 
     /**
      * Starts or stops flashing the window to attract user's attention.
      */
-    open fun flashFrame(flag: Boolean): Unit
+    open fun flashFrame(flag: Boolean)
 
     /**
      * Focuses on the window.
      */
-    open fun focus(): Unit
+    open fun focus()
 
     /**
      * Gets the background color of the window in Hex (`#RRGGBB`) format.
@@ -606,7 +606,7 @@ open external class BaseWindow : NodeEventEmitter {
     /**
      * Hides the window.
      */
-    open fun hide(): Unit
+    open fun hide()
 
     /**
      * Hooks a windows message. The `callback` is called when the message is received
@@ -614,7 +614,7 @@ open external class BaseWindow : NodeEventEmitter {
      *
      * @platform win32
      */
-    open fun hookWindowMessage(message: Double, callback: (wParam: Buffer<*>, lParam: Buffer<*>) -> Unit): Unit
+    open fun hookWindowMessage(message: Double, callback: (wParam: Buffer<*>, lParam: Buffer<*>) -> Unit)
 
     /**
      * Invalidates the window shadow so that it is recomputed based on the current
@@ -626,7 +626,7 @@ open external class BaseWindow : NodeEventEmitter {
      *
      * @platform darwin
      */
-    open fun invalidateShadow(): Unit
+    open fun invalidateShadow()
 
     /**
      * Whether the window is always on top of other windows.
@@ -807,7 +807,7 @@ open external class BaseWindow : NodeEventEmitter {
      * Maximizes the window. This will also show (but not focus) the window if it isn't
      * being displayed already.
      */
-    open fun maximize(): Unit
+    open fun maximize()
 
     /**
      * Merges all windows into one window with multiple tabs when native tabs are
@@ -815,20 +815,20 @@ open external class BaseWindow : NodeEventEmitter {
      *
      * @platform darwin
      */
-    open fun mergeAllWindows(): Unit
+    open fun mergeAllWindows()
 
     /**
      * Minimizes the window. On some platforms the minimized window will be shown in
      * the Dock.
      */
-    open fun minimize(): Unit
+    open fun minimize()
 
     /**
      * Moves window above the source window in the sense of z-order. If the
      * `mediaSourceId` is not of type window or if the window does not exist then this
      * method throws an error.
      */
-    open fun moveAbove(mediaSourceId: String): Unit
+    open fun moveAbove(mediaSourceId: String)
 
     /**
      * Moves the current tab into a new window if native tabs are enabled and there is
@@ -836,31 +836,31 @@ open external class BaseWindow : NodeEventEmitter {
      *
      * @platform darwin
      */
-    open fun moveTabToNewWindow(): Unit
+    open fun moveTabToNewWindow()
 
     /**
      * Moves window to top(z-order) regardless of focus
      */
-    open fun moveTop(): Unit
+    open fun moveTop()
 
     /**
      * Uses Quick Look to preview a file at a given path.
      *
      * @platform darwin
      */
-    open fun previewFile(path: String, displayName: String = definedExternally): Unit
+    open fun previewFile(path: String, displayName: String = definedExternally)
 
     /**
      * Remove the window's menu bar.
      *
      * @platform linux,win32
      */
-    open fun removeMenu(): Unit
+    open fun removeMenu()
 
     /**
      * Restores the window from minimized state to its previous state.
      */
-    open fun restore(): Unit
+    open fun restore()
 
     /**
      * Selects the next tab when native tabs are enabled and there are other tabs in
@@ -868,7 +868,7 @@ open external class BaseWindow : NodeEventEmitter {
      *
      * @platform darwin
      */
-    open fun selectNextTab(): Unit
+    open fun selectNextTab()
 
     /**
      * Selects the previous tab when native tabs are enabled and there are other tabs
@@ -876,7 +876,7 @@ open external class BaseWindow : NodeEventEmitter {
      *
      * @platform darwin
      */
-    open fun selectPreviousTab(): Unit
+    open fun selectPreviousTab()
 
     /**
      * Sets whether the window should show always on top of other windows. After
@@ -887,7 +887,7 @@ open external class BaseWindow : NodeEventEmitter {
         flag: Boolean,
         level: BaseWindowSetAlwaysOnTopLevel = definedExternally,
         relativeLevel: Double = definedExternally,
-    ): Unit
+    )
 
     /**
      * Sets the properties for the window's taskbar button.
@@ -897,7 +897,7 @@ open external class BaseWindow : NodeEventEmitter {
      *
      * @platform win32
      */
-    open fun setAppDetails(options: AppDetailsOptions): Unit
+    open fun setAppDetails(options: AppDetailsOptions)
 
     /**
      * This will make a window maintain an aspect ratio. The extra size allows a
@@ -920,14 +920,14 @@ open external class BaseWindow : NodeEventEmitter {
      * To reset an aspect ratio, pass 0 as the `aspectRatio` value:
      * `win.setAspectRatio(0)`.
      */
-    open fun setAspectRatio(aspectRatio: Double, extraSize: Size = definedExternally): Unit
+    open fun setAspectRatio(aspectRatio: Double, extraSize: Size = definedExternally)
 
     /**
      * Controls whether to hide cursor when typing.
      *
      * @platform darwin
      */
-    open fun setAutoHideCursor(autoHide: Boolean): Unit
+    open fun setAutoHideCursor(autoHide: Boolean)
 
     /**
      * Sets whether the window menu bar should hide itself automatically. Once set the
@@ -938,7 +938,7 @@ open external class BaseWindow : NodeEventEmitter {
      *
      * @platform win32,linux
      */
-    open fun setAutoHideMenuBar(hide: Boolean): Unit
+    open fun setAutoHideMenuBar(hide: Boolean)
 
     /**
      * Examples of valid `backgroundColor` values:
@@ -967,7 +967,7 @@ open external class BaseWindow : NodeEventEmitter {
      *
      * Sets the background color of the window. See Setting `backgroundColor`.
      */
-    open fun setBackgroundColor(backgroundColor: String): Unit
+    open fun setBackgroundColor(backgroundColor: String)
 
     /**
      * This method sets the browser window's system-drawn background material,
@@ -979,7 +979,7 @@ open external class BaseWindow : NodeEventEmitter {
      *
      * @platform win32
      */
-    fun setBackgroundMaterial(material: BaseWindowSetBackgroundMaterialMaterial): Unit
+    fun setBackgroundMaterial(material: BaseWindowSetBackgroundMaterialMaterial)
 
     /**
      * Resizes and moves the window to the supplied bounds. Any properties that are not
@@ -990,20 +990,20 @@ open external class BaseWindow : NodeEventEmitter {
      * system, but is between 20-40px. Passing a value lower than the tray height will
      * result in a window that is flush to the tray.
      */
-    open fun setBounds(bounds: Rectangle, animate: Boolean = definedExternally): Unit
+    open fun setBounds(bounds: Rectangle, animate: Boolean = definedExternally)
 
     /**
      * Sets whether the window can be manually closed by user. On Linux does nothing.
      *
      * @platform darwin,win32
      */
-    open fun setClosable(closable: Boolean): Unit
+    open fun setClosable(closable: Boolean)
 
     /**
      * Resizes and moves the window's client area (e.g. the web page) to the supplied
      * bounds.
      */
-    open fun setContentBounds(bounds: Rectangle, animate: Boolean = definedExternally): Unit
+    open fun setContentBounds(bounds: Rectangle, animate: Boolean = definedExternally)
 
     /**
      * Prevents the window contents from being captured by other apps.
@@ -1015,17 +1015,17 @@ open external class BaseWindow : NodeEventEmitter {
      *
      * @platform darwin,win32
      */
-    open fun setContentProtection(enable: Boolean): Unit
+    open fun setContentProtection(enable: Boolean)
 
     /**
      * Resizes the window's client area (e.g. the web page) to `width` and `height`.
      */
-    open fun setContentSize(width: Double, height: Double, animate: Boolean = definedExternally): Unit
+    open fun setContentSize(width: Double, height: Double, animate: Boolean = definedExternally)
 
     /**
      * Sets the content view of the window.
      */
-    fun setContentView(view: View): Unit
+    fun setContentView(view: View)
 
     /**
      * Specifies whether the window’s document has been edited, and the icon in title
@@ -1033,12 +1033,12 @@ open external class BaseWindow : NodeEventEmitter {
      *
      * @platform darwin
      */
-    open fun setDocumentEdited(edited: Boolean): Unit
+    open fun setDocumentEdited(edited: Boolean)
 
     /**
      * Disable or enable the window.
      */
-    open fun setEnabled(enable: Boolean): Unit
+    open fun setEnabled(enable: Boolean)
 
     /**
      * Changes whether the window can be focused.
@@ -1047,7 +1047,7 @@ open external class BaseWindow : NodeEventEmitter {
      *
      * @platform darwin,win32
      */
-    open fun setFocusable(focusable: Boolean): Unit
+    open fun setFocusable(focusable: Boolean)
 
     /**
      * Sets whether the window should be in fullscreen mode.
@@ -1056,18 +1056,18 @@ open external class BaseWindow : NodeEventEmitter {
      * actions depend on the fullscreen state, use the 'enter-full-screen' or
      * 'leave-full-screen' events.
      */
-    open fun setFullScreen(flag: Boolean): Unit
+    open fun setFullScreen(flag: Boolean)
 
     /**
      * Sets whether the maximize/zoom window button toggles fullscreen mode or
      * maximizes the window.
      */
-    open fun setFullScreenable(fullscreenable: Boolean): Unit
+    open fun setFullScreenable(fullscreenable: Boolean)
 
     /**
      * Sets whether the window should have a shadow.
      */
-    open fun setHasShadow(hasShadow: Boolean): Unit
+    open fun setHasShadow(hasShadow: Boolean)
 
     /**
      * Sets whether the window will be hidden when the user toggles into mission
@@ -1075,21 +1075,21 @@ open external class BaseWindow : NodeEventEmitter {
      *
      * @platform darwin
      */
-    open fun setHiddenInMissionControl(hidden: Boolean): Unit
+    open fun setHiddenInMissionControl(hidden: Boolean)
 
     /**
      * Changes window icon.
      *
      * @platform win32,linux
      */
-    open fun setIcon(icon: NativeImage): Unit
+    open fun setIcon(icon: NativeImage)
 
     /**
      * Changes window icon.
      *
      * @platform win32,linux
      */
-    open fun setIcon(icon: String): Unit
+    open fun setIcon(icon: String)
 
     /**
      * Makes the window ignore all mouse events.
@@ -1097,12 +1097,12 @@ open external class BaseWindow : NodeEventEmitter {
      * All mouse events happened in this window will be passed to the window below this
      * window, but if this window has focus, it will still receive keyboard events.
      */
-    open fun setIgnoreMouseEvents(ignore: Boolean, options: IgnoreMouseEventsOptions = definedExternally): Unit
+    open fun setIgnoreMouseEvents(ignore: Boolean, options: IgnoreMouseEventsOptions = definedExternally)
 
     /**
      * Enters or leaves kiosk mode.
      */
-    open fun setKiosk(flag: Boolean): Unit
+    open fun setKiosk(flag: Boolean)
 
     /**
      * Sets whether the window can be manually maximized by user. On Linux does
@@ -1110,19 +1110,19 @@ open external class BaseWindow : NodeEventEmitter {
      *
      * @platform darwin,win32
      */
-    open fun setMaximizable(maximizable: Boolean): Unit
+    open fun setMaximizable(maximizable: Boolean)
 
     /**
      * Sets the maximum size of window to `width` and `height`.
      */
-    open fun setMaximumSize(width: Double, height: Double): Unit
+    open fun setMaximumSize(width: Double, height: Double)
 
     /**
      * Sets the `menu` as the window's menu bar.
      *
      * @platform linux,win32
      */
-    open fun setMenu(menu: Menu?): Unit
+    open fun setMenu(menu: Menu?)
 
     /**
      * Sets whether the menu bar should be visible. If the menu bar is auto-hide, users
@@ -1130,7 +1130,7 @@ open external class BaseWindow : NodeEventEmitter {
      *
      * @platform win32,linux
      */
-    open fun setMenuBarVisibility(visible: Boolean): Unit
+    open fun setMenuBarVisibility(visible: Boolean)
 
     /**
      * Sets whether the window can be manually minimized by user. On Linux does
@@ -1138,19 +1138,19 @@ open external class BaseWindow : NodeEventEmitter {
      *
      * @platform darwin,win32
      */
-    open fun setMinimizable(minimizable: Boolean): Unit
+    open fun setMinimizable(minimizable: Boolean)
 
     /**
      * Sets the minimum size of window to `width` and `height`.
      */
-    open fun setMinimumSize(width: Double, height: Double): Unit
+    open fun setMinimumSize(width: Double, height: Double)
 
     /**
      * Sets whether the window can be moved by user. On Linux does nothing.
      *
      * @platform darwin,win32
      */
-    open fun setMovable(movable: Boolean): Unit
+    open fun setMovable(movable: Boolean)
 
     /**
      * Sets the opacity of the window. On Linux, does nothing. Out of bound number
@@ -1158,7 +1158,7 @@ open external class BaseWindow : NodeEventEmitter {
      *
      * @platform win32,darwin
      */
-    open fun setOpacity(opacity: Double): Unit
+    open fun setOpacity(opacity: Double)
 
     /**
      * Sets a 16 x 16 pixel overlay onto the current taskbar icon, usually used to
@@ -1166,18 +1166,18 @@ open external class BaseWindow : NodeEventEmitter {
      *
      * @platform win32
      */
-    open fun setOverlayIcon(overlay: NativeImage?, description: String): Unit
+    open fun setOverlayIcon(overlay: NativeImage?, description: String)
 
     /**
      * Sets `parent` as current window's parent window, passing `null` will turn
      * current window into a top-level window.
      */
-    fun setParentWindow(parent: BaseWindow?): Unit
+    fun setParentWindow(parent: BaseWindow?)
 
     /**
      * Moves window to `x` and `y`.
      */
-    open fun setPosition(x: Double, y: Double, animate: Boolean = definedExternally): Unit
+    open fun setPosition(x: Double, y: Double, animate: Boolean = definedExternally)
 
     /**
      * Sets progress value in progress bar. Valid range is [0, 1.0].
@@ -1193,7 +1193,7 @@ open external class BaseWindow : NodeEventEmitter {
      * `indeterminate`, `error`, and `paused`. If you call `setProgressBar` without a
      * mode set (but with a value within the valid range), `normal` will be assumed.
      */
-    open fun setProgressBar(progress: Double, options: ProgressBarOptions = definedExternally): Unit
+    open fun setProgressBar(progress: Double, options: ProgressBarOptions = definedExternally)
 
     /**
      * Sets the pathname of the file the window represents, and the icon of the file
@@ -1201,12 +1201,12 @@ open external class BaseWindow : NodeEventEmitter {
      *
      * @platform darwin
      */
-    open fun setRepresentedFilename(filename: String): Unit
+    open fun setRepresentedFilename(filename: String)
 
     /**
      * Sets whether the window can be manually resized by the user.
      */
-    open fun setResizable(resizable: Boolean): Unit
+    open fun setResizable(resizable: Boolean)
 
     /**
      * Setting a window shape determines the area within the window where the system
@@ -1218,7 +1218,7 @@ open external class BaseWindow : NodeEventEmitter {
      * @experimental
      * @platform win32,linux
      */
-    open fun setShape(rects: js.array.ReadonlyArray<Rectangle>): Unit
+    open fun setShape(rects: js.array.ReadonlyArray<Rectangle>)
 
     /**
      * Changes the attachment point for sheets on macOS. By default, sheets are
@@ -1227,7 +1227,7 @@ open external class BaseWindow : NodeEventEmitter {
      *
      * @platform darwin
      */
-    open fun setSheetOffset(offsetY: Double, offsetX: Double = definedExternally): Unit
+    open fun setSheetOffset(offsetY: Double, offsetX: Double = definedExternally)
 
     /**
      * Enters or leaves simple fullscreen mode.
@@ -1237,20 +1237,20 @@ open external class BaseWindow : NodeEventEmitter {
      *
      * @platform darwin
      */
-    open fun setSimpleFullScreen(flag: Boolean): Unit
+    open fun setSimpleFullScreen(flag: Boolean)
 
     /**
      * Resizes the window to `width` and `height`. If `width` or `height` are below any
      * set minimum size constraints the window will snap to its minimum size.
      */
-    open fun setSize(width: Double, height: Double, animate: Boolean = definedExternally): Unit
+    open fun setSize(width: Double, height: Double, animate: Boolean = definedExternally)
 
     /**
      * Makes the window not show in the taskbar.
      *
      * @platform darwin,win32
      */
-    open fun setSkipTaskbar(skip: Boolean): Unit
+    open fun setSkipTaskbar(skip: Boolean)
 
     /**
      * Whether the buttons were added successfully
@@ -1298,7 +1298,7 @@ open external class BaseWindow : NodeEventEmitter {
      *
      * @platform win32
      */
-    open fun setThumbnailClip(region: Rectangle): Unit
+    open fun setThumbnailClip(region: Rectangle)
 
     /**
      * Sets the toolTip that is displayed when hovering over the window thumbnail in
@@ -1306,12 +1306,12 @@ open external class BaseWindow : NodeEventEmitter {
      *
      * @platform win32
      */
-    open fun setThumbnailToolTip(toolTip: String): Unit
+    open fun setThumbnailToolTip(toolTip: String)
 
     /**
      * Changes the title of native window to `title`.
      */
-    open fun setTitle(title: String): Unit
+    open fun setTitle(title: String)
 
     /**
      * On a Window with Window Controls Overlay already enabled, this method updates
@@ -1322,7 +1322,7 @@ open external class BaseWindow : NodeEventEmitter {
      *
      * @platform win32,linux
      */
-    open fun setTitleBarOverlay(options: TitleBarOverlayOptions): Unit
+    open fun setTitleBarOverlay(options: TitleBarOverlayOptions)
 
     /**
      * Sets the touchBar layout for the current window. Specifying `null` or
@@ -1334,7 +1334,7 @@ open external class BaseWindow : NodeEventEmitter {
      *
      * @platform darwin
      */
-    open fun setTouchBar(touchBar: TouchBar?): Unit
+    open fun setTouchBar(touchBar: TouchBar?)
 
     /**
      * Adds a vibrancy effect to the window. Passing `null` or an empty string will
@@ -1342,7 +1342,7 @@ open external class BaseWindow : NodeEventEmitter {
      *
      * @platform darwin
      */
-    fun setVibrancy(type: BaseWindowSetVibrancyType?): Unit
+    fun setVibrancy(type: BaseWindowSetVibrancyType?)
 
     /**
      * Sets whether the window should be visible on all workspaces.
@@ -1354,7 +1354,7 @@ open external class BaseWindow : NodeEventEmitter {
     open fun setVisibleOnAllWorkspaces(
         visible: Boolean,
         options: VisibleOnAllWorkspacesOptions = definedExternally,
-    ): Unit
+    )
 
     /**
      * Set a custom position for the traffic light buttons in frameless window. Passing
@@ -1362,31 +1362,31 @@ open external class BaseWindow : NodeEventEmitter {
      *
      * @platform darwin
      */
-    open fun setWindowButtonPosition(position: Point?): Unit
+    open fun setWindowButtonPosition(position: Point?)
 
     /**
      * Sets whether the window traffic light buttons should be visible.
      *
      * @platform darwin
      */
-    open fun setWindowButtonVisibility(visible: Boolean): Unit
+    open fun setWindowButtonVisibility(visible: Boolean)
 
     /**
      * Shows and gives focus to the window.
      */
-    open fun show(): Unit
+    open fun show()
 
     /**
      * Shows or hides the tab overview when native tabs are enabled.
      *
      * @platform darwin
      */
-    open fun showAllTabs(): Unit
+    open fun showAllTabs()
 
     /**
      * Shows the window but doesn't focus on it.
      */
-    open fun showInactive(): Unit
+    open fun showInactive()
 
     /**
      * Toggles the visibility of the tab bar if native tabs are enabled and there is
@@ -1394,26 +1394,26 @@ open external class BaseWindow : NodeEventEmitter {
      *
      * @platform darwin
      */
-    open fun toggleTabBar(): Unit
+    open fun toggleTabBar()
 
     /**
      * Unhooks all of the window messages.
      *
      * @platform win32
      */
-    open fun unhookAllWindowMessages(): Unit
+    open fun unhookAllWindowMessages()
 
     /**
      * Unhook the window message.
      *
      * @platform win32
      */
-    open fun unhookWindowMessage(message: Double): Unit
+    open fun unhookWindowMessage(message: Double)
 
     /**
      * Unmaximizes the window.
      */
-    open fun unmaximize(): Unit
+    open fun unmaximize()
 
     /**
      * A `string` property that defines an alternative title provided only to

@@ -399,7 +399,7 @@ external class WebContents : NodeEventEmitter {
      * Adds the specified path to DevTools workspace. Must be used after DevTools
      * creation:
      */
-    fun addWorkSpace(path: String): Unit
+    fun addWorkSpace(path: String)
 
     /**
      * Adjusts the current text selection starting and ending points in the focused
@@ -415,7 +415,7 @@ external class WebContents : NodeEventEmitter {
      *
      * After:
      */
-    fun adjustSelection(options: AdjustSelectionOptions): Unit
+    fun adjustSelection(options: AdjustSelectionOptions)
 
     /**
      * Begin subscribing for presentation events and captured frames, the `callback`
@@ -428,7 +428,7 @@ external class WebContents : NodeEventEmitter {
      * describes which part of the page was repainted. If `onlyDirty` is set to `true`,
      * `image` will only contain the repainted area. `onlyDirty` defaults to `false`.
      */
-    fun beginFrameSubscription(onlyDirty: Boolean, callback: (image: NativeImage, dirtyRect: Rectangle) -> Unit): Unit
+    fun beginFrameSubscription(onlyDirty: Boolean, callback: (image: NativeImage, dirtyRect: Rectangle) -> Unit)
 
     /**
      * Begin subscribing for presentation events and captured frames, the `callback`
@@ -441,7 +441,7 @@ external class WebContents : NodeEventEmitter {
      * describes which part of the page was repainted. If `onlyDirty` is set to `true`,
      * `image` will only contain the repainted area. `onlyDirty` defaults to `false`.
      */
-    fun beginFrameSubscription(callback: (image: NativeImage, dirtyRect: Rectangle) -> Unit): Unit
+    fun beginFrameSubscription(callback: (image: NativeImage, dirtyRect: Rectangle) -> Unit)
 
     /**
      * Whether the browser can go back to previous web page.
@@ -485,7 +485,7 @@ external class WebContents : NodeEventEmitter {
     /**
      * Centers the current text selection in web page.
      */
-    fun centerSelection(): Unit
+    fun centerSelection()
 
     /**
      * Clears the navigation history.
@@ -494,7 +494,7 @@ external class WebContents : NodeEventEmitter {
      *
      * @deprecated
      */
-    fun clearHistory(): Unit
+    fun clearHistory()
 
     /**
      * Closes the page, as if the web content had called `window.close()`.
@@ -503,53 +503,53 @@ external class WebContents : NodeEventEmitter {
      * page, or `waitForBeforeUnload` is false or unspecified), the WebContents will be
      * destroyed and no longer usable. The `destroyed` event will be emitted.
      */
-    fun close(opts: CloseOpts = definedExternally): Unit
+    fun close(opts: CloseOpts = definedExternally)
 
     /**
      * Closes the devtools.
      */
-    fun closeDevTools(): Unit
+    fun closeDevTools()
 
     /**
      * Executes the editing command `copy` in web page.
      */
-    fun copy(): Unit
+    fun copy()
 
     /**
      * Copy the image at the given position to the clipboard.
      */
-    fun copyImageAt(x: Double, y: Double): Unit
+    fun copyImageAt(x: Double, y: Double)
 
     /**
      * Executes the editing command `cut` in web page.
      */
-    fun cut(): Unit
+    fun cut()
 
     /**
      * Executes the editing command `delete` in web page.
      */
-    fun delete(): Unit
+    fun delete()
 
     /**
      * Disable device emulation enabled by `webContents.enableDeviceEmulation`.
      */
-    fun disableDeviceEmulation(): Unit
+    fun disableDeviceEmulation()
 
     /**
      * Initiates a download of the resource at `url` without navigating. The
      * `will-download` event of `session` will be triggered.
      */
-    fun downloadURL(url: String, options: DownloadURLOptions = definedExternally): Unit
+    fun downloadURL(url: String, options: DownloadURLOptions = definedExternally)
 
     /**
      * Enable device emulation with the given parameters.
      */
-    fun enableDeviceEmulation(parameters: Parameters): Unit
+    fun enableDeviceEmulation(parameters: Parameters)
 
     /**
      * End subscribing for frame presentation events.
      */
-    fun endFrameSubscription(): Unit
+    fun endFrameSubscription()
 
     /**
      * A promise that resolves with the result of the executed code or is rejected if
@@ -588,7 +588,7 @@ external class WebContents : NodeEventEmitter {
     /**
      * Focuses the web page.
      */
-    fun focus(): Unit
+    fun focus()
 
     /**
      * Forcefully terminates the renderer process that is currently hosting this
@@ -601,7 +601,7 @@ external class WebContents : NodeEventEmitter {
      * to occur in a new process. This should be used when this process is unstable or
      * unusable, for instance in order to recover from the `unresponsive` event.
      */
-    fun forcefullyCrashRenderer(): Unit
+    fun forcefullyCrashRenderer()
 
     /**
      * Information about all Shared Workers.
@@ -704,7 +704,7 @@ external class WebContents : NodeEventEmitter {
      *
      * @deprecated
      */
-    fun goBack(): Unit
+    fun goBack()
 
     /**
      * Makes the browser go forward a web page.
@@ -713,7 +713,7 @@ external class WebContents : NodeEventEmitter {
      *
      * @deprecated
      */
-    fun goForward(): Unit
+    fun goForward()
 
     /**
      * Navigates browser to the specified absolute web page index.
@@ -722,7 +722,7 @@ external class WebContents : NodeEventEmitter {
      *
      * @deprecated
      */
-    fun goToIndex(index: Double): Unit
+    fun goToIndex(index: Double)
 
     /**
      * Navigates to the specified offset from the "current entry".
@@ -731,7 +731,7 @@ external class WebContents : NodeEventEmitter {
      *
      * @deprecated
      */
-    fun goToOffset(offset: Double): Unit
+    fun goToOffset(offset: Double)
 
     /**
      * A promise that resolves with a key for the inserted CSS that can later be used
@@ -750,22 +750,22 @@ external class WebContents : NodeEventEmitter {
     /**
      * Starts inspecting element at position (`x`, `y`).
      */
-    fun inspectElement(x: Double, y: Double): Unit
+    fun inspectElement(x: Double, y: Double)
 
     /**
      * Opens the developer tools for the service worker context.
      */
-    fun inspectServiceWorker(): Unit
+    fun inspectServiceWorker()
 
     /**
      * Opens the developer tools for the shared worker context.
      */
-    fun inspectSharedWorker(): Unit
+    fun inspectSharedWorker()
 
     /**
      * Inspects the shared worker based on its ID.
      */
-    fun inspectSharedWorkerById(workerId: String): Unit
+    fun inspectSharedWorkerById(workerId: String)
 
     /**
      * Schedules a full repaint of the window this web contents is in.
@@ -773,7 +773,7 @@ external class WebContents : NodeEventEmitter {
      * If _offscreen rendering_ is enabled invalidates the frame and generates a new
      * one through the `'paint'` event.
      */
-    fun invalidate(): Unit
+    fun invalidate()
 
     /**
      * Whether this page has been muted.
@@ -876,17 +876,17 @@ external class WebContents : NodeEventEmitter {
      * On Windows, if Windows Control Overlay is enabled, Devtools will be opened with
      * `mode: 'detach'`.
      */
-    fun openDevTools(options: OpenDevToolsOptions = definedExternally): Unit
+    fun openDevTools(options: OpenDevToolsOptions = definedExternally)
 
     /**
      * Executes the editing command `paste` in web page.
      */
-    fun paste(): Unit
+    fun paste()
 
     /**
      * Executes the editing command `pasteAndMatchStyle` in web page.
      */
-    fun pasteAndMatchStyle(): Unit
+    fun pasteAndMatchStyle()
 
     /**
      * Send a message to the renderer process, optionally transferring ownership of
@@ -902,7 +902,7 @@ external class WebContents : NodeEventEmitter {
         channel: String,
         message: Any?,
         transfer: js.array.ReadonlyArray<MessagePortMain> = definedExternally,
-    ): Unit
+    )
 
     /**
      * When a custom `pageSize` is passed, Chromium attempts to validate platform
@@ -921,7 +921,7 @@ external class WebContents : NodeEventEmitter {
     fun print(
         options: WebContentsPrintOptions = definedExternally,
         callback: (success: Boolean, failureReason: String) -> Unit = definedExternally,
-    ): Unit
+    )
 
     /**
      * Resolves with the generated PDF data.
@@ -939,17 +939,17 @@ external class WebContents : NodeEventEmitter {
     /**
      * Executes the editing command `redo` in web page.
      */
-    fun redo(): Unit
+    fun redo()
 
     /**
      * Reloads the current web page.
      */
-    fun reload(): Unit
+    fun reload()
 
     /**
      * Reloads current page and ignores cache.
      */
-    fun reloadIgnoringCache(): Unit
+    fun reloadIgnoringCache()
 
     /**
      * Resolves if the removal was successful.
@@ -962,17 +962,17 @@ external class WebContents : NodeEventEmitter {
     /**
      * Removes the specified path from DevTools workspace.
      */
-    fun removeWorkSpace(path: String): Unit
+    fun removeWorkSpace(path: String)
 
     /**
      * Executes the editing command `replace` in web page.
      */
-    fun replace(text: String): Unit
+    fun replace(text: String)
 
     /**
      * Executes the editing command `replaceMisspelling` in web page.
      */
-    fun replaceMisspelling(text: String): Unit
+    fun replaceMisspelling(text: String)
 
     /**
      * resolves if the page is saved.
@@ -982,17 +982,17 @@ external class WebContents : NodeEventEmitter {
     /**
      * Scrolls to the bottom of the current `webContents`.
      */
-    fun scrollToBottom(): Unit
+    fun scrollToBottom()
 
     /**
      * Scrolls to the top of the current `webContents`.
      */
-    fun scrollToTop(): Unit
+    fun scrollToTop()
 
     /**
      * Executes the editing command `selectAll` in web page.
      */
-    fun selectAll(): Unit
+    fun selectAll()
 
     /**
      * Send an asynchronous message to the renderer process via `channel`, along with
@@ -1009,25 +1009,25 @@ external class WebContents : NodeEventEmitter {
      *
      * For additional reading, refer to Electron's IPC guide.
      */
-    fun send(channel: String, vararg args: Any?): Unit
+    fun send(channel: String, vararg args: Any?)
 
     /**
      * Sends an input `event` to the page. **Note:** The `BrowserWindow` containing the
      * contents needs to be focused for `sendInputEvent()` to work.
      */
-    fun sendInputEvent(inputEvent: MouseInputEvent): Unit
+    fun sendInputEvent(inputEvent: MouseInputEvent)
 
     /**
      * Sends an input `event` to the page. **Note:** The `BrowserWindow` containing the
      * contents needs to be focused for `sendInputEvent()` to work.
      */
-    fun sendInputEvent(inputEvent: MouseWheelInputEvent): Unit
+    fun sendInputEvent(inputEvent: MouseWheelInputEvent)
 
     /**
      * Sends an input `event` to the page. **Note:** The `BrowserWindow` containing the
      * contents needs to be focused for `sendInputEvent()` to work.
      */
-    fun sendInputEvent(inputEvent: KeyboardInputEvent): Unit
+    fun sendInputEvent(inputEvent: KeyboardInputEvent)
 
     /**
      * Send an asynchronous message to a specific frame in a renderer process via
@@ -1047,7 +1047,7 @@ external class WebContents : NodeEventEmitter {
      *
      * You can also read `frameId` from all incoming IPC messages in the main process.
      */
-    fun sendToFrame(frameId: Double, channel: String, vararg args: Any?): Unit
+    fun sendToFrame(frameId: Double, channel: String, vararg args: Any?)
 
     /**
      * Send an asynchronous message to a specific frame in a renderer process via
@@ -1067,24 +1067,24 @@ external class WebContents : NodeEventEmitter {
      *
      * You can also read `frameId` from all incoming IPC messages in the main process.
      */
-    fun sendToFrame(frameId: js.array.JsTuple2<Double, Double>, channel: String, vararg args: Any?): Unit
+    fun sendToFrame(frameId: js.array.JsTuple2<Double, Double>, channel: String, vararg args: Any?)
 
     /**
      * Mute the audio on the current web page.
      */
-    fun setAudioMuted(muted: Boolean): Unit
+    fun setAudioMuted(muted: Boolean)
 
     /**
      * Controls whether or not this WebContents will throttle animations and timers
      * when the page becomes backgrounded. This also affects the Page Visibility API.
      */
-    fun setBackgroundThrottling(allowed: Boolean): Unit
+    fun setBackgroundThrottling(allowed: Boolean)
 
     /**
      * Changes the title of the DevTools window to `title`. This will only be visible
      * if DevTools is opened in `undocked` or `detach` mode.
      */
-    fun setDevToolsTitle(title: String): Unit
+    fun setDevToolsTitle(title: String)
 
     /**
      * Uses the `devToolsWebContents` as the target `WebContents` to show devtools.
@@ -1105,18 +1105,18 @@ external class WebContents : NodeEventEmitter {
      *
      * An example of showing devtools in a `BrowserWindow`:
      */
-    fun setDevToolsWebContents(devToolsWebContents: WebContents): Unit
+    fun setDevToolsWebContents(devToolsWebContents: WebContents)
 
     /**
      * If _offscreen rendering_ is enabled sets the frame rate to the specified number.
      * Only values between 1 and 240 are accepted.
      */
-    fun setFrameRate(fps: Double): Unit
+    fun setFrameRate(fps: Double)
 
     /**
      * Ignore application menu shortcuts while this web contents is focused.
      */
-    fun setIgnoreMenuShortcuts(ignore: Boolean): Unit
+    fun setIgnoreMenuShortcuts(ignore: Boolean)
 
     /**
      * Sets the image animation policy for this webContents.  The policy only affects
@@ -1127,12 +1127,12 @@ external class WebContents : NodeEventEmitter {
      *
      * This corresponds to the animationPolicy accessibility feature in Chromium.
      */
-    fun setImageAnimationPolicy(policy: WebContentsSetImageAnimationPolicyPolicy): Unit
+    fun setImageAnimationPolicy(policy: WebContentsSetImageAnimationPolicyPolicy)
 
     /**
      * Overrides the user agent for this web page.
      */
-    fun setUserAgent(userAgent: String): Unit
+    fun setUserAgent(userAgent: String)
 
     /**
      * Sets the maximum and minimum pinch-to-zoom level.
@@ -1146,14 +1146,14 @@ external class WebContents : NodeEventEmitter {
      * Setting the WebRTC IP handling policy allows you to control which IPs are
      * exposed via WebRTC. See BrowserLeaks for more details.
      */
-    fun setWebRTCIPHandlingPolicy(policy: WebContentsSetWebRTCIPHandlingPolicyPolicy): Unit
+    fun setWebRTCIPHandlingPolicy(policy: WebContentsSetWebRTCIPHandlingPolicyPolicy)
 
     /**
      * Setting the WebRTC UDP Port Range allows you to restrict the udp port range used
      * by WebRTC. By default the port range is unrestricted. **Note:** To reset to an
      * unrestricted port range this value should be set to `{ min: 0, max: 0 }`.
      */
-    fun setWebRTCUDPPortRange(udpPortRange: UdpPortRange): Unit
+    fun setWebRTCUDPPortRange(udpPortRange: UdpPortRange)
 
     /**
      * Called before creating a window a new window is requested by the renderer, e.g.
@@ -1164,7 +1164,7 @@ external class WebContents : NodeEventEmitter {
      * An example showing how to customize the process of new `BrowserWindow` creation
      * to be `BrowserView` attached to main window instead:
      */
-    fun setWindowOpenHandler(handler: (details: HandlerDetails) -> WindowOpenHandlerResponse): Unit
+    fun setWindowOpenHandler(handler: (details: HandlerDetails) -> WindowOpenHandlerResponse)
 
     /**
      * Changes the zoom factor to the specified factor. Zoom factor is zoom percent
@@ -1172,7 +1172,7 @@ external class WebContents : NodeEventEmitter {
      *
      * The factor must be greater than 0.0.
      */
-    fun setZoomFactor(factor: Double): Unit
+    fun setZoomFactor(factor: Double)
 
     /**
      * Changes the zoom level to the specified level. The original size is 0 and each
@@ -1185,41 +1185,41 @@ external class WebContents : NodeEventEmitter {
      * with the same domain. Differentiating the window URLs will make zoom work
      * per-window.
      */
-    fun setZoomLevel(level: Double): Unit
+    fun setZoomLevel(level: Double)
 
     /**
      * Shows pop-up dictionary that searches the selected word on the page.
      *
      * @platform darwin
      */
-    fun showDefinitionForSelection(): Unit
+    fun showDefinitionForSelection()
 
     /**
      * Sets the `item` as dragging item for current drag-drop operation, `file` is the
      * absolute path of the file to be dragged, and `icon` is the image showing under
      * the cursor when dragging.
      */
-    fun startDrag(item: Item): Unit
+    fun startDrag(item: Item)
 
     /**
      * If _offscreen rendering_ is enabled and not painting, start painting.
      */
-    fun startPainting(): Unit
+    fun startPainting()
 
     /**
      * Stops any pending navigation.
      */
-    fun stop(): Unit
+    fun stop()
 
     /**
      * Stops any `findInPage` request for the `webContents` with the provided `action`.
      */
-    fun stopFindInPage(action: WebContentsStopFindInPageAction): Unit
+    fun stopFindInPage(action: WebContentsStopFindInPageAction)
 
     /**
      * If _offscreen rendering_ is enabled and painting, stop painting.
      */
-    fun stopPainting(): Unit
+    fun stopPainting()
 
     /**
      * Indicates whether the snapshot has been created successfully.
@@ -1231,17 +1231,17 @@ external class WebContents : NodeEventEmitter {
     /**
      * Toggles the developer tools.
      */
-    fun toggleDevTools(): Unit
+    fun toggleDevTools()
 
     /**
      * Executes the editing command `undo` in web page.
      */
-    fun undo(): Unit
+    fun undo()
 
     /**
      * Executes the editing command `unselect` in web page.
      */
-    fun unselect(): Unit
+    fun unselect()
 
     /**
      * A `boolean` property that determines whether this page is muted.

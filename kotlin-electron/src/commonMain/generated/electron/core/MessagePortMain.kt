@@ -20,19 +20,19 @@ external class MessagePortMain : NodeEventEmitter {
     /**
      * Disconnects the port, so it is no longer active.
      */
-    fun close(): Unit
+    fun close()
 
     /**
      * Sends a message from the port, and optionally, transfers ownership of objects to
      * other browsing contexts.
      */
-    fun postMessage(message: Any?, transfer: js.array.ReadonlyArray<MessagePortMain> = definedExternally): Unit
+    fun postMessage(message: Any?, transfer: js.array.ReadonlyArray<MessagePortMain> = definedExternally)
 
     /**
      * Starts the sending of messages queued on the port. Messages will be queued until
      * this method is called.
      */
-    fun start(): Unit
+    fun start()
 
     @web.events.JsEvent("close")
     val closeEvent: node.events.EventInstance<js.array.JsTuple>

@@ -52,7 +52,7 @@ external interface Dialog {
      * the app `ready`event on Linux, the message will be emitted to stderr, and no GUI
      * dialog will appear.
      */
-    fun showErrorBox(title: String, content: String): Unit
+    fun showErrorBox(title: String, content: String)
 
     /**
      * resolves with a promise containing the following properties:

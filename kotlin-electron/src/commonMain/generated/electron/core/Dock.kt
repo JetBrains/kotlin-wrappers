@@ -30,14 +30,14 @@ external class Dock {
      *
      * @platform darwin
      */
-    fun cancelBounce(id: Double): Unit
+    fun cancelBounce(id: Double)
 
     /**
      * Bounces the Downloads stack if the filePath is inside the Downloads folder.
      *
      * @platform darwin
      */
-    fun downloadFinished(filePath: String): Unit
+    fun downloadFinished(filePath: String)
 
     /**
      * The badge string of the dock.
@@ -58,7 +58,7 @@ external class Dock {
      *
      * @platform darwin
      */
-    fun hide(): Unit
+    fun hide()
 
     /**
      * Whether the dock icon is visible.
@@ -72,28 +72,28 @@ external class Dock {
      *
      * @platform darwin
      */
-    fun setBadge(text: String): Unit
+    fun setBadge(text: String)
 
     /**
      * Sets the `image` associated with this dock icon.
      *
      * @platform darwin
      */
-    fun setIcon(image: NativeImage): Unit
+    fun setIcon(image: NativeImage)
 
     /**
      * Sets the `image` associated with this dock icon.
      *
      * @platform darwin
      */
-    fun setIcon(image: String): Unit
+    fun setIcon(image: String)
 
     /**
      * Sets the application's dock menu.
      *
      * @platform darwin
      */
-    fun setMenu(menu: Menu): Unit
+    fun setMenu(menu: Menu)
 
     /**
      * Resolves when the dock icon is shown.

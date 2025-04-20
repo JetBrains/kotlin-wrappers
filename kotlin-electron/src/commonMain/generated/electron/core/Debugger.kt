@@ -22,12 +22,12 @@ external class Debugger : NodeEventEmitter {
     /**
      * Attaches the debugger to the `webContents`.
      */
-    fun attach(protocolVersion: String = definedExternally): Unit
+    fun attach(protocolVersion: String = definedExternally)
 
     /**
      * Detaches the debugger from the `webContents`.
      */
-    fun detach(): Unit
+    fun detach()
 
     /**
      * Whether a debugger is attached to the `webContents`.

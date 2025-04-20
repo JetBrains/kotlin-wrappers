@@ -14,10 +14,10 @@ open external class ShareMenu {
     /**
      * Closes the context menu in the `browserWindow`.
      */
-    fun closePopup(browserWindow: BrowserWindow = definedExternally): Unit
+    fun closePopup(browserWindow: BrowserWindow = definedExternally)
 
     /**
      * Pops up this menu as a context menu in the `BrowserWindow`.
      */
-    fun popup(options: PopupOptions = definedExternally): Unit
+    fun popup(options: PopupOptions = definedExternally)
 }

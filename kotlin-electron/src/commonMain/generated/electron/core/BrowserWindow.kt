@@ -857,20 +857,20 @@ open external class BrowserWindow : BaseWindow {
      * @experimental
      * @deprecated
      */
-    fun addBrowserView(browserView: BrowserView): Unit
+    fun addBrowserView(browserView: BrowserView)
 
     /**
      * Adds a window as a tab on this window, after the tab for the window instance.
      *
      * @platform darwin
      */
-    fun addTabbedWindow(browserWindow: BrowserWindow): Unit
+    fun addTabbedWindow(browserWindow: BrowserWindow)
 
     /**
      * Removes focus from the window.
      */
-    override fun blur(): Unit
-    fun blurWebView(): Unit
+    override fun blur()
+    fun blurWebView()
 
     /**
      * Resolves with a NativeImage
@@ -886,39 +886,39 @@ open external class BrowserWindow : BaseWindow {
     /**
      * Moves window to the center of the screen.
      */
-    override fun center(): Unit
+    override fun center()
 
     /**
      * Try to close the window. This has the same effect as a user manually clicking
      * the close button of the window. The web page may cancel the close though. See
      * the close event.
      */
-    override fun close(): Unit
+    override fun close()
 
     /**
      * Closes the currently open Quick Look panel.
      *
      * @platform darwin
      */
-    override fun closeFilePreview(): Unit
+    override fun closeFilePreview()
 
     /**
      * Force closing the window, the `unload` and `beforeunload` event won't be emitted
      * for the web page, and `close` event will also not be emitted for this window,
      * but it guarantees the `closed` event will be emitted.
      */
-    override fun destroy(): Unit
+    override fun destroy()
 
     /**
      * Starts or stops flashing the window to attract user's attention.
      */
-    override fun flashFrame(flag: Boolean): Unit
+    override fun flashFrame(flag: Boolean)
 
     /**
      * Focuses on the window.
      */
-    override fun focus(): Unit
-    fun focusOnWebView(): Unit
+    override fun focus()
+    fun focusOnWebView()
 
     /**
      * Gets the background color of the window in Hex (`#RRGGBB`) format.
@@ -1071,7 +1071,7 @@ open external class BrowserWindow : BaseWindow {
     /**
      * Hides the window.
      */
-    override fun hide(): Unit
+    override fun hide()
 
     /**
      * Hooks a windows message. The `callback` is called when the message is received
@@ -1079,7 +1079,7 @@ open external class BrowserWindow : BaseWindow {
      *
      * @platform win32
      */
-    override fun hookWindowMessage(message: Double, callback: (wParam: Buffer<*>, lParam: Buffer<*>) -> Unit): Unit
+    override fun hookWindowMessage(message: Double, callback: (wParam: Buffer<*>, lParam: Buffer<*>) -> Unit)
 
     /**
      * Invalidates the window shadow so that it is recomputed based on the current
@@ -1091,7 +1091,7 @@ open external class BrowserWindow : BaseWindow {
      *
      * @platform darwin
      */
-    override fun invalidateShadow(): Unit
+    override fun invalidateShadow()
 
     /**
      * Whether the window is always on top of other windows.
@@ -1303,7 +1303,7 @@ open external class BrowserWindow : BaseWindow {
      * Maximizes the window. This will also show (but not focus) the window if it isn't
      * being displayed already.
      */
-    override fun maximize(): Unit
+    override fun maximize()
 
     /**
      * Merges all windows into one window with multiple tabs when native tabs are
@@ -1311,20 +1311,20 @@ open external class BrowserWindow : BaseWindow {
      *
      * @platform darwin
      */
-    override fun mergeAllWindows(): Unit
+    override fun mergeAllWindows()
 
     /**
      * Minimizes the window. On some platforms the minimized window will be shown in
      * the Dock.
      */
-    override fun minimize(): Unit
+    override fun minimize()
 
     /**
      * Moves window above the source window in the sense of z-order. If the
      * `mediaSourceId` is not of type window or if the window does not exist then this
      * method throws an error.
      */
-    override fun moveAbove(mediaSourceId: String): Unit
+    override fun moveAbove(mediaSourceId: String)
 
     /**
      * Moves the current tab into a new window if native tabs are enabled and there is
@@ -1332,24 +1332,24 @@ open external class BrowserWindow : BaseWindow {
      *
      * @platform darwin
      */
-    override fun moveTabToNewWindow(): Unit
+    override fun moveTabToNewWindow()
 
     /**
      * Moves window to top(z-order) regardless of focus
      */
-    override fun moveTop(): Unit
+    override fun moveTop()
 
     /**
      * Uses Quick Look to preview a file at a given path.
      *
      * @platform darwin
      */
-    override fun previewFile(path: String, displayName: String): Unit
+    override fun previewFile(path: String, displayName: String)
 
     /**
      * Same as `webContents.reload`.
      */
-    fun reload(): Unit
+    fun reload()
 
     /**
      * > **Note** The `BrowserView` class is deprecated, and replaced by the new
@@ -1358,19 +1358,19 @@ open external class BrowserWindow : BaseWindow {
      * @experimental
      * @deprecated
      */
-    fun removeBrowserView(browserView: BrowserView): Unit
+    fun removeBrowserView(browserView: BrowserView)
 
     /**
      * Remove the window's menu bar.
      *
      * @platform linux,win32
      */
-    override fun removeMenu(): Unit
+    override fun removeMenu()
 
     /**
      * Restores the window from minimized state to its previous state.
      */
-    override fun restore(): Unit
+    override fun restore()
 
     /**
      * Selects the next tab when native tabs are enabled and there are other tabs in
@@ -1378,7 +1378,7 @@ open external class BrowserWindow : BaseWindow {
      *
      * @platform darwin
      */
-    override fun selectNextTab(): Unit
+    override fun selectNextTab()
 
     /**
      * Selects the previous tab when native tabs are enabled and there are other tabs
@@ -1386,7 +1386,7 @@ open external class BrowserWindow : BaseWindow {
      *
      * @platform darwin
      */
-    override fun selectPreviousTab(): Unit
+    override fun selectPreviousTab()
 
     /**
      * Sets whether the window should show always on top of other windows. After
@@ -1397,7 +1397,7 @@ open external class BrowserWindow : BaseWindow {
         flag: Boolean,
         level: BrowserWindowSetAlwaysOnTopLevel = definedExternally,
         relativeLevel: Double = definedExternally,
-    ): Unit
+    )
 
     /**
      * Sets the properties for the window's taskbar button.
@@ -1407,7 +1407,7 @@ open external class BrowserWindow : BaseWindow {
      *
      * @platform win32
      */
-    override fun setAppDetails(options: AppDetailsOptions): Unit
+    override fun setAppDetails(options: AppDetailsOptions)
 
     /**
      * This will make a window maintain an aspect ratio. The extra size allows a
@@ -1430,14 +1430,14 @@ open external class BrowserWindow : BaseWindow {
      * To reset an aspect ratio, pass 0 as the `aspectRatio` value:
      * `win.setAspectRatio(0)`.
      */
-    override fun setAspectRatio(aspectRatio: Double, extraSize: Size): Unit
+    override fun setAspectRatio(aspectRatio: Double, extraSize: Size)
 
     /**
      * Controls whether to hide cursor when typing.
      *
      * @platform darwin
      */
-    override fun setAutoHideCursor(autoHide: Boolean): Unit
+    override fun setAutoHideCursor(autoHide: Boolean)
 
     /**
      * Sets whether the window menu bar should hide itself automatically. Once set the
@@ -1448,7 +1448,7 @@ open external class BrowserWindow : BaseWindow {
      *
      * @platform win32,linux
      */
-    override fun setAutoHideMenuBar(hide: Boolean): Unit
+    override fun setAutoHideMenuBar(hide: Boolean)
 
     /**
      * Examples of valid `backgroundColor` values:
@@ -1477,7 +1477,7 @@ open external class BrowserWindow : BaseWindow {
      *
      * Sets the background color of the window. See Setting `backgroundColor`.
      */
-    override fun setBackgroundColor(backgroundColor: String): Unit
+    override fun setBackgroundColor(backgroundColor: String)
 
     /**
      * This method sets the browser window's system-drawn background material,
@@ -1489,7 +1489,7 @@ open external class BrowserWindow : BaseWindow {
      *
      * @platform win32
      */
-    fun setBackgroundMaterial(material: BrowserWindowSetBackgroundMaterialMaterial): Unit
+    fun setBackgroundMaterial(material: BrowserWindowSetBackgroundMaterialMaterial)
 
     /**
      * Resizes and moves the window to the supplied bounds. Any properties that are not
@@ -1500,7 +1500,7 @@ open external class BrowserWindow : BaseWindow {
      * system, but is between 20-40px. Passing a value lower than the tray height will
      * result in a window that is flush to the tray.
      */
-    override fun setBounds(bounds: Rectangle, animate: Boolean): Unit
+    override fun setBounds(bounds: Rectangle, animate: Boolean)
 
     /**
      * > **Note** The `BrowserView` class is deprecated, and replaced by the new
@@ -1509,20 +1509,20 @@ open external class BrowserWindow : BaseWindow {
      * @experimental
      * @deprecated
      */
-    fun setBrowserView(browserView: BrowserView?): Unit
+    fun setBrowserView(browserView: BrowserView?)
 
     /**
      * Sets whether the window can be manually closed by user. On Linux does nothing.
      *
      * @platform darwin,win32
      */
-    override fun setClosable(closable: Boolean): Unit
+    override fun setClosable(closable: Boolean)
 
     /**
      * Resizes and moves the window's client area (e.g. the web page) to the supplied
      * bounds.
      */
-    override fun setContentBounds(bounds: Rectangle, animate: Boolean): Unit
+    override fun setContentBounds(bounds: Rectangle, animate: Boolean)
 
     /**
      * Prevents the window contents from being captured by other apps.
@@ -1534,12 +1534,12 @@ open external class BrowserWindow : BaseWindow {
      *
      * @platform darwin,win32
      */
-    override fun setContentProtection(enable: Boolean): Unit
+    override fun setContentProtection(enable: Boolean)
 
     /**
      * Resizes the window's client area (e.g. the web page) to `width` and `height`.
      */
-    override fun setContentSize(width: Double, height: Double, animate: Boolean): Unit
+    override fun setContentSize(width: Double, height: Double, animate: Boolean)
 
     /**
      * Specifies whether the window’s document has been edited, and the icon in title
@@ -1547,12 +1547,12 @@ open external class BrowserWindow : BaseWindow {
      *
      * @platform darwin
      */
-    override fun setDocumentEdited(edited: Boolean): Unit
+    override fun setDocumentEdited(edited: Boolean)
 
     /**
      * Disable or enable the window.
      */
-    override fun setEnabled(enable: Boolean): Unit
+    override fun setEnabled(enable: Boolean)
 
     /**
      * Changes whether the window can be focused.
@@ -1561,7 +1561,7 @@ open external class BrowserWindow : BaseWindow {
      *
      * @platform darwin,win32
      */
-    override fun setFocusable(focusable: Boolean): Unit
+    override fun setFocusable(focusable: Boolean)
 
     /**
      * Sets whether the window should be in fullscreen mode.
@@ -1570,18 +1570,18 @@ open external class BrowserWindow : BaseWindow {
      * actions depend on the fullscreen state, use the 'enter-full-screen' or
      * 'leave-full-screen' events.
      */
-    override fun setFullScreen(flag: Boolean): Unit
+    override fun setFullScreen(flag: Boolean)
 
     /**
      * Sets whether the maximize/zoom window button toggles fullscreen mode or
      * maximizes the window.
      */
-    override fun setFullScreenable(fullscreenable: Boolean): Unit
+    override fun setFullScreenable(fullscreenable: Boolean)
 
     /**
      * Sets whether the window should have a shadow.
      */
-    override fun setHasShadow(hasShadow: Boolean): Unit
+    override fun setHasShadow(hasShadow: Boolean)
 
     /**
      * Sets whether the window will be hidden when the user toggles into mission
@@ -1589,21 +1589,21 @@ open external class BrowserWindow : BaseWindow {
      *
      * @platform darwin
      */
-    override fun setHiddenInMissionControl(hidden: Boolean): Unit
+    override fun setHiddenInMissionControl(hidden: Boolean)
 
     /**
      * Changes window icon.
      *
      * @platform win32,linux
      */
-    override fun setIcon(icon: NativeImage): Unit
+    override fun setIcon(icon: NativeImage)
 
     /**
      * Changes window icon.
      *
      * @platform win32,linux
      */
-    override fun setIcon(icon: String): Unit
+    override fun setIcon(icon: String)
 
     /**
      * Makes the window ignore all mouse events.
@@ -1611,12 +1611,12 @@ open external class BrowserWindow : BaseWindow {
      * All mouse events happened in this window will be passed to the window below this
      * window, but if this window has focus, it will still receive keyboard events.
      */
-    override fun setIgnoreMouseEvents(ignore: Boolean, options: IgnoreMouseEventsOptions): Unit
+    override fun setIgnoreMouseEvents(ignore: Boolean, options: IgnoreMouseEventsOptions)
 
     /**
      * Enters or leaves kiosk mode.
      */
-    override fun setKiosk(flag: Boolean): Unit
+    override fun setKiosk(flag: Boolean)
 
     /**
      * Sets whether the window can be manually maximized by user. On Linux does
@@ -1624,19 +1624,19 @@ open external class BrowserWindow : BaseWindow {
      *
      * @platform darwin,win32
      */
-    override fun setMaximizable(maximizable: Boolean): Unit
+    override fun setMaximizable(maximizable: Boolean)
 
     /**
      * Sets the maximum size of window to `width` and `height`.
      */
-    override fun setMaximumSize(width: Double, height: Double): Unit
+    override fun setMaximumSize(width: Double, height: Double)
 
     /**
      * Sets the `menu` as the window's menu bar.
      *
      * @platform linux,win32
      */
-    override fun setMenu(menu: Menu?): Unit
+    override fun setMenu(menu: Menu?)
 
     /**
      * Sets whether the menu bar should be visible. If the menu bar is auto-hide, users
@@ -1644,7 +1644,7 @@ open external class BrowserWindow : BaseWindow {
      *
      * @platform win32,linux
      */
-    override fun setMenuBarVisibility(visible: Boolean): Unit
+    override fun setMenuBarVisibility(visible: Boolean)
 
     /**
      * Sets whether the window can be manually minimized by user. On Linux does
@@ -1652,19 +1652,19 @@ open external class BrowserWindow : BaseWindow {
      *
      * @platform darwin,win32
      */
-    override fun setMinimizable(minimizable: Boolean): Unit
+    override fun setMinimizable(minimizable: Boolean)
 
     /**
      * Sets the minimum size of window to `width` and `height`.
      */
-    override fun setMinimumSize(width: Double, height: Double): Unit
+    override fun setMinimumSize(width: Double, height: Double)
 
     /**
      * Sets whether the window can be moved by user. On Linux does nothing.
      *
      * @platform darwin,win32
      */
-    override fun setMovable(movable: Boolean): Unit
+    override fun setMovable(movable: Boolean)
 
     /**
      * Sets the opacity of the window. On Linux, does nothing. Out of bound number
@@ -1672,7 +1672,7 @@ open external class BrowserWindow : BaseWindow {
      *
      * @platform win32,darwin
      */
-    override fun setOpacity(opacity: Double): Unit
+    override fun setOpacity(opacity: Double)
 
     /**
      * Sets a 16 x 16 pixel overlay onto the current taskbar icon, usually used to
@@ -1680,18 +1680,18 @@ open external class BrowserWindow : BaseWindow {
      *
      * @platform win32
      */
-    override fun setOverlayIcon(overlay: NativeImage?, description: String): Unit
+    override fun setOverlayIcon(overlay: NativeImage?, description: String)
 
     /**
      * Sets `parent` as current window's parent window, passing `null` will turn
      * current window into a top-level window.
      */
-    fun setParentWindow(parent: BrowserWindow?): Unit
+    fun setParentWindow(parent: BrowserWindow?)
 
     /**
      * Moves window to `x` and `y`.
      */
-    override fun setPosition(x: Double, y: Double, animate: Boolean): Unit
+    override fun setPosition(x: Double, y: Double, animate: Boolean)
 
     /**
      * Sets progress value in progress bar. Valid range is [0, 1.0].
@@ -1707,7 +1707,7 @@ open external class BrowserWindow : BaseWindow {
      * `indeterminate`, `error`, and `paused`. If you call `setProgressBar` without a
      * mode set (but with a value within the valid range), `normal` will be assumed.
      */
-    override fun setProgressBar(progress: Double, options: ProgressBarOptions): Unit
+    override fun setProgressBar(progress: Double, options: ProgressBarOptions)
 
     /**
      * Sets the pathname of the file the window represents, and the icon of the file
@@ -1715,12 +1715,12 @@ open external class BrowserWindow : BaseWindow {
      *
      * @platform darwin
      */
-    override fun setRepresentedFilename(filename: String): Unit
+    override fun setRepresentedFilename(filename: String)
 
     /**
      * Sets whether the window can be manually resized by the user.
      */
-    override fun setResizable(resizable: Boolean): Unit
+    override fun setResizable(resizable: Boolean)
 
     /**
      * Setting a window shape determines the area within the window where the system
@@ -1732,7 +1732,7 @@ open external class BrowserWindow : BaseWindow {
      * @experimental
      * @platform win32,linux
      */
-    override fun setShape(rects: js.array.ReadonlyArray<Rectangle>): Unit
+    override fun setShape(rects: js.array.ReadonlyArray<Rectangle>)
 
     /**
      * Changes the attachment point for sheets on macOS. By default, sheets are
@@ -1741,7 +1741,7 @@ open external class BrowserWindow : BaseWindow {
      *
      * @platform darwin
      */
-    override fun setSheetOffset(offsetY: Double, offsetX: Double): Unit
+    override fun setSheetOffset(offsetY: Double, offsetX: Double)
 
     /**
      * Enters or leaves simple fullscreen mode.
@@ -1751,20 +1751,20 @@ open external class BrowserWindow : BaseWindow {
      *
      * @platform darwin
      */
-    override fun setSimpleFullScreen(flag: Boolean): Unit
+    override fun setSimpleFullScreen(flag: Boolean)
 
     /**
      * Resizes the window to `width` and `height`. If `width` or `height` are below any
      * set minimum size constraints the window will snap to its minimum size.
      */
-    override fun setSize(width: Double, height: Double, animate: Boolean): Unit
+    override fun setSize(width: Double, height: Double, animate: Boolean)
 
     /**
      * Makes the window not show in the taskbar.
      *
      * @platform darwin,win32
      */
-    override fun setSkipTaskbar(skip: Boolean): Unit
+    override fun setSkipTaskbar(skip: Boolean)
 
     /**
      * Whether the buttons were added successfully
@@ -1812,7 +1812,7 @@ open external class BrowserWindow : BaseWindow {
      *
      * @platform win32
      */
-    override fun setThumbnailClip(region: Rectangle): Unit
+    override fun setThumbnailClip(region: Rectangle)
 
     /**
      * Sets the toolTip that is displayed when hovering over the window thumbnail in
@@ -1820,12 +1820,12 @@ open external class BrowserWindow : BaseWindow {
      *
      * @platform win32
      */
-    override fun setThumbnailToolTip(toolTip: String): Unit
+    override fun setThumbnailToolTip(toolTip: String)
 
     /**
      * Changes the title of native window to `title`.
      */
-    override fun setTitle(title: String): Unit
+    override fun setTitle(title: String)
 
     /**
      * On a window with Window Controls Overlay already enabled, this method updates
@@ -1836,7 +1836,7 @@ open external class BrowserWindow : BaseWindow {
      *
      * @platform win32,linux
      */
-    override fun setTitleBarOverlay(options: TitleBarOverlayOptions): Unit
+    override fun setTitleBarOverlay(options: TitleBarOverlayOptions)
 
     /**
      * Raises `browserView` above other `BrowserView`s attached to `win`. Throws an
@@ -1848,7 +1848,7 @@ open external class BrowserWindow : BaseWindow {
      * @experimental
      * @deprecated
      */
-    fun setTopBrowserView(browserView: BrowserView): Unit
+    fun setTopBrowserView(browserView: BrowserView)
 
     /**
      * Sets the touchBar layout for the current window. Specifying `null` or
@@ -1860,7 +1860,7 @@ open external class BrowserWindow : BaseWindow {
      *
      * @platform darwin
      */
-    override fun setTouchBar(touchBar: TouchBar?): Unit
+    override fun setTouchBar(touchBar: TouchBar?)
 
     /**
      * Adds a vibrancy effect to the browser window. Passing `null` or an empty string
@@ -1868,7 +1868,7 @@ open external class BrowserWindow : BaseWindow {
      *
      * @platform darwin
      */
-    fun setVibrancy(type: BrowserWindowSetVibrancyType?): Unit
+    fun setVibrancy(type: BrowserWindowSetVibrancyType?)
 
     /**
      * Sets whether the window should be visible on all workspaces.
@@ -1877,7 +1877,7 @@ open external class BrowserWindow : BaseWindow {
      *
      * @platform darwin,linux
      */
-    override fun setVisibleOnAllWorkspaces(visible: Boolean, options: VisibleOnAllWorkspacesOptions): Unit
+    override fun setVisibleOnAllWorkspaces(visible: Boolean, options: VisibleOnAllWorkspacesOptions)
 
     /**
      * Set a custom position for the traffic light buttons in frameless window. Passing
@@ -1885,38 +1885,38 @@ open external class BrowserWindow : BaseWindow {
      *
      * @platform darwin
      */
-    override fun setWindowButtonPosition(position: Point?): Unit
+    override fun setWindowButtonPosition(position: Point?)
 
     /**
      * Sets whether the window traffic light buttons should be visible.
      *
      * @platform darwin
      */
-    override fun setWindowButtonVisibility(visible: Boolean): Unit
+    override fun setWindowButtonVisibility(visible: Boolean)
 
     /**
      * Shows and gives focus to the window.
      */
-    override fun show(): Unit
+    override fun show()
 
     /**
      * Shows or hides the tab overview when native tabs are enabled.
      *
      * @platform darwin
      */
-    override fun showAllTabs(): Unit
+    override fun showAllTabs()
 
     /**
      * Same as `webContents.showDefinitionForSelection()`.
      *
      * @platform darwin
      */
-    fun showDefinitionForSelection(): Unit
+    fun showDefinitionForSelection()
 
     /**
      * Shows the window but doesn't focus on it.
      */
-    override fun showInactive(): Unit
+    override fun showInactive()
 
     /**
      * Toggles the visibility of the tab bar if native tabs are enabled and there is
@@ -1924,26 +1924,26 @@ open external class BrowserWindow : BaseWindow {
      *
      * @platform darwin
      */
-    override fun toggleTabBar(): Unit
+    override fun toggleTabBar()
 
     /**
      * Unhooks all of the window messages.
      *
      * @platform win32
      */
-    override fun unhookAllWindowMessages(): Unit
+    override fun unhookAllWindowMessages()
 
     /**
      * Unhook the window message.
      *
      * @platform win32
      */
-    override fun unhookWindowMessage(message: Double): Unit
+    override fun unhookWindowMessage(message: Double)
 
     /**
      * Unmaximizes the window.
      */
-    override fun unmaximize(): Unit
+    override fun unmaximize()
 
     /**
      * A `string` property that defines an alternative title provided only to

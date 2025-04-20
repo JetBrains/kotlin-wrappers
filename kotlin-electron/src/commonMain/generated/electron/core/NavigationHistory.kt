@@ -24,7 +24,7 @@ external class NavigationHistory {
     /**
      * Clears the navigation history.
      */
-    fun clear(): Unit
+    fun clear()
 
     /**
      * The index of the current page, from which we would go back/forward or reload.
@@ -47,22 +47,22 @@ external class NavigationHistory {
     /**
      * Makes the browser go back a web page.
      */
-    fun goBack(): Unit
+    fun goBack()
 
     /**
      * Makes the browser go forward a web page.
      */
-    fun goForward(): Unit
+    fun goForward()
 
     /**
      * Navigates browser to the specified absolute web page index.
      */
-    fun goToIndex(index: Double): Unit
+    fun goToIndex(index: Double)
 
     /**
      * Navigates to the specified offset from the current entry.
      */
-    fun goToOffset(offset: Double): Unit
+    fun goToOffset(offset: Double)
 
     /**
      * History length.

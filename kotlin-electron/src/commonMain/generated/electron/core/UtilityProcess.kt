@@ -63,7 +63,7 @@ external class UtilityProcess : NodeEventEmitter {
      *
      * For example:
      */
-    fun postMessage(message: Any?, transfer: js.array.ReadonlyArray<MessagePortMain> = definedExternally): Unit
+    fun postMessage(message: Any?, transfer: js.array.ReadonlyArray<MessagePortMain> = definedExternally)
 
     /**
      * A `Integer | undefined` representing the process identifier (PID) of the child

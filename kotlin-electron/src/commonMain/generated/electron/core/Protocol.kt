@@ -17,7 +17,7 @@ external interface Protocol {
     fun handle(
         scheme: String,
         handler: (request: GlobalRequest) -> Any, /* (GlobalResponse) | (Promise<GlobalResponse>) */
-    ): Unit
+    )
 
     /**
      * Whether the protocol was successfully intercepted
@@ -194,7 +194,7 @@ external interface Protocol {
      * their responses by default. The `stream` flag configures those elements to
      * correctly expect streaming responses.
      */
-    fun registerSchemesAsPrivileged(customSchemes: js.array.ReadonlyArray<CustomScheme>): Unit
+    fun registerSchemesAsPrivileged(customSchemes: js.array.ReadonlyArray<CustomScheme>)
 
     /**
      * Whether the protocol was successfully registered
@@ -236,7 +236,7 @@ external interface Protocol {
     /**
      * Removes a protocol handler registered with `protocol.handle`.
      */
-    fun unhandle(scheme: String): Unit
+    fun unhandle(scheme: String)
 
     /**
      * Whether the protocol was successfully unintercepted

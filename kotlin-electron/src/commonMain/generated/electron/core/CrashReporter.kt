@@ -21,7 +21,7 @@ external interface CrashReporter {
      * Keys with names longer than the maximum will be silently ignored. Key values
      * longer than the maximum length will be truncated.
      */
-    fun addExtraParameter(key: String, value: String): Unit
+    fun addExtraParameter(key: String, value: String)
 
     /**
      * The date and ID of the last crash report. Only crash reports that have been
@@ -58,7 +58,7 @@ external interface CrashReporter {
      * Remove an extra parameter from the current set of parameters. Future crashes
      * will not include this parameter.
      */
-    fun removeExtraParameter(key: String): Unit
+    fun removeExtraParameter(key: String)
 
     /**
      * This would normally be controlled by user preferences. This has no effect if
@@ -66,7 +66,7 @@ external interface CrashReporter {
      *
      * **Note:** This method is only available in the main process.
      */
-    fun setUploadToServer(uploadToServer: Boolean): Unit
+    fun setUploadToServer(uploadToServer: Boolean)
 
     /**
      * This method must be called before using any other `crashReporter` APIs. Once
@@ -93,5 +93,5 @@ external interface CrashReporter {
      *
      * **Note:** This method is only available in the main process.
      */
-    fun start(options: CrashReporterStartOptions): Unit
+    fun start(options: CrashReporterStartOptions)
 }

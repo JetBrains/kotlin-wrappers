@@ -13,7 +13,7 @@ external class NativeImage {
      * programmatically add different scale factor representations to an image. This
      * can be called on empty images.
      */
-    fun addRepresentation(options: AddRepresentationOptions): Unit
+    fun addRepresentation(options: AddRepresentationOptions)
 
     /**
      * The cropped image.
@@ -82,7 +82,7 @@ external class NativeImage {
     /**
      * Marks the image as a macOS template image.
      */
-    fun setTemplateImage(option: Boolean): Unit
+    fun setTemplateImage(option: Boolean)
 
     /**
      * A Buffer that contains a copy of the image's raw bitmap pixel data.

@@ -23,7 +23,7 @@ open external class BrowserView {
      * @experimental
      * @deprecated
      */
-    fun setAutoResize(options: AutoResizeOptions): Unit
+    fun setAutoResize(options: AutoResizeOptions)
 
     /**
      * Examples of valid `color` values:
@@ -56,7 +56,7 @@ open external class BrowserView {
      * @experimental
      * @deprecated
      */
-    fun setBackgroundColor(color: String): Unit
+    fun setBackgroundColor(color: String)
 
     /**
      * Resizes and moves the view to the supplied bounds relative to the window.
@@ -64,7 +64,7 @@ open external class BrowserView {
      * @experimental
      * @deprecated
      */
-    fun setBounds(bounds: Rectangle): Unit
+    fun setBounds(bounds: Rectangle)
 
     /**
      * A `WebContents` object owned by this view.

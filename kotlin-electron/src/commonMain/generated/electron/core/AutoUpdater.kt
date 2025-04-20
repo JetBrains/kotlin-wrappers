@@ -50,7 +50,7 @@ external interface AutoUpdater : node.events.EventEmitter {
      * **Note:** If an update is available it will be downloaded automatically. Calling
      * `autoUpdater.checkForUpdates()` twice will download the update two times.
      */
-    fun checkForUpdates(): Unit
+    fun checkForUpdates()
 
     /**
      * The current update feed URL.
@@ -69,12 +69,12 @@ external interface AutoUpdater : node.events.EventEmitter {
      * as a successfully downloaded update will always be applied the next time the
      * application starts.
      */
-    fun quitAndInstall(): Unit
+    fun quitAndInstall()
 
     /**
      * Sets the `url` and initialize the auto updater.
      */
-    fun setFeedURL(options: FeedURLOptions): Unit
+    fun setFeedURL(options: FeedURLOptions)
 
     @web.events.JsEvent("before-quit-for-update")
     val beforeQuitForUpdateEvent: node.events.EventInstance<js.array.JsTuple>

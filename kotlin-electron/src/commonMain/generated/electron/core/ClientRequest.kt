@@ -66,13 +66,13 @@ external class ClientRequest : NodeEventEmitter {
      * event will emit `abort` and `close` events. Additionally, if there is an ongoing
      * response object,it will emit the `aborted` event.
      */
-    fun abort(): Unit
+    fun abort()
 
     /**
      * Sends the last chunk of the request data. Subsequent write or end operations
      * will not be allowed. The `finish` event is emitted just after the end operation.
      */
-    fun end(): Unit /* this */
+    fun end() /* this */
 
     /**
      * Sends the last chunk of the request data. Subsequent write or end operations
@@ -82,7 +82,7 @@ external class ClientRequest : NodeEventEmitter {
         chunk: String = definedExternally,
         encoding: String = definedExternally,
         callback: () -> Unit = definedExternally,
-    ): Unit /* this */
+    ) /* this */
 
     /**
      * Sends the last chunk of the request data. Subsequent write or end operations
@@ -92,13 +92,13 @@ external class ClientRequest : NodeEventEmitter {
         chunk: Buffer<*> = definedExternally,
         encoding: String = definedExternally,
         callback: () -> Unit = definedExternally,
-    ): Unit /* this */
+    ) /* this */
 
     /**
      * Continues any pending redirection. Can only be called during a `'redirect'`
      * event.
      */
-    fun followRedirect(): Unit
+    fun followRedirect()
 
     /**
      * The value of a previously set extra header name.
@@ -122,7 +122,7 @@ external class ClientRequest : NodeEventEmitter {
      * Removes a previously set extra header name. This method can be called only
      * before first write. Trying to call it after the first write will throw an error.
      */
-    fun removeHeader(name: String): Unit
+    fun removeHeader(name: String)
 
     /**
      * Adds an extra HTTP header. The header name will be issued as-is without
@@ -145,7 +145,7 @@ external class ClientRequest : NodeEventEmitter {
      * Additionally, setting the `Connection` header to the value `upgrade` is also
      * disallowed.
      */
-    fun setHeader(name: String, value: String): Unit
+    fun setHeader(name: String, value: String)
 
     /**
      * `callback` is essentially a dummy function introduced in the purpose of keeping
@@ -158,7 +158,7 @@ external class ClientRequest : NodeEventEmitter {
      * the request headers to be issued on the wire. After the first write operation,
      * it is not allowed to add or remove a custom header.
      */
-    fun write(chunk: String, encoding: String = definedExternally, callback: () -> Unit = definedExternally): Unit
+    fun write(chunk: String, encoding: String = definedExternally, callback: () -> Unit = definedExternally)
 
     /**
      * `callback` is essentially a dummy function introduced in the purpose of keeping
@@ -171,7 +171,7 @@ external class ClientRequest : NodeEventEmitter {
      * the request headers to be issued on the wire. After the first write operation,
      * it is not allowed to add or remove a custom header.
      */
-    fun write(chunk: Buffer<*>, encoding: String = definedExternally, callback: () -> Unit = definedExternally): Unit
+    fun write(chunk: Buffer<*>, encoding: String = definedExternally, callback: () -> Unit = definedExternally)
 
     /**
      * A `boolean` specifying whether the request will use HTTP chunked transfer

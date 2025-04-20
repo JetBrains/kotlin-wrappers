@@ -14,7 +14,7 @@ external interface IpcRenderer : node.events.EventEmitter {
     fun addListener(
         channel: String,
         listener: Function<Unit>, /* (event: IpcRendererEvent, ...args: any[]) => void */
-    ): Unit /* this */
+    ) /* this */
 
     /**
      * Resolves with the response from the main process.
@@ -55,7 +55,7 @@ external interface IpcRenderer : node.events.EventEmitter {
     fun off(
         channel: String,
         listener: Function<Unit>, /* (event: IpcRendererEvent, ...args: any[]) => void */
-    ): Unit /* this */
+    ) /* this */
 
     /**
      * Listens to `channel`, when a new message arrives `listener` would be called with
@@ -64,7 +64,7 @@ external interface IpcRenderer : node.events.EventEmitter {
     fun on(
         channel: String,
         listener: Function<Unit>, /* (event: IpcRendererEvent, ...args: any[]) => void */
-    ): Unit /* this */
+    ) /* this */
 
     /**
      * Adds a one time `listener` function for the event. This `listener` is invoked
@@ -73,7 +73,7 @@ external interface IpcRenderer : node.events.EventEmitter {
     fun once(
         channel: String,
         listener: Function<Unit>, /* (event: IpcRendererEvent, ...args: any[]) => void */
-    ): Unit /* this */
+    ) /* this */
 
     /**
      * Send a message to the main process, optionally transferring ownership of zero or
@@ -92,13 +92,13 @@ external interface IpcRenderer : node.events.EventEmitter {
         channel: String,
         message: Any?,
         transfer: js.array.ReadonlyArray<MessagePort> = definedExternally,
-    ): Unit
+    )
 
     /**
      * Removes all listeners from the specified `channel`. Removes all listeners from
      * all channels if no channel is specified.
      */
-    fun removeAllListeners(channel: String = definedExternally): Unit /* this */
+    fun removeAllListeners(channel: String = definedExternally) /* this */
 
     /**
      * Alias for `ipcRenderer.off`.
@@ -106,7 +106,7 @@ external interface IpcRenderer : node.events.EventEmitter {
     fun removeListener(
         channel: String,
         listener: Function<Unit>, /* (event: IpcRendererEvent, ...args: any[]) => void */
-    ): Unit /* this */
+    ) /* this */
 
     /**
      * Send an asynchronous message to the main process via `channel`, along with
@@ -132,7 +132,7 @@ external interface IpcRenderer : node.events.EventEmitter {
      * If you want to receive a single response from the main process, like the result
      * of a method call, consider using `ipcRenderer.invoke`.
      */
-    fun send(channel: String, vararg args: Any?): Unit
+    fun send(channel: String, vararg args: Any?)
 
     /**
      * The value sent back by the `ipcMain` handler.
@@ -164,5 +164,5 @@ external interface IpcRenderer : node.events.EventEmitter {
      * Like `ipcRenderer.send` but the event will be sent to the `<webview>` element in
      * the host page instead of the main process.
      */
-    fun sendToHost(channel: String, vararg args: Any?): Unit
+    fun sendToHost(channel: String, vararg args: Any?)
 }

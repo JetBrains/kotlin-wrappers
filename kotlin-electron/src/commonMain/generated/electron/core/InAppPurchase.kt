@@ -17,12 +17,12 @@ external interface InAppPurchase : node.events.EventEmitter {
     /**
      * Completes all pending transactions.
      */
-    fun finishAllTransactions(): Unit
+    fun finishAllTransactions()
 
     /**
      * Completes the pending transactions corresponding to the date.
      */
-    fun finishTransactionByDate(date: String): Unit
+    fun finishTransactionByDate(date: String)
 
     /**
      * Resolves with an array of `Product` objects.
@@ -69,7 +69,7 @@ external interface InAppPurchase : node.events.EventEmitter {
      * transaction that can be restored. Each transaction includes a copy of the
      * original transaction.
      */
-    fun restoreCompletedTransactions(): Unit
+    fun restoreCompletedTransactions()
 
     @web.events.JsEvent("transactions-updated")
     val transactionsUpdatedEvent: node.events.EventInstance<js.array.JsTuple>

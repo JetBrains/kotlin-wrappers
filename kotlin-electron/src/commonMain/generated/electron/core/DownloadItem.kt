@@ -33,7 +33,7 @@ external class DownloadItem : NodeEventEmitter {
     /**
      * Cancels the download operation.
      */
-    fun cancel(): Unit
+    fun cancel()
 
     /**
      * Whether the download can resume.
@@ -146,7 +146,7 @@ external class DownloadItem : NodeEventEmitter {
     /**
      * Pauses the download.
      */
-    fun pause(): Unit
+    fun pause()
 
     /**
      * Resumes the download that has been paused.
@@ -156,14 +156,14 @@ external class DownloadItem : NodeEventEmitter {
      * values. Otherwise `resume()` will dismiss previously received bytes and restart
      * the download from the beginning.
      */
-    fun resume(): Unit
+    fun resume()
 
     /**
      * This API allows the user to set custom options for the save dialog that opens
      * for the download item by default. The API is only available in session's
      * `will-download` callback function.
      */
-    fun setSaveDialogOptions(options: SaveDialogOptions): Unit
+    fun setSaveDialogOptions(options: SaveDialogOptions)
 
     /**
      * The API is only available in session's `will-download` callback function. If
@@ -171,7 +171,7 @@ external class DownloadItem : NodeEventEmitter {
      * user doesn't set the save path via the API, Electron will use the original
      * routine to determine the save path; this usually prompts a save dialog.
      */
-    fun setSavePath(path: String): Unit
+    fun setSavePath(path: String)
 
     /**
      * A `string` property that determines the save file path of the download item.

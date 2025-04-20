@@ -210,7 +210,7 @@ external interface WebviewTag : HTMLElement {
      *
      * See `webContents.adjustSelection` for examples.
      */
-    fun adjustSelection(options: AdjustSelectionOptions): Unit
+    fun adjustSelection(options: AdjustSelectionOptions)
 
     /**
      * Whether the guest page can go back.
@@ -238,37 +238,37 @@ external interface WebviewTag : HTMLElement {
     /**
      * Centers the current text selection in page.
      */
-    fun centerSelection(): Unit
+    fun centerSelection()
 
     /**
      * Clears the navigation history.
      */
-    fun clearHistory(): Unit
+    fun clearHistory()
 
     /**
      * Closes the DevTools window of guest page.
      */
-    fun closeDevTools(): Unit
+    fun closeDevTools()
 
     /**
      * Executes editing command `copy` in page.
      */
-    fun copy(): Unit
+    fun copy()
 
     /**
      * Executes editing command `cut` in page.
      */
-    fun cut(): Unit
+    fun cut()
 
     /**
      * Executes editing command `delete` in page.
      */
-    fun delete(): Unit
+    fun delete()
 
     /**
      * Initiates a download of the resource at `url` without navigating.
      */
-    fun downloadURL(url: String, options: DownloadURLOptions = definedExternally): Unit
+    fun downloadURL(url: String, options: DownloadURLOptions = definedExternally)
 
     /**
      * A promise that resolves with the result of the executed code or is rejected if
@@ -321,22 +321,22 @@ external interface WebviewTag : HTMLElement {
     /**
      * Makes the guest page go back.
      */
-    fun goBack(): Unit
+    fun goBack()
 
     /**
      * Makes the guest page go forward.
      */
-    fun goForward(): Unit
+    fun goForward()
 
     /**
      * Navigates to the specified absolute index.
      */
-    fun goToIndex(index: Double): Unit
+    fun goToIndex(index: Double)
 
     /**
      * Navigates to the specified offset from the "current entry".
      */
-    fun goToOffset(offset: Double): Unit
+    fun goToOffset(offset: Double)
 
     /**
      * A promise that resolves with a key for the inserted CSS that can later be used
@@ -355,17 +355,17 @@ external interface WebviewTag : HTMLElement {
     /**
      * Starts inspecting element at position (`x`, `y`) of guest page.
      */
-    fun inspectElement(x: Double, y: Double): Unit
+    fun inspectElement(x: Double, y: Double)
 
     /**
      * Opens the DevTools for the service worker context present in the guest page.
      */
-    fun inspectServiceWorker(): Unit
+    fun inspectServiceWorker()
 
     /**
      * Opens the DevTools for the shared worker context present in the guest page.
      */
-    fun inspectSharedWorker(): Unit
+    fun inspectSharedWorker()
 
     /**
      * Whether guest page has been muted.
@@ -421,17 +421,17 @@ external interface WebviewTag : HTMLElement {
     /**
      * Opens a DevTools window for guest page.
      */
-    fun openDevTools(): Unit
+    fun openDevTools()
 
     /**
      * Executes editing command `paste` in page.
      */
-    fun paste(): Unit
+    fun paste()
 
     /**
      * Executes editing command `pasteAndMatchStyle` in page.
      */
-    fun pasteAndMatchStyle(): Unit
+    fun pasteAndMatchStyle()
 
     /**
      * Prints `webview`'s web page. Same as `webContents.print([options])`.
@@ -448,17 +448,17 @@ external interface WebviewTag : HTMLElement {
     /**
      * Executes editing command `redo` in page.
      */
-    fun redo(): Unit
+    fun redo()
 
     /**
      * Reloads the guest page.
      */
-    fun reload(): Unit
+    fun reload()
 
     /**
      * Reloads the guest page and ignores cache.
      */
-    fun reloadIgnoringCache(): Unit
+    fun reloadIgnoringCache()
 
     /**
      * Resolves if the removal was successful.
@@ -471,27 +471,27 @@ external interface WebviewTag : HTMLElement {
     /**
      * Executes editing command `replace` in page.
      */
-    fun replace(text: String): Unit
+    fun replace(text: String)
 
     /**
      * Executes editing command `replaceMisspelling` in page.
      */
-    fun replaceMisspelling(text: String): Unit
+    fun replaceMisspelling(text: String)
 
     /**
      * Scrolls to the bottom of the current `<webview>`.
      */
-    fun scrollToBottom(): Unit
+    fun scrollToBottom()
 
     /**
      * Scrolls to the top of the current `<webview>`.
      */
-    fun scrollToTop(): Unit
+    fun scrollToTop()
 
     /**
      * Executes editing command `selectAll` in page.
      */
-    fun selectAll(): Unit
+    fun selectAll()
 
     /**
      * Send an asynchronous message to renderer process via `channel`, you can also
@@ -539,12 +539,12 @@ external interface WebviewTag : HTMLElement {
     /**
      * Set guest page muted.
      */
-    fun setAudioMuted(muted: Boolean): Unit
+    fun setAudioMuted(muted: Boolean)
 
     /**
      * Overrides the user agent for the guest page.
      */
-    fun setUserAgent(userAgent: String): Unit
+    fun setUserAgent(userAgent: String)
 
     /**
      * Sets the maximum and minimum pinch-to-zoom level.
@@ -555,7 +555,7 @@ external interface WebviewTag : HTMLElement {
      * Changes the zoom factor to the specified factor. Zoom factor is zoom percent
      * divided by 100, so 300% = 3.0.
      */
-    fun setZoomFactor(factor: Double): Unit
+    fun setZoomFactor(factor: Double)
 
     /**
      * Changes the zoom level to the specified level. The original size is 0 and each
@@ -568,34 +568,34 @@ external interface WebviewTag : HTMLElement {
      * with the same domain. Differentiating the window URLs will make zoom work
      * per-window.
      */
-    fun setZoomLevel(level: Double): Unit
+    fun setZoomLevel(level: Double)
 
     /**
      * Shows pop-up dictionary that searches the selected word on the page.
      *
      * @platform darwin
      */
-    fun showDefinitionForSelection(): Unit
+    fun showDefinitionForSelection()
 
     /**
      * Stops any pending navigation.
      */
-    fun stop(): Unit
+    fun stop()
 
     /**
      * Stops any `findInPage` request for the `webview` with the provided `action`.
      */
-    fun stopFindInPage(action: WebviewTagStopFindInPageAction): Unit
+    fun stopFindInPage(action: WebviewTagStopFindInPageAction)
 
     /**
      * Executes editing command `undo` in page.
      */
-    fun undo(): Unit
+    fun undo()
 
     /**
      * Executes editing command `unselect` in page.
      */
-    fun unselect(): Unit
+    fun unselect()
 
     /**
      * A `boolean`. When this attribute is present the guest page will be allowed to

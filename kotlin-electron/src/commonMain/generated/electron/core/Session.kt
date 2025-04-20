@@ -166,7 +166,7 @@ external class Session : NodeEventEmitter {
      * Dynamically sets whether to always send credentials for HTTP NTLM or Negotiate
      * authentication.
      */
-    fun allowNTLMCredentialsForDomains(domains: String): Unit
+    fun allowNTLMCredentialsForDomains(domains: String)
 
     /**
      * resolves when the session’s HTTP authentication cache has been cleared.
@@ -231,13 +231,13 @@ external class Session : NodeEventEmitter {
      * the initial state will be `interrupted`. The download will start only when the
      * `resume` API is called on the DownloadItem.
      */
-    fun createInterruptedDownload(options: CreateInterruptedDownloadOptions): Unit
+    fun createInterruptedDownload(options: CreateInterruptedDownloadOptions)
 
     /**
      * Disables any network emulation already active for the `session`. Resets to the
      * original network configuration.
      */
-    fun disableNetworkEmulation(): Unit
+    fun disableNetworkEmulation()
 
     /**
      * Initiates a download of the resource at `url`. The API will generate a
@@ -246,12 +246,12 @@ external class Session : NodeEventEmitter {
      * **Note:** This does not perform any security checks that relate to a page's
      * origin, unlike `webContents.downloadURL`.
      */
-    fun downloadURL(url: String, options: DownloadURLOptions = definedExternally): Unit
+    fun downloadURL(url: String, options: DownloadURLOptions = definedExternally)
 
     /**
      * Emulates network with the given configuration for the `session`.
      */
-    fun enableNetworkEmulation(options: EnableNetworkEmulationOptions): Unit
+    fun enableNetworkEmulation(options: EnableNetworkEmulationOptions)
 
     /**
      * see Response.
@@ -314,7 +314,7 @@ external class Session : NodeEventEmitter {
     /**
      * Writes any unwritten DOMStorage data to disk.
      */
-    fun flushStorageData(): Unit
+    fun flushStorageData()
 
     /**
      * Resolves when the all internal states of proxy service is reset and the latest
@@ -424,7 +424,7 @@ external class Session : NodeEventEmitter {
     /**
      * Preconnects the given number of sockets to an origin.
      */
-    fun preconnect(options: PreconnectOptions): Unit
+    fun preconnect(options: PreconnectOptions)
 
     /**
      * Unloads an extension.
@@ -432,7 +432,7 @@ external class Session : NodeEventEmitter {
      * **Note:** This API cannot be called before the `ready` event of the `app` module
      * is emitted.
      */
-    fun removeExtension(extensionId: String): Unit
+    fun removeExtension(extensionId: String)
 
     /**
      * Whether the word was successfully removed from the custom dictionary. This API
@@ -463,7 +463,7 @@ external class Session : NodeEventEmitter {
      *
      * @platform win32,linux
      */
-    fun setBluetoothPairingHandler(handler: ((details: BluetoothPairingHandlerHandlerDetails, callback: (response: Response) -> Unit) -> Unit)?): Unit
+    fun setBluetoothPairingHandler(handler: ((details: BluetoothPairingHandlerHandlerDetails, callback: (response: Response) -> Unit) -> Unit)?)
 
     /**
      * Sets the certificate verify proc for `session`, the `proc` will be called with
@@ -476,7 +476,7 @@ external class Session : NodeEventEmitter {
      *
      * > **NOTE:** The result of this procedure is cached by the network service.
      */
-    fun setCertificateVerifyProc(proc: ((request: Request, callback: (verificationResult: Double) -> Unit) -> Unit)?): Unit
+    fun setCertificateVerifyProc(proc: ((request: Request, callback: (verificationResult: Double) -> Unit) -> Unit)?)
 
     /**
      * Sets the directory to store the generated JS code cache for this session. The
@@ -491,7 +491,7 @@ external class Session : NodeEventEmitter {
      * cache for custom protocols, `codeCache: true` and `standard: true` must be
      * specified when registering the protocol.
      */
-    fun setCodeCachePath(path: String): Unit
+    fun setCodeCachePath(path: String)
 
     /**
      * Sets the handler which can be used to respond to device permission checks for
@@ -507,7 +507,7 @@ external class Session : NodeEventEmitter {
      * handling the `select-hid-device` event) and then read from that storage with
      * `setDevicePermissionHandler`.
      */
-    fun setDevicePermissionHandler(handler: ((details: DevicePermissionHandlerHandlerDetails) -> Boolean)?): Unit
+    fun setDevicePermissionHandler(handler: ((details: DevicePermissionHandlerHandlerDetails) -> Boolean)?)
 
     /**
      * This handler will be called when web content requests access to display media
@@ -528,13 +528,13 @@ external class Session : NodeEventEmitter {
     fun setDisplayMediaRequestHandler(
         handler: ((request: DisplayMediaRequestHandlerHandlerRequest, callback: (streams: Streams) -> Unit) -> Unit)?,
         opts: DisplayMediaRequestHandlerOpts = definedExternally,
-    ): Unit
+    )
 
     /**
      * Sets download saving directory. By default, the download directory will be the
      * `Downloads` under the respective app folder.
      */
-    fun setDownloadPath(path: String): Unit
+    fun setDownloadPath(path: String)
 
     /**
      * Sets the handler which can be used to respond to permission checks for the
@@ -544,7 +544,7 @@ external class Session : NodeEventEmitter {
      * make a permission request if the check is denied. To clear the handler, call
      * `setPermissionCheckHandler(null)`.
      */
-    fun setPermissionCheckHandler(handler: ((webContents: WebContents?, permission: SessionSetPermissionCheckHandlerHandlerPermission, requestingOrigin: String, details: PermissionCheckHandlerHandlerDetails) -> Boolean)?): Unit
+    fun setPermissionCheckHandler(handler: ((webContents: WebContents?, permission: SessionSetPermissionCheckHandlerHandlerPermission, requestingOrigin: String, details: PermissionCheckHandlerHandlerDetails) -> Boolean)?)
 
     /**
      * Sets the handler which can be used to respond to permission requests for the
@@ -554,13 +554,13 @@ external class Session : NodeEventEmitter {
      * `setPermissionCheckHandler` to get complete permission handling. Most web APIs
      * do a permission check and then make a permission request if the check is denied.
      */
-    fun setPermissionRequestHandler(handler: ((webContents: WebContents, permission: SessionSetPermissionRequestHandlerHandlerPermission, callback: (permissionGranted: Boolean) -> Unit, details: Any /* (PermissionRequest) | (FilesystemPermissionRequest) | (MediaAccessPermissionRequest) | (OpenExternalPermissionRequest) */) -> Unit)?): Unit
+    fun setPermissionRequestHandler(handler: ((webContents: WebContents, permission: SessionSetPermissionRequestHandlerHandlerPermission, callback: (permissionGranted: Boolean) -> Unit, details: Any /* (PermissionRequest) | (FilesystemPermissionRequest) | (MediaAccessPermissionRequest) | (OpenExternalPermissionRequest) */) -> Unit)?)
 
     /**
      * Adds scripts that will be executed on ALL web contents that are associated with
      * this session just before normal `preload` scripts run.
      */
-    fun setPreloads(preloads: js.array.ReadonlyArray<String>): Unit
+    fun setPreloads(preloads: js.array.ReadonlyArray<String>)
 
     /**
      * Resolves when the proxy setting process is complete.
@@ -594,12 +594,12 @@ external class Session : NodeEventEmitter {
      * **Note:** On macOS the OS spellchecker is used and therefore we do not download
      * any dictionary files.  This API is a no-op on macOS.
      */
-    fun setSpellCheckerDictionaryDownloadURL(url: String): Unit
+    fun setSpellCheckerDictionaryDownloadURL(url: String)
 
     /**
      * Sets whether to enable the builtin spell checker.
      */
-    fun setSpellCheckerEnabled(enable: Boolean): Unit
+    fun setSpellCheckerEnabled(enable: Boolean)
 
     /**
      * The built in spellchecker does not automatically detect what language a user is
@@ -610,7 +610,7 @@ external class Session : NodeEventEmitter {
      * **Note:** On macOS the OS spellchecker is used and will detect your language
      * automatically.  This API is a no-op on macOS.
      */
-    fun setSpellCheckerLanguages(languages: js.array.ReadonlyArray<String>): Unit
+    fun setSpellCheckerLanguages(languages: js.array.ReadonlyArray<String>)
 
     /**
      * Sets the SSL configuration for the session. All subsequent network requests will
@@ -618,7 +618,7 @@ external class Session : NodeEventEmitter {
      * connections) will not be terminated, but old sockets in the pool will not be
      * reused for new connections.
      */
-    fun setSSLConfig(config: Config): Unit
+    fun setSSLConfig(config: Config)
 
     /**
      * Sets the handler which can be used to override which USB classes are protected.
@@ -639,7 +639,7 @@ external class Session : NodeEventEmitter {
      * classes (this is also the default behavior if a handler is not defined). To
      * clear the handler, call `setUSBProtectedClassesHandler(null)`.
      */
-    fun setUSBProtectedClassesHandler(handler: ((details: USBProtectedClassesHandlerHandlerDetails) -> js.array.ReadonlyArray<String>)?): Unit
+    fun setUSBProtectedClassesHandler(handler: ((details: USBProtectedClassesHandlerHandlerDetails) -> js.array.ReadonlyArray<String>)?)
 
     /**
      * Overrides the `userAgent` and `acceptLanguages` for this session.
@@ -650,7 +650,7 @@ external class Session : NodeEventEmitter {
      * This doesn't affect existing `WebContents`, and each `WebContents` can use
      * `webContents.setUserAgent` to override the session-wide user agent.
      */
-    fun setUserAgent(userAgent: String, acceptLanguages: String = definedExternally): Unit
+    fun setUserAgent(userAgent: String, acceptLanguages: String = definedExternally)
 
     /**
      * A `string[]` array which consists of all the known available spell checker

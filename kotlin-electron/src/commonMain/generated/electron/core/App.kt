@@ -493,14 +493,14 @@ external interface App : node.events.EventEmitter {
      *
      * @platform darwin,win32
      */
-    fun addRecentDocument(path: String): Unit
+    fun addRecentDocument(path: String)
 
     /**
      * Clears the recent documents list.
      *
      * @platform darwin,win32
      */
-    fun clearRecentDocuments(): Unit
+    fun clearRecentDocuments()
 
     /**
      * Configures host resolution (DNS and DNS-over-HTTPS). By default, the following
@@ -521,7 +521,7 @@ external interface App : node.events.EventEmitter {
      *
      * This API must be called after the `ready` event is emitted.
      */
-    fun configureHostResolver(options: ConfigureHostResolverOptions): Unit
+    fun configureHostResolver(options: ConfigureHostResolverOptions)
 
     /**
      * By default, Chromium disables 3D APIs (e.g. WebGL) until restart on a per domain
@@ -530,14 +530,14 @@ external interface App : node.events.EventEmitter {
      *
      * This method can only be called before app is ready.
      */
-    fun disableDomainBlockingFor3DAPIs(): Unit
+    fun disableDomainBlockingFor3DAPIs()
 
     /**
      * Disables hardware acceleration for current app.
      *
      * This method can only be called before app is ready.
      */
-    fun disableHardwareAcceleration(): Unit
+    fun disableHardwareAcceleration()
 
     /**
      * Enables full sandbox mode on the app. This means that all renderers will be
@@ -546,7 +546,7 @@ external interface App : node.events.EventEmitter {
      *
      * This method can only be called before app is ready.
      */
-    fun enableSandbox(): Unit
+    fun enableSandbox()
 
     /**
      * Exits immediately with `exitCode`. `exitCode` defaults to 0.
@@ -554,7 +554,7 @@ external interface App : node.events.EventEmitter {
      * All windows will be closed immediately without asking the user, and the
      * `before-quit` and `will-quit` events will not be emitted.
      */
-    fun exit(exitCode: Double = definedExternally): Unit
+    fun exit(exitCode: Double = definedExternally)
 
     /**
      * On Linux, focuses on the first visible window. On macOS, makes the application
@@ -562,7 +562,7 @@ external interface App : node.events.EventEmitter {
      *
      * You should seek to use the `steal` option as sparingly as possible.
      */
-    fun focus(options: FocusOptions = definedExternally): Unit
+    fun focus(options: FocusOptions = definedExternally)
 
     /**
      * Resolve with an object containing the following:
@@ -831,7 +831,7 @@ external interface App : node.events.EventEmitter {
      *
      * @platform darwin
      */
-    fun hide(): Unit
+    fun hide()
 
     /**
      * Imports the certificate in pkcs12 format into the platform certificate store.
@@ -841,14 +841,14 @@ external interface App : node.events.EventEmitter {
      *
      * @platform linux
      */
-    fun importCertificate(options: ImportCertificateOptions, callback: (result: Double) -> Unit): Unit
+    fun importCertificate(options: ImportCertificateOptions, callback: (result: Double) -> Unit)
 
     /**
      * Invalidates the current Handoff user activity.
      *
      * @platform darwin
      */
-    fun invalidateCurrentActivity(): Unit
+    fun invalidateCurrentActivity()
 
     /**
      * `true` if Chrome's accessibility support is enabled, `false` otherwise. This API
@@ -965,7 +965,7 @@ external interface App : node.events.EventEmitter {
      * correctly executed. It is possible that a window cancels the quitting by
      * returning `false` in the `beforeunload` event handler.
      */
-    fun quit(): Unit
+    fun quit()
 
     /**
      * Relaunches the app when current instance exits.
@@ -984,13 +984,13 @@ external interface App : node.events.EventEmitter {
      * An example of restarting current instance immediately and adding a new command
      * line argument to the new instance:
      */
-    fun relaunch(options: RelaunchOptions = definedExternally): Unit
+    fun relaunch(options: RelaunchOptions = definedExternally)
 
     /**
      * Releases all locks that were created by `requestSingleInstanceLock`. This will
      * allow multiple instances of the application to once again run side by side.
      */
-    fun releaseSingleInstanceLock(): Unit
+    fun releaseSingleInstanceLock()
 
     /**
      * Whether the call succeeded.
@@ -1033,7 +1033,7 @@ external interface App : node.events.EventEmitter {
      *
      * @platform darwin
      */
-    fun resignCurrentActivity(): Unit
+    fun resignCurrentActivity()
 
     /**
      * Resolves with the proxy information for `url` that will be used when attempting
@@ -1052,7 +1052,7 @@ external interface App : node.events.EventEmitter {
      * file found is used, and if none is found, the info area is left blank. See Apple
      * documentation for more information.
      */
-    fun setAboutPanelOptions(options: AboutPanelOptionsOptions): Unit
+    fun setAboutPanelOptions(options: AboutPanelOptionsOptions)
 
     /**
      * Manually enables Chrome's accessibility support, allowing to expose
@@ -1066,7 +1066,7 @@ external interface App : node.events.EventEmitter {
      *
      * @platform darwin,win32
      */
-    fun setAccessibilitySupportEnabled(enabled: Boolean): Unit
+    fun setAccessibilitySupportEnabled(enabled: Boolean)
 
     /**
      * Sets the activation policy for a given app.
@@ -1083,7 +1083,7 @@ external interface App : node.events.EventEmitter {
      *
      * @platform darwin
      */
-    fun setActivationPolicy(policy: AppSetActivationPolicyPolicy): Unit
+    fun setActivationPolicy(policy: AppSetActivationPolicyPolicy)
 
     /**
      * Sets or creates a directory your app's logs which can then be manipulated with
@@ -1093,14 +1093,14 @@ external interface App : node.events.EventEmitter {
      * directory being set to `~/Library/Logs/YourAppName` on _macOS_, and inside the
      * `userData` directory on _Linux_ and _Windows_.
      */
-    fun setAppLogsPath(path: String = definedExternally): Unit
+    fun setAppLogsPath(path: String = definedExternally)
 
     /**
      * Changes the Application User Model ID to `id`.
      *
      * @platform win32
      */
-    fun setAppUserModelId(id: String): Unit
+    fun setAppUserModelId(id: String)
 
     /**
      * Whether the call succeeded.
@@ -1154,7 +1154,7 @@ external interface App : node.events.EventEmitter {
      * The handler is called when a password is needed to unlock a client certificate
      * for `hostname`.
      */
-    fun setClientCertRequestPasswordHandler(handler: (clientCertRequestParams: ClientCertRequestParams) -> Promise<String>): Unit
+    fun setClientCertRequestPasswordHandler(handler: (clientCertRequestParams: ClientCertRequestParams) -> Promise<String>)
 
     /**
      * Sets or removes a custom Jump List for the application, and returns one of the
@@ -1208,7 +1208,7 @@ external interface App : node.events.EventEmitter {
      *
      * @platform darwin,win32
      */
-    fun setLoginItemSettings(settings: Settings): Unit
+    fun setLoginItemSettings(settings: Settings)
 
     /**
      * Overrides the current application's name.
@@ -1216,7 +1216,7 @@ external interface App : node.events.EventEmitter {
      * **Note:** This function overrides the name used internally by Electron; it does
      * not affect the name that the OS uses.
      */
-    fun setName(name: String): Unit
+    fun setName(name: String)
 
     /**
      * Overrides the `path` to a special directory or file associated with `name`. If
@@ -1229,8 +1229,8 @@ external interface App : node.events.EventEmitter {
      * directory. If you want to change this location, you have to override the
      * `sessionData` path before the `ready` event of the `app` module is emitted.
      */
-    fun setPath(name: String, path: String): Unit
-    fun setProxy(config: ProxyConfig): Unit
+    fun setPath(name: String, path: String)
+    fun setProxy(config: ProxyConfig)
 
     /**
      * Set the `Secure Keyboard Entry` is enabled in your application.
@@ -1245,7 +1245,7 @@ external interface App : node.events.EventEmitter {
      *
      * @platform darwin
      */
-    fun setSecureKeyboardEntryEnabled(enabled: Boolean): Unit
+    fun setSecureKeyboardEntryEnabled(enabled: Boolean)
 
     /**
      * Creates an `NSUserActivity` and sets it as the current activity. The activity is
@@ -1253,7 +1253,7 @@ external interface App : node.events.EventEmitter {
      *
      * @platform darwin
      */
-    fun setUserActivity(type: String, userInfo: Any?, webpageURL: String = definedExternally): Unit
+    fun setUserActivity(type: String, userInfo: Any?, webpageURL: String = definedExternally)
 
     /**
      * Adds `tasks` to the Tasks category of the Jump List on Windows.
@@ -1275,20 +1275,20 @@ external interface App : node.events.EventEmitter {
      *
      * @platform darwin
      */
-    fun show(): Unit
+    fun show()
 
     /**
      * Show the app's about panel options. These options can be overridden with
      * `app.setAboutPanelOptions(options)`. This function runs asynchronously.
      */
-    fun showAboutPanel(): Unit
+    fun showAboutPanel()
 
     /**
      * Show the platform's native emoji picker.
      *
      * @platform darwin,win32
      */
-    fun showEmojiPanel(): Unit
+    fun showEmojiPanel()
 
     /**
      * This function **must** be called once you have finished accessing the security
@@ -1311,7 +1311,7 @@ external interface App : node.events.EventEmitter {
      *
      * @platform darwin
      */
-    fun updateCurrentActivity(type: String, userInfo: Any?): Unit
+    fun updateCurrentActivity(type: String, userInfo: Any?)
 
     /**
      * fulfilled when Electron is initialized. May be used as a convenient alternative

@@ -9,7 +9,7 @@ external interface Shell {
     /**
      * Play the beep sound.
      */
-    fun beep(): Unit
+    fun beep()
 
     /**
      * Open the given external protocol URL in the desktop's default manner. (For
@@ -37,7 +37,7 @@ external interface Shell {
     /**
      * Show the given file in a file manager. If possible, select the file.
      */
-    fun showItemInFolder(fullPath: String): Unit
+    fun showItemInFolder(fullPath: String)
 
     /**
      * Resolves when the operation has been completed. Rejects if there was an error

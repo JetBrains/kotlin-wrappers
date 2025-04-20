@@ -11,7 +11,7 @@ external interface IpcMain : node.events.EventEmitter {
     fun addListener(
         channel: String,
         listener: Function<Unit>, /* (event: IpcMainEvent, ...args: any[]) => void */
-    ): Unit /* this */
+    ) /* this */
 
     /**
      * Adds a handler for an `invoke`able IPC. This handler will be called whenever a
@@ -32,7 +32,7 @@ external interface IpcMain : node.events.EventEmitter {
     fun handle(
         channel: String,
         listener: Function<Any? /* (Promise<any>) | (any) */>, /* (event: IpcMainInvokeEvent, ...args: any[]) => (Promise<any>) | (any) */
-    ): Unit
+    )
 
     /**
      * Handles a single `invoke`able IPC message, then removes the listener. See
@@ -41,7 +41,7 @@ external interface IpcMain : node.events.EventEmitter {
     fun handleOnce(
         channel: String,
         listener: Function<Any? /* (Promise<any>) | (any) */>, /* (event: IpcMainInvokeEvent, ...args: any[]) => (Promise<any>) | (any) */
-    ): Unit
+    )
 
     /**
      * Removes the specified `listener` from the listener array for the specified
@@ -50,7 +50,7 @@ external interface IpcMain : node.events.EventEmitter {
     fun off(
         channel: String,
         listener: Function<Unit>, /* (event: IpcMainEvent, ...args: any[]) => void */
-    ): Unit /* this */
+    ) /* this */
 
     /**
      * Listens to `channel`, when a new message arrives `listener` would be called with
@@ -59,7 +59,7 @@ external interface IpcMain : node.events.EventEmitter {
     fun on(
         channel: String,
         listener: Function<Unit>, /* (event: IpcMainEvent, ...args: any[]) => void */
-    ): Unit /* this */
+    ) /* this */
 
     /**
      * Adds a one time `listener` function for the event. This `listener` is invoked
@@ -68,21 +68,21 @@ external interface IpcMain : node.events.EventEmitter {
     fun once(
         channel: String,
         listener: Function<Unit>, /* (event: IpcMainEvent, ...args: any[]) => void */
-    ): Unit /* this */
+    ) /* this */
 
     /**
      * Removes all listeners from the specified `channel`. Removes all listeners from
      * all channels if no channel is specified.
      */
-    fun removeAllListeners(channel: String = definedExternally): Unit /* this */
+    fun removeAllListeners(channel: String = definedExternally) /* this */
 
     /**
      * Removes any handler for `channel`, if present.
      */
-    fun removeHandler(channel: String): Unit
+    fun removeHandler(channel: String)
 
     /**
      * Alias for `ipcMain.off`.
      */
-    fun removeListener(channel: String, listener: Function<Unit> /* (...args: any[]) => void */): Unit /* this */
+    fun removeListener(channel: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 }

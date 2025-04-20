@@ -16,7 +16,7 @@ external class CommandLine {
      * **Note:** This will not affect `process.argv`. The intended usage of this
      * function is to control Chromium's behavior.
      */
-    fun appendArgument(value: String): Unit
+    fun appendArgument(value: String)
 
     /**
      * Append a switch (with optional `value`) to Chromium's command line.
@@ -24,7 +24,7 @@ external class CommandLine {
      * **Note:** This will not affect `process.argv`. The intended usage of this
      * function is to control Chromium's behavior.
      */
-    fun appendSwitch(the_switch: String, value: String = definedExternally): Unit
+    fun appendSwitch(the_switch: String, value: String = definedExternally)
 
     /**
      * The command-line switch value.
@@ -45,5 +45,5 @@ external class CommandLine {
      * **Note:** This will not affect `process.argv`. The intended usage of this
      * function is to control Chromium's behavior.
      */
-    fun removeSwitch(the_switch: String): Unit
+    fun removeSwitch(the_switch: String)
 }

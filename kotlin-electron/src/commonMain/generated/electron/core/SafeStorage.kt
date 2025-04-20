@@ -58,5 +58,5 @@ external interface SafeStorage {
      * OS password manager cannot be determined for the current active desktop
      * environment. This function is a no-op on Windows and MacOS.
      */
-    fun setUsePlainTextEncryption(usePlainText: Boolean): Unit
+    fun setUsePlainTextEncryption(usePlainText: Boolean)
 }

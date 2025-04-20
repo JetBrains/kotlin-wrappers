@@ -24,12 +24,12 @@ open external class Menu : NodeEventEmitter {
     /**
      * Appends the `menuItem` to the menu.
      */
-    fun append(menuItem: MenuItem): Unit
+    fun append(menuItem: MenuItem)
 
     /**
      * Closes the context menu in the `browserWindow`.
      */
-    fun closePopup(browserWindow: BrowserWindow = definedExternally): Unit
+    fun closePopup(browserWindow: BrowserWindow = definedExternally)
 
     /**
      * the item with the specified `id`
@@ -39,12 +39,12 @@ open external class Menu : NodeEventEmitter {
     /**
      * Inserts the `menuItem` to the `pos` position of the menu.
      */
-    fun insert(pos: Double, menuItem: MenuItem): Unit
+    fun insert(pos: Double, menuItem: MenuItem)
 
     /**
      * Pops up this menu as a context menu in the `BrowserWindow`.
      */
-    fun popup(options: PopupOptions = definedExternally): Unit
+    fun popup(options: PopupOptions = definedExternally)
 
     /**
      * A `MenuItem[]` array containing the menu's items.
@@ -88,7 +88,7 @@ open external class Menu : NodeEventEmitter {
          *
          * @platform darwin
          */
-        fun sendActionToFirstResponder(action: String): Unit
+        fun sendActionToFirstResponder(action: String)
 
         /**
          * Sets `menu` as the application menu on macOS. On Windows and Linux, the `menu`
@@ -110,6 +110,6 @@ open external class Menu : NodeEventEmitter {
          * one. It contains standard items such as `File`, `Edit`, `View`, `Window` and
          * `Help`.
          */
-        fun setApplicationMenu(menu: Menu?): Unit
+        fun setApplicationMenu(menu: Menu?)
     }
 }

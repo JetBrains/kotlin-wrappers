@@ -44,7 +44,7 @@ external class WebFrameMain : NodeEventEmitter {
         channel: String,
         message: Any?,
         transfer: js.array.ReadonlyArray<MessagePortMain> = definedExternally,
-    ): Unit
+    )
 
     /**
      * Whether the reload was initiated successfully. Only results in `false` when the
@@ -61,7 +61,7 @@ external class WebFrameMain : NodeEventEmitter {
      * The renderer process can handle the message by listening to `channel` with the
      * `ipcRenderer` module.
      */
-    fun send(channel: String, vararg args: Any?): Unit
+    fun send(channel: String, vararg args: Any?)
 
     /**
      * A `Boolean` representing whether the frame is detached from the frame tree. If a

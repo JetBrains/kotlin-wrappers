@@ -119,7 +119,7 @@ open external class Notification : NodeEventEmitter {
      * screen, calling `notification.close()` will try remove it from the Action
      * Center.
      */
-    fun close(): Unit
+    fun close()
 
     /**
      * Immediately shows the notification to the user. Unlike the web notification API,
@@ -129,7 +129,7 @@ open external class Notification : NodeEventEmitter {
      * If the notification has been shown before, this method will dismiss the
      * previously shown notification and create a new one with identical properties.
      */
-    fun show(): Unit
+    fun show()
 
     /**
      * A `NotificationAction[]` property representing the actions of the notification.

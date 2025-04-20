@@ -412,19 +412,19 @@ open external class Tray : NodeEventEmitter {
      *
      * @platform darwin,win32
      */
-    fun closeContextMenu(): Unit
+    fun closeContextMenu()
 
     /**
      * Destroys the tray icon immediately.
      */
-    fun destroy(): Unit
+    fun destroy()
 
     /**
      * Displays a tray balloon.
      *
      * @platform win32
      */
-    fun displayBalloon(options: DisplayBalloonOptions): Unit
+    fun displayBalloon(options: DisplayBalloonOptions)
 
     /**
      * Returns focus to the taskbar notification area. Notification area icons should
@@ -434,7 +434,7 @@ open external class Tray : NodeEventEmitter {
      *
      * @platform win32
      */
-    fun focus(): Unit
+    fun focus()
 
     /**
      * The `bounds` of this tray icon as `Object`.
@@ -470,19 +470,19 @@ open external class Tray : NodeEventEmitter {
      *
      * @platform darwin,win32
      */
-    fun popUpContextMenu(menu: Menu = definedExternally, position: Point = definedExternally): Unit
+    fun popUpContextMenu(menu: Menu = definedExternally, position: Point = definedExternally)
 
     /**
      * Removes a tray balloon.
      *
      * @platform win32
      */
-    fun removeBalloon(): Unit
+    fun removeBalloon()
 
     /**
      * Sets the context menu for this icon.
      */
-    fun setContextMenu(menu: Menu?): Unit
+    fun setContextMenu(menu: Menu?)
 
     /**
      * Sets the option to ignore double click events. Ignoring these events allows you
@@ -492,31 +492,31 @@ open external class Tray : NodeEventEmitter {
      *
      * @platform darwin
      */
-    fun setIgnoreDoubleClickEvents(ignore: Boolean): Unit
+    fun setIgnoreDoubleClickEvents(ignore: Boolean)
 
     /**
      * Sets the `image` associated with this tray icon.
      */
-    fun setImage(image: NativeImage): Unit
+    fun setImage(image: NativeImage)
 
     /**
      * Sets the `image` associated with this tray icon.
      */
-    fun setImage(image: String): Unit
+    fun setImage(image: String)
 
     /**
      * Sets the `image` associated with this tray icon when pressed on macOS.
      *
      * @platform darwin
      */
-    fun setPressedImage(image: NativeImage): Unit
+    fun setPressedImage(image: NativeImage)
 
     /**
      * Sets the `image` associated with this tray icon when pressed on macOS.
      *
      * @platform darwin
      */
-    fun setPressedImage(image: String): Unit
+    fun setPressedImage(image: String)
 
     /**
      * Sets the title displayed next to the tray icon in the status bar (Support ANSI
@@ -524,12 +524,12 @@ open external class Tray : NodeEventEmitter {
      *
      * @platform darwin
      */
-    fun setTitle(title: String, options: TitleOptions = definedExternally): Unit
+    fun setTitle(title: String, options: TitleOptions = definedExternally)
 
     /**
      * Sets the hover text for this tray icon.
      */
-    fun setToolTip(toolTip: String): Unit
+    fun setToolTip(toolTip: String)
 
     @web.events.JsEvent("balloon-click")
     val balloonClickEvent: node.events.EventInstance<js.array.JsTuple>

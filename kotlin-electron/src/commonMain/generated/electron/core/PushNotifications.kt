@@ -47,7 +47,7 @@ external interface PushNotifications : node.events.EventEmitter {
      *
      * @platform darwin
      */
-    fun unregisterForAPNSNotifications(): Unit
+    fun unregisterForAPNSNotifications()
 
     @web.events.JsEvent("received-apns-notification")
     val receivedApnsNotificationEvent: node.events.EventInstance<js.array.JsTuple2<Event<*>, js.objects.ReadonlyRecord<String, Any?>>>

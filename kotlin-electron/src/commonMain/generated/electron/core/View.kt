@@ -22,7 +22,7 @@ open external class View : NodeEventEmitter {
      * If the same View is added to a parent which already contains it, it will be
      * reordered such that it becomes the topmost view.
      */
-    fun addChildView(view: View, index: Double = definedExternally): Unit
+    fun addChildView(view: View, index: Double = definedExternally)
 
     /**
      * The bounds of this View, relative to its parent.
@@ -33,7 +33,7 @@ open external class View : NodeEventEmitter {
      * If the view passed as a parameter is not a child of this view, this method is a
      * no-op.
      */
-    fun removeChildView(view: View): Unit
+    fun removeChildView(view: View)
 
     /**
      * Examples of valid `color` values:
@@ -63,14 +63,14 @@ open external class View : NodeEventEmitter {
      * **Note:** Hex format with alpha takes `AARRGGBB` or `ARGB`, _not_ `RRGGBBAA` or
      * `RGB`.
      */
-    fun setBackgroundColor(color: String): Unit
+    fun setBackgroundColor(color: String)
 
     /**
      * **Note:** The area cutout of the view's border still captures clicks.
      */
-    fun setBorderRadius(radius: Double): Unit
-    fun setBounds(bounds: Rectangle): Unit
-    fun setVisible(visible: Boolean): Unit
+    fun setBorderRadius(radius: Double)
+    fun setBounds(bounds: Rectangle)
+    fun setVisible(visible: Boolean)
 
     /**
      * A `View[]` property representing the child views of this view.

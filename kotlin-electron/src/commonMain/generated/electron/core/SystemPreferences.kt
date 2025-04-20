@@ -197,7 +197,7 @@ external interface SystemPreferences : node.events.EventEmitter {
      *
      * @platform darwin
      */
-    fun postLocalNotification(event: String, userInfo: js.objects.ReadonlyRecord<String, Any?>): Unit
+    fun postLocalNotification(event: String, userInfo: js.objects.ReadonlyRecord<String, Any?>)
 
     /**
      * Posts `event` as native notifications of macOS. The `userInfo` is an Object that
@@ -209,7 +209,7 @@ external interface SystemPreferences : node.events.EventEmitter {
         event: String,
         userInfo: js.objects.ReadonlyRecord<String, Any?>,
         deliverImmediately: Boolean = definedExternally,
-    ): Unit
+    )
 
     /**
      * Posts `event` as native notifications of macOS. The `userInfo` is an Object that
@@ -217,7 +217,7 @@ external interface SystemPreferences : node.events.EventEmitter {
      *
      * @platform darwin
      */
-    fun postWorkspaceNotification(event: String, userInfo: js.objects.ReadonlyRecord<String, Any?>): Unit
+    fun postWorkspaceNotification(event: String, userInfo: js.objects.ReadonlyRecord<String, Any?>)
 
     /**
      * resolves if the user has successfully authenticated with Touch ID.
@@ -238,7 +238,7 @@ external interface SystemPreferences : node.events.EventEmitter {
      *
      * @platform darwin
      */
-    fun registerDefaults(defaults: js.objects.ReadonlyRecord<String, Any /* (string) | (boolean) | (number) */>): Unit
+    fun registerDefaults(defaults: js.objects.ReadonlyRecord<String, Any /* (string) | (boolean) | (number) */>)
 
     /**
      * Removes the `key` in `NSUserDefaults`. This can be used to restore the default
@@ -246,7 +246,7 @@ external interface SystemPreferences : node.events.EventEmitter {
      *
      * @platform darwin
      */
-    fun removeUserDefault(key: String): Unit
+    fun removeUserDefault(key: String)
 
     /**
      * Set the value of `key` in `NSUserDefaults`.
@@ -260,7 +260,7 @@ external interface SystemPreferences : node.events.EventEmitter {
      *
      * @platform darwin
      */
-    fun setUserDefault(key: String, type: String, value: Any?): Unit
+    fun setUserDefault(key: String, type: String, value: Any?)
 
     /**
      * The ID of this subscription
@@ -332,14 +332,14 @@ external interface SystemPreferences : node.events.EventEmitter {
      *
      * @platform darwin
      */
-    fun unsubscribeLocalNotification(id: Double): Unit
+    fun unsubscribeLocalNotification(id: Double)
 
     /**
      * Removes the subscriber with `id`.
      *
      * @platform darwin
      */
-    fun unsubscribeNotification(id: Double): Unit
+    fun unsubscribeNotification(id: Double)
 
     /**
      * Same as `unsubscribeNotification`, but removes the subscriber from
@@ -347,7 +347,7 @@ external interface SystemPreferences : node.events.EventEmitter {
      *
      * @platform darwin
      */
-    fun unsubscribeWorkspaceNotification(id: Double): Unit
+    fun unsubscribeWorkspaceNotification(id: Double)
 
     /**
      * A `boolean` property which determines whether the app avoids using

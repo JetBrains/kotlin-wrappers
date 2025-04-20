@@ -17,7 +17,7 @@ external interface WebFrame {
      * memory (i.e. you have navigated from a super heavy page to a mostly empty one,
      * and intend to stay there).
      */
-    fun clearCache(): Unit
+    fun clearCache()
 
     /**
      * A promise that resolves with the result of the executed code or is rejected if
@@ -113,7 +113,7 @@ external interface WebFrame {
     /**
      * Inserts `text` to the focused element.
      */
-    fun insertText(text: String): Unit
+    fun insertText(text: String)
 
     /**
      * True if the word is misspelled according to the built in spellchecker, false
@@ -125,14 +125,14 @@ external interface WebFrame {
      * Removes the inserted CSS from the current web page. The stylesheet is identified
      * by its key, which is returned from `webFrame.insertCSS(css)`.
      */
-    fun removeInsertedCSS(key: String): Unit
+    fun removeInsertedCSS(key: String)
 
     /**
      * Set the security origin, content security policy and name of the isolated world.
      * Note: If the `csp` is specified, then the `securityOrigin` also has to be
      * specified.
      */
-    fun setIsolatedWorldInfo(worldId: Double, info: Info): Unit
+    fun setIsolatedWorldInfo(worldId: Double, info: Info)
 
     /**
      * Sets a provider for spell checking in input fields and text areas.
@@ -147,7 +147,7 @@ external interface WebFrame {
      *
      * An example of using node-spellchecker as provider:
      */
-    fun setSpellCheckProvider(language: String, provider: Provider): Unit
+    fun setSpellCheckProvider(language: String, provider: Provider)
 
     /**
      * Sets the maximum and minimum pinch-to-zoom level.
@@ -160,7 +160,7 @@ external interface WebFrame {
      * roles in the application Menu. To disable shortcuts, manually define the Menu
      * and omit zoom roles from the definition.
      */
-    fun setVisualZoomLevelLimits(minimumLevel: Double, maximumLevel: Double): Unit
+    fun setVisualZoomLevelLimits(minimumLevel: Double, maximumLevel: Double)
 
     /**
      * Changes the zoom factor to the specified factor. Zoom factor is zoom percent
@@ -168,7 +168,7 @@ external interface WebFrame {
      *
      * The factor must be greater than 0.0.
      */
-    fun setZoomFactor(factor: Double): Unit
+    fun setZoomFactor(factor: Double)
 
     /**
      * Changes the zoom level to the specified level. The original size is 0 and each
@@ -180,7 +180,7 @@ external interface WebFrame {
      * with the same domain. Differentiating the window URLs will make zoom work
      * per-window.
      */
-    fun setZoomLevel(level: Double): Unit
+    fun setZoomLevel(level: Double)
 
     /**
      * A `WebFrame | null` representing the first child frame of `webFrame`, the
