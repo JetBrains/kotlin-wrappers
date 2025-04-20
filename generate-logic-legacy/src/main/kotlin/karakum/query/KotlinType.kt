@@ -220,6 +220,7 @@ internal fun kotlinType(
             .replace(", any", ", *")
             .replace("<unknown", "<*")
             .replace(", unknown", ", *")
+            .replace(", Error,", ", JsError,")
             .replace(" | undefined", "?")
             .let { t ->
                 when {

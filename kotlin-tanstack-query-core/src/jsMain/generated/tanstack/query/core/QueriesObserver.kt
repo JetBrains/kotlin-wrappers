@@ -10,6 +10,7 @@ package tanstack.query.core
 
 import js.array.JsTuple3
 import js.array.ReadonlyArray
+import js.errors.JsError
 
 open external class QueriesObserver<TCombinedResult>(
     client: QueryClient,
@@ -25,8 +26,8 @@ open external class QueriesObserver<TCombinedResult>(
     )
 
     open fun getCurrentResult(): ReadonlyArray<QueryObserverResult<*, *>>
-    open fun getQueries(): ReadonlyArray<Query<*, Error, *, QueryKey>>
-    open fun getObservers(): ReadonlyArray<QueryObserver<*, Error, *, *, QueryKey>>
+    open fun getQueries(): ReadonlyArray<Query<*, JsError, *, QueryKey>>
+    open fun getObservers(): ReadonlyArray<QueryObserver<*, JsError, *, *, QueryKey>>
     open fun getOptimisticResult(
         queries: ReadonlyArray<QueryObserverOptions<*, *, *, *, *, *>>,
         combine: CombineFn<TCombinedResult>?,
