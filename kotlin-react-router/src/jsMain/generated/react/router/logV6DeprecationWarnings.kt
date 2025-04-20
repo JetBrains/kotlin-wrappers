@@ -10,4 +10,4 @@ import remix.run.router.FutureConfig as RouterFutureConfig
 external fun logV6DeprecationWarnings(
     renderFuture: RenderFutureConfig?,
     routerFuture: RouterFutureConfig = definedExternally,
-): Unit
+)

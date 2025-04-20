@@ -13,4 +13,4 @@ package react.router.dom
  * back/forward navigations while the confirm is open.  Use at your own risk.
  */
 @JsName("unstable_usePrompt")
-external fun usePrompt(options: UsePromptOptions): Unit
+external fun usePrompt(options: UsePromptOptions)

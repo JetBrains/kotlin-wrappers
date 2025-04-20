@@ -7,6 +7,6 @@ package remix.run.router
 /**
  * @private
  */
-external fun invariant(value: Boolean, message: String = definedExternally): Unit /* asserts value */
+external fun invariant(value: Boolean, message: String = definedExternally) /* asserts value */
 
-external fun <T> invariant(value: T?, message: String = definedExternally): Unit /* asserts value is T */
+external fun <T> invariant(value: T?, message: String = definedExternally) /* asserts value is T */

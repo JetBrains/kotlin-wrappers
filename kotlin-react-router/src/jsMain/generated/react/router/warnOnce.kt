@@ -4,4 +4,4 @@
 
 package react.router
 
-external fun warnOnce(key: String, message: String): Unit
+external fun warnOnce(key: String, message: String)

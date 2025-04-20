@@ -7,5 +7,5 @@ package react.router.dom
  */
 sealed external interface FetcherSubmitFunction {
     @seskar.js.JsNativeInvoke
-    operator fun invoke(target: SubmitTarget, options: FetcherSubmitOptions = definedExternally): Unit
+    operator fun invoke(target: SubmitTarget, options: FetcherSubmitOptions = definedExternally)
 }

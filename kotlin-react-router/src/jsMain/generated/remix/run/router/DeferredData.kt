@@ -15,7 +15,7 @@ external class DeferredData {
     var init: ResponseInit?
     var deferredKeys: js.array.ReadonlyArray<String>
     fun subscribe(fn: (aborted: Boolean, settledKey: String? /* use undefined for default */) -> Unit): () -> Boolean
-    fun cancel(): Unit
+    fun cancel()
     fun resolveData(signal: AbortSignal): Promise<Boolean>
     val done: Boolean
     val unwrappedData: Any

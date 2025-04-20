@@ -56,7 +56,7 @@ sealed external interface History {
      * @param to - The new URL
      * @param state - Data to associate with the new location
      */
-    fun push(to: To, state: Any? = definedExternally): Unit
+    fun push(to: To, state: Any? = definedExternally)
 
     /**
      * Replaces the current location in the history stack with a new one.  The
@@ -65,7 +65,7 @@ sealed external interface History {
      * @param to - The new URL
      * @param state - Data to associate with the new location
      */
-    fun replace(to: To, state: Any? = definedExternally): Unit
+    fun replace(to: To, state: Any? = definedExternally)
 
     /**
      * Navigates `n` entries backward/forward in the history stack relative to the
@@ -73,7 +73,7 @@ sealed external interface History {
      *
      * @param delta - The delta in the stack index
      */
-    fun go(delta: Double): Unit
+    fun go(delta: Double)
 
     /**
      * Sets up a listener that will be called whenever the current location

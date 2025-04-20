@@ -8,5 +8,5 @@ sealed external interface ViewTransition {
     var finished: Promise<js.core.Void>
     var ready: Promise<js.core.Void>
     var updateCallbackDone: Promise<js.core.Void>
-    fun skipTransition(): Unit
+    fun skipTransition()
 }

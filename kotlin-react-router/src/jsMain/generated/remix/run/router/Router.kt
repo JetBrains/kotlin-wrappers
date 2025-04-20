@@ -115,7 +115,7 @@ sealed external interface Router {
      * @param href    href to fetch
      * @param opts    Fetcher options, (method, submission, etc.)
      */
-    fun fetch(key: String, routeId: String, href: String?, opts: RouterFetchOptions = definedExternally): Unit
+    fun fetch(key: String, routeId: String, href: String?, opts: RouterFetchOptions = definedExternally)
 
     /**
      * @internal
@@ -123,7 +123,7 @@ sealed external interface Router {
      *
      * Trigger a revalidation of all current route loaders and fetcher loads
      */
-    fun revalidate(): Unit
+    fun revalidate()
 
     /**
      * @internal
@@ -169,7 +169,7 @@ sealed external interface Router {
      * Delete the fetcher for a given key
      * @param key
      */
-    fun deleteFetcher(key: String): Unit
+    fun deleteFetcher(key: String)
 
     /**
      * @internal
@@ -177,7 +177,7 @@ sealed external interface Router {
      *
      * Cleanup listeners and abort any in-progress loads
      */
-    fun dispose(): Unit
+    fun dispose()
 
     /**
      * @internal
@@ -196,7 +196,7 @@ sealed external interface Router {
      * Delete a navigation blocker
      * @param key The identifier for the blocker
      */
-    fun deleteBlocker(key: String): Unit
+    fun deleteBlocker(key: String)
 
     /**
      * @internal
@@ -207,7 +207,7 @@ sealed external interface Router {
      *                to perform batch patching
      * @param children The additional children routes
      */
-    fun patchRoutes(routeId: String?, children: js.array.ReadonlyArray<AgnosticRouteObject>): Unit
+    fun patchRoutes(routeId: String?, children: js.array.ReadonlyArray<AgnosticRouteObject>)
 
     /**
      * @internal
@@ -216,7 +216,7 @@ sealed external interface Router {
      * HMR needs to pass in-flight route updates to React Router
      * TODO: Replace this with granular route update APIs (addRoute, updateRoute, deleteRoute)
      */
-    fun _internalSetRoutes(routes: js.array.ReadonlyArray<AgnosticRouteObject>): Unit
+    fun _internalSetRoutes(routes: js.array.ReadonlyArray<AgnosticRouteObject>)
 
     /**
      * @internal

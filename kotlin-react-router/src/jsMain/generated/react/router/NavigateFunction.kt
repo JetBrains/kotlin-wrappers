@@ -9,8 +9,8 @@ import remix.run.router.To
  */
 sealed external interface NavigateFunction {
     @seskar.js.JsNativeInvoke
-    operator fun invoke(to: To, options: NavigateOptions = definedExternally): Unit
+    operator fun invoke(to: To, options: NavigateOptions = definedExternally)
 
     @seskar.js.JsNativeInvoke
-    operator fun invoke(delta: Double): Unit
+    operator fun invoke(delta: Double)
 }
