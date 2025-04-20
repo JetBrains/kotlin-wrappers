@@ -2,9 +2,11 @@
 
 package cesium.engine
 
+import js.errors.JsError
+
 /**
  * A function that is called when an error occurs.
  * @param [err] An object holding details about the error that occurred.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Terrain.html#.TerrainErrorEventCallback">Online Documentation</a>
  */
-typealias TerrainErrorEventCallback = (err: Error) -> Unit
+typealias TerrainErrorEventCallback = (err: JsError) -> Unit

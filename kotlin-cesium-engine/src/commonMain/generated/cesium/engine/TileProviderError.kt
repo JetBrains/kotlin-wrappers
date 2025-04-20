@@ -4,6 +4,8 @@
 
 package cesium.engine
 
+import js.errors.JsError
+
 /**
  * Provides details about an error that occurred in an [ImageryProvider] or a [TerrainProvider].
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/TileProviderError.html">Online Documentation</a>
@@ -29,7 +31,7 @@ external class TileProviderError(
     var y: Double = definedExternally,
     var level: Int = definedExternally,
     var timesRetried: Double = definedExternally,
-    var error: Error = definedExternally,
+    var error: JsError = definedExternally,
 ) {
     constructor(
         provider: TerrainProvider,
@@ -38,7 +40,7 @@ external class TileProviderError(
         y: Double? = definedExternally,
         level: Int? = definedExternally,
         timesRetried: Double? = definedExternally,
-        error: Error? = definedExternally,
+        error: JsError? = definedExternally,
     )
 
     /**
@@ -85,7 +87,7 @@ external class TileProviderError(
             x: Double? = definedExternally,
             y: Double? = definedExternally,
             level: Int? = definedExternally,
-            errorDetails: Error? = definedExternally,
+            errorDetails: JsError? = definedExternally,
         ): TileProviderError
 
         fun reportError(
@@ -96,7 +98,7 @@ external class TileProviderError(
             x: Double? = definedExternally,
             y: Double? = definedExternally,
             level: Int? = definedExternally,
-            errorDetails: Error? = definedExternally,
+            errorDetails: JsError? = definedExternally,
         ): TileProviderError
 
         fun reportError(
@@ -107,7 +109,7 @@ external class TileProviderError(
             x: Double? = definedExternally,
             y: Double? = definedExternally,
             level: Int? = definedExternally,
-            errorDetails: Error? = definedExternally,
+            errorDetails: JsError? = definedExternally,
         ): TileProviderError
 
         /**
