@@ -9,7 +9,6 @@ dependencyResolutionManagement {
 includeBuild("../generate-logic-legacy")
 
 include("actions-kotlin")
-include("browser-kotlin")
 include("cesium-kotlin")
 include("csstype-kotlin")
 include("popper-kotlin")
