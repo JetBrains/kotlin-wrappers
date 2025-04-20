@@ -32,7 +32,10 @@ val UserCard = FC {
                     marginLeft = 20.px
                 }
                 disabled = selectedUser == null
-                onClick = { updateUser(selectedUser!!.apply { name += "_Updated" }) }
+                onClick = {
+                    val user = selectedUser!!
+                    updateUser(user.copy(user.name + "_Updated"))
+                }
 
                 +"Update"
             }

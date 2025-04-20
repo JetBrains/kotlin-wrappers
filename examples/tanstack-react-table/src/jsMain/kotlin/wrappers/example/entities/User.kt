@@ -1,13 +1,15 @@
 package wrappers.example.entities
 
 import js.array.ReadonlyArray
+import js.objects.JsPlainObject
 
+@JsPlainObject
 external interface User {
-    var id: Key
-    var name: String
-    var email: String
-    var phone: String
-    var website: String
+    val id: Key
+    val name: String
+    val email: String
+    val phone: String
+    val website: String
 }
 
 typealias UserList = ReadonlyArray<User>
