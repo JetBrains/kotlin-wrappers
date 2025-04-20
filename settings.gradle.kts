@@ -256,6 +256,8 @@ includeKarakum("kotlin-tanstack-table")
 // Kotlin/JS: Tanstack Table Core wrappers
 include("kotlin-tanstack-table-core")
 
+includeKarakum("kotlin-tanstack-virtual")
+
 // Kotlin/JS: Tanstack Virtual Core wrappers
 include("kotlin-tanstack-virtual-core")
 

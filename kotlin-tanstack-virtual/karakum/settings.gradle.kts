@@ -1,9 +1,7 @@
-rootProject.name = "karakum-legacy"
-
 dependencyResolutionManagement {
     repositories {
         mavenCentral()
     }
 }
 
-includeBuild("../generate-logic-legacy")
+includeBuild("../../generate-logic-legacy")

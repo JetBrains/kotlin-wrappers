@@ -25,3 +25,10 @@ TanStack Table
 ./gradlew :kotlin-tanstack-table-karakum:generate
 ./gradlew :kotlin-tanstack-react-table:build
 ```
+
+TanStack Virtual
+
+```sh
+./gradlew :kotlin-tanstack-virtual-karakum:generate
+./gradlew :kotlin-tanstack-react-virtual:build
+```
