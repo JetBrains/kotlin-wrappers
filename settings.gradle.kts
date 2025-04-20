@@ -62,8 +62,6 @@ fun includeKarakum(path: String) {
 
 includeBuild("build-logic")
 
-includeBuild("karakum-legacy")
-
 include("docs")
 
 includeKarakum("kotlin-actions")
