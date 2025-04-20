@@ -21,7 +21,7 @@ open class SyncWrappers : Sync() {
         sourceSet: String,
     ): File =
         project.rootProject.layout.projectDirectory
-            .dir("..")
+            .dir(if (project == project.rootProject) "../.." else "..")
             .dir(projectName)
             .dir("src/$sourceSet/generated")
             .asFile
