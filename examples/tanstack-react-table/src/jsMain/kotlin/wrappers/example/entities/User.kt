@@ -1,5 +1,7 @@
 package wrappers.example.entities
 
+import js.array.ReadonlyArray
+
 external interface User {
     var id: Key
     var name: String
@@ -8,4 +10,4 @@ external interface User {
     var website: String
 }
 
-typealias Users = Array<out User>
+typealias Users = ReadonlyArray<User>

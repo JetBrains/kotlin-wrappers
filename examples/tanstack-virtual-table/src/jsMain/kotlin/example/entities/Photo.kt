@@ -1,5 +1,7 @@
 package wrappers.example.entities
 
+import js.array.ReadonlyArray
+
 external interface Photo {
     var id: Key
     var albumId: Key
@@ -8,4 +10,4 @@ external interface Photo {
     var thumbnailUrl: String
 }
 
-typealias Photos = Array<out Photo>
+typealias Photos = ReadonlyArray<Photo>
