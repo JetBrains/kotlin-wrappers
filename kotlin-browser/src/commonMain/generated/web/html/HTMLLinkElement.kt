@@ -60,6 +60,10 @@ protected constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLLinkElement/imageSizes)
      */
     var imageSizes: String
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLLinkElement/imageSrcset)
+     */
     var imageSrcset: String
 
     /**
