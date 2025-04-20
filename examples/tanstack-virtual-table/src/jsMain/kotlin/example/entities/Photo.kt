@@ -10,4 +10,4 @@ external interface Photo {
     var thumbnailUrl: String
 }
 
-typealias Photos = ReadonlyArray<Photo>
+typealias PhotoList = ReadonlyArray<Photo>

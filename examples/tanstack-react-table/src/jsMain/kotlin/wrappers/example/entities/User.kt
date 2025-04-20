@@ -10,4 +10,4 @@ external interface User {
     var website: String
 }
 
-typealias Users = ReadonlyArray<User>
+typealias UserList = ReadonlyArray<User>

@@ -4,11 +4,11 @@ import tanstack.query.core.QueryKey
 import tanstack.react.query.UseQueryOptions
 import tanstack.react.query.useQuery
 import wrappers.example.USERS_QUERY_KEY
-import wrappers.example.entities.Users
+import wrappers.example.entities.UserList
 import wrappers.example.query.createQueryFunction
 
-fun useUsersOrNull(): Users? {
-    val result = useQuery<Users, Error, Users, QueryKey>(
+fun useUsersOrNull(): UserList? {
+    val result = useQuery<UserList, Error, UserList, QueryKey>(
         options = UseQueryOptions(
             queryKey = USERS_QUERY_KEY,
             queryFn = createQueryFunction(::fetchUsersData),
@@ -18,5 +18,5 @@ fun useUsersOrNull(): Users? {
     return result.data
 }
 
-fun useUsers(): Users =
+fun useUsers(): UserList =
     requireNotNull(useUsersOrNull())

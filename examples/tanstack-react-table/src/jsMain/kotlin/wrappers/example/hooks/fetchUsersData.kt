@@ -5,11 +5,11 @@ import web.http.Request
 import web.http.RequestInit
 import web.http.fetch
 import wrappers.example.entities.Key
-import wrappers.example.entities.Users
+import wrappers.example.entities.UserList
 
 private val USERS_URL = "https://jsonplaceholder.typicode.com/users"
 
-suspend fun fetchUsersData(): Users =
+suspend fun fetchUsersData(): UserList =
     fetchData(Request(USERS_URL))
 
 suspend fun <T> fetchUserData(
