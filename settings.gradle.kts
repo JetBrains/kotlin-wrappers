@@ -95,6 +95,9 @@ include("kotlin-ajv")
 
 // Kotlin/JS: Browser APIs missing from the standard library
 include("kotlin-browser")
+includeBuild("kotlin-browser/karakum") {
+    name = "kotlin-browser-karakum"
+}
 
 // Kotlin/JS: CesiumJS wrappers
 include("kotlin-cesium-engine")
