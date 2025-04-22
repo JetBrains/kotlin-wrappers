@@ -130,7 +130,7 @@ private val CREATE_ADD_EVENT_LISTENER_OPTIONS: String = """
 internal fun createAddEventListenerOptions(
     once: Boolean,
 ): AddEventListenerOptions =
-    jso<MutableAddEventListenerOptions> {
+    unsafeJso<MutableAddEventListenerOptions> {
         this.once = once
     }
 
