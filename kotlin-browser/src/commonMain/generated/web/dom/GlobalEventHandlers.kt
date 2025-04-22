@@ -17,6 +17,7 @@ import web.events.EventTarget
 import web.events.ProgressEvent
 import web.form.FormDataEvent
 import web.form.SubmitEvent
+import web.popover.ToggleEvent
 import web.uievents.*
 import kotlin.js.definedExternally
 
@@ -77,7 +78,7 @@ external interface GlobalEventHandlers :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/beforetoggle_event)
      */
-    var onbeforetoggle: EventHandler<Event, GlobalEventHandlers, GlobalEventHandlers>?
+    var onbeforetoggle: EventHandler<ToggleEvent, GlobalEventHandlers, GlobalEventHandlers>?
         get() = definedExternally
         set(value) = definedExternally
 
@@ -718,7 +719,7 @@ external interface GlobalEventHandlers :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/toggle_event)
      */
-    var ontoggle: EventHandler<Event, GlobalEventHandlers, GlobalEventHandlers>?
+    var ontoggle: EventHandler<ToggleEvent, GlobalEventHandlers, GlobalEventHandlers>?
         get() = definedExternally
         set(value) = definedExternally
 

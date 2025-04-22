@@ -142,9 +142,6 @@ open external class Event(
         @JsValue("beforeprint")
         val BEFORE_PRINT: EventType<Event>
 
-        @JsValue("beforetoggle")
-        val BEFORE_TOGGLE: EventType<Event>
-
         @JsValue("bufferedamountlow")
         val BUFFERED_AMOUNT_LOW: EventType<Event>
 
@@ -381,9 +378,6 @@ open external class Event(
 
         @JsValue("timeupdate")
         val TIME_UPDATE: EventType<Event>
-
-        @JsValue("toggle")
-        val TOGGLE: EventType<Event>
 
         @JsValue("unload")
         val UNLOAD: EventType<Event>
