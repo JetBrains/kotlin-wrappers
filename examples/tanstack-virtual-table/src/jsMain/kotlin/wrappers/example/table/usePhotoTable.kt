@@ -14,16 +14,19 @@ private val COLUMNS: ReadonlyArray<ColumnDef<Photo, String>> = arrayOf(
     createSelectionColumn(),
     unsafeJso {
         id = "title"
+        size = 500
         header = StringOrTemplateHeader("Title")
         accessorFn = { user, _ -> user.title }
     },
     unsafeJso {
         id = "url"
+        size = 400
         header = StringOrTemplateHeader("Url")
         accessorFn = { user, _ -> user.url }
     },
     unsafeJso {
         id = "thumbnail"
+        size = 400
         header = StringOrTemplateHeader("Thumbnail")
         accessorFn = { user, _ -> user.thumbnailUrl }
     },

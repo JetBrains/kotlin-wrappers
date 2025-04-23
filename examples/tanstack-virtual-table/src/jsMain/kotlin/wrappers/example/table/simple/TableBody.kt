@@ -13,8 +13,11 @@ internal external interface TableBodyProps : PropsWithValue<ReadonlyArray<Row<*>
 
 internal val TableBody: FC<TableBodyProps> = FC { props ->
     val rows = props.value
+    val tableBodyRef = useRefWithClassName(CONTAINER_CLASS_NAME)
 
     Container {
+        ref = tableBodyRef
+
         for (row in rows) {
             TableRow {
                 key = row.id

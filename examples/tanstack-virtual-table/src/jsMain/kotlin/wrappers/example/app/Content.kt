@@ -7,7 +7,7 @@ import web.cssom.Display
 import web.cssom.GridAutoFlow
 import web.cssom.px
 import wrappers.example.components.LoadingIndicator
-import wrappers.example.list.PhotoList
+import wrappers.example.table.PhotoTable
 
 val Content = FC {
     val loading = useIsLoading()
@@ -20,7 +20,7 @@ val Content = FC {
         }
 
         if (!loading) {
-            PhotoList()
+            PhotoTable()
         } else {
             LoadingIndicator()
         }

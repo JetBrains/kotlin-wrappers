@@ -9,12 +9,9 @@ import react.ReactDsl
 import react.dom.html.ReactHTML.table
 import tanstack.table.core.HeaderGroup
 import tanstack.table.core.Row
+import web.cssom.*
 import web.cssom.Auto.Companion.auto
-import web.cssom.Border
-import web.cssom.BorderCollapse
 import web.cssom.LineStyle.Companion.solid
-import web.cssom.WhiteSpace
-import web.cssom.px
 import wrappers.example.theme.Theme
 
 internal external interface SimpleTableProps<D : Any> : Props {
@@ -31,22 +28,32 @@ private val SimpleTable: FC<SimpleTableProps<*>> = FC { props ->
 }
 
 private fun <D : Any> ChildrenBuilder.SimpleTable(props: SimpleTableProps<D>) {
+    val (rows, styles) = useRows(props.rows)
+
     TableBase {
         TableHead {
             value = props.headerGroups
         }
 
+        if (styles != null) {
+            TableStyles {
+                value = styles
+            }
+        }
+
         TableBody {
-            value = props.rows
+            value = rows
         }
     }
 }
 
 private val TableBase = table.styled {
-    width = 400.px
+    height = 100.pct
+
     borderSpacing = 0.px
     borderCollapse = BorderCollapse.collapse
-    whiteSpace = WhiteSpace.nowrap
     border = Border(2.px, solid, Theme.Stroke.Gray)
+
+    whiteSpace = WhiteSpace.nowrap
     margin = auto
 }

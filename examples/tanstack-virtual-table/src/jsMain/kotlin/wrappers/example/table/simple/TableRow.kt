@@ -15,8 +15,11 @@ internal external interface TableRowProps : PropsWithValue<Row<*>>
 
 internal val TableRow: FC<TableRowProps> = FC { props ->
     val row = props.value
+    val rowRef = useRefWithClassName(ROW_CLASS_NAME(row.id))
 
     Container {
+        ref = rowRef
+
         for (cell in row.getVisibleCells()) {
             TableCell {
                 key = cell.id
