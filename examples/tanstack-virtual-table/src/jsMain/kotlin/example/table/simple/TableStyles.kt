@@ -5,7 +5,7 @@ import react.Props
 import react.dom.html.ReactHTML
 
 private const val STYLES = """
-   .row-0 {
+   .row-1 {
         background-color: green;
     }
 """
