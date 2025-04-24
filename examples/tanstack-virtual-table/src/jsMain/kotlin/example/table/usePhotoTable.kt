@@ -32,7 +32,7 @@ private val COLUMNS: ReadonlyArray<ColumnDef<Photo, String>> = arrayOf(
 )
 
 private val GET_ROW_ID: (originalRow: Photo, index: Int, parent: Row<Photo>?) -> String =
-    { row, index, _ -> "row-${row.id}" }
+    { row, _, _ -> "row-${row.id}" }
 
 internal fun usePhotoTable(): TableInstance<Photo> {
     val users = usePhotos()
