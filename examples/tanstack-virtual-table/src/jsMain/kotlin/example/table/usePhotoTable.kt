@@ -4,10 +4,12 @@ import example.entities.Photo
 import example.hooks.usePhotos
 import example.table.selection.createSelectionColumn
 import example.table.simple.TableInstance
+import example.table.simple.TableSettings
 import example.table.simple.useSimpleTable
 import js.array.ReadonlyArray
 import js.objects.unsafeJso
 import tanstack.table.core.ColumnDef
+import tanstack.table.core.Row
 import tanstack.table.core.StringOrTemplateHeader
 
 private val COLUMNS: ReadonlyArray<ColumnDef<Photo, String>> = arrayOf(
@@ -29,6 +31,9 @@ private val COLUMNS: ReadonlyArray<ColumnDef<Photo, String>> = arrayOf(
     },
 )
 
+private val GET_ROW_ID: (originalRow: Photo, index: Int, parent: Row<Photo>?) -> String =
+    { row, index, _ -> "row-$index" }
+
 internal fun usePhotoTable(): TableInstance<Photo> {
     val users = usePhotos()
     val tableMeta = useTableMeta()
@@ -37,6 +42,9 @@ internal fun usePhotoTable(): TableInstance<Photo> {
         data = users,
         columns = COLUMNS,
         meta = tableMeta,
+        settings = TableSettings(
+            getRowId = GET_ROW_ID,
+        )
     )
 
     return table

@@ -7,6 +7,7 @@ import react.PropsWithValue
 import react.dom.html.ReactHTML.tr
 import tanstack.table.core.Row
 import web.cssom.Border
+import web.cssom.ClassName
 import web.cssom.Cursor
 import web.cssom.LineStyle.Companion.solid
 import web.cssom.px
@@ -17,6 +18,8 @@ internal val TableRow: FC<TableRowProps> = FC { props ->
     val row = props.value
 
     Container {
+        className = ClassName(row.id)
+
         for (cell in row.getVisibleCells()) {
             TableCell {
                 key = cell.id

@@ -12,6 +12,7 @@ internal fun <D : Any> useSimpleTable(
     data: ReadonlyArray<D>,
     columns: ReadonlyArray<ColumnDef<D, *>>,
     meta: TableMeta,
+    settings: TableSettings<D>? = null,
 ): TableInstance<D> {
     val table = useReactTable(
         options = TableOptions(
@@ -19,6 +20,7 @@ internal fun <D : Any> useSimpleTable(
             columns = columns,
             meta = meta,
             getCoreRowModel = getCoreRowModel(),
+            getRowId = settings?.getRowId,
         ),
     )
 
