@@ -1,6 +1,6 @@
 @file:Suppress("UNCHECKED_CAST")
 
-package wrappers.example.table.selection
+package example.table.selection
 
 import js.objects.PropertyKey
 import js.symbol.Symbol

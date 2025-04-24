@@ -1,4 +1,4 @@
-package wrappers.example.table.simple
+package example.table.simple
 
 import emotion.styled.styled
 import react.FC

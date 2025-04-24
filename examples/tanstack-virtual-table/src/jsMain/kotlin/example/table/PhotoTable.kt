@@ -1,9 +1,9 @@
-package wrappers.example.table
+package example.table
 
+import example.table.selection.SelectionContext
+import example.table.selection.selection
+import example.table.simple.SimpleTable
 import react.FC
-import wrappers.example.table.selection.SelectionContext
-import wrappers.example.table.selection.selection
-import wrappers.example.table.simple.SimpleTable
 
 internal val PhotoTable = FC {
     val table = usePhotoTable()

@@ -1,6 +1,7 @@
-package wrappers.example.table.simple
+package example.table.simple
 
 import emotion.styled.styled
+import example.theme.Theme
 import js.array.ReadonlyArray
 import react.ChildrenBuilder
 import react.FC
@@ -15,7 +16,6 @@ import web.cssom.BorderCollapse
 import web.cssom.LineStyle.Companion.solid
 import web.cssom.WhiteSpace
 import web.cssom.px
-import wrappers.example.theme.Theme
 
 internal external interface SimpleTableProps<D : Any> : Props {
     var headerGroups: ReadonlyArray<HeaderGroup<D>>

@@ -1,6 +1,7 @@
-package wrappers.example.table.simple
+package example.table.simple
 
 import emotion.styled.styled
+import example.theme.Theme
 import react.FC
 import react.PropsWithValue
 import react.dom.html.ReactHTML.th
@@ -8,7 +9,6 @@ import tanstack.react.table.renderHeader
 import tanstack.table.core.Header
 import web.cssom.*
 import web.cssom.LineStyle.Companion.solid
-import wrappers.example.theme.Theme
 
 internal external interface TableHeaderProps : PropsWithValue<Header<*, *>>
 

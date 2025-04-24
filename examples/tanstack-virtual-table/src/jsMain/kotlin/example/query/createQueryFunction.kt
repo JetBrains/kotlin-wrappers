@@ -1,4 +1,4 @@
-package wrappers.example.query
+package example.query
 
 import js.coroutines.internal.IsolatedCoroutineScope
 import js.coroutines.promise

@@ -1,13 +1,13 @@
-package wrappers.example.table.simple
+package example.table.simple
 
 import emotion.styled.styled
+import example.theme.Theme
 import js.array.ReadonlyArray
 import react.FC
 import react.PropsWithValue
 import react.dom.html.ReactHTML.tbody
 import tanstack.table.core.Row
 import web.cssom.TextAlign
-import wrappers.example.theme.Theme
 
 internal external interface TableBodyProps : PropsWithValue<ReadonlyArray<Row<*>>>
 

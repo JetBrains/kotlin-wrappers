@@ -1,4 +1,4 @@
-package wrappers.example.table.selection
+package example.table.selection
 
 import js.array.ReadonlyArray
 import react.FC

@@ -1,13 +1,13 @@
-package wrappers.example.app
+package example.app
 
 import emotion.react.css
+import example.components.LoadingIndicator
+import example.list.PhotoList
 import react.FC
 import react.dom.html.ReactHTML.div
 import web.cssom.Display
 import web.cssom.GridAutoFlow
 import web.cssom.px
-import wrappers.example.components.LoadingIndicator
-import wrappers.example.list.PhotoList
 
 val Content = FC {
     val loading = useIsLoading()

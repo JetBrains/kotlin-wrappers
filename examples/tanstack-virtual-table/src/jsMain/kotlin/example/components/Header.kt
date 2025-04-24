@@ -1,6 +1,7 @@
-package wrappers.example.components
+package example.components
 
 import emotion.react.css
+import example.theme.Theme
 import react.FC
 import react.dom.html.ReactHTML.a
 import react.dom.html.ReactHTML.div
@@ -8,7 +9,6 @@ import web.cssom.FontWeight
 import web.cssom.Overflow
 import web.cssom.Padding
 import web.cssom.px
-import wrappers.example.theme.Theme
 
 val Header = FC {
     div {

@@ -1,14 +1,14 @@
-package wrappers.example.table
+package example.table
 
+import example.entities.Photo
+import example.hooks.usePhotos
+import example.table.selection.createSelectionColumn
+import example.table.simple.TableInstance
+import example.table.simple.useSimpleTable
 import js.array.ReadonlyArray
 import js.objects.unsafeJso
 import tanstack.table.core.ColumnDef
 import tanstack.table.core.StringOrTemplateHeader
-import wrappers.example.entities.Photo
-import wrappers.example.hooks.usePhotos
-import wrappers.example.table.selection.createSelectionColumn
-import wrappers.example.table.simple.TableInstance
-import wrappers.example.table.simple.useSimpleTable
 
 private val COLUMNS: ReadonlyArray<ColumnDef<Photo, String>> = arrayOf(
     createSelectionColumn(),

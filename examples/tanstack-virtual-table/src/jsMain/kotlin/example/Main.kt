@@ -1,12 +1,12 @@
-package wrappers.example
+package example
 
+import example.app.App
 import react.create
 import react.dom.client.createRoot
 import web.dom.document
 import web.events.once
 import web.html.HTML.div
 import web.window.window
-import wrappers.example.app.App
 
 suspend fun main() {
     window.loadEvent.once()

@@ -1,4 +1,4 @@
-package wrappers.example.table.simple
+package example.table.simple
 
 import js.array.ReadonlyArray
 import tanstack.table.core.HeaderGroup

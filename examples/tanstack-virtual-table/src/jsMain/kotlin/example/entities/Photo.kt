@@ -1,4 +1,4 @@
-package wrappers.example.entities
+package example.entities
 
 import js.array.ReadonlyArray
 import js.objects.JsPlainObject

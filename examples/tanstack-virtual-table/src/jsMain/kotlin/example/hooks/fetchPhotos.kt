@@ -1,9 +1,9 @@
-package wrappers.example.hooks
+package example.hooks
 
+import example.entities.PhotoList
 import js.reflect.unsafeCast
 import web.http.Request
 import web.http.fetch
-import wrappers.example.entities.PhotoList
 
 private const val PHOTOS_URL = "https://jsonplaceholder.typicode.com/photos"
 

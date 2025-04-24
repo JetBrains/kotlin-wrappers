@@ -1,6 +1,7 @@
-package wrappers.example.table.simple
+package example.table.simple
 
 import emotion.styled.styled
+import example.theme.Theme
 import react.FC
 import react.PropsWithValue
 import react.dom.html.ReactHTML.tr
@@ -9,7 +10,6 @@ import web.cssom.Border
 import web.cssom.Cursor
 import web.cssom.LineStyle.Companion.solid
 import web.cssom.px
-import wrappers.example.theme.Theme
 
 internal external interface TableRowProps : PropsWithValue<Row<*>>
 

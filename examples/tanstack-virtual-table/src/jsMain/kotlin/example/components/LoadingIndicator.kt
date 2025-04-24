@@ -1,4 +1,4 @@
-package wrappers.example.components
+package example.components
 
 import react.FC
 

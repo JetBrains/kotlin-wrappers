@@ -1,4 +1,4 @@
-package wrappers.example.theme
+package example.theme
 
 import web.cssom.Color
 

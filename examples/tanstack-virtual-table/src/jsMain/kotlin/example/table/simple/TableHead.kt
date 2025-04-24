@@ -1,6 +1,7 @@
-package wrappers.example.table.simple
+package example.table.simple
 
 import emotion.styled.styled
+import example.theme.Theme
 import js.array.ReadonlyArray
 import react.FC
 import react.PropsWithValue
@@ -8,7 +9,6 @@ import react.dom.html.ReactHTML.thead
 import react.dom.html.ReactHTML.tr
 import tanstack.table.core.HeaderGroup
 import web.cssom.px
-import wrappers.example.theme.Theme
 
 internal external interface TableHeadProps : PropsWithValue<ReadonlyArray<HeaderGroup<*>>>
 

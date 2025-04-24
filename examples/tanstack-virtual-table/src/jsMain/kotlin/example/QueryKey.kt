@@ -1,4 +1,4 @@
-package wrappers.example
+package example
 
 import tanstack.query.core.QueryKey
 

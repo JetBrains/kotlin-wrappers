@@ -1,7 +1,7 @@
-package wrappers.example.table.selection
+package example.table.selection
 
+import example.entities.Key
 import react.use.useConstant
-import wrappers.example.entities.Key
 
 typealias SelectionHandler = (Map<Key, Boolean>) -> Unit
 

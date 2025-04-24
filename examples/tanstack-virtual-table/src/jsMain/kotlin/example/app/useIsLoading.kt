@@ -1,6 +1,6 @@
-package wrappers.example.app
+package example.app
 
-import wrappers.example.hooks.usePhotosOrNull
+import example.hooks.usePhotosOrNull
 
 fun useIsLoading(): Boolean =
     usePhotosOrNull() == null

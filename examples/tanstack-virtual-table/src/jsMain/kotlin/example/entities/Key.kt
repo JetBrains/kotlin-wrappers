@@ -1,3 +1,3 @@
-package wrappers.example.entities
+package example.entities
 
 typealias Key = String
