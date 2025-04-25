@@ -1,4 +1,4 @@
-package example.table.selection
+package example.components.table.selection
 
 import preact.signals.core.ReadonlySignal
 import preact.signals.react.useComputed

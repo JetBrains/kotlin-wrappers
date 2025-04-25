@@ -1,15 +1,15 @@
 package example.table
 
-import example.table.selection.SelectionContext
-import example.table.selection.selection
-import example.table.simple.SimpleTable
+import example.components.table.base.Table
+import example.components.table.selection.SelectionContext
+import example.components.table.selection.selection
 import react.FC
 
 internal val PhotoTable = FC {
     val table = usePhotoTable()
 
     SelectionContext(table.meta.selection) {
-        SimpleTable {
+        Table {
             headerGroups = table.headerGroups
             rows = table.rows
         }

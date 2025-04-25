@@ -1,10 +1,10 @@
 package example.table
 
+import example.components.table.base.TableInstance
+import example.components.table.base.useTable
+import example.components.table.selection.createSelectionColumn
 import example.entities.Photo
 import example.hooks.usePhotos
-import example.table.selection.createSelectionColumn
-import example.table.simple.TableInstance
-import example.table.simple.useSimpleTable
 import js.array.ReadonlyArray
 import js.objects.unsafeJso
 import tanstack.table.core.ColumnDef
@@ -33,7 +33,7 @@ internal fun usePhotoTable(): TableInstance<Photo> {
     val users = usePhotos()
     val tableMeta = useTableMeta()
 
-    val table = useSimpleTable(
+    val table = useTable(
         data = users,
         columns = COLUMNS,
         meta = tableMeta,

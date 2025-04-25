@@ -1,4 +1,4 @@
-package example.table.simple
+package example.components.table.base
 
 import emotion.styled.styled
 import example.theme.Theme
@@ -17,20 +17,20 @@ import web.cssom.LineStyle.Companion.solid
 import web.cssom.WhiteSpace
 import web.cssom.px
 
-internal external interface SimpleTableProps<D : Any> : Props {
+internal external interface TableProps<D : Any> : Props {
     var headerGroups: ReadonlyArray<HeaderGroup<D>>
     var rows: ReadonlyArray<Row<D>>
 }
 
-internal fun <D : Any> ChildrenBuilder.SimpleTable(block: @ReactDsl SimpleTableProps<D>.() -> Unit) {
-    SimpleTable.invoke(block)
+internal fun <D : Any> ChildrenBuilder.Table(block: @ReactDsl TableProps<D>.() -> Unit) {
+    Table.invoke(block)
 }
 
-private val SimpleTable: FC<SimpleTableProps<*>> = FC { props ->
-    SimpleTable(props)
+private val Table: FC<TableProps<*>> = FC { props ->
+    Table(props)
 }
 
-private fun <D : Any> ChildrenBuilder.SimpleTable(props: SimpleTableProps<D>) {
+private fun <D : Any> ChildrenBuilder.Table(props: TableProps<D>) {
     TableBase {
         TableHead {
             value = props.headerGroups
