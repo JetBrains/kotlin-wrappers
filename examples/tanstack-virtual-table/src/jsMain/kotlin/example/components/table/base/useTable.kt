@@ -12,7 +12,6 @@ internal fun <D : Any> useTable(
     data: ReadonlyArray<D>,
     columns: ReadonlyArray<ColumnDef<D, *>>,
     meta: TableMeta,
-    settings: TableSettings<D>? = null,
 ): TableInstance<D> {
     val table = useReactTable(
         options = TableOptions(
@@ -20,7 +19,6 @@ internal fun <D : Any> useTable(
             columns = columns,
             meta = meta,
             getCoreRowModel = getCoreRowModel(),
-            getRowId = settings?.getRowId,
         ),
     )
 
