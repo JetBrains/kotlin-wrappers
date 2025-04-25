@@ -2,7 +2,7 @@ package example.app
 
 import emotion.react.css
 import example.components.LoadingIndicator
-import example.list.PhotoList
+import example.table.PhotoTable
 import react.FC
 import react.dom.html.ReactHTML.div
 import web.cssom.Display
@@ -20,7 +20,7 @@ val Content = FC {
         }
 
         if (!loading) {
-            PhotoList()
+            PhotoTable()
         } else {
             LoadingIndicator()
         }
