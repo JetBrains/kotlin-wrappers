@@ -32,8 +32,6 @@ private val SimpleTable: FC<SimpleTableProps<*>> = FC { props ->
 
 private fun <D : Any> ChildrenBuilder.SimpleTable(props: SimpleTableProps<D>) {
     TableBase {
-        TableStyles()
-
         TableHead {
             value = props.headerGroups
         }
