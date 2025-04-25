@@ -1,4 +1,4 @@
-package example.table.simple
+package example.components.table.base
 
 import js.array.ReadonlyArray
 import tanstack.table.core.HeaderGroup

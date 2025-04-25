@@ -137,6 +137,10 @@ external interface ARIAMixin {
     var ariaHidden: String?
         get() = definedExternally
         set(value) = definedExternally
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/ariaInvalid)
+     */
     var ariaInvalid: String?
         get() = definedExternally
         set(value) = definedExternally

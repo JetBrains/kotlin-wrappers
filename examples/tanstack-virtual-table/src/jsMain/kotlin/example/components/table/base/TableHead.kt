@@ -1,4 +1,4 @@
-package example.table.simple
+package example.components.table.base
 
 import emotion.styled.styled
 import example.theme.Theme

@@ -1,6 +1,6 @@
 package example.table
 
-import example.table.selection.useTableSelection
+import example.components.table.selection.useTableSelection
 import js.objects.recordOf
 import react.use.useConstant
 import tanstack.table.core.TableMeta
