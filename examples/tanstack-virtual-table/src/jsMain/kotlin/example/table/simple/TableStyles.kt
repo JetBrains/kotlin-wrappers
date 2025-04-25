@@ -5,8 +5,12 @@ import react.Props
 import react.dom.html.ReactHTML
 
 private const val STYLES = """
-   .row-1 {
-        background-color: green;
+    table {
+       tbody {
+           tr.row-1 {
+                background-color: green;
+           }
+       }
     }
 """
 
