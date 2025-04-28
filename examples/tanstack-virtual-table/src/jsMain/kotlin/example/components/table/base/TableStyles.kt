@@ -2,7 +2,7 @@ package example.table.simple
 
 import react.FC
 import react.Props
-import react.dom.html.ReactHTML
+import react.dom.html.ReactHTML.style
 
 private const val STYLES = """
     table {
@@ -15,7 +15,7 @@ private const val STYLES = """
 """
 
 internal val TableStyles: FC<Props> = FC {
-    ReactHTML.style {
+    style {
         +STYLES
     }
 }
