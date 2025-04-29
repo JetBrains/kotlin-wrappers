@@ -8,6 +8,7 @@ import react.ChildrenBuilder
 import react.FC
 import react.Props
 import react.ReactDsl
+import react.dom.html.ReactHTML.div
 import react.dom.html.ReactHTML.table
 import tanstack.table.core.HeaderGroup
 import tanstack.table.core.Row
@@ -32,18 +33,22 @@ private val Table: FC<TableProps<*>> = FC { props ->
 }
 
 private fun <D : Any> ChildrenBuilder.Table(props: TableProps<D>) {
-    TableStyles()
+    Container {
+        TableStyles()
 
-    TableBase {
-        TableHead {
-            value = props.headerGroups
-        }
+        TableBase {
+            TableHead {
+                value = props.headerGroups
+            }
 
-        TableBody {
-            value = props.rows
+            TableBody {
+                value = props.rows
+            }
         }
     }
 }
+
+private val Container = div
 
 private val TableBase = table.styled {
     width = 400.px
