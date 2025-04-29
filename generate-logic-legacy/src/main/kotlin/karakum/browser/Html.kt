@@ -805,9 +805,6 @@ internal fun convertInterface(
         "ElementDefinitionOptions",
             -> declaration.replaceFirst("ElementDefinitionOptions", "ElementDefinitionOptions<T : HTMLElement>")
 
-        "RadioNodeList",
-            -> declaration.replaceFirst(" extends NodeList", " :\nNodeList<HTMLElement>")
-
         else -> {
             declaration
                 .replace(" extends ", " :\n")
