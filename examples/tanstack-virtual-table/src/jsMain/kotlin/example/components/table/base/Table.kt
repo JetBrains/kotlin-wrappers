@@ -1,6 +1,7 @@
 package example.components.table.base
 
 import emotion.styled.styled
+import example.table.simple.TableStyles
 import example.theme.Theme
 import js.array.ReadonlyArray
 import react.ChildrenBuilder
@@ -31,6 +32,8 @@ private val Table: FC<TableProps<*>> = FC { props ->
 }
 
 private fun <D : Any> ChildrenBuilder.Table(props: TableProps<D>) {
+    TableStyles()
+
     TableBase {
         TableHead {
             value = props.headerGroups
