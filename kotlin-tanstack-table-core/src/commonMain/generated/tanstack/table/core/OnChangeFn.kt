@@ -2,4 +2,11 @@
 
 package tanstack.table.core
 
-typealias OnChangeFn<T> = (updaterOrValue: Updater<T>) -> Unit
+import js.reflect.unsafeSpecialCast
+
+sealed external interface OnChangeFn<T> /* (updaterOrValue: Updater<T>) -> void */
+
+inline fun <T> OnChangeFn(
+    noinline source: (updaterOrValue: Updater<T>) -> Unit,
+): OnChangeFn<T> =
+    unsafeSpecialCast(source)

@@ -233,7 +233,7 @@ private fun convertTypealias(
         )
     }
 
-    if (" | " in body) {
+    if (" | " in body || name == "OnChangeFn") {
         when (name) {
             "ColumnDef",
             "ColumnIdentifiers",
@@ -272,6 +272,7 @@ private fun convertTypealias(
                         .replace("number", "Number")
                         .replace("symbol", "Symbol")
                         .replace("boolean", "Boolean")
+                        .replace("void", "Unit")
                         .replace("any", "Any?") // No element
                 }
             }
