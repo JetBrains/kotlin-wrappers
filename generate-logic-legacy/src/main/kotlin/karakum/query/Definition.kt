@@ -171,18 +171,18 @@ fun toDeclarations(
             """
                 declare function streamedQuery<TQueryFnData = unknown, TQueryKey extends QueryKey = QueryKey>({ queryFn, refetchMode, }: {
                     queryFn: (context: QueryFunctionContext<TQueryKey>) => AsyncIterable<TQueryFnData> | Promise<AsyncIterable<TQueryFnData>>;
-                    refetchMode?: 'append' | 'reset';
+                    refetchMode?: 'append' | 'reset' | 'replace';
                 }): QueryFunction<Array<TQueryFnData>, TQueryKey>;
             """.trimIndent(),
             """
-                type RefetchMode = 'append' | 'reset';
+                declare function streamedQuery<TQueryFnData, TQueryKey extends QueryKey>(options: StreamedQueryOptions<TQueryFnData, TQueryKey>): QueryFunction<Array<TQueryFnData>, TQueryKey, *>
+
+                type RefetchMode = 'append' | 'reset' | 'replace';
 
                 interface StreamedQueryOptions<TQueryFnData, TQueryKey extends QueryKey> {
                     queryFn: (QueryFunctionContext<TQueryKey, *>) => AsyncIterable<TQueryFnData>
                     refetchMode?: RefetchMode
                 }
-
-                declare function streamedQuery<TQueryFnData, TQueryKey extends QueryKey>(options: StreamedQueryOptions<TQueryFnData, TQueryKey>): QueryFunction<Array<TQueryFnData>, TQueryKey, *>
             """.trimIndent(),
         )
 

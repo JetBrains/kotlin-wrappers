@@ -11,5 +11,8 @@ sealed external interface RefetchMode {
 
         @JsValue("reset")
         val reset: RefetchMode
+
+        @JsValue("replace")
+        val replace: RefetchMode
     }
 }
