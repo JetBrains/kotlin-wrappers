@@ -6,5 +6,5 @@ import js.reflect.JsClass
 import js.reflect.JsExternalInheritorsOnly
 
 @JsExternalInheritorsOnly
-external interface JsConstructorFunction<in A : JsTuple, R : JsAny> :
+external interface ConstructorFunction<in A : JsTuple, R : JsAny> :
     JsClass<R>

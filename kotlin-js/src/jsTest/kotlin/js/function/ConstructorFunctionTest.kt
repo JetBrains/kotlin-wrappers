@@ -9,23 +9,23 @@ class X {
     var value: String = "test"
 }
 
-class JsConstructorFunctionTest {
+class ConstructorFunctionTest {
 
     @Test
     fun testReifiedKClassAdapter() {
-        val result = JsConstructorFunction<JsTuple, X>()()
+        val result = ConstructorFunction<JsTuple, X>()()
         assertEquals("test", result.value)
     }
 
     @Test
     fun testKClassAdapter() {
-        val result = JsConstructorFunction<JsTuple, _>(X::class)()
+        val result = ConstructorFunction<JsTuple, _>(X::class)()
         assertEquals("test", result.value)
     }
 
     @Test
     fun testJsClassAdapter() {
-        val result = JsConstructorFunction<JsTuple, _>(X::class.js)()
+        val result = ConstructorFunction<JsTuple, _>(X::class.js)()
         assertEquals("test", result.value)
     }
 }
