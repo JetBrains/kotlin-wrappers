@@ -264,7 +264,7 @@ external class ImageryLayer(
      *   `function(frameState, layer, x, y, level)`.  The function is passed the
      *   current frame state, this layer, and the x, y, and level coordinates
      *   of the imagery tile for which the hue is required, and it is expected to return
-     *   the contrast value to use for the tile.  The function is executed for every
+     *   the hue value to use for the tile.  The function is executed for every
      *   frame and for every tile, so it must be fast.
      *   Default value - `0.0`
      * @property [saturation] The saturation of this layer.  1.0 uses the unmodified imagery color.
@@ -273,7 +273,7 @@ external class ImageryLayer(
      *   `function(frameState, layer, x, y, level)`.  The function is passed the
      *   current frame state, this layer, and the x, y, and level coordinates
      *   of the imagery tile for which the saturation is required, and it is expected to return
-     *   the contrast value to use for the tile.  The function is executed for every
+     *   the saturation value to use for the tile.  The function is executed for every
      *   frame and for every tile, so it must be fast.
      *   Default value - `1.0`
      * @property [gamma] The gamma correction to apply to this layer.  1.0 uses the unmodified imagery color.

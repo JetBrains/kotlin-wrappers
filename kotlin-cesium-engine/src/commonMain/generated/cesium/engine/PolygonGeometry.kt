@@ -206,13 +206,14 @@ external class PolygonGeometry(
          * @param [startingIndex] The starting index of the element to be unpacked.
          *   Default value - `0`
          * @param [result] The object into which to store the result.
+         * @return The modified result parameter or a new PolygonGeometry instance if one was not provided.
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PolygonGeometry.html#.unpack">Online Documentation</a>
          */
         fun unpack(
             array: ReadonlyArray<Double>,
             startingIndex: Int? = definedExternally,
             result: PolygonGeometry? = definedExternally,
-        )
+        ): PolygonGeometry
 
         /**
          * Computes a rectangle which encloses the polygon defined by the list of positions, including cases over the international date line and the poles.

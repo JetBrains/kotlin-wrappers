@@ -72,7 +72,7 @@ external class RectangleOutlineGeometry(
          * @param [startingIndex] The starting index of the element to be unpacked.
          *   Default value - `0`
          * @param [result] The object into which to store the result.
-         * @return The modified result parameter or a new Quaternion instance if one was not provided.
+         * @return The modified result parameter or a new RectangleOutlineGeometry instance if one was not provided.
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/RectangleOutlineGeometry.html#.unpack">Online Documentation</a>
          */
         override fun unpack(
