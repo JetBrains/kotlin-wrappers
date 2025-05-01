@@ -9,7 +9,7 @@ internal const val FUNCTION: String = "Function"
 
 @JsName(FUNCTION)
 @JsExternalInheritorsOnly
-open external class JsContextFunction<in C : JsAny?, in A : JsTuple, out R : JsAny?>(
+open external class ContextFunction<in C : JsAny?, in A : JsTuple, out R : JsAny?>(
     vararg parameterNames: String,
     body: String,
 )

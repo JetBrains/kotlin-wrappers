@@ -13,7 +13,7 @@ private external interface Merger_0 {
     var b: Int
 
     @JsName("merge")
-    var mergeNative: JsContextFunction<Merger_0, JsTuple, String>
+    var mergeNative: ContextFunction<Merger_0, JsTuple, String>
 
     fun merge(): String
 }
@@ -23,7 +23,7 @@ private external interface Merger_1 {
     var b: Int
 
     @JsName("merge")
-    var mergeNative: JsContextFunction<Merger_1, JsTuple1<String>, String>
+    var mergeNative: ContextFunction<Merger_1, JsTuple1<String>, String>
 
     fun merge(p1: String): String
 }
@@ -33,7 +33,7 @@ private external interface Merger_2 {
     var b: Int
 
     @JsName("merge")
-    var mergeNative: JsContextFunction<Merger_2, JsTuple2<String, String>, String>
+    var mergeNative: ContextFunction<Merger_2, JsTuple2<String, String>, String>
 
     fun merge(p1: String, p2: String): String
 }
@@ -43,12 +43,12 @@ private external interface Merger_5 {
     var b: Int
 
     @JsName("merge")
-    var mergeNative: JsContextFunction<Merger_5, JsTuple5<String, String, String, String, String>, String>
+    var mergeNative: ContextFunction<Merger_5, JsTuple5<String, String, String, String, String>, String>
 
     fun merge(p1: String, p2: String, p3: String, p4: String, p5: String): String
 }
 
-class JsContextFunctionTest {
+class ContextFunctionTest {
     @Test
     fun adapter_0() {
         val merger: Merger_0 = unsafeJso {
@@ -56,7 +56,7 @@ class JsContextFunctionTest {
             b = 42
         }
 
-        merger.mergeNative = JsContextFunction<Merger_0, String> {
+        merger.mergeNative = ContextFunction<Merger_0, String> {
             "a = $a, b = $b"
         }
 
@@ -73,7 +73,7 @@ class JsContextFunctionTest {
             b = 42
         }
 
-        merger.mergeNative = JsContextFunction { p1 ->
+        merger.mergeNative = ContextFunction { p1 ->
             "a = $a, b = $b, p1 = $p1"
         }
 
@@ -90,7 +90,7 @@ class JsContextFunctionTest {
             b = 42
         }
 
-        merger.mergeNative = JsContextFunction { p1, p2 ->
+        merger.mergeNative = ContextFunction { p1, p2 ->
             "a = $a, b = $b, p1 = $p1, p2 = $p2"
         }
 
@@ -107,7 +107,7 @@ class JsContextFunctionTest {
             b = 42
         }
 
-        merger.mergeNative = JsContextFunction { p1, p2, p3, p4, p5 ->
+        merger.mergeNative = ContextFunction { p1, p2, p3, p4, p5 ->
             "a = $a, b = $b, p1 = $p1, p2 = $p2, p3 = $p3, p4 = $p4, p5 = $p5"
         }
 
