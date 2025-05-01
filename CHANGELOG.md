@@ -1,3 +1,12 @@
+## 2025.5.1
+
+**BREAKING CHANGE**
+
+* Redundant `Js` prefix removed from types:
+    * `JsTuple*` -> `Tuple*`
+    * `JsContextFunction` -> `ContextFunction`
+    * `JsConstructorFunction` -> `ConstructorFunction`
+
 ## 2025.4.0
 
 * Split `kotlin-emotion` (1 subproject for 1 NPM library):
