@@ -1,15 +1,16 @@
 package js.function
 
 import js.array.*
+import js.core.JsAny
 import js.reflect.Reflect
 
-inline operator fun <R : Any> ConstructorFunction<Tuple, R>.invoke(): R =
+inline operator fun <R : JsAny> ConstructorFunction<Tuple, R>.invoke(): R =
     Reflect.construct(
         target = this,
         argumentsList = emptyTuple(),
     )
 
-inline operator fun <P1, R : Any> ConstructorFunction<Tuple1<P1>, R>.invoke(
+inline operator fun <P1 : JsAny?, R : JsAny> ConstructorFunction<Tuple1<P1>, R>.invoke(
     p1: P1,
 ): R =
     Reflect.construct(
@@ -17,7 +18,7 @@ inline operator fun <P1, R : Any> ConstructorFunction<Tuple1<P1>, R>.invoke(
         argumentsList = tupleOf(p1),
     )
 
-inline operator fun <P1, P2, R : Any> ConstructorFunction<Tuple2<P1, P2>, R>.invoke(
+inline operator fun <P1 : JsAny?, P2 : JsAny?, R : JsAny> ConstructorFunction<Tuple2<P1, P2>, R>.invoke(
     p1: P1,
     p2: P2,
 ): R =
@@ -27,7 +28,7 @@ inline operator fun <P1, P2, R : Any> ConstructorFunction<Tuple2<P1, P2>, R>.inv
     )
 
 
-inline operator fun <P1, P2, P3, R : Any> ConstructorFunction<Tuple3<P1, P2, P3>, R>.invoke(
+inline operator fun <P1 : JsAny?, P2 : JsAny?, P3 : JsAny?, R : JsAny> ConstructorFunction<Tuple3<P1, P2, P3>, R>.invoke(
     p1: P1,
     p2: P2,
     p3: P3,
@@ -38,7 +39,7 @@ inline operator fun <P1, P2, P3, R : Any> ConstructorFunction<Tuple3<P1, P2, P3>
     )
 
 
-inline operator fun <P1, P2, P3, P4, R : Any> ConstructorFunction<Tuple4<P1, P2, P3, P4>, R>.invoke(
+inline operator fun <P1 : JsAny?, P2 : JsAny?, P3 : JsAny?, P4 : JsAny?, R : JsAny> ConstructorFunction<Tuple4<P1, P2, P3, P4>, R>.invoke(
     p1: P1,
     p2: P2,
     p3: P3,
@@ -50,7 +51,7 @@ inline operator fun <P1, P2, P3, P4, R : Any> ConstructorFunction<Tuple4<P1, P2,
     )
 
 
-inline operator fun <P1, P2, P3, P4, P5, R : Any> ConstructorFunction<Tuple5<P1, P2, P3, P4, P5>, R>.invoke(
+inline operator fun <P1 : JsAny?, P2 : JsAny?, P3 : JsAny?, P4 : JsAny?, P5 : JsAny?, R : JsAny> ConstructorFunction<Tuple5<P1, P2, P3, P4, P5>, R>.invoke(
     p1: P1,
     p2: P2,
     p3: P3,
@@ -63,7 +64,7 @@ inline operator fun <P1, P2, P3, P4, P5, R : Any> ConstructorFunction<Tuple5<P1,
     )
 
 
-inline operator fun <P1, P2, P3, P4, P5, P6, R : Any> ConstructorFunction<Tuple6<P1, P2, P3, P4, P5, P6>, R>.invoke(
+inline operator fun <P1 : JsAny?, P2 : JsAny?, P3 : JsAny?, P4 : JsAny?, P5 : JsAny?, P6 : JsAny?, R : JsAny> ConstructorFunction<Tuple6<P1, P2, P3, P4, P5, P6>, R>.invoke(
     p1: P1,
     p2: P2,
     p3: P3,
@@ -77,7 +78,7 @@ inline operator fun <P1, P2, P3, P4, P5, P6, R : Any> ConstructorFunction<Tuple6
     )
 
 
-inline operator fun <P1, P2, P3, P4, P5, P6, P7, R : Any> ConstructorFunction<Tuple7<P1, P2, P3, P4, P5, P6, P7>, R>.invoke(
+inline operator fun <P1 : JsAny?, P2 : JsAny?, P3 : JsAny?, P4 : JsAny?, P5 : JsAny?, P6 : JsAny?, P7 : JsAny?, R : JsAny> ConstructorFunction<Tuple7<P1, P2, P3, P4, P5, P6, P7>, R>.invoke(
     p1: P1,
     p2: P2,
     p3: P3,
