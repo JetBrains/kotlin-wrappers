@@ -269,26 +269,26 @@ sealed external interface Http2Session : EventEmitter {
     ) /* this */
 
     @web.events.JsEvent("close")
-    val closeEvent: node.events.EventInstance<js.array.JsTuple>
+    val closeEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("error")
-    val errorEvent: node.events.EventInstance<js.array.JsTuple1<js.errors.JsError>>
+    val errorEvent: node.events.EventInstance<js.array.Tuple1<js.errors.JsError>>
 
     @web.events.JsEvent("frameError")
-    val frameErrorEvent: node.events.EventInstance<js.array.JsTuple3<Double, Double, Double>>
+    val frameErrorEvent: node.events.EventInstance<js.array.Tuple3<Double, Double, Double>>
 
     @web.events.JsEvent("goaway")
-    val goawayEvent: node.events.EventInstance<js.array.JsTuple3<Double, Double, node.buffer.Buffer<*>>>
+    val goawayEvent: node.events.EventInstance<js.array.Tuple3<Double, Double, node.buffer.Buffer<*>>>
 
     @web.events.JsEvent("localSettings")
-    val localSettingsEvent: node.events.EventInstance<js.array.JsTuple1<Settings>>
+    val localSettingsEvent: node.events.EventInstance<js.array.Tuple1<Settings>>
 
     @web.events.JsEvent("ping")
-    val pingEvent: node.events.EventInstance<js.array.JsTuple>
+    val pingEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("remoteSettings")
-    val remoteSettingsEvent: node.events.EventInstance<js.array.JsTuple1<Settings>>
+    val remoteSettingsEvent: node.events.EventInstance<js.array.Tuple1<Settings>>
 
     @web.events.JsEvent("timeout")
-    val timeoutEvent: node.events.EventInstance<js.array.JsTuple>
+    val timeoutEvent: node.events.EventInstance<js.array.Tuple>
 }

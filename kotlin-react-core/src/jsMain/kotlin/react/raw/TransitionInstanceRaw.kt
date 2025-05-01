@@ -1,5 +1,5 @@
 package react.raw
 
-import js.array.JsTuple2
+import js.array.Tuple2
 
-typealias TransitionInstanceRaw = JsTuple2<Boolean, TransitionStartFunctionRaw>
+typealias TransitionInstanceRaw = Tuple2<Boolean, TransitionStartFunctionRaw>

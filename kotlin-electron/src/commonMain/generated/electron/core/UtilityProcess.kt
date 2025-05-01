@@ -93,16 +93,16 @@ external class UtilityProcess : NodeEventEmitter {
     var stdout: node.ReadableStream?
 
     @web.events.JsEvent("error")
-    val errorEvent: node.events.EventInstance<js.array.JsTuple3<(String /* 'FatalError' */), String, String>>
+    val errorEvent: node.events.EventInstance<js.array.Tuple3<(String /* 'FatalError' */), String, String>>
 
     @web.events.JsEvent("exit")
-    val exitEvent: node.events.EventInstance<js.array.JsTuple1<Double>>
+    val exitEvent: node.events.EventInstance<js.array.Tuple1<Double>>
 
     @web.events.JsEvent("message")
-    val messageEvent: node.events.EventInstance<js.array.JsTuple1<Any?>>
+    val messageEvent: node.events.EventInstance<js.array.Tuple1<Any?>>
 
     @web.events.JsEvent("spawn")
-    val spawnEvent: node.events.EventInstance<js.array.JsTuple>
+    val spawnEvent: node.events.EventInstance<js.array.Tuple>
 
     companion object {
         // Docs: https://electronjs.org/docs/api/utility-process

@@ -2,7 +2,7 @@
 
 package tanstack.table.core
 
-import js.array.JsTuple2
+import js.array.Tuple2
 import js.collections.JsMap
 import js.objects.JsPlainObject
 
@@ -14,7 +14,7 @@ external interface FacetedColumn<TData : RowData> {
      * [API Docs](https://tanstack.com/table/v8/docs/api/features/column-faceting#getfacetedminmaxvalues)
      * [Guide](https://tanstack.com/table/v8/docs/guide/column-faceting)
      */
-    val getFacetedMinMaxValues: () -> JsTuple2<Int, Int>?
+    val getFacetedMinMaxValues: () -> Tuple2<Int, Int>?
 
     /**
      * Returns the row model with all other column filters applied, excluding its own filter. Useful for displaying faceted result counts.

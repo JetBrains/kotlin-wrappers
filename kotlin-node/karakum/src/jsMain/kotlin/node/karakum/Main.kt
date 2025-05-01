@@ -669,8 +669,8 @@ suspend fun main() {
                 "js.array.ReadonlyArray"
             ),
             "events/EventEmitter.kt" to arrayOf(
-                "js.array.JsTuple",
-                "js.array.JsTuple1",
+                "js.array.Tuple",
+                "js.array.Tuple1",
                 "js.disposable.Disposable",
                 "js.iterable.AsyncIterator",
                 "js.promise.Promise",
@@ -679,7 +679,7 @@ suspend fun main() {
                 "web.events.EventTarget"
             ),
             "events/EventEmitter.ext.kt" to arrayOf(
-                "js.array.JsTuple"
+                "js.array.Tuple"
             ),
             "events/StaticEventEmitterOptions.kt" to arrayOf(
                 "web.abort.AbortSignal"

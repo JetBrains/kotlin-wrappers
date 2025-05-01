@@ -1513,98 +1513,98 @@ external class _Session : EventEmitter {
      */
 
     @web.events.JsEvent("inspectorNotification")
-    val inspectorNotificationEvent: node.events.EventInstance<js.array.JsTuple1<InspectorNotification<Any>>>
+    val inspectorNotificationEvent: node.events.EventInstance<js.array.Tuple1<InspectorNotification<Any>>>
 
     @web.events.JsEvent("Runtime.executionContextCreated")
-    val RuntimeExecutionContextCreatedEvent: node.events.EventInstance<js.array.JsTuple1<InspectorNotification<node.inspector.runtime.ExecutionContextCreatedEventDataType>>>
+    val RuntimeExecutionContextCreatedEvent: node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.runtime.ExecutionContextCreatedEventDataType>>>
 
     @web.events.JsEvent("Runtime.executionContextDestroyed")
-    val RuntimeExecutionContextDestroyedEvent: node.events.EventInstance<js.array.JsTuple1<InspectorNotification<node.inspector.runtime.ExecutionContextDestroyedEventDataType>>>
+    val RuntimeExecutionContextDestroyedEvent: node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.runtime.ExecutionContextDestroyedEventDataType>>>
 
     @web.events.JsEvent("Runtime.executionContextsCleared")
-    val RuntimeExecutionContextsClearedEvent: node.events.EventInstance<js.array.JsTuple>
+    val RuntimeExecutionContextsClearedEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("Runtime.exceptionThrown")
-    val RuntimeExceptionThrownEvent: node.events.EventInstance<js.array.JsTuple1<InspectorNotification<node.inspector.runtime.ExceptionThrownEventDataType>>>
+    val RuntimeExceptionThrownEvent: node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.runtime.ExceptionThrownEventDataType>>>
 
     @web.events.JsEvent("Runtime.exceptionRevoked")
-    val RuntimeExceptionRevokedEvent: node.events.EventInstance<js.array.JsTuple1<InspectorNotification<node.inspector.runtime.ExceptionRevokedEventDataType>>>
+    val RuntimeExceptionRevokedEvent: node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.runtime.ExceptionRevokedEventDataType>>>
 
     @web.events.JsEvent("Runtime.consoleAPICalled")
-    val RuntimeConsoleAPICalledEvent: node.events.EventInstance<js.array.JsTuple1<InspectorNotification<node.inspector.runtime.ConsoleAPICalledEventDataType>>>
+    val RuntimeConsoleAPICalledEvent: node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.runtime.ConsoleAPICalledEventDataType>>>
 
     @web.events.JsEvent("Runtime.inspectRequested")
-    val RuntimeInspectRequestedEvent: node.events.EventInstance<js.array.JsTuple1<InspectorNotification<node.inspector.runtime.InspectRequestedEventDataType>>>
+    val RuntimeInspectRequestedEvent: node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.runtime.InspectRequestedEventDataType>>>
 
     @web.events.JsEvent("Debugger.scriptParsed")
-    val DebuggerScriptParsedEvent: node.events.EventInstance<js.array.JsTuple1<InspectorNotification<node.inspector.debugger.ScriptParsedEventDataType>>>
+    val DebuggerScriptParsedEvent: node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.debugger.ScriptParsedEventDataType>>>
 
     @web.events.JsEvent("Debugger.scriptFailedToParse")
-    val DebuggerScriptFailedToParseEvent: node.events.EventInstance<js.array.JsTuple1<InspectorNotification<node.inspector.debugger.ScriptFailedToParseEventDataType>>>
+    val DebuggerScriptFailedToParseEvent: node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.debugger.ScriptFailedToParseEventDataType>>>
 
     @web.events.JsEvent("Debugger.breakpointResolved")
-    val DebuggerBreakpointResolvedEvent: node.events.EventInstance<js.array.JsTuple1<InspectorNotification<node.inspector.debugger.BreakpointResolvedEventDataType>>>
+    val DebuggerBreakpointResolvedEvent: node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.debugger.BreakpointResolvedEventDataType>>>
 
     @web.events.JsEvent("Debugger.paused")
-    val DebuggerPausedEvent: node.events.EventInstance<js.array.JsTuple1<InspectorNotification<node.inspector.debugger.PausedEventDataType>>>
+    val DebuggerPausedEvent: node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.debugger.PausedEventDataType>>>
 
     @web.events.JsEvent("Debugger.resumed")
-    val DebuggerResumedEvent: node.events.EventInstance<js.array.JsTuple>
+    val DebuggerResumedEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("Console.messageAdded")
-    val ConsoleMessageAddedEvent: node.events.EventInstance<js.array.JsTuple1<InspectorNotification<node.inspector.console.MessageAddedEventDataType>>>
+    val ConsoleMessageAddedEvent: node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.console.MessageAddedEventDataType>>>
 
     @web.events.JsEvent("Profiler.consoleProfileStarted")
-    val ProfilerConsoleProfileStartedEvent: node.events.EventInstance<js.array.JsTuple1<InspectorNotification<node.inspector.profiler.ConsoleProfileStartedEventDataType>>>
+    val ProfilerConsoleProfileStartedEvent: node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.profiler.ConsoleProfileStartedEventDataType>>>
 
     @web.events.JsEvent("Profiler.consoleProfileFinished")
-    val ProfilerConsoleProfileFinishedEvent: node.events.EventInstance<js.array.JsTuple1<InspectorNotification<node.inspector.profiler.ConsoleProfileFinishedEventDataType>>>
+    val ProfilerConsoleProfileFinishedEvent: node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.profiler.ConsoleProfileFinishedEventDataType>>>
 
     @web.events.JsEvent("HeapProfiler.addHeapSnapshotChunk")
-    val HeapProfilerAddHeapSnapshotChunkEvent: node.events.EventInstance<js.array.JsTuple1<InspectorNotification<node.inspector.heapprofiler.AddHeapSnapshotChunkEventDataType>>>
+    val HeapProfilerAddHeapSnapshotChunkEvent: node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.heapprofiler.AddHeapSnapshotChunkEventDataType>>>
 
     @web.events.JsEvent("HeapProfiler.resetProfiles")
-    val HeapProfilerResetProfilesEvent: node.events.EventInstance<js.array.JsTuple>
+    val HeapProfilerResetProfilesEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("HeapProfiler.reportHeapSnapshotProgress")
-    val HeapProfilerReportHeapSnapshotProgressEvent: node.events.EventInstance<js.array.JsTuple1<InspectorNotification<node.inspector.heapprofiler.ReportHeapSnapshotProgressEventDataType>>>
+    val HeapProfilerReportHeapSnapshotProgressEvent: node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.heapprofiler.ReportHeapSnapshotProgressEventDataType>>>
 
     @web.events.JsEvent("HeapProfiler.lastSeenObjectId")
-    val HeapProfilerLastSeenObjectIdEvent: node.events.EventInstance<js.array.JsTuple1<InspectorNotification<node.inspector.heapprofiler.LastSeenObjectIdEventDataType>>>
+    val HeapProfilerLastSeenObjectIdEvent: node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.heapprofiler.LastSeenObjectIdEventDataType>>>
 
     @web.events.JsEvent("HeapProfiler.heapStatsUpdate")
-    val HeapProfilerHeapStatsUpdateEvent: node.events.EventInstance<js.array.JsTuple1<InspectorNotification<node.inspector.heapprofiler.HeapStatsUpdateEventDataType>>>
+    val HeapProfilerHeapStatsUpdateEvent: node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.heapprofiler.HeapStatsUpdateEventDataType>>>
 
     @web.events.JsEvent("NodeTracing.dataCollected")
-    val NodeTracingDataCollectedEvent: node.events.EventInstance<js.array.JsTuple1<InspectorNotification<node.inspector.nodetracing.DataCollectedEventDataType>>>
+    val NodeTracingDataCollectedEvent: node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.nodetracing.DataCollectedEventDataType>>>
 
     @web.events.JsEvent("NodeTracing.tracingComplete")
-    val NodeTracingTracingCompleteEvent: node.events.EventInstance<js.array.JsTuple>
+    val NodeTracingTracingCompleteEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("NodeWorker.attachedToWorker")
-    val NodeWorkerAttachedToWorkerEvent: node.events.EventInstance<js.array.JsTuple1<InspectorNotification<node.inspector.nodeworker.AttachedToWorkerEventDataType>>>
+    val NodeWorkerAttachedToWorkerEvent: node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.nodeworker.AttachedToWorkerEventDataType>>>
 
     @web.events.JsEvent("NodeWorker.detachedFromWorker")
-    val NodeWorkerDetachedFromWorkerEvent: node.events.EventInstance<js.array.JsTuple1<InspectorNotification<node.inspector.nodeworker.DetachedFromWorkerEventDataType>>>
+    val NodeWorkerDetachedFromWorkerEvent: node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.nodeworker.DetachedFromWorkerEventDataType>>>
 
     @web.events.JsEvent("NodeWorker.receivedMessageFromWorker")
-    val NodeWorkerReceivedMessageFromWorkerEvent: node.events.EventInstance<js.array.JsTuple1<InspectorNotification<node.inspector.nodeworker.ReceivedMessageFromWorkerEventDataType>>>
+    val NodeWorkerReceivedMessageFromWorkerEvent: node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.nodeworker.ReceivedMessageFromWorkerEventDataType>>>
 
     @web.events.JsEvent("Network.requestWillBeSent")
-    val NetworkRequestWillBeSentEvent: node.events.EventInstance<js.array.JsTuple1<InspectorNotification<node.inspector.network.RequestWillBeSentEventDataType>>>
+    val NetworkRequestWillBeSentEvent: node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.network.RequestWillBeSentEventDataType>>>
 
     @web.events.JsEvent("Network.responseReceived")
-    val NetworkResponseReceivedEvent: node.events.EventInstance<js.array.JsTuple1<InspectorNotification<node.inspector.network.ResponseReceivedEventDataType>>>
+    val NetworkResponseReceivedEvent: node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.network.ResponseReceivedEventDataType>>>
 
     @web.events.JsEvent("Network.loadingFailed")
-    val NetworkLoadingFailedEvent: node.events.EventInstance<js.array.JsTuple1<InspectorNotification<node.inspector.network.LoadingFailedEventDataType>>>
+    val NetworkLoadingFailedEvent: node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.network.LoadingFailedEventDataType>>>
 
     @web.events.JsEvent("Network.loadingFinished")
-    val NetworkLoadingFinishedEvent: node.events.EventInstance<js.array.JsTuple1<InspectorNotification<node.inspector.network.LoadingFinishedEventDataType>>>
+    val NetworkLoadingFinishedEvent: node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.network.LoadingFinishedEventDataType>>>
 
     @web.events.JsEvent("NodeRuntime.waitingForDisconnect")
-    val NodeRuntimeWaitingForDisconnectEvent: node.events.EventInstance<js.array.JsTuple>
+    val NodeRuntimeWaitingForDisconnectEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("NodeRuntime.waitingForDebugger")
-    val NodeRuntimeWaitingForDebuggerEvent: node.events.EventInstance<js.array.JsTuple>
+    val NodeRuntimeWaitingForDebuggerEvent: node.events.EventInstance<js.array.Tuple>
 }

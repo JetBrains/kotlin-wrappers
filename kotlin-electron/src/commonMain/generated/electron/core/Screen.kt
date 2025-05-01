@@ -82,11 +82,11 @@ external interface Screen : node.events.EventEmitter {
     fun screenToDipRect(window: BrowserWindow?, rect: Rectangle): Rectangle
 
     @web.events.JsEvent("display-added")
-    val displayAddedEvent: node.events.EventInstance<js.array.JsTuple2<Event<*>, Display>>
+    val displayAddedEvent: node.events.EventInstance<js.array.Tuple2<Event<*>, Display>>
 
     @web.events.JsEvent("display-metrics-changed")
-    val displayMetricsChangedEvent: node.events.EventInstance<js.array.JsTuple3<Event<*>, Display, js.array.ReadonlyArray<String>>>
+    val displayMetricsChangedEvent: node.events.EventInstance<js.array.Tuple3<Event<*>, Display, js.array.ReadonlyArray<String>>>
 
     @web.events.JsEvent("display-removed")
-    val displayRemovedEvent: node.events.EventInstance<js.array.JsTuple2<Event<*>, Display>>
+    val displayRemovedEvent: node.events.EventInstance<js.array.Tuple2<Event<*>, Display>>
 }

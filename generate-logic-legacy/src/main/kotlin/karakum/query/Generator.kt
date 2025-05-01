@@ -7,8 +7,8 @@ import java.io.File
 
 private val DEFAULT_IMPORTS = listOf(
     "web.time.EpochTimeStamp",
-    "js.array.JsTuple2",
-    "js.array.JsTuple3",
+    "js.array.Tuple2",
+    "js.array.Tuple3",
     "js.array.ReadonlyArray",
     "js.errors.JsError",
     "js.objects.Record",
@@ -196,7 +196,7 @@ private fun generate(
             import tanstack.query.core.MutateFunction
             import tanstack.query.core.MutationObserverResult
             import tanstack.query.core.QueryFilters
-            
+
             import tanstack.query.core.False
             import tanstack.query.core.True
             """.trimIndent()

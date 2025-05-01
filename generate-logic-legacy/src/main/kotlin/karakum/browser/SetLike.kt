@@ -6,7 +6,7 @@ override val size: Int
 override fun add(value: -T-)
 override fun clear()
 override fun delete(value: -T-): Boolean
-override fun entries(): JsIterator<JsTuple2<-T-, -T->>
+override fun entries(): JsIterator<Tuple2<-T-, -T->>
 override fun forEach(action: (value: -T-) -> Unit)
 override fun has(key: -T-): Boolean
 override fun keys(): JsIterator<-T->

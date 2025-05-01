@@ -55,10 +55,10 @@ open external class Menu : NodeEventEmitter {
     var items: js.array.ReadonlyArray<MenuItem>
 
     @web.events.JsEvent("menu-will-close")
-    val menuWillCloseEvent: node.events.EventInstance<js.array.JsTuple1<Event<*>>>
+    val menuWillCloseEvent: node.events.EventInstance<js.array.Tuple1<Event<*>>>
 
     @web.events.JsEvent("menu-will-show")
-    val menuWillShowEvent: node.events.EventInstance<js.array.JsTuple1<Event<*>>>
+    val menuWillShowEvent: node.events.EventInstance<js.array.Tuple1<Event<*>>>
 
     companion object {
         /**

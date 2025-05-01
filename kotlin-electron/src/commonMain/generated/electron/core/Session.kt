@@ -703,70 +703,70 @@ external class Session : NodeEventEmitter {
     val webRequest: WebRequest
 
     @web.events.JsEvent("extension-loaded")
-    val extensionLoadedEvent: node.events.EventInstance<js.array.JsTuple2<Event<*>, Extension>>
+    val extensionLoadedEvent: node.events.EventInstance<js.array.Tuple2<Event<*>, Extension>>
 
     @web.events.JsEvent("extension-ready")
-    val extensionReadyEvent: node.events.EventInstance<js.array.JsTuple2<Event<*>, Extension>>
+    val extensionReadyEvent: node.events.EventInstance<js.array.Tuple2<Event<*>, Extension>>
 
     @web.events.JsEvent("extension-unloaded")
-    val extensionUnloadedEvent: node.events.EventInstance<js.array.JsTuple2<Event<*>, Extension>>
+    val extensionUnloadedEvent: node.events.EventInstance<js.array.Tuple2<Event<*>, Extension>>
 
     @web.events.JsEvent("file-system-access-restricted")
-    val fileSystemAccessRestrictedEvent: node.events.EventInstance<js.array.JsTuple3<Event<*>, FileSystemAccessRestrictedDetails, (action: SessionFileSystemAccessRestrictedListenerCallbackAction) -> Unit>>
+    val fileSystemAccessRestrictedEvent: node.events.EventInstance<js.array.Tuple3<Event<*>, FileSystemAccessRestrictedDetails, (action: SessionFileSystemAccessRestrictedListenerCallbackAction) -> Unit>>
 
     @web.events.JsEvent("hid-device-added")
-    val hidDeviceAddedEvent: node.events.EventInstance<js.array.JsTuple2<Event<*>, HidDeviceAddedDetails>>
+    val hidDeviceAddedEvent: node.events.EventInstance<js.array.Tuple2<Event<*>, HidDeviceAddedDetails>>
 
     @web.events.JsEvent("hid-device-removed")
-    val hidDeviceRemovedEvent: node.events.EventInstance<js.array.JsTuple2<Event<*>, HidDeviceRemovedDetails>>
+    val hidDeviceRemovedEvent: node.events.EventInstance<js.array.Tuple2<Event<*>, HidDeviceRemovedDetails>>
 
     @web.events.JsEvent("hid-device-revoked")
-    val hidDeviceRevokedEvent: node.events.EventInstance<js.array.JsTuple2<Event<*>, HidDeviceRevokedDetails>>
+    val hidDeviceRevokedEvent: node.events.EventInstance<js.array.Tuple2<Event<*>, HidDeviceRevokedDetails>>
 
     @web.events.JsEvent("preconnect")
-    val preconnectEvent: node.events.EventInstance<js.array.JsTuple3<Event<*>, String, Boolean>>
+    val preconnectEvent: node.events.EventInstance<js.array.Tuple3<Event<*>, String, Boolean>>
 
     @web.events.JsEvent("select-hid-device")
-    val selectHidDeviceEvent: node.events.EventInstance<js.array.JsTuple3<Event<*>, SelectHidDeviceDetails, (deviceId: String? /* use undefined for default */) -> Unit>>
+    val selectHidDeviceEvent: node.events.EventInstance<js.array.Tuple3<Event<*>, SelectHidDeviceDetails, (deviceId: String? /* use undefined for default */) -> Unit>>
 
     @web.events.JsEvent("select-serial-port")
-    val selectSerialPortEvent: node.events.EventInstance<js.array.JsTuple4<Event<*>, js.array.ReadonlyArray<SerialPort>, WebContents, (portId: String) -> Unit>>
+    val selectSerialPortEvent: node.events.EventInstance<js.array.Tuple4<Event<*>, js.array.ReadonlyArray<SerialPort>, WebContents, (portId: String) -> Unit>>
 
     @web.events.JsEvent("select-usb-device")
-    val selectUsbDeviceEvent: node.events.EventInstance<js.array.JsTuple3<Event<*>, SelectUsbDeviceDetails, (deviceId: String? /* use undefined for default */) -> Unit>>
+    val selectUsbDeviceEvent: node.events.EventInstance<js.array.Tuple3<Event<*>, SelectUsbDeviceDetails, (deviceId: String? /* use undefined for default */) -> Unit>>
 
     @web.events.JsEvent("serial-port-added")
-    val serialPortAddedEvent: node.events.EventInstance<js.array.JsTuple3<Event<*>, SerialPort, WebContents>>
+    val serialPortAddedEvent: node.events.EventInstance<js.array.Tuple3<Event<*>, SerialPort, WebContents>>
 
     @web.events.JsEvent("serial-port-removed")
-    val serialPortRemovedEvent: node.events.EventInstance<js.array.JsTuple3<Event<*>, SerialPort, WebContents>>
+    val serialPortRemovedEvent: node.events.EventInstance<js.array.Tuple3<Event<*>, SerialPort, WebContents>>
 
     @web.events.JsEvent("serial-port-revoked")
-    val serialPortRevokedEvent: node.events.EventInstance<js.array.JsTuple2<Event<*>, SerialPortRevokedDetails>>
+    val serialPortRevokedEvent: node.events.EventInstance<js.array.Tuple2<Event<*>, SerialPortRevokedDetails>>
 
     @web.events.JsEvent("spellcheck-dictionary-download-begin")
-    val spellcheckDictionaryDownloadBeginEvent: node.events.EventInstance<js.array.JsTuple2<Event<*>, String>>
+    val spellcheckDictionaryDownloadBeginEvent: node.events.EventInstance<js.array.Tuple2<Event<*>, String>>
 
     @web.events.JsEvent("spellcheck-dictionary-download-failure")
-    val spellcheckDictionaryDownloadFailureEvent: node.events.EventInstance<js.array.JsTuple2<Event<*>, String>>
+    val spellcheckDictionaryDownloadFailureEvent: node.events.EventInstance<js.array.Tuple2<Event<*>, String>>
 
     @web.events.JsEvent("spellcheck-dictionary-download-success")
-    val spellcheckDictionaryDownloadSuccessEvent: node.events.EventInstance<js.array.JsTuple2<Event<*>, String>>
+    val spellcheckDictionaryDownloadSuccessEvent: node.events.EventInstance<js.array.Tuple2<Event<*>, String>>
 
     @web.events.JsEvent("spellcheck-dictionary-initialized")
-    val spellcheckDictionaryInitializedEvent: node.events.EventInstance<js.array.JsTuple2<Event<*>, String>>
+    val spellcheckDictionaryInitializedEvent: node.events.EventInstance<js.array.Tuple2<Event<*>, String>>
 
     @web.events.JsEvent("usb-device-added")
-    val usbDeviceAddedEvent: node.events.EventInstance<js.array.JsTuple3<Event<*>, USBDevice, WebContents>>
+    val usbDeviceAddedEvent: node.events.EventInstance<js.array.Tuple3<Event<*>, USBDevice, WebContents>>
 
     @web.events.JsEvent("usb-device-removed")
-    val usbDeviceRemovedEvent: node.events.EventInstance<js.array.JsTuple3<Event<*>, USBDevice, WebContents>>
+    val usbDeviceRemovedEvent: node.events.EventInstance<js.array.Tuple3<Event<*>, USBDevice, WebContents>>
 
     @web.events.JsEvent("usb-device-revoked")
-    val usbDeviceRevokedEvent: node.events.EventInstance<js.array.JsTuple2<Event<*>, UsbDeviceRevokedDetails>>
+    val usbDeviceRevokedEvent: node.events.EventInstance<js.array.Tuple2<Event<*>, UsbDeviceRevokedDetails>>
 
     @web.events.JsEvent("will-download")
-    val willDownloadEvent: node.events.EventInstance<js.array.JsTuple3<Event<*>, DownloadItem, WebContents>>
+    val willDownloadEvent: node.events.EventInstance<js.array.Tuple3<Event<*>, DownloadItem, WebContents>>
 
     companion object {
 // Docs: https://electronjs.org/docs/api/session

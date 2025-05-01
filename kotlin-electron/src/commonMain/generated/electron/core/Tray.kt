@@ -532,56 +532,56 @@ open external class Tray : NodeEventEmitter {
     fun setToolTip(toolTip: String)
 
     @web.events.JsEvent("balloon-click")
-    val balloonClickEvent: node.events.EventInstance<js.array.JsTuple>
+    val balloonClickEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("balloon-closed")
-    val balloonClosedEvent: node.events.EventInstance<js.array.JsTuple>
+    val balloonClosedEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("balloon-show")
-    val balloonShowEvent: node.events.EventInstance<js.array.JsTuple>
+    val balloonShowEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("click")
-    val clickEvent: node.events.EventInstance<js.array.JsTuple3<KeyboardEvent, Rectangle, Point>>
+    val clickEvent: node.events.EventInstance<js.array.Tuple3<KeyboardEvent, Rectangle, Point>>
 
     @web.events.JsEvent("double-click")
-    val doubleClickEvent: node.events.EventInstance<js.array.JsTuple2<KeyboardEvent, Rectangle>>
+    val doubleClickEvent: node.events.EventInstance<js.array.Tuple2<KeyboardEvent, Rectangle>>
 
     @web.events.JsEvent("drag-end")
-    val dragEndEvent: node.events.EventInstance<js.array.JsTuple>
+    val dragEndEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("drag-enter")
-    val dragEnterEvent: node.events.EventInstance<js.array.JsTuple>
+    val dragEnterEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("drag-leave")
-    val dragLeaveEvent: node.events.EventInstance<js.array.JsTuple>
+    val dragLeaveEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("drop")
-    val dropEvent: node.events.EventInstance<js.array.JsTuple>
+    val dropEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("drop-files")
-    val dropFilesEvent: node.events.EventInstance<js.array.JsTuple2<Event<*>, js.array.ReadonlyArray<String>>>
+    val dropFilesEvent: node.events.EventInstance<js.array.Tuple2<Event<*>, js.array.ReadonlyArray<String>>>
 
     @web.events.JsEvent("drop-text")
-    val dropTextEvent: node.events.EventInstance<js.array.JsTuple2<Event<*>, String>>
+    val dropTextEvent: node.events.EventInstance<js.array.Tuple2<Event<*>, String>>
 
     @web.events.JsEvent("middle-click")
-    val middleClickEvent: node.events.EventInstance<js.array.JsTuple2<KeyboardEvent, Rectangle>>
+    val middleClickEvent: node.events.EventInstance<js.array.Tuple2<KeyboardEvent, Rectangle>>
 
     @web.events.JsEvent("mouse-down")
-    val mouseDownEvent: node.events.EventInstance<js.array.JsTuple2<KeyboardEvent, Point>>
+    val mouseDownEvent: node.events.EventInstance<js.array.Tuple2<KeyboardEvent, Point>>
 
     @web.events.JsEvent("mouse-enter")
-    val mouseEnterEvent: node.events.EventInstance<js.array.JsTuple2<KeyboardEvent, Point>>
+    val mouseEnterEvent: node.events.EventInstance<js.array.Tuple2<KeyboardEvent, Point>>
 
     @web.events.JsEvent("mouse-leave")
-    val mouseLeaveEvent: node.events.EventInstance<js.array.JsTuple2<KeyboardEvent, Point>>
+    val mouseLeaveEvent: node.events.EventInstance<js.array.Tuple2<KeyboardEvent, Point>>
 
     @web.events.JsEvent("mouse-move")
-    val mouseMoveEvent: node.events.EventInstance<js.array.JsTuple2<KeyboardEvent, Point>>
+    val mouseMoveEvent: node.events.EventInstance<js.array.Tuple2<KeyboardEvent, Point>>
 
     @web.events.JsEvent("mouse-up")
-    val mouseUpEvent: node.events.EventInstance<js.array.JsTuple2<KeyboardEvent, Point>>
+    val mouseUpEvent: node.events.EventInstance<js.array.Tuple2<KeyboardEvent, Point>>
 
     @web.events.JsEvent("right-click")
-    val rightClickEvent: node.events.EventInstance<js.array.JsTuple2<KeyboardEvent, Rectangle>>
+    val rightClickEvent: node.events.EventInstance<js.array.Tuple2<KeyboardEvent, Rectangle>>
 }

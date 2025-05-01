@@ -34,8 +34,8 @@ external class ServiceWorkers : NodeEventEmitter {
     fun getFromVersionID(versionId: Double): ServiceWorkerInfo
 
     @web.events.JsEvent("console-message")
-    val consoleMessageEvent: node.events.EventInstance<js.array.JsTuple2<Event<*>, MessageDetails>>
+    val consoleMessageEvent: node.events.EventInstance<js.array.Tuple2<Event<*>, MessageDetails>>
 
     @web.events.JsEvent("registration-completed")
-    val registrationCompletedEvent: node.events.EventInstance<js.array.JsTuple2<Event<*>, RegistrationCompletedDetails>>
+    val registrationCompletedEvent: node.events.EventInstance<js.array.Tuple2<Event<*>, RegistrationCompletedDetails>>
 }

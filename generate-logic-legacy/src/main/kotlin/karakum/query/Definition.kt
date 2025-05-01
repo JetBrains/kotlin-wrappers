@@ -48,11 +48,11 @@ fun toDeclarations(
         )
         .replace(
             "setQueriesData<TQueryFnData, TQueryFilters extends QueryFilters<any> = QueryFilters>(filters: TQueryFilters, updater: Updater<NoInfer<TQueryFnData> | undefined, NoInfer<TQueryFnData> | undefined>, options?: SetDataOptions): Array<[QueryKey, TQueryFnData | undefined]>;",
-            "setQueriesData<TQueryFnData, TQueryFilters extends QueryFilters<*>>(filters: TQueryFilters, updater: Updater<TQueryFnData?, TQueryFnData?>, options?: SetDataOptions): ReadonlyArray<JsTuple2<QueryKey, TQueryFnData?>>;",
+            "setQueriesData<TQueryFnData, TQueryFilters extends QueryFilters<*>>(filters: TQueryFilters, updater: Updater<TQueryFnData?, TQueryFnData?>, options?: SetDataOptions): ReadonlyArray<Tuple2<QueryKey, TQueryFnData?>>;",
         )
         .replace(
             "getQueriesData<TQueryFnData = unknown, TQueryFilters extends QueryFilters<any> = QueryFilters>(filters: TQueryFilters): Array<[QueryKey, TQueryFnData | undefined]>;",
-            "getQueriesData<TQueryFnData, TQueryFilters extends QueryFilters<*>>(filters: TQueryFilters): ReadonlyArray<JsTuple2<QueryKey, TQueryFnData?>>;",
+            "getQueriesData<TQueryFnData, TQueryFilters extends QueryFilters<*>>(filters: TQueryFilters): ReadonlyArray<Tuple2<QueryKey, TQueryFnData?>>;",
         )
         .replace(
             "getQueryState<TQueryFnData = unknown, TError = DefaultError, TTaggedQueryKey extends QueryKey = QueryKey, TInferredQueryFnData = InferDataFromTag<TQueryFnData, TTaggedQueryKey>, TInferredError = InferErrorFromTag<TError, TTaggedQueryKey>>(queryKey: TTaggedQueryKey): QueryState<TInferredQueryFnData, TInferredError> | undefined;",

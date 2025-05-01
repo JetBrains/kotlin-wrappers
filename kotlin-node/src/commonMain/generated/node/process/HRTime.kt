@@ -36,7 +36,7 @@ sealed external interface HRTime {
      * @param time The result of a previous call to `process.hrtime()`
      */
     @seskar.js.JsNativeInvoke
-    operator fun invoke(time: js.array.JsTuple2<Double, Double> = definedExternally): js.array.JsTuple2<Double, Double>
+    operator fun invoke(time: js.array.Tuple2<Double, Double> = definedExternally): js.array.Tuple2<Double, Double>
 
     /**
      * The `bigint` version of the {@link process.hrtime()} method returning the current high-resolution real time in nanoseconds as a `bigint`.

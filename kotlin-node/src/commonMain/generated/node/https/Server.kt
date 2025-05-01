@@ -57,41 +57,41 @@ node.http.Server<Request, Response> {
 
 
     @web.events.JsEvent("keylog")
-    override val keylogEvent: node.events.EventInstance<js.array.JsTuple2<node.buffer.Buffer<*>, node.tls.TLSSocket>>
+    override val keylogEvent: node.events.EventInstance<js.array.Tuple2<node.buffer.Buffer<*>, node.tls.TLSSocket>>
 
     @web.events.JsEvent("OCSPRequest")
-    override val OCSPRequestEvent: node.events.EventInstance<js.array.JsTuple3<node.buffer.Buffer<*>, node.buffer.Buffer<*>, (err: js.errors.JsError?, resp: node.buffer.Buffer<*>) -> Unit>>
+    override val OCSPRequestEvent: node.events.EventInstance<js.array.Tuple3<node.buffer.Buffer<*>, node.buffer.Buffer<*>, (err: js.errors.JsError?, resp: node.buffer.Buffer<*>) -> Unit>>
 
     @web.events.JsEvent("secureConnection")
-    override val secureConnectionEvent: node.events.EventInstance<js.array.JsTuple1<node.tls.TLSSocket>>
+    override val secureConnectionEvent: node.events.EventInstance<js.array.Tuple1<node.tls.TLSSocket>>
 
     @web.events.JsEvent("tlsClientError")
-    override val tlsClientErrorEvent: node.events.EventInstance<js.array.JsTuple2<js.errors.JsError, node.tls.TLSSocket>>
+    override val tlsClientErrorEvent: node.events.EventInstance<js.array.Tuple2<js.errors.JsError, node.tls.TLSSocket>>
 
     @web.events.JsEvent("close")
-    override val closeEvent: node.events.EventInstance<js.array.JsTuple>
+    override val closeEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("error")
-    override val errorEvent: node.events.EventInstance<js.array.JsTuple1<js.errors.JsError>>
+    override val errorEvent: node.events.EventInstance<js.array.Tuple1<js.errors.JsError>>
 
     @web.events.JsEvent("listening")
-    override val listeningEvent: node.events.EventInstance<js.array.JsTuple>
+    override val listeningEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("checkContinue")
-    override val checkContinueEvent: node.events.EventInstance<js.array.JsTuple2<Request, Response>>
+    override val checkContinueEvent: node.events.EventInstance<js.array.Tuple2<Request, Response>>
 
     @web.events.JsEvent("checkExpectation")
-    override val checkExpectationEvent: node.events.EventInstance<js.array.JsTuple2<Request, Response>>
+    override val checkExpectationEvent: node.events.EventInstance<js.array.Tuple2<Request, Response>>
 
     @web.events.JsEvent("clientError")
-    override val clientErrorEvent: node.events.EventInstance<js.array.JsTuple2<js.errors.JsError, Duplex>>
+    override val clientErrorEvent: node.events.EventInstance<js.array.Tuple2<js.errors.JsError, Duplex>>
 
     @web.events.JsEvent("connect")
-    override val connectEvent: node.events.EventInstance<js.array.JsTuple3<Request, Duplex, node.buffer.Buffer<*>>>
+    override val connectEvent: node.events.EventInstance<js.array.Tuple3<Request, Duplex, node.buffer.Buffer<*>>>
 
     @web.events.JsEvent("request")
-    override val requestEvent: node.events.EventInstance<js.array.JsTuple2<Request, Response>>
+    override val requestEvent: node.events.EventInstance<js.array.Tuple2<Request, Response>>
 
     @web.events.JsEvent("upgrade")
-    override val upgradeEvent: node.events.EventInstance<js.array.JsTuple3<Request, Duplex, node.buffer.Buffer<*>>>
+    override val upgradeEvent: node.events.EventInstance<js.array.Tuple3<Request, Duplex, node.buffer.Buffer<*>>>
 }

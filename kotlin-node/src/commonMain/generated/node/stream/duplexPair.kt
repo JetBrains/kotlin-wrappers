@@ -23,4 +23,4 @@ package node.stream
  * to set options such as buffering.
  * @since v22.6.0
  */
-external fun duplexPair(options: DuplexOptions<*> = definedExternally): js.array.JsTuple2<Duplex, Duplex>
+external fun duplexPair(options: DuplexOptions<*> = definedExternally): js.array.Tuple2<Duplex, Duplex>

@@ -372,8 +372,8 @@ external interface SystemPreferences : node.events.EventEmitter {
     val effectiveAppearance: (SystemPreferencesEffectiveAppearance)
 
     @web.events.JsEvent("accent-color-changed")
-    val accentColorChangedEvent: node.events.EventInstance<js.array.JsTuple2<Event<*>, String>>
+    val accentColorChangedEvent: node.events.EventInstance<js.array.Tuple2<Event<*>, String>>
 
     @web.events.JsEvent("color-changed")
-    val colorChangedEvent: node.events.EventInstance<js.array.JsTuple1<Event<*>>>
+    val colorChangedEvent: node.events.EventInstance<js.array.Tuple1<Event<*>>>
 }

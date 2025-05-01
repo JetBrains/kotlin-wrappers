@@ -206,17 +206,17 @@ open external class Server : EventEmitter {
 
 
     @web.events.JsEvent("close")
-    open val closeEvent: node.events.EventInstance<js.array.JsTuple>
+    open val closeEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("connection")
-    open val connectionEvent: node.events.EventInstance<js.array.JsTuple1<Socket>>
+    open val connectionEvent: node.events.EventInstance<js.array.Tuple1<Socket>>
 
     @web.events.JsEvent("error")
-    open val errorEvent: node.events.EventInstance<js.array.JsTuple1<js.errors.JsError>>
+    open val errorEvent: node.events.EventInstance<js.array.Tuple1<js.errors.JsError>>
 
     @web.events.JsEvent("listening")
-    open val listeningEvent: node.events.EventInstance<js.array.JsTuple>
+    open val listeningEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("drop")
-    val dropEvent: node.events.EventInstance<js.array.JsTuple1<DropArgument>>
+    val dropEvent: node.events.EventInstance<js.array.Tuple1<DropArgument>>
 }

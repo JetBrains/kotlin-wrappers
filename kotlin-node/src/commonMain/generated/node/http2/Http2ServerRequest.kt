@@ -266,20 +266,20 @@ open external class Http2ServerRequest : node.stream.Readable {
     ) /* this */
 
     @web.events.JsEvent("aborted")
-    val abortedEvent: node.events.EventInstance<js.array.JsTuple2<Boolean, Double>>
+    val abortedEvent: node.events.EventInstance<js.array.Tuple2<Boolean, Double>>
 
     @web.events.JsEvent("close")
-    override val closeEvent: node.events.EventInstance<js.array.JsTuple>
+    override val closeEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("data")
-    override val dataEvent: node.events.EventInstance<js.array.JsTuple1<Any /* Buffer | string */>>
+    override val dataEvent: node.events.EventInstance<js.array.Tuple1<Any /* Buffer | string */>>
 
     @web.events.JsEvent("end")
-    override val endEvent: node.events.EventInstance<js.array.JsTuple>
+    override val endEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("readable")
-    override val readableEvent: node.events.EventInstance<js.array.JsTuple>
+    override val readableEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("error")
-    override val errorEvent: node.events.EventInstance<js.array.JsTuple1<js.errors.JsError>>
+    override val errorEvent: node.events.EventInstance<js.array.Tuple1<js.errors.JsError>>
 }

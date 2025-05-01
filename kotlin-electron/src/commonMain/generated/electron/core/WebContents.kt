@@ -1067,7 +1067,7 @@ external class WebContents : NodeEventEmitter {
      *
      * You can also read `frameId` from all incoming IPC messages in the main process.
      */
-    fun sendToFrame(frameId: js.array.JsTuple2<Double, Double>, channel: String, vararg args: Any?)
+    fun sendToFrame(frameId: js.array.Tuple2<Double, Double>, channel: String, vararg args: Any?)
 
     /**
      * Mute the audio on the current web page.
@@ -1371,181 +1371,181 @@ external class WebContents : NodeEventEmitter {
     var zoomLevel: Double
 
     @web.events.JsEvent("audio-state-changed")
-    val audioStateChangedEvent: node.events.EventInstance<js.array.JsTuple1<Event<WebContentsAudioStateChangedEventParams>>>
+    val audioStateChangedEvent: node.events.EventInstance<js.array.Tuple1<Event<WebContentsAudioStateChangedEventParams>>>
 
     @web.events.JsEvent("before-input-event")
-    val beforeInputEventEvent: node.events.EventInstance<js.array.JsTuple2<Event<*>, Input>>
+    val beforeInputEventEvent: node.events.EventInstance<js.array.Tuple2<Event<*>, Input>>
 
     @web.events.JsEvent("blur")
-    val blurEvent: node.events.EventInstance<js.array.JsTuple>
+    val blurEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("certificate-error")
-    val certificateErrorEvent: node.events.EventInstance<js.array.JsTuple6<Event<*>, String, String, Certificate, (isTrusted: Boolean) -> Unit, Boolean>>
+    val certificateErrorEvent: node.events.EventInstance<js.array.Tuple6<Event<*>, String, String, Certificate, (isTrusted: Boolean) -> Unit, Boolean>>
 
     @web.events.JsEvent("console-message")
-    val consoleMessageEvent: node.events.EventInstance<js.array.JsTuple5<Event<*>, Double, String, Double, String>>
+    val consoleMessageEvent: node.events.EventInstance<js.array.Tuple5<Event<*>, Double, String, Double, String>>
 
     @web.events.JsEvent("content-bounds-updated")
-    val contentBoundsUpdatedEvent: node.events.EventInstance<js.array.JsTuple2<Event<*>, Rectangle>>
+    val contentBoundsUpdatedEvent: node.events.EventInstance<js.array.Tuple2<Event<*>, Rectangle>>
 
     @web.events.JsEvent("context-menu")
-    val contextMenuEvent: node.events.EventInstance<js.array.JsTuple2<Event<*>, ContextMenuParams>>
+    val contextMenuEvent: node.events.EventInstance<js.array.Tuple2<Event<*>, ContextMenuParams>>
 
     @web.events.JsEvent("cursor-changed")
-    val cursorChangedEvent: node.events.EventInstance<js.array.JsTuple6<Event<*>, String, NativeImage, Double, Size, Point>>
+    val cursorChangedEvent: node.events.EventInstance<js.array.Tuple6<Event<*>, String, NativeImage, Double, Size, Point>>
 
     @web.events.JsEvent("destroyed")
-    val destroyedEvent: node.events.EventInstance<js.array.JsTuple>
+    val destroyedEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("devtools-closed")
-    val devtoolsClosedEvent: node.events.EventInstance<js.array.JsTuple>
+    val devtoolsClosedEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("devtools-focused")
-    val devtoolsFocusedEvent: node.events.EventInstance<js.array.JsTuple>
+    val devtoolsFocusedEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("devtools-open-url")
-    val devtoolsOpenUrlEvent: node.events.EventInstance<js.array.JsTuple2<Event<*>, String>>
+    val devtoolsOpenUrlEvent: node.events.EventInstance<js.array.Tuple2<Event<*>, String>>
 
     @web.events.JsEvent("devtools-opened")
-    val devtoolsOpenedEvent: node.events.EventInstance<js.array.JsTuple>
+    val devtoolsOpenedEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("devtools-reload-page")
-    val devtoolsReloadPageEvent: node.events.EventInstance<js.array.JsTuple>
+    val devtoolsReloadPageEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("devtools-search-query")
-    val devtoolsSearchQueryEvent: node.events.EventInstance<js.array.JsTuple2<Event<*>, String>>
+    val devtoolsSearchQueryEvent: node.events.EventInstance<js.array.Tuple2<Event<*>, String>>
 
     @web.events.JsEvent("did-attach-webview")
-    val didAttachWebviewEvent: node.events.EventInstance<js.array.JsTuple2<Event<*>, WebContents>>
+    val didAttachWebviewEvent: node.events.EventInstance<js.array.Tuple2<Event<*>, WebContents>>
 
     @web.events.JsEvent("did-change-theme-color")
-    val didChangeThemeColorEvent: node.events.EventInstance<js.array.JsTuple2<Event<*>, String?>>
+    val didChangeThemeColorEvent: node.events.EventInstance<js.array.Tuple2<Event<*>, String?>>
 
     @web.events.JsEvent("did-create-window")
-    val didCreateWindowEvent: node.events.EventInstance<js.array.JsTuple2<BrowserWindow, DidCreateWindowDetails>>
+    val didCreateWindowEvent: node.events.EventInstance<js.array.Tuple2<BrowserWindow, DidCreateWindowDetails>>
 
     @web.events.JsEvent("did-fail-load")
-    val didFailLoadEvent: node.events.EventInstance<js.array.JsTuple7<Event<*>, Double, String, String, Boolean, Double, Double>>
+    val didFailLoadEvent: node.events.EventInstance<js.array.Tuple7<Event<*>, Double, String, String, Boolean, Double, Double>>
 
     @web.events.JsEvent("did-fail-provisional-load")
-    val didFailProvisionalLoadEvent: node.events.EventInstance<js.array.JsTuple7<Event<*>, Double, String, String, Boolean, Double, Double>>
+    val didFailProvisionalLoadEvent: node.events.EventInstance<js.array.Tuple7<Event<*>, Double, String, String, Boolean, Double, Double>>
 
     @web.events.JsEvent("did-finish-load")
-    val didFinishLoadEvent: node.events.EventInstance<js.array.JsTuple>
+    val didFinishLoadEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("did-frame-finish-load")
-    val didFrameFinishLoadEvent: node.events.EventInstance<js.array.JsTuple4<Event<*>, Boolean, Double, Double>>
+    val didFrameFinishLoadEvent: node.events.EventInstance<js.array.Tuple4<Event<*>, Boolean, Double, Double>>
 
     @web.events.JsEvent("did-frame-navigate")
-    val didFrameNavigateEvent: node.events.EventInstance<js.array.JsTuple7<Event<*>, String, Double, String, Boolean, Double, Double>>
+    val didFrameNavigateEvent: node.events.EventInstance<js.array.Tuple7<Event<*>, String, Double, String, Boolean, Double, Double>>
 
     @web.events.JsEvent("did-navigate")
-    val didNavigateEvent: node.events.EventInstance<js.array.JsTuple4<Event<*>, String, Double, String>>
+    val didNavigateEvent: node.events.EventInstance<js.array.Tuple4<Event<*>, String, Double, String>>
 
     @web.events.JsEvent("did-navigate-in-page")
-    val didNavigateInPageEvent: node.events.EventInstance<js.array.JsTuple5<Event<*>, String, Boolean, Double, Double>>
+    val didNavigateInPageEvent: node.events.EventInstance<js.array.Tuple5<Event<*>, String, Boolean, Double, Double>>
 
     @web.events.JsEvent("did-redirect-navigation")
-    val didRedirectNavigationEvent: node.events.EventInstance<js.array.JsTuple6<Event<WebContentsDidRedirectNavigationEventParams>, String, Boolean, Boolean, Double, Double>>
+    val didRedirectNavigationEvent: node.events.EventInstance<js.array.Tuple6<Event<WebContentsDidRedirectNavigationEventParams>, String, Boolean, Boolean, Double, Double>>
 
     @web.events.JsEvent("did-start-loading")
-    val didStartLoadingEvent: node.events.EventInstance<js.array.JsTuple>
+    val didStartLoadingEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("did-start-navigation")
-    val didStartNavigationEvent: node.events.EventInstance<js.array.JsTuple6<Event<WebContentsDidStartNavigationEventParams>, String, Boolean, Boolean, Double, Double>>
+    val didStartNavigationEvent: node.events.EventInstance<js.array.Tuple6<Event<WebContentsDidStartNavigationEventParams>, String, Boolean, Boolean, Double, Double>>
 
     @web.events.JsEvent("did-stop-loading")
-    val didStopLoadingEvent: node.events.EventInstance<js.array.JsTuple>
+    val didStopLoadingEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("dom-ready")
-    val domReadyEvent: node.events.EventInstance<js.array.JsTuple>
+    val domReadyEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("enter-html-full-screen")
-    val enterHtmlFullScreenEvent: node.events.EventInstance<js.array.JsTuple>
+    val enterHtmlFullScreenEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("focus")
-    val focusEvent: node.events.EventInstance<js.array.JsTuple>
+    val focusEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("found-in-page")
-    val foundInPageEvent: node.events.EventInstance<js.array.JsTuple2<Event<*>, Result>>
+    val foundInPageEvent: node.events.EventInstance<js.array.Tuple2<Event<*>, Result>>
 
     @web.events.JsEvent("frame-created")
-    val frameCreatedEvent: node.events.EventInstance<js.array.JsTuple2<Event<*>, FrameCreatedDetails>>
+    val frameCreatedEvent: node.events.EventInstance<js.array.Tuple2<Event<*>, FrameCreatedDetails>>
 
     @web.events.JsEvent("input-event")
-    val inputEventEvent: node.events.EventInstance<js.array.JsTuple2<Event<*>, InputEvent>>
+    val inputEventEvent: node.events.EventInstance<js.array.Tuple2<Event<*>, InputEvent>>
 
     @web.events.JsEvent("ipc-message")
-    val ipcMessageEvent: node.events.EventInstance<js.array.JsTuple3<IpcMainEvent, String, js.array.ReadonlyArray<Any?>>>
+    val ipcMessageEvent: node.events.EventInstance<js.array.Tuple3<IpcMainEvent, String, js.array.ReadonlyArray<Any?>>>
 
     @web.events.JsEvent("ipc-message-sync")
-    val ipcMessageSyncEvent: node.events.EventInstance<js.array.JsTuple3<IpcMainEvent, String, js.array.ReadonlyArray<Any?>>>
+    val ipcMessageSyncEvent: node.events.EventInstance<js.array.Tuple3<IpcMainEvent, String, js.array.ReadonlyArray<Any?>>>
 
     @web.events.JsEvent("leave-html-full-screen")
-    val leaveHtmlFullScreenEvent: node.events.EventInstance<js.array.JsTuple>
+    val leaveHtmlFullScreenEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("login")
-    val loginEvent: node.events.EventInstance<js.array.JsTuple4<Event<*>, LoginAuthenticationResponseDetails, AuthInfo, (username: String? /* use undefined for default */, password: String? /* use undefined for default */) -> Unit>>
+    val loginEvent: node.events.EventInstance<js.array.Tuple4<Event<*>, LoginAuthenticationResponseDetails, AuthInfo, (username: String? /* use undefined for default */, password: String? /* use undefined for default */) -> Unit>>
 
     @web.events.JsEvent("media-paused")
-    val mediaPausedEvent: node.events.EventInstance<js.array.JsTuple>
+    val mediaPausedEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("media-started-playing")
-    val mediaStartedPlayingEvent: node.events.EventInstance<js.array.JsTuple>
+    val mediaStartedPlayingEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("page-favicon-updated")
-    val pageFaviconUpdatedEvent: node.events.EventInstance<js.array.JsTuple2<Event<*>, js.array.ReadonlyArray<String>>>
+    val pageFaviconUpdatedEvent: node.events.EventInstance<js.array.Tuple2<Event<*>, js.array.ReadonlyArray<String>>>
 
     @web.events.JsEvent("page-title-updated")
-    val pageTitleUpdatedEvent: node.events.EventInstance<js.array.JsTuple3<Event<*>, String, Boolean>>
+    val pageTitleUpdatedEvent: node.events.EventInstance<js.array.Tuple3<Event<*>, String, Boolean>>
 
     @web.events.JsEvent("paint")
-    val paintEvent: node.events.EventInstance<js.array.JsTuple3<Event<WebContentsPaintEventParams>, Rectangle, NativeImage>>
+    val paintEvent: node.events.EventInstance<js.array.Tuple3<Event<WebContentsPaintEventParams>, Rectangle, NativeImage>>
 
     @web.events.JsEvent("plugin-crashed")
-    val pluginCrashedEvent: node.events.EventInstance<js.array.JsTuple3<Event<*>, String, String>>
+    val pluginCrashedEvent: node.events.EventInstance<js.array.Tuple3<Event<*>, String, String>>
 
     @web.events.JsEvent("preferred-size-changed")
-    val preferredSizeChangedEvent: node.events.EventInstance<js.array.JsTuple2<Event<*>, Size>>
+    val preferredSizeChangedEvent: node.events.EventInstance<js.array.Tuple2<Event<*>, Size>>
 
     @web.events.JsEvent("preload-error")
-    val preloadErrorEvent: node.events.EventInstance<js.array.JsTuple3<Event<*>, String, js.errors.JsError>>
+    val preloadErrorEvent: node.events.EventInstance<js.array.Tuple3<Event<*>, String, js.errors.JsError>>
 
     @web.events.JsEvent("render-process-gone")
-    val renderProcessGoneEvent: node.events.EventInstance<js.array.JsTuple2<Event<*>, RenderProcessGoneDetails>>
+    val renderProcessGoneEvent: node.events.EventInstance<js.array.Tuple2<Event<*>, RenderProcessGoneDetails>>
 
     @web.events.JsEvent("responsive")
-    val responsiveEvent: node.events.EventInstance<js.array.JsTuple>
+    val responsiveEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("select-bluetooth-device")
-    val selectBluetoothDeviceEvent: node.events.EventInstance<js.array.JsTuple3<Event<*>, js.array.ReadonlyArray<BluetoothDevice>, (deviceId: String) -> Unit>>
+    val selectBluetoothDeviceEvent: node.events.EventInstance<js.array.Tuple3<Event<*>, js.array.ReadonlyArray<BluetoothDevice>, (deviceId: String) -> Unit>>
 
     @web.events.JsEvent("select-client-certificate")
-    val selectClientCertificateEvent: node.events.EventInstance<js.array.JsTuple4<Event<*>, String, js.array.ReadonlyArray<Certificate>, (certificate: Certificate) -> Unit>>
+    val selectClientCertificateEvent: node.events.EventInstance<js.array.Tuple4<Event<*>, String, js.array.ReadonlyArray<Certificate>, (certificate: Certificate) -> Unit>>
 
     @web.events.JsEvent("unresponsive")
-    val unresponsiveEvent: node.events.EventInstance<js.array.JsTuple>
+    val unresponsiveEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("update-target-url")
-    val updateTargetUrlEvent: node.events.EventInstance<js.array.JsTuple2<Event<*>, String>>
+    val updateTargetUrlEvent: node.events.EventInstance<js.array.Tuple2<Event<*>, String>>
 
     @web.events.JsEvent("will-attach-webview")
-    val willAttachWebviewEvent: node.events.EventInstance<js.array.JsTuple3<Event<*>, WebPreferences, js.objects.ReadonlyRecord<String, String>>>
+    val willAttachWebviewEvent: node.events.EventInstance<js.array.Tuple3<Event<*>, WebPreferences, js.objects.ReadonlyRecord<String, String>>>
 
     @web.events.JsEvent("will-frame-navigate")
-    val willFrameNavigateEvent: node.events.EventInstance<js.array.JsTuple1<Event<WebContentsWillFrameNavigateEventParams>>>
+    val willFrameNavigateEvent: node.events.EventInstance<js.array.Tuple1<Event<WebContentsWillFrameNavigateEventParams>>>
 
     @web.events.JsEvent("will-navigate")
-    val willNavigateEvent: node.events.EventInstance<js.array.JsTuple6<Event<WebContentsWillNavigateEventParams>, String, Boolean, Boolean, Double, Double>>
+    val willNavigateEvent: node.events.EventInstance<js.array.Tuple6<Event<WebContentsWillNavigateEventParams>, String, Boolean, Boolean, Double, Double>>
 
     @web.events.JsEvent("will-prevent-unload")
-    val willPreventUnloadEvent: node.events.EventInstance<js.array.JsTuple1<Event<*>>>
+    val willPreventUnloadEvent: node.events.EventInstance<js.array.Tuple1<Event<*>>>
 
     @web.events.JsEvent("will-redirect")
-    val willRedirectEvent: node.events.EventInstance<js.array.JsTuple6<Event<WebContentsWillRedirectEventParams>, String, Boolean, Boolean, Double, Double>>
+    val willRedirectEvent: node.events.EventInstance<js.array.Tuple6<Event<WebContentsWillRedirectEventParams>, String, Boolean, Boolean, Double, Double>>
 
     @web.events.JsEvent("zoom-changed")
-    val zoomChangedEvent: node.events.EventInstance<js.array.JsTuple2<Event<*>, (WebContentsAddListenerListenerZoomDirection)>>
+    val zoomChangedEvent: node.events.EventInstance<js.array.Tuple2<Event<*>, (WebContentsAddListenerListenerZoomDirection)>>
 
     companion object {
 // Docs: https://electronjs.org/docs/api/web-contents

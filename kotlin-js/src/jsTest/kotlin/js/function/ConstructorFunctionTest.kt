@@ -1,6 +1,6 @@
 package js.function
 
-import js.array.JsTuple
+import js.array.Tuple
 import kotlin.test.Test
 import kotlin.test.assertEquals
 
@@ -13,19 +13,19 @@ class ConstructorFunctionTest {
 
     @Test
     fun testReifiedKClassAdapter() {
-        val result = ConstructorFunction<JsTuple, X>()()
+        val result = ConstructorFunction<Tuple, X>()()
         assertEquals("test", result.value)
     }
 
     @Test
     fun testKClassAdapter() {
-        val result = ConstructorFunction<JsTuple, _>(X::class)()
+        val result = ConstructorFunction<Tuple, _>(X::class)()
         assertEquals("test", result.value)
     }
 
     @Test
     fun testJsClassAdapter() {
-        val result = ConstructorFunction<JsTuple, _>(X::class.js)()
+        val result = ConstructorFunction<Tuple, _>(X::class.js)()
         assertEquals("test", result.value)
     }
 }

@@ -4,8 +4,8 @@
 
 package node.events
 
-import js.array.JsTuple
-import js.array.JsTuple1
+import js.array.Tuple
+import js.array.Tuple1
 import js.disposable.Disposable
 import js.iterable.AsyncIterator
 import js.promise.Promise
@@ -456,7 +456,7 @@ open external class EventEmitter {
          * ```
          * @since v11.13.0, v10.16.0
          */
-        fun <P : JsTuple> once(
+        fun <P : Tuple> once(
             emitter: EventEmitter,
             type: EventType,
             options: StaticEventEmitterOptions = definedExternally,
@@ -546,7 +546,7 @@ open external class EventEmitter {
             emitter: EventTarget,
             type: web.events.EventType<E>,
             options: StaticEventEmitterOptions = definedExternally,
-        ): Promise<JsTuple1<E>>
+        ): Promise<Tuple1<E>>
 
         /**
          * ```js
@@ -628,7 +628,7 @@ open external class EventEmitter {
          * @since v13.6.0, v12.16.0
          * @return An `AsyncIterator` that iterates `eventName` events emitted by the `emitter`
          */
-        fun <P : JsTuple> on(
+        fun <P : Tuple> on(
             emitter: EventEmitter,
             type: EventType,
             options: StaticEventEmitterOptions = definedExternally,
@@ -719,7 +719,7 @@ open external class EventEmitter {
             emitter: EventTarget,
             type: web.events.EventType<E>,
             options: StaticEventEmitterOptions = definedExternally,
-        ): AsyncIterator<JsTuple1<E>>
+        ): AsyncIterator<Tuple1<E>>
 
         /**
          * A class method that returns the number of listeners for the given `eventName` registered on the given `emitter`.

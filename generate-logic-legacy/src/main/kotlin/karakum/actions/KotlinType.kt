@@ -40,7 +40,7 @@ private val STANDARD_TYPE_MAP = mapOf(
     "OctokitOptions" to "$JSO /* OctokitOptions */",
     "BlobUploadCommonResponse" to "$JSO /* BlobUploadCommonResponse */",
     "InstanceType<typeof GitHub>" to "dynamic /* InstanceType<typeof GitHub> */",
-    "[RetryOptions, RequestRequestOptions | undefined]" to "JsTuple2<RetryOptions, $JSO? /* RequestRequestOptions? */>",
+    "[RetryOptions, RequestRequestOptions | undefined]" to "Tuple2<RetryOptions, $JSO? /* RequestRequestOptions? */>",
 )
 
 internal fun kotlinType(

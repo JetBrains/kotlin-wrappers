@@ -117,7 +117,7 @@ open external class ChildProcess : EventEmitter {
      * not be successfully spawned.
      * @since v0.7.10
      */
-    open val stdio: js.array.JsTuple5<Writable?, // stdin
+    open val stdio: js.array.Tuple5<Writable?, // stdin
             Readable?, // stdout
             Readable?, // stderr
             Any? /* Readable | Writable | null | undefined */, // extra
@@ -622,20 +622,20 @@ open external class ChildProcess : EventEmitter {
 
 
     @web.events.JsEvent("close")
-    val closeEvent: node.events.EventInstance<js.array.JsTuple2<Double?, node.process.Signals?>>
+    val closeEvent: node.events.EventInstance<js.array.Tuple2<Double?, node.process.Signals?>>
 
     @web.events.JsEvent("disconnect")
-    val disconnectEvent: node.events.EventInstance<js.array.JsTuple>
+    val disconnectEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("error")
-    val errorEvent: node.events.EventInstance<js.array.JsTuple1<js.errors.JsError>>
+    val errorEvent: node.events.EventInstance<js.array.Tuple1<js.errors.JsError>>
 
     @web.events.JsEvent("exit")
-    val exitEvent: node.events.EventInstance<js.array.JsTuple2<Double?, node.process.Signals?>>
+    val exitEvent: node.events.EventInstance<js.array.Tuple2<Double?, node.process.Signals?>>
 
     @web.events.JsEvent("message")
-    val messageEvent: node.events.EventInstance<js.array.JsTuple2<Serializable, SendHandle>>
+    val messageEvent: node.events.EventInstance<js.array.Tuple2<Serializable, SendHandle>>
 
     @web.events.JsEvent("spawn")
-    val spawnEvent: node.events.EventInstance<js.array.JsTuple>
+    val spawnEvent: node.events.EventInstance<js.array.Tuple>
 }

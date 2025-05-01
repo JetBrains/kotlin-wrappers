@@ -2,7 +2,7 @@
 
 package web.streams
 
-import js.array.JsTuple2
+import js.array.Tuple2
 import js.core.JsAny
 import js.core.Void
 import js.errors.JsError
@@ -82,6 +82,6 @@ open external class ReadableStream<R : JsAny?>(
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStream/tee)
      */
-    fun tee(): JsTuple2<ReadableStream<R>, ReadableStream<R>>
+    fun tee(): Tuple2<ReadableStream<R>, ReadableStream<R>>
     fun values(options: ReadableStreamIteratorOptions = definedExternally): AsyncIterator<R>
 }

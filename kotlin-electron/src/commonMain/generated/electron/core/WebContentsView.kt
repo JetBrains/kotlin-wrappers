@@ -24,5 +24,5 @@ open external class WebContentsView : View {
     val webContents: WebContents
 
     @web.events.JsEvent("bounds-changed")
-    override val boundsChangedEvent: node.events.EventInstance<js.array.JsTuple>
+    override val boundsChangedEvent: node.events.EventInstance<js.array.Tuple>
 }

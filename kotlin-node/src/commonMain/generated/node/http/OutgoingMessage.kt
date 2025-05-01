@@ -298,7 +298,7 @@ open external class OutgoingMessage<Request : IncomingMessage /* default is Inco
      * will result in a `TypeError` being thrown.
      * @since v0.3.0
      */
-    fun addTrailers(headers: ReadonlyArray<js.array.JsTuple2<String, String>>)
+    fun addTrailers(headers: ReadonlyArray<js.array.Tuple2<String, String>>)
 
     /**
      * Flushes the message headers.

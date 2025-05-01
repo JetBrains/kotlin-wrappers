@@ -41,41 +41,41 @@ external class TestsStream : Readable, node.ReadableStream {
     ) /* this */
 
     @web.events.JsEvent("test:coverage")
-    val testCoverageEvent: node.events.EventInstance<js.array.JsTuple1<TestCoverage>>
+    val testCoverageEvent: node.events.EventInstance<js.array.Tuple1<TestCoverage>>
 
     @web.events.JsEvent("test:complete")
-    val testCompleteEvent: node.events.EventInstance<js.array.JsTuple1<TestComplete>>
+    val testCompleteEvent: node.events.EventInstance<js.array.Tuple1<TestComplete>>
 
     @web.events.JsEvent("test:dequeue")
-    val testDequeueEvent: node.events.EventInstance<js.array.JsTuple1<TestDequeue>>
+    val testDequeueEvent: node.events.EventInstance<js.array.Tuple1<TestDequeue>>
 
     @web.events.JsEvent("test:diagnostic")
-    val testDiagnosticEvent: node.events.EventInstance<js.array.JsTuple1<DiagnosticData>>
+    val testDiagnosticEvent: node.events.EventInstance<js.array.Tuple1<DiagnosticData>>
 
     @web.events.JsEvent("test:enqueue")
-    val testEnqueueEvent: node.events.EventInstance<js.array.JsTuple1<TestEnqueue>>
+    val testEnqueueEvent: node.events.EventInstance<js.array.Tuple1<TestEnqueue>>
 
     @web.events.JsEvent("test:fail")
-    val testFailEvent: node.events.EventInstance<js.array.JsTuple1<TestFail>>
+    val testFailEvent: node.events.EventInstance<js.array.Tuple1<TestFail>>
 
     @web.events.JsEvent("test:pass")
-    val testPassEvent: node.events.EventInstance<js.array.JsTuple1<TestPass>>
+    val testPassEvent: node.events.EventInstance<js.array.Tuple1<TestPass>>
 
     @web.events.JsEvent("test:plan")
-    val testPlanEvent: node.events.EventInstance<js.array.JsTuple1<TestPlan>>
+    val testPlanEvent: node.events.EventInstance<js.array.Tuple1<TestPlan>>
 
     @web.events.JsEvent("test:start")
-    val testStartEvent: node.events.EventInstance<js.array.JsTuple1<TestStart>>
+    val testStartEvent: node.events.EventInstance<js.array.Tuple1<TestStart>>
 
     @web.events.JsEvent("test:stderr")
-    val testStderrEvent: node.events.EventInstance<js.array.JsTuple1<TestStderr>>
+    val testStderrEvent: node.events.EventInstance<js.array.Tuple1<TestStderr>>
 
     @web.events.JsEvent("test:stdout")
-    val testStdoutEvent: node.events.EventInstance<js.array.JsTuple1<TestStdout>>
+    val testStdoutEvent: node.events.EventInstance<js.array.Tuple1<TestStdout>>
 
     @web.events.JsEvent("test:summary")
-    val testSummaryEvent: node.events.EventInstance<js.array.JsTuple1<TestSummary>>
+    val testSummaryEvent: node.events.EventInstance<js.array.Tuple1<TestSummary>>
 
     @web.events.JsEvent("test:watch:drained")
-    val testWatchDrainedEvent: node.events.EventInstance<js.array.JsTuple>
+    val testWatchDrainedEvent: node.events.EventInstance<js.array.Tuple>
 }

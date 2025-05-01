@@ -2,7 +2,7 @@
 
 package tanstack.table.core
 
-import js.array.JsTuple2
+import js.array.Tuple2
 import js.collections.JsMap
 import js.objects.JsPlainObject
 
@@ -13,7 +13,7 @@ external interface GlobalFacetingInstance<TData : RowData> {
      * [API Docs](https://tanstack.com/table/v8/docs/api/features/global-faceting#getglobalautofilterfn)
      * [Guide](https://tanstack.com/table/v8/docs/guide/global-faceting)
      */
-    val getGlobalFacetedMinMaxValues: () -> JsTuple2<Int, Int>?
+    val getGlobalFacetedMinMaxValues: () -> Tuple2<Int, Int>?
 
     /**
      * Returns the row model for the table after **global** filtering has been applied.

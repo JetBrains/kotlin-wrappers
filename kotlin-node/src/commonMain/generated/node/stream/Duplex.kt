@@ -120,37 +120,37 @@ Writable {
     override fun destroy() /* this */
 
     @web.events.JsEvent("close")
-    override val closeEvent: node.events.EventInstance<js.array.JsTuple>
+    override val closeEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("data")
-    override val dataEvent: node.events.EventInstance<js.array.JsTuple1<Any?>>
+    override val dataEvent: node.events.EventInstance<js.array.Tuple1<Any?>>
 
     @web.events.JsEvent("drain")
-    override val drainEvent: node.events.EventInstance<js.array.JsTuple>
+    override val drainEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("end")
-    override val endEvent: node.events.EventInstance<js.array.JsTuple>
+    override val endEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("error")
-    override val errorEvent: node.events.EventInstance<js.array.JsTuple1<js.errors.JsError>>
+    override val errorEvent: node.events.EventInstance<js.array.Tuple1<js.errors.JsError>>
 
     @web.events.JsEvent("finish")
-    override val finishEvent: node.events.EventInstance<js.array.JsTuple>
+    override val finishEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("pause")
-    override val pauseEvent: node.events.EventInstance<js.array.JsTuple>
+    override val pauseEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("pipe")
-    override val pipeEvent: node.events.EventInstance<js.array.JsTuple1<Readable>>
+    override val pipeEvent: node.events.EventInstance<js.array.Tuple1<Readable>>
 
     @web.events.JsEvent("readable")
-    override val readableEvent: node.events.EventInstance<js.array.JsTuple>
+    override val readableEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("resume")
-    override val resumeEvent: node.events.EventInstance<js.array.JsTuple>
+    override val resumeEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("unpipe")
-    override val unpipeEvent: node.events.EventInstance<js.array.JsTuple1<Readable>>
+    override val unpipeEvent: node.events.EventInstance<js.array.Tuple1<Readable>>
 
     companion object {
         /**

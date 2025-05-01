@@ -1753,35 +1753,35 @@ sealed external interface Process : EventEmitter {
 
 
     @web.events.JsEvent("beforeExit")
-    val beforeExitEvent: node.events.EventInstance<js.array.JsTuple1<Number>>
+    val beforeExitEvent: node.events.EventInstance<js.array.Tuple1<Number>>
 
     @web.events.JsEvent("disconnect")
-    val disconnectEvent: node.events.EventInstance<js.array.JsTuple>
+    val disconnectEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("exit")
-    val exitEvent: node.events.EventInstance<js.array.JsTuple1<Number>>
+    val exitEvent: node.events.EventInstance<js.array.Tuple1<Number>>
 
     @web.events.JsEvent("rejectionHandled")
-    val rejectionHandledEvent: node.events.EventInstance<js.array.JsTuple1<Promise<Any?>>>
+    val rejectionHandledEvent: node.events.EventInstance<js.array.Tuple1<Promise<Any?>>>
 
     @web.events.JsEvent("uncaughtException")
-    val uncaughtExceptionEvent: node.events.EventInstance<js.array.JsTuple2<js.errors.JsError, UncaughtExceptionOrigin>>
+    val uncaughtExceptionEvent: node.events.EventInstance<js.array.Tuple2<js.errors.JsError, UncaughtExceptionOrigin>>
 
     @web.events.JsEvent("uncaughtExceptionMonitor")
-    val uncaughtExceptionMonitorEvent: node.events.EventInstance<js.array.JsTuple2<js.errors.JsError, UncaughtExceptionOrigin>>
+    val uncaughtExceptionMonitorEvent: node.events.EventInstance<js.array.Tuple2<js.errors.JsError, UncaughtExceptionOrigin>>
 
     @web.events.JsEvent("unhandledRejection")
-    val unhandledRejectionEvent: node.events.EventInstance<js.array.JsTuple2<Any?, Promise<Any?>>>
+    val unhandledRejectionEvent: node.events.EventInstance<js.array.Tuple2<Any?, Promise<Any?>>>
 
     @web.events.JsEvent("warning")
-    val warningEvent: node.events.EventInstance<js.array.JsTuple1<js.errors.JsError>>
+    val warningEvent: node.events.EventInstance<js.array.Tuple1<js.errors.JsError>>
 
     @web.events.JsEvent("message")
-    val messageEvent: node.events.EventInstance<js.array.JsTuple2<Any?, Any?>>
+    val messageEvent: node.events.EventInstance<js.array.Tuple2<Any?, Any?>>
 
     @web.events.JsEvent("multipleResolves")
-    val multipleResolvesEvent: node.events.EventInstance<js.array.JsTuple3<MultipleResolveType, Promise<Any?>, Any?>>
+    val multipleResolvesEvent: node.events.EventInstance<js.array.Tuple3<MultipleResolveType, Promise<Any?>, Any?>>
 
     @web.events.JsEvent("worker")
-    val workerEvent: node.events.EventInstance<js.array.JsTuple1<Worker>>
+    val workerEvent: node.events.EventInstance<js.array.Tuple1<Worker>>
 }

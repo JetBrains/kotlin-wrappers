@@ -401,38 +401,38 @@ open external class Socket : node.stream.Duplex {
 
 
     @web.events.JsEvent("close")
-    override val closeEvent: node.events.EventInstance<js.array.JsTuple1<Boolean>>
+    override val closeEvent: node.events.EventInstance<js.array.Tuple1<Boolean>>
 
     @web.events.JsEvent("connect")
-    val connectEvent: node.events.EventInstance<js.array.JsTuple>
+    val connectEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("connectionAttempt")
-    val connectionAttemptEvent: node.events.EventInstance<js.array.JsTuple3<String, Double, Double>>
+    val connectionAttemptEvent: node.events.EventInstance<js.array.Tuple3<String, Double, Double>>
 
     @web.events.JsEvent("connectionAttemptFailed")
-    val connectionAttemptFailedEvent: node.events.EventInstance<js.array.JsTuple3<String, Double, Double>>
+    val connectionAttemptFailedEvent: node.events.EventInstance<js.array.Tuple3<String, Double, Double>>
 
     @web.events.JsEvent("connectionAttemptTimeout")
-    val connectionAttemptTimeoutEvent: node.events.EventInstance<js.array.JsTuple3<String, Double, Double>>
+    val connectionAttemptTimeoutEvent: node.events.EventInstance<js.array.Tuple3<String, Double, Double>>
 
     @web.events.JsEvent("data")
-    override val dataEvent: node.events.EventInstance<js.array.JsTuple1<node.buffer.Buffer<*>>>
+    override val dataEvent: node.events.EventInstance<js.array.Tuple1<node.buffer.Buffer<*>>>
 
     @web.events.JsEvent("drain")
-    override val drainEvent: node.events.EventInstance<js.array.JsTuple>
+    override val drainEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("end")
-    override val endEvent: node.events.EventInstance<js.array.JsTuple>
+    override val endEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("error")
-    override val errorEvent: node.events.EventInstance<js.array.JsTuple1<js.errors.JsError>>
+    override val errorEvent: node.events.EventInstance<js.array.Tuple1<js.errors.JsError>>
 
     @web.events.JsEvent("lookup")
-    val lookupEvent: node.events.EventInstance<js.array.JsTuple4<js.errors.JsError, String, Any /* string | number */, String>>
+    val lookupEvent: node.events.EventInstance<js.array.Tuple4<js.errors.JsError, String, Any /* string | number */, String>>
 
     @web.events.JsEvent("ready")
-    val readyEvent: node.events.EventInstance<js.array.JsTuple>
+    val readyEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("timeout")
-    val timeoutEvent: node.events.EventInstance<js.array.JsTuple>
+    val timeoutEvent: node.events.EventInstance<js.array.Tuple>
 }

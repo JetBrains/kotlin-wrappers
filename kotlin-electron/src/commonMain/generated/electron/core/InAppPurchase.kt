@@ -72,5 +72,5 @@ external interface InAppPurchase : node.events.EventEmitter {
     fun restoreCompletedTransactions()
 
     @web.events.JsEvent("transactions-updated")
-    val transactionsUpdatedEvent: node.events.EventInstance<js.array.JsTuple>
+    val transactionsUpdatedEvent: node.events.EventInstance<js.array.Tuple>
 }

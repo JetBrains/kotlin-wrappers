@@ -1420,92 +1420,92 @@ external interface App : node.events.EventEmitter {
     var userAgentFallback: String
 
     @web.events.JsEvent("accessibility-support-changed")
-    val accessibilitySupportChangedEvent: node.events.EventInstance<js.array.JsTuple2<Event<*>, Boolean>>
+    val accessibilitySupportChangedEvent: node.events.EventInstance<js.array.Tuple2<Event<*>, Boolean>>
 
     @web.events.JsEvent("activate")
-    val activateEvent: node.events.EventInstance<js.array.JsTuple2<Event<*>, Boolean>>
+    val activateEvent: node.events.EventInstance<js.array.Tuple2<Event<*>, Boolean>>
 
     @web.events.JsEvent("activity-was-continued")
-    val activityWasContinuedEvent: node.events.EventInstance<js.array.JsTuple3<Event<*>, String, Any?>>
+    val activityWasContinuedEvent: node.events.EventInstance<js.array.Tuple3<Event<*>, String, Any?>>
 
     @web.events.JsEvent("before-quit")
-    val beforeQuitEvent: node.events.EventInstance<js.array.JsTuple1<Event<*>>>
+    val beforeQuitEvent: node.events.EventInstance<js.array.Tuple1<Event<*>>>
 
     @web.events.JsEvent("browser-window-blur")
-    val browserWindowBlurEvent: node.events.EventInstance<js.array.JsTuple2<Event<*>, BrowserWindow>>
+    val browserWindowBlurEvent: node.events.EventInstance<js.array.Tuple2<Event<*>, BrowserWindow>>
 
     @web.events.JsEvent("browser-window-created")
-    val browserWindowCreatedEvent: node.events.EventInstance<js.array.JsTuple2<Event<*>, BrowserWindow>>
+    val browserWindowCreatedEvent: node.events.EventInstance<js.array.Tuple2<Event<*>, BrowserWindow>>
 
     @web.events.JsEvent("browser-window-focus")
-    val browserWindowFocusEvent: node.events.EventInstance<js.array.JsTuple2<Event<*>, BrowserWindow>>
+    val browserWindowFocusEvent: node.events.EventInstance<js.array.Tuple2<Event<*>, BrowserWindow>>
 
     @web.events.JsEvent("certificate-error")
-    val certificateErrorEvent: node.events.EventInstance<js.array.JsTuple7<Event<*>, WebContents, String, String, Certificate, (isTrusted: Boolean) -> Unit, Boolean>>
+    val certificateErrorEvent: node.events.EventInstance<js.array.Tuple7<Event<*>, WebContents, String, String, Certificate, (isTrusted: Boolean) -> Unit, Boolean>>
 
     @web.events.JsEvent("child-process-gone")
-    val childProcessGoneEvent: node.events.EventInstance<js.array.JsTuple2<Event<*>, Details>>
+    val childProcessGoneEvent: node.events.EventInstance<js.array.Tuple2<Event<*>, Details>>
 
     @web.events.JsEvent("continue-activity")
-    val continueActivityEvent: node.events.EventInstance<js.array.JsTuple4<Event<*>, String, Any?, ContinueActivityDetails>>
+    val continueActivityEvent: node.events.EventInstance<js.array.Tuple4<Event<*>, String, Any?, ContinueActivityDetails>>
 
     @web.events.JsEvent("continue-activity-error")
-    val continueActivityErrorEvent: node.events.EventInstance<js.array.JsTuple3<Event<*>, String, String>>
+    val continueActivityErrorEvent: node.events.EventInstance<js.array.Tuple3<Event<*>, String, String>>
 
     @web.events.JsEvent("did-become-active")
-    val didBecomeActiveEvent: node.events.EventInstance<js.array.JsTuple1<Event<*>>>
+    val didBecomeActiveEvent: node.events.EventInstance<js.array.Tuple1<Event<*>>>
 
     @web.events.JsEvent("did-resign-active")
-    val didResignActiveEvent: node.events.EventInstance<js.array.JsTuple1<Event<*>>>
+    val didResignActiveEvent: node.events.EventInstance<js.array.Tuple1<Event<*>>>
 
     @web.events.JsEvent("gpu-info-update")
-    val gpuInfoUpdateEvent: node.events.EventInstance<js.array.JsTuple>
+    val gpuInfoUpdateEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("login")
-    val loginEvent: node.events.EventInstance<js.array.JsTuple5<Event<*>, WebContents, AuthenticationResponseDetails, AuthInfo, (username: String? /* use undefined for default */, password: String? /* use undefined for default */) -> Unit>>
+    val loginEvent: node.events.EventInstance<js.array.Tuple5<Event<*>, WebContents, AuthenticationResponseDetails, AuthInfo, (username: String? /* use undefined for default */, password: String? /* use undefined for default */) -> Unit>>
 
     @web.events.JsEvent("new-window-for-tab")
-    val newWindowForTabEvent: node.events.EventInstance<js.array.JsTuple1<Event<*>>>
+    val newWindowForTabEvent: node.events.EventInstance<js.array.Tuple1<Event<*>>>
 
     @web.events.JsEvent("open-file")
-    val openFileEvent: node.events.EventInstance<js.array.JsTuple2<Event<*>, String>>
+    val openFileEvent: node.events.EventInstance<js.array.Tuple2<Event<*>, String>>
 
     @web.events.JsEvent("open-url")
-    val openUrlEvent: node.events.EventInstance<js.array.JsTuple2<Event<*>, String>>
+    val openUrlEvent: node.events.EventInstance<js.array.Tuple2<Event<*>, String>>
 
     @web.events.JsEvent("quit")
-    val quitEvent: node.events.EventInstance<js.array.JsTuple2<Event<*>, Double>>
+    val quitEvent: node.events.EventInstance<js.array.Tuple2<Event<*>, Double>>
 
     @web.events.JsEvent("ready")
-    val readyEvent: node.events.EventInstance<js.array.JsTuple2<Event<*>, Any /* (Record<string, any>) | (NotificationResponse) */>>
+    val readyEvent: node.events.EventInstance<js.array.Tuple2<Event<*>, Any /* (Record<string, any>) | (NotificationResponse) */>>
 
     @web.events.JsEvent("render-process-gone")
-    val renderProcessGoneEvent: node.events.EventInstance<js.array.JsTuple3<Event<*>, WebContents, RenderProcessGoneDetails>>
+    val renderProcessGoneEvent: node.events.EventInstance<js.array.Tuple3<Event<*>, WebContents, RenderProcessGoneDetails>>
 
     @web.events.JsEvent("second-instance")
-    val secondInstanceEvent: node.events.EventInstance<js.array.JsTuple4<Event<*>, js.array.ReadonlyArray<String>, String, Any?>>
+    val secondInstanceEvent: node.events.EventInstance<js.array.Tuple4<Event<*>, js.array.ReadonlyArray<String>, String, Any?>>
 
     @web.events.JsEvent("select-client-certificate")
-    val selectClientCertificateEvent: node.events.EventInstance<js.array.JsTuple5<Event<*>, WebContents, String, js.array.ReadonlyArray<Certificate>, (certificate: Certificate? /* use undefined for default */) -> Unit>>
+    val selectClientCertificateEvent: node.events.EventInstance<js.array.Tuple5<Event<*>, WebContents, String, js.array.ReadonlyArray<Certificate>, (certificate: Certificate? /* use undefined for default */) -> Unit>>
 
     @web.events.JsEvent("session-created")
-    val sessionCreatedEvent: node.events.EventInstance<js.array.JsTuple1<Session>>
+    val sessionCreatedEvent: node.events.EventInstance<js.array.Tuple1<Session>>
 
     @web.events.JsEvent("update-activity-state")
-    val updateActivityStateEvent: node.events.EventInstance<js.array.JsTuple3<Event<*>, String, Any?>>
+    val updateActivityStateEvent: node.events.EventInstance<js.array.Tuple3<Event<*>, String, Any?>>
 
     @web.events.JsEvent("web-contents-created")
-    val webContentsCreatedEvent: node.events.EventInstance<js.array.JsTuple2<Event<*>, WebContents>>
+    val webContentsCreatedEvent: node.events.EventInstance<js.array.Tuple2<Event<*>, WebContents>>
 
     @web.events.JsEvent("will-continue-activity")
-    val willContinueActivityEvent: node.events.EventInstance<js.array.JsTuple2<Event<*>, String>>
+    val willContinueActivityEvent: node.events.EventInstance<js.array.Tuple2<Event<*>, String>>
 
     @web.events.JsEvent("will-finish-launching")
-    val willFinishLaunchingEvent: node.events.EventInstance<js.array.JsTuple>
+    val willFinishLaunchingEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("will-quit")
-    val willQuitEvent: node.events.EventInstance<js.array.JsTuple1<Event<*>>>
+    val willQuitEvent: node.events.EventInstance<js.array.Tuple1<Event<*>>>
 
     @web.events.JsEvent("window-all-closed")
-    val windowAllClosedEvent: node.events.EventInstance<js.array.JsTuple>
+    val windowAllClosedEvent: node.events.EventInstance<js.array.Tuple>
 }

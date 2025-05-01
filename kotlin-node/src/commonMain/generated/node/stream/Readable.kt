@@ -650,25 +650,25 @@ open external class Readable : Stream, node.ReadableStream {
     ) /* this */
 
     @web.events.JsEvent("close")
-    open val closeEvent: node.events.EventInstance<js.array.JsTuple>
+    open val closeEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("data")
-    open val dataEvent: node.events.EventInstance<js.array.JsTuple1<Any?>>
+    open val dataEvent: node.events.EventInstance<js.array.Tuple1<Any?>>
 
     @web.events.JsEvent("end")
-    open val endEvent: node.events.EventInstance<js.array.JsTuple>
+    open val endEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("error")
-    open val errorEvent: node.events.EventInstance<js.array.JsTuple1<js.errors.JsError>>
+    open val errorEvent: node.events.EventInstance<js.array.Tuple1<js.errors.JsError>>
 
     @web.events.JsEvent("pause")
-    open val pauseEvent: node.events.EventInstance<js.array.JsTuple>
+    open val pauseEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("readable")
-    open val readableEvent: node.events.EventInstance<js.array.JsTuple>
+    open val readableEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("resume")
-    open val resumeEvent: node.events.EventInstance<js.array.JsTuple>
+    open val resumeEvent: node.events.EventInstance<js.array.Tuple>
     override fun read(size: Number): Any /* string | Buffer */
     override fun <T : WritableStream> pipe(destination: T, options: ReadableStreamPipeOptions): T
     override fun unshift(chunk: String, encoding: node.buffer.BufferEncoding)

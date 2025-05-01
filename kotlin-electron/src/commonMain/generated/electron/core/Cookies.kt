@@ -50,5 +50,5 @@ external class Cookies : NodeEventEmitter {
     fun set(details: CookiesSetDetails): Promise<js.core.Void>
 
     @web.events.JsEvent("changed")
-    val changedEvent: node.events.EventInstance<js.array.JsTuple4<Event<*>, Cookie, (CookiesAddListenerListenerCause), Boolean>>
+    val changedEvent: node.events.EventInstance<js.array.Tuple4<Event<*>, Cookie, (CookiesAddListenerListenerCause), Boolean>>
 }

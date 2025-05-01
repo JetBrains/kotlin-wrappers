@@ -5,4 +5,4 @@
 
 package node.util.inspect
 
-external var colors: node.Dict<js.array.JsTuple2<Double, Double>>
+external var colors: node.Dict<js.array.Tuple2<Double, Double>>

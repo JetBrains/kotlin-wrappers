@@ -1,6 +1,6 @@
 package web.url
 
-import js.array.JsTuple2
+import js.array.Tuple2
 import js.core.JsString
 import js.objects.JsPlainObject
 
@@ -10,7 +10,7 @@ import js.objects.JsPlainObject
 @JsPlainObject
 external interface URLPatternResult {
     /** The inputs provided when matching. */
-    val inputs: JsTuple2<URLPatternInit, JsString?>
+    val inputs: Tuple2<URLPatternInit, JsString?>
 
     /** The matched result for the `protocol` matcher. */
     val protocol: URLPatternComponentResult

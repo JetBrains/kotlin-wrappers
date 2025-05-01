@@ -1586,85 +1586,85 @@ open external class BaseWindow : NodeEventEmitter {
     open var visibleOnAllWorkspaces: Boolean
 
     @web.events.JsEvent("always-on-top-changed")
-    open val alwaysOnTopChangedEvent: node.events.EventInstance<js.array.JsTuple2<Event<*>, Boolean>>
+    open val alwaysOnTopChangedEvent: node.events.EventInstance<js.array.Tuple2<Event<*>, Boolean>>
 
     @web.events.JsEvent("app-command")
-    open val appCommandEvent: node.events.EventInstance<js.array.JsTuple2<Event<*>, String>>
+    open val appCommandEvent: node.events.EventInstance<js.array.Tuple2<Event<*>, String>>
 
     @web.events.JsEvent("blur")
-    open val blurEvent: node.events.EventInstance<js.array.JsTuple1<Event<*>>>
+    open val blurEvent: node.events.EventInstance<js.array.Tuple1<Event<*>>>
 
     @web.events.JsEvent("close")
-    open val closeEvent: node.events.EventInstance<js.array.JsTuple1<Event<*>>>
+    open val closeEvent: node.events.EventInstance<js.array.Tuple1<Event<*>>>
 
     @web.events.JsEvent("closed")
-    open val closedEvent: node.events.EventInstance<js.array.JsTuple>
+    open val closedEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("enter-full-screen")
-    open val enterFullScreenEvent: node.events.EventInstance<js.array.JsTuple>
+    open val enterFullScreenEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("focus")
-    open val focusEvent: node.events.EventInstance<js.array.JsTuple1<Event<*>>>
+    open val focusEvent: node.events.EventInstance<js.array.Tuple1<Event<*>>>
 
     @web.events.JsEvent("hide")
-    open val hideEvent: node.events.EventInstance<js.array.JsTuple>
+    open val hideEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("leave-full-screen")
-    open val leaveFullScreenEvent: node.events.EventInstance<js.array.JsTuple>
+    open val leaveFullScreenEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("maximize")
-    open val maximizeEvent: node.events.EventInstance<js.array.JsTuple>
+    open val maximizeEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("minimize")
-    open val minimizeEvent: node.events.EventInstance<js.array.JsTuple>
+    open val minimizeEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("move")
-    open val moveEvent: node.events.EventInstance<js.array.JsTuple>
+    open val moveEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("moved")
-    open val movedEvent: node.events.EventInstance<js.array.JsTuple>
+    open val movedEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("new-window-for-tab")
-    open val newWindowForTabEvent: node.events.EventInstance<js.array.JsTuple>
+    open val newWindowForTabEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("resize")
-    open val resizeEvent: node.events.EventInstance<js.array.JsTuple>
+    open val resizeEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("resized")
-    open val resizedEvent: node.events.EventInstance<js.array.JsTuple>
+    open val resizedEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("restore")
-    open val restoreEvent: node.events.EventInstance<js.array.JsTuple>
+    open val restoreEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("rotate-gesture")
-    open val rotateGestureEvent: node.events.EventInstance<js.array.JsTuple2<Event<*>, Double>>
+    open val rotateGestureEvent: node.events.EventInstance<js.array.Tuple2<Event<*>, Double>>
 
     @web.events.JsEvent("session-end")
-    open val sessionEndEvent: node.events.EventInstance<js.array.JsTuple>
+    open val sessionEndEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("sheet-begin")
-    open val sheetBeginEvent: node.events.EventInstance<js.array.JsTuple>
+    open val sheetBeginEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("sheet-end")
-    open val sheetEndEvent: node.events.EventInstance<js.array.JsTuple>
+    open val sheetEndEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("show")
-    open val showEvent: node.events.EventInstance<js.array.JsTuple>
+    open val showEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("swipe")
-    open val swipeEvent: node.events.EventInstance<js.array.JsTuple2<Event<*>, String>>
+    open val swipeEvent: node.events.EventInstance<js.array.Tuple2<Event<*>, String>>
 
     @web.events.JsEvent("system-context-menu")
-    open val systemContextMenuEvent: node.events.EventInstance<js.array.JsTuple2<Event<*>, Point>>
+    open val systemContextMenuEvent: node.events.EventInstance<js.array.Tuple2<Event<*>, Point>>
 
     @web.events.JsEvent("unmaximize")
-    open val unmaximizeEvent: node.events.EventInstance<js.array.JsTuple>
+    open val unmaximizeEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("will-move")
-    open val willMoveEvent: node.events.EventInstance<js.array.JsTuple2<Event<*>, Rectangle>>
+    open val willMoveEvent: node.events.EventInstance<js.array.Tuple2<Event<*>, Rectangle>>
 
     @web.events.JsEvent("will-resize")
-    open val willResizeEvent: node.events.EventInstance<js.array.JsTuple3<Event<*>, Rectangle, WillResizeDetails>>
+    open val willResizeEvent: node.events.EventInstance<js.array.Tuple3<Event<*>, Rectangle, WillResizeDetails>>
 
     companion object {
         /**

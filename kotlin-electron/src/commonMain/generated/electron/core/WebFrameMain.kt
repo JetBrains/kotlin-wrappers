@@ -190,7 +190,7 @@ external class WebFrameMain : NodeEventEmitter {
     val visibilityState: String
 
     @web.events.JsEvent("dom-ready")
-    val domReadyEvent: node.events.EventInstance<js.array.JsTuple>
+    val domReadyEvent: node.events.EventInstance<js.array.Tuple>
 
     companion object {
 // Docs: https://electronjs.org/docs/api/web-frame-main

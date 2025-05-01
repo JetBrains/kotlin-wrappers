@@ -45,29 +45,29 @@ external class ReadStream : node.stream.Readable {
 
 
     @web.events.JsEvent("close")
-    override val closeEvent: node.events.EventInstance<js.array.JsTuple>
+    override val closeEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("data")
-    override val dataEvent: node.events.EventInstance<js.array.JsTuple1<Any /* Buffer | string */>>
+    override val dataEvent: node.events.EventInstance<js.array.Tuple1<Any /* Buffer | string */>>
 
     @web.events.JsEvent("end")
-    override val endEvent: node.events.EventInstance<js.array.JsTuple>
+    override val endEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("error")
-    override val errorEvent: node.events.EventInstance<js.array.JsTuple1<js.errors.JsError>>
+    override val errorEvent: node.events.EventInstance<js.array.Tuple1<js.errors.JsError>>
 
     @web.events.JsEvent("open")
-    val openEvent: node.events.EventInstance<js.array.JsTuple1<Number>>
+    val openEvent: node.events.EventInstance<js.array.Tuple1<Number>>
 
     @web.events.JsEvent("pause")
-    override val pauseEvent: node.events.EventInstance<js.array.JsTuple>
+    override val pauseEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("readable")
-    override val readableEvent: node.events.EventInstance<js.array.JsTuple>
+    override val readableEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("ready")
-    val readyEvent: node.events.EventInstance<js.array.JsTuple>
+    val readyEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("resume")
-    override val resumeEvent: node.events.EventInstance<js.array.JsTuple>
+    override val resumeEvent: node.events.EventInstance<js.array.Tuple>
 }

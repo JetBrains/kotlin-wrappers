@@ -290,29 +290,29 @@ external class REPLServer : _Interface {
 
 
     @web.events.JsEvent("close")
-    override val closeEvent: node.events.EventInstance<js.array.JsTuple>
+    override val closeEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("line")
-    override val lineEvent: node.events.EventInstance<js.array.JsTuple1<String>>
+    override val lineEvent: node.events.EventInstance<js.array.Tuple1<String>>
 
     @web.events.JsEvent("pause")
-    override val pauseEvent: node.events.EventInstance<js.array.JsTuple>
+    override val pauseEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("resume")
-    override val resumeEvent: node.events.EventInstance<js.array.JsTuple>
+    override val resumeEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("SIGCONT")
-    override val SIGCONTEvent: node.events.EventInstance<js.array.JsTuple>
+    override val SIGCONTEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("SIGINT")
-    override val SIGINTEvent: node.events.EventInstance<js.array.JsTuple>
+    override val SIGINTEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("SIGTSTP")
-    override val SIGTSTPEvent: node.events.EventInstance<js.array.JsTuple>
+    override val SIGTSTPEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("exit")
-    val exitEvent: node.events.EventInstance<js.array.JsTuple>
+    val exitEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("reset")
-    val resetEvent: node.events.EventInstance<js.array.JsTuple1<Context>>
+    val resetEvent: node.events.EventInstance<js.array.Tuple1<Context>>
 }

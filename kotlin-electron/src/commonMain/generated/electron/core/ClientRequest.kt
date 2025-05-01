@@ -187,23 +187,23 @@ external class ClientRequest : NodeEventEmitter {
     var chunkedEncoding: Boolean
 
     @web.events.JsEvent("abort")
-    val abortEvent: node.events.EventInstance<js.array.JsTuple>
+    val abortEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("close")
-    val closeEvent: node.events.EventInstance<js.array.JsTuple>
+    val closeEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("error")
-    val errorEvent: node.events.EventInstance<js.array.JsTuple1<js.errors.JsError>>
+    val errorEvent: node.events.EventInstance<js.array.Tuple1<js.errors.JsError>>
 
     @web.events.JsEvent("finish")
-    val finishEvent: node.events.EventInstance<js.array.JsTuple>
+    val finishEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("login")
-    val loginEvent: node.events.EventInstance<js.array.JsTuple2<AuthInfo, (username: String? /* use undefined for default */, password: String? /* use undefined for default */) -> Unit>>
+    val loginEvent: node.events.EventInstance<js.array.Tuple2<AuthInfo, (username: String? /* use undefined for default */, password: String? /* use undefined for default */) -> Unit>>
 
     @web.events.JsEvent("redirect")
-    val redirectEvent: node.events.EventInstance<js.array.JsTuple4<Double, String, String, js.objects.ReadonlyRecord<String, js.array.ReadonlyArray<String>>>>
+    val redirectEvent: node.events.EventInstance<js.array.Tuple4<Double, String, String, js.objects.ReadonlyRecord<String, js.array.ReadonlyArray<String>>>>
 
     @web.events.JsEvent("response")
-    val responseEvent: node.events.EventInstance<js.array.JsTuple1<IncomingMessage>>
+    val responseEvent: node.events.EventInstance<js.array.Tuple1<IncomingMessage>>
 }

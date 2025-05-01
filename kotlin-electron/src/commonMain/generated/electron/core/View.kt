@@ -79,5 +79,5 @@ open external class View : NodeEventEmitter {
     val children: js.array.ReadonlyArray<View>
 
     @web.events.JsEvent("bounds-changed")
-    open val boundsChangedEvent: node.events.EventInstance<js.array.JsTuple>
+    open val boundsChangedEvent: node.events.EventInstance<js.array.Tuple>
 }

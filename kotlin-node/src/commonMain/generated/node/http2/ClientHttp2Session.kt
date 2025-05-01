@@ -101,14 +101,14 @@ sealed external interface ClientHttp2Session : Http2Session {
     ) /* this */
 
     @web.events.JsEvent("altsvc")
-    val altsvcEvent: node.events.EventInstance<js.array.JsTuple3<String, String, Double>>
+    val altsvcEvent: node.events.EventInstance<js.array.Tuple3<String, String, Double>>
 
     @web.events.JsEvent("origin")
-    val originEvent: node.events.EventInstance<js.array.JsTuple1<js.array.ReadonlyArray<String>>>
+    val originEvent: node.events.EventInstance<js.array.Tuple1<js.array.ReadonlyArray<String>>>
 
     @web.events.JsEvent("connect")
-    val connectEvent: node.events.EventInstance<js.array.JsTuple2<ClientHttp2Session, Any /* net.Socket | tls.TLSSocket */>>
+    val connectEvent: node.events.EventInstance<js.array.Tuple2<ClientHttp2Session, Any /* net.Socket | tls.TLSSocket */>>
 
     @web.events.JsEvent("stream")
-    val streamEvent: node.events.EventInstance<js.array.JsTuple3<ClientHttp2Stream, ClientHttp2SessionAddListenerListenerHeaders, Double>>
+    val streamEvent: node.events.EventInstance<js.array.Tuple3<ClientHttp2Stream, ClientHttp2SessionAddListenerListenerHeaders, Double>>
 }

@@ -431,8 +431,8 @@ export default {
                 const key = karakum.identifier(eventName).replaceAll("`", "")
 
                 const tuple = parameters.length > 0
-                    ? `js.array.JsTuple${parameters.length}<${payload}>`
-                    : "js.array.JsTuple"
+                    ? `js.array.Tuple${parameters.length}<${payload}>`
+                    : "js.array.Tuple"
 
                 return (
                     `

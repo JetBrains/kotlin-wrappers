@@ -19,7 +19,7 @@ external class MIMEParams {
      * Each item of the iterator is a JavaScript `Array`. The first item of the array
      * is the `name`, the second item of the array is the `value`.
      */
-    fun entries(): js.iterable.JsIterator<js.array.JsTuple2</* name: */ String, /* value: */ String>>
+    fun entries(): js.iterable.JsIterator<js.array.Tuple2</* name: */ String, /* value: */ String>>
 
     /**
      * Returns the value of the first name-value pair whose name is `name`. If there

@@ -18,6 +18,6 @@ sealed external interface ChildProcessByStdio<I : Writable?, O : Readable?, E : 
     var boundStderr: E
 
     @JsName("stdio")
-    val boundStdio: js.array.JsTuple5<I, O, E, Any? /* Readable | Writable | null | undefined */, // extra, no modification
+    val boundStdio: js.array.Tuple5<I, O, E, Any? /* Readable | Writable | null | undefined */, // extra, no modification
             Any? /* Readable | Writable | null | undefined */>
 }

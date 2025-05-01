@@ -2,8 +2,8 @@
 
 package dateio.core
 
-import js.array.JsTuple2
 import js.array.ReadonlyArray
+import js.array.Tuple2
 
 external interface DateIOFormats<TLibFormatToken : Any> {
     /** Localized full date @example "Jan 1, 2019" */
@@ -134,7 +134,7 @@ external interface IUtils<TDate : Any> {
     fun isBeforeMonth(value: TDate, comparing: TDate): Boolean
     fun isBeforeYear(value: TDate, comparing: TDate): Boolean
 
-    fun isWithinRange(value: TDate, range: JsTuple2<TDate, TDate>): Boolean
+    fun isWithinRange(value: TDate, range: Tuple2<TDate, TDate>): Boolean
 
     fun startOfYear(value: TDate): TDate
     fun endOfYear(value: TDate): TDate

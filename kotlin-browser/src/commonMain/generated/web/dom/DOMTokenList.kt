@@ -2,7 +2,7 @@
 
 package web.dom
 
-import js.array.JsTuple2
+import js.array.Tuple2
 import js.collections.ListLike
 import js.core.JsInt
 import js.core.JsString
@@ -110,7 +110,7 @@ private constructor() :
         force: Boolean = definedExternally,
     ): Boolean
 
-    override fun entries(): JsIterator<JsTuple2<JsInt, JsString>>
+    override fun entries(): JsIterator<Tuple2<JsInt, JsString>>
     override fun keys(): JsIterator<JsInt>
     override fun values(): JsIterator<JsString>
     override fun forEach(action: (item: JsString) -> Unit)

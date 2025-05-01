@@ -77,20 +77,20 @@ external interface AutoUpdater : node.events.EventEmitter {
     fun setFeedURL(options: FeedURLOptions)
 
     @web.events.JsEvent("before-quit-for-update")
-    val beforeQuitForUpdateEvent: node.events.EventInstance<js.array.JsTuple>
+    val beforeQuitForUpdateEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("checking-for-update")
-    val checkingForUpdateEvent: node.events.EventInstance<js.array.JsTuple>
+    val checkingForUpdateEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("error")
-    val errorEvent: node.events.EventInstance<js.array.JsTuple1<js.errors.JsError>>
+    val errorEvent: node.events.EventInstance<js.array.Tuple1<js.errors.JsError>>
 
     @web.events.JsEvent("update-available")
-    val updateAvailableEvent: node.events.EventInstance<js.array.JsTuple>
+    val updateAvailableEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("update-downloaded")
-    val updateDownloadedEvent: node.events.EventInstance<js.array.JsTuple5<Event<*>, String, String, Date, String>>
+    val updateDownloadedEvent: node.events.EventInstance<js.array.Tuple5<Event<*>, String, String, Date, String>>
 
     @web.events.JsEvent("update-not-available")
-    val updateNotAvailableEvent: node.events.EventInstance<js.array.JsTuple>
+    val updateNotAvailableEvent: node.events.EventInstance<js.array.Tuple>
 }

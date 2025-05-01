@@ -2,7 +2,7 @@
 
 package react
 
-import js.array.JsTuple2
+import js.array.Tuple2
 
 /**
  * [Example](https://popper.js.org/react-popper/v2/#example)
@@ -10,4 +10,4 @@ import js.array.JsTuple2
  * [Online Documentation](https://react.dev/reference/react/useRef)
  */
 @JsName("useState")
-external fun <T : Any> useRefState(): JsTuple2<T?, RefCallback<T>>
+external fun <T : Any> useRefState(): Tuple2<T?, RefCallback<T>>

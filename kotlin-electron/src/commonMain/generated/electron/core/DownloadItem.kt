@@ -183,8 +183,8 @@ external class DownloadItem : NodeEventEmitter {
     var savePath: String
 
     @web.events.JsEvent("done")
-    val doneEvent: node.events.EventInstance<js.array.JsTuple2<Event<*>, (DownloadItemDoneListenerState)>>
+    val doneEvent: node.events.EventInstance<js.array.Tuple2<Event<*>, (DownloadItemDoneListenerState)>>
 
     @web.events.JsEvent("updated")
-    val updatedEvent: node.events.EventInstance<js.array.JsTuple2<Event<*>, (DownloadItemUpdatedListenerState)>>
+    val updatedEvent: node.events.EventInstance<js.array.Tuple2<Event<*>, (DownloadItemUpdatedListenerState)>>
 }

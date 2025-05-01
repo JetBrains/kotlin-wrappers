@@ -2,11 +2,11 @@
 
 package node.events
 
-import js.array.JsTuple
+import js.array.Tuple
 import web.events.JsEvent
 
 @JsName("EventEmitter")
 external class MyEmitter {
     @JsEvent("data")
-    val dataEvent: EventInstance<JsTuple>
+    val dataEvent: EventInstance<Tuple>
 }

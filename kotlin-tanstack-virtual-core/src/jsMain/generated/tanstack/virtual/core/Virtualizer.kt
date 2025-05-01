@@ -4,10 +4,10 @@
 
 package tanstack.virtual.core
 
-import js.array.JsTuple2
-import js.array.JsTuple4
-import js.array.JsTuple5
 import js.array.ReadonlyArray
+import js.array.Tuple2
+import js.array.Tuple4
+import js.array.Tuple5
 import js.collections.ReadonlyMap
 import web.dom.Element
 import web.events.EventTarget
@@ -29,15 +29,15 @@ external class Virtualizer<TScrollElement : EventTarget /* Element | Window */, 
     constructor(opts: VirtualizerOptions<TScrollElement, TItemElement>)
 
     var setOptions: (opts: VirtualizerOptions<TScrollElement, TItemElement>) -> Unit
-    var calculateRange: Updatable<ItemRange?, JsTuple4<ReadonlyArray<VirtualItem>, Int, Int, Int>>
-    var getVirtualIndexes: Updatable<ReadonlyArray<Int>, JsTuple5<(range: Range) -> ReadonlyArray<Int>, Int, Int, Int?, Int?>>
+    var calculateRange: Updatable<ItemRange?, Tuple4<ReadonlyArray<VirtualItem>, Int, Int, Int>>
+    var getVirtualIndexes: Updatable<ReadonlyArray<Int>, Tuple5<(range: Range) -> ReadonlyArray<Int>, Int, Int, Int?, Int?>>
     var indexFromElement: (node: TItemElement) -> Int
     var resizeItem: (index: Int, size: Int) -> Unit
     var measureElement: (node: TItemElement?) -> Unit
-    var getVirtualItems: Updatable<ReadonlyArray<VirtualItem>, JsTuple2<ReadonlyArray<Int>, ReadonlyArray<VirtualItem>>>
+    var getVirtualItems: Updatable<ReadonlyArray<VirtualItem>, Tuple2<ReadonlyArray<Int>, ReadonlyArray<VirtualItem>>>
     var getVirtualItemForOffset: (offset: Int) -> VirtualItem
     var getOffsetForAlignment: (toOffset: Int, align: ScrollAlignment, itemSize: Int?) -> Int
-    var getOffsetForIndex: (index: Int, align: ScrollAlignment?) -> JsTuple2<Double, ScrollAlignment>
+    var getOffsetForIndex: (index: Int, align: ScrollAlignment?) -> Tuple2<Double, ScrollAlignment>
     var scrollToOffset: (toOffset: Int, options: ScrollToOffsetOptions?) -> Unit
     var scrollToIndex: (index: Int, options: ScrollToIndexOptions?) -> Unit
     var scrollBy: (delta: Int, options: ScrollToOffsetOptions?) -> Unit

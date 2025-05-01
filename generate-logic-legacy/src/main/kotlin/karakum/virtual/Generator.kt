@@ -10,9 +10,9 @@ private val DEFAULT_IMPORTS = listOf(
     "js.array.ReadonlyArray",
     "js.objects.JsPlainObject",
     "js.collections.ReadonlyMap",
-    "js.array.JsTuple2",
-    "js.array.JsTuple4",
-    "js.array.JsTuple5",
+    "js.array.Tuple2",
+    "js.array.Tuple4",
+    "js.array.Tuple5",
     "js.core.Void",
 
     "web.dom.Element",

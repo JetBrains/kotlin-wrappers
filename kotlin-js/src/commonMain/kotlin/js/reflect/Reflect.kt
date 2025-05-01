@@ -1,7 +1,7 @@
 package js.reflect
 
-import js.array.JsTuple
 import js.array.ReadonlyArray
+import js.array.Tuple
 import js.core.JsAny
 import js.function.ConstructorFunction
 import js.objects.PropertyKey
@@ -14,7 +14,7 @@ external object Reflect {
      * @param target The constructor to invoke.
      * @param argumentsList An array of argument values to be passed to the constructor.
      */
-    fun <T : JsAny, A : JsTuple> construct(
+    fun <T : JsAny, A : Tuple> construct(
         target: ConstructorFunction<A, T>,
         argumentsList: A,
     ): T

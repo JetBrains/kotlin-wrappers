@@ -246,17 +246,17 @@ external class Worker : EventEmitter {
     fun off(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
     @web.events.JsEvent("error")
-    val errorEvent: node.events.EventInstance<js.array.JsTuple1<js.errors.JsError>>
+    val errorEvent: node.events.EventInstance<js.array.Tuple1<js.errors.JsError>>
 
     @web.events.JsEvent("exit")
-    val exitEvent: node.events.EventInstance<js.array.JsTuple1<Double>>
+    val exitEvent: node.events.EventInstance<js.array.Tuple1<Double>>
 
     @web.events.JsEvent("message")
-    val messageEvent: node.events.EventInstance<js.array.JsTuple1<Any?>>
+    val messageEvent: node.events.EventInstance<js.array.Tuple1<Any?>>
 
     @web.events.JsEvent("messageerror")
-    val messageerrorEvent: node.events.EventInstance<js.array.JsTuple1<js.errors.JsError>>
+    val messageerrorEvent: node.events.EventInstance<js.array.Tuple1<js.errors.JsError>>
 
     @web.events.JsEvent("online")
-    val onlineEvent: node.events.EventInstance<js.array.JsTuple>
+    val onlineEvent: node.events.EventInstance<js.array.Tuple>
 }

@@ -272,20 +272,20 @@ external class Worker : EventEmitter {
 
 
     @web.events.JsEvent("disconnect")
-    val disconnectEvent: node.events.EventInstance<js.array.JsTuple>
+    val disconnectEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("error")
-    val errorEvent: node.events.EventInstance<js.array.JsTuple1<js.errors.JsError>>
+    val errorEvent: node.events.EventInstance<js.array.Tuple1<js.errors.JsError>>
 
     @web.events.JsEvent("exit")
-    val exitEvent: node.events.EventInstance<js.array.JsTuple2<Double, String>>
+    val exitEvent: node.events.EventInstance<js.array.Tuple2<Double, String>>
 
     @web.events.JsEvent("listening")
-    val listeningEvent: node.events.EventInstance<js.array.JsTuple1<Address>>
+    val listeningEvent: node.events.EventInstance<js.array.Tuple1<Address>>
 
     @web.events.JsEvent("message")
-    val messageEvent: node.events.EventInstance<js.array.JsTuple2<Any?, Any /* net.Socket | net.Server */>>
+    val messageEvent: node.events.EventInstance<js.array.Tuple2<Any?, Any /* net.Socket | net.Server */>>
 
     @web.events.JsEvent("online")
-    val onlineEvent: node.events.EventInstance<js.array.JsTuple>
+    val onlineEvent: node.events.EventInstance<js.array.Tuple>
 }

@@ -52,20 +52,20 @@ sealed external interface Http2Server<Http1Request : IncomingMessage, Http1Respo
     ) /* this */
 
     @web.events.JsEvent("checkContinue")
-    val checkContinueEvent: node.events.EventInstance<js.array.JsTuple2<Http2Request, Http2Response>>
+    val checkContinueEvent: node.events.EventInstance<js.array.Tuple2<Http2Request, Http2Response>>
 
     @web.events.JsEvent("request")
-    val requestEvent: node.events.EventInstance<js.array.JsTuple2<Http2Request, Http2Response>>
+    val requestEvent: node.events.EventInstance<js.array.Tuple2<Http2Request, Http2Response>>
 
     @web.events.JsEvent("session")
-    val sessionEvent: node.events.EventInstance<js.array.JsTuple1<ServerHttp2Session<Http1Request, Http1Response, Http2Request, Http2Response>>>
+    val sessionEvent: node.events.EventInstance<js.array.Tuple1<ServerHttp2Session<Http1Request, Http1Response, Http2Request, Http2Response>>>
 
     @web.events.JsEvent("sessionError")
-    val sessionErrorEvent: node.events.EventInstance<js.array.JsTuple1<js.errors.JsError>>
+    val sessionErrorEvent: node.events.EventInstance<js.array.Tuple1<js.errors.JsError>>
 
     @web.events.JsEvent("stream")
-    val streamEvent: node.events.EventInstance<js.array.JsTuple3<ServerHttp2Stream, IncomingHttpHeaders, Double>>
+    val streamEvent: node.events.EventInstance<js.array.Tuple3<ServerHttp2Stream, IncomingHttpHeaders, Double>>
 
     @web.events.JsEvent("timeout")
-    val timeoutEvent: node.events.EventInstance<js.array.JsTuple>
+    val timeoutEvent: node.events.EventInstance<js.array.Tuple>
 }

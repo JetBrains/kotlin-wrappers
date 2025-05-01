@@ -4,8 +4,8 @@
 
 package tanstack.query.core
 
-import js.array.JsTuple2
 import js.array.ReadonlyArray
+import js.array.Tuple2
 import js.core.Void
 import js.promise.Promise
 
@@ -18,7 +18,7 @@ open external class QueryClient(
     open fun <TMutationFilters : MutationFilters<*, *, *, *>> isMutating(filters: TMutationFilters = definedExternally): Int
     open fun <TQueryFnData> getQueryData(queryKey: QueryKey): TQueryFnData?
     open fun <TQueryFnData, TError, TData, TQueryKey : QueryKey> ensureQueryData(options: EnsureQueryDataOptions<TQueryFnData, TError, TData, TQueryKey, *>): Promise<TData>
-    open fun <TQueryFnData, TQueryFilters : QueryFilters<*>> getQueriesData(filters: TQueryFilters): ReadonlyArray<JsTuple2<QueryKey, TQueryFnData?>>
+    open fun <TQueryFnData, TQueryFilters : QueryFilters<*>> getQueriesData(filters: TQueryFilters): ReadonlyArray<Tuple2<QueryKey, TQueryFnData?>>
     open fun <TQueryFnData> setQueryData(
         queryKey: QueryKey,
         updater: Updater<TQueryFnData?, TQueryFnData?>,
@@ -29,7 +29,7 @@ open external class QueryClient(
         filters: TQueryFilters,
         updater: Updater<TQueryFnData?, TQueryFnData?>,
         options: SetDataOptions = definedExternally,
-    ): ReadonlyArray<JsTuple2<QueryKey, TQueryFnData?>>
+    ): ReadonlyArray<Tuple2<QueryKey, TQueryFnData?>>
 
     open fun <TQueryFnData, TError> getQueryState(queryKey: QueryKey): QueryState<TQueryFnData, TError>?
     open fun <TTaggedQueryKey : QueryKey> removeQueries(filters: QueryFilters<TTaggedQueryKey> = definedExternally)

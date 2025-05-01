@@ -10,7 +10,7 @@ import java.io.File
 
 private val DEFAULT_IMPORTS = Imports(
     "js.array.ArrayLike",
-    "js.array.JsTuple2",
+    "js.array.Tuple2",
     "js.array.ReadonlyArray",
     "js.buffer.AllowSharedBufferSource",
     "js.buffer.ArrayBuffer",

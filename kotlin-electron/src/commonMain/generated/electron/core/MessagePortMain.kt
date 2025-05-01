@@ -35,8 +35,8 @@ external class MessagePortMain : NodeEventEmitter {
     fun start()
 
     @web.events.JsEvent("close")
-    val closeEvent: node.events.EventInstance<js.array.JsTuple>
+    val closeEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("message")
-    val messageEvent: node.events.EventInstance<js.array.JsTuple1<MessageEvent>>
+    val messageEvent: node.events.EventInstance<js.array.Tuple1<MessageEvent>>
 }

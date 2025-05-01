@@ -198,44 +198,44 @@ sealed external interface Http2Stream : node.stream.Duplex {
     ) /* this */
 
     @web.events.JsEvent("aborted")
-    val abortedEvent: node.events.EventInstance<js.array.JsTuple>
+    val abortedEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("close")
-    override val closeEvent: node.events.EventInstance<js.array.JsTuple>
+    override val closeEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("data")
-    override val dataEvent: node.events.EventInstance<js.array.JsTuple1<Any /* Buffer | string */>>
+    override val dataEvent: node.events.EventInstance<js.array.Tuple1<Any /* Buffer | string */>>
 
     @web.events.JsEvent("drain")
-    override val drainEvent: node.events.EventInstance<js.array.JsTuple>
+    override val drainEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("end")
-    override val endEvent: node.events.EventInstance<js.array.JsTuple>
+    override val endEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("error")
-    override val errorEvent: node.events.EventInstance<js.array.JsTuple1<js.errors.JsError>>
+    override val errorEvent: node.events.EventInstance<js.array.Tuple1<js.errors.JsError>>
 
     @web.events.JsEvent("finish")
-    override val finishEvent: node.events.EventInstance<js.array.JsTuple>
+    override val finishEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("frameError")
-    val frameErrorEvent: node.events.EventInstance<js.array.JsTuple2<Double, Double>>
+    val frameErrorEvent: node.events.EventInstance<js.array.Tuple2<Double, Double>>
 
     @web.events.JsEvent("pipe")
-    override val pipeEvent: node.events.EventInstance<js.array.JsTuple1<node.stream.Readable>>
+    override val pipeEvent: node.events.EventInstance<js.array.Tuple1<node.stream.Readable>>
 
     @web.events.JsEvent("unpipe")
-    override val unpipeEvent: node.events.EventInstance<js.array.JsTuple1<node.stream.Readable>>
+    override val unpipeEvent: node.events.EventInstance<js.array.Tuple1<node.stream.Readable>>
 
     @web.events.JsEvent("streamClosed")
-    val streamClosedEvent: node.events.EventInstance<js.array.JsTuple1<Double>>
+    val streamClosedEvent: node.events.EventInstance<js.array.Tuple1<Double>>
 
     @web.events.JsEvent("timeout")
-    val timeoutEvent: node.events.EventInstance<js.array.JsTuple>
+    val timeoutEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("trailers")
-    val trailersEvent: node.events.EventInstance<js.array.JsTuple2<IncomingHttpHeaders, Double>>
+    val trailersEvent: node.events.EventInstance<js.array.Tuple2<IncomingHttpHeaders, Double>>
 
     @web.events.JsEvent("wantTrailers")
-    val wantTrailersEvent: node.events.EventInstance<js.array.JsTuple>
+    val wantTrailersEvent: node.events.EventInstance<js.array.Tuple>
 }

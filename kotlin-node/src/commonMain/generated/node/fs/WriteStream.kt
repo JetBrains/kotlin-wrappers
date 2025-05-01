@@ -53,26 +53,26 @@ external class WriteStream : node.stream.Writable {
 
 
     @web.events.JsEvent("close")
-    override val closeEvent: node.events.EventInstance<js.array.JsTuple>
+    override val closeEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("drain")
-    override val drainEvent: node.events.EventInstance<js.array.JsTuple>
+    override val drainEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("error")
-    override val errorEvent: node.events.EventInstance<js.array.JsTuple1<js.errors.JsError>>
+    override val errorEvent: node.events.EventInstance<js.array.Tuple1<js.errors.JsError>>
 
     @web.events.JsEvent("finish")
-    override val finishEvent: node.events.EventInstance<js.array.JsTuple>
+    override val finishEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("open")
-    val openEvent: node.events.EventInstance<js.array.JsTuple1<Number>>
+    val openEvent: node.events.EventInstance<js.array.Tuple1<Number>>
 
     @web.events.JsEvent("pipe")
-    override val pipeEvent: node.events.EventInstance<js.array.JsTuple1<node.stream.Readable>>
+    override val pipeEvent: node.events.EventInstance<js.array.Tuple1<node.stream.Readable>>
 
     @web.events.JsEvent("ready")
-    val readyEvent: node.events.EventInstance<js.array.JsTuple>
+    val readyEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("unpipe")
-    override val unpipeEvent: node.events.EventInstance<js.array.JsTuple1<node.stream.Readable>>
+    override val unpipeEvent: node.events.EventInstance<js.array.Tuple1<node.stream.Readable>>
 }

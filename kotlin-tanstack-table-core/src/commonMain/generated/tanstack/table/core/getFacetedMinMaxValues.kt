@@ -4,6 +4,6 @@
 
 package tanstack.table.core
 
-import js.array.JsTuple2
+import js.array.Tuple2
 
-external fun <TData : RowData> getFacetedMinMaxValues(): (table: Table<TData>, columnId: String) -> () -> JsTuple2<Int, Int>?
+external fun <TData : RowData> getFacetedMinMaxValues(): (table: Table<TData>, columnId: String) -> () -> Tuple2<Int, Int>?

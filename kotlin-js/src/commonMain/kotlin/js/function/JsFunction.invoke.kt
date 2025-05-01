@@ -5,24 +5,24 @@ import js.core.JsAny
 import js.function.internal.UnsafeInvoker
 import js.reflect.unsafeCast
 
-inline operator fun <R : JsAny?> JsFunction<JsTuple, R>.invoke(): R =
+inline operator fun <R : JsAny?> JsFunction<Tuple, R>.invoke(): R =
     unsafeCast<UnsafeInvoker<R>>(this)
         .invoke()
 
-inline operator fun <P1 : JsAny?, R : JsAny?> JsFunction<JsTuple1<P1>, R>.invoke(
+inline operator fun <P1 : JsAny?, R : JsAny?> JsFunction<Tuple1<P1>, R>.invoke(
     p1: P1,
 ): R =
     unsafeCast<UnsafeInvoker<R>>(this)
         .invoke(p1)
 
-inline operator fun <P1 : JsAny?, P2 : JsAny?, R : JsAny?> JsFunction<JsTuple2<P1, P2>, R>.invoke(
+inline operator fun <P1 : JsAny?, P2 : JsAny?, R : JsAny?> JsFunction<Tuple2<P1, P2>, R>.invoke(
     p1: P1,
     p2: P2,
 ): R =
     unsafeCast<UnsafeInvoker<R>>(this)
         .invoke(p1, p2)
 
-inline operator fun <P1 : JsAny?, P2 : JsAny?, P3 : JsAny?, R : JsAny?> JsFunction<JsTuple3<P1, P2, P3>, R>.invoke(
+inline operator fun <P1 : JsAny?, P2 : JsAny?, P3 : JsAny?, R : JsAny?> JsFunction<Tuple3<P1, P2, P3>, R>.invoke(
     p1: P1,
     p2: P2,
     p3: P3,
@@ -30,7 +30,7 @@ inline operator fun <P1 : JsAny?, P2 : JsAny?, P3 : JsAny?, R : JsAny?> JsFuncti
     unsafeCast<UnsafeInvoker<R>>(this)
         .invoke(p1, p2, p3)
 
-inline operator fun <P1 : JsAny?, P2 : JsAny?, P3 : JsAny?, P4 : JsAny?, R : JsAny?> JsFunction<JsTuple4<P1, P2, P3, P4>, R>.invoke(
+inline operator fun <P1 : JsAny?, P2 : JsAny?, P3 : JsAny?, P4 : JsAny?, R : JsAny?> JsFunction<Tuple4<P1, P2, P3, P4>, R>.invoke(
     p1: P1,
     p2: P2,
     p3: P3,
@@ -39,7 +39,7 @@ inline operator fun <P1 : JsAny?, P2 : JsAny?, P3 : JsAny?, P4 : JsAny?, R : JsA
     unsafeCast<UnsafeInvoker<R>>(this)
         .invoke(p1, p2, p3, p4)
 
-inline operator fun <P1 : JsAny?, P2 : JsAny?, P3 : JsAny?, P4 : JsAny?, P5 : JsAny?, R : JsAny?> JsFunction<JsTuple5<P1, P2, P3, P4, P5>, R>.invoke(
+inline operator fun <P1 : JsAny?, P2 : JsAny?, P3 : JsAny?, P4 : JsAny?, P5 : JsAny?, R : JsAny?> JsFunction<Tuple5<P1, P2, P3, P4, P5>, R>.invoke(
     p1: P1,
     p2: P2,
     p3: P3,
@@ -49,7 +49,7 @@ inline operator fun <P1 : JsAny?, P2 : JsAny?, P3 : JsAny?, P4 : JsAny?, P5 : Js
     unsafeCast<UnsafeInvoker<R>>(this)
         .invoke(p1, p2, p3, p4, p5)
 
-inline operator fun <P1 : JsAny?, P2 : JsAny?, P3 : JsAny?, P4 : JsAny?, P5 : JsAny?, P6 : JsAny?, R : JsAny?> JsFunction<JsTuple6<P1, P2, P3, P4, P5, P6>, R>.invoke(
+inline operator fun <P1 : JsAny?, P2 : JsAny?, P3 : JsAny?, P4 : JsAny?, P5 : JsAny?, P6 : JsAny?, R : JsAny?> JsFunction<Tuple6<P1, P2, P3, P4, P5, P6>, R>.invoke(
     p1: P1,
     p2: P2,
     p3: P3,
@@ -60,7 +60,7 @@ inline operator fun <P1 : JsAny?, P2 : JsAny?, P3 : JsAny?, P4 : JsAny?, P5 : Js
     unsafeCast<UnsafeInvoker<R>>(this)
         .invoke(p1, p2, p3, p4, p5, p6)
 
-inline operator fun <P1 : JsAny?, P2 : JsAny?, P3 : JsAny?, P4 : JsAny?, P5 : JsAny?, P6 : JsAny?, P7 : JsAny?, R : JsAny?> JsFunction<JsTuple7<P1, P2, P3, P4, P5, P6, P7>, R>.invoke(
+inline operator fun <P1 : JsAny?, P2 : JsAny?, P3 : JsAny?, P4 : JsAny?, P5 : JsAny?, P6 : JsAny?, P7 : JsAny?, R : JsAny?> JsFunction<Tuple7<P1, P2, P3, P4, P5, P6, P7>, R>.invoke(
     p1: P1,
     p2: P2,
     p3: P3,

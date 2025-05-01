@@ -1,5 +1,5 @@
 package react
 
-import js.array.JsTuple2
+import js.array.Tuple2
 
-typealias TransitionInstance = JsTuple2<Boolean, TransitionStartFunction>
+typealias TransitionInstance = Tuple2<Boolean, TransitionStartFunction>

@@ -8,8 +8,8 @@
 
 package tanstack.query.core
 
-import js.array.JsTuple3
 import js.array.ReadonlyArray
+import js.array.Tuple3
 import js.errors.JsError
 
 open external class QueriesObserver<TCombinedResult>(
@@ -34,7 +34,7 @@ open external class QueriesObserver<TCombinedResult>(
     ): QueriesObserverOptimisticResult<TCombinedResult>
 }
 
-typealias QueriesObserverOptimisticResult<TCombinedResult> = JsTuple3<
+typealias QueriesObserverOptimisticResult<TCombinedResult> = Tuple3<
         /* rawResult: */ ReadonlyArray<QueryObserverResult<*, *>>,
         /* combineResult: */ (r: ReadonlyArray<QueryObserverResult<*, *>>?) -> TCombinedResult,
         /* trackResult */ () -> ReadonlyArray<QueryObserverResult<*, *>>,

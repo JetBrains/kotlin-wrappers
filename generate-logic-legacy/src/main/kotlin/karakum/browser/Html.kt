@@ -2205,7 +2205,7 @@ private fun convertFunction(
         .removeSuffix(": void")
         .replace(
             ": [ReadableStream<R>, ReadableStream<R>]",
-            ": JsTuple2<ReadableStream<R>, ReadableStream<R>>",
+            ": Tuple2<ReadableStream<R>, ReadableStream<R>>",
         )
         .replace(
             "SVGCircleElement | SVGEllipseElement | SVGImageElement | SVGLineElement | SVGPathElement | SVGPolygonElement | SVGPolylineElement | SVGRectElement | SVGTextElement | SVGUseElement",
@@ -2458,7 +2458,7 @@ private fun getParameterType(
 
         // URL
         source == "string[][]"
-            -> "ReadonlyArray<JsTuple2<String, String>>"
+            -> "ReadonlyArray<Tuple2<String, String>>"
 
         source.startsWith("\"")
             -> "String /* $source */"
@@ -2496,7 +2496,7 @@ private fun getParameterType(
                 atype = "Double"
 
             if (atype == "[string, string]")
-                atype = "JsTuple2<String, String>"
+                atype = "Tuple2<String, String>"
 
             "ReadonlyArray<$atype>"
         }

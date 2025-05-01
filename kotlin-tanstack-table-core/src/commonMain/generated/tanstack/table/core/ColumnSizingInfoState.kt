@@ -2,13 +2,13 @@
 
 package tanstack.table.core
 
-import js.array.JsTuple2
 import js.array.ReadonlyArray
+import js.array.Tuple2
 import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface ColumnSizingInfoState {
-    val columnSizingStart: ReadonlyArray<JsTuple2<String, Int>>
+    val columnSizingStart: ReadonlyArray<Tuple2<String, Int>>
     val deltaOffset: Int?
     val deltaPercentage: Int?
     val isResizingColumn: String /* false | string */

@@ -2,8 +2,8 @@
 
 package web.form
 
-import js.array.JsTuple2
 import js.array.ReadonlyArray
+import js.array.Tuple2
 import js.collections.MapLike
 import js.core.JsString
 import js.iterable.JsIterator
@@ -78,7 +78,7 @@ open external class FormData(
         filename: String = definedExternally,
     )
 
-    override fun entries(): JsIterator<JsTuple2<JsString, FormDataEntryValue>>
+    override fun entries(): JsIterator<Tuple2<JsString, FormDataEntryValue>>
     override fun keys(): JsIterator<JsString>
     override fun values(): JsIterator<FormDataEntryValue>
     override fun forEach(action: (value: FormDataEntryValue, key: JsString) -> Unit)

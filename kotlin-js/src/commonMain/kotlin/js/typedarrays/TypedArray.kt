@@ -1,8 +1,8 @@
 package js.typedarrays
 
-import js.array.JsTuple2
 import js.array.MutableArrayLike
 import js.array.ReadonlyArray
+import js.array.Tuple2
 import js.buffer.ArrayBuffer
 import js.buffer.ArrayBufferLike
 import js.buffer.ArrayBufferView
@@ -358,7 +358,7 @@ sealed external class TypedArray<
         value: T,
     ): R
 
-    override fun entries(): JsIterator<JsTuple2<JsInt, T>>
+    override fun entries(): JsIterator<Tuple2<JsInt, T>>
 
     override fun keys(): JsIterator<JsInt>
 

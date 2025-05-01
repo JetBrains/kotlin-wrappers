@@ -17,5 +17,5 @@ external interface ParentPort : node.events.EventEmitter {
     fun postMessage(message: Any?)
 
     @web.events.JsEvent("message")
-    val messageEvent: node.events.EventInstance<js.array.JsTuple1<MessageEvent>>
+    val messageEvent: node.events.EventInstance<js.array.Tuple1<MessageEvent>>
 }

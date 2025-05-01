@@ -93,5 +93,5 @@ external interface NativeTheme : node.events.EventEmitter {
     var themeSource: (NativeThemeThemeSource)
 
     @web.events.JsEvent("updated")
-    val updatedEvent: node.events.EventInstance<js.array.JsTuple>
+    val updatedEvent: node.events.EventInstance<js.array.Tuple>
 }

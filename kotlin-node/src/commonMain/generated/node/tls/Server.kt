@@ -90,20 +90,20 @@ open external class Server : node.net.Server {
 
 
     @web.events.JsEvent("tlsClientError")
-    open val tlsClientErrorEvent: node.events.EventInstance<js.array.JsTuple2<js.errors.JsError, TLSSocket>>
+    open val tlsClientErrorEvent: node.events.EventInstance<js.array.Tuple2<js.errors.JsError, TLSSocket>>
 
     @web.events.JsEvent("newSession")
-    val newSessionEvent: node.events.EventInstance<js.array.JsTuple3<node.buffer.Buffer<*>, node.buffer.Buffer<*>, () -> Unit>>
+    val newSessionEvent: node.events.EventInstance<js.array.Tuple3<node.buffer.Buffer<*>, node.buffer.Buffer<*>, () -> Unit>>
 
     @web.events.JsEvent("OCSPRequest")
-    open val OCSPRequestEvent: node.events.EventInstance<js.array.JsTuple3<node.buffer.Buffer<*>, node.buffer.Buffer<*>, (err: js.errors.JsError?, resp: node.buffer.Buffer<*>) -> Unit>>
+    open val OCSPRequestEvent: node.events.EventInstance<js.array.Tuple3<node.buffer.Buffer<*>, node.buffer.Buffer<*>, (err: js.errors.JsError?, resp: node.buffer.Buffer<*>) -> Unit>>
 
     @web.events.JsEvent("resumeSession")
-    val resumeSessionEvent: node.events.EventInstance<js.array.JsTuple2<node.buffer.Buffer<*>, (err: js.errors.JsError?, sessionData: node.buffer.Buffer<*>?) -> Unit>>
+    val resumeSessionEvent: node.events.EventInstance<js.array.Tuple2<node.buffer.Buffer<*>, (err: js.errors.JsError?, sessionData: node.buffer.Buffer<*>?) -> Unit>>
 
     @web.events.JsEvent("secureConnection")
-    open val secureConnectionEvent: node.events.EventInstance<js.array.JsTuple1<TLSSocket>>
+    open val secureConnectionEvent: node.events.EventInstance<js.array.Tuple1<TLSSocket>>
 
     @web.events.JsEvent("keylog")
-    open val keylogEvent: node.events.EventInstance<js.array.JsTuple2<node.buffer.Buffer<*>, TLSSocket>>
+    open val keylogEvent: node.events.EventInstance<js.array.Tuple2<node.buffer.Buffer<*>, TLSSocket>>
 }

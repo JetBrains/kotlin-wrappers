@@ -49,7 +49,7 @@ open external class Deserializer {
      * Read a raw 64-bit unsigned integer and return it as an array `[hi, lo]` with two 32-bit unsigned integer entries.
      * For use inside of a custom `deserializer._readHostObject()`.
      */
-    fun readUint64(): js.array.JsTuple2<Double, Double>
+    fun readUint64(): js.array.Tuple2<Double, Double>
 
     /**
      * Read a JS `number` value.

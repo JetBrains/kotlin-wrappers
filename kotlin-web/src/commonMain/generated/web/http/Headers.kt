@@ -2,8 +2,8 @@
 
 package web.http
 
-import js.array.JsTuple2
 import js.array.ReadonlyArray
+import js.array.Tuple2
 import js.collections.MapLike
 import js.core.JsString
 import js.iterable.JsIterator
@@ -16,7 +16,7 @@ import kotlin.js.definedExternally
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Headers)
  */
 open external class Headers(
-    init: ReadonlyArray<JsTuple2<JsString, JsString>> = definedExternally,
+    init: ReadonlyArray<Tuple2<JsString, JsString>> = definedExternally,
 ) : MapLike<JsString, JsString> {
     constructor(init: ReadonlyRecord<JsString, JsString>)
     constructor(init: Headers)
@@ -57,7 +57,7 @@ open external class Headers(
         value: String,
     )
 
-    override fun entries(): JsIterator<JsTuple2<JsString, JsString>>
+    override fun entries(): JsIterator<Tuple2<JsString, JsString>>
     override fun keys(): JsIterator<JsString>
     override fun values(): JsIterator<JsString>
     override fun forEach(action: (value: JsString, key: JsString) -> Unit)

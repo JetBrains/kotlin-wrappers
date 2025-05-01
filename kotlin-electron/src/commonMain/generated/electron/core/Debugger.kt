@@ -48,8 +48,8 @@ external class Debugger : NodeEventEmitter {
     ): Promise<Any?>
 
     @web.events.JsEvent("detach")
-    val detachEvent: node.events.EventInstance<js.array.JsTuple2<Event<*>, String>>
+    val detachEvent: node.events.EventInstance<js.array.Tuple2<Event<*>, String>>
 
     @web.events.JsEvent("message")
-    val messageEvent: node.events.EventInstance<js.array.JsTuple4<Event<*>, String, Any?, String>>
+    val messageEvent: node.events.EventInstance<js.array.Tuple4<Event<*>, String, Any?, String>>
 }

@@ -319,14 +319,14 @@ external class TLSSocket : node.net.Socket {
 
 
     @web.events.JsEvent("OCSPResponse")
-    val OCSPResponseEvent: node.events.EventInstance<js.array.JsTuple1<node.buffer.Buffer<*>>>
+    val OCSPResponseEvent: node.events.EventInstance<js.array.Tuple1<node.buffer.Buffer<*>>>
 
     @web.events.JsEvent("secureConnect")
-    val secureConnectEvent: node.events.EventInstance<js.array.JsTuple>
+    val secureConnectEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("session")
-    val sessionEvent: node.events.EventInstance<js.array.JsTuple1<node.buffer.Buffer<*>>>
+    val sessionEvent: node.events.EventInstance<js.array.Tuple1<node.buffer.Buffer<*>>>
 
     @web.events.JsEvent("keylog")
-    val keylogEvent: node.events.EventInstance<js.array.JsTuple1<node.buffer.Buffer<*>>>
+    val keylogEvent: node.events.EventInstance<js.array.Tuple1<node.buffer.Buffer<*>>>
 }

@@ -2120,103 +2120,103 @@ open external class BrowserWindow : BaseWindow {
     val webContents: WebContents
 
     @web.events.JsEvent("always-on-top-changed")
-    override val alwaysOnTopChangedEvent: node.events.EventInstance<js.array.JsTuple2<Event<*>, Boolean>>
+    override val alwaysOnTopChangedEvent: node.events.EventInstance<js.array.Tuple2<Event<*>, Boolean>>
 
     @web.events.JsEvent("app-command")
-    override val appCommandEvent: node.events.EventInstance<js.array.JsTuple2<Event<*>, String>>
+    override val appCommandEvent: node.events.EventInstance<js.array.Tuple2<Event<*>, String>>
 
     @web.events.JsEvent("blur")
-    override val blurEvent: node.events.EventInstance<js.array.JsTuple1<Event<*>>>
+    override val blurEvent: node.events.EventInstance<js.array.Tuple1<Event<*>>>
 
     @web.events.JsEvent("close")
-    override val closeEvent: node.events.EventInstance<js.array.JsTuple1<Event<*>>>
+    override val closeEvent: node.events.EventInstance<js.array.Tuple1<Event<*>>>
 
     @web.events.JsEvent("closed")
-    override val closedEvent: node.events.EventInstance<js.array.JsTuple>
+    override val closedEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("enter-full-screen")
-    override val enterFullScreenEvent: node.events.EventInstance<js.array.JsTuple>
+    override val enterFullScreenEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("enter-html-full-screen")
-    val enterHtmlFullScreenEvent: node.events.EventInstance<js.array.JsTuple>
+    val enterHtmlFullScreenEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("focus")
-    override val focusEvent: node.events.EventInstance<js.array.JsTuple1<Event<*>>>
+    override val focusEvent: node.events.EventInstance<js.array.Tuple1<Event<*>>>
 
     @web.events.JsEvent("hide")
-    override val hideEvent: node.events.EventInstance<js.array.JsTuple>
+    override val hideEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("leave-full-screen")
-    override val leaveFullScreenEvent: node.events.EventInstance<js.array.JsTuple>
+    override val leaveFullScreenEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("leave-html-full-screen")
-    val leaveHtmlFullScreenEvent: node.events.EventInstance<js.array.JsTuple>
+    val leaveHtmlFullScreenEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("maximize")
-    override val maximizeEvent: node.events.EventInstance<js.array.JsTuple>
+    override val maximizeEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("minimize")
-    override val minimizeEvent: node.events.EventInstance<js.array.JsTuple>
+    override val minimizeEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("move")
-    override val moveEvent: node.events.EventInstance<js.array.JsTuple>
+    override val moveEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("moved")
-    override val movedEvent: node.events.EventInstance<js.array.JsTuple>
+    override val movedEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("new-window-for-tab")
-    override val newWindowForTabEvent: node.events.EventInstance<js.array.JsTuple>
+    override val newWindowForTabEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("page-title-updated")
-    val pageTitleUpdatedEvent: node.events.EventInstance<js.array.JsTuple3<Event<*>, String, Boolean>>
+    val pageTitleUpdatedEvent: node.events.EventInstance<js.array.Tuple3<Event<*>, String, Boolean>>
 
     @web.events.JsEvent("ready-to-show")
-    val readyToShowEvent: node.events.EventInstance<js.array.JsTuple>
+    val readyToShowEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("resize")
-    override val resizeEvent: node.events.EventInstance<js.array.JsTuple>
+    override val resizeEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("resized")
-    override val resizedEvent: node.events.EventInstance<js.array.JsTuple>
+    override val resizedEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("responsive")
-    val responsiveEvent: node.events.EventInstance<js.array.JsTuple>
+    val responsiveEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("restore")
-    override val restoreEvent: node.events.EventInstance<js.array.JsTuple>
+    override val restoreEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("rotate-gesture")
-    override val rotateGestureEvent: node.events.EventInstance<js.array.JsTuple2<Event<*>, Double>>
+    override val rotateGestureEvent: node.events.EventInstance<js.array.Tuple2<Event<*>, Double>>
 
     @web.events.JsEvent("session-end")
-    override val sessionEndEvent: node.events.EventInstance<js.array.JsTuple>
+    override val sessionEndEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("sheet-begin")
-    override val sheetBeginEvent: node.events.EventInstance<js.array.JsTuple>
+    override val sheetBeginEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("sheet-end")
-    override val sheetEndEvent: node.events.EventInstance<js.array.JsTuple>
+    override val sheetEndEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("show")
-    override val showEvent: node.events.EventInstance<js.array.JsTuple>
+    override val showEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("swipe")
-    override val swipeEvent: node.events.EventInstance<js.array.JsTuple2<Event<*>, String>>
+    override val swipeEvent: node.events.EventInstance<js.array.Tuple2<Event<*>, String>>
 
     @web.events.JsEvent("system-context-menu")
-    override val systemContextMenuEvent: node.events.EventInstance<js.array.JsTuple2<Event<*>, Point>>
+    override val systemContextMenuEvent: node.events.EventInstance<js.array.Tuple2<Event<*>, Point>>
 
     @web.events.JsEvent("unmaximize")
-    override val unmaximizeEvent: node.events.EventInstance<js.array.JsTuple>
+    override val unmaximizeEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("unresponsive")
-    val unresponsiveEvent: node.events.EventInstance<js.array.JsTuple>
+    val unresponsiveEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("will-move")
-    override val willMoveEvent: node.events.EventInstance<js.array.JsTuple2<Event<*>, Rectangle>>
+    override val willMoveEvent: node.events.EventInstance<js.array.Tuple2<Event<*>, Rectangle>>
 
     @web.events.JsEvent("will-resize")
-    override val willResizeEvent: node.events.EventInstance<js.array.JsTuple3<Event<*>, Rectangle, WillResizeDetails>>
+    override val willResizeEvent: node.events.EventInstance<js.array.Tuple3<Event<*>, Rectangle, WillResizeDetails>>
 
     companion object {
         /**

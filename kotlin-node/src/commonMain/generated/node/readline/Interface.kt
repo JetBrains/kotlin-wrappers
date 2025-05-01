@@ -293,26 +293,26 @@ open external class _Interface : EventEmitter {
 
 
     @web.events.JsEvent("close")
-    open val closeEvent: node.events.EventInstance<js.array.JsTuple>
+    open val closeEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("line")
-    open val lineEvent: node.events.EventInstance<js.array.JsTuple1<String>>
+    open val lineEvent: node.events.EventInstance<js.array.Tuple1<String>>
 
     @web.events.JsEvent("pause")
-    open val pauseEvent: node.events.EventInstance<js.array.JsTuple>
+    open val pauseEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("resume")
-    open val resumeEvent: node.events.EventInstance<js.array.JsTuple>
+    open val resumeEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("SIGCONT")
-    open val SIGCONTEvent: node.events.EventInstance<js.array.JsTuple>
+    open val SIGCONTEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("SIGINT")
-    open val SIGINTEvent: node.events.EventInstance<js.array.JsTuple>
+    open val SIGINTEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("SIGTSTP")
-    open val SIGTSTPEvent: node.events.EventInstance<js.array.JsTuple>
+    open val SIGTSTPEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("history")
-    val historyEvent: node.events.EventInstance<js.array.JsTuple1<js.array.ReadonlyArray<String>>>
+    val historyEvent: node.events.EventInstance<js.array.Tuple1<js.array.ReadonlyArray<String>>>
 }

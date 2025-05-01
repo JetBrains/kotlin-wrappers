@@ -275,7 +275,7 @@ internal fun kotlinType(
             .split(", ")
             .map { kotlinType(it) }
 
-        return "JsTuple2<$a, $b>"
+        return "Tuple2<$a, $b>"
     }
 
     val promiseResult = type.removeSurrounding("Promise<", ">")

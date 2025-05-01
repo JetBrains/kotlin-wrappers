@@ -16,7 +16,7 @@ import js.date.Date
 import js.objects.JsPlainObject
 import js.objects.ReadonlyRecord
 import js.objects.Record
-import js.array.JsTuple2
+import js.array.Tuple2
 import js.array.ReadonlyArray
 import js.core.Void
 import js.errors.JsError

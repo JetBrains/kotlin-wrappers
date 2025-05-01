@@ -277,35 +277,35 @@ external interface PowerMonitor : node.events.EventEmitter {
     var onBatteryPower: Boolean
 
     @web.events.JsEvent("lock-screen")
-    val lockScreenEvent: node.events.EventInstance<js.array.JsTuple>
+    val lockScreenEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("on-ac")
-    val onAcEvent: node.events.EventInstance<js.array.JsTuple>
+    val onAcEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("on-battery")
-    val onBatteryEvent: node.events.EventInstance<js.array.JsTuple>
+    val onBatteryEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("resume")
-    val resumeEvent: node.events.EventInstance<js.array.JsTuple>
+    val resumeEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("shutdown")
-    val shutdownEvent: node.events.EventInstance<js.array.JsTuple>
+    val shutdownEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("speed-limit-change")
-    val speedLimitChangeEvent: node.events.EventInstance<js.array.JsTuple>
+    val speedLimitChangeEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("suspend")
-    val suspendEvent: node.events.EventInstance<js.array.JsTuple>
+    val suspendEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("thermal-state-change")
-    val thermalStateChangeEvent: node.events.EventInstance<js.array.JsTuple>
+    val thermalStateChangeEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("unlock-screen")
-    val unlockScreenEvent: node.events.EventInstance<js.array.JsTuple>
+    val unlockScreenEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("user-did-become-active")
-    val userDidBecomeActiveEvent: node.events.EventInstance<js.array.JsTuple>
+    val userDidBecomeActiveEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("user-did-resign-active")
-    val userDidResignActiveEvent: node.events.EventInstance<js.array.JsTuple>
+    val userDidResignActiveEvent: node.events.EventInstance<js.array.Tuple>
 }

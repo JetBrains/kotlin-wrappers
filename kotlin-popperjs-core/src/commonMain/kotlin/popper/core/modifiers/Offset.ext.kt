@@ -1,6 +1,6 @@
 package popper.core.modifiers
 
-import js.array.JsTuple2
+import js.array.Tuple2
 import js.array.tupleOf
 import js.core.JsInt
 import js.core.JsPrimitives.toJsInt
@@ -13,6 +13,6 @@ inline fun Offset(
     unsafeCast(tupleOf(x?.toJsInt(), y?.toJsInt()))
 
 inline fun OffsetFunction(
-    noinline fn: Provider<JsTuple2<JsInt?, JsInt?>>,
+    noinline fn: Provider<Tuple2<JsInt?, JsInt?>>,
 ): OffsetType =
     unsafeCast(fn)

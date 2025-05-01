@@ -143,7 +143,7 @@ private fun convertFunction(
         .replace(" TNode[]", " ReadonlyArray<TNode>")
         .replace(": Column<TData, unknown>[]", ": ReadonlyArray<Column<TData, *>>")
         .replace(": HeaderGroup<TData>[]", ": ReadonlyArray<HeaderGroup<TData>>")
-        .replace("undefined | [number, number]", "JsTuple2<Int, Int>?")
+        .replace("undefined | [number, number]", "Tuple2<Int, Int>?")
         .replace("?: Document", ": Document? = definedExternally")
         .replace(": Document | null", ": Document?")
         .replace("?: Column<TData, unknown>", ": Column<TData, *> = definedExternally")

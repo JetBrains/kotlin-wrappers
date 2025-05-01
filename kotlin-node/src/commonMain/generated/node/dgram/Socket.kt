@@ -778,17 +778,17 @@ external class Socket : EventEmitter {
 
 
     @web.events.JsEvent("close")
-    val closeEvent: node.events.EventInstance<js.array.JsTuple>
+    val closeEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("connect")
-    val connectEvent: node.events.EventInstance<js.array.JsTuple>
+    val connectEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("error")
-    val errorEvent: node.events.EventInstance<js.array.JsTuple1<js.errors.JsError>>
+    val errorEvent: node.events.EventInstance<js.array.Tuple1<js.errors.JsError>>
 
     @web.events.JsEvent("listening")
-    val listeningEvent: node.events.EventInstance<js.array.JsTuple>
+    val listeningEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("message")
-    val messageEvent: node.events.EventInstance<js.array.JsTuple2<node.buffer.Buffer<*>, RemoteInfo>>
+    val messageEvent: node.events.EventInstance<js.array.Tuple2<node.buffer.Buffer<*>, RemoteInfo>>
 }

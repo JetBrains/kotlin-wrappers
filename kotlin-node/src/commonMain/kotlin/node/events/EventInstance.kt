@@ -1,7 +1,7 @@
 package node.events
 
-import js.array.JsTuple
-import js.array.JsTuple1
+import js.array.Tuple
+import js.array.Tuple1
 import js.coroutines.internal.internalSubscribeJob
 import js.function.JsFunction
 import js.function.invoke
@@ -13,13 +13,13 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import web.abort.toAbortSignal
 
-private val toNodeListener = JsFunction<JsTuple1<Function<Unit>>, EventListener>(
+private val toNodeListener = JsFunction<Tuple1<Function<Unit>>, EventListener>(
     parameterNames = arrayOf("handler"),
     // language=javascript
     body = "return (...args) => { handler(args) }",
 )
 
-class EventInstance<out P : JsTuple>(
+class EventInstance<out P : Tuple>(
     internal val emitter: EventEmitter,
     internal val type: EventType,
 ) {
@@ -51,14 +51,14 @@ class EventInstance<out P : JsTuple>(
     }
 }
 
-suspend fun <P : JsTuple> EventInstance<P>.subscribe(
+suspend fun <P : Tuple> EventInstance<P>.subscribe(
     handler: (P) -> Unit,
 ): Job =
     internalSubscribeJob {
         addHandler(handler)
     }
 
-suspend fun <P : JsTuple> EventInstance<P>.once(): P =
+suspend fun <P : Tuple> EventInstance<P>.once(): P =
     suspendCancellableCoroutine { continuation ->
         EventEmitter.once<P>(
             emitter = emitter,
@@ -69,17 +69,17 @@ suspend fun <P : JsTuple> EventInstance<P>.once(): P =
         ).thenTo(continuation)
     }
 
-suspend operator fun <P : JsTuple> EventInstance<P>.iterator(): SuspendableIterator<P> =
+suspend operator fun <P : Tuple> EventInstance<P>.iterator(): SuspendableIterator<P> =
     SuspendableIterator(asChannel().iterator())
 
-internal suspend fun <P : JsTuple> EventInstance<P>.asChannel(): ReceiveChannel<P> {
+internal suspend fun <P : Tuple> EventInstance<P>.asChannel(): ReceiveChannel<P> {
     val channel = Channel<P>()
     val job = subscribe(channel::trySend)
     channel.invokeOnClose { job.cancel() }
     return channel
 }
 
-fun <P : JsTuple> EventInstance<P>.asFlow(): Flow<P> =
+fun <P : Tuple> EventInstance<P>.asFlow(): Flow<P> =
     flow {
         for (event in asChannel()) {
             emit(event)

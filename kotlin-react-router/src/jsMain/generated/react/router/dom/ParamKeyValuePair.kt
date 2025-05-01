@@ -2,4 +2,4 @@
 
 package react.router.dom
 
-typealias ParamKeyValuePair = js.array.JsTuple2<String, String>
+typealias ParamKeyValuePair = js.array.Tuple2<String, String>

@@ -205,22 +205,22 @@ open external class Notification : NodeEventEmitter {
     var urgency: (NotificationUrgency)
 
     @web.events.JsEvent("action")
-    val actionEvent: node.events.EventInstance<js.array.JsTuple2<Event<*>, Double>>
+    val actionEvent: node.events.EventInstance<js.array.Tuple2<Event<*>, Double>>
 
     @web.events.JsEvent("click")
-    val clickEvent: node.events.EventInstance<js.array.JsTuple1<Event<*>>>
+    val clickEvent: node.events.EventInstance<js.array.Tuple1<Event<*>>>
 
     @web.events.JsEvent("close")
-    val closeEvent: node.events.EventInstance<js.array.JsTuple1<Event<*>>>
+    val closeEvent: node.events.EventInstance<js.array.Tuple1<Event<*>>>
 
     @web.events.JsEvent("failed")
-    val failedEvent: node.events.EventInstance<js.array.JsTuple2<Event<*>, String>>
+    val failedEvent: node.events.EventInstance<js.array.Tuple2<Event<*>, String>>
 
     @web.events.JsEvent("reply")
-    val replyEvent: node.events.EventInstance<js.array.JsTuple2<Event<*>, String>>
+    val replyEvent: node.events.EventInstance<js.array.Tuple2<Event<*>, String>>
 
     @web.events.JsEvent("show")
-    val showEvent: node.events.EventInstance<js.array.JsTuple1<Event<*>>>
+    val showEvent: node.events.EventInstance<js.array.Tuple1<Event<*>>>
 
     companion object {
         /**

@@ -1,9 +1,9 @@
 package js.function
 
-import js.array.JsTuple
-import js.array.JsTuple1
-import js.array.JsTuple2
-import js.array.JsTuple5
+import js.array.Tuple
+import js.array.Tuple1
+import js.array.Tuple2
+import js.array.Tuple5
 import js.objects.unsafeJso
 import kotlin.test.Test
 import kotlin.test.assertEquals
@@ -13,7 +13,7 @@ private external interface Merger_0 {
     var b: Int
 
     @JsName("merge")
-    var mergeNative: ContextFunction<Merger_0, JsTuple, String>
+    var mergeNative: ContextFunction<Merger_0, Tuple, String>
 
     fun merge(): String
 }
@@ -23,7 +23,7 @@ private external interface Merger_1 {
     var b: Int
 
     @JsName("merge")
-    var mergeNative: ContextFunction<Merger_1, JsTuple1<String>, String>
+    var mergeNative: ContextFunction<Merger_1, Tuple1<String>, String>
 
     fun merge(p1: String): String
 }
@@ -33,7 +33,7 @@ private external interface Merger_2 {
     var b: Int
 
     @JsName("merge")
-    var mergeNative: ContextFunction<Merger_2, JsTuple2<String, String>, String>
+    var mergeNative: ContextFunction<Merger_2, Tuple2<String, String>, String>
 
     fun merge(p1: String, p2: String): String
 }
@@ -43,7 +43,7 @@ private external interface Merger_5 {
     var b: Int
 
     @JsName("merge")
-    var mergeNative: ContextFunction<Merger_5, JsTuple5<String, String, String, String, String>, String>
+    var mergeNative: ContextFunction<Merger_5, Tuple5<String, String, String, String, String>, String>
 
     fun merge(p1: String, p2: String, p3: String, p4: String, p5: String): String
 }

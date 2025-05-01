@@ -328,22 +328,22 @@ open external class Writable : Stream, node.WritableStream {
     ) /* this */
 
     @web.events.JsEvent("close")
-    open val closeEvent: node.events.EventInstance<js.array.JsTuple>
+    open val closeEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("drain")
-    open val drainEvent: node.events.EventInstance<js.array.JsTuple>
+    open val drainEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("error")
-    open val errorEvent: node.events.EventInstance<js.array.JsTuple1<js.errors.JsError>>
+    open val errorEvent: node.events.EventInstance<js.array.Tuple1<js.errors.JsError>>
 
     @web.events.JsEvent("finish")
-    open val finishEvent: node.events.EventInstance<js.array.JsTuple>
+    open val finishEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("pipe")
-    open val pipeEvent: node.events.EventInstance<js.array.JsTuple1<Readable>>
+    open val pipeEvent: node.events.EventInstance<js.array.Tuple1<Readable>>
 
     @web.events.JsEvent("unpipe")
-    open val unpipeEvent: node.events.EventInstance<js.array.JsTuple1<Readable>>
+    open val unpipeEvent: node.events.EventInstance<js.array.Tuple1<Readable>>
     override var writable: Boolean
     override fun write(
         buffer: Uint8Array<*>,

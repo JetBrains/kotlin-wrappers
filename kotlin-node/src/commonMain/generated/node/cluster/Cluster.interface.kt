@@ -175,23 +175,23 @@ sealed external interface Cluster : EventEmitter {
 
 
     @web.events.JsEvent("disconnect")
-    val disconnectEvent: node.events.EventInstance<js.array.JsTuple1<Worker>>
+    val disconnectEvent: node.events.EventInstance<js.array.Tuple1<Worker>>
 
     @web.events.JsEvent("exit")
-    val exitEvent: node.events.EventInstance<js.array.JsTuple3<Worker, Double, String>>
+    val exitEvent: node.events.EventInstance<js.array.Tuple3<Worker, Double, String>>
 
     @web.events.JsEvent("fork")
-    val forkEvent: node.events.EventInstance<js.array.JsTuple1<Worker>>
+    val forkEvent: node.events.EventInstance<js.array.Tuple1<Worker>>
 
     @web.events.JsEvent("listening")
-    val listeningEvent: node.events.EventInstance<js.array.JsTuple2<Worker, Address>>
+    val listeningEvent: node.events.EventInstance<js.array.Tuple2<Worker, Address>>
 
     @web.events.JsEvent("message")
-    val messageEvent: node.events.EventInstance<js.array.JsTuple3<Worker, Any?, Any /* net.Socket | net.Server */>>
+    val messageEvent: node.events.EventInstance<js.array.Tuple3<Worker, Any?, Any /* net.Socket | net.Server */>>
 
     @web.events.JsEvent("online")
-    val onlineEvent: node.events.EventInstance<js.array.JsTuple1<Worker>>
+    val onlineEvent: node.events.EventInstance<js.array.Tuple1<Worker>>
 
     @web.events.JsEvent("setup")
-    val setupEvent: node.events.EventInstance<js.array.JsTuple1<ClusterSettings>>
+    val setupEvent: node.events.EventInstance<js.array.Tuple1<ClusterSettings>>
 }

@@ -1,7 +1,7 @@
 package js.collections
 
-import js.array.JsTuple2
 import js.array.ReadonlyArray
+import js.array.Tuple2
 import js.core.JsAny
 import js.iterable.JsIterable
 import js.iterable.JsIterator
@@ -20,7 +20,7 @@ open external class JsSet<T : JsAny?>(
     override fun clear()
     override fun delete(value: T): Boolean
     fun difference(other: ReadonlySetLike<T>): JsSet<T>
-    override fun entries(): JsIterator<JsTuple2<T, T>>
+    override fun entries(): JsIterator<Tuple2<T, T>>
     override fun forEach(action: (value: T) -> Unit)
     override fun has(key: T): Boolean
     fun intersection(other: ReadonlySetLike<T>): JsSet<T>

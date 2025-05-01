@@ -133,7 +133,7 @@ export default {
                             ? "Promise<P>"
                             : "AsyncIterator<P>"
 
-                        return `fun <P : JsTuple> ${name}(emitter: EventEmitter, type: EventType, options: StaticEventEmitterOptions = definedExternally)${karakum.ifPresent(enhancedReturnType, it => `: ${it}`)}`
+                        return `fun <P : Tuple> ${name}(emitter: EventEmitter, type: EventType, options: StaticEventEmitterOptions = definedExternally)${karakum.ifPresent(enhancedReturnType, it => `: ${it}`)}`
                     }
 
                     if (
@@ -143,8 +143,8 @@ export default {
                         && signature[0].type.typeName.text === "EventTarget"
                     ) {
                         const enhancedReturnType = name === "once"
-                            ? "Promise<JsTuple1<E>>"
-                            : "AsyncIterator<JsTuple1<E>>"
+                            ? "Promise<Tuple1<E>>"
+                            : "AsyncIterator<Tuple1<E>>"
 
                         return `fun <E : Event> ${name}(emitter: EventTarget, type: web.events.EventType<E>, options: StaticEventEmitterOptions = definedExternally)${karakum.ifPresent(enhancedReturnType, it => `: ${it}`)}`
                     }

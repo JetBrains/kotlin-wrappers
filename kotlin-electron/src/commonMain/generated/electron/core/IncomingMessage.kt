@@ -83,14 +83,14 @@ external class IncomingMessage : NodeEventEmitter {
     var statusMessage: String
 
     @web.events.JsEvent("aborted")
-    val abortedEvent: node.events.EventInstance<js.array.JsTuple>
+    val abortedEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("data")
-    val dataEvent: node.events.EventInstance<js.array.JsTuple1<Buffer<*>>>
+    val dataEvent: node.events.EventInstance<js.array.Tuple1<Buffer<*>>>
 
     @web.events.JsEvent("end")
-    val endEvent: node.events.EventInstance<js.array.JsTuple>
+    val endEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("error")
-    val errorEvent: node.events.EventInstance<js.array.JsTuple1<js.errors.JsError>>
+    val errorEvent: node.events.EventInstance<js.array.Tuple1<js.errors.JsError>>
 }

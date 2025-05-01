@@ -147,35 +147,35 @@ open external class Server<Request : IncomingMessage, Response : ServerResponse<
 
 
     @web.events.JsEvent("close")
-    override val closeEvent: node.events.EventInstance<js.array.JsTuple>
+    override val closeEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("connection")
-    override val connectionEvent: node.events.EventInstance<js.array.JsTuple1<Socket>>
+    override val connectionEvent: node.events.EventInstance<js.array.Tuple1<Socket>>
 
     @web.events.JsEvent("error")
-    override val errorEvent: node.events.EventInstance<js.array.JsTuple1<js.errors.JsError>>
+    override val errorEvent: node.events.EventInstance<js.array.Tuple1<js.errors.JsError>>
 
     @web.events.JsEvent("listening")
-    override val listeningEvent: node.events.EventInstance<js.array.JsTuple>
+    override val listeningEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("checkContinue")
-    open val checkContinueEvent: node.events.EventInstance<js.array.JsTuple2<Request, Response>>
+    open val checkContinueEvent: node.events.EventInstance<js.array.Tuple2<Request, Response>>
 
     @web.events.JsEvent("checkExpectation")
-    open val checkExpectationEvent: node.events.EventInstance<js.array.JsTuple2<Request, Response>>
+    open val checkExpectationEvent: node.events.EventInstance<js.array.Tuple2<Request, Response>>
 
     @web.events.JsEvent("clientError")
-    open val clientErrorEvent: node.events.EventInstance<js.array.JsTuple2<js.errors.JsError, node.stream.Duplex>>
+    open val clientErrorEvent: node.events.EventInstance<js.array.Tuple2<js.errors.JsError, node.stream.Duplex>>
 
     @web.events.JsEvent("connect")
-    open val connectEvent: node.events.EventInstance<js.array.JsTuple3<Request, node.stream.Duplex, node.buffer.Buffer<*>>>
+    open val connectEvent: node.events.EventInstance<js.array.Tuple3<Request, node.stream.Duplex, node.buffer.Buffer<*>>>
 
     @web.events.JsEvent("dropRequest")
-    val dropRequestEvent: node.events.EventInstance<js.array.JsTuple2<Request, node.stream.Duplex>>
+    val dropRequestEvent: node.events.EventInstance<js.array.Tuple2<Request, node.stream.Duplex>>
 
     @web.events.JsEvent("request")
-    open val requestEvent: node.events.EventInstance<js.array.JsTuple2<Request, Response>>
+    open val requestEvent: node.events.EventInstance<js.array.Tuple2<Request, Response>>
 
     @web.events.JsEvent("upgrade")
-    open val upgradeEvent: node.events.EventInstance<js.array.JsTuple3<Request, node.stream.Duplex, node.buffer.Buffer<*>>>
+    open val upgradeEvent: node.events.EventInstance<js.array.Tuple3<Request, node.stream.Duplex, node.buffer.Buffer<*>>>
 }
