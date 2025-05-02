@@ -2,13 +2,13 @@
 
 package web.codecs
 
-import js.buffer.BufferSource
+import js.buffer.AllowSharedBufferSource
 import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface AudioDecoderConfig {
     val codec: String
-    val description: BufferSource?
+    val description: AllowSharedBufferSource?
     val numberOfChannels: Int
     val sampleRate: Int
 }
