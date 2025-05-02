@@ -219,10 +219,9 @@ private fun event(
         // Event
         .replace("val type: String", "    // val type: String")
         .let {
-            if (eventIsInitLike && name != "BlobEvent") {
+            if (eventIsInitLike) {
                 val modifier = when (name) {
                     EVENT -> "open"
-                    // "BlobEvent" -> ""
                     else -> "override"
                 }
 
@@ -317,7 +316,7 @@ private fun event(
         companion,
     ).joinToString("\n\n")
 
-    var eventBody = """  
+    var eventBody = """
     $modifier external class $name$typeParameters $eventConstructor $eventParentDeclaration {
         $body
     }
