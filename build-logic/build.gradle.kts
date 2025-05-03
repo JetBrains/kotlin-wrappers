@@ -9,7 +9,7 @@ repositories {
 }
 
 val props = Properties().apply {
-    file("../gradle.properties").inputStream().use { load(it) }
+    rootProject.file("../gradle.properties").inputStream().use { load(it) }
 }
 
 fun version(target: String): String {
