@@ -1,3 +1,5 @@
+rootProject.name = "kotlin-tanstack-table-karakum"
+
 dependencyResolutionManagement {
     repositories {
         mavenCentral()

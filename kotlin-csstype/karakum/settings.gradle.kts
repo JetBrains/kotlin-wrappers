@@ -1,3 +1,5 @@
+rootProject.name = "kotlin-csstype-karakum"
+
 dependencyResolutionManagement {
     repositories {
         mavenCentral()

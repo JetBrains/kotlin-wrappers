@@ -1,3 +1,5 @@
+rootProject.name = "kotlin-popperjs-core-karakum"
+
 dependencyResolutionManagement {
     repositories {
         mavenCentral()

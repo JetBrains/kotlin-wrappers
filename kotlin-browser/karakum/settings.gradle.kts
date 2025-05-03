@@ -1,3 +1,5 @@
+rootProject.name = "kotlin-browser-karakum"
+
 dependencyResolutionManagement {
     repositories {
         mavenCentral()

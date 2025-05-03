@@ -1,3 +1,5 @@
+rootProject.name = "kotlin-cesium-karakum"
+
 dependencyResolutionManagement {
     repositories {
         mavenCentral()

@@ -1,3 +1,5 @@
+rootProject.name = "kotlin-react-dom-karakum"
+
 dependencyResolutionManagement {
     repositories {
         mavenCentral()

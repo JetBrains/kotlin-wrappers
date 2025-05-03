@@ -1,3 +1,5 @@
+rootProject.name = "kotlin-actions-karakum"
+
 dependencyResolutionManagement {
     repositories {
         mavenCentral()
