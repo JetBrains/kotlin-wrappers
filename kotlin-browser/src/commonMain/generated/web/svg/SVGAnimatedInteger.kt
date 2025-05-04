@@ -3,7 +3,7 @@
 package web.svg
 
 /**
- * The `SVGAnimatedInteger` interface is used for attributes of basic type \<integer> which can be animated.
+ * The **`SVGAnimatedInteger`** interface is used for attributes of basic type \<integer> which can be animated.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedInteger)
  */

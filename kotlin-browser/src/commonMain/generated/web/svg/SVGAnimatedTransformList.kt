@@ -3,7 +3,7 @@
 package web.svg
 
 /**
- * The `SVGAnimatedTransformList` interface is used for attributes which take a list of numbers and which can be animated.
+ * The **`SVGAnimatedTransformList`** interface represents attributes which take a list of numbers and which can be animated.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedTransformList)
  */

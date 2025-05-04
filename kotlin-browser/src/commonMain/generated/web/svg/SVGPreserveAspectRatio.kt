@@ -3,7 +3,7 @@
 package web.svg
 
 /**
- * The `SVGPreserveAspectRatio` interface corresponds to the preserveAspectRatio attribute, which is available for some of SVG's elements.
+ * The **`SVGPreserveAspectRatio`** interface corresponds to the preserveAspectRatio attribute.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGPreserveAspectRatio)
  */
