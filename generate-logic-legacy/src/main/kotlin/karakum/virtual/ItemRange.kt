@@ -4,6 +4,6 @@ internal const val ITEM_RANGE = "ItemRange"
 
 // language=typescript
 internal const val ITEM_RANGE_BODY = """{
-    number;
-    number;
+    startIndex: number;
+    endIndex: number;
 }"""
