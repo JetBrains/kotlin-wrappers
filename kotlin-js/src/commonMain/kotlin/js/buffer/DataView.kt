@@ -1,13 +1,15 @@
 package js.buffer
 
 import js.core.Float16
+import js.serializable.Serializable
 import kotlin.js.definedExternally
 
 external class DataView<B : ArrayBufferLike>(
     override val buffer: B,
     override val byteOffset: Int = definedExternally,
     override val byteLength: Int = definedExternally,
-) : ArrayBufferView<B> {
+) : ArrayBufferView<B>,
+    Serializable {
     fun getInt8(byteOffset: Int): Byte
     fun getUint8(byteOffset: Int): Byte
     fun getInt16(

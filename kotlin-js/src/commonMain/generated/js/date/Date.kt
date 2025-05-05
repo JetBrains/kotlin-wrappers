@@ -9,6 +9,7 @@ import js.intl.DateTimeFormatOptions
 import js.intl.Locale
 import js.intl.Localizable
 import js.intl.UnicodeBCP47LocaleIdentifier
+import js.serializable.Serializable
 import js.temporal.Instant
 import kotlin.js.definedExternally
 
@@ -16,7 +17,8 @@ import kotlin.js.definedExternally
  * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date)
  */
 external class Date() :
-    Localizable<DateTimeFormatOptions> {
+    Localizable<DateTimeFormatOptions>,
+    Serializable {
     constructor(value: Int53)
     constructor(value: String)
     constructor(value: Date)

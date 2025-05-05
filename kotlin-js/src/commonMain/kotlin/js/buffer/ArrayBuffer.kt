@@ -1,6 +1,7 @@
 package js.buffer
 
 import js.core.JsAny
+import js.serializable.Serializable
 import js.transferable.Transferable
 import kotlin.js.definedExternally
 
@@ -12,6 +13,7 @@ external class ArrayBuffer(
     options: ArrayBufferOptions? = definedExternally,
 ) : ArrayBufferLike,
     BufferSource,
+    Serializable,
     Transferable {
     /**
      * Returns a section of an ArrayBuffer.

@@ -5,13 +5,15 @@ import js.array.Tuple2
 import js.core.JsAny
 import js.iterable.JsIterable
 import js.iterable.JsIterator
+import js.serializable.Serializable
 import kotlin.js.JsName
 import kotlin.js.definedExternally
 
 @JsName("Set")
 open external class JsSet<T : JsAny?>(
     values: JsIterable<T> = definedExternally,
-) : MutableSetLike<T> {
+) : MutableSetLike<T>,
+    Serializable {
     constructor(values: ReadonlyArray<T>)
 
     override val size: Int

@@ -1,5 +1,6 @@
 package js.regexp
 
+import js.serializable.Serializable
 import kotlin.js.definedExternally
 
 /**
@@ -25,7 +26,7 @@ open external class RegExp(
      * [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/flags)
      */
     val flags: String = definedExternally,
-) {
+) : Serializable {
     constructor(pattern: RegExp)
 
     /**

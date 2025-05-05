@@ -4,13 +4,15 @@ import js.array.ReadonlyArray
 import js.array.Tuple2
 import js.core.JsAny
 import js.iterable.JsIterator
+import js.serializable.Serializable
 import kotlin.js.JsName
 import kotlin.js.definedExternally
 
 @JsName("Map")
 open external class JsMap<K : JsAny?, V : JsAny?>(
     values: ReadonlyArray<Tuple2<K, V>> = definedExternally,
-) : MutableMapLike<K, V> {
+) : MutableMapLike<K, V>,
+    Serializable {
     override val size: Int
 
     override fun clear()
