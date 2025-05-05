@@ -309,6 +309,12 @@ internal object IDLRegistry {
     ): String =
         returnTypeMap.getValue(className to methodName)
 
+    fun isSerializable(
+        name: String,
+    ): Boolean {
+        return false
+    }
+
     fun isPlainObjectInterface(
         name: String,
     ): Boolean {

@@ -918,21 +918,18 @@ internal fun convertInterface(
             -> declaration = "$declaration:\nGlobalScope"
     }
 
+    val additionalIterableParent = IterableRegistry.additionalParent(name)
     sequenceOf(MarkerRegistry.additionalParents(name))
         .filterNotNull()
         .flatten()
+        .plus(additionalIterableParent)
         .plus(ABORTABLE.takeIf { abortable })
+        .plus(SERIALIZABLE.takeIf { IDLRegistry.isSerializable(name) })
         .filterNotNull()
         .forEach { additionalParent ->
             declaration += if (":" in declaration) "," else ":"
             declaration += "\n$additionalParent"
         }
-
-    val additionalIterableParent = IterableRegistry.additionalParent(name)
-    if (additionalIterableParent != null) {
-        declaration += if (":" in declaration) "," else ":"
-        declaration += "\n$additionalIterableParent"
-    }
 
     when (name) {
         "ElementInternals" -> declaration += ",\n$VALIDATION_TARGET"

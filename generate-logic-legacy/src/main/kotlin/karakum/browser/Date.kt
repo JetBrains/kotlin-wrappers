@@ -17,7 +17,8 @@ internal fun dateDeclarations(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date)
      */
     external class $DATE():
-        $LOCALIZABLE<DateTimeFormatOptions> {
+        $LOCALIZABLE<DateTimeFormatOptions>,
+        $SERIALIZABLE {
         ${constructors.joinToString("\n")}
         ${members.joinToString("\n")}
 
