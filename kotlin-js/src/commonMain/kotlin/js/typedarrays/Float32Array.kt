@@ -5,13 +5,15 @@ import js.buffer.ArrayBuffer
 import js.buffer.ArrayBufferLike
 import js.core.JsFloat
 import js.iterable.JsIterable
+import js.serializable.Serializable
 import kotlin.js.definedExternally
 
 open external class Float32Array<B : ArrayBufferLike>(
     override val buffer: B,
     override val byteOffset: Int = definedExternally,
     override val length: Int = definedExternally,
-) : TypedArray<Float32Array<B>, Float32Array<ArrayBuffer>, B, JsFloat> {
+) : TypedArray<Float32Array<B>, Float32Array<ArrayBuffer>, B, JsFloat>,
+    Serializable {
     constructor()
     constructor(length: Int)
     constructor(elements: JsIterable<JsFloat>)

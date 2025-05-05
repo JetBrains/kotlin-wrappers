@@ -5,13 +5,15 @@ import js.buffer.ArrayBuffer
 import js.buffer.ArrayBufferLike
 import js.core.JsUByte
 import js.iterable.JsIterable
+import js.serializable.Serializable
 import kotlin.js.definedExternally
 
 open external class Uint8Array<B : ArrayBufferLike>(
     override val buffer: B,
     override val byteOffset: Int = definedExternally,
     override val length: Int = definedExternally,
-) : TypedArray<Uint8Array<B>, Uint8Array<ArrayBuffer>, B, JsUByte> {
+) : TypedArray<Uint8Array<B>, Uint8Array<ArrayBuffer>, B, JsUByte>,
+    Serializable {
     constructor()
     constructor(length: Int)
     constructor(elements: JsIterable<JsUByte>)

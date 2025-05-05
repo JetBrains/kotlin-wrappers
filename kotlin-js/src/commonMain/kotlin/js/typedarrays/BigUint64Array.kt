@@ -5,13 +5,15 @@ import js.buffer.ArrayBuffer
 import js.buffer.ArrayBufferLike
 import js.core.BigInt
 import js.iterable.JsIterable
+import js.serializable.Serializable
 import kotlin.js.definedExternally
 
 open external class BigUint64Array<B : ArrayBufferLike>(
     override val buffer: B,
     override val byteOffset: Int = definedExternally,
     override val length: Int = definedExternally,
-) : TypedArray<BigUint64Array<B>, BigUint64Array<ArrayBuffer>, B, BigInt> {
+) : TypedArray<BigUint64Array<B>, BigUint64Array<ArrayBuffer>, B, BigInt>,
+    Serializable {
     constructor()
     constructor(length: Int)
     constructor(elements: JsIterable<BigInt>)
