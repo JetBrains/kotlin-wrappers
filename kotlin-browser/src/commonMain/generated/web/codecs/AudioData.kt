@@ -5,6 +5,7 @@ package web.codecs
 import js.buffer.AllowSharedBufferSource
 import js.core.Int53
 import js.core.UInt53
+import js.serializable.Serializable
 import js.transferable.Transferable
 
 /**
@@ -14,7 +15,8 @@ import js.transferable.Transferable
  */
 open external class AudioData(
     init: AudioDataInit,
-) : Transferable {
+) : Transferable,
+    Serializable {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioData/duration)
      */

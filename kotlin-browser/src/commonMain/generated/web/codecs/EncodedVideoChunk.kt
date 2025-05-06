@@ -5,6 +5,7 @@ package web.codecs
 import js.buffer.AllowSharedBufferSource
 import js.core.Int53
 import js.core.UInt53
+import js.serializable.Serializable
 
 /**
  * The **`EncodedVideoChunk`** interface of the WebCodecs API represents a chunk of encoded video data.
@@ -13,7 +14,7 @@ import js.core.UInt53
  */
 open external class EncodedVideoChunk(
     init: EncodedVideoChunkInit,
-) {
+) : Serializable {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/EncodedVideoChunk/byteLength)
      */

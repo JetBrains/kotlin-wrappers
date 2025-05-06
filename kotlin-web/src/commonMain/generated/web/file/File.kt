@@ -3,6 +3,7 @@
 package web.file
 
 import js.array.ReadonlyArray
+import js.serializable.Serializable
 import web.blob.Blob
 import web.blob.BlobPart
 import web.time.EpochTimeStamp
@@ -17,7 +18,8 @@ open external class File(
     fileBits: ReadonlyArray<BlobPart>,
     fileName: String,
     options: FilePropertyBag = definedExternally,
-) : Blob {
+) : Blob,
+    Serializable {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/File/lastModified)
      */

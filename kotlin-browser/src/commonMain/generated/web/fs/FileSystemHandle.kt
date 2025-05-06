@@ -4,6 +4,7 @@ package web.fs
 
 import js.core.JsBoolean
 import js.promise.Promise
+import js.serializable.Serializable
 import seskar.js.JsAsync
 import kotlin.js.JsName
 
@@ -14,7 +15,8 @@ import kotlin.js.JsName
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemHandle)
  */
 open external class FileSystemHandle
-private constructor() {
+private constructor() :
+    Serializable {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemHandle/kind)
      */

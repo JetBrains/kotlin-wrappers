@@ -52,6 +52,20 @@ internal object IDLRegistry {
             .map { it.readText() }
     }
 
+    private val serializableInterfaces: Set<String> by lazy {
+        idlData.asSequence()
+            .flatMap { content ->
+                content
+                    .splitToSequence("[Serializable]", " Serializable]", " Serializable,")
+                    .drop(1)
+                    .map { it.substringBefore("\n};") }
+                    .map { it.substringAfter("\ninterface ") }
+                    .map { it.substringBefore("\n") }
+                    .map { it.substringBefore(" ") }
+            }
+            .toSet()
+    }
+
     private val plainObjectInterfaces: Set<String> by lazy {
         idlData.asSequence()
             .flatMap { content ->
@@ -312,7 +326,7 @@ internal object IDLRegistry {
     fun isSerializable(
         name: String,
     ): Boolean {
-        return false
+        return name in serializableInterfaces
     }
 
     fun isPlainObjectInterface(

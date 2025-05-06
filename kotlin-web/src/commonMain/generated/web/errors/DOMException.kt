@@ -4,6 +4,7 @@ package web.errors
 
 import js.errors.JsError
 import js.errors.JsErrorName
+import js.serializable.Serializable
 import seskar.js.JsValue
 import kotlin.js.definedExternally
 
@@ -21,7 +22,8 @@ open external class DOMException(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMException/name)
      */
     val name: JsErrorName = definedExternally,
-) : JsError {
+) : JsError,
+    Serializable {
     companion object {
         /**
          * The index is not in the allowed range. For example, this can be thrown by the `Range` object

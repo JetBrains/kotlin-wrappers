@@ -3,6 +3,7 @@
 package web.rtc
 
 import js.array.ReadonlyArray
+import js.serializable.Serializable
 import web.time.EpochTimeStamp
 
 /**
@@ -11,7 +12,8 @@ import web.time.EpochTimeStamp
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCCertificate)
  */
 external class RTCCertificate
-private constructor() {
+private constructor() :
+    Serializable {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCCertificate/expires)
      */

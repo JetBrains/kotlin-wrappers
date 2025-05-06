@@ -3,6 +3,7 @@
 package web.geometry
 
 import js.core.JsAny
+import js.serializable.Serializable
 import kotlin.js.definedExternally
 
 /**
@@ -27,7 +28,7 @@ open external class DOMRectReadOnly(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMRectReadOnly/height)
      */
     open val height: Double = definedExternally,
-) {
+) : Serializable {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMRectReadOnly/bottom)
      */

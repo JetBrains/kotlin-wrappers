@@ -3,6 +3,7 @@
 package web.geometry
 
 import js.core.JsAny
+import js.serializable.Serializable
 import kotlin.js.definedExternally
 
 /**
@@ -15,7 +16,7 @@ open external class DOMQuad(
     p2: DOMPointReadOnly = definedExternally,
     p3: DOMPointReadOnly = definedExternally,
     p4: DOMPointReadOnly = definedExternally,
-) {
+) : Serializable {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMQuad/p1)
      */

@@ -5,6 +5,7 @@ package web.geometry
 import js.array.ReadonlyArray
 import js.buffer.ArrayBuffer
 import js.core.JsDouble
+import js.serializable.Serializable
 import js.typedarrays.Float32Array
 import js.typedarrays.Float64Array
 import kotlin.js.definedExternally
@@ -16,7 +17,8 @@ import kotlin.js.definedExternally
  */
 open external class DOMMatrix(
     init: String = definedExternally,
-) : DOMMatrixReadOnly {
+) : DOMMatrixReadOnly,
+    Serializable {
     constructor(init: ReadonlyArray<JsDouble>)
 
     /**

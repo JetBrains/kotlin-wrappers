@@ -2,6 +2,7 @@
 
 package web.geometry
 
+import js.serializable.Serializable
 import kotlin.js.definedExternally
 
 /**
@@ -26,7 +27,8 @@ open external class DOMRect(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMRect/height)
      */
     override var height: Double = definedExternally,
-) : DOMRectReadOnly {
+) : DOMRectReadOnly,
+    Serializable {
     companion object {
         /**
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMRect/fromRect_static)

@@ -5,6 +5,7 @@ package web.codecs
 import js.buffer.AllowSharedBufferSource
 import js.core.Int53
 import js.core.UInt53
+import js.serializable.Serializable
 
 /**
  * The **`EncodedAudioChunk`** interface of the WebCodecs API represents a chunk of encoded audio data.
@@ -13,7 +14,7 @@ import js.core.UInt53
  */
 open external class EncodedAudioChunk(
     init: EncodedAudioChunkInit,
-) {
+) : Serializable {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/EncodedAudioChunk/byteLength)
      */

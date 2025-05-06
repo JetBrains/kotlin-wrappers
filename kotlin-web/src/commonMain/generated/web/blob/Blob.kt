@@ -8,6 +8,7 @@ import js.core.Int53
 import js.core.JsString
 import js.core.UInt53
 import js.promise.Promise
+import js.serializable.Serializable
 import js.typedarrays.Uint8Array
 import seskar.js.JsAsync
 import web.images.ImageBitmapSource
@@ -23,7 +24,8 @@ import kotlin.js.definedExternally
 open external class Blob(
     blobParts: ReadonlyArray<BlobPart> = definedExternally,
     options: BlobPropertyBag = definedExternally,
-) : ImageBitmapSource {
+) : ImageBitmapSource,
+    Serializable {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Blob/size)
      */

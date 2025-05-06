@@ -3,6 +3,7 @@
 package web.fs
 
 import js.promise.Promise
+import js.serializable.Serializable
 import seskar.js.JsAsync
 import web.file.File
 import kotlin.js.JsName
@@ -16,7 +17,8 @@ import kotlin.js.definedExternally
  */
 external class FileSystemFileHandle
 private constructor() :
-    FileSystemHandle {
+    FileSystemHandle,
+    Serializable {
     override val kind: FileSystemHandleKind.file
 
     /**

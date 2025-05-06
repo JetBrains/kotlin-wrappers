@@ -2,6 +2,7 @@
 
 package web.geometry
 
+import js.serializable.Serializable
 import kotlin.js.definedExternally
 
 /**
@@ -26,7 +27,8 @@ open external class DOMPoint(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMPoint/w)
      */
     override var w: Double = definedExternally,
-) : DOMPointReadOnly {
+) : DOMPointReadOnly,
+    Serializable {
     companion object {
         /**
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMPoint/fromPoint_static)

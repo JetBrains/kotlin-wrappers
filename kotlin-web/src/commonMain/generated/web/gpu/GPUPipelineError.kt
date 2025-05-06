@@ -2,6 +2,7 @@
 
 package web.gpu
 
+import js.serializable.Serializable
 import web.errors.DOMException
 
 /**
@@ -12,7 +13,8 @@ import web.errors.DOMException
 open external class GPUPipelineError(
     message: String,
     options: GPUPipelineErrorInit,
-) : DOMException {
+) : DOMException,
+    Serializable {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUPipelineError/reason)
      */

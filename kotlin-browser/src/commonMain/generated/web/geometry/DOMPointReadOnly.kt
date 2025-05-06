@@ -3,6 +3,7 @@
 package web.geometry
 
 import js.core.JsAny
+import js.serializable.Serializable
 import kotlin.js.definedExternally
 
 /**
@@ -27,7 +28,7 @@ open external class DOMPointReadOnly(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMPointReadOnly/w)
      */
     open val w: Double = definedExternally,
-) {
+) : Serializable {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMPointReadOnly/matrixTransform)
      */

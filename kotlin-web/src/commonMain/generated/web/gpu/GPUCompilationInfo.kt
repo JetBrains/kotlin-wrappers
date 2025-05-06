@@ -3,6 +3,7 @@
 package web.gpu
 
 import js.array.ReadonlyArray
+import js.serializable.Serializable
 
 /**
  * Available only in secure contexts.
@@ -10,7 +11,8 @@ import js.array.ReadonlyArray
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUCompilationInfo)
  */
 external class GPUCompilationInfo
-private constructor() {
+private constructor() :
+    Serializable {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUCompilationInfo/messages)
      */

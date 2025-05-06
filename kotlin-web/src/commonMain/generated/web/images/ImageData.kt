@@ -2,6 +2,7 @@
 
 package web.images
 
+import js.serializable.Serializable
 import web.gl.TexImageSource
 import web.gpu.GPUCopyExternalImageSource
 import kotlin.js.definedExternally
@@ -17,7 +18,8 @@ open external class ImageData(
     settings: ImageDataSettings = definedExternally,
 ) : ImageBitmapSource,
     TexImageSource,
-    GPUCopyExternalImageSource {
+    GPUCopyExternalImageSource,
+    Serializable {
     constructor(
         data: ImageDataArray,
         sw: Int,

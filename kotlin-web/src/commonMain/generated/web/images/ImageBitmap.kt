@@ -2,6 +2,7 @@
 
 package web.images
 
+import js.serializable.Serializable
 import js.transferable.Transferable
 import web.canvas.CanvasImageSource
 import web.gl.TexImageSource
@@ -17,7 +18,8 @@ private constructor() :
     CanvasImageSource,
     TexImageSource,
     GPUCopyExternalImageSource,
-    Transferable {
+    Transferable,
+    Serializable {
     /**
      * Returns the intrinsic height of the image, in CSS pixels.
      *

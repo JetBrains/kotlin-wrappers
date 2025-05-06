@@ -2,6 +2,7 @@
 
 package web.transport
 
+import js.serializable.Serializable
 import web.errors.DOMException
 import kotlin.js.definedExternally
 
@@ -14,7 +15,8 @@ import kotlin.js.definedExternally
 open external class WebTransportError(
     message: String = definedExternally,
     options: WebTransportErrorOptions = definedExternally,
-) : DOMException {
+) : DOMException,
+    Serializable {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebTransportError/source)
      */

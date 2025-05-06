@@ -3,6 +3,7 @@
 package web.gpu
 
 import js.core.UInt53
+import js.serializable.Serializable
 
 /**
  * Available only in secure contexts.
@@ -10,7 +11,8 @@ import js.core.UInt53
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUCompilationMessage)
  */
 external class GPUCompilationMessage
-private constructor() {
+private constructor() :
+    Serializable {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUCompilationMessage/length)
      */

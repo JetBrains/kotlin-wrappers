@@ -4,6 +4,7 @@ package web.rtc
 
 import js.buffer.ArrayBuffer
 import js.core.Int53
+import js.serializable.Serializable
 
 /**
  * The **`RTCEncodedVideoFrame`** of the WebRTC API represents an encoded video frame in the WebRTC receiver or sender pipeline, which may be modified using a WebRTC Encoded Transform.
@@ -11,7 +12,8 @@ import js.core.Int53
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCEncodedVideoFrame)
  */
 external class RTCEncodedVideoFrame
-private constructor() {
+private constructor() :
+    Serializable {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCEncodedVideoFrame/data)
      */

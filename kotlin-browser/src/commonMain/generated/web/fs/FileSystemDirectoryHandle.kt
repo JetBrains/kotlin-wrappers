@@ -7,6 +7,7 @@ import js.collections.AsyncMapLike
 import js.core.JsString
 import js.core.Void
 import js.promise.Promise
+import js.serializable.Serializable
 import seskar.js.JsAsync
 import kotlin.js.JsName
 import kotlin.js.definedExternally
@@ -21,7 +22,8 @@ sealed /* final */
 external class FileSystemDirectoryHandle
 protected /* private */ constructor() :
     FileSystemHandle,
-    AsyncMapLike<JsString, FileSystemHandle> {
+    AsyncMapLike<JsString, FileSystemHandle>,
+    Serializable {
     override val kind: FileSystemHandleKind.directory
 
     /**
