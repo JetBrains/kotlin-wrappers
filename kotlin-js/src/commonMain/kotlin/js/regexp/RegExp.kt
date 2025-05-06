@@ -117,4 +117,11 @@ open external class RegExp(
      * [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/test)
      */
     fun test(string: String): Boolean
+
+    companion object {
+        /**
+         * [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/escape)
+         */
+        fun escape(string: String): String
+    }
 }
