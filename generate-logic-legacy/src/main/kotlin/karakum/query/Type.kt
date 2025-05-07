@@ -13,6 +13,7 @@ private val SKIPPED_TYPES = setOf(
     "NonFunctionGuard",
     "SkipToken",
     "OmitKeyof",
+    "DistributiveOmit",
     "ReplaceReturnType",
     "DataTag",
     "AnyDataTag",
@@ -88,6 +89,7 @@ class Type(
 
             body.startsWith("Omit<") -> body.removePrefix("Omit<").substringBefore(", '")
             body.startsWith("OmitKeyof<") -> body.removePrefix("OmitKeyof<").substringBefore(", '")
+            body.startsWith("DistributiveOmit<") -> body.removePrefix("DistributiveOmit<").substringBefore(", '")
             name.endsWith("Result") -> body
 
             "|" in body -> "Union /* $body */"
@@ -150,7 +152,7 @@ class Type(
 
             return """
             @JsPlainObject
-            external interface $declaration: 
+            external interface $declaration:
                 $parentDeclaration
             """.trimIndent()
         }
@@ -181,11 +183,11 @@ class Type(
             val adapterType = name + simpleTypeParameters
             return """
             @JsExternalInheritorsOnly
-            sealed external interface ${name}OrSkipToken$interfaceTypeParameters    
-                
+            sealed external interface ${name}OrSkipToken$interfaceTypeParameters
+
             sealed external interface $name$interfaceTypeParameters :
                 ${name}OrSkipToken$simpleTypeParameters
-            
+
             inline fun $adapterTypeParameters $name(
                 noinline value: $body,
             ): $adapterType =

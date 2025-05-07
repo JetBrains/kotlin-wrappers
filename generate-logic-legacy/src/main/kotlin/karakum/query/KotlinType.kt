@@ -107,6 +107,8 @@ private val STANDARD_TYPE_MAP = mapOf(
     "HydrateOptions['defaultOptions']" to "DefaultHydrateOptions",
 
     "QueryErrorResetBoundaryFunction | React.ReactNode" to "QueryErrorResetBoundaryFunction",
+
+    "UseQueryResult<NoInfer<TData>, TError>" to "UseQueryResult<TData, TError>",
 )
 
 private val SAFE_PREFIXES = setOf(
@@ -196,6 +198,9 @@ internal fun kotlinType(
 
     if (type.startsWith("OmitKeyof<"))
         return kotlinType(type.removePrefix("OmitKeyof<").substringBefore(", '"))
+
+    if (type.startsWith("DistributiveOmit<"))
+        return kotlinType(type.removePrefix("DistributiveOmit<").substringBefore(", '"))
 
     if (type.startsWith("Exclude<"))
         return kotlinType(
