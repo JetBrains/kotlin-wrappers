@@ -6,7 +6,7 @@ package tanstack.query.core
 
 import js.array.ReadonlyArray
 
-external fun <T> shouldThrowError(
+external fun <T : Function<Boolean>> shouldThrowError(
     throwOnError: T?,
     params: ReadonlyArray<*>, /* Parameters<T> */
 ): Boolean

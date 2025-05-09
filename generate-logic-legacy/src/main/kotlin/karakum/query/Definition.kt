@@ -187,7 +187,7 @@ fun toDeclarations(
         )
         .replace(
             "shouldThrowError<T extends (...args: Array<any>) => boolean>",
-            "shouldThrowError<T>",
+            "shouldThrowError<T extends Function<Boolean>>",
         )
 
     content = when (definitionFile.name) {
