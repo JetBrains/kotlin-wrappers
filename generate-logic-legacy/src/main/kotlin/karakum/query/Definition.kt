@@ -185,6 +185,10 @@ fun toDeclarations(
                 }
             """.trimIndent(),
         )
+        .replace(
+            "shouldThrowError<T extends (...args: Array<any>) => boolean>",
+            "shouldThrowError<T>",
+        )
 
     content = when (definitionFile.name) {
         "focusManager.d.ts" -> content.replace("SetupFn", "FocusManagerSetupFn")
