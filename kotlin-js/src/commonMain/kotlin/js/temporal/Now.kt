@@ -31,7 +31,7 @@ external object Now {
      * current time zone will be used.
      */
     fun zonedDateTimeISO(
-        tzLike: TimeZoneLike? = definedExternally,
+        tzLike: TimeZone? = definedExternally,
     ): ZonedDateTime
 
     /**
@@ -50,7 +50,7 @@ external object Now {
      * current time zone will be used.
      */
     fun plainDateTimeISO(
-        tzLike: TimeZoneLike? = definedExternally,
+        tzLike: TimeZone? = definedExternally,
     ): PlainDateTime
 
     /**
@@ -64,7 +64,7 @@ external object Now {
      * current time zone will be used.
      */
     fun plainDateISO(
-        tzLike: TimeZoneLike? = definedExternally,
+        tzLike: TimeZone? = definedExternally,
     ): PlainDate
 
     /**
@@ -77,7 +77,7 @@ external object Now {
      * current time zone will be used.
      */
     fun plainTimeISO(
-        tzLike: TimeZoneLike? = definedExternally,
+        tzLike: TimeZone? = definedExternally,
     ): PlainTime
 
     /**

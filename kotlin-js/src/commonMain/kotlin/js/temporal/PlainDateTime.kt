@@ -69,7 +69,7 @@ external class PlainDateTime(
     fun withCalendar(calendar: Calendar): PlainDateTime
 
     fun toZonedDateTime(
-        tzLike: TimeZoneLike,
+        tzLike: TimeZone,
         options: ToInstantOptions = definedExternally,
     ): ZonedDateTime
 

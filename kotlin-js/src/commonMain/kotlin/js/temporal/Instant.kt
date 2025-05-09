@@ -33,7 +33,7 @@ external class Instant(
     // fun equals(other: Instant): Boolean
     // fun equals(other: string): Boolean
 
-    fun toZonedDateTimeISO(tzLike: TimeZoneLike): ZonedDateTime
+    fun toZonedDateTimeISO(tzLike: TimeZone): ZonedDateTime
 
     fun toJSON(): String
     fun toString(options: InstantToStringOptions = definedExternally): String

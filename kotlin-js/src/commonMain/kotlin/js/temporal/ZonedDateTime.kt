@@ -8,12 +8,11 @@ import kotlin.js.definedExternally
 
 external class ZonedDateTime(
     epochNanoseconds: BigInt,
-    timeZone: TimeZoneLike,
+    timeZone: TimeZone,
     calendar: Calendar = definedExternally,
 ) : HasArithmeticOperations<ZonedDateTime, ZonedDateTimeLike, DateTimeUnit<*>>,
     Roundable<ZonedDateTime, DateTimeUnit<* /* day..nanosecond */>>,
-    LocalizableDateTime,
-    TimeZoneLike {
+    LocalizableDateTime {
     val era: String?
     val eraYear: Int?
     val year: Int
@@ -27,7 +26,6 @@ external class ZonedDateTime(
     val microsecond: Int
     val nanosecond: Int
     val timeZoneId: String
-    fun getTimeZone(): TimeZoneProtocol
     val calendarId: String
     val dayOfWeek: Int
     val dayOfYear: Int
@@ -61,7 +59,7 @@ external class ZonedDateTime(
     ): ZonedDateTime
 
     fun withCalendar(calendar: Calendar): ZonedDateTime
-    fun withTimeZone(timeZone: TimeZoneLike): ZonedDateTime
+    fun withTimeZone(timeZone: TimeZone): ZonedDateTime
 
     fun startOfDay(): ZonedDateTime
     fun toInstant(): Instant

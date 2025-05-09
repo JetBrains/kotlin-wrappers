@@ -18,6 +18,6 @@ external interface ZonedDateTimeLike {
     val microsecond: Int?
     val nanosecond: Int?
     val offset: String?
-    val timeZone: TimeZoneLike?
+    val timeZone: TimeZone?
     val calendar: Calendar?
 }
