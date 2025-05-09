@@ -25,11 +25,10 @@ external class PlainDateTime(
     millisecond: Int = definedExternally,
     microsecond: Int = definedExternally,
     nanosecond: Int = definedExternally,
-    calendar: CalendarLike = definedExternally,
+    calendar: Calendar = definedExternally,
 ) : HasArithmeticOperations<PlainDateTime, PlainDateTimeLike, DateTimeUnit<*>>,
     Roundable<PlainDateTime, DateTimeUnit<* /* day..nanosecond */>>,
-    LocalizableDateTime,
-    CalendarLike {
+    LocalizableDateTime {
     val era: String?
     val eraYear: Int?
     val year: Int
@@ -43,7 +42,6 @@ external class PlainDateTime(
     val microsecond: Int
     val nanosecond: Int
     val calendarId: String
-    fun getCalendar(): CalendarProtocol
     val dayOfWeek: Int
     val dayOfYear: Int
     val weekOfYear: Int
@@ -68,7 +66,7 @@ external class PlainDateTime(
         dateLike: PlainDate, /* | PlainDateLike | string */
     ): PlainDateTime
 
-    fun withCalendar(calendar: CalendarLike): PlainDateTime
+    fun withCalendar(calendar: Calendar): PlainDateTime
 
     fun toZonedDateTime(
         tzLike: TimeZoneLike,

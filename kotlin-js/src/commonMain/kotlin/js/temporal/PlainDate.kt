@@ -19,18 +19,16 @@ external class PlainDate(
     isoYear: Int,
     isoMonth: Int,
     isoDay: Int,
-    calendar: CalendarLike = definedExternally,
+    calendar: Calendar = definedExternally,
 ) : HasArithmeticOperations<PlainDate, PlainDateLike, DateUnit<*>>,
-    LocalizableDateTime,
-    CalendarLike {
+    LocalizableDateTime {
     val era: String?
     val eraYear: Int?
     val year: Int
     val month: Int
     val monthCode: String
     val day: Int
-    val calendarId: String
-    fun getCalendar(): CalendarProtocol
+    val calendarId: Calendar
     val dayOfWeek: Int
     val dayOfYear: Int
     val weekOfYear: Int
@@ -47,7 +45,7 @@ external class PlainDate(
         options: AssignmentOptions = definedExternally,
     ): PlainDate
 
-    fun withCalendar(calendar: CalendarLike): PlainDate
+    fun withCalendar(calendar: Calendar): PlainDate
 
     fun toPlainDateTime(
         temporalTime: PlainTime /* | PlainTimeLike | string */ = definedExternally,

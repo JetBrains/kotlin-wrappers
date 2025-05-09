@@ -11,5 +11,5 @@ external interface PlainDateLike {
     val month: Int?
     val monthCode: String?
     val day: Int?
-    val calendar: CalendarLike?
+    val calendar: Calendar?
 }

@@ -30,7 +30,7 @@ external class TimeZone(
     fun getOffsetStringFor(instant: Instant /* | string */): String
     fun getPlainDateTimeFor(
         instant: Instant, /* | string */
-        calendar: CalendarLike = definedExternally,
+        calendar: Calendar = definedExternally,
     ): PlainDateTime
 
     fun getInstantFor(

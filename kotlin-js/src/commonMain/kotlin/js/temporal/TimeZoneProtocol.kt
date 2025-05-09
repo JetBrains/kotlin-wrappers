@@ -11,7 +11,7 @@ external interface TimeZoneProtocol :
     val getOffsetStringFor: ((instant: Instant /* | string */) -> String)?
     val getPlainDateTimeFor: ((
         instant: Instant, /* | string */
-        calendar: CalendarLike?,
+        calendar: Calendar?,
     ) -> PlainDateTime)?
     val getInstantFor: ((
         dateTime: PlainDateTime, /* | PlainDateTimeLike | string */

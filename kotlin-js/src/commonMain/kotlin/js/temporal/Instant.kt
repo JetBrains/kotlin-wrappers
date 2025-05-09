@@ -5,7 +5,6 @@ package js.temporal
 import js.core.BigInt
 import js.core.Int53
 import js.import.JsQualifier
-import js.objects.JsPlainObject
 import kotlin.js.definedExternally
 
 /**
@@ -33,16 +32,6 @@ external class Instant(
 
     // fun equals(other: Instant): Boolean
     // fun equals(other: string): Boolean
-
-    fun toZonedDateTime(
-        options: ToZonedDateTimeOptions,
-    ): ZonedDateTime
-
-    @JsPlainObject
-    interface ToZonedDateTimeOptions {
-        val timeZone: TimeZoneLike
-        val calendar: CalendarLike
-    }
 
     fun toZonedDateTimeISO(tzLike: TimeZoneLike): ZonedDateTime
 

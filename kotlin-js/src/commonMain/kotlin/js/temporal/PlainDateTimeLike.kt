@@ -17,5 +17,5 @@ external interface PlainDateTimeLike {
     val millisecond: Int?
     val microsecond: Int?
     val nanosecond: Int?
-    val calendar: CalendarLike?
+    val calendar: Calendar?
 }

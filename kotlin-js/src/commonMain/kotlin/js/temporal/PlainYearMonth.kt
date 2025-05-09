@@ -16,18 +16,16 @@ import kotlin.js.definedExternally
 external class PlainYearMonth(
     isoYear: Int,
     isoMonth: Int,
-    calendar: CalendarLike = definedExternally,
+    calendar: Calendar = definedExternally,
     referenceISODay: Int = definedExternally,
 ) : HasArithmeticOperations<PlainYearMonth, PlainYearMonthLike, DateUnit<* /* year..month */>>,
-    LocalizableDateTime,
-    CalendarLike {
+    LocalizableDateTime {
     val era: String?
     val eraYear: Int?
     val year: Int
     val month: Int
     val monthCode: String
     val calendarId: String
-    fun getCalendar(): CalendarProtocol
     val daysInMonth: Int
     val daysInYear: Int
     val monthsInYear: Int

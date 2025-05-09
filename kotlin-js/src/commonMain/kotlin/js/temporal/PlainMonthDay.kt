@@ -16,14 +16,12 @@ import kotlin.js.definedExternally
 external class PlainMonthDay(
     isoMonth: Int,
     isoDay: Int,
-    calendar: CalendarLike = definedExternally,
+    calendar: Calendar = definedExternally,
     referenceISOYear: Int = definedExternally,
-) : LocalizableDateTime,
-    CalendarLike {
+) : LocalizableDateTime {
     val monthCode: String
     val day: Int
     val calendarId: String
-    fun getCalendar(): CalendarProtocol
 
     // fun equals(other: PlainMonthDay /* | PlainMonthDayLike | string */ ): Boolean
     fun with(
