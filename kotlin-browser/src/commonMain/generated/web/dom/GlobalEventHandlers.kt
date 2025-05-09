@@ -76,6 +76,13 @@ external interface GlobalEventHandlers :
         set(value) = definedExternally
 
     /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/beforematch_event)
+     */
+    var onbeforematch: EventHandler<Event, GlobalEventHandlers, Node>?
+        get() = definedExternally
+        set(value) = definedExternally
+
+    /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/beforetoggle_event)
      */
     var onbeforetoggle: EventHandler<ToggleEvent, GlobalEventHandlers, GlobalEventHandlers>?

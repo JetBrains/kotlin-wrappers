@@ -39,6 +39,11 @@ private val RANGES_TYPES = setOf(
     "StaticRangeInit",
 )
 
+private val SELECTION_TYPES = setOf(
+    "Selection",
+    "GetComposedRangesOptions",
+)
+
 private val DOM_TYPES = setOf(
     // separate package?
     "CaretPosition",
@@ -1488,7 +1493,7 @@ internal fun convertInterface(
         name.startsWith("XMLHttp") -> "web.xhr"
 
         name == "ARIAMixin" -> "web.aria"
-        name == "Selection" -> "web.selection"
+        name in SELECTION_TYPES -> "web.selection"
 
         name == "EventModifierInit" -> "web.uievents"
 

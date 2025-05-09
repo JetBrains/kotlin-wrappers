@@ -669,6 +669,12 @@ open external class Document :
     val beforeInputEvent: EventInstance<InputEvent, Document /* this */, Node>
 
     /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/beforematch_event)
+     */
+    @JsEvent("beforematch")
+    val beforeMatchEvent: EventInstance<Event, Document /* this */, Node>
+
+    /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/cancel_event)
      */
     @JsEvent("cancel")

@@ -187,6 +187,12 @@ protected constructor() :
     val animationStartEvent: EventInstance<AnimationEvent, HTMLElement /* this */, Node>
 
     /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/beforematch_event)
+     */
+    @JsEvent("beforematch")
+    val beforeMatchEvent: EventInstance<Event, HTMLElement /* this */, Node>
+
+    /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/beforetoggle_event)
      */
     @JsEvent("beforetoggle")

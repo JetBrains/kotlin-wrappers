@@ -139,6 +139,9 @@ open external class Event(
         @JsValue("afterprint")
         val AFTER_PRINT: EventType<Event>
 
+        @JsValue("beforematch")
+        val BEFORE_MATCH: EventType<Event>
+
         @JsValue("beforeprint")
         val BEFORE_PRINT: EventType<Event>
 

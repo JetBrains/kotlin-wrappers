@@ -96,7 +96,6 @@ object EventDataRegistry {
         "InstallEvent",
         "PaymentRequestEvent",
         "PeriodicSyncEvent",
-        "PushSubscriptionChangeEvent",
         "SyncEvent",
         "KeyFrameRequestEvent",
         "CaptureActionEvent",

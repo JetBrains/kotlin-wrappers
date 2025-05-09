@@ -7,12 +7,12 @@ import js.core.Void
 import js.promise.Promise
 import seskar.js.JsAsync
 import web.cookie.CookieStore
-import web.events.Event
 import web.events.EventHandler
 import web.events.EventInstance
 import web.events.JsEvent
 import web.messaging.MessageEvent
 import web.push.PushEvent
+import web.push.PushSubscriptionChangeEvent
 import web.workers.WorkerGlobalScope
 import kotlin.js.JsName
 
@@ -78,7 +78,7 @@ private constructor() :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope/pushsubscriptionchange_event)
      */
-    var onpushsubscriptionchange: EventHandler<Event, ServiceWorkerGlobalScope, ServiceWorkerGlobalScope>?
+    var onpushsubscriptionchange: EventHandler<PushSubscriptionChangeEvent, ServiceWorkerGlobalScope, ServiceWorkerGlobalScope>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope/registration)

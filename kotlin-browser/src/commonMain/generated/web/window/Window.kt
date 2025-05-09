@@ -407,6 +407,12 @@ private constructor() :
     val beforeInputEvent: EventInstance<InputEvent, Window /* this */, Node>
 
     /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/beforematch_event)
+     */
+    @JsEvent("beforematch")
+    val beforeMatchEvent: EventInstance<Event, Window /* this */, Node>
+
+    /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/beforeprint_event)
      */
     @JsEvent("beforeprint")

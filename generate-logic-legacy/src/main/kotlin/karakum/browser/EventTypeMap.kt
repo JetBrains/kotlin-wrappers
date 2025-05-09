@@ -79,6 +79,7 @@ internal val WEB_WORKER_EVENT_DATA = listOf(
 
 internal val SERVICE_WORKER_EVENT_DATA = listOf(
     EventInfo("web.push.PushEvent"),
+    EventInfo("web.push.PushSubscriptionChangeEvent"),
     EventInfo("web.serviceworker.ExtendableEvent"),
     EventInfo("web.serviceworker.ExtendableMessageEvent"),
     EventInfo("web.serviceworker.FetchEvent"),
@@ -100,6 +101,7 @@ internal val EVENT_CORRECTION_MAP = mapOf(
     "audioprocess" to "audio_process",
     "auxclick" to "aux_click",
     "beforeinput" to "before_input",
+    "beforematch" to "before_match",
     "beforeprint" to "before_print",
     "beforetoggle" to "before_toggle",
     "beforeunload" to "before_unload",

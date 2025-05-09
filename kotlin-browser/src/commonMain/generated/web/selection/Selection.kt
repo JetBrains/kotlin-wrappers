@@ -2,8 +2,10 @@
 
 package web.selection
 
+import js.array.ReadonlyArray
 import web.dom.Node
 import web.ranges.Range
+import web.ranges.StaticRange
 import kotlin.js.definedExternally
 
 /**
@@ -101,6 +103,11 @@ private constructor() {
         node: Node,
         offset: Int = definedExternally,
     )
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Selection/getComposedRanges)
+     */
+    fun getComposedRanges(options: GetComposedRangesOptions = definedExternally): ReadonlyArray<StaticRange>
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Selection/getRangeAt)
