@@ -2,7 +2,7 @@ package js.uri
 
 import js.errors.ErrorOptions
 import js.errors.JsError
-import js.serializable.Serializable
+import js.serialization.Serializable
 import kotlin.js.definedExternally
 
 open external class URIError(

@@ -4,7 +4,7 @@ package web.rtc
 
 import js.buffer.ArrayBuffer
 import js.core.Int53
-import js.serializable.Serializable
+import js.serialization.Serializable
 
 /**
  * The **`RTCEncodedVideoFrame`** of the WebRTC API represents an encoded video frame in the WebRTC receiver or sender pipeline, which may be modified using a WebRTC Encoded Transform.

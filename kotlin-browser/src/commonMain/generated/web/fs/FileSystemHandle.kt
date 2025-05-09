@@ -4,7 +4,7 @@ package web.fs
 
 import js.core.JsBoolean
 import js.promise.Promise
-import js.serializable.Serializable
+import js.serialization.Serializable
 import seskar.js.JsAsync
 import kotlin.js.JsName
 

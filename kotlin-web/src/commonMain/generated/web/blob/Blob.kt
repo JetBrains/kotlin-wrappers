@@ -8,7 +8,7 @@ import js.core.Int53
 import js.core.JsString
 import js.core.UInt53
 import js.promise.Promise
-import js.serializable.Serializable
+import js.serialization.Serializable
 import js.typedarrays.Uint8Array
 import seskar.js.JsAsync
 import web.images.ImageBitmapSource

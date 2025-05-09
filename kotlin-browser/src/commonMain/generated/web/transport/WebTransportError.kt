@@ -2,7 +2,7 @@
 
 package web.transport
 
-import js.serializable.Serializable
+import js.serialization.Serializable
 import web.errors.DOMException
 import kotlin.js.definedExternally
 

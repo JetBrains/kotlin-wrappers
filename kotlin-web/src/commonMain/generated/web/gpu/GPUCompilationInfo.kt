@@ -3,7 +3,7 @@
 package web.gpu
 
 import js.array.ReadonlyArray
-import js.serializable.Serializable
+import js.serialization.Serializable
 
 /**
  * Available only in secure contexts.

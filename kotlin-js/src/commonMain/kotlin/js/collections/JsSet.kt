@@ -5,7 +5,7 @@ import js.array.Tuple2
 import js.core.JsAny
 import js.iterable.JsIterable
 import js.iterable.JsIterator
-import js.serializable.Serializable
+import js.serialization.Serializable
 import kotlin.js.JsName
 import kotlin.js.definedExternally
 

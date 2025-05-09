@@ -64,7 +64,7 @@ private val DEFAULT_IMPORTS = Imports(
     "js.reflect.JsClass",
     "js.reflect.JsExternalInheritorsOnly",
     "js.reflect.unsafeCast",
-    "js.serializable.Serializable",
+    "js.serialization.Serializable",
     "js.temporal.Instant",
     "js.transferable.Transferable",
     "js.typedarrays.BigInt64Array",

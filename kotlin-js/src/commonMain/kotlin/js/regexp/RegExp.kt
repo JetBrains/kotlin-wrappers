@@ -1,6 +1,6 @@
 package js.regexp
 
-import js.serializable.Serializable
+import js.serialization.Serializable
 import kotlin.js.definedExternally
 
 /**

@@ -4,7 +4,7 @@ package web.errors
 
 import js.errors.JsError
 import js.errors.JsErrorName
-import js.serializable.Serializable
+import js.serialization.Serializable
 import seskar.js.JsValue
 import kotlin.js.definedExternally
 

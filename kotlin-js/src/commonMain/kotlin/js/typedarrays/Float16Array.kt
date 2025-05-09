@@ -5,7 +5,7 @@ import js.buffer.ArrayBuffer
 import js.buffer.ArrayBufferLike
 import js.core.JsFloat16
 import js.iterable.JsIterable
-import js.serializable.Serializable
+import js.serialization.Serializable
 import kotlin.js.definedExternally
 
 open external class Float16Array<B : ArrayBufferLike>(

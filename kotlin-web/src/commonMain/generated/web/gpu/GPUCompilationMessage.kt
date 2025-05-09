@@ -3,7 +3,7 @@
 package web.gpu
 
 import js.core.UInt53
-import js.serializable.Serializable
+import js.serialization.Serializable
 
 /**
  * Available only in secure contexts.

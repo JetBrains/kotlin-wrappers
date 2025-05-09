@@ -5,7 +5,7 @@ package web.codecs
 import js.buffer.AllowSharedBufferSource
 import js.core.Int53
 import js.core.UInt53
-import js.serializable.Serializable
+import js.serialization.Serializable
 import js.transferable.Transferable
 
 /**

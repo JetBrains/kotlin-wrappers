@@ -1,6 +1,6 @@
 package js.errors
 
-import js.serializable.Serializable
+import js.serialization.Serializable
 import kotlin.js.definedExternally
 
 open external class SyntaxError(

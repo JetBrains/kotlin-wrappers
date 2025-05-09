@@ -9,7 +9,7 @@ import js.intl.DateTimeFormatOptions
 import js.intl.Locale
 import js.intl.Localizable
 import js.intl.UnicodeBCP47LocaleIdentifier
-import js.serializable.Serializable
+import js.serialization.Serializable
 import js.temporal.Instant
 import kotlin.js.definedExternally
 

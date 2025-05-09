@@ -5,7 +5,7 @@ import js.buffer.ArrayBuffer
 import js.buffer.ArrayBufferLike
 import js.core.JsInt
 import js.iterable.JsIterable
-import js.serializable.Serializable
+import js.serialization.Serializable
 import kotlin.js.definedExternally
 
 open external class Int32Array<B : ArrayBufferLike>(

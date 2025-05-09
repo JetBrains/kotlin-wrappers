@@ -1,7 +1,7 @@
 package js.errors
 
 import js.array.ReadonlyArray
-import js.serializable.Serializable
+import js.serialization.Serializable
 import kotlin.js.definedExternally
 
 open external class AggregateError(

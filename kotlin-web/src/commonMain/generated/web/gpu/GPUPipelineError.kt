@@ -2,7 +2,7 @@
 
 package web.gpu
 
-import js.serializable.Serializable
+import js.serialization.Serializable
 import web.errors.DOMException
 
 /**

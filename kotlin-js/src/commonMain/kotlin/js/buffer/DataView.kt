@@ -1,7 +1,7 @@
 package js.buffer
 
 import js.core.Float16
-import js.serializable.Serializable
+import js.serialization.Serializable
 import kotlin.js.definedExternally
 
 external class DataView<B : ArrayBufferLike>(

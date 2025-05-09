@@ -2,7 +2,7 @@
 
 package web.images
 
-import js.serializable.Serializable
+import js.serialization.Serializable
 import web.gl.TexImageSource
 import web.gpu.GPUCopyExternalImageSource
 import kotlin.js.definedExternally

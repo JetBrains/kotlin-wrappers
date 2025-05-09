@@ -5,7 +5,7 @@ import js.buffer.ArrayBuffer
 import js.buffer.ArrayBufferLike
 import js.core.BigInt
 import js.iterable.JsIterable
-import js.serializable.Serializable
+import js.serialization.Serializable
 import kotlin.js.definedExternally
 
 open external class BigInt64Array<B : ArrayBufferLike>(

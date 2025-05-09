@@ -3,7 +3,7 @@
 package web.file
 
 import js.array.ReadonlyArray
-import js.serializable.Serializable
+import js.serialization.Serializable
 import web.blob.Blob
 import web.blob.BlobPart
 import web.time.EpochTimeStamp

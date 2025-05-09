@@ -3,7 +3,7 @@
 package web.rtc
 
 import js.array.ReadonlyArray
-import js.serializable.Serializable
+import js.serialization.Serializable
 import web.time.EpochTimeStamp
 
 /**

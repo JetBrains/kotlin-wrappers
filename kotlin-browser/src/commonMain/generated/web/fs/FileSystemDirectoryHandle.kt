@@ -7,7 +7,7 @@ import js.collections.AsyncMapLike
 import js.core.JsString
 import js.core.Void
 import js.promise.Promise
-import js.serializable.Serializable
+import js.serialization.Serializable
 import seskar.js.JsAsync
 import kotlin.js.JsName
 import kotlin.js.definedExternally

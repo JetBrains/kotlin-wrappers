@@ -3,7 +3,7 @@
 package web.fs
 
 import js.promise.Promise
-import js.serializable.Serializable
+import js.serialization.Serializable
 import seskar.js.JsAsync
 import web.file.File
 import kotlin.js.JsName
