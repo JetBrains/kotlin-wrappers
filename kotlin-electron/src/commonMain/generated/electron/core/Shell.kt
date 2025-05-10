@@ -15,7 +15,10 @@ external interface Shell {
      * Open the given external protocol URL in the desktop's default manner. (For
      * example, mailto: URLs in the user's default mail agent).
      */
-    fun openExternal(url: String, options: OpenExternalOptions = definedExternally): Promise<js.core.Void>
+    fun openExternal(
+        url: String,
+        options: OpenExternalOptions = definedExternally,
+    ): Promise<js.core.Void>
 
     /**
      * Resolves with a string containing the error message corresponding to the failure
@@ -68,5 +71,8 @@ external interface Shell {
      *
      * @platform win32
      */
-    fun writeShortcutLink(shortcutPath: String, options: ShortcutDetails): Boolean
+    fun writeShortcutLink(
+        shortcutPath: String,
+        options: ShortcutDetails,
+    ): Boolean
 }

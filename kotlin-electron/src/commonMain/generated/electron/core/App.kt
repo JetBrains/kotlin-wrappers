@@ -285,6 +285,21 @@ external interface App : node.events.EventEmitter {
      * @platform darwin
      */
 
+    /**
+     * @platform darwin
+     */
+
+    /**
+     * @platform darwin
+     */
+
+    /**
+     * @platform darwin
+     */
+
+    /**
+     * @platform darwin
+     */
 
     /**
      * @platform darwin
@@ -302,29 +317,9 @@ external interface App : node.events.EventEmitter {
      * @platform darwin
      */
 
-
     /**
      * @platform darwin
      */
-
-    /**
-     * @platform darwin
-     */
-
-    /**
-     * @platform darwin
-     */
-
-
-    /**
-     * @platform darwin
-     */
-
-
-    /**
-     * @platform darwin
-     */
-
 
     /**
      * @platform darwin,win32
@@ -338,6 +333,21 @@ external interface App : node.events.EventEmitter {
      * @platform darwin
      */
 
+    /**
+     * @platform darwin
+     */
+
+    /**
+     * @platform darwin
+     */
+
+    /**
+     * @platform darwin
+     */
+
+    /**
+     * @platform darwin
+     */
 
     /**
      * @platform darwin
@@ -355,29 +365,9 @@ external interface App : node.events.EventEmitter {
      * @platform darwin
      */
 
-
     /**
      * @platform darwin
      */
-
-    /**
-     * @platform darwin
-     */
-
-    /**
-     * @platform darwin
-     */
-
-
-    /**
-     * @platform darwin
-     */
-
-
-    /**
-     * @platform darwin
-     */
-
 
     /**
      * @platform darwin,win32
@@ -391,6 +381,21 @@ external interface App : node.events.EventEmitter {
      * @platform darwin
      */
 
+    /**
+     * @platform darwin
+     */
+
+    /**
+     * @platform darwin
+     */
+
+    /**
+     * @platform darwin
+     */
+
+    /**
+     * @platform darwin
+     */
 
     /**
      * @platform darwin
@@ -408,29 +413,9 @@ external interface App : node.events.EventEmitter {
      * @platform darwin
      */
 
-
     /**
      * @platform darwin
      */
-
-    /**
-     * @platform darwin
-     */
-
-    /**
-     * @platform darwin
-     */
-
-
-    /**
-     * @platform darwin
-     */
-
-
-    /**
-     * @platform darwin
-     */
-
 
     /**
      * @platform darwin,win32
@@ -444,6 +429,21 @@ external interface App : node.events.EventEmitter {
      * @platform darwin
      */
 
+    /**
+     * @platform darwin
+     */
+
+    /**
+     * @platform darwin
+     */
+
+    /**
+     * @platform darwin
+     */
+
+    /**
+     * @platform darwin
+     */
 
     /**
      * @platform darwin
@@ -461,29 +461,9 @@ external interface App : node.events.EventEmitter {
      * @platform darwin
      */
 
-
     /**
      * @platform darwin
      */
-
-    /**
-     * @platform darwin
-     */
-
-    /**
-     * @platform darwin
-     */
-
-
-    /**
-     * @platform darwin
-     */
-
-
-    /**
-     * @platform darwin
-     */
-
 
     /**
      * Adds `path` to the recent documents list.
@@ -628,7 +608,10 @@ external interface App : node.events.EventEmitter {
      * On _Linux_ and _macOS_, icons depend on the application associated with file
      * mime type.
      */
-    fun getFileIcon(path: String, options: FileIconOptions = definedExternally): Promise<NativeImage>
+    fun getFileIcon(
+        path: String,
+        options: FileIconOptions = definedExternally,
+    ): Promise<NativeImage>
 
     /**
      * The Graphics Feature Status from `chrome://gpu/`.
@@ -841,7 +824,10 @@ external interface App : node.events.EventEmitter {
      *
      * @platform linux
      */
-    fun importCertificate(options: ImportCertificateOptions, callback: (result: Double) -> Unit)
+    fun importCertificate(
+        options: ImportCertificateOptions,
+        callback: (result: Double) -> Unit,
+    )
 
     /**
      * Invalidates the current Handoff user activity.
@@ -1154,7 +1140,9 @@ external interface App : node.events.EventEmitter {
      * The handler is called when a password is needed to unlock a client certificate
      * for `hostname`.
      */
-    fun setClientCertRequestPasswordHandler(handler: (clientCertRequestParams: ClientCertRequestParams) -> Promise<String>)
+    fun setClientCertRequestPasswordHandler(
+        handler: (clientCertRequestParams: ClientCertRequestParams) -> Promise<String>,
+    )
 
     /**
      * Sets or removes a custom Jump List for the application, and returns one of the
@@ -1229,7 +1217,11 @@ external interface App : node.events.EventEmitter {
      * directory. If you want to change this location, you have to override the
      * `sessionData` path before the `ready` event of the `app` module is emitted.
      */
-    fun setPath(name: String, path: String)
+    fun setPath(
+        name: String,
+        path: String,
+    )
+
     fun setProxy(config: ProxyConfig)
 
     /**
@@ -1253,7 +1245,11 @@ external interface App : node.events.EventEmitter {
      *
      * @platform darwin
      */
-    fun setUserActivity(type: String, userInfo: Any?, webpageURL: String = definedExternally)
+    fun setUserActivity(
+        type: String,
+        userInfo: Any?,
+        webpageURL: String = definedExternally,
+    )
 
     /**
      * Adds `tasks` to the Tasks category of the Jump List on Windows.
@@ -1311,7 +1307,10 @@ external interface App : node.events.EventEmitter {
      *
      * @platform darwin
      */
-    fun updateCurrentActivity(type: String, userInfo: Any?)
+    fun updateCurrentActivity(
+        type: String,
+        userInfo: Any?,
+    )
 
     /**
      * fulfilled when Electron is initialized. May be used as a convenient alternative
@@ -1441,13 +1440,27 @@ external interface App : node.events.EventEmitter {
     val browserWindowFocusEvent: node.events.EventInstance<js.array.Tuple2<Event<*>, BrowserWindow>>
 
     @web.events.JsEvent("certificate-error")
-    val certificateErrorEvent: node.events.EventInstance<js.array.Tuple7<Event<*>, WebContents, String, String, Certificate, (isTrusted: Boolean) -> Unit, Boolean>>
+    val certificateErrorEvent:
+            node.events.EventInstance<
+                    js.array.Tuple7<
+                            Event<*>,
+                            WebContents,
+                            String,
+                            String,
+                            Certificate,
+                                (
+                        isTrusted: Boolean,
+                    ) -> Unit,
+                            Boolean
+                            >
+                    >
 
     @web.events.JsEvent("child-process-gone")
     val childProcessGoneEvent: node.events.EventInstance<js.array.Tuple2<Event<*>, Details>>
 
     @web.events.JsEvent("continue-activity")
-    val continueActivityEvent: node.events.EventInstance<js.array.Tuple4<Event<*>, String, Any?, ContinueActivityDetails>>
+    val continueActivityEvent:
+            node.events.EventInstance<js.array.Tuple4<Event<*>, String, Any?, ContinueActivityDetails>>
 
     @web.events.JsEvent("continue-activity-error")
     val continueActivityErrorEvent: node.events.EventInstance<js.array.Tuple3<Event<*>, String, String>>
@@ -1462,7 +1475,19 @@ external interface App : node.events.EventEmitter {
     val gpuInfoUpdateEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("login")
-    val loginEvent: node.events.EventInstance<js.array.Tuple5<Event<*>, WebContents, AuthenticationResponseDetails, AuthInfo, (username: String? /* use undefined for default */, password: String? /* use undefined for default */) -> Unit>>
+    val loginEvent:
+            node.events.EventInstance<
+                    js.array.Tuple5<
+                            Event<*>,
+                            WebContents,
+                            AuthenticationResponseDetails,
+                            AuthInfo,
+                                (
+                        username: String?, /* use undefined for default */
+                        password: String?, // use undefined for default
+                    ) -> Unit
+                            >
+                    >
 
     @web.events.JsEvent("new-window-for-tab")
     val newWindowForTabEvent: node.events.EventInstance<js.array.Tuple1<Event<*>>>
@@ -1477,16 +1502,30 @@ external interface App : node.events.EventEmitter {
     val quitEvent: node.events.EventInstance<js.array.Tuple2<Event<*>, Double>>
 
     @web.events.JsEvent("ready")
-    val readyEvent: node.events.EventInstance<js.array.Tuple2<Event<*>, Any /* (Record<string, any>) | (NotificationResponse) */>>
+    val readyEvent:
+            node.events.EventInstance<js.array.Tuple2<Event<*>, Any /* (Record<string, any>) | (NotificationResponse) */>>
 
     @web.events.JsEvent("render-process-gone")
-    val renderProcessGoneEvent: node.events.EventInstance<js.array.Tuple3<Event<*>, WebContents, RenderProcessGoneDetails>>
+    val renderProcessGoneEvent:
+            node.events.EventInstance<js.array.Tuple3<Event<*>, WebContents, RenderProcessGoneDetails>>
 
     @web.events.JsEvent("second-instance")
-    val secondInstanceEvent: node.events.EventInstance<js.array.Tuple4<Event<*>, js.array.ReadonlyArray<String>, String, Any?>>
+    val secondInstanceEvent:
+            node.events.EventInstance<js.array.Tuple4<Event<*>, js.array.ReadonlyArray<String>, String, Any?>>
 
     @web.events.JsEvent("select-client-certificate")
-    val selectClientCertificateEvent: node.events.EventInstance<js.array.Tuple5<Event<*>, WebContents, String, js.array.ReadonlyArray<Certificate>, (certificate: Certificate? /* use undefined for default */) -> Unit>>
+    val selectClientCertificateEvent:
+            node.events.EventInstance<
+                    js.array.Tuple5<
+                            Event<*>,
+                            WebContents,
+                            String,
+                            js.array.ReadonlyArray<Certificate>,
+                                (
+                        certificate: Certificate?, // use undefined for default
+                    ) -> Unit
+                            >
+                    >
 
     @web.events.JsEvent("session-created")
     val sessionCreatedEvent: node.events.EventInstance<js.array.Tuple1<Session>>

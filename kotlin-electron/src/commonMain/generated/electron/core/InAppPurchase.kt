@@ -8,7 +8,6 @@ import js.promise.Promise
 external interface InAppPurchase : node.events.EventEmitter {
 // Docs: https://electronjs.org/docs/api/in-app-purchase
 
-
     /**
      * whether a user can make a payment.
      */
@@ -50,7 +49,10 @@ external interface InAppPurchase : node.events.EventEmitter {
      * You should listen for the `transactions-updated` event as soon as possible and
      * certainly before you call `purchaseProduct`.
      */
-    fun purchaseProduct(productID: String, opts: Double = definedExternally): Promise<Boolean>
+    fun purchaseProduct(
+        productID: String,
+        opts: Double = definedExternally,
+    ): Promise<Boolean>
 
     /**
      * Returns `true` if the product is valid and added to the payment queue.
@@ -58,7 +60,10 @@ external interface InAppPurchase : node.events.EventEmitter {
      * You should listen for the `transactions-updated` event as soon as possible and
      * certainly before you call `purchaseProduct`.
      */
-    fun purchaseProduct(productID: String, opts: PurchaseProductOpts = definedExternally): Promise<Boolean>
+    fun purchaseProduct(
+        productID: String,
+        opts: PurchaseProductOpts = definedExternally,
+    ): Promise<Boolean>
 
     /**
      * Restores finished transactions. This method can be called either to install

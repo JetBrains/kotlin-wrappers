@@ -17,12 +17,14 @@ open external class View : NodeEventEmitter {
      * new bounds can be retrieved with `view.getBounds()`.
      */
 
-
     /**
      * If the same View is added to a parent which already contains it, it will be
      * reordered such that it becomes the topmost view.
      */
-    fun addChildView(view: View, index: Double = definedExternally)
+    fun addChildView(
+        view: View,
+        index: Double = definedExternally,
+    )
 
     /**
      * The bounds of this View, relative to its parent.
@@ -69,7 +71,9 @@ open external class View : NodeEventEmitter {
      * **Note:** The area cutout of the view's border still captures clicks.
      */
     fun setBorderRadius(radius: Double)
+
     fun setBounds(bounds: Rectangle)
+
     fun setVisible(visible: Boolean)
 
     /**

@@ -14,5 +14,5 @@ external interface UploadRawData {
     /**
      * `rawData`.
      */
-    var type: String /* 'rawData' */
+    var type: String // 'rawData'
 }

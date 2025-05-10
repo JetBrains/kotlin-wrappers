@@ -12,7 +12,6 @@ external interface NativeTheme : node.events.EventEmitter {
      * will have to check them to determine which one has changed.
      */
 
-
     /**
      * A `boolean` indicating whether Chromium is in forced colors mode, controlled by
      * system accessibility settings. Currently, Windows high contrast is the only

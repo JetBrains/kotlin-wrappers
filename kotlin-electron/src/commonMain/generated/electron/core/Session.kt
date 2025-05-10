@@ -29,7 +29,6 @@ external class Session : NodeEventEmitter {
      * `Session.removeExtension` is called.
      */
 
-
     /**
      * Emitted after `navigator.hid.requestDevice` has been called and
      * `select-hid-device` has fired if a new device becomes available before the
@@ -152,7 +151,6 @@ external class Session : NodeEventEmitter {
      * available from next tick of the process.
      */
 
-
     /**
      * Whether the word was successfully written to the custom dictionary. This API
      * will not work on non-persistent (in-memory) sessions.
@@ -246,7 +244,10 @@ external class Session : NodeEventEmitter {
      * **Note:** This does not perform any security checks that relate to a page's
      * origin, unlike `webContents.downloadURL`.
      */
-    fun downloadURL(url: String, options: DownloadURLOptions = definedExternally)
+    fun downloadURL(
+        url: String,
+        options: DownloadURLOptions = definedExternally,
+    )
 
     /**
      * Emulates network with the given configuration for the `session`.
@@ -280,7 +281,10 @@ external class Session : NodeEventEmitter {
      * intercepted request to the built-in handler. webRequest handlers will still be
      * triggered when bypassing custom protocols.
      */
-    fun fetch(input: String, init: SessionFetchInit = definedExternally): Promise<GlobalResponse>
+    fun fetch(
+        input: String,
+        init: SessionFetchInit = definedExternally,
+    ): Promise<GlobalResponse>
 
     /**
      * see Response.
@@ -309,7 +313,10 @@ external class Session : NodeEventEmitter {
      * intercepted request to the built-in handler. webRequest handlers will still be
      * triggered when bypassing custom protocols.
      */
-    fun fetch(input: GlobalRequest, init: SessionFetchInit = definedExternally): Promise<GlobalResponse>
+    fun fetch(
+        input: GlobalRequest,
+        init: SessionFetchInit = definedExternally,
+    ): Promise<GlobalResponse>
 
     /**
      * Writes any unwritten DOMStorage data to disk.
@@ -419,7 +426,10 @@ external class Session : NodeEventEmitter {
      * **Note:** Loading extensions into in-memory (non-persistent) sessions is not
      * supported and will throw an error.
      */
-    fun loadExtension(path: String, options: LoadExtensionOptions = definedExternally): Promise<Extension>
+    fun loadExtension(
+        path: String,
+        options: LoadExtensionOptions = definedExternally,
+    ): Promise<Extension>
 
     /**
      * Preconnects the given number of sockets to an origin.
@@ -446,7 +456,10 @@ external class Session : NodeEventEmitter {
     /**
      * Resolves with the resolved IP addresses for the `host`.
      */
-    fun resolveHost(host: String, options: ResolveHostOptions = definedExternally): Promise<ResolvedHost>
+    fun resolveHost(
+        host: String,
+        options: ResolveHostOptions = definedExternally,
+    ): Promise<ResolvedHost>
 
     /**
      * Resolves with the proxy information for `url`.
@@ -463,7 +476,9 @@ external class Session : NodeEventEmitter {
      *
      * @platform win32,linux
      */
-    fun setBluetoothPairingHandler(handler: ((details: BluetoothPairingHandlerHandlerDetails, callback: (response: Response) -> Unit) -> Unit)?)
+    fun setBluetoothPairingHandler(
+        handler: ((details: BluetoothPairingHandlerHandlerDetails, callback: (response: Response) -> Unit) -> Unit)?,
+    )
 
     /**
      * Sets the certificate verify proc for `session`, the `proc` will be called with
@@ -544,7 +559,16 @@ external class Session : NodeEventEmitter {
      * make a permission request if the check is denied. To clear the handler, call
      * `setPermissionCheckHandler(null)`.
      */
-    fun setPermissionCheckHandler(handler: ((webContents: WebContents?, permission: SessionSetPermissionCheckHandlerHandlerPermission, requestingOrigin: String, details: PermissionCheckHandlerHandlerDetails) -> Boolean)?)
+    fun setPermissionCheckHandler(
+        handler: (
+            (
+            webContents: WebContents?,
+            permission: SessionSetPermissionCheckHandlerHandlerPermission,
+            requestingOrigin: String,
+            details: PermissionCheckHandlerHandlerDetails,
+        ) -> Boolean
+        )?,
+    )
 
     /**
      * Sets the handler which can be used to respond to permission requests for the
@@ -554,7 +578,16 @@ external class Session : NodeEventEmitter {
      * `setPermissionCheckHandler` to get complete permission handling. Most web APIs
      * do a permission check and then make a permission request if the check is denied.
      */
-    fun setPermissionRequestHandler(handler: ((webContents: WebContents, permission: SessionSetPermissionRequestHandlerHandlerPermission, callback: (permissionGranted: Boolean) -> Unit, details: Any /* (PermissionRequest) | (FilesystemPermissionRequest) | (MediaAccessPermissionRequest) | (OpenExternalPermissionRequest) */) -> Unit)?)
+    fun setPermissionRequestHandler(
+        handler: (
+            (
+            webContents: WebContents,
+            permission: SessionSetPermissionRequestHandlerHandlerPermission,
+            callback: (permissionGranted: Boolean) -> Unit,
+            details: Any, // (PermissionRequest) | (FilesystemPermissionRequest) | (MediaAccessPermissionRequest) | (OpenExternalPermissionRequest)
+        ) -> Unit
+        )?,
+    )
 
     /**
      * Adds scripts that will be executed on ALL web contents that are associated with
@@ -639,7 +672,9 @@ external class Session : NodeEventEmitter {
      * classes (this is also the default behavior if a handler is not defined). To
      * clear the handler, call `setUSBProtectedClassesHandler(null)`.
      */
-    fun setUSBProtectedClassesHandler(handler: ((details: USBProtectedClassesHandlerHandlerDetails) -> js.array.ReadonlyArray<String>)?)
+    fun setUSBProtectedClassesHandler(
+        handler: ((details: USBProtectedClassesHandlerHandlerDetails) -> js.array.ReadonlyArray<String>)?,
+    )
 
     /**
      * Overrides the `userAgent` and `acceptLanguages` for this session.
@@ -650,7 +685,10 @@ external class Session : NodeEventEmitter {
      * This doesn't affect existing `WebContents`, and each `WebContents` can use
      * `webContents.setUserAgent` to override the session-wide user agent.
      */
-    fun setUserAgent(userAgent: String, acceptLanguages: String = definedExternally)
+    fun setUserAgent(
+        userAgent: String,
+        acceptLanguages: String = definedExternally,
+    )
 
     /**
      * A `string[]` array which consists of all the known available spell checker
@@ -712,7 +750,16 @@ external class Session : NodeEventEmitter {
     val extensionUnloadedEvent: node.events.EventInstance<js.array.Tuple2<Event<*>, Extension>>
 
     @web.events.JsEvent("file-system-access-restricted")
-    val fileSystemAccessRestrictedEvent: node.events.EventInstance<js.array.Tuple3<Event<*>, FileSystemAccessRestrictedDetails, (action: SessionFileSystemAccessRestrictedListenerCallbackAction) -> Unit>>
+    val fileSystemAccessRestrictedEvent:
+            node.events.EventInstance<
+                    js.array.Tuple3<
+                            Event<*>,
+                            FileSystemAccessRestrictedDetails,
+                                (
+                        action: SessionFileSystemAccessRestrictedListenerCallbackAction,
+                    ) -> Unit
+                            >
+                    >
 
     @web.events.JsEvent("hid-device-added")
     val hidDeviceAddedEvent: node.events.EventInstance<js.array.Tuple2<Event<*>, HidDeviceAddedDetails>>
@@ -727,13 +774,39 @@ external class Session : NodeEventEmitter {
     val preconnectEvent: node.events.EventInstance<js.array.Tuple3<Event<*>, String, Boolean>>
 
     @web.events.JsEvent("select-hid-device")
-    val selectHidDeviceEvent: node.events.EventInstance<js.array.Tuple3<Event<*>, SelectHidDeviceDetails, (deviceId: String? /* use undefined for default */) -> Unit>>
+    val selectHidDeviceEvent: node.events.EventInstance<
+            js.array.Tuple3<
+                    Event<*>,
+                    SelectHidDeviceDetails,
+                        (
+                deviceId: String?, // use undefined for default
+            ) -> Unit
+                    >
+            >
 
     @web.events.JsEvent("select-serial-port")
-    val selectSerialPortEvent: node.events.EventInstance<js.array.Tuple4<Event<*>, js.array.ReadonlyArray<SerialPort>, WebContents, (portId: String) -> Unit>>
+    val selectSerialPortEvent:
+            node.events.EventInstance<
+                    js.array.Tuple4<
+                            Event<*>,
+                            js.array.ReadonlyArray<SerialPort>,
+                            WebContents,
+                                (
+                        portId: String,
+                    ) -> Unit
+                            >
+                    >
 
     @web.events.JsEvent("select-usb-device")
-    val selectUsbDeviceEvent: node.events.EventInstance<js.array.Tuple3<Event<*>, SelectUsbDeviceDetails, (deviceId: String? /* use undefined for default */) -> Unit>>
+    val selectUsbDeviceEvent: node.events.EventInstance<
+            js.array.Tuple3<
+                    Event<*>,
+                    SelectUsbDeviceDetails,
+                        (
+                deviceId: String?, // use undefined for default
+            ) -> Unit
+                    >
+            >
 
     @web.events.JsEvent("serial-port-added")
     val serialPortAddedEvent: node.events.EventInstance<js.array.Tuple3<Event<*>, SerialPort, WebContents>>
@@ -784,7 +857,10 @@ external class Session : NodeEventEmitter {
          * `partition` has never been used before. There is no way to change the `options`
          * of an existing `Session` object.
          */
-        fun fromPartition(partition: String, options: FromPartitionOptions = definedExternally): Session
+        fun fromPartition(
+            partition: String,
+            options: FromPartitionOptions = definedExternally,
+        ): Session
 
         /**
          * A session instance from the absolute path as specified by the `path` string.
@@ -797,7 +873,10 @@ external class Session : NodeEventEmitter {
          * `path` has never been used before. There is no way to change the `options` of an
          * existing `Session` object.
          */
-        fun fromPath(path: String, options: FromPathOptions = definedExternally): Session
+        fun fromPath(
+            path: String,
+            options: FromPathOptions = definedExternally,
+        ): Session
 
         /**
          * A `Session` object, the default session object of the app.

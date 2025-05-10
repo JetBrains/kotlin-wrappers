@@ -4,4 +4,4 @@
 
 package electron.main
 
-external val webFrameMain: Any /* typeof WebFrameMain */
+external val webFrameMain: Any // typeof WebFrameMain

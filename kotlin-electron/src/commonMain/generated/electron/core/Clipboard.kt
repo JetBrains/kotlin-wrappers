@@ -21,7 +21,10 @@ external interface Clipboard {
      *
      * @experimental
      */
-    fun has(format: String, type: ClipboardHasType = definedExternally): Boolean
+    fun has(
+        format: String,
+        type: ClipboardHasType = definedExternally,
+    ): Boolean
 
     /**
      * Reads `format` type from the clipboard.
@@ -87,7 +90,10 @@ external interface Clipboard {
     /**
      * Writes `data` to the clipboard.
      */
-    fun write(data: Data, type: ClipboardWriteType = definedExternally)
+    fun write(
+        data: Data,
+        type: ClipboardWriteType = definedExternally,
+    )
 
     /**
      * Writes the `title` (macOS only) and `url` into the clipboard as a bookmark.
@@ -98,14 +104,22 @@ external interface Clipboard {
      *
      * @platform darwin,win32
      */
-    fun writeBookmark(title: String, url: String, type: ClipboardWriteBookmarkType = definedExternally)
+    fun writeBookmark(
+        title: String,
+        url: String,
+        type: ClipboardWriteBookmarkType = definedExternally,
+    )
 
     /**
      * Writes the `buffer` into the clipboard as `format`.
      *
      * @experimental
      */
-    fun writeBuffer(format: String, buffer: Buffer<*>, type: ClipboardWriteBufferType = definedExternally)
+    fun writeBuffer(
+        format: String,
+        buffer: Buffer<*>,
+        type: ClipboardWriteBufferType = definedExternally,
+    )
 
     /**
      * Writes the `text` into the find pasteboard (the pasteboard that holds
@@ -120,20 +134,32 @@ external interface Clipboard {
     /**
      * Writes `markup` to the clipboard.
      */
-    fun writeHTML(markup: String, type: ClipboardWriteHTMLType = definedExternally)
+    fun writeHTML(
+        markup: String,
+        type: ClipboardWriteHTMLType = definedExternally,
+    )
 
     /**
      * Writes `image` to the clipboard.
      */
-    fun writeImage(image: NativeImage, type: ClipboardWriteImageType = definedExternally)
+    fun writeImage(
+        image: NativeImage,
+        type: ClipboardWriteImageType = definedExternally,
+    )
 
     /**
      * Writes the `text` into the clipboard in RTF.
      */
-    fun writeRTF(text: String, type: ClipboardWriteRTFType = definedExternally)
+    fun writeRTF(
+        text: String,
+        type: ClipboardWriteRTFType = definedExternally,
+    )
 
     /**
      * Writes the `text` into the clipboard as plain text.
      */
-    fun writeText(text: String, type: ClipboardWriteTextType = definedExternally)
+    fun writeText(
+        text: String,
+        type: ClipboardWriteTextType = definedExternally,
+    )
 }

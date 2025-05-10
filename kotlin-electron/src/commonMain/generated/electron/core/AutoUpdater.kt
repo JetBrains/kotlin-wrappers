@@ -42,7 +42,6 @@ external interface AutoUpdater : node.events.EventEmitter {
      * Emitted when there is no available update.
      */
 
-
     /**
      * Asks the server whether there is an update. You must call `setFeedURL` before
      * using this API.

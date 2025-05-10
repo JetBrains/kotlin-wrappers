@@ -16,5 +16,5 @@ external interface Item {
     /**
      * The image must be non-empty on macOS.
      */
-    var icon: Any /* (NativeImage) | (string) */
+    var icon: Any // (NativeImage) | (string)
 }

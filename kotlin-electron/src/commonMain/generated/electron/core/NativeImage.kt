@@ -125,13 +125,19 @@ external class NativeImage {
          * Creates a new `NativeImage` instance from `buffer` that contains the raw bitmap
          * pixel data returned by `toBitmap()`. The specific format is platform-dependent.
          */
-        fun createFromBitmap(buffer: Buffer<*>, options: CreateFromBitmapOptions): NativeImage
+        fun createFromBitmap(
+            buffer: Buffer<*>,
+            options: CreateFromBitmapOptions,
+        ): NativeImage
 
         /**
          * Creates a new `NativeImage` instance from `buffer`. Tries to decode as PNG or
          * JPEG first.
          */
-        fun createFromBuffer(buffer: Buffer<*>, options: CreateFromBufferOptions = definedExternally): NativeImage
+        fun createFromBuffer(
+            buffer: Buffer<*>,
+            options: CreateFromBufferOptions = definedExternally,
+        ): NativeImage
 
         /**
          * Creates a new `NativeImage` instance from `dataUrl`, a base 64 encoded Data URL
@@ -188,6 +194,9 @@ external class NativeImage {
          *
          * @platform darwin,win32
          */
-        fun createThumbnailFromPath(path: String, size: Size): Promise<NativeImage>
+        fun createThumbnailFromPath(
+            path: String,
+            size: Size,
+        ): Promise<NativeImage>
     }
 }

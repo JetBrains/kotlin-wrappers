@@ -21,7 +21,10 @@ external interface CrashReporter {
      * Keys with names longer than the maximum will be silently ignored. Key values
      * longer than the maximum length will be truncated.
      */
-    fun addExtraParameter(key: String, value: String)
+    fun addExtraParameter(
+        key: String,
+        value: String,
+    )
 
     /**
      * The date and ID of the last crash report. Only crash reports that have been

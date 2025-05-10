@@ -16,7 +16,6 @@ external class MessagePortMain : NodeEventEmitter {
      * Emitted when a MessagePortMain object receives a message.
      */
 
-
     /**
      * Disconnects the port, so it is no longer active.
      */
@@ -26,7 +25,10 @@ external class MessagePortMain : NodeEventEmitter {
      * Sends a message from the port, and optionally, transfers ownership of objects to
      * other browsing contexts.
      */
-    fun postMessage(message: Any?, transfer: js.array.ReadonlyArray<MessagePortMain> = definedExternally)
+    fun postMessage(
+        message: Any?,
+        transfer: js.array.ReadonlyArray<MessagePortMain> = definedExternally,
+    )
 
     /**
      * Starts the sending of messages queued on the port. Messages will be queued until

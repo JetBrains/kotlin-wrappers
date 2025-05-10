@@ -14,7 +14,6 @@ external class Cookies : NodeEventEmitter {
      * expired.
      */
 
-
     /**
      * A promise which resolves when the cookie store has been flushed
      *
@@ -40,7 +39,10 @@ external class Cookies : NodeEventEmitter {
      *
      * Removes the cookies matching `url` and `name`
      */
-    fun remove(url: String, name: String): Promise<js.core.Void>
+    fun remove(
+        url: String,
+        name: String,
+    ): Promise<js.core.Void>
 
     /**
      * A promise which resolves when the cookie has been set
@@ -50,5 +52,6 @@ external class Cookies : NodeEventEmitter {
     fun set(details: CookiesSetDetails): Promise<js.core.Void>
 
     @web.events.JsEvent("changed")
-    val changedEvent: node.events.EventInstance<js.array.Tuple4<Event<*>, Cookie, (CookiesAddListenerListenerCause), Boolean>>
+    val changedEvent:
+            node.events.EventInstance<js.array.Tuple4<Event<*>, Cookie, (CookiesAddListenerListenerCause), Boolean>>
 }

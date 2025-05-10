@@ -15,7 +15,6 @@ open external class WebContentsView : View {
      * new bounds can be retrieved with `view.getBounds()`.
      */
 
-
     /**
      * A `WebContents` property containing a reference to the displayed `WebContents`.
      * Use this to interact with the `WebContents`, for instance to load a URL.

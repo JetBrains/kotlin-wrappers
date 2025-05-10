@@ -16,7 +16,7 @@ external interface Protocol {
      */
     fun handle(
         scheme: String,
-        handler: (request: GlobalRequest) -> Any, /* (GlobalResponse) | (Promise<GlobalResponse>) */
+        handler: (request: GlobalRequest) -> Any, // (GlobalResponse) | (Promise<GlobalResponse>)
     )
 
     /**
@@ -29,7 +29,10 @@ external interface Protocol {
      */
     fun interceptBufferProtocol(
         scheme: String,
-        handler: (request: ProtocolRequest, callback: (response: Any /* (Buffer) | (ProtocolResponse) */) -> Unit) -> Unit,
+        handler: (
+            request: ProtocolRequest,
+            callback: (response: Any /* (Buffer) | (ProtocolResponse) */) -> Unit,
+        ) -> Unit,
     ): Boolean
 
     /**
@@ -42,7 +45,10 @@ external interface Protocol {
      */
     fun interceptFileProtocol(
         scheme: String,
-        handler: (request: ProtocolRequest, callback: (response: Any /* (string) | (ProtocolResponse) */) -> Unit) -> Unit,
+        handler: (
+            request: ProtocolRequest,
+            callback: (response: Any /* (string) | (ProtocolResponse) */) -> Unit,
+        ) -> Unit,
     ): Boolean
 
     /**
@@ -68,7 +74,10 @@ external interface Protocol {
      */
     fun interceptStreamProtocol(
         scheme: String,
-        handler: (request: ProtocolRequest, callback: (response: Any /* (NodeJS.ReadableStream) | (ProtocolResponse) */) -> Unit) -> Unit,
+        handler: (
+            request: ProtocolRequest,
+            callback: (response: Any /* (NodeJS.ReadableStream) | (ProtocolResponse) */) -> Unit,
+        ) -> Unit,
     ): Boolean
 
     /**
@@ -81,7 +90,10 @@ external interface Protocol {
      */
     fun interceptStringProtocol(
         scheme: String,
-        handler: (request: ProtocolRequest, callback: (response: Any /* (string) | (ProtocolResponse) */) -> Unit) -> Unit,
+        handler: (
+            request: ProtocolRequest,
+            callback: (response: Any /* (string) | (ProtocolResponse) */) -> Unit,
+        ) -> Unit,
     ): Boolean
 
     /**
@@ -118,7 +130,10 @@ external interface Protocol {
      */
     fun registerBufferProtocol(
         scheme: String,
-        handler: (request: ProtocolRequest, callback: (response: Any /* (Buffer) | (ProtocolResponse) */) -> Unit) -> Unit,
+        handler: (
+            request: ProtocolRequest,
+            callback: (response: Any /* (Buffer) | (ProtocolResponse) */) -> Unit,
+        ) -> Unit,
     ): Boolean
 
     /**
@@ -139,7 +154,10 @@ external interface Protocol {
      */
     fun registerFileProtocol(
         scheme: String,
-        handler: (request: ProtocolRequest, callback: (response: Any /* (string) | (ProtocolResponse) */) -> Unit) -> Unit,
+        handler: (
+            request: ProtocolRequest,
+            callback: (response: Any /* (string) | (ProtocolResponse) */) -> Unit,
+        ) -> Unit,
     ): Boolean
 
     /**
@@ -214,7 +232,10 @@ external interface Protocol {
      */
     fun registerStreamProtocol(
         scheme: String,
-        handler: (request: ProtocolRequest, callback: (response: Any /* (NodeJS.ReadableStream) | (ProtocolResponse) */) -> Unit) -> Unit,
+        handler: (
+            request: ProtocolRequest,
+            callback: (response: Any /* (NodeJS.ReadableStream) | (ProtocolResponse) */) -> Unit,
+        ) -> Unit,
     ): Boolean
 
     /**
@@ -230,7 +251,10 @@ external interface Protocol {
      */
     fun registerStringProtocol(
         scheme: String,
-        handler: (request: ProtocolRequest, callback: (response: Any /* (string) | (ProtocolResponse) */) -> Unit) -> Unit,
+        handler: (
+            request: ProtocolRequest,
+            callback: (response: Any /* (string) | (ProtocolResponse) */) -> Unit,
+        ) -> Unit,
     ): Boolean
 
     /**

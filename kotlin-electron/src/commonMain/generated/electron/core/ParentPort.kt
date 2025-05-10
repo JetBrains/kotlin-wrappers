@@ -10,7 +10,6 @@ external interface ParentPort : node.events.EventEmitter {
      * be queued up until a handler is registered for this event.
      */
 
-
     /**
      * Sends a message from the process to its parent.
      */

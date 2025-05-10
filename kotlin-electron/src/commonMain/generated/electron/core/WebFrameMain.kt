@@ -12,7 +12,6 @@ external class WebFrameMain : NodeEventEmitter {
      * Emitted when the document is loaded.
      */
 
-
     /**
      * A promise that resolves with the result of the executed code or is rejected if
      * execution throws or results in a rejected promise.
@@ -23,7 +22,10 @@ external class WebFrameMain : NodeEventEmitter {
      * invoked by a gesture from the user. Setting `userGesture` to `true` will remove
      * this limitation.
      */
-    fun executeJavaScript(code: String, userGesture: Boolean = definedExternally): Promise<Any?>
+    fun executeJavaScript(
+        code: String,
+        userGesture: Boolean = definedExternally,
+    ): Promise<Any?>
 
     /**
      * Whether the frame is destroyed.
@@ -61,7 +63,10 @@ external class WebFrameMain : NodeEventEmitter {
      * The renderer process can handle the message by listening to `channel` with the
      * `ipcRenderer` module.
      */
-    fun send(channel: String, vararg args: Any?)
+    fun send(
+        channel: String,
+        vararg args: Any?,
+    )
 
     /**
      * A `Boolean` representing whether the frame is detached from the frame tree. If a
@@ -198,6 +203,9 @@ external class WebFrameMain : NodeEventEmitter {
          * A frame with the given process and routing IDs, or `undefined` if there is no
          * WebFrameMain associated with the given IDs.
          */
-        fun fromId(processId: Double, routingId: Double): WebFrameMain?
+        fun fromId(
+            processId: Double,
+            routingId: Double,
+        ): WebFrameMain?
     }
 }

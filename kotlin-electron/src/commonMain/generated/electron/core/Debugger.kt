@@ -18,7 +18,6 @@ external class Debugger : NodeEventEmitter {
      * Emitted whenever the debugging target issues an instrumentation event.
      */
 
-
     /**
      * Attaches the debugger to the `webContents`.
      */

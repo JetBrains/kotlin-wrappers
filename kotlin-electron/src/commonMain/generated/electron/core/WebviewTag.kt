@@ -180,7 +180,6 @@ external interface WebviewTag : HTMLElement {
      * Emitted when mouse moves over a link or the keyboard moves the focus to a link.
      */
 
-
     /**
      * Emitted when 'Search' is selected for text in its context menu.
      */
@@ -200,7 +199,6 @@ external interface WebviewTag : HTMLElement {
     /**
      * Emitted when there is a new context menu that needs to be handled.
      */
-
 
     /**
      * Adjusts the current text selection starting and ending points in the focused
@@ -268,7 +266,10 @@ external interface WebviewTag : HTMLElement {
     /**
      * Initiates a download of the resource at `url` without navigating.
      */
-    fun downloadURL(url: String, options: DownloadURLOptions = definedExternally)
+    fun downloadURL(
+        url: String,
+        options: DownloadURLOptions = definedExternally,
+    )
 
     /**
      * A promise that resolves with the result of the executed code or is rejected if
@@ -278,7 +279,10 @@ external interface WebviewTag : HTMLElement {
      * gesture context in the page. HTML APIs like `requestFullScreen`, which require
      * user action, can take advantage of this option for automation.
      */
-    fun executeJavaScript(code: String, userGesture: Boolean = definedExternally): Promise<Any?>
+    fun executeJavaScript(
+        code: String,
+        userGesture: Boolean = definedExternally,
+    ): Promise<Any?>
 
     /**
      * The request id used for the request.
@@ -286,7 +290,10 @@ external interface WebviewTag : HTMLElement {
      * Starts a request to find all matches for the `text` in the web page. The result
      * of the request can be obtained by subscribing to `found-in-page` event.
      */
-    fun findInPage(text: String, options: FindInPageOptions = definedExternally): Double
+    fun findInPage(
+        text: String,
+        options: FindInPageOptions = definedExternally,
+    ): Double
 
     /**
      * The title of guest page.
@@ -355,7 +362,10 @@ external interface WebviewTag : HTMLElement {
     /**
      * Starts inspecting element at position (`x`, `y`) of guest page.
      */
-    fun inspectElement(x: Double, y: Double)
+    fun inspectElement(
+        x: Double,
+        y: Double,
+    )
 
     /**
      * Opens the DevTools for the service worker context present in the guest page.
@@ -416,7 +426,10 @@ external interface WebviewTag : HTMLElement {
      * Loads the `url` in the webview, the `url` must contain the protocol prefix, e.g.
      * the `http://` or `file://`.
      */
-    fun loadURL(url: String, options: LoadURLOptions = definedExternally): Promise<js.core.Void>
+    fun loadURL(
+        url: String,
+        options: LoadURLOptions = definedExternally,
+    ): Promise<js.core.Void>
 
     /**
      * Opens a DevTools window for guest page.
@@ -500,7 +513,10 @@ external interface WebviewTag : HTMLElement {
      *
      * See webContents.send for examples.
      */
-    fun send(channel: String, vararg args: Any?): Promise<js.core.Void>
+    fun send(
+        channel: String,
+        vararg args: Any?,
+    ): Promise<js.core.Void>
 
     /**
      * Sends an input `event` to the page.
@@ -549,7 +565,10 @@ external interface WebviewTag : HTMLElement {
     /**
      * Sets the maximum and minimum pinch-to-zoom level.
      */
-    fun setVisualZoomLevelLimits(minimumLevel: Double, maximumLevel: Double): Promise<js.core.Void>
+    fun setVisualZoomLevelLimits(
+        minimumLevel: Double,
+        maximumLevel: Double,
+    ): Promise<js.core.Void>
 
     /**
      * Changes the zoom factor to the specified factor. Zoom factor is zoom percent
@@ -813,5 +832,4 @@ external interface WebviewTag : HTMLElement {
 
     @web.events.JsEvent("devtools-focused")
     val devtoolsFocusedEvent: web.events.EventInstance<DOMEvent, WebviewTag, web.dom.Node>
-
 }

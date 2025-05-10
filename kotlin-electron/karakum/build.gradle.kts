@@ -1,13 +1,13 @@
 plugins {
-    `karakum-conventions`
+    alias(libs.plugins.karakum)
 }
 
 dependencies {
-    jsMainImplementation(libs.karakum)
-
-    jsMainImplementation(libs.arrow.core)
-
     jsMainImplementation(libs.electron.map {
         devNpm(it.name, requireNotNull(it.version))
     })
+}
+
+karakum {
+    output = layout.projectDirectory.dir("../src/commonMain/generated")
 }

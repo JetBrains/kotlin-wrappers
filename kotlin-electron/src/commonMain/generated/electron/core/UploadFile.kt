@@ -28,5 +28,5 @@ external interface UploadFile {
     /**
      * `file`.
      */
-    var type: String /* 'file' */
+    var type: String // 'file'
 }

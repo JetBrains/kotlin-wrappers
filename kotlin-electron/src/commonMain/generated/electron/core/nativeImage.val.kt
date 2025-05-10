@@ -4,4 +4,4 @@
 
 package electron.core
 
-external val nativeImage: Any /* typeof NativeImage */
+external val nativeImage: Any // typeof NativeImage

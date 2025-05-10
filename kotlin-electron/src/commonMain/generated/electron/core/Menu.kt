@@ -20,7 +20,6 @@ open external class Menu : NodeEventEmitter {
      * Emitted when `menu.popup()` is called.
      */
 
-
     /**
      * Appends the `menuItem` to the menu.
      */
@@ -39,7 +38,10 @@ open external class Menu : NodeEventEmitter {
     /**
      * Inserts the `menuItem` to the `pos` position of the menu.
      */
-    fun insert(pos: Double, menuItem: MenuItem)
+    fun insert(
+        pos: Double,
+        menuItem: MenuItem,
+    )
 
     /**
      * Pops up this menu as a context menu in the `BrowserWindow`.

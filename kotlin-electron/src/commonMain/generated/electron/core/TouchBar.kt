@@ -16,59 +16,60 @@ open external class TouchBar {
      * Setting to `null` restores the default "esc" button. Changing this value
      * immediately updates the escape item in the touch bar.
      */
-    var escapeItem: (Any? /* TouchBarButton | TouchBarColorPicker | TouchBarGroup | TouchBarLabel | TouchBarPopover | TouchBarScrubber | TouchBarSegmentedControl | TouchBarSlider | TouchBarSpacer | null */)
+    var escapeItem:
+            (Any? /* TouchBarButton | TouchBarColorPicker | TouchBarGroup | TouchBarLabel | TouchBarPopover | TouchBarScrubber | TouchBarSegmentedControl | TouchBarSlider | TouchBarSpacer | null */)
 
     companion object {
         /**
          * A `typeof TouchBarButton` reference to the `TouchBarButton` class.
          */
-        var TouchBarButton: Any /* typeof TouchBarButton */
+        var TouchBarButton: Any // typeof TouchBarButton
 
         /**
          * A `typeof TouchBarColorPicker` reference to the `TouchBarColorPicker` class.
          */
-        var TouchBarColorPicker: Any /* typeof TouchBarColorPicker */
+        var TouchBarColorPicker: Any // typeof TouchBarColorPicker
 
         /**
          * A `typeof TouchBarGroup` reference to the `TouchBarGroup` class.
          */
-        var TouchBarGroup: Any /* typeof TouchBarGroup */
+        var TouchBarGroup: Any // typeof TouchBarGroup
 
         /**
          * A `typeof TouchBarLabel` reference to the `TouchBarLabel` class.
          */
-        var TouchBarLabel: Any /* typeof TouchBarLabel */
+        var TouchBarLabel: Any // typeof TouchBarLabel
 
         /**
          * A `typeof TouchBarOtherItemsProxy` reference to the `TouchBarOtherItemsProxy`
          * class.
          */
-        var TouchBarOtherItemsProxy: Any /* typeof TouchBarOtherItemsProxy */
+        var TouchBarOtherItemsProxy: Any // typeof TouchBarOtherItemsProxy
 
         /**
          * A `typeof TouchBarPopover` reference to the `TouchBarPopover` class.
          */
-        var TouchBarPopover: Any /* typeof TouchBarPopover */
+        var TouchBarPopover: Any // typeof TouchBarPopover
 
         /**
          * A `typeof TouchBarScrubber` reference to the `TouchBarScrubber` class.
          */
-        var TouchBarScrubber: Any /* typeof TouchBarScrubber */
+        var TouchBarScrubber: Any // typeof TouchBarScrubber
 
         /**
          * A `typeof TouchBarSegmentedControl` reference to the `TouchBarSegmentedControl`
          * class.
          */
-        var TouchBarSegmentedControl: Any /* typeof TouchBarSegmentedControl */
+        var TouchBarSegmentedControl: Any // typeof TouchBarSegmentedControl
 
         /**
          * A `typeof TouchBarSlider` reference to the `TouchBarSlider` class.
          */
-        var TouchBarSlider: Any /* typeof TouchBarSlider */
+        var TouchBarSlider: Any // typeof TouchBarSlider
 
         /**
          * A `typeof TouchBarSpacer` reference to the `TouchBarSpacer` class.
          */
-        var TouchBarSpacer: Any /* typeof TouchBarSpacer */
+        var TouchBarSpacer: Any // typeof TouchBarSpacer
     }
 }

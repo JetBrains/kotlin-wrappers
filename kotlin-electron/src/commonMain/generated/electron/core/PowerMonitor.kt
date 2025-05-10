@@ -97,6 +97,41 @@ external interface PowerMonitor : node.events.EventEmitter {
      * @platform darwin
      */
 
+    /**
+     * @platform linux,darwin
+     */
+
+    /**
+     * @platform darwin,win32
+     */
+
+    /**
+     * @platform darwin
+     */
+
+    /**
+     * @platform darwin,win32
+     */
+
+    /**
+     * @platform darwin
+     */
+
+    /**
+     * @platform darwin
+     */
+
+    /**
+     * @platform darwin,win32
+     */
+
+    /**
+     * @platform darwin,win32
+     */
+
+    /**
+     * @platform darwin
+     */
 
     /**
      * @platform linux,darwin
@@ -106,7 +141,6 @@ external interface PowerMonitor : node.events.EventEmitter {
      * @platform darwin,win32
      */
 
-
     /**
      * @platform darwin
      */
@@ -134,7 +168,6 @@ external interface PowerMonitor : node.events.EventEmitter {
     /**
      * @platform darwin
      */
-
 
     /**
      * @platform linux,darwin
@@ -144,7 +177,6 @@ external interface PowerMonitor : node.events.EventEmitter {
      * @platform darwin,win32
      */
 
-
     /**
      * @platform darwin
      */
@@ -172,7 +204,6 @@ external interface PowerMonitor : node.events.EventEmitter {
     /**
      * @platform darwin
      */
-
 
     /**
      * @platform linux,darwin
@@ -181,45 +212,6 @@ external interface PowerMonitor : node.events.EventEmitter {
     /**
      * @platform darwin,win32
      */
-
-
-    /**
-     * @platform darwin
-     */
-
-    /**
-     * @platform darwin,win32
-     */
-
-    /**
-     * @platform darwin
-     */
-
-    /**
-     * @platform darwin
-     */
-
-    /**
-     * @platform darwin,win32
-     */
-
-    /**
-     * @platform darwin,win32
-     */
-
-    /**
-     * @platform darwin
-     */
-
-
-    /**
-     * @platform linux,darwin
-     */
-
-    /**
-     * @platform darwin,win32
-     */
-
 
     /**
      * @platform darwin

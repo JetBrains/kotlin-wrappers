@@ -25,7 +25,7 @@ external interface IpcMainEvent : Event<Any> {
      * "reply" to the sent message in order to guarantee the reply will go to the
      * correct process and frame.
      */
-    var reply: Function<Unit> /* (channel: string, ...args: any[]) => void */
+    var reply: Function<Unit> // (channel: string, ...args: any[]) => void
 
     /**
      * Set this to the value to be returned in a synchronous message

@@ -4,4 +4,4 @@
 
 package electron.main
 
-external val webContents: Any /* typeof WebContents */
+external val webContents: Any // typeof WebContents

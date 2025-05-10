@@ -394,7 +394,6 @@ external class WebContents : NodeEventEmitter {
      * wheel.
      */
 
-
     /**
      * Adds the specified path to DevTools workspace. Must be used after DevTools
      * creation:
@@ -428,7 +427,10 @@ external class WebContents : NodeEventEmitter {
      * describes which part of the page was repainted. If `onlyDirty` is set to `true`,
      * `image` will only contain the repainted area. `onlyDirty` defaults to `false`.
      */
-    fun beginFrameSubscription(onlyDirty: Boolean, callback: (image: NativeImage, dirtyRect: Rectangle) -> Unit)
+    fun beginFrameSubscription(
+        onlyDirty: Boolean,
+        callback: (image: NativeImage, dirtyRect: Rectangle) -> Unit,
+    )
 
     /**
      * Begin subscribing for presentation events and captured frames, the `callback`
@@ -480,7 +482,10 @@ external class WebContents : NodeEventEmitter {
      * hidden and the capturer count is non-zero. If you would like the page to stay
      * hidden, you should ensure that `stayHidden` is set to true.
      */
-    fun capturePage(rect: Rectangle = definedExternally, opts: Opts = definedExternally): Promise<NativeImage>
+    fun capturePage(
+        rect: Rectangle = definedExternally,
+        opts: Opts = definedExternally,
+    ): Promise<NativeImage>
 
     /**
      * Centers the current text selection in web page.
@@ -518,7 +523,10 @@ external class WebContents : NodeEventEmitter {
     /**
      * Copy the image at the given position to the clipboard.
      */
-    fun copyImageAt(x: Double, y: Double)
+    fun copyImageAt(
+        x: Double,
+        y: Double,
+    )
 
     /**
      * Executes the editing command `cut` in web page.
@@ -539,7 +547,10 @@ external class WebContents : NodeEventEmitter {
      * Initiates a download of the resource at `url` without navigating. The
      * `will-download` event of `session` will be triggered.
      */
-    fun downloadURL(url: String, options: DownloadURLOptions = definedExternally)
+    fun downloadURL(
+        url: String,
+        options: DownloadURLOptions = definedExternally,
+    )
 
     /**
      * Enable device emulation with the given parameters.
@@ -563,7 +574,10 @@ external class WebContents : NodeEventEmitter {
      *
      * Code execution will be suspended until web page stop loading.
      */
-    fun executeJavaScript(code: String, userGesture: Boolean = definedExternally): Promise<Any?>
+    fun executeJavaScript(
+        code: String,
+        userGesture: Boolean = definedExternally,
+    ): Promise<Any?>
 
     /**
      * A promise that resolves with the result of the executed code or is rejected if
@@ -583,7 +597,10 @@ external class WebContents : NodeEventEmitter {
      * Starts a request to find all matches for the `text` in the web page. The result
      * of the request can be obtained by subscribing to `found-in-page` event.
      */
-    fun findInPage(text: String, options: FindInPageOptions = definedExternally): Double
+    fun findInPage(
+        text: String,
+        options: FindInPageOptions = definedExternally,
+    ): Double
 
     /**
      * Focuses the web page.
@@ -740,7 +757,10 @@ external class WebContents : NodeEventEmitter {
      * Injects CSS into the current web page and returns a unique key for the inserted
      * stylesheet.
      */
-    fun insertCSS(css: String, options: InsertCSSOptions = definedExternally): Promise<String>
+    fun insertCSS(
+        css: String,
+        options: InsertCSSOptions = definedExternally,
+    ): Promise<String>
 
     /**
      * Inserts `text` to the focused element.
@@ -750,7 +770,10 @@ external class WebContents : NodeEventEmitter {
     /**
      * Starts inspecting element at position (`x`, `y`).
      */
-    fun inspectElement(x: Double, y: Double)
+    fun inspectElement(
+        x: Double,
+        y: Double,
+    )
 
     /**
      * Opens the developer tools for the service worker context.
@@ -853,7 +876,10 @@ external class WebContents : NodeEventEmitter {
      *
      * Would require code like this
      */
-    fun loadFile(filePath: String, options: LoadFileOptions = definedExternally): Promise<js.core.Void>
+    fun loadFile(
+        filePath: String,
+        options: LoadFileOptions = definedExternally,
+    ): Promise<js.core.Void>
 
     /**
      * the promise will resolve when the page has finished loading (see
@@ -865,7 +891,10 @@ external class WebContents : NodeEventEmitter {
      * the `http://` or `file://`. If the load should bypass http cache then use the
      * `pragma` header to achieve it.
      */
-    fun loadURL(url: String, options: LoadURLOptions = definedExternally): Promise<js.core.Void>
+    fun loadURL(
+        url: String,
+        options: LoadURLOptions = definedExternally,
+    ): Promise<js.core.Void>
 
     /**
      * Opens the devtools.
@@ -977,7 +1006,10 @@ external class WebContents : NodeEventEmitter {
     /**
      * resolves if the page is saved.
      */
-    fun savePage(fullPath: String, saveType: WebContentsSavePageSaveType): Promise<js.core.Void>
+    fun savePage(
+        fullPath: String,
+        saveType: WebContentsSavePageSaveType,
+    ): Promise<js.core.Void>
 
     /**
      * Scrolls to the bottom of the current `webContents`.
@@ -1009,7 +1041,10 @@ external class WebContents : NodeEventEmitter {
      *
      * For additional reading, refer to Electron's IPC guide.
      */
-    fun send(channel: String, vararg args: Any?)
+    fun send(
+        channel: String,
+        vararg args: Any?,
+    )
 
     /**
      * Sends an input `event` to the page. **Note:** The `BrowserWindow` containing the
@@ -1047,7 +1082,11 @@ external class WebContents : NodeEventEmitter {
      *
      * You can also read `frameId` from all incoming IPC messages in the main process.
      */
-    fun sendToFrame(frameId: Double, channel: String, vararg args: Any?)
+    fun sendToFrame(
+        frameId: Double,
+        channel: String,
+        vararg args: Any?,
+    )
 
     /**
      * Send an asynchronous message to a specific frame in a renderer process via
@@ -1067,7 +1106,11 @@ external class WebContents : NodeEventEmitter {
      *
      * You can also read `frameId` from all incoming IPC messages in the main process.
      */
-    fun sendToFrame(frameId: js.array.Tuple2<Double, Double>, channel: String, vararg args: Any?)
+    fun sendToFrame(
+        frameId: js.array.Tuple2<Double, Double>,
+        channel: String,
+        vararg args: Any?,
+    )
 
     /**
      * Mute the audio on the current web page.
@@ -1140,7 +1183,10 @@ external class WebContents : NodeEventEmitter {
      * > **NOTE**: Visual zoom is disabled by default in Electron. To re-enable it,
      * call:
      */
-    fun setVisualZoomLevelLimits(minimumLevel: Double, maximumLevel: Double): Promise<js.core.Void>
+    fun setVisualZoomLevelLimits(
+        minimumLevel: Double,
+        maximumLevel: Double,
+    ): Promise<js.core.Void>
 
     /**
      * Setting the WebRTC IP handling policy allows you to control which IPs are
@@ -1371,7 +1417,8 @@ external class WebContents : NodeEventEmitter {
     var zoomLevel: Double
 
     @web.events.JsEvent("audio-state-changed")
-    val audioStateChangedEvent: node.events.EventInstance<js.array.Tuple1<Event<WebContentsAudioStateChangedEventParams>>>
+    val audioStateChangedEvent:
+            node.events.EventInstance<js.array.Tuple1<Event<WebContentsAudioStateChangedEventParams>>>
 
     @web.events.JsEvent("before-input-event")
     val beforeInputEventEvent: node.events.EventInstance<js.array.Tuple2<Event<*>, Input>>
@@ -1380,7 +1427,18 @@ external class WebContents : NodeEventEmitter {
     val blurEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("certificate-error")
-    val certificateErrorEvent: node.events.EventInstance<js.array.Tuple6<Event<*>, String, String, Certificate, (isTrusted: Boolean) -> Unit, Boolean>>
+    val certificateErrorEvent: node.events.EventInstance<
+            js.array.Tuple6<
+                    Event<*>,
+                    String,
+                    String,
+                    Certificate,
+                        (
+                isTrusted: Boolean,
+            ) -> Unit,
+                    Boolean
+                    >
+            >
 
     @web.events.JsEvent("console-message")
     val consoleMessageEvent: node.events.EventInstance<js.array.Tuple5<Event<*>, Double, String, Double, String>>
@@ -1392,7 +1450,8 @@ external class WebContents : NodeEventEmitter {
     val contextMenuEvent: node.events.EventInstance<js.array.Tuple2<Event<*>, ContextMenuParams>>
 
     @web.events.JsEvent("cursor-changed")
-    val cursorChangedEvent: node.events.EventInstance<js.array.Tuple6<Event<*>, String, NativeImage, Double, Size, Point>>
+    val cursorChangedEvent:
+            node.events.EventInstance<js.array.Tuple6<Event<*>, String, NativeImage, Double, Size, Point>>
 
     @web.events.JsEvent("destroyed")
     val destroyedEvent: node.events.EventInstance<js.array.Tuple>
@@ -1425,10 +1484,12 @@ external class WebContents : NodeEventEmitter {
     val didCreateWindowEvent: node.events.EventInstance<js.array.Tuple2<BrowserWindow, DidCreateWindowDetails>>
 
     @web.events.JsEvent("did-fail-load")
-    val didFailLoadEvent: node.events.EventInstance<js.array.Tuple7<Event<*>, Double, String, String, Boolean, Double, Double>>
+    val didFailLoadEvent:
+            node.events.EventInstance<js.array.Tuple7<Event<*>, Double, String, String, Boolean, Double, Double>>
 
     @web.events.JsEvent("did-fail-provisional-load")
-    val didFailProvisionalLoadEvent: node.events.EventInstance<js.array.Tuple7<Event<*>, Double, String, String, Boolean, Double, Double>>
+    val didFailProvisionalLoadEvent:
+            node.events.EventInstance<js.array.Tuple7<Event<*>, Double, String, String, Boolean, Double, Double>>
 
     @web.events.JsEvent("did-finish-load")
     val didFinishLoadEvent: node.events.EventInstance<js.array.Tuple>
@@ -1437,7 +1498,8 @@ external class WebContents : NodeEventEmitter {
     val didFrameFinishLoadEvent: node.events.EventInstance<js.array.Tuple4<Event<*>, Boolean, Double, Double>>
 
     @web.events.JsEvent("did-frame-navigate")
-    val didFrameNavigateEvent: node.events.EventInstance<js.array.Tuple7<Event<*>, String, Double, String, Boolean, Double, Double>>
+    val didFrameNavigateEvent:
+            node.events.EventInstance<js.array.Tuple7<Event<*>, String, Double, String, Boolean, Double, Double>>
 
     @web.events.JsEvent("did-navigate")
     val didNavigateEvent: node.events.EventInstance<js.array.Tuple4<Event<*>, String, Double, String>>
@@ -1446,13 +1508,15 @@ external class WebContents : NodeEventEmitter {
     val didNavigateInPageEvent: node.events.EventInstance<js.array.Tuple5<Event<*>, String, Boolean, Double, Double>>
 
     @web.events.JsEvent("did-redirect-navigation")
-    val didRedirectNavigationEvent: node.events.EventInstance<js.array.Tuple6<Event<WebContentsDidRedirectNavigationEventParams>, String, Boolean, Boolean, Double, Double>>
+    val didRedirectNavigationEvent:
+            node.events.EventInstance<js.array.Tuple6<Event<WebContentsDidRedirectNavigationEventParams>, String, Boolean, Boolean, Double, Double>>
 
     @web.events.JsEvent("did-start-loading")
     val didStartLoadingEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("did-start-navigation")
-    val didStartNavigationEvent: node.events.EventInstance<js.array.Tuple6<Event<WebContentsDidStartNavigationEventParams>, String, Boolean, Boolean, Double, Double>>
+    val didStartNavigationEvent:
+            node.events.EventInstance<js.array.Tuple6<Event<WebContentsDidStartNavigationEventParams>, String, Boolean, Boolean, Double, Double>>
 
     @web.events.JsEvent("did-stop-loading")
     val didStopLoadingEvent: node.events.EventInstance<js.array.Tuple>
@@ -1479,13 +1543,24 @@ external class WebContents : NodeEventEmitter {
     val ipcMessageEvent: node.events.EventInstance<js.array.Tuple3<IpcMainEvent, String, js.array.ReadonlyArray<Any?>>>
 
     @web.events.JsEvent("ipc-message-sync")
-    val ipcMessageSyncEvent: node.events.EventInstance<js.array.Tuple3<IpcMainEvent, String, js.array.ReadonlyArray<Any?>>>
+    val ipcMessageSyncEvent:
+            node.events.EventInstance<js.array.Tuple3<IpcMainEvent, String, js.array.ReadonlyArray<Any?>>>
 
     @web.events.JsEvent("leave-html-full-screen")
     val leaveHtmlFullScreenEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("login")
-    val loginEvent: node.events.EventInstance<js.array.Tuple4<Event<*>, LoginAuthenticationResponseDetails, AuthInfo, (username: String? /* use undefined for default */, password: String? /* use undefined for default */) -> Unit>>
+    val loginEvent: node.events.EventInstance<
+            js.array.Tuple4<
+                    Event<*>,
+                    LoginAuthenticationResponseDetails,
+                    AuthInfo,
+                        (
+                username: String?, /* use undefined for default */
+                password: String?, // use undefined for default
+            ) -> Unit
+                    >
+            >
 
     @web.events.JsEvent("media-paused")
     val mediaPausedEvent: node.events.EventInstance<js.array.Tuple>
@@ -1500,7 +1575,8 @@ external class WebContents : NodeEventEmitter {
     val pageTitleUpdatedEvent: node.events.EventInstance<js.array.Tuple3<Event<*>, String, Boolean>>
 
     @web.events.JsEvent("paint")
-    val paintEvent: node.events.EventInstance<js.array.Tuple3<Event<WebContentsPaintEventParams>, Rectangle, NativeImage>>
+    val paintEvent:
+            node.events.EventInstance<js.array.Tuple3<Event<WebContentsPaintEventParams>, Rectangle, NativeImage>>
 
     @web.events.JsEvent("plugin-crashed")
     val pluginCrashedEvent: node.events.EventInstance<js.array.Tuple3<Event<*>, String, String>>
@@ -1518,10 +1594,29 @@ external class WebContents : NodeEventEmitter {
     val responsiveEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("select-bluetooth-device")
-    val selectBluetoothDeviceEvent: node.events.EventInstance<js.array.Tuple3<Event<*>, js.array.ReadonlyArray<BluetoothDevice>, (deviceId: String) -> Unit>>
+    val selectBluetoothDeviceEvent:
+            node.events.EventInstance<
+                    js.array.Tuple3<
+                            Event<*>,
+                            js.array.ReadonlyArray<BluetoothDevice>,
+                                (
+                        deviceId: String,
+                    ) -> Unit
+                            >
+                    >
 
     @web.events.JsEvent("select-client-certificate")
-    val selectClientCertificateEvent: node.events.EventInstance<js.array.Tuple4<Event<*>, String, js.array.ReadonlyArray<Certificate>, (certificate: Certificate) -> Unit>>
+    val selectClientCertificateEvent:
+            node.events.EventInstance<
+                    js.array.Tuple4<
+                            Event<*>,
+                            String,
+                            js.array.ReadonlyArray<Certificate>,
+                                (
+                        certificate: Certificate,
+                    ) -> Unit
+                            >
+                    >
 
     @web.events.JsEvent("unresponsive")
     val unresponsiveEvent: node.events.EventInstance<js.array.Tuple>
@@ -1530,22 +1625,27 @@ external class WebContents : NodeEventEmitter {
     val updateTargetUrlEvent: node.events.EventInstance<js.array.Tuple2<Event<*>, String>>
 
     @web.events.JsEvent("will-attach-webview")
-    val willAttachWebviewEvent: node.events.EventInstance<js.array.Tuple3<Event<*>, WebPreferences, js.objects.ReadonlyRecord<String, String>>>
+    val willAttachWebviewEvent:
+            node.events.EventInstance<js.array.Tuple3<Event<*>, WebPreferences, js.objects.ReadonlyRecord<String, String>>>
 
     @web.events.JsEvent("will-frame-navigate")
-    val willFrameNavigateEvent: node.events.EventInstance<js.array.Tuple1<Event<WebContentsWillFrameNavigateEventParams>>>
+    val willFrameNavigateEvent:
+            node.events.EventInstance<js.array.Tuple1<Event<WebContentsWillFrameNavigateEventParams>>>
 
     @web.events.JsEvent("will-navigate")
-    val willNavigateEvent: node.events.EventInstance<js.array.Tuple6<Event<WebContentsWillNavigateEventParams>, String, Boolean, Boolean, Double, Double>>
+    val willNavigateEvent:
+            node.events.EventInstance<js.array.Tuple6<Event<WebContentsWillNavigateEventParams>, String, Boolean, Boolean, Double, Double>>
 
     @web.events.JsEvent("will-prevent-unload")
     val willPreventUnloadEvent: node.events.EventInstance<js.array.Tuple1<Event<*>>>
 
     @web.events.JsEvent("will-redirect")
-    val willRedirectEvent: node.events.EventInstance<js.array.Tuple6<Event<WebContentsWillRedirectEventParams>, String, Boolean, Boolean, Double, Double>>
+    val willRedirectEvent:
+            node.events.EventInstance<js.array.Tuple6<Event<WebContentsWillRedirectEventParams>, String, Boolean, Boolean, Double, Double>>
 
     @web.events.JsEvent("zoom-changed")
-    val zoomChangedEvent: node.events.EventInstance<js.array.Tuple2<Event<*>, (WebContentsAddListenerListenerZoomDirection)>>
+    val zoomChangedEvent:
+            node.events.EventInstance<js.array.Tuple2<Event<*>, (WebContentsAddListenerListenerZoomDirection)>>
 
     companion object {
 // Docs: https://electronjs.org/docs/api/web-contents

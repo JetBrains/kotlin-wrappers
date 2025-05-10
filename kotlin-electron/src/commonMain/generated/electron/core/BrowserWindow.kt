@@ -440,6 +440,101 @@ open external class BrowserWindow : BaseWindow {
      * @platform darwin,win32
      */
 
+    /**
+     * @platform win32,linux
+     */
+
+    /**
+     * @platform win32,linux
+     */
+
+    /**
+     * @platform darwin,win32
+     */
+
+    /**
+     * @platform darwin,win32
+     */
+
+    /**
+     * @platform darwin
+     */
+
+    /**
+     * @platform darwin
+     */
+
+    /**
+     * @platform darwin,win32
+     */
+
+    /**
+     * @platform darwin,win32
+     */
+
+    /**
+     * @platform darwin
+     */
+
+    /**
+     * @platform darwin
+     */
+
+    /**
+     * @platform win32
+     */
+
+    /**
+     * @platform win32
+     */
+
+    /**
+     * @platform darwin
+     */
+
+    /**
+     * @platform darwin
+     */
+
+    /**
+     * @platform darwin
+     */
+
+    /**
+     * @platform darwin
+     */
+
+    /**
+     * @platform darwin
+     */
+
+    /**
+     * @platform darwin
+     */
+
+    /**
+     * @platform win32
+     */
+
+    /**
+     * @platform win32
+     */
+
+    /**
+     * @platform darwin,win32
+     */
+
+    /**
+     * @platform darwin,win32
+     */
+
+    /**
+     * @platform darwin,win32
+     */
+
+    /**
+     * @platform darwin,win32
+     */
 
     /**
      * @platform win32,linux
@@ -449,7 +544,6 @@ open external class BrowserWindow : BaseWindow {
      * @platform win32,linux
      */
 
-
     /**
      * @platform darwin,win32
      */
@@ -466,7 +560,6 @@ open external class BrowserWindow : BaseWindow {
      * @platform darwin
      */
 
-
     /**
      * @platform darwin,win32
      */
@@ -474,7 +567,6 @@ open external class BrowserWindow : BaseWindow {
     /**
      * @platform darwin,win32
      */
-
 
     /**
      * @platform darwin
@@ -508,7 +600,6 @@ open external class BrowserWindow : BaseWindow {
      * @platform darwin
      */
 
-
     /**
      * @platform darwin
      */
@@ -525,7 +616,6 @@ open external class BrowserWindow : BaseWindow {
      * @platform win32
      */
 
-
     /**
      * @platform darwin,win32
      */
@@ -541,7 +631,6 @@ open external class BrowserWindow : BaseWindow {
     /**
      * @platform darwin,win32
      */
-
 
     /**
      * @platform win32,linux
@@ -551,7 +640,6 @@ open external class BrowserWindow : BaseWindow {
      * @platform win32,linux
      */
 
-
     /**
      * @platform darwin,win32
      */
@@ -568,7 +656,6 @@ open external class BrowserWindow : BaseWindow {
      * @platform darwin
      */
 
-
     /**
      * @platform darwin,win32
      */
@@ -576,7 +663,6 @@ open external class BrowserWindow : BaseWindow {
     /**
      * @platform darwin,win32
      */
-
 
     /**
      * @platform darwin
@@ -610,7 +696,6 @@ open external class BrowserWindow : BaseWindow {
      * @platform darwin
      */
 
-
     /**
      * @platform darwin
      */
@@ -627,7 +712,6 @@ open external class BrowserWindow : BaseWindow {
      * @platform win32
      */
 
-
     /**
      * @platform darwin,win32
      */
@@ -643,7 +727,6 @@ open external class BrowserWindow : BaseWindow {
     /**
      * @platform darwin,win32
      */
-
 
     /**
      * @platform win32,linux
@@ -653,7 +736,6 @@ open external class BrowserWindow : BaseWindow {
      * @platform win32,linux
      */
 
-
     /**
      * @platform darwin,win32
      */
@@ -670,7 +752,6 @@ open external class BrowserWindow : BaseWindow {
      * @platform darwin
      */
 
-
     /**
      * @platform darwin,win32
      */
@@ -678,7 +759,6 @@ open external class BrowserWindow : BaseWindow {
     /**
      * @platform darwin,win32
      */
-
 
     /**
      * @platform darwin
@@ -712,7 +792,6 @@ open external class BrowserWindow : BaseWindow {
      * @platform darwin
      */
 
-
     /**
      * @platform darwin
      */
@@ -728,109 +807,6 @@ open external class BrowserWindow : BaseWindow {
     /**
      * @platform win32
      */
-
-
-    /**
-     * @platform darwin,win32
-     */
-
-    /**
-     * @platform darwin,win32
-     */
-
-    /**
-     * @platform darwin,win32
-     */
-
-    /**
-     * @platform darwin,win32
-     */
-
-
-    /**
-     * @platform win32,linux
-     */
-
-    /**
-     * @platform win32,linux
-     */
-
-
-    /**
-     * @platform darwin,win32
-     */
-
-    /**
-     * @platform darwin,win32
-     */
-
-    /**
-     * @platform darwin
-     */
-
-    /**
-     * @platform darwin
-     */
-
-
-    /**
-     * @platform darwin,win32
-     */
-
-    /**
-     * @platform darwin,win32
-     */
-
-
-    /**
-     * @platform darwin
-     */
-
-    /**
-     * @platform darwin
-     */
-
-    /**
-     * @platform win32
-     */
-
-    /**
-     * @platform win32
-     */
-
-    /**
-     * @platform darwin
-     */
-
-    /**
-     * @platform darwin
-     */
-
-    /**
-     * @platform darwin
-     */
-
-    /**
-     * @platform darwin
-     */
-
-
-    /**
-     * @platform darwin
-     */
-
-    /**
-     * @platform darwin
-     */
-
-    /**
-     * @platform win32
-     */
-
-    /**
-     * @platform win32
-     */
-
 
     /**
      * @platform darwin,win32
@@ -870,6 +846,7 @@ open external class BrowserWindow : BaseWindow {
      * Removes focus from the window.
      */
     override fun blur()
+
     fun blurWebView()
 
     /**
@@ -881,7 +858,10 @@ open external class BrowserWindow : BaseWindow {
      * non-zero. If you would like the page to stay hidden, you should ensure that
      * `stayHidden` is set to true.
      */
-    fun capturePage(rect: Rectangle = definedExternally, opts: Opts = definedExternally): Promise<NativeImage>
+    fun capturePage(
+        rect: Rectangle = definedExternally,
+        opts: Opts = definedExternally,
+    ): Promise<NativeImage>
 
     /**
      * Moves window to the center of the screen.
@@ -918,6 +898,7 @@ open external class BrowserWindow : BaseWindow {
      * Focuses on the window.
      */
     override fun focus()
+
     fun focusOnWebView()
 
     /**
@@ -1079,7 +1060,10 @@ open external class BrowserWindow : BaseWindow {
      *
      * @platform win32
      */
-    override fun hookWindowMessage(message: Double, callback: (wParam: Buffer<*>, lParam: Buffer<*>) -> Unit)
+    override fun hookWindowMessage(
+        message: Double,
+        callback: (wParam: Buffer<*>, lParam: Buffer<*>) -> Unit,
+    )
 
     /**
      * Invalidates the window shadow so that it is recomputed based on the current
@@ -1280,7 +1264,10 @@ open external class BrowserWindow : BaseWindow {
      * relative to the root of your application.  See the `webContents` docs for more
      * information.
      */
-    fun loadFile(filePath: String, options: LoadFileOptions = definedExternally): Promise<js.core.Void>
+    fun loadFile(
+        filePath: String,
+        options: LoadFileOptions = definedExternally,
+    ): Promise<js.core.Void>
 
     /**
      * the promise will resolve when the page has finished loading (see
@@ -1297,7 +1284,10 @@ open external class BrowserWindow : BaseWindow {
      * You can load a URL using a `POST` request with URL-encoded data by doing the
      * following:
      */
-    fun loadURL(url: String, options: LoadURLOptions = definedExternally): Promise<js.core.Void>
+    fun loadURL(
+        url: String,
+        options: LoadURLOptions = definedExternally,
+    ): Promise<js.core.Void>
 
     /**
      * Maximizes the window. This will also show (but not focus) the window if it isn't
@@ -1344,7 +1334,10 @@ open external class BrowserWindow : BaseWindow {
      *
      * @platform darwin
      */
-    override fun previewFile(path: String, displayName: String)
+    override fun previewFile(
+        path: String,
+        displayName: String,
+    )
 
     /**
      * Same as `webContents.reload`.
@@ -1430,7 +1423,10 @@ open external class BrowserWindow : BaseWindow {
      * To reset an aspect ratio, pass 0 as the `aspectRatio` value:
      * `win.setAspectRatio(0)`.
      */
-    override fun setAspectRatio(aspectRatio: Double, extraSize: Size)
+    override fun setAspectRatio(
+        aspectRatio: Double,
+        extraSize: Size,
+    )
 
     /**
      * Controls whether to hide cursor when typing.
@@ -1500,7 +1496,10 @@ open external class BrowserWindow : BaseWindow {
      * system, but is between 20-40px. Passing a value lower than the tray height will
      * result in a window that is flush to the tray.
      */
-    override fun setBounds(bounds: Rectangle, animate: Boolean)
+    override fun setBounds(
+        bounds: Rectangle,
+        animate: Boolean,
+    )
 
     /**
      * > **Note** The `BrowserView` class is deprecated, and replaced by the new
@@ -1522,7 +1521,10 @@ open external class BrowserWindow : BaseWindow {
      * Resizes and moves the window's client area (e.g. the web page) to the supplied
      * bounds.
      */
-    override fun setContentBounds(bounds: Rectangle, animate: Boolean)
+    override fun setContentBounds(
+        bounds: Rectangle,
+        animate: Boolean,
+    )
 
     /**
      * Prevents the window contents from being captured by other apps.
@@ -1539,7 +1541,11 @@ open external class BrowserWindow : BaseWindow {
     /**
      * Resizes the window's client area (e.g. the web page) to `width` and `height`.
      */
-    override fun setContentSize(width: Double, height: Double, animate: Boolean)
+    override fun setContentSize(
+        width: Double,
+        height: Double,
+        animate: Boolean,
+    )
 
     /**
      * Specifies whether the window’s document has been edited, and the icon in title
@@ -1611,7 +1617,10 @@ open external class BrowserWindow : BaseWindow {
      * All mouse events happened in this window will be passed to the window below this
      * window, but if this window has focus, it will still receive keyboard events.
      */
-    override fun setIgnoreMouseEvents(ignore: Boolean, options: IgnoreMouseEventsOptions)
+    override fun setIgnoreMouseEvents(
+        ignore: Boolean,
+        options: IgnoreMouseEventsOptions,
+    )
 
     /**
      * Enters or leaves kiosk mode.
@@ -1629,7 +1638,10 @@ open external class BrowserWindow : BaseWindow {
     /**
      * Sets the maximum size of window to `width` and `height`.
      */
-    override fun setMaximumSize(width: Double, height: Double)
+    override fun setMaximumSize(
+        width: Double,
+        height: Double,
+    )
 
     /**
      * Sets the `menu` as the window's menu bar.
@@ -1657,7 +1669,10 @@ open external class BrowserWindow : BaseWindow {
     /**
      * Sets the minimum size of window to `width` and `height`.
      */
-    override fun setMinimumSize(width: Double, height: Double)
+    override fun setMinimumSize(
+        width: Double,
+        height: Double,
+    )
 
     /**
      * Sets whether the window can be moved by user. On Linux does nothing.
@@ -1680,7 +1695,10 @@ open external class BrowserWindow : BaseWindow {
      *
      * @platform win32
      */
-    override fun setOverlayIcon(overlay: NativeImage?, description: String)
+    override fun setOverlayIcon(
+        overlay: NativeImage?,
+        description: String,
+    )
 
     /**
      * Sets `parent` as current window's parent window, passing `null` will turn
@@ -1691,7 +1709,11 @@ open external class BrowserWindow : BaseWindow {
     /**
      * Moves window to `x` and `y`.
      */
-    override fun setPosition(x: Double, y: Double, animate: Boolean)
+    override fun setPosition(
+        x: Double,
+        y: Double,
+        animate: Boolean,
+    )
 
     /**
      * Sets progress value in progress bar. Valid range is [0, 1.0].
@@ -1707,7 +1729,10 @@ open external class BrowserWindow : BaseWindow {
      * `indeterminate`, `error`, and `paused`. If you call `setProgressBar` without a
      * mode set (but with a value within the valid range), `normal` will be assumed.
      */
-    override fun setProgressBar(progress: Double, options: ProgressBarOptions)
+    override fun setProgressBar(
+        progress: Double,
+        options: ProgressBarOptions,
+    )
 
     /**
      * Sets the pathname of the file the window represents, and the icon of the file
@@ -1741,7 +1766,10 @@ open external class BrowserWindow : BaseWindow {
      *
      * @platform darwin
      */
-    override fun setSheetOffset(offsetY: Double, offsetX: Double)
+    override fun setSheetOffset(
+        offsetY: Double,
+        offsetX: Double,
+    )
 
     /**
      * Enters or leaves simple fullscreen mode.
@@ -1757,7 +1785,11 @@ open external class BrowserWindow : BaseWindow {
      * Resizes the window to `width` and `height`. If `width` or `height` are below any
      * set minimum size constraints the window will snap to its minimum size.
      */
-    override fun setSize(width: Double, height: Double, animate: Boolean)
+    override fun setSize(
+        width: Double,
+        height: Double,
+        animate: Boolean,
+    )
 
     /**
      * Makes the window not show in the taskbar.
@@ -1877,7 +1909,10 @@ open external class BrowserWindow : BaseWindow {
      *
      * @platform darwin,linux
      */
-    override fun setVisibleOnAllWorkspaces(visible: Boolean, options: VisibleOnAllWorkspacesOptions)
+    override fun setVisibleOnAllWorkspaces(
+        visible: Boolean,
+        options: VisibleOnAllWorkspacesOptions,
+    )
 
     /**
      * Set a custom position for the traffic light buttons in frameless window. Passing

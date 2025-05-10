@@ -19,7 +19,6 @@ external interface Screen : node.events.EventEmitter {
      * Emitted when `oldDisplay` has been removed.
      */
 
-
     /**
      * Converts a screen DIP point to a screen physical point. The DPI scale is
      * performed relative to the display containing the DIP point.
@@ -35,7 +34,10 @@ external interface Screen : node.events.EventEmitter {
      *
      * @platform win32
      */
-    fun dipToScreenRect(window: BrowserWindow?, rect: Rectangle): Rectangle
+    fun dipToScreenRect(
+        window: BrowserWindow?,
+        rect: Rectangle,
+    ): Rectangle
 
     /**
      * An array of displays that are currently available.
@@ -79,13 +81,17 @@ external interface Screen : node.events.EventEmitter {
      *
      * @platform win32
      */
-    fun screenToDipRect(window: BrowserWindow?, rect: Rectangle): Rectangle
+    fun screenToDipRect(
+        window: BrowserWindow?,
+        rect: Rectangle,
+    ): Rectangle
 
     @web.events.JsEvent("display-added")
     val displayAddedEvent: node.events.EventInstance<js.array.Tuple2<Event<*>, Display>>
 
     @web.events.JsEvent("display-metrics-changed")
-    val displayMetricsChangedEvent: node.events.EventInstance<js.array.Tuple3<Event<*>, Display, js.array.ReadonlyArray<String>>>
+    val displayMetricsChangedEvent:
+            node.events.EventInstance<js.array.Tuple3<Event<*>, Display, js.array.ReadonlyArray<String>>>
 
     @web.events.JsEvent("display-removed")
     val displayRemovedEvent: node.events.EventInstance<js.array.Tuple2<Event<*>, Display>>

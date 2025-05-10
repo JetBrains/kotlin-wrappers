@@ -23,7 +23,10 @@ external interface Dialog {
      *
      * @platform darwin,win32
      */
-    fun showCertificateTrustDialog(window: BaseWindow, options: CertificateTrustDialogOptions): Promise<js.core.Void>
+    fun showCertificateTrustDialog(
+        window: BaseWindow,
+        options: CertificateTrustDialogOptions,
+    ): Promise<js.core.Void>
 
     /**
      * resolves when the certificate trust dialog is shown.
@@ -52,7 +55,10 @@ external interface Dialog {
      * the app `ready`event on Linux, the message will be emitted to stderr, and no GUI
      * dialog will appear.
      */
-    fun showErrorBox(title: String, content: String)
+    fun showErrorBox(
+        title: String,
+        content: String,
+    )
 
     /**
      * resolves with a promise containing the following properties:
@@ -66,7 +72,10 @@ external interface Dialog {
      * The `window` argument allows the dialog to attach itself to a parent window,
      * making it modal.
      */
-    fun showMessageBox(window: BaseWindow, options: MessageBoxOptions): Promise<MessageBoxReturnValue>
+    fun showMessageBox(
+        window: BaseWindow,
+        options: MessageBoxOptions,
+    ): Promise<MessageBoxReturnValue>
 
     /**
      * resolves with a promise containing the following properties:
@@ -92,7 +101,10 @@ external interface Dialog {
      * making it modal. If `window` is not shown dialog will not be attached to it. In
      * such case it will be displayed as an independent window.
      */
-    fun showMessageBoxSync(window: BaseWindow, options: MessageBoxSyncOptions): Double
+    fun showMessageBoxSync(
+        window: BaseWindow,
+        options: MessageBoxSyncOptions,
+    ): Double
 
     /**
      * the index of the clicked button.
@@ -131,7 +143,10 @@ external interface Dialog {
      * and a directory selector, so if you set `properties` to `['openFile',
      * 'openDirectory']` on these platforms, a directory selector will be shown.
      */
-    fun showOpenDialog(window: BaseWindow, options: OpenDialogOptions): Promise<OpenDialogReturnValue>
+    fun showOpenDialog(
+        window: BaseWindow,
+        options: OpenDialogOptions,
+    ): Promise<OpenDialogReturnValue>
 
     /**
      * Resolve with an object containing the following:
@@ -178,7 +193,10 @@ external interface Dialog {
      * and a directory selector, so if you set `properties` to `['openFile',
      * 'openDirectory']` on these platforms, a directory selector will be shown.
      */
-    fun showOpenDialogSync(window: BaseWindow, options: OpenDialogSyncOptions): js.array.ReadonlyArray<String>?
+    fun showOpenDialogSync(
+        window: BaseWindow,
+        options: OpenDialogSyncOptions,
+    ): js.array.ReadonlyArray<String>?
 
     /**
      * the file paths chosen by the user; if the dialog is cancelled it returns
@@ -219,7 +237,10 @@ external interface Dialog {
      * **Note:** On macOS, using the asynchronous version is recommended to avoid
      * issues when expanding and collapsing the dialog.
      */
-    fun showSaveDialog(window: BaseWindow, options: SaveDialogOptions): Promise<SaveDialogReturnValue>
+    fun showSaveDialog(
+        window: BaseWindow,
+        options: SaveDialogOptions,
+    ): Promise<SaveDialogReturnValue>
 
     /**
      * Resolve with an object containing the following:
@@ -252,7 +273,10 @@ external interface Dialog {
      * The `filters` specifies an array of file types that can be displayed, see
      * `dialog.showOpenDialog` for an example.
      */
-    fun showSaveDialogSync(window: BaseWindow, options: SaveDialogSyncOptions): String
+    fun showSaveDialogSync(
+        window: BaseWindow,
+        options: SaveDialogSyncOptions,
+    ): String
 
     /**
      * the path of the file chosen by the user; if the dialog is cancelled it returns

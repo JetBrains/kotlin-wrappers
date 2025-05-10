@@ -18,7 +18,6 @@ external class ServiceWorkers : NodeEventEmitter {
      * Chrome extension is loaded.
      */
 
-
     /**
      * A ServiceWorkerInfo object where the keys are the service worker version ID and
      * the values are the information about that service worker.

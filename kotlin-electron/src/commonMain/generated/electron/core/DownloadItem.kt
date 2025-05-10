@@ -29,7 +29,6 @@ external class DownloadItem : NodeEventEmitter {
      * * `interrupted` - The download has interrupted and can be resumed.
      */
 
-
     /**
      * Cancels the download operation.
      */

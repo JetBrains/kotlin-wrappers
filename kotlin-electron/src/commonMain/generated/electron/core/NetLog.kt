@@ -11,7 +11,10 @@ external interface NetLog {
      *
      * Starts recording network events to `path`.
      */
-    fun startLogging(path: String, options: StartLoggingOptions = definedExternally): Promise<js.core.Void>
+    fun startLogging(
+        path: String,
+        options: StartLoggingOptions = definedExternally,
+    ): Promise<js.core.Void>
 
     /**
      * resolves when the net log has been flushed to disk.

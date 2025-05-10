@@ -136,7 +136,9 @@ external interface SystemPreferences : node.events.EventEmitter {
      *
      * @platform win32,darwin
      */
-    fun getMediaAccessStatus(mediaType: SystemPreferencesGetMediaAccessStatusMediaType): (SystemPreferencesGetMediaAccessStatusResult)
+    fun getMediaAccessStatus(
+        mediaType: SystemPreferencesGetMediaAccessStatusMediaType,
+    ): (SystemPreferencesGetMediaAccessStatusResult)
 
     /**
      * The standard system color formatted as `#RRGGBBAA`.
@@ -164,7 +166,10 @@ external interface SystemPreferences : node.events.EventEmitter {
      *
      * @platform darwin
      */
-    fun getUserDefault(key: String, type: String): Any?
+    fun getUserDefault(
+        key: String,
+        type: String,
+    ): Any?
 
     /**
      * `true` if DWM composition (Aero Glass) is enabled, and `false` otherwise.
@@ -197,7 +202,10 @@ external interface SystemPreferences : node.events.EventEmitter {
      *
      * @platform darwin
      */
-    fun postLocalNotification(event: String, userInfo: js.objects.ReadonlyRecord<String, Any?>)
+    fun postLocalNotification(
+        event: String,
+        userInfo: js.objects.ReadonlyRecord<String, Any?>,
+    )
 
     /**
      * Posts `event` as native notifications of macOS. The `userInfo` is an Object that
@@ -217,7 +225,10 @@ external interface SystemPreferences : node.events.EventEmitter {
      *
      * @platform darwin
      */
-    fun postWorkspaceNotification(event: String, userInfo: js.objects.ReadonlyRecord<String, Any?>)
+    fun postWorkspaceNotification(
+        event: String,
+        userInfo: js.objects.ReadonlyRecord<String, Any?>,
+    )
 
     /**
      * resolves if the user has successfully authenticated with Touch ID.
@@ -260,7 +271,11 @@ external interface SystemPreferences : node.events.EventEmitter {
      *
      * @platform darwin
      */
-    fun setUserDefault(key: String, type: String, value: Any?)
+    fun setUserDefault(
+        key: String,
+        type: String,
+        value: Any?,
+    )
 
     /**
      * The ID of this subscription

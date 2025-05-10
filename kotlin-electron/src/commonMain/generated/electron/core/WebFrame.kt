@@ -108,7 +108,10 @@ external interface WebFrame {
      * Injects CSS into the current web page and returns a unique key for the inserted
      * stylesheet.
      */
-    fun insertCSS(css: String, options: InsertCSSOptions = definedExternally): String
+    fun insertCSS(
+        css: String,
+        options: InsertCSSOptions = definedExternally,
+    ): String
 
     /**
      * Inserts `text` to the focused element.
@@ -132,7 +135,10 @@ external interface WebFrame {
      * Note: If the `csp` is specified, then the `securityOrigin` also has to be
      * specified.
      */
-    fun setIsolatedWorldInfo(worldId: Double, info: Info)
+    fun setIsolatedWorldInfo(
+        worldId: Double,
+        info: Info,
+    )
 
     /**
      * Sets a provider for spell checking in input fields and text areas.
@@ -147,7 +153,10 @@ external interface WebFrame {
      *
      * An example of using node-spellchecker as provider:
      */
-    fun setSpellCheckProvider(language: String, provider: Provider)
+    fun setSpellCheckProvider(
+        language: String,
+        provider: Provider,
+    )
 
     /**
      * Sets the maximum and minimum pinch-to-zoom level.
@@ -160,7 +169,10 @@ external interface WebFrame {
      * roles in the application Menu. To disable shortcuts, manually define the Menu
      * and omit zoom roles from the definition.
      */
-    fun setVisualZoomLevelLimits(minimumLevel: Double, maximumLevel: Double)
+    fun setVisualZoomLevelLimits(
+        minimumLevel: Double,
+        maximumLevel: Double,
+    )
 
     /**
      * Changes the zoom factor to the specified factor. Zoom factor is zoom percent

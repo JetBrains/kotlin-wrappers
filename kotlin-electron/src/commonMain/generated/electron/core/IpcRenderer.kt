@@ -13,8 +13,8 @@ external interface IpcRenderer : node.events.EventEmitter {
      */
     fun addListener(
         channel: String,
-        listener: Function<Unit>, /* (event: IpcRendererEvent, ...args: any[]) => void */
-    ) /* this */
+        listener: Function<Unit>, // (event: IpcRendererEvent, ...args: any[]) => void
+    ) // this
 
     /**
      * Resolves with the response from the main process.
@@ -46,7 +46,10 @@ external interface IpcRenderer : node.events.EventEmitter {
      * returned by `invoke` will reject. However, the `Error` object in the renderer
      * process will not be the same as the one thrown in the main process.
      */
-    fun invoke(channel: String, vararg args: Any?): Promise<Any?>
+    fun invoke(
+        channel: String,
+        vararg args: Any?,
+    ): Promise<Any?>
 
     /**
      * Removes the specified `listener` from the listener array for the specified
@@ -54,8 +57,8 @@ external interface IpcRenderer : node.events.EventEmitter {
      */
     fun off(
         channel: String,
-        listener: Function<Unit>, /* (event: IpcRendererEvent, ...args: any[]) => void */
-    ) /* this */
+        listener: Function<Unit>, // (event: IpcRendererEvent, ...args: any[]) => void
+    ) // this
 
     /**
      * Listens to `channel`, when a new message arrives `listener` would be called with
@@ -63,8 +66,8 @@ external interface IpcRenderer : node.events.EventEmitter {
      */
     fun on(
         channel: String,
-        listener: Function<Unit>, /* (event: IpcRendererEvent, ...args: any[]) => void */
-    ) /* this */
+        listener: Function<Unit>, // (event: IpcRendererEvent, ...args: any[]) => void
+    ) // this
 
     /**
      * Adds a one time `listener` function for the event. This `listener` is invoked
@@ -72,8 +75,8 @@ external interface IpcRenderer : node.events.EventEmitter {
      */
     fun once(
         channel: String,
-        listener: Function<Unit>, /* (event: IpcRendererEvent, ...args: any[]) => void */
-    ) /* this */
+        listener: Function<Unit>, // (event: IpcRendererEvent, ...args: any[]) => void
+    ) // this
 
     /**
      * Send a message to the main process, optionally transferring ownership of zero or
@@ -98,15 +101,15 @@ external interface IpcRenderer : node.events.EventEmitter {
      * Removes all listeners from the specified `channel`. Removes all listeners from
      * all channels if no channel is specified.
      */
-    fun removeAllListeners(channel: String = definedExternally) /* this */
+    fun removeAllListeners(channel: String = definedExternally) // this
 
     /**
      * Alias for `ipcRenderer.off`.
      */
     fun removeListener(
         channel: String,
-        listener: Function<Unit>, /* (event: IpcRendererEvent, ...args: any[]) => void */
-    ) /* this */
+        listener: Function<Unit>, // (event: IpcRendererEvent, ...args: any[]) => void
+    ) // this
 
     /**
      * Send an asynchronous message to the main process via `channel`, along with
@@ -132,7 +135,10 @@ external interface IpcRenderer : node.events.EventEmitter {
      * If you want to receive a single response from the main process, like the result
      * of a method call, consider using `ipcRenderer.invoke`.
      */
-    fun send(channel: String, vararg args: Any?)
+    fun send(
+        channel: String,
+        vararg args: Any?,
+    )
 
     /**
      * The value sent back by the `ipcMain` handler.
@@ -158,11 +164,17 @@ external interface IpcRenderer : node.events.EventEmitter {
      * renderer process until the reply is received, so use this method only as a last
      * resort. It's much better to use the asynchronous version, `invoke()`.
      */
-    fun sendSync(channel: String, vararg args: Any?): Any?
+    fun sendSync(
+        channel: String,
+        vararg args: Any?,
+    ): Any?
 
     /**
      * Like `ipcRenderer.send` but the event will be sent to the `<webview>` element in
      * the host page instead of the main process.
      */
-    fun sendToHost(channel: String, vararg args: Any?)
+    fun sendToHost(
+        channel: String,
+        vararg args: Any?,
+    )
 }

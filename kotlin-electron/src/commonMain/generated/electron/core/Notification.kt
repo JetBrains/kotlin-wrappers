@@ -58,6 +58,17 @@ open external class Notification : NodeEventEmitter {
      * @platform darwin
      */
 
+    /**
+     * @platform win32
+     */
+
+    /**
+     * @platform darwin
+     */
+
+    /**
+     * @platform darwin
+     */
 
     /**
      * @platform win32
@@ -67,11 +78,9 @@ open external class Notification : NodeEventEmitter {
      * @platform darwin
      */
 
-
     /**
      * @platform darwin
      */
-
 
     /**
      * @platform win32
@@ -81,11 +90,9 @@ open external class Notification : NodeEventEmitter {
      * @platform darwin
      */
 
-
     /**
      * @platform darwin
      */
-
 
     /**
      * @platform win32
@@ -94,21 +101,6 @@ open external class Notification : NodeEventEmitter {
     /**
      * @platform darwin
      */
-
-
-    /**
-     * @platform darwin
-     */
-
-
-    /**
-     * @platform win32
-     */
-
-    /**
-     * @platform darwin
-     */
-
 
     /**
      * Dismisses the notification.

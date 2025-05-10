@@ -4,4 +4,4 @@
 
 package electron.main
 
-external val session: Any /* typeof Session */
+external val session: Any // typeof Session

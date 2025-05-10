@@ -24,7 +24,10 @@ external class CommandLine {
      * **Note:** This will not affect `process.argv`. The intended usage of this
      * function is to control Chromium's behavior.
      */
-    fun appendSwitch(the_switch: String, value: String = definedExternally)
+    fun appendSwitch(
+        the_switch: String,
+        value: String = definedExternally,
+    )
 
     /**
      * The command-line switch value.

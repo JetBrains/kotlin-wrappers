@@ -8,5 +8,5 @@ import web.events.Event
 // Project: http://electronjs.org/
 // Definitions by: The Electron Team <https://github.com/electron/electron>
 // Definitions: https://github.com/electron/typescript-definitions
-/// <reference types="node" />
+// / <reference types="node" />
 typealias DOMEvent = Event

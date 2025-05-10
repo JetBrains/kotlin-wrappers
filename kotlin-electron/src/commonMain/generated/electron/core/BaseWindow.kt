@@ -211,12 +211,58 @@ open external class BaseWindow : NodeEventEmitter {
      * @platform darwin,win32
      */
 
+    /**
+     * @platform win32,linux
+     */
+
+    /**
+     * @platform darwin,win32
+     */
+
+    /**
+     * @platform darwin
+     */
+
+    /**
+     * @platform darwin,win32
+     */
+
+    /**
+     * @platform darwin
+     */
+
+    /**
+     * @platform win32
+     */
+
+    /**
+     * @platform darwin
+     */
+
+    /**
+     * @platform darwin
+     */
+
+    /**
+     * @platform darwin
+     */
+
+    /**
+     * @platform win32
+     */
+
+    /**
+     * @platform darwin,win32
+     */
+
+    /**
+     * @platform darwin,win32
+     */
 
     /**
      * @platform win32,linux
      */
 
-
     /**
      * @platform darwin,win32
      */
@@ -225,11 +271,9 @@ open external class BaseWindow : NodeEventEmitter {
      * @platform darwin
      */
 
-
     /**
      * @platform darwin,win32
      */
-
 
     /**
      * @platform darwin
@@ -247,7 +291,6 @@ open external class BaseWindow : NodeEventEmitter {
      * @platform darwin
      */
 
-
     /**
      * @platform darwin
      */
@@ -256,7 +299,6 @@ open external class BaseWindow : NodeEventEmitter {
      * @platform win32
      */
 
-
     /**
      * @platform darwin,win32
      */
@@ -264,13 +306,11 @@ open external class BaseWindow : NodeEventEmitter {
     /**
      * @platform darwin,win32
      */
-
 
     /**
      * @platform win32,linux
      */
 
-
     /**
      * @platform darwin,win32
      */
@@ -279,11 +319,9 @@ open external class BaseWindow : NodeEventEmitter {
      * @platform darwin
      */
 
-
     /**
      * @platform darwin,win32
      */
-
 
     /**
      * @platform darwin
@@ -301,7 +339,6 @@ open external class BaseWindow : NodeEventEmitter {
      * @platform darwin
      */
 
-
     /**
      * @platform darwin
      */
@@ -310,7 +347,6 @@ open external class BaseWindow : NodeEventEmitter {
      * @platform win32
      */
 
-
     /**
      * @platform darwin,win32
      */
@@ -318,13 +354,11 @@ open external class BaseWindow : NodeEventEmitter {
     /**
      * @platform darwin,win32
      */
-
 
     /**
      * @platform win32,linux
      */
 
-
     /**
      * @platform darwin,win32
      */
@@ -333,11 +367,9 @@ open external class BaseWindow : NodeEventEmitter {
      * @platform darwin
      */
 
-
     /**
      * @platform darwin,win32
      */
-
 
     /**
      * @platform darwin
@@ -355,7 +387,6 @@ open external class BaseWindow : NodeEventEmitter {
      * @platform darwin
      */
 
-
     /**
      * @platform darwin
      */
@@ -363,61 +394,6 @@ open external class BaseWindow : NodeEventEmitter {
     /**
      * @platform win32
      */
-
-
-    /**
-     * @platform darwin,win32
-     */
-
-    /**
-     * @platform darwin,win32
-     */
-
-
-    /**
-     * @platform win32,linux
-     */
-
-
-    /**
-     * @platform darwin,win32
-     */
-
-    /**
-     * @platform darwin
-     */
-
-
-    /**
-     * @platform darwin,win32
-     */
-
-
-    /**
-     * @platform darwin
-     */
-
-    /**
-     * @platform win32
-     */
-
-    /**
-     * @platform darwin
-     */
-
-    /**
-     * @platform darwin
-     */
-
-
-    /**
-     * @platform darwin
-     */
-
-    /**
-     * @platform win32
-     */
-
 
     /**
      * @platform darwin,win32
@@ -614,7 +590,10 @@ open external class BaseWindow : NodeEventEmitter {
      *
      * @platform win32
      */
-    open fun hookWindowMessage(message: Double, callback: (wParam: Buffer<*>, lParam: Buffer<*>) -> Unit)
+    open fun hookWindowMessage(
+        message: Double,
+        callback: (wParam: Buffer<*>, lParam: Buffer<*>) -> Unit,
+    )
 
     /**
      * Invalidates the window shadow so that it is recomputed based on the current
@@ -848,7 +827,10 @@ open external class BaseWindow : NodeEventEmitter {
      *
      * @platform darwin
      */
-    open fun previewFile(path: String, displayName: String = definedExternally)
+    open fun previewFile(
+        path: String,
+        displayName: String = definedExternally,
+    )
 
     /**
      * Remove the window's menu bar.
@@ -920,7 +902,10 @@ open external class BaseWindow : NodeEventEmitter {
      * To reset an aspect ratio, pass 0 as the `aspectRatio` value:
      * `win.setAspectRatio(0)`.
      */
-    open fun setAspectRatio(aspectRatio: Double, extraSize: Size = definedExternally)
+    open fun setAspectRatio(
+        aspectRatio: Double,
+        extraSize: Size = definedExternally,
+    )
 
     /**
      * Controls whether to hide cursor when typing.
@@ -990,7 +975,10 @@ open external class BaseWindow : NodeEventEmitter {
      * system, but is between 20-40px. Passing a value lower than the tray height will
      * result in a window that is flush to the tray.
      */
-    open fun setBounds(bounds: Rectangle, animate: Boolean = definedExternally)
+    open fun setBounds(
+        bounds: Rectangle,
+        animate: Boolean = definedExternally,
+    )
 
     /**
      * Sets whether the window can be manually closed by user. On Linux does nothing.
@@ -1003,7 +991,10 @@ open external class BaseWindow : NodeEventEmitter {
      * Resizes and moves the window's client area (e.g. the web page) to the supplied
      * bounds.
      */
-    open fun setContentBounds(bounds: Rectangle, animate: Boolean = definedExternally)
+    open fun setContentBounds(
+        bounds: Rectangle,
+        animate: Boolean = definedExternally,
+    )
 
     /**
      * Prevents the window contents from being captured by other apps.
@@ -1020,7 +1011,11 @@ open external class BaseWindow : NodeEventEmitter {
     /**
      * Resizes the window's client area (e.g. the web page) to `width` and `height`.
      */
-    open fun setContentSize(width: Double, height: Double, animate: Boolean = definedExternally)
+    open fun setContentSize(
+        width: Double,
+        height: Double,
+        animate: Boolean = definedExternally,
+    )
 
     /**
      * Sets the content view of the window.
@@ -1097,7 +1092,10 @@ open external class BaseWindow : NodeEventEmitter {
      * All mouse events happened in this window will be passed to the window below this
      * window, but if this window has focus, it will still receive keyboard events.
      */
-    open fun setIgnoreMouseEvents(ignore: Boolean, options: IgnoreMouseEventsOptions = definedExternally)
+    open fun setIgnoreMouseEvents(
+        ignore: Boolean,
+        options: IgnoreMouseEventsOptions = definedExternally,
+    )
 
     /**
      * Enters or leaves kiosk mode.
@@ -1115,7 +1113,10 @@ open external class BaseWindow : NodeEventEmitter {
     /**
      * Sets the maximum size of window to `width` and `height`.
      */
-    open fun setMaximumSize(width: Double, height: Double)
+    open fun setMaximumSize(
+        width: Double,
+        height: Double,
+    )
 
     /**
      * Sets the `menu` as the window's menu bar.
@@ -1143,7 +1144,10 @@ open external class BaseWindow : NodeEventEmitter {
     /**
      * Sets the minimum size of window to `width` and `height`.
      */
-    open fun setMinimumSize(width: Double, height: Double)
+    open fun setMinimumSize(
+        width: Double,
+        height: Double,
+    )
 
     /**
      * Sets whether the window can be moved by user. On Linux does nothing.
@@ -1166,7 +1170,10 @@ open external class BaseWindow : NodeEventEmitter {
      *
      * @platform win32
      */
-    open fun setOverlayIcon(overlay: NativeImage?, description: String)
+    open fun setOverlayIcon(
+        overlay: NativeImage?,
+        description: String,
+    )
 
     /**
      * Sets `parent` as current window's parent window, passing `null` will turn
@@ -1177,7 +1184,11 @@ open external class BaseWindow : NodeEventEmitter {
     /**
      * Moves window to `x` and `y`.
      */
-    open fun setPosition(x: Double, y: Double, animate: Boolean = definedExternally)
+    open fun setPosition(
+        x: Double,
+        y: Double,
+        animate: Boolean = definedExternally,
+    )
 
     /**
      * Sets progress value in progress bar. Valid range is [0, 1.0].
@@ -1193,7 +1204,10 @@ open external class BaseWindow : NodeEventEmitter {
      * `indeterminate`, `error`, and `paused`. If you call `setProgressBar` without a
      * mode set (but with a value within the valid range), `normal` will be assumed.
      */
-    open fun setProgressBar(progress: Double, options: ProgressBarOptions = definedExternally)
+    open fun setProgressBar(
+        progress: Double,
+        options: ProgressBarOptions = definedExternally,
+    )
 
     /**
      * Sets the pathname of the file the window represents, and the icon of the file
@@ -1227,7 +1241,10 @@ open external class BaseWindow : NodeEventEmitter {
      *
      * @platform darwin
      */
-    open fun setSheetOffset(offsetY: Double, offsetX: Double = definedExternally)
+    open fun setSheetOffset(
+        offsetY: Double,
+        offsetX: Double = definedExternally,
+    )
 
     /**
      * Enters or leaves simple fullscreen mode.
@@ -1243,7 +1260,11 @@ open external class BaseWindow : NodeEventEmitter {
      * Resizes the window to `width` and `height`. If `width` or `height` are below any
      * set minimum size constraints the window will snap to its minimum size.
      */
-    open fun setSize(width: Double, height: Double, animate: Boolean = definedExternally)
+    open fun setSize(
+        width: Double,
+        height: Double,
+        animate: Boolean = definedExternally,
+    )
 
     /**
      * Makes the window not show in the taskbar.

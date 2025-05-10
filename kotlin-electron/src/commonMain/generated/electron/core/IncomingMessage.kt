@@ -29,7 +29,6 @@ external class IncomingMessage : NodeEventEmitter {
      * event will subsequently follow on the request object.
      */
 
-
     /**
      * A `Record<string, string | string[]>` representing the HTTP response headers.
      * The `headers` object is formatted as follows:

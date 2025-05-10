@@ -143,6 +143,73 @@ open external class Tray : NodeEventEmitter {
      * @platform win32
      */
 
+    /**
+     * @platform darwin,win32
+     */
+
+    /**
+     * @platform darwin
+     */
+
+    /**
+     * @platform darwin
+     */
+
+    /**
+     * @platform darwin
+     */
+
+    /**
+     * @platform darwin
+     */
+
+    /**
+     * @platform darwin
+     */
+
+    /**
+     * @platform darwin
+     */
+
+    /**
+     * @platform win32
+     */
+
+    /**
+     * @platform darwin
+     */
+
+    /**
+     * @platform darwin,win32
+     */
+
+    /**
+     * @platform darwin,win32
+     */
+
+    /**
+     * @platform darwin,win32
+     */
+
+    /**
+     * @platform darwin
+     */
+
+    /**
+     * @platform darwin,win32
+     */
+
+    /**
+     * @platform win32
+     */
+
+    /**
+     * @platform win32
+     */
+
+    /**
+     * @platform win32
+     */
 
     /**
      * @platform darwin,win32
@@ -212,7 +279,6 @@ open external class Tray : NodeEventEmitter {
      * @platform win32
      */
 
-
     /**
      * @platform darwin,win32
      */
@@ -280,76 +346,6 @@ open external class Tray : NodeEventEmitter {
     /**
      * @platform win32
      */
-
-
-    /**
-     * @platform darwin,win32
-     */
-
-    /**
-     * @platform darwin
-     */
-
-    /**
-     * @platform darwin
-     */
-
-    /**
-     * @platform darwin
-     */
-
-    /**
-     * @platform darwin
-     */
-
-    /**
-     * @platform darwin
-     */
-
-    /**
-     * @platform darwin
-     */
-
-    /**
-     * @platform win32
-     */
-
-    /**
-     * @platform darwin
-     */
-
-    /**
-     * @platform darwin,win32
-     */
-
-    /**
-     * @platform darwin,win32
-     */
-
-    /**
-     * @platform darwin,win32
-     */
-
-    /**
-     * @platform darwin
-     */
-
-    /**
-     * @platform darwin,win32
-     */
-
-    /**
-     * @platform win32
-     */
-
-    /**
-     * @platform win32
-     */
-
-    /**
-     * @platform win32
-     */
-
 
     /**
      * @platform darwin,win32
@@ -470,7 +466,10 @@ open external class Tray : NodeEventEmitter {
      *
      * @platform darwin,win32
      */
-    fun popUpContextMenu(menu: Menu = definedExternally, position: Point = definedExternally)
+    fun popUpContextMenu(
+        menu: Menu = definedExternally,
+        position: Point = definedExternally,
+    )
 
     /**
      * Removes a tray balloon.
@@ -524,7 +523,10 @@ open external class Tray : NodeEventEmitter {
      *
      * @platform darwin
      */
-    fun setTitle(title: String, options: TitleOptions = definedExternally)
+    fun setTitle(
+        title: String,
+        options: TitleOptions = definedExternally,
+    )
 
     /**
      * Sets the hover text for this tray icon.

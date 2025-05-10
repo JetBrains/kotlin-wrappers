@@ -34,21 +34,17 @@ external class UtilityProcess : NodeEventEmitter {
      * @experimental
      */
 
+    /**
+     * @experimental
+     */
 
     /**
      * @experimental
      */
 
-
     /**
      * @experimental
      */
-
-
-    /**
-     * @experimental
-     */
-
 
     /**
      * Terminates the process gracefully. On POSIX, it uses SIGTERM but will ensure the
@@ -63,7 +59,10 @@ external class UtilityProcess : NodeEventEmitter {
      *
      * For example:
      */
-    fun postMessage(message: Any?, transfer: js.array.ReadonlyArray<MessagePortMain> = definedExternally)
+    fun postMessage(
+        message: Any?,
+        transfer: js.array.ReadonlyArray<MessagePortMain> = definedExternally,
+    )
 
     /**
      * A `Integer | undefined` representing the process identifier (PID) of the child

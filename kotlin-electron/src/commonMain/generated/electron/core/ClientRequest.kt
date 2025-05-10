@@ -59,7 +59,6 @@ external class ClientRequest : NodeEventEmitter {
      * **synchronously**, otherwise the request will be cancelled.
      */
 
-
     /**
      * Cancels an ongoing HTTP transaction. If the request has already emitted the
      * `close` event, the abort operation will have no effect. Otherwise an ongoing
@@ -72,7 +71,7 @@ external class ClientRequest : NodeEventEmitter {
      * Sends the last chunk of the request data. Subsequent write or end operations
      * will not be allowed. The `finish` event is emitted just after the end operation.
      */
-    fun end() /* this */
+    fun end() // this
 
     /**
      * Sends the last chunk of the request data. Subsequent write or end operations
@@ -82,7 +81,7 @@ external class ClientRequest : NodeEventEmitter {
         chunk: String = definedExternally,
         encoding: String = definedExternally,
         callback: () -> Unit = definedExternally,
-    ) /* this */
+    ) // this
 
     /**
      * Sends the last chunk of the request data. Subsequent write or end operations
@@ -92,7 +91,7 @@ external class ClientRequest : NodeEventEmitter {
         chunk: Buffer<*> = definedExternally,
         encoding: String = definedExternally,
         callback: () -> Unit = definedExternally,
-    ) /* this */
+    ) // this
 
     /**
      * Continues any pending redirection. Can only be called during a `'redirect'`
@@ -145,7 +144,10 @@ external class ClientRequest : NodeEventEmitter {
      * Additionally, setting the `Connection` header to the value `upgrade` is also
      * disallowed.
      */
-    fun setHeader(name: String, value: String)
+    fun setHeader(
+        name: String,
+        value: String,
+    )
 
     /**
      * `callback` is essentially a dummy function introduced in the purpose of keeping
@@ -158,7 +160,11 @@ external class ClientRequest : NodeEventEmitter {
      * the request headers to be issued on the wire. After the first write operation,
      * it is not allowed to add or remove a custom header.
      */
-    fun write(chunk: String, encoding: String = definedExternally, callback: () -> Unit = definedExternally)
+    fun write(
+        chunk: String,
+        encoding: String = definedExternally,
+        callback: () -> Unit = definedExternally,
+    )
 
     /**
      * `callback` is essentially a dummy function introduced in the purpose of keeping
@@ -171,7 +177,11 @@ external class ClientRequest : NodeEventEmitter {
      * the request headers to be issued on the wire. After the first write operation,
      * it is not allowed to add or remove a custom header.
      */
-    fun write(chunk: Buffer<*>, encoding: String = definedExternally, callback: () -> Unit = definedExternally)
+    fun write(
+        chunk: Buffer<*>,
+        encoding: String = definedExternally,
+        callback: () -> Unit = definedExternally,
+    )
 
     /**
      * A `boolean` specifying whether the request will use HTTP chunked transfer
@@ -199,10 +209,19 @@ external class ClientRequest : NodeEventEmitter {
     val finishEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("login")
-    val loginEvent: node.events.EventInstance<js.array.Tuple2<AuthInfo, (username: String? /* use undefined for default */, password: String? /* use undefined for default */) -> Unit>>
+    val loginEvent: node.events.EventInstance<
+            js.array.Tuple2<
+                    AuthInfo,
+                        (
+                username: String?, /* use undefined for default */
+                password: String?, // use undefined for default
+            ) -> Unit
+                    >
+            >
 
     @web.events.JsEvent("redirect")
-    val redirectEvent: node.events.EventInstance<js.array.Tuple4<Double, String, String, js.objects.ReadonlyRecord<String, js.array.ReadonlyArray<String>>>>
+    val redirectEvent:
+            node.events.EventInstance<js.array.Tuple4<Double, String, String, js.objects.ReadonlyRecord<String, js.array.ReadonlyArray<String>>>>
 
     @web.events.JsEvent("response")
     val responseEvent: node.events.EventInstance<js.array.Tuple1<IncomingMessage>>

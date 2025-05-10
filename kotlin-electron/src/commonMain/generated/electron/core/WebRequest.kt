@@ -46,7 +46,9 @@ external class WebRequest {
      *
      * Some examples of valid `urls`:
      */
-    fun onBeforeRequest(listener: ((details: OnBeforeRequestListenerDetails, callback: (response: CallbackResponse) -> Unit) -> Unit)?)
+    fun onBeforeRequest(
+        listener: ((details: OnBeforeRequestListenerDetails, callback: (response: CallbackResponse) -> Unit) -> Unit)?,
+    )
 
     /**
      * The `listener` will be called with `listener(details, callback)` before sending
@@ -57,7 +59,12 @@ external class WebRequest {
      */
     fun onBeforeSendHeaders(
         filter: WebRequestFilter,
-        listener: ((details: OnBeforeSendHeadersListenerDetails, callback: (beforeSendResponse: BeforeSendResponse) -> Unit) -> Unit)?,
+        listener: (
+            (
+            details: OnBeforeSendHeadersListenerDetails,
+            callback: (beforeSendResponse: BeforeSendResponse) -> Unit,
+        ) -> Unit
+        )?,
     )
 
     /**
@@ -67,13 +74,23 @@ external class WebRequest {
      *
      * The `callback` has to be called with a `response` object.
      */
-    fun onBeforeSendHeaders(listener: ((details: OnBeforeSendHeadersListenerDetails, callback: (beforeSendResponse: BeforeSendResponse) -> Unit) -> Unit)?)
+    fun onBeforeSendHeaders(
+        listener: (
+            (
+            details: OnBeforeSendHeadersListenerDetails,
+            callback: (beforeSendResponse: BeforeSendResponse) -> Unit,
+        ) -> Unit
+        )?,
+    )
 
     /**
      * The `listener` will be called with `listener(details)` when a request is
      * completed.
      */
-    fun onCompleted(filter: WebRequestFilter, listener: ((details: OnCompletedListenerDetails) -> Unit)?)
+    fun onCompleted(
+        filter: WebRequestFilter,
+        listener: ((details: OnCompletedListenerDetails) -> Unit)?,
+    )
 
     /**
      * The `listener` will be called with `listener(details)` when a request is
@@ -84,7 +101,10 @@ external class WebRequest {
     /**
      * The `listener` will be called with `listener(details)` when an error occurs.
      */
-    fun onErrorOccurred(filter: WebRequestFilter, listener: ((details: OnErrorOccurredListenerDetails) -> Unit)?)
+    fun onErrorOccurred(
+        filter: WebRequestFilter,
+        listener: ((details: OnErrorOccurredListenerDetails) -> Unit)?,
+    )
 
     /**
      * The `listener` will be called with `listener(details)` when an error occurs.
@@ -99,7 +119,12 @@ external class WebRequest {
      */
     fun onHeadersReceived(
         filter: WebRequestFilter,
-        listener: ((details: OnHeadersReceivedListenerDetails, callback: (headersReceivedResponse: HeadersReceivedResponse) -> Unit) -> Unit)?,
+        listener: (
+            (
+            details: OnHeadersReceivedListenerDetails,
+            callback: (headersReceivedResponse: HeadersReceivedResponse) -> Unit,
+        ) -> Unit
+        )?,
     )
 
     /**
@@ -108,7 +133,14 @@ external class WebRequest {
      *
      * The `callback` has to be called with a `response` object.
      */
-    fun onHeadersReceived(listener: ((details: OnHeadersReceivedListenerDetails, callback: (headersReceivedResponse: HeadersReceivedResponse) -> Unit) -> Unit)?)
+    fun onHeadersReceived(
+        listener: (
+            (
+            details: OnHeadersReceivedListenerDetails,
+            callback: (headersReceivedResponse: HeadersReceivedResponse) -> Unit,
+        ) -> Unit
+        )?,
+    )
 
     /**
      * The `listener` will be called with `listener(details)` when first byte of the
@@ -132,7 +164,10 @@ external class WebRequest {
      * going to be sent to the server, modifications of previous `onBeforeSendHeaders`
      * response are visible by the time this listener is fired.
      */
-    fun onSendHeaders(filter: WebRequestFilter, listener: ((details: OnSendHeadersListenerDetails) -> Unit)?)
+    fun onSendHeaders(
+        filter: WebRequestFilter,
+        listener: ((details: OnSendHeadersListenerDetails) -> Unit)?,
+    )
 
     /**
      * The `listener` will be called with `listener(details)` just before a request is

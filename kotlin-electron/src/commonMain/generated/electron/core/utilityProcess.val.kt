@@ -4,4 +4,4 @@
 
 package electron.core
 
-external val utilityProcess: Any /* typeof UtilityProcess */
+external val utilityProcess: Any // typeof UtilityProcess
