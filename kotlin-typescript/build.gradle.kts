@@ -1,6 +1,6 @@
 plugins {
     id("wrappersbuild.kotlin-library-conventions")
-    alias(libs.plugins.karakum)
+
 }
 
 dependencies {
