@@ -2,7 +2,7 @@
 
 package web.media.source
 
-import js.transferable.Transferable
+import js.serialization.Transferable
 
 /**
  * The **`MediaSourceHandle`** interface of the Media Source Extensions API is a proxy for a MediaSource that can be transferred from a dedicated worker back to the main thread and attached to a media element via its HTMLMediaElement.srcObject property.

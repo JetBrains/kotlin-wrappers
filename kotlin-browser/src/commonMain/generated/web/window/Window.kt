@@ -6,7 +6,7 @@ import js.array.ArrayLike
 import js.array.ReadonlyArray
 import js.core.JsAny
 import js.globals.GlobalScope
-import js.transferable.Transferable
+import js.serialization.Transferable
 import web.animations.AnimationEvent
 import web.clipboard.ClipboardEvent
 import web.cookie.CookieStore

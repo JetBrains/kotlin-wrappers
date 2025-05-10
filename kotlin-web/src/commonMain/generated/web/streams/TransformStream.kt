@@ -3,7 +3,7 @@
 package web.streams
 
 import js.core.JsAny
-import js.transferable.Transferable
+import js.serialization.Transferable
 import kotlin.js.definedExternally
 
 /**

@@ -5,7 +5,7 @@ package web.canvas
 import js.core.JsAny
 import js.core.UInt53
 import js.promise.Promise
-import js.transferable.Transferable
+import js.serialization.Transferable
 import seskar.js.JsAsync
 import web.blob.Blob
 import web.events.*

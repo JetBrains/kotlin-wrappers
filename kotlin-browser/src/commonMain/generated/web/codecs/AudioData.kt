@@ -6,7 +6,7 @@ import js.buffer.AllowSharedBufferSource
 import js.core.Int53
 import js.core.UInt53
 import js.serialization.Serializable
-import js.transferable.Transferable
+import js.serialization.Transferable
 
 /**
  * The **`AudioData`** interface of the WebCodecs API represents an audio sample.

@@ -9,7 +9,7 @@ import js.errors.JsError
 import js.iterable.AsyncIterable
 import js.iterable.AsyncIterator
 import js.promise.Promise
-import js.transferable.Transferable
+import js.serialization.Transferable
 import seskar.js.JsAsync
 import kotlin.js.JsName
 import kotlin.js.definedExternally

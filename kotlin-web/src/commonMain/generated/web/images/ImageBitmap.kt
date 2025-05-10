@@ -3,7 +3,7 @@
 package web.images
 
 import js.serialization.Serializable
-import js.transferable.Transferable
+import js.serialization.Transferable
 import web.canvas.CanvasImageSource
 import web.gl.TexImageSource
 import web.gpu.GPUCopyExternalImageSource

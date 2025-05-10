@@ -1,6 +1,4 @@
-// Automatically generated - do not modify!
-
-package js.transferable
+package js.serialization
 
 import js.reflect.JsExternalInheritorsOnly
 

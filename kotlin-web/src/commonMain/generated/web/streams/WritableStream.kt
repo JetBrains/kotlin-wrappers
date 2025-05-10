@@ -6,7 +6,7 @@ import js.core.JsAny
 import js.core.Void
 import js.errors.JsError
 import js.promise.Promise
-import js.transferable.Transferable
+import js.serialization.Transferable
 import seskar.js.JsAsync
 import kotlin.js.JsName
 import kotlin.js.definedExternally

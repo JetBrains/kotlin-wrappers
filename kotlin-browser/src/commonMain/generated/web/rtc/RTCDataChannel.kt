@@ -5,7 +5,7 @@ package web.rtc
 import js.buffer.ArrayBuffer
 import js.buffer.ArrayBufferView
 import js.core.JsAny
-import js.transferable.Transferable
+import js.serialization.Transferable
 import web.blob.Blob
 import web.events.*
 import web.messaging.MessageEvent

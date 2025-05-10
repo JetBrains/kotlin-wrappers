@@ -4,7 +4,7 @@ package web.serviceworker
 
 import js.array.ReadonlyArray
 import js.core.JsAny
-import js.transferable.Transferable
+import js.serialization.Transferable
 import web.events.*
 import web.messaging.MessageEventSource
 import web.serialization.StructuredSerializeOptions

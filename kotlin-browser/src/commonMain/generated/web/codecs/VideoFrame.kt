@@ -8,7 +8,7 @@ import js.core.Int53
 import js.core.UInt53
 import js.promise.Promise
 import js.serialization.Serializable
-import js.transferable.Transferable
+import js.serialization.Transferable
 import seskar.js.JsAsync
 import web.canvas.CanvasImageSource
 import web.geometry.DOMRectReadOnly

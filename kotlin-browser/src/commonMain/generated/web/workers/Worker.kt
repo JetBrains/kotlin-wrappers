@@ -4,7 +4,7 @@ package web.workers
 
 import js.array.ReadonlyArray
 import js.core.JsAny
-import js.transferable.Transferable
+import js.serialization.Transferable
 import web.events.Event
 import web.events.EventInstance
 import web.events.EventTarget
