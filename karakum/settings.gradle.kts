@@ -8,6 +8,7 @@ dependencyResolutionManagement {
     versionCatalogs {
         create("libs") {
             val karakumVersion = extra["karakum.version"] as String
+            plugin("karakum", "io.github.sgrishchenko.karakum").version(karakumVersion)
             library("karakum", "io.github.sgrishchenko", "karakum").version(karakumVersion)
 
             val arrowVersion = extra["arrow-kt.version"] as String
