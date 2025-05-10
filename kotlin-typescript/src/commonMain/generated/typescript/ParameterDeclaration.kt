@@ -2,9 +2,19 @@
 
 package typescript
 
-sealed external interface ParameterDeclaration : NamedDeclaration, JSDocContainer, HasJSDoc, HasType,
-    HasExpressionInitializer, HasDecorators, HasModifiers, VariableLikeDeclaration, ObjectBindingPatternParent,
-    ArrayBindingPatternParent, SyntheticExpressionTupleNameSource, BindingOrAssignmentElement,
+sealed external interface ParameterDeclaration :
+    NamedDeclaration,
+    JSDocContainer,
+    HasJSDoc,
+    HasType,
+    HasExpressionInitializer,
+    HasDecorators,
+    HasModifiers,
+    VariableLikeDeclaration,
+    ObjectBindingPatternParent,
+    ArrayBindingPatternParent,
+    SyntheticExpressionTupleNameSource,
+    BindingOrAssignmentElement,
     WalkUpBindingElementsAndPatternsResult {
     override val kind: SyntaxKind.Parameter
     override val parent: SignatureDeclaration

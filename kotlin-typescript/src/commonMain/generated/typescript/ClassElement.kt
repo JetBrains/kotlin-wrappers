@@ -2,7 +2,9 @@
 
 package typescript
 
-sealed external interface ClassElement : NamedDeclaration, IsClassOrTypeElementResultPredicate {
+sealed external interface ClassElement :
+    NamedDeclaration,
+    IsClassOrTypeElementResultPredicate {
     var _classElementBrand: Any?
     override val name: PropertyName?
 }

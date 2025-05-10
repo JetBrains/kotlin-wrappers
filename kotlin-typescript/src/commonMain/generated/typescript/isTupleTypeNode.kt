@@ -4,6 +4,5 @@
 
 package typescript
 
-
 @JsName("isTupleTypeNode")
-external fun isTupleTypeNodeRaw(node: Node): Boolean /* node is TupleTypeNode */
+external fun isTupleTypeNodeRaw(node: Node): Boolean // node is TupleTypeNode

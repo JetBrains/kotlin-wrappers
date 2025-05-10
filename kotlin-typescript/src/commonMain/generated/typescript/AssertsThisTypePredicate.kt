@@ -2,7 +2,9 @@
 
 package typescript
 
-sealed external interface AssertsThisTypePredicate : TypePredicateBase, TypePredicate {
+sealed external interface AssertsThisTypePredicate :
+    TypePredicateBase,
+    TypePredicate {
     @Suppress("VAR_TYPE_MISMATCH_ON_OVERRIDE")
     override var kind: TypePredicateKind.AssertsThis
     var parameterName: Nothing?

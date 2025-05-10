@@ -2,5 +2,9 @@
 
 package typescript
 
-sealed external interface SignatureDeclaration : Node, HasType, TypePredicateNodeParent,
-    DeclarationWithTypeParameterChildren, SignatureDeclarationField
+sealed external interface SignatureDeclaration :
+    Node,
+    HasType,
+    TypePredicateNodeParent,
+    DeclarationWithTypeParameterChildren,
+    SignatureDeclarationField

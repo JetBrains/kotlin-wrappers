@@ -7,7 +7,9 @@ package typescript
 /**
  * Creates the watch from the host for root files and compiler options
  */
-external fun <T : BuilderProgram> createWatchProgram(host: WatchCompilerHostOfFilesAndCompilerOptions<T>): WatchOfFilesAndCompilerOptions<T>
+external fun <T : BuilderProgram> createWatchProgram(
+    host: WatchCompilerHostOfFilesAndCompilerOptions<T>,
+): WatchOfFilesAndCompilerOptions<T>
 
 /**
  * Creates the watch from the host for config file

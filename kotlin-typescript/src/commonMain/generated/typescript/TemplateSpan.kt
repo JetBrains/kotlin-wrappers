@@ -2,7 +2,10 @@
 
 package typescript
 
-sealed external interface TemplateSpan : Node, TemplateMiddleParent, TemplateTailParent {
+sealed external interface TemplateSpan :
+    Node,
+    TemplateMiddleParent,
+    TemplateTailParent {
     override val kind: SyntaxKind.TemplateSpan
     override val parent: TemplateExpression
     val expression: Expression

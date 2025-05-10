@@ -4,6 +4,5 @@
 
 package typescript
 
-
 @JsName("isImportDeclaration")
-external fun isImportDeclarationRaw(node: Node): Boolean /* node is ImportDeclaration */
+external fun isImportDeclarationRaw(node: Node): Boolean // node is ImportDeclaration

@@ -4,6 +4,5 @@
 
 package typescript
 
-
 @JsName("isExportAssignment")
-external fun isExportAssignmentRaw(node: Node): Boolean /* node is ExportAssignment */
+external fun isExportAssignmentRaw(node: Node): Boolean // node is ExportAssignment

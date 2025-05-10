@@ -4,6 +4,5 @@
 
 package typescript
 
-
 @JsName("isTypeAliasDeclaration")
-external fun isTypeAliasDeclarationRaw(node: Node): Boolean /* node is TypeAliasDeclaration */
+external fun isTypeAliasDeclarationRaw(node: Node): Boolean // node is TypeAliasDeclaration

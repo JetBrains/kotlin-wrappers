@@ -4,6 +4,5 @@
 
 package typescript
 
-
 @JsName("isComputedPropertyName")
-external fun isComputedPropertyNameRaw(node: Node): Boolean /* node is ComputedPropertyName */
+external fun isComputedPropertyNameRaw(node: Node): Boolean // node is ComputedPropertyName

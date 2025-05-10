@@ -3,7 +3,7 @@
 package typescript
 
 sealed external interface RenameInfoSuccess : RenameInfo {
-    var canRename: Boolean /* true */
+    var canRename: Boolean // true
 
     /**
      * File or directory to rename.

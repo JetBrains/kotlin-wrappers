@@ -16,5 +16,6 @@ sealed external interface InvalidatedProjectBase {
     ): ExitStatus
 
     fun getCompilerOptions(): CompilerOptions
+
     fun getCurrentDirectory(): String
 }

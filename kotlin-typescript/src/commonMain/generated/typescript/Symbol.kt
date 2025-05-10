@@ -11,10 +11,16 @@ sealed external interface Symbol {
     var exports: SymbolTable?
     var globalExports: SymbolTable?
     val name: String
+
     fun getFlags(): SymbolFlags
+
     fun getEscapedName(): __String
+
     fun getName(): String
+
     fun getDeclarations(): js.array.ReadonlyArray<Declaration>?
+
     fun getDocumentationComment(typeChecker: TypeChecker?): js.array.ReadonlyArray<SymbolDisplayPart>
+
     fun getJsDocTags(checker: TypeChecker = definedExternally): js.array.ReadonlyArray<JSDocTagInfo>
 }

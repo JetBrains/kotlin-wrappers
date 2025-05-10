@@ -14,4 +14,6 @@ package typescript
  * &#47;** @type {Id} /
  * function id(x) { return x }
  */
-external fun getEffectiveTypeParameterDeclarations(node: DeclarationWithTypeParameters): js.array.ReadonlyArray<TypeParameterDeclaration>
+external fun getEffectiveTypeParameterDeclarations(
+    node: DeclarationWithTypeParameters,
+): js.array.ReadonlyArray<TypeParameterDeclaration>

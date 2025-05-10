@@ -15,7 +15,10 @@ sealed external interface TransformationResult<T : Node> {
      * @param hint A hint as to the intended usage of the node.
      * @param node The node to substitute.
      */
-    fun substituteNode(hint: EmitHint, node: Node): Node
+    fun substituteNode(
+        hint: EmitHint,
+        node: Node,
+    ): Node
 
     /**
      * Emits a node with possible notification.
@@ -24,7 +27,11 @@ sealed external interface TransformationResult<T : Node> {
      * @param node The node to emit.
      * @param emitCallback A callback used to emit the node.
      */
-    fun emitNodeWithNotification(hint: EmitHint, node: Node, emitCallback: (hint: EmitHint, node: Node) -> Unit)
+    fun emitNodeWithNotification(
+        hint: EmitHint,
+        node: Node,
+        emitCallback: (hint: EmitHint, node: Node) -> Unit,
+    )
 
     /**
      * Indicates if a given node needs an emit notification

@@ -4,6 +4,5 @@
 
 package typescript
 
-
 @JsName("isClassExpression")
-external fun isClassExpressionRaw(node: Node): Boolean /* node is ClassExpression */
+external fun isClassExpressionRaw(node: Node): Boolean // node is ClassExpression

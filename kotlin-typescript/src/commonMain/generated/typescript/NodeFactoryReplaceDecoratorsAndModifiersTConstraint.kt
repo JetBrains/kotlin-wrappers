@@ -2,4 +2,6 @@
 
 package typescript
 
-sealed external interface NodeFactoryReplaceDecoratorsAndModifiersTConstraint : HasModifiers, HasDecorators
+sealed external interface NodeFactoryReplaceDecoratorsAndModifiersTConstraint :
+    HasModifiers,
+    HasDecorators

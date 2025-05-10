@@ -2,7 +2,9 @@
 
 package typescript
 
-sealed external interface WatchCompilerHost<T : BuilderProgram> : ProgramHost<T>, WatchHost {
+sealed external interface WatchCompilerHost<T : BuilderProgram> :
+    ProgramHost<T>,
+    WatchHost {
     /** Instead of using output d.ts file from project reference, use its source file */
     val useSourceOfProjectReferenceRedirect: (() -> Boolean)?
 

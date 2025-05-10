@@ -2,8 +2,13 @@
 
 package typescript
 
-sealed external interface ExportDeclaration : DeclarationStatement, JSDocContainer, HasJSDoc, HasModifiers,
-    ImportAttributesParent, TypeOnlyCompatibleAliasDeclaration {
+sealed external interface ExportDeclaration :
+    DeclarationStatement,
+    JSDocContainer,
+    HasJSDoc,
+    HasModifiers,
+    ImportAttributesParent,
+    TypeOnlyCompatibleAliasDeclaration {
     override val kind: SyntaxKind.ExportDeclaration
     override val parent: ExportDeclarationParent
     val modifiers: NodeArray<ModifierLike>?

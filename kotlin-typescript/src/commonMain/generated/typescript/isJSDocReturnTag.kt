@@ -4,6 +4,5 @@
 
 package typescript
 
-
 @JsName("isJSDocReturnTag")
-external fun isJSDocReturnTagRaw(node: Node): Boolean /* node is JSDocReturnTag */
+external fun isJSDocReturnTagRaw(node: Node): Boolean // node is JSDocReturnTag

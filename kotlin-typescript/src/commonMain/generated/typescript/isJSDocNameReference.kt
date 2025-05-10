@@ -4,6 +4,5 @@
 
 package typescript
 
-
 @JsName("isJSDocNameReference")
-external fun isJSDocNameReferenceRaw(node: Node): Boolean /* node is JSDocNameReference */
+external fun isJSDocNameReferenceRaw(node: Node): Boolean // node is JSDocNameReference

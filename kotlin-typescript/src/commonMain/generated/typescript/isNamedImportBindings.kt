@@ -4,6 +4,5 @@
 
 package typescript
 
-
 @JsName("isNamedImportBindings")
-external fun isNamedImportBindingsRaw(node: Node): Boolean /* node is NamedImportBindings */
+external fun isNamedImportBindingsRaw(node: Node): Boolean // node is NamedImportBindings

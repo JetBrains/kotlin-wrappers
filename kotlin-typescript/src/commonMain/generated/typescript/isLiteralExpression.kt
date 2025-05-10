@@ -4,6 +4,5 @@
 
 package typescript
 
-
 @JsName("isLiteralExpression")
-external fun isLiteralExpressionRaw(node: Node): Boolean /* node is LiteralExpression */
+external fun isLiteralExpressionRaw(node: Node): Boolean // node is LiteralExpression

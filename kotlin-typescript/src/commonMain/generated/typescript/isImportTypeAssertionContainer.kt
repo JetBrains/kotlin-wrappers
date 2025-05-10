@@ -4,6 +4,5 @@
 
 package typescript
 
-
 @JsName("isImportTypeAssertionContainer")
-external fun isImportTypeAssertionContainerRaw(node: Node): Boolean /* node is ImportTypeAssertionContainer */
+external fun isImportTypeAssertionContainerRaw(node: Node): Boolean // node is ImportTypeAssertionContainer

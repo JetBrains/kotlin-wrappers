@@ -4,11 +4,13 @@
 
 package typescript
 
-
 sealed external interface TypePredicateKind {
     sealed interface This : TypePredicateKind
+
     sealed interface Identifier : TypePredicateKind
+
     sealed interface AssertsThis : TypePredicateKind
+
     sealed interface AssertsIdentifier : TypePredicateKind
 
     companion object {

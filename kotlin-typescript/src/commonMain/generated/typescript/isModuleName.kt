@@ -4,6 +4,5 @@
 
 package typescript
 
-
 @JsName("isModuleName")
-external fun isModuleNameRaw(node: Node): Boolean /* node is ModuleName */
+external fun isModuleNameRaw(node: Node): Boolean // node is ModuleName

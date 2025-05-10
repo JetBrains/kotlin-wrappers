@@ -4,6 +4,5 @@
 
 package typescript
 
-
 @JsName("isSwitchStatement")
-external fun isSwitchStatementRaw(node: Node): Boolean /* node is SwitchStatement */
+external fun isSwitchStatementRaw(node: Node): Boolean // node is SwitchStatement

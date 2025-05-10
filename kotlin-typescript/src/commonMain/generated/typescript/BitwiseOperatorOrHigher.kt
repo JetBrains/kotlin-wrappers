@@ -2,4 +2,6 @@
 
 package typescript
 
-sealed external interface BitwiseOperatorOrHigher : SyntaxKind, LogicalOperatorOrHigher
+sealed external interface BitwiseOperatorOrHigher :
+    SyntaxKind,
+    LogicalOperatorOrHigher

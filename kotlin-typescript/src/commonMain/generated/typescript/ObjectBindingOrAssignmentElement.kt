@@ -2,4 +2,6 @@
 
 package typescript
 
-sealed external interface ObjectBindingOrAssignmentElement : Node, BindingOrAssignmentElement
+sealed external interface ObjectBindingOrAssignmentElement :
+    Node,
+    BindingOrAssignmentElement

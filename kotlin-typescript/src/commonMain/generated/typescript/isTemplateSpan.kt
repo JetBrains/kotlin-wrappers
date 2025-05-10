@@ -4,6 +4,5 @@
 
 package typescript
 
-
 @JsName("isTemplateSpan")
-external fun isTemplateSpanRaw(node: Node): Boolean /* node is TemplateSpan */
+external fun isTemplateSpanRaw(node: Node): Boolean // node is TemplateSpan

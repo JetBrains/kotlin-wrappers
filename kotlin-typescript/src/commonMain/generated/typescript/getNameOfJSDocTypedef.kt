@@ -4,4 +4,4 @@
 
 package typescript
 
-external fun getNameOfJSDocTypedef(declaration: JSDocTypedefTag): Any? /* Identifier | PrivateIdentifier | undefined */
+external fun getNameOfJSDocTypedef(declaration: JSDocTypedefTag): Any? // Identifier | PrivateIdentifier | undefined

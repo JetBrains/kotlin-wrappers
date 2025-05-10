@@ -4,6 +4,5 @@
 
 package typescript
 
-
 @JsName("isJSDocAuthorTag")
-external fun isJSDocAuthorTagRaw(node: Node): Boolean /* node is JSDocAuthorTag */
+external fun isJSDocAuthorTagRaw(node: Node): Boolean // node is JSDocAuthorTag

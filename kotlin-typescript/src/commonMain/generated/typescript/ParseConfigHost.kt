@@ -5,6 +5,7 @@ package typescript
 sealed external interface ParseConfigHost : ModuleResolutionHost {
     @Suppress("VAR_TYPE_MISMATCH_ON_OVERRIDE")
     override var useCaseSensitiveFileNames: Boolean
+
     fun readDirectory(
         rootDir: String,
         extensions: js.array.ReadonlyArray<String>,
@@ -18,6 +19,8 @@ sealed external interface ParseConfigHost : ModuleResolutionHost {
      * @param path The path to test.
      */
     override fun fileExists(fileName: String): Boolean
+
     override fun readFile(fileName: String): String?
+
     override val trace: ((s: String) -> Unit)?
 }

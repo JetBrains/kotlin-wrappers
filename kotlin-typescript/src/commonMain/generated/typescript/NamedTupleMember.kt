@@ -2,8 +2,14 @@
 
 package typescript
 
-sealed external interface NamedTupleMember : TypeNode, Declaration, JSDocContainer, HasJSDoc, TupleTypeNodeElementsItem,
-    SyntheticExpressionTupleNameSource, NodeFactoryCreateTupleTypeNodeElementsItem,
+sealed external interface NamedTupleMember :
+    TypeNode,
+    Declaration,
+    JSDocContainer,
+    HasJSDoc,
+    TupleTypeNodeElementsItem,
+    SyntheticExpressionTupleNameSource,
+    NodeFactoryCreateTupleTypeNodeElementsItem,
     NodeFactoryUpdateTupleTypeNodeElementsItem {
     override val kind: SyntaxKind.NamedTupleMember
     val dotDotDotToken: Token<SyntaxKind.DotDotDotToken>?

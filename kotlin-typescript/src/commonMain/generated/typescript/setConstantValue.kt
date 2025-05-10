@@ -7,9 +7,15 @@ package typescript
 /**
  * Sets the constant value to emit for an expression.
  */
-external fun setConstantValue(node: AccessExpression, value: String): AccessExpression
+external fun setConstantValue(
+    node: AccessExpression,
+    value: String,
+): AccessExpression
 
 /**
  * Sets the constant value to emit for an expression.
  */
-external fun setConstantValue(node: AccessExpression, value: Double): AccessExpression
+external fun setConstantValue(
+    node: AccessExpression,
+    value: Double,
+): AccessExpression

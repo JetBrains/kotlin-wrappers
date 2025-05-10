@@ -2,4 +2,6 @@
 
 package typescript
 
-sealed external interface CompoundAssignmentOperator : SyntaxKind, AssignmentOperator
+sealed external interface CompoundAssignmentOperator :
+    SyntaxKind,
+    AssignmentOperator

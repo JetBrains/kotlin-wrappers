@@ -4,6 +4,5 @@
 
 package typescript
 
-
 @JsName("isArrayTypeNode")
-external fun isArrayTypeNodeRaw(node: Node): Boolean /* node is ArrayTypeNode */
+external fun isArrayTypeNodeRaw(node: Node): Boolean // node is ArrayTypeNode

@@ -4,6 +4,5 @@
 
 package typescript
 
-
 @JsName("isShorthandPropertyAssignment")
-external fun isShorthandPropertyAssignmentRaw(node: Node): Boolean /* node is ShorthandPropertyAssignment */
+external fun isShorthandPropertyAssignmentRaw(node: Node): Boolean // node is ShorthandPropertyAssignment

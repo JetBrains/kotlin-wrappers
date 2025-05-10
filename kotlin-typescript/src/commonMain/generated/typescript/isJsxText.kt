@@ -4,6 +4,5 @@
 
 package typescript
 
-
 @JsName("isJsxText")
-external fun isJsxTextRaw(node: Node): Boolean /* node is JsxText */
+external fun isJsxTextRaw(node: Node): Boolean // node is JsxText

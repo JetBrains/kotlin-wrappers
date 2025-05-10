@@ -4,6 +4,5 @@
 
 package typescript
 
-
 @JsName("isDoStatement")
-external fun isDoStatementRaw(node: Node): Boolean /* node is DoStatement */
+external fun isDoStatementRaw(node: Node): Boolean // node is DoStatement

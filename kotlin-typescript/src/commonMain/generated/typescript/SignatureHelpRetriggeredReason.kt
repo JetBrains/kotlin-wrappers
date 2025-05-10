@@ -9,7 +9,7 @@ package typescript
  * `triggerCharacter` can be `undefined` for a retrigger caused by a cursor move.
  */
 sealed external interface SignatureHelpRetriggeredReason : SignatureHelpTriggerReason {
-    var kind: String /* "retrigger" */
+    var kind: String // "retrigger"
 
     /**
      * Character that was responsible for triggering signature help.

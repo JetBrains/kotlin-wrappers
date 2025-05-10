@@ -21,7 +21,7 @@ sealed external interface NodeVisitor {
         visitor: Visitor<TIn & Any, TVisited>,
         test: (node: Node) -> Boolean, /* node is TOut */
         lift: (node: js.array.ReadonlyArray<Node>) -> Node = definedExternally,
-    ): Any /* TOut | (TIn & undefined) | (TVisited & undefined) */
+    ): Any // TOut | (TIn & undefined) | (TVisited & undefined)
 
     @seskar.js.JsNativeInvoke
     operator fun <TIn : Node?, TVisited : Node?> invoke(
@@ -29,5 +29,5 @@ sealed external interface NodeVisitor {
         visitor: Visitor<TIn & Any, TVisited>,
         test: (node: Node) -> Boolean = definedExternally,
         lift: (node: js.array.ReadonlyArray<Node>) -> Node = definedExternally,
-    ): Any /* Node | (TIn & undefined) | (TVisited & undefined) */
+    ): Any // Node | (TIn & undefined) | (TVisited & undefined)
 }

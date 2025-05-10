@@ -4,7 +4,11 @@
 
 package typescript
 
-external fun flattenDiagnosticMessageText(diag: String?, newLine: String, indent: Double = definedExternally): String
+external fun flattenDiagnosticMessageText(
+    diag: String?,
+    newLine: String,
+    indent: Double = definedExternally,
+): String
 
 external fun flattenDiagnosticMessageText(
     diag: DiagnosticMessageChain?,

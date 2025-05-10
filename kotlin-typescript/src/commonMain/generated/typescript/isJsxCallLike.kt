@@ -4,6 +4,5 @@
 
 package typescript
 
-
 @JsName("isJsxCallLike")
-external fun isJsxCallLikeRaw(node: Node): Boolean /* node is JsxCallLike */
+external fun isJsxCallLikeRaw(node: Node): Boolean // node is JsxCallLike

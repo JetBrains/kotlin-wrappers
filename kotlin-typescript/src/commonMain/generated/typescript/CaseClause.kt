@@ -2,7 +2,11 @@
 
 package typescript
 
-sealed external interface CaseClause : Node, JSDocContainer, HasJSDoc, CaseOrDefaultClause {
+sealed external interface CaseClause :
+    Node,
+    JSDocContainer,
+    HasJSDoc,
+    CaseOrDefaultClause {
     override val kind: SyntaxKind.CaseClause
     override val parent: CaseBlock
     val expression: Expression

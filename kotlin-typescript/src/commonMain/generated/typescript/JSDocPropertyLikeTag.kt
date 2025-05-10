@@ -2,7 +2,9 @@
 
 package typescript
 
-sealed external interface JSDocPropertyLikeTag : JSDocTag, Declaration {
+sealed external interface JSDocPropertyLikeTag :
+    JSDocTag,
+    Declaration {
     override val parent: JSDoc
     val name: EntityName
     val typeExpression: JSDocTypeExpression?

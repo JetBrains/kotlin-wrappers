@@ -2,4 +2,6 @@
 
 package typescript
 
-sealed external interface PseudoLiteralSyntaxKind : SyntaxKind, TokenSyntaxKind
+sealed external interface PseudoLiteralSyntaxKind :
+    SyntaxKind,
+    TokenSyntaxKind

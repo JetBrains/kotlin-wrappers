@@ -2,6 +2,8 @@
 
 package typescript
 
-sealed external interface NodeArray<out T : Node> : ReadonlyArrayAdapter<T>, ReadonlyTextRange {
+sealed external interface NodeArray<out T : Node> :
+    ReadonlyArrayAdapter<T>,
+    ReadonlyTextRange {
     val hasTrailingComma: Boolean
 }

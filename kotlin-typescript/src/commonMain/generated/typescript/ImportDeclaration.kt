@@ -2,7 +2,11 @@
 
 package typescript
 
-sealed external interface ImportDeclaration : Statement, HasJSDoc, HasModifiers, ImportClauseParent,
+sealed external interface ImportDeclaration :
+    Statement,
+    HasJSDoc,
+    HasModifiers,
+    ImportClauseParent,
     ImportAttributesParent {
     override val kind: SyntaxKind.ImportDeclaration
     override val parent: ImportDeclarationParent

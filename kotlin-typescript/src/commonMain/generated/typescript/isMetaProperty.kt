@@ -4,6 +4,5 @@
 
 package typescript
 
-
 @JsName("isMetaProperty")
-external fun isMetaPropertyRaw(node: Node): Boolean /* node is MetaProperty */
+external fun isMetaPropertyRaw(node: Node): Boolean // node is MetaProperty

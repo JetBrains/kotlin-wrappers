@@ -4,6 +4,5 @@
 
 package typescript
 
-
 @JsName("isJSDocPublicTag")
-external fun isJSDocPublicTagRaw(node: Node): Boolean /* node is JSDocPublicTag */
+external fun isJSDocPublicTagRaw(node: Node): Boolean // node is JSDocPublicTag

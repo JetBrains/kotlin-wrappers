@@ -4,6 +4,5 @@
 
 package typescript
 
-
 @JsName("isFunctionDeclaration")
-external fun isFunctionDeclarationRaw(node: Node): Boolean /* node is FunctionDeclaration */
+external fun isFunctionDeclarationRaw(node: Node): Boolean // node is FunctionDeclaration

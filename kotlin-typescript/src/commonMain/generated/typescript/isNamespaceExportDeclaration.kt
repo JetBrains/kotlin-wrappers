@@ -4,6 +4,5 @@
 
 package typescript
 
-
 @JsName("isNamespaceExportDeclaration")
-external fun isNamespaceExportDeclarationRaw(node: Node): Boolean /* node is NamespaceExportDeclaration */
+external fun isNamespaceExportDeclarationRaw(node: Node): Boolean // node is NamespaceExportDeclaration

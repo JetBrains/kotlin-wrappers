@@ -2,5 +2,12 @@
 
 package typescript
 
-sealed external interface EntityName : Node, EntityNameOrEntityNameExpression, ModuleReference, JSDocNameReferenceName,
-    JSDocMemberNameLeft, JSDocLinkName, JSDocLinkCodeName, JSDocLinkPlainName
+sealed external interface EntityName :
+    Node,
+    EntityNameOrEntityNameExpression,
+    ModuleReference,
+    JSDocNameReferenceName,
+    JSDocMemberNameLeft,
+    JSDocLinkName,
+    JSDocLinkCodeName,
+    JSDocLinkPlainName

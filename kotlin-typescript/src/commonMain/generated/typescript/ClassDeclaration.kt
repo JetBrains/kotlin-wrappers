@@ -2,8 +2,13 @@
 
 package typescript
 
-sealed external interface ClassDeclaration : ClassLikeDeclarationBase, DeclarationStatement, HasDecorators,
-    HasModifiers, ClassStaticBlockDeclarationParent, ClassLikeDeclaration {
+sealed external interface ClassDeclaration :
+    ClassLikeDeclarationBase,
+    DeclarationStatement,
+    HasDecorators,
+    HasModifiers,
+    ClassStaticBlockDeclarationParent,
+    ClassLikeDeclaration {
     override val kind: SyntaxKind.ClassDeclaration
     val modifiers: NodeArray<ModifierLike>?
 

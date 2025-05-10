@@ -4,6 +4,5 @@
 
 package typescript
 
-
 @JsName("isJSDocTypeExpression")
-external fun isJSDocTypeExpressionRaw(node: Node): Boolean /* node is JSDocTypeExpression */
+external fun isJSDocTypeExpressionRaw(node: Node): Boolean // node is JSDocTypeExpression

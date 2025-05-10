@@ -4,6 +4,5 @@
 
 package typescript
 
-
 @JsName("isTypeQueryNode")
-external fun isTypeQueryNodeRaw(node: Node): Boolean /* node is TypeQueryNode */
+external fun isTypeQueryNodeRaw(node: Node): Boolean // node is TypeQueryNode

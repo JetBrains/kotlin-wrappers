@@ -4,6 +4,5 @@
 
 package typescript
 
-
 @JsName("isAutoAccessorPropertyDeclaration")
-external fun isAutoAccessorPropertyDeclarationRaw(node: Node): Boolean /* node is AutoAccessorPropertyDeclaration */
+external fun isAutoAccessorPropertyDeclarationRaw(node: Node): Boolean // node is AutoAccessorPropertyDeclaration

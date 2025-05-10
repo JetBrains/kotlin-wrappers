@@ -2,4 +2,6 @@
 
 package typescript
 
-sealed external interface AdditiveOperatorOrHigher : SyntaxKind, ShiftOperatorOrHigher
+sealed external interface AdditiveOperatorOrHigher :
+    SyntaxKind,
+    ShiftOperatorOrHigher

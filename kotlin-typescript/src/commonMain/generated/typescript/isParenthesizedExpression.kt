@@ -4,6 +4,5 @@
 
 package typescript
 
-
 @JsName("isParenthesizedExpression")
-external fun isParenthesizedExpressionRaw(node: Node): Boolean /* node is ParenthesizedExpression */
+external fun isParenthesizedExpressionRaw(node: Node): Boolean // node is ParenthesizedExpression

@@ -5,4 +5,4 @@
 package typescript
 
 /** The version of the language service API */
-external val servicesVersion: Any? /* should be inferred */
+external val servicesVersion: Any? // should be inferred

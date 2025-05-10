@@ -4,6 +4,5 @@
 
 package typescript
 
-
 @JsName("isHeritageClause")
-external fun isHeritageClauseRaw(node: Node): Boolean /* node is HeritageClause */
+external fun isHeritageClauseRaw(node: Node): Boolean // node is HeritageClause

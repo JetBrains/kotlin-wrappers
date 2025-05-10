@@ -4,6 +4,5 @@
 
 package typescript
 
-
 @JsName("isJSDoc")
-external fun isJSDocRaw(node: Node): Boolean /* node is JSDoc */
+external fun isJSDocRaw(node: Node): Boolean // node is JSDoc

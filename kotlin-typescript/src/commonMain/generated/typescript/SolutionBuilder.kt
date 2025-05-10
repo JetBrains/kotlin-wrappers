@@ -11,6 +11,7 @@ sealed external interface SolutionBuilder<T : BuilderProgram> {
     ): ExitStatus
 
     fun clean(project: String = definedExternally): ExitStatus
+
     fun buildReferences(
         project: String,
         cancellationToken: CancellationToken = definedExternally,
@@ -19,5 +20,6 @@ sealed external interface SolutionBuilder<T : BuilderProgram> {
     ): ExitStatus
 
     fun cleanReferences(project: String = definedExternally): ExitStatus
+
     fun getNextInvalidatedProject(cancellationToken: CancellationToken = definedExternally): InvalidatedProject<T>?
 }

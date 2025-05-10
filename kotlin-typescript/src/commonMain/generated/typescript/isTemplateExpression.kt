@@ -4,6 +4,5 @@
 
 package typescript
 
-
 @JsName("isTemplateExpression")
-external fun isTemplateExpressionRaw(node: Node): Boolean /* node is TemplateExpression */
+external fun isTemplateExpressionRaw(node: Node): Boolean // node is TemplateExpression

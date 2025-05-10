@@ -2,4 +2,6 @@
 
 package typescript
 
-sealed external interface JsxOpeningLikeElement : Node, JsxCallLike
+sealed external interface JsxOpeningLikeElement :
+    Node,
+    JsxCallLike

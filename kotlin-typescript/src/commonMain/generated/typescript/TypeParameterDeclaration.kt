@@ -2,7 +2,11 @@
 
 package typescript
 
-sealed external interface TypeParameterDeclaration : NamedDeclaration, JSDocContainer, HasJSDoc, HasModifiers {
+sealed external interface TypeParameterDeclaration :
+    NamedDeclaration,
+    JSDocContainer,
+    HasJSDoc,
+    HasModifiers {
     override val kind: SyntaxKind.TypeParameter
     override val parent: TypeParameterDeclarationParent
     val modifiers: NodeArray<Modifier>?

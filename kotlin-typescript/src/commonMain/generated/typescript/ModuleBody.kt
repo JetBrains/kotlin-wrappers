@@ -2,4 +2,7 @@
 
 package typescript
 
-sealed external interface ModuleBody : Node, ModuleDeclarationParent, ModuleDeclarationBody
+sealed external interface ModuleBody :
+    Node,
+    ModuleDeclarationParent,
+    ModuleDeclarationBody

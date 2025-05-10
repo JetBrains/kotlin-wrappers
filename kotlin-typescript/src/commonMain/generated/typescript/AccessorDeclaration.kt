@@ -2,5 +2,9 @@
 
 package typescript
 
-sealed external interface AccessorDeclaration : Node, HasJSDoc, SignatureDeclaration, ObjectLiteralElementLike,
+sealed external interface AccessorDeclaration :
+    Node,
+    HasJSDoc,
+    SignatureDeclaration,
+    ObjectLiteralElementLike,
     NodeFactoryReplacePropertyNameTConstraint

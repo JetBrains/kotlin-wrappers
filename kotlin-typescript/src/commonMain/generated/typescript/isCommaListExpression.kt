@@ -4,6 +4,5 @@
 
 package typescript
 
-
 @JsName("isCommaListExpression")
-external fun isCommaListExpressionRaw(node: Node): Boolean /* node is CommaListExpression */
+external fun isCommaListExpressionRaw(node: Node): Boolean // node is CommaListExpression

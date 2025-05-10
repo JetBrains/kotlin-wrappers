@@ -2,4 +2,7 @@
 
 package typescript
 
-sealed external interface StringLiteralLike : Node, DeclarationName, PropertyNameLiteral
+sealed external interface StringLiteralLike :
+    Node,
+    DeclarationName,
+    PropertyNameLiteral

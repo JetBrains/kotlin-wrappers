@@ -4,6 +4,7 @@
 
 package typescript
 
-
 @JsName("isFunctionOrConstructorTypeNode")
-external fun isFunctionOrConstructorTypeNodeRaw(node: Node): Boolean /* node is FunctionTypeNode | ConstructorTypeNode */
+external fun isFunctionOrConstructorTypeNodeRaw(
+    node: Node,
+): Boolean // node is FunctionTypeNode | ConstructorTypeNode

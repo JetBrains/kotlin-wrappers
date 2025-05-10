@@ -2,4 +2,6 @@
 
 package typescript
 
-sealed external interface FunctionBody : Block, ConciseBody
+sealed external interface FunctionBody :
+    Block,
+    ConciseBody

@@ -4,7 +4,9 @@ package typescript
 
 sealed external interface ModuleResolutionHost {
     fun fileExists(fileName: String): Boolean
+
     fun readFile(fileName: String): String?
+
     val trace: ((s: String) -> Unit)?
     val directoryExists: ((directoryName: String) -> Boolean)?
 
@@ -15,5 +17,5 @@ sealed external interface ModuleResolutionHost {
     val realpath: ((path: String) -> String)?
     val getCurrentDirectory: (() -> String)?
     val getDirectories: ((path: String) -> js.array.ReadonlyArray<String>)?
-    var useCaseSensitiveFileNames: Any? /* boolean | (() => boolean) | undefined */
+    var useCaseSensitiveFileNames: Any? // boolean | (() => boolean) | undefined
 }

@@ -4,6 +4,5 @@
 
 package typescript
 
-
 @JsName("isModuleReference")
-external fun isModuleReferenceRaw(node: Node): Boolean /* node is ModuleReference */
+external fun isModuleReferenceRaw(node: Node): Boolean // node is ModuleReference

@@ -2,6 +2,10 @@
 
 package typescript
 
-sealed external interface BigIntLiteral : LiteralExpression, PropertyName, PropertyNameLiteral, LiteralToken {
+sealed external interface BigIntLiteral :
+    LiteralExpression,
+    PropertyName,
+    PropertyNameLiteral,
+    LiteralToken {
     override val kind: SyntaxKind.BigIntLiteral
 }

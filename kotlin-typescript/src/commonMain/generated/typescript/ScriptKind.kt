@@ -4,15 +4,21 @@
 
 package typescript
 
-
 sealed external interface ScriptKind {
     sealed interface Unknown : ScriptKind
+
     sealed interface JS : ScriptKind
+
     sealed interface JSX : ScriptKind
+
     sealed interface TS : ScriptKind
+
     sealed interface TSX : ScriptKind
+
     sealed interface External : ScriptKind
+
     sealed interface JSON : ScriptKind
+
     sealed interface Deferred : ScriptKind
 
     companion object {

@@ -4,4 +4,7 @@
 
 package typescript
 
-external fun getTrailingCommentRanges(text: String, pos: Double): js.array.ReadonlyArray<CommentRange>?
+external fun getTrailingCommentRanges(
+    text: String,
+    pos: Double,
+): js.array.ReadonlyArray<CommentRange>?

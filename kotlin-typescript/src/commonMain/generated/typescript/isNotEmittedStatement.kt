@@ -4,6 +4,5 @@
 
 package typescript
 
-
 @JsName("isNotEmittedStatement")
-external fun isNotEmittedStatementRaw(node: Node): Boolean /* node is NotEmittedStatement */
+external fun isNotEmittedStatementRaw(node: Node): Boolean // node is NotEmittedStatement

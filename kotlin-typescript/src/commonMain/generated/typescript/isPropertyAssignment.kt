@@ -4,6 +4,5 @@
 
 package typescript
 
-
 @JsName("isPropertyAssignment")
-external fun isPropertyAssignmentRaw(node: Node): Boolean /* node is PropertyAssignment */
+external fun isPropertyAssignmentRaw(node: Node): Boolean // node is PropertyAssignment

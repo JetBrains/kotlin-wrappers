@@ -2,7 +2,11 @@
 
 package typescript
 
-sealed external interface ExportSpecifier : NamedDeclaration, JSDocContainer, HasJSDoc, ImportOrExportSpecifier,
+sealed external interface ExportSpecifier :
+    NamedDeclaration,
+    JSDocContainer,
+    HasJSDoc,
+    ImportOrExportSpecifier,
     IsImportOrExportSpecifierResultPredicate {
     override val kind: SyntaxKind.ExportSpecifier
     override val parent: NamedExports

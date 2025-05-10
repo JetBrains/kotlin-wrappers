@@ -2,6 +2,8 @@
 
 package typescript
 
-sealed external interface IterationStatement : Statement, IsIterationStatementResultPredicate {
+sealed external interface IterationStatement :
+    Statement,
+    IsIterationStatementResultPredicate {
     val statement: Statement
 }

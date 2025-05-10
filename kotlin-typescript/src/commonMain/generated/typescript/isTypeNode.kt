@@ -11,4 +11,4 @@ package typescript
  */
 
 @JsName("isTypeNode")
-external fun isTypeNodeRaw(node: Node): Boolean /* node is TypeNode */
+external fun isTypeNodeRaw(node: Node): Boolean // node is TypeNode

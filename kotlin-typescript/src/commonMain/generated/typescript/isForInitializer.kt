@@ -4,6 +4,5 @@
 
 package typescript
 
-
 @JsName("isForInitializer")
-external fun isForInitializerRaw(node: Node): Boolean /* node is ForInitializer */
+external fun isForInitializerRaw(node: Node): Boolean // node is ForInitializer

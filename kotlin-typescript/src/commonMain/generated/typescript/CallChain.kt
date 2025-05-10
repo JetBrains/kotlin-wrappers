@@ -2,6 +2,9 @@
 
 package typescript
 
-sealed external interface CallChain : CallExpression, OptionalChain, IsOptionalChainResultPredicate {
+sealed external interface CallChain :
+    CallExpression,
+    OptionalChain,
+    IsOptionalChainResultPredicate {
     var _optionalChainBrand: Any?
 }

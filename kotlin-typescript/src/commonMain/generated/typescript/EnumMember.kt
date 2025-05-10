@@ -2,7 +2,11 @@
 
 package typescript
 
-sealed external interface EnumMember : NamedDeclaration, JSDocContainer, HasJSDoc, HasExpressionInitializer,
+sealed external interface EnumMember :
+    NamedDeclaration,
+    JSDocContainer,
+    HasJSDoc,
+    HasExpressionInitializer,
     VariableLikeDeclaration {
     override val kind: SyntaxKind.EnumMember
     override val parent: EnumDeclaration

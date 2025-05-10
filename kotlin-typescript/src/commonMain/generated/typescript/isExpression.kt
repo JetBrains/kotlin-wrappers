@@ -9,4 +9,4 @@ package typescript
  */
 
 @JsName("isExpression")
-external fun isExpressionRaw(node: Node): Boolean /* node is Expression */
+external fun isExpressionRaw(node: Node): Boolean // node is Expression

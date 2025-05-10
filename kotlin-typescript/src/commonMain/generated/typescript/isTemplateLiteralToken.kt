@@ -4,6 +4,5 @@
 
 package typescript
 
-
 @JsName("isTemplateLiteralToken")
-external fun isTemplateLiteralTokenRaw(node: Node): Boolean /* node is TemplateLiteralToken */
+external fun isTemplateLiteralTokenRaw(node: Node): Boolean // node is TemplateLiteralToken

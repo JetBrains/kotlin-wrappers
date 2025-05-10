@@ -20,7 +20,6 @@ package typescript
  * @param count An optional value indicating the maximum number of nodes to visit.
  */
 
-
 /**
  * Visits a NodeArray using the supplied visitor, possibly returning a new NodeArray in its place.
  *
@@ -42,4 +41,4 @@ external fun <TIn : Node, TInArray : NodeArray<TIn>?> visitNodes(
     test: (node: Node) -> Boolean = definedExternally,
     start: Double = definedExternally,
     count: Double = definedExternally,
-): Any /* NodeArray<Node> | (TInArray & undefined) */
+): Any // NodeArray<Node> | (TInArray & undefined)

@@ -2,7 +2,11 @@
 
 package typescript
 
-sealed external interface MappedTypeNode : TypeNode, Declaration, LocalsContainer, HasType {
+sealed external interface MappedTypeNode :
+    TypeNode,
+    Declaration,
+    LocalsContainer,
+    HasType {
     override val kind: SyntaxKind.MappedType
     val readonlyToken: (MappedTypeNodeReadonlyToken)?
     val typeParameter: TypeParameterDeclaration

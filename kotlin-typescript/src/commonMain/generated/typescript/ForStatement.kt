@@ -2,7 +2,12 @@
 
 package typescript
 
-sealed external interface ForStatement : IterationStatement, LocalsContainer, FlowContainer, HasJSDoc, HasInitializer,
+sealed external interface ForStatement :
+    IterationStatement,
+    LocalsContainer,
+    FlowContainer,
+    HasJSDoc,
+    HasInitializer,
     VariableDeclarationListParent {
     override val kind: SyntaxKind.ForStatement
     val initializer: ForInitializer?

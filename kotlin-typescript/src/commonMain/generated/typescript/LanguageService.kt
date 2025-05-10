@@ -59,23 +59,34 @@ sealed external interface LanguageService {
     fun getCompilerOptionsDiagnostics(): js.array.ReadonlyArray<Diagnostic>
 
     /** @deprecated Use getEncodedSyntacticClassifications instead. */
-    fun getSyntacticClassifications(fileName: String, span: TextSpan): js.array.ReadonlyArray<ClassifiedSpan>
+    fun getSyntacticClassifications(
+        fileName: String,
+        span: TextSpan,
+    ): js.array.ReadonlyArray<ClassifiedSpan>
+
     fun getSyntacticClassifications(
         fileName: String,
         span: TextSpan,
         format: SemanticClassificationFormat,
-    ): Any /* ClassifiedSpan[] | ClassifiedSpan2020[] */
+    ): Any // ClassifiedSpan[] | ClassifiedSpan2020[]
 
     /** @deprecated Use getEncodedSemanticClassifications instead. */
-    fun getSemanticClassifications(fileName: String, span: TextSpan): js.array.ReadonlyArray<ClassifiedSpan>
+    fun getSemanticClassifications(
+        fileName: String,
+        span: TextSpan,
+    ): js.array.ReadonlyArray<ClassifiedSpan>
+
     fun getSemanticClassifications(
         fileName: String,
         span: TextSpan,
         format: SemanticClassificationFormat,
-    ): Any /* ClassifiedSpan[] | ClassifiedSpan2020[] */
+    ): Any // ClassifiedSpan[] | ClassifiedSpan2020[]
 
     /** Encoded as triples of [start, length, ClassificationType]. */
-    fun getEncodedSyntacticClassifications(fileName: String, span: TextSpan): Classifications
+    fun getEncodedSyntacticClassifications(
+        fileName: String,
+        span: TextSpan,
+    ): Classifications
 
     /**
      * Gets semantic highlights information for a particular file. Has two formats, an older
@@ -150,7 +161,12 @@ sealed external interface LanguageService {
         data: CompletionEntryData?,
     ): CompletionEntryDetails?
 
-    fun getCompletionEntrySymbol(fileName: String, position: Double, name: String, source: String?): Symbol?
+    fun getCompletionEntrySymbol(
+        fileName: String,
+        position: Double,
+        name: String,
+        source: String?,
+    ): Symbol?
 
     /**
      * Gets semantic information about the identifier at a particular position in a
@@ -159,19 +175,41 @@ sealed external interface LanguageService {
      * @param fileName The path to the file
      * @param position A zero-based index of the character where you want the quick info
      */
-    fun getQuickInfoAtPosition(fileName: String, position: Double): QuickInfo?
-    fun getNameOrDottedNameSpan(fileName: String, startPos: Double, endPos: Double): TextSpan?
-    fun getBreakpointStatementAtPosition(fileName: String, position: Double): TextSpan?
+    fun getQuickInfoAtPosition(
+        fileName: String,
+        position: Double,
+    ): QuickInfo?
+
+    fun getNameOrDottedNameSpan(
+        fileName: String,
+        startPos: Double,
+        endPos: Double,
+    ): TextSpan?
+
+    fun getBreakpointStatementAtPosition(
+        fileName: String,
+        position: Double,
+    ): TextSpan?
+
     fun getSignatureHelpItems(
         fileName: String,
         position: Double,
         options: SignatureHelpItemsOptions?,
     ): SignatureHelpItems?
 
-    fun getRenameInfo(fileName: String, position: Double, preferences: UserPreferences): RenameInfo
+    fun getRenameInfo(
+        fileName: String,
+        position: Double,
+        preferences: UserPreferences,
+    ): RenameInfo
 
     /** @deprecated Use the signature with `UserPreferences` instead. */
-    fun getRenameInfo(fileName: String, position: Double, options: RenameInfoOptions = definedExternally): RenameInfo
+    fun getRenameInfo(
+        fileName: String,
+        position: Double,
+        options: RenameInfoOptions = definedExternally,
+    ): RenameInfo
+
     fun findRenameLocations(
         fileName: String,
         position: Double,
@@ -189,17 +227,41 @@ sealed external interface LanguageService {
         providePrefixAndSuffixTextForRename: Boolean = definedExternally,
     ): (js.array.ReadonlyArray<RenameLocation>)?
 
-    fun getSmartSelectionRange(fileName: String, position: Double): SelectionRange
-    fun getDefinitionAtPosition(fileName: String, position: Double): (js.array.ReadonlyArray<DefinitionInfo>)?
-    fun getDefinitionAndBoundSpan(fileName: String, position: Double): DefinitionInfoAndBoundSpan?
-    fun getTypeDefinitionAtPosition(fileName: String, position: Double): (js.array.ReadonlyArray<DefinitionInfo>)?
+    fun getSmartSelectionRange(
+        fileName: String,
+        position: Double,
+    ): SelectionRange
+
+    fun getDefinitionAtPosition(
+        fileName: String,
+        position: Double,
+    ): (js.array.ReadonlyArray<DefinitionInfo>)?
+
+    fun getDefinitionAndBoundSpan(
+        fileName: String,
+        position: Double,
+    ): DefinitionInfoAndBoundSpan?
+
+    fun getTypeDefinitionAtPosition(
+        fileName: String,
+        position: Double,
+    ): (js.array.ReadonlyArray<DefinitionInfo>)?
+
     fun getImplementationAtPosition(
         fileName: String,
         position: Double,
     ): (js.array.ReadonlyArray<ImplementationLocation>)?
 
-    fun getReferencesAtPosition(fileName: String, position: Double): js.array.ReadonlyArray<ReferenceEntry>?
-    fun findReferences(fileName: String, position: Double): js.array.ReadonlyArray<ReferencedSymbol>?
+    fun getReferencesAtPosition(
+        fileName: String,
+        position: Double,
+    ): js.array.ReadonlyArray<ReferenceEntry>?
+
+    fun findReferences(
+        fileName: String,
+        position: Double,
+    ): js.array.ReadonlyArray<ReferencedSymbol>?
+
     fun getDocumentHighlights(
         fileName: String,
         position: Double,
@@ -207,6 +269,7 @@ sealed external interface LanguageService {
     ): js.array.ReadonlyArray<DocumentHighlights>?
 
     fun getFileReferences(fileName: String): js.array.ReadonlyArray<ReferenceEntry>
+
     fun getNavigateToItems(
         searchValue: String,
         maxResultCount: Double = definedExternally,
@@ -216,11 +279,13 @@ sealed external interface LanguageService {
     ): js.array.ReadonlyArray<NavigateToItem>
 
     fun getNavigationBarItems(fileName: String): js.array.ReadonlyArray<NavigationBarItem>
+
     fun getNavigationTree(fileName: String): NavigationTree
+
     fun prepareCallHierarchy(
         fileName: String,
         position: Double,
-    ): Any? /* CallHierarchyItem | CallHierarchyItem[] | undefined */
+    ): Any? // CallHierarchyItem | CallHierarchyItem[] | undefined
 
     fun provideCallHierarchyIncomingCalls(
         fileName: String,
@@ -239,15 +304,29 @@ sealed external interface LanguageService {
     ): js.array.ReadonlyArray<InlayHint>
 
     fun getOutliningSpans(fileName: String): js.array.ReadonlyArray<OutliningSpan>
+
     fun getTodoComments(
         fileName: String,
         descriptors: js.array.ReadonlyArray<TodoCommentDescriptor>,
     ): js.array.ReadonlyArray<TodoComment>
 
-    fun getBraceMatchingAtPosition(fileName: String, position: Double): js.array.ReadonlyArray<TextSpan>
-    fun getIndentationAtPosition(fileName: String, position: Double, options: EditorOptions): Double
+    fun getBraceMatchingAtPosition(
+        fileName: String,
+        position: Double,
+    ): js.array.ReadonlyArray<TextSpan>
 
-    fun getIndentationAtPosition(fileName: String, position: Double, options: EditorSettings): Double
+    fun getIndentationAtPosition(
+        fileName: String,
+        position: Double,
+        options: EditorOptions,
+    ): Double
+
+    fun getIndentationAtPosition(
+        fileName: String,
+        position: Double,
+        options: EditorSettings,
+    ): Double
+
     fun getFormattingEditsForRange(
         fileName: String,
         start: Double,
@@ -262,9 +341,16 @@ sealed external interface LanguageService {
         options: FormatCodeSettings,
     ): js.array.ReadonlyArray<TextChange>
 
-    fun getFormattingEditsForDocument(fileName: String, options: FormatCodeOptions): js.array.ReadonlyArray<TextChange>
+    fun getFormattingEditsForDocument(
+        fileName: String,
+        options: FormatCodeOptions,
+    ): js.array.ReadonlyArray<TextChange>
 
-    fun getFormattingEditsForDocument(fileName: String, options: FormatCodeSettings): js.array.ReadonlyArray<TextChange>
+    fun getFormattingEditsForDocument(
+        fileName: String,
+        options: FormatCodeSettings,
+    ): js.array.ReadonlyArray<TextChange>
+
     fun getFormattingEditsAfterKeystroke(
         fileName: String,
         position: Double,
@@ -286,16 +372,34 @@ sealed external interface LanguageService {
         formatOptions: FormatCodeSettings = definedExternally,
     ): TextInsertion?
 
-    fun isValidBraceCompletionAtPosition(fileName: String, position: Double, openingBrace: Double): Boolean
+    fun isValidBraceCompletionAtPosition(
+        fileName: String,
+        position: Double,
+        openingBrace: Double,
+    ): Boolean
 
     /**
      * This will return a defined result if the position is after the `>` of the opening tag, or somewhere in the text, of a JSXElement with no closing tag.
      * Editors should call this after `>` is typed.
      */
-    fun getJsxClosingTagAtPosition(fileName: String, position: Double): JsxClosingTagInfo?
-    fun getLinkedEditingRangeAtPosition(fileName: String, position: Double): LinkedEditingInfo?
-    fun getSpanOfEnclosingComment(fileName: String, position: Double, onlyMultiLine: Boolean): TextSpan?
+    fun getJsxClosingTagAtPosition(
+        fileName: String,
+        position: Double,
+    ): JsxClosingTagInfo?
+
+    fun getLinkedEditingRangeAtPosition(
+        fileName: String,
+        position: Double,
+    ): LinkedEditingInfo?
+
+    fun getSpanOfEnclosingComment(
+        fileName: String,
+        position: Double,
+        onlyMultiLine: Boolean,
+    ): TextSpan?
+
     val toLineColumnOffset: ((fileName: String, position: Double) -> LineAndCharacter)?
+
     fun getCodeFixesAtPosition(
         fileName: String,
         start: Double,
@@ -323,7 +427,10 @@ sealed external interface LanguageService {
     ): Promise<js.array.ReadonlyArray<ApplyCodeActionCommandResult>>
 
     /** @deprecated `fileName` will be ignored */
-    fun applyCodeActionCommand(fileName: String, action: CodeActionCommand): Promise<ApplyCodeActionCommandResult>
+    fun applyCodeActionCommand(
+        fileName: String,
+        action: CodeActionCommand,
+    ): Promise<ApplyCodeActionCommandResult>
 
     /** @deprecated `fileName` will be ignored */
     fun applyCodeActionCommand(
@@ -418,12 +525,38 @@ sealed external interface LanguageService {
     ): EmitOutput
 
     fun getProgram(): Program?
-    fun toggleLineComment(fileName: String, textRange: TextRange): js.array.ReadonlyArray<TextChange>
-    fun toggleMultilineComment(fileName: String, textRange: TextRange): js.array.ReadonlyArray<TextChange>
-    fun commentSelection(fileName: String, textRange: TextRange): js.array.ReadonlyArray<TextChange>
-    fun uncommentSelection(fileName: String, textRange: TextRange): js.array.ReadonlyArray<TextChange>
+
+    fun toggleLineComment(
+        fileName: String,
+        textRange: TextRange,
+    ): js.array.ReadonlyArray<TextChange>
+
+    fun toggleMultilineComment(
+        fileName: String,
+        textRange: TextRange,
+    ): js.array.ReadonlyArray<TextChange>
+
+    fun commentSelection(
+        fileName: String,
+        textRange: TextRange,
+    ): js.array.ReadonlyArray<TextChange>
+
+    fun uncommentSelection(
+        fileName: String,
+        textRange: TextRange,
+    ): js.array.ReadonlyArray<TextChange>
+
     fun getSupportedCodeFixes(fileName: String = definedExternally): js.array.ReadonlyArray<String>
+
     fun dispose()
-    fun preparePasteEditsForFile(fileName: String, copiedTextRanges: js.array.ReadonlyArray<TextRange>): Boolean
-    fun getPasteEdits(args: PasteEditsArgs, formatOptions: FormatCodeSettings): PasteEdits
+
+    fun preparePasteEditsForFile(
+        fileName: String,
+        copiedTextRanges: js.array.ReadonlyArray<TextRange>,
+    ): Boolean
+
+    fun getPasteEdits(
+        args: PasteEditsArgs,
+        formatOptions: FormatCodeSettings,
+    ): PasteEdits
 }

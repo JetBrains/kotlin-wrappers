@@ -4,6 +4,5 @@
 
 package typescript
 
-
 @JsName("isImportSpecifier")
-external fun isImportSpecifierRaw(node: Node): Boolean /* node is ImportSpecifier */
+external fun isImportSpecifierRaw(node: Node): Boolean // node is ImportSpecifier

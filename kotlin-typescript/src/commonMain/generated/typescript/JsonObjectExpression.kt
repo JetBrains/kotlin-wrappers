@@ -2,4 +2,6 @@
 
 package typescript
 
-sealed external interface JsonObjectExpression : Node, Expression
+sealed external interface JsonObjectExpression :
+    Node,
+    Expression

@@ -2,6 +2,9 @@
 
 package typescript
 
-sealed external interface OmittedExpression : Expression, ArrayBindingElement, BindingOrAssignmentElementTarget {
+sealed external interface OmittedExpression :
+    Expression,
+    ArrayBindingElement,
+    BindingOrAssignmentElementTarget {
     override val kind: SyntaxKind.OmittedExpression
 }

@@ -4,6 +4,5 @@
 
 package typescript
 
-
 @JsName("isTemplateHead")
-external fun isTemplateHeadRaw(node: Node): Boolean /* node is TemplateHead */
+external fun isTemplateHeadRaw(node: Node): Boolean // node is TemplateHead

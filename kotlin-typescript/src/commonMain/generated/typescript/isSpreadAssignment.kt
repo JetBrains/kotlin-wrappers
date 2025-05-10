@@ -4,6 +4,5 @@
 
 package typescript
 
-
 @JsName("isSpreadAssignment")
-external fun isSpreadAssignmentRaw(node: Node): Boolean /* node is SpreadAssignment */
+external fun isSpreadAssignmentRaw(node: Node): Boolean // node is SpreadAssignment

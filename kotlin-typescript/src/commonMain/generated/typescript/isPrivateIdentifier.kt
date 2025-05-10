@@ -4,6 +4,5 @@
 
 package typescript
 
-
 @JsName("isPrivateIdentifier")
-external fun isPrivateIdentifierRaw(node: Node): Boolean /* node is PrivateIdentifier */
+external fun isPrivateIdentifierRaw(node: Node): Boolean // node is PrivateIdentifier

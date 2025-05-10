@@ -2,8 +2,14 @@
 
 package typescript
 
-sealed external interface BindingElement : NamedDeclaration, FlowContainer, HasExpressionInitializer,
-    VariableLikeDeclaration, ObjectBindingPatternParent, ArrayBindingPatternParent, ArrayBindingElement,
+sealed external interface BindingElement :
+    NamedDeclaration,
+    FlowContainer,
+    HasExpressionInitializer,
+    VariableLikeDeclaration,
+    ObjectBindingPatternParent,
+    ArrayBindingPatternParent,
+    ArrayBindingElement,
     ObjectBindingOrAssignmentElement {
     override val kind: SyntaxKind.BindingElement
     override val parent: BindingPattern

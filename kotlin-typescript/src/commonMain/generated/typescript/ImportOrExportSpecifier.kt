@@ -2,4 +2,6 @@
 
 package typescript
 
-sealed external interface ImportOrExportSpecifier : Node, TypeOnlyCompatibleAliasDeclaration
+sealed external interface ImportOrExportSpecifier :
+    Node,
+    TypeOnlyCompatibleAliasDeclaration

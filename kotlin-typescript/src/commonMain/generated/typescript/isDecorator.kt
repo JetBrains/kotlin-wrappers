@@ -4,6 +4,5 @@
 
 package typescript
 
-
 @JsName("isDecorator")
-external fun isDecoratorRaw(node: Node): Boolean /* node is Decorator */
+external fun isDecoratorRaw(node: Node): Boolean // node is Decorator

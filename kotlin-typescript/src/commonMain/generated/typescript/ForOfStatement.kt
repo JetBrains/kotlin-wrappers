@@ -2,8 +2,14 @@
 
 package typescript
 
-sealed external interface ForOfStatement : IterationStatement, LocalsContainer, FlowContainer, HasJSDoc, HasInitializer,
-    VariableDeclarationListParent, ForInOrOfStatement {
+sealed external interface ForOfStatement :
+    IterationStatement,
+    LocalsContainer,
+    FlowContainer,
+    HasJSDoc,
+    HasInitializer,
+    VariableDeclarationListParent,
+    ForInOrOfStatement {
     override val kind: SyntaxKind.ForOfStatement
     val awaitModifier: AwaitKeyword?
     val initializer: ForInitializer

@@ -4,6 +4,5 @@
 
 package typescript
 
-
 @JsName("isJSDocUnknownType")
-external fun isJSDocUnknownTypeRaw(node: Node): Boolean /* node is JSDocUnknownType */
+external fun isJSDocUnknownTypeRaw(node: Node): Boolean // node is JSDocUnknownType

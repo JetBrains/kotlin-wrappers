@@ -2,4 +2,6 @@
 
 package typescript
 
-sealed external interface BindingName : Node, DeclarationName
+sealed external interface BindingName :
+    Node,
+    DeclarationName

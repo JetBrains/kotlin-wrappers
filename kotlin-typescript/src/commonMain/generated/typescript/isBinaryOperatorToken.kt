@@ -4,6 +4,5 @@
 
 package typescript
 
-
 @JsName("isBinaryOperatorToken")
-external fun isBinaryOperatorTokenRaw(node: Node): Boolean /* node is BinaryOperatorToken */
+external fun isBinaryOperatorTokenRaw(node: Node): Boolean // node is BinaryOperatorToken

@@ -12,5 +12,8 @@ sealed external interface MapLike<T> {
     operator fun get(key: String): T?
 
     @seskar.js.JsNativeSetter
-    operator fun set(key: String, value: T?)
+    operator fun set(
+        key: String,
+        value: T?,
+    )
 }

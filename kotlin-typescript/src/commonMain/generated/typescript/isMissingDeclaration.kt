@@ -4,6 +4,5 @@
 
 package typescript
 
-
 @JsName("isMissingDeclaration")
-external fun isMissingDeclarationRaw(node: Node): Boolean /* node is MissingDeclaration */
+external fun isMissingDeclarationRaw(node: Node): Boolean // node is MissingDeclaration

@@ -14,5 +14,8 @@ sealed external interface WatchOptions {
     operator fun get(key: String): CompilerOptionsValue
 
     @seskar.js.JsNativeSetter
-    operator fun set(key: String, value: CompilerOptionsValue)
+    operator fun set(
+        key: String,
+        value: CompilerOptionsValue,
+    )
 }

@@ -4,6 +4,5 @@
 
 package typescript
 
-
 @JsName("isPrefixUnaryExpression")
-external fun isPrefixUnaryExpressionRaw(node: Node): Boolean /* node is PrefixUnaryExpression */
+external fun isPrefixUnaryExpressionRaw(node: Node): Boolean // node is PrefixUnaryExpression

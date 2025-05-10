@@ -4,9 +4,8 @@
 
 package typescript
 
-
 @JsName("isIterationStatement")
 external fun isIterationStatementRaw(
     node: Node,
     lookInLabeledStatements: Boolean,
-): Boolean /* node is IterationStatement | LabeledStatement */
+): Boolean // node is IterationStatement | LabeledStatement

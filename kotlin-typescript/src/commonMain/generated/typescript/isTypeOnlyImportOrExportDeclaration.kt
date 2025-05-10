@@ -4,6 +4,5 @@
 
 package typescript
 
-
 @JsName("isTypeOnlyImportOrExportDeclaration")
-external fun isTypeOnlyImportOrExportDeclarationRaw(node: Node): Boolean /* node is TypeOnlyAliasDeclaration */
+external fun isTypeOnlyImportOrExportDeclarationRaw(node: Node): Boolean // node is TypeOnlyAliasDeclaration

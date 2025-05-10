@@ -4,6 +4,5 @@
 
 package typescript
 
-
 @JsName("isBindingElement")
-external fun isBindingElementRaw(node: Node): Boolean /* node is BindingElement */
+external fun isBindingElementRaw(node: Node): Boolean // node is BindingElement

@@ -4,6 +4,5 @@
 
 package typescript
 
-
 @JsName("isUnionTypeNode")
-external fun isUnionTypeNodeRaw(node: Node): Boolean /* node is UnionTypeNode */
+external fun isUnionTypeNodeRaw(node: Node): Boolean // node is UnionTypeNode

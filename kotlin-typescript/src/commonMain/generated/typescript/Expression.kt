@@ -2,6 +2,9 @@
 
 package typescript
 
-sealed external interface Expression : Node, ConciseBody, ForInitializer {
+sealed external interface Expression :
+    Node,
+    ConciseBody,
+    ForInitializer {
     var _expressionBrand: Any?
 }

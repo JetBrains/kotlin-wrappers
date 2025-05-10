@@ -4,4 +4,7 @@
 
 package typescript
 
-external fun transpileDeclaration(input: String, transpileOptions: TranspileOptions): TranspileOutput
+external fun transpileDeclaration(
+    input: String,
+    transpileOptions: TranspileOptions,
+): TranspileOutput

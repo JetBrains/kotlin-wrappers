@@ -4,6 +4,5 @@
 
 package typescript
 
-
 @JsName("isNamespaceExport")
-external fun isNamespaceExportRaw(node: Node): Boolean /* node is NamespaceExport */
+external fun isNamespaceExportRaw(node: Node): Boolean // node is NamespaceExport

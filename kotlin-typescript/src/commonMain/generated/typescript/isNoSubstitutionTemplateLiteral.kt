@@ -4,6 +4,5 @@
 
 package typescript
 
-
 @JsName("isNoSubstitutionTemplateLiteral")
-external fun isNoSubstitutionTemplateLiteralRaw(node: Node): Boolean /* node is NoSubstitutionTemplateLiteral */
+external fun isNoSubstitutionTemplateLiteralRaw(node: Node): Boolean // node is NoSubstitutionTemplateLiteral

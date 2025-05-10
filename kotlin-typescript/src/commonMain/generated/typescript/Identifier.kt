@@ -2,12 +2,33 @@
 
 package typescript
 
-sealed external interface Identifier : PrimaryExpression, Declaration, JSDocContainer, FlowContainer, HasJSDoc,
-    EntityName, PropertyName, MemberName, DeclarationStatementName, BindingName, TypePredicateNodeParameterName,
-    PropertyNameLiteral, BindingOrAssignmentElementTarget, EntityNameExpression, JsxAttributeName, JsxTagNameExpression,
-    JsxTagNamePropertyAccessExpression, ModuleName, JSDocNamespaceBody, ImportAttributeName, ModuleExportName,
-    JSDocAugmentsTagClassExpression, JSDocImplementsTagClassExpression, JSDocTypedefTagFullName,
-    JSDocCallbackTagFullName, IsIdentifierOrThisTypeNodeResultPredicate {
+sealed external interface Identifier :
+    PrimaryExpression,
+    Declaration,
+    JSDocContainer,
+    FlowContainer,
+    HasJSDoc,
+    EntityName,
+    PropertyName,
+    MemberName,
+    DeclarationStatementName,
+    BindingName,
+    TypePredicateNodeParameterName,
+    PropertyNameLiteral,
+    BindingOrAssignmentElementTarget,
+    EntityNameExpression,
+    JsxAttributeName,
+    JsxTagNameExpression,
+    JsxTagNamePropertyAccessExpression,
+    ModuleName,
+    JSDocNamespaceBody,
+    ImportAttributeName,
+    ModuleExportName,
+    JSDocAugmentsTagClassExpression,
+    JSDocImplementsTagClassExpression,
+    JSDocTypedefTagFullName,
+    JSDocCallbackTagFullName,
+    IsIdentifierOrThisTypeNodeResultPredicate {
     override val kind: SyntaxKind.Identifier
 
     /**

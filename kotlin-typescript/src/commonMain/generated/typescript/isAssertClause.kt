@@ -7,4 +7,4 @@ package typescript
 /** @deprecated */
 
 @JsName("isAssertClause")
-external fun isAssertClauseRaw(node: Node): Boolean /* node is AssertClause */
+external fun isAssertClauseRaw(node: Node): Boolean // node is AssertClause

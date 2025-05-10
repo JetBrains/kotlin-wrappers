@@ -4,6 +4,5 @@
 
 package typescript
 
-
 @JsName("isImportClause")
-external fun isImportClauseRaw(node: Node): Boolean /* node is ImportClause */
+external fun isImportClauseRaw(node: Node): Boolean // node is ImportClause

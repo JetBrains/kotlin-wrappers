@@ -2,7 +2,10 @@
 
 package typescript
 
-sealed external interface TryStatement : Statement, FlowContainer, HasJSDoc {
+sealed external interface TryStatement :
+    Statement,
+    FlowContainer,
+    HasJSDoc {
     override val kind: SyntaxKind.TryStatement
     val tryBlock: Block
     val catchClause: CatchClause?

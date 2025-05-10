@@ -4,6 +4,5 @@
 
 package typescript
 
-
 @JsName("isEmptyStatement")
-external fun isEmptyStatementRaw(node: Node): Boolean /* node is EmptyStatement */
+external fun isEmptyStatementRaw(node: Node): Boolean // node is EmptyStatement

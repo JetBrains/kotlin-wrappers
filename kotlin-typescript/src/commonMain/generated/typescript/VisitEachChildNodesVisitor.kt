@@ -10,7 +10,7 @@ sealed external interface VisitEachChildNodesVisitor {
         test: (node: Node) -> Boolean, /* node is TOut */
         start: Double? = definedExternally,
         count: Double? = definedExternally,
-    ): Any /* NodeArray<TOut> | (TInArray & undefined) */
+    ): Any // NodeArray<TOut> | (TInArray & undefined)
 
     @seskar.js.JsNativeInvoke
     operator fun <TIn : Node, TInArray : NodeArray<TIn>?> invoke(
@@ -19,5 +19,5 @@ sealed external interface VisitEachChildNodesVisitor {
         test: ((node: Node) -> Boolean)? = definedExternally,
         start: Double? = definedExternally,
         count: Double? = definedExternally,
-    ): Any /* NodeArray<Node> | (TInArray & undefined) */
+    ): Any // NodeArray<Node> | (TInArray & undefined)
 }

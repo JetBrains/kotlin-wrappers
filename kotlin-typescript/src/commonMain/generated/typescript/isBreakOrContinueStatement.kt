@@ -4,6 +4,5 @@
 
 package typescript
 
-
 @JsName("isBreakOrContinueStatement")
-external fun isBreakOrContinueStatementRaw(node: Node): Boolean /* node is BreakOrContinueStatement */
+external fun isBreakOrContinueStatementRaw(node: Node): Boolean // node is BreakOrContinueStatement

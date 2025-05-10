@@ -2,7 +2,10 @@
 
 package typescript
 
-sealed external interface TypeReferenceNode : NodeWithTypeArguments, TypeReferenceType, TypeReferenceNodeField {
+sealed external interface TypeReferenceNode :
+    NodeWithTypeArguments,
+    TypeReferenceType,
+    TypeReferenceNodeField {
     override val kind: SyntaxKind.TypeReference
     val typeName: EntityName
 }

@@ -7,5 +7,6 @@ package typescript
  */
 sealed external interface MinimalResolutionCacheHost : ModuleResolutionHost {
     fun getCompilationSettings(): CompilerOptions
+
     val getCompilerHost: (() -> CompilerHost?)?
 }

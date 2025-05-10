@@ -8,13 +8,25 @@ sealed external interface NodeFactory {
         hasTrailingComma: Boolean = definedExternally,
     ): NodeArray<T>
 
-    fun createNumericLiteral(value: String, numericLiteralFlags: TokenFlags = definedExternally): NumericLiteral
+    fun createNumericLiteral(
+        value: String,
+        numericLiteralFlags: TokenFlags = definedExternally,
+    ): NumericLiteral
 
-    fun createNumericLiteral(value: Double, numericLiteralFlags: TokenFlags = definedExternally): NumericLiteral
+    fun createNumericLiteral(
+        value: Double,
+        numericLiteralFlags: TokenFlags = definedExternally,
+    ): NumericLiteral
+
     fun createBigIntLiteral(value: String): BigIntLiteral
 
     fun createBigIntLiteral(value: PseudoBigInt): BigIntLiteral
-    fun createStringLiteral(text: String, isSingleQuote: Boolean = definedExternally): StringLiteral
+
+    fun createStringLiteral(
+        text: String,
+        isSingleQuote: Boolean = definedExternally,
+    ): StringLiteral
+
     fun createStringLiteralFromNode(
         sourceNode: PropertyNameLiteral,
         isSingleQuote: Boolean = definedExternally,
@@ -26,6 +38,7 @@ sealed external interface NodeFactory {
     ): StringLiteral
 
     fun createRegularExpressionLiteral(text: String): RegularExpressionLiteral
+
     fun createIdentifier(text: String): Identifier
 
     /**
@@ -51,37 +64,82 @@ sealed external interface NodeFactory {
     fun createLoopVariable(reservedInNestedScopes: Boolean = definedExternally): Identifier
 
     /** Create a unique name based on the supplied text. */
-    fun createUniqueName(text: String, flags: GeneratedIdentifierFlags = definedExternally): Identifier
+    fun createUniqueName(
+        text: String,
+        flags: GeneratedIdentifierFlags = definedExternally,
+    ): Identifier
 
     /** Create a unique name generated for a node. */
-    fun getGeneratedNameForNode(node: Node?, flags: GeneratedIdentifierFlags = definedExternally): Identifier
-    fun createPrivateIdentifier(text: String): PrivateIdentifier
-    fun createUniquePrivateName(text: String = definedExternally): PrivateIdentifier
-    fun getGeneratedPrivateNameForNode(node: Node): PrivateIdentifier
-    fun createToken(token: SyntaxKind.SuperKeyword): SuperExpression
-    fun createToken(token: SyntaxKind.ThisKeyword): ThisExpression
-    fun createToken(token: SyntaxKind.NullKeyword): NullLiteral
-    fun createToken(token: SyntaxKind.TrueKeyword): TrueLiteral
-    fun createToken(token: SyntaxKind.FalseKeyword): FalseLiteral
-    fun createToken(token: SyntaxKind.EndOfFileToken): EndOfFileToken
-    fun createToken(token: SyntaxKind.Unknown): Token<SyntaxKind.Unknown>
-    fun <TKind : PunctuationSyntaxKind> createToken(token: TKind): PunctuationToken<TKind>
-    fun <TKind : KeywordTypeSyntaxKind> createToken(token: TKind): KeywordTypeNode<TKind>
-    fun <TKind : ModifierSyntaxKind> createToken(token: TKind): ModifierToken<TKind>
-    fun <TKind : KeywordSyntaxKind> createToken(token: TKind): KeywordToken<TKind>
-    fun createSuper(): SuperExpression
-    fun createThis(): ThisExpression
-    fun createNull(): NullLiteral
-    fun createTrue(): TrueLiteral
-    fun createFalse(): FalseLiteral
-    fun <T : ModifierSyntaxKind> createModifier(kind: T): ModifierToken<T>
-    fun createModifiersFromModifierFlags(flags: ModifierFlags): js.array.ReadonlyArray<Modifier>?
-    fun createQualifiedName(left: EntityName, right: String): QualifiedName
+    fun getGeneratedNameForNode(
+        node: Node?,
+        flags: GeneratedIdentifierFlags = definedExternally,
+    ): Identifier
 
-    fun createQualifiedName(left: EntityName, right: Identifier): QualifiedName
-    fun updateQualifiedName(node: QualifiedName, left: EntityName, right: Identifier): QualifiedName
+    fun createPrivateIdentifier(text: String): PrivateIdentifier
+
+    fun createUniquePrivateName(text: String = definedExternally): PrivateIdentifier
+
+    fun getGeneratedPrivateNameForNode(node: Node): PrivateIdentifier
+
+    fun createToken(token: SyntaxKind.SuperKeyword): SuperExpression
+
+    fun createToken(token: SyntaxKind.ThisKeyword): ThisExpression
+
+    fun createToken(token: SyntaxKind.NullKeyword): NullLiteral
+
+    fun createToken(token: SyntaxKind.TrueKeyword): TrueLiteral
+
+    fun createToken(token: SyntaxKind.FalseKeyword): FalseLiteral
+
+    fun createToken(token: SyntaxKind.EndOfFileToken): EndOfFileToken
+
+    fun createToken(token: SyntaxKind.Unknown): Token<SyntaxKind.Unknown>
+
+    fun <TKind : PunctuationSyntaxKind> createToken(token: TKind): PunctuationToken<TKind>
+
+    fun <TKind : KeywordTypeSyntaxKind> createToken(token: TKind): KeywordTypeNode<TKind>
+
+    fun <TKind : ModifierSyntaxKind> createToken(token: TKind): ModifierToken<TKind>
+
+    fun <TKind : KeywordSyntaxKind> createToken(token: TKind): KeywordToken<TKind>
+
+    fun createSuper(): SuperExpression
+
+    fun createThis(): ThisExpression
+
+    fun createNull(): NullLiteral
+
+    fun createTrue(): TrueLiteral
+
+    fun createFalse(): FalseLiteral
+
+    fun <T : ModifierSyntaxKind> createModifier(kind: T): ModifierToken<T>
+
+    fun createModifiersFromModifierFlags(flags: ModifierFlags): js.array.ReadonlyArray<Modifier>?
+
+    fun createQualifiedName(
+        left: EntityName,
+        right: String,
+    ): QualifiedName
+
+    fun createQualifiedName(
+        left: EntityName,
+        right: Identifier,
+    ): QualifiedName
+
+    fun updateQualifiedName(
+        node: QualifiedName,
+        left: EntityName,
+        right: Identifier,
+    ): QualifiedName
+
     fun createComputedPropertyName(expression: Expression): ComputedPropertyName
-    fun updateComputedPropertyName(node: ComputedPropertyName, expression: Expression): ComputedPropertyName
+
+    fun updateComputedPropertyName(
+        node: ComputedPropertyName,
+        expression: Expression,
+    ): ComputedPropertyName
+
     fun createTypeParameterDeclaration(
         modifiers: (js.array.ReadonlyArray<Modifier>)?,
         name: String,
@@ -143,7 +201,12 @@ sealed external interface NodeFactory {
     ): ParameterDeclaration
 
     fun createDecorator(expression: Expression): Decorator
-    fun updateDecorator(node: Decorator, expression: Expression): Decorator
+
+    fun updateDecorator(
+        node: Decorator,
+        expression: Expression,
+    ): Decorator
+
     fun createPropertySignature(
         modifiers: (js.array.ReadonlyArray<Modifier>)?,
         name: PropertyName,
@@ -395,9 +458,16 @@ sealed external interface NodeFactory {
         type: TypeNode,
     ): IndexSignatureDeclaration
 
-    fun createTemplateLiteralTypeSpan(type: TypeNode, literal: TemplateMiddle): TemplateLiteralTypeSpan
+    fun createTemplateLiteralTypeSpan(
+        type: TypeNode,
+        literal: TemplateMiddle,
+    ): TemplateLiteralTypeSpan
 
-    fun createTemplateLiteralTypeSpan(type: TypeNode, literal: TemplateTail): TemplateLiteralTypeSpan
+    fun createTemplateLiteralTypeSpan(
+        type: TypeNode,
+        literal: TemplateTail,
+    ): TemplateLiteralTypeSpan
+
     fun updateTemplateLiteralTypeSpan(
         node: TemplateLiteralTypeSpan,
         type: TypeNode,
@@ -411,8 +481,14 @@ sealed external interface NodeFactory {
     ): TemplateLiteralTypeSpan
 
     fun createClassStaticBlockDeclaration(body: Block): ClassStaticBlockDeclaration
-    fun updateClassStaticBlockDeclaration(node: ClassStaticBlockDeclaration, body: Block): ClassStaticBlockDeclaration
+
+    fun updateClassStaticBlockDeclaration(
+        node: ClassStaticBlockDeclaration,
+        body: Block,
+    ): ClassStaticBlockDeclaration
+
     fun <TKind : KeywordTypeSyntaxKind> createKeywordTypeNode(kind: TKind): KeywordTypeNode<TKind>
+
     fun createTypePredicateNode(
         assertsModifier: AssertsKeyword?,
         parameterName: Identifier,
@@ -501,10 +577,23 @@ sealed external interface NodeFactory {
     ): TypeQueryNode
 
     fun createTypeLiteralNode(members: (js.array.ReadonlyArray<TypeElement>)?): TypeLiteralNode
-    fun updateTypeLiteralNode(node: TypeLiteralNode, members: NodeArray<TypeElement>): TypeLiteralNode
+
+    fun updateTypeLiteralNode(
+        node: TypeLiteralNode,
+        members: NodeArray<TypeElement>,
+    ): TypeLiteralNode
+
     fun createArrayTypeNode(elementType: TypeNode): ArrayTypeNode
-    fun updateArrayTypeNode(node: ArrayTypeNode, elementType: TypeNode): ArrayTypeNode
-    fun createTupleTypeNode(elements: js.array.ReadonlyArray<(NodeFactoryCreateTupleTypeNodeElementsItem)>): TupleTypeNode
+
+    fun updateArrayTypeNode(
+        node: ArrayTypeNode,
+        elementType: TypeNode,
+    ): ArrayTypeNode
+
+    fun createTupleTypeNode(
+        elements: js.array.ReadonlyArray<(NodeFactoryCreateTupleTypeNodeElementsItem)>,
+    ): TupleTypeNode
+
     fun updateTupleTypeNode(
         node: TupleTypeNode,
         elements: js.array.ReadonlyArray<(NodeFactoryUpdateTupleTypeNodeElementsItem)>,
@@ -526,13 +615,33 @@ sealed external interface NodeFactory {
     ): NamedTupleMember
 
     fun createOptionalTypeNode(type: TypeNode): OptionalTypeNode
-    fun updateOptionalTypeNode(node: OptionalTypeNode, type: TypeNode): OptionalTypeNode
+
+    fun updateOptionalTypeNode(
+        node: OptionalTypeNode,
+        type: TypeNode,
+    ): OptionalTypeNode
+
     fun createRestTypeNode(type: TypeNode): RestTypeNode
-    fun updateRestTypeNode(node: RestTypeNode, type: TypeNode): RestTypeNode
+
+    fun updateRestTypeNode(
+        node: RestTypeNode,
+        type: TypeNode,
+    ): RestTypeNode
+
     fun createUnionTypeNode(types: js.array.ReadonlyArray<TypeNode>): UnionTypeNode
-    fun updateUnionTypeNode(node: UnionTypeNode, types: NodeArray<TypeNode>): UnionTypeNode
+
+    fun updateUnionTypeNode(
+        node: UnionTypeNode,
+        types: NodeArray<TypeNode>,
+    ): UnionTypeNode
+
     fun createIntersectionTypeNode(types: js.array.ReadonlyArray<TypeNode>): IntersectionTypeNode
-    fun updateIntersectionTypeNode(node: IntersectionTypeNode, types: NodeArray<TypeNode>): IntersectionTypeNode
+
+    fun updateIntersectionTypeNode(
+        node: IntersectionTypeNode,
+        types: NodeArray<TypeNode>,
+    ): IntersectionTypeNode
+
     fun createConditionalTypeNode(
         checkType: TypeNode,
         extendsType: TypeNode,
@@ -549,7 +658,12 @@ sealed external interface NodeFactory {
     ): ConditionalTypeNode
 
     fun createInferTypeNode(typeParameter: TypeParameterDeclaration): InferTypeNode
-    fun updateInferTypeNode(node: InferTypeNode, typeParameter: TypeParameterDeclaration): InferTypeNode
+
+    fun updateInferTypeNode(
+        node: InferTypeNode,
+        typeParameter: TypeParameterDeclaration,
+    ): InferTypeNode
+
     fun createImportTypeNode(
         argument: TypeNode,
         attributes: ImportAttributes = definedExternally,
@@ -568,15 +682,39 @@ sealed external interface NodeFactory {
     ): ImportTypeNode
 
     fun createParenthesizedType(type: TypeNode): ParenthesizedTypeNode
-    fun updateParenthesizedType(node: ParenthesizedTypeNode, type: TypeNode): ParenthesizedTypeNode
+
+    fun updateParenthesizedType(
+        node: ParenthesizedTypeNode,
+        type: TypeNode,
+    ): ParenthesizedTypeNode
+
     fun createThisTypeNode(): ThisTypeNode
-    fun createTypeOperatorNode(operator: SyntaxKind.KeyOfKeyword, type: TypeNode): TypeOperatorNode
 
-    fun createTypeOperatorNode(operator: SyntaxKind.UniqueKeyword, type: TypeNode): TypeOperatorNode
+    fun createTypeOperatorNode(
+        operator: SyntaxKind.KeyOfKeyword,
+        type: TypeNode,
+    ): TypeOperatorNode
 
-    fun createTypeOperatorNode(operator: SyntaxKind.ReadonlyKeyword, type: TypeNode): TypeOperatorNode
-    fun updateTypeOperatorNode(node: TypeOperatorNode, type: TypeNode): TypeOperatorNode
-    fun createIndexedAccessTypeNode(objectType: TypeNode, indexType: TypeNode): IndexedAccessTypeNode
+    fun createTypeOperatorNode(
+        operator: SyntaxKind.UniqueKeyword,
+        type: TypeNode,
+    ): TypeOperatorNode
+
+    fun createTypeOperatorNode(
+        operator: SyntaxKind.ReadonlyKeyword,
+        type: TypeNode,
+    ): TypeOperatorNode
+
+    fun updateTypeOperatorNode(
+        node: TypeOperatorNode,
+        type: TypeNode,
+    ): TypeOperatorNode
+
+    fun createIndexedAccessTypeNode(
+        objectType: TypeNode,
+        indexType: TypeNode,
+    ): IndexedAccessTypeNode
+
     fun updateIndexedAccessTypeNode(
         node: IndexedAccessTypeNode,
         objectType: TypeNode,
@@ -755,7 +893,12 @@ sealed external interface NodeFactory {
     ): MappedTypeNode
 
     fun createLiteralTypeNode(literal: NodeFactoryCreateLiteralTypeNodeLiteral): LiteralTypeNode
-    fun updateLiteralTypeNode(node: LiteralTypeNode, literal: NodeFactoryUpdateLiteralTypeNodeLiteral): LiteralTypeNode
+
+    fun updateLiteralTypeNode(
+        node: LiteralTypeNode,
+        literal: NodeFactoryUpdateLiteralTypeNodeLiteral,
+    ): LiteralTypeNode
+
     fun createTemplateLiteralType(
         head: TemplateHead,
         templateSpans: js.array.ReadonlyArray<TemplateLiteralTypeSpan>,
@@ -768,12 +911,14 @@ sealed external interface NodeFactory {
     ): TemplateLiteralTypeNode
 
     fun createObjectBindingPattern(elements: js.array.ReadonlyArray<BindingElement>): ObjectBindingPattern
+
     fun updateObjectBindingPattern(
         node: ObjectBindingPattern,
         elements: js.array.ReadonlyArray<BindingElement>,
     ): ObjectBindingPattern
 
     fun createArrayBindingPattern(elements: js.array.ReadonlyArray<ArrayBindingElement>): ArrayBindingPattern
+
     fun updateArrayBindingPattern(
         node: ArrayBindingPattern,
         elements: js.array.ReadonlyArray<ArrayBindingElement>,
@@ -835,9 +980,16 @@ sealed external interface NodeFactory {
         properties: js.array.ReadonlyArray<ObjectLiteralElementLike>,
     ): ObjectLiteralExpression
 
-    fun createPropertyAccessExpression(expression: Expression, name: String): PropertyAccessExpression
+    fun createPropertyAccessExpression(
+        expression: Expression,
+        name: String,
+    ): PropertyAccessExpression
 
-    fun createPropertyAccessExpression(expression: Expression, name: MemberName): PropertyAccessExpression
+    fun createPropertyAccessExpression(
+        expression: Expression,
+        name: MemberName,
+    ): PropertyAccessExpression
+
     fun updatePropertyAccessExpression(
         node: PropertyAccessExpression,
         expression: Expression,
@@ -863,9 +1015,16 @@ sealed external interface NodeFactory {
         name: MemberName,
     ): PropertyAccessChain
 
-    fun createElementAccessExpression(expression: Expression, index: Double): ElementAccessExpression
+    fun createElementAccessExpression(
+        expression: Expression,
+        index: Double,
+    ): ElementAccessExpression
 
-    fun createElementAccessExpression(expression: Expression, index: Expression): ElementAccessExpression
+    fun createElementAccessExpression(
+        expression: Expression,
+        index: Expression,
+    ): ElementAccessExpression
+
     fun updateElementAccessExpression(
         node: ElementAccessExpression,
         expression: Expression,
@@ -945,10 +1104,24 @@ sealed external interface NodeFactory {
         template: TemplateLiteral,
     ): TaggedTemplateExpression
 
-    fun createTypeAssertion(type: TypeNode, expression: Expression): TypeAssertion
-    fun updateTypeAssertion(node: TypeAssertion, type: TypeNode, expression: Expression): TypeAssertion
+    fun createTypeAssertion(
+        type: TypeNode,
+        expression: Expression,
+    ): TypeAssertion
+
+    fun updateTypeAssertion(
+        node: TypeAssertion,
+        type: TypeNode,
+        expression: Expression,
+    ): TypeAssertion
+
     fun createParenthesizedExpression(expression: Expression): ParenthesizedExpression
-    fun updateParenthesizedExpression(node: ParenthesizedExpression, expression: Expression): ParenthesizedExpression
+
+    fun updateParenthesizedExpression(
+        node: ParenthesizedExpression,
+        expression: Expression,
+    ): ParenthesizedExpression
+
     fun createFunctionExpression(
         modifiers: (js.array.ReadonlyArray<Modifier>)?,
         asteriskToken: AsteriskToken?,
@@ -1000,20 +1173,65 @@ sealed external interface NodeFactory {
     ): ArrowFunction
 
     fun createDeleteExpression(expression: Expression): DeleteExpression
-    fun updateDeleteExpression(node: DeleteExpression, expression: Expression): DeleteExpression
-    fun createTypeOfExpression(expression: Expression): TypeOfExpression
-    fun updateTypeOfExpression(node: TypeOfExpression, expression: Expression): TypeOfExpression
-    fun createVoidExpression(expression: Expression): VoidExpression
-    fun updateVoidExpression(node: VoidExpression, expression: Expression): VoidExpression
-    fun createAwaitExpression(expression: Expression): AwaitExpression
-    fun updateAwaitExpression(node: AwaitExpression, expression: Expression): AwaitExpression
-    fun createPrefixUnaryExpression(operator: PrefixUnaryOperator, operand: Expression): PrefixUnaryExpression
-    fun updatePrefixUnaryExpression(node: PrefixUnaryExpression, operand: Expression): PrefixUnaryExpression
-    fun createPostfixUnaryExpression(operand: Expression, operator: PostfixUnaryOperator): PostfixUnaryExpression
-    fun updatePostfixUnaryExpression(node: PostfixUnaryExpression, operand: Expression): PostfixUnaryExpression
-    fun createBinaryExpression(left: Expression, operator: BinaryOperator, right: Expression): BinaryExpression
 
-    fun createBinaryExpression(left: Expression, operator: BinaryOperatorToken, right: Expression): BinaryExpression
+    fun updateDeleteExpression(
+        node: DeleteExpression,
+        expression: Expression,
+    ): DeleteExpression
+
+    fun createTypeOfExpression(expression: Expression): TypeOfExpression
+
+    fun updateTypeOfExpression(
+        node: TypeOfExpression,
+        expression: Expression,
+    ): TypeOfExpression
+
+    fun createVoidExpression(expression: Expression): VoidExpression
+
+    fun updateVoidExpression(
+        node: VoidExpression,
+        expression: Expression,
+    ): VoidExpression
+
+    fun createAwaitExpression(expression: Expression): AwaitExpression
+
+    fun updateAwaitExpression(
+        node: AwaitExpression,
+        expression: Expression,
+    ): AwaitExpression
+
+    fun createPrefixUnaryExpression(
+        operator: PrefixUnaryOperator,
+        operand: Expression,
+    ): PrefixUnaryExpression
+
+    fun updatePrefixUnaryExpression(
+        node: PrefixUnaryExpression,
+        operand: Expression,
+    ): PrefixUnaryExpression
+
+    fun createPostfixUnaryExpression(
+        operand: Expression,
+        operator: PostfixUnaryOperator,
+    ): PostfixUnaryExpression
+
+    fun updatePostfixUnaryExpression(
+        node: PostfixUnaryExpression,
+        operand: Expression,
+    ): PostfixUnaryExpression
+
+    fun createBinaryExpression(
+        left: Expression,
+        operator: BinaryOperator,
+        right: Expression,
+    ): BinaryExpression
+
+    fun createBinaryExpression(
+        left: Expression,
+        operator: BinaryOperatorToken,
+        right: Expression,
+    ): BinaryExpression
+
     fun updateBinaryExpression(
         node: BinaryExpression,
         left: Expression,
@@ -1062,7 +1280,12 @@ sealed external interface NodeFactory {
         templateFlags: TokenFlags = definedExternally,
     ): TemplateHead
 
-    fun createTemplateHead(text: String?, rawText: String, templateFlags: TokenFlags = definedExternally): TemplateHead
+    fun createTemplateHead(
+        text: String?,
+        rawText: String,
+        templateFlags: TokenFlags = definedExternally,
+    ): TemplateHead
+
     fun createTemplateMiddle(
         text: String,
         rawText: String = definedExternally,
@@ -1081,15 +1304,32 @@ sealed external interface NodeFactory {
         templateFlags: TokenFlags = definedExternally,
     ): TemplateTail
 
-    fun createTemplateTail(text: String?, rawText: String, templateFlags: TokenFlags = definedExternally): TemplateTail
+    fun createTemplateTail(
+        text: String?,
+        rawText: String,
+        templateFlags: TokenFlags = definedExternally,
+    ): TemplateTail
+
     fun createNoSubstitutionTemplateLiteral(
         text: String,
         rawText: String = definedExternally,
     ): NoSubstitutionTemplateLiteral
 
-    fun createNoSubstitutionTemplateLiteral(text: String?, rawText: String): NoSubstitutionTemplateLiteral
-    fun createYieldExpression(asteriskToken: AsteriskToken, expression: Expression): YieldExpression
-    fun createYieldExpression(asteriskToken: Nothing?, expression: Expression?): YieldExpression
+    fun createNoSubstitutionTemplateLiteral(
+        text: String?,
+        rawText: String,
+    ): NoSubstitutionTemplateLiteral
+
+    fun createYieldExpression(
+        asteriskToken: AsteriskToken,
+        expression: Expression,
+    ): YieldExpression
+
+    fun createYieldExpression(
+        asteriskToken: Nothing?,
+        expression: Expression?,
+    ): YieldExpression
+
     fun updateYieldExpression(
         node: YieldExpression,
         asteriskToken: AsteriskToken?,
@@ -1097,7 +1337,12 @@ sealed external interface NodeFactory {
     ): YieldExpression
 
     fun createSpreadElement(expression: Expression): SpreadElement
-    fun updateSpreadElement(node: SpreadElement, expression: Expression): SpreadElement
+
+    fun updateSpreadElement(
+        node: SpreadElement,
+        expression: Expression,
+    ): SpreadElement
+
     fun createClassExpression(
         modifiers: (js.array.ReadonlyArray<ModifierLike>)?,
         name: String?,
@@ -1124,6 +1369,7 @@ sealed external interface NodeFactory {
     ): ClassExpression
 
     fun createOmittedExpression(): OmittedExpression
+
     fun createExpressionWithTypeArguments(
         expression: Expression,
         typeArguments: (js.array.ReadonlyArray<TypeNode>)?,
@@ -1135,30 +1381,86 @@ sealed external interface NodeFactory {
         typeArguments: (js.array.ReadonlyArray<TypeNode>)?,
     ): ExpressionWithTypeArguments
 
-    fun createAsExpression(expression: Expression, type: TypeNode): AsExpression
-    fun updateAsExpression(node: AsExpression, expression: Expression, type: TypeNode): AsExpression
+    fun createAsExpression(
+        expression: Expression,
+        type: TypeNode,
+    ): AsExpression
+
+    fun updateAsExpression(
+        node: AsExpression,
+        expression: Expression,
+        type: TypeNode,
+    ): AsExpression
+
     fun createNonNullExpression(expression: Expression): NonNullExpression
-    fun updateNonNullExpression(node: NonNullExpression, expression: Expression): NonNullExpression
+
+    fun updateNonNullExpression(
+        node: NonNullExpression,
+        expression: Expression,
+    ): NonNullExpression
+
     fun createNonNullChain(expression: Expression): NonNullChain
-    fun updateNonNullChain(node: NonNullChain, expression: Expression): NonNullChain
-    fun createMetaProperty(keywordToken: NodeFactoryCreateMetaPropertyKeywordToken, name: Identifier): MetaProperty
-    fun updateMetaProperty(node: MetaProperty, name: Identifier): MetaProperty
-    fun createSatisfiesExpression(expression: Expression, type: TypeNode): SatisfiesExpression
+
+    fun updateNonNullChain(
+        node: NonNullChain,
+        expression: Expression,
+    ): NonNullChain
+
+    fun createMetaProperty(
+        keywordToken: NodeFactoryCreateMetaPropertyKeywordToken,
+        name: Identifier,
+    ): MetaProperty
+
+    fun updateMetaProperty(
+        node: MetaProperty,
+        name: Identifier,
+    ): MetaProperty
+
+    fun createSatisfiesExpression(
+        expression: Expression,
+        type: TypeNode,
+    ): SatisfiesExpression
+
     fun updateSatisfiesExpression(
         node: SatisfiesExpression,
         expression: Expression,
         type: TypeNode,
     ): SatisfiesExpression
 
-    fun createTemplateSpan(expression: Expression, literal: TemplateMiddle): TemplateSpan
+    fun createTemplateSpan(
+        expression: Expression,
+        literal: TemplateMiddle,
+    ): TemplateSpan
 
-    fun createTemplateSpan(expression: Expression, literal: TemplateTail): TemplateSpan
-    fun updateTemplateSpan(node: TemplateSpan, expression: Expression, literal: TemplateMiddle): TemplateSpan
+    fun createTemplateSpan(
+        expression: Expression,
+        literal: TemplateTail,
+    ): TemplateSpan
 
-    fun updateTemplateSpan(node: TemplateSpan, expression: Expression, literal: TemplateTail): TemplateSpan
+    fun updateTemplateSpan(
+        node: TemplateSpan,
+        expression: Expression,
+        literal: TemplateMiddle,
+    ): TemplateSpan
+
+    fun updateTemplateSpan(
+        node: TemplateSpan,
+        expression: Expression,
+        literal: TemplateTail,
+    ): TemplateSpan
+
     fun createSemicolonClassElement(): SemicolonClassElement
-    fun createBlock(statements: js.array.ReadonlyArray<Statement>, multiLine: Boolean = definedExternally): Block
-    fun updateBlock(node: Block, statements: js.array.ReadonlyArray<Statement>): Block
+
+    fun createBlock(
+        statements: js.array.ReadonlyArray<Statement>,
+        multiLine: Boolean = definedExternally,
+    ): Block
+
+    fun updateBlock(
+        node: Block,
+        statements: js.array.ReadonlyArray<Statement>,
+    ): Block
+
     fun createVariableStatement(
         modifiers: (js.array.ReadonlyArray<ModifierLike>)?,
         declarationList: VariableDeclarationList,
@@ -1176,8 +1478,14 @@ sealed external interface NodeFactory {
     ): VariableStatement
 
     fun createEmptyStatement(): EmptyStatement
+
     fun createExpressionStatement(expression: Expression): ExpressionStatement
-    fun updateExpressionStatement(node: ExpressionStatement, expression: Expression): ExpressionStatement
+
+    fun updateExpressionStatement(
+        node: ExpressionStatement,
+        expression: Expression,
+    ): ExpressionStatement
+
     fun createIfStatement(
         expression: Expression,
         thenStatement: Statement,
@@ -1191,10 +1499,28 @@ sealed external interface NodeFactory {
         elseStatement: Statement?,
     ): IfStatement
 
-    fun createDoStatement(statement: Statement, expression: Expression): DoStatement
-    fun updateDoStatement(node: DoStatement, statement: Statement, expression: Expression): DoStatement
-    fun createWhileStatement(expression: Expression, statement: Statement): WhileStatement
-    fun updateWhileStatement(node: WhileStatement, expression: Expression, statement: Statement): WhileStatement
+    fun createDoStatement(
+        statement: Statement,
+        expression: Expression,
+    ): DoStatement
+
+    fun updateDoStatement(
+        node: DoStatement,
+        statement: Statement,
+        expression: Expression,
+    ): DoStatement
+
+    fun createWhileStatement(
+        expression: Expression,
+        statement: Statement,
+    ): WhileStatement
+
+    fun updateWhileStatement(
+        node: WhileStatement,
+        expression: Expression,
+        statement: Statement,
+    ): WhileStatement
+
     fun createForStatement(
         initializer: ForInitializer?,
         condition: Expression?,
@@ -1210,7 +1536,12 @@ sealed external interface NodeFactory {
         statement: Statement,
     ): ForStatement
 
-    fun createForInStatement(initializer: ForInitializer, expression: Expression, statement: Statement): ForInStatement
+    fun createForInStatement(
+        initializer: ForInitializer,
+        expression: Expression,
+        statement: Statement,
+    ): ForInStatement
+
     fun updateForInStatement(
         node: ForInStatement,
         initializer: ForInitializer,
@@ -1238,26 +1569,81 @@ sealed external interface NodeFactory {
     fun createContinueStatement(label: String = definedExternally): ContinueStatement
 
     fun createContinueStatement(label: Identifier = definedExternally): ContinueStatement
-    fun updateContinueStatement(node: ContinueStatement, label: Identifier?): ContinueStatement
+
+    fun updateContinueStatement(
+        node: ContinueStatement,
+        label: Identifier?,
+    ): ContinueStatement
+
     fun createBreakStatement(): BreakStatement
 
     fun createBreakStatement(label: String = definedExternally): BreakStatement
 
     fun createBreakStatement(label: Identifier = definedExternally): BreakStatement
-    fun updateBreakStatement(node: BreakStatement, label: Identifier?): BreakStatement
-    fun createReturnStatement(expression: Expression = definedExternally): ReturnStatement
-    fun updateReturnStatement(node: ReturnStatement, expression: Expression?): ReturnStatement
-    fun createWithStatement(expression: Expression, statement: Statement): WithStatement
-    fun updateWithStatement(node: WithStatement, expression: Expression, statement: Statement): WithStatement
-    fun createSwitchStatement(expression: Expression, caseBlock: CaseBlock): SwitchStatement
-    fun updateSwitchStatement(node: SwitchStatement, expression: Expression, caseBlock: CaseBlock): SwitchStatement
-    fun createLabeledStatement(label: String, statement: Statement): LabeledStatement
 
-    fun createLabeledStatement(label: Identifier, statement: Statement): LabeledStatement
-    fun updateLabeledStatement(node: LabeledStatement, label: Identifier, statement: Statement): LabeledStatement
+    fun updateBreakStatement(
+        node: BreakStatement,
+        label: Identifier?,
+    ): BreakStatement
+
+    fun createReturnStatement(expression: Expression = definedExternally): ReturnStatement
+
+    fun updateReturnStatement(
+        node: ReturnStatement,
+        expression: Expression?,
+    ): ReturnStatement
+
+    fun createWithStatement(
+        expression: Expression,
+        statement: Statement,
+    ): WithStatement
+
+    fun updateWithStatement(
+        node: WithStatement,
+        expression: Expression,
+        statement: Statement,
+    ): WithStatement
+
+    fun createSwitchStatement(
+        expression: Expression,
+        caseBlock: CaseBlock,
+    ): SwitchStatement
+
+    fun updateSwitchStatement(
+        node: SwitchStatement,
+        expression: Expression,
+        caseBlock: CaseBlock,
+    ): SwitchStatement
+
+    fun createLabeledStatement(
+        label: String,
+        statement: Statement,
+    ): LabeledStatement
+
+    fun createLabeledStatement(
+        label: Identifier,
+        statement: Statement,
+    ): LabeledStatement
+
+    fun updateLabeledStatement(
+        node: LabeledStatement,
+        label: Identifier,
+        statement: Statement,
+    ): LabeledStatement
+
     fun createThrowStatement(expression: Expression): ThrowStatement
-    fun updateThrowStatement(node: ThrowStatement, expression: Expression): ThrowStatement
-    fun createTryStatement(tryBlock: Block, catchClause: CatchClause?, finallyBlock: Block?): TryStatement
+
+    fun updateThrowStatement(
+        node: ThrowStatement,
+        expression: Expression,
+    ): ThrowStatement
+
+    fun createTryStatement(
+        tryBlock: Block,
+        catchClause: CatchClause?,
+        finallyBlock: Block?,
+    ): TryStatement
+
     fun updateTryStatement(
         node: TryStatement,
         tryBlock: Block,
@@ -1266,6 +1652,7 @@ sealed external interface NodeFactory {
     ): TryStatement
 
     fun createDebuggerStatement(): DebuggerStatement
+
     fun createVariableDeclaration(
         name: String,
         exclamationToken: ExclamationToken = definedExternally,
@@ -1435,13 +1822,28 @@ sealed external interface NodeFactory {
     ): ModuleDeclaration
 
     fun createModuleBlock(statements: js.array.ReadonlyArray<Statement>): ModuleBlock
-    fun updateModuleBlock(node: ModuleBlock, statements: js.array.ReadonlyArray<Statement>): ModuleBlock
+
+    fun updateModuleBlock(
+        node: ModuleBlock,
+        statements: js.array.ReadonlyArray<Statement>,
+    ): ModuleBlock
+
     fun createCaseBlock(clauses: js.array.ReadonlyArray<CaseOrDefaultClause>): CaseBlock
-    fun updateCaseBlock(node: CaseBlock, clauses: js.array.ReadonlyArray<CaseOrDefaultClause>): CaseBlock
+
+    fun updateCaseBlock(
+        node: CaseBlock,
+        clauses: js.array.ReadonlyArray<CaseOrDefaultClause>,
+    ): CaseBlock
+
     fun createNamespaceExportDeclaration(name: String): NamespaceExportDeclaration
 
     fun createNamespaceExportDeclaration(name: Identifier): NamespaceExportDeclaration
-    fun updateNamespaceExportDeclaration(node: NamespaceExportDeclaration, name: Identifier): NamespaceExportDeclaration
+
+    fun updateNamespaceExportDeclaration(
+        node: NamespaceExportDeclaration,
+        name: Identifier,
+    ): NamespaceExportDeclaration
+
     fun createImportEqualsDeclaration(
         modifiers: (js.array.ReadonlyArray<ModifierLike>)?,
         isTypeOnly: Boolean,
@@ -1479,7 +1881,12 @@ sealed external interface NodeFactory {
         attributes: ImportAttributes?,
     ): ImportDeclaration
 
-    fun createImportClause(isTypeOnly: Boolean, name: Identifier?, namedBindings: NamedImportBindings?): ImportClause
+    fun createImportClause(
+        isTypeOnly: Boolean,
+        name: Identifier?,
+        namedBindings: NamedImportBindings?,
+    ): ImportClause
+
     fun updateImportClause(
         node: ImportClause,
         isTypeOnly: Boolean,
@@ -1488,7 +1895,10 @@ sealed external interface NodeFactory {
     ): ImportClause
 
     /** @deprecated */
-    fun createAssertClause(elements: NodeArray<AssertEntry>, multiLine: Boolean = definedExternally): AssertClause
+    fun createAssertClause(
+        elements: NodeArray<AssertEntry>,
+        multiLine: Boolean = definedExternally,
+    ): AssertClause
 
     /** @deprecated */
     fun updateAssertClause(
@@ -1498,10 +1908,17 @@ sealed external interface NodeFactory {
     ): AssertClause
 
     /** @deprecated */
-    fun createAssertEntry(name: AssertionKey, value: Expression): AssertEntry
+    fun createAssertEntry(
+        name: AssertionKey,
+        value: Expression,
+    ): AssertEntry
 
     /** @deprecated */
-    fun updateAssertEntry(node: AssertEntry, name: AssertionKey, value: Expression): AssertEntry
+    fun updateAssertEntry(
+        node: AssertEntry,
+        name: AssertionKey,
+        value: Expression,
+    ): AssertEntry
 
     /** @deprecated */
     fun createImportTypeAssertionContainer(
@@ -1527,15 +1944,44 @@ sealed external interface NodeFactory {
         multiLine: Boolean = definedExternally,
     ): ImportAttributes
 
-    fun createImportAttribute(name: ImportAttributeName, value: Expression): ImportAttribute
-    fun updateImportAttribute(node: ImportAttribute, name: ImportAttributeName, value: Expression): ImportAttribute
+    fun createImportAttribute(
+        name: ImportAttributeName,
+        value: Expression,
+    ): ImportAttribute
+
+    fun updateImportAttribute(
+        node: ImportAttribute,
+        name: ImportAttributeName,
+        value: Expression,
+    ): ImportAttribute
+
     fun createNamespaceImport(name: Identifier): NamespaceImport
-    fun updateNamespaceImport(node: NamespaceImport, name: Identifier): NamespaceImport
+
+    fun updateNamespaceImport(
+        node: NamespaceImport,
+        name: Identifier,
+    ): NamespaceImport
+
     fun createNamespaceExport(name: ModuleExportName): NamespaceExport
-    fun updateNamespaceExport(node: NamespaceExport, name: ModuleExportName): NamespaceExport
+
+    fun updateNamespaceExport(
+        node: NamespaceExport,
+        name: ModuleExportName,
+    ): NamespaceExport
+
     fun createNamedImports(elements: js.array.ReadonlyArray<ImportSpecifier>): NamedImports
-    fun updateNamedImports(node: NamedImports, elements: js.array.ReadonlyArray<ImportSpecifier>): NamedImports
-    fun createImportSpecifier(isTypeOnly: Boolean, propertyName: ModuleExportName?, name: Identifier): ImportSpecifier
+
+    fun updateNamedImports(
+        node: NamedImports,
+        elements: js.array.ReadonlyArray<ImportSpecifier>,
+    ): NamedImports
+
+    fun createImportSpecifier(
+        isTypeOnly: Boolean,
+        propertyName: ModuleExportName?,
+        name: Identifier,
+    ): ImportSpecifier
+
     fun updateImportSpecifier(
         node: ImportSpecifier,
         isTypeOnly: Boolean,
@@ -1573,12 +2019,29 @@ sealed external interface NodeFactory {
     ): ExportDeclaration
 
     fun createNamedExports(elements: js.array.ReadonlyArray<ExportSpecifier>): NamedExports
-    fun updateNamedExports(node: NamedExports, elements: js.array.ReadonlyArray<ExportSpecifier>): NamedExports
-    fun createExportSpecifier(isTypeOnly: Boolean, propertyName: String?, name: String): ExportSpecifier
 
-    fun createExportSpecifier(isTypeOnly: Boolean, propertyName: String?, name: ModuleExportName): ExportSpecifier
+    fun updateNamedExports(
+        node: NamedExports,
+        elements: js.array.ReadonlyArray<ExportSpecifier>,
+    ): NamedExports
 
-    fun createExportSpecifier(isTypeOnly: Boolean, propertyName: ModuleExportName?, name: String): ExportSpecifier
+    fun createExportSpecifier(
+        isTypeOnly: Boolean,
+        propertyName: String?,
+        name: String,
+    ): ExportSpecifier
+
+    fun createExportSpecifier(
+        isTypeOnly: Boolean,
+        propertyName: String?,
+        name: ModuleExportName,
+    ): ExportSpecifier
+
+    fun createExportSpecifier(
+        isTypeOnly: Boolean,
+        propertyName: ModuleExportName?,
+        name: String,
+    ): ExportSpecifier
 
     fun createExportSpecifier(
         isTypeOnly: Boolean,
@@ -1594,15 +2057,43 @@ sealed external interface NodeFactory {
     ): ExportSpecifier
 
     fun createExternalModuleReference(expression: Expression): ExternalModuleReference
-    fun updateExternalModuleReference(node: ExternalModuleReference, expression: Expression): ExternalModuleReference
+
+    fun updateExternalModuleReference(
+        node: ExternalModuleReference,
+        expression: Expression,
+    ): ExternalModuleReference
+
     fun createJSDocAllType(): JSDocAllType
+
     fun createJSDocUnknownType(): JSDocUnknownType
-    fun createJSDocNonNullableType(type: TypeNode, postfix: Boolean = definedExternally): JSDocNonNullableType
-    fun updateJSDocNonNullableType(node: JSDocNonNullableType, type: TypeNode): JSDocNonNullableType
-    fun createJSDocNullableType(type: TypeNode, postfix: Boolean = definedExternally): JSDocNullableType
-    fun updateJSDocNullableType(node: JSDocNullableType, type: TypeNode): JSDocNullableType
+
+    fun createJSDocNonNullableType(
+        type: TypeNode,
+        postfix: Boolean = definedExternally,
+    ): JSDocNonNullableType
+
+    fun updateJSDocNonNullableType(
+        node: JSDocNonNullableType,
+        type: TypeNode,
+    ): JSDocNonNullableType
+
+    fun createJSDocNullableType(
+        type: TypeNode,
+        postfix: Boolean = definedExternally,
+    ): JSDocNullableType
+
+    fun updateJSDocNullableType(
+        node: JSDocNullableType,
+        type: TypeNode,
+    ): JSDocNullableType
+
     fun createJSDocOptionalType(type: TypeNode): JSDocOptionalType
-    fun updateJSDocOptionalType(node: JSDocOptionalType, type: TypeNode): JSDocOptionalType
+
+    fun updateJSDocOptionalType(
+        node: JSDocOptionalType,
+        type: TypeNode,
+    ): JSDocOptionalType
+
     fun createJSDocFunctionType(
         parameters: js.array.ReadonlyArray<ParameterDeclaration>,
         type: TypeNode?,
@@ -1615,41 +2106,128 @@ sealed external interface NodeFactory {
     ): JSDocFunctionType
 
     fun createJSDocVariadicType(type: TypeNode): JSDocVariadicType
-    fun updateJSDocVariadicType(node: JSDocVariadicType, type: TypeNode): JSDocVariadicType
+
+    fun updateJSDocVariadicType(
+        node: JSDocVariadicType,
+        type: TypeNode,
+    ): JSDocVariadicType
+
     fun createJSDocNamepathType(type: TypeNode): JSDocNamepathType
-    fun updateJSDocNamepathType(node: JSDocNamepathType, type: TypeNode): JSDocNamepathType
+
+    fun updateJSDocNamepathType(
+        node: JSDocNamepathType,
+        type: TypeNode,
+    ): JSDocNamepathType
+
     fun createJSDocTypeExpression(type: TypeNode): JSDocTypeExpression
-    fun updateJSDocTypeExpression(node: JSDocTypeExpression, type: TypeNode): JSDocTypeExpression
+
+    fun updateJSDocTypeExpression(
+        node: JSDocTypeExpression,
+        type: TypeNode,
+    ): JSDocTypeExpression
+
     fun createJSDocNameReference(name: EntityName): JSDocNameReference
 
     fun createJSDocNameReference(name: JSDocMemberName): JSDocNameReference
-    fun updateJSDocNameReference(node: JSDocNameReference, name: EntityName): JSDocNameReference
 
-    fun updateJSDocNameReference(node: JSDocNameReference, name: JSDocMemberName): JSDocNameReference
-    fun createJSDocMemberName(left: EntityName, right: Identifier): JSDocMemberName
+    fun updateJSDocNameReference(
+        node: JSDocNameReference,
+        name: EntityName,
+    ): JSDocNameReference
 
-    fun createJSDocMemberName(left: JSDocMemberName, right: Identifier): JSDocMemberName
-    fun updateJSDocMemberName(node: JSDocMemberName, left: EntityName, right: Identifier): JSDocMemberName
+    fun updateJSDocNameReference(
+        node: JSDocNameReference,
+        name: JSDocMemberName,
+    ): JSDocNameReference
 
-    fun updateJSDocMemberName(node: JSDocMemberName, left: JSDocMemberName, right: Identifier): JSDocMemberName
-    fun createJSDocLink(name: EntityName?, text: String): JSDocLink
+    fun createJSDocMemberName(
+        left: EntityName,
+        right: Identifier,
+    ): JSDocMemberName
 
-    fun createJSDocLink(name: JSDocMemberName?, text: String): JSDocLink
-    fun updateJSDocLink(node: JSDocLink, name: EntityName?, text: String): JSDocLink
+    fun createJSDocMemberName(
+        left: JSDocMemberName,
+        right: Identifier,
+    ): JSDocMemberName
 
-    fun updateJSDocLink(node: JSDocLink, name: JSDocMemberName?, text: String): JSDocLink
-    fun createJSDocLinkCode(name: EntityName?, text: String): JSDocLinkCode
+    fun updateJSDocMemberName(
+        node: JSDocMemberName,
+        left: EntityName,
+        right: Identifier,
+    ): JSDocMemberName
 
-    fun createJSDocLinkCode(name: JSDocMemberName?, text: String): JSDocLinkCode
-    fun updateJSDocLinkCode(node: JSDocLinkCode, name: EntityName?, text: String): JSDocLinkCode
+    fun updateJSDocMemberName(
+        node: JSDocMemberName,
+        left: JSDocMemberName,
+        right: Identifier,
+    ): JSDocMemberName
 
-    fun updateJSDocLinkCode(node: JSDocLinkCode, name: JSDocMemberName?, text: String): JSDocLinkCode
-    fun createJSDocLinkPlain(name: EntityName?, text: String): JSDocLinkPlain
+    fun createJSDocLink(
+        name: EntityName?,
+        text: String,
+    ): JSDocLink
 
-    fun createJSDocLinkPlain(name: JSDocMemberName?, text: String): JSDocLinkPlain
-    fun updateJSDocLinkPlain(node: JSDocLinkPlain, name: EntityName?, text: String): JSDocLinkPlain
+    fun createJSDocLink(
+        name: JSDocMemberName?,
+        text: String,
+    ): JSDocLink
 
-    fun updateJSDocLinkPlain(node: JSDocLinkPlain, name: JSDocMemberName?, text: String): JSDocLinkPlain
+    fun updateJSDocLink(
+        node: JSDocLink,
+        name: EntityName?,
+        text: String,
+    ): JSDocLink
+
+    fun updateJSDocLink(
+        node: JSDocLink,
+        name: JSDocMemberName?,
+        text: String,
+    ): JSDocLink
+
+    fun createJSDocLinkCode(
+        name: EntityName?,
+        text: String,
+    ): JSDocLinkCode
+
+    fun createJSDocLinkCode(
+        name: JSDocMemberName?,
+        text: String,
+    ): JSDocLinkCode
+
+    fun updateJSDocLinkCode(
+        node: JSDocLinkCode,
+        name: EntityName?,
+        text: String,
+    ): JSDocLinkCode
+
+    fun updateJSDocLinkCode(
+        node: JSDocLinkCode,
+        name: JSDocMemberName?,
+        text: String,
+    ): JSDocLinkCode
+
+    fun createJSDocLinkPlain(
+        name: EntityName?,
+        text: String,
+    ): JSDocLinkPlain
+
+    fun createJSDocLinkPlain(
+        name: JSDocMemberName?,
+        text: String,
+    ): JSDocLinkPlain
+
+    fun updateJSDocLinkPlain(
+        node: JSDocLinkPlain,
+        name: EntityName?,
+        text: String,
+    ): JSDocLinkPlain
+
+    fun updateJSDocLinkPlain(
+        node: JSDocLinkPlain,
+        name: JSDocMemberName?,
+        text: String,
+    ): JSDocLinkPlain
+
     fun createJSDocTypeLiteral(
         jsDocPropertyTags: js.array.ReadonlyArray<JSDocPropertyLikeTag> = definedExternally,
         isArrayType: Boolean = definedExternally,
@@ -1908,7 +2486,10 @@ sealed external interface NodeFactory {
         comment: NodeArray<JSDocComment>?,
     ): JSDocPropertyTag
 
-    fun createJSDocTypeTag(tagName: Identifier?, typeExpression: JSDocTypeExpression): JSDocTypeTag
+    fun createJSDocTypeTag(
+        tagName: Identifier?,
+        typeExpression: JSDocTypeExpression,
+    ): JSDocTypeTag
 
     fun createJSDocTypeTag(
         tagName: Identifier?,
@@ -1936,7 +2517,10 @@ sealed external interface NodeFactory {
         comment: NodeArray<JSDocComment>?,
     ): JSDocTypeTag
 
-    fun createJSDocSeeTag(tagName: Identifier?, nameExpression: JSDocNameReference?): JSDocSeeTag
+    fun createJSDocSeeTag(
+        tagName: Identifier?,
+        nameExpression: JSDocNameReference?,
+    ): JSDocSeeTag
 
     fun createJSDocSeeTag(
         tagName: Identifier?,
@@ -1950,7 +2534,11 @@ sealed external interface NodeFactory {
         comment: NodeArray<JSDocComment> = definedExternally,
     ): JSDocSeeTag
 
-    fun updateJSDocSeeTag(node: JSDocSeeTag, tagName: Identifier?, nameExpression: JSDocNameReference?): JSDocSeeTag
+    fun updateJSDocSeeTag(
+        node: JSDocSeeTag,
+        tagName: Identifier?,
+        nameExpression: JSDocNameReference?,
+    ): JSDocSeeTag
 
     fun updateJSDocSeeTag(
         node: JSDocSeeTag,
@@ -1992,7 +2580,10 @@ sealed external interface NodeFactory {
         comment: NodeArray<JSDocComment>?,
     ): JSDocReturnTag
 
-    fun createJSDocThisTag(tagName: Identifier?, typeExpression: JSDocTypeExpression): JSDocThisTag
+    fun createJSDocThisTag(
+        tagName: Identifier?,
+        typeExpression: JSDocTypeExpression,
+    ): JSDocThisTag
 
     fun createJSDocThisTag(
         tagName: Identifier?,
@@ -2020,7 +2611,10 @@ sealed external interface NodeFactory {
         comment: NodeArray<JSDocComment>?,
     ): JSDocThisTag
 
-    fun createJSDocEnumTag(tagName: Identifier?, typeExpression: JSDocTypeExpression): JSDocEnumTag
+    fun createJSDocEnumTag(
+        tagName: Identifier?,
+        typeExpression: JSDocTypeExpression,
+    ): JSDocEnumTag
 
     fun createJSDocEnumTag(
         tagName: Identifier?,
@@ -2048,7 +2642,10 @@ sealed external interface NodeFactory {
         comment: NodeArray<JSDocComment>?,
     ): JSDocEnumTag
 
-    fun createJSDocCallbackTag(tagName: Identifier?, typeExpression: JSDocSignature): JSDocCallbackTag
+    fun createJSDocCallbackTag(
+        tagName: Identifier?,
+        typeExpression: JSDocSignature,
+    ): JSDocCallbackTag
 
     fun createJSDocCallbackTag(
         tagName: Identifier?,
@@ -2110,7 +2707,10 @@ sealed external interface NodeFactory {
         comment: NodeArray<JSDocComment>?,
     ): JSDocCallbackTag
 
-    fun createJSDocOverloadTag(tagName: Identifier?, typeExpression: JSDocSignature): JSDocOverloadTag
+    fun createJSDocOverloadTag(
+        tagName: Identifier?,
+        typeExpression: JSDocSignature,
+    ): JSDocOverloadTag
 
     fun createJSDocOverloadTag(
         tagName: Identifier?,
@@ -2138,7 +2738,10 @@ sealed external interface NodeFactory {
         comment: NodeArray<JSDocComment>?,
     ): JSDocOverloadTag
 
-    fun createJSDocAugmentsTag(tagName: Identifier?, className: JSDocAugmentsTagClass): JSDocAugmentsTag
+    fun createJSDocAugmentsTag(
+        tagName: Identifier?,
+        className: JSDocAugmentsTagClass,
+    ): JSDocAugmentsTag
 
     fun createJSDocAugmentsTag(
         tagName: Identifier?,
@@ -2166,7 +2769,10 @@ sealed external interface NodeFactory {
         comment: NodeArray<JSDocComment>?,
     ): JSDocAugmentsTag
 
-    fun createJSDocImplementsTag(tagName: Identifier?, className: JSDocImplementsTagClass): JSDocImplementsTag
+    fun createJSDocImplementsTag(
+        tagName: Identifier?,
+        className: JSDocImplementsTagClass,
+    ): JSDocImplementsTag
 
     fun createJSDocImplementsTag(
         tagName: Identifier?,
@@ -2196,10 +2802,21 @@ sealed external interface NodeFactory {
 
     fun createJSDocAuthorTag(tagName: Identifier?): JSDocAuthorTag
 
-    fun createJSDocAuthorTag(tagName: Identifier?, comment: String = definedExternally): JSDocAuthorTag
+    fun createJSDocAuthorTag(
+        tagName: Identifier?,
+        comment: String = definedExternally,
+    ): JSDocAuthorTag
 
-    fun createJSDocAuthorTag(tagName: Identifier?, comment: NodeArray<JSDocComment> = definedExternally): JSDocAuthorTag
-    fun updateJSDocAuthorTag(node: JSDocAuthorTag, tagName: Identifier?, comment: String?): JSDocAuthorTag
+    fun createJSDocAuthorTag(
+        tagName: Identifier?,
+        comment: NodeArray<JSDocComment> = definedExternally,
+    ): JSDocAuthorTag
+
+    fun updateJSDocAuthorTag(
+        node: JSDocAuthorTag,
+        tagName: Identifier?,
+        comment: String?,
+    ): JSDocAuthorTag
 
     fun updateJSDocAuthorTag(
         node: JSDocAuthorTag,
@@ -2209,18 +2826,45 @@ sealed external interface NodeFactory {
 
     fun createJSDocClassTag(tagName: Identifier?): JSDocClassTag
 
-    fun createJSDocClassTag(tagName: Identifier?, comment: String = definedExternally): JSDocClassTag
+    fun createJSDocClassTag(
+        tagName: Identifier?,
+        comment: String = definedExternally,
+    ): JSDocClassTag
 
-    fun createJSDocClassTag(tagName: Identifier?, comment: NodeArray<JSDocComment> = definedExternally): JSDocClassTag
-    fun updateJSDocClassTag(node: JSDocClassTag, tagName: Identifier?, comment: String?): JSDocClassTag
+    fun createJSDocClassTag(
+        tagName: Identifier?,
+        comment: NodeArray<JSDocComment> = definedExternally,
+    ): JSDocClassTag
 
-    fun updateJSDocClassTag(node: JSDocClassTag, tagName: Identifier?, comment: NodeArray<JSDocComment>?): JSDocClassTag
+    fun updateJSDocClassTag(
+        node: JSDocClassTag,
+        tagName: Identifier?,
+        comment: String?,
+    ): JSDocClassTag
+
+    fun updateJSDocClassTag(
+        node: JSDocClassTag,
+        tagName: Identifier?,
+        comment: NodeArray<JSDocComment>?,
+    ): JSDocClassTag
+
     fun createJSDocPublicTag(tagName: Identifier?): JSDocPublicTag
 
-    fun createJSDocPublicTag(tagName: Identifier?, comment: String = definedExternally): JSDocPublicTag
+    fun createJSDocPublicTag(
+        tagName: Identifier?,
+        comment: String = definedExternally,
+    ): JSDocPublicTag
 
-    fun createJSDocPublicTag(tagName: Identifier?, comment: NodeArray<JSDocComment> = definedExternally): JSDocPublicTag
-    fun updateJSDocPublicTag(node: JSDocPublicTag, tagName: Identifier?, comment: String?): JSDocPublicTag
+    fun createJSDocPublicTag(
+        tagName: Identifier?,
+        comment: NodeArray<JSDocComment> = definedExternally,
+    ): JSDocPublicTag
+
+    fun updateJSDocPublicTag(
+        node: JSDocPublicTag,
+        tagName: Identifier?,
+        comment: String?,
+    ): JSDocPublicTag
 
     fun updateJSDocPublicTag(
         node: JSDocPublicTag,
@@ -2230,14 +2874,21 @@ sealed external interface NodeFactory {
 
     fun createJSDocPrivateTag(tagName: Identifier?): JSDocPrivateTag
 
-    fun createJSDocPrivateTag(tagName: Identifier?, comment: String = definedExternally): JSDocPrivateTag
+    fun createJSDocPrivateTag(
+        tagName: Identifier?,
+        comment: String = definedExternally,
+    ): JSDocPrivateTag
 
     fun createJSDocPrivateTag(
         tagName: Identifier?,
         comment: NodeArray<JSDocComment> = definedExternally,
     ): JSDocPrivateTag
 
-    fun updateJSDocPrivateTag(node: JSDocPrivateTag, tagName: Identifier?, comment: String?): JSDocPrivateTag
+    fun updateJSDocPrivateTag(
+        node: JSDocPrivateTag,
+        tagName: Identifier?,
+        comment: String?,
+    ): JSDocPrivateTag
 
     fun updateJSDocPrivateTag(
         node: JSDocPrivateTag,
@@ -2247,14 +2898,21 @@ sealed external interface NodeFactory {
 
     fun createJSDocProtectedTag(tagName: Identifier?): JSDocProtectedTag
 
-    fun createJSDocProtectedTag(tagName: Identifier?, comment: String = definedExternally): JSDocProtectedTag
+    fun createJSDocProtectedTag(
+        tagName: Identifier?,
+        comment: String = definedExternally,
+    ): JSDocProtectedTag
 
     fun createJSDocProtectedTag(
         tagName: Identifier?,
         comment: NodeArray<JSDocComment> = definedExternally,
     ): JSDocProtectedTag
 
-    fun updateJSDocProtectedTag(node: JSDocProtectedTag, tagName: Identifier?, comment: String?): JSDocProtectedTag
+    fun updateJSDocProtectedTag(
+        node: JSDocProtectedTag,
+        tagName: Identifier?,
+        comment: String?,
+    ): JSDocProtectedTag
 
     fun updateJSDocProtectedTag(
         node: JSDocProtectedTag,
@@ -2264,14 +2922,21 @@ sealed external interface NodeFactory {
 
     fun createJSDocReadonlyTag(tagName: Identifier?): JSDocReadonlyTag
 
-    fun createJSDocReadonlyTag(tagName: Identifier?, comment: String = definedExternally): JSDocReadonlyTag
+    fun createJSDocReadonlyTag(
+        tagName: Identifier?,
+        comment: String = definedExternally,
+    ): JSDocReadonlyTag
 
     fun createJSDocReadonlyTag(
         tagName: Identifier?,
         comment: NodeArray<JSDocComment> = definedExternally,
     ): JSDocReadonlyTag
 
-    fun updateJSDocReadonlyTag(node: JSDocReadonlyTag, tagName: Identifier?, comment: String?): JSDocReadonlyTag
+    fun updateJSDocReadonlyTag(
+        node: JSDocReadonlyTag,
+        tagName: Identifier?,
+        comment: String?,
+    ): JSDocReadonlyTag
 
     fun updateJSDocReadonlyTag(
         node: JSDocReadonlyTag,
@@ -2281,14 +2946,21 @@ sealed external interface NodeFactory {
 
     fun createJSDocUnknownTag(tagName: Identifier): JSDocUnknownTag
 
-    fun createJSDocUnknownTag(tagName: Identifier, comment: String = definedExternally): JSDocUnknownTag
+    fun createJSDocUnknownTag(
+        tagName: Identifier,
+        comment: String = definedExternally,
+    ): JSDocUnknownTag
 
     fun createJSDocUnknownTag(
         tagName: Identifier,
         comment: NodeArray<JSDocComment> = definedExternally,
     ): JSDocUnknownTag
 
-    fun updateJSDocUnknownTag(node: JSDocUnknownTag, tagName: Identifier, comment: String?): JSDocUnknownTag
+    fun updateJSDocUnknownTag(
+        node: JSDocUnknownTag,
+        tagName: Identifier,
+        comment: String?,
+    ): JSDocUnknownTag
 
     fun updateJSDocUnknownTag(
         node: JSDocUnknownTag,
@@ -2298,14 +2970,20 @@ sealed external interface NodeFactory {
 
     fun createJSDocDeprecatedTag(tagName: Identifier?): JSDocDeprecatedTag
 
-    fun createJSDocDeprecatedTag(tagName: Identifier?, comment: String = definedExternally): JSDocDeprecatedTag
+    fun createJSDocDeprecatedTag(
+        tagName: Identifier?,
+        comment: String = definedExternally,
+    ): JSDocDeprecatedTag
 
     fun createJSDocDeprecatedTag(
         tagName: Identifier?,
         comment: NodeArray<JSDocComment> = definedExternally,
     ): JSDocDeprecatedTag
 
-    fun updateJSDocDeprecatedTag(node: JSDocDeprecatedTag, tagName: Identifier?): JSDocDeprecatedTag
+    fun updateJSDocDeprecatedTag(
+        node: JSDocDeprecatedTag,
+        tagName: Identifier?,
+    ): JSDocDeprecatedTag
 
     fun updateJSDocDeprecatedTag(
         node: JSDocDeprecatedTag,
@@ -2321,14 +2999,20 @@ sealed external interface NodeFactory {
 
     fun createJSDocOverrideTag(tagName: Identifier?): JSDocOverrideTag
 
-    fun createJSDocOverrideTag(tagName: Identifier?, comment: String = definedExternally): JSDocOverrideTag
+    fun createJSDocOverrideTag(
+        tagName: Identifier?,
+        comment: String = definedExternally,
+    ): JSDocOverrideTag
 
     fun createJSDocOverrideTag(
         tagName: Identifier?,
         comment: NodeArray<JSDocComment> = definedExternally,
     ): JSDocOverrideTag
 
-    fun updateJSDocOverrideTag(node: JSDocOverrideTag, tagName: Identifier?): JSDocOverrideTag
+    fun updateJSDocOverrideTag(
+        node: JSDocOverrideTag,
+        tagName: Identifier?,
+    ): JSDocOverrideTag
 
     fun updateJSDocOverrideTag(
         node: JSDocOverrideTag,
@@ -2342,7 +3026,10 @@ sealed external interface NodeFactory {
         comment: NodeArray<JSDocComment> = definedExternally,
     ): JSDocOverrideTag
 
-    fun createJSDocThrowsTag(tagName: Identifier, typeExpression: JSDocTypeExpression?): JSDocThrowsTag
+    fun createJSDocThrowsTag(
+        tagName: Identifier,
+        typeExpression: JSDocTypeExpression?,
+    ): JSDocThrowsTag
 
     fun createJSDocThrowsTag(
         tagName: Identifier,
@@ -2376,7 +3063,10 @@ sealed external interface NodeFactory {
         comment: NodeArray<JSDocComment>? = definedExternally,
     ): JSDocThrowsTag
 
-    fun createJSDocSatisfiesTag(tagName: Identifier?, typeExpression: JSDocTypeExpression): JSDocSatisfiesTag
+    fun createJSDocSatisfiesTag(
+        tagName: Identifier?,
+        typeExpression: JSDocTypeExpression,
+    ): JSDocSatisfiesTag
 
     fun createJSDocSatisfiesTag(
         tagName: Identifier?,
@@ -2439,7 +3129,12 @@ sealed external interface NodeFactory {
     ): JSDocImportTag
 
     fun createJSDocText(text: String): JSDocText
-    fun updateJSDocText(node: JSDocText, text: String): JSDocText
+
+    fun updateJSDocText(
+        node: JSDocText,
+        text: String,
+    ): JSDocText
+
     fun createJSDocComment(): JSDoc
 
     fun createJSDocComment(
@@ -2452,7 +3147,11 @@ sealed external interface NodeFactory {
         tags: (js.array.ReadonlyArray<JSDocTag>)? = definedExternally,
     ): JSDoc
 
-    fun updateJSDocComment(node: JSDoc, comment: String?, tags: (js.array.ReadonlyArray<JSDocTag>)?): JSDoc
+    fun updateJSDocComment(
+        node: JSDoc,
+        comment: String?,
+        tags: (js.array.ReadonlyArray<JSDocTag>)?,
+    ): JSDoc
 
     fun updateJSDocComment(
         node: JSDoc,
@@ -2500,17 +3199,33 @@ sealed external interface NodeFactory {
     ): JsxOpeningElement
 
     fun createJsxClosingElement(tagName: JsxTagNameExpression): JsxClosingElement
-    fun updateJsxClosingElement(node: JsxClosingElement, tagName: JsxTagNameExpression): JsxClosingElement
+
+    fun updateJsxClosingElement(
+        node: JsxClosingElement,
+        tagName: JsxTagNameExpression,
+    ): JsxClosingElement
+
     fun createJsxFragment(
         openingFragment: JsxOpeningFragment,
         children: js.array.ReadonlyArray<JsxChild>,
         closingFragment: JsxClosingFragment,
     ): JsxFragment
 
-    fun createJsxText(text: String, containsOnlyTriviaWhiteSpaces: Boolean = definedExternally): JsxText
-    fun updateJsxText(node: JsxText, text: String, containsOnlyTriviaWhiteSpaces: Boolean = definedExternally): JsxText
+    fun createJsxText(
+        text: String,
+        containsOnlyTriviaWhiteSpaces: Boolean = definedExternally,
+    ): JsxText
+
+    fun updateJsxText(
+        node: JsxText,
+        text: String,
+        containsOnlyTriviaWhiteSpaces: Boolean = definedExternally,
+    ): JsxText
+
     fun createJsxOpeningFragment(): JsxOpeningFragment
+
     fun createJsxJsxClosingFragment(): JsxClosingFragment
+
     fun updateJsxFragment(
         node: JsxFragment,
         openingFragment: JsxOpeningFragment,
@@ -2518,17 +3233,57 @@ sealed external interface NodeFactory {
         closingFragment: JsxClosingFragment,
     ): JsxFragment
 
-    fun createJsxAttribute(name: JsxAttributeName, initializer: JsxAttributeValue?): JsxAttribute
-    fun updateJsxAttribute(node: JsxAttribute, name: JsxAttributeName, initializer: JsxAttributeValue?): JsxAttribute
+    fun createJsxAttribute(
+        name: JsxAttributeName,
+        initializer: JsxAttributeValue?,
+    ): JsxAttribute
+
+    fun updateJsxAttribute(
+        node: JsxAttribute,
+        name: JsxAttributeName,
+        initializer: JsxAttributeValue?,
+    ): JsxAttribute
+
     fun createJsxAttributes(properties: js.array.ReadonlyArray<JsxAttributeLike>): JsxAttributes
-    fun updateJsxAttributes(node: JsxAttributes, properties: js.array.ReadonlyArray<JsxAttributeLike>): JsxAttributes
+
+    fun updateJsxAttributes(
+        node: JsxAttributes,
+        properties: js.array.ReadonlyArray<JsxAttributeLike>,
+    ): JsxAttributes
+
     fun createJsxSpreadAttribute(expression: Expression): JsxSpreadAttribute
-    fun updateJsxSpreadAttribute(node: JsxSpreadAttribute, expression: Expression): JsxSpreadAttribute
-    fun createJsxExpression(dotDotDotToken: DotDotDotToken?, expression: Expression?): JsxExpression
-    fun updateJsxExpression(node: JsxExpression, expression: Expression?): JsxExpression
-    fun createJsxNamespacedName(namespace: Identifier, name: Identifier): JsxNamespacedName
-    fun updateJsxNamespacedName(node: JsxNamespacedName, namespace: Identifier, name: Identifier): JsxNamespacedName
-    fun createCaseClause(expression: Expression, statements: js.array.ReadonlyArray<Statement>): CaseClause
+
+    fun updateJsxSpreadAttribute(
+        node: JsxSpreadAttribute,
+        expression: Expression,
+    ): JsxSpreadAttribute
+
+    fun createJsxExpression(
+        dotDotDotToken: DotDotDotToken?,
+        expression: Expression?,
+    ): JsxExpression
+
+    fun updateJsxExpression(
+        node: JsxExpression,
+        expression: Expression?,
+    ): JsxExpression
+
+    fun createJsxNamespacedName(
+        namespace: Identifier,
+        name: Identifier,
+    ): JsxNamespacedName
+
+    fun updateJsxNamespacedName(
+        node: JsxNamespacedName,
+        namespace: Identifier,
+        name: Identifier,
+    ): JsxNamespacedName
+
+    fun createCaseClause(
+        expression: Expression,
+        statements: js.array.ReadonlyArray<Statement>,
+    ): CaseClause
+
     fun updateCaseClause(
         node: CaseClause,
         expression: Expression,
@@ -2536,7 +3291,12 @@ sealed external interface NodeFactory {
     ): CaseClause
 
     fun createDefaultClause(statements: js.array.ReadonlyArray<Statement>): DefaultClause
-    fun updateDefaultClause(node: DefaultClause, statements: js.array.ReadonlyArray<Statement>): DefaultClause
+
+    fun updateDefaultClause(
+        node: DefaultClause,
+        statements: js.array.ReadonlyArray<Statement>,
+    ): DefaultClause
+
     fun createHeritageClause(
         token: NodeFactoryCreateHeritageClauseToken,
         types: js.array.ReadonlyArray<ExpressionWithTypeArguments>,
@@ -2547,15 +3307,37 @@ sealed external interface NodeFactory {
         types: js.array.ReadonlyArray<ExpressionWithTypeArguments>,
     ): HeritageClause
 
-    fun createCatchClause(variableDeclaration: String?, block: Block): CatchClause
+    fun createCatchClause(
+        variableDeclaration: String?,
+        block: Block,
+    ): CatchClause
 
-    fun createCatchClause(variableDeclaration: BindingName?, block: Block): CatchClause
+    fun createCatchClause(
+        variableDeclaration: BindingName?,
+        block: Block,
+    ): CatchClause
 
-    fun createCatchClause(variableDeclaration: VariableDeclaration?, block: Block): CatchClause
-    fun updateCatchClause(node: CatchClause, variableDeclaration: VariableDeclaration?, block: Block): CatchClause
-    fun createPropertyAssignment(name: String, initializer: Expression): PropertyAssignment
+    fun createCatchClause(
+        variableDeclaration: VariableDeclaration?,
+        block: Block,
+    ): CatchClause
 
-    fun createPropertyAssignment(name: PropertyName, initializer: Expression): PropertyAssignment
+    fun updateCatchClause(
+        node: CatchClause,
+        variableDeclaration: VariableDeclaration?,
+        block: Block,
+    ): CatchClause
+
+    fun createPropertyAssignment(
+        name: String,
+        initializer: Expression,
+    ): PropertyAssignment
+
+    fun createPropertyAssignment(
+        name: PropertyName,
+        initializer: Expression,
+    ): PropertyAssignment
+
     fun updatePropertyAssignment(
         node: PropertyAssignment,
         name: PropertyName,
@@ -2579,11 +3361,28 @@ sealed external interface NodeFactory {
     ): ShorthandPropertyAssignment
 
     fun createSpreadAssignment(expression: Expression): SpreadAssignment
-    fun updateSpreadAssignment(node: SpreadAssignment, expression: Expression): SpreadAssignment
-    fun createEnumMember(name: String, initializer: Expression = definedExternally): EnumMember
 
-    fun createEnumMember(name: PropertyName, initializer: Expression = definedExternally): EnumMember
-    fun updateEnumMember(node: EnumMember, name: PropertyName, initializer: Expression?): EnumMember
+    fun updateSpreadAssignment(
+        node: SpreadAssignment,
+        expression: Expression,
+    ): SpreadAssignment
+
+    fun createEnumMember(
+        name: String,
+        initializer: Expression = definedExternally,
+    ): EnumMember
+
+    fun createEnumMember(
+        name: PropertyName,
+        initializer: Expression = definedExternally,
+    ): EnumMember
+
+    fun updateEnumMember(
+        node: EnumMember,
+        name: PropertyName,
+        initializer: Expression?,
+    ): EnumMember
+
     fun createSourceFile(
         statements: js.array.ReadonlyArray<Statement>,
         endOfFileToken: EndOfFileToken,
@@ -2601,7 +3400,9 @@ sealed external interface NodeFactory {
     ): SourceFile
 
     fun createNotEmittedStatement(original: Node): NotEmittedStatement
+
     fun createNotEmittedTypeElement(): NotEmittedTypeElement
+
     fun createPartiallyEmittedExpression(
         expression: Expression,
         original: Node = definedExternally,
@@ -2613,56 +3414,177 @@ sealed external interface NodeFactory {
     ): PartiallyEmittedExpression
 
     fun createCommaListExpression(elements: js.array.ReadonlyArray<Expression>): CommaListExpression
+
     fun updateCommaListExpression(
         node: CommaListExpression,
         elements: js.array.ReadonlyArray<Expression>,
     ): CommaListExpression
 
     fun createBundle(sourceFiles: js.array.ReadonlyArray<SourceFile>): Bundle
-    fun updateBundle(node: Bundle, sourceFiles: js.array.ReadonlyArray<SourceFile>): Bundle
-    fun createComma(left: Expression, right: Expression): BinaryExpression
-    fun createAssignment(left: ObjectLiteralExpression, right: Expression): DestructuringAssignment
 
-    fun createAssignment(left: ArrayLiteralExpression, right: Expression): DestructuringAssignment
-    fun createAssignment(left: Expression, right: Expression): AssignmentExpression<EqualsToken>
-    fun createLogicalOr(left: Expression, right: Expression): BinaryExpression
-    fun createLogicalAnd(left: Expression, right: Expression): BinaryExpression
-    fun createBitwiseOr(left: Expression, right: Expression): BinaryExpression
-    fun createBitwiseXor(left: Expression, right: Expression): BinaryExpression
-    fun createBitwiseAnd(left: Expression, right: Expression): BinaryExpression
-    fun createStrictEquality(left: Expression, right: Expression): BinaryExpression
-    fun createStrictInequality(left: Expression, right: Expression): BinaryExpression
-    fun createEquality(left: Expression, right: Expression): BinaryExpression
-    fun createInequality(left: Expression, right: Expression): BinaryExpression
-    fun createLessThan(left: Expression, right: Expression): BinaryExpression
-    fun createLessThanEquals(left: Expression, right: Expression): BinaryExpression
-    fun createGreaterThan(left: Expression, right: Expression): BinaryExpression
-    fun createGreaterThanEquals(left: Expression, right: Expression): BinaryExpression
-    fun createLeftShift(left: Expression, right: Expression): BinaryExpression
-    fun createRightShift(left: Expression, right: Expression): BinaryExpression
-    fun createUnsignedRightShift(left: Expression, right: Expression): BinaryExpression
-    fun createAdd(left: Expression, right: Expression): BinaryExpression
-    fun createSubtract(left: Expression, right: Expression): BinaryExpression
-    fun createMultiply(left: Expression, right: Expression): BinaryExpression
-    fun createDivide(left: Expression, right: Expression): BinaryExpression
-    fun createModulo(left: Expression, right: Expression): BinaryExpression
-    fun createExponent(left: Expression, right: Expression): BinaryExpression
+    fun updateBundle(
+        node: Bundle,
+        sourceFiles: js.array.ReadonlyArray<SourceFile>,
+    ): Bundle
+
+    fun createComma(
+        left: Expression,
+        right: Expression,
+    ): BinaryExpression
+
+    fun createAssignment(
+        left: ObjectLiteralExpression,
+        right: Expression,
+    ): DestructuringAssignment
+
+    fun createAssignment(
+        left: ArrayLiteralExpression,
+        right: Expression,
+    ): DestructuringAssignment
+
+    fun createAssignment(
+        left: Expression,
+        right: Expression,
+    ): AssignmentExpression<EqualsToken>
+
+    fun createLogicalOr(
+        left: Expression,
+        right: Expression,
+    ): BinaryExpression
+
+    fun createLogicalAnd(
+        left: Expression,
+        right: Expression,
+    ): BinaryExpression
+
+    fun createBitwiseOr(
+        left: Expression,
+        right: Expression,
+    ): BinaryExpression
+
+    fun createBitwiseXor(
+        left: Expression,
+        right: Expression,
+    ): BinaryExpression
+
+    fun createBitwiseAnd(
+        left: Expression,
+        right: Expression,
+    ): BinaryExpression
+
+    fun createStrictEquality(
+        left: Expression,
+        right: Expression,
+    ): BinaryExpression
+
+    fun createStrictInequality(
+        left: Expression,
+        right: Expression,
+    ): BinaryExpression
+
+    fun createEquality(
+        left: Expression,
+        right: Expression,
+    ): BinaryExpression
+
+    fun createInequality(
+        left: Expression,
+        right: Expression,
+    ): BinaryExpression
+
+    fun createLessThan(
+        left: Expression,
+        right: Expression,
+    ): BinaryExpression
+
+    fun createLessThanEquals(
+        left: Expression,
+        right: Expression,
+    ): BinaryExpression
+
+    fun createGreaterThan(
+        left: Expression,
+        right: Expression,
+    ): BinaryExpression
+
+    fun createGreaterThanEquals(
+        left: Expression,
+        right: Expression,
+    ): BinaryExpression
+
+    fun createLeftShift(
+        left: Expression,
+        right: Expression,
+    ): BinaryExpression
+
+    fun createRightShift(
+        left: Expression,
+        right: Expression,
+    ): BinaryExpression
+
+    fun createUnsignedRightShift(
+        left: Expression,
+        right: Expression,
+    ): BinaryExpression
+
+    fun createAdd(
+        left: Expression,
+        right: Expression,
+    ): BinaryExpression
+
+    fun createSubtract(
+        left: Expression,
+        right: Expression,
+    ): BinaryExpression
+
+    fun createMultiply(
+        left: Expression,
+        right: Expression,
+    ): BinaryExpression
+
+    fun createDivide(
+        left: Expression,
+        right: Expression,
+    ): BinaryExpression
+
+    fun createModulo(
+        left: Expression,
+        right: Expression,
+    ): BinaryExpression
+
+    fun createExponent(
+        left: Expression,
+        right: Expression,
+    ): BinaryExpression
+
     fun createPrefixPlus(operand: Expression): PrefixUnaryExpression
+
     fun createPrefixMinus(operand: Expression): PrefixUnaryExpression
+
     fun createPrefixIncrement(operand: Expression): PrefixUnaryExpression
+
     fun createPrefixDecrement(operand: Expression): PrefixUnaryExpression
+
     fun createBitwiseNot(operand: Expression): PrefixUnaryExpression
+
     fun createLogicalNot(operand: Expression): PrefixUnaryExpression
+
     fun createPostfixIncrement(operand: Expression): PostfixUnaryExpression
+
     fun createPostfixDecrement(operand: Expression): PostfixUnaryExpression
+
     fun createImmediatelyInvokedFunctionExpression(statements: js.array.ReadonlyArray<Statement>): CallExpression
+
     fun createImmediatelyInvokedFunctionExpression(
         statements: js.array.ReadonlyArray<Statement>,
         param: ParameterDeclaration,
         paramValue: Expression,
     ): CallExpression
 
-    fun createImmediatelyInvokedArrowFunction(statements: js.array.ReadonlyArray<Statement>): ImmediatelyInvokedArrowFunction
+    fun createImmediatelyInvokedArrowFunction(
+        statements: js.array.ReadonlyArray<Statement>,
+    ): ImmediatelyInvokedArrowFunction
+
     fun createImmediatelyInvokedArrowFunction(
         statements: js.array.ReadonlyArray<Statement>,
         param: ParameterDeclaration,
@@ -2670,8 +3592,11 @@ sealed external interface NodeFactory {
     ): ImmediatelyInvokedArrowFunction
 
     fun createVoidZero(): VoidExpression
+
     fun createExportDefault(expression: Expression): ExportAssignment
+
     fun createExternalModuleExport(exportName: Identifier): ExportDeclaration
+
     fun restoreOuterExpressions(
         outerExpression: Expression?,
         innerExpression: Expression,
@@ -2681,12 +3606,18 @@ sealed external interface NodeFactory {
     /**
      * Updates a node that may contain modifiers, replacing only the modifiers of the node.
      */
-    fun <T : HasModifiers> replaceModifiers(node: T, modifiers: (js.array.ReadonlyArray<Modifier>)?): T
+    fun <T : HasModifiers> replaceModifiers(
+        node: T,
+        modifiers: (js.array.ReadonlyArray<Modifier>)?,
+    ): T
 
     /**
      * Updates a node that may contain modifiers, replacing only the modifiers of the node.
      */
-    fun <T : HasModifiers> replaceModifiers(node: T, modifiers: ModifierFlags?): T
+    fun <T : HasModifiers> replaceModifiers(
+        node: T,
+        modifiers: ModifierFlags?,
+    ): T
 
     /**
      * Updates a node that may contain decorators or modifiers, replacing only the decorators and modifiers of the node.
@@ -2699,5 +3630,8 @@ sealed external interface NodeFactory {
     /**
      * Updates a node that contains a property name, replacing only the name of the node.
      */
-    fun <T : NodeFactoryReplacePropertyNameTConstraint> replacePropertyName(node: T, name: Any?): T
+    fun <T : NodeFactoryReplacePropertyNameTConstraint> replacePropertyName(
+        node: T,
+        name: Any?,
+    ): T
 }

@@ -4,6 +4,5 @@
 
 package typescript
 
-
 @JsName("isDefaultClause")
-external fun isDefaultClauseRaw(node: Node): Boolean /* node is DefaultClause */
+external fun isDefaultClauseRaw(node: Node): Boolean // node is DefaultClause

@@ -2,8 +2,14 @@
 
 package typescript
 
-sealed external interface SourceFile : Declaration, LocalsContainer, BlockLike, ModuleDeclarationParent,
-    ImportEqualsDeclarationParent, ImportDeclarationParent, ExportDeclarationParent,
+sealed external interface SourceFile :
+    Declaration,
+    LocalsContainer,
+    BlockLike,
+    ModuleDeclarationParent,
+    ImportEqualsDeclarationParent,
+    ImportDeclarationParent,
+    ExportDeclarationParent,
     RequiredAffectedFileResultAffected {
     override val kind: SyntaxKind.SourceFile
     val statements: NodeArray<Statement>
@@ -47,9 +53,20 @@ sealed external interface SourceFile : Declaration, LocalsContainer, BlockLike, 
      * CommonJS-output-format by the node module transformer and type checker, regardless of extension or context.
      */
     var impliedNodeFormat: ResolutionMode
+
     fun getLineAndCharacterOfPosition(pos: Double): LineAndCharacter
+
     fun getLineEndOfPosition(pos: Double): Double
+
     fun getLineStarts(): js.array.ReadonlyArray<Double>
-    fun getPositionOfLineAndCharacter(line: Double, character: Double): Double
-    fun update(newText: String, textChangeRange: TextChangeRange): SourceFile
+
+    fun getPositionOfLineAndCharacter(
+        line: Double,
+        character: Double,
+    ): Double
+
+    fun update(
+        newText: String,
+        textChangeRange: TextChangeRange,
+    ): SourceFile
 }

@@ -2,7 +2,11 @@
 
 package typescript
 
-sealed external interface ModuleDeclaration : DeclarationStatement, JSDocContainer, LocalsContainer, HasJSDoc,
+sealed external interface ModuleDeclaration :
+    DeclarationStatement,
+    JSDocContainer,
+    LocalsContainer,
+    HasJSDoc,
     HasModifiers {
     override val kind: SyntaxKind.ModuleDeclaration
     override val parent: ModuleDeclarationParent

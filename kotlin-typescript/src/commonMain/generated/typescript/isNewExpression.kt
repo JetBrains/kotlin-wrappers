@@ -4,6 +4,5 @@
 
 package typescript
 
-
 @JsName("isNewExpression")
-external fun isNewExpressionRaw(node: Node): Boolean /* node is NewExpression */
+external fun isNewExpressionRaw(node: Node): Boolean // node is NewExpression

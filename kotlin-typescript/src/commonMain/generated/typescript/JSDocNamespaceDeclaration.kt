@@ -2,8 +2,12 @@
 
 package typescript
 
-sealed external interface JSDocNamespaceDeclaration : ModuleDeclaration, ModuleDeclarationBody, JSDocNamespaceBody,
-    JSDocTypedefTagFullName, JSDocCallbackTagFullName {
+sealed external interface JSDocNamespaceDeclaration :
+    ModuleDeclaration,
+    ModuleDeclarationBody,
+    JSDocNamespaceBody,
+    JSDocTypedefTagFullName,
+    JSDocCallbackTagFullName {
     override val name: Identifier
     override val body: JSDocNamespaceBody?
 }

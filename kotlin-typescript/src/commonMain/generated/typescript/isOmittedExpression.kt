@@ -4,6 +4,5 @@
 
 package typescript
 
-
 @JsName("isOmittedExpression")
-external fun isOmittedExpressionRaw(node: Node): Boolean /* node is OmittedExpression */
+external fun isOmittedExpressionRaw(node: Node): Boolean // node is OmittedExpression

@@ -4,6 +4,5 @@
 
 package typescript
 
-
 @JsName("isSyntheticExpression")
-external fun isSyntheticExpressionRaw(node: Node): Boolean /* node is SyntheticExpression */
+external fun isSyntheticExpressionRaw(node: Node): Boolean // node is SyntheticExpression

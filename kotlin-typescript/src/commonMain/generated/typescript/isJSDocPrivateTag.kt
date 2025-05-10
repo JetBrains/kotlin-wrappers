@@ -4,6 +4,5 @@
 
 package typescript
 
-
 @JsName("isJSDocPrivateTag")
-external fun isJSDocPrivateTagRaw(node: Node): Boolean /* node is JSDocPrivateTag */
+external fun isJSDocPrivateTagRaw(node: Node): Boolean // node is JSDocPrivateTag

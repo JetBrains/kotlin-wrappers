@@ -4,6 +4,5 @@
 
 package typescript
 
-
 @JsName("isJSDocFunctionType")
-external fun isJSDocFunctionTypeRaw(node: Node): Boolean /* node is JSDocFunctionType */
+external fun isJSDocFunctionTypeRaw(node: Node): Boolean // node is JSDocFunctionType

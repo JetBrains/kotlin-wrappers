@@ -3,6 +3,7 @@
 package typescript
 
 sealed external interface KeywordTypeNode<TKind : KeywordTypeSyntaxKind /* default is KeywordTypeSyntaxKind */> :
-    KeywordToken<TKind>, TypeNode {
+    KeywordToken<TKind>,
+    TypeNode {
     override val kind: TKind
 }

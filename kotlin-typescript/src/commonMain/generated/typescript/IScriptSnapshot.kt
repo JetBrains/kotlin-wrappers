@@ -9,7 +9,10 @@ package typescript
  */
 sealed external interface IScriptSnapshot {
     /** Gets a portion of the script snapshot specified by [start, end). */
-    fun getText(start: Double, end: Double): String
+    fun getText(
+        start: Double,
+        end: Double,
+    ): String
 
     /** Gets the length of this script snapshot. */
     fun getLength(): Double

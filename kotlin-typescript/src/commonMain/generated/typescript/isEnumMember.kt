@@ -4,6 +4,5 @@
 
 package typescript
 
-
 @JsName("isEnumMember")
-external fun isEnumMemberRaw(node: Node): Boolean /* node is EnumMember */
+external fun isEnumMemberRaw(node: Node): Boolean // node is EnumMember

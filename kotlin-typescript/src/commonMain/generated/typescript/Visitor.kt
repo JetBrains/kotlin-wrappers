@@ -8,6 +8,5 @@ package typescript
 typealias Visitor<
         TIn, /*  : Node default is Node */
         @Suppress("UNUSED_TYPEALIAS_PARAMETER")
-        TOut,
-        /*  : Node? default is TIn? */
+        TOut, // : Node? default is TIn?
         > = (node: TIn) -> VisitResult<TOut>

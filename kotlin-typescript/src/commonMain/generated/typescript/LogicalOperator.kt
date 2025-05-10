@@ -2,4 +2,6 @@
 
 package typescript
 
-sealed external interface LogicalOperator : SyntaxKind, LogicalOperatorOrHigher
+sealed external interface LogicalOperator :
+    SyntaxKind,
+    LogicalOperatorOrHigher

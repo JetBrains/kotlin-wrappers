@@ -13,9 +13,16 @@ sealed external interface SolutionBuilderHostBase<T : BuilderProgram> : ProgramH
      */
     val writeFile: ((path: String, data: String, writeByteOrderMark: Boolean? /* use undefined for default */) -> Unit)?
     var getCustomTransformers: ((project: String) -> CustomTransformers?)?
+
     fun getModifiedTime(fileName: String): Date?
-    fun setModifiedTime(fileName: String, date: Date)
+
+    fun setModifiedTime(
+        fileName: String,
+        date: Date,
+    )
+
     fun deleteFile(fileName: String)
+
     val getParsedCommandLine: ((fileName: String) -> ParsedCommandLine?)?
     var reportDiagnostic: DiagnosticReporter
     var reportSolutionBuilderStatus: DiagnosticReporter

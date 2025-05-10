@@ -4,6 +4,5 @@
 
 package typescript
 
-
 @JsName("isBundle")
-external fun isBundleRaw(node: Node): Boolean /* node is Bundle */
+external fun isBundleRaw(node: Node): Boolean // node is Bundle

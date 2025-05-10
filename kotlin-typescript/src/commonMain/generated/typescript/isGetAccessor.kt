@@ -4,6 +4,5 @@
 
 package typescript
 
-
 @JsName("isGetAccessor")
-external fun isGetAccessorRaw(node: Node): Boolean /* node is GetAccessorDeclaration */
+external fun isGetAccessorRaw(node: Node): Boolean // node is GetAccessorDeclaration

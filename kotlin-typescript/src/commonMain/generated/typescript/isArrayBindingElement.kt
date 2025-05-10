@@ -4,6 +4,5 @@
 
 package typescript
 
-
 @JsName("isArrayBindingElement")
-external fun isArrayBindingElementRaw(node: Node): Boolean /* node is ArrayBindingElement */
+external fun isArrayBindingElementRaw(node: Node): Boolean // node is ArrayBindingElement

@@ -4,4 +4,7 @@
 
 package typescript
 
-external fun getLeadingCommentRanges(text: String, pos: Double): js.array.ReadonlyArray<CommentRange>?
+external fun getLeadingCommentRanges(
+    text: String,
+    pos: Double,
+): js.array.ReadonlyArray<CommentRange>?

@@ -4,6 +4,5 @@
 
 package typescript
 
-
 @JsName("isStringTextContainingNode")
-external fun isStringTextContainingNodeRaw(node: Node): Boolean /* node is StringLiteral | TemplateLiteralToken */
+external fun isStringTextContainingNodeRaw(node: Node): Boolean // node is StringLiteral | TemplateLiteralToken

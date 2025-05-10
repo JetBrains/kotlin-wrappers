@@ -4,6 +4,5 @@
 
 package typescript
 
-
 @JsName("isMemberName")
-external fun isMemberNameRaw(node: Node): Boolean /* node is MemberName */
+external fun isMemberNameRaw(node: Node): Boolean // node is MemberName

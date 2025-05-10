@@ -4,6 +4,5 @@
 
 package typescript
 
-
 @JsName("isJSDocTypedefTag")
-external fun isJSDocTypedefTagRaw(node: Node): Boolean /* node is JSDocTypedefTag */
+external fun isJSDocTypedefTagRaw(node: Node): Boolean // node is JSDocTypedefTag

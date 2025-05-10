@@ -2,4 +2,4 @@
 
 package typescript
 
-typealias ResolutionMode = Any? /* ModuleKind.ESNext | ModuleKind.CommonJS | undefined */
+typealias ResolutionMode = Any? // ModuleKind.ESNext | ModuleKind.CommonJS | undefined

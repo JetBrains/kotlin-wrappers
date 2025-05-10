@@ -4,4 +4,7 @@
 
 package typescript
 
-external fun <T : Node> setSyntheticLeadingComments(node: T, comments: js.array.ReadonlyArray<SynthesizedComment>?): T
+external fun <T : Node> setSyntheticLeadingComments(
+    node: T,
+    comments: js.array.ReadonlyArray<SynthesizedComment>?,
+): T

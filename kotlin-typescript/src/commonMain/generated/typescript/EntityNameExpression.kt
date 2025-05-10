@@ -2,5 +2,8 @@
 
 package typescript
 
-sealed external interface EntityNameExpression : Node, LeftHandSideExpression, DeclarationName,
+sealed external interface EntityNameExpression :
+    Node,
+    LeftHandSideExpression,
+    DeclarationName,
     EntityNameOrEntityNameExpression

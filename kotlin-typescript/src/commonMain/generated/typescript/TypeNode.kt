@@ -2,7 +2,10 @@
 
 package typescript
 
-sealed external interface TypeNode : Node, TupleTypeNodeElementsItem, NodeFactoryCreateTupleTypeNodeElementsItem,
+sealed external interface TypeNode :
+    Node,
+    TupleTypeNodeElementsItem,
+    NodeFactoryCreateTupleTypeNodeElementsItem,
     NodeFactoryUpdateTupleTypeNodeElementsItem {
     var _typeNodeBrand: Any?
 }

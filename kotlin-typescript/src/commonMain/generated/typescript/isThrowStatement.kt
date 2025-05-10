@@ -4,6 +4,5 @@
 
 package typescript
 
-
 @JsName("isThrowStatement")
-external fun isThrowStatementRaw(node: Node): Boolean /* node is ThrowStatement */
+external fun isThrowStatementRaw(node: Node): Boolean // node is ThrowStatement

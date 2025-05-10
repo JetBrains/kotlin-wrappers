@@ -4,4 +4,6 @@
 
 package typescript
 
-external fun getConfigFileParsingDiagnostics(configFileParseResult: ParsedCommandLine): js.array.ReadonlyArray<Diagnostic>
+external fun getConfigFileParsingDiagnostics(
+    configFileParseResult: ParsedCommandLine,
+): js.array.ReadonlyArray<Diagnostic>

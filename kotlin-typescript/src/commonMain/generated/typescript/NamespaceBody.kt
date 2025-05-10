@@ -2,4 +2,6 @@
 
 package typescript
 
-sealed external interface NamespaceBody : Node, ModuleBody
+sealed external interface NamespaceBody :
+    Node,
+    ModuleBody

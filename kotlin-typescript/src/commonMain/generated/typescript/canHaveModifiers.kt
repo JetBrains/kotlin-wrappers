@@ -4,6 +4,5 @@
 
 package typescript
 
-
 @JsName("canHaveModifiers")
-external fun canHaveModifiersRaw(node: Node): Boolean /* node is HasModifiers */
+external fun canHaveModifiersRaw(node: Node): Boolean // node is HasModifiers

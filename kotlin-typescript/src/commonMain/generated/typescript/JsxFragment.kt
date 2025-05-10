@@ -2,7 +2,11 @@
 
 package typescript
 
-sealed external interface JsxFragment : PrimaryExpression, JsxAttributeValue, JsxExpressionParent, JsxTextParent,
+sealed external interface JsxFragment :
+    PrimaryExpression,
+    JsxAttributeValue,
+    JsxExpressionParent,
+    JsxTextParent,
     JsxChild {
     override val kind: SyntaxKind.JsxFragment
     val openingFragment: JsxOpeningFragment

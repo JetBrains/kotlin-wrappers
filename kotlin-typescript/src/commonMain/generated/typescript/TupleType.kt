@@ -19,5 +19,6 @@ sealed external interface TupleType : GenericType {
     var hasRestElement: Boolean
     var combinedFlags: ElementFlags
     var readonly: Boolean
-    var labeledElementDeclarations: (js.array.ReadonlyArray<(Any? /* NamedTupleMember | ParameterDeclaration | undefined */)>)?
+    var labeledElementDeclarations:
+            (js.array.ReadonlyArray<(Any? /* NamedTupleMember | ParameterDeclaration | undefined */)>)?
 }

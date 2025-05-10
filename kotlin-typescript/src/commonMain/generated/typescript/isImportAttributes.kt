@@ -4,6 +4,5 @@
 
 package typescript
 
-
 @JsName("isImportAttributes")
-external fun isImportAttributesRaw(node: Node): Boolean /* node is ImportAttributes */
+external fun isImportAttributesRaw(node: Node): Boolean // node is ImportAttributes

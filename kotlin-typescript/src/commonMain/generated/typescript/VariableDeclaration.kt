@@ -2,9 +2,17 @@
 
 package typescript
 
-sealed external interface VariableDeclaration : NamedDeclaration, JSDocContainer, HasJSDoc, HasType,
-    HasExpressionInitializer, VariableLikeDeclaration, ObjectBindingPatternParent, ArrayBindingPatternParent,
-    BindingOrAssignmentElement, WalkUpBindingElementsAndPatternsResult {
+sealed external interface VariableDeclaration :
+    NamedDeclaration,
+    JSDocContainer,
+    HasJSDoc,
+    HasType,
+    HasExpressionInitializer,
+    VariableLikeDeclaration,
+    ObjectBindingPatternParent,
+    ArrayBindingPatternParent,
+    BindingOrAssignmentElement,
+    WalkUpBindingElementsAndPatternsResult {
     override val kind: SyntaxKind.VariableDeclaration
     override val parent: VariableDeclarationParent
     override val name: BindingName

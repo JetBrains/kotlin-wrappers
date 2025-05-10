@@ -2,7 +2,9 @@
 
 package typescript
 
-sealed external interface ImportClause : NamedDeclaration, TypeOnlyCompatibleAliasDeclaration {
+sealed external interface ImportClause :
+    NamedDeclaration,
+    TypeOnlyCompatibleAliasDeclaration {
     override val kind: SyntaxKind.ImportClause
     override val parent: ImportClauseParent
     val isTypeOnly: Boolean

@@ -2,7 +2,10 @@
 
 package typescript
 
-sealed external interface JsxExpression : Expression, JsxAttributeValue, JsxChild,
+sealed external interface JsxExpression :
+    Expression,
+    JsxAttributeValue,
+    JsxChild,
     IsStringLiteralOrJsxExpressionResultPredicate {
     override val kind: SyntaxKind.JsxExpression
     override val parent: JsxExpressionParent

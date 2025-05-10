@@ -4,6 +4,5 @@
 
 package typescript
 
-
 @JsName("isColonToken")
-external fun isColonTokenRaw(node: Node): Boolean /* node is ColonToken */
+external fun isColonTokenRaw(node: Node): Boolean // node is ColonToken

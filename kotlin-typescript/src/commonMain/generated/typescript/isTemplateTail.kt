@@ -4,6 +4,5 @@
 
 package typescript
 
-
 @JsName("isTemplateTail")
-external fun isTemplateTailRaw(node: Node): Boolean /* node is TemplateTail */
+external fun isTemplateTailRaw(node: Node): Boolean // node is TemplateTail

@@ -4,6 +4,5 @@
 
 package typescript
 
-
 @JsName("isYieldExpression")
-external fun isYieldExpressionRaw(node: Node): Boolean /* node is YieldExpression */
+external fun isYieldExpressionRaw(node: Node): Boolean // node is YieldExpression

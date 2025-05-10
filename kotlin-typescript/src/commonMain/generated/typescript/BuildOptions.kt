@@ -20,5 +20,8 @@ sealed external interface BuildOptions {
     operator fun get(key: String): CompilerOptionsValue
 
     @seskar.js.JsNativeSetter
-    operator fun set(key: String, value: CompilerOptionsValue)
+    operator fun set(
+        key: String,
+        value: CompilerOptionsValue,
+    )
 }

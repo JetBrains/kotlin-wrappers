@@ -2,4 +2,6 @@
 
 package typescript
 
-sealed external interface AssertionExpression : Node, HasType
+sealed external interface AssertionExpression :
+    Node,
+    HasType

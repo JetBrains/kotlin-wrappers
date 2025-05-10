@@ -2,4 +2,6 @@
 
 package typescript
 
-sealed external interface JsxCallLike : Node, CallLikeExpression
+sealed external interface JsxCallLike :
+    Node,
+    CallLikeExpression

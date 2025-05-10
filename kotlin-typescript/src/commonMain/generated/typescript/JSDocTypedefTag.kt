@@ -2,7 +2,11 @@
 
 package typescript
 
-sealed external interface JSDocTypedefTag : JSDocTag, NamedDeclaration, LocalsContainer, DeclarationWithTypeParameters {
+sealed external interface JSDocTypedefTag :
+    JSDocTag,
+    NamedDeclaration,
+    LocalsContainer,
+    DeclarationWithTypeParameters {
     override val kind: SyntaxKind.JSDocTypedefTag
     override val parent: JSDoc
     val fullName: (JSDocTypedefTagFullName)?

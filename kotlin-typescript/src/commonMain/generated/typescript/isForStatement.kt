@@ -4,6 +4,5 @@
 
 package typescript
 
-
 @JsName("isForStatement")
-external fun isForStatementRaw(node: Node): Boolean /* node is ForStatement */
+external fun isForStatementRaw(node: Node): Boolean // node is ForStatement

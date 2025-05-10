@@ -2,4 +2,6 @@
 
 package typescript
 
-sealed external interface JSDocAugmentsTagClassExpression : Node, LeftHandSideExpression
+sealed external interface JSDocAugmentsTagClassExpression :
+    Node,
+    LeftHandSideExpression

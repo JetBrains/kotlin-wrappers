@@ -4,6 +4,5 @@
 
 package typescript
 
-
 @JsName("isCaseBlock")
-external fun isCaseBlockRaw(node: Node): Boolean /* node is CaseBlock */
+external fun isCaseBlockRaw(node: Node): Boolean // node is CaseBlock

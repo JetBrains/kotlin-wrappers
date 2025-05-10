@@ -4,4 +4,4 @@
 
 package typescript
 
-external val versionMajorMinor: Any? /* should be inferred */
+external val versionMajorMinor: Any? // should be inferred

@@ -2,4 +2,6 @@
 
 package typescript
 
-sealed external interface InstantiableType : Type, IndexTypeType
+sealed external interface InstantiableType :
+    Type,
+    IndexTypeType

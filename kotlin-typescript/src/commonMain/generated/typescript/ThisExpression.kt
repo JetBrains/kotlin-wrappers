@@ -2,7 +2,10 @@
 
 package typescript
 
-sealed external interface ThisExpression : PrimaryExpression, FlowContainer, JsxTagNameExpression,
+sealed external interface ThisExpression :
+    PrimaryExpression,
+    FlowContainer,
+    JsxTagNameExpression,
     JsxTagNamePropertyAccessExpression {
     override val kind: SyntaxKind.ThisKeyword
 }

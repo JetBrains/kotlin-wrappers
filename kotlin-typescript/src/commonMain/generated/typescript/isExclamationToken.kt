@@ -4,6 +4,5 @@
 
 package typescript
 
-
 @JsName("isExclamationToken")
-external fun isExclamationTokenRaw(node: Node): Boolean /* node is ExclamationToken */
+external fun isExclamationTokenRaw(node: Node): Boolean // node is ExclamationToken

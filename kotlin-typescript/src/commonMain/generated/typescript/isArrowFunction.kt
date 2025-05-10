@@ -4,6 +4,5 @@
 
 package typescript
 
-
 @JsName("isArrowFunction")
-external fun isArrowFunctionRaw(node: Node): Boolean /* node is ArrowFunction */
+external fun isArrowFunctionRaw(node: Node): Boolean // node is ArrowFunction

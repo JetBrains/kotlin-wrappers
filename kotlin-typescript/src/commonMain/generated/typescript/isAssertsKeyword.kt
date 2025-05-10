@@ -4,6 +4,5 @@
 
 package typescript
 
-
 @JsName("isAssertsKeyword")
-external fun isAssertsKeywordRaw(node: Node): Boolean /* node is AssertsKeyword */
+external fun isAssertsKeywordRaw(node: Node): Boolean // node is AssertsKeyword

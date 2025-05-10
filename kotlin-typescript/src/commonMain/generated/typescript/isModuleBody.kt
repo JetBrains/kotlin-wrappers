@@ -4,6 +4,5 @@
 
 package typescript
 
-
 @JsName("isModuleBody")
-external fun isModuleBodyRaw(node: Node): Boolean /* node is ModuleBody */
+external fun isModuleBodyRaw(node: Node): Boolean // node is ModuleBody

@@ -2,4 +2,6 @@
 
 package typescript
 
-sealed external interface CaseOrDefaultClause : Node, BlockLike
+sealed external interface CaseOrDefaultClause :
+    Node,
+    BlockLike

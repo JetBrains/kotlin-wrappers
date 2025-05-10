@@ -4,6 +4,5 @@
 
 package typescript
 
-
 @JsName("isRestTypeNode")
-external fun isRestTypeNodeRaw(node: Node): Boolean /* node is RestTypeNode */
+external fun isRestTypeNodeRaw(node: Node): Boolean // node is RestTypeNode

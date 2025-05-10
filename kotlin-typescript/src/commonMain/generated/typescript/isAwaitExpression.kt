@@ -4,6 +4,5 @@
 
 package typescript
 
-
 @JsName("isAwaitExpression")
-external fun isAwaitExpressionRaw(node: Node): Boolean /* node is AwaitExpression */
+external fun isAwaitExpressionRaw(node: Node): Boolean // node is AwaitExpression

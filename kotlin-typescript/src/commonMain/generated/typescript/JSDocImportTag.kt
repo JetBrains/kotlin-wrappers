@@ -2,7 +2,9 @@
 
 package typescript
 
-sealed external interface JSDocImportTag : JSDocTag, ImportClauseParent {
+sealed external interface JSDocImportTag :
+    JSDocTag,
+    ImportClauseParent {
     override val kind: SyntaxKind.JSDocImportTag
     override val parent: JSDoc
     val importClause: ImportClause?

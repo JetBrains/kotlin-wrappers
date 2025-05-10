@@ -4,6 +4,5 @@
 
 package typescript
 
-
 @JsName("isVoidExpression")
-external fun isVoidExpressionRaw(node: Node): Boolean /* node is VoidExpression */
+external fun isVoidExpressionRaw(node: Node): Boolean // node is VoidExpression

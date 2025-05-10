@@ -4,6 +4,5 @@
 
 package typescript
 
-
 @JsName("isSourceFile")
-external fun isSourceFileRaw(node: Node): Boolean /* node is SourceFile */
+external fun isSourceFileRaw(node: Node): Boolean // node is SourceFile

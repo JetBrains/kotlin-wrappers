@@ -4,6 +4,5 @@
 
 package typescript
 
-
 @JsName("isMinusToken")
-external fun isMinusTokenRaw(node: Node): Boolean /* node is MinusToken */
+external fun isMinusTokenRaw(node: Node): Boolean // node is MinusToken

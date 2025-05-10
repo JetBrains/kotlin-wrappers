@@ -4,6 +4,5 @@
 
 package typescript
 
-
 @JsName("isLiteralTypeNode")
-external fun isLiteralTypeNodeRaw(node: Node): Boolean /* node is LiteralTypeNode */
+external fun isLiteralTypeNodeRaw(node: Node): Boolean // node is LiteralTypeNode

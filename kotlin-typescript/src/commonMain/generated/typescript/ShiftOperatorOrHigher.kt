@@ -2,4 +2,6 @@
 
 package typescript
 
-sealed external interface ShiftOperatorOrHigher : SyntaxKind, RelationalOperatorOrHigher
+sealed external interface ShiftOperatorOrHigher :
+    SyntaxKind,
+    RelationalOperatorOrHigher

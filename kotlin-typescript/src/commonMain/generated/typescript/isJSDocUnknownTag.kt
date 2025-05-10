@@ -4,6 +4,5 @@
 
 package typescript
 
-
 @JsName("isJSDocUnknownTag")
-external fun isJSDocUnknownTagRaw(node: Node): Boolean /* node is JSDocUnknownTag */
+external fun isJSDocUnknownTagRaw(node: Node): Boolean // node is JSDocUnknownTag

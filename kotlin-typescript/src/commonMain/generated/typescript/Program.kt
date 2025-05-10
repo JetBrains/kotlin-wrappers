@@ -2,7 +2,9 @@
 
 package typescript
 
-sealed external interface Program : ScriptReferenceHost, RequiredAffectedFileResultAffected {
+sealed external interface Program :
+    ScriptReferenceHost,
+    RequiredAffectedFileResultAffected {
     override fun getCurrentDirectory(): String
 
     /**
@@ -33,8 +35,14 @@ sealed external interface Program : ScriptReferenceHost, RequiredAffectedFileRes
         customTransformers: CustomTransformers = definedExternally,
     ): EmitResult
 
-    fun getOptionsDiagnostics(cancellationToken: CancellationToken = definedExternally): js.array.ReadonlyArray<Diagnostic>
-    fun getGlobalDiagnostics(cancellationToken: CancellationToken = definedExternally): js.array.ReadonlyArray<Diagnostic>
+    fun getOptionsDiagnostics(
+        cancellationToken: CancellationToken = definedExternally,
+    ): js.array.ReadonlyArray<Diagnostic>
+
+    fun getGlobalDiagnostics(
+        cancellationToken: CancellationToken = definedExternally,
+    ): js.array.ReadonlyArray<Diagnostic>
+
     fun getSyntacticDiagnostics(
         sourceFile: SourceFile = definedExternally,
         cancellationToken: CancellationToken = definedExternally,
@@ -57,13 +65,21 @@ sealed external interface Program : ScriptReferenceHost, RequiredAffectedFileRes
      * Gets a type checker that can be used to semantically analyze source files in the program.
      */
     fun getTypeChecker(): TypeChecker
+
     fun getNodeCount(): Double
+
     fun getIdentifierCount(): Double
+
     fun getSymbolCount(): Double
+
     fun getTypeCount(): Double
+
     fun getInstantiationCount(): Double
+
     fun getRelationCacheSizes(): ProgramGetRelationCacheSizesResult
+
     fun isSourceFileFromExternalLibrary(file: SourceFile): Boolean
+
     fun isSourceFileDefaultLibrary(file: SourceFile): Boolean
 
     /**
@@ -97,7 +113,10 @@ sealed external interface Program : ScriptReferenceHost, RequiredAffectedFileRes
      * // Result: ESNext - conditional imports/exports always supported with "resolution-mode" attribute
      * ```
      */
-    fun getModeForUsageLocation(file: SourceFile, usage: StringLiteralLike): ResolutionMode
+    fun getModeForUsageLocation(
+        file: SourceFile,
+        usage: StringLiteralLike,
+    ): ResolutionMode
 
     /**
      * Calculates the final resolution mode for an import at some index within a file's `imports` list. This function only returns a result
@@ -130,7 +149,12 @@ sealed external interface Program : ScriptReferenceHost, RequiredAffectedFileRes
      * // Result: ESNext - conditional imports/exports always supported with "resolution-mode" attribute
      * ```
      */
-    fun getModeForResolutionAtIndex(file: SourceFile, index: Double): ResolutionMode
+    fun getModeForResolutionAtIndex(
+        file: SourceFile,
+        index: Double,
+    ): ResolutionMode
+
     fun getProjectReferences(): (js.array.ReadonlyArray<ProjectReference>)?
+
     fun getResolvedProjectReferences(): (js.array.ReadonlyArray<(ResolvedProjectReference?)>)?
 }

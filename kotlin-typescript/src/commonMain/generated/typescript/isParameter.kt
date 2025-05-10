@@ -4,6 +4,5 @@
 
 package typescript
 
-
 @JsName("isParameter")
-external fun isParameterRaw(node: Node): Boolean /* node is ParameterDeclaration */
+external fun isParameterRaw(node: Node): Boolean // node is ParameterDeclaration

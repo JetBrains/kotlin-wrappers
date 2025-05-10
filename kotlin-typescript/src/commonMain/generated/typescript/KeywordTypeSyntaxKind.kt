@@ -2,4 +2,6 @@
 
 package typescript
 
-sealed external interface KeywordTypeSyntaxKind : SyntaxKind, KeywordSyntaxKind
+sealed external interface KeywordTypeSyntaxKind :
+    SyntaxKind,
+    KeywordSyntaxKind

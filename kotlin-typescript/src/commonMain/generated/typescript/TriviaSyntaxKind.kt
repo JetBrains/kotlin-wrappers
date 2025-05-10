@@ -2,4 +2,6 @@
 
 package typescript
 
-sealed external interface TriviaSyntaxKind : SyntaxKind, TokenSyntaxKind
+sealed external interface TriviaSyntaxKind :
+    SyntaxKind,
+    TokenSyntaxKind

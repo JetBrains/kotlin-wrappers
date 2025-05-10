@@ -2,4 +2,6 @@
 
 package typescript
 
-sealed external interface Modifier : Node, ModifierLike
+sealed external interface Modifier :
+    Node,
+    ModifierLike

@@ -4,6 +4,5 @@
 
 package typescript
 
-
 @JsName("isAwaitKeyword")
-external fun isAwaitKeywordRaw(node: Node): Boolean /* node is AwaitKeyword */
+external fun isAwaitKeywordRaw(node: Node): Boolean // node is AwaitKeyword

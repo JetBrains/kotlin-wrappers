@@ -2,4 +2,7 @@
 
 package typescript
 
-sealed external interface AccessibilityModifier : Node, ParameterPropertyModifier, ClassMemberModifier
+sealed external interface AccessibilityModifier :
+    Node,
+    ParameterPropertyModifier,
+    ClassMemberModifier

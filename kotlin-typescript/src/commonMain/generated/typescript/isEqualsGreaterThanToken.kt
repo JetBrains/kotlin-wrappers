@@ -4,6 +4,5 @@
 
 package typescript
 
-
 @JsName("isEqualsGreaterThanToken")
-external fun isEqualsGreaterThanTokenRaw(node: Node): Boolean /* node is EqualsGreaterThanToken */
+external fun isEqualsGreaterThanTokenRaw(node: Node): Boolean // node is EqualsGreaterThanToken

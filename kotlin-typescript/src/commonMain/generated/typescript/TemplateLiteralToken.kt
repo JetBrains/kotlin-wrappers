@@ -2,4 +2,6 @@
 
 package typescript
 
-sealed external interface TemplateLiteralToken : Node, IsStringTextContainingNodeResultPredicate
+sealed external interface TemplateLiteralToken :
+    Node,
+    IsStringTextContainingNodeResultPredicate

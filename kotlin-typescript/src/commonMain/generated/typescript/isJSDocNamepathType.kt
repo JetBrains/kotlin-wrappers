@@ -4,6 +4,5 @@
 
 package typescript
 
-
 @JsName("isJSDocNamepathType")
-external fun isJSDocNamepathTypeRaw(node: Node): Boolean /* node is JSDocNamepathType */
+external fun isJSDocNamepathTypeRaw(node: Node): Boolean // node is JSDocNamepathType

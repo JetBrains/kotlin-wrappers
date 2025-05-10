@@ -2,7 +2,9 @@
 
 package typescript
 
-sealed external interface IdentifierTypePredicate : TypePredicateBase, TypePredicate {
+sealed external interface IdentifierTypePredicate :
+    TypePredicateBase,
+    TypePredicate {
     @Suppress("VAR_TYPE_MISMATCH_ON_OVERRIDE")
     override var kind: TypePredicateKind.Identifier
     var parameterName: String

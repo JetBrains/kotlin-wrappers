@@ -2,4 +2,4 @@
 
 package typescript
 
-typealias ArrayBindingOrAssignmentElement = Any /* BindingElement | OmittedExpression | SpreadElement | ArrayLiteralExpression | ObjectLiteralExpression | AssignmentExpression<EqualsToken> | Identifier | PropertyAccessExpression | ElementAccessExpression */
+typealias ArrayBindingOrAssignmentElement = Any // BindingElement | OmittedExpression | SpreadElement | ArrayLiteralExpression | ObjectLiteralExpression | AssignmentExpression<EqualsToken> | Identifier | PropertyAccessExpression | ElementAccessExpression

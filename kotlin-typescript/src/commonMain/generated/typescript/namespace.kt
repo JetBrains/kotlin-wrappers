@@ -7,8 +7,14 @@ package typescript
 external object JsTyping {
     sealed interface TypingResolutionHost {
         fun directoryExists(path: String): Boolean
+
         fun fileExists(fileName: String): Boolean
-        fun readFile(path: String, encoding: String = definedExternally): String?
+
+        fun readFile(
+            path: String,
+            encoding: String = definedExternally,
+        ): String?
+
         fun readDirectory(
             rootDir: String,
             extensions: js.array.ReadonlyArray<String>,

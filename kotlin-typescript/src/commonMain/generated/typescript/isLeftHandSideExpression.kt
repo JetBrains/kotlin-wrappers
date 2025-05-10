@@ -4,6 +4,5 @@
 
 package typescript
 
-
 @JsName("isLeftHandSideExpression")
-external fun isLeftHandSideExpressionRaw(node: Node): Boolean /* node is LeftHandSideExpression */
+external fun isLeftHandSideExpressionRaw(node: Node): Boolean // node is LeftHandSideExpression

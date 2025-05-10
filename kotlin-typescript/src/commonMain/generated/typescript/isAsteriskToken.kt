@@ -4,6 +4,5 @@
 
 package typescript
 
-
 @JsName("isAsteriskToken")
-external fun isAsteriskTokenRaw(node: Node): Boolean /* node is AsteriskToken */
+external fun isAsteriskTokenRaw(node: Node): Boolean // node is AsteriskToken
