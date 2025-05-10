@@ -14,7 +14,9 @@ import node.WritableStream
 /**
  * @since v0.9.4
  */
-open external class Readable : Stream, node.ReadableStream {
+open external class Readable :
+    Stream,
+    node.ReadableStream {
     constructor (opts: ReadableOptions<*> = definedExternally)
 
     /**
@@ -95,6 +97,7 @@ open external class Readable : Stream, node.ReadableStream {
      */
     open val errored: js.errors.JsError?
     open val _construct: ((callback: (error: js.errors.JsError? /* use undefined for default */) -> Unit) -> Unit)?
+
     fun _read(size: Number)
 
     /**
@@ -202,7 +205,7 @@ open external class Readable : Stream, node.ReadableStream {
      * @since v0.9.4
      * @param encoding The encoding to use.
      */
-    override fun setEncoding(encoding: node.buffer.BufferEncoding) /* this */
+    override fun setEncoding(encoding: node.buffer.BufferEncoding) // this
 
     /**
      * The `readable.pause()` method will cause a stream in flowing mode to stop
@@ -225,7 +228,7 @@ open external class Readable : Stream, node.ReadableStream {
      * The `readable.pause()` method has no effect if there is a `'readable'` event listener.
      * @since v0.9.4
      */
-    override fun pause() /* this */
+    override fun pause() // this
 
     /**
      * The `readable.resume()` method causes an explicitly paused `Readable` stream to
@@ -245,7 +248,7 @@ open external class Readable : Stream, node.ReadableStream {
      * The `readable.resume()` method has no effect if there is a `'readable'` event listener.
      * @since v0.9.4
      */
-    override fun resume() /* this */
+    override fun resume() // this
 
     /**
      * The `readable.isPaused()` method returns the current operating state of the `Readable`.
@@ -291,7 +294,7 @@ open external class Readable : Stream, node.ReadableStream {
      * @since v0.9.4
      * @param destination Optional specific stream to unpipe
      */
-    override fun unpipe(destination: WritableStream) /* this */
+    override fun unpipe(destination: WritableStream) // this
 
     /**
      * Passing `chunk` as `null` signals the end of the stream (EOF) and behaves the
@@ -358,7 +361,10 @@ open external class Readable : Stream, node.ReadableStream {
      * be a {string}, {Buffer}, {TypedArray}, {DataView} or `null`. For object mode streams, `chunk` may be any JavaScript value.
      * @param encoding Encoding of string chunks. Must be a valid `Buffer` encoding, such as `'utf8'` or `'ascii'`.
      */
-    fun unshift(chunk: Any?, encoding: node.buffer.BufferEncoding = definedExternally)
+    fun unshift(
+        chunk: Any?,
+        encoding: node.buffer.BufferEncoding = definedExternally,
+    )
 
     /**
      * Prior to Node.js 0.10, streams did not implement the entire `node:stream` module API as it is currently defined. (See `Compatibility` for more
@@ -385,8 +391,12 @@ open external class Readable : Stream, node.ReadableStream {
      * @since v0.9.4
      * @param stream An "old style" readable stream
      */
-    override fun wrap(stream: node.ReadableStream) /* this */
-    fun push(chunk: Any?, encoding: node.buffer.BufferEncoding = definedExternally): Boolean
+    override fun wrap(stream: node.ReadableStream) // this
+
+    fun push(
+        chunk: Any?,
+        encoding: node.buffer.BufferEncoding = definedExternally,
+    ): Boolean
 
     /**
      * The iterator created by this method gives users the option to cancel the destruction
@@ -440,7 +450,10 @@ open external class Readable : Stream, node.ReadableStream {
      * @returns a promise for when the stream has finished.
      */
     fun forEach(
-        fn: (data: Any?, options: ArrayOptions? /* use undefined for default */) -> js.promise.PromiseResult<js.core.Void>,
+        fn: (
+            data: Any?,
+            options: ArrayOptions?, // use undefined for default
+        ) -> js.promise.PromiseResult<js.core.Void>,
         options: ArrayOptions = definedExternally,
     ): Promise<js.core.Void>
 
@@ -523,7 +536,10 @@ open external class Readable : Stream, node.ReadableStream {
      * @param limit the number of chunks to drop from the readable.
      * @returns a stream with *limit* chunks dropped from the start.
      */
-    fun drop(limit: Number, options: ArrayOptions = definedExternally): Readable
+    fun drop(
+        limit: Number,
+        options: ArrayOptions = definedExternally,
+    ): Readable
 
     /**
      * This method returns a new stream with the first *limit* chunks.
@@ -531,7 +547,10 @@ open external class Readable : Stream, node.ReadableStream {
      * @param limit the number of chunks to take from the readable.
      * @returns a stream with *limit* chunks taken.
      */
-    fun take(limit: Number, options: ArrayOptions = definedExternally): Readable
+    fun take(
+        limit: Number,
+        options: ArrayOptions = definedExternally,
+    ): Readable
 
     /**
      * This method returns a new stream with chunks of the underlying stream paired with a counter
@@ -583,9 +602,9 @@ open external class Readable : Stream, node.ReadableStream {
      * @since v8.0.0
      * @param error Error which will be passed as payload in `'error'` event
      */
-    open fun destroy() /* this */
+    open fun destroy() // this
 
-    open fun destroy(error: js.errors.JsError) /* this */
+    open fun destroy(error: js.errors.JsError) // this
 
     /**
      * Event emitter
@@ -599,55 +618,42 @@ open external class Readable : Stream, node.ReadableStream {
      * 7. resume
      */
 
+    open fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
 
-    open fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
+    open fun addListener(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */) // this
 
-    open fun addListener(
-        event: js.symbol.Symbol,
-        listener: Function<Unit>, /* (...args: any[]) => void */
-    ) /* this */
-
-
-    open fun emit(event: String, vararg args: Any?): Boolean
-
-    open fun emit(event: js.symbol.Symbol, vararg args: Any?): Boolean
-
-
-    open fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
-
-    open fun on(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
-
-
-    open fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
-
-    open fun once(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
-
-
-    open fun prependListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
-
-    open fun prependListener(
-        event: js.symbol.Symbol,
-        listener: Function<Unit>, /* (...args: any[]) => void */
-    ) /* this */
-
-
-    open fun prependOnceListener(
+    open fun emit(
         event: String,
-        listener: Function<Unit>, /* (...args: any[]) => void */
-    ) /* this */
+        vararg args: Any?,
+    ): Boolean
+
+    open fun emit(
+        event: js.symbol.Symbol,
+        vararg args: Any?,
+    ): Boolean
+
+    open fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
+
+    open fun on(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */) // this
+
+    open fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
+
+    open fun once(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */) // this
+
+    open fun prependListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
+
+    open fun prependListener(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */) // this
+
+    open fun prependOnceListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
 
     open fun prependOnceListener(
         event: js.symbol.Symbol,
         listener: Function<Unit>, /* (...args: any[]) => void */
-    ) /* this */
+    ) // this
 
+    open fun removeListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
 
-    open fun removeListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
-
-    open fun removeListener(
-        event: js.symbol.Symbol,
-        listener: Function<Unit>, /* (...args: any[]) => void */
-    ) /* this */
+    open fun removeListener(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */) // this
 
     @web.events.JsEvent("close")
     open val closeEvent: node.events.EventInstance<js.array.Tuple>
@@ -669,11 +675,23 @@ open external class Readable : Stream, node.ReadableStream {
 
     @web.events.JsEvent("resume")
     open val resumeEvent: node.events.EventInstance<js.array.Tuple>
-    override fun read(size: Number): Any /* string | Buffer */
-    override fun <T : WritableStream> pipe(destination: T, options: ReadableStreamPipeOptions): T
-    override fun unshift(chunk: String, encoding: node.buffer.BufferEncoding)
 
-    override fun unshift(chunk: Uint8Array<*>, encoding: node.buffer.BufferEncoding)
+    override fun read(size: Number): Any // string | Buffer
+
+    override fun <T : WritableStream> pipe(
+        destination: T,
+        options: ReadableStreamPipeOptions,
+    ): T
+
+    override fun unshift(
+        chunk: String,
+        encoding: node.buffer.BufferEncoding,
+    )
+
+    override fun unshift(
+        chunk: Uint8Array<*>,
+        encoding: node.buffer.BufferEncoding,
+    )
 
     companion object {
         /**
@@ -682,7 +700,10 @@ open external class Readable : Stream, node.ReadableStream {
          * @param iterable Object implementing the `Symbol.asyncIterator` or `Symbol.iterator` iterable protocol. Emits an 'error' event if a null value is passed.
          * @param options Options provided to `new stream.Readable([options])`. By default, `Readable.from()` will set `options.objectMode` to `true`, unless this is explicitly opted out by setting `options.objectMode` to `false`.
          */
-        fun from(iterable: js.iterable.JsIterable<Any?>, options: ReadableOptions<*> = definedExternally): Readable
+        fun from(
+            iterable: js.iterable.JsIterable<Any?>,
+            options: ReadableOptions<*> = definedExternally,
+        ): Readable
 
         /**
          * A utility method for creating Readable Streams out of iterators.
@@ -690,7 +711,10 @@ open external class Readable : Stream, node.ReadableStream {
          * @param iterable Object implementing the `Symbol.asyncIterator` or `Symbol.iterator` iterable protocol. Emits an 'error' event if a null value is passed.
          * @param options Options provided to `new stream.Readable([options])`. By default, `Readable.from()` will set `options.objectMode` to `true`, unless this is explicitly opted out by setting `options.objectMode` to `false`.
          */
-        fun from(iterable: AsyncIterable<Any?>, options: ReadableOptions<*> = definedExternally): Readable
+        fun from(
+            iterable: AsyncIterable<Any?>,
+            options: ReadableOptions<*> = definedExternally,
+        ): Readable
 
         /**
          * A utility method for creating a `Readable` from a web `ReadableStream`.

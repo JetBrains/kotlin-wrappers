@@ -3,5 +3,5 @@
 package node.process
 
 sealed external interface ProcessStdin : ReadStream {
-    var fd: Double /* 0 */
+    var fd: Double // 0
 }

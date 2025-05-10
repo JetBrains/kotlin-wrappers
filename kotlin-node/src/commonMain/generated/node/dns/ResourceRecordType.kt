@@ -2,19 +2,29 @@
 
 package node.dns
 
-
 sealed external interface ResourceRecordType {
     sealed interface A : ResourceRecordType
+
     sealed interface AAAA : ResourceRecordType
+
     sealed interface ANY : ResourceRecordType
+
     sealed interface CNAME : ResourceRecordType
+
     sealed interface MX : ResourceRecordType
+
     sealed interface NAPTR : ResourceRecordType
+
     sealed interface NS : ResourceRecordType
+
     sealed interface PTR : ResourceRecordType
+
     sealed interface SOA : ResourceRecordType
+
     sealed interface SRV : ResourceRecordType
+
     sealed interface TXT : ResourceRecordType
+
     sealed interface CAA : ResourceRecordType
 
     companion object {

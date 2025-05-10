@@ -49,7 +49,7 @@ open external class PerformanceEntry {
      * Additional detail specific to the `entryType`.
      * @since v16.0.0
      */
-    val detail: Any? /* NodeGCPerformanceDetail | unknown | undefined */// TODO: Narrow this based on entry type.
+    val detail: Any? /* NodeGCPerformanceDetail | unknown | undefined */ // TODO: Narrow this based on entry type.
 
     open fun toJSON(): Any?
 }

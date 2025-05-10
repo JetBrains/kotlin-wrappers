@@ -4,4 +4,4 @@
 
 package node.process
 
-/* export = process; */
+// export = process;

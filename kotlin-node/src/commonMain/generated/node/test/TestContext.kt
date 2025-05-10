@@ -44,7 +44,10 @@ external class TestContext {
      * @param options Configuration options for the hook.
      * @since v20.1.0, v18.17.0
      */
-    fun before(fn: TestContextHookFn = definedExternally, options: HookOptions = definedExternally)
+    fun before(
+        fn: TestContextHookFn = definedExternally,
+        options: HookOptions = definedExternally,
+    )
 
     /**
      * This function is used to create a hook running before each subtest of the current test.
@@ -53,7 +56,10 @@ external class TestContext {
      * @param options Configuration options for the hook.
      * @since v18.8.0
      */
-    fun beforeEach(fn: TestContextHookFn = definedExternally, options: HookOptions = definedExternally)
+    fun beforeEach(
+        fn: TestContextHookFn = definedExternally,
+        options: HookOptions = definedExternally,
+    )
 
     /**
      * This function is used to create a hook that runs after the current test finishes.
@@ -62,7 +68,10 @@ external class TestContext {
      * @param options Configuration options for the hook.
      * @since v18.13.0
      */
-    fun after(fn: TestContextHookFn = definedExternally, options: HookOptions = definedExternally)
+    fun after(
+        fn: TestContextHookFn = definedExternally,
+        options: HookOptions = definedExternally,
+    )
 
     /**
      * This function is used to create a hook running after each subtest of the current test.
@@ -71,7 +80,10 @@ external class TestContext {
      * @param options Configuration options for the hook.
      * @since v18.8.0
      */
-    fun afterEach(fn: TestContextHookFn = definedExternally, options: HookOptions = definedExternally)
+    fun afterEach(
+        fn: TestContextHookFn = definedExternally,
+        options: HookOptions = definedExternally,
+    )
 
     /**
      * This function is used to write diagnostics to the output. Any diagnostic
@@ -218,7 +230,7 @@ external class TestContext {
      * If the test uses callbacks, the callback function is passed as the second argument.
      * @returns A {@link Promise} resolved with `undefined` once the test completes.
      */
-    var test: Any /* typeof test */
+    var test: Any // typeof test
 
     /**
      * Each test provides its own MockTracker instance.

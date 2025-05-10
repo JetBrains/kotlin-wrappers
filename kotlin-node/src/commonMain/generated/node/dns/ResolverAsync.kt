@@ -58,103 +58,146 @@ external class Resolver {
      * @since v8.3.0
      */
     fun cancel()
+
     var getServers: () -> js.array.ReadonlyArray<String>
 
     @JsName("resolve")
     fun resolveAsync(hostname: String): Promise<js.array.ReadonlyArray<String>>
 
-
     @seskar.js.JsAsync
     suspend fun resolve(hostname: String): js.array.ReadonlyArray<String>
 
-
     @JsName("resolve")
-    fun resolveAsync(hostname: String, rrtype: ResourceRecordType.A): Promise<js.array.ReadonlyArray<String>>
-
+    fun resolveAsync(
+        hostname: String,
+        rrtype: ResourceRecordType.A,
+    ): Promise<js.array.ReadonlyArray<String>>
 
     @seskar.js.JsAsync
-    suspend fun resolve(hostname: String, rrtype: ResourceRecordType.A): js.array.ReadonlyArray<String>
-
-
-    @JsName("resolve")
-    fun resolveAsync(hostname: String, rrtype: ResourceRecordType.AAAA): Promise<js.array.ReadonlyArray<String>>
-
-
-    @seskar.js.JsAsync
-    suspend fun resolve(hostname: String, rrtype: ResourceRecordType.AAAA): js.array.ReadonlyArray<String>
-
+    suspend fun resolve(
+        hostname: String,
+        rrtype: ResourceRecordType.A,
+    ): js.array.ReadonlyArray<String>
 
     @JsName("resolve")
-    fun resolveAsync(hostname: String, rrtype: ResourceRecordType.ANY): Promise<js.array.ReadonlyArray<AnyRecord>>
-
+    fun resolveAsync(
+        hostname: String,
+        rrtype: ResourceRecordType.AAAA,
+    ): Promise<js.array.ReadonlyArray<String>>
 
     @seskar.js.JsAsync
-    suspend fun resolve(hostname: String, rrtype: ResourceRecordType.ANY): js.array.ReadonlyArray<AnyRecord>
-
+    suspend fun resolve(
+        hostname: String,
+        rrtype: ResourceRecordType.AAAA,
+    ): js.array.ReadonlyArray<String>
 
     @JsName("resolve")
-    fun resolveAsync(hostname: String, rrtype: ResourceRecordType.CAA): Promise<js.array.ReadonlyArray<CaaRecord>>
-
+    fun resolveAsync(
+        hostname: String,
+        rrtype: ResourceRecordType.ANY,
+    ): Promise<js.array.ReadonlyArray<AnyRecord>>
 
     @seskar.js.JsAsync
-    suspend fun resolve(hostname: String, rrtype: ResourceRecordType.CAA): js.array.ReadonlyArray<CaaRecord>
-
+    suspend fun resolve(
+        hostname: String,
+        rrtype: ResourceRecordType.ANY,
+    ): js.array.ReadonlyArray<AnyRecord>
 
     @JsName("resolve")
-    fun resolveAsync(hostname: String, rrtype: ResourceRecordType.CNAME): Promise<js.array.ReadonlyArray<String>>
-
+    fun resolveAsync(
+        hostname: String,
+        rrtype: ResourceRecordType.CAA,
+    ): Promise<js.array.ReadonlyArray<CaaRecord>>
 
     @seskar.js.JsAsync
-    suspend fun resolve(hostname: String, rrtype: ResourceRecordType.CNAME): js.array.ReadonlyArray<String>
-
+    suspend fun resolve(
+        hostname: String,
+        rrtype: ResourceRecordType.CAA,
+    ): js.array.ReadonlyArray<CaaRecord>
 
     @JsName("resolve")
-    fun resolveAsync(hostname: String, rrtype: ResourceRecordType.MX): Promise<js.array.ReadonlyArray<MxRecord>>
-
+    fun resolveAsync(
+        hostname: String,
+        rrtype: ResourceRecordType.CNAME,
+    ): Promise<js.array.ReadonlyArray<String>>
 
     @seskar.js.JsAsync
-    suspend fun resolve(hostname: String, rrtype: ResourceRecordType.MX): js.array.ReadonlyArray<MxRecord>
-
+    suspend fun resolve(
+        hostname: String,
+        rrtype: ResourceRecordType.CNAME,
+    ): js.array.ReadonlyArray<String>
 
     @JsName("resolve")
-    fun resolveAsync(hostname: String, rrtype: ResourceRecordType.NAPTR): Promise<js.array.ReadonlyArray<NaptrRecord>>
-
+    fun resolveAsync(
+        hostname: String,
+        rrtype: ResourceRecordType.MX,
+    ): Promise<js.array.ReadonlyArray<MxRecord>>
 
     @seskar.js.JsAsync
-    suspend fun resolve(hostname: String, rrtype: ResourceRecordType.NAPTR): js.array.ReadonlyArray<NaptrRecord>
-
+    suspend fun resolve(
+        hostname: String,
+        rrtype: ResourceRecordType.MX,
+    ): js.array.ReadonlyArray<MxRecord>
 
     @JsName("resolve")
-    fun resolveAsync(hostname: String, rrtype: ResourceRecordType.NS): Promise<js.array.ReadonlyArray<String>>
-
+    fun resolveAsync(
+        hostname: String,
+        rrtype: ResourceRecordType.NAPTR,
+    ): Promise<js.array.ReadonlyArray<NaptrRecord>>
 
     @seskar.js.JsAsync
-    suspend fun resolve(hostname: String, rrtype: ResourceRecordType.NS): js.array.ReadonlyArray<String>
-
+    suspend fun resolve(
+        hostname: String,
+        rrtype: ResourceRecordType.NAPTR,
+    ): js.array.ReadonlyArray<NaptrRecord>
 
     @JsName("resolve")
-    fun resolveAsync(hostname: String, rrtype: ResourceRecordType.PTR): Promise<js.array.ReadonlyArray<String>>
-
+    fun resolveAsync(
+        hostname: String,
+        rrtype: ResourceRecordType.NS,
+    ): Promise<js.array.ReadonlyArray<String>>
 
     @seskar.js.JsAsync
-    suspend fun resolve(hostname: String, rrtype: ResourceRecordType.PTR): js.array.ReadonlyArray<String>
-
+    suspend fun resolve(
+        hostname: String,
+        rrtype: ResourceRecordType.NS,
+    ): js.array.ReadonlyArray<String>
 
     @JsName("resolve")
-    fun resolveAsync(hostname: String, rrtype: ResourceRecordType.SOA): Promise<SoaRecord>
-
+    fun resolveAsync(
+        hostname: String,
+        rrtype: ResourceRecordType.PTR,
+    ): Promise<js.array.ReadonlyArray<String>>
 
     @seskar.js.JsAsync
-    suspend fun resolve(hostname: String, rrtype: ResourceRecordType.SOA): SoaRecord
-
+    suspend fun resolve(
+        hostname: String,
+        rrtype: ResourceRecordType.PTR,
+    ): js.array.ReadonlyArray<String>
 
     @JsName("resolve")
-    fun resolveAsync(hostname: String, rrtype: ResourceRecordType.SRV): Promise<js.array.ReadonlyArray<SrvRecord>>
-
+    fun resolveAsync(
+        hostname: String,
+        rrtype: ResourceRecordType.SOA,
+    ): Promise<SoaRecord>
 
     @seskar.js.JsAsync
-    suspend fun resolve(hostname: String, rrtype: ResourceRecordType.SRV): js.array.ReadonlyArray<SrvRecord>
+    suspend fun resolve(
+        hostname: String,
+        rrtype: ResourceRecordType.SOA,
+    ): SoaRecord
 
+    @JsName("resolve")
+    fun resolveAsync(
+        hostname: String,
+        rrtype: ResourceRecordType.SRV,
+    ): Promise<js.array.ReadonlyArray<SrvRecord>>
+
+    @seskar.js.JsAsync
+    suspend fun resolve(
+        hostname: String,
+        rrtype: ResourceRecordType.SRV,
+    ): js.array.ReadonlyArray<SrvRecord>
 
     @JsName("resolve")
     fun resolveAsync(
@@ -162,13 +205,11 @@ external class Resolver {
         rrtype: ResourceRecordType.TXT,
     ): Promise<js.array.ReadonlyArray<js.array.ReadonlyArray<String>>>
 
-
     @seskar.js.JsAsync
     suspend fun resolve(
         hostname: String,
         rrtype: ResourceRecordType.TXT,
     ): js.array.ReadonlyArray<js.array.ReadonlyArray<String>>
-
 
     @JsName("resolve")
     fun resolveAsync(
@@ -176,145 +217,122 @@ external class Resolver {
         rrtype: String,
     ): Promise<Any /* string[] | SoaRecord | MxRecord[] | NaptrRecord[] | SrvRecord[] | string[][] | AnyRecord[] */>
 
-
     @seskar.js.JsAsync
     suspend fun resolve(
         hostname: String,
         rrtype: String,
-    ): Any /* string[] | SoaRecord | MxRecord[] | NaptrRecord[] | SrvRecord[] | string[][] | AnyRecord[] */
-
+    ): Any // string[] | SoaRecord | MxRecord[] | NaptrRecord[] | SrvRecord[] | string[][] | AnyRecord[]
 
     @JsName("resolve4")
     fun resolve4Async(hostname: String): Promise<js.array.ReadonlyArray<String>>
 
-
     @seskar.js.JsAsync
     suspend fun resolve4(hostname: String): js.array.ReadonlyArray<String>
 
-
     @JsName("resolve4")
-    fun resolve4Async(hostname: String, options: ResolveWithTtlOptions): Promise<js.array.ReadonlyArray<RecordWithTtl>>
-
+    fun resolve4Async(
+        hostname: String,
+        options: ResolveWithTtlOptions,
+    ): Promise<js.array.ReadonlyArray<RecordWithTtl>>
 
     @seskar.js.JsAsync
-    suspend fun resolve4(hostname: String, options: ResolveWithTtlOptions): js.array.ReadonlyArray<RecordWithTtl>
-
+    suspend fun resolve4(
+        hostname: String,
+        options: ResolveWithTtlOptions,
+    ): js.array.ReadonlyArray<RecordWithTtl>
 
     @JsName("resolve4")
     fun resolve4Async(hostname: String, options: ResolveOptions): Promise<Any /* string[] | RecordWithTtl[] */>
 
-
     @seskar.js.JsAsync
-    suspend fun resolve4(hostname: String, options: ResolveOptions): Any /* string[] | RecordWithTtl[] */
-
+    suspend fun resolve4(hostname: String, options: ResolveOptions): Any // string[] | RecordWithTtl[]
 
     @JsName("resolve6")
     fun resolve6Async(hostname: String): Promise<js.array.ReadonlyArray<String>>
 
-
     @seskar.js.JsAsync
     suspend fun resolve6(hostname: String): js.array.ReadonlyArray<String>
 
-
     @JsName("resolve6")
-    fun resolve6Async(hostname: String, options: ResolveWithTtlOptions): Promise<js.array.ReadonlyArray<RecordWithTtl>>
-
+    fun resolve6Async(
+        hostname: String,
+        options: ResolveWithTtlOptions,
+    ): Promise<js.array.ReadonlyArray<RecordWithTtl>>
 
     @seskar.js.JsAsync
-    suspend fun resolve6(hostname: String, options: ResolveWithTtlOptions): js.array.ReadonlyArray<RecordWithTtl>
-
+    suspend fun resolve6(
+        hostname: String,
+        options: ResolveWithTtlOptions,
+    ): js.array.ReadonlyArray<RecordWithTtl>
 
     @JsName("resolve6")
     fun resolve6Async(hostname: String, options: ResolveOptions): Promise<Any /* string[] | RecordWithTtl[] */>
 
-
     @seskar.js.JsAsync
-    suspend fun resolve6(hostname: String, options: ResolveOptions): Any /* string[] | RecordWithTtl[] */
-
+    suspend fun resolve6(hostname: String, options: ResolveOptions): Any // string[] | RecordWithTtl[]
 
     @JsName("resolveAny")
     fun resolveAnyAsync(hostname: String): Promise<js.array.ReadonlyArray<AnyRecord>>
 
-
     @seskar.js.JsAsync
     suspend fun resolveAny(hostname: String): js.array.ReadonlyArray<AnyRecord>
-
 
     @JsName("resolveCaa")
     fun resolveCaaAsync(hostname: String): Promise<js.array.ReadonlyArray<CaaRecord>>
 
-
     @seskar.js.JsAsync
     suspend fun resolveCaa(hostname: String): js.array.ReadonlyArray<CaaRecord>
-
 
     @JsName("resolveCname")
     fun resolveCnameAsync(hostname: String): Promise<js.array.ReadonlyArray<String>>
 
-
     @seskar.js.JsAsync
     suspend fun resolveCname(hostname: String): js.array.ReadonlyArray<String>
-
 
     @JsName("resolveMx")
     fun resolveMxAsync(hostname: String): Promise<js.array.ReadonlyArray<MxRecord>>
 
-
     @seskar.js.JsAsync
     suspend fun resolveMx(hostname: String): js.array.ReadonlyArray<MxRecord>
-
 
     @JsName("resolveNaptr")
     fun resolveNaptrAsync(hostname: String): Promise<js.array.ReadonlyArray<NaptrRecord>>
 
-
     @seskar.js.JsAsync
     suspend fun resolveNaptr(hostname: String): js.array.ReadonlyArray<NaptrRecord>
-
 
     @JsName("resolveNs")
     fun resolveNsAsync(hostname: String): Promise<js.array.ReadonlyArray<String>>
 
-
     @seskar.js.JsAsync
     suspend fun resolveNs(hostname: String): js.array.ReadonlyArray<String>
-
 
     @JsName("resolvePtr")
     fun resolvePtrAsync(hostname: String): Promise<js.array.ReadonlyArray<String>>
 
-
     @seskar.js.JsAsync
     suspend fun resolvePtr(hostname: String): js.array.ReadonlyArray<String>
-
 
     @JsName("resolveSoa")
     fun resolveSoaAsync(hostname: String): Promise<SoaRecord>
 
-
     @seskar.js.JsAsync
     suspend fun resolveSoa(hostname: String): SoaRecord
-
 
     @JsName("resolveSrv")
     fun resolveSrvAsync(hostname: String): Promise<js.array.ReadonlyArray<SrvRecord>>
 
-
     @seskar.js.JsAsync
     suspend fun resolveSrv(hostname: String): js.array.ReadonlyArray<SrvRecord>
-
 
     @JsName("resolveTxt")
     fun resolveTxtAsync(hostname: String): Promise<js.array.ReadonlyArray<js.array.ReadonlyArray<String>>>
 
-
     @seskar.js.JsAsync
     suspend fun resolveTxt(hostname: String): js.array.ReadonlyArray<js.array.ReadonlyArray<String>>
 
-
     @JsName("reverse")
     fun reverseAsync(ip: String): Promise<js.array.ReadonlyArray<String>>
-
 
     @seskar.js.JsAsync
     suspend fun reverse(ip: String): js.array.ReadonlyArray<String>
@@ -334,6 +352,10 @@ external class Resolver {
      * @param [ipv4='0.0.0.0'] A string representation of an IPv4 address.
      * @param [ipv6='::0'] A string representation of an IPv6 address.
      */
-    fun setLocalAddress(ipv4: String = definedExternally, ipv6: String = definedExternally)
+    fun setLocalAddress(
+        ipv4: String = definedExternally,
+        ipv6: String = definedExternally,
+    )
+
     var setServers: (servers: js.array.ReadonlyArray<String>) -> Unit
 }

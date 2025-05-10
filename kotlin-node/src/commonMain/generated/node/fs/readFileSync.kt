@@ -40,7 +40,10 @@ external fun readFileSync(
  * @param options Either the encoding for the result, or an object that contains the encoding and an optional flag.
  * If a flag is not provided, it defaults to `'r'`.
  */
-external fun readFileSync(path: PathOrFileDescriptor, options: ReadFileSyncStringOptions): String
+external fun readFileSync(
+    path: PathOrFileDescriptor,
+    options: ReadFileSyncStringOptions,
+): String
 
 /**
  * Synchronously reads the entire contents of a file.
@@ -49,7 +52,10 @@ external fun readFileSync(path: PathOrFileDescriptor, options: ReadFileSyncStrin
  * @param options Either the encoding for the result, or an object that contains the encoding and an optional flag.
  * If a flag is not provided, it defaults to `'r'`.
  */
-external fun readFileSync(path: PathOrFileDescriptor, options: node.buffer.BufferEncoding): String
+external fun readFileSync(
+    path: PathOrFileDescriptor,
+    options: node.buffer.BufferEncoding,
+): String
 
 /**
  * Synchronously reads the entire contents of a file.
@@ -58,7 +64,7 @@ external fun readFileSync(path: PathOrFileDescriptor, options: node.buffer.Buffe
  * @param options Either the encoding for the result, or an object that contains the encoding and an optional flag.
  * If a flag is not provided, it defaults to `'r'`.
  */
-external fun readFileSync(path: PathOrFileDescriptor): Any /* string | Buffer */
+external fun readFileSync(path: PathOrFileDescriptor): Any // string | Buffer
 
 /**
  * Synchronously reads the entire contents of a file.
@@ -70,7 +76,7 @@ external fun readFileSync(path: PathOrFileDescriptor): Any /* string | Buffer */
 external fun readFileSync(
     path: PathOrFileDescriptor,
     options: (ReadFileSyncOptions)? = definedExternally,
-): Any /* string | Buffer */
+): Any // string | Buffer
 
 /**
  * Synchronously reads the entire contents of a file.
@@ -82,4 +88,4 @@ external fun readFileSync(
 external fun readFileSync(
     path: PathOrFileDescriptor,
     options: node.buffer.BufferEncoding? = definedExternally,
-): Any /* string | Buffer */
+): Any // string | Buffer

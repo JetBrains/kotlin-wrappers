@@ -16,7 +16,11 @@ package node.crypto
  * If the `callback` function is provided this function uses libuv's threadpool.
  * @since v12.0.0
  */
-external fun sign(algorithm: String?, data: js.buffer.ArrayBufferView<*>, key: KeyLike): node.buffer.Buffer<*>
+external fun sign(
+    algorithm: String?,
+    data: js.buffer.ArrayBufferView<*>,
+    key: KeyLike,
+): node.buffer.Buffer<*>
 
 /**
  * Calculates and returns the signature for `data` using the given private key and

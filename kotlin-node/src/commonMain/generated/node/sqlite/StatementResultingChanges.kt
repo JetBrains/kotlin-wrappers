@@ -8,12 +8,12 @@ sealed external interface StatementResultingChanges {
      * This field is either a number or a `BigInt` depending on the prepared statement's configuration.
      * This property is the result of [`sqlite3_changes64()`](https://www.sqlite.org/c3ref/changes.html).
      */
-    var changes: Any /* number | bigint */
+    var changes: Any // number | bigint
 
     /**
      * The most recently inserted rowid.
      * This field is either a number or a `BigInt` depending on the prepared statement's configuration.
      * This property is the result of [`sqlite3_last_insert_rowid()`](https://www.sqlite.org/c3ref/last_insert_rowid.html).
      */
-    var lastInsertRowid: Any /* number | bigint */
+    var lastInsertRowid: Any // number | bigint
 }

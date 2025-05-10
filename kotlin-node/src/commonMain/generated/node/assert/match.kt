@@ -28,7 +28,10 @@ import js.regexp.RegExp
  * instance of an [Error](https://nodejs.org/docs/latest-v22.x/api/errors.html#class-error) then it will be thrown instead of the `{@link AssertionError}`.
  * @since v13.6.0, v12.16.0
  */
-external fun match(value: String, regExp: RegExp)
+external fun match(
+    value: String,
+    regExp: RegExp,
+)
 
 /**
  * Expects the `string` input to match the regular expression.
@@ -52,7 +55,11 @@ external fun match(value: String, regExp: RegExp)
  * instance of an [Error](https://nodejs.org/docs/latest-v22.x/api/errors.html#class-error) then it will be thrown instead of the `{@link AssertionError}`.
  * @since v13.6.0, v12.16.0
  */
-external fun match(value: String, regExp: RegExp, message: String = definedExternally)
+external fun match(
+    value: String,
+    regExp: RegExp,
+    message: String = definedExternally,
+)
 
 /**
  * Expects the `string` input to match the regular expression.
@@ -76,4 +83,8 @@ external fun match(value: String, regExp: RegExp, message: String = definedExter
  * instance of an [Error](https://nodejs.org/docs/latest-v22.x/api/errors.html#class-error) then it will be thrown instead of the `{@link AssertionError}`.
  * @since v13.6.0, v12.16.0
  */
-external fun match(value: String, regExp: RegExp, message: js.errors.JsError = definedExternally)
+external fun match(
+    value: String,
+    regExp: RegExp,
+    message: js.errors.JsError = definedExternally,
+)

@@ -8,7 +8,6 @@ import js.buffer.ArrayBufferLike
 import js.buffer.SharedArrayBuffer
 import js.typedarrays.Uint8Array
 
-
 sealed external class Buffer<TArrayBuffer : ArrayBufferLike /* default is ArrayBufferLike */> :
     Uint8Array<TArrayBuffer> {
     constructor (str: String, encoding: BufferEncoding = definedExternally)
@@ -16,6 +15,7 @@ sealed external class Buffer<TArrayBuffer : ArrayBufferLike /* default is ArrayB
     constructor (array: ArrayLike<Double>)
     constructor (arrayBuffer: TArrayBuffer)
 // see buffer.d.ts for implementation shared with all TypeScript versions
+
     /**
      * Returns a new `Buffer` that references the same memory as the original, but
      * offset and cropped by the `start` and `end` indices.
@@ -49,7 +49,10 @@ sealed external class Buffer<TArrayBuffer : ArrayBufferLike /* default is ArrayB
      * @param [start=0] Where the new `Buffer` will start.
      * @param [end=buf.length] Where the new `Buffer` will end (not inclusive).
      */
-    fun slice(start: Number = definedExternally, end: Number = definedExternally): Buffer<ArrayBuffer>
+    fun slice(
+        start: Number = definedExternally,
+        end: Number = definedExternally,
+    ): Buffer<ArrayBuffer>
 
     /**
      * Returns a new `Buffer` that references the same memory as the original, but
@@ -110,9 +113,13 @@ sealed external class Buffer<TArrayBuffer : ArrayBufferLike /* default is ArrayB
      * @param [start=0] Where the new `Buffer` will start.
      * @param [end=buf.length] Where the new `Buffer` will end (not inclusive).
      */
-    fun subarray(start: Number = definedExternally, end: Number = definedExternally): Buffer<TArrayBuffer>
+    fun subarray(
+        start: Number = definedExternally,
+        end: Number = definedExternally,
+    ): Buffer<TArrayBuffer>
 // see buffer.buffer.d.ts for implementation specific to TypeScript 5.7 and later
 // see ts5.6/buffer.buffer.d.ts for implementation specific to TypeScript 5.6 and earlier
+
     /**
      * Writes `string` to `buf` at `offset` according to the character encoding in`encoding`. The `length` parameter is the number of bytes to write. If `buf` did
      * not contain enough space to fit the entire string, only part of `string` will be
@@ -142,9 +149,23 @@ sealed external class Buffer<TArrayBuffer : ArrayBufferLike /* default is ArrayB
      * @param [encoding='utf8'] The character encoding of `string`.
      * @return Number of bytes written.
      */
-    fun write(string: String, encoding: BufferEncoding = definedExternally): Double
-    fun write(string: String, offset: Number, encoding: BufferEncoding = definedExternally): Double
-    fun write(string: String, offset: Number, length: Number, encoding: BufferEncoding = definedExternally): Double
+    fun write(
+        string: String,
+        encoding: BufferEncoding = definedExternally,
+    ): Double
+
+    fun write(
+        string: String,
+        offset: Number,
+        encoding: BufferEncoding = definedExternally,
+    ): Double
+
+    fun write(
+        string: String,
+        offset: Number,
+        length: Number,
+        encoding: BufferEncoding = definedExternally,
+    ): Double
 
     /**
      * Decodes `buf` to a string according to the specified character encoding in`encoding`. `start` and `end` may be passed to decode only a subset of `buf`.
@@ -299,7 +320,7 @@ sealed external class Buffer<TArrayBuffer : ArrayBufferLike /* default is ArrayB
         targetEnd: Number = definedExternally,
         sourceStart: Number = definedExternally,
         sourceEnd: Number = definedExternally,
-    ): Int /* -1 | 0 | 1 */
+    ): Int // -1 | 0 | 1
 
     /**
      * Copies data from a region of `buf` to a region in `target`, even if the `target`memory region overlaps with `buf`.
@@ -381,7 +402,10 @@ sealed external class Buffer<TArrayBuffer : ArrayBufferLike /* default is ArrayB
      * @param [offset=0] Number of bytes to skip before starting to write. Must satisfy: `0 <= offset <= buf.length - 8`.
      * @return `offset` plus the number of bytes written.
      */
-    fun writeBigInt64BE(value: js.core.BigInt, offset: Number = definedExternally): Double
+    fun writeBigInt64BE(
+        value: js.core.BigInt,
+        offset: Number = definedExternally,
+    ): Double
 
     /**
      * Writes `value` to `buf` at the specified `offset` as little-endian.
@@ -403,7 +427,10 @@ sealed external class Buffer<TArrayBuffer : ArrayBufferLike /* default is ArrayB
      * @param [offset=0] Number of bytes to skip before starting to write. Must satisfy: `0 <= offset <= buf.length - 8`.
      * @return `offset` plus the number of bytes written.
      */
-    fun writeBigInt64LE(value: js.core.BigInt, offset: Number = definedExternally): Double
+    fun writeBigInt64LE(
+        value: js.core.BigInt,
+        offset: Number = definedExternally,
+    ): Double
 
     /**
      * Writes `value` to `buf` at the specified `offset` as big-endian.
@@ -425,13 +452,19 @@ sealed external class Buffer<TArrayBuffer : ArrayBufferLike /* default is ArrayB
      * @param [offset=0] Number of bytes to skip before starting to write. Must satisfy: `0 <= offset <= buf.length - 8`.
      * @return `offset` plus the number of bytes written.
      */
-    fun writeBigUInt64BE(value: js.core.BigInt, offset: Number = definedExternally): Double
+    fun writeBigUInt64BE(
+        value: js.core.BigInt,
+        offset: Number = definedExternally,
+    ): Double
 
     /**
      * @alias Buffer.writeBigUInt64BE
      * @since v14.10.0, v12.19.0
      */
-    fun writeBigUint64BE(value: js.core.BigInt, offset: Number = definedExternally): Double
+    fun writeBigUint64BE(
+        value: js.core.BigInt,
+        offset: Number = definedExternally,
+    ): Double
 
     /**
      * Writes `value` to `buf` at the specified `offset` as little-endian
@@ -453,13 +486,19 @@ sealed external class Buffer<TArrayBuffer : ArrayBufferLike /* default is ArrayB
      * @param [offset=0] Number of bytes to skip before starting to write. Must satisfy: `0 <= offset <= buf.length - 8`.
      * @return `offset` plus the number of bytes written.
      */
-    fun writeBigUInt64LE(value: js.core.BigInt, offset: Number = definedExternally): Double
+    fun writeBigUInt64LE(
+        value: js.core.BigInt,
+        offset: Number = definedExternally,
+    ): Double
 
     /**
      * @alias Buffer.writeBigUInt64LE
      * @since v14.10.0, v12.19.0
      */
-    fun writeBigUint64LE(value: js.core.BigInt, offset: Number = definedExternally): Double
+    fun writeBigUint64LE(
+        value: js.core.BigInt,
+        offset: Number = definedExternally,
+    ): Double
 
     /**
      * Writes `byteLength` bytes of `value` to `buf` at the specified `offset`as little-endian. Supports up to 48 bits of accuracy. Behavior is undefined
@@ -483,13 +522,21 @@ sealed external class Buffer<TArrayBuffer : ArrayBufferLike /* default is ArrayB
      * @param byteLength Number of bytes to write. Must satisfy `0 < byteLength <= 6`.
      * @return `offset` plus the number of bytes written.
      */
-    fun writeUIntLE(value: Number, offset: Number, byteLength: Number): Double
+    fun writeUIntLE(
+        value: Number,
+        offset: Number,
+        byteLength: Number,
+    ): Double
 
     /**
      * @alias Buffer.writeUIntLE
      * @since v14.9.0, v12.19.0
      */
-    fun writeUintLE(value: Number, offset: Number, byteLength: Number): Double
+    fun writeUintLE(
+        value: Number,
+        offset: Number,
+        byteLength: Number,
+    ): Double
 
     /**
      * Writes `byteLength` bytes of `value` to `buf` at the specified `offset`as big-endian. Supports up to 48 bits of accuracy. Behavior is undefined
@@ -513,13 +560,21 @@ sealed external class Buffer<TArrayBuffer : ArrayBufferLike /* default is ArrayB
      * @param byteLength Number of bytes to write. Must satisfy `0 < byteLength <= 6`.
      * @return `offset` plus the number of bytes written.
      */
-    fun writeUIntBE(value: Number, offset: Number, byteLength: Number): Double
+    fun writeUIntBE(
+        value: Number,
+        offset: Number,
+        byteLength: Number,
+    ): Double
 
     /**
      * @alias Buffer.writeUIntBE
      * @since v14.9.0, v12.19.0
      */
-    fun writeUintBE(value: Number, offset: Number, byteLength: Number): Double
+    fun writeUintBE(
+        value: Number,
+        offset: Number,
+        byteLength: Number,
+    ): Double
 
     /**
      * Writes `byteLength` bytes of `value` to `buf` at the specified `offset`as little-endian. Supports up to 48 bits of accuracy. Behavior is undefined
@@ -541,7 +596,11 @@ sealed external class Buffer<TArrayBuffer : ArrayBufferLike /* default is ArrayB
      * @param byteLength Number of bytes to write. Must satisfy `0 < byteLength <= 6`.
      * @return `offset` plus the number of bytes written.
      */
-    fun writeIntLE(value: Number, offset: Number, byteLength: Number): Double
+    fun writeIntLE(
+        value: Number,
+        offset: Number,
+        byteLength: Number,
+    ): Double
 
     /**
      * Writes `byteLength` bytes of `value` to `buf` at the specified `offset`as big-endian. Supports up to 48 bits of accuracy. Behavior is undefined when`value` is anything other than a
@@ -563,7 +622,11 @@ sealed external class Buffer<TArrayBuffer : ArrayBufferLike /* default is ArrayB
      * @param byteLength Number of bytes to write. Must satisfy `0 < byteLength <= 6`.
      * @return `offset` plus the number of bytes written.
      */
-    fun writeIntBE(value: Number, offset: Number, byteLength: Number): Double
+    fun writeIntBE(
+        value: Number,
+        offset: Number,
+        byteLength: Number,
+    ): Double
 
     /**
      * Reads an unsigned, big-endian 64-bit integer from `buf` at the specified`offset`.
@@ -651,13 +714,19 @@ sealed external class Buffer<TArrayBuffer : ArrayBufferLike /* default is ArrayB
      * @param offset Number of bytes to skip before starting to read. Must satisfy `0 <= offset <= buf.length - byteLength`.
      * @param byteLength Number of bytes to read. Must satisfy `0 < byteLength <= 6`.
      */
-    fun readUIntLE(offset: Number, byteLength: Number): Double
+    fun readUIntLE(
+        offset: Number,
+        byteLength: Number,
+    ): Double
 
     /**
      * @alias Buffer.readUIntLE
      * @since v14.9.0, v12.19.0
      */
-    fun readUintLE(offset: Number, byteLength: Number): Double
+    fun readUintLE(
+        offset: Number,
+        byteLength: Number,
+    ): Double
 
     /**
      * Reads `byteLength` number of bytes from `buf` at the specified `offset` and interprets the result as an unsigned big-endian integer supporting
@@ -679,13 +748,19 @@ sealed external class Buffer<TArrayBuffer : ArrayBufferLike /* default is ArrayB
      * @param offset Number of bytes to skip before starting to read. Must satisfy `0 <= offset <= buf.length - byteLength`.
      * @param byteLength Number of bytes to read. Must satisfy `0 < byteLength <= 6`.
      */
-    fun readUIntBE(offset: Number, byteLength: Number): Double
+    fun readUIntBE(
+        offset: Number,
+        byteLength: Number,
+    ): Double
 
     /**
      * @alias Buffer.readUIntBE
      * @since v14.9.0, v12.19.0
      */
-    fun readUintBE(offset: Number, byteLength: Number): Double
+    fun readUintBE(
+        offset: Number,
+        byteLength: Number,
+    ): Double
 
     /**
      * Reads `byteLength` number of bytes from `buf` at the specified `offset` and interprets the result as a little-endian, two's complement signed value
@@ -703,7 +778,10 @@ sealed external class Buffer<TArrayBuffer : ArrayBufferLike /* default is ArrayB
      * @param offset Number of bytes to skip before starting to read. Must satisfy `0 <= offset <= buf.length - byteLength`.
      * @param byteLength Number of bytes to read. Must satisfy `0 < byteLength <= 6`.
      */
-    fun readIntLE(offset: Number, byteLength: Number): Double
+    fun readIntLE(
+        offset: Number,
+        byteLength: Number,
+    ): Double
 
     /**
      * Reads `byteLength` number of bytes from `buf` at the specified `offset` and interprets the result as a big-endian, two's complement signed value
@@ -725,7 +803,10 @@ sealed external class Buffer<TArrayBuffer : ArrayBufferLike /* default is ArrayB
      * @param offset Number of bytes to skip before starting to read. Must satisfy `0 <= offset <= buf.length - byteLength`.
      * @param byteLength Number of bytes to read. Must satisfy `0 < byteLength <= 6`.
      */
-    fun readIntBE(offset: Number, byteLength: Number): Double
+    fun readIntBE(
+        offset: Number,
+        byteLength: Number,
+    ): Double
 
     /**
      * Reads an unsigned 8-bit integer from `buf` at the specified `offset`.
@@ -1060,7 +1141,7 @@ sealed external class Buffer<TArrayBuffer : ArrayBufferLike /* default is ArrayB
      * @since v5.10.0
      * @return A reference to `buf`.
      */
-    fun swap16() /* this */
+    fun swap16() // this
 
     /**
      * Interprets `buf` as an array of unsigned 32-bit integers and swaps the
@@ -1087,7 +1168,7 @@ sealed external class Buffer<TArrayBuffer : ArrayBufferLike /* default is ArrayB
      * @since v5.10.0
      * @return A reference to `buf`.
      */
-    fun swap32() /* this */
+    fun swap32() // this
 
     /**
      * Interprets `buf` as an array of 64-bit numbers and swaps byte order _in-place_.
@@ -1114,7 +1195,7 @@ sealed external class Buffer<TArrayBuffer : ArrayBufferLike /* default is ArrayB
      * @since v6.3.0
      * @return A reference to `buf`.
      */
-    fun swap64() /* this */
+    fun swap64() // this
 
     /**
      * Writes `value` to `buf` at the specified `offset`. `value` must be a
@@ -1141,13 +1222,19 @@ sealed external class Buffer<TArrayBuffer : ArrayBufferLike /* default is ArrayB
      * @param [offset=0] Number of bytes to skip before starting to write. Must satisfy `0 <= offset <= buf.length - 1`.
      * @return `offset` plus the number of bytes written.
      */
-    fun writeUInt8(value: Number, offset: Number = definedExternally): Double
+    fun writeUInt8(
+        value: Number,
+        offset: Number = definedExternally,
+    ): Double
 
     /**
      * @alias Buffer.writeUInt8
      * @since v14.9.0, v12.19.0
      */
-    fun writeUint8(value: Number, offset: Number = definedExternally): Double
+    fun writeUint8(
+        value: Number,
+        offset: Number = definedExternally,
+    ): Double
 
     /**
      * Writes `value` to `buf` at the specified `offset` as little-endian. The `value` must be a valid unsigned 16-bit integer. Behavior is undefined when `value` is
@@ -1171,13 +1258,19 @@ sealed external class Buffer<TArrayBuffer : ArrayBufferLike /* default is ArrayB
      * @param [offset=0] Number of bytes to skip before starting to write. Must satisfy `0 <= offset <= buf.length - 2`.
      * @return `offset` plus the number of bytes written.
      */
-    fun writeUInt16LE(value: Number, offset: Number = definedExternally): Double
+    fun writeUInt16LE(
+        value: Number,
+        offset: Number = definedExternally,
+    ): Double
 
     /**
      * @alias Buffer.writeUInt16LE
      * @since v14.9.0, v12.19.0
      */
-    fun writeUint16LE(value: Number, offset: Number = definedExternally): Double
+    fun writeUint16LE(
+        value: Number,
+        offset: Number = definedExternally,
+    ): Double
 
     /**
      * Writes `value` to `buf` at the specified `offset` as big-endian. The `value` must be a valid unsigned 16-bit integer. Behavior is undefined when `value`is anything other than an
@@ -1201,13 +1294,19 @@ sealed external class Buffer<TArrayBuffer : ArrayBufferLike /* default is ArrayB
      * @param [offset=0] Number of bytes to skip before starting to write. Must satisfy `0 <= offset <= buf.length - 2`.
      * @return `offset` plus the number of bytes written.
      */
-    fun writeUInt16BE(value: Number, offset: Number = definedExternally): Double
+    fun writeUInt16BE(
+        value: Number,
+        offset: Number = definedExternally,
+    ): Double
 
     /**
      * @alias Buffer.writeUInt16BE
      * @since v14.9.0, v12.19.0
      */
-    fun writeUint16BE(value: Number, offset: Number = definedExternally): Double
+    fun writeUint16BE(
+        value: Number,
+        offset: Number = definedExternally,
+    ): Double
 
     /**
      * Writes `value` to `buf` at the specified `offset` as little-endian. The `value` must be a valid unsigned 32-bit integer. Behavior is undefined when `value` is
@@ -1230,13 +1329,19 @@ sealed external class Buffer<TArrayBuffer : ArrayBufferLike /* default is ArrayB
      * @param [offset=0] Number of bytes to skip before starting to write. Must satisfy `0 <= offset <= buf.length - 4`.
      * @return `offset` plus the number of bytes written.
      */
-    fun writeUInt32LE(value: Number, offset: Number = definedExternally): Double
+    fun writeUInt32LE(
+        value: Number,
+        offset: Number = definedExternally,
+    ): Double
 
     /**
      * @alias Buffer.writeUInt32LE
      * @since v14.9.0, v12.19.0
      */
-    fun writeUint32LE(value: Number, offset: Number = definedExternally): Double
+    fun writeUint32LE(
+        value: Number,
+        offset: Number = definedExternally,
+    ): Double
 
     /**
      * Writes `value` to `buf` at the specified `offset` as big-endian. The `value` must be a valid unsigned 32-bit integer. Behavior is undefined when `value`is anything other than an
@@ -1259,13 +1364,19 @@ sealed external class Buffer<TArrayBuffer : ArrayBufferLike /* default is ArrayB
      * @param [offset=0] Number of bytes to skip before starting to write. Must satisfy `0 <= offset <= buf.length - 4`.
      * @return `offset` plus the number of bytes written.
      */
-    fun writeUInt32BE(value: Number, offset: Number = definedExternally): Double
+    fun writeUInt32BE(
+        value: Number,
+        offset: Number = definedExternally,
+    ): Double
 
     /**
      * @alias Buffer.writeUInt32BE
      * @since v14.9.0, v12.19.0
      */
-    fun writeUint32BE(value: Number, offset: Number = definedExternally): Double
+    fun writeUint32BE(
+        value: Number,
+        offset: Number = definedExternally,
+    ): Double
 
     /**
      * Writes `value` to `buf` at the specified `offset`. `value` must be a valid
@@ -1290,7 +1401,10 @@ sealed external class Buffer<TArrayBuffer : ArrayBufferLike /* default is ArrayB
      * @param [offset=0] Number of bytes to skip before starting to write. Must satisfy `0 <= offset <= buf.length - 1`.
      * @return `offset` plus the number of bytes written.
      */
-    fun writeInt8(value: Number, offset: Number = definedExternally): Double
+    fun writeInt8(
+        value: Number,
+        offset: Number = definedExternally,
+    ): Double
 
     /**
      * Writes `value` to `buf` at the specified `offset` as little-endian.  The `value` must be a valid signed 16-bit integer. Behavior is undefined when `value` is
@@ -1313,7 +1427,10 @@ sealed external class Buffer<TArrayBuffer : ArrayBufferLike /* default is ArrayB
      * @param [offset=0] Number of bytes to skip before starting to write. Must satisfy `0 <= offset <= buf.length - 2`.
      * @return `offset` plus the number of bytes written.
      */
-    fun writeInt16LE(value: Number, offset: Number = definedExternally): Double
+    fun writeInt16LE(
+        value: Number,
+        offset: Number = definedExternally,
+    ): Double
 
     /**
      * Writes `value` to `buf` at the specified `offset` as big-endian.  The `value` must be a valid signed 16-bit integer. Behavior is undefined when `value` is
@@ -1336,7 +1453,10 @@ sealed external class Buffer<TArrayBuffer : ArrayBufferLike /* default is ArrayB
      * @param [offset=0] Number of bytes to skip before starting to write. Must satisfy `0 <= offset <= buf.length - 2`.
      * @return `offset` plus the number of bytes written.
      */
-    fun writeInt16BE(value: Number, offset: Number = definedExternally): Double
+    fun writeInt16BE(
+        value: Number,
+        offset: Number = definedExternally,
+    ): Double
 
     /**
      * Writes `value` to `buf` at the specified `offset` as little-endian. The `value` must be a valid signed 32-bit integer. Behavior is undefined when `value` is
@@ -1359,7 +1479,10 @@ sealed external class Buffer<TArrayBuffer : ArrayBufferLike /* default is ArrayB
      * @param [offset=0] Number of bytes to skip before starting to write. Must satisfy `0 <= offset <= buf.length - 4`.
      * @return `offset` plus the number of bytes written.
      */
-    fun writeInt32LE(value: Number, offset: Number = definedExternally): Double
+    fun writeInt32LE(
+        value: Number,
+        offset: Number = definedExternally,
+    ): Double
 
     /**
      * Writes `value` to `buf` at the specified `offset` as big-endian. The `value` must be a valid signed 32-bit integer. Behavior is undefined when `value` is
@@ -1382,7 +1505,10 @@ sealed external class Buffer<TArrayBuffer : ArrayBufferLike /* default is ArrayB
      * @param [offset=0] Number of bytes to skip before starting to write. Must satisfy `0 <= offset <= buf.length - 4`.
      * @return `offset` plus the number of bytes written.
      */
-    fun writeInt32BE(value: Number, offset: Number = definedExternally): Double
+    fun writeInt32BE(
+        value: Number,
+        offset: Number = definedExternally,
+    ): Double
 
     /**
      * Writes `value` to `buf` at the specified `offset` as little-endian. Behavior is
@@ -1403,7 +1529,10 @@ sealed external class Buffer<TArrayBuffer : ArrayBufferLike /* default is ArrayB
      * @param [offset=0] Number of bytes to skip before starting to write. Must satisfy `0 <= offset <= buf.length - 4`.
      * @return `offset` plus the number of bytes written.
      */
-    fun writeFloatLE(value: Number, offset: Number = definedExternally): Double
+    fun writeFloatLE(
+        value: Number,
+        offset: Number = definedExternally,
+    ): Double
 
     /**
      * Writes `value` to `buf` at the specified `offset` as big-endian. Behavior is
@@ -1424,7 +1553,10 @@ sealed external class Buffer<TArrayBuffer : ArrayBufferLike /* default is ArrayB
      * @param [offset=0] Number of bytes to skip before starting to write. Must satisfy `0 <= offset <= buf.length - 4`.
      * @return `offset` plus the number of bytes written.
      */
-    fun writeFloatBE(value: Number, offset: Number = definedExternally): Double
+    fun writeFloatBE(
+        value: Number,
+        offset: Number = definedExternally,
+    ): Double
 
     /**
      * Writes `value` to `buf` at the specified `offset` as little-endian. The `value` must be a JavaScript number. Behavior is undefined when `value` is anything
@@ -1445,7 +1577,10 @@ sealed external class Buffer<TArrayBuffer : ArrayBufferLike /* default is ArrayB
      * @param [offset=0] Number of bytes to skip before starting to write. Must satisfy `0 <= offset <= buf.length - 8`.
      * @return `offset` plus the number of bytes written.
      */
-    fun writeDoubleLE(value: Number, offset: Number = definedExternally): Double
+    fun writeDoubleLE(
+        value: Number,
+        offset: Number = definedExternally,
+    ): Double
 
     /**
      * Writes `value` to `buf` at the specified `offset` as big-endian. The `value` must be a JavaScript number. Behavior is undefined when `value` is anything
@@ -1466,7 +1601,10 @@ sealed external class Buffer<TArrayBuffer : ArrayBufferLike /* default is ArrayB
      * @param [offset=0] Number of bytes to skip before starting to write. Must satisfy `0 <= offset <= buf.length - 8`.
      * @return `offset` plus the number of bytes written.
      */
-    fun writeDoubleBE(value: Number, offset: Number = definedExternally): Double
+    fun writeDoubleBE(
+        value: Number,
+        offset: Number = definedExternally,
+    ): Double
 
     /**
      * Fills `buf` with the specified `value`. If the `offset` and `end` are not given,
@@ -1532,7 +1670,7 @@ sealed external class Buffer<TArrayBuffer : ArrayBufferLike /* default is ArrayB
         offset: Number = definedExternally,
         end: Number = definedExternally,
         encoding: BufferEncoding = definedExternally,
-    ) /* this */
+    ) // this
 
     /**
      * Fills `buf` with the specified `value`. If the `offset` and `end` are not given,
@@ -1598,7 +1736,7 @@ sealed external class Buffer<TArrayBuffer : ArrayBufferLike /* default is ArrayB
         offset: Number = definedExternally,
         end: Number = definedExternally,
         encoding: BufferEncoding = definedExternally,
-    ) /* this */
+    ) // this
 
     /**
      * Fills `buf` with the specified `value`. If the `offset` and `end` are not given,
@@ -1664,7 +1802,7 @@ sealed external class Buffer<TArrayBuffer : ArrayBufferLike /* default is ArrayB
         offset: Number = definedExternally,
         end: Number = definedExternally,
         encoding: BufferEncoding = definedExternally,
-    ) /* this */
+    ) // this
 
     /**
      * If `value` is:
@@ -2708,6 +2846,7 @@ sealed external class Buffer<TArrayBuffer : ArrayBufferLike /* default is ArrayB
         fun allocUnsafeSlow(size: Number): Buffer<ArrayBuffer>
 // see buffer.buffer.d.ts for implementation specific to TypeScript 5.7 and later
 // see ts5.6/buffer.buffer.d.ts for implementation specific to TypeScript 5.6 and earlier
+
         /**
          * Returns `true` if `obj` is a `Buffer`, `false` otherwise.
          *
@@ -2722,7 +2861,7 @@ sealed external class Buffer<TArrayBuffer : ArrayBufferLike /* default is ArrayB
          * ```
          * @since v0.1.101
          */
-        fun isBuffer(obj: Any?): Boolean /* obj is Buffer */
+        fun isBuffer(obj: Any?): Boolean // obj is Buffer
 
         /**
          * Returns `true` if `encoding` is the name of a supported character encoding,
@@ -2746,7 +2885,7 @@ sealed external class Buffer<TArrayBuffer : ArrayBufferLike /* default is ArrayB
          * @since v0.9.1
          * @param encoding A character encoding name to check.
          */
-        fun isEncoding(encoding: String): Boolean /* encoding is BufferEncoding */
+        fun isEncoding(encoding: String): Boolean // encoding is BufferEncoding
 
         /**
          * Returns the byte length of a string when encoded using `encoding`.
@@ -2777,7 +2916,10 @@ sealed external class Buffer<TArrayBuffer : ArrayBufferLike /* default is ArrayB
          * @param [encoding='utf8'] If `string` is a string, this is its encoding.
          * @return The number of bytes contained within `string`.
          */
-        fun byteLength(string: String, encoding: BufferEncoding = definedExternally): Double
+        fun byteLength(
+            string: String,
+            encoding: BufferEncoding = definedExternally,
+        ): Double
 
         /**
          * Returns the byte length of a string when encoded using `encoding`.
@@ -2808,7 +2950,10 @@ sealed external class Buffer<TArrayBuffer : ArrayBufferLike /* default is ArrayB
          * @param [encoding='utf8'] If `string` is a string, this is its encoding.
          * @return The number of bytes contained within `string`.
          */
-        fun byteLength(string: Buffer<*>, encoding: BufferEncoding = definedExternally): Double
+        fun byteLength(
+            string: Buffer<*>,
+            encoding: BufferEncoding = definedExternally,
+        ): Double
 
         /**
          * Returns the byte length of a string when encoded using `encoding`.
@@ -2839,7 +2984,10 @@ sealed external class Buffer<TArrayBuffer : ArrayBufferLike /* default is ArrayB
          * @param [encoding='utf8'] If `string` is a string, this is its encoding.
          * @return The number of bytes contained within `string`.
          */
-        fun byteLength(string: js.buffer.ArrayBufferView<*>, encoding: BufferEncoding = definedExternally): Double
+        fun byteLength(
+            string: js.buffer.ArrayBufferView<*>,
+            encoding: BufferEncoding = definedExternally,
+        ): Double
 
         /**
          * Returns the byte length of a string when encoded using `encoding`.
@@ -2870,7 +3018,10 @@ sealed external class Buffer<TArrayBuffer : ArrayBufferLike /* default is ArrayB
          * @param [encoding='utf8'] If `string` is a string, this is its encoding.
          * @return The number of bytes contained within `string`.
          */
-        fun byteLength(string: ArrayBuffer, encoding: BufferEncoding = definedExternally): Double
+        fun byteLength(
+            string: ArrayBuffer,
+            encoding: BufferEncoding = definedExternally,
+        ): Double
 
         /**
          * Returns the byte length of a string when encoded using `encoding`.
@@ -2901,7 +3052,10 @@ sealed external class Buffer<TArrayBuffer : ArrayBufferLike /* default is ArrayB
          * @param [encoding='utf8'] If `string` is a string, this is its encoding.
          * @return The number of bytes contained within `string`.
          */
-        fun byteLength(string: SharedArrayBuffer, encoding: BufferEncoding = definedExternally): Double
+        fun byteLength(
+            string: SharedArrayBuffer,
+            encoding: BufferEncoding = definedExternally,
+        ): Double
 
         /**
          * Compares `buf1` to `buf2`, typically for the purpose of sorting arrays of `Buffer` instances. This is equivalent to calling `buf1.compare(buf2)`.
@@ -2920,7 +3074,7 @@ sealed external class Buffer<TArrayBuffer : ArrayBufferLike /* default is ArrayB
          * @since v0.11.13
          * @return Either `-1`, `0`, or `1`, depending on the result of the comparison. See `compare` for details.
          */
-        fun compare(buf1: Uint8Array<*>, buf2: Uint8Array<*>): Int /* -1 | 0 | 1 */
+        fun compare(buf1: Uint8Array<*>, buf2: Uint8Array<*>): Int // -1 | 0 | 1
 
         /**
          * This is the size (in bytes) of pre-allocated internal `Buffer` instances used
@@ -2929,5 +3083,4 @@ sealed external class Buffer<TArrayBuffer : ArrayBufferLike /* default is ArrayB
          */
         var poolSize: Double
     }
-
 }

@@ -182,7 +182,10 @@ external class X509Certificate {
      * @since v15.6.0
      * @return Returns `email` if the certificate matches, `undefined` if it does not.
      */
-    fun checkEmail(email: String, options: X509CheckOptions = definedExternally): String?
+    fun checkEmail(
+        email: String,
+        options: X509CheckOptions = definedExternally,
+    ): String?
 
     /**
      * Checks whether the certificate matches the given host name.
@@ -206,7 +209,10 @@ external class X509Certificate {
      * @since v15.6.0
      * @return Returns a subject name that matches `name`, or `undefined` if no subject name matches `name`.
      */
-    fun checkHost(name: String, options: X509CheckOptions = definedExternally): String?
+    fun checkHost(
+        name: String,
+        options: X509CheckOptions = definedExternally,
+    ): String?
 
     /**
      * Checks whether the certificate matches the given IP address (IPv4 or IPv6).

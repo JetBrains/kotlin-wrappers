@@ -98,5 +98,4 @@ package node.zlib
  * @see [source](https://github.com/nodejs/node/blob/v22.x/lib/zlib.js)
  */
 
-
-/* export * from "zlib"; */
+// export * from "zlib";

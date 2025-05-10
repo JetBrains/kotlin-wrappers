@@ -46,7 +46,10 @@ sealed external interface Performance {
      * @param type
      * @since v16.7.0
      */
-    fun getEntriesByName(name: String, type: EntryType = definedExternally): js.array.ReadonlyArray<PerformanceEntry>
+    fun getEntriesByName(
+        name: String,
+        type: EntryType = definedExternally,
+    ): js.array.ReadonlyArray<PerformanceEntry>
 
     /**
      * Returns a list of `PerformanceEntry` objects in chronological order with respect to `performanceEntry.startTime`
@@ -67,7 +70,10 @@ sealed external interface Performance {
      * performed, the entries should be cleared from the global Performance Timeline manually with `performance.clearMarks`.
      * @param name
      */
-    fun mark(name: String, options: MarkOptions = definedExternally): PerformanceMark
+    fun mark(
+        name: String,
+        options: MarkOptions = definedExternally,
+    ): PerformanceMark
 
     /**
      * Creates a new `PerformanceResourceTiming` entry in the Resource Timeline.
@@ -116,7 +122,10 @@ sealed external interface Performance {
         endMark: String = definedExternally,
     ): PerformanceMeasure
 
-    fun measure(name: String, options: MeasureOptions): PerformanceMeasure
+    fun measure(
+        name: String,
+        options: MeasureOptions,
+    ): PerformanceMeasure
 
     /**
      * _This property is an extension by Node.js. It is not available in Web browsers._

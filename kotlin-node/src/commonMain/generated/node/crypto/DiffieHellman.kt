@@ -49,6 +49,7 @@ external class DiffieHellman {
      * @param encoding The `encoding` of the return value.
      */
     fun generateKeys(): node.buffer.Buffer<*>
+
     fun generateKeys(encoding: BinaryToTextEncoding): String
 
     /**
@@ -96,6 +97,7 @@ external class DiffieHellman {
      * @param encoding The `encoding` of the return value.
      */
     fun getPrime(): node.buffer.Buffer<*>
+
     fun getPrime(encoding: BinaryToTextEncoding): String
 
     /**
@@ -106,6 +108,7 @@ external class DiffieHellman {
      * @param encoding The `encoding` of the return value.
      */
     fun getGenerator(): node.buffer.Buffer<*>
+
     fun getGenerator(encoding: BinaryToTextEncoding): String
 
     /**
@@ -116,6 +119,7 @@ external class DiffieHellman {
      * @param encoding The `encoding` of the return value.
      */
     fun getPublicKey(): node.buffer.Buffer<*>
+
     fun getPublicKey(encoding: BinaryToTextEncoding): String
 
     /**
@@ -126,6 +130,7 @@ external class DiffieHellman {
      * @param encoding The `encoding` of the return value.
      */
     fun getPrivateKey(): node.buffer.Buffer<*>
+
     fun getPrivateKey(encoding: BinaryToTextEncoding): String
 
     /**
@@ -136,7 +141,11 @@ external class DiffieHellman {
      * @param encoding The `encoding` of the `publicKey` string.
      */
     fun setPublicKey(publicKey: js.buffer.ArrayBufferView<*>)
-    fun setPublicKey(publicKey: String, encoding: node.buffer.BufferEncoding)
+
+    fun setPublicKey(
+        publicKey: String,
+        encoding: node.buffer.BufferEncoding,
+    )
 
     /**
      * Sets the Diffie-Hellman private key. If the `encoding` argument is provided,`privateKey` is expected
@@ -149,7 +158,11 @@ external class DiffieHellman {
      * @param encoding The `encoding` of the `privateKey` string.
      */
     fun setPrivateKey(privateKey: js.buffer.ArrayBufferView<*>)
-    fun setPrivateKey(privateKey: String, encoding: node.buffer.BufferEncoding)
+
+    fun setPrivateKey(
+        privateKey: String,
+        encoding: node.buffer.BufferEncoding,
+    )
 
     /**
      * A bit field containing any warnings and/or errors resulting from a check

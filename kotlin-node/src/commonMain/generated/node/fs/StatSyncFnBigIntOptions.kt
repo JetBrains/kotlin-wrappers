@@ -4,8 +4,9 @@ package node.fs
 
 sealed external interface StatSyncFnBigIntOptions : StatSyncOptions {
     @JsName("bigint")
-    var requiredBigInt: Boolean /* true */
+    var requiredBigInt: Boolean
 
+    // true
     @JsName("throwIfNoEntry")
-    var requiredThrowIfNoEntry: Boolean /* false */
+    var requiredThrowIfNoEntry: Boolean // false
 }

@@ -2,4 +2,6 @@
 
 package node.http2
 
-sealed external interface SecureClientSessionOptions : ClientSessionOptions, node.tls.ConnectionOptions
+sealed external interface SecureClientSessionOptions :
+    ClientSessionOptions,
+    node.tls.ConnectionOptions

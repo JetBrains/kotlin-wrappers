@@ -23,7 +23,10 @@ package node.diagnosticsChannel
  * @param onMessage The previous subscribed handler to remove
  * @return `true` if the handler was found, `false` otherwise.
  */
-external fun unsubscribe(name: String, onMessage: ChannelListener): Boolean
+external fun unsubscribe(
+    name: String,
+    onMessage: ChannelListener,
+): Boolean
 
 /**
  * Remove a message handler previously registered to this channel with {@link subscribe}.
@@ -44,4 +47,7 @@ external fun unsubscribe(name: String, onMessage: ChannelListener): Boolean
  * @param onMessage The previous subscribed handler to remove
  * @return `true` if the handler was found, `false` otherwise.
  */
-external fun unsubscribe(name: js.symbol.Symbol, onMessage: ChannelListener): Boolean
+external fun unsubscribe(
+    name: js.symbol.Symbol,
+    onMessage: ChannelListener,
+): Boolean

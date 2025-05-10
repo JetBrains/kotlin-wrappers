@@ -24,6 +24,5 @@ package node.stream
  * @see [source](https://github.com/nodejs/node/blob/v22.x/lib/stream.js)
  */
 
-
-/* import stream = require("stream"); */
-/* export = stream; */
+// import stream = require("stream");
+// export = stream;

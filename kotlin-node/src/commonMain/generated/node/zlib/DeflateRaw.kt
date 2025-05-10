@@ -3,4 +3,8 @@
 package node.zlib
 
 @Suppress("INTERFACE_WITH_SUPERCLASS")
-sealed external interface DeflateRaw : node.stream.Transform, Zlib, ZlibReset, ZlibParams
+sealed external interface DeflateRaw :
+    node.stream.Transform,
+    Zlib,
+    ZlibReset,
+    ZlibParams

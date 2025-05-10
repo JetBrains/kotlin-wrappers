@@ -2,4 +2,4 @@
 
 package node.fs
 
-typealias OpenMode = Any /* number | string */
+typealias OpenMode = Any // number | string

@@ -119,7 +119,11 @@ external class Hash : node.stream.Transform {
      * @param inputEncoding The `encoding` of the `data` string.
      */
     fun update(data: BinaryLike): Hash
-    fun update(data: String, inputEncoding: Encoding): Hash
+
+    fun update(
+        data: String,
+        inputEncoding: Encoding,
+    ): Hash
 
     /**
      * Calculates the digest of all of the data passed to be hashed (using the `hash.update()` method).
@@ -132,5 +136,6 @@ external class Hash : node.stream.Transform {
      * @param encoding The `encoding` of the return value.
      */
     fun digest(): node.buffer.Buffer<*>
+
     fun digest(encoding: BinaryToTextEncoding): String
 }

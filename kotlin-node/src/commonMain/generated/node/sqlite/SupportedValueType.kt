@@ -2,4 +2,4 @@
 
 package node.sqlite
 
-typealias SupportedValueType = Any? /* null | number | bigint | string | Uint8Array */
+typealias SupportedValueType = Any? // null | number | bigint | string | Uint8Array

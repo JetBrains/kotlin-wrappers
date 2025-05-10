@@ -5,4 +5,6 @@ package node.fs
 import web.abort.Abortable
 
 @js.objects.JsPlainObject
-sealed external interface FileHandleWriteFileAsyncOptions : ObjectEncodingOptions, Abortable
+sealed external interface FileHandleWriteFileAsyncOptions :
+    ObjectEncodingOptions,
+    Abortable

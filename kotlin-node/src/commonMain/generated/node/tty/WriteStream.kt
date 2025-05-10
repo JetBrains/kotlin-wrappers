@@ -12,25 +12,25 @@ package node.tty
 open external class WriteStream : node.net.Socket {
     constructor (fd: Number)
 
-    override fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
+    override fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
 
-    override fun emit(event: String, vararg args: Any?): Boolean
-
-    override fun emit(event: js.symbol.Symbol, vararg args: Any?): Boolean
-
-    override fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
-
-    override fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
-
-    override fun prependListener(
+    override fun emit(
         event: String,
-        listener: Function<Unit>, /* (...args: any[]) => void */
-    ) /* this */
+        vararg args: Any?,
+    ): Boolean
 
-    override fun prependOnceListener(
-        event: String,
-        listener: Function<Unit>, /* (...args: any[]) => void */
-    ) /* this */
+    override fun emit(
+        event: js.symbol.Symbol,
+        vararg args: Any?,
+    ): Boolean
+
+    override fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
+
+    override fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
+
+    override fun prependListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
+
+    override fun prependOnceListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
 
     /**
      * `writeStream.clearLine()` clears the current line of this `WriteStream` in a
@@ -39,7 +39,10 @@ open external class WriteStream : node.net.Socket {
      * @param callback Invoked once the operation completes.
      * @return `false` if the stream wishes for the calling code to wait for the `'drain'` event to be emitted before continuing to write additional data; otherwise `true`.
      */
-    fun clearLine(dir: Direction, callback: () -> Unit = definedExternally): Boolean
+    fun clearLine(
+        dir: Direction,
+        callback: () -> Unit = definedExternally,
+    ): Boolean
 
     /**
      * `writeStream.clearScreenDown()` clears this `WriteStream` from the current
@@ -57,8 +60,16 @@ open external class WriteStream : node.net.Socket {
      * @param callback Invoked once the operation completes.
      * @return `false` if the stream wishes for the calling code to wait for the `'drain'` event to be emitted before continuing to write additional data; otherwise `true`.
      */
-    fun cursorTo(x: Number, y: Number = definedExternally, callback: () -> Unit = definedExternally): Boolean
-    fun cursorTo(x: Number, callback: () -> Unit): Boolean
+    fun cursorTo(
+        x: Number,
+        y: Number = definedExternally,
+        callback: () -> Unit = definedExternally,
+    ): Boolean
+
+    fun cursorTo(
+        x: Number,
+        callback: () -> Unit,
+    ): Boolean
 
     /**
      * `writeStream.moveCursor()` moves this `WriteStream`'s cursor _relative_ to its
@@ -67,7 +78,11 @@ open external class WriteStream : node.net.Socket {
      * @param callback Invoked once the operation completes.
      * @return `false` if the stream wishes for the calling code to wait for the `'drain'` event to be emitted before continuing to write additional data; otherwise `true`.
      */
-    fun moveCursor(dx: Number, dy: Number, callback: () -> Unit = definedExternally): Boolean
+    fun moveCursor(
+        dx: Number,
+        dy: Number,
+        callback: () -> Unit = definedExternally,
+    ): Boolean
 
     /**
      * Returns:
@@ -118,7 +133,12 @@ open external class WriteStream : node.net.Socket {
      * @param [env=process.env] An object containing the environment variables to check. This enables simulating the usage of a specific terminal.
      */
     fun hasColors(count: Number = definedExternally): Boolean
-    fun hasColors(count: Number, env: Any = definedExternally): Boolean
+
+    fun hasColors(
+        count: Number,
+        env: Any = definedExternally,
+    ): Boolean
+
     fun hasColors(env: Any = definedExternally): Boolean
 
     /**

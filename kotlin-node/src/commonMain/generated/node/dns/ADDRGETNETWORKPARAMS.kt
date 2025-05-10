@@ -4,4 +4,4 @@
 
 package node.dns
 
-external val ADDRGETNETWORKPARAMS: String /* "EADDRGETNETWORKPARAMS" */
+external val ADDRGETNETWORKPARAMS: String // "EADDRGETNETWORKPARAMS"

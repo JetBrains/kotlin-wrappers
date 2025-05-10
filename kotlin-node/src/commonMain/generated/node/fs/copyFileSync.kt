@@ -38,4 +38,8 @@ package node.fs
  * @param dest destination filename of the copy operation
  * @param [mode=0] modifiers for copy operation.
  */
-external fun copyFileSync(src: PathLike, dest: PathLike, mode: Number = definedExternally)
+external fun copyFileSync(
+    src: PathLike,
+    dest: PathLike,
+    mode: Number = definedExternally,
+)

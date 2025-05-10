@@ -5,7 +5,6 @@ package node.util.types
 import js.promise.Promise
 import kotlin.contracts.contract
 
-
 @Suppress("CANNOT_CHECK_FOR_EXTERNAL_INTERFACE")
 inline fun isPromise(value: Any?): Boolean /* object is Promise<unknown> */ {
     contract {

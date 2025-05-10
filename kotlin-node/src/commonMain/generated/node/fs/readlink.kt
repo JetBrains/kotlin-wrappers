@@ -48,4 +48,7 @@ external fun readlink(
  * Asynchronous readlink(2) - read value of a symbolic link.
  * @param path A path to a file. If a URL is provided, it must use the `file:` protocol.
  */
-external fun readlink(path: PathLike, callback: (err: node.ErrnoException?, linkString: String) -> Unit)
+external fun readlink(
+    path: PathLike,
+    callback: (err: node.ErrnoException?, linkString: String) -> Unit,
+)

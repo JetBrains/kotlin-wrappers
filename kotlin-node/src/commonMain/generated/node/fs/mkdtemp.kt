@@ -106,4 +106,7 @@ external fun mkdtemp(
  * Asynchronously creates a unique temporary directory.
  * Generates six random characters to be appended behind a required prefix to create a unique temporary directory.
  */
-external fun mkdtemp(prefix: String, callback: (err: node.ErrnoException?, folder: String) -> Unit)
+external fun mkdtemp(
+    prefix: String,
+    callback: (err: node.ErrnoException?, folder: String) -> Unit,
+)

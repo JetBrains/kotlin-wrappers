@@ -4,4 +4,5 @@
 
 package node.util
 
-external val debug: (section: String, callback: ((fn: DebugLoggerFunction) -> Unit)? /* use undefined for default */) -> DebugLogger
+external val debug:
+            (section: String, callback: ((fn: DebugLoggerFunction) -> Unit)? /* use undefined for default */) -> DebugLogger

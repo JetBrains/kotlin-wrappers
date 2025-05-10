@@ -2,4 +2,4 @@
 
 package node.module
 
-typealias ModuleSource = Any /* string | ArrayBuffer | NodeJS.TypedArray */
+typealias ModuleSource = Any // string | ArrayBuffer | NodeJS.TypedArray

@@ -2,4 +2,4 @@
 
 package node.fs
 
-typealias Mode = Any /* number | string */
+typealias Mode = Any // number | string

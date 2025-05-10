@@ -61,4 +61,7 @@ package node.util
  * @param callback A callback invoked the first time the logging function is called with a function argument that is a more optimized logging function.
  * @return The logging function
  */
-external fun debuglog(section: String, callback: (fn: DebugLoggerFunction) -> Unit = definedExternally): DebugLogger
+external fun debuglog(
+    section: String,
+    callback: (fn: DebugLoggerFunction) -> Unit = definedExternally,
+): DebugLogger

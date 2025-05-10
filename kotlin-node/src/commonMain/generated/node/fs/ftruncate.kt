@@ -47,10 +47,17 @@ package node.fs
  * @since v0.8.6
  * @param [len=0]
  */
-external fun ftruncate(fd: Number, len: Double?, callback: NoParamCallback)
+external fun ftruncate(
+    fd: Number,
+    len: Double?,
+    callback: NoParamCallback,
+)
 
 /**
  * Asynchronous ftruncate(2) - Truncate a file to a specified length.
  * @param fd A file descriptor.
  */
-external fun ftruncate(fd: Number, callback: NoParamCallback)
+external fun ftruncate(
+    fd: Number,
+    callback: NoParamCallback,
+)

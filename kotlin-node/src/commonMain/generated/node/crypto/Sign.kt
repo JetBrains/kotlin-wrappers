@@ -82,8 +82,9 @@ external class Sign : node.stream.Writable {
      * @since v0.1.92
      * @param inputEncoding The `encoding` of the `data` string.
      */
-    fun update(data: BinaryLike) /* this */
-    fun update(data: String, inputEncoding: Encoding) /* this */
+    fun update(data: BinaryLike) // this
+
+    fun update(data: String, inputEncoding: Encoding) // this
 
     /**
      * Calculates the signature on all the data passed through using either `sign.update()` or `sign.write()`.
@@ -140,11 +141,24 @@ external class Sign : node.stream.Writable {
      * @since v0.1.92
      */
     fun sign(privateKey: SignJsonWebKeyInput): node.buffer.Buffer<*>
-    fun sign(privateKey: KeyLike, outputFormat: BinaryToTextEncoding): String
 
-    fun sign(privateKey: SignKeyObjectInput, outputFormat: BinaryToTextEncoding): String
+    fun sign(
+        privateKey: KeyLike,
+        outputFormat: BinaryToTextEncoding,
+    ): String
 
-    fun sign(privateKey: SignPrivateKeyInput, outputFormat: BinaryToTextEncoding): String
+    fun sign(
+        privateKey: SignKeyObjectInput,
+        outputFormat: BinaryToTextEncoding,
+    ): String
 
-    fun sign(privateKey: SignJsonWebKeyInput, outputFormat: BinaryToTextEncoding): String
+    fun sign(
+        privateKey: SignPrivateKeyInput,
+        outputFormat: BinaryToTextEncoding,
+    ): String
+
+    fun sign(
+        privateKey: SignJsonWebKeyInput,
+        outputFormat: BinaryToTextEncoding,
+    ): String
 }

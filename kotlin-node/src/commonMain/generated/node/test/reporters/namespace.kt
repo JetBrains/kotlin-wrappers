@@ -4,4 +4,4 @@
 
 package node.test.reporters
 
-/* export { dot, junit, lcov, spec, tap, TestEvent }; */
+// export { dot, junit, lcov, spec, tap, TestEvent };

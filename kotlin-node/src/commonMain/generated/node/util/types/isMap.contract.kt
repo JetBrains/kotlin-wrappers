@@ -2,7 +2,6 @@
 
 package node.util.types
 
-
 /**
  * Returns `true` if the value is a built-in [`Map`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map) instance.
  *

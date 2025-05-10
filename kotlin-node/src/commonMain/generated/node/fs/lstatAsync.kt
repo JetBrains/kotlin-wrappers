@@ -15,12 +15,16 @@ import js.promise.Promise
  */
 
 @JsName("lstat")
-external fun lstatAsync(path: PathLike, opts: LstatOpts = definedExternally): Promise<Stats>
-
+external fun lstatAsync(
+    path: PathLike,
+    opts: LstatOpts = definedExternally,
+): Promise<Stats>
 
 @JsName("lstat")
-external fun lstatAsync(path: PathLike, opts: LstatBigIntOpts): Promise<BigIntStats>
-
+external fun lstatAsync(
+    path: PathLike,
+    opts: LstatBigIntOpts,
+): Promise<BigIntStats>
 
 @JsName("lstat")
 external fun lstatAsync(path: PathLike, opts: StatOptions = definedExternally): Promise<Any /* Stats | BigIntStats */>

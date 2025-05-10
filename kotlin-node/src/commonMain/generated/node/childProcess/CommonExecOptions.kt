@@ -4,7 +4,7 @@ package node.childProcess
 
 @js.objects.JsPlainObject
 sealed external interface CommonExecOptions : CommonOptions {
-    var input: Any? /* string | NodeJS.ArrayBufferView | undefined */
+    var input: Any? // string | NodeJS.ArrayBufferView | undefined
 
     /**
      * Can be set to 'pipe', 'inherit, or 'ignore', or an array of these strings.
@@ -16,7 +16,7 @@ sealed external interface CommonExecOptions : CommonOptions {
      * @default 'pipe'
      */
     var stdio: StdioOptions?
-    var killSignal: Any? /* NodeJS.Signals | number | undefined */
+    var killSignal: Any? // NodeJS.Signals | number | undefined
     var maxBuffer: Double?
-    var encoding: Any? /* BufferEncoding | "buffer" | null | undefined */
+    var encoding: Any? // BufferEncoding | "buffer" | null | undefined
 }

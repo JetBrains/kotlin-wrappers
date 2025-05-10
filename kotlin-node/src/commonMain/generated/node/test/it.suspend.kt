@@ -2,7 +2,6 @@
 
 package node.test
 
-
 @seskar.js.JsAsync
 external suspend fun it(
     name: String = definedExternally,
@@ -10,14 +9,17 @@ external suspend fun it(
     fn: TestFn = definedExternally,
 ): js.core.Void
 
+@seskar.js.JsAsync
+external suspend fun it(
+    name: String = definedExternally,
+    fn: TestFn = definedExternally,
+): js.core.Void
 
 @seskar.js.JsAsync
-external suspend fun it(name: String = definedExternally, fn: TestFn = definedExternally): js.core.Void
-
-
-@seskar.js.JsAsync
-external suspend fun it(options: TestOptions = definedExternally, fn: TestFn = definedExternally): js.core.Void
-
+external suspend fun it(
+    options: TestOptions = definedExternally,
+    fn: TestFn = definedExternally,
+): js.core.Void
 
 @seskar.js.JsAsync
 external suspend fun it(fn: TestFn = definedExternally): js.core.Void

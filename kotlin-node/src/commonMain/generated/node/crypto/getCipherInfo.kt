@@ -15,7 +15,10 @@ package node.crypto
  * @since v15.0.0
  * @param nameOrNid The name or nid of the cipher to query.
  */
-external fun getCipherInfo(nameOrNid: String, options: CipherInfoOptions = definedExternally): CipherInfo?
+external fun getCipherInfo(
+    nameOrNid: String,
+    options: CipherInfoOptions = definedExternally,
+): CipherInfo?
 
 /**
  * Returns information about a given cipher.
@@ -28,4 +31,7 @@ external fun getCipherInfo(nameOrNid: String, options: CipherInfoOptions = defin
  * @since v15.0.0
  * @param nameOrNid The name or nid of the cipher to query.
  */
-external fun getCipherInfo(nameOrNid: Double, options: CipherInfoOptions = definedExternally): CipherInfo?
+external fun getCipherInfo(
+    nameOrNid: Double,
+    options: CipherInfoOptions = definedExternally,
+): CipherInfo?

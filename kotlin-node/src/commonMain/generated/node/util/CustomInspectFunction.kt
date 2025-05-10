@@ -2,4 +2,4 @@
 
 package node.util
 
-typealias CustomInspectFunction = (depth: Number, options: InspectOptionsStylized) -> Any?// TODO: , inspect: inspect
+typealias CustomInspectFunction = (depth: Number, options: InspectOptionsStylized) -> Any? // TODO: , inspect: inspect

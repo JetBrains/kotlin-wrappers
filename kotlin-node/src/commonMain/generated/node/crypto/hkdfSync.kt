@@ -32,7 +32,13 @@ import js.buffer.ArrayBuffer
  * @param keylen The length of the key to generate. Must be greater than 0. The maximum allowable value is `255` times the number of bytes produced by the selected digest function (e.g. `sha512`
  * generates 64-byte hashes, making the maximum HKDF output 16320 bytes).
  */
-external fun hkdfSync(digest: String, ikm: BinaryLike, salt: BinaryLike, info: BinaryLike, keylen: Number): ArrayBuffer
+external fun hkdfSync(
+    digest: String,
+    ikm: BinaryLike,
+    salt: BinaryLike,
+    info: BinaryLike,
+    keylen: Number,
+): ArrayBuffer
 
 /**
  * Provides a synchronous HKDF key derivation function as defined in RFC 5869\. The
@@ -60,4 +66,10 @@ external fun hkdfSync(digest: String, ikm: BinaryLike, salt: BinaryLike, info: B
  * @param keylen The length of the key to generate. Must be greater than 0. The maximum allowable value is `255` times the number of bytes produced by the selected digest function (e.g. `sha512`
  * generates 64-byte hashes, making the maximum HKDF output 16320 bytes).
  */
-external fun hkdfSync(digest: String, ikm: KeyObject, salt: BinaryLike, info: BinaryLike, keylen: Number): ArrayBuffer
+external fun hkdfSync(
+    digest: String,
+    ikm: KeyObject,
+    salt: BinaryLike,
+    info: BinaryLike,
+    keylen: Number,
+): ArrayBuffer

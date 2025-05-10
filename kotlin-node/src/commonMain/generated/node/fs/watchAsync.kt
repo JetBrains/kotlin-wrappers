@@ -72,7 +72,6 @@ external fun watch(
  * @return of objects with the properties:
  */
 
-
 /**
  * Watch for changes on `filename`, where `filename` is either a file or a directory, returning an `FSWatcher`.
  * @param filename A path to a file or directory. If a URL is provided, it must use the `file:` protocol.
@@ -91,7 +90,10 @@ external fun watch(filename: PathLike): AsyncIterable<FileChangeInfo<String>>
  * If `persistent` is not supplied, the default of `true` is used.
  * If `recursive` is not supplied, the default of `false` is used.
  */
-external fun watch(filename: PathLike, options: WatchOptions = definedExternally): AsyncIterable<FileChangeInfo<String>>
+external fun watch(
+    filename: PathLike,
+    options: WatchOptions = definedExternally,
+): AsyncIterable<FileChangeInfo<String>>
 
 /**
  * Watch for changes on `filename`, where `filename` is either a file or a directory, returning an `FSWatcher`.
@@ -115,7 +117,6 @@ external fun watch(
  * If `recursive` is not supplied, the default of `false` is used.
  */
 
-
 /**
  * Watch for changes on `filename`, where `filename` is either a file or a directory, returning an `FSWatcher`.
  * @param filename A path to a file or directory. If a URL is provided, it must use the `file:` protocol.
@@ -127,4 +128,4 @@ external fun watch(
 external fun watch(
     filename: PathLike,
     options: String,
-): Any /* AsyncIterable<FileChangeInfo<string>> | AsyncIterable<FileChangeInfo<Buffer>> */
+): Any // AsyncIterable<FileChangeInfo<string>> | AsyncIterable<FileChangeInfo<Buffer>>

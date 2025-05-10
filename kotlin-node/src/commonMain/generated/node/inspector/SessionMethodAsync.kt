@@ -2,87 +2,165 @@
 
 package node.inspector
 
-
 sealed external interface SessionMethod {
     sealed interface SCHEMA_GETDOMAINS : SessionMethod
+
     sealed interface RUNTIME_EVALUATE : SessionMethod
+
     sealed interface RUNTIME_AWAITPROMISE : SessionMethod
+
     sealed interface RUNTIME_CALLFUNCTIONON : SessionMethod
+
     sealed interface RUNTIME_GETPROPERTIES : SessionMethod
+
     sealed interface RUNTIME_RELEASEOBJECT : SessionMethod
+
     sealed interface RUNTIME_RELEASEOBJECTGROUP : SessionMethod
+
     sealed interface RUNTIME_RUNIFWAITINGFORDEBUGGER : SessionMethod
+
     sealed interface RUNTIME_ENABLE : SessionMethod
+
     sealed interface RUNTIME_DISABLE : SessionMethod
+
     sealed interface RUNTIME_DISCARDCONSOLEENTRIES : SessionMethod
+
     sealed interface RUNTIME_SETCUSTOMOBJECTFORMATTERENABLED : SessionMethod
+
     sealed interface RUNTIME_COMPILESCRIPT : SessionMethod
+
     sealed interface RUNTIME_RUNSCRIPT : SessionMethod
+
     sealed interface RUNTIME_QUERYOBJECTS : SessionMethod
+
     sealed interface RUNTIME_GLOBALLEXICALSCOPENAMES : SessionMethod
+
     sealed interface DEBUGGER_ENABLE : SessionMethod
+
     sealed interface DEBUGGER_DISABLE : SessionMethod
+
     sealed interface DEBUGGER_SETBREAKPOINTSACTIVE : SessionMethod
+
     sealed interface DEBUGGER_SETSKIPALLPAUSES : SessionMethod
+
     sealed interface DEBUGGER_SETBREAKPOINTBYURL : SessionMethod
+
     sealed interface DEBUGGER_SETBREAKPOINT : SessionMethod
+
     sealed interface DEBUGGER_REMOVEBREAKPOINT : SessionMethod
+
     sealed interface DEBUGGER_GETPOSSIBLEBREAKPOINTS : SessionMethod
+
     sealed interface DEBUGGER_CONTINUETOLOCATION : SessionMethod
+
     sealed interface DEBUGGER_PAUSEONASYNCCALL : SessionMethod
+
     sealed interface DEBUGGER_STEPOVER : SessionMethod
+
     sealed interface DEBUGGER_STEPINTO : SessionMethod
+
     sealed interface DEBUGGER_STEPOUT : SessionMethod
+
     sealed interface DEBUGGER_PAUSE : SessionMethod
+
     sealed interface DEBUGGER_SCHEDULESTEPINTOASYNC : SessionMethod
+
     sealed interface DEBUGGER_RESUME : SessionMethod
+
     sealed interface DEBUGGER_GETSTACKTRACE : SessionMethod
+
     sealed interface DEBUGGER_SEARCHINCONTENT : SessionMethod
+
     sealed interface DEBUGGER_SETSCRIPTSOURCE : SessionMethod
+
     sealed interface DEBUGGER_RESTARTFRAME : SessionMethod
+
     sealed interface DEBUGGER_GETSCRIPTSOURCE : SessionMethod
+
     sealed interface DEBUGGER_SETPAUSEONEXCEPTIONS : SessionMethod
+
     sealed interface DEBUGGER_EVALUATEONCALLFRAME : SessionMethod
+
     sealed interface DEBUGGER_SETVARIABLEVALUE : SessionMethod
+
     sealed interface DEBUGGER_SETRETURNVALUE : SessionMethod
+
     sealed interface DEBUGGER_SETASYNCCALLSTACKDEPTH : SessionMethod
+
     sealed interface DEBUGGER_SETBLACKBOXPATTERNS : SessionMethod
+
     sealed interface DEBUGGER_SETBLACKBOXEDRANGES : SessionMethod
+
     sealed interface CONSOLE_ENABLE : SessionMethod
+
     sealed interface CONSOLE_DISABLE : SessionMethod
+
     sealed interface CONSOLE_CLEARMESSAGES : SessionMethod
+
     sealed interface PROFILER_ENABLE : SessionMethod
+
     sealed interface PROFILER_DISABLE : SessionMethod
+
     sealed interface PROFILER_SETSAMPLINGINTERVAL : SessionMethod
+
     sealed interface PROFILER_START : SessionMethod
+
     sealed interface PROFILER_STOP : SessionMethod
+
     sealed interface PROFILER_STARTPRECISECOVERAGE : SessionMethod
+
     sealed interface PROFILER_STOPPRECISECOVERAGE : SessionMethod
+
     sealed interface PROFILER_TAKEPRECISECOVERAGE : SessionMethod
+
     sealed interface PROFILER_GETBESTEFFORTCOVERAGE : SessionMethod
+
     sealed interface HEAPPROFILER_ENABLE : SessionMethod
+
     sealed interface HEAPPROFILER_DISABLE : SessionMethod
+
     sealed interface HEAPPROFILER_STARTTRACKINGHEAPOBJECTS : SessionMethod
+
     sealed interface HEAPPROFILER_STOPTRACKINGHEAPOBJECTS : SessionMethod
+
     sealed interface HEAPPROFILER_TAKEHEAPSNAPSHOT : SessionMethod
+
     sealed interface HEAPPROFILER_COLLECTGARBAGE : SessionMethod
+
     sealed interface HEAPPROFILER_GETOBJECTBYHEAPOBJECTID : SessionMethod
+
     sealed interface HEAPPROFILER_ADDINSPECTEDHEAPOBJECT : SessionMethod
+
     sealed interface HEAPPROFILER_GETHEAPOBJECTID : SessionMethod
+
     sealed interface HEAPPROFILER_STARTSAMPLING : SessionMethod
+
     sealed interface HEAPPROFILER_STOPSAMPLING : SessionMethod
+
     sealed interface HEAPPROFILER_GETSAMPLINGPROFILE : SessionMethod
+
     sealed interface NODETRACING_GETCATEGORIES : SessionMethod
+
     sealed interface NODETRACING_START : SessionMethod
+
     sealed interface NODETRACING_STOP : SessionMethod
+
     sealed interface NODEWORKER_SENDMESSAGETOWORKER : SessionMethod
+
     sealed interface NODEWORKER_ENABLE : SessionMethod
+
     sealed interface NODEWORKER_DISABLE : SessionMethod
+
     sealed interface NODEWORKER_DETACH : SessionMethod
+
     sealed interface NETWORK_DISABLE : SessionMethod
+
     sealed interface NETWORK_ENABLE : SessionMethod
+
     sealed interface NODERUNTIME_ENABLE : SessionMethod
+
     sealed interface NODERUNTIME_DISABLE : SessionMethod
+
     sealed interface NODERUNTIME_NOTIFYWHENWAITINGFORDISCONNECT : SessionMethod
 
     companion object {

@@ -4,7 +4,6 @@ package node.util
 
 import kotlin.contracts.contract
 
-
 @Suppress("CANNOT_CHECK_FOR_EXTERNAL_INTERFACE")
 inline fun isNullOrUndefined(value: Any?): Boolean /* object is null | undefined */ {
     contract {

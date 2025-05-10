@@ -16,13 +16,11 @@ import js.promise.Promise
 @JsName("resolve6")
 external fun resolve6Async(hostname: String): Promise<js.array.ReadonlyArray<String>>
 
-
 @JsName("resolve6")
 external fun resolve6Async(
     hostname: String,
     options: ResolveWithTtlOptions,
 ): Promise<js.array.ReadonlyArray<RecordWithTtl>>
-
 
 @JsName("resolve6")
 external fun resolve6Async(hostname: String, options: ResolveOptions): Promise<Any /* string[] | RecordWithTtl[] */>

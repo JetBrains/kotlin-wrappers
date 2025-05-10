@@ -21,5 +21,4 @@ package node.asyncHooks
  * @see [source](https://github.com/nodejs/node/blob/v22.x/lib/async_hooks.js)
  */
 
-
-/* export * from "async_hooks"; */
+// export * from "async_hooks";

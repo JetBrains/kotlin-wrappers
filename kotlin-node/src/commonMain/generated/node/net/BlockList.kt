@@ -17,7 +17,11 @@ external class BlockList {
      * @param address An IPv4 or IPv6 address.
      * @param [type='ipv4'] Either `'ipv4'` or `'ipv6'`.
      */
-    fun addAddress(address: String, type: IPVersion = definedExternally)
+    fun addAddress(
+        address: String,
+        type: IPVersion = definedExternally,
+    )
+
     fun addAddress(address: SocketAddress)
 
     /**
@@ -27,8 +31,16 @@ external class BlockList {
      * @param end The ending IPv4 or IPv6 address in the range.
      * @param [type='ipv4'] Either `'ipv4'` or `'ipv6'`.
      */
-    fun addRange(start: String, end: String, type: IPVersion = definedExternally)
-    fun addRange(start: SocketAddress, end: SocketAddress)
+    fun addRange(
+        start: String,
+        end: String,
+        type: IPVersion = definedExternally,
+    )
+
+    fun addRange(
+        start: SocketAddress,
+        end: SocketAddress,
+    )
 
     /**
      * Adds a rule to block a range of IP addresses specified as a subnet mask.
@@ -37,8 +49,16 @@ external class BlockList {
      * @param prefix The number of CIDR prefix bits. For IPv4, this must be a value between `0` and `32`. For IPv6, this must be between `0` and `128`.
      * @param [type='ipv4'] Either `'ipv4'` or `'ipv6'`.
      */
-    fun addSubnet(net: SocketAddress, prefix: Number)
-    fun addSubnet(net: String, prefix: Number, type: IPVersion = definedExternally)
+    fun addSubnet(
+        net: SocketAddress,
+        prefix: Number,
+    )
+
+    fun addSubnet(
+        net: String,
+        prefix: Number,
+        type: IPVersion = definedExternally,
+    )
 
     /**
      * Returns `true` if the given IP address matches any of the rules added to the`BlockList`.
@@ -62,7 +82,11 @@ external class BlockList {
      * @param [type='ipv4'] Either `'ipv4'` or `'ipv6'`.
      */
     fun check(address: SocketAddress): Boolean
-    fun check(address: String, type: IPVersion = definedExternally): Boolean
+
+    fun check(
+        address: String,
+        type: IPVersion = definedExternally,
+    ): Boolean
 
     /**
      * The list of rules added to the blocklist.
@@ -76,6 +100,6 @@ external class BlockList {
          * @since v22.13.0
          * @param value Any JS value
          */
-        fun isBlockList(value: Any?): Boolean /* value is BlockList */
+        fun isBlockList(value: Any?): Boolean // value is BlockList
     }
 }

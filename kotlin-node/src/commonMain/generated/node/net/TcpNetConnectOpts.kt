@@ -2,6 +2,8 @@
 
 package node.net
 
-sealed external interface TcpNetConnectOpts : TcpSocketConnectOpts, SocketConstructorOpts {
+sealed external interface TcpNetConnectOpts :
+    TcpSocketConnectOpts,
+    SocketConstructorOpts {
     var timeout: Double?
 }

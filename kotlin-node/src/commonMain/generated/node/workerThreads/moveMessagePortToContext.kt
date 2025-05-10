@@ -23,4 +23,7 @@ import web.messaging.MessagePort
  * @param port The message port to transfer.
  * @param contextifiedSandbox A `contextified` object as returned by the `vm.createContext()` method.
  */
-external fun moveMessagePortToContext(port: MessagePort, contextifiedSandbox: Context): MessagePort
+external fun moveMessagePortToContext(
+    port: MessagePort,
+    contextifiedSandbox: Context,
+): MessagePort

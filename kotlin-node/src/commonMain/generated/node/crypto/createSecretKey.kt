@@ -12,4 +12,7 @@ package node.crypto
  */
 external fun createSecretKey(key: js.buffer.ArrayBufferView<*>): KeyObject
 
-external fun createSecretKey(key: String, encoding: node.buffer.BufferEncoding): KeyObject
+external fun createSecretKey(
+    key: String,
+    encoding: node.buffer.BufferEncoding,
+): KeyObject

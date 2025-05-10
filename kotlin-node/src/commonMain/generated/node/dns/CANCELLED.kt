@@ -4,4 +4,4 @@
 
 package node.dns
 
-external val CANCELLED: String /* "ECANCELLED" */
+external val CANCELLED: String // "ECANCELLED"

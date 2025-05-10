@@ -18,13 +18,13 @@ sealed external interface ZlibOptions {
      */
     var chunkSize: Double?
     var windowBits: Double?
-    var level: Double?// compression only
+    var level: Double? // compression only
 
-    var memLevel: Double?// compression only
+    var memLevel: Double? // compression only
 
-    var strategy: Double?// compression only
+    var strategy: Double? // compression only
 
-    var dictionary: Any? /* NodeJS.ArrayBufferView | ArrayBuffer | undefined */// deflate/inflate only, empty dictionary by default
+    var dictionary: Any? /* NodeJS.ArrayBufferView | ArrayBuffer | undefined */ // deflate/inflate only, empty dictionary by default
 
     /**
      * If `true`, returns an object with `buffer` and `engine`.

@@ -41,7 +41,7 @@ external class WASI {
      * If `start()` is called more than once, an exception is thrown.
      * @since v13.3.0, v12.16.0
      */
-    fun start(instance: Any): Double// TODO: avoid DOM dependency until WASM moved to own lib.
+    fun start(instance: Any): Double // TODO: avoid DOM dependency until WASM moved to own lib.
 
     /**
      * Attempt to initialize `instance` as a WASI reactor by invoking its `_initialize()` export, if it is present. If `instance` contains a `_start()` export, then an exception is thrown.
@@ -52,7 +52,7 @@ external class WASI {
      * If `initialize()` is called more than once, an exception is thrown.
      * @since v14.6.0, v12.19.0
      */
-    fun initialize(instance: Any)// TODO: avoid DOM dependency until WASM moved to own lib.
+    fun initialize(instance: Any) // TODO: avoid DOM dependency until WASM moved to own lib.
 
     /**
      * `wasiImport` is an object that implements the WASI system call API. This object
@@ -60,6 +60,5 @@ external class WASI {
      * of a [`WebAssembly.Instance`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WebAssembly/Instance).
      * @since v13.3.0, v12.16.0
      */
-    val wasiImport: node.Dict<Any?>// TODO: Narrow to DOM types
-
+    val wasiImport: node.Dict<Any?> // TODO: Narrow to DOM types
 }

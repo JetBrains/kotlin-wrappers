@@ -23,4 +23,8 @@ package node.fs
  * ```
  * @since v0.0.2
  */
-external fun rename(oldPath: PathLike, newPath: PathLike, callback: NoParamCallback)
+external fun rename(
+    oldPath: PathLike,
+    newPath: PathLike,
+    callback: NoParamCallback,
+)

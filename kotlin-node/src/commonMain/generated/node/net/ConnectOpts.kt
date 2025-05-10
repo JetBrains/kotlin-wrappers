@@ -3,5 +3,6 @@
 package node.net
 
 // TODO: remove empty ConnectOpts placeholder at next major @types/node version.
+
 /** @deprecated */
 sealed external interface ConnectOpts

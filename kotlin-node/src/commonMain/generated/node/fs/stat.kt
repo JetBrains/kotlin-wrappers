@@ -89,7 +89,10 @@ package node.fs
  * ```
  * @since v0.0.2
  */
-external fun stat(path: PathLike, callback: (err: node.ErrnoException?, stats: Stats) -> Unit)
+external fun stat(
+    path: PathLike,
+    callback: (err: node.ErrnoException?, stats: Stats) -> Unit,
+)
 
 external fun stat(
     path: PathLike,

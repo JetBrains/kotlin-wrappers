@@ -4,4 +4,4 @@
 
 package node.dns
 
-external val FORMERR: String /* "EFORMERR" */
+external val FORMERR: String // "EFORMERR"

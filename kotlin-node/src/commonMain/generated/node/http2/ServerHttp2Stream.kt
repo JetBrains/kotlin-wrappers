@@ -52,13 +52,21 @@ sealed external interface ServerHttp2Stream : Http2Stream {
      */
     fun pushStream(
         headers: OutgoingHttpHeaders,
-        callback: (err: js.errors.JsError?, pushStream: ServerHttp2Stream, headers: OutgoingHttpHeaders) -> Unit = definedExternally,
+        callback: (
+            err: js.errors.JsError?,
+            pushStream: ServerHttp2Stream,
+            headers: OutgoingHttpHeaders,
+        ) -> Unit = definedExternally,
     )
 
     fun pushStream(
         headers: OutgoingHttpHeaders,
         options: StreamPriorityOptions = definedExternally,
-        callback: (err: js.errors.JsError?, pushStream: ServerHttp2Stream, headers: OutgoingHttpHeaders) -> Unit = definedExternally,
+        callback: (
+            err: js.errors.JsError?,
+            pushStream: ServerHttp2Stream,
+            headers: OutgoingHttpHeaders,
+        ) -> Unit = definedExternally,
     )
 
     /**

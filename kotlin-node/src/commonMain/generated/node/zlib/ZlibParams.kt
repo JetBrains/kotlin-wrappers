@@ -3,5 +3,9 @@
 package node.zlib
 
 sealed external interface ZlibParams {
-    fun params(level: Number, strategy: Number, callback: () -> Unit)
+    fun params(
+        level: Number,
+        strategy: Number,
+        callback: () -> Unit,
+    )
 }

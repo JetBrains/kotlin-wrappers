@@ -4,4 +4,4 @@
 
 package node.fs
 
-external val constants: Any /* typeof fsConstants */
+external val constants: Any // typeof fsConstants

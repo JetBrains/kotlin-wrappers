@@ -13,4 +13,8 @@ package node.fs
  * @param [flags='r']
  * @param [mode=0o666]
  */
-external fun openSync(path: PathLike, flags: OpenMode, mode: Mode? = definedExternally): Double
+external fun openSync(
+    path: PathLike,
+    flags: OpenMode,
+    mode: Mode? = definedExternally,
+): Double

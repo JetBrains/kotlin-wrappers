@@ -32,5 +32,4 @@ package node.dgram
  * @see [source](https://github.com/nodejs/node/blob/v22.x/lib/dgram.js)
  */
 
-
-/* export * from "dgram"; */
+// export * from "dgram";

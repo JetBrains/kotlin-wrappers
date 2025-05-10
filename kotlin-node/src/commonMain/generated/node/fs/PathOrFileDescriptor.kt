@@ -2,4 +2,4 @@
 
 package node.fs
 
-typealias PathOrFileDescriptor = Any /* PathLike | number */
+typealias PathOrFileDescriptor = Any // PathLike | number

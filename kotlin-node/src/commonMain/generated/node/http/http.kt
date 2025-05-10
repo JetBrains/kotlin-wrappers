@@ -46,5 +46,4 @@ package node.http
  * @see [source](https://github.com/nodejs/node/blob/v22.x/lib/http.js)
  */
 
-
-/* export * from "http"; */
+// export * from "http";

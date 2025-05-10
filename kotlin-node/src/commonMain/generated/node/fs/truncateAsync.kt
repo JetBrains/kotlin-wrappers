@@ -14,4 +14,7 @@ import js.promise.Promise
  */
 
 @JsName("truncate")
-external fun truncateAsync(path: PathLike, len: Number = definedExternally): Promise<js.core.Void>
+external fun truncateAsync(
+    path: PathLike,
+    len: Number = definedExternally,
+): Promise<js.core.Void>

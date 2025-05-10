@@ -24,4 +24,4 @@ package node.util
  */
 
 @JsName("isArray")
-external fun isArrayRaw(value: Any?): Boolean /* object is unknown[] */
+external fun isArrayRaw(value: Any?): Boolean // object is unknown[]

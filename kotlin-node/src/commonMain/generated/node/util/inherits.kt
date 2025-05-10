@@ -61,4 +61,7 @@ package node.util
  * @since v0.3.0
  * @legacy Use ES2015 class syntax and `extends` keyword instead.
  */
-external fun inherits(constructor: Any?, superConstructor: Any?)
+external fun inherits(
+    constructor: Any?,
+    superConstructor: Any?,
+)

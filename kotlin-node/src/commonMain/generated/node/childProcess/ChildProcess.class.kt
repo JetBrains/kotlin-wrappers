@@ -117,11 +117,13 @@ open external class ChildProcess : EventEmitter {
      * not be successfully spawned.
      * @since v0.7.10
      */
-    open val stdio: js.array.Tuple5<Writable?, // stdin
+    open val stdio: js.array.Tuple5<
+            Writable?, // stdin
             Readable?, // stdout
             Readable?, // stderr
             Any? /* Readable | Writable | null | undefined */, // extra
-            Any? /* Readable | Writable | null | undefined */>
+            Any? // Readable | Writable | null | undefined
+            >
 
     /**
      * The `subprocess.killed` property indicates whether the child process
@@ -520,7 +522,11 @@ open external class ChildProcess : EventEmitter {
      * @param sendHandle `undefined`, or a [`net.Socket`](https://nodejs.org/docs/latest-v22.x/api/net.html#class-netsocket), [`net.Server`](https://nodejs.org/docs/latest-v22.x/api/net.html#class-netserver), or [`dgram.Socket`](https://nodejs.org/docs/latest-v22.x/api/dgram.html#class-dgramsocket) object.
      * @param options The `options` argument, if present, is an object used to parameterize the sending of certain types of handles. `options` supports the following properties:
      */
-    fun send(message: Serializable, callback: (error: js.errors.JsError?) -> Unit = definedExternally): Boolean
+    fun send(
+        message: Serializable,
+        callback: (error: js.errors.JsError?) -> Unit = definedExternally,
+    ): Boolean
+
     fun send(
         message: Serializable,
         sendHandle: SendHandle = definedExternally,
@@ -601,25 +607,25 @@ open external class ChildProcess : EventEmitter {
      * 5. message
      * 6. spawn
      */
-    fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
+    fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
 
+    fun emit(
+        event: String,
+        vararg args: Any?,
+    ): Boolean
 
-    fun emit(event: String, vararg args: Any?): Boolean
+    fun emit(
+        event: js.symbol.Symbol,
+        vararg args: Any?,
+    ): Boolean
 
-    fun emit(event: js.symbol.Symbol, vararg args: Any?): Boolean
+    fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
 
+    fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
 
-    fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
+    fun prependListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
 
-
-    fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
-
-
-    fun prependListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
-
-
-    fun prependOnceListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
-
+    fun prependOnceListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
 
     @web.events.JsEvent("close")
     val closeEvent: node.events.EventInstance<js.array.Tuple2<Double?, node.process.Signals?>>

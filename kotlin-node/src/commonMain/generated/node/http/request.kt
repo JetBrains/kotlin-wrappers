@@ -387,7 +387,10 @@ external fun request(
  * the message `'AbortError: The operation was aborted'`, the code `'ABORT_ERR'` and the `cause`, if one was provided.
  * @since v0.3.6
  */
-external fun request(options: String, callback: (res: IncomingMessage) -> Unit = definedExternally): ClientRequest
+external fun request(
+    options: String,
+    callback: (res: IncomingMessage) -> Unit = definedExternally,
+): ClientRequest
 
 /**
  * `options` in `socket.connect()` are also supported.
@@ -577,7 +580,10 @@ external fun request(options: String, callback: (res: IncomingMessage) -> Unit =
  * the message `'AbortError: The operation was aborted'`, the code `'ABORT_ERR'` and the `cause`, if one was provided.
  * @since v0.3.6
  */
-external fun request(options: URL, callback: (res: IncomingMessage) -> Unit = definedExternally): ClientRequest
+external fun request(
+    options: URL,
+    callback: (res: IncomingMessage) -> Unit = definedExternally,
+): ClientRequest
 
 external fun request(
     url: String,

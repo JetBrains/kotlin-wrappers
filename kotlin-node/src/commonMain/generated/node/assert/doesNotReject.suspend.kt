@@ -4,10 +4,8 @@ package node.assert
 
 import js.promise.Promise
 
-
 @seskar.js.JsAsync
 external suspend fun doesNotReject(block: () -> Promise<Any?>): js.core.Void
-
 
 /**
  * Awaits the `asyncFn` promise or, if `asyncFn` is a function, immediately
@@ -53,8 +51,10 @@ external suspend fun doesNotReject(block: () -> Promise<Any?>): js.core.Void
  */
 
 @seskar.js.JsAsync
-external suspend fun doesNotReject(block: () -> Promise<Any?>, message: String = definedExternally): js.core.Void
-
+external suspend fun doesNotReject(
+    block: () -> Promise<Any?>,
+    message: String = definedExternally,
+): js.core.Void
 
 /**
  * Awaits the `asyncFn` promise or, if `asyncFn` is a function, immediately
@@ -104,7 +104,6 @@ external suspend fun doesNotReject(
     block: () -> Promise<Any?>,
     message: js.errors.JsError = definedExternally,
 ): js.core.Void
-
 
 /**
  * Awaits the `asyncFn` promise or, if `asyncFn` is a function, immediately
@@ -152,6 +151,54 @@ external suspend fun doesNotReject(
 @seskar.js.JsAsync
 external suspend fun doesNotReject(block: Promise<Any?>): js.core.Void
 
+/**
+ * Awaits the `asyncFn` promise or, if `asyncFn` is a function, immediately
+ * calls the function and awaits the returned promise to complete. It will then
+ * check that the promise is not rejected.
+ *
+ * If `asyncFn` is a function and it throws an error synchronously, `assert.doesNotReject()` will return a rejected `Promise` with that error. If
+ * the function does not return a promise, `assert.doesNotReject()` will return a
+ * rejected `Promise` with an [ERR_INVALID_RETURN_VALUE](https://nodejs.org/docs/latest-v22.x/api/errors.html#err_invalid_return_value) error. In both cases
+ * the error handler is skipped.
+ *
+ * Using `assert.doesNotReject()` is actually not useful because there is little
+ * benefit in catching a rejection and then rejecting it again. Instead, consider
+ * adding a comment next to the specific code path that should not reject and keep
+ * error messages as expressive as possible.
+ *
+ * If specified, `error` can be a [`Class`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes),
+ * [`RegExp`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions), or a validation
+ * function. See {@link throws} for more details.
+ *
+ * Besides the async nature to await the completion behaves identically to {@link doesNotThrow}.
+ *
+ * ```js
+ * import assert from 'node:assert/strict';
+ *
+ * await assert.doesNotReject(
+ *   async () => {
+ *     throw new TypeError('Wrong value');
+ *   },
+ *   SyntaxError,
+ * );
+ * ```
+ *
+ * ```js
+ * import assert from 'node:assert/strict';
+ *
+ * assert.doesNotReject(Promise.reject(new TypeError('Wrong value')))
+ *   .then(() => {
+ *     // ...
+ *   });
+ * ```
+ * @since v10.0.0
+ */
+
+@seskar.js.JsAsync
+external suspend fun doesNotReject(
+    block: Promise<Any?>,
+    message: String = definedExternally,
+): js.core.Void
 
 /**
  * Awaits the `asyncFn` promise or, if `asyncFn` is a function, immediately
@@ -197,59 +244,16 @@ external suspend fun doesNotReject(block: Promise<Any?>): js.core.Void
  */
 
 @seskar.js.JsAsync
-external suspend fun doesNotReject(block: Promise<Any?>, message: String = definedExternally): js.core.Void
-
-
-/**
- * Awaits the `asyncFn` promise or, if `asyncFn` is a function, immediately
- * calls the function and awaits the returned promise to complete. It will then
- * check that the promise is not rejected.
- *
- * If `asyncFn` is a function and it throws an error synchronously, `assert.doesNotReject()` will return a rejected `Promise` with that error. If
- * the function does not return a promise, `assert.doesNotReject()` will return a
- * rejected `Promise` with an [ERR_INVALID_RETURN_VALUE](https://nodejs.org/docs/latest-v22.x/api/errors.html#err_invalid_return_value) error. In both cases
- * the error handler is skipped.
- *
- * Using `assert.doesNotReject()` is actually not useful because there is little
- * benefit in catching a rejection and then rejecting it again. Instead, consider
- * adding a comment next to the specific code path that should not reject and keep
- * error messages as expressive as possible.
- *
- * If specified, `error` can be a [`Class`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes),
- * [`RegExp`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions), or a validation
- * function. See {@link throws} for more details.
- *
- * Besides the async nature to await the completion behaves identically to {@link doesNotThrow}.
- *
- * ```js
- * import assert from 'node:assert/strict';
- *
- * await assert.doesNotReject(
- *   async () => {
- *     throw new TypeError('Wrong value');
- *   },
- *   SyntaxError,
- * );
- * ```
- *
- * ```js
- * import assert from 'node:assert/strict';
- *
- * assert.doesNotReject(Promise.reject(new TypeError('Wrong value')))
- *   .then(() => {
- *     // ...
- *   });
- * ```
- * @since v10.0.0
- */
+external suspend fun doesNotReject(
+    block: Promise<Any?>,
+    message: js.errors.JsError = definedExternally,
+): js.core.Void
 
 @seskar.js.JsAsync
-external suspend fun doesNotReject(block: Promise<Any?>, message: js.errors.JsError = definedExternally): js.core.Void
-
-
-@seskar.js.JsAsync
-external suspend fun doesNotReject(block: () -> Promise<Any?>, error: AssertPredicate): js.core.Void
-
+external suspend fun doesNotReject(
+    block: () -> Promise<Any?>,
+    error: AssertPredicate,
+): js.core.Void
 
 @seskar.js.JsAsync
 external suspend fun doesNotReject(
@@ -257,7 +261,6 @@ external suspend fun doesNotReject(
     error: AssertPredicate,
     message: String = definedExternally,
 ): js.core.Void
-
 
 @seskar.js.JsAsync
 external suspend fun doesNotReject(
@@ -266,10 +269,11 @@ external suspend fun doesNotReject(
     message: js.errors.JsError = definedExternally,
 ): js.core.Void
 
-
 @seskar.js.JsAsync
-external suspend fun doesNotReject(block: Promise<Any?>, error: AssertPredicate): js.core.Void
-
+external suspend fun doesNotReject(
+    block: Promise<Any?>,
+    error: AssertPredicate,
+): js.core.Void
 
 @seskar.js.JsAsync
 external suspend fun doesNotReject(
@@ -277,7 +281,6 @@ external suspend fun doesNotReject(
     error: AssertPredicate,
     message: String = definedExternally,
 ): js.core.Void
-
 
 @seskar.js.JsAsync
 external suspend fun doesNotReject(

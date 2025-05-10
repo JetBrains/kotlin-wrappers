@@ -9,5 +9,8 @@ external interface Styles {
     operator fun <K : Style> get(key: K): String?
 
     @seskar.js.JsNativeSetter
-    operator fun <K : Style> set(key: K, value: String?)
+    operator fun <K : Style> set(
+        key: K,
+        value: String?,
+    )
 }

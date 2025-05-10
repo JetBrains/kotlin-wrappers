@@ -2,10 +2,8 @@
 
 package node.fs
 
-
 @seskar.js.JsAsync
 external suspend fun readdir(path: PathLike): js.array.ReadonlyArray<String>
-
 
 /**
  * Reads the contents of a directory.
@@ -38,7 +36,6 @@ external suspend fun readdir(
     options: (ReaddirAsyncOptions)? = definedExternally,
 ): js.array.ReadonlyArray<String>
 
-
 /**
  * Reads the contents of a directory.
  *
@@ -70,13 +67,29 @@ external suspend fun readdir(
     options: node.buffer.BufferEncoding? = definedExternally,
 ): js.array.ReadonlyArray<String>
 
-
 @seskar.js.JsAsync
 external suspend fun readdir(
     path: PathLike,
     options: ReaddirBufferAsyncOptions,
 ): js.array.ReadonlyArray<node.buffer.Buffer<*>>
 
+/**
+ * Asynchronous readdir(3) - read a directory.
+ * @param path A path to a file. If a URL is provided, it must use the `file:` protocol.
+ * @param options The encoding (or an object specifying the encoding), used as the encoding of the result. If not provided, `'utf8'` is used.
+ */
+
+@seskar.js.JsAsync
+external suspend fun readdir(
+    path: PathLike,
+    options: String, // "buffer"
+): js.array.ReadonlyArray<node.buffer.Buffer<*>>
+
+/**
+ * Asynchronous readdir(3) - read a directory.
+ * @param path A path to a file. If a URL is provided, it must use the `file:` protocol.
+ * @param options The encoding (or an object specifying the encoding), used as the encoding of the result. If not provided, `'utf8'` is used.
+ */
 
 /**
  * Asynchronous readdir(3) - read a directory.
@@ -87,23 +100,5 @@ external suspend fun readdir(
 @seskar.js.JsAsync
 external suspend fun readdir(
     path: PathLike,
-    options: String, /* "buffer" */
-): js.array.ReadonlyArray<node.buffer.Buffer<*>>
-
-
-/**
- * Asynchronous readdir(3) - read a directory.
- * @param path A path to a file. If a URL is provided, it must use the `file:` protocol.
- * @param options The encoding (or an object specifying the encoding), used as the encoding of the result. If not provided, `'utf8'` is used.
- */
-
-
-/**
- * Asynchronous readdir(3) - read a directory.
- * @param path A path to a file. If a URL is provided, it must use the `file:` protocol.
- * @param options The encoding (or an object specifying the encoding), used as the encoding of the result. If not provided, `'utf8'` is used.
- */
-
-
-@seskar.js.JsAsync
-external suspend fun readdir(path: PathLike, options: ReaddirWithFileTypesAsyncOptions): js.array.ReadonlyArray<Dirent>
+    options: ReaddirWithFileTypesAsyncOptions,
+): js.array.ReadonlyArray<Dirent>

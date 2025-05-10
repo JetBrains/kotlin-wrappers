@@ -18,5 +18,8 @@ sealed external interface TestContextAssert {
      * ```
      * @since v22.3.0
      */
-    fun snapshot(value: Any?, options: AssertSnapshotOptions = definedExternally)
+    fun snapshot(
+        value: Any?,
+        options: AssertSnapshotOptions = definedExternally,
+    )
 }

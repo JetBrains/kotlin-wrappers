@@ -9,4 +9,9 @@ package node.fs
  * descriptor. See {@link utimes}.
  * @since v0.4.2
  */
-external fun futimes(fd: Number, atime: TimeLike, mtime: TimeLike, callback: NoParamCallback)
+external fun futimes(
+    fd: Number,
+    atime: TimeLike,
+    mtime: TimeLike,
+    callback: NoParamCallback,
+)

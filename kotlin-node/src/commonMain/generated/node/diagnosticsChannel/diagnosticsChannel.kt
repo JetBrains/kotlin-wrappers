@@ -29,5 +29,4 @@ package node.diagnosticsChannel
  * @see [source](https://github.com/nodejs/node/blob/v22.x/lib/diagnostics_channel.js)
  */
 
-
-/* export * from "diagnostics_channel"; */
+// export * from "diagnostics_channel";

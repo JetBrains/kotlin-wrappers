@@ -21,14 +21,17 @@ external fun todoAsync(
     fn: SuiteFn = definedExternally,
 ): Promise<js.core.Void>
 
+@JsName("todo")
+external fun todoAsync(
+    name: String = definedExternally,
+    fn: SuiteFn = definedExternally,
+): Promise<js.core.Void>
 
 @JsName("todo")
-external fun todoAsync(name: String = definedExternally, fn: SuiteFn = definedExternally): Promise<js.core.Void>
-
-
-@JsName("todo")
-external fun todoAsync(options: TestOptions = definedExternally, fn: SuiteFn = definedExternally): Promise<js.core.Void>
-
+external fun todoAsync(
+    options: TestOptions = definedExternally,
+    fn: SuiteFn = definedExternally,
+): Promise<js.core.Void>
 
 @JsName("todo")
 external fun todoAsync(fn: SuiteFn = definedExternally): Promise<js.core.Void>

@@ -2,4 +2,4 @@
 
 package node.test
 
-typealias NoOpFunction = Function<Nothing?> /* (...args: any[]) => undefined */
+typealias NoOpFunction = Function<Nothing?> // (...args: any[]) => undefined

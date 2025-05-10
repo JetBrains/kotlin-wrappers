@@ -4,4 +4,4 @@
 
 package node.dns
 
-external val DESTRUCTION: String /* "EDESTRUCTION" */
+external val DESTRUCTION: String // "EDESTRUCTION"

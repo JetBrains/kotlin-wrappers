@@ -2,6 +2,8 @@
 
 package node.fs
 
-
 @seskar.js.JsAsync
-external suspend fun link(existingPath: PathLike, newPath: PathLike): js.core.Void
+external suspend fun link(
+    existingPath: PathLike,
+    newPath: PathLike,
+): js.core.Void

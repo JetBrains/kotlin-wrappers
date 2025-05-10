@@ -45,4 +45,7 @@ package node.crypto
  * @since v0.1.92
  * @param options `stream.transform` options
  */
-external fun createHash(algorithm: String, options: HashOptions = definedExternally): Hash
+external fun createHash(
+    algorithm: String,
+    options: HashOptions = definedExternally,
+): Hash

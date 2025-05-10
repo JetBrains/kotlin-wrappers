@@ -2,4 +2,4 @@
 
 package node.net
 
-typealias NetConnectOpts = Any /* TcpNetConnectOpts | IpcNetConnectOpts */
+typealias NetConnectOpts = Any // TcpNetConnectOpts | IpcNetConnectOpts

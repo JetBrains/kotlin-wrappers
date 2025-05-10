@@ -2,4 +2,4 @@
 
 package node.crypto
 
-typealias CipherKey = Any /* BinaryLike | KeyObject */
+typealias CipherKey = Any // BinaryLike | KeyObject

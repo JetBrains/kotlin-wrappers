@@ -19,17 +19,17 @@ external fun describeAsync(
     fn: SuiteFn = definedExternally,
 ): Promise<js.core.Void>
 
-
 @JsName("describe")
-external fun describeAsync(name: String = definedExternally, fn: SuiteFn = definedExternally): Promise<js.core.Void>
-
+external fun describeAsync(
+    name: String = definedExternally,
+    fn: SuiteFn = definedExternally,
+): Promise<js.core.Void>
 
 @JsName("describe")
 external fun describeAsync(
     options: TestOptions = definedExternally,
     fn: SuiteFn = definedExternally,
 ): Promise<js.core.Void>
-
 
 @JsName("describe")
 external fun describeAsync(fn: SuiteFn = definedExternally): Promise<js.core.Void>

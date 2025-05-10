@@ -55,50 +55,41 @@ sealed external interface ClientHttp2Session : Http2Session {
         options: ClientSessionRequestOptions = definedExternally,
     ): ClientHttp2Stream
 
+    override fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
 
-    override fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
+    override fun addListener(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */) // this
 
-    override fun addListener(
-        event: js.symbol.Symbol,
-        listener: Function<Unit>, /* (...args: any[]) => void */
-    ) /* this */
-
-
-    override fun emit(event: String, vararg args: Any?): Boolean
-
-    override fun emit(event: js.symbol.Symbol, vararg args: Any?): Boolean
-
-
-    override fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
-
-    override fun on(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
-
-
-    override fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
-
-    override fun once(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
-
-
-    override fun prependListener(
+    override fun emit(
         event: String,
-        listener: Function<Unit>, /* (...args: any[]) => void */
-    ) /* this */
+        vararg args: Any?,
+    ): Boolean
+
+    override fun emit(
+        event: js.symbol.Symbol,
+        vararg args: Any?,
+    ): Boolean
+
+    override fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
+
+    override fun on(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */) // this
+
+    override fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
+
+    override fun once(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */) // this
+
+    override fun prependListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
 
     override fun prependListener(
         event: js.symbol.Symbol,
         listener: Function<Unit>, /* (...args: any[]) => void */
-    ) /* this */
+    ) // this
 
-
-    override fun prependOnceListener(
-        event: String,
-        listener: Function<Unit>, /* (...args: any[]) => void */
-    ) /* this */
+    override fun prependOnceListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
 
     override fun prependOnceListener(
         event: js.symbol.Symbol,
         listener: Function<Unit>, /* (...args: any[]) => void */
-    ) /* this */
+    ) // this
 
     @web.events.JsEvent("altsvc")
     val altsvcEvent: node.events.EventInstance<js.array.Tuple3<String, String, Double>>
@@ -107,8 +98,10 @@ sealed external interface ClientHttp2Session : Http2Session {
     val originEvent: node.events.EventInstance<js.array.Tuple1<js.array.ReadonlyArray<String>>>
 
     @web.events.JsEvent("connect")
-    val connectEvent: node.events.EventInstance<js.array.Tuple2<ClientHttp2Session, Any /* net.Socket | tls.TLSSocket */>>
+    val connectEvent:
+            node.events.EventInstance<js.array.Tuple2<ClientHttp2Session, Any /* net.Socket | tls.TLSSocket */>>
 
     @web.events.JsEvent("stream")
-    val streamEvent: node.events.EventInstance<js.array.Tuple3<ClientHttp2Stream, ClientHttp2SessionAddListenerListenerHeaders, Double>>
+    val streamEvent:
+            node.events.EventInstance<js.array.Tuple3<ClientHttp2Stream, ClientHttp2SessionAddListenerListenerHeaders, Double>>
 }

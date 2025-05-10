@@ -4,4 +4,4 @@
 
 package node.dns
 
-external val NOTFOUND: String /* "ENOTFOUND" */
+external val NOTFOUND: String // "ENOTFOUND"

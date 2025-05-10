@@ -99,5 +99,4 @@ package node.traceEvents
  * @see [source](https://github.com/nodejs/node/blob/v22.x/lib/trace_events.js)
  */
 
-
-/* export * from "trace_events"; */
+// export * from "trace_events";

@@ -25,4 +25,8 @@ package node.url
  */
 external fun parse(urlString: String): UrlWithStringQuery
 
-external fun parse(urlString: String, parseQueryString: Boolean, slashesDenoteHost: Boolean = definedExternally): Url
+external fun parse(
+    urlString: String,
+    parseQueryString: Boolean,
+    slashesDenoteHost: Boolean = definedExternally,
+): Url

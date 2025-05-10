@@ -99,7 +99,10 @@ external class PerformanceObserverEntryList {
      * ```
      * @since v8.5.0
      */
-    fun getEntriesByName(name: String, type: EntryType = definedExternally): js.array.ReadonlyArray<PerformanceEntry>
+    fun getEntriesByName(
+        name: String,
+        type: EntryType = definedExternally,
+    ): js.array.ReadonlyArray<PerformanceEntry>
 
     /**
      * Returns a list of `PerformanceEntry` objects in chronological order

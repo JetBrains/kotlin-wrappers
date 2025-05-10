@@ -4,4 +4,4 @@
 
 package node.assert
 
-/* export = assert; */
+// export = assert;

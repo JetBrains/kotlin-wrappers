@@ -10,4 +10,9 @@ package node.fs
  *
  * See the POSIX [`lchown(2)`](http://man7.org/linux/man-pages/man2/lchown.2.html) documentation for more detail.
  */
-external fun lchown(path: PathLike, uid: Number, gid: Number, callback: NoParamCallback)
+external fun lchown(
+    path: PathLike,
+    uid: Number,
+    gid: Number,
+    callback: NoParamCallback,
+)

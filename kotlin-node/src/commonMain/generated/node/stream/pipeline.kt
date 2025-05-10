@@ -76,14 +76,14 @@ external fun <A : PipelineSource<Any?>, B : PipelineDestination<A, Any?>> pipeli
     source: A,
     destination: B,
     callback: PipelineCallback<B>,
-): Any /* B extends NodeJS.WritableStream ? B : NodeJS.WritableStream */
+): Any // B extends NodeJS.WritableStream ? B : NodeJS.WritableStream
 
 external fun <A : PipelineSource<Any?>, T1 : PipelineTransform<A, Any?>, B : PipelineDestination<T1, Any?>> pipeline(
     source: A,
     transform1: T1,
     destination: B,
     callback: PipelineCallback<B>,
-): Any /* B extends NodeJS.WritableStream ? B : NodeJS.WritableStream */
+): Any // B extends NodeJS.WritableStream ? B : NodeJS.WritableStream
 
 external fun <A : PipelineSource<Any?>, T1 : PipelineTransform<A, Any?>, T2 : PipelineTransform<T1, Any?>, B : PipelineDestination<T2, Any?>> pipeline(
     source: A,
@@ -91,7 +91,7 @@ external fun <A : PipelineSource<Any?>, T1 : PipelineTransform<A, Any?>, T2 : Pi
     transform2: T2,
     destination: B,
     callback: PipelineCallback<B>,
-): Any /* B extends NodeJS.WritableStream ? B : NodeJS.WritableStream */
+): Any // B extends NodeJS.WritableStream ? B : NodeJS.WritableStream
 
 external fun <A : PipelineSource<Any?>, T1 : PipelineTransform<A, Any?>, T2 : PipelineTransform<T1, Any?>, T3 : PipelineTransform<T2, Any?>, B : PipelineDestination<T3, Any?>> pipeline(
     source: A,
@@ -100,7 +100,7 @@ external fun <A : PipelineSource<Any?>, T1 : PipelineTransform<A, Any?>, T2 : Pi
     transform3: T3,
     destination: B,
     callback: PipelineCallback<B>,
-): Any /* B extends NodeJS.WritableStream ? B : NodeJS.WritableStream */
+): Any // B extends NodeJS.WritableStream ? B : NodeJS.WritableStream
 
 external fun <A : PipelineSource<Any?>, T1 : PipelineTransform<A, Any?>, T2 : PipelineTransform<T1, Any?>, T3 : PipelineTransform<T2, Any?>, T4 : PipelineTransform<T3, Any?>, B : PipelineDestination<T4, Any?>> pipeline(
     source: A,
@@ -110,7 +110,7 @@ external fun <A : PipelineSource<Any?>, T1 : PipelineTransform<A, Any?>, T2 : Pi
     transform4: T4,
     destination: B,
     callback: PipelineCallback<B>,
-): Any /* B extends NodeJS.WritableStream ? B : NodeJS.WritableStream */
+): Any // B extends NodeJS.WritableStream ? B : NodeJS.WritableStream
 
 external fun pipeline(
     streams: ReadonlyArray<Any /* NodeJS.ReadableStream | NodeJS.WritableStream | NodeJS.ReadWriteStream */>,

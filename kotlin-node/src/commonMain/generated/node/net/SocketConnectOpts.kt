@@ -2,4 +2,4 @@
 
 package node.net
 
-typealias SocketConnectOpts = Any /* TcpSocketConnectOpts | IpcSocketConnectOpts */
+typealias SocketConnectOpts = Any // TcpSocketConnectOpts | IpcSocketConnectOpts

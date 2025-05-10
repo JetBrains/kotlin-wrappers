@@ -13,7 +13,7 @@ sealed external interface TestOptions {
      * If unspecified, subtests inherit this value from their parent.
      * @default false
      */
-    var concurrency: Any? /* number | boolean | undefined */
+    var concurrency: Any? // number | boolean | undefined
 
     /**
      * If truthy, and the test context is configured to run `only` tests, then this test will be
@@ -33,7 +33,7 @@ sealed external interface TestOptions {
      * test results as the reason for skipping the test.
      * @default false
      */
-    var skip: Any? /* boolean | string | undefined */
+    var skip: Any? // boolean | string | undefined
 
     /**
      * A number of milliseconds the test will fail after. If unspecified, subtests inherit this
@@ -48,7 +48,7 @@ sealed external interface TestOptions {
      * the test results as the reason why the test is `TODO`.
      * @default false
      */
-    var todo: Any? /* boolean | string | undefined */
+    var todo: Any? // boolean | string | undefined
 
     /**
      * The number of assertions and subtests expected to be run in the test.

@@ -4,6 +4,6 @@
 
 package node.cluster
 
-/* import EventEmitter = require("node:events"); */
+// import EventEmitter = require("node:events");
 
-/* export default cluster; */
+// export default cluster;

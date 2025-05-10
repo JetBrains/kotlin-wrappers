@@ -2,4 +2,4 @@
 
 package node.fs
 
-typealias TimeLike = Any /* string | number | Date */
+typealias TimeLike = Any // string | number | Date

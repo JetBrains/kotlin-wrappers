@@ -12,12 +12,16 @@ import js.promise.Promise
  */
 
 @JsName("statfs")
-external fun statfsAsync(path: PathLike, opts: StatfsOpts = definedExternally): Promise<StatsFs>
-
+external fun statfsAsync(
+    path: PathLike,
+    opts: StatfsOpts = definedExternally,
+): Promise<StatsFs>
 
 @JsName("statfs")
-external fun statfsAsync(path: PathLike, opts: StatfsBigIntOpts): Promise<BigIntStatsFs>
-
+external fun statfsAsync(
+    path: PathLike,
+    opts: StatfsBigIntOpts,
+): Promise<BigIntStatsFs>
 
 @JsName("statfs")
 external fun statfsAsync(

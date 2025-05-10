@@ -8,6 +8,7 @@ import node.events.EventEmitter
 @Suppress("INTERFACE_WITH_SUPERCLASS")
 external interface WritableStream : EventEmitter {
     var writable: Boolean
+
     fun write(
         buffer: Uint8Array<*>,
         cb: (err: js.errors.JsError? /* use undefined for default */) -> Unit = definedExternally,
@@ -24,13 +25,15 @@ external interface WritableStream : EventEmitter {
         cb: (err: js.errors.JsError? /* use undefined for default */) -> Unit = definedExternally,
     ): Boolean
 
-    fun end(cb: () -> Unit = definedExternally) /* this */
-    fun end(data: String, cb: () -> Unit = definedExternally) /* this */
+    fun end(cb: () -> Unit = definedExternally) // this
 
-    fun end(data: Uint8Array<*>, cb: () -> Unit = definedExternally) /* this */
+    fun end(data: String, cb: () -> Unit = definedExternally) // this
+
+    fun end(data: Uint8Array<*>, cb: () -> Unit = definedExternally) // this
+
     fun end(
         str: String,
         encoding: node.buffer.BufferEncoding = definedExternally,
         cb: () -> Unit = definedExternally,
-    ) /* this */
+    ) // this
 }

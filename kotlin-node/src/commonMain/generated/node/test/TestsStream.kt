@@ -12,33 +12,28 @@ import node.stream.Readable
  * Some of the events are guaranteed to be emitted in the same order as the tests are defined, while others are emitted in the order that the tests execute.
  * @since v18.9.0, v16.19.0
  */
-external class TestsStream : Readable, node.ReadableStream {
+external class TestsStream :
+    Readable,
+    node.ReadableStream {
+    override fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
 
-
-    override fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
-
-
-    override fun emit(event: String, vararg args: Any?): Boolean
-
-    override fun emit(event: js.symbol.Symbol, vararg args: Any?): Boolean
-
-
-    override fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
-
-
-    override fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
-
-
-    override fun prependListener(
+    override fun emit(
         event: String,
-        listener: Function<Unit>, /* (...args: any[]) => void */
-    ) /* this */
+        vararg args: Any?,
+    ): Boolean
 
+    override fun emit(
+        event: js.symbol.Symbol,
+        vararg args: Any?,
+    ): Boolean
 
-    override fun prependOnceListener(
-        event: String,
-        listener: Function<Unit>, /* (...args: any[]) => void */
-    ) /* this */
+    override fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
+
+    override fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
+
+    override fun prependListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
+
+    override fun prependOnceListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
 
     @web.events.JsEvent("test:coverage")
     val testCoverageEvent: node.events.EventInstance<js.array.Tuple1<TestCoverage>>

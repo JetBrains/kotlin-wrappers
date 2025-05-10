@@ -2,4 +2,4 @@
 
 package node.fs
 
-typealias EncodingOption = Any? /* ObjectEncodingOptions | BufferEncoding | undefined | null */
+typealias EncodingOption = Any? // ObjectEncodingOptions | BufferEncoding | undefined | null

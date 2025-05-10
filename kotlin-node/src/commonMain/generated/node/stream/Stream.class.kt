@@ -8,10 +8,20 @@ import js.iterable.AsyncIterable
 import node.events.EventEmitter
 
 open external class Stream : EventEmitter {
-    fun <T : node.WritableStream> pipe(destination: T, options: StreamPipeOptions = definedExternally): T
-    fun <T : node.ReadableStream> compose(stream: T, options: StreamComposeOptions = definedExternally): T
+    fun <T : node.WritableStream> pipe(
+        destination: T,
+        options: StreamPipeOptions = definedExternally,
+    ): T
 
-    fun <T : node.ReadableStream> compose(stream: ComposeFnParam, options: StreamComposeOptions = definedExternally): T
+    fun <T : node.ReadableStream> compose(
+        stream: T,
+        options: StreamComposeOptions = definedExternally,
+    ): T
+
+    fun <T : node.ReadableStream> compose(
+        stream: ComposeFnParam,
+        options: StreamComposeOptions = definedExternally,
+    ): T
 
     fun <T : node.ReadableStream> compose(
         stream: js.iterable.JsIterable<T>,
@@ -22,6 +32,6 @@ open external class Stream : EventEmitter {
         stream: AsyncIterable<T>,
         options: StreamComposeOptions = definedExternally,
     ): T
-    /* Stream */
-    /* streamPromises as promises */
+// Stream
+// streamPromises as promises
 }

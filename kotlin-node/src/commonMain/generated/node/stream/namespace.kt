@@ -4,4 +4,4 @@
 
 package node.stream
 
-/* export = Stream; */
+// export = Stream;

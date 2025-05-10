@@ -5,6 +5,8 @@ package node.fs
 import web.abort.Abortable
 
 @js.objects.JsPlainObject
-sealed external interface ReadFileAsyncOptions : ObjectEncodingOptions, Abortable {
+sealed external interface ReadFileAsyncOptions :
+    ObjectEncodingOptions,
+    Abortable {
     var flag: OpenMode?
 }

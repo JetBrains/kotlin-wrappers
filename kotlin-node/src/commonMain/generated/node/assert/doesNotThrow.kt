@@ -130,7 +130,10 @@ external fun doesNotThrow(block: () -> Any?)
  * ```
  * @since v0.1.21
  */
-external fun doesNotThrow(block: () -> Any?, message: String = definedExternally)
+external fun doesNotThrow(
+    block: () -> Any?,
+    message: String = definedExternally,
+)
 
 /**
  * Asserts that the function `fn` does not throw an error.
@@ -194,11 +197,21 @@ external fun doesNotThrow(block: () -> Any?, message: String = definedExternally
  * ```
  * @since v0.1.21
  */
-external fun doesNotThrow(block: () -> Any?, message: js.errors.JsError = definedExternally)
+external fun doesNotThrow(
+    block: () -> Any?,
+    message: js.errors.JsError = definedExternally,
+)
 
-external fun doesNotThrow(block: () -> Any?, error: AssertPredicate)
+external fun doesNotThrow(
+    block: () -> Any?,
+    error: AssertPredicate,
+)
 
-external fun doesNotThrow(block: () -> Any?, error: AssertPredicate, message: String = definedExternally)
+external fun doesNotThrow(
+    block: () -> Any?,
+    error: AssertPredicate,
+    message: String = definedExternally,
+)
 
 external fun doesNotThrow(
     block: () -> Any?,

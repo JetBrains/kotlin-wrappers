@@ -10,4 +10,8 @@ package node.fs
  * exception are given to the completion callback.
  * @since v0.1.31
  */
-external fun link(existingPath: PathLike, newPath: PathLike, callback: NoParamCallback)
+external fun link(
+    existingPath: PathLike,
+    newPath: PathLike,
+    callback: NoParamCallback,
+)

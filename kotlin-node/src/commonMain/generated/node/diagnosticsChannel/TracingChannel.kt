@@ -123,7 +123,7 @@ external class TracingChannel<StoreType /* default is Any? */, ContextType : Any
         fn: Function<Any?>, /* (this: ThisArg, ...args: Args) => any */
         context: ContextType = definedExternally,
         thisArg: ThisArg = definedExternally,
-        vararg args: Any?, /* Args */
+        vararg args: Any?, // Args
     )
 
     /**
@@ -159,7 +159,7 @@ external class TracingChannel<StoreType /* default is Any? */, ContextType : Any
         fn: Function<Promise<Any?>>, /* (this: ThisArg, ...args: Args) => Promise<any> */
         context: ContextType = definedExternally,
         thisArg: ThisArg = definedExternally,
-        vararg args: Any?, /* Args */
+        vararg args: Any?, // Args
     )
 
     /**
@@ -225,6 +225,6 @@ external class TracingChannel<StoreType /* default is Any? */, ContextType : Any
         position: Number = definedExternally,
         context: ContextType = definedExternally,
         thisArg: Any? = definedExternally,
-        vararg args: Any?, /* Parameters<Fn> */
+        vararg args: Any?, // Parameters<Fn>
     )
 }

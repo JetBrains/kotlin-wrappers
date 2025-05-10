@@ -7,5 +7,5 @@ sealed external interface GlobOptionsWithFileTypes : GlobOptionsBase {
     var excludeWithFileTypes: ((fileName: Dirent) -> Boolean)?
 
     @JsName("withFileTypes")
-    var requiredWithFileTypes: Boolean /* true */
+    var requiredWithFileTypes: Boolean // true
 }

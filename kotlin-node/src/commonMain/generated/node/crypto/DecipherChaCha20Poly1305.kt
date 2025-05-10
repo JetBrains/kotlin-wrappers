@@ -4,6 +4,7 @@ package node.crypto
 
 @Suppress("INTERFACE_WITH_SUPERCLASS")
 sealed external interface DecipherChaCha20Poly1305 : Decipher {
-    fun setAuthTag(buffer: js.buffer.ArrayBufferView<*>) /* this */
-    fun setAAD(buffer: js.buffer.ArrayBufferView<*>, options: DecipherChaCha20Poly1305SetAADOptions) /* this */
+    fun setAuthTag(buffer: js.buffer.ArrayBufferView<*>) // this
+
+    fun setAAD(buffer: js.buffer.ArrayBufferView<*>, options: DecipherChaCha20Poly1305SetAADOptions) // this
 }

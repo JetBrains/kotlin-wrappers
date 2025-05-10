@@ -8,14 +8,11 @@ import js.iterable.AsyncIterable
 import js.promise.Promise
 import node.stream.Readable
 
-
 @JsName("buffer")
 external fun bufferAsync(stream: node.ReadableStream): Promise<node.buffer.Buffer<*>>
 
-
 @JsName("buffer")
 external fun bufferAsync(stream: Readable): Promise<node.buffer.Buffer<*>>
-
 
 @JsName("buffer")
 external fun bufferAsync(stream: AsyncIterable<Any?>): Promise<node.buffer.Buffer<*>>

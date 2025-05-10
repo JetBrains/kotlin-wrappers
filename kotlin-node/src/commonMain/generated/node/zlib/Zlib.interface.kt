@@ -6,8 +6,14 @@ sealed external interface Zlib {
     /** @deprecated Use bytesWritten instead. */
     val bytesRead: Double
     val bytesWritten: Double
-    var shell: Any? /* boolean | string | undefined */
+    var shell: Any? // boolean | string | undefined
+
     fun close(callback: () -> Unit = definedExternally)
-    fun flush(kind: Number = definedExternally, callback: () -> Unit = definedExternally)
+
+    fun flush(
+        kind: Number = definedExternally,
+        callback: () -> Unit = definedExternally,
+    )
+
     fun flush(callback: () -> Unit = definedExternally)
 }

@@ -9,9 +9,8 @@ sealed external interface TracingChannelSubscribersErrorMessage<ContextType : An
         "WRONG_BODY_OF_EXTERNAL_DECLARATION",
         "INLINE_EXTERNAL_DECLARATION",
         "NON_ABSTRACT_MEMBER_OF_EXTERNAL_INTERFACE",
-        "DECLARATION_CANT_BE_INLINED",
+        "DECLARATION_CANT_BE_INLINED"
     )
     inline val contextType: ContextType
         get() = unsafeCast<ContextType>()
-
 }

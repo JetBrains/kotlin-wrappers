@@ -6,7 +6,8 @@ package node.module
 
 external class Module {
     constructor (id: String, parent: Module = definedExternally)
-    /* Module */
+// Module
+
     /**
      * The module objects required for the first time by this one.
      * @since v0.1.16

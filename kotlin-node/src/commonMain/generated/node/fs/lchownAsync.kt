@@ -13,4 +13,8 @@ import js.promise.Promise
  */
 
 @JsName("lchown")
-external fun lchownAsync(path: PathLike, uid: Number, gid: Number): Promise<js.core.Void>
+external fun lchownAsync(
+    path: PathLike,
+    uid: Number,
+    gid: Number,
+): Promise<js.core.Void>

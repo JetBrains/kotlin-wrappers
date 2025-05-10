@@ -15,4 +15,7 @@ import js.promise.Promise
  */
 
 @JsName("lchmod")
-external fun lchmodAsync(path: PathLike, mode: Mode): Promise<js.core.Void>
+external fun lchmodAsync(
+    path: PathLike,
+    mode: Mode,
+): Promise<js.core.Void>

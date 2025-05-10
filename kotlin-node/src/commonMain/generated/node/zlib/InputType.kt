@@ -2,4 +2,4 @@
 
 package node.zlib
 
-typealias InputType = Any /* string | ArrayBuffer | NodeJS.ArrayBufferView */
+typealias InputType = Any // string | ArrayBuffer | NodeJS.ArrayBufferView

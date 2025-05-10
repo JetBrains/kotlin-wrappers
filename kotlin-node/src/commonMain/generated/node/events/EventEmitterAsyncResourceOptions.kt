@@ -4,7 +4,9 @@ package node.events
 
 import node.asyncHooks.AsyncResourceOptions
 
-sealed external interface EventEmitterAsyncResourceOptions : AsyncResourceOptions, EventEmitterOptions {
+sealed external interface EventEmitterAsyncResourceOptions :
+    AsyncResourceOptions,
+    EventEmitterOptions {
     /**
      * The type of async event, this is required when instantiating `EventEmitterAsyncResource`
      * directly rather than as a child class.

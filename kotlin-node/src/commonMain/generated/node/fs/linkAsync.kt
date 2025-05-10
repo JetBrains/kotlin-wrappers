@@ -13,4 +13,7 @@ import js.promise.Promise
  */
 
 @JsName("link")
-external fun linkAsync(existingPath: PathLike, newPath: PathLike): Promise<js.core.Void>
+external fun linkAsync(
+    existingPath: PathLike,
+    newPath: PathLike,
+): Promise<js.core.Void>

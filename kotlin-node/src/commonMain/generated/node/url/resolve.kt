@@ -37,4 +37,7 @@ package node.url
  * @param from The base URL to use if `to` is a relative URL.
  * @param to The target URL to resolve.
  */
-external fun resolve(from: String, to: String): String
+external fun resolve(
+    from: String,
+    to: String,
+): String

@@ -22,9 +22,13 @@ import web.blob.Blob as NodeBlob
  * @since v0.9.4
  */
 @Suppress("MANY_CLASSES_IN_SUPERTYPE_LIST")
-open external class Duplex : Stream, node.ReadWriteStream, @seskar.js.JsMixin
-Readable, @seskar.js.JsMixin
-Writable {
+open external class Duplex :
+    Stream,
+    node.ReadWriteStream,
+    @seskar.js.JsMixin
+    Readable,
+    @seskar.js.JsMixin
+    Writable {
     constructor (opts: DuplexOptions<*> = definedExternally)
 
     /**
@@ -54,70 +58,62 @@ Writable {
      * 11. unpipe
      */
 
+    override fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
 
-    override fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
+    override fun addListener(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */) // this
 
-    override fun addListener(
-        event: js.symbol.Symbol,
-        listener: Function<Unit>, /* (...args: any[]) => void */
-    ) /* this */
-
-
-    override fun emit(event: String, vararg args: Any?): Boolean
-
-    override fun emit(event: js.symbol.Symbol, vararg args: Any?): Boolean
-
-
-    override fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
-
-    override fun on(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
-
-
-    override fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
-
-    override fun once(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
-
-
-    override fun prependListener(
+    override fun emit(
         event: String,
-        listener: Function<Unit>, /* (...args: any[]) => void */
-    ) /* this */
+        vararg args: Any?,
+    ): Boolean
+
+    override fun emit(
+        event: js.symbol.Symbol,
+        vararg args: Any?,
+    ): Boolean
+
+    override fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
+
+    override fun on(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */) // this
+
+    override fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
+
+    override fun once(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */) // this
+
+    override fun prependListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
 
     override fun prependListener(
         event: js.symbol.Symbol,
         listener: Function<Unit>, /* (...args: any[]) => void */
-    ) /* this */
+    ) // this
 
-
-    override fun prependOnceListener(
-        event: String,
-        listener: Function<Unit>, /* (...args: any[]) => void */
-    ) /* this */
+    override fun prependOnceListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
 
     override fun prependOnceListener(
         event: js.symbol.Symbol,
         listener: Function<Unit>, /* (...args: any[]) => void */
-    ) /* this */
+    ) // this
 
-
-    override fun removeListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
+    override fun removeListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
 
     override fun removeListener(
         event: js.symbol.Symbol,
         listener: Function<Unit>, /* (...args: any[]) => void */
-    ) /* this */
+    ) // this
 
     override var destroyed: Boolean
     override val closed: Boolean
     override val errored: js.errors.JsError?
     override val _construct: ((callback: (error: js.errors.JsError? /* use undefined for default */) -> Unit) -> Unit)?
+
     override fun _destroy(
         error: js.errors.JsError?,
         callback: (error: js.errors.JsError? /* use undefined for default */) -> Unit,
     )
 
-    override fun destroy(error: js.errors.JsError) /* this */
-    override fun destroy() /* this */
+    override fun destroy(error: js.errors.JsError) // this
+
+    override fun destroy() // this
 
     @web.events.JsEvent("close")
     override val closeEvent: node.events.EventInstance<js.array.Tuple>
@@ -372,6 +368,9 @@ Writable {
          * @since v17.0.0
          * @experimental
          */
-        fun fromWeb(duplexStream: DuplexFromWebDuplexStream, options: DuplexOptions<*> = definedExternally): Duplex
+        fun fromWeb(
+            duplexStream: DuplexFromWebDuplexStream,
+            options: DuplexOptions<*> = definedExternally,
+        ): Duplex
     }
 }

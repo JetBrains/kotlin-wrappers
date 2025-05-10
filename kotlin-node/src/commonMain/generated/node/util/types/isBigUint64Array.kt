@@ -15,4 +15,4 @@ package node.util.types
  */
 
 @JsName("isBigUint64Array")
-external fun isBigUint64ArrayRaw(value: Any?): Boolean /* value is BigUint64Array */
+external fun isBigUint64ArrayRaw(value: Any?): Boolean // value is BigUint64Array

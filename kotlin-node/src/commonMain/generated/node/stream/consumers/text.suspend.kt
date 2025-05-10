@@ -5,14 +5,11 @@ package node.stream.consumers
 import js.iterable.AsyncIterable
 import node.stream.Readable
 
-
 @seskar.js.JsAsync
 external suspend fun text(stream: node.ReadableStream): String
 
-
 @seskar.js.JsAsync
 external suspend fun text(stream: Readable): String
-
 
 @seskar.js.JsAsync
 external suspend fun text(stream: AsyncIterable<Any?>): String

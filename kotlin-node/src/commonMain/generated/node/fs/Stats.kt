@@ -67,14 +67,20 @@ import js.date.Date
  * @since v0.1.21
  */
 external class Stats : StatsBase<Double> {
-
     override fun isFile(): Boolean
+
     override fun isDirectory(): Boolean
+
     override fun isBlockDevice(): Boolean
+
     override fun isCharacterDevice(): Boolean
+
     override fun isSymbolicLink(): Boolean
+
     override fun isFIFO(): Boolean
+
     override fun isSocket(): Boolean
+
     override var dev: Double
     override var ino: Double
     override var mode: Double

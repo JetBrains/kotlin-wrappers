@@ -64,7 +64,10 @@ external class MIMEParams {
      * // Prints: foo=def;bar=1;baz=xyz
      * ```
      */
-    fun set(name: String, value: String)
+    fun set(
+        name: String,
+        value: String,
+    )
 
     /**
      * Returns an iterator over the values of each name-value pair.

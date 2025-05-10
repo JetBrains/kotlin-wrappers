@@ -35,7 +35,7 @@ external class WriteStream : node.stream.Writable {
      * `Buffer`.
      * @since v0.1.93
      */
-    var path: Any /* string | Buffer */
+    var path: Any // string | Buffer
 
     /**
      * This property is `true` if the underlying file has not been opened yet,
@@ -50,7 +50,6 @@ external class WriteStream : node.stream.Writable {
      *   2. close
      *   3. ready
      */
-
 
     @web.events.JsEvent("close")
     override val closeEvent: node.events.EventInstance<js.array.Tuple>

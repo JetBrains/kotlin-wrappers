@@ -128,7 +128,10 @@ external fun createReadStream(path: PathLike): ReadStream
  * If `options` is a string, then it specifies the encoding.
  * @since v0.1.31
  */
-external fun createReadStream(path: PathLike, options: node.buffer.BufferEncoding = definedExternally): ReadStream
+external fun createReadStream(
+    path: PathLike,
+    options: node.buffer.BufferEncoding = definedExternally,
+): ReadStream
 
 /**
  * `options` can include `start` and `end` values to read a range of bytes from
@@ -191,4 +194,7 @@ external fun createReadStream(path: PathLike, options: node.buffer.BufferEncodin
  * If `options` is a string, then it specifies the encoding.
  * @since v0.1.31
  */
-external fun createReadStream(path: PathLike, options: ReadStreamOptions = definedExternally): ReadStream
+external fun createReadStream(
+    path: PathLike,
+    options: ReadStreamOptions = definedExternally,
+): ReadStream

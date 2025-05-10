@@ -34,6 +34,7 @@ external class CallTracker {
      * @return A function that wraps `fn`.
      */
     fun calls(exact: Number = definedExternally): () -> Unit
+
     fun <Func : Function<Any?> /* (...args: any[]) => any */> calls(
         fn: Func = definedExternally,
         exact: Number = definedExternally,

@@ -2,15 +2,21 @@
 
 package node.crypto
 
-
 sealed external interface KeyType {
     sealed interface rsa : KeyType
+
     sealed interface rsaPss : KeyType
+
     sealed interface dsa : KeyType
+
     sealed interface ec : KeyType
+
     sealed interface ed25519 : KeyType
+
     sealed interface ed448 : KeyType
+
     sealed interface x25519 : KeyType
+
     sealed interface x448 : KeyType
 
     companion object {

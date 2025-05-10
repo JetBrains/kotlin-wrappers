@@ -13,5 +13,4 @@ package node.v8
  * @see [source](https://github.com/nodejs/node/blob/v22.x/lib/v8.js)
  */
 
-
-/* export * from "v8"; */
+// export * from "v8";

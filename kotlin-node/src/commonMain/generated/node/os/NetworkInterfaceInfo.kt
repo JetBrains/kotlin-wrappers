@@ -2,4 +2,4 @@
 
 package node.os
 
-typealias NetworkInterfaceInfo = Any /* NetworkInterfaceInfoIPv4 | NetworkInterfaceInfoIPv6 */
+typealias NetworkInterfaceInfo = Any // NetworkInterfaceInfoIPv4 | NetworkInterfaceInfoIPv6

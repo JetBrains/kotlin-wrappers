@@ -11,4 +11,8 @@ package node.fs
  * this API: {@link utimes}.
  * @since v0.4.2
  */
-external fun utimesSync(path: PathLike, atime: TimeLike, mtime: TimeLike)
+external fun utimesSync(
+    path: PathLike,
+    atime: TimeLike,
+    mtime: TimeLike,
+)

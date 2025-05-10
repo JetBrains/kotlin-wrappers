@@ -11,5 +11,4 @@ package node.dns
  * @since v10.6.0
  */
 
-
-/* export * from "dns/promises"; */
+// export * from "dns/promises";

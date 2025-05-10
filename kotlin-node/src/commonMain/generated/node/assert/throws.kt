@@ -376,7 +376,10 @@ external fun throws(block: () -> Any?)
  * argument.
  * @since v0.1.21
  */
-external fun throws(block: () -> Any?, message: String = definedExternally)
+external fun throws(
+    block: () -> Any?,
+    message: String = definedExternally,
+)
 
 /**
  * Expects the function `fn` to throw an error.
@@ -563,10 +566,24 @@ external fun throws(block: () -> Any?, message: String = definedExternally)
  * argument.
  * @since v0.1.21
  */
-external fun throws(block: () -> Any?, message: js.errors.JsError = definedExternally)
+external fun throws(
+    block: () -> Any?,
+    message: js.errors.JsError = definedExternally,
+)
 
-external fun throws(block: () -> Any?, error: AssertPredicate)
+external fun throws(
+    block: () -> Any?,
+    error: AssertPredicate,
+)
 
-external fun throws(block: () -> Any?, error: AssertPredicate, message: String = definedExternally)
+external fun throws(
+    block: () -> Any?,
+    error: AssertPredicate,
+    message: String = definedExternally,
+)
 
-external fun throws(block: () -> Any?, error: AssertPredicate, message: js.errors.JsError = definedExternally)
+external fun throws(
+    block: () -> Any?,
+    error: AssertPredicate,
+    message: js.errors.JsError = definedExternally,
+)

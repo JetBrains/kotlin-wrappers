@@ -4,4 +4,4 @@
 
 package node.dns
 
-external val BADQUERY: String /* "EBADQUERY" */
+external val BADQUERY: String // "EBADQUERY"

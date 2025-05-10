@@ -2,7 +2,9 @@
 
 package node.https
 
-sealed external interface AgentOptions : node.http.AgentOptions, node.tls.ConnectionOptions {
+sealed external interface AgentOptions :
+    node.http.AgentOptions,
+    node.tls.ConnectionOptions {
     var maxCachedSessions: Double?
     override var port: dynamic
 }

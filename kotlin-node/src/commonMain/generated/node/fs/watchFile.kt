@@ -50,7 +50,11 @@ package node.fs
  * * the file is renamed and then renamed a second time back to its original name
  * @since v0.1.31
  */
-external fun watchFile(filename: PathLike, options: (WatchFileSimpleOptions)?, listener: StatsListener): StatWatcher
+external fun watchFile(
+    filename: PathLike,
+    options: (WatchFileSimpleOptions)?,
+    listener: StatsListener,
+): StatWatcher
 
 external fun watchFile(
     filename: PathLike,
@@ -62,4 +66,7 @@ external fun watchFile(
  * Watch for changes on `filename`. The callback `listener` will be called each time the file is accessed.
  * @param filename A path to a file or directory. If a URL is provided, it must use the `file:` protocol.
  */
-external fun watchFile(filename: PathLike, listener: StatsListener): StatWatcher
+external fun watchFile(
+    filename: PathLike,
+    listener: StatsListener,
+): StatWatcher

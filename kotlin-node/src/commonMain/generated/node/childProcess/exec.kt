@@ -99,7 +99,11 @@ external fun exec(
 external fun exec(
     command: String,
     options: ExecBufferOptions,
-    callback: (error: ExecException?, stdout: node.buffer.Buffer<*>, stderr: node.buffer.Buffer<*>) -> Unit = definedExternally,
+    callback: (
+        error: ExecException?,
+        stdout: node.buffer.Buffer<*>,
+        stderr: node.buffer.Buffer<*>,
+    ) -> Unit = definedExternally,
 ): ChildProcess
 
 // `options` with well known `encoding` means stdout/stderr are definitely `string`.
@@ -114,7 +118,11 @@ external fun exec(
 external fun exec(
     command: String,
     options: ExecStringOptions,
-    callback: (error: ExecException?, stdout: Any /* string | Buffer */, stderr: Any /* string | Buffer */) -> Unit = definedExternally,
+    callback: (
+        error: ExecException?,
+        stdout: Any, /* string | Buffer */
+        stderr: Any, // string | Buffer
+    ) -> Unit = definedExternally,
 ): ChildProcess
 
 // `options` without an `encoding` means stdout/stderr are definitely `string`.
@@ -128,7 +136,14 @@ external fun exec(
 external fun exec(
     command: String,
     options: (ExecObjectEncodingOptions)?,
-    callback: (error: ExecException?, stdout: Any /* string | Buffer */, stderr: Any /* string | Buffer */) -> Unit = definedExternally,
+    callback: (
+        error: ExecException?,
+        stdout: Any, /* string | Buffer */
+        stderr: Any, // string | Buffer
+    ) -> Unit = definedExternally,
 ): ChildProcess
 
-external fun exec(command: String, options: ExecStringOptions): ChildProcess
+external fun exec(
+    command: String,
+    options: ExecStringOptions,
+): ChildProcess

@@ -52,8 +52,18 @@ package node.crypto
  */
 external fun randomInt(max: Number): Double
 
-external fun randomInt(min: Number, max: Number): Double
+external fun randomInt(
+    min: Number,
+    max: Number,
+): Double
 
-external fun randomInt(max: Number, callback: (err: js.errors.JsError?, value: Double) -> Unit)
+external fun randomInt(
+    max: Number,
+    callback: (err: js.errors.JsError?, value: Double) -> Unit,
+)
 
-external fun randomInt(min: Number, max: Number, callback: (err: js.errors.JsError?, value: Double) -> Unit)
+external fun randomInt(
+    min: Number,
+    max: Number,
+    callback: (err: js.errors.JsError?, value: Double) -> Unit,
+)

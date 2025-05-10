@@ -14,14 +14,20 @@ package node.fs
  * object with an `encoding` property specifying the character encoding to use.
  * @since v5.10.0
  */
-external fun mkdtempSync(prefix: String, options: EncodingOption = definedExternally): String
+external fun mkdtempSync(
+    prefix: String,
+    options: EncodingOption = definedExternally,
+): String
 
 /**
  * Synchronously creates a unique temporary directory.
  * Generates six random characters to be appended behind a required prefix to create a unique temporary directory.
  * @param options The encoding (or an object specifying the encoding), used as the encoding of the result. If not provided, `'utf8'` is used.
  */
-external fun mkdtempSync(prefix: String, options: BufferEncodingOption): node.buffer.Buffer<*>
+external fun mkdtempSync(
+    prefix: String,
+    options: BufferEncodingOption,
+): node.buffer.Buffer<*>
 
 /**
  * Synchronously creates a unique temporary directory.

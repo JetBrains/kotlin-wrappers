@@ -4,4 +4,4 @@
 
 package node.dns
 
-external val TIMEOUT: String /* "ETIMEOUT" */
+external val TIMEOUT: String // "ETIMEOUT"

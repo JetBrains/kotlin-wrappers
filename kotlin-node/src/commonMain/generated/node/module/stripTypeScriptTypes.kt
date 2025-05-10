@@ -58,4 +58,7 @@ package node.module
  * @param code The code to strip type annotations from.
  * @returns The code with type annotations stripped.
  */
-external fun stripTypeScriptTypes(code: String, options: StripTypeScriptTypesOptions = definedExternally): String
+external fun stripTypeScriptTypes(
+    code: String,
+    options: StripTypeScriptTypesOptions = definedExternally,
+): String

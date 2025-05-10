@@ -9,7 +9,7 @@ sealed external interface RegisterOptions<Data> {
      * property is ignored if the `parentURL` is supplied as the second argument.
      * @default 'data:'
      */
-    var parentURL: Any? /* string | URL | undefined */
+    var parentURL: Any? // string | URL | undefined
 
     /**
      * Any arbitrary, cloneable JavaScript value to pass into the

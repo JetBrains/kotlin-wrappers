@@ -42,7 +42,9 @@ package node.http
  * ```
  * @since v0.1.13
  */
-external fun <Request : IncomingMessage, Response : ServerResponse<*>> createServer(requestListener: RequestListener<Request, Response> = definedExternally): Server<Request, Response>
+external fun <Request : IncomingMessage, Response : ServerResponse<*>> createServer(
+    requestListener: RequestListener<Request, Response> = definedExternally,
+): Server<Request, Response>
 
 external fun <Request : IncomingMessage, Response : ServerResponse<*>> createServer(
     options: ServerOptions<Request, Response>,

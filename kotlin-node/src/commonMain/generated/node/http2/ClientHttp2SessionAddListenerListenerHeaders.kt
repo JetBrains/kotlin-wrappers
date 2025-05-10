@@ -2,4 +2,6 @@
 
 package node.http2
 
-sealed external interface ClientHttp2SessionAddListenerListenerHeaders : IncomingHttpHeaders, IncomingHttpStatusHeader
+sealed external interface ClientHttp2SessionAddListenerListenerHeaders :
+    IncomingHttpHeaders,
+    IncomingHttpStatusHeader

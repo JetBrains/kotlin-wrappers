@@ -18,4 +18,4 @@ package node.util.types
  */
 
 @JsName("isTypedArray")
-external fun isTypedArrayRaw(value: Any?): Boolean /* object is NodeJS.TypedArray */
+external fun isTypedArrayRaw(value: Any?): Boolean // object is NodeJS.TypedArray

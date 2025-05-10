@@ -2,7 +2,9 @@
 
 package node.tls
 
-sealed external interface TLSSocketOptions : SecureContextOptions, CommonConnectionOptions {
+sealed external interface TLSSocketOptions :
+    SecureContextOptions,
+    CommonConnectionOptions {
     /**
      * If true the TLS socket will be instantiated in server-mode.
      * Defaults to false.

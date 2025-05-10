@@ -143,9 +143,23 @@ open external class Cipher : node.stream.Transform {
      * @param outputEncoding The `encoding` of the return value.
      */
     fun update(data: BinaryLike): node.buffer.Buffer<*>
-    fun update(data: String, inputEncoding: Encoding): node.buffer.Buffer<*>
-    fun update(data: String, inputEncoding: Encoding?, outputEncoding: Encoding): String
-    fun update(data: js.buffer.ArrayBufferView<*>, inputEncoding: Nothing?, outputEncoding: Encoding): String
+
+    fun update(
+        data: String,
+        inputEncoding: Encoding,
+    ): node.buffer.Buffer<*>
+
+    fun update(
+        data: String,
+        inputEncoding: Encoding?,
+        outputEncoding: Encoding,
+    ): String
+
+    fun update(
+        data: js.buffer.ArrayBufferView<*>,
+        inputEncoding: Nothing?,
+        outputEncoding: Encoding,
+    ): String
 
     /**
      * Once the `cipher.final()` method has been called, the `Cipher` object can no
@@ -156,6 +170,7 @@ open external class Cipher : node.stream.Transform {
      * @return Any remaining enciphered contents. If `outputEncoding` is specified, a string is returned. If an `outputEncoding` is not provided, a {@link Buffer} is returned.
      */
     fun final(): node.buffer.Buffer<*>
+
     fun final(outputEncoding: node.buffer.BufferEncoding): String
 
     /**
@@ -173,5 +188,5 @@ open external class Cipher : node.stream.Transform {
      * @param [autoPadding=true]
      * @return for method chaining.
      */
-    fun setAutoPadding(autoPadding: Boolean = definedExternally) /* this */
+    fun setAutoPadding(autoPadding: Boolean = definedExternally) // this
 }

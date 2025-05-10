@@ -5,7 +5,6 @@ package node.util.types
 import js.typedarrays.Int16Array
 import kotlin.contracts.contract
 
-
 @Suppress("CANNOT_CHECK_FOR_EXTERNAL_INTERFACE")
 inline fun isInt16Array(value: Any?): Boolean /* object is Int16Array */ {
     contract {

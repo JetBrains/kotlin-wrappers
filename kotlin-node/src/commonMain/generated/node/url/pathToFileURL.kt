@@ -23,4 +23,7 @@ import web.url.URL
  * @param path The path to convert to a File URL.
  * @return The file URL object.
  */
-external fun pathToFileURL(path: String, options: PathToFileUrlOptions = definedExternally): URL
+external fun pathToFileURL(
+    path: String,
+    options: PathToFileUrlOptions = definedExternally,
+): URL

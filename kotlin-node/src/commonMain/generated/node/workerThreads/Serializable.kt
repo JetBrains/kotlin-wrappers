@@ -2,4 +2,4 @@
 
 package node.workerThreads
 
-typealias Serializable = Any /* string | object | number | boolean | bigint */
+typealias Serializable = Any // string | object | number | boolean | bigint

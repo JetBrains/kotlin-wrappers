@@ -15,5 +15,4 @@ package node.repl
  * @see [source](https://github.com/nodejs/node/blob/v22.x/lib/repl.js)
  */
 
-
-/* export * from "repl"; */
+// export * from "repl";

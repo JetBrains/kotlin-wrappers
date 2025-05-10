@@ -30,4 +30,7 @@ package node.dns
  * ```
  * @since v0.11.10
  */
-external fun resolveSoa(hostname: String, callback: (err: node.ErrnoException?, address: SoaRecord) -> Unit)
+external fun resolveSoa(
+    hostname: String,
+    callback: (err: node.ErrnoException?, address: SoaRecord) -> Unit,
+)

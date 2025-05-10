@@ -12,7 +12,10 @@ sealed external interface RequireResolve {
      * @param request The module path to resolve.
      */
     @seskar.js.JsNativeInvoke
-    operator fun invoke(request: String, options: RequireResolveOptions = definedExternally): String
+    operator fun invoke(
+        request: String,
+        options: RequireResolveOptions = definedExternally,
+    ): String
 
     /**
      * Returns an array containing the paths searched during resolution of `request` or

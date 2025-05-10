@@ -14,5 +14,4 @@ package node.url
  * @see [source](https://github.com/nodejs/node/blob/v22.x/lib/url.js)
  */
 
-
-/* export * from "url"; */
+// export * from "url";

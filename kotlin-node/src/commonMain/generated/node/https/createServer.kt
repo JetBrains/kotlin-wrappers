@@ -44,7 +44,9 @@ import node.http.ServerResponse
  * @param options Accepts `options` from `createServer`, `createSecureContext` and `createServer`.
  * @param requestListener A listener to be added to the `'request'` event.
  */
-external fun <Request : IncomingMessage, Response : ServerResponse<*>> createServer(requestListener: node.http.RequestListener<Request, Response> = definedExternally): Server<Request, Response>
+external fun <Request : IncomingMessage, Response : ServerResponse<*>> createServer(
+    requestListener: node.http.RequestListener<Request, Response> = definedExternally,
+): Server<Request, Response>
 
 external fun <Request : IncomingMessage, Response : ServerResponse<*>> createServer(
     options: ServerOptions<Request, Response>,

@@ -4,5 +4,5 @@
 
 package node.zlib
 
-/** @deprecated  */
+/** @deprecated */
 external val Z_UNKNOWN: Double

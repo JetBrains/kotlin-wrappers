@@ -43,5 +43,4 @@ package node.vm
  * @see [source](https://github.com/nodejs/node/blob/v22.x/lib/vm.js)
  */
 
-
-/* export * from "vm"; */
+// export * from "vm";

@@ -5,7 +5,6 @@ package node.util.types
 import node.crypto.KeyObject
 import kotlin.contracts.contract
 
-
 @Suppress("CANNOT_CHECK_FOR_EXTERNAL_INTERFACE")
 inline fun isKeyObject(value: Any?): Boolean /* object is KeyObject */ {
     contract {

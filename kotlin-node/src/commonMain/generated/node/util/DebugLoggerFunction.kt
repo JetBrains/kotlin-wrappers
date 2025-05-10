@@ -2,4 +2,4 @@
 
 package node.util
 
-typealias DebugLoggerFunction = Function<Unit> /* (msg: string, ...param: unknown[]) => void */
+typealias DebugLoggerFunction = Function<Unit> // (msg: string, ...param: unknown[]) => void

@@ -4,10 +4,11 @@ package node.fs
 
 import js.typedarrays.Uint8Array
 
-
 @seskar.js.JsAsync
-external suspend fun appendFile(path: PathLike, data: String): js.core.Void
-
+external suspend fun appendFile(
+    path: PathLike,
+    data: String,
+): js.core.Void
 
 /**
  * Asynchronously append data to a file, creating the file if it does not yet
@@ -30,7 +31,6 @@ external suspend fun appendFile(
     data: String,
     options: (AppendFileAsyncOptions)? = definedExternally,
 ): js.core.Void
-
 
 /**
  * Asynchronously append data to a file, creating the file if it does not yet
@@ -54,7 +54,6 @@ external suspend fun appendFile(
     options: node.buffer.BufferEncoding? = definedExternally,
 ): js.core.Void
 
-
 /**
  * Asynchronously append data to a file, creating the file if it does not yet
  * exist. `data` can be a string or a `Buffer`.
@@ -71,8 +70,10 @@ external suspend fun appendFile(
  */
 
 @seskar.js.JsAsync
-external suspend fun appendFile(path: PathLike, data: Uint8Array<*>): js.core.Void
-
+external suspend fun appendFile(
+    path: PathLike,
+    data: Uint8Array<*>,
+): js.core.Void
 
 /**
  * Asynchronously append data to a file, creating the file if it does not yet
@@ -96,7 +97,6 @@ external suspend fun appendFile(
     options: (AppendFileAsyncOptions)? = definedExternally,
 ): js.core.Void
 
-
 /**
  * Asynchronously append data to a file, creating the file if it does not yet
  * exist. `data` can be a string or a `Buffer`.
@@ -119,7 +119,6 @@ external suspend fun appendFile(
     options: node.buffer.BufferEncoding? = definedExternally,
 ): js.core.Void
 
-
 /**
  * Asynchronously append data to a file, creating the file if it does not yet
  * exist. `data` can be a string or a `Buffer`.
@@ -136,8 +135,10 @@ external suspend fun appendFile(
  */
 
 @seskar.js.JsAsync
-external suspend fun appendFile(path: FileHandle, data: String): js.core.Void
-
+external suspend fun appendFile(
+    path: FileHandle,
+    data: String,
+): js.core.Void
 
 /**
  * Asynchronously append data to a file, creating the file if it does not yet
@@ -160,7 +161,6 @@ external suspend fun appendFile(
     data: String,
     options: (AppendFileAsyncOptions)? = definedExternally,
 ): js.core.Void
-
 
 /**
  * Asynchronously append data to a file, creating the file if it does not yet
@@ -184,7 +184,6 @@ external suspend fun appendFile(
     options: node.buffer.BufferEncoding? = definedExternally,
 ): js.core.Void
 
-
 /**
  * Asynchronously append data to a file, creating the file if it does not yet
  * exist. `data` can be a string or a `Buffer`.
@@ -201,8 +200,10 @@ external suspend fun appendFile(
  */
 
 @seskar.js.JsAsync
-external suspend fun appendFile(path: FileHandle, data: Uint8Array<*>): js.core.Void
-
+external suspend fun appendFile(
+    path: FileHandle,
+    data: Uint8Array<*>,
+): js.core.Void
 
 /**
  * Asynchronously append data to a file, creating the file if it does not yet
@@ -225,7 +226,6 @@ external suspend fun appendFile(
     data: Uint8Array<*>,
     options: (AppendFileAsyncOptions)? = definedExternally,
 ): js.core.Void
-
 
 /**
  * Asynchronously append data to a file, creating the file if it does not yet

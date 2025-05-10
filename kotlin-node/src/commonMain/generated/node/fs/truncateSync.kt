@@ -13,4 +13,7 @@ package node.fs
  * @since v0.8.6
  * @param [len=0]
  */
-external fun truncateSync(path: PathLike, len: Double? = definedExternally)
+external fun truncateSync(
+    path: PathLike,
+    len: Double? = definedExternally,
+)

@@ -4,4 +4,4 @@
 
 package node.dns
 
-external val NOTINITIALIZED: String /* "ENOTINITIALIZED" */
+external val NOTINITIALIZED: String // "ENOTINITIALIZED"

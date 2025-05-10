@@ -21,7 +21,10 @@ package node.net
  *
  * The {@link connect} function is an alias to this function.
  */
-external fun createConnection(options: NetConnectOpts, connectionListener: () -> Unit = definedExternally): Socket
+external fun createConnection(
+    options: NetConnectOpts,
+    connectionListener: () -> Unit = definedExternally,
+): Socket
 
 external fun createConnection(
     port: Number,
@@ -29,4 +32,7 @@ external fun createConnection(
     connectionListener: () -> Unit = definedExternally,
 ): Socket
 
-external fun createConnection(path: String, connectionListener: () -> Unit = definedExternally): Socket
+external fun createConnection(
+    path: String,
+    connectionListener: () -> Unit = definedExternally,
+): Socket

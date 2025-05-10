@@ -18,4 +18,7 @@ import js.promise.Promise
  */
 
 @JsName("rmdir")
-external fun rmdirAsync(path: PathLike, options: RmDirOptions = definedExternally): Promise<js.core.Void>
+external fun rmdirAsync(
+    path: PathLike,
+    options: RmDirOptions = definedExternally,
+): Promise<js.core.Void>

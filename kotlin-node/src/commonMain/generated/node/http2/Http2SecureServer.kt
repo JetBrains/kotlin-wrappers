@@ -7,49 +7,37 @@ import node.http.ServerResponse
 
 @Suppress("INTERFACE_WITH_SUPERCLASS")
 sealed external interface Http2SecureServer<Http1Request : IncomingMessage, Http1Response : ServerResponse<*>, Http2Request : Http2ServerRequest, Http2Response : Http2ServerResponse<*>> :
-    node.tls.Server, HTTP2ServerCommon {
+    node.tls.Server,
+    HTTP2ServerCommon {
+    override fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
 
+    fun addListener(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */) // this
 
-    override fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
-
-    fun addListener(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
-
-
-    override fun emit(event: String, vararg args: Any?): Boolean
-
-    override fun emit(event: js.symbol.Symbol, vararg args: Any?): Boolean
-
-
-    override fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
-
-    fun on(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
-
-
-    override fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
-
-    fun once(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
-
-
-    override fun prependListener(
+    override fun emit(
         event: String,
-        listener: Function<Unit>, /* (...args: any[]) => void */
-    ) /* this */
+        vararg args: Any?,
+    ): Boolean
 
-    fun prependListener(
+    override fun emit(
         event: js.symbol.Symbol,
-        listener: Function<Unit>, /* (...args: any[]) => void */
-    ) /* this */
+        vararg args: Any?,
+    ): Boolean
 
+    override fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
 
-    override fun prependOnceListener(
-        event: String,
-        listener: Function<Unit>, /* (...args: any[]) => void */
-    ) /* this */
+    fun on(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */) // this
 
-    fun prependOnceListener(
-        event: js.symbol.Symbol,
-        listener: Function<Unit>, /* (...args: any[]) => void */
-    ) /* this */
+    override fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
+
+    fun once(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */) // this
+
+    override fun prependListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
+
+    fun prependListener(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */) // this
+
+    override fun prependOnceListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
+
+    fun prependOnceListener(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */) // this
 
     @web.events.JsEvent("checkContinue")
     val checkContinueEvent: node.events.EventInstance<js.array.Tuple2<Http2Request, Http2Response>>
@@ -58,7 +46,8 @@ sealed external interface Http2SecureServer<Http1Request : IncomingMessage, Http
     val requestEvent: node.events.EventInstance<js.array.Tuple2<Http2Request, Http2Response>>
 
     @web.events.JsEvent("session")
-    val sessionEvent: node.events.EventInstance<js.array.Tuple1<ServerHttp2Session<Http1Request, Http1Response, Http2Request, Http2Response>>>
+    val sessionEvent:
+            node.events.EventInstance<js.array.Tuple1<ServerHttp2Session<Http1Request, Http1Response, Http2Request, Http2Response>>>
 
     @web.events.JsEvent("sessionError")
     val sessionErrorEvent: node.events.EventInstance<js.array.Tuple1<js.errors.JsError>>

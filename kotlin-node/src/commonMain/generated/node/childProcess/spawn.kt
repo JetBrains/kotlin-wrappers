@@ -172,7 +172,10 @@ external fun spawn(
     options: SpawnOptionsWithStdioTuple<StdioNull, StdioNull, StdioNull>,
 ): ChildProcessByStdio<Nothing?, Nothing?, Nothing?>
 
-external fun spawn(command: String, options: SpawnOptions): ChildProcess
+external fun spawn(
+    command: String,
+    options: SpawnOptions,
+): ChildProcess
 
 // overloads of spawn with 'args'
 external fun spawn(
@@ -229,5 +232,10 @@ external fun spawn(
     options: SpawnOptionsWithStdioTuple<StdioNull, StdioNull, StdioNull>,
 ): ChildProcessByStdio<Nothing?, Nothing?, Nothing?>
 
-external fun spawn(command: String, args: ReadonlyArray<String>, options: SpawnOptions): ChildProcess
+external fun spawn(
+    command: String,
+    args: ReadonlyArray<String>,
+    options: SpawnOptions,
+): ChildProcess
+
 external fun spawn(command: String): ChildProcessWithoutNullStreams

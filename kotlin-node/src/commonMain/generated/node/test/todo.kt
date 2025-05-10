@@ -18,14 +18,17 @@ external fun todoAsync(
     fn: TestFn = definedExternally,
 ): Promise<js.core.Void>
 
+@JsName("todo")
+external fun todoAsync(
+    name: String = definedExternally,
+    fn: TestFn = definedExternally,
+): Promise<js.core.Void>
 
 @JsName("todo")
-external fun todoAsync(name: String = definedExternally, fn: TestFn = definedExternally): Promise<js.core.Void>
-
-
-@JsName("todo")
-external fun todoAsync(options: TestOptions = definedExternally, fn: TestFn = definedExternally): Promise<js.core.Void>
-
+external fun todoAsync(
+    options: TestOptions = definedExternally,
+    fn: TestFn = definedExternally,
+): Promise<js.core.Void>
 
 @JsName("todo")
 external fun todoAsync(fn: TestFn = definedExternally): Promise<js.core.Void>

@@ -20,4 +20,7 @@ package node.os
  */
 external fun setPriority(priority: Number)
 
-external fun setPriority(pid: Number, priority: Number)
+external fun setPriority(
+    pid: Number,
+    priority: Number,
+)

@@ -13,4 +13,7 @@ import js.promise.Promise
  */
 
 @JsName("rm")
-external fun rmAsync(path: PathLike, options: RmOptions = definedExternally): Promise<js.core.Void>
+external fun rmAsync(
+    path: PathLike,
+    options: RmOptions = definedExternally,
+): Promise<js.core.Void>

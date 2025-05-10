@@ -146,7 +146,11 @@ external fun writeFile(
  * If a file descriptor is provided, the underlying file will _not_ be closed automatically.
  * @param data The data to write. If something other than a Buffer or Uint8Array is provided, the value is coerced to a string.
  */
-external fun writeFile(path: PathOrFileDescriptor, data: String, callback: NoParamCallback)
+external fun writeFile(
+    path: PathOrFileDescriptor,
+    data: String,
+    callback: NoParamCallback,
+)
 
 /**
  * Asynchronously writes data to a file, replacing the file if it already exists.
@@ -154,4 +158,8 @@ external fun writeFile(path: PathOrFileDescriptor, data: String, callback: NoPar
  * If a file descriptor is provided, the underlying file will _not_ be closed automatically.
  * @param data The data to write. If something other than a Buffer or Uint8Array is provided, the value is coerced to a string.
  */
-external fun writeFile(path: PathOrFileDescriptor, data: js.buffer.ArrayBufferView<*>, callback: NoParamCallback)
+external fun writeFile(
+    path: PathOrFileDescriptor,
+    data: js.buffer.ArrayBufferView<*>,
+    callback: NoParamCallback,
+)

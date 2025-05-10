@@ -7,5 +7,8 @@ sealed external interface ParseArgsOptionsConfig {
     operator fun get(key: String): ParseArgsOptionConfig?
 
     @seskar.js.JsNativeSetter
-    operator fun set(key: String, value: ParseArgsOptionConfig?)
+    operator fun set(
+        key: String,
+        value: ParseArgsOptionConfig?,
+    )
 }

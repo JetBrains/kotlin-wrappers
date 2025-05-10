@@ -8,4 +8,7 @@ package node.zlib
  * Compress a chunk of data with `Deflate`.
  * @since v0.11.12
  */
-external fun deflateSync(buf: InputType, options: ZlibOptions = definedExternally): node.buffer.Buffer<*>
+external fun deflateSync(
+    buf: InputType,
+    options: ZlibOptions = definedExternally,
+): node.buffer.Buffer<*>

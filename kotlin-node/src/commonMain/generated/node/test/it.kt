@@ -20,14 +20,17 @@ external fun itAsync(
     fn: TestFn = definedExternally,
 ): Promise<js.core.Void>
 
+@JsName("it")
+external fun itAsync(
+    name: String = definedExternally,
+    fn: TestFn = definedExternally,
+): Promise<js.core.Void>
 
 @JsName("it")
-external fun itAsync(name: String = definedExternally, fn: TestFn = definedExternally): Promise<js.core.Void>
-
-
-@JsName("it")
-external fun itAsync(options: TestOptions = definedExternally, fn: TestFn = definedExternally): Promise<js.core.Void>
-
+external fun itAsync(
+    options: TestOptions = definedExternally,
+    fn: TestFn = definedExternally,
+): Promise<js.core.Void>
 
 @JsName("it")
 external fun itAsync(fn: TestFn = definedExternally): Promise<js.core.Void>

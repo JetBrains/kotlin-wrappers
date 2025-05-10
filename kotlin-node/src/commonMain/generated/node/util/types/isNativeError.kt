@@ -44,4 +44,4 @@ package node.util.types
  */
 
 @JsName("isNativeError")
-external fun isNativeErrorRaw(value: Any?): Boolean /* object is Error */
+external fun isNativeErrorRaw(value: Any?): Boolean // object is Error

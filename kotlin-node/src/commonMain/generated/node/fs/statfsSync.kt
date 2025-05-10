@@ -12,9 +12,16 @@ package node.fs
  * @since v19.6.0, v18.15.0
  * @param path A path to an existing file or directory on the file system to be queried.
  */
-external fun statfsSync(path: PathLike, options: StatfsSyncOptions = definedExternally): StatsFs
+external fun statfsSync(
+    path: PathLike,
+    options: StatfsSyncOptions = definedExternally,
+): StatsFs
 
-external fun statfsSync(path: PathLike, options: StatfsSyncBigIntOptions): BigIntStatsFs
+external fun statfsSync(
+    path: PathLike,
+    options: StatfsSyncBigIntOptions,
+): BigIntStatsFs
 
-external fun statfsSync(path: PathLike, options: StatFsOptions = definedExternally): Any /* StatsFs | BigIntStatsFs */
+external fun statfsSync(path: PathLike, options: StatFsOptions = definedExternally): Any // StatsFs | BigIntStatsFs
+
 external fun statfsSync(path: PathLike): StatsFs

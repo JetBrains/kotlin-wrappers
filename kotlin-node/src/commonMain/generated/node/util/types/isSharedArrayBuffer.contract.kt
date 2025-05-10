@@ -5,7 +5,6 @@ package node.util.types
 import js.buffer.SharedArrayBuffer
 import kotlin.contracts.contract
 
-
 @Suppress("CANNOT_CHECK_FOR_EXTERNAL_INTERFACE")
 inline fun isSharedArrayBuffer(value: Any?): Boolean /* object is SharedArrayBuffer */ {
     contract {

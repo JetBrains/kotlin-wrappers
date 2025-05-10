@@ -87,7 +87,7 @@ sealed external interface Http2Session : EventEmitter {
      * All other interactions will be routed directly to the socket.
      * @since v8.4.0
      */
-    val socket: Any /* net.Socket | tls.TLSSocket */
+    val socket: Any // net.Socket | tls.TLSSocket
 
     /**
      * Provides miscellaneous information about the current state of the`Http2Session`.
@@ -126,7 +126,10 @@ sealed external interface Http2Session : EventEmitter {
      * @param error An `Error` object if the `Http2Session` is being destroyed due to an error.
      * @param code The HTTP/2 error code to send in the final `GOAWAY` frame. If unspecified, and `error` is not undefined, the default is `INTERNAL_ERROR`, otherwise defaults to `NO_ERROR`.
      */
-    fun destroy(error: js.errors.JsError = definedExternally, code: Number = definedExternally)
+    fun destroy(
+        error: js.errors.JsError = definedExternally,
+        code: Number = definedExternally,
+    )
 
     /**
      * Transmits a `GOAWAY` frame to the connected peer _without_ shutting down the`Http2Session`.
@@ -170,6 +173,7 @@ sealed external interface Http2Session : EventEmitter {
      * @param payload Optional ping payload.
      */
     fun ping(callback: (err: js.errors.JsError?, duration: Double, payload: node.buffer.Buffer<*>) -> Unit): Boolean
+
     fun ping(
         payload: js.buffer.ArrayBufferView<*>,
         callback: (err: js.errors.JsError?, duration: Double, payload: node.buffer.Buffer<*>) -> Unit,
@@ -207,7 +211,10 @@ sealed external interface Http2Session : EventEmitter {
      * registered as a listener on the `'timeout'` event.
      * @since v8.4.0
      */
-    fun setTimeout(msecs: Number, callback: () -> Unit = definedExternally)
+    fun setTimeout(
+        msecs: Number,
+        callback: () -> Unit = definedExternally,
+    )
 
     /**
      * Updates the current local settings for this `Http2Session` and sends a new `SETTINGS` frame to the connected HTTP/2 peer.
@@ -232,41 +239,35 @@ sealed external interface Http2Session : EventEmitter {
      */
     fun unref()
 
+    fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
 
-    fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
+    fun addListener(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */) // this
 
-    fun addListener(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
+    fun emit(
+        event: String,
+        vararg args: Any?,
+    ): Boolean
 
-
-    fun emit(event: String, vararg args: Any?): Boolean
-
-    fun emit(event: js.symbol.Symbol, vararg args: Any?): Boolean
-
-
-    fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
-
-    fun on(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
-
-
-    fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
-
-    fun once(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
-
-
-    fun prependListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
-
-    fun prependListener(
+    fun emit(
         event: js.symbol.Symbol,
-        listener: Function<Unit>, /* (...args: any[]) => void */
-    ) /* this */
+        vararg args: Any?,
+    ): Boolean
 
+    fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
 
-    fun prependOnceListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
+    fun on(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */) // this
 
-    fun prependOnceListener(
-        event: js.symbol.Symbol,
-        listener: Function<Unit>, /* (...args: any[]) => void */
-    ) /* this */
+    fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
+
+    fun once(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */) // this
+
+    fun prependListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
+
+    fun prependListener(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */) // this
+
+    fun prependOnceListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
+
+    fun prependOnceListener(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */) // this
 
     @web.events.JsEvent("close")
     val closeEvent: node.events.EventInstance<js.array.Tuple>

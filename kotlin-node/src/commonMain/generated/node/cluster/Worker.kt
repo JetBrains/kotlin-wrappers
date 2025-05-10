@@ -90,6 +90,7 @@ external class Worker : EventEmitter {
      * @param [signal='SIGTERM'] Name of the kill signal to send to the worker process.
      */
     fun kill(signal: String = definedExternally)
+
     fun destroy(signal: String = definedExternally)
 
     /**
@@ -236,40 +237,35 @@ external class Worker : EventEmitter {
      *   5. message
      *   6. online
      */
-    fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
-
-
-// the handle is a net.Socket or net.Server object, or undefined.
-
-
-    fun emit(event: String, vararg args: Any?): Boolean
-
-    fun emit(event: js.symbol.Symbol, vararg args: Any?): Boolean
-
-
-    fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
-
+    fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
 
 // the handle is a net.Socket or net.Server object, or undefined.
 
+    fun emit(
+        event: String,
+        vararg args: Any?,
+    ): Boolean
 
-    fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
+    fun emit(
+        event: js.symbol.Symbol,
+        vararg args: Any?,
+    ): Boolean
 
-
-// the handle is a net.Socket or net.Server object, or undefined.
-
-
-    fun prependListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
-
-
-// the handle is a net.Socket or net.Server object, or undefined.
-
-
-    fun prependOnceListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
-
+    fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
 
 // the handle is a net.Socket or net.Server object, or undefined.
 
+    fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
+
+// the handle is a net.Socket or net.Server object, or undefined.
+
+    fun prependListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
+
+// the handle is a net.Socket or net.Server object, or undefined.
+
+    fun prependOnceListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
+
+// the handle is a net.Socket or net.Server object, or undefined.
 
     @web.events.JsEvent("disconnect")
     val disconnectEvent: node.events.EventInstance<js.array.Tuple>

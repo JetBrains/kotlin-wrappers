@@ -13,4 +13,7 @@ import js.promise.Promise
  */
 
 @JsName("rename")
-external fun renameAsync(oldPath: PathLike, newPath: PathLike): Promise<js.core.Void>
+external fun renameAsync(
+    oldPath: PathLike,
+    newPath: PathLike,
+): Promise<js.core.Void>

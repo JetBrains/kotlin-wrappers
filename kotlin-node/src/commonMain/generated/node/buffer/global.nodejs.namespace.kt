@@ -5,4 +5,4 @@
 
 package node.buffer
 
-/* export { BufferEncoding }; */
+// export { BufferEncoding };

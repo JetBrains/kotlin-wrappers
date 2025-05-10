@@ -6,14 +6,11 @@ import js.iterable.AsyncIterable
 import node.stream.Readable
 import web.blob.Blob as NodeBlob
 
-
 @seskar.js.JsAsync
 external suspend fun blob(stream: node.ReadableStream): NodeBlob
 
-
 @seskar.js.JsAsync
 external suspend fun blob(stream: Readable): NodeBlob
-
 
 @seskar.js.JsAsync
 external suspend fun blob(stream: AsyncIterable<Any?>): NodeBlob

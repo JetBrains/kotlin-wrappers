@@ -36,4 +36,4 @@ package node.assert
  * ```
  * @since v0.1.97
  */
-external fun ifError(value: Any?) /* asserts value is null | undefined */
+external fun ifError(value: Any?) // asserts value is null | undefined

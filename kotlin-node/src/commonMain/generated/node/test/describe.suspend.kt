@@ -2,7 +2,6 @@
 
 package node.test
 
-
 @seskar.js.JsAsync
 external suspend fun describe(
     name: String = definedExternally,
@@ -10,14 +9,17 @@ external suspend fun describe(
     fn: SuiteFn = definedExternally,
 ): js.core.Void
 
+@seskar.js.JsAsync
+external suspend fun describe(
+    name: String = definedExternally,
+    fn: SuiteFn = definedExternally,
+): js.core.Void
 
 @seskar.js.JsAsync
-external suspend fun describe(name: String = definedExternally, fn: SuiteFn = definedExternally): js.core.Void
-
-
-@seskar.js.JsAsync
-external suspend fun describe(options: TestOptions = definedExternally, fn: SuiteFn = definedExternally): js.core.Void
-
+external suspend fun describe(
+    options: TestOptions = definedExternally,
+    fn: SuiteFn = definedExternally,
+): js.core.Void
 
 @seskar.js.JsAsync
 external suspend fun describe(fn: SuiteFn = definedExternally): js.core.Void

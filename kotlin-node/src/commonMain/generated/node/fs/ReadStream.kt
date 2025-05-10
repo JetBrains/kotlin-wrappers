@@ -27,7 +27,7 @@ external class ReadStream : node.stream.Readable {
      * `Buffer`. If `fd` is specified, then`readStream.path` will be `undefined`.
      * @since v0.1.93
      */
-    var path: Any /* string | Buffer */
+    var path: Any // string | Buffer
 
     /**
      * This property is `true` if the underlying file has not been opened yet,
@@ -42,7 +42,6 @@ external class ReadStream : node.stream.Readable {
      *   2. close
      *   3. ready
      */
-
 
     @web.events.JsEvent("close")
     override val closeEvent: node.events.EventInstance<js.array.Tuple>

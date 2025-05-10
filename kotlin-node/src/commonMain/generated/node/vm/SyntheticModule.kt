@@ -60,5 +60,8 @@ external class SyntheticModule : Module {
      * @param name Name of the export to set.
      * @param value The value to set the export to.
      */
-    fun setExport(name: String, value: Any?)
+    fun setExport(
+        name: String,
+        value: Any?,
+    )
 }

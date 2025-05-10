@@ -78,7 +78,6 @@ external fun readdirSync(path: PathLike, options: String /* "buffer" */): js.arr
  * @param options The encoding (or an object specifying the encoding), used as the encoding of the result. If not provided, `'utf8'` is used.
  */
 
-
 /**
  * Synchronous readdir(3) - read a directory.
  * @param path A path to a file. If a URL is provided, it must use the `file:` protocol.
@@ -87,7 +86,7 @@ external fun readdirSync(path: PathLike, options: String /* "buffer" */): js.arr
 external fun readdirSync(
     path: PathLike,
     options: (ReaddirSyncOptions)? = definedExternally,
-): Any /* string[] | Buffer[] */
+): Any // string[] | Buffer[]
 
 /**
  * Synchronous readdir(3) - read a directory.
@@ -95,10 +94,12 @@ external fun readdirSync(
  * @param options The encoding (or an object specifying the encoding), used as the encoding of the result. If not provided, `'utf8'` is used.
  */
 
-
 /**
  * Synchronous readdir(3) - read a directory.
  * @param path A path to a file. If a URL is provided, it must use the `file:` protocol.
  * @param options If called with `withFileTypes: true` the result data will be an array of Dirent.
  */
-external fun readdirSync(path: PathLike, options: ReaddirSyncWithFileTypesOptions): js.array.ReadonlyArray<Dirent>
+external fun readdirSync(
+    path: PathLike,
+    options: ReaddirSyncWithFileTypesOptions,
+): js.array.ReadonlyArray<Dirent>

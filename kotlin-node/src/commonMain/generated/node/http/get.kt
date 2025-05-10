@@ -66,7 +66,10 @@ import web.url.URL
  * @since v0.3.6
  * @param options Accepts the same `options` as {@link request}, with the method set to GET by default.
  */
-external fun get(options: RequestOptions, callback: (res: IncomingMessage) -> Unit = definedExternally): ClientRequest
+external fun get(
+    options: RequestOptions,
+    callback: (res: IncomingMessage) -> Unit = definedExternally,
+): ClientRequest
 
 /**
  * Since most requests are GET requests without bodies, Node.js provides this
@@ -128,7 +131,10 @@ external fun get(options: RequestOptions, callback: (res: IncomingMessage) -> Un
  * @since v0.3.6
  * @param options Accepts the same `options` as {@link request}, with the method set to GET by default.
  */
-external fun get(options: String, callback: (res: IncomingMessage) -> Unit = definedExternally): ClientRequest
+external fun get(
+    options: String,
+    callback: (res: IncomingMessage) -> Unit = definedExternally,
+): ClientRequest
 
 /**
  * Since most requests are GET requests without bodies, Node.js provides this
@@ -190,7 +196,10 @@ external fun get(options: String, callback: (res: IncomingMessage) -> Unit = def
  * @since v0.3.6
  * @param options Accepts the same `options` as {@link request}, with the method set to GET by default.
  */
-external fun get(options: URL, callback: (res: IncomingMessage) -> Unit = definedExternally): ClientRequest
+external fun get(
+    options: URL,
+    callback: (res: IncomingMessage) -> Unit = definedExternally,
+): ClientRequest
 
 external fun get(
     url: String,

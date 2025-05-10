@@ -27,5 +27,5 @@ sealed external interface ParseArgsOptionConfig {
      * When `multiple` is `true`, it must be an array.
      * @since v18.11.0
      */
-    var default: Any? /* string | boolean | string[] | boolean[] | undefined */
+    var default: Any? // string | boolean | string[] | boolean[] | undefined
 }

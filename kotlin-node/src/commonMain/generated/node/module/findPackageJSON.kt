@@ -14,12 +14,18 @@ external fun findPackageJSON(specifier: String): String?
 /**
  * @since v23.2.0, v22.14.0
  */
-external fun findPackageJSON(specifier: String, base: String = definedExternally): String?
+external fun findPackageJSON(
+    specifier: String,
+    base: String = definedExternally,
+): String?
 
 /**
  * @since v23.2.0, v22.14.0
  */
-external fun findPackageJSON(specifier: String, base: URL = definedExternally): String?
+external fun findPackageJSON(
+    specifier: String,
+    base: URL = definedExternally,
+): String?
 
 /**
  * @since v23.2.0, v22.14.0
@@ -29,9 +35,15 @@ external fun findPackageJSON(specifier: URL): String?
 /**
  * @since v23.2.0, v22.14.0
  */
-external fun findPackageJSON(specifier: URL, base: String = definedExternally): String?
+external fun findPackageJSON(
+    specifier: URL,
+    base: String = definedExternally,
+): String?
 
 /**
  * @since v23.2.0, v22.14.0
  */
-external fun findPackageJSON(specifier: URL, base: URL = definedExternally): String?
+external fun findPackageJSON(
+    specifier: URL,
+    base: URL = definedExternally,
+): String?

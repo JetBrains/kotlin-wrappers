@@ -4,4 +4,4 @@
 
 package node.dns
 
-external val FILE: String /* "EFILE" */
+external val FILE: String // "EFILE"

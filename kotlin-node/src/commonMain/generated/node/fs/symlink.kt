@@ -37,11 +37,20 @@ package node.fs
  * @since v0.1.31
  * @param [type='null']
  */
-external fun symlink(target: PathLike, path: PathLike, type: SymlinkType?, callback: NoParamCallback)
+external fun symlink(
+    target: PathLike,
+    path: PathLike,
+    type: SymlinkType?,
+    callback: NoParamCallback,
+)
 
 /**
  * Asynchronous symlink(2) - Create a new symbolic link to an existing file.
  * @param target A path to an existing file. If a URL is provided, it must use the `file:` protocol.
  * @param path A path to the new symlink. If a URL is provided, it must use the `file:` protocol.
  */
-external fun symlink(target: PathLike, path: PathLike, callback: NoParamCallback)
+external fun symlink(
+    target: PathLike,
+    path: PathLike,
+    callback: NoParamCallback,
+)

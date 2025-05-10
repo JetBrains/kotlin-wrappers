@@ -2,13 +2,11 @@
 
 package node.fs
 
-
 @seskar.js.JsAsync
 external suspend fun readFile(
     path: PathLike,
     options: (ReadFileBufferAsyncOptions)? = definedExternally,
 ): node.buffer.Buffer<*>
-
 
 /**
  * Asynchronously reads the entire contents of a file.
@@ -73,10 +71,11 @@ external suspend fun readFile(
     options: (ReadFileBufferAsyncOptions)? = definedExternally,
 ): node.buffer.Buffer<*>
 
-
 @seskar.js.JsAsync
-external suspend fun readFile(path: PathLike, options: ReadFileStringAsyncOptions): String
-
+external suspend fun readFile(
+    path: PathLike,
+    options: ReadFileStringAsyncOptions,
+): String
 
 /**
  * Asynchronously reads the entire contents of a file.
@@ -87,20 +86,10 @@ external suspend fun readFile(path: PathLike, options: ReadFileStringAsyncOption
  */
 
 @seskar.js.JsAsync
-external suspend fun readFile(path: PathLike, options: node.buffer.BufferEncoding): String
-
-
-/**
- * Asynchronously reads the entire contents of a file.
- * @param path A path to a file. If a URL is provided, it must use the `file:` protocol.
- * If a `FileHandle` is provided, the underlying file will _not_ be closed automatically.
- * @param options An object that may contain an optional flag.
- * If a flag is not provided, it defaults to `'r'`.
- */
-
-@seskar.js.JsAsync
-external suspend fun readFile(path: FileHandle, options: ReadFileStringAsyncOptions): String
-
+external suspend fun readFile(
+    path: PathLike,
+    options: node.buffer.BufferEncoding,
+): String
 
 /**
  * Asynchronously reads the entire contents of a file.
@@ -111,12 +100,27 @@ external suspend fun readFile(path: FileHandle, options: ReadFileStringAsyncOpti
  */
 
 @seskar.js.JsAsync
-external suspend fun readFile(path: FileHandle, options: node.buffer.BufferEncoding): String
+external suspend fun readFile(
+    path: FileHandle,
+    options: ReadFileStringAsyncOptions,
+): String
 
+/**
+ * Asynchronously reads the entire contents of a file.
+ * @param path A path to a file. If a URL is provided, it must use the `file:` protocol.
+ * If a `FileHandle` is provided, the underlying file will _not_ be closed automatically.
+ * @param options An object that may contain an optional flag.
+ * If a flag is not provided, it defaults to `'r'`.
+ */
 
 @seskar.js.JsAsync
-external suspend fun readFile(path: PathLike): Any /* string | Buffer */
+external suspend fun readFile(
+    path: FileHandle,
+    options: node.buffer.BufferEncoding,
+): String
 
+@seskar.js.JsAsync
+external suspend fun readFile(path: PathLike): Any // string | Buffer
 
 /**
  * Asynchronously reads the entire contents of a file.
@@ -130,8 +134,7 @@ external suspend fun readFile(path: PathLike): Any /* string | Buffer */
 external suspend fun readFile(
     path: PathLike,
     options: (ReadFileAsyncOptions)? = definedExternally,
-): Any /* string | Buffer */
-
+): Any // string | Buffer
 
 /**
  * Asynchronously reads the entire contents of a file.
@@ -145,8 +148,7 @@ external suspend fun readFile(
 external suspend fun readFile(
     path: PathLike,
     options: node.buffer.BufferEncoding? = definedExternally,
-): Any /* string | Buffer */
-
+): Any // string | Buffer
 
 /**
  * Asynchronously reads the entire contents of a file.
@@ -157,8 +159,7 @@ external suspend fun readFile(
  */
 
 @seskar.js.JsAsync
-external suspend fun readFile(path: FileHandle): Any /* string | Buffer */
-
+external suspend fun readFile(path: FileHandle): Any // string | Buffer
 
 /**
  * Asynchronously reads the entire contents of a file.
@@ -172,8 +173,7 @@ external suspend fun readFile(path: FileHandle): Any /* string | Buffer */
 external suspend fun readFile(
     path: FileHandle,
     options: (ReadFileAsyncOptions)? = definedExternally,
-): Any /* string | Buffer */
-
+): Any // string | Buffer
 
 /**
  * Asynchronously reads the entire contents of a file.
@@ -187,4 +187,4 @@ external suspend fun readFile(
 external suspend fun readFile(
     path: FileHandle,
     options: node.buffer.BufferEncoding? = definedExternally,
-): Any /* string | Buffer */
+): Any // string | Buffer

@@ -14,20 +14,26 @@ external fun globSync(pattern: String): js.array.ReadonlyArray<String>
  */
 external fun globSync(pattern: js.array.ReadonlyArray<String>): js.array.ReadonlyArray<String>
 
-external fun globSync(pattern: String, options: GlobOptionsWithFileTypes): js.array.ReadonlyArray<Dirent>
+external fun globSync(
+    pattern: String,
+    options: GlobOptionsWithFileTypes,
+): js.array.ReadonlyArray<Dirent>
 
 external fun globSync(
     pattern: js.array.ReadonlyArray<String>,
     options: GlobOptionsWithFileTypes,
 ): js.array.ReadonlyArray<Dirent>
 
-external fun globSync(pattern: String, options: GlobOptionsWithoutFileTypes): js.array.ReadonlyArray<String>
+external fun globSync(
+    pattern: String,
+    options: GlobOptionsWithoutFileTypes,
+): js.array.ReadonlyArray<String>
 
 external fun globSync(
     pattern: js.array.ReadonlyArray<String>,
     options: GlobOptionsWithoutFileTypes,
 ): js.array.ReadonlyArray<String>
 
-external fun globSync(pattern: String, options: GlobOptions): Any /* Dirent[] | string[] */
+external fun globSync(pattern: String, options: GlobOptions): Any // Dirent[] | string[]
 
-external fun globSync(pattern: js.array.ReadonlyArray<String>, options: GlobOptions): Any /* Dirent[] | string[] */
+external fun globSync(pattern: js.array.ReadonlyArray<String>, options: GlobOptions): Any // Dirent[] | string[]

@@ -69,7 +69,10 @@ import web.url.URL
  * @legacy Use the WHATWG URL API instead.
  * @param urlObject A URL object (as returned by `url.parse()` or constructed otherwise). If a string, it is converted to an object by passing it to `url.parse()`.
  */
-external fun format(urlObject: URL, options: URLFormatOptions = definedExternally): String
+external fun format(
+    urlObject: URL,
+    options: URLFormatOptions = definedExternally,
+): String
 
 /**
  * The `url.format()` method returns a formatted URL string derived from `urlObject`.

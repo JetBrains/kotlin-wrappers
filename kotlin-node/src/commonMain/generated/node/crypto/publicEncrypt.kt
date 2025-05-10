@@ -15,7 +15,10 @@ package node.crypto
  * be passed instead of a public key.
  * @since v0.11.14
  */
-external fun publicEncrypt(key: RsaPublicKey, buffer: js.buffer.ArrayBufferView<*>): node.buffer.Buffer<*>
+external fun publicEncrypt(
+    key: RsaPublicKey,
+    buffer: js.buffer.ArrayBufferView<*>,
+): node.buffer.Buffer<*>
 
 /**
  * Encrypts the content of `buffer` with `key` and returns a new `Buffer` with encrypted content. The returned data can be decrypted using
@@ -28,7 +31,10 @@ external fun publicEncrypt(key: RsaPublicKey, buffer: js.buffer.ArrayBufferView<
  * be passed instead of a public key.
  * @since v0.11.14
  */
-external fun publicEncrypt(key: RsaPublicKey, buffer: String): node.buffer.Buffer<*>
+external fun publicEncrypt(
+    key: RsaPublicKey,
+    buffer: String,
+): node.buffer.Buffer<*>
 
 /**
  * Encrypts the content of `buffer` with `key` and returns a new `Buffer` with encrypted content. The returned data can be decrypted using
@@ -41,7 +47,10 @@ external fun publicEncrypt(key: RsaPublicKey, buffer: String): node.buffer.Buffe
  * be passed instead of a public key.
  * @since v0.11.14
  */
-external fun publicEncrypt(key: RsaPrivateKey, buffer: js.buffer.ArrayBufferView<*>): node.buffer.Buffer<*>
+external fun publicEncrypt(
+    key: RsaPrivateKey,
+    buffer: js.buffer.ArrayBufferView<*>,
+): node.buffer.Buffer<*>
 
 /**
  * Encrypts the content of `buffer` with `key` and returns a new `Buffer` with encrypted content. The returned data can be decrypted using
@@ -54,7 +63,10 @@ external fun publicEncrypt(key: RsaPrivateKey, buffer: js.buffer.ArrayBufferView
  * be passed instead of a public key.
  * @since v0.11.14
  */
-external fun publicEncrypt(key: RsaPrivateKey, buffer: String): node.buffer.Buffer<*>
+external fun publicEncrypt(
+    key: RsaPrivateKey,
+    buffer: String,
+): node.buffer.Buffer<*>
 
 /**
  * Encrypts the content of `buffer` with `key` and returns a new `Buffer` with encrypted content. The returned data can be decrypted using
@@ -67,7 +79,10 @@ external fun publicEncrypt(key: RsaPrivateKey, buffer: String): node.buffer.Buff
  * be passed instead of a public key.
  * @since v0.11.14
  */
-external fun publicEncrypt(key: KeyLike, buffer: js.buffer.ArrayBufferView<*>): node.buffer.Buffer<*>
+external fun publicEncrypt(
+    key: KeyLike,
+    buffer: js.buffer.ArrayBufferView<*>,
+): node.buffer.Buffer<*>
 
 /**
  * Encrypts the content of `buffer` with `key` and returns a new `Buffer` with encrypted content. The returned data can be decrypted using
@@ -80,4 +95,7 @@ external fun publicEncrypt(key: KeyLike, buffer: js.buffer.ArrayBufferView<*>): 
  * be passed instead of a public key.
  * @since v0.11.14
  */
-external fun publicEncrypt(key: KeyLike, buffer: String): node.buffer.Buffer<*>
+external fun publicEncrypt(
+    key: KeyLike,
+    buffer: String,
+): node.buffer.Buffer<*>

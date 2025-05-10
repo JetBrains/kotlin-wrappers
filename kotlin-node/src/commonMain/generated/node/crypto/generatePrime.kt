@@ -33,7 +33,10 @@ import js.buffer.ArrayBuffer
  * @since v15.8.0
  * @param size The size (in bits) of the prime to generate.
  */
-external fun generatePrime(size: Number, callback: (err: js.errors.JsError?, prime: ArrayBuffer) -> Unit)
+external fun generatePrime(
+    size: Number,
+    callback: (err: js.errors.JsError?, prime: ArrayBuffer) -> Unit,
+)
 
 external fun generatePrime(
     size: Number,

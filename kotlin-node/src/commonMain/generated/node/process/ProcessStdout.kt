@@ -3,5 +3,5 @@
 package node.process
 
 sealed external interface ProcessStdout : WriteStream {
-    var fd: Double /* 1 */
+    var fd: Double // 1
 }

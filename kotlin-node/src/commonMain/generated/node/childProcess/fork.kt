@@ -56,7 +56,10 @@ import web.url.URL
  * @param modulePath The module to run in the child.
  * @param args List of string arguments.
  */
-external fun fork(modulePath: String, options: ForkOptions = definedExternally): ChildProcess
+external fun fork(
+    modulePath: String,
+    options: ForkOptions = definedExternally,
+): ChildProcess
 
 /**
  * The `child_process.fork()` method is a special case of {@link spawn} used specifically to spawn new Node.js processes.
@@ -107,7 +110,10 @@ external fun fork(modulePath: String, options: ForkOptions = definedExternally):
  * @param modulePath The module to run in the child.
  * @param args List of string arguments.
  */
-external fun fork(modulePath: URL, options: ForkOptions = definedExternally): ChildProcess
+external fun fork(
+    modulePath: URL,
+    options: ForkOptions = definedExternally,
+): ChildProcess
 
 external fun fork(
     modulePath: String,

@@ -4,4 +4,4 @@
 
 package node.dns
 
-/* export { dnsPromises as promises }; */
+// export { dnsPromises as promises };

@@ -87,7 +87,11 @@ external class Hmac : node.stream.Transform {
      * @param inputEncoding The `encoding` of the `data` string.
      */
     fun update(data: BinaryLike): Hmac
-    fun update(data: String, inputEncoding: Encoding): Hmac
+
+    fun update(
+        data: String,
+        inputEncoding: Encoding,
+    ): Hmac
 
     /**
      * Calculates the HMAC digest of all of the data passed using `hmac.update()`.
@@ -100,5 +104,6 @@ external class Hmac : node.stream.Transform {
      * @param encoding The `encoding` of the return value.
      */
     fun digest(): node.buffer.Buffer<*>
+
     fun digest(encoding: BinaryToTextEncoding): String
 }

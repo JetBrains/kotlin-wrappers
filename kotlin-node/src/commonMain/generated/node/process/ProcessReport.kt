@@ -69,6 +69,10 @@ sealed external interface ProcessReport {
      * @param err A custom error used for reporting the JavaScript stack.
      * @return Filename of the generated report.
      */
-    fun writeReport(fileName: String = definedExternally, err: js.errors.JsError = definedExternally): String
+    fun writeReport(
+        fileName: String = definedExternally,
+        err: js.errors.JsError = definedExternally,
+    ): String
+
     fun writeReport(err: js.errors.JsError = definedExternally): String
 }

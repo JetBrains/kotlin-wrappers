@@ -14,4 +14,7 @@ package node.fs
  * directory and subsequent read operations.
  * @since v12.12.0
  */
-external fun opendirSync(path: PathLike, options: OpenDirOptions = definedExternally): Dir
+external fun opendirSync(
+    path: PathLike,
+    options: OpenDirOptions = definedExternally,
+): Dir

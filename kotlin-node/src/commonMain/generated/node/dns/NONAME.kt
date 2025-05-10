@@ -4,4 +4,4 @@
 
 package node.dns
 
-external val NONAME: String /* "ENONAME" */
+external val NONAME: String // "ENONAME"

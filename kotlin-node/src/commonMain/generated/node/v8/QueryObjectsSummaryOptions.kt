@@ -3,5 +3,5 @@
 package node.v8
 
 sealed external interface QueryObjectsSummaryOptions {
-    var format: String /* "summary" */
+    var format: String // "summary"
 }

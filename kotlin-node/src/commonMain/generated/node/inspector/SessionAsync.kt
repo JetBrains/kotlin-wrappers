@@ -61,7 +61,10 @@ external class Session : EventEmitter {
      * with one of the runtime agents used to inspect the application state and listen
      * to the run-time events.
      */
-    fun post(method: String, params: Any = definedExternally): Promise<js.core.Void>
+    fun post(
+        method: String,
+        params: Any = definedExternally,
+    ): Promise<js.core.Void>
 
     /**
      * Returns supported domains.
@@ -395,7 +398,9 @@ external class Session : EventEmitter {
      * Does nothing.
      */
     fun post(method: SessionMethod.CONSOLE_CLEARMESSAGES): Promise<js.core.Void>
+
     fun post(method: SessionMethod.PROFILER_ENABLE): Promise<js.core.Void>
+
     fun post(method: SessionMethod.PROFILER_DISABLE): Promise<js.core.Void>
 
     /**
@@ -407,6 +412,7 @@ external class Session : EventEmitter {
     ): Promise<js.core.Void>
 
     fun post(method: SessionMethod.PROFILER_START): Promise<js.core.Void>
+
     fun post(method: SessionMethod.PROFILER_STOP): Promise<node.inspector.profiler.StopReturnType>
 
     /**
@@ -425,14 +431,21 @@ external class Session : EventEmitter {
     /**
      * Collect coverage data for the current isolate, and resets execution counters. Precise code coverage needs to have started.
      */
-    fun post(method: SessionMethod.PROFILER_TAKEPRECISECOVERAGE): Promise<node.inspector.profiler.TakePreciseCoverageReturnType>
+    fun post(
+        method: SessionMethod.PROFILER_TAKEPRECISECOVERAGE,
+    ): Promise<node.inspector.profiler.TakePreciseCoverageReturnType>
 
     /**
      * Collect coverage data for the current isolate. The coverage data may be incomplete due to garbage collection.
      */
-    fun post(method: SessionMethod.PROFILER_GETBESTEFFORTCOVERAGE): Promise<node.inspector.profiler.GetBestEffortCoverageReturnType>
+    fun post(
+        method: SessionMethod.PROFILER_GETBESTEFFORTCOVERAGE,
+    ): Promise<node.inspector.profiler.GetBestEffortCoverageReturnType>
+
     fun post(method: SessionMethod.HEAPPROFILER_ENABLE): Promise<js.core.Void>
+
     fun post(method: SessionMethod.HEAPPROFILER_DISABLE): Promise<js.core.Void>
+
     fun post(
         method: SessionMethod.HEAPPROFILER_STARTTRACKINGHEAPOBJECTS,
         params: node.inspector.heapprofiler.StartTrackingHeapObjectsParameterType = definedExternally,
@@ -449,6 +462,7 @@ external class Session : EventEmitter {
     ): Promise<js.core.Void>
 
     fun post(method: SessionMethod.HEAPPROFILER_COLLECTGARBAGE): Promise<js.core.Void>
+
     fun post(
         method: SessionMethod.HEAPPROFILER_GETOBJECTBYHEAPOBJECTID,
         params: node.inspector.heapprofiler.GetObjectByHeapObjectIdParameterType = definedExternally,
@@ -472,8 +486,13 @@ external class Session : EventEmitter {
         params: node.inspector.heapprofiler.StartSamplingParameterType = definedExternally,
     ): Promise<js.core.Void>
 
-    fun post(method: SessionMethod.HEAPPROFILER_STOPSAMPLING): Promise<node.inspector.heapprofiler.StopSamplingReturnType>
-    fun post(method: SessionMethod.HEAPPROFILER_GETSAMPLINGPROFILE): Promise<node.inspector.heapprofiler.GetSamplingProfileReturnType>
+    fun post(
+        method: SessionMethod.HEAPPROFILER_STOPSAMPLING,
+    ): Promise<node.inspector.heapprofiler.StopSamplingReturnType>
+
+    fun post(
+        method: SessionMethod.HEAPPROFILER_GETSAMPLINGPROFILE,
+    ): Promise<node.inspector.heapprofiler.GetSamplingProfileReturnType>
 
     /**
      * Gets supported tracing categories.
@@ -552,7 +571,7 @@ external class Session : EventEmitter {
         params: node.inspector.noderuntime.NotifyWhenWaitingForDisconnectParameterType = definedExternally,
     ): Promise<js.core.Void>
 
-    fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
+    fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
     /**
      * Emitted when any notification from the V8 Inspector is received.
      */
@@ -613,7 +632,6 @@ external class Session : EventEmitter {
      * Sent when new profile recording is started using console.profile() call.
      */
 
-
     /**
      * If heap objects tracking has been started then backend regularly sends a current value for last seen object id and corresponding timestamp. If the were changes in the heap since last event then one or more heapStatsUpdate events will be sent before a new lastSeenObjectId event.
      */
@@ -651,7 +669,6 @@ external class Session : EventEmitter {
     /**
      * Fired when HTTP response is available.
      */
-
 
     /**
      * This event is fired instead of `Runtime.executionContextDestroyed` when
@@ -665,12 +682,17 @@ external class Session : EventEmitter {
      * example, when inspector.waitingForDebugger is called
      */
 
-    fun emit(event: String, vararg args: Any?): Boolean
+    fun emit(
+        event: String,
+        vararg args: Any?,
+    ): Boolean
 
-    fun emit(event: js.symbol.Symbol, vararg args: Any?): Boolean
+    fun emit(
+        event: js.symbol.Symbol,
+        vararg args: Any?,
+    ): Boolean
 
-
-    fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
+    fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
     /**
      * Emitted when any notification from the V8 Inspector is received.
      */
@@ -731,7 +753,6 @@ external class Session : EventEmitter {
      * Sent when new profile recording is started using console.profile() call.
      */
 
-
     /**
      * If heap objects tracking has been started then backend regularly sends a current value for last seen object id and corresponding timestamp. If the were changes in the heap since last event then one or more heapStatsUpdate events will be sent before a new lastSeenObjectId event.
      */
@@ -769,7 +790,6 @@ external class Session : EventEmitter {
     /**
      * Fired when HTTP response is available.
      */
-
 
     /**
      * This event is fired instead of `Runtime.executionContextDestroyed` when
@@ -783,7 +803,7 @@ external class Session : EventEmitter {
      * example, when inspector.waitingForDebugger is called
      */
 
-    fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
+    fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
     /**
      * Emitted when any notification from the V8 Inspector is received.
      */
@@ -844,7 +864,6 @@ external class Session : EventEmitter {
      * Sent when new profile recording is started using console.profile() call.
      */
 
-
     /**
      * If heap objects tracking has been started then backend regularly sends a current value for last seen object id and corresponding timestamp. If the were changes in the heap since last event then one or more heapStatsUpdate events will be sent before a new lastSeenObjectId event.
      */
@@ -882,7 +901,6 @@ external class Session : EventEmitter {
     /**
      * Fired when HTTP response is available.
      */
-
 
     /**
      * This event is fired instead of `Runtime.executionContextDestroyed` when
@@ -896,7 +914,7 @@ external class Session : EventEmitter {
      * example, when inspector.waitingForDebugger is called
      */
 
-    fun prependListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
+    fun prependListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
     /**
      * Emitted when any notification from the V8 Inspector is received.
      */
@@ -957,7 +975,6 @@ external class Session : EventEmitter {
      * Sent when new profile recording is started using console.profile() call.
      */
 
-
     /**
      * If heap objects tracking has been started then backend regularly sends a current value for last seen object id and corresponding timestamp. If the were changes in the heap since last event then one or more heapStatsUpdate events will be sent before a new lastSeenObjectId event.
      */
@@ -995,7 +1012,6 @@ external class Session : EventEmitter {
     /**
      * Fired when HTTP response is available.
      */
-
 
     /**
      * This event is fired instead of `Runtime.executionContextDestroyed` when
@@ -1009,7 +1025,7 @@ external class Session : EventEmitter {
      * example, when inspector.waitingForDebugger is called
      */
 
-    fun prependOnceListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
+    fun prependOnceListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
     /**
      * Emitted when any notification from the V8 Inspector is received.
      */
@@ -1070,7 +1086,6 @@ external class Session : EventEmitter {
      * Sent when new profile recording is started using console.profile() call.
      */
 
-
     /**
      * If heap objects tracking has been started then backend regularly sends a current value for last seen object id and corresponding timestamp. If the were changes in the heap since last event then one or more heapStatsUpdate events will be sent before a new lastSeenObjectId event.
      */
@@ -1108,7 +1123,6 @@ external class Session : EventEmitter {
     /**
      * Fired when HTTP response is available.
      */
-
 
     /**
      * This event is fired instead of `Runtime.executionContextDestroyed` when
@@ -1126,91 +1140,116 @@ external class Session : EventEmitter {
     val inspectorNotificationEvent: node.events.EventInstance<js.array.Tuple1<InspectorNotification<Any>>>
 
     @web.events.JsEvent("Runtime.executionContextCreated")
-    val RuntimeExecutionContextCreatedEvent: node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.runtime.ExecutionContextCreatedEventDataType>>>
+    val RuntimeExecutionContextCreatedEvent:
+            node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.runtime.ExecutionContextCreatedEventDataType>>>
 
     @web.events.JsEvent("Runtime.executionContextDestroyed")
-    val RuntimeExecutionContextDestroyedEvent: node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.runtime.ExecutionContextDestroyedEventDataType>>>
+    val RuntimeExecutionContextDestroyedEvent:
+            node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.runtime.ExecutionContextDestroyedEventDataType>>>
 
     @web.events.JsEvent("Runtime.executionContextsCleared")
     val RuntimeExecutionContextsClearedEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("Runtime.exceptionThrown")
-    val RuntimeExceptionThrownEvent: node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.runtime.ExceptionThrownEventDataType>>>
+    val RuntimeExceptionThrownEvent:
+            node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.runtime.ExceptionThrownEventDataType>>>
 
     @web.events.JsEvent("Runtime.exceptionRevoked")
-    val RuntimeExceptionRevokedEvent: node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.runtime.ExceptionRevokedEventDataType>>>
+    val RuntimeExceptionRevokedEvent:
+            node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.runtime.ExceptionRevokedEventDataType>>>
 
     @web.events.JsEvent("Runtime.consoleAPICalled")
-    val RuntimeConsoleAPICalledEvent: node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.runtime.ConsoleAPICalledEventDataType>>>
+    val RuntimeConsoleAPICalledEvent:
+            node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.runtime.ConsoleAPICalledEventDataType>>>
 
     @web.events.JsEvent("Runtime.inspectRequested")
-    val RuntimeInspectRequestedEvent: node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.runtime.InspectRequestedEventDataType>>>
+    val RuntimeInspectRequestedEvent:
+            node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.runtime.InspectRequestedEventDataType>>>
 
     @web.events.JsEvent("Debugger.scriptParsed")
-    val DebuggerScriptParsedEvent: node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.debugger.ScriptParsedEventDataType>>>
+    val DebuggerScriptParsedEvent:
+            node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.debugger.ScriptParsedEventDataType>>>
 
     @web.events.JsEvent("Debugger.scriptFailedToParse")
-    val DebuggerScriptFailedToParseEvent: node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.debugger.ScriptFailedToParseEventDataType>>>
+    val DebuggerScriptFailedToParseEvent:
+            node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.debugger.ScriptFailedToParseEventDataType>>>
 
     @web.events.JsEvent("Debugger.breakpointResolved")
-    val DebuggerBreakpointResolvedEvent: node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.debugger.BreakpointResolvedEventDataType>>>
+    val DebuggerBreakpointResolvedEvent:
+            node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.debugger.BreakpointResolvedEventDataType>>>
 
     @web.events.JsEvent("Debugger.paused")
-    val DebuggerPausedEvent: node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.debugger.PausedEventDataType>>>
+    val DebuggerPausedEvent:
+            node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.debugger.PausedEventDataType>>>
 
     @web.events.JsEvent("Debugger.resumed")
     val DebuggerResumedEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("Console.messageAdded")
-    val ConsoleMessageAddedEvent: node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.console.MessageAddedEventDataType>>>
+    val ConsoleMessageAddedEvent:
+            node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.console.MessageAddedEventDataType>>>
 
     @web.events.JsEvent("Profiler.consoleProfileStarted")
-    val ProfilerConsoleProfileStartedEvent: node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.profiler.ConsoleProfileStartedEventDataType>>>
+    val ProfilerConsoleProfileStartedEvent:
+            node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.profiler.ConsoleProfileStartedEventDataType>>>
 
     @web.events.JsEvent("Profiler.consoleProfileFinished")
-    val ProfilerConsoleProfileFinishedEvent: node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.profiler.ConsoleProfileFinishedEventDataType>>>
+    val ProfilerConsoleProfileFinishedEvent:
+            node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.profiler.ConsoleProfileFinishedEventDataType>>>
 
     @web.events.JsEvent("HeapProfiler.addHeapSnapshotChunk")
-    val HeapProfilerAddHeapSnapshotChunkEvent: node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.heapprofiler.AddHeapSnapshotChunkEventDataType>>>
+    val HeapProfilerAddHeapSnapshotChunkEvent:
+            node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.heapprofiler.AddHeapSnapshotChunkEventDataType>>>
 
     @web.events.JsEvent("HeapProfiler.resetProfiles")
     val HeapProfilerResetProfilesEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("HeapProfiler.reportHeapSnapshotProgress")
-    val HeapProfilerReportHeapSnapshotProgressEvent: node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.heapprofiler.ReportHeapSnapshotProgressEventDataType>>>
+    val HeapProfilerReportHeapSnapshotProgressEvent:
+            node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.heapprofiler.ReportHeapSnapshotProgressEventDataType>>>
 
     @web.events.JsEvent("HeapProfiler.lastSeenObjectId")
-    val HeapProfilerLastSeenObjectIdEvent: node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.heapprofiler.LastSeenObjectIdEventDataType>>>
+    val HeapProfilerLastSeenObjectIdEvent:
+            node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.heapprofiler.LastSeenObjectIdEventDataType>>>
 
     @web.events.JsEvent("HeapProfiler.heapStatsUpdate")
-    val HeapProfilerHeapStatsUpdateEvent: node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.heapprofiler.HeapStatsUpdateEventDataType>>>
+    val HeapProfilerHeapStatsUpdateEvent:
+            node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.heapprofiler.HeapStatsUpdateEventDataType>>>
 
     @web.events.JsEvent("NodeTracing.dataCollected")
-    val NodeTracingDataCollectedEvent: node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.nodetracing.DataCollectedEventDataType>>>
+    val NodeTracingDataCollectedEvent:
+            node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.nodetracing.DataCollectedEventDataType>>>
 
     @web.events.JsEvent("NodeTracing.tracingComplete")
     val NodeTracingTracingCompleteEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("NodeWorker.attachedToWorker")
-    val NodeWorkerAttachedToWorkerEvent: node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.nodeworker.AttachedToWorkerEventDataType>>>
+    val NodeWorkerAttachedToWorkerEvent:
+            node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.nodeworker.AttachedToWorkerEventDataType>>>
 
     @web.events.JsEvent("NodeWorker.detachedFromWorker")
-    val NodeWorkerDetachedFromWorkerEvent: node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.nodeworker.DetachedFromWorkerEventDataType>>>
+    val NodeWorkerDetachedFromWorkerEvent:
+            node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.nodeworker.DetachedFromWorkerEventDataType>>>
 
     @web.events.JsEvent("NodeWorker.receivedMessageFromWorker")
-    val NodeWorkerReceivedMessageFromWorkerEvent: node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.nodeworker.ReceivedMessageFromWorkerEventDataType>>>
+    val NodeWorkerReceivedMessageFromWorkerEvent:
+            node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.nodeworker.ReceivedMessageFromWorkerEventDataType>>>
 
     @web.events.JsEvent("Network.requestWillBeSent")
-    val NetworkRequestWillBeSentEvent: node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.network.RequestWillBeSentEventDataType>>>
+    val NetworkRequestWillBeSentEvent:
+            node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.network.RequestWillBeSentEventDataType>>>
 
     @web.events.JsEvent("Network.responseReceived")
-    val NetworkResponseReceivedEvent: node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.network.ResponseReceivedEventDataType>>>
+    val NetworkResponseReceivedEvent:
+            node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.network.ResponseReceivedEventDataType>>>
 
     @web.events.JsEvent("Network.loadingFailed")
-    val NetworkLoadingFailedEvent: node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.network.LoadingFailedEventDataType>>>
+    val NetworkLoadingFailedEvent:
+            node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.network.LoadingFailedEventDataType>>>
 
     @web.events.JsEvent("Network.loadingFinished")
-    val NetworkLoadingFinishedEvent: node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.network.LoadingFinishedEventDataType>>>
+    val NetworkLoadingFinishedEvent:
+            node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.network.LoadingFinishedEventDataType>>>
 
     @web.events.JsEvent("NodeRuntime.waitingForDisconnect")
     val NodeRuntimeWaitingForDisconnectEvent: node.events.EventInstance<js.array.Tuple>

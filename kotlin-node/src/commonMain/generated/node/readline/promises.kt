@@ -9,5 +9,4 @@ package node.readline
  * @experimental
  */
 
-
-/* export * from "readline/promises"; */
+// export * from "readline/promises";

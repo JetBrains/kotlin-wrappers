@@ -26,5 +26,8 @@ sealed external interface ProcessPermission {
      * ```
      * @since v20.0.0
      */
-    fun has(scope: String, reference: String = definedExternally): Boolean
+    fun has(
+        scope: String,
+        reference: String = definedExternally,
+    ): Boolean
 }

@@ -13,4 +13,9 @@ package node.fs
  * callback.
  * @since v14.5.0, v12.19.0
  */
-external fun lutimes(path: PathLike, atime: TimeLike, mtime: TimeLike, callback: NoParamCallback)
+external fun lutimes(
+    path: PathLike,
+    atime: TimeLike,
+    mtime: TimeLike,
+    callback: NoParamCallback,
+)

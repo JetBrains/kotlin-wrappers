@@ -91,10 +91,16 @@ sealed external interface CallSite {
      * if the CallSite is not an async
      */
     fun getPromiseIndex(): Double?
+
     fun getScriptNameOrSourceURL(): String
+
     fun getScriptHash(): String
+
     fun getEnclosingColumnNumber(): Double
+
     fun getEnclosingLineNumber(): Double
+
     fun getPosition(): Double
+
     override fun toString(): String
 }

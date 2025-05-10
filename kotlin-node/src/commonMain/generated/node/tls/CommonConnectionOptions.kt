@@ -26,7 +26,7 @@ sealed external interface CommonConnectionOptions {
      * An array of strings or a Buffer naming possible ALPN protocols.
      * (Protocols should be ordered by their priority.)
      */
-    var ALPNProtocols: Any? /* string[] | Uint8Array[] | Uint8Array | undefined */
+    var ALPNProtocols: Any? // string[] | Uint8Array[] | Uint8Array | undefined
 
     /**
      * SNICallback(servername, cb) <Function> A function that will be
@@ -37,7 +37,12 @@ sealed external interface CommonConnectionOptions {
      * SecureContext.) If SNICallback wasn't provided the default callback
      * with high-level API will be used (see below).
      */
-    var SNICallback: ((servername: String, cb: (err: js.errors.JsError?, ctx: SecureContext? /* use undefined for default */) -> Unit) -> Unit)?
+    var SNICallback: (
+        (
+        servername: String,
+        cb: (err: js.errors.JsError?, ctx: SecureContext? /* use undefined for default */) -> Unit,
+    ) -> Unit
+    )?
 
     /**
      * If true the server will reject any connection which is not

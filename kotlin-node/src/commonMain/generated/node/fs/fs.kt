@@ -25,5 +25,4 @@ package node.fs
  * @see [source](https://github.com/nodejs/node/blob/v22.x/lib/fs.js)
  */
 
-
-/* export * from "fs"; */
+// export * from "fs";

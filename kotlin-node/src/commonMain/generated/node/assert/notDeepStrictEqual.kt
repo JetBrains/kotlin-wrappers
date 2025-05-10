@@ -21,7 +21,10 @@ package node.assert
  * instead of the `AssertionError`.
  * @since v1.2.0
  */
-external fun notDeepEqual(actual: Any?, expected: Any?)
+external fun notDeepEqual(
+    actual: Any?,
+    expected: Any?,
+)
 
 /**
  * Tests for deep strict inequality. Opposite of {@link deepStrictEqual}.
@@ -40,7 +43,11 @@ external fun notDeepEqual(actual: Any?, expected: Any?)
  * instead of the `AssertionError`.
  * @since v1.2.0
  */
-external fun notDeepEqual(actual: Any?, expected: Any?, message: String = definedExternally)
+external fun notDeepEqual(
+    actual: Any?,
+    expected: Any?,
+    message: String = definedExternally,
+)
 
 /**
  * Tests for deep strict inequality. Opposite of {@link deepStrictEqual}.
@@ -59,4 +66,8 @@ external fun notDeepEqual(actual: Any?, expected: Any?, message: String = define
  * instead of the `AssertionError`.
  * @since v1.2.0
  */
-external fun notDeepEqual(actual: Any?, expected: Any?, message: js.errors.JsError = definedExternally)
+external fun notDeepEqual(
+    actual: Any?,
+    expected: Any?,
+    message: js.errors.JsError = definedExternally,
+)

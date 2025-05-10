@@ -50,7 +50,10 @@ external class Script {
      * @param contextifiedObject A `contextified` object as returned by the `vm.createContext()` method.
      * @return the result of the very last statement executed in the script.
      */
-    fun runInContext(contextifiedObject: Context, options: RunningScriptOptions = definedExternally): Any?
+    fun runInContext(
+        contextifiedObject: Context,
+        options: RunningScriptOptions = definedExternally,
+    ): Any?
 
     /**
      * This method is a shortcut to `script.runInContext(vm.createContext(options), options)`.

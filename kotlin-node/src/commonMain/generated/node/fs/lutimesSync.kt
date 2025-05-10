@@ -10,4 +10,8 @@ package node.fs
  * the operation fails. This is the synchronous version of {@link lutimes}.
  * @since v14.5.0, v12.19.0
  */
-external fun lutimesSync(path: PathLike, atime: TimeLike, mtime: TimeLike)
+external fun lutimesSync(
+    path: PathLike,
+    atime: TimeLike,
+    mtime: TimeLike,
+)

@@ -31,7 +31,10 @@ import web.url.URL
  * @param url The file URL string or URL object to convert to a path.
  * @return The fully-resolved platform-specific Node.js file path.
  */
-external fun fileURLToPath(url: String, options: FileUrlToPathOptions = definedExternally): String
+external fun fileURLToPath(
+    url: String,
+    options: FileUrlToPathOptions = definedExternally,
+): String
 
 /**
  * This function ensures the correct decodings of percent-encoded characters as
@@ -58,4 +61,7 @@ external fun fileURLToPath(url: String, options: FileUrlToPathOptions = definedE
  * @param url The file URL string or URL object to convert to a path.
  * @return The fully-resolved platform-specific Node.js file path.
  */
-external fun fileURLToPath(url: URL, options: FileUrlToPathOptions = definedExternally): String
+external fun fileURLToPath(
+    url: URL,
+    options: FileUrlToPathOptions = definedExternally,
+): String

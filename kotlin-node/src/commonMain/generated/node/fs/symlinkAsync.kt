@@ -21,4 +21,8 @@ import js.promise.Promise
  */
 
 @JsName("symlink")
-external fun symlinkAsync(target: PathLike, path: PathLike, type: String? = definedExternally): Promise<js.core.Void>
+external fun symlinkAsync(
+    target: PathLike,
+    path: PathLike,
+    type: String? = definedExternally,
+): Promise<js.core.Void>

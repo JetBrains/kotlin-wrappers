@@ -52,20 +52,25 @@ import js.promise.Promise
  */
 
 @JsName("lookup")
-external fun lookupAsync(hostname: String, family: Number): Promise<LookupAddress>
-
-
-@JsName("lookup")
-external fun lookupAsync(hostname: String, options: LookupOneOptions): Promise<LookupAddress>
-
+external fun lookupAsync(
+    hostname: String,
+    family: Number,
+): Promise<LookupAddress>
 
 @JsName("lookup")
-external fun lookupAsync(hostname: String, options: LookupAllOptions): Promise<js.array.ReadonlyArray<LookupAddress>>
+external fun lookupAsync(
+    hostname: String,
+    options: LookupOneOptions,
+): Promise<LookupAddress>
 
+@JsName("lookup")
+external fun lookupAsync(
+    hostname: String,
+    options: LookupAllOptions,
+): Promise<js.array.ReadonlyArray<LookupAddress>>
 
 @JsName("lookup")
 external fun lookupAsync(hostname: String, options: LookupOptions): Promise<Any /* LookupAddress | LookupAddress[] */>
-
 
 @JsName("lookup")
 external fun lookupAsync(hostname: String): Promise<LookupAddress>

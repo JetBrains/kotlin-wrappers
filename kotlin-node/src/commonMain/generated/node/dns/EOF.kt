@@ -4,4 +4,4 @@
 
 package node.dns
 
-external val EOF: String /* "EOF" */
+external val EOF: String // "EOF"

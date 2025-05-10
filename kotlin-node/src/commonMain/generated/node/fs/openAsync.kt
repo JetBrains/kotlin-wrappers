@@ -23,7 +23,6 @@ import js.promise.Promise
 @JsName("open")
 external fun openAsync(path: PathLike): Promise<FileHandle>
 
-
 /**
  * Opens a `FileHandle`.
  *
@@ -44,7 +43,6 @@ external fun openAsync(
     flags: String = definedExternally,
     mode: Mode = definedExternally,
 ): Promise<FileHandle>
-
 
 /**
  * Opens a `FileHandle`.

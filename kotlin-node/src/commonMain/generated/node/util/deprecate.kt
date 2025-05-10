@@ -52,4 +52,8 @@ package node.util
  * @param code A deprecation code. See the `list of deprecated APIs` for a list of codes.
  * @return The deprecated function wrapped to emit a warning.
  */
-external fun <T : Function<*>> deprecate(fn: T, msg: String, code: String = definedExternally): T
+external fun <T : Function<*>> deprecate(
+    fn: T,
+    msg: String,
+    code: String = definedExternally,
+): T

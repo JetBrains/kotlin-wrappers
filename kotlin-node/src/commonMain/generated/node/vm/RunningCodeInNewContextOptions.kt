@@ -3,6 +3,6 @@
 package node.vm
 
 sealed external interface RunningCodeInNewContextOptions : RunningScriptInNewContextOptions {
-    var cachedData: Any? /* Buffer<ArrayBufferLike> | ArrayBufferView<ArrayBufferLike> | undefined */
-    var importModuleDynamically: Any? /* number | ((specifier: string, script: Script, importAttributes: ImportAttributes) => Module | Promise<Module>) | undefined */
+    var cachedData: Any? // Buffer<ArrayBufferLike> | ArrayBufferView<ArrayBufferLike> | undefined
+    var importModuleDynamically: Any? // number | ((specifier: string, script: Script, importAttributes: ImportAttributes) => Module | Promise<Module>) | undefined
 }

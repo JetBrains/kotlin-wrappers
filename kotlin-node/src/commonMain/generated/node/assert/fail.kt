@@ -80,7 +80,10 @@ external fun fail(message: String = definedExternally): Nothing
 external fun fail(message: js.errors.JsError = definedExternally): Nothing
 
 /** @deprecated since v10.0.0 - use fail([message]) or other assert functions instead. */
-external fun fail(actual: Any?, expected: Any?): Nothing
+external fun fail(
+    actual: Any?,
+    expected: Any?,
+): Nothing
 
 /** @deprecated since v10.0.0 - use fail([message]) or other assert functions instead. */
 external fun fail(

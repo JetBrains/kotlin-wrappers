@@ -2,6 +2,9 @@
 
 package node.fs
 
-
 @seskar.js.JsAsync
-external suspend fun utimes(path: PathLike, atime: TimeLike, mtime: TimeLike): js.core.Void
+external suspend fun utimes(
+    path: PathLike,
+    atime: TimeLike,
+    mtime: TimeLike,
+): js.core.Void

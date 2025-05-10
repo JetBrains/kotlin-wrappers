@@ -31,8 +31,9 @@ open external class Server<Request : IncomingMessage, Response : ServerResponse<
      * @since v0.9.12
      * @param [msecs=0 (no timeout)]
      */
-    fun setTimeout(msecs: Number = definedExternally, callback: () -> Unit = definedExternally) /* this */
-    fun setTimeout(callback: () -> Unit) /* this */
+    fun setTimeout(msecs: Number = definedExternally, callback: () -> Unit = definedExternally) // this
+
+    fun setTimeout(callback: () -> Unit) // this
 
     /**
      * Limits maximum incoming headers count. If set to 0, no limit will be applied.
@@ -122,29 +123,21 @@ open external class Server<Request : IncomingMessage, Response : ServerResponse<
      * @since v18.2.0
      */
     open fun closeIdleConnections()
-    override fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
+    override fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
 
-    override fun emit(event: String, vararg args: Any?): Boolean
-
-
-    override fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
-
-
-    override fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
-
-
-    override fun prependListener(
+    override fun emit(
         event: String,
-        listener: Function<Unit>, /* (...args: any[]) => void */
-    ) /* this */
+        vararg args: Any?,
+    ): Boolean
 
+    override fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
 
-    override fun prependOnceListener(
-        event: String,
-        listener: Function<Unit>, /* (...args: any[]) => void */
-    ) /* this */
+    override fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
 
+    override fun prependListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
+
+    override fun prependOnceListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
 
     @web.events.JsEvent("close")
     override val closeEvent: node.events.EventInstance<js.array.Tuple>
@@ -168,7 +161,8 @@ open external class Server<Request : IncomingMessage, Response : ServerResponse<
     open val clientErrorEvent: node.events.EventInstance<js.array.Tuple2<js.errors.JsError, node.stream.Duplex>>
 
     @web.events.JsEvent("connect")
-    open val connectEvent: node.events.EventInstance<js.array.Tuple3<Request, node.stream.Duplex, node.buffer.Buffer<*>>>
+    open val connectEvent:
+            node.events.EventInstance<js.array.Tuple3<Request, node.stream.Duplex, node.buffer.Buffer<*>>>
 
     @web.events.JsEvent("dropRequest")
     val dropRequestEvent: node.events.EventInstance<js.array.Tuple2<Request, node.stream.Duplex>>
@@ -177,5 +171,6 @@ open external class Server<Request : IncomingMessage, Response : ServerResponse<
     open val requestEvent: node.events.EventInstance<js.array.Tuple2<Request, Response>>
 
     @web.events.JsEvent("upgrade")
-    open val upgradeEvent: node.events.EventInstance<js.array.Tuple3<Request, node.stream.Duplex, node.buffer.Buffer<*>>>
+    open val upgradeEvent:
+            node.events.EventInstance<js.array.Tuple3<Request, node.stream.Duplex, node.buffer.Buffer<*>>>
 }

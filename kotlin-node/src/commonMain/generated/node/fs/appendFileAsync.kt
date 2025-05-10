@@ -23,8 +23,10 @@ import js.typedarrays.Uint8Array
  */
 
 @JsName("appendFile")
-external fun appendFileAsync(path: PathLike, data: String): Promise<js.core.Void>
-
+external fun appendFileAsync(
+    path: PathLike,
+    data: String,
+): Promise<js.core.Void>
 
 /**
  * Asynchronously append data to a file, creating the file if it does not yet
@@ -47,7 +49,6 @@ external fun appendFileAsync(
     data: String,
     options: (AppendFileAsyncOptions)? = definedExternally,
 ): Promise<js.core.Void>
-
 
 /**
  * Asynchronously append data to a file, creating the file if it does not yet
@@ -71,7 +72,6 @@ external fun appendFileAsync(
     options: node.buffer.BufferEncoding? = definedExternally,
 ): Promise<js.core.Void>
 
-
 /**
  * Asynchronously append data to a file, creating the file if it does not yet
  * exist. `data` can be a string or a `Buffer`.
@@ -88,8 +88,10 @@ external fun appendFileAsync(
  */
 
 @JsName("appendFile")
-external fun appendFileAsync(path: PathLike, data: Uint8Array<*>): Promise<js.core.Void>
-
+external fun appendFileAsync(
+    path: PathLike,
+    data: Uint8Array<*>,
+): Promise<js.core.Void>
 
 /**
  * Asynchronously append data to a file, creating the file if it does not yet
@@ -113,7 +115,6 @@ external fun appendFileAsync(
     options: (AppendFileAsyncOptions)? = definedExternally,
 ): Promise<js.core.Void>
 
-
 /**
  * Asynchronously append data to a file, creating the file if it does not yet
  * exist. `data` can be a string or a `Buffer`.
@@ -136,7 +137,6 @@ external fun appendFileAsync(
     options: node.buffer.BufferEncoding? = definedExternally,
 ): Promise<js.core.Void>
 
-
 /**
  * Asynchronously append data to a file, creating the file if it does not yet
  * exist. `data` can be a string or a `Buffer`.
@@ -153,8 +153,10 @@ external fun appendFileAsync(
  */
 
 @JsName("appendFile")
-external fun appendFileAsync(path: FileHandle, data: String): Promise<js.core.Void>
-
+external fun appendFileAsync(
+    path: FileHandle,
+    data: String,
+): Promise<js.core.Void>
 
 /**
  * Asynchronously append data to a file, creating the file if it does not yet
@@ -177,7 +179,6 @@ external fun appendFileAsync(
     data: String,
     options: (AppendFileAsyncOptions)? = definedExternally,
 ): Promise<js.core.Void>
-
 
 /**
  * Asynchronously append data to a file, creating the file if it does not yet
@@ -201,7 +202,6 @@ external fun appendFileAsync(
     options: node.buffer.BufferEncoding? = definedExternally,
 ): Promise<js.core.Void>
 
-
 /**
  * Asynchronously append data to a file, creating the file if it does not yet
  * exist. `data` can be a string or a `Buffer`.
@@ -218,8 +218,10 @@ external fun appendFileAsync(
  */
 
 @JsName("appendFile")
-external fun appendFileAsync(path: FileHandle, data: Uint8Array<*>): Promise<js.core.Void>
-
+external fun appendFileAsync(
+    path: FileHandle,
+    data: Uint8Array<*>,
+): Promise<js.core.Void>
 
 /**
  * Asynchronously append data to a file, creating the file if it does not yet
@@ -242,7 +244,6 @@ external fun appendFileAsync(
     data: Uint8Array<*>,
     options: (AppendFileAsyncOptions)? = definedExternally,
 ): Promise<js.core.Void>
-
 
 /**
  * Asynchronously append data to a file, creating the file if it does not yet

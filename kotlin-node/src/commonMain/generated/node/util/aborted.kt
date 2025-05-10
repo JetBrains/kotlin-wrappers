@@ -41,4 +41,7 @@ import web.abort.AbortSignal
  */
 
 @JsName("aborted")
-external fun abortedAsync(signal: AbortSignal, resource: Any?): Promise<js.core.Void>
+external fun abortedAsync(
+    signal: AbortSignal,
+    resource: Any?,
+): Promise<js.core.Void>

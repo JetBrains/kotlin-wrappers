@@ -16,7 +16,7 @@ sealed external interface MessagingOptions : Abortable {
      * The signal value to be used when the spawned process will be killed by the abort signal.
      * @default 'SIGTERM'
      */
-    var killSignal: Any? /* NodeJS.Signals | number | undefined */
+    var killSignal: Any? // NodeJS.Signals | number | undefined
 
     /**
      * In milliseconds the maximum amount of time the process is allowed to run.

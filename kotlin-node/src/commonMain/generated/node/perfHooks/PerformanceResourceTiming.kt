@@ -17,7 +17,7 @@ external class PerformanceResourceTiming : PerformanceEntry {
     override val entryType: EntryType
 
     @JsName("entryType")
-    val resourceTimingEntryType: String /* "resource" */
+    val resourceTimingEntryType: String // "resource"
 
     /**
      * The high resolution millisecond timestamp at immediately before dispatching the `fetch`

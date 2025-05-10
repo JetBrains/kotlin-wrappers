@@ -15,5 +15,4 @@ package node.fs
  * @since v10.0.0
  */
 
-
-/* export * from "fs/promises"; */
+// export * from "fs/promises";

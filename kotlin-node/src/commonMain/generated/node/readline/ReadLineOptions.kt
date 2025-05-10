@@ -18,7 +18,7 @@ sealed external interface _ReadLineOptions {
     /**
      * An optional function used for Tab autocompletion.
      */
-    var completer: Any? /* Completer | AsyncCompleter | undefined */
+    var completer: Any? // Completer | AsyncCompleter | undefined
 
     /**
      * `true` if the `input` and `output` streams should be treated like a TTY,

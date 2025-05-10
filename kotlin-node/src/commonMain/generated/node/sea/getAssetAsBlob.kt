@@ -11,4 +11,7 @@ import web.blob.Blob
  * An error is thrown when no matching asset can be found.
  * @since v20.12.0
  */
-external fun getAssetAsBlob(key: AssetKey, options: GetAssetAsBlobOptions = definedExternally): Blob
+external fun getAssetAsBlob(
+    key: AssetKey,
+    options: GetAssetAsBlobOptions = definedExternally,
+): Blob

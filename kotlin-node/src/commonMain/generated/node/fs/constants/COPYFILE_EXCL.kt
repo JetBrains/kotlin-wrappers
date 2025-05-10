@@ -6,5 +6,6 @@
 package node.fs.constants
 
 // File Copy Constants
+
 /** Constant for fs.copyFile. Flag indicating the destination file should not be overwritten if it already exists. */
 external val COPYFILE_EXCL: Double

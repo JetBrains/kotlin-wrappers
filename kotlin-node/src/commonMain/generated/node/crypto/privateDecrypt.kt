@@ -12,7 +12,10 @@ package node.crypto
  * object, the `padding` property can be passed. Otherwise, this function uses `RSA_PKCS1_OAEP_PADDING`.
  * @since v0.11.14
  */
-external fun privateDecrypt(privateKey: RsaPrivateKey, buffer: js.buffer.ArrayBufferView<*>): node.buffer.Buffer<*>
+external fun privateDecrypt(
+    privateKey: RsaPrivateKey,
+    buffer: js.buffer.ArrayBufferView<*>,
+): node.buffer.Buffer<*>
 
 /**
  * Decrypts `buffer` with `privateKey`. `buffer` was previously encrypted using
@@ -22,7 +25,10 @@ external fun privateDecrypt(privateKey: RsaPrivateKey, buffer: js.buffer.ArrayBu
  * object, the `padding` property can be passed. Otherwise, this function uses `RSA_PKCS1_OAEP_PADDING`.
  * @since v0.11.14
  */
-external fun privateDecrypt(privateKey: RsaPrivateKey, buffer: String): node.buffer.Buffer<*>
+external fun privateDecrypt(
+    privateKey: RsaPrivateKey,
+    buffer: String,
+): node.buffer.Buffer<*>
 
 /**
  * Decrypts `buffer` with `privateKey`. `buffer` was previously encrypted using
@@ -32,7 +38,10 @@ external fun privateDecrypt(privateKey: RsaPrivateKey, buffer: String): node.buf
  * object, the `padding` property can be passed. Otherwise, this function uses `RSA_PKCS1_OAEP_PADDING`.
  * @since v0.11.14
  */
-external fun privateDecrypt(privateKey: KeyLike, buffer: js.buffer.ArrayBufferView<*>): node.buffer.Buffer<*>
+external fun privateDecrypt(
+    privateKey: KeyLike,
+    buffer: js.buffer.ArrayBufferView<*>,
+): node.buffer.Buffer<*>
 
 /**
  * Decrypts `buffer` with `privateKey`. `buffer` was previously encrypted using
@@ -42,4 +51,7 @@ external fun privateDecrypt(privateKey: KeyLike, buffer: js.buffer.ArrayBufferVi
  * object, the `padding` property can be passed. Otherwise, this function uses `RSA_PKCS1_OAEP_PADDING`.
  * @since v0.11.14
  */
-external fun privateDecrypt(privateKey: KeyLike, buffer: String): node.buffer.Buffer<*>
+external fun privateDecrypt(
+    privateKey: KeyLike,
+    buffer: String,
+): node.buffer.Buffer<*>

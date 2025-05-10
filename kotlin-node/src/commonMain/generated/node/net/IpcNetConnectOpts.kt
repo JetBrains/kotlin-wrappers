@@ -2,6 +2,8 @@
 
 package node.net
 
-sealed external interface IpcNetConnectOpts : IpcSocketConnectOpts, SocketConstructorOpts {
+sealed external interface IpcNetConnectOpts :
+    IpcSocketConnectOpts,
+    SocketConstructorOpts {
     var timeout: Double?
 }

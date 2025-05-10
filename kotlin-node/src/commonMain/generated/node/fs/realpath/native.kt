@@ -44,4 +44,7 @@ external fun native(
     callback: (err: node.ErrnoException?, resolvedPath: Any /* string | Buffer */) -> Unit,
 )
 
-external fun native(path: PathLike, callback: (err: node.ErrnoException?, resolvedPath: String) -> Unit)
+external fun native(
+    path: PathLike,
+    callback: (err: node.ErrnoException?, resolvedPath: String) -> Unit,
+)

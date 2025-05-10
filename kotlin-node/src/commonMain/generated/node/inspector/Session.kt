@@ -72,7 +72,10 @@ external class _Session : EventEmitter {
      */
     fun post(
         method: SessionMethod.SCHEMA_GETDOMAINS,
-        callback: (err: js.errors.JsError?, params: node.inspector.schema.GetDomainsReturnType) -> Unit = definedExternally,
+        callback: (
+            err: js.errors.JsError?,
+            params: node.inspector.schema.GetDomainsReturnType,
+        ) -> Unit = definedExternally,
     )
 
     /**
@@ -81,12 +84,18 @@ external class _Session : EventEmitter {
     fun post(
         method: SessionMethod.RUNTIME_EVALUATE,
         params: node.inspector.runtime.EvaluateParameterType = definedExternally,
-        callback: (err: js.errors.JsError?, params: node.inspector.runtime.EvaluateReturnType) -> Unit = definedExternally,
+        callback: (
+            err: js.errors.JsError?,
+            params: node.inspector.runtime.EvaluateReturnType,
+        ) -> Unit = definedExternally,
     )
 
     fun post(
         method: SessionMethod.RUNTIME_EVALUATE,
-        callback: (err: js.errors.JsError?, params: node.inspector.runtime.EvaluateReturnType) -> Unit = definedExternally,
+        callback: (
+            err: js.errors.JsError?,
+            params: node.inspector.runtime.EvaluateReturnType,
+        ) -> Unit = definedExternally,
     )
 
     /**
@@ -95,12 +104,18 @@ external class _Session : EventEmitter {
     fun post(
         method: SessionMethod.RUNTIME_AWAITPROMISE,
         params: node.inspector.runtime.AwaitPromiseParameterType = definedExternally,
-        callback: (err: js.errors.JsError?, params: node.inspector.runtime.AwaitPromiseReturnType) -> Unit = definedExternally,
+        callback: (
+            err: js.errors.JsError?,
+            params: node.inspector.runtime.AwaitPromiseReturnType,
+        ) -> Unit = definedExternally,
     )
 
     fun post(
         method: SessionMethod.RUNTIME_AWAITPROMISE,
-        callback: (err: js.errors.JsError?, params: node.inspector.runtime.AwaitPromiseReturnType) -> Unit = definedExternally,
+        callback: (
+            err: js.errors.JsError?,
+            params: node.inspector.runtime.AwaitPromiseReturnType,
+        ) -> Unit = definedExternally,
     )
 
     /**
@@ -109,12 +124,18 @@ external class _Session : EventEmitter {
     fun post(
         method: SessionMethod.RUNTIME_CALLFUNCTIONON,
         params: node.inspector.runtime.CallFunctionOnParameterType = definedExternally,
-        callback: (err: js.errors.JsError?, params: node.inspector.runtime.CallFunctionOnReturnType) -> Unit = definedExternally,
+        callback: (
+            err: js.errors.JsError?,
+            params: node.inspector.runtime.CallFunctionOnReturnType,
+        ) -> Unit = definedExternally,
     )
 
     fun post(
         method: SessionMethod.RUNTIME_CALLFUNCTIONON,
-        callback: (err: js.errors.JsError?, params: node.inspector.runtime.CallFunctionOnReturnType) -> Unit = definedExternally,
+        callback: (
+            err: js.errors.JsError?,
+            params: node.inspector.runtime.CallFunctionOnReturnType,
+        ) -> Unit = definedExternally,
     )
 
     /**
@@ -123,12 +144,18 @@ external class _Session : EventEmitter {
     fun post(
         method: SessionMethod.RUNTIME_GETPROPERTIES,
         params: node.inspector.runtime.GetPropertiesParameterType = definedExternally,
-        callback: (err: js.errors.JsError?, params: node.inspector.runtime.GetPropertiesReturnType) -> Unit = definedExternally,
+        callback: (
+            err: js.errors.JsError?,
+            params: node.inspector.runtime.GetPropertiesReturnType,
+        ) -> Unit = definedExternally,
     )
 
     fun post(
         method: SessionMethod.RUNTIME_GETPROPERTIES,
-        callback: (err: js.errors.JsError?, params: node.inspector.runtime.GetPropertiesReturnType) -> Unit = definedExternally,
+        callback: (
+            err: js.errors.JsError?,
+            params: node.inspector.runtime.GetPropertiesReturnType,
+        ) -> Unit = definedExternally,
     )
 
     /**
@@ -211,12 +238,18 @@ external class _Session : EventEmitter {
     fun post(
         method: SessionMethod.RUNTIME_COMPILESCRIPT,
         params: node.inspector.runtime.CompileScriptParameterType = definedExternally,
-        callback: (err: js.errors.JsError?, params: node.inspector.runtime.CompileScriptReturnType) -> Unit = definedExternally,
+        callback: (
+            err: js.errors.JsError?,
+            params: node.inspector.runtime.CompileScriptReturnType,
+        ) -> Unit = definedExternally,
     )
 
     fun post(
         method: SessionMethod.RUNTIME_COMPILESCRIPT,
-        callback: (err: js.errors.JsError?, params: node.inspector.runtime.CompileScriptReturnType) -> Unit = definedExternally,
+        callback: (
+            err: js.errors.JsError?,
+            params: node.inspector.runtime.CompileScriptReturnType,
+        ) -> Unit = definedExternally,
     )
 
     /**
@@ -225,23 +258,35 @@ external class _Session : EventEmitter {
     fun post(
         method: SessionMethod.RUNTIME_RUNSCRIPT,
         params: node.inspector.runtime.RunScriptParameterType = definedExternally,
-        callback: (err: js.errors.JsError?, params: node.inspector.runtime.RunScriptReturnType) -> Unit = definedExternally,
+        callback: (
+            err: js.errors.JsError?,
+            params: node.inspector.runtime.RunScriptReturnType,
+        ) -> Unit = definedExternally,
     )
 
     fun post(
         method: SessionMethod.RUNTIME_RUNSCRIPT,
-        callback: (err: js.errors.JsError?, params: node.inspector.runtime.RunScriptReturnType) -> Unit = definedExternally,
+        callback: (
+            err: js.errors.JsError?,
+            params: node.inspector.runtime.RunScriptReturnType,
+        ) -> Unit = definedExternally,
     )
 
     fun post(
         method: SessionMethod.RUNTIME_QUERYOBJECTS,
         params: node.inspector.runtime.QueryObjectsParameterType = definedExternally,
-        callback: (err: js.errors.JsError?, params: node.inspector.runtime.QueryObjectsReturnType) -> Unit = definedExternally,
+        callback: (
+            err: js.errors.JsError?,
+            params: node.inspector.runtime.QueryObjectsReturnType,
+        ) -> Unit = definedExternally,
     )
 
     fun post(
         method: SessionMethod.RUNTIME_QUERYOBJECTS,
-        callback: (err: js.errors.JsError?, params: node.inspector.runtime.QueryObjectsReturnType) -> Unit = definedExternally,
+        callback: (
+            err: js.errors.JsError?,
+            params: node.inspector.runtime.QueryObjectsReturnType,
+        ) -> Unit = definedExternally,
     )
 
     /**
@@ -250,12 +295,18 @@ external class _Session : EventEmitter {
     fun post(
         method: SessionMethod.RUNTIME_GLOBALLEXICALSCOPENAMES,
         params: node.inspector.runtime.GlobalLexicalScopeNamesParameterType = definedExternally,
-        callback: (err: js.errors.JsError?, params: node.inspector.runtime.GlobalLexicalScopeNamesReturnType) -> Unit = definedExternally,
+        callback: (
+            err: js.errors.JsError?,
+            params: node.inspector.runtime.GlobalLexicalScopeNamesReturnType,
+        ) -> Unit = definedExternally,
     )
 
     fun post(
         method: SessionMethod.RUNTIME_GLOBALLEXICALSCOPENAMES,
-        callback: (err: js.errors.JsError?, params: node.inspector.runtime.GlobalLexicalScopeNamesReturnType) -> Unit = definedExternally,
+        callback: (
+            err: js.errors.JsError?,
+            params: node.inspector.runtime.GlobalLexicalScopeNamesReturnType,
+        ) -> Unit = definedExternally,
     )
 
     /**
@@ -263,7 +314,10 @@ external class _Session : EventEmitter {
      */
     fun post(
         method: SessionMethod.DEBUGGER_ENABLE,
-        callback: (err: js.errors.JsError?, params: node.inspector.debugger.EnableReturnType) -> Unit = definedExternally,
+        callback: (
+            err: js.errors.JsError?,
+            params: node.inspector.debugger.EnableReturnType,
+        ) -> Unit = definedExternally,
     )
 
     /**
@@ -308,12 +362,18 @@ external class _Session : EventEmitter {
     fun post(
         method: SessionMethod.DEBUGGER_SETBREAKPOINTBYURL,
         params: node.inspector.debugger.SetBreakpointByUrlParameterType = definedExternally,
-        callback: (err: js.errors.JsError?, params: node.inspector.debugger.SetBreakpointByUrlReturnType) -> Unit = definedExternally,
+        callback: (
+            err: js.errors.JsError?,
+            params: node.inspector.debugger.SetBreakpointByUrlReturnType,
+        ) -> Unit = definedExternally,
     )
 
     fun post(
         method: SessionMethod.DEBUGGER_SETBREAKPOINTBYURL,
-        callback: (err: js.errors.JsError?, params: node.inspector.debugger.SetBreakpointByUrlReturnType) -> Unit = definedExternally,
+        callback: (
+            err: js.errors.JsError?,
+            params: node.inspector.debugger.SetBreakpointByUrlReturnType,
+        ) -> Unit = definedExternally,
     )
 
     /**
@@ -322,12 +382,18 @@ external class _Session : EventEmitter {
     fun post(
         method: SessionMethod.DEBUGGER_SETBREAKPOINT,
         params: node.inspector.debugger.SetBreakpointParameterType = definedExternally,
-        callback: (err: js.errors.JsError?, params: node.inspector.debugger.SetBreakpointReturnType) -> Unit = definedExternally,
+        callback: (
+            err: js.errors.JsError?,
+            params: node.inspector.debugger.SetBreakpointReturnType,
+        ) -> Unit = definedExternally,
     )
 
     fun post(
         method: SessionMethod.DEBUGGER_SETBREAKPOINT,
-        callback: (err: js.errors.JsError?, params: node.inspector.debugger.SetBreakpointReturnType) -> Unit = definedExternally,
+        callback: (
+            err: js.errors.JsError?,
+            params: node.inspector.debugger.SetBreakpointReturnType,
+        ) -> Unit = definedExternally,
     )
 
     /**
@@ -350,12 +416,18 @@ external class _Session : EventEmitter {
     fun post(
         method: SessionMethod.DEBUGGER_GETPOSSIBLEBREAKPOINTS,
         params: node.inspector.debugger.GetPossibleBreakpointsParameterType = definedExternally,
-        callback: (err: js.errors.JsError?, params: node.inspector.debugger.GetPossibleBreakpointsReturnType) -> Unit = definedExternally,
+        callback: (
+            err: js.errors.JsError?,
+            params: node.inspector.debugger.GetPossibleBreakpointsReturnType,
+        ) -> Unit = definedExternally,
     )
 
     fun post(
         method: SessionMethod.DEBUGGER_GETPOSSIBLEBREAKPOINTS,
-        callback: (err: js.errors.JsError?, params: node.inspector.debugger.GetPossibleBreakpointsReturnType) -> Unit = definedExternally,
+        callback: (
+            err: js.errors.JsError?,
+            params: node.inspector.debugger.GetPossibleBreakpointsReturnType,
+        ) -> Unit = definedExternally,
     )
 
     /**
@@ -448,12 +520,18 @@ external class _Session : EventEmitter {
     fun post(
         method: SessionMethod.DEBUGGER_GETSTACKTRACE,
         params: node.inspector.debugger.GetStackTraceParameterType = definedExternally,
-        callback: (err: js.errors.JsError?, params: node.inspector.debugger.GetStackTraceReturnType) -> Unit = definedExternally,
+        callback: (
+            err: js.errors.JsError?,
+            params: node.inspector.debugger.GetStackTraceReturnType,
+        ) -> Unit = definedExternally,
     )
 
     fun post(
         method: SessionMethod.DEBUGGER_GETSTACKTRACE,
-        callback: (err: js.errors.JsError?, params: node.inspector.debugger.GetStackTraceReturnType) -> Unit = definedExternally,
+        callback: (
+            err: js.errors.JsError?,
+            params: node.inspector.debugger.GetStackTraceReturnType,
+        ) -> Unit = definedExternally,
     )
 
     /**
@@ -462,12 +540,18 @@ external class _Session : EventEmitter {
     fun post(
         method: SessionMethod.DEBUGGER_SEARCHINCONTENT,
         params: node.inspector.debugger.SearchInContentParameterType = definedExternally,
-        callback: (err: js.errors.JsError?, params: node.inspector.debugger.SearchInContentReturnType) -> Unit = definedExternally,
+        callback: (
+            err: js.errors.JsError?,
+            params: node.inspector.debugger.SearchInContentReturnType,
+        ) -> Unit = definedExternally,
     )
 
     fun post(
         method: SessionMethod.DEBUGGER_SEARCHINCONTENT,
-        callback: (err: js.errors.JsError?, params: node.inspector.debugger.SearchInContentReturnType) -> Unit = definedExternally,
+        callback: (
+            err: js.errors.JsError?,
+            params: node.inspector.debugger.SearchInContentReturnType,
+        ) -> Unit = definedExternally,
     )
 
     /**
@@ -476,12 +560,18 @@ external class _Session : EventEmitter {
     fun post(
         method: SessionMethod.DEBUGGER_SETSCRIPTSOURCE,
         params: node.inspector.debugger.SetScriptSourceParameterType = definedExternally,
-        callback: (err: js.errors.JsError?, params: node.inspector.debugger.SetScriptSourceReturnType) -> Unit = definedExternally,
+        callback: (
+            err: js.errors.JsError?,
+            params: node.inspector.debugger.SetScriptSourceReturnType,
+        ) -> Unit = definedExternally,
     )
 
     fun post(
         method: SessionMethod.DEBUGGER_SETSCRIPTSOURCE,
-        callback: (err: js.errors.JsError?, params: node.inspector.debugger.SetScriptSourceReturnType) -> Unit = definedExternally,
+        callback: (
+            err: js.errors.JsError?,
+            params: node.inspector.debugger.SetScriptSourceReturnType,
+        ) -> Unit = definedExternally,
     )
 
     /**
@@ -490,12 +580,18 @@ external class _Session : EventEmitter {
     fun post(
         method: SessionMethod.DEBUGGER_RESTARTFRAME,
         params: node.inspector.debugger.RestartFrameParameterType = definedExternally,
-        callback: (err: js.errors.JsError?, params: node.inspector.debugger.RestartFrameReturnType) -> Unit = definedExternally,
+        callback: (
+            err: js.errors.JsError?,
+            params: node.inspector.debugger.RestartFrameReturnType,
+        ) -> Unit = definedExternally,
     )
 
     fun post(
         method: SessionMethod.DEBUGGER_RESTARTFRAME,
-        callback: (err: js.errors.JsError?, params: node.inspector.debugger.RestartFrameReturnType) -> Unit = definedExternally,
+        callback: (
+            err: js.errors.JsError?,
+            params: node.inspector.debugger.RestartFrameReturnType,
+        ) -> Unit = definedExternally,
     )
 
     /**
@@ -504,12 +600,18 @@ external class _Session : EventEmitter {
     fun post(
         method: SessionMethod.DEBUGGER_GETSCRIPTSOURCE,
         params: node.inspector.debugger.GetScriptSourceParameterType = definedExternally,
-        callback: (err: js.errors.JsError?, params: node.inspector.debugger.GetScriptSourceReturnType) -> Unit = definedExternally,
+        callback: (
+            err: js.errors.JsError?,
+            params: node.inspector.debugger.GetScriptSourceReturnType,
+        ) -> Unit = definedExternally,
     )
 
     fun post(
         method: SessionMethod.DEBUGGER_GETSCRIPTSOURCE,
-        callback: (err: js.errors.JsError?, params: node.inspector.debugger.GetScriptSourceReturnType) -> Unit = definedExternally,
+        callback: (
+            err: js.errors.JsError?,
+            params: node.inspector.debugger.GetScriptSourceReturnType,
+        ) -> Unit = definedExternally,
     )
 
     /**
@@ -532,12 +634,18 @@ external class _Session : EventEmitter {
     fun post(
         method: SessionMethod.DEBUGGER_EVALUATEONCALLFRAME,
         params: node.inspector.debugger.EvaluateOnCallFrameParameterType = definedExternally,
-        callback: (err: js.errors.JsError?, params: node.inspector.debugger.EvaluateOnCallFrameReturnType) -> Unit = definedExternally,
+        callback: (
+            err: js.errors.JsError?,
+            params: node.inspector.debugger.EvaluateOnCallFrameReturnType,
+        ) -> Unit = definedExternally,
     )
 
     fun post(
         method: SessionMethod.DEBUGGER_EVALUATEONCALLFRAME,
-        callback: (err: js.errors.JsError?, params: node.inspector.debugger.EvaluateOnCallFrameReturnType) -> Unit = definedExternally,
+        callback: (
+            err: js.errors.JsError?,
+            params: node.inspector.debugger.EvaluateOnCallFrameReturnType,
+        ) -> Unit = definedExternally,
     )
 
     /**
@@ -698,7 +806,10 @@ external class _Session : EventEmitter {
      */
     fun post(
         method: SessionMethod.PROFILER_TAKEPRECISECOVERAGE,
-        callback: (err: js.errors.JsError?, params: node.inspector.profiler.TakePreciseCoverageReturnType) -> Unit = definedExternally,
+        callback: (
+            err: js.errors.JsError?,
+            params: node.inspector.profiler.TakePreciseCoverageReturnType,
+        ) -> Unit = definedExternally,
     )
 
     /**
@@ -706,7 +817,10 @@ external class _Session : EventEmitter {
      */
     fun post(
         method: SessionMethod.PROFILER_GETBESTEFFORTCOVERAGE,
-        callback: (err: js.errors.JsError?, params: node.inspector.profiler.GetBestEffortCoverageReturnType) -> Unit = definedExternally,
+        callback: (
+            err: js.errors.JsError?,
+            params: node.inspector.profiler.GetBestEffortCoverageReturnType,
+        ) -> Unit = definedExternally,
     )
 
     fun post(
@@ -760,12 +874,18 @@ external class _Session : EventEmitter {
     fun post(
         method: SessionMethod.HEAPPROFILER_GETOBJECTBYHEAPOBJECTID,
         params: node.inspector.heapprofiler.GetObjectByHeapObjectIdParameterType = definedExternally,
-        callback: (err: js.errors.JsError?, params: node.inspector.heapprofiler.GetObjectByHeapObjectIdReturnType) -> Unit = definedExternally,
+        callback: (
+            err: js.errors.JsError?,
+            params: node.inspector.heapprofiler.GetObjectByHeapObjectIdReturnType,
+        ) -> Unit = definedExternally,
     )
 
     fun post(
         method: SessionMethod.HEAPPROFILER_GETOBJECTBYHEAPOBJECTID,
-        callback: (err: js.errors.JsError?, params: node.inspector.heapprofiler.GetObjectByHeapObjectIdReturnType) -> Unit = definedExternally,
+        callback: (
+            err: js.errors.JsError?,
+            params: node.inspector.heapprofiler.GetObjectByHeapObjectIdReturnType,
+        ) -> Unit = definedExternally,
     )
 
     /**
@@ -785,12 +905,18 @@ external class _Session : EventEmitter {
     fun post(
         method: SessionMethod.HEAPPROFILER_GETHEAPOBJECTID,
         params: node.inspector.heapprofiler.GetHeapObjectIdParameterType = definedExternally,
-        callback: (err: js.errors.JsError?, params: node.inspector.heapprofiler.GetHeapObjectIdReturnType) -> Unit = definedExternally,
+        callback: (
+            err: js.errors.JsError?,
+            params: node.inspector.heapprofiler.GetHeapObjectIdReturnType,
+        ) -> Unit = definedExternally,
     )
 
     fun post(
         method: SessionMethod.HEAPPROFILER_GETHEAPOBJECTID,
-        callback: (err: js.errors.JsError?, params: node.inspector.heapprofiler.GetHeapObjectIdReturnType) -> Unit = definedExternally,
+        callback: (
+            err: js.errors.JsError?,
+            params: node.inspector.heapprofiler.GetHeapObjectIdReturnType,
+        ) -> Unit = definedExternally,
     )
 
     fun post(
@@ -806,12 +932,18 @@ external class _Session : EventEmitter {
 
     fun post(
         method: SessionMethod.HEAPPROFILER_STOPSAMPLING,
-        callback: (err: js.errors.JsError?, params: node.inspector.heapprofiler.StopSamplingReturnType) -> Unit = definedExternally,
+        callback: (
+            err: js.errors.JsError?,
+            params: node.inspector.heapprofiler.StopSamplingReturnType,
+        ) -> Unit = definedExternally,
     )
 
     fun post(
         method: SessionMethod.HEAPPROFILER_GETSAMPLINGPROFILE,
-        callback: (err: js.errors.JsError?, params: node.inspector.heapprofiler.GetSamplingProfileReturnType) -> Unit = definedExternally,
+        callback: (
+            err: js.errors.JsError?,
+            params: node.inspector.heapprofiler.GetSamplingProfileReturnType,
+        ) -> Unit = definedExternally,
     )
 
     /**
@@ -819,7 +951,10 @@ external class _Session : EventEmitter {
      */
     fun post(
         method: SessionMethod.NODETRACING_GETCATEGORIES,
-        callback: (err: js.errors.JsError?, params: node.inspector.nodetracing.GetCategoriesReturnType) -> Unit = definedExternally,
+        callback: (
+            err: js.errors.JsError?,
+            params: node.inspector.nodetracing.GetCategoriesReturnType,
+        ) -> Unit = definedExternally,
     )
 
     /**
@@ -942,7 +1077,7 @@ external class _Session : EventEmitter {
         callback: (err: js.errors.JsError?) -> Unit = definedExternally,
     )
 
-    fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
+    fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
     /**
      * Emitted when any notification from the V8 Inspector is received.
      */
@@ -1003,7 +1138,6 @@ external class _Session : EventEmitter {
      * Sent when new profile recording is started using console.profile() call.
      */
 
-
     /**
      * If heap objects tracking has been started then backend regularly sends a current value for last seen object id and corresponding timestamp. If the were changes in the heap since last event then one or more heapStatsUpdate events will be sent before a new lastSeenObjectId event.
      */
@@ -1041,7 +1175,6 @@ external class _Session : EventEmitter {
     /**
      * Fired when HTTP response is available.
      */
-
 
     /**
      * This event is fired instead of `Runtime.executionContextDestroyed` when
@@ -1055,12 +1188,17 @@ external class _Session : EventEmitter {
      * example, when inspector.waitingForDebugger is called
      */
 
-    fun emit(event: String, vararg args: Any?): Boolean
+    fun emit(
+        event: String,
+        vararg args: Any?,
+    ): Boolean
 
-    fun emit(event: js.symbol.Symbol, vararg args: Any?): Boolean
+    fun emit(
+        event: js.symbol.Symbol,
+        vararg args: Any?,
+    ): Boolean
 
-
-    fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
+    fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
     /**
      * Emitted when any notification from the V8 Inspector is received.
      */
@@ -1121,7 +1259,6 @@ external class _Session : EventEmitter {
      * Sent when new profile recording is started using console.profile() call.
      */
 
-
     /**
      * If heap objects tracking has been started then backend regularly sends a current value for last seen object id and corresponding timestamp. If the were changes in the heap since last event then one or more heapStatsUpdate events will be sent before a new lastSeenObjectId event.
      */
@@ -1159,7 +1296,6 @@ external class _Session : EventEmitter {
     /**
      * Fired when HTTP response is available.
      */
-
 
     /**
      * This event is fired instead of `Runtime.executionContextDestroyed` when
@@ -1173,7 +1309,7 @@ external class _Session : EventEmitter {
      * example, when inspector.waitingForDebugger is called
      */
 
-    fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
+    fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
     /**
      * Emitted when any notification from the V8 Inspector is received.
      */
@@ -1234,7 +1370,6 @@ external class _Session : EventEmitter {
      * Sent when new profile recording is started using console.profile() call.
      */
 
-
     /**
      * If heap objects tracking has been started then backend regularly sends a current value for last seen object id and corresponding timestamp. If the were changes in the heap since last event then one or more heapStatsUpdate events will be sent before a new lastSeenObjectId event.
      */
@@ -1272,7 +1407,6 @@ external class _Session : EventEmitter {
     /**
      * Fired when HTTP response is available.
      */
-
 
     /**
      * This event is fired instead of `Runtime.executionContextDestroyed` when
@@ -1286,7 +1420,7 @@ external class _Session : EventEmitter {
      * example, when inspector.waitingForDebugger is called
      */
 
-    fun prependListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
+    fun prependListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
     /**
      * Emitted when any notification from the V8 Inspector is received.
      */
@@ -1347,7 +1481,6 @@ external class _Session : EventEmitter {
      * Sent when new profile recording is started using console.profile() call.
      */
 
-
     /**
      * If heap objects tracking has been started then backend regularly sends a current value for last seen object id and corresponding timestamp. If the were changes in the heap since last event then one or more heapStatsUpdate events will be sent before a new lastSeenObjectId event.
      */
@@ -1385,7 +1518,6 @@ external class _Session : EventEmitter {
     /**
      * Fired when HTTP response is available.
      */
-
 
     /**
      * This event is fired instead of `Runtime.executionContextDestroyed` when
@@ -1399,7 +1531,7 @@ external class _Session : EventEmitter {
      * example, when inspector.waitingForDebugger is called
      */
 
-    fun prependOnceListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
+    fun prependOnceListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
     /**
      * Emitted when any notification from the V8 Inspector is received.
      */
@@ -1460,7 +1592,6 @@ external class _Session : EventEmitter {
      * Sent when new profile recording is started using console.profile() call.
      */
 
-
     /**
      * If heap objects tracking has been started then backend regularly sends a current value for last seen object id and corresponding timestamp. If the were changes in the heap since last event then one or more heapStatsUpdate events will be sent before a new lastSeenObjectId event.
      */
@@ -1498,7 +1629,6 @@ external class _Session : EventEmitter {
     /**
      * Fired when HTTP response is available.
      */
-
 
     /**
      * This event is fired instead of `Runtime.executionContextDestroyed` when
@@ -1516,91 +1646,116 @@ external class _Session : EventEmitter {
     val inspectorNotificationEvent: node.events.EventInstance<js.array.Tuple1<InspectorNotification<Any>>>
 
     @web.events.JsEvent("Runtime.executionContextCreated")
-    val RuntimeExecutionContextCreatedEvent: node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.runtime.ExecutionContextCreatedEventDataType>>>
+    val RuntimeExecutionContextCreatedEvent:
+            node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.runtime.ExecutionContextCreatedEventDataType>>>
 
     @web.events.JsEvent("Runtime.executionContextDestroyed")
-    val RuntimeExecutionContextDestroyedEvent: node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.runtime.ExecutionContextDestroyedEventDataType>>>
+    val RuntimeExecutionContextDestroyedEvent:
+            node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.runtime.ExecutionContextDestroyedEventDataType>>>
 
     @web.events.JsEvent("Runtime.executionContextsCleared")
     val RuntimeExecutionContextsClearedEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("Runtime.exceptionThrown")
-    val RuntimeExceptionThrownEvent: node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.runtime.ExceptionThrownEventDataType>>>
+    val RuntimeExceptionThrownEvent:
+            node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.runtime.ExceptionThrownEventDataType>>>
 
     @web.events.JsEvent("Runtime.exceptionRevoked")
-    val RuntimeExceptionRevokedEvent: node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.runtime.ExceptionRevokedEventDataType>>>
+    val RuntimeExceptionRevokedEvent:
+            node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.runtime.ExceptionRevokedEventDataType>>>
 
     @web.events.JsEvent("Runtime.consoleAPICalled")
-    val RuntimeConsoleAPICalledEvent: node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.runtime.ConsoleAPICalledEventDataType>>>
+    val RuntimeConsoleAPICalledEvent:
+            node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.runtime.ConsoleAPICalledEventDataType>>>
 
     @web.events.JsEvent("Runtime.inspectRequested")
-    val RuntimeInspectRequestedEvent: node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.runtime.InspectRequestedEventDataType>>>
+    val RuntimeInspectRequestedEvent:
+            node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.runtime.InspectRequestedEventDataType>>>
 
     @web.events.JsEvent("Debugger.scriptParsed")
-    val DebuggerScriptParsedEvent: node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.debugger.ScriptParsedEventDataType>>>
+    val DebuggerScriptParsedEvent:
+            node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.debugger.ScriptParsedEventDataType>>>
 
     @web.events.JsEvent("Debugger.scriptFailedToParse")
-    val DebuggerScriptFailedToParseEvent: node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.debugger.ScriptFailedToParseEventDataType>>>
+    val DebuggerScriptFailedToParseEvent:
+            node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.debugger.ScriptFailedToParseEventDataType>>>
 
     @web.events.JsEvent("Debugger.breakpointResolved")
-    val DebuggerBreakpointResolvedEvent: node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.debugger.BreakpointResolvedEventDataType>>>
+    val DebuggerBreakpointResolvedEvent:
+            node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.debugger.BreakpointResolvedEventDataType>>>
 
     @web.events.JsEvent("Debugger.paused")
-    val DebuggerPausedEvent: node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.debugger.PausedEventDataType>>>
+    val DebuggerPausedEvent:
+            node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.debugger.PausedEventDataType>>>
 
     @web.events.JsEvent("Debugger.resumed")
     val DebuggerResumedEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("Console.messageAdded")
-    val ConsoleMessageAddedEvent: node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.console.MessageAddedEventDataType>>>
+    val ConsoleMessageAddedEvent:
+            node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.console.MessageAddedEventDataType>>>
 
     @web.events.JsEvent("Profiler.consoleProfileStarted")
-    val ProfilerConsoleProfileStartedEvent: node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.profiler.ConsoleProfileStartedEventDataType>>>
+    val ProfilerConsoleProfileStartedEvent:
+            node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.profiler.ConsoleProfileStartedEventDataType>>>
 
     @web.events.JsEvent("Profiler.consoleProfileFinished")
-    val ProfilerConsoleProfileFinishedEvent: node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.profiler.ConsoleProfileFinishedEventDataType>>>
+    val ProfilerConsoleProfileFinishedEvent:
+            node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.profiler.ConsoleProfileFinishedEventDataType>>>
 
     @web.events.JsEvent("HeapProfiler.addHeapSnapshotChunk")
-    val HeapProfilerAddHeapSnapshotChunkEvent: node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.heapprofiler.AddHeapSnapshotChunkEventDataType>>>
+    val HeapProfilerAddHeapSnapshotChunkEvent:
+            node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.heapprofiler.AddHeapSnapshotChunkEventDataType>>>
 
     @web.events.JsEvent("HeapProfiler.resetProfiles")
     val HeapProfilerResetProfilesEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("HeapProfiler.reportHeapSnapshotProgress")
-    val HeapProfilerReportHeapSnapshotProgressEvent: node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.heapprofiler.ReportHeapSnapshotProgressEventDataType>>>
+    val HeapProfilerReportHeapSnapshotProgressEvent:
+            node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.heapprofiler.ReportHeapSnapshotProgressEventDataType>>>
 
     @web.events.JsEvent("HeapProfiler.lastSeenObjectId")
-    val HeapProfilerLastSeenObjectIdEvent: node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.heapprofiler.LastSeenObjectIdEventDataType>>>
+    val HeapProfilerLastSeenObjectIdEvent:
+            node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.heapprofiler.LastSeenObjectIdEventDataType>>>
 
     @web.events.JsEvent("HeapProfiler.heapStatsUpdate")
-    val HeapProfilerHeapStatsUpdateEvent: node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.heapprofiler.HeapStatsUpdateEventDataType>>>
+    val HeapProfilerHeapStatsUpdateEvent:
+            node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.heapprofiler.HeapStatsUpdateEventDataType>>>
 
     @web.events.JsEvent("NodeTracing.dataCollected")
-    val NodeTracingDataCollectedEvent: node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.nodetracing.DataCollectedEventDataType>>>
+    val NodeTracingDataCollectedEvent:
+            node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.nodetracing.DataCollectedEventDataType>>>
 
     @web.events.JsEvent("NodeTracing.tracingComplete")
     val NodeTracingTracingCompleteEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("NodeWorker.attachedToWorker")
-    val NodeWorkerAttachedToWorkerEvent: node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.nodeworker.AttachedToWorkerEventDataType>>>
+    val NodeWorkerAttachedToWorkerEvent:
+            node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.nodeworker.AttachedToWorkerEventDataType>>>
 
     @web.events.JsEvent("NodeWorker.detachedFromWorker")
-    val NodeWorkerDetachedFromWorkerEvent: node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.nodeworker.DetachedFromWorkerEventDataType>>>
+    val NodeWorkerDetachedFromWorkerEvent:
+            node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.nodeworker.DetachedFromWorkerEventDataType>>>
 
     @web.events.JsEvent("NodeWorker.receivedMessageFromWorker")
-    val NodeWorkerReceivedMessageFromWorkerEvent: node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.nodeworker.ReceivedMessageFromWorkerEventDataType>>>
+    val NodeWorkerReceivedMessageFromWorkerEvent:
+            node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.nodeworker.ReceivedMessageFromWorkerEventDataType>>>
 
     @web.events.JsEvent("Network.requestWillBeSent")
-    val NetworkRequestWillBeSentEvent: node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.network.RequestWillBeSentEventDataType>>>
+    val NetworkRequestWillBeSentEvent:
+            node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.network.RequestWillBeSentEventDataType>>>
 
     @web.events.JsEvent("Network.responseReceived")
-    val NetworkResponseReceivedEvent: node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.network.ResponseReceivedEventDataType>>>
+    val NetworkResponseReceivedEvent:
+            node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.network.ResponseReceivedEventDataType>>>
 
     @web.events.JsEvent("Network.loadingFailed")
-    val NetworkLoadingFailedEvent: node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.network.LoadingFailedEventDataType>>>
+    val NetworkLoadingFailedEvent:
+            node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.network.LoadingFailedEventDataType>>>
 
     @web.events.JsEvent("Network.loadingFinished")
-    val NetworkLoadingFinishedEvent: node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.network.LoadingFinishedEventDataType>>>
+    val NetworkLoadingFinishedEvent:
+            node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.network.LoadingFinishedEventDataType>>>
 
     @web.events.JsEvent("NodeRuntime.waitingForDisconnect")
     val NodeRuntimeWaitingForDisconnectEvent: node.events.EventInstance<js.array.Tuple>

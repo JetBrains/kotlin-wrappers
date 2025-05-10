@@ -29,4 +29,7 @@ package node.crypto
  * not introduce timing vulnerabilities.
  * @since v6.6.0
  */
-external fun timingSafeEqual(a: js.buffer.ArrayBufferView<*>, b: js.buffer.ArrayBufferView<*>): Boolean
+external fun timingSafeEqual(
+    a: js.buffer.ArrayBufferView<*>,
+    b: js.buffer.ArrayBufferView<*>,
+): Boolean

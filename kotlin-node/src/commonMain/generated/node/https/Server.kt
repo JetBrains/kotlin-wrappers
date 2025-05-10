@@ -13,8 +13,10 @@ import node.stream.Duplex
  * @since v0.3.4
  */
 @Suppress("MANY_CLASSES_IN_SUPERTYPE_LIST")
-external class Server<Request : IncomingMessage, Response : ServerResponse<*>> : node.tls.Server, @seskar.js.JsMixin
-node.http.Server<Request, Response> {
+external class Server<Request : IncomingMessage, Response : ServerResponse<*>> :
+    node.tls.Server,
+    @seskar.js.JsMixin
+    node.http.Server<Request, Response> {
     constructor (requestListener: node.http.RequestListener<Request, Response> = definedExternally)
     constructor (
         options: ServerOptions<Request, Response>,
@@ -32,35 +34,36 @@ node.http.Server<Request, Response> {
      * @since v18.2.0
      */
     override fun closeIdleConnections()
-    override fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
 
+    override fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
 
-    override fun emit(event: String, vararg args: Any?): Boolean
-
-
-    override fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
-
-
-    override fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
-
-
-    override fun prependListener(
+    override fun emit(
         event: String,
-        listener: Function<Unit>, /* (...args: any[]) => void */
-    ) /* this */
+        vararg args: Any?,
+    ): Boolean
 
+    override fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
 
-    override fun prependOnceListener(
-        event: String,
-        listener: Function<Unit>, /* (...args: any[]) => void */
-    ) /* this */
+    override fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
 
+    override fun prependListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
+
+    override fun prependOnceListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
 
     @web.events.JsEvent("keylog")
     override val keylogEvent: node.events.EventInstance<js.array.Tuple2<node.buffer.Buffer<*>, node.tls.TLSSocket>>
 
     @web.events.JsEvent("OCSPRequest")
-    override val OCSPRequestEvent: node.events.EventInstance<js.array.Tuple3<node.buffer.Buffer<*>, node.buffer.Buffer<*>, (err: js.errors.JsError?, resp: node.buffer.Buffer<*>) -> Unit>>
+    override val OCSPRequestEvent: node.events.EventInstance<
+            js.array.Tuple3<
+                    node.buffer.Buffer<*>,
+                    node.buffer.Buffer<*>,
+                        (
+                err: js.errors.JsError?,
+                resp: node.buffer.Buffer<*>,
+            ) -> Unit
+                    >
+            >
 
     @web.events.JsEvent("secureConnection")
     override val secureConnectionEvent: node.events.EventInstance<js.array.Tuple1<node.tls.TLSSocket>>

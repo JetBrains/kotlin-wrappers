@@ -5,14 +5,11 @@ package node.stream.consumers
 import js.iterable.AsyncIterable
 import node.stream.Readable
 
-
 @seskar.js.JsAsync
 external suspend fun json(stream: node.ReadableStream): Any?
 
-
 @seskar.js.JsAsync
 external suspend fun json(stream: Readable): Any?
-
 
 @seskar.js.JsAsync
 external suspend fun json(stream: AsyncIterable<Any?>): Any?

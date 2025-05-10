@@ -15,5 +15,4 @@ package node.tls
  * @see [source](https://github.com/nodejs/node/blob/v22.x/lib/tls.js)
  */
 
-
-/* export * from "tls"; */
+// export * from "tls";

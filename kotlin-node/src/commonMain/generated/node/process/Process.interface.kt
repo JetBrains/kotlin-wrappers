@@ -225,7 +225,11 @@ sealed external interface Process : EventEmitter {
      * module.exports.foo();
      * ```
      */
-    fun dlopen(module: Any, filename: String, flags: Number = definedExternally)
+    fun dlopen(
+        module: Any,
+        filename: String,
+        flags: Number = definedExternally,
+    )
 
     /**
      * The `process.emitWarning()` method can be used to emit custom or application
@@ -295,7 +299,10 @@ sealed external interface Process : EventEmitter {
      * @since v8.0.0
      * @param warning The warning to emit.
      */
-    fun emitWarning(warning: String, ctor: Function<*> = definedExternally)
+    fun emitWarning(
+        warning: String,
+        ctor: Function<*> = definedExternally,
+    )
 
     /**
      * The `process.emitWarning()` method can be used to emit custom or application
@@ -365,8 +372,16 @@ sealed external interface Process : EventEmitter {
      * @since v8.0.0
      * @param warning The warning to emit.
      */
-    fun emitWarning(warning: js.errors.JsError, ctor: Function<*> = definedExternally)
-    fun emitWarning(warning: String, type: String = definedExternally, ctor: Function<*> = definedExternally)
+    fun emitWarning(
+        warning: js.errors.JsError,
+        ctor: Function<*> = definedExternally,
+    )
+
+    fun emitWarning(
+        warning: String,
+        type: String = definedExternally,
+        ctor: Function<*> = definedExternally,
+    )
 
     fun emitWarning(
         warning: js.errors.JsError,
@@ -388,9 +403,15 @@ sealed external interface Process : EventEmitter {
         ctor: Function<*> = definedExternally,
     )
 
-    fun emitWarning(warning: String, options: EmitWarningOptions = definedExternally)
+    fun emitWarning(
+        warning: String,
+        options: EmitWarningOptions = definedExternally,
+    )
 
-    fun emitWarning(warning: js.errors.JsError, options: EmitWarningOptions = definedExternally)
+    fun emitWarning(
+        warning: js.errors.JsError,
+        options: EmitWarningOptions = definedExternally,
+    )
 
     /**
      * The `process.env` property returns an object containing the user environment.
@@ -689,7 +710,7 @@ sealed external interface Process : EventEmitter {
      * @default undefined
      * @since v0.11.8
      */
-    var exitCode: Any? /* number | string | number | undefined */
+    var exitCode: Any? // number | string | number | undefined
     var finalization: ProcessFinalization
 
     /**
@@ -1125,7 +1146,7 @@ sealed external interface Process : EventEmitter {
      * @param pid A process ID
      * @param [signal='SIGTERM'] The signal to send, either as a string or number.
      */
-    fun kill(pid: Number): Boolean /* true */
+    fun kill(pid: Number): Boolean // true
 
     /**
      * The `process.kill()` method sends the `signal` to the process identified by`pid`.
@@ -1162,7 +1183,7 @@ sealed external interface Process : EventEmitter {
      * @param pid A process ID
      * @param [signal='SIGTERM'] The signal to send, either as a string or number.
      */
-    fun kill(pid: Number, signal: String = definedExternally): Boolean /* true */
+    fun kill(pid: Number, signal: String = definedExternally): Boolean // true
 
     /**
      * The `process.kill()` method sends the `signal` to the process identified by`pid`.
@@ -1199,7 +1220,7 @@ sealed external interface Process : EventEmitter {
      * @param pid A process ID
      * @param [signal='SIGTERM'] The signal to send, either as a string or number.
      */
-    fun kill(pid: Number, signal: Double = definedExternally): Boolean /* true */
+    fun kill(pid: Number, signal: Double = definedExternally): Boolean // true
 
     /**
      * Loads the environment configuration from a `.env` file into `process.env`. If
@@ -1498,7 +1519,10 @@ sealed external interface Process : EventEmitter {
      * @since v0.1.26
      * @param args Additional arguments to pass when invoking the `callback`
      */
-    fun nextTick(callback: Function<*>, vararg args: Any?)
+    fun nextTick(
+        callback: Function<*>,
+        vararg args: Any?,
+    )
 
     /**
      * This API is available through the [--permission](https://nodejs.org/api/cli.html#--permission) flag.
@@ -1561,6 +1585,7 @@ sealed external interface Process : EventEmitter {
      * @since v0.5.0
      */
     fun uptime(): Double
+
     var hrtime: HRTime
 
     /**
@@ -1581,7 +1606,14 @@ sealed external interface Process : EventEmitter {
      * @since v0.5.9
      * @param options used to parameterize the sending of certain types of handles. `options` supports the following properties:
      */
-    val send: ((message: Any?, sendHandle: Any? /* use undefined for default */, options: (ProcessSendOptions)? /* use undefined for default */, callback: ((error: js.errors.JsError?) -> Unit)? /* use undefined for default */) -> Boolean)?
+    val send: (
+        (
+        message: Any?,
+        sendHandle: Any?, /* use undefined for default */
+        options: (ProcessSendOptions)?, /* use undefined for default */
+        callback: ((error: js.errors.JsError?) -> Unit)?, // use undefined for default
+    ) -> Boolean
+    )?
 
     /**
      * If the Node.js process is spawned with an IPC channel (see the `Child Process` and `Cluster` documentation), the `process.disconnect()` method will close the
@@ -1718,39 +1750,32 @@ sealed external interface Process : EventEmitter {
      * @since v0.8.0
      */
     var traceDeprecation: Boolean
-    /* EventEmitter */
+// EventEmitter
 
+    fun addListener(event: Signals, listener: SignalsListener) // this
 
-    fun addListener(event: Signals, listener: SignalsListener) /* this */
+    fun emit(
+        event: Signals,
+        signal: Signals = definedExternally,
+    ): Boolean
 
+    fun on(event: Signals, listener: SignalsListener) // this
 
-    fun emit(event: Signals, signal: Signals = definedExternally): Boolean
+    fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
 
+    fun on(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */) // this
 
-    fun on(event: Signals, listener: SignalsListener) /* this */
+    fun once(event: Signals, listener: SignalsListener) // this
 
+    fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
 
-    fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
+    fun once(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */) // this
 
-    fun on(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
+    fun prependListener(event: Signals, listener: SignalsListener) // this
 
-
-    fun once(event: Signals, listener: SignalsListener) /* this */
-
-
-    fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
-
-    fun once(event: js.symbol.Symbol, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
-
-
-    fun prependListener(event: Signals, listener: SignalsListener) /* this */
-
-
-    fun prependOnceListener(event: Signals, listener: SignalsListener) /* this */
-
+    fun prependOnceListener(event: Signals, listener: SignalsListener) // this
 
     fun listeners(event: Signals): ReadonlyArray<SignalsListener>
-
 
     @web.events.JsEvent("beforeExit")
     val beforeExitEvent: node.events.EventInstance<js.array.Tuple1<Number>>
@@ -1768,7 +1793,8 @@ sealed external interface Process : EventEmitter {
     val uncaughtExceptionEvent: node.events.EventInstance<js.array.Tuple2<js.errors.JsError, UncaughtExceptionOrigin>>
 
     @web.events.JsEvent("uncaughtExceptionMonitor")
-    val uncaughtExceptionMonitorEvent: node.events.EventInstance<js.array.Tuple2<js.errors.JsError, UncaughtExceptionOrigin>>
+    val uncaughtExceptionMonitorEvent:
+            node.events.EventInstance<js.array.Tuple2<js.errors.JsError, UncaughtExceptionOrigin>>
 
     @web.events.JsEvent("unhandledRejection")
     val unhandledRejectionEvent: node.events.EventInstance<js.array.Tuple2<Any?, Promise<Any?>>>

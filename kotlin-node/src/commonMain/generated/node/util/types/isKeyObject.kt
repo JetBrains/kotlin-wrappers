@@ -10,4 +10,4 @@ package node.util.types
  */
 
 @JsName("isKeyObject")
-external fun isKeyObjectRaw(value: Any?): Boolean /* object is KeyObject */
+external fun isKeyObjectRaw(value: Any?): Boolean // object is KeyObject

@@ -16,10 +16,10 @@ sealed external interface MeasureOptions {
     /**
      * Timestamp to be used as the end time, or a string identifying a previously recorded mark.
      */
-    var end: Any? /* number | string | undefined */
+    var end: Any? // number | string | undefined
 
     /**
      * Timestamp to be used as the start time, or a string identifying a previously recorded mark.
      */
-    var start: Any? /* number | string | undefined */
+    var start: Any? // number | string | undefined
 }

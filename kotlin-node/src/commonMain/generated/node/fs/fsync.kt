@@ -11,4 +11,7 @@ package node.fs
  * than a possible exception are given to the completion callback.
  * @since v0.1.96
  */
-external fun fsync(fd: Number, callback: NoParamCallback)
+external fun fsync(
+    fd: Number,
+    callback: NoParamCallback,
+)

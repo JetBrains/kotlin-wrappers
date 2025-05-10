@@ -21,5 +21,8 @@ sealed external interface JsonWebKey {
     operator fun get(key: String): Any?
 
     @seskar.js.JsNativeSetter
-    operator fun set(key: String, value: Any?)
+    operator fun set(
+        key: String,
+        value: Any?,
+    )
 }

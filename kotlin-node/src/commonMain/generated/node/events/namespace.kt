@@ -4,6 +4,6 @@
 
 package node.events
 
-/* import internal = require("node:events"); */
+// import internal = require("node:events");
 
-/* export = EventEmitter; */
+// export = EventEmitter;

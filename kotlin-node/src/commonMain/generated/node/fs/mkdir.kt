@@ -52,7 +52,11 @@ external fun mkdir(
  * @param options Either the file mode, or an object optionally specifying the file mode and whether parent folders
  * should be created. If a string is passed, it is parsed as an octal integer. If not specified, defaults to `0o777`.
  */
-external fun mkdir(path: PathLike, options: Mode?, callback: NoParamCallback)
+external fun mkdir(
+    path: PathLike,
+    options: Mode?,
+    callback: NoParamCallback,
+)
 
 /**
  * Asynchronous mkdir(2) - create a directory.
@@ -60,7 +64,11 @@ external fun mkdir(path: PathLike, options: Mode?, callback: NoParamCallback)
  * @param options Either the file mode, or an object optionally specifying the file mode and whether parent folders
  * should be created. If a string is passed, it is parsed as an octal integer. If not specified, defaults to `0o777`.
  */
-external fun mkdir(path: PathLike, options: (MkdirOptions)?, callback: NoParamCallback)
+external fun mkdir(
+    path: PathLike,
+    options: (MkdirOptions)?,
+    callback: NoParamCallback,
+)
 
 /**
  * Asynchronous mkdir(2) - create a directory.
@@ -90,4 +98,7 @@ external fun mkdir(
  * Asynchronous mkdir(2) - create a directory with a mode of `0o777`.
  * @param path A path to a file. If a URL is provided, it must use the `file:` protocol.
  */
-external fun mkdir(path: PathLike, callback: NoParamCallback)
+external fun mkdir(
+    path: PathLike,
+    callback: NoParamCallback,
+)

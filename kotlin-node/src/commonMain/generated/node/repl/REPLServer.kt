@@ -126,7 +126,7 @@ external class REPLServer : _Interface {
     /**
      * Specified in the REPL options, this is the function to use for custom Tab auto-completion.
      */
-    val completer: Any /* Completer | AsyncCompleter */
+    val completer: Any // Completer | AsyncCompleter
 
     /**
      * Specified in the REPL options, this is a flag that specifies whether the default `eval`
@@ -136,7 +136,7 @@ external class REPLServer : _Interface {
      * - `repl.REPL_MODE_STRICT` - evaluates expressions in strict mode. This is equivalent to
      *    prefacing every repl statement with `'use strict'`.
      */
-    val replMode: Any /* typeof REPL_MODE_SLOPPY | typeof REPL_MODE_STRICT */
+    val replMode: Any // typeof REPL_MODE_SLOPPY | typeof REPL_MODE_STRICT
 
     /**
      * The `replServer.defineCommand()` method is used to add new `.`\-prefixed commands
@@ -175,7 +175,10 @@ external class REPLServer : _Interface {
      * @param keyword The command keyword (_without_ a leading `.` character).
      * @param cmd The function to invoke when the command is processed.
      */
-    fun defineCommand(keyword: String, cmd: REPLCommandAction)
+    fun defineCommand(
+        keyword: String,
+        cmd: REPLCommandAction,
+    )
 
     /**
      * The `replServer.defineCommand()` method is used to add new `.`\-prefixed commands
@@ -214,7 +217,10 @@ external class REPLServer : _Interface {
      * @param keyword The command keyword (_without_ a leading `.` character).
      * @param cmd The function to invoke when the command is processed.
      */
-    fun defineCommand(keyword: String, cmd: REPLCommand)
+    fun defineCommand(
+        keyword: String,
+        cmd: REPLCommand,
+    )
 
     /**
      * The `replServer.displayPrompt()` method readies the REPL instance for input
@@ -263,31 +269,25 @@ external class REPLServer : _Interface {
      * 8. exit
      * 9. reset
      */
-    override fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
+    override fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
 
-
-    override fun emit(event: String, vararg args: Any?): Boolean
-
-    override fun emit(event: js.symbol.Symbol, vararg args: Any?): Boolean
-
-
-    override fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
-
-
-    override fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
-
-
-    override fun prependListener(
+    override fun emit(
         event: String,
-        listener: Function<Unit>, /* (...args: any[]) => void */
-    ) /* this */
+        vararg args: Any?,
+    ): Boolean
 
+    override fun emit(
+        event: js.symbol.Symbol,
+        vararg args: Any?,
+    ): Boolean
 
-    override fun prependOnceListener(
-        event: String,
-        listener: Function<Unit>, /* (...args: any[]) => void */
-    ) /* this */
+    override fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
 
+    override fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
+
+    override fun prependListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
+
+    override fun prependOnceListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
 
     @web.events.JsEvent("close")
     override val closeEvent: node.events.EventInstance<js.array.Tuple>

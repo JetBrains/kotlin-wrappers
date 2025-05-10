@@ -7,10 +7,15 @@ import web.abort.AbortSignal
 
 sealed external interface ClientRequestArgs {
     var _defaultAgent: Agent?
-    var agent: Any? /* Agent | boolean | undefined */
+    var agent: Any? // Agent | boolean | undefined
     var auth: String?
-    var createConnection: ((options: ClientRequestArgs, oncreate: (err: js.errors.JsError?, socket: node.stream.Duplex) -> Unit) -> node.stream.Duplex?)?
-    var defaultPort: Any? /* number | string | undefined */
+    var createConnection: (
+        (
+        options: ClientRequestArgs,
+        oncreate: (err: js.errors.JsError?, socket: node.stream.Duplex) -> Unit,
+    ) -> node.stream.Duplex?
+    )?
+    var defaultPort: Any? // number | string | undefined
     var family: Double?
     var headers: OutgoingHttpHeaders?
     var hints: Double?
@@ -27,7 +32,7 @@ sealed external interface ClientRequestArgs {
     var maxHeaderSize: Double?
     var method: String?
     var path: String?
-    var port: Any? /* number | string | null | undefined */
+    var port: Any? // number | string | null | undefined
     var protocol: String?
     var setDefaultHeaders: Boolean?
     var setHost: Boolean?

@@ -10,6 +10,5 @@ package node.assert
  * @see [source](https://github.com/nodejs/node/blob/v22.x/lib/assert.js)
  */
 
-
-/* import assert = require("assert"); */
-/* export = assert; */
+// import assert = require("assert");
+// export = assert;

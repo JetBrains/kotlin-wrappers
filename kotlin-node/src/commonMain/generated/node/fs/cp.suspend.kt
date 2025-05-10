@@ -4,10 +4,12 @@ package node.fs
 
 import web.url.URL
 
-
 @seskar.js.JsAsync
-external suspend fun cp(source: String, destination: String, opts: CopyOptions = definedExternally): js.core.Void
-
+external suspend fun cp(
+    source: String,
+    destination: String,
+    opts: CopyOptions = definedExternally,
+): js.core.Void
 
 /**
  * Asynchronously copies the entire directory structure from `src` to `dest`,
@@ -23,25 +25,11 @@ external suspend fun cp(source: String, destination: String, opts: CopyOptions =
  */
 
 @seskar.js.JsAsync
-external suspend fun cp(source: String, destination: URL, opts: CopyOptions = definedExternally): js.core.Void
-
-
-/**
- * Asynchronously copies the entire directory structure from `src` to `dest`,
- * including subdirectories and files.
- *
- * When copying a directory to another directory, globs are not supported and
- * behavior is similar to `cp dir1/ dir2/`.
- * @since v16.7.0
- * @experimental
- * @param src source path to copy.
- * @param dest destination path to copy to.
- * @return Fulfills with `undefined` upon success.
- */
-
-@seskar.js.JsAsync
-external suspend fun cp(source: URL, destination: String, opts: CopyOptions = definedExternally): js.core.Void
-
+external suspend fun cp(
+    source: String,
+    destination: URL,
+    opts: CopyOptions = definedExternally,
+): js.core.Void
 
 /**
  * Asynchronously copies the entire directory structure from `src` to `dest`,
@@ -57,4 +45,28 @@ external suspend fun cp(source: URL, destination: String, opts: CopyOptions = de
  */
 
 @seskar.js.JsAsync
-external suspend fun cp(source: URL, destination: URL, opts: CopyOptions = definedExternally): js.core.Void
+external suspend fun cp(
+    source: URL,
+    destination: String,
+    opts: CopyOptions = definedExternally,
+): js.core.Void
+
+/**
+ * Asynchronously copies the entire directory structure from `src` to `dest`,
+ * including subdirectories and files.
+ *
+ * When copying a directory to another directory, globs are not supported and
+ * behavior is similar to `cp dir1/ dir2/`.
+ * @since v16.7.0
+ * @experimental
+ * @param src source path to copy.
+ * @param dest destination path to copy to.
+ * @return Fulfills with `undefined` upon success.
+ */
+
+@seskar.js.JsAsync
+external suspend fun cp(
+    source: URL,
+    destination: URL,
+    opts: CopyOptions = definedExternally,
+): js.core.Void

@@ -22,8 +22,14 @@ package node.childProcess
  */
 external fun execSync(command: String): node.buffer.Buffer<*>
 
-external fun execSync(command: String, options: ExecSyncOptionsWithStringEncoding): String
+external fun execSync(
+    command: String,
+    options: ExecSyncOptionsWithStringEncoding,
+): String
 
-external fun execSync(command: String, options: ExecSyncOptionsWithBufferEncoding): node.buffer.Buffer<*>
+external fun execSync(
+    command: String,
+    options: ExecSyncOptionsWithBufferEncoding,
+): node.buffer.Buffer<*>
 
-external fun execSync(command: String, options: ExecSyncOptions = definedExternally): Any /* string | Buffer */
+external fun execSync(command: String, options: ExecSyncOptions = definedExternally): Any // string | Buffer

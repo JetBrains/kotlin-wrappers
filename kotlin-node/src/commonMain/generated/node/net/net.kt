@@ -19,5 +19,4 @@ package node.net
  * @see [source](https://github.com/nodejs/node/blob/v22.x/lib/net.js)
  */
 
-
-/* export * from "net"; */
+// export * from "net";

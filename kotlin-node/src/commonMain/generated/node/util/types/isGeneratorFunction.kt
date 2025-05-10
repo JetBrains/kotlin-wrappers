@@ -18,4 +18,4 @@ package node.util.types
  */
 
 @JsName("isGeneratorFunction")
-external fun isGeneratorFunctionRaw(value: Any?): Boolean /* object is GeneratorFunction */
+external fun isGeneratorFunctionRaw(value: Any?): Boolean // object is GeneratorFunction

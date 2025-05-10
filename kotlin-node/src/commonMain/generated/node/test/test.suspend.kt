@@ -2,14 +2,14 @@
 
 package node.test
 
-
 @seskar.js.JsAsync
 external suspend fun test(): js.core.Void
 
-
 @seskar.js.JsAsync
-external suspend fun test(name: String = definedExternally, fn: TestFn = definedExternally): js.core.Void
-
+external suspend fun test(
+    name: String = definedExternally,
+    fn: TestFn = definedExternally,
+): js.core.Void
 
 @seskar.js.JsAsync
 external suspend fun test(
@@ -18,10 +18,11 @@ external suspend fun test(
     fn: TestFn = definedExternally,
 ): js.core.Void
 
-
 @seskar.js.JsAsync
-external suspend fun test(options: TestOptions = definedExternally, fn: TestFn = definedExternally): js.core.Void
-
+external suspend fun test(
+    options: TestOptions = definedExternally,
+    fn: TestFn = definedExternally,
+): js.core.Void
 
 @seskar.js.JsAsync
 external suspend fun test(fn: TestFn = definedExternally): js.core.Void

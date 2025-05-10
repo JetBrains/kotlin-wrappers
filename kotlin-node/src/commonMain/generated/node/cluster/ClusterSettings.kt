@@ -48,7 +48,7 @@ sealed external interface ClusterSettings {
      * Sets inspector port of worker. This can be a number, or a function that takes no arguments and returns a number.
      * By default each worker gets its own port, incremented from the primary's `process.debugPort`.
      */
-    var inspectPort: Any? /* number | (() => number) | undefined */
+    var inspectPort: Any? // number | (() => number) | undefined
 
     /**
      * Specify the kind of serialization used for sending messages between processes. Possible values are `'json'` and `'advanced'`.

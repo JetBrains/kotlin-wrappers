@@ -36,7 +36,10 @@ open external class Serializer {
      * @param id A 32-bit unsigned integer.
      * @param arrayBuffer An `ArrayBuffer` instance.
      */
-    fun transferArrayBuffer(id: Number, arrayBuffer: ArrayBuffer)
+    fun transferArrayBuffer(
+        id: Number,
+        arrayBuffer: ArrayBuffer,
+    )
 
     /**
      * Write a raw 32-bit unsigned integer.
@@ -48,7 +51,10 @@ open external class Serializer {
      * Write a raw 64-bit unsigned integer, split into high and low 32-bit parts.
      * For use inside of a custom `serializer._writeHostObject()`.
      */
-    fun writeUint64(hi: Number, lo: Number)
+    fun writeUint64(
+        hi: Number,
+        lo: Number,
+    )
 
     /**
      * Write a JS `number` value.

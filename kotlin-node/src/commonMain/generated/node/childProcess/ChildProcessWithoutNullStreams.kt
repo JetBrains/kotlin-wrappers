@@ -18,7 +18,11 @@ sealed external interface ChildProcessWithoutNullStreams : ChildProcess {
     var requiredStderr: Readable
 
     @JsName("stdio")
-    val requiredStdio: js.array.Tuple5<Writable, Readable, Readable, // stderr
+    val requiredStdio: js.array.Tuple5<
+            Writable,
+            Readable,
+            Readable, // stderr
             Any? /* Readable | Writable | null | undefined */, // extra, no modification
-            Any? /* Readable | Writable | null | undefined */>
+            Any? // Readable | Writable | null | undefined
+            >
 }

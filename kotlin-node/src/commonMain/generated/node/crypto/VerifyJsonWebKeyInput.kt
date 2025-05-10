@@ -2,4 +2,6 @@
 
 package node.crypto
 
-sealed external interface VerifyJsonWebKeyInput : JsonWebKeyInput, SigningOptions
+sealed external interface VerifyJsonWebKeyInput :
+    JsonWebKeyInput,
+    SigningOptions

@@ -5,10 +5,11 @@ package node.fs
 import js.iterable.AsyncIterable
 import node.stream.Stream
 
-
 @seskar.js.JsAsync
-external suspend fun writeFile(file: PathLike, data: String): js.core.Void
-
+external suspend fun writeFile(
+    file: PathLike,
+    data: String,
+): js.core.Void
 
 /**
  * Asynchronously writes data to a file, replacing the file if it already exists. `data` can be a string, a buffer, an
@@ -68,7 +69,6 @@ external suspend fun writeFile(
     options: (WriteFileAsyncOptions)? = definedExternally,
 ): js.core.Void
 
-
 /**
  * Asynchronously writes data to a file, replacing the file if it already exists. `data` can be a string, a buffer, an
  * [AsyncIterable](https://tc39.github.io/ecma262/#sec-asynciterable-interface), or an
@@ -127,7 +127,6 @@ external suspend fun writeFile(
     options: node.buffer.BufferEncoding? = definedExternally,
 ): js.core.Void
 
-
 /**
  * Asynchronously writes data to a file, replacing the file if it already exists. `data` can be a string, a buffer, an
  * [AsyncIterable](https://tc39.github.io/ecma262/#sec-asynciterable-interface), or an
@@ -180,8 +179,10 @@ external suspend fun writeFile(
  */
 
 @seskar.js.JsAsync
-external suspend fun writeFile(file: PathLike, data: js.buffer.ArrayBufferView<*>): js.core.Void
-
+external suspend fun writeFile(
+    file: PathLike,
+    data: js.buffer.ArrayBufferView<*>,
+): js.core.Void
 
 /**
  * Asynchronously writes data to a file, replacing the file if it already exists. `data` can be a string, a buffer, an
@@ -241,7 +242,6 @@ external suspend fun writeFile(
     options: (WriteFileAsyncOptions)? = definedExternally,
 ): js.core.Void
 
-
 /**
  * Asynchronously writes data to a file, replacing the file if it already exists. `data` can be a string, a buffer, an
  * [AsyncIterable](https://tc39.github.io/ecma262/#sec-asynciterable-interface), or an
@@ -300,7 +300,6 @@ external suspend fun writeFile(
     options: node.buffer.BufferEncoding? = definedExternally,
 ): js.core.Void
 
-
 /**
  * Asynchronously writes data to a file, replacing the file if it already exists. `data` can be a string, a buffer, an
  * [AsyncIterable](https://tc39.github.io/ecma262/#sec-asynciterable-interface), or an
@@ -357,7 +356,6 @@ external suspend fun writeFile(
     file: PathLike,
     data: js.iterable.JsIterable<Any /* string | NodeJS.ArrayBufferView */>,
 ): js.core.Void
-
 
 /**
  * Asynchronously writes data to a file, replacing the file if it already exists. `data` can be a string, a buffer, an
@@ -417,7 +415,6 @@ external suspend fun writeFile(
     options: (WriteFileAsyncOptions)? = definedExternally,
 ): js.core.Void
 
-
 /**
  * Asynchronously writes data to a file, replacing the file if it already exists. `data` can be a string, a buffer, an
  * [AsyncIterable](https://tc39.github.io/ecma262/#sec-asynciterable-interface), or an
@@ -476,7 +473,6 @@ external suspend fun writeFile(
     options: node.buffer.BufferEncoding? = definedExternally,
 ): js.core.Void
 
-
 /**
  * Asynchronously writes data to a file, replacing the file if it already exists. `data` can be a string, a buffer, an
  * [AsyncIterable](https://tc39.github.io/ecma262/#sec-asynciterable-interface), or an
@@ -533,7 +529,6 @@ external suspend fun writeFile(
     file: PathLike,
     data: AsyncIterable<Any /* string | NodeJS.ArrayBufferView */>,
 ): js.core.Void
-
 
 /**
  * Asynchronously writes data to a file, replacing the file if it already exists. `data` can be a string, a buffer, an
@@ -593,7 +588,6 @@ external suspend fun writeFile(
     options: (WriteFileAsyncOptions)? = definedExternally,
 ): js.core.Void
 
-
 /**
  * Asynchronously writes data to a file, replacing the file if it already exists. `data` can be a string, a buffer, an
  * [AsyncIterable](https://tc39.github.io/ecma262/#sec-asynciterable-interface), or an
@@ -652,7 +646,6 @@ external suspend fun writeFile(
     options: node.buffer.BufferEncoding? = definedExternally,
 ): js.core.Void
 
-
 /**
  * Asynchronously writes data to a file, replacing the file if it already exists. `data` can be a string, a buffer, an
  * [AsyncIterable](https://tc39.github.io/ecma262/#sec-asynciterable-interface), or an
@@ -705,8 +698,10 @@ external suspend fun writeFile(
  */
 
 @seskar.js.JsAsync
-external suspend fun writeFile(file: PathLike, data: Stream): js.core.Void
-
+external suspend fun writeFile(
+    file: PathLike,
+    data: Stream,
+): js.core.Void
 
 /**
  * Asynchronously writes data to a file, replacing the file if it already exists. `data` can be a string, a buffer, an
@@ -766,7 +761,6 @@ external suspend fun writeFile(
     options: (WriteFileAsyncOptions)? = definedExternally,
 ): js.core.Void
 
-
 /**
  * Asynchronously writes data to a file, replacing the file if it already exists. `data` can be a string, a buffer, an
  * [AsyncIterable](https://tc39.github.io/ecma262/#sec-asynciterable-interface), or an
@@ -825,7 +819,6 @@ external suspend fun writeFile(
     options: node.buffer.BufferEncoding? = definedExternally,
 ): js.core.Void
 
-
 /**
  * Asynchronously writes data to a file, replacing the file if it already exists. `data` can be a string, a buffer, an
  * [AsyncIterable](https://tc39.github.io/ecma262/#sec-asynciterable-interface), or an
@@ -878,8 +871,10 @@ external suspend fun writeFile(
  */
 
 @seskar.js.JsAsync
-external suspend fun writeFile(file: FileHandle, data: String): js.core.Void
-
+external suspend fun writeFile(
+    file: FileHandle,
+    data: String,
+): js.core.Void
 
 /**
  * Asynchronously writes data to a file, replacing the file if it already exists. `data` can be a string, a buffer, an
@@ -939,7 +934,6 @@ external suspend fun writeFile(
     options: (WriteFileAsyncOptions)? = definedExternally,
 ): js.core.Void
 
-
 /**
  * Asynchronously writes data to a file, replacing the file if it already exists. `data` can be a string, a buffer, an
  * [AsyncIterable](https://tc39.github.io/ecma262/#sec-asynciterable-interface), or an
@@ -998,7 +992,6 @@ external suspend fun writeFile(
     options: node.buffer.BufferEncoding? = definedExternally,
 ): js.core.Void
 
-
 /**
  * Asynchronously writes data to a file, replacing the file if it already exists. `data` can be a string, a buffer, an
  * [AsyncIterable](https://tc39.github.io/ecma262/#sec-asynciterable-interface), or an
@@ -1051,8 +1044,10 @@ external suspend fun writeFile(
  */
 
 @seskar.js.JsAsync
-external suspend fun writeFile(file: FileHandle, data: js.buffer.ArrayBufferView<*>): js.core.Void
-
+external suspend fun writeFile(
+    file: FileHandle,
+    data: js.buffer.ArrayBufferView<*>,
+): js.core.Void
 
 /**
  * Asynchronously writes data to a file, replacing the file if it already exists. `data` can be a string, a buffer, an
@@ -1112,7 +1107,6 @@ external suspend fun writeFile(
     options: (WriteFileAsyncOptions)? = definedExternally,
 ): js.core.Void
 
-
 /**
  * Asynchronously writes data to a file, replacing the file if it already exists. `data` can be a string, a buffer, an
  * [AsyncIterable](https://tc39.github.io/ecma262/#sec-asynciterable-interface), or an
@@ -1171,7 +1165,6 @@ external suspend fun writeFile(
     options: node.buffer.BufferEncoding? = definedExternally,
 ): js.core.Void
 
-
 /**
  * Asynchronously writes data to a file, replacing the file if it already exists. `data` can be a string, a buffer, an
  * [AsyncIterable](https://tc39.github.io/ecma262/#sec-asynciterable-interface), or an
@@ -1228,7 +1221,6 @@ external suspend fun writeFile(
     file: FileHandle,
     data: js.iterable.JsIterable<Any /* string | NodeJS.ArrayBufferView */>,
 ): js.core.Void
-
 
 /**
  * Asynchronously writes data to a file, replacing the file if it already exists. `data` can be a string, a buffer, an
@@ -1288,7 +1280,6 @@ external suspend fun writeFile(
     options: (WriteFileAsyncOptions)? = definedExternally,
 ): js.core.Void
 
-
 /**
  * Asynchronously writes data to a file, replacing the file if it already exists. `data` can be a string, a buffer, an
  * [AsyncIterable](https://tc39.github.io/ecma262/#sec-asynciterable-interface), or an
@@ -1347,7 +1338,6 @@ external suspend fun writeFile(
     options: node.buffer.BufferEncoding? = definedExternally,
 ): js.core.Void
 
-
 /**
  * Asynchronously writes data to a file, replacing the file if it already exists. `data` can be a string, a buffer, an
  * [AsyncIterable](https://tc39.github.io/ecma262/#sec-asynciterable-interface), or an
@@ -1404,7 +1394,6 @@ external suspend fun writeFile(
     file: FileHandle,
     data: AsyncIterable<Any /* string | NodeJS.ArrayBufferView */>,
 ): js.core.Void
-
 
 /**
  * Asynchronously writes data to a file, replacing the file if it already exists. `data` can be a string, a buffer, an
@@ -1464,7 +1453,6 @@ external suspend fun writeFile(
     options: (WriteFileAsyncOptions)? = definedExternally,
 ): js.core.Void
 
-
 /**
  * Asynchronously writes data to a file, replacing the file if it already exists. `data` can be a string, a buffer, an
  * [AsyncIterable](https://tc39.github.io/ecma262/#sec-asynciterable-interface), or an
@@ -1523,7 +1511,6 @@ external suspend fun writeFile(
     options: node.buffer.BufferEncoding? = definedExternally,
 ): js.core.Void
 
-
 /**
  * Asynchronously writes data to a file, replacing the file if it already exists. `data` can be a string, a buffer, an
  * [AsyncIterable](https://tc39.github.io/ecma262/#sec-asynciterable-interface), or an
@@ -1576,8 +1563,10 @@ external suspend fun writeFile(
  */
 
 @seskar.js.JsAsync
-external suspend fun writeFile(file: FileHandle, data: Stream): js.core.Void
-
+external suspend fun writeFile(
+    file: FileHandle,
+    data: Stream,
+): js.core.Void
 
 /**
  * Asynchronously writes data to a file, replacing the file if it already exists. `data` can be a string, a buffer, an
@@ -1636,7 +1625,6 @@ external suspend fun writeFile(
     data: Stream,
     options: (WriteFileAsyncOptions)? = definedExternally,
 ): js.core.Void
-
 
 /**
  * Asynchronously writes data to a file, replacing the file if it already exists. `data` can be a string, a buffer, an

@@ -82,7 +82,7 @@ sealed external interface ReplOptions {
      *
      * @see https://nodejs.org/dist/latest-v22.x/docs/api/readline.html#readline_use_of_the_completer_function
      */
-    var completer: Any? /* Completer | AsyncCompleter | undefined */
+    var completer: Any? // Completer | AsyncCompleter | undefined
 
     /**
      * A flag that specifies whether the default evaluator executes all JavaScript commands in
@@ -92,7 +92,7 @@ sealed external interface ReplOptions {
      * - `repl.REPL_MODE_STRICT` - evaluates expressions in strict mode. This is equivalent to
      *   prefacing every repl statement with `'use strict'`.
      */
-    var replMode: Any? /* typeof REPL_MODE_SLOPPY | typeof REPL_MODE_STRICT | undefined */
+    var replMode: Any? // typeof REPL_MODE_SLOPPY | typeof REPL_MODE_STRICT | undefined
 
     /**
      * Stop evaluating the current piece of code when `SIGINT` is received, i.e. `Ctrl+C` is

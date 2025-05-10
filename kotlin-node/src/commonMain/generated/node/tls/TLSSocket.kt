@@ -45,14 +45,14 @@ external class TLSSocket : node.net.Socket {
      * Always returns `true`. This may be used to distinguish TLS sockets from regular`net.Socket` instances.
      * @since v0.11.4
      */
-    var encrypted: Boolean /* true */
+    var encrypted: Boolean // true
 
     /**
      * String containing the selected ALPN protocol.
      * Before a handshake has completed, this value is always null.
      * When a handshake is completed but not ALPN protocol was selected, tlsSocket.alpnProtocol equals false.
      */
-    var alpnProtocol: Any? /* string | false | null */
+    var alpnProtocol: Any? // string | false | null
 
     /**
      * Returns an object representing the local certificate. The returned object has
@@ -65,7 +65,7 @@ external class TLSSocket : node.net.Socket {
      * socket has been destroyed, `null` will be returned.
      * @since v11.2.0
      */
-    fun getCertificate(): Any? /* PeerCertificate | object | null */
+    fun getCertificate(): Any? // PeerCertificate | object | null
 
     /**
      * Returns an object containing information on the negotiated cipher suite.
@@ -95,7 +95,7 @@ external class TLSSocket : node.net.Socket {
      * For example: `{ type: 'ECDH', name: 'prime256v1', size: 256 }`.
      * @since v5.0.0
      */
-    fun getEphemeralKeyInfo(): Any? /* EphemeralKeyInfo | object | null */
+    fun getEphemeralKeyInfo(): Any? // EphemeralKeyInfo | object | null
 
     /**
      * As the `Finished` messages are message digests of the complete handshake
@@ -122,8 +122,7 @@ external class TLSSocket : node.net.Socket {
      * @return A certificate object.
      */
 
-
-    fun getPeerCertificate(detailed: Boolean = definedExternally): Any /* PeerCertificate | DetailedPeerCertificate */
+    fun getPeerCertificate(detailed: Boolean = definedExternally): Any // PeerCertificate | DetailedPeerCertificate
 
     /**
      * As the `Finished` messages are message digests of the complete handshake
@@ -212,7 +211,10 @@ external class TLSSocket : node.net.Socket {
      * an error, unless the `tlsSocket` has been destroyed, in which case `callback` will not be called at all.
      * @return `true` if renegotiation was initiated, `false` otherwise.
      */
-    fun renegotiate(options: TLSSocketRenegotiateOptions, callback: (err: js.errors.JsError?) -> Unit): Boolean?
+    fun renegotiate(
+        options: TLSSocketRenegotiateOptions,
+        callback: (err: js.errors.JsError?) -> Unit,
+    ): Boolean?
 
     /**
      * The `tlsSocket.setMaxSendFragment()` method sets the maximum TLS fragment size.
@@ -291,32 +293,31 @@ external class TLSSocket : node.net.Socket {
      * @param context Optionally provide a context.
      * @return requested bytes of the keying material
      */
-    fun exportKeyingMaterial(length: Number, label: String, context: node.buffer.Buffer<*>): node.buffer.Buffer<*>
-    override fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
+    fun exportKeyingMaterial(
+        length: Number,
+        label: String,
+        context: node.buffer.Buffer<*>,
+    ): node.buffer.Buffer<*>
 
+    override fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
 
-    override fun emit(event: String, vararg args: Any?): Boolean
-
-    override fun emit(event: js.symbol.Symbol, vararg args: Any?): Boolean
-
-
-    override fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
-
-
-    override fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
-
-
-    override fun prependListener(
+    override fun emit(
         event: String,
-        listener: Function<Unit>, /* (...args: any[]) => void */
-    ) /* this */
+        vararg args: Any?,
+    ): Boolean
 
+    override fun emit(
+        event: js.symbol.Symbol,
+        vararg args: Any?,
+    ): Boolean
 
-    override fun prependOnceListener(
-        event: String,
-        listener: Function<Unit>, /* (...args: any[]) => void */
-    ) /* this */
+    override fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
 
+    override fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
+
+    override fun prependListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
+
+    override fun prependOnceListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
 
     @web.events.JsEvent("OCSPResponse")
     val OCSPResponseEvent: node.events.EventInstance<js.array.Tuple1<node.buffer.Buffer<*>>>

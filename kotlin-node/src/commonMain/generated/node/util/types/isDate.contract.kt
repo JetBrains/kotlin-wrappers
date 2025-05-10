@@ -5,7 +5,6 @@ package node.util.types
 import js.date.Date
 import kotlin.contracts.contract
 
-
 @Suppress("CANNOT_CHECK_FOR_EXTERNAL_INTERFACE")
 inline fun isDate(value: Any?): Boolean /* object is Date */ {
     contract {

@@ -20,4 +20,8 @@ package node.fs
  * ```
  * @since v0.1.30
  */
-external fun chmod(path: PathLike, mode: Mode, callback: NoParamCallback)
+external fun chmod(
+    path: PathLike,
+    mode: Mode,
+    callback: NoParamCallback,
+)

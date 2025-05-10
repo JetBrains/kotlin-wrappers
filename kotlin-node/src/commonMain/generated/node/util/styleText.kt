@@ -35,7 +35,10 @@ package node.util
  * @param text The text to to be formatted.
  * @since v20.12.0
  */
-external fun styleText(format: ForegroundColors, text: String): String
+external fun styleText(
+    format: ForegroundColors,
+    text: String,
+): String
 
 /**
  * This function returns a formatted text considering the `format` passed.
@@ -68,7 +71,10 @@ external fun styleText(format: ForegroundColors, text: String): String
  * @param text The text to to be formatted.
  * @since v20.12.0
  */
-external fun styleText(format: BackgroundColors, text: String): String
+external fun styleText(
+    format: BackgroundColors,
+    text: String,
+): String
 
 /**
  * This function returns a formatted text considering the `format` passed.
@@ -101,7 +107,10 @@ external fun styleText(format: BackgroundColors, text: String): String
  * @param text The text to to be formatted.
  * @since v20.12.0
  */
-external fun styleText(format: Modifiers, text: String): String
+external fun styleText(
+    format: Modifiers,
+    text: String,
+): String
 
 /**
  * This function returns a formatted text considering the `format` passed.

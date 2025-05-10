@@ -4,9 +4,8 @@
 
 package node.fs
 
-/* export { promises }; */
+// export { promises };
 
 /** @deprecated */
-
 
 /** @deprecated */

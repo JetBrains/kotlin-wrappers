@@ -36,4 +36,7 @@ import js.promise.Promise
  */
 
 @JsName("opendir")
-external fun opendirAsync(path: PathLike, options: OpenDirOptions = definedExternally): Promise<Dir>
+external fun opendirAsync(
+    path: PathLike,
+    options: OpenDirOptions = definedExternally,
+): Promise<Dir>

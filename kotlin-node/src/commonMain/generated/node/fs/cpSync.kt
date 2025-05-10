@@ -17,7 +17,11 @@ import web.url.URL
  * @param src source path to copy.
  * @param dest destination path to copy to.
  */
-external fun cpSync(source: String, destination: String, opts: CopySyncOptions = definedExternally)
+external fun cpSync(
+    source: String,
+    destination: String,
+    opts: CopySyncOptions = definedExternally,
+)
 
 /**
  * Synchronously copies the entire directory structure from `src` to `dest`,
@@ -30,7 +34,11 @@ external fun cpSync(source: String, destination: String, opts: CopySyncOptions =
  * @param src source path to copy.
  * @param dest destination path to copy to.
  */
-external fun cpSync(source: String, destination: URL, opts: CopySyncOptions = definedExternally)
+external fun cpSync(
+    source: String,
+    destination: URL,
+    opts: CopySyncOptions = definedExternally,
+)
 
 /**
  * Synchronously copies the entire directory structure from `src` to `dest`,
@@ -43,7 +51,11 @@ external fun cpSync(source: String, destination: URL, opts: CopySyncOptions = de
  * @param src source path to copy.
  * @param dest destination path to copy to.
  */
-external fun cpSync(source: URL, destination: String, opts: CopySyncOptions = definedExternally)
+external fun cpSync(
+    source: URL,
+    destination: String,
+    opts: CopySyncOptions = definedExternally,
+)
 
 /**
  * Synchronously copies the entire directory structure from `src` to `dest`,
@@ -56,4 +68,8 @@ external fun cpSync(source: URL, destination: String, opts: CopySyncOptions = de
  * @param src source path to copy.
  * @param dest destination path to copy to.
  */
-external fun cpSync(source: URL, destination: URL, opts: CopySyncOptions = definedExternally)
+external fun cpSync(
+    source: URL,
+    destination: URL,
+    opts: CopySyncOptions = definedExternally,
+)

@@ -15,5 +15,5 @@ sealed external interface Url {
     var search: String?
     var slashes: Boolean?
     var port: String?
-    var query: Any? /* string | null | ParsedUrlQuery */
+    var query: Any? // string | null | ParsedUrlQuery
 }

@@ -4,7 +4,6 @@ package node.util.types
 
 import kotlin.contracts.contract
 
-
 @Suppress("CANNOT_CHECK_FOR_EXTERNAL_INTERFACE")
 inline fun isArrayBufferView(value: Any?): Boolean /* object is NodeJS.ArrayBufferView */ {
     contract {

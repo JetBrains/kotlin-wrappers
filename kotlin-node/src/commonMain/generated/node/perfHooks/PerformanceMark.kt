@@ -11,11 +11,12 @@ package node.perfHooks
 external class PerformanceMark : PerformanceEntry {
     constructor ()
 
-    override val duration: Double /* 0 */
+    override val duration: Double
 
+    // 0
     @Deprecated(message = "use markEntryType", level = DeprecationLevel.HIDDEN)
     override val entryType: EntryType
 
     @JsName("entryType")
-    val markEntryType: String /* "mark" */
+    val markEntryType: String // "mark"
 }

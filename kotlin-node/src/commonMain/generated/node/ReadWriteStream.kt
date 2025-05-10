@@ -2,4 +2,6 @@
 
 package node
 
-external interface ReadWriteStream : ReadableStream, WritableStream
+external interface ReadWriteStream :
+    ReadableStream,
+    WritableStream

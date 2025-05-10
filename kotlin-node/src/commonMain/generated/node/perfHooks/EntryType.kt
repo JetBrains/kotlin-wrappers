@@ -34,4 +34,4 @@ sealed external interface EntryType {
         @seskar.js.JsValue("resource")
         val resource: EntryType
     }
-}// available on the Web
+} // available on the Web

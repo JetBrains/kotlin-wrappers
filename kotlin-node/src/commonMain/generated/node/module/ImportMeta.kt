@@ -51,7 +51,10 @@ sealed external interface ImportMeta {
      * @param parent The absolute parent module URL to resolve from.
      * @returns The absolute (`file:`) URL string for the resolved module.
      */
-    fun resolve(specifier: String, parent: String? = definedExternally): String
+    fun resolve(
+        specifier: String,
+        parent: String? = definedExternally,
+    ): String
 
     /**
      * Provides a module-relative resolution function scoped to each module, returning
@@ -66,5 +69,8 @@ sealed external interface ImportMeta {
      * @param parent The absolute parent module URL to resolve from.
      * @returns The absolute (`file:`) URL string for the resolved module.
      */
-    fun resolve(specifier: String, parent: URL? = definedExternally): String
+    fun resolve(
+        specifier: String,
+        parent: URL? = definedExternally,
+    ): String
 }

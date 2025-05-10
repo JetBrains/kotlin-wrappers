@@ -2,4 +2,4 @@
 
 package node.assert
 
-typealias AssertPredicate = Any /* RegExp | (new () => object) | ((thrown: unknown) => boolean) | object | Error */
+typealias AssertPredicate = Any // RegExp | (new () => object) | ((thrown: unknown) => boolean) | object | Error

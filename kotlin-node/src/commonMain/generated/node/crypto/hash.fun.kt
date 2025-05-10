@@ -32,8 +32,12 @@ package node.crypto
  *             could encode the string into a `TypedArray` using either `TextEncoder` or `Buffer.from()` and passing the encoded `TypedArray` into this API instead.
  * @param [outputEncoding='hex'] [Encoding](https://nodejs.org/docs/latest-v22.x/api/buffer.html#buffers-and-character-encodings) used to encode the returned digest.
  */
-external fun hash(algorithm: String, data: BinaryLike, outputEncoding: BinaryToTextEncoding = definedExternally): String
+external fun hash(
+    algorithm: String,
+    data: BinaryLike,
+    outputEncoding: BinaryToTextEncoding = definedExternally,
+): String
 
 external fun hash(algorithm: String, data: BinaryLike, outputEncoding: String /* "buffer" */): node.buffer.Buffer<*>
 
-external fun hash(algorithm: String, data: BinaryLike): Any /* string | Buffer */
+external fun hash(algorithm: String, data: BinaryLike): Any // string | Buffer

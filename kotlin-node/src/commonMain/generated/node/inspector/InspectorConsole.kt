@@ -7,24 +7,47 @@ package node.inspector
 // typed permissively.
 sealed external interface InspectorConsole {
     fun debug(vararg data: Any?)
+
     fun error(vararg data: Any?)
+
     fun info(vararg data: Any?)
+
     fun log(vararg data: Any?)
+
     fun warn(vararg data: Any?)
+
     fun dir(vararg data: Any?)
+
     fun dirxml(vararg data: Any?)
+
     fun table(vararg data: Any?)
+
     fun trace(vararg data: Any?)
+
     fun group(vararg data: Any?)
+
     fun groupCollapsed(vararg data: Any?)
+
     fun groupEnd(vararg data: Any?)
+
     fun clear(vararg data: Any?)
+
     fun count(label: Any? = definedExternally)
+
     fun countReset(label: Any? = definedExternally)
-    fun assert(value: Any? = definedExternally, vararg data: Any?)
+
+    fun assert(
+        value: Any? = definedExternally,
+        vararg data: Any?,
+    )
+
     fun profile(label: Any? = definedExternally)
+
     fun profileEnd(label: Any? = definedExternally)
+
     fun time(label: Any? = definedExternally)
+
     fun timeLog(label: Any? = definedExternally)
+
     fun timeStamp(label: Any? = definedExternally)
 }

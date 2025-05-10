@@ -91,5 +91,8 @@ external fun resolve(
 external fun resolve(
     hostname: String,
     rrtype: String,
-    callback: (err: node.ErrnoException?, addresses: Any /* string[] | MxRecord[] | NaptrRecord[] | SoaRecord | SrvRecord[] | string[][] | AnyRecord[] */) -> Unit,
+    callback: (
+        err: node.ErrnoException?,
+        addresses: Any, // string[] | MxRecord[] | NaptrRecord[] | SoaRecord | SrvRecord[] | string[][] | AnyRecord[]
+    ) -> Unit,
 )

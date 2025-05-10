@@ -31,7 +31,10 @@ package node.vm
  * @param contextifiedObject The `contextified` object that will be used as the `global` when the `code` is compiled and run.
  * @return the result of the very last statement executed in the script.
  */
-external fun runInContext(code: String, contextifiedObject: Context): Any?
+external fun runInContext(
+    code: String,
+    contextifiedObject: Context,
+): Any?
 
 /**
  * The `vm.runInContext()` method compiles `code`, runs it within the context of
@@ -93,4 +96,8 @@ external fun runInContext(
  * @param contextifiedObject The `contextified` object that will be used as the `global` when the `code` is compiled and run.
  * @return the result of the very last statement executed in the script.
  */
-external fun runInContext(code: String, contextifiedObject: Context, options: String = definedExternally): Any?
+external fun runInContext(
+    code: String,
+    contextifiedObject: Context,
+    options: String = definedExternally,
+): Any?

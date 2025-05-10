@@ -18,14 +18,17 @@ external fun onlyAsync(
     fn: TestFn = definedExternally,
 ): Promise<js.core.Void>
 
+@JsName("only")
+external fun onlyAsync(
+    name: String = definedExternally,
+    fn: TestFn = definedExternally,
+): Promise<js.core.Void>
 
 @JsName("only")
-external fun onlyAsync(name: String = definedExternally, fn: TestFn = definedExternally): Promise<js.core.Void>
-
-
-@JsName("only")
-external fun onlyAsync(options: TestOptions = definedExternally, fn: TestFn = definedExternally): Promise<js.core.Void>
-
+external fun onlyAsync(
+    options: TestOptions = definedExternally,
+    fn: TestFn = definedExternally,
+): Promise<js.core.Void>
 
 @JsName("only")
 external fun onlyAsync(fn: TestFn = definedExternally): Promise<js.core.Void>

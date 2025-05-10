@@ -35,8 +35,14 @@ import js.buffer.ArrayBuffer
  */
 external fun generatePrimeSync(size: Number): ArrayBuffer
 
-external fun generatePrimeSync(size: Number, options: GeneratePrimeOptionsBigInt): js.core.BigInt
+external fun generatePrimeSync(
+    size: Number,
+    options: GeneratePrimeOptionsBigInt,
+): js.core.BigInt
 
-external fun generatePrimeSync(size: Number, options: GeneratePrimeOptionsArrayBuffer): ArrayBuffer
+external fun generatePrimeSync(
+    size: Number,
+    options: GeneratePrimeOptionsArrayBuffer,
+): ArrayBuffer
 
-external fun generatePrimeSync(size: Number, options: GeneratePrimeOptions): Any /* ArrayBuffer | bigint */
+external fun generatePrimeSync(size: Number, options: GeneratePrimeOptions): Any // ArrayBuffer | bigint

@@ -36,5 +36,4 @@ package node.perfHooks
  * @see [source](https://github.com/nodejs/node/blob/v22.x/lib/perf_hooks.js)
  */
 
-
-/* export * from "perf_hooks"; */
+// export * from "perf_hooks";

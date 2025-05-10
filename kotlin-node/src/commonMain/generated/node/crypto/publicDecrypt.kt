@@ -15,7 +15,10 @@ package node.crypto
  * be passed instead of a public key.
  * @since v1.1.0
  */
-external fun publicDecrypt(key: RsaPublicKey, buffer: js.buffer.ArrayBufferView<*>): node.buffer.Buffer<*>
+external fun publicDecrypt(
+    key: RsaPublicKey,
+    buffer: js.buffer.ArrayBufferView<*>,
+): node.buffer.Buffer<*>
 
 /**
  * Decrypts `buffer` with `key`.`buffer` was previously encrypted using
@@ -28,7 +31,10 @@ external fun publicDecrypt(key: RsaPublicKey, buffer: js.buffer.ArrayBufferView<
  * be passed instead of a public key.
  * @since v1.1.0
  */
-external fun publicDecrypt(key: RsaPublicKey, buffer: String): node.buffer.Buffer<*>
+external fun publicDecrypt(
+    key: RsaPublicKey,
+    buffer: String,
+): node.buffer.Buffer<*>
 
 /**
  * Decrypts `buffer` with `key`.`buffer` was previously encrypted using
@@ -41,7 +47,10 @@ external fun publicDecrypt(key: RsaPublicKey, buffer: String): node.buffer.Buffe
  * be passed instead of a public key.
  * @since v1.1.0
  */
-external fun publicDecrypt(key: RsaPrivateKey, buffer: js.buffer.ArrayBufferView<*>): node.buffer.Buffer<*>
+external fun publicDecrypt(
+    key: RsaPrivateKey,
+    buffer: js.buffer.ArrayBufferView<*>,
+): node.buffer.Buffer<*>
 
 /**
  * Decrypts `buffer` with `key`.`buffer` was previously encrypted using
@@ -54,7 +63,10 @@ external fun publicDecrypt(key: RsaPrivateKey, buffer: js.buffer.ArrayBufferView
  * be passed instead of a public key.
  * @since v1.1.0
  */
-external fun publicDecrypt(key: RsaPrivateKey, buffer: String): node.buffer.Buffer<*>
+external fun publicDecrypt(
+    key: RsaPrivateKey,
+    buffer: String,
+): node.buffer.Buffer<*>
 
 /**
  * Decrypts `buffer` with `key`.`buffer` was previously encrypted using
@@ -67,7 +79,10 @@ external fun publicDecrypt(key: RsaPrivateKey, buffer: String): node.buffer.Buff
  * be passed instead of a public key.
  * @since v1.1.0
  */
-external fun publicDecrypt(key: KeyLike, buffer: js.buffer.ArrayBufferView<*>): node.buffer.Buffer<*>
+external fun publicDecrypt(
+    key: KeyLike,
+    buffer: js.buffer.ArrayBufferView<*>,
+): node.buffer.Buffer<*>
 
 /**
  * Decrypts `buffer` with `key`.`buffer` was previously encrypted using
@@ -80,4 +95,7 @@ external fun publicDecrypt(key: KeyLike, buffer: js.buffer.ArrayBufferView<*>): 
  * be passed instead of a public key.
  * @since v1.1.0
  */
-external fun publicDecrypt(key: KeyLike, buffer: String): node.buffer.Buffer<*>
+external fun publicDecrypt(
+    key: KeyLike,
+    buffer: String,
+): node.buffer.Buffer<*>

@@ -4,6 +4,6 @@
 
 package node.http2
 
-/* import EventEmitter = require("node:events"); */
+// import EventEmitter = require("node:events");
 
-/* export { OutgoingHttpHeaders } from "node:http"; */
+// export { OutgoingHttpHeaders } from "node:http";

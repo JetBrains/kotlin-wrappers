@@ -4,10 +4,78 @@ package node.assert
 
 import js.promise.Promise
 
-
 @seskar.js.JsAsync
 external suspend fun rejects(block: () -> Promise<Any?>): js.core.Void
 
+/**
+ * Awaits the `asyncFn` promise or, if `asyncFn` is a function, immediately
+ * calls the function and awaits the returned promise to complete. It will then
+ * check that the promise is rejected.
+ *
+ * If `asyncFn` is a function and it throws an error synchronously, `assert.rejects()` will return a rejected `Promise` with that error. If the
+ * function does not return a promise, `assert.rejects()` will return a rejected `Promise` with an [ERR_INVALID_RETURN_VALUE](https://nodejs.org/docs/latest-v22.x/api/errors.html#err_invalid_return_value)
+ * error. In both cases the error handler is skipped.
+ *
+ * Besides the async nature to await the completion behaves identically to {@link throws}.
+ *
+ * If specified, `error` can be a [`Class`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes),
+ * [`RegExp`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions), a validation function,
+ * an object where each property will be tested for, or an instance of error where
+ * each property will be tested for including the non-enumerable `message` and `name` properties.
+ *
+ * If specified, `message` will be the message provided by the `{@link AssertionError}` if the `asyncFn` fails to reject.
+ *
+ * ```js
+ * import assert from 'node:assert/strict';
+ *
+ * await assert.rejects(
+ *   async () => {
+ *     throw new TypeError('Wrong value');
+ *   },
+ *   {
+ *     name: 'TypeError',
+ *     message: 'Wrong value',
+ *   },
+ * );
+ * ```
+ *
+ * ```js
+ * import assert from 'node:assert/strict';
+ *
+ * await assert.rejects(
+ *   async () => {
+ *     throw new TypeError('Wrong value');
+ *   },
+ *   (err) => {
+ *     assert.strictEqual(err.name, 'TypeError');
+ *     assert.strictEqual(err.message, 'Wrong value');
+ *     return true;
+ *   },
+ * );
+ * ```
+ *
+ * ```js
+ * import assert from 'node:assert/strict';
+ *
+ * assert.rejects(
+ *   Promise.reject(new Error('Wrong value')),
+ *   Error,
+ * ).then(() => {
+ *   // ...
+ * });
+ * ```
+ *
+ * `error` cannot be a string. If a string is provided as the second argument, then `error` is assumed to
+ * be omitted and the string will be used for `message` instead. This can lead to easy-to-miss mistakes. Please read the
+ * example in {@link throws} carefully if using a string as the second argument gets considered.
+ * @since v10.0.0
+ */
+
+@seskar.js.JsAsync
+external suspend fun rejects(
+    block: () -> Promise<Any?>,
+    message: String = definedExternally,
+): js.core.Void
 
 /**
  * Awaits the `asyncFn` promise or, if `asyncFn` is a function, immediately
@@ -74,76 +142,10 @@ external suspend fun rejects(block: () -> Promise<Any?>): js.core.Void
  */
 
 @seskar.js.JsAsync
-external suspend fun rejects(block: () -> Promise<Any?>, message: String = definedExternally): js.core.Void
-
-
-/**
- * Awaits the `asyncFn` promise or, if `asyncFn` is a function, immediately
- * calls the function and awaits the returned promise to complete. It will then
- * check that the promise is rejected.
- *
- * If `asyncFn` is a function and it throws an error synchronously, `assert.rejects()` will return a rejected `Promise` with that error. If the
- * function does not return a promise, `assert.rejects()` will return a rejected `Promise` with an [ERR_INVALID_RETURN_VALUE](https://nodejs.org/docs/latest-v22.x/api/errors.html#err_invalid_return_value)
- * error. In both cases the error handler is skipped.
- *
- * Besides the async nature to await the completion behaves identically to {@link throws}.
- *
- * If specified, `error` can be a [`Class`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes),
- * [`RegExp`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions), a validation function,
- * an object where each property will be tested for, or an instance of error where
- * each property will be tested for including the non-enumerable `message` and `name` properties.
- *
- * If specified, `message` will be the message provided by the `{@link AssertionError}` if the `asyncFn` fails to reject.
- *
- * ```js
- * import assert from 'node:assert/strict';
- *
- * await assert.rejects(
- *   async () => {
- *     throw new TypeError('Wrong value');
- *   },
- *   {
- *     name: 'TypeError',
- *     message: 'Wrong value',
- *   },
- * );
- * ```
- *
- * ```js
- * import assert from 'node:assert/strict';
- *
- * await assert.rejects(
- *   async () => {
- *     throw new TypeError('Wrong value');
- *   },
- *   (err) => {
- *     assert.strictEqual(err.name, 'TypeError');
- *     assert.strictEqual(err.message, 'Wrong value');
- *     return true;
- *   },
- * );
- * ```
- *
- * ```js
- * import assert from 'node:assert/strict';
- *
- * assert.rejects(
- *   Promise.reject(new Error('Wrong value')),
- *   Error,
- * ).then(() => {
- *   // ...
- * });
- * ```
- *
- * `error` cannot be a string. If a string is provided as the second argument, then `error` is assumed to
- * be omitted and the string will be used for `message` instead. This can lead to easy-to-miss mistakes. Please read the
- * example in {@link throws} carefully if using a string as the second argument gets considered.
- * @since v10.0.0
- */
-
-@seskar.js.JsAsync
-external suspend fun rejects(block: () -> Promise<Any?>, message: js.errors.JsError = definedExternally): js.core.Void
-
+external suspend fun rejects(
+    block: () -> Promise<Any?>,
+    message: js.errors.JsError = definedExternally,
+): js.core.Void
 
 /**
  * Awaits the `asyncFn` promise or, if `asyncFn` is a function, immediately
@@ -212,6 +214,75 @@ external suspend fun rejects(block: () -> Promise<Any?>, message: js.errors.JsEr
 @seskar.js.JsAsync
 external suspend fun rejects(block: Promise<Any?>): js.core.Void
 
+/**
+ * Awaits the `asyncFn` promise or, if `asyncFn` is a function, immediately
+ * calls the function and awaits the returned promise to complete. It will then
+ * check that the promise is rejected.
+ *
+ * If `asyncFn` is a function and it throws an error synchronously, `assert.rejects()` will return a rejected `Promise` with that error. If the
+ * function does not return a promise, `assert.rejects()` will return a rejected `Promise` with an [ERR_INVALID_RETURN_VALUE](https://nodejs.org/docs/latest-v22.x/api/errors.html#err_invalid_return_value)
+ * error. In both cases the error handler is skipped.
+ *
+ * Besides the async nature to await the completion behaves identically to {@link throws}.
+ *
+ * If specified, `error` can be a [`Class`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes),
+ * [`RegExp`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions), a validation function,
+ * an object where each property will be tested for, or an instance of error where
+ * each property will be tested for including the non-enumerable `message` and `name` properties.
+ *
+ * If specified, `message` will be the message provided by the `{@link AssertionError}` if the `asyncFn` fails to reject.
+ *
+ * ```js
+ * import assert from 'node:assert/strict';
+ *
+ * await assert.rejects(
+ *   async () => {
+ *     throw new TypeError('Wrong value');
+ *   },
+ *   {
+ *     name: 'TypeError',
+ *     message: 'Wrong value',
+ *   },
+ * );
+ * ```
+ *
+ * ```js
+ * import assert from 'node:assert/strict';
+ *
+ * await assert.rejects(
+ *   async () => {
+ *     throw new TypeError('Wrong value');
+ *   },
+ *   (err) => {
+ *     assert.strictEqual(err.name, 'TypeError');
+ *     assert.strictEqual(err.message, 'Wrong value');
+ *     return true;
+ *   },
+ * );
+ * ```
+ *
+ * ```js
+ * import assert from 'node:assert/strict';
+ *
+ * assert.rejects(
+ *   Promise.reject(new Error('Wrong value')),
+ *   Error,
+ * ).then(() => {
+ *   // ...
+ * });
+ * ```
+ *
+ * `error` cannot be a string. If a string is provided as the second argument, then `error` is assumed to
+ * be omitted and the string will be used for `message` instead. This can lead to easy-to-miss mistakes. Please read the
+ * example in {@link throws} carefully if using a string as the second argument gets considered.
+ * @since v10.0.0
+ */
+
+@seskar.js.JsAsync
+external suspend fun rejects(
+    block: Promise<Any?>,
+    message: String = definedExternally,
+): js.core.Void
 
 /**
  * Awaits the `asyncFn` promise or, if `asyncFn` is a function, immediately
@@ -278,80 +349,16 @@ external suspend fun rejects(block: Promise<Any?>): js.core.Void
  */
 
 @seskar.js.JsAsync
-external suspend fun rejects(block: Promise<Any?>, message: String = definedExternally): js.core.Void
-
-
-/**
- * Awaits the `asyncFn` promise or, if `asyncFn` is a function, immediately
- * calls the function and awaits the returned promise to complete. It will then
- * check that the promise is rejected.
- *
- * If `asyncFn` is a function and it throws an error synchronously, `assert.rejects()` will return a rejected `Promise` with that error. If the
- * function does not return a promise, `assert.rejects()` will return a rejected `Promise` with an [ERR_INVALID_RETURN_VALUE](https://nodejs.org/docs/latest-v22.x/api/errors.html#err_invalid_return_value)
- * error. In both cases the error handler is skipped.
- *
- * Besides the async nature to await the completion behaves identically to {@link throws}.
- *
- * If specified, `error` can be a [`Class`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes),
- * [`RegExp`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions), a validation function,
- * an object where each property will be tested for, or an instance of error where
- * each property will be tested for including the non-enumerable `message` and `name` properties.
- *
- * If specified, `message` will be the message provided by the `{@link AssertionError}` if the `asyncFn` fails to reject.
- *
- * ```js
- * import assert from 'node:assert/strict';
- *
- * await assert.rejects(
- *   async () => {
- *     throw new TypeError('Wrong value');
- *   },
- *   {
- *     name: 'TypeError',
- *     message: 'Wrong value',
- *   },
- * );
- * ```
- *
- * ```js
- * import assert from 'node:assert/strict';
- *
- * await assert.rejects(
- *   async () => {
- *     throw new TypeError('Wrong value');
- *   },
- *   (err) => {
- *     assert.strictEqual(err.name, 'TypeError');
- *     assert.strictEqual(err.message, 'Wrong value');
- *     return true;
- *   },
- * );
- * ```
- *
- * ```js
- * import assert from 'node:assert/strict';
- *
- * assert.rejects(
- *   Promise.reject(new Error('Wrong value')),
- *   Error,
- * ).then(() => {
- *   // ...
- * });
- * ```
- *
- * `error` cannot be a string. If a string is provided as the second argument, then `error` is assumed to
- * be omitted and the string will be used for `message` instead. This can lead to easy-to-miss mistakes. Please read the
- * example in {@link throws} carefully if using a string as the second argument gets considered.
- * @since v10.0.0
- */
+external suspend fun rejects(
+    block: Promise<Any?>,
+    message: js.errors.JsError = definedExternally,
+): js.core.Void
 
 @seskar.js.JsAsync
-external suspend fun rejects(block: Promise<Any?>, message: js.errors.JsError = definedExternally): js.core.Void
-
-
-@seskar.js.JsAsync
-external suspend fun rejects(block: () -> Promise<Any?>, error: AssertPredicate): js.core.Void
-
+external suspend fun rejects(
+    block: () -> Promise<Any?>,
+    error: AssertPredicate,
+): js.core.Void
 
 @seskar.js.JsAsync
 external suspend fun rejects(
@@ -359,7 +366,6 @@ external suspend fun rejects(
     error: AssertPredicate,
     message: String = definedExternally,
 ): js.core.Void
-
 
 @seskar.js.JsAsync
 external suspend fun rejects(
@@ -368,10 +374,11 @@ external suspend fun rejects(
     message: js.errors.JsError = definedExternally,
 ): js.core.Void
 
-
 @seskar.js.JsAsync
-external suspend fun rejects(block: Promise<Any?>, error: AssertPredicate): js.core.Void
-
+external suspend fun rejects(
+    block: Promise<Any?>,
+    error: AssertPredicate,
+): js.core.Void
 
 @seskar.js.JsAsync
 external suspend fun rejects(
@@ -379,7 +386,6 @@ external suspend fun rejects(
     error: AssertPredicate,
     message: String = definedExternally,
 ): js.core.Void
-
 
 @seskar.js.JsAsync
 external suspend fun rejects(

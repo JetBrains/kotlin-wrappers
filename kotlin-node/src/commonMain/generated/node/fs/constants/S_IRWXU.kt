@@ -6,5 +6,6 @@
 package node.fs.constants
 
 // File Mode Constants
+
 /** Constant for fs.Stats mode property for determining access permissions for a file. File mode indicating readable, writable and executable by owner. */
 external val S_IRWXU: Double

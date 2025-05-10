@@ -2,4 +2,4 @@
 
 package node.crypto
 
-typealias KeyLike = Any /* string | Buffer | KeyObject */
+typealias KeyLike = Any // string | Buffer | KeyObject

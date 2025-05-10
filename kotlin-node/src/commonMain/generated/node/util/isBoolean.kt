@@ -22,4 +22,4 @@ package node.util
  */
 
 @JsName("isBoolean")
-external fun isBooleanRaw(value: Any?): Boolean /* object is boolean */
+external fun isBooleanRaw(value: Any?): Boolean // object is boolean

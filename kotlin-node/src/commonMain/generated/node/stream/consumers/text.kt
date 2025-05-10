@@ -8,14 +8,11 @@ import js.iterable.AsyncIterable
 import js.promise.Promise
 import node.stream.Readable
 
-
 @JsName("text")
 external fun textAsync(stream: node.ReadableStream): Promise<String>
 
-
 @JsName("text")
 external fun textAsync(stream: Readable): Promise<String>
-
 
 @JsName("text")
 external fun textAsync(stream: AsyncIterable<Any?>): Promise<String>

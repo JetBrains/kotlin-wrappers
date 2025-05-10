@@ -30,5 +30,4 @@ package node.tty
  * @see [source](https://github.com/nodejs/node/blob/v22.x/lib/tty.js)
  */
 
-
-/* export * from "tty"; */
+// export * from "tty";

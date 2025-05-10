@@ -8,4 +8,4 @@ typealias PipelineDestination<
         /*  : PipelineTransformSource<Any?> */
         @Suppress("UNUSED_TYPEALIAS_PARAMETER")
         P,
-        > = Any /* S extends PipelineTransformSource<infer ST> ? NodeJS.WritableStream | PipelineDestinationIterableFunction<ST> | PipelineDestinationPromiseFunction<ST, P> : never */
+        > = Any // S extends PipelineTransformSource<infer ST> ? NodeJS.WritableStream | PipelineDestinationIterableFunction<ST> | PipelineDestinationPromiseFunction<ST, P> : never

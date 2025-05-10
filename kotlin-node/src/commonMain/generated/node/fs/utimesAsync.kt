@@ -19,4 +19,8 @@ import js.promise.Promise
  */
 
 @JsName("utimes")
-external fun utimesAsync(path: PathLike, atime: TimeLike, mtime: TimeLike): Promise<js.core.Void>
+external fun utimesAsync(
+    path: PathLike,
+    atime: TimeLike,
+    mtime: TimeLike,
+): Promise<js.core.Void>

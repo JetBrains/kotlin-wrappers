@@ -21,7 +21,7 @@ sealed external interface FSWatcher : EventEmitter {
      * called previously.
      * @since v14.3.0, v12.20.0
      */
-    fun ref() /* this */
+    fun ref() // this
 
     /**
      * When called, the active `fs.FSWatcher` object will not require the Node.js
@@ -31,7 +31,7 @@ sealed external interface FSWatcher : EventEmitter {
      * no effect.
      * @since v14.3.0, v12.20.0
      */
-    fun unref() /* this */
+    fun unref() // this
 
     /**
      * events.EventEmitter
@@ -39,20 +39,15 @@ sealed external interface FSWatcher : EventEmitter {
      *   2. close
      *   3. error
      */
-    fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
+    fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
 
+    fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
 
-    fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
+    fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
 
+    fun prependListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
 
-    fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
-
-
-    fun prependListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
-
-
-    fun prependOnceListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
-
+    fun prependOnceListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
 
     @web.events.JsEvent("change")
     val changeEvent: node.events.EventInstance<js.array.Tuple2<String, Any /* string | Buffer */>>

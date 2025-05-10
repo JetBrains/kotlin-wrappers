@@ -61,6 +61,5 @@ external val cluster: Cluster
  * @see [source](https://github.com/nodejs/node/blob/v22.x/lib/cluster.js)
  */
 
-
-/* export * from "cluster"; */
-/* export { default as default } from "cluster"; */
+// export * from "cluster";
+// export { default as default } from "cluster";

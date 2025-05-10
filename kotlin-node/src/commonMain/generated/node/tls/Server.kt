@@ -23,7 +23,10 @@ open external class Server : node.net.Server {
      * @param context An object containing any of the possible properties from the {@link createSecureContext} `options` arguments (e.g. `key`, `cert`, `ca`, etc), or a TLS context object created
      * with {@link createSecureContext} itself.
      */
-    fun addContext(hostname: String, context: SecureContextOptions)
+    fun addContext(
+        hostname: String,
+        context: SecureContextOptions,
+    )
 
     /**
      * Returns the session ticket keys.
@@ -63,43 +66,55 @@ open external class Server : node.net.Server {
      * 5. secureConnection
      * 6. keylog
      */
-    override fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
+    override fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
 
-
-    override fun emit(event: String, vararg args: Any?): Boolean
-
-    override fun emit(event: js.symbol.Symbol, vararg args: Any?): Boolean
-
-
-    override fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
-
-
-    override fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */) /* this */
-
-
-    override fun prependListener(
+    override fun emit(
         event: String,
-        listener: Function<Unit>, /* (...args: any[]) => void */
-    ) /* this */
+        vararg args: Any?,
+    ): Boolean
 
+    override fun emit(
+        event: js.symbol.Symbol,
+        vararg args: Any?,
+    ): Boolean
 
-    override fun prependOnceListener(
-        event: String,
-        listener: Function<Unit>, /* (...args: any[]) => void */
-    ) /* this */
+    override fun on(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
 
+    override fun once(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
+
+    override fun prependListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
+
+    override fun prependOnceListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
 
     @web.events.JsEvent("tlsClientError")
     open val tlsClientErrorEvent: node.events.EventInstance<js.array.Tuple2<js.errors.JsError, TLSSocket>>
 
     @web.events.JsEvent("newSession")
-    val newSessionEvent: node.events.EventInstance<js.array.Tuple3<node.buffer.Buffer<*>, node.buffer.Buffer<*>, () -> Unit>>
+    val newSessionEvent:
+            node.events.EventInstance<js.array.Tuple3<node.buffer.Buffer<*>, node.buffer.Buffer<*>, () -> Unit>>
 
     @web.events.JsEvent("OCSPRequest")
-    open val OCSPRequestEvent: node.events.EventInstance<js.array.Tuple3<node.buffer.Buffer<*>, node.buffer.Buffer<*>, (err: js.errors.JsError?, resp: node.buffer.Buffer<*>) -> Unit>>
+    open val OCSPRequestEvent: node.events.EventInstance<
+            js.array.Tuple3<
+                    node.buffer.Buffer<*>,
+                    node.buffer.Buffer<*>,
+                        (
+                err: js.errors.JsError?,
+                resp: node.buffer.Buffer<*>,
+            ) -> Unit
+                    >
+            >
 
     @web.events.JsEvent("resumeSession")
-    val resumeSessionEvent: node.events.EventInstance<js.array.Tuple2<node.buffer.Buffer<*>, (err: js.errors.JsError?, sessionData: node.buffer.Buffer<*>?) -> Unit>>
+    val resumeSessionEvent: node.events.EventInstance<
+            js.array.Tuple2<
+                    node.buffer.Buffer<*>,
+                        (
+                err: js.errors.JsError?,
+                sessionData: node.buffer.Buffer<*>?,
+            ) -> Unit
+                    >
+            >
 
     @web.events.JsEvent("secureConnection")
     open val secureConnectionEvent: node.events.EventInstance<js.array.Tuple1<TLSSocket>>

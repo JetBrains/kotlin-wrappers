@@ -86,4 +86,7 @@ import web.abort.AbortSignal
  * @param signal A signal representing possible cancellation
  * @param stream A stream to attach a signal to.
  */
-external fun <T : Stream> addAbortSignal(signal: AbortSignal, stream: T): T
+external fun <T : Stream> addAbortSignal(
+    signal: AbortSignal,
+    stream: T,
+): T

@@ -41,4 +41,8 @@ import js.promise.Promise
  */
 
 @JsName("copyFile")
-external fun copyFileAsync(src: PathLike, dest: PathLike, mode: Number = definedExternally): Promise<js.core.Void>
+external fun copyFileAsync(
+    src: PathLike,
+    dest: PathLike,
+    mode: Number = definedExternally,
+): Promise<js.core.Void>

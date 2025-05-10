@@ -3,5 +3,5 @@
 package node.fs
 
 sealed external interface BigIntOptions {
-    var bigint: Boolean /* true */
+    var bigint: Boolean // true
 }

@@ -35,7 +35,9 @@ import node.http.ServerResponse
  * @since v8.4.0
  * @param onRequestHandler See `Compatibility API`
  */
-external fun createSecureServer(onRequestHandler: (request: Http2ServerRequest, response: Http2ServerResponse<*>) -> Unit = definedExternally): Http2SecureServer<*, *, *, *>
+external fun createSecureServer(
+    onRequestHandler: (request: Http2ServerRequest, response: Http2ServerResponse<*>) -> Unit = definedExternally,
+): Http2SecureServer<*, *, *, *>
 
 external fun <Http1Request : IncomingMessage, Http1Response : ServerResponse<*>, Http2Request : Http2ServerRequest, Http2Response : Http2ServerResponse<*>> createSecureServer(
     options: SecureServerOptions<Http1Request, Http1Response, Http2Request, Http2Response>,

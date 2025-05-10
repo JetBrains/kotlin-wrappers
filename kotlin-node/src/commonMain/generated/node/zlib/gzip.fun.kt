@@ -7,6 +7,13 @@ package node.zlib
 /**
  * @since v0.6.0
  */
-external fun gzip(buf: InputType, callback: CompressCallback)
+external fun gzip(
+    buf: InputType,
+    callback: CompressCallback,
+)
 
-external fun gzip(buf: InputType, options: ZlibOptions, callback: CompressCallback)
+external fun gzip(
+    buf: InputType,
+    options: ZlibOptions,
+    callback: CompressCallback,
+)

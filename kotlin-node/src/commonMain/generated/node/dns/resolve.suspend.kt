@@ -2,54 +2,74 @@
 
 package node.dns
 
-
 @seskar.js.JsAsync
 external suspend fun resolve(hostname: String): js.array.ReadonlyArray<String>
 
+@seskar.js.JsAsync
+external suspend fun resolve(
+    hostname: String,
+    rrtype: ResourceRecordType.A,
+): js.array.ReadonlyArray<String>
 
 @seskar.js.JsAsync
-external suspend fun resolve(hostname: String, rrtype: ResourceRecordType.A): js.array.ReadonlyArray<String>
-
-
-@seskar.js.JsAsync
-external suspend fun resolve(hostname: String, rrtype: ResourceRecordType.AAAA): js.array.ReadonlyArray<String>
-
+external suspend fun resolve(
+    hostname: String,
+    rrtype: ResourceRecordType.AAAA,
+): js.array.ReadonlyArray<String>
 
 @seskar.js.JsAsync
-external suspend fun resolve(hostname: String, rrtype: ResourceRecordType.ANY): js.array.ReadonlyArray<AnyRecord>
-
-
-@seskar.js.JsAsync
-external suspend fun resolve(hostname: String, rrtype: ResourceRecordType.CAA): js.array.ReadonlyArray<CaaRecord>
-
+external suspend fun resolve(
+    hostname: String,
+    rrtype: ResourceRecordType.ANY,
+): js.array.ReadonlyArray<AnyRecord>
 
 @seskar.js.JsAsync
-external suspend fun resolve(hostname: String, rrtype: ResourceRecordType.CNAME): js.array.ReadonlyArray<String>
-
-
-@seskar.js.JsAsync
-external suspend fun resolve(hostname: String, rrtype: ResourceRecordType.MX): js.array.ReadonlyArray<MxRecord>
-
+external suspend fun resolve(
+    hostname: String,
+    rrtype: ResourceRecordType.CAA,
+): js.array.ReadonlyArray<CaaRecord>
 
 @seskar.js.JsAsync
-external suspend fun resolve(hostname: String, rrtype: ResourceRecordType.NAPTR): js.array.ReadonlyArray<NaptrRecord>
-
-
-@seskar.js.JsAsync
-external suspend fun resolve(hostname: String, rrtype: ResourceRecordType.NS): js.array.ReadonlyArray<String>
-
+external suspend fun resolve(
+    hostname: String,
+    rrtype: ResourceRecordType.CNAME,
+): js.array.ReadonlyArray<String>
 
 @seskar.js.JsAsync
-external suspend fun resolve(hostname: String, rrtype: ResourceRecordType.PTR): js.array.ReadonlyArray<String>
-
-
-@seskar.js.JsAsync
-external suspend fun resolve(hostname: String, rrtype: ResourceRecordType.SOA): SoaRecord
-
+external suspend fun resolve(
+    hostname: String,
+    rrtype: ResourceRecordType.MX,
+): js.array.ReadonlyArray<MxRecord>
 
 @seskar.js.JsAsync
-external suspend fun resolve(hostname: String, rrtype: ResourceRecordType.SRV): js.array.ReadonlyArray<SrvRecord>
+external suspend fun resolve(
+    hostname: String,
+    rrtype: ResourceRecordType.NAPTR,
+): js.array.ReadonlyArray<NaptrRecord>
 
+@seskar.js.JsAsync
+external suspend fun resolve(
+    hostname: String,
+    rrtype: ResourceRecordType.NS,
+): js.array.ReadonlyArray<String>
+
+@seskar.js.JsAsync
+external suspend fun resolve(
+    hostname: String,
+    rrtype: ResourceRecordType.PTR,
+): js.array.ReadonlyArray<String>
+
+@seskar.js.JsAsync
+external suspend fun resolve(
+    hostname: String,
+    rrtype: ResourceRecordType.SOA,
+): SoaRecord
+
+@seskar.js.JsAsync
+external suspend fun resolve(
+    hostname: String,
+    rrtype: ResourceRecordType.SRV,
+): js.array.ReadonlyArray<SrvRecord>
 
 @seskar.js.JsAsync
 external suspend fun resolve(
@@ -57,9 +77,8 @@ external suspend fun resolve(
     rrtype: ResourceRecordType.TXT,
 ): js.array.ReadonlyArray<js.array.ReadonlyArray<String>>
 
-
 @seskar.js.JsAsync
 external suspend fun resolve(
     hostname: String,
     rrtype: String,
-): Any /* string[] | MxRecord[] | NaptrRecord[] | SoaRecord | SrvRecord[] | string[][] | AnyRecord[] */
+): Any // string[] | MxRecord[] | NaptrRecord[] | SoaRecord | SrvRecord[] | string[][] | AnyRecord[]

@@ -9,14 +9,11 @@ import js.promise.Promise
 import node.stream.Readable
 import web.blob.Blob as NodeBlob
 
-
 @JsName("blob")
 external fun blobAsync(stream: node.ReadableStream): Promise<NodeBlob>
 
-
 @JsName("blob")
 external fun blobAsync(stream: Readable): Promise<NodeBlob>
-
 
 @JsName("blob")
 external fun blobAsync(stream: AsyncIterable<Any?>): Promise<NodeBlob>

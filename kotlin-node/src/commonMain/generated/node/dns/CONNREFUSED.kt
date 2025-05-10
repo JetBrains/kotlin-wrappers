@@ -4,4 +4,4 @@
 
 package node.dns
 
-external val CONNREFUSED: String /* "ECONNREFUSED" */
+external val CONNREFUSED: String // "ECONNREFUSED"

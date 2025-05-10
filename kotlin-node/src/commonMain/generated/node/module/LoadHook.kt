@@ -7,4 +7,11 @@ package node.module
  * URL should be interpreted, retrieved, and parsed. It is also in charge of
  * validating the import attributes.
  */
-typealias LoadHook = (url: String, context: LoadHookContext, nextLoad: (url: String, context: LoadHookContext? /* use undefined for default */) -> js.promise.PromiseResult<LoadFnOutput>) -> js.promise.PromiseResult<LoadFnOutput>
+typealias LoadHook = (
+    url: String,
+    context: LoadHookContext,
+    nextLoad: (
+        url: String,
+        context: LoadHookContext?, // use undefined for default
+    ) -> js.promise.PromiseResult<LoadFnOutput>,
+) -> js.promise.PromiseResult<LoadFnOutput>

@@ -4,8 +4,8 @@
 
 package node.buffer
 
-/* export { Buffer }; */
+// export { Buffer };
 
-/* export import atob = globalThis.atob; */
+// export import atob = globalThis.atob;
 
-/* export import btoa = globalThis.btoa; */
+// export import btoa = globalThis.btoa;

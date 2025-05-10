@@ -4,4 +4,4 @@
 
 package node.dns
 
-external val NOTIMP: String /* "ENOTIMP" */
+external val NOTIMP: String // "ENOTIMP"

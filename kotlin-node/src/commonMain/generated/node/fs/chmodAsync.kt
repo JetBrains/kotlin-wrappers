@@ -13,4 +13,7 @@ import js.promise.Promise
  */
 
 @JsName("chmod")
-external fun chmodAsync(path: PathLike, mode: Mode): Promise<js.core.Void>
+external fun chmodAsync(
+    path: PathLike,
+    mode: Mode,
+): Promise<js.core.Void>

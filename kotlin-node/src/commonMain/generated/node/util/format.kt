@@ -49,4 +49,7 @@ package node.util
  * @since v0.5.3
  * @param format A `printf`-like format string.
  */
-external fun format(format: Any? = definedExternally, vararg param: Any?): String
+external fun format(
+    format: Any? = definedExternally,
+    vararg param: Any?,
+): String

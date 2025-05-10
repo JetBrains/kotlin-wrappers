@@ -23,4 +23,4 @@ package node.util
  */
 
 @JsName("isUndefined")
-external fun isUndefinedRaw(value: Any?): Boolean /* object is undefined */
+external fun isUndefinedRaw(value: Any?): Boolean // object is undefined

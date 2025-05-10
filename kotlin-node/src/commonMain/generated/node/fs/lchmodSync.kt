@@ -12,4 +12,7 @@ package node.fs
  * See the POSIX [`lchmod(2)`](https://www.freebsd.org/cgi/man.cgi?query=lchmod&sektion=2) documentation for more detail.
  * @deprecated Since v0.4.7
  */
-external fun lchmodSync(path: PathLike, mode: Mode)
+external fun lchmodSync(
+    path: PathLike,
+    mode: Mode,
+)

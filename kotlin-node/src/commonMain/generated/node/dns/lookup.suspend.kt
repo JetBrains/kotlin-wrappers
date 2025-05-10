@@ -2,22 +2,26 @@
 
 package node.dns
 
+@seskar.js.JsAsync
+external suspend fun lookup(
+    hostname: String,
+    family: Number,
+): LookupAddress
 
 @seskar.js.JsAsync
-external suspend fun lookup(hostname: String, family: Number): LookupAddress
-
-
-@seskar.js.JsAsync
-external suspend fun lookup(hostname: String, options: LookupOneOptions): LookupAddress
-
+external suspend fun lookup(
+    hostname: String,
+    options: LookupOneOptions,
+): LookupAddress
 
 @seskar.js.JsAsync
-external suspend fun lookup(hostname: String, options: LookupAllOptions): js.array.ReadonlyArray<LookupAddress>
-
+external suspend fun lookup(
+    hostname: String,
+    options: LookupAllOptions,
+): js.array.ReadonlyArray<LookupAddress>
 
 @seskar.js.JsAsync
-external suspend fun lookup(hostname: String, options: LookupOptions): Any /* LookupAddress | LookupAddress[] */
-
+external suspend fun lookup(hostname: String, options: LookupOptions): Any // LookupAddress | LookupAddress[]
 
 @seskar.js.JsAsync
 external suspend fun lookup(hostname: String): LookupAddress

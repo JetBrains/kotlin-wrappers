@@ -29,6 +29,7 @@ external class StatementSync {
      * the row.
      */
     fun all(vararg anonymousParameters: SupportedValueType): js.array.ReadonlyArray<Any?>
+
     fun all(
         namedParameters: js.objects.ReadonlyRecord<String, SupportedValueType>,
         vararg anonymousParameters: SupportedValueType,
@@ -55,6 +56,7 @@ external class StatementSync {
      * rows were returned from the database then this method returns `undefined`.
      */
     fun get(vararg anonymousParameters: SupportedValueType): Any?
+
     fun get(
         namedParameters: js.objects.ReadonlyRecord<String, SupportedValueType>,
         vararg anonymousParameters: SupportedValueType,
@@ -74,6 +76,7 @@ external class StatementSync {
      * object correspond to the column names and values of the row.
      */
     fun iterate(vararg anonymousParameters: SupportedValueType): js.iterable.JsIterator<Any?>
+
     fun iterate(
         namedParameters: js.objects.ReadonlyRecord<String, SupportedValueType>,
         vararg anonymousParameters: SupportedValueType,
@@ -88,6 +91,7 @@ external class StatementSync {
      * @param anonymousParameters Zero or more values to bind to anonymous parameters.
      */
     fun run(vararg anonymousParameters: SupportedValueType): StatementResultingChanges
+
     fun run(
         namedParameters: js.objects.ReadonlyRecord<String, SupportedValueType>,
         vararg anonymousParameters: SupportedValueType,

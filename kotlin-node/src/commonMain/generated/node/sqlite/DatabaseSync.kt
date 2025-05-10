@@ -68,7 +68,7 @@ external class DatabaseSync {
     fun function(
         name: String,
         options: FunctionOptions,
-        func: Function<SupportedValueType>, /* (...args: SupportedValueType[]) => SupportedValueType */
+        func: Function<SupportedValueType>, // (...args: SupportedValueType[]) => SupportedValueType
     )
 
     fun function(
@@ -129,5 +129,8 @@ external class DatabaseSync {
      * @returns Whether the changeset was applied succesfully without being aborted.
      * @since v22.12.0
      */
-    fun applyChangeset(changeset: Uint8Array<*>, options: ApplyChangesetOptions = definedExternally): Boolean
+    fun applyChangeset(
+        changeset: Uint8Array<*>,
+        options: ApplyChangesetOptions = definedExternally,
+    ): Boolean
 }

@@ -60,7 +60,10 @@ external fun createWriteStream(path: PathLike): WriteStream
  * If `options` is a string, then it specifies the encoding.
  * @since v0.1.31
  */
-external fun createWriteStream(path: PathLike, options: node.buffer.BufferEncoding = definedExternally): WriteStream
+external fun createWriteStream(
+    path: PathLike,
+    options: node.buffer.BufferEncoding = definedExternally,
+): WriteStream
 
 /**
  * `options` may also include a `start` option to allow writing data at some
@@ -89,4 +92,7 @@ external fun createWriteStream(path: PathLike, options: node.buffer.BufferEncodi
  * If `options` is a string, then it specifies the encoding.
  * @since v0.1.31
  */
-external fun createWriteStream(path: PathLike, options: WriteStreamOptions = definedExternally): WriteStream
+external fun createWriteStream(
+    path: PathLike,
+    options: WriteStreamOptions = definedExternally,
+): WriteStream

@@ -130,7 +130,10 @@ external fun runInThisContext(code: String): Any?
  * @param code The JavaScript code to compile and run.
  * @return the result of the very last statement executed in the script.
  */
-external fun runInThisContext(code: String, options: RunningCodeOptions = definedExternally): Any?
+external fun runInThisContext(
+    code: String,
+    options: RunningCodeOptions = definedExternally,
+): Any?
 
 /**
  * `vm.runInThisContext()` compiles `code`, runs it within the context of the
@@ -194,4 +197,7 @@ external fun runInThisContext(code: String, options: RunningCodeOptions = define
  * @param code The JavaScript code to compile and run.
  * @return the result of the very last statement executed in the script.
  */
-external fun runInThisContext(code: String, options: String = definedExternally): Any?
+external fun runInThisContext(
+    code: String,
+    options: String = definedExternally,
+): Any?

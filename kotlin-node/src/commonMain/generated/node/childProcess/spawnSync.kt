@@ -23,7 +23,10 @@ import js.array.ReadonlyArray
  */
 external fun spawnSync(command: String): SpawnSyncReturns<node.buffer.Buffer<*>>
 
-external fun spawnSync(command: String, options: SpawnSyncOptionsWithStringEncoding): SpawnSyncReturns<String>
+external fun spawnSync(
+    command: String,
+    options: SpawnSyncOptionsWithStringEncoding,
+): SpawnSyncReturns<String>
 
 external fun spawnSync(
     command: String,
@@ -35,7 +38,10 @@ external fun spawnSync(
     options: SpawnSyncOptions = definedExternally,
 ): SpawnSyncReturns<Any /* string | Buffer */>
 
-external fun spawnSync(command: String, args: ReadonlyArray<String>): SpawnSyncReturns<node.buffer.Buffer<*>>
+external fun spawnSync(
+    command: String,
+    args: ReadonlyArray<String>,
+): SpawnSyncReturns<node.buffer.Buffer<*>>
 
 external fun spawnSync(
     command: String,

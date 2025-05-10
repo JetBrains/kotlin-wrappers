@@ -13,7 +13,10 @@ package node.net
  * * {@link connect} for `IPC` connections.
  * * {@link connect} for TCP connections.
  */
-external fun connect(options: NetConnectOpts, connectionListener: () -> Unit = definedExternally): Socket
+external fun connect(
+    options: NetConnectOpts,
+    connectionListener: () -> Unit = definedExternally,
+): Socket
 
 external fun connect(
     port: Number,
@@ -21,4 +24,7 @@ external fun connect(
     connectionListener: () -> Unit = definedExternally,
 ): Socket
 
-external fun connect(path: String, connectionListener: () -> Unit = definedExternally): Socket
+external fun connect(
+    path: String,
+    connectionListener: () -> Unit = definedExternally,
+): Socket

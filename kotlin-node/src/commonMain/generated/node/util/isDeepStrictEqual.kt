@@ -12,4 +12,7 @@ package node.util
  * equality.
  * @since v9.0.0
  */
-external fun isDeepStrictEqual(val1: Any?, val2: Any?): Boolean
+external fun isDeepStrictEqual(
+    val1: Any?,
+    val2: Any?,
+): Boolean

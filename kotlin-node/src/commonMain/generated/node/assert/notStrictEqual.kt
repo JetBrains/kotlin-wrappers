@@ -28,7 +28,10 @@ package node.assert
  * instead of the `AssertionError`.
  * @since v0.1.21
  */
-external fun notEqual(actual: Any?, expected: Any?)
+external fun notEqual(
+    actual: Any?,
+    expected: Any?,
+)
 
 /**
  * Tests strict inequality between the `actual` and `expected` parameters as
@@ -54,7 +57,11 @@ external fun notEqual(actual: Any?, expected: Any?)
  * instead of the `AssertionError`.
  * @since v0.1.21
  */
-external fun notEqual(actual: Any?, expected: Any?, message: String = definedExternally)
+external fun notEqual(
+    actual: Any?,
+    expected: Any?,
+    message: String = definedExternally,
+)
 
 /**
  * Tests strict inequality between the `actual` and `expected` parameters as
@@ -80,4 +87,8 @@ external fun notEqual(actual: Any?, expected: Any?, message: String = definedExt
  * instead of the `AssertionError`.
  * @since v0.1.21
  */
-external fun notEqual(actual: Any?, expected: Any?, message: js.errors.JsError = definedExternally)
+external fun notEqual(
+    actual: Any?,
+    expected: Any?,
+    message: js.errors.JsError = definedExternally,
+)

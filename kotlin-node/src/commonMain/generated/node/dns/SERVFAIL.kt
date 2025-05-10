@@ -4,4 +4,4 @@
 
 package node.dns
 
-external val SERVFAIL: String /* "ESERVFAIL" */
+external val SERVFAIL: String // "ESERVFAIL"

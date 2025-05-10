@@ -14,4 +14,7 @@ import js.buffer.ArrayBuffer
  */
 external fun getAsset(key: AssetKey): ArrayBuffer
 
-external fun getAsset(key: AssetKey, encoding: String): String
+external fun getAsset(
+    key: AssetKey,
+    encoding: String,
+): String

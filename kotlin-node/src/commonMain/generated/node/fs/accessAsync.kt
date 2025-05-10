@@ -40,4 +40,7 @@ import js.promise.Promise
  */
 
 @JsName("access")
-external fun accessAsync(path: PathLike, mode: Number = definedExternally): Promise<js.core.Void>
+external fun accessAsync(
+    path: PathLike,
+    mode: Number = definedExternally,
+): Promise<js.core.Void>

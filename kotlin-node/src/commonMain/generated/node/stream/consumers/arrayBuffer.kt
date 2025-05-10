@@ -9,14 +9,11 @@ import js.iterable.AsyncIterable
 import js.promise.Promise
 import node.stream.Readable
 
-
 @JsName("arrayBuffer")
 external fun arrayBufferAsync(stream: node.ReadableStream): Promise<ArrayBuffer>
 
-
 @JsName("arrayBuffer")
 external fun arrayBufferAsync(stream: Readable): Promise<ArrayBuffer>
-
 
 @JsName("arrayBuffer")
 external fun arrayBufferAsync(stream: AsyncIterable<Any?>): Promise<ArrayBuffer>

@@ -3,5 +3,5 @@
 package node.v8
 
 sealed external interface QueryObjectsCountOptions {
-    var format: String /* "count" */
+    var format: String // "count"
 }

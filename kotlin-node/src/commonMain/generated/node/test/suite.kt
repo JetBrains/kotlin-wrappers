@@ -23,17 +23,17 @@ external fun suiteAsync(
     fn: SuiteFn = definedExternally,
 ): Promise<js.core.Void>
 
-
 @JsName("suite")
-external fun suiteAsync(name: String = definedExternally, fn: SuiteFn = definedExternally): Promise<js.core.Void>
-
+external fun suiteAsync(
+    name: String = definedExternally,
+    fn: SuiteFn = definedExternally,
+): Promise<js.core.Void>
 
 @JsName("suite")
 external fun suiteAsync(
     options: TestOptions = definedExternally,
     fn: SuiteFn = definedExternally,
 ): Promise<js.core.Void>
-
 
 @JsName("suite")
 external fun suiteAsync(fn: SuiteFn = definedExternally): Promise<js.core.Void>

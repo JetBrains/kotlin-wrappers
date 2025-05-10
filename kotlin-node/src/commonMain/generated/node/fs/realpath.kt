@@ -62,4 +62,7 @@ external fun realpath(
  * Asynchronous realpath(3) - return the canonicalized absolute pathname.
  * @param path A path to a file. If a URL is provided, it must use the `file:` protocol.
  */
-external fun realpath(path: PathLike, callback: (err: node.ErrnoException?, resolvedPath: String) -> Unit)
+external fun realpath(
+    path: PathLike,
+    callback: (err: node.ErrnoException?, resolvedPath: String) -> Unit,
+)

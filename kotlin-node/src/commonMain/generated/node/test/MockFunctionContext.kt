@@ -94,7 +94,10 @@ external class MockFunctionContext<F : Function<*>> {
      * @param implementation The function to be used as the mock's implementation for the invocation number specified by `onCall`.
      * @param onCall The invocation number that will use `implementation`. If the specified invocation has already occurred then an exception is thrown.
      */
-    fun mockImplementationOnce(implementation: F, onCall: Number = definedExternally)
+    fun mockImplementationOnce(
+        implementation: F,
+        onCall: Number = definedExternally,
+    )
 
     /**
      * Resets the call history of the mock function.

@@ -72,9 +72,15 @@ import js.array.ReadonlyArray
  */
 external fun execFile(file: String): ChildProcess
 
-external fun execFile(file: String, options: (ExecFileObjectEncodingOptions)?): ChildProcess
+external fun execFile(
+    file: String,
+    options: (ExecFileObjectEncodingOptions)?,
+): ChildProcess
 
-external fun execFile(file: String, args: (ReadonlyArray<String>)? = definedExternally): ChildProcess
+external fun execFile(
+    file: String,
+    args: (ReadonlyArray<String>)? = definedExternally,
+): ChildProcess
 
 external fun execFile(
     file: String,
@@ -155,12 +161,16 @@ external fun execFile(
 external fun execFile(
     file: String,
     options: (ExecFileObjectEncodingOptions)?,
-    callback: ((error: ExecFileException?, stdout: Any /* string | Buffer */, stderr: Any /* string | Buffer */) -> Unit)?,
+    callback: (
+        (error: ExecFileException?, stdout: Any /* string | Buffer */, stderr: Any /* string | Buffer */) -> Unit
+    )?,
 ): ChildProcess
 
 external fun execFile(
     file: String,
     args: (ReadonlyArray<String>)?,
     options: (ExecFileObjectEncodingOptions)?,
-    callback: ((error: ExecFileException?, stdout: Any /* string | Buffer */, stderr: Any /* string | Buffer */) -> Unit)?,
+    callback: (
+        (error: ExecFileException?, stdout: Any /* string | Buffer */, stderr: Any /* string | Buffer */) -> Unit
+    )?,
 ): ChildProcess

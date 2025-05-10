@@ -27,4 +27,7 @@ import web.blob.Blob
  */
 
 @JsName("openAsBlob")
-external fun openAsBlobAsync(path: PathLike, options: OpenAsBlobOptions = definedExternally): Promise<Blob>
+external fun openAsBlobAsync(
+    path: PathLike,
+    options: OpenAsBlobOptions = definedExternally,
+): Promise<Blob>

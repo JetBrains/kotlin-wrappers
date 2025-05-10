@@ -9,6 +9,13 @@ package node.fs
  * completion callback.
  * @since v14.14.0
  */
-external fun rm(path: PathLike, callback: NoParamCallback)
+external fun rm(
+    path: PathLike,
+    callback: NoParamCallback,
+)
 
-external fun rm(path: PathLike, options: RmOptions, callback: NoParamCallback)
+external fun rm(
+    path: PathLike,
+    options: RmOptions,
+    callback: NoParamCallback,
+)

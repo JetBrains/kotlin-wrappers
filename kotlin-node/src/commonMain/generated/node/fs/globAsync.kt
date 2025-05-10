@@ -14,14 +14,20 @@ external fun glob(pattern: String): js.iterable.AsyncIterator<String>
  */
 external fun glob(pattern: js.array.ReadonlyArray<String>): js.iterable.AsyncIterator<String>
 
-external fun glob(pattern: String, opt: GlobOptionsWithFileTypes): js.iterable.AsyncIterator<Dirent>
+external fun glob(
+    pattern: String,
+    opt: GlobOptionsWithFileTypes,
+): js.iterable.AsyncIterator<Dirent>
 
 external fun glob(
     pattern: js.array.ReadonlyArray<String>,
     opt: GlobOptionsWithFileTypes,
 ): js.iterable.AsyncIterator<Dirent>
 
-external fun glob(pattern: String, opt: GlobOptionsWithoutFileTypes): js.iterable.AsyncIterator<String>
+external fun glob(
+    pattern: String,
+    opt: GlobOptionsWithoutFileTypes,
+): js.iterable.AsyncIterator<String>
 
 external fun glob(
     pattern: js.array.ReadonlyArray<String>,

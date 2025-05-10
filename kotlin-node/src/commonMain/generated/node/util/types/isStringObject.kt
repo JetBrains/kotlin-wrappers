@@ -16,4 +16,4 @@ package node.util.types
  */
 
 @JsName("isStringObject")
-external fun isStringObjectRaw(value: Any?): Boolean /* object is String */
+external fun isStringObjectRaw(value: Any?): Boolean // object is String

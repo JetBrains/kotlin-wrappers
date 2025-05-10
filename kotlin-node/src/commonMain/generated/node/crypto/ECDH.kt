@@ -48,7 +48,11 @@ external class ECDH {
      * @param [format='uncompressed']
      */
     fun generateKeys(): node.buffer.Buffer<*>
-    fun generateKeys(encoding: BinaryToTextEncoding, format: ECDHKeyFormat = definedExternally): String
+
+    fun generateKeys(
+        encoding: BinaryToTextEncoding,
+        format: ECDHKeyFormat = definedExternally,
+    ): String
 
     /**
      * Computes the shared secret using `otherPublicKey` as the other
@@ -68,8 +72,17 @@ external class ECDH {
      * @param outputEncoding The `encoding` of the return value.
      */
     fun computeSecret(otherPublicKey: js.buffer.ArrayBufferView<*>): node.buffer.Buffer<*>
-    fun computeSecret(otherPublicKey: js.buffer.ArrayBufferView<*>, outputEncoding: BinaryToTextEncoding): String
-    fun computeSecret(otherPublicKey: String, inputEncoding: BinaryToTextEncoding): node.buffer.Buffer<*>
+
+    fun computeSecret(
+        otherPublicKey: js.buffer.ArrayBufferView<*>,
+        outputEncoding: BinaryToTextEncoding,
+    ): String
+
+    fun computeSecret(
+        otherPublicKey: String,
+        inputEncoding: BinaryToTextEncoding,
+    ): node.buffer.Buffer<*>
+
     fun computeSecret(
         otherPublicKey: String,
         inputEncoding: BinaryToTextEncoding,
@@ -84,6 +97,7 @@ external class ECDH {
      * @return The EC Diffie-Hellman in the specified `encoding`.
      */
     fun getPrivateKey(): node.buffer.Buffer<*>
+
     fun getPrivateKey(encoding: BinaryToTextEncoding): String
 
     /**
@@ -101,7 +115,10 @@ external class ECDH {
         format: ECDHKeyFormat = definedExternally,
     ): node.buffer.Buffer<*>
 
-    fun getPublicKey(encoding: BinaryToTextEncoding, format: ECDHKeyFormat = definedExternally): String
+    fun getPublicKey(
+        encoding: BinaryToTextEncoding,
+        format: ECDHKeyFormat = definedExternally,
+    ): String
 
     /**
      * Sets the EC Diffie-Hellman private key.
@@ -115,7 +132,11 @@ external class ECDH {
      * @param encoding The `encoding` of the `privateKey` string.
      */
     fun setPrivateKey(privateKey: js.buffer.ArrayBufferView<*>)
-    fun setPrivateKey(privateKey: String, encoding: BinaryToTextEncoding)
+
+    fun setPrivateKey(
+        privateKey: String,
+        encoding: BinaryToTextEncoding,
+    )
 
     companion object {
         /**
@@ -166,6 +187,6 @@ external class ECDH {
             inputEncoding: BinaryToTextEncoding = definedExternally,
             outputEncoding: ECDHConvertKeyOutputEncoding = definedExternally,
             format: ECDHConvertKeyFormat = definedExternally,
-        ): Any /* Buffer | string */
+        ): Any // Buffer | string
     }
 }

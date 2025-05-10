@@ -45,7 +45,10 @@ package node.crypto
  * @since v10.12.0
  * @param type Must be `'rsa'`, `'rsa-pss'`, `'dsa'`, `'ec'`, `'ed25519'`, `'ed448'`, `'x25519'`, `'x448'`, or `'dh'`.
  */
-external fun generateKeyPairSync(type: KeyType.rsa, options: RSAKeyPairPemPemOptions): KeyPairSyncResult<String, String>
+external fun generateKeyPairSync(
+    type: KeyType.rsa,
+    options: RSAKeyPairPemPemOptions,
+): KeyPairSyncResult<String, String>
 
 external fun generateKeyPairSync(
     type: KeyType.rsa,
@@ -62,7 +65,10 @@ external fun generateKeyPairSync(
     options: RSAKeyPairDerDerOptions,
 ): KeyPairSyncResult<node.buffer.Buffer<*>, node.buffer.Buffer<*>>
 
-external fun generateKeyPairSync(type: KeyType.rsa, options: RSAKeyPairKeyObjectOptions): KeyPairKeyObjectResult
+external fun generateKeyPairSync(
+    type: KeyType.rsa,
+    options: RSAKeyPairKeyObjectOptions,
+): KeyPairKeyObjectResult
 
 external fun generateKeyPairSync(
     type: KeyType.rsaPss,
@@ -84,9 +90,15 @@ external fun generateKeyPairSync(
     options: RSAPSSKeyPairDerDerOptions,
 ): KeyPairSyncResult<node.buffer.Buffer<*>, node.buffer.Buffer<*>>
 
-external fun generateKeyPairSync(type: KeyType.rsaPss, options: RSAPSSKeyPairKeyObjectOptions): KeyPairKeyObjectResult
+external fun generateKeyPairSync(
+    type: KeyType.rsaPss,
+    options: RSAPSSKeyPairKeyObjectOptions,
+): KeyPairKeyObjectResult
 
-external fun generateKeyPairSync(type: KeyType.dsa, options: DSAKeyPairPemPemOptions): KeyPairSyncResult<String, String>
+external fun generateKeyPairSync(
+    type: KeyType.dsa,
+    options: DSAKeyPairPemPemOptions,
+): KeyPairSyncResult<String, String>
 
 external fun generateKeyPairSync(
     type: KeyType.dsa,
@@ -103,9 +115,15 @@ external fun generateKeyPairSync(
     options: DSAKeyPairDerDerOptions,
 ): KeyPairSyncResult<node.buffer.Buffer<*>, node.buffer.Buffer<*>>
 
-external fun generateKeyPairSync(type: KeyType.dsa, options: DSAKeyPairKeyObjectOptions): KeyPairKeyObjectResult
+external fun generateKeyPairSync(
+    type: KeyType.dsa,
+    options: DSAKeyPairKeyObjectOptions,
+): KeyPairKeyObjectResult
 
-external fun generateKeyPairSync(type: KeyType.ec, options: ECKeyPairPemPemOptions): KeyPairSyncResult<String, String>
+external fun generateKeyPairSync(
+    type: KeyType.ec,
+    options: ECKeyPairPemPemOptions,
+): KeyPairSyncResult<String, String>
 
 external fun generateKeyPairSync(
     type: KeyType.ec,
@@ -122,7 +140,10 @@ external fun generateKeyPairSync(
     options: ECKeyPairDerDerOptions,
 ): KeyPairSyncResult<node.buffer.Buffer<*>, node.buffer.Buffer<*>>
 
-external fun generateKeyPairSync(type: KeyType.ec, options: ECKeyPairKeyObjectOptions): KeyPairKeyObjectResult
+external fun generateKeyPairSync(
+    type: KeyType.ec,
+    options: ECKeyPairKeyObjectOptions,
+): KeyPairKeyObjectResult
 
 external fun generateKeyPairSync(
     type: KeyType.ed25519,

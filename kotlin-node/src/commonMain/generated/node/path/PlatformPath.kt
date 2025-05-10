@@ -43,7 +43,10 @@ sealed external interface PlatformPath {
      * @throws {TypeError} if `path` or `pattern` are not strings.
      * @since v22.5.0
      */
-    fun matchesGlob(path: String, pattern: String): Boolean
+    fun matchesGlob(
+        path: String,
+        pattern: String,
+    ): Boolean
 
     /**
      * Determines whether {path} is an absolute path. An absolute path will always resolve to the same location, regardless of the working directory.
@@ -61,7 +64,10 @@ sealed external interface PlatformPath {
      *
      * @throws {TypeError} if either `from` or `to` is not a string.
      */
-    fun relative(from: String, to: String): String
+    fun relative(
+        from: String,
+        to: String,
+    ): String
 
     /**
      * Return the directory name of a path. Similar to the Unix dirname command.
@@ -79,7 +85,10 @@ sealed external interface PlatformPath {
      * @param suffix optionally, an extension to remove from the result.
      * @throws {TypeError} if `path` is not a string or if `ext` is given and is not a string.
      */
-    fun basename(path: String, suffix: String = definedExternally): String
+    fun basename(
+        path: String,
+        suffix: String = definedExternally,
+    ): String
 
     /**
      * Return the extension of the path, from the last '.' to end of string in the last portion of the path.

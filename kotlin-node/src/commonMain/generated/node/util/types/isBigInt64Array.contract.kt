@@ -5,7 +5,6 @@ package node.util.types
 import js.typedarrays.BigInt64Array
 import kotlin.contracts.contract
 
-
 @Suppress("CANNOT_CHECK_FOR_EXTERNAL_INTERFACE")
 inline fun isBigInt64Array(value: Any?): Boolean /* value is BigInt64Array */ {
     contract {

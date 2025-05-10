@@ -50,5 +50,4 @@ package node.buffer
  * @see [source](https://github.com/nodejs/node/blob/v22.x/lib/buffer.js)
  */
 
-
-/* export * from "buffer"; */
+// export * from "buffer";

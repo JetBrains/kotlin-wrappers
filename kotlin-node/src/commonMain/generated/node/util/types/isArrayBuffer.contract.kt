@@ -5,7 +5,6 @@ package node.util.types
 import js.buffer.ArrayBuffer
 import kotlin.contracts.contract
 
-
 @Suppress("CANNOT_CHECK_FOR_EXTERNAL_INTERFACE")
 inline fun isArrayBuffer(value: Any?): Boolean /* object is ArrayBuffer */ {
     contract {

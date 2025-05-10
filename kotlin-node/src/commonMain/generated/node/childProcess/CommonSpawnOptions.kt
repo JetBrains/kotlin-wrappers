@@ -5,7 +5,10 @@ package node.childProcess
 import web.abort.Abortable
 
 @js.objects.JsPlainObject
-sealed external interface CommonSpawnOptions : CommonOptions, MessagingOptions, Abortable {
+sealed external interface CommonSpawnOptions :
+    CommonOptions,
+    MessagingOptions,
+    Abortable {
     var argv0: String?
 
     /**
@@ -18,6 +21,6 @@ sealed external interface CommonSpawnOptions : CommonOptions, MessagingOptions, 
      * @default 'pipe'
      */
     var stdio: StdioOptions?
-    var shell: Any? /* boolean | string | undefined */
+    var shell: Any? // boolean | string | undefined
     var windowsVerbatimArguments: Boolean?
 }

@@ -29,7 +29,7 @@ sealed external interface MockFunctionCall<F : Function<*>, ReturnType /* defaul
      * If the mocked function is a constructor, this field contains the class being constructed.
      * Otherwise this will be `undefined`.
      */
-    var target: Any? /* F extends abstract new (...args: any) => any ? F : undefined */
+    var target: Any? // F extends abstract new (...args: any) => any ? F : undefined
 
     /**
      * The mocked function's `this` value.

@@ -5,4 +5,4 @@
 
 package node.stream
 
-/* export { Stream, streamPromises as promises }; */
+// export { Stream, streamPromises as promises };

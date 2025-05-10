@@ -4,6 +4,7 @@ package node.crypto
 
 @Suppress("INTERFACE_WITH_SUPERCLASS")
 sealed external interface DecipherCCM : Decipher {
-    fun setAuthTag(buffer: js.buffer.ArrayBufferView<*>) /* this */
-    fun setAAD(buffer: js.buffer.ArrayBufferView<*>, options: DecipherCCMSetAADOptions) /* this */
+    fun setAuthTag(buffer: js.buffer.ArrayBufferView<*>) // this
+
+    fun setAAD(buffer: js.buffer.ArrayBufferView<*>, options: DecipherCCMSetAADOptions) // this
 }

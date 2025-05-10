@@ -52,7 +52,9 @@ external class KeyObject {
      * @since v15.7.0
      */
     var asymmetricKeyDetails: AsymmetricKeyDetails?
+
     fun export(options: KeyExportOptions<KeyFormat.der> = definedExternally): node.buffer.Buffer<*>
+
     fun export(options: JwkKeyExportOptions = definedExternally): JsonWebKey
 
     /**

@@ -5,14 +5,11 @@ package node.stream.consumers
 import js.iterable.AsyncIterable
 import node.stream.Readable
 
-
 @seskar.js.JsAsync
 external suspend fun buffer(stream: node.ReadableStream): node.buffer.Buffer<*>
 
-
 @seskar.js.JsAsync
 external suspend fun buffer(stream: Readable): node.buffer.Buffer<*>
-
 
 @seskar.js.JsAsync
 external suspend fun buffer(stream: AsyncIterable<Any?>): node.buffer.Buffer<*>

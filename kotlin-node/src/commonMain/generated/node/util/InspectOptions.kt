@@ -69,7 +69,7 @@ sealed external interface InspectOptions {
      * For more information, see the example below.
      * @default true
      */
-    var compact: Any? /* boolean | number | undefined */
+    var compact: Any? // boolean | number | undefined
 
     /**
      * If set to `true` or a function, all properties of an object, and `Set` and `Map`
@@ -77,7 +77,7 @@ sealed external interface InspectOptions {
      * If set to `true` the default sort is used.
      * If set to a function, it is used as a compare function.
      */
-    var sorted: Any? /* boolean | ((a: string, b: string) => number) | undefined */
+    var sorted: Any? // boolean | ((a: string, b: string) => number) | undefined
 
     /**
      * If set to `true`, getters are going to be
@@ -87,7 +87,7 @@ sealed external interface InspectOptions {
      * the getter function.
      * @default false
      */
-    var getters: Any? /* "get" | "set" | boolean | undefined */
+    var getters: Any? // "get" | "set" | boolean | undefined
 
     /**
      * If set to `true`, an underscore is used to separate every three digits in all bigints and numbers.

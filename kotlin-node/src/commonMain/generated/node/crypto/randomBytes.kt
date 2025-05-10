@@ -58,4 +58,7 @@ package node.crypto
  */
 external fun randomBytes(size: Number): node.buffer.Buffer<*>
 
-external fun randomBytes(size: Number, callback: (err: js.errors.JsError?, buf: node.buffer.Buffer<*>) -> Unit)
+external fun randomBytes(
+    size: Number,
+    callback: (err: js.errors.JsError?, buf: node.buffer.Buffer<*>) -> Unit,
+)

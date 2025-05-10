@@ -53,16 +53,18 @@ external class Interface : _Interface {
     @JsName("question")
     fun questionAsync(query: String): Promise<String>
 
-
     @seskar.js.JsAsync
     suspend fun question(query: String): String
 
-
     @JsName("question")
-    fun questionAsync(query: String, options: Abortable): Promise<String>
-
+    fun questionAsync(
+        query: String,
+        options: Abortable,
+    ): Promise<String>
 
     @seskar.js.JsAsync
-    suspend fun question(query: String, options: Abortable): String
-
+    suspend fun question(
+        query: String,
+        options: Abortable,
+    ): String
 }

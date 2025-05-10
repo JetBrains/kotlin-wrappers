@@ -21,14 +21,17 @@ external fun skipAsync(
     fn: SuiteFn = definedExternally,
 ): Promise<js.core.Void>
 
+@JsName("skip")
+external fun skipAsync(
+    name: String = definedExternally,
+    fn: SuiteFn = definedExternally,
+): Promise<js.core.Void>
 
 @JsName("skip")
-external fun skipAsync(name: String = definedExternally, fn: SuiteFn = definedExternally): Promise<js.core.Void>
-
-
-@JsName("skip")
-external fun skipAsync(options: TestOptions = definedExternally, fn: SuiteFn = definedExternally): Promise<js.core.Void>
-
+external fun skipAsync(
+    options: TestOptions = definedExternally,
+    fn: SuiteFn = definedExternally,
+): Promise<js.core.Void>
 
 @JsName("skip")
 external fun skipAsync(fn: SuiteFn = definedExternally): Promise<js.core.Void>

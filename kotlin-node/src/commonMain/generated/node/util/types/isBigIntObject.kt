@@ -17,4 +17,4 @@ package node.util.types
  */
 
 @JsName("isBigIntObject")
-external fun isBigIntObjectRaw(value: Any?): Boolean /* object is BigInt */
+external fun isBigIntObjectRaw(value: Any?): Boolean // object is BigInt

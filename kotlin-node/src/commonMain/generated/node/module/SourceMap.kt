@@ -33,7 +33,7 @@ external class SourceMap {
      * @param lineOffset The zero-indexed line number offset in the generated source
      * @param columnOffset The zero-indexed column number offset in the generated source
      */
-    fun findEntry(lineOffset: Number, columnOffset: Number): Any /* SourceMapping | {} */
+    fun findEntry(lineOffset: Number, columnOffset: Number): Any // SourceMapping | {}
 
     /**
      * Given a 1-indexed `lineNumber` and `columnNumber` from a call site in the generated source,
@@ -44,5 +44,5 @@ external class SourceMap {
      * @param lineNumber The 1-indexed line number of the call site in the generated source
      * @param columnNumber The 1-indexed column number of the call site in the generated source
      */
-    fun findOrigin(lineNumber: Number, columnNumber: Number): Any /* SourceOrigin | {} */
+    fun findOrigin(lineNumber: Number, columnNumber: Number): Any // SourceOrigin | {}
 }

@@ -8,4 +8,4 @@ typealias PipelineTransform<
         /*  : PipelineTransformSource<Any?> */
         @Suppress("UNUSED_TYPEALIAS_PARAMETER")
         U,
-        > = Any /* NodeJS.ReadWriteStream | ((source: S extends (...args: any[]) => Iterable<infer ST> | AsyncIterable<infer ST> ? AsyncIterable<ST> : S) => AsyncIterable<U>) */
+        > = Any // NodeJS.ReadWriteStream | ((source: S extends (...args: any[]) => Iterable<infer ST> | AsyncIterable<infer ST> ? AsyncIterable<ST> : S) => AsyncIterable<U>)
