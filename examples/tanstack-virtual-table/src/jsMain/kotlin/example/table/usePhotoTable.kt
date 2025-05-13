@@ -31,12 +31,12 @@ private val COLUMNS: ReadonlyArray<ColumnDef<Photo, String>> = arrayOf(
 
 internal fun usePhotoTable(): TableInstance<Photo> {
     val users = usePhotos()
-    val tableMeta = useTableMeta()
+    val meta = usePhotoTableMeta()
 
     val table = useTable(
         data = users,
         columns = COLUMNS,
-        meta = tableMeta,
+        meta = meta,
     )
 
     return table
