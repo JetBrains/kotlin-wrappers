@@ -1,11 +1,11 @@
-package example.components.table.selection
+package example.table.selection
 
 import react.RequiredContext
 import react.createRequiredContext
 import react.useRequired
 
-internal val SelectionContext: RequiredContext<Selection> =
+val SelectionContext: RequiredContext<Selection> =
     createRequiredContext()
 
-internal fun useSelection(): Selection =
+fun useSelection(): Selection =
     useRequired(SelectionContext)

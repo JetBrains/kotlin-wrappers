@@ -1,4 +1,4 @@
-package example.components.table.base
+package example.table.base
 
 import js.array.ReadonlyArray
 import react.useMemo
@@ -8,7 +8,7 @@ import tanstack.table.core.TableMeta
 import tanstack.table.core.TableOptions
 import tanstack.table.core.getCoreRowModel
 
-internal fun <D : Any> useTable(
+fun <D : Any> useTable(
     data: ReadonlyArray<D>,
     columns: ReadonlyArray<ColumnDef<D, *>>,
     meta: TableMeta,

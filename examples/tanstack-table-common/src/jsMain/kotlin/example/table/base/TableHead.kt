@@ -1,21 +1,18 @@
-package example.components.table.base
+package example.table.base
 
-import emotion.styled.styled
-import example.theme.Theme
 import js.array.ReadonlyArray
 import react.FC
 import react.PropsWithValue
 import react.dom.html.ReactHTML.thead
 import react.dom.html.ReactHTML.tr
 import tanstack.table.core.HeaderGroup
-import web.cssom.px
 
 internal external interface TableHeadProps : PropsWithValue<ReadonlyArray<HeaderGroup<*>>>
 
 internal val TableHead: FC<TableHeadProps> = FC { props ->
     val headerGroups = props.value
 
-    Container {
+    thead {
         for (headerGroup in headerGroups) {
             tr {
                 key = headerGroup.id
@@ -29,10 +26,4 @@ internal val TableHead: FC<TableHeadProps> = FC { props ->
             }
         }
     }
-}
-
-private val Container = thead.styled {
-    fontSize = 18.px
-    color = Theme.Text.Gray
-    backgroundColor = Theme.Background.Gray
 }

@@ -1,4 +1,4 @@
-package example.components.table.selection
+package example.table.selection
 
 import react.dom.events.ChangeEvent
 import react.useCallback

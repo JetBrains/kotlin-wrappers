@@ -1,10 +1,10 @@
 package example.table
 
-import example.components.table.base.TableInstance
-import example.components.table.base.useTable
-import example.components.table.selection.createSelectionColumn
 import example.entities.Photo
 import example.hooks.usePhotos
+import example.table.base.TableInstance
+import example.table.base.useTable
+import example.table.selection.createSelectionColumn
 import js.array.ReadonlyArray
 import js.objects.unsafeJso
 import tanstack.table.core.ColumnDef

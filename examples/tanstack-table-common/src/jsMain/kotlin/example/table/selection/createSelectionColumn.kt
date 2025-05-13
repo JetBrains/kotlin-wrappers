@@ -1,4 +1,4 @@
-package example.components.table.selection
+package example.table.selection
 
 import js.objects.unsafeJso
 import react.create
@@ -6,7 +6,7 @@ import tanstack.table.core.ColumnDef
 import tanstack.table.core.ColumnDefTemplate
 import tanstack.table.core.StringOrTemplateHeader
 
-internal fun <T : Any> createSelectionColumn(): ColumnDef<T, String> =
+fun <T : Any> createSelectionColumn(): ColumnDef<T, String> =
     unsafeJso {
         id = "selection"
         size = 32

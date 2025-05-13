@@ -1,4 +1,4 @@
-package example.components.table.selection
+package example.table.selection
 
 import example.entities.Key
 import react.use.useConstant

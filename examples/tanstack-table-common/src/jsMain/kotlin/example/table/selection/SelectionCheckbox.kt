@@ -1,4 +1,4 @@
-package example.components.table.selection
+package example.table.selection
 
 import preact.signals.core.ReadonlySignal
 import preact.signals.react.runtime.useSignals

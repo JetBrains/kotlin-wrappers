@@ -1,4 +1,4 @@
-package example.components.table.base
+package example.table.base
 
 import js.array.ReadonlyArray
 import tanstack.table.core.HeaderGroup
@@ -6,7 +6,7 @@ import tanstack.table.core.Row
 import tanstack.table.core.Table
 import tanstack.table.core.TableMeta
 
-internal class TableInstance<D : Any>(
+class TableInstance<D : Any>(
     val headerGroups: ReadonlyArray<HeaderGroup<D>>,
     val rows: ReadonlyArray<Row<D>>,
     val meta: TableMeta,
