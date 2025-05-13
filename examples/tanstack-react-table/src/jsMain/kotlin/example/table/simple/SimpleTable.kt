@@ -1,6 +1,7 @@
 package example.table.simple
 
 import emotion.react.css
+import example.table.base.TableInstance
 import example.theme.Theme
 import react.ChildrenBuilder
 import react.FC
