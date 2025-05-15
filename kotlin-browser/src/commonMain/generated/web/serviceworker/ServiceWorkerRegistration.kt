@@ -104,10 +104,10 @@ private constructor() :
      */
     @JsAsync
     @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun update()
+    suspend fun update(): ServiceWorkerRegistration
 
     @JsName("update")
-    fun updateAsync(): Promise<Void>
+    fun updateAsync(): Promise<ServiceWorkerRegistration>
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/updatefound_event)

@@ -351,10 +351,16 @@ private val WORKERS_TYPES = listOf(
 
 private val WEB_AUTHN_TYPES = listOf(
     "AuthenticationExtensionsClientInputs",
+    "AuthenticationExtensionsClientInputsJSON",
     "AuthenticationExtensionsClientOutputs",
+    "AuthenticationExtensionsLargeBlobInputs",
+    "AuthenticationExtensionsLargeBlobInputsJSON",
+    "AuthenticationExtensionsLargeBlobOutputs",
     "AuthenticationExtensionsPRFInputs",
+    "AuthenticationExtensionsPRFInputsJSON",
     "AuthenticationExtensionsPRFOutputs",
     "AuthenticationExtensionsPRFValues",
+    "AuthenticationExtensionsPRFValuesJSON",
     "AuthenticatorAssertionResponse",
     "AuthenticatorAttestationResponse",
     "AuthenticatorResponse",
@@ -362,16 +368,15 @@ private val WEB_AUTHN_TYPES = listOf(
     "CredentialPropertiesOutput",
     "PublicKeyCredential",
     "PublicKeyCredentialCreationOptions",
+    "PublicKeyCredentialCreationOptionsJSON",
     "PublicKeyCredentialDescriptor",
+    "PublicKeyCredentialDescriptorJSON",
     "PublicKeyCredentialEntity",
     "PublicKeyCredentialParameters",
     "PublicKeyCredentialRequestOptions",
+    "PublicKeyCredentialRequestOptionsJSON",
     "PublicKeyCredentialRpEntity",
     "PublicKeyCredentialUserEntity",
-    "AuthenticationExtensionsClientInputsJSON",
-    "PublicKeyCredentialCreationOptionsJSON",
-    "PublicKeyCredentialDescriptorJSON",
-    "PublicKeyCredentialRequestOptionsJSON",
     "PublicKeyCredentialUserEntityJSON",
 )
 
@@ -2062,6 +2067,9 @@ private fun convertProperty(
 
         "Record<string, AuthenticationExtensionsPRFValues>",
             -> "ReadonlyRecord<String, AuthenticationExtensionsPRFValues>"
+
+        "Record<string, AuthenticationExtensionsPRFValuesJSON>",
+            -> "ReadonlyRecord<String, AuthenticationExtensionsPRFValuesJSON>"
 
         "BufferSource | string",
             -> "BufferSource /* | String */"
