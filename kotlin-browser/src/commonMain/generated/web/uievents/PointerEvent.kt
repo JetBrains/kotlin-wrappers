@@ -97,6 +97,9 @@ open external class PointerEvent(
         @JsValue("auxclick")
         val AUX_CLICK: EventType<PointerEvent>
 
+        @JsValue("click")
+        val CLICK: EventType<PointerEvent>
+
         @JsValue("contextmenu")
         val CONTEXT_MENU: EventType<PointerEvent>
 

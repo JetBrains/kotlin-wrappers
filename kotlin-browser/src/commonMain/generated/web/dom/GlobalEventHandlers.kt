@@ -139,7 +139,7 @@ external interface GlobalEventHandlers :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/click_event)
      */
-    var onclick: EventHandler<MouseEvent, GlobalEventHandlers, Node>?
+    var onclick: EventHandler<PointerEvent, GlobalEventHandlers, Node>?
         get() = definedExternally
         set(value) = definedExternally
 
