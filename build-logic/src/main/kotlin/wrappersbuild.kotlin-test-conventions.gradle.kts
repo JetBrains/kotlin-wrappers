@@ -1,11 +1,11 @@
 import org.jetbrains.kotlin.gradle.dsl.KotlinProjectExtension
 
-private val TEST_SOURCE_SETS = listOf(
+val TEST_SOURCE_SETS = listOf(
     "jsTest",
     "commonTest",
 )
 
-private val JS_TEST_TASK_NAME = "jsTestPackageJson"
+val JS_TEST_TASK_NAME = "jsTestPackageJson"
 
 afterEvaluate {
     val kotlin = project.extensions.getByName<KotlinProjectExtension>("kotlin")
