@@ -7,7 +7,7 @@ import kotlin.test.assertEquals
 class EventTypesTest {
     @Test
     fun import() {
-        assertEquals<Any>("click", MouseEvent.CLICK)
+        assertEquals<Any>("click", PointerEvent.CLICK)
     }
 
     @Test
