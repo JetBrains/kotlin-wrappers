@@ -1,3 +1,5 @@
+// Automatically generated - do not modify!
+
 package js.serialization
 
 import js.reflect.JsExternalInheritorsOnly
