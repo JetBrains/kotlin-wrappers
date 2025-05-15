@@ -2,15 +2,17 @@ plugins {
     id("declarations")
 }
 
-tasks.named("generateDeclarations") {
-    doLast {
-        val definitionsFile = nodeModules.resolve("csstype/index.d.ts")
-        val commonSourceDir = commonGeneratedDir
-        val jsSourceDir = jsGeneratedDir
+tasks.named<GenerateDeclarationsTask>("generateDeclarations") {
+    val definitionsFile = nodeModules.resolve("csstype/index.d.ts")
+    val commonSourceDir = commonGeneratedDir
+    val jsSourceDir = jsGeneratedDir
 
-        delete(commonSourceDir)
-        delete(jsSourceDir)
+    sourceDirs = listOf(
+        commonSourceDir,
+        jsSourceDir
+    )
 
+    action = {
         karakum.csstype.generateKotlinDeclarations(
             definitionsFile = definitionsFile,
             commonSourceDir = commonSourceDir.asFile,

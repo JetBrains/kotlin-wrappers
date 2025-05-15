@@ -2,12 +2,12 @@ plugins {
     id("declarations")
 }
 
-tasks.named("generateDeclarations") {
-    doLast {
-        val sourceDir = commonGeneratedDir
+tasks.named<GenerateDeclarationsTask>("generateDeclarations") {
+    val sourceDir = commonGeneratedDir
 
-        delete(sourceDir)
+    sourceDirs = listOf(sourceDir)
 
+    action = {
         val idlDir = nodeModules.resolve("@webref/idl")
         val eventsSourceFile = nodeModules.resolve("@webref/events/events.json")
         val definitionsDir = nodeModules.resolve("typescript/lib")
@@ -32,10 +32,10 @@ tasks.named("generateDeclarations") {
     }
 }
 
-val findMissedTypes by tasks.registering {
-    doLast {
-        val sourceDir = projectDir.resolve("src/jsMain/generated")
+val findMissedTypes by tasks.registering(GenerateDeclarationsTask::class) {
+    val sourceDir = projectDir.resolve("src/jsMain/generated")
 
+    action = {
         val generatedInterfaces = fileTree(sourceDir)
             .mapNotNull { it.name.removeSuffix(".kt") }
             .flatMap { if (it.endsWith("Event")) sequenceOf(it, "${it}Init") else sequenceOf(it) }
