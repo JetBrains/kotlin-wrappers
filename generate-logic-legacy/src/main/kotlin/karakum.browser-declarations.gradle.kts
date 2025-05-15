@@ -5,7 +5,7 @@ plugins {
 tasks.named<GenerateDeclarationsTask>("generateDeclarations") {
     val sourceDir = commonGeneratedDir
 
-    sourceDirs = listOf(sourceDir)
+    sourceDirs.add(sourceDir)
 
     action = {
         val idlDir = nodeModules.resolve("@webref/idl")

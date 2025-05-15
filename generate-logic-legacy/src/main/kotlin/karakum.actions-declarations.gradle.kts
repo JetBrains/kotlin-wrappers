@@ -5,7 +5,7 @@ plugins {
 tasks.named<GenerateDeclarationsTask>("generateDeclarations") {
     val sourceDir = jsGeneratedDir
 
-    sourceDirs = listOf(jsGeneratedDir)
+    sourceDirs.add(sourceDir)
 
     val definitionsDir = nodeModules.resolve("@actions")
 

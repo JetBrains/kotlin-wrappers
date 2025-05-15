@@ -6,7 +6,7 @@ tasks.named<GenerateDeclarationsTask>("generateDeclarations") {
     val coreDefinitionsFile = nodeModules.resolve("@tanstack/virtual-core/dist/esm/index.d.ts")
     val sourceDir = jsGeneratedDir
 
-    sourceDirs = listOf(sourceDir)
+    sourceDirs.add(sourceDir)
 
     action = {
         karakum.virtual.generateKotlinDeclarations(

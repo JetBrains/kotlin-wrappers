@@ -6,7 +6,7 @@ tasks.named<GenerateDeclarationsTask>("generateDeclarations") {
     val coreDefinitionsDir = nodeModules.resolve("@tanstack/table-core/build/lib")
     val sourceDir = commonGeneratedDir
 
-    sourceDirs = listOf(sourceDir)
+    sourceDirs.add(sourceDir)
 
     action = {
         karakum.table.generateKotlinDeclarations(

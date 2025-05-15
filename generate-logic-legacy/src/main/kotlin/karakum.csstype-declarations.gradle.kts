@@ -7,10 +7,8 @@ tasks.named<GenerateDeclarationsTask>("generateDeclarations") {
     val commonSourceDir = commonGeneratedDir
     val jsSourceDir = jsGeneratedDir
 
-    sourceDirs = listOf(
-        commonSourceDir,
-        jsSourceDir
-    )
+    sourceDirs.add(commonSourceDir)
+    sourceDirs.add(jsSourceDir)
 
     action = {
         karakum.csstype.generateKotlinDeclarations(

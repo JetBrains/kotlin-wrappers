@@ -6,7 +6,7 @@ tasks.named<GenerateDeclarationsTask>("generateDeclarations") {
     val definitionsFile = nodeModules.resolve("@types/react/index.d.ts")
     val sourceDir = jsGeneratedDir
 
-    sourceDirs = listOf(sourceDir)
+    sourceDirs.add(sourceDir)
 
     action = {
         karakum.react.generateKotlinDeclarations(

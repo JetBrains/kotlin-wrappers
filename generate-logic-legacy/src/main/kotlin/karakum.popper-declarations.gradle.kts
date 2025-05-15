@@ -6,7 +6,7 @@ tasks.named<GenerateDeclarationsTask>("generateDeclarations") {
     val definitionsDir = nodeModules.resolve("@popperjs/core/lib")
     val sourceDir = commonGeneratedDir
 
-    sourceDirs = listOf(sourceDir)
+    sourceDirs.add(sourceDir)
 
     action = {
         karakum.popper.generateKotlinDeclarations(

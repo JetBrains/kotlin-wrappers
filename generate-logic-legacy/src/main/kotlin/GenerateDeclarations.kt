@@ -46,8 +46,8 @@ abstract class GenerateDeclarationsTask
         rootGeneratedDir.dir("src/jsMain/generated")
 
     @Input
-    val sourceDirs: ListProperty<Any> =
-        objectFactory.listProperty<Any>()
+    val sourceDirs: ListProperty<Directory> =
+        objectFactory.listProperty<Directory>()
 
     @Input
     val action: Property<() -> Unit> =

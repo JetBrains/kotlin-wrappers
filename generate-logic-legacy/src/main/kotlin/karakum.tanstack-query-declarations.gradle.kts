@@ -13,7 +13,7 @@ tasks.named<GenerateDeclarationsTask>("generateDeclarations") {
 
     val sourceDir = jsGeneratedDir
 
-    sourceDirs = listOf(sourceDir)
+    sourceDirs.add(sourceDir)
 
     action = {
         karakum.query.generateKotlinDeclarations(
