@@ -5,8 +5,6 @@ val TEST_SOURCE_SETS = listOf(
     "commonTest",
 )
 
-val JS_TEST_TASK_NAME = "jsTestPackageJson"
-
 afterEvaluate {
     val kotlin = project.extensions.getByName<KotlinProjectExtension>("kotlin")
 
@@ -15,7 +13,7 @@ afterEvaluate {
         .flatMap { it.kotlin.sourceDirectories }
         .any { it.exists() }
 
-    tasks.named(JS_TEST_TASK_NAME) {
+    tasks.named("jsTestPackageJson") {
         onlyIf {
             hasSupportedTestSourceSet
         }
