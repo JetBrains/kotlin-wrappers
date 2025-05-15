@@ -14,8 +14,6 @@ afterEvaluate {
         .any { it.exists() }
 
     tasks.named("jsTestPackageJson") {
-        onlyIf {
-            hasSupportedTestSourceSet
-        }
+        enabled = hasSupportedTestSourceSet
     }
 }
