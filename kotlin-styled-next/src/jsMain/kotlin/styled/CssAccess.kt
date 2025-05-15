@@ -11,8 +11,8 @@ import web.dom.document
 import web.html.HTML
 import web.location.location
 import web.storage.localStorage
-import web.uievents.MouseEvent
-import web.uievents.MouseEventInit
+import web.uievents.PointerEvent
+import web.uievents.PointerEventInit
 import web.url.URL
 import web.window.window
 
@@ -49,9 +49,9 @@ internal object GlobalCssAccess {
         link.href = blobUrl
         link.download = name
         document.body.appendChild(link)
-        val clickEvent = MouseEvent(
-            type = MouseEvent.CLICK,
-            init = MouseEventInit(
+        val clickEvent = PointerEvent(
+            type = PointerEvent.CLICK,
+            init = PointerEventInit(
                 bubbles = true,
                 cancelable = true,
                 view = window,
