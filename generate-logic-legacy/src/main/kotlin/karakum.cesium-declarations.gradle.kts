@@ -9,9 +9,9 @@ tasks.named<GenerateDeclarationsTask>("generateDeclarations") {
 
     action = {
         karakum.cesium.generateKotlinDeclarations(
-            engineDefinitionsFile = nodeModules.resolve("@cesium/engine/index.d.ts"),
-            widgetsDefinitionsFile = nodeModules.resolve("@cesium/widgets/index.d.ts"),
-            sourceDir = sourceDir.asFile,
+            engineDefinitionsFile = nodeModules.resolve("@cesium/engine/index.d.ts").get(),
+            widgetsDefinitionsFile = nodeModules.resolve("@cesium/widgets/index.d.ts").get(),
+            sourceDir = sourceDir.get().asFile,
         )
     }
 }

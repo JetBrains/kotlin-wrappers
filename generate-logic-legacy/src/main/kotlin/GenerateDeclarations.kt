@@ -8,6 +8,7 @@ import org.gradle.api.file.ProjectLayout
 import org.gradle.api.model.ObjectFactory
 import org.gradle.api.provider.ListProperty
 import org.gradle.api.provider.Property
+import org.gradle.api.provider.Provider
 import org.gradle.api.tasks.Input
 import org.gradle.api.tasks.Internal
 import org.gradle.api.tasks.TaskAction
@@ -23,31 +24,31 @@ abstract class GenerateDeclarationsTask
     objectFactory: ObjectFactory,
 ) : DefaultTask(), HasGeneratedDirectories {
 
-    private val rootBuildDirectory: Directory
-        get() = project.rootProject.layout.buildDirectory.get()
+    private val rootBuildDirectory: DirectoryProperty
+        get() = project.rootProject.layout.buildDirectory
 
     private val buildDirectory: DirectoryProperty
         get() = projectLayout.buildDirectory
 
     @Internal
-    val nodeModules: File =
-        rootBuildDirectory.dir("js/node_modules").asFile
+    val nodeModules: Provider<File> =
+        rootBuildDirectory.dir("js/node_modules").map { it.asFile }
 
     @Internal
-    override val rootGeneratedDir: Directory =
+    override val rootGeneratedDir: Provider<Directory> =
         buildDirectory.rootGeneratedDir
 
     @Internal
-    override val commonGeneratedDir: Directory =
+    override val commonGeneratedDir: Provider<Directory> =
         rootGeneratedDir.commonGeneratedDir
 
     @Internal
-    val jsGeneratedDir: Directory =
-        rootGeneratedDir.dir("src/jsMain/generated")
+    val jsGeneratedDir: Provider<Directory> =
+        rootGeneratedDir.map { it.dir("src/jsMain/generated") }
 
     @Input
     val sourceDirs: ListProperty<Directory> =
-        objectFactory.listProperty<Directory>()
+        objectFactory.listProperty()
 
     @Input
     val action: Property<() -> Unit> =
@@ -62,3 +63,6 @@ abstract class GenerateDeclarationsTask
         action.get().invoke()
     }
 }
+
+fun Provider<File>.resolve(path: String): Provider<File> =
+    map { it.resolve(path) }

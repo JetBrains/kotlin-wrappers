@@ -10,8 +10,8 @@ tasks.named<GenerateDeclarationsTask>("generateDeclarations") {
 
     action = {
         karakum.virtual.generateKotlinDeclarations(
-            coreDefinitionsFile = coreDefinitionsFile,
-            sourceDir = sourceDir.asFile,
+            coreDefinitionsFile = coreDefinitionsFile.get(),
+            sourceDir = sourceDir.get().asFile,
         )
     }
 }

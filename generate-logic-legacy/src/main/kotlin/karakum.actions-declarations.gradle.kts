@@ -11,8 +11,8 @@ tasks.named<GenerateDeclarationsTask>("generateDeclarations") {
 
     action = {
         karakum.actions.generateKotlinDeclarations(
-            definitionsDir = definitionsDir,
-            sourceDir = sourceDir.asFile,
+            definitionsDir = definitionsDir.get(),
+            sourceDir = sourceDir.get().asFile,
         )
     }
 }

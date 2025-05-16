@@ -10,8 +10,8 @@ tasks.named<GenerateDeclarationsTask>("generateDeclarations") {
 
     action = {
         karakum.react.generateKotlinDeclarations(
-            definitionsFile = definitionsFile,
-            sourceDir = sourceDir.asFile,
+            definitionsFile = definitionsFile.get(),
+            sourceDir = sourceDir.get().asFile,
         )
     }
 }

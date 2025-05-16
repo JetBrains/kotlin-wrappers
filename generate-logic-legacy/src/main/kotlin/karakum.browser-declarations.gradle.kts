@@ -7,27 +7,27 @@ tasks.named<GenerateDeclarationsTask>("generateDeclarations") {
 
     sourceDirs.add(sourceDir)
 
-    action = {
-        val idlDir = nodeModules.resolve("@webref/idl")
-        val eventsSourceFile = nodeModules.resolve("@webref/events/events.json")
-        val definitionsDir = nodeModules.resolve("typescript/lib")
-        val webDefinitionsDir = nodeModules.resolve("@types/web")
-        val webworkerDefinitionsDir = nodeModules.resolve("@types/webworker")
-        val serviceworkerDefinitionsDir = nodeModules.resolve("@types/serviceworker")
-        val audioWorkletDefinitionsDir = nodeModules.resolve("@types/audioworklet")
+    val idlDir = nodeModules.resolve("@webref/idl")
+    val eventsSourceFile = nodeModules.resolve("@webref/events/events.json")
+    val definitionsDir = nodeModules.resolve("typescript/lib")
+    val webDefinitionsDir = nodeModules.resolve("@types/web")
+    val webworkerDefinitionsDir = nodeModules.resolve("@types/webworker")
+    val serviceworkerDefinitionsDir = nodeModules.resolve("@types/serviceworker")
+    val audioWorkletDefinitionsDir = nodeModules.resolve("@types/audioworklet")
 
+    action = {
         karakum.browser.generateKotlinDeclarations(
-            idlDir = idlDir,
-            eventsSourceFile = eventsSourceFile,
-            definitionsDir = definitionsDir,
-            webDefinitionsFile = webDefinitionsDir.resolve("index.d.ts"),
-            webIterableDefinitionsFile = webDefinitionsDir.resolve("iterable.d.ts"),
-            webworkerDefinitionsFile = webworkerDefinitionsDir.resolve("index.d.ts"),
-            webworkerIterableDefinitionsFile = webworkerDefinitionsDir.resolve("iterable.d.ts"),
-            serviceworkerDefinitionsFile = serviceworkerDefinitionsDir.resolve("index.d.ts"),
-            serviceworkerIterableDefinitionsFile = serviceworkerDefinitionsDir.resolve("iterable.d.ts"),
-            audioWorkletDefinitionsFile = audioWorkletDefinitionsDir.resolve("index.d.ts"),
-            sourceDir = sourceDir.asFile,
+            idlDir = idlDir.get(),
+            eventsSourceFile = eventsSourceFile.get(),
+            definitionsDir = definitionsDir.get(),
+            webDefinitionsFile = webDefinitionsDir.resolve("index.d.ts").get(),
+            webIterableDefinitionsFile = webDefinitionsDir.resolve("iterable.d.ts").get(),
+            webworkerDefinitionsFile = webworkerDefinitionsDir.resolve("index.d.ts").get(),
+            webworkerIterableDefinitionsFile = webworkerDefinitionsDir.resolve("iterable.d.ts").get(),
+            serviceworkerDefinitionsFile = serviceworkerDefinitionsDir.resolve("index.d.ts").get(),
+            serviceworkerIterableDefinitionsFile = serviceworkerDefinitionsDir.resolve("iterable.d.ts").get(),
+            audioWorkletDefinitionsFile = audioWorkletDefinitionsDir.resolve("index.d.ts").get(),
+            sourceDir = sourceDir.get().asFile,
         )
     }
 }
@@ -46,7 +46,7 @@ val findMissedTypes by tasks.registering(GenerateDeclarationsTask::class) {
             "@types/webworker",
             "@types/serviceworker",
             "@types/audioworklet",
-        ).map { nodeModules.resolve("$it/index.d.ts") }
+        ).map { nodeModules.resolve("$it/index.d.ts").get() }
             .map { it.readText() }
             .flatMap { content ->
                 content.splitToSequence("\ninterface ")

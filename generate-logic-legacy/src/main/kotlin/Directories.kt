@@ -1,8 +1,9 @@
 import org.gradle.api.file.Directory
 import org.gradle.api.file.DirectoryProperty
+import org.gradle.api.provider.Provider
 
-val DirectoryProperty.rootGeneratedDir: Directory
-    get() = dir("generated").get()
+val DirectoryProperty.rootGeneratedDir: Provider<Directory>
+    get() = dir("generated")
 
-val Directory.commonGeneratedDir: Directory
-    get() = dir("src/commonMain/generated")
+val Provider<Directory>.commonGeneratedDir: Provider<Directory>
+    get() = map { it.dir("src/commonMain/generated") }

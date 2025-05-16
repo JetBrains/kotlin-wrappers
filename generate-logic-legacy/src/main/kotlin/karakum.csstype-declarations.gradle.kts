@@ -12,9 +12,9 @@ tasks.named<GenerateDeclarationsTask>("generateDeclarations") {
 
     action = {
         karakum.csstype.generateKotlinDeclarations(
-            definitionsFile = definitionsFile,
-            commonSourceDir = commonSourceDir.asFile,
-            jsSourceDir = jsSourceDir.asFile,
+            definitionsFile = definitionsFile.get(),
+            commonSourceDir = commonSourceDir.get().asFile,
+            jsSourceDir = jsSourceDir.get().asFile,
         )
     }
 }
