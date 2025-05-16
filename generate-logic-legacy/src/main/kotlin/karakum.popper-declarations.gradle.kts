@@ -2,16 +2,16 @@ plugins {
     id("declarations")
 }
 
-tasks.named("generateDeclarations") {
-    doLast {
-        val definitionsDir = nodeModules.resolve("@popperjs/core/lib")
-        val sourceDir = commonGeneratedDir
+tasks.named<GenerateDeclarationsTask>("generateDeclarations") {
+    val definitionsDir = nodeModules.resolve("@popperjs/core/lib")
+    val sourceDir = commonGeneratedDir
 
-        delete(sourceDir)
+    sourceDirs.add(sourceDir)
 
+    action = {
         karakum.popper.generateKotlinDeclarations(
-            definitionsDir = definitionsDir,
-            sourceDir = sourceDir.asFile,
+            definitionsDir = definitionsDir.get(),
+            sourceDir = sourceDir.get().asFile,
         )
     }
 }

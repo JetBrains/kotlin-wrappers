@@ -2,16 +2,16 @@ plugins {
     id("declarations")
 }
 
-tasks.named("generateDeclarations") {
-    doLast {
-        val coreDefinitionsFile = nodeModules.resolve("@tanstack/virtual-core/dist/esm/index.d.ts")
-        val sourceDir = jsGeneratedDir
+tasks.named<GenerateDeclarationsTask>("generateDeclarations") {
+    val coreDefinitionsFile = nodeModules.resolve("@tanstack/virtual-core/dist/esm/index.d.ts")
+    val sourceDir = jsGeneratedDir
 
-        delete(sourceDir)
+    sourceDirs.add(sourceDir)
 
+    action = {
         karakum.virtual.generateKotlinDeclarations(
-            coreDefinitionsFile = coreDefinitionsFile,
-            sourceDir = sourceDir.asFile,
+            coreDefinitionsFile = coreDefinitionsFile.get(),
+            sourceDir = sourceDir.get().asFile,
         )
     }
 }
