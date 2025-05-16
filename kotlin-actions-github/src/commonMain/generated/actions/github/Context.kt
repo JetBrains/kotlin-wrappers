@@ -18,6 +18,7 @@ external class Context {
     var action: String
     var actor: String
     var job: String
+    var runAttempt: Number
     var runNumber: Number
     var runId: Number
     var apiUrl: String
