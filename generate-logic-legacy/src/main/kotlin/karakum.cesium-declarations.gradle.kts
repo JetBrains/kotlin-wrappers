@@ -7,7 +7,7 @@ tasks.named<GenerateDeclarationsTask>("generateDeclarations") {
 
     sourceDirs.add(sourceDir)
 
-    action = {
+    doLast {
         karakum.cesium.generateKotlinDeclarations(
             engineDefinitionsFile = nodeModules.resolve("@cesium/engine/index.d.ts").get(),
             widgetsDefinitionsFile = nodeModules.resolve("@cesium/widgets/index.d.ts").get(),

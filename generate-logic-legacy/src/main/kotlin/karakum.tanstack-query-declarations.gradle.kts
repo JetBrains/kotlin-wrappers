@@ -15,7 +15,7 @@ tasks.named<GenerateDeclarationsTask>("generateDeclarations") {
 
     sourceDirs.add(sourceDir)
 
-    action = {
+    doLast {
         karakum.query.generateKotlinDeclarations(
             coreTypesDir = coreTypesDir.get(),
             reactTypesDir = reactTypesDir.get(),

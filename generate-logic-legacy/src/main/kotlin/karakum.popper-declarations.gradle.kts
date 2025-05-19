@@ -8,7 +8,7 @@ tasks.named<GenerateDeclarationsTask>("generateDeclarations") {
 
     sourceDirs.add(sourceDir)
 
-    action = {
+    doLast {
         karakum.popper.generateKotlinDeclarations(
             definitionsDir = definitionsDir.get(),
             sourceDir = sourceDir.get().asFile,

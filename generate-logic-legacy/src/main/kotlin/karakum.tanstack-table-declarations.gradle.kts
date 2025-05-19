@@ -8,7 +8,7 @@ tasks.named<GenerateDeclarationsTask>("generateDeclarations") {
 
     sourceDirs.add(sourceDir)
 
-    action = {
+    doLast {
         karakum.table.generateKotlinDeclarations(
             coreDefinitionsDir = coreDefinitionsDir.get(),
             sourceDir = sourceDir.get().asFile,

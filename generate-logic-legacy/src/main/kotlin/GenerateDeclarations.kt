@@ -7,16 +7,16 @@ import org.gradle.api.file.FileSystemOperations
 import org.gradle.api.file.ProjectLayout
 import org.gradle.api.model.ObjectFactory
 import org.gradle.api.provider.ListProperty
-import org.gradle.api.provider.Property
 import org.gradle.api.provider.Provider
 import org.gradle.api.tasks.Input
 import org.gradle.api.tasks.Internal
 import org.gradle.api.tasks.TaskAction
 import org.gradle.kotlin.dsl.listProperty
-import org.gradle.kotlin.dsl.property
+import org.gradle.work.DisableCachingByDefault
 import java.io.File
 import javax.inject.Inject
 
+@DisableCachingByDefault(because = "Not worth caching")
 abstract class GenerateDeclarationsTask
 @Inject constructor(
     private val projectLayout: ProjectLayout,
@@ -50,17 +50,11 @@ abstract class GenerateDeclarationsTask
     val sourceDirs: ListProperty<Directory> =
         objectFactory.listProperty()
 
-    @Input
-    val action: Property<() -> Unit> =
-        objectFactory.property()
-
     @TaskAction
-    fun mainAction() {
+    fun execute() {
         fileSystemOperations.delete {
             delete(sourceDirs)
         }
-
-        action.get().invoke()
     }
 }
 

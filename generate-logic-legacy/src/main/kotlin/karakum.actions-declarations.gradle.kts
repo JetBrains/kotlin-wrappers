@@ -9,7 +9,7 @@ tasks.named<GenerateDeclarationsTask>("generateDeclarations") {
 
     val definitionsDir = nodeModules.resolve("@actions")
 
-    action = {
+    doLast {
         karakum.actions.generateKotlinDeclarations(
             definitionsDir = definitionsDir.get(),
             sourceDir = sourceDir.get().asFile,

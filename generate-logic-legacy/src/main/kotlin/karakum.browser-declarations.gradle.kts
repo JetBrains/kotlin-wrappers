@@ -15,7 +15,7 @@ tasks.named<GenerateDeclarationsTask>("generateDeclarations") {
     val serviceworkerDefinitionsDir = nodeModules.resolve("@types/serviceworker")
     val audioWorkletDefinitionsDir = nodeModules.resolve("@types/audioworklet")
 
-    action = {
+    doLast {
         karakum.browser.generateKotlinDeclarations(
             idlDir = idlDir.get(),
             eventsSourceFile = eventsSourceFile.get(),
@@ -35,7 +35,7 @@ tasks.named<GenerateDeclarationsTask>("generateDeclarations") {
 val findMissedTypes by tasks.registering(GenerateDeclarationsTask::class) {
     val sourceDir = projectDir.resolve("src/jsMain/generated")
 
-    action = {
+    doLast {
         val generatedInterfaces = fileTree(sourceDir)
             .mapNotNull { it.name.removeSuffix(".kt") }
             .flatMap { if (it.endsWith("Event")) sequenceOf(it, "${it}Init") else sequenceOf(it) }

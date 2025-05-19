@@ -10,7 +10,7 @@ tasks.named<GenerateDeclarationsTask>("generateDeclarations") {
     sourceDirs.add(commonSourceDir)
     sourceDirs.add(jsSourceDir)
 
-    action = {
+    doLast {
         karakum.csstype.generateKotlinDeclarations(
             definitionsFile = definitionsFile.get(),
             commonSourceDir = commonSourceDir.get().asFile,
