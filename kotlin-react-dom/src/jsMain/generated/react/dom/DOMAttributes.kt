@@ -36,7 +36,7 @@ external interface DOMAttributes<T : Element> :
     // Form Events
     // var onChange: FormEventHandler<T>?
     var onChangeCapture: FormEventHandler<T>?
-    var onBeforeInput: FormEventHandler<T>?
+    var onBeforeInput: InputEventHandler<T>?
     var onBeforeInputCapture: FormEventHandler<T>?
     var onInput: FormEventHandler<T>?
     var onInputCapture: FormEventHandler<T>?

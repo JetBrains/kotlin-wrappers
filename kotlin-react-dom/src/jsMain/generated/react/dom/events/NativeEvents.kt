@@ -12,6 +12,8 @@ typealias NativeDragEvent = web.uievents.DragEvent
 
 typealias NativeFocusEvent = web.uievents.FocusEvent
 
+typealias NativeInputEvent = web.uievents.InputEvent
+
 typealias NativeKeyboardEvent = web.uievents.KeyboardEvent
 
 typealias NativeMouseEvent = web.uievents.MouseEvent

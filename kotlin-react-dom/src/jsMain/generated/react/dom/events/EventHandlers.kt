@@ -18,6 +18,8 @@ typealias FormEventHandler<T> = EventHandler<FormEvent<T>>
 
 typealias ChangeEventHandler<T> = EventHandler<ChangeEvent<T>>
 
+typealias InputEventHandler<T> = EventHandler<InputEvent<T>>
+
 typealias KeyboardEventHandler<T> = EventHandler<KeyboardEvent<T>>
 
 typealias MouseEventHandler<T> = EventHandler<MouseEvent<T, *>>
