@@ -4,6 +4,7 @@ package tanstack.query.core
 
 import js.objects.JsPlainObject
 import js.promise.Promise
+import web.time.EpochTimeStamp
 
 @JsPlainObject
 external interface DehydratedQuery {
@@ -12,4 +13,5 @@ external interface DehydratedQuery {
     val state: QueryState<*, *>
     val promise: Promise<*>?
     val meta: QueryMeta?
+    val dehydratedAt: EpochTimeStamp?
 }
