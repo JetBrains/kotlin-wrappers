@@ -3,7 +3,7 @@ plugins {
     id("io.github.turansky.kfc.library")
 }
 
-val generateDeclarations by tasks.registering {
+val generateDeclarations by tasks.registering(GenerateDeclarationsTask::class) {
     dependsOn(":kotlinNpmInstall")
 }
 

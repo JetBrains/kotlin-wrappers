@@ -2,16 +2,16 @@ plugins {
     id("declarations")
 }
 
-tasks.named("generateDeclarations") {
+tasks.named<GenerateDeclarationsTask>("generateDeclarations") {
+    val coreDefinitionsDir = nodeModules.resolve("@tanstack/table-core/build/lib")
+    val sourceDir = commonGeneratedDir
+
+    sourceDirs.add(sourceDir)
+
     doLast {
-        val coreDefinitionsDir = nodeModules.resolve("@tanstack/table-core/build/lib")
-        val sourceDir = commonGeneratedDir
-
-        delete(sourceDir)
-
         karakum.table.generateKotlinDeclarations(
-            coreDefinitionsDir = coreDefinitionsDir,
-            sourceDir = sourceDir.asFile,
+            coreDefinitionsDir = coreDefinitionsDir.get(),
+            sourceDir = sourceDir.get().asFile,
         )
     }
 }

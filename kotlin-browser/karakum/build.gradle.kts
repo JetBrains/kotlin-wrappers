@@ -81,45 +81,47 @@ enum class WrapperProject(
     ;
 }
 
-fun getWrapperProject(path: String): WrapperProject? =
-    when (path) {
-        in Includes.INTERNAL -> null
-        in Includes.JS_INCLUDE -> WrapperProject.JS
-        in Includes.WEB_INCLUDE -> WrapperProject.WEB
-        in Includes.BROWSER_INCLUDE -> WrapperProject.BROWSER
-        else -> if ("/" in path) getWrapperProject(path.substringBeforeLast("/")) else null
+object FileTreeSpec {
+    private fun getWrapperProject(path: String): WrapperProject? =
+        when (path) {
+            in Includes.INTERNAL -> null
+            in Includes.JS_INCLUDE -> WrapperProject.JS
+            in Includes.WEB_INCLUDE -> WrapperProject.WEB
+            in Includes.BROWSER_INCLUDE -> WrapperProject.BROWSER
+            else -> if ("/" in path) getWrapperProject(path.substringBeforeLast("/")) else null
+        }
+
+    private fun isDirFromWrapperProject(
+        path: String,
+        wp: WrapperProject,
+    ): Boolean {
+        val included = wp.included
+
+        if (path in included)
+            return true
+
+        if (included.any { it.startsWith("$path/") })
+            return true
+
+        val basePath = path.substringBefore("/", "")
+        return basePath in included
     }
 
-fun isDirFromWrapperProject(
-    path: String,
-    wp: WrapperProject,
-): Boolean {
-    val included = wp.included
-
-    if (path in included)
-        return true
-
-    if (included.any { it.startsWith("$path/") })
-        return true
-
-    val basePath = path.substringBefore("/", "")
-    return basePath in included
-}
-
-fun isFromWrapperProject(wp: WrapperProject): Spec<FileTreeElement> {
-    return Spec<FileTreeElement> { element ->
-        val path = element.path
-        if (element.isDirectory) {
-            isDirFromWrapperProject(path, wp)
-        } else {
-            getWrapperProject(path) == wp
+    fun isFromWrapperProject(wp: WrapperProject): Spec<FileTreeElement> {
+        return Spec<FileTreeElement> { element ->
+            val path = element.path
+            if (element.isDirectory) {
+                isDirFromWrapperProject(path, wp)
+            } else {
+                getWrapperProject(path) == wp
+            }
         }
     }
 }
 
 val syncKotlinJs by tasks.registering(SyncWrappers::class) {
     from(commonGeneratedDir) {
-        include(isFromWrapperProject(WrapperProject.JS))
+        include(FileTreeSpec.isFromWrapperProject(WrapperProject.JS))
 
         preserve {
             include("js/atomic/WaitAsyncResult.kt")
@@ -134,7 +136,7 @@ val syncKotlinJs by tasks.registering(SyncWrappers::class) {
 
 val syncKotlinWeb by tasks.registering(SyncWrappers::class) {
     from(commonGeneratedDir) {
-        include(isFromWrapperProject(WrapperProject.WEB))
+        include(FileTreeSpec.isFromWrapperProject(WrapperProject.WEB))
     }
 
     into(kotlinWrappersCommonDir("kotlin-web"))
@@ -142,7 +144,7 @@ val syncKotlinWeb by tasks.registering(SyncWrappers::class) {
 
 val syncKotlinBrowser by tasks.registering(SyncWrappers::class) {
     from(commonGeneratedDir) {
-        include(isFromWrapperProject(WrapperProject.BROWSER))
+        include(FileTreeSpec.isFromWrapperProject(WrapperProject.BROWSER))
     }
 
     into(kotlinWrappersCommonDir("kotlin-browser"))

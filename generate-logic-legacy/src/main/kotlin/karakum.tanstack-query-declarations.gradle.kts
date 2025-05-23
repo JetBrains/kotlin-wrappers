@@ -2,24 +2,24 @@ plugins {
     id("declarations")
 }
 
-tasks.named("generateDeclarations") {
+tasks.named<GenerateDeclarationsTask>("generateDeclarations") {
+    val tanstackDir = nodeModules.resolve("@tanstack")
+
+    val coreTypesDir = tanstackDir
+        .resolve("query-core/build/modern")
+
+    val reactTypesDir = tanstackDir
+        .resolve("react-query/build/modern")
+
+    val sourceDir = jsGeneratedDir
+
+    sourceDirs.add(sourceDir)
+
     doLast {
-        val tanstackDir = nodeModules.resolve("@tanstack")
-
-        val coreTypesDir = tanstackDir
-            .resolve("query-core/build/modern")
-
-        val reactTypesDir = tanstackDir
-            .resolve("react-query/build/modern")
-
-        val sourceDir = jsGeneratedDir
-
-        delete(sourceDir)
-
         karakum.query.generateKotlinDeclarations(
-            coreTypesDir = coreTypesDir,
-            reactTypesDir = reactTypesDir,
-            sourceDir = sourceDir.asFile,
+            coreTypesDir = coreTypesDir.get(),
+            reactTypesDir = reactTypesDir.get(),
+            sourceDir = sourceDir.get().asFile,
         )
     }
 }
