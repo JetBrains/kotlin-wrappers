@@ -9,4 +9,5 @@ import js.objects.JsPlainObject
 external interface StreamedQueryOptions<TQueryFnData, TQueryKey : QueryKey> {
     val queryFn: (QueryFunctionContext<TQueryKey, *>) -> AsyncIterable<TQueryFnData>
     val refetchMode: RefetchMode?
+    val maxChunks: Int?
 }

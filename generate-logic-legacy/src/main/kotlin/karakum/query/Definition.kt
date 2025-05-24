@@ -169,9 +169,10 @@ fun toDeclarations(
         )
         .replace(
             """
-                declare function streamedQuery<TQueryFnData = unknown, TQueryKey extends QueryKey = QueryKey>({ queryFn, refetchMode, }: {
+                declare function streamedQuery<TQueryFnData = unknown, TQueryKey extends QueryKey = QueryKey>({ queryFn, refetchMode, maxChunks, }: {
                     queryFn: (context: QueryFunctionContext<TQueryKey>) => AsyncIterable<TQueryFnData> | Promise<AsyncIterable<TQueryFnData>>;
                     refetchMode?: 'append' | 'reset' | 'replace';
+                    maxChunks?: number;
                 }): QueryFunction<Array<TQueryFnData>, TQueryKey>;
             """.trimIndent(),
             """
@@ -182,6 +183,7 @@ fun toDeclarations(
                 interface StreamedQueryOptions<TQueryFnData, TQueryKey extends QueryKey> {
                     queryFn: (QueryFunctionContext<TQueryKey, *>) => AsyncIterable<TQueryFnData>
                     refetchMode?: RefetchMode
+                    maxChunks?: Int
                 }
             """.trimIndent(),
         )
