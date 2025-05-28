@@ -8,6 +8,7 @@ import web.http.ReferrerPolicy
 
 external interface ScriptHTMLAttributes<T : Element> : HTMLAttributes<T> {
     var async: Boolean?
+    var blocking: ScriptBlocking?
     var crossOrigin: CrossOrigin?
     var defer: Boolean?
     var integrity: String?

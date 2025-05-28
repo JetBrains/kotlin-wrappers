@@ -5,6 +5,7 @@ package react.dom.html
 import web.dom.Element
 
 external interface StyleHTMLAttributes<T : Element> : HTMLAttributes<T> {
+    var blocking: StyleBlocking?
     var media: String?
     var scoped: Boolean?
     var type: String?
