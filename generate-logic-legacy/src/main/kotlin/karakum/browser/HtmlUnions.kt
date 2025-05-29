@@ -3,6 +3,7 @@ package karakum.browser
 import karakum.common.sealedUnionBody
 
 internal const val AUTO_CAPITALIZE = "AutoCapitalize"
+internal const val BLOCKING = "Blocking"
 internal const val PRELOAD = "Preload"
 internal const val FETCH_PRIORITY = "FetchPriority"
 internal const val FORM_ENCTYPE = "FormEncType"
@@ -91,6 +92,16 @@ internal fun htmlUnions(): Sequence<ConversionResult> =
                     "sentences",
                     "words",
                     "characters",
+                ),
+            ),
+            pkg = "web.html",
+        ),
+        ConversionResult(
+            name = BLOCKING,
+            body = sealedUnionBody(
+                name = BLOCKING,
+                values = listOf(
+                    "render",
                 ),
             ),
             pkg = "web.html",
