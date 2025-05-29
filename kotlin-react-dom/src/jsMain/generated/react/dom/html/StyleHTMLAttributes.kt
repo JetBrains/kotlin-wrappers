@@ -3,9 +3,10 @@
 package react.dom.html
 
 import web.dom.Element
+import web.html.Blocking
 
 external interface StyleHTMLAttributes<T : Element> : HTMLAttributes<T> {
-    var blocking: StyleBlocking?
+    var blocking: Blocking?
     var media: String?
     var scoped: Boolean?
     var type: String?

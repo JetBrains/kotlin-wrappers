@@ -29,6 +29,7 @@ internal fun convertDefinitions(
         .replace("    encType?: string | undefined;", "    encType?: FormEncType | undefined;")
         .replace("    autoComplete?: string | undefined;", "    autoComplete?: AutoFill | undefined;")
         .replace(""": boolean | "false"""", """: "false"""")
+        .replace("""blocking?: "render" | (string & {}) | undefined;""", """blocking?: Blocking | undefined;""")
         .replace("""fetchPriority?: "high" | "low" | "auto";""", """fetchPriority?: FetchPriority;""")
         .replace(" |  undefined", " | undefined")
         .replace(" | (string & {})", "")
