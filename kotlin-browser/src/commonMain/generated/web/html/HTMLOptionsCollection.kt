@@ -11,7 +11,7 @@ import kotlin.js.definedExternally
  */
 external class HTMLOptionsCollection
 private constructor() :
-    HTMLCollectionOf<HTMLOptionElement> {
+    HTMLCollection<HTMLOptionElement> {
     /**
      * Returns the number of elements in the collection.
      *

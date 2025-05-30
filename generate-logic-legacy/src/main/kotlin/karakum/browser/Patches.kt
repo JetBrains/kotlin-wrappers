@@ -8,6 +8,8 @@ internal fun String.applyPatches(): String {
         .applyReadyStatePatches()
         .replace(" extends NodeListOf<", " extends NodeList<")
         .replace(": NodeListOf<", ": NodeList<")
+        .replace(" extends HTMLCollectionOf<", " extends HTMLCollection<")
+        .replace(": HTMLCollectionOf<", ": HTMLCollection<")
         .patchQuerySelectors()
         .replace(Regex("""(\n\s+)get (.+)\(\)(: .+;)"""), "$1readonly $2$3")
         .replace(Regex("""\n\s+set .+\(.+: string\);"""), "")

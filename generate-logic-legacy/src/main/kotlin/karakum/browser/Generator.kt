@@ -174,7 +174,6 @@ private val DEFAULT_IMPORTS = Imports(
     "web.highlight.HighlightRegistry",
     "web.html.HTMLCanvasElement",
     "web.html.HTMLCollection",
-    "web.html.HTMLCollectionOf",
     "web.html.HTMLElement",
     "web.html.HTMLFormElement",
     "web.html.HTMLLabelElement",

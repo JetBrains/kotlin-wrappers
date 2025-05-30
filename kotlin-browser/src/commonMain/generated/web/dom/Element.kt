@@ -19,7 +19,7 @@ import web.events.JsEvent
 import web.fullscreen.FullscreenOptions
 import web.geometry.DOMRect
 import web.geometry.DOMRectList
-import web.html.HTMLCollectionOf
+import web.html.HTMLCollection
 import web.html.HTMLElement
 import web.html.HtmlTagName
 import web.mathml.MATHML_NAMESPACE
@@ -266,29 +266,29 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/getElementsByClassName)
      */
-    fun getElementsByClassName(classNames: String): HTMLCollectionOf<Element>
+    fun getElementsByClassName(classNames: String): HTMLCollection<Element>
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/getElementsByTagName)
      */
-    fun <T : HTMLElement> getElementsByTagName(qualifiedName: HtmlTagName<T>): HTMLCollectionOf<T>
-    fun <T : SVGElement> getElementsByTagName(qualifiedName: SvgTagName<T>): HTMLCollectionOf<T>
-    fun <T : MathMLElement> getElementsByTagName(qualifiedName: MathMLTagName<T>): HTMLCollectionOf<T>
-    fun getElementsByTagName(qualifiedName: String): HTMLCollectionOf<Element>
+    fun <T : HTMLElement> getElementsByTagName(qualifiedName: HtmlTagName<T>): HTMLCollection<T>
+    fun <T : SVGElement> getElementsByTagName(qualifiedName: SvgTagName<T>): HTMLCollection<T>
+    fun <T : MathMLElement> getElementsByTagName(qualifiedName: MathMLTagName<T>): HTMLCollection<T>
+    fun getElementsByTagName(qualifiedName: String): HTMLCollection<Element>
     fun <T : SVGElement> getElementsByTagNameNS(
         namespaceURI: SVG_NAMESPACE,
         localName: SvgTagName<T>,
-    ): HTMLCollectionOf<T>
+    ): HTMLCollection<T>
 
     fun <T : MathMLElement> getElementsByTagNameNS(
         namespaceURI: MATHML_NAMESPACE,
         localName: MathMLTagName<T>,
-    ): HTMLCollectionOf<T>
+    ): HTMLCollection<T>
 
     fun getElementsByTagNameNS(
         namespace: String?,
         localName: String,
-    ): HTMLCollectionOf<Element>
+    ): HTMLCollection<Element>
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/getHTML)

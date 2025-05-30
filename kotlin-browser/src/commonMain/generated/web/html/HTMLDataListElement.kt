@@ -15,5 +15,5 @@ protected constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLDataListElement/options)
      */
-    val options: HTMLCollectionOf<HTMLOptionElement>
+    val options: HTMLCollection<HTMLOptionElement>
 }

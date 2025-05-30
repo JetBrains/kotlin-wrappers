@@ -155,14 +155,14 @@ open external class Document :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/embeds)
      */
-    val embeds: HTMLCollectionOf<HTMLEmbedElement>
+    val embeds: HTMLCollection<HTMLEmbedElement>
 
     /**
      * Retrieves a collection, in source order, of all form objects in the document.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/forms)
      */
-    val forms: HTMLCollectionOf<HTMLFormElement>
+    val forms: HTMLCollection<HTMLFormElement>
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/fragmentDirective)
@@ -193,7 +193,7 @@ open external class Document :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/images)
      */
-    val images: HTMLCollectionOf<HTMLImageElement>
+    val images: HTMLCollection<HTMLImageElement>
 
     /**
      * Gets the implementation object of the current document.
@@ -214,7 +214,7 @@ open external class Document :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/links)
      */
-    val links: HTMLCollectionOf<HTMLElement /* HTMLAnchorElement | HTMLAreaElement */>
+    val links: HTMLCollection<HTMLElement /* HTMLAnchorElement | HTMLAreaElement */>
 
     /**
      * Contains information about the current URL.
@@ -269,7 +269,7 @@ open external class Document :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/plugins)
      */
-    val plugins: HTMLCollectionOf<HTMLEmbedElement>
+    val plugins: HTMLCollection<HTMLEmbedElement>
 
     /**
      * Retrieves a value that indicates the current state of the object.
@@ -290,7 +290,7 @@ open external class Document :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/scripts)
      */
-    val scripts: HTMLCollectionOf<HTMLScriptElement>
+    val scripts: HTMLCollection<HTMLScriptElement>
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/scrollingElement)
@@ -506,7 +506,7 @@ open external class Document :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/getElementsByClassName)
      */
-    fun getElementsByClassName(classNames: String): HTMLCollectionOf<Element>
+    fun getElementsByClassName(classNames: String): HTMLCollection<Element>
 
     /**
      * Gets a collection of objects based on the value of the NAME or ID attribute.
@@ -522,24 +522,24 @@ open external class Document :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/getElementsByTagName)
      */
-    fun <T : HTMLElement> getElementsByTagName(qualifiedName: HtmlTagName<T>): HTMLCollectionOf<T>
-    fun <T : SVGElement> getElementsByTagName(qualifiedName: SvgTagName<T>): HTMLCollectionOf<T>
-    fun <T : MathMLElement> getElementsByTagName(qualifiedName: MathMLTagName<T>): HTMLCollectionOf<T>
-    fun getElementsByTagName(qualifiedName: String): HTMLCollectionOf<Element>
+    fun <T : HTMLElement> getElementsByTagName(qualifiedName: HtmlTagName<T>): HTMLCollection<T>
+    fun <T : SVGElement> getElementsByTagName(qualifiedName: SvgTagName<T>): HTMLCollection<T>
+    fun <T : MathMLElement> getElementsByTagName(qualifiedName: MathMLTagName<T>): HTMLCollection<T>
+    fun getElementsByTagName(qualifiedName: String): HTMLCollection<Element>
     fun <T : SVGElement> getElementsByTagNameNS(
         namespaceURI: SVG_NAMESPACE,
         localName: SvgTagName<T>,
-    ): HTMLCollectionOf<T>
+    ): HTMLCollection<T>
 
     fun <T : MathMLElement> getElementsByTagNameNS(
         namespaceURI: MATHML_NAMESPACE,
         localName: MathMLTagName<T>,
-    ): HTMLCollectionOf<T>
+    ): HTMLCollection<T>
 
     fun getElementsByTagNameNS(
         namespace: String?,
         localName: String,
-    ): HTMLCollectionOf<Element>
+    ): HTMLCollection<Element>
 
     /**
      * Returns an object representing the current selection of the document that is loaded into the object displaying a webpage.

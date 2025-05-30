@@ -17,7 +17,7 @@ protected constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableRowElement/cells)
      */
-    val cells: HTMLCollectionOf<HTMLTableCellElement>
+    val cells: HTMLCollection<HTMLTableCellElement>
 
     /**
      * Retrieves the position of the object in the rows collection for the table.

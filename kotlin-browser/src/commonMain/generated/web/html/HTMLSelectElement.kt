@@ -90,7 +90,7 @@ protected constructor() :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSelectElement/selectedOptions)
      */
-    val selectedOptions: HTMLCollectionOf<HTMLOptionElement>
+    val selectedOptions: HTMLCollection<HTMLOptionElement>
 
     /**
      * Sets or retrieves the number of rows in the list box.

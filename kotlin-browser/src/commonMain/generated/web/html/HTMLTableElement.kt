@@ -24,14 +24,14 @@ protected constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableElement/rows)
      */
-    val rows: HTMLCollectionOf<HTMLTableRowElement>
+    val rows: HTMLCollection<HTMLTableRowElement>
 
     /**
      * Retrieves a collection of all tBody objects in the table. Objects in this collection are in source order.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableElement/tBodies)
      */
-    val tBodies: HTMLCollectionOf<HTMLTableSectionElement>
+    val tBodies: HTMLCollection<HTMLTableSectionElement>
 
     /**
      * Retrieves the tFoot object of the table.

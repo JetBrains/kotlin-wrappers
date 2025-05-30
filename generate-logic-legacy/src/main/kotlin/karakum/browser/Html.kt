@@ -663,13 +663,6 @@ internal fun htmlDeclarations(
         )
         .plus(
             ConversionResult(
-                name = "HTMLCollectionOf",
-                body = "typealias HTMLCollectionOf<T> = HTMLCollection<T>",
-                pkg = "web.html",
-            )
-        )
-        .plus(
-            ConversionResult(
                 name = "CSSNumberish",
                 body = "typealias CSSNumberish = Double",
                 pkg = "web.animations",
@@ -1811,29 +1804,29 @@ internal fun convertMember(
         "closest<E extends Element = Element>(selectors: string): E | null",
             -> return "fun closest(selector: String): Element?"
 
-        "getElementsByTagName<K extends keyof HTMLElementTagNameMap>(qualifiedName: K): HTMLCollectionOf<HTMLElementTagNameMap[K]>",
-            -> return "fun <T: HTMLElement> getElementsByTagName(qualifiedName: HtmlTagName<T>): HTMLCollectionOf<T>"
+        "getElementsByTagName<K extends keyof HTMLElementTagNameMap>(qualifiedName: K): HTMLCollection<HTMLElementTagNameMap[K]>",
+            -> return "fun <T: HTMLElement> getElementsByTagName(qualifiedName: HtmlTagName<T>): HTMLCollection<T>"
 
-        "getElementsByTagName<K extends keyof SVGElementTagNameMap>(qualifiedName: K): HTMLCollectionOf<SVGElementTagNameMap[K]>",
-            -> return "fun <T: SVGElement> getElementsByTagName(qualifiedName: SvgTagName<T>): HTMLCollectionOf<T>"
+        "getElementsByTagName<K extends keyof SVGElementTagNameMap>(qualifiedName: K): HTMLCollection<SVGElementTagNameMap[K]>",
+            -> return "fun <T: SVGElement> getElementsByTagName(qualifiedName: SvgTagName<T>): HTMLCollection<T>"
 
-        "getElementsByTagName<K extends keyof MathMLElementTagNameMap>(qualifiedName: K): HTMLCollectionOf<MathMLElementTagNameMap[K]>",
-            -> return "fun <T: MathMLElement> getElementsByTagName(qualifiedName: MathMLTagName<T>): HTMLCollectionOf<T>"
+        "getElementsByTagName<K extends keyof MathMLElementTagNameMap>(qualifiedName: K): HTMLCollection<MathMLElementTagNameMap[K]>",
+            -> return "fun <T: MathMLElement> getElementsByTagName(qualifiedName: MathMLTagName<T>): HTMLCollection<T>"
 
-        "getElementsByTagNameNS(namespaceURI: SVG_NAMESPACE, localName: string): HTMLCollectionOf<SVGElement>",
+        "getElementsByTagNameNS(namespaceURI: SVG_NAMESPACE, localName: string): HTMLCollection<SVGElement>",
             -> return """
         fun <T : SVGElement> getElementsByTagNameNS(
             namespaceURI: SVG_NAMESPACE,
             localName: SvgTagName<T>,
-        ): HTMLCollectionOf<T>
+        ): HTMLCollection<T>
         """.trimIndent()
 
-        "getElementsByTagNameNS(namespaceURI: MATHML_NAMESPACE, localName: string): HTMLCollectionOf<MathMLElement>",
+        "getElementsByTagNameNS(namespaceURI: MATHML_NAMESPACE, localName: string): HTMLCollection<MathMLElement>",
             -> return """
         fun <T : MathMLElement> getElementsByTagNameNS(
             namespaceURI: MATHML_NAMESPACE,
             localName: MathMLTagName<T>,
-        ): HTMLCollectionOf<T>
+        ): HTMLCollection<T>
         """.trimIndent()
 
         "getContext(contextId: string, options?: any): RenderingContext | null",
@@ -2104,8 +2097,8 @@ private fun convertProperty(
         "HTMLVideoElement | VideoFrame" -> "CanvasImageSource /* $type */"
         "(WindowProxy & typeof globalThis)" -> "WindowProxy"
 
-        "HTMLCollectionOf<HTMLAnchorElement | HTMLAreaElement>",
-            -> "HTMLCollectionOf<HTMLElement /* HTMLAnchorElement | HTMLAreaElement */>"
+        "HTMLCollection<HTMLAnchorElement | HTMLAreaElement>",
+            -> "HTMLCollection<HTMLElement /* HTMLAnchorElement | HTMLAreaElement */>"
 
         "typeof FileReader.EMPTY | typeof FileReader.LOADING | typeof FileReader.DONE",
             -> "ReadyState"

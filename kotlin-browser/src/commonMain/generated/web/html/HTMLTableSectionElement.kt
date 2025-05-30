@@ -17,7 +17,7 @@ protected constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableSectionElement/rows)
      */
-    val rows: HTMLCollectionOf<HTMLTableRowElement>
+    val rows: HTMLCollection<HTMLTableRowElement>
 
     /**
      * Removes the specified row (tr) from the element and from the rows collection.
