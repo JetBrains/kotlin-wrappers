@@ -2,7 +2,7 @@
 
 package web.form
 
-import web.dom.NodeListOf
+import web.dom.NodeList
 import web.html.HTMLFormElement
 import web.html.HTMLLabelElement
 import web.validation.ValidationTarget
@@ -11,7 +11,7 @@ import kotlin.js.definedExternally
 external interface FormControl :
     ValidationTarget {
     val form: HTMLFormElement?
-    val labels: NodeListOf<HTMLLabelElement>?
+    val labels: NodeList<HTMLLabelElement>?
         get() = definedExternally
     var name: String
 }

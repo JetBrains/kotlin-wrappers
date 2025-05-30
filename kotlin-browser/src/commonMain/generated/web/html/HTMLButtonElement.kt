@@ -2,7 +2,7 @@
 
 package web.html
 
-import web.dom.NodeListOf
+import web.dom.NodeList
 import web.events.Event
 import web.events.EventInstance
 import web.events.JsEvent
@@ -72,7 +72,7 @@ protected constructor() :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLButtonElement/labels)
      */
-    override val labels: NodeListOf<HTMLLabelElement>
+    override val labels: NodeList<HTMLLabelElement>
 
     /**
      * Sets or retrieves the name of the object.

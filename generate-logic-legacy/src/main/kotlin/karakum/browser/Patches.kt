@@ -6,6 +6,8 @@ private const val SVG_ANIMATED_ENUMERATION_AFTER = "\ninterface SVGAnimatedEnume
 internal fun String.applyPatches(): String {
     return patchVideoFrameCallback()
         .applyReadyStatePatches()
+        .replace(" extends NodeListOf<", " extends NodeList<")
+        .replace(": NodeListOf<", ": NodeList<")
         .patchQuerySelectors()
         .replace(Regex("""(\n\s+)get (.+)\(\)(: .+;)"""), "$1readonly $2$3")
         .replace(Regex("""\n\s+set .+\(.+: string\);"""), "")
@@ -173,7 +175,7 @@ internal fun String.applyPatches(): String {
         .replace("quality?: any", "quality?: number")
         .replace("clearWatch(watchId: number)", "clearWatch(watchId: $GEOLOCATION_WATCH_ID)")
         .replace(": PositionOptions): number;", ": PositionOptions): $GEOLOCATION_WATCH_ID;")
-        .replaceFirst("readonly labels: NodeList;", "readonly labels: NodeListOf<HTMLLabelElement>;")
+        .replaceFirst("readonly labels: NodeList;", "readonly labels: NodeList<HTMLLabelElement>;")
         .replaceFirst(
             """    setFormValue(value: File | string | FormData | null, state?: File | string | FormData | null): void;""",
             sequenceOf(
@@ -376,20 +378,20 @@ private fun String.patchQuerySelectors(): String =
             "querySelector(selectors: string): Element | null;"
         )
         .replace(
-            "querySelectorAll<K extends keyof HTMLElementTagNameMap>(selectors: K): NodeListOf<HTMLElementTagNameMap[K]>;",
-            "querySelectorAll<T extends HTMLElement>(selectors: HtmlTagName<T>): NodeListOf<T>;"
+            "querySelectorAll<K extends keyof HTMLElementTagNameMap>(selectors: K): NodeList<HTMLElementTagNameMap[K]>;",
+            "querySelectorAll<T extends HTMLElement>(selectors: HtmlTagName<T>): NodeList<T>;"
         )
         .replace(
-            "querySelectorAll<K extends keyof SVGElementTagNameMap>(selectors: K): NodeListOf<SVGElementTagNameMap[K]>;",
-            "querySelectorAll<T extends SVGElement>(selectors: SvgTagName<T>): NodeListOf<T>;"
+            "querySelectorAll<K extends keyof SVGElementTagNameMap>(selectors: K): NodeList<SVGElementTagNameMap[K]>;",
+            "querySelectorAll<T extends SVGElement>(selectors: SvgTagName<T>): NodeList<T>;"
         )
         .replace(
-            "querySelectorAll<K extends keyof MathMLElementTagNameMap>(selectors: K): NodeListOf<MathMLElementTagNameMap[K]>;",
-            "querySelectorAll<T extends MathMLElement>(selectors: MathMLTagName<T>): NodeListOf<T>;"
+            "querySelectorAll<K extends keyof MathMLElementTagNameMap>(selectors: K): NodeList<MathMLElementTagNameMap[K]>;",
+            "querySelectorAll<T extends MathMLElement>(selectors: MathMLTagName<T>): NodeList<T>;"
         )
         .replace(
-            "querySelectorAll<E extends Element = Element>(selectors: string): NodeListOf<E>;",
-            "querySelectorAll(selectors: string): NodeListOf<Element>;"
+            "querySelectorAll<E extends Element = Element>(selectors: string): NodeList<E>;",
+            "querySelectorAll(selectors: string): NodeList<Element>;"
         )
         .replace(
             "\"$SVG_NAMESPACE\"",

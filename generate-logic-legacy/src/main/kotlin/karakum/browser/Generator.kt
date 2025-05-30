@@ -135,7 +135,6 @@ private val DEFAULT_IMPORTS = Imports(
     "web.dom.HTMLOrSVGScriptElement",
     "web.dom.Node",
     "web.dom.NodeList",
-    "web.dom.NodeListOf",
     "web.dom.ParentNode",
     "web.dom.Text",
     "web.errors.DOMException",
@@ -352,7 +351,7 @@ fun generateKotlinDeclarations(
             .writeCode(fileContent(annotations, "", body, pkg))
     }
 
-    val aliases = domAliases()
+    val aliases = listOf<ConversionResult>()
         .plus(htmlFactories(content))
         .plus(htmlDeclarations(content))
         .plus(htmlUnions())

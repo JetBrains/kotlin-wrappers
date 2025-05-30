@@ -514,7 +514,7 @@ open external class Document :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/getElementsByName)
      */
-    fun getElementsByName(elementName: String): NodeListOf<HTMLElement>
+    fun getElementsByName(elementName: String): NodeList<HTMLElement>
 
     /**
      * Retrieves a collection of objects based on the specified element name.

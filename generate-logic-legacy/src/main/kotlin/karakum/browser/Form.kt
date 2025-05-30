@@ -39,7 +39,7 @@ fun reportValidity(): Boolean
 
 private val FORM_CONTROL_MEMBERS = """
 val form: HTMLFormElement?
-val labels: NodeListOf<HTMLLabelElement>?
+val labels: NodeList<HTMLLabelElement>?
     get() = definedExternally
 var name: String
 """.trimIndent()
@@ -110,9 +110,9 @@ private fun CustomFormControl(): ConversionResult {
     val body = """
     external interface $CUSTOM_FORM_CONTROL:
         $FORM_CONTROL {
-        
+
         $mainInterface
-        
+
         $interfaces
     }
     """.trimIndent()

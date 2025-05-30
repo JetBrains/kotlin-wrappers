@@ -83,10 +83,10 @@ sealed external interface ParentNode :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/querySelectorAll)
      */
-    fun <T : HTMLElement> querySelectorAll(selectors: HtmlTagName<T>): NodeListOf<T> = definedExternally
-    fun <T : SVGElement> querySelectorAll(selectors: SvgTagName<T>): NodeListOf<T> = definedExternally
-    fun <T : MathMLElement> querySelectorAll(selectors: MathMLTagName<T>): NodeListOf<T> = definedExternally
-    fun querySelectorAll(selectors: String): NodeListOf<Element> = definedExternally
+    fun <T : HTMLElement> querySelectorAll(selectors: HtmlTagName<T>): NodeList<T> = definedExternally
+    fun <T : SVGElement> querySelectorAll(selectors: SvgTagName<T>): NodeList<T> = definedExternally
+    fun <T : MathMLElement> querySelectorAll(selectors: MathMLTagName<T>): NodeList<T> = definedExternally
+    fun querySelectorAll(selectors: String): NodeList<Element> = definedExternally
 
     /**
      * Replace all children of node with nodes, while replacing strings in nodes with equivalent Text nodes.

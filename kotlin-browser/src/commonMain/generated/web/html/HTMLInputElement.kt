@@ -6,7 +6,7 @@ import js.array.ReadonlyArray
 import js.date.Date
 import web.autofill.AutoFill
 import web.dom.Node
-import web.dom.NodeListOf
+import web.dom.NodeList
 import web.events.Event
 import web.events.EventInstance
 import web.events.JsEvent
@@ -152,7 +152,7 @@ protected constructor() :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/labels)
      */
-    override val labels: NodeListOf<HTMLLabelElement>?
+    override val labels: NodeList<HTMLLabelElement>?
 
     /**
      * Specifies the ID of a pre-defined datalist of options for an input element.

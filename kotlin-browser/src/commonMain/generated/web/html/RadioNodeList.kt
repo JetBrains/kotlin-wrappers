@@ -2,7 +2,7 @@
 
 package web.html
 
-import web.dom.NodeListOf
+import web.dom.NodeList
 
 /**
  * The **`RadioNodeList`** interface represents a collection of elements in a form returned by a call to HTMLFormControlsCollection.namedItem().
@@ -12,7 +12,7 @@ import web.dom.NodeListOf
 sealed /* final */
 external class RadioNodeList
 protected /* private */ constructor() :
-    NodeListOf<HTMLInputElement> {
+    NodeList<HTMLInputElement> {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RadioNodeList/value)
      */

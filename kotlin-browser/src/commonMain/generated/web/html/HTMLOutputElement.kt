@@ -3,7 +3,7 @@
 package web.html
 
 import web.dom.DOMTokenList
-import web.dom.NodeListOf
+import web.dom.NodeList
 import web.form.FormControl
 import web.validation.ValidityState
 
@@ -34,7 +34,7 @@ protected constructor() :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOutputElement/labels)
      */
-    override val labels: NodeListOf<HTMLLabelElement>
+    override val labels: NodeList<HTMLLabelElement>
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOutputElement/name)

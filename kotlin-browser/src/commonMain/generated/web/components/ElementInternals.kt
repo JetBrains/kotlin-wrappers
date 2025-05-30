@@ -3,7 +3,7 @@
 package web.components
 
 import web.aria.ARIAMixin
-import web.dom.NodeListOf
+import web.dom.NodeList
 import web.file.File
 import web.form.FormData
 import web.html.HTMLElement
@@ -35,7 +35,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/labels)
      */
-    val labels: NodeListOf<HTMLLabelElement>
+    val labels: NodeList<HTMLLabelElement>
 
     /**
      * Returns the ShadowRoot for internals's target element, if the target element is a shadow host, or null otherwise.

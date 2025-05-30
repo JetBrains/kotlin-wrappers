@@ -26,7 +26,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Node/childNodes)
      */
-    val childNodes: NodeListOf<ChildNode>
+    val childNodes: NodeList<ChildNode>
 
     /**
      * Returns the first child.

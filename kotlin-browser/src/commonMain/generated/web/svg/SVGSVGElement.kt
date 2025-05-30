@@ -3,7 +3,7 @@
 package web.svg
 
 import web.dom.Element
-import web.dom.NodeListOf
+import web.dom.NodeList
 import web.geometry.*
 import web.window.WindowEventHandlers
 import kotlin.js.definedExternally
@@ -126,12 +126,12 @@ private constructor() :
     fun getEnclosureList(
         rect: DOMRectReadOnly,
         referenceElement: SVGElement?,
-    ): NodeListOf<SVGElement /* SVGCircleElement | SVGEllipseElement | SVGImageElement | SVGLineElement | SVGPathElement | SVGPolygonElement | SVGPolylineElement | SVGRectElement | SVGTextElement | SVGUseElement */>
+    ): NodeList<SVGElement /* SVGCircleElement | SVGEllipseElement | SVGImageElement | SVGLineElement | SVGPathElement | SVGPolygonElement | SVGPolylineElement | SVGRectElement | SVGTextElement | SVGUseElement */>
 
     fun getIntersectionList(
         rect: DOMRectReadOnly,
         referenceElement: SVGElement?,
-    ): NodeListOf<SVGElement /* SVGCircleElement | SVGEllipseElement | SVGImageElement | SVGLineElement | SVGPathElement | SVGPolygonElement | SVGPolylineElement | SVGRectElement | SVGTextElement | SVGUseElement */>
+    ): NodeList<SVGElement /* SVGCircleElement | SVGEllipseElement | SVGImageElement | SVGLineElement | SVGPathElement | SVGPolygonElement | SVGPolylineElement | SVGRectElement | SVGTextElement | SVGUseElement */>
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGSVGElement/pauseAnimations)

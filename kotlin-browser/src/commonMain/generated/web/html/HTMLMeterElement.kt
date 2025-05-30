@@ -2,7 +2,7 @@
 
 package web.html
 
-import web.dom.NodeListOf
+import web.dom.NodeList
 
 /**
  * The HTML meter elements expose the **`HTMLMeterElement`** interface, which provides special properties and methods (beyond the HTMLElement object interface they also have available to them by inheritance) for manipulating the layout and presentation of meter elements.
@@ -20,7 +20,7 @@ protected constructor() :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMeterElement/labels)
      */
-    val labels: NodeListOf<HTMLLabelElement>
+    val labels: NodeList<HTMLLabelElement>
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMeterElement/low)
