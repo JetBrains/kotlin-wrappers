@@ -35,8 +35,9 @@ open external class Query<TQueryFnData, TError, TData, TQueryKey : QueryKey>(
     open fun reset()
     open fun isActive(): Boolean
     open fun isDisabled(): Boolean
+    open fun isStatic(): Boolean
     open fun isStale(): Boolean
-    open fun isStaleByTime(staleTime: JsDuration = definedExternally): Boolean
+    open fun isStaleByTime(staleTime: StaleTime = definedExternally): Boolean
     open fun onFocus()
     open fun onOnline()
     open fun addObserver(observer: QueryObserver<*, *, *, *, *>)

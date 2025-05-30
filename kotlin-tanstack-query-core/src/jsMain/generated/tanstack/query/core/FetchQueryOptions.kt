@@ -9,5 +9,5 @@ import js.objects.JsPlainObject
 external interface FetchQueryOptions<TQueryFnData, TError, TData, TQueryKey : QueryKey, TPageParam> :
     QueryOptions<TQueryFnData, TError, TData, TQueryKey, TPageParam> {
     val initialPageParam: Void
-    val staleTime: StaleTime<TQueryFnData, TError, TData, TQueryKey>?
+    val staleTime: StaleTimeFunction<TQueryFnData, TError, TData, TQueryKey>?
 }

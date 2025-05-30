@@ -8,7 +8,7 @@ import js.objects.JsPlainObject
 external interface QueryObserverOptions<TQueryFnData, TError, TData, TQueryData, TQueryKey : QueryKey, TPageParam> :
     QueryOptions<TQueryFnData, TError, TQueryData, TQueryKey, TPageParam> {
     val enabled: Enabled<TQueryFnData, TError, TQueryData, TQueryKey>?
-    val staleTime: StaleTime<TQueryFnData, TError, TQueryData, TQueryKey>?
+    val staleTime: StaleTimeFunction<TQueryFnData, TError, TQueryData, TQueryKey>?
     val refetchInterval: Any /* number | false | ((query: Query<TQueryFnData, TError, TQueryData, TQueryKey>) => number | false | undefined) */?
     val refetchIntervalInBackground: Boolean?
     val refetchOnWindowFocus: ((query: Query<TQueryFnData, TError, TQueryData, TQueryKey>) -> Boolean /* | boolean | 'always' */)?

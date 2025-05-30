@@ -11,6 +11,7 @@ private val SKIPPED_TYPES = setOf(
     "Override",
     "NoInfer",
     "NonFunctionGuard",
+    "NonUndefinedGuard",
     "SkipToken",
     "OmitKeyof",
     "DistributiveOmit",
@@ -80,6 +81,7 @@ class Type(
             body.startsWith("boolean | ")
                     || body.startsWith("number | ")
                     || body.startsWith("TOutput | ")
+                    || body.startsWith("StaleTime | ")
                 -> body.substringAfter(" | ")
                 .removeSurrounding("(", ")")
                 .replace(" => boolean", " -> Boolean")
@@ -131,6 +133,22 @@ class Type(
                     var client: QueryClient
                 }
             """.trimIndent()
+
+        if (name == "StaleTime") {
+            require(originalBody == "number | 'static'") {
+                "Actual original body - $originalBody"
+            }
+
+            return sealedUnionBody(
+                name = name,
+                values = listOf("static"),
+            ) + "\n\n" + """
+            inline fun $name(
+                value: JsDuration,
+            ): $name =
+                unsafeCast(value)
+            """.trimIndent()
+        }
 
         if (originalBody.startsWith("'")) {
             val values = originalBody.splitToSequence(" | ")
