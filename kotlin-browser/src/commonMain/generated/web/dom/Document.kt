@@ -9,6 +9,7 @@ import seskar.js.JsAsync
 import web.animations.AnimationEvent
 import web.animations.DocumentTimeline
 import web.clipboard.ClipboardEvent
+import web.cssom.ClassName
 import web.cssom.TransitionEvent
 import web.events.Event
 import web.events.EventHandler
@@ -506,7 +507,7 @@ open external class Document :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/getElementsByClassName)
      */
-    fun getElementsByClassName(classNames: String): HTMLCollection<Element>
+    fun getElementsByClassName(classNames: ClassName): HTMLCollection<Element>
 
     /**
      * Gets a collection of objects based on the value of the NAME or ID attribute.

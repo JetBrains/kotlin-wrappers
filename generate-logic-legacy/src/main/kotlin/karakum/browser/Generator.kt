@@ -115,6 +115,7 @@ private val DEFAULT_IMPORTS = Imports(
     "web.csp.SecurityPolicyViolationEventDisposition",
     "web.cssom.CSSStyleDeclaration",
     "web.cssom.CSSStyleSheet",
+    "web.cssom.ClassName",
     "web.cssom.ElementCSSInlineStyle",
     "web.cssom.LinkStyle",
     "web.cssom.MediaQuery",

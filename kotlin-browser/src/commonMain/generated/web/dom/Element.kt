@@ -11,6 +11,7 @@ import web.aria.ARIAMixin
 import web.components.ShadowRoot
 import web.components.ShadowRootInit
 import web.components.Slottable
+import web.cssom.ClassName
 import web.cssom.StylePropertyMapReadOnly
 import web.events.Event
 import web.events.EventHandler
@@ -58,14 +59,14 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/classList)
      */
-    val classList: DOMTokenList<JsString>
+    val classList: DOMTokenList<ClassName>
 
     /**
      * Returns the value of element's class content attribute. Can be set to change it.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/className)
      */
-    var className: String
+    var className: ClassName
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/clientHeight)
@@ -266,7 +267,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/getElementsByClassName)
      */
-    fun getElementsByClassName(classNames: String): HTMLCollection<Element>
+    fun getElementsByClassName(classNames: ClassName): HTMLCollection<Element>
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/getElementsByTagName)

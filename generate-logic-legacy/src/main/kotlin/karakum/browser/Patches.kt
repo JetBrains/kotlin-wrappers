@@ -256,7 +256,10 @@ internal fun String.applyPatches(): String {
             it.replace(": string", ": T")
         }
         .replace("interface DOMTokenList {", "interface DOMTokenList<T : JsAny> {")
-        .replace(": DOMTokenList", ": DOMTokenList<String>")
+        .replace("classList: DOMTokenList;", "classList: DOMTokenList<ClassName>;")
+        .replace(": DOMTokenList;", ": DOMTokenList<String>;")
+        .replace("className: string", "className: ClassName")
+        .replace("classNames: string", "classNames: ClassName")
         .patchInterface("SVGAnimatedEnumeration") {
             it.replace("Val: number;", "Val: T;")
         }
