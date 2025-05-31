@@ -2,7 +2,6 @@
 
 package web.html
 
-import js.core.JsString
 import web.dom.DOMTokenList
 import web.dom.HTMLOrSVGScriptElement
 import web.http.CrossOrigin
@@ -26,7 +25,7 @@ protected constructor() :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLScriptElement/blocking)
      */
-    val blocking: DOMTokenList<JsString>
+    val blocking: DOMTokenList<Blocking>
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLScriptElement/crossOrigin)

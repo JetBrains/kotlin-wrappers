@@ -257,6 +257,7 @@ internal fun String.applyPatches(): String {
         }
         .replace("interface DOMTokenList {", "interface DOMTokenList<T : JsAny> {")
         .replace("classList: DOMTokenList;", "classList: DOMTokenList<ClassName>;")
+        .replace("blocking: DOMTokenList;", "blocking: DOMTokenList<$BLOCKING>;")
         .replace(": DOMTokenList;", ": DOMTokenList<String>;")
         .replace("className: string", "className: ClassName")
         .replace("classNames: string", "classNames: ClassName")

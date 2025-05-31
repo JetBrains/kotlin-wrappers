@@ -27,7 +27,7 @@ protected constructor() :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLLinkElement/blocking)
      */
-    val blocking: DOMTokenList<JsString>
+    val blocking: DOMTokenList<Blocking>
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLLinkElement/crossOrigin)
