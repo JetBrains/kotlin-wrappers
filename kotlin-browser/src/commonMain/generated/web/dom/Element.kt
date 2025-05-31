@@ -58,7 +58,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/classList)
      */
-    val classList: DOMTokenList
+    val classList: DOMTokenList<JsString>
 
     /**
      * Returns the value of element's class content attribute. Can be set to change it.
@@ -137,7 +137,7 @@ private constructor() :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/part)
      */
-    val part: DOMTokenList
+    val part: DOMTokenList<JsString>
 
     /**
      * Returns the namespace prefix.

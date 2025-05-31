@@ -4,8 +4,8 @@ package web.dom
 
 import js.array.Tuple2
 import js.collections.ListLike
+import js.core.JsAny
 import js.core.JsInt
-import js.core.JsString
 import js.iterable.JsIterator
 import kotlin.js.definedExternally
 
@@ -14,9 +14,9 @@ import kotlin.js.definedExternally
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMTokenList)
  */
-external class DOMTokenList
+external class DOMTokenList<T : JsAny>
 private constructor() :
-    ListLike<JsString> {
+    ListLike<T> {
     /**
      * Returns the number of tokens.
      *
@@ -31,7 +31,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMTokenList/value)
      */
-    var value: String
+    var value: T
 
     /**
      * Adds all arguments passed, except those already present.
@@ -42,21 +42,21 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMTokenList/add)
      */
-    fun add(vararg tokens: String)
+    fun add(vararg tokens: T)
 
     /**
      * Returns true if token is present, and false otherwise.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMTokenList/contains)
      */
-    fun contains(token: String): Boolean
+    fun contains(token: T): Boolean
 
     /**
      * Returns the token with index index.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMTokenList/item)
      */
-    fun item(index: Int): String?
+    fun item(index: Int): T?
 
     /**
      * Removes arguments passed, if they are present.
@@ -67,7 +67,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMTokenList/remove)
      */
-    fun remove(vararg tokens: String)
+    fun remove(vararg tokens: T)
 
     /**
      * Replaces token with newToken.
@@ -81,8 +81,8 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMTokenList/replace)
      */
     fun replace(
-        token: String,
-        newToken: String,
+        token: T,
+        newToken: T,
     ): Boolean
 
     /**
@@ -92,7 +92,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMTokenList/supports)
      */
-    fun supports(token: String): Boolean
+    fun supports(token: T): Boolean
 
     /**
      * If force is not given, "toggles" token, removing it if it's present and adding it if it's not present. If force is true, adds token (same as add()). If force is false, removes token (same as remove()).
@@ -106,12 +106,12 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMTokenList/toggle)
      */
     fun toggle(
-        token: String,
+        token: T,
         force: Boolean = definedExternally,
     ): Boolean
 
-    override fun entries(): JsIterator<Tuple2<JsInt, JsString>>
+    override fun entries(): JsIterator<Tuple2<JsInt, T>>
     override fun keys(): JsIterator<JsInt>
-    override fun values(): JsIterator<JsString>
-    override fun forEach(action: (item: JsString) -> Unit)
+    override fun values(): JsIterator<T>
+    override fun forEach(action: (item: T) -> Unit)
 }

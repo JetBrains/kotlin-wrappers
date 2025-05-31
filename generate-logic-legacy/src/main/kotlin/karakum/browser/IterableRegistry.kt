@@ -34,6 +34,9 @@ internal object IterableRegistry {
     }
 
     fun typeParameter(type: String): String? {
+        if (type == "DOMTokenList")
+            return "T"
+
         val result = map[type]
             ?: return null
 

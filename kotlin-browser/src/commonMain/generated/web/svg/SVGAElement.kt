@@ -2,6 +2,7 @@
 
 package web.svg
 
+import js.core.JsString
 import web.dom.DOMTokenList
 
 /**
@@ -14,7 +15,7 @@ private constructor() :
     SVGGraphicsElement,
     SVGURIReference {
     var rel: String
-    val relList: DOMTokenList
+    val relList: DOMTokenList<JsString>
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAElement/target)

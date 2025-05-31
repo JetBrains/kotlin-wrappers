@@ -2,6 +2,7 @@
 
 package web.html
 
+import js.core.JsString
 import web.cssom.LinkStyle
 import web.cssom.MediaQuery
 import web.dom.DOMTokenList
@@ -18,7 +19,7 @@ protected constructor() :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLStyleElement/blocking)
      */
-    val blocking: DOMTokenList
+    val blocking: DOMTokenList<JsString>
 
     /**
      * Enables or disables the style sheet.

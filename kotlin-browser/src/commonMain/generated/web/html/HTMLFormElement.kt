@@ -3,6 +3,7 @@
 package web.html
 
 import js.array.ArrayLike
+import js.core.JsString
 import js.iterable.JsIterable
 import web.autofill.AutoFillBase
 import web.dom.DOMTokenList
@@ -106,7 +107,7 @@ protected constructor() :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFormElement/relList)
      */
-    val relList: DOMTokenList
+    val relList: DOMTokenList<JsString>
 
     /**
      * Sets or retrieves the window or frame at which to target content.

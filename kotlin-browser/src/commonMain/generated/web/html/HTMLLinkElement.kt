@@ -2,6 +2,7 @@
 
 package web.html
 
+import js.core.JsString
 import web.cssom.LinkStyle
 import web.cssom.MediaQuery
 import web.dom.DOMTokenList
@@ -26,7 +27,7 @@ protected constructor() :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLLinkElement/blocking)
      */
-    val blocking: DOMTokenList
+    val blocking: DOMTokenList<JsString>
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLLinkElement/crossOrigin)
@@ -94,12 +95,12 @@ protected constructor() :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLLinkElement/relList)
      */
-    val relList: DOMTokenList
+    val relList: DOMTokenList<JsString>
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLLinkElement/sizes)
      */
-    val sizes: DOMTokenList
+    val sizes: DOMTokenList<JsString>
 
     /**
      * Sets or retrieves the MIME type of the object.

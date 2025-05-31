@@ -2,6 +2,7 @@
 
 package web.html
 
+import js.core.JsString
 import web.dom.DOMTokenList
 import web.dom.Document
 import web.http.ReferrerPolicy
@@ -68,7 +69,7 @@ protected constructor() :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLIFrameElement/sandbox)
      */
-    val sandbox: DOMTokenList
+    val sandbox: DOMTokenList<JsString>
 
     /**
      * Sets or retrieves a URL to be loaded by the object.

@@ -906,7 +906,7 @@ internal fun convertInterface(
             else -> "JsIterable<$typeParameter>"
         }
 
-        declaration += if (":" in declaration && name != "NodeList") "," else ":"
+        declaration += if (":" in declaration && name != "NodeList" && name != "DOMTokenList") "," else ":"
         declaration += "\n$iterableDeclaration"
     }
 

@@ -2,6 +2,7 @@
 
 package web.html
 
+import js.core.JsString
 import web.dom.DOMTokenList
 import web.http.ReferrerPolicy
 import web.window.WindowTarget
@@ -47,7 +48,7 @@ protected constructor() :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLAnchorElement/relList)
      */
-    val relList: DOMTokenList
+    val relList: DOMTokenList<JsString>
 
     /**
      * Sets or retrieves the window or frame at which to target content.

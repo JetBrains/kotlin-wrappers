@@ -2,6 +2,7 @@
 
 package web.html
 
+import js.core.JsString
 import web.dom.DOMTokenList
 import web.dom.NodeList
 import web.form.FormControl
@@ -29,7 +30,7 @@ protected constructor() :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOutputElement/htmlFor)
      */
-    val htmlFor: DOMTokenList
+    val htmlFor: DOMTokenList<JsString>
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOutputElement/labels)

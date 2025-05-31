@@ -252,6 +252,11 @@ internal fun String.applyPatches(): String {
             "crossOrigin: string",
             "crossOrigin: CrossOrigin",
         )
+        .patchInterface("DOMTokenList") {
+            it.replace(": string", ": T")
+        }
+        .replace("interface DOMTokenList {", "interface DOMTokenList<T : JsAny> {")
+        .replace(": DOMTokenList", ": DOMTokenList<String>")
         .patchInterface("SVGAnimatedEnumeration") {
             it.replace("Val: number;", "Val: T;")
         }
