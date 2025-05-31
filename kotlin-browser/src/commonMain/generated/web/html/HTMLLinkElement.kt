@@ -3,6 +3,7 @@
 package web.html
 
 import web.cssom.LinkStyle
+import web.cssom.MediaQuery
 import web.dom.DOMTokenList
 import web.http.CrossOrigin
 import web.http.FetchPriority
@@ -76,7 +77,7 @@ protected constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLLinkElement/media)
      */
-    var media: String
+    var media: MediaQuery
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLLinkElement/referrerPolicy)

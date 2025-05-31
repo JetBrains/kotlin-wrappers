@@ -1421,6 +1421,7 @@ internal fun convertInterface(
 
         "MediaQueryList",
 
+        "HTMLLinkElement",
         "HTMLMetaElement",
         "HTMLSourceElement",
         "HTMLStyleElement",
