@@ -11,6 +11,7 @@ import react.dom.span
 import react.fc
 import runTest
 import styled.*
+import web.cssom.ClassName
 import kotlin.test.*
 
 class ElementTest : TestBase() {
@@ -40,7 +41,7 @@ class ElementTest : TestBase() {
             }
         }
         val styledElement = clearAndInject(styledComponent)
-        assertEquals("", styledElement.className)
+        assertEquals(ClassName(""), styledElement.className)
     }
 
     @Test
@@ -54,7 +55,7 @@ class ElementTest : TestBase() {
             }
         }
         val styledElement = clearAndInject(styledComponent)
-        assertEquals(className, styledElement.className)
+        assertEquals(ClassName(className), styledElement.className)
     }
 
 

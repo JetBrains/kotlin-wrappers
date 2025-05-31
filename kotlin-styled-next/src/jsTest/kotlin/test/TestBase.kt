@@ -7,6 +7,7 @@ import kotlinx.css.properties.deg
 import kotlinx.css.properties.rotate
 import kotlinx.css.properties.transform
 import runTest
+import web.cssom.ClassName
 import web.dom.Element
 import web.html.HTMLInputElement
 import kotlin.test.*
@@ -18,6 +19,13 @@ open class TestBase {
 
     protected val firstClassName = "firstClassName"
     protected val secondClassName = "secondClassName"
+
+    /**
+     * Assert that injected CSS for [className] contains all of the [declarations]
+     */
+    protected fun TestScope.assertCssInjected(className: ClassName, vararg declarations: Pair<String, String>) {
+        assertCssInjected(selector = className.toString(), declarations = declarations)
+    }
 
     /**
      * Assert that injected CSS for [selector] contains all of the [declarations]

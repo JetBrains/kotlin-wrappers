@@ -1,6 +1,7 @@
 package test
 
 import TestScope
+import js.array.JsArrays
 import js.array.asList
 import kotlinx.css.*
 import react.FC
@@ -168,7 +169,10 @@ class StyleSheetTest : TestBase() {
                 }
             }
         }
-        val classNames = clearAndInject(styledComponent).className.split(" ")
+        val classNames = clearAndInject(styledComponent).classList
+            .let(JsArrays::from)
+            .map { it.toString() }
+
         assertContains(classNames, "StaticStyleSheet-property1")
         assertContains(classNames, "StaticStyleSheet-property2")
         assertContains(classNames, "StaticStyleSheet-dynamicProperty1-test")
