@@ -3,6 +3,7 @@
 package mui.base
 
 import web.cssom.ClassName
+import web.dom.ElementId
 import web.html.InputType
 
 external interface InputProps :
@@ -78,7 +79,7 @@ external interface InputOwnProps :
     /**
      * The id of the `input` element.
      */
-    var id: String?
+    var id: ElementId?
 
     /**
      * Name attribute of the `input` element.

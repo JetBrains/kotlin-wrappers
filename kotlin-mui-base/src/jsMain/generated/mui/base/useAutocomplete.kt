@@ -3,6 +3,7 @@
 package mui.base
 
 import js.array.ReadonlyArray
+import web.dom.ElementId
 import web.html.HTMLElement
 
 external interface CreateFilterOptionsConfig<Value> {
@@ -212,7 +213,7 @@ external interface UseAutocompleteProps<Value> : react.Props {
      * This prop is used to help implement the accessibility logic.
      * If you don't provide an id it will fall back to a randomly generated one.
      */
-    var id: String?
+    var id: ElementId?
 
     /**
      * If `true`, the highlight can move to the input.
