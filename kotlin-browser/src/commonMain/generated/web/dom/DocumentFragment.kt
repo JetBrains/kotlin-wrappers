@@ -14,5 +14,5 @@ open external class DocumentFragment :
     NonElementParentNode,
     ParentNode {
     override val ownerDocument: Document
-    override fun getElementById(elementId: String): HTMLElement?
+    override fun getElementById(elementId: ElementId): HTMLElement?
 }

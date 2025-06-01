@@ -98,7 +98,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/id)
      */
-    var id: String
+    var id: ElementId
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/innerHTML)

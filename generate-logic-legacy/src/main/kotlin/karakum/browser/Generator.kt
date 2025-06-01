@@ -128,6 +128,7 @@ private val DEFAULT_IMPORTS = Imports(
     "web.dom.DocumentOrShadowRoot",
     "web.dom.DocumentVisibilityState",
     "web.dom.Element",
+    "web.dom.ElementId",
     "web.dom.ElementNamespace",
     "web.dom.GetHTMLOptions",
     "web.dom.GlobalEventHandlers",
@@ -351,7 +352,7 @@ fun generateKotlinDeclarations(
             .writeCode(fileContent(annotations, "", body, pkg))
     }
 
-    val aliases = listOf<ConversionResult>()
+    val aliases = domAliases()
         .plus(htmlFactories(content))
         .plus(htmlDeclarations(content))
         .plus(htmlUnions())

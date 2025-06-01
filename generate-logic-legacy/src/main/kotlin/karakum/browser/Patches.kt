@@ -258,9 +258,14 @@ internal fun String.applyPatches(): String {
         .replace("interface DOMTokenList {", "interface DOMTokenList<T : JsAny> {")
         .replace("classList: DOMTokenList;", "classList: DOMTokenList<ClassName>;")
         .replace("blocking: DOMTokenList;", "blocking: DOMTokenList<$BLOCKING>;")
+        .replace("htmlFor: DOMTokenList;", "htmlFor: DOMTokenList<ElementId>;")
         .replace(": DOMTokenList;", ": DOMTokenList<String>;")
         .replace("className: string", "className: ClassName")
         .replace("classNames: string", "classNames: ClassName")
+        .replace("elementId: string", "elementId: ElementId")
+        .patchInterface("Element") {
+            it.replace("id: string;", "id: ElementId;")
+        }
         .patchInterface("SVGAnimatedEnumeration") {
             it.replace("Val: number;", "Val: T;")
         }

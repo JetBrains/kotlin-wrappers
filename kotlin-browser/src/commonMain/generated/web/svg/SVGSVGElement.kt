@@ -3,6 +3,7 @@
 package web.svg
 
 import web.dom.Element
+import web.dom.ElementId
 import web.dom.NodeList
 import web.geometry.*
 import web.window.WindowEventHandlers
@@ -122,7 +123,7 @@ private constructor() :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGSVGElement/getElementById)
      */
-    fun getElementById(elementId: String): Element
+    fun getElementById(elementId: ElementId): Element
     fun getEnclosureList(
         rect: DOMRectReadOnly,
         referenceElement: SVGElement?,

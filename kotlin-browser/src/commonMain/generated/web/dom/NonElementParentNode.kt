@@ -8,5 +8,5 @@ sealed external interface NonElementParentNode {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/getElementById)
      */
-    fun getElementById(elementId: String): Element?
+    fun getElementById(elementId: ElementId): Element?
 }

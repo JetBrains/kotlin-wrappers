@@ -80,7 +80,7 @@ internal object GlobalCssAccess {
                 return buildList {
                     for (i in 0 until document.styleSheets.length) {
                         val node = document.styleSheets.item(i) ?: continue
-                        if ((node.ownerNode as Element).id.startsWith("ksc-global-style")) add(node)
+                        if ((node.ownerNode as Element).id.asString().startsWith("ksc-global-style")) add(node)
                     }
                 }.toTypedArray()
             }
