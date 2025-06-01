@@ -11,6 +11,7 @@ package mui.material
 
 import mui.material.styles.Theme
 import mui.system.SxProps
+import web.dom.ElementId
 import web.html.InputType
 
 typealias TextFieldProps = BaseTextFieldProps
@@ -88,7 +89,7 @@ external interface BaseTextFieldProps :
      * The id of the `input` element.
      * Use this prop to make `label` and `helperText` accessible for screen readers.
      */
-    var id: String?
+    var id: ElementId?
 
     /**
      * Props applied to the [`InputLabel`](/material-ui/api/input-label/) element.

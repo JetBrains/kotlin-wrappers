@@ -8,6 +8,7 @@
 
 package mui.material
 
+import web.dom.ElementId
 import web.html.InputType
 
 external interface SwitchBaseProps :
@@ -63,7 +64,7 @@ external interface SwitchBaseProps :
     /**
      * The id of the `input` element.
      */
-    var id: String?
+    var id: ElementId?
 
     /**
      * [Attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#Attributes) applied to the `input` element.

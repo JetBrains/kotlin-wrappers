@@ -10,6 +10,7 @@ package mui.material
 
 import mui.material.styles.Theme
 import mui.system.SxProps
+import web.dom.ElementId
 
 external interface InputBaseProps :
     mui.system.StandardProps,
@@ -111,7 +112,7 @@ external interface InputBaseProps :
     /**
      * The id of the `input` element.
      */
-    var id: String?
+    var id: ElementId?
 
     /**
      * The component used for the `input` element.

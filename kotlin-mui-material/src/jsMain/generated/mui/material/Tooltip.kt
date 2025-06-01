@@ -10,6 +10,7 @@ package mui.material
 
 import mui.material.styles.Theme
 import mui.system.SxProps
+import web.dom.ElementId
 
 external interface TooltipProps :
     mui.system.StandardProps,
@@ -132,7 +133,7 @@ external interface TooltipProps :
      * This prop is used to help implement the accessibility logic.
      * If you don't provide this prop. It falls back to a randomly generated id.
      */
-    var id: String?
+    var id: ElementId?
 
     /**
      * The number of milliseconds to wait before hiding the tooltip.

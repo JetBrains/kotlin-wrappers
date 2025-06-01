@@ -10,6 +10,7 @@ package mui.material
 
 import mui.material.styles.Theme
 import mui.system.SxProps
+import web.dom.ElementId
 
 external interface CheckboxProps :
     mui.system.StandardProps,
@@ -60,7 +61,7 @@ external interface CheckboxProps :
     /**
      * The id of the `input` element.
      */
-    var id: String?
+    var id: ElementId?
 
     /**
      * If `true`, the component appears indeterminate.

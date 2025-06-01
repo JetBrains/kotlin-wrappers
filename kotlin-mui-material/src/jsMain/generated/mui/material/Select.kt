@@ -10,6 +10,7 @@ package mui.material
 
 import mui.material.styles.Theme
 import mui.system.SxProps
+import web.dom.ElementId
 
 external interface SelectProps<Value> :
     mui.system.StandardProps,
@@ -70,7 +71,7 @@ external interface SelectProps<Value> :
     /**
      * The `id` of the wrapper element or the `select` element when `native`.
      */
-    var id: String?
+    var id: ElementId?
 
     /**
      * An `Input` element; does not have to be a material-ui specific `Input`.
