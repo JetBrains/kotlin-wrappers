@@ -261,6 +261,8 @@ private val MEDIA_CAPABILITIES_TYPES = listOf(
     "MediaConfiguration",
     "MediaEncodingConfiguration",
     "MediaDecodingConfiguration",
+
+    "KeySystemTrackConfiguration",
 )
 
 private val MEDIA_SOURCE_TYPES = listOf(

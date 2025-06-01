@@ -133,13 +133,6 @@ internal object IDLRegistry {
 
                         "WebTransportSendStreamOptions" -> listOf(className, "WebTransportSendOptions")
 
-                        // TEMP
-                        "RTCEncodedFrameMetadata" -> listOf(
-                            className,
-                            "RTCEncodedAudioFrameMetadata",
-                            "RTCEncodedVideoFrameMetadata",
-                        )
-
                         // TEMP?
                         "MediaSessionSeekActionDetails" -> listOf(className, "MediaSessionActionDetails")
                         "MediaSessionSeekToActionDetails" -> listOf(className, "MediaSessionActionDetails")

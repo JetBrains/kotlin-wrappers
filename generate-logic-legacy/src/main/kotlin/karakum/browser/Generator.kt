@@ -204,6 +204,8 @@ private val DEFAULT_IMPORTS = Imports(
     "web.mathml.MathMLTagName",
     "web.media.capabilities.MediaCapabilities",
     "web.media.key.MediaKeys",
+    "web.media.key.MediaKeysRequirement",
+    "web.media.key.MediaKeySystemAccess",
     "web.media.session.MediaSession",
     "web.media.source.TimeRanges",
     "web.media.streams.MediaStream",

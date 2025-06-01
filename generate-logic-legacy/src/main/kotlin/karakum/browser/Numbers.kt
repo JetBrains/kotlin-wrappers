@@ -99,10 +99,7 @@ internal class TypeProvider(
             ("IIRFilterOptions" to "feedforward"),
                 -> "ReadonlyArray<Double>"
 
-            ("RTCEncodedAudioFrameMetadata" to "contributingSources"),
-                -> "ReadonlyArray<JsUInt>"
-
-            ("RTCEncodedVideoFrameMetadata" to "contributingSources"),
+            ("RTCEncodedFrameMetadata" to "contributingSources"),
                 -> "ReadonlyArray<JsUInt>"
 
             ("RTCEncodedVideoFrameMetadata" to "dependencies"),
