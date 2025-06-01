@@ -6,6 +6,7 @@ import react.dom.DOMAttributes
 import react.dom.aria.AriaAttributes
 import react.dom.aria.AriaRole
 import web.dom.Element
+import web.dom.ElementId
 import web.html.AutoCapitalize
 import web.html.EnterKeyHint
 import web.html.InputMode
@@ -32,7 +33,7 @@ external interface HTMLAttributes<T : Element> :
     var draggable: Boolean?
     var enterKeyHint: EnterKeyHint?
     var hidden: Boolean?
-    var id: String?
+    var id: ElementId?
     var lang: String?
     var nonce: String?
     var slot: String?

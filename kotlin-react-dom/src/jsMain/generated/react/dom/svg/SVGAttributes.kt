@@ -6,6 +6,7 @@ import react.dom.DOMAttributes
 import react.dom.aria.AriaAttributes
 import react.dom.aria.AriaRole
 import web.dom.Element
+import web.dom.ElementId
 import web.http.CrossOrigin
 import web.window.WindowTarget
 
@@ -17,7 +18,7 @@ external interface SVGAttributes<T : Element> :
     var suppressHydrationWarning: Boolean?
     var color: String?
     var height: Double?
-    var id: String?
+    var id: ElementId?
     var lang: String?
     var max: Double?
     var media: String?

@@ -47,7 +47,12 @@ private fun convertMember(
             return convertMember(source.replace("\n", ""), final, typeConverter)
 
         val comment = source.substringBeforeLast("\n")
-        return comment + "\n" + convertMember(source.substringAfterLast("\n"), final, typeConverter)
+        var memberSource = source.substringAfterLast("\n")
+        if ("Identifies the " in comment) {
+            memberSource = memberSource.replace(": string", ": ElementId")
+        }
+
+        return comment + "\n" + convertMember(memberSource, final, typeConverter)
     }
 
     return if ("(" in source) {
@@ -79,8 +84,14 @@ private fun convertProperty(
     val optional = source.startsWith("$name?: ")
             || source.startsWith("\"$name\"?: ")
 
-    val sourceType = source.substringAfter(": ")
+    var sourceType = source.substringAfter(": ")
         .replace("EventTarget & T", "T")
+
+    if (name == "id" || name == "htmlFor") {
+        require(sourceType == "string | undefined")
+        sourceType = "ElementId | undefined"
+    }
+
     val type = typeConverter.convert(sourceType, name)
         .let {
             when {

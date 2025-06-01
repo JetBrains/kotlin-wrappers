@@ -6,7 +6,7 @@ import java.io.File
 
 private val ARIA_IMPORTS = """
 import react.dom.aria.AriaAttributes
-import react.dom.aria.AriaRole    
+import react.dom.aria.AriaRole
 """.trimIndent()
 
 private val DOM_TYPES = setOf(
@@ -18,6 +18,7 @@ private val DOM_IMPORTS = """
 import react.ActionOrString
 import react.dom.DOMAttributes
 import react.dom.FormAction
+import web.dom.ElementId
 import web.form.FormData
 import web.form.FormEncType
 import web.html.EnterKeyHint
@@ -85,6 +86,9 @@ fun generateKotlinDeclarations(
             Package.SVG,
             Package.DOM,
                 -> ARIA_IMPORTS + "\n" + DOM_IMPORTS + "\n" + SESKAR_IMPORTS + "\n" + body
+
+            Package.ARIA,
+                -> SESKAR_IMPORTS + "\n" + "import web.dom.ElementId" + "\n" + body
 
             else -> SESKAR_IMPORTS + "\n" + body
         }

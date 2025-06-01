@@ -2,10 +2,12 @@
 
 package react.dom.aria
 
+import web.dom.ElementId
+
 external interface AriaAttributes {
     /** Identifies the currently active element when DOM focus is on a composite widget, textbox, group, or application. */
     @JsName("aria-activedescendant")
-    var ariaActiveDescendant: String?
+    var ariaActiveDescendant: ElementId?
 
     /** Indicates whether assistive technologies will present all, or only parts of, the changed region based on the change notifications defined by the aria-relevant attribute. */
     @JsName("aria-atomic")
@@ -75,7 +77,7 @@ external interface AriaAttributes {
      * @see aria-owns.
      */
     @JsName("aria-controls")
-    var ariaControls: String?
+    var ariaControls: ElementId?
 
     /** Indicates the element that represents the current item within a container or set of related elements. */
     @JsName("aria-current")
@@ -86,7 +88,7 @@ external interface AriaAttributes {
      * @see aria-labelledby
      */
     @JsName("aria-describedby")
-    var ariaDescribedBy: String?
+    var ariaDescribedBy: ElementId?
 
     /**
      * Defines a string value that describes or annotates the current element.
@@ -100,7 +102,7 @@ external interface AriaAttributes {
      * @see aria-describedby.
      */
     @JsName("aria-details")
-    var ariaDetails: String?
+    var ariaDetails: ElementId?
 
     /**
      * Indicates that the element is perceivable but disabled, so it is not editable or otherwise operable.
@@ -121,7 +123,7 @@ external interface AriaAttributes {
      * @see aria-invalid @see aria-describedby.
      */
     @JsName("aria-errormessage")
-    var ariaErrorMessage: String?
+    var ariaErrorMessage: ElementId?
 
     /** Indicates whether the element, or another grouping element it controls, is currently expanded or collapsed. */
     @JsName("aria-expanded")
@@ -132,7 +134,7 @@ external interface AriaAttributes {
      * allows assistive technology to override the general default of reading in document source order.
      */
     @JsName("aria-flowto")
-    var ariaFlowTo: String?
+    var ariaFlowTo: ElementId?
 
     /**
      * Indicates an element's "grabbed" state in a drag-and-drop operation.
@@ -175,7 +177,7 @@ external interface AriaAttributes {
      * @see aria-describedby.
      */
     @JsName("aria-labelledby")
-    var ariaLabelledBy: String?
+    var ariaLabelledBy: ElementId?
 
     /** Defines the hierarchical level of an element within a structure. */
     @JsName("aria-level")
