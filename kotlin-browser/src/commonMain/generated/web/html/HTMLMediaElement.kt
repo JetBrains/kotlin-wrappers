@@ -10,8 +10,8 @@ import web.events.EventHandler
 import web.events.EventInstance
 import web.events.JsEvent
 import web.http.CrossOrigin
-import web.media.key.MediaKeys
-import web.media.source.TimeRanges
+import web.mediakey.MediaKeys
+import web.mediasource.TimeRanges
 import web.remoteplayback.RemotePlayback
 import web.vtt.TextTrack
 import web.vtt.TextTrackKind

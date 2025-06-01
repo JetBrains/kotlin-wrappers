@@ -6,7 +6,7 @@
 
 package web.workers
 
-import web.media.capabilities.MediaCapabilities
+import web.mediacapabilities.MediaCapabilities
 import web.navigator.*
 import web.permissions.Permissions
 import web.serviceworker.ServiceWorkerContainer

@@ -12,11 +12,11 @@ import web.fedcm.NavigatorLogin
 import web.gamepad.Gamepad
 import web.geolocation.Geolocation
 import web.http.BodyInit
-import web.media.capabilities.MediaCapabilities
-import web.media.devices.MediaDevices
-import web.media.key.MediaKeySystemAccess
-import web.media.key.MediaKeySystemConfiguration
-import web.media.session.MediaSession
+import web.mediacapabilities.MediaCapabilities
+import web.mediadevices.MediaDevices
+import web.mediakey.MediaKeySystemAccess
+import web.mediakey.MediaKeySystemConfiguration
+import web.mediasession.MediaSession
 import web.midi.MIDIAccess
 import web.midi.MIDIOptions
 import web.permissions.Permissions

@@ -4,7 +4,7 @@ package web.rtc
 
 import js.array.ReadonlyArray
 import js.objects.JsPlainObject
-import web.media.streams.MediaStream
+import web.mediastreams.MediaStream
 
 @JsPlainObject
 external interface RTCRtpTransceiverInit {

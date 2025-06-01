@@ -8,8 +8,8 @@ import seskar.js.JsAlias.Companion.THIS
 import seskar.js.JsValue
 import web.events.Event
 import web.events.EventType
-import web.media.streams.MediaStream
-import web.media.streams.MediaStreamTrack
+import web.mediastreams.MediaStream
+import web.mediastreams.MediaStreamTrack
 
 /**
  * The WebRTC API interface **`RTCTrackEvent`** represents the RTCPeerConnection.track_event event, which is sent when a new MediaStreamTrack is added to an RTCRtpReceiver which is part of the RTCPeerConnection.

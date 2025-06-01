@@ -5,7 +5,7 @@ package web.imagecapture
 import js.promise.Promise
 import seskar.js.JsAsync
 import web.blob.Blob
-import web.media.streams.MediaStreamTrack
+import web.mediastreams.MediaStreamTrack
 import kotlin.js.JsName
 import kotlin.js.definedExternally
 

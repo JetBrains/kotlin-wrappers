@@ -9,7 +9,7 @@ import web.events.Event
 import web.events.EventInstance
 import web.events.JsEvent
 import web.html.HTMLMediaElement
-import web.media.streams.MediaStream
+import web.mediastreams.MediaStream
 import kotlin.js.JsName
 import kotlin.js.definedExternally
 

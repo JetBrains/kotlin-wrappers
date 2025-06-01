@@ -5,8 +5,8 @@ package web.rtc
 import js.array.ReadonlyArray
 import js.objects.JsPlainObject
 import web.events.EventInit
-import web.media.streams.MediaStream
-import web.media.streams.MediaStreamTrack
+import web.mediastreams.MediaStream
+import web.mediastreams.MediaStreamTrack
 
 @JsPlainObject
 external interface RTCTrackEventInit :

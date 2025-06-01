@@ -8,8 +8,8 @@ import js.promise.Promise
 import seskar.js.JsAsync
 import web.crypto.Algorithm
 import web.events.*
-import web.media.streams.MediaStream
-import web.media.streams.MediaStreamTrack
+import web.mediastreams.MediaStream
+import web.mediastreams.MediaStreamTrack
 import kotlin.js.JsName
 import kotlin.js.definedExternally
 

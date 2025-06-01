@@ -5,7 +5,7 @@ package web.rtc
 import js.array.ReadonlyArray
 import js.promise.Promise
 import seskar.js.JsAsync
-import web.media.streams.MediaStreamTrack
+import web.mediastreams.MediaStreamTrack
 import web.time.DOMHighResTimeStamp
 import kotlin.js.JsName
 

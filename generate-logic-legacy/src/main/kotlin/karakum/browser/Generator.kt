@@ -202,18 +202,18 @@ private val DEFAULT_IMPORTS = Imports(
     "web.mathml.MATHML_NAMESPACE",
     "web.mathml.MathMLElement",
     "web.mathml.MathMLTagName",
-    "web.media.capabilities.MediaCapabilities",
-    "web.media.key.MediaKeys",
-    "web.media.key.MediaKeysRequirement",
-    "web.media.key.MediaKeySystemAccess",
-    "web.media.session.MediaSession",
-    "web.media.source.TimeRanges",
-    "web.media.streams.MediaStream",
-    "web.media.streams.MediaStreamConstraints",
-    "web.media.streams.MediaStreamTrack",
-    "web.media.streams.MediaTrackCapabilities",
-    "web.media.streams.MediaTrackConstraints",
-    "web.media.streams.MediaTrackSupportedConstraints",
+    "web.mediacapabilities.MediaCapabilities",
+    "web.mediakey.MediaKeys",
+    "web.mediakey.MediaKeysRequirement",
+    "web.mediakey.MediaKeySystemAccess",
+    "web.mediasession.MediaSession",
+    "web.mediasource.TimeRanges",
+    "web.mediastreams.MediaStream",
+    "web.mediastreams.MediaStreamConstraints",
+    "web.mediastreams.MediaStreamTrack",
+    "web.mediastreams.MediaTrackCapabilities",
+    "web.mediastreams.MediaTrackConstraints",
+    "web.mediastreams.MediaTrackSupportedConstraints",
     "web.messaging.MessageEvent",
     "web.messaging.MessageEventSource",
     "web.messaging.MessageEventTarget",
@@ -437,9 +437,9 @@ fun generateKotlinDeclarations(
             """.trimIndent()
 
             "Navigator" -> """
-            import web.media.devices.MediaDevices
-            import web.media.key.MediaKeySystemAccess
-            import web.media.key.MediaKeySystemConfiguration
+            import web.mediadevices.MediaDevices
+            import web.mediakey.MediaKeySystemAccess
+            import web.mediakey.MediaKeySystemConfiguration
             import web.clipboard.Clipboard
             import web.credentials.CredentialsContainer
             import web.geolocation.Geolocation

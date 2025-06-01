@@ -2,7 +2,7 @@
 
 package web.audio
 
-import web.media.streams.MediaStream
+import web.mediastreams.MediaStream
 import kotlin.js.definedExternally
 
 /**

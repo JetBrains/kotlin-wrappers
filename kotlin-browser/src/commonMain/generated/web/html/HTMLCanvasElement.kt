@@ -10,7 +10,7 @@ import web.events.EventInstance
 import web.events.JsEvent
 import web.gl.TexImageSource
 import web.gpu.GPUCopyExternalImageSource
-import web.media.streams.MediaStream
+import web.mediastreams.MediaStream
 import web.rendering.RenderingContext
 import web.rendering.RenderingContextId
 import kotlin.js.definedExternally

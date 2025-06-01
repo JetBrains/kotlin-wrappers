@@ -1516,7 +1516,7 @@ internal fun convertInterface(
         name in WEB_AUDIO_TYPES -> "web.audio"
 
         name.startsWith("RTC") -> "web.rtc"
-        name.startsWith("MediaKey") -> "web.media.key"
+        name.startsWith("MediaKey") -> "web.mediakey"
 
         name.startsWith("VTT") -> "web.vtt"
         name.startsWith("TextTrack") -> "web.vtt"
@@ -1524,22 +1524,22 @@ internal fun convertInterface(
         name.startsWith("GPU") -> "web.gpu"
         name == "WGSLLanguageFeatures" -> "web.gpu"
 
-        name.startsWith("MediaCapabilities") -> "web.media.capabilities"
-        name in MEDIA_CAPABILITIES_TYPES -> "web.media.capabilities"
+        name.startsWith("MediaCapabilities") -> "web.mediacapabilities"
+        name in MEDIA_CAPABILITIES_TYPES -> "web.mediacapabilities"
 
-        name.startsWith("MediaDevice") -> "web.media.devices"
-        name == "InputDeviceInfo" -> "web.media.devices"
-        name == "DisplayMediaStreamOptions" -> "web.media.devices"
-        name.startsWith("MediaRecorder") -> "web.media.recorder"
+        name.startsWith("MediaDevice") -> "web.mediadevices"
+        name == "InputDeviceInfo" -> "web.mediadevices"
+        name == "DisplayMediaStreamOptions" -> "web.mediadevices"
+        name.startsWith("MediaRecorder") -> "web.mediarecorder"
 
-        name.startsWith("MediaStream") -> "web.media.streams"
-        name.startsWith("MediaTrack") -> "web.media.streams"
-        name.startsWith("Constrain") -> "web.media.streams"
-        name in MEDIA_STREAM_TYPES -> "web.media.streams"
+        name.startsWith("MediaStream") -> "web.mediastreams"
+        name.startsWith("MediaTrack") -> "web.mediastreams"
+        name.startsWith("Constrain") -> "web.mediastreams"
+        name in MEDIA_STREAM_TYPES -> "web.mediastreams"
 
-        name in MEDIA_SESSION_TYPES -> "web.media.session"
+        name in MEDIA_SESSION_TYPES -> "web.mediasession"
 
-        name in MEDIA_SOURCE_TYPES -> "web.media.source"
+        name in MEDIA_SOURCE_TYPES -> "web.mediasource"
 
         name in IMAGE_CAPTURE_TYPES -> "web.imagecapture"
 
