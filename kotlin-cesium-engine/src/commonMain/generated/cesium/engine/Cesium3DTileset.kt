@@ -565,6 +565,23 @@ external class Cesium3DTileset(
     var clippingPolygons: ClippingPolygonCollection
 
     /**
+     * The collection of `ImageryLayer` objects providing 2D georeferenced
+     * image data that will be rendered over the tileset.
+     *
+     * The imagery will be draped over glTF, B3DM, PNTS, or GeoJSON tile content.
+     * ```
+     * // Drape Bing Maps Aerial imagery over the tileset
+     * const imageryProvider = await createWorldImageryAsync({
+     *   style: IonWorldImageryStyle.AERIAL,
+     * });
+     * const imageryLayer = new ImageryLayer(imageryProvider);
+     * tileset.imageryLayers.add(imageryLayer);
+     * ```
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTileset.html#imageryLayers">Online Documentation</a>
+     */
+    val imageryLayers: ImageryLayerCollection
+
+    /**
      * Gets the tileset's properties dictionary object, which contains metadata about per-feature properties.
      *
      * See the [properties schema reference](https://github.com/CesiumGS/3d-tiles/tree/main/specification#reference-properties)
@@ -1028,6 +1045,8 @@ external class Cesium3DTileset(
      *   Default value - `false`
      * @property [enablePick] Whether to allow collision and CPU picking with `pick` when using WebGL 1. If using WebGL 2 or above, this option will be ignored. If using WebGL 1 and this is true, the `pick` operation will work correctly, but it will use more memory to do so. If running with WebGL 1 and this is false, the model will use less memory, but `pick` will always return `undefined`. This cannot be set after the tileset has loaded.
      *   Default value - `false`
+     * @property [asynchronouslyLoadImagery] Whether loading imagery that is draped over the tileset should be done asynchronously. If this is `true`, then tile content will be displayed with its original texture until the imagery texture is loaded. If this is `false`, then the tile content will not be displayed until the imagery is ready.
+     *   Default value - `false`
      * @property [debugHeatmapTilePropertyName] The tile variable to colorize as a heatmap. All rendered tiles will be colorized relative to each other's specified variable value.
      * @property [debugFreezeFrame] For debugging only. Determines if only the tiles from last frame should be used for rendering.
      *   Default value - `false`
@@ -1106,6 +1125,7 @@ external class Cesium3DTileset(
         val enableCollision: Boolean?
         val projectTo2D: Boolean?
         val enablePick: Boolean?
+        val asynchronouslyLoadImagery: Boolean?
         val debugHeatmapTilePropertyName: String?
         val debugFreezeFrame: Boolean?
         val debugColorizeTiles: Boolean?

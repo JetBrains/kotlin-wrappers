@@ -5,6 +5,7 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
+import js.date.Date
 
 /**
  * Represents an astronomical Julian date, which is the number of days since noon on January 1, -4712 (4713 BC).
@@ -79,7 +80,7 @@ external class JulianDate(
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/JulianDate.html#.fromDate">Online Documentation</a>
          */
         fun fromDate(
-            date: js.date.Date,
+            date: Date,
             result: JulianDate? = definedExternally,
         ): JulianDate
 
@@ -127,7 +128,7 @@ external class JulianDate(
          * @return A new instance representing the provided date.
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/JulianDate.html#.toDate">Online Documentation</a>
          */
-        fun toDate(julianDate: JulianDate): js.date.Date
+        fun toDate(julianDate: JulianDate): Date
 
         /**
          * Creates an ISO8601 representation of the provided date.

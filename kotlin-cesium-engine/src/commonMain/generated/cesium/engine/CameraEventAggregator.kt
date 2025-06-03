@@ -4,6 +4,7 @@
 
 package cesium.engine
 
+import js.date.Date
 import web.html.HTMLCanvasElement
 
 /**
@@ -102,7 +103,7 @@ external class CameraEventAggregator(
     fun getButtonPressTime(
         type: CameraEventType,
         modifier: KeyboardEventModifier? = definedExternally,
-    ): js.date.Date
+    ): Date
 
     /**
      * Gets the time the button was released or the touch was ended.
@@ -114,7 +115,7 @@ external class CameraEventAggregator(
     fun getButtonReleaseTime(
         type: CameraEventType,
         modifier: KeyboardEventModifier? = definedExternally,
-    ): js.date.Date
+    ): Date
 
     /**
      * Signals that all of the events have been handled and the aggregator should be reset to handle new events.

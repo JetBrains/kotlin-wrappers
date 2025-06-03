@@ -35,7 +35,7 @@ private val STANDARD_TYPE_MAP = mapOf(
     "Error" to "JsError",
 
     JS_FUNCTION to "Function<*>",
-    "Date" to "js.date.Date",
+    "DataView" to "DataView<*>",
     "Int8Array[] | Uint8Array[] | Int16Array[] | Uint16Array[] | Int32Array[] | Uint32Array[] | Float32Array[] | Float64Array[]" to
             "ReadonlyArray<TypedArray<*, *, *, *>> /* Int8Array[] | Uint8Array[] | Int16Array[] | Uint16Array[] | Int32Array[] | Uint32Array[] | Float32Array[] | Float64Array[] */",
 

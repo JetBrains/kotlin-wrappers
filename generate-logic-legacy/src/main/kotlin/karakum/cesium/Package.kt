@@ -3,7 +3,9 @@ package karakum.cesium
 internal val DEFAULT_PACKAGE: String = """
 import js.array.ReadonlyArray
 import js.buffer.ArrayBuffer
+import js.buffer.DataView
 import js.core.Void
+import js.date.Date
 import js.errors.JsError
 import js.objects.JsPlainObject
 import js.objects.ReadonlyRecord

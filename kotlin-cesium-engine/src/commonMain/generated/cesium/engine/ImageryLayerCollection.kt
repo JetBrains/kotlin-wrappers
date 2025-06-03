@@ -9,7 +9,7 @@ import js.promise.Promise
 import seskar.js.JsAsync
 
 /**
- * An ordered collection of imagery layers.
+ * An ordered collection of imagery layers for rendering raster imagery on a [Globe] or [Cesium3DTileset].
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ImageryLayerCollection.html">Online Documentation</a>
  */
 external class ImageryLayerCollection() {

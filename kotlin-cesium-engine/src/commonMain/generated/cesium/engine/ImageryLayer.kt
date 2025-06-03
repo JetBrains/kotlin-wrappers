@@ -9,7 +9,7 @@ import js.promise.Promise
 
 /**
  * An imagery layer that displays tiled image data from a single imagery provider
- * on a [Globe].
+ * on a [Globe] or [Cesium3DTileset].
  * ```
  * // Add an OpenStreetMaps layer
  * const imageryLayer = new ImageryLayer(new OpenStreetMapImageryProvider({
@@ -27,6 +27,19 @@ import js.promise.Promise
  * const imageryLayer = ImageryLayer.fromProviderAsync(IonImageryProvider.fromAssetId(3812));
  * imageryLayer.alpha = 0.5;
  * scene.imageryLayers.add(imageryLayer);
+ * ```
+ * ```
+ * // Drape Bing Maps Aerial imagery over a 3D tileset
+ * const tileset = await Cesium3DTileset.fromUrl(
+ *   "http://localhost:8002/tilesets/Seattle/tileset.json"
+ * );
+ * scene.primitives.add(tileset);
+ *
+ * const imageryProvider = await createWorldImageryAsync({
+ *   style: IonWorldImageryStyle.AERIAL,
+ * });
+ * const imageryLayer = new ImageryLayer(imageryProvider);
+ * tileset.imageryLayers.add(imageryLayer);
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ImageryLayer.html">Online Documentation</a>
  *
