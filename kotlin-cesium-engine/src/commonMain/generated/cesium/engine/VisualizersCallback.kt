@@ -16,4 +16,8 @@ import js.array.ReadonlyArray
  * @param [dataSource] The data source to create visualizers for.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/DataSourceDisplay.html#.VisualizersCallback">Online Documentation</a>
  */
-typealias VisualizersCallback = (scene: Scene, entityCluster: EntityCluster, dataSource: DataSource) -> ReadonlyArray<Visualizer>
+typealias VisualizersCallback = (
+    scene: Scene,
+    entityCluster: EntityCluster,
+    dataSource: DataSource,
+) -> ReadonlyArray<Visualizer>

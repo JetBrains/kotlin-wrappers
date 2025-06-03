@@ -10,4 +10,8 @@ package cesium.engine
  * @param [time] The time of interpolation generally in the range `[0.0, 1.0]`.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTileset.html#.foveatedInterpolationCallback">Online Documentation</a>
  */
-typealias FoveatedInterpolationCallback = (p: Double, q: Double, time: Double) -> Double
+typealias FoveatedInterpolationCallback = (
+    p: Double,
+    q: Double,
+    time: Double,
+) -> Double

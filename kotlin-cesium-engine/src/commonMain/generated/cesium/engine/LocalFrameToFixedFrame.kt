@@ -11,4 +11,8 @@ package cesium.engine
  * @param [result] The object onto which to store the result.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Transforms.html#.LocalFrameToFixedFrame">Online Documentation</a>
  */
-typealias LocalFrameToFixedFrame = (origin: Cartesian3, ellipsoid: Ellipsoid?, result: Matrix4?) -> Matrix4
+typealias LocalFrameToFixedFrame = (
+    origin: Cartesian3,
+    ellipsoid: Ellipsoid?,
+    result: Matrix4?,
+) -> Matrix4

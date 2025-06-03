@@ -11,4 +11,7 @@ import cesium.engine.Cartesian3
  * @param [result] An object to return the input position transformed to window coordinates.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/SelectionIndicatorViewModel.html#.ComputeScreenSpacePosition">Online Documentation</a>
  */
-typealias ComputeScreenSpacePosition = (position: Cartesian3, result: Cartesian2) -> Cartesian2
+typealias ComputeScreenSpacePosition = (
+    position: Cartesian3,
+    result: Cartesian2,
+) -> Cartesian2

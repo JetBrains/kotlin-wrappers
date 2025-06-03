@@ -8,4 +8,7 @@ package cesium.widgets
  * @param [destination] The destination result of the geocode.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Geocoder.html#.DestinationFoundFunction">Online Documentation</a>
  */
-typealias DestinationFoundFunction = (viewModel: GeocoderViewModel, destination: Any /* Cartesian3 | Rectangle */) -> Unit
+typealias DestinationFoundFunction = (
+    viewModel: GeocoderViewModel,
+    destination: Any, /* Cartesian3 | Rectangle */
+) -> Unit

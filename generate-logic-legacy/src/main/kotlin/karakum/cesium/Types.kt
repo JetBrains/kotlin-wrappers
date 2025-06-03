@@ -62,7 +62,7 @@ private fun typeBody(body: String): String {
         .map(::Parameter)
         .onEach { it.supportDefault = false }
         .map { it.toCode() }
-        .joinToString(", ")
+        .joinToString(",\n")
 
     return "($parameters) -> ${kotlinType(returnType)}"
 }

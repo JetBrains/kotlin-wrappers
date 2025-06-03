@@ -17,4 +17,7 @@ package cesium.engine
  * @param [dt] The time in seconds since the last update.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ParticleSystem.html#.updateCallback">Online Documentation</a>
  */
-typealias UpdateCallback = (particle: Particle, dt: Double) -> Unit
+typealias UpdateCallback = (
+    particle: Particle,
+    dt: Double,
+) -> Unit

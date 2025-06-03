@@ -13,4 +13,8 @@ package cesium.engine
  * @param [b] An item in the array.
  * @param [userDefinedObject] An object that was passed to [mergeSort].
  */
-typealias mergeSortComparator = (a: Any, b: Any, userDefinedObject: Any?) -> Double
+typealias mergeSortComparator = (
+    a: Any,
+    b: Any,
+    userDefinedObject: Any?,
+) -> Double

@@ -12,4 +12,9 @@ import js.array.ReadonlyArray
  * @param [changed] The array of [Entity] instances that have been modified.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/EntityCollection.html#.CollectionChangedEventCallback">Online Documentation</a>
  */
-typealias CollectionChangedEventCallback = (collection: EntityCollection, added: ReadonlyArray<Entity>, removed: ReadonlyArray<Entity>, changed: ReadonlyArray<Entity>) -> Unit
+typealias CollectionChangedEventCallback = (
+    collection: EntityCollection,
+    added: ReadonlyArray<Entity>,
+    removed: ReadonlyArray<Entity>,
+    changed: ReadonlyArray<Entity>,
+) -> Unit

@@ -12,4 +12,7 @@ package cesium.engine
  * @param [a] An item in the array.
  * @param [b] The item being searched for.
  */
-typealias binarySearchComparator = (a: Any, b: Any) -> Double
+typealias binarySearchComparator = (
+    a: Any,
+    b: Any,
+) -> Double

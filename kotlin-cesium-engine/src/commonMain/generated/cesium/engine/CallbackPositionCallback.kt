@@ -9,4 +9,7 @@ package cesium.engine
  * @param [result] The object to store the value into. If omitted, the function must create and return a new instance.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CallbackPositionProperty.html#.Callback">Online Documentation</a>
  */
-typealias CallbackPositionCallback = (time: JulianDate?, result: Cartesian3?) -> Cartesian3?
+typealias CallbackPositionCallback = (
+    time: JulianDate?,
+    result: Cartesian3?,
+) -> Cartesian3?

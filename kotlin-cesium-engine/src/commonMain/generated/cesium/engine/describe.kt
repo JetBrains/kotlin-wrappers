@@ -8,4 +8,7 @@ package cesium.engine
  * @param [nameProperty] The property key that Cesium estimates to have the name of the feature.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GeoJsonDataSource.html#.describe">Online Documentation</a>
  */
-typealias describe = (properties: Any, nameProperty: String) -> Unit
+typealias describe = (
+    properties: Any,
+    nameProperty: String,
+) -> Unit

@@ -11,4 +11,7 @@ import js.buffer.DataView
  * @param [dataView] Typed data view into a binary buffer
  * @param [byteOffset] The offset, in bytes, from the start of the view to read the data from
  */
-typealias ComponentReaderCallback = (dataView: DataView<*>, byteOffset: Int) -> Any /* number | bigint */
+typealias ComponentReaderCallback = (
+    dataView: DataView<*>,
+    byteOffset: Int,
+) -> Any /* number | bigint */

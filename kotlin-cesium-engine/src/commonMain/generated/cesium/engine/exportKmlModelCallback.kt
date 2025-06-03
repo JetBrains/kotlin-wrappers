@@ -10,4 +10,8 @@ package cesium.engine
  * @param [time] The time that any properties should use to get the value.
  * @param [externalFiles] An object that maps a filename to a Blob or a Promise that resolves to a Blob.
  */
-typealias exportKmlModelCallback = (model: ModelGraphics, time: JulianDate, externalFiles: Any) -> String
+typealias exportKmlModelCallback = (
+    model: ModelGraphics,
+    time: JulianDate,
+    externalFiles: Any,
+) -> String

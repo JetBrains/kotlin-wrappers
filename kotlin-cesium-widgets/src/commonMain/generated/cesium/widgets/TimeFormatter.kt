@@ -10,4 +10,7 @@ import cesium.engine.JulianDate
  * @param [viewModel] The AnimationViewModel instance requesting formatting.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/AnimationViewModel.html#.TimeFormatter">Online Documentation</a>
  */
-typealias TimeFormatter = (date: JulianDate, viewModel: AnimationViewModel) -> String
+typealias TimeFormatter = (
+    date: JulianDate,
+    viewModel: AnimationViewModel,
+) -> String

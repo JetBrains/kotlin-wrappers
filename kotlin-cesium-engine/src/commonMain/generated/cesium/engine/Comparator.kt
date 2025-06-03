@@ -13,4 +13,7 @@ package cesium.engine
  * @param [b] An item in the array.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Queue.html#.Comparator">Online Documentation</a>
  */
-typealias Comparator = (a: Any, b: Any) -> Double
+typealias Comparator = (
+    a: Any,
+    b: Any,
+) -> Double

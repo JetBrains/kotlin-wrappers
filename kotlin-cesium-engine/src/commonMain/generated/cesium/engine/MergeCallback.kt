@@ -8,4 +8,7 @@ package cesium.engine
  * @param [rightData] The second data instance.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/TimeInterval.html#.MergeCallback">Online Documentation</a>
  */
-typealias MergeCallback = (leftData: Any, rightData: Any) -> Any
+typealias MergeCallback = (
+    leftData: Any,
+    rightData: Any,
+) -> Any
