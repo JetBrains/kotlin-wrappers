@@ -26,7 +26,7 @@ private val STANDARD_TYPE_MAP = mapOf(
     "boolean | T | undefined" to "T?",
 
     "TData | Promise<TData>" to "PromiseResult<TData>",
-    "() => unknown | Promise<unknown>" to "() -> Promise<*>?",
+    "() => Promise<unknown> | unknown" to "() -> Promise<*>?",
     "Promise<unknown>" to "Promise<*>",
     "Promise<void>" to "Promise<Void>",
 

@@ -7,8 +7,8 @@ import js.promise.Promise
 
 @JsPlainObject
 external interface MutationCacheConfig {
-    val onError: ((error: DefaultError, variables: Any?, context: Any?, mutation: Mutation<*, *, *, *>) -> Promise<*>?)?
-    val onSuccess: ((data: Any?, variables: Any?, context: Any?, mutation: Mutation<*, *, *, *>) -> Promise<*>?)?
-    val onMutate: ((variables: Any?, mutation: Mutation<*, *, *, *>) -> Promise<*>?)?
-    val onSettled: ((data: Any?, error: DefaultError?, variables: Any?, context: Any?, mutation: Mutation<*, *, *, *>) -> Promise<*>?)?
+    val onError: ((error: DefaultError, variables: Any, context: Any, mutation: Mutation<*, *, *, *>) -> Promise<Unit>?)?
+    val onSuccess: ((data: Any, variables: Any, context: Any, mutation: Mutation<*, *, *, *>) -> Promise<Unit>?)?
+    val onMutate: ((variables: Any, mutation: Mutation<*, *, *, *>) -> Promise<Unit>?)?
+    val onSettled: ((data: Any?, error: DefaultError?, variables: Any, context: Any, mutation: Mutation<*, *, *, *>) -> Promise<Unit>?)?
 }
