@@ -8,6 +8,6 @@ import tanstack.query.core.QueryClient
 import tanstack.query.core.QueryKey
 
 external fun <TQueryFnData, TError, TData, TQueryKey : QueryKey, TPageParam> useSuspenseInfiniteQuery(
-    options: UseSuspenseInfiniteQueryOptions<TQueryFnData, TError, TData, TQueryFnData, TQueryKey, TPageParam>,
+    options: UseSuspenseInfiniteQueryOptions<TQueryFnData, TError, TData, TQueryKey, TPageParam>,
     queryClient: QueryClient = definedExternally,
 ): UseSuspenseInfiniteQueryResult<TData, TError>

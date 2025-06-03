@@ -7,7 +7,7 @@ import tanstack.query.core.InfiniteQueryObserverOptions
 import tanstack.query.core.QueryKey
 
 @JsPlainObject
-external interface UseInfiniteQueryOptions<TQueryFnData, TError, TData, TQueryData, TQueryKey : QueryKey, TPageParam> :
-    InfiniteQueryObserverOptions<TQueryFnData, TError, TData, TQueryData, TQueryKey, TPageParam> {
+external interface UseInfiniteQueryOptions<TQueryFnData, TError, TData, TQueryKey : QueryKey, TPageParam> :
+    InfiniteQueryObserverOptions<TQueryFnData, TError, TData, TQueryKey, TPageParam> {
     val subscribed: Boolean?
 }

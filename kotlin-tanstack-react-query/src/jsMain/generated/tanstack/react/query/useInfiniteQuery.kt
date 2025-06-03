@@ -8,6 +8,6 @@ import tanstack.query.core.QueryClient
 import tanstack.query.core.QueryKey
 
 external fun <TQueryFnData, TError, TData, TQueryKey : QueryKey, TPageParam> useInfiniteQuery(
-    options: UseInfiniteQueryOptions<TQueryFnData, TError, TData, TQueryFnData, TQueryKey, TPageParam>,
+    options: UseInfiniteQueryOptions<TQueryFnData, TError, TData, TQueryKey, TPageParam>,
     queryClient: QueryClient = definedExternally,
 ): UseInfiniteQueryResult<TData, TError>
