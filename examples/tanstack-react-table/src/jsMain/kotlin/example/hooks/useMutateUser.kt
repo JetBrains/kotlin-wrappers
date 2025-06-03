@@ -19,7 +19,7 @@ fun <O, R> useMutateUser(
             mutationFn = createMutationFunction(action),
             onSuccess = { _, _, _ ->
                 queryClient.invalidateQueries(
-                    filters = InvalidateQueryFilters<QueryKey>(
+                    filters = InvalidateQueryFilters(
                         queryKey = USERS_QUERY_KEY
                     )
                 )
