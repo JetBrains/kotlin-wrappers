@@ -78,6 +78,8 @@ private val INTEGER_NAMES = setOf(
     "minimumFrameRateAfterWarmup",
     "loadingDescendantLimit",
 
+    "byteOffset",
+
     "SIXTY_FOUR_KILOBYTES",
     "FOUR_GIGABYTES"
 )
