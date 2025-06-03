@@ -338,6 +338,7 @@ internal fun kotlinType(
 
 fun kotlinFunctionType(type: String): String =
     type.replace("=>", "->")
+        .replace("Promise<void>", "Promise<Void>")
         .replace("void", "Unit")
         .replace("string", "String")
         .replace("number", "Int")
