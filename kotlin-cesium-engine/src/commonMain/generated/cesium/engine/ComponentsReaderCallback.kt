@@ -14,4 +14,4 @@ import js.buffer.DataView
  * @param [numberOfComponents] The number of components to read
  * @param [result] The array in which to read the result
  */
-typealias ComponentsReaderCallback = (dataView: DataView<*>, byteOffset: Double, numberOfComponents: Double, result: ReadonlyArray<Double>) -> Unit
+typealias ComponentsReaderCallback = (dataView: DataView<*>, byteOffset: Double, numberOfComponents: Int, result: ReadonlyArray<Double>) -> Unit

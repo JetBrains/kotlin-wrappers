@@ -20,4 +20,4 @@ package cesium.engine
  * @param [seconds] The seconds since the animation started, in scene time.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ModelAnimation.html#.AnimationTimeCallback">Online Documentation</a>
  */
-typealias AnimationTimeCallback = (duration: Double, seconds: Double) -> Double
+typealias AnimationTimeCallback = (duration: Double, seconds: Int) -> Double

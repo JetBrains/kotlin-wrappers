@@ -57,7 +57,7 @@ private fun typeBody(body: String): String {
         .removeSuffix(";")
         .split(") => ")
 
-    val parameters = params.splitToSequence(",")
+    val parameters = params.splitToSequence(", ")
         .filter { it.isNotEmpty() }
         .map(::Parameter)
         .onEach { it.supportDefault = false }
