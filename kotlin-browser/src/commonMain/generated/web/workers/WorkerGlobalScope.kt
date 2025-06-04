@@ -20,14 +20,14 @@ private constructor() :
     GlobalScope,
     FontFaceSource {
     /**
-     * Returns workerGlobal's WorkerLocation object.
+     * The **`location`** read-only property of the WorkerGlobalScope interface returns the WorkerLocation associated with the worker.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WorkerGlobalScope/location)
      */
     val location: WorkerLocation
 
     /**
-     * Returns workerGlobal's WorkerNavigator object.
+     * The **`navigator`** read-only property of the WorkerGlobalScope interface returns the WorkerNavigator associated with the worker.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WorkerGlobalScope/navigator)
      */

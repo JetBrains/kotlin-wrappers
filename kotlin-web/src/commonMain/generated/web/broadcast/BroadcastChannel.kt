@@ -16,7 +16,7 @@ import web.messaging.MessageEvent
  */
 open external class BroadcastChannel(
     /**
-     * Returns the channel name (as passed to the constructor).
+     * The **`name`** read-only property of the BroadcastChannel interface returns a string, which uniquely identifies the given channel with its name.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BroadcastChannel/name)
      */
@@ -33,14 +33,14 @@ open external class BroadcastChannel(
     var onmessageerror: EventHandler<MessageEvent<*>, BroadcastChannel, BroadcastChannel>?
 
     /**
-     * Closes the BroadcastChannel object, opening it up to garbage collection.
+     * The **`close()`** method of the BroadcastChannel interface terminates the connection to the underlying channel, allowing the object to be garbage collected.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BroadcastChannel/close)
      */
     fun close()
 
     /**
-     * Sends the given message to other BroadcastChannel objects set up for this channel. Messages can be structured objects, e.g. nested objects and arrays.
+     * The **`postMessage()`** method of the BroadcastChannel interface sends a message, which can be of any kind of Object, to each listener in any browsing context with the same origin.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BroadcastChannel/postMessage)
      */

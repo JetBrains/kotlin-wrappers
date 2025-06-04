@@ -18,7 +18,7 @@ open external class FormDataEvent(
     init: FormDataEventInit,
 ) : Event {
     /**
-     * Returns a FormData object representing names and values of elements associated to the target form. Operations on the FormData object will affect form data to be submitted.
+     * The `formData` read-only property of the FormDataEvent interface contains the FormData object representing the data contained in the form when the event was fired.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FormDataEvent/formData)
      */

@@ -11,7 +11,7 @@ private constructor() :
     override fun item(index: Int): T?
 
     /**
-     * Retrieves a select object or an object from an options collection.
+     * The **`namedItem()`** method of the HTMLCollection interface returns the first Element in the collection whose `id` or `name` attribute match the specified name, or `null` if no element matches.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLCollection/namedItem)
      */

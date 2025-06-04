@@ -21,11 +21,15 @@ open external class CookieChangeEvent(
     init: CookieChangeEventInit = definedExternally,
 ) : Event {
     /**
+     * The **`changed`** read-only property of the CookieChangeEvent interface returns an array of the cookies that have been changed.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CookieChangeEvent/changed)
      */
     val changed: ReadonlyArray<CookieListItem>
 
     /**
+     * The **`deleted`** read-only property of the CookieChangeEvent interface returns an array of the cookies that have been deleted by the given `CookieChangeEvent` instance.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CookieChangeEvent/deleted)
      */
     val deleted: ReadonlyArray<CookieListItem>

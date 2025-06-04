@@ -20,11 +20,15 @@ open external class PageSwapEvent(
     init: PageSwapEventInit = definedExternally,
 ) : Event {
     /**
+     * The **`activation`** read-only property of the PageSwapEvent interface contains a NavigationActivation object containing the navigation type and current and destination document history entries for a same-origin navigation.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PageSwapEvent/activation)
      */
     val activation: NavigationActivation?
 
     /**
+     * The **`viewTransition`** read-only property of the PageRevealEvent interface contains a ViewTransition object representing the active view transition for the cross-document navigation.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PageSwapEvent/viewTransition)
      */
     val viewTransition: ViewTransition?

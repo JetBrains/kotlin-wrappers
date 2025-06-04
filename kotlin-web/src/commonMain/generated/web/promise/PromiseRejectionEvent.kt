@@ -20,11 +20,15 @@ open external class PromiseRejectionEvent(
     init: PromiseRejectionEventInit,
 ) : Event {
     /**
+     * The PromiseRejectionEvent interface's **`promise`** read-only property indicates the JavaScript rejected.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PromiseRejectionEvent/promise)
      */
     val promise: Promise<*>
 
     /**
+     * The PromiseRejectionEvent **`reason`** read-only property is any JavaScript value or Object which provides the reason passed into Promise.reject().
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PromiseRejectionEvent/reason)
      */
     val reason: JsError?

@@ -15,6 +15,8 @@ external class RTCTransformEvent
 private constructor() :
     Event {
     /**
+     * The read-only **`transformer`** property of the RTCTransformEvent interface returns the RTCRtpScriptTransformer associated with the event.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCTransformEvent/transformer)
      */
     val transformer: RTCRtpScriptTransformer

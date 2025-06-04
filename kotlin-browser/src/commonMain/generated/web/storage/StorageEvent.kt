@@ -19,35 +19,35 @@ open external class StorageEvent(
     init: StorageEventInit = definedExternally,
 ) : Event {
     /**
-     * Returns the key of the storage item being changed.
+     * The **`key`** property of the StorageEvent interface returns the key for the storage item that was changed.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/StorageEvent/key)
      */
     val key: String?
 
     /**
-     * Returns the new value of the key of the storage item whose value is being changed.
+     * The **`newValue`** property of the StorageEvent interface returns the new value of the storage item whose value was changed.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/StorageEvent/newValue)
      */
     val newValue: String?
 
     /**
-     * Returns the old value of the key of the storage item whose value is being changed.
+     * The **`oldValue`** property of the StorageEvent interface returns the original value of the storage item whose value changed.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/StorageEvent/oldValue)
      */
     val oldValue: String?
 
     /**
-     * Returns the Storage object that was affected.
+     * The **`storageArea`** property of the StorageEvent interface returns the storage object that was affected.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/StorageEvent/storageArea)
      */
     val storageArea: Storage?
 
     /**
-     * Returns the URL of the document whose storage item changed.
+     * The **`url`** property of the StorageEvent interface returns the URL of the document whose storage changed.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/StorageEvent/url)
      */

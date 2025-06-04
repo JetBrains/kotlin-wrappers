@@ -15,7 +15,7 @@ sealed external interface HTMLCollectionBase<T : Element> :
     ArrayLike<T>,
     JsIterable<T> {
     /**
-     * Retrieves an object from various collections.
+     * The HTMLCollection method `item()` returns the element located at the specified offset into the collection.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLCollection/item)
      */

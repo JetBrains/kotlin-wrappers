@@ -15,11 +15,15 @@ import kotlin.js.definedExternally
  */
 open external class SpeechSynthesisUtterance(
     /**
+     * The **`text`** property of the The text may be provided as plain text, or a well-formed SSML document.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechSynthesisUtterance/text)
      */
     var text: String = definedExternally,
 ) : EventTarget {
     /**
+     * The **`lang`** property of the SpeechSynthesisUtterance interface gets and sets the language of the utterance.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechSynthesisUtterance/lang)
      */
     var lang: String
@@ -60,21 +64,29 @@ open external class SpeechSynthesisUtterance(
     var onstart: EventHandler<SpeechSynthesisEvent, SpeechSynthesisUtterance, SpeechSynthesisUtterance>?
 
     /**
+     * The **`pitch`** property of the SpeechSynthesisUtterance interface gets and sets the pitch at which the utterance will be spoken at.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechSynthesisUtterance/pitch)
      */
     var pitch: Float
 
     /**
+     * The **`rate`** property of the SpeechSynthesisUtterance interface gets and sets the speed at which the utterance will be spoken at.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechSynthesisUtterance/rate)
      */
     var rate: Float
 
     /**
+     * The **`voice`** property of the SpeechSynthesisUtterance interface gets and sets the voice that will be used to speak the utterance.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechSynthesisUtterance/voice)
      */
     var voice: SpeechSynthesisVoice?
 
     /**
+     * The **`volume`** property of the SpeechSynthesisUtterance interface gets and sets the volume that the utterance will be spoken at.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechSynthesisUtterance/volume)
      */
     var volume: Float

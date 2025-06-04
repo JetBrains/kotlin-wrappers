@@ -13,62 +13,56 @@ external class TextTrack
 private constructor() :
     EventTarget {
     /**
-     * Returns the text track cues from the text track list of cues that are currently active (i.e. that start before the current playback position and end after it), as a TextTrackCueList object.
+     * The **`activeCues`** read-only property of the TextTrack interface returns a TextTrackCueList object listing the currently active cues.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextTrack/activeCues)
      */
     val activeCues: TextTrackCueList?
 
     /**
-     * Returns the text track list of cues, as a TextTrackCueList object.
+     * The **`cues`** read-only property of the TextTrack interface returns a TextTrackCueList object containing all of the track's cues.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextTrack/cues)
      */
     val cues: TextTrackCueList?
 
     /**
-     * Returns the ID of the given track.
-     *
-     * For in-band tracks, this is the ID that can be used with a fragment if the format supports media fragment syntax, and that can be used with the getTrackById() method.
-     *
-     * For TextTrack objects corresponding to track elements, this is the ID of the track element.
+     * The **`id`** read-only property of the TextTrack interface returns the ID of the track if it has one.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextTrack/id)
      */
     val id: String
 
     /**
-     * Returns the text track in-band metadata track dispatch type string.
+     * The **`inBandMetadataTrackDispatchType`** read-only property of the TextTrack interface returns the text track's in-band metadata dispatch type of the text track represented by the TextTrack object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextTrack/inBandMetadataTrackDispatchType)
      */
     val inBandMetadataTrackDispatchType: String
 
     /**
-     * Returns the text track kind string.
+     * The **`kind`** read-only property of the TextTrack interface returns the kind of text track this object represents.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextTrack/kind)
      */
     val kind: TextTrackKind
 
     /**
-     * Returns the text track label, if there is one, or the empty string otherwise (indicating that a custom label probably needs to be generated from the other attributes of the object if the object is exposed to the user).
+     * The **`label`** read-only property of the TextTrack interface returns a human-readable label for the text track, if it is available.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextTrack/label)
      */
     val label: String
 
     /**
-     * Returns the text track language string.
+     * The **`language`** read-only property of the TextTrack interface returns the language of the text track.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextTrack/language)
      */
     val language: String
 
     /**
-     * Returns the text track mode, represented by a string from the following list:
-     *
-     * Can be set, to change the mode.
+     * The TextTrack interface's **`mode`** property is a string specifying and controlling the text track's mode: `disabled`, `hidden`, or `showing`.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextTrack/mode)
      */
@@ -80,14 +74,14 @@ private constructor() :
     var oncuechange: EventHandler<Event, TextTrack, TextTrack>?
 
     /**
-     * Adds the given cue to textTrack's text track list of cues.
+     * The **`addCue()`** method of the TextTrack interface adds a new cue to the list of cues.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextTrack/addCue)
      */
     fun addCue(cue: TextTrackCue)
 
     /**
-     * Removes the given cue from textTrack's text track list of cues.
+     * The **`removeCue()`** method of the TextTrack interface removes a cue from the list of cues.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextTrack/removeCue)
      */

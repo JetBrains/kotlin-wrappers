@@ -28,26 +28,28 @@ open external class ImageData(
     )
 
     /**
+     * The read-only **`ImageData.colorSpace`** property is a string indicating the color space of the image data.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageData/colorSpace)
      */
     val colorSpace: PredefinedColorSpace
 
     /**
-     * Returns the one-dimensional array containing the data in RGBA order, as integers in the range 0 to 255.
+     * The readonly **`ImageData.data`** property returns a pixel data.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageData/data)
      */
     val data: ImageDataArray
 
     /**
-     * Returns the actual dimensions of the data in the ImageData object, in pixels.
+     * The readonly **`ImageData.height`** property returns the number of rows in the ImageData object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageData/height)
      */
     val height: Int
 
     /**
-     * Returns the actual dimensions of the data in the ImageData object, in pixels.
+     * The readonly **`ImageData.width`** property returns the number of pixels per row in the ImageData object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageData/width)
      */

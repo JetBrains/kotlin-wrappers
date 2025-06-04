@@ -27,6 +27,8 @@ private constructor() :
     var onchange: EventHandler<CookieChangeEvent, CookieStore, CookieStore>?
 
     /**
+     * The **`delete()`** method of the CookieStore interface deletes a cookie that matches the given `name` or `options` object.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CookieStore/delete)
      */
     @JsAsync
@@ -44,6 +46,8 @@ private constructor() :
     fun deleteAsync(options: CookieStoreDeleteOptions): Promise<Void>
 
     /**
+     * The **`get()`** method of the CookieStore interface returns a Promise that resolves to a single cookie matching the given `name` or `options` object.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CookieStore/get)
      */
     @JsAsync
@@ -61,6 +65,8 @@ private constructor() :
     fun getAsync(options: CookieStoreGetOptions = definedExternally): Promise<CookieListItem?>
 
     /**
+     * The **`getAll()`** method of the CookieStore interface returns a Promise that resolves as an array of cookies that match the `name` or `options` passed to it.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CookieStore/getAll)
      */
     @JsAsync
@@ -78,6 +84,8 @@ private constructor() :
     fun getAllAsync(options: CookieStoreGetOptions = definedExternally): Promise<CookieList>
 
     /**
+     * The **`set()`** method of the CookieStore interface sets a cookie with the given `name` and `value` or `options` object.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CookieStore/set)
      */
     @JsAsync

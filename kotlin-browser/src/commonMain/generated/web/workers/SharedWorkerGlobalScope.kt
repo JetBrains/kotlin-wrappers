@@ -17,7 +17,7 @@ external class SharedWorkerGlobalScope
 private constructor() :
     WorkerGlobalScope {
     /**
-     * Returns sharedWorkerGlobal's name, i.e. the value given to the SharedWorker constructor. Multiple SharedWorker objects can correspond to the same shared worker (and SharedWorkerGlobalScope), by reusing the same name.
+     * The **`name`** read-only property of the that the SharedWorker.SharedWorker constructor can pass to get a reference to the SharedWorkerGlobalScope.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SharedWorkerGlobalScope/name)
      */
@@ -29,7 +29,7 @@ private constructor() :
     var onconnect: EventHandler<MessageEvent<*>, SharedWorkerGlobalScope, SharedWorkerGlobalScope>?
 
     /**
-     * Aborts sharedWorkerGlobal.
+     * The **`close()`** method of the SharedWorkerGlobalScope interface discards any tasks queued in the `SharedWorkerGlobalScope`'s event loop, effectively closing this particular scope.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SharedWorkerGlobalScope/close)
      */

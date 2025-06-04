@@ -12,11 +12,15 @@ import kotlin.js.definedExternally
 external class Geolocation
 private constructor() {
     /**
+     * The **`clearWatch()`** method of the Geolocation interface is used to unregister location/error monitoring handlers previously installed using Geolocation.watchPosition().
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Geolocation/clearWatch)
      */
     fun clearWatch(watchId: GeolocationWatchId)
 
     /**
+     * The **`getCurrentPosition()`** method of the Geolocation interface is used to get the current position of the device.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Geolocation/getCurrentPosition)
      */
     fun getCurrentPosition(
@@ -26,6 +30,8 @@ private constructor() {
     )
 
     /**
+     * The **`watchPosition()`** method of the Geolocation interface is used to register a handler function that will be called automatically each time the position of the device changes.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Geolocation/watchPosition)
      */
     fun watchPosition(

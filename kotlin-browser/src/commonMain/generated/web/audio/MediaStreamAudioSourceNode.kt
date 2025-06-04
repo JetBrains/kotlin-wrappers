@@ -14,6 +14,8 @@ open external class MediaStreamAudioSourceNode(
     options: MediaStreamAudioSourceOptions,
 ) : AudioNode {
     /**
+     * The MediaStreamAudioSourceNode interface's read-only **`mediaStream`** property indicates the receiving audio.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStreamAudioSourceNode/mediaStream)
      */
     val mediaStream: MediaStream

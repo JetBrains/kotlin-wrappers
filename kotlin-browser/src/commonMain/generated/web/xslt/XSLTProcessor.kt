@@ -14,11 +14,15 @@ import web.dom.Node
  */
 open external class XSLTProcessor {
     /**
+     * The `clearParameters()` method of the XSLTProcessor interface removes all parameters (`<xsl:param>`) and their values from the stylesheet imported in the processor.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XSLTProcessor/clearParameters)
      */
     fun clearParameters()
 
     /**
+     * The `getParameter()` method of the XSLTProcessor interface returns the value of a parameter (`<xsl:param>`) from the stylesheet imported in the processor.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XSLTProcessor/getParameter)
      */
     fun getParameter(
@@ -27,11 +31,15 @@ open external class XSLTProcessor {
     ): JsAny
 
     /**
+     * The `importStylesheet()` method of the XSLTProcessor interface imports an XSLT stylesheet for the processor.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XSLTProcessor/importStylesheet)
      */
     fun importStylesheet(style: Node)
 
     /**
+     * The `removeParameter()` method of the XSLTProcessor interface removes the parameter (`<xsl:param>`) and its value from the stylesheet imported in the processor.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XSLTProcessor/removeParameter)
      */
     fun removeParameter(
@@ -40,11 +48,15 @@ open external class XSLTProcessor {
     )
 
     /**
+     * The `reset()` method of the XSLTProcessor interface removes all parameters (`<xsl:param>`) and the XSLT stylesheet from the processor.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XSLTProcessor/reset)
      */
     fun reset()
 
     /**
+     * The `setParameter()` method of the XSLTProcessor interface sets the value of a parameter (`<xsl:param>`) in the stylesheet imported in the processor.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XSLTProcessor/setParameter)
      */
     fun setParameter(
@@ -54,11 +66,15 @@ open external class XSLTProcessor {
     )
 
     /**
+     * The `transformToDocument()` method of the XSLTProcessor interface transforms the provided Node source to a Document using the XSLT stylesheet associated with `XSLTProcessor`.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XSLTProcessor/transformToDocument)
      */
     fun transformToDocument(source: Node): Document
 
     /**
+     * The `transformToFragment()` method of the XSLTProcessor interface transforms a provided Node source to a DocumentFragment using the XSLT stylesheet associated with the `XSLTProcessor`.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XSLTProcessor/transformToFragment)
      */
     fun transformToFragment(

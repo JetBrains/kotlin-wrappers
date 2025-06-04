@@ -10,16 +10,22 @@ package web.gamepad
 external class GamepadButton
 private constructor() {
     /**
+     * The **`GamepadButton.pressed`** property of the the button is currently pressed (`true`) or unpressed (`false`).
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GamepadButton/pressed)
      */
     val pressed: Boolean
 
     /**
+     * The **`touched`** property of the a button capable of detecting touch is currently touched (`true`) or not touched (`false`).
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GamepadButton/touched)
      */
     val touched: Boolean
 
     /**
+     * The **`GamepadButton.value`** property of the current state of analog buttons on many modern gamepads, such as the triggers.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GamepadButton/value)
      */
     val value: Double

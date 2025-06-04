@@ -11,6 +11,8 @@ open external class HTMLDataElement
 protected constructor() :
     HTMLElement {
     /**
+     * The **`value`** property of the HTMLDataElement interface returns a string reflecting the `value` HTML attribute.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLDataElement/value)
      */
     var value: String

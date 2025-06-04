@@ -16,37 +16,43 @@ open external class HTMLDialogElement
 protected constructor() :
     HTMLElement {
     /**
+     * The **`open`** property of the `open` HTML attribute, indicating whether the dialog is available for interaction.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLDialogElement/open)
      */
     var open: Boolean
 
     /**
+     * The **`returnValue`** property of the HTMLDialogElement interface is a string representing the return value for a dialog element when it's closed.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLDialogElement/returnValue)
      */
     var returnValue: String
 
     /**
-     * Closes the dialog element.
-     *
-     * The argument, if provided, provides a return value.
+     * The **`close()`** method of the HTMLDialogElement interface closes the dialog.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLDialogElement/close)
      */
     fun close(returnValue: String = definedExternally)
 
     /**
+     * The **`requestClose()`** method of the HTMLDialogElement interface requests to close the dialog.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLDialogElement/requestClose)
      */
     fun requestClose(returnValue: String = definedExternally)
 
     /**
-     * Displays the dialog element.
+     * The **`show()`** method of the HTMLDialogElement interface displays the dialog modelessly, i.e., still allowing interaction with content outside of the dialog.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLDialogElement/show)
      */
     fun show()
 
     /**
+     * The **`showModal()`** method of the of any other dialogs that might be present.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLDialogElement/showModal)
      */
     fun showModal()

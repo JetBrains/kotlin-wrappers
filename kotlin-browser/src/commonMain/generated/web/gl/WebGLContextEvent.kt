@@ -18,6 +18,8 @@ open external class WebGLContextEvent(
     init: WebGLContextEventInit = definedExternally,
 ) : Event {
     /**
+     * The read-only **`WebGLContextEvent.statusMessage`** property contains additional event status information, or is an empty string if no additional information is available.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLContextEvent/statusMessage)
      */
     val statusMessage: String

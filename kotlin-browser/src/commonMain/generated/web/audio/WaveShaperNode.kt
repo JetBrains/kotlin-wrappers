@@ -16,11 +16,15 @@ open external class WaveShaperNode(
     options: WaveShaperOptions = definedExternally,
 ) : AudioNode {
     /**
+     * The `curve` property of the WaveShaperNode interface is a Float32Array of numbers describing the distortion to apply.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WaveShaperNode/curve)
      */
     var curve: Float32Array<ArrayBuffer>?
 
     /**
+     * The `oversample` property of the WaveShaperNode interface is an enumerated value indicating if oversampling must be used.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WaveShaperNode/oversample)
      */
     var oversample: OverSampleType

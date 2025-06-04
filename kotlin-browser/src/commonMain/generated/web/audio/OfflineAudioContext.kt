@@ -25,6 +25,8 @@ open external class OfflineAudioContext(
     )
 
     /**
+     * The **`length`** property of the the buffer in sample-frames.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OfflineAudioContext/length)
      */
     val length: Int
@@ -35,6 +37,8 @@ open external class OfflineAudioContext(
     var oncomplete: EventHandler<OfflineAudioCompletionEvent, OfflineAudioContext, OfflineAudioContext>?
 
     /**
+     * The **`resume()`** method of the context that has been suspended.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OfflineAudioContext/resume)
      */
     @JsAsync
@@ -45,6 +49,8 @@ open external class OfflineAudioContext(
     fun resumeAsync(): Promise<Void>
 
     /**
+     * The `startRendering()` method of the OfflineAudioContext Interface starts rendering the audio graph, taking into account the current connections and the current scheduled changes.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OfflineAudioContext/startRendering)
      */
     @JsAsync
@@ -55,6 +61,8 @@ open external class OfflineAudioContext(
     fun startRenderingAsync(): Promise<AudioBuffer>
 
     /**
+     * The **`suspend()`** method of the OfflineAudioContext interface schedules a suspension of the time progression in the audio context at the specified time and returns a promise.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OfflineAudioContext/suspend)
      */
     @JsAsync

@@ -11,16 +11,22 @@ open external class SVGFEPointLightElement
 private constructor() :
     SVGElement {
     /**
+     * The **`x`** read-only property of the SVGFEPointLightElement interface describes the horizontal coordinate of the position of an SVG filter primitive as a SVGAnimatedNumber.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFEPointLightElement/x)
      */
     val x: SVGAnimatedNumber
 
     /**
+     * The **`y`** read-only property of the SVGFEPointLightElement interface describes the vertical coordinate of the position of an SVG filter primitive as a SVGAnimatedNumber.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFEPointLightElement/y)
      */
     val y: SVGAnimatedNumber
 
     /**
+     * The **`z`** read-only property of the SVGFEPointLightElement interface describes the z-axis value of the position of an SVG filter primitive as a SVGAnimatedNumber.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFEPointLightElement/z)
      */
     val z: SVGAnimatedNumber

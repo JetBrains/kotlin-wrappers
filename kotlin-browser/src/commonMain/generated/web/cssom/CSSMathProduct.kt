@@ -11,6 +11,8 @@ open external class CSSMathProduct(
     vararg values: CSSNumberish,
 ) : CSSMathValue {
     /**
+     * The **`CSSMathProduct.values`** read-only property of the CSSMathProduct interface returns a A CSSNumericArray.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSMathProduct/values)
      */
     val values: CSSNumericArray

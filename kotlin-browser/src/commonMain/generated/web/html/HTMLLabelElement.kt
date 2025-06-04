@@ -11,21 +11,21 @@ open external class HTMLLabelElement
 protected constructor() :
     HTMLElement {
     /**
-     * Returns the form control that is associated with this element.
+     * The read-only **`HTMLLabelElement.control`** property returns a reference to the control (in the form of an object of type HTMLElement or one of its derivatives) with which the label element is associated, or `null` if the label isn't associated with a control.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLLabelElement/control)
      */
     val control: HTMLElement?
 
     /**
-     * Retrieves a reference to the form that the object is embedded in.
+     * The **`form`** read-only property of the HTMLLabelElement interface returns an HTMLFormElement object that owns the HTMLLabelElement.control associated with this label, or `null` if this label is not associated with a control owned by a form.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLLabelElement/form)
      */
     val form: HTMLFormElement?
 
     /**
-     * Sets or retrieves the object to which the given label object is assigned.
+     * The **`HTMLLabelElement.htmlFor`** property reflects the value of the `for` content property.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLLabelElement/htmlFor)
      */

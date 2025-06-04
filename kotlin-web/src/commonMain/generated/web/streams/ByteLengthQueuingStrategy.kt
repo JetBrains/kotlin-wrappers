@@ -13,6 +13,8 @@ open external class ByteLengthQueuingStrategy(
     init: QueuingStrategyInit,
 ) : QueuingStrategy<ArrayBufferView<*>> {
     /**
+     * The read-only **`ByteLengthQueuingStrategy.highWaterMark`** property returns the total number of bytes that can be contained in the internal queue before backpressure is applied.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ByteLengthQueuingStrategy/highWaterMark)
      */
     override val highWaterMark: Double

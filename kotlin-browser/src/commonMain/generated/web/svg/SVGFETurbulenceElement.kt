@@ -12,31 +12,43 @@ private constructor() :
     SVGElement,
     SVGFilterPrimitiveStandardAttributes {
     /**
+     * The **`baseFrequencyX`** read-only property of the SVGFETurbulenceElement interface reflects the X component of the baseFrequency attribute of the given feTurbulence element.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFETurbulenceElement/baseFrequencyX)
      */
     val baseFrequencyX: SVGAnimatedNumber
 
     /**
+     * The **`baseFrequencyY`** read-only property of the SVGFETurbulenceElement interface reflects the Y component of the baseFrequency attribute of the given feTurbulence element.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFETurbulenceElement/baseFrequencyY)
      */
     val baseFrequencyY: SVGAnimatedNumber
 
     /**
+     * The **`numOctaves`** read-only property of the SVGFETurbulenceElement interface reflects the numOctaves attribute of the given feTurbulence element.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFETurbulenceElement/numOctaves)
      */
     val numOctaves: SVGAnimatedInteger
 
     /**
+     * The **`seed`** read-only property of the SVGFETurbulenceElement interface reflects the seed attribute of the given feTurbulence element.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFETurbulenceElement/seed)
      */
     val seed: SVGAnimatedNumber
 
     /**
+     * The **`stitchTiles`** read-only property of the SVGFETurbulenceElement interface reflects the stitchTiles attribute of the given feTurbulence element.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFETurbulenceElement/stitchTiles)
      */
     val stitchTiles: SVGAnimatedEnumeration<StitchTiles>
 
     /**
+     * The **`type`** read-only property of the SVGFETurbulenceElement interface reflects the type attribute of the given feTurbulence element.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFETurbulenceElement/type)
      */
     val type: SVGAnimatedEnumeration<Type>

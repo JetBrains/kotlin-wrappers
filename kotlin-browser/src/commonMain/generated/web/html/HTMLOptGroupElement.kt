@@ -11,12 +11,14 @@ open external class HTMLOptGroupElement
 protected constructor() :
     HTMLElement {
     /**
+     * The **`disabled`** property of the HTMLOptGroupElement interface is a boolean value that reflects the optgroup element's `disabled` attribute, which indicates whether the control is disabled.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOptGroupElement/disabled)
      */
     var disabled: Boolean
 
     /**
-     * Sets or retrieves a value that you can use to implement your own label functionality for the object.
+     * The **`label`** property of the HTMLOptGroupElement interface is a string value that reflects the optgroup element's `label` attribute, which provides a textual label to the group of options.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOptGroupElement/label)
      */

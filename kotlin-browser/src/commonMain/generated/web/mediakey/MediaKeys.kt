@@ -18,11 +18,15 @@ import kotlin.js.definedExternally
 external class MediaKeys
 private constructor() {
     /**
+     * The `createSession()` method of the MediaKeys interface returns a new MediaKeySession object, which represents a context for message exchange with a content decryption module (CDM).
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeys/createSession)
      */
     fun createSession(sessionType: MediaKeySessionType = definedExternally): MediaKeySession
 
     /**
+     * The `getStatusForPolicy()` method of the MediaKeys interface is used to check whether the Content Decryption Module (CDM) would allow the presentation of encrypted media data using the keys, based on the specified policy requirements.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeys/getStatusForPolicy)
      */
     @JsAsync
@@ -33,6 +37,8 @@ private constructor() {
     fun getStatusForPolicyAsync(policy: MediaKeysPolicy = definedExternally): Promise<MediaKeyStatus>
 
     /**
+     * The **`setServerCertificate()`** method of the MediaKeys interface provides a server certificate to be used to encrypt messages to the license server.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeys/setServerCertificate)
      */
     @JsAsync

@@ -16,21 +16,21 @@ private constructor() :
     ArrayLike<JsString>,
     JsIterable<JsString> {
     /**
-     * Returns the number of strings in strings.
+     * The read-only **`length`** property indicates the number of strings in the DOMStringList.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMStringList/length)
      */
     override val length: Int
 
     /**
-     * Returns true if strings contains string, and false otherwise.
+     * The **`contains()`** method returns a boolean indicating whether the given string is in the list.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMStringList/contains)
      */
     fun contains(string: String): Boolean
 
     /**
-     * Returns the string with index index from strings.
+     * The **`item()`** method returns a string from a `DOMStringList` by index.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMStringList/item)
      */

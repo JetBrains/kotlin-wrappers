@@ -18,6 +18,8 @@ open external class RTCPeerConnectionIceErrorEvent(
     init: RTCPeerConnectionIceErrorEventInit,
 ) : Event {
     /**
+     * The RTCPeerConnectionIceErrorEvent property **`address`** is a string which indicates the local IP address being used to communicate with the STUN or TURN server during negotiations.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnectionIceErrorEvent/address)
      */
     val address: String?

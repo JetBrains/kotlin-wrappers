@@ -15,16 +15,14 @@ open external class MutationObserver(
     callback: MutationCallback,
 ) {
     /**
-     * Stops observer from observing any mutations. Until the observe() method is used again, observer's callback will not be invoked.
+     * The MutationObserver method **`disconnect()`** tells the observer to stop watching for mutations.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MutationObserver/disconnect)
      */
     fun disconnect()
 
     /**
-     * Instructs the user agent to observe a given target (a node) and report any mutations based on the criteria given by options (an object).
-     *
-     * The options argument allows for setting mutation observation options via object members.
+     * The MutationObserver method **`observe()`** configures the `MutationObserver` callback to begin receiving notifications of changes to the DOM that match the given options.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MutationObserver/observe)
      */
@@ -34,7 +32,7 @@ open external class MutationObserver(
     )
 
     /**
-     * Empties the record queue and returns what was in there.
+     * The MutationObserver method **`takeRecords()`** returns a list of all matching DOM changes that have been detected but not yet processed by the observer's callback function, leaving the mutation queue empty.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MutationObserver/takeRecords)
      */

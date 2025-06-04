@@ -19,6 +19,8 @@ open external class VideoEncoder(
     init: VideoEncoderInit,
 ) : EventTarget {
     /**
+     * The **`encodeQueueSize`** read-only property of the VideoEncoder interface returns the number of pending encode requests in the queue.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoEncoder/encodeQueueSize)
      */
     val encodeQueueSize: Int
@@ -29,21 +31,29 @@ open external class VideoEncoder(
     var ondequeue: EventHandler<Event, VideoEncoder, VideoEncoder>?
 
     /**
+     * The **`state`** read-only property of the VideoEncoder interface returns the current state of the underlying codec.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoEncoder/state)
      */
     val state: CodecState
 
     /**
+     * The **`close()`** method of the VideoEncoder interface ends all pending work and releases system resources.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoEncoder/close)
      */
     fun close()
 
     /**
+     * The **`configure()`** method of the VideoEncoder interface changes the VideoEncoder.state of the encoder to 'configured' and asynchronously prepares the encoder to accept VideoEncoders for encoding with the specified parameters.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoEncoder/configure)
      */
     fun configure(config: VideoEncoderConfig)
 
     /**
+     * The **`encode()`** method of the VideoEncoder interface asynchronously encodes a VideoFrame.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoEncoder/encode)
      */
     fun encode(
@@ -52,6 +62,8 @@ open external class VideoEncoder(
     )
 
     /**
+     * The **`flush()`** method of the VideoEncoder interface forces all pending encodes to complete.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoEncoder/flush)
      */
     @JsAsync
@@ -62,6 +74,8 @@ open external class VideoEncoder(
     fun flushAsync(): Promise<Void>
 
     /**
+     * The **`reset()`** method of the VideoEncoder interface synchronously cancels all pending encodes and callbacks, frees all underlying resources and sets the VideoEncoder.state to 'unconfigured'.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoEncoder/reset)
      */
     fun reset()
@@ -74,6 +88,8 @@ open external class VideoEncoder(
 
     companion object {
         /**
+         * The **`isConfigSupported()`** static method of the VideoEncoder interface checks if VideoEncoder can be successfully configured with the given config.
+         *
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoEncoder/isConfigSupported_static)
          */
         @JsAsync

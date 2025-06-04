@@ -16,31 +16,43 @@ private constructor() :
     ArrayLike<CSSKeyframeRule>,
     JsIterable<CSSKeyframeRule> {
     /**
+     * The read-only **`cssRules`** property of the CSSKeyframeRule interface returns a CSSRuleList containing the rules in the keyframes at-rule.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSKeyframesRule/cssRules)
      */
     val cssRules: CSSRuleList
 
     /**
+     * The read-only **`length`** property of the CSSKeyframeRule interface returns the number of CSSKeyframeRule objects in its list.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSKeyframesRule/length)
      */
     override val length: Int
 
     /**
+     * The **`name`** property of the CSSKeyframeRule interface gets and sets the name of the animation as used by the animation-name property.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSKeyframesRule/name)
      */
     var name: String
 
     /**
+     * The **`appendRule()`** method of the CSSKeyframeRule interface appends a CSSKeyFrameRule to the end of the rules.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSKeyframesRule/appendRule)
      */
     fun appendRule(rule: String)
 
     /**
+     * The **`deleteRule()`** method of the CSSKeyframeRule interface deletes the CSSKeyFrameRule that matches the specified keyframe selector.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSKeyframesRule/deleteRule)
      */
     fun deleteRule(select: String)
 
     /**
+     * The **`findRule()`** method of the CSSKeyframeRule interface finds the CSSKeyFrameRule that matches the specified keyframe selector.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSKeyframesRule/findRule)
      */
     fun findRule(select: String): CSSKeyframeRule?

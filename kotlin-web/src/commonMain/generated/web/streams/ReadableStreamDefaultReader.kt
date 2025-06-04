@@ -16,6 +16,8 @@ open external class ReadableStreamDefaultReader<R : JsAny?>(
     stream: ReadableStream<R>,
 ) : ReadableStreamGenericReader {
     /**
+     * The **`read()`** method of the ReadableStreamDefaultReader interface returns a Promise providing access to the next chunk in the stream's internal queue.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStreamDefaultReader/read)
      */
     @JsAsync
@@ -26,6 +28,8 @@ open external class ReadableStreamDefaultReader<R : JsAny?>(
     fun readAsync(): Promise<ReadableStreamReadResult<R>>
 
     /**
+     * The **`releaseLock()`** method of the ReadableStreamDefaultReader interface releases the reader's lock on the stream.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStreamDefaultReader/releaseLock)
      */
     fun releaseLock()

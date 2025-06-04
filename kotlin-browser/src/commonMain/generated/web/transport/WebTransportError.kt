@@ -18,11 +18,15 @@ open external class WebTransportError(
 ) : DOMException,
     Serializable {
     /**
+     * The **`source`** read-only property of the WebTransportError interface returns an enumerated value indicating the source of the error.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebTransportError/source)
      */
     val source: WebTransportErrorSource
 
     /**
+     * The **`streamErrorCode`** read-only property of the WebTransportError interface returns a number in the range 0-255 indicating the application protocol error code for this error, or `null` if one is not available.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebTransportError/streamErrorCode)
      */
     val streamErrorCode: Int?

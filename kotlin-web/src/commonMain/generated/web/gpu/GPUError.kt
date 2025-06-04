@@ -16,6 +16,8 @@ import kotlin.js.definedExternally
  */
 sealed external interface GPUError {
     /**
+     * The **`message`** read-only property of the A string.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUError/message)
      */
     val message: String

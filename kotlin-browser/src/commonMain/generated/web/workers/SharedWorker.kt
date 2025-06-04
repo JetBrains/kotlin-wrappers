@@ -36,7 +36,7 @@ open external class SharedWorker(
     )
 
     /**
-     * Returns sharedWorker's MessagePort object which can be used to communicate with the global environment.
+     * The **`port`** property of the SharedWorker interface returns a MessagePort object used to communicate and control the shared worker.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SharedWorker/port)
      */

@@ -19,6 +19,8 @@ import kotlin.js.definedExternally
 external class PushManager
 private constructor() {
     /**
+     * The **`PushManager.getSubscription()`** method of the PushManager interface retrieves an existing push subscription.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PushManager/getSubscription)
      */
     @JsAsync
@@ -29,6 +31,8 @@ private constructor() {
     fun getSubscriptionAsync(): Promise<PushSubscription?>
 
     /**
+     * The **`permissionState()`** method of the string indicating the permission state of the push manager.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PushManager/permissionState)
      */
     @JsAsync
@@ -39,6 +43,8 @@ private constructor() {
     fun permissionStateAsync(options: PushSubscriptionOptionsInit = definedExternally): Promise<PermissionState>
 
     /**
+     * The **`subscribe()`** method of the PushManager interface subscribes to a push service.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PushManager/subscribe)
      */
     @JsAsync
@@ -50,6 +56,8 @@ private constructor() {
 
     companion object {
         /**
+         * The **`supportedContentEncodings`** read-only static property of the PushManager interface returns an array of supported content codings that can be used to encrypt the payload of a push message.
+         *
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PushManager/supportedContentEncodings_static)
          */
         val supportedContentEncodings: ReadonlyArray<JsString>

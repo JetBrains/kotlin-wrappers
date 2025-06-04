@@ -18,65 +18,49 @@ external class DOMTokenList<T : JsAny>
 private constructor() :
     ListLike<T> {
     /**
-     * Returns the number of tokens.
+     * The read-only **`length`** property of the DOMTokenList interface is an `integer` representing the number of objects stored in the object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMTokenList/length)
      */
     override val length: Int
 
     /**
-     * Returns the associated set as string.
-     *
-     * Can be set, to change the associated attribute.
+     * The **`value`** property of the DOMTokenList interface is a stringifier that returns the value of the list serialized as a string, or clears and sets the list to the given value.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMTokenList/value)
      */
     var value: T
 
     /**
-     * Adds all arguments passed, except those already present.
-     *
-     * Throws a "SyntaxError" DOMException if one of the arguments is the empty string.
-     *
-     * Throws an "InvalidCharacterError" DOMException if one of the arguments contains any ASCII whitespace.
+     * The **`add()`** method of the DOMTokenList interface adds the given tokens to the list, omitting any that are already present.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMTokenList/add)
      */
     fun add(vararg tokens: T)
 
     /**
-     * Returns true if token is present, and false otherwise.
+     * The **`contains()`** method of the DOMTokenList interface returns a boolean value — `true` if the underlying list contains the given token, otherwise `false`.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMTokenList/contains)
      */
     fun contains(token: T): Boolean
 
     /**
-     * Returns the token with index index.
+     * The **`item()`** method of the DOMTokenList interface returns an item in the list, determined by its position in the list, its index.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMTokenList/item)
      */
     fun item(index: Int): T?
 
     /**
-     * Removes arguments passed, if they are present.
-     *
-     * Throws a "SyntaxError" DOMException if one of the arguments is the empty string.
-     *
-     * Throws an "InvalidCharacterError" DOMException if one of the arguments contains any ASCII whitespace.
+     * The **`remove()`** method of the DOMTokenList interface removes the specified _tokens_ from the list.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMTokenList/remove)
      */
     fun remove(vararg tokens: T)
 
     /**
-     * Replaces token with newToken.
-     *
-     * Returns true if token was replaced with newToken, and false otherwise.
-     *
-     * Throws a "SyntaxError" DOMException if one of the arguments is the empty string.
-     *
-     * Throws an "InvalidCharacterError" DOMException if one of the arguments contains any ASCII whitespace.
+     * The **`replace()`** method of the DOMTokenList interface replaces an existing token with a new token.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMTokenList/replace)
      */
@@ -86,22 +70,14 @@ private constructor() :
     ): Boolean
 
     /**
-     * Returns true if token is in the associated attribute's supported tokens. Returns false otherwise.
-     *
-     * Throws a TypeError if the associated attribute has no supported tokens defined.
+     * The **`supports()`** method of the DOMTokenList interface returns `true` if a given `token` is in the associated attribute's supported tokens.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMTokenList/supports)
      */
     fun supports(token: T): Boolean
 
     /**
-     * If force is not given, "toggles" token, removing it if it's present and adding it if it's not present. If force is true, adds token (same as add()). If force is false, removes token (same as remove()).
-     *
-     * Returns true if token is now present, and false otherwise.
-     *
-     * Throws a "SyntaxError" DOMException if token is empty.
-     *
-     * Throws an "InvalidCharacterError" DOMException if token contains any spaces.
+     * The **`toggle()`** method of the DOMTokenList interface removes an existing token from the list and returns `false`.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMTokenList/toggle)
      */

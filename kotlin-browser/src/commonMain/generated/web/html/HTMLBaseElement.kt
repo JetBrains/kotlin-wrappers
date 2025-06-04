@@ -13,14 +13,14 @@ open external class HTMLBaseElement
 protected constructor() :
     HTMLElement {
     /**
-     * Gets or sets the baseline URL on which relative links are based.
+     * The **`href`** property of the HTMLBaseElement interface contains a string that is the URL to use as the base for relative URLs.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLBaseElement/href)
      */
     var href: String
 
     /**
-     * Sets or retrieves the window or frame at which to target content.
+     * The `target` property of the HTMLBaseElement interface is a string that represents the default target tab to show the resulting output for hyperlinks and form elements.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLBaseElement/target)
      */

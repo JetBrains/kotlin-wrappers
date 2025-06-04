@@ -17,6 +17,8 @@ private constructor() :
     ArrayLike<SourceBuffer>,
     JsIterable<SourceBuffer> {
     /**
+     * The **`length`** read-only property of the An unsigned long number.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SourceBufferList/length)
      */
     override val length: Int

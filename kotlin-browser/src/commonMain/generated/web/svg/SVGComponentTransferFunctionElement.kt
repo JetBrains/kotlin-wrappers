@@ -11,36 +11,50 @@ open external class SVGComponentTransferFunctionElement
 private constructor() :
     SVGElement {
     /**
+     * The **`amplitude`** read-only property of the SVGComponentTransferFunctionElement interface reflects the amplitude attribute of the given element.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGComponentTransferFunctionElement/amplitude)
      */
     val amplitude: SVGAnimatedNumber
 
     /**
+     * The **`exponent`** read-only property of the SVGComponentTransferFunctionElement interface reflects the exponent attribute of the given element.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGComponentTransferFunctionElement/exponent)
      */
     val exponent: SVGAnimatedNumber
 
     /**
+     * The **`intercept`** read-only property of the SVGComponentTransferFunctionElement interface reflects the intercept attribute of the given element.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGComponentTransferFunctionElement/intercept)
      */
     val intercept: SVGAnimatedNumber
 
     /**
+     * The **`offset`** read-only property of the SVGComponentTransferFunctionElement interface reflects the offset attribute of the given element.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGComponentTransferFunctionElement/offset)
      */
     val offset: SVGAnimatedNumber
 
     /**
+     * The **`slope`** read-only property of the SVGComponentTransferFunctionElement interface reflects the slope attribute of the given element.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGComponentTransferFunctionElement/slope)
      */
     val slope: SVGAnimatedNumber
 
     /**
+     * The **`tableValues`** read-only property of the SVGComponentTransferFunctionElement interface reflects the tableValues attribute of the given element.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGComponentTransferFunctionElement/tableValues)
      */
     val tableValues: SVGAnimatedNumberList
 
     /**
+     * The **`type`** read-only property of the SVGComponentTransferFunctionElement interface reflects the type attribute of the given element.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGComponentTransferFunctionElement/type)
      */
     val type: SVGAnimatedEnumeration<Type>

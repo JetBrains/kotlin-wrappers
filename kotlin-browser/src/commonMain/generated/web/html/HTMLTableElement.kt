@@ -13,100 +13,98 @@ open external class HTMLTableElement
 protected constructor() :
     HTMLElement {
     /**
-     * Retrieves the caption object of a table.
+     * The **`HTMLTableElement.caption`** property represents the table caption.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableElement/caption)
      */
     var caption: HTMLTableCaptionElement?
 
     /**
-     * Sets or retrieves the number of horizontal rows contained in the object.
+     * The read-only HTMLTableElement property **`rows`** returns a live contained within any thead, tfoot, and Although the property itself is read-only, the returned object is live and allows the modification of its content.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableElement/rows)
      */
     val rows: HTMLCollection<HTMLTableRowElement>
 
     /**
-     * Retrieves a collection of all tBody objects in the table. Objects in this collection are in source order.
+     * The **`HTMLTableElement.tBodies`** read-only property returns a live HTMLCollection of the bodies in a table.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableElement/tBodies)
      */
     val tBodies: HTMLCollection<HTMLTableSectionElement>
 
     /**
-     * Retrieves the tFoot object of the table.
+     * The **`HTMLTableElement.tFoot`** property represents the `null` if there is no such element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableElement/tFoot)
      */
     var tFoot: HTMLTableSectionElement?
 
     /**
-     * Retrieves the tHead object of the table.
+     * The **`HTMLTableElement.tHead`** represents the `null` if there is no such element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableElement/tHead)
      */
     var tHead: HTMLTableSectionElement?
 
     /**
-     * Creates an empty caption element in the table.
+     * The **`HTMLTableElement.createCaption()`** method returns the If no `<caption>` element exists on the table, this method creates it, and then returns it.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableElement/createCaption)
      */
     fun createCaption(): HTMLTableCaptionElement
 
     /**
-     * Creates an empty tBody element in the table.
+     * The **`createTBody()`** method of ```js-nolint createTBody() ``` None.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableElement/createTBody)
      */
     fun createTBody(): HTMLTableSectionElement
 
     /**
-     * Creates an empty tFoot element in the table.
+     * The **`createTFoot()`** method of associated with a given table.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableElement/createTFoot)
      */
     fun createTFoot(): HTMLTableSectionElement
 
     /**
-     * Returns the tHead element object if successful, or null otherwise.
+     * The **`createTHead()`** method of associated with a given table.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableElement/createTHead)
      */
     fun createTHead(): HTMLTableSectionElement
 
     /**
-     * Deletes the caption element and its contents from the table.
+     * The **`HTMLTableElement.deleteCaption()`** method removes the `<caption>` element associated with the table, this method does nothing.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableElement/deleteCaption)
      */
     fun deleteCaption()
 
     /**
-     * Removes the specified row (tr) from the element and from the rows collection.
-     * @param index Number that specifies the zero-based position in the rows collection of the row to remove.
+     * The **`HTMLTableElement.deleteRow()`** method removes a specific row (tr) from a given table.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableElement/deleteRow)
      */
     fun deleteRow(index: Int)
 
     /**
-     * Deletes the tFoot element and its contents from the table.
+     * The **`HTMLTableElement.deleteTFoot()`** method removes the ```js-nolint deleteTFoot() ``` None.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableElement/deleteTFoot)
      */
     fun deleteTFoot()
 
     /**
-     * Deletes the tHead element and its contents from the table.
+     * The **`HTMLTableElement.deleteTHead()`** removes the ```js-nolint deleteTHead() ``` None.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableElement/deleteTHead)
      */
     fun deleteTHead()
 
     /**
-     * Creates a new row (tr) in the table, and adds the row to the rows collection.
-     * @param index Number that specifies where to insert the row in the rows collection. The default value is -1, which appends the new row to the end of the rows collection.
+     * The **`insertRow()`** method of the HTMLTableElement interface inserts a new row (tr) in a given table, and returns a reference to the new row.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableElement/insertRow)
      */

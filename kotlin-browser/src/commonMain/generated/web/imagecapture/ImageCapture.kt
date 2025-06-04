@@ -19,11 +19,15 @@ open external class ImageCapture(
     videoTrack: MediaStreamTrack,
 ) {
     /**
+     * The **`track`** read-only property of the A MediaStreamTrack object.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageCapture/track)
      */
     val track: MediaStreamTrack
 
     /**
+     * The **`getPhotoCapabilities()`** method of the ImageCapture interface returns a Promise that resolves with an object containing the ranges of available configuration options.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageCapture/getPhotoCapabilities)
      */
     @JsAsync
@@ -34,6 +38,8 @@ open external class ImageCapture(
     fun getPhotoCapabilitiesAsync(): Promise<PhotoCapabilities>
 
     /**
+     * The **`getPhotoSettings()`** method of the ImageCapture interface returns a Promise that resolves with an object containing the current photo configuration settings.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageCapture/getPhotoSettings)
      */
     @JsAsync
@@ -44,6 +50,8 @@ open external class ImageCapture(
     fun getPhotoSettingsAsync(): Promise<PhotoSettings>
 
     /**
+     * The **`takePhoto()`** method of the device sourcing a MediaStreamTrack and returns a Promise that resolves with a Blob containing the data.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageCapture/takePhoto)
      */
     @JsAsync

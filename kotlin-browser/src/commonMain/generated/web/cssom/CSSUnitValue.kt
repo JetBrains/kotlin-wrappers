@@ -9,10 +9,14 @@ package web.cssom
  */
 open external class CSSUnitValue(
     /**
+     * The **`CSSUnitValue.value`** property of the A double.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSUnitValue/value)
      */
     var value: Double,
     /**
+     * The **`CSSUnitValue.unit`** read-only property of the CSSUnitValue interface returns a string indicating the type of unit.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSUnitValue/unit)
      */
     val unit: String,

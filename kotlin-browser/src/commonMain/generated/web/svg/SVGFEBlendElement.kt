@@ -12,16 +12,22 @@ private constructor() :
     SVGElement,
     SVGFilterPrimitiveStandardAttributes {
     /**
+     * The **`in1`** read-only property of the SVGFEBlendElement interface reflects the in attribute of the given element.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFEBlendElement/in1)
      */
     val in1: SVGAnimatedString
 
     /**
+     * The **`in2`** read-only property of the SVGFEBlendElement interface reflects the in2 attribute of the given element.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFEBlendElement/in2)
      */
     val in2: SVGAnimatedString
 
     /**
+     * The **`mode`** read-only property of the SVGFEBlendElement interface reflects the mode attribute of the given element.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFEBlendElement/mode)
      */
     val mode: SVGAnimatedEnumeration<Mode>

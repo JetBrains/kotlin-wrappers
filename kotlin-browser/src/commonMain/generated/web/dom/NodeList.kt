@@ -14,7 +14,7 @@ external class NodeList<T : Node>
 private constructor() :
     ListLike<T> {
     /**
-     * Returns the node with index index from the collection. The nodes are sorted in tree order.
+     * Returns a node from a `NodeList` by index.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NodeList/item)
      */

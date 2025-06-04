@@ -16,6 +16,8 @@ import kotlin.js.JsName
 external class NavigationPreloadManager
 private constructor() {
     /**
+     * The **`disable()`** method of the NavigationPreloadManager interface halts the automatic preloading of service-worker-managed resources previously started using NavigationPreloadManager.enable() It returns a promise that resolves with `undefined`.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigationPreloadManager/disable)
      */
     @JsAsync
@@ -26,6 +28,8 @@ private constructor() {
     fun disableAsync(): Promise<Void>
 
     /**
+     * The **`enable()`** method of the NavigationPreloadManager interface is used to enable preloading of resources managed by the service worker.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigationPreloadManager/enable)
      */
     @JsAsync
@@ -36,6 +40,8 @@ private constructor() {
     fun enableAsync(): Promise<Void>
 
     /**
+     * The **`getState()`** method of the NavigationPreloadManager interface returns a Promise that resolves to an object with properties that indicate whether preload is enabled and what value will be sent in the Service-Worker-Navigation-Preload HTTP header.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigationPreloadManager/getState)
      */
     @JsAsync
@@ -46,6 +52,8 @@ private constructor() {
     fun getStateAsync(): Promise<NavigationPreloadState>
 
     /**
+     * The **`setHeaderValue()`** method of the NavigationPreloadManager interface sets the value of the Service-Worker-Navigation-Preload header that will be sent with requests resulting from a Window/fetch operation made during service worker navigation preloading.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigationPreloadManager/setHeaderValue)
      */
     @JsAsync

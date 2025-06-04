@@ -11,6 +11,8 @@ open external class CSSConditionRule
 private constructor() :
     CSSGroupingRule {
     /**
+     * The read-only **`conditionText`** property of the CSSConditionRule interface returns or sets the text of the CSS rule.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSConditionRule/conditionText)
      */
     val conditionText: String

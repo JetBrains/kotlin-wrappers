@@ -27,6 +27,8 @@ protected /* private */ constructor() :
     override val kind: FileSystemHandleKind.directory
 
     /**
+     * The **`getDirectoryHandle()`** method of the within the directory handle on which the method is called.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemDirectoryHandle/getDirectoryHandle)
      */
     @JsAsync
@@ -43,6 +45,8 @@ protected /* private */ constructor() :
     ): Promise<FileSystemDirectoryHandle>
 
     /**
+     * The **`getFileHandle()`** method of the directory the method is called.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemDirectoryHandle/getFileHandle)
      */
     @JsAsync
@@ -59,6 +63,8 @@ protected /* private */ constructor() :
     ): Promise<FileSystemFileHandle>
 
     /**
+     * The **`removeEntry()`** method of the directory handle contains a file or directory called the name specified.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemDirectoryHandle/removeEntry)
      */
     @JsAsync
@@ -75,6 +81,8 @@ protected /* private */ constructor() :
     ): Promise<Void>
 
     /**
+     * The **`resolve()`** method of the directory names from the parent handle to the specified child entry, with the name of the child entry as the last array item.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemDirectoryHandle/resolve)
      */
     @JsAsync

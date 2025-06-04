@@ -20,11 +20,15 @@ open external class PaymentMethodChangeEvent(
     init: PaymentMethodChangeEventInit = definedExternally,
 ) : PaymentRequestUpdateEvent {
     /**
+     * The read-only **`methodDetails`** property of the PaymentMethodChangeEvent interface is an object containing any data the payment handler may provide to describe the change the user has made to their payment method.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentMethodChangeEvent/methodDetails)
      */
     val methodDetails: JsAny?
 
     /**
+     * The read-only **`methodName`** property of the PaymentMethodChangeEvent interface is a string which uniquely identifies the payment handler currently selected by the user.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentMethodChangeEvent/methodName)
      */
     val methodName: String

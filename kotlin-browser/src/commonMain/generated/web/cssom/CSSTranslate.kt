@@ -11,14 +11,20 @@ import kotlin.js.definedExternally
  */
 open external class CSSTranslate(
     /**
+     * The **`x`** property of the translating vector.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSTranslate/x)
      */
     var x: CSSNumericValue,
     /**
+     * The **`y`** property of the translating vector.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSTranslate/y)
      */
     var y: CSSNumericValue,
     /**
+     * The **`z`** property of the vector.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSTranslate/z)
      */
     var z: CSSNumericValue = definedExternally,

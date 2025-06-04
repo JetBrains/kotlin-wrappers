@@ -13,6 +13,8 @@ external class PermissionStatus
 private constructor() :
     EventTarget {
     /**
+     * The **`name`** read-only property of the PermissionStatus interface returns the name of a requested permission.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PermissionStatus/name)
      */
     val name: String
@@ -23,6 +25,8 @@ private constructor() :
     var onchange: EventHandler<Event, PermissionStatus, PermissionStatus>?
 
     /**
+     * The **`state`** read-only property of the This property returns one of `'granted'`, `'denied'`, or `'prompt'`.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PermissionStatus/state)
      */
     val state: PermissionState

@@ -9,6 +9,8 @@ package web.cssom
  */
 open external class CSSPerspective(
     /**
+     * The **`length`** property of the It is used to apply a perspective transform to the element and its content.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSPerspective/length)
      */
     var length: CSSPerspectiveValue,

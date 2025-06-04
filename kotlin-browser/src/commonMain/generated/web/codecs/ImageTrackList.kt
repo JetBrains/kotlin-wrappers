@@ -17,21 +17,29 @@ private constructor() :
     ArrayLike<ImageTrack>,
     JsIterable<ImageTrack> {
     /**
+     * The **`length`** property of the ImageTrackList interface returns the length of the `ImageTrackList`.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageTrackList/length)
      */
     override val length: Int
 
     /**
+     * The **`ready`** property of the ImageTrackList interface returns a Promise that resolves when the `ImageTrackList` is populated with ImageTrack.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageTrackList/ready)
      */
     val ready: Promise<Void>
 
     /**
+     * The **`selectedIndex`** property of the ImageTrackList interface returns the `index` of the selected track.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageTrackList/selectedIndex)
      */
     val selectedIndex: Int
 
     /**
+     * The **`selectedTrack`** property of the ImageTrackList interface returns an ImageTrack object representing the currently selected track.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageTrackList/selectedTrack)
      */
     val selectedTrack: ImageTrack?

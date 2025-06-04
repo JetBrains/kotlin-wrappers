@@ -22,6 +22,8 @@ private constructor() :
     override val kind: FileSystemHandleKind.file
 
     /**
+     * The **`createSyncAccessHandle()`** method of the that can be used to synchronously read from and write to a file.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemFileHandle/createSyncAccessHandle)
      */
     @JsAsync
@@ -32,6 +34,8 @@ private constructor() :
     fun createSyncAccessHandleAsync(): Promise<FileSystemSyncAccessHandle>
 
     /**
+     * The **`createWritable()`** method of the FileSystemFileHandle interface creates a FileSystemWritableFileStream that can be used to write to a file.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemFileHandle/createWritable)
      */
     @JsAsync
@@ -42,6 +46,8 @@ private constructor() :
     fun createWritableAsync(options: FileSystemCreateWritableOptions = definedExternally): Promise<FileSystemWritableFileStream>
 
     /**
+     * The **`getFile()`** method of the If the file on disk changes or is removed after this method is called, the returned ```js-nolint getFile() ``` None.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemFileHandle/getFile)
      */
     @JsAsync

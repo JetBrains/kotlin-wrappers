@@ -23,6 +23,8 @@ import kotlin.js.definedExternally
 external class Cache
 private constructor() {
     /**
+     * The **`add()`** method of the Cache interface takes a URL, retrieves it, and adds the resulting response object to the given cache.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/add)
      */
     @JsAsync
@@ -47,6 +49,8 @@ private constructor() {
     fun addAsync(request: Request): Promise<Void>
 
     /**
+     * The **`addAll()`** method of the Cache interface takes an array of URLs, retrieves them, and adds the resulting response objects to the given cache.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/addAll)
      */
     @JsAsync
@@ -64,6 +68,8 @@ private constructor() {
     fun addAllAsync(urls: ReadonlyArray<JsString>): Promise<Void>
 
     /**
+     * The **`delete()`** method of the Cache interface finds the Cache entry whose key is the request, and if found, deletes the Cache entry and returns a Promise that resolves to `true`.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/delete)
      */
     @JsAsync
@@ -106,6 +112,8 @@ private constructor() {
     ): Promise<JsBoolean>
 
     /**
+     * The **`keys()`** method of the Cache interface returns a representing the keys of the Cache.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/keys)
      */
     @JsAsync
@@ -148,6 +156,8 @@ private constructor() {
     ): Promise<ReadonlyArray<Request>>
 
     /**
+     * The **`match()`** method of the Cache interface returns a Promise that resolves to the Response associated with the first matching request in the Cache object.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/match)
      */
     @JsAsync
@@ -190,6 +200,8 @@ private constructor() {
     ): Promise<Response?>
 
     /**
+     * The **`matchAll()`** method of the Cache interface returns a Promise that resolves to an array of all matching responses in the Cache object.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/matchAll)
      */
     @JsAsync
@@ -232,6 +244,8 @@ private constructor() {
     ): Promise<ReadonlyArray<Response>>
 
     /**
+     * The **`put()`** method of the Often, you will just want to Window/fetch one or more requests, then add the result straight to your cache.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/put)
      */
     @JsAsync

@@ -13,6 +13,8 @@ external class PerformanceMeasure
 private constructor() :
     PerformanceEntry {
     /**
+     * The read-only **`detail`** property returns arbitrary metadata that was included in the mark upon construction (when using Performance.measure.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceMeasure/detail)
      */
     val detail: JsAny?

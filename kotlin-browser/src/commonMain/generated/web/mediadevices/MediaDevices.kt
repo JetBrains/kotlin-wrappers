@@ -29,6 +29,8 @@ private constructor() :
     var ondevicechange: EventHandler<Event, MediaDevices, MediaDevices>?
 
     /**
+     * The **`enumerateDevices()`** method of the MediaDevices interface requests a list of the currently available media input and output devices, such as microphones, cameras, headsets, and so forth.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaDevices/enumerateDevices)
      */
     @JsAsync
@@ -39,6 +41,8 @@ private constructor() :
     fun enumerateDevicesAsync(): Promise<ReadonlyArray<MediaDeviceInfo>>
 
     /**
+     * The **`getDisplayMedia()`** method of the MediaDevices interface prompts the user to select and grant permission to capture the contents of a display or portion thereof (such as a window) as a MediaStream.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaDevices/getDisplayMedia)
      */
     @JsAsync
@@ -49,11 +53,15 @@ private constructor() :
     fun getDisplayMediaAsync(options: DisplayMediaStreamOptions = definedExternally): Promise<MediaStream>
 
     /**
+     * The **`getSupportedConstraints()`** method of the MediaDevices interface returns an object based on the MediaTrackSupportedConstraints dictionary, whose member fields each specify one of the constrainable properties the user agent understands.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaDevices/getSupportedConstraints)
      */
     fun getSupportedConstraints(): MediaTrackSupportedConstraints
 
     /**
+     * The **`getUserMedia()`** method of the MediaDevices interface prompts the user for permission to use a media input which produces a MediaStream with tracks containing the requested types of media.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaDevices/getUserMedia)
      */
     @JsAsync

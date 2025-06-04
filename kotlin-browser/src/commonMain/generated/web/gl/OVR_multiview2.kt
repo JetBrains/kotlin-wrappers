@@ -4,6 +4,8 @@ package web.gl
 
 sealed external interface OVR_multiview2 {
     /**
+     * The **`OVR_multiview2.framebufferTextureMultiviewOVR()`** method of the WebGL API attaches a multiview texture to a WebGLFramebuffer.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OVR_multiview2/framebufferTextureMultiviewOVR)
      */
     fun framebufferTextureMultiviewOVR(

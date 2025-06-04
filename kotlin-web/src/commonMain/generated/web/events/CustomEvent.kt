@@ -17,7 +17,7 @@ open external class CustomEvent<out D : JsAny?>(
     init: CustomEventInit<D> = definedExternally,
 ) : Event {
     /**
-     * Returns any custom data event was created with. Typically used for synthetic events.
+     * The read-only **`detail`** property of the CustomEvent interface returns any data passed when initializing the event.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CustomEvent/detail)
      */

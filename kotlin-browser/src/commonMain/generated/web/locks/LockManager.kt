@@ -16,6 +16,8 @@ import kotlin.js.JsName
 external class LockManager
 private constructor() {
     /**
+     * The **`query()`** method of the LockManager interface returns a Promise that resolves with an object containing information about held and pending locks.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/LockManager/query)
      */
     @JsAsync
@@ -26,6 +28,8 @@ private constructor() {
     fun queryAsync(): Promise<LockManagerSnapshot>
 
     /**
+     * The **`request()`** method of the LockManager interface requests a Lock object with parameters specifying its name and characteristics.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/LockManager/request)
      */
     @JsAsync

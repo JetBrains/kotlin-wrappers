@@ -18,11 +18,15 @@ open external class NotificationEvent(
     init: NotificationEventInit,
 ) : ExtendableEvent {
     /**
+     * The **`action`** read-only property of the NotificationEvent interface returns the string ID of the notification button the user clicked.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NotificationEvent/action)
      */
     val action: String
 
     /**
+     * The **`notification`** read-only property of the NotificationEvent interface returns the instance of the Notification that was clicked to fire the event.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NotificationEvent/notification)
      */
     val notification: Notification

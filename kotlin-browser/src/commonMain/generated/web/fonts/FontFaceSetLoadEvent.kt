@@ -20,6 +20,8 @@ open external class FontFaceSetLoadEvent(
     init: FontFaceSetLoadEventInit = definedExternally,
 ) : Event {
     /**
+     * The **`fontfaces`** read-only property of the An array of FontFace instance.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FontFaceSetLoadEvent/fontfaces)
      */
     val fontfaces: ReadonlyArray<FontFace>

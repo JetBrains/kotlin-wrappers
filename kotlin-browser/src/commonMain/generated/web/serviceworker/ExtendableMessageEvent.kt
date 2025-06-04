@@ -21,26 +21,36 @@ open external class ExtendableMessageEvent(
     init: ExtendableMessageEventInit = definedExternally,
 ) : ExtendableEvent {
     /**
+     * The **`data`** read-only property of the data type.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ExtendableMessageEvent/data)
      */
     val data: JsAny?
 
     /**
+     * The **`lastEventID`** read-only property of the A string.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ExtendableMessageEvent/lastEventId)
      */
     val lastEventId: String
 
     /**
+     * The **`origin`** read-only property of the A string.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ExtendableMessageEvent/origin)
      */
     val origin: String
 
     /**
+     * The **`ports`** read-only property of the channel (the channel the message is being sent through.) An array of MessagePort objects.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ExtendableMessageEvent/ports)
      */
     val ports: ReadonlyArray<MessagePort>
 
     /**
+     * The **`source`** read-only property of the A Client, ServiceWorker or MessagePort object.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ExtendableMessageEvent/source)
      */
     val source: JsAny /* Client | ServiceWorker | MessagePort */?

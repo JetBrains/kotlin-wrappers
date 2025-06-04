@@ -13,37 +13,35 @@ open external class HTMLTableRowElement
 protected constructor() :
     HTMLElement {
     /**
-     * Retrieves a collection of all cells in the table row.
+     * The **`cells`** read-only property of the HTMLTableRowElement interface returns a live HTMLCollection containing the cells in the row.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableRowElement/cells)
      */
     val cells: HTMLCollection<HTMLTableCellElement>
 
     /**
-     * Retrieves the position of the object in the rows collection for the table.
+     * The **`rowIndex`** read-only property of the HTMLTableRowElement interface represents the position of a row within the whole table.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableRowElement/rowIndex)
      */
     val rowIndex: Int
 
     /**
-     * Retrieves the position of the object in the collection.
+     * The **`sectionRowIndex`** read-only property of the HTMLTableRowElement interface represents the position of a row within the current section (thead, tbody, or tfoot).
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableRowElement/sectionRowIndex)
      */
     val sectionRowIndex: Int
 
     /**
-     * Removes the specified cell from the table row, as well as from the cells collection.
-     * @param index Number that specifies the zero-based position of the cell to remove from the table row. If no value is provided, the last cell in the cells collection is deleted.
+     * The **`deleteCell()`** method of the HTMLTableRowElement interface removes a specific row cell from a given tr.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableRowElement/deleteCell)
      */
     fun deleteCell(index: Int)
 
     /**
-     * Creates a new cell in the table row, and adds the cell to the cells collection.
-     * @param index Number that specifies where to insert the cell in the tr. The default value is -1, which appends the new cell to the end of the cells collection.
+     * The **`insertCell()`** method of the HTMLTableRowElement interface inserts a new cell (td) into a table row (tr) and returns a reference to the cell.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableRowElement/insertCell)
      */

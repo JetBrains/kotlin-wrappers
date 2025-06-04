@@ -18,6 +18,8 @@ open external class VideoDecoder(
     init: VideoDecoderInit,
 ) : EventTarget {
     /**
+     * The **`decodeQueueSize`** read-only property of the VideoDecoder interface returns the number of pending decode requests in the queue.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoDecoder/decodeQueueSize)
      */
     val decodeQueueSize: Int
@@ -28,26 +30,36 @@ open external class VideoDecoder(
     var ondequeue: EventHandler<Event, VideoDecoder, VideoDecoder>?
 
     /**
+     * The **`state`** property of the VideoDecoder interface returns the current state of the underlying codec.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoDecoder/state)
      */
     val state: CodecState
 
     /**
+     * The **`close()`** method of the VideoDecoder interface ends all pending work and releases system resources.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoDecoder/close)
      */
     fun close()
 
     /**
+     * The **`configure()`** method of the VideoDecoder interface enqueues a control message to configure the video decoder for decoding chunks.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoDecoder/configure)
      */
     fun configure(config: VideoDecoderConfig)
 
     /**
+     * The **`decode()`** method of the VideoDecoder interface enqueues a control message to decode a given chunk of video.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoDecoder/decode)
      */
     fun decode(chunk: EncodedVideoChunk)
 
     /**
+     * The **`flush()`** method of the VideoDecoder interface returns a Promise that resolves once all pending messages in the queue have been completed.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoDecoder/flush)
      */
     @JsAsync
@@ -58,6 +70,8 @@ open external class VideoDecoder(
     fun flushAsync(): Promise<Void>
 
     /**
+     * The **`reset()`** method of the VideoDecoder interface resets all states including configuration, control messages in the control message queue, and all pending callbacks.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoDecoder/reset)
      */
     fun reset()
@@ -70,6 +84,8 @@ open external class VideoDecoder(
 
     companion object {
         /**
+         * The **`isConfigSupported()`** static method of the VideoDecoder interface checks if the given config is supported (that is, if VideoDecoder objects can be successfully configured with the given config).
+         *
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoDecoder/isConfigSupported_static)
          */
         @JsAsync

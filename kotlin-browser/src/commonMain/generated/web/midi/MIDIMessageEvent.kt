@@ -22,6 +22,8 @@ open external class MIDIMessageEvent(
     init: MIDIMessageEventInit = definedExternally,
 ) : Event {
     /**
+     * The **`data`** read-only property of the MIDIMessageEvent interface returns the MIDI data bytes of a single MIDI message.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MIDIMessageEvent/data)
      */
     val data: Uint8Array<ArrayBuffer>?

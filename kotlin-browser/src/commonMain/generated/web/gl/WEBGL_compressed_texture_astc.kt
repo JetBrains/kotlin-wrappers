@@ -7,6 +7,8 @@ import js.core.JsString
 
 sealed external interface WEBGL_compressed_texture_astc {
     /**
+     * The **`WEBGL_compressed_texture_astc.getSupportedProfiles()`** method returns an array of strings containing the names of the ASTC profiles supported by the implementation.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WEBGL_compressed_texture_astc/getSupportedProfiles)
      */
     fun getSupportedProfiles(): ReadonlyArray<JsString>

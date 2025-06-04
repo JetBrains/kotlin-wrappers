@@ -15,64 +15,56 @@ import kotlin.js.definedExternally
  */
 open external class DataTransfer {
     /**
-     * Returns the kind of operation that is currently selected. If the kind of operation isn't one of those that is allowed by the effectAllowed attribute, then the operation will fail.
-     *
-     * Can be set, to change the selected operation.
-     *
-     * The possible values are "none", "copy", "link", and "move".
+     * The **`DataTransfer.dropEffect`** property controls the feedback (typically visual) the user is given during a drag and drop operation.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DataTransfer/dropEffect)
      */
     var dropEffect: DropEffect
 
     /**
-     * Returns the kinds of operations that are to be allowed.
-     *
-     * Can be set (during the dragstart event), to change the allowed operations.
-     *
-     * The possible values are "none", "copy", "copyLink", "copyMove", "link", "linkMove", "move", "all", and "uninitialized",
+     * The **`DataTransfer.effectAllowed`** property specifies the effect that is allowed for a drag operation.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DataTransfer/effectAllowed)
      */
     var effectAllowed: AllowedEffect
 
     /**
-     * Returns a FileList of the files being dragged, if any.
+     * The **`files`** read-only property of `DataTransfer` objects is a list of the files in the drag operation.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DataTransfer/files)
      */
     val files: FileList
 
     /**
-     * Returns a DataTransferItemList object, with the drag data.
+     * The read-only `items` property of the DataTransfer interface is a A DataTransferItemList object containing DataTransferItem objects representing the items being dragged in a drag operation, one list item for each object being dragged.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DataTransfer/items)
      */
     val items: DataTransferItemList
 
     /**
-     * Returns a frozen array listing the formats that were set in the dragstart event. In addition, if any files are being dragged, then one of the types will be the string "Files".
+     * The **`DataTransfer.types`** read-only property returns the available types that exist in the DataTransfer.items.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DataTransfer/types)
      */
     val types: ReadonlyArray<JsString>
 
     /**
-     * Removes the data of the specified formats. Removes all data if the argument is omitted.
+     * The **`DataTransfer.clearData()`** method removes the drag operation's drag data for the given type.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DataTransfer/clearData)
      */
     fun clearData(format: String = definedExternally)
 
     /**
-     * Returns the specified data. If there is no such data, returns the empty string.
+     * The **`DataTransfer.getData()`** method retrieves drag data (as a string) for the specified type.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DataTransfer/getData)
      */
     fun getData(format: String): String
 
     /**
-     * Adds the specified data.
+     * The **`DataTransfer.setData()`** method sets the drag operation's drag data to the specified data and type.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DataTransfer/setData)
      */
@@ -82,7 +74,7 @@ open external class DataTransfer {
     )
 
     /**
-     * Uses the given element to update the drag feedback, replacing any previously specified feedback.
+     * When a drag occurs, a translucent image is generated from the drag target (the element the HTMLElement/dragstart_event event is fired at), and follows the mouse pointer during the drag.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DataTransfer/setDragImage)
      */

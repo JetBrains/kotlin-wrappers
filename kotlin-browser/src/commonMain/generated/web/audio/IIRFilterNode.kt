@@ -15,6 +15,8 @@ open external class IIRFilterNode(
     options: IIRFilterOptions,
 ) : AudioNode {
     /**
+     * The `getFrequencyResponse()` method of the IIRFilterNode interface takes the current filtering algorithm's settings and calculates the frequency response for frequencies specified in a specified array of frequencies.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IIRFilterNode/getFrequencyResponse)
      */
     fun getFrequencyResponse(

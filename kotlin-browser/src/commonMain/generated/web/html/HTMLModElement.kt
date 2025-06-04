@@ -11,14 +11,14 @@ open external class HTMLModElement
 protected constructor() :
     HTMLElement {
     /**
-     * Sets or retrieves reference information about the object.
+     * The **`cite`** property of the HTMLModElement interface indicates the URL of the resource explaining the modification.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLModElement/cite)
      */
     var cite: String
 
     /**
-     * Sets or retrieves the date and time of a modification to the object.
+     * The **`dateTime`** property of the HTMLModElement interface is a string containing a machine-readable date with an optional time value.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLModElement/dateTime)
      */

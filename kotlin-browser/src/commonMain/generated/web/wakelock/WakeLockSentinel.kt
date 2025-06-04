@@ -23,16 +23,22 @@ private constructor() :
     var onrelease: EventHandler<Event, WakeLockSentinel, WakeLockSentinel>?
 
     /**
+     * The **`released`** read-only property of the WakeLockSentinel interface returns a boolean that indicates whether a WakeLockSentinel has been released.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WakeLockSentinel/released)
      */
     val released: Boolean
 
     /**
+     * The **`type`** read-only property of the WakeLockSentinel interface returns a string representation of the currently acquired WakeLockSentinel type.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WakeLockSentinel/type)
      */
     val type: WakeLockType
 
     /**
+     * The **`release()`** method of the WakeLockSentinel interface releases the WakeLockSentinel, returning a Promise that is resolved once the sentinel has been successfully released.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WakeLockSentinel/release)
      */
     @JsAsync

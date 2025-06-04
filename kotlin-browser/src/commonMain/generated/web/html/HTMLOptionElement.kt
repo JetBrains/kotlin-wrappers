@@ -11,54 +11,56 @@ open external class HTMLOptionElement
 protected constructor() :
     HTMLElement {
     /**
-     * Sets or retrieves the status of an option.
+     * The **`defaultSelected`** property of the HTMLOptionElement interface specifies the default selected state of the element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOptionElement/defaultSelected)
      */
     var defaultSelected: Boolean
 
     /**
+     * The **`disabled`** property of the HTMLOptionElement is a boolean value that indicates whether the option element is unavailable to be selected.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOptionElement/disabled)
      */
     var disabled: Boolean
 
     /**
-     * Retrieves a reference to the form that the object is embedded in.
+     * The **`form`** read-only property of the HTMLOptionElement interface returns an HTMLFormElement object that owns the HTMLSelectElement associated with this option, or `null` if this option is not associated with a select owned by a form.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOptionElement/form)
      */
     val form: HTMLFormElement?
 
     /**
-     * Sets or retrieves the ordinal position of an option in a list box.
+     * The read-only **`index`** property of the HTMLOptionElement interface specifies the 0-based index of the element; that is, the position of the option within the list of options it belongs to, in tree-order, as an integer.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOptionElement/index)
      */
     val index: Int
 
     /**
-     * Sets or retrieves a value that you can use to implement your own label functionality for the object.
+     * The **`label`** property of the HTMLOptionElement represents the text displayed for an option in a select element or as part of a list of suggestions in a datalist element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOptionElement/label)
      */
     var label: String
 
     /**
-     * Sets or retrieves whether the option in the list box is the default item.
+     * The **`selected`** property of the HTMLOptionElement interface specifies the current selectedness of the element; that is, whether the option is selected or not.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOptionElement/selected)
      */
     var selected: Boolean
 
     /**
-     * Sets or retrieves the text string specified by the option tag.
+     * The **`text`** property of the HTMLOptionElement represents the text inside the option element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOptionElement/text)
      */
     var text: String
 
     /**
-     * Sets or retrieves the value which is returned to the server when the form control is submitted.
+     * The **`value`** property of the HTMLOptionElement interface represents the value of the option element as a string, or the empty string if no value is set.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOptionElement/value)
      */

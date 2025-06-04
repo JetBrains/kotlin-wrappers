@@ -14,28 +14,36 @@ open external class HTMLTemplateElement
 protected constructor() :
     HTMLElement {
     /**
-     * Returns the template contents (a DocumentFragment).
+     * The **`HTMLTemplateElement.content`** property returns a `<template>` element's template contents (a A DocumentFragment.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTemplateElement/content)
      */
     val content: DocumentFragment
 
     /**
+     * The **`shadowRootClonable`** property reflects the value of the `shadowrootclonable` attribute of the associated `<template>` element.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTemplateElement/shadowRootClonable)
      */
     var shadowRootClonable: Boolean
 
     /**
+     * The **`shadowRootDelegatesFocus`** property of the HTMLTemplateElement interface reflects the value of the `shadowrootdelegatesfocus` attribute of the associated `<template>` element.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTemplateElement/shadowRootDelegatesFocus)
      */
     var shadowRootDelegatesFocus: Boolean
 
     /**
+     * The **`shadowRootMode`** property of the HTMLTemplateElement interface reflects the value of the `shadowrootmode` attribute of the associated `<template>` element.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTemplateElement/shadowRootMode)
      */
     var shadowRootMode: String
 
     /**
+     * The **`shadowRootSerializable`** property reflects the value of the `shadowrootserializable` attribute of the associated `<template>` element.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTemplateElement/shadowRootSerializable)
      */
     var shadowRootSerializable: Boolean

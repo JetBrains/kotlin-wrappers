@@ -18,6 +18,8 @@ open external class ReadableStreamBYOBReader(
     stream: ReadableStream<Uint8Array<ArrayBuffer>>,
 ) : ReadableStreamGenericReader {
     /**
+     * The **`read()`** method of the ReadableStreamBYOBReader interface is used to read data into a view on a user-supplied buffer from an associated readable byte stream.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStreamBYOBReader/read)
      */
     @JsAsync
@@ -28,6 +30,8 @@ open external class ReadableStreamBYOBReader(
     fun <T : ArrayBufferView<*>> readAsync(view: T): Promise<ReadableStreamReadResult<T>>
 
     /**
+     * The **`releaseLock()`** method of the ReadableStreamBYOBReader interface releases the reader's lock on the stream.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStreamBYOBReader/releaseLock)
      */
     fun releaseLock()

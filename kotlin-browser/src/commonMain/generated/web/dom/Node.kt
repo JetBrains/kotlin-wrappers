@@ -15,140 +15,148 @@ open external class Node
 private constructor() :
     EventTarget {
     /**
-     * Returns node's node document's document base URL.
+     * The read-only **`baseURI`** property of the Node interface returns the absolute base URL of the document containing the node.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Node/baseURI)
      */
     val baseURI: String
 
     /**
-     * Returns the children.
+     * The read-only **`childNodes`** property of the Node interface returns a live the first child node is assigned index `0`.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Node/childNodes)
      */
     val childNodes: NodeList<ChildNode>
 
     /**
-     * Returns the first child.
+     * The read-only **`firstChild`** property of the Node interface returns the node's first child in the tree, or `null` if the node has no children.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Node/firstChild)
      */
     val firstChild: ChildNode?
 
     /**
-     * Returns true if node is connected and false otherwise.
+     * The read-only **`isConnected`** property of the Node interface returns a boolean indicating whether the node is connected (directly or indirectly) to a Document object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Node/isConnected)
      */
     val isConnected: Boolean
 
     /**
-     * Returns the last child.
+     * The read-only **`lastChild`** property of the Node interface returns the last child of the node, or `null` if there are no child nodes.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Node/lastChild)
      */
     val lastChild: ChildNode?
 
     /**
-     * Returns the next sibling.
+     * The read-only **`nextSibling`** property of the Node interface returns the node immediately following the specified one in their parent's Node.childNodes, or returns `null` if the specified node is the last child in the parent element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Node/nextSibling)
      */
     val nextSibling: ChildNode?
 
     /**
-     * Returns a string appropriate for the type of node.
+     * The read-only **`nodeName`** property of Node returns the name of the current node as a string.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Node/nodeName)
      */
     val nodeName: String
 
     /**
-     * Returns the type of node.
+     * The read-only **`nodeType`** property of a Node interface is an integer that identifies what the node is.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Node/nodeType)
      */
     val nodeType: NodeType
 
     /**
+     * The **`nodeValue`** property of the Node interface returns or sets the value of the current node.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Node/nodeValue)
      */
     var nodeValue: String?
 
     /**
-     * Returns the node document. Returns null for documents.
+     * The read-only **`ownerDocument`** property of the Node interface returns the top-level document object of the node.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Node/ownerDocument)
      */
     open val ownerDocument: Document?
 
     /**
-     * Returns the parent element.
+     * The read-only **`parentElement`** property of Node interface returns the DOM node's parent Element, or `null` if the node either has no parent, or its parent isn't a DOM Element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Node/parentElement)
      */
     val parentElement: HTMLElement?
 
     /**
-     * Returns the parent.
+     * The read-only **`parentNode`** property of the Node interface returns the parent of the specified node in the DOM tree.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Node/parentNode)
      */
     val parentNode: ParentNode?
 
     /**
-     * Returns the previous sibling.
+     * The read-only **`previousSibling`** property of the Node interface returns the node immediately preceding the specified one in its parent's or `null` if the specified node is the first in that list.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Node/previousSibling)
      */
     val previousSibling: ChildNode?
 
     /**
+     * The **`textContent`** property of the Node interface represents the text content of the node and its descendants.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Node/textContent)
      */
     var textContent: String?
 
     /**
+     * The **`appendChild()`** method of the Node interface adds a node to the end of the list of children of a specified parent node.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Node/appendChild)
      */
     fun <T : Node> appendChild(node: T): T
 
     /**
-     * Returns a copy of node. If deep is true, the copy also includes the node's descendants.
+     * The **`cloneNode()`** method of the Node interface returns a duplicate of the node on which this method was called.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Node/cloneNode)
      */
     fun cloneNode(subtree: Boolean = definedExternally): Node
 
     /**
-     * Returns a bitmask indicating the position of other relative to node.
+     * The **`compareDocumentPosition()`** method of the Node interface reports the position of its argument node relative to the node on which it is called.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Node/compareDocumentPosition)
      */
     fun compareDocumentPosition(other: Node): Short
 
     /**
-     * Returns true if other is an inclusive descendant of node, and false otherwise.
+     * The **`contains()`** method of the Node interface returns a boolean value indicating whether a node is a descendant of a given node, that is the node itself, one of its direct children (Node.childNodes), one of the children's direct children, and so on.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Node/contains)
      */
     fun contains(other: Node?): Boolean
 
     /**
-     * Returns node's root.
+     * The **`getRootNode()`** method of the Node interface returns the context object's root, which optionally includes the shadow root if it is available.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Node/getRootNode)
      */
     fun getRootNode(options: GetRootNodeOptions = definedExternally): Node
 
     /**
-     * Returns whether node has children.
+     * The **`hasChildNodes()`** method of the Node interface returns a boolean value indicating whether the given Node has child nodes or not.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Node/hasChildNodes)
      */
     fun hasChildNodes(): Boolean
 
     /**
+     * The **`insertBefore()`** method of the Node interface inserts a node before a _reference node_ as a child of a specified _parent node_.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Node/insertBefore)
      */
     fun <T : Node> insertBefore(
@@ -157,45 +165,57 @@ private constructor() :
     ): T
 
     /**
+     * The **`isDefaultNamespace()`** method of the Node interface accepts a namespace URI as an argument.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Node/isDefaultNamespace)
      */
     fun isDefaultNamespace(namespace: String?): Boolean
 
     /**
-     * Returns whether node and otherNode have the same properties.
+     * The **`isEqualNode()`** method of the Node interface tests whether two nodes are equal.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Node/isEqualNode)
      */
     fun isEqualNode(otherNode: Node?): Boolean
 
     /**
+     * The **`isSameNode()`** method of the Node interface is a legacy alias the for the `===` strict equality operator.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Node/isSameNode)
      */
     fun isSameNode(otherNode: Node?): Boolean
 
     /**
+     * The **`lookupNamespaceURI()`** method of the Node interface takes a prefix as parameter and returns the namespace URI associated with it on the given node if found (and `null` if not).
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Node/lookupNamespaceURI)
      */
     fun lookupNamespaceURI(prefix: String?): String?
 
     /**
+     * The **`lookupPrefix()`** method of the Node interface returns a string containing the prefix for a given namespace URI, if present, and `null` if not.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Node/lookupPrefix)
      */
     fun lookupPrefix(namespace: String?): String?
 
     /**
-     * Removes empty exclusive Text nodes and concatenates the data of remaining contiguous exclusive Text nodes into the first of their nodes.
+     * The **`normalize()`** method of the Node interface puts the specified node and all of its sub-tree into a _normalized_ form.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Node/normalize)
      */
     fun normalize()
 
     /**
+     * The **`removeChild()`** method of the Node interface removes a child node from the DOM and returns the removed node.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Node/removeChild)
      */
     fun <T : Node> removeChild(child: T): T
 
     /**
+     * The **`replaceChild()`** method of the Node interface replaces a child node within the given (parent) node.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Node/replaceChild)
      */
     fun <T : Node> replaceChild(

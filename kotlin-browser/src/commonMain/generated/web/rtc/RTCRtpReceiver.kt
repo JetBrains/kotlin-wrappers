@@ -17,36 +17,50 @@ import kotlin.js.JsName
 external class RTCRtpReceiver
 private constructor() {
     /**
+     * The **`jitterBufferTarget`** property of the RTCRtpReceiver interface is a DOMHighResTimeStamp that indicates the application's preferred duration, in milliseconds, for which the jitter buffer should hold media before playing it out.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCRtpReceiver/jitterBufferTarget)
      */
     var jitterBufferTarget: DOMHighResTimeStamp?
 
     /**
+     * The **`track`** read-only property of the associated with the current RTCRtpReceiver instance.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCRtpReceiver/track)
      */
     val track: MediaStreamTrack
 
     /**
+     * The **`transform`** property of the RTCRtpReceiver object is used to insert a transform stream (TransformStream) running in a worker thread into the receiver pipeline.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCRtpReceiver/transform)
      */
     var transform: RTCRtpTransform?
 
     /**
+     * The read-only **`transport`** property of an used to interact with the underlying transport over which the receiver is exchanging Real-time Transport Control Protocol (RTCP) packets.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCRtpReceiver/transport)
      */
     val transport: RTCDtlsTransport?
 
     /**
+     * The **`getContributingSources()`** method of the RTCRtpReceiver interface returns an array of objects, each corresponding to one CSRC (contributing source) identifier received by the current `RTCRtpReceiver` in the last ten seconds.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCRtpReceiver/getContributingSources)
      */
     fun getContributingSources(): ReadonlyArray<RTCRtpContributingSource>
 
     /**
+     * The **`getParameters()`** method of the RTCRtpReceiver interface returns an object describing the current configuration for how the receiver's RTCRtpReceiver.track is decoded.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCRtpReceiver/getParameters)
      */
     fun getParameters(): RTCRtpReceiveParameters
 
     /**
+     * The RTCRtpReceiver method **`getStats()`** asynchronously requests an RTCStatsReport object which provides statistics about incoming traffic on the owning RTCPeerConnection, returning a Promise whose fulfillment handler will be called once the results are available.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCRtpReceiver/getStats)
      */
     @JsAsync
@@ -57,12 +71,16 @@ private constructor() {
     fun getStatsAsync(): Promise<RTCStatsReport>
 
     /**
+     * The **`getSynchronizationSources()`** method of the RTCRtpReceiver interface returns an array of objects, each corresponding to one SSRC (synchronization source) identifier received by the current `RTCRtpReceiver` in the last ten seconds.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCRtpReceiver/getSynchronizationSources)
      */
     fun getSynchronizationSources(): ReadonlyArray<RTCRtpSynchronizationSource>
 
     companion object {
         /**
+         * The _static method_ **`RTCRtpReceiver.getCapabilities()`** returns an object describing the codec and header extension capabilities supported by RTCRtpReceiver objects on the current device.
+         *
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCRtpReceiver/getCapabilities_static)
          */
         fun getCapabilities(kind: String): RTCRtpCapabilities?

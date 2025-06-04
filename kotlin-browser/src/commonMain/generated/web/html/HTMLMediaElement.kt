@@ -28,91 +28,98 @@ open external class HTMLMediaElement
 private constructor() :
     HTMLElement {
     /**
-     * Gets or sets a value that indicates whether to start playing the media automatically.
+     * The **`HTMLMediaElement.autoplay`** property reflects the `autoplay` HTML attribute, indicating whether playback should automatically begin as soon as enough media is available to do so without interruption.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/autoplay)
      */
     var autoplay: Boolean
 
     /**
-     * Gets a collection of buffered time ranges.
+     * The **`buffered`** read-only property of HTMLMediaElement objects returns a new static normalized `TimeRanges` object that represents the ranges of the media resource, if any, that the user agent has buffered at the moment the `buffered` property is accessed.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/buffered)
      */
     val buffered: TimeRanges
 
     /**
-     * Gets or sets a flag that indicates whether the client provides a set of controls for the media (in case the developer does not include controls for the player).
+     * The **`HTMLMediaElement.controls`** property reflects the `controls` HTML attribute, which controls whether user interface controls for playing the media item will be displayed.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/controls)
      */
     var controls: Boolean
 
     /**
+     * The **`HTMLMediaElement.crossOrigin`** property is the CORS setting for this media element.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/crossOrigin)
      */
     var crossOrigin: CrossOrigin?
 
     /**
-     * Gets the address or URL of the current media resource that is selected by IHTMLMediaElement.
+     * The **`HTMLMediaElement.currentSrc`** property contains the absolute URL of the chosen media resource.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/currentSrc)
      */
     val currentSrc: String
 
     /**
-     * Gets or sets the current playback position, in seconds.
+     * The HTMLMediaElement interface's **`currentTime`** property specifies the current playback time in seconds.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/currentTime)
      */
     var currentTime: Double
 
     /**
+     * The **`HTMLMediaElement.defaultMuted`** property reflects the `muted` HTML attribute, which indicates whether the media element's audio output should be muted by default.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/defaultMuted)
      */
     var defaultMuted: Boolean
 
     /**
-     * Gets or sets the default playback rate when the user is not using fast forward or reverse for a video or audio resource.
+     * The **`HTMLMediaElement.defaultPlaybackRate`** property indicates the default playback rate for the media.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/defaultPlaybackRate)
      */
     var defaultPlaybackRate: Double
 
     /**
+     * The **`disableRemotePlayback`** property of the HTMLMediaElement interface determines whether the media element is allowed to have a remote playback UI.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/disableRemotePlayback)
      */
     var disableRemotePlayback: Boolean
 
     /**
-     * Returns the duration in seconds of the current media resource. A NaN value is returned if duration is not available, or Infinity if the media resource is streaming.
+     * The _read-only_ HTMLMediaElement property **`duration`** indicates the length of the element's media in seconds.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/duration)
      */
     val duration: Double
 
     /**
-     * Gets information about whether the playback has ended or not.
+     * The **`HTMLMediaElement.ended`** property indicates whether the media element has ended playback.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/ended)
      */
     val ended: Boolean
 
     /**
-     * Returns an object representing the current error state of the audio or video element.
+     * The **`HTMLMediaElement.error`** property is the there has not been an error.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/error)
      */
     val error: MediaError?
 
     /**
-     * Gets or sets a flag to specify whether playback should restart after it completes.
+     * The **`HTMLMediaElement.loop`** property reflects the `loop` HTML attribute, which controls whether the media element should start over when it reaches the end.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/loop)
      */
     var loop: Boolean
 
     /**
+     * The read-only **`HTMLMediaElement.mediaKeys`** property returns a MediaKeys object, that is a set of keys that the element can use for decryption of media data during playback.
      * Available only in secure contexts.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/mediaKeys)
@@ -120,14 +127,14 @@ private constructor() :
     val mediaKeys: MediaKeys?
 
     /**
-     * Gets or sets a flag that indicates whether the audio (either audio or the audio track on video media) is muted.
+     * The **`HTMLMediaElement.muted`** property indicates whether the media element is muted.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/muted)
      */
     var muted: Boolean
 
     /**
-     * Gets the current network activity for the element.
+     * The **`HTMLMediaElement.networkState`** property indicates the current state of the fetching of media over the network.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/networkState)
      */
@@ -144,63 +151,70 @@ private constructor() :
     var onwaitingforkey: EventHandler<Event, HTMLMediaElement, HTMLMediaElement>?
 
     /**
-     * Gets a flag that specifies whether playback is paused.
+     * The read-only **`HTMLMediaElement.paused`** property tells whether the media element is paused.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/paused)
      */
     val paused: Boolean
 
     /**
-     * Gets or sets the current rate of speed for the media resource to play. This speed is expressed as a multiple of the normal speed of the media resource.
+     * The **`HTMLMediaElement.playbackRate`** property sets the rate at which the media is being played back.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/playbackRate)
      */
     var playbackRate: Double
 
     /**
-     * Gets TimeRanges for the current media resource that has been played.
+     * The **`played`** read-only property of the HTMLMediaElement interface indicates the time ranges the resource, an audio or video media file, has played.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/played)
      */
     val played: TimeRanges
 
     /**
-     * Gets or sets a value indicating what data should be preloaded, if any.
+     * The **`preload`** property of the HTMLMediaElement interface is a string that provides a hint to the browser about what the author thinks will lead to the best user experience.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/preload)
      */
     var preload: Preload
 
     /**
+     * The **`HTMLMediaElement.preservesPitch`** property determines whether or not the browser should adjust the pitch of the audio to compensate for changes to the playback rate made by setting HTMLMediaElement.playbackRate.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/preservesPitch)
      */
     var preservesPitch: Boolean
 
     /**
+     * The **`HTMLMediaElement.readyState`** property indicates the readiness state of the media.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/readyState)
      */
     val readyState: ReadyState
 
     /**
+     * The **`remote`** read-only property of the HTMLMediaElement interface returns the RemotePlayback object associated with the media element.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/remote)
      */
     val remote: RemotePlayback
 
     /**
-     * Returns a TimeRanges object that represents the ranges of the current media resource that can be seeked.
+     * The **`seekable`** read-only property of HTMLMediaElement objects returns a new static normalized `TimeRanges` object that represents the ranges of the media resource, if any, that the user agent is able to seek to at the time `seekable` property is accessed.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/seekable)
      */
     val seekable: TimeRanges
 
     /**
-     * Gets a flag that indicates whether the client is currently moving to a new playback position in the media resource.
+     * The **`seeking`** read-only property of the HTMLMediaElement interface is a Boolean indicating whether the resource, the audio or video, is in the process of seeking to a new position.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/seeking)
      */
     val seeking: Boolean
 
     /**
+     * The **`sinkId`** read-only property of the HTMLMediaElement interface returns a string that is the unique ID of the device to be used for playing audio output.
      * Available only in secure contexts.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/sinkId)
@@ -208,30 +222,36 @@ private constructor() :
     val sinkId: String
 
     /**
-     * The address or URL of the a media resource that is to be considered.
+     * The **`HTMLMediaElement.src`** property reflects the value of the HTML media element's `src` attribute, which indicates the URL of a media resource to use in the element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/src)
      */
     var src: String
 
     /**
+     * The **`srcObject`** property of the the source of the media associated with the HTMLMediaElement, or `null` if not assigned.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/srcObject)
      */
     var srcObject: MediaProvider?
 
     /**
+     * The read-only **`textTracks`** property on HTMLMediaElement objects returns a objects representing the media element's text tracks, in the same order as in the list of text tracks.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/textTracks)
      */
     val textTracks: TextTrackList
 
     /**
-     * Gets or sets the volume level for audio portions of the media element.
+     * The **`HTMLMediaElement.volume`** property sets the volume at which the media will be played.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/volume)
      */
     var volume: Double
 
     /**
+     * The **`addTextTrack()`** method of the HTMLMediaElement interface creates a new TextTrack object and adds it to the media element.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/addTextTrack)
      */
     fun addTextTrack(
@@ -241,33 +261,35 @@ private constructor() :
     ): TextTrack
 
     /**
-     * Returns a string that specifies whether the client can play a given media resource type.
+     * The HTMLMediaElement method **`canPlayType()`** reports how likely it is that the current browser will be able to play media of a given MIME type.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/canPlayType)
      */
     fun canPlayType(type: String): CanPlayTypeResult
 
     /**
+     * The **`HTMLMediaElement.fastSeek()`** method quickly seeks the media to the new time with precision tradeoff.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/fastSeek)
      */
     fun fastSeek(time: Double)
 
     /**
-     * Resets the audio or video object and loads a new media resource.
+     * The HTMLMediaElement method **`load()`** resets the media element to its initial state and begins the process of selecting a media source and loading the media in preparation for playback to begin at the beginning.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/load)
      */
     fun load()
 
     /**
-     * Pauses the current playback and sets paused to TRUE.
+     * The **`HTMLMediaElement.pause()`** method will pause playback of the media, if the media is already in a paused state this method will have no effect.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/pause)
      */
     fun pause()
 
     /**
-     * Loads and starts playback of a media resource.
+     * The HTMLMediaElement **`play()`** method attempts to begin playback of the media.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/play)
      */
@@ -279,6 +301,7 @@ private constructor() :
     fun playAsync(): Promise<Void>
 
     /**
+     * The **`setMediaKeys()`** method of the HTMLMediaElement interface sets the MediaKeys that will be used to decrypt media during playback.
      * Available only in secure contexts.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/setMediaKeys)
@@ -291,6 +314,7 @@ private constructor() :
     fun setMediaKeysAsync(mediaKeys: MediaKeys?): Promise<Void>
 
     /**
+     * The **`setSinkId()`** method of the HTMLMediaElement interface sets the ID of the audio device to use for output and returns a Promise.
      * Available only in secure contexts.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/setSinkId)

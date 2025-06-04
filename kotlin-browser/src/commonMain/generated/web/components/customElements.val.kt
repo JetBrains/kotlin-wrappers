@@ -3,7 +3,7 @@
 package web.components
 
 /**
- * Defines a new custom element, mapping the given name to the given constructor as an autonomous custom element.
+ * The **`customElements`** read-only property of the Window interface returns a reference to the CustomElementRegistry object, which can be used to register new custom elements and get information about previously registered custom elements.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/customElements)
  */

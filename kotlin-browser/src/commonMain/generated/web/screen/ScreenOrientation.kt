@@ -13,6 +13,8 @@ external class ScreenOrientation
 private constructor() :
     EventTarget {
     /**
+     * The **`angle`** read-only property of the angle.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ScreenOrientation/angle)
      */
     val angle: Short
@@ -23,11 +25,15 @@ private constructor() :
     var onchange: EventHandler<Event, ScreenOrientation, ScreenOrientation>?
 
     /**
+     * The **`type`** read-only property of the type, one of `portrait-primary`, `portrait-secondary`, `landscape-primary`, or `landscape-secondary`.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ScreenOrientation/type)
      */
     val type: OrientationType
 
     /**
+     * The **`unlock()`** method of the document from its default orientation.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ScreenOrientation/unlock)
      */
     fun unlock()

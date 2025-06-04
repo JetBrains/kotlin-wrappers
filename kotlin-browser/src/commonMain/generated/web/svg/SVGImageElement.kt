@@ -16,31 +16,43 @@ private constructor() :
     SVGURIReference,
     HTMLOrSVGImageElement {
     /**
+     * The **`crossOrigin`** property of the SVGImageElement interface is a string which specifies the Cross-Origin Resource Sharing (CORS) setting to use when retrieving the image.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGImageElement/crossOrigin)
      */
     var crossOrigin: CrossOrigin?
 
     /**
+     * The **`height`** read-only property of the corresponding to the height attribute of the given An SVGAnimatedLength.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGImageElement/height)
      */
     val height: SVGAnimatedLength
 
     /**
+     * The **`preserveAspectRatio`** read-only property of the SVGImageElement interface returns an element.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGImageElement/preserveAspectRatio)
      */
     val preserveAspectRatio: SVGAnimatedPreserveAspectRatio
 
     /**
+     * The **`width`** read-only property of the corresponding to the width attribute of the given image element.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGImageElement/width)
      */
     val width: SVGAnimatedLength
 
     /**
+     * The **`x`** read-only property of the corresponding to the x attribute of the given image element.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGImageElement/x)
      */
     val x: SVGAnimatedLength
 
     /**
+     * The **`y`** read-only property of the corresponding to the y attribute of the given image element.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGImageElement/y)
      */
     val y: SVGAnimatedLength

@@ -14,6 +14,8 @@ external class RadioNodeList
 protected /* private */ constructor() :
     NodeList<HTMLInputElement> {
     /**
+     * If the underlying element collection contains radio buttons, the **`RadioNodeList.value`** property represents the checked radio button.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RadioNodeList/value)
      */
     var value: String

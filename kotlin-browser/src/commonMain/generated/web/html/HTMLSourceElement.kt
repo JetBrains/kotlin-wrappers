@@ -16,42 +16,50 @@ open external class HTMLSourceElement
 protected constructor() :
     HTMLElement {
     /**
+     * The **`height`** property of the HTMLSourceElement interface is a non-negative number indicating the height of the image resource in CSS pixels.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSourceElement/height)
      */
     var height: Int
 
     /**
-     * Gets or sets the intended media type of the media source.
+     * The **`media`** property of the HTMLSourceElement interface is a string representing the intended destination medium for the resource.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSourceElement/media)
      */
     var media: MediaQuery
 
     /**
+     * The **`sizes`** property of the HTMLSourceElement interface is a string representing a list of one or more sizes, representing sizes between breakpoints, to which the resource applies.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSourceElement/sizes)
      */
     var sizes: String
 
     /**
-     * The address or URL of the a media resource that is to be considered.
+     * The **`src`** property of the HTMLSourceElement interface is a string indicating the URL of a media resource to use as the source for the element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSourceElement/src)
      */
     var src: String
 
     /**
+     * The **`srcset`** property of the HTMLSourceElement interface is a string containing a comma-separated list of candidate images.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSourceElement/srcset)
      */
     var srcset: String
 
     /**
-     * Gets or sets the MIME type of a media resource.
+     * The **`type`** property of the HTMLSourceElement interface is a string representing the MIME type of the media resource.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSourceElement/type)
      */
     var type: String
 
     /**
+     * The **`width`** property of the HTMLSourceElement interface is a non-negative number indicating the width of the image resource in CSS pixels.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSourceElement/width)
      */
     var width: Int

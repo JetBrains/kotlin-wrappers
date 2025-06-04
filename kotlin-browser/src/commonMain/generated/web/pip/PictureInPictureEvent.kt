@@ -18,6 +18,8 @@ open external class PictureInPictureEvent(
     init: PictureInPictureEventInit,
 ) : Event {
     /**
+     * The read-only **`pictureInPictureWindow`** property of the PictureInPictureEvent interface returns the PictureInPictureWindow the event relates to.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PictureInPictureEvent/pictureInPictureWindow)
      */
     val pictureInPictureWindow: PictureInPictureWindow

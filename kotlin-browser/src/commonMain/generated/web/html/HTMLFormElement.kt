@@ -30,118 +30,126 @@ protected constructor() :
     ArrayLike<Element>,
     JsIterable<Element> {
     /**
-     * Sets or retrieves a list of character encodings for input data that must be accepted by the server processing the form.
+     * The **`HTMLFormElement.acceptCharset`** property represents the character encoding for the given form element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFormElement/acceptCharset)
      */
     var acceptCharset: String
 
     /**
-     * Sets or retrieves the URL to which the form content is sent for processing.
+     * The **`HTMLFormElement.action`** property represents the action of the form element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFormElement/action)
      */
     var action: String
 
     /**
-     * Specifies whether autocomplete is applied to an editable text field.
+     * The **`autocomplete`** property of the HTMLFormElement interface indicates whether the value of the form's controls can be automatically completed by the browser.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFormElement/autocomplete)
      */
     var autocomplete: AutoFillBase
 
     /**
-     * Retrieves a collection, in source order, of all controls in a given form.
+     * The HTMLFormElement property **`elements`** returns an the form element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFormElement/elements)
      */
     val elements: HTMLFormControlsCollection
 
     /**
-     * Sets or retrieves the MIME encoding for the form.
+     * The **`HTMLFormElement.encoding`** property is an alternative name for the HTMLFormElement.enctype element on the DOM HTMLFormElement object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFormElement/encoding)
      */
     var encoding: String
 
     /**
-     * Sets or retrieves the encoding type for the form.
+     * The **`HTMLFormElement.enctype`** property is the MIME_type of content that is used to submit the form to the server.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFormElement/enctype)
      */
     var enctype: FormEncType
 
     /**
-     * Sets or retrieves the number of objects in a collection.
+     * The **`HTMLFormElement.length`** read-only property returns the number of controls in the form element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFormElement/length)
      */
     override val length: Int
 
     /**
-     * Sets or retrieves how to send the form data to the server.
+     * The **`HTMLFormElement.method`** property represents the Unless explicitly specified, the default method is 'get'.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFormElement/method)
      */
     var method: FormMethod
 
     /**
-     * Sets or retrieves the name of the object.
+     * The **`HTMLFormElement.name`** property represents the name of the current form element as a string.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFormElement/name)
      */
     var name: String
 
     /**
-     * Designates a form that is not validated when submitted.
+     * The **`noValidate`** property of the HTMLFormElement interface is a boolean value indicating if the form will bypass constraint validation when submitted.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFormElement/noValidate)
      */
     var noValidate: Boolean
 
     /**
+     * The **`rel`** property of the HTMLFormElement interface reflects the `rel` attribute.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFormElement/rel)
      */
     var rel: String
 
     /**
+     * The **`relList`** read-only property of the HTMLFormElement interface reflects the `rel` attribute.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFormElement/relList)
      */
     val relList: DOMTokenList<JsString>
 
     /**
-     * Sets or retrieves the window or frame at which to target content.
+     * The **`target`** property of the HTMLFormElement interface represents the target of the form's action (i.e., the frame in which to render its output).
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFormElement/target)
      */
     var target: WindowTarget
 
     /**
-     * Returns whether a form will validate when it is submitted, without having to submit it.
+     * The **`checkValidity()`** method of the HTMLFormElement interface returns a boolean value which indicates if all associated controls meet any constraint validation rules applied to them.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFormElement/checkValidity)
      */
     fun checkValidity(): Boolean
 
     /**
+     * The **`reportValidity()`** method of the HTMLFormElement interface performs the same validity checking steps as the HTMLFormElement.checkValidity method.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFormElement/reportValidity)
      */
     fun reportValidity(): Boolean
 
     /**
+     * The HTMLFormElement method **`requestSubmit()`** requests that the form be submitted using a specific submit button.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFormElement/requestSubmit)
      */
     fun requestSubmit(submitter: HTMLElement? = definedExternally)
 
     /**
-     * Fires when the user resets a form.
+     * The **`HTMLFormElement.reset()`** method restores a form element's default values.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFormElement/reset)
      */
     fun reset()
 
     /**
-     * Fires when a FORM is about to be submitted.
+     * The **`HTMLFormElement.submit()`** method submits a given This method is similar, but not identical to, activating a form's submit - No HTMLFormElement/submit_event event is raised.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFormElement/submit)
      */

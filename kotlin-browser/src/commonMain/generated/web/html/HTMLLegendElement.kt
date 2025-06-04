@@ -11,7 +11,7 @@ open external class HTMLLegendElement
 protected constructor() :
     HTMLElement {
     /**
-     * Retrieves a reference to the form that the object is embedded in.
+     * The **`form`** read-only property of the HTMLLegendElement interface returns an HTMLFormElement object that owns the HTMLFieldSetElement associated with this legend, or `null` if this legend is not associated with a fieldset owned by a form.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLLegendElement/form)
      */

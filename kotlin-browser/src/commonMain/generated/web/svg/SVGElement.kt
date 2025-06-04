@@ -28,11 +28,15 @@ private constructor() :
     GlobalEventHandlers,
     HTMLOrSVGElement {
     /**
+     * The **`ownerSVGElement`** property of the SVGElement interface reflects the nearest ancestor svg element.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGElement/ownerSVGElement)
      */
     val ownerSVGElement: SVGSVGElement?
 
     /**
+     * The **`viewportElement`** property of the SVGElement interface represents the `SVGElement` which established the current viewport.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGElement/viewportElement)
      */
     val viewportElement: SVGElement?

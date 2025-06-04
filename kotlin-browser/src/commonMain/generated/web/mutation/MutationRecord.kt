@@ -13,63 +13,63 @@ import web.dom.NodeList
 external class MutationRecord
 private constructor() {
     /**
-     * Return the nodes added and removed respectively.
+     * The MutationRecord read-only property **`addedNodes`** is a NodeList of nodes added to a target node by a mutation observed with a MutationObserver.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MutationRecord/addedNodes)
      */
     val addedNodes: NodeList<*>
 
     /**
-     * Returns the local name of the changed attribute, and null otherwise.
+     * The MutationRecord read-only property **`attributeName`** contains the name of a changed attribute belonging to a node that is observed by a MutationObserver.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MutationRecord/attributeName)
      */
     val attributeName: String?
 
     /**
-     * Returns the namespace of the changed attribute, and null otherwise.
+     * The MutationRecord read-only property **`attributeNamespace`** is the namespace of the mutated attribute in the MutationRecord observed by a MutationObserver.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MutationRecord/attributeNamespace)
      */
     val attributeNamespace: String?
 
     /**
-     * Return the previous and next sibling respectively of the added or removed nodes, and null otherwise.
+     * The MutationRecord read-only property **`nextSibling`** is the next sibling of an added or removed child node of the `target` of a MutationObserver.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MutationRecord/nextSibling)
      */
     val nextSibling: Node?
 
     /**
-     * The return value depends on type. For "attributes", it is the value of the changed attribute before the change. For "characterData", it is the data of the changed node before the change. For "childList", it is null.
+     * The MutationRecord read-only property **`oldValue`** contains the character data or attribute value of an observed node before it was changed.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MutationRecord/oldValue)
      */
     val oldValue: String?
 
     /**
-     * Return the previous and next sibling respectively of the added or removed nodes, and null otherwise.
+     * The MutationRecord read-only property **`previousSibling`** is the previous sibling of an added or removed child node of the `target` of a MutationObserver.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MutationRecord/previousSibling)
      */
     val previousSibling: Node?
 
     /**
-     * Return the nodes added and removed respectively.
+     * The MutationRecord read-only property **`removedNodes`** is a NodeList of nodes removed from a target node by a mutation observed with a MutationObserver.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MutationRecord/removedNodes)
      */
     val removedNodes: NodeList<*>
 
     /**
-     * Returns the node the mutation affected, depending on the type. For "attributes", it is the element whose attribute changed. For "characterData", it is the CharacterData node. For "childList", it is the node whose children changed.
+     * The MutationRecord read-only property **`target`** is the target (i.e., the mutated/changed node) of a mutation observed with a MutationObserver.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MutationRecord/target)
      */
     val target: Node
 
     /**
-     * Returns "attributes" if it was an attribute mutation. "characterData" if it was a mutation to a CharacterData node. And "childList" if it was a mutation to the tree of nodes.
+     * The MutationRecord read-only property **`type`** is the type of the MutationRecord observed by a MutationObserver.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MutationRecord/type)
      */

@@ -12,6 +12,8 @@ import js.core.JsAny
 open external class ReportBody
 private constructor() {
     /**
+     * The **`toJSON()`** method of the ReportBody interface is a _serializer_, and returns a JSON representation of the `ReportBody` object.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReportBody/toJSON)
      */
     open fun toJSON(): JsAny

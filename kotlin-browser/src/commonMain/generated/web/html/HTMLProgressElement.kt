@@ -13,26 +13,28 @@ open external class HTMLProgressElement
 protected constructor() :
     HTMLElement {
     /**
+     * The **`HTMLProgressElement.labels`** read-only property returns a NodeList of the label elements associated with the A NodeList containing the `<label>` elements associated with the `<progress>` element.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLProgressElement/labels)
      */
     val labels: NodeList<HTMLLabelElement>
 
     /**
-     * Defines the maximum, or "done" value for a progress element.
+     * The **`max`** property of the HTMLProgressElement interface represents the upper bound of the progress element's range.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLProgressElement/max)
      */
     var max: Double
 
     /**
-     * Returns the quotient of value/max when the value attribute is set (determinate progress bar), or -1 when the value attribute is missing (indeterminate progress bar).
+     * The **`position`** read-only property of the HTMLProgressElement interface returns current progress of the progress element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLProgressElement/position)
      */
     val position: Double
 
     /**
-     * Sets or gets the current value of a progress element. The value must be a non-negative number between 0 and the max value.
+     * The **`value`** property of the HTMLProgressElement interface represents the current progress of the progress element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLProgressElement/value)
      */

@@ -15,6 +15,8 @@ external class RTCEncodedAudioFrame
 private constructor() :
     Serializable {
     /**
+     * The **`data`** property of the RTCEncodedAudioFrame interface returns a buffer containing the data for an encoded frame.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCEncodedAudioFrame/data)
      */
     var data: ArrayBuffer
@@ -25,6 +27,8 @@ private constructor() :
     val timestamp: Int53
 
     /**
+     * The **`getMetadata()`** method of the RTCEncodedAudioFrame interface returns an object containing the metadata associated with the frame.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCEncodedAudioFrame/getMetadata)
      */
     fun getMetadata(): RTCEncodedAudioFrameMetadata

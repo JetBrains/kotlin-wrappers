@@ -14,6 +14,8 @@ open external class DelayNode(
     options: DelayOptions = definedExternally,
 ) : AudioNode {
     /**
+     * The `delayTime` property of the DelayNode interface is an a-rate AudioParam representing the amount of delay to apply.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DelayNode/delayTime)
      */
     val delayTime: AudioParam

@@ -21,16 +21,22 @@ open external class File(
 ) : Blob,
     Serializable {
     /**
+     * The **`lastModified`** read-only property of the File interface provides the last modified date of the file as the number of milliseconds since the Unix epoch (January 1, 1970 at midnight).
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/File/lastModified)
      */
     val lastModified: EpochTimeStamp
 
     /**
+     * The **`name`** read-only property of the File interface returns the name of the file represented by a File object.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/File/name)
      */
     val name: String
 
     /**
+     * The **`webkitRelativePath`** read-only property of the File interface contains a string which specifies the file's path relative to the directory selected by the user in an input element with its `webkitdirectory` attribute set.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/File/webkitRelativePath)
      */
     val webkitRelativePath: String

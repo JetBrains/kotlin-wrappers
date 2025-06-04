@@ -18,6 +18,8 @@ open external class RTCDataChannelEvent(
     init: RTCDataChannelEventInit,
 ) : Event {
     /**
+     * The read-only property **`RTCDataChannelEvent.channel`** returns the RTCDataChannel associated with the event.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDataChannelEvent/channel)
      */
     val channel: RTCDataChannel

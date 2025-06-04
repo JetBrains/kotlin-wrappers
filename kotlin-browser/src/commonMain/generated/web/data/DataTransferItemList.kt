@@ -16,14 +16,14 @@ private constructor() :
     ArrayLike<DataTransferItem>,
     JsIterable<DataTransferItem> {
     /**
-     * Returns the number of items in the drag data store.
+     * The read-only **`length`** property of the the drag item list.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DataTransferItemList/length)
      */
     override val length: Int
 
     /**
-     * Adds a new entry for the given data to the drag data store. If the data is plain text then a type string has to be provided also.
+     * The **`DataTransferItemList.add()`** method creates a new list.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DataTransferItemList/add)
      */
@@ -35,14 +35,14 @@ private constructor() :
     fun add(data: File): DataTransferItem?
 
     /**
-     * Removes all the entries in the drag data store.
+     * The DataTransferItemList method **`clear()`** removes all DataTransferItem objects from the drag data items list, leaving the list empty.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DataTransferItemList/clear)
      */
     fun clear()
 
     /**
-     * Removes the indexth entry in the drag data store.
+     * The **`DataTransferItemList.remove()`** method removes the less than zero or greater than one less than the length of the list, the list will not be changed.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DataTransferItemList/remove)
      */

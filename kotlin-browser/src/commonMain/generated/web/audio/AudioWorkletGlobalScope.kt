@@ -14,21 +14,29 @@ external class AudioWorkletGlobalScope
 private constructor() :
     WorkletGlobalScope {
     /**
+     * The read-only **`currentFrame`** property of the AudioWorkletGlobalScope interface returns an integer that represents the ever-increasing current sample-frame of the audio block being processed.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioWorkletGlobalScope/currentFrame)
      */
     val currentFrame: UInt53
 
     /**
+     * The read-only **`currentTime`** property of the AudioWorkletGlobalScope interface returns a double that represents the ever-increasing context time of the audio block being processed.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioWorkletGlobalScope/currentTime)
      */
     val currentTime: Double
 
     /**
+     * The read-only **`sampleRate`** property of the AudioWorkletGlobalScope interface returns a float that represents the sample rate of the associated BaseAudioContext the worklet belongs to.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioWorkletGlobalScope/sampleRate)
      */
     val sampleRate: Float
 
     /**
+     * The **`registerProcessor`** method of the from AudioWorkletProcessor interface under a specified _name_.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioWorkletGlobalScope/registerProcessor)
      */
     fun registerProcessor(

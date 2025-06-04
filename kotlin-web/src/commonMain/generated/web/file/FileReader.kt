@@ -16,6 +16,8 @@ import kotlin.js.definedExternally
 open external class FileReader :
     EventTarget {
     /**
+     * The **`error`** read-only property of the FileReader interface returns the error that occurred while reading the file.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileReader/error)
      */
     val error: DOMException?
@@ -51,31 +53,43 @@ open external class FileReader :
     var onprogress: EventHandler<ProgressEvent, FileReader, FileReader>?
 
     /**
+     * The **`readyState`** read-only property of the FileReader interface provides the current state of the reading operation.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileReader/readyState)
      */
     val readyState: ReadyState
 
     /**
+     * The **`result`** read-only property of the FileReader interface returns the file's contents.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileReader/result)
      */
     val result: JsAny /* string | ArrayBuffer */?
 
     /**
+     * The **`abort()`** method of the FileReader interface aborts the read operation.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileReader/abort)
      */
     fun abort()
 
     /**
+     * The **`readAsArrayBuffer()`** method of the FileReader interface is used to start reading the contents of a specified Blob or File.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileReader/readAsArrayBuffer)
      */
     fun readAsArrayBuffer(blob: Blob)
 
     /**
+     * The **`readAsDataURL()`** method of the FileReader interface is used to read the contents of the specified file's data as a base64 encoded string.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileReader/readAsDataURL)
      */
     fun readAsDataURL(blob: Blob)
 
     /**
+     * The **`readAsText()`** method of the FileReader interface is used to read the contents of the specified Blob or File.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileReader/readAsText)
      */
     fun readAsText(

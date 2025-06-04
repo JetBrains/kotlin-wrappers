@@ -11,7 +11,7 @@ open external class HTMLLIElement
 protected constructor() :
     HTMLElement {
     /**
-     * Sets or retrieves the value of a list item.
+     * The **`value`** property of the HTMLLIElement interface indicates the ordinal position of the _list element_ inside a given ol.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLLIElement/value)
      */

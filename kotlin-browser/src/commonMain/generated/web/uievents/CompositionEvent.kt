@@ -18,6 +18,8 @@ open external class CompositionEvent(
     init: CompositionEventInit = definedExternally,
 ) : UIEvent {
     /**
+     * The **`data`** read-only property of the method that raised the event; its exact nature varies depending on the type of event that generated the `CompositionEvent` object.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CompositionEvent/data)
      */
     val data: String

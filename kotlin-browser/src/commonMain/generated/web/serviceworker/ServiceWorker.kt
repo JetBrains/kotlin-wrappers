@@ -28,16 +28,22 @@ private constructor() :
     var onstatechange: EventHandler<Event, ServiceWorker, ServiceWorker>?
 
     /**
+     * Returns the `ServiceWorker` serialized script URL defined as part of `ServiceWorkerRegistration`.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorker/scriptURL)
      */
     val scriptURL: String
 
     /**
+     * The **`state`** read-only property of the of the service worker.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorker/state)
      */
     val state: ServiceWorkerState
 
     /**
+     * The **`postMessage()`** method of the ServiceWorker interface sends a message to the worker.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorker/postMessage)
      */
     fun postMessage(

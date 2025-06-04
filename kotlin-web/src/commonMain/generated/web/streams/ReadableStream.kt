@@ -35,11 +35,15 @@ open external class ReadableStream<R : JsAny?>(
     )
 
     /**
+     * The **`locked`** read-only property of the ReadableStream interface returns whether or not the readable stream is locked to a reader.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStream/locked)
      */
     val locked: Boolean
 
     /**
+     * The **`cancel()`** method of the ReadableStream interface returns a Promise that resolves when the stream is canceled.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStream/cancel)
      */
     @JsAsync
@@ -50,12 +54,16 @@ open external class ReadableStream<R : JsAny?>(
     fun cancelAsync(reason: JsError? = definedExternally): Promise<Void>
 
     /**
+     * The **`getReader()`** method of the ReadableStream interface creates a reader and locks the stream to it.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStream/getReader)
      */
     fun getReader(): ReadableStreamDefaultReader<R>
     fun getReader(options: ReadableStreamGetReaderOptions = definedExternally): ReadableStreamReader
 
     /**
+     * The **`pipeThrough()`** method of the ReadableStream interface provides a chainable way of piping the current stream through a transform stream or any other writable/readable pair.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStream/pipeThrough)
      */
     fun <T : JsAny?> pipeThrough(
@@ -64,6 +72,8 @@ open external class ReadableStream<R : JsAny?>(
     ): ReadableStream<T>
 
     /**
+     * The **`pipeTo()`** method of the ReadableStream interface pipes the current `ReadableStream` to a given WritableStream and returns a Promise that fulfills when the piping process completes successfully, or rejects if any errors were encountered.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStream/pipeTo)
      */
     @JsAsync
@@ -80,6 +90,8 @@ open external class ReadableStream<R : JsAny?>(
     ): Promise<Void>
 
     /**
+     * The **`tee()`** method of the two-element array containing the two resulting branches as new ReadableStream instances.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStream/tee)
      */
     fun tee(): Tuple2<ReadableStream<R>, ReadableStream<R>>

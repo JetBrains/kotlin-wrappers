@@ -11,6 +11,8 @@ open external class SVGFEMergeNodeElement
 private constructor() :
     SVGElement {
     /**
+     * The **`in1`** read-only property of the SVGFEMergeNodeElement interface reflects the in attribute of the given feMergeNode element.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFEMergeNodeElement/in1)
      */
     val in1: SVGAnimatedString

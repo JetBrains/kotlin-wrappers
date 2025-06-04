@@ -16,36 +16,50 @@ private constructor() :
     ArrayLike<DOMPoint>,
     JsIterable<DOMPoint> {
     /**
+     * The **`length`** read-only property of the SVGPointList interface returns the number of items in the list.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGPointList/length)
      */
     override val length: Int
 
     /**
+     * The **`numberOfItems`** read-only property of the SVGPointList interface returns the number of items in the list.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGPointList/numberOfItems)
      */
     val numberOfItems: Int
 
     /**
+     * The **`appendItem()`** method of the SVGPointList interface adds a SVGPoint to the end of the list.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGPointList/appendItem)
      */
     fun appendItem(newItem: DOMPoint): DOMPoint
 
     /**
+     * The **`clear()`** method of the SVGPointList interface removes all items from the list.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGPointList/clear)
      */
     fun clear()
 
     /**
+     * The **`getItem()`** method of the SVGPointList interface gets one item from the list at the specified index.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGPointList/getItem)
      */
     fun getItem(index: Int): DOMPoint
 
     /**
+     * The **`initialize()`** method of the SVGPointList interface clears the list then adds a single new SVGPoint object to the list.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGPointList/initialize)
      */
     fun initialize(newItem: DOMPoint): DOMPoint
 
     /**
+     * The **`insertItemBefore()`** method of the SVGPointList interface inserts a SVGPoint before another item in the list.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGPointList/insertItemBefore)
      */
     fun insertItemBefore(
@@ -54,11 +68,15 @@ private constructor() :
     ): DOMPoint
 
     /**
+     * The **`removeItem()`** method of the SVGPointList interface removes a SVGPoint from the list.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGPointList/removeItem)
      */
     fun removeItem(index: Int): DOMPoint
 
     /**
+     * The **`replaceItem()`** method of the SVGPointList interface replaces a SVGPoint in the list.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGPointList/replaceItem)
      */
     fun replaceItem(

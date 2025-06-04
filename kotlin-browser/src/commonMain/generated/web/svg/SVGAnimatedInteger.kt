@@ -10,11 +10,15 @@ package web.svg
 external class SVGAnimatedInteger
 private constructor() {
     /**
+     * The **`animVal`** property of the SVGAnimatedInteger interface represents the animated value of an `<integer>`.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedInteger/animVal)
      */
     val animVal: Int
 
     /**
+     * The **`baseVal`** property of the SVGAnimatedInteger interface represents the base (non-animated) value of an animatable `<integer>`.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedInteger/baseVal)
      */
     var baseVal: Int

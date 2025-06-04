@@ -16,6 +16,8 @@ private constructor() :
     override val ownerDocument: Document
 
     /**
+     * The read-only **`target`** property of the ProcessingInstruction interface represent the application to which the `ProcessingInstruction` is targeted.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ProcessingInstruction/target)
      */
     val target: String

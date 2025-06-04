@@ -16,6 +16,8 @@ import kotlin.js.definedExternally
 external class WakeLock
 private constructor() {
     /**
+     * The **`request()`** method of the WakeLock interface returns a Promise that fulfills with a WakeLockSentinel object if the system screen wake lock is granted.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WakeLock/request)
      */
     @JsAsync

@@ -32,7 +32,7 @@ open external class Worker(
     )
 
     /**
-     * Clones message and transmits it to worker's global environment. transfer can be passed as a list of objects that are to be transferred rather than cloned.
+     * The **`postMessage()`** method of the Worker interface sends a message to the worker.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Worker/postMessage)
      */
@@ -47,7 +47,7 @@ open external class Worker(
     )
 
     /**
-     * Aborts worker's associated global environment.
+     * The **`terminate()`** method of the Worker interface immediately terminates the Worker.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Worker/terminate)
      */

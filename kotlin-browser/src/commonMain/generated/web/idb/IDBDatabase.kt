@@ -18,14 +18,14 @@ external class IDBDatabase
 private constructor() :
     EventTarget {
     /**
-     * Returns the name of the database.
+     * The **`name`** read-only property of the `IDBDatabase` interface is a string that contains the name of the connected database.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBDatabase/name)
      */
     val name: String
 
     /**
-     * Returns a list of the names of object stores in the database.
+     * The **`objectStoreNames`** read-only property of the list of the names of the object stores currently in the connected database.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBDatabase/objectStoreNames)
      */
@@ -44,23 +44,21 @@ private constructor() :
     var onversionchange: EventHandler<IDBVersionChangeEvent, IDBDatabase, IDBDatabase>?
 
     /**
-     * Returns the version of the database.
+     * The **`version`** property of the IDBDatabase interface is a 64-bit integer that contains the version of the connected database.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBDatabase/version)
      */
     val version: UInt53
 
     /**
-     * Closes the connection once all running transactions have finished.
+     * The **`close()`** method of the IDBDatabase interface returns immediately and closes the connection in a separate thread.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBDatabase/close)
      */
     fun close()
 
     /**
-     * Creates a new object store with the given name and options and returns a new IDBObjectStore.
-     *
-     * Throws a "InvalidStateError" DOMException if not called within an upgrade transaction.
+     * The **`createObjectStore()`** method of the The method takes the name of the store as well as a parameter object that lets you define important optional properties.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBDatabase/createObjectStore)
      */
@@ -70,16 +68,14 @@ private constructor() :
     ): IDBObjectStore
 
     /**
-     * Deletes the object store with the given name.
-     *
-     * Throws a "InvalidStateError" DOMException if not called within an upgrade transaction.
+     * The **`deleteObjectStore()`** method of the the connected database, along with any indexes that reference it.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBDatabase/deleteObjectStore)
      */
     fun deleteObjectStore(name: String)
 
     /**
-     * Returns a new transaction with the given mode ("readonly" or "readwrite") and scope which can be a single object store name or an array of names.
+     * The **`transaction`** method of the IDBDatabase interface immediately returns a transaction object (IDBTransaction) containing the IDBTransaction.objectStore method, which you can use to access your object store.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBDatabase/transaction)
      */

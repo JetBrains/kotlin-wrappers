@@ -11,6 +11,8 @@ open external class CSSMathMin(
     vararg values: CSSNumberish,
 ) : CSSMathValue {
     /**
+     * The CSSMathMin.values read-only property of the which contains one or more CSSNumericValue objects.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSMathMin/values)
      */
     val values: CSSNumericArray

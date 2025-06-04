@@ -9,6 +9,8 @@ package web.cssom
  */
 open external class CSSSkewX(
     /**
+     * The **`ax`** property of the along the x-axis (or abscissa).
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSSkewX/ax)
      */
     var ax: CSSNumericValue,

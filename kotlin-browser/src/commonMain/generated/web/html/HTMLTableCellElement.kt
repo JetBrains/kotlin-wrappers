@@ -11,42 +11,42 @@ open external class HTMLTableCellElement
 protected constructor() :
     HTMLElement {
     /**
-     * Sets or retrieves abbreviated text for the object.
+     * The **`abbr`** property of the HTMLTableCellElement interface indicates an abbreviation associated with the cell.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableCellElement/abbr)
      */
     var abbr: String
 
     /**
-     * Retrieves the position of the object in the cells collection of a row.
+     * The **`cellIndex`** read-only property of the HTMLTableCellElement interface represents the position of a cell within its row (tr).
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableCellElement/cellIndex)
      */
     val cellIndex: Int
 
     /**
-     * Sets or retrieves the number columns in the table that the object should span.
+     * The **`colSpan`** read-only property of the HTMLTableCellElement interface represents the number of columns this cell must span; this lets the cell occupy space across multiple columns of the table.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableCellElement/colSpan)
      */
     var colSpan: Int
 
     /**
-     * Sets or retrieves a list of header cells that provide information for the object.
+     * The **`headers`** property of the HTMLTableCellElement interface contains a list of IDs of th elements that are _headers_ for this specific cell.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableCellElement/headers)
      */
     var headers: String
 
     /**
-     * Sets or retrieves how many rows in a table the cell should span.
+     * The **`rowSpan`** read-only property of the HTMLTableCellElement interface represents the number of rows this cell must span; this lets the cell occupy space across multiple rows of the table.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableCellElement/rowSpan)
      */
     var rowSpan: Int
 
     /**
-     * Sets or retrieves the group of cells in a table to which the object's information applies.
+     * The **`scope`** property of the HTMLTableCellElement interface indicates the scope of a th cell.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableCellElement/scope)
      */

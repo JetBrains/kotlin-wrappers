@@ -15,6 +15,8 @@ open external class PerformanceMark(
     markOptions: PerformanceMarkOptions = definedExternally,
 ) : PerformanceEntry {
     /**
+     * The read-only **`detail`** property returns arbitrary metadata that was included in the mark upon construction (either when using Performance.mark or the PerformanceMark.PerformanceMark constructor).
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceMark/detail)
      */
     val detail: JsAny?

@@ -11,7 +11,7 @@ open external class HTMLQuoteElement
 protected constructor() :
     HTMLElement {
     /**
-     * Sets or retrieves reference information about the object.
+     * The **`cite`** property of the HTMLQuoteElement interface indicates the URL for the source of the quotation.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLQuoteElement/cite)
      */

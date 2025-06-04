@@ -16,6 +16,8 @@ import kotlin.js.JsName
 external class NavigatorLogin
 private constructor() {
     /**
+     * The **`setStatus()`** method of the NavigatorLogin interface sets the login status of a federated identity provider (IdP), when called from the IdP's origin.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigatorLogin/setStatus)
      */
     @JsAsync

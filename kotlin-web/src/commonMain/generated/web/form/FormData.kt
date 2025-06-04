@@ -21,6 +21,8 @@ open external class FormData(
     submitter: EventTarget /* HTMLElement */? = definedExternally,
 ) : MapLike<JsString, FormDataEntryValue> {
     /**
+     * The **`append()`** method of the FormData interface appends a new value onto an existing key inside a `FormData` object, or adds the key if it does not already exist.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FormData/append)
      */
     fun append(
@@ -40,26 +42,36 @@ open external class FormData(
     )
 
     /**
+     * The **`delete()`** method of the FormData interface deletes a key and its value(s) from a `FormData` object.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FormData/delete)
      */
     fun delete(name: String)
 
     /**
+     * The **`get()`** method of the FormData interface returns the first value associated with a given key from within a `FormData` object.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FormData/get)
      */
     fun get(name: String): FormDataEntryValue?
 
     /**
+     * The **`getAll()`** method of the FormData interface returns all the values associated with a given key from within a `FormData` object.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FormData/getAll)
      */
     fun getAll(name: String): ReadonlyArray<FormDataEntryValue>
 
     /**
+     * The **`has()`** method of the FormData interface returns whether a `FormData` object contains a certain key.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FormData/has)
      */
     fun has(name: String): Boolean
 
     /**
+     * The **`set()`** method of the FormData interface sets a new value for an existing key inside a `FormData` object, or adds the key/value if it does not already exist.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FormData/set)
      */
     fun set(

@@ -20,6 +20,8 @@ open external class ExtendableEvent(
     init: ExtendableEventInit = definedExternally,
 ) : Event {
     /**
+     * The **`ExtendableEvent.waitUntil()`** method tells the event dispatcher that work is ongoing.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ExtendableEvent/waitUntil)
      */
     fun waitUntil(f: Promise<*>)

@@ -13,6 +13,8 @@ external class CSSTransition
 private constructor() :
     Animation {
     /**
+     * The **`transitionProperty`** property of the name** of the transition.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSTransition/transitionProperty)
      */
     val transitionProperty: String

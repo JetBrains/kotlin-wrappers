@@ -10,6 +10,8 @@ package web.window
 external class BarProp
 private constructor() {
     /**
+     * The **`visible`** read-only property of the BarProp interface returns `true` if the user interface element it represents is visible.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BarProp/visible)
      */
     val visible: Boolean

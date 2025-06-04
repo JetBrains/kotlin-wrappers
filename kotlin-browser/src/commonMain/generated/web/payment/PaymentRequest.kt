@@ -27,6 +27,8 @@ open external class PaymentRequest(
     options: PaymentOptions = definedExternally,
 ) : EventTarget {
     /**
+     * The **`id`** read-only attribute of the When constructing an instance of the PaymentRequest, you are able to supply an custom id.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentRequest/id)
      */
     val id: String
@@ -37,6 +39,8 @@ open external class PaymentRequest(
     var onpaymentmethodchange: EventHandler<PaymentMethodChangeEvent, PaymentRequest, PaymentRequest>?
 
     /**
+     * The `PaymentRequest.abort()` method of the PaymentRequest interface causes the user agent to end the payment request and to remove any user interface that might be shown.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentRequest/abort)
      */
     @JsAsync
@@ -47,6 +51,8 @@ open external class PaymentRequest(
     fun abortAsync(): Promise<Void>
 
     /**
+     * The PaymentRequest method **`canMakePayment()`** determines whether or not the request is configured in a way that is compatible with at least one payment method supported by the user agent.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentRequest/canMakePayment)
      */
     @JsAsync
@@ -57,6 +63,8 @@ open external class PaymentRequest(
     fun canMakePaymentAsync(): Promise<JsBoolean>
 
     /**
+     * The **PaymentRequest** interface's **`show()`** method instructs the user agent to begin the process of showing and handling the user interface for the payment request to the user.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentRequest/show)
      */
     @JsAsync

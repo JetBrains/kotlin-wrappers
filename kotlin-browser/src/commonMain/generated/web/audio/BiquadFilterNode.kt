@@ -16,31 +16,43 @@ open external class BiquadFilterNode(
     options: BiquadFilterOptions = definedExternally,
 ) : AudioNode {
     /**
+     * The `Q` property of the BiquadFilterNode interface is an a-rate AudioParam, a double representing a Q factor, or _quality factor_.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BiquadFilterNode/Q)
      */
     val Q: AudioParam
 
     /**
+     * The `detune` property of the BiquadFilterNode interface is an a-rate AudioParam representing detuning of the frequency in cents.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BiquadFilterNode/detune)
      */
     val detune: AudioParam
 
     /**
+     * The `frequency` property of the BiquadFilterNode interface is an a-rate AudioParam — a double representing a frequency in the current filtering algorithm measured in hertz (Hz).
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BiquadFilterNode/frequency)
      */
     val frequency: AudioParam
 
     /**
+     * The `gain` property of the BiquadFilterNode interface is an a-rate AudioParam — a double representing the gain used in the current filtering algorithm.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BiquadFilterNode/gain)
      */
     val gain: AudioParam
 
     /**
+     * The `type` property of the BiquadFilterNode interface is a string (enum) value defining the kind of filtering algorithm the node is implementing.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BiquadFilterNode/type)
      */
     var type: BiquadFilterType
 
     /**
+     * The `getFrequencyResponse()` method of the BiquadFilterNode interface takes the current filtering algorithm's settings and calculates the frequency response for frequencies specified in a specified array of frequencies.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BiquadFilterNode/getFrequencyResponse)
      */
     fun getFrequencyResponse(

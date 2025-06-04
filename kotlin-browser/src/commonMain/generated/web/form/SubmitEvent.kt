@@ -20,7 +20,7 @@ open external class SubmitEvent(
     init: SubmitEventInit = definedExternally,
 ) : Event {
     /**
-     * Returns the element representing the submit button that triggered the form submission, or null if the submission was not triggered by a button.
+     * The read-only **`submitter`** property found on the SubmitEvent interface specifies the submit button or other element that was invoked to cause the form to be submitted.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubmitEvent/submitter)
      */

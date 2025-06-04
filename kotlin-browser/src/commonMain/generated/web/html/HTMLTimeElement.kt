@@ -11,6 +11,8 @@ open external class HTMLTimeElement
 protected constructor() :
     HTMLElement {
     /**
+     * The **`dateTime`** property of the HTMLTimeElement interface is a string that reflects the `datetime` HTML attribute, containing a machine-readable form of the element's date and time value.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTimeElement/dateTime)
      */
     var dateTime: String

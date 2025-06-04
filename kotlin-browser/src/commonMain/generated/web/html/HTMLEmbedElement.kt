@@ -13,32 +13,36 @@ open external class HTMLEmbedElement
 protected constructor() :
     HTMLElement {
     /**
-     * Sets or retrieves the height of the object.
+     * The **`height`** property of the HTMLEmbedElement interface returns a string that reflects the `height` attribute of the embed element, indicating the displayed height of the resource in CSS pixels.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLEmbedElement/height)
      */
     var height: String
 
     /**
-     * Sets or retrieves a URL to be loaded by the object.
+     * The **`src`** property of the HTMLEmbedElement interface returns a string that indicates the URL of the resource being embedded.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLEmbedElement/src)
      */
     var src: String
 
     /**
+     * The **`type`** property of the HTMLEmbedElement interface returns a string that reflects the `type` attribute of the embed element, indicating the MIME type of the resource.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLEmbedElement/type)
      */
     var type: String
 
     /**
-     * Sets or retrieves the width of the object.
+     * The **`width`** property of the HTMLEmbedElement interface returns a string that reflects the `width` attribute of the embed element, indicating the displayed width of the resource in CSS pixels.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLEmbedElement/width)
      */
     var width: String
 
     /**
+     * The **`getSVGDocument()`** method of the HTMLEmbedElement interface returns the Document object of the embedded SVG.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLEmbedElement/getSVGDocument)
      */
     fun getSVGDocument(): Document?

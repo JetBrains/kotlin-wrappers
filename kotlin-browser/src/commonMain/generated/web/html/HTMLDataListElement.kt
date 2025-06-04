@@ -11,7 +11,7 @@ open external class HTMLDataListElement
 protected constructor() :
     HTMLElement {
     /**
-     * Returns an HTMLCollection of the option elements of the datalist element.
+     * The **`options`** read-only property of the HTMLDataListElement interface returns an HTMLCollection of HTMLOptionElement elements contained in a datalist.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLDataListElement/options)
      */

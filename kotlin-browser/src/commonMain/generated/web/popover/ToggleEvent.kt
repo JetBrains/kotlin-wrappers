@@ -19,11 +19,15 @@ open external class ToggleEvent(
     init: ToggleEventInit = definedExternally,
 ) : Event {
     /**
+     * The **`newState`** read-only property of the ToggleEvent interface is a string representing the state the element is transitioning to.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ToggleEvent/newState)
      */
     val newState: ToggleState
 
     /**
+     * The **`oldState`** read-only property of the ToggleEvent interface is a string representing the state the element is transitioning from.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ToggleEvent/oldState)
      */
     val oldState: ToggleState

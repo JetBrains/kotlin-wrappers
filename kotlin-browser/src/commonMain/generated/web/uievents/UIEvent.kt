@@ -20,11 +20,15 @@ open external class UIEvent(
     init: UIEventInit = definedExternally,
 ) : Event {
     /**
+     * The **`UIEvent.detail`** read-only property, when non-zero, provides the current (or next, depending on the event) click count.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/UIEvent/detail)
      */
     val detail: Int
 
     /**
+     * The **`UIEvent.view`** read-only property returns the is the Window object the event happened in.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/UIEvent/view)
      */
     val view: Window?

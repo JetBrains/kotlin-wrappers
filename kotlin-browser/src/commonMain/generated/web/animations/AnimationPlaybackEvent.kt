@@ -19,11 +19,15 @@ open external class AnimationPlaybackEvent(
     init: AnimationPlaybackEventInit = definedExternally,
 ) : Event {
     /**
+     * The **`currentTime`** read-only property of the AnimationPlaybackEvent interface represents the current time of the animation that generated the event at the moment the event is queued.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AnimationPlaybackEvent/currentTime)
      */
     val currentTime: CSSNumberish?
 
     /**
+     * The **`timelineTime`** read-only property of the AnimationPlaybackEvent interface represents the time value of the animation's AnimationTimeline at the moment the event is queued.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AnimationPlaybackEvent/timelineTime)
      */
     val timelineTime: CSSNumberish?

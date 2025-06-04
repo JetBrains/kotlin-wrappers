@@ -12,41 +12,57 @@ private constructor() :
     SVGElement,
     SVGTests {
     /**
+     * The **`targetElement`** read-only property of the SVGAnimationElement interface refers to the element which is being animated.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimationElement/targetElement)
      */
     val targetElement: SVGElement?
 
     /**
+     * The SVGAnimationElement method `beginElement()` creates a begin instance time for the current time.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimationElement/beginElement)
      */
     fun beginElement()
 
     /**
+     * The SVGAnimationElement method `beginElementAt()` creates a begin instance time for the current time plus the specified offset.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimationElement/beginElementAt)
      */
     fun beginElementAt(offset: Float)
 
     /**
+     * The SVGAnimationElement method `endElement()` creates an end instance time for the current time.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimationElement/endElement)
      */
     fun endElement()
 
     /**
+     * The SVGAnimationElement method `endElementAt()` creates an end instance time for the current time plus the specified offset.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimationElement/endElementAt)
      */
     fun endElementAt(offset: Float)
 
     /**
+     * The SVGAnimationElement method `getCurrentTime()` returns a float representing the current time in seconds relative to time zero for the given time container.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimationElement/getCurrentTime)
      */
     fun getCurrentTime(): Float
 
     /**
+     * The SVGAnimationElement method `getSimpleDuration()` returns a float representing the number of seconds for the simple duration for this animation.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimationElement/getSimpleDuration)
      */
     fun getSimpleDuration(): Float
 
     /**
+     * The SVGAnimationElement method `getStartTime()` returns a float representing the start time, in seconds, for this animation element's current interval, if it exists, regardless of whether the interval has begun yet.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimationElement/getStartTime)
      */
     fun getStartTime(): Float

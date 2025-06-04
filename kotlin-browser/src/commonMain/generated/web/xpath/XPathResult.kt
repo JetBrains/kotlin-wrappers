@@ -12,46 +12,64 @@ import web.dom.Node
 external class XPathResult
 private constructor() {
     /**
+     * The read-only **`booleanValue`** property of the The return value is the boolean value of the `XPathResult` returned by In case XPathResult.resultType is not `BOOLEAN_TYPE`, a The following example shows the use of the `booleanValue` property.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XPathResult/booleanValue)
      */
     val booleanValue: Boolean
 
     /**
+     * The read-only **`invalidIteratorState`** property of the is `true` if XPathResult.resultType is `UNORDERED_NODE_ITERATOR_TYPE` or `ORDERED_NODE_ITERATOR_TYPE` and the document has been modified since this result was returned.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XPathResult/invalidIteratorState)
      */
     val invalidIteratorState: Boolean
 
     /**
+     * The read-only **`numberValue`** property of the The return value is the numeric value of the `XPathResult` returned by In case XPathResult.resultType is not `NUMBER_TYPE`, a The following example shows the use of the `numberValue` property.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XPathResult/numberValue)
      */
     val numberValue: Double
 
     /**
+     * The read-only **`resultType`** property of the the type constants.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XPathResult/resultType)
      */
     val resultType: ResultType
 
     /**
+     * The read-only **`singleNodeValue`** property of the `null` in case no node was matched of a result with `FIRST_ORDERED_NODE_TYPE`.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XPathResult/singleNodeValue)
      */
     val singleNodeValue: Node?
 
     /**
+     * The read-only **`snapshotLength`** property of the snapshot.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XPathResult/snapshotLength)
      */
     val snapshotLength: Int
 
     /**
+     * The read-only **`stringValue`** property of the The return value is the string value of the `XPathResult` returned by In case XPathResult.resultType is not `STRING_TYPE`, a The following example shows the use of the `stringValue` property.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XPathResult/stringValue)
      */
     val stringValue: String
 
     /**
+     * The **`iterateNext()`** method of the next node from it or `null` if there are no more nodes.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XPathResult/iterateNext)
      */
     fun iterateNext(): Node?
 
     /**
+     * The **`snapshotItem()`** method of the `null` in case the index is not within the range of nodes.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XPathResult/snapshotItem)
      */
     fun snapshotItem(index: Int): Node?

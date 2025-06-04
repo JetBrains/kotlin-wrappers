@@ -6,6 +6,8 @@ import web.highlight.HighlightRegistry
 
 external object CSS {
     /**
+     * The static, read-only **`highlights`** property of the CSS interface provides access to the `HighlightRegistry` used to style arbitrary text ranges using the css_custom_highlight_api.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSS/highlights_static)
      */
     var highlights: HighlightRegistry
@@ -117,6 +119,8 @@ external object CSS {
     fun em(value: Double): CSSUnitValue
 
     /**
+     * The **`CSS.escape()`** static method returns a string containing the escaped string passed as parameter, mostly for use as part of a CSS selector.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSS/escape_static)
      */
     fun escape(ident: String): String
@@ -216,6 +220,8 @@ external object CSS {
     fun rch(value: Double): CSSUnitValue
 
     /**
+     * The **`CSS.registerProperty()`** static method registers custom properties, allowing for property type checking, default values, and properties that do or do not inherit their value.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSS/registerProperty_static)
      */
     fun registerProperty(definition: PropertyDefinition)
@@ -234,6 +240,8 @@ external object CSS {
     fun s(value: Double): CSSUnitValue
 
     /**
+     * The **`CSS.supports()`** static method returns a boolean value indicating if the browser supports a given CSS feature, or not.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSS/supports_static)
      */
     fun supports(property: String, value: String): Boolean

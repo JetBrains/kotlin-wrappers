@@ -15,6 +15,8 @@ external class RTCEncodedVideoFrame
 private constructor() :
     Serializable {
     /**
+     * The **`data`** property of the RTCEncodedVideoFrame interface returns a buffer containing the frame data.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCEncodedVideoFrame/data)
      */
     var data: ArrayBuffer
@@ -25,11 +27,15 @@ private constructor() :
     val timestamp: Int53
 
     /**
+     * The **`type`** read-only property of the RTCEncodedVideoFrame interface indicates whether this frame is a key frame, delta frame, or empty frame.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCEncodedVideoFrame/type)
      */
     val type: RTCEncodedVideoFrameType
 
     /**
+     * The **`getMetadata()`** method of the RTCEncodedVideoFrame interface returns an object containing the metadata associated with the frame.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCEncodedVideoFrame/getMetadata)
      */
     fun getMetadata(): RTCEncodedVideoFrameMetadata

@@ -6,6 +6,8 @@ import js.array.ReadonlyArray
 
 sealed external interface WEBGL_draw_buffers {
     /**
+     * The **`WEBGL_draw_buffers.drawBuffersWEBGL()`** method is part of the WebGL API and allows you to define the draw buffers to which all fragment colors are written.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WEBGL_draw_buffers/drawBuffersWEBGL)
      */
     fun drawBuffersWEBGL(buffers: ReadonlyArray<GLenum>)

@@ -19,66 +19,91 @@ open external class PointerEvent(
     init: PointerEventInit = definedExternally,
 ) : MouseEvent {
     /**
+     * The **`altitudeAngle`** read-only property of the PointerEvent interface represents the angle between a transducer (a pointer or stylus) axis and the X-Y plane of a device screen.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PointerEvent/altitudeAngle)
      */
     val altitudeAngle: Double
 
     /**
+     * The **`azimuthAngle`** read-only property of the PointerEvent interface represents the angle between the Y-Z plane and the plane containing both the transducer (pointer or stylus) axis and the Y axis.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PointerEvent/azimuthAngle)
      */
     val azimuthAngle: Double
 
     /**
+     * The **`height`** read-only property of the geometry, along the y-axis (in CSS pixels).
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PointerEvent/height)
      */
     val height: Double
 
     /**
+     * The **`isPrimary`** read-only property of the created the event is the _primary_ pointer.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PointerEvent/isPrimary)
      */
     val isPrimary: Boolean
 
     /**
+     * The **`pointerId`** read-only property of the event.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PointerEvent/pointerId)
      */
     val pointerId: Int
 
     /**
+     * The **`pointerType`** read-only property of the that caused a given pointer event.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PointerEvent/pointerType)
      */
     val pointerType: String
 
     /**
+     * The **`pressure`** read-only property of the input.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PointerEvent/pressure)
      */
     val pressure: Float
 
     /**
+     * The **`tangentialPressure`** read-only property of the the pointer input (also known as barrel pressure or cylinder stress).
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PointerEvent/tangentialPressure)
      */
     val tangentialPressure: Float
 
     /**
+     * The **`tiltX`** read-only property of the PointerEvent interface is the angle (in degrees) between the _Y-Z plane_ of the pointer and the screen.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PointerEvent/tiltX)
      */
     val tiltX: Int
 
     /**
+     * The **`tiltY`** read-only property of the PointerEvent interface is the angle (in degrees) between the _X-Z plane_ of the pointer and the screen.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PointerEvent/tiltY)
      */
     val tiltY: Int
 
     /**
+     * The **`twist`** read-only property of the (e.g., pen stylus) around its major axis, in degrees.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PointerEvent/twist)
      */
     val twist: Int
 
     /**
+     * The **`width`** read-only property of the geometry along the x-axis, measured in CSS pixels.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PointerEvent/width)
      */
     val width: Double
 
     /**
+     * The **`getCoalescedEvents()`** method of the PointerEvent interface returns a sequence of `PointerEvent` instances that were coalesced (merged) into a single Element/pointermove_event or Element/pointerrawupdate_event event.
      * Available only in secure contexts.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PointerEvent/getCoalescedEvents)
@@ -86,6 +111,8 @@ open external class PointerEvent(
     fun getCoalescedEvents(): ReadonlyArray<PointerEvent>
 
     /**
+     * The **`getPredictedEvents()`** method of the PointerEvent interface returns a sequence of `PointerEvent` instances that are estimated future pointer positions.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PointerEvent/getPredictedEvents)
      */
     fun getPredictedEvents(): ReadonlyArray<PointerEvent>

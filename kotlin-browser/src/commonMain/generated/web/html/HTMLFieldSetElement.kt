@@ -15,72 +15,77 @@ protected constructor() :
     HTMLElement,
     FormControl {
     /**
+     * The **`disabled`** property of the HTMLFieldSetElement interface is a boolean value that reflects the fieldset element's `disabled` attribute, which indicates whether the control is disabled.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFieldSetElement/disabled)
      */
     var disabled: Boolean
 
     /**
-     * Returns an HTMLCollection of the form controls in the element.
+     * The **`elements`** read-only property of the HTMLFieldSetElement interface returns an HTMLCollection object containing all form control elements (button, fieldset, input, object, output, select, and textarea) that are descendants of this field set.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFieldSetElement/elements)
      */
     val elements: HTMLCollection<*>
 
     /**
-     * Retrieves a reference to the form that the object is embedded in.
+     * The **`form`** read-only property of the HTMLFieldSetElement interface returns an HTMLFormElement object that owns this fieldset, or `null` if this fieldset is not owned by any form.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFieldSetElement/form)
      */
     override val form: HTMLFormElement?
 
     /**
+     * The **`name`** property of the HTMLFieldSetElement interface indicates the name of the fieldset element.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFieldSetElement/name)
      */
     override var name: String
 
     /**
-     * Returns the string "fieldset".
+     * The **`type`** read-only property of the HTMLFieldSetElement interface returns the string `'fieldset'`.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFieldSetElement/type)
      */
     val type: String
 
     /**
-     * Returns the error message that would be displayed if the user submits the form, or an empty string if no error message. It also triggers the standard error message, such as "this is a required field". The result is that the user sees validation messages without actually submitting.
+     * The **`validationMessage`** read-only property of the HTMLFieldSetElement interface returns a string representing a localized message that describes the validation constraints that the fieldset control does not satisfy (if any).
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFieldSetElement/validationMessage)
      */
     override val validationMessage: String
 
     /**
-     * Returns a  ValidityState object that represents the validity states of an element.
+     * The **`validity`** read-only property of the HTMLFieldSetElement interface returns a ValidityState object that represents the validity states this element is in.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFieldSetElement/validity)
      */
     override val validity: ValidityState
 
     /**
-     * Returns whether an element will successfully validate based on forms validation rules and constraints.
+     * The **`willValidate`** read-only property of the HTMLFieldSetElement interface returns `false`, because fieldset elements are not candidates for constraint validation.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFieldSetElement/willValidate)
      */
     override val willValidate: Boolean
 
     /**
-     * Returns whether a form will validate when it is submitted, without having to submit it.
+     * The **`checkValidity()`** method of the HTMLFieldSetElement interface checks if the element is valid, but always returns true because fieldset elements are never candidates for constraint validation.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFieldSetElement/checkValidity)
      */
     override fun checkValidity(): Boolean
 
     /**
+     * The **`reportValidity()`** method of the HTMLFieldSetElement interface performs the same validity checking steps as the HTMLFieldSetElement.checkValidity method.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFieldSetElement/reportValidity)
      */
     override fun reportValidity(): Boolean
 
     /**
-     * Sets a custom error message that is displayed when a form is submitted.
-     * @param error Sets a custom error message that is displayed when a form is submitted.
+     * The **`setCustomValidity()`** method of the HTMLFieldSetElement interface sets the custom validity message for the fieldset element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFieldSetElement/setCustomValidity)
      */

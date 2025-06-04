@@ -10,11 +10,15 @@ package web.svg
 external class SVGAnimatedLengthList
 private constructor() {
     /**
+     * The **`animVal`** read-only property of the SVGAnimatedLengthList interface represents the animated value of an attribute that accepts a list of `<length>`, `<percentage>`, or `<number>` values.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedLengthList/animVal)
      */
     val animVal: SVGLengthList
 
     /**
+     * The **`baseVal`** read-only property of the SVGAnimatedLengthList interface represents the base (non-animated) value of an animatable attribute that accepts a list of `<length>`, `<percentage>`, or `<number>` values.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedLengthList/baseVal)
      */
     val baseVal: SVGLengthList

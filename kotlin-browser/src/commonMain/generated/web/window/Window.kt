@@ -51,57 +51,71 @@ private constructor() :
     WindowEventHandlers,
     MessageEventSource {
     /**
-     * Returns true if the window has been closed, false otherwise.
+     * The **`Window.closed`** read-only property indicates whether the referenced window is closed or not.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/closed)
      */
     val closed: Boolean
 
     /**
+     * The **`cookieStore`** read-only property of the Window interface returns a reference to the CookieStore object for the current document context.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/cookieStore)
      */
     val cookieStore: CookieStore
 
     /**
+     * The **`Window.frameElement`** property returns the element (such as iframe or object) in which the window is embedded.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/frameElement)
      */
     val frameElement: Element?
 
     /**
+     * Returns the window itself, which is an array-like object, listing the direct sub-frames of the current window.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/frames)
      */
     val frames: ArrayLike<Window>
 
     /**
+     * The read-only **`innerHeight`** property of the including the height of the horizontal scroll bar, if present.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/innerHeight)
      */
     val innerHeight: Int
 
     /**
+     * The read-only Window property **`innerWidth`** returns the interior width of the window in pixels (that is, the width of the window's layout viewport).
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/innerWidth)
      */
     val innerWidth: Int
 
     /**
+     * The **`Window.location`** read-only property returns a Location object with information about the current location of the document.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/location)
      */
     val location: Location
 
     /**
-     * Returns true if the location bar is visible; otherwise, returns false.
+     * Returns the `locationbar` object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/locationbar)
      */
     val locationbar: BarProp
 
     /**
-     * Returns true if the menu bar is visible; otherwise, returns false.
+     * Returns the `menubar` object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/menubar)
      */
     val menubar: BarProp
 
     /**
+     * The `Window.name` property gets/sets the name of the window's browsing context.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/name)
      */
     var name: WindowName
@@ -128,21 +142,29 @@ private constructor() :
     var ondeviceorientationabsolute: EventHandler<DeviceOrientationEvent, Window, Window>?
 
     /**
+     * The Window interface's **`opener`** property returns a reference to the window that opened the window, either with Window.open, or by navigating a link with a `target` attribute.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/opener)
      */
     var opener: JsAny?
 
     /**
+     * The **`originAgentCluster`** read-only property of the Window interface returns `true` if this window belongs to an _origin-keyed agent cluster_: this means that the operating system has provided dedicated resources (for example an operating system process) to this window's origin that are not shared with windows from other origins.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/originAgentCluster)
      */
     val originAgentCluster: Boolean
 
     /**
+     * The **`Window.outerHeight`** read-only property returns the height in pixels of the whole browser window, including any sidebar, window chrome, and window-resizing borders/handles.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/outerHeight)
      */
     val outerHeight: Int
 
     /**
+     * **`Window.outerWidth`** read-only property returns the width of the outside of the browser window.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/outerWidth)
      */
     val outerWidth: Int
@@ -158,97 +180,113 @@ private constructor() :
     val pageYOffset: Double
 
     /**
-     * Refers to either the parent WindowProxy, or itself.
-     *
-     * It can rarely be null e.g. for contentWindow of an iframe that is already removed from the parent.
+     * The **`Window.parent`** property is a reference to the parent of the current window or subframe.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/parent)
      */
     val parent: WindowProxy
 
     /**
-     * Returns true if the personal bar is visible; otherwise, returns false.
+     * Returns the `personalbar` object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/personalbar)
      */
     val personalbar: BarProp
 
     /**
+     * The **`Window.screenLeft`** read-only property returns the horizontal distance, in CSS pixels, from the left border of the user's browser viewport to the left side of the screen.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/screenLeft)
      */
     val screenLeft: Int
 
     /**
+     * The **`Window.screenTop`** read-only property returns the vertical distance, in CSS pixels, from the top border of the user's browser viewport to the top side of the screen.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/screenTop)
      */
     val screenTop: Int
 
     /**
+     * The **`Window.screenX`** read-only property returns the horizontal distance, in CSS pixels, of the left border of the user's browser viewport to the left side of the screen.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/screenX)
      */
     val screenX: Int
 
     /**
+     * The **`Window.screenY`** read-only property returns the vertical distance, in CSS pixels, of the top border of the user's browser viewport to the top edge of the screen.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/screenY)
      */
     val screenY: Int
 
     /**
+     * The read-only **`scrollX`** property of the Window interface returns the number of pixels by which the document is currently scrolled horizontally.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/scrollX)
      */
     val scrollX: Double
 
     /**
+     * The read-only **`scrollY`** property of the Window interface returns the number of pixels by which the document is currently scrolled vertically.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/scrollY)
      */
     val scrollY: Double
 
     /**
-     * Returns true if the scrollbars are visible; otherwise, returns false.
+     * Returns the `scrollbars` object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/scrollbars)
      */
     val scrollbars: BarProp
 
     /**
-     * Returns true if the status bar is visible; otherwise, returns false.
+     * Returns the `statusbar` object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/statusbar)
      */
     val statusbar: BarProp
 
     /**
-     * Returns true if the toolbar is visible; otherwise, returns false.
+     * Returns the `toolbar` object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/toolbar)
      */
     val toolbar: BarProp
 
     /**
+     * Returns a reference to the topmost window in the window hierarchy.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/top)
      */
     val top: WindowProxy?
 
     /**
-     * Closes the window.
+     * The **`Window.close()`** method closes the current window, or the window on which it was called.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/close)
      */
     fun close()
 
     /**
-     * Moves the focus to the window's browsing context, if any.
+     * Makes a request to bring the window to the front.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/focus)
      */
     fun focus()
 
     /**
+     * The **`getSelection()`** method of the Window interface returns the Selection object associated with the window's document, representing the range of text selected by the user or the current position of the caret.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/getSelection)
      */
     fun getSelection(): Selection?
 
     /**
+     * The **`moveBy()`** method of the Window interface moves the current window by a specified amount.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/moveBy)
      */
     fun moveBy(
@@ -257,6 +295,8 @@ private constructor() :
     )
 
     /**
+     * The **`moveTo()`** method of the Window interface moves the current window to the specified coordinates.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/moveTo)
      */
     fun moveTo(
@@ -265,6 +305,8 @@ private constructor() :
     )
 
     /**
+     * The **`open()`** method of the `Window` interface loads a specified resource into a new or existing browsing context (that is, a tab, a window, or an iframe) under a specified name.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/open)
      */
     fun open(
@@ -280,15 +322,7 @@ private constructor() :
     ): WindowProxy?
 
     /**
-     * Posts a message to the given window. Messages can be structured objects, e.g. nested objects and arrays, can contain JavaScript values (strings, numbers, Date objects, etc), and can contain certain data objects such as File Blob, FileList, and ArrayBuffer objects.
-     *
-     * Objects listed in the transfer member of options are transferred, not just cloned, meaning that they are no longer usable on the sending side.
-     *
-     * A target origin can be specified using the targetOrigin member of options. If not provided, it defaults to "/". This default restricts the message to same-origin targets only.
-     *
-     * If the origin of the target window doesn't match the given target origin, the message is discarded, to avoid information leakage. To send the message to the target regardless of origin, set the target origin to "*".
-     *
-     * Throws a "DataCloneError" DOMException if transfer array contains duplicate objects or if message could not be cloned.
+     * The **`window.postMessage()`** method safely enables cross-origin communication between Window objects; _e.g.,_ between a page and a pop-up that it spawned, or between a page and an iframe embedded within it.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/postMessage)
      */
@@ -304,11 +338,15 @@ private constructor() :
     )
 
     /**
+     * Opens the print dialog to print the current document.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/print)
      */
     fun print()
 
     /**
+     * The **`Window.resizeBy()`** method resizes the current window by a specified amount.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/resizeBy)
      */
     fun resizeBy(
@@ -317,6 +355,8 @@ private constructor() :
     )
 
     /**
+     * The **`Window.resizeTo()`** method dynamically resizes the window.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/resizeTo)
      */
     fun resizeTo(
@@ -325,6 +365,8 @@ private constructor() :
     )
 
     /**
+     * The **`Window.scroll()`** method scrolls the window to a particular place in the document.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/scroll)
      */
     fun scroll(options: ScrollToOptions = definedExternally)
@@ -334,6 +376,8 @@ private constructor() :
     )
 
     /**
+     * The **`Window.scrollBy()`** method scrolls the document in the window by the given amount.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/scrollBy)
      */
     fun scrollBy(options: ScrollToOptions = definedExternally)
@@ -343,6 +387,8 @@ private constructor() :
     )
 
     /**
+     * **`Window.scrollTo()`** scrolls to a particular set of coordinates in the document.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/scrollTo)
      */
     fun scrollTo(options: ScrollToOptions = definedExternally)
@@ -352,7 +398,7 @@ private constructor() :
     )
 
     /**
-     * Cancels the document load.
+     * The **`window.stop()`** stops further resource loading in the current browsing context, equivalent to the stop button in the browser.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/stop)
      */

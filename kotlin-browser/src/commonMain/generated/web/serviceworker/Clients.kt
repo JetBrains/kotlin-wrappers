@@ -18,6 +18,8 @@ import kotlin.js.definedExternally
 external class Clients
 private constructor() {
     /**
+     * The **`claim()`** method of the Clients interface allows an active service worker to set itself as the ServiceWorkerContainer.controller for all clients within its ServiceWorkerRegistration.scope.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Clients/claim)
      */
     @JsAsync
@@ -28,6 +30,8 @@ private constructor() {
     fun claimAsync(): Promise<Void>
 
     /**
+     * The **`get()`** method of the `id` and returns it in a Promise.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Clients/get)
      */
     @JsAsync
@@ -38,6 +42,8 @@ private constructor() {
     fun getAsync(id: String): Promise<Client?>
 
     /**
+     * The **`matchAll()`** method of the Clients interface returns a Promise for a list of service worker clients whose origin is the same as the associated service worker's origin.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Clients/matchAll)
      */
     @JsAsync
@@ -48,6 +54,8 @@ private constructor() {
     fun <T : ClientQueryOptions> matchAllAsync(options: T = definedExternally): Promise<ReadonlyArray<Client /* | WindowClient */>>
 
     /**
+     * The **`openWindow()`** method of the Clients interface creates a new top level browsing context and loads a given URL.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Clients/openWindow)
      */
     @JsAsync

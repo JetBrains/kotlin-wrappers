@@ -14,26 +14,36 @@ import web.geometry.DOMRectReadOnly
 external class ResizeObserverEntry
 private constructor() {
     /**
+     * The **`borderBoxSize`** read-only property of the ResizeObserverEntry interface returns an array containing the new border box size of the observed element when the callback is run.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ResizeObserverEntry/borderBoxSize)
      */
     val borderBoxSize: ReadonlyArray<ResizeObserverSize>
 
     /**
+     * The **`contentBoxSize`** read-only property of the ResizeObserverEntry interface returns an array containing the new content box size of the observed element when the callback is run.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ResizeObserverEntry/contentBoxSize)
      */
     val contentBoxSize: ReadonlyArray<ResizeObserverSize>
 
     /**
+     * The `contentRect` read-only property of the object containing the new size of the observed element when the callback is run.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ResizeObserverEntry/contentRect)
      */
     val contentRect: DOMRectReadOnly
 
     /**
+     * The **`devicePixelContentBoxSize`** read-only property of the ResizeObserverEntry interface returns an array containing the size in device pixels of the observed element when the callback is run.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ResizeObserverEntry/devicePixelContentBoxSize)
      */
     val devicePixelContentBoxSize: ReadonlyArray<ResizeObserverSize>
 
     /**
+     * The **`target`** read-only property of the An Element or SVGElement representing the element being observed.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ResizeObserverEntry/target)
      */
     val target: Element

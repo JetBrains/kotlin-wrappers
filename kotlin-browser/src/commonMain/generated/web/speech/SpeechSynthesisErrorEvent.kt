@@ -17,6 +17,8 @@ open external class SpeechSynthesisErrorEvent(
     init: SpeechSynthesisErrorEventInit,
 ) : SpeechSynthesisEvent {
     /**
+     * The **`error`** property of the A string containing the error reason.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechSynthesisErrorEvent/error)
      */
     val error: SpeechSynthesisErrorCode

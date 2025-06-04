@@ -14,21 +14,29 @@ external class SourceBuffer
 private constructor() :
     EventTarget {
     /**
+     * The **`appendWindowEnd`** property of the timestamp range that can be used to filter what media data is appended to the `SourceBuffer`.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SourceBuffer/appendWindowEnd)
      */
     var appendWindowEnd: Double
 
     /**
+     * The **`appendWindowStart`** property of the timestamp range that can be used to filter what media data is appended to the `SourceBuffer`.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SourceBuffer/appendWindowStart)
      */
     var appendWindowStart: Double
 
     /**
+     * The **`buffered`** read-only property of the buffered in the `SourceBuffer` as a normalized TimeRanges object.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SourceBuffer/buffered)
      */
     val buffered: TimeRanges
 
     /**
+     * The **`mode`** property of the SourceBuffer interface controls whether media segments can be appended to the `SourceBuffer` in any order, or in a strict sequence.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SourceBuffer/mode)
      */
     var mode: AppendMode
@@ -39,31 +47,43 @@ private constructor() :
     var onupdatestart: EventHandler<Event, SourceBuffer, SourceBuffer>?
 
     /**
+     * The **`timestampOffset`** property of the media segments that are appended to the `SourceBuffer`.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SourceBuffer/timestampOffset)
      */
     var timestampOffset: Double
 
     /**
+     * The **`updating`** read-only property of the currently being updated — i.e., whether an SourceBuffer.appendBuffer() or SourceBuffer.remove() operation is currently in progress.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SourceBuffer/updating)
      */
     val updating: Boolean
 
     /**
+     * The **`abort()`** method of the SourceBuffer interface aborts the current segment and resets the segment parser.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SourceBuffer/abort)
      */
     fun abort()
 
     /**
+     * The **`appendBuffer()`** method of the to the `SourceBuffer`.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SourceBuffer/appendBuffer)
      */
     fun appendBuffer(data: BufferSource)
 
     /**
+     * The **`changeType()`** method of the data to conform to.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SourceBuffer/changeType)
      */
     fun changeType(type: String)
 
     /**
+     * The **`remove()`** method of the SourceBuffer interface removes media segments within a specific time range from the `SourceBuffer`.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SourceBuffer/remove)
      */
     fun remove(

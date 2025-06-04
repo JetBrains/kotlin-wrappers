@@ -16,7 +16,7 @@ open external class Path2D(
     constructor(path: String)
 
     /**
-     * Adds to the path the path given by the argument.
+     * The **`Path2D.addPath()`** method of the Canvas 2D API adds one Path2D object to another `Path2D` object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Path2D/addPath)
      */

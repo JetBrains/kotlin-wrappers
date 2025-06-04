@@ -53,18 +53,11 @@ external interface DocumentOrShadowRoot {
         get() = definedExternally
 
     /**
-     * Retrieves a collection of styleSheet objects representing the style sheets that correspond to each instance of a link or style object in the document.
-     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/styleSheets)
      */
     val styleSheets: StyleSheetList
         get() = definedExternally
 
-    /**
-     * Returns the element for the specified x coordinate and the specified y coordinate.
-     * @param x The x-offset
-     * @param y The y-offset
-     */
     fun elementFromPoint(
         x: Double,
         y: Double,

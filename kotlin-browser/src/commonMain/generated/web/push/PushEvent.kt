@@ -20,6 +20,8 @@ open external class PushEvent(
     init: PushEventInit = definedExternally,
 ) : ExtendableEvent {
     /**
+     * The `data` read-only property of the **`PushEvent`** interface returns a reference to a PushMessageData object containing data sent to the PushSubscription.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PushEvent/data)
      */
     val data: PushMessageData?

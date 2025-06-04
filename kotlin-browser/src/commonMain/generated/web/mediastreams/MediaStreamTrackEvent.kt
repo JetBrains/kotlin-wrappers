@@ -18,6 +18,8 @@ open external class MediaStreamTrackEvent(
     init: MediaStreamTrackEventInit,
 ) : Event {
     /**
+     * The **`track`** read-only property of the MediaStreamTrackEvent interface returns the MediaStreamTrack associated with this event.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStreamTrackEvent/track)
      */
     val track: MediaStreamTrack

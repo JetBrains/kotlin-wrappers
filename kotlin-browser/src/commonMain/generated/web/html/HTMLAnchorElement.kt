@@ -17,54 +17,64 @@ protected constructor() :
     HTMLElement,
     HTMLHyperlinkElementUtils {
     /**
+     * The **`HTMLAnchorElement.download`** property is a string indicating that the linked resource is intended to be downloaded rather than displayed in the browser.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLAnchorElement/download)
      */
     var download: String
 
     /**
-     * Sets or retrieves the language code of the object.
+     * The **`hreflang`** property of the HTMLAnchorElement interface is a string that is the language of the linked resource.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLAnchorElement/hreflang)
      */
     var hreflang: String
 
     /**
+     * The **`ping`** property of the HTMLAnchorElement interface is a space-separated list of URLs.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLAnchorElement/ping)
      */
     var ping: String
 
     /**
+     * The **`HTMLAnchorElement.referrerPolicy`** property reflect the HTML `referrerpolicy` attribute of the A string; one of the following: - `no-referrer` - : The Referer header will be omitted entirely.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLAnchorElement/referrerPolicy)
      */
     var referrerPolicy: ReferrerPolicy
 
     /**
-     * Sets or retrieves the relationship between the object and the destination of the link.
+     * The **`HTMLAnchorElement.rel`** property reflects the `rel` attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLAnchorElement/rel)
      */
     var rel: String
 
     /**
+     * The **`HTMLAnchorElement.relList`** read-only property reflects the `rel` attribute.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLAnchorElement/relList)
      */
     val relList: DOMTokenList<JsString>
 
     /**
-     * Sets or retrieves the window or frame at which to target content.
+     * The **`target`** property of the HTMLAnchorElement interface is a string that indicates where to display the linked resource.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLAnchorElement/target)
      */
     var target: WindowTarget
 
     /**
-     * Retrieves or sets the text of the object as a string.
+     * The **`text`** property of the HTMLAnchorElement represents the text inside the element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLAnchorElement/text)
      */
     var text: String
 
     /**
+     * The **`type`** property of the HTMLAnchorElement interface is a string that indicates the MIME type of the linked resource.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLAnchorElement/type)
      */
     var type: String

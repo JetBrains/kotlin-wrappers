@@ -11,6 +11,8 @@ import web.dom.Node
  */
 open external class XMLSerializer {
     /**
+     * The XMLSerializer method **`serializeToString()`** constructs a string representing the specified DOM tree in XML form.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XMLSerializer/serializeToString)
      */
     fun serializeToString(root: Node): String

@@ -22,6 +22,8 @@ external class ServiceWorkerContainer
 private constructor() :
     EventTarget {
     /**
+     * The **`controller`** read-only property of the ServiceWorkerContainer interface returns a `activated` (the same object returned by `null` if the request is a force refresh (_Shift_ + refresh) or if there is no active worker.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerContainer/controller)
      */
     val controller: ServiceWorker?
@@ -42,11 +44,15 @@ private constructor() :
     var onmessageerror: EventHandler<MessageEvent<*>, ServiceWorkerContainer, ServiceWorkerContainer>?
 
     /**
+     * The **`ready`** read-only property of the ServiceWorkerContainer interface provides a way of delaying code execution until a service worker is active.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerContainer/ready)
      */
     val ready: Promise<ServiceWorkerRegistration>
 
     /**
+     * The **`getRegistration()`** method of the client URL.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerContainer/getRegistration)
      */
     @JsAsync
@@ -64,6 +70,8 @@ private constructor() :
     fun getRegistrationAsync(clientURL: URL): Promise<ServiceWorkerRegistration?>
 
     /**
+     * The **`getRegistrations()`** method of the `ServiceWorkerContainer`, in an array.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerContainer/getRegistrations)
      */
     @JsAsync
@@ -74,6 +82,8 @@ private constructor() :
     fun getRegistrationsAsync(): Promise<ReadonlyArray<ServiceWorkerRegistration>>
 
     /**
+     * The **`register()`** method of the ServiceWorkerContainer interface creates or updates a ServiceWorkerRegistration for the given scope.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerContainer/register)
      */
     @JsAsync
@@ -103,6 +113,8 @@ private constructor() :
     ): Promise<ServiceWorkerRegistration>
 
     /**
+     * The **`startMessages()`** method of the ServiceWorkerContainer interface explicitly starts the flow of messages being dispatched from a service worker to pages under its control (e.g., sent via Client.postMessage()).
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerContainer/startMessages)
      */
     fun startMessages()

@@ -19,14 +19,14 @@ open external class Text(
 ) : CharacterData,
     Slottable {
     /**
-     * Returns the combined data of all direct Text node siblings.
+     * The read-only **`wholeText`** property of the Text interface returns the full text of all Text nodes logically adjacent to the node.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Text/wholeText)
      */
     val wholeText: String
 
     /**
-     * Splits data at the given offset and returns the remainder as Text node.
+     * The **`splitText()`** method of the Text interface breaks the Text node into two nodes at the specified offset, keeping both nodes in the tree as siblings.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Text/splitText)
      */

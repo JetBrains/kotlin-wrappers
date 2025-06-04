@@ -21,6 +21,8 @@ open external class PaymentRequestUpdateEvent(
     init: PaymentRequestUpdateEventInit = definedExternally,
 ) : Event {
     /**
+     * The **`updateWith()`** method of the ```js-nolint updateWith(details) ``` - `details` - : Either an object or a Promise that resolves to an object, specifying the changes applied to the payment request: - `displayItems` MISSING: optional_inline] - : An array of objects, each describing one line item for the payment request.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentRequestUpdateEvent/updateWith)
      */
     fun updateWith(detailsPromise: PaymentDetailsUpdate)

@@ -14,6 +14,8 @@ open external class GainNode(
     options: GainOptions = definedExternally,
 ) : AudioNode {
     /**
+     * The `gain` property of the GainNode interface is an a-rate AudioParam representing the amount of gain to apply.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GainNode/gain)
      */
     val gain: AudioParam

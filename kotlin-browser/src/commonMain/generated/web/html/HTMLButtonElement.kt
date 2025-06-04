@@ -23,114 +23,119 @@ protected constructor() :
     PopoverInvokerElement,
     FormControl {
     /**
+     * The **`HTMLButtonElement.disabled`** property indicates whether the control is disabled, meaning that it does not accept any clicks.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLButtonElement/disabled)
      */
     var disabled: Boolean
 
     /**
-     * Retrieves a reference to the form that the object is embedded in.
+     * The **`form`** read-only property of the HTMLButtonElement interface returns an HTMLFormElement object that owns this button, or `null` if this button is not owned by any form.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLButtonElement/form)
      */
     override val form: HTMLFormElement?
 
     /**
-     * Overrides the action attribute (where the data on a form is sent) on the parent form element.
+     * The **`formAction`** property of the HTMLButtonElement interface is the URL of the program that is executed on the server when the form that owns this control is submitted.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLButtonElement/formAction)
      */
     var formAction: String
 
     /**
-     * Used to override the encoding (formEnctype attribute) specified on the form element.
+     * The **`formEnctype`** property of the HTMLButtonElement interface is the MIME_type of the content sent to the server when the form is submitted.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLButtonElement/formEnctype)
      */
     var formEnctype: FormEncType
 
     /**
-     * Overrides the submit method attribute previously specified on a form element.
+     * The **`formMethod`** property of the HTMLButtonElement interface is the HTTP method used to submit the form if the button element is the control that submits the form.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLButtonElement/formMethod)
      */
     var formMethod: FormMethod
 
     /**
-     * Overrides any validation or required attributes on a form or form elements to allow it to be submitted without validation. This can be used to create a "save draft"-type submit option.
+     * The **`formNoValidate`** property of the HTMLButtonElement interface is a boolean value indicating if the form will bypass constraint validation when submitted via the button.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLButtonElement/formNoValidate)
      */
     var formNoValidate: Boolean
 
     /**
-     * Overrides the target attribute on a form element.
+     * The **`formTarget`** property of the HTMLButtonElement interface is the tab, window, or iframe where the response of the submitted form is to be displayed.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLButtonElement/formTarget)
      */
     var formTarget: WindowName
 
     /**
+     * The **`HTMLButtonElement.labels`** read-only property returns a A NodeList containing the `<label>` elements associated with the `<button>` element.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLButtonElement/labels)
      */
     override val labels: NodeList<HTMLLabelElement>
 
     /**
-     * Sets or retrieves the name of the object.
+     * The **`name`** property of the HTMLButtonElement interface indicates the name of the button element or the empty string if the element has no name.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLButtonElement/name)
      */
     override var name: String
 
     /**
-     * Gets the classification and default behavior of the button.
+     * The **`type`** property of the HTMLButtonElement interface is a string that indicates the behavior type of the button element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLButtonElement/type)
      */
     var type: ButtonType
 
     /**
-     * Returns the error message that would be displayed if the user submits the form, or an empty string if no error message. It also triggers the standard error message, such as "this is a required field". The result is that the user sees validation messages without actually submitting.
+     * The **`validationMessage`** read-only property of the HTMLButtonElement interface returns a string representing a localized message that describes the validation constraints that the button control does not satisfy (if any).
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLButtonElement/validationMessage)
      */
     override val validationMessage: String
 
     /**
-     * Returns a  ValidityState object that represents the validity states of an element.
+     * The **`validity`** read-only property of the HTMLButtonElement interface returns a ValidityState object that represents the validity states this element is in.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLButtonElement/validity)
      */
     override val validity: ValidityState
 
     /**
-     * Sets or retrieves the default or selected value of the control.
+     * The **`value`** property of the HTMLButtonElement interface represents the value of the button element as a string, or the empty string if no value is set.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLButtonElement/value)
      */
     var value: String
 
     /**
-     * Returns whether an element will successfully validate based on forms validation rules and constraints.
+     * The **`willValidate`** read-only property of the HTMLButtonElement interface indicates whether the button element is a candidate for constraint validation.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLButtonElement/willValidate)
      */
     override val willValidate: Boolean
 
     /**
-     * Returns whether a form will validate when it is submitted, without having to submit it.
+     * The **`checkValidity()`** method of the HTMLButtonElement interface returns a boolean value which indicates if the element meets any constraint validation rules applied to it.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLButtonElement/checkValidity)
      */
     override fun checkValidity(): Boolean
 
     /**
+     * The **`reportValidity()`** method of the HTMLButtonElement interface performs the same validity checking steps as the HTMLButtonElement.checkValidity method.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLButtonElement/reportValidity)
      */
     override fun reportValidity(): Boolean
 
     /**
-     * Sets a custom error message that is displayed when a form is submitted.
-     * @param error Sets a custom error message that is displayed when a form is submitted.
+     * The **`setCustomValidity()`** method of the HTMLButtonElement interface sets the custom validity message for the button element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLButtonElement/setCustomValidity)
      */

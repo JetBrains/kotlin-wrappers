@@ -13,6 +13,8 @@ import js.buffer.ArrayBuffer
 open external class AuthenticatorResponse
 private constructor() {
     /**
+     * The **`clientDataJSON`** property of the AuthenticatorResponse interface stores a JSON string in an An ArrayBuffer.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AuthenticatorResponse/clientDataJSON)
      */
     val clientDataJSON: ArrayBuffer

@@ -14,6 +14,8 @@ import kotlin.js.JsName
 external class Permissions
 private constructor() {
     /**
+     * The **`query()`** method of the Permissions interface returns the state of a user permission on the global scope.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Permissions/query)
      */
     @JsAsync

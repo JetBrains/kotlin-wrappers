@@ -11,11 +11,15 @@ package web.speech
 external class SpeechRecognitionAlternative
 private constructor() {
     /**
+     * The **`confidence`** read-only property of the confident the speech recognition system is that the recognition is correct.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechRecognitionAlternative/confidence)
      */
     val confidence: Float
 
     /**
+     * The **`transcript`** read-only property of the transcript of the recognized word(s).
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechRecognitionAlternative/transcript)
      */
     val transcript: String

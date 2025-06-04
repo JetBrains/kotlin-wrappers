@@ -11,7 +11,7 @@ open external class HTMLTableColElement
 protected constructor() :
     HTMLElement {
     /**
-     * Sets or retrieves the number of columns in the group.
+     * The **`span`** read-only property of the HTMLTableColElement interface represents the number of columns this col or colgroup must span; this lets the column occupy space across multiple columns of the table.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableColElement/span)
      */

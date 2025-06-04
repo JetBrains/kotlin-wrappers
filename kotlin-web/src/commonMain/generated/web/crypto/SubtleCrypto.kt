@@ -21,6 +21,8 @@ import kotlin.js.definedExternally
 external class SubtleCrypto
 private constructor() {
     /**
+     * The **`decrypt()`** method of the SubtleCrypto interface decrypts some encrypted data.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/decrypt)
      */
     @JsAsync
@@ -114,6 +116,8 @@ private constructor() {
     ): Promise<ArrayBuffer>
 
     /**
+     * The **`deriveBits()`** method of the key.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/deriveBits)
      */
     @JsAsync
@@ -192,6 +196,8 @@ private constructor() {
     ): Promise<ArrayBuffer>
 
     /**
+     * The **`deriveKey()`** method of the SubtleCrypto interface can be used to derive a secret key from a master key.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/deriveKey)
      */
     @JsAsync
@@ -727,6 +733,8 @@ private constructor() {
     ): Promise<CryptoKey>
 
     /**
+     * The **`digest()`** method of the SubtleCrypto interface generates a _digest_ of the given data, using the specified hash function.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/digest)
      */
     @JsAsync
@@ -756,6 +764,8 @@ private constructor() {
     ): Promise<ArrayBuffer>
 
     /**
+     * The **`encrypt()`** method of the SubtleCrypto interface encrypts data.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/encrypt)
      */
     @JsAsync
@@ -849,6 +859,8 @@ private constructor() {
     ): Promise<ArrayBuffer>
 
     /**
+     * The **`exportKey()`** method of the SubtleCrypto interface exports a key: that is, it takes as input a CryptoKey object and gives you the key in an external, portable format.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/exportKey)
      */
     @JsAsync
@@ -878,6 +890,8 @@ private constructor() {
     ): Promise<ArrayBuffer>
 
     /**
+     * The **`generateKey()`** method of the SubtleCrypto interface is used to generate a new key (for symmetric algorithms) or key pair (for public-key algorithms).
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/generateKey)
      */
     @JsAsync
@@ -1001,6 +1015,8 @@ private constructor() {
     ): Promise<JsAny /* CryptoKeyPair | CryptoKey */>
 
     /**
+     * The **`importKey()`** method of the SubtleCrypto interface imports a key: that is, it takes as input a key in an external, portable format and gives you a CryptoKey object that you can use in the Web Crypto API.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/importKey)
      */
     @JsAsync
@@ -1232,6 +1248,8 @@ private constructor() {
     ): Promise<CryptoKey>
 
     /**
+     * The **`sign()`** method of the SubtleCrypto interface generates a digital signature.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/sign)
      */
     @JsAsync
@@ -1295,6 +1313,8 @@ private constructor() {
     ): Promise<ArrayBuffer>
 
     /**
+     * The **`unwrapKey()`** method of the SubtleCrypto interface 'unwraps' a key.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/unwrapKey)
      */
     @JsAsync
@@ -2080,6 +2100,8 @@ private constructor() {
     ): Promise<CryptoKey>
 
     /**
+     * The **`verify()`** method of the SubtleCrypto interface verifies a digital signature.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/verify)
      */
     @JsAsync
@@ -2151,6 +2173,8 @@ private constructor() {
     ): Promise<JsBoolean>
 
     /**
+     * The **`wrapKey()`** method of the SubtleCrypto interface 'wraps' a key.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/wrapKey)
      */
     @JsAsync

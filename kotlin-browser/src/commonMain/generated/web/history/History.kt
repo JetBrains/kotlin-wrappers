@@ -14,36 +14,50 @@ import kotlin.js.definedExternally
 external class History
 private constructor() {
     /**
+     * The **`length`** read-only property of the History interface returns an integer representing the number of entries in the session history, including the currently loaded page.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/History/length)
      */
     val length: Int
 
     /**
+     * The **`scrollRestoration`** property of the History interface allows web applications to explicitly set default scroll restoration behavior on history navigation.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/History/scrollRestoration)
      */
     var scrollRestoration: ScrollRestoration
 
     /**
+     * The **`state`** read-only property of the History interface returns a value representing the state at the top of the history stack.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/History/state)
      */
     val state: JsAny?
 
     /**
+     * The **`back()`** method of the History interface causes the browser to move back one page in the session history.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/History/back)
      */
     fun back()
 
     /**
+     * The **`forward()`** method of the History interface causes the browser to move forward one page in the session history.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/History/forward)
      */
     fun forward()
 
     /**
+     * The **`go()`** method of the History interface loads a specific page from the session history.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/History/go)
      */
     fun go(delta: Int = definedExternally)
 
     /**
+     * The **`pushState()`** method of the History interface adds an entry to the browser's session history stack.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/History/pushState)
      */
     fun pushState(
@@ -59,6 +73,8 @@ private constructor() {
     )
 
     /**
+     * The **`replaceState()`** method of the History interface modifies the current history entry, replacing it with the state object and URL passed in the method parameters.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/History/replaceState)
      */
     fun replaceState(

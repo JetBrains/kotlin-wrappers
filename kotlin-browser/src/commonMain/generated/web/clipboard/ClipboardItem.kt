@@ -23,16 +23,22 @@ open external class ClipboardItem(
     options: ClipboardItemOptions = definedExternally,
 ) {
     /**
+     * The read-only **`presentationStyle`** property of the ClipboardItem interface returns a string indicating how an item should be presented.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ClipboardItem/presentationStyle)
      */
     val presentationStyle: PresentationStyle
 
     /**
+     * The read-only **`types`** property of the ClipboardItem interface returns an Array of MIME type available within the ClipboardItem.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ClipboardItem/types)
      */
     val types: ReadonlyArray<JsString>
 
     /**
+     * The **`getType()`** method of the ClipboardItem interface returns a Promise that resolves with a Blob of the requested MIME type or an error if the MIME type is not found.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ClipboardItem/getType)
      */
     @JsAsync
@@ -44,6 +50,8 @@ open external class ClipboardItem(
 
     companion object {
         /**
+         * The **`supports()`** static method of the ClipboardItem interface returns `true` if the given MIME type is supported by the clipboard, and `false` otherwise.
+         *
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ClipboardItem/supports_static)
          */
         fun supports(type: String): Boolean

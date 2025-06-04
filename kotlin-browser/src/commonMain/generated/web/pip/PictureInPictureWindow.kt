@@ -13,6 +13,8 @@ external class PictureInPictureWindow
 private constructor() :
     EventTarget {
     /**
+     * The read-only **`height`** property of the PictureInPictureWindow interface returns the height of the floating video window in pixels.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PictureInPictureWindow/height)
      */
     val height: Int
@@ -23,6 +25,8 @@ private constructor() :
     var onresize: EventHandler<Event, PictureInPictureWindow, PictureInPictureWindow>?
 
     /**
+     * The read-only **`width`** property of the PictureInPictureWindow interface returns the width of the floating video window in pixels.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PictureInPictureWindow/width)
      */
     val width: Int

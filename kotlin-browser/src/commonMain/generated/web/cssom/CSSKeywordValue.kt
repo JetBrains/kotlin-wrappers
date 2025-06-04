@@ -9,6 +9,8 @@ package web.cssom
  */
 open external class CSSKeywordValue(
     /**
+     * The **`value`** property of the `CSSKeywordValue`.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSKeywordValue/value)
      */
     var value: String,

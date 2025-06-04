@@ -17,16 +17,22 @@ external class WindowClient
 private constructor() :
     Client {
     /**
+     * The **`focused`** read-only property of the the current client has focus.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WindowClient/focused)
      */
     val focused: Boolean
 
     /**
+     * The **`visibilityState`** read-only property of the This value can be one of `'hidden'`, `'visible'`, or `'prerender'`.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WindowClient/visibilityState)
      */
     val visibilityState: DocumentVisibilityState
 
     /**
+     * The **`focus()`** method of the WindowClient interface gives user input focus to the current client and returns a ```js-nolint focus() ``` None.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WindowClient/focus)
      */
     @JsAsync
@@ -37,6 +43,8 @@ private constructor() :
     fun focusAsync(): Promise<WindowClient>
 
     /**
+     * The **`navigate()`** method of the WindowClient interface loads a specified URL into a controlled client page then returns a ```js-nolint navigate(url) ``` - `url` - : The location to navigate to.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WindowClient/navigate)
      */
     @JsAsync

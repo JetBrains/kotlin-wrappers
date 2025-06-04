@@ -17,6 +17,8 @@ private constructor() :
     ArrayLike<TextTrack>,
     JsIterable<TextTrack> {
     /**
+     * The read-only **TextTrackList** property **`length`** returns the number of entries in the `TextTrackList`, each of which is a TextTrack representing one track in the media element.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextTrackList/length)
      */
     override val length: Int
@@ -37,6 +39,8 @@ private constructor() :
     var onremovetrack: EventHandler<TrackEvent, TextTrackList, TextTrackList>?
 
     /**
+     * The **TextTrackList** method **`getTrackById()`** returns the first `id` matches the specified string.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextTrackList/getTrackById)
      */
     fun getTrackById(id: String): TextTrack?

@@ -20,6 +20,8 @@ open external class MIDIConnectionEvent(
     init: MIDIConnectionEventInit = definedExternally,
 ) : Event {
     /**
+     * The **`port`** read-only property of the MIDIConnectionEvent interface returns the port that has been disconnected or connected.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MIDIConnectionEvent/port)
      */
     val port: MIDIPort?

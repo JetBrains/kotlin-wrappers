@@ -11,10 +11,14 @@ import kotlin.js.definedExternally
  */
 open external class CSSVariableReferenceValue(
     /**
+     * The **`variable`** property of the A string beginning with `--` (that is, a custom property name).
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSVariableReferenceValue/variable)
      */
     var variable: String,
     /**
+     * The **`fallback`** read-only property of the A CSSUnparsedValue.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSVariableReferenceValue/fallback)
      */
     val fallback: CSSUnparsedValue? = definedExternally,

@@ -15,11 +15,15 @@ private constructor() :
     ArrayLike<CSSStyleSheet>,
     JsIterable<CSSStyleSheet> {
     /**
+     * The **`length`** read-only property of the StyleSheetList interface returns the number of CSSStyleSheet objects in the collection.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/StyleSheetList/length)
      */
     override val length: Int
 
     /**
+     * The **`item()`** method of the StyleSheetList interface returns a single CSSStyleSheet object.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/StyleSheetList/item)
      */
     fun item(index: Int): CSSStyleSheet?

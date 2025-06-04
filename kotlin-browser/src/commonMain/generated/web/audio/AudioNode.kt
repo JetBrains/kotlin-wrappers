@@ -14,36 +14,50 @@ open external class AudioNode
 private constructor() :
     EventTarget {
     /**
+     * The **`channelCount`** property of the AudioNode interface represents an integer used to determine how many channels are used when up-mixing and down-mixing connections to any inputs to the node.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioNode/channelCount)
      */
     var channelCount: Int
 
     /**
+     * The `channelCountMode` property of the AudioNode interface represents an enumerated value describing the way channels must be matched between the node's inputs and outputs.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioNode/channelCountMode)
      */
     var channelCountMode: ChannelCountMode
 
     /**
+     * The **`channelInterpretation`** property of the AudioNode interface represents an enumerated value describing how input channels are mapped to output channels when the number of inputs/outputs is different.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioNode/channelInterpretation)
      */
     var channelInterpretation: ChannelInterpretation
 
     /**
+     * The read-only `context` property of the the node is participating in.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioNode/context)
      */
     val context: BaseAudioContext
 
     /**
+     * The `numberOfInputs` property of the AudioNode interface returns the number of inputs feeding the node.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioNode/numberOfInputs)
      */
     val numberOfInputs: Int
 
     /**
+     * The `numberOfOutputs` property of the AudioNode interface returns the number of outputs coming out of the node.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioNode/numberOfOutputs)
      */
     val numberOfOutputs: Int
 
     /**
+     * The `connect()` method of the AudioNode interface lets you connect one of the node's outputs to a target, which may be either another `AudioNode` (thereby directing the sound data to the specified node) or an change the value of that parameter over time.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioNode/connect)
      */
     fun connect(
@@ -58,6 +72,8 @@ private constructor() :
     )
 
     /**
+     * The **`disconnect()`** method of the AudioNode interface lets you disconnect one or more nodes from the node on which the method is called.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioNode/disconnect)
      */
     fun disconnect()

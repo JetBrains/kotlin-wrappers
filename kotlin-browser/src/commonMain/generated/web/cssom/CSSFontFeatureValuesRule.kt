@@ -11,6 +11,8 @@ external class CSSFontFeatureValuesRule
 private constructor() :
     CSSRule {
     /**
+     * The **`fontFamily`** property of the CSSConditionRule interface represents the name of the font family it applies to.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSFontFeatureValuesRule/fontFamily)
      */
     var fontFamily: String

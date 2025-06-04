@@ -20,11 +20,15 @@ open external class BlobEvent(
     init: BlobEventInit,
 ) : Event {
     /**
+     * The **`data`** read-only property of the BlobEvent interface represents a Blob associated with the event.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BlobEvent/data)
      */
     val data: Blob
 
     /**
+     * The **`timecode`** read-only property of the BlobEvent interface indicates the difference between the timestamp of the first chunk of data, and the timestamp of the first chunk in the first `BlobEvent` produced by this recorder.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BlobEvent/timecode)
      */
     val timecode: DOMHighResTimeStamp

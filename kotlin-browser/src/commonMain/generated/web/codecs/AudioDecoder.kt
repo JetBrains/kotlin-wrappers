@@ -18,6 +18,8 @@ open external class AudioDecoder(
     init: AudioDecoderInit,
 ) : EventTarget {
     /**
+     * The **`decodeQueueSize`** read-only property of the AudioDecoder interface returns the number of pending decode requests in the queue.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioDecoder/decodeQueueSize)
      */
     val decodeQueueSize: Int
@@ -28,26 +30,36 @@ open external class AudioDecoder(
     var ondequeue: EventHandler<Event, AudioDecoder, AudioDecoder>?
 
     /**
+     * The **`state`** read-only property of the AudioDecoder interface returns the current state of the underlying codec.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioDecoder/state)
      */
     val state: CodecState
 
     /**
+     * The **`close()`** method of the AudioDecoder interface ends all pending work and releases system resources.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioDecoder/close)
      */
     fun close()
 
     /**
+     * The **`configure()`** method of the AudioDecoder interface enqueues a control message to configure the audio decoder for decoding chunks.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioDecoder/configure)
      */
     fun configure(config: AudioDecoderConfig)
 
     /**
+     * The **`decode()`** method of the AudioDecoder interface enqueues a control message to decode a given chunk of audio.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioDecoder/decode)
      */
     fun decode(chunk: EncodedAudioChunk)
 
     /**
+     * The **`flush()`** method of the AudioDecoder interface returns a Promise that resolves once all pending messages in the queue have been completed.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioDecoder/flush)
      */
     @JsAsync
@@ -58,6 +70,8 @@ open external class AudioDecoder(
     fun flushAsync(): Promise<Void>
 
     /**
+     * The **`reset()`** method of the AudioDecoder interface resets all states including configuration, control messages in the control message queue, and all pending callbacks.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioDecoder/reset)
      */
     fun reset()
@@ -70,6 +84,8 @@ open external class AudioDecoder(
 
     companion object {
         /**
+         * The **`isConfigSupported()`** static method of the AudioDecoder interface checks if the given config is supported (that is, if AudioDecoder objects can be successfully configured with the given config).
+         *
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioDecoder/isConfigSupported_static)
          */
         @JsAsync

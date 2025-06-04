@@ -14,6 +14,8 @@ open external class ConstantSourceNode(
     options: ConstantSourceOptions = definedExternally,
 ) : AudioScheduledSourceNode {
     /**
+     * The read-only `offset` property of the ConstantSourceNode interface returns a AudioParam object indicating the numeric a-rate value which is always returned by the source when asked for the next sample.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ConstantSourceNode/offset)
      */
     val offset: AudioParam

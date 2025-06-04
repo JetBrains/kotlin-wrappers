@@ -13,23 +13,21 @@ open external class HTMLTableSectionElement
 protected constructor() :
     HTMLElement {
     /**
-     * Sets or retrieves the number of horizontal rows contained in the object.
+     * The **`rows`** read-only property of the HTMLTableSectionElement interface returns a live HTMLCollection containing the rows in the section.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableSectionElement/rows)
      */
     val rows: HTMLCollection<HTMLTableRowElement>
 
     /**
-     * Removes the specified row (tr) from the element and from the rows collection.
-     * @param index Number that specifies the zero-based position in the rows collection of the row to remove.
+     * The **`deleteRow()`** method of the HTMLTableSectionElement interface removes a specific row (tr) from a given section.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableSectionElement/deleteRow)
      */
     fun deleteRow(index: Int)
 
     /**
-     * Creates a new row (tr) in the table, and adds the row to the rows collection.
-     * @param index Number that specifies where to insert the row in the rows collection. The default value is -1, which appends the new row to the end of the rows collection.
+     * The **`insertRow()`** method of the HTMLTableSectionElement interface inserts a new row (tr) in the given table sectioning element (thead, tfoot, or ```js-nolint insertRow() insertRow(index) ``` - `index` [MISSING: optional_inline] - : The row index of the new row.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableSectionElement/insertRow)
      */

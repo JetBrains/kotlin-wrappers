@@ -12,6 +12,8 @@ external class StylePropertyMap
 protected /* private */ constructor() :
     StylePropertyMapReadOnly {
     /**
+     * The **`append()`** method of the `StylePropertyMap` with the given property.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/StylePropertyMap/append)
      */
     fun append(
@@ -25,16 +27,22 @@ protected /* private */ constructor() :
     )
 
     /**
+     * The **`clear()`** method of the StylePropertyMap interface removes all declarations in the `StylePropertyMap`.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/StylePropertyMap/clear)
      */
     fun clear()
 
     /**
+     * The **`delete()`** method of the property.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/StylePropertyMap/delete)
      */
     fun delete(property: String)
 
     /**
+     * The **`set()`** method of the StylePropertyMap interface changes the CSS declaration with the given property.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/StylePropertyMap/set)
      */
     fun set(

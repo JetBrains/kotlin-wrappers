@@ -15,6 +15,8 @@ open external class MediaStreamAudioDestinationNode(
     options: AudioNodeOptions = definedExternally,
 ) : AudioNode {
     /**
+     * The `stream` property of the AudioContext interface represents a MediaStream containing a single audio MediaStreamTrack with the same number of channels as the node itself.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStreamAudioDestinationNode/stream)
      */
     val stream: MediaStream

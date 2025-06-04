@@ -13,6 +13,8 @@ open external class CountQueuingStrategy(
     init: QueuingStrategyInit,
 ) : QueuingStrategy<Void> {
     /**
+     * The read-only **`CountQueuingStrategy.highWaterMark`** property returns the total number of chunks that can be contained in the internal queue before backpressure is applied.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CountQueuingStrategy/highWaterMark)
      */
     override val highWaterMark: Double

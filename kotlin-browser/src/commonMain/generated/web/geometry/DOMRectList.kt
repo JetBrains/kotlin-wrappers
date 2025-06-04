@@ -15,11 +15,15 @@ private constructor() :
     ArrayLike<DOMRect>,
     JsIterable<DOMRect> {
     /**
+     * The read-only **`length`** property of the DOMRectList interface returns the number of DOMRect objects in the list.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMRectList/length)
      */
     override val length: Int
 
     /**
+     * The DOMRectList method `item()` returns the DOMRect at the specified index within the list, or `null` if the index is out of range.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMRectList/item)
      */
     fun item(index: Int): DOMRect?

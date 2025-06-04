@@ -4,6 +4,8 @@ package web.gl
 
 sealed external interface OES_draw_buffers_indexed {
     /**
+     * The `blendEquationSeparateiOES()` method of the OES_draw_buffers_indexed WebGL extension sets the RGB and alpha blend equations separately for a particular draw buffer.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OES_draw_buffers_indexed/blendEquationSeparateiOES)
      */
     fun blendEquationSeparateiOES(
@@ -13,6 +15,8 @@ sealed external interface OES_draw_buffers_indexed {
     )
 
     /**
+     * The `blendEquationiOES()` method of the `OES_draw_buffers_indexed` WebGL extension sets both the RGB blend and alpha blend equations for a particular draw buffer.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OES_draw_buffers_indexed/blendEquationiOES)
      */
     fun blendEquationiOES(
@@ -21,6 +25,8 @@ sealed external interface OES_draw_buffers_indexed {
     )
 
     /**
+     * The `blendFuncSeparateiOES()` method of the OES_draw_buffers_indexed WebGL extension defines which function is used when blending pixels for RGB and alpha components separately for a particular draw buffer.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OES_draw_buffers_indexed/blendFuncSeparateiOES)
      */
     fun blendFuncSeparateiOES(
@@ -32,6 +38,8 @@ sealed external interface OES_draw_buffers_indexed {
     )
 
     /**
+     * The `blendFunciOES()` method of the OES_draw_buffers_indexed WebGL extension defines which function is used when blending pixels for a particular draw buffer.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OES_draw_buffers_indexed/blendFunciOES)
      */
     fun blendFunciOES(
@@ -41,6 +49,8 @@ sealed external interface OES_draw_buffers_indexed {
     )
 
     /**
+     * The `colorMaskiOES()` method of the OES_draw_buffers_indexed WebGL extension sets which color components to enable or to disable when drawing or rendering for a particular draw buffer.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OES_draw_buffers_indexed/colorMaskiOES)
      */
     fun colorMaskiOES(
@@ -52,6 +62,8 @@ sealed external interface OES_draw_buffers_indexed {
     )
 
     /**
+     * The `disableiOES()` method of the OES_draw_buffers_indexed WebGL extension enables blending for a particular draw buffer.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OES_draw_buffers_indexed/disableiOES)
      */
     fun disableiOES(
@@ -60,6 +72,8 @@ sealed external interface OES_draw_buffers_indexed {
     )
 
     /**
+     * The `enableiOES()` method of the OES_draw_buffers_indexed WebGL extension enables blending for a particular draw buffer.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OES_draw_buffers_indexed/enableiOES)
      */
     fun enableiOES(

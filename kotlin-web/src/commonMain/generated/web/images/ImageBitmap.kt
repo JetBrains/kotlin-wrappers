@@ -21,21 +21,21 @@ private constructor() :
     Transferable,
     Serializable {
     /**
-     * Returns the intrinsic height of the image, in CSS pixels.
+     * The **`ImageBitmap.height`** read-only property returns the ImageBitmap object's height in CSS pixels.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageBitmap/height)
      */
     val height: Int
 
     /**
-     * Returns the intrinsic width of the image, in CSS pixels.
+     * The **`ImageBitmap.width`** read-only property returns the ImageBitmap object's width in CSS pixels.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageBitmap/width)
      */
     val width: Int
 
     /**
-     * Releases imageBitmap's underlying bitmap data.
+     * The **`ImageBitmap.close()`** method disposes of all graphical resources associated with an `ImageBitmap`.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageBitmap/close)
      */

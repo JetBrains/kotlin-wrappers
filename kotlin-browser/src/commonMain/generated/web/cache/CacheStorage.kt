@@ -22,6 +22,8 @@ import kotlin.js.definedExternally
 external class CacheStorage
 private constructor() {
     /**
+     * The **`delete()`** method of the CacheStorage interface finds the Cache object matching the `cacheName`, and if found, deletes the Cache object and returns a Promise that resolves to `true`.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CacheStorage/delete)
      */
     @JsAsync
@@ -32,6 +34,8 @@ private constructor() {
     fun deleteAsync(cacheName: String): Promise<JsBoolean>
 
     /**
+     * The **`has()`** method of the CacheStorage interface returns a Promise that resolves to `true` if a You can access `CacheStorage` through the Window.caches property in windows or through the WorkerGlobalScope.caches property in workers.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CacheStorage/has)
      */
     @JsAsync
@@ -42,6 +46,8 @@ private constructor() {
     fun hasAsync(cacheName: String): Promise<JsBoolean>
 
     /**
+     * The **`keys()`** method of the CacheStorage interface returns a Promise that will resolve with an array containing strings corresponding to all of the named Cache objects tracked by the CacheStorage object in the order they were created.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CacheStorage/keys)
      */
     @JsAsync
@@ -52,6 +58,8 @@ private constructor() {
     fun keysAsync(): Promise<ReadonlyArray<JsString>>
 
     /**
+     * The **`match()`** method of the CacheStorage interface checks if a given Request or URL string is a key for a stored Response.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CacheStorage/match)
      */
     @JsAsync
@@ -94,6 +102,8 @@ private constructor() {
     ): Promise<Response?>
 
     /**
+     * The **`open()`** method of the the Cache object matching the `cacheName`.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CacheStorage/open)
      */
     @JsAsync

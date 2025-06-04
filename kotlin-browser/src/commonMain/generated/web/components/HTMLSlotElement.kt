@@ -21,22 +21,30 @@ open external class HTMLSlotElement
 protected constructor() :
     HTMLElement {
     /**
+     * The **`name`** property of the HTMLSlotElement interface returns or sets the slot name.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSlotElement/name)
      */
     var name: String
 
     /**
+     * The **`assign()`** method of the HTMLSlotElement interface sets the slot's _manually assigned nodes_ to an ordered set of slottables.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSlotElement/assign)
      */
     fun assign(vararg nodes: Element)
     fun assign(vararg nodes: Text)
 
     /**
+     * The **`assignedElements()`** method of the HTMLSlotElement interface returns a sequence of the elements assigned to this slot (and no other nodes).
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSlotElement/assignedElements)
      */
     fun assignedElements(options: AssignedNodesOptions = definedExternally): ReadonlyArray<Element>
 
     /**
+     * The **`assignedNodes()`** method of the HTMLSlotElement interface returns a sequence of the nodes assigned to this slot.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSlotElement/assignedNodes)
      */
     fun assignedNodes(options: AssignedNodesOptions = definedExternally): ReadonlyArray<Node>

@@ -16,28 +16,36 @@ import kotlin.js.definedExternally
 open external class Range :
     AbstractRange {
     /**
-     * Returns the node, furthest away from the document, that is an ancestor of both range's start node and end node.
+     * The **`Range.commonAncestorContainer`** read-only property returns the deepest — or furthest down the document tree — Node that contains both boundary points of the Range.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Range/commonAncestorContainer)
      */
     val commonAncestorContainer: Node
 
     /**
+     * The **`cloneContents()`** method of the Range interface copies the selected Node children of the range's Range/commonAncestorContainer and puts them in a new DocumentFragment object.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Range/cloneContents)
      */
     fun cloneContents(): DocumentFragment
 
     /**
+     * The **`Range.cloneRange()`** method returns a The returned clone is copied by value, not reference, so a change in either ```js-nolint cloneRange() ``` None.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Range/cloneRange)
      */
     fun cloneRange(): Range
 
     /**
+     * The **`collapse()`** method of the Range interface collapses the A collapsed Range is empty, containing no content, specifying a single-point in a DOM tree.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Range/collapse)
      */
     fun collapse(toStart: Boolean = definedExternally)
 
     /**
+     * The **`compareBoundaryPoints()`** method of the Range interface compares the boundary points of the Range with those of another range.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Range/compareBoundaryPoints)
      */
     fun compareBoundaryPoints(
@@ -46,7 +54,7 @@ open external class Range :
     ): Short
 
     /**
-     * Returns −1 if the point is before the range, 0 if the point is in the range, and 1 if the point is after the range.
+     * The **`comparePoint()`** method of the Range interface determines whether a specified point is before, within, or after the Range.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Range/comparePoint)
      */
@@ -56,48 +64,64 @@ open external class Range :
     ): Short
 
     /**
+     * The **`Range.createContextualFragment()`** method returns a XML fragment parsing algorithm with the start of the range (the _parent_ of the selected node) as the context node.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Range/createContextualFragment)
      */
     fun createContextualFragment(string: String): DocumentFragment
 
     /**
+     * The **`Range.deleteContents()`** method removes all completely-selected Node within this range from the document.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Range/deleteContents)
      */
     fun deleteContents()
 
     /**
+     * The **`Range.detach()`** method does nothing.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Range/detach)
      */
     fun detach()
 
     /**
+     * The **`extractContents()`** method of the Range interface is similar to a combination of Range.cloneContents() and Range.deleteContents().
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Range/extractContents)
      */
     fun extractContents(): DocumentFragment
 
     /**
+     * The **`Range.getBoundingClientRect()`** method returns a DOMRect object that bounds the contents of the range; this is a rectangle enclosing the union of the bounding rectangles for all the elements in the range.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Range/getBoundingClientRect)
      */
     fun getBoundingClientRect(): DOMRect
 
     /**
+     * The **`Range.getClientRects()`** method returns a list of DOMRect objects representing the area of the screen occupied by the range.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Range/getClientRects)
      */
     fun getClientRects(): DOMRectList
 
     /**
+     * The **`Range.insertNode()`** method inserts a node at the start of the Range.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Range/insertNode)
      */
     fun insertNode(node: Node)
 
     /**
-     * Returns whether range intersects node.
+     * The **`Range.intersectsNode()`** method returns a boolean indicating whether the given Node intersects the Range.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Range/intersectsNode)
      */
     fun intersectsNode(node: Node): Boolean
 
     /**
+     * The **`isPointInRange()`** method of the Range interface determines whether a specified point is within the Range.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Range/isPointInRange)
      */
     fun isPointInRange(
@@ -106,16 +130,22 @@ open external class Range :
     ): Boolean
 
     /**
+     * The **`Range.selectNode()`** method sets the the parent of the _referenceNode_.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Range/selectNode)
      */
     fun selectNode(node: Node)
 
     /**
+     * The **`Range.selectNodeContents()`** method sets the Range to contain the contents of a Node.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Range/selectNodeContents)
      */
     fun selectNodeContents(node: Node)
 
     /**
+     * The **`Range.setEnd()`** method sets the end position of a Range to be located at the given offset into the specified node.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Range/setEnd)
      */
     fun setEnd(
@@ -124,16 +154,22 @@ open external class Range :
     )
 
     /**
+     * The **`Range.setEndAfter()`** method sets the end position of a `Node` of end of the `Range` will be the same as that for the `referenceNode`.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Range/setEndAfter)
      */
     fun setEndAfter(node: Node)
 
     /**
+     * The **`Range.setEndBefore()`** method sets the end position of a `Range` relative to another Node.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Range/setEndBefore)
      */
     fun setEndBefore(node: Node)
 
     /**
+     * The **`Range.setStart()`** method sets the start position of a If the `startNode` is a Node of type Text, the number of characters from the start of `startNode`.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Range/setStart)
      */
     fun setStart(
@@ -142,16 +178,22 @@ open external class Range :
     )
 
     /**
+     * The **`Range.setStartAfter()`** method sets the start position of a Range relative to a Node.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Range/setStartAfter)
      */
     fun setStartAfter(node: Node)
 
     /**
+     * The **`Range.setStartBefore()`** method sets the start position of a Range relative to another Node.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Range/setStartBefore)
      */
     fun setStartBefore(node: Node)
 
     /**
+     * The **`surroundContents()`** method of the Range interface surrounds the selected content by a provided node.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Range/surroundContents)
      */
     fun surroundContents(newParent: Node)

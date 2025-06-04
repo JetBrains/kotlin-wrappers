@@ -22,187 +22,204 @@ protected constructor() :
     HTMLElement,
     FormControl {
     /**
+     * The **`autocomplete`** property of the HTMLTextAreaElement interface indicates whether the value of the control can be automatically completed by the browser.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/autocomplete)
      */
     var autocomplete: AutoFill
 
     /**
-     * Sets or retrieves the width of the object.
+     * The **`cols`** property of the HTMLTextAreaElement interface is a positive integer representing the visible width of the multi-line text control, in average character widths.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/cols)
      */
     var cols: Int
 
     /**
-     * Sets or retrieves the initial contents of the object.
+     * The **`defaultValue`** property of the HTMLTextAreaElement interface represents the default text content of this text area.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/defaultValue)
      */
     var defaultValue: String
 
     /**
+     * The **`dirName`** property of the HTMLTextAreaElement interface is the directionality of the element.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/dirName)
      */
     var dirName: String
 
     /**
+     * The **`disabled`** property of the HTMLTextAreaElement interface indicates whether this multi-line text control is disabled and cannot be interacted with.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/disabled)
      */
     var disabled: Boolean
 
     /**
-     * Retrieves a reference to the form that the object is embedded in.
+     * The **`form`** read-only property of the HTMLTextAreaElement interface returns an HTMLFormElement object that owns this textarea, or `null` if this textarea is not owned by any form.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/form)
      */
     override val form: HTMLFormElement?
 
     /**
+     * The **`HTMLTextAreaElement.labels`** read-only property returns a NodeList of the label elements associated with the A NodeList containing the `<label>` elements associated with the `<textArea>` element.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/labels)
      */
     override val labels: NodeList<HTMLLabelElement>
 
     /**
-     * Sets or retrieves the maximum number of characters that the user can enter in a text control.
+     * The **`maxLength`** property of the HTMLTextAreaElement interface indicates the maximum number of characters (in UTF-16 code units) allowed to be entered for the value of the textarea element, and the maximum number of characters allowed for the value to be valid.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/maxLength)
      */
     var maxLength: Int
 
     /**
+     * The **`minLength`** property of the HTMLTextAreaElement interface indicates the minimum number of characters (in UTF-16 code units) required for the value of the textarea element to be valid.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/minLength)
      */
     var minLength: Int
 
     /**
-     * Sets or retrieves the name of the object.
+     * The **`name`** property of the HTMLTextAreaElement interface indicates the name of the textarea element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/name)
      */
     override var name: String
 
     /**
-     * Gets or sets a text string that is displayed in an input field as a hint or prompt to users as the format or type of information they need to enter.The text appears in an input field until the user puts focus on the field.
+     * The **`placeholder`** property of the HTMLTextAreaElement interface represents a hint to the user of what can be entered in the control.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/placeholder)
      */
     var placeholder: String
 
     /**
-     * Sets or retrieves the value indicated whether the content of the object is read-only.
+     * The **`readOnly`** property of the HTMLTextAreaElement interface indicates that the user cannot modify the value of the control.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/readOnly)
      */
     var readOnly: Boolean
 
     /**
-     * When present, marks an element that can't be submitted without a value.
+     * The **`required`** property of the HTMLTextAreaElement interface specifies that the user must fill in a value before submitting a form.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/required)
      */
     var required: Boolean
 
     /**
-     * Sets or retrieves the number of horizontal rows contained in the object.
+     * The **`rows`** property of the HTMLTextAreaElement interface is a positive integer representing the visible text lines of the text control.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/rows)
      */
     var rows: Int
 
     /**
+     * <!-- --> The **`selectionDirection`** property of the HTMLTextAreaElement interface specifies the current direction of the selection.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/selectionDirection)
      */
     var selectionDirection: SelectionDirection
 
     /**
-     * Gets or sets the end position or offset of a text selection.
+     * The **`selectionEnd`** property of the HTMLTextAreaElement interface specifies the end position of the current text selection in a textarea element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/selectionEnd)
      */
     var selectionEnd: Int
 
     /**
-     * Gets or sets the starting position or offset of a text selection.
+     * The **`selectionStart`** property of the HTMLTextAreaElement interface specifies the start position of the current text selection in a textarea element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/selectionStart)
      */
     var selectionStart: Int
 
     /**
+     * The **`textLength`** read-only property of the HTMLTextAreaElement interface is a non-negative integer representing the number of characters, in UTF-16 code units, of the textarea element's value.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/textLength)
      */
     val textLength: Int
 
     /**
-     * Retrieves the type of control.
+     * The **`type`** read-only property of the HTMLTextAreaElement interface returns the string `'textarea'`.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/type)
      */
     val type: String
 
     /**
-     * Returns the error message that would be displayed if the user submits the form, or an empty string if no error message. It also triggers the standard error message, such as "this is a required field". The result is that the user sees validation messages without actually submitting.
+     * The **`validationMessage`** read-only property of the HTMLTextAreaElement interface returns a string representing a localized message that describes the validation constraints that the textarea control does not satisfy (if any).
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/validationMessage)
      */
     override val validationMessage: String
 
     /**
-     * Returns a  ValidityState object that represents the validity states of an element.
+     * The **`validity`** read-only property of the HTMLTextAreaElement interface returns a ValidityState object that represents the validity states this element is in.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/validity)
      */
     override val validity: ValidityState
 
     /**
-     * Retrieves or sets the text in the entry field of the textArea element.
+     * The **`value`** property of the HTMLTextAreaElement interface represents the value of the textarea element as a string, which is an empty string if the widget contains no content.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/value)
      */
     var value: String
 
     /**
-     * Returns whether an element will successfully validate based on forms validation rules and constraints.
+     * The **`willValidate`** read-only property of the HTMLTextAreaElement interface indicates whether the textarea element is a candidate for constraint validation.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/willValidate)
      */
     override val willValidate: Boolean
 
     /**
-     * Sets or retrieves how to handle wordwrapping in the object.
+     * The **`wrap`** property of the HTMLTextAreaElement interface indicates how the control should wrap the value for form submission.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/wrap)
      */
     var wrap: String
 
     /**
-     * Returns whether a form will validate when it is submitted, without having to submit it.
+     * The **`checkValidity()`** method of the HTMLTextAreaElement interface returns a boolean value which indicates if the element meets any constraint validation rules applied to it.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/checkValidity)
      */
     override fun checkValidity(): Boolean
 
     /**
+     * The **`reportValidity()`** method of the HTMLTextAreaElement interface performs the same validity checking steps as the HTMLTextAreaElement.checkValidity method.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/reportValidity)
      */
     override fun reportValidity(): Boolean
 
     /**
-     * Highlights the input area of a form element.
+     * The **`select()`** method of the HTMLTextAreaElement interface selects the entire contents of the textarea element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/select)
      */
     fun select()
 
     /**
-     * Sets a custom error message that is displayed when a form is submitted.
-     * @param error Sets a custom error message that is displayed when a form is submitted.
+     * The **`setCustomValidity()`** method of the HTMLTextAreaElement interface sets the custom validity message for the textarea element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/setCustomValidity)
      */
     fun setCustomValidity(error: String)
 
     /**
+     * The **`setRangeText()`** method of the HTMLTextAreaElement interface replaces a range of text in an textarea element with new text passed as the argument.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/setRangeText)
      */
     fun setRangeText(replacement: String)
@@ -214,10 +231,7 @@ protected constructor() :
     )
 
     /**
-     * Sets the start and end positions of a selection in a text field.
-     * @param start The offset into the text field for the start of the selection.
-     * @param end The offset into the text field for the end of the selection.
-     * @param direction The direction in which the selection is performed.
+     * The **`setSelectionRange()`** method of the HTMLTextAreaElement interface sets the start and end positions of the current text selection, and optionally the direction, in an textarea element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/setSelectionRange)
      */

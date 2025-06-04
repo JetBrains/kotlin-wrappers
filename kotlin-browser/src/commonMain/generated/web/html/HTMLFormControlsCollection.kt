@@ -17,9 +17,7 @@ private constructor() :
     override fun item(index: Int): Element?
 
     /**
-     * Returns the item with ID or name name from the collection.
-     *
-     * If there are multiple matching items, then a RadioNodeList object containing all those elements is returned.
+     * The **`HTMLFormControlsCollection.namedItem()`** method returns the RadioNodeList or the Element in the collection whose `name` or `id` match the specified name, or `null` if no node matches.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFormControlsCollection/namedItem)
      */

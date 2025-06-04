@@ -15,6 +15,8 @@ external class RTCDtlsTransport
 private constructor() :
     EventTarget {
     /**
+     * The **`iceTransport`** read-only property of the **RTCDtlsTransport** interface contains a reference to the underlying RTCIceTransport.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDtlsTransport/iceTransport)
      */
     val iceTransport: RTCIceTransport
@@ -26,6 +28,8 @@ private constructor() :
     var onstatechange: EventHandler<Event, RTCDtlsTransport, RTCDtlsTransport>?
 
     /**
+     * The **`state`** read-only property of the Datagram Transport Layer Security (**DTLS**) transport state.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDtlsTransport/state)
      */
     val state: RTCDtlsTransportState

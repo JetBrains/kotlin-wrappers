@@ -19,7 +19,7 @@ open external class TrackEvent(
     init: TrackEventInit = definedExternally,
 ) : Event {
     /**
-     * Returns the track object (TextTrack, AudioTrack, or VideoTrack) to which the event relates.
+     * The read-only **`track`** property of the TrackEvent interface specifies the media track object to which the event applies.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TrackEvent/track)
      */

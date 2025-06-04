@@ -13,26 +13,28 @@ open external class HTMLMetaElement
 protected constructor() :
     HTMLElement {
     /**
-     * Gets or sets meta-information to associate with httpEquiv or name.
+     * The **`HTMLMetaElement.content`** property gets or sets the `content` attribute of pragma directives and named meta data in conjunction with HTMLMetaElement.name or HTMLMetaElement.httpEquiv.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMetaElement/content)
      */
     var content: String
 
     /**
-     * Gets or sets information used to bind the value of a content attribute of a meta element to an HTTP response header.
+     * The **`HTMLMetaElement.httpEquiv`** property gets or sets the pragma directive or an HTTP response header name for the HTMLMetaElement.content attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMetaElement/httpEquiv)
      */
     var httpEquiv: String
 
     /**
+     * The **`HTMLMetaElement.media`** property enables specifying the media for `theme-color` metadata.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMetaElement/media)
      */
     var media: MediaQuery
 
     /**
-     * Sets or retrieves the value specified in the content attribute of the meta object.
+     * The **`HTMLMetaElement.name`** property is used in combination with HTMLMetaElement.content to define the name-value pairs for the metadata of a document.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMetaElement/name)
      */

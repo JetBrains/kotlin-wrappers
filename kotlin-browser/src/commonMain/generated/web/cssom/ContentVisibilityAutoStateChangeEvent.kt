@@ -18,6 +18,8 @@ open external class ContentVisibilityAutoStateChangeEvent(
     init: ContentVisibilityAutoStateChangeEventInit = definedExternally,
 ) : Event {
     /**
+     * The `skipped` read-only property of the ContentVisibilityAutoStateChangeEvent interface returns `true` if the user agent skips the element's contents, or `false` otherwise.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ContentVisibilityAutoStateChangeEvent/skipped)
      */
     val skipped: Boolean

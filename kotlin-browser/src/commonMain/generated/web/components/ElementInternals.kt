@@ -24,70 +24,70 @@ private constructor() :
     ARIAMixin,
     ValidationTarget {
     /**
-     * Returns the form owner of internals's target element.
+     * The **`form`** read-only property of the ElementInternals interface returns the HTMLFormElement associated with this element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/form)
      */
     val form: HTMLFormElement?
 
     /**
-     * Returns a NodeList of all the label elements that internals's target element is associated with.
+     * The **`labels`** read-only property of the ElementInternals interface returns the labels associated with the element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/labels)
      */
     val labels: NodeList<HTMLLabelElement>
 
     /**
-     * Returns the ShadowRoot for internals's target element, if the target element is a shadow host, or null otherwise.
+     * The **`shadowRoot`** read-only property of the ElementInternals interface returns the ShadowRoot for this element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/shadowRoot)
      */
     val shadowRoot: ShadowRoot?
 
     /**
+     * The **`states`** read-only property of the ElementInternals interface returns a CustomStateSet representing the possible states of the custom element.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/states)
      */
     val states: CustomStateSet
 
     /**
-     * Returns the error message that would be shown to the user if internals's target element was to be checked for validity.
+     * The **`validationMessage`** read-only property of the ElementInternals interface returns the validation message for the element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/validationMessage)
      */
     override val validationMessage: String
 
     /**
-     * Returns the ValidityState object for internals's target element.
+     * The **`validity`** read-only property of the ElementInternals interface returns a ValidityState object which represents the different validity states the element can be in, with respect to constraint validation.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/validity)
      */
     override val validity: ValidityState
 
     /**
-     * Returns true if internals's target element will be validated when the form is submitted; false otherwise.
+     * The **`willValidate`** read-only property of the ElementInternals interface returns `true` if the element is a submittable element that is a candidate for constraint validation.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/willValidate)
      */
     override val willValidate: Boolean
 
     /**
-     * Returns true if internals's target element has no validity problems; false otherwise. Fires an invalid event at the element in the latter case.
+     * The **`checkValidity()`** method of the ElementInternals interface checks if the element meets any constraint validation rules applied to it.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/checkValidity)
      */
     override fun checkValidity(): Boolean
 
     /**
-     * Returns true if internals's target element has no validity problems; otherwise, returns false, fires an invalid event at the element, and (if the event isn't canceled) reports the problem to the user.
+     * The **`reportValidity()`** method of the ElementInternals interface checks if the element meets any constraint validation rules applied to it.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/reportValidity)
      */
     override fun reportValidity(): Boolean
 
     /**
-     * Sets both the state and submission value of internals's target element to value.
-     *
-     * If value is null, the element won't participate in form submission.
+     * The **`setFormValue()`** method of the ElementInternals interface sets the element's submission value and state, communicating these to the user agent.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/setFormValue)
      */
@@ -107,7 +107,7 @@ private constructor() :
     )
 
     /**
-     * Marks internals's target element as suffering from the constraints indicated by the flags argument, and sets the element's validation message to message. If anchor is specified, the user agent might use it to indicate problems with the constraints of internals's target element when the form owner is validated interactively or reportValidity() is called.
+     * The **`setValidity()`** method of the ElementInternals interface sets the validity of the element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/setValidity)
      */

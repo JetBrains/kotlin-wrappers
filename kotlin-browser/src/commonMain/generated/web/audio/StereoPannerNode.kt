@@ -14,6 +14,8 @@ open external class StereoPannerNode(
     options: StereoPannerOptions = definedExternally,
 ) : AudioNode {
     /**
+     * The `pan` property of the StereoPannerNode interface is an a-rate AudioParam representing the amount of panning to apply.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/StereoPannerNode/pan)
      */
     val pan: AudioParam

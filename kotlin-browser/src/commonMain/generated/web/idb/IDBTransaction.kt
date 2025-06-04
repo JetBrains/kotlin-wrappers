@@ -15,33 +15,35 @@ external class IDBTransaction
 private constructor() :
     EventTarget {
     /**
-     * Returns the transaction's connection.
+     * The **`db`** read-only property of the IDBTransaction interface returns the database connection with which this transaction is associated.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBTransaction/db)
      */
     val db: IDBDatabase
 
     /**
+     * The **`durability`** read-only property of the IDBTransaction interface returns the durability hint the transaction was created with.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBTransaction/durability)
      */
     val durability: IDBTransactionDurability
 
     /**
-     * If the transaction was aborted, returns the error (a DOMException) providing the reason.
+     * The **`IDBTransaction.error`** property of the IDBTransaction interface returns the type of error when there is an unsuccessful transaction.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBTransaction/error)
      */
     val error: DOMException?
 
     /**
-     * Returns the mode the transaction was created with ("readonly" or "readwrite"), or "versionchange" for an upgrade transaction.
+     * The **`mode`** read-only property of the data in the object stores in the scope of the transaction (i.e., is the mode to be read-only, or do you want to write to the object stores?) The default value is `readonly`.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBTransaction/mode)
      */
     val mode: IDBTransactionMode
 
     /**
-     * Returns a list of the names of object stores in the transaction's scope. For an upgrade transaction this is all object stores in the database.
+     * The **`objectStoreNames`** read-only property of the of IDBObjectStore objects.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBTransaction/objectStoreNames)
      */
@@ -63,19 +65,21 @@ private constructor() :
     var onerror: EventHandler<Event, IDBTransaction, IDBTransaction>?
 
     /**
-     * Aborts the transaction. All pending requests will fail with a "AbortError" DOMException and all changes made to the database will be reverted.
+     * The **`abort()`** method of the IDBTransaction interface rolls back all the changes to objects in the database associated with this transaction.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBTransaction/abort)
      */
     fun abort()
 
     /**
+     * The **`commit()`** method of the IDBTransaction interface commits the transaction if it is called on an active transaction.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBTransaction/commit)
      */
     fun commit()
 
     /**
-     * Returns an IDBObjectStore in the transaction's scope.
+     * The **`objectStore()`** method of the added to the scope of this transaction.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBTransaction/objectStore)
      */

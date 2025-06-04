@@ -13,6 +13,8 @@ import kotlin.js.definedExternally
 external class DOMImplementation
 private constructor() {
     /**
+     * The **`DOMImplementation.createDocument()`** method creates and returns an XMLDocument.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMImplementation/createDocument)
      */
     fun createDocument(
@@ -22,6 +24,8 @@ private constructor() {
     ): XMLDocument
 
     /**
+     * The **`DOMImplementation.createDocumentType()`** method returns a DocumentType object which can either be used with into the document via methods like Node.insertBefore() or ```js-nolint createDocumentType(qualifiedNameStr, publicId, systemId) ``` - `qualifiedNameStr` - : A string containing the qualified name, like `svg:svg`.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMImplementation/createDocumentType)
      */
     fun createDocumentType(
@@ -31,6 +35,8 @@ private constructor() {
     ): DocumentType
 
     /**
+     * The **`DOMImplementation.createHTMLDocument()`** method creates a new HTML Document.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMImplementation/createHTMLDocument)
      */
     fun createHTMLDocument(title: String = definedExternally): Document

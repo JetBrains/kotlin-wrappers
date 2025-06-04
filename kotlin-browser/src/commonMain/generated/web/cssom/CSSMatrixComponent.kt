@@ -16,6 +16,8 @@ open external class CSSMatrixComponent(
     options: CSSMatrixComponentOptions = definedExternally,
 ) : CSSTransformComponent {
     /**
+     * The **`matrix`** property of the See the matrix() and matrix3d() pages for examples.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSMatrixComponent/matrix)
      */
     var matrix: DOMMatrix

@@ -20,12 +20,14 @@ open external class PopStateEvent(
     init: PopStateEventInit = definedExternally,
 ) : Event {
     /**
+     * The **`hasUAVisualTransition`** read-only property of the PopStateEvent interface returns `true` if the user agent performed a visual transition for this navigation before dispatching this event, or `false` otherwise.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PopStateEvent/hasUAVisualTransition)
      */
     val hasUAVisualTransition: Boolean
 
     /**
-     * Returns a copy of the information that was provided to pushState() or replaceState().
+     * The **`state`** read-only property of the PopStateEvent interface represents the state stored when the event was created.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PopStateEvent/state)
      */

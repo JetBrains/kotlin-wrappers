@@ -13,34 +13,36 @@ import web.fs.FileSystemEntry
 external class DataTransferItem
 private constructor() {
     /**
-     * Returns the drag data item kind, one of: "string", "file".
+     * The read-only **`DataTransferItem.kind`** property returns the kind–a string or a file–of the DataTransferItem object representing the _drag data item_.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DataTransferItem/kind)
      */
     val kind: String
 
     /**
-     * Returns the drag data item type string.
+     * The read-only **`DataTransferItem.type`** property returns the type (format) of the DataTransferItem object representing the drag data item.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DataTransferItem/type)
      */
     val type: String
 
     /**
-     * Returns a File object, if the drag data item kind is File.
+     * If the item is a file, the **`DataTransferItem.getAsFile()`** method returns the drag data item's File object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DataTransferItem/getAsFile)
      */
     fun getAsFile(): File?
 
     /**
-     * Invokes the callback with the string data as the argument, if the drag data item kind is text.
+     * The **`DataTransferItem.getAsString()`** method invokes the given callback with the drag data item's string data as the argument if the item's DataTransferItem.kind is a _Plain unicode string_ (i.e., `kind` is `string`).
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DataTransferItem/getAsString)
      */
     fun getAsString(callback: FunctionStringCallback?)
 
     /**
+     * If the item described by the DataTransferItem is a file, `webkitGetAsEntry()` returns a FileSystemFileEntry or FileSystemDirectoryEntry representing it.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DataTransferItem/webkitGetAsEntry)
      */
     fun webkitGetAsEntry(): FileSystemEntry?

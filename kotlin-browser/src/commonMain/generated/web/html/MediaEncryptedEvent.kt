@@ -20,11 +20,15 @@ open external class MediaEncryptedEvent(
     init: MediaEncryptedEventInit = definedExternally,
 ) : Event {
     /**
+     * The read-only **`initData`** property of the MediaKeyMessageEvent returns the initialization data contained in this event, if any.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaEncryptedEvent/initData)
      */
     val initData: ArrayBuffer?
 
     /**
+     * The read-only **`initDataType`** property of the MediaKeyMessageEvent returns a case-sensitive string describing the type of the initialization data associated with this event.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaEncryptedEvent/initDataType)
      */
     val initDataType: String

@@ -22,11 +22,15 @@ private constructor() :
     var onended: EventHandler<Event, AudioScheduledSourceNode, AudioScheduledSourceNode>?
 
     /**
+     * The `start()` method on AudioScheduledSourceNode schedules a sound to begin playback at the specified time.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioScheduledSourceNode/start)
      */
     fun start(`when`: Double = definedExternally)
 
     /**
+     * The `stop()` method on AudioScheduledSourceNode schedules a sound to cease playback at the specified time.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioScheduledSourceNode/stop)
      */
     fun stop(`when`: Double = definedExternally)

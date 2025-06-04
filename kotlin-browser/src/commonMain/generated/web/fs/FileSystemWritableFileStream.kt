@@ -19,6 +19,8 @@ external class FileSystemWritableFileStream
 private constructor() :
     WritableStream<FileSystemWriteChunkType> {
     /**
+     * The **`seek()`** method of the FileSystemWritableFileStream interface updates the current file cursor offset to the position (in bytes) specified when calling the method.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemWritableFileStream/seek)
      */
     @JsAsync
@@ -29,6 +31,8 @@ private constructor() :
     fun seekAsync(position: UInt53): Promise<Void>
 
     /**
+     * The **`truncate()`** method of the FileSystemWritableFileStream interface resizes the file associated with the stream to the specified size in bytes.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemWritableFileStream/truncate)
      */
     @JsAsync
@@ -39,6 +43,8 @@ private constructor() :
     fun truncateAsync(size: UInt53): Promise<Void>
 
     /**
+     * The **`write()`** method of the FileSystemWritableFileStream interface writes content into the file the method is called on, at the current file cursor offset.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemWritableFileStream/write)
      */
     @JsAsync

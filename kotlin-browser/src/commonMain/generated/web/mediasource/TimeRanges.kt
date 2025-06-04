@@ -10,25 +10,21 @@ package web.mediasource
 external class TimeRanges
 private constructor() {
     /**
-     * Returns the number of ranges in the object.
+     * The **`TimeRanges.length`** read-only property returns the number of ranges in the object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TimeRanges/length)
      */
     val length: Int
 
     /**
-     * Returns the time for the end of the range with the given index.
-     *
-     * Throws an "IndexSizeError" DOMException if the index is out of range.
+     * The **`end()`** method of the TimeRanges interface returns the time offset (in seconds) at which a specified time range ends.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TimeRanges/end)
      */
     fun end(index: Int): Double
 
     /**
-     * Returns the time for the start of the range with the given index.
-     *
-     * Throws an "IndexSizeError" DOMException if the index is out of range.
+     * The **`start()`** method of the TimeRanges interface returns the time offset (in seconds) at which a specified time range begins.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TimeRanges/start)
      */

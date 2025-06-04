@@ -9,6 +9,8 @@ package web.cssom
  */
 open external class CSSSkewY(
     /**
+     * The **`ay`** property of the along the y-axis (or ordinate).
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSSkewY/ay)
      */
     var ay: CSSNumericValue,

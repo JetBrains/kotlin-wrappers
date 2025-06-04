@@ -16,11 +16,15 @@ open external class Highlight(
     vararg initialRanges: AbstractRange,
 ) : MutableSetLike<AbstractRange> {
     /**
+     * It is possible to create Range objects that overlap in a document.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Highlight/priority)
      */
     var priority: Int
 
     /**
+     * The `type` property of the Highlight interface is an enumerated String used to specify the meaning of the highlight.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Highlight/type)
      */
     var type: HighlightType

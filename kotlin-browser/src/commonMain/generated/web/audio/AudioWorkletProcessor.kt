@@ -12,6 +12,8 @@ import web.messaging.MessagePort
 open external class AudioWorkletProcessor
 private constructor() {
     /**
+     * The read-only **`port`** property of the The MessagePort object that is connecting the `AudioWorkletProcessor` and the associated `AudioWorkletNode`.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioWorkletProcessor/port)
      */
     val port: MessagePort

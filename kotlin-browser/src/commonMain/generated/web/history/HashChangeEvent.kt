@@ -19,14 +19,14 @@ open external class HashChangeEvent(
     init: HashChangeEventInit = definedExternally,
 ) : Event {
     /**
-     * Returns the URL of the session history entry that is now current.
+     * The **`newURL`** read-only property of the navigating.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HashChangeEvent/newURL)
      */
     val newURL: String
 
     /**
-     * Returns the URL of the session history entry that was previously current.
+     * The **`oldURL`** read-only property of the was navigated.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HashChangeEvent/oldURL)
      */

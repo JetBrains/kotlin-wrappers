@@ -14,11 +14,15 @@ open external class ConvolverNode(
     options: ConvolverOptions = definedExternally,
 ) : AudioNode {
     /**
+     * The **`buffer`** property of the ConvolverNode interface represents a mono, stereo, or 4-channel AudioBuffer containing the (possibly multichannel) impulse response used by the `ConvolverNode` to create the reverb effect.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ConvolverNode/buffer)
      */
     var buffer: AudioBuffer?
 
     /**
+     * The `normalize` property of the ConvolverNode interface is a boolean that controls whether the impulse response from the buffer will be scaled by an equal-power normalization when the `buffer` attribute is set, or not.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ConvolverNode/normalize)
      */
     var normalize: Boolean

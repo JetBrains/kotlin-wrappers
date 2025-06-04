@@ -27,27 +27,28 @@ protected constructor() :
     TexImageSource,
     GPUCopyExternalImageSource {
     /**
-     * Gets or sets the height of a canvas element on a document.
+     * The **`HTMLCanvasElement.height`** property is a positive `integer` reflecting the `height` HTML attribute of the canvas element interpreted in CSS pixels.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLCanvasElement/height)
      */
     var height: Int
 
     /**
-     * Gets or sets the width of a canvas element on a document.
+     * The **`HTMLCanvasElement.width`** property is a positive `integer` reflecting the `width` HTML attribute of the canvas element interpreted in CSS pixels.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLCanvasElement/width)
      */
     var width: Int
 
     /**
+     * The **`captureStream()`** method of the HTMLCanvasElement interface returns a MediaStream which includes a CanvasCaptureMediaStreamTrack containing a real-time video capture of the canvas's contents.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLCanvasElement/captureStream)
      */
     fun captureStream(frameRequestRate: Double = definedExternally): MediaStream
 
     /**
-     * Returns an object that provides methods and properties for drawing and manipulating images and graphics on a canvas element in a document. A context object includes information about colors, line widths, fonts, and other graphic parameters that can be drawn on a canvas.
-     * @param contextId The identifier (ID) of the type of canvas to create. Internet Explorer 9 and Internet Explorer 10 support only a 2-D context using canvas.getContext("2d"); IE11 Preview also supports 3-D or WebGL context using canvas.getContext("experimental-webgl");
+     * The **`HTMLCanvasElement.getContext()`** method returns a drawing context on the canvas, or `null` if the context identifier is not supported, or the canvas has already been set to a different context mode.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLCanvasElement/getContext)
      */
@@ -57,6 +58,8 @@ protected constructor() :
     ): T?
 
     /**
+     * The **`HTMLCanvasElement.toBlob()`** method creates a Blob object representing the image contained in the canvas.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLCanvasElement/toBlob)
      */
     fun toBlob(
@@ -66,8 +69,7 @@ protected constructor() :
     )
 
     /**
-     * Returns the content of the current canvas as an image that you can use as a source for another canvas or an HTML element.
-     * @param type The standard MIME type for the image format to return. If you do not specify this parameter, the default value is a PNG format image.
+     * The **`HTMLCanvasElement.toDataURL()`** method returns a data URL containing a representation of the image in the format specified by the `type` parameter.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLCanvasElement/toDataURL)
      */
@@ -77,6 +79,8 @@ protected constructor() :
     ): String
 
     /**
+     * The **`HTMLCanvasElement.transferControlToOffscreen()`** method transfers control to an OffscreenCanvas object, either on the main thread or on a worker.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLCanvasElement/transferControlToOffscreen)
      */
     fun transferControlToOffscreen(): OffscreenCanvas

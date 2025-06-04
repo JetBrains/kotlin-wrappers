@@ -11,11 +11,15 @@ external class CSSNamespaceRule
 private constructor() :
     CSSRule {
     /**
+     * The read-only **`namespaceURI`** property of the CSSNamespaceRule returns a string containing the text of the URI of the given namespace.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSNamespaceRule/namespaceURI)
      */
     val namespaceURI: String
 
     /**
+     * The read-only **`prefix`** property of the CSSNamespaceRule returns a string with the name of the prefix associated to this namespace.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSNamespaceRule/prefix)
      */
     val prefix: String

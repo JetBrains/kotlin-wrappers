@@ -19,7 +19,7 @@ open external class DragEvent(
     init: DragEventInit = definedExternally,
 ) : MouseEvent {
     /**
-     * Returns the DataTransfer object for the event.
+     * The **`DragEvent.dataTransfer`** read-only property holds the drag operation's data (as a DataTransfer object).
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DragEvent/dataTransfer)
      */

@@ -13,18 +13,14 @@ open external class TextTrackCue
 private constructor() :
     EventTarget {
     /**
-     * Returns the text track cue end time, in seconds.
-     *
-     * Can be set.
+     * The **`endTime`** property of the TextTrackCue interface returns and sets the end time of the cue.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextTrackCue/endTime)
      */
     var endTime: Double
 
     /**
-     * Returns the text track cue identifier.
-     *
-     * Can be set.
+     * The **`id`** property of the TextTrackCue interface returns and sets the identifier for this cue.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextTrackCue/id)
      */
@@ -41,25 +37,21 @@ private constructor() :
     var onexit: EventHandler<Event, TextTrackCue, TextTrackCue>?
 
     /**
-     * Returns true if the text track cue pause-on-exit flag is set, false otherwise.
-     *
-     * Can be set.
+     * The **`pauseOnExit`** property of the TextTrackCue interface returns or sets the flag indicating whether playback of the media should pause when the end of the range to which this cue applies is reached.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextTrackCue/pauseOnExit)
      */
     var pauseOnExit: Boolean
 
     /**
-     * Returns the text track cue start time, in seconds.
-     *
-     * Can be set.
+     * The **`startTime`** property of the TextTrackCue interface returns and sets the start time of the cue.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextTrackCue/startTime)
      */
     var startTime: Double
 
     /**
-     * Returns the TextTrack object to which this text track cue belongs, if any, or null otherwise.
+     * The **`track`** read-only property of the TextTrackCue interface returns the TextTrack object that this cue belongs to.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextTrackCue/track)
      */

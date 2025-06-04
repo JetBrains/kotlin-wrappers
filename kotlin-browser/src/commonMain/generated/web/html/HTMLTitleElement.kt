@@ -11,7 +11,7 @@ open external class HTMLTitleElement
 protected constructor() :
     HTMLElement {
     /**
-     * Retrieves or sets the text of the object as a string.
+     * The **`text`** property of the HTMLTitleElement interface represents the child text content of the document's title as a string.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTitleElement/text)
      */
