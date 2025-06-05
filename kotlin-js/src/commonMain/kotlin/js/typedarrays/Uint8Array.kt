@@ -38,10 +38,10 @@ open external class Uint8Array<B : ArrayBufferLike>(
         fun fromBase64(
             string: String,
             options: FromBase64Options = definedExternally,
-        )
+        ): Uint8Array<ArrayBuffer>
 
         fun fromHex(
             string: String,
-        )
+        ): Uint8Array<ArrayBuffer>
     }
 }
