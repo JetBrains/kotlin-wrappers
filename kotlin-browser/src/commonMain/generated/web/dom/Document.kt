@@ -949,6 +949,12 @@ open external class Document :
     val pointerOverEvent: EventInstance<PointerEvent, Document /* this */, Node>
 
     /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/pointerrawupdate_event)
+     */
+    @JsEvent("pointerrawupdate")
+    val pointerRawUpdateEvent: EventInstance<PointerEvent, Document /* this */, Node>
+
+    /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/pointerup_event)
      */
     @JsEvent("pointerup")

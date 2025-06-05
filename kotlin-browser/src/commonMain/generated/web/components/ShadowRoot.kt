@@ -38,7 +38,7 @@ private constructor() :
     val host: Element
 
     /**
-     * The **`innerHTML`** property of the ShadowRoot interface sets or returns a reference to the DOM tree inside the `ShadowRoot`.
+     * The **`innerHTML`** property of the ShadowRoot interface sets gets or sets the HTML markup to the DOM tree inside the `ShadowRoot`.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ShadowRoot/innerHTML)
      */

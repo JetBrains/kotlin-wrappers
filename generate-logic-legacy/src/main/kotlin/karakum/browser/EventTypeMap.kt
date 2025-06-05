@@ -78,6 +78,7 @@ internal val WEB_WORKER_EVENT_DATA = listOf(
 )
 
 internal val SERVICE_WORKER_EVENT_DATA = listOf(
+    EventInfo("web.cookie.ExtendableCookieChangeEvent"),
     EventInfo("web.push.PushEvent"),
     EventInfo("web.push.PushSubscriptionChangeEvent"),
     EventInfo("web.serviceworker.ExtendableEvent"),
@@ -177,6 +178,7 @@ internal val EVENT_CORRECTION_MAP = mapOf(
     "pointerlockchange" to "pointer_lock_change",
     "pointerlockerror" to "pointer_lock_error",
     "pointermove" to "pointer_move",
+    "pointerrawupdate" to "pointer_raw_update",
     "pointerout" to "pointer_out",
     "pointerover" to "pointer_over",
     "pointerup" to "pointer_up",

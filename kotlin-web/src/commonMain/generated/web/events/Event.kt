@@ -292,6 +292,9 @@ open external class Event(
         @JsValue("pointerlockerror")
         val POINTER_LOCK_ERROR: EventType<Event>
 
+        @JsValue("pointerrawupdate")
+        val POINTER_RAW_UPDATE: EventType<Event>
+
         @JsValue("progress")
         val PROGRESS: EventType<Event>
 

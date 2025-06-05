@@ -180,6 +180,12 @@ private constructor() :
     val pointerOverEvent: EventInstance<PointerEvent, SVGElement /* this */, Node>
 
     /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGElement/pointerrawupdate_event)
+     */
+    @JsEvent("pointerrawupdate")
+    val pointerRawUpdateEvent: EventInstance<PointerEvent, SVGElement /* this */, Node>
+
+    /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGElement/pointerup_event)
      */
     @JsEvent("pointerup")

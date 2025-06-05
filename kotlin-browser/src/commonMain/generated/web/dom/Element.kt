@@ -113,7 +113,7 @@ private constructor() :
     var id: ElementId
 
     /**
-     * The Element property **`innerHTML`** gets or sets the HTML or XML markup contained within the element.
+     * The **`innerHTML`** property of the Element interface gets or sets the HTML or XML markup contained within the element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/innerHTML)
      */

@@ -365,6 +365,12 @@ protected constructor() :
     val pointerOverEvent: EventInstance<PointerEvent, HTMLElement /* this */, Node>
 
     /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/pointerrawupdate_event)
+     */
+    @JsEvent("pointerrawupdate")
+    val pointerRawUpdateEvent: EventInstance<PointerEvent, HTMLElement /* this */, Node>
+
+    /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/pointerup_event)
      */
     @JsEvent("pointerup")

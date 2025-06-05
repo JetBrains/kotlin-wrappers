@@ -849,6 +849,12 @@ private constructor() :
     val pointerOverEvent: EventInstance<PointerEvent, Window /* this */, Node>
 
     /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/pointerrawupdate_event)
+     */
+    @JsEvent("pointerrawupdate")
+    val pointerRawUpdateEvent: EventInstance<PointerEvent, Window /* this */, Node>
+
+    /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/pointerup_event)
      */
     @JsEvent("pointerup")

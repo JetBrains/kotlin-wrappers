@@ -2083,6 +2083,10 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/vertical-align)
      */
     var verticalAlign: String
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/view-transition-class)
+     */
     var viewTransitionClass: String
 
     /**

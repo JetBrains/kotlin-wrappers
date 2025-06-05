@@ -472,6 +472,15 @@ external interface GlobalEventHandlers :
         set(value) = definedExternally
 
     /**
+     * Available only in secure contexts.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/pointerrawupdate_event)
+     */
+    var onpointerrawupdate: EventHandler<Event, GlobalEventHandlers, Node>?
+        get() = definedExternally
+        set(value) = definedExternally
+
+    /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/pointerup_event)
      */
     var onpointerup: EventHandler<PointerEvent, GlobalEventHandlers, Node>?

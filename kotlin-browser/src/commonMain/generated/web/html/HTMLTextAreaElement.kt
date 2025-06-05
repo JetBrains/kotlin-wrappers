@@ -218,7 +218,7 @@ protected constructor() :
     fun setCustomValidity(error: String)
 
     /**
-     * The **`setRangeText()`** method of the HTMLTextAreaElement interface replaces a range of text in an textarea element with new text passed as the argument.
+     * The **`setRangeText()`** method of the HTMLTextAreaElement interface replaces a range of text in a textarea element with new text passed as the argument.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/setRangeText)
      */
@@ -231,7 +231,7 @@ protected constructor() :
     )
 
     /**
-     * The **`setSelectionRange()`** method of the HTMLTextAreaElement interface sets the start and end positions of the current text selection, and optionally the direction, in an textarea element.
+     * The **`setSelectionRange()`** method of the HTMLTextAreaElement interface sets the start and end positions of the current text selection, and optionally the direction, in a textarea element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/setSelectionRange)
      */

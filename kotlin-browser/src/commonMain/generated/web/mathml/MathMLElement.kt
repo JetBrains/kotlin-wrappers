@@ -166,6 +166,12 @@ private constructor() :
     val pointerOverEvent: EventInstance<PointerEvent, MathMLElement /* this */, Node>
 
     /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MathMLElement/pointerrawupdate_event)
+     */
+    @JsEvent("pointerrawupdate")
+    val pointerRawUpdateEvent: EventInstance<PointerEvent, MathMLElement /* this */, Node>
+
+    /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MathMLElement/pointerup_event)
      */
     @JsEvent("pointerup")

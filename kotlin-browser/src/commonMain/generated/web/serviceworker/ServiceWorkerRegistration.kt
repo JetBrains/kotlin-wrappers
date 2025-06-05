@@ -7,6 +7,7 @@ import js.core.JsBoolean
 import js.core.Void
 import js.promise.Promise
 import seskar.js.JsAsync
+import web.cookie.CookieStoreManager
 import web.events.*
 import web.notifications.Notification
 import web.notifications.NotificationOptions
@@ -29,6 +30,13 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/active)
      */
     val active: ServiceWorker?
+
+    /**
+     * The **`cookies`** read-only property of the ServiceWorkerRegistration interface returns a reference to the CookieStoreManager interface, which enables a web app to subscribe to and unsubscribe from cookie change events in a service worker.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/cookies)
+     */
+    val cookies: CookieStoreManager
 
     /**
      * The **`installing`** read-only property of the initially set to `null`.

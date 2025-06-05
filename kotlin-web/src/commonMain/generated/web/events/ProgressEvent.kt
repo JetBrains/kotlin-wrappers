@@ -8,7 +8,7 @@ import seskar.js.JsValue
 import kotlin.js.definedExternally
 
 /**
- * The **`ProgressEvent`** interface represents events measuring progress of an underlying process, like an HTTP request (for an `XMLHttpRequest`, or the loading of the underlying resource of an img, audio, video, style or link).
+ * The **`ProgressEvent`** interface represents events that measure the progress of an underlying process, like an HTTP request (e.g., an `XMLHttpRequest`, or the loading of the underlying resource of an img, audio, video, style or link).
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ProgressEvent)
  */
@@ -24,14 +24,14 @@ open external class ProgressEvent(
     val lengthComputable: Boolean
 
     /**
-     * The **`ProgressEvent.loaded`** read-only property is a 64-bit unsigned integer indicating the size, in bytes, of the data already transmitted or processed.
+     * The **`ProgressEvent.loaded`** read-only property is a number indicating the size of the data already transmitted or processed.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ProgressEvent/loaded)
      */
     val loaded: Double
 
     /**
-     * The **`ProgressEvent.total`** read-only property is a 64-bit unsigned integer indicating the total size, in bytes, of the data being transmitted or processed.
+     * The **`ProgressEvent.total`** read-only property is a number indicating the total size of the data being transmitted or processed.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ProgressEvent/total)
      */

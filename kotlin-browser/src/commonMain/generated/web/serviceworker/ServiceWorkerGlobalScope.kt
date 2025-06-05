@@ -7,6 +7,7 @@ import js.core.Void
 import js.promise.Promise
 import seskar.js.JsAsync
 import web.cookie.CookieStore
+import web.cookie.ExtendableCookieChangeEvent
 import web.events.EventHandler
 import web.events.EventInstance
 import web.events.JsEvent
@@ -43,6 +44,11 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope/activate_event)
      */
     var onactivate: EventHandler<ExtendableEvent, ServiceWorkerGlobalScope, ServiceWorkerGlobalScope>?
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope/cookiechange_event)
+     */
+    var oncookiechange: EventHandler<ExtendableCookieChangeEvent, ServiceWorkerGlobalScope, ServiceWorkerGlobalScope>?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope/fetch_event)
