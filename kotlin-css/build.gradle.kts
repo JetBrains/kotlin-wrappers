@@ -1,3 +1,6 @@
+@file:OptIn(ExperimentalWasmDsl::class)
+
+import org.jetbrains.kotlin.gradle.ExperimentalWasmDsl
 import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTargetWithSimulatorTests
 
 plugins {
@@ -8,6 +11,7 @@ kotlin {
     jvmToolchain(11) // Do not change!
     jvm()
     js()
+    wasmJs()
 
     iosArm64()
     iosSimulatorArm64()
