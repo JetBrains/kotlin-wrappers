@@ -1,13 +1,7 @@
 plugins {
-    alias(libs.plugins.karakum)
+    id("generatorbuild.karakum-conventions")
 }
 
 dependencies {
-    jsMainImplementation(libs.typescript.map {
-        devNpm(it.name, requireNotNull(it.version))
-    })
-}
-
-karakum {
-    output = layout.projectDirectory.dir("../src/commonMain/generated")
+    jsMainImplementation(npmStrict("typescript"))
 }

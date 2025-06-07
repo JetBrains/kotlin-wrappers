@@ -25,6 +25,3 @@ dependencyResolutionManagement {
 
 include(":kotlin-node-karakum")
 project(":kotlin-node-karakum").projectDir = file("../kotlin-node/karakum")
-
-include(":kotlin-typescript-karakum")
-project(":kotlin-typescript-karakum").projectDir = file("../kotlin-typescript/karakum")

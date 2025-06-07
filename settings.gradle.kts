@@ -264,6 +264,8 @@ include("kotlin-tanstack-virtual-core")
 // Kotlin/JS: TypeScript wrappers
 include("kotlin-typescript")
 
+includeKarakum("kotlin-typescript")
+
 // Kotlin/JS: @vercel/ncc wrappers
 include("kotlin-vercel-ncc")
 
