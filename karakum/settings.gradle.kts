@@ -22,6 +22,3 @@ dependencyResolutionManagement {
         }
     }
 }
-
-include(":kotlin-node-karakum")
-project(":kotlin-node-karakum").projectDir = file("../kotlin-node/karakum")

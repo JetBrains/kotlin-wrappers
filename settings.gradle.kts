@@ -176,6 +176,8 @@ include("kotlin-muix-tree-view")
 // Kotlin/JS: Node.js wrappers
 include("kotlin-node")
 
+includeKarakum("kotlin-node")
+
 // Kotlin/JS: null-writable wrappers
 include("kotlin-null-writable")
 
