@@ -126,6 +126,8 @@ includeKarakum("kotlin-csstype")
 // Kotlin/JS: Electron wrappers
 include("kotlin-electron")
 
+includeKarakum("kotlin-electron")
+
 // Kotlin/JS: Emotion Cache wrappers
 include("kotlin-emotion-cache")
 
