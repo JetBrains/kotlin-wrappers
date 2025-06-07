@@ -2,14 +2,13 @@
 
 package tanstack.query.core
 
-import js.core.Void
 import js.objects.JsPlainObject
-import js.promise.Promise
+import js.promise.PromiseResult
 
 @JsPlainObject
 external interface MutationCacheConfig {
-    val onError: ((error: DefaultError, variables: Any, context: Any, mutation: Mutation<*, *, *, *>) -> Promise<Void>?)?
-    val onSuccess: ((data: Any, variables: Any, context: Any, mutation: Mutation<*, *, *, *>) -> Promise<Void>?)?
-    val onMutate: ((variables: Any, mutation: Mutation<*, *, *, *>) -> Promise<Void>?)?
-    val onSettled: ((data: Any?, error: DefaultError?, variables: Any, context: Any, mutation: Mutation<*, *, *, *>) -> Promise<Void>?)?
+    val onError: ((error: DefaultError, variables: Any?, context: Any?, mutation: Mutation<*, *, *, *>) -> PromiseResult<*>?)?
+    val onSuccess: ((data: Any?, variables: Any?, context: Any?, mutation: Mutation<*, *, *, *>) -> PromiseResult<*>?)?
+    val onMutate: ((variables: Any?, mutation: Mutation<*, *, *, *>) -> PromiseResult<*>?)?
+    val onSettled: ((data: Any?, error: DefaultError?, variables: Any?, context: Any?, mutation: Mutation<*, *, *, *>) -> PromiseResult<*>?)?
 }

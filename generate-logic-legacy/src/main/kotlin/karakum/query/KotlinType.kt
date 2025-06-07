@@ -26,9 +26,10 @@ private val STANDARD_TYPE_MAP = mapOf(
     "boolean | T | undefined" to "T?",
 
     "TData | Promise<TData>" to "PromiseResult<TData>",
-    "() => Promise<unknown> | unknown" to "() -> Promise<*>?",
+    "() => Promise<unknown> | unknown" to "() -> PromiseResult<*>",
     "Promise<unknown>" to "Promise<*>",
     "Promise<void>" to "Promise<Void>",
+    "unknown | Promise<unknown>" to "PromiseResult<*>",
 
     "Set<TListener>" to "JsSet<TListener>",
 
@@ -321,7 +322,7 @@ internal fun kotlinType(
             .replace(" | null", "?")
             .replace("Mutation<unknown, unknown, unknown>", "Mutation<*, *, *, *>")
             .replace("Mutation<unknown, unknown, unknown, unknown>", "Mutation<*, *, *, *>")
-            .replace(") => Promise<unknown> | unknown", ") -> Promise<*>?")
+            .replace(") => Promise<unknown> | unknown", ") -> PromiseResult<*>?")
             .replace("unknown", "Any?")
             // hotfix
             .replace("Any??", "Any?")

@@ -3,12 +3,12 @@
 package tanstack.query.core
 
 import js.objects.JsPlainObject
-import js.promise.Promise
+import js.promise.PromiseResult
 import web.abort.AbortSignal
 
 @JsPlainObject
 external interface FetchContext<TQueryFnData, TError, TData, TQueryKey : QueryKey> {
-    val fetchFn: () -> Promise<*>?
+    val fetchFn: () -> PromiseResult<*>
     val fetchOptions: FetchOptions<*>?
     val signal: AbortSignal
     val options: QueryOptions<TQueryFnData, TError, TData, *, *>
