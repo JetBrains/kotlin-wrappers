@@ -4,10 +4,6 @@ plugins {
     `kotlin-dsl`
 }
 
-repositories {
-    gradlePluginPortal()
-}
-
 val props = Properties().apply {
     rootProject.file("../gradle.properties").inputStream().use { load(it) }
 }
