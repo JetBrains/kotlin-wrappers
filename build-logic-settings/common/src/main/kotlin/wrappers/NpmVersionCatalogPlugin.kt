@@ -29,6 +29,14 @@ private fun npmLibraries(settings: Settings): List<NpmLibrary> {
 
     return listOfNotNull(parentPropertiesFile, propertiesFile.takeIf { it.exists() })
         .flatMap { npmLibraries(it) }
+        .map {
+            // use strict versions for generators
+            it.copy(
+                version = it.version
+                    .removePrefix("^")
+                    .removePrefix("~")
+            )
+        }
 }
 
 private fun npmLibraries(propertiesFile: File): List<NpmLibrary> {
@@ -57,7 +65,7 @@ private fun parseNpmLibrary(
     )
 }
 
-private class NpmLibrary(
+private data class NpmLibrary(
     val name: String,
     val version: String,
 ) {
