@@ -157,6 +157,8 @@ includeKarakum("kotlin-node")
 // Kotlin/JS: null-writable wrappers
 include("kotlin-null-writable")
 
+includeKarakum("kotlin-null-writable")
+
 // Kotlin/JS: Popper Core wrappers
 include("kotlin-popperjs-core")
 
