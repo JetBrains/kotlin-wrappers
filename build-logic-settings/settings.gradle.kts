@@ -6,4 +6,5 @@ dependencyResolutionManagement {
     }
 }
 
+include("generatorbuild")
 include("wrappersbuild")
