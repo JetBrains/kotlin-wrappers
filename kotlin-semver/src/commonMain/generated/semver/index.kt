@@ -99,7 +99,3 @@ package semver
 // export import compareIdentifiers = identifiers.compareIdentifiers;
 
 // export import rcompareIdentifiers = identifiers.rcompareIdentifiers;
-
-external val SEMVER_SPEC_VERSION: String // "2.0.0"
-
-external val RELEASE_TYPES: js.array.ReadonlyArray<ReleaseType>

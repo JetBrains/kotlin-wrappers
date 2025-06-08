@@ -209,6 +209,8 @@ include("kotlin-react-use")
 // Kotlin/JS: semver wrappers
 include("kotlin-semver")
 
+includeKarakum("kotlin-semver")
+
 // Kotlin/JS: a reimplementation of kotlin-styled in pure Kotlin, without styled-components
 include("kotlin-styled-next")
 

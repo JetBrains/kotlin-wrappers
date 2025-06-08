@@ -1,10 +1,10 @@
 import ts from "typescript";
-import * as karakum from "karakum";
+import * as karakum from "../karakum.mjs";
 
 const comparisonResultType = JSON.stringify(["1", "0", "-1"].sort())
 
 export default function (node, context) {
-    const typeScriptService = context.lookupService(karakum.typeScriptServiceKey)
+    const typeScriptService = context.lookupService(karakum.typeScriptServiceKey.get())
 
     if (
         ts.isUnionTypeNode(node)
