@@ -3,5 +3,5 @@ plugins {
 }
 
 dependencies {
-    jsMainImplementation(npmStrict("@types/node"))
+    jsMainImplementation(npm(jspkg.types.node))
 }

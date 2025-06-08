@@ -3,5 +3,5 @@ plugins {
 }
 
 dependencies {
-    jsMainImplementation(npmStrict("electron"))
+    jsMainImplementation(npm(jspkg.electron))
 }

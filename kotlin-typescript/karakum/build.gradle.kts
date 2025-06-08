@@ -3,5 +3,5 @@ plugins {
 }
 
 dependencies {
-    jsMainImplementation(npmStrict("typescript"))
+    jsMainImplementation(npm(jspkg.typescript))
 }
