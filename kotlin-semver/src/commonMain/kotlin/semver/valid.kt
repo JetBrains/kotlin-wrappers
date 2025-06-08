@@ -26,7 +26,7 @@ external fun valid(
  */
 external fun valid(
     version: String?,
-    optionsOrLoose: semver.Options = definedExternally,
+    optionsOrLoose: Options = definedExternally,
 ): String?
 
 /**
@@ -47,7 +47,7 @@ external fun valid(
  */
 external fun valid(
     version: SemVer?,
-    optionsOrLoose: semver.Options = definedExternally,
+    optionsOrLoose: Options = definedExternally,
 ): String?
 
 // export = valid;

@@ -23,7 +23,7 @@ external class Comparator {
     var loose: Boolean
     var options: Options
 
-    fun parse(comp: String): Unit
+    fun parse(comp: String)
 
     fun test(version: String): Boolean
 
