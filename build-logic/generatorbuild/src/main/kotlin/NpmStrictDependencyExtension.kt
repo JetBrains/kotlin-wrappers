@@ -2,7 +2,7 @@ import org.gradle.api.Project
 import org.gradle.kotlin.dsl.the
 import org.jetbrains.kotlin.gradle.targets.js.npm.NpmDependency
 import org.jetbrains.kotlin.gradle.targets.js.npm.NpmDependencyExtension
-import java.util.Properties
+import java.util.*
 import javax.inject.Inject
 
 abstract class NpmStrictDependencyExtension
@@ -15,9 +15,12 @@ constructor(
         .use { Properties().apply { load(it) } }
 
     private fun strictVersion(target: String): String {
-        val id = target
+        var id = target
             .removePrefix("@")
             .replace("/", "-")
+
+        if (target == "@types/node")
+            id = "node"
 
         val version = parentProperties["${id}.npm.version"] as String
 
