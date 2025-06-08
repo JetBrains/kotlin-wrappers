@@ -6,5 +6,5 @@ dependencies {
     commonMainApi(projects.kotlinActionsHttpClient)
     commonMainApi(projects.kotlinJs)
 
-    commonMainApi(npm(libs.npm.actions.cache))
+    commonMainApi(npm(jspkg.actions.cache))
 }

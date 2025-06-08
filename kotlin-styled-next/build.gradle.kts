@@ -25,12 +25,12 @@ dependencies {
 
     jsMainApi(libs.kotlinx.html)
 
-    commonMainApi(npm(libs.npm.inlineStylePrefixer))
+    commonMainApi(npm(jspkg.inlineStylePrefixer))
 
     commonTestImplementation(libs.kotlin.test)
     jsTestImplementation(libs.coroutines.core)
 
-    jsTestImplementation(devNpm(libs.npm.puppeteer))
+    jsTestImplementation(devNpm(jspkg.puppeteer))
 }
 
 val printBenchmarkResults by tasks.registering {

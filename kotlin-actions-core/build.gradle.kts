@@ -5,5 +5,5 @@ plugins {
 dependencies {
     commonMainApi(projects.kotlinNode)
 
-    commonMainApi(npm(libs.npm.actions.core))
+    commonMainApi(npm(jspkg.actions.core))
 }

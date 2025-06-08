@@ -5,6 +5,6 @@ plugins {
 
 dependencies {
     commonMainApi(projects.kotlinJs)
-    commonMainApi(npm(libs.npm.semver))
-    commonMainImplementation(devNpm(libs.npm.types.semver))
+    commonMainApi(npm(jspkg.semver))
+    commonMainImplementation(devNpm(jspkg.types.semver))
 }

@@ -5,5 +5,5 @@ plugins {
 dependencies {
     commonMainApi(projects.kotlinBrowser)
 
-    commonMainApi(npm(libs.npm.tanstack.queryCore))
+    commonMainApi(npm(jspkg.tanstack.queryCore))
 }

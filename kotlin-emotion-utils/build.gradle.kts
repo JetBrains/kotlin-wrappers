@@ -5,5 +5,5 @@ plugins {
 dependencies {
     commonMainApi(projects.kotlinBrowser)
 
-    commonMainApi(npm(libs.npm.emotion.utils))
+    commonMainApi(npm(jspkg.emotion.utils))
 }

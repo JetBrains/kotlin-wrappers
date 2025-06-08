@@ -4,5 +4,5 @@ plugins {
 
 dependencies {
     commonMainApi(projects.kotlinWeb)
-    commonMainApi(npm(libs.npm.jszip))
+    commonMainApi(npm(jspkg.jszip))
 }

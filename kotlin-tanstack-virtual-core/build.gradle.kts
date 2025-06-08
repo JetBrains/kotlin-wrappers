@@ -6,5 +6,5 @@ dependencies {
     commonMainApi(projects.kotlinJs)
     commonMainApi(projects.kotlinBrowser)
 
-    commonMainApi(npm(libs.npm.tanstack.virtualCore))
+    commonMainApi(npm(jspkg.tanstack.virtualCore))
 }

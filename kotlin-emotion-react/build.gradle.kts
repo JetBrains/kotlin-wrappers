@@ -9,5 +9,5 @@ dependencies {
     commonMainApi(projects.kotlinEmotionUtils)
     commonMainApi(projects.kotlinReactCore)
 
-    commonMainApi(npm(libs.npm.emotion.react))
+    commonMainApi(npm(jspkg.emotion.react))
 }

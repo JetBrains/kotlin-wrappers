@@ -8,7 +8,7 @@ dependencies {
 
     commonMainImplementation(libs.coroutines.core)
 
-    commonMainApi(devNpm(libs.npm.types.node))
+    commonMainApi(devNpm(jspkg.types.node))
 
     commonTestImplementation(libs.kotlin.test)
     commonTestImplementation(libs.coroutines.test)

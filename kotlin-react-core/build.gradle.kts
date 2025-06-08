@@ -11,5 +11,5 @@ dependencies {
     commonTestImplementation(libs.kotlin.test)
     commonTestImplementation(libs.coroutines.test)
 
-    commonMainApi(npm(libs.npm.react))
+    commonMainApi(npm(jspkg.react))
 }

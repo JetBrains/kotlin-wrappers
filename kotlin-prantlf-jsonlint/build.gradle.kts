@@ -4,5 +4,5 @@ plugins {
 
 dependencies {
     commonMainApi(projects.kotlinJs)
-    commonMainApi(npm(libs.npm.prantlf.jsonlint))
+    commonMainApi(npm(jspkg.prantlf.jsonlint))
 }

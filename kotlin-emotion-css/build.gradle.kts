@@ -7,5 +7,5 @@ dependencies {
     commonMainApi(projects.kotlinBrowser)
     commonMainApi(projects.kotlinEmotionUtils)
 
-    commonMainApi(npm(libs.npm.emotion.css))
+    commonMainApi(npm(jspkg.emotion.css))
 }

@@ -30,7 +30,9 @@ dependencyResolutionManagement {
 
             val htmlVersion = extra["kotlinx-html.version"] as String
             library("kotlinx-html", "org.jetbrains.kotlinx", "kotlinx-html").version(htmlVersion)
+        }
 
+        create("jspkg") {
             npmLibraries()
         }
     }
@@ -58,7 +60,7 @@ fun VersionCatalogBuilder.npmLibraries() {
             )
             .replace("/", "-")
 
-        library("npm-$packageAlias", "npm", packageName).version(version)
+        library(packageAlias, "npm", packageName).version(version)
     }
 }
 

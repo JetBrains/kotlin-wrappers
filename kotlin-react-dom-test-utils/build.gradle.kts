@@ -11,5 +11,5 @@ dependencies {
     commonMainImplementation(libs.coroutines.core)
     commonMainImplementation(libs.coroutines.test)
 
-    commonMainApi(npm(libs.npm.reactDom))
+    commonMainApi(npm(jspkg.reactDom))
 }

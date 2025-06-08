@@ -7,5 +7,5 @@ dependencies {
     commonMainApi(projects.kotlinJs)
     commonMainApi(projects.kotlinBrowser)
 
-    commonMainApi(devNpm(libs.npm.csstype))
+    commonMainApi(devNpm(jspkg.csstype))
 }
