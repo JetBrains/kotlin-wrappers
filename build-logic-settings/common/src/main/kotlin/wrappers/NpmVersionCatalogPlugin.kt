@@ -9,7 +9,7 @@ class NpmVersionCatalogPlugin : Plugin<Settings> {
         dependencyResolutionManagement {
             versionCatalogs {
                 create("jspkg") {
-                    for (library in npmLibraries(rootDir)) {
+                    for (library in npmLibraries(target)) {
                         library(library.alias, "npm", library.name)
                             .version(library.version)
                     }
@@ -17,16 +17,24 @@ class NpmVersionCatalogPlugin : Plugin<Settings> {
             }
         }
     }
+}
 
-    private fun npmLibraries(rootDir: File): List<NpmLibrary> {
-        val propertiesFile = rootDir.resolve("gradle.properties")
-        if (!propertiesFile.exists())
-            return emptyList()
+private fun npmLibraries(settings: Settings): List<NpmLibrary> {
+    val rootDir = settings.rootDir
+    val propertiesFile = rootDir.resolve("gradle.properties")
+    if (rootDir.name != "karakum")
+        return npmLibraries(propertiesFile)
 
-        return propertiesFile.readLines()
-            .windowed(2)
-            .mapNotNull { (commentLine, versionLine) -> parseNpmLibrary(commentLine, versionLine) }
-    }
+    val parentPropertiesFile = rootDir.resolve("../../gradle.properties")
+
+    return listOfNotNull(parentPropertiesFile, propertiesFile.takeIf { it.exists() })
+        .flatMap { npmLibraries(it) }
+}
+
+private fun npmLibraries(propertiesFile: File): List<NpmLibrary> {
+    return propertiesFile.readLines()
+        .windowed(2)
+        .mapNotNull { (commentLine, versionLine) -> parseNpmLibrary(commentLine, versionLine) }
 }
 
 private fun parseNpmLibrary(
