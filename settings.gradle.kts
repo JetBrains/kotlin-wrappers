@@ -7,7 +7,7 @@ pluginManagement {
 }
 
 plugins {
-    id("wrappersbuild.npm-version-catalog")
+    id("wrappersbuild.settings")
 }
 
 dependencyResolutionManagement {
