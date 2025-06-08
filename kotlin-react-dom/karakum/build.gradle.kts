@@ -3,7 +3,7 @@ plugins {
 }
 
 dependencies {
-    commonMainImplementation(npmv("@types/react"))
+    commonMainImplementation(npm(jspkg.types.react))
 }
 
 val syncReactDom by tasks.registering(SyncWrappers::class) {

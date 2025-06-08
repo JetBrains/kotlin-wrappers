@@ -3,15 +3,15 @@ plugins {
 }
 
 dependencies {
-    commonMainImplementation(npmv("@actions/artifact"))
-    commonMainImplementation(npmv("@actions/cache"))
-    commonMainImplementation(npmv("@actions/core"))
-    commonMainImplementation(npmv("@actions/exec"))
-    commonMainImplementation(npmv("@actions/glob"))
-    commonMainImplementation(npmv("@actions/github"))
-    commonMainImplementation(npmv("@actions/http-client"))
-    commonMainImplementation(npmv("@actions/io"))
-    commonMainImplementation(npmv("@actions/tool-cache"))
+    commonMainImplementation(npm(jspkg.actions.artifact))
+    commonMainImplementation(npm(jspkg.actions.cache))
+    commonMainImplementation(npm(jspkg.actions.core))
+    commonMainImplementation(npm(jspkg.actions.exec))
+    commonMainImplementation(npm(jspkg.actions.glob))
+    commonMainImplementation(npm(jspkg.actions.github))
+    commonMainImplementation(npm(jspkg.actions.httpClient))
+    commonMainImplementation(npm(jspkg.actions.io))
+    commonMainImplementation(npm(jspkg.actions.toolCache))
 }
 
 val syncActionsArtifact by tasks.registering(SyncWrappers::class) {

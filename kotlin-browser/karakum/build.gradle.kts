@@ -3,13 +3,13 @@ plugins {
 }
 
 dependencies {
-    commonMainImplementation(npmv("@types/web"))
-    commonMainImplementation(npmv("@types/webworker"))
-    commonMainImplementation(npmv("@types/serviceworker"))
-    commonMainImplementation(npmv("@types/audioworklet"))
-    commonMainImplementation(npmv("typescript"))
-    commonMainImplementation(npmv("@webref/events"))
-    commonMainImplementation(npmv("@webref/idl"))
+    commonMainImplementation(npm(jspkg.types.web))
+    commonMainImplementation(npm(jspkg.types.webworker))
+    commonMainImplementation(npm(jspkg.types.serviceworker))
+    commonMainImplementation(npm(jspkg.types.audioworklet))
+    commonMainImplementation(npm(jspkg.typescript))
+    commonMainImplementation(npm(jspkg.webref.events))
+    commonMainImplementation(npm(jspkg.webref.idl))
 }
 
 object Includes {

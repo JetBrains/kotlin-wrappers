@@ -3,7 +3,7 @@ plugins {
 }
 
 dependencies {
-    commonMainImplementation(npmv("@tanstack/react-virtual"))
+    commonMainImplementation(npm(jspkg.tanstack.reactVirtual))
 }
 
 val syncCoreWrappers by tasks.registering(SyncWrappers::class) {

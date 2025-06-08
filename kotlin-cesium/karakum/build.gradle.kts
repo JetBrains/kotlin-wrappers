@@ -3,8 +3,8 @@ plugins {
 }
 
 dependencies {
-    commonMainImplementation(npmv("@cesium/engine"))
-    commonMainImplementation(npmv("@cesium/widgets"))
+    commonMainImplementation(npm(jspkg.cesium.engine))
+    commonMainImplementation(npm(jspkg.cesium.widgets))
 }
 
 val syncCesiumEngine by tasks.registering(SyncWrappers::class) {

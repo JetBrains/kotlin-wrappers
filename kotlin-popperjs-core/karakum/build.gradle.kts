@@ -3,7 +3,7 @@ plugins {
 }
 
 dependencies {
-    commonMainImplementation(npmv("@popperjs/core"))
+    commonMainImplementation(npm(jspkg.popperjs.core))
 }
 
 val syncPopperjsCore by tasks.registering(SyncWrappers::class) {
