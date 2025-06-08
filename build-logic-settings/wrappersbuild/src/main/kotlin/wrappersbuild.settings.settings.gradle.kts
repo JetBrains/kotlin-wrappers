@@ -1,3 +1,7 @@
+import wrappers.SettingsPlugin
+
+plugins.apply(SettingsPlugin::class.java)
+
 dependencyResolutionManagement {
     versionCatalogs {
         create("jspkg") {

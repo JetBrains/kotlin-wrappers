@@ -11,10 +11,6 @@ plugins {
 }
 
 dependencyResolutionManagement {
-    repositories {
-        mavenCentral()
-    }
-
     versionCatalogs {
         create("libs") {
             val karakumVersion = extra["karakum.version"] as String
