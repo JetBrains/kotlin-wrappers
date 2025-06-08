@@ -10,5 +10,7 @@ class SettingsPlugin : Plugin<Settings> {
                 mavenCentral()
             }
         }
+
+        plugins.apply(NpmVersionCatalogPlugin::class.java)
     }
 }
