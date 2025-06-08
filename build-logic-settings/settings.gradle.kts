@@ -6,4 +6,4 @@ dependencyResolutionManagement {
     }
 }
 
-include("npm-version-catalog")
+include("wrappersbuild")
