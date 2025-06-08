@@ -6,6 +6,10 @@ pluginManagement {
     includeBuild("build-logic-settings")
 }
 
+plugins {
+    id("wrappersbuild.npm-version-catalog")
+}
+
 dependencyResolutionManagement {
     repositories {
         mavenCentral()
