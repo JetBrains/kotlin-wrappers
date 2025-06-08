@@ -6,11 +6,6 @@ plugins {
     kotlin("plugin.serialization") version "2.1.21"
 }
 
-repositories {
-    mavenCentral()
-    gradlePluginPortal()
-}
-
 val props = Properties().apply {
     rootProject.file("../gradle.properties").inputStream().use { load(it) }
 }
