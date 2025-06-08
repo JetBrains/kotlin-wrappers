@@ -8,4 +8,4 @@ plugins {
     id("generatorbuild.settings")
 }
 
-includeBuild("../../generate-logic-legacy")
+includeBuild("../../build-logic")
