@@ -1,21 +1,9 @@
-import java.util.*
-
 plugins {
     `kotlin-dsl`
 }
 
 repositories {
     gradlePluginPortal()
-}
-
-val props = Properties().apply {
-    rootProject.file("../gradle.properties").inputStream().use { load(it) }
-}
-
-fun version(target: String): String {
-    val propName = "${target}.version"
-    return properties[propName] as? String
-        ?: props.getProperty(propName)
 }
 
 dependencies {
