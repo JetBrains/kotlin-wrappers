@@ -6,5 +6,3 @@ plugins {
 karakum {
     output = layout.projectDirectory.dir("../src/commonMain/generated")
 }
-
-extensions.create<NpmStrictDependencyExtension>("npmStrict")
