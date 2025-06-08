@@ -13,9 +13,6 @@ plugins {
 dependencyResolutionManagement {
     versionCatalogs {
         create("libs") {
-            val karakumVersion = extra["karakum.version"] as String
-            plugin("karakum", "io.github.sgrishchenko.karakum").version(karakumVersion)
-
             val kotlinVersion = extra["kotlin.version"] as String
             library("kotlin-test", "org.jetbrains.kotlin", "kotlin-test").version(kotlinVersion)
             library("kotlin-testJunit", "org.jetbrains.kotlin", "kotlin-test-junit").version(kotlinVersion)
