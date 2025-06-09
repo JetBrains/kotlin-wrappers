@@ -81,6 +81,9 @@ suspend fun main() {
             convertBufferBlob,
             convertBufferReference,
             convertCollections,
+            convertCompareResultType,
+            convertConflictingEntityNames,
+            convertConflictingOverloads,
         ))
         injections = manyOf(values = jsInjections + arrayOf())
         annotations = manyOf(values = jsAnnotations + arrayOf())
