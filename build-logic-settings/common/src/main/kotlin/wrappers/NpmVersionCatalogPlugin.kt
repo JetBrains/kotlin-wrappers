@@ -21,17 +21,15 @@ class NpmVersionCatalogPlugin : Plugin<Settings> {
 
 private fun npmLibraries(settings: Settings): List<NpmLibrary> {
     val rootDir = settings.rootDir
-    val propertiesFile = rootDir.resolve("gradle.properties")
+    var propertiesFile = rootDir.resolve("gradle.properties")
     if (rootDir.name != "karakum")
         return npmLibraries(propertiesFile)
 
-    val parentPropertiesFile = rootDir.resolve("../../gradle.properties")
+    if (!propertiesFile.exists())
+        propertiesFile = rootDir.resolve("../../gradle.properties")
 
-    return sequenceOf(parentPropertiesFile, propertiesFile.takeIf { it.exists() })
-        .filterNotNull()
-        .flatMap { npmLibraries(it) }
+    return npmLibraries(propertiesFile)
         .map { it.withStrictVersion() }
-        .toList()
 }
 
 private fun npmLibraries(propertiesFile: File): List<NpmLibrary> {
