@@ -74,4 +74,9 @@ private constructor() :
         offset: Int,
         count: Int,
     ): String
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/Node/textContent)
+     */
+    override var textContent: String? // String
 }

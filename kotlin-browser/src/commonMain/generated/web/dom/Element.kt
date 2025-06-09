@@ -537,7 +537,7 @@ private constructor() :
     fun setAttributeNodeNS(attr: Attr): Attr?
 
     /**
-     * The **`setHTMLUnsafe()`** method of the Element interface is used to parse a string of HTML into a DocumentFragment, which then replaces the element's subtree in the DOM.
+     * The **`setHTMLUnsafe()`** method of the Element interface is used to parse a string of HTML into a DocumentFragment, optionally filtering out unwanted elements and attributes, and those that don't belong in the context, and then using it to replace the element's subtree in the DOM.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/setHTMLUnsafe)
      */
@@ -559,6 +559,11 @@ private constructor() :
         qualifiedName: String,
         force: Boolean = definedExternally,
     ): Boolean
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/Node/textContent)
+     */
+    override var textContent: String? // String
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/abort_event)

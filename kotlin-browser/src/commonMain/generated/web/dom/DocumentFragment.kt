@@ -15,4 +15,9 @@ open external class DocumentFragment :
     ParentNode {
     override val ownerDocument: Document
     override fun getElementById(elementId: ElementId): HTMLElement?
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/Node/textContent)
+     */
+    override var textContent: String? // String
 }

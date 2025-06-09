@@ -11,6 +11,7 @@ internal fun String.applyPatches(): String {
         .replace(" extends HTMLCollectionOf<", " extends HTMLCollection<")
         .replace(": HTMLCollectionOf<", ": HTMLCollection<")
         .patchQuerySelectors()
+        .replace(Regex("""(\n\s+)get (.+)\(\)(: string;)\n\s+set .+\(.+: string \| null\);"""), "$1$2$3")
         .replace(Regex("""(\n\s+)get (.+)\(\)(: .+;)"""), "$1readonly $2$3")
         .replace(Regex("""\n\s+set .+\(.+: string\);"""), "")
         .replace("    autocapitalize: string;", "    autocapitalize: $AUTO_CAPITALIZE;")

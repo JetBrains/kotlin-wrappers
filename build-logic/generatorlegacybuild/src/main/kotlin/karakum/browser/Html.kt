@@ -1072,6 +1072,7 @@ internal fun convertInterface(
             "Node",
                 -> result
                 .replace("val ownerDocument:", "open val ownerDocument:")
+                .replace("var textContent:", "open var textContent:")
 
             in WELL_KNOWN_FORM_CONTROL,
                 -> result.applyFormControlPatch().let {
@@ -1123,6 +1124,7 @@ internal fun convertInterface(
             "ProcessingInstruction",
                 -> result
                 .replace("val ownerDocument:", "override val ownerDocument:")
+                .replace("var textContent: String", "override var textContent: String? // String")
                 .replace("fun getElementById(", "override fun getElementById(")
 
             "HTMLOptionsCollection",
