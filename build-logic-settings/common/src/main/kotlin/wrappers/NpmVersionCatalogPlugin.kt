@@ -27,16 +27,11 @@ private fun npmLibraries(settings: Settings): List<NpmLibrary> {
 
     val parentPropertiesFile = rootDir.resolve("../../gradle.properties")
 
-    return listOfNotNull(parentPropertiesFile, propertiesFile.takeIf { it.exists() })
+    return sequenceOf(parentPropertiesFile, propertiesFile.takeIf { it.exists() })
+        .filterNotNull()
         .flatMap { npmLibraries(it) }
-        .map {
-            // use strict versions for generators
-            it.copy(
-                version = it.version
-                    .removePrefix("^")
-                    .removePrefix("~")
-            )
-        }
+        .map { it.withStrictVersion() }
+        .toList()
 }
 
 private fun npmLibraries(propertiesFile: File): List<NpmLibrary> {
@@ -76,4 +71,12 @@ private data class NpmLibrary(
             transform = { it.groupValues[1].uppercase() }
         )
         .replace("/", "-")
+
+    fun withStrictVersion(): NpmLibrary {
+        val strictVersion = version
+            .removePrefix("^")
+            .removePrefix("~")
+
+        return copy(version = strictVersion)
+    }
 }
