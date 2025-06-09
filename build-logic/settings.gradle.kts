@@ -24,6 +24,8 @@ fun version(target: String): String {
 dependencyResolutionManagement {
     versionCatalogs {
         create("libs") {
+            plugin("serialization", "org.jetbrains.kotlin.plugin.serialization").version(version("kotlin"))
+
             library(
                 "serialization-json",
                 "org.jetbrains.kotlinx",

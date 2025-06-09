@@ -1,7 +1,6 @@
 plugins {
     `kotlin-dsl`
-    // TEMP
-    kotlin("plugin.serialization") version "2.1.21"
+    alias(libs.plugins.serialization)
 }
 
 dependencies {
