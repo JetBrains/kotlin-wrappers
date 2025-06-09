@@ -17,8 +17,8 @@ fun version(target: String): String {
 }
 
 dependencies {
-    implementation(kotlin("gradle-plugin", version("kotlin")))
-    implementation("org.jetbrains.kotlin:js-plain-objects:${version("kotlin")}")
+    implementation(gradlePlugins.kotlin)
+    implementation(gradlePlugins.jsPlainObjects)
     implementation("io.github.turansky.kfc.library:io.github.turansky.kfc.library.gradle.plugin:${version("kfc")}")
 
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:${version("kotlinx-serialization")}")
