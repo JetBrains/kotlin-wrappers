@@ -27,6 +27,11 @@ dependencyResolutionManagement {
             library("jsPlainObjects", "org.jetbrains.kotlin", "js-plain-objects").version(version("kotlin"))
             library("seskar", "io.github.turansky.seskar", "seskar-gradle-plugin").version(version("seskar"))
             library("dokka", "org.jetbrains.dokka", "dokka-gradle-plugin").version(version("dokka"))
+            library(
+                "karakum",
+                "io.github.sgrishchenko.karakum",
+                "io.github.sgrishchenko.karakum.gradle.plugin"
+            ).version(version("karakum"))
         }
     }
 }
