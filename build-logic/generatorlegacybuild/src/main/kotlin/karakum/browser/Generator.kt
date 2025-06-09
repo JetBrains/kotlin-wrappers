@@ -576,16 +576,6 @@ fun generateKotlinDeclarations(
     }
 }
 
-private fun fik(name: String): String = """
-// TODO: remove after WasmJS target support
-
-package web.$name
-
-internal sealed external interface JsName
-internal external object definedExternally
-""".trimStart() +
-        if (name == "events") "internal external object undefined\n" else ""
-
 private fun toCommonBody(
     body: String,
 ): String =
