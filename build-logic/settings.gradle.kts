@@ -18,10 +18,19 @@ val props = Properties().apply {
 fun version(target: String): String {
     val propName = "${target}.version"
     return props.getProperty(propName)
+        ?: extra[propName] as String
 }
 
 dependencyResolutionManagement {
     versionCatalogs {
+        create("libs") {
+            library(
+                "serialization-json",
+                "org.jetbrains.kotlinx",
+                "kotlinx-serialization-json"
+            ).version(version("kotlinx-serialization"))
+        }
+
         create("gradlePlugins") {
             library("kotlin", "org.jetbrains.kotlin", "kotlin-gradle-plugin").version(version("kotlin"))
             library("jsPlainObjects", "org.jetbrains.kotlin", "js-plain-objects").version(version("kotlin"))
@@ -32,6 +41,11 @@ dependencyResolutionManagement {
                 "io.github.sgrishchenko.karakum",
                 "io.github.sgrishchenko.karakum.gradle.plugin"
             ).version(version("karakum"))
+            library(
+                "kfc-library",
+                "io.github.turansky.kfc.library",
+                "io.github.turansky.kfc.library.gradle.plugin"
+            ).version(version("kfc"))
         }
     }
 }
