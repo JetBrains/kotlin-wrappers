@@ -117,7 +117,7 @@ private constructor() :
     fun createSVGNumber(): SVGNumber
 
     /**
-     * The `createSVGPoint()` method of the SVGSVGElement interface creates an SVGPoint object outside of any document trees.
+     * The `createSVGPoint()` method of the SVGSVGElement interface creates a DOMPoint object outside of any document trees.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGSVGElement/createSVGPoint)
      */
