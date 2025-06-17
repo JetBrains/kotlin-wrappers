@@ -29,7 +29,7 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMImplementation/createDocumentType)
      */
     fun createDocumentType(
-        qualifiedName: String,
+        name: String,
         publicId: String,
         systemId: String,
     ): DocumentType
