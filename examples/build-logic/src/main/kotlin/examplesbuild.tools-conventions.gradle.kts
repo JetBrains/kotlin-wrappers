@@ -5,7 +5,7 @@ import org.jetbrains.kotlin.gradle.targets.js.npm.NpmExtension
 
 plugins.withType<NodeJsRootPlugin> {
     the<NodeJsRootExtension>().apply {
-        version = "24.1.0" // https://nodejs.org/en/download/package-manager
+        version = "24.2.0" // https://nodejs.org/en/download/package-manager
 
         versions.apply {
             webpack.version = "5.99.9" // https://www.npmjs.com/package/webpack
