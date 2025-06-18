@@ -618,7 +618,7 @@ open external class Document :
     fun startViewTransition(callbackOptions: StartViewTransitionOptions): ViewTransition
 
     /**
-     * Writes a string of text followed by a newline character to a document.
+     * The **`writeln()`** method of the Document interface writes text in one or more TrustedHTML or string parameters to a document stream opened by document.open(), followed by a newline character.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/writeln)
      */
