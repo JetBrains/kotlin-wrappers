@@ -4,6 +4,7 @@ import js.core.JsAny
 import js.errors.toJsErrorLike
 import js.promise.Promise
 import js.promise.deferred
+import js.promise.invoke
 import kotlinx.coroutines.Deferred
 
 /**

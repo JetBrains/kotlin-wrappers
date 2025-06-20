@@ -3,6 +3,7 @@ package web.http
 import js.errors.TypeError
 import js.globals.globalThis
 import js.promise.Promise
+import js.promise.invoke
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.async
 import kotlinx.coroutines.coroutineScope

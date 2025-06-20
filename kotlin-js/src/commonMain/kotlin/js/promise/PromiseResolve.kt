@@ -1,16 +1,19 @@
 package js.promise
 
 import js.core.JsAny
-import seskar.js.JsNativeInvoke
+import js.core.Void
+import js.function.unsafeInvoke
 
-sealed external interface PromiseResolve<T : JsAny?> {
-    @JsNativeInvoke
-    operator fun invoke(
-        value: T,
-    )
+sealed external interface PromiseResolve<T : JsAny?>
 
-    @JsNativeInvoke
-    operator fun invoke(
-        value: PromiseResult<T>,
-    )
+inline operator fun <T : JsAny?> PromiseResolve<T>.invoke(
+    value: T,
+) {
+    unsafeInvoke<Void>(this, value)
+}
+
+inline operator fun <T : JsAny?> PromiseResolve<T>.invoke(
+    value: PromiseResult<T>,
+) {
+    unsafeInvoke<Void>(this, value)
 }
