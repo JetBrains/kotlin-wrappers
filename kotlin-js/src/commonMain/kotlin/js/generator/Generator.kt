@@ -4,11 +4,11 @@ import js.core.JsAny
 import js.errors.JsError
 import js.iterable.IteratorResult
 import js.iterable.JsIterator
-import seskar.js.JsSpecialName
+import kotlin.js.JsName
 
 private const val GENERATOR: String = "(function* () {}.constructor.prototype.prototype)"
 
-@JsSpecialName(GENERATOR)
+@JsName(GENERATOR)
 external class Generator<out T : JsAny?, TReturn : JsAny?, in TNext : JsAny?>
 private constructor() :
     JsIterator<T> {

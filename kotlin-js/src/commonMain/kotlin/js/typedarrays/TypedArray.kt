@@ -10,11 +10,11 @@ import js.collections.ListLike
 import js.core.JsAny
 import js.core.JsInt
 import js.iterable.JsIterator
-import seskar.js.JsSpecialName
+import kotlin.js.JsName
 import kotlin.js.definedExternally
 
 // language=javascript
-@JsSpecialName("(Object.getPrototypeOf(Uint8Array))")
+@JsName("(Object.getPrototypeOf(Uint8Array))")
 sealed external class TypedArray<
         S : TypedArray<S, R, B, T>,
         R : TypedArray<R, R, ArrayBuffer, T>,

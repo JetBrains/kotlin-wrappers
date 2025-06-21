@@ -3,10 +3,10 @@ package js.typedarrays
 import js.array.ArrayLike
 import js.buffer.ArrayBuffer
 import js.core.JsAny
-import seskar.js.JsSpecialName
+import kotlin.js.JsName
 
 // language=javascript
-@JsSpecialName("(Object.getPrototypeOf(Uint8Array).constructor)")
+@JsName("(Object.getPrototypeOf(Uint8Array).constructor)")
 sealed external class TypedArrayCompanion<S : TypedArray<S, S, ArrayBuffer, T>, T : JsAny /* Number? */> {
     val BYTES_PER_ELEMENT: Int
 

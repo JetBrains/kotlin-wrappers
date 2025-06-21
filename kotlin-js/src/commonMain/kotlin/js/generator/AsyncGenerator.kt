@@ -6,12 +6,12 @@ import js.iterable.AsyncIterator
 import js.iterable.IteratorResult
 import js.promise.Promise
 import js.promise.PromiseLike
-import seskar.js.JsSpecialName
+import kotlin.js.JsName
 import kotlin.js.definedExternally
 
 private const val ASYNC_GENERATOR: String = "(async function* () {}.constructor.prototype.prototype)"
 
-@JsSpecialName(ASYNC_GENERATOR)
+@JsName(ASYNC_GENERATOR)
 external class AsyncGenerator<out T : JsAny?, TReturn : JsAny?, in TNext : JsAny?>
 private constructor() :
     AsyncIterator<T> {

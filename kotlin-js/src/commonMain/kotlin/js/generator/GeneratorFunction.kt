@@ -2,11 +2,11 @@ package js.generator
 
 import js.array.Tuple
 import js.function.JsFunction
-import seskar.js.JsSpecialName
+import kotlin.js.JsName
 
 private const val GENERATOR_FUNCTION: String = "(function* () {}.constructor)"
 
-@JsSpecialName(GENERATOR_FUNCTION)
+@JsName(GENERATOR_FUNCTION)
 open external class GeneratorFunction<in A : Tuple, out R : Generator<*, *, *>>(
     vararg parameterNames: String,
     body: String,
