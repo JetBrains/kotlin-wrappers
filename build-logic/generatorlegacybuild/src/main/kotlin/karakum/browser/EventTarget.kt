@@ -177,13 +177,4 @@ internal fun eventTargetTypes(): Sequence<ConversionResult> =
             body = OBSERVABLE_EVENT_LISTENER_OPTIONS_BODY,
             pkg = "web.events",
         ),
-        ConversionResult(
-            name = "Observable",
-            body = """
-            // PLACEHOLDER
-            external class Observable<T : JsAny>
-            // PLACEHOLDER
-            """.trimIndent(),
-            pkg = "web.observable",
-        ),
     )
