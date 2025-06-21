@@ -13,11 +13,6 @@ dependencies {
 }
 
 object Includes {
-    val INTERNAL = setOf(
-        "web/abort/internal",
-        "web/observable",
-    )
-
     val JS_INCLUDE = setOf(
         "js",
     )
@@ -83,7 +78,6 @@ enum class WrapperProject(
 
 fun getWrapperProject(path: String): WrapperProject? =
     when (path) {
-        in Includes.INTERNAL -> null
         in Includes.JS_INCLUDE -> WrapperProject.JS
         in Includes.WEB_INCLUDE -> WrapperProject.WEB
         in Includes.BROWSER_INCLUDE -> WrapperProject.BROWSER
