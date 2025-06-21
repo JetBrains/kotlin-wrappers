@@ -8,9 +8,9 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface RTCEncodedFrameMetadata {
-    val contributingSources: ReadonlyArray<JsUInt>?
-    val mimeType: String?
-    val payloadType: Short /* unsigned byte */?
-    val rtpTimestamp: Int?
-    val synchronizationSource: Int?
+    var contributingSources: ReadonlyArray<JsUInt>?
+    var mimeType: String?
+    var payloadType: Short /* unsigned byte */?
+    var rtpTimestamp: Int?
+    var synchronizationSource: Int?
 }

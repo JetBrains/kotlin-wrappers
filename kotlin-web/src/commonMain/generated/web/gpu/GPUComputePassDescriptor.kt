@@ -7,5 +7,5 @@ import js.objects.JsPlainObject
 @JsPlainObject
 external interface GPUComputePassDescriptor :
     GPUObjectDescriptorBase {
-    val timestampWrites: GPUComputePassTimestampWrites?
+    var timestampWrites: GPUComputePassTimestampWrites?
 }

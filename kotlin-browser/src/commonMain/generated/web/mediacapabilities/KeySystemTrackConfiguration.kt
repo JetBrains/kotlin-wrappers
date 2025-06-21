@@ -6,5 +6,5 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface KeySystemTrackConfiguration {
-    val robustness: String?
+    var robustness: String?
 }

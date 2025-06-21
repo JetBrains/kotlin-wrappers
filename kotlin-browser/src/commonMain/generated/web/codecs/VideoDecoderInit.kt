@@ -6,6 +6,6 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface VideoDecoderInit {
-    val error: WebCodecsErrorCallback
-    val output: VideoFrameOutputCallback
+    var error: WebCodecsErrorCallback
+    var output: VideoFrameOutputCallback
 }

@@ -7,6 +7,6 @@ import js.objects.JsPlainObject
 @JsPlainObject
 external interface ConvolverOptions :
     AudioNodeOptions {
-    val buffer: AudioBuffer?
-    val disableNormalization: Boolean?
+    var buffer: AudioBuffer?
+    var disableNormalization: Boolean?
 }

@@ -8,6 +8,6 @@ import web.serviceworker.ExtendableEventInit
 @JsPlainObject
 external interface PushSubscriptionChangeEventInit :
     ExtendableEventInit {
-    val newSubscription: PushSubscription?
-    val oldSubscription: PushSubscription?
+    var newSubscription: PushSubscription?
+    var oldSubscription: PushSubscription?
 }

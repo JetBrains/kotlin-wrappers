@@ -7,6 +7,6 @@ import js.objects.JsPlainObject
 @JsPlainObject
 external interface GPUQuerySetDescriptor :
     GPUObjectDescriptorBase {
-    val count: GPUSize32
-    val type: GPUQueryType
+    var count: GPUSize32
+    var type: GPUQueryType
 }

@@ -10,6 +10,6 @@ import web.events.EventInit
 @JsPlainObject
 external interface PromiseRejectionEventInit :
     EventInit {
-    val promise: Promise<*>
-    val reason: JsError?
+    var promise: Promise<*>
+    var reason: JsError?
 }

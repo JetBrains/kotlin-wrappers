@@ -8,5 +8,5 @@ import js.serialization.Transferable
 
 @JsPlainObject
 external interface StructuredSerializeOptions {
-    val transfer: ReadonlyArray<Transferable>?
+    var transfer: ReadonlyArray<Transferable>?
 }

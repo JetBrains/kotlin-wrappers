@@ -6,5 +6,5 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface CredentialPropertiesOutput {
-    val rk: Boolean?
+    var rk: Boolean?
 }

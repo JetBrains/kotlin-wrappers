@@ -8,6 +8,6 @@ import js.objects.JsPlainObject
 @JsPlainObject
 external interface PublicKeyCredentialUserEntity :
     PublicKeyCredentialEntity {
-    val displayName: String
-    val id: BufferSource
+    var displayName: String
+    var id: BufferSource
 }

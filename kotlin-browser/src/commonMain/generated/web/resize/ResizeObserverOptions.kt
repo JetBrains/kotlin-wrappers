@@ -6,5 +6,5 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface ResizeObserverOptions {
-    val box: ResizeObserverBoxOptions?
+    var box: ResizeObserverBoxOptions?
 }

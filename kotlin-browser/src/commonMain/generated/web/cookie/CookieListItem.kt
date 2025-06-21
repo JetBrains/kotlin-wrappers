@@ -6,6 +6,6 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface CookieListItem {
-    val name: String?
-    val value: String?
+    var name: String?
+    var value: String?
 }

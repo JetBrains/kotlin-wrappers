@@ -6,6 +6,6 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface PublicKeyCredentialParameters {
-    val alg: COSEAlgorithmIdentifier
-    val type: PublicKeyCredentialType
+    var alg: COSEAlgorithmIdentifier
+    var type: PublicKeyCredentialType
 }

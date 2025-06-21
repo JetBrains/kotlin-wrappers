@@ -7,6 +7,6 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface ConstrainDOMStringParameters {
-    val exact: JsAny /* string | string[] */?
-    val ideal: JsAny /* string | string[] */?
+    var exact: JsAny /* string | string[] */?
+    var ideal: JsAny /* string | string[] */?
 }

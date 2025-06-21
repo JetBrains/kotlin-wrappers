@@ -6,7 +6,7 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface DeviceMotionEventRotationRateInit {
-    val alpha: Double?
-    val beta: Double?
-    val gamma: Double?
+    var alpha: Double?
+    var beta: Double?
+    var gamma: Double?
 }

@@ -7,5 +7,5 @@ import js.objects.JsPlainObject
 @JsPlainObject
 external interface GPUComputePipelineDescriptor :
     GPUPipelineDescriptorBase {
-    val compute: GPUProgrammableStage
+    var compute: GPUProgrammableStage
 }

@@ -8,7 +8,7 @@ import js.objects.JsPlainObject
 @JsPlainObject
 external interface HkdfParams :
     Algorithm {
-    val hash: HashAlgorithmIdentifier
-    val info: BufferSource
-    val salt: BufferSource
+    var hash: HashAlgorithmIdentifier
+    var info: BufferSource
+    var salt: BufferSource
 }

@@ -9,6 +9,6 @@ import web.window.Window
 @JsPlainObject
 external interface UIEventInit :
     EventInit {
-    val detail: Int?
-    val view: Window?
+    var detail: Int?
+    var view: Window?
 }

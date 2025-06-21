@@ -9,5 +9,5 @@ import web.events.EventInit
 @JsPlainObject
 external interface ClipboardEventInit :
     EventInit {
-    val clipboardData: DataTransfer?
+    var clipboardData: DataTransfer?
 }

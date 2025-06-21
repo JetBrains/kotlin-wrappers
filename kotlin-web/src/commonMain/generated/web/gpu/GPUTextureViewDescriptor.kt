@@ -7,11 +7,11 @@ import js.objects.JsPlainObject
 @JsPlainObject
 external interface GPUTextureViewDescriptor :
     GPUObjectDescriptorBase {
-    val arrayLayerCount: GPUIntegerCoordinate?
-    val aspect: GPUTextureAspect?
-    val baseArrayLayer: GPUIntegerCoordinate?
-    val baseMipLevel: GPUIntegerCoordinate?
-    val dimension: GPUTextureViewDimension?
-    val format: GPUTextureFormat?
-    val mipLevelCount: GPUIntegerCoordinate?
+    var arrayLayerCount: GPUIntegerCoordinate?
+    var aspect: GPUTextureAspect?
+    var baseArrayLayer: GPUIntegerCoordinate?
+    var baseMipLevel: GPUIntegerCoordinate?
+    var dimension: GPUTextureViewDimension?
+    var format: GPUTextureFormat?
+    var mipLevelCount: GPUIntegerCoordinate?
 }

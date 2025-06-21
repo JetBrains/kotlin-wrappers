@@ -160,8 +160,8 @@ fun <E : Event, C : EventTarget, D> C.addEventHandler(
 private val OBSERVABLE_EVENT_LISTENER_OPTIONS_BODY: String = """
 @JsPlainObject
 external interface ObservableEventListenerOptions {
-    val capture: Boolean?
-    val passive: Boolean?
+    var capture: Boolean?
+    var passive: Boolean?
 }
 """.trimIndent()
 

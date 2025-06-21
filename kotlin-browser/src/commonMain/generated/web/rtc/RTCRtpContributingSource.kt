@@ -7,8 +7,8 @@ import web.time.DOMHighResTimeStamp
 
 @JsPlainObject
 external interface RTCRtpContributingSource {
-    val audioLevel: Double?
-    val rtpTimestamp: Int
-    val source: Int
-    val timestamp: DOMHighResTimeStamp
+    var audioLevel: Double?
+    var rtpTimestamp: Int
+    var source: Int
+    var timestamp: DOMHighResTimeStamp
 }

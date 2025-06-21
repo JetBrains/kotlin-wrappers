@@ -8,5 +8,5 @@ import js.objects.JsPlainObject
 @JsPlainObject
 external interface MediaTrackConstraints :
     MediaTrackConstraintSet {
-    val advanced: ReadonlyArray<MediaTrackConstraintSet>?
+    var advanced: ReadonlyArray<MediaTrackConstraintSet>?
 }

@@ -8,5 +8,5 @@ import web.events.EventInit
 @JsPlainObject
 external interface WebGLContextEventInit :
     EventInit {
-    val statusMessage: String?
+    var statusMessage: String?
 }

@@ -8,7 +8,7 @@ import web.events.EventInit
 @JsPlainObject
 external interface AnimationEventInit :
     EventInit {
-    val animationName: String?
-    val elapsedTime: Double?
-    val pseudoElement: String?
+    var animationName: String?
+    var elapsedTime: Double?
+    var pseudoElement: String?
 }

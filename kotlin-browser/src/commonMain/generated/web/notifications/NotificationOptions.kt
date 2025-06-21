@@ -7,13 +7,13 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface NotificationOptions {
-    val badge: String?
-    val body: String?
-    val data: JsAny?
-    val dir: NotificationDirection?
-    val icon: String?
-    val lang: String?
-    val requireInteraction: Boolean?
-    val silent: Boolean?
-    val tag: String?
+    var badge: String?
+    var body: String?
+    var data: JsAny?
+    var dir: NotificationDirection?
+    var icon: String?
+    var lang: String?
+    var requireInteraction: Boolean?
+    var silent: Boolean?
+    var tag: String?
 }

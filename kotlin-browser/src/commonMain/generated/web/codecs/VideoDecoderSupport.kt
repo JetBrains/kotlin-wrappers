@@ -6,6 +6,6 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface VideoDecoderSupport {
-    val config: VideoDecoderConfig?
-    val supported: Boolean?
+    var config: VideoDecoderConfig?
+    var supported: Boolean?
 }

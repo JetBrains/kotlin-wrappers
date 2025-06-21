@@ -8,6 +8,6 @@ import web.events.EventInit
 @JsPlainObject
 external interface CookieChangeEventInit :
     EventInit {
-    val changed: CookieList?
-    val deleted: CookieList?
+    var changed: CookieList?
+    var deleted: CookieList?
 }

@@ -6,5 +6,5 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface FileSystemRemoveOptions {
-    val recursive: Boolean?
+    var recursive: Boolean?
 }

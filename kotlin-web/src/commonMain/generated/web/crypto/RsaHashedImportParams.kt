@@ -7,5 +7,5 @@ import js.objects.JsPlainObject
 @JsPlainObject
 external interface RsaHashedImportParams :
     Algorithm {
-    val hash: HashAlgorithmIdentifier
+    var hash: HashAlgorithmIdentifier
 }

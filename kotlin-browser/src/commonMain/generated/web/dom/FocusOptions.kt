@@ -6,5 +6,5 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface FocusOptions {
-    val preventScroll: Boolean?
+    var preventScroll: Boolean?
 }

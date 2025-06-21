@@ -7,6 +7,6 @@ import js.objects.JsPlainObject
 @JsPlainObject
 external interface DelayOptions :
     AudioNodeOptions {
-    val delayTime: Double?
-    val maxDelayTime: Double?
+    var delayTime: Double?
+    var maxDelayTime: Double?
 }

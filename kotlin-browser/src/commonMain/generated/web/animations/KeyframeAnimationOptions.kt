@@ -7,6 +7,6 @@ import js.objects.JsPlainObject
 @JsPlainObject
 external interface KeyframeAnimationOptions :
     KeyframeEffectOptions {
-    val id: String?
-    val timeline: AnimationTimeline?
+    var id: String?
+    var timeline: AnimationTimeline?
 }

@@ -7,10 +7,10 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface AudioEncoderConfig {
-    val bitrate: UInt53?
-    val bitrateMode: BitrateMode?
-    val codec: String
-    val numberOfChannels: Int
-    val opus: OpusEncoderConfig?
-    val sampleRate: Int
+    var bitrate: UInt53?
+    var bitrateMode: BitrateMode?
+    var codec: String
+    var numberOfChannels: Int
+    var opus: OpusEncoderConfig?
+    var sampleRate: Int
 }

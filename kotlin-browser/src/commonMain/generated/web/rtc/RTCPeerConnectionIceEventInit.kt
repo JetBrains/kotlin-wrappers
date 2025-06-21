@@ -8,5 +8,5 @@ import web.events.EventInit
 @JsPlainObject
 external interface RTCPeerConnectionIceEventInit :
     EventInit {
-    val candidate: RTCIceCandidate?
+    var candidate: RTCIceCandidate?
 }

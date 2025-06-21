@@ -11,32 +11,32 @@ import js.objects.ReadonlyRecord
 @JsPlainObject
 external interface RTCOutboundRtpStreamStats :
     RTCSentRtpStreamStats {
-    val active: Boolean?
-    val firCount: Int?
-    val frameHeight: Int?
-    val frameWidth: Int?
-    val framesEncoded: Int?
-    val framesPerSecond: Double?
-    val framesSent: Int?
-    val headerBytesSent: UInt53?
-    val hugeFramesSent: Int?
-    val keyFramesEncoded: Int?
-    val mediaSourceId: String?
-    val mid: String?
-    val nackCount: Int?
-    val pliCount: Int?
-    val qpSum: UInt53?
-    val qualityLimitationDurations: ReadonlyRecord<JsString, JsDouble>?
-    val qualityLimitationReason: RTCQualityLimitationReason?
-    val qualityLimitationResolutionChanges: Int?
-    val remoteId: String?
-    val retransmittedBytesSent: UInt53?
-    val retransmittedPacketsSent: UInt53?
-    val rid: String?
-    val rtxSsrc: Int?
-    val scalabilityMode: String?
-    val targetBitrate: Double?
-    val totalEncodeTime: Double?
-    val totalEncodedBytesTarget: UInt53?
-    val totalPacketSendDelay: Double?
+    var active: Boolean?
+    var firCount: Int?
+    var frameHeight: Int?
+    var frameWidth: Int?
+    var framesEncoded: Int?
+    var framesPerSecond: Double?
+    var framesSent: Int?
+    var headerBytesSent: UInt53?
+    var hugeFramesSent: Int?
+    var keyFramesEncoded: Int?
+    var mediaSourceId: String?
+    var mid: String?
+    var nackCount: Int?
+    var pliCount: Int?
+    var qpSum: UInt53?
+    var qualityLimitationDurations: ReadonlyRecord<JsString, JsDouble>?
+    var qualityLimitationReason: RTCQualityLimitationReason?
+    var qualityLimitationResolutionChanges: Int?
+    var remoteId: String?
+    var retransmittedBytesSent: UInt53?
+    var retransmittedPacketsSent: UInt53?
+    var rid: String?
+    var rtxSsrc: Int?
+    var scalabilityMode: String?
+    var targetBitrate: Double?
+    var totalEncodeTime: Double?
+    var totalEncodedBytesTarget: UInt53?
+    var totalPacketSendDelay: Double?
 }

@@ -8,13 +8,13 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface PublicKeyCredentialCreationOptions {
-    val attestation: AttestationConveyancePreference?
-    val authenticatorSelection: AuthenticatorSelectionCriteria?
-    val challenge: BufferSource
-    val excludeCredentials: ReadonlyArray<PublicKeyCredentialDescriptor>?
-    val extensions: AuthenticationExtensionsClientInputs?
-    val pubKeyCredParams: ReadonlyArray<PublicKeyCredentialParameters>
-    val rp: PublicKeyCredentialRpEntity
-    val timeout: Int?
-    val user: PublicKeyCredentialUserEntity
+    var attestation: AttestationConveyancePreference?
+    var authenticatorSelection: AuthenticatorSelectionCriteria?
+    var challenge: BufferSource
+    var excludeCredentials: ReadonlyArray<PublicKeyCredentialDescriptor>?
+    var extensions: AuthenticationExtensionsClientInputs?
+    var pubKeyCredParams: ReadonlyArray<PublicKeyCredentialParameters>
+    var rp: PublicKeyCredentialRpEntity
+    var timeout: Int?
+    var user: PublicKeyCredentialUserEntity
 }

@@ -6,10 +6,10 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface AudioBufferSourceOptions {
-    val buffer: AudioBuffer?
-    val detune: Float?
-    val loop: Boolean?
-    val loopEnd: Double?
-    val loopStart: Double?
-    val playbackRate: Float?
+    var buffer: AudioBuffer?
+    var detune: Float?
+    var loop: Boolean?
+    var loopEnd: Double?
+    var loopStart: Double?
+    var playbackRate: Float?
 }

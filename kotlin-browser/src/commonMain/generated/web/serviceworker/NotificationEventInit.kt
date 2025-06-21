@@ -8,6 +8,6 @@ import web.notifications.Notification
 @JsPlainObject
 external interface NotificationEventInit :
     ExtendableEventInit {
-    val action: String?
-    val notification: Notification
+    var action: String?
+    var notification: Notification
 }

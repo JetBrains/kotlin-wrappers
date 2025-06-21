@@ -9,11 +9,11 @@ import web.mediakey.MediaKeysRequirement
 
 @JsPlainObject
 external interface MediaCapabilitiesKeySystemConfiguration {
-    val audio: KeySystemTrackConfiguration?
-    val distinctiveIdentifier: MediaKeysRequirement?
-    val initDataType: String?
-    val keySystem: String
-    val persistentState: MediaKeysRequirement?
-    val sessionTypes: ReadonlyArray<JsString>?
-    val video: KeySystemTrackConfiguration?
+    var audio: KeySystemTrackConfiguration?
+    var distinctiveIdentifier: MediaKeysRequirement?
+    var initDataType: String?
+    var keySystem: String
+    var persistentState: MediaKeysRequirement?
+    var sessionTypes: ReadonlyArray<JsString>?
+    var video: KeySystemTrackConfiguration?
 }

@@ -8,8 +8,8 @@ import web.events.EventInit
 @JsPlainObject
 external interface DeviceMotionEventInit :
     EventInit {
-    val acceleration: DeviceMotionEventAccelerationInit?
-    val accelerationIncludingGravity: DeviceMotionEventAccelerationInit?
-    val interval: Double?
-    val rotationRate: DeviceMotionEventRotationRateInit?
+    var acceleration: DeviceMotionEventAccelerationInit?
+    var accelerationIncludingGravity: DeviceMotionEventAccelerationInit?
+    var interval: Double?
+    var rotationRate: DeviceMotionEventRotationRateInit?
 }

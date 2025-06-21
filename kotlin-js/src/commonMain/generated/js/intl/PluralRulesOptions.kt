@@ -6,11 +6,11 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface PluralRulesOptions {
-    val localeMatcher: LocaleMatcher?
-    val type: PluralRuleType?
-    val minimumIntegerDigits: Int?
-    val minimumFractionDigits: Int?
-    val maximumFractionDigits: Int?
-    val minimumSignificantDigits: Int?
-    val maximumSignificantDigits: Int?
+    var localeMatcher: LocaleMatcher?
+    var type: PluralRuleType?
+    var minimumIntegerDigits: Int?
+    var minimumFractionDigits: Int?
+    var maximumFractionDigits: Int?
+    var minimumSignificantDigits: Int?
+    var maximumSignificantDigits: Int?
 }

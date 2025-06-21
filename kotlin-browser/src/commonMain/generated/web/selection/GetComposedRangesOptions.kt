@@ -8,5 +8,5 @@ import web.components.ShadowRoot
 
 @JsPlainObject
 external interface GetComposedRangesOptions {
-    val shadowRoots: ReadonlyArray<ShadowRoot>?
+    var shadowRoots: ReadonlyArray<ShadowRoot>?
 }

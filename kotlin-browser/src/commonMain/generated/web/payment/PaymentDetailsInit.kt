@@ -7,6 +7,6 @@ import js.objects.JsPlainObject
 @JsPlainObject
 external interface PaymentDetailsInit :
     PaymentDetailsBase {
-    val id: String?
-    val total: PaymentItem
+    var id: String?
+    var total: PaymentItem
 }

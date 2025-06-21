@@ -6,7 +6,7 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface PaymentValidationErrors {
-    val error: String?
-    val payer: PayerErrors?
-    val shippingAddress: AddressErrors?
+    var error: String?
+    var payer: PayerErrors?
+    var shippingAddress: AddressErrors?
 }

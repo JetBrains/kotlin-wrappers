@@ -6,7 +6,7 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface MediaImage {
-    val sizes: String?
-    val src: String
-    val type: String?
+    var sizes: String?
+    var src: String
+    var type: String?
 }

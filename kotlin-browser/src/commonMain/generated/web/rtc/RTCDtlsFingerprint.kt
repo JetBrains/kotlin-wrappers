@@ -6,6 +6,6 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface RTCDtlsFingerprint {
-    val algorithm: String?
-    val value: String?
+    var algorithm: String?
+    var value: String?
 }

@@ -7,5 +7,5 @@ import js.objects.JsPlainObject
 @JsPlainObject
 external interface CompositionEventInit :
     UIEventInit {
-    val data: String?
+    var data: String?
 }

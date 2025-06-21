@@ -9,7 +9,7 @@ import js.objects.JsPlainObject
 @JsPlainObject
 external interface RTCReceivedRtpStreamStats :
     RTCRtpStreamStats {
-    val jitter: Double?
-    val packetsLost: Int53?
-    val packetsReceived: UInt53?
+    var jitter: Double?
+    var packetsLost: Int53?
+    var packetsReceived: UInt53?
 }

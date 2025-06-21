@@ -10,9 +10,9 @@ import web.messaging.MessagePort
 @JsPlainObject
 external interface ExtendableMessageEventInit :
     ExtendableEventInit {
-    val data: JsAny?
-    val lastEventId: String?
-    val origin: String?
-    val ports: ReadonlyArray<MessagePort>?
-    val source: JsAny /* Client | ServiceWorker | MessagePort */?
+    var data: JsAny?
+    var lastEventId: String?
+    var origin: String?
+    var ports: ReadonlyArray<MessagePort>?
+    var source: JsAny /* Client | ServiceWorker | MessagePort */?
 }

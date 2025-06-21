@@ -6,7 +6,7 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface MediaCapabilitiesInfo {
-    val powerEfficient: Boolean
-    val smooth: Boolean
-    val supported: Boolean
+    var powerEfficient: Boolean
+    var smooth: Boolean
+    var supported: Boolean
 }

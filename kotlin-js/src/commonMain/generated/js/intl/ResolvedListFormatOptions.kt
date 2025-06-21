@@ -6,7 +6,7 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface ResolvedListFormatOptions {
-    val locale: String
-    val style: ListFormatStyle
-    val type: ListFormatType
+    var locale: String
+    var style: ListFormatStyle
+    var type: ListFormatType
 }

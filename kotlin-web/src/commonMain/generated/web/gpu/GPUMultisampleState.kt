@@ -6,7 +6,7 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface GPUMultisampleState {
-    val alphaToCoverageEnabled: Boolean?
-    val count: GPUSize32?
-    val mask: GPUSampleMask?
+    var alphaToCoverageEnabled: Boolean?
+    var count: GPUSize32?
+    var mask: GPUSampleMask?
 }

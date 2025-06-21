@@ -7,5 +7,5 @@ import js.objects.JsPlainObject
 @JsPlainObject
 external interface MultiCacheQueryOptions :
     CacheQueryOptions {
-    val cacheName: String?
+    var cacheName: String?
 }

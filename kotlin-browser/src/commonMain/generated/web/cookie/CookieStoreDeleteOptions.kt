@@ -6,8 +6,8 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface CookieStoreDeleteOptions {
-    val domain: String?
-    val name: String
-    val partitioned: Boolean?
-    val path: String?
+    var domain: String?
+    var name: String
+    var partitioned: Boolean?
+    var path: String?
 }

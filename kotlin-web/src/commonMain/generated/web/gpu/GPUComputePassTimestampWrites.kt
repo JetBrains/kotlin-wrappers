@@ -6,7 +6,7 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface GPUComputePassTimestampWrites {
-    val beginningOfPassWriteIndex: GPUSize32?
-    val endOfPassWriteIndex: GPUSize32?
-    val querySet: GPUQuerySet
+    var beginningOfPassWriteIndex: GPUSize32?
+    var endOfPassWriteIndex: GPUSize32?
+    var querySet: GPUQuerySet
 }

@@ -7,5 +7,5 @@ import js.objects.JsPlainObject
 @JsPlainObject
 external interface StereoPannerOptions :
     AudioNodeOptions {
-    val pan: Float?
+    var pan: Float?
 }

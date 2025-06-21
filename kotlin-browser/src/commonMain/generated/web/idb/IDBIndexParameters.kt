@@ -6,6 +6,6 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface IDBIndexParameters {
-    val multiEntry: Boolean?
-    val unique: Boolean?
+    var multiEntry: Boolean?
+    var unique: Boolean?
 }

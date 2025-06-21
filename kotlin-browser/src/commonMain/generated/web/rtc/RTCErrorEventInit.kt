@@ -8,5 +8,5 @@ import web.events.EventInit
 @JsPlainObject
 external interface RTCErrorEventInit :
     EventInit {
-    val error: RTCError
+    var error: RTCError
 }

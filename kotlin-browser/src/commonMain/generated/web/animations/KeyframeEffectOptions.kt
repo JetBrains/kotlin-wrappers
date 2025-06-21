@@ -7,7 +7,7 @@ import js.objects.JsPlainObject
 @JsPlainObject
 external interface KeyframeEffectOptions :
     EffectTiming {
-    val composite: CompositeOperation?
-    val iterationComposite: IterationCompositeOperation?
-    val pseudoElement: String?
+    var composite: CompositeOperation?
+    var iterationComposite: IterationCompositeOperation?
+    var pseudoElement: String?
 }

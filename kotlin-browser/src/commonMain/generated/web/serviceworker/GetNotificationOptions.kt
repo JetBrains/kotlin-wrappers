@@ -6,5 +6,5 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface GetNotificationOptions {
-    val tag: String?
+    var tag: String?
 }

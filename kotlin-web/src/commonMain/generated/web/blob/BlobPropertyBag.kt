@@ -6,6 +6,6 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface BlobPropertyBag {
-    val endings: EndingType?
-    val type: String?
+    var endings: EndingType?
+    var type: String?
 }

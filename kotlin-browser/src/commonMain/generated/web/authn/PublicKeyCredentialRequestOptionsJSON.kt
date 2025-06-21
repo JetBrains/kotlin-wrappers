@@ -8,11 +8,11 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface PublicKeyCredentialRequestOptionsJSON {
-    val allowCredentials: ReadonlyArray<PublicKeyCredentialDescriptorJSON>?
-    val challenge: Base64URLString
-    val extensions: AuthenticationExtensionsClientInputsJSON?
-    val hints: ReadonlyArray<JsString>?
-    val rpId: String?
-    val timeout: Int?
-    val userVerification: String?
+    var allowCredentials: ReadonlyArray<PublicKeyCredentialDescriptorJSON>?
+    var challenge: Base64URLString
+    var extensions: AuthenticationExtensionsClientInputsJSON?
+    var hints: ReadonlyArray<JsString>?
+    var rpId: String?
+    var timeout: Int?
+    var userVerification: String?
 }

@@ -8,6 +8,6 @@ import web.events.EventInit
 @JsPlainObject
 external interface HashChangeEventInit :
     EventInit {
-    val newURL: String?
-    val oldURL: String?
+    var newURL: String?
+    var oldURL: String?
 }

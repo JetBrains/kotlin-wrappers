@@ -6,6 +6,6 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface VideoEncoderInit {
-    val error: WebCodecsErrorCallback
-    val output: EncodedVideoChunkOutputCallback
+    var error: WebCodecsErrorCallback
+    var output: EncodedVideoChunkOutputCallback
 }

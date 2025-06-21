@@ -8,9 +8,9 @@ import web.keyboard.KeyCode
 @JsPlainObject
 external interface KeyboardEventInit :
     EventModifierInit {
-    val code: KeyCode?
-    val isComposing: Boolean?
-    val key: String?
-    val location: KeyLocation?
-    val repeat: Boolean?
+    var code: KeyCode?
+    var isComposing: Boolean?
+    var key: String?
+    var location: KeyLocation?
+    var repeat: Boolean?
 }

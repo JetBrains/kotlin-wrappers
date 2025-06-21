@@ -7,6 +7,6 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface PushSubscriptionOptionsInit {
-    val applicationServerKey: BufferSource /* | String */?
-    val userVisibleOnly: Boolean?
+    var applicationServerKey: BufferSource /* | String */?
+    var userVisibleOnly: Boolean?
 }

@@ -6,5 +6,5 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface MediaKeysPolicy {
-    val minHdcpVersion: String?
+    var minHdcpVersion: String?
 }

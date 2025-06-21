@@ -8,5 +8,5 @@ import js.objects.JsPlainObject
 @JsPlainObject
 external interface GPUPipelineLayoutDescriptor :
     GPUObjectDescriptorBase {
-    val bindGroupLayouts: ReadonlyArray<GPUBindGroupLayout?>
+    var bindGroupLayouts: ReadonlyArray<GPUBindGroupLayout?>
 }

@@ -6,5 +6,5 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface FullscreenOptions {
-    val navigationUI: FullscreenNavigationUI?
+    var navigationUI: FullscreenNavigationUI?
 }

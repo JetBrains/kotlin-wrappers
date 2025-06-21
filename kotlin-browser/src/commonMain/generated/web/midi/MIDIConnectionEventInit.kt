@@ -8,5 +8,5 @@ import web.events.EventInit
 @JsPlainObject
 external interface MIDIConnectionEventInit :
     EventInit {
-    val port: MIDIPort?
+    var port: MIDIPort?
 }

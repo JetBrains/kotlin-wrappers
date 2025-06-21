@@ -8,5 +8,5 @@ import js.objects.JsPlainObject
 @JsPlainObject
 external interface GPUFragmentState :
     GPUProgrammableStage {
-    val targets: ReadonlyArray<GPUColorTargetState?>
+    var targets: ReadonlyArray<GPUColorTargetState?>
 }

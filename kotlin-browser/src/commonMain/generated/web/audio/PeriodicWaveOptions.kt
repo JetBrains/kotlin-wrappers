@@ -9,6 +9,6 @@ import js.objects.JsPlainObject
 @JsPlainObject
 external interface PeriodicWaveOptions :
     PeriodicWaveConstraints {
-    val imag: ReadonlyArray<JsDouble> /* | Float32Array */?
-    val real: ReadonlyArray<JsDouble> /* | Float32Array */?
+    var imag: ReadonlyArray<JsDouble> /* | Float32Array */?
+    var real: ReadonlyArray<JsDouble> /* | Float32Array */?
 }

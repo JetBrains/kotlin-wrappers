@@ -6,7 +6,7 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface PublicKeyCredentialUserEntityJSON {
-    val displayName: String
-    val id: Base64URLString
-    val name: String
+    var displayName: String
+    var id: Base64URLString
+    var name: String
 }

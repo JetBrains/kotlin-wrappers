@@ -7,5 +7,5 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface FileSystemReadWriteOptions {
-    val at: UInt53?
+    var at: UInt53?
 }

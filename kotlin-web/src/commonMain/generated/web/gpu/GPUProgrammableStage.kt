@@ -8,7 +8,7 @@ import js.objects.ReadonlyRecord
 
 @JsPlainObject
 external interface GPUProgrammableStage {
-    val constants: ReadonlyRecord<JsString, GPUPipelineConstantValue>?
-    val entryPoint: String?
-    val module: GPUShaderModule
+    var constants: ReadonlyRecord<JsString, GPUPipelineConstantValue>?
+    var entryPoint: String?
+    var module: GPUShaderModule
 }

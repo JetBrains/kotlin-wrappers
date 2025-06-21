@@ -8,7 +8,7 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface PerformanceObserverInit {
-    val buffered: Boolean?
-    val entryTypes: ReadonlyArray<JsString>?
-    val type: String?
+    var buffered: Boolean?
+    var entryTypes: ReadonlyArray<JsString>?
+    var type: String?
 }

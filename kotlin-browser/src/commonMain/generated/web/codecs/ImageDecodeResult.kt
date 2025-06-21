@@ -6,6 +6,6 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface ImageDecodeResult {
-    val complete: Boolean
-    val image: VideoFrame
+    var complete: Boolean
+    var image: VideoFrame
 }

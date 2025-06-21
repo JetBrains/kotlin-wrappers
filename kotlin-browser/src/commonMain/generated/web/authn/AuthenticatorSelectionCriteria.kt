@@ -6,8 +6,8 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface AuthenticatorSelectionCriteria {
-    val authenticatorAttachment: AuthenticatorAttachment?
-    val requireResidentKey: Boolean?
-    val residentKey: ResidentKeyRequirement?
-    val userVerification: UserVerificationRequirement?
+    var authenticatorAttachment: AuthenticatorAttachment?
+    var requireResidentKey: Boolean?
+    var residentKey: ResidentKeyRequirement?
+    var userVerification: UserVerificationRequirement?
 }

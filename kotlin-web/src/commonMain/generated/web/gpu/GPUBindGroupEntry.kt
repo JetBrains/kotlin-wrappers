@@ -6,6 +6,6 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface GPUBindGroupEntry {
-    val binding: GPUIndex32
-    val resource: GPUBindingResource
+    var binding: GPUIndex32
+    var resource: GPUBindingResource
 }

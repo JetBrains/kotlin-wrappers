@@ -11,8 +11,8 @@ import web.mediastreams.MediaStreamTrack
 @JsPlainObject
 external interface RTCTrackEventInit :
     EventInit {
-    val receiver: RTCRtpReceiver
-    val streams: ReadonlyArray<MediaStream>?
-    val track: MediaStreamTrack
-    val transceiver: RTCRtpTransceiver
+    var receiver: RTCRtpReceiver
+    var streams: ReadonlyArray<MediaStream>?
+    var track: MediaStreamTrack
+    var transceiver: RTCRtpTransceiver
 }

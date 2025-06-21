@@ -6,5 +6,5 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface ScrollOptions {
-    val behavior: ScrollBehavior?
+    var behavior: ScrollBehavior?
 }

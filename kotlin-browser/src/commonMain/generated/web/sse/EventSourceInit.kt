@@ -6,5 +6,5 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface EventSourceInit {
-    val withCredentials: Boolean?
+    var withCredentials: Boolean?
 }

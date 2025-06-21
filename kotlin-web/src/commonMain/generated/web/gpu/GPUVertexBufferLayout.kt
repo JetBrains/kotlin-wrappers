@@ -7,7 +7,7 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface GPUVertexBufferLayout {
-    val arrayStride: GPUSize64
-    val attributes: ReadonlyArray<GPUVertexAttribute>
-    val stepMode: GPUVertexStepMode?
+    var arrayStride: GPUSize64
+    var attributes: ReadonlyArray<GPUVertexAttribute>
+    var stepMode: GPUVertexStepMode?
 }

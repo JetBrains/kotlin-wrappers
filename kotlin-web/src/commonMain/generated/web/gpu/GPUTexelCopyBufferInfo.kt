@@ -7,5 +7,5 @@ import js.objects.JsPlainObject
 @JsPlainObject
 external interface GPUTexelCopyBufferInfo :
     GPUTexelCopyBufferLayout {
-    val buffer: GPUBuffer
+    var buffer: GPUBuffer
 }

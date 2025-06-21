@@ -6,6 +6,6 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface FileSystemFlags {
-    val create: Boolean?
-    val exclusive: Boolean?
+    var create: Boolean?
+    var exclusive: Boolean?
 }

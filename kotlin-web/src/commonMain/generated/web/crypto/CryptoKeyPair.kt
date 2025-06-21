@@ -6,6 +6,6 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface CryptoKeyPair {
-    val privateKey: CryptoKey
-    val publicKey: CryptoKey
+    var privateKey: CryptoKey
+    var publicKey: CryptoKey
 }

@@ -8,5 +8,5 @@ import web.components.ShadowRoot
 
 @JsPlainObject
 external interface CaretPositionFromPointOptions {
-    val shadowRoots: ReadonlyArray<ShadowRoot>?
+    var shadowRoots: ReadonlyArray<ShadowRoot>?
 }

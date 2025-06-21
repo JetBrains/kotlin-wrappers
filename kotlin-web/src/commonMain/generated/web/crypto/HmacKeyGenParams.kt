@@ -7,6 +7,6 @@ import js.objects.JsPlainObject
 @JsPlainObject
 external interface HmacKeyGenParams :
     Algorithm {
-    val hash: HashAlgorithmIdentifier
-    val length: Int?
+    var hash: HashAlgorithmIdentifier
+    var length: Int?
 }

@@ -6,5 +6,5 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface PeriodicWaveConstraints {
-    val disableNormalization: Boolean?
+    var disableNormalization: Boolean?
 }

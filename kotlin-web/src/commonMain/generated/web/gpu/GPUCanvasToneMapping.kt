@@ -6,5 +6,5 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface GPUCanvasToneMapping {
-    val mode: GPUCanvasToneMappingMode?
+    var mode: GPUCanvasToneMappingMode?
 }

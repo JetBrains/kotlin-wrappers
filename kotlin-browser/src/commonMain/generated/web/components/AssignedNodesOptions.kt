@@ -6,5 +6,5 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface AssignedNodesOptions {
-    val flatten: Boolean?
+    var flatten: Boolean?
 }

@@ -8,7 +8,7 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface PublicKeyCredentialDescriptor {
-    val id: BufferSource
-    val transports: ReadonlyArray<AuthenticatorTransport>?
-    val type: PublicKeyCredentialType
+    var id: BufferSource
+    var transports: ReadonlyArray<AuthenticatorTransport>?
+    var type: PublicKeyCredentialType
 }

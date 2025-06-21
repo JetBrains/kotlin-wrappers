@@ -6,11 +6,11 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface CollatorOptions {
-    val usage: CollatorUsage?
-    val localeMatcher: LocaleMatcher?
-    val numeric: Boolean?
-    val caseFirst: CaseFirst?
-    val sensitivity: Sensitivity?
-    val collation: Collation?
-    val ignorePunctuation: Boolean?
+    var usage: CollatorUsage?
+    var localeMatcher: LocaleMatcher?
+    var numeric: Boolean?
+    var caseFirst: CaseFirst?
+    var sensitivity: Sensitivity?
+    var collation: Collation?
+    var ignorePunctuation: Boolean?
 }

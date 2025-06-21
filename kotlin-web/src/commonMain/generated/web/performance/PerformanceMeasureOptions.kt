@@ -8,8 +8,8 @@ import web.time.DOMHighResTimeStamp
 
 @JsPlainObject
 external interface PerformanceMeasureOptions {
-    val detail: JsAny?
-    val duration: DOMHighResTimeStamp?
-    val end: DOMHighResTimeStamp /* | String */?
-    val start: DOMHighResTimeStamp /* | String */?
+    var detail: JsAny?
+    var duration: DOMHighResTimeStamp?
+    var end: DOMHighResTimeStamp /* | String */?
+    var start: DOMHighResTimeStamp /* | String */?
 }

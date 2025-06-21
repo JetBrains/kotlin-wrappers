@@ -7,5 +7,5 @@ import js.objects.JsPlainObject
 @JsPlainObject
 external interface MediaEncodingConfiguration :
     MediaConfiguration {
-    val type: MediaEncodingType
+    var type: MediaEncodingType
 }

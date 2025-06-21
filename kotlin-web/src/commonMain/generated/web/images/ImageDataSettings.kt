@@ -6,5 +6,5 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface ImageDataSettings {
-    val colorSpace: PredefinedColorSpace?
+    var colorSpace: PredefinedColorSpace?
 }

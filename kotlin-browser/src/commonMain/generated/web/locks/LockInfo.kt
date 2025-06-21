@@ -6,7 +6,7 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface LockInfo {
-    val clientId: String?
-    val mode: LockMode?
-    val name: String?
+    var clientId: String?
+    var mode: LockMode?
+    var name: String?
 }

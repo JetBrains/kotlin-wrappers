@@ -10,9 +10,9 @@ import web.ranges.StaticRange
 @JsPlainObject
 external interface InputEventInit :
     UIEventInit {
-    val data: String?
-    val dataTransfer: DataTransfer?
-    val inputType: String?
-    val isComposing: Boolean?
-    val targetRanges: ReadonlyArray<StaticRange>?
+    var data: String?
+    var dataTransfer: DataTransfer?
+    var inputType: String?
+    var isComposing: Boolean?
+    var targetRanges: ReadonlyArray<StaticRange>?
 }

@@ -9,10 +9,10 @@ import web.geometry.DOMRectReadOnly
 
 @JsPlainObject
 external interface VideoFrameInit {
-    val alpha: AlphaOption?
-    val displayHeight: Int?
-    val displayWidth: Int?
-    val duration: UInt53?
-    val timestamp: Int53?
-    val visibleRect: DOMRectReadOnly?
+    var alpha: AlphaOption?
+    var displayHeight: Int?
+    var displayWidth: Int?
+    var duration: UInt53?
+    var timestamp: Int53?
+    var visibleRect: DOMRectReadOnly?
 }

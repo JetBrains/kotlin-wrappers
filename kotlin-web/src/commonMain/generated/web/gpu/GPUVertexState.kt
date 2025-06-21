@@ -8,5 +8,5 @@ import js.objects.JsPlainObject
 @JsPlainObject
 external interface GPUVertexState :
     GPUProgrammableStage {
-    val buffers: ReadonlyArray<GPUVertexBufferLayout?>?
+    var buffers: ReadonlyArray<GPUVertexBufferLayout?>?
 }

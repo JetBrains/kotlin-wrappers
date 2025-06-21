@@ -6,7 +6,7 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface MediaPositionState {
-    val duration: Double?
-    val playbackRate: Double?
-    val position: Double?
+    var duration: Double?
+    var playbackRate: Double?
+    var position: Double?
 }

@@ -6,8 +6,8 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface PhotoSettings {
-    val fillLightMode: FillLightMode?
-    val imageHeight: Double?
-    val imageWidth: Double?
-    val redEyeReduction: Boolean?
+    var fillLightMode: FillLightMode?
+    var imageHeight: Double?
+    var imageWidth: Double?
+    var redEyeReduction: Boolean?
 }

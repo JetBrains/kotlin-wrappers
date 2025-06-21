@@ -8,6 +8,6 @@ import web.events.EventInit
 @JsPlainObject
 external interface ToggleEventInit :
     EventInit {
-    val newState: ToggleState?
-    val oldState: ToggleState?
+    var newState: ToggleState?
+    var oldState: ToggleState?
 }

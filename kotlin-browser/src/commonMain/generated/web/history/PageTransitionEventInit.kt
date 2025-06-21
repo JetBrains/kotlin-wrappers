@@ -8,5 +8,5 @@ import web.events.EventInit
 @JsPlainObject
 external interface PageTransitionEventInit :
     EventInit {
-    val persisted: Boolean?
+    var persisted: Boolean?
 }

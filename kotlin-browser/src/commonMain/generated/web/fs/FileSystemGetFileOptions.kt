@@ -6,5 +6,5 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface FileSystemGetFileOptions {
-    val create: Boolean?
+    var create: Boolean?
 }

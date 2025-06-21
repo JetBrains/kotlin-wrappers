@@ -1,6 +1,5 @@
 package web.abort.internal
 
-import js.objects.JsPlainObject
 import js.objects.unsafeJso
 import web.abort.AbortSignal
 import web.abort.Abortable
@@ -8,12 +7,6 @@ import web.abort.Abortable
 internal fun createAbortable(
     signal: AbortSignal?,
 ): Abortable =
-    unsafeJso<MutableAbortable> {
+    unsafeJso {
         this.signal = signal
     }
-
-@JsPlainObject
-private external interface MutableAbortable :
-    Abortable {
-    override var signal: AbortSignal?
-}

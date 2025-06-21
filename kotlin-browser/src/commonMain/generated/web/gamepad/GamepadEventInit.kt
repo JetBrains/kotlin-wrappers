@@ -8,5 +8,5 @@ import web.events.EventInit
 @JsPlainObject
 external interface GamepadEventInit :
     EventInit {
-    val gamepad: Gamepad
+    var gamepad: Gamepad
 }

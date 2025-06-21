@@ -8,9 +8,9 @@ import web.events.EventInit
 @JsPlainObject
 external interface RTCPeerConnectionIceErrorEventInit :
     EventInit {
-    val address: String?
-    val errorCode: Short
-    val errorText: String?
-    val port: Short?
-    val url: String?
+    var address: String?
+    var errorCode: Short
+    var errorText: String?
+    var port: Short?
+    var url: String?
 }

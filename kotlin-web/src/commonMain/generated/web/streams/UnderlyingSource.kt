@@ -8,9 +8,9 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface UnderlyingSource<R : JsAny?> {
-    val autoAllocateChunkSize: UInt53?
-    val cancel: UnderlyingSourceCancelCallback?
-    val pull: UnderlyingSourcePullCallback<R>?
-    val start: UnderlyingSourceStartCallback<R>?
-    val type: ReadableStreamType?
+    var autoAllocateChunkSize: UInt53?
+    var cancel: UnderlyingSourceCancelCallback?
+    var pull: UnderlyingSourcePullCallback<R>?
+    var start: UnderlyingSourceStartCallback<R>?
+    var type: ReadableStreamType?
 }

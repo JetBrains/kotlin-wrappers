@@ -8,8 +8,8 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface PaymentDetailsModifier {
-    val additionalDisplayItems: ReadonlyArray<PaymentItem>?
-    val data: JsAny?
-    val supportedMethods: String
-    val total: PaymentItem?
+    var additionalDisplayItems: ReadonlyArray<PaymentItem>?
+    var data: JsAny?
+    var supportedMethods: String
+    var total: PaymentItem?
 }

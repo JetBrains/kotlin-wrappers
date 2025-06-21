@@ -6,5 +6,5 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface IDBTransactionOptions {
-    val durability: IDBTransactionDurability?
+    var durability: IDBTransactionDurability?
 }

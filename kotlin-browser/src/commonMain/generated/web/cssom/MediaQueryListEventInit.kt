@@ -8,6 +8,6 @@ import web.events.EventInit
 @JsPlainObject
 external interface MediaQueryListEventInit :
     EventInit {
-    val matches: Boolean?
-    val media: MediaQuery?
+    var matches: Boolean?
+    var media: MediaQuery?
 }

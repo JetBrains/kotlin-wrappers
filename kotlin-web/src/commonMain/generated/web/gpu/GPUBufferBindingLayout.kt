@@ -6,7 +6,7 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface GPUBufferBindingLayout {
-    val hasDynamicOffset: Boolean?
-    val minBindingSize: GPUSize64?
-    val type: GPUBufferBindingType?
+    var hasDynamicOffset: Boolean?
+    var minBindingSize: GPUSize64?
+    var type: GPUBufferBindingType?
 }

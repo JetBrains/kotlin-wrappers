@@ -10,9 +10,9 @@ import web.http.Request
 @JsPlainObject
 external interface FetchEventInit :
     ExtendableEventInit {
-    val clientId: String?
-    val handled: Promise<Void>?
-    val preloadResponse: Promise<*>?
-    val request: Request
-    val resultingClientId: String?
+    var clientId: String?
+    var handled: Promise<Void>?
+    var preloadResponse: Promise<*>?
+    var request: Request
+    var resultingClientId: String?
 }

@@ -6,5 +6,5 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface RTCRtpHeaderExtensionCapability {
-    val uri: String
+    var uri: String
 }

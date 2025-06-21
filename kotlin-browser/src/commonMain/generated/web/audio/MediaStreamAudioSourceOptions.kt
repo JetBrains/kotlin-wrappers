@@ -7,5 +7,5 @@ import web.mediastreams.MediaStream
 
 @JsPlainObject
 external interface MediaStreamAudioSourceOptions {
-    val mediaStream: MediaStream
+    var mediaStream: MediaStream
 }

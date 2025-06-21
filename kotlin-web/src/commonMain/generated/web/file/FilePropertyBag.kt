@@ -9,5 +9,5 @@ import web.time.EpochTimeStamp
 @JsPlainObject
 external interface FilePropertyBag :
     BlobPropertyBag {
-    val lastModified: EpochTimeStamp?
+    var lastModified: EpochTimeStamp?
 }

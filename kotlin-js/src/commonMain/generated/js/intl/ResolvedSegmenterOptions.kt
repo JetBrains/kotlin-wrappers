@@ -6,6 +6,6 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface ResolvedSegmenterOptions {
-    val locale: String
-    val granularity: Granularity
+    var locale: String
+    var granularity: Granularity
 }

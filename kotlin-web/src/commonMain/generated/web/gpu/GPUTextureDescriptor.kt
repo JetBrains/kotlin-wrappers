@@ -8,11 +8,11 @@ import js.objects.JsPlainObject
 @JsPlainObject
 external interface GPUTextureDescriptor :
     GPUObjectDescriptorBase {
-    val dimension: GPUTextureDimension?
-    val format: GPUTextureFormat
-    val mipLevelCount: GPUIntegerCoordinate?
-    val sampleCount: GPUSize32?
-    val size: GPUExtent3D
-    val usage: GPUTextureUsageFlags
-    val viewFormats: ReadonlyArray<GPUTextureFormat>?
+    var dimension: GPUTextureDimension?
+    var format: GPUTextureFormat
+    var mipLevelCount: GPUIntegerCoordinate?
+    var sampleCount: GPUSize32?
+    var size: GPUExtent3D
+    var usage: GPUTextureUsageFlags
+    var viewFormats: ReadonlyArray<GPUTextureFormat>?
 }

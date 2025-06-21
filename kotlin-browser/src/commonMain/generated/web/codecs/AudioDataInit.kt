@@ -10,11 +10,11 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface AudioDataInit {
-    val data: BufferSource
-    val format: AudioSampleFormat
-    val numberOfChannels: Int
-    val numberOfFrames: Int
-    val sampleRate: Float
-    val timestamp: Int53
-    val transfer: ReadonlyArray<ArrayBuffer>?
+    var data: BufferSource
+    var format: AudioSampleFormat
+    var numberOfChannels: Int
+    var numberOfFrames: Int
+    var sampleRate: Float
+    var timestamp: Int53
+    var transfer: ReadonlyArray<ArrayBuffer>?
 }

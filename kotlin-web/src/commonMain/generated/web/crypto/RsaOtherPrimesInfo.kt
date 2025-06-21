@@ -6,7 +6,7 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface RsaOtherPrimesInfo {
-    val d: String?
-    val r: String?
-    val t: String?
+    var d: String?
+    var r: String?
+    var t: String?
 }

@@ -6,6 +6,6 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface ObservableEventListenerOptions {
-    val capture: Boolean?
-    val passive: Boolean?
+    var capture: Boolean?
+    var passive: Boolean?
 }

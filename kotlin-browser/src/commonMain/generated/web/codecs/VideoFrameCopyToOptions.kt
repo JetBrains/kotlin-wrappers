@@ -9,8 +9,8 @@ import web.images.PredefinedColorSpace
 
 @JsPlainObject
 external interface VideoFrameCopyToOptions {
-    val colorSpace: PredefinedColorSpace?
-    val format: VideoPixelFormat?
-    val layout: ReadonlyArray<PlaneLayout>?
-    val rect: DOMRectReadOnly?
+    var colorSpace: PredefinedColorSpace?
+    var format: VideoPixelFormat?
+    var layout: ReadonlyArray<PlaneLayout>?
+    var rect: DOMRectReadOnly?
 }

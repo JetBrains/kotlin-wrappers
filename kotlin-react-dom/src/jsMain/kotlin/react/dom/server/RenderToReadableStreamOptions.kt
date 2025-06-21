@@ -17,6 +17,6 @@ external interface RenderToReadableStreamOptions :
     val bootstrapScripts: ReadonlyArray<String>?
     val bootstrapModules: ReadonlyArray<String>?
     val progressiveChunkSize: Int?
-    override val signal: AbortSignal?
+    override var signal: AbortSignal?
     val onError: ErrorHandler<ErrorInfo>?
 }

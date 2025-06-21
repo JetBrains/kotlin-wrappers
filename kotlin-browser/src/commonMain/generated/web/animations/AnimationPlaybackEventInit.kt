@@ -8,6 +8,6 @@ import web.events.EventInit
 @JsPlainObject
 external interface AnimationPlaybackEventInit :
     EventInit {
-    val currentTime: CSSNumberish?
-    val timelineTime: CSSNumberish?
+    var currentTime: CSSNumberish?
+    var timelineTime: CSSNumberish?
 }

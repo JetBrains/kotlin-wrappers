@@ -7,6 +7,6 @@ import js.objects.JsPlainObject
 @JsPlainObject
 external interface HmacKeyAlgorithm :
     KeyAlgorithm {
-    val hash: KeyAlgorithm
-    val length: Int
+    var hash: KeyAlgorithm
+    var length: Int
 }

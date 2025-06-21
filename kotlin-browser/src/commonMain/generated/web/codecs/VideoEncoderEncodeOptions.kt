@@ -6,6 +6,6 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface VideoEncoderEncodeOptions {
-    val avc: VideoEncoderEncodeOptionsForAvc?
-    val keyFrame: Boolean?
+    var avc: VideoEncoderEncodeOptionsForAvc?
+    var keyFrame: Boolean?
 }

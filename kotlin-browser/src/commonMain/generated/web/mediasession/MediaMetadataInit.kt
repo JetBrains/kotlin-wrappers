@@ -7,8 +7,8 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface MediaMetadataInit {
-    val album: String?
-    val artist: String?
-    val artwork: ReadonlyArray<MediaImage>?
-    val title: String?
+    var album: String?
+    var artist: String?
+    var artwork: ReadonlyArray<MediaImage>?
+    var title: String?
 }

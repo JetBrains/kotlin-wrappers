@@ -6,6 +6,6 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface AuthenticationExtensionsPRFOutputs {
-    val enabled: Boolean?
-    val results: AuthenticationExtensionsPRFValues?
+    var enabled: Boolean?
+    var results: AuthenticationExtensionsPRFValues?
 }

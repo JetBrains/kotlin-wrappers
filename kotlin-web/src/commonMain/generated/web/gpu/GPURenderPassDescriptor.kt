@@ -8,9 +8,9 @@ import js.objects.JsPlainObject
 @JsPlainObject
 external interface GPURenderPassDescriptor :
     GPUObjectDescriptorBase {
-    val colorAttachments: ReadonlyArray<GPURenderPassColorAttachment?>
-    val depthStencilAttachment: GPURenderPassDepthStencilAttachment?
-    val maxDrawCount: GPUSize64?
-    val occlusionQuerySet: GPUQuerySet?
-    val timestampWrites: GPURenderPassTimestampWrites?
+    var colorAttachments: ReadonlyArray<GPURenderPassColorAttachment?>
+    var depthStencilAttachment: GPURenderPassDepthStencilAttachment?
+    var maxDrawCount: GPUSize64?
+    var occlusionQuerySet: GPUQuerySet?
+    var timestampWrites: GPURenderPassTimestampWrites?
 }

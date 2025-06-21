@@ -10,6 +10,6 @@ import web.time.DOMHighResTimeStamp
 @JsPlainObject
 external interface BlobEventInit :
     EventInit {
-    val data: Blob
-    val timecode: DOMHighResTimeStamp?
+    var data: Blob
+    var timecode: DOMHighResTimeStamp?
 }

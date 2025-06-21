@@ -6,6 +6,6 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface MIDIOptions {
-    val software: Boolean?
-    val sysex: Boolean?
+    var software: Boolean?
+    var sysex: Boolean?
 }

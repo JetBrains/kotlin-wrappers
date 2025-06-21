@@ -7,7 +7,7 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface RTCIceServer {
-    val credential: String?
-    val urls: JsAny /* string | string[] */
-    val username: String?
+    var credential: String?
+    var urls: JsAny /* string | string[] */
+    var username: String?
 }

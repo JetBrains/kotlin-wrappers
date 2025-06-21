@@ -8,5 +8,5 @@ import web.events.EventInit
 @JsPlainObject
 external interface PageRevealEventInit :
     EventInit {
-    val viewTransition: ViewTransition?
+    var viewTransition: ViewTransition?
 }

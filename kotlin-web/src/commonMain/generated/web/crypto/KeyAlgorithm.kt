@@ -6,5 +6,5 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface KeyAlgorithm {
-    val name: String
+    var name: String
 }

@@ -8,5 +8,5 @@ import js.objects.JsPlainObject
 @JsPlainObject
 external interface RsaOaepParams :
     Algorithm {
-    val label: BufferSource?
+    var label: BufferSource?
 }

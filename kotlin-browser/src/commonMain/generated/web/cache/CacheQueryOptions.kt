@@ -6,7 +6,7 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface CacheQueryOptions {
-    val ignoreMethod: Boolean?
-    val ignoreSearch: Boolean?
-    val ignoreVary: Boolean?
+    var ignoreMethod: Boolean?
+    var ignoreSearch: Boolean?
+    var ignoreVary: Boolean?
 }

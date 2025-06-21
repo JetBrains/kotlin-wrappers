@@ -8,6 +8,6 @@ import web.serviceworker.ExtendableEventInit
 @JsPlainObject
 external interface ExtendableCookieChangeEventInit :
     ExtendableEventInit {
-    val changed: CookieList?
-    val deleted: CookieList?
+    var changed: CookieList?
+    var deleted: CookieList?
 }

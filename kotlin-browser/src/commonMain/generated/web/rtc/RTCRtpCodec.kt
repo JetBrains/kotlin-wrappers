@@ -6,8 +6,8 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface RTCRtpCodec {
-    val channels: Short?
-    val clockRate: Int
-    val mimeType: String
-    val sdpFmtpLine: String?
+    var channels: Short?
+    var clockRate: Int
+    var mimeType: String
+    var sdpFmtpLine: String?
 }

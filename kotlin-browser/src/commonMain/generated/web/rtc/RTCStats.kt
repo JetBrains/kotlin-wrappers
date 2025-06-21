@@ -7,7 +7,7 @@ import web.time.DOMHighResTimeStamp
 
 @JsPlainObject
 external interface RTCStats {
-    val id: String
-    val timestamp: DOMHighResTimeStamp
-    val type: RTCStatsType
+    var id: String
+    var timestamp: DOMHighResTimeStamp
+    var type: RTCStatsType
 }

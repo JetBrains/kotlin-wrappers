@@ -8,6 +8,6 @@ import js.objects.JsPlainObject
 @JsPlainObject
 external interface AesCtrParams :
     Algorithm {
-    val counter: BufferSource
-    val length: Short /* unsigned byte */
+    var counter: BufferSource
+    var length: Short /* unsigned byte */
 }

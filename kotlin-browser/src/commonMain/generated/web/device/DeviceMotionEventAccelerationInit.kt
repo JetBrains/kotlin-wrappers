@@ -6,7 +6,7 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface DeviceMotionEventAccelerationInit {
-    val x: Double?
-    val y: Double?
-    val z: Double?
+    var x: Double?
+    var y: Double?
+    var z: Double?
 }

@@ -6,7 +6,7 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface ResponseInit {
-    val headers: Headers?
-    val status: Short?
-    val statusText: String?
+    var headers: Headers?
+    var status: Short?
+    var statusText: String?
 }

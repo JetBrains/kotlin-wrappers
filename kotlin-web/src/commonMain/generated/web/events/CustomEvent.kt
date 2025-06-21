@@ -24,5 +24,5 @@ open external class CustomEvent<out D : JsAny?>(
     val detail: D
 
     @JsAlias(THIS)
-    override fun asInit(): CustomEventInit<D>
+    override fun asInit(): CustomEventInit<out D>
 }

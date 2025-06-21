@@ -9,8 +9,8 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface EncodedVideoChunkInit {
-    val data: AllowSharedBufferSource
-    val duration: UInt53?
-    val timestamp: Int53
-    val type: EncodedVideoChunkType
+    var data: AllowSharedBufferSource
+    var duration: UInt53?
+    var timestamp: Int53
+    var type: EncodedVideoChunkType
 }

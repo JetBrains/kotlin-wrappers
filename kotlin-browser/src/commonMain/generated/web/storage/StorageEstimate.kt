@@ -7,6 +7,6 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface StorageEstimate {
-    val quota: UInt53?
-    val usage: UInt53?
+    var quota: UInt53?
+    var usage: UInt53?
 }

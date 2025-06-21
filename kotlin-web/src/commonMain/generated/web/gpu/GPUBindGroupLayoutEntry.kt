@@ -6,11 +6,11 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface GPUBindGroupLayoutEntry {
-    val binding: GPUIndex32
-    val buffer: GPUBufferBindingLayout?
-    val externalTexture: GPUExternalTextureBindingLayout?
-    val sampler: GPUSamplerBindingLayout?
-    val storageTexture: GPUStorageTextureBindingLayout?
-    val texture: GPUTextureBindingLayout?
-    val visibility: GPUShaderStageFlags
+    var binding: GPUIndex32
+    var buffer: GPUBufferBindingLayout?
+    var externalTexture: GPUExternalTextureBindingLayout?
+    var sampler: GPUSamplerBindingLayout?
+    var storageTexture: GPUStorageTextureBindingLayout?
+    var texture: GPUTextureBindingLayout?
+    var visibility: GPUShaderStageFlags
 }

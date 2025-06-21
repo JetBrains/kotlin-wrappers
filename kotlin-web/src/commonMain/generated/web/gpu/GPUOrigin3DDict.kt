@@ -6,7 +6,7 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface GPUOrigin3DDict {
-    val x: GPUIntegerCoordinate?
-    val y: GPUIntegerCoordinate?
-    val z: GPUIntegerCoordinate?
+    var x: GPUIntegerCoordinate?
+    var y: GPUIntegerCoordinate?
+    var z: GPUIntegerCoordinate?
 }

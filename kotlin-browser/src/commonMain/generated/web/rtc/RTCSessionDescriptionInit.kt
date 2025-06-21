@@ -6,6 +6,6 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface RTCSessionDescriptionInit {
-    val sdp: String?
-    val type: RTCSdpType
+    var sdp: String?
+    var type: RTCSdpType
 }

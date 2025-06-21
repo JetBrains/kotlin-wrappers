@@ -8,7 +8,7 @@ import js.objects.JsPlainObject
 @JsPlainObject
 external interface RTCRtpSendParameters :
     RTCRtpParameters {
-    val degradationPreference: RTCDegradationPreference?
-    val encodings: ReadonlyArray<RTCRtpEncodingParameters>
-    val transactionId: String
+    var degradationPreference: RTCDegradationPreference?
+    var encodings: ReadonlyArray<RTCRtpEncodingParameters>
+    var transactionId: String
 }

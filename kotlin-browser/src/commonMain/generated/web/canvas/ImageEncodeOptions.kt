@@ -6,6 +6,6 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface ImageEncodeOptions {
-    val quality: Double?
-    val type: String?
+    var quality: Double?
+    var type: String?
 }

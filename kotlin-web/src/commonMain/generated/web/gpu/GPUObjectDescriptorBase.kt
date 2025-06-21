@@ -6,5 +6,5 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface GPUObjectDescriptorBase {
-    val label: String?
+    var label: String?
 }

@@ -6,7 +6,7 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface RTCRtpHeaderExtensionParameters {
-    val encrypted: Boolean?
-    val id: Short
-    val uri: String
+    var encrypted: Boolean?
+    var id: Short
+    var uri: String
 }

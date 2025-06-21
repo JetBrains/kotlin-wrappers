@@ -9,5 +9,5 @@ import web.events.EventInit
 @JsPlainObject
 external interface FontFaceSetLoadEventInit :
     EventInit {
-    val fontfaces: ReadonlyArray<FontFace>?
+    var fontfaces: ReadonlyArray<FontFace>?
 }

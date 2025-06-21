@@ -6,9 +6,9 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface ResolvedDisplayNamesOptions {
-    val locale: UnicodeBCP47LocaleIdentifier
-    val style: RelativeTimeFormatStyle
-    val type: DisplayNamesType
-    val fallback: DisplayNamesFallback
-    val languageDisplay: DisplayNamesLanguageDisplay?
+    var locale: UnicodeBCP47LocaleIdentifier
+    var style: RelativeTimeFormatStyle
+    var type: DisplayNamesType
+    var fallback: DisplayNamesFallback
+    var languageDisplay: DisplayNamesLanguageDisplay?
 }

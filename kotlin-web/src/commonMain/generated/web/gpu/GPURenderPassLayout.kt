@@ -8,7 +8,7 @@ import js.objects.JsPlainObject
 @JsPlainObject
 external interface GPURenderPassLayout :
     GPUObjectDescriptorBase {
-    val colorFormats: ReadonlyArray<GPUTextureFormat?>
-    val depthStencilFormat: GPUTextureFormat?
-    val sampleCount: GPUSize32?
+    var colorFormats: ReadonlyArray<GPUTextureFormat?>
+    var depthStencilFormat: GPUTextureFormat?
+    var sampleCount: GPUSize32?
 }

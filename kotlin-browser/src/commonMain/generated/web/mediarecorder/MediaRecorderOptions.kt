@@ -6,8 +6,8 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface MediaRecorderOptions {
-    val audioBitsPerSecond: Int?
-    val bitsPerSecond: Int?
-    val mimeType: String?
-    val videoBitsPerSecond: Int?
+    var audioBitsPerSecond: Int?
+    var bitsPerSecond: Int?
+    var mimeType: String?
+    var videoBitsPerSecond: Int?
 }

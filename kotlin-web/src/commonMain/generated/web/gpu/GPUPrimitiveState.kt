@@ -6,9 +6,9 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface GPUPrimitiveState {
-    val cullMode: GPUCullMode?
-    val frontFace: GPUFrontFace?
-    val stripIndexFormat: GPUIndexFormat?
-    val topology: GPUPrimitiveTopology?
-    val unclippedDepth: Boolean?
+    var cullMode: GPUCullMode?
+    var frontFace: GPUFrontFace?
+    var stripIndexFormat: GPUIndexFormat?
+    var topology: GPUPrimitiveTopology?
+    var unclippedDepth: Boolean?
 }

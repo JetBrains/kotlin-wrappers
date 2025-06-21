@@ -9,6 +9,6 @@ import web.images.PredefinedColorSpace
 @JsPlainObject
 external interface GPUExternalTextureDescriptor :
     GPUObjectDescriptorBase {
-    val colorSpace: PredefinedColorSpace?
-    val source: CanvasImageSource /* HTMLVideoElement | VideoFrame */
+    var colorSpace: PredefinedColorSpace?
+    var source: CanvasImageSource /* HTMLVideoElement | VideoFrame */
 }

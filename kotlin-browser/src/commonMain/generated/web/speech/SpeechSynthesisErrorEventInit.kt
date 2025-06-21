@@ -7,5 +7,5 @@ import js.objects.JsPlainObject
 @JsPlainObject
 external interface SpeechSynthesisErrorEventInit :
     SpeechSynthesisEventInit {
-    val error: SpeechSynthesisErrorCode
+    var error: SpeechSynthesisErrorCode
 }

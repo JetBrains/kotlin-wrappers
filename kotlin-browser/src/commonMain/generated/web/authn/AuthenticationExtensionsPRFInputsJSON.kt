@@ -8,6 +8,6 @@ import js.objects.ReadonlyRecord
 
 @JsPlainObject
 external interface AuthenticationExtensionsPRFInputsJSON {
-    val eval: AuthenticationExtensionsPRFValuesJSON?
-    val evalByCredential: ReadonlyRecord<JsString, AuthenticationExtensionsPRFValuesJSON>?
+    var eval: AuthenticationExtensionsPRFValuesJSON?
+    var evalByCredential: ReadonlyRecord<JsString, AuthenticationExtensionsPRFValuesJSON>?
 }

@@ -7,5 +7,5 @@ import js.objects.JsPlainObject
 @JsPlainObject
 external interface AesKeyAlgorithm :
     KeyAlgorithm {
-    val length: Short
+    var length: Short
 }

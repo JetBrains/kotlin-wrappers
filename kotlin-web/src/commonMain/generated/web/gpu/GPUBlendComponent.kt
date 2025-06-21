@@ -6,7 +6,7 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface GPUBlendComponent {
-    val dstFactor: GPUBlendFactor?
-    val operation: GPUBlendOperation?
-    val srcFactor: GPUBlendFactor?
+    var dstFactor: GPUBlendFactor?
+    var operation: GPUBlendOperation?
+    var srcFactor: GPUBlendFactor?
 }

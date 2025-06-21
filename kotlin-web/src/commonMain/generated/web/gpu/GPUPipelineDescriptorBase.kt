@@ -8,5 +8,5 @@ import js.objects.JsPlainObject
 @JsPlainObject
 external interface GPUPipelineDescriptorBase :
     GPUObjectDescriptorBase {
-    val layout: JsAny /* GPUPipelineLayout | GPUAutoLayoutMode */
+    var layout: JsAny /* GPUPipelineLayout | GPUAutoLayoutMode */
 }

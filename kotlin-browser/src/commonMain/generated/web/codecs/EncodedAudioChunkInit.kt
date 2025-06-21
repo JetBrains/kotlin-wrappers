@@ -11,9 +11,9 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface EncodedAudioChunkInit {
-    val data: AllowSharedBufferSource
-    val duration: UInt53?
-    val timestamp: Int53
-    val transfer: ReadonlyArray<ArrayBuffer>?
-    val type: EncodedAudioChunkType
+    var data: AllowSharedBufferSource
+    var duration: UInt53?
+    var timestamp: Int53
+    var transfer: ReadonlyArray<ArrayBuffer>?
+    var type: EncodedAudioChunkType
 }

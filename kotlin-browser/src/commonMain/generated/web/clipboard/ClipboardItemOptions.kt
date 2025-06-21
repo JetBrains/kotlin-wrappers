@@ -6,5 +6,5 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface ClipboardItemOptions {
-    val presentationStyle: PresentationStyle?
+    var presentationStyle: PresentationStyle?
 }

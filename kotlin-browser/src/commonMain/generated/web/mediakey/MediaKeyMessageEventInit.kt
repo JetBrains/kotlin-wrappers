@@ -9,6 +9,6 @@ import web.events.EventInit
 @JsPlainObject
 external interface MediaKeyMessageEventInit :
     EventInit {
-    val message: ArrayBuffer
-    val messageType: MediaKeyMessageType
+    var message: ArrayBuffer
+    var messageType: MediaKeyMessageType
 }

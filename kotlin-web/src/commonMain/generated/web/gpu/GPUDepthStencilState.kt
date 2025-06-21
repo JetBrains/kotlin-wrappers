@@ -6,14 +6,14 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface GPUDepthStencilState {
-    val depthBias: GPUDepthBias?
-    val depthBiasClamp: Float?
-    val depthBiasSlopeScale: Float?
-    val depthCompare: GPUCompareFunction?
-    val depthWriteEnabled: Boolean?
-    val format: GPUTextureFormat
-    val stencilBack: GPUStencilFaceState?
-    val stencilFront: GPUStencilFaceState?
-    val stencilReadMask: GPUStencilValue?
-    val stencilWriteMask: GPUStencilValue?
+    var depthBias: GPUDepthBias?
+    var depthBiasClamp: Float?
+    var depthBiasSlopeScale: Float?
+    var depthCompare: GPUCompareFunction?
+    var depthWriteEnabled: Boolean?
+    var format: GPUTextureFormat
+    var stencilBack: GPUStencilFaceState?
+    var stencilFront: GPUStencilFaceState?
+    var stencilReadMask: GPUStencilValue?
+    var stencilWriteMask: GPUStencilValue?
 }

@@ -9,7 +9,7 @@ import web.dom.ParentNode
 
 @JsPlainObject
 external interface IntersectionObserverInit {
-    val root: ParentNode /* Element | Document */?
-    val rootMargin: String?
-    val threshold: ReadonlyArray<JsDouble>?
+    var root: ParentNode /* Element | Document */?
+    var rootMargin: String?
+    var threshold: ReadonlyArray<JsDouble>?
 }

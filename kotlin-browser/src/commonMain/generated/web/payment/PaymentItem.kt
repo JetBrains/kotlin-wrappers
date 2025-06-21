@@ -6,7 +6,7 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface PaymentItem {
-    val amount: PaymentCurrencyAmount
-    val label: String
-    val pending: Boolean?
+    var amount: PaymentCurrencyAmount
+    var label: String
+    var pending: Boolean?
 }

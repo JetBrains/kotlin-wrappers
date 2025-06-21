@@ -8,5 +8,5 @@ import web.events.EventInit
 @JsPlainObject
 external interface ContentVisibilityAutoStateChangeEventInit :
     EventInit {
-    val skipped: Boolean?
+    var skipped: Boolean?
 }

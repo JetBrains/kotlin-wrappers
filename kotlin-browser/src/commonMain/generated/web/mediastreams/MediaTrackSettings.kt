@@ -6,22 +6,22 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface MediaTrackSettings {
-    val aspectRatio: Double?
-    val autoGainControl: Boolean?
-    val backgroundBlur: Boolean?
-    val channelCount: Int?
-    val deviceId: String?
-    val displaySurface: String?
-    val echoCancellation: Boolean?
-    val facingMode: String?
-    val frameRate: Double?
-    val groupId: String?
-    val height: Int?
-    val noiseSuppression: Boolean?
-    val sampleRate: Int?
-    val sampleSize: Int?
-    val torch: Boolean?
-    val whiteBalanceMode: String?
-    val width: Int?
-    val zoom: Double?
+    var aspectRatio: Double?
+    var autoGainControl: Boolean?
+    var backgroundBlur: Boolean?
+    var channelCount: Int?
+    var deviceId: String?
+    var displaySurface: String?
+    var echoCancellation: Boolean?
+    var facingMode: String?
+    var frameRate: Double?
+    var groupId: String?
+    var height: Int?
+    var noiseSuppression: Boolean?
+    var sampleRate: Int?
+    var sampleSize: Int?
+    var torch: Boolean?
+    var whiteBalanceMode: String?
+    var width: Int?
+    var zoom: Double?
 }

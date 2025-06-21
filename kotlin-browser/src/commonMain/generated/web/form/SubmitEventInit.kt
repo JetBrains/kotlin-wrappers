@@ -9,5 +9,5 @@ import web.html.HTMLElement
 @JsPlainObject
 external interface SubmitEventInit :
     EventInit {
-    val submitter: HTMLElement?
+    var submitter: HTMLElement?
 }

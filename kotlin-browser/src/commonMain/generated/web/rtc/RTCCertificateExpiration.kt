@@ -7,5 +7,5 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface RTCCertificateExpiration {
-    val expires: UInt53?
+    var expires: UInt53?
 }

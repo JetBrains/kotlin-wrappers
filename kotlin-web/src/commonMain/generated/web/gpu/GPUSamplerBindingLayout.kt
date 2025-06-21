@@ -6,5 +6,5 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface GPUSamplerBindingLayout {
-    val type: GPUSamplerBindingType?
+    var type: GPUSamplerBindingType?
 }

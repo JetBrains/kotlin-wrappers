@@ -7,8 +7,8 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface PhotoCapabilities {
-    val fillLightMode: ReadonlyArray<FillLightMode>?
-    val imageHeight: MediaSettingsRange?
-    val imageWidth: MediaSettingsRange?
-    val redEyeReduction: RedEyeReduction?
+    var fillLightMode: ReadonlyArray<FillLightMode>?
+    var imageHeight: MediaSettingsRange?
+    var imageWidth: MediaSettingsRange?
+    var redEyeReduction: RedEyeReduction?
 }

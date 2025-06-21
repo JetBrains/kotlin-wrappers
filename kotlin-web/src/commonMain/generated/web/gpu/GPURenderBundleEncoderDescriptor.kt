@@ -7,6 +7,6 @@ import js.objects.JsPlainObject
 @JsPlainObject
 external interface GPURenderBundleEncoderDescriptor :
     GPURenderPassLayout {
-    val depthReadOnly: Boolean?
-    val stencilReadOnly: Boolean?
+    var depthReadOnly: Boolean?
+    var stencilReadOnly: Boolean?
 }

@@ -8,5 +8,5 @@ import web.events.EventTarget
 @JsPlainObject
 external interface FocusEventInit :
     UIEventInit {
-    val relatedTarget: EventTarget?
+    var relatedTarget: EventTarget?
 }

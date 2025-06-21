@@ -7,5 +7,5 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface WebTransportSendOptions {
-    val sendOrder: Int53?
+    var sendOrder: Int53?
 }

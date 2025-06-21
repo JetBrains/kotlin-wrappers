@@ -7,6 +7,6 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface LockManagerSnapshot {
-    val held: ReadonlyArray<LockInfo>?
-    val pending: ReadonlyArray<LockInfo>?
+    var held: ReadonlyArray<LockInfo>?
+    var pending: ReadonlyArray<LockInfo>?
 }

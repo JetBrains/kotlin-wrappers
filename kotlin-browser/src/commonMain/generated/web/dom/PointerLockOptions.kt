@@ -6,5 +6,5 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface PointerLockOptions {
-    val unadjustedMovement: Boolean?
+    var unadjustedMovement: Boolean?
 }

@@ -7,7 +7,7 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface AuthenticationExtensionsLargeBlobInputs {
-    val read: Boolean?
-    val support: String?
-    val write: BufferSource?
+    var read: Boolean?
+    var support: String?
+    var write: BufferSource?
 }

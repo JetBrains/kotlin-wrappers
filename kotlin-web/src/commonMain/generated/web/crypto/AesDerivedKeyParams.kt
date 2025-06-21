@@ -7,5 +7,5 @@ import js.objects.JsPlainObject
 @JsPlainObject
 external interface AesDerivedKeyParams :
     Algorithm {
-    val length: Short
+    var length: Short
 }

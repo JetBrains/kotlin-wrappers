@@ -7,5 +7,5 @@ import js.objects.JsPlainObject
 @JsPlainObject
 external interface RTCEncodedAudioFrameMetadata :
     RTCEncodedFrameMetadata {
-    val sequenceNumber: Short?
+    var sequenceNumber: Short?
 }

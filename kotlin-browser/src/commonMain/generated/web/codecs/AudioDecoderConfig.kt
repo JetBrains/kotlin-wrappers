@@ -7,8 +7,8 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface AudioDecoderConfig {
-    val codec: String
-    val description: AllowSharedBufferSource?
-    val numberOfChannels: Int
-    val sampleRate: Int
+    var codec: String
+    var description: AllowSharedBufferSource?
+    var numberOfChannels: Int
+    var sampleRate: Int
 }

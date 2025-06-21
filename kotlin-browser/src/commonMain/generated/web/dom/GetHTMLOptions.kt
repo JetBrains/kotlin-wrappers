@@ -8,6 +8,6 @@ import web.components.ShadowRoot
 
 @JsPlainObject
 external interface GetHTMLOptions {
-    val serializableShadowRoots: Boolean?
-    val shadowRoots: ReadonlyArray<ShadowRoot>?
+    var serializableShadowRoots: Boolean?
+    var shadowRoots: ReadonlyArray<ShadowRoot>?
 }

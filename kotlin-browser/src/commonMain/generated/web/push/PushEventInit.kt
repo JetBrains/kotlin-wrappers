@@ -8,5 +8,5 @@ import web.serviceworker.ExtendableEventInit
 @JsPlainObject
 external interface PushEventInit :
     ExtendableEventInit {
-    val data: PushMessageDataInit?
+    var data: PushMessageDataInit?
 }

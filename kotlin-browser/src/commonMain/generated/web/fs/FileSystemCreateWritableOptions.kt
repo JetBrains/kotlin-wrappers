@@ -6,5 +6,5 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface FileSystemCreateWritableOptions {
-    val keepExistingData: Boolean?
+    var keepExistingData: Boolean?
 }

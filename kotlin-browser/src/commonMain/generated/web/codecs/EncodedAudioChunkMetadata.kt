@@ -6,5 +6,5 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface EncodedAudioChunkMetadata {
-    val decoderConfig: AudioDecoderConfig?
+    var decoderConfig: AudioDecoderConfig?
 }

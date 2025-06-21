@@ -7,6 +7,6 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface TextEncoderEncodeIntoResult {
-    val read: UInt53
-    val written: UInt53
+    var read: UInt53
+    var written: UInt53
 }

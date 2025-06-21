@@ -6,6 +6,6 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface ClientQueryOptions {
-    val includeUncontrolled: Boolean?
-    val type: ClientTypes?
+    var includeUncontrolled: Boolean?
+    var type: ClientTypes?
 }

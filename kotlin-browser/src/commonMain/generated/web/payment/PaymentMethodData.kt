@@ -7,6 +7,6 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface PaymentMethodData {
-    val data: JsAny?
-    val supportedMethods: String
+    var data: JsAny?
+    var supportedMethods: String
 }

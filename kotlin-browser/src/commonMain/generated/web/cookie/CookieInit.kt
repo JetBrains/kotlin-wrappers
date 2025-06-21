@@ -7,11 +7,11 @@ import web.time.DOMHighResTimeStamp
 
 @JsPlainObject
 external interface CookieInit {
-    val domain: String?
-    val expires: DOMHighResTimeStamp?
-    val name: String
-    val partitioned: Boolean?
-    val path: String?
-    val sameSite: CookieSameSite?
-    val value: String
+    var domain: String?
+    var expires: DOMHighResTimeStamp?
+    var name: String
+    var partitioned: Boolean?
+    var path: String?
+    var sameSite: CookieSameSite?
+    var value: String
 }

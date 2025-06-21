@@ -108,9 +108,6 @@ internal class TypeProvider(
             else -> error("Unable to find array type for `$parentType.$propertyName`")
         }
 
-    val readonlyMode: Boolean =
-        IDLRegistry.isPlainObjectInterface(parentType)
-
     fun isDefined(): Boolean =
         parentType in Mixins.ALL
 

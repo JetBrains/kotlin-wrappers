@@ -8,8 +8,8 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface WriteParams {
-    val data: JsAny /* BufferSource | Blob | string */?
-    val position: UInt53?
-    val size: UInt53?
-    val type: WriteCommandType
+    var data: JsAny /* BufferSource | Blob | string */?
+    var position: UInt53?
+    var size: UInt53?
+    var type: WriteCommandType
 }

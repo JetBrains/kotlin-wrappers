@@ -8,11 +8,11 @@ import js.objects.JsPlainObject
 import web.events.EventInit
 
 @JsPlainObject
-external interface MessageEventInit<out D : JsAny?> :
+external interface MessageEventInit<D : JsAny?> :
     EventInit {
-    val data: D?
-    val lastEventId: String?
-    val origin: String?
-    val ports: ReadonlyArray<MessagePort>?
-    val source: MessageEventSource?
+    var data: D?
+    var lastEventId: String?
+    var origin: String?
+    var ports: ReadonlyArray<MessagePort>?
+    var source: MessageEventSource?
 }

@@ -6,6 +6,6 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface ModuleExportDescriptor {
-    val kind: ImportExportKind
-    val name: String
+    var kind: ImportExportKind
+    var name: String
 }

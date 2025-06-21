@@ -7,14 +7,14 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface VideoConfiguration {
-    val bitrate: UInt53
-    val colorGamut: ColorGamut?
-    val contentType: String
-    val framerate: Double
-    val hasAlphaChannel: Boolean?
-    val hdrMetadataType: HdrMetadataType?
-    val height: Int
-    val scalabilityMode: String?
-    val transferFunction: TransferFunction?
-    val width: Int
+    var bitrate: UInt53
+    var colorGamut: ColorGamut?
+    var contentType: String
+    var framerate: Double
+    var hasAlphaChannel: Boolean?
+    var hdrMetadataType: HdrMetadataType?
+    var height: Int
+    var scalabilityMode: String?
+    var transferFunction: TransferFunction?
+    var width: Int
 }

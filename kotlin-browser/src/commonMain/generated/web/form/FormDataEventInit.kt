@@ -8,5 +8,5 @@ import web.events.EventInit
 @JsPlainObject
 external interface FormDataEventInit :
     EventInit {
-    val formData: FormData
+    var formData: FormData
 }

@@ -8,7 +8,7 @@ import js.objects.JsPlainObject
 @JsPlainObject
 external interface AesGcmParams :
     Algorithm {
-    val additionalData: BufferSource?
-    val iv: BufferSource
-    val tagLength: Short /* unsigned byte */?
+    var additionalData: BufferSource?
+    var iv: BufferSource
+    var tagLength: Short /* unsigned byte */?
 }

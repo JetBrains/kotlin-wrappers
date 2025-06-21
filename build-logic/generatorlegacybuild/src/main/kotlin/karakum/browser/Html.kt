@@ -1205,7 +1205,7 @@ internal fun convertInterface(
 
             else -> {
                 if (abortable) {
-                    result.replace("val signal: AbortSignal?", "override val signal: AbortSignal?")
+                    result.replace("var signal: AbortSignal?", "override var signal: AbortSignal?")
                 } else result
             }
         }
@@ -1940,7 +1940,6 @@ private fun convertProperty(
     typeProvider: TypeProvider,
 ): String? {
     val isVal = source.startsWith("readonly ")
-            || typeProvider.readonlyMode
     val modifier = if (isVal) "val" else "var"
 
     var (name, type) = source.removePrefix("readonly ").let {

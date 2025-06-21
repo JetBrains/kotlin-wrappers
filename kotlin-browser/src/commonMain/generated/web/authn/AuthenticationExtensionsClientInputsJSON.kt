@@ -6,8 +6,8 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface AuthenticationExtensionsClientInputsJSON {
-    val appid: String?
-    val credProps: Boolean?
-    val largeBlob: AuthenticationExtensionsLargeBlobInputsJSON?
-    val prf: AuthenticationExtensionsPRFInputsJSON?
+    var appid: String?
+    var credProps: Boolean?
+    var largeBlob: AuthenticationExtensionsLargeBlobInputsJSON?
+    var prf: AuthenticationExtensionsPRFInputsJSON?
 }

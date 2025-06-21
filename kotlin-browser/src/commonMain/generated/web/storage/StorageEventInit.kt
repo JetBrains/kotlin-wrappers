@@ -8,9 +8,9 @@ import web.events.EventInit
 @JsPlainObject
 external interface StorageEventInit :
     EventInit {
-    val key: String?
-    val newValue: String?
-    val oldValue: String?
-    val storageArea: Storage?
-    val url: String?
+    var key: String?
+    var newValue: String?
+    var oldValue: String?
+    var storageArea: Storage?
+    var url: String?
 }

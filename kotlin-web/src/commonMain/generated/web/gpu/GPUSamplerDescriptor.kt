@@ -7,14 +7,14 @@ import js.objects.JsPlainObject
 @JsPlainObject
 external interface GPUSamplerDescriptor :
     GPUObjectDescriptorBase {
-    val addressModeU: GPUAddressMode?
-    val addressModeV: GPUAddressMode?
-    val addressModeW: GPUAddressMode?
-    val compare: GPUCompareFunction?
-    val lodMaxClamp: Float?
-    val lodMinClamp: Float?
-    val magFilter: GPUFilterMode?
-    val maxAnisotropy: Short?
-    val minFilter: GPUFilterMode?
-    val mipmapFilter: GPUMipmapFilterMode?
+    var addressModeU: GPUAddressMode?
+    var addressModeV: GPUAddressMode?
+    var addressModeW: GPUAddressMode?
+    var compare: GPUCompareFunction?
+    var lodMaxClamp: Float?
+    var lodMinClamp: Float?
+    var magFilter: GPUFilterMode?
+    var maxAnisotropy: Short?
+    var minFilter: GPUFilterMode?
+    var mipmapFilter: GPUMipmapFilterMode?
 }

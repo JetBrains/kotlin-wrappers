@@ -8,5 +8,5 @@ import web.events.EventInit
 @JsPlainObject
 external interface MediaStreamTrackEventInit :
     EventInit {
-    val track: MediaStreamTrack
+    var track: MediaStreamTrack
 }

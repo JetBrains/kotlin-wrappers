@@ -6,5 +6,5 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface AvcEncoderConfig {
-    val format: AvcBitstreamFormat?
+    var format: AvcBitstreamFormat?
 }

@@ -7,10 +7,10 @@ import js.objects.JsPlainObject
 @JsPlainObject
 external interface RTCRtpEncodingParameters :
     RTCRtpCodingParameters {
-    val active: Boolean?
-    val maxBitrate: Int?
-    val maxFramerate: Double?
-    val networkPriority: RTCPriorityType?
-    val priority: RTCPriorityType?
-    val scaleResolutionDownBy: Double?
+    var active: Boolean?
+    var maxBitrate: Int?
+    var maxFramerate: Double?
+    var networkPriority: RTCPriorityType?
+    var priority: RTCPriorityType?
+    var scaleResolutionDownBy: Double?
 }

@@ -170,14 +170,12 @@ private fun event(
         val members = if (membersSource.isNotEmpty()) {
             membersSource
                 .splitToSequence(";\n")
-                // TODO: move to patches?
-                .map { "readonly $it" }
                 .mapNotNull { convertMember(it, typeProvider) }
                 .joinToString("\n")
         } else ""
 
         val declaration = initName
-            .replace("<D = any>", "<out D : JsAny?>") +
+            .replace("<D = any>", "<D : JsAny?>") +
                 " $parentDeclaration"
 
         sequenceOf(

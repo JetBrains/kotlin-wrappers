@@ -7,6 +7,6 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface IDBDatabaseInfo {
-    val name: String?
-    val version: UInt53?
+    var name: String?
+    var version: UInt53?
 }

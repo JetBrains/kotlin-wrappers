@@ -9,5 +9,5 @@ import web.events.EventInit
 @JsPlainObject
 external interface PopStateEventInit :
     EventInit {
-    val state: JsAny?
+    var state: JsAny?
 }

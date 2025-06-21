@@ -6,8 +6,8 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface AudioDataCopyToOptions {
-    val format: AudioSampleFormat?
-    val frameCount: Int?
-    val frameOffset: Int?
-    val planeIndex: Int
+    var format: AudioSampleFormat?
+    var frameCount: Int?
+    var frameOffset: Int?
+    var planeIndex: Int
 }

@@ -10,14 +10,14 @@ import web.geometry.DOMRectReadOnly
 
 @JsPlainObject
 external interface VideoFrameBufferInit {
-    val codedHeight: Int
-    val codedWidth: Int
-    val colorSpace: VideoColorSpaceInit?
-    val displayHeight: Int?
-    val displayWidth: Int?
-    val duration: UInt53?
-    val format: VideoPixelFormat
-    val layout: ReadonlyArray<PlaneLayout>?
-    val timestamp: Int53
-    val visibleRect: DOMRectReadOnly?
+    var codedHeight: Int
+    var codedWidth: Int
+    var colorSpace: VideoColorSpaceInit?
+    var displayHeight: Int?
+    var displayWidth: Int?
+    var duration: UInt53?
+    var format: VideoPixelFormat
+    var layout: ReadonlyArray<PlaneLayout>?
+    var timestamp: Int53
+    var visibleRect: DOMRectReadOnly?
 }

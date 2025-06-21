@@ -13,9 +13,9 @@ import js.objects.ReadonlyRecord
 @JsPlainObject
 external interface AudioWorkletNodeOptions :
     AudioNodeOptions {
-    val numberOfInputs: Int?
-    val numberOfOutputs: Int?
-    val outputChannelCount: ReadonlyArray<JsUInt>?
-    val parameterData: ReadonlyRecord<JsString, JsDouble>?
-    val processorOptions: JsAny?
+    var numberOfInputs: Int?
+    var numberOfOutputs: Int?
+    var outputChannelCount: ReadonlyArray<JsUInt>?
+    var parameterData: ReadonlyRecord<JsString, JsDouble>?
+    var processorOptions: JsAny?
 }

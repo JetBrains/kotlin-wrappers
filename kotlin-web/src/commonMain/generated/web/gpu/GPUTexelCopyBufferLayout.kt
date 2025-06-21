@@ -6,7 +6,7 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface GPUTexelCopyBufferLayout {
-    val bytesPerRow: GPUSize32?
-    val offset: GPUSize64?
-    val rowsPerImage: GPUSize32?
+    var bytesPerRow: GPUSize32?
+    var offset: GPUSize64?
+    var rowsPerImage: GPUSize32?
 }

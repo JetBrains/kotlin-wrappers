@@ -8,14 +8,14 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface PublicKeyCredentialCreationOptionsJSON {
-    val attestation: String?
-    val authenticatorSelection: AuthenticatorSelectionCriteria?
-    val challenge: Base64URLString
-    val excludeCredentials: ReadonlyArray<PublicKeyCredentialDescriptorJSON>?
-    val extensions: AuthenticationExtensionsClientInputsJSON?
-    val hints: ReadonlyArray<JsString>?
-    val pubKeyCredParams: ReadonlyArray<PublicKeyCredentialParameters>
-    val rp: PublicKeyCredentialRpEntity
-    val timeout: Int?
-    val user: PublicKeyCredentialUserEntityJSON
+    var attestation: String?
+    var authenticatorSelection: AuthenticatorSelectionCriteria?
+    var challenge: Base64URLString
+    var excludeCredentials: ReadonlyArray<PublicKeyCredentialDescriptorJSON>?
+    var extensions: AuthenticationExtensionsClientInputsJSON?
+    var hints: ReadonlyArray<JsString>?
+    var pubKeyCredParams: ReadonlyArray<PublicKeyCredentialParameters>
+    var rp: PublicKeyCredentialRpEntity
+    var timeout: Int?
+    var user: PublicKeyCredentialUserEntityJSON
 }

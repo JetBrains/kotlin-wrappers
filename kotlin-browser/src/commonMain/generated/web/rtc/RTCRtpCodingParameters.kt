@@ -6,5 +6,5 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface RTCRtpCodingParameters {
-    val rid: String?
+    var rid: String?
 }

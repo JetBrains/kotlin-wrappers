@@ -6,7 +6,7 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface EventInit {
-    val bubbles: Boolean?
-    val cancelable: Boolean?
-    val composed: Boolean?
+    var bubbles: Boolean?
+    var cancelable: Boolean?
+    var composed: Boolean?
 }

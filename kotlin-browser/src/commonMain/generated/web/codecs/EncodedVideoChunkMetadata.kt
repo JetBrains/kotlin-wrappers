@@ -6,5 +6,5 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface EncodedVideoChunkMetadata {
-    val decoderConfig: VideoDecoderConfig?
+    var decoderConfig: VideoDecoderConfig?
 }

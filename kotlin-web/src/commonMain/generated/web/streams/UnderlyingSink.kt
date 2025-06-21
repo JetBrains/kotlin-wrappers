@@ -7,8 +7,8 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface UnderlyingSink<W : JsAny?> {
-    val abort: UnderlyingSinkAbortCallback?
-    val close: UnderlyingSinkCloseCallback?
-    val start: UnderlyingSinkStartCallback?
-    val write: UnderlyingSinkWriteCallback<W>?
+    var abort: UnderlyingSinkAbortCallback?
+    var close: UnderlyingSinkCloseCallback?
+    var start: UnderlyingSinkStartCallback?
+    var write: UnderlyingSinkWriteCallback<W>?
 }

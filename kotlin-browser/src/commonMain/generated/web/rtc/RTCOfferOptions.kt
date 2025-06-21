@@ -7,7 +7,7 @@ import js.objects.JsPlainObject
 @JsPlainObject
 external interface RTCOfferOptions :
     RTCOfferAnswerOptions {
-    val iceRestart: Boolean?
-    val offerToReceiveAudio: Boolean?
-    val offerToReceiveVideo: Boolean?
+    var iceRestart: Boolean?
+    var offerToReceiveAudio: Boolean?
+    var offerToReceiveVideo: Boolean?
 }

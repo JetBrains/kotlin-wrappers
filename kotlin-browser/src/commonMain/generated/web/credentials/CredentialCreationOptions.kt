@@ -10,6 +10,6 @@ import web.authn.PublicKeyCredentialCreationOptions
 @JsPlainObject
 external interface CredentialCreationOptions :
     Abortable {
-    val publicKey: PublicKeyCredentialCreationOptions?
-    override val signal: AbortSignal?
+    var publicKey: PublicKeyCredentialCreationOptions?
+    override var signal: AbortSignal?
 }

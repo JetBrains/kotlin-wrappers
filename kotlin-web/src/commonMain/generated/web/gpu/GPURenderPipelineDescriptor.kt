@@ -7,9 +7,9 @@ import js.objects.JsPlainObject
 @JsPlainObject
 external interface GPURenderPipelineDescriptor :
     GPUPipelineDescriptorBase {
-    val depthStencil: GPUDepthStencilState?
-    val fragment: GPUFragmentState?
-    val multisample: GPUMultisampleState?
-    val primitive: GPUPrimitiveState?
-    val vertex: GPUVertexState
+    var depthStencil: GPUDepthStencilState?
+    var fragment: GPUFragmentState?
+    var multisample: GPUMultisampleState?
+    var primitive: GPUPrimitiveState?
+    var vertex: GPUVertexState
 }

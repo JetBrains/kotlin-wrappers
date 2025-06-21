@@ -6,5 +6,5 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface GPUPipelineErrorInit {
-    val reason: GPUPipelineErrorReason
+    var reason: GPUPipelineErrorReason
 }

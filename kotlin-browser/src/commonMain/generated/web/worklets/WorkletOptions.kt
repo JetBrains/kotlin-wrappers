@@ -7,5 +7,5 @@ import web.http.RequestCredentials
 
 @JsPlainObject
 external interface WorkletOptions {
-    val credentials: RequestCredentials?
+    var credentials: RequestCredentials?
 }

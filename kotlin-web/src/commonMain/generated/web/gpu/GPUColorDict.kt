@@ -6,8 +6,8 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface GPUColorDict {
-    val a: Double
-    val b: Double
-    val g: Double
-    val r: Double
+    var a: Double
+    var b: Double
+    var g: Double
+    var r: Double
 }

@@ -8,7 +8,7 @@ import web.events.EventInit
 @JsPlainObject
 external interface TransitionEventInit :
     EventInit {
-    val elapsedTime: Double?
-    val propertyName: String?
-    val pseudoElement: String?
+    var elapsedTime: Double?
+    var propertyName: String?
+    var pseudoElement: String?
 }

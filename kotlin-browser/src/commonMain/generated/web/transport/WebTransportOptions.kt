@@ -7,8 +7,8 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface WebTransportOptions {
-    val allowPooling: Boolean?
-    val congestionControl: WebTransportCongestionControl?
-    val requireUnreliable: Boolean?
-    val serverCertificateHashes: ReadonlyArray<WebTransportHash>?
+    var allowPooling: Boolean?
+    var congestionControl: WebTransportCongestionControl?
+    var requireUnreliable: Boolean?
+    var serverCertificateHashes: ReadonlyArray<WebTransportHash>?
 }

@@ -8,6 +8,6 @@ import web.images.PredefinedColorSpace
 @JsPlainObject
 external interface GPUCopyExternalImageDestInfo :
     GPUTexelCopyTextureInfo {
-    val colorSpace: PredefinedColorSpace?
-    val premultipliedAlpha: Boolean?
+    var colorSpace: PredefinedColorSpace?
+    var premultipliedAlpha: Boolean?
 }

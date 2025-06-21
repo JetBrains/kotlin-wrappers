@@ -6,8 +6,8 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface PropertyDefinition {
-    val inherits: Boolean
-    val initialValue: String?
-    val name: String
-    val syntax: String?
+    var inherits: Boolean
+    var initialValue: String?
+    var name: String
+    var syntax: String?
 }

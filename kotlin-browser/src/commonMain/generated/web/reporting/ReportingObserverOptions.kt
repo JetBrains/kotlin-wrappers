@@ -8,6 +8,6 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface ReportingObserverOptions {
-    val buffered: Boolean?
-    val types: ReadonlyArray<JsString>?
+    var buffered: Boolean?
+    var types: ReadonlyArray<JsString>?
 }

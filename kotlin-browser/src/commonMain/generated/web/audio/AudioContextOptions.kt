@@ -7,6 +7,6 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface AudioContextOptions {
-    val latencyHint: JsAny /* AudioContextLatencyCategory | number */?
-    val sampleRate: Float?
+    var latencyHint: JsAny /* AudioContextLatencyCategory | number */?
+    var sampleRate: Float?
 }

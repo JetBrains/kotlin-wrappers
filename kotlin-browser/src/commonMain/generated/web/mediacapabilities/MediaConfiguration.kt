@@ -6,6 +6,6 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface MediaConfiguration {
-    val audio: AudioConfiguration?
-    val video: VideoConfiguration?
+    var audio: AudioConfiguration?
+    var video: VideoConfiguration?
 }

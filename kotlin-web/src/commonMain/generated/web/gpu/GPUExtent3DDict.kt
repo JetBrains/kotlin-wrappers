@@ -6,7 +6,7 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface GPUExtent3DDict {
-    val depthOrArrayLayers: GPUIntegerCoordinate?
-    val height: GPUIntegerCoordinate?
-    val width: GPUIntegerCoordinate
+    var depthOrArrayLayers: GPUIntegerCoordinate?
+    var height: GPUIntegerCoordinate?
+    var width: GPUIntegerCoordinate
 }

@@ -8,5 +8,5 @@ import web.data.DataTransfer
 @JsPlainObject
 external interface DragEventInit :
     MouseEventInit {
-    val dataTransfer: DataTransfer?
+    var dataTransfer: DataTransfer?
 }

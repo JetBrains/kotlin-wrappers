@@ -10,7 +10,7 @@ import js.objects.ReadonlyRecord
 @JsPlainObject
 external interface GPUDeviceDescriptor :
     GPUObjectDescriptorBase {
-    val defaultQueue: GPUQueueDescriptor?
-    val requiredFeatures: ReadonlyArray<GPUFeatureName>?
-    val requiredLimits: ReadonlyRecord<JsString, GPUSize64?>?
+    var defaultQueue: GPUQueueDescriptor?
+    var requiredFeatures: ReadonlyArray<GPUFeatureName>?
+    var requiredLimits: ReadonlyRecord<JsString, GPUSize64?>?
 }

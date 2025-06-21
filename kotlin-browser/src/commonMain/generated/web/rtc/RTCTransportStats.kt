@@ -8,20 +8,20 @@ import js.objects.JsPlainObject
 @JsPlainObject
 external interface RTCTransportStats :
     RTCStats {
-    val bytesReceived: UInt53?
-    val bytesSent: UInt53?
-    val dtlsCipher: String?
-    val dtlsRole: RTCDtlsRole?
-    val dtlsState: RTCDtlsTransportState
-    val iceLocalUsernameFragment: String?
-    val iceRole: RTCIceRole?
-    val iceState: RTCIceTransportState?
-    val localCertificateId: String?
-    val packetsReceived: UInt53?
-    val packetsSent: UInt53?
-    val remoteCertificateId: String?
-    val selectedCandidatePairChanges: Int?
-    val selectedCandidatePairId: String?
-    val srtpCipher: String?
-    val tlsVersion: String?
+    var bytesReceived: UInt53?
+    var bytesSent: UInt53?
+    var dtlsCipher: String?
+    var dtlsRole: RTCDtlsRole?
+    var dtlsState: RTCDtlsTransportState
+    var iceLocalUsernameFragment: String?
+    var iceRole: RTCIceRole?
+    var iceState: RTCIceTransportState?
+    var localCertificateId: String?
+    var packetsReceived: UInt53?
+    var packetsSent: UInt53?
+    var remoteCertificateId: String?
+    var selectedCandidatePairChanges: Int?
+    var selectedCandidatePairId: String?
+    var srtpCipher: String?
+    var tlsVersion: String?
 }

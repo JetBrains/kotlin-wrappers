@@ -8,5 +8,5 @@ import web.serialization.StructuredSerializeOptions
 @JsPlainObject
 external interface WindowPostMessageOptions :
     StructuredSerializeOptions {
-    val targetOrigin: String?
+    var targetOrigin: String?
 }

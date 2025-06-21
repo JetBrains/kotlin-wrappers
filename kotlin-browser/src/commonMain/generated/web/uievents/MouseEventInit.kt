@@ -8,13 +8,13 @@ import web.events.EventTarget
 @JsPlainObject
 external interface MouseEventInit :
     EventModifierInit {
-    val button: MouseButton?
-    val buttons: MouseButtons?
-    val clientX: Int?
-    val clientY: Int?
-    val movementX: Double?
-    val movementY: Double?
-    val relatedTarget: EventTarget?
-    val screenX: Int?
-    val screenY: Int?
+    var button: MouseButton?
+    var buttons: MouseButtons?
+    var clientX: Int?
+    var clientY: Int?
+    var movementX: Double?
+    var movementY: Double?
+    var relatedTarget: EventTarget?
+    var screenX: Int?
+    var screenY: Int?
 }

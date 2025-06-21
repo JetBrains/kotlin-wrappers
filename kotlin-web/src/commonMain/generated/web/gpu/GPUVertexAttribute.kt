@@ -6,7 +6,7 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface GPUVertexAttribute {
-    val format: GPUVertexFormat
-    val offset: GPUSize64
-    val shaderLocation: GPUIndex32
+    var format: GPUVertexFormat
+    var offset: GPUSize64
+    var shaderLocation: GPUIndex32
 }

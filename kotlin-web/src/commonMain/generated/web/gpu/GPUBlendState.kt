@@ -6,6 +6,6 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface GPUBlendState {
-    val alpha: GPUBlendComponent
-    val color: GPUBlendComponent
+    var alpha: GPUBlendComponent
+    var color: GPUBlendComponent
 }

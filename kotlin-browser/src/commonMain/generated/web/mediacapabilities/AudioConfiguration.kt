@@ -7,9 +7,9 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface AudioConfiguration {
-    val bitrate: UInt53?
-    val channels: String?
-    val contentType: String
-    val samplerate: Int?
-    val spatialRendering: Boolean?
+    var bitrate: UInt53?
+    var channels: String?
+    var contentType: String
+    var samplerate: Int?
+    var spatialRendering: Boolean?
 }

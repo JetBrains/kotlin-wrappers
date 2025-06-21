@@ -7,5 +7,5 @@ import js.objects.JsPlainObject
 @JsPlainObject
 external interface ChannelMergerOptions :
     AudioNodeOptions {
-    val numberOfInputs: Int?
+    var numberOfInputs: Int?
 }

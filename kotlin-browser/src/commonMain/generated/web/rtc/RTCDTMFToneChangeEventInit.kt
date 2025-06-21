@@ -8,5 +8,5 @@ import web.events.EventInit
 @JsPlainObject
 external interface RTCDTMFToneChangeEventInit :
     EventInit {
-    val tone: String?
+    var tone: String?
 }

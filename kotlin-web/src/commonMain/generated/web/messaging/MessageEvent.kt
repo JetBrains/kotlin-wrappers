@@ -56,7 +56,7 @@ open external class MessageEvent<out D : JsAny?>(
     val source: MessageEventSource?
 
     @JsAlias(THIS)
-    override fun asInit(): MessageEventInit<D>
+    override fun asInit(): MessageEventInit<out D>
 
     companion object {
         @JsValue("connect")

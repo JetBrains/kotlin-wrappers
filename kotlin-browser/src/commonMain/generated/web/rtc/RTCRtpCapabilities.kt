@@ -7,6 +7,6 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface RTCRtpCapabilities {
-    val codecs: ReadonlyArray<RTCRtpCodec>
-    val headerExtensions: ReadonlyArray<RTCRtpHeaderExtensionCapability>
+    var codecs: ReadonlyArray<RTCRtpCodec>
+    var headerExtensions: ReadonlyArray<RTCRtpHeaderExtensionCapability>
 }

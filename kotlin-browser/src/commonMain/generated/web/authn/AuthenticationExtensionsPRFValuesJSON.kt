@@ -6,6 +6,6 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface AuthenticationExtensionsPRFValuesJSON {
-    val first: Base64URLString
-    val second: Base64URLString?
+    var first: Base64URLString
+    var second: Base64URLString?
 }

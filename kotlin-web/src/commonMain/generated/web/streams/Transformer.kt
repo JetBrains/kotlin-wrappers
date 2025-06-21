@@ -7,7 +7,7 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface Transformer<I : JsAny?, O : JsAny?> {
-    val flush: TransformerFlushCallback<O>?
-    val start: TransformerStartCallback<O>?
-    val transform: TransformerTransformCallback<I, O>?
+    var flush: TransformerFlushCallback<O>?
+    var start: TransformerStartCallback<O>?
+    var transform: TransformerTransformCallback<I, O>?
 }

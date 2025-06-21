@@ -7,6 +7,6 @@ import js.objects.JsPlainObject
 @JsPlainObject
 external interface ScrollIntoViewOptions :
     ScrollOptions {
-    val block: ScrollLogicalPosition?
-    val inline: ScrollLogicalPosition?
+    var block: ScrollLogicalPosition?
+    var inline: ScrollLogicalPosition?
 }

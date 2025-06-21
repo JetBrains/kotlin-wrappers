@@ -6,7 +6,7 @@ import js.core.JsAny
 import js.objects.JsPlainObject
 
 @JsPlainObject
-external interface CustomEventInit<out D : JsAny?> :
+external interface CustomEventInit<D : JsAny?> :
     EventInit {
-    val detail: D?
+    var detail: D?
 }

@@ -6,6 +6,6 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface TextDecoderOptions {
-    val fatal: Boolean?
-    val ignoreBOM: Boolean?
+    var fatal: Boolean?
+    var ignoreBOM: Boolean?
 }

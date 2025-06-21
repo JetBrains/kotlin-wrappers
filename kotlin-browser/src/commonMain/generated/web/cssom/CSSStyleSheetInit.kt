@@ -7,7 +7,7 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface CSSStyleSheetInit {
-    val baseURL: String?
-    val disabled: Boolean?
-    val media: JsAny /* MediaList | string */?
+    var baseURL: String?
+    var disabled: Boolean?
+    var media: JsAny /* MediaList | string */?
 }

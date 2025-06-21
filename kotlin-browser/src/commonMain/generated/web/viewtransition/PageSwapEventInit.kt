@@ -9,6 +9,6 @@ import web.navigation.NavigationActivation
 @JsPlainObject
 external interface PageSwapEventInit :
     EventInit {
-    val activation: NavigationActivation?
-    val viewTransition: ViewTransition?
+    var activation: NavigationActivation?
+    var viewTransition: ViewTransition?
 }

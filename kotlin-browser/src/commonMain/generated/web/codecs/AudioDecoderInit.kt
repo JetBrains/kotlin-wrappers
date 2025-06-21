@@ -6,6 +6,6 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface AudioDecoderInit {
-    val error: WebCodecsErrorCallback
-    val output: AudioDataOutputCallback
+    var error: WebCodecsErrorCallback
+    var output: AudioDataOutputCallback
 }

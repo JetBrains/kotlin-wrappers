@@ -8,6 +8,6 @@ import js.objects.JsPlainObject
 @JsPlainObject
 external interface RTCSentRtpStreamStats :
     RTCRtpStreamStats {
-    val bytesSent: UInt53?
-    val packetsSent: UInt53?
+    var bytesSent: UInt53?
+    var packetsSent: UInt53?
 }

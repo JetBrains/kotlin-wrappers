@@ -8,7 +8,7 @@ import web.mediastreams.MediaStream
 
 @JsPlainObject
 external interface RTCRtpTransceiverInit {
-    val direction: RTCRtpTransceiverDirection?
-    val sendEncodings: ReadonlyArray<RTCRtpEncodingParameters>?
-    val streams: ReadonlyArray<MediaStream>?
+    var direction: RTCRtpTransceiverDirection?
+    var sendEncodings: ReadonlyArray<RTCRtpEncodingParameters>?
+    var streams: ReadonlyArray<MediaStream>?
 }

@@ -7,7 +7,7 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface PaymentDetailsBase {
-    val displayItems: ReadonlyArray<PaymentItem>?
-    val modifiers: ReadonlyArray<PaymentDetailsModifier>?
-    val shippingOptions: ReadonlyArray<PaymentShippingOption>?
+    var displayItems: ReadonlyArray<PaymentItem>?
+    var modifiers: ReadonlyArray<PaymentDetailsModifier>?
+    var shippingOptions: ReadonlyArray<PaymentShippingOption>?
 }

@@ -6,5 +6,5 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface GetRootNodeOptions {
-    val composed: Boolean?
+    var composed: Boolean?
 }

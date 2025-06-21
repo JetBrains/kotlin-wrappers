@@ -6,7 +6,7 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface GPUColorTargetState {
-    val blend: GPUBlendState?
-    val format: GPUTextureFormat
-    val writeMask: GPUColorWriteFlags?
+    var blend: GPUBlendState?
+    var format: GPUTextureFormat
+    var writeMask: GPUColorWriteFlags?
 }

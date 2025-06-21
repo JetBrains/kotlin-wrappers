@@ -11,11 +11,11 @@ import js.objects.JsPlainObject
 @JsPlainObject
 external interface RTCEncodedVideoFrameMetadata :
     RTCEncodedFrameMetadata {
-    val dependencies: ReadonlyArray<JsUInt53>?
-    val frameId: UInt53?
-    val height: Short?
-    val spatialIndex: Int?
-    val temporalIndex: Int?
-    val timestamp: Int53?
-    val width: Short?
+    var dependencies: ReadonlyArray<JsUInt53>?
+    var frameId: UInt53?
+    var height: Short?
+    var spatialIndex: Int?
+    var temporalIndex: Int?
+    var timestamp: Int53?
+    var width: Short?
 }

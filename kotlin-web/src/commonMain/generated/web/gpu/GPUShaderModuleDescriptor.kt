@@ -7,5 +7,5 @@ import js.objects.JsPlainObject
 @JsPlainObject
 external interface GPUShaderModuleDescriptor :
     GPUObjectDescriptorBase {
-    val code: String
+    var code: String
 }

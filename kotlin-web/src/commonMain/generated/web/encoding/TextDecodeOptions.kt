@@ -6,5 +6,5 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface TextDecodeOptions {
-    val stream: Boolean?
+    var stream: Boolean?
 }

@@ -7,6 +7,6 @@ import js.objects.JsPlainObject
 @JsPlainObject
 external interface ScrollToOptions :
     ScrollOptions {
-    val left: Double?
-    val top: Double?
+    var left: Double?
+    var top: Double?
 }

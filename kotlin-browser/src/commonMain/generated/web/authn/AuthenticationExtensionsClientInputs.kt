@@ -6,12 +6,12 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface AuthenticationExtensionsClientInputs {
-    val appid: String?
-    val credProps: Boolean?
-    val credentialProtectionPolicy: String?
-    val enforceCredentialProtectionPolicy: Boolean?
-    val hmacCreateSecret: Boolean?
-    val largeBlob: AuthenticationExtensionsLargeBlobInputs?
-    val minPinLength: Boolean?
-    val prf: AuthenticationExtensionsPRFInputs?
+    var appid: String?
+    var credProps: Boolean?
+    var credentialProtectionPolicy: String?
+    var enforceCredentialProtectionPolicy: Boolean?
+    var hmacCreateSecret: Boolean?
+    var largeBlob: AuthenticationExtensionsLargeBlobInputs?
+    var minPinLength: Boolean?
+    var prf: AuthenticationExtensionsPRFInputs?
 }

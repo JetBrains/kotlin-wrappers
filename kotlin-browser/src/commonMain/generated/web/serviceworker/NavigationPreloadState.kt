@@ -6,6 +6,6 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface NavigationPreloadState {
-    val enabled: Boolean?
-    val headerValue: String?
+    var enabled: Boolean?
+    var headerValue: String?
 }

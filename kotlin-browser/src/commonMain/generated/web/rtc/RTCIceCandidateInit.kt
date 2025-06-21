@@ -6,8 +6,8 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface RTCIceCandidateInit {
-    val candidate: String?
-    val sdpMLineIndex: Short?
-    val sdpMid: String?
-    val usernameFragment: String?
+    var candidate: String?
+    var sdpMLineIndex: Short?
+    var sdpMid: String?
+    var usernameFragment: String?
 }

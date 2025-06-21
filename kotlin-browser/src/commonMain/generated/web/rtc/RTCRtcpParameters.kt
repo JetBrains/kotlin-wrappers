@@ -6,6 +6,6 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface RTCRtcpParameters {
-    val cname: String?
-    val reducedSize: Boolean?
+    var cname: String?
+    var reducedSize: Boolean?
 }

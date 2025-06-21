@@ -8,6 +8,6 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface StartViewTransitionOptions {
-    val types: ReadonlyArray<JsString>?
-    val update: ViewTransitionUpdateCallback?
+    var types: ReadonlyArray<JsString>?
+    var update: ViewTransitionUpdateCallback?
 }

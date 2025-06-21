@@ -8,5 +8,5 @@ import web.events.EventInit
 @JsPlainObject
 external interface PictureInPictureEventInit :
     EventInit {
-    val pictureInPictureWindow: PictureInPictureWindow
+    var pictureInPictureWindow: PictureInPictureWindow
 }

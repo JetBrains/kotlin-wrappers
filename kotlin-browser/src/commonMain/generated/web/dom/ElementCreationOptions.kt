@@ -7,6 +7,6 @@ import web.components.CustomElementRegistry
 
 @JsPlainObject
 external interface ElementCreationOptions {
-    val customElementRegistry: CustomElementRegistry?
-    val `is`: String?
+    var customElementRegistry: CustomElementRegistry?
+    var `is`: String?
 }

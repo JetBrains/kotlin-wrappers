@@ -6,6 +6,6 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface CookieStoreGetOptions {
-    val name: String?
-    val url: String?
+    var name: String?
+    var url: String?
 }

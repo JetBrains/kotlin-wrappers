@@ -8,5 +8,5 @@ import js.objects.JsPlainObject
 @JsPlainObject
 external interface AesCbcParams :
     Algorithm {
-    val iv: BufferSource
+    var iv: BufferSource
 }

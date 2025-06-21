@@ -6,7 +6,7 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface PayerErrors {
-    val email: String?
-    val name: String?
-    val phone: String?
+    var email: String?
+    var name: String?
+    var phone: String?
 }

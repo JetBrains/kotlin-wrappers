@@ -7,6 +7,6 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface GlobalDescriptor<T : JsAny?> {
-    val mutable: Boolean?
-    val value: ValueType<T>
+    var mutable: Boolean?
+    var value: ValueType<T>
 }

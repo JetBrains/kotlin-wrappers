@@ -9,6 +9,6 @@ import web.events.EventInit
 @JsPlainObject
 external interface MediaEncryptedEventInit :
     EventInit {
-    val initData: ArrayBuffer?
-    val initDataType: String?
+    var initData: ArrayBuffer?
+    var initDataType: String?
 }

@@ -6,8 +6,8 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface GPUStencilFaceState {
-    val compare: GPUCompareFunction?
-    val depthFailOp: GPUStencilOperation?
-    val failOp: GPUStencilOperation?
-    val passOp: GPUStencilOperation?
+    var compare: GPUCompareFunction?
+    var depthFailOp: GPUStencilOperation?
+    var failOp: GPUStencilOperation?
+    var passOp: GPUStencilOperation?
 }

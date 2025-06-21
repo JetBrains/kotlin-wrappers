@@ -8,7 +8,7 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface PublicKeyCredentialDescriptorJSON {
-    val id: Base64URLString
-    val transports: ReadonlyArray<JsString>?
-    val type: String
+    var id: Base64URLString
+    var transports: ReadonlyArray<JsString>?
+    var type: String
 }

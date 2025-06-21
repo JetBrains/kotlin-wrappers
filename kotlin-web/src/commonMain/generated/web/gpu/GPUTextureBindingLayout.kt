@@ -6,7 +6,7 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface GPUTextureBindingLayout {
-    val multisampled: Boolean?
-    val sampleType: GPUTextureSampleType?
-    val viewDimension: GPUTextureViewDimension?
+    var multisampled: Boolean?
+    var sampleType: GPUTextureSampleType?
+    var viewDimension: GPUTextureViewDimension?
 }

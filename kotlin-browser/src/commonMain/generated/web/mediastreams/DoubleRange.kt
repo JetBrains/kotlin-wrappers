@@ -6,6 +6,6 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface DoubleRange {
-    val max: Double?
-    val min: Double?
+    var max: Double?
+    var min: Double?
 }

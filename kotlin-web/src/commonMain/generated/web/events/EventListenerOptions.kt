@@ -6,5 +6,5 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface EventListenerOptions {
-    val capture: Boolean?
+    var capture: Boolean?
 }

@@ -6,6 +6,6 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface AudioDecoderSupport {
-    val config: AudioDecoderConfig?
-    val supported: Boolean?
+    var config: AudioDecoderConfig?
+    var supported: Boolean?
 }

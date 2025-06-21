@@ -6,5 +6,5 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface FileSystemGetDirectoryOptions {
-    val create: Boolean?
+    var create: Boolean?
 }

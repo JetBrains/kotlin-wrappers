@@ -9,19 +9,19 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface MediaTrackCapabilities {
-    val aspectRatio: DoubleRange?
-    val autoGainControl: ReadonlyArray<JsBoolean>?
-    val backgroundBlur: ReadonlyArray<JsBoolean>?
-    val channelCount: ULongRange?
-    val deviceId: String?
-    val displaySurface: String?
-    val echoCancellation: ReadonlyArray<JsBoolean>?
-    val facingMode: ReadonlyArray<JsString>?
-    val frameRate: DoubleRange?
-    val groupId: String?
-    val height: ULongRange?
-    val noiseSuppression: ReadonlyArray<JsBoolean>?
-    val sampleRate: ULongRange?
-    val sampleSize: ULongRange?
-    val width: ULongRange?
+    var aspectRatio: DoubleRange?
+    var autoGainControl: ReadonlyArray<JsBoolean>?
+    var backgroundBlur: ReadonlyArray<JsBoolean>?
+    var channelCount: ULongRange?
+    var deviceId: String?
+    var displaySurface: String?
+    var echoCancellation: ReadonlyArray<JsBoolean>?
+    var facingMode: ReadonlyArray<JsString>?
+    var frameRate: DoubleRange?
+    var groupId: String?
+    var height: ULongRange?
+    var noiseSuppression: ReadonlyArray<JsBoolean>?
+    var sampleRate: ULongRange?
+    var sampleSize: ULongRange?
+    var width: ULongRange?
 }

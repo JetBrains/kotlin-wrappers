@@ -8,11 +8,11 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface MediaKeySystemConfiguration {
-    val audioCapabilities: ReadonlyArray<MediaKeySystemMediaCapability>?
-    val distinctiveIdentifier: MediaKeysRequirement?
-    val initDataTypes: ReadonlyArray<JsString>?
-    val label: String?
-    val persistentState: MediaKeysRequirement?
-    val sessionTypes: ReadonlyArray<JsString>?
-    val videoCapabilities: ReadonlyArray<MediaKeySystemMediaCapability>?
+    var audioCapabilities: ReadonlyArray<MediaKeySystemMediaCapability>?
+    var distinctiveIdentifier: MediaKeysRequirement?
+    var initDataTypes: ReadonlyArray<JsString>?
+    var label: String?
+    var persistentState: MediaKeysRequirement?
+    var sessionTypes: ReadonlyArray<JsString>?
+    var videoCapabilities: ReadonlyArray<MediaKeySystemMediaCapability>?
 }

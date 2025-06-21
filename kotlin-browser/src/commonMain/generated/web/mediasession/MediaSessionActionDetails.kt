@@ -6,8 +6,8 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface MediaSessionActionDetails {
-    val action: MediaSessionAction
-    val fastSeek: Boolean?
-    val seekOffset: Double?
-    val seekTime: Double?
+    var action: MediaSessionAction
+    var fastSeek: Boolean?
+    var seekOffset: Double?
+    var seekTime: Double?
 }

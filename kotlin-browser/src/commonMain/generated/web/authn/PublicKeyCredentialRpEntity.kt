@@ -7,5 +7,5 @@ import js.objects.JsPlainObject
 @JsPlainObject
 external interface PublicKeyCredentialRpEntity :
     PublicKeyCredentialEntity {
-    val id: String?
+    var id: String?
 }

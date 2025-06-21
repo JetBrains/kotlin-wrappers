@@ -6,5 +6,5 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface PublicKeyCredentialEntity {
-    val name: String
+    var name: String
 }

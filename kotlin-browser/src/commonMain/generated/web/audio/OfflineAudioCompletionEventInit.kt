@@ -8,5 +8,5 @@ import web.events.EventInit
 @JsPlainObject
 external interface OfflineAudioCompletionEventInit :
     EventInit {
-    val renderedBuffer: AudioBuffer
+    var renderedBuffer: AudioBuffer
 }

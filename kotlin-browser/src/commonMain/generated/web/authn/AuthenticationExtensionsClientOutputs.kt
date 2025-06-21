@@ -6,9 +6,9 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface AuthenticationExtensionsClientOutputs {
-    val appid: Boolean?
-    val credProps: CredentialPropertiesOutput?
-    val hmacCreateSecret: Boolean?
-    val largeBlob: AuthenticationExtensionsLargeBlobOutputs?
-    val prf: AuthenticationExtensionsPRFOutputs?
+    var appid: Boolean?
+    var credProps: CredentialPropertiesOutput?
+    var hmacCreateSecret: Boolean?
+    var largeBlob: AuthenticationExtensionsLargeBlobOutputs?
+    var prf: AuthenticationExtensionsPRFOutputs?
 }

@@ -7,7 +7,7 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface AuthenticationExtensionsLargeBlobOutputs {
-    val blob: ArrayBuffer?
-    val supported: Boolean?
-    val written: Boolean?
+    var blob: ArrayBuffer?
+    var supported: Boolean?
+    var written: Boolean?
 }

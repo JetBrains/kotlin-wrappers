@@ -7,6 +7,6 @@ import web.time.DOMHighResTimeStamp
 
 @JsPlainObject
 external interface AudioTimestamp {
-    val contextTime: Double?
-    val performanceTime: DOMHighResTimeStamp?
+    var contextTime: Double?
+    var performanceTime: DOMHighResTimeStamp?
 }

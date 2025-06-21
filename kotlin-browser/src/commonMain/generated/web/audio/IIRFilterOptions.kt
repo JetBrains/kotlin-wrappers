@@ -9,6 +9,6 @@ import js.objects.JsPlainObject
 @JsPlainObject
 external interface IIRFilterOptions :
     AudioNodeOptions {
-    val feedback: ReadonlyArray<JsDouble>
-    val feedforward: ReadonlyArray<JsDouble>
+    var feedback: ReadonlyArray<JsDouble>
+    var feedforward: ReadonlyArray<JsDouble>
 }

@@ -8,5 +8,5 @@ import web.events.EventInit
 @JsPlainObject
 external interface RTCDataChannelEventInit :
     EventInit {
-    val channel: RTCDataChannel
+    var channel: RTCDataChannel
 }

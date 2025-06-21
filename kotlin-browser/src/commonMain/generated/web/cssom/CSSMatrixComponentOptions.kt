@@ -6,5 +6,5 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface CSSMatrixComponentOptions {
-    val is2D: Boolean?
+    var is2D: Boolean?
 }

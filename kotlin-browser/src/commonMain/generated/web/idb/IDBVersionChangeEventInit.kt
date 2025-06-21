@@ -9,6 +9,6 @@ import web.events.EventInit
 @JsPlainObject
 external interface IDBVersionChangeEventInit :
     EventInit {
-    val newVersion: UInt53?
-    val oldVersion: UInt53?
+    var newVersion: UInt53?
+    var oldVersion: UInt53?
 }

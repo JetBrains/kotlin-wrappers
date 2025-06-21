@@ -9,11 +9,11 @@ import web.images.ColorSpaceConversion
 
 @JsPlainObject
 external interface ImageDecoderInit {
-    val colorSpaceConversion: ColorSpaceConversion?
-    val data: ImageBufferSource
-    val desiredHeight: Int?
-    val desiredWidth: Int?
-    val preferAnimation: Boolean?
-    val transfer: ReadonlyArray<ArrayBuffer>?
-    val type: String
+    var colorSpaceConversion: ColorSpaceConversion?
+    var data: ImageBufferSource
+    var desiredHeight: Int?
+    var desiredWidth: Int?
+    var preferAnimation: Boolean?
+    var transfer: ReadonlyArray<ArrayBuffer>?
+    var type: String
 }

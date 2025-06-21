@@ -8,5 +8,5 @@ import web.events.EventInit
 @JsPlainObject
 external interface GPUUncapturedErrorEventInit :
     EventInit {
-    val error: GPUError
+    var error: GPUError
 }

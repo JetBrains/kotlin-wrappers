@@ -9,6 +9,6 @@ import js.objects.JsPlainObject
 @JsPlainObject
 external interface WaveShaperOptions :
     AudioNodeOptions {
-    val curve: ReadonlyArray<JsDouble> /* | Float32Array */?
-    val oversample: OverSampleType?
+    var curve: ReadonlyArray<JsDouble> /* | Float32Array */?
+    var oversample: OverSampleType?
 }

@@ -6,10 +6,10 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface ShadowRootInit {
-    val clonable: Boolean?
-    val customElementRegistry: CustomElementRegistry?
-    val delegatesFocus: Boolean?
-    val mode: ShadowRootMode
-    val serializable: Boolean?
-    val slotAssignment: SlotAssignmentMode?
+    var clonable: Boolean?
+    var customElementRegistry: CustomElementRegistry?
+    var delegatesFocus: Boolean?
+    var mode: ShadowRootMode
+    var serializable: Boolean?
+    var slotAssignment: SlotAssignmentMode?
 }

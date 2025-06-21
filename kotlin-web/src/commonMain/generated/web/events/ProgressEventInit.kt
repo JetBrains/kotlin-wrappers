@@ -7,7 +7,7 @@ import js.objects.JsPlainObject
 @JsPlainObject
 external interface ProgressEventInit :
     EventInit {
-    val lengthComputable: Boolean?
-    val loaded: Double?
-    val total: Double?
+    var lengthComputable: Boolean?
+    var loaded: Double?
+    var total: Double?
 }

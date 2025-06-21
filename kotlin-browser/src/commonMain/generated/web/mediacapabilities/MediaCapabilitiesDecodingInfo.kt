@@ -8,5 +8,5 @@ import web.mediakey.MediaKeySystemAccess
 @JsPlainObject
 external interface MediaCapabilitiesDecodingInfo :
     MediaCapabilitiesInfo {
-    val keySystemAccess: MediaKeySystemAccess?
+    var keySystemAccess: MediaKeySystemAccess?
 }

@@ -7,5 +7,5 @@ import js.objects.JsPlainObject
 @JsPlainObject
 external interface EcKeyAlgorithm :
     KeyAlgorithm {
-    val namedCurve: NamedCurve
+    var namedCurve: NamedCurve
 }

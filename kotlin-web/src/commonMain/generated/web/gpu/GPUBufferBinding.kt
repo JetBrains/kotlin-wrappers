@@ -7,7 +7,7 @@ import js.objects.JsPlainObject
 @JsPlainObject
 external interface GPUBufferBinding :
     GPUBindingResource {
-    val buffer: GPUBuffer
-    val offset: GPUSize64?
-    val size: GPUSize64?
+    var buffer: GPUBuffer
+    var offset: GPUSize64?
+    var size: GPUSize64?
 }

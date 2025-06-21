@@ -7,10 +7,10 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface GamepadEffectParameters {
-    val duration: UInt53?
-    val leftTrigger: Double?
-    val rightTrigger: Double?
-    val startDelay: UInt53?
-    val strongMagnitude: Double?
-    val weakMagnitude: Double?
+    var duration: UInt53?
+    var leftTrigger: Double?
+    var rightTrigger: Double?
+    var startDelay: UInt53?
+    var strongMagnitude: Double?
+    var weakMagnitude: Double?
 }
