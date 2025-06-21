@@ -256,7 +256,7 @@ private fun event(
         val eventType = "EventType<$name$typeParameter>"
 
         val eventParameters = constructorSource
-            .split(", ")
+            .splitToSequence(", ")
             .map { p ->
                 if ("?: " in p) {
                     p.replace("?: ", ": ") + " = definedExternally"
