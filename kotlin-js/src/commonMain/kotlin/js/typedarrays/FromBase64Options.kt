@@ -4,6 +4,6 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface FromBase64Options {
-    val alphabet: Alphabet?
-    val lastChunkHandling: LastChunkHandling?
+    var alphabet: Alphabet?
+    var lastChunkHandling: LastChunkHandling?
 }

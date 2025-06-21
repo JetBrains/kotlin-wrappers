@@ -36,5 +36,5 @@ external interface OffsetDisambiguationOptions {
      * be used to choose the correct instant. However, if the offset is used
      * then the `disambiguation` option will be ignored.
      */
-    val offset: String? /* "use" | "prefer" | "ignore" | "reject" */
+    var offset: String? /* "use" | "prefer" | "ignore" | "reject" */
 }

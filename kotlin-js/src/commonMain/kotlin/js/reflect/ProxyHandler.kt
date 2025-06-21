@@ -8,18 +8,18 @@ import js.objects.PropertyKey
 import js.objects.TypedPropertyDescriptor
 
 @JsPlainObject
-external interface ProxyHandler<in T : JsAny> {
-    val apply: ((target: T, thisArg: JsAny, argArray: ReadonlyArray<JsAny>) -> JsAny)?
-    val construct: ((target: T, argArray: ReadonlyArray<JsAny>, newTarget: JsFunction<*, *>) -> JsAny)?
-    val defineProperty: ((target: T, p: PropertyKey, attributes: TypedPropertyDescriptor<*>) -> Boolean)?
-    val deleteProperty: ((target: T, p: PropertyKey) -> Boolean)?
-    val get: ((target: T, p: PropertyKey, receiver: JsAny) -> JsAny)?
-    val getOwnPropertyDescriptor: ((target: T, p: PropertyKey) -> TypedPropertyDescriptor<*>)?
-    val getPrototypeOf: ((target: T) -> JsAny?)?
-    val has: ((target: T, p: PropertyKey) -> Boolean)?
-    val isExtensible: ((target: T) -> Boolean)?
-    val ownKeys: ((target: T) -> ReadonlyArray<PropertyKey>)?
-    val preventExtensions: ((target: T) -> Boolean)?
-    val set: ((target: T, p: PropertyKey, value: JsAny, receiver: JsAny) -> Boolean)?
-    val setPrototypeOf: ((target: T, v: JsAny?) -> Boolean)?
+external interface ProxyHandler<T : JsAny> {
+    var apply: ((target: T, thisArg: JsAny, argArray: ReadonlyArray<JsAny>) -> JsAny)?
+    var construct: ((target: T, argArray: ReadonlyArray<JsAny>, newTarget: JsFunction<*, *>) -> JsAny)?
+    var defineProperty: ((target: T, p: PropertyKey, attributes: TypedPropertyDescriptor<*>) -> Boolean)?
+    var deleteProperty: ((target: T, p: PropertyKey) -> Boolean)?
+    var get: ((target: T, p: PropertyKey, receiver: JsAny) -> JsAny)?
+    var getOwnPropertyDescriptor: ((target: T, p: PropertyKey) -> TypedPropertyDescriptor<*>)?
+    var getPrototypeOf: ((target: T) -> JsAny?)?
+    var has: ((target: T, p: PropertyKey) -> Boolean)?
+    var isExtensible: ((target: T) -> Boolean)?
+    var ownKeys: ((target: T) -> ReadonlyArray<PropertyKey>)?
+    var preventExtensions: ((target: T) -> Boolean)?
+    var set: ((target: T, p: PropertyKey, value: JsAny, receiver: JsAny) -> Boolean)?
+    var setPrototypeOf: ((target: T, v: JsAny?) -> Boolean)?
 }

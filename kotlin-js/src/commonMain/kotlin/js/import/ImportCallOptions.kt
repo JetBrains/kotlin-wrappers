@@ -10,5 +10,5 @@ import js.objects.JsPlainObject
  */
 @JsPlainObject
 external interface ImportCallOptions {
-    val with: ImportAttributes?
+    var with: ImportAttributes?
 }

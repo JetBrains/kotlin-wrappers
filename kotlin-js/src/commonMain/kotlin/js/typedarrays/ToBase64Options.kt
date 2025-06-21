@@ -4,6 +4,6 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface ToBase64Options {
-    val alphabet: Alphabet?
-    val omitPadding: Boolean?
+    var alphabet: Alphabet?
+    var omitPadding: Boolean?
 }

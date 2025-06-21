@@ -19,5 +19,5 @@ external interface DurationOptions {
      *
      * The default is `'constrain'`.
      */
-    val overflow: String? /* "constrain" | "balance" */
+    var overflow: String? /* "constrain" | "balance" */
 }

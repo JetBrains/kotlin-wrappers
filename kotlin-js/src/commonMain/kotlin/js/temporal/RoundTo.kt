@@ -17,14 +17,14 @@ external interface RoundTo<T : DateTimeUnit<T>> {
      * same-named property is optional when passed to `until` or `since`
      * methods, because those methods do no rounding by default.
      */
-    val smallestUnit: SmallestUnit<T>
+    var smallestUnit: SmallestUnit<T>
 
     /**
      * Allows rounding to an integer number of units. For example, to round to
      * increments of a half hour, use `{ smallestUnit: 'minute',
      * roundingIncrement: 30 }`.
      */
-    val roundingIncrement: Int?
+    var roundingIncrement: Int?
 
     /**
      * Controls how rounding is performed:
@@ -40,5 +40,5 @@ external interface RoundTo<T : DateTimeUnit<T>> {
      *   negative infinity which is usually unexpected. For this reason, `trunc`
      *   is recommended for most use cases.
      */
-    val roundingMode: RoundingMode?
+    var roundingMode: RoundingMode?
 }

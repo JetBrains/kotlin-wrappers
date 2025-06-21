@@ -5,16 +5,16 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface ZonedDateTimeISOFields {
-    val isoYear: Int
-    val isoMonth: Int
-    val isoDay: Int
-    val isoHour: Int
-    val isoMinute: Int
-    val isoSecond: Int
-    val isoMillisecond: Int
-    val isoMicrosecond: Int
-    val isoNanosecond: Int
-    val offset: String
-    val timeZone: JsAny /* string | TimeZoneProtocol */
-    val calendar: JsAny /* string | CalendarProtocol */
+    var isoYear: Int
+    var isoMonth: Int
+    var isoDay: Int
+    var isoHour: Int
+    var isoMinute: Int
+    var isoSecond: Int
+    var isoMillisecond: Int
+    var isoMicrosecond: Int
+    var isoNanosecond: Int
+    var offset: String
+    var timeZone: JsAny /* string | TimeZoneProtocol */
+    var calendar: JsAny /* string | CalendarProtocol */
 }

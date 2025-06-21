@@ -5,8 +5,8 @@ import js.objects.JsPlainObject
 @JsPlainObject
 external interface MonthCodeOrMonthAndYear :
     YearOrEraAndEraYear {
-    val month: Int?
+    var month: Int?
 
     // or (single)
-    val monthCode: String?
+    var monthCode: String?
 }

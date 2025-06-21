@@ -14,7 +14,7 @@ external interface DifferenceOptions<T : DateTimeUnit<T>> {
      * `since()`, because those methods default behavior is not to round.
      * However, the same property is required for `round()`.
      */
-    val smallestUnit: SmallestUnit<T>?
+    var smallestUnit: SmallestUnit<T>?
 
     /**
      * The largest unit to allow in the resulting `Temporal.Duration` object.
@@ -32,14 +32,14 @@ external interface DifferenceOptions<T : DateTimeUnit<T>> {
      * The default is always `'auto'`, though the meaning of this depends on the
      * type being used.
      */
-    val largestUnit: LargestUnit<T>?
+    var largestUnit: LargestUnit<T>?
 
     /**
      * Allows rounding to an integer number of units. For example, to round to
      * increments of a half hour, use `{ smallestUnit: 'minute',
      * roundingIncrement: 30 }`.
      */
-    val roundingIncrement: Int?
+    var roundingIncrement: Int?
 
     /**
      * Controls how rounding is performed:
@@ -57,5 +57,5 @@ external interface DifferenceOptions<T : DateTimeUnit<T>> {
      *   negative infinity which is usually unexpected. For this reason, `trunc`
      *   is recommended for most use cases.
      */
-    val roundingMode: RoundingMode?
+    var roundingMode: RoundingMode?
 }

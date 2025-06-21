@@ -29,7 +29,7 @@ external interface DurationArithmeticOptions {
      * this option is omitted), then the operation will ignore time zone
      * transitions and all days will be assumed to be 24 hours long.
      */
-    val relativeTo: JsAny? /*
+    var relativeTo: JsAny? /*
         | Temporal.ZonedDateTime
         | Temporal.PlainDateTime
         | ZonedDateTimeLike

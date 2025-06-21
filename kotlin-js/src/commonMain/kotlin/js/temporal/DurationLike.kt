@@ -5,14 +5,14 @@ import js.objects.JsPlainObject
 @JsPlainObject
 external interface DurationLike {
 
-    val years: Int?
-    val months: Int?
-    val weeks: Int?
-    val days: Int?
-    val hours: Int?
-    val minutes: Int?
-    val seconds: Int?
-    val milliseconds: Int?
-    val microseconds: Int?
-    val nanoseconds: Int?
+    var years: Int?
+    var months: Int?
+    var weeks: Int?
+    var days: Int?
+    var hours: Int?
+    var minutes: Int?
+    var seconds: Int?
+    var milliseconds: Int?
+    var microseconds: Int?
+    var nanoseconds: Int?
 }

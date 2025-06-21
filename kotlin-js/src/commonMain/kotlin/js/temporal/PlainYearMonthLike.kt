@@ -5,10 +5,10 @@ import js.objects.JsPlainObject
 @JsPlainObject
 external interface PlainYearMonthLike {
 
-    val era: String?
-    val eraYear: Int?
-    val year: Int?
-    val month: Int?
-    val monthCode: String?
-    val calendar: Calendar?
+    var era: String?
+    var eraYear: Int?
+    var year: Int?
+    var month: Int?
+    var monthCode: String?
+    var calendar: Calendar?
 }

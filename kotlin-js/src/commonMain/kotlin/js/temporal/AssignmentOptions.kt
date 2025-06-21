@@ -18,5 +18,5 @@ external interface AssignmentOptions {
      *
      * The default is `'constrain'`.
      */
-    val overflow: Overflow?
+    var overflow: Overflow?
 }

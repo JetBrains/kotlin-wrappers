@@ -4,5 +4,5 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface ErrorOptions {
-    val cause: JsError?
+    var cause: JsError?
 }

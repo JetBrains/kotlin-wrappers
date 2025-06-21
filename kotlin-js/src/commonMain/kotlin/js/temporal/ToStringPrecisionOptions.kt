@@ -8,8 +8,8 @@ import js.objects.JsPlainObject
  */
 @JsPlainObject
 external interface ToStringPrecisionOptions {
-    val fractionalSecondDigits: JsAny? /* "auto" | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 */
-    val smallestUnit: SmallestUnit<TimeUnit<*> /* "minute" | "second" | "millisecond" | "microsecond" | "nanosecond" */>?
+    var fractionalSecondDigits: JsAny? /* "auto" | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 */
+    var smallestUnit: SmallestUnit<TimeUnit<*> /* "minute" | "second" | "millisecond" | "microsecond" | "nanosecond" */>?
 
     /**
      * Controls how rounding is performed:
@@ -25,5 +25,5 @@ external interface ToStringPrecisionOptions {
      *   negative infinity which is usually unexpected. For this reason, `trunc`
      *   is recommended for most use cases.
      */
-    val roundingMode: RoundingMode?
+    var roundingMode: RoundingMode?
 }

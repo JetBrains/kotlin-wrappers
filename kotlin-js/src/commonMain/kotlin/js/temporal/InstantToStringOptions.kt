@@ -5,5 +5,5 @@ import js.objects.JsPlainObject
 @JsPlainObject
 external interface InstantToStringOptions :
     ToStringPrecisionOptions {
-    val timeZone: TimeZone
+    var timeZone: TimeZone
 }

@@ -20,16 +20,16 @@ external class PlainYearMonth(
     referenceISODay: Int = definedExternally,
 ) : HasArithmeticOperations<PlainYearMonth, PlainYearMonthLike, DateUnit<* /* year..month */>>,
     LocalizableDateTime {
-    val era: String?
-    val eraYear: Int?
-    val year: Int
-    val month: Int
-    val monthCode: String
-    val calendarId: String
-    val daysInMonth: Int
-    val daysInYear: Int
-    val monthsInYear: Int
-    val inLeapYear: Boolean
+    var era: String?
+    var eraYear: Int?
+    var year: Int
+    var month: Int
+    var monthCode: String
+    var calendarId: String
+    var daysInMonth: Int
+    var daysInYear: Int
+    var monthsInYear: Int
+    var inLeapYear: Boolean
 
     // fun equals(other: Temporal.PlainYearMonth | PlainYearMonthLike | String): Boolean;
     fun with(
@@ -41,7 +41,7 @@ external class PlainYearMonth(
 
     @JsPlainObject
     interface ToPlainDateOptions {
-        val day: Int
+        var day: Int
     }
 
     fun getISOFields(): PlainDateISOFields

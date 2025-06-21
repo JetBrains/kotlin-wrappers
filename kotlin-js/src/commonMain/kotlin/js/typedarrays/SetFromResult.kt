@@ -8,6 +8,6 @@ import js.objects.JsPlainObject
 // TODO: merge with `TextEncoderEncodeIntoResult`?
 @JsPlainObject
 external interface SetFromResult {
-    val read: Int53
-    val written: Int53
+    var read: Int53
+    var written: Int53
 }

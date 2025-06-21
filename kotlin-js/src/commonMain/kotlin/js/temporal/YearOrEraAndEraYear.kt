@@ -4,9 +4,9 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface YearOrEraAndEraYear {
-    val era: String?
-    val eraYear: Int?
+    var era: String?
+    var eraYear: Int?
 
     // or
-    val year: Int?
+    var year: Int?
 }

@@ -4,10 +4,10 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface PlainTimeISOFields {
-    val isoHour: Int
-    val isoMinute: Int
-    val isoSecond: Int
-    val isoMillisecond: Int
-    val isoMicrosecond: Int
-    val isoNanosecond: Int
+    var isoHour: Int
+    var isoMinute: Int
+    var isoSecond: Int
+    var isoMillisecond: Int
+    var isoMicrosecond: Int
+    var isoNanosecond: Int
 }

@@ -29,5 +29,5 @@ external interface ToInstantOptions {
      *
      * The default is `'compatible'`.
      */
-    val disambiguation: Disambiguation?
+    var disambiguation: Disambiguation?
 }

@@ -4,5 +4,5 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface ArrayBufferOptions {
-    val maxByteLength: Int
+    var maxByteLength: Int
 }

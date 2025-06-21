@@ -19,9 +19,9 @@ external class PlainMonthDay(
     calendar: Calendar = definedExternally,
     referenceISOYear: Int = definedExternally,
 ) : LocalizableDateTime {
-    val monthCode: String
-    val day: Int
-    val calendarId: String
+    var monthCode: String
+    var day: Int
+    var calendarId: String
 
     // fun equals(other: PlainMonthDay /* | PlainMonthDayLike | string */ ): Boolean
     fun with(
@@ -33,7 +33,7 @@ external class PlainMonthDay(
 
     @JsPlainObject
     interface ToPlainDateOptions {
-        val year: Int
+        var year: Int
     }
 
     fun getISOFields(): PlainDateISOFields
