@@ -223,7 +223,7 @@ private fun event(
                     else -> "override"
                 }
 
-                val resultType = initName.replace("<D = any>", "<D>")
+                val resultType = initName.replace("<D = any>", "<out D>")
 
                 it + "\n\n" + """
                 @JsAlias(THIS)
