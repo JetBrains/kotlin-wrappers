@@ -1,12 +1,10 @@
-@file:JsModule("node:events")
-
 package node.events
 
 import js.array.Tuple
-import web.events.JsEvent
 
-@JsName("EventEmitter")
-external class MyEmitter {
-    @JsEvent("data")
+class MyEmitter {
+    private val emitter = EventEmitter()
+
     val dataEvent: EventInstance<Tuple>
+        get() = EventInstance(emitter, EventType("data"))
 }
