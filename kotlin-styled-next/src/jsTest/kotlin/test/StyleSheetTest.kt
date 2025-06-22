@@ -3,6 +3,7 @@ package test
 import TestScope
 import js.array.JsArrays
 import js.array.asList
+import js.promise.await
 import kotlinx.css.*
 import react.FC
 import react.Props

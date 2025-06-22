@@ -7,6 +7,7 @@ import js.coroutines.internal.internalSubscribeJob
 import js.function.JsFunction
 import js.function.invoke
 import js.iterable.SuspendableIterator
+import js.promise.thenTo
 import kotlinx.coroutines.*
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.channels.ReceiveChannel

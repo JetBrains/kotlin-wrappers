@@ -3,6 +3,7 @@ package js.lazy.internal
 import js.lazy.LazyFunction
 import js.lazy.LazyFunctionSource
 import js.promise.PromiseResult
+import js.promise.await
 import js.reflect.unsafeCast
 
 @PublishedApi

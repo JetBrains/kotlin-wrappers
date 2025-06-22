@@ -3,6 +3,7 @@ package js.promise.internal
 import js.core.JsAny
 import js.promise.PromiseLike
 import js.promise.PromiseResult
+import js.promise.thenTo
 import js.promise.toPromise
 import kotlinx.coroutines.suspendCancellableCoroutine
 

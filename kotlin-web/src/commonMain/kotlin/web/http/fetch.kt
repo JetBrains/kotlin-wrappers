@@ -1,5 +1,6 @@
 package web.http
 
+import js.promise.thenTo
 import kotlinx.coroutines.suspendCancellableCoroutine
 import web.abort.toAbortSignal
 import web.http.internal.createRequestInit

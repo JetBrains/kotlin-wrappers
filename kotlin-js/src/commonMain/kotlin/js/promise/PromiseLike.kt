@@ -1,13 +1,3 @@
-@file:Suppress(
-    "WRONG_JS_INTEROP_TYPE",
-    "WRONG_EXTERNAL_DECLARATION",
-
-    "WRONG_BODY_OF_EXTERNAL_DECLARATION",
-    "INLINE_EXTERNAL_DECLARATION",
-    "NON_ABSTRACT_MEMBER_OF_EXTERNAL_INTERFACE",
-    "DECLARATION_CANT_BE_INLINED",
-)
-
 package js.promise
 
 import js.core.JsAny
@@ -38,13 +28,13 @@ external interface PromiseLike<out T : JsAny?> :
         onFulfilled: (T) -> PromiseResult<R>,
         onRejected: (JsErrorLike?) -> PromiseResult<R>,
     ): PromiseLike<R>
+}
 
-    override suspend inline fun await(): T =
-        awaitPromiseLike(this)
+suspend inline fun <T : JsAny?> PromiseLike<T>.await(): T =
+    awaitPromiseLike(this)
 
-    inline fun thenTo(
-        continuation: Continuation<T>,
-    ) {
-        thenToContinuation(this, continuation)
-    }
+inline fun <T : JsAny?> PromiseLike<T>.thenTo(
+    continuation: Continuation<T>,
+) {
+    thenToContinuation(this, continuation)
 }

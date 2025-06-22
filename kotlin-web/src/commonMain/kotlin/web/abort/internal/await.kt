@@ -4,6 +4,7 @@ import js.core.JsAny
 import js.objects.Object
 import js.objects.unsafeJso
 import js.promise.PromiseLike
+import js.promise.thenTo
 import kotlinx.coroutines.suspendCancellableCoroutine
 import web.abort.AbortController
 import web.abort.Abortable

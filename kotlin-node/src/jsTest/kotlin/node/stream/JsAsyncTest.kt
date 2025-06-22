@@ -1,5 +1,6 @@
 package node.stream
 
+import js.promise.await
 import kotlinx.coroutines.test.runTest
 import node.buffer.Buffer
 import kotlin.test.Test

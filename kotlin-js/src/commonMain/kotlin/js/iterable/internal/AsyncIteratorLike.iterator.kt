@@ -5,6 +5,7 @@ import js.iterable.AsyncIteratorLike
 import js.iterable.IteratorResult
 import js.iterable.IteratorYieldResult
 import js.iterable.SuspendableIterator
+import js.promise.await
 
 @PublishedApi
 internal fun <T : JsAny?> iteratorFromAsyncIteratorLike(
