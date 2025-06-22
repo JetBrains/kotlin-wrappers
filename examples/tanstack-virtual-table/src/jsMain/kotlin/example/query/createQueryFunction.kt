@@ -5,6 +5,7 @@ import js.coroutines.promise
 import kotlinx.coroutines.cancel
 import tanstack.query.core.QueryFunction
 import tanstack.query.core.QueryKey
+import web.abort.abortEvent
 import web.events.addHandler
 
 fun <D> createQueryFunction(
