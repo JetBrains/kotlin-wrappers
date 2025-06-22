@@ -1,12 +1,8 @@
-@file:Suppress(
-    "WRONG_EXTERNAL_DECLARATION",
-)
-
 package js.import
 
 import js.core.JsAny
 import js.promise.Promise
-import seskar.js.JsAsync
+import js.promise.await
 import kotlin.js.JsName
 import kotlin.js.definedExternally
 
@@ -16,11 +12,16 @@ external fun <T : JsAny?> importAsync(
     options: ImportCallOptions = definedExternally,
 ): Promise<T>
 
-@JsAsync
-external suspend fun <T : JsAny?> import(
+suspend fun <T : JsAny?> import(
     path: String,
-    options: ImportCallOptions = definedExternally,
-): T
+): T =
+    importAsync<T>(path).await()
+
+suspend fun <T : JsAny?> import(
+    path: String,
+    options: ImportCallOptions,
+): T =
+    importAsync<T>(path, options).await()
 
 external object import {
     val meta: ImportMeta
