@@ -5,8 +5,7 @@ import js.array.ReadonlyArray
 import js.core.JsString
 import js.objects.ReadonlyRecord
 import js.reflect.JsExternalInheritorsOnly
-import seskar.js.JsAlias
-import seskar.js.JsAlias.Companion.THIS
+import js.reflect.unsafeCast
 
 @JsExternalInheritorsOnly
 external interface RegExpExecArray :
@@ -24,7 +23,7 @@ external interface RegExpExecArray :
     val groups: ReadonlyRecord<JsString, JsString>?
 
     val indices: RegExpIndicesArray?
-
-    @JsAlias(THIS)
-    fun asArray(): ReadonlyArray<JsString>
 }
+
+inline fun RegExpExecArray.asArray(): ReadonlyArray<JsString> =
+    unsafeCast(this)
