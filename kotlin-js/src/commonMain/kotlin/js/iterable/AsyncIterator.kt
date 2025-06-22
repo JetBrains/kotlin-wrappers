@@ -1,11 +1,3 @@
-@file:Suppress(
-    "WRONG_JS_INTEROP_TYPE",
-    "WRONG_BODY_OF_EXTERNAL_DECLARATION",
-    "INLINE_EXTERNAL_DECLARATION",
-    "NON_ABSTRACT_MEMBER_OF_EXTERNAL_INTERFACE",
-    "DECLARATION_CANT_BE_INLINED",
-)
-
 package js.iterable
 
 import js.core.JsAny
@@ -18,8 +10,7 @@ import js.reflect.JsExternalInheritorsOnly
 abstract external class AsyncIterator<out T : JsAny?> :
     AsyncIteratorLike<T>,
     AsyncIterable<T>,
-    AsyncDisposable {
+    AsyncDisposable
 
-    override inline operator fun iterator(): SuspendableIterator<T> =
-        iteratorFromAsyncIteratorLike(this)
-}
+inline operator fun <T : JsAny?> AsyncIterator<T>.iterator(): SuspendableIterator<T> =
+    iteratorFromAsyncIteratorLike(this)

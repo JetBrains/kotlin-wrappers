@@ -1,9 +1,5 @@
 @file:Suppress(
-    "WRONG_JS_INTEROP_TYPE",
-    "WRONG_BODY_OF_EXTERNAL_DECLARATION",
-    "INLINE_EXTERNAL_DECLARATION",
     "NON_ABSTRACT_MEMBER_OF_EXTERNAL_INTERFACE",
-    "DECLARATION_CANT_BE_INLINED",
 )
 
 package js.iterable
@@ -19,7 +15,7 @@ external interface JsIterable<out T : JsAny?> {
     operator fun get(
         key: Symbol.iterator,
     ): () -> JsIterator<T> = definedExternally
-
-    inline operator fun iterator(): Iterator<T> =
-        iteratorFromJsIterable(this)
 }
+
+inline operator fun <T : JsAny?> JsIterable<T>.iterator(): Iterator<T> =
+    iteratorFromJsIterable(this)

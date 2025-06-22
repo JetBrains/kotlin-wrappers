@@ -3,6 +3,7 @@ package js.iterable.internal
 import js.core.JsAny
 import js.iterable.AsyncIterable
 import js.iterable.SuspendableIterator
+import js.iterable.iterator
 import js.symbol.Symbol
 
 @PublishedApi

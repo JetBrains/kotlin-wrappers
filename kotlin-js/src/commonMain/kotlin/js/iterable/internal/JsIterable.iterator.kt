@@ -2,6 +2,7 @@ package js.iterable.internal
 
 import js.core.JsAny
 import js.iterable.JsIterable
+import js.iterable.iterator
 import js.symbol.Symbol
 
 @PublishedApi
