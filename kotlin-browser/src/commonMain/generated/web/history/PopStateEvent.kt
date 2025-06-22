@@ -4,7 +4,6 @@ package web.history
 
 import js.core.JsAny
 import js.reflect.unsafeCast
-import seskar.js.JsValue
 import web.events.Event
 import web.events.EventType
 import kotlin.js.definedExternally
@@ -32,11 +31,11 @@ open external class PopStateEvent(
      */
     val state: JsAny?
 
-    companion object {
-        @JsValue("popstate")
-        val POP_STATE: EventType<PopStateEvent>
-    }
+    companion object
 }
 
 inline fun PopStateEvent.asInit(): PopStateEventInit =
     unsafeCast(this)
+
+inline val PopStateEvent.Companion.POP_STATE: EventType<PopStateEvent>
+    get() = EventType("popstate")

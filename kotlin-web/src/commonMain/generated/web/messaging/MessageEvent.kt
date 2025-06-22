@@ -5,7 +5,6 @@ package web.messaging
 import js.array.ReadonlyArray
 import js.core.JsAny
 import js.reflect.unsafeCast
-import seskar.js.JsValue
 import web.events.Event
 import web.events.EventType
 import kotlin.js.definedExternally
@@ -54,17 +53,17 @@ open external class MessageEvent<out D : JsAny?>(
      */
     val source: MessageEventSource?
 
-    companion object {
-        @JsValue("connect")
-        val CONNECT: EventType<MessageEvent<*>>
-
-        @JsValue("message")
-        val MESSAGE: EventType<MessageEvent<*>>
-
-        @JsValue("messageerror")
-        val MESSAGE_ERROR: EventType<MessageEvent<*>>
-    }
+    companion object
 }
 
 inline fun <D : JsAny?> MessageEvent<D>.asInit(): MessageEventInit<D> =
     unsafeCast(this)
+
+inline val MessageEvent.Companion.CONNECT: EventType<MessageEvent<*>>
+    get() = EventType("connect")
+
+inline val MessageEvent.Companion.MESSAGE: EventType<MessageEvent<*>>
+    get() = EventType("message")
+
+inline val MessageEvent.Companion.MESSAGE_ERROR: EventType<MessageEvent<*>>
+    get() = EventType("messageerror")

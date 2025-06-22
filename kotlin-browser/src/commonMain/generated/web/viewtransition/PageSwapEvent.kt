@@ -3,7 +3,6 @@
 package web.viewtransition
 
 import js.reflect.unsafeCast
-import seskar.js.JsValue
 import web.events.Event
 import web.events.EventType
 import web.navigation.NavigationActivation
@@ -32,11 +31,11 @@ open external class PageSwapEvent(
      */
     val viewTransition: ViewTransition?
 
-    companion object {
-        @JsValue("pageswap")
-        val PAGE_SWAP: EventType<PageSwapEvent>
-    }
+    companion object
 }
 
 inline fun PageSwapEvent.asInit(): PageSwapEventInit =
     unsafeCast(this)
+
+inline val PageSwapEvent.Companion.PAGE_SWAP: EventType<PageSwapEvent>
+    get() = EventType("pageswap")

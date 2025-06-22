@@ -5,7 +5,6 @@ package web.serviceworker
 import js.array.ReadonlyArray
 import js.core.JsAny
 import js.reflect.unsafeCast
-import seskar.js.JsValue
 import web.events.EventType
 import web.messaging.MessagePort
 import kotlin.js.definedExternally
@@ -54,11 +53,11 @@ open external class ExtendableMessageEvent(
      */
     val source: JsAny /* Client | ServiceWorker | MessagePort */?
 
-    companion object {
-        @JsValue("message")
-        val MESSAGE: EventType<ExtendableMessageEvent>
-    }
+    companion object
 }
 
 inline fun ExtendableMessageEvent.asInit(): ExtendableMessageEventInit =
     unsafeCast(this)
+
+inline val ExtendableMessageEvent.Companion.MESSAGE: EventType<ExtendableMessageEvent>
+    get() = EventType("message")

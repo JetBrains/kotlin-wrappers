@@ -3,7 +3,6 @@
 package web.clipboard
 
 import js.reflect.unsafeCast
-import seskar.js.JsValue
 import web.data.DataTransfer
 import web.events.Event
 import web.events.EventType
@@ -25,17 +24,17 @@ open external class ClipboardEvent(
      */
     val clipboardData: DataTransfer?
 
-    companion object {
-        @JsValue("copy")
-        val COPY: EventType<ClipboardEvent>
-
-        @JsValue("cut")
-        val CUT: EventType<ClipboardEvent>
-
-        @JsValue("paste")
-        val PASTE: EventType<ClipboardEvent>
-    }
+    companion object
 }
 
 inline fun ClipboardEvent.asInit(): ClipboardEventInit =
     unsafeCast(this)
+
+inline val ClipboardEvent.Companion.COPY: EventType<ClipboardEvent>
+    get() = EventType("copy")
+
+inline val ClipboardEvent.Companion.CUT: EventType<ClipboardEvent>
+    get() = EventType("cut")
+
+inline val ClipboardEvent.Companion.PASTE: EventType<ClipboardEvent>
+    get() = EventType("paste")

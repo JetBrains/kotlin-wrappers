@@ -3,7 +3,6 @@
 package web.audio
 
 import js.reflect.unsafeCast
-import seskar.js.JsValue
 import web.events.Event
 import web.events.EventType
 
@@ -23,11 +22,11 @@ open external class OfflineAudioCompletionEvent(
      */
     val renderedBuffer: AudioBuffer
 
-    companion object {
-        @JsValue("complete")
-        val COMPLETE: EventType<OfflineAudioCompletionEvent>
-    }
+    companion object
 }
 
 inline fun OfflineAudioCompletionEvent.asInit(): OfflineAudioCompletionEventInit =
     unsafeCast(this)
+
+inline val OfflineAudioCompletionEvent.Companion.COMPLETE: EventType<OfflineAudioCompletionEvent>
+    get() = EventType("complete")

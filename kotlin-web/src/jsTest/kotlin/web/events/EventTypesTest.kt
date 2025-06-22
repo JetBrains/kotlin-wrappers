@@ -1,17 +1,16 @@
 package web.events
 
-import web.events.ProgressEvent.Companion.PROGRESS
 import kotlin.test.Test
 import kotlin.test.assertEquals
 
 class EventTypesTest {
     @Test
-    fun import() {
+    fun import1() {
         assertEquals<Any>("abort", ProgressEvent.ABORT)
     }
 
     @Test
-    fun staticImport() {
-        assertEquals<Any>("progress", PROGRESS)
+    fun import2() {
+        assertEquals<Any>("progress", ProgressEvent.PROGRESS)
     }
 }

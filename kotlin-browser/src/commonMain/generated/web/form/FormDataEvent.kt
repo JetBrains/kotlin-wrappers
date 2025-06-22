@@ -3,7 +3,6 @@
 package web.form
 
 import js.reflect.unsafeCast
-import seskar.js.JsValue
 import web.events.Event
 import web.events.EventType
 
@@ -23,11 +22,11 @@ open external class FormDataEvent(
      */
     val formData: FormData
 
-    companion object {
-        @JsValue("formdata")
-        val FORM_DATA: EventType<FormDataEvent>
-    }
+    companion object
 }
 
 inline fun FormDataEvent.asInit(): FormDataEventInit =
     unsafeCast(this)
+
+inline val FormDataEvent.Companion.FORM_DATA: EventType<FormDataEvent>
+    get() = EventType("formdata")

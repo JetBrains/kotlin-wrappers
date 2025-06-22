@@ -11,6 +11,7 @@ import web.dom.document
 import web.html.HTML
 import web.location.location
 import web.storage.localStorage
+import web.uievents.CLICK
 import web.uievents.PointerEvent
 import web.uievents.PointerEventInit
 import web.url.URL

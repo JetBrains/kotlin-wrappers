@@ -3,7 +3,6 @@
 package web.device
 
 import js.reflect.unsafeCast
-import seskar.js.JsValue
 import web.events.Event
 import web.events.EventType
 import kotlin.js.definedExternally
@@ -46,14 +45,14 @@ open external class DeviceOrientationEvent(
      */
     val gamma: Double?
 
-    companion object {
-        @JsValue("deviceorientation")
-        val DEVICE_ORIENTATION: EventType<DeviceOrientationEvent>
-
-        @JsValue("deviceorientationabsolute")
-        val DEVICE_ORIENTATION_ABSOLUTE: EventType<DeviceOrientationEvent>
-    }
+    companion object
 }
 
 inline fun DeviceOrientationEvent.asInit(): DeviceOrientationEventInit =
     unsafeCast(this)
+
+inline val DeviceOrientationEvent.Companion.DEVICE_ORIENTATION: EventType<DeviceOrientationEvent>
+    get() = EventType("deviceorientation")
+
+inline val DeviceOrientationEvent.Companion.DEVICE_ORIENTATION_ABSOLUTE: EventType<DeviceOrientationEvent>
+    get() = EventType("deviceorientationabsolute")

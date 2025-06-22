@@ -1,17 +1,16 @@
 package web.uievents
 
-import web.uievents.WheelEvent.Companion.WHEEL
 import kotlin.test.Test
 import kotlin.test.assertEquals
 
 class EventTypesTest {
     @Test
-    fun import() {
+    fun import1() {
         assertEquals<Any>("click", PointerEvent.CLICK)
     }
 
     @Test
-    fun staticImport() {
-        assertEquals<Any>("wheel", WHEEL)
+    fun import2() {
+        assertEquals<Any>("wheel", WheelEvent.WHEEL)
     }
 }

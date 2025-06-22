@@ -3,7 +3,6 @@
 package web.vtt
 
 import js.reflect.unsafeCast
-import seskar.js.JsValue
 import web.events.Event
 import web.events.EventType
 import kotlin.js.definedExternally
@@ -24,14 +23,14 @@ open external class TrackEvent(
      */
     val track: TextTrack?
 
-    companion object {
-        @JsValue("addtrack")
-        val ADD_TRACK: EventType<TrackEvent>
-
-        @JsValue("removetrack")
-        val REMOVE_TRACK: EventType<TrackEvent>
-    }
+    companion object
 }
 
 inline fun TrackEvent.asInit(): TrackEventInit =
     unsafeCast(this)
+
+inline val TrackEvent.Companion.ADD_TRACK: EventType<TrackEvent>
+    get() = EventType("addtrack")
+
+inline val TrackEvent.Companion.REMOVE_TRACK: EventType<TrackEvent>
+    get() = EventType("removetrack")

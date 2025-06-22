@@ -3,7 +3,6 @@
 package web.cssom
 
 import js.reflect.unsafeCast
-import seskar.js.JsValue
 import web.events.Event
 import web.events.EventType
 import kotlin.js.definedExternally
@@ -31,11 +30,11 @@ open external class MediaQueryListEvent(
      */
     val media: MediaQuery
 
-    companion object {
-        @JsValue("change")
-        val CHANGE: EventType<MediaQueryListEvent>
-    }
+    companion object
 }
 
 inline fun MediaQueryListEvent.asInit(): MediaQueryListEventInit =
     unsafeCast(this)
+
+inline val MediaQueryListEvent.Companion.CHANGE: EventType<MediaQueryListEvent>
+    get() = EventType("change")

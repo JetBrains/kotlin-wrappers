@@ -3,7 +3,6 @@
 package web.uievents
 
 import js.reflect.unsafeCast
-import seskar.js.JsValue
 import web.events.EventTarget
 import web.events.EventType
 import web.keyboard.ModifierKeyCode
@@ -172,32 +171,32 @@ open external class MouseEvent(
      */
     fun getModifierState(keyArg: ModifierKeyCode): Boolean
 
-    companion object {
-        @JsValue("dblclick")
-        val DBL_CLICK: EventType<MouseEvent>
-
-        @JsValue("mousedown")
-        val MOUSE_DOWN: EventType<MouseEvent>
-
-        @JsValue("mouseenter")
-        val MOUSE_ENTER: EventType<MouseEvent>
-
-        @JsValue("mouseleave")
-        val MOUSE_LEAVE: EventType<MouseEvent>
-
-        @JsValue("mousemove")
-        val MOUSE_MOVE: EventType<MouseEvent>
-
-        @JsValue("mouseout")
-        val MOUSE_OUT: EventType<MouseEvent>
-
-        @JsValue("mouseover")
-        val MOUSE_OVER: EventType<MouseEvent>
-
-        @JsValue("mouseup")
-        val MOUSE_UP: EventType<MouseEvent>
-    }
+    companion object
 }
 
 inline fun MouseEvent.asInit(): MouseEventInit =
     unsafeCast(this)
+
+inline val MouseEvent.Companion.DBL_CLICK: EventType<MouseEvent>
+    get() = EventType("dblclick")
+
+inline val MouseEvent.Companion.MOUSE_DOWN: EventType<MouseEvent>
+    get() = EventType("mousedown")
+
+inline val MouseEvent.Companion.MOUSE_ENTER: EventType<MouseEvent>
+    get() = EventType("mouseenter")
+
+inline val MouseEvent.Companion.MOUSE_LEAVE: EventType<MouseEvent>
+    get() = EventType("mouseleave")
+
+inline val MouseEvent.Companion.MOUSE_MOVE: EventType<MouseEvent>
+    get() = EventType("mousemove")
+
+inline val MouseEvent.Companion.MOUSE_OUT: EventType<MouseEvent>
+    get() = EventType("mouseout")
+
+inline val MouseEvent.Companion.MOUSE_OVER: EventType<MouseEvent>
+    get() = EventType("mouseover")
+
+inline val MouseEvent.Companion.MOUSE_UP: EventType<MouseEvent>
+    get() = EventType("mouseup")

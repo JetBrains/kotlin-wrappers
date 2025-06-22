@@ -3,7 +3,6 @@
 package web.uievents
 
 import js.reflect.unsafeCast
-import seskar.js.JsValue
 import web.events.EventType
 import kotlin.js.definedExternally
 
@@ -23,17 +22,17 @@ open external class CompositionEvent(
      */
     val data: String
 
-    companion object {
-        @JsValue("compositionend")
-        val COMPOSITION_END: EventType<CompositionEvent>
-
-        @JsValue("compositionstart")
-        val COMPOSITION_START: EventType<CompositionEvent>
-
-        @JsValue("compositionupdate")
-        val COMPOSITION_UPDATE: EventType<CompositionEvent>
-    }
+    companion object
 }
 
 inline fun CompositionEvent.asInit(): CompositionEventInit =
     unsafeCast(this)
+
+inline val CompositionEvent.Companion.COMPOSITION_END: EventType<CompositionEvent>
+    get() = EventType("compositionend")
+
+inline val CompositionEvent.Companion.COMPOSITION_START: EventType<CompositionEvent>
+    get() = EventType("compositionstart")
+
+inline val CompositionEvent.Companion.COMPOSITION_UPDATE: EventType<CompositionEvent>
+    get() = EventType("compositionupdate")

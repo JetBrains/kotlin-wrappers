@@ -4,7 +4,6 @@ package web.events
 
 import js.array.ReadonlyArray
 import js.reflect.unsafeCast
-import seskar.js.JsValue
 import web.time.DOMHighResTimeStamp
 import kotlin.js.definedExternally
 
@@ -122,314 +121,314 @@ open external class Event(
         val CAPTURING_PHASE: EventPhase
         val AT_TARGET: EventPhase
         val BUBBLING_PHASE: EventPhase
-
-        @JsValue("DOMContentLoaded")
-        val DOM_CONTENT_LOADED: EventType<Event>
-
-        @JsValue("abort")
-        val ABORT: EventType<Event>
-
-        @JsValue("addsourcebuffer")
-        val ADD_SOURCE_BUFFER: EventType<Event>
-
-        @JsValue("afterprint")
-        val AFTER_PRINT: EventType<Event>
-
-        @JsValue("beforematch")
-        val BEFORE_MATCH: EventType<Event>
-
-        @JsValue("beforeprint")
-        val BEFORE_PRINT: EventType<Event>
-
-        @JsValue("bufferedamountlow")
-        val BUFFERED_AMOUNT_LOW: EventType<Event>
-
-        @JsValue("cancel")
-        val CANCEL: EventType<Event>
-
-        @JsValue("canplay")
-        val CAN_PLAY: EventType<Event>
-
-        @JsValue("canplaythrough")
-        val CAN_PLAY_THROUGH: EventType<Event>
-
-        @JsValue("change")
-        val CHANGE: EventType<Event>
-
-        @JsValue("click")
-        val CLICK: EventType<Event>
-
-        @JsValue("close")
-        val CLOSE: EventType<Event>
-
-        @JsValue("closing")
-        val CLOSING: EventType<Event>
-
-        @JsValue("complete")
-        val COMPLETE: EventType<Event>
-
-        @JsValue("connect")
-        val CONNECT: EventType<Event>
-
-        @JsValue("connecting")
-        val CONNECTING: EventType<Event>
-
-        @JsValue("connectionstatechange")
-        val CONNECTION_STATE_CHANGE: EventType<Event>
-
-        @JsValue("contextlost")
-        val CONTEXT_LOST: EventType<Event>
-
-        @JsValue("contextrestored")
-        val CONTEXT_RESTORED: EventType<Event>
-
-        @JsValue("controllerchange")
-        val CONTROLLER_CHANGE: EventType<Event>
-
-        @JsValue("cuechange")
-        val CUE_CHANGE: EventType<Event>
-
-        @JsValue("dequeue")
-        val DEQUEUE: EventType<Event>
-
-        @JsValue("devicechange")
-        val DEVICE_CHANGE: EventType<Event>
-
-        @JsValue("disconnect")
-        val DISCONNECT: EventType<Event>
-
-        @JsValue("dispose")
-        val DISPOSE: EventType<Event>
-
-        @JsValue("durationchange")
-        val DURATION_CHANGE: EventType<Event>
-
-        @JsValue("emptied")
-        val EMPTIED: EventType<Event>
-
-        @JsValue("ended")
-        val ENDED: EventType<Event>
-
-        @JsValue("enter")
-        val ENTER: EventType<Event>
-
-        @JsValue("error")
-        val ERROR: EventType<Event>
-
-        @JsValue("exit")
-        val EXIT: EventType<Event>
-
-        @JsValue("fullscreenchange")
-        val FULLSCREEN_CHANGE: EventType<Event>
-
-        @JsValue("fullscreenerror")
-        val FULLSCREEN_ERROR: EventType<Event>
-
-        @JsValue("gatheringstatechange")
-        val GATHERING_STATE_CHANGE: EventType<Event>
-
-        @JsValue("iceconnectionstatechange")
-        val ICE_CONNECTION_STATE_CHANGE: EventType<Event>
-
-        @JsValue("icegatheringstatechange")
-        val ICE_GATHERING_STATE_CHANGE: EventType<Event>
-
-        @JsValue("input")
-        val INPUT: EventType<Event>
-
-        @JsValue("invalid")
-        val INVALID: EventType<Event>
-
-        @JsValue("keystatuseschange")
-        val KEY_STATUSES_CHANGE: EventType<Event>
-
-        @JsValue("languagechange")
-        val LANGUAGE_CHANGE: EventType<Event>
-
-        @JsValue("load")
-        val LOAD: EventType<Event>
-
-        @JsValue("loadeddata")
-        val LOADED_DATA: EventType<Event>
-
-        @JsValue("loadedmetadata")
-        val LOADED_METADATA: EventType<Event>
-
-        @JsValue("loadstart")
-        val LOAD_START: EventType<Event>
-
-        @JsValue("mute")
-        val MUTE: EventType<Event>
-
-        @JsValue("negotiationneeded")
-        val NEGOTIATION_NEEDED: EventType<Event>
-
-        @JsValue("offline")
-        val OFFLINE: EventType<Event>
-
-        @JsValue("online")
-        val ONLINE: EventType<Event>
-
-        @JsValue("open")
-        val OPEN: EventType<Event>
-
-        @JsValue("pause")
-        val PAUSE: EventType<Event>
-
-        @JsValue("play")
-        val PLAY: EventType<Event>
-
-        @JsValue("playing")
-        val PLAYING: EventType<Event>
-
-        @JsValue("pointerlockchange")
-        val POINTER_LOCK_CHANGE: EventType<Event>
-
-        @JsValue("pointerlockerror")
-        val POINTER_LOCK_ERROR: EventType<Event>
-
-        @JsValue("pointerrawupdate")
-        val POINTER_RAW_UPDATE: EventType<Event>
-
-        @JsValue("progress")
-        val PROGRESS: EventType<Event>
-
-        @JsValue("ratechange")
-        val RATE_CHANGE: EventType<Event>
-
-        @JsValue("readystatechange")
-        val READY_STATE_CHANGE: EventType<Event>
-
-        @JsValue("release")
-        val RELEASE: EventType<Event>
-
-        @JsValue("removesourcebuffer")
-        val REMOVE_SOURCE_BUFFER: EventType<Event>
-
-        @JsValue("reset")
-        val RESET: EventType<Event>
-
-        @JsValue("resize")
-        val RESIZE: EventType<Event>
-
-        @JsValue("resourcetimingbufferfull")
-        val RESOURCE_TIMING_BUFFER_FULL: EventType<Event>
-
-        @JsValue("resume")
-        val RESUME: EventType<Event>
-
-        @JsValue("scroll")
-        val SCROLL: EventType<Event>
-
-        @JsValue("scrollend")
-        val SCROLL_END: EventType<Event>
-
-        @JsValue("seeked")
-        val SEEKED: EventType<Event>
-
-        @JsValue("seeking")
-        val SEEKING: EventType<Event>
-
-        @JsValue("select")
-        val SELECT: EventType<Event>
-
-        @JsValue("selectedcandidatepairchange")
-        val SELECTED_CANDIDATE_PAIR_CHANGE: EventType<Event>
-
-        @JsValue("selectionchange")
-        val SELECTION_CHANGE: EventType<Event>
-
-        @JsValue("selectstart")
-        val SELECT_START: EventType<Event>
-
-        @JsValue("show")
-        val SHOW: EventType<Event>
-
-        @JsValue("signalingstatechange")
-        val SIGNALING_STATE_CHANGE: EventType<Event>
-
-        @JsValue("slotchange")
-        val SLOT_CHANGE: EventType<Event>
-
-        @JsValue("sourceclose")
-        val SOURCE_CLOSE: EventType<Event>
-
-        @JsValue("sourceended")
-        val SOURCE_ENDED: EventType<Event>
-
-        @JsValue("sourceopen")
-        val SOURCE_OPEN: EventType<Event>
-
-        @JsValue("stalled")
-        val STALLED: EventType<Event>
-
-        @JsValue("start")
-        val START: EventType<Event>
-
-        @JsValue("statechange")
-        val STATE_CHANGE: EventType<Event>
-
-        @JsValue("stop")
-        val STOP: EventType<Event>
-
-        @JsValue("success")
-        val SUCCESS: EventType<Event>
-
-        @JsValue("suspend")
-        val SUSPEND: EventType<Event>
-
-        @JsValue("timeupdate")
-        val TIME_UPDATE: EventType<Event>
-
-        @JsValue("unload")
-        val UNLOAD: EventType<Event>
-
-        @JsValue("unmute")
-        val UNMUTE: EventType<Event>
-
-        @JsValue("update")
-        val UPDATE: EventType<Event>
-
-        @JsValue("updateend")
-        val UPDATE_END: EventType<Event>
-
-        @JsValue("updatefound")
-        val UPDATE_FOUND: EventType<Event>
-
-        @JsValue("updatestart")
-        val UPDATE_START: EventType<Event>
-
-        @JsValue("visibilitychange")
-        val VISIBILITY_CHANGE: EventType<Event>
-
-        @JsValue("voiceschanged")
-        val VOICES_CHANGED: EventType<Event>
-
-        @JsValue("volumechange")
-        val VOLUME_CHANGE: EventType<Event>
-
-        @JsValue("waiting")
-        val WAITING: EventType<Event>
-
-        @JsValue("waitingforkey")
-        val WAITING_FOR_KEY: EventType<Event>
-
-        @JsValue("webkitanimationend")
-        val WEBKIT_ANIMATION_END: EventType<Event>
-
-        @JsValue("webkitanimationiteration")
-        val WEBKIT_ANIMATION_ITERATION: EventType<Event>
-
-        @JsValue("webkitanimationstart")
-        val WEBKIT_ANIMATION_START: EventType<Event>
-
-        @JsValue("webkitfullscreenchange")
-        val WEBKIT_FULLSCREEN_CHANGE: EventType<Event>
-
-        @JsValue("webkittransitionend")
-        val WEBKIT_TRANSITION_END: EventType<Event>
     }
 }
 
 inline fun Event.asInit(): EventInit =
     unsafeCast(this)
+
+inline val Event.Companion.DOM_CONTENT_LOADED: EventType<Event>
+    get() = EventType("DOMContentLoaded")
+
+inline val Event.Companion.ABORT: EventType<Event>
+    get() = EventType("abort")
+
+inline val Event.Companion.ADD_SOURCE_BUFFER: EventType<Event>
+    get() = EventType("addsourcebuffer")
+
+inline val Event.Companion.AFTER_PRINT: EventType<Event>
+    get() = EventType("afterprint")
+
+inline val Event.Companion.BEFORE_MATCH: EventType<Event>
+    get() = EventType("beforematch")
+
+inline val Event.Companion.BEFORE_PRINT: EventType<Event>
+    get() = EventType("beforeprint")
+
+inline val Event.Companion.BUFFERED_AMOUNT_LOW: EventType<Event>
+    get() = EventType("bufferedamountlow")
+
+inline val Event.Companion.CANCEL: EventType<Event>
+    get() = EventType("cancel")
+
+inline val Event.Companion.CAN_PLAY: EventType<Event>
+    get() = EventType("canplay")
+
+inline val Event.Companion.CAN_PLAY_THROUGH: EventType<Event>
+    get() = EventType("canplaythrough")
+
+inline val Event.Companion.CHANGE: EventType<Event>
+    get() = EventType("change")
+
+inline val Event.Companion.CLICK: EventType<Event>
+    get() = EventType("click")
+
+inline val Event.Companion.CLOSE: EventType<Event>
+    get() = EventType("close")
+
+inline val Event.Companion.CLOSING: EventType<Event>
+    get() = EventType("closing")
+
+inline val Event.Companion.COMPLETE: EventType<Event>
+    get() = EventType("complete")
+
+inline val Event.Companion.CONNECT: EventType<Event>
+    get() = EventType("connect")
+
+inline val Event.Companion.CONNECTING: EventType<Event>
+    get() = EventType("connecting")
+
+inline val Event.Companion.CONNECTION_STATE_CHANGE: EventType<Event>
+    get() = EventType("connectionstatechange")
+
+inline val Event.Companion.CONTEXT_LOST: EventType<Event>
+    get() = EventType("contextlost")
+
+inline val Event.Companion.CONTEXT_RESTORED: EventType<Event>
+    get() = EventType("contextrestored")
+
+inline val Event.Companion.CONTROLLER_CHANGE: EventType<Event>
+    get() = EventType("controllerchange")
+
+inline val Event.Companion.CUE_CHANGE: EventType<Event>
+    get() = EventType("cuechange")
+
+inline val Event.Companion.DEQUEUE: EventType<Event>
+    get() = EventType("dequeue")
+
+inline val Event.Companion.DEVICE_CHANGE: EventType<Event>
+    get() = EventType("devicechange")
+
+inline val Event.Companion.DISCONNECT: EventType<Event>
+    get() = EventType("disconnect")
+
+inline val Event.Companion.DISPOSE: EventType<Event>
+    get() = EventType("dispose")
+
+inline val Event.Companion.DURATION_CHANGE: EventType<Event>
+    get() = EventType("durationchange")
+
+inline val Event.Companion.EMPTIED: EventType<Event>
+    get() = EventType("emptied")
+
+inline val Event.Companion.ENDED: EventType<Event>
+    get() = EventType("ended")
+
+inline val Event.Companion.ENTER: EventType<Event>
+    get() = EventType("enter")
+
+inline val Event.Companion.ERROR: EventType<Event>
+    get() = EventType("error")
+
+inline val Event.Companion.EXIT: EventType<Event>
+    get() = EventType("exit")
+
+inline val Event.Companion.FULLSCREEN_CHANGE: EventType<Event>
+    get() = EventType("fullscreenchange")
+
+inline val Event.Companion.FULLSCREEN_ERROR: EventType<Event>
+    get() = EventType("fullscreenerror")
+
+inline val Event.Companion.GATHERING_STATE_CHANGE: EventType<Event>
+    get() = EventType("gatheringstatechange")
+
+inline val Event.Companion.ICE_CONNECTION_STATE_CHANGE: EventType<Event>
+    get() = EventType("iceconnectionstatechange")
+
+inline val Event.Companion.ICE_GATHERING_STATE_CHANGE: EventType<Event>
+    get() = EventType("icegatheringstatechange")
+
+inline val Event.Companion.INPUT: EventType<Event>
+    get() = EventType("input")
+
+inline val Event.Companion.INVALID: EventType<Event>
+    get() = EventType("invalid")
+
+inline val Event.Companion.KEY_STATUSES_CHANGE: EventType<Event>
+    get() = EventType("keystatuseschange")
+
+inline val Event.Companion.LANGUAGE_CHANGE: EventType<Event>
+    get() = EventType("languagechange")
+
+inline val Event.Companion.LOAD: EventType<Event>
+    get() = EventType("load")
+
+inline val Event.Companion.LOADED_DATA: EventType<Event>
+    get() = EventType("loadeddata")
+
+inline val Event.Companion.LOADED_METADATA: EventType<Event>
+    get() = EventType("loadedmetadata")
+
+inline val Event.Companion.LOAD_START: EventType<Event>
+    get() = EventType("loadstart")
+
+inline val Event.Companion.MUTE: EventType<Event>
+    get() = EventType("mute")
+
+inline val Event.Companion.NEGOTIATION_NEEDED: EventType<Event>
+    get() = EventType("negotiationneeded")
+
+inline val Event.Companion.OFFLINE: EventType<Event>
+    get() = EventType("offline")
+
+inline val Event.Companion.ONLINE: EventType<Event>
+    get() = EventType("online")
+
+inline val Event.Companion.OPEN: EventType<Event>
+    get() = EventType("open")
+
+inline val Event.Companion.PAUSE: EventType<Event>
+    get() = EventType("pause")
+
+inline val Event.Companion.PLAY: EventType<Event>
+    get() = EventType("play")
+
+inline val Event.Companion.PLAYING: EventType<Event>
+    get() = EventType("playing")
+
+inline val Event.Companion.POINTER_LOCK_CHANGE: EventType<Event>
+    get() = EventType("pointerlockchange")
+
+inline val Event.Companion.POINTER_LOCK_ERROR: EventType<Event>
+    get() = EventType("pointerlockerror")
+
+inline val Event.Companion.POINTER_RAW_UPDATE: EventType<Event>
+    get() = EventType("pointerrawupdate")
+
+inline val Event.Companion.PROGRESS: EventType<Event>
+    get() = EventType("progress")
+
+inline val Event.Companion.RATE_CHANGE: EventType<Event>
+    get() = EventType("ratechange")
+
+inline val Event.Companion.READY_STATE_CHANGE: EventType<Event>
+    get() = EventType("readystatechange")
+
+inline val Event.Companion.RELEASE: EventType<Event>
+    get() = EventType("release")
+
+inline val Event.Companion.REMOVE_SOURCE_BUFFER: EventType<Event>
+    get() = EventType("removesourcebuffer")
+
+inline val Event.Companion.RESET: EventType<Event>
+    get() = EventType("reset")
+
+inline val Event.Companion.RESIZE: EventType<Event>
+    get() = EventType("resize")
+
+inline val Event.Companion.RESOURCE_TIMING_BUFFER_FULL: EventType<Event>
+    get() = EventType("resourcetimingbufferfull")
+
+inline val Event.Companion.RESUME: EventType<Event>
+    get() = EventType("resume")
+
+inline val Event.Companion.SCROLL: EventType<Event>
+    get() = EventType("scroll")
+
+inline val Event.Companion.SCROLL_END: EventType<Event>
+    get() = EventType("scrollend")
+
+inline val Event.Companion.SEEKED: EventType<Event>
+    get() = EventType("seeked")
+
+inline val Event.Companion.SEEKING: EventType<Event>
+    get() = EventType("seeking")
+
+inline val Event.Companion.SELECT: EventType<Event>
+    get() = EventType("select")
+
+inline val Event.Companion.SELECTED_CANDIDATE_PAIR_CHANGE: EventType<Event>
+    get() = EventType("selectedcandidatepairchange")
+
+inline val Event.Companion.SELECTION_CHANGE: EventType<Event>
+    get() = EventType("selectionchange")
+
+inline val Event.Companion.SELECT_START: EventType<Event>
+    get() = EventType("selectstart")
+
+inline val Event.Companion.SHOW: EventType<Event>
+    get() = EventType("show")
+
+inline val Event.Companion.SIGNALING_STATE_CHANGE: EventType<Event>
+    get() = EventType("signalingstatechange")
+
+inline val Event.Companion.SLOT_CHANGE: EventType<Event>
+    get() = EventType("slotchange")
+
+inline val Event.Companion.SOURCE_CLOSE: EventType<Event>
+    get() = EventType("sourceclose")
+
+inline val Event.Companion.SOURCE_ENDED: EventType<Event>
+    get() = EventType("sourceended")
+
+inline val Event.Companion.SOURCE_OPEN: EventType<Event>
+    get() = EventType("sourceopen")
+
+inline val Event.Companion.STALLED: EventType<Event>
+    get() = EventType("stalled")
+
+inline val Event.Companion.START: EventType<Event>
+    get() = EventType("start")
+
+inline val Event.Companion.STATE_CHANGE: EventType<Event>
+    get() = EventType("statechange")
+
+inline val Event.Companion.STOP: EventType<Event>
+    get() = EventType("stop")
+
+inline val Event.Companion.SUCCESS: EventType<Event>
+    get() = EventType("success")
+
+inline val Event.Companion.SUSPEND: EventType<Event>
+    get() = EventType("suspend")
+
+inline val Event.Companion.TIME_UPDATE: EventType<Event>
+    get() = EventType("timeupdate")
+
+inline val Event.Companion.UNLOAD: EventType<Event>
+    get() = EventType("unload")
+
+inline val Event.Companion.UNMUTE: EventType<Event>
+    get() = EventType("unmute")
+
+inline val Event.Companion.UPDATE: EventType<Event>
+    get() = EventType("update")
+
+inline val Event.Companion.UPDATE_END: EventType<Event>
+    get() = EventType("updateend")
+
+inline val Event.Companion.UPDATE_FOUND: EventType<Event>
+    get() = EventType("updatefound")
+
+inline val Event.Companion.UPDATE_START: EventType<Event>
+    get() = EventType("updatestart")
+
+inline val Event.Companion.VISIBILITY_CHANGE: EventType<Event>
+    get() = EventType("visibilitychange")
+
+inline val Event.Companion.VOICES_CHANGED: EventType<Event>
+    get() = EventType("voiceschanged")
+
+inline val Event.Companion.VOLUME_CHANGE: EventType<Event>
+    get() = EventType("volumechange")
+
+inline val Event.Companion.WAITING: EventType<Event>
+    get() = EventType("waiting")
+
+inline val Event.Companion.WAITING_FOR_KEY: EventType<Event>
+    get() = EventType("waitingforkey")
+
+inline val Event.Companion.WEBKIT_ANIMATION_END: EventType<Event>
+    get() = EventType("webkitanimationend")
+
+inline val Event.Companion.WEBKIT_ANIMATION_ITERATION: EventType<Event>
+    get() = EventType("webkitanimationiteration")
+
+inline val Event.Companion.WEBKIT_ANIMATION_START: EventType<Event>
+    get() = EventType("webkitanimationstart")
+
+inline val Event.Companion.WEBKIT_FULLSCREEN_CHANGE: EventType<Event>
+    get() = EventType("webkitfullscreenchange")
+
+inline val Event.Companion.WEBKIT_TRANSITION_END: EventType<Event>
+    get() = EventType("webkittransitionend")

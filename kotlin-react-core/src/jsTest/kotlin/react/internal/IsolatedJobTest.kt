@@ -1,10 +1,7 @@
 package react.internal
 
 import kotlinx.coroutines.test.runTest
-import web.events.Event
-import web.events.EventInstance
-import web.events.EventTarget
-import web.events.subscribe
+import web.events.*
 import web.window.window
 import kotlin.test.Test
 import kotlin.test.assertEquals

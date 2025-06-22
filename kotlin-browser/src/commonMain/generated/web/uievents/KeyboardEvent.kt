@@ -3,7 +3,6 @@
 package web.uievents
 
 import js.reflect.unsafeCast
-import seskar.js.JsValue
 import web.events.EventType
 import web.keyboard.KeyCode
 import web.keyboard.ModifierKeyCode
@@ -97,17 +96,17 @@ open external class KeyboardEvent(
         val DOM_KEY_LOCATION_LEFT: KeyLocation
         val DOM_KEY_LOCATION_RIGHT: KeyLocation
         val DOM_KEY_LOCATION_NUMPAD: KeyLocation
-
-        @JsValue("keydown")
-        val KEY_DOWN: EventType<KeyboardEvent>
-
-        @JsValue("keypress")
-        val KEY_PRESS: EventType<KeyboardEvent>
-
-        @JsValue("keyup")
-        val KEY_UP: EventType<KeyboardEvent>
     }
 }
 
 inline fun KeyboardEvent.asInit(): KeyboardEventInit =
     unsafeCast(this)
+
+inline val KeyboardEvent.Companion.KEY_DOWN: EventType<KeyboardEvent>
+    get() = EventType("keydown")
+
+inline val KeyboardEvent.Companion.KEY_PRESS: EventType<KeyboardEvent>
+    get() = EventType("keypress")
+
+inline val KeyboardEvent.Companion.KEY_UP: EventType<KeyboardEvent>
+    get() = EventType("keyup")

@@ -3,7 +3,6 @@
 package web.popover
 
 import js.reflect.unsafeCast
-import seskar.js.JsValue
 import web.events.Event
 import web.events.EventType
 import kotlin.js.definedExternally
@@ -31,14 +30,14 @@ open external class ToggleEvent(
      */
     val oldState: ToggleState
 
-    companion object {
-        @JsValue("beforetoggle")
-        val BEFORE_TOGGLE: EventType<ToggleEvent>
-
-        @JsValue("toggle")
-        val TOGGLE: EventType<ToggleEvent>
-    }
+    companion object
 }
 
 inline fun ToggleEvent.asInit(): ToggleEventInit =
     unsafeCast(this)
+
+inline val ToggleEvent.Companion.BEFORE_TOGGLE: EventType<ToggleEvent>
+    get() = EventType("beforetoggle")
+
+inline val ToggleEvent.Companion.TOGGLE: EventType<ToggleEvent>
+    get() = EventType("toggle")

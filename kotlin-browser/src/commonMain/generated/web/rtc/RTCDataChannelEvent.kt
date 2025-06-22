@@ -3,7 +3,6 @@
 package web.rtc
 
 import js.reflect.unsafeCast
-import seskar.js.JsValue
 import web.events.Event
 import web.events.EventType
 
@@ -23,11 +22,11 @@ open external class RTCDataChannelEvent(
      */
     val channel: RTCDataChannel
 
-    companion object {
-        @JsValue("datachannel")
-        val DATA_CHANNEL: EventType<RTCDataChannelEvent>
-    }
+    companion object
 }
 
 inline fun RTCDataChannelEvent.asInit(): RTCDataChannelEventInit =
     unsafeCast(this)
+
+inline val RTCDataChannelEvent.Companion.DATA_CHANNEL: EventType<RTCDataChannelEvent>
+    get() = EventType("datachannel")

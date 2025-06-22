@@ -3,7 +3,6 @@
 package web.cssom
 
 import js.reflect.unsafeCast
-import seskar.js.JsValue
 import web.events.Event
 import web.events.EventType
 import kotlin.js.definedExternally
@@ -38,20 +37,20 @@ open external class TransitionEvent(
      */
     val pseudoElement: String
 
-    companion object {
-        @JsValue("transitioncancel")
-        val TRANSITION_CANCEL: EventType<TransitionEvent>
-
-        @JsValue("transitionend")
-        val TRANSITION_END: EventType<TransitionEvent>
-
-        @JsValue("transitionrun")
-        val TRANSITION_RUN: EventType<TransitionEvent>
-
-        @JsValue("transitionstart")
-        val TRANSITION_START: EventType<TransitionEvent>
-    }
+    companion object
 }
 
 inline fun TransitionEvent.asInit(): TransitionEventInit =
     unsafeCast(this)
+
+inline val TransitionEvent.Companion.TRANSITION_CANCEL: EventType<TransitionEvent>
+    get() = EventType("transitioncancel")
+
+inline val TransitionEvent.Companion.TRANSITION_END: EventType<TransitionEvent>
+    get() = EventType("transitionend")
+
+inline val TransitionEvent.Companion.TRANSITION_RUN: EventType<TransitionEvent>
+    get() = EventType("transitionrun")
+
+inline val TransitionEvent.Companion.TRANSITION_START: EventType<TransitionEvent>
+    get() = EventType("transitionstart")

@@ -3,7 +3,6 @@
 package web.viewtransition
 
 import js.reflect.unsafeCast
-import seskar.js.JsValue
 import web.events.Event
 import web.events.EventType
 import kotlin.js.definedExternally
@@ -24,11 +23,11 @@ open external class PageRevealEvent(
      */
     val viewTransition: ViewTransition?
 
-    companion object {
-        @JsValue("pagereveal")
-        val PAGE_REVEAL: EventType<PageRevealEvent>
-    }
+    companion object
 }
 
 inline fun PageRevealEvent.asInit(): PageRevealEventInit =
     unsafeCast(this)
+
+inline val PageRevealEvent.Companion.PAGE_REVEAL: EventType<PageRevealEvent>
+    get() = EventType("pagereveal")

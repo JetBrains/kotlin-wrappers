@@ -266,19 +266,20 @@ private fun event(
     val companionSource = eventClassBody
         .substringAfter("\n", "")
 
-    val companionMembers = listOfNotNull(
-        if (companionSource.isNotEmpty()) {
-            companionSource
-                .splitToSequence(";\n")
-                .mapNotNull { convertMember(it, typeProvider) }
-                .joinToString("\n")
-        } else null,
-        types,
-    ).joinToString("\n\n")
-
-    val companion = if (companionMembers.isNotEmpty()) {
-        "companion object {\n$companionMembers\n}"
+    val companionMembers = if (companionSource.isNotEmpty()) {
+        companionSource
+            .splitToSequence(";\n")
+            .mapNotNull { convertMember(it, typeProvider) }
+            .joinToString("\n")
     } else null
+
+    val companion = if (companionMembers != null) {
+        "companion object {\n$companionMembers\n}"
+    } else if (types != null) {
+        "companion object"
+    } else {
+        null
+    }
 
     val modifier = if (eventConstructor.isNotEmpty()) "open" else ""
     if (eventConstructor.isEmpty()) {
@@ -326,6 +327,10 @@ private fun event(
                 inline fun $extensionTypeParameters $receiver.asInit(): $resultType =
                     unsafeCast(this)
                 """.trimIndent()
+    }
+
+    if (types != null) {
+        eventBody += "\n\n$types"
     }
 
     if (name == "MediaQueryListEvent") {
@@ -397,8 +402,8 @@ private fun eventTypes(
                 .uppercase()
 
             """
-            @JsValue("$name")
-            val $memberName: $EVENT_TYPE<$eventType>
+            inline val $eventName.Companion.$memberName: $EVENT_TYPE<$eventType>
+                get() = $EVENT_TYPE("$name")
             """.trimIndent()
         }
 }

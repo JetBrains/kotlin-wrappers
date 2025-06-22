@@ -3,7 +3,6 @@
 package web.history
 
 import js.reflect.unsafeCast
-import seskar.js.JsValue
 import web.events.Event
 import web.events.EventType
 import kotlin.js.definedExternally
@@ -31,11 +30,11 @@ open external class HashChangeEvent(
      */
     val oldURL: String
 
-    companion object {
-        @JsValue("hashchange")
-        val HASH_CHANGE: EventType<HashChangeEvent>
-    }
+    companion object
 }
 
 inline fun HashChangeEvent.asInit(): HashChangeEventInit =
     unsafeCast(this)
+
+inline val HashChangeEvent.Companion.HASH_CHANGE: EventType<HashChangeEvent>
+    get() = EventType("hashchange")

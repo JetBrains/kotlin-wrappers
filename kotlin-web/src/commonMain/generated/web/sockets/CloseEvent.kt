@@ -3,7 +3,6 @@
 package web.sockets
 
 import js.reflect.unsafeCast
-import seskar.js.JsValue
 import web.events.Event
 import web.events.EventType
 import kotlin.js.definedExternally
@@ -38,11 +37,11 @@ open external class CloseEvent(
      */
     val wasClean: Boolean
 
-    companion object {
-        @JsValue("close")
-        val CLOSE: EventType<CloseEvent>
-    }
+    companion object
 }
 
 inline fun CloseEvent.asInit(): CloseEventInit =
     unsafeCast(this)
+
+inline val CloseEvent.Companion.CLOSE: EventType<CloseEvent>
+    get() = EventType("close")

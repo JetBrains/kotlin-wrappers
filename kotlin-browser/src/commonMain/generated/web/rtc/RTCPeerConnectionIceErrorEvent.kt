@@ -3,7 +3,6 @@
 package web.rtc
 
 import js.reflect.unsafeCast
-import seskar.js.JsValue
 import web.events.Event
 import web.events.EventType
 
@@ -27,11 +26,11 @@ open external class RTCPeerConnectionIceErrorEvent(
     val port: Short?
     val url: String
 
-    companion object {
-        @JsValue("icecandidateerror")
-        val ICE_CANDIDATE_ERROR: EventType<RTCPeerConnectionIceErrorEvent>
-    }
+    companion object
 }
 
 inline fun RTCPeerConnectionIceErrorEvent.asInit(): RTCPeerConnectionIceErrorEventInit =
     unsafeCast(this)
+
+inline val RTCPeerConnectionIceErrorEvent.Companion.ICE_CANDIDATE_ERROR: EventType<RTCPeerConnectionIceErrorEvent>
+    get() = EventType("icecandidateerror")

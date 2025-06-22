@@ -3,7 +3,6 @@
 package web.uievents
 
 import js.reflect.unsafeCast
-import seskar.js.JsValue
 import web.events.EventTarget
 import web.events.EventType
 import kotlin.js.definedExternally
@@ -24,20 +23,20 @@ open external class FocusEvent(
      */
     val relatedTarget: EventTarget?
 
-    companion object {
-        @JsValue("blur")
-        val BLUR: EventType<FocusEvent>
-
-        @JsValue("focus")
-        val FOCUS: EventType<FocusEvent>
-
-        @JsValue("focusin")
-        val FOCUS_IN: EventType<FocusEvent>
-
-        @JsValue("focusout")
-        val FOCUS_OUT: EventType<FocusEvent>
-    }
+    companion object
 }
 
 inline fun FocusEvent.asInit(): FocusEventInit =
     unsafeCast(this)
+
+inline val FocusEvent.Companion.BLUR: EventType<FocusEvent>
+    get() = EventType("blur")
+
+inline val FocusEvent.Companion.FOCUS: EventType<FocusEvent>
+    get() = EventType("focus")
+
+inline val FocusEvent.Companion.FOCUS_IN: EventType<FocusEvent>
+    get() = EventType("focusin")
+
+inline val FocusEvent.Companion.FOCUS_OUT: EventType<FocusEvent>
+    get() = EventType("focusout")

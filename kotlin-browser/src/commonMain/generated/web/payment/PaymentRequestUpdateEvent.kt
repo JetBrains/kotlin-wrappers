@@ -4,7 +4,6 @@ package web.payment
 
 import js.promise.PromiseLike
 import js.reflect.unsafeCast
-import seskar.js.JsValue
 import web.events.Event
 import web.events.EventType
 import kotlin.js.definedExternally
@@ -27,17 +26,17 @@ open external class PaymentRequestUpdateEvent(
     fun updateWith(detailsPromise: PaymentDetailsUpdate)
     fun updateWith(detailsPromise: PromiseLike<PaymentDetailsUpdate>)
 
-    companion object {
-        @JsValue("payerdetailchange")
-        val PAYER_DETAIL_CHANGE: EventType<PaymentRequestUpdateEvent>
-
-        @JsValue("shippingaddresschange")
-        val SHIPPING_ADDRESS_CHANGE: EventType<PaymentRequestUpdateEvent>
-
-        @JsValue("shippingoptionchange")
-        val SHIPPING_OPTION_CHANGE: EventType<PaymentRequestUpdateEvent>
-    }
+    companion object
 }
 
 inline fun PaymentRequestUpdateEvent.asInit(): PaymentRequestUpdateEventInit =
     unsafeCast(this)
+
+inline val PaymentRequestUpdateEvent.Companion.PAYER_DETAIL_CHANGE: EventType<PaymentRequestUpdateEvent>
+    get() = EventType("payerdetailchange")
+
+inline val PaymentRequestUpdateEvent.Companion.SHIPPING_ADDRESS_CHANGE: EventType<PaymentRequestUpdateEvent>
+    get() = EventType("shippingaddresschange")
+
+inline val PaymentRequestUpdateEvent.Companion.SHIPPING_OPTION_CHANGE: EventType<PaymentRequestUpdateEvent>
+    get() = EventType("shippingoptionchange")

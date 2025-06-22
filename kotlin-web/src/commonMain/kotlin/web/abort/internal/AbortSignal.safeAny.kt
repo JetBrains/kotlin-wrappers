@@ -2,6 +2,7 @@ package web.abort.internal
 
 import web.abort.AbortController
 import web.abort.AbortSignal
+import web.events.ABORT
 import web.events.Event
 import web.events.EventHandler
 import web.events.addEventHandler

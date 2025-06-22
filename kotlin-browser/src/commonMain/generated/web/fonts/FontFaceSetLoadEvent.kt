@@ -4,7 +4,6 @@ package web.fonts
 
 import js.array.ReadonlyArray
 import js.reflect.unsafeCast
-import seskar.js.JsValue
 import web.events.Event
 import web.events.EventType
 import kotlin.js.definedExternally
@@ -25,17 +24,17 @@ open external class FontFaceSetLoadEvent(
      */
     val fontfaces: ReadonlyArray<FontFace>
 
-    companion object {
-        @JsValue("loading")
-        val LOADING: EventType<FontFaceSetLoadEvent>
-
-        @JsValue("loadingdone")
-        val LOADING_DONE: EventType<FontFaceSetLoadEvent>
-
-        @JsValue("loadingerror")
-        val LOADING_ERROR: EventType<FontFaceSetLoadEvent>
-    }
+    companion object
 }
 
 inline fun FontFaceSetLoadEvent.asInit(): FontFaceSetLoadEventInit =
     unsafeCast(this)
+
+inline val FontFaceSetLoadEvent.Companion.LOADING: EventType<FontFaceSetLoadEvent>
+    get() = EventType("loading")
+
+inline val FontFaceSetLoadEvent.Companion.LOADING_DONE: EventType<FontFaceSetLoadEvent>
+    get() = EventType("loadingdone")
+
+inline val FontFaceSetLoadEvent.Companion.LOADING_ERROR: EventType<FontFaceSetLoadEvent>
+    get() = EventType("loadingerror")

@@ -4,7 +4,6 @@ package web.idb
 
 import js.core.UInt53
 import js.reflect.unsafeCast
-import seskar.js.JsValue
 import web.events.Event
 import web.events.EventType
 import kotlin.js.definedExternally
@@ -32,20 +31,20 @@ open external class IDBVersionChangeEvent(
      */
     val oldVersion: UInt53
 
-    companion object {
-        @JsValue("blocked")
-        val BLOCKED: EventType<IDBVersionChangeEvent>
-
-        @JsValue("success")
-        val SUCCESS: EventType<IDBVersionChangeEvent>
-
-        @JsValue("upgradeneeded")
-        val UPGRADENEEDED: EventType<IDBVersionChangeEvent>
-
-        @JsValue("versionchange")
-        val VERSION_CHANGE: EventType<IDBVersionChangeEvent>
-    }
+    companion object
 }
 
 inline fun IDBVersionChangeEvent.asInit(): IDBVersionChangeEventInit =
     unsafeCast(this)
+
+inline val IDBVersionChangeEvent.Companion.BLOCKED: EventType<IDBVersionChangeEvent>
+    get() = EventType("blocked")
+
+inline val IDBVersionChangeEvent.Companion.SUCCESS: EventType<IDBVersionChangeEvent>
+    get() = EventType("success")
+
+inline val IDBVersionChangeEvent.Companion.UPGRADENEEDED: EventType<IDBVersionChangeEvent>
+    get() = EventType("upgradeneeded")
+
+inline val IDBVersionChangeEvent.Companion.VERSION_CHANGE: EventType<IDBVersionChangeEvent>
+    get() = EventType("versionchange")

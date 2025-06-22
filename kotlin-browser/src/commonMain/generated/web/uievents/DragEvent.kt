@@ -3,7 +3,6 @@
 package web.uievents
 
 import js.reflect.unsafeCast
-import seskar.js.JsValue
 import web.data.DataTransfer
 import web.events.EventType
 import kotlin.js.definedExternally
@@ -24,29 +23,29 @@ open external class DragEvent(
      */
     val dataTransfer: DataTransfer?
 
-    companion object {
-        @JsValue("drag")
-        val DRAG: EventType<DragEvent>
-
-        @JsValue("dragend")
-        val DRAG_END: EventType<DragEvent>
-
-        @JsValue("dragenter")
-        val DRAG_ENTER: EventType<DragEvent>
-
-        @JsValue("dragleave")
-        val DRAG_LEAVE: EventType<DragEvent>
-
-        @JsValue("dragover")
-        val DRAG_OVER: EventType<DragEvent>
-
-        @JsValue("dragstart")
-        val DRAG_START: EventType<DragEvent>
-
-        @JsValue("drop")
-        val DROP: EventType<DragEvent>
-    }
+    companion object
 }
 
 inline fun DragEvent.asInit(): DragEventInit =
     unsafeCast(this)
+
+inline val DragEvent.Companion.DRAG: EventType<DragEvent>
+    get() = EventType("drag")
+
+inline val DragEvent.Companion.DRAG_END: EventType<DragEvent>
+    get() = EventType("dragend")
+
+inline val DragEvent.Companion.DRAG_ENTER: EventType<DragEvent>
+    get() = EventType("dragenter")
+
+inline val DragEvent.Companion.DRAG_LEAVE: EventType<DragEvent>
+    get() = EventType("dragleave")
+
+inline val DragEvent.Companion.DRAG_OVER: EventType<DragEvent>
+    get() = EventType("dragover")
+
+inline val DragEvent.Companion.DRAG_START: EventType<DragEvent>
+    get() = EventType("dragstart")
+
+inline val DragEvent.Companion.DROP: EventType<DragEvent>
+    get() = EventType("drop")

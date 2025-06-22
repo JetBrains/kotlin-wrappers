@@ -3,7 +3,6 @@
 package web.serviceworker
 
 import js.reflect.unsafeCast
-import seskar.js.JsValue
 import web.events.EventType
 import web.notifications.Notification
 
@@ -30,14 +29,14 @@ open external class NotificationEvent(
      */
     val notification: Notification
 
-    companion object {
-        @JsValue("notificationclick")
-        val NOTIFICATION_CLICK: EventType<NotificationEvent>
-
-        @JsValue("notificationclose")
-        val NOTIFICATION_CLOSE: EventType<NotificationEvent>
-    }
+    companion object
 }
 
 inline fun NotificationEvent.asInit(): NotificationEventInit =
     unsafeCast(this)
+
+inline val NotificationEvent.Companion.NOTIFICATION_CLICK: EventType<NotificationEvent>
+    get() = EventType("notificationclick")
+
+inline val NotificationEvent.Companion.NOTIFICATION_CLOSE: EventType<NotificationEvent>
+    get() = EventType("notificationclose")

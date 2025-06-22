@@ -3,7 +3,6 @@
 package web.gpu
 
 import js.reflect.unsafeCast
-import seskar.js.JsValue
 import web.events.Event
 import web.events.EventType
 
@@ -21,11 +20,11 @@ open external class GPUUncapturedErrorEvent(
      */
     val error: GPUError
 
-    companion object {
-        @JsValue("uncapturederror")
-        val UNCAPTURED_ERROR: EventType<GPUUncapturedErrorEvent>
-    }
+    companion object
 }
 
 inline fun GPUUncapturedErrorEvent.asInit(): GPUUncapturedErrorEventInit =
     unsafeCast(this)
+
+inline val GPUUncapturedErrorEvent.Companion.UNCAPTURED_ERROR: EventType<GPUUncapturedErrorEvent>
+    get() = EventType("uncapturederror")

@@ -4,7 +4,6 @@ package web.uievents
 
 import js.array.ReadonlyArray
 import js.reflect.unsafeCast
-import seskar.js.JsValue
 import web.events.EventType
 import kotlin.js.definedExternally
 
@@ -116,47 +115,47 @@ open external class PointerEvent(
      */
     fun getPredictedEvents(): ReadonlyArray<PointerEvent>
 
-    companion object {
-        @JsValue("auxclick")
-        val AUX_CLICK: EventType<PointerEvent>
-
-        @JsValue("click")
-        val CLICK: EventType<PointerEvent>
-
-        @JsValue("contextmenu")
-        val CONTEXT_MENU: EventType<PointerEvent>
-
-        @JsValue("gotpointercapture")
-        val GOT_POINTER_CAPTURE: EventType<PointerEvent>
-
-        @JsValue("lostpointercapture")
-        val LOST_POINTER_CAPTURE: EventType<PointerEvent>
-
-        @JsValue("pointercancel")
-        val POINTER_CANCEL: EventType<PointerEvent>
-
-        @JsValue("pointerdown")
-        val POINTER_DOWN: EventType<PointerEvent>
-
-        @JsValue("pointerenter")
-        val POINTER_ENTER: EventType<PointerEvent>
-
-        @JsValue("pointerleave")
-        val POINTER_LEAVE: EventType<PointerEvent>
-
-        @JsValue("pointermove")
-        val POINTER_MOVE: EventType<PointerEvent>
-
-        @JsValue("pointerout")
-        val POINTER_OUT: EventType<PointerEvent>
-
-        @JsValue("pointerover")
-        val POINTER_OVER: EventType<PointerEvent>
-
-        @JsValue("pointerup")
-        val POINTER_UP: EventType<PointerEvent>
-    }
+    companion object
 }
 
 inline fun PointerEvent.asInit(): PointerEventInit =
     unsafeCast(this)
+
+inline val PointerEvent.Companion.AUX_CLICK: EventType<PointerEvent>
+    get() = EventType("auxclick")
+
+inline val PointerEvent.Companion.CLICK: EventType<PointerEvent>
+    get() = EventType("click")
+
+inline val PointerEvent.Companion.CONTEXT_MENU: EventType<PointerEvent>
+    get() = EventType("contextmenu")
+
+inline val PointerEvent.Companion.GOT_POINTER_CAPTURE: EventType<PointerEvent>
+    get() = EventType("gotpointercapture")
+
+inline val PointerEvent.Companion.LOST_POINTER_CAPTURE: EventType<PointerEvent>
+    get() = EventType("lostpointercapture")
+
+inline val PointerEvent.Companion.POINTER_CANCEL: EventType<PointerEvent>
+    get() = EventType("pointercancel")
+
+inline val PointerEvent.Companion.POINTER_DOWN: EventType<PointerEvent>
+    get() = EventType("pointerdown")
+
+inline val PointerEvent.Companion.POINTER_ENTER: EventType<PointerEvent>
+    get() = EventType("pointerenter")
+
+inline val PointerEvent.Companion.POINTER_LEAVE: EventType<PointerEvent>
+    get() = EventType("pointerleave")
+
+inline val PointerEvent.Companion.POINTER_MOVE: EventType<PointerEvent>
+    get() = EventType("pointermove")
+
+inline val PointerEvent.Companion.POINTER_OUT: EventType<PointerEvent>
+    get() = EventType("pointerout")
+
+inline val PointerEvent.Companion.POINTER_OVER: EventType<PointerEvent>
+    get() = EventType("pointerover")
+
+inline val PointerEvent.Companion.POINTER_UP: EventType<PointerEvent>
+    get() = EventType("pointerup")

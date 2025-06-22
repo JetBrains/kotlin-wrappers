@@ -2,7 +2,6 @@
 
 package web.rtc
 
-import seskar.js.JsValue
 import web.events.Event
 import web.events.EventType
 
@@ -21,8 +20,8 @@ private constructor() :
      */
     val transformer: RTCRtpScriptTransformer
 
-    companion object {
-        @JsValue("rtctransform")
-        val RTC_TRANSFORM: EventType<RTCTransformEvent>
-    }
+    companion object
 }
+
+inline val RTCTransformEvent.Companion.RTC_TRANSFORM: EventType<RTCTransformEvent>
+    get() = EventType("rtctransform")

@@ -3,7 +3,6 @@
 package web.animations
 
 import js.reflect.unsafeCast
-import seskar.js.JsValue
 import web.events.Event
 import web.events.EventType
 import kotlin.js.definedExternally
@@ -31,17 +30,17 @@ open external class AnimationPlaybackEvent(
      */
     val timelineTime: CSSNumberish?
 
-    companion object {
-        @JsValue("cancel")
-        val CANCEL: EventType<AnimationPlaybackEvent>
-
-        @JsValue("finish")
-        val FINISH: EventType<AnimationPlaybackEvent>
-
-        @JsValue("remove")
-        val REMOVE: EventType<AnimationPlaybackEvent>
-    }
+    companion object
 }
 
 inline fun AnimationPlaybackEvent.asInit(): AnimationPlaybackEventInit =
     unsafeCast(this)
+
+inline val AnimationPlaybackEvent.Companion.CANCEL: EventType<AnimationPlaybackEvent>
+    get() = EventType("cancel")
+
+inline val AnimationPlaybackEvent.Companion.FINISH: EventType<AnimationPlaybackEvent>
+    get() = EventType("finish")
+
+inline val AnimationPlaybackEvent.Companion.REMOVE: EventType<AnimationPlaybackEvent>
+    get() = EventType("remove")

@@ -3,7 +3,6 @@
 package web.speech
 
 import js.reflect.unsafeCast
-import seskar.js.JsValue
 import web.events.Event
 import web.events.EventType
 
@@ -51,26 +50,26 @@ open external class SpeechSynthesisEvent(
      */
     val utterance: SpeechSynthesisUtterance
 
-    companion object {
-        @JsValue("boundary")
-        val BOUNDARY: EventType<SpeechSynthesisEvent>
-
-        @JsValue("end")
-        val END: EventType<SpeechSynthesisEvent>
-
-        @JsValue("mark")
-        val MARK: EventType<SpeechSynthesisEvent>
-
-        @JsValue("pause")
-        val PAUSE: EventType<SpeechSynthesisEvent>
-
-        @JsValue("resume")
-        val RESUME: EventType<SpeechSynthesisEvent>
-
-        @JsValue("start")
-        val START: EventType<SpeechSynthesisEvent>
-    }
+    companion object
 }
 
 inline fun SpeechSynthesisEvent.asInit(): SpeechSynthesisEventInit =
     unsafeCast(this)
+
+inline val SpeechSynthesisEvent.Companion.BOUNDARY: EventType<SpeechSynthesisEvent>
+    get() = EventType("boundary")
+
+inline val SpeechSynthesisEvent.Companion.END: EventType<SpeechSynthesisEvent>
+    get() = EventType("end")
+
+inline val SpeechSynthesisEvent.Companion.MARK: EventType<SpeechSynthesisEvent>
+    get() = EventType("mark")
+
+inline val SpeechSynthesisEvent.Companion.PAUSE: EventType<SpeechSynthesisEvent>
+    get() = EventType("pause")
+
+inline val SpeechSynthesisEvent.Companion.RESUME: EventType<SpeechSynthesisEvent>
+    get() = EventType("resume")
+
+inline val SpeechSynthesisEvent.Companion.START: EventType<SpeechSynthesisEvent>
+    get() = EventType("start")

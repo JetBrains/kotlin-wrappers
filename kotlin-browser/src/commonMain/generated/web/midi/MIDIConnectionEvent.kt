@@ -3,7 +3,6 @@
 package web.midi
 
 import js.reflect.unsafeCast
-import seskar.js.JsValue
 import web.events.Event
 import web.events.EventType
 import kotlin.js.definedExternally
@@ -25,11 +24,11 @@ open external class MIDIConnectionEvent(
      */
     val port: MIDIPort?
 
-    companion object {
-        @JsValue("statechange")
-        val STATE_CHANGE: EventType<MIDIConnectionEvent>
-    }
+    companion object
 }
 
 inline fun MIDIConnectionEvent.asInit(): MIDIConnectionEventInit =
     unsafeCast(this)
+
+inline val MIDIConnectionEvent.Companion.STATE_CHANGE: EventType<MIDIConnectionEvent>
+    get() = EventType("statechange")

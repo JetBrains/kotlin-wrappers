@@ -3,7 +3,6 @@
 package web.history
 
 import js.reflect.unsafeCast
-import seskar.js.JsValue
 import web.events.Event
 import web.events.EventType
 import kotlin.js.definedExternally
@@ -24,14 +23,14 @@ open external class PageTransitionEvent(
      */
     val persisted: Boolean
 
-    companion object {
-        @JsValue("pagehide")
-        val PAGE_HIDE: EventType<PageTransitionEvent>
-
-        @JsValue("pageshow")
-        val PAGE_SHOW: EventType<PageTransitionEvent>
-    }
+    companion object
 }
 
 inline fun PageTransitionEvent.asInit(): PageTransitionEventInit =
     unsafeCast(this)
+
+inline val PageTransitionEvent.Companion.PAGE_HIDE: EventType<PageTransitionEvent>
+    get() = EventType("pagehide")
+
+inline val PageTransitionEvent.Companion.PAGE_SHOW: EventType<PageTransitionEvent>
+    get() = EventType("pageshow")

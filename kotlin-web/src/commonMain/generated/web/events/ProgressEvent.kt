@@ -3,7 +3,6 @@
 package web.events
 
 import js.reflect.unsafeCast
-import seskar.js.JsValue
 import kotlin.js.definedExternally
 
 /**
@@ -36,29 +35,29 @@ open external class ProgressEvent(
      */
     val total: Double
 
-    companion object {
-        @JsValue("abort")
-        val ABORT: EventType<ProgressEvent>
-
-        @JsValue("error")
-        val ERROR: EventType<ProgressEvent>
-
-        @JsValue("load")
-        val LOAD: EventType<ProgressEvent>
-
-        @JsValue("loadend")
-        val LOAD_END: EventType<ProgressEvent>
-
-        @JsValue("loadstart")
-        val LOAD_START: EventType<ProgressEvent>
-
-        @JsValue("progress")
-        val PROGRESS: EventType<ProgressEvent>
-
-        @JsValue("timeout")
-        val TIMEOUT: EventType<ProgressEvent>
-    }
+    companion object
 }
 
 inline fun ProgressEvent.asInit(): ProgressEventInit =
     unsafeCast(this)
+
+inline val ProgressEvent.Companion.ABORT: EventType<ProgressEvent>
+    get() = EventType("abort")
+
+inline val ProgressEvent.Companion.ERROR: EventType<ProgressEvent>
+    get() = EventType("error")
+
+inline val ProgressEvent.Companion.LOAD: EventType<ProgressEvent>
+    get() = EventType("load")
+
+inline val ProgressEvent.Companion.LOAD_END: EventType<ProgressEvent>
+    get() = EventType("loadend")
+
+inline val ProgressEvent.Companion.LOAD_START: EventType<ProgressEvent>
+    get() = EventType("loadstart")
+
+inline val ProgressEvent.Companion.PROGRESS: EventType<ProgressEvent>
+    get() = EventType("progress")
+
+inline val ProgressEvent.Companion.TIMEOUT: EventType<ProgressEvent>
+    get() = EventType("timeout")

@@ -5,7 +5,6 @@ package web.midi
 import js.buffer.ArrayBuffer
 import js.reflect.unsafeCast
 import js.typedarrays.Uint8Array
-import seskar.js.JsValue
 import web.events.Event
 import web.events.EventType
 import kotlin.js.definedExternally
@@ -27,11 +26,11 @@ open external class MIDIMessageEvent(
      */
     val data: Uint8Array<ArrayBuffer>?
 
-    companion object {
-        @JsValue("midimessage")
-        val MIDI_MESSAGE: EventType<MIDIMessageEvent>
-    }
+    companion object
 }
 
 inline fun MIDIMessageEvent.asInit(): MIDIMessageEventInit =
     unsafeCast(this)
+
+inline val MIDIMessageEvent.Companion.MIDI_MESSAGE: EventType<MIDIMessageEvent>
+    get() = EventType("midimessage")

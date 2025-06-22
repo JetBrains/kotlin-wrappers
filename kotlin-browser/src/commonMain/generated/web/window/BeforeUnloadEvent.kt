@@ -2,7 +2,6 @@
 
 package web.window
 
-import seskar.js.JsValue
 import web.events.Event
 import web.events.EventType
 
@@ -16,8 +15,8 @@ private constructor() :
     Event {
 
 
-    companion object {
-        @JsValue("beforeunload")
-        val BEFORE_UNLOAD: EventType<BeforeUnloadEvent>
-    }
+    companion object
 }
+
+inline val BeforeUnloadEvent.Companion.BEFORE_UNLOAD: EventType<BeforeUnloadEvent>
+    get() = EventType("beforeunload")

@@ -4,7 +4,6 @@ package web.cookie
 
 import js.array.ReadonlyArray
 import js.reflect.unsafeCast
-import seskar.js.JsValue
 import web.events.Event
 import web.events.EventType
 import kotlin.js.definedExternally
@@ -33,11 +32,11 @@ open external class CookieChangeEvent(
      */
     val deleted: ReadonlyArray<CookieListItem>
 
-    companion object {
-        @JsValue("change")
-        val CHANGE: EventType<CookieChangeEvent>
-    }
+    companion object
 }
 
 inline fun CookieChangeEvent.asInit(): CookieChangeEventInit =
     unsafeCast(this)
+
+inline val CookieChangeEvent.Companion.CHANGE: EventType<CookieChangeEvent>
+    get() = EventType("change")

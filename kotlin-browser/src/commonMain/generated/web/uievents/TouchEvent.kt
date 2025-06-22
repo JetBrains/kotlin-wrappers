@@ -3,7 +3,6 @@
 package web.uievents
 
 import js.reflect.unsafeCast
-import seskar.js.JsValue
 import web.events.EventType
 import kotlin.js.definedExternally
 
@@ -65,20 +64,20 @@ open external class TouchEvent(
      */
     val touches: TouchList
 
-    companion object {
-        @JsValue("touchcancel")
-        val TOUCH_CANCEL: EventType<TouchEvent>
-
-        @JsValue("touchend")
-        val TOUCH_END: EventType<TouchEvent>
-
-        @JsValue("touchmove")
-        val TOUCH_MOVE: EventType<TouchEvent>
-
-        @JsValue("touchstart")
-        val TOUCH_START: EventType<TouchEvent>
-    }
+    companion object
 }
 
 inline fun TouchEvent.asInit(): TouchEventInit =
     unsafeCast(this)
+
+inline val TouchEvent.Companion.TOUCH_CANCEL: EventType<TouchEvent>
+    get() = EventType("touchcancel")
+
+inline val TouchEvent.Companion.TOUCH_END: EventType<TouchEvent>
+    get() = EventType("touchend")
+
+inline val TouchEvent.Companion.TOUCH_MOVE: EventType<TouchEvent>
+    get() = EventType("touchmove")
+
+inline val TouchEvent.Companion.TOUCH_START: EventType<TouchEvent>
+    get() = EventType("touchstart")

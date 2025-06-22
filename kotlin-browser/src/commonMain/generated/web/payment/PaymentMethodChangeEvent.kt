@@ -4,7 +4,6 @@ package web.payment
 
 import js.core.JsAny
 import js.reflect.unsafeCast
-import seskar.js.JsValue
 import web.events.EventType
 import kotlin.js.definedExternally
 
@@ -32,11 +31,11 @@ open external class PaymentMethodChangeEvent(
      */
     val methodName: String
 
-    companion object {
-        @JsValue("paymentmethodchange")
-        val PAYMENT_METHOD_CHANGE: EventType<PaymentMethodChangeEvent>
-    }
+    companion object
 }
 
 inline fun PaymentMethodChangeEvent.asInit(): PaymentMethodChangeEventInit =
     unsafeCast(this)
+
+inline val PaymentMethodChangeEvent.Companion.PAYMENT_METHOD_CHANGE: EventType<PaymentMethodChangeEvent>
+    get() = EventType("paymentmethodchange")

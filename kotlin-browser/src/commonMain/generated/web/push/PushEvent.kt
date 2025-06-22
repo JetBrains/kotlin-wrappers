@@ -3,7 +3,6 @@
 package web.push
 
 import js.reflect.unsafeCast
-import seskar.js.JsValue
 import web.events.EventType
 import web.serviceworker.ExtendableEvent
 import kotlin.js.definedExternally
@@ -25,11 +24,11 @@ open external class PushEvent(
      */
     val data: PushMessageData?
 
-    companion object {
-        @JsValue("push")
-        val PUSH: EventType<PushEvent>
-    }
+    companion object
 }
 
 inline fun PushEvent.asInit(): PushEventInit =
     unsafeCast(this)
+
+inline val PushEvent.Companion.PUSH: EventType<PushEvent>
+    get() = EventType("push")

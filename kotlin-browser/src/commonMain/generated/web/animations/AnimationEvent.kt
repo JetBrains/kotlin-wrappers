@@ -3,7 +3,6 @@
 package web.animations
 
 import js.reflect.unsafeCast
-import seskar.js.JsValue
 import web.events.Event
 import web.events.EventType
 import kotlin.js.definedExternally
@@ -38,20 +37,20 @@ open external class AnimationEvent(
      */
     val pseudoElement: String
 
-    companion object {
-        @JsValue("animationcancel")
-        val ANIMATION_CANCEL: EventType<AnimationEvent>
-
-        @JsValue("animationend")
-        val ANIMATION_END: EventType<AnimationEvent>
-
-        @JsValue("animationiteration")
-        val ANIMATION_ITERATION: EventType<AnimationEvent>
-
-        @JsValue("animationstart")
-        val ANIMATION_START: EventType<AnimationEvent>
-    }
+    companion object
 }
 
 inline fun AnimationEvent.asInit(): AnimationEventInit =
     unsafeCast(this)
+
+inline val AnimationEvent.Companion.ANIMATION_CANCEL: EventType<AnimationEvent>
+    get() = EventType("animationcancel")
+
+inline val AnimationEvent.Companion.ANIMATION_END: EventType<AnimationEvent>
+    get() = EventType("animationend")
+
+inline val AnimationEvent.Companion.ANIMATION_ITERATION: EventType<AnimationEvent>
+    get() = EventType("animationiteration")
+
+inline val AnimationEvent.Companion.ANIMATION_START: EventType<AnimationEvent>
+    get() = EventType("animationstart")

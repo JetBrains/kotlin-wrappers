@@ -4,7 +4,6 @@ package web.serviceworker
 
 import js.promise.Promise
 import js.reflect.unsafeCast
-import seskar.js.JsValue
 import web.events.Event
 import web.events.EventType
 import kotlin.js.definedExternally
@@ -25,14 +24,14 @@ open external class ExtendableEvent(
      */
     fun waitUntil(f: Promise<*>)
 
-    companion object {
-        @JsValue("activate")
-        val ACTIVATE: EventType<ExtendableEvent>
-
-        @JsValue("install")
-        val INSTALL: EventType<ExtendableEvent>
-    }
+    companion object
 }
 
 inline fun ExtendableEvent.asInit(): ExtendableEventInit =
     unsafeCast(this)
+
+inline val ExtendableEvent.Companion.ACTIVATE: EventType<ExtendableEvent>
+    get() = EventType("activate")
+
+inline val ExtendableEvent.Companion.INSTALL: EventType<ExtendableEvent>
+    get() = EventType("install")

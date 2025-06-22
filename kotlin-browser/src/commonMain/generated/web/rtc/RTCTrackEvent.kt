@@ -4,7 +4,6 @@ package web.rtc
 
 import js.array.ReadonlyArray
 import js.reflect.unsafeCast
-import seskar.js.JsValue
 import web.events.Event
 import web.events.EventType
 import web.mediastreams.MediaStream
@@ -47,11 +46,11 @@ open external class RTCTrackEvent(
      */
     val transceiver: RTCRtpTransceiver
 
-    companion object {
-        @JsValue("track")
-        val TRACK: EventType<RTCTrackEvent>
-    }
+    companion object
 }
 
 inline fun RTCTrackEvent.asInit(): RTCTrackEventInit =
     unsafeCast(this)
+
+inline val RTCTrackEvent.Companion.TRACK: EventType<RTCTrackEvent>
+    get() = EventType("track")

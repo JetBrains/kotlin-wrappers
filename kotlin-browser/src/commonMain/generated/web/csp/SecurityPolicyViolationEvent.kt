@@ -3,7 +3,6 @@
 package web.csp
 
 import js.reflect.unsafeCast
-import seskar.js.JsValue
 import web.events.Event
 import web.events.EventType
 import kotlin.js.definedExternally
@@ -101,11 +100,11 @@ open external class SecurityPolicyViolationEvent(
      */
     val violatedDirective: String
 
-    companion object {
-        @JsValue("securitypolicyviolation")
-        val SECURITY_POLICY_VIOLATION: EventType<SecurityPolicyViolationEvent>
-    }
+    companion object
 }
 
 inline fun SecurityPolicyViolationEvent.asInit(): SecurityPolicyViolationEventInit =
     unsafeCast(this)
+
+inline val SecurityPolicyViolationEvent.Companion.SECURITY_POLICY_VIOLATION: EventType<SecurityPolicyViolationEvent>
+    get() = EventType("securitypolicyviolation")

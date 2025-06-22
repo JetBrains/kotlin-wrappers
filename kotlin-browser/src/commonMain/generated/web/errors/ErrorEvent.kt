@@ -4,7 +4,6 @@ package web.errors
 
 import js.core.JsAny
 import js.reflect.unsafeCast
-import seskar.js.JsValue
 import web.events.Event
 import web.events.EventType
 import kotlin.js.definedExternally
@@ -53,14 +52,14 @@ open external class ErrorEvent(
      */
     val message: String
 
-    companion object {
-        @JsValue("error")
-        val ERROR: EventType<ErrorEvent>
-
-        @JsValue("processorerror")
-        val PROCESSOR_ERROR: EventType<ErrorEvent>
-    }
+    companion object
 }
 
 inline fun ErrorEvent.asInit(): ErrorEventInit =
     unsafeCast(this)
+
+inline val ErrorEvent.Companion.ERROR: EventType<ErrorEvent>
+    get() = EventType("error")
+
+inline val ErrorEvent.Companion.PROCESSOR_ERROR: EventType<ErrorEvent>
+    get() = EventType("processorerror")
