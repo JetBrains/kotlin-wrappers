@@ -72,5 +72,5 @@ private constructor() :
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AbortSignal/abort_event)
  */
-inline val <C : AbortSignal> C.abortEvent: EventInstance<Event, C, C>
+inline val AbortSignal.abortEvent: EventInstance<Event, AbortSignal, AbortSignal>
     get() = EventInstance(this, "abort")

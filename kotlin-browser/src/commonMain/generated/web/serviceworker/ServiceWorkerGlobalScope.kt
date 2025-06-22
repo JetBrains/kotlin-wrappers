@@ -119,41 +119,41 @@ private constructor() :
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope/activate_event)
  */
-inline val <C : ServiceWorkerGlobalScope> C.activateEvent: EventInstance<ExtendableEvent, C, C>
+inline val ServiceWorkerGlobalScope.activateEvent: EventInstance<ExtendableEvent, ServiceWorkerGlobalScope, ServiceWorkerGlobalScope>
     get() = EventInstance(this, "activate")
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope/fetch_event)
  */
-inline val <C : ServiceWorkerGlobalScope> C.fetchEvent: EventInstance<FetchEvent, C, C>
+inline val ServiceWorkerGlobalScope.fetchEvent: EventInstance<FetchEvent, ServiceWorkerGlobalScope, ServiceWorkerGlobalScope>
     get() = EventInstance(this, "fetch")
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope/message_event)
  */
-inline val <C : ServiceWorkerGlobalScope> C.messageEvent: EventInstance<ExtendableMessageEvent, C, C>
+inline val ServiceWorkerGlobalScope.messageEvent: EventInstance<ExtendableMessageEvent, ServiceWorkerGlobalScope, ServiceWorkerGlobalScope>
     get() = EventInstance(this, "message")
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope/messageerror_event)
  */
-inline val <C : ServiceWorkerGlobalScope> C.messageErrorEvent: EventInstance<MessageEvent<JsAny?>, C, C>
+inline val ServiceWorkerGlobalScope.messageErrorEvent: EventInstance<MessageEvent<JsAny?>, ServiceWorkerGlobalScope, ServiceWorkerGlobalScope>
     get() = EventInstance(this, "messageerror")
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope/notificationclick_event)
  */
-inline val <C : ServiceWorkerGlobalScope> C.notificationClickEvent: EventInstance<NotificationEvent, C, C>
+inline val ServiceWorkerGlobalScope.notificationClickEvent: EventInstance<NotificationEvent, ServiceWorkerGlobalScope, ServiceWorkerGlobalScope>
     get() = EventInstance(this, "notificationclick")
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope/notificationclose_event)
  */
-inline val <C : ServiceWorkerGlobalScope> C.notificationCloseEvent: EventInstance<NotificationEvent, C, C>
+inline val ServiceWorkerGlobalScope.notificationCloseEvent: EventInstance<NotificationEvent, ServiceWorkerGlobalScope, ServiceWorkerGlobalScope>
     get() = EventInstance(this, "notificationclose")
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope/push_event)
  */
-inline val <C : ServiceWorkerGlobalScope> C.pushEvent: EventInstance<PushEvent, C, C>
+inline val ServiceWorkerGlobalScope.pushEvent: EventInstance<PushEvent, ServiceWorkerGlobalScope, ServiceWorkerGlobalScope>
     get() = EventInstance(this, "push")

@@ -49,5 +49,5 @@ private constructor() :
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDTMFSender/tonechange_event)
  */
-inline val <C : RTCDTMFSender> C.toneChangeEvent: EventInstance<RTCDTMFToneChangeEvent, C, C>
+inline val RTCDTMFSender.toneChangeEvent: EventInstance<RTCDTMFToneChangeEvent, RTCDTMFSender, RTCDTMFSender>
     get() = EventInstance(this, "tonechange")

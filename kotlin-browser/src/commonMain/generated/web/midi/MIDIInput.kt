@@ -23,5 +23,5 @@ private constructor() :
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MIDIInput/midimessage_event)
  */
-inline val <C : MIDIInput> C.midiMessageEvent: EventInstance<MIDIMessageEvent, C, C>
+inline val MIDIInput.midiMessageEvent: EventInstance<MIDIMessageEvent, MIDIInput, MIDIInput>
     get() = EventInstance(this, "midimessage")

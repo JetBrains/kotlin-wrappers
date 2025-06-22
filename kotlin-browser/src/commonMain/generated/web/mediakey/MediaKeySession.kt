@@ -131,11 +131,11 @@ private constructor() :
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeySession/keystatuseschange_event)
  */
-inline val <C : MediaKeySession> C.keyStatusesChangeEvent: EventInstance<Event, C, C>
+inline val MediaKeySession.keyStatusesChangeEvent: EventInstance<Event, MediaKeySession, MediaKeySession>
     get() = EventInstance(this, "keystatuseschange")
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeySession/message_event)
  */
-inline val <C : MediaKeySession> C.messageEvent: EventInstance<MediaKeyMessageEvent, C, C>
+inline val MediaKeySession.messageEvent: EventInstance<MediaKeyMessageEvent, MediaKeySession, MediaKeySession>
     get() = EventInstance(this, "message")

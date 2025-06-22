@@ -38,5 +38,5 @@ private constructor() :
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SharedWorkerGlobalScope/connect_event)
  */
-inline val <C : SharedWorkerGlobalScope> C.connectEvent: EventInstance<MessageEvent<JsAny?>, C, C>
+inline val SharedWorkerGlobalScope.connectEvent: EventInstance<MessageEvent<JsAny?>, SharedWorkerGlobalScope, SharedWorkerGlobalScope>
     get() = EventInstance(this, "connect")

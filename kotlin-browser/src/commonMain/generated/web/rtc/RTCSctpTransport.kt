@@ -52,5 +52,5 @@ private constructor() :
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCSctpTransport/statechange_event)
  */
-inline val <C : RTCSctpTransport> C.stateChangeEvent: EventInstance<Event, C, C>
+inline val RTCSctpTransport.stateChangeEvent: EventInstance<Event, RTCSctpTransport, RTCSctpTransport>
     get() = EventInstance(this, "statechange")

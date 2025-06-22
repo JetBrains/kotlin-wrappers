@@ -45,5 +45,5 @@ private constructor() :
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ScreenOrientation/change_event)
  */
-inline val <C : ScreenOrientation> C.changeEvent: EventInstance<Event, C, C>
+inline val ScreenOrientation.changeEvent: EventInstance<Event, ScreenOrientation, ScreenOrientation>
     get() = EventInstance(this, "change")

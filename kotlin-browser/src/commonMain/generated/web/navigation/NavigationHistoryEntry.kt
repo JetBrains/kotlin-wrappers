@@ -68,5 +68,5 @@ private constructor() :
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigationHistoryEntry/dispose_event)
  */
-inline val <C : NavigationHistoryEntry> C.disposeEvent: EventInstance<Event, C, C>
+inline val NavigationHistoryEntry.disposeEvent: EventInstance<Event, NavigationHistoryEntry, NavigationHistoryEntry>
     get() = EventInstance(this, "dispose")

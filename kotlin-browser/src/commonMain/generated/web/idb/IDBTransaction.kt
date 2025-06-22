@@ -92,17 +92,17 @@ private constructor() :
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBTransaction/abort_event)
  */
-inline val <C : IDBTransaction> C.abortEvent: EventInstance<Event, C, IDBDatabase>
+inline val IDBTransaction.abortEvent: EventInstance<Event, IDBTransaction, IDBDatabase>
     get() = EventInstance(this, "abort")
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBTransaction/complete_event)
  */
-inline val <C : IDBTransaction> C.completeEvent: EventInstance<Event, C, C>
+inline val IDBTransaction.completeEvent: EventInstance<Event, IDBTransaction, IDBTransaction>
     get() = EventInstance(this, "complete")
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBTransaction/error_event)
  */
-inline val <C : IDBTransaction> C.errorEvent: EventInstance<Event, C, IDBTransaction>
+inline val IDBTransaction.errorEvent: EventInstance<Event, IDBTransaction, IDBTransaction>
     get() = EventInstance(this, "error")

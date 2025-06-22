@@ -55,17 +55,17 @@ private constructor() :
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MessagePort/close_event)
  */
-inline val <C : MessagePort> C.closeEvent: EventInstance<Event, C, C>
+inline val MessagePort.closeEvent: EventInstance<Event, MessagePort, MessagePort>
     get() = EventInstance(this, "close")
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MessagePort/message_event)
  */
-inline val <C : MessagePort> C.messageEvent: EventInstance<MessageEvent<JsAny?>, C, C>
+inline val MessagePort.messageEvent: EventInstance<MessageEvent<JsAny?>, MessagePort, MessagePort>
     get() = EventInstance(this, "message")
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MessagePort/messageerror_event)
  */
-inline val <C : MessagePort> C.messageErrorEvent: EventInstance<MessageEvent<JsAny?>, C, C>
+inline val MessagePort.messageErrorEvent: EventInstance<MessageEvent<JsAny?>, MessagePort, MessagePort>
     get() = EventInstance(this, "messageerror")

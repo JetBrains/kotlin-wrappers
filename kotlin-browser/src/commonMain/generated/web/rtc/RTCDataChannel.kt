@@ -151,35 +151,35 @@ private constructor() :
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDataChannel/bufferedamountlow_event)
  */
-inline val <C : RTCDataChannel> C.bufferedAmountLowEvent: EventInstance<Event, C, C>
+inline val RTCDataChannel.bufferedAmountLowEvent: EventInstance<Event, RTCDataChannel, RTCDataChannel>
     get() = EventInstance(this, "bufferedamountlow")
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDataChannel/close_event)
  */
-inline val <C : RTCDataChannel> C.closeEvent: EventInstance<Event, C, C>
+inline val RTCDataChannel.closeEvent: EventInstance<Event, RTCDataChannel, RTCDataChannel>
     get() = EventInstance(this, "close")
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDataChannel/closing_event)
  */
-inline val <C : RTCDataChannel> C.closingEvent: EventInstance<Event, C, C>
+inline val RTCDataChannel.closingEvent: EventInstance<Event, RTCDataChannel, RTCDataChannel>
     get() = EventInstance(this, "closing")
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDataChannel/error_event)
  */
-inline val <C : RTCDataChannel> C.errorEvent: EventInstance<RTCErrorEvent, C, C>
+inline val RTCDataChannel.errorEvent: EventInstance<RTCErrorEvent, RTCDataChannel, RTCDataChannel>
     get() = EventInstance(this, "error")
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDataChannel/message_event)
  */
-inline val <C : RTCDataChannel> C.messageEvent: EventInstance<MessageEvent<JsAny?>, C, C>
+inline val RTCDataChannel.messageEvent: EventInstance<MessageEvent<JsAny?>, RTCDataChannel, RTCDataChannel>
     get() = EventInstance(this, "message")
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDataChannel/open_event)
  */
-inline val <C : RTCDataChannel> C.openEvent: EventInstance<Event, C, C>
+inline val RTCDataChannel.openEvent: EventInstance<Event, RTCDataChannel, RTCDataChannel>
     get() = EventInstance(this, "open")

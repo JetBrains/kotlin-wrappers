@@ -38,5 +38,5 @@ private constructor() :
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PictureInPictureWindow/resize_event)
  */
-inline val <C : PictureInPictureWindow> C.resizeEvent: EventInstance<Event, C, C>
+inline val PictureInPictureWindow.resizeEvent: EventInstance<Event, PictureInPictureWindow, PictureInPictureWindow>
     get() = EventInstance(this, "resize")

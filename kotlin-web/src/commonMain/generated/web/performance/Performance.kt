@@ -134,5 +134,5 @@ private constructor() :
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Performance/resourcetimingbufferfull_event)
  */
-inline val <C : Performance> C.resourceTimingBufferFullEvent: EventInstance<Event, C, C>
+inline val Performance.resourceTimingBufferFullEvent: EventInstance<Event, Performance, Performance>
     get() = EventInstance(this, "resourcetimingbufferfull")

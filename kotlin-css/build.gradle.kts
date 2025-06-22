@@ -8,14 +8,9 @@ plugins {
 }
 
 kotlin {
-    jvmToolchain(11) // Do not change!
     jvm()
     js()
     wasmJs()
-
-    iosArm64()
-    iosSimulatorArm64()
-    iosX64()
 
     // Sets the device ID for iosSimulatorArm64Test
     targets.withType<KotlinNativeTargetWithSimulatorTests> {

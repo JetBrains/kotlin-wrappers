@@ -81,5 +81,5 @@ private constructor() :
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechSynthesis/voiceschanged_event)
  */
-inline val <C : SpeechSynthesis> C.voicesChangedEvent: EventInstance<Event, C, C>
+inline val SpeechSynthesis.voicesChangedEvent: EventInstance<Event, SpeechSynthesis, SpeechSynthesis>
     get() = EventInstance(this, "voiceschanged")

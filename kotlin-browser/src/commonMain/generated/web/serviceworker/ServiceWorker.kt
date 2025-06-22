@@ -63,11 +63,11 @@ private constructor() :
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorker/error_event)
  */
-inline val <C : ServiceWorker> C.errorEvent: EventInstance<Event, C, C>
+inline val ServiceWorker.errorEvent: EventInstance<Event, ServiceWorker, ServiceWorker>
     get() = EventInstance(this, "error")
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorker/statechange_event)
  */
-inline val <C : ServiceWorker> C.stateChangeEvent: EventInstance<Event, C, C>
+inline val ServiceWorker.stateChangeEvent: EventInstance<Event, ServiceWorker, ServiceWorker>
     get() = EventInstance(this, "statechange")

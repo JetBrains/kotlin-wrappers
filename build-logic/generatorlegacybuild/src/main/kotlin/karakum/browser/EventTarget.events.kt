@@ -18,8 +18,9 @@ internal fun List<ConversionResult>.withEventInstances(
                 .getOrDefault(data.type, data.type)
                 .snakeToCamel()
 
-            val receiver = "C"
+            val receiver = if ("open external" in declaration.body) "C" else name
             val typeParameters = when {
+                receiver != "C" -> ""
                 name == "IDBRequest" -> "<C : $name<*>>"
                 else -> "<C : $name>"
             }
@@ -27,7 +28,7 @@ internal fun List<ConversionResult>.withEventInstances(
             val targetType = EventDataRegistry.getTarget(
                 currentTarget = name,
                 eventType = data.type,
-                defaultTarget = "C",
+                defaultTarget = receiver,
             )
 
             val eventType = when (val eventClass = data.`interface`) {

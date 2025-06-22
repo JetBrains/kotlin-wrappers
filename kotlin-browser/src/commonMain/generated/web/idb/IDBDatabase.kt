@@ -98,23 +98,23 @@ private constructor() :
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBDatabase/abort_event)
  */
-inline val <C : IDBDatabase> C.abortEvent: EventInstance<Event, C, IDBDatabase>
+inline val IDBDatabase.abortEvent: EventInstance<Event, IDBDatabase, IDBDatabase>
     get() = EventInstance(this, "abort")
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBDatabase/close_event)
  */
-inline val <C : IDBDatabase> C.closeEvent: EventInstance<Event, C, C>
+inline val IDBDatabase.closeEvent: EventInstance<Event, IDBDatabase, IDBDatabase>
     get() = EventInstance(this, "close")
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBDatabase/error_event)
  */
-inline val <C : IDBDatabase> C.errorEvent: EventInstance<Event, C, IDBTransaction>
+inline val IDBDatabase.errorEvent: EventInstance<Event, IDBDatabase, IDBTransaction>
     get() = EventInstance(this, "error")
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBDatabase/versionchange_event)
  */
-inline val <C : IDBDatabase> C.versionChangeEvent: EventInstance<IDBVersionChangeEvent, C, C>
+inline val IDBDatabase.versionChangeEvent: EventInstance<IDBVersionChangeEvent, IDBDatabase, IDBDatabase>
     get() = EventInstance(this, "versionchange")

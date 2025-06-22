@@ -83,17 +83,17 @@ private constructor() :
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RemotePlayback/connect_event)
  */
-inline val <C : RemotePlayback> C.connectEvent: EventInstance<Event, C, C>
+inline val RemotePlayback.connectEvent: EventInstance<Event, RemotePlayback, RemotePlayback>
     get() = EventInstance(this, "connect")
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RemotePlayback/connecting_event)
  */
-inline val <C : RemotePlayback> C.connectingEvent: EventInstance<Event, C, C>
+inline val RemotePlayback.connectingEvent: EventInstance<Event, RemotePlayback, RemotePlayback>
     get() = EventInstance(this, "connecting")
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RemotePlayback/disconnect_event)
  */
-inline val <C : RemotePlayback> C.disconnectEvent: EventInstance<Event, C, C>
+inline val RemotePlayback.disconnectEvent: EventInstance<Event, RemotePlayback, RemotePlayback>
     get() = EventInstance(this, "disconnect")

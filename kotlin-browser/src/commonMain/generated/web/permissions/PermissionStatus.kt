@@ -38,5 +38,5 @@ private constructor() :
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PermissionStatus/change_event)
  */
-inline val <C : PermissionStatus> C.changeEvent: EventInstance<Event, C, C>
+inline val PermissionStatus.changeEvent: EventInstance<Event, PermissionStatus, PermissionStatus>
     get() = EventInstance(this, "change")

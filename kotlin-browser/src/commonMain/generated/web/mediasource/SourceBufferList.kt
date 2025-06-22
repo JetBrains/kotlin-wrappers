@@ -32,11 +32,11 @@ private constructor() :
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SourceBufferList/addsourcebuffer_event)
  */
-inline val <C : SourceBufferList> C.addSourceBufferEvent: EventInstance<Event, C, C>
+inline val SourceBufferList.addSourceBufferEvent: EventInstance<Event, SourceBufferList, SourceBufferList>
     get() = EventInstance(this, "addsourcebuffer")
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SourceBufferList/removesourcebuffer_event)
  */
-inline val <C : SourceBufferList> C.removeSourceBufferEvent: EventInstance<Event, C, C>
+inline val SourceBufferList.removeSourceBufferEvent: EventInstance<Event, SourceBufferList, SourceBufferList>
     get() = EventInstance(this, "removesourcebuffer")

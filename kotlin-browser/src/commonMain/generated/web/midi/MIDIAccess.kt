@@ -45,5 +45,5 @@ private constructor() :
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MIDIAccess/statechange_event)
  */
-inline val <C : MIDIAccess> C.stateChangeEvent: EventInstance<MIDIConnectionEvent, C, C>
+inline val MIDIAccess.stateChangeEvent: EventInstance<MIDIConnectionEvent, MIDIAccess, MIDIAccess>
     get() = EventInstance(this, "statechange")

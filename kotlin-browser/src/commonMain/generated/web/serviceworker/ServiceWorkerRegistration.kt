@@ -146,5 +146,5 @@ private constructor() :
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/updatefound_event)
  */
-inline val <C : ServiceWorkerRegistration> C.updateFoundEvent: EventInstance<Event, C, C>
+inline val ServiceWorkerRegistration.updateFoundEvent: EventInstance<Event, ServiceWorkerRegistration, ServiceWorkerRegistration>
     get() = EventInstance(this, "updatefound")

@@ -111,5 +111,5 @@ private constructor() :
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CookieStore/change_event)
  */
-inline val <C : CookieStore> C.changeEvent: EventInstance<CookieChangeEvent, C, C>
+inline val CookieStore.changeEvent: EventInstance<CookieChangeEvent, CookieStore, CookieStore>
     get() = EventInstance(this, "change")

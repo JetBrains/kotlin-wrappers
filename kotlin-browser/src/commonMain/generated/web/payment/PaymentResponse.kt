@@ -117,5 +117,5 @@ private constructor() :
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentResponse/payerdetailchange_event)
  */
-inline val <C : PaymentResponse> C.payerDetailChangeEvent: EventInstance<PaymentRequestUpdateEvent, C, C>
+inline val PaymentResponse.payerDetailChangeEvent: EventInstance<PaymentRequestUpdateEvent, PaymentResponse, PaymentResponse>
     get() = EventInstance(this, "payerdetailchange")

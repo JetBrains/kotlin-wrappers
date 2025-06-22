@@ -42,11 +42,11 @@ private constructor() :
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDtlsTransport/error_event)
  */
-inline val <C : RTCDtlsTransport> C.errorEvent: EventInstance<RTCErrorEvent, C, C>
+inline val RTCDtlsTransport.errorEvent: EventInstance<RTCErrorEvent, RTCDtlsTransport, RTCDtlsTransport>
     get() = EventInstance(this, "error")
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDtlsTransport/statechange_event)
  */
-inline val <C : RTCDtlsTransport> C.stateChangeEvent: EventInstance<Event, C, C>
+inline val RTCDtlsTransport.stateChangeEvent: EventInstance<Event, RTCDtlsTransport, RTCDtlsTransport>
     get() = EventInstance(this, "statechange")

@@ -147,5 +147,5 @@ private constructor() :
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUDevice/uncapturederror_event)
  */
-inline val <C : GPUDevice> C.uncapturedErrorEvent: EventInstance<GPUUncapturedErrorEvent, C, C>
+inline val GPUDevice.uncapturedErrorEvent: EventInstance<GPUUncapturedErrorEvent, GPUDevice, GPUDevice>
     get() = EventInstance(this, "uncapturederror")
