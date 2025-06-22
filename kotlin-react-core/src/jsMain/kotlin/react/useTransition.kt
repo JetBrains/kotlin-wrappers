@@ -1,5 +1,7 @@
 package react
 
+import js.array.component1
+import js.array.component2
 import js.array.tupleOf
 import react.internal.isolatedVoidPromise
 import react.raw.useTransitionRaw

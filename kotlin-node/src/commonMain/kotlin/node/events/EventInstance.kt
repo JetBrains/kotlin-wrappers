@@ -2,6 +2,7 @@ package node.events
 
 import js.array.Tuple
 import js.array.Tuple1
+import js.array.asArray
 import js.coroutines.internal.internalSubscribeJob
 import js.function.JsFunction
 import js.function.invoke

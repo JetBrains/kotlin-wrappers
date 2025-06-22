@@ -1,5 +1,7 @@
 package react.use
 
+import js.array.component1
+import js.array.component2
 import js.core.Void
 import js.reflect.unsafeCast
 import react.useReducer
