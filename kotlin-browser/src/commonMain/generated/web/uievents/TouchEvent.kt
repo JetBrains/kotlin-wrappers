@@ -4,6 +4,7 @@ package web.uievents
 
 import js.reflect.unsafeCast
 import web.events.EventType
+import kotlin.js.JsName
 import kotlin.js.definedExternally
 
 /**
@@ -11,6 +12,7 @@ import kotlin.js.definedExternally
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TouchEvent)
  */
+@JsName("globalThis.TouchEvent")
 open external class TouchEvent(
     override val type: EventType<TouchEvent>,
     init: TouchEventInit = definedExternally,
