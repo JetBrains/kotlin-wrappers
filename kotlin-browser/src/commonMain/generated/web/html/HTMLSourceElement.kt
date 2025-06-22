@@ -5,7 +5,6 @@ package web.html
 import web.cssom.MediaQuery
 import web.events.Event
 import web.events.EventInstance
-import web.events.JsEvent
 
 /**
  * The **`HTMLSourceElement`** interface provides special properties (beyond the regular HTMLElement object interface it also has available to it by inheritance) for manipulating source elements.
@@ -63,10 +62,10 @@ protected constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSourceElement/width)
      */
     var width: Int
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSourceElement/error_event)
-     */
-    @JsEvent("error")
-    override val errorEvent: EventInstance<Event, HTMLSourceElement /* this */, HTMLSourceElement /* this */>
 }
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSourceElement/error_event)
+ */
+inline val <C : HTMLSourceElement> C.errorEvent: EventInstance<Event, C, C>
+    get() = EventInstance(this, "error")

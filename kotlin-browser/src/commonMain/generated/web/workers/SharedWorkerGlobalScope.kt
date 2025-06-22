@@ -5,7 +5,6 @@ package web.workers
 import js.core.JsAny
 import web.events.EventHandler
 import web.events.EventInstance
-import web.events.JsEvent
 import web.messaging.MessageEvent
 
 /**
@@ -34,10 +33,10 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SharedWorkerGlobalScope/close)
      */
     fun close()
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SharedWorkerGlobalScope/connect_event)
-     */
-    @JsEvent("connect")
-    val connectEvent: EventInstance<MessageEvent<JsAny?>, SharedWorkerGlobalScope /* this */, SharedWorkerGlobalScope /* this */>
 }
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SharedWorkerGlobalScope/connect_event)
+ */
+inline val <C : SharedWorkerGlobalScope> C.connectEvent: EventInstance<MessageEvent<JsAny?>, C, C>
+    get() = EventInstance(this, "connect")

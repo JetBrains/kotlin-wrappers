@@ -5,7 +5,6 @@ package web.speech
 import web.events.EventHandler
 import web.events.EventInstance
 import web.events.EventTarget
-import web.events.JsEvent
 import kotlin.js.definedExternally
 
 /**
@@ -90,46 +89,46 @@ open external class SpeechSynthesisUtterance(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechSynthesisUtterance/volume)
      */
     var volume: Float
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechSynthesisUtterance/boundary_event)
-     */
-    @JsEvent("boundary")
-    val boundaryEvent: EventInstance<SpeechSynthesisEvent, SpeechSynthesisUtterance /* this */, SpeechSynthesisUtterance /* this */>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechSynthesisUtterance/end_event)
-     */
-    @JsEvent("end")
-    val endEvent: EventInstance<SpeechSynthesisEvent, SpeechSynthesisUtterance /* this */, SpeechSynthesisUtterance /* this */>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechSynthesisUtterance/error_event)
-     */
-    @JsEvent("error")
-    val errorEvent: EventInstance<SpeechSynthesisErrorEvent, SpeechSynthesisUtterance /* this */, SpeechSynthesisUtterance /* this */>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechSynthesisUtterance/mark_event)
-     */
-    @JsEvent("mark")
-    val markEvent: EventInstance<SpeechSynthesisEvent, SpeechSynthesisUtterance /* this */, SpeechSynthesisUtterance /* this */>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechSynthesisUtterance/pause_event)
-     */
-    @JsEvent("pause")
-    val pauseEvent: EventInstance<SpeechSynthesisEvent, SpeechSynthesisUtterance /* this */, SpeechSynthesisUtterance /* this */>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechSynthesisUtterance/resume_event)
-     */
-    @JsEvent("resume")
-    val resumeEvent: EventInstance<SpeechSynthesisEvent, SpeechSynthesisUtterance /* this */, SpeechSynthesisUtterance /* this */>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechSynthesisUtterance/start_event)
-     */
-    @JsEvent("start")
-    val startEvent: EventInstance<SpeechSynthesisEvent, SpeechSynthesisUtterance /* this */, SpeechSynthesisUtterance /* this */>
 }
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechSynthesisUtterance/boundary_event)
+ */
+inline val <C : SpeechSynthesisUtterance> C.boundaryEvent: EventInstance<SpeechSynthesisEvent, C, C>
+    get() = EventInstance(this, "boundary")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechSynthesisUtterance/end_event)
+ */
+inline val <C : SpeechSynthesisUtterance> C.endEvent: EventInstance<SpeechSynthesisEvent, C, C>
+    get() = EventInstance(this, "end")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechSynthesisUtterance/error_event)
+ */
+inline val <C : SpeechSynthesisUtterance> C.errorEvent: EventInstance<SpeechSynthesisErrorEvent, C, C>
+    get() = EventInstance(this, "error")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechSynthesisUtterance/mark_event)
+ */
+inline val <C : SpeechSynthesisUtterance> C.markEvent: EventInstance<SpeechSynthesisEvent, C, C>
+    get() = EventInstance(this, "mark")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechSynthesisUtterance/pause_event)
+ */
+inline val <C : SpeechSynthesisUtterance> C.pauseEvent: EventInstance<SpeechSynthesisEvent, C, C>
+    get() = EventInstance(this, "pause")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechSynthesisUtterance/resume_event)
+ */
+inline val <C : SpeechSynthesisUtterance> C.resumeEvent: EventInstance<SpeechSynthesisEvent, C, C>
+    get() = EventInstance(this, "resume")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechSynthesisUtterance/start_event)
+ */
+inline val <C : SpeechSynthesisUtterance> C.startEvent: EventInstance<SpeechSynthesisEvent, C, C>
+    get() = EventInstance(this, "start")

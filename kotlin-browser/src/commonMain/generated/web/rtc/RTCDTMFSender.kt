@@ -5,7 +5,6 @@ package web.rtc
 import web.events.EventHandler
 import web.events.EventInstance
 import web.events.EventTarget
-import web.events.JsEvent
 import kotlin.js.definedExternally
 
 /**
@@ -45,10 +44,10 @@ private constructor() :
         duration: Int = definedExternally,
         interToneGap: Int = definedExternally,
     )
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDTMFSender/tonechange_event)
-     */
-    @JsEvent("tonechange")
-    val toneChangeEvent: EventInstance<RTCDTMFToneChangeEvent, RTCDTMFSender /* this */, RTCDTMFSender /* this */>
 }
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDTMFSender/tonechange_event)
+ */
+inline val <C : RTCDTMFSender> C.toneChangeEvent: EventInstance<RTCDTMFToneChangeEvent, C, C>
+    get() = EventInstance(this, "tonechange")

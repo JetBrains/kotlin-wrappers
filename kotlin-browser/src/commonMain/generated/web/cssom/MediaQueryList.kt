@@ -5,7 +5,6 @@ package web.cssom
 import web.events.EventHandler
 import web.events.EventInstance
 import web.events.EventTarget
-import web.events.JsEvent
 
 /**
  * A **`MediaQueryList`** object stores information on a media query applied to a document, with support for both immediate and event-driven matching against the state of the document.
@@ -33,10 +32,10 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaQueryList/change_event)
      */
     var onchange: EventHandler<MediaQueryListEvent, MediaQueryList, MediaQueryList>?
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaQueryList/change_event)
-     */
-    @JsEvent("change")
-    val changeEvent: EventInstance<MediaQueryListEvent, MediaQueryList /* this */, MediaQueryList /* this */>
 }
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaQueryList/change_event)
+ */
+inline val <C : MediaQueryList> C.changeEvent: EventInstance<MediaQueryListEvent, C, C>
+    get() = EventInstance(this, "change")

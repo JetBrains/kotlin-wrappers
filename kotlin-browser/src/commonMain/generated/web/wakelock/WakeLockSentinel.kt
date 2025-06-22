@@ -5,7 +5,10 @@ package web.wakelock
 import js.core.Void
 import js.promise.Promise
 import seskar.js.JsAsync
-import web.events.*
+import web.events.Event
+import web.events.EventHandler
+import web.events.EventInstance
+import web.events.EventTarget
 import kotlin.js.JsName
 
 /**
@@ -47,10 +50,10 @@ private constructor() :
 
     @JsName("release")
     fun releaseAsync(): Promise<Void>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WakeLockSentinel/release_event)
-     */
-    @JsEvent("release")
-    val releaseEvent: EventInstance<Event, WakeLockSentinel /* this */, WakeLockSentinel /* this */>
 }
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WakeLockSentinel/release_event)
+ */
+inline val <C : WakeLockSentinel> C.releaseEvent: EventInstance<Event, C, C>
+    get() = EventInstance(this, "release")

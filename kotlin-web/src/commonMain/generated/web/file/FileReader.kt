@@ -5,7 +5,10 @@ package web.file
 import js.core.JsAny
 import web.blob.Blob
 import web.errors.DOMException
-import web.events.*
+import web.events.EventHandler
+import web.events.EventInstance
+import web.events.EventTarget
+import web.events.ProgressEvent
 import kotlin.js.definedExternally
 
 /**
@@ -101,42 +104,6 @@ open external class FileReader :
     val LOADING: ReadyState
     val DONE: ReadyState
 
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileReader/abort_event)
-     */
-    @JsEvent("abort")
-    val abortEvent: EventInstance<ProgressEvent, FileReader /* this */, FileReader /* this */>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileReader/error_event)
-     */
-    @JsEvent("error")
-    val errorEvent: EventInstance<ProgressEvent, FileReader /* this */, FileReader /* this */>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileReader/load_event)
-     */
-    @JsEvent("load")
-    val loadEvent: EventInstance<ProgressEvent, FileReader /* this */, FileReader /* this */>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileReader/loadend_event)
-     */
-    @JsEvent("loadend")
-    val loadEndEvent: EventInstance<ProgressEvent, FileReader /* this */, FileReader /* this */>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileReader/loadstart_event)
-     */
-    @JsEvent("loadstart")
-    val loadStartEvent: EventInstance<ProgressEvent, FileReader /* this */, FileReader /* this */>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileReader/progress_event)
-     */
-    @JsEvent("progress")
-    val progressEvent: EventInstance<ProgressEvent, FileReader /* this */, FileReader /* this */>
-
     companion object {
         val EMPTY: ReadyState
         val LOADING: ReadyState
@@ -145,3 +112,39 @@ open external class FileReader :
 
     sealed interface ReadyState
 }
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileReader/abort_event)
+ */
+inline val <C : FileReader> C.abortEvent: EventInstance<ProgressEvent, C, C>
+    get() = EventInstance(this, "abort")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileReader/error_event)
+ */
+inline val <C : FileReader> C.errorEvent: EventInstance<ProgressEvent, C, C>
+    get() = EventInstance(this, "error")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileReader/load_event)
+ */
+inline val <C : FileReader> C.loadEvent: EventInstance<ProgressEvent, C, C>
+    get() = EventInstance(this, "load")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileReader/loadend_event)
+ */
+inline val <C : FileReader> C.loadEndEvent: EventInstance<ProgressEvent, C, C>
+    get() = EventInstance(this, "loadend")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileReader/loadstart_event)
+ */
+inline val <C : FileReader> C.loadStartEvent: EventInstance<ProgressEvent, C, C>
+    get() = EventInstance(this, "loadstart")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileReader/progress_event)
+ */
+inline val <C : FileReader> C.progressEvent: EventInstance<ProgressEvent, C, C>
+    get() = EventInstance(this, "progress")

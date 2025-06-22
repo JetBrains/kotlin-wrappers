@@ -6,7 +6,6 @@ import js.array.ReadonlyArray
 import web.events.EventHandler
 import web.events.EventInstance
 import web.events.EventTarget
-import web.events.JsEvent
 
 /**
  * The **`MediaStream`** interface of the Media Capture and Streams API represents a stream of media content.
@@ -90,16 +89,16 @@ open external class MediaStream() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStream/removeTrack)
      */
     fun removeTrack(track: MediaStreamTrack)
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStream/addtrack_event)
-     */
-    @JsEvent("addtrack")
-    val addTrackEvent: EventInstance<MediaStreamTrackEvent, MediaStream /* this */, MediaStream /* this */>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStream/removetrack_event)
-     */
-    @JsEvent("removetrack")
-    val removeTrackEvent: EventInstance<MediaStreamTrackEvent, MediaStream /* this */, MediaStream /* this */>
 }
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStream/addtrack_event)
+ */
+inline val <C : MediaStream> C.addTrackEvent: EventInstance<MediaStreamTrackEvent, C, C>
+    get() = EventInstance(this, "addtrack")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStream/removetrack_event)
+ */
+inline val <C : MediaStream> C.removeTrackEvent: EventInstance<MediaStreamTrackEvent, C, C>
+    get() = EventInstance(this, "removetrack")

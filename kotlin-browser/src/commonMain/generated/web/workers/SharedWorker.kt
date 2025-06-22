@@ -5,7 +5,6 @@ package web.workers
 import web.events.Event
 import web.events.EventInstance
 import web.events.EventTarget
-import web.events.JsEvent
 import web.messaging.MessagePort
 import web.url.URL
 import kotlin.js.definedExternally
@@ -41,10 +40,10 @@ open external class SharedWorker(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SharedWorker/port)
      */
     val port: MessagePort
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SharedWorker/error_event)
-     */
-    @JsEvent("error")
-    val errorEvent: EventInstance<Event, SharedWorker /* this */, SharedWorker /* this */>
 }
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SharedWorker/error_event)
+ */
+inline val <C : SharedWorker> C.errorEvent: EventInstance<Event, C, C>
+    get() = EventInstance(this, "error")

@@ -150,7 +150,6 @@ private val DEFAULT_IMPORTS = Imports(
     "web.events.EventInstance",
     "web.events.EventTarget",
     "web.events.EventType",
-    "web.events.JsEvent",
     "web.events.ProgressEvent",
     "web.fedcm.NavigatorLogin",
     "web.file.File",

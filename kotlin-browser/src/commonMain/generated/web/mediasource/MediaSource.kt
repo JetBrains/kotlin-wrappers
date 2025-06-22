@@ -2,7 +2,10 @@
 
 package web.mediasource
 
-import web.events.*
+import web.events.Event
+import web.events.EventHandler
+import web.events.EventInstance
+import web.events.EventTarget
 import kotlin.js.definedExternally
 
 /**
@@ -81,24 +84,6 @@ open external class MediaSource :
         end: Double,
     )
 
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaSource/sourceclose_event)
-     */
-    @JsEvent("sourceclose")
-    val sourceCloseEvent: EventInstance<Event, MediaSource /* this */, MediaSource /* this */>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaSource/sourceended_event)
-     */
-    @JsEvent("sourceended")
-    val sourceEndedEvent: EventInstance<Event, MediaSource /* this */, MediaSource /* this */>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaSource/sourceopen_event)
-     */
-    @JsEvent("sourceopen")
-    val sourceOpenEvent: EventInstance<Event, MediaSource /* this */, MediaSource /* this */>
-
     companion object {
         /**
          * The **`canConstructInDedicatedWorker`** static property of the MediaSource interface returns `true` if `MediaSource` worker support is implemented, providing a low-latency feature detection mechanism.
@@ -115,3 +100,21 @@ open external class MediaSource :
         fun isTypeSupported(type: String): Boolean
     }
 }
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaSource/sourceclose_event)
+ */
+inline val <C : MediaSource> C.sourceCloseEvent: EventInstance<Event, C, C>
+    get() = EventInstance(this, "sourceclose")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaSource/sourceended_event)
+ */
+inline val <C : MediaSource> C.sourceEndedEvent: EventInstance<Event, C, C>
+    get() = EventInstance(this, "sourceended")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaSource/sourceopen_event)
+ */
+inline val <C : MediaSource> C.sourceOpenEvent: EventInstance<Event, C, C>
+    get() = EventInstance(this, "sourceopen")

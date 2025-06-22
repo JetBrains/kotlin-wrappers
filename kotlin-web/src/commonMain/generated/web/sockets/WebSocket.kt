@@ -9,7 +9,10 @@ import js.core.JsAny
 import js.core.JsString
 import js.core.UInt53
 import web.blob.Blob
-import web.events.*
+import web.events.Event
+import web.events.EventHandler
+import web.events.EventInstance
+import web.events.EventTarget
 import web.messaging.MessageEvent
 import web.url.URL
 import kotlin.js.definedExternally
@@ -120,30 +123,6 @@ open external class WebSocket(
     val CLOSING: ReadyState
     val CLOSED: ReadyState
 
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebSocket/close_event)
-     */
-    @JsEvent("close")
-    val closeEvent: EventInstance<CloseEvent, WebSocket /* this */, WebSocket /* this */>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebSocket/error_event)
-     */
-    @JsEvent("error")
-    val errorEvent: EventInstance<Event, WebSocket /* this */, WebSocket /* this */>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebSocket/message_event)
-     */
-    @JsEvent("message")
-    val messageEvent: EventInstance<MessageEvent<JsAny?>, WebSocket /* this */, WebSocket /* this */>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebSocket/open_event)
-     */
-    @JsEvent("open")
-    val openEvent: EventInstance<Event, WebSocket /* this */, WebSocket /* this */>
-
     companion object {
         val CONNECTING: ReadyState
         val OPEN: ReadyState
@@ -153,3 +132,27 @@ open external class WebSocket(
 
     sealed interface ReadyState
 }
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebSocket/close_event)
+ */
+inline val <C : WebSocket> C.closeEvent: EventInstance<CloseEvent, C, C>
+    get() = EventInstance(this, "close")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebSocket/error_event)
+ */
+inline val <C : WebSocket> C.errorEvent: EventInstance<Event, C, C>
+    get() = EventInstance(this, "error")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebSocket/message_event)
+ */
+inline val <C : WebSocket> C.messageEvent: EventInstance<MessageEvent<JsAny?>, C, C>
+    get() = EventInstance(this, "message")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebSocket/open_event)
+ */
+inline val <C : WebSocket> C.openEvent: EventInstance<Event, C, C>
+    get() = EventInstance(this, "open")

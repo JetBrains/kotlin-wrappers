@@ -2,7 +2,10 @@
 
 package web.rtc
 
-import web.events.*
+import web.events.Event
+import web.events.EventHandler
+import web.events.EventInstance
+import web.events.EventTarget
 
 /**
  * The **`RTCSctpTransport`** interface provides information which describes a Stream Control Transmission Protocol (**SCTP**) transport.
@@ -44,10 +47,10 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCSctpTransport/transport)
      */
     val transport: RTCDtlsTransport
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCSctpTransport/statechange_event)
-     */
-    @JsEvent("statechange")
-    val stateChangeEvent: EventInstance<Event, RTCSctpTransport /* this */, RTCSctpTransport /* this */>
 }
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCSctpTransport/statechange_event)
+ */
+inline val <C : RTCSctpTransport> C.stateChangeEvent: EventInstance<Event, C, C>
+    get() = EventInstance(this, "statechange")

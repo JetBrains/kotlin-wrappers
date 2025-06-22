@@ -3,7 +3,6 @@
 package web.html
 
 import web.events.EventInstance
-import web.events.JsEvent
 import web.popover.ToggleEvent
 
 /**
@@ -27,10 +26,10 @@ protected constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLDetailsElement/open)
      */
     var open: Boolean
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLDetailsElement/toggle_event)
-     */
-    @JsEvent("toggle")
-    val toggleEvent: EventInstance<ToggleEvent, HTMLDetailsElement /* this */, HTMLDetailsElement /* this */>
 }
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLDetailsElement/toggle_event)
+ */
+inline val <C : HTMLDetailsElement> C.toggleEvent: EventInstance<ToggleEvent, C, C>
+    get() = EventInstance(this, "toggle")

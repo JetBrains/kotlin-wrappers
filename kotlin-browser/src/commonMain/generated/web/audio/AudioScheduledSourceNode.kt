@@ -5,7 +5,6 @@ package web.audio
 import web.events.Event
 import web.events.EventHandler
 import web.events.EventInstance
-import web.events.JsEvent
 import kotlin.js.definedExternally
 
 /**
@@ -34,10 +33,10 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioScheduledSourceNode/stop)
      */
     fun stop(`when`: Double = definedExternally)
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioScheduledSourceNode/ended_event)
-     */
-    @JsEvent("ended")
-    val endedEvent: EventInstance<Event, AudioScheduledSourceNode /* this */, AudioScheduledSourceNode /* this */>
 }
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioScheduledSourceNode/ended_event)
+ */
+inline val <C : AudioScheduledSourceNode> C.endedEvent: EventInstance<Event, C, C>
+    get() = EventInstance(this, "ended")

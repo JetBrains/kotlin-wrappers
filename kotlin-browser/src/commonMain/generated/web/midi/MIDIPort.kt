@@ -7,7 +7,6 @@ import seskar.js.JsAsync
 import web.events.EventHandler
 import web.events.EventInstance
 import web.events.EventTarget
-import web.events.JsEvent
 import kotlin.js.JsName
 
 /**
@@ -96,10 +95,10 @@ private constructor() :
 
     @JsName("open")
     fun openAsync(): Promise<MIDIPort>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MIDIPort/statechange_event)
-     */
-    @JsEvent("statechange")
-    val stateChangeEvent: EventInstance<MIDIConnectionEvent, MIDIPort /* this */, MIDIPort /* this */>
 }
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MIDIPort/statechange_event)
+ */
+inline val <C : MIDIPort> C.stateChangeEvent: EventInstance<MIDIConnectionEvent, C, C>
+    get() = EventInstance(this, "statechange")

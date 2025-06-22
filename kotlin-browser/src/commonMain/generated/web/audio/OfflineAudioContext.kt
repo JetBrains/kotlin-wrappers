@@ -7,7 +7,6 @@ import js.promise.Promise
 import seskar.js.JsAsync
 import web.events.EventHandler
 import web.events.EventInstance
-import web.events.JsEvent
 import kotlin.js.JsName
 
 /**
@@ -71,10 +70,10 @@ open external class OfflineAudioContext(
 
     @JsName("suspend")
     fun suspendAsync(suspendTime: Double): Promise<Void>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OfflineAudioContext/complete_event)
-     */
-    @JsEvent("complete")
-    val completeEvent: EventInstance<OfflineAudioCompletionEvent, OfflineAudioContext /* this */, OfflineAudioContext /* this */>
 }
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OfflineAudioContext/complete_event)
+ */
+inline val <C : OfflineAudioContext> C.completeEvent: EventInstance<OfflineAudioCompletionEvent, C, C>
+    get() = EventInstance(this, "complete")

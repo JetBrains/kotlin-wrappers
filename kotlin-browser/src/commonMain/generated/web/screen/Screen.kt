@@ -5,7 +5,6 @@ package web.screen
 import web.events.Event
 import web.events.EventInstance
 import web.events.EventTarget
-import web.events.JsEvent
 
 /**
  * The `Screen` interface represents a screen, usually the one on which the current window is being rendered, and is obtained using window.screen.
@@ -63,10 +62,10 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Screen/width)
      */
     val width: Int
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Screen/change_event)
-     */
-    @JsEvent("change")
-    val changeEvent: EventInstance<Event, Screen /* this */, Screen /* this */>
 }
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Screen/change_event)
+ */
+inline val <C : Screen> C.changeEvent: EventInstance<Event, C, C>
+    get() = EventInstance(this, "change")

@@ -8,7 +8,6 @@ import js.serialization.Transferable
 import web.events.Event
 import web.events.EventInstance
 import web.events.EventTarget
-import web.events.JsEvent
 import web.messaging.MessageEvent
 import web.messaging.MessageEventTarget
 import web.serialization.StructuredSerializeOptions
@@ -52,22 +51,22 @@ open external class Worker(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Worker/terminate)
      */
     fun terminate()
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Worker/error_event)
-     */
-    @JsEvent("error")
-    val errorEvent: EventInstance<Event, Worker /* this */, Worker /* this */>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Worker/message_event)
-     */
-    @JsEvent("message")
-    val messageEvent: EventInstance<MessageEvent<JsAny?>, Worker /* this */, Worker /* this */>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Worker/messageerror_event)
-     */
-    @JsEvent("messageerror")
-    val messageErrorEvent: EventInstance<MessageEvent<JsAny?>, Worker /* this */, Worker /* this */>
 }
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Worker/error_event)
+ */
+inline val <C : Worker> C.errorEvent: EventInstance<Event, C, C>
+    get() = EventInstance(this, "error")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Worker/message_event)
+ */
+inline val <C : Worker> C.messageEvent: EventInstance<MessageEvent<JsAny?>, C, C>
+    get() = EventInstance(this, "message")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Worker/messageerror_event)
+ */
+inline val <C : Worker> C.messageErrorEvent: EventInstance<MessageEvent<JsAny?>, C, C>
+    get() = EventInstance(this, "messageerror")

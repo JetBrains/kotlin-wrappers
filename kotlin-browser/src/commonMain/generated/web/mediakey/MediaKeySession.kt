@@ -7,7 +7,10 @@ import js.core.JsBoolean
 import js.core.Void
 import js.promise.Promise
 import seskar.js.JsAsync
-import web.events.*
+import web.events.Event
+import web.events.EventHandler
+import web.events.EventInstance
+import web.events.EventTarget
 import web.time.EpochTimeStamp
 import kotlin.js.JsName
 
@@ -123,16 +126,16 @@ private constructor() :
 
     @JsName("update")
     fun updateAsync(response: BufferSource): Promise<Void>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeySession/keystatuseschange_event)
-     */
-    @JsEvent("keystatuseschange")
-    val keyStatusesChangeEvent: EventInstance<Event, MediaKeySession /* this */, MediaKeySession /* this */>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeySession/message_event)
-     */
-    @JsEvent("message")
-    val messageEvent: EventInstance<MediaKeyMessageEvent, MediaKeySession /* this */, MediaKeySession /* this */>
 }
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeySession/keystatuseschange_event)
+ */
+inline val <C : MediaKeySession> C.keyStatusesChangeEvent: EventInstance<Event, C, C>
+    get() = EventInstance(this, "keystatuseschange")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeySession/message_event)
+ */
+inline val <C : MediaKeySession> C.messageEvent: EventInstance<MediaKeyMessageEvent, C, C>
+    get() = EventInstance(this, "message")

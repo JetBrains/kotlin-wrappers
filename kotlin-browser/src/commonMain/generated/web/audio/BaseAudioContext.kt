@@ -8,7 +8,10 @@ import js.core.JsDouble
 import js.promise.Promise
 import js.typedarrays.Float32Array
 import seskar.js.JsAsync
-import web.events.*
+import web.events.Event
+import web.events.EventHandler
+import web.events.EventInstance
+import web.events.EventTarget
 import kotlin.js.JsName
 import kotlin.js.definedExternally
 
@@ -223,10 +226,10 @@ private constructor() :
         successCallback: DecodeSuccessCallback? = definedExternally,
         errorCallback: DecodeErrorCallback? = definedExternally,
     ): Promise<AudioBuffer>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BaseAudioContext/statechange_event)
-     */
-    @JsEvent("statechange")
-    val stateChangeEvent: EventInstance<Event, BaseAudioContext /* this */, BaseAudioContext /* this */>
 }
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BaseAudioContext/statechange_event)
+ */
+inline val <C : BaseAudioContext> C.stateChangeEvent: EventInstance<Event, C, C>
+    get() = EventInstance(this, "statechange")

@@ -11,7 +11,6 @@ import seskar.js.JsAsync
 import web.events.EventHandler
 import web.events.EventInstance
 import web.events.EventTarget
-import web.events.JsEvent
 import kotlin.js.JsName
 import kotlin.js.definedExternally
 
@@ -80,22 +79,22 @@ open external class PaymentRequest(
 
     @JsName("show")
     fun showAsync(detailsPromise: PromiseLike<PaymentDetailsUpdate>): Promise<PaymentResponse>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentRequest/paymentmethodchange_event)
-     */
-    @JsEvent("paymentmethodchange")
-    val paymentMethodChangeEvent: EventInstance<PaymentMethodChangeEvent, PaymentRequest /* this */, PaymentRequest /* this */>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentRequest/shippingaddresschange_event)
-     */
-    @JsEvent("shippingaddresschange")
-    val shippingAddressChangeEvent: EventInstance<PaymentRequestUpdateEvent, PaymentRequest /* this */, PaymentRequest /* this */>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentRequest/shippingoptionchange_event)
-     */
-    @JsEvent("shippingoptionchange")
-    val shippingOptionChangeEvent: EventInstance<PaymentRequestUpdateEvent, PaymentRequest /* this */, PaymentRequest /* this */>
 }
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentRequest/paymentmethodchange_event)
+ */
+inline val <C : PaymentRequest> C.paymentMethodChangeEvent: EventInstance<PaymentMethodChangeEvent, C, C>
+    get() = EventInstance(this, "paymentmethodchange")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentRequest/shippingaddresschange_event)
+ */
+inline val <C : PaymentRequest> C.shippingAddressChangeEvent: EventInstance<PaymentRequestUpdateEvent, C, C>
+    get() = EventInstance(this, "shippingaddresschange")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentRequest/shippingoptionchange_event)
+ */
+inline val <C : PaymentRequest> C.shippingOptionChangeEvent: EventInstance<PaymentRequestUpdateEvent, C, C>
+    get() = EventInstance(this, "shippingoptionchange")

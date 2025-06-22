@@ -10,7 +10,6 @@ import web.cookie.CookieStore
 import web.cookie.ExtendableCookieChangeEvent
 import web.events.EventHandler
 import web.events.EventInstance
-import web.events.JsEvent
 import web.messaging.MessageEvent
 import web.push.PushEvent
 import web.push.PushSubscriptionChangeEvent
@@ -115,46 +114,46 @@ private constructor() :
 
     @JsName("skipWaiting")
     fun skipWaitingAsync(): Promise<Void>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope/activate_event)
-     */
-    @JsEvent("activate")
-    val activateEvent: EventInstance<ExtendableEvent, ServiceWorkerGlobalScope /* this */, ServiceWorkerGlobalScope /* this */>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope/fetch_event)
-     */
-    @JsEvent("fetch")
-    val fetchEvent: EventInstance<FetchEvent, ServiceWorkerGlobalScope /* this */, ServiceWorkerGlobalScope /* this */>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope/message_event)
-     */
-    @JsEvent("message")
-    val messageEvent: EventInstance<ExtendableMessageEvent, ServiceWorkerGlobalScope /* this */, ServiceWorkerGlobalScope /* this */>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope/messageerror_event)
-     */
-    @JsEvent("messageerror")
-    val messageErrorEvent: EventInstance<MessageEvent<JsAny?>, ServiceWorkerGlobalScope /* this */, ServiceWorkerGlobalScope /* this */>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope/notificationclick_event)
-     */
-    @JsEvent("notificationclick")
-    val notificationClickEvent: EventInstance<NotificationEvent, ServiceWorkerGlobalScope /* this */, ServiceWorkerGlobalScope /* this */>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope/notificationclose_event)
-     */
-    @JsEvent("notificationclose")
-    val notificationCloseEvent: EventInstance<NotificationEvent, ServiceWorkerGlobalScope /* this */, ServiceWorkerGlobalScope /* this */>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope/push_event)
-     */
-    @JsEvent("push")
-    val pushEvent: EventInstance<PushEvent, ServiceWorkerGlobalScope /* this */, ServiceWorkerGlobalScope /* this */>
 }
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope/activate_event)
+ */
+inline val <C : ServiceWorkerGlobalScope> C.activateEvent: EventInstance<ExtendableEvent, C, C>
+    get() = EventInstance(this, "activate")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope/fetch_event)
+ */
+inline val <C : ServiceWorkerGlobalScope> C.fetchEvent: EventInstance<FetchEvent, C, C>
+    get() = EventInstance(this, "fetch")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope/message_event)
+ */
+inline val <C : ServiceWorkerGlobalScope> C.messageEvent: EventInstance<ExtendableMessageEvent, C, C>
+    get() = EventInstance(this, "message")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope/messageerror_event)
+ */
+inline val <C : ServiceWorkerGlobalScope> C.messageErrorEvent: EventInstance<MessageEvent<JsAny?>, C, C>
+    get() = EventInstance(this, "messageerror")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope/notificationclick_event)
+ */
+inline val <C : ServiceWorkerGlobalScope> C.notificationClickEvent: EventInstance<NotificationEvent, C, C>
+    get() = EventInstance(this, "notificationclick")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope/notificationclose_event)
+ */
+inline val <C : ServiceWorkerGlobalScope> C.notificationCloseEvent: EventInstance<NotificationEvent, C, C>
+    get() = EventInstance(this, "notificationclose")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope/push_event)
+ */
+inline val <C : ServiceWorkerGlobalScope> C.pushEvent: EventInstance<PushEvent, C, C>
+    get() = EventInstance(this, "push")

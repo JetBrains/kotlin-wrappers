@@ -7,7 +7,6 @@ import js.promise.Promise
 import seskar.js.JsAsync
 import web.events.Event
 import web.events.EventInstance
-import web.events.JsEvent
 import web.html.HTMLMediaElement
 import web.mediastreams.MediaStream
 import kotlin.js.JsName
@@ -98,10 +97,10 @@ open external class AudioContext(
 
     @JsName("suspend")
     fun suspendAsync(): Promise<Void>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioContext/error_event)
-     */
-    @JsEvent("error")
-    val errorEvent: EventInstance<Event, AudioContext /* this */, AudioContext /* this */>
 }
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioContext/error_event)
+ */
+inline val <C : AudioContext> C.errorEvent: EventInstance<Event, C, C>
+    get() = EventInstance(this, "error")

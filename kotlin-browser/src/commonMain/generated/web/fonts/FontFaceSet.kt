@@ -13,7 +13,6 @@ import seskar.js.JsAsync
 import web.events.EventHandler
 import web.events.EventInstance
 import web.events.EventTarget
-import web.events.JsEvent
 import kotlin.js.JsName
 import kotlin.js.definedExternally
 
@@ -81,22 +80,22 @@ sealed external interface FontFaceSet :
         font: String,
         text: String = definedExternally,
     ): Promise<ReadonlyArray<FontFace>>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FontFaceSet/loading_event)
-     */
-    @JsEvent("loading")
-    val loadingEvent: EventInstance<FontFaceSetLoadEvent, FontFaceSet /* this */, FontFaceSet /* this */>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FontFaceSet/loadingdone_event)
-     */
-    @JsEvent("loadingdone")
-    val loadingDoneEvent: EventInstance<FontFaceSetLoadEvent, FontFaceSet /* this */, FontFaceSet /* this */>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FontFaceSet/loadingerror_event)
-     */
-    @JsEvent("loadingerror")
-    val loadingErrorEvent: EventInstance<FontFaceSetLoadEvent, FontFaceSet /* this */, FontFaceSet /* this */>
 }
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FontFaceSet/loading_event)
+ */
+inline val <C : FontFaceSet> C.loadingEvent: EventInstance<FontFaceSetLoadEvent, C, C>
+    get() = EventInstance(this, "loading")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FontFaceSet/loadingdone_event)
+ */
+inline val <C : FontFaceSet> C.loadingDoneEvent: EventInstance<FontFaceSetLoadEvent, C, C>
+    get() = EventInstance(this, "loadingdone")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FontFaceSet/loadingerror_event)
+ */
+inline val <C : FontFaceSet> C.loadingErrorEvent: EventInstance<FontFaceSetLoadEvent, C, C>
+    get() = EventInstance(this, "loadingerror")

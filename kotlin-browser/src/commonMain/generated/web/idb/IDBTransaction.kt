@@ -4,7 +4,10 @@ package web.idb
 
 import web.dom.DOMStringList
 import web.errors.DOMException
-import web.events.*
+import web.events.Event
+import web.events.EventHandler
+import web.events.EventInstance
+import web.events.EventTarget
 
 /**
  * The **`IDBTransaction`** interface of the IndexedDB API provides a static, asynchronous transaction on a database using event handler attributes.
@@ -84,22 +87,22 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBTransaction/objectStore)
      */
     fun objectStore(name: String): IDBObjectStore
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBTransaction/abort_event)
-     */
-    @JsEvent("abort")
-    val abortEvent: EventInstance<Event, IDBTransaction /* this */, IDBDatabase>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBTransaction/complete_event)
-     */
-    @JsEvent("complete")
-    val completeEvent: EventInstance<Event, IDBTransaction /* this */, IDBTransaction /* this */>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBTransaction/error_event)
-     */
-    @JsEvent("error")
-    val errorEvent: EventInstance<Event, IDBTransaction /* this */, IDBTransaction>
 }
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBTransaction/abort_event)
+ */
+inline val <C : IDBTransaction> C.abortEvent: EventInstance<Event, C, IDBDatabase>
+    get() = EventInstance(this, "abort")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBTransaction/complete_event)
+ */
+inline val <C : IDBTransaction> C.completeEvent: EventInstance<Event, C, C>
+    get() = EventInstance(this, "complete")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBTransaction/error_event)
+ */
+inline val <C : IDBTransaction> C.errorEvent: EventInstance<Event, C, IDBTransaction>
+    get() = EventInstance(this, "error")

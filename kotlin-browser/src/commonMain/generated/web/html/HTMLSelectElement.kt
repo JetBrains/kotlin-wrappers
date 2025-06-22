@@ -8,7 +8,6 @@ import web.dom.Node
 import web.dom.NodeList
 import web.events.Event
 import web.events.EventInstance
-import web.events.JsEvent
 import web.form.FormControl
 import web.validation.ValidityState
 import kotlin.js.definedExternally
@@ -217,15 +216,16 @@ protected constructor() :
      */
     fun showPicker()
     // [name: number]: HTMLOptionElement | HTMLOptGroupElement
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSelectElement/change_event)
-     */
-    @JsEvent("change")
-    val changeEvent: EventInstance<Event, HTMLSelectElement /* this */, Node>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSelectElement/invalid_event)
-     */
-    @JsEvent("invalid")
-    val invalidEvent: EventInstance<Event, HTMLSelectElement /* this */, HTMLSelectElement /* this */>
 }
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSelectElement/change_event)
+ */
+inline val <C : HTMLSelectElement> C.changeEvent: EventInstance<Event, C, Node>
+    get() = EventInstance(this, "change")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSelectElement/invalid_event)
+ */
+inline val <C : HTMLSelectElement> C.invalidEvent: EventInstance<Event, C, C>
+    get() = EventInstance(this, "invalid")

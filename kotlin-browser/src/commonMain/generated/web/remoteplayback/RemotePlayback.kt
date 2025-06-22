@@ -6,7 +6,10 @@ import js.core.JsInt
 import js.core.Void
 import js.promise.Promise
 import seskar.js.JsAsync
-import web.events.*
+import web.events.Event
+import web.events.EventHandler
+import web.events.EventInstance
+import web.events.EventTarget
 import kotlin.js.JsName
 import kotlin.js.definedExternally
 
@@ -75,22 +78,22 @@ private constructor() :
 
     @JsName("watchAvailability")
     fun watchAvailabilityAsync(callback: RemotePlaybackAvailabilityCallback): Promise<JsInt>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RemotePlayback/connect_event)
-     */
-    @JsEvent("connect")
-    val connectEvent: EventInstance<Event, RemotePlayback /* this */, RemotePlayback /* this */>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RemotePlayback/connecting_event)
-     */
-    @JsEvent("connecting")
-    val connectingEvent: EventInstance<Event, RemotePlayback /* this */, RemotePlayback /* this */>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RemotePlayback/disconnect_event)
-     */
-    @JsEvent("disconnect")
-    val disconnectEvent: EventInstance<Event, RemotePlayback /* this */, RemotePlayback /* this */>
 }
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RemotePlayback/connect_event)
+ */
+inline val <C : RemotePlayback> C.connectEvent: EventInstance<Event, C, C>
+    get() = EventInstance(this, "connect")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RemotePlayback/connecting_event)
+ */
+inline val <C : RemotePlayback> C.connectingEvent: EventInstance<Event, C, C>
+    get() = EventInstance(this, "connecting")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RemotePlayback/disconnect_event)
+ */
+inline val <C : RemotePlayback> C.disconnectEvent: EventInstance<Event, C, C>
+    get() = EventInstance(this, "disconnect")

@@ -6,7 +6,6 @@ import js.promise.Promise
 import seskar.js.JsAsync
 import web.events.EventInstance
 import web.events.EventTarget
-import web.events.JsEvent
 import kotlin.js.JsName
 import kotlin.js.definedExternally
 
@@ -143,10 +142,10 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUDevice/pushErrorScope)
      */
     fun pushErrorScope(filter: GPUErrorFilter)
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUDevice/uncapturederror_event)
-     */
-    @JsEvent("uncapturederror")
-    val uncapturedErrorEvent: EventInstance<GPUUncapturedErrorEvent, GPUDevice /* this */, GPUDevice /* this */>
 }
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUDevice/uncapturederror_event)
+ */
+inline val <C : GPUDevice> C.uncapturedErrorEvent: EventInstance<GPUUncapturedErrorEvent, C, C>
+    get() = EventInstance(this, "uncapturederror")

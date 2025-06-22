@@ -8,7 +8,10 @@ import js.promise.Promise
 import js.serialization.Transferable
 import seskar.js.JsAsync
 import web.blob.Blob
-import web.events.*
+import web.events.Event
+import web.events.EventHandler
+import web.events.EventInstance
+import web.events.EventTarget
 import web.gl.TexImageSource
 import web.gpu.GPUCopyExternalImageSource
 import web.images.ImageBitmap
@@ -78,16 +81,16 @@ open external class OffscreenCanvas(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OffscreenCanvas/transferToImageBitmap)
      */
     fun transferToImageBitmap(): ImageBitmap
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OffscreenCanvas/contextlost_event)
-     */
-    @JsEvent("contextlost")
-    val contextLostEvent: EventInstance<Event, OffscreenCanvas /* this */, OffscreenCanvas /* this */>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OffscreenCanvas/contextrestored_event)
-     */
-    @JsEvent("contextrestored")
-    val contextRestoredEvent: EventInstance<Event, OffscreenCanvas /* this */, OffscreenCanvas /* this */>
 }
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OffscreenCanvas/contextlost_event)
+ */
+inline val <C : OffscreenCanvas> C.contextLostEvent: EventInstance<Event, C, C>
+    get() = EventInstance(this, "contextlost")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OffscreenCanvas/contextrestored_event)
+ */
+inline val <C : OffscreenCanvas> C.contextRestoredEvent: EventInstance<Event, C, C>
+    get() = EventInstance(this, "contextrestored")

@@ -3,7 +3,10 @@
 package web.mediarecorder
 
 import web.errors.ErrorEvent
-import web.events.*
+import web.events.Event
+import web.events.EventHandler
+import web.events.EventInstance
+import web.events.EventTarget
 import web.mediastreams.MediaStream
 import kotlin.js.definedExternally
 
@@ -114,42 +117,6 @@ open external class MediaRecorder(
      */
     fun stop()
 
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaRecorder/dataavailable_event)
-     */
-    @JsEvent("dataavailable")
-    val dataAvailableEvent: EventInstance<BlobEvent, MediaRecorder /* this */, MediaRecorder /* this */>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaRecorder/error_event)
-     */
-    @JsEvent("error")
-    val errorEvent: EventInstance<ErrorEvent, MediaRecorder /* this */, MediaRecorder /* this */>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaRecorder/pause_event)
-     */
-    @JsEvent("pause")
-    val pauseEvent: EventInstance<Event, MediaRecorder /* this */, MediaRecorder /* this */>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaRecorder/resume_event)
-     */
-    @JsEvent("resume")
-    val resumeEvent: EventInstance<Event, MediaRecorder /* this */, MediaRecorder /* this */>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaRecorder/start_event)
-     */
-    @JsEvent("start")
-    val startEvent: EventInstance<Event, MediaRecorder /* this */, MediaRecorder /* this */>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaRecorder/stop_event)
-     */
-    @JsEvent("stop")
-    val stopEvent: EventInstance<Event, MediaRecorder /* this */, MediaRecorder /* this */>
-
     companion object {
         /**
          * The **`isTypeSupported()`** static method of the MediaRecorder interface returns a Boolean which is `true` if the MIME media type specified is one the user agent should be able to successfully record.
@@ -159,3 +126,39 @@ open external class MediaRecorder(
         fun isTypeSupported(type: String): Boolean
     }
 }
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaRecorder/dataavailable_event)
+ */
+inline val <C : MediaRecorder> C.dataAvailableEvent: EventInstance<BlobEvent, C, C>
+    get() = EventInstance(this, "dataavailable")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaRecorder/error_event)
+ */
+inline val <C : MediaRecorder> C.errorEvent: EventInstance<ErrorEvent, C, C>
+    get() = EventInstance(this, "error")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaRecorder/pause_event)
+ */
+inline val <C : MediaRecorder> C.pauseEvent: EventInstance<Event, C, C>
+    get() = EventInstance(this, "pause")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaRecorder/resume_event)
+ */
+inline val <C : MediaRecorder> C.resumeEvent: EventInstance<Event, C, C>
+    get() = EventInstance(this, "resume")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaRecorder/start_event)
+ */
+inline val <C : MediaRecorder> C.startEvent: EventInstance<Event, C, C>
+    get() = EventInstance(this, "start")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaRecorder/stop_event)
+ */
+inline val <C : MediaRecorder> C.stopEvent: EventInstance<Event, C, C>
+    get() = EventInstance(this, "stop")

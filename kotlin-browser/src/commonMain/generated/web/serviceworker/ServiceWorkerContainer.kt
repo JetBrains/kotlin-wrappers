@@ -6,7 +6,10 @@ import js.array.ReadonlyArray
 import js.core.JsAny
 import js.promise.Promise
 import seskar.js.JsAsync
-import web.events.*
+import web.events.Event
+import web.events.EventHandler
+import web.events.EventInstance
+import web.events.EventTarget
 import web.messaging.MessageEvent
 import web.url.URL
 import kotlin.js.JsName
@@ -118,22 +121,22 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerContainer/startMessages)
      */
     fun startMessages()
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerContainer/controllerchange_event)
-     */
-    @JsEvent("controllerchange")
-    val controllerChangeEvent: EventInstance<Event, ServiceWorkerContainer /* this */, ServiceWorkerContainer /* this */>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerContainer/message_event)
-     */
-    @JsEvent("message")
-    val messageEvent: EventInstance<MessageEvent<JsAny?>, ServiceWorkerContainer /* this */, ServiceWorkerContainer /* this */>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerContainer/messageerror_event)
-     */
-    @JsEvent("messageerror")
-    val messageErrorEvent: EventInstance<MessageEvent<JsAny?>, ServiceWorkerContainer /* this */, ServiceWorkerContainer /* this */>
 }
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerContainer/controllerchange_event)
+ */
+inline val <C : ServiceWorkerContainer> C.controllerChangeEvent: EventInstance<Event, C, C>
+    get() = EventInstance(this, "controllerchange")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerContainer/message_event)
+ */
+inline val <C : ServiceWorkerContainer> C.messageEvent: EventInstance<MessageEvent<JsAny?>, C, C>
+    get() = EventInstance(this, "message")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerContainer/messageerror_event)
+ */
+inline val <C : ServiceWorkerContainer> C.messageErrorEvent: EventInstance<MessageEvent<JsAny?>, C, C>
+    get() = EventInstance(this, "messageerror")

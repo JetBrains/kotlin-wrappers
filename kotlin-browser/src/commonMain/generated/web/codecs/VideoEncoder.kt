@@ -5,7 +5,10 @@ package web.codecs
 import js.core.Void
 import js.promise.Promise
 import seskar.js.JsAsync
-import web.events.*
+import web.events.Event
+import web.events.EventHandler
+import web.events.EventInstance
+import web.events.EventTarget
 import kotlin.js.JsName
 import kotlin.js.definedExternally
 
@@ -80,12 +83,6 @@ open external class VideoEncoder(
      */
     fun reset()
 
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoEncoder/dequeue_event)
-     */
-    @JsEvent("dequeue")
-    val dequeueEvent: EventInstance<Event, VideoEncoder /* this */, VideoEncoder /* this */>
-
     companion object {
         /**
          * The **`isConfigSupported()`** static method of the VideoEncoder interface checks if VideoEncoder can be successfully configured with the given config.
@@ -100,3 +97,9 @@ open external class VideoEncoder(
         fun isConfigSupportedAsync(config: VideoEncoderConfig): Promise<VideoEncoderSupport>
     }
 }
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoEncoder/dequeue_event)
+ */
+inline val <C : VideoEncoder> C.dequeueEvent: EventInstance<Event, C, C>
+    get() = EventInstance(this, "dequeue")

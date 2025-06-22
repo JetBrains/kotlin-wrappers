@@ -2,7 +2,10 @@
 
 package web.screen
 
-import web.events.*
+import web.events.Event
+import web.events.EventHandler
+import web.events.EventInstance
+import web.events.EventTarget
 
 /**
  * The **`ScreenOrientation`** interface of the Screen Orientation API provides information about the current orientation of the document.
@@ -37,10 +40,10 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ScreenOrientation/unlock)
      */
     fun unlock()
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ScreenOrientation/change_event)
-     */
-    @JsEvent("change")
-    val changeEvent: EventInstance<Event, ScreenOrientation /* this */, ScreenOrientation /* this */>
 }
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ScreenOrientation/change_event)
+ */
+inline val <C : ScreenOrientation> C.changeEvent: EventInstance<Event, C, C>
+    get() = EventInstance(this, "change")

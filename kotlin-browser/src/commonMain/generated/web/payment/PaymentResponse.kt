@@ -9,7 +9,6 @@ import seskar.js.JsAsync
 import web.events.EventHandler
 import web.events.EventInstance
 import web.events.EventTarget
-import web.events.JsEvent
 import kotlin.js.JsName
 import kotlin.js.definedExternally
 
@@ -113,10 +112,10 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentResponse/toJSON)
      */
     fun toJSON(): JsAny
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentResponse/payerdetailchange_event)
-     */
-    @JsEvent("payerdetailchange")
-    val payerDetailChangeEvent: EventInstance<PaymentRequestUpdateEvent, PaymentResponse /* this */, PaymentResponse /* this */>
 }
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentResponse/payerdetailchange_event)
+ */
+inline val <C : PaymentResponse> C.payerDetailChangeEvent: EventInstance<PaymentRequestUpdateEvent, C, C>
+    get() = EventInstance(this, "payerdetailchange")

@@ -8,7 +8,10 @@ import js.core.Void
 import js.promise.Promise
 import seskar.js.JsAsync
 import web.cookie.CookieStoreManager
-import web.events.*
+import web.events.Event
+import web.events.EventHandler
+import web.events.EventInstance
+import web.events.EventTarget
 import web.notifications.Notification
 import web.notifications.NotificationOptions
 import web.push.PushManager
@@ -138,10 +141,10 @@ private constructor() :
 
     @JsName("update")
     fun updateAsync(): Promise<ServiceWorkerRegistration>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/updatefound_event)
-     */
-    @JsEvent("updatefound")
-    val updateFoundEvent: EventInstance<Event, ServiceWorkerRegistration /* this */, ServiceWorkerRegistration /* this */>
 }
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/updatefound_event)
+ */
+inline val <C : ServiceWorkerRegistration> C.updateFoundEvent: EventInstance<Event, C, C>
+    get() = EventInstance(this, "updatefound")

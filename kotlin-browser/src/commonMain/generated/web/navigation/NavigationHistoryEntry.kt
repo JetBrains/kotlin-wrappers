@@ -4,7 +4,10 @@ package web.navigation
 
 import js.core.Int53
 import js.core.JsAny
-import web.events.*
+import web.events.Event
+import web.events.EventHandler
+import web.events.EventInstance
+import web.events.EventTarget
 
 /**
  * The **`NavigationHistoryEntry`** interface of the Navigation API represents a single navigation history entry.
@@ -60,10 +63,10 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigationHistoryEntry/getState)
      */
     fun getState(): JsAny
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigationHistoryEntry/dispose_event)
-     */
-    @JsEvent("dispose")
-    val disposeEvent: EventInstance<Event, NavigationHistoryEntry /* this */, NavigationHistoryEntry /* this */>
 }
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigationHistoryEntry/dispose_event)
+ */
+inline val <C : NavigationHistoryEntry> C.disposeEvent: EventInstance<Event, C, C>
+    get() = EventInstance(this, "dispose")

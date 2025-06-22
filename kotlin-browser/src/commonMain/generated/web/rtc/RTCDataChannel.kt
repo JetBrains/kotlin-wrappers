@@ -7,7 +7,10 @@ import js.buffer.ArrayBufferView
 import js.core.JsAny
 import js.serialization.Transferable
 import web.blob.Blob
-import web.events.*
+import web.events.Event
+import web.events.EventHandler
+import web.events.EventInstance
+import web.events.EventTarget
 import web.messaging.MessageEvent
 import web.sockets.BinaryType
 
@@ -143,40 +146,40 @@ private constructor() :
     fun send(data: Blob)
     fun send(data: ArrayBuffer)
     fun send(data: ArrayBufferView<ArrayBuffer>)
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDataChannel/bufferedamountlow_event)
-     */
-    @JsEvent("bufferedamountlow")
-    val bufferedAmountLowEvent: EventInstance<Event, RTCDataChannel /* this */, RTCDataChannel /* this */>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDataChannel/close_event)
-     */
-    @JsEvent("close")
-    val closeEvent: EventInstance<Event, RTCDataChannel /* this */, RTCDataChannel /* this */>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDataChannel/closing_event)
-     */
-    @JsEvent("closing")
-    val closingEvent: EventInstance<Event, RTCDataChannel /* this */, RTCDataChannel /* this */>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDataChannel/error_event)
-     */
-    @JsEvent("error")
-    val errorEvent: EventInstance<RTCErrorEvent, RTCDataChannel /* this */, RTCDataChannel /* this */>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDataChannel/message_event)
-     */
-    @JsEvent("message")
-    val messageEvent: EventInstance<MessageEvent<JsAny?>, RTCDataChannel /* this */, RTCDataChannel /* this */>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDataChannel/open_event)
-     */
-    @JsEvent("open")
-    val openEvent: EventInstance<Event, RTCDataChannel /* this */, RTCDataChannel /* this */>
 }
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDataChannel/bufferedamountlow_event)
+ */
+inline val <C : RTCDataChannel> C.bufferedAmountLowEvent: EventInstance<Event, C, C>
+    get() = EventInstance(this, "bufferedamountlow")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDataChannel/close_event)
+ */
+inline val <C : RTCDataChannel> C.closeEvent: EventInstance<Event, C, C>
+    get() = EventInstance(this, "close")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDataChannel/closing_event)
+ */
+inline val <C : RTCDataChannel> C.closingEvent: EventInstance<Event, C, C>
+    get() = EventInstance(this, "closing")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDataChannel/error_event)
+ */
+inline val <C : RTCDataChannel> C.errorEvent: EventInstance<RTCErrorEvent, C, C>
+    get() = EventInstance(this, "error")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDataChannel/message_event)
+ */
+inline val <C : RTCDataChannel> C.messageEvent: EventInstance<MessageEvent<JsAny?>, C, C>
+    get() = EventInstance(this, "message")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDataChannel/open_event)
+ */
+inline val <C : RTCDataChannel> C.openEvent: EventInstance<Event, C, C>
+    get() = EventInstance(this, "open")

@@ -7,7 +7,6 @@ import web.canvas.CanvasImageSource
 import web.canvas.OffscreenCanvas
 import web.events.Event
 import web.events.EventInstance
-import web.events.JsEvent
 import web.gl.TexImageSource
 import web.gpu.GPUCopyExternalImageSource
 import web.mediastreams.MediaStream
@@ -84,16 +83,16 @@ protected constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLCanvasElement/transferControlToOffscreen)
      */
     fun transferControlToOffscreen(): OffscreenCanvas
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLCanvasElement/contextlost_event)
-     */
-    @JsEvent("contextlost")
-    val contextLostEvent: EventInstance<Event, HTMLCanvasElement /* this */, HTMLCanvasElement /* this */>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLCanvasElement/contextrestored_event)
-     */
-    @JsEvent("contextrestored")
-    val contextRestoredEvent: EventInstance<Event, HTMLCanvasElement /* this */, HTMLCanvasElement /* this */>
 }
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLCanvasElement/contextlost_event)
+ */
+inline val <C : HTMLCanvasElement> C.contextLostEvent: EventInstance<Event, C, C>
+    get() = EventInstance(this, "contextlost")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLCanvasElement/contextrestored_event)
+ */
+inline val <C : HTMLCanvasElement> C.contextRestoredEvent: EventInstance<Event, C, C>
+    get() = EventInstance(this, "contextrestored")

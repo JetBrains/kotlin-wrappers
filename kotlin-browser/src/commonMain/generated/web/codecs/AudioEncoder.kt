@@ -5,7 +5,10 @@ package web.codecs
 import js.core.Void
 import js.promise.Promise
 import seskar.js.JsAsync
-import web.events.*
+import web.events.Event
+import web.events.EventHandler
+import web.events.EventInstance
+import web.events.EventTarget
 import kotlin.js.JsName
 
 /**
@@ -76,12 +79,6 @@ open external class AudioEncoder(
      */
     fun reset()
 
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioEncoder/dequeue_event)
-     */
-    @JsEvent("dequeue")
-    val dequeueEvent: EventInstance<Event, AudioEncoder /* this */, AudioEncoder /* this */>
-
     companion object {
         /**
          * The **`isConfigSupported()`** static method of the AudioEncoder interface checks if the given config is supported (that is, if AudioEncoder objects can be successfully configured with the given config).
@@ -96,3 +93,9 @@ open external class AudioEncoder(
         fun isConfigSupportedAsync(config: AudioEncoderConfig): Promise<AudioEncoderSupport>
     }
 }
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioEncoder/dequeue_event)
+ */
+inline val <C : AudioEncoder> C.dequeueEvent: EventInstance<Event, C, C>
+    get() = EventInstance(this, "dequeue")

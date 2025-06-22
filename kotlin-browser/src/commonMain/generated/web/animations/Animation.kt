@@ -6,7 +6,6 @@ import js.promise.Promise
 import web.events.EventHandler
 import web.events.EventInstance
 import web.events.EventTarget
-import web.events.JsEvent
 import kotlin.js.definedExternally
 
 /**
@@ -161,22 +160,22 @@ open external class Animation(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Animation/updatePlaybackRate)
      */
     fun updatePlaybackRate(playbackRate: Double)
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Animation/cancel_event)
-     */
-    @JsEvent("cancel")
-    val cancelEvent: EventInstance<AnimationPlaybackEvent, Animation /* this */, Animation /* this */>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Animation/finish_event)
-     */
-    @JsEvent("finish")
-    val finishEvent: EventInstance<AnimationPlaybackEvent, Animation /* this */, Animation /* this */>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Animation/remove_event)
-     */
-    @JsEvent("remove")
-    val removeEvent: EventInstance<AnimationPlaybackEvent, Animation /* this */, Animation /* this */>
 }
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Animation/cancel_event)
+ */
+inline val <C : Animation> C.cancelEvent: EventInstance<AnimationPlaybackEvent, C, C>
+    get() = EventInstance(this, "cancel")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Animation/finish_event)
+ */
+inline val <C : Animation> C.finishEvent: EventInstance<AnimationPlaybackEvent, C, C>
+    get() = EventInstance(this, "finish")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Animation/remove_event)
+ */
+inline val <C : Animation> C.removeEvent: EventInstance<AnimationPlaybackEvent, C, C>
+    get() = EventInstance(this, "remove")

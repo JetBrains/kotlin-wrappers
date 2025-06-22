@@ -6,7 +6,10 @@ import js.buffer.BufferSource
 import js.core.JsAny
 import web.blob.Blob
 import web.dom.Document
-import web.events.*
+import web.events.Event
+import web.events.EventHandler
+import web.events.EventInstance
+import web.events.ProgressEvent
 import web.form.FormData
 import web.http.RequestMethod
 import web.url.URL
@@ -189,54 +192,6 @@ open external class XMLHttpRequest :
     val LOADING: ReadyState
     val DONE: ReadyState
 
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest/abort_event)
-     */
-    @JsEvent("abort")
-    val abortEvent: EventInstance<ProgressEvent, XMLHttpRequest /* this */, XMLHttpRequest /* this */>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest/error_event)
-     */
-    @JsEvent("error")
-    val errorEvent: EventInstance<ProgressEvent, XMLHttpRequest /* this */, XMLHttpRequest /* this */>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest/load_event)
-     */
-    @JsEvent("load")
-    val loadEvent: EventInstance<ProgressEvent, XMLHttpRequest /* this */, XMLHttpRequest /* this */>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest/loadend_event)
-     */
-    @JsEvent("loadend")
-    val loadEndEvent: EventInstance<ProgressEvent, XMLHttpRequest /* this */, XMLHttpRequest /* this */>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest/loadstart_event)
-     */
-    @JsEvent("loadstart")
-    val loadStartEvent: EventInstance<ProgressEvent, XMLHttpRequest /* this */, XMLHttpRequest /* this */>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest/progress_event)
-     */
-    @JsEvent("progress")
-    val progressEvent: EventInstance<ProgressEvent, XMLHttpRequest /* this */, XMLHttpRequest /* this */>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest/readystatechange_event)
-     */
-    @JsEvent("readystatechange")
-    val readyStateChangeEvent: EventInstance<Event, XMLHttpRequest /* this */, XMLHttpRequest /* this */>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest/timeout_event)
-     */
-    @JsEvent("timeout")
-    val timeoutEvent: EventInstance<ProgressEvent, XMLHttpRequest /* this */, XMLHttpRequest /* this */>
-
     companion object {
         val UNSENT: ReadyState
         val OPENED: ReadyState
@@ -247,3 +202,51 @@ open external class XMLHttpRequest :
 
     sealed interface ReadyState
 }
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest/abort_event)
+ */
+inline val <C : XMLHttpRequest> C.abortEvent: EventInstance<ProgressEvent, C, C>
+    get() = EventInstance(this, "abort")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest/error_event)
+ */
+inline val <C : XMLHttpRequest> C.errorEvent: EventInstance<ProgressEvent, C, C>
+    get() = EventInstance(this, "error")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest/load_event)
+ */
+inline val <C : XMLHttpRequest> C.loadEvent: EventInstance<ProgressEvent, C, C>
+    get() = EventInstance(this, "load")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest/loadend_event)
+ */
+inline val <C : XMLHttpRequest> C.loadEndEvent: EventInstance<ProgressEvent, C, C>
+    get() = EventInstance(this, "loadend")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest/loadstart_event)
+ */
+inline val <C : XMLHttpRequest> C.loadStartEvent: EventInstance<ProgressEvent, C, C>
+    get() = EventInstance(this, "loadstart")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest/progress_event)
+ */
+inline val <C : XMLHttpRequest> C.progressEvent: EventInstance<ProgressEvent, C, C>
+    get() = EventInstance(this, "progress")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest/readystatechange_event)
+ */
+inline val <C : XMLHttpRequest> C.readyStateChangeEvent: EventInstance<Event, C, C>
+    get() = EventInstance(this, "readystatechange")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest/timeout_event)
+ */
+inline val <C : XMLHttpRequest> C.timeoutEvent: EventInstance<ProgressEvent, C, C>
+    get() = EventInstance(this, "timeout")

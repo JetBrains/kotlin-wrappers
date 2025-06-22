@@ -5,7 +5,6 @@ package web.midi
 import web.events.EventHandler
 import web.events.EventInstance
 import web.events.EventTarget
-import web.events.JsEvent
 
 /**
  * The **`MIDIAccess`** interface of the Web MIDI API provides methods for listing MIDI input and output devices, and obtaining access to those devices.
@@ -41,10 +40,10 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MIDIAccess/sysexEnabled)
      */
     val sysexEnabled: Boolean
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MIDIAccess/statechange_event)
-     */
-    @JsEvent("statechange")
-    val stateChangeEvent: EventInstance<MIDIConnectionEvent, MIDIAccess /* this */, MIDIAccess /* this */>
 }
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MIDIAccess/statechange_event)
+ */
+inline val <C : MIDIAccess> C.stateChangeEvent: EventInstance<MIDIConnectionEvent, C, C>
+    get() = EventInstance(this, "statechange")

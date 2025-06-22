@@ -6,7 +6,10 @@ import js.array.ReadonlyArray
 import js.core.JsString
 import js.core.UInt53
 import web.dom.DOMStringList
-import web.events.*
+import web.events.Event
+import web.events.EventHandler
+import web.events.EventInstance
+import web.events.EventTarget
 import kotlin.js.definedExternally
 
 /**
@@ -90,28 +93,28 @@ private constructor() :
         mode: IDBTransactionMode = definedExternally,
         options: IDBTransactionOptions = definedExternally,
     ): IDBTransaction
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBDatabase/abort_event)
-     */
-    @JsEvent("abort")
-    val abortEvent: EventInstance<Event, IDBDatabase /* this */, IDBDatabase>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBDatabase/close_event)
-     */
-    @JsEvent("close")
-    val closeEvent: EventInstance<Event, IDBDatabase /* this */, IDBDatabase /* this */>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBDatabase/error_event)
-     */
-    @JsEvent("error")
-    val errorEvent: EventInstance<Event, IDBDatabase /* this */, IDBTransaction>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBDatabase/versionchange_event)
-     */
-    @JsEvent("versionchange")
-    val versionChangeEvent: EventInstance<IDBVersionChangeEvent, IDBDatabase /* this */, IDBDatabase /* this */>
 }
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBDatabase/abort_event)
+ */
+inline val <C : IDBDatabase> C.abortEvent: EventInstance<Event, C, IDBDatabase>
+    get() = EventInstance(this, "abort")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBDatabase/close_event)
+ */
+inline val <C : IDBDatabase> C.closeEvent: EventInstance<Event, C, C>
+    get() = EventInstance(this, "close")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBDatabase/error_event)
+ */
+inline val <C : IDBDatabase> C.errorEvent: EventInstance<Event, C, IDBTransaction>
+    get() = EventInstance(this, "error")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBDatabase/versionchange_event)
+ */
+inline val <C : IDBDatabase> C.versionChangeEvent: EventInstance<IDBVersionChangeEvent, C, C>
+    get() = EventInstance(this, "versionchange")

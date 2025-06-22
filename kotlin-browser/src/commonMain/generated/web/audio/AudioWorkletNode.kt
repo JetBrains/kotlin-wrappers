@@ -5,7 +5,6 @@ package web.audio
 import web.errors.ErrorEvent
 import web.events.EventHandler
 import web.events.EventInstance
-import web.events.JsEvent
 import web.messaging.MessagePort
 import kotlin.js.definedExternally
 
@@ -38,10 +37,10 @@ open external class AudioWorkletNode(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioWorkletNode/port)
      */
     val port: MessagePort
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioWorkletNode/processorerror_event)
-     */
-    @JsEvent("processorerror")
-    val processorErrorEvent: EventInstance<ErrorEvent, AudioWorkletNode /* this */, AudioWorkletNode /* this */>
 }
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioWorkletNode/processorerror_event)
+ */
+inline val <C : AudioWorkletNode> C.processorErrorEvent: EventInstance<ErrorEvent, C, C>
+    get() = EventInstance(this, "processorerror")

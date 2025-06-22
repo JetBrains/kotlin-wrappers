@@ -3,7 +3,10 @@
 package web.sse
 
 import js.core.JsAny
-import web.events.*
+import web.events.Event
+import web.events.EventHandler
+import web.events.EventInstance
+import web.events.EventTarget
 import web.messaging.MessageEvent
 import web.url.URL
 import kotlin.js.definedExternally
@@ -66,24 +69,6 @@ open external class EventSource(
     val OPEN: ReadyState
     val CLOSED: ReadyState
 
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/EventSource/error_event)
-     */
-    @JsEvent("error")
-    val errorEvent: EventInstance<Event, EventSource /* this */, EventSource /* this */>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/EventSource/message_event)
-     */
-    @JsEvent("message")
-    val messageEvent: EventInstance<MessageEvent<JsAny?>, EventSource /* this */, EventSource /* this */>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/EventSource/open_event)
-     */
-    @JsEvent("open")
-    val openEvent: EventInstance<Event, EventSource /* this */, EventSource /* this */>
-
     companion object {
         val CONNECTING: ReadyState
         val OPEN: ReadyState
@@ -92,3 +77,21 @@ open external class EventSource(
 
     sealed interface ReadyState
 }
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/EventSource/error_event)
+ */
+inline val <C : EventSource> C.errorEvent: EventInstance<Event, C, C>
+    get() = EventInstance(this, "error")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/EventSource/message_event)
+ */
+inline val <C : EventSource> C.messageEvent: EventInstance<MessageEvent<JsAny?>, C, C>
+    get() = EventInstance(this, "message")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/EventSource/open_event)
+ */
+inline val <C : EventSource> C.openEvent: EventInstance<Event, C, C>
+    get() = EventInstance(this, "open")

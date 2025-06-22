@@ -5,7 +5,10 @@ package web.notifications
 import js.core.JsAny
 import js.promise.Promise
 import seskar.js.JsAsync
-import web.events.*
+import web.events.Event
+import web.events.EventHandler
+import web.events.EventInstance
+import web.events.EventTarget
 import kotlin.js.JsName
 import kotlin.js.definedExternally
 
@@ -113,30 +116,6 @@ open external class Notification(
      */
     fun close()
 
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Notification/click_event)
-     */
-    @JsEvent("click")
-    val clickEvent: EventInstance<Event, Notification /* this */, Notification /* this */>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Notification/close_event)
-     */
-    @JsEvent("close")
-    val closeEvent: EventInstance<Event, Notification /* this */, Notification /* this */>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Notification/error_event)
-     */
-    @JsEvent("error")
-    val errorEvent: EventInstance<Event, Notification /* this */, Notification /* this */>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Notification/show_event)
-     */
-    @JsEvent("show")
-    val showEvent: EventInstance<Event, Notification /* this */, Notification /* this */>
-
     companion object {
         /**
          * The **`permission`** read-only static property of the Notification interface indicates the current permission granted by the user for the current origin to display web notifications.
@@ -158,3 +137,27 @@ open external class Notification(
         fun requestPermissionAsync(deprecatedCallback: NotificationPermissionCallback = definedExternally): Promise<NotificationPermission>
     }
 }
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Notification/click_event)
+ */
+inline val <C : Notification> C.clickEvent: EventInstance<Event, C, C>
+    get() = EventInstance(this, "click")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Notification/close_event)
+ */
+inline val <C : Notification> C.closeEvent: EventInstance<Event, C, C>
+    get() = EventInstance(this, "close")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Notification/error_event)
+ */
+inline val <C : Notification> C.errorEvent: EventInstance<Event, C, C>
+    get() = EventInstance(this, "error")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Notification/show_event)
+ */
+inline val <C : Notification> C.showEvent: EventInstance<Event, C, C>
+    get() = EventInstance(this, "show")

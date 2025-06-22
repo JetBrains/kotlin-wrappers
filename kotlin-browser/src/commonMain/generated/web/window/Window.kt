@@ -17,7 +17,10 @@ import web.device.DeviceOrientationEvent
 import web.dom.Element
 import web.dom.GlobalEventHandlers
 import web.dom.Node
-import web.events.*
+import web.events.Event
+import web.events.EventHandler
+import web.events.EventInstance
+import web.events.EventTarget
 import web.form.FormDataEvent
 import web.form.SubmitEvent
 import web.gamepad.GamepadEvent
@@ -403,610 +406,610 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/stop)
      */
     fun stop()
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/abort_event)
-     */
-    @JsEvent("abort")
-    val abortEvent: EventInstance<Event, Window /* this */, Window /* this */>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/afterprint_event)
-     */
-    @JsEvent("afterprint")
-    val afterPrintEvent: EventInstance<Event, Window /* this */, Window /* this */>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/animationcancel_event)
-     */
-    @JsEvent("animationcancel")
-    val animationCancelEvent: EventInstance<AnimationEvent, Window /* this */, Node>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/animationend_event)
-     */
-    @JsEvent("animationend")
-    val animationEndEvent: EventInstance<AnimationEvent, Window /* this */, Node>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/animationiteration_event)
-     */
-    @JsEvent("animationiteration")
-    val animationIterationEvent: EventInstance<AnimationEvent, Window /* this */, Node>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/animationstart_event)
-     */
-    @JsEvent("animationstart")
-    val animationStartEvent: EventInstance<AnimationEvent, Window /* this */, Node>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/auxclick_event)
-     */
-    @JsEvent("auxclick")
-    val auxClickEvent: EventInstance<MouseEvent, Window /* this */, Node>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/beforeinput_event)
-     */
-    @JsEvent("beforeinput")
-    val beforeInputEvent: EventInstance<InputEvent, Window /* this */, Node>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/beforematch_event)
-     */
-    @JsEvent("beforematch")
-    val beforeMatchEvent: EventInstance<Event, Window /* this */, Node>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/beforeprint_event)
-     */
-    @JsEvent("beforeprint")
-    val beforePrintEvent: EventInstance<Event, Window /* this */, Window /* this */>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/beforeunload_event)
-     */
-    @JsEvent("beforeunload")
-    val beforeUnloadEvent: EventInstance<BeforeUnloadEvent, Window /* this */, Window /* this */>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/blur_event)
-     */
-    @JsEvent("blur")
-    val blurEvent: EventInstance<FocusEvent, Window /* this */, Window /* this */>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/cancel_event)
-     */
-    @JsEvent("cancel")
-    val cancelEvent: EventInstance<Event, Window /* this */, Node>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/change_event)
-     */
-    @JsEvent("change")
-    val changeEvent: EventInstance<Event, Window /* this */, Node>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/click_event)
-     */
-    @JsEvent("click")
-    val clickEvent: EventInstance<MouseEvent, Window /* this */, Node>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/compositionend_event)
-     */
-    @JsEvent("compositionend")
-    val compositionEndEvent: EventInstance<CompositionEvent, Window /* this */, Node>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/compositionstart_event)
-     */
-    @JsEvent("compositionstart")
-    val compositionStartEvent: EventInstance<CompositionEvent, Window /* this */, Node>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/compositionupdate_event)
-     */
-    @JsEvent("compositionupdate")
-    val compositionUpdateEvent: EventInstance<CompositionEvent, Window /* this */, Node>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/contextmenu_event)
-     */
-    @JsEvent("contextmenu")
-    val contextMenuEvent: EventInstance<MouseEvent, Window /* this */, Node>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/copy_event)
-     */
-    @JsEvent("copy")
-    val copyEvent: EventInstance<ClipboardEvent, Window /* this */, Node>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/cut_event)
-     */
-    @JsEvent("cut")
-    val cutEvent: EventInstance<ClipboardEvent, Window /* this */, Node>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/dblclick_event)
-     */
-    @JsEvent("dblclick")
-    val dblClickEvent: EventInstance<MouseEvent, Window /* this */, Node>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/devicemotion_event)
-     */
-    @JsEvent("devicemotion")
-    val deviceMotionEvent: EventInstance<DeviceMotionEvent, Window /* this */, Window /* this */>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/deviceorientation_event)
-     */
-    @JsEvent("deviceorientation")
-    val deviceOrientationEvent: EventInstance<DeviceOrientationEvent, Window /* this */, Window /* this */>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/deviceorientationabsolute_event)
-     */
-    @JsEvent("deviceorientationabsolute")
-    val deviceOrientationAbsoluteEvent: EventInstance<DeviceOrientationEvent, Window /* this */, Window /* this */>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/DOMContentLoaded_event)
-     */
-    @JsEvent("DOMContentLoaded")
-    val domContentLoadedEvent: EventInstance<Event, Window /* this */, Window>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/drag_event)
-     */
-    @JsEvent("drag")
-    val dragEvent: EventInstance<DragEvent, Window /* this */, Node>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/dragend_event)
-     */
-    @JsEvent("dragend")
-    val dragEndEvent: EventInstance<DragEvent, Window /* this */, Node>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/dragenter_event)
-     */
-    @JsEvent("dragenter")
-    val dragEnterEvent: EventInstance<DragEvent, Window /* this */, Node>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/dragleave_event)
-     */
-    @JsEvent("dragleave")
-    val dragLeaveEvent: EventInstance<DragEvent, Window /* this */, Node>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/dragover_event)
-     */
-    @JsEvent("dragover")
-    val dragOverEvent: EventInstance<DragEvent, Window /* this */, Node>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/dragstart_event)
-     */
-    @JsEvent("dragstart")
-    val dragStartEvent: EventInstance<DragEvent, Window /* this */, Node>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/drop_event)
-     */
-    @JsEvent("drop")
-    val dropEvent: EventInstance<DragEvent, Window /* this */, Node>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/enterpictureinpicture_event)
-     */
-    @JsEvent("enterpictureinpicture")
-    val enterPictureInPictureEvent: EventInstance<PictureInPictureEvent, Window /* this */, Node>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/error_event)
-     */
-    @JsEvent("error")
-    val errorEvent: EventInstance<Event, Window /* this */, Window /* this */>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/focus_event)
-     */
-    @JsEvent("focus")
-    val focusEvent: EventInstance<FocusEvent, Window /* this */, Window /* this */>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/focusin_event)
-     */
-    @JsEvent("focusin")
-    val focusInEvent: EventInstance<FocusEvent, Window /* this */, Node>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/focusout_event)
-     */
-    @JsEvent("focusout")
-    val focusOutEvent: EventInstance<FocusEvent, Window /* this */, Node>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/formdata_event)
-     */
-    @JsEvent("formdata")
-    val formDataEvent: EventInstance<FormDataEvent, Window /* this */, Node>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/fullscreenchange_event)
-     */
-    @JsEvent("fullscreenchange")
-    val fullscreenChangeEvent: EventInstance<Event, Window /* this */, Node>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/fullscreenerror_event)
-     */
-    @JsEvent("fullscreenerror")
-    val fullscreenErrorEvent: EventInstance<Event, Window /* this */, Node>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/gamepadconnected_event)
-     */
-    @JsEvent("gamepadconnected")
-    val gamepadConnectedEvent: EventInstance<GamepadEvent, Window /* this */, Window /* this */>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/gamepaddisconnected_event)
-     */
-    @JsEvent("gamepaddisconnected")
-    val gamepadDisconnectedEvent: EventInstance<GamepadEvent, Window /* this */, Window /* this */>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/gotpointercapture_event)
-     */
-    @JsEvent("gotpointercapture")
-    val gotPointerCaptureEvent: EventInstance<PointerEvent, Window /* this */, Node>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/hashchange_event)
-     */
-    @JsEvent("hashchange")
-    val hashChangeEvent: EventInstance<HashChangeEvent, Window /* this */, Window /* this */>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/input_event)
-     */
-    @JsEvent("input")
-    val inputEvent: EventInstance<InputEvent, Window /* this */, Node>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/keydown_event)
-     */
-    @JsEvent("keydown")
-    val keyDownEvent: EventInstance<KeyboardEvent, Window /* this */, Node>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/keypress_event)
-     */
-    @JsEvent("keypress")
-    val keyPressEvent: EventInstance<KeyboardEvent, Window /* this */, Node>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/keyup_event)
-     */
-    @JsEvent("keyup")
-    val keyUpEvent: EventInstance<KeyboardEvent, Window /* this */, Node>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/languagechange_event)
-     */
-    @JsEvent("languagechange")
-    val languageChangeEvent: EventInstance<Event, Window /* this */, Window /* this */>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/leavepictureinpicture_event)
-     */
-    @JsEvent("leavepictureinpicture")
-    val leavePictureInPictureEvent: EventInstance<PictureInPictureEvent, Window /* this */, Node>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/load_event)
-     */
-    @JsEvent("load")
-    val loadEvent: EventInstance<Event, Window /* this */, Window /* this */>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/lostpointercapture_event)
-     */
-    @JsEvent("lostpointercapture")
-    val lostPointerCaptureEvent: EventInstance<PointerEvent, Window /* this */, Node>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/message_event)
-     */
-    @JsEvent("message")
-    val messageEvent: EventInstance<MessageEvent<JsAny?>, Window /* this */, Window /* this */>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/messageerror_event)
-     */
-    @JsEvent("messageerror")
-    val messageErrorEvent: EventInstance<MessageEvent<JsAny?>, Window /* this */, Window /* this */>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/mousedown_event)
-     */
-    @JsEvent("mousedown")
-    val mouseDownEvent: EventInstance<MouseEvent, Window /* this */, Node>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/mousemove_event)
-     */
-    @JsEvent("mousemove")
-    val mouseMoveEvent: EventInstance<MouseEvent, Window /* this */, Node>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/mouseout_event)
-     */
-    @JsEvent("mouseout")
-    val mouseOutEvent: EventInstance<MouseEvent, Window /* this */, Node>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/mouseover_event)
-     */
-    @JsEvent("mouseover")
-    val mouseOverEvent: EventInstance<MouseEvent, Window /* this */, Node>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/mouseup_event)
-     */
-    @JsEvent("mouseup")
-    val mouseUpEvent: EventInstance<MouseEvent, Window /* this */, Node>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/offline_event)
-     */
-    @JsEvent("offline")
-    val offlineEvent: EventInstance<Event, Window /* this */, Window /* this */>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/online_event)
-     */
-    @JsEvent("online")
-    val onlineEvent: EventInstance<Event, Window /* this */, Window /* this */>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/pagehide_event)
-     */
-    @JsEvent("pagehide")
-    val pageHideEvent: EventInstance<PageTransitionEvent, Window /* this */, Window /* this */>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/pagereveal_event)
-     */
-    @JsEvent("pagereveal")
-    val pageRevealEvent: EventInstance<PageRevealEvent, Window /* this */, Window /* this */>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/pageshow_event)
-     */
-    @JsEvent("pageshow")
-    val pageShowEvent: EventInstance<PageTransitionEvent, Window /* this */, Window /* this */>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/pageswap_event)
-     */
-    @JsEvent("pageswap")
-    val pageSwapEvent: EventInstance<PageSwapEvent, Window /* this */, Window /* this */>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/paste_event)
-     */
-    @JsEvent("paste")
-    val pasteEvent: EventInstance<ClipboardEvent, Window /* this */, Node>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/pointercancel_event)
-     */
-    @JsEvent("pointercancel")
-    val pointerCancelEvent: EventInstance<PointerEvent, Window /* this */, Node>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/pointerdown_event)
-     */
-    @JsEvent("pointerdown")
-    val pointerDownEvent: EventInstance<PointerEvent, Window /* this */, Node>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/pointerenter_event)
-     */
-    @JsEvent("pointerenter")
-    val pointerEnterEvent: EventInstance<PointerEvent, Window /* this */, Window /* this */>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/pointerleave_event)
-     */
-    @JsEvent("pointerleave")
-    val pointerLeaveEvent: EventInstance<PointerEvent, Window /* this */, Window /* this */>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/pointermove_event)
-     */
-    @JsEvent("pointermove")
-    val pointerMoveEvent: EventInstance<PointerEvent, Window /* this */, Node>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/pointerout_event)
-     */
-    @JsEvent("pointerout")
-    val pointerOutEvent: EventInstance<PointerEvent, Window /* this */, Node>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/pointerover_event)
-     */
-    @JsEvent("pointerover")
-    val pointerOverEvent: EventInstance<PointerEvent, Window /* this */, Node>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/pointerrawupdate_event)
-     */
-    @JsEvent("pointerrawupdate")
-    val pointerRawUpdateEvent: EventInstance<PointerEvent, Window /* this */, Node>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/pointerup_event)
-     */
-    @JsEvent("pointerup")
-    val pointerUpEvent: EventInstance<PointerEvent, Window /* this */, Node>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/popstate_event)
-     */
-    @JsEvent("popstate")
-    val popStateEvent: EventInstance<PopStateEvent, Window /* this */, Window /* this */>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/rejectionhandled_event)
-     */
-    @JsEvent("rejectionhandled")
-    val rejectionHandledEvent: EventInstance<PromiseRejectionEvent, Window /* this */, Window /* this */>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/reset_event)
-     */
-    @JsEvent("reset")
-    val resetEvent: EventInstance<Event, Window /* this */, Node>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/resize_event)
-     */
-    @JsEvent("resize")
-    val resizeEvent: EventInstance<Event, Window /* this */, Window /* this */>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/scroll_event)
-     */
-    @JsEvent("scroll")
-    val scrollEvent: EventInstance<Event, Window /* this */, Node>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/scrollend_event)
-     */
-    @JsEvent("scrollend")
-    val scrollEndEvent: EventInstance<Event, Window /* this */, Node>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/securitypolicyviolation_event)
-     */
-    @JsEvent("securitypolicyviolation")
-    val securityPolicyViolationEvent: EventInstance<SecurityPolicyViolationEvent, Window /* this */, Window /* this */>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/select_event)
-     */
-    @JsEvent("select")
-    val selectEvent: EventInstance<Event, Window /* this */, Node>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/selectionchange_event)
-     */
-    @JsEvent("selectionchange")
-    val selectionChangeEvent: EventInstance<Event, Window /* this */, Window /* this */>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/selectstart_event)
-     */
-    @JsEvent("selectstart")
-    val selectStartEvent: EventInstance<Event, Window /* this */, Node>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/slotchange_event)
-     */
-    @JsEvent("slotchange")
-    val slotChangeEvent: EventInstance<Event, Window /* this */, Node>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/storage_event)
-     */
-    @JsEvent("storage")
-    val storageEvent: EventInstance<StorageEvent, Window /* this */, Window /* this */>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/submit_event)
-     */
-    @JsEvent("submit")
-    val submitEvent: EventInstance<SubmitEvent, Window /* this */, Node>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/touchcancel_event)
-     */
-    @JsEvent("touchcancel")
-    val touchCancelEvent: EventInstance<TouchEvent, Window /* this */, Node>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/touchend_event)
-     */
-    @JsEvent("touchend")
-    val touchEndEvent: EventInstance<TouchEvent, Window /* this */, Node>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/touchmove_event)
-     */
-    @JsEvent("touchmove")
-    val touchMoveEvent: EventInstance<TouchEvent, Window /* this */, Node>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/touchstart_event)
-     */
-    @JsEvent("touchstart")
-    val touchStartEvent: EventInstance<TouchEvent, Window /* this */, Node>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/transitioncancel_event)
-     */
-    @JsEvent("transitioncancel")
-    val transitionCancelEvent: EventInstance<TransitionEvent, Window /* this */, Node>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/transitionend_event)
-     */
-    @JsEvent("transitionend")
-    val transitionEndEvent: EventInstance<TransitionEvent, Window /* this */, Node>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/transitionrun_event)
-     */
-    @JsEvent("transitionrun")
-    val transitionRunEvent: EventInstance<TransitionEvent, Window /* this */, Node>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/transitionstart_event)
-     */
-    @JsEvent("transitionstart")
-    val transitionStartEvent: EventInstance<TransitionEvent, Window /* this */, Node>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/unhandledrejection_event)
-     */
-    @JsEvent("unhandledrejection")
-    val unhandledRejectionEvent: EventInstance<PromiseRejectionEvent, Window /* this */, Window /* this */>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/unload_event)
-     */
-    @JsEvent("unload")
-    val unloadEvent: EventInstance<Event, Window /* this */, Window /* this */>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/visibilitychange_event)
-     */
-    @JsEvent("visibilitychange")
-    val visibilityChangeEvent: EventInstance<Event, Window /* this */, Window>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/wheel_event)
-     */
-    @JsEvent("wheel")
-    val wheelEvent: EventInstance<WheelEvent, Window /* this */, Node>
 }
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/abort_event)
+ */
+inline val <C : Window> C.abortEvent: EventInstance<Event, C, C>
+    get() = EventInstance(this, "abort")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/afterprint_event)
+ */
+inline val <C : Window> C.afterPrintEvent: EventInstance<Event, C, C>
+    get() = EventInstance(this, "afterprint")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/animationcancel_event)
+ */
+inline val <C : Window> C.animationCancelEvent: EventInstance<AnimationEvent, C, Node>
+    get() = EventInstance(this, "animationcancel")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/animationend_event)
+ */
+inline val <C : Window> C.animationEndEvent: EventInstance<AnimationEvent, C, Node>
+    get() = EventInstance(this, "animationend")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/animationiteration_event)
+ */
+inline val <C : Window> C.animationIterationEvent: EventInstance<AnimationEvent, C, Node>
+    get() = EventInstance(this, "animationiteration")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/animationstart_event)
+ */
+inline val <C : Window> C.animationStartEvent: EventInstance<AnimationEvent, C, Node>
+    get() = EventInstance(this, "animationstart")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/auxclick_event)
+ */
+inline val <C : Window> C.auxClickEvent: EventInstance<MouseEvent, C, Node>
+    get() = EventInstance(this, "auxclick")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/beforeinput_event)
+ */
+inline val <C : Window> C.beforeInputEvent: EventInstance<InputEvent, C, Node>
+    get() = EventInstance(this, "beforeinput")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/beforematch_event)
+ */
+inline val <C : Window> C.beforeMatchEvent: EventInstance<Event, C, Node>
+    get() = EventInstance(this, "beforematch")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/beforeprint_event)
+ */
+inline val <C : Window> C.beforePrintEvent: EventInstance<Event, C, C>
+    get() = EventInstance(this, "beforeprint")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/beforeunload_event)
+ */
+inline val <C : Window> C.beforeUnloadEvent: EventInstance<BeforeUnloadEvent, C, C>
+    get() = EventInstance(this, "beforeunload")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/blur_event)
+ */
+inline val <C : Window> C.blurEvent: EventInstance<FocusEvent, C, C>
+    get() = EventInstance(this, "blur")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/cancel_event)
+ */
+inline val <C : Window> C.cancelEvent: EventInstance<Event, C, Node>
+    get() = EventInstance(this, "cancel")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/change_event)
+ */
+inline val <C : Window> C.changeEvent: EventInstance<Event, C, Node>
+    get() = EventInstance(this, "change")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/click_event)
+ */
+inline val <C : Window> C.clickEvent: EventInstance<MouseEvent, C, Node>
+    get() = EventInstance(this, "click")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/compositionend_event)
+ */
+inline val <C : Window> C.compositionEndEvent: EventInstance<CompositionEvent, C, Node>
+    get() = EventInstance(this, "compositionend")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/compositionstart_event)
+ */
+inline val <C : Window> C.compositionStartEvent: EventInstance<CompositionEvent, C, Node>
+    get() = EventInstance(this, "compositionstart")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/compositionupdate_event)
+ */
+inline val <C : Window> C.compositionUpdateEvent: EventInstance<CompositionEvent, C, Node>
+    get() = EventInstance(this, "compositionupdate")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/contextmenu_event)
+ */
+inline val <C : Window> C.contextMenuEvent: EventInstance<MouseEvent, C, Node>
+    get() = EventInstance(this, "contextmenu")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/copy_event)
+ */
+inline val <C : Window> C.copyEvent: EventInstance<ClipboardEvent, C, Node>
+    get() = EventInstance(this, "copy")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/cut_event)
+ */
+inline val <C : Window> C.cutEvent: EventInstance<ClipboardEvent, C, Node>
+    get() = EventInstance(this, "cut")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/dblclick_event)
+ */
+inline val <C : Window> C.dblClickEvent: EventInstance<MouseEvent, C, Node>
+    get() = EventInstance(this, "dblclick")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/devicemotion_event)
+ */
+inline val <C : Window> C.deviceMotionEvent: EventInstance<DeviceMotionEvent, C, C>
+    get() = EventInstance(this, "devicemotion")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/deviceorientation_event)
+ */
+inline val <C : Window> C.deviceOrientationEvent: EventInstance<DeviceOrientationEvent, C, C>
+    get() = EventInstance(this, "deviceorientation")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/deviceorientationabsolute_event)
+ */
+inline val <C : Window> C.deviceOrientationAbsoluteEvent: EventInstance<DeviceOrientationEvent, C, C>
+    get() = EventInstance(this, "deviceorientationabsolute")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/DOMContentLoaded_event)
+ */
+inline val <C : Window> C.domContentLoadedEvent: EventInstance<Event, C, Window>
+    get() = EventInstance(this, "DOMContentLoaded")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/drag_event)
+ */
+inline val <C : Window> C.dragEvent: EventInstance<DragEvent, C, Node>
+    get() = EventInstance(this, "drag")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/dragend_event)
+ */
+inline val <C : Window> C.dragEndEvent: EventInstance<DragEvent, C, Node>
+    get() = EventInstance(this, "dragend")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/dragenter_event)
+ */
+inline val <C : Window> C.dragEnterEvent: EventInstance<DragEvent, C, Node>
+    get() = EventInstance(this, "dragenter")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/dragleave_event)
+ */
+inline val <C : Window> C.dragLeaveEvent: EventInstance<DragEvent, C, Node>
+    get() = EventInstance(this, "dragleave")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/dragover_event)
+ */
+inline val <C : Window> C.dragOverEvent: EventInstance<DragEvent, C, Node>
+    get() = EventInstance(this, "dragover")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/dragstart_event)
+ */
+inline val <C : Window> C.dragStartEvent: EventInstance<DragEvent, C, Node>
+    get() = EventInstance(this, "dragstart")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/drop_event)
+ */
+inline val <C : Window> C.dropEvent: EventInstance<DragEvent, C, Node>
+    get() = EventInstance(this, "drop")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/enterpictureinpicture_event)
+ */
+inline val <C : Window> C.enterPictureInPictureEvent: EventInstance<PictureInPictureEvent, C, Node>
+    get() = EventInstance(this, "enterpictureinpicture")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/error_event)
+ */
+inline val <C : Window> C.errorEvent: EventInstance<Event, C, C>
+    get() = EventInstance(this, "error")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/focus_event)
+ */
+inline val <C : Window> C.focusEvent: EventInstance<FocusEvent, C, C>
+    get() = EventInstance(this, "focus")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/focusin_event)
+ */
+inline val <C : Window> C.focusInEvent: EventInstance<FocusEvent, C, Node>
+    get() = EventInstance(this, "focusin")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/focusout_event)
+ */
+inline val <C : Window> C.focusOutEvent: EventInstance<FocusEvent, C, Node>
+    get() = EventInstance(this, "focusout")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/formdata_event)
+ */
+inline val <C : Window> C.formDataEvent: EventInstance<FormDataEvent, C, Node>
+    get() = EventInstance(this, "formdata")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/fullscreenchange_event)
+ */
+inline val <C : Window> C.fullscreenChangeEvent: EventInstance<Event, C, Node>
+    get() = EventInstance(this, "fullscreenchange")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/fullscreenerror_event)
+ */
+inline val <C : Window> C.fullscreenErrorEvent: EventInstance<Event, C, Node>
+    get() = EventInstance(this, "fullscreenerror")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/gamepadconnected_event)
+ */
+inline val <C : Window> C.gamepadConnectedEvent: EventInstance<GamepadEvent, C, C>
+    get() = EventInstance(this, "gamepadconnected")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/gamepaddisconnected_event)
+ */
+inline val <C : Window> C.gamepadDisconnectedEvent: EventInstance<GamepadEvent, C, C>
+    get() = EventInstance(this, "gamepaddisconnected")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/gotpointercapture_event)
+ */
+inline val <C : Window> C.gotPointerCaptureEvent: EventInstance<PointerEvent, C, Node>
+    get() = EventInstance(this, "gotpointercapture")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/hashchange_event)
+ */
+inline val <C : Window> C.hashChangeEvent: EventInstance<HashChangeEvent, C, C>
+    get() = EventInstance(this, "hashchange")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/input_event)
+ */
+inline val <C : Window> C.inputEvent: EventInstance<InputEvent, C, Node>
+    get() = EventInstance(this, "input")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/keydown_event)
+ */
+inline val <C : Window> C.keyDownEvent: EventInstance<KeyboardEvent, C, Node>
+    get() = EventInstance(this, "keydown")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/keypress_event)
+ */
+inline val <C : Window> C.keyPressEvent: EventInstance<KeyboardEvent, C, Node>
+    get() = EventInstance(this, "keypress")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/keyup_event)
+ */
+inline val <C : Window> C.keyUpEvent: EventInstance<KeyboardEvent, C, Node>
+    get() = EventInstance(this, "keyup")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/languagechange_event)
+ */
+inline val <C : Window> C.languageChangeEvent: EventInstance<Event, C, C>
+    get() = EventInstance(this, "languagechange")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/leavepictureinpicture_event)
+ */
+inline val <C : Window> C.leavePictureInPictureEvent: EventInstance<PictureInPictureEvent, C, Node>
+    get() = EventInstance(this, "leavepictureinpicture")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/load_event)
+ */
+inline val <C : Window> C.loadEvent: EventInstance<Event, C, C>
+    get() = EventInstance(this, "load")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/lostpointercapture_event)
+ */
+inline val <C : Window> C.lostPointerCaptureEvent: EventInstance<PointerEvent, C, Node>
+    get() = EventInstance(this, "lostpointercapture")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/message_event)
+ */
+inline val <C : Window> C.messageEvent: EventInstance<MessageEvent<JsAny?>, C, C>
+    get() = EventInstance(this, "message")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/messageerror_event)
+ */
+inline val <C : Window> C.messageErrorEvent: EventInstance<MessageEvent<JsAny?>, C, C>
+    get() = EventInstance(this, "messageerror")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/mousedown_event)
+ */
+inline val <C : Window> C.mouseDownEvent: EventInstance<MouseEvent, C, Node>
+    get() = EventInstance(this, "mousedown")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/mousemove_event)
+ */
+inline val <C : Window> C.mouseMoveEvent: EventInstance<MouseEvent, C, Node>
+    get() = EventInstance(this, "mousemove")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/mouseout_event)
+ */
+inline val <C : Window> C.mouseOutEvent: EventInstance<MouseEvent, C, Node>
+    get() = EventInstance(this, "mouseout")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/mouseover_event)
+ */
+inline val <C : Window> C.mouseOverEvent: EventInstance<MouseEvent, C, Node>
+    get() = EventInstance(this, "mouseover")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/mouseup_event)
+ */
+inline val <C : Window> C.mouseUpEvent: EventInstance<MouseEvent, C, Node>
+    get() = EventInstance(this, "mouseup")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/offline_event)
+ */
+inline val <C : Window> C.offlineEvent: EventInstance<Event, C, C>
+    get() = EventInstance(this, "offline")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/online_event)
+ */
+inline val <C : Window> C.onlineEvent: EventInstance<Event, C, C>
+    get() = EventInstance(this, "online")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/pagehide_event)
+ */
+inline val <C : Window> C.pageHideEvent: EventInstance<PageTransitionEvent, C, C>
+    get() = EventInstance(this, "pagehide")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/pagereveal_event)
+ */
+inline val <C : Window> C.pageRevealEvent: EventInstance<PageRevealEvent, C, C>
+    get() = EventInstance(this, "pagereveal")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/pageshow_event)
+ */
+inline val <C : Window> C.pageShowEvent: EventInstance<PageTransitionEvent, C, C>
+    get() = EventInstance(this, "pageshow")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/pageswap_event)
+ */
+inline val <C : Window> C.pageSwapEvent: EventInstance<PageSwapEvent, C, C>
+    get() = EventInstance(this, "pageswap")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/paste_event)
+ */
+inline val <C : Window> C.pasteEvent: EventInstance<ClipboardEvent, C, Node>
+    get() = EventInstance(this, "paste")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/pointercancel_event)
+ */
+inline val <C : Window> C.pointerCancelEvent: EventInstance<PointerEvent, C, Node>
+    get() = EventInstance(this, "pointercancel")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/pointerdown_event)
+ */
+inline val <C : Window> C.pointerDownEvent: EventInstance<PointerEvent, C, Node>
+    get() = EventInstance(this, "pointerdown")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/pointerenter_event)
+ */
+inline val <C : Window> C.pointerEnterEvent: EventInstance<PointerEvent, C, C>
+    get() = EventInstance(this, "pointerenter")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/pointerleave_event)
+ */
+inline val <C : Window> C.pointerLeaveEvent: EventInstance<PointerEvent, C, C>
+    get() = EventInstance(this, "pointerleave")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/pointermove_event)
+ */
+inline val <C : Window> C.pointerMoveEvent: EventInstance<PointerEvent, C, Node>
+    get() = EventInstance(this, "pointermove")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/pointerout_event)
+ */
+inline val <C : Window> C.pointerOutEvent: EventInstance<PointerEvent, C, Node>
+    get() = EventInstance(this, "pointerout")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/pointerover_event)
+ */
+inline val <C : Window> C.pointerOverEvent: EventInstance<PointerEvent, C, Node>
+    get() = EventInstance(this, "pointerover")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/pointerrawupdate_event)
+ */
+inline val <C : Window> C.pointerRawUpdateEvent: EventInstance<PointerEvent, C, Node>
+    get() = EventInstance(this, "pointerrawupdate")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/pointerup_event)
+ */
+inline val <C : Window> C.pointerUpEvent: EventInstance<PointerEvent, C, Node>
+    get() = EventInstance(this, "pointerup")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/popstate_event)
+ */
+inline val <C : Window> C.popStateEvent: EventInstance<PopStateEvent, C, C>
+    get() = EventInstance(this, "popstate")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/rejectionhandled_event)
+ */
+inline val <C : Window> C.rejectionHandledEvent: EventInstance<PromiseRejectionEvent, C, C>
+    get() = EventInstance(this, "rejectionhandled")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/reset_event)
+ */
+inline val <C : Window> C.resetEvent: EventInstance<Event, C, Node>
+    get() = EventInstance(this, "reset")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/resize_event)
+ */
+inline val <C : Window> C.resizeEvent: EventInstance<Event, C, C>
+    get() = EventInstance(this, "resize")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/scroll_event)
+ */
+inline val <C : Window> C.scrollEvent: EventInstance<Event, C, Node>
+    get() = EventInstance(this, "scroll")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/scrollend_event)
+ */
+inline val <C : Window> C.scrollEndEvent: EventInstance<Event, C, Node>
+    get() = EventInstance(this, "scrollend")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/securitypolicyviolation_event)
+ */
+inline val <C : Window> C.securityPolicyViolationEvent: EventInstance<SecurityPolicyViolationEvent, C, C>
+    get() = EventInstance(this, "securitypolicyviolation")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/select_event)
+ */
+inline val <C : Window> C.selectEvent: EventInstance<Event, C, Node>
+    get() = EventInstance(this, "select")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/selectionchange_event)
+ */
+inline val <C : Window> C.selectionChangeEvent: EventInstance<Event, C, C>
+    get() = EventInstance(this, "selectionchange")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/selectstart_event)
+ */
+inline val <C : Window> C.selectStartEvent: EventInstance<Event, C, Node>
+    get() = EventInstance(this, "selectstart")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/slotchange_event)
+ */
+inline val <C : Window> C.slotChangeEvent: EventInstance<Event, C, Node>
+    get() = EventInstance(this, "slotchange")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/storage_event)
+ */
+inline val <C : Window> C.storageEvent: EventInstance<StorageEvent, C, C>
+    get() = EventInstance(this, "storage")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/submit_event)
+ */
+inline val <C : Window> C.submitEvent: EventInstance<SubmitEvent, C, Node>
+    get() = EventInstance(this, "submit")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/touchcancel_event)
+ */
+inline val <C : Window> C.touchCancelEvent: EventInstance<TouchEvent, C, Node>
+    get() = EventInstance(this, "touchcancel")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/touchend_event)
+ */
+inline val <C : Window> C.touchEndEvent: EventInstance<TouchEvent, C, Node>
+    get() = EventInstance(this, "touchend")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/touchmove_event)
+ */
+inline val <C : Window> C.touchMoveEvent: EventInstance<TouchEvent, C, Node>
+    get() = EventInstance(this, "touchmove")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/touchstart_event)
+ */
+inline val <C : Window> C.touchStartEvent: EventInstance<TouchEvent, C, Node>
+    get() = EventInstance(this, "touchstart")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/transitioncancel_event)
+ */
+inline val <C : Window> C.transitionCancelEvent: EventInstance<TransitionEvent, C, Node>
+    get() = EventInstance(this, "transitioncancel")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/transitionend_event)
+ */
+inline val <C : Window> C.transitionEndEvent: EventInstance<TransitionEvent, C, Node>
+    get() = EventInstance(this, "transitionend")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/transitionrun_event)
+ */
+inline val <C : Window> C.transitionRunEvent: EventInstance<TransitionEvent, C, Node>
+    get() = EventInstance(this, "transitionrun")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/transitionstart_event)
+ */
+inline val <C : Window> C.transitionStartEvent: EventInstance<TransitionEvent, C, Node>
+    get() = EventInstance(this, "transitionstart")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/unhandledrejection_event)
+ */
+inline val <C : Window> C.unhandledRejectionEvent: EventInstance<PromiseRejectionEvent, C, C>
+    get() = EventInstance(this, "unhandledrejection")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/unload_event)
+ */
+inline val <C : Window> C.unloadEvent: EventInstance<Event, C, C>
+    get() = EventInstance(this, "unload")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/visibilitychange_event)
+ */
+inline val <C : Window> C.visibilityChangeEvent: EventInstance<Event, C, Window>
+    get() = EventInstance(this, "visibilitychange")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/wheel_event)
+ */
+inline val <C : Window> C.wheelEvent: EventInstance<WheelEvent, C, Node>
+    get() = EventInstance(this, "wheel")

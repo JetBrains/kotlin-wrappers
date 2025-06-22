@@ -2,7 +2,10 @@
 
 package web.vtt
 
-import web.events.*
+import web.events.Event
+import web.events.EventHandler
+import web.events.EventInstance
+import web.events.EventTarget
 
 /**
  * The **`TextTrack`** interface of the WebVTT API represents a text track associated with a media element.
@@ -86,10 +89,10 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextTrack/removeCue)
      */
     fun removeCue(cue: TextTrackCue)
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextTrack/cuechange_event)
-     */
-    @JsEvent("cuechange")
-    val cueChangeEvent: EventInstance<Event, TextTrack /* this */, TextTrack /* this */>
 }
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextTrack/cuechange_event)
+ */
+inline val <C : TextTrack> C.cueChangeEvent: EventInstance<Event, C, C>
+    get() = EventInstance(this, "cuechange")

@@ -8,7 +8,6 @@ import seskar.js.JsAsync
 import web.events.EventHandler
 import web.events.EventInstance
 import web.events.EventTarget
-import web.events.JsEvent
 import kotlin.js.JsName
 import kotlin.js.definedExternally
 
@@ -107,10 +106,10 @@ private constructor() :
 
     @JsName("set")
     fun setAsync(options: CookieInit): Promise<Void>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CookieStore/change_event)
-     */
-    @JsEvent("change")
-    val changeEvent: EventInstance<CookieChangeEvent, CookieStore /* this */, CookieStore /* this */>
 }
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CookieStore/change_event)
+ */
+inline val <C : CookieStore> C.changeEvent: EventInstance<CookieChangeEvent, C, C>
+    get() = EventInstance(this, "change")

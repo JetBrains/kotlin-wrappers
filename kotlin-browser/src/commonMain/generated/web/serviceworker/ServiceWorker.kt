@@ -5,7 +5,10 @@ package web.serviceworker
 import js.array.ReadonlyArray
 import js.core.JsAny
 import js.serialization.Transferable
-import web.events.*
+import web.events.Event
+import web.events.EventHandler
+import web.events.EventInstance
+import web.events.EventTarget
 import web.messaging.MessageEventSource
 import web.serialization.StructuredSerializeOptions
 import web.workers.AbstractWorker
@@ -55,16 +58,16 @@ private constructor() :
         message: JsAny?,
         options: StructuredSerializeOptions = definedExternally,
     )
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorker/error_event)
-     */
-    @JsEvent("error")
-    val errorEvent: EventInstance<Event, ServiceWorker /* this */, ServiceWorker /* this */>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorker/statechange_event)
-     */
-    @JsEvent("statechange")
-    val stateChangeEvent: EventInstance<Event, ServiceWorker /* this */, ServiceWorker /* this */>
 }
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorker/error_event)
+ */
+inline val <C : ServiceWorker> C.errorEvent: EventInstance<Event, C, C>
+    get() = EventInstance(this, "error")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorker/statechange_event)
+ */
+inline val <C : ServiceWorker> C.stateChangeEvent: EventInstance<Event, C, C>
+    get() = EventInstance(this, "statechange")

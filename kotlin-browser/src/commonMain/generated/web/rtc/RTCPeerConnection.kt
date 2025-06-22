@@ -7,7 +7,10 @@ import js.core.Void
 import js.promise.Promise
 import seskar.js.JsAsync
 import web.crypto.Algorithm
-import web.events.*
+import web.events.Event
+import web.events.EventHandler
+import web.events.EventInstance
+import web.events.EventTarget
 import web.mediastreams.MediaStream
 import web.mediastreams.MediaStreamTrack
 import kotlin.js.JsName
@@ -313,60 +316,6 @@ open external class RTCPeerConnection(
     @JsName("setRemoteDescription")
     fun setRemoteDescriptionAsync(description: RTCSessionDescriptionInit): Promise<Void>
 
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/connectionstatechange_event)
-     */
-    @JsEvent("connectionstatechange")
-    val connectionStateChangeEvent: EventInstance<Event, RTCPeerConnection /* this */, RTCPeerConnection /* this */>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/datachannel_event)
-     */
-    @JsEvent("datachannel")
-    val dataChannelEvent: EventInstance<RTCDataChannelEvent, RTCPeerConnection /* this */, RTCPeerConnection /* this */>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/icecandidate_event)
-     */
-    @JsEvent("icecandidate")
-    val iceCandidateEvent: EventInstance<RTCPeerConnectionIceEvent, RTCPeerConnection /* this */, RTCPeerConnection /* this */>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/icecandidateerror_event)
-     */
-    @JsEvent("icecandidateerror")
-    val iceCandidateErrorEvent: EventInstance<RTCPeerConnectionIceErrorEvent, RTCPeerConnection /* this */, RTCPeerConnection /* this */>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/iceconnectionstatechange_event)
-     */
-    @JsEvent("iceconnectionstatechange")
-    val iceConnectionStateChangeEvent: EventInstance<Event, RTCPeerConnection /* this */, RTCPeerConnection /* this */>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/icegatheringstatechange_event)
-     */
-    @JsEvent("icegatheringstatechange")
-    val iceGatheringStateChangeEvent: EventInstance<Event, RTCPeerConnection /* this */, RTCPeerConnection /* this */>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/negotiationneeded_event)
-     */
-    @JsEvent("negotiationneeded")
-    val negotiationNeededEvent: EventInstance<Event, RTCPeerConnection /* this */, RTCPeerConnection /* this */>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/signalingstatechange_event)
-     */
-    @JsEvent("signalingstatechange")
-    val signalingStateChangeEvent: EventInstance<Event, RTCPeerConnection /* this */, RTCPeerConnection /* this */>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/track_event)
-     */
-    @JsEvent("track")
-    val trackEvent: EventInstance<RTCTrackEvent, RTCPeerConnection /* this */, RTCPeerConnection /* this */>
-
     companion object {
         /**
          * The **`generateCertificate()`** static function of the RTCPeerConnection interface creates an X.509 certificate and corresponding private key, returning a promise that resolves with the new RTCCertificate once it's generated.
@@ -388,3 +337,57 @@ open external class RTCPeerConnection(
         fun generateCertificateAsync(keygenAlgorithm: String): Promise<RTCCertificate>
     }
 }
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/connectionstatechange_event)
+ */
+inline val <C : RTCPeerConnection> C.connectionStateChangeEvent: EventInstance<Event, C, C>
+    get() = EventInstance(this, "connectionstatechange")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/datachannel_event)
+ */
+inline val <C : RTCPeerConnection> C.dataChannelEvent: EventInstance<RTCDataChannelEvent, C, C>
+    get() = EventInstance(this, "datachannel")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/icecandidate_event)
+ */
+inline val <C : RTCPeerConnection> C.iceCandidateEvent: EventInstance<RTCPeerConnectionIceEvent, C, C>
+    get() = EventInstance(this, "icecandidate")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/icecandidateerror_event)
+ */
+inline val <C : RTCPeerConnection> C.iceCandidateErrorEvent: EventInstance<RTCPeerConnectionIceErrorEvent, C, C>
+    get() = EventInstance(this, "icecandidateerror")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/iceconnectionstatechange_event)
+ */
+inline val <C : RTCPeerConnection> C.iceConnectionStateChangeEvent: EventInstance<Event, C, C>
+    get() = EventInstance(this, "iceconnectionstatechange")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/icegatheringstatechange_event)
+ */
+inline val <C : RTCPeerConnection> C.iceGatheringStateChangeEvent: EventInstance<Event, C, C>
+    get() = EventInstance(this, "icegatheringstatechange")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/negotiationneeded_event)
+ */
+inline val <C : RTCPeerConnection> C.negotiationNeededEvent: EventInstance<Event, C, C>
+    get() = EventInstance(this, "negotiationneeded")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/signalingstatechange_event)
+ */
+inline val <C : RTCPeerConnection> C.signalingStateChangeEvent: EventInstance<Event, C, C>
+    get() = EventInstance(this, "signalingstatechange")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/track_event)
+ */
+inline val <C : RTCPeerConnection> C.trackEvent: EventInstance<RTCTrackEvent, C, C>
+    get() = EventInstance(this, "track")

@@ -8,7 +8,6 @@ import web.canvas.CanvasImageSource
 import web.dom.Node
 import web.events.EventHandler
 import web.events.EventInstance
-import web.events.JsEvent
 import web.gl.TexImageSource
 import web.gpu.GPUCopyExternalImageSource
 import web.pip.PictureInPictureEvent
@@ -111,16 +110,16 @@ protected constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLVideoElement/requestVideoFrameCallback)
      */
     fun requestVideoFrameCallback(callback: VideoFrameRequestCallback): VideoFrameRequestId
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLVideoElement/enterpictureinpicture_event)
-     */
-    @JsEvent("enterpictureinpicture")
-    val enterPictureInPictureEvent: EventInstance<PictureInPictureEvent, HTMLVideoElement /* this */, Node>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLVideoElement/leavepictureinpicture_event)
-     */
-    @JsEvent("leavepictureinpicture")
-    val leavePictureInPictureEvent: EventInstance<PictureInPictureEvent, HTMLVideoElement /* this */, Node>
 }
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLVideoElement/enterpictureinpicture_event)
+ */
+inline val <C : HTMLVideoElement> C.enterPictureInPictureEvent: EventInstance<PictureInPictureEvent, C, Node>
+    get() = EventInstance(this, "enterpictureinpicture")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLVideoElement/leavepictureinpicture_event)
+ */
+inline val <C : HTMLVideoElement> C.leavePictureInPictureEvent: EventInstance<PictureInPictureEvent, C, Node>
+    get() = EventInstance(this, "leavepictureinpicture")

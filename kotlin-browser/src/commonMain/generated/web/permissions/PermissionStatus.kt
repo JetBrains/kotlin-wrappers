@@ -2,7 +2,10 @@
 
 package web.permissions
 
-import web.events.*
+import web.events.Event
+import web.events.EventHandler
+import web.events.EventInstance
+import web.events.EventTarget
 
 /**
  * The **`PermissionStatus`** interface of the Permissions API provides the state of an object and an event handler for monitoring changes to said state.
@@ -30,10 +33,10 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PermissionStatus/state)
      */
     val state: PermissionState
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PermissionStatus/change_event)
-     */
-    @JsEvent("change")
-    val changeEvent: EventInstance<Event, PermissionStatus /* this */, PermissionStatus /* this */>
 }
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PermissionStatus/change_event)
+ */
+inline val <C : PermissionStatus> C.changeEvent: EventInstance<Event, C, C>
+    get() = EventInstance(this, "change")

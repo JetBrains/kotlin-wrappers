@@ -4,7 +4,6 @@ package web.html
 
 import web.events.Event
 import web.events.EventInstance
-import web.events.JsEvent
 import web.vtt.TextTrack
 
 /**
@@ -68,24 +67,6 @@ protected constructor() :
     val LOADED: ReadyState
     val ERROR: ReadyState
 
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTrackElement/cuechange_event)
-     */
-    @JsEvent("cuechange")
-    val cueChangeEvent: EventInstance<Event, HTMLTrackElement /* this */, HTMLTrackElement /* this */>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTrackElement/error_event)
-     */
-    @JsEvent("error")
-    override val errorEvent: EventInstance<Event, HTMLTrackElement /* this */, HTMLTrackElement /* this */>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTrackElement/load_event)
-     */
-    @JsEvent("load")
-    override val loadEvent: EventInstance<Event, HTMLTrackElement /* this */, HTMLTrackElement /* this */>
-
     companion object {
         val NONE: ReadyState
         val LOADING: ReadyState
@@ -95,3 +76,21 @@ protected constructor() :
 
     sealed interface ReadyState
 }
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTrackElement/cuechange_event)
+ */
+inline val <C : HTMLTrackElement> C.cueChangeEvent: EventInstance<Event, C, C>
+    get() = EventInstance(this, "cuechange")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTrackElement/error_event)
+ */
+inline val <C : HTMLTrackElement> C.errorEvent: EventInstance<Event, C, C>
+    get() = EventInstance(this, "error")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTrackElement/load_event)
+ */
+inline val <C : HTMLTrackElement> C.loadEvent: EventInstance<Event, C, C>
+    get() = EventInstance(this, "load")

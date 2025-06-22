@@ -8,7 +8,6 @@ import js.serialization.Transferable
 import web.events.Event
 import web.events.EventInstance
 import web.events.EventTarget
-import web.events.JsEvent
 import web.serialization.StructuredSerializeOptions
 import kotlin.js.definedExternally
 
@@ -51,22 +50,22 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MessagePort/start)
      */
     fun start()
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MessagePort/close_event)
-     */
-    @JsEvent("close")
-    val closeEvent: EventInstance<Event, MessagePort /* this */, MessagePort /* this */>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MessagePort/message_event)
-     */
-    @JsEvent("message")
-    val messageEvent: EventInstance<MessageEvent<JsAny?>, MessagePort /* this */, MessagePort /* this */>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MessagePort/messageerror_event)
-     */
-    @JsEvent("messageerror")
-    val messageErrorEvent: EventInstance<MessageEvent<JsAny?>, MessagePort /* this */, MessagePort /* this */>
 }
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MessagePort/close_event)
+ */
+inline val <C : MessagePort> C.closeEvent: EventInstance<Event, C, C>
+    get() = EventInstance(this, "close")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MessagePort/message_event)
+ */
+inline val <C : MessagePort> C.messageEvent: EventInstance<MessageEvent<JsAny?>, C, C>
+    get() = EventInstance(this, "message")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MessagePort/messageerror_event)
+ */
+inline val <C : MessagePort> C.messageErrorEvent: EventInstance<MessageEvent<JsAny?>, C, C>
+    get() = EventInstance(this, "messageerror")

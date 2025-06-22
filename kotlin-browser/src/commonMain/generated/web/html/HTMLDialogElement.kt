@@ -4,7 +4,6 @@ package web.html
 
 import web.events.Event
 import web.events.EventInstance
-import web.events.JsEvent
 import kotlin.js.definedExternally
 
 /**
@@ -56,16 +55,16 @@ protected constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLDialogElement/showModal)
      */
     fun showModal()
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLDialogElement/cancel_event)
-     */
-    @JsEvent("cancel")
-    val cancelEvent: EventInstance<Event, HTMLDialogElement /* this */, HTMLDialogElement /* this */>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLDialogElement/close_event)
-     */
-    @JsEvent("close")
-    val closeEvent: EventInstance<Event, HTMLDialogElement /* this */, HTMLDialogElement /* this */>
 }
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLDialogElement/cancel_event)
+ */
+inline val <C : HTMLDialogElement> C.cancelEvent: EventInstance<Event, C, C>
+    get() = EventInstance(this, "cancel")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLDialogElement/close_event)
+ */
+inline val <C : HTMLDialogElement> C.closeEvent: EventInstance<Event, C, C>
+    get() = EventInstance(this, "close")

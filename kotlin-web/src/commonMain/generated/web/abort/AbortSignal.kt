@@ -5,7 +5,10 @@ package web.abort
 import js.array.ReadonlyArray
 import js.core.UInt53
 import js.errors.JsError
-import web.events.*
+import web.events.Event
+import web.events.EventHandler
+import web.events.EventInstance
+import web.events.EventTarget
 import kotlin.js.definedExternally
 
 /**
@@ -42,12 +45,6 @@ private constructor() :
      */
     fun throwIfAborted()
 
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AbortSignal/abort_event)
-     */
-    @JsEvent("abort")
-    val abortEvent: EventInstance<Event, AbortSignal /* this */, AbortSignal /* this */>
-
     companion object {
         /**
          * The **`AbortSignal.abort()`** static method returns an AbortSignal that is already set as aborted (and which does not trigger an AbortSignal/abort_event event).
@@ -71,3 +68,9 @@ private constructor() :
         fun timeout(milliseconds: UInt53): AbortSignal
     }
 }
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AbortSignal/abort_event)
+ */
+inline val <C : AbortSignal> C.abortEvent: EventInstance<Event, C, C>
+    get() = EventInstance(this, "abort")

@@ -4,7 +4,10 @@ package web.idb
 
 import js.core.JsAny
 import web.errors.DOMException
-import web.events.*
+import web.events.Event
+import web.events.EventHandler
+import web.events.EventInstance
+import web.events.EventTarget
 
 /**
  * The **`IDBRequest`** interface of the IndexedDB API provides access to results of asynchronous requests to databases and database objects using event handler attributes.
@@ -58,16 +61,16 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBRequest/transaction)
      */
     val transaction: IDBTransaction?
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBRequest/error_event)
-     */
-    @JsEvent("error")
-    val errorEvent: EventInstance<Event, IDBRequest<T>  /* this */, IDBTransaction>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBRequest/success_event)
-     */
-    @JsEvent("success")
-    open val successEvent: EventInstance<Event, IDBRequest<T>  /* this */, IDBRequest<T>  /* this */>
 }
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBRequest/error_event)
+ */
+inline val <C : IDBRequest<*>> C.errorEvent: EventInstance<Event, C, IDBTransaction>
+    get() = EventInstance(this, "error")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBRequest/success_event)
+ */
+inline val <C : IDBRequest<*>> C.successEvent: EventInstance<Event, C, C>
+    get() = EventInstance(this, "success")

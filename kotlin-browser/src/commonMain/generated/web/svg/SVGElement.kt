@@ -12,7 +12,6 @@ import web.dom.HTMLOrSVGElement
 import web.dom.Node
 import web.events.Event
 import web.events.EventInstance
-import web.events.JsEvent
 import web.uievents.DragEvent
 import web.uievents.PointerEvent
 
@@ -40,190 +39,190 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGElement/viewportElement)
      */
     val viewportElement: SVGElement?
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGElement/animationcancel_event)
-     */
-    @JsEvent("animationcancel")
-    val animationCancelEvent: EventInstance<AnimationEvent, SVGElement /* this */, Node>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGElement/animationend_event)
-     */
-    @JsEvent("animationend")
-    val animationEndEvent: EventInstance<AnimationEvent, SVGElement /* this */, Node>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGElement/animationiteration_event)
-     */
-    @JsEvent("animationiteration")
-    val animationIterationEvent: EventInstance<AnimationEvent, SVGElement /* this */, Node>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGElement/animationstart_event)
-     */
-    @JsEvent("animationstart")
-    val animationStartEvent: EventInstance<AnimationEvent, SVGElement /* this */, Node>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGElement/copy_event)
-     */
-    @JsEvent("copy")
-    val copyEvent: EventInstance<ClipboardEvent, SVGElement /* this */, Node>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGElement/cut_event)
-     */
-    @JsEvent("cut")
-    val cutEvent: EventInstance<ClipboardEvent, SVGElement /* this */, Node>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGElement/drag_event)
-     */
-    @JsEvent("drag")
-    val dragEvent: EventInstance<DragEvent, SVGElement /* this */, Node>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGElement/dragend_event)
-     */
-    @JsEvent("dragend")
-    val dragEndEvent: EventInstance<DragEvent, SVGElement /* this */, Node>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGElement/dragenter_event)
-     */
-    @JsEvent("dragenter")
-    val dragEnterEvent: EventInstance<DragEvent, SVGElement /* this */, Node>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGElement/dragleave_event)
-     */
-    @JsEvent("dragleave")
-    val dragLeaveEvent: EventInstance<DragEvent, SVGElement /* this */, Node>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGElement/dragover_event)
-     */
-    @JsEvent("dragover")
-    val dragOverEvent: EventInstance<DragEvent, SVGElement /* this */, Node>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGElement/dragstart_event)
-     */
-    @JsEvent("dragstart")
-    val dragStartEvent: EventInstance<DragEvent, SVGElement /* this */, Node>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGElement/drop_event)
-     */
-    @JsEvent("drop")
-    val dropEvent: EventInstance<DragEvent, SVGElement /* this */, Node>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGElement/gotpointercapture_event)
-     */
-    @JsEvent("gotpointercapture")
-    val gotPointerCaptureEvent: EventInstance<PointerEvent, SVGElement /* this */, Node>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGElement/lostpointercapture_event)
-     */
-    @JsEvent("lostpointercapture")
-    val lostPointerCaptureEvent: EventInstance<PointerEvent, SVGElement /* this */, Node>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGElement/paste_event)
-     */
-    @JsEvent("paste")
-    val pasteEvent: EventInstance<ClipboardEvent, SVGElement /* this */, Node>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGElement/pointercancel_event)
-     */
-    @JsEvent("pointercancel")
-    val pointerCancelEvent: EventInstance<PointerEvent, SVGElement /* this */, Node>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGElement/pointerdown_event)
-     */
-    @JsEvent("pointerdown")
-    val pointerDownEvent: EventInstance<PointerEvent, SVGElement /* this */, Node>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGElement/pointerenter_event)
-     */
-    @JsEvent("pointerenter")
-    val pointerEnterEvent: EventInstance<PointerEvent, SVGElement /* this */, SVGElement /* this */>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGElement/pointerleave_event)
-     */
-    @JsEvent("pointerleave")
-    val pointerLeaveEvent: EventInstance<PointerEvent, SVGElement /* this */, SVGElement /* this */>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGElement/pointermove_event)
-     */
-    @JsEvent("pointermove")
-    val pointerMoveEvent: EventInstance<PointerEvent, SVGElement /* this */, Node>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGElement/pointerout_event)
-     */
-    @JsEvent("pointerout")
-    val pointerOutEvent: EventInstance<PointerEvent, SVGElement /* this */, Node>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGElement/pointerover_event)
-     */
-    @JsEvent("pointerover")
-    val pointerOverEvent: EventInstance<PointerEvent, SVGElement /* this */, Node>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGElement/pointerrawupdate_event)
-     */
-    @JsEvent("pointerrawupdate")
-    val pointerRawUpdateEvent: EventInstance<PointerEvent, SVGElement /* this */, Node>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGElement/pointerup_event)
-     */
-    @JsEvent("pointerup")
-    val pointerUpEvent: EventInstance<PointerEvent, SVGElement /* this */, Node>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGElement/selectionchange_event)
-     */
-    @JsEvent("selectionchange")
-    val selectionChangeEvent: EventInstance<Event, SVGElement /* this */, SVGElement /* this */>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGElement/selectstart_event)
-     */
-    @JsEvent("selectstart")
-    val selectStartEvent: EventInstance<Event, SVGElement /* this */, Node>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGElement/transitioncancel_event)
-     */
-    @JsEvent("transitioncancel")
-    val transitionCancelEvent: EventInstance<TransitionEvent, SVGElement /* this */, Node>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGElement/transitionend_event)
-     */
-    @JsEvent("transitionend")
-    val transitionEndEvent: EventInstance<TransitionEvent, SVGElement /* this */, Node>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGElement/transitionrun_event)
-     */
-    @JsEvent("transitionrun")
-    val transitionRunEvent: EventInstance<TransitionEvent, SVGElement /* this */, Node>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGElement/transitionstart_event)
-     */
-    @JsEvent("transitionstart")
-    val transitionStartEvent: EventInstance<TransitionEvent, SVGElement /* this */, Node>
 }
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGElement/animationcancel_event)
+ */
+inline val <C : SVGElement> C.animationCancelEvent: EventInstance<AnimationEvent, C, Node>
+    get() = EventInstance(this, "animationcancel")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGElement/animationend_event)
+ */
+inline val <C : SVGElement> C.animationEndEvent: EventInstance<AnimationEvent, C, Node>
+    get() = EventInstance(this, "animationend")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGElement/animationiteration_event)
+ */
+inline val <C : SVGElement> C.animationIterationEvent: EventInstance<AnimationEvent, C, Node>
+    get() = EventInstance(this, "animationiteration")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGElement/animationstart_event)
+ */
+inline val <C : SVGElement> C.animationStartEvent: EventInstance<AnimationEvent, C, Node>
+    get() = EventInstance(this, "animationstart")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGElement/copy_event)
+ */
+inline val <C : SVGElement> C.copyEvent: EventInstance<ClipboardEvent, C, Node>
+    get() = EventInstance(this, "copy")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGElement/cut_event)
+ */
+inline val <C : SVGElement> C.cutEvent: EventInstance<ClipboardEvent, C, Node>
+    get() = EventInstance(this, "cut")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGElement/drag_event)
+ */
+inline val <C : SVGElement> C.dragEvent: EventInstance<DragEvent, C, Node>
+    get() = EventInstance(this, "drag")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGElement/dragend_event)
+ */
+inline val <C : SVGElement> C.dragEndEvent: EventInstance<DragEvent, C, Node>
+    get() = EventInstance(this, "dragend")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGElement/dragenter_event)
+ */
+inline val <C : SVGElement> C.dragEnterEvent: EventInstance<DragEvent, C, Node>
+    get() = EventInstance(this, "dragenter")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGElement/dragleave_event)
+ */
+inline val <C : SVGElement> C.dragLeaveEvent: EventInstance<DragEvent, C, Node>
+    get() = EventInstance(this, "dragleave")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGElement/dragover_event)
+ */
+inline val <C : SVGElement> C.dragOverEvent: EventInstance<DragEvent, C, Node>
+    get() = EventInstance(this, "dragover")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGElement/dragstart_event)
+ */
+inline val <C : SVGElement> C.dragStartEvent: EventInstance<DragEvent, C, Node>
+    get() = EventInstance(this, "dragstart")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGElement/drop_event)
+ */
+inline val <C : SVGElement> C.dropEvent: EventInstance<DragEvent, C, Node>
+    get() = EventInstance(this, "drop")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGElement/gotpointercapture_event)
+ */
+inline val <C : SVGElement> C.gotPointerCaptureEvent: EventInstance<PointerEvent, C, Node>
+    get() = EventInstance(this, "gotpointercapture")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGElement/lostpointercapture_event)
+ */
+inline val <C : SVGElement> C.lostPointerCaptureEvent: EventInstance<PointerEvent, C, Node>
+    get() = EventInstance(this, "lostpointercapture")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGElement/paste_event)
+ */
+inline val <C : SVGElement> C.pasteEvent: EventInstance<ClipboardEvent, C, Node>
+    get() = EventInstance(this, "paste")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGElement/pointercancel_event)
+ */
+inline val <C : SVGElement> C.pointerCancelEvent: EventInstance<PointerEvent, C, Node>
+    get() = EventInstance(this, "pointercancel")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGElement/pointerdown_event)
+ */
+inline val <C : SVGElement> C.pointerDownEvent: EventInstance<PointerEvent, C, Node>
+    get() = EventInstance(this, "pointerdown")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGElement/pointerenter_event)
+ */
+inline val <C : SVGElement> C.pointerEnterEvent: EventInstance<PointerEvent, C, C>
+    get() = EventInstance(this, "pointerenter")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGElement/pointerleave_event)
+ */
+inline val <C : SVGElement> C.pointerLeaveEvent: EventInstance<PointerEvent, C, C>
+    get() = EventInstance(this, "pointerleave")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGElement/pointermove_event)
+ */
+inline val <C : SVGElement> C.pointerMoveEvent: EventInstance<PointerEvent, C, Node>
+    get() = EventInstance(this, "pointermove")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGElement/pointerout_event)
+ */
+inline val <C : SVGElement> C.pointerOutEvent: EventInstance<PointerEvent, C, Node>
+    get() = EventInstance(this, "pointerout")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGElement/pointerover_event)
+ */
+inline val <C : SVGElement> C.pointerOverEvent: EventInstance<PointerEvent, C, Node>
+    get() = EventInstance(this, "pointerover")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGElement/pointerrawupdate_event)
+ */
+inline val <C : SVGElement> C.pointerRawUpdateEvent: EventInstance<PointerEvent, C, Node>
+    get() = EventInstance(this, "pointerrawupdate")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGElement/pointerup_event)
+ */
+inline val <C : SVGElement> C.pointerUpEvent: EventInstance<PointerEvent, C, Node>
+    get() = EventInstance(this, "pointerup")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGElement/selectionchange_event)
+ */
+inline val <C : SVGElement> C.selectionChangeEvent: EventInstance<Event, C, C>
+    get() = EventInstance(this, "selectionchange")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGElement/selectstart_event)
+ */
+inline val <C : SVGElement> C.selectStartEvent: EventInstance<Event, C, Node>
+    get() = EventInstance(this, "selectstart")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGElement/transitioncancel_event)
+ */
+inline val <C : SVGElement> C.transitionCancelEvent: EventInstance<TransitionEvent, C, Node>
+    get() = EventInstance(this, "transitioncancel")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGElement/transitionend_event)
+ */
+inline val <C : SVGElement> C.transitionEndEvent: EventInstance<TransitionEvent, C, Node>
+    get() = EventInstance(this, "transitionend")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGElement/transitionrun_event)
+ */
+inline val <C : SVGElement> C.transitionRunEvent: EventInstance<TransitionEvent, C, Node>
+    get() = EventInstance(this, "transitionrun")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGElement/transitionstart_event)
+ */
+inline val <C : SVGElement> C.transitionStartEvent: EventInstance<TransitionEvent, C, Node>
+    get() = EventInstance(this, "transitionstart")

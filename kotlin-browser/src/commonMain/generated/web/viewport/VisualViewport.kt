@@ -2,7 +2,10 @@
 
 package web.viewport
 
-import web.events.*
+import web.events.Event
+import web.events.EventHandler
+import web.events.EventInstance
+import web.events.EventTarget
 
 /**
  * The **`VisualViewport`** interface of the Visual Viewport API represents the visual viewport for a given window.
@@ -70,22 +73,22 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VisualViewport/width)
      */
     val width: Double
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VisualViewport/resize_event)
-     */
-    @JsEvent("resize")
-    val resizeEvent: EventInstance<Event, VisualViewport /* this */, VisualViewport /* this */>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VisualViewport/scroll_event)
-     */
-    @JsEvent("scroll")
-    val scrollEvent: EventInstance<Event, VisualViewport /* this */, VisualViewport /* this */>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VisualViewport/scrollend_event)
-     */
-    @JsEvent("scrollend")
-    val scrollEndEvent: EventInstance<Event, VisualViewport /* this */, VisualViewport /* this */>
 }
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VisualViewport/resize_event)
+ */
+inline val <C : VisualViewport> C.resizeEvent: EventInstance<Event, C, C>
+    get() = EventInstance(this, "resize")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VisualViewport/scroll_event)
+ */
+inline val <C : VisualViewport> C.scrollEvent: EventInstance<Event, C, C>
+    get() = EventInstance(this, "scroll")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VisualViewport/scrollend_event)
+ */
+inline val <C : VisualViewport> C.scrollEndEvent: EventInstance<Event, C, C>
+    get() = EventInstance(this, "scrollend")

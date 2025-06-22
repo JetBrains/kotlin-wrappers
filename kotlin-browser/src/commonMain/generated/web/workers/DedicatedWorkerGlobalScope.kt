@@ -7,7 +7,6 @@ import js.core.JsAny
 import js.serialization.Transferable
 import web.events.EventHandler
 import web.events.EventInstance
-import web.events.JsEvent
 import web.messaging.MessageEvent
 import web.messaging.MessageEventTarget
 import web.rtc.RTCTransformEvent
@@ -56,22 +55,22 @@ private constructor() :
         message: JsAny?,
         options: StructuredSerializeOptions = definedExternally,
     )
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DedicatedWorkerGlobalScope/message_event)
-     */
-    @JsEvent("message")
-    val messageEvent: EventInstance<MessageEvent<JsAny?>, DedicatedWorkerGlobalScope /* this */, DedicatedWorkerGlobalScope /* this */>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DedicatedWorkerGlobalScope/messageerror_event)
-     */
-    @JsEvent("messageerror")
-    val messageErrorEvent: EventInstance<MessageEvent<JsAny?>, DedicatedWorkerGlobalScope /* this */, DedicatedWorkerGlobalScope /* this */>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DedicatedWorkerGlobalScope/rtctransform_event)
-     */
-    @JsEvent("rtctransform")
-    val rtcTransformEvent: EventInstance<RTCTransformEvent, DedicatedWorkerGlobalScope /* this */, DedicatedWorkerGlobalScope /* this */>
 }
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DedicatedWorkerGlobalScope/message_event)
+ */
+inline val <C : DedicatedWorkerGlobalScope> C.messageEvent: EventInstance<MessageEvent<JsAny?>, C, C>
+    get() = EventInstance(this, "message")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DedicatedWorkerGlobalScope/messageerror_event)
+ */
+inline val <C : DedicatedWorkerGlobalScope> C.messageErrorEvent: EventInstance<MessageEvent<JsAny?>, C, C>
+    get() = EventInstance(this, "messageerror")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DedicatedWorkerGlobalScope/rtctransform_event)
+ */
+inline val <C : DedicatedWorkerGlobalScope> C.rtcTransformEvent: EventInstance<RTCTransformEvent, C, C>
+    get() = EventInstance(this, "rtctransform")

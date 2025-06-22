@@ -11,7 +11,6 @@ import web.dom.Element
 import web.dom.Node
 import web.events.Event
 import web.events.EventInstance
-import web.events.JsEvent
 import web.form.FormDataEvent
 import web.form.FormEncType
 import web.form.FormMethod
@@ -155,21 +154,22 @@ protected constructor() :
      */
     fun submit()
     // [name: string]: any
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFormElement/formdata_event)
-     */
-    @JsEvent("formdata")
-    val formDataEvent: EventInstance<FormDataEvent, HTMLFormElement /* this */, Node>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFormElement/reset_event)
-     */
-    @JsEvent("reset")
-    val resetEvent: EventInstance<Event, HTMLFormElement /* this */, Node>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFormElement/submit_event)
-     */
-    @JsEvent("submit")
-    val submitEvent: EventInstance<SubmitEvent, HTMLFormElement /* this */, Node>
 }
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFormElement/formdata_event)
+ */
+inline val <C : HTMLFormElement> C.formDataEvent: EventInstance<FormDataEvent, C, Node>
+    get() = EventInstance(this, "formdata")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFormElement/reset_event)
+ */
+inline val <C : HTMLFormElement> C.resetEvent: EventInstance<Event, C, Node>
+    get() = EventInstance(this, "reset")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFormElement/submit_event)
+ */
+inline val <C : HTMLFormElement> C.submitEvent: EventInstance<SubmitEvent, C, Node>
+    get() = EventInstance(this, "submit")

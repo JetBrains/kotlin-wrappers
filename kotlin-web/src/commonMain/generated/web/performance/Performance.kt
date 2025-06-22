@@ -3,7 +3,10 @@
 package web.performance
 
 import js.core.JsAny
-import web.events.*
+import web.events.Event
+import web.events.EventHandler
+import web.events.EventInstance
+import web.events.EventTarget
 import web.time.DOMHighResTimeStamp
 import kotlin.js.definedExternally
 
@@ -126,10 +129,10 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Performance/toJSON)
      */
     fun toJSON(): JsAny
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Performance/resourcetimingbufferfull_event)
-     */
-    @JsEvent("resourcetimingbufferfull")
-    val resourceTimingBufferFullEvent: EventInstance<Event, Performance /* this */, Performance /* this */>
 }
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Performance/resourcetimingbufferfull_event)
+ */
+inline val <C : Performance> C.resourceTimingBufferFullEvent: EventInstance<Event, C, C>
+    get() = EventInstance(this, "resourcetimingbufferfull")

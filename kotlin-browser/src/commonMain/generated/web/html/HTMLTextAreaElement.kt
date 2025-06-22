@@ -7,7 +7,6 @@ import web.dom.Node
 import web.dom.NodeList
 import web.events.Event
 import web.events.EventInstance
-import web.events.JsEvent
 import web.form.FormControl
 import web.validation.ValidityState
 import kotlin.js.definedExternally
@@ -240,16 +239,16 @@ protected constructor() :
         end: Int?,
         direction: SelectionDirection = definedExternally,
     )
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/invalid_event)
-     */
-    @JsEvent("invalid")
-    val invalidEvent: EventInstance<Event, HTMLTextAreaElement /* this */, HTMLTextAreaElement /* this */>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/select_event)
-     */
-    @JsEvent("select")
-    override val selectEvent: EventInstance<Event, HTMLTextAreaElement /* this */, Node>
 }
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/invalid_event)
+ */
+inline val <C : HTMLTextAreaElement> C.invalidEvent: EventInstance<Event, C, C>
+    get() = EventInstance(this, "invalid")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/select_event)
+ */
+inline val <C : HTMLTextAreaElement> C.selectEvent: EventInstance<Event, C, Node>
+    get() = EventInstance(this, "select")

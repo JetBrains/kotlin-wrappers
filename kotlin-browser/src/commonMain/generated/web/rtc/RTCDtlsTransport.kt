@@ -4,7 +4,10 @@ package web.rtc
 
 import js.array.ReadonlyArray
 import js.buffer.ArrayBuffer
-import web.events.*
+import web.events.Event
+import web.events.EventHandler
+import web.events.EventInstance
+import web.events.EventTarget
 
 /**
  * The **`RTCDtlsTransport`** interface provides access to information about the Datagram Transport Layer Security (**DTLS**) transport over which a RTCPeerConnection's RTP and RTCP packets are sent and received by its RTCRtpSender and RTCRtpReceiver objects.
@@ -34,16 +37,16 @@ private constructor() :
      */
     val state: RTCDtlsTransportState
     fun getRemoteCertificates(): ReadonlyArray<ArrayBuffer>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDtlsTransport/error_event)
-     */
-    @JsEvent("error")
-    val errorEvent: EventInstance<RTCErrorEvent, RTCDtlsTransport /* this */, RTCDtlsTransport /* this */>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDtlsTransport/statechange_event)
-     */
-    @JsEvent("statechange")
-    val stateChangeEvent: EventInstance<Event, RTCDtlsTransport /* this */, RTCDtlsTransport /* this */>
 }
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDtlsTransport/error_event)
+ */
+inline val <C : RTCDtlsTransport> C.errorEvent: EventInstance<RTCErrorEvent, C, C>
+    get() = EventInstance(this, "error")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDtlsTransport/statechange_event)
+ */
+inline val <C : RTCDtlsTransport> C.stateChangeEvent: EventInstance<Event, C, C>
+    get() = EventInstance(this, "statechange")

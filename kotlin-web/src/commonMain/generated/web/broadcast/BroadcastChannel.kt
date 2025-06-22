@@ -6,7 +6,6 @@ import js.core.JsAny
 import web.events.EventHandler
 import web.events.EventInstance
 import web.events.EventTarget
-import web.events.JsEvent
 import web.messaging.MessageEvent
 
 /**
@@ -45,16 +44,16 @@ open external class BroadcastChannel(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BroadcastChannel/postMessage)
      */
     fun postMessage(message: JsAny?)
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BroadcastChannel/message_event)
-     */
-    @JsEvent("message")
-    val messageEvent: EventInstance<MessageEvent<JsAny?>, BroadcastChannel /* this */, BroadcastChannel /* this */>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BroadcastChannel/messageerror_event)
-     */
-    @JsEvent("messageerror")
-    val messageErrorEvent: EventInstance<MessageEvent<JsAny?>, BroadcastChannel /* this */, BroadcastChannel /* this */>
 }
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BroadcastChannel/message_event)
+ */
+inline val <C : BroadcastChannel> C.messageEvent: EventInstance<MessageEvent<JsAny?>, C, C>
+    get() = EventInstance(this, "message")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BroadcastChannel/messageerror_event)
+ */
+inline val <C : BroadcastChannel> C.messageErrorEvent: EventInstance<MessageEvent<JsAny?>, C, C>
+    get() = EventInstance(this, "messageerror")

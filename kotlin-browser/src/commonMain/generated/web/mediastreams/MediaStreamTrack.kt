@@ -5,7 +5,10 @@ package web.mediastreams
 import js.core.Void
 import js.promise.Promise
 import seskar.js.JsAsync
-import web.events.*
+import web.events.Event
+import web.events.EventHandler
+import web.events.EventInstance
+import web.events.EventTarget
 import kotlin.js.JsName
 import kotlin.js.definedExternally
 
@@ -127,22 +130,22 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStreamTrack/stop)
      */
     fun stop()
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStreamTrack/ended_event)
-     */
-    @JsEvent("ended")
-    val endedEvent: EventInstance<Event, MediaStreamTrack /* this */, MediaStreamTrack /* this */>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStreamTrack/mute_event)
-     */
-    @JsEvent("mute")
-    val muteEvent: EventInstance<Event, MediaStreamTrack /* this */, MediaStreamTrack /* this */>
-
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStreamTrack/unmute_event)
-     */
-    @JsEvent("unmute")
-    val unmuteEvent: EventInstance<Event, MediaStreamTrack /* this */, MediaStreamTrack /* this */>
 }
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStreamTrack/ended_event)
+ */
+inline val <C : MediaStreamTrack> C.endedEvent: EventInstance<Event, C, C>
+    get() = EventInstance(this, "ended")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStreamTrack/mute_event)
+ */
+inline val <C : MediaStreamTrack> C.muteEvent: EventInstance<Event, C, C>
+    get() = EventInstance(this, "mute")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStreamTrack/unmute_event)
+ */
+inline val <C : MediaStreamTrack> C.unmuteEvent: EventInstance<Event, C, C>
+    get() = EventInstance(this, "unmute")
