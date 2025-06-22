@@ -9,6 +9,7 @@ import js.core.JsAny
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Report)
  */
+// @JsPlainObject
 external class Report
 private constructor() {
     /**

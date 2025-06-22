@@ -332,14 +332,6 @@ internal object IDLRegistry {
     fun isPlainObjectInterface(
         name: String,
     ): Boolean {
-        // TEMP workaround
-        when (name) {
-            "CSPViolationReportBody",
-            "Report",
-            "ReportBody",
-                -> return false
-        }
-
         if (name in plainObjectInterfaces)
             return true
 

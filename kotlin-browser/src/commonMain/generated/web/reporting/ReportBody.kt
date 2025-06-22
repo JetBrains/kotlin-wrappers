@@ -9,6 +9,7 @@ import js.core.JsAny
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReportBody)
  */
+// @JsPlainObject
 open external class ReportBody
 private constructor() {
     /**

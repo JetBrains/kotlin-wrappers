@@ -1228,16 +1228,32 @@ internal fun convertInterface(
         .joinToString("\n\n")
 
     val annotations = if (IDLRegistry.isPlainObjectInterface(name)) {
-        require(declaration.startsWith("interface ")) {
-            "JSO `$name` should be interface"
+        val futureJso = when (name) {
+            "CSPViolationReportBody",
+            "Report",
+            "ReportBody",
+                -> true
+
+            else -> false
+        }
+
+        val isInterface = declaration.startsWith("interface ")
+        if (!futureJso) {
+            require(isInterface) {
+                "JSO `$name` should be interface"
+            }
+        } else {
+            require(!isInterface) {
+                "JSO workaround isn't required for `$name` anymore"
+            }
         }
 
         require("= definedExternally" !in members) {
             "JSO `$name` should not contain default properties"
         }
 
-        when (name) {
-            "QueuingStrategy",
+        when {
+            futureJso || name == "QueuingStrategy"
                 -> "// @JsPlainObject"
 
             else -> "@JsPlainObject"

@@ -10,6 +10,7 @@ import web.csp.SecurityPolicyViolationEventDisposition
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSPViolationReportBody)
  */
+// @JsPlainObject
 external class CSPViolationReportBody
 private constructor() :
     ReportBody {
