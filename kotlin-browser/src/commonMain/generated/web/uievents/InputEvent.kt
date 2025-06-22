@@ -3,8 +3,7 @@
 package web.uievents
 
 import js.array.ReadonlyArray
-import seskar.js.JsAlias
-import seskar.js.JsAlias.Companion.THIS
+import js.reflect.unsafeCast
 import seskar.js.JsValue
 import web.data.DataTransfer
 import web.events.EventType
@@ -55,9 +54,6 @@ open external class InputEvent(
      */
     fun getTargetRanges(): ReadonlyArray<StaticRange>
 
-    @JsAlias(THIS)
-    override fun asInit(): InputEventInit
-
     companion object {
         @JsValue("beforeinput")
         val BEFORE_INPUT: EventType<InputEvent>
@@ -66,3 +62,6 @@ open external class InputEvent(
         val INPUT: EventType<InputEvent>
     }
 }
+
+inline fun InputEvent.asInit(): InputEventInit =
+    unsafeCast(this)

@@ -3,8 +3,7 @@
 package web.uievents
 
 import js.array.ReadonlyArray
-import seskar.js.JsAlias
-import seskar.js.JsAlias.Companion.THIS
+import js.reflect.unsafeCast
 import seskar.js.JsValue
 import web.events.EventType
 import kotlin.js.definedExternally
@@ -117,9 +116,6 @@ open external class PointerEvent(
      */
     fun getPredictedEvents(): ReadonlyArray<PointerEvent>
 
-    @JsAlias(THIS)
-    override fun asInit(): PointerEventInit
-
     companion object {
         @JsValue("auxclick")
         val AUX_CLICK: EventType<PointerEvent>
@@ -161,3 +157,6 @@ open external class PointerEvent(
         val POINTER_UP: EventType<PointerEvent>
     }
 }
+
+inline fun PointerEvent.asInit(): PointerEventInit =
+    unsafeCast(this)

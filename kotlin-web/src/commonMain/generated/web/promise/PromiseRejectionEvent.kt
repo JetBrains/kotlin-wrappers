@@ -4,8 +4,7 @@ package web.promise
 
 import js.errors.JsError
 import js.promise.Promise
-import seskar.js.JsAlias
-import seskar.js.JsAlias.Companion.THIS
+import js.reflect.unsafeCast
 import seskar.js.JsValue
 import web.events.Event
 import web.events.EventType
@@ -33,9 +32,6 @@ open external class PromiseRejectionEvent(
      */
     val reason: JsError?
 
-    @JsAlias(THIS)
-    override fun asInit(): PromiseRejectionEventInit
-
     companion object {
         @JsValue("rejectionhandled")
         val REJECTION_HANDLED: EventType<PromiseRejectionEvent>
@@ -44,3 +40,6 @@ open external class PromiseRejectionEvent(
         val UNHANDLED_REJECTION: EventType<PromiseRejectionEvent>
     }
 }
+
+inline fun PromiseRejectionEvent.asInit(): PromiseRejectionEventInit =
+    unsafeCast(this)

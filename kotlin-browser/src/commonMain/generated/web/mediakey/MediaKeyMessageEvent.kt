@@ -3,8 +3,7 @@
 package web.mediakey
 
 import js.buffer.ArrayBuffer
-import seskar.js.JsAlias
-import seskar.js.JsAlias.Companion.THIS
+import js.reflect.unsafeCast
 import seskar.js.JsValue
 import web.events.Event
 import web.events.EventType
@@ -33,11 +32,11 @@ open external class MediaKeyMessageEvent(
      */
     val messageType: MediaKeyMessageType
 
-    @JsAlias(THIS)
-    override fun asInit(): MediaKeyMessageEventInit
-
     companion object {
         @JsValue("message")
         val MESSAGE: EventType<MediaKeyMessageEvent>
     }
 }
+
+inline fun MediaKeyMessageEvent.asInit(): MediaKeyMessageEventInit =
+    unsafeCast(this)

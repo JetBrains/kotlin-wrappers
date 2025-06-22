@@ -3,9 +3,8 @@
 package web.midi
 
 import js.buffer.ArrayBuffer
+import js.reflect.unsafeCast
 import js.typedarrays.Uint8Array
-import seskar.js.JsAlias
-import seskar.js.JsAlias.Companion.THIS
 import seskar.js.JsValue
 import web.events.Event
 import web.events.EventType
@@ -28,11 +27,11 @@ open external class MIDIMessageEvent(
      */
     val data: Uint8Array<ArrayBuffer>?
 
-    @JsAlias(THIS)
-    override fun asInit(): MIDIMessageEventInit
-
     companion object {
         @JsValue("midimessage")
         val MIDI_MESSAGE: EventType<MIDIMessageEvent>
     }
 }
+
+inline fun MIDIMessageEvent.asInit(): MIDIMessageEventInit =
+    unsafeCast(this)

@@ -2,8 +2,7 @@
 
 package web.gl
 
-import seskar.js.JsAlias
-import seskar.js.JsAlias.Companion.THIS
+import js.reflect.unsafeCast
 import web.events.Event
 import web.events.EventType
 import kotlin.js.definedExternally
@@ -23,7 +22,7 @@ open external class WebGLContextEvent(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLContextEvent/statusMessage)
      */
     val statusMessage: String
-
-    @JsAlias(THIS)
-    override fun asInit(): WebGLContextEventInit
 }
+
+inline fun WebGLContextEvent.asInit(): WebGLContextEventInit =
+    unsafeCast(this)

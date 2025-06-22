@@ -3,8 +3,7 @@
 package web.html
 
 import js.buffer.ArrayBuffer
-import seskar.js.JsAlias
-import seskar.js.JsAlias.Companion.THIS
+import js.reflect.unsafeCast
 import seskar.js.JsValue
 import web.events.Event
 import web.events.EventType
@@ -33,11 +32,11 @@ open external class MediaEncryptedEvent(
      */
     val initDataType: String
 
-    @JsAlias(THIS)
-    override fun asInit(): MediaEncryptedEventInit
-
     companion object {
         @JsValue("encrypted")
         val ENCRYPTED: EventType<MediaEncryptedEvent>
     }
 }
+
+inline fun MediaEncryptedEvent.asInit(): MediaEncryptedEventInit =
+    unsafeCast(this)

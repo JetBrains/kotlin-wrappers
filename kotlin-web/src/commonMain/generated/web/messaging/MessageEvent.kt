@@ -4,8 +4,7 @@ package web.messaging
 
 import js.array.ReadonlyArray
 import js.core.JsAny
-import seskar.js.JsAlias
-import seskar.js.JsAlias.Companion.THIS
+import js.reflect.unsafeCast
 import seskar.js.JsValue
 import web.events.Event
 import web.events.EventType
@@ -55,9 +54,6 @@ open external class MessageEvent<out D : JsAny?>(
      */
     val source: MessageEventSource?
 
-    @JsAlias(THIS)
-    override fun asInit(): MessageEventInit<out D>
-
     companion object {
         @JsValue("connect")
         val CONNECT: EventType<MessageEvent<*>>
@@ -69,3 +65,6 @@ open external class MessageEvent<out D : JsAny?>(
         val MESSAGE_ERROR: EventType<MessageEvent<*>>
     }
 }
+
+inline fun <D : JsAny?> MessageEvent<D>.asInit(): MessageEventInit<D> =
+    unsafeCast(this)

@@ -3,8 +3,7 @@
 package web.history
 
 import js.core.JsAny
-import seskar.js.JsAlias
-import seskar.js.JsAlias.Companion.THIS
+import js.reflect.unsafeCast
 import seskar.js.JsValue
 import web.events.Event
 import web.events.EventType
@@ -33,11 +32,11 @@ open external class PopStateEvent(
      */
     val state: JsAny?
 
-    @JsAlias(THIS)
-    override fun asInit(): PopStateEventInit
-
     companion object {
         @JsValue("popstate")
         val POP_STATE: EventType<PopStateEvent>
     }
 }
+
+inline fun PopStateEvent.asInit(): PopStateEventInit =
+    unsafeCast(this)

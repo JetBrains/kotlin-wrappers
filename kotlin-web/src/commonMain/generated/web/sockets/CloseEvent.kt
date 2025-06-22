@@ -2,8 +2,7 @@
 
 package web.sockets
 
-import seskar.js.JsAlias
-import seskar.js.JsAlias.Companion.THIS
+import js.reflect.unsafeCast
 import seskar.js.JsValue
 import web.events.Event
 import web.events.EventType
@@ -39,11 +38,11 @@ open external class CloseEvent(
      */
     val wasClean: Boolean
 
-    @JsAlias(THIS)
-    override fun asInit(): CloseEventInit
-
     companion object {
         @JsValue("close")
         val CLOSE: EventType<CloseEvent>
     }
 }
+
+inline fun CloseEvent.asInit(): CloseEventInit =
+    unsafeCast(this)

@@ -216,21 +216,6 @@ private fun event(
         .joinToString("\n")
         // Event
         .replace("val type: String", "    // val type: String")
-        .let {
-            if (eventIsInitLike) {
-                val modifier = when (name) {
-                    EVENT -> "open"
-                    else -> "override"
-                }
-
-                val resultType = initName.replace("<D = any>", "<out D>")
-
-                it + "\n\n" + """
-                @JsAlias(THIS)
-                $modifier fun asInit(): $resultType
-                """.trimIndent()
-            } else it
-        }
 
     val eventClassBody = source
         .substringAfter("\ndeclare var $name: {\n")
@@ -330,6 +315,18 @@ private fun event(
             fullSource = source,
             source = "interface $name<",
         )
+
+    if (eventIsInitLike) {
+        val receiver = name + (if (typeParameters.isNotEmpty()) "<D>" else "")
+        val extensionTypeParameters = typeParameters.replace("<out ", "<")
+
+        val resultType = initName.replace("<D = any>", "<D>")
+
+        eventBody += "\n\n" + """
+                inline fun $extensionTypeParameters $receiver.asInit(): $resultType =
+                    unsafeCast(this)
+                """.trimIndent()
+    }
 
     if (name == "MediaQueryListEvent") {
         initBody = initBody.applyMediaQueryPatch()

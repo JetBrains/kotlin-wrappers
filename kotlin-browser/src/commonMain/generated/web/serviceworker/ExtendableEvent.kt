@@ -3,8 +3,7 @@
 package web.serviceworker
 
 import js.promise.Promise
-import seskar.js.JsAlias
-import seskar.js.JsAlias.Companion.THIS
+import js.reflect.unsafeCast
 import seskar.js.JsValue
 import web.events.Event
 import web.events.EventType
@@ -26,9 +25,6 @@ open external class ExtendableEvent(
      */
     fun waitUntil(f: Promise<*>)
 
-    @JsAlias(THIS)
-    override fun asInit(): ExtendableEventInit
-
     companion object {
         @JsValue("activate")
         val ACTIVATE: EventType<ExtendableEvent>
@@ -37,3 +33,6 @@ open external class ExtendableEvent(
         val INSTALL: EventType<ExtendableEvent>
     }
 }
+
+inline fun ExtendableEvent.asInit(): ExtendableEventInit =
+    unsafeCast(this)

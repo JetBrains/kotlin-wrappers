@@ -2,8 +2,7 @@
 
 package web.storage
 
-import seskar.js.JsAlias
-import seskar.js.JsAlias.Companion.THIS
+import js.reflect.unsafeCast
 import seskar.js.JsValue
 import web.events.Event
 import web.events.EventType
@@ -53,11 +52,11 @@ open external class StorageEvent(
      */
     val url: String
 
-    @JsAlias(THIS)
-    override fun asInit(): StorageEventInit
-
     companion object {
         @JsValue("storage")
         val STORAGE: EventType<StorageEvent>
     }
 }
+
+inline fun StorageEvent.asInit(): StorageEventInit =
+    unsafeCast(this)

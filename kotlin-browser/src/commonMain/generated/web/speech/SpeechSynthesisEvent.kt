@@ -2,8 +2,7 @@
 
 package web.speech
 
-import seskar.js.JsAlias
-import seskar.js.JsAlias.Companion.THIS
+import js.reflect.unsafeCast
 import seskar.js.JsValue
 import web.events.Event
 import web.events.EventType
@@ -52,9 +51,6 @@ open external class SpeechSynthesisEvent(
      */
     val utterance: SpeechSynthesisUtterance
 
-    @JsAlias(THIS)
-    override fun asInit(): SpeechSynthesisEventInit
-
     companion object {
         @JsValue("boundary")
         val BOUNDARY: EventType<SpeechSynthesisEvent>
@@ -75,3 +71,6 @@ open external class SpeechSynthesisEvent(
         val START: EventType<SpeechSynthesisEvent>
     }
 }
+
+inline fun SpeechSynthesisEvent.asInit(): SpeechSynthesisEventInit =
+    unsafeCast(this)

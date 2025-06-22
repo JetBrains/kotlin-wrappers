@@ -2,8 +2,7 @@
 
 package web.popover
 
-import seskar.js.JsAlias
-import seskar.js.JsAlias.Companion.THIS
+import js.reflect.unsafeCast
 import seskar.js.JsValue
 import web.events.Event
 import web.events.EventType
@@ -32,9 +31,6 @@ open external class ToggleEvent(
      */
     val oldState: ToggleState
 
-    @JsAlias(THIS)
-    override fun asInit(): ToggleEventInit
-
     companion object {
         @JsValue("beforetoggle")
         val BEFORE_TOGGLE: EventType<ToggleEvent>
@@ -43,3 +39,6 @@ open external class ToggleEvent(
         val TOGGLE: EventType<ToggleEvent>
     }
 }
+
+inline fun ToggleEvent.asInit(): ToggleEventInit =
+    unsafeCast(this)

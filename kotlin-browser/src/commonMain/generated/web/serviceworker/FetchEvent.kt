@@ -5,8 +5,7 @@ package web.serviceworker
 import js.core.Void
 import js.promise.Promise
 import js.promise.PromiseLike
-import seskar.js.JsAlias
-import seskar.js.JsAlias.Companion.THIS
+import js.reflect.unsafeCast
 import seskar.js.JsValue
 import web.events.EventType
 import web.http.Request
@@ -64,11 +63,11 @@ open external class FetchEvent(
     fun respondWith(r: Response)
     fun respondWith(r: PromiseLike<Response>)
 
-    @JsAlias(THIS)
-    override fun asInit(): FetchEventInit
-
     companion object {
         @JsValue("fetch")
         val FETCH: EventType<FetchEvent>
     }
 }
+
+inline fun FetchEvent.asInit(): FetchEventInit =
+    unsafeCast(this)

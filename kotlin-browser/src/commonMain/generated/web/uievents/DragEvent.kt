@@ -2,8 +2,7 @@
 
 package web.uievents
 
-import seskar.js.JsAlias
-import seskar.js.JsAlias.Companion.THIS
+import js.reflect.unsafeCast
 import seskar.js.JsValue
 import web.data.DataTransfer
 import web.events.EventType
@@ -24,9 +23,6 @@ open external class DragEvent(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DragEvent/dataTransfer)
      */
     val dataTransfer: DataTransfer?
-
-    @JsAlias(THIS)
-    override fun asInit(): DragEventInit
 
     companion object {
         @JsValue("drag")
@@ -51,3 +47,6 @@ open external class DragEvent(
         val DROP: EventType<DragEvent>
     }
 }
+
+inline fun DragEvent.asInit(): DragEventInit =
+    unsafeCast(this)

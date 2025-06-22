@@ -2,8 +2,7 @@
 
 package web.push
 
-import seskar.js.JsAlias
-import seskar.js.JsAlias.Companion.THIS
+import js.reflect.unsafeCast
 import web.events.EventType
 import web.serviceworker.ExtendableEvent
 import kotlin.js.definedExternally
@@ -17,7 +16,7 @@ open external class PushSubscriptionChangeEvent(
 ) : ExtendableEvent {
     val newSubscription: PushSubscription?
     val oldSubscription: PushSubscription?
-
-    @JsAlias(THIS)
-    override fun asInit(): PushSubscriptionChangeEventInit
 }
+
+inline fun PushSubscriptionChangeEvent.asInit(): PushSubscriptionChangeEventInit =
+    unsafeCast(this)

@@ -2,8 +2,7 @@
 
 package web.mediarecorder
 
-import seskar.js.JsAlias
-import seskar.js.JsAlias.Companion.THIS
+import js.reflect.unsafeCast
 import seskar.js.JsValue
 import web.blob.Blob
 import web.events.Event
@@ -33,11 +32,11 @@ open external class BlobEvent(
      */
     val timecode: DOMHighResTimeStamp
 
-    @JsAlias(THIS)
-    override fun asInit(): BlobEventInit
-
     companion object {
         @JsValue("dataavailable")
         val DATA_AVAILABLE: EventType<BlobEvent>
     }
 }
+
+inline fun BlobEvent.asInit(): BlobEventInit =
+    unsafeCast(this)

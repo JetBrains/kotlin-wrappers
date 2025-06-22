@@ -2,8 +2,7 @@
 
 package web.serviceworker
 
-import seskar.js.JsAlias
-import seskar.js.JsAlias.Companion.THIS
+import js.reflect.unsafeCast
 import seskar.js.JsValue
 import web.events.EventType
 import web.notifications.Notification
@@ -31,9 +30,6 @@ open external class NotificationEvent(
      */
     val notification: Notification
 
-    @JsAlias(THIS)
-    override fun asInit(): NotificationEventInit
-
     companion object {
         @JsValue("notificationclick")
         val NOTIFICATION_CLICK: EventType<NotificationEvent>
@@ -42,3 +38,6 @@ open external class NotificationEvent(
         val NOTIFICATION_CLOSE: EventType<NotificationEvent>
     }
 }
+
+inline fun NotificationEvent.asInit(): NotificationEventInit =
+    unsafeCast(this)

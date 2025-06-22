@@ -2,8 +2,7 @@
 
 package web.vtt
 
-import seskar.js.JsAlias
-import seskar.js.JsAlias.Companion.THIS
+import js.reflect.unsafeCast
 import seskar.js.JsValue
 import web.events.Event
 import web.events.EventType
@@ -25,9 +24,6 @@ open external class TrackEvent(
      */
     val track: TextTrack?
 
-    @JsAlias(THIS)
-    override fun asInit(): TrackEventInit
-
     companion object {
         @JsValue("addtrack")
         val ADD_TRACK: EventType<TrackEvent>
@@ -36,3 +32,6 @@ open external class TrackEvent(
         val REMOVE_TRACK: EventType<TrackEvent>
     }
 }
+
+inline fun TrackEvent.asInit(): TrackEventInit =
+    unsafeCast(this)

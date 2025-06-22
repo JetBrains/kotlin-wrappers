@@ -2,8 +2,7 @@
 
 package web.uievents
 
-import seskar.js.JsAlias
-import seskar.js.JsAlias.Companion.THIS
+import js.reflect.unsafeCast
 import seskar.js.JsValue
 import web.events.Event
 import web.events.EventType
@@ -33,9 +32,6 @@ open external class UIEvent(
      */
     val view: Window?
 
-    @JsAlias(THIS)
-    override fun asInit(): UIEventInit
-
     companion object {
         @JsValue("abort")
         val ABORT: EventType<UIEvent>
@@ -44,3 +40,6 @@ open external class UIEvent(
         val RESIZE: EventType<UIEvent>
     }
 }
+
+inline fun UIEvent.asInit(): UIEventInit =
+    unsafeCast(this)

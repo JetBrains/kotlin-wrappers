@@ -2,8 +2,7 @@
 
 package web.uievents
 
-import seskar.js.JsAlias
-import seskar.js.JsAlias.Companion.THIS
+import js.reflect.unsafeCast
 import seskar.js.JsValue
 import web.events.EventType
 import kotlin.js.definedExternally
@@ -66,9 +65,6 @@ open external class TouchEvent(
      */
     val touches: TouchList
 
-    @JsAlias(THIS)
-    override fun asInit(): TouchEventInit
-
     companion object {
         @JsValue("touchcancel")
         val TOUCH_CANCEL: EventType<TouchEvent>
@@ -83,3 +79,6 @@ open external class TouchEvent(
         val TOUCH_START: EventType<TouchEvent>
     }
 }
+
+inline fun TouchEvent.asInit(): TouchEventInit =
+    unsafeCast(this)

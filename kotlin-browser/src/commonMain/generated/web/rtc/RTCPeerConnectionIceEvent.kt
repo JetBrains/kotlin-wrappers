@@ -2,8 +2,7 @@
 
 package web.rtc
 
-import seskar.js.JsAlias
-import seskar.js.JsAlias.Companion.THIS
+import js.reflect.unsafeCast
 import seskar.js.JsValue
 import web.events.Event
 import web.events.EventType
@@ -25,11 +24,11 @@ open external class RTCPeerConnectionIceEvent(
      */
     val candidate: RTCIceCandidate?
 
-    @JsAlias(THIS)
-    override fun asInit(): RTCPeerConnectionIceEventInit
-
     companion object {
         @JsValue("icecandidate")
         val ICE_CANDIDATE: EventType<RTCPeerConnectionIceEvent>
     }
 }
+
+inline fun RTCPeerConnectionIceEvent.asInit(): RTCPeerConnectionIceEventInit =
+    unsafeCast(this)

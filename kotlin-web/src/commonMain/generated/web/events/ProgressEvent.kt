@@ -2,8 +2,7 @@
 
 package web.events
 
-import seskar.js.JsAlias
-import seskar.js.JsAlias.Companion.THIS
+import js.reflect.unsafeCast
 import seskar.js.JsValue
 import kotlin.js.definedExternally
 
@@ -37,9 +36,6 @@ open external class ProgressEvent(
      */
     val total: Double
 
-    @JsAlias(THIS)
-    override fun asInit(): ProgressEventInit
-
     companion object {
         @JsValue("abort")
         val ABORT: EventType<ProgressEvent>
@@ -63,3 +59,6 @@ open external class ProgressEvent(
         val TIMEOUT: EventType<ProgressEvent>
     }
 }
+
+inline fun ProgressEvent.asInit(): ProgressEventInit =
+    unsafeCast(this)

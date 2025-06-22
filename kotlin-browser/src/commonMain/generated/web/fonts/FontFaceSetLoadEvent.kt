@@ -3,8 +3,7 @@
 package web.fonts
 
 import js.array.ReadonlyArray
-import seskar.js.JsAlias
-import seskar.js.JsAlias.Companion.THIS
+import js.reflect.unsafeCast
 import seskar.js.JsValue
 import web.events.Event
 import web.events.EventType
@@ -26,9 +25,6 @@ open external class FontFaceSetLoadEvent(
      */
     val fontfaces: ReadonlyArray<FontFace>
 
-    @JsAlias(THIS)
-    override fun asInit(): FontFaceSetLoadEventInit
-
     companion object {
         @JsValue("loading")
         val LOADING: EventType<FontFaceSetLoadEvent>
@@ -40,3 +36,6 @@ open external class FontFaceSetLoadEvent(
         val LOADING_ERROR: EventType<FontFaceSetLoadEvent>
     }
 }
+
+inline fun FontFaceSetLoadEvent.asInit(): FontFaceSetLoadEventInit =
+    unsafeCast(this)

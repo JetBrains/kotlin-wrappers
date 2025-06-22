@@ -2,8 +2,7 @@
 
 package web.animations
 
-import seskar.js.JsAlias
-import seskar.js.JsAlias.Companion.THIS
+import js.reflect.unsafeCast
 import seskar.js.JsValue
 import web.events.Event
 import web.events.EventType
@@ -32,9 +31,6 @@ open external class AnimationPlaybackEvent(
      */
     val timelineTime: CSSNumberish?
 
-    @JsAlias(THIS)
-    override fun asInit(): AnimationPlaybackEventInit
-
     companion object {
         @JsValue("cancel")
         val CANCEL: EventType<AnimationPlaybackEvent>
@@ -46,3 +42,6 @@ open external class AnimationPlaybackEvent(
         val REMOVE: EventType<AnimationPlaybackEvent>
     }
 }
+
+inline fun AnimationPlaybackEvent.asInit(): AnimationPlaybackEventInit =
+    unsafeCast(this)

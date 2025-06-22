@@ -2,8 +2,7 @@
 
 package web.device
 
-import seskar.js.JsAlias
-import seskar.js.JsAlias.Companion.THIS
+import js.reflect.unsafeCast
 import seskar.js.JsValue
 import web.events.Event
 import web.events.EventType
@@ -47,11 +46,11 @@ open external class DeviceMotionEvent(
      */
     val rotationRate: DeviceMotionEventRotationRate?
 
-    @JsAlias(THIS)
-    override fun asInit(): DeviceMotionEventInit
-
     companion object {
         @JsValue("devicemotion")
         val DEVICE_MOTION: EventType<DeviceMotionEvent>
     }
 }
+
+inline fun DeviceMotionEvent.asInit(): DeviceMotionEventInit =
+    unsafeCast(this)

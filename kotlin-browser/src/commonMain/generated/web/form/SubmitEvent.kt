@@ -2,8 +2,7 @@
 
 package web.form
 
-import seskar.js.JsAlias
-import seskar.js.JsAlias.Companion.THIS
+import js.reflect.unsafeCast
 import seskar.js.JsValue
 import web.events.Event
 import web.events.EventType
@@ -26,11 +25,11 @@ open external class SubmitEvent(
      */
     val submitter: HTMLElement?
 
-    @JsAlias(THIS)
-    override fun asInit(): SubmitEventInit
-
     companion object {
         @JsValue("submit")
         val SUBMIT: EventType<SubmitEvent>
     }
 }
+
+inline fun SubmitEvent.asInit(): SubmitEventInit =
+    unsafeCast(this)

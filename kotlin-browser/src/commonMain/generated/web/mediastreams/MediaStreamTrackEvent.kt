@@ -2,8 +2,7 @@
 
 package web.mediastreams
 
-import seskar.js.JsAlias
-import seskar.js.JsAlias.Companion.THIS
+import js.reflect.unsafeCast
 import seskar.js.JsValue
 import web.events.Event
 import web.events.EventType
@@ -24,9 +23,6 @@ open external class MediaStreamTrackEvent(
      */
     val track: MediaStreamTrack
 
-    @JsAlias(THIS)
-    override fun asInit(): MediaStreamTrackEventInit
-
     companion object {
         @JsValue("addtrack")
         val ADD_TRACK: EventType<MediaStreamTrackEvent>
@@ -35,3 +31,6 @@ open external class MediaStreamTrackEvent(
         val REMOVE_TRACK: EventType<MediaStreamTrackEvent>
     }
 }
+
+inline fun MediaStreamTrackEvent.asInit(): MediaStreamTrackEventInit =
+    unsafeCast(this)

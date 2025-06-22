@@ -3,8 +3,7 @@
 package web.idb
 
 import js.core.UInt53
-import seskar.js.JsAlias
-import seskar.js.JsAlias.Companion.THIS
+import js.reflect.unsafeCast
 import seskar.js.JsValue
 import web.events.Event
 import web.events.EventType
@@ -33,9 +32,6 @@ open external class IDBVersionChangeEvent(
      */
     val oldVersion: UInt53
 
-    @JsAlias(THIS)
-    override fun asInit(): IDBVersionChangeEventInit
-
     companion object {
         @JsValue("blocked")
         val BLOCKED: EventType<IDBVersionChangeEvent>
@@ -50,3 +46,6 @@ open external class IDBVersionChangeEvent(
         val VERSION_CHANGE: EventType<IDBVersionChangeEvent>
     }
 }
+
+inline fun IDBVersionChangeEvent.asInit(): IDBVersionChangeEventInit =
+    unsafeCast(this)

@@ -2,8 +2,7 @@
 
 package web.device
 
-import seskar.js.JsAlias
-import seskar.js.JsAlias.Companion.THIS
+import js.reflect.unsafeCast
 import seskar.js.JsValue
 import web.events.Event
 import web.events.EventType
@@ -47,9 +46,6 @@ open external class DeviceOrientationEvent(
      */
     val gamma: Double?
 
-    @JsAlias(THIS)
-    override fun asInit(): DeviceOrientationEventInit
-
     companion object {
         @JsValue("deviceorientation")
         val DEVICE_ORIENTATION: EventType<DeviceOrientationEvent>
@@ -58,3 +54,6 @@ open external class DeviceOrientationEvent(
         val DEVICE_ORIENTATION_ABSOLUTE: EventType<DeviceOrientationEvent>
     }
 }
+
+inline fun DeviceOrientationEvent.asInit(): DeviceOrientationEventInit =
+    unsafeCast(this)

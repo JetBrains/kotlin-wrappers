@@ -3,8 +3,7 @@
 package web.payment
 
 import js.promise.PromiseLike
-import seskar.js.JsAlias
-import seskar.js.JsAlias.Companion.THIS
+import js.reflect.unsafeCast
 import seskar.js.JsValue
 import web.events.Event
 import web.events.EventType
@@ -28,9 +27,6 @@ open external class PaymentRequestUpdateEvent(
     fun updateWith(detailsPromise: PaymentDetailsUpdate)
     fun updateWith(detailsPromise: PromiseLike<PaymentDetailsUpdate>)
 
-    @JsAlias(THIS)
-    override fun asInit(): PaymentRequestUpdateEventInit
-
     companion object {
         @JsValue("payerdetailchange")
         val PAYER_DETAIL_CHANGE: EventType<PaymentRequestUpdateEvent>
@@ -42,3 +38,6 @@ open external class PaymentRequestUpdateEvent(
         val SHIPPING_OPTION_CHANGE: EventType<PaymentRequestUpdateEvent>
     }
 }
+
+inline fun PaymentRequestUpdateEvent.asInit(): PaymentRequestUpdateEventInit =
+    unsafeCast(this)

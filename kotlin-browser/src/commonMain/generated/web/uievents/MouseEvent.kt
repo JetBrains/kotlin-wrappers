@@ -2,8 +2,7 @@
 
 package web.uievents
 
-import seskar.js.JsAlias
-import seskar.js.JsAlias.Companion.THIS
+import js.reflect.unsafeCast
 import seskar.js.JsValue
 import web.events.EventTarget
 import web.events.EventType
@@ -173,9 +172,6 @@ open external class MouseEvent(
      */
     fun getModifierState(keyArg: ModifierKeyCode): Boolean
 
-    @JsAlias(THIS)
-    override fun asInit(): MouseEventInit
-
     companion object {
         @JsValue("dblclick")
         val DBL_CLICK: EventType<MouseEvent>
@@ -202,3 +198,6 @@ open external class MouseEvent(
         val MOUSE_UP: EventType<MouseEvent>
     }
 }
+
+inline fun MouseEvent.asInit(): MouseEventInit =
+    unsafeCast(this)

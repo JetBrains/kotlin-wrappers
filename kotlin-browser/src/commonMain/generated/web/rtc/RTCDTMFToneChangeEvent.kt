@@ -2,8 +2,7 @@
 
 package web.rtc
 
-import seskar.js.JsAlias
-import seskar.js.JsAlias.Companion.THIS
+import js.reflect.unsafeCast
 import seskar.js.JsValue
 import web.events.Event
 import web.events.EventType
@@ -25,11 +24,11 @@ open external class RTCDTMFToneChangeEvent(
      */
     val tone: String
 
-    @JsAlias(THIS)
-    override fun asInit(): RTCDTMFToneChangeEventInit
-
     companion object {
         @JsValue("tonechange")
         val TONE_CHANGE: EventType<RTCDTMFToneChangeEvent>
     }
 }
+
+inline fun RTCDTMFToneChangeEvent.asInit(): RTCDTMFToneChangeEventInit =
+    unsafeCast(this)

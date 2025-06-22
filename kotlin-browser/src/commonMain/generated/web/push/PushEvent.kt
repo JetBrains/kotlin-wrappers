@@ -2,8 +2,7 @@
 
 package web.push
 
-import seskar.js.JsAlias
-import seskar.js.JsAlias.Companion.THIS
+import js.reflect.unsafeCast
 import seskar.js.JsValue
 import web.events.EventType
 import web.serviceworker.ExtendableEvent
@@ -26,11 +25,11 @@ open external class PushEvent(
      */
     val data: PushMessageData?
 
-    @JsAlias(THIS)
-    override fun asInit(): PushEventInit
-
     companion object {
         @JsValue("push")
         val PUSH: EventType<PushEvent>
     }
 }
+
+inline fun PushEvent.asInit(): PushEventInit =
+    unsafeCast(this)

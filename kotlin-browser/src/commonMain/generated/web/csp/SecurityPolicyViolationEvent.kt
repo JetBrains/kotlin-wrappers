@@ -2,8 +2,7 @@
 
 package web.csp
 
-import seskar.js.JsAlias
-import seskar.js.JsAlias.Companion.THIS
+import js.reflect.unsafeCast
 import seskar.js.JsValue
 import web.events.Event
 import web.events.EventType
@@ -102,11 +101,11 @@ open external class SecurityPolicyViolationEvent(
      */
     val violatedDirective: String
 
-    @JsAlias(THIS)
-    override fun asInit(): SecurityPolicyViolationEventInit
-
     companion object {
         @JsValue("securitypolicyviolation")
         val SECURITY_POLICY_VIOLATION: EventType<SecurityPolicyViolationEvent>
     }
 }
+
+inline fun SecurityPolicyViolationEvent.asInit(): SecurityPolicyViolationEventInit =
+    unsafeCast(this)

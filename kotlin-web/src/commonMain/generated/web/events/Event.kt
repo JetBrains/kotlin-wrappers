@@ -3,8 +3,7 @@
 package web.events
 
 import js.array.ReadonlyArray
-import seskar.js.JsAlias
-import seskar.js.JsAlias.Companion.THIS
+import js.reflect.unsafeCast
 import seskar.js.JsValue
 import web.time.DOMHighResTimeStamp
 import kotlin.js.definedExternally
@@ -117,9 +116,6 @@ open external class Event(
     val CAPTURING_PHASE: EventPhase
     val AT_TARGET: EventPhase
     val BUBBLING_PHASE: EventPhase
-
-    @JsAlias(THIS)
-    open fun asInit(): EventInit
 
     companion object {
         val NONE: EventPhase
@@ -434,3 +430,6 @@ open external class Event(
         val WEBKIT_TRANSITION_END: EventType<Event>
     }
 }
+
+inline fun Event.asInit(): EventInit =
+    unsafeCast(this)

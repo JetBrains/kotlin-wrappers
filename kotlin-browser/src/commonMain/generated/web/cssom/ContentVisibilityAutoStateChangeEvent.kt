@@ -2,8 +2,7 @@
 
 package web.cssom
 
-import seskar.js.JsAlias
-import seskar.js.JsAlias.Companion.THIS
+import js.reflect.unsafeCast
 import web.events.Event
 import web.events.EventType
 import kotlin.js.definedExternally
@@ -23,7 +22,7 @@ open external class ContentVisibilityAutoStateChangeEvent(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ContentVisibilityAutoStateChangeEvent/skipped)
      */
     val skipped: Boolean
-
-    @JsAlias(THIS)
-    override fun asInit(): ContentVisibilityAutoStateChangeEventInit
 }
+
+inline fun ContentVisibilityAutoStateChangeEvent.asInit(): ContentVisibilityAutoStateChangeEventInit =
+    unsafeCast(this)

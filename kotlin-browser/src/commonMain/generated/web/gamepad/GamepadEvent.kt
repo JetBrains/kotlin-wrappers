@@ -2,8 +2,7 @@
 
 package web.gamepad
 
-import seskar.js.JsAlias
-import seskar.js.JsAlias.Companion.THIS
+import js.reflect.unsafeCast
 import seskar.js.JsValue
 import web.events.Event
 import web.events.EventType
@@ -24,9 +23,6 @@ open external class GamepadEvent(
      */
     val gamepad: Gamepad
 
-    @JsAlias(THIS)
-    override fun asInit(): GamepadEventInit
-
     companion object {
         @JsValue("gamepadconnected")
         val GAMEPAD_CONNECTED: EventType<GamepadEvent>
@@ -35,3 +31,6 @@ open external class GamepadEvent(
         val GAMEPAD_DISCONNECTED: EventType<GamepadEvent>
     }
 }
+
+inline fun GamepadEvent.asInit(): GamepadEventInit =
+    unsafeCast(this)

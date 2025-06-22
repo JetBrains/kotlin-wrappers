@@ -2,8 +2,7 @@
 
 package web.cssom
 
-import seskar.js.JsAlias
-import seskar.js.JsAlias.Companion.THIS
+import js.reflect.unsafeCast
 import seskar.js.JsValue
 import web.events.Event
 import web.events.EventType
@@ -32,11 +31,11 @@ open external class MediaQueryListEvent(
      */
     val media: MediaQuery
 
-    @JsAlias(THIS)
-    override fun asInit(): MediaQueryListEventInit
-
     companion object {
         @JsValue("change")
         val CHANGE: EventType<MediaQueryListEvent>
     }
 }
+
+inline fun MediaQueryListEvent.asInit(): MediaQueryListEventInit =
+    unsafeCast(this)

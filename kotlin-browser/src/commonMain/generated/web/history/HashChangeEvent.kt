@@ -2,8 +2,7 @@
 
 package web.history
 
-import seskar.js.JsAlias
-import seskar.js.JsAlias.Companion.THIS
+import js.reflect.unsafeCast
 import seskar.js.JsValue
 import web.events.Event
 import web.events.EventType
@@ -32,11 +31,11 @@ open external class HashChangeEvent(
      */
     val oldURL: String
 
-    @JsAlias(THIS)
-    override fun asInit(): HashChangeEventInit
-
     companion object {
         @JsValue("hashchange")
         val HASH_CHANGE: EventType<HashChangeEvent>
     }
 }
+
+inline fun HashChangeEvent.asInit(): HashChangeEventInit =
+    unsafeCast(this)

@@ -2,8 +2,7 @@
 
 package web.history
 
-import seskar.js.JsAlias
-import seskar.js.JsAlias.Companion.THIS
+import js.reflect.unsafeCast
 import seskar.js.JsValue
 import web.events.Event
 import web.events.EventType
@@ -25,9 +24,6 @@ open external class PageTransitionEvent(
      */
     val persisted: Boolean
 
-    @JsAlias(THIS)
-    override fun asInit(): PageTransitionEventInit
-
     companion object {
         @JsValue("pagehide")
         val PAGE_HIDE: EventType<PageTransitionEvent>
@@ -36,3 +32,6 @@ open external class PageTransitionEvent(
         val PAGE_SHOW: EventType<PageTransitionEvent>
     }
 }
+
+inline fun PageTransitionEvent.asInit(): PageTransitionEventInit =
+    unsafeCast(this)

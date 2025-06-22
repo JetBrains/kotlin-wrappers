@@ -3,8 +3,7 @@
 package web.errors
 
 import js.core.JsAny
-import seskar.js.JsAlias
-import seskar.js.JsAlias.Companion.THIS
+import js.reflect.unsafeCast
 import seskar.js.JsValue
 import web.events.Event
 import web.events.EventType
@@ -54,9 +53,6 @@ open external class ErrorEvent(
      */
     val message: String
 
-    @JsAlias(THIS)
-    override fun asInit(): ErrorEventInit
-
     companion object {
         @JsValue("error")
         val ERROR: EventType<ErrorEvent>
@@ -65,3 +61,6 @@ open external class ErrorEvent(
         val PROCESSOR_ERROR: EventType<ErrorEvent>
     }
 }
+
+inline fun ErrorEvent.asInit(): ErrorEventInit =
+    unsafeCast(this)

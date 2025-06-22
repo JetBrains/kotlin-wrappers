@@ -2,8 +2,7 @@
 
 package web.uievents
 
-import seskar.js.JsAlias
-import seskar.js.JsAlias.Companion.THIS
+import js.reflect.unsafeCast
 import seskar.js.JsValue
 import web.events.EventType
 import kotlin.js.definedExternally
@@ -48,9 +47,6 @@ open external class WheelEvent(
     val DOM_DELTA_LINE: DeltaMode
     val DOM_DELTA_PAGE: DeltaMode
 
-    @JsAlias(THIS)
-    override fun asInit(): WheelEventInit
-
     companion object {
         val DOM_DELTA_PIXEL: DeltaMode
         val DOM_DELTA_LINE: DeltaMode
@@ -60,3 +56,6 @@ open external class WheelEvent(
         val WHEEL: EventType<WheelEvent>
     }
 }
+
+inline fun WheelEvent.asInit(): WheelEventInit =
+    unsafeCast(this)

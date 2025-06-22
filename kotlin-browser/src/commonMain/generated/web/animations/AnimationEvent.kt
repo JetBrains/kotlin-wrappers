@@ -2,8 +2,7 @@
 
 package web.animations
 
-import seskar.js.JsAlias
-import seskar.js.JsAlias.Companion.THIS
+import js.reflect.unsafeCast
 import seskar.js.JsValue
 import web.events.Event
 import web.events.EventType
@@ -39,9 +38,6 @@ open external class AnimationEvent(
      */
     val pseudoElement: String
 
-    @JsAlias(THIS)
-    override fun asInit(): AnimationEventInit
-
     companion object {
         @JsValue("animationcancel")
         val ANIMATION_CANCEL: EventType<AnimationEvent>
@@ -56,3 +52,6 @@ open external class AnimationEvent(
         val ANIMATION_START: EventType<AnimationEvent>
     }
 }
+
+inline fun AnimationEvent.asInit(): AnimationEventInit =
+    unsafeCast(this)

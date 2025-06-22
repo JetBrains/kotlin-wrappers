@@ -3,8 +3,7 @@
 package web.events
 
 import js.core.JsAny
-import seskar.js.JsAlias
-import seskar.js.JsAlias.Companion.THIS
+import js.reflect.unsafeCast
 import kotlin.js.definedExternally
 
 /**
@@ -22,7 +21,7 @@ open external class CustomEvent<out D : JsAny?>(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CustomEvent/detail)
      */
     val detail: D
-
-    @JsAlias(THIS)
-    override fun asInit(): CustomEventInit<out D>
 }
+
+inline fun <D : JsAny?> CustomEvent<D>.asInit(): CustomEventInit<D> =
+    unsafeCast(this)

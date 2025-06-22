@@ -2,8 +2,7 @@
 
 package web.uievents
 
-import seskar.js.JsAlias
-import seskar.js.JsAlias.Companion.THIS
+import js.reflect.unsafeCast
 import seskar.js.JsValue
 import web.events.EventTarget
 import web.events.EventType
@@ -25,9 +24,6 @@ open external class FocusEvent(
      */
     val relatedTarget: EventTarget?
 
-    @JsAlias(THIS)
-    override fun asInit(): FocusEventInit
-
     companion object {
         @JsValue("blur")
         val BLUR: EventType<FocusEvent>
@@ -42,3 +38,6 @@ open external class FocusEvent(
         val FOCUS_OUT: EventType<FocusEvent>
     }
 }
+
+inline fun FocusEvent.asInit(): FocusEventInit =
+    unsafeCast(this)

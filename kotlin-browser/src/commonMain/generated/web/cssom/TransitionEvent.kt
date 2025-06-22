@@ -2,8 +2,7 @@
 
 package web.cssom
 
-import seskar.js.JsAlias
-import seskar.js.JsAlias.Companion.THIS
+import js.reflect.unsafeCast
 import seskar.js.JsValue
 import web.events.Event
 import web.events.EventType
@@ -39,9 +38,6 @@ open external class TransitionEvent(
      */
     val pseudoElement: String
 
-    @JsAlias(THIS)
-    override fun asInit(): TransitionEventInit
-
     companion object {
         @JsValue("transitioncancel")
         val TRANSITION_CANCEL: EventType<TransitionEvent>
@@ -56,3 +52,6 @@ open external class TransitionEvent(
         val TRANSITION_START: EventType<TransitionEvent>
     }
 }
+
+inline fun TransitionEvent.asInit(): TransitionEventInit =
+    unsafeCast(this)
