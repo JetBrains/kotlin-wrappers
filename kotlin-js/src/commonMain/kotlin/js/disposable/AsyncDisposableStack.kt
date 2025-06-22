@@ -1,14 +1,10 @@
-@file:Suppress(
-    "WRONG_EXTERNAL_DECLARATION",
-)
-
 package js.disposable
 
 import js.core.JsAny
 import js.core.Void
 import js.promise.Promise
 import js.promise.PromiseLike
-import seskar.js.JsAsync
+import js.promise.await
 
 open external class AsyncDisposableStack :
     AsyncDisposable {
@@ -16,12 +12,6 @@ open external class AsyncDisposableStack :
      * Returns a value indicating whether this stack has been disposed.
      */
     val disposed: Boolean
-
-    /**
-     * Disposes each resource in the stack in the reverse order that they were added.
-     */
-    @JsAsync
-    suspend fun dispose()
 
     /**
      * Disposes each resource in the stack in the reverse order that they were added.
@@ -80,4 +70,11 @@ open external class AsyncDisposableStack :
      * ```
      */
     fun move(): AsyncDisposableStack
+}
+
+/**
+ * Disposes each resource in the stack in the reverse order that they were added.
+ */
+suspend inline fun AsyncDisposableStack.dispose() {
+    disposeAsync().await()
 }
