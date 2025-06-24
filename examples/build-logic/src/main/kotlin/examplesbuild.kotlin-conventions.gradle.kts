@@ -8,6 +8,7 @@ import org.jetbrains.kotlin.gradle.targets.js.dsl.KotlinJsTargetDsl
 plugins {
     kotlin("multiplatform")
     kotlin("plugin.js-plain-objects")
+    id("examplesbuild.tools-conventions")
     id("io.github.turansky.seskar")
 }
 
