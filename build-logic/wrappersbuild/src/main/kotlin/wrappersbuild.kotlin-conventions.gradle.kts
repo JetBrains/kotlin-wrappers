@@ -16,7 +16,7 @@ val COMMON_FREE_COMPILER_ARGS = listOf(
     "-Xexpect-actual-classes",
     "-Xdont-warn-on-error-suppression",
 
-    "-Xsuppress-warning=NOTHING_TO_INLINE",
+    "-Xwarning-level=NOTHING_TO_INLINE:disabled",
 )
 
 val COMMON_OPT_INS = listOf(
