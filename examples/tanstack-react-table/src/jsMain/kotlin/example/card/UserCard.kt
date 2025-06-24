@@ -1,6 +1,7 @@
 package example.card
 
 import emotion.react.css
+import example.entities.User
 import example.hooks.useDeleteUser
 import example.hooks.useUpdateUser
 import example.selection.useSelectedUser
@@ -34,7 +35,7 @@ val UserCard = FC {
                 disabled = selectedUser == null
                 onClick = {
                     val user = selectedUser!!
-                    updateUser(user.copy(user.name + "_Updated"))
+                    updateUser(User.copy(user, user.name + "_Updated"))
                 }
 
                 +"Update"

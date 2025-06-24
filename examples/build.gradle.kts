@@ -1,5 +1,5 @@
 plugins {
-    id("examplesbuild.tools-conventions")
+    id("examplesbuild.tools-root-conventions")
 }
 
 tasks.wrapper {
