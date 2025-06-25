@@ -4,7 +4,7 @@
 
 package js.temporal
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 /**
  * When the name of a unit is provided to a Temporal API as a string, it is
@@ -15,36 +15,35 @@ sealed external interface PluralUnit<T : DateTimeUnit<T>> :
     LargestUnit<T>,
     SmallestUnit<T>,
     TotalUnit<T> {
-    companion object {
-
-        @JsValue("years")
-        val years: PluralUnit<DateUnit.year>
-
-        @JsValue("months")
-        val months: PluralUnit<DateUnit.month>
-
-        @JsValue("weeks")
-        val weeks: PluralUnit<DateUnit.week>
-
-        @JsValue("days")
-        val days: PluralUnit<DateUnit.day>
-
-        @JsValue("hours")
-        val hours: PluralUnit<TimeUnit.hour>
-
-        @JsValue("minutes")
-        val minutes: PluralUnit<TimeUnit.minute>
-
-        @JsValue("seconds")
-        val seconds: PluralUnit<TimeUnit.second>
-
-        @JsValue("milliseconds")
-        val milliseconds: PluralUnit<TimeUnit.millisecond>
-
-        @JsValue("microseconds")
-        val microseconds: PluralUnit<TimeUnit.microsecond>
-
-        @JsValue("nanoseconds")
-        val nanoseconds: PluralUnit<TimeUnit.nanosecond>
-    }
+    companion object
 }
+
+inline val PluralUnit.Companion.years: PluralUnit<DateUnit.year>
+    get() = unsafeCast("years")
+
+inline val PluralUnit.Companion.months: PluralUnit<DateUnit.month>
+    get() = unsafeCast("months")
+
+inline val PluralUnit.Companion.weeks: PluralUnit<DateUnit.week>
+    get() = unsafeCast("weeks")
+
+inline val PluralUnit.Companion.days: PluralUnit<DateUnit.day>
+    get() = unsafeCast("days")
+
+inline val PluralUnit.Companion.hours: PluralUnit<TimeUnit.hour>
+    get() = unsafeCast("hours")
+
+inline val PluralUnit.Companion.minutes: PluralUnit<TimeUnit.minute>
+    get() = unsafeCast("minutes")
+
+inline val PluralUnit.Companion.seconds: PluralUnit<TimeUnit.second>
+    get() = unsafeCast("seconds")
+
+inline val PluralUnit.Companion.milliseconds: PluralUnit<TimeUnit.millisecond>
+    get() = unsafeCast("milliseconds")
+
+inline val PluralUnit.Companion.microseconds: PluralUnit<TimeUnit.microsecond>
+    get() = unsafeCast("microseconds")
+
+inline val PluralUnit.Companion.nanoseconds: PluralUnit<TimeUnit.nanosecond>
+    get() = unsafeCast("nanoseconds")
