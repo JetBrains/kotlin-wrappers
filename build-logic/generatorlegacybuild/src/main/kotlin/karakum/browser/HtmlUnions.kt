@@ -10,12 +10,6 @@ internal const val FORM_ENCTYPE = "FormEncType"
 internal const val FORM_METHOD = "FormMethod"
 internal const val REQUEST_METHOD = "RequestMethod"
 
-internal class UnionData(
-    val name: String,
-    val values: List<String>,
-    val pkg: String,
-)
-
 internal val UNION_DATA_LIST = listOf(
     UnionData(
         name = "ButtonType",

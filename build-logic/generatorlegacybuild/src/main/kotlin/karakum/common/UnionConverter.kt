@@ -38,7 +38,7 @@ internal fun sealedUnionBody(
 
     val bodyMembers = constants.joinToString("\n") {
         """
-        ${it.jsValueAnnotation}    
+        ${it.jsValueAnnotation}
         val ${it.name}: $name
         """.trimIndent()
     }
@@ -61,7 +61,7 @@ internal fun sealedUnionBody(
 
     val bodyMembers = constants.joinToString("\n") {
         """
-        ${it.jsValueAnnotation}    
+        ${it.jsValueAnnotation}
         val ${it.name}: $parentType.${it.name.replaceFirstChar(Char::uppercase)}
         """.trimIndent()
     }
@@ -95,7 +95,7 @@ internal fun objectUnionBody(
             companion object {
                 $constantNames
             }
-            
+
             $constantTypes
         }
     """.trimIndent()

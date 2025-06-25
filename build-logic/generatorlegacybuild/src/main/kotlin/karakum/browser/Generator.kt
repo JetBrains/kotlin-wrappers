@@ -359,6 +359,7 @@ fun generateKotlinDeclarations(
         .plus(htmlFactories(content))
         .plus(htmlDeclarations(content))
         .plus(htmlUnions())
+        .plus(jsUnions())
         .plus(browserConstants(content))
         .plus(browserTypes(content))
         .plus(browserFunctions(content))
