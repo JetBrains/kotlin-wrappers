@@ -1,3 +1,5 @@
+// Automatically generated - do not modify!
+
 @file:Suppress(
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
@@ -6,8 +8,7 @@ package js.temporal
 
 import seskar.js.JsValue
 
-sealed external interface TimeUnit<out T : TimeUnit<T>> :
-    DateTimeUnit<T> {
+sealed external interface TimeUnit<out T : TimeUnit<T>> : DateTimeUnit<T> {
     companion object {
         @JsValue("hour")
         val hour: hour

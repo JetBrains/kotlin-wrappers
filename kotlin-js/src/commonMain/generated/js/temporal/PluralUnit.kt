@@ -1,3 +1,5 @@
+// Automatically generated - do not modify!
+
 @file:Suppress(
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
@@ -6,17 +8,9 @@ package js.temporal
 
 import seskar.js.JsValue
 
-/**
- * When the name of a unit is provided to a Temporal API as a string, it is
- * usually singular, e.g. 'day' or 'hour'. But plural unit names like 'days'
- * or 'hours' are aso accepted too.
- */
 sealed external interface PluralUnit<T : DateTimeUnit<T>> :
-    LargestUnit<T>,
-    SmallestUnit<T>,
-    TotalUnit<T> {
+    LargestUnit<T>, SmallestUnit<T>, TotalUnit<T> {
     companion object {
-
         @JsValue("years")
         val years: PluralUnit<DateUnit.year>
 
@@ -47,4 +41,5 @@ sealed external interface PluralUnit<T : DateTimeUnit<T>> :
         @JsValue("nanoseconds")
         val nanoseconds: PluralUnit<TimeUnit.nanosecond>
     }
+
 }

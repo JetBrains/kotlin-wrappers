@@ -38,7 +38,7 @@ internal fun sealedUnionBody(
 
     val bodyMembers = constants.joinToString("\n") {
         """
-        ${it.jsValueAnnotation}    
+        ${it.jsValueAnnotation}
         val ${it.name}: $name
         """.trimIndent()
     }
@@ -61,7 +61,7 @@ internal fun sealedUnionBody(
 
     val bodyMembers = constants.joinToString("\n") {
         """
-        ${it.jsValueAnnotation}    
+        ${it.jsValueAnnotation}
         val ${it.name}: $parentType.${it.name.replaceFirstChar(Char::uppercase)}
         """.trimIndent()
     }
@@ -95,8 +95,42 @@ internal fun objectUnionBody(
             companion object {
                 $constantNames
             }
-            
+
             $constantTypes
+        }
+    """.trimIndent()
+}
+
+internal fun sealedExtendedUnion(
+    name: String,
+    partOfTypes: List<String>,
+    values: List<UnionConstant>,
+    typeParameter: String? = null,
+    generateSealedInterfaces: Boolean = true,
+): String {
+    val constantNames = values.joinToString("\n") {
+        sequenceOf(
+            it.jsValueAnnotation,
+            "val ${it.name}: ${it.type ?: it.name}",
+        ).joinToString("\n")
+    }
+
+    val constantTypes = if (generateSealedInterfaces) {
+        values.joinToString("\n") {
+            "sealed interface ${it.name} : ${name}<${it.name}>"
+        }
+    } else ""
+
+    val extension = if (partOfTypes.isNotEmpty()) {
+        ": " + partOfTypes.joinToString(", ")
+    } else ""
+
+    return """
+        sealed external interface $name<$typeParameter>$extension {
+            companion object {
+                $constantNames
+            }
+            ${if (constantTypes.isNotEmpty()) "\n$constantTypes" else ""}
         }
     """.trimIndent()
 }

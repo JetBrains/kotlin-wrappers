@@ -11,15 +11,15 @@ import seskar.js.JsValue
 sealed external interface Disambiguation {
     companion object {
         @JsValue("compatible")
-        val compatible: Overflow
+        val compatible: Disambiguation
 
         @JsValue("earlier")
-        val earlier: Overflow
+        val earlier: Disambiguation
 
         @JsValue("later")
-        val later: Overflow
+        val later: Disambiguation
 
         @JsValue("reject")
-        val reject: Overflow
+        val reject: Disambiguation
     }
 }
