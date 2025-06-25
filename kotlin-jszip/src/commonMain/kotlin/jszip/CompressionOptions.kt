@@ -4,5 +4,5 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface CompressionOptions {
-    val level: Int
+    var level: Int
 }

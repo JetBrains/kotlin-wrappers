@@ -4,14 +4,15 @@
 
 package jszip
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface Platform {
-    companion object {
-        @JsValue("DOS")
-        val DOS: Platform
-
-        @JsValue("UNIX")
-        val UNIX: Platform
-    }
+    companion object
 }
+
+inline val Platform.Companion.DOS: Platform
+    get() = unsafeCast("DOS")
+
+inline val Platform.Companion.UNIX: Platform
+    get() = unsafeCast("UNIX")
+

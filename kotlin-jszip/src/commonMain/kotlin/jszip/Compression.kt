@@ -4,14 +4,14 @@
 
 package jszip
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface Compression {
-    companion object {
-        @JsValue("STORE")
-        val STORE: Compression
-
-        @JsValue("DEFLATE")
-        val DEFLATE: Compression
-    }
+    companion object
 }
+
+inline val Compression.Companion.STORE: Compression
+    get() = unsafeCast("STORE")
+
+inline val Compression.Companion.DEFLATE: Compression
+    get() = unsafeCast("DEFLATE")

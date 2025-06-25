@@ -9,34 +9,34 @@ import js.buffer.ArrayBuffer
 import js.core.JsAny
 import js.core.JsString
 import js.core.JsUByte
+import js.reflect.unsafeCast
 import js.typedarrays.Uint8Array
 import web.blob.Blob
-import seskar.js.JsValue
 
 sealed external interface OutputType<T : JsAny> {
-    companion object {
-        @JsValue("base64")
-        val base64: OutputType<JsString>
-
-        @JsValue("string")
-        val string: OutputType<JsString>
-
-        @JsValue("text")
-        val text: OutputType<JsString>
-
-        @JsValue("binarystring")
-        val binarystring: OutputType<JsString>
-
-        @JsValue("array")
-        val array: OutputType<ReadonlyArray<JsUByte>>
-
-        @JsValue("uint8array")
-        val uint8array: OutputType<Uint8Array<*>>
-
-        @JsValue("arraybuffer")
-        val arraybuffer: OutputType<ArrayBuffer>
-
-        @JsValue("blob")
-        val blob: OutputType<Blob>
-    }
+    companion object
 }
+
+inline val OutputType.Companion.base64: OutputType<JsString>
+    get() = unsafeCast("base64")
+
+inline val OutputType.Companion.string: OutputType<JsString>
+    get() = unsafeCast("string")
+
+inline val OutputType.Companion.text: OutputType<JsString>
+    get() = unsafeCast("text")
+
+inline val OutputType.Companion.binarystring: OutputType<JsString>
+    get() = unsafeCast("binarystring")
+
+inline val OutputType.Companion.array: OutputType<ReadonlyArray<JsUByte>>
+    get() = unsafeCast("array")
+
+inline val OutputType.Companion.uint8array: OutputType<Uint8Array<*>>
+    get() = unsafeCast("uint8array")
+
+inline val OutputType.Companion.arraybuffer: OutputType<ArrayBuffer>
+    get() = unsafeCast("arraybuffer")
+
+inline val OutputType.Companion.blob: OutputType<Blob>
+    get() = unsafeCast("blob")
