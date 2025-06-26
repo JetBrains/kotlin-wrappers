@@ -1,6 +1,6 @@
 package karakum.browser
 
-import karakum.common.unionBody
+import karakum.common.JsUnionConverter.unionBody
 
 // Remaining interfaces annotated with @JsValue
 

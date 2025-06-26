@@ -1,6 +1,6 @@
 package karakum.query
 
-import karakum.common.sealedUnionBody
+import karakum.common.JsUnionConverter.sealedUnionBody
 
 private val SPECIAL_TYPES = setOf(
     "boolean | number | ShouldRetryFunction<TError>",

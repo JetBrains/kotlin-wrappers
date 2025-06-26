@@ -1,7 +1,7 @@
 package karakum.react
 
+import karakum.common.JsUnionConverter.sealedUnionBody
 import karakum.common.removeQuoteSurrounding
-import karakum.common.sealedUnionBody
 import karakum.common.startsWithAnyQuote
 
 internal fun convertUnion(

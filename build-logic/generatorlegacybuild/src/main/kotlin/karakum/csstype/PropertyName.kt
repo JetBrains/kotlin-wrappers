@@ -1,9 +1,9 @@
 package karakum.csstype
 
 import karakum.common.ConversionResult
+import karakum.common.JsUnionConverter.unionBodyByConstants
 import karakum.common.UnionConstant
 import karakum.common.kebabToCamel
-import karakum.common.unionBodyByConstants
 
 private const val PROPERTY_NAME = "PropertyName"
 

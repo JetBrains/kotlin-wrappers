@@ -1,6 +1,6 @@
 package karakum.browser
 
-import karakum.common.objectUnionBody
+import karakum.common.JsUnionConverter.objectUnionBody
 import karakum.common.unionConstant
 
 private val CONVERTED_WEBGL_TYPES = listOf(

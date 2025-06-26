@@ -1,7 +1,7 @@
 package karakum.browser
 
-import karakum.common.objectUnionBody
-import karakum.common.sealedUnionBody
+import karakum.common.JsUnionConverter.objectUnionBody
+import karakum.common.JsUnionConverter.sealedUnionBody
 import karakum.common.unionConstant
 
 private val PKG_MAP = mapOf(
@@ -626,7 +626,7 @@ private fun autoFillInterface(
                 inline fun $name(
                     ${parameterMap.entries.joinToString("\n") { (pname, ptype) -> "$pname: $ptype," }}
                 ): $name =
-                    unsafeCast("${parameterMap.keys.joinToString(" ") { pname -> "\$$pname" }}")
+                    unsafeCast("${parameterMap.keys.joinToString(" ") { pname -> "$$pname" }}")
                 """.trimIndent()
             )
         }

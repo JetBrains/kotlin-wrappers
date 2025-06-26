@@ -1,7 +1,7 @@
 package karakum.browser
 
+import karakum.common.JsUnionConverter.unionBodyByConstants
 import karakum.common.UnionConstant
-import karakum.common.unionBodyByConstants
 
 internal const val MOUSE_BUTTON = "MouseButton"
 internal const val MOUSE_BUTTONS = "MouseButtons"

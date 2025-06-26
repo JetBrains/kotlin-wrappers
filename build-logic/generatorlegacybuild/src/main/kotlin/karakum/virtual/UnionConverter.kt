@@ -1,7 +1,7 @@
 package karakum.virtual
 
 import karakum.common.ConversionResult
-import karakum.common.sealedUnionBody
+import karakum.common.JsUnionConverter.sealedUnionBody
 
 internal fun convertUnion(
     name: String,
