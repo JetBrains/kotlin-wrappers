@@ -305,11 +305,6 @@ private fun event(
     }
     """.trimIndent()
 
-    // WA for desktop Safari
-    if (name == "TouchEvent") {
-        eventBody = "@JsName(\"globalThis.$name\")\n$eventBody"
-    }
-
     eventBody = eventBody
         .withComment(
             fullSource = source,
