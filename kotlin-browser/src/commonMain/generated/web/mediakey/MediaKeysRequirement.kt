@@ -6,17 +6,17 @@
 
 package web.mediakey
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface MediaKeysRequirement {
-    companion object {
-        @JsValue("not-allowed")
-        val notAllowed: MediaKeysRequirement
-
-        @JsValue("optional")
-        val optional: MediaKeysRequirement
-
-        @JsValue("required")
-        val required: MediaKeysRequirement
-    }
+    companion object
 }
+
+inline val MediaKeysRequirement.Companion.notAllowed: MediaKeysRequirement
+    get() = unsafeCast("not-allowed")
+
+inline val MediaKeysRequirement.Companion.optional: MediaKeysRequirement
+    get() = unsafeCast("optional")
+
+inline val MediaKeysRequirement.Companion.required: MediaKeysRequirement
+    get() = unsafeCast("required")

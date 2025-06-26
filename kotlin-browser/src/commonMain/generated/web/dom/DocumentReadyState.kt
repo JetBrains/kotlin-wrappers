@@ -6,17 +6,17 @@
 
 package web.dom
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface DocumentReadyState {
-    companion object {
-        @JsValue("complete")
-        val complete: DocumentReadyState
-
-        @JsValue("interactive")
-        val interactive: DocumentReadyState
-
-        @JsValue("loading")
-        val loading: DocumentReadyState
-    }
+    companion object
 }
+
+inline val DocumentReadyState.Companion.complete: DocumentReadyState
+    get() = unsafeCast("complete")
+
+inline val DocumentReadyState.Companion.interactive: DocumentReadyState
+    get() = unsafeCast("interactive")
+
+inline val DocumentReadyState.Companion.loading: DocumentReadyState
+    get() = unsafeCast("loading")

@@ -6,17 +6,17 @@
 
 package web.canvas
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface CanvasLineCap {
-    companion object {
-        @JsValue("butt")
-        val butt: CanvasLineCap
-
-        @JsValue("round")
-        val round: CanvasLineCap
-
-        @JsValue("square")
-        val square: CanvasLineCap
-    }
+    companion object
 }
+
+inline val CanvasLineCap.Companion.butt: CanvasLineCap
+    get() = unsafeCast("butt")
+
+inline val CanvasLineCap.Companion.round: CanvasLineCap
+    get() = unsafeCast("round")
+
+inline val CanvasLineCap.Companion.square: CanvasLineCap
+    get() = unsafeCast("square")

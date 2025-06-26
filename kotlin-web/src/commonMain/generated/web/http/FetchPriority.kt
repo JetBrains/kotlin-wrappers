@@ -6,17 +6,17 @@
 
 package web.http
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface FetchPriority {
-    companion object {
-        @JsValue("auto")
-        val auto: FetchPriority
-
-        @JsValue("high")
-        val high: FetchPriority
-
-        @JsValue("low")
-        val low: FetchPriority
-    }
+    companion object
 }
+
+inline val FetchPriority.Companion.auto: FetchPriority
+    get() = unsafeCast("auto")
+
+inline val FetchPriority.Companion.high: FetchPriority
+    get() = unsafeCast("high")
+
+inline val FetchPriority.Companion.low: FetchPriority
+    get() = unsafeCast("low")

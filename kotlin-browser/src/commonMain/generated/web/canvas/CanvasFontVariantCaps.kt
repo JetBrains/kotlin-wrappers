@@ -6,29 +6,29 @@
 
 package web.canvas
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface CanvasFontVariantCaps {
-    companion object {
-        @JsValue("all-petite-caps")
-        val allPetiteCaps: CanvasFontVariantCaps
-
-        @JsValue("all-small-caps")
-        val allSmallCaps: CanvasFontVariantCaps
-
-        @JsValue("normal")
-        val normal: CanvasFontVariantCaps
-
-        @JsValue("petite-caps")
-        val petiteCaps: CanvasFontVariantCaps
-
-        @JsValue("small-caps")
-        val smallCaps: CanvasFontVariantCaps
-
-        @JsValue("titling-caps")
-        val titlingCaps: CanvasFontVariantCaps
-
-        @JsValue("unicase")
-        val unicase: CanvasFontVariantCaps
-    }
+    companion object
 }
+
+inline val CanvasFontVariantCaps.Companion.allPetiteCaps: CanvasFontVariantCaps
+    get() = unsafeCast("all-petite-caps")
+
+inline val CanvasFontVariantCaps.Companion.allSmallCaps: CanvasFontVariantCaps
+    get() = unsafeCast("all-small-caps")
+
+inline val CanvasFontVariantCaps.Companion.normal: CanvasFontVariantCaps
+    get() = unsafeCast("normal")
+
+inline val CanvasFontVariantCaps.Companion.petiteCaps: CanvasFontVariantCaps
+    get() = unsafeCast("petite-caps")
+
+inline val CanvasFontVariantCaps.Companion.smallCaps: CanvasFontVariantCaps
+    get() = unsafeCast("small-caps")
+
+inline val CanvasFontVariantCaps.Companion.titlingCaps: CanvasFontVariantCaps
+    get() = unsafeCast("titling-caps")
+
+inline val CanvasFontVariantCaps.Companion.unicase: CanvasFontVariantCaps
+    get() = unsafeCast("unicase")

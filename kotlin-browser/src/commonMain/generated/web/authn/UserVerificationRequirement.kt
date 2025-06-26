@@ -6,17 +6,17 @@
 
 package web.authn
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface UserVerificationRequirement {
-    companion object {
-        @JsValue("discouraged")
-        val discouraged: UserVerificationRequirement
-
-        @JsValue("preferred")
-        val preferred: UserVerificationRequirement
-
-        @JsValue("required")
-        val required: UserVerificationRequirement
-    }
+    companion object
 }
+
+inline val UserVerificationRequirement.Companion.discouraged: UserVerificationRequirement
+    get() = unsafeCast("discouraged")
+
+inline val UserVerificationRequirement.Companion.preferred: UserVerificationRequirement
+    get() = unsafeCast("preferred")
+
+inline val UserVerificationRequirement.Companion.required: UserVerificationRequirement
+    get() = unsafeCast("required")

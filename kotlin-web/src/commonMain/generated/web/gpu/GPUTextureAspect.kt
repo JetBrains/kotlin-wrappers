@@ -6,17 +6,17 @@
 
 package web.gpu
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface GPUTextureAspect {
-    companion object {
-        @JsValue("all")
-        val all: GPUTextureAspect
-
-        @JsValue("depth-only")
-        val depthOnly: GPUTextureAspect
-
-        @JsValue("stencil-only")
-        val stencilOnly: GPUTextureAspect
-    }
+    companion object
 }
+
+inline val GPUTextureAspect.Companion.all: GPUTextureAspect
+    get() = unsafeCast("all")
+
+inline val GPUTextureAspect.Companion.depthOnly: GPUTextureAspect
+    get() = unsafeCast("depth-only")
+
+inline val GPUTextureAspect.Companion.stencilOnly: GPUTextureAspect
+    get() = unsafeCast("stencil-only")

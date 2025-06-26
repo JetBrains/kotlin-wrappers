@@ -2,7 +2,7 @@
 
 package web.canvas
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 import web.html.HTMLCanvasElement
 import web.rendering.RenderingContext
 import web.rendering.RenderingContextId
@@ -40,8 +40,8 @@ protected /* private */ constructor() :
      */
     val canvas: HTMLCanvasElement
 
-    companion object {
-        @JsValue("2d")
-        val ID: RenderingContextId<CanvasRenderingContext2D, CanvasRenderingContext2DSettings>
-    }
+    companion object
 }
+
+inline val CanvasRenderingContext2D.Companion.ID: RenderingContextId<CanvasRenderingContext2D, CanvasRenderingContext2DSettings>
+    get() = unsafeCast("2d")

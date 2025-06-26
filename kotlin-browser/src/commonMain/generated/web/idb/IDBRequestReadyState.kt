@@ -6,14 +6,14 @@
 
 package web.idb
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface IDBRequestReadyState {
-    companion object {
-        @JsValue("done")
-        val done: IDBRequestReadyState
-
-        @JsValue("pending")
-        val pending: IDBRequestReadyState
-    }
+    companion object
 }
+
+inline val IDBRequestReadyState.Companion.done: IDBRequestReadyState
+    get() = unsafeCast("done")
+
+inline val IDBRequestReadyState.Companion.pending: IDBRequestReadyState
+    get() = unsafeCast("pending")

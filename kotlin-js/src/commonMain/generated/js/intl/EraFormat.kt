@@ -6,17 +6,17 @@
 
 package js.intl
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface EraFormat {
-    companion object {
-        @JsValue("long")
-        val long: EraFormat
-
-        @JsValue("short")
-        val short: EraFormat
-
-        @JsValue("narrow")
-        val narrow: EraFormat
-    }
+    companion object
 }
+
+inline val EraFormat.Companion.long: EraFormat
+    get() = unsafeCast("long")
+
+inline val EraFormat.Companion.short: EraFormat
+    get() = unsafeCast("short")
+
+inline val EraFormat.Companion.narrow: EraFormat
+    get() = unsafeCast("narrow")

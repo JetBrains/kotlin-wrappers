@@ -6,14 +6,14 @@
 
 package web.rtc
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface RTCIceComponent {
-    companion object {
-        @JsValue("rtcp")
-        val rtcp: RTCIceComponent
-
-        @JsValue("rtp")
-        val rtp: RTCIceComponent
-    }
+    companion object
 }
+
+inline val RTCIceComponent.Companion.rtcp: RTCIceComponent
+    get() = unsafeCast("rtcp")
+
+inline val RTCIceComponent.Companion.rtp: RTCIceComponent
+    get() = unsafeCast("rtp")

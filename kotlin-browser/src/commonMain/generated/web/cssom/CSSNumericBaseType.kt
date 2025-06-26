@@ -6,29 +6,29 @@
 
 package web.cssom
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface CSSNumericBaseType {
-    companion object {
-        @JsValue("angle")
-        val angle: CSSNumericBaseType
-
-        @JsValue("flex")
-        val flex: CSSNumericBaseType
-
-        @JsValue("frequency")
-        val frequency: CSSNumericBaseType
-
-        @JsValue("length")
-        val length: CSSNumericBaseType
-
-        @JsValue("percent")
-        val percent: CSSNumericBaseType
-
-        @JsValue("resolution")
-        val resolution: CSSNumericBaseType
-
-        @JsValue("time")
-        val time: CSSNumericBaseType
-    }
+    companion object
 }
+
+inline val CSSNumericBaseType.Companion.angle: CSSNumericBaseType
+    get() = unsafeCast("angle")
+
+inline val CSSNumericBaseType.Companion.flex: CSSNumericBaseType
+    get() = unsafeCast("flex")
+
+inline val CSSNumericBaseType.Companion.frequency: CSSNumericBaseType
+    get() = unsafeCast("frequency")
+
+inline val CSSNumericBaseType.Companion.length: CSSNumericBaseType
+    get() = unsafeCast("length")
+
+inline val CSSNumericBaseType.Companion.percent: CSSNumericBaseType
+    get() = unsafeCast("percent")
+
+inline val CSSNumericBaseType.Companion.resolution: CSSNumericBaseType
+    get() = unsafeCast("resolution")
+
+inline val CSSNumericBaseType.Companion.time: CSSNumericBaseType
+    get() = unsafeCast("time")

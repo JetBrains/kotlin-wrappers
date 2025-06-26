@@ -6,17 +6,17 @@
 
 package web.notifications
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface NotificationDirection {
-    companion object {
-        @JsValue("auto")
-        val auto: NotificationDirection
-
-        @JsValue("ltr")
-        val ltr: NotificationDirection
-
-        @JsValue("rtl")
-        val rtl: NotificationDirection
-    }
+    companion object
 }
+
+inline val NotificationDirection.Companion.auto: NotificationDirection
+    get() = unsafeCast("auto")
+
+inline val NotificationDirection.Companion.ltr: NotificationDirection
+    get() = unsafeCast("ltr")
+
+inline val NotificationDirection.Companion.rtl: NotificationDirection
+    get() = unsafeCast("rtl")

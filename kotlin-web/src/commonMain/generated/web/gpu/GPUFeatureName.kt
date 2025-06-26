@@ -6,41 +6,41 @@
 
 package web.gpu
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface GPUFeatureName {
-    companion object {
-        @JsValue("bgra8unorm-storage")
-        val bgra8unormStorage: GPUFeatureName
-
-        @JsValue("depth-clip-control")
-        val depthClipControl: GPUFeatureName
-
-        @JsValue("depth32float-stencil8")
-        val depth32floatStencil8: GPUFeatureName
-
-        @JsValue("float32-filterable")
-        val float32Filterable: GPUFeatureName
-
-        @JsValue("indirect-first-instance")
-        val indirectFirstInstance: GPUFeatureName
-
-        @JsValue("rg11b10ufloat-renderable")
-        val rg11b10ufloatRenderable: GPUFeatureName
-
-        @JsValue("shader-f16")
-        val shaderF16: GPUFeatureName
-
-        @JsValue("texture-compression-astc")
-        val textureCompressionAstc: GPUFeatureName
-
-        @JsValue("texture-compression-bc")
-        val textureCompressionBc: GPUFeatureName
-
-        @JsValue("texture-compression-etc2")
-        val textureCompressionEtc2: GPUFeatureName
-
-        @JsValue("timestamp-query")
-        val timestampQuery: GPUFeatureName
-    }
+    companion object
 }
+
+inline val GPUFeatureName.Companion.bgra8unormStorage: GPUFeatureName
+    get() = unsafeCast("bgra8unorm-storage")
+
+inline val GPUFeatureName.Companion.depthClipControl: GPUFeatureName
+    get() = unsafeCast("depth-clip-control")
+
+inline val GPUFeatureName.Companion.depth32floatStencil8: GPUFeatureName
+    get() = unsafeCast("depth32float-stencil8")
+
+inline val GPUFeatureName.Companion.float32Filterable: GPUFeatureName
+    get() = unsafeCast("float32-filterable")
+
+inline val GPUFeatureName.Companion.indirectFirstInstance: GPUFeatureName
+    get() = unsafeCast("indirect-first-instance")
+
+inline val GPUFeatureName.Companion.rg11b10ufloatRenderable: GPUFeatureName
+    get() = unsafeCast("rg11b10ufloat-renderable")
+
+inline val GPUFeatureName.Companion.shaderF16: GPUFeatureName
+    get() = unsafeCast("shader-f16")
+
+inline val GPUFeatureName.Companion.textureCompressionAstc: GPUFeatureName
+    get() = unsafeCast("texture-compression-astc")
+
+inline val GPUFeatureName.Companion.textureCompressionBc: GPUFeatureName
+    get() = unsafeCast("texture-compression-bc")
+
+inline val GPUFeatureName.Companion.textureCompressionEtc2: GPUFeatureName
+    get() = unsafeCast("texture-compression-etc2")
+
+inline val GPUFeatureName.Companion.timestampQuery: GPUFeatureName
+    get() = unsafeCast("timestamp-query")

@@ -6,17 +6,17 @@
 
 package web.idb
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface IDBTransactionDurability {
-    companion object {
-        @JsValue("default")
-        val default: IDBTransactionDurability
-
-        @JsValue("relaxed")
-        val relaxed: IDBTransactionDurability
-
-        @JsValue("strict")
-        val strict: IDBTransactionDurability
-    }
+    companion object
 }
+
+inline val IDBTransactionDurability.Companion.default: IDBTransactionDurability
+    get() = unsafeCast("default")
+
+inline val IDBTransactionDurability.Companion.relaxed: IDBTransactionDurability
+    get() = unsafeCast("relaxed")
+
+inline val IDBTransactionDurability.Companion.strict: IDBTransactionDurability
+    get() = unsafeCast("strict")

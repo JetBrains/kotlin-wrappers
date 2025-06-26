@@ -6,17 +6,17 @@
 
 package web.gpu
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface GPUStorageTextureAccess {
-    companion object {
-        @JsValue("read-only")
-        val readOnly: GPUStorageTextureAccess
-
-        @JsValue("read-write")
-        val readWrite: GPUStorageTextureAccess
-
-        @JsValue("write-only")
-        val writeOnly: GPUStorageTextureAccess
-    }
+    companion object
 }
+
+inline val GPUStorageTextureAccess.Companion.readOnly: GPUStorageTextureAccess
+    get() = unsafeCast("read-only")
+
+inline val GPUStorageTextureAccess.Companion.readWrite: GPUStorageTextureAccess
+    get() = unsafeCast("read-write")
+
+inline val GPUStorageTextureAccess.Companion.writeOnly: GPUStorageTextureAccess
+    get() = unsafeCast("write-only")

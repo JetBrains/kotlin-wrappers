@@ -6,14 +6,14 @@
 
 package web.audio
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface ChannelInterpretation {
-    companion object {
-        @JsValue("discrete")
-        val discrete: ChannelInterpretation
-
-        @JsValue("speakers")
-        val speakers: ChannelInterpretation
-    }
+    companion object
 }
+
+inline val ChannelInterpretation.Companion.discrete: ChannelInterpretation
+    get() = unsafeCast("discrete")
+
+inline val ChannelInterpretation.Companion.speakers: ChannelInterpretation
+    get() = unsafeCast("speakers")

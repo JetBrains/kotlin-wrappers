@@ -6,17 +6,17 @@
 
 package js.intl
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface RelativeTimeFormatStyle {
-    companion object {
-        @JsValue("long")
-        val long: RelativeTimeFormatStyle
-
-        @JsValue("short")
-        val short: RelativeTimeFormatStyle
-
-        @JsValue("narrow")
-        val narrow: RelativeTimeFormatStyle
-    }
+    companion object
 }
+
+inline val RelativeTimeFormatStyle.Companion.long: RelativeTimeFormatStyle
+    get() = unsafeCast("long")
+
+inline val RelativeTimeFormatStyle.Companion.short: RelativeTimeFormatStyle
+    get() = unsafeCast("short")
+
+inline val RelativeTimeFormatStyle.Companion.narrow: RelativeTimeFormatStyle
+    get() = unsafeCast("narrow")

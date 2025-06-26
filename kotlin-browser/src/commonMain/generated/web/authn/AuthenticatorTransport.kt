@@ -6,23 +6,23 @@
 
 package web.authn
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface AuthenticatorTransport {
-    companion object {
-        @JsValue("ble")
-        val ble: AuthenticatorTransport
-
-        @JsValue("hybrid")
-        val hybrid: AuthenticatorTransport
-
-        @JsValue("internal")
-        val internal: AuthenticatorTransport
-
-        @JsValue("nfc")
-        val nfc: AuthenticatorTransport
-
-        @JsValue("usb")
-        val usb: AuthenticatorTransport
-    }
+    companion object
 }
+
+inline val AuthenticatorTransport.Companion.ble: AuthenticatorTransport
+    get() = unsafeCast("ble")
+
+inline val AuthenticatorTransport.Companion.hybrid: AuthenticatorTransport
+    get() = unsafeCast("hybrid")
+
+inline val AuthenticatorTransport.Companion.internal: AuthenticatorTransport
+    get() = unsafeCast("internal")
+
+inline val AuthenticatorTransport.Companion.nfc: AuthenticatorTransport
+    get() = unsafeCast("nfc")
+
+inline val AuthenticatorTransport.Companion.usb: AuthenticatorTransport
+    get() = unsafeCast("usb")

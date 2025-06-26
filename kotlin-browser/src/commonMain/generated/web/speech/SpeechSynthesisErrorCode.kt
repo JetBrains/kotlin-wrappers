@@ -6,44 +6,44 @@
 
 package web.speech
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface SpeechSynthesisErrorCode {
-    companion object {
-        @JsValue("audio-busy")
-        val audioBusy: SpeechSynthesisErrorCode
-
-        @JsValue("audio-hardware")
-        val audioHardware: SpeechSynthesisErrorCode
-
-        @JsValue("canceled")
-        val canceled: SpeechSynthesisErrorCode
-
-        @JsValue("interrupted")
-        val interrupted: SpeechSynthesisErrorCode
-
-        @JsValue("invalid-argument")
-        val invalidArgument: SpeechSynthesisErrorCode
-
-        @JsValue("language-unavailable")
-        val languageUnavailable: SpeechSynthesisErrorCode
-
-        @JsValue("network")
-        val network: SpeechSynthesisErrorCode
-
-        @JsValue("not-allowed")
-        val notAllowed: SpeechSynthesisErrorCode
-
-        @JsValue("synthesis-failed")
-        val synthesisFailed: SpeechSynthesisErrorCode
-
-        @JsValue("synthesis-unavailable")
-        val synthesisUnavailable: SpeechSynthesisErrorCode
-
-        @JsValue("text-too-long")
-        val textTooLong: SpeechSynthesisErrorCode
-
-        @JsValue("voice-unavailable")
-        val voiceUnavailable: SpeechSynthesisErrorCode
-    }
+    companion object
 }
+
+inline val SpeechSynthesisErrorCode.Companion.audioBusy: SpeechSynthesisErrorCode
+    get() = unsafeCast("audio-busy")
+
+inline val SpeechSynthesisErrorCode.Companion.audioHardware: SpeechSynthesisErrorCode
+    get() = unsafeCast("audio-hardware")
+
+inline val SpeechSynthesisErrorCode.Companion.canceled: SpeechSynthesisErrorCode
+    get() = unsafeCast("canceled")
+
+inline val SpeechSynthesisErrorCode.Companion.interrupted: SpeechSynthesisErrorCode
+    get() = unsafeCast("interrupted")
+
+inline val SpeechSynthesisErrorCode.Companion.invalidArgument: SpeechSynthesisErrorCode
+    get() = unsafeCast("invalid-argument")
+
+inline val SpeechSynthesisErrorCode.Companion.languageUnavailable: SpeechSynthesisErrorCode
+    get() = unsafeCast("language-unavailable")
+
+inline val SpeechSynthesisErrorCode.Companion.network: SpeechSynthesisErrorCode
+    get() = unsafeCast("network")
+
+inline val SpeechSynthesisErrorCode.Companion.notAllowed: SpeechSynthesisErrorCode
+    get() = unsafeCast("not-allowed")
+
+inline val SpeechSynthesisErrorCode.Companion.synthesisFailed: SpeechSynthesisErrorCode
+    get() = unsafeCast("synthesis-failed")
+
+inline val SpeechSynthesisErrorCode.Companion.synthesisUnavailable: SpeechSynthesisErrorCode
+    get() = unsafeCast("synthesis-unavailable")
+
+inline val SpeechSynthesisErrorCode.Companion.textTooLong: SpeechSynthesisErrorCode
+    get() = unsafeCast("text-too-long")
+
+inline val SpeechSynthesisErrorCode.Companion.voiceUnavailable: SpeechSynthesisErrorCode
+    get() = unsafeCast("voice-unavailable")

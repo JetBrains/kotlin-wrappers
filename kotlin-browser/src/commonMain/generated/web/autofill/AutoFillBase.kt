@@ -6,18 +6,18 @@
 
 package web.autofill
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface AutoFillBase :
     AutoFill {
-    companion object {
-        @JsValue("")
-        val none: AutoFillBase
-
-        @JsValue("off")
-        val off: AutoFillBase
-
-        @JsValue("on")
-        val on: AutoFillBase
-    }
+    companion object
 }
+
+inline val AutoFillBase.Companion.none: AutoFillBase
+    get() = unsafeCast("")
+
+inline val AutoFillBase.Companion.off: AutoFillBase
+    get() = unsafeCast("off")
+
+inline val AutoFillBase.Companion.on: AutoFillBase
+    get() = unsafeCast("on")

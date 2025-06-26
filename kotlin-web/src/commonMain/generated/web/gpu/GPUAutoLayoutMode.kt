@@ -6,11 +6,11 @@
 
 package web.gpu
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface GPUAutoLayoutMode {
-    companion object {
-        @JsValue("auto")
-        val auto: GPUAutoLayoutMode
-    }
+    companion object
 }
+
+inline val GPUAutoLayoutMode.Companion.auto: GPUAutoLayoutMode
+    get() = unsafeCast("auto")

@@ -6,14 +6,14 @@
 
 package web.transport
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface WebTransportErrorSource {
-    companion object {
-        @JsValue("session")
-        val session: WebTransportErrorSource
-
-        @JsValue("stream")
-        val stream: WebTransportErrorSource
-    }
+    companion object
 }
+
+inline val WebTransportErrorSource.Companion.session: WebTransportErrorSource
+    get() = unsafeCast("session")
+
+inline val WebTransportErrorSource.Companion.stream: WebTransportErrorSource
+    get() = unsafeCast("stream")

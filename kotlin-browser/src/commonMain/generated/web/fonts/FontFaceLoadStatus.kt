@@ -6,20 +6,20 @@
 
 package web.fonts
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface FontFaceLoadStatus {
-    companion object {
-        @JsValue("error")
-        val error: FontFaceLoadStatus
-
-        @JsValue("loaded")
-        val loaded: FontFaceLoadStatus
-
-        @JsValue("loading")
-        val loading: FontFaceLoadStatus
-
-        @JsValue("unloaded")
-        val unloaded: FontFaceLoadStatus
-    }
+    companion object
 }
+
+inline val FontFaceLoadStatus.Companion.error: FontFaceLoadStatus
+    get() = unsafeCast("error")
+
+inline val FontFaceLoadStatus.Companion.loaded: FontFaceLoadStatus
+    get() = unsafeCast("loaded")
+
+inline val FontFaceLoadStatus.Companion.loading: FontFaceLoadStatus
+    get() = unsafeCast("loading")
+
+inline val FontFaceLoadStatus.Companion.unloaded: FontFaceLoadStatus
+    get() = unsafeCast("unloaded")

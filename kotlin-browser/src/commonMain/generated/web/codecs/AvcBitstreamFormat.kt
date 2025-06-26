@@ -6,14 +6,14 @@
 
 package web.codecs
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface AvcBitstreamFormat {
-    companion object {
-        @JsValue("annexb")
-        val annexb: AvcBitstreamFormat
-
-        @JsValue("avc")
-        val avc: AvcBitstreamFormat
-    }
+    companion object
 }
+
+inline val AvcBitstreamFormat.Companion.annexb: AvcBitstreamFormat
+    get() = unsafeCast("annexb")
+
+inline val AvcBitstreamFormat.Companion.avc: AvcBitstreamFormat
+    get() = unsafeCast("avc")

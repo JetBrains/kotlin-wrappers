@@ -6,20 +6,20 @@
 
 package web.images
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface ResizeQuality {
-    companion object {
-        @JsValue("high")
-        val high: ResizeQuality
-
-        @JsValue("low")
-        val low: ResizeQuality
-
-        @JsValue("medium")
-        val medium: ResizeQuality
-
-        @JsValue("pixelated")
-        val pixelated: ResizeQuality
-    }
+    companion object
 }
+
+inline val ResizeQuality.Companion.high: ResizeQuality
+    get() = unsafeCast("high")
+
+inline val ResizeQuality.Companion.low: ResizeQuality
+    get() = unsafeCast("low")
+
+inline val ResizeQuality.Companion.medium: ResizeQuality
+    get() = unsafeCast("medium")
+
+inline val ResizeQuality.Companion.pixelated: ResizeQuality
+    get() = unsafeCast("pixelated")

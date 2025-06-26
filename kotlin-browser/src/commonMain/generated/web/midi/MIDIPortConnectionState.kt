@@ -6,17 +6,17 @@
 
 package web.midi
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface MIDIPortConnectionState {
-    companion object {
-        @JsValue("closed")
-        val closed: MIDIPortConnectionState
-
-        @JsValue("open")
-        val open: MIDIPortConnectionState
-
-        @JsValue("pending")
-        val pending: MIDIPortConnectionState
-    }
+    companion object
 }
+
+inline val MIDIPortConnectionState.Companion.closed: MIDIPortConnectionState
+    get() = unsafeCast("closed")
+
+inline val MIDIPortConnectionState.Companion.open: MIDIPortConnectionState
+    get() = unsafeCast("open")
+
+inline val MIDIPortConnectionState.Companion.pending: MIDIPortConnectionState
+    get() = unsafeCast("pending")

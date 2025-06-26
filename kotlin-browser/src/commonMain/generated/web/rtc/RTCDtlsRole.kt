@@ -6,17 +6,17 @@
 
 package web.rtc
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface RTCDtlsRole {
-    companion object {
-        @JsValue("client")
-        val client: RTCDtlsRole
-
-        @JsValue("server")
-        val server: RTCDtlsRole
-
-        @JsValue("unknown")
-        val unknown: RTCDtlsRole
-    }
+    companion object
 }
+
+inline val RTCDtlsRole.Companion.client: RTCDtlsRole
+    get() = unsafeCast("client")
+
+inline val RTCDtlsRole.Companion.server: RTCDtlsRole
+    get() = unsafeCast("server")
+
+inline val RTCDtlsRole.Companion.unknown: RTCDtlsRole
+    get() = unsafeCast("unknown")

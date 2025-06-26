@@ -6,17 +6,17 @@
 
 package web.mediasource
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface ReadyState {
-    companion object {
-        @JsValue("closed")
-        val closed: ReadyState
-
-        @JsValue("ended")
-        val ended: ReadyState
-
-        @JsValue("open")
-        val open: ReadyState
-    }
+    companion object
 }
+
+inline val ReadyState.Companion.closed: ReadyState
+    get() = unsafeCast("closed")
+
+inline val ReadyState.Companion.ended: ReadyState
+    get() = unsafeCast("ended")
+
+inline val ReadyState.Companion.open: ReadyState
+    get() = unsafeCast("open")

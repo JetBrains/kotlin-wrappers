@@ -6,32 +6,32 @@
 
 package web.html
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface InputMode {
-    companion object {
-        @JsValue("none")
-        val none: InputMode
-
-        @JsValue("text")
-        val text: InputMode
-
-        @JsValue("tel")
-        val tel: InputMode
-
-        @JsValue("url")
-        val url: InputMode
-
-        @JsValue("email")
-        val email: InputMode
-
-        @JsValue("numeric")
-        val numeric: InputMode
-
-        @JsValue("decimal")
-        val decimal: InputMode
-
-        @JsValue("search")
-        val search: InputMode
-    }
+    companion object
 }
+
+inline val InputMode.Companion.none: InputMode
+    get() = unsafeCast("none")
+
+inline val InputMode.Companion.text: InputMode
+    get() = unsafeCast("text")
+
+inline val InputMode.Companion.tel: InputMode
+    get() = unsafeCast("tel")
+
+inline val InputMode.Companion.url: InputMode
+    get() = unsafeCast("url")
+
+inline val InputMode.Companion.email: InputMode
+    get() = unsafeCast("email")
+
+inline val InputMode.Companion.numeric: InputMode
+    get() = unsafeCast("numeric")
+
+inline val InputMode.Companion.decimal: InputMode
+    get() = unsafeCast("decimal")
+
+inline val InputMode.Companion.search: InputMode
+    get() = unsafeCast("search")

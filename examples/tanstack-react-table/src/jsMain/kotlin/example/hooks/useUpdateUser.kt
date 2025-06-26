@@ -3,6 +3,7 @@ package example.hooks
 import example.entities.User
 import js.json.stringify
 import web.http.BodyInit
+import web.http.PUT
 import web.http.RequestInit
 import web.http.RequestMethod
 

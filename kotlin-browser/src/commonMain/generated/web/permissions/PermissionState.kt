@@ -6,17 +6,17 @@
 
 package web.permissions
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface PermissionState {
-    companion object {
-        @JsValue("denied")
-        val denied: PermissionState
-
-        @JsValue("granted")
-        val granted: PermissionState
-
-        @JsValue("prompt")
-        val prompt: PermissionState
-    }
+    companion object
 }
+
+inline val PermissionState.Companion.denied: PermissionState
+    get() = unsafeCast("denied")
+
+inline val PermissionState.Companion.granted: PermissionState
+    get() = unsafeCast("granted")
+
+inline val PermissionState.Companion.prompt: PermissionState
+    get() = unsafeCast("prompt")

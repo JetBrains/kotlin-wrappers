@@ -6,20 +6,20 @@
 
 package web.rtc
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface RTCDataChannelState {
-    companion object {
-        @JsValue("closed")
-        val closed: RTCDataChannelState
-
-        @JsValue("closing")
-        val closing: RTCDataChannelState
-
-        @JsValue("connecting")
-        val connecting: RTCDataChannelState
-
-        @JsValue("open")
-        val open: RTCDataChannelState
-    }
+    companion object
 }
+
+inline val RTCDataChannelState.Companion.closed: RTCDataChannelState
+    get() = unsafeCast("closed")
+
+inline val RTCDataChannelState.Companion.closing: RTCDataChannelState
+    get() = unsafeCast("closing")
+
+inline val RTCDataChannelState.Companion.connecting: RTCDataChannelState
+    get() = unsafeCast("connecting")
+
+inline val RTCDataChannelState.Companion.open: RTCDataChannelState
+    get() = unsafeCast("open")

@@ -6,17 +6,17 @@
 
 package web.fs
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface WriteCommandType {
-    companion object {
-        @JsValue("seek")
-        val seek: WriteCommandType
-
-        @JsValue("truncate")
-        val truncate: WriteCommandType
-
-        @JsValue("write")
-        val write: WriteCommandType
-    }
+    companion object
 }
+
+inline val WriteCommandType.Companion.seek: WriteCommandType
+    get() = unsafeCast("seek")
+
+inline val WriteCommandType.Companion.truncate: WriteCommandType
+    get() = unsafeCast("truncate")
+
+inline val WriteCommandType.Companion.write: WriteCommandType
+    get() = unsafeCast("write")

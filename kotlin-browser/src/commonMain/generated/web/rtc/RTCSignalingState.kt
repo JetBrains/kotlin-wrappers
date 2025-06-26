@@ -6,26 +6,26 @@
 
 package web.rtc
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface RTCSignalingState {
-    companion object {
-        @JsValue("closed")
-        val closed: RTCSignalingState
-
-        @JsValue("have-local-offer")
-        val haveLocalOffer: RTCSignalingState
-
-        @JsValue("have-local-pranswer")
-        val haveLocalPranswer: RTCSignalingState
-
-        @JsValue("have-remote-offer")
-        val haveRemoteOffer: RTCSignalingState
-
-        @JsValue("have-remote-pranswer")
-        val haveRemotePranswer: RTCSignalingState
-
-        @JsValue("stable")
-        val stable: RTCSignalingState
-    }
+    companion object
 }
+
+inline val RTCSignalingState.Companion.closed: RTCSignalingState
+    get() = unsafeCast("closed")
+
+inline val RTCSignalingState.Companion.haveLocalOffer: RTCSignalingState
+    get() = unsafeCast("have-local-offer")
+
+inline val RTCSignalingState.Companion.haveLocalPranswer: RTCSignalingState
+    get() = unsafeCast("have-local-pranswer")
+
+inline val RTCSignalingState.Companion.haveRemoteOffer: RTCSignalingState
+    get() = unsafeCast("have-remote-offer")
+
+inline val RTCSignalingState.Companion.haveRemotePranswer: RTCSignalingState
+    get() = unsafeCast("have-remote-pranswer")
+
+inline val RTCSignalingState.Companion.stable: RTCSignalingState
+    get() = unsafeCast("stable")

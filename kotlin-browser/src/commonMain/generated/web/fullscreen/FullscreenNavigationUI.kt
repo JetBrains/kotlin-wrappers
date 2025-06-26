@@ -6,17 +6,17 @@
 
 package web.fullscreen
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface FullscreenNavigationUI {
-    companion object {
-        @JsValue("auto")
-        val auto: FullscreenNavigationUI
-
-        @JsValue("hide")
-        val hide: FullscreenNavigationUI
-
-        @JsValue("show")
-        val show: FullscreenNavigationUI
-    }
+    companion object
 }
+
+inline val FullscreenNavigationUI.Companion.auto: FullscreenNavigationUI
+    get() = unsafeCast("auto")
+
+inline val FullscreenNavigationUI.Companion.hide: FullscreenNavigationUI
+    get() = unsafeCast("hide")
+
+inline val FullscreenNavigationUI.Companion.show: FullscreenNavigationUI
+    get() = unsafeCast("show")

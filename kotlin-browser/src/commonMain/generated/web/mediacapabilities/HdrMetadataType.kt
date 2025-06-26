@@ -6,17 +6,17 @@
 
 package web.mediacapabilities
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface HdrMetadataType {
-    companion object {
-        @JsValue("smpteSt2086")
-        val smpteSt2086: HdrMetadataType
-
-        @JsValue("smpteSt2094-10")
-        val smpteSt209410: HdrMetadataType
-
-        @JsValue("smpteSt2094-40")
-        val smpteSt209440: HdrMetadataType
-    }
+    companion object
 }
+
+inline val HdrMetadataType.Companion.smpteSt2086: HdrMetadataType
+    get() = unsafeCast("smpteSt2086")
+
+inline val HdrMetadataType.Companion.smpteSt209410: HdrMetadataType
+    get() = unsafeCast("smpteSt2094-10")
+
+inline val HdrMetadataType.Companion.smpteSt209440: HdrMetadataType
+    get() = unsafeCast("smpteSt2094-40")

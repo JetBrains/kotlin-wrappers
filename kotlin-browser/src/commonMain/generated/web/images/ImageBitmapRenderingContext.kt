@@ -2,7 +2,7 @@
 
 package web.images
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 import web.events.EventTarget
 import web.rendering.OffscreenRenderingContext
 import web.rendering.RenderingContext
@@ -31,8 +31,8 @@ private constructor() :
      */
     fun transferFromImageBitmap(bitmap: ImageBitmap?)
 
-    companion object {
-        @JsValue("bitmaprenderer")
-        val ID: RenderingContextId<ImageBitmapRenderingContext, ImageBitmapRenderingContextSettings>
-    }
+    companion object
 }
+
+inline val ImageBitmapRenderingContext.Companion.ID: RenderingContextId<ImageBitmapRenderingContext, ImageBitmapRenderingContextSettings>
+    get() = unsafeCast("bitmaprenderer")

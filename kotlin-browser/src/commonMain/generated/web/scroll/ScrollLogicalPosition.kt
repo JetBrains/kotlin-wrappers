@@ -6,20 +6,20 @@
 
 package web.scroll
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface ScrollLogicalPosition {
-    companion object {
-        @JsValue("center")
-        val center: ScrollLogicalPosition
-
-        @JsValue("end")
-        val end: ScrollLogicalPosition
-
-        @JsValue("nearest")
-        val nearest: ScrollLogicalPosition
-
-        @JsValue("start")
-        val start: ScrollLogicalPosition
-    }
+    companion object
 }
+
+inline val ScrollLogicalPosition.Companion.center: ScrollLogicalPosition
+    get() = unsafeCast("center")
+
+inline val ScrollLogicalPosition.Companion.end: ScrollLogicalPosition
+    get() = unsafeCast("end")
+
+inline val ScrollLogicalPosition.Companion.nearest: ScrollLogicalPosition
+    get() = unsafeCast("nearest")
+
+inline val ScrollLogicalPosition.Companion.start: ScrollLogicalPosition
+    get() = unsafeCast("start")

@@ -6,17 +6,17 @@
 
 package web.vtt
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface TextTrackMode {
-    companion object {
-        @JsValue("disabled")
-        val disabled: TextTrackMode
-
-        @JsValue("hidden")
-        val hidden: TextTrackMode
-
-        @JsValue("showing")
-        val showing: TextTrackMode
-    }
+    companion object
 }
+
+inline val TextTrackMode.Companion.disabled: TextTrackMode
+    get() = unsafeCast("disabled")
+
+inline val TextTrackMode.Companion.hidden: TextTrackMode
+    get() = unsafeCast("hidden")
+
+inline val TextTrackMode.Companion.showing: TextTrackMode
+    get() = unsafeCast("showing")

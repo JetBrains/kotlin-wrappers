@@ -6,14 +6,14 @@
 
 package js.typedarrays
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface Alphabet {
-    companion object {
-        @JsValue("base64")
-        val base64: Alphabet
-
-        @JsValue("base64url")
-        val base64url: Alphabet
-    }
+    companion object
 }
+
+inline val Alphabet.Companion.base64: Alphabet
+    get() = unsafeCast("base64")
+
+inline val Alphabet.Companion.base64url: Alphabet
+    get() = unsafeCast("base64url")

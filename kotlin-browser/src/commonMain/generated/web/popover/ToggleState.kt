@@ -6,14 +6,14 @@
 
 package web.popover
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface ToggleState {
-    companion object {
-        @JsValue("open")
-        val open: ToggleState
-
-        @JsValue("closed")
-        val closed: ToggleState
-    }
+    companion object
 }
+
+inline val ToggleState.Companion.open: ToggleState
+    get() = unsafeCast("open")
+
+inline val ToggleState.Companion.closed: ToggleState
+    get() = unsafeCast("closed")

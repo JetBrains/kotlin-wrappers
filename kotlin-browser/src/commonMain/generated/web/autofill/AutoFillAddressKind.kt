@@ -6,14 +6,14 @@
 
 package web.autofill
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface AutoFillAddressKind {
-    companion object {
-        @JsValue("billing")
-        val billing: AutoFillAddressKind
-
-        @JsValue("shipping")
-        val shipping: AutoFillAddressKind
-    }
+    companion object
 }
+
+inline val AutoFillAddressKind.Companion.billing: AutoFillAddressKind
+    get() = unsafeCast("billing")
+
+inline val AutoFillAddressKind.Companion.shipping: AutoFillAddressKind
+    get() = unsafeCast("shipping")

@@ -6,17 +6,17 @@
 
 package web.autofill
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface AutoFillContactKind {
-    companion object {
-        @JsValue("home")
-        val home: AutoFillContactKind
-
-        @JsValue("mobile")
-        val mobile: AutoFillContactKind
-
-        @JsValue("work")
-        val work: AutoFillContactKind
-    }
+    companion object
 }
+
+inline val AutoFillContactKind.Companion.home: AutoFillContactKind
+    get() = unsafeCast("home")
+
+inline val AutoFillContactKind.Companion.mobile: AutoFillContactKind
+    get() = unsafeCast("mobile")
+
+inline val AutoFillContactKind.Companion.work: AutoFillContactKind
+    get() = unsafeCast("work")

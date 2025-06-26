@@ -6,17 +6,17 @@
 
 package web.mediadevices
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface MediaDeviceKind {
-    companion object {
-        @JsValue("audioinput")
-        val audioinput: MediaDeviceKind
-
-        @JsValue("audiooutput")
-        val audiooutput: MediaDeviceKind
-
-        @JsValue("videoinput")
-        val videoinput: MediaDeviceKind
-    }
+    companion object
 }
+
+inline val MediaDeviceKind.Companion.audioinput: MediaDeviceKind
+    get() = unsafeCast("audioinput")
+
+inline val MediaDeviceKind.Companion.audiooutput: MediaDeviceKind
+    get() = unsafeCast("audiooutput")
+
+inline val MediaDeviceKind.Companion.videoinput: MediaDeviceKind
+    get() = unsafeCast("videoinput")

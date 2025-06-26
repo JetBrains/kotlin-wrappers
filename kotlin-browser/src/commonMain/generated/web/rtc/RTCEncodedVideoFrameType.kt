@@ -6,17 +6,17 @@
 
 package web.rtc
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface RTCEncodedVideoFrameType {
-    companion object {
-        @JsValue("delta")
-        val delta: RTCEncodedVideoFrameType
-
-        @JsValue("empty")
-        val empty: RTCEncodedVideoFrameType
-
-        @JsValue("key")
-        val key: RTCEncodedVideoFrameType
-    }
+    companion object
 }
+
+inline val RTCEncodedVideoFrameType.Companion.delta: RTCEncodedVideoFrameType
+    get() = unsafeCast("delta")
+
+inline val RTCEncodedVideoFrameType.Companion.empty: RTCEncodedVideoFrameType
+    get() = unsafeCast("empty")
+
+inline val RTCEncodedVideoFrameType.Companion.key: RTCEncodedVideoFrameType
+    get() = unsafeCast("key")

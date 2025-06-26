@@ -1,6 +1,6 @@
 package karakum.browser
 
-import karakum.common.JsUnionConverter.sealedUnionBody
+import karakum.common.CommonUnionConverter.sealedUnionBody
 
 private val WINDOW_TARGET_VALUES = listOf(
     "_self",

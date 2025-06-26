@@ -6,17 +6,17 @@
 
 package web.http
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface CrossOrigin {
-    companion object {
-        @JsValue("anonymous")
-        val anonymous: CrossOrigin
-
-        @JsValue("use-credentials")
-        val useCredentials: CrossOrigin
-
-        @JsValue("")
-        val none: CrossOrigin
-    }
+    companion object
 }
+
+inline val CrossOrigin.Companion.anonymous: CrossOrigin
+    get() = unsafeCast("anonymous")
+
+inline val CrossOrigin.Companion.useCredentials: CrossOrigin
+    get() = unsafeCast("use-credentials")
+
+inline val CrossOrigin.Companion.none: CrossOrigin
+    get() = unsafeCast("")

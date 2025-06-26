@@ -6,14 +6,14 @@
 
 package web.gpu
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface GPUPowerPreference {
-    companion object {
-        @JsValue("high-performance")
-        val highPerformance: GPUPowerPreference
-
-        @JsValue("low-power")
-        val lowPower: GPUPowerPreference
-    }
+    companion object
 }
+
+inline val GPUPowerPreference.Companion.highPerformance: GPUPowerPreference
+    get() = unsafeCast("high-performance")
+
+inline val GPUPowerPreference.Companion.lowPower: GPUPowerPreference
+    get() = unsafeCast("low-power")

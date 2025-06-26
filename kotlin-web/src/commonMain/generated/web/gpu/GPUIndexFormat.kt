@@ -6,14 +6,14 @@
 
 package web.gpu
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface GPUIndexFormat {
-    companion object {
-        @JsValue("uint16")
-        val uint16: GPUIndexFormat
-
-        @JsValue("uint32")
-        val uint32: GPUIndexFormat
-    }
+    companion object
 }
+
+inline val GPUIndexFormat.Companion.uint16: GPUIndexFormat
+    get() = unsafeCast("uint16")
+
+inline val GPUIndexFormat.Companion.uint32: GPUIndexFormat
+    get() = unsafeCast("uint32")

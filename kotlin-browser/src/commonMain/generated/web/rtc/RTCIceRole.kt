@@ -6,17 +6,17 @@
 
 package web.rtc
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface RTCIceRole {
-    companion object {
-        @JsValue("controlled")
-        val controlled: RTCIceRole
-
-        @JsValue("controlling")
-        val controlling: RTCIceRole
-
-        @JsValue("unknown")
-        val unknown: RTCIceRole
-    }
+    companion object
 }
+
+inline val RTCIceRole.Companion.controlled: RTCIceRole
+    get() = unsafeCast("controlled")
+
+inline val RTCIceRole.Companion.controlling: RTCIceRole
+    get() = unsafeCast("controlling")
+
+inline val RTCIceRole.Companion.unknown: RTCIceRole
+    get() = unsafeCast("unknown")

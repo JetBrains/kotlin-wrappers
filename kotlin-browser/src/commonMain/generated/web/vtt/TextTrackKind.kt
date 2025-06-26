@@ -6,23 +6,23 @@
 
 package web.vtt
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface TextTrackKind {
-    companion object {
-        @JsValue("captions")
-        val captions: TextTrackKind
-
-        @JsValue("chapters")
-        val chapters: TextTrackKind
-
-        @JsValue("descriptions")
-        val descriptions: TextTrackKind
-
-        @JsValue("metadata")
-        val metadata: TextTrackKind
-
-        @JsValue("subtitles")
-        val subtitles: TextTrackKind
-    }
+    companion object
 }
+
+inline val TextTrackKind.Companion.captions: TextTrackKind
+    get() = unsafeCast("captions")
+
+inline val TextTrackKind.Companion.chapters: TextTrackKind
+    get() = unsafeCast("chapters")
+
+inline val TextTrackKind.Companion.descriptions: TextTrackKind
+    get() = unsafeCast("descriptions")
+
+inline val TextTrackKind.Companion.metadata: TextTrackKind
+    get() = unsafeCast("metadata")
+
+inline val TextTrackKind.Companion.subtitles: TextTrackKind
+    get() = unsafeCast("subtitles")

@@ -6,17 +6,17 @@
 
 package web.imagecapture
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface FillLightMode {
-    companion object {
-        @JsValue("auto")
-        val auto: FillLightMode
-
-        @JsValue("flash")
-        val flash: FillLightMode
-
-        @JsValue("off")
-        val off: FillLightMode
-    }
+    companion object
 }
+
+inline val FillLightMode.Companion.auto: FillLightMode
+    get() = unsafeCast("auto")
+
+inline val FillLightMode.Companion.flash: FillLightMode
+    get() = unsafeCast("flash")
+
+inline val FillLightMode.Companion.off: FillLightMode
+    get() = unsafeCast("off")

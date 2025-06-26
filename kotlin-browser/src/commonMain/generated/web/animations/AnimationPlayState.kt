@@ -6,20 +6,20 @@
 
 package web.animations
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface AnimationPlayState {
-    companion object {
-        @JsValue("finished")
-        val finished: AnimationPlayState
-
-        @JsValue("idle")
-        val idle: AnimationPlayState
-
-        @JsValue("paused")
-        val paused: AnimationPlayState
-
-        @JsValue("running")
-        val running: AnimationPlayState
-    }
+    companion object
 }
+
+inline val AnimationPlayState.Companion.finished: AnimationPlayState
+    get() = unsafeCast("finished")
+
+inline val AnimationPlayState.Companion.idle: AnimationPlayState
+    get() = unsafeCast("idle")
+
+inline val AnimationPlayState.Companion.paused: AnimationPlayState
+    get() = unsafeCast("paused")
+
+inline val AnimationPlayState.Companion.running: AnimationPlayState
+    get() = unsafeCast("running")

@@ -6,14 +6,14 @@
 
 package web.push
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface PushEncryptionKeyName {
-    companion object {
-        @JsValue("auth")
-        val auth: PushEncryptionKeyName
-
-        @JsValue("p256dh")
-        val p256dh: PushEncryptionKeyName
-    }
+    companion object
 }
+
+inline val PushEncryptionKeyName.Companion.auth: PushEncryptionKeyName
+    get() = unsafeCast("auth")
+
+inline val PushEncryptionKeyName.Companion.p256dh: PushEncryptionKeyName
+    get() = unsafeCast("p256dh")

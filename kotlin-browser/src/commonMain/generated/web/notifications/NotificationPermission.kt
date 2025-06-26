@@ -6,17 +6,17 @@
 
 package web.notifications
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface NotificationPermission {
-    companion object {
-        @JsValue("default")
-        val default: NotificationPermission
-
-        @JsValue("denied")
-        val denied: NotificationPermission
-
-        @JsValue("granted")
-        val granted: NotificationPermission
-    }
+    companion object
 }
+
+inline val NotificationPermission.Companion.default: NotificationPermission
+    get() = unsafeCast("default")
+
+inline val NotificationPermission.Companion.denied: NotificationPermission
+    get() = unsafeCast("denied")
+
+inline val NotificationPermission.Companion.granted: NotificationPermission
+    get() = unsafeCast("granted")

@@ -6,17 +6,17 @@
 
 package web.gl
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface WebGLPowerPreference {
-    companion object {
-        @JsValue("default")
-        val default: WebGLPowerPreference
-
-        @JsValue("high-performance")
-        val highPerformance: WebGLPowerPreference
-
-        @JsValue("low-power")
-        val lowPower: WebGLPowerPreference
-    }
+    companion object
 }
+
+inline val WebGLPowerPreference.Companion.default: WebGLPowerPreference
+    get() = unsafeCast("default")
+
+inline val WebGLPowerPreference.Companion.highPerformance: WebGLPowerPreference
+    get() = unsafeCast("high-performance")
+
+inline val WebGLPowerPreference.Companion.lowPower: WebGLPowerPreference
+    get() = unsafeCast("low-power")

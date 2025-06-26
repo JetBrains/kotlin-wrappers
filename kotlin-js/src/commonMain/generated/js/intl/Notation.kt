@@ -6,20 +6,20 @@
 
 package js.intl
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface Notation {
-    companion object {
-        @JsValue("standard")
-        val standard: Notation
-
-        @JsValue("scientific")
-        val scientific: Notation
-
-        @JsValue("engineering")
-        val engineering: Notation
-
-        @JsValue("compact")
-        val compact: Notation
-    }
+    companion object
 }
+
+inline val Notation.Companion.standard: Notation
+    get() = unsafeCast("standard")
+
+inline val Notation.Companion.scientific: Notation
+    get() = unsafeCast("scientific")
+
+inline val Notation.Companion.engineering: Notation
+    get() = unsafeCast("engineering")
+
+inline val Notation.Companion.compact: Notation
+    get() = unsafeCast("compact")

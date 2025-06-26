@@ -6,17 +6,17 @@
 
 package js.symbol
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface PrimitiveHint {
-    companion object {
-        @JsValue("number")
-        val number: PrimitiveHint
-
-        @JsValue("string")
-        val string: PrimitiveHint
-
-        @JsValue("default")
-        val default: PrimitiveHint
-    }
+    companion object
 }
+
+inline val PrimitiveHint.Companion.number: PrimitiveHint
+    get() = unsafeCast("number")
+
+inline val PrimitiveHint.Companion.string: PrimitiveHint
+    get() = unsafeCast("string")
+
+inline val PrimitiveHint.Companion.default: PrimitiveHint
+    get() = unsafeCast("default")

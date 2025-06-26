@@ -6,20 +6,20 @@
 
 package web.idb
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface IDBCursorDirection {
-    companion object {
-        @JsValue("next")
-        val next: IDBCursorDirection
-
-        @JsValue("nextunique")
-        val nextunique: IDBCursorDirection
-
-        @JsValue("prev")
-        val prev: IDBCursorDirection
-
-        @JsValue("prevunique")
-        val prevunique: IDBCursorDirection
-    }
+    companion object
 }
+
+inline val IDBCursorDirection.Companion.next: IDBCursorDirection
+    get() = unsafeCast("next")
+
+inline val IDBCursorDirection.Companion.nextunique: IDBCursorDirection
+    get() = unsafeCast("nextunique")
+
+inline val IDBCursorDirection.Companion.prev: IDBCursorDirection
+    get() = unsafeCast("prev")
+
+inline val IDBCursorDirection.Companion.prevunique: IDBCursorDirection
+    get() = unsafeCast("prevunique")

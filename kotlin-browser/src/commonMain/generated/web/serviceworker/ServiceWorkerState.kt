@@ -6,26 +6,26 @@
 
 package web.serviceworker
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface ServiceWorkerState {
-    companion object {
-        @JsValue("activated")
-        val activated: ServiceWorkerState
-
-        @JsValue("activating")
-        val activating: ServiceWorkerState
-
-        @JsValue("installed")
-        val installed: ServiceWorkerState
-
-        @JsValue("installing")
-        val installing: ServiceWorkerState
-
-        @JsValue("parsed")
-        val parsed: ServiceWorkerState
-
-        @JsValue("redundant")
-        val redundant: ServiceWorkerState
-    }
+    companion object
 }
+
+inline val ServiceWorkerState.Companion.activated: ServiceWorkerState
+    get() = unsafeCast("activated")
+
+inline val ServiceWorkerState.Companion.activating: ServiceWorkerState
+    get() = unsafeCast("activating")
+
+inline val ServiceWorkerState.Companion.installed: ServiceWorkerState
+    get() = unsafeCast("installed")
+
+inline val ServiceWorkerState.Companion.installing: ServiceWorkerState
+    get() = unsafeCast("installing")
+
+inline val ServiceWorkerState.Companion.parsed: ServiceWorkerState
+    get() = unsafeCast("parsed")
+
+inline val ServiceWorkerState.Companion.redundant: ServiceWorkerState
+    get() = unsafeCast("redundant")

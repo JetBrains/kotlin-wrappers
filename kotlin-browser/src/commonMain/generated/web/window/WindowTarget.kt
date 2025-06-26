@@ -6,20 +6,20 @@
 
 package web.window
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface WindowTarget {
-    companion object {
-        @JsValue("_self")
-        val _self: WindowTarget
-
-        @JsValue("_blank")
-        val _blank: WindowTarget
-
-        @JsValue("_parent")
-        val _parent: WindowTarget
-
-        @JsValue("_top")
-        val _top: WindowTarget
-    }
+    companion object
 }
+
+inline val WindowTarget.Companion._self: WindowTarget
+    get() = unsafeCast("_self")
+
+inline val WindowTarget.Companion._blank: WindowTarget
+    get() = unsafeCast("_blank")
+
+inline val WindowTarget.Companion._parent: WindowTarget
+    get() = unsafeCast("_parent")
+
+inline val WindowTarget.Companion._top: WindowTarget
+    get() = unsafeCast("_top")

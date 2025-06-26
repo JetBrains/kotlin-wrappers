@@ -6,14 +6,14 @@
 
 package web.dom
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface DocumentVisibilityState {
-    companion object {
-        @JsValue("hidden")
-        val hidden: DocumentVisibilityState
-
-        @JsValue("visible")
-        val visible: DocumentVisibilityState
-    }
+    companion object
 }
+
+inline val DocumentVisibilityState.Companion.hidden: DocumentVisibilityState
+    get() = unsafeCast("hidden")
+
+inline val DocumentVisibilityState.Companion.visible: DocumentVisibilityState
+    get() = unsafeCast("visible")

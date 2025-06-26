@@ -6,14 +6,14 @@
 
 package web.gpu
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface GPUFilterMode {
-    companion object {
-        @JsValue("linear")
-        val linear: GPUFilterMode
-
-        @JsValue("nearest")
-        val nearest: GPUFilterMode
-    }
+    companion object
 }
+
+inline val GPUFilterMode.Companion.linear: GPUFilterMode
+    get() = unsafeCast("linear")
+
+inline val GPUFilterMode.Companion.nearest: GPUFilterMode
+    get() = unsafeCast("nearest")

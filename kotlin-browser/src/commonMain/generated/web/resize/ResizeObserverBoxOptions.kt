@@ -6,17 +6,17 @@
 
 package web.resize
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface ResizeObserverBoxOptions {
-    companion object {
-        @JsValue("border-box")
-        val borderBox: ResizeObserverBoxOptions
-
-        @JsValue("content-box")
-        val contentBox: ResizeObserverBoxOptions
-
-        @JsValue("device-pixel-content-box")
-        val devicePixelContentBox: ResizeObserverBoxOptions
-    }
+    companion object
 }
+
+inline val ResizeObserverBoxOptions.Companion.borderBox: ResizeObserverBoxOptions
+    get() = unsafeCast("border-box")
+
+inline val ResizeObserverBoxOptions.Companion.contentBox: ResizeObserverBoxOptions
+    get() = unsafeCast("content-box")
+
+inline val ResizeObserverBoxOptions.Companion.devicePixelContentBox: ResizeObserverBoxOptions
+    get() = unsafeCast("device-pixel-content-box")

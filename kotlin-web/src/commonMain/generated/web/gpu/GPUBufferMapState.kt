@@ -6,17 +6,17 @@
 
 package web.gpu
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface GPUBufferMapState {
-    companion object {
-        @JsValue("mapped")
-        val mapped: GPUBufferMapState
-
-        @JsValue("pending")
-        val pending: GPUBufferMapState
-
-        @JsValue("unmapped")
-        val unmapped: GPUBufferMapState
-    }
+    companion object
 }
+
+inline val GPUBufferMapState.Companion.mapped: GPUBufferMapState
+    get() = unsafeCast("mapped")
+
+inline val GPUBufferMapState.Companion.pending: GPUBufferMapState
+    get() = unsafeCast("pending")
+
+inline val GPUBufferMapState.Companion.unmapped: GPUBufferMapState
+    get() = unsafeCast("unmapped")

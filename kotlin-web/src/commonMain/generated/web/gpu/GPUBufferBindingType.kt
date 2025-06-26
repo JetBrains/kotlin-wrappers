@@ -6,17 +6,17 @@
 
 package web.gpu
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface GPUBufferBindingType {
-    companion object {
-        @JsValue("read-only-storage")
-        val readOnlyStorage: GPUBufferBindingType
-
-        @JsValue("storage")
-        val storage: GPUBufferBindingType
-
-        @JsValue("uniform")
-        val uniform: GPUBufferBindingType
-    }
+    companion object
 }
+
+inline val GPUBufferBindingType.Companion.readOnlyStorage: GPUBufferBindingType
+    get() = unsafeCast("read-only-storage")
+
+inline val GPUBufferBindingType.Companion.storage: GPUBufferBindingType
+    get() = unsafeCast("storage")
+
+inline val GPUBufferBindingType.Companion.uniform: GPUBufferBindingType
+    get() = unsafeCast("uniform")

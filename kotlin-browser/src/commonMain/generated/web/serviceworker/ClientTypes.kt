@@ -6,20 +6,20 @@
 
 package web.serviceworker
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface ClientTypes {
-    companion object {
-        @JsValue("all")
-        val all: ClientTypes
-
-        @JsValue("sharedworker")
-        val sharedworker: ClientTypes
-
-        @JsValue("window")
-        val window: ClientTypes
-
-        @JsValue("worker")
-        val worker: ClientTypes
-    }
+    companion object
 }
+
+inline val ClientTypes.Companion.all: ClientTypes
+    get() = unsafeCast("all")
+
+inline val ClientTypes.Companion.sharedworker: ClientTypes
+    get() = unsafeCast("sharedworker")
+
+inline val ClientTypes.Companion.window: ClientTypes
+    get() = unsafeCast("window")
+
+inline val ClientTypes.Companion.worker: ClientTypes
+    get() = unsafeCast("worker")

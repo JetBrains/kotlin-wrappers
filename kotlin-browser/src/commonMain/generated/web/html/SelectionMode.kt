@@ -6,20 +6,20 @@
 
 package web.html
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface SelectionMode {
-    companion object {
-        @JsValue("end")
-        val end: SelectionMode
-
-        @JsValue("preserve")
-        val preserve: SelectionMode
-
-        @JsValue("select")
-        val select: SelectionMode
-
-        @JsValue("start")
-        val start: SelectionMode
-    }
+    companion object
 }
+
+inline val SelectionMode.Companion.end: SelectionMode
+    get() = unsafeCast("end")
+
+inline val SelectionMode.Companion.preserve: SelectionMode
+    get() = unsafeCast("preserve")
+
+inline val SelectionMode.Companion.select: SelectionMode
+    get() = unsafeCast("select")
+
+inline val SelectionMode.Companion.start: SelectionMode
+    get() = unsafeCast("start")

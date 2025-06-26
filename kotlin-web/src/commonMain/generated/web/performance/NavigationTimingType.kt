@@ -6,20 +6,20 @@
 
 package web.performance
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface NavigationTimingType {
-    companion object {
-        @JsValue("back_forward")
-        val back_forward: NavigationTimingType
-
-        @JsValue("navigate")
-        val navigate: NavigationTimingType
-
-        @JsValue("prerender")
-        val prerender: NavigationTimingType
-
-        @JsValue("reload")
-        val reload: NavigationTimingType
-    }
+    companion object
 }
+
+inline val NavigationTimingType.Companion.back_forward: NavigationTimingType
+    get() = unsafeCast("back_forward")
+
+inline val NavigationTimingType.Companion.navigate: NavigationTimingType
+    get() = unsafeCast("navigate")
+
+inline val NavigationTimingType.Companion.prerender: NavigationTimingType
+    get() = unsafeCast("prerender")
+
+inline val NavigationTimingType.Companion.reload: NavigationTimingType
+    get() = unsafeCast("reload")

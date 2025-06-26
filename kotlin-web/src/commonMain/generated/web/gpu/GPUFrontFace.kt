@@ -6,14 +6,14 @@
 
 package web.gpu
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface GPUFrontFace {
-    companion object {
-        @JsValue("ccw")
-        val ccw: GPUFrontFace
-
-        @JsValue("cw")
-        val cw: GPUFrontFace
-    }
+    companion object
 }
+
+inline val GPUFrontFace.Companion.ccw: GPUFrontFace
+    get() = unsafeCast("ccw")
+
+inline val GPUFrontFace.Companion.cw: GPUFrontFace
+    get() = unsafeCast("cw")

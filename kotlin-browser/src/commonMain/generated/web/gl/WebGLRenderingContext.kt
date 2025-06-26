@@ -2,7 +2,7 @@
 
 package web.gl
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 import web.rendering.OffscreenRenderingContext
 import web.rendering.RenderingContext
 import web.rendering.RenderingContextId
@@ -313,8 +313,8 @@ protected /* private */ constructor() :
         val CONTEXT_LOST_WEBGL: GLenum
         val UNPACK_COLORSPACE_CONVERSION_WEBGL: GLenum
         val BROWSER_DEFAULT_WEBGL: GLenum
-
-        @JsValue("webgl")
-        val ID: RenderingContextId<WebGLRenderingContext, WebGLContextAttributes>
     }
 }
+
+inline val WebGLRenderingContext.Companion.ID: RenderingContextId<WebGLRenderingContext, WebGLContextAttributes>
+    get() = unsafeCast("webgl")

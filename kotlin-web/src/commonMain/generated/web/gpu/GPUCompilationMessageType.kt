@@ -6,17 +6,17 @@
 
 package web.gpu
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface GPUCompilationMessageType {
-    companion object {
-        @JsValue("error")
-        val error: GPUCompilationMessageType
-
-        @JsValue("info")
-        val info: GPUCompilationMessageType
-
-        @JsValue("warning")
-        val warning: GPUCompilationMessageType
-    }
+    companion object
 }
+
+inline val GPUCompilationMessageType.Companion.error: GPUCompilationMessageType
+    get() = unsafeCast("error")
+
+inline val GPUCompilationMessageType.Companion.info: GPUCompilationMessageType
+    get() = unsafeCast("info")
+
+inline val GPUCompilationMessageType.Companion.warning: GPUCompilationMessageType
+    get() = unsafeCast("warning")

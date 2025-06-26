@@ -6,14 +6,14 @@
 
 package web.audio
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface AutomationRate {
-    companion object {
-        @JsValue("a-rate")
-        val aRate: AutomationRate
-
-        @JsValue("k-rate")
-        val kRate: AutomationRate
-    }
+    companion object
 }
+
+inline val AutomationRate.Companion.aRate: AutomationRate
+    get() = unsafeCast("a-rate")
+
+inline val AutomationRate.Companion.kRate: AutomationRate
+    get() = unsafeCast("k-rate")

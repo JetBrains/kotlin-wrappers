@@ -6,50 +6,50 @@
 
 package web.rtc
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface RTCStatsType {
-    companion object {
-        @JsValue("candidate-pair")
-        val candidatePair: RTCStatsType
-
-        @JsValue("certificate")
-        val certificate: RTCStatsType
-
-        @JsValue("codec")
-        val codec: RTCStatsType
-
-        @JsValue("data-channel")
-        val dataChannel: RTCStatsType
-
-        @JsValue("inbound-rtp")
-        val inboundRtp: RTCStatsType
-
-        @JsValue("local-candidate")
-        val localCandidate: RTCStatsType
-
-        @JsValue("media-playout")
-        val mediaPlayout: RTCStatsType
-
-        @JsValue("media-source")
-        val mediaSource: RTCStatsType
-
-        @JsValue("outbound-rtp")
-        val outboundRtp: RTCStatsType
-
-        @JsValue("peer-connection")
-        val peerConnection: RTCStatsType
-
-        @JsValue("remote-candidate")
-        val remoteCandidate: RTCStatsType
-
-        @JsValue("remote-inbound-rtp")
-        val remoteInboundRtp: RTCStatsType
-
-        @JsValue("remote-outbound-rtp")
-        val remoteOutboundRtp: RTCStatsType
-
-        @JsValue("transport")
-        val transport: RTCStatsType
-    }
+    companion object
 }
+
+inline val RTCStatsType.Companion.candidatePair: RTCStatsType
+    get() = unsafeCast("candidate-pair")
+
+inline val RTCStatsType.Companion.certificate: RTCStatsType
+    get() = unsafeCast("certificate")
+
+inline val RTCStatsType.Companion.codec: RTCStatsType
+    get() = unsafeCast("codec")
+
+inline val RTCStatsType.Companion.dataChannel: RTCStatsType
+    get() = unsafeCast("data-channel")
+
+inline val RTCStatsType.Companion.inboundRtp: RTCStatsType
+    get() = unsafeCast("inbound-rtp")
+
+inline val RTCStatsType.Companion.localCandidate: RTCStatsType
+    get() = unsafeCast("local-candidate")
+
+inline val RTCStatsType.Companion.mediaPlayout: RTCStatsType
+    get() = unsafeCast("media-playout")
+
+inline val RTCStatsType.Companion.mediaSource: RTCStatsType
+    get() = unsafeCast("media-source")
+
+inline val RTCStatsType.Companion.outboundRtp: RTCStatsType
+    get() = unsafeCast("outbound-rtp")
+
+inline val RTCStatsType.Companion.peerConnection: RTCStatsType
+    get() = unsafeCast("peer-connection")
+
+inline val RTCStatsType.Companion.remoteCandidate: RTCStatsType
+    get() = unsafeCast("remote-candidate")
+
+inline val RTCStatsType.Companion.remoteInboundRtp: RTCStatsType
+    get() = unsafeCast("remote-inbound-rtp")
+
+inline val RTCStatsType.Companion.remoteOutboundRtp: RTCStatsType
+    get() = unsafeCast("remote-outbound-rtp")
+
+inline val RTCStatsType.Companion.transport: RTCStatsType
+    get() = unsafeCast("transport")

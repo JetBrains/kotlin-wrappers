@@ -6,14 +6,14 @@
 
 package web.mediastreams
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface MediaStreamTrackState {
-    companion object {
-        @JsValue("ended")
-        val ended: MediaStreamTrackState
-
-        @JsValue("live")
-        val live: MediaStreamTrackState
-    }
+    companion object
 }
+
+inline val MediaStreamTrackState.Companion.ended: MediaStreamTrackState
+    get() = unsafeCast("ended")
+
+inline val MediaStreamTrackState.Companion.live: MediaStreamTrackState
+    get() = unsafeCast("live")

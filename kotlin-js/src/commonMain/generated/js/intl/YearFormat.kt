@@ -6,14 +6,14 @@
 
 package js.intl
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface YearFormat {
-    companion object {
-        @JsValue("numeric")
-        val numeric: YearFormat
-
-        @JsValue("2-digit")
-        val twoDigit: YearFormat
-    }
+    companion object
 }
+
+inline val YearFormat.Companion.numeric: YearFormat
+    get() = unsafeCast("numeric")
+
+inline val YearFormat.Companion.twoDigit: YearFormat
+    get() = unsafeCast("2-digit")

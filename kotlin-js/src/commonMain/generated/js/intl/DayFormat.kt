@@ -6,14 +6,14 @@
 
 package js.intl
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface DayFormat {
-    companion object {
-        @JsValue("numeric")
-        val numeric: DayFormat
-
-        @JsValue("2-digit")
-        val twoDigit: DayFormat
-    }
+    companion object
 }
+
+inline val DayFormat.Companion.numeric: DayFormat
+    get() = unsafeCast("numeric")
+
+inline val DayFormat.Companion.twoDigit: DayFormat
+    get() = unsafeCast("2-digit")

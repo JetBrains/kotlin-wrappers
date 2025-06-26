@@ -6,11 +6,11 @@
 
 package web.rtc
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface RTCRtcpMuxPolicy {
-    companion object {
-        @JsValue("require")
-        val require: RTCRtcpMuxPolicy
-    }
+    companion object
 }
+
+inline val RTCRtcpMuxPolicy.Companion.require: RTCRtcpMuxPolicy
+    get() = unsafeCast("require")

@@ -1,6 +1,6 @@
 package karakum.browser
 
-import karakum.common.JsUnionConverter.unionBody
+import karakum.common.CommonUnionConverter.unionBody
 
 internal const val VALIDATION_TARGET = "ValidationTarget"
 internal const val FORM_CONTROL = "FormControl"

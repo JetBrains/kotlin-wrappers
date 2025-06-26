@@ -6,14 +6,14 @@
 
 package web.mediakey
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface MediaKeySessionType {
-    companion object {
-        @JsValue("persistent-license")
-        val persistentLicense: MediaKeySessionType
-
-        @JsValue("temporary")
-        val temporary: MediaKeySessionType
-    }
+    companion object
 }
+
+inline val MediaKeySessionType.Companion.persistentLicense: MediaKeySessionType
+    get() = unsafeCast("persistent-license")
+
+inline val MediaKeySessionType.Companion.temporary: MediaKeySessionType
+    get() = unsafeCast("temporary")

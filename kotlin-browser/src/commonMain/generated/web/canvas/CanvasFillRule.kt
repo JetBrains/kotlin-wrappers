@@ -6,14 +6,14 @@
 
 package web.canvas
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface CanvasFillRule {
-    companion object {
-        @JsValue("evenodd")
-        val evenodd: CanvasFillRule
-
-        @JsValue("nonzero")
-        val nonzero: CanvasFillRule
-    }
+    companion object
 }
+
+inline val CanvasFillRule.Companion.evenodd: CanvasFillRule
+    get() = unsafeCast("evenodd")
+
+inline val CanvasFillRule.Companion.nonzero: CanvasFillRule
+    get() = unsafeCast("nonzero")
