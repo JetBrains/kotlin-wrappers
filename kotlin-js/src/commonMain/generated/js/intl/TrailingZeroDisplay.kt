@@ -6,14 +6,14 @@
 
 package js.intl
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface TrailingZeroDisplay {
-    companion object {
-        @JsValue("auto")
-        val auto: TrailingZeroDisplay
-
-        @JsValue("stripIfInteger")
-        val stripIfInteger: TrailingZeroDisplay
-    }
+    companion object
 }
+
+inline val TrailingZeroDisplay.Companion.auto: TrailingZeroDisplay
+    get() = unsafeCast("auto")
+
+inline val TrailingZeroDisplay.Companion.stripIfInteger: TrailingZeroDisplay
+    get() = unsafeCast("stripIfInteger")

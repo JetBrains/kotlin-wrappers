@@ -6,14 +6,14 @@
 
 package web.codecs
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface BitrateMode {
-    companion object {
-        @JsValue("constant")
-        val constant: BitrateMode
-
-        @JsValue("variable")
-        val variable: BitrateMode
-    }
+    companion object
 }
+
+inline val BitrateMode.Companion.constant: BitrateMode
+    get() = unsafeCast("constant")
+
+inline val BitrateMode.Companion.variable: BitrateMode
+    get() = unsafeCast("variable")

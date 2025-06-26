@@ -6,14 +6,14 @@
 
 package web.popover
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface Popover {
-    companion object {
-        @JsValue("auto")
-        val auto: Popover
-
-        @JsValue("manual")
-        val manual: Popover
-    }
+    companion object
 }
+
+inline val Popover.Companion.auto: Popover
+    get() = unsafeCast("auto")
+
+inline val Popover.Companion.manual: Popover
+    get() = unsafeCast("manual")

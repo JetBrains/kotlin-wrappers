@@ -6,17 +6,17 @@
 
 package web.clipboard
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface PresentationStyle {
-    companion object {
-        @JsValue("attachment")
-        val attachment: PresentationStyle
-
-        @JsValue("inline")
-        val inline: PresentationStyle
-
-        @JsValue("unspecified")
-        val unspecified: PresentationStyle
-    }
+    companion object
 }
+
+inline val PresentationStyle.Companion.attachment: PresentationStyle
+    get() = unsafeCast("attachment")
+
+inline val PresentationStyle.Companion.inline: PresentationStyle
+    get() = unsafeCast("inline")
+
+inline val PresentationStyle.Companion.unspecified: PresentationStyle
+    get() = unsafeCast("unspecified")

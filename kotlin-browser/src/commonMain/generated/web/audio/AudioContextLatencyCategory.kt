@@ -6,17 +6,17 @@
 
 package web.audio
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface AudioContextLatencyCategory {
-    companion object {
-        @JsValue("balanced")
-        val balanced: AudioContextLatencyCategory
-
-        @JsValue("interactive")
-        val interactive: AudioContextLatencyCategory
-
-        @JsValue("playback")
-        val playback: AudioContextLatencyCategory
-    }
+    companion object
 }
+
+inline val AudioContextLatencyCategory.Companion.balanced: AudioContextLatencyCategory
+    get() = unsafeCast("balanced")
+
+inline val AudioContextLatencyCategory.Companion.interactive: AudioContextLatencyCategory
+    get() = unsafeCast("interactive")
+
+inline val AudioContextLatencyCategory.Companion.playback: AudioContextLatencyCategory
+    get() = unsafeCast("playback")

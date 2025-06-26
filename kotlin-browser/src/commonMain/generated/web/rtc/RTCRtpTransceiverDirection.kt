@@ -6,23 +6,23 @@
 
 package web.rtc
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface RTCRtpTransceiverDirection {
-    companion object {
-        @JsValue("inactive")
-        val inactive: RTCRtpTransceiverDirection
-
-        @JsValue("recvonly")
-        val recvonly: RTCRtpTransceiverDirection
-
-        @JsValue("sendonly")
-        val sendonly: RTCRtpTransceiverDirection
-
-        @JsValue("sendrecv")
-        val sendrecv: RTCRtpTransceiverDirection
-
-        @JsValue("stopped")
-        val stopped: RTCRtpTransceiverDirection
-    }
+    companion object
 }
+
+inline val RTCRtpTransceiverDirection.Companion.inactive: RTCRtpTransceiverDirection
+    get() = unsafeCast("inactive")
+
+inline val RTCRtpTransceiverDirection.Companion.recvonly: RTCRtpTransceiverDirection
+    get() = unsafeCast("recvonly")
+
+inline val RTCRtpTransceiverDirection.Companion.sendonly: RTCRtpTransceiverDirection
+    get() = unsafeCast("sendonly")
+
+inline val RTCRtpTransceiverDirection.Companion.sendrecv: RTCRtpTransceiverDirection
+    get() = unsafeCast("sendrecv")
+
+inline val RTCRtpTransceiverDirection.Companion.stopped: RTCRtpTransceiverDirection
+    get() = unsafeCast("stopped")

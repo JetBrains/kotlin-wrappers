@@ -6,17 +6,17 @@
 
 package web.authn
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface ResidentKeyRequirement {
-    companion object {
-        @JsValue("discouraged")
-        val discouraged: ResidentKeyRequirement
-
-        @JsValue("preferred")
-        val preferred: ResidentKeyRequirement
-
-        @JsValue("required")
-        val required: ResidentKeyRequirement
-    }
+    companion object
 }
+
+inline val ResidentKeyRequirement.Companion.discouraged: ResidentKeyRequirement
+    get() = unsafeCast("discouraged")
+
+inline val ResidentKeyRequirement.Companion.preferred: ResidentKeyRequirement
+    get() = unsafeCast("preferred")
+
+inline val ResidentKeyRequirement.Companion.required: ResidentKeyRequirement
+    get() = unsafeCast("required")

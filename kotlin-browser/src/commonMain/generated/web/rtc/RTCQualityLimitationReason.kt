@@ -6,20 +6,20 @@
 
 package web.rtc
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface RTCQualityLimitationReason {
-    companion object {
-        @JsValue("bandwidth")
-        val bandwidth: RTCQualityLimitationReason
-
-        @JsValue("cpu")
-        val cpu: RTCQualityLimitationReason
-
-        @JsValue("none")
-        val none: RTCQualityLimitationReason
-
-        @JsValue("other")
-        val other: RTCQualityLimitationReason
-    }
+    companion object
 }
+
+inline val RTCQualityLimitationReason.Companion.bandwidth: RTCQualityLimitationReason
+    get() = unsafeCast("bandwidth")
+
+inline val RTCQualityLimitationReason.Companion.cpu: RTCQualityLimitationReason
+    get() = unsafeCast("cpu")
+
+inline val RTCQualityLimitationReason.Companion.none: RTCQualityLimitationReason
+    get() = unsafeCast("none")
+
+inline val RTCQualityLimitationReason.Companion.other: RTCQualityLimitationReason
+    get() = unsafeCast("other")

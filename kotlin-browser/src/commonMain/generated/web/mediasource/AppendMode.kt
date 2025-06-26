@@ -6,14 +6,14 @@
 
 package web.mediasource
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface AppendMode {
-    companion object {
-        @JsValue("segments")
-        val segments: AppendMode
-
-        @JsValue("sequence")
-        val sequence: AppendMode
-    }
+    companion object
 }
+
+inline val AppendMode.Companion.segments: AppendMode
+    get() = unsafeCast("segments")
+
+inline val AppendMode.Companion.sequence: AppendMode
+    get() = unsafeCast("sequence")

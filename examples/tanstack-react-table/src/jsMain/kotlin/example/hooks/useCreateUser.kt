@@ -4,6 +4,7 @@ import example.entities.CreateUserOptions
 import example.entities.User
 import js.json.stringify
 import web.http.BodyInit
+import web.http.POST
 import web.http.RequestInit
 import web.http.RequestMethod
 

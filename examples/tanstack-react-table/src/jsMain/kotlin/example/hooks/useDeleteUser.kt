@@ -1,6 +1,7 @@
 package example.hooks
 
 import example.entities.User
+import web.http.DELETE
 import web.http.RequestInit
 import web.http.RequestMethod
 

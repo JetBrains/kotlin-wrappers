@@ -6,14 +6,14 @@
 
 package web.gpu
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface GPUCanvasToneMappingMode {
-    companion object {
-        @JsValue("extended")
-        val extended: GPUCanvasToneMappingMode
-
-        @JsValue("standard")
-        val standard: GPUCanvasToneMappingMode
-    }
+    companion object
 }
+
+inline val GPUCanvasToneMappingMode.Companion.extended: GPUCanvasToneMappingMode
+    get() = unsafeCast("extended")
+
+inline val GPUCanvasToneMappingMode.Companion.standard: GPUCanvasToneMappingMode
+    get() = unsafeCast("standard")

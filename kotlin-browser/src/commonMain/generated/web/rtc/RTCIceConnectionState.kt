@@ -6,29 +6,29 @@
 
 package web.rtc
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface RTCIceConnectionState {
-    companion object {
-        @JsValue("checking")
-        val checking: RTCIceConnectionState
-
-        @JsValue("closed")
-        val closed: RTCIceConnectionState
-
-        @JsValue("completed")
-        val completed: RTCIceConnectionState
-
-        @JsValue("connected")
-        val connected: RTCIceConnectionState
-
-        @JsValue("disconnected")
-        val disconnected: RTCIceConnectionState
-
-        @JsValue("failed")
-        val failed: RTCIceConnectionState
-
-        @JsValue("new")
-        val new: RTCIceConnectionState
-    }
+    companion object
 }
+
+inline val RTCIceConnectionState.Companion.checking: RTCIceConnectionState
+    get() = unsafeCast("checking")
+
+inline val RTCIceConnectionState.Companion.closed: RTCIceConnectionState
+    get() = unsafeCast("closed")
+
+inline val RTCIceConnectionState.Companion.completed: RTCIceConnectionState
+    get() = unsafeCast("completed")
+
+inline val RTCIceConnectionState.Companion.connected: RTCIceConnectionState
+    get() = unsafeCast("connected")
+
+inline val RTCIceConnectionState.Companion.disconnected: RTCIceConnectionState
+    get() = unsafeCast("disconnected")
+
+inline val RTCIceConnectionState.Companion.failed: RTCIceConnectionState
+    get() = unsafeCast("failed")
+
+inline val RTCIceConnectionState.Companion.new: RTCIceConnectionState
+    get() = unsafeCast("new")

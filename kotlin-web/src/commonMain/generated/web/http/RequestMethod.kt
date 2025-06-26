@@ -6,29 +6,29 @@
 
 package web.http
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface RequestMethod {
-    companion object {
-        @JsValue("DELETE")
-        val DELETE: RequestMethod
-
-        @JsValue("GET")
-        val GET: RequestMethod
-
-        @JsValue("HEAD")
-        val HEAD: RequestMethod
-
-        @JsValue("OPTIONS")
-        val OPTIONS: RequestMethod
-
-        @JsValue("PATCH")
-        val PATCH: RequestMethod
-
-        @JsValue("POST")
-        val POST: RequestMethod
-
-        @JsValue("PUT")
-        val PUT: RequestMethod
-    }
+    companion object
 }
+
+inline val RequestMethod.Companion.DELETE: RequestMethod
+    get() = unsafeCast("DELETE")
+
+inline val RequestMethod.Companion.GET: RequestMethod
+    get() = unsafeCast("GET")
+
+inline val RequestMethod.Companion.HEAD: RequestMethod
+    get() = unsafeCast("HEAD")
+
+inline val RequestMethod.Companion.OPTIONS: RequestMethod
+    get() = unsafeCast("OPTIONS")
+
+inline val RequestMethod.Companion.PATCH: RequestMethod
+    get() = unsafeCast("PATCH")
+
+inline val RequestMethod.Companion.POST: RequestMethod
+    get() = unsafeCast("POST")
+
+inline val RequestMethod.Companion.PUT: RequestMethod
+    get() = unsafeCast("PUT")

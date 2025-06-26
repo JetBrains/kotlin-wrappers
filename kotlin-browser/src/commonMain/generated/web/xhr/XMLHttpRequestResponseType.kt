@@ -6,26 +6,26 @@
 
 package web.xhr
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface XMLHttpRequestResponseType {
-    companion object {
-        @JsValue("")
-        val none: XMLHttpRequestResponseType
-
-        @JsValue("arraybuffer")
-        val arraybuffer: XMLHttpRequestResponseType
-
-        @JsValue("blob")
-        val blob: XMLHttpRequestResponseType
-
-        @JsValue("document")
-        val document: XMLHttpRequestResponseType
-
-        @JsValue("json")
-        val json: XMLHttpRequestResponseType
-
-        @JsValue("text")
-        val text: XMLHttpRequestResponseType
-    }
+    companion object
 }
+
+inline val XMLHttpRequestResponseType.Companion.none: XMLHttpRequestResponseType
+    get() = unsafeCast("")
+
+inline val XMLHttpRequestResponseType.Companion.arraybuffer: XMLHttpRequestResponseType
+    get() = unsafeCast("arraybuffer")
+
+inline val XMLHttpRequestResponseType.Companion.blob: XMLHttpRequestResponseType
+    get() = unsafeCast("blob")
+
+inline val XMLHttpRequestResponseType.Companion.document: XMLHttpRequestResponseType
+    get() = unsafeCast("document")
+
+inline val XMLHttpRequestResponseType.Companion.json: XMLHttpRequestResponseType
+    get() = unsafeCast("json")
+
+inline val XMLHttpRequestResponseType.Companion.text: XMLHttpRequestResponseType
+    get() = unsafeCast("text")

@@ -7,7 +7,8 @@ import react.PropsWithValue
 import react.dom.events.ChangeEvent
 import react.dom.html.ReactHTML.input
 import web.html.HTMLInputElement
-import web.html.InputType.Companion.checkbox
+import web.html.InputType
+import web.html.checkbox
 
 internal external interface SelectionCheckboxProps : PropsWithValue<ReadonlySignal<Boolean>> {
     var onChange: (event: ChangeEvent<HTMLInputElement>) -> Unit
@@ -19,7 +20,7 @@ internal val SelectionCheckbox: FC<SelectionCheckboxProps> = FC { props ->
     val isChecked = props.value
 
     input {
-        type = checkbox
+        type = InputType.checkbox
         checked = isChecked.value
         onChange = props.onChange
     }

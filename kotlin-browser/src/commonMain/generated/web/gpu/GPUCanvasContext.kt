@@ -2,7 +2,7 @@
 
 package web.gpu
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 import web.events.EventTarget
 import web.rendering.OffscreenRenderingContext
 import web.rendering.RenderingContext
@@ -37,8 +37,8 @@ private constructor() :
      */
     fun unconfigure()
 
-    companion object {
-        @JsValue("webgpu")
-        val ID: RenderingContextId<GPUCanvasContext, GPUCanvasConfiguration>
-    }
+    companion object
 }
+
+inline val GPUCanvasContext.Companion.ID: RenderingContextId<GPUCanvasContext, GPUCanvasConfiguration>
+    get() = unsafeCast("webgpu")

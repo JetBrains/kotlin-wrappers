@@ -6,20 +6,20 @@
 
 package web.audio
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface AudioContextState {
-    companion object {
-        @JsValue("closed")
-        val closed: AudioContextState
-
-        @JsValue("interrupted")
-        val interrupted: AudioContextState
-
-        @JsValue("running")
-        val running: AudioContextState
-
-        @JsValue("suspended")
-        val suspended: AudioContextState
-    }
+    companion object
 }
+
+inline val AudioContextState.Companion.closed: AudioContextState
+    get() = unsafeCast("closed")
+
+inline val AudioContextState.Companion.interrupted: AudioContextState
+    get() = unsafeCast("interrupted")
+
+inline val AudioContextState.Companion.running: AudioContextState
+    get() = unsafeCast("running")
+
+inline val AudioContextState.Companion.suspended: AudioContextState
+    get() = unsafeCast("suspended")

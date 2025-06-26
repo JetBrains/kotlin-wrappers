@@ -6,14 +6,14 @@
 
 package web.gpu
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface GPUStoreOp {
-    companion object {
-        @JsValue("discard")
-        val discard: GPUStoreOp
-
-        @JsValue("store")
-        val store: GPUStoreOp
-    }
+    companion object
 }
+
+inline val GPUStoreOp.Companion.discard: GPUStoreOp
+    get() = unsafeCast("discard")
+
+inline val GPUStoreOp.Companion.store: GPUStoreOp
+    get() = unsafeCast("store")

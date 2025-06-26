@@ -1,6 +1,6 @@
 package karakum.browser
 
-import karakum.common.JsUnionConverter.unionBody
+import karakum.common.CommonUnionConverter.unionBody
 
 internal const val POPOVER = "Popover"
 internal const val POPOVER_TARGET_ACTION = "PopoverTargetAction"

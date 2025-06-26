@@ -2,7 +2,7 @@
 
 package web.canvas
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 import web.rendering.OffscreenRenderingContext
 import web.rendering.RenderingContextId
 
@@ -35,8 +35,8 @@ protected /* private */ constructor() :
      */
     val canvas: OffscreenCanvas
 
-    companion object {
-        @JsValue("2d")
-        val ID: RenderingContextId<OffscreenCanvasRenderingContext2D, CanvasRenderingContext2DSettings>
-    }
+    companion object
 }
+
+inline val OffscreenCanvasRenderingContext2D.Companion.ID: RenderingContextId<OffscreenCanvasRenderingContext2D, CanvasRenderingContext2DSettings>
+    get() = unsafeCast("2d")

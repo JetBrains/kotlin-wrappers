@@ -6,14 +6,14 @@
 
 package web.locks
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface LockMode {
-    companion object {
-        @JsValue("exclusive")
-        val exclusive: LockMode
-
-        @JsValue("shared")
-        val shared: LockMode
-    }
+    companion object
 }
+
+inline val LockMode.Companion.exclusive: LockMode
+    get() = unsafeCast("exclusive")
+
+inline val LockMode.Companion.shared: LockMode
+    get() = unsafeCast("shared")

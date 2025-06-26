@@ -6,23 +6,23 @@
 
 package web.mediakey
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface MediaKeySessionClosedReason {
-    companion object {
-        @JsValue("closed-by-application")
-        val closedByApplication: MediaKeySessionClosedReason
-
-        @JsValue("hardware-context-reset")
-        val hardwareContextReset: MediaKeySessionClosedReason
-
-        @JsValue("internal-error")
-        val internalError: MediaKeySessionClosedReason
-
-        @JsValue("release-acknowledged")
-        val releaseAcknowledged: MediaKeySessionClosedReason
-
-        @JsValue("resource-evicted")
-        val resourceEvicted: MediaKeySessionClosedReason
-    }
+    companion object
 }
+
+inline val MediaKeySessionClosedReason.Companion.closedByApplication: MediaKeySessionClosedReason
+    get() = unsafeCast("closed-by-application")
+
+inline val MediaKeySessionClosedReason.Companion.hardwareContextReset: MediaKeySessionClosedReason
+    get() = unsafeCast("hardware-context-reset")
+
+inline val MediaKeySessionClosedReason.Companion.internalError: MediaKeySessionClosedReason
+    get() = unsafeCast("internal-error")
+
+inline val MediaKeySessionClosedReason.Companion.releaseAcknowledged: MediaKeySessionClosedReason
+    get() = unsafeCast("release-acknowledged")
+
+inline val MediaKeySessionClosedReason.Companion.resourceEvicted: MediaKeySessionClosedReason
+    get() = unsafeCast("resource-evicted")

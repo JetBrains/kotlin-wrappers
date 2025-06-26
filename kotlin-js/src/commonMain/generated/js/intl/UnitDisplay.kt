@@ -6,17 +6,17 @@
 
 package js.intl
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface UnitDisplay {
-    companion object {
-        @JsValue("short")
-        val short: UnitDisplay
-
-        @JsValue("long")
-        val long: UnitDisplay
-
-        @JsValue("narrow")
-        val narrow: UnitDisplay
-    }
+    companion object
 }
+
+inline val UnitDisplay.Companion.short: UnitDisplay
+    get() = unsafeCast("short")
+
+inline val UnitDisplay.Companion.long: UnitDisplay
+    get() = unsafeCast("long")
+
+inline val UnitDisplay.Companion.narrow: UnitDisplay
+    get() = unsafeCast("narrow")

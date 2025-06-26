@@ -6,14 +6,14 @@
 
 package web.codecs
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface OpusBitstreamFormat {
-    companion object {
-        @JsValue("ogg")
-        val ogg: OpusBitstreamFormat
-
-        @JsValue("opus")
-        val opus: OpusBitstreamFormat
-    }
+    companion object
 }
+
+inline val OpusBitstreamFormat.Companion.ogg: OpusBitstreamFormat
+    get() = unsafeCast("ogg")
+
+inline val OpusBitstreamFormat.Companion.opus: OpusBitstreamFormat
+    get() = unsafeCast("opus")

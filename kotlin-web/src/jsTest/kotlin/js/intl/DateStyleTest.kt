@@ -1,6 +1,5 @@
 package js.intl
 
-import js.intl.DateStyle.Companion.full
 import kotlin.test.Test
 import kotlin.test.assertEquals
 
@@ -12,6 +11,6 @@ class DateStyleTest {
 
     @Test
     fun staticImport() {
-        assertEquals<Any>("full", full)
+        assertEquals<Any>("full", DateStyle.full)
     }
 }

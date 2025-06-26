@@ -6,14 +6,14 @@
 
 package web.images
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface PredefinedColorSpace {
-    companion object {
-        @JsValue("display-p3")
-        val displayP3: PredefinedColorSpace
-
-        @JsValue("srgb")
-        val srgb: PredefinedColorSpace
-    }
+    companion object
 }
+
+inline val PredefinedColorSpace.Companion.displayP3: PredefinedColorSpace
+    get() = unsafeCast("display-p3")
+
+inline val PredefinedColorSpace.Companion.srgb: PredefinedColorSpace
+    get() = unsafeCast("srgb")

@@ -6,17 +6,17 @@
 
 package web.vtt
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface DirectionSetting {
-    companion object {
-        @JsValue("")
-        val none: DirectionSetting
-
-        @JsValue("lr")
-        val lr: DirectionSetting
-
-        @JsValue("rl")
-        val rl: DirectionSetting
-    }
+    companion object
 }
+
+inline val DirectionSetting.Companion.none: DirectionSetting
+    get() = unsafeCast("")
+
+inline val DirectionSetting.Companion.lr: DirectionSetting
+    get() = unsafeCast("lr")
+
+inline val DirectionSetting.Companion.rl: DirectionSetting
+    get() = unsafeCast("rl")

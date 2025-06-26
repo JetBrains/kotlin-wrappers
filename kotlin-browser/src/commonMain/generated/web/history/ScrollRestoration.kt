@@ -6,14 +6,14 @@
 
 package web.history
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface ScrollRestoration {
-    companion object {
-        @JsValue("auto")
-        val auto: ScrollRestoration
-
-        @JsValue("manual")
-        val manual: ScrollRestoration
-    }
+    companion object
 }
+
+inline val ScrollRestoration.Companion.auto: ScrollRestoration
+    get() = unsafeCast("auto")
+
+inline val ScrollRestoration.Companion.manual: ScrollRestoration
+    get() = unsafeCast("manual")

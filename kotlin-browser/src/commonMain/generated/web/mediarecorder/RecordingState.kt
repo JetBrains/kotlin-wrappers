@@ -6,17 +6,17 @@
 
 package web.mediarecorder
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface RecordingState {
-    companion object {
-        @JsValue("inactive")
-        val inactive: RecordingState
-
-        @JsValue("paused")
-        val paused: RecordingState
-
-        @JsValue("recording")
-        val recording: RecordingState
-    }
+    companion object
 }
+
+inline val RecordingState.Companion.inactive: RecordingState
+    get() = unsafeCast("inactive")
+
+inline val RecordingState.Companion.paused: RecordingState
+    get() = unsafeCast("paused")
+
+inline val RecordingState.Companion.recording: RecordingState
+    get() = unsafeCast("recording")

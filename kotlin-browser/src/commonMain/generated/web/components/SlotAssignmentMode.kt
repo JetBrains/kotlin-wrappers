@@ -6,14 +6,14 @@
 
 package web.components
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface SlotAssignmentMode {
-    companion object {
-        @JsValue("manual")
-        val manual: SlotAssignmentMode
-
-        @JsValue("named")
-        val named: SlotAssignmentMode
-    }
+    companion object
 }
+
+inline val SlotAssignmentMode.Companion.manual: SlotAssignmentMode
+    get() = unsafeCast("manual")
+
+inline val SlotAssignmentMode.Companion.named: SlotAssignmentMode
+    get() = unsafeCast("named")

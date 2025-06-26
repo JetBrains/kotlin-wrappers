@@ -6,14 +6,14 @@
 
 package js.intl
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface RelativeTimeFormatNumeric {
-    companion object {
-        @JsValue("always")
-        val always: RelativeTimeFormatNumeric
-
-        @JsValue("auto")
-        val auto: RelativeTimeFormatNumeric
-    }
+    companion object
 }
+
+inline val RelativeTimeFormatNumeric.Companion.always: RelativeTimeFormatNumeric
+    get() = unsafeCast("always")
+
+inline val RelativeTimeFormatNumeric.Companion.auto: RelativeTimeFormatNumeric
+    get() = unsafeCast("auto")

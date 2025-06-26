@@ -6,17 +6,17 @@
 
 package web.mediasession
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface MediaSessionPlaybackState {
-    companion object {
-        @JsValue("none")
-        val none: MediaSessionPlaybackState
-
-        @JsValue("paused")
-        val paused: MediaSessionPlaybackState
-
-        @JsValue("playing")
-        val playing: MediaSessionPlaybackState
-    }
+    companion object
 }
+
+inline val MediaSessionPlaybackState.Companion.none: MediaSessionPlaybackState
+    get() = unsafeCast("none")
+
+inline val MediaSessionPlaybackState.Companion.paused: MediaSessionPlaybackState
+    get() = unsafeCast("paused")
+
+inline val MediaSessionPlaybackState.Companion.playing: MediaSessionPlaybackState
+    get() = unsafeCast("playing")

@@ -6,26 +6,26 @@
 
 package js.intl
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface TimeZoneNameFormat {
-    companion object {
-        @JsValue("short")
-        val short: TimeZoneNameFormat
-
-        @JsValue("long")
-        val long: TimeZoneNameFormat
-
-        @JsValue("shortOffset")
-        val shortOffset: TimeZoneNameFormat
-
-        @JsValue("longOffset")
-        val longOffset: TimeZoneNameFormat
-
-        @JsValue("shortGeneric")
-        val shortGeneric: TimeZoneNameFormat
-
-        @JsValue("longGeneric")
-        val longGeneric: TimeZoneNameFormat
-    }
+    companion object
 }
+
+inline val TimeZoneNameFormat.Companion.short: TimeZoneNameFormat
+    get() = unsafeCast("short")
+
+inline val TimeZoneNameFormat.Companion.long: TimeZoneNameFormat
+    get() = unsafeCast("long")
+
+inline val TimeZoneNameFormat.Companion.shortOffset: TimeZoneNameFormat
+    get() = unsafeCast("shortOffset")
+
+inline val TimeZoneNameFormat.Companion.longOffset: TimeZoneNameFormat
+    get() = unsafeCast("longOffset")
+
+inline val TimeZoneNameFormat.Companion.shortGeneric: TimeZoneNameFormat
+    get() = unsafeCast("shortGeneric")
+
+inline val TimeZoneNameFormat.Companion.longGeneric: TimeZoneNameFormat
+    get() = unsafeCast("longGeneric")

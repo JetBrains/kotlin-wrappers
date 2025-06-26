@@ -6,17 +6,17 @@
 
 package js.intl
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface DayPeriod {
-    companion object {
-        @JsValue("narrow")
-        val narrow: DayPeriod
-
-        @JsValue("short")
-        val short: DayPeriod
-
-        @JsValue("long")
-        val long: DayPeriod
-    }
+    companion object
 }
+
+inline val DayPeriod.Companion.narrow: DayPeriod
+    get() = unsafeCast("narrow")
+
+inline val DayPeriod.Companion.short: DayPeriod
+    get() = unsafeCast("short")
+
+inline val DayPeriod.Companion.long: DayPeriod
+    get() = unsafeCast("long")

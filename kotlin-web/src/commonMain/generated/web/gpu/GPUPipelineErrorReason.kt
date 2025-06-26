@@ -6,14 +6,14 @@
 
 package web.gpu
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface GPUPipelineErrorReason {
-    companion object {
-        @JsValue("internal")
-        val internal: GPUPipelineErrorReason
-
-        @JsValue("validation")
-        val validation: GPUPipelineErrorReason
-    }
+    companion object
 }
+
+inline val GPUPipelineErrorReason.Companion.internal: GPUPipelineErrorReason
+    get() = unsafeCast("internal")
+
+inline val GPUPipelineErrorReason.Companion.validation: GPUPipelineErrorReason
+    get() = unsafeCast("validation")

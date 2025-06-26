@@ -6,14 +6,14 @@
 
 package js.intl
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface LocaleMatcher {
-    companion object {
-        @JsValue("lookup")
-        val lookup: LocaleMatcher
-
-        @JsValue("best fit")
-        val bestFit: LocaleMatcher
-    }
+    companion object
 }
+
+inline val LocaleMatcher.Companion.lookup: LocaleMatcher
+    get() = unsafeCast("lookup")
+
+inline val LocaleMatcher.Companion.bestFit: LocaleMatcher
+    get() = unsafeCast("best fit")

@@ -6,17 +6,17 @@
 
 package web.gpu
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface GPUTextureDimension {
-    companion object {
-        @JsValue("1d")
-        val _1d: GPUTextureDimension
-
-        @JsValue("2d")
-        val _2d: GPUTextureDimension
-
-        @JsValue("3d")
-        val _3d: GPUTextureDimension
-    }
+    companion object
 }
+
+inline val GPUTextureDimension.Companion._1d: GPUTextureDimension
+    get() = unsafeCast("1d")
+
+inline val GPUTextureDimension.Companion._2d: GPUTextureDimension
+    get() = unsafeCast("2d")
+
+inline val GPUTextureDimension.Companion._3d: GPUTextureDimension
+    get() = unsafeCast("3d")

@@ -6,32 +6,32 @@
 
 package web.gpu
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface GPUCompareFunction {
-    companion object {
-        @JsValue("always")
-        val always: GPUCompareFunction
-
-        @JsValue("equal")
-        val equal: GPUCompareFunction
-
-        @JsValue("greater")
-        val greater: GPUCompareFunction
-
-        @JsValue("greater-equal")
-        val greaterEqual: GPUCompareFunction
-
-        @JsValue("less")
-        val less: GPUCompareFunction
-
-        @JsValue("less-equal")
-        val lessEqual: GPUCompareFunction
-
-        @JsValue("never")
-        val never: GPUCompareFunction
-
-        @JsValue("not-equal")
-        val notEqual: GPUCompareFunction
-    }
+    companion object
 }
+
+inline val GPUCompareFunction.Companion.always: GPUCompareFunction
+    get() = unsafeCast("always")
+
+inline val GPUCompareFunction.Companion.equal: GPUCompareFunction
+    get() = unsafeCast("equal")
+
+inline val GPUCompareFunction.Companion.greater: GPUCompareFunction
+    get() = unsafeCast("greater")
+
+inline val GPUCompareFunction.Companion.greaterEqual: GPUCompareFunction
+    get() = unsafeCast("greater-equal")
+
+inline val GPUCompareFunction.Companion.less: GPUCompareFunction
+    get() = unsafeCast("less")
+
+inline val GPUCompareFunction.Companion.lessEqual: GPUCompareFunction
+    get() = unsafeCast("less-equal")
+
+inline val GPUCompareFunction.Companion.never: GPUCompareFunction
+    get() = unsafeCast("never")
+
+inline val GPUCompareFunction.Companion.notEqual: GPUCompareFunction
+    get() = unsafeCast("not-equal")

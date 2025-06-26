@@ -6,20 +6,20 @@
 
 package web.credentials
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface CredentialMediationRequirement {
-    companion object {
-        @JsValue("conditional")
-        val conditional: CredentialMediationRequirement
-
-        @JsValue("optional")
-        val optional: CredentialMediationRequirement
-
-        @JsValue("required")
-        val required: CredentialMediationRequirement
-
-        @JsValue("silent")
-        val silent: CredentialMediationRequirement
-    }
+    companion object
 }
+
+inline val CredentialMediationRequirement.Companion.conditional: CredentialMediationRequirement
+    get() = unsafeCast("conditional")
+
+inline val CredentialMediationRequirement.Companion.optional: CredentialMediationRequirement
+    get() = unsafeCast("optional")
+
+inline val CredentialMediationRequirement.Companion.required: CredentialMediationRequirement
+    get() = unsafeCast("required")
+
+inline val CredentialMediationRequirement.Companion.silent: CredentialMediationRequirement
+    get() = unsafeCast("silent")

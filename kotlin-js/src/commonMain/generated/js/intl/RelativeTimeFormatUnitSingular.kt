@@ -6,32 +6,32 @@
 
 package js.intl
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface RelativeTimeFormatUnitSingular {
-    companion object {
-        @JsValue("year")
-        val year: RelativeTimeFormatUnitSingular
-
-        @JsValue("quarter")
-        val quarter: RelativeTimeFormatUnitSingular
-
-        @JsValue("month")
-        val month: RelativeTimeFormatUnitSingular
-
-        @JsValue("week")
-        val week: RelativeTimeFormatUnitSingular
-
-        @JsValue("day")
-        val day: RelativeTimeFormatUnitSingular
-
-        @JsValue("hour")
-        val hour: RelativeTimeFormatUnitSingular
-
-        @JsValue("minute")
-        val minute: RelativeTimeFormatUnitSingular
-
-        @JsValue("second")
-        val second: RelativeTimeFormatUnitSingular
-    }
+    companion object
 }
+
+inline val RelativeTimeFormatUnitSingular.Companion.year: RelativeTimeFormatUnitSingular
+    get() = unsafeCast("year")
+
+inline val RelativeTimeFormatUnitSingular.Companion.quarter: RelativeTimeFormatUnitSingular
+    get() = unsafeCast("quarter")
+
+inline val RelativeTimeFormatUnitSingular.Companion.month: RelativeTimeFormatUnitSingular
+    get() = unsafeCast("month")
+
+inline val RelativeTimeFormatUnitSingular.Companion.week: RelativeTimeFormatUnitSingular
+    get() = unsafeCast("week")
+
+inline val RelativeTimeFormatUnitSingular.Companion.day: RelativeTimeFormatUnitSingular
+    get() = unsafeCast("day")
+
+inline val RelativeTimeFormatUnitSingular.Companion.hour: RelativeTimeFormatUnitSingular
+    get() = unsafeCast("hour")
+
+inline val RelativeTimeFormatUnitSingular.Companion.minute: RelativeTimeFormatUnitSingular
+    get() = unsafeCast("minute")
+
+inline val RelativeTimeFormatUnitSingular.Companion.second: RelativeTimeFormatUnitSingular
+    get() = unsafeCast("second")

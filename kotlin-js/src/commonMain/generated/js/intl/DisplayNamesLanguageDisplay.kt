@@ -6,14 +6,14 @@
 
 package js.intl
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface DisplayNamesLanguageDisplay {
-    companion object {
-        @JsValue("dialect")
-        val dialect: DisplayNamesLanguageDisplay
-
-        @JsValue("standard")
-        val standard: DisplayNamesLanguageDisplay
-    }
+    companion object
 }
+
+inline val DisplayNamesLanguageDisplay.Companion.dialect: DisplayNamesLanguageDisplay
+    get() = unsafeCast("dialect")
+
+inline val DisplayNamesLanguageDisplay.Companion.standard: DisplayNamesLanguageDisplay
+    get() = unsafeCast("standard")

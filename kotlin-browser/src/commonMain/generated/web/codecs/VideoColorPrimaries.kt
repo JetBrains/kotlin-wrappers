@@ -6,17 +6,17 @@
 
 package web.codecs
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface VideoColorPrimaries {
-    companion object {
-        @JsValue("bt470bg")
-        val bt470bg: VideoColorPrimaries
-
-        @JsValue("bt709")
-        val bt709: VideoColorPrimaries
-
-        @JsValue("smpte170m")
-        val smpte170m: VideoColorPrimaries
-    }
+    companion object
 }
+
+inline val VideoColorPrimaries.Companion.bt470bg: VideoColorPrimaries
+    get() = unsafeCast("bt470bg")
+
+inline val VideoColorPrimaries.Companion.bt709: VideoColorPrimaries
+    get() = unsafeCast("bt709")
+
+inline val VideoColorPrimaries.Companion.smpte170m: VideoColorPrimaries
+    get() = unsafeCast("smpte170m")

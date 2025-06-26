@@ -1382,21 +1382,11 @@ internal fun convertInterface(
     val companion = if (staticSource != null) {
         val companionContent = getCompanion(name, staticSource)
         when {
-            name == DOM_EXCEPTION -> {
-                companionContent
-                    .splitToSequence("\n")
-                    .filter { !it.endsWith(": Short") }
-                    .joinToString("\n")
-                    .replaceFirst("\n}", domExceptionErrorNames() + "\n}")
-            }
+            name == DOM_EXCEPTION -> "companion object" // leave it empty, add extensions below
 
             idDeclaration != null -> {
                 require(companionContent.isEmpty())
-                """
-                companion object {
-                    $idDeclaration
-                }
-                """.trimIndent()
+                "companion object"
             }
 
             else -> companionContent
@@ -1420,6 +1410,12 @@ internal fun convertInterface(
         ?.joinToString("\n") { "sealed interface $it" }
         ?: ""
 
+    val extensions = when {
+        name == DOM_EXCEPTION -> domExceptionErrorNames()
+        idDeclaration != null -> idDeclaration
+        else -> ""
+    }
+
     var body = sequenceOf(
         typeGuard,
         annotations,
@@ -1428,6 +1424,7 @@ internal fun convertInterface(
         companion,
         additionalAliases,
         "}",
+        extensions
     ).filter { it.isNotEmpty() }
         .joinToString("\n")
 

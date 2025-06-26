@@ -6,11 +6,11 @@
 
 package web.authn
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface PublicKeyCredentialType {
-    companion object {
-        @JsValue("public-key")
-        val publicKey: PublicKeyCredentialType
-    }
+    companion object
 }
+
+inline val PublicKeyCredentialType.Companion.publicKey: PublicKeyCredentialType
+    get() = unsafeCast("public-key")

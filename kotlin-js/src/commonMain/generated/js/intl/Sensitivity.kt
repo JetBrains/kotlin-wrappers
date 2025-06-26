@@ -6,20 +6,20 @@
 
 package js.intl
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface Sensitivity {
-    companion object {
-        @JsValue("base")
-        val base: Sensitivity
-
-        @JsValue("accent")
-        val accent: Sensitivity
-
-        @JsValue("case")
-        val case: Sensitivity
-
-        @JsValue("variant")
-        val variant: Sensitivity
-    }
+    companion object
 }
+
+inline val Sensitivity.Companion.base: Sensitivity
+    get() = unsafeCast("base")
+
+inline val Sensitivity.Companion.accent: Sensitivity
+    get() = unsafeCast("accent")
+
+inline val Sensitivity.Companion.case: Sensitivity
+    get() = unsafeCast("case")
+
+inline val Sensitivity.Companion.variant: Sensitivity
+    get() = unsafeCast("variant")

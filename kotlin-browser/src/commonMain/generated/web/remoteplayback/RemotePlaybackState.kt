@@ -6,17 +6,17 @@
 
 package web.remoteplayback
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface RemotePlaybackState {
-    companion object {
-        @JsValue("connected")
-        val connected: RemotePlaybackState
-
-        @JsValue("connecting")
-        val connecting: RemotePlaybackState
-
-        @JsValue("disconnected")
-        val disconnected: RemotePlaybackState
-    }
+    companion object
 }
+
+inline val RemotePlaybackState.Companion.connected: RemotePlaybackState
+    get() = unsafeCast("connected")
+
+inline val RemotePlaybackState.Companion.connecting: RemotePlaybackState
+    get() = unsafeCast("connecting")
+
+inline val RemotePlaybackState.Companion.disconnected: RemotePlaybackState
+    get() = unsafeCast("disconnected")

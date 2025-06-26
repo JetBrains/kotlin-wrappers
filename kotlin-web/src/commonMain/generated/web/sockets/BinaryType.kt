@@ -6,14 +6,14 @@
 
 package web.sockets
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface BinaryType {
-    companion object {
-        @JsValue("arraybuffer")
-        val arraybuffer: BinaryType
-
-        @JsValue("blob")
-        val blob: BinaryType
-    }
+    companion object
 }
+
+inline val BinaryType.Companion.arraybuffer: BinaryType
+    get() = unsafeCast("arraybuffer")
+
+inline val BinaryType.Companion.blob: BinaryType
+    get() = unsafeCast("blob")

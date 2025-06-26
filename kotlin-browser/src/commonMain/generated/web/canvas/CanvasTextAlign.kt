@@ -6,23 +6,23 @@
 
 package web.canvas
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface CanvasTextAlign {
-    companion object {
-        @JsValue("center")
-        val center: CanvasTextAlign
-
-        @JsValue("end")
-        val end: CanvasTextAlign
-
-        @JsValue("left")
-        val left: CanvasTextAlign
-
-        @JsValue("right")
-        val right: CanvasTextAlign
-
-        @JsValue("start")
-        val start: CanvasTextAlign
-    }
+    companion object
 }
+
+inline val CanvasTextAlign.Companion.center: CanvasTextAlign
+    get() = unsafeCast("center")
+
+inline val CanvasTextAlign.Companion.end: CanvasTextAlign
+    get() = unsafeCast("end")
+
+inline val CanvasTextAlign.Companion.left: CanvasTextAlign
+    get() = unsafeCast("left")
+
+inline val CanvasTextAlign.Companion.right: CanvasTextAlign
+    get() = unsafeCast("right")
+
+inline val CanvasTextAlign.Companion.start: CanvasTextAlign
+    get() = unsafeCast("start")

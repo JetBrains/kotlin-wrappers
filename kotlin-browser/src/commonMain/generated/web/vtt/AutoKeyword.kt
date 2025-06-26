@@ -6,11 +6,11 @@
 
 package web.vtt
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface AutoKeyword {
-    companion object {
-        @JsValue("auto")
-        val auto: AutoKeyword
-    }
+    companion object
 }
+
+inline val AutoKeyword.Companion.auto: AutoKeyword
+    get() = unsafeCast("auto")

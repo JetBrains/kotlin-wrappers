@@ -6,26 +6,26 @@
 
 package web.http
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface ResponseType {
-    companion object {
-        @JsValue("basic")
-        val basic: ResponseType
-
-        @JsValue("cors")
-        val cors: ResponseType
-
-        @JsValue("default")
-        val default: ResponseType
-
-        @JsValue("error")
-        val error: ResponseType
-
-        @JsValue("opaque")
-        val opaque: ResponseType
-
-        @JsValue("opaqueredirect")
-        val opaqueredirect: ResponseType
-    }
+    companion object
 }
+
+inline val ResponseType.Companion.basic: ResponseType
+    get() = unsafeCast("basic")
+
+inline val ResponseType.Companion.cors: ResponseType
+    get() = unsafeCast("cors")
+
+inline val ResponseType.Companion.default: ResponseType
+    get() = unsafeCast("default")
+
+inline val ResponseType.Companion.error: ResponseType
+    get() = unsafeCast("error")
+
+inline val ResponseType.Companion.opaque: ResponseType
+    get() = unsafeCast("opaque")
+
+inline val ResponseType.Companion.opaqueredirect: ResponseType
+    get() = unsafeCast("opaqueredirect")

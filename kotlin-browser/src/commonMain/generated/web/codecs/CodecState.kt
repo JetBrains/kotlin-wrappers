@@ -6,17 +6,17 @@
 
 package web.codecs
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface CodecState {
-    companion object {
-        @JsValue("closed")
-        val closed: CodecState
-
-        @JsValue("configured")
-        val configured: CodecState
-
-        @JsValue("unconfigured")
-        val unconfigured: CodecState
-    }
+    companion object
 }
+
+inline val CodecState.Companion.closed: CodecState
+    get() = unsafeCast("closed")
+
+inline val CodecState.Companion.configured: CodecState
+    get() = unsafeCast("configured")
+
+inline val CodecState.Companion.unconfigured: CodecState
+    get() = unsafeCast("unconfigured")

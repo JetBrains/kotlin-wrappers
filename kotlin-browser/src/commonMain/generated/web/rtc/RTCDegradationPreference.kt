@@ -6,17 +6,17 @@
 
 package web.rtc
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface RTCDegradationPreference {
-    companion object {
-        @JsValue("balanced")
-        val balanced: RTCDegradationPreference
-
-        @JsValue("maintain-framerate")
-        val maintainFramerate: RTCDegradationPreference
-
-        @JsValue("maintain-resolution")
-        val maintainResolution: RTCDegradationPreference
-    }
+    companion object
 }
+
+inline val RTCDegradationPreference.Companion.balanced: RTCDegradationPreference
+    get() = unsafeCast("balanced")
+
+inline val RTCDegradationPreference.Companion.maintainFramerate: RTCDegradationPreference
+    get() = unsafeCast("maintain-framerate")
+
+inline val RTCDegradationPreference.Companion.maintainResolution: RTCDegradationPreference
+    get() = unsafeCast("maintain-resolution")

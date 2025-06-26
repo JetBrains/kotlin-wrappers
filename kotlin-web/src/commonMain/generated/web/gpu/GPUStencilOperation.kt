@@ -6,32 +6,32 @@
 
 package web.gpu
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface GPUStencilOperation {
-    companion object {
-        @JsValue("decrement-clamp")
-        val decrementClamp: GPUStencilOperation
-
-        @JsValue("decrement-wrap")
-        val decrementWrap: GPUStencilOperation
-
-        @JsValue("increment-clamp")
-        val incrementClamp: GPUStencilOperation
-
-        @JsValue("increment-wrap")
-        val incrementWrap: GPUStencilOperation
-
-        @JsValue("invert")
-        val invert: GPUStencilOperation
-
-        @JsValue("keep")
-        val keep: GPUStencilOperation
-
-        @JsValue("replace")
-        val replace: GPUStencilOperation
-
-        @JsValue("zero")
-        val zero: GPUStencilOperation
-    }
+    companion object
 }
+
+inline val GPUStencilOperation.Companion.decrementClamp: GPUStencilOperation
+    get() = unsafeCast("decrement-clamp")
+
+inline val GPUStencilOperation.Companion.decrementWrap: GPUStencilOperation
+    get() = unsafeCast("decrement-wrap")
+
+inline val GPUStencilOperation.Companion.incrementClamp: GPUStencilOperation
+    get() = unsafeCast("increment-clamp")
+
+inline val GPUStencilOperation.Companion.incrementWrap: GPUStencilOperation
+    get() = unsafeCast("increment-wrap")
+
+inline val GPUStencilOperation.Companion.invert: GPUStencilOperation
+    get() = unsafeCast("invert")
+
+inline val GPUStencilOperation.Companion.keep: GPUStencilOperation
+    get() = unsafeCast("keep")
+
+inline val GPUStencilOperation.Companion.replace: GPUStencilOperation
+    get() = unsafeCast("replace")
+
+inline val GPUStencilOperation.Companion.zero: GPUStencilOperation
+    get() = unsafeCast("zero")

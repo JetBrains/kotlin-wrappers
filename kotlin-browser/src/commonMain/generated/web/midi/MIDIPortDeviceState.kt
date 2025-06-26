@@ -6,14 +6,14 @@
 
 package web.midi
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface MIDIPortDeviceState {
-    companion object {
-        @JsValue("connected")
-        val connected: MIDIPortDeviceState
-
-        @JsValue("disconnected")
-        val disconnected: MIDIPortDeviceState
-    }
+    companion object
 }
+
+inline val MIDIPortDeviceState.Companion.connected: MIDIPortDeviceState
+    get() = unsafeCast("connected")
+
+inline val MIDIPortDeviceState.Companion.disconnected: MIDIPortDeviceState
+    get() = unsafeCast("disconnected")

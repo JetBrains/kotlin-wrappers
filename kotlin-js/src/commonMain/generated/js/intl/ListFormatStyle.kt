@@ -6,17 +6,17 @@
 
 package js.intl
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface ListFormatStyle {
-    companion object {
-        @JsValue("long")
-        val long: ListFormatStyle
-
-        @JsValue("short")
-        val short: ListFormatStyle
-
-        @JsValue("narrow")
-        val narrow: ListFormatStyle
-    }
+    companion object
 }
+
+inline val ListFormatStyle.Companion.long: ListFormatStyle
+    get() = unsafeCast("long")
+
+inline val ListFormatStyle.Companion.short: ListFormatStyle
+    get() = unsafeCast("short")
+
+inline val ListFormatStyle.Companion.narrow: ListFormatStyle
+    get() = unsafeCast("narrow")

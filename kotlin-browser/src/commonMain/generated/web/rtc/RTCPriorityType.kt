@@ -6,20 +6,20 @@
 
 package web.rtc
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface RTCPriorityType {
-    companion object {
-        @JsValue("high")
-        val high: RTCPriorityType
-
-        @JsValue("low")
-        val low: RTCPriorityType
-
-        @JsValue("medium")
-        val medium: RTCPriorityType
-
-        @JsValue("very-low")
-        val veryLow: RTCPriorityType
-    }
+    companion object
 }
+
+inline val RTCPriorityType.Companion.high: RTCPriorityType
+    get() = unsafeCast("high")
+
+inline val RTCPriorityType.Companion.low: RTCPriorityType
+    get() = unsafeCast("low")
+
+inline val RTCPriorityType.Companion.medium: RTCPriorityType
+    get() = unsafeCast("medium")
+
+inline val RTCPriorityType.Companion.veryLow: RTCPriorityType
+    get() = unsafeCast("very-low")

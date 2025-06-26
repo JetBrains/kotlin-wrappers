@@ -6,14 +6,14 @@
 
 package web.codecs
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface LatencyMode {
-    companion object {
-        @JsValue("quality")
-        val quality: LatencyMode
-
-        @JsValue("realtime")
-        val realtime: LatencyMode
-    }
+    companion object
 }
+
+inline val LatencyMode.Companion.quality: LatencyMode
+    get() = unsafeCast("quality")
+
+inline val LatencyMode.Companion.realtime: LatencyMode
+    get() = unsafeCast("realtime")

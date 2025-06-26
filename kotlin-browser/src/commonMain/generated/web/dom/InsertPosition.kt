@@ -6,20 +6,20 @@
 
 package web.dom
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface InsertPosition {
-    companion object {
-        @JsValue("afterbegin")
-        val afterbegin: InsertPosition
-
-        @JsValue("afterend")
-        val afterend: InsertPosition
-
-        @JsValue("beforebegin")
-        val beforebegin: InsertPosition
-
-        @JsValue("beforeend")
-        val beforeend: InsertPosition
-    }
+    companion object
 }
+
+inline val InsertPosition.Companion.afterbegin: InsertPosition
+    get() = unsafeCast("afterbegin")
+
+inline val InsertPosition.Companion.afterend: InsertPosition
+    get() = unsafeCast("afterend")
+
+inline val InsertPosition.Companion.beforebegin: InsertPosition
+    get() = unsafeCast("beforebegin")
+
+inline val InsertPosition.Companion.beforeend: InsertPosition
+    get() = unsafeCast("beforeend")

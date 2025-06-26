@@ -6,14 +6,14 @@
 
 package web.blob
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface EndingType {
-    companion object {
-        @JsValue("native")
-        val native: EndingType
-
-        @JsValue("transparent")
-        val transparent: EndingType
-    }
+    companion object
 }
+
+inline val EndingType.Companion.native: EndingType
+    get() = unsafeCast("native")
+
+inline val EndingType.Companion.transparent: EndingType
+    get() = unsafeCast("transparent")

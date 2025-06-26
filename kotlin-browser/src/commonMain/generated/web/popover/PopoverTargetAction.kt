@@ -6,17 +6,17 @@
 
 package web.popover
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface PopoverTargetAction {
-    companion object {
-        @JsValue("hide")
-        val hide: PopoverTargetAction
-
-        @JsValue("show")
-        val show: PopoverTargetAction
-
-        @JsValue("toggle")
-        val toggle: PopoverTargetAction
-    }
+    companion object
 }
+
+inline val PopoverTargetAction.Companion.hide: PopoverTargetAction
+    get() = unsafeCast("hide")
+
+inline val PopoverTargetAction.Companion.show: PopoverTargetAction
+    get() = unsafeCast("show")
+
+inline val PopoverTargetAction.Companion.toggle: PopoverTargetAction
+    get() = unsafeCast("toggle")

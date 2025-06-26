@@ -6,20 +6,20 @@
 
 package web.rtc
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface RTCIceCandidateType {
-    companion object {
-        @JsValue("host")
-        val host: RTCIceCandidateType
-
-        @JsValue("prflx")
-        val prflx: RTCIceCandidateType
-
-        @JsValue("relay")
-        val relay: RTCIceCandidateType
-
-        @JsValue("srflx")
-        val srflx: RTCIceCandidateType
-    }
+    companion object
 }
+
+inline val RTCIceCandidateType.Companion.host: RTCIceCandidateType
+    get() = unsafeCast("host")
+
+inline val RTCIceCandidateType.Companion.prflx: RTCIceCandidateType
+    get() = unsafeCast("prflx")
+
+inline val RTCIceCandidateType.Companion.relay: RTCIceCandidateType
+    get() = unsafeCast("relay")
+
+inline val RTCIceCandidateType.Companion.srflx: RTCIceCandidateType
+    get() = unsafeCast("srflx")

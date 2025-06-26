@@ -6,17 +6,17 @@
 
 package web.imagecapture
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface RedEyeReduction {
-    companion object {
-        @JsValue("always")
-        val always: RedEyeReduction
-
-        @JsValue("controllable")
-        val controllable: RedEyeReduction
-
-        @JsValue("never")
-        val never: RedEyeReduction
-    }
+    companion object
 }
+
+inline val RedEyeReduction.Companion.always: RedEyeReduction
+    get() = unsafeCast("always")
+
+inline val RedEyeReduction.Companion.controllable: RedEyeReduction
+    get() = unsafeCast("controllable")
+
+inline val RedEyeReduction.Companion.never: RedEyeReduction
+    get() = unsafeCast("never")

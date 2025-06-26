@@ -6,23 +6,23 @@
 
 package web.audio
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface OscillatorType {
-    companion object {
-        @JsValue("custom")
-        val custom: OscillatorType
-
-        @JsValue("sawtooth")
-        val sawtooth: OscillatorType
-
-        @JsValue("sine")
-        val sine: OscillatorType
-
-        @JsValue("square")
-        val square: OscillatorType
-
-        @JsValue("triangle")
-        val triangle: OscillatorType
-    }
+    companion object
 }
+
+inline val OscillatorType.Companion.custom: OscillatorType
+    get() = unsafeCast("custom")
+
+inline val OscillatorType.Companion.sawtooth: OscillatorType
+    get() = unsafeCast("sawtooth")
+
+inline val OscillatorType.Companion.sine: OscillatorType
+    get() = unsafeCast("sine")
+
+inline val OscillatorType.Companion.square: OscillatorType
+    get() = unsafeCast("square")
+
+inline val OscillatorType.Companion.triangle: OscillatorType
+    get() = unsafeCast("triangle")

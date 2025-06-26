@@ -24,8 +24,8 @@ internal fun domExceptionErrorNames(): String =
             /**
               * $description
               */
-            @JsValue("$name")
-            val $name: JsErrorName
+            inline val DOMException.Companion.${name}: JsErrorName
+                get() = unsafeCast("$name")
             """.trimIndent()
         }
 

@@ -6,14 +6,14 @@
 
 package web.rtc
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface RTCIceTransportPolicy {
-    companion object {
-        @JsValue("all")
-        val all: RTCIceTransportPolicy
-
-        @JsValue("relay")
-        val relay: RTCIceTransportPolicy
-    }
+    companion object
 }
+
+inline val RTCIceTransportPolicy.Companion.all: RTCIceTransportPolicy
+    get() = unsafeCast("all")
+
+inline val RTCIceTransportPolicy.Companion.relay: RTCIceTransportPolicy
+    get() = unsafeCast("relay")

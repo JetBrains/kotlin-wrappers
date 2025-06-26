@@ -6,26 +6,26 @@
 
 package js.intl
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface DisplayNamesType {
-    companion object {
-        @JsValue("language")
-        val language: DisplayNamesType
-
-        @JsValue("region")
-        val region: DisplayNamesType
-
-        @JsValue("script")
-        val script: DisplayNamesType
-
-        @JsValue("calendar")
-        val calendar: DisplayNamesType
-
-        @JsValue("dateTimeField")
-        val dateTimeField: DisplayNamesType
-
-        @JsValue("currency")
-        val currency: DisplayNamesType
-    }
+    companion object
 }
+
+inline val DisplayNamesType.Companion.language: DisplayNamesType
+    get() = unsafeCast("language")
+
+inline val DisplayNamesType.Companion.region: DisplayNamesType
+    get() = unsafeCast("region")
+
+inline val DisplayNamesType.Companion.script: DisplayNamesType
+    get() = unsafeCast("script")
+
+inline val DisplayNamesType.Companion.calendar: DisplayNamesType
+    get() = unsafeCast("calendar")
+
+inline val DisplayNamesType.Companion.dateTimeField: DisplayNamesType
+    get() = unsafeCast("dateTimeField")
+
+inline val DisplayNamesType.Companion.currency: DisplayNamesType
+    get() = unsafeCast("currency")

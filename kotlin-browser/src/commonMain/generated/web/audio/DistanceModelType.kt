@@ -6,17 +6,17 @@
 
 package web.audio
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface DistanceModelType {
-    companion object {
-        @JsValue("exponential")
-        val exponential: DistanceModelType
-
-        @JsValue("inverse")
-        val inverse: DistanceModelType
-
-        @JsValue("linear")
-        val linear: DistanceModelType
-    }
+    companion object
 }
+
+inline val DistanceModelType.Companion.exponential: DistanceModelType
+    get() = unsafeCast("exponential")
+
+inline val DistanceModelType.Companion.inverse: DistanceModelType
+    get() = unsafeCast("inverse")
+
+inline val DistanceModelType.Companion.linear: DistanceModelType
+    get() = unsafeCast("linear")

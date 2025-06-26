@@ -6,17 +6,17 @@
 
 package web.html
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface ButtonType {
-    companion object {
-        @JsValue("submit")
-        val submit: ButtonType
-
-        @JsValue("reset")
-        val reset: ButtonType
-
-        @JsValue("button")
-        val button: ButtonType
-    }
+    companion object
 }
+
+inline val ButtonType.Companion.submit: ButtonType
+    get() = unsafeCast("submit")
+
+inline val ButtonType.Companion.reset: ButtonType
+    get() = unsafeCast("reset")
+
+inline val ButtonType.Companion.button: ButtonType
+    get() = unsafeCast("button")

@@ -6,14 +6,14 @@
 
 package js.intl
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface HourFormat {
-    companion object {
-        @JsValue("numeric")
-        val numeric: HourFormat
-
-        @JsValue("2-digit")
-        val twoDigit: HourFormat
-    }
+    companion object
 }
+
+inline val HourFormat.Companion.numeric: HourFormat
+    get() = unsafeCast("numeric")
+
+inline val HourFormat.Companion.twoDigit: HourFormat
+    get() = unsafeCast("2-digit")

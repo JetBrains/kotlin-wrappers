@@ -6,17 +6,17 @@
 
 package web.vtt
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface LineAlignSetting {
-    companion object {
-        @JsValue("center")
-        val center: LineAlignSetting
-
-        @JsValue("end")
-        val end: LineAlignSetting
-
-        @JsValue("start")
-        val start: LineAlignSetting
-    }
+    companion object
 }
+
+inline val LineAlignSetting.Companion.center: LineAlignSetting
+    get() = unsafeCast("center")
+
+inline val LineAlignSetting.Companion.end: LineAlignSetting
+    get() = unsafeCast("end")
+
+inline val LineAlignSetting.Companion.start: LineAlignSetting
+    get() = unsafeCast("start")

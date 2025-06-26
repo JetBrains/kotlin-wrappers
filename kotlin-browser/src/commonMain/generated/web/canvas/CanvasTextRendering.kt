@@ -6,20 +6,20 @@
 
 package web.canvas
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface CanvasTextRendering {
-    companion object {
-        @JsValue("auto")
-        val auto: CanvasTextRendering
-
-        @JsValue("geometricPrecision")
-        val geometricPrecision: CanvasTextRendering
-
-        @JsValue("optimizeLegibility")
-        val optimizeLegibility: CanvasTextRendering
-
-        @JsValue("optimizeSpeed")
-        val optimizeSpeed: CanvasTextRendering
-    }
+    companion object
 }
+
+inline val CanvasTextRendering.Companion.auto: CanvasTextRendering
+    get() = unsafeCast("auto")
+
+inline val CanvasTextRendering.Companion.geometricPrecision: CanvasTextRendering
+    get() = unsafeCast("geometricPrecision")
+
+inline val CanvasTextRendering.Companion.optimizeLegibility: CanvasTextRendering
+    get() = unsafeCast("optimizeLegibility")
+
+inline val CanvasTextRendering.Companion.optimizeSpeed: CanvasTextRendering
+    get() = unsafeCast("optimizeSpeed")

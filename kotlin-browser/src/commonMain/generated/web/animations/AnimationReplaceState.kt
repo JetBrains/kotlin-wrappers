@@ -6,17 +6,17 @@
 
 package web.animations
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface AnimationReplaceState {
-    companion object {
-        @JsValue("active")
-        val active: AnimationReplaceState
-
-        @JsValue("persisted")
-        val persisted: AnimationReplaceState
-
-        @JsValue("removed")
-        val removed: AnimationReplaceState
-    }
+    companion object
 }
+
+inline val AnimationReplaceState.Companion.active: AnimationReplaceState
+    get() = unsafeCast("active")
+
+inline val AnimationReplaceState.Companion.persisted: AnimationReplaceState
+    get() = unsafeCast("persisted")
+
+inline val AnimationReplaceState.Companion.removed: AnimationReplaceState
+    get() = unsafeCast("removed")

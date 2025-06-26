@@ -6,17 +6,17 @@
 
 package js.intl
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface CaseFirst {
-    companion object {
-        @JsValue("upper")
-        val upper: CaseFirst
-
-        @JsValue("lower")
-        val lower: CaseFirst
-
-        @JsValue("false")
-        val `false`: CaseFirst
-    }
+    companion object
 }
+
+inline val CaseFirst.Companion.upper: CaseFirst
+    get() = unsafeCast("upper")
+
+inline val CaseFirst.Companion.lower: CaseFirst
+    get() = unsafeCast("lower")
+
+inline val CaseFirst.Companion.`false`: CaseFirst
+    get() = unsafeCast("false")

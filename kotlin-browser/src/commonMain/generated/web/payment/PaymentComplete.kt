@@ -6,17 +6,17 @@
 
 package web.payment
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface PaymentComplete {
-    companion object {
-        @JsValue("fail")
-        val fail: PaymentComplete
-
-        @JsValue("success")
-        val success: PaymentComplete
-
-        @JsValue("unknown")
-        val unknown: PaymentComplete
-    }
+    companion object
 }
+
+inline val PaymentComplete.Companion.fail: PaymentComplete
+    get() = unsafeCast("fail")
+
+inline val PaymentComplete.Companion.success: PaymentComplete
+    get() = unsafeCast("success")
+
+inline val PaymentComplete.Companion.unknown: PaymentComplete
+    get() = unsafeCast("unknown")

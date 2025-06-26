@@ -6,17 +6,17 @@
 
 package web.images
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface PremultiplyAlpha {
-    companion object {
-        @JsValue("default")
-        val default: PremultiplyAlpha
-
-        @JsValue("none")
-        val none: PremultiplyAlpha
-
-        @JsValue("premultiply")
-        val premultiply: PremultiplyAlpha
-    }
+    companion object
 }
+
+inline val PremultiplyAlpha.Companion.default: PremultiplyAlpha
+    get() = unsafeCast("default")
+
+inline val PremultiplyAlpha.Companion.none: PremultiplyAlpha
+    get() = unsafeCast("none")
+
+inline val PremultiplyAlpha.Companion.premultiply: PremultiplyAlpha
+    get() = unsafeCast("premultiply")

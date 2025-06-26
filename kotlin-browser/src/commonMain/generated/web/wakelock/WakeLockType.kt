@@ -6,11 +6,11 @@
 
 package web.wakelock
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface WakeLockType {
-    companion object {
-        @JsValue("screen")
-        val screen: WakeLockType
-    }
+    companion object
 }
+
+inline val WakeLockType.Companion.screen: WakeLockType
+    get() = unsafeCast("screen")

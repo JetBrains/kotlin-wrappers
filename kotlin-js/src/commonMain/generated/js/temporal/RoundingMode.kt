@@ -6,35 +6,35 @@
 
 package js.temporal
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface RoundingMode {
-    companion object {
-        @JsValue("ceil")
-        val ceil: RoundingMode
-
-        @JsValue("floor")
-        val floor: RoundingMode
-
-        @JsValue("expand")
-        val expand: RoundingMode
-
-        @JsValue("trunc")
-        val trunc: RoundingMode
-
-        @JsValue("halfCeil")
-        val halfCeil: RoundingMode
-
-        @JsValue("halfFloor")
-        val halfFloor: RoundingMode
-
-        @JsValue("halfExpand")
-        val halfExpand: RoundingMode
-
-        @JsValue("halfTrunc")
-        val halfTrunc: RoundingMode
-
-        @JsValue("halfEven")
-        val halfEven: RoundingMode
-    }
+    companion object
 }
+
+inline val RoundingMode.Companion.ceil: RoundingMode
+    get() = unsafeCast("ceil")
+
+inline val RoundingMode.Companion.floor: RoundingMode
+    get() = unsafeCast("floor")
+
+inline val RoundingMode.Companion.expand: RoundingMode
+    get() = unsafeCast("expand")
+
+inline val RoundingMode.Companion.trunc: RoundingMode
+    get() = unsafeCast("trunc")
+
+inline val RoundingMode.Companion.halfCeil: RoundingMode
+    get() = unsafeCast("halfCeil")
+
+inline val RoundingMode.Companion.halfFloor: RoundingMode
+    get() = unsafeCast("halfFloor")
+
+inline val RoundingMode.Companion.halfExpand: RoundingMode
+    get() = unsafeCast("halfExpand")
+
+inline val RoundingMode.Companion.halfTrunc: RoundingMode
+    get() = unsafeCast("halfTrunc")
+
+inline val RoundingMode.Companion.halfEven: RoundingMode
+    get() = unsafeCast("halfEven")

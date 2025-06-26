@@ -6,17 +6,17 @@
 
 package web.rtc
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface RTCBundlePolicy {
-    companion object {
-        @JsValue("balanced")
-        val balanced: RTCBundlePolicy
-
-        @JsValue("max-bundle")
-        val maxBundle: RTCBundlePolicy
-
-        @JsValue("max-compat")
-        val maxCompat: RTCBundlePolicy
-    }
+    companion object
 }
+
+inline val RTCBundlePolicy.Companion.balanced: RTCBundlePolicy
+    get() = unsafeCast("balanced")
+
+inline val RTCBundlePolicy.Companion.maxBundle: RTCBundlePolicy
+    get() = unsafeCast("max-bundle")
+
+inline val RTCBundlePolicy.Companion.maxCompat: RTCBundlePolicy
+    get() = unsafeCast("max-compat")

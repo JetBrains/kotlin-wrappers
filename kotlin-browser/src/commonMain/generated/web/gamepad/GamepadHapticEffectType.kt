@@ -6,14 +6,14 @@
 
 package web.gamepad
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface GamepadHapticEffectType {
-    companion object {
-        @JsValue("dual-rumble")
-        val dualRumble: GamepadHapticEffectType
-
-        @JsValue("trigger-rumble")
-        val triggerRumble: GamepadHapticEffectType
-    }
+    companion object
 }
+
+inline val GamepadHapticEffectType.Companion.dualRumble: GamepadHapticEffectType
+    get() = unsafeCast("dual-rumble")
+
+inline val GamepadHapticEffectType.Companion.triggerRumble: GamepadHapticEffectType
+    get() = unsafeCast("trigger-rumble")

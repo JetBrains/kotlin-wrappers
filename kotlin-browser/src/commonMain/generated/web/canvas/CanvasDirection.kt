@@ -6,17 +6,17 @@
 
 package web.canvas
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface CanvasDirection {
-    companion object {
-        @JsValue("inherit")
-        val inherit: CanvasDirection
-
-        @JsValue("ltr")
-        val ltr: CanvasDirection
-
-        @JsValue("rtl")
-        val rtl: CanvasDirection
-    }
+    companion object
 }
+
+inline val CanvasDirection.Companion.inherit: CanvasDirection
+    get() = unsafeCast("inherit")
+
+inline val CanvasDirection.Companion.ltr: CanvasDirection
+    get() = unsafeCast("ltr")
+
+inline val CanvasDirection.Companion.rtl: CanvasDirection
+    get() = unsafeCast("rtl")

@@ -6,14 +6,14 @@
 
 package js.intl
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface FormatMatcher {
-    companion object {
-        @JsValue("best fit")
-        val bestFit: FormatMatcher
-
-        @JsValue("basic")
-        val basic: FormatMatcher
-    }
+    companion object
 }
+
+inline val FormatMatcher.Companion.bestFit: FormatMatcher
+    get() = unsafeCast("best fit")
+
+inline val FormatMatcher.Companion.basic: FormatMatcher
+    get() = unsafeCast("basic")

@@ -6,74 +6,74 @@
 
 package web.html
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface InputType {
-    companion object {
-        @JsValue("button")
-        val button: InputType
-
-        @JsValue("checkbox")
-        val checkbox: InputType
-
-        @JsValue("color")
-        val color: InputType
-
-        @JsValue("date")
-        val date: InputType
-
-        @JsValue("datetime-local")
-        val datetimeLocal: InputType
-
-        @JsValue("email")
-        val email: InputType
-
-        @JsValue("file")
-        val file: InputType
-
-        @JsValue("hidden")
-        val hidden: InputType
-
-        @JsValue("image")
-        val image: InputType
-
-        @JsValue("month")
-        val month: InputType
-
-        @JsValue("number")
-        val number: InputType
-
-        @JsValue("password")
-        val password: InputType
-
-        @JsValue("radio")
-        val radio: InputType
-
-        @JsValue("range")
-        val range: InputType
-
-        @JsValue("reset")
-        val reset: InputType
-
-        @JsValue("search")
-        val search: InputType
-
-        @JsValue("submit")
-        val submit: InputType
-
-        @JsValue("tel")
-        val tel: InputType
-
-        @JsValue("text")
-        val text: InputType
-
-        @JsValue("time")
-        val time: InputType
-
-        @JsValue("url")
-        val url: InputType
-
-        @JsValue("week")
-        val week: InputType
-    }
+    companion object
 }
+
+inline val InputType.Companion.button: InputType
+    get() = unsafeCast("button")
+
+inline val InputType.Companion.checkbox: InputType
+    get() = unsafeCast("checkbox")
+
+inline val InputType.Companion.color: InputType
+    get() = unsafeCast("color")
+
+inline val InputType.Companion.date: InputType
+    get() = unsafeCast("date")
+
+inline val InputType.Companion.datetimeLocal: InputType
+    get() = unsafeCast("datetime-local")
+
+inline val InputType.Companion.email: InputType
+    get() = unsafeCast("email")
+
+inline val InputType.Companion.file: InputType
+    get() = unsafeCast("file")
+
+inline val InputType.Companion.hidden: InputType
+    get() = unsafeCast("hidden")
+
+inline val InputType.Companion.image: InputType
+    get() = unsafeCast("image")
+
+inline val InputType.Companion.month: InputType
+    get() = unsafeCast("month")
+
+inline val InputType.Companion.number: InputType
+    get() = unsafeCast("number")
+
+inline val InputType.Companion.password: InputType
+    get() = unsafeCast("password")
+
+inline val InputType.Companion.radio: InputType
+    get() = unsafeCast("radio")
+
+inline val InputType.Companion.range: InputType
+    get() = unsafeCast("range")
+
+inline val InputType.Companion.reset: InputType
+    get() = unsafeCast("reset")
+
+inline val InputType.Companion.search: InputType
+    get() = unsafeCast("search")
+
+inline val InputType.Companion.submit: InputType
+    get() = unsafeCast("submit")
+
+inline val InputType.Companion.tel: InputType
+    get() = unsafeCast("tel")
+
+inline val InputType.Companion.text: InputType
+    get() = unsafeCast("text")
+
+inline val InputType.Companion.time: InputType
+    get() = unsafeCast("time")
+
+inline val InputType.Companion.url: InputType
+    get() = unsafeCast("url")
+
+inline val InputType.Companion.week: InputType
+    get() = unsafeCast("week")

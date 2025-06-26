@@ -6,29 +6,29 @@
 
 package web.rtc
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface RTCErrorDetailType {
-    companion object {
-        @JsValue("data-channel-failure")
-        val dataChannelFailure: RTCErrorDetailType
-
-        @JsValue("dtls-failure")
-        val dtlsFailure: RTCErrorDetailType
-
-        @JsValue("fingerprint-failure")
-        val fingerprintFailure: RTCErrorDetailType
-
-        @JsValue("hardware-encoder-error")
-        val hardwareEncoderError: RTCErrorDetailType
-
-        @JsValue("hardware-encoder-not-available")
-        val hardwareEncoderNotAvailable: RTCErrorDetailType
-
-        @JsValue("sctp-failure")
-        val sctpFailure: RTCErrorDetailType
-
-        @JsValue("sdp-syntax-error")
-        val sdpSyntaxError: RTCErrorDetailType
-    }
+    companion object
 }
+
+inline val RTCErrorDetailType.Companion.dataChannelFailure: RTCErrorDetailType
+    get() = unsafeCast("data-channel-failure")
+
+inline val RTCErrorDetailType.Companion.dtlsFailure: RTCErrorDetailType
+    get() = unsafeCast("dtls-failure")
+
+inline val RTCErrorDetailType.Companion.fingerprintFailure: RTCErrorDetailType
+    get() = unsafeCast("fingerprint-failure")
+
+inline val RTCErrorDetailType.Companion.hardwareEncoderError: RTCErrorDetailType
+    get() = unsafeCast("hardware-encoder-error")
+
+inline val RTCErrorDetailType.Companion.hardwareEncoderNotAvailable: RTCErrorDetailType
+    get() = unsafeCast("hardware-encoder-not-available")
+
+inline val RTCErrorDetailType.Companion.sctpFailure: RTCErrorDetailType
+    get() = unsafeCast("sctp-failure")
+
+inline val RTCErrorDetailType.Companion.sdpSyntaxError: RTCErrorDetailType
+    get() = unsafeCast("sdp-syntax-error")

@@ -6,32 +6,32 @@
 
 package web.codecs
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface AudioSampleFormat {
-    companion object {
-        @JsValue("f32")
-        val f32: AudioSampleFormat
-
-        @JsValue("f32-planar")
-        val f32Planar: AudioSampleFormat
-
-        @JsValue("s16")
-        val s16: AudioSampleFormat
-
-        @JsValue("s16-planar")
-        val s16Planar: AudioSampleFormat
-
-        @JsValue("s32")
-        val s32: AudioSampleFormat
-
-        @JsValue("s32-planar")
-        val s32Planar: AudioSampleFormat
-
-        @JsValue("u8")
-        val u8: AudioSampleFormat
-
-        @JsValue("u8-planar")
-        val u8Planar: AudioSampleFormat
-    }
+    companion object
 }
+
+inline val AudioSampleFormat.Companion.f32: AudioSampleFormat
+    get() = unsafeCast("f32")
+
+inline val AudioSampleFormat.Companion.f32Planar: AudioSampleFormat
+    get() = unsafeCast("f32-planar")
+
+inline val AudioSampleFormat.Companion.s16: AudioSampleFormat
+    get() = unsafeCast("s16")
+
+inline val AudioSampleFormat.Companion.s16Planar: AudioSampleFormat
+    get() = unsafeCast("s16-planar")
+
+inline val AudioSampleFormat.Companion.s32: AudioSampleFormat
+    get() = unsafeCast("s32")
+
+inline val AudioSampleFormat.Companion.s32Planar: AudioSampleFormat
+    get() = unsafeCast("s32-planar")
+
+inline val AudioSampleFormat.Companion.u8: AudioSampleFormat
+    get() = unsafeCast("u8")
+
+inline val AudioSampleFormat.Companion.u8Planar: AudioSampleFormat
+    get() = unsafeCast("u8-planar")

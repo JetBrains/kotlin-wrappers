@@ -6,35 +6,35 @@
 
 package web.permissions
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface PermissionName {
-    companion object {
-        @JsValue("camera")
-        val camera: PermissionName
-
-        @JsValue("geolocation")
-        val geolocation: PermissionName
-
-        @JsValue("microphone")
-        val microphone: PermissionName
-
-        @JsValue("midi")
-        val midi: PermissionName
-
-        @JsValue("notifications")
-        val notifications: PermissionName
-
-        @JsValue("persistent-storage")
-        val persistentStorage: PermissionName
-
-        @JsValue("push")
-        val push: PermissionName
-
-        @JsValue("screen-wake-lock")
-        val screenWakeLock: PermissionName
-
-        @JsValue("storage-access")
-        val storageAccess: PermissionName
-    }
+    companion object
 }
+
+inline val PermissionName.Companion.camera: PermissionName
+    get() = unsafeCast("camera")
+
+inline val PermissionName.Companion.geolocation: PermissionName
+    get() = unsafeCast("geolocation")
+
+inline val PermissionName.Companion.microphone: PermissionName
+    get() = unsafeCast("microphone")
+
+inline val PermissionName.Companion.midi: PermissionName
+    get() = unsafeCast("midi")
+
+inline val PermissionName.Companion.notifications: PermissionName
+    get() = unsafeCast("notifications")
+
+inline val PermissionName.Companion.persistentStorage: PermissionName
+    get() = unsafeCast("persistent-storage")
+
+inline val PermissionName.Companion.push: PermissionName
+    get() = unsafeCast("push")
+
+inline val PermissionName.Companion.screenWakeLock: PermissionName
+    get() = unsafeCast("screen-wake-lock")
+
+inline val PermissionName.Companion.storageAccess: PermissionName
+    get() = unsafeCast("storage-access")

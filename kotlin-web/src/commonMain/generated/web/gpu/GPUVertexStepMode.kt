@@ -6,14 +6,14 @@
 
 package web.gpu
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface GPUVertexStepMode {
-    companion object {
-        @JsValue("instance")
-        val instance: GPUVertexStepMode
-
-        @JsValue("vertex")
-        val vertex: GPUVertexStepMode
-    }
+    companion object
 }
+
+inline val GPUVertexStepMode.Companion.instance: GPUVertexStepMode
+    get() = unsafeCast("instance")
+
+inline val GPUVertexStepMode.Companion.vertex: GPUVertexStepMode
+    get() = unsafeCast("vertex")

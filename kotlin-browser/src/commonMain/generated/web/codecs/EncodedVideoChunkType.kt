@@ -6,14 +6,14 @@
 
 package web.codecs
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface EncodedVideoChunkType {
-    companion object {
-        @JsValue("delta")
-        val delta: EncodedVideoChunkType
-
-        @JsValue("key")
-        val key: EncodedVideoChunkType
-    }
+    companion object
 }
+
+inline val EncodedVideoChunkType.Companion.delta: EncodedVideoChunkType
+    get() = unsafeCast("delta")
+
+inline val EncodedVideoChunkType.Companion.key: EncodedVideoChunkType
+    get() = unsafeCast("key")

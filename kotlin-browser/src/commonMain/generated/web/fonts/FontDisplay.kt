@@ -6,23 +6,23 @@
 
 package web.fonts
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface FontDisplay {
-    companion object {
-        @JsValue("auto")
-        val auto: FontDisplay
-
-        @JsValue("block")
-        val block: FontDisplay
-
-        @JsValue("fallback")
-        val fallback: FontDisplay
-
-        @JsValue("optional")
-        val optional: FontDisplay
-
-        @JsValue("swap")
-        val swap: FontDisplay
-    }
+    companion object
 }
+
+inline val FontDisplay.Companion.auto: FontDisplay
+    get() = unsafeCast("auto")
+
+inline val FontDisplay.Companion.block: FontDisplay
+    get() = unsafeCast("block")
+
+inline val FontDisplay.Companion.fallback: FontDisplay
+    get() = unsafeCast("fallback")
+
+inline val FontDisplay.Companion.optional: FontDisplay
+    get() = unsafeCast("optional")
+
+inline val FontDisplay.Companion.swap: FontDisplay
+    get() = unsafeCast("swap")

@@ -6,23 +6,23 @@
 
 package web.animations
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface FillMode {
-    companion object {
-        @JsValue("auto")
-        val auto: FillMode
-
-        @JsValue("backwards")
-        val backwards: FillMode
-
-        @JsValue("both")
-        val both: FillMode
-
-        @JsValue("forwards")
-        val forwards: FillMode
-
-        @JsValue("none")
-        val none: FillMode
-    }
+    companion object
 }
+
+inline val FillMode.Companion.auto: FillMode
+    get() = unsafeCast("auto")
+
+inline val FillMode.Companion.backwards: FillMode
+    get() = unsafeCast("backwards")
+
+inline val FillMode.Companion.both: FillMode
+    get() = unsafeCast("both")
+
+inline val FillMode.Companion.forwards: FillMode
+    get() = unsafeCast("forwards")
+
+inline val FillMode.Companion.none: FillMode
+    get() = unsafeCast("none")

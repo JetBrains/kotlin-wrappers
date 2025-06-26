@@ -6,14 +6,14 @@
 
 package web.workers
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface WorkerType {
-    companion object {
-        @JsValue("classic")
-        val classic: WorkerType
-
-        @JsValue("module")
-        val module: WorkerType
-    }
+    companion object
 }
+
+inline val WorkerType.Companion.classic: WorkerType
+    get() = unsafeCast("classic")
+
+inline val WorkerType.Companion.module: WorkerType
+    get() = unsafeCast("module")

@@ -6,20 +6,20 @@
 
 package web.codecs
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface VideoMatrixCoefficients {
-    companion object {
-        @JsValue("bt470bg")
-        val bt470bg: VideoMatrixCoefficients
-
-        @JsValue("bt709")
-        val bt709: VideoMatrixCoefficients
-
-        @JsValue("rgb")
-        val rgb: VideoMatrixCoefficients
-
-        @JsValue("smpte170m")
-        val smpte170m: VideoMatrixCoefficients
-    }
+    companion object
 }
+
+inline val VideoMatrixCoefficients.Companion.bt470bg: VideoMatrixCoefficients
+    get() = unsafeCast("bt470bg")
+
+inline val VideoMatrixCoefficients.Companion.bt709: VideoMatrixCoefficients
+    get() = unsafeCast("bt709")
+
+inline val VideoMatrixCoefficients.Companion.rgb: VideoMatrixCoefficients
+    get() = unsafeCast("rgb")
+
+inline val VideoMatrixCoefficients.Companion.smpte170m: VideoMatrixCoefficients
+    get() = unsafeCast("smpte170m")

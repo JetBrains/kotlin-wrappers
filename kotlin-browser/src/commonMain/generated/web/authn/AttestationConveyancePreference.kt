@@ -6,20 +6,20 @@
 
 package web.authn
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface AttestationConveyancePreference {
-    companion object {
-        @JsValue("direct")
-        val direct: AttestationConveyancePreference
-
-        @JsValue("enterprise")
-        val enterprise: AttestationConveyancePreference
-
-        @JsValue("indirect")
-        val indirect: AttestationConveyancePreference
-
-        @JsValue("none")
-        val none: AttestationConveyancePreference
-    }
+    companion object
 }
+
+inline val AttestationConveyancePreference.Companion.direct: AttestationConveyancePreference
+    get() = unsafeCast("direct")
+
+inline val AttestationConveyancePreference.Companion.enterprise: AttestationConveyancePreference
+    get() = unsafeCast("enterprise")
+
+inline val AttestationConveyancePreference.Companion.indirect: AttestationConveyancePreference
+    get() = unsafeCast("indirect")
+
+inline val AttestationConveyancePreference.Companion.none: AttestationConveyancePreference
+    get() = unsafeCast("none")

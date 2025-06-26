@@ -6,17 +6,17 @@
 
 package web.codecs
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface HardwareAcceleration {
-    companion object {
-        @JsValue("no-preference")
-        val noPreference: HardwareAcceleration
-
-        @JsValue("prefer-hardware")
-        val preferHardware: HardwareAcceleration
-
-        @JsValue("prefer-software")
-        val preferSoftware: HardwareAcceleration
-    }
+    companion object
 }
+
+inline val HardwareAcceleration.Companion.noPreference: HardwareAcceleration
+    get() = unsafeCast("no-preference")
+
+inline val HardwareAcceleration.Companion.preferHardware: HardwareAcceleration
+    get() = unsafeCast("prefer-hardware")
+
+inline val HardwareAcceleration.Companion.preferSoftware: HardwareAcceleration
+    get() = unsafeCast("prefer-software")

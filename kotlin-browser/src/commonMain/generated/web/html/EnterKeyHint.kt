@@ -6,29 +6,29 @@
 
 package web.html
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface EnterKeyHint {
-    companion object {
-        @JsValue("enter")
-        val enter: EnterKeyHint
-
-        @JsValue("done")
-        val done: EnterKeyHint
-
-        @JsValue("go")
-        val go: EnterKeyHint
-
-        @JsValue("next")
-        val next: EnterKeyHint
-
-        @JsValue("previous")
-        val previous: EnterKeyHint
-
-        @JsValue("search")
-        val search: EnterKeyHint
-
-        @JsValue("send")
-        val send: EnterKeyHint
-    }
+    companion object
 }
+
+inline val EnterKeyHint.Companion.enter: EnterKeyHint
+    get() = unsafeCast("enter")
+
+inline val EnterKeyHint.Companion.done: EnterKeyHint
+    get() = unsafeCast("done")
+
+inline val EnterKeyHint.Companion.go: EnterKeyHint
+    get() = unsafeCast("go")
+
+inline val EnterKeyHint.Companion.next: EnterKeyHint
+    get() = unsafeCast("next")
+
+inline val EnterKeyHint.Companion.previous: EnterKeyHint
+    get() = unsafeCast("previous")
+
+inline val EnterKeyHint.Companion.search: EnterKeyHint
+    get() = unsafeCast("search")
+
+inline val EnterKeyHint.Companion.send: EnterKeyHint
+    get() = unsafeCast("send")

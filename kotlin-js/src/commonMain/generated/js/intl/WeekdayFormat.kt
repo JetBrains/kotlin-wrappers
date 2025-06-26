@@ -6,17 +6,17 @@
 
 package js.intl
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface WeekdayFormat {
-    companion object {
-        @JsValue("long")
-        val long: WeekdayFormat
-
-        @JsValue("short")
-        val short: WeekdayFormat
-
-        @JsValue("narrow")
-        val narrow: WeekdayFormat
-    }
+    companion object
 }
+
+inline val WeekdayFormat.Companion.long: WeekdayFormat
+    get() = unsafeCast("long")
+
+inline val WeekdayFormat.Companion.short: WeekdayFormat
+    get() = unsafeCast("short")
+
+inline val WeekdayFormat.Companion.narrow: WeekdayFormat
+    get() = unsafeCast("narrow")

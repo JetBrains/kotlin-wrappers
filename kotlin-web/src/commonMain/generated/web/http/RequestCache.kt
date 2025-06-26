@@ -6,26 +6,26 @@
 
 package web.http
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface RequestCache {
-    companion object {
-        @JsValue("default")
-        val default: RequestCache
-
-        @JsValue("force-cache")
-        val forceCache: RequestCache
-
-        @JsValue("no-cache")
-        val noCache: RequestCache
-
-        @JsValue("no-store")
-        val noStore: RequestCache
-
-        @JsValue("only-if-cached")
-        val onlyIfCached: RequestCache
-
-        @JsValue("reload")
-        val reload: RequestCache
-    }
+    companion object
 }
+
+inline val RequestCache.Companion.default: RequestCache
+    get() = unsafeCast("default")
+
+inline val RequestCache.Companion.forceCache: RequestCache
+    get() = unsafeCast("force-cache")
+
+inline val RequestCache.Companion.noCache: RequestCache
+    get() = unsafeCast("no-cache")
+
+inline val RequestCache.Companion.noStore: RequestCache
+    get() = unsafeCast("no-store")
+
+inline val RequestCache.Companion.onlyIfCached: RequestCache
+    get() = unsafeCast("only-if-cached")
+
+inline val RequestCache.Companion.reload: RequestCache
+    get() = unsafeCast("reload")

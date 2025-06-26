@@ -6,14 +6,14 @@
 
 package web.mediacapabilities
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface MediaEncodingType {
-    companion object {
-        @JsValue("record")
-        val record: MediaEncodingType
-
-        @JsValue("webrtc")
-        val webrtc: MediaEncodingType
-    }
+    companion object
 }
+
+inline val MediaEncodingType.Companion.record: MediaEncodingType
+    get() = unsafeCast("record")
+
+inline val MediaEncodingType.Companion.webrtc: MediaEncodingType
+    get() = unsafeCast("webrtc")

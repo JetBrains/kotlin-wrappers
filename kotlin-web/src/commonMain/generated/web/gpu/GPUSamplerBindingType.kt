@@ -6,17 +6,17 @@
 
 package web.gpu
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface GPUSamplerBindingType {
-    companion object {
-        @JsValue("comparison")
-        val comparison: GPUSamplerBindingType
-
-        @JsValue("filtering")
-        val filtering: GPUSamplerBindingType
-
-        @JsValue("non-filtering")
-        val nonFiltering: GPUSamplerBindingType
-    }
+    companion object
 }
+
+inline val GPUSamplerBindingType.Companion.comparison: GPUSamplerBindingType
+    get() = unsafeCast("comparison")
+
+inline val GPUSamplerBindingType.Companion.filtering: GPUSamplerBindingType
+    get() = unsafeCast("filtering")
+
+inline val GPUSamplerBindingType.Companion.nonFiltering: GPUSamplerBindingType
+    get() = unsafeCast("non-filtering")

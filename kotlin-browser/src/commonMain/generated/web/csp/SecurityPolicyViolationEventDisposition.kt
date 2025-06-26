@@ -6,14 +6,14 @@
 
 package web.csp
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface SecurityPolicyViolationEventDisposition {
-    companion object {
-        @JsValue("enforce")
-        val enforce: SecurityPolicyViolationEventDisposition
-
-        @JsValue("report")
-        val report: SecurityPolicyViolationEventDisposition
-    }
+    companion object
 }
+
+inline val SecurityPolicyViolationEventDisposition.Companion.enforce: SecurityPolicyViolationEventDisposition
+    get() = unsafeCast("enforce")
+
+inline val SecurityPolicyViolationEventDisposition.Companion.report: SecurityPolicyViolationEventDisposition
+    get() = unsafeCast("report")

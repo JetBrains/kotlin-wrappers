@@ -6,17 +6,17 @@
 
 package js.intl
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface Granularity {
-    companion object {
-        @JsValue("grapheme")
-        val grapheme: Granularity
-
-        @JsValue("word")
-        val word: Granularity
-
-        @JsValue("sentence")
-        val sentence: Granularity
-    }
+    companion object
 }
+
+inline val Granularity.Companion.grapheme: Granularity
+    get() = unsafeCast("grapheme")
+
+inline val Granularity.Companion.word: Granularity
+    get() = unsafeCast("word")
+
+inline val Granularity.Companion.sentence: Granularity
+    get() = unsafeCast("sentence")

@@ -6,17 +6,17 @@
 
 package web.mediacapabilities
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface ColorGamut {
-    companion object {
-        @JsValue("p3")
-        val p3: ColorGamut
-
-        @JsValue("rec2020")
-        val rec2020: ColorGamut
-
-        @JsValue("srgb")
-        val srgb: ColorGamut
-    }
+    companion object
 }
+
+inline val ColorGamut.Companion.p3: ColorGamut
+    get() = unsafeCast("p3")
+
+inline val ColorGamut.Companion.rec2020: ColorGamut
+    get() = unsafeCast("rec2020")
+
+inline val ColorGamut.Companion.srgb: ColorGamut
+    get() = unsafeCast("srgb")

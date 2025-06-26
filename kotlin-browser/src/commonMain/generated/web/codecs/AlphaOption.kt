@@ -6,14 +6,14 @@
 
 package web.codecs
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface AlphaOption {
-    companion object {
-        @JsValue("discard")
-        val discard: AlphaOption
-
-        @JsValue("keep")
-        val keep: AlphaOption
-    }
+    companion object
 }
+
+inline val AlphaOption.Companion.discard: AlphaOption
+    get() = unsafeCast("discard")
+
+inline val AlphaOption.Companion.keep: AlphaOption
+    get() = unsafeCast("keep")

@@ -6,14 +6,14 @@
 
 package js.intl
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface CurrencySign {
-    companion object {
-        @JsValue("standard")
-        val standard: CurrencySign
-
-        @JsValue("accounting")
-        val accounting: CurrencySign
-    }
+    companion object
 }
+
+inline val CurrencySign.Companion.standard: CurrencySign
+    get() = unsafeCast("standard")
+
+inline val CurrencySign.Companion.accounting: CurrencySign
+    get() = unsafeCast("accounting")

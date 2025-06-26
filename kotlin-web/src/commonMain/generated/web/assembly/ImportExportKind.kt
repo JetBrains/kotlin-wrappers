@@ -6,20 +6,20 @@
 
 package web.assembly
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface ImportExportKind {
-    companion object {
-        @JsValue("function")
-        val function: ImportExportKind
-
-        @JsValue("global")
-        val global: ImportExportKind
-
-        @JsValue("memory")
-        val memory: ImportExportKind
-
-        @JsValue("table")
-        val table: ImportExportKind
-    }
+    companion object
 }
+
+inline val ImportExportKind.Companion.function: ImportExportKind
+    get() = unsafeCast("function")
+
+inline val ImportExportKind.Companion.global: ImportExportKind
+    get() = unsafeCast("global")
+
+inline val ImportExportKind.Companion.memory: ImportExportKind
+    get() = unsafeCast("memory")
+
+inline val ImportExportKind.Companion.table: ImportExportKind
+    get() = unsafeCast("table")
