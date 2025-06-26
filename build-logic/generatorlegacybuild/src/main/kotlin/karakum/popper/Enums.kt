@@ -1,7 +1,7 @@
 package karakum.popper
 
 import karakum.common.ConversionResult
-import karakum.common.sealedUnionBody
+import karakum.common.JsUnionConverter.sealedUnionBody
 
 internal fun enums(): Sequence<ConversionResult> =
     sequenceOf(

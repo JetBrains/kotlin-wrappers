@@ -1,9 +1,9 @@
 package karakum.csstype
 
 import karakum.common.ConversionResult
+import karakum.common.JsUnionConverter.sealedUnionBody
+import karakum.common.JsUnionConverter.unionBodyByConstants
 import karakum.common.UnionConstant
-import karakum.common.sealedUnionBody
-import karakum.common.unionBodyByConstants
 
 private const val AUTO_VALUE = "\"auto\""
 private const val NONE_VALUE = "\"none\""

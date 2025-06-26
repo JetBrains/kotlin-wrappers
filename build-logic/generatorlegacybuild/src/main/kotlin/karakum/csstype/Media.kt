@@ -1,9 +1,9 @@
 package karakum.csstype
 
 import karakum.common.ConversionResult
+import karakum.common.JsUnionConverter.sealedUnionBody
+import karakum.common.JsUnionConverter.unionBody
 import karakum.common.kebabToCamel
-import karakum.common.sealedUnionBody
-import karakum.common.unionBody
 
 private const val RESOLUTION = "Resolution"
 

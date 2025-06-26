@@ -1,7 +1,7 @@
 package karakum.csstype
 
 import karakum.common.ConversionResult
-import karakum.common.sealedUnionBody
+import karakum.common.JsUnionConverter.sealedUnionBody
 
 private const val AUTO_REPEAT = "AutoRepeat"
 private const val GRID_AUTO_TRACKS = "GridAutoTracks"

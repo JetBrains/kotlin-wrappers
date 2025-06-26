@@ -1,96 +1,111 @@
 package karakum.common
 
-internal fun unionBody(
-    name: String,
-    values: List<String>,
-): String {
-    val constants = values.map(::unionConstant)
+// Interface for TS unions conversion helpers
+internal interface UnionConverter {
+    fun unionBody(
+        name: String,
+        values: List<String>,
+    ): String {
+        val constants = values.map(::unionConstant)
 
-    return unionBodyByConstants(name, constants)
+        return unionBodyByConstants(name, constants)
+    }
+
+    fun unionBodyByConstants(name: String, constants: List<UnionConstant>): String
+
+    fun sealedUnionBody(name: String, values: List<String>): String
+
+    fun sealedUnionBody(name: String, parentType: String, values: List<String>): String
+
+    fun objectUnionBody(name: String, constants: List<UnionConstant>): String
 }
 
-internal fun unionBodyByConstants(
-    name: String,
-    constants: List<UnionConstant>,
-): String {
-    val constantNames = constants
-        .joinToString("\n") {
-            sequenceOf(
-                it.jsValueAnnotation,
-                "val ${it.name}: ${it.type ?: name}",
-            ).joinToString("\n")
-        }
+// Helpers converting TS unions to sealed external interfaces, which include fields annotated with @JsValue.
+// Generated interfaces are not supported in the WASM target.
+internal object JsUnionConverter : UnionConverter {
 
-    return """
+    override fun unionBodyByConstants(
+        name: String,
+        constants: List<UnionConstant>,
+    ): String {
+        val constantNames = constants
+            .joinToString("\n") {
+                sequenceOf(
+                    it.jsValueAnnotation,
+                    "val ${it.name}: ${it.type ?: name}",
+                ).joinToString("\n")
+            }
+
+        return """
                 sealed external interface $name {
             companion object {
             $constantNames
             }
         }
     """.trimIndent()
-}
+    }
 
-internal fun sealedUnionBody(
-    name: String,
-    values: List<String>,
-): String {
-    val constants = values.map(::unionConstant)
+    override fun sealedUnionBody(
+        name: String,
+        values: List<String>,
+    ): String {
+        val constants = values.map(::unionConstant)
 
-    val bodyMembers = constants.joinToString("\n") {
-        """
+        val bodyMembers = constants.joinToString("\n") {
+            """
         ${it.jsValueAnnotation}
         val ${it.name}: $name
         """.trimIndent()
-    }
+        }
 
-    return """
+        return """
                 sealed external interface $name {
             companion object {
                 $bodyMembers
             }
         }
     """.trimIndent()
-}
+    }
 
-internal fun sealedUnionBody(
-    name: String,
-    parentType: String,
-    values: List<String>,
-): String {
-    val constants = values.map(::unionConstant)
+    override fun sealedUnionBody(
+        name: String,
+        parentType: String,
+        values: List<String>,
+    ): String {
+        val constants = values.map(::unionConstant)
 
-    val bodyMembers = constants.joinToString("\n") {
-        """
+        val bodyMembers = constants.joinToString("\n") {
+            """
         ${it.jsValueAnnotation}
         val ${it.name}: $parentType.${it.name.replaceFirstChar(Char::uppercase)}
         """.trimIndent()
-    }
+        }
 
-    return """
+        return """
                 sealed external interface $name: $parentType {
             companion object {
                 $bodyMembers
             }
         }
     """.trimIndent()
-}
-
-internal fun objectUnionBody(
-    name: String,
-    constants: List<UnionConstant>,
-): String {
-    val constantNames = constants.joinToString("\n") {
-        sequenceOf(
-            it.jsValueAnnotation,
-            "val ${it.name} : ${name}.${it.name}",
-        ).joinToString("\n")
     }
 
-    val constantTypes = constants.joinToString("\n") {
-        "sealed interface ${it.name} : $name"
-    }
+    override fun objectUnionBody(
+        name: String,
+        constants: List<UnionConstant>,
+    ): String {
+        val constantNames = constants.joinToString("\n") {
+            sequenceOf(
+                it.jsValueAnnotation,
+                "val ${it.name} : ${name}.${it.name}",
+            ).joinToString("\n")
+        }
 
-    return """
+        val constantTypes = constants.joinToString("\n") {
+            "sealed interface ${it.name} : $name"
+        }
+
+        return """
                 sealed external interface $name {
             companion object {
                 $constantNames
@@ -99,6 +114,7 @@ internal fun objectUnionBody(
             $constantTypes
         }
     """.trimIndent()
+    }
 }
 
 internal data class UnionConstant(

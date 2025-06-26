@@ -1,7 +1,7 @@
 package karakum.browser
 
+import karakum.common.JsUnionConverter.unionBodyByConstants
 import karakum.common.UnionConstant
-import karakum.common.unionBodyByConstants
 import karakum.common.withDefaultLineBreaks
 
 private const val VALUE_TYPE = "ValueType"
@@ -90,6 +90,7 @@ private fun convertValueType(
                     "i32" -> "JsInt"
                     else -> error("No type parameter for '$name: $type'")
                 }
+
                 "bigint" -> "BigInt"
                 "never" -> "Void"
                 else -> error("No type parameter for type '$type'")

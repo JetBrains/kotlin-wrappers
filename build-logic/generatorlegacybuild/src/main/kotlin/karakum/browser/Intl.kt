@@ -1,6 +1,6 @@
 package karakum.browser
 
-import karakum.common.sealedUnionBody
+import karakum.common.JsUnionConverter.sealedUnionBody
 import karakum.common.withDefaultLineBreaks
 import java.io.File
 
@@ -183,7 +183,7 @@ private fun extractUnions(
         .distinct()
         .associate { it.groupValues[1] to it.groupValues[2].removeSuffix(" | undefined") }
 
-    val unionMap = (FORMAT_PROPERTIES + PROPERTIES).associate { propertyName ->
+    val unionMap = (FORMAT_PROPERTIES + PROPERTIES).associateWith { propertyName ->
         val values = unionRawMap.getValue(propertyName)
             .split(" | ")
             .map { it.removeSurrounding("\"") }
@@ -202,7 +202,7 @@ private fun extractUnions(
             pkg = "js.intl",
         )
 
-        propertyName to union
+        union
     }
 
     val newContent = unionMap.entries.fold(content) { acc, (propertyName, result) ->

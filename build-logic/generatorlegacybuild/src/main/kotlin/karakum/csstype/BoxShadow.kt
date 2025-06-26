@@ -1,6 +1,6 @@
 package karakum.csstype
 
-import karakum.common.sealedUnionBody
+import karakum.common.JsUnionConverter.sealedUnionBody
 
 internal const val BOX_SHADOW = "BoxShadow"
 internal const val BOX_SHADOW_INSET = "BoxShadowInset"
