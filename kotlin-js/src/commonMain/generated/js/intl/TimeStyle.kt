@@ -6,20 +6,20 @@
 
 package js.intl
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface TimeStyle {
-    companion object {
-        @JsValue("full")
-        val full: TimeStyle
-
-        @JsValue("long")
-        val long: TimeStyle
-
-        @JsValue("medium")
-        val medium: TimeStyle
-
-        @JsValue("short")
-        val short: TimeStyle
-    }
+    companion object
 }
+
+inline val TimeStyle.Companion.full: TimeStyle
+    get() = unsafeCast("full")
+
+inline val TimeStyle.Companion.long: TimeStyle
+    get() = unsafeCast("long")
+
+inline val TimeStyle.Companion.medium: TimeStyle
+    get() = unsafeCast("medium")
+
+inline val TimeStyle.Companion.short: TimeStyle
+    get() = unsafeCast("short")

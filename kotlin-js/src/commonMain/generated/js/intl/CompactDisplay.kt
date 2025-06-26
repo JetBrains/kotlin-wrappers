@@ -6,14 +6,14 @@
 
 package js.intl
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface CompactDisplay {
-    companion object {
-        @JsValue("short")
-        val short: CompactDisplay
-
-        @JsValue("long")
-        val long: CompactDisplay
-    }
+    companion object
 }
+
+inline val CompactDisplay.Companion.short: CompactDisplay
+    get() = unsafeCast("short")
+
+inline val CompactDisplay.Companion.long: CompactDisplay
+    get() = unsafeCast("long")

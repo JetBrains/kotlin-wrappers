@@ -6,23 +6,23 @@
 
 package web.parsing
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface DOMParserSupportedType {
-    companion object {
-        @JsValue("application/xhtml+xml")
-        val applicationXhtmlXml: DOMParserSupportedType
-
-        @JsValue("application/xml")
-        val applicationXml: DOMParserSupportedType
-
-        @JsValue("image/svg+xml")
-        val imageSvgXml: DOMParserSupportedType
-
-        @JsValue("text/html")
-        val textHtml: DOMParserSupportedType
-
-        @JsValue("text/xml")
-        val textXml: DOMParserSupportedType
-    }
+    companion object
 }
+
+inline val DOMParserSupportedType.Companion.applicationXhtmlXml: DOMParserSupportedType
+    get() = unsafeCast("applicationXhtmlXml")
+
+inline val DOMParserSupportedType.Companion.applicationXml: DOMParserSupportedType
+    get() = unsafeCast("applicationXml")
+
+inline val DOMParserSupportedType.Companion.imageSvgXml: DOMParserSupportedType
+    get() = unsafeCast("imageSvgXml")
+
+inline val DOMParserSupportedType.Companion.textHtml: DOMParserSupportedType
+    get() = unsafeCast("textHtml")
+
+inline val DOMParserSupportedType.Companion.textXml: DOMParserSupportedType
+    get() = unsafeCast("textXml")

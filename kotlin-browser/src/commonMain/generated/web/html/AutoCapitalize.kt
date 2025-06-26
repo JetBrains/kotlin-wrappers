@@ -6,26 +6,26 @@
 
 package web.html
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface AutoCapitalize {
-    companion object {
-        @JsValue("off")
-        val off: AutoCapitalize
-
-        @JsValue("none")
-        val none: AutoCapitalize
-
-        @JsValue("on")
-        val on: AutoCapitalize
-
-        @JsValue("sentences")
-        val sentences: AutoCapitalize
-
-        @JsValue("words")
-        val words: AutoCapitalize
-
-        @JsValue("characters")
-        val characters: AutoCapitalize
-    }
+    companion object
 }
+
+inline val AutoCapitalize.Companion.off: AutoCapitalize
+    get() = unsafeCast("off")
+
+inline val AutoCapitalize.Companion.none: AutoCapitalize
+    get() = unsafeCast("none")
+
+inline val AutoCapitalize.Companion.on: AutoCapitalize
+    get() = unsafeCast("on")
+
+inline val AutoCapitalize.Companion.sentences: AutoCapitalize
+    get() = unsafeCast("sentences")
+
+inline val AutoCapitalize.Companion.words: AutoCapitalize
+    get() = unsafeCast("words")
+
+inline val AutoCapitalize.Companion.characters: AutoCapitalize
+    get() = unsafeCast("characters")

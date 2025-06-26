@@ -1,7 +1,7 @@
 package karakum.browser
 
-import karakum.common.JsUnionConverter.objectUnionBody
-import karakum.common.JsUnionConverter.sealedUnionBody
+import karakum.common.CommonUnionConverter.objectUnionBody
+import karakum.common.CommonUnionConverter.sealedUnionBody
 import karakum.common.unionConstant
 
 private val PKG_MAP = mapOf(

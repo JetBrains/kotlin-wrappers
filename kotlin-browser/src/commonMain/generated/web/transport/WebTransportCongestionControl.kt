@@ -6,17 +6,17 @@
 
 package web.transport
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface WebTransportCongestionControl {
-    companion object {
-        @JsValue("default")
-        val default: WebTransportCongestionControl
-
-        @JsValue("low-latency")
-        val lowLatency: WebTransportCongestionControl
-
-        @JsValue("throughput")
-        val throughput: WebTransportCongestionControl
-    }
+    companion object
 }
+
+inline val WebTransportCongestionControl.Companion.default: WebTransportCongestionControl
+    get() = unsafeCast("default")
+
+inline val WebTransportCongestionControl.Companion.lowLatency: WebTransportCongestionControl
+    get() = unsafeCast("lowLatency")
+
+inline val WebTransportCongestionControl.Companion.throughput: WebTransportCongestionControl
+    get() = unsafeCast("throughput")

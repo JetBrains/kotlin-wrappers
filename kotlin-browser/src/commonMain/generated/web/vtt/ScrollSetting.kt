@@ -6,14 +6,14 @@
 
 package web.vtt
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface ScrollSetting {
-    companion object {
-        @JsValue("")
-        val none: ScrollSetting
-
-        @JsValue("up")
-        val up: ScrollSetting
-    }
+    companion object
 }
+
+inline val ScrollSetting.Companion.none: ScrollSetting
+    get() = unsafeCast("none")
+
+inline val ScrollSetting.Companion.up: ScrollSetting
+    get() = unsafeCast("up")

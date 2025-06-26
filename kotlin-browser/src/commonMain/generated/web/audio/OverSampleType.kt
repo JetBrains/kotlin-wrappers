@@ -6,17 +6,17 @@
 
 package web.audio
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface OverSampleType {
-    companion object {
-        @JsValue("2x")
-        val x2: OverSampleType
-
-        @JsValue("4x")
-        val x4: OverSampleType
-
-        @JsValue("none")
-        val none: OverSampleType
-    }
+    companion object
 }
+
+inline val OverSampleType.Companion.x2: OverSampleType
+    get() = unsafeCast("x2")
+
+inline val OverSampleType.Companion.x4: OverSampleType
+    get() = unsafeCast("x4")
+
+inline val OverSampleType.Companion.none: OverSampleType
+    get() = unsafeCast("none")

@@ -40,8 +40,8 @@ internal object RenderingContextRegistry {
             ?: return null
 
         return """
-        @JsValue("${data.id}")
-        val ID: $RENDERING_CONTEXT_ID<${data.type}, ${data.options}>
+        inline val $name.Companion.ID: $RENDERING_CONTEXT_ID<${data.type}, ${data.options}>
+            get() = unsafeCast("${data.id}")
         """.trimIndent()
     }
 }

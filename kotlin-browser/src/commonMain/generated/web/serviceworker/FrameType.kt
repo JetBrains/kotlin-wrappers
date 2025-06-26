@@ -6,20 +6,20 @@
 
 package web.serviceworker
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface FrameType {
-    companion object {
-        @JsValue("auxiliary")
-        val auxiliary: FrameType
-
-        @JsValue("nested")
-        val nested: FrameType
-
-        @JsValue("none")
-        val none: FrameType
-
-        @JsValue("top-level")
-        val topLevel: FrameType
-    }
+    companion object
 }
+
+inline val FrameType.Companion.auxiliary: FrameType
+    get() = unsafeCast("auxiliary")
+
+inline val FrameType.Companion.nested: FrameType
+    get() = unsafeCast("nested")
+
+inline val FrameType.Companion.none: FrameType
+    get() = unsafeCast("none")
+
+inline val FrameType.Companion.topLevel: FrameType
+    get() = unsafeCast("topLevel")

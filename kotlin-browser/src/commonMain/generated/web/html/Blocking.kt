@@ -6,11 +6,11 @@
 
 package web.html
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface Blocking {
-    companion object {
-        @JsValue("render")
-        val render: Blocking
-    }
+    companion object
 }
+
+inline val Blocking.Companion.render: Blocking
+    get() = unsafeCast("render")

@@ -6,14 +6,14 @@
 
 package web.form
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface FormStateRestoreMode {
-    companion object {
-        @JsValue("restore")
-        val restore: FormStateRestoreMode
-
-        @JsValue("autocomplete")
-        val autocomplete: FormStateRestoreMode
-    }
+    companion object
 }
+
+inline val FormStateRestoreMode.Companion.restore: FormStateRestoreMode
+    get() = unsafeCast("restore")
+
+inline val FormStateRestoreMode.Companion.autocomplete: FormStateRestoreMode
+    get() = unsafeCast("autocomplete")

@@ -6,17 +6,17 @@
 
 package web.codecs
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface VideoTransferCharacteristics {
-    companion object {
-        @JsValue("bt709")
-        val bt709: VideoTransferCharacteristics
-
-        @JsValue("iec61966-2-1")
-        val iec6196621: VideoTransferCharacteristics
-
-        @JsValue("smpte170m")
-        val smpte170m: VideoTransferCharacteristics
-    }
+    companion object
 }
+
+inline val VideoTransferCharacteristics.Companion.bt709: VideoTransferCharacteristics
+    get() = unsafeCast("bt709")
+
+inline val VideoTransferCharacteristics.Companion.iec6196621: VideoTransferCharacteristics
+    get() = unsafeCast("iec6196621")
+
+inline val VideoTransferCharacteristics.Companion.smpte170m: VideoTransferCharacteristics
+    get() = unsafeCast("smpte170m")

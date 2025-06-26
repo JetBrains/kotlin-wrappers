@@ -6,14 +6,14 @@
 
 package web.authn
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface AuthenticatorAttachment {
-    companion object {
-        @JsValue("cross-platform")
-        val crossPlatform: AuthenticatorAttachment
-
-        @JsValue("platform")
-        val platform: AuthenticatorAttachment
-    }
+    companion object
 }
+
+inline val AuthenticatorAttachment.Companion.crossPlatform: AuthenticatorAttachment
+    get() = unsafeCast("crossPlatform")
+
+inline val AuthenticatorAttachment.Companion.platform: AuthenticatorAttachment
+    get() = unsafeCast("platform")

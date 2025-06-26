@@ -6,20 +6,20 @@
 
 package web.screen
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface OrientationType {
-    companion object {
-        @JsValue("landscape-primary")
-        val landscapePrimary: OrientationType
-
-        @JsValue("landscape-secondary")
-        val landscapeSecondary: OrientationType
-
-        @JsValue("portrait-primary")
-        val portraitPrimary: OrientationType
-
-        @JsValue("portrait-secondary")
-        val portraitSecondary: OrientationType
-    }
+    companion object
 }
+
+inline val OrientationType.Companion.landscapePrimary: OrientationType
+    get() = unsafeCast("landscapePrimary")
+
+inline val OrientationType.Companion.landscapeSecondary: OrientationType
+    get() = unsafeCast("landscapeSecondary")
+
+inline val OrientationType.Companion.portraitPrimary: OrientationType
+    get() = unsafeCast("portraitPrimary")
+
+inline val OrientationType.Companion.portraitSecondary: OrientationType
+    get() = unsafeCast("portraitSecondary")

@@ -6,20 +6,20 @@
 
 package web.form
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface FormEncType {
-    companion object {
-        @JsValue("application/x-www-form-urlencoded")
-        val applicationXWwwFormUrlencoded: FormEncType
-
-        @JsValue("multipart/form-data")
-        val multipartFormData: FormEncType
-
-        @JsValue("application/json")
-        val applicationJson: FormEncType
-
-        @JsValue("text/plain")
-        val textPlain: FormEncType
-    }
+    companion object
 }
+
+inline val FormEncType.Companion.applicationXWwwFormUrlencoded: FormEncType
+    get() = unsafeCast("applicationXWwwFormUrlencoded")
+
+inline val FormEncType.Companion.multipartFormData: FormEncType
+    get() = unsafeCast("multipartFormData")
+
+inline val FormEncType.Companion.applicationJson: FormEncType
+    get() = unsafeCast("applicationJson")
+
+inline val FormEncType.Companion.textPlain: FormEncType
+    get() = unsafeCast("textPlain")

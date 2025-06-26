@@ -6,20 +6,20 @@
 
 package web.rtc
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface RTCSdpType {
-    companion object {
-        @JsValue("answer")
-        val answer: RTCSdpType
-
-        @JsValue("offer")
-        val offer: RTCSdpType
-
-        @JsValue("pranswer")
-        val pranswer: RTCSdpType
-
-        @JsValue("rollback")
-        val rollback: RTCSdpType
-    }
+    companion object
 }
+
+inline val RTCSdpType.Companion.answer: RTCSdpType
+    get() = unsafeCast("answer")
+
+inline val RTCSdpType.Companion.offer: RTCSdpType
+    get() = unsafeCast("offer")
+
+inline val RTCSdpType.Companion.pranswer: RTCSdpType
+    get() = unsafeCast("pranswer")
+
+inline val RTCSdpType.Companion.rollback: RTCSdpType
+    get() = unsafeCast("rollback")

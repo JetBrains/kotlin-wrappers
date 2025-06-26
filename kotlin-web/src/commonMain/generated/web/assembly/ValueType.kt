@@ -8,29 +8,29 @@ package web.assembly
 
 import js.core.*
 import js.function.JsFunction
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface ValueType<T : JsAny?> {
-    companion object {
-        @JsValue("anyfunc")
-        val anyfunc: ValueType<JsFunction<*, *>>
-
-        @JsValue("externref")
-        val externref: ValueType<JsAny?>
-
-        @JsValue("f32")
-        val f32: ValueType<JsFloat>
-
-        @JsValue("f64")
-        val f64: ValueType<JsDouble>
-
-        @JsValue("i32")
-        val i32: ValueType<JsInt>
-
-        @JsValue("i64")
-        val i64: ValueType<BigInt>
-
-        @JsValue("v128")
-        val v128: ValueType<Void>
-    }
+    companion object
 }
+
+inline val ValueType.Companion.anyfunc: ValueType<JsFunction<*, *>>
+    get() = unsafeCast("anyfunc")
+
+inline val ValueType.Companion.externref: ValueType<JsAny?>
+    get() = unsafeCast("externref")
+
+inline val ValueType.Companion.f32: ValueType<JsFloat>
+    get() = unsafeCast("f32")
+
+inline val ValueType.Companion.f64: ValueType<JsDouble>
+    get() = unsafeCast("f64")
+
+inline val ValueType.Companion.i32: ValueType<JsInt>
+    get() = unsafeCast("i32")
+
+inline val ValueType.Companion.i64: ValueType<BigInt>
+    get() = unsafeCast("i64")
+
+inline val ValueType.Companion.v128: ValueType<Void>
+    get() = unsafeCast("v128")

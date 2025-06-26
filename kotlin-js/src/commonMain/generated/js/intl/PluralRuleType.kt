@@ -6,14 +6,14 @@
 
 package js.intl
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface PluralRuleType {
-    companion object {
-        @JsValue("cardinal")
-        val cardinal: PluralRuleType
-
-        @JsValue("ordinal")
-        val ordinal: PluralRuleType
-    }
+    companion object
 }
+
+inline val PluralRuleType.Companion.cardinal: PluralRuleType
+    get() = unsafeCast("cardinal")
+
+inline val PluralRuleType.Companion.ordinal: PluralRuleType
+    get() = unsafeCast("ordinal")

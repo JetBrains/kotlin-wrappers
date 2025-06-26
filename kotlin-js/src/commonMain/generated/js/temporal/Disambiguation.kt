@@ -6,20 +6,20 @@
 
 package js.temporal
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface Disambiguation {
-    companion object {
-        @JsValue("compatible")
-        val compatible: Disambiguation
-
-        @JsValue("earlier")
-        val earlier: Disambiguation
-
-        @JsValue("later")
-        val later: Disambiguation
-
-        @JsValue("reject")
-        val reject: Disambiguation
-    }
+    companion object
 }
+
+inline val Disambiguation.Companion.compatible: Disambiguation
+    get() = unsafeCast("compatible")
+
+inline val Disambiguation.Companion.earlier: Disambiguation
+    get() = unsafeCast("earlier")
+
+inline val Disambiguation.Companion.later: Disambiguation
+    get() = unsafeCast("later")
+
+inline val Disambiguation.Companion.reject: Disambiguation
+    get() = unsafeCast("reject")

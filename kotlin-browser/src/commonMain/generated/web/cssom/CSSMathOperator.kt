@@ -6,29 +6,29 @@
 
 package web.cssom
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface CSSMathOperator {
-    companion object {
-        @JsValue("clamp")
-        val clamp: CSSMathOperator
-
-        @JsValue("invert")
-        val invert: CSSMathOperator
-
-        @JsValue("max")
-        val max: CSSMathOperator
-
-        @JsValue("min")
-        val min: CSSMathOperator
-
-        @JsValue("negate")
-        val negate: CSSMathOperator
-
-        @JsValue("product")
-        val product: CSSMathOperator
-
-        @JsValue("sum")
-        val sum: CSSMathOperator
-    }
+    companion object
 }
+
+inline val CSSMathOperator.Companion.clamp: CSSMathOperator
+    get() = unsafeCast("clamp")
+
+inline val CSSMathOperator.Companion.invert: CSSMathOperator
+    get() = unsafeCast("invert")
+
+inline val CSSMathOperator.Companion.max: CSSMathOperator
+    get() = unsafeCast("max")
+
+inline val CSSMathOperator.Companion.min: CSSMathOperator
+    get() = unsafeCast("min")
+
+inline val CSSMathOperator.Companion.negate: CSSMathOperator
+    get() = unsafeCast("negate")
+
+inline val CSSMathOperator.Companion.product: CSSMathOperator
+    get() = unsafeCast("product")
+
+inline val CSSMathOperator.Companion.sum: CSSMathOperator
+    get() = unsafeCast("sum")

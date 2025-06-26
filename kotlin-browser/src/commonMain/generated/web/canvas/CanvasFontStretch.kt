@@ -6,35 +6,35 @@
 
 package web.canvas
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface CanvasFontStretch {
-    companion object {
-        @JsValue("condensed")
-        val condensed: CanvasFontStretch
-
-        @JsValue("expanded")
-        val expanded: CanvasFontStretch
-
-        @JsValue("extra-condensed")
-        val extraCondensed: CanvasFontStretch
-
-        @JsValue("extra-expanded")
-        val extraExpanded: CanvasFontStretch
-
-        @JsValue("normal")
-        val normal: CanvasFontStretch
-
-        @JsValue("semi-condensed")
-        val semiCondensed: CanvasFontStretch
-
-        @JsValue("semi-expanded")
-        val semiExpanded: CanvasFontStretch
-
-        @JsValue("ultra-condensed")
-        val ultraCondensed: CanvasFontStretch
-
-        @JsValue("ultra-expanded")
-        val ultraExpanded: CanvasFontStretch
-    }
+    companion object
 }
+
+inline val CanvasFontStretch.Companion.condensed: CanvasFontStretch
+    get() = unsafeCast("condensed")
+
+inline val CanvasFontStretch.Companion.expanded: CanvasFontStretch
+    get() = unsafeCast("expanded")
+
+inline val CanvasFontStretch.Companion.extraCondensed: CanvasFontStretch
+    get() = unsafeCast("extraCondensed")
+
+inline val CanvasFontStretch.Companion.extraExpanded: CanvasFontStretch
+    get() = unsafeCast("extraExpanded")
+
+inline val CanvasFontStretch.Companion.normal: CanvasFontStretch
+    get() = unsafeCast("normal")
+
+inline val CanvasFontStretch.Companion.semiCondensed: CanvasFontStretch
+    get() = unsafeCast("semiCondensed")
+
+inline val CanvasFontStretch.Companion.semiExpanded: CanvasFontStretch
+    get() = unsafeCast("semiExpanded")
+
+inline val CanvasFontStretch.Companion.ultraCondensed: CanvasFontStretch
+    get() = unsafeCast("ultraCondensed")
+
+inline val CanvasFontStretch.Companion.ultraExpanded: CanvasFontStretch
+    get() = unsafeCast("ultraExpanded")

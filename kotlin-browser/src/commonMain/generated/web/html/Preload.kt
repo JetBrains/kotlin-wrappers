@@ -6,17 +6,17 @@
 
 package web.html
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface Preload {
-    companion object {
-        @JsValue("none")
-        val none: Preload
-
-        @JsValue("metadata")
-        val metadata: Preload
-
-        @JsValue("auto")
-        val auto: Preload
-    }
+    companion object
 }
+
+inline val Preload.Companion.none: Preload
+    get() = unsafeCast("none")
+
+inline val Preload.Companion.metadata: Preload
+    get() = unsafeCast("metadata")
+
+inline val Preload.Companion.auto: Preload
+    get() = unsafeCast("auto")

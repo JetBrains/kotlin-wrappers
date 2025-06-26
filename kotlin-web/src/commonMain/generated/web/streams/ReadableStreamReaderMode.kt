@@ -6,11 +6,11 @@
 
 package web.streams
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface ReadableStreamReaderMode {
-    companion object {
-        @JsValue("byob")
-        val byob: ReadableStreamReaderMode
-    }
+    companion object
 }
+
+inline val ReadableStreamReaderMode.Companion.byob: ReadableStreamReaderMode
+    get() = unsafeCast("byob")

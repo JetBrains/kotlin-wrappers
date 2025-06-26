@@ -6,17 +6,17 @@
 
 package web.gamepad
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface GamepadMappingType {
-    companion object {
-        @JsValue("")
-        val none: GamepadMappingType
-
-        @JsValue("standard")
-        val standard: GamepadMappingType
-
-        @JsValue("xr-standard")
-        val xrStandard: GamepadMappingType
-    }
+    companion object
 }
+
+inline val GamepadMappingType.Companion.none: GamepadMappingType
+    get() = unsafeCast("none")
+
+inline val GamepadMappingType.Companion.standard: GamepadMappingType
+    get() = unsafeCast("standard")
+
+inline val GamepadMappingType.Companion.xrStandard: GamepadMappingType
+    get() = unsafeCast("xrStandard")

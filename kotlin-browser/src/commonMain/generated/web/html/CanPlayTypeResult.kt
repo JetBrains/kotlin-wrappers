@@ -6,17 +6,17 @@
 
 package web.html
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface CanPlayTypeResult {
-    companion object {
-        @JsValue("")
-        val none: CanPlayTypeResult
-
-        @JsValue("maybe")
-        val maybe: CanPlayTypeResult
-
-        @JsValue("probably")
-        val probably: CanPlayTypeResult
-    }
+    companion object
 }
+
+inline val CanPlayTypeResult.Companion.none: CanPlayTypeResult
+    get() = unsafeCast("none")
+
+inline val CanPlayTypeResult.Companion.maybe: CanPlayTypeResult
+    get() = unsafeCast("maybe")
+
+inline val CanPlayTypeResult.Companion.probably: CanPlayTypeResult
+    get() = unsafeCast("probably")

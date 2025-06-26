@@ -1,6 +1,6 @@
 package karakum.browser
 
-import karakum.common.JsUnionConverter.objectUnionBody
+import karakum.common.CommonUnionConverter.objectUnionBody
 import karakum.common.unionConstant
 import karakum.common.unionName
 import karakum.common.withDefaultLineBreaks

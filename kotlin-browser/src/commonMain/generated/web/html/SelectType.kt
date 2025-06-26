@@ -6,14 +6,14 @@
 
 package web.html
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface SelectType {
-    companion object {
-        @JsValue("select-one")
-        val selectOne: SelectType
-
-        @JsValue("select-multiple")
-        val selectMultiple: SelectType
-    }
+    companion object
 }
+
+inline val SelectType.Companion.selectOne: SelectType
+    get() = unsafeCast("selectOne")
+
+inline val SelectType.Companion.selectMultiple: SelectType
+    get() = unsafeCast("selectMultiple")

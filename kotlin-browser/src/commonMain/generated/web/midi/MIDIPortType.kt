@@ -6,14 +6,14 @@
 
 package web.midi
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface MIDIPortType {
-    companion object {
-        @JsValue("input")
-        val input: MIDIPortType
-
-        @JsValue("output")
-        val output: MIDIPortType
-    }
+    companion object
 }
+
+inline val MIDIPortType.Companion.input: MIDIPortType
+    get() = unsafeCast("input")
+
+inline val MIDIPortType.Companion.output: MIDIPortType
+    get() = unsafeCast("output")

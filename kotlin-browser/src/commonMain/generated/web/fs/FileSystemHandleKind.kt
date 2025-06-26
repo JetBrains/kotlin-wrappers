@@ -6,17 +6,17 @@
 
 package web.fs
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface FileSystemHandleKind {
-    companion object {
-        @JsValue("directory")
-        val directory: directory
-
-        @JsValue("file")
-        val file: file
-    }
-
     sealed interface directory : FileSystemHandleKind
     sealed interface file : FileSystemHandleKind
+
+    companion object
 }
+
+inline val FileSystemHandleKind.Companion.directory: FileSystemHandleKind.directory
+    get() = unsafeCast("directory")
+
+inline val FileSystemHandleKind.Companion.file: FileSystemHandleKind.file
+    get() = unsafeCast("file")

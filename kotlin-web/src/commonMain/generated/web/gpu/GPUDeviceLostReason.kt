@@ -6,14 +6,14 @@
 
 package web.gpu
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface GPUDeviceLostReason {
-    companion object {
-        @JsValue("destroyed")
-        val destroyed: GPUDeviceLostReason
-
-        @JsValue("unknown")
-        val unknown: GPUDeviceLostReason
-    }
+    companion object
 }
+
+inline val GPUDeviceLostReason.Companion.destroyed: GPUDeviceLostReason
+    get() = unsafeCast("destroyed")
+
+inline val GPUDeviceLostReason.Companion.unknown: GPUDeviceLostReason
+    get() = unsafeCast("unknown")

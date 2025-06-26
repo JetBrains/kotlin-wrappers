@@ -6,17 +6,17 @@
 
 package web.cookie
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface CookieSameSite {
-    companion object {
-        @JsValue("lax")
-        val lax: CookieSameSite
-
-        @JsValue("none")
-        val none: CookieSameSite
-
-        @JsValue("strict")
-        val strict: CookieSameSite
-    }
+    companion object
 }
+
+inline val CookieSameSite.Companion.lax: CookieSameSite
+    get() = unsafeCast("lax")
+
+inline val CookieSameSite.Companion.none: CookieSameSite
+    get() = unsafeCast("none")
+
+inline val CookieSameSite.Companion.strict: CookieSameSite
+    get() = unsafeCast("strict")

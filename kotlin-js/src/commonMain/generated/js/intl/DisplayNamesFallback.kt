@@ -6,14 +6,14 @@
 
 package js.intl
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface DisplayNamesFallback {
-    companion object {
-        @JsValue("code")
-        val code: DisplayNamesFallback
-
-        @JsValue("none")
-        val none: DisplayNamesFallback
-    }
+    companion object
 }
+
+inline val DisplayNamesFallback.Companion.code: DisplayNamesFallback
+    get() = unsafeCast("code")
+
+inline val DisplayNamesFallback.Companion.none: DisplayNamesFallback
+    get() = unsafeCast("none")

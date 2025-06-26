@@ -6,14 +6,14 @@
 
 package web.gpu
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface GPULoadOp {
-    companion object {
-        @JsValue("clear")
-        val clear: GPULoadOp
-
-        @JsValue("load")
-        val load: GPULoadOp
-    }
+    companion object
 }
+
+inline val GPULoadOp.Companion.clear: GPULoadOp
+    get() = unsafeCast("clear")
+
+inline val GPULoadOp.Companion.load: GPULoadOp
+    get() = unsafeCast("load")

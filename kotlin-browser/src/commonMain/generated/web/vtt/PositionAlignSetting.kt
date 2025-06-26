@@ -6,20 +6,20 @@
 
 package web.vtt
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface PositionAlignSetting {
-    companion object {
-        @JsValue("auto")
-        val auto: PositionAlignSetting
-
-        @JsValue("center")
-        val center: PositionAlignSetting
-
-        @JsValue("line-left")
-        val lineLeft: PositionAlignSetting
-
-        @JsValue("line-right")
-        val lineRight: PositionAlignSetting
-    }
+    companion object
 }
+
+inline val PositionAlignSetting.Companion.auto: PositionAlignSetting
+    get() = unsafeCast("auto")
+
+inline val PositionAlignSetting.Companion.center: PositionAlignSetting
+    get() = unsafeCast("center")
+
+inline val PositionAlignSetting.Companion.lineLeft: PositionAlignSetting
+    get() = unsafeCast("lineLeft")
+
+inline val PositionAlignSetting.Companion.lineRight: PositionAlignSetting
+    get() = unsafeCast("lineRight")

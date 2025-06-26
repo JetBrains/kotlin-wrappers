@@ -6,14 +6,14 @@
 
 package web.html
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface Loading {
-    companion object {
-        @JsValue("eager")
-        val eager: Loading
-
-        @JsValue("lazy")
-        val lazy: Loading
-    }
+    companion object
 }
+
+inline val Loading.Companion.eager: Loading
+    get() = unsafeCast("eager")
+
+inline val Loading.Companion.lazy: Loading
+    get() = unsafeCast("lazy")

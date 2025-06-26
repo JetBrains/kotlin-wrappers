@@ -6,14 +6,14 @@
 
 package web.audio
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface PanningModelType {
-    companion object {
-        @JsValue("HRTF")
-        val HRTF: PanningModelType
-
-        @JsValue("equalpower")
-        val equalpower: PanningModelType
-    }
+    companion object
 }
+
+inline val PanningModelType.Companion.HRTF: PanningModelType
+    get() = unsafeCast("HRTF")
+
+inline val PanningModelType.Companion.equalpower: PanningModelType
+    get() = unsafeCast("equalpower")

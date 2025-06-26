@@ -6,17 +6,17 @@
 
 package web.highlight
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface HighlightType {
-    companion object {
-        @JsValue("grammar-error")
-        val grammarError: HighlightType
-
-        @JsValue("highlight")
-        val highlight: HighlightType
-
-        @JsValue("spelling-error")
-        val spellingError: HighlightType
-    }
+    companion object
 }
+
+inline val HighlightType.Companion.grammarError: HighlightType
+    get() = unsafeCast("grammarError")
+
+inline val HighlightType.Companion.highlight: HighlightType
+    get() = unsafeCast("highlight")
+
+inline val HighlightType.Companion.spellingError: HighlightType
+    get() = unsafeCast("spellingError")

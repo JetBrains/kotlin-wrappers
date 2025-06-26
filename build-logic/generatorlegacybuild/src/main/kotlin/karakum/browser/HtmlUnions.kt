@@ -1,6 +1,6 @@
 package karakum.browser
 
-import karakum.common.JsUnionConverter.sealedUnionBody
+import karakum.common.CommonUnionConverter.sealedUnionBody
 
 internal const val AUTO_CAPITALIZE = "AutoCapitalize"
 internal const val BLOCKING = "Blocking"

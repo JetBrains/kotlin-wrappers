@@ -6,14 +6,14 @@
 
 package js.temporal
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface Overflow {
-    companion object {
-        @JsValue("constrain")
-        val constrain: Overflow
-
-        @JsValue("reject")
-        val reject: Overflow
-    }
+    companion object
 }
+
+inline val Overflow.Companion.constrain: Overflow
+    get() = unsafeCast("constrain")
+
+inline val Overflow.Companion.reject: Overflow
+    get() = unsafeCast("reject")

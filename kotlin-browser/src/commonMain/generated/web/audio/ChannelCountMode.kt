@@ -6,17 +6,17 @@
 
 package web.audio
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface ChannelCountMode {
-    companion object {
-        @JsValue("clamped-max")
-        val clampedMax: ChannelCountMode
-
-        @JsValue("explicit")
-        val explicit: ChannelCountMode
-
-        @JsValue("max")
-        val max: ChannelCountMode
-    }
+    companion object
 }
+
+inline val ChannelCountMode.Companion.clampedMax: ChannelCountMode
+    get() = unsafeCast("clampedMax")
+
+inline val ChannelCountMode.Companion.explicit: ChannelCountMode
+    get() = unsafeCast("explicit")
+
+inline val ChannelCountMode.Companion.max: ChannelCountMode
+    get() = unsafeCast("max")

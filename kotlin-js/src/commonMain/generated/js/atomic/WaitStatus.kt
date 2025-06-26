@@ -6,26 +6,24 @@
 
 package js.atomic
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface WaitStatus {
-
-    companion object {
-
-        @JsValue("ok")
-        val ok: ok
-
-        @JsValue("not-equal")
-        val notEqual: notEqual
-
-        @JsValue("timed-out")
-        val timedOut: timedOut
-    }
-
     sealed interface ok : WaitAsyncStatus
     sealed interface notEqual : WaitSyncStatus
     sealed interface timedOut : WaitAsyncStatus, WaitSyncStatus
+
+    companion object
 }
+
+inline val WaitStatus.Companion.ok: WaitStatus.ok
+    get() = unsafeCast("ok")
+
+inline val WaitStatus.Companion.notEqual: WaitStatus.notEqual
+    get() = unsafeCast("not-equal")
+
+inline val WaitStatus.Companion.timedOut: WaitStatus.timedOut
+    get() = unsafeCast("timed-out")
 
 sealed external interface WaitAsyncStatus : WaitStatus
 sealed external interface WaitSyncStatus : WaitStatus

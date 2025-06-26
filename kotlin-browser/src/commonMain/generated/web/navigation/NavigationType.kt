@@ -6,20 +6,20 @@
 
 package web.navigation
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface NavigationType {
-    companion object {
-        @JsValue("push")
-        val push: NavigationType
-
-        @JsValue("reload")
-        val reload: NavigationType
-
-        @JsValue("replace")
-        val replace: NavigationType
-
-        @JsValue("traverse")
-        val traverse: NavigationType
-    }
+    companion object
 }
+
+inline val NavigationType.Companion.push: NavigationType
+    get() = unsafeCast("push")
+
+inline val NavigationType.Companion.reload: NavigationType
+    get() = unsafeCast("reload")
+
+inline val NavigationType.Companion.replace: NavigationType
+    get() = unsafeCast("replace")
+
+inline val NavigationType.Companion.traverse: NavigationType
+    get() = unsafeCast("traverse")

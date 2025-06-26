@@ -6,26 +6,26 @@
 
 package web.gpu
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface GPUTextureViewDimension {
-    companion object {
-        @JsValue("1d")
-        val _1d: GPUTextureViewDimension
-
-        @JsValue("2d")
-        val _2d: GPUTextureViewDimension
-
-        @JsValue("2d-array")
-        val _2dArray: GPUTextureViewDimension
-
-        @JsValue("3d")
-        val _3d: GPUTextureViewDimension
-
-        @JsValue("cube")
-        val cube: GPUTextureViewDimension
-
-        @JsValue("cube-array")
-        val cubeArray: GPUTextureViewDimension
-    }
+    companion object
 }
+
+inline val GPUTextureViewDimension.Companion._1d: GPUTextureViewDimension
+    get() = unsafeCast("_1d")
+
+inline val GPUTextureViewDimension.Companion._2d: GPUTextureViewDimension
+    get() = unsafeCast("_2d")
+
+inline val GPUTextureViewDimension.Companion._2dArray: GPUTextureViewDimension
+    get() = unsafeCast("_2dArray")
+
+inline val GPUTextureViewDimension.Companion._3d: GPUTextureViewDimension
+    get() = unsafeCast("_3d")
+
+inline val GPUTextureViewDimension.Companion.cube: GPUTextureViewDimension
+    get() = unsafeCast("cube")
+
+inline val GPUTextureViewDimension.Companion.cubeArray: GPUTextureViewDimension
+    get() = unsafeCast("cubeArray")

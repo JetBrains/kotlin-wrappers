@@ -6,20 +6,20 @@
 
 package js.intl
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface HourCycle {
-    companion object {
-        @JsValue("h11")
-        val h11: HourCycle
-
-        @JsValue("h12")
-        val h12: HourCycle
-
-        @JsValue("h23")
-        val h23: HourCycle
-
-        @JsValue("h24")
-        val h24: HourCycle
-    }
+    companion object
 }
+
+inline val HourCycle.Companion.h11: HourCycle
+    get() = unsafeCast("h11")
+
+inline val HourCycle.Companion.h12: HourCycle
+    get() = unsafeCast("h12")
+
+inline val HourCycle.Companion.h23: HourCycle
+    get() = unsafeCast("h23")
+
+inline val HourCycle.Companion.h24: HourCycle
+    get() = unsafeCast("h24")

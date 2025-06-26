@@ -6,17 +6,17 @@
 
 package web.images
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface ImageOrientation {
-    companion object {
-        @JsValue("flipY")
-        val flipY: ImageOrientation
-
-        @JsValue("from-image")
-        val fromImage: ImageOrientation
-
-        @JsValue("none")
-        val none: ImageOrientation
-    }
+    companion object
 }
+
+inline val ImageOrientation.Companion.flipY: ImageOrientation
+    get() = unsafeCast("flipY")
+
+inline val ImageOrientation.Companion.fromImage: ImageOrientation
+    get() = unsafeCast("fromImage")
+
+inline val ImageOrientation.Companion.none: ImageOrientation
+    get() = unsafeCast("none")

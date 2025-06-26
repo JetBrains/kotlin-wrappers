@@ -6,11 +6,11 @@
 
 package web.autofill
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface AutoFillCredentialField {
-    companion object {
-        @JsValue("webauthn")
-        val webauthn: AutoFillCredentialField
-    }
+    companion object
 }
+
+inline val AutoFillCredentialField.Companion.webauthn: AutoFillCredentialField
+    get() = unsafeCast("webauthn")

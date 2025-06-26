@@ -117,6 +117,110 @@ internal object JsUnionConverter : UnionConverter {
     }
 }
 
+// Helpers converting TS unions to sealed external interfaces with companion extensions
+// Generated interfaces support in the WASM target.
+internal object CommonUnionConverter : UnionConverter {
+
+    override fun unionBodyByConstants(
+        name: String,
+        constants: List<UnionConstant>,
+    ): String {
+        val interfaceName = name.substringBefore('<')
+        val hasGenerics = interfaceName != name
+
+        val extensions = constants
+            .joinToString("\n\n") {
+                require(!hasGenerics || it.type != null) {
+                    "You should specify types for all generic unions. Wrong constant: $it."
+                }
+
+                """
+                inline val $interfaceName.Companion.${it.name}: ${it.type ?: name}
+                    get() = unsafeCast("${it.name}")
+                """.trimIndent()
+            }
+
+        return """
+               sealed external interface $name {
+                  companion object
+               }
+
+               $extensions
+               """.trimIndent()
+    }
+
+    override fun sealedUnionBody(
+        name: String,
+        values: List<String>,
+    ): String {
+        val constants = values.map(::unionConstant)
+
+        val extensions = constants.joinToString("\n\n") {
+            """
+        inline val $name.Companion.${it.name}: $name
+            get() = unsafeCast("${it.name}")
+        """.trimIndent()
+        }
+
+        return """
+                sealed external interface $name {
+            companion object
+        }
+
+        $extensions
+    """.trimIndent()
+    }
+
+    override fun sealedUnionBody(
+        name: String,
+        parentType: String,
+        values: List<String>,
+    ): String {
+        val constants = values.map(::unionConstant)
+
+        val extensions = constants.joinToString("\n") {
+            """
+            inline val $name.Companion.${it.name}: $parentType.${it.name.replaceFirstChar(Char::uppercase)}
+                get() = unsafeCast("${it.name}")
+        """.trimIndent()
+        }
+
+        return """
+        sealed external interface $name : $parentType {
+            companion object
+        }
+
+        $extensions
+        """.trimIndent()
+    }
+
+    override fun objectUnionBody(
+        name: String,
+        constants: List<UnionConstant>,
+    ): String {
+        val extensions = constants.joinToString("\n\n") {
+            """
+            inline val $name.Companion.${it.name}: $name.${it.name}
+                get() = unsafeCast("${it.name}")
+        """.trimIndent()
+        }
+
+        val constantTypes = constants.joinToString("\n") {
+            "sealed interface ${it.name} : $name"
+        }
+
+        return """
+           sealed external interface $name {
+              $constantTypes
+
+              companion object
+           }
+
+           $extensions
+    """.trimIndent()
+    }
+}
+
 internal data class UnionConstant(
     val name: String,
     val value: String,

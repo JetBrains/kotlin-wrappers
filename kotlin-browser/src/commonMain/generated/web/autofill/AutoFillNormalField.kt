@@ -6,117 +6,117 @@
 
 package web.autofill
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface AutoFillNormalField :
     AutoFillField {
-    companion object {
-        @JsValue("additional-name")
-        val additionalName: AutoFillNormalField
-
-        @JsValue("address-level1")
-        val addressLevel1: AutoFillNormalField
-
-        @JsValue("address-level2")
-        val addressLevel2: AutoFillNormalField
-
-        @JsValue("address-level3")
-        val addressLevel3: AutoFillNormalField
-
-        @JsValue("address-level4")
-        val addressLevel4: AutoFillNormalField
-
-        @JsValue("address-line1")
-        val addressLine1: AutoFillNormalField
-
-        @JsValue("address-line2")
-        val addressLine2: AutoFillNormalField
-
-        @JsValue("address-line3")
-        val addressLine3: AutoFillNormalField
-
-        @JsValue("bday-day")
-        val bdayDay: AutoFillNormalField
-
-        @JsValue("bday-month")
-        val bdayMonth: AutoFillNormalField
-
-        @JsValue("bday-year")
-        val bdayYear: AutoFillNormalField
-
-        @JsValue("cc-csc")
-        val ccCsc: AutoFillNormalField
-
-        @JsValue("cc-exp")
-        val ccExp: AutoFillNormalField
-
-        @JsValue("cc-exp-month")
-        val ccExpMonth: AutoFillNormalField
-
-        @JsValue("cc-exp-year")
-        val ccExpYear: AutoFillNormalField
-
-        @JsValue("cc-family-name")
-        val ccFamilyName: AutoFillNormalField
-
-        @JsValue("cc-given-name")
-        val ccGivenName: AutoFillNormalField
-
-        @JsValue("cc-name")
-        val ccName: AutoFillNormalField
-
-        @JsValue("cc-number")
-        val ccNumber: AutoFillNormalField
-
-        @JsValue("cc-type")
-        val ccType: AutoFillNormalField
-
-        @JsValue("country")
-        val country: AutoFillNormalField
-
-        @JsValue("country-name")
-        val countryName: AutoFillNormalField
-
-        @JsValue("current-password")
-        val currentPassword: AutoFillNormalField
-
-        @JsValue("family-name")
-        val familyName: AutoFillNormalField
-
-        @JsValue("given-name")
-        val givenName: AutoFillNormalField
-
-        @JsValue("honorific-prefix")
-        val honorificPrefix: AutoFillNormalField
-
-        @JsValue("honorific-suffix")
-        val honorificSuffix: AutoFillNormalField
-
-        @JsValue("name")
-        val name: AutoFillNormalField
-
-        @JsValue("new-password")
-        val newPassword: AutoFillNormalField
-
-        @JsValue("one-time-code")
-        val oneTimeCode: AutoFillNormalField
-
-        @JsValue("organization")
-        val organization: AutoFillNormalField
-
-        @JsValue("postal-code")
-        val postalCode: AutoFillNormalField
-
-        @JsValue("street-address")
-        val streetAddress: AutoFillNormalField
-
-        @JsValue("transaction-amount")
-        val transactionAmount: AutoFillNormalField
-
-        @JsValue("transaction-currency")
-        val transactionCurrency: AutoFillNormalField
-
-        @JsValue("username")
-        val username: AutoFillNormalField
-    }
+    companion object
 }
+
+inline val AutoFillNormalField.Companion.additionalName: AutoFillNormalField
+    get() = unsafeCast("additionalName")
+
+inline val AutoFillNormalField.Companion.addressLevel1: AutoFillNormalField
+    get() = unsafeCast("addressLevel1")
+
+inline val AutoFillNormalField.Companion.addressLevel2: AutoFillNormalField
+    get() = unsafeCast("addressLevel2")
+
+inline val AutoFillNormalField.Companion.addressLevel3: AutoFillNormalField
+    get() = unsafeCast("addressLevel3")
+
+inline val AutoFillNormalField.Companion.addressLevel4: AutoFillNormalField
+    get() = unsafeCast("addressLevel4")
+
+inline val AutoFillNormalField.Companion.addressLine1: AutoFillNormalField
+    get() = unsafeCast("addressLine1")
+
+inline val AutoFillNormalField.Companion.addressLine2: AutoFillNormalField
+    get() = unsafeCast("addressLine2")
+
+inline val AutoFillNormalField.Companion.addressLine3: AutoFillNormalField
+    get() = unsafeCast("addressLine3")
+
+inline val AutoFillNormalField.Companion.bdayDay: AutoFillNormalField
+    get() = unsafeCast("bdayDay")
+
+inline val AutoFillNormalField.Companion.bdayMonth: AutoFillNormalField
+    get() = unsafeCast("bdayMonth")
+
+inline val AutoFillNormalField.Companion.bdayYear: AutoFillNormalField
+    get() = unsafeCast("bdayYear")
+
+inline val AutoFillNormalField.Companion.ccCsc: AutoFillNormalField
+    get() = unsafeCast("ccCsc")
+
+inline val AutoFillNormalField.Companion.ccExp: AutoFillNormalField
+    get() = unsafeCast("ccExp")
+
+inline val AutoFillNormalField.Companion.ccExpMonth: AutoFillNormalField
+    get() = unsafeCast("ccExpMonth")
+
+inline val AutoFillNormalField.Companion.ccExpYear: AutoFillNormalField
+    get() = unsafeCast("ccExpYear")
+
+inline val AutoFillNormalField.Companion.ccFamilyName: AutoFillNormalField
+    get() = unsafeCast("ccFamilyName")
+
+inline val AutoFillNormalField.Companion.ccGivenName: AutoFillNormalField
+    get() = unsafeCast("ccGivenName")
+
+inline val AutoFillNormalField.Companion.ccName: AutoFillNormalField
+    get() = unsafeCast("ccName")
+
+inline val AutoFillNormalField.Companion.ccNumber: AutoFillNormalField
+    get() = unsafeCast("ccNumber")
+
+inline val AutoFillNormalField.Companion.ccType: AutoFillNormalField
+    get() = unsafeCast("ccType")
+
+inline val AutoFillNormalField.Companion.country: AutoFillNormalField
+    get() = unsafeCast("country")
+
+inline val AutoFillNormalField.Companion.countryName: AutoFillNormalField
+    get() = unsafeCast("countryName")
+
+inline val AutoFillNormalField.Companion.currentPassword: AutoFillNormalField
+    get() = unsafeCast("currentPassword")
+
+inline val AutoFillNormalField.Companion.familyName: AutoFillNormalField
+    get() = unsafeCast("familyName")
+
+inline val AutoFillNormalField.Companion.givenName: AutoFillNormalField
+    get() = unsafeCast("givenName")
+
+inline val AutoFillNormalField.Companion.honorificPrefix: AutoFillNormalField
+    get() = unsafeCast("honorificPrefix")
+
+inline val AutoFillNormalField.Companion.honorificSuffix: AutoFillNormalField
+    get() = unsafeCast("honorificSuffix")
+
+inline val AutoFillNormalField.Companion.name: AutoFillNormalField
+    get() = unsafeCast("name")
+
+inline val AutoFillNormalField.Companion.newPassword: AutoFillNormalField
+    get() = unsafeCast("newPassword")
+
+inline val AutoFillNormalField.Companion.oneTimeCode: AutoFillNormalField
+    get() = unsafeCast("oneTimeCode")
+
+inline val AutoFillNormalField.Companion.organization: AutoFillNormalField
+    get() = unsafeCast("organization")
+
+inline val AutoFillNormalField.Companion.postalCode: AutoFillNormalField
+    get() = unsafeCast("postalCode")
+
+inline val AutoFillNormalField.Companion.streetAddress: AutoFillNormalField
+    get() = unsafeCast("streetAddress")
+
+inline val AutoFillNormalField.Companion.transactionAmount: AutoFillNormalField
+    get() = unsafeCast("transactionAmount")
+
+inline val AutoFillNormalField.Companion.transactionCurrency: AutoFillNormalField
+    get() = unsafeCast("transactionCurrency")
+
+inline val AutoFillNormalField.Companion.username: AutoFillNormalField
+    get() = unsafeCast("username")

@@ -1,6 +1,6 @@
 package karakum.browser
 
-import karakum.common.JsUnionConverter.objectUnionBody
+import karakum.common.CommonUnionConverter.objectUnionBody
 import karakum.common.unionConstant
 
 private val CONVERTED_WEBGL_TYPES = listOf(
@@ -33,13 +33,13 @@ private val CLASSES = setOf(
 internal fun webglDeclarations(
     content: String,
 ): Sequence<ConversionResult> {
-    val interfaces = Regex("""interface ((ANGLE_|EXT_|KHR_|OES_|OVR_|WEBGL_|WebGL).+?) \{[\s\S]+?\}""")
+    val interfaces = Regex("""interface ((ANGLE_|EXT_|KHR_|OES_|OVR_|WEBGL_|WebGL).+?) \{[\s\S]+?}""")
         .findAll(content)
         .map { it.value }
         .mapNotNull { convertInterface(it) }
         .toList()
 
-    val classes = Regex("""declare var WebGL.+?: \{[\s\S]+?\}""")
+    val classes = Regex("""declare var WebGL.+?: \{[\s\S]+?}""")
         .findAll(content)
         .map { it.value }
         .mapNotNull { convertCompanion(it) }
@@ -97,7 +97,9 @@ private fun convertInterface(
         } else "$declaration\nprivate constructor()"
     }
 
-    val body = "$modifier external $declaration {\n$members\n}"
+    val idDeclaration = RenderingContextRegistry.getIdDeclaration(name) ?: ""
+
+    val body = "$modifier external $declaration {\n$members\n}\n$idDeclaration"
 
     return ConversionResult(
         name = name,
@@ -144,18 +146,15 @@ private fun convertCompanion(
         .joinToString("\n")
 
     val body = if (memberSource.isNotEmpty()) {
-        var companionMembers = memberSource.replace("readonly ", "val ")
+        val companionMembers = memberSource.replace("readonly ", "val ")
             .replace(Regex("""_BIT: 0x\S+"""), "_BIT: GLbitfield")
             .replace(Regex(""": 0x\S+"""), ": GLenum")
-            .replace(Regex(""": \-?\d"""), ": GLenum")
+            .replace(Regex(""": -?\d"""), ": GLenum")
 
-        val idDeclaration = RenderingContextRegistry.getIdDeclaration(name)
-        if (idDeclaration != null)
-            companionMembers += "\n\n$idDeclaration"
-
-        "companion object {\n" +
-                companionMembers +
-                "\n}"
+        """companion object {
+                $companionMembers
+           }
+        """.trimIndent()
     } else ""
 
     return ConversionResult(

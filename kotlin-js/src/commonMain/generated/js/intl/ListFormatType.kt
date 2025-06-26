@@ -6,17 +6,17 @@
 
 package js.intl
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface ListFormatType {
-    companion object {
-        @JsValue("conjunction")
-        val conjunction: ListFormatType
-
-        @JsValue("disjunction")
-        val disjunction: ListFormatType
-
-        @JsValue("unit")
-        val unit: ListFormatType
-    }
+    companion object
 }
+
+inline val ListFormatType.Companion.conjunction: ListFormatType
+    get() = unsafeCast("conjunction")
+
+inline val ListFormatType.Companion.disjunction: ListFormatType
+    get() = unsafeCast("disjunction")
+
+inline val ListFormatType.Companion.unit: ListFormatType
+    get() = unsafeCast("unit")

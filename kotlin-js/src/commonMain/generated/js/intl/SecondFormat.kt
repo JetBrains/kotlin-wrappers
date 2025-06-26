@@ -6,14 +6,14 @@
 
 package js.intl
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface SecondFormat {
-    companion object {
-        @JsValue("numeric")
-        val numeric: SecondFormat
-
-        @JsValue("2-digit")
-        val twoDigit: SecondFormat
-    }
+    companion object
 }
+
+inline val SecondFormat.Companion.numeric: SecondFormat
+    get() = unsafeCast("numeric")
+
+inline val SecondFormat.Companion.twoDigit: SecondFormat
+    get() = unsafeCast("twoDigit")

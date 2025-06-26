@@ -6,17 +6,17 @@
 
 package web.codecs
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface VideoEncoderBitrateMode {
-    companion object {
-        @JsValue("constant")
-        val constant: VideoEncoderBitrateMode
-
-        @JsValue("quantizer")
-        val quantizer: VideoEncoderBitrateMode
-
-        @JsValue("variable")
-        val variable: VideoEncoderBitrateMode
-    }
+    companion object
 }
+
+inline val VideoEncoderBitrateMode.Companion.constant: VideoEncoderBitrateMode
+    get() = unsafeCast("constant")
+
+inline val VideoEncoderBitrateMode.Companion.quantizer: VideoEncoderBitrateMode
+    get() = unsafeCast("quantizer")
+
+inline val VideoEncoderBitrateMode.Companion.variable: VideoEncoderBitrateMode
+    get() = unsafeCast("variable")

@@ -6,14 +6,14 @@
 
 package web.images
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface ColorSpaceConversion {
-    companion object {
-        @JsValue("default")
-        val default: ColorSpaceConversion
-
-        @JsValue("none")
-        val none: ColorSpaceConversion
-    }
+    companion object
 }
+
+inline val ColorSpaceConversion.Companion.default: ColorSpaceConversion
+    get() = unsafeCast("default")
+
+inline val ColorSpaceConversion.Companion.none: ColorSpaceConversion
+    get() = unsafeCast("none")

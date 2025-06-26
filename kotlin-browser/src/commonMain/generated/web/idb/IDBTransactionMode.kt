@@ -6,17 +6,17 @@
 
 package web.idb
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface IDBTransactionMode {
-    companion object {
-        @JsValue("readonly")
-        val readonly: IDBTransactionMode
-
-        @JsValue("readwrite")
-        val readwrite: IDBTransactionMode
-
-        @JsValue("versionchange")
-        val versionchange: IDBTransactionMode
-    }
+    companion object
 }
+
+inline val IDBTransactionMode.Companion.readonly: IDBTransactionMode
+    get() = unsafeCast("readonly")
+
+inline val IDBTransactionMode.Companion.readwrite: IDBTransactionMode
+    get() = unsafeCast("readwrite")
+
+inline val IDBTransactionMode.Companion.versionchange: IDBTransactionMode
+    get() = unsafeCast("versionchange")

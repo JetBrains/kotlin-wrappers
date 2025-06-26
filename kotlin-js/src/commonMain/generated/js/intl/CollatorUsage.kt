@@ -6,14 +6,14 @@
 
 package js.intl
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface CollatorUsage {
-    companion object {
-        @JsValue("sort")
-        val sort: CollatorUsage
-
-        @JsValue("search")
-        val search: CollatorUsage
-    }
+    companion object
 }
+
+inline val CollatorUsage.Companion.sort: CollatorUsage
+    get() = unsafeCast("sort")
+
+inline val CollatorUsage.Companion.search: CollatorUsage
+    get() = unsafeCast("search")

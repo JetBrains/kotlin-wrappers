@@ -6,17 +6,17 @@
 
 package web.http
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface RequestRedirect {
-    companion object {
-        @JsValue("error")
-        val error: RequestRedirect
-
-        @JsValue("follow")
-        val follow: RequestRedirect
-
-        @JsValue("manual")
-        val manual: RequestRedirect
-    }
+    companion object
 }
+
+inline val RequestRedirect.Companion.error: RequestRedirect
+    get() = unsafeCast("error")
+
+inline val RequestRedirect.Companion.follow: RequestRedirect
+    get() = unsafeCast("follow")
+
+inline val RequestRedirect.Companion.manual: RequestRedirect
+    get() = unsafeCast("manual")

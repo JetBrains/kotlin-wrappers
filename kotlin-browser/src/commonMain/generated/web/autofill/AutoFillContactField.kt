@@ -6,36 +6,36 @@
 
 package web.autofill
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface AutoFillContactField :
     AutoFillField {
-    companion object {
-        @JsValue("email")
-        val email: AutoFillContactField
-
-        @JsValue("tel")
-        val tel: AutoFillContactField
-
-        @JsValue("tel-area-code")
-        val telAreaCode: AutoFillContactField
-
-        @JsValue("tel-country-code")
-        val telCountryCode: AutoFillContactField
-
-        @JsValue("tel-extension")
-        val telExtension: AutoFillContactField
-
-        @JsValue("tel-local")
-        val telLocal: AutoFillContactField
-
-        @JsValue("tel-local-prefix")
-        val telLocalPrefix: AutoFillContactField
-
-        @JsValue("tel-local-suffix")
-        val telLocalSuffix: AutoFillContactField
-
-        @JsValue("tel-national")
-        val telNational: AutoFillContactField
-    }
+    companion object
 }
+
+inline val AutoFillContactField.Companion.email: AutoFillContactField
+    get() = unsafeCast("email")
+
+inline val AutoFillContactField.Companion.tel: AutoFillContactField
+    get() = unsafeCast("tel")
+
+inline val AutoFillContactField.Companion.telAreaCode: AutoFillContactField
+    get() = unsafeCast("telAreaCode")
+
+inline val AutoFillContactField.Companion.telCountryCode: AutoFillContactField
+    get() = unsafeCast("telCountryCode")
+
+inline val AutoFillContactField.Companion.telExtension: AutoFillContactField
+    get() = unsafeCast("telExtension")
+
+inline val AutoFillContactField.Companion.telLocal: AutoFillContactField
+    get() = unsafeCast("telLocal")
+
+inline val AutoFillContactField.Companion.telLocalPrefix: AutoFillContactField
+    get() = unsafeCast("telLocalPrefix")
+
+inline val AutoFillContactField.Companion.telLocalSuffix: AutoFillContactField
+    get() = unsafeCast("telLocalSuffix")
+
+inline val AutoFillContactField.Companion.telNational: AutoFillContactField
+    get() = unsafeCast("telNational")

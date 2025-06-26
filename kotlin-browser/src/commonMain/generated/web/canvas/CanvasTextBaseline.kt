@@ -6,26 +6,26 @@
 
 package web.canvas
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface CanvasTextBaseline {
-    companion object {
-        @JsValue("alphabetic")
-        val alphabetic: CanvasTextBaseline
-
-        @JsValue("bottom")
-        val bottom: CanvasTextBaseline
-
-        @JsValue("hanging")
-        val hanging: CanvasTextBaseline
-
-        @JsValue("ideographic")
-        val ideographic: CanvasTextBaseline
-
-        @JsValue("middle")
-        val middle: CanvasTextBaseline
-
-        @JsValue("top")
-        val top: CanvasTextBaseline
-    }
+    companion object
 }
+
+inline val CanvasTextBaseline.Companion.alphabetic: CanvasTextBaseline
+    get() = unsafeCast("alphabetic")
+
+inline val CanvasTextBaseline.Companion.bottom: CanvasTextBaseline
+    get() = unsafeCast("bottom")
+
+inline val CanvasTextBaseline.Companion.hanging: CanvasTextBaseline
+    get() = unsafeCast("hanging")
+
+inline val CanvasTextBaseline.Companion.ideographic: CanvasTextBaseline
+    get() = unsafeCast("ideographic")
+
+inline val CanvasTextBaseline.Companion.middle: CanvasTextBaseline
+    get() = unsafeCast("middle")
+
+inline val CanvasTextBaseline.Companion.top: CanvasTextBaseline
+    get() = unsafeCast("top")

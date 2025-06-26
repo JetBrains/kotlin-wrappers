@@ -6,14 +6,14 @@
 
 package web.components
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface ShadowRootMode {
-    companion object {
-        @JsValue("closed")
-        val closed: ShadowRootMode
-
-        @JsValue("open")
-        val open: ShadowRootMode
-    }
+    companion object
 }
+
+inline val ShadowRootMode.Companion.closed: ShadowRootMode
+    get() = unsafeCast("closed")
+
+inline val ShadowRootMode.Companion.open: ShadowRootMode
+    get() = unsafeCast("open")

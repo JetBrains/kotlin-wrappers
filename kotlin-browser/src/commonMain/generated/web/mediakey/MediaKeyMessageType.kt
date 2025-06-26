@@ -6,20 +6,20 @@
 
 package web.mediakey
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface MediaKeyMessageType {
-    companion object {
-        @JsValue("individualization-request")
-        val individualizationRequest: MediaKeyMessageType
-
-        @JsValue("license-release")
-        val licenseRelease: MediaKeyMessageType
-
-        @JsValue("license-renewal")
-        val licenseRenewal: MediaKeyMessageType
-
-        @JsValue("license-request")
-        val licenseRequest: MediaKeyMessageType
-    }
+    companion object
 }
+
+inline val MediaKeyMessageType.Companion.individualizationRequest: MediaKeyMessageType
+    get() = unsafeCast("individualizationRequest")
+
+inline val MediaKeyMessageType.Companion.licenseRelease: MediaKeyMessageType
+    get() = unsafeCast("licenseRelease")
+
+inline val MediaKeyMessageType.Companion.licenseRenewal: MediaKeyMessageType
+    get() = unsafeCast("licenseRenewal")
+
+inline val MediaKeyMessageType.Companion.licenseRequest: MediaKeyMessageType
+    get() = unsafeCast("licenseRequest")

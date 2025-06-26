@@ -6,17 +6,17 @@
 
 package web.scroll
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface ScrollBehavior {
-    companion object {
-        @JsValue("auto")
-        val auto: ScrollBehavior
-
-        @JsValue("instant")
-        val instant: ScrollBehavior
-
-        @JsValue("smooth")
-        val smooth: ScrollBehavior
-    }
+    companion object
 }
+
+inline val ScrollBehavior.Companion.auto: ScrollBehavior
+    get() = unsafeCast("auto")
+
+inline val ScrollBehavior.Companion.instant: ScrollBehavior
+    get() = unsafeCast("instant")
+
+inline val ScrollBehavior.Companion.smooth: ScrollBehavior
+    get() = unsafeCast("smooth")

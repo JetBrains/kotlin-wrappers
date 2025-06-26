@@ -6,17 +6,17 @@
 
 package js.intl
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface RoundingPriority {
-    companion object {
-        @JsValue("auto")
-        val auto: RoundingPriority
-
-        @JsValue("morePrecision")
-        val morePrecision: RoundingPriority
-
-        @JsValue("lessPrecision")
-        val lessPrecision: RoundingPriority
-    }
+    companion object
 }
+
+inline val RoundingPriority.Companion.auto: RoundingPriority
+    get() = unsafeCast("auto")
+
+inline val RoundingPriority.Companion.morePrecision: RoundingPriority
+    get() = unsafeCast("morePrecision")
+
+inline val RoundingPriority.Companion.lessPrecision: RoundingPriority
+    get() = unsafeCast("lessPrecision")

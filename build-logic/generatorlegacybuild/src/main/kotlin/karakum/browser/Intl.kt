@@ -1,6 +1,6 @@
 package karakum.browser
 
-import karakum.common.JsUnionConverter.sealedUnionBody
+import karakum.common.CommonUnionConverter.sealedUnionBody
 import karakum.common.withDefaultLineBreaks
 import java.io.File
 

@@ -6,17 +6,17 @@
 
 package web.crypto
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface KeyType {
-    companion object {
-        @JsValue("private")
-        val private: KeyType
-
-        @JsValue("public")
-        val public: KeyType
-
-        @JsValue("secret")
-        val secret: KeyType
-    }
+    companion object
 }
+
+inline val KeyType.Companion.private: KeyType
+    get() = unsafeCast("private")
+
+inline val KeyType.Companion.public: KeyType
+    get() = unsafeCast("public")
+
+inline val KeyType.Companion.secret: KeyType
+    get() = unsafeCast("secret")

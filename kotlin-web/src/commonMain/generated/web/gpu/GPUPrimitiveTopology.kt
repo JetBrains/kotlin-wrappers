@@ -6,23 +6,23 @@
 
 package web.gpu
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface GPUPrimitiveTopology {
-    companion object {
-        @JsValue("line-list")
-        val lineList: GPUPrimitiveTopology
-
-        @JsValue("line-strip")
-        val lineStrip: GPUPrimitiveTopology
-
-        @JsValue("point-list")
-        val pointList: GPUPrimitiveTopology
-
-        @JsValue("triangle-list")
-        val triangleList: GPUPrimitiveTopology
-
-        @JsValue("triangle-strip")
-        val triangleStrip: GPUPrimitiveTopology
-    }
+    companion object
 }
+
+inline val GPUPrimitiveTopology.Companion.lineList: GPUPrimitiveTopology
+    get() = unsafeCast("lineList")
+
+inline val GPUPrimitiveTopology.Companion.lineStrip: GPUPrimitiveTopology
+    get() = unsafeCast("lineStrip")
+
+inline val GPUPrimitiveTopology.Companion.pointList: GPUPrimitiveTopology
+    get() = unsafeCast("pointList")
+
+inline val GPUPrimitiveTopology.Companion.triangleList: GPUPrimitiveTopology
+    get() = unsafeCast("triangleList")
+
+inline val GPUPrimitiveTopology.Companion.triangleStrip: GPUPrimitiveTopology
+    get() = unsafeCast("triangleStrip")

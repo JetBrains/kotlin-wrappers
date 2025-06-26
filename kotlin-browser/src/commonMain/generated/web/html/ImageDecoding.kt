@@ -6,17 +6,17 @@
 
 package web.html
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface ImageDecoding {
-    companion object {
-        @JsValue("async")
-        val async: ImageDecoding
-
-        @JsValue("sync")
-        val sync: ImageDecoding
-
-        @JsValue("auto")
-        val auto: ImageDecoding
-    }
+    companion object
 }
+
+inline val ImageDecoding.Companion.async: ImageDecoding
+    get() = unsafeCast("async")
+
+inline val ImageDecoding.Companion.sync: ImageDecoding
+    get() = unsafeCast("sync")
+
+inline val ImageDecoding.Companion.auto: ImageDecoding
+    get() = unsafeCast("auto")

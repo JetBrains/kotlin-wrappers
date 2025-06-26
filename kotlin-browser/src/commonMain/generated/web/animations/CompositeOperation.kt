@@ -6,17 +6,17 @@
 
 package web.animations
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface CompositeOperation {
-    companion object {
-        @JsValue("accumulate")
-        val accumulate: CompositeOperation
-
-        @JsValue("add")
-        val add: CompositeOperation
-
-        @JsValue("replace")
-        val replace: CompositeOperation
-    }
+    companion object
 }
+
+inline val CompositeOperation.Companion.accumulate: CompositeOperation
+    get() = unsafeCast("accumulate")
+
+inline val CompositeOperation.Companion.add: CompositeOperation
+    get() = unsafeCast("add")
+
+inline val CompositeOperation.Companion.replace: CompositeOperation
+    get() = unsafeCast("replace")

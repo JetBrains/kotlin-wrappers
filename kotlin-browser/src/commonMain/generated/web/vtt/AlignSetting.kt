@@ -6,23 +6,23 @@
 
 package web.vtt
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface AlignSetting {
-    companion object {
-        @JsValue("center")
-        val center: AlignSetting
-
-        @JsValue("end")
-        val end: AlignSetting
-
-        @JsValue("left")
-        val left: AlignSetting
-
-        @JsValue("right")
-        val right: AlignSetting
-
-        @JsValue("start")
-        val start: AlignSetting
-    }
+    companion object
 }
+
+inline val AlignSetting.Companion.center: AlignSetting
+    get() = unsafeCast("center")
+
+inline val AlignSetting.Companion.end: AlignSetting
+    get() = unsafeCast("end")
+
+inline val AlignSetting.Companion.left: AlignSetting
+    get() = unsafeCast("left")
+
+inline val AlignSetting.Companion.right: AlignSetting
+    get() = unsafeCast("right")
+
+inline val AlignSetting.Companion.start: AlignSetting
+    get() = unsafeCast("start")

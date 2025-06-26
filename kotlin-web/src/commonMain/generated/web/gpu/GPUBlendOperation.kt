@@ -6,23 +6,23 @@
 
 package web.gpu
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface GPUBlendOperation {
-    companion object {
-        @JsValue("add")
-        val add: GPUBlendOperation
-
-        @JsValue("max")
-        val max: GPUBlendOperation
-
-        @JsValue("min")
-        val min: GPUBlendOperation
-
-        @JsValue("reverse-subtract")
-        val reverseSubtract: GPUBlendOperation
-
-        @JsValue("subtract")
-        val subtract: GPUBlendOperation
-    }
+    companion object
 }
+
+inline val GPUBlendOperation.Companion.add: GPUBlendOperation
+    get() = unsafeCast("add")
+
+inline val GPUBlendOperation.Companion.max: GPUBlendOperation
+    get() = unsafeCast("max")
+
+inline val GPUBlendOperation.Companion.min: GPUBlendOperation
+    get() = unsafeCast("min")
+
+inline val GPUBlendOperation.Companion.reverseSubtract: GPUBlendOperation
+    get() = unsafeCast("reverseSubtract")
+
+inline val GPUBlendOperation.Companion.subtract: GPUBlendOperation
+    get() = unsafeCast("subtract")

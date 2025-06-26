@@ -6,14 +6,14 @@
 
 package js.intl
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface ListFormatLocaleMatcher {
-    companion object {
-        @JsValue("lookup")
-        val lookup: ListFormatLocaleMatcher
-
-        @JsValue("best fit")
-        val bestFit: ListFormatLocaleMatcher
-    }
+    companion object
 }
+
+inline val ListFormatLocaleMatcher.Companion.lookup: ListFormatLocaleMatcher
+    get() = unsafeCast("lookup")
+
+inline val ListFormatLocaleMatcher.Companion.bestFit: ListFormatLocaleMatcher
+    get() = unsafeCast("bestFit")

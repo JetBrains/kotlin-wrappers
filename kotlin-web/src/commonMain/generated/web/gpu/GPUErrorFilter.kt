@@ -6,17 +6,17 @@
 
 package web.gpu
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface GPUErrorFilter {
-    companion object {
-        @JsValue("internal")
-        val internal: GPUErrorFilter
-
-        @JsValue("out-of-memory")
-        val outOfMemory: GPUErrorFilter
-
-        @JsValue("validation")
-        val validation: GPUErrorFilter
-    }
+    companion object
 }
+
+inline val GPUErrorFilter.Companion.internal: GPUErrorFilter
+    get() = unsafeCast("internal")
+
+inline val GPUErrorFilter.Companion.outOfMemory: GPUErrorFilter
+    get() = unsafeCast("outOfMemory")
+
+inline val GPUErrorFilter.Companion.validation: GPUErrorFilter
+    get() = unsafeCast("validation")

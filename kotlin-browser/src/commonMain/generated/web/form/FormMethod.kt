@@ -6,17 +6,17 @@
 
 package web.form
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface FormMethod {
-    companion object {
-        @JsValue("get")
-        val get: FormMethod
-
-        @JsValue("dialog")
-        val dialog: FormMethod
-
-        @JsValue("post")
-        val post: FormMethod
-    }
+    companion object
 }
+
+inline val FormMethod.Companion.get: FormMethod
+    get() = unsafeCast("get")
+
+inline val FormMethod.Companion.dialog: FormMethod
+    get() = unsafeCast("dialog")
+
+inline val FormMethod.Companion.post: FormMethod
+    get() = unsafeCast("post")

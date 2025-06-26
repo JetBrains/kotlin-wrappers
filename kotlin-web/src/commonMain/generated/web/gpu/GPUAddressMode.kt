@@ -6,17 +6,17 @@
 
 package web.gpu
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface GPUAddressMode {
-    companion object {
-        @JsValue("clamp-to-edge")
-        val clampToEdge: GPUAddressMode
-
-        @JsValue("mirror-repeat")
-        val mirrorRepeat: GPUAddressMode
-
-        @JsValue("repeat")
-        val repeat: GPUAddressMode
-    }
+    companion object
 }
+
+inline val GPUAddressMode.Companion.clampToEdge: GPUAddressMode
+    get() = unsafeCast("clampToEdge")
+
+inline val GPUAddressMode.Companion.mirrorRepeat: GPUAddressMode
+    get() = unsafeCast("mirrorRepeat")
+
+inline val GPUAddressMode.Companion.repeat: GPUAddressMode
+    get() = unsafeCast("repeat")

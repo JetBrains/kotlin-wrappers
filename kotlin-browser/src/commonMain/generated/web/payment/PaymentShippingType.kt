@@ -6,17 +6,17 @@
 
 package web.payment
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface PaymentShippingType {
-    companion object {
-        @JsValue("delivery")
-        val delivery: PaymentShippingType
-
-        @JsValue("pickup")
-        val pickup: PaymentShippingType
-
-        @JsValue("shipping")
-        val shipping: PaymentShippingType
-    }
+    companion object
 }
+
+inline val PaymentShippingType.Companion.delivery: PaymentShippingType
+    get() = unsafeCast("delivery")
+
+inline val PaymentShippingType.Companion.pickup: PaymentShippingType
+    get() = unsafeCast("pickup")
+
+inline val PaymentShippingType.Companion.shipping: PaymentShippingType
+    get() = unsafeCast("shipping")

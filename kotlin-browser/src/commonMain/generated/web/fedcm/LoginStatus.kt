@@ -6,14 +6,14 @@
 
 package web.fedcm
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface LoginStatus {
-    companion object {
-        @JsValue("logged-in")
-        val loggedIn: LoginStatus
-
-        @JsValue("logged-out")
-        val loggedOut: LoginStatus
-    }
+    companion object
 }
+
+inline val LoginStatus.Companion.loggedIn: LoginStatus
+    get() = unsafeCast("loggedIn")
+
+inline val LoginStatus.Companion.loggedOut: LoginStatus
+    get() = unsafeCast("loggedOut")

@@ -6,17 +6,17 @@
 
 package js.typedarrays
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface LastChunkHandling {
-    companion object {
-        @JsValue("loose")
-        val loose: LastChunkHandling
-
-        @JsValue("strict")
-        val strict: LastChunkHandling
-
-        @JsValue("stop-before-partial")
-        val stopBeforePartial: LastChunkHandling
-    }
+    companion object
 }
+
+inline val LastChunkHandling.Companion.loose: LastChunkHandling
+    get() = unsafeCast("loose")
+
+inline val LastChunkHandling.Companion.strict: LastChunkHandling
+    get() = unsafeCast("strict")
+
+inline val LastChunkHandling.Companion.stopBeforePartial: LastChunkHandling
+    get() = unsafeCast("stopBeforePartial")

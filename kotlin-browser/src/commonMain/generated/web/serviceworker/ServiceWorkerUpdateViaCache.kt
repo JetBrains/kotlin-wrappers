@@ -6,17 +6,17 @@
 
 package web.serviceworker
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface ServiceWorkerUpdateViaCache {
-    companion object {
-        @JsValue("all")
-        val all: ServiceWorkerUpdateViaCache
-
-        @JsValue("imports")
-        val imports: ServiceWorkerUpdateViaCache
-
-        @JsValue("none")
-        val none: ServiceWorkerUpdateViaCache
-    }
+    companion object
 }
+
+inline val ServiceWorkerUpdateViaCache.Companion.all: ServiceWorkerUpdateViaCache
+    get() = unsafeCast("all")
+
+inline val ServiceWorkerUpdateViaCache.Companion.imports: ServiceWorkerUpdateViaCache
+    get() = unsafeCast("imports")
+
+inline val ServiceWorkerUpdateViaCache.Companion.none: ServiceWorkerUpdateViaCache
+    get() = unsafeCast("none")

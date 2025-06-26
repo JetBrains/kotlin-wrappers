@@ -6,17 +6,17 @@
 
 package web.canvas
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface CanvasLineJoin {
-    companion object {
-        @JsValue("bevel")
-        val bevel: CanvasLineJoin
-
-        @JsValue("miter")
-        val miter: CanvasLineJoin
-
-        @JsValue("round")
-        val round: CanvasLineJoin
-    }
+    companion object
 }
+
+inline val CanvasLineJoin.Companion.bevel: CanvasLineJoin
+    get() = unsafeCast("bevel")
+
+inline val CanvasLineJoin.Companion.miter: CanvasLineJoin
+    get() = unsafeCast("miter")
+
+inline val CanvasLineJoin.Companion.round: CanvasLineJoin
+    get() = unsafeCast("round")

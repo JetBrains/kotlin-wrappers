@@ -6,14 +6,14 @@
 
 package web.uievents
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface TouchType {
-    companion object {
-        @JsValue("direct")
-        val direct: TouchType
-
-        @JsValue("stylus")
-        val stylus: TouchType
-    }
+    companion object
 }
+
+inline val TouchType.Companion.direct: TouchType
+    get() = unsafeCast("direct")
+
+inline val TouchType.Companion.stylus: TouchType
+    get() = unsafeCast("stylus")

@@ -6,14 +6,14 @@
 
 package web.gamepad
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface GamepadHapticsResult {
-    companion object {
-        @JsValue("complete")
-        val complete: GamepadHapticsResult
-
-        @JsValue("preempted")
-        val preempted: GamepadHapticsResult
-    }
+    companion object
 }
+
+inline val GamepadHapticsResult.Companion.complete: GamepadHapticsResult
+    get() = unsafeCast("complete")
+
+inline val GamepadHapticsResult.Companion.preempted: GamepadHapticsResult
+    get() = unsafeCast("preempted")

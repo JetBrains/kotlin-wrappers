@@ -6,17 +6,17 @@
 
 package web.mutation
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface MutationRecordType {
-    companion object {
-        @JsValue("attributes")
-        val attributes: MutationRecordType
-
-        @JsValue("characterData")
-        val characterData: MutationRecordType
-
-        @JsValue("childList")
-        val childList: MutationRecordType
-    }
+    companion object
 }
+
+inline val MutationRecordType.Companion.attributes: MutationRecordType
+    get() = unsafeCast("attributes")
+
+inline val MutationRecordType.Companion.characterData: MutationRecordType
+    get() = unsafeCast("characterData")
+
+inline val MutationRecordType.Companion.childList: MutationRecordType
+    get() = unsafeCast("childList")

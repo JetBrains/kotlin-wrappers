@@ -6,17 +6,17 @@
 
 package web.rtc
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface RTCIceGathererState {
-    companion object {
-        @JsValue("complete")
-        val complete: RTCIceGathererState
-
-        @JsValue("gathering")
-        val gathering: RTCIceGathererState
-
-        @JsValue("new")
-        val new: RTCIceGathererState
-    }
+    companion object
 }
+
+inline val RTCIceGathererState.Companion.complete: RTCIceGathererState
+    get() = unsafeCast("complete")
+
+inline val RTCIceGathererState.Companion.gathering: RTCIceGathererState
+    get() = unsafeCast("gathering")
+
+inline val RTCIceGathererState.Companion.new: RTCIceGathererState
+    get() = unsafeCast("new")

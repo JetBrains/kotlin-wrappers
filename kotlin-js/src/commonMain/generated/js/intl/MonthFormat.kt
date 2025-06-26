@@ -6,23 +6,23 @@
 
 package js.intl
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface MonthFormat {
-    companion object {
-        @JsValue("numeric")
-        val numeric: MonthFormat
-
-        @JsValue("2-digit")
-        val twoDigit: MonthFormat
-
-        @JsValue("long")
-        val long: MonthFormat
-
-        @JsValue("short")
-        val short: MonthFormat
-
-        @JsValue("narrow")
-        val narrow: MonthFormat
-    }
+    companion object
 }
+
+inline val MonthFormat.Companion.numeric: MonthFormat
+    get() = unsafeCast("numeric")
+
+inline val MonthFormat.Companion.twoDigit: MonthFormat
+    get() = unsafeCast("twoDigit")
+
+inline val MonthFormat.Companion.long: MonthFormat
+    get() = unsafeCast("long")
+
+inline val MonthFormat.Companion.short: MonthFormat
+    get() = unsafeCast("short")
+
+inline val MonthFormat.Companion.narrow: MonthFormat
+    get() = unsafeCast("narrow")

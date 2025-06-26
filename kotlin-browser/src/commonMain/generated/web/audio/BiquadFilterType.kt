@@ -6,32 +6,32 @@
 
 package web.audio
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface BiquadFilterType {
-    companion object {
-        @JsValue("allpass")
-        val allpass: BiquadFilterType
-
-        @JsValue("bandpass")
-        val bandpass: BiquadFilterType
-
-        @JsValue("highpass")
-        val highpass: BiquadFilterType
-
-        @JsValue("highshelf")
-        val highshelf: BiquadFilterType
-
-        @JsValue("lowpass")
-        val lowpass: BiquadFilterType
-
-        @JsValue("lowshelf")
-        val lowshelf: BiquadFilterType
-
-        @JsValue("notch")
-        val notch: BiquadFilterType
-
-        @JsValue("peaking")
-        val peaking: BiquadFilterType
-    }
+    companion object
 }
+
+inline val BiquadFilterType.Companion.allpass: BiquadFilterType
+    get() = unsafeCast("allpass")
+
+inline val BiquadFilterType.Companion.bandpass: BiquadFilterType
+    get() = unsafeCast("bandpass")
+
+inline val BiquadFilterType.Companion.highpass: BiquadFilterType
+    get() = unsafeCast("highpass")
+
+inline val BiquadFilterType.Companion.highshelf: BiquadFilterType
+    get() = unsafeCast("highshelf")
+
+inline val BiquadFilterType.Companion.lowpass: BiquadFilterType
+    get() = unsafeCast("lowpass")
+
+inline val BiquadFilterType.Companion.lowshelf: BiquadFilterType
+    get() = unsafeCast("lowshelf")
+
+inline val BiquadFilterType.Companion.notch: BiquadFilterType
+    get() = unsafeCast("notch")
+
+inline val BiquadFilterType.Companion.peaking: BiquadFilterType
+    get() = unsafeCast("peaking")

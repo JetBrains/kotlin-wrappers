@@ -6,32 +6,32 @@
 
 package web.crypto
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface KeyUsage {
-    companion object {
-        @JsValue("decrypt")
-        val decrypt: KeyUsage
-
-        @JsValue("deriveBits")
-        val deriveBits: KeyUsage
-
-        @JsValue("deriveKey")
-        val deriveKey: KeyUsage
-
-        @JsValue("encrypt")
-        val encrypt: KeyUsage
-
-        @JsValue("sign")
-        val sign: KeyUsage
-
-        @JsValue("unwrapKey")
-        val unwrapKey: KeyUsage
-
-        @JsValue("verify")
-        val verify: KeyUsage
-
-        @JsValue("wrapKey")
-        val wrapKey: KeyUsage
-    }
+    companion object
 }
+
+inline val KeyUsage.Companion.decrypt: KeyUsage
+    get() = unsafeCast("decrypt")
+
+inline val KeyUsage.Companion.deriveBits: KeyUsage
+    get() = unsafeCast("deriveBits")
+
+inline val KeyUsage.Companion.deriveKey: KeyUsage
+    get() = unsafeCast("deriveKey")
+
+inline val KeyUsage.Companion.encrypt: KeyUsage
+    get() = unsafeCast("encrypt")
+
+inline val KeyUsage.Companion.sign: KeyUsage
+    get() = unsafeCast("sign")
+
+inline val KeyUsage.Companion.unwrapKey: KeyUsage
+    get() = unsafeCast("unwrapKey")
+
+inline val KeyUsage.Companion.verify: KeyUsage
+    get() = unsafeCast("verify")
+
+inline val KeyUsage.Companion.wrapKey: KeyUsage
+    get() = unsafeCast("wrapKey")

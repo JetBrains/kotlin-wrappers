@@ -6,17 +6,17 @@
 
 package js.intl
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface PartSource {
-    companion object {
-        @JsValue("startRange")
-        val startRange: PartSource
-
-        @JsValue("endRange")
-        val endRange: PartSource
-
-        @JsValue("shared")
-        val shared: PartSource
-    }
+    companion object
 }
+
+inline val PartSource.Companion.startRange: PartSource
+    get() = unsafeCast("startRange")
+
+inline val PartSource.Companion.endRange: PartSource
+    get() = unsafeCast("endRange")
+
+inline val PartSource.Companion.shared: PartSource
+    get() = unsafeCast("shared")

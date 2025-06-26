@@ -6,14 +6,14 @@
 
 package web.mediasource
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface EndOfStreamError {
-    companion object {
-        @JsValue("decode")
-        val decode: EndOfStreamError
-
-        @JsValue("network")
-        val network: EndOfStreamError
-    }
+    companion object
 }
+
+inline val EndOfStreamError.Companion.decode: EndOfStreamError
+    get() = unsafeCast("decode")
+
+inline val EndOfStreamError.Companion.network: EndOfStreamError
+    get() = unsafeCast("network")

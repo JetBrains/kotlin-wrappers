@@ -6,23 +6,23 @@
 
 package web.rtc
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface RTCDtlsTransportState {
-    companion object {
-        @JsValue("closed")
-        val closed: RTCDtlsTransportState
-
-        @JsValue("connected")
-        val connected: RTCDtlsTransportState
-
-        @JsValue("connecting")
-        val connecting: RTCDtlsTransportState
-
-        @JsValue("failed")
-        val failed: RTCDtlsTransportState
-
-        @JsValue("new")
-        val new: RTCDtlsTransportState
-    }
+    companion object
 }
+
+inline val RTCDtlsTransportState.Companion.closed: RTCDtlsTransportState
+    get() = unsafeCast("closed")
+
+inline val RTCDtlsTransportState.Companion.connected: RTCDtlsTransportState
+    get() = unsafeCast("connected")
+
+inline val RTCDtlsTransportState.Companion.connecting: RTCDtlsTransportState
+    get() = unsafeCast("connecting")
+
+inline val RTCDtlsTransportState.Companion.failed: RTCDtlsTransportState
+    get() = unsafeCast("failed")
+
+inline val RTCDtlsTransportState.Companion.new: RTCDtlsTransportState
+    get() = unsafeCast("new")

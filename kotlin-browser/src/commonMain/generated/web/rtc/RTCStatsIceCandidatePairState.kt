@@ -6,26 +6,26 @@
 
 package web.rtc
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface RTCStatsIceCandidatePairState {
-    companion object {
-        @JsValue("failed")
-        val failed: RTCStatsIceCandidatePairState
-
-        @JsValue("frozen")
-        val frozen: RTCStatsIceCandidatePairState
-
-        @JsValue("in-progress")
-        val inProgress: RTCStatsIceCandidatePairState
-
-        @JsValue("inprogress")
-        val inprogress: RTCStatsIceCandidatePairState
-
-        @JsValue("succeeded")
-        val succeeded: RTCStatsIceCandidatePairState
-
-        @JsValue("waiting")
-        val waiting: RTCStatsIceCandidatePairState
-    }
+    companion object
 }
+
+inline val RTCStatsIceCandidatePairState.Companion.failed: RTCStatsIceCandidatePairState
+    get() = unsafeCast("failed")
+
+inline val RTCStatsIceCandidatePairState.Companion.frozen: RTCStatsIceCandidatePairState
+    get() = unsafeCast("frozen")
+
+inline val RTCStatsIceCandidatePairState.Companion.inProgress: RTCStatsIceCandidatePairState
+    get() = unsafeCast("inProgress")
+
+inline val RTCStatsIceCandidatePairState.Companion.inprogress: RTCStatsIceCandidatePairState
+    get() = unsafeCast("inprogress")
+
+inline val RTCStatsIceCandidatePairState.Companion.succeeded: RTCStatsIceCandidatePairState
+    get() = unsafeCast("succeeded")
+
+inline val RTCStatsIceCandidatePairState.Companion.waiting: RTCStatsIceCandidatePairState
+    get() = unsafeCast("waiting")

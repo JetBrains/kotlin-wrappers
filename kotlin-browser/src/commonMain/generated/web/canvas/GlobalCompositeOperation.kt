@@ -6,86 +6,86 @@
 
 package web.canvas
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface GlobalCompositeOperation {
-    companion object {
-        @JsValue("color")
-        val color: GlobalCompositeOperation
-
-        @JsValue("color-burn")
-        val colorBurn: GlobalCompositeOperation
-
-        @JsValue("color-dodge")
-        val colorDodge: GlobalCompositeOperation
-
-        @JsValue("copy")
-        val copy: GlobalCompositeOperation
-
-        @JsValue("darken")
-        val darken: GlobalCompositeOperation
-
-        @JsValue("destination-atop")
-        val destinationAtop: GlobalCompositeOperation
-
-        @JsValue("destination-in")
-        val destinationIn: GlobalCompositeOperation
-
-        @JsValue("destination-out")
-        val destinationOut: GlobalCompositeOperation
-
-        @JsValue("destination-over")
-        val destinationOver: GlobalCompositeOperation
-
-        @JsValue("difference")
-        val difference: GlobalCompositeOperation
-
-        @JsValue("exclusion")
-        val exclusion: GlobalCompositeOperation
-
-        @JsValue("hard-light")
-        val hardLight: GlobalCompositeOperation
-
-        @JsValue("hue")
-        val hue: GlobalCompositeOperation
-
-        @JsValue("lighten")
-        val lighten: GlobalCompositeOperation
-
-        @JsValue("lighter")
-        val lighter: GlobalCompositeOperation
-
-        @JsValue("luminosity")
-        val luminosity: GlobalCompositeOperation
-
-        @JsValue("multiply")
-        val multiply: GlobalCompositeOperation
-
-        @JsValue("overlay")
-        val overlay: GlobalCompositeOperation
-
-        @JsValue("saturation")
-        val saturation: GlobalCompositeOperation
-
-        @JsValue("screen")
-        val screen: GlobalCompositeOperation
-
-        @JsValue("soft-light")
-        val softLight: GlobalCompositeOperation
-
-        @JsValue("source-atop")
-        val sourceAtop: GlobalCompositeOperation
-
-        @JsValue("source-in")
-        val sourceIn: GlobalCompositeOperation
-
-        @JsValue("source-out")
-        val sourceOut: GlobalCompositeOperation
-
-        @JsValue("source-over")
-        val sourceOver: GlobalCompositeOperation
-
-        @JsValue("xor")
-        val xor: GlobalCompositeOperation
-    }
+    companion object
 }
+
+inline val GlobalCompositeOperation.Companion.color: GlobalCompositeOperation
+    get() = unsafeCast("color")
+
+inline val GlobalCompositeOperation.Companion.colorBurn: GlobalCompositeOperation
+    get() = unsafeCast("colorBurn")
+
+inline val GlobalCompositeOperation.Companion.colorDodge: GlobalCompositeOperation
+    get() = unsafeCast("colorDodge")
+
+inline val GlobalCompositeOperation.Companion.copy: GlobalCompositeOperation
+    get() = unsafeCast("copy")
+
+inline val GlobalCompositeOperation.Companion.darken: GlobalCompositeOperation
+    get() = unsafeCast("darken")
+
+inline val GlobalCompositeOperation.Companion.destinationAtop: GlobalCompositeOperation
+    get() = unsafeCast("destinationAtop")
+
+inline val GlobalCompositeOperation.Companion.destinationIn: GlobalCompositeOperation
+    get() = unsafeCast("destinationIn")
+
+inline val GlobalCompositeOperation.Companion.destinationOut: GlobalCompositeOperation
+    get() = unsafeCast("destinationOut")
+
+inline val GlobalCompositeOperation.Companion.destinationOver: GlobalCompositeOperation
+    get() = unsafeCast("destinationOver")
+
+inline val GlobalCompositeOperation.Companion.difference: GlobalCompositeOperation
+    get() = unsafeCast("difference")
+
+inline val GlobalCompositeOperation.Companion.exclusion: GlobalCompositeOperation
+    get() = unsafeCast("exclusion")
+
+inline val GlobalCompositeOperation.Companion.hardLight: GlobalCompositeOperation
+    get() = unsafeCast("hardLight")
+
+inline val GlobalCompositeOperation.Companion.hue: GlobalCompositeOperation
+    get() = unsafeCast("hue")
+
+inline val GlobalCompositeOperation.Companion.lighten: GlobalCompositeOperation
+    get() = unsafeCast("lighten")
+
+inline val GlobalCompositeOperation.Companion.lighter: GlobalCompositeOperation
+    get() = unsafeCast("lighter")
+
+inline val GlobalCompositeOperation.Companion.luminosity: GlobalCompositeOperation
+    get() = unsafeCast("luminosity")
+
+inline val GlobalCompositeOperation.Companion.multiply: GlobalCompositeOperation
+    get() = unsafeCast("multiply")
+
+inline val GlobalCompositeOperation.Companion.overlay: GlobalCompositeOperation
+    get() = unsafeCast("overlay")
+
+inline val GlobalCompositeOperation.Companion.saturation: GlobalCompositeOperation
+    get() = unsafeCast("saturation")
+
+inline val GlobalCompositeOperation.Companion.screen: GlobalCompositeOperation
+    get() = unsafeCast("screen")
+
+inline val GlobalCompositeOperation.Companion.softLight: GlobalCompositeOperation
+    get() = unsafeCast("softLight")
+
+inline val GlobalCompositeOperation.Companion.sourceAtop: GlobalCompositeOperation
+    get() = unsafeCast("sourceAtop")
+
+inline val GlobalCompositeOperation.Companion.sourceIn: GlobalCompositeOperation
+    get() = unsafeCast("sourceIn")
+
+inline val GlobalCompositeOperation.Companion.sourceOut: GlobalCompositeOperation
+    get() = unsafeCast("sourceOut")
+
+inline val GlobalCompositeOperation.Companion.sourceOver: GlobalCompositeOperation
+    get() = unsafeCast("sourceOver")
+
+inline val GlobalCompositeOperation.Companion.xor: GlobalCompositeOperation
+    get() = unsafeCast("xor")

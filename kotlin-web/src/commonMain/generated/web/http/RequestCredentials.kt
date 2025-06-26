@@ -6,17 +6,17 @@
 
 package web.http
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
 sealed external interface RequestCredentials {
-    companion object {
-        @JsValue("include")
-        val include: RequestCredentials
-
-        @JsValue("omit")
-        val omit: RequestCredentials
-
-        @JsValue("same-origin")
-        val sameOrigin: RequestCredentials
-    }
+    companion object
 }
+
+inline val RequestCredentials.Companion.include: RequestCredentials
+    get() = unsafeCast("include")
+
+inline val RequestCredentials.Companion.omit: RequestCredentials
+    get() = unsafeCast("omit")
+
+inline val RequestCredentials.Companion.sameOrigin: RequestCredentials
+    get() = unsafeCast("sameOrigin")
