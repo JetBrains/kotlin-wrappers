@@ -101,7 +101,7 @@ internal fun String.applyPatches(): String {
             "// abort(reason?: any): AbortSignal; - To be re-added in the future",
             "abort(reason?: any): AbortSignal;",
         )
-        .replace(""""Ed25519" | { name: "Ed25519" }""", ED25519)
+        .replace(""""Ed25519" | { name: "Ed25519" }""", "${ED25519}Algorithm")
         .replace("    reason?: any;", "    reason?: JsError | undefined;")
         .replace("readonly reason: any;", "readonly reason: JsError | undefined;")
         .replace("(reason?: any)", "(reason?: JsError | undefined)")

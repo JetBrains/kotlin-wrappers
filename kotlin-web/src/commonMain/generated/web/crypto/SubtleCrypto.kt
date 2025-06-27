@@ -897,14 +897,14 @@ private constructor() {
     @JsAsync
     @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun generateKey(
-        algorithm: Ed25519,
+        algorithm: Ed25519Algorithm,
         extractable: Boolean,
         keyUsages: ReadonlyArray<KeyUsage /* "sign" | "verify" */>,
     ): CryptoKeyPair
 
     @JsName("generateKey")
     fun generateKeyAsync(
-        algorithm: Ed25519,
+        algorithm: Ed25519Algorithm,
         extractable: Boolean,
         keyUsages: ReadonlyArray<KeyUsage /* "sign" | "verify" */>,
     ): Promise<CryptoKeyPair>
