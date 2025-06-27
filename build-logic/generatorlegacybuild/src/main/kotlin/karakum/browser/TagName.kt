@@ -79,7 +79,7 @@ private fun tagDictionary(
 
     val namespaceBody = if (namespace != null) {
         """
-        @JsValue("$namespace")
+        @JsName("'$namespace'")
         external object ${name.uppercase()}_NAMESPACE: ElementNamespace
         """.trimIndent()
     } else null

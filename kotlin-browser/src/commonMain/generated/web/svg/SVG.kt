@@ -2,10 +2,10 @@
 
 package web.svg
 
-import seskar.js.JsValue
 import web.dom.ElementNamespace
+import kotlin.js.JsName
 
-@JsValue("http://www.w3.org/2000/svg")
+@JsName("'http://www.w3.org/2000/svg'")
 external object SVG_NAMESPACE : ElementNamespace
 
 object SVG {

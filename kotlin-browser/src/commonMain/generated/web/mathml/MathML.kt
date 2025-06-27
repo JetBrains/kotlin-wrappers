@@ -2,10 +2,10 @@
 
 package web.mathml
 
-import seskar.js.JsValue
 import web.dom.ElementNamespace
+import kotlin.js.JsName
 
-@JsValue("http://www.w3.org/1998/Math/MathML")
+@JsName("'http://www.w3.org/1998/Math/MathML'")
 external object MATHML_NAMESPACE : ElementNamespace
 
 object MathML {
