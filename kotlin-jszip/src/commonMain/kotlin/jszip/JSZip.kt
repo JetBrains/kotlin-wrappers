@@ -4,7 +4,6 @@ import js.core.JsAny
 import js.import.JsModule
 import js.promise.Promise
 import js.promise.await
-import seskar.js.JsAsync
 import web.file.File
 import kotlin.js.JsName
 import kotlin.js.definedExternally
@@ -23,7 +22,6 @@ external class JSZip {
     ): Promise<T>
 }
 
-@JsAsync
 suspend inline fun <T : JsAny> JSZip.generate(
     options: JSZipGeneratorOptions<T>,
 ): T =
