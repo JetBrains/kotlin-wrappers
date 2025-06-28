@@ -7,8 +7,8 @@ import kotlinx.coroutines.test.runTest
 import react.FC
 import react.Props
 import web.dom.document
-import web.html.HTML.div
 import web.html.HTMLElement
+import web.html.HtmlTagName.div
 
 fun runReactTest(
     testBody: suspend TestScope.(container: HTMLElement) -> Unit,

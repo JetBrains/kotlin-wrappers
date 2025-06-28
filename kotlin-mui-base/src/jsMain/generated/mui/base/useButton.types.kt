@@ -3,6 +3,7 @@
 package mui.base
 
 import web.html.ButtonType
+import web.html.HTMLElement
 
 external interface UseButtonParameters {
     /**
@@ -37,7 +38,7 @@ external interface UseButtonParameters {
      * The HTML element, e.g.'button', 'a' etc
      * @default ''
      */
-    var rootElementName: web.html.HtmlTagName<*>?
+    var rootElementName: web.dom.TagName<out HTMLElement>?
 }
 
 external interface UseButtonRootSlotOwnProps : react.Props {

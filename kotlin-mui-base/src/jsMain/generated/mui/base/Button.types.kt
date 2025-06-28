@@ -3,6 +3,7 @@
 package mui.base
 
 import web.cssom.ClassName
+import web.html.HTMLElement
 
 external interface ButtonProps :
     ButtonOwnProps,
@@ -46,7 +47,7 @@ external interface ButtonOwnProps :
      * The HTML element that is ultimately rendered, for example 'button' or 'a'
      * @default 'button'
      */
-    override var rootElementName: web.html.HtmlTagName<*>?
+    override var rootElementName: web.dom.TagName<out HTMLElement>?
 }
 
 external interface ButtonSlots {

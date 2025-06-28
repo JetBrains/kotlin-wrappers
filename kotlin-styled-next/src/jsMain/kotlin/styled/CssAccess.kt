@@ -8,7 +8,7 @@ import web.blob.BlobPropertyBag
 import web.cssom.CSSStyleSheet
 import web.dom.Element
 import web.dom.document
-import web.html.HTML
+import web.html.HtmlTagName
 import web.location.location
 import web.storage.localStorage
 import web.uievents.CLICK
@@ -46,7 +46,7 @@ internal object GlobalCssAccess {
     private fun downloadFile(blob: BlobPart, name: String) {
         val binaryData = arrayOf(blob)
         val blobUrl = URL.createObjectURL(Blob(binaryData, BlobPropertyBag(type = "application/text")))
-        val link = document.createElement(HTML.a)
+        val link = document.createElement(HtmlTagName.a)
         link.href = blobUrl
         link.download = name
         document.body.appendChild(link)
