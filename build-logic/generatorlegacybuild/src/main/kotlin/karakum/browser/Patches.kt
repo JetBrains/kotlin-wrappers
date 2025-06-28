@@ -380,15 +380,15 @@ private fun String.patchQuerySelectors(): String =
     this
         .replace(
             "querySelector<K extends keyof HTMLElementTagNameMap>(selectors: K): HTMLElementTagNameMap[K] | null;",
-            "querySelector<T extends HTMLElement>(selectors: HtmlTagName<T>): T | null;"
+            "querySelector<T extends Element>(selectors: TagName<T>): T | null;"
         )
         .replace(
             "querySelector<K extends keyof SVGElementTagNameMap>(selectors: K): SVGElementTagNameMap[K] | null;",
-            "querySelector<T extends SVGElement>(selectors: SvgTagName<T>): T | null;"
+            ""
         )
         .replace(
             "querySelector<K extends keyof MathMLElementTagNameMap>(selectors: K): MathMLElementTagNameMap[K] | null;",
-            "querySelector<T extends MathMLElement>(selectors: MathMLTagName<T>): T | null;"
+            ""
         )
         .replace(
             "querySelector<E extends Element = Element>(selectors: string): E | null;",
@@ -396,15 +396,15 @@ private fun String.patchQuerySelectors(): String =
         )
         .replace(
             "querySelectorAll<K extends keyof HTMLElementTagNameMap>(selectors: K): NodeList<HTMLElementTagNameMap[K]>;",
-            "querySelectorAll<T extends HTMLElement>(selectors: HtmlTagName<T>): NodeList<T>;"
+            "querySelectorAll<T extends Element>(selectors: TagName<T>): NodeList<T>;"
         )
         .replace(
             "querySelectorAll<K extends keyof SVGElementTagNameMap>(selectors: K): NodeList<SVGElementTagNameMap[K]>;",
-            "querySelectorAll<T extends SVGElement>(selectors: SvgTagName<T>): NodeList<T>;"
+            ""
         )
         .replace(
             "querySelectorAll<K extends keyof MathMLElementTagNameMap>(selectors: K): NodeList<MathMLElementTagNameMap[K]>;",
-            "querySelectorAll<T extends MathMLElement>(selectors: MathMLTagName<T>): NodeList<T>;"
+            ""
         )
         .replace(
             "querySelectorAll<E extends Element = Element>(selectors: string): NodeList<E>;",

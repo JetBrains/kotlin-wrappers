@@ -8,9 +8,6 @@
 package web.dom
 
 import web.html.HTMLCollection
-import web.html.HTMLElement
-import web.mathml.MathMLElement
-import web.svg.SVGElement
 import kotlin.js.definedExternally
 
 sealed external interface ParentNode :
@@ -70,9 +67,7 @@ sealed external interface ParentNode :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/querySelector)
      */
-    fun <T : HTMLElement> querySelector(selectors: HtmlTagName<T>): T? = definedExternally
-    fun <T : SVGElement> querySelector(selectors: SvgTagName<T>): T? = definedExternally
-    fun <T : MathMLElement> querySelector(selectors: MathMLTagName<T>): T? = definedExternally
+    fun <T : Element> querySelector(selectors: TagName<T>): T? = definedExternally
     fun querySelector(selectors: String): Element? = definedExternally
 
     /**
@@ -80,9 +75,7 @@ sealed external interface ParentNode :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/querySelectorAll)
      */
-    fun <T : HTMLElement> querySelectorAll(selectors: HtmlTagName<T>): NodeList<T> = definedExternally
-    fun <T : SVGElement> querySelectorAll(selectors: SvgTagName<T>): NodeList<T> = definedExternally
-    fun <T : MathMLElement> querySelectorAll(selectors: MathMLTagName<T>): NodeList<T> = definedExternally
+    fun <T : Element> querySelectorAll(selectors: TagName<T>): NodeList<T> = definedExternally
     fun querySelectorAll(selectors: String): NodeList<Element> = definedExternally
 
     /**
