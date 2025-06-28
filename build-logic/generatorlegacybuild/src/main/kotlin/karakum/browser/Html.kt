@@ -635,13 +635,6 @@ internal fun htmlDeclarations(
         )
         .plus(
             ConversionResult(
-                name = "ElementNamespace",
-                body = "external interface ElementNamespace",
-                pkg = "web.dom",
-            )
-        )
-        .plus(
-            ConversionResult(
                 name = "NodeFilter",
                 body = "typealias NodeFilter = (node: Node) -> Short",
                 pkg = "web.dom",
@@ -1151,10 +1144,10 @@ internal fun convertInterface(
                 .replace("fun getName(", "fun <T : HTMLElement> getName(")
                 .replace("fun whenDefined(", "fun <T : HTMLElement> whenDefined(")
                 .replace("fun whenDefinedAsync(", "fun <T : HTMLElement> whenDefinedAsync(")
-                .replace(": String", ": HtmlTagName<T>")
+                .replace(": String", ": TagName<T>")
 
             "ElementDefinitionOptions",
-                -> result.replace(": String", ": HtmlTagName<T>")
+                -> result.replace(": String", ": TagName<T>")
 
             "CanvasPathDrawingStyles",
                 -> result
@@ -1788,63 +1781,53 @@ internal fun convertMember(
         "createElement<K extends keyof HTMLElementTagNameMap>(tagName: K, options?: ElementCreationOptions): HTMLElementTagNameMap[K]",
             -> return """
         fun <T: HTMLElement> createElement(
-            tagName: HtmlTagName<T>,
+            tagName: TagName<T>,
             options: ElementCreationOptions = definedExternally,
         ): T
         """.trimIndent()
 
         "createElementNS(namespaceURI: SVG_NAMESPACE, qualifiedName: string): SVGElement",
             -> return """
-        fun <T : SVGElement> createElementNS(
-            namespaceURI: SVG_NAMESPACE,
-            qualifiedName: SvgTagName<T>,
+        fun <T : Element> createElementNS(
+            namespaceURI: TagNamespace<T>,
+            qualifiedName: TagName<T>,
         ): T
         """.trimIndent()
 
         "createElementNS(namespaceURI: MATHML_NAMESPACE, qualifiedName: string): MathMLElement",
-            -> return """
-        fun <T : MathMLElement> createElementNS(
-            namespaceURI: MATHML_NAMESPACE,
-            qualifiedName: MathMLTagName<T>,
-        ): T
-        """.trimIndent()
+            -> return null
 
         "closest<K extends keyof HTMLElementTagNameMap>(selector: K): HTMLElementTagNameMap[K] | null",
-            -> return "fun <T: HTMLElement> closest(selector: HtmlTagName<T>): T?"
+            -> return "fun <T: Element> closest(selector: TagName<T>): T?"
 
         "closest<K extends keyof SVGElementTagNameMap>(selector: K): SVGElementTagNameMap[K] | null",
-            -> return "fun <T: SVGElement> closest(selector: SvgTagName<T>): T?"
+            -> return null
 
         "closest<K extends keyof MathMLElementTagNameMap>(selector: K): MathMLElementTagNameMap[K] | null",
-            -> return "fun <T: MathMLElement> closest(selector: MathMLTagName<T>): T?"
+            -> return null
 
         "closest<E extends Element = Element>(selectors: string): E | null",
             -> return "fun closest(selector: String): Element?"
 
         "getElementsByTagName<K extends keyof HTMLElementTagNameMap>(qualifiedName: K): HTMLCollection<HTMLElementTagNameMap[K]>",
-            -> return "fun <T: HTMLElement> getElementsByTagName(qualifiedName: HtmlTagName<T>): HTMLCollection<T>"
+            -> return "fun <T: Element> getElementsByTagName(qualifiedName: TagName<T>): HTMLCollection<T>"
 
         "getElementsByTagName<K extends keyof SVGElementTagNameMap>(qualifiedName: K): HTMLCollection<SVGElementTagNameMap[K]>",
-            -> return "fun <T: SVGElement> getElementsByTagName(qualifiedName: SvgTagName<T>): HTMLCollection<T>"
+            -> return null
 
         "getElementsByTagName<K extends keyof MathMLElementTagNameMap>(qualifiedName: K): HTMLCollection<MathMLElementTagNameMap[K]>",
-            -> return "fun <T: MathMLElement> getElementsByTagName(qualifiedName: MathMLTagName<T>): HTMLCollection<T>"
+            -> return null
 
         "getElementsByTagNameNS(namespaceURI: SVG_NAMESPACE, localName: string): HTMLCollection<SVGElement>",
             -> return """
-        fun <T : SVGElement> getElementsByTagNameNS(
-            namespaceURI: SVG_NAMESPACE,
-            localName: SvgTagName<T>,
+        fun <T : Element> getElementsByTagNameNS(
+            namespaceURI: TagNamespace<T>,
+            localName: TagName<T>,
         ): HTMLCollection<T>
         """.trimIndent()
 
         "getElementsByTagNameNS(namespaceURI: MATHML_NAMESPACE, localName: string): HTMLCollection<MathMLElement>",
-            -> return """
-        fun <T : MathMLElement> getElementsByTagNameNS(
-            namespaceURI: MATHML_NAMESPACE,
-            localName: MathMLTagName<T>,
-        ): HTMLCollection<T>
-        """.trimIndent()
+            -> return null
 
         "getContext(contextId: string, options?: any): RenderingContext | null",
             -> return """

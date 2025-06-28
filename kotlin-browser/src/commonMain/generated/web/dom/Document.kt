@@ -19,15 +19,9 @@ import web.form.FormDataEvent
 import web.form.SubmitEvent
 import web.html.*
 import web.location.Location
-import web.mathml.MATHML_NAMESPACE
-import web.mathml.MathMLElement
-import web.mathml.MathMLTagName
 import web.pip.PictureInPictureEvent
 import web.ranges.Range
 import web.selection.Selection
-import web.svg.SVGElement
-import web.svg.SVG_NAMESPACE
-import web.svg.SvgTagName
 import web.uievents.*
 import web.url.FragmentDirective
 import web.url.URL
@@ -386,7 +380,7 @@ open external class Document :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/createElement)
      */
     fun <T : HTMLElement> createElement(
-        tagName: HtmlTagName<T>,
+        tagName: TagName<T>,
         options: ElementCreationOptions = definedExternally,
     ): T
 
@@ -395,14 +389,9 @@ open external class Document :
         options: ElementCreationOptions = definedExternally,
     ): HTMLElement
 
-    fun <T : SVGElement> createElementNS(
-        namespaceURI: SVG_NAMESPACE,
-        qualifiedName: SvgTagName<T>,
-    ): T
-
-    fun <T : MathMLElement> createElementNS(
-        namespaceURI: MATHML_NAMESPACE,
-        qualifiedName: MathMLTagName<T>,
+    fun <T : Element> createElementNS(
+        namespaceURI: TagNamespace<T>,
+        qualifiedName: TagName<T>,
     ): T
 
     fun createElementNS(
@@ -514,18 +503,11 @@ open external class Document :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/getElementsByTagName)
      */
-    fun <T : HTMLElement> getElementsByTagName(qualifiedName: HtmlTagName<T>): HTMLCollection<T>
-    fun <T : SVGElement> getElementsByTagName(qualifiedName: SvgTagName<T>): HTMLCollection<T>
-    fun <T : MathMLElement> getElementsByTagName(qualifiedName: MathMLTagName<T>): HTMLCollection<T>
+    fun <T : Element> getElementsByTagName(qualifiedName: TagName<T>): HTMLCollection<T>
     fun getElementsByTagName(qualifiedName: String): HTMLCollection<Element>
-    fun <T : SVGElement> getElementsByTagNameNS(
-        namespaceURI: SVG_NAMESPACE,
-        localName: SvgTagName<T>,
-    ): HTMLCollection<T>
-
-    fun <T : MathMLElement> getElementsByTagNameNS(
-        namespaceURI: MATHML_NAMESPACE,
-        localName: MathMLTagName<T>,
+    fun <T : Element> getElementsByTagNameNS(
+        namespaceURI: TagNamespace<T>,
+        localName: TagName<T>,
     ): HTMLCollection<T>
 
     fun getElementsByTagNameNS(

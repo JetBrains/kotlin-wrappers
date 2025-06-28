@@ -7,18 +7,6 @@ internal const val MATHML_TAG_NAME = "MathMLTagName"
 internal const val SVG_NAMESPACE = "http://www.w3.org/2000/svg"
 internal const val MATHML_NAMESPACE = "http://www.w3.org/1998/Math/MathML"
 
-private fun tagNameBody(
-    tagType: String,
-    elementType: String,
-): String = """
-sealed external interface $tagType<T : $elementType>
-
-inline fun <T : $elementType> $tagType(
-    tagName: String,
-): $tagType<T> =
-    unsafeCast(tagName)
-""".trimIndent()
-
 internal fun tagNames(
     source: String,
 ): Sequence<ConversionResult> {
@@ -26,21 +14,6 @@ internal fun tagNames(
         tagDictionary("HTML", source, HTML_TAG_NAME),
         tagDictionary("SVG", source, SVG_TAG_NAME, SVG_NAMESPACE),
         tagDictionary("MathML", source, MATHML_TAG_NAME, MATHML_NAMESPACE),
-        ConversionResult(
-            name = HTML_TAG_NAME,
-            body = tagNameBody(HTML_TAG_NAME, "HTMLElement"),
-            pkg = "web.html",
-        ),
-        ConversionResult(
-            name = SVG_TAG_NAME,
-            body = tagNameBody(SVG_TAG_NAME, "SVGElement"),
-            pkg = "web.svg",
-        ),
-        ConversionResult(
-            name = MATHML_TAG_NAME,
-            body = tagNameBody(MATHML_TAG_NAME, "MathMLElement"),
-            pkg = "web.mathml",
-        ),
     )
 }
 
@@ -72,26 +45,26 @@ private fun tagDictionary(
             }
 
             """
-            inline val $propertyName: $groupTagName<$tagType>
-                get() = $groupTagName("$tagName")
+            inline val $propertyName: TagName<$tagType>
+                get() = TagName("$tagName")
             """.trimIndent()
         }
 
     val namespaceBody = if (namespace != null) {
         """
-        @JsValue("$namespace")
-        external object ${name.uppercase()}_NAMESPACE: ElementNamespace
+        inline val ${name.uppercase()}_NAMESPACE: TagNamespace<$elementType>
+            get() = unsafeCast("$namespace")
         """.trimIndent()
     } else null
 
     val body = sequenceOf(
         namespaceBody,
-        "object $name {\n$members\n}",
+        "object $groupTagName {\n$members\n}",
     ).filterNotNull()
         .joinToString("\n\n")
 
     return ConversionResult(
-        name = name,
+        name = groupTagName,
         body = body,
         pkg = "web.${name.lowercase()}",
     )

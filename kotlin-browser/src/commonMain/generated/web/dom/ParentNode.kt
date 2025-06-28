@@ -9,11 +9,8 @@ package web.dom
 
 import web.html.HTMLCollection
 import web.html.HTMLElement
-import web.html.HtmlTagName
 import web.mathml.MathMLElement
-import web.mathml.MathMLTagName
 import web.svg.SVGElement
-import web.svg.SvgTagName
 import kotlin.js.definedExternally
 
 sealed external interface ParentNode :

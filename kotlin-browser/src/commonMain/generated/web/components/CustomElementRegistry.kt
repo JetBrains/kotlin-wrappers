@@ -5,8 +5,8 @@ package web.components
 import js.promise.Promise
 import seskar.js.JsAsync
 import web.dom.Node
+import web.dom.TagName
 import web.html.HTMLElement
-import web.html.HtmlTagName
 import kotlin.js.JsName
 import kotlin.js.definedExternally
 
@@ -22,7 +22,7 @@ open external class CustomElementRegistry {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CustomElementRegistry/define)
      */
     fun <T : P, P : HTMLElement> define(
-        name: HtmlTagName<T>,
+        name: TagName<T>,
         constructor: CustomElementConstructor<T>,
         options: ElementDefinitionOptions<P> = definedExternally,
     )
@@ -32,14 +32,14 @@ open external class CustomElementRegistry {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CustomElementRegistry/get)
      */
-    fun <T : HTMLElement> get(name: HtmlTagName<T>): CustomElementConstructor<T>?
+    fun <T : HTMLElement> get(name: TagName<T>): CustomElementConstructor<T>?
 
     /**
      * The **`getName()`** method of the previously-defined custom element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CustomElementRegistry/getName)
      */
-    fun <T : HTMLElement> getName(constructor: CustomElementConstructor<T>): HtmlTagName<T>?
+    fun <T : HTMLElement> getName(constructor: CustomElementConstructor<T>): TagName<T>?
 
     /**
      * The **`upgrade()`** method of the elements in a Node subtree, even before they are connected to the main document.
@@ -55,8 +55,8 @@ open external class CustomElementRegistry {
      */
     @JsAsync
     @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun <T : HTMLElement> whenDefined(name: HtmlTagName<T>): CustomElementConstructor<T>
+    suspend fun <T : HTMLElement> whenDefined(name: TagName<T>): CustomElementConstructor<T>
 
     @JsName("whenDefined")
-    fun <T : HTMLElement> whenDefinedAsync(name: HtmlTagName<T>): Promise<CustomElementConstructor<T>>
+    fun <T : HTMLElement> whenDefinedAsync(name: TagName<T>): Promise<CustomElementConstructor<T>>
 }

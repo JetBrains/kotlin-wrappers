@@ -20,16 +20,8 @@ import web.fullscreen.FullscreenOptions
 import web.geometry.DOMRect
 import web.geometry.DOMRectList
 import web.html.HTMLCollection
-import web.html.HTMLElement
-import web.html.HtmlTagName
-import web.mathml.MATHML_NAMESPACE
-import web.mathml.MathMLElement
-import web.mathml.MathMLTagName
 import web.scroll.ScrollIntoViewOptions
 import web.scroll.ScrollToOptions
-import web.svg.SVGElement
-import web.svg.SVG_NAMESPACE
-import web.svg.SvgTagName
 import web.uievents.*
 import kotlin.js.JsName
 import kotlin.js.definedExternally
@@ -232,9 +224,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/closest)
      */
-    fun <T : HTMLElement> closest(selector: HtmlTagName<T>): T?
-    fun <T : SVGElement> closest(selector: SvgTagName<T>): T?
-    fun <T : MathMLElement> closest(selector: MathMLTagName<T>): T?
+    fun <T : Element> closest(selector: TagName<T>): T?
     fun closest(selector: String): Element?
 
     /**
@@ -311,18 +301,11 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/getElementsByTagName)
      */
-    fun <T : HTMLElement> getElementsByTagName(qualifiedName: HtmlTagName<T>): HTMLCollection<T>
-    fun <T : SVGElement> getElementsByTagName(qualifiedName: SvgTagName<T>): HTMLCollection<T>
-    fun <T : MathMLElement> getElementsByTagName(qualifiedName: MathMLTagName<T>): HTMLCollection<T>
+    fun <T : Element> getElementsByTagName(qualifiedName: TagName<T>): HTMLCollection<T>
     fun getElementsByTagName(qualifiedName: String): HTMLCollection<Element>
-    fun <T : SVGElement> getElementsByTagNameNS(
-        namespaceURI: SVG_NAMESPACE,
-        localName: SvgTagName<T>,
-    ): HTMLCollection<T>
-
-    fun <T : MathMLElement> getElementsByTagNameNS(
-        namespaceURI: MATHML_NAMESPACE,
-        localName: MathMLTagName<T>,
+    fun <T : Element> getElementsByTagNameNS(
+        namespaceURI: TagNamespace<T>,
+        localName: TagName<T>,
     ): HTMLCollection<T>
 
     fun getElementsByTagNameNS(
