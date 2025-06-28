@@ -5,7 +5,7 @@ import react.create
 import react.dom.client.createRoot
 import web.dom.document
 import web.events.once
-import web.html.HTML.div
+import web.html.HtmlTagName.div
 import web.window.loadEvent
 import web.window.window
 

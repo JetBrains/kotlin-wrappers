@@ -16,8 +16,8 @@ import web.events.addHandler
 import web.events.once
 import web.events.subscribe
 import web.html.changeEvent
-import web.html.HTML.input
-import web.html.HTML.script
+import web.html.HtmlTagName.input
+import web.html.HtmlTagName.script
 import web.html.HTMLScriptElement
 
 val SubscribeExample = FC {

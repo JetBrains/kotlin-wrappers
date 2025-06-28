@@ -5,7 +5,7 @@ import js.import.importAsync
 import react.create
 import react.dom.client.createRoot
 import web.dom.document
-import web.html.HTML.div
+import web.html.HtmlTagName.div
 import web.html.HTMLElement
 
 fun main() {
