@@ -3,7 +3,7 @@ package karakum.browser
 internal const val ED25519 = "Ed25519"
 
 private val ED25519_BODY: String = """
-@JsValue("$ED25519")
+@JsName("'$ED25519'")
 external object $ED25519
 """.trimIndent()
 

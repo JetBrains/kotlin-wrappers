@@ -2,7 +2,7 @@
 
 package web.crypto
 
-import seskar.js.JsValue
+import kotlin.js.JsName
 
-@JsValue("Ed25519")
+@JsName("'Ed25519'")
 external object Ed25519
