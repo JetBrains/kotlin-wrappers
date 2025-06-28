@@ -47,6 +47,26 @@ sealed external interface PixelFormat {
         val RGBA: PixelFormat
 
         /**
+         * A pixel format containing a red channel as an integer.
+         */
+        val RED_INTEGER: PixelFormat
+
+        /**
+         * A pixel format containing red and green channels as integers.
+         */
+        val RG_INTEGER: PixelFormat
+
+        /**
+         * A pixel format containing red, green, and blue channels as integers.
+         */
+        val RGB_INTEGER: PixelFormat
+
+        /**
+         * A pixel format containing red, green, blue, and alpha channels as integers.
+         */
+        val RGBA_INTEGER: PixelFormat
+
+        /**
          * A pixel format containing a luminance (intensity) channel.
          */
         val LUMINANCE: PixelFormat
