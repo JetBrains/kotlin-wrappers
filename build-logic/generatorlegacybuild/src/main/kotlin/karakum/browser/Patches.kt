@@ -307,6 +307,10 @@ internal fun String.applyPatches(): String {
             "declare function getComputedStyle(elt: Element, pseudoElt?: string | null): CSSStyleDeclaration;",
             "declare function getComputedStyle(elt: Element, pseudoElt?: string | null): CSSStyleProperties;",
         )
+        // https://github.com/microsoft/TypeScript-DOM-lib-generator/issues/2054
+        .patchInterface("ElementCSSInlineStyle") {
+            it.replace(" readonly style: CSSStyleDeclaration;", " readonly style: CSSStyleProperties;")
+        }
 }
 
 internal val DOM_GEOMETRY_ALIASES = listOf(
