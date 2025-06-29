@@ -598,13 +598,6 @@ open external class Document :
     fun startViewTransition(callbackOptions: ViewTransitionUpdateCallback = definedExternally): ViewTransition
     fun startViewTransition(callbackOptions: StartViewTransitionOptions): ViewTransition
 
-    /**
-     * The **`writeln()`** method of the Document interface writes text in one or more TrustedHTML or string parameters to a document stream opened by document.open(), followed by a newline character.
-     *
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/writeln)
-     */
-    fun writeln(vararg text: String)
-
     companion object {
         /**
          * The **`parseHTMLUnsafe()`** static method of the Document object is used to parse an HTML input, optionally filtering unwanted HTML elements and attributes, in order to create a new Document instance.

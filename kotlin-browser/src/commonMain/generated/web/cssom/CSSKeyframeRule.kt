@@ -22,5 +22,5 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSKeyframeRule/style)
      */
-    val style: CSSStyleDeclaration
+    val style: CSSStyleProperties
 }

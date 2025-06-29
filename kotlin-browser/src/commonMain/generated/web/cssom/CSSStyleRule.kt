@@ -22,7 +22,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleRule/style)
      */
-    val style: CSSStyleDeclaration
+    val style: CSSStyleProperties
 
     /**
      * The **`styleMap`** read-only property of the which provides access to the rule's property-value pairs.

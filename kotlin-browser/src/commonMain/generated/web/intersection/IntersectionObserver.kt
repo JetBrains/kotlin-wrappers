@@ -30,6 +30,7 @@ open external class IntersectionObserver(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IntersectionObserver/rootMargin)
      */
     val rootMargin: String
+    val scrollMargin: String
 
     /**
      * The IntersectionObserver interface's read-only **`thresholds`** property returns the list of intersection thresholds that was specified when the observer was instantiated with only one threshold ratio was provided when instantiating the object, this will be an array containing that single value.

@@ -1261,7 +1261,8 @@ internal fun convertInterface(
 
         // TODO: calculate
         hasPrivateConstructor && (
-                name == "CSSRule" ||
+                name == "CSSStyleDeclaration" ||
+                        name == "CSSRule" ||
                         name == "CSSConditionRule" ||
                         name == "CSSGroupingRule" ||
                         name == "CSSMathValue" ||

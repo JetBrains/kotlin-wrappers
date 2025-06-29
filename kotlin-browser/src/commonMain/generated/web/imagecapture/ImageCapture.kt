@@ -5,6 +5,7 @@ package web.imagecapture
 import js.promise.Promise
 import seskar.js.JsAsync
 import web.blob.Blob
+import web.images.ImageBitmap
 import web.mediastreams.MediaStreamTrack
 import kotlin.js.JsName
 import kotlin.js.definedExternally
@@ -48,6 +49,18 @@ open external class ImageCapture(
 
     @JsName("getPhotoSettings")
     fun getPhotoSettingsAsync(): Promise<PhotoSettings>
+
+    /**
+     * The **`grabFrame()`** method of the a ImageBitmap containing the snapshot.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageCapture/grabFrame)
+     */
+    @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
+    suspend fun grabFrame(): ImageBitmap
+
+    @JsName("grabFrame")
+    fun grabFrameAsync(): Promise<ImageBitmap>
 
     /**
      * The **`takePhoto()`** method of the device sourcing a MediaStreamTrack and returns a Promise that resolves with a Blob containing the data.

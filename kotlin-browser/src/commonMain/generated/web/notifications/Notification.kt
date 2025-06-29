@@ -27,13 +27,6 @@ open external class Notification(
     options: NotificationOptions = definedExternally,
 ) : EventTarget {
     /**
-     * The **`badge`** read-only property of the Notification interface returns a string containing the URL of an image to represent the notification when there is not enough space to display the notification itself such as for example, the Android Notification Bar.
-     *
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Notification/badge)
-     */
-    val badge: String
-
-    /**
      * The **`body`** read-only property of the specified in the `body` option of the A string.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Notification/body)
