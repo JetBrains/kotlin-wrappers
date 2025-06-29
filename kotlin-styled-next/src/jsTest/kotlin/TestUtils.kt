@@ -16,7 +16,7 @@ import styled.sheets.*
 import web.animations.requestAnimationFrame
 import web.cssom.CSSRule
 import web.cssom.CSSRuleList
-import web.cssom.CSSStyleDeclaration
+import web.cssom.CSSStyleProperties
 import web.cssom.CSSStyleSheet
 import web.dom.Element
 import web.dom.document
@@ -99,7 +99,7 @@ class TestScope : CoroutineScope by testScope {
 
     fun Element.getStyle(
         pseudoElt: String? = null,
-    ): CSSStyleDeclaration {
+    ): CSSStyleProperties {
         return getComputedStyle(this, pseudoElt)
     }
 
