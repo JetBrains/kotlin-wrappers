@@ -2,7 +2,7 @@
 
 package web.dom
 
-import web.cssom.CSSStyleDeclaration
+import web.cssom.CSSStyleProperties
 import kotlin.js.definedExternally
 
 /**
@@ -13,4 +13,4 @@ import kotlin.js.definedExternally
 external fun getComputedStyle(
     element: Element,
     pseudoElement: String? = definedExternally,
-): CSSStyleDeclaration
+): CSSStyleProperties

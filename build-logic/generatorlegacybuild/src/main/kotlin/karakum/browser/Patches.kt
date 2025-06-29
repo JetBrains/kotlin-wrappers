@@ -302,6 +302,11 @@ internal fun String.applyPatches(): String {
                 }
                 .joinToString("\n")
         }
+        // https://github.com/microsoft/TypeScript-DOM-lib-generator/issues/2054
+        .replace(
+            "declare function getComputedStyle(elt: Element, pseudoElt?: string | null): CSSStyleDeclaration;",
+            "declare function getComputedStyle(elt: Element, pseudoElt?: string | null): CSSStyleProperties;",
+        )
 }
 
 internal val DOM_GEOMETRY_ALIASES = listOf(
