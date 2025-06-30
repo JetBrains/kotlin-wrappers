@@ -2,7 +2,9 @@
 
 package web.crypto
 
-import seskar.js.JsValue
+import js.reflect.unsafeCast
 
-@JsValue("Ed25519")
-external object Ed25519
+sealed external interface Ed25519Algorithm
+
+inline val Ed25519: Ed25519Algorithm
+    get() = unsafeCast("Ed25519")
