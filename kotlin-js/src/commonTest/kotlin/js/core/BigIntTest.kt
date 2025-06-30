@@ -1,6 +1,10 @@
 package js.core
 
-import kotlin.test.*
+import kotlin.test.Ignore
+import kotlin.test.Test
+import kotlin.test.assertEquals
+import kotlin.test.assertIs
+import kotlin.test.assertIsNot
 
 class BigIntTest {
     @Test
