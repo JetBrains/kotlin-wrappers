@@ -293,8 +293,6 @@ private val WEB_AUDIO_TYPES = listOf(
     "StereoPannerOptions",
     "WaveShaperOptions",
     "PeriodicWaveConstraints",
-    "DecodeSuccessCallback",
-    "DecodeErrorCallback",
     "BiquadFilterOptions",
     "ChannelMergerOptions",
     "ChannelSplitterOptions",
