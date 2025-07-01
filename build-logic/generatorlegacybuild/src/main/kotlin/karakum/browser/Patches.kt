@@ -174,6 +174,7 @@ internal fun String.applyPatches(): String {
         .splitUnion("number | KeyframeAnimationOptions")
         .splitUnion("number | KeyframeEffectOptions")
         .patchDomGeometry()
+        .patchDecodeAudioData()
         .replace(GET_CONTEXT_REGEX, "")
         .replace("quality?: any", "quality?: number")
         .replace("clearWatch(watchId: number)", "clearWatch(watchId: $GEOLOCATION_WATCH_ID)")
@@ -427,6 +428,14 @@ private fun String.patchQuerySelectors(): String =
             "\"$MATHML_NAMESPACE\"",
             "MATHML_NAMESPACE"
         )
+
+private fun String.patchDecodeAudioData(): String =
+    patchInterface("BaseAudioContext") {
+        it.replace(
+            "decodeAudioData(audioData: ArrayBuffer, successCallback?: DecodeSuccessCallback | null, errorCallback?: DecodeErrorCallback | null): Promise<AudioBuffer>;",
+            "decodeAudioData(audioData: ArrayBuffer): Promise<AudioBuffer>;"
+        )
+    }
 
 private fun String.applyInlineUnionPatches(): String =
     UNION_DATA_LIST.fold(this) { acc, data ->

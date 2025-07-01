@@ -214,18 +214,10 @@ private constructor() :
      */
     @JsAsync
     @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun decodeAudioData(
-        audioData: ArrayBuffer,
-        successCallback: DecodeSuccessCallback? = definedExternally,
-        errorCallback: DecodeErrorCallback? = definedExternally,
-    ): AudioBuffer
+    suspend fun decodeAudioData(audioData: ArrayBuffer): AudioBuffer
 
     @JsName("decodeAudioData")
-    fun decodeAudioDataAsync(
-        audioData: ArrayBuffer,
-        successCallback: DecodeSuccessCallback? = definedExternally,
-        errorCallback: DecodeErrorCallback? = definedExternally,
-    ): Promise<AudioBuffer>
+    fun decodeAudioDataAsync(audioData: ArrayBuffer): Promise<AudioBuffer>
 }
 
 /**
