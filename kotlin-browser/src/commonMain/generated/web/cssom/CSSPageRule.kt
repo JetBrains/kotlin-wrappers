@@ -22,5 +22,5 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSPageRule/style)
      */
-    val style: CSSStyleProperties
+    val style: CSSPageDescriptors
 }

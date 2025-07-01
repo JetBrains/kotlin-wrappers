@@ -2156,12 +2156,11 @@ private fun convertProperty(
         }
     }
 
-    name = when (name) {
-        "is", "as",
-            -> "`$name`"
-
-        else -> name
-    }
+    name = if (name == "is" || name == "as") {
+        "`$name`"
+    } else if (name.startsWith("\"") && name.endsWith("\"")) {
+        "`" + name.removeSurrounding("\"") + "`"
+    } else name
 
     val mixinSugar = if (typeProvider.isDefined()) {
         if (isVal) VAL_PROPERTY_DE else VAR_PROPERTY_DE
