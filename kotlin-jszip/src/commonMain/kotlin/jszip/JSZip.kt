@@ -16,7 +16,6 @@ external class JSZip {
         options: JSZipFileOptions = definedExternally,
     )
 
-    @JsName("generate")
     fun <T : JsAny> generateAsync(
         options: JSZipGeneratorOptions<T>,
     ): Promise<T>
