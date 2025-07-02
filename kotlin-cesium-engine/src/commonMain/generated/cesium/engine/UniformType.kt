@@ -83,7 +83,7 @@ sealed external interface UniformType {
         val MAT3: UniformType
 
         /**
-         * A 3x3 matrix of floating point values.
+         * A 4x4 matrix of floating point values.
          */
         val MAT4: UniformType
 

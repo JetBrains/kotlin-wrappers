@@ -55,6 +55,20 @@ external class ClippingPolygonCollection(
     }
 
     /**
+     * If true, clipping will be enabled.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ClippingPolygonCollection.html#enabled">Online Documentation</a>
+     */
+    var enabled: Boolean
+
+    /**
+     * If true, a region will be clipped if it is outside of every polygon in the
+     * collection. Otherwise, a region will only be clipped if it is
+     * inside of any polygon.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ClippingPolygonCollection.html#inverse">Online Documentation</a>
+     */
+    var inverse: Boolean
+
+    /**
      * An event triggered when a new clipping polygon is added to the collection.  Event handlers
      * are passed the new polygon and the index at which it was added.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ClippingPolygonCollection.html#polygonAdded">Online Documentation</a>
