@@ -30,7 +30,14 @@ class Interface(
 
     override fun toCode(): String {
         val extends = parentType?.let {
-            ":\n${it.replace("BaseResult<", "Result<")}"
+            val parent = it
+                .replace("BaseResult<", "Result<")
+                .replace(
+                    "FetchQueryOptions<TQueryFnData, TError, TData, TQueryKey>",
+                    "FetchQueryOptions<TQueryFnData, TError, TData, TQueryKey, Void>",
+                )
+
+            ":\n$parent"
         } ?: ""
 
         when (name) {
@@ -58,7 +65,7 @@ class Interface(
             name.startsWith("NotifyEvent")
                 -> content.replaceFirst("type: Type /*", "type: NotifyEventType /*")
 
-            name.startsWith("UseSuspense")
+            name.startsWith("UseSuspense") || name.startsWith("UsePrefetch")
                 -> "/* $content */"
 
             else -> content
