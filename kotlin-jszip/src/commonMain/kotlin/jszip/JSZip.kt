@@ -13,6 +13,7 @@ import js.regexp.RegExp
 import js.typedarrays.Uint8Array
 import web.blob.Blob
 import kotlin.js.definedExternally
+import kotlin.js.undefined
 
 @JsModule("jszip")
 external class JSZip {
@@ -162,3 +163,34 @@ suspend inline fun <T : JsAny> JSZip.generate(
     options: JSZipGeneratorOptions<T>,
 ): T =
     generateAsync(options).await()
+
+/**
+ * Deserialize zip file asynchronously
+ *
+ * @param data Serialized zip file
+ * @param options Options for deserializing
+ * @return Returns promise
+ */
+suspend inline fun JSZip.load(
+    data: String,
+    options: JSZipLoadOptions? = undefined,
+): JSZip =
+    loadAsync(data, options).await()
+
+suspend inline fun JSZip.load(
+    data: Uint8Array<*>,
+    options: JSZipLoadOptions? = undefined,
+): JSZip =
+    loadAsync(data, options).await()
+
+suspend inline fun JSZip.load(
+    data: ArrayBuffer,
+    options: JSZipLoadOptions? = undefined,
+): JSZip =
+    loadAsync(data, options).await()
+
+suspend inline fun JSZip.load(
+    data: Blob,
+    options: JSZipLoadOptions? = undefined,
+): JSZip =
+    loadAsync(data, options).await()
