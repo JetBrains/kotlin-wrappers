@@ -184,7 +184,7 @@ external interface SVGAttributes<T : Element> :
     var refX: Double?
     var refY: Double?
     var renderingIntent: Int?
-    var repeatCount: Double?
+    var repeatCount: Any? /* Double | SVGRepeatCount */
     var repeatDur: String?
     var requiredExtensions: String?
     var requiredFeatures: String?
