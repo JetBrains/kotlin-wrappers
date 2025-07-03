@@ -29,6 +29,7 @@ includeBuild("build-logic")
 
 include("browser")
 include("react")
+include("react-svg")
 include("react-lazy-modules-webpack")
 include("react-router")
 include("serialization-to-jso")
