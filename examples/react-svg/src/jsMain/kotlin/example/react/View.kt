@@ -7,6 +7,7 @@ import react.dom.svg.ReactSVG.animateMotion
 import react.dom.svg.ReactSVG.circle
 import react.dom.svg.ReactSVG.rect
 import react.dom.svg.ReactSVG.svg
+import react.dom.svg.SVGRepeatCount
 
 // Kotlin example for React SVG animation
 // https://developer.mozilla.org/en-US/docs/Web/SVG/Guides/SVG_animation_with_SMIL#example_1_linear_motion
@@ -40,7 +41,22 @@ internal val View: FC<Props> = FC {
             animateMotion {
                 path = "M 0 0 H 300 Z"
                 dur = "3s"
-                repeatCount = Double.MAX_VALUE
+                repeatCount = SVGRepeatCount.indefinite
+            }
+        }
+
+        circle {
+            cx = 0.0
+            cy = 100.0
+            r = 15.0
+            fill = "red"
+            stroke = "black"
+            strokeWidth = 1.0
+
+            animateMotion {
+                path = "M 0 0 H 300 Z"
+                dur = "3s"
+                repeatCount = 3
             }
         }
     }
