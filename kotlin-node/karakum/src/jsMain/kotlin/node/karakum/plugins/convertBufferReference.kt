@@ -17,8 +17,8 @@ val convertBufferReference = createPlugin { node, context, render ->
         val typeName = node.typeName
         ensure(isIdentifier(typeName))
         ensure(
-            typeName.text === "Buffer"
-                    || typeName.text === "BufferEncoding"
+            typeName.text == "Buffer"
+                    || typeName.text == "BufferEncoding"
         )
 
         val typeScriptService = ensureNotNull(context.lookupService<TypeScriptService>(typeScriptServiceKey))

@@ -1,6 +1,5 @@
 package node.karakum
 
-import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.configuration.ConflictResolutionStrategy
 import io.github.sgrishchenko.karakum.configuration.Granularity
 import io.github.sgrishchenko.karakum.configuration.NamespaceStrategy
@@ -84,6 +83,11 @@ suspend fun main() {
             convertCompareResultType,
             convertConflictingEntityNames,
             convertConflictingOverloads,
+            convertDeprecated,
+            convertDnsErrorCodes,
+            convertDotTestReporterPayload,
+            convertErrorTypeReferenceNode,
+            convertEventEmitterListener,
         ))
         injections = manyOf(values = jsInjections + arrayOf())
         annotations = manyOf(values = jsAnnotations + arrayOf())
