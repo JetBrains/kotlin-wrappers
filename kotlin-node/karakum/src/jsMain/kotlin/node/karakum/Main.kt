@@ -88,6 +88,11 @@ suspend fun main() {
             convertDotTestReporterPayload,
             convertErrorTypeReferenceNode,
             convertEventEmitterListener,
+            convertExecFileExceptionCodeType,
+            convertFunctionInheritance,
+            convertGenericBuiltinModule,
+            convertGetPeerCertificate,
+            convertHttpTypeParameter,
         ))
         injections = manyOf(values = jsInjections + arrayOf())
         annotations = manyOf(values = jsAnnotations + arrayOf())
