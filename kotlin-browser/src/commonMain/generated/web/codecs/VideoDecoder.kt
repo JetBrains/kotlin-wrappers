@@ -4,7 +4,7 @@ package web.codecs
 
 import js.core.Void
 import js.promise.Promise
-import seskar.js.JsAsync
+import js.promise.internal.awaitPromiseLike
 import web.events.Event
 import web.events.EventHandler
 import web.events.EventInstance
@@ -65,10 +65,6 @@ open external class VideoDecoder(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoDecoder/flush)
      */
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun flush()
-
     @JsName("flush")
     fun flushAsync(): Promise<Void>
 
@@ -85,13 +81,27 @@ open external class VideoDecoder(
          *
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoDecoder/isConfigSupported_static)
          */
-        @JsAsync
-        @Suppress("WRONG_EXTERNAL_DECLARATION")
-        suspend fun isConfigSupported(config: VideoDecoderConfig): VideoDecoderSupport
-
         @JsName("isConfigSupported")
         fun isConfigSupportedAsync(config: VideoDecoderConfig): Promise<VideoDecoderSupport>
     }
+}
+
+/**
+ * The **`flush()`** method of the VideoDecoder interface returns a Promise that resolves once all pending messages in the queue have been completed.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoDecoder/flush)
+ */
+suspend inline fun VideoDecoder.flush() {
+    awaitPromiseLike(flushAsync())
+}
+
+/**
+ * The **`isConfigSupported()`** static method of the VideoDecoder interface checks if the given config is supported (that is, if VideoDecoder objects can be successfully configured with the given config).
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoDecoder/isConfigSupported_static)
+ */
+suspend inline fun VideoDecoder.Companion.isConfigSupported(config: VideoDecoderConfig): VideoDecoderSupport {
+    return awaitPromiseLike(isConfigSupportedAsync(config))
 }
 
 /**

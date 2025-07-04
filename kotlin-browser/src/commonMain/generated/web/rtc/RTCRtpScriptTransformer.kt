@@ -6,6 +6,7 @@ import js.core.JsAny
 import js.core.JsInt
 import js.core.Void
 import js.promise.Promise
+import js.promise.internal.awaitPromiseLike
 import seskar.js.JsAsync
 import web.events.EventTarget
 import web.streams.ReadableStream
@@ -59,10 +60,15 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCRtpScriptTransformer/sendKeyFrameRequest)
      */
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun sendKeyFrameRequest()
-
     @JsName("sendKeyFrameRequest")
     fun sendKeyFrameRequestAsync(): Promise<Void>
+}
+
+/**
+ * The **`sendKeyFrameRequest()`** method of the RTCRtpScriptTransformer interface may be called by a WebRTC Encoded Transform that is processing incoming encoded video frames, in order to request a key frame from the sender.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCRtpScriptTransformer/sendKeyFrameRequest)
+ */
+suspend inline fun RTCRtpScriptTransformer.sendKeyFrameRequest() {
+    awaitPromiseLike(sendKeyFrameRequestAsync())
 }

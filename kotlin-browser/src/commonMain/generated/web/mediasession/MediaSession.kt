@@ -4,7 +4,7 @@ package web.mediasession
 
 import js.core.Void
 import js.promise.Promise
-import seskar.js.JsAsync
+import js.promise.internal.awaitPromiseLike
 import kotlin.js.JsName
 import kotlin.js.definedExternally
 
@@ -44,10 +44,6 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaSession/setCameraActive)
      */
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun setCameraActive(active: Boolean)
-
     @JsName("setCameraActive")
     fun setCameraActiveAsync(active: Boolean): Promise<Void>
 
@@ -56,10 +52,6 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaSession/setMicrophoneActive)
      */
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun setMicrophoneActive(active: Boolean)
-
     @JsName("setMicrophoneActive")
     fun setMicrophoneActiveAsync(active: Boolean): Promise<Void>
 
@@ -69,4 +61,22 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaSession/setPositionState)
      */
     fun setPositionState(state: MediaPositionState = definedExternally)
+}
+
+/**
+ * The **`setCameraActive()`** method of the MediaSession interface is used to indicate to the user agent whether the user's camera is considered to be active.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaSession/setCameraActive)
+ */
+suspend inline fun MediaSession.setCameraActive(active: Boolean) {
+    awaitPromiseLike(setCameraActiveAsync(active))
+}
+
+/**
+ * The **`setMicrophoneActive()`** method of the MediaSession interface is used to indicate to the user agent whether the user's microphone is considered to be currently muted.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaSession/setMicrophoneActive)
+ */
+suspend inline fun MediaSession.setMicrophoneActive(active: Boolean) {
+    awaitPromiseLike(setMicrophoneActiveAsync(active))
 }

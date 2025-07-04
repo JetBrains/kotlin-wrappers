@@ -4,8 +4,10 @@ package web.serviceworker
 
 import js.array.ReadonlyArray
 import js.core.JsBoolean
+import js.core.JsPrimitives.toBoolean
 import js.core.Void
 import js.promise.Promise
+import js.promise.internal.awaitPromiseLike
 import seskar.js.JsAsync
 import web.cookie.CookieStoreManager
 import web.events.Event
@@ -123,10 +125,6 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/unregister)
      */
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun unregister(): Boolean
-
     @JsName("unregister")
     fun unregisterAsync(): Promise<JsBoolean>
 
@@ -135,12 +133,26 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/update)
      */
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun update(): ServiceWorkerRegistration
-
     @JsName("update")
     fun updateAsync(): Promise<ServiceWorkerRegistration>
+}
+
+/**
+ * The **`unregister()`** method of the registration and returns a Promise.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/unregister)
+ */
+suspend inline fun ServiceWorkerRegistration.unregister(): Boolean {
+    return awaitPromiseLike(unregisterAsync()).toBoolean()
+}
+
+/**
+ * The **`update()`** method of the worker.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/update)
+ */
+suspend inline fun ServiceWorkerRegistration.update(): ServiceWorkerRegistration {
+    return awaitPromiseLike(updateAsync())
 }
 
 /**

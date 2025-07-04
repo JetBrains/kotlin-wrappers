@@ -4,7 +4,7 @@ package web.locks
 
 import js.core.JsAny
 import js.promise.Promise
-import seskar.js.JsAsync
+import js.promise.internal.awaitPromiseLike
 import kotlin.js.JsName
 
 /**
@@ -20,10 +20,6 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/LockManager/query)
      */
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun query(): LockManagerSnapshot
-
     @JsName("query")
     fun queryAsync(): Promise<LockManagerSnapshot>
 
@@ -32,26 +28,11 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/LockManager/request)
      */
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun <T : JsAny?> request(
-        name: String,
-        callback: LockGrantedCallback<T>,
-    ): T
-
     @JsName("request")
     fun <T : JsAny?> requestAsync(
         name: String,
         callback: LockGrantedCallback<T>,
     ): Promise<T>
-
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun <T : JsAny?> request(
-        name: String,
-        options: LockOptions,
-        callback: LockGrantedCallback<T>,
-    ): T
 
     @JsName("request")
     fun <T : JsAny?> requestAsync(
@@ -59,4 +40,46 @@ private constructor() {
         options: LockOptions,
         callback: LockGrantedCallback<T>,
     ): Promise<T>
+}
+
+/**
+ * The **`query()`** method of the LockManager interface returns a Promise that resolves with an object containing information about held and pending locks.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/LockManager/query)
+ */
+suspend inline fun LockManager.query(): LockManagerSnapshot {
+    return awaitPromiseLike(queryAsync())
+}
+
+/**
+ * The **`request()`** method of the LockManager interface requests a Lock object with parameters specifying its name and characteristics.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/LockManager/request)
+ */
+suspend inline fun <T : JsAny?> LockManager.request(
+    name: String,
+    noinline
+    callback: LockGrantedCallback<T>,
+): T {
+    return awaitPromiseLike(
+        requestAsync(
+            name,
+            callback
+        )
+    )
+}
+
+suspend inline fun <T : JsAny?> LockManager.request(
+    name: String,
+    options: LockOptions,
+    noinline
+    callback: LockGrantedCallback<T>,
+): T {
+    return awaitPromiseLike(
+        requestAsync(
+            name,
+            options,
+            callback
+        )
+    )
 }

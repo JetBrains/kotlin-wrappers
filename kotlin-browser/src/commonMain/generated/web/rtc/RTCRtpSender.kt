@@ -4,6 +4,7 @@ package web.rtc
 
 import js.core.Void
 import js.promise.Promise
+import js.promise.internal.awaitPromiseLike
 import seskar.js.JsAsync
 import web.mediastreams.MediaStream
 import web.mediastreams.MediaStreamTrack
@@ -57,10 +58,6 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCRtpSender/getStats)
      */
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun getStats(): RTCStatsReport
-
     @JsName("getStats")
     fun getStatsAsync(): Promise<RTCStatsReport>
 
@@ -69,10 +66,6 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCRtpSender/replaceTrack)
      */
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun replaceTrack(withTrack: MediaStreamTrack?)
-
     @JsName("replaceTrack")
     fun replaceTrackAsync(withTrack: MediaStreamTrack?): Promise<Void>
 
@@ -109,4 +102,22 @@ private constructor() {
          */
         fun getCapabilities(kind: String): RTCRtpCapabilities?
     }
+}
+
+/**
+ * The RTCRtpSender method **`getStats()`** asynchronously requests an RTCStatsReport object which provides statistics about outgoing traffic on the RTCPeerConnection which owns the sender, returning a Promise which is fulfilled when the results are available.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCRtpSender/getStats)
+ */
+suspend inline fun RTCRtpSender.getStats(): RTCStatsReport {
+    return awaitPromiseLike(getStatsAsync())
+}
+
+/**
+ * The RTCRtpSender method **`replaceTrack()`** replaces the track currently being used as the sender's source with a new MediaStreamTrack.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCRtpSender/replaceTrack)
+ */
+suspend inline fun RTCRtpSender.replaceTrack(withTrack: MediaStreamTrack?) {
+    awaitPromiseLike(replaceTrackAsync(withTrack))
 }

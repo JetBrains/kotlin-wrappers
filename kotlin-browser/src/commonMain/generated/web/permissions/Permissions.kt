@@ -3,7 +3,7 @@
 package web.permissions
 
 import js.promise.Promise
-import seskar.js.JsAsync
+import js.promise.internal.awaitPromiseLike
 import kotlin.js.JsName
 
 /**
@@ -18,10 +18,15 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Permissions/query)
      */
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun query(permissionDesc: PermissionDescriptor): PermissionStatus
-
     @JsName("query")
     fun queryAsync(permissionDesc: PermissionDescriptor): Promise<PermissionStatus>
+}
+
+/**
+ * The **`query()`** method of the Permissions interface returns the state of a user permission on the global scope.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Permissions/query)
+ */
+suspend inline fun Permissions.query(permissionDesc: PermissionDescriptor): PermissionStatus {
+    return awaitPromiseLike(queryAsync(permissionDesc))
 }

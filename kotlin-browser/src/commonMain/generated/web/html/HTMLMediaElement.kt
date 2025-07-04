@@ -4,7 +4,7 @@ package web.html
 
 import js.core.Void
 import js.promise.Promise
-import seskar.js.JsAsync
+import js.promise.internal.awaitPromiseLike
 import web.events.Event
 import web.events.EventHandler
 import web.events.EventInstance
@@ -292,10 +292,6 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/play)
      */
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun play()
-
     @JsName("play")
     fun playAsync(): Promise<Void>
 
@@ -305,10 +301,6 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/setMediaKeys)
      */
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun setMediaKeys(mediaKeys: MediaKeys?)
-
     @JsName("setMediaKeys")
     fun setMediaKeysAsync(mediaKeys: MediaKeys?): Promise<Void>
 
@@ -318,10 +310,6 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/setSinkId)
      */
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun setSinkId(sinkId: String)
-
     @JsName("setSinkId")
     fun setSinkIdAsync(sinkId: String): Promise<Void>
     val NETWORK_EMPTY: NetworkState
@@ -348,6 +336,35 @@ private constructor() :
 
     sealed interface NetworkState
     sealed interface ReadyState
+}
+
+/**
+ * The HTMLMediaElement **`play()`** method attempts to begin playback of the media.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/play)
+ */
+suspend inline fun HTMLMediaElement.play() {
+    awaitPromiseLike(playAsync())
+}
+
+/**
+ * The **`setMediaKeys()`** method of the HTMLMediaElement interface sets the MediaKeys that will be used to decrypt media during playback.
+ * Available only in secure contexts.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/setMediaKeys)
+ */
+suspend inline fun HTMLMediaElement.setMediaKeys(mediaKeys: MediaKeys?) {
+    awaitPromiseLike(setMediaKeysAsync(mediaKeys))
+}
+
+/**
+ * The **`setSinkId()`** method of the HTMLMediaElement interface sets the ID of the audio device to use for output and returns a Promise.
+ * Available only in secure contexts.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/setSinkId)
+ */
+suspend inline fun HTMLMediaElement.setSinkId(sinkId: String) {
+    awaitPromiseLike(setSinkIdAsync(sinkId))
 }
 
 /**

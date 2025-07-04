@@ -4,7 +4,7 @@ package web.rtc
 
 import js.array.ReadonlyArray
 import js.promise.Promise
-import seskar.js.JsAsync
+import js.promise.internal.awaitPromiseLike
 import web.mediastreams.MediaStreamTrack
 import web.time.DOMHighResTimeStamp
 import kotlin.js.JsName
@@ -63,10 +63,6 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCRtpReceiver/getStats)
      */
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun getStats(): RTCStatsReport
-
     @JsName("getStats")
     fun getStatsAsync(): Promise<RTCStatsReport>
 
@@ -85,4 +81,13 @@ private constructor() {
          */
         fun getCapabilities(kind: String): RTCRtpCapabilities?
     }
+}
+
+/**
+ * The RTCRtpReceiver method **`getStats()`** asynchronously requests an RTCStatsReport object which provides statistics about incoming traffic on the owning RTCPeerConnection, returning a Promise whose fulfillment handler will be called once the results are available.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCRtpReceiver/getStats)
+ */
+suspend inline fun RTCRtpReceiver.getStats(): RTCStatsReport {
+    return awaitPromiseLike(getStatsAsync())
 }

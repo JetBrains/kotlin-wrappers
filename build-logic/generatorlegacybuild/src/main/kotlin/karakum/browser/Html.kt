@@ -1,7 +1,8 @@
 package karakum.browser
 
+import karakum.common.ExtensionsCollector
 import karakum.common.TYPED_ARRAYS
-import karakum.common.withSuspendAdapter
+import karakum.common.withSuspendExtensions
 import karakum.events.EventDataRegistry
 
 internal const val VIDEO_FRAME_REQUEST_ID = "VideoFrameRequestId"
@@ -579,7 +580,7 @@ private val REPORTING_TYPES = listOf(
     "ReportingObserverOptions",
 )
 
-private val XSLT_PROCESSOR = "XSLTProcessor"
+private const val XSLT_PROCESSOR = "XSLTProcessor"
 
 internal fun htmlDeclarations(
     source: String,
@@ -1015,8 +1016,9 @@ internal fun convertInterface(
         .substringAfter("<", "")
         .substringBeforeLast(">", "")
 
+    var newTypeParameters: String? = null
     if (typeParameters.isNotEmpty() && "<" !in typeParameters) {
-        val newTypeParameters = typeParameters
+        newTypeParameters = typeParameters
             .splitToSequence(",")
             .map { if (":" !in it) "$it : JsAny?" else it }
             .joinToString(",")
@@ -1024,10 +1026,12 @@ internal fun convertInterface(
         declaration = declaration.replaceFirst("<$typeParameters>", "<$newTypeParameters>")
     }
 
+    val extensionsCollector = BrowserSuspendExtensionsCollector(name, newTypeParameters)
+
     var members = if (memberSource.isNotEmpty()) {
         var result = memberSource
             .splitToSequence(";\n")
-            .mapNotNull { convertMember(it, typeProvider) }
+            .mapNotNull { convertMember(it, typeProvider, extensionsCollector) }
             .joinToString("\n")
 
         result = when (name) {
@@ -1370,9 +1374,10 @@ internal fun convertInterface(
         else -> "sealed"
     }
 
+    val companionExtensionsCollector = BrowserSuspendExtensionsCollector("$name.Companion", null)
     val idDeclaration = RenderingContextRegistry.getIdDeclaration(name)
     val companion = if (staticSource != null) {
-        val companionContent = getCompanion(name, staticSource)
+        val companionContent = getCompanion(name, staticSource, companionExtensionsCollector)
         when {
             name == DOM_EXCEPTION -> "companion object" // leave it empty, add extensions below
 
@@ -1416,7 +1421,9 @@ internal fun convertInterface(
         companion,
         additionalAliases,
         "}",
-        extensions
+        extensions,
+        extensionsCollector.getResult(),
+        companionExtensionsCollector.getResult()
     ).filter { it.isNotEmpty() }
         .joinToString("\n")
 
@@ -1723,6 +1730,7 @@ private fun getConstructors(
 private fun getCompanion(
     name: String,
     source: String,
+    extensionCollector: ExtensionsCollector,
 ): String {
     val content = source
         .substringAfterLast("\nnew(")
@@ -1733,7 +1741,7 @@ private fun getCompanion(
     val typeProvider = TypeProvider(name)
     val members = content
         .splitToSequence(";\n")
-        .mapNotNull { convertMember(it, typeProvider) }
+        .mapNotNull { convertMember(it, typeProvider, extensionCollector) }
         .joinToString("\n")
         .trim()
         .ifEmpty { return "" }
@@ -1761,6 +1769,8 @@ private fun convertConstructor(
 internal fun convertMember(
     source: String,
     typeProvider: TypeProvider,
+    extensionsCollector: ExtensionsCollector,
+    outerComment: String? = null,
 ): String? {
     if ("\n" in source) {
         val comment = source.substringBeforeLast("\n")
@@ -1770,7 +1780,8 @@ internal fun convertMember(
         if ("@deprecated" in comment)
             return null
 
-        val member = convertMember(source.substringAfterLast("\n"), typeProvider)
+        val member = convertMember(source.substringAfterLast("\n"), typeProvider, extensionsCollector, comment)
+            .takeIf { it?.trim()?.isNotEmpty() == true }
             ?: return null
 
         return comment + "\n" + member
@@ -1913,7 +1924,7 @@ internal fun convertMember(
             val result = convertFunction(source, typeProvider)
                 ?: return null
 
-            return withSuspendAdapter(result)
+            return withSuspendExtensions(result, outerComment, extensionsCollector)
                 .joinToString("\n\n")
         }
     }

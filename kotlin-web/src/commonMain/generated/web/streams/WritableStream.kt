@@ -6,6 +6,7 @@ import js.core.JsAny
 import js.core.Void
 import js.errors.JsError
 import js.promise.Promise
+import js.promise.internal.awaitPromiseLike
 import js.serialization.Transferable
 import seskar.js.JsAsync
 import kotlin.js.JsName
@@ -44,10 +45,6 @@ open external class WritableStream<W : JsAny?>(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WritableStream/close)
      */
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun close()
-
     @JsName("close")
     fun closeAsync(): Promise<Void>
 
@@ -57,4 +54,13 @@ open external class WritableStream<W : JsAny?>(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WritableStream/getWriter)
      */
     fun getWriter(): WritableStreamDefaultWriter<W>
+}
+
+/**
+ * The **`close()`** method of the WritableStream interface closes the associated stream.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WritableStream/close)
+ */
+suspend inline fun <W : JsAny?> WritableStream<W>.close() {
+    awaitPromiseLike(closeAsync())
 }

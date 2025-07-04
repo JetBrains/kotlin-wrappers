@@ -4,7 +4,7 @@ package web.html
 
 import js.core.Void
 import js.promise.Promise
-import seskar.js.JsAsync
+import js.promise.internal.awaitPromiseLike
 import web.dom.HTMLOrSVGImageElement
 import web.gl.TexImageSource
 import web.gpu.GPUCopyExternalImageSource
@@ -162,10 +162,15 @@ protected constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLImageElement/decode)
      */
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun decode()
-
     @JsName("decode")
     fun decodeAsync(): Promise<Void>
+}
+
+/**
+ * The **`decode()`** method of the HTMLImageElement interface returns a it to the DOM.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLImageElement/decode)
+ */
+suspend inline fun HTMLImageElement.decode() {
+    awaitPromiseLike(decodeAsync())
 }

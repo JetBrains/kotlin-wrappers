@@ -3,7 +3,7 @@
 package web.cssom
 
 import js.promise.Promise
-import seskar.js.JsAsync
+import js.promise.internal.awaitPromiseLike
 import kotlin.js.JsName
 import kotlin.js.definedExternally
 
@@ -51,10 +51,6 @@ open external class CSSStyleSheet(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleSheet/replace)
      */
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun replace(text: String): CSSStyleSheet
-
     @JsName("replace")
     fun replaceAsync(text: String): Promise<CSSStyleSheet>
 
@@ -64,4 +60,13 @@ open external class CSSStyleSheet(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleSheet/replaceSync)
      */
     fun replaceSync(text: String)
+}
+
+/**
+ * The **`replace()`** method of the CSSStyleSheet interface asynchronously replaces the content of the stylesheet with the content passed into it.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleSheet/replace)
+ */
+suspend inline fun CSSStyleSheet.replace(text: String): CSSStyleSheet {
+    return awaitPromiseLike(replaceAsync(text))
 }

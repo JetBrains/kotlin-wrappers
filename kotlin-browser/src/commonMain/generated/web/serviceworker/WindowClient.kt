@@ -3,7 +3,7 @@
 package web.serviceworker
 
 import js.promise.Promise
-import seskar.js.JsAsync
+import js.promise.internal.awaitPromiseLike
 import web.dom.DocumentVisibilityState
 import web.url.URL
 import kotlin.js.JsName
@@ -35,10 +35,6 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WindowClient/focus)
      */
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun focus(): WindowClient
-
     @JsName("focus")
     fun focusAsync(): Promise<WindowClient>
 
@@ -47,17 +43,31 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WindowClient/navigate)
      */
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun navigate(url: String): WindowClient?
-
     @JsName("navigate")
     fun navigateAsync(url: String): Promise<WindowClient?>
 
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun navigate(url: URL): WindowClient?
-
     @JsName("navigate")
     fun navigateAsync(url: URL): Promise<WindowClient?>
+}
+
+/**
+ * The **`focus()`** method of the WindowClient interface gives user input focus to the current client and returns a ```js-nolint focus() ``` None.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WindowClient/focus)
+ */
+suspend inline fun WindowClient.focus(): WindowClient {
+    return awaitPromiseLike(focusAsync())
+}
+
+/**
+ * The **`navigate()`** method of the WindowClient interface loads a specified URL into a controlled client page then returns a ```js-nolint navigate(url) ``` - `url` - : The location to navigate to.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WindowClient/navigate)
+ */
+suspend inline fun WindowClient.navigate(url: String): WindowClient? {
+    return awaitPromiseLike(navigateAsync(url))
+}
+
+suspend inline fun WindowClient.navigate(url: URL): WindowClient? {
+    return awaitPromiseLike(navigateAsync(url))
 }

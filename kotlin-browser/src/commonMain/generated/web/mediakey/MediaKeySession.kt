@@ -4,9 +4,10 @@ package web.mediakey
 
 import js.buffer.BufferSource
 import js.core.JsBoolean
+import js.core.JsPrimitives.toBoolean
 import js.core.Void
 import js.promise.Promise
-import seskar.js.JsAsync
+import js.promise.internal.awaitPromiseLike
 import web.events.Event
 import web.events.EventHandler
 import web.events.EventInstance
@@ -66,10 +67,6 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeySession/close)
      */
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun close()
-
     @JsName("close")
     fun closeAsync(): Promise<Void>
 
@@ -78,13 +75,6 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeySession/generateRequest)
      */
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun generateRequest(
-        initDataType: String,
-        initData: BufferSource,
-    )
-
     @JsName("generateRequest")
     fun generateRequestAsync(
         initDataType: String,
@@ -96,10 +86,6 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeySession/load)
      */
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun load(sessionId: String): Boolean
-
     @JsName("load")
     fun loadAsync(sessionId: String): Promise<JsBoolean>
 
@@ -108,10 +94,6 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeySession/remove)
      */
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun remove()
-
     @JsName("remove")
     fun removeAsync(): Promise<Void>
 
@@ -120,12 +102,61 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeySession/update)
      */
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun update(response: BufferSource)
-
     @JsName("update")
     fun updateAsync(response: BufferSource): Promise<Void>
+}
+
+/**
+ * The `close()` method of the MediaKeySession interface notifies that the current media session is no longer needed, and that the content decryption module should release any resources associated with this object and close it.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeySession/close)
+ */
+suspend inline fun MediaKeySession.close() {
+    awaitPromiseLike(closeAsync())
+}
+
+/**
+ * The `generateRequest()` method of the MediaKeySession interface returns a Promise after generating a license request based on initialization data.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeySession/generateRequest)
+ */
+suspend inline fun MediaKeySession.generateRequest(
+    initDataType: String,
+    initData: BufferSource,
+) {
+    awaitPromiseLike(
+        generateRequestAsync(
+            initDataType,
+            initData
+        )
+    )
+}
+
+/**
+ * The `load()` method of the MediaKeySession interface returns a Promise that resolves to a boolean value after loading data for a specified session object.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeySession/load)
+ */
+suspend inline fun MediaKeySession.load(sessionId: String): Boolean {
+    return awaitPromiseLike(loadAsync(sessionId)).toBoolean()
+}
+
+/**
+ * The `remove()` method of the MediaKeySession interface returns a Promise after removing any session data associated with the current object.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeySession/remove)
+ */
+suspend inline fun MediaKeySession.remove() {
+    awaitPromiseLike(removeAsync())
+}
+
+/**
+ * The `update()` method of the MediaKeySession interface loads messages and licenses to the CDM, and then returns a Promise.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeySession/update)
+ */
+suspend inline fun MediaKeySession.update(response: BufferSource) {
+    awaitPromiseLike(updateAsync(response))
 }
 
 /**

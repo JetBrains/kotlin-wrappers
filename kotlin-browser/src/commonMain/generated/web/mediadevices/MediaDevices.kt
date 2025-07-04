@@ -4,6 +4,7 @@ package web.mediadevices
 
 import js.array.ReadonlyArray
 import js.promise.Promise
+import js.promise.internal.awaitPromiseLike
 import seskar.js.JsAsync
 import web.events.Event
 import web.events.EventHandler
@@ -33,10 +34,6 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaDevices/enumerateDevices)
      */
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun enumerateDevices(): ReadonlyArray<MediaDeviceInfo>
-
     @JsName("enumerateDevices")
     fun enumerateDevicesAsync(): Promise<ReadonlyArray<MediaDeviceInfo>>
 
@@ -70,4 +67,13 @@ private constructor() :
 
     @JsName("getUserMedia")
     fun getUserMediaAsync(constraints: MediaStreamConstraints = definedExternally): Promise<MediaStream>
+}
+
+/**
+ * The **`enumerateDevices()`** method of the MediaDevices interface requests a list of the currently available media input and output devices, such as microphones, cameras, headsets, and so forth.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaDevices/enumerateDevices)
+ */
+suspend inline fun MediaDevices.enumerateDevices(): ReadonlyArray<MediaDeviceInfo> {
+    return awaitPromiseLike(enumerateDevicesAsync())
 }

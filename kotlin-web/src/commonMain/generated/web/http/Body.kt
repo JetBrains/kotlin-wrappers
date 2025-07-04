@@ -10,8 +10,8 @@ import js.buffer.ArrayBuffer
 import js.core.JsAny
 import js.core.JsString
 import js.promise.Promise
+import js.promise.internal.awaitPromiseLike
 import js.typedarrays.Uint8Array
-import seskar.js.JsAsync
 import web.blob.Blob
 import web.form.FormData
 import web.streams.ReadableStream
@@ -34,60 +34,78 @@ sealed external interface Body {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/arrayBuffer)
      */
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun arrayBuffer(): ArrayBuffer = definedExternally
-
     @JsName("arrayBuffer")
     fun arrayBufferAsync(): Promise<ArrayBuffer> = definedExternally
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/blob)
      */
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun blob(): Blob = definedExternally
-
     @JsName("blob")
     fun blobAsync(): Promise<Blob> = definedExternally
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/bytes)
      */
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun bytes(): Uint8Array<ArrayBuffer> = definedExternally
-
     @JsName("bytes")
     fun bytesAsync(): Promise<Uint8Array<ArrayBuffer>> = definedExternally
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/formData)
      */
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun formData(): FormData = definedExternally
-
     @JsName("formData")
     fun formDataAsync(): Promise<FormData> = definedExternally
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/json)
      */
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun json(): JsAny? = definedExternally
-
     @JsName("json")
     fun jsonAsync(): Promise<*> = definedExternally
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/text)
      */
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun text(): String = definedExternally
-
     @JsName("text")
     fun textAsync(): Promise<JsString> = definedExternally
+}
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/arrayBuffer)
+ */
+suspend inline fun Body.arrayBuffer(): ArrayBuffer {
+    return awaitPromiseLike(arrayBufferAsync())
+}
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/blob)
+ */
+suspend inline fun Body.blob(): Blob {
+    return awaitPromiseLike(blobAsync())
+}
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/bytes)
+ */
+suspend inline fun Body.bytes(): Uint8Array<ArrayBuffer> {
+    return awaitPromiseLike(bytesAsync())
+}
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/formData)
+ */
+suspend inline fun Body.formData(): FormData {
+    return awaitPromiseLike(formDataAsync())
+}
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/json)
+ */
+suspend inline fun Body.json(): JsAny? {
+    return awaitPromiseLike(jsonAsync())
+}
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/text)
+ */
+suspend inline fun Body.text(): String {
+    return awaitPromiseLike(textAsync()).toString()
 }

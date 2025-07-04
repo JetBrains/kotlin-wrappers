@@ -5,6 +5,7 @@ package web.navigator
 import js.array.ReadonlyArray
 import js.core.Void
 import js.promise.Promise
+import js.promise.internal.awaitPromiseLike
 import seskar.js.JsAsync
 import web.clipboard.Clipboard
 import web.credentials.CredentialsContainer
@@ -172,13 +173,6 @@ protected /* private */ constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/requestMediaKeySystemAccess)
      */
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun requestMediaKeySystemAccess(
-        keySystem: String,
-        supportedConfigurations: ReadonlyArray<MediaKeySystemConfiguration>,
-    ): MediaKeySystemAccess
-
     @JsName("requestMediaKeySystemAccess")
     fun requestMediaKeySystemAccessAsync(
         keySystem: String,
@@ -219,4 +213,22 @@ protected /* private */ constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/vibrate)
      */
     fun vibrate(pattern: VibratePattern): Boolean
+}
+
+/**
+ * The **`requestMediaKeySystemAccess()`** method of the Navigator interface returns a Promise which delivers a MediaKeySystemAccess object that can be used to access a particular media key system, which can in turn be used to create keys for decrypting a media stream.
+ * Available only in secure contexts.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/requestMediaKeySystemAccess)
+ */
+suspend inline fun Navigator.requestMediaKeySystemAccess(
+    keySystem: String,
+    supportedConfigurations: ReadonlyArray<MediaKeySystemConfiguration>,
+): MediaKeySystemAccess {
+    return awaitPromiseLike(
+        requestMediaKeySystemAccessAsync(
+            keySystem,
+            supportedConfigurations
+        )
+    )
 }

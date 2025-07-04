@@ -4,7 +4,7 @@ package web.codecs
 
 import js.core.Void
 import js.promise.Promise
-import seskar.js.JsAsync
+import js.promise.internal.awaitPromiseLike
 import web.events.Event
 import web.events.EventHandler
 import web.events.EventInstance
@@ -65,10 +65,6 @@ open external class AudioDecoder(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioDecoder/flush)
      */
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun flush()
-
     @JsName("flush")
     fun flushAsync(): Promise<Void>
 
@@ -85,13 +81,27 @@ open external class AudioDecoder(
          *
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioDecoder/isConfigSupported_static)
          */
-        @JsAsync
-        @Suppress("WRONG_EXTERNAL_DECLARATION")
-        suspend fun isConfigSupported(config: AudioDecoderConfig): AudioDecoderSupport
-
         @JsName("isConfigSupported")
         fun isConfigSupportedAsync(config: AudioDecoderConfig): Promise<AudioDecoderSupport>
     }
+}
+
+/**
+ * The **`flush()`** method of the AudioDecoder interface returns a Promise that resolves once all pending messages in the queue have been completed.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioDecoder/flush)
+ */
+suspend inline fun AudioDecoder.flush() {
+    awaitPromiseLike(flushAsync())
+}
+
+/**
+ * The **`isConfigSupported()`** static method of the AudioDecoder interface checks if the given config is supported (that is, if AudioDecoder objects can be successfully configured with the given config).
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioDecoder/isConfigSupported_static)
+ */
+suspend inline fun AudioDecoder.Companion.isConfigSupported(config: AudioDecoderConfig): AudioDecoderSupport {
+    return awaitPromiseLike(isConfigSupportedAsync(config))
 }
 
 /**

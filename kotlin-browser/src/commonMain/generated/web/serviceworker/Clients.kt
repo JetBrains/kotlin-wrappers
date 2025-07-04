@@ -5,6 +5,7 @@ package web.serviceworker
 import js.array.ReadonlyArray
 import js.core.Void
 import js.promise.Promise
+import js.promise.internal.awaitPromiseLike
 import seskar.js.JsAsync
 import web.url.URL
 import kotlin.js.JsName
@@ -22,10 +23,6 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Clients/claim)
      */
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun claim()
-
     @JsName("claim")
     fun claimAsync(): Promise<Void>
 
@@ -34,10 +31,6 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Clients/get)
      */
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun get(id: String): Client?
-
     @JsName("get")
     fun getAsync(id: String): Promise<Client?>
 
@@ -58,17 +51,40 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Clients/openWindow)
      */
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun openWindow(url: String): WindowClient?
-
     @JsName("openWindow")
     fun openWindowAsync(url: String): Promise<WindowClient?>
 
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun openWindow(url: URL): WindowClient?
-
     @JsName("openWindow")
     fun openWindowAsync(url: URL): Promise<WindowClient?>
+}
+
+/**
+ * The **`claim()`** method of the Clients interface allows an active service worker to set itself as the ServiceWorkerContainer.controller for all clients within its ServiceWorkerRegistration.scope.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Clients/claim)
+ */
+suspend inline fun Clients.claim() {
+    awaitPromiseLike(claimAsync())
+}
+
+/**
+ * The **`get()`** method of the `id` and returns it in a Promise.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Clients/get)
+ */
+suspend inline fun Clients.get(id: String): Client? {
+    return awaitPromiseLike(getAsync(id))
+}
+
+/**
+ * The **`openWindow()`** method of the Clients interface creates a new top level browsing context and loads a given URL.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Clients/openWindow)
+ */
+suspend inline fun Clients.openWindow(url: String): WindowClient? {
+    return awaitPromiseLike(openWindowAsync(url))
+}
+
+suspend inline fun Clients.openWindow(url: URL): WindowClient? {
+    return awaitPromiseLike(openWindowAsync(url))
 }

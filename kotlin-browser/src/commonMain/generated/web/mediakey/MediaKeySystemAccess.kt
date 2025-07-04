@@ -3,7 +3,7 @@
 package web.mediakey
 
 import js.promise.Promise
-import seskar.js.JsAsync
+import js.promise.internal.awaitPromiseLike
 import kotlin.js.JsName
 
 /**
@@ -26,10 +26,6 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeySystemAccess/createMediaKeys)
      */
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun createMediaKeys(): MediaKeys
-
     @JsName("createMediaKeys")
     fun createMediaKeysAsync(): Promise<MediaKeys>
 
@@ -39,4 +35,13 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeySystemAccess/getConfiguration)
      */
     fun getConfiguration(): MediaKeySystemConfiguration
+}
+
+/**
+ * The `MediaKeySystemAccess.createMediaKeys()` method returns a ```js-nolint createMediaKeys() ``` None.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeySystemAccess/createMediaKeys)
+ */
+suspend inline fun MediaKeySystemAccess.createMediaKeys(): MediaKeys {
+    return awaitPromiseLike(createMediaKeysAsync())
 }

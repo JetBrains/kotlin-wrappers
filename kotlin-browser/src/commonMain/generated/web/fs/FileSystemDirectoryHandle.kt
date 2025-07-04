@@ -7,6 +7,7 @@ import js.collections.AsyncMapLike
 import js.core.JsString
 import js.core.Void
 import js.promise.Promise
+import js.promise.internal.awaitPromiseLike
 import js.serialization.Serializable
 import seskar.js.JsAsync
 import kotlin.js.JsName
@@ -85,10 +86,15 @@ protected /* private */ constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemDirectoryHandle/resolve)
      */
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun resolve(possibleDescendant: FileSystemHandle): ReadonlyArray<JsString>?
-
     @JsName("resolve")
     fun resolveAsync(possibleDescendant: FileSystemHandle): Promise<ReadonlyArray<JsString>?>
+}
+
+/**
+ * The **`resolve()`** method of the directory names from the parent handle to the specified child entry, with the name of the child entry as the last array item.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemDirectoryHandle/resolve)
+ */
+suspend inline fun FileSystemDirectoryHandle.resolve(possibleDescendant: FileSystemHandle): ReadonlyArray<JsString>? {
+    return awaitPromiseLike(resolveAsync(possibleDescendant))
 }
