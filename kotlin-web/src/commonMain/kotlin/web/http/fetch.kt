@@ -1,9 +1,9 @@
 package web.http
 
+import js.objects.unsafeJso
 import js.promise.thenTo
 import kotlinx.coroutines.suspendCancellableCoroutine
 import web.abort.toAbortSignal
-import web.http.internal.createRequestInit
 import web.url.URL
 
 suspend fun fetch(
@@ -12,7 +12,9 @@ suspend fun fetch(
     suspendCancellableCoroutine { continuation ->
         val finalRequest = Request(
             request = request,
-            init = createRequestInit(signal = continuation.toAbortSignal())
+            init = unsafeJso {
+                signal = continuation.toAbortSignal()
+            }
         )
 
         fetchAsync(finalRequest)
