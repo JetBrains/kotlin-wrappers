@@ -5,7 +5,7 @@ package web.push
 import js.buffer.ArrayBuffer
 import js.core.JsBoolean
 import js.promise.Promise
-import seskar.js.JsAsync
+import js.promise.internal.awaitPromiseLike
 import web.time.EpochTimeStamp
 import kotlin.js.JsName
 
@@ -52,15 +52,16 @@ private constructor() {
      */
     fun toJSON(): PushSubscriptionJSON
 
-    /**
-     * The `unsubscribe()` method of the PushSubscription interface returns a Promise that resolves to a boolean value when the current subscription is successfully unsubscribed.
-     *
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PushSubscription/unsubscribe)
-     */
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun unsubscribe(): Boolean
 
     @JsName("unsubscribe")
     fun unsubscribeAsync(): Promise<JsBoolean>
+}
+
+/**
+ * The `unsubscribe()` method of the PushSubscription interface returns a Promise that resolves to a boolean value when the current subscription is successfully unsubscribed.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PushSubscription/unsubscribe)
+ */
+suspend inline fun PushSubscription.unsubscribe(): JsBoolean {
+    return awaitPromiseLike(unsubscribeAsync())
 }

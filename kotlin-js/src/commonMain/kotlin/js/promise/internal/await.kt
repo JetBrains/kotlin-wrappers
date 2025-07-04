@@ -13,8 +13,8 @@ internal suspend fun <T : JsAny?> awaitPromiseResult(
 ): T =
     awaitPromiseLike(promise.toPromise())
 
-@PublishedApi
-internal suspend fun <T : JsAny?> awaitPromiseLike(
+
+suspend fun <T : JsAny?> awaitPromiseLike(
     promise: PromiseLike<T>,
 ): T =
     suspendCancellableCoroutine(promise::thenTo)

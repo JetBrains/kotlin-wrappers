@@ -9,7 +9,7 @@ import kotlinx.coroutines.suspendCancellableCoroutine
 import web.abort.AbortController
 import web.abort.Abortable
 
-internal fun <T : Abortable> patchAbortOptions(
+fun <T : Abortable> patchAbortOptions(
     options: T?,
     controller: AbortController,
 ): T {
@@ -20,7 +20,7 @@ internal fun <T : Abortable> patchAbortOptions(
     return Object.assign(unsafeJso(), options, abortOptions)
 }
 
-internal suspend fun <T : JsAny?> awaitPromiseLike(
+suspend fun <T : JsAny?> awaitPromiseLike(
     promise: PromiseLike<T>,
     controller: AbortController,
 ): T =

@@ -5,6 +5,7 @@ package web.mediakey
 import js.buffer.BufferSource
 import js.core.JsBoolean
 import js.promise.Promise
+import js.promise.internal.awaitPromiseLike
 import seskar.js.JsAsync
 import kotlin.js.JsName
 import kotlin.js.definedExternally
@@ -36,15 +37,16 @@ private constructor() {
     @JsName("getStatusForPolicy")
     fun getStatusForPolicyAsync(policy: MediaKeysPolicy = definedExternally): Promise<MediaKeyStatus>
 
-    /**
-     * The **`setServerCertificate()`** method of the MediaKeys interface provides a server certificate to be used to encrypt messages to the license server.
-     *
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeys/setServerCertificate)
-     */
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun setServerCertificate(serverCertificate: BufferSource): Boolean
 
     @JsName("setServerCertificate")
     fun setServerCertificateAsync(serverCertificate: BufferSource): Promise<JsBoolean>
+}
+
+/**
+ * The **`setServerCertificate()`** method of the MediaKeys interface provides a server certificate to be used to encrypt messages to the license server.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeys/setServerCertificate)
+ */
+suspend inline fun MediaKeys.setServerCertificate(serverCertificate: BufferSource): JsBoolean {
+    return awaitPromiseLike(setServerCertificateAsync(serverCertificate))
 }

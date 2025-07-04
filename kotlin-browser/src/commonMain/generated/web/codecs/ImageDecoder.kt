@@ -5,6 +5,7 @@ package web.codecs
 import js.core.JsBoolean
 import js.core.Void
 import js.promise.Promise
+import js.promise.internal.awaitPromiseLike
 import seskar.js.JsAsync
 import kotlin.js.JsName
 import kotlin.js.definedExternally
@@ -73,16 +74,16 @@ open external class ImageDecoder(
     fun reset()
 
     companion object {
-        /**
-         * The **`ImageDecoder.isTypeSupported()`** static method checks if a given MIME type can be decoded by the user agent.
-         *
-         * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageDecoder/isTypeSupported_static)
-         */
-        @JsAsync
-        @Suppress("WRONG_EXTERNAL_DECLARATION")
-        suspend fun isTypeSupported(type: String): Boolean
-
         @JsName("isTypeSupported")
         fun isTypeSupportedAsync(type: String): Promise<JsBoolean>
     }
+}
+
+/**
+ * The **`ImageDecoder.isTypeSupported()`** static method checks if a given MIME type can be decoded by the user agent.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageDecoder/isTypeSupported_static)
+ */
+suspend inline fun ImageDecoder.Companion.isTypeSupported(type: String): JsBoolean {
+    return awaitPromiseLike(isTypeSupportedAsync(type))
 }

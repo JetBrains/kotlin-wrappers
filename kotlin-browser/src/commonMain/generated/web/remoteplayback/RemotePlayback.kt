@@ -5,6 +5,7 @@ package web.remoteplayback
 import js.core.JsInt
 import js.core.Void
 import js.promise.Promise
+import js.promise.internal.awaitPromiseLike
 import seskar.js.JsAsync
 import web.events.Event
 import web.events.EventHandler
@@ -55,29 +56,31 @@ private constructor() :
     @JsName("cancelWatchAvailability")
     fun cancelWatchAvailabilityAsync(id: Int = definedExternally): Promise<Void>
 
-    /**
-     * The **`prompt()`** method of the RemotePlayback interface prompts the user to select an available remote playback device and give permission for the current media to be played using that device.
-     *
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RemotePlayback/prompt)
-     */
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun prompt()
 
     @JsName("prompt")
     fun promptAsync(): Promise<Void>
 
-    /**
-     * The **`watchAvailability()`** method of the RemotePlayback interface watches the list of available remote playback devices and returns a Promise that resolves with the `callbackId` of a remote playback device.
-     *
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RemotePlayback/watchAvailability)
-     */
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun watchAvailability(callback: RemotePlaybackAvailabilityCallback): Int
 
     @JsName("watchAvailability")
     fun watchAvailabilityAsync(callback: RemotePlaybackAvailabilityCallback): Promise<JsInt>
+}
+
+/**
+ * The **`prompt()`** method of the RemotePlayback interface prompts the user to select an available remote playback device and give permission for the current media to be played using that device.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RemotePlayback/prompt)
+ */
+suspend inline fun RemotePlayback.prompt() {
+    awaitPromiseLike(promptAsync())
+}
+
+/**
+ * The **`watchAvailability()`** method of the RemotePlayback interface watches the list of available remote playback devices and returns a Promise that resolves with the `callbackId` of a remote playback device.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RemotePlayback/watchAvailability)
+ */
+suspend inline fun RemotePlayback.watchAvailability(noinline callback: RemotePlaybackAvailabilityCallback): JsInt {
+    return awaitPromiseLike(watchAvailabilityAsync(callback))
 }
 
 /**

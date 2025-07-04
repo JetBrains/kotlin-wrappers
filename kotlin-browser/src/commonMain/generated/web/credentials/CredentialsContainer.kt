@@ -4,6 +4,7 @@ package web.credentials
 
 import js.core.Void
 import js.promise.Promise
+import js.promise.internal.awaitPromiseLike
 import seskar.js.JsAsync
 import kotlin.js.JsName
 import kotlin.js.definedExternally
@@ -40,27 +41,29 @@ private constructor() {
     @JsName("get")
     fun getAsync(options: CredentialRequestOptions = definedExternally): Promise<Credential?>
 
-    /**
-     * The **`preventSilentAccess()`** method of the CredentialsContainer interface sets a flag that specifies whether automatic log in is allowed for future visits to the current origin, then returns a Promise that resolves to `undefined`.
-     *
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CredentialsContainer/preventSilentAccess)
-     */
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun preventSilentAccess()
 
     @JsName("preventSilentAccess")
     fun preventSilentAccessAsync(): Promise<Void>
 
-    /**
-     * The **`store()`** method of the ```js-nolint store(credentials) ``` - `credentials` - : A valid Credential instance.
-     *
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CredentialsContainer/store)
-     */
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun store(credential: Credential)
 
     @JsName("store")
     fun storeAsync(credential: Credential): Promise<Void>
+}
+
+/**
+ * The **`preventSilentAccess()`** method of the CredentialsContainer interface sets a flag that specifies whether automatic log in is allowed for future visits to the current origin, then returns a Promise that resolves to `undefined`.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CredentialsContainer/preventSilentAccess)
+ */
+suspend inline fun CredentialsContainer.preventSilentAccess() {
+    awaitPromiseLike(preventSilentAccessAsync())
+}
+
+/**
+ * The **`store()`** method of the ```js-nolint store(credentials) ``` - `credentials` - : A valid Credential instance.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CredentialsContainer/store)
+ */
+suspend inline fun CredentialsContainer.store(credential: Credential) {
+    awaitPromiseLike(storeAsync(credential))
 }

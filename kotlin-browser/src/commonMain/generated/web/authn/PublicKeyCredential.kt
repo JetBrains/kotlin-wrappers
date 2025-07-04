@@ -5,7 +5,7 @@ package web.authn
 import js.buffer.ArrayBuffer
 import js.core.JsBoolean
 import js.promise.Promise
-import seskar.js.JsAsync
+import js.promise.internal.awaitPromiseLike
 import web.credentials.Credential
 import kotlin.js.JsName
 
@@ -54,38 +54,13 @@ private constructor() :
     fun toJSON(): PublicKeyCredentialJSON
 
     companion object {
-        /**
-         * The **`getClientCapabilities()`** static method of the PublicKeyCredential interface returns a Promise that resolves with an object that can be used to check whether or not particular WebAuthn client capabilities and extensions are supported.
-         *
-         * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PublicKeyCredential/getClientCapabilities_static)
-         */
-        @JsAsync
-        @Suppress("WRONG_EXTERNAL_DECLARATION")
-        suspend fun getClientCapabilities(): PublicKeyCredentialClientCapabilities
-
         @JsName("getClientCapabilities")
         fun getClientCapabilitiesAsync(): Promise<PublicKeyCredentialClientCapabilities>
 
-        /**
-         * The **`isConditionalMediationAvailable()`** static method of the PublicKeyCredential interface returns a Promise which resolves to `true` if conditional mediation is available.
-         *
-         * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PublicKeyCredential/isConditionalMediationAvailable_static)
-         */
-        @JsAsync
-        @Suppress("WRONG_EXTERNAL_DECLARATION")
-        suspend fun isConditionalMediationAvailable(): Boolean
 
         @JsName("isConditionalMediationAvailable")
         fun isConditionalMediationAvailableAsync(): Promise<JsBoolean>
 
-        /**
-         * The **`isUserVerifyingPlatformAuthenticatorAvailable()`** static method of the PublicKeyCredential interface returns a Promise which resolves to `true` if a user-verifying platform authenticator is present.
-         *
-         * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PublicKeyCredential/isUserVerifyingPlatformAuthenticatorAvailable_static)
-         */
-        @JsAsync
-        @Suppress("WRONG_EXTERNAL_DECLARATION")
-        suspend fun isUserVerifyingPlatformAuthenticatorAvailable(): Boolean
 
         @JsName("isUserVerifyingPlatformAuthenticatorAvailable")
         fun isUserVerifyingPlatformAuthenticatorAvailableAsync(): Promise<JsBoolean>
@@ -104,4 +79,31 @@ private constructor() :
          */
         fun parseRequestOptionsFromJSON(options: PublicKeyCredentialRequestOptionsJSON): PublicKeyCredentialRequestOptions
     }
+}
+
+/**
+ * The **`getClientCapabilities()`** static method of the PublicKeyCredential interface returns a Promise that resolves with an object that can be used to check whether or not particular WebAuthn client capabilities and extensions are supported.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PublicKeyCredential/getClientCapabilities_static)
+ */
+suspend inline fun PublicKeyCredential.Companion.getClientCapabilities(): PublicKeyCredentialClientCapabilities {
+    return awaitPromiseLike(getClientCapabilitiesAsync())
+}
+
+/**
+ * The **`isConditionalMediationAvailable()`** static method of the PublicKeyCredential interface returns a Promise which resolves to `true` if conditional mediation is available.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PublicKeyCredential/isConditionalMediationAvailable_static)
+ */
+suspend inline fun PublicKeyCredential.Companion.isConditionalMediationAvailable(): JsBoolean {
+    return awaitPromiseLike(isConditionalMediationAvailableAsync())
+}
+
+/**
+ * The **`isUserVerifyingPlatformAuthenticatorAvailable()`** static method of the PublicKeyCredential interface returns a Promise which resolves to `true` if a user-verifying platform authenticator is present.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PublicKeyCredential/isUserVerifyingPlatformAuthenticatorAvailable_static)
+ */
+suspend inline fun PublicKeyCredential.Companion.isUserVerifyingPlatformAuthenticatorAvailable(): JsBoolean {
+    return awaitPromiseLike(isUserVerifyingPlatformAuthenticatorAvailableAsync())
 }

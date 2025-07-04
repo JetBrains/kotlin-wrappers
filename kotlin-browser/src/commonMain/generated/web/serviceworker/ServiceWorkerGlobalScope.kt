@@ -5,7 +5,7 @@ package web.serviceworker
 import js.core.JsAny
 import js.core.Void
 import js.promise.Promise
-import seskar.js.JsAsync
+import js.promise.internal.awaitPromiseLike
 import web.cookie.CookieStore
 import web.cookie.ExtendableCookieChangeEvent
 import web.events.EventHandler
@@ -103,17 +103,18 @@ private constructor() :
      */
     val serviceWorker: ServiceWorker
 
-    /**
-     * The **`skipWaiting()`** method of the ServiceWorkerGlobalScope interface forces the waiting service worker to become the active service worker.
-     *
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope/skipWaiting)
-     */
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun skipWaiting()
 
     @JsName("skipWaiting")
     fun skipWaitingAsync(): Promise<Void>
+}
+
+/**
+ * The **`skipWaiting()`** method of the ServiceWorkerGlobalScope interface forces the waiting service worker to become the active service worker.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope/skipWaiting)
+ */
+suspend inline fun ServiceWorkerGlobalScope.skipWaiting() {
+    awaitPromiseLike(skipWaitingAsync())
 }
 
 /**

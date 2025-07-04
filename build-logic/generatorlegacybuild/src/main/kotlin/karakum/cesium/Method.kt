@@ -56,10 +56,10 @@ internal class Method(
 
         val sourceDeclaration = "fun $name$params$returnExpression"
         val declarations = if (name == "loadTileDataAvailability" && sourceDeclaration.endsWith("): Void")) {
-            withSuspendAdapter(sourceDeclaration.replaceSuffix("): Void", "): Promise<Void>"))
+            withSuspendAdapter(null, sourceDeclaration.replaceSuffix("): Void", "): Promise<Void>"))
                 .map { if ("Async" in it) it.replace("): Promise<Void>", "): Void") else it }
                 .toList()
-        } else withSuspendAdapter(sourceDeclaration).toList()
+        } else withSuspendAdapter(null, sourceDeclaration).toList()
 
         if (declarations.size == 1) {
             val modifiers = modifierList.joinToString(" ", "", " ")

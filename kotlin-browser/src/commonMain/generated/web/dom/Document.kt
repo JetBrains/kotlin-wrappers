@@ -5,7 +5,7 @@ package web.dom
 import js.core.JsBoolean
 import js.core.Void
 import js.promise.Promise
-import seskar.js.JsAsync
+import js.promise.internal.awaitPromiseLike
 import web.animations.AnimationEvent
 import web.animations.DocumentTimeline
 import web.clipboard.ClipboardEvent
@@ -452,26 +452,10 @@ open external class Document :
         filter: NodeFilter? = definedExternally,
     ): TreeWalker
 
-    /**
-     * The Document method **`exitFullscreen()`** requests that the element on this document which is currently being presented in fullscreen mode be taken out of fullscreen mode, restoring the previous state of the screen.
-     *
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/exitFullscreen)
-     */
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun exitFullscreen()
 
     @JsName("exitFullscreen")
     fun exitFullscreenAsync(): Promise<Void>
 
-    /**
-     * The **`exitPictureInPicture()`** method of the Document interface requests that a video contained in this document, which is currently floating, be taken out of picture-in-picture mode, restoring the previous state of the screen.
-     *
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/exitPictureInPicture)
-     */
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun exitPictureInPicture()
 
     @JsName("exitPictureInPicture")
     fun exitPictureInPictureAsync(): Promise<Void>
@@ -529,14 +513,6 @@ open external class Document :
      */
     fun hasFocus(): Boolean
 
-    /**
-     * The **`hasStorageAccess()`** method of the Document interface returns a Promise that resolves with a boolean value indicating whether the document has access to third-party, unpartitioned cookies.
-     *
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/hasStorageAccess)
-     */
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun hasStorageAccess(): Boolean
 
     @JsName("hasStorageAccess")
     fun hasStorageAccessAsync(): Promise<JsBoolean>
@@ -578,14 +554,6 @@ open external class Document :
         features: String,
     ): WindowProxy?
 
-    /**
-     * The **`requestStorageAccess()`** method of the Document interface allows content loaded in a third-party context (i.e., embedded in an iframe) to request access to third-party cookies and unpartitioned state.
-     *
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/requestStorageAccess)
-     */
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun requestStorageAccess()
 
     @JsName("requestStorageAccess")
     fun requestStorageAccessAsync(): Promise<Void>
@@ -606,6 +574,42 @@ open external class Document :
          */
         fun parseHTMLUnsafe(html: String): Document
     }
+}
+
+/**
+ * The Document method **`exitFullscreen()`** requests that the element on this document which is currently being presented in fullscreen mode be taken out of fullscreen mode, restoring the previous state of the screen.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/exitFullscreen)
+ */
+suspend inline fun Document.exitFullscreen() {
+    awaitPromiseLike(exitFullscreenAsync())
+}
+
+/**
+ * The **`exitPictureInPicture()`** method of the Document interface requests that a video contained in this document, which is currently floating, be taken out of picture-in-picture mode, restoring the previous state of the screen.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/exitPictureInPicture)
+ */
+suspend inline fun Document.exitPictureInPicture() {
+    awaitPromiseLike(exitPictureInPictureAsync())
+}
+
+/**
+ * The **`hasStorageAccess()`** method of the Document interface returns a Promise that resolves with a boolean value indicating whether the document has access to third-party, unpartitioned cookies.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/hasStorageAccess)
+ */
+suspend inline fun Document.hasStorageAccess(): JsBoolean {
+    return awaitPromiseLike(hasStorageAccessAsync())
+}
+
+/**
+ * The **`requestStorageAccess()`** method of the Document interface allows content loaded in a third-party context (i.e., embedded in an iframe) to request access to third-party cookies and unpartitioned state.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/requestStorageAccess)
+ */
+suspend inline fun Document.requestStorageAccess() {
+    awaitPromiseLike(requestStorageAccessAsync())
 }
 
 /**

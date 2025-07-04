@@ -6,7 +6,7 @@ import js.array.ReadonlyArray
 import js.buffer.AllowSharedBufferSource
 import js.core.Void
 import js.promise.Promise
-import seskar.js.JsAsync
+import js.promise.internal.awaitPromiseLike
 import kotlin.js.JsName
 import kotlin.js.definedExternally
 
@@ -27,12 +27,6 @@ private constructor() :
         copySize: GPUExtent3D,
     )
 
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUQueue/onSubmittedWorkDone)
-     */
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun onSubmittedWorkDone()
 
     @JsName("onSubmittedWorkDone")
     fun onSubmittedWorkDoneAsync(): Promise<Void>
@@ -62,4 +56,11 @@ private constructor() :
         dataLayout: GPUTexelCopyBufferLayout,
         size: GPUExtent3D,
     )
+}
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUQueue/onSubmittedWorkDone)
+ */
+suspend inline fun GPUQueue.onSubmittedWorkDone() {
+    awaitPromiseLike(onSubmittedWorkDoneAsync())
 }

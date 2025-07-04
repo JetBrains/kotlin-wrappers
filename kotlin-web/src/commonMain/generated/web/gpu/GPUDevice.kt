@@ -3,7 +3,7 @@
 package web.gpu
 
 import js.promise.Promise
-import seskar.js.JsAsync
+import js.promise.internal.awaitPromiseLike
 import web.events.EventInstance
 import web.events.EventTarget
 import kotlin.js.JsName
@@ -64,12 +64,6 @@ private constructor() :
     @JsName("createComputePipeline")
     fun createComputePipelineSync(descriptor: GPUComputePipelineDescriptor): GPUComputePipeline
 
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUDevice/createComputePipelineAsync)
-     */
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun createComputePipeline(descriptor: GPUComputePipelineDescriptor): GPUComputePipeline
 
     fun createComputePipelineAsync(descriptor: GPUComputePipelineDescriptor): Promise<GPUComputePipeline>
 
@@ -94,12 +88,6 @@ private constructor() :
     @JsName("createRenderPipeline")
     fun createRenderPipelineSync(descriptor: GPURenderPipelineDescriptor): GPURenderPipeline
 
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUDevice/createRenderPipelineAsync)
-     */
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun createRenderPipeline(descriptor: GPURenderPipelineDescriptor): GPURenderPipeline
 
     fun createRenderPipelineAsync(descriptor: GPURenderPipelineDescriptor): Promise<GPURenderPipeline>
 
@@ -128,12 +116,6 @@ private constructor() :
      */
     fun importExternalTexture(descriptor: GPUExternalTextureDescriptor): GPUExternalTexture
 
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUDevice/popErrorScope)
-     */
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun popErrorScope(): GPUError?
 
     @JsName("popErrorScope")
     fun popErrorScopeAsync(): Promise<GPUError?>
@@ -142,6 +124,27 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUDevice/pushErrorScope)
      */
     fun pushErrorScope(filter: GPUErrorFilter)
+}
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUDevice/createComputePipelineAsync)
+ */
+suspend inline fun GPUDevice.createComputePipeline(descriptor: GPUComputePipelineDescriptor): GPUComputePipeline {
+    return awaitPromiseLike(createComputePipelineAsync(descriptor))
+}
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUDevice/createRenderPipelineAsync)
+ */
+suspend inline fun GPUDevice.createRenderPipeline(descriptor: GPURenderPipelineDescriptor): GPURenderPipeline {
+    return awaitPromiseLike(createRenderPipelineAsync(descriptor))
+}
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUDevice/popErrorScope)
+ */
+suspend inline fun GPUDevice.popErrorScope(): GPUError? {
+    return awaitPromiseLike(popErrorScopeAsync())
 }
 
 /**
