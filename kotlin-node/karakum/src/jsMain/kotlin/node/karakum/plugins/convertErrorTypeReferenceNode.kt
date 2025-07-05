@@ -1,6 +1,6 @@
 package node.karakum.plugins
 
-import node.karakum.util.nullable
+import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.createPlugin
 import typescript.isExpressionWithTypeArguments
 import typescript.isIdentifier
