@@ -3,7 +3,7 @@
 package web.components
 
 import js.promise.Promise
-import seskar.js.JsAsync
+import js.promise.internal.awaitPromiseLike
 import web.dom.Node
 import web.dom.TagName
 import web.html.HTMLElement
@@ -48,15 +48,16 @@ open external class CustomElementRegistry {
      */
     fun upgrade(root: Node)
 
-    /**
-     * The **`whenDefined()`** method of the resolves when the named element is defined.
-     *
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CustomElementRegistry/whenDefined)
-     */
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun <T : HTMLElement> whenDefined(name: TagName<T>): CustomElementConstructor<T>
 
     @JsName("whenDefined")
     fun <T : HTMLElement> whenDefinedAsync(name: TagName<T>): Promise<CustomElementConstructor<T>>
+}
+
+/**
+ * The **`whenDefined()`** method of the resolves when the named element is defined.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CustomElementRegistry/whenDefined)
+ */
+suspend inline fun <T : HTMLElement> CustomElementRegistry.whenDefined(name: TagName<T>): CustomElementConstructor<T> {
+    return awaitPromiseLike(whenDefinedAsync(name))
 }

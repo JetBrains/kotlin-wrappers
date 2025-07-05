@@ -4,8 +4,8 @@ package web.fs
 
 import js.core.JsBoolean
 import js.promise.Promise
+import js.promise.internal.awaitPromiseLike
 import js.serialization.Serializable
-import seskar.js.JsAsync
 import kotlin.js.JsName
 
 /**
@@ -31,15 +31,16 @@ private constructor() :
      */
     val name: String
 
-    /**
-     * The **`isSameEntry()`** method of the ```js-nolint isSameEntry(fileSystemHandle) ``` - FileSystemHandle - : The `FileSystemHandle` to match against the handle on which the method is invoked.
-     *
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemHandle/isSameEntry)
-     */
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun isSameEntry(other: FileSystemHandle): Boolean
 
     @JsName("isSameEntry")
     fun isSameEntryAsync(other: FileSystemHandle): Promise<JsBoolean>
+}
+
+/**
+ * The **`isSameEntry()`** method of the ```js-nolint isSameEntry(fileSystemHandle) ``` - FileSystemHandle - : The `FileSystemHandle` to match against the handle on which the method is invoked.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemHandle/isSameEntry)
+ */
+suspend inline fun FileSystemHandle.isSameEntry(other: FileSystemHandle): JsBoolean {
+    return awaitPromiseLike(isSameEntryAsync(other))
 }

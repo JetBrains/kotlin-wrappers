@@ -5,6 +5,7 @@ package web.serviceworker
 import js.array.ReadonlyArray
 import js.core.JsAny
 import js.promise.Promise
+import js.promise.internal.awaitPromiseLike
 import seskar.js.JsAsync
 import web.events.Event
 import web.events.EventHandler
@@ -65,21 +66,10 @@ private constructor() :
     @JsName("getRegistration")
     fun getRegistrationAsync(clientURL: String = definedExternally): Promise<ServiceWorkerRegistration?>
 
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun getRegistration(clientURL: URL): ServiceWorkerRegistration?
 
     @JsName("getRegistration")
     fun getRegistrationAsync(clientURL: URL): Promise<ServiceWorkerRegistration?>
 
-    /**
-     * The **`getRegistrations()`** method of the `ServiceWorkerContainer`, in an array.
-     *
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerContainer/getRegistrations)
-     */
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun getRegistrations(): ReadonlyArray<ServiceWorkerRegistration>
 
     @JsName("getRegistrations")
     fun getRegistrationsAsync(): Promise<ReadonlyArray<ServiceWorkerRegistration>>
@@ -121,6 +111,19 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerContainer/startMessages)
      */
     fun startMessages()
+}
+
+suspend inline fun ServiceWorkerContainer.getRegistration(clientURL: URL): ServiceWorkerRegistration? {
+    return awaitPromiseLike(getRegistrationAsync(clientURL))
+}
+
+/**
+ * The **`getRegistrations()`** method of the `ServiceWorkerContainer`, in an array.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerContainer/getRegistrations)
+ */
+suspend inline fun ServiceWorkerContainer.getRegistrations(): ReadonlyArray<ServiceWorkerRegistration> {
+    return awaitPromiseLike(getRegistrationsAsync())
 }
 
 /**

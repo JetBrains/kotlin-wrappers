@@ -61,6 +61,8 @@ private val DEFAULT_IMPORTS = Imports(
     "js.objects.unsafeJso",
     "js.promise.Promise",
     "js.promise.PromiseLike",
+    "js.promise.internal.awaitPromiseLike",
+    "js.promise.internal.awaitOptionalPromiseLike",
     "js.reflect.JsClass",
     "js.reflect.JsExternalInheritorsOnly",
     "js.reflect.unsafeCast",
@@ -89,6 +91,9 @@ private val DEFAULT_IMPORTS = Imports(
 
     "web.abort.AbortSignal",
     "web.abort.Abortable",
+    "web.abort.AbortController",
+    "web.abort.internal.patchAbortOptions",
+    "web.abort.internal.awaitPromiseLike",
     "web.animations.Animation",
     "web.animations.DocumentTimeline",
     "web.animations.Keyframe",

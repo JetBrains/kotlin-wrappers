@@ -1,5 +1,8 @@
 package karakum.common
 
+import karakum.browser.AsyncMember
+import karakum.browser.AsyncRegistry
+
 private val ASYNC_FUNCTION_REGEX = Regex(
     """^((operator)?\s*)(fun.*[ >])([a-zA-Z\d]+)(\(.*\)): Promise<(.+)>(\?)?( = definedExternally)?$""",
     RegexOption.DOT_MATCHES_ALL
@@ -8,7 +11,9 @@ private val ASYNC_FUNCTION_REGEX = Regex(
 private const val DELIMITER = "<!----!>"
 
 internal fun withSuspendAdapter(
+    name: String?,
     source: String,
+    comment: String? = null,
 ): Sequence<String> =
     source.replace(
         ASYNC_FUNCTION_REGEX,
@@ -30,13 +35,32 @@ internal fun withSuspendAdapter(
             val asyncName = suspendName + "Async"
             val jsName = if (asyncName != originalName) """@JsName("$originalName")""" else ""
 
-            sequenceOf(
-                "@JsAsync" + if (optionality.isNotEmpty()) "(optional = true)" else "",
-                "suspend $p3$suspendName$parameters$ret$de",
+            // If there is no `name` provided, a suspend member will be generated right away.
+            // Also, externally defined parameters are not supported yet.
+            val suspendFun = if (name == null || "= definedExternally" in parameters) {
+                sequenceOf(
+                    "@JsAsync" + if (optionality.isNotEmpty()) "(optional = true)" else "",
+                    "suspend $p3$suspendName$parameters$ret$de"
+                )
+            } else {
+                val member = AsyncMember(
+                    name = suspendName,
+                    funSignature = p3,
+                    parameters = parameters,
+                    returnType = ret,
+                    optional = optionality.isNotEmpty(),
+                    docs = comment
+                )
+                AsyncRegistry.registerAsyncMember(name, member)
+
+                emptySequence()
+            }
+
+            (suspendFun + sequenceOf(
                 DELIMITER,
                 jsName,
                 "$p3$asyncName$parameters: Promise<$payload>$optionality$de",
-            ).joinToString("\n")
+            )).joinToString("\n")
         }
     ).splitToSequence(DELIMITER)
         .map { it.trim() }

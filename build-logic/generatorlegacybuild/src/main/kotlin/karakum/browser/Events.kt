@@ -169,7 +169,7 @@ private fun event(
         val members = if (membersSource.isNotEmpty()) {
             membersSource
                 .splitToSequence(";\n")
-                .mapNotNull { convertMember(it, typeProvider) }
+                .mapNotNull { convertMember(name, it, typeProvider) }
                 .joinToString("\n")
         } else ""
 
@@ -211,7 +211,7 @@ private fun event(
     val eventMembers = eventSource.substringAfter(" {\n")
         .trimIndent()
         .splitToSequence(";\n")
-        .mapNotNull { convertMember(it, typeProvider) }
+        .mapNotNull { convertMember(name, it, typeProvider) }
         .joinToString("\n")
         // Event
         .replace("val type: String", "    // val type: String")
@@ -268,7 +268,7 @@ private fun event(
     val companionMembers = if (companionSource.isNotEmpty()) {
         companionSource
             .splitToSequence(";\n")
-            .mapNotNull { convertMember(it, typeProvider) }
+            .mapNotNull { convertMember(name, it, typeProvider) }
             .joinToString("\n")
     } else null
 

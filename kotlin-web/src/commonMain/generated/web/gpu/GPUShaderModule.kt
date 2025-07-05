@@ -3,7 +3,7 @@
 package web.gpu
 
 import js.promise.Promise
-import seskar.js.JsAsync
+import js.promise.internal.awaitPromiseLike
 import kotlin.js.JsName
 
 /**
@@ -14,13 +14,15 @@ import kotlin.js.JsName
 external class GPUShaderModule
 private constructor() :
     GPUObjectBase {
-    /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUShaderModule/getCompilationInfo)
-     */
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun getCompilationInfo(): GPUCompilationInfo
+
 
     @JsName("getCompilationInfo")
     fun getCompilationInfoAsync(): Promise<GPUCompilationInfo>
+}
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUShaderModule/getCompilationInfo)
+ */
+suspend inline fun GPUShaderModule.getCompilationInfo(): GPUCompilationInfo {
+    return awaitPromiseLike(getCompilationInfoAsync())
 }

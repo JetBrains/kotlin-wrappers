@@ -227,7 +227,7 @@ private fun convertFunctionResult(
     var body = if (jsName != null) {
         "$jsName\nexternal $declaration"
     } else {
-        withSuspendAdapter(declaration)
+        withSuspendAdapter(null, declaration)
             .map { it.replaceFirst("fun ", "external fun ") }
             .joinToString("\n\n")
     }

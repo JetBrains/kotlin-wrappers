@@ -7,6 +7,7 @@ import js.core.JsBoolean
 import js.core.Void
 import js.promise.Promise
 import js.promise.PromiseLike
+import js.promise.internal.awaitPromiseLike
 import seskar.js.JsAsync
 import web.events.EventHandler
 import web.events.EventInstance
@@ -37,26 +38,10 @@ open external class PaymentRequest(
      */
     var onpaymentmethodchange: EventHandler<PaymentMethodChangeEvent, PaymentRequest, PaymentRequest>?
 
-    /**
-     * The `PaymentRequest.abort()` method of the PaymentRequest interface causes the user agent to end the payment request and to remove any user interface that might be shown.
-     *
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentRequest/abort)
-     */
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun abort()
 
     @JsName("abort")
     fun abortAsync(): Promise<Void>
 
-    /**
-     * The PaymentRequest method **`canMakePayment()`** determines whether or not the request is configured in a way that is compatible with at least one payment method supported by the user agent.
-     *
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentRequest/canMakePayment)
-     */
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun canMakePayment(): Boolean
 
     @JsName("canMakePayment")
     fun canMakePaymentAsync(): Promise<JsBoolean>
@@ -73,12 +58,31 @@ open external class PaymentRequest(
     @JsName("show")
     fun showAsync(detailsPromise: PaymentDetailsUpdate = definedExternally): Promise<PaymentResponse>
 
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun show(detailsPromise: PromiseLike<PaymentDetailsUpdate>): PaymentResponse
 
     @JsName("show")
     fun showAsync(detailsPromise: PromiseLike<PaymentDetailsUpdate>): Promise<PaymentResponse>
+}
+
+/**
+ * The `PaymentRequest.abort()` method of the PaymentRequest interface causes the user agent to end the payment request and to remove any user interface that might be shown.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentRequest/abort)
+ */
+suspend inline fun PaymentRequest.abort() {
+    awaitPromiseLike(abortAsync())
+}
+
+/**
+ * The PaymentRequest method **`canMakePayment()`** determines whether or not the request is configured in a way that is compatible with at least one payment method supported by the user agent.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentRequest/canMakePayment)
+ */
+suspend inline fun PaymentRequest.canMakePayment(): JsBoolean {
+    return awaitPromiseLike(canMakePaymentAsync())
+}
+
+suspend inline fun PaymentRequest.show(detailsPromise: PromiseLike<PaymentDetailsUpdate>): PaymentResponse {
+    return awaitPromiseLike(showAsync(detailsPromise))
 }
 
 /**

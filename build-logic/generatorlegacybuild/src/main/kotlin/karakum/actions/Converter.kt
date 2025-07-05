@@ -255,7 +255,7 @@ private fun convertFunction(
 
     val body = methodSourceVariants(bodySource)
         .map { convertMethod(it) }
-        .flatMap { withSuspendAdapter(it) }
+        .flatMap { withSuspendAdapter(null, it) }
         .joinToString("\n\n") {
             ("\n" + it)
                 .replace("\nsuspend fun ", "\nsuspend external fun ")

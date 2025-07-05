@@ -868,6 +868,9 @@ internal fun convertInterface(
     val abortable = memberSource.substringAfter("signal?: AbortSignal", "-")
         .removePrefix(" | null")
         .let { it.startsWith(";") || it.isEmpty() }
+    if (abortable) {
+        AsyncRegistry.registerAbortableType(name)
+    }
 
     val mapLikeParameters = if (iterableTypeParameter != null) {
         mapLikeParameters(iterableTypeParameter)
@@ -1015,8 +1018,9 @@ internal fun convertInterface(
         .substringAfter("<", "")
         .substringBeforeLast(">", "")
 
+    var newTypeParameters: String? = null
     if (typeParameters.isNotEmpty() && "<" !in typeParameters) {
-        val newTypeParameters = typeParameters
+        newTypeParameters = typeParameters
             .splitToSequence(",")
             .map { if (":" !in it) "$it : JsAny?" else it }
             .joinToString(",")
@@ -1027,7 +1031,7 @@ internal fun convertInterface(
     var members = if (memberSource.isNotEmpty()) {
         var result = memberSource
             .splitToSequence(";\n")
-            .mapNotNull { convertMember(it, typeProvider) }
+            .mapNotNull { convertMember(name, it, typeProvider) }
             .joinToString("\n")
 
         result = when (name) {
@@ -1406,7 +1410,9 @@ internal fun convertInterface(
         name == DOM_EXCEPTION -> domExceptionErrorNames()
         idDeclaration != null -> idDeclaration
         else -> ""
-    }
+    } +
+            AsyncRegistry.generateSuspendExtensions(name, newTypeParameters) +
+            AsyncRegistry.generateSuspendExtensions("$name.Companion", newTypeParameters)
 
     var body = sequenceOf(
         typeGuard,
@@ -1733,7 +1739,7 @@ private fun getCompanion(
     val typeProvider = TypeProvider(name)
     val members = content
         .splitToSequence(";\n")
-        .mapNotNull { convertMember(it, typeProvider) }
+        .mapNotNull { convertMember("$name.Companion", it, typeProvider) }
         .joinToString("\n")
         .trim()
         .ifEmpty { return "" }
@@ -1759,8 +1765,10 @@ private fun convertConstructor(
 }
 
 internal fun convertMember(
+    of: String,
     source: String,
     typeProvider: TypeProvider,
+    outerComment: String? = null,
 ): String? {
     if ("\n" in source) {
         val comment = source.substringBeforeLast("\n")
@@ -1770,8 +1778,13 @@ internal fun convertMember(
         if ("@deprecated" in comment)
             return null
 
-        val member = convertMember(source.substringAfterLast("\n"), typeProvider)
+        val member = convertMember(of, source.substringAfterLast("\n"), typeProvider, comment)
+            .takeIf { it?.trim()?.isNotEmpty() == true }
             ?: return null
+
+        // Comment should be generated in the following suspend extension
+        if ("Async(" in member && "@JsAsync" !in member)
+            return member
 
         return comment + "\n" + member
     }
@@ -1913,7 +1926,7 @@ internal fun convertMember(
             val result = convertFunction(source, typeProvider)
                 ?: return null
 
-            return withSuspendAdapter(result)
+            return withSuspendAdapter(of, result, outerComment)
                 .joinToString("\n\n")
         }
     }
