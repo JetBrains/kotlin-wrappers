@@ -564,8 +564,15 @@ private val PAYMENT_TYPES = listOf(
 
 private val URL_TYPES = listOf(
     "FragmentDirective",
+
     "URL",
     "URLSearchParams",
+
+    "URLPattern",
+    "URLPatternComponentResult",
+    "URLPatternInit",
+    "URLPatternOptions",
+    "URLPatternResult",
 )
 
 private val REPORTING_TYPES = listOf(
@@ -2050,6 +2057,9 @@ private fun convertProperty(
         "Record<string, string>",
             -> "ReadonlyRecord<String, String>"
 
+        "Record<string, string | undefined>",
+            -> "ReadonlyRecord<String, String?>"
+
         "Record<string, GPUSize64 | undefined>",
             -> "ReadonlyRecord<String, GPUSize64?>"
 
@@ -2114,6 +2124,7 @@ private fun convertProperty(
                 arrayType = when (arrayType) {
                     "string" -> "String"
                     "boolean" -> "Boolean"
+                    "URLPatternInput" -> "JsAny /* URLPatternInput */"
                     else -> arrayType
                 }
 

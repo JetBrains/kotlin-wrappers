@@ -1,16 +1,18 @@
+// Automatically generated - do not modify!
+
 package web.url
 
 import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface URLPatternInit {
-    val protocol: String?
-    val username: String?
-    val password: String?
-    val hostname: String?
-    val port: String?
-    val pathname: String?
-    val search: String?
-    val hash: String?
-    val baseURL: String?
+    var baseURL: String?
+    var hash: String?
+    var hostname: String?
+    var password: String?
+    var pathname: String?
+    var port: String?
+    var protocol: String?
+    var search: String?
+    var username: String?
 }

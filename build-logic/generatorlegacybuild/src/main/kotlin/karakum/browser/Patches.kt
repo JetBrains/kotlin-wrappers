@@ -150,6 +150,7 @@ internal fun String.applyPatches(): String {
         .replace("(url?: Request)", "(request?: Request)")
         .splitUnion("RequestInfo | URL")
         .splitUnion("RequestInfo", "Request | string")
+        .splitUnion("URLPatternInput", "string | URLPatternInit")
         .replace("(requests: string[])", "(urls: string[])")
         .replace(", protocols?: string)", ", protocol?: string)")
         .replace("headers?: HeadersInit", "headers?: Headers")

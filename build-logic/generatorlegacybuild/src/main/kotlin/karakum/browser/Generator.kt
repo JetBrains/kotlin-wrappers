@@ -581,6 +581,7 @@ private fun toCommonBody(
         .replace("<String>", "<JsString>")
         .replace("<String,", "<JsString,")
         .replace(", String>", ", JsString>")
+        .replace(", String?>", ", JsString?>")
         .replace("<Double>", "<JsDouble>")
         .replace("<Double,", "<JsDouble,")
         .replace(", Double>", ", JsDouble>")
