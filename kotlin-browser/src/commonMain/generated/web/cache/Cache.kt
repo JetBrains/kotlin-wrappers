@@ -7,6 +7,7 @@ import js.core.JsBoolean
 import js.core.JsString
 import js.core.Void
 import js.promise.Promise
+import js.promise.internal.awaitPromiseLike
 import seskar.js.JsAsync
 import web.http.Request
 import web.http.Response
@@ -27,23 +28,11 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/add)
      */
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun add(url: String)
-
     @JsName("add")
     fun addAsync(url: String): Promise<Void>
 
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun add(url: URL)
-
     @JsName("add")
     fun addAsync(url: URL): Promise<Void>
-
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun add(request: Request)
 
     @JsName("add")
     fun addAsync(request: Request): Promise<Void>
@@ -53,16 +42,8 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/addAll)
      */
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun addAll(requests: ReadonlyArray<Request>)
-
     @JsName("addAll")
     fun addAllAsync(requests: ReadonlyArray<Request>): Promise<Void>
-
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun addAll(urls: ReadonlyArray<JsString>)
 
     @JsName("addAll")
     fun addAllAsync(urls: ReadonlyArray<JsString>): Promise<Void>
@@ -248,25 +229,11 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/put)
      */
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun put(
-        url: String,
-        response: Response,
-    )
-
     @JsName("put")
     fun putAsync(
         url: String,
         response: Response,
     ): Promise<Void>
-
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun put(
-        url: URL,
-        response: Response,
-    )
 
     @JsName("put")
     fun putAsync(
@@ -274,16 +241,80 @@ private constructor() {
         response: Response,
     ): Promise<Void>
 
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun put(
-        request: Request,
-        response: Response,
-    )
-
     @JsName("put")
     fun putAsync(
         request: Request,
         response: Response,
     ): Promise<Void>
+}
+
+/**
+ * The **`add()`** method of the Cache interface takes a URL, retrieves it, and adds the resulting response object to the given cache.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/add)
+ */
+suspend inline fun Cache.add(url: String) {
+    awaitPromiseLike(addAsync(url))
+}
+
+suspend inline fun Cache.add(url: URL) {
+    awaitPromiseLike(addAsync(url))
+}
+
+suspend inline fun Cache.add(request: Request) {
+    awaitPromiseLike(addAsync(request))
+}
+
+/**
+ * The **`addAll()`** method of the Cache interface takes an array of URLs, retrieves them, and adds the resulting response objects to the given cache.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/addAll)
+ */
+suspend inline fun Cache.addAll(requests: ReadonlyArray<Request>) {
+    awaitPromiseLike(addAllAsync(requests))
+}
+
+suspend inline fun Cache.addAll(urls: ReadonlyArray<JsString>) {
+    awaitPromiseLike(addAllAsync(urls))
+}
+
+/**
+ * The **`put()`** method of the Often, you will just want to Window/fetch one or more requests, then add the result straight to your cache.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/put)
+ */
+suspend inline fun Cache.put(
+    url: String,
+    response: Response,
+) {
+    awaitPromiseLike(
+        putAsync(
+            url,
+            response
+        )
+    )
+}
+
+suspend inline fun Cache.put(
+    url: URL,
+    response: Response,
+) {
+    awaitPromiseLike(
+        putAsync(
+            url,
+            response
+        )
+    )
+}
+
+suspend inline fun Cache.put(
+    request: Request,
+    response: Response,
+) {
+    awaitPromiseLike(
+        putAsync(
+            request,
+            response
+        )
+    )
 }

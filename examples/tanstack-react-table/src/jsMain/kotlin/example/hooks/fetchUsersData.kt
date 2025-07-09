@@ -6,6 +6,7 @@ import js.reflect.unsafeCast
 import web.http.Request
 import web.http.RequestInit
 import web.http.fetch
+import web.http.json
 
 private val USERS_URL = "https://jsonplaceholder.typicode.com/users"
 

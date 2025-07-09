@@ -3,6 +3,7 @@
 package web.fs
 
 import js.promise.Promise
+import js.promise.internal.awaitPromiseLike
 import js.serialization.Serializable
 import seskar.js.JsAsync
 import web.file.File
@@ -26,10 +27,6 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemFileHandle/createSyncAccessHandle)
      */
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun createSyncAccessHandle(): FileSystemSyncAccessHandle
-
     @JsName("createSyncAccessHandle")
     fun createSyncAccessHandleAsync(): Promise<FileSystemSyncAccessHandle>
 
@@ -50,10 +47,24 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemFileHandle/getFile)
      */
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun getFile(): File
-
     @JsName("getFile")
     fun getFileAsync(): Promise<File>
+}
+
+/**
+ * The **`createSyncAccessHandle()`** method of the that can be used to synchronously read from and write to a file.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemFileHandle/createSyncAccessHandle)
+ */
+suspend inline fun FileSystemFileHandle.createSyncAccessHandle(): FileSystemSyncAccessHandle {
+    return awaitPromiseLike(createSyncAccessHandleAsync())
+}
+
+/**
+ * The **`getFile()`** method of the If the file on disk changes or is removed after this method is called, the returned ```js-nolint getFile() ``` None.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemFileHandle/getFile)
+ */
+suspend inline fun FileSystemFileHandle.getFile(): File {
+    return awaitPromiseLike(getFileAsync())
 }

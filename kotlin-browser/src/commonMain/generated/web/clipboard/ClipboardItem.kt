@@ -7,7 +7,7 @@ import js.core.JsAny
 import js.core.JsString
 import js.objects.ReadonlyRecord
 import js.promise.Promise
-import seskar.js.JsAsync
+import js.promise.internal.awaitPromiseLike
 import web.blob.Blob
 import kotlin.js.JsName
 import kotlin.js.definedExternally
@@ -41,10 +41,6 @@ open external class ClipboardItem(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ClipboardItem/getType)
      */
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun getType(type: String): Blob
-
     @JsName("getType")
     fun getTypeAsync(type: String): Promise<Blob>
 
@@ -56,4 +52,13 @@ open external class ClipboardItem(
          */
         fun supports(type: String): Boolean
     }
+}
+
+/**
+ * The **`getType()`** method of the ClipboardItem interface returns a Promise that resolves with a Blob of the requested MIME type or an error if the MIME type is not found.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ClipboardItem/getType)
+ */
+suspend inline fun ClipboardItem.getType(type: String): Blob {
+    return awaitPromiseLike(getTypeAsync(type))
 }

@@ -5,8 +5,8 @@ package web.streams
 import js.buffer.ArrayBuffer
 import js.buffer.ArrayBufferView
 import js.promise.Promise
+import js.promise.internal.awaitPromiseLike
 import js.typedarrays.Uint8Array
-import seskar.js.JsAsync
 import kotlin.js.JsName
 
 /**
@@ -22,10 +22,6 @@ open external class ReadableStreamBYOBReader(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStreamBYOBReader/read)
      */
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun <T : ArrayBufferView<*>> read(view: T): ReadableStreamReadResult<T>
-
     @JsName("read")
     fun <T : ArrayBufferView<*>> readAsync(view: T): Promise<ReadableStreamReadResult<T>>
 
@@ -35,4 +31,13 @@ open external class ReadableStreamBYOBReader(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStreamBYOBReader/releaseLock)
      */
     fun releaseLock()
+}
+
+/**
+ * The **`read()`** method of the ReadableStreamBYOBReader interface is used to read data into a view on a user-supplied buffer from an associated readable byte stream.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStreamBYOBReader/read)
+ */
+suspend inline fun <T : ArrayBufferView<*>> ReadableStreamBYOBReader.read(view: T): ReadableStreamReadResult<T> {
+    return awaitPromiseLike(readAsync(view))
 }

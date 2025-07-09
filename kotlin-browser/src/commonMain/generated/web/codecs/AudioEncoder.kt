@@ -4,7 +4,7 @@ package web.codecs
 
 import js.core.Void
 import js.promise.Promise
-import seskar.js.JsAsync
+import js.promise.internal.awaitPromiseLike
 import web.events.Event
 import web.events.EventHandler
 import web.events.EventInstance
@@ -65,10 +65,6 @@ open external class AudioEncoder(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioEncoder/flush)
      */
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun flush()
-
     @JsName("flush")
     fun flushAsync(): Promise<Void>
 
@@ -85,13 +81,27 @@ open external class AudioEncoder(
          *
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioEncoder/isConfigSupported_static)
          */
-        @JsAsync
-        @Suppress("WRONG_EXTERNAL_DECLARATION")
-        suspend fun isConfigSupported(config: AudioEncoderConfig): AudioEncoderSupport
-
         @JsName("isConfigSupported")
         fun isConfigSupportedAsync(config: AudioEncoderConfig): Promise<AudioEncoderSupport>
     }
+}
+
+/**
+ * The **`flush()`** method of the AudioEncoder interface returns a Promise that resolves once all pending messages in the queue have been completed.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioEncoder/flush)
+ */
+suspend inline fun AudioEncoder.flush() {
+    awaitPromiseLike(flushAsync())
+}
+
+/**
+ * The **`isConfigSupported()`** static method of the AudioEncoder interface checks if the given config is supported (that is, if AudioEncoder objects can be successfully configured with the given config).
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioEncoder/isConfigSupported_static)
+ */
+suspend inline fun AudioEncoder.Companion.isConfigSupported(config: AudioEncoderConfig): AudioEncoderSupport {
+    return awaitPromiseLike(isConfigSupportedAsync(config))
 }
 
 /**

@@ -8,9 +8,9 @@ import js.core.Int53
 import js.core.JsString
 import js.core.UInt53
 import js.promise.Promise
+import js.promise.internal.awaitPromiseLike
 import js.serialization.Serializable
 import js.typedarrays.Uint8Array
-import seskar.js.JsAsync
 import web.images.ImageBitmapSource
 import web.streams.ReadableStream
 import kotlin.js.JsName
@@ -45,10 +45,6 @@ open external class Blob(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Blob/arrayBuffer)
      */
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun arrayBuffer(): ArrayBuffer
-
     @JsName("arrayBuffer")
     fun arrayBufferAsync(): Promise<ArrayBuffer>
 
@@ -57,10 +53,6 @@ open external class Blob(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Blob/bytes)
      */
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun bytes(): Uint8Array<ArrayBuffer>
-
     @JsName("bytes")
     fun bytesAsync(): Promise<Uint8Array<ArrayBuffer>>
 
@@ -87,10 +79,33 @@ open external class Blob(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Blob/text)
      */
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun text(): String
-
     @JsName("text")
     fun textAsync(): Promise<JsString>
+}
+
+/**
+ * The **`arrayBuffer()`** method of the Blob interface returns a Promise that resolves with the contents of the blob as binary data contained in an ArrayBuffer.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Blob/arrayBuffer)
+ */
+suspend inline fun Blob.arrayBuffer(): ArrayBuffer {
+    return awaitPromiseLike(arrayBufferAsync())
+}
+
+/**
+ * The **`bytes()`** method of the Blob interface returns a Promise that resolves with a Uint8Array containing the contents of the blob as an array of bytes.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Blob/bytes)
+ */
+suspend inline fun Blob.bytes(): Uint8Array<ArrayBuffer> {
+    return awaitPromiseLike(bytesAsync())
+}
+
+/**
+ * The **`text()`** method of the string containing the contents of the blob, interpreted as UTF-8.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Blob/text)
+ */
+suspend inline fun Blob.text(): String {
+    return awaitPromiseLike(textAsync()).toString()
 }

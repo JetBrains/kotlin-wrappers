@@ -3,6 +3,7 @@
 package web.gamepad
 
 import js.promise.Promise
+import js.promise.internal.awaitPromiseLike
 import seskar.js.JsAsync
 import kotlin.js.JsName
 import kotlin.js.definedExternally
@@ -37,10 +38,15 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GamepadHapticActuator/reset)
      */
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun reset(): GamepadHapticsResult
-
     @JsName("reset")
     fun resetAsync(): Promise<GamepadHapticsResult>
+}
+
+/**
+ * The **`reset()`** method of the GamepadHapticActuator interface stops the hardware from playing an active vibration effect.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GamepadHapticActuator/reset)
+ */
+suspend inline fun GamepadHapticActuator.reset(): GamepadHapticsResult {
+    return awaitPromiseLike(resetAsync())
 }

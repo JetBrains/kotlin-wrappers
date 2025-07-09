@@ -6,8 +6,8 @@ import js.array.ReadonlyArray
 import js.buffer.ArrayBuffer
 import js.core.JsDouble
 import js.promise.Promise
+import js.promise.internal.awaitPromiseLike
 import js.typedarrays.Float32Array
-import seskar.js.JsAsync
 import web.events.Event
 import web.events.EventHandler
 import web.events.EventInstance
@@ -212,12 +212,17 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BaseAudioContext/decodeAudioData)
      */
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun decodeAudioData(audioData: ArrayBuffer): AudioBuffer
-
     @JsName("decodeAudioData")
     fun decodeAudioDataAsync(audioData: ArrayBuffer): Promise<AudioBuffer>
+}
+
+/**
+ * The `decodeAudioData()` method of the BaseAudioContext Interface is used to asynchronously decode audio file data contained in an rate, then passed to a callback or promise.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BaseAudioContext/decodeAudioData)
+ */
+suspend inline fun BaseAudioContext.decodeAudioData(audioData: ArrayBuffer): AudioBuffer {
+    return awaitPromiseLike(decodeAudioDataAsync(audioData))
 }
 
 /**

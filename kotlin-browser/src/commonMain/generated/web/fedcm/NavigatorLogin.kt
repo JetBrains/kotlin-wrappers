@@ -4,7 +4,7 @@ package web.fedcm
 
 import js.core.Void
 import js.promise.Promise
-import seskar.js.JsAsync
+import js.promise.internal.awaitPromiseLike
 import kotlin.js.JsName
 
 /**
@@ -20,10 +20,15 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigatorLogin/setStatus)
      */
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun setStatus(status: LoginStatus)
-
     @JsName("setStatus")
     fun setStatusAsync(status: LoginStatus): Promise<Void>
+}
+
+/**
+ * The **`setStatus()`** method of the NavigatorLogin interface sets the login status of a federated identity provider (IdP), when called from the IdP's origin.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigatorLogin/setStatus)
+ */
+suspend inline fun NavigatorLogin.setStatus(status: LoginStatus) {
+    awaitPromiseLike(setStatusAsync(status))
 }

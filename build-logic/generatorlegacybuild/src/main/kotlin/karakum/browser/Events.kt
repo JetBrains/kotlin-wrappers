@@ -110,7 +110,7 @@ private fun eventPlaceholders(
     strict: Boolean = false,
 ): List<ConversionResult> {
     if (strict) {
-        val eventNames = Regex("""interface ([\w\d]+Event) extends """)
+        val eventNames = Regex("""interface (\w+Event) extends """)
             .findAll(source)
             .map { it.groupValues[1] }
             .filter { it !in EXCLUDED }
@@ -166,10 +166,11 @@ private fun event(
             .substringAfter("{\n")
             .trimIndent()
 
+        val initExtensionsCollector = BrowserSuspendExtensionsCollector(name, null)
         val members = if (membersSource.isNotEmpty()) {
             membersSource
                 .splitToSequence(";\n")
-                .mapNotNull { convertMember(it, typeProvider) }
+                .mapNotNull { convertMember(it, typeProvider, initExtensionsCollector) }
                 .joinToString("\n")
         } else ""
 
@@ -182,7 +183,7 @@ private fun event(
             "external interface $declaration {",
             members,
             "}",
-        ).joinToString("\n")
+        ).joinToString("\n") + initExtensionsCollector.getResult()
     } else ""
 
     val eventSource = source
@@ -208,10 +209,11 @@ private fun event(
 
     val typeProvider = TypeProvider(name)
 
+    val eventExtensionsCollector = BrowserSuspendExtensionsCollector(name, eventParent)
     val eventMembers = eventSource.substringAfter(" {\n")
         .trimIndent()
         .splitToSequence(";\n")
-        .mapNotNull { convertMember(it, typeProvider) }
+        .mapNotNull { convertMember(it, typeProvider, eventExtensionsCollector) }
         .joinToString("\n")
         // Event
         .replace("val type: String", "    // val type: String")
@@ -265,10 +267,11 @@ private fun event(
     val companionSource = eventClassBody
         .substringAfter("\n", "")
 
+    val companionExtensionsCollector = BrowserSuspendExtensionsCollector(name, null)
     val companionMembers = if (companionSource.isNotEmpty()) {
         companionSource
             .splitToSequence(";\n")
-            .mapNotNull { convertMember(it, typeProvider) }
+            .mapNotNull { convertMember(it, typeProvider, companionExtensionsCollector) }
             .joinToString("\n")
     } else null
 
@@ -303,7 +306,9 @@ private fun event(
     $modifier external class $name$typeParameters $eventConstructor $eventParentDeclaration {
         $body
     }
-    """.trimIndent()
+    """.trimIndent() +
+            eventExtensionsCollector.getResult() +
+            companionExtensionsCollector.getResult()
 
     eventBody = eventBody
         .withComment(
@@ -356,7 +361,7 @@ private fun event(
 private class EventDataMap(
     content: String,
 ) {
-    private val map = Regex("""interface .+?EventMap \{\n    "[\s\S]+?\n\}""")
+    private val map = Regex("""interface .+?EventMap \{\n {4}"[\s\S]+?\n\}""")
         .findAll(content)
         .flatMap { parseEvents(it.value) }
         .filter { it.name != "orientationchange" }

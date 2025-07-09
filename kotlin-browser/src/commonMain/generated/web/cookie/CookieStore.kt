@@ -4,6 +4,7 @@ package web.cookie
 
 import js.core.Void
 import js.promise.Promise
+import js.promise.internal.awaitPromiseLike
 import seskar.js.JsAsync
 import web.events.EventHandler
 import web.events.EventInstance
@@ -30,16 +31,8 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CookieStore/delete)
      */
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun delete(name: String)
-
     @JsName("delete")
     fun deleteAsync(name: String): Promise<Void>
-
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun delete(options: CookieStoreDeleteOptions)
 
     @JsName("delete")
     fun deleteAsync(options: CookieStoreDeleteOptions): Promise<Void>
@@ -49,10 +42,6 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CookieStore/get)
      */
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun get(name: String): CookieListItem?
-
     @JsName("get")
     fun getAsync(name: String): Promise<CookieListItem?>
 
@@ -68,10 +57,6 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CookieStore/getAll)
      */
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun getAll(name: String): CookieList
-
     @JsName("getAll")
     fun getAllAsync(name: String): Promise<CookieList>
 
@@ -87,25 +72,66 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CookieStore/set)
      */
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun set(
-        name: String,
-        value: String,
-    )
-
     @JsName("set")
     fun setAsync(
         name: String,
         value: String,
     ): Promise<Void>
 
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun set(options: CookieInit)
-
     @JsName("set")
     fun setAsync(options: CookieInit): Promise<Void>
+}
+
+/**
+ * The **`delete()`** method of the CookieStore interface deletes a cookie that matches the given `name` or `options` object.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CookieStore/delete)
+ */
+suspend inline fun CookieStore.delete(name: String) {
+    awaitPromiseLike(deleteAsync(name))
+}
+
+suspend inline fun CookieStore.delete(options: CookieStoreDeleteOptions) {
+    awaitPromiseLike(deleteAsync(options))
+}
+
+/**
+ * The **`get()`** method of the CookieStore interface returns a Promise that resolves to a single cookie matching the given `name` or `options` object.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CookieStore/get)
+ */
+suspend inline fun CookieStore.get(name: String): CookieListItem? {
+    return awaitPromiseLike(getAsync(name))
+}
+
+/**
+ * The **`getAll()`** method of the CookieStore interface returns a Promise that resolves as an array of cookies that match the `name` or `options` passed to it.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CookieStore/getAll)
+ */
+suspend inline fun CookieStore.getAll(name: String): CookieList {
+    return awaitPromiseLike(getAllAsync(name))
+}
+
+/**
+ * The **`set()`** method of the CookieStore interface sets a cookie with the given `name` and `value` or `options` object.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CookieStore/set)
+ */
+suspend inline fun CookieStore.set(
+    name: String,
+    value: String,
+) {
+    awaitPromiseLike(
+        setAsync(
+            name,
+            value
+        )
+    )
+}
+
+suspend inline fun CookieStore.set(options: CookieInit) {
+    awaitPromiseLike(setAsync(options))
 }
 
 /**

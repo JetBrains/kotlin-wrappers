@@ -1,10 +1,5 @@
 package karakum.common
 
-private val ASYNC_FUNCTION_REGEX = Regex(
-    """^((operator)?\s*)(fun.*[ >])([a-zA-Z\d]+)(\(.*\)): Promise<(.+)>(\?)?( = definedExternally)?$""",
-    RegexOption.DOT_MATCHES_ALL
-)
-
 private const val DELIMITER = "<!----!>"
 
 internal fun withSuspendAdapter(
@@ -13,7 +8,7 @@ internal fun withSuspendAdapter(
     source.replace(
         ASYNC_FUNCTION_REGEX,
         transform = { mr ->
-            val p3 = mr.groupValues[3]
+            val funSignature = mr.groupValues[3]
             val originalName = mr.groupValues[4]
             val parameters = mr.groupValues[5]
             val payload = mr.groupValues[6]
@@ -32,10 +27,10 @@ internal fun withSuspendAdapter(
 
             sequenceOf(
                 "@JsAsync" + if (optionality.isNotEmpty()) "(optional = true)" else "",
-                "suspend $p3$suspendName$parameters$ret$de",
+                "suspend $funSignature$suspendName$parameters$ret$de",
                 DELIMITER,
                 jsName,
-                "$p3$asyncName$parameters: Promise<$payload>$optionality$de",
+                "$funSignature$asyncName$parameters: Promise<$payload>$optionality$de",
             ).joinToString("\n")
         }
     ).splitToSequence(DELIMITER)

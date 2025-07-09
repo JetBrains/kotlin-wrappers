@@ -4,7 +4,7 @@ package web.streams
 
 import js.core.JsAny
 import js.promise.Promise
-import seskar.js.JsAsync
+import js.promise.internal.awaitPromiseLike
 import kotlin.js.JsName
 
 /**
@@ -20,10 +20,6 @@ open external class ReadableStreamDefaultReader<R : JsAny?>(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStreamDefaultReader/read)
      */
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun read(): ReadableStreamReadResult<R>
-
     @JsName("read")
     fun readAsync(): Promise<ReadableStreamReadResult<R>>
 
@@ -33,4 +29,13 @@ open external class ReadableStreamDefaultReader<R : JsAny?>(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStreamDefaultReader/releaseLock)
      */
     fun releaseLock()
+}
+
+/**
+ * The **`read()`** method of the ReadableStreamDefaultReader interface returns a Promise providing access to the next chunk in the stream's internal queue.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStreamDefaultReader/read)
+ */
+suspend inline fun <R : JsAny?> ReadableStreamDefaultReader<R>.read(): ReadableStreamReadResult<R> {
+    return awaitPromiseLike(readAsync())
 }

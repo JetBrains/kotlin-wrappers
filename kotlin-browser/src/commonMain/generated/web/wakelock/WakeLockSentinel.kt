@@ -4,7 +4,7 @@ package web.wakelock
 
 import js.core.Void
 import js.promise.Promise
-import seskar.js.JsAsync
+import js.promise.internal.awaitPromiseLike
 import web.events.Event
 import web.events.EventHandler
 import web.events.EventInstance
@@ -44,12 +44,17 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WakeLockSentinel/release)
      */
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun release()
-
     @JsName("release")
     fun releaseAsync(): Promise<Void>
+}
+
+/**
+ * The **`release()`** method of the WakeLockSentinel interface releases the WakeLockSentinel, returning a Promise that is resolved once the sentinel has been successfully released.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WakeLockSentinel/release)
+ */
+suspend inline fun WakeLockSentinel.release() {
+    awaitPromiseLike(releaseAsync())
 }
 
 /**

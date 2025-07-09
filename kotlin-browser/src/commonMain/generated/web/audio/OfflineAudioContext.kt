@@ -4,7 +4,7 @@ package web.audio
 
 import js.core.Void
 import js.promise.Promise
-import seskar.js.JsAsync
+import js.promise.internal.awaitPromiseLike
 import web.events.EventHandler
 import web.events.EventInstance
 import kotlin.js.JsName
@@ -40,10 +40,6 @@ open external class OfflineAudioContext(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OfflineAudioContext/resume)
      */
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun resume()
-
     @JsName("resume")
     fun resumeAsync(): Promise<Void>
 
@@ -52,10 +48,6 @@ open external class OfflineAudioContext(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OfflineAudioContext/startRendering)
      */
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun startRendering(): AudioBuffer
-
     @JsName("startRendering")
     fun startRenderingAsync(): Promise<AudioBuffer>
 
@@ -64,12 +56,35 @@ open external class OfflineAudioContext(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OfflineAudioContext/suspend)
      */
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun suspend(suspendTime: Double)
-
     @JsName("suspend")
     fun suspendAsync(suspendTime: Double): Promise<Void>
+}
+
+/**
+ * The **`resume()`** method of the context that has been suspended.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OfflineAudioContext/resume)
+ */
+suspend inline fun OfflineAudioContext.resume() {
+    awaitPromiseLike(resumeAsync())
+}
+
+/**
+ * The `startRendering()` method of the OfflineAudioContext Interface starts rendering the audio graph, taking into account the current connections and the current scheduled changes.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OfflineAudioContext/startRendering)
+ */
+suspend inline fun OfflineAudioContext.startRendering(): AudioBuffer {
+    return awaitPromiseLike(startRenderingAsync())
+}
+
+/**
+ * The **`suspend()`** method of the OfflineAudioContext interface schedules a suspension of the time progression in the audio context at the specified time and returns a promise.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OfflineAudioContext/suspend)
+ */
+suspend inline fun OfflineAudioContext.suspend(suspendTime: Double) {
+    awaitPromiseLike(suspendAsync(suspendTime))
 }
 
 /**

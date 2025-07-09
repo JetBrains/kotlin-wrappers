@@ -3,6 +3,7 @@
 package web.imagecapture
 
 import js.promise.Promise
+import js.promise.internal.awaitPromiseLike
 import seskar.js.JsAsync
 import web.blob.Blob
 import web.images.ImageBitmap
@@ -31,10 +32,6 @@ open external class ImageCapture(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageCapture/getPhotoCapabilities)
      */
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun getPhotoCapabilities(): PhotoCapabilities
-
     @JsName("getPhotoCapabilities")
     fun getPhotoCapabilitiesAsync(): Promise<PhotoCapabilities>
 
@@ -43,10 +40,6 @@ open external class ImageCapture(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageCapture/getPhotoSettings)
      */
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun getPhotoSettings(): PhotoSettings
-
     @JsName("getPhotoSettings")
     fun getPhotoSettingsAsync(): Promise<PhotoSettings>
 
@@ -55,10 +48,6 @@ open external class ImageCapture(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageCapture/grabFrame)
      */
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun grabFrame(): ImageBitmap
-
     @JsName("grabFrame")
     fun grabFrameAsync(): Promise<ImageBitmap>
 
@@ -73,4 +62,31 @@ open external class ImageCapture(
 
     @JsName("takePhoto")
     fun takePhotoAsync(photoSettings: PhotoSettings = definedExternally): Promise<Blob>
+}
+
+/**
+ * The **`getPhotoCapabilities()`** method of the ImageCapture interface returns a Promise that resolves with an object containing the ranges of available configuration options.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageCapture/getPhotoCapabilities)
+ */
+suspend inline fun ImageCapture.getPhotoCapabilities(): PhotoCapabilities {
+    return awaitPromiseLike(getPhotoCapabilitiesAsync())
+}
+
+/**
+ * The **`getPhotoSettings()`** method of the ImageCapture interface returns a Promise that resolves with an object containing the current photo configuration settings.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageCapture/getPhotoSettings)
+ */
+suspend inline fun ImageCapture.getPhotoSettings(): PhotoSettings {
+    return awaitPromiseLike(getPhotoSettingsAsync())
+}
+
+/**
+ * The **`grabFrame()`** method of the a ImageBitmap containing the snapshot.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageCapture/grabFrame)
+ */
+suspend inline fun ImageCapture.grabFrame(): ImageBitmap {
+    return awaitPromiseLike(grabFrameAsync())
 }

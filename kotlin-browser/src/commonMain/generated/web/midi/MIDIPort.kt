@@ -3,7 +3,7 @@
 package web.midi
 
 import js.promise.Promise
-import seskar.js.JsAsync
+import js.promise.internal.awaitPromiseLike
 import web.events.EventHandler
 import web.events.EventInstance
 import web.events.EventTarget
@@ -77,10 +77,6 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MIDIPort/close)
      */
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun close(): MIDIPort
-
     @JsName("close")
     fun closeAsync(): Promise<MIDIPort>
 
@@ -89,12 +85,26 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MIDIPort/open)
      */
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun open(): MIDIPort
-
     @JsName("open")
     fun openAsync(): Promise<MIDIPort>
+}
+
+/**
+ * The **`close()`** method of the MIDIPort interface makes the access to the MIDI device connected to this `MIDIPort` unavailable.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MIDIPort/close)
+ */
+suspend inline fun MIDIPort.close(): MIDIPort {
+    return awaitPromiseLike(closeAsync())
+}
+
+/**
+ * The **`open()`** method of the MIDIPort interface makes the MIDI device connected to this `MIDIPort` explicitly available.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MIDIPort/open)
+ */
+suspend inline fun MIDIPort.open(): MIDIPort {
+    return awaitPromiseLike(openAsync())
 }
 
 /**

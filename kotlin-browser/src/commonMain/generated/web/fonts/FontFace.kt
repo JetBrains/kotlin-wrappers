@@ -4,7 +4,7 @@ package web.fonts
 
 import js.buffer.BufferSource
 import js.promise.Promise
-import seskar.js.JsAsync
+import js.promise.internal.awaitPromiseLike
 import kotlin.js.JsName
 import kotlin.js.definedExternally
 
@@ -111,10 +111,15 @@ open external class FontFace(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FontFace/load)
      */
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun load(): FontFace
-
     @JsName("load")
     fun loadAsync(): Promise<FontFace>
+}
+
+/**
+ * The **`load()`** method of the FontFace interface requests and loads a font whose `source` was specified as a URL.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FontFace/load)
+ */
+suspend inline fun FontFace.load(): FontFace {
+    return awaitPromiseLike(loadAsync())
 }

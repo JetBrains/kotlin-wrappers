@@ -5,6 +5,7 @@ package web.push
 import js.array.ReadonlyArray
 import js.core.JsString
 import js.promise.Promise
+import js.promise.internal.awaitPromiseLike
 import seskar.js.JsAsync
 import web.permissions.PermissionState
 import kotlin.js.JsName
@@ -23,10 +24,6 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PushManager/getSubscription)
      */
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun getSubscription(): PushSubscription?
-
     @JsName("getSubscription")
     fun getSubscriptionAsync(): Promise<PushSubscription?>
 
@@ -62,4 +59,13 @@ private constructor() {
          */
         val supportedContentEncodings: ReadonlyArray<JsString>
     }
+}
+
+/**
+ * The **`PushManager.getSubscription()`** method of the PushManager interface retrieves an existing push subscription.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PushManager/getSubscription)
+ */
+suspend inline fun PushManager.getSubscription(): PushSubscription? {
+    return awaitPromiseLike(getSubscriptionAsync())
 }

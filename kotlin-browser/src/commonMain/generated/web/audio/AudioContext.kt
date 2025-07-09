@@ -4,7 +4,7 @@ package web.audio
 
 import js.core.Void
 import js.promise.Promise
-import seskar.js.JsAsync
+import js.promise.internal.awaitPromiseLike
 import web.events.Event
 import web.events.EventInstance
 import web.html.HTMLMediaElement
@@ -39,10 +39,6 @@ open external class AudioContext(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioContext/close)
      */
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun close()
-
     @JsName("close")
     fun closeAsync(): Promise<Void>
 
@@ -79,10 +75,6 @@ open external class AudioContext(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioContext/resume)
      */
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun resume()
-
     @JsName("resume")
     fun resumeAsync(): Promise<Void>
 
@@ -91,12 +83,35 @@ open external class AudioContext(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioContext/suspend)
      */
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun suspend()
-
     @JsName("suspend")
     fun suspendAsync(): Promise<Void>
+}
+
+/**
+ * The `close()` method of the AudioContext Interface closes the audio context, releasing any system audio resources that it uses.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioContext/close)
+ */
+suspend inline fun AudioContext.close() {
+    awaitPromiseLike(closeAsync())
+}
+
+/**
+ * The **`resume()`** method of the AudioContext interface resumes the progression of time in an audio context that has previously been suspended.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioContext/resume)
+ */
+suspend inline fun AudioContext.resume() {
+    awaitPromiseLike(resumeAsync())
+}
+
+/**
+ * The `suspend()` method of the AudioContext Interface suspends the progression of time in the audio context, temporarily halting audio hardware access and reducing CPU/battery usage in the process — this is useful if you want an application to power down the audio hardware when it will not be using an audio context for a while.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioContext/suspend)
+ */
+suspend inline fun AudioContext.suspend() {
+    awaitPromiseLike(suspendAsync())
 }
 
 /**

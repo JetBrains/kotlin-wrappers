@@ -6,7 +6,7 @@ import js.array.ReadonlyArray
 import js.core.JsAny
 import js.core.UInt53
 import js.promise.Promise
-import seskar.js.JsAsync
+import js.promise.internal.awaitPromiseLike
 import kotlin.js.JsName
 import kotlin.js.definedExternally
 
@@ -32,10 +32,6 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBFactory/databases)
      */
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun databases(): ReadonlyArray<IDBDatabaseInfo>
-
     @JsName("databases")
     fun databasesAsync(): Promise<ReadonlyArray<IDBDatabaseInfo>>
 
@@ -55,4 +51,13 @@ private constructor() {
         name: String,
         version: UInt53 = definedExternally,
     ): IDBOpenDBRequest
+}
+
+/**
+ * The **`databases`** method of the IDBFactory interface returns a Promise that fulfills with an array of objects containing the name and version of all the available databases.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBFactory/databases)
+ */
+suspend inline fun IDBFactory.databases(): ReadonlyArray<IDBDatabaseInfo> {
+    return awaitPromiseLike(databasesAsync())
 }

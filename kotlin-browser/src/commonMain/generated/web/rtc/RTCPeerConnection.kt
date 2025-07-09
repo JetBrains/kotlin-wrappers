@@ -5,6 +5,7 @@ package web.rtc
 import js.array.ReadonlyArray
 import js.core.Void
 import js.promise.Promise
+import js.promise.internal.awaitPromiseLike
 import seskar.js.JsAsync
 import web.crypto.Algorithm
 import web.events.Event
@@ -309,10 +310,6 @@ open external class RTCPeerConnection(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/setRemoteDescription)
      */
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun setRemoteDescription(description: RTCSessionDescriptionInit)
-
     @JsName("setRemoteDescription")
     fun setRemoteDescriptionAsync(description: RTCSessionDescriptionInit): Promise<Void>
 
@@ -322,20 +319,34 @@ open external class RTCPeerConnection(
          *
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/generateCertificate_static)
          */
-        @JsAsync
-        @Suppress("WRONG_EXTERNAL_DECLARATION")
-        suspend fun generateCertificate(keygenAlgorithm: Algorithm): RTCCertificate
-
         @JsName("generateCertificate")
         fun generateCertificateAsync(keygenAlgorithm: Algorithm): Promise<RTCCertificate>
-
-        @JsAsync
-        @Suppress("WRONG_EXTERNAL_DECLARATION")
-        suspend fun generateCertificate(keygenAlgorithm: String): RTCCertificate
 
         @JsName("generateCertificate")
         fun generateCertificateAsync(keygenAlgorithm: String): Promise<RTCCertificate>
     }
+}
+
+/**
+ * The **`setRemoteDescription()`** method of the RTCPeerConnection interface sets the specified session description as the remote peer's current offer or answer.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/setRemoteDescription)
+ */
+suspend inline fun RTCPeerConnection.setRemoteDescription(description: RTCSessionDescriptionInit) {
+    awaitPromiseLike(setRemoteDescriptionAsync(description))
+}
+
+/**
+ * The **`generateCertificate()`** static function of the RTCPeerConnection interface creates an X.509 certificate and corresponding private key, returning a promise that resolves with the new RTCCertificate once it's generated.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/generateCertificate_static)
+ */
+suspend inline fun RTCPeerConnection.Companion.generateCertificate(keygenAlgorithm: Algorithm): RTCCertificate {
+    return awaitPromiseLike(generateCertificateAsync(keygenAlgorithm))
+}
+
+suspend inline fun RTCPeerConnection.Companion.generateCertificate(keygenAlgorithm: String): RTCCertificate {
+    return awaitPromiseLike(generateCertificateAsync(keygenAlgorithm))
 }
 
 /**

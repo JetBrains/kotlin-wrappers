@@ -3,7 +3,7 @@
 package web.html
 
 import js.promise.Promise
-import seskar.js.JsAsync
+import js.promise.internal.awaitPromiseLike
 import web.canvas.CanvasImageSource
 import web.dom.Node
 import web.events.EventHandler
@@ -97,10 +97,6 @@ protected constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLVideoElement/requestPictureInPicture)
      */
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun requestPictureInPicture(): PictureInPictureWindow
-
     @JsName("requestPictureInPicture")
     fun requestPictureInPictureAsync(): Promise<PictureInPictureWindow>
 
@@ -110,6 +106,15 @@ protected constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLVideoElement/requestVideoFrameCallback)
      */
     fun requestVideoFrameCallback(callback: VideoFrameRequestCallback): VideoFrameRequestId
+}
+
+/**
+ * The **HTMLVideoElement** method **`requestPictureInPicture()`** issues an asynchronous request to display the video in picture-in-picture mode.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLVideoElement/requestPictureInPicture)
+ */
+suspend inline fun HTMLVideoElement.requestPictureInPicture(): PictureInPictureWindow {
+    return awaitPromiseLike(requestPictureInPictureAsync())
 }
 
 /**

@@ -4,7 +4,7 @@ package web.codecs
 
 import js.core.Void
 import js.promise.Promise
-import seskar.js.JsAsync
+import js.promise.internal.awaitPromiseLike
 import web.events.Event
 import web.events.EventHandler
 import web.events.EventInstance
@@ -69,10 +69,6 @@ open external class VideoEncoder(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoEncoder/flush)
      */
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun flush()
-
     @JsName("flush")
     fun flushAsync(): Promise<Void>
 
@@ -89,13 +85,27 @@ open external class VideoEncoder(
          *
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoEncoder/isConfigSupported_static)
          */
-        @JsAsync
-        @Suppress("WRONG_EXTERNAL_DECLARATION")
-        suspend fun isConfigSupported(config: VideoEncoderConfig): VideoEncoderSupport
-
         @JsName("isConfigSupported")
         fun isConfigSupportedAsync(config: VideoEncoderConfig): Promise<VideoEncoderSupport>
     }
+}
+
+/**
+ * The **`flush()`** method of the VideoEncoder interface forces all pending encodes to complete.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoEncoder/flush)
+ */
+suspend inline fun VideoEncoder.flush() {
+    awaitPromiseLike(flushAsync())
+}
+
+/**
+ * The **`isConfigSupported()`** static method of the VideoEncoder interface checks if VideoEncoder can be successfully configured with the given config.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoEncoder/isConfigSupported_static)
+ */
+suspend inline fun VideoEncoder.Companion.isConfigSupported(config: VideoEncoderConfig): VideoEncoderSupport {
+    return awaitPromiseLike(isConfigSupportedAsync(config))
 }
 
 /**
