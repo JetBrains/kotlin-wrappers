@@ -76,7 +76,10 @@ fun KotlinJsTargetDsl.configureJsTarget(
     if (jsPlatform.browser) {
         browser {
             testTask {
-                enabled = false
+                testLogging.showStandardStreams = true
+                useKarma {
+                    useChromeHeadlessNoSandbox()
+                }
             }
         }
     }

@@ -8,7 +8,6 @@ kotlin {
     js {
         browser {
             testTask {
-                enabled = false
                 testLogging.showStandardStreams = true
                 useKarma {
                     useChromeHeadlessNoSandbox()
