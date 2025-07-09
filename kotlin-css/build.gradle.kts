@@ -10,7 +10,13 @@ plugins {
 kotlin {
     jvmToolchain(11) // Do not change!
     jvm()
-    js()
+    js {
+        browser {
+            testTask {
+                enabled = false
+            }
+        }
+    }
     wasmJs()
 
     iosArm64()
