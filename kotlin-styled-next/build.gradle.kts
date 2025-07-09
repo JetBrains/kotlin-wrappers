@@ -10,7 +10,7 @@ kotlin {
             testTask {
                 testLogging.showStandardStreams = true
                 useKarma {
-                    useChromeHeadless()
+                    useChromeHeadlessNoSandbox()
                 }
             }
         }
