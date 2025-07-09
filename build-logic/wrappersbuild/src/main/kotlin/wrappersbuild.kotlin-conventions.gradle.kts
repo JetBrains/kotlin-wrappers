@@ -74,7 +74,11 @@ fun KotlinJsTargetDsl.configureJsTarget(
     val jsPlatform = project.jsPlatform
 
     if (jsPlatform.browser) {
-        browser()
+        browser {
+            testTask {
+                enabled = false
+            }
+        }
     }
 
     if (jsPlatform.node) {
