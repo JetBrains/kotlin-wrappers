@@ -227,7 +227,7 @@ internal fun numberType(
 ): String =
     when {
         name == "timeStamp" -> "DOMHighResTimeStamp"
-        name == "repeatCount" -> "Any /* $DOUBLE | SVGRepeatCount */"
+        name == "repeatCount" -> "RepeatCount"
 
         name in INT_NAMES -> INT
         name in DOUBLE_NAMES -> DOUBLE

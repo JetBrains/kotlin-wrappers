@@ -35,6 +35,7 @@ import web.html.ButtonType
 import web.autofill.AutoFill
 import web.popover.Popover
 import web.popover.PopoverTargetAction
+import web.svg.RepeatCount
 """.trimIndent()
 
 private val SESKAR_IMPORTS = """

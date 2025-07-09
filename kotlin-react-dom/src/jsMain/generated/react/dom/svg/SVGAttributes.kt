@@ -8,6 +8,7 @@ import react.dom.aria.AriaRole
 import web.dom.Element
 import web.dom.ElementId
 import web.http.CrossOrigin
+import web.svg.RepeatCount
 import web.window.WindowTarget
 
 external interface SVGAttributes<T : Element> :
@@ -184,7 +185,7 @@ external interface SVGAttributes<T : Element> :
     var refX: Double?
     var refY: Double?
     var renderingIntent: Int?
-    var repeatCount: Any? /* Double | SVGRepeatCount */
+    var repeatCount: RepeatCount?
     var repeatDur: String?
     var requiredExtensions: String?
     var requiredFeatures: String?
