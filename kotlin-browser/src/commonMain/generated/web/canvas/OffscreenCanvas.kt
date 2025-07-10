@@ -5,8 +5,8 @@ package web.canvas
 import js.core.JsAny
 import js.core.UInt53
 import js.promise.Promise
+import js.promise.internal.awaitPromiseLike
 import js.serialization.Transferable
-import seskar.js.JsAsync
 import web.blob.Blob
 import web.events.Event
 import web.events.EventHandler
@@ -58,10 +58,6 @@ open external class OffscreenCanvas(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OffscreenCanvas/convertToBlob)
      */
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun convertToBlob(options: ImageEncodeOptions = definedExternally): Blob
-
     @JsName("convertToBlob")
     fun convertToBlobAsync(options: ImageEncodeOptions = definedExternally): Promise<Blob>
 
@@ -81,6 +77,24 @@ open external class OffscreenCanvas(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OffscreenCanvas/transferToImageBitmap)
      */
     fun transferToImageBitmap(): ImageBitmap
+}
+
+/**
+ * The **`OffscreenCanvas.convertToBlob()`** method creates a Blob object representing the image contained in the canvas.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OffscreenCanvas/convertToBlob)
+ */
+suspend inline fun OffscreenCanvas.convertToBlob(options: ImageEncodeOptions): Blob {
+    return awaitPromiseLike(convertToBlobAsync(options = options))
+}
+
+/**
+ * The **`OffscreenCanvas.convertToBlob()`** method creates a Blob object representing the image contained in the canvas.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OffscreenCanvas/convertToBlob)
+ */
+suspend inline fun OffscreenCanvas.convertToBlob(): Blob {
+    return awaitPromiseLike(convertToBlobAsync())
 }
 
 /**

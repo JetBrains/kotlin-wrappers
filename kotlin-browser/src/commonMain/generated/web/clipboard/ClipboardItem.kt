@@ -60,5 +60,5 @@ open external class ClipboardItem(
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ClipboardItem/getType)
  */
 suspend inline fun ClipboardItem.getType(type: String): Blob {
-    return awaitPromiseLike(getTypeAsync(type))
+    return awaitPromiseLike(getTypeAsync(type = type))
 }

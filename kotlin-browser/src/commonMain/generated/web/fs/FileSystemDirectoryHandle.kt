@@ -9,7 +9,6 @@ import js.core.Void
 import js.promise.Promise
 import js.promise.internal.awaitPromiseLike
 import js.serialization.Serializable
-import seskar.js.JsAsync
 import kotlin.js.JsName
 import kotlin.js.definedExternally
 
@@ -32,13 +31,6 @@ protected /* private */ constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemDirectoryHandle/getDirectoryHandle)
      */
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun getDirectoryHandle(
-        name: String,
-        options: FileSystemGetDirectoryOptions = definedExternally,
-    ): FileSystemDirectoryHandle
-
     @JsName("getDirectoryHandle")
     fun getDirectoryHandleAsync(
         name: String,
@@ -50,13 +42,6 @@ protected /* private */ constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemDirectoryHandle/getFileHandle)
      */
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun getFileHandle(
-        name: String,
-        options: FileSystemGetFileOptions = definedExternally,
-    ): FileSystemFileHandle
-
     @JsName("getFileHandle")
     fun getFileHandleAsync(
         name: String,
@@ -68,13 +53,6 @@ protected /* private */ constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemDirectoryHandle/removeEntry)
      */
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun removeEntry(
-        name: String,
-        options: FileSystemRemoveOptions = definedExternally,
-    )
-
     @JsName("removeEntry")
     fun removeEntryAsync(
         name: String,
@@ -91,10 +69,94 @@ protected /* private */ constructor() :
 }
 
 /**
+ * The **`getDirectoryHandle()`** method of the within the directory handle on which the method is called.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemDirectoryHandle/getDirectoryHandle)
+ */
+suspend inline fun FileSystemDirectoryHandle.getDirectoryHandle(
+    name: String,
+    options: FileSystemGetDirectoryOptions,
+): FileSystemDirectoryHandle {
+    return awaitPromiseLike(
+        getDirectoryHandleAsync(
+            name = name,
+            options = options
+        )
+    )
+}
+
+/**
+ * The **`getDirectoryHandle()`** method of the within the directory handle on which the method is called.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemDirectoryHandle/getDirectoryHandle)
+ */
+suspend inline fun FileSystemDirectoryHandle.getDirectoryHandle(
+    name: String,
+): FileSystemDirectoryHandle {
+    return awaitPromiseLike(getDirectoryHandleAsync(name = name))
+}
+
+/**
+ * The **`getFileHandle()`** method of the directory the method is called.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemDirectoryHandle/getFileHandle)
+ */
+suspend inline fun FileSystemDirectoryHandle.getFileHandle(
+    name: String,
+    options: FileSystemGetFileOptions,
+): FileSystemFileHandle {
+    return awaitPromiseLike(
+        getFileHandleAsync(
+            name = name,
+            options = options
+        )
+    )
+}
+
+/**
+ * The **`getFileHandle()`** method of the directory the method is called.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemDirectoryHandle/getFileHandle)
+ */
+suspend inline fun FileSystemDirectoryHandle.getFileHandle(
+    name: String,
+): FileSystemFileHandle {
+    return awaitPromiseLike(getFileHandleAsync(name = name))
+}
+
+/**
+ * The **`removeEntry()`** method of the directory handle contains a file or directory called the name specified.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemDirectoryHandle/removeEntry)
+ */
+suspend inline fun FileSystemDirectoryHandle.removeEntry(
+    name: String,
+    options: FileSystemRemoveOptions,
+) {
+    awaitPromiseLike(
+        removeEntryAsync(
+            name = name,
+            options = options
+        )
+    )
+}
+
+/**
+ * The **`removeEntry()`** method of the directory handle contains a file or directory called the name specified.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemDirectoryHandle/removeEntry)
+ */
+suspend inline fun FileSystemDirectoryHandle.removeEntry(
+    name: String,
+) {
+    awaitPromiseLike(removeEntryAsync(name = name))
+}
+
+/**
  * The **`resolve()`** method of the directory names from the parent handle to the specified child entry, with the name of the child entry as the last array item.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemDirectoryHandle/resolve)
  */
 suspend inline fun FileSystemDirectoryHandle.resolve(possibleDescendant: FileSystemHandle): ReadonlyArray<JsString>? {
-    return awaitPromiseLike(resolveAsync(possibleDescendant))
+    return awaitPromiseLike(resolveAsync(possibleDescendant = possibleDescendant))
 }

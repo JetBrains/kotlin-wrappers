@@ -10,7 +10,6 @@ import js.core.JsBoolean
 import js.core.JsPrimitives.toBoolean
 import js.promise.Promise
 import js.promise.internal.awaitPromiseLike
-import seskar.js.JsAsync
 import kotlin.js.JsName
 import kotlin.js.definedExternally
 
@@ -74,28 +73,12 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/deriveBits)
      */
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun deriveBits(
-        algorithm: Algorithm,
-        baseKey: CryptoKey,
-        length: Int? = definedExternally,
-    ): ArrayBuffer
-
     @JsName("deriveBits")
     fun deriveBitsAsync(
         algorithm: Algorithm,
         baseKey: CryptoKey,
         length: Int? = definedExternally,
     ): Promise<ArrayBuffer>
-
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun deriveBits(
-        algorithm: String,
-        baseKey: CryptoKey,
-        length: Int? = definedExternally,
-    ): ArrayBuffer
 
     @JsName("deriveBits")
     fun deriveBitsAsync(
@@ -104,14 +87,6 @@ private constructor() {
         length: Int? = definedExternally,
     ): Promise<ArrayBuffer>
 
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun deriveBits(
-        algorithm: EcdhKeyDeriveParams,
-        baseKey: CryptoKey,
-        length: Int? = definedExternally,
-    ): ArrayBuffer
-
     @JsName("deriveBits")
     fun deriveBitsAsync(
         algorithm: EcdhKeyDeriveParams,
@@ -119,28 +94,12 @@ private constructor() {
         length: Int? = definedExternally,
     ): Promise<ArrayBuffer>
 
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun deriveBits(
-        algorithm: HkdfParams,
-        baseKey: CryptoKey,
-        length: Int? = definedExternally,
-    ): ArrayBuffer
-
     @JsName("deriveBits")
     fun deriveBitsAsync(
         algorithm: HkdfParams,
         baseKey: CryptoKey,
         length: Int? = definedExternally,
     ): Promise<ArrayBuffer>
-
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun deriveBits(
-        algorithm: Pbkdf2Params,
-        baseKey: CryptoKey,
-        length: Int? = definedExternally,
-    ): ArrayBuffer
 
     @JsName("deriveBits")
     fun deriveBitsAsync(
@@ -1176,9 +1135,9 @@ suspend inline fun SubtleCrypto.decrypt(
 ): ArrayBuffer {
     return awaitPromiseLike(
         decryptAsync(
-            algorithm,
-            key,
-            data
+            algorithm = algorithm,
+            key = key,
+            data = data
         )
     )
 }
@@ -1190,9 +1149,9 @@ suspend inline fun SubtleCrypto.decrypt(
 ): ArrayBuffer {
     return awaitPromiseLike(
         decryptAsync(
-            algorithm,
-            key,
-            data
+            algorithm = algorithm,
+            key = key,
+            data = data
         )
     )
 }
@@ -1204,9 +1163,9 @@ suspend inline fun SubtleCrypto.decrypt(
 ): ArrayBuffer {
     return awaitPromiseLike(
         decryptAsync(
-            algorithm,
-            key,
-            data
+            algorithm = algorithm,
+            key = key,
+            data = data
         )
     )
 }
@@ -1218,9 +1177,9 @@ suspend inline fun SubtleCrypto.decrypt(
 ): ArrayBuffer {
     return awaitPromiseLike(
         decryptAsync(
-            algorithm,
-            key,
-            data
+            algorithm = algorithm,
+            key = key,
+            data = data
         )
     )
 }
@@ -1232,9 +1191,9 @@ suspend inline fun SubtleCrypto.decrypt(
 ): ArrayBuffer {
     return awaitPromiseLike(
         decryptAsync(
-            algorithm,
-            key,
-            data
+            algorithm = algorithm,
+            key = key,
+            data = data
         )
     )
 }
@@ -1246,9 +1205,149 @@ suspend inline fun SubtleCrypto.decrypt(
 ): ArrayBuffer {
     return awaitPromiseLike(
         decryptAsync(
-            algorithm,
-            key,
-            data
+            algorithm = algorithm,
+            key = key,
+            data = data
+        )
+    )
+}
+
+/**
+ * The **`deriveBits()`** method of the key.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/deriveBits)
+ */
+suspend inline fun SubtleCrypto.deriveBits(
+    algorithm: Algorithm,
+    baseKey: CryptoKey,
+    length: Int?,
+): ArrayBuffer {
+    return awaitPromiseLike(
+        deriveBitsAsync(
+            algorithm = algorithm,
+            baseKey = baseKey,
+            length = length
+        )
+    )
+}
+
+/**
+ * The **`deriveBits()`** method of the key.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/deriveBits)
+ */
+suspend inline fun SubtleCrypto.deriveBits(
+    algorithm: Algorithm,
+    baseKey: CryptoKey,
+): ArrayBuffer {
+    return awaitPromiseLike(
+        deriveBitsAsync(
+            algorithm = algorithm,
+            baseKey = baseKey
+        )
+    )
+}
+
+suspend inline fun SubtleCrypto.deriveBits(
+    algorithm: String,
+    baseKey: CryptoKey,
+    length: Int?,
+): ArrayBuffer {
+    return awaitPromiseLike(
+        deriveBitsAsync(
+            algorithm = algorithm,
+            baseKey = baseKey,
+            length = length
+        )
+    )
+}
+
+suspend inline fun SubtleCrypto.deriveBits(
+    algorithm: String,
+    baseKey: CryptoKey,
+): ArrayBuffer {
+    return awaitPromiseLike(
+        deriveBitsAsync(
+            algorithm = algorithm,
+            baseKey = baseKey
+        )
+    )
+}
+
+suspend inline fun SubtleCrypto.deriveBits(
+    algorithm: EcdhKeyDeriveParams,
+    baseKey: CryptoKey,
+    length: Int?,
+): ArrayBuffer {
+    return awaitPromiseLike(
+        deriveBitsAsync(
+            algorithm = algorithm,
+            baseKey = baseKey,
+            length = length
+        )
+    )
+}
+
+suspend inline fun SubtleCrypto.deriveBits(
+    algorithm: EcdhKeyDeriveParams,
+    baseKey: CryptoKey,
+): ArrayBuffer {
+    return awaitPromiseLike(
+        deriveBitsAsync(
+            algorithm = algorithm,
+            baseKey = baseKey
+        )
+    )
+}
+
+suspend inline fun SubtleCrypto.deriveBits(
+    algorithm: HkdfParams,
+    baseKey: CryptoKey,
+    length: Int?,
+): ArrayBuffer {
+    return awaitPromiseLike(
+        deriveBitsAsync(
+            algorithm = algorithm,
+            baseKey = baseKey,
+            length = length
+        )
+    )
+}
+
+suspend inline fun SubtleCrypto.deriveBits(
+    algorithm: HkdfParams,
+    baseKey: CryptoKey,
+): ArrayBuffer {
+    return awaitPromiseLike(
+        deriveBitsAsync(
+            algorithm = algorithm,
+            baseKey = baseKey
+        )
+    )
+}
+
+suspend inline fun SubtleCrypto.deriveBits(
+    algorithm: Pbkdf2Params,
+    baseKey: CryptoKey,
+    length: Int?,
+): ArrayBuffer {
+    return awaitPromiseLike(
+        deriveBitsAsync(
+            algorithm = algorithm,
+            baseKey = baseKey,
+            length = length
+        )
+    )
+}
+
+suspend inline fun SubtleCrypto.deriveBits(
+    algorithm: Pbkdf2Params,
+    baseKey: CryptoKey,
+): ArrayBuffer {
+    return awaitPromiseLike(
+        deriveBitsAsync(
+            algorithm = algorithm,
+            baseKey = baseKey
         )
     )
 }
@@ -1267,11 +1366,11 @@ suspend inline fun SubtleCrypto.deriveKey(
 ): CryptoKey {
     return awaitPromiseLike(
         deriveKeyAsync(
-            algorithm,
-            baseKey,
-            derivedKeyType,
-            extractable,
-            keyUsages
+            algorithm = algorithm,
+            baseKey = baseKey,
+            derivedKeyType = derivedKeyType,
+            extractable = extractable,
+            keyUsages = keyUsages
         )
     )
 }
@@ -1285,11 +1384,11 @@ suspend inline fun SubtleCrypto.deriveKey(
 ): CryptoKey {
     return awaitPromiseLike(
         deriveKeyAsync(
-            algorithm,
-            baseKey,
-            derivedKeyType,
-            extractable,
-            keyUsages
+            algorithm = algorithm,
+            baseKey = baseKey,
+            derivedKeyType = derivedKeyType,
+            extractable = extractable,
+            keyUsages = keyUsages
         )
     )
 }
@@ -1303,11 +1402,11 @@ suspend inline fun SubtleCrypto.deriveKey(
 ): CryptoKey {
     return awaitPromiseLike(
         deriveKeyAsync(
-            algorithm,
-            baseKey,
-            derivedKeyType,
-            extractable,
-            keyUsages
+            algorithm = algorithm,
+            baseKey = baseKey,
+            derivedKeyType = derivedKeyType,
+            extractable = extractable,
+            keyUsages = keyUsages
         )
     )
 }
@@ -1321,11 +1420,11 @@ suspend inline fun SubtleCrypto.deriveKey(
 ): CryptoKey {
     return awaitPromiseLike(
         deriveKeyAsync(
-            algorithm,
-            baseKey,
-            derivedKeyType,
-            extractable,
-            keyUsages
+            algorithm = algorithm,
+            baseKey = baseKey,
+            derivedKeyType = derivedKeyType,
+            extractable = extractable,
+            keyUsages = keyUsages
         )
     )
 }
@@ -1339,11 +1438,11 @@ suspend inline fun SubtleCrypto.deriveKey(
 ): CryptoKey {
     return awaitPromiseLike(
         deriveKeyAsync(
-            algorithm,
-            baseKey,
-            derivedKeyType,
-            extractable,
-            keyUsages
+            algorithm = algorithm,
+            baseKey = baseKey,
+            derivedKeyType = derivedKeyType,
+            extractable = extractable,
+            keyUsages = keyUsages
         )
     )
 }
@@ -1357,11 +1456,11 @@ suspend inline fun SubtleCrypto.deriveKey(
 ): CryptoKey {
     return awaitPromiseLike(
         deriveKeyAsync(
-            algorithm,
-            baseKey,
-            derivedKeyType,
-            extractable,
-            keyUsages
+            algorithm = algorithm,
+            baseKey = baseKey,
+            derivedKeyType = derivedKeyType,
+            extractable = extractable,
+            keyUsages = keyUsages
         )
     )
 }
@@ -1375,11 +1474,11 @@ suspend inline fun SubtleCrypto.deriveKey(
 ): CryptoKey {
     return awaitPromiseLike(
         deriveKeyAsync(
-            algorithm,
-            baseKey,
-            derivedKeyType,
-            extractable,
-            keyUsages
+            algorithm = algorithm,
+            baseKey = baseKey,
+            derivedKeyType = derivedKeyType,
+            extractable = extractable,
+            keyUsages = keyUsages
         )
     )
 }
@@ -1393,11 +1492,11 @@ suspend inline fun SubtleCrypto.deriveKey(
 ): CryptoKey {
     return awaitPromiseLike(
         deriveKeyAsync(
-            algorithm,
-            baseKey,
-            derivedKeyType,
-            extractable,
-            keyUsages
+            algorithm = algorithm,
+            baseKey = baseKey,
+            derivedKeyType = derivedKeyType,
+            extractable = extractable,
+            keyUsages = keyUsages
         )
     )
 }
@@ -1411,11 +1510,11 @@ suspend inline fun SubtleCrypto.deriveKey(
 ): CryptoKey {
     return awaitPromiseLike(
         deriveKeyAsync(
-            algorithm,
-            baseKey,
-            derivedKeyType,
-            extractable,
-            keyUsages
+            algorithm = algorithm,
+            baseKey = baseKey,
+            derivedKeyType = derivedKeyType,
+            extractable = extractable,
+            keyUsages = keyUsages
         )
     )
 }
@@ -1429,11 +1528,11 @@ suspend inline fun SubtleCrypto.deriveKey(
 ): CryptoKey {
     return awaitPromiseLike(
         deriveKeyAsync(
-            algorithm,
-            baseKey,
-            derivedKeyType,
-            extractable,
-            keyUsages
+            algorithm = algorithm,
+            baseKey = baseKey,
+            derivedKeyType = derivedKeyType,
+            extractable = extractable,
+            keyUsages = keyUsages
         )
     )
 }
@@ -1447,11 +1546,11 @@ suspend inline fun SubtleCrypto.deriveKey(
 ): CryptoKey {
     return awaitPromiseLike(
         deriveKeyAsync(
-            algorithm,
-            baseKey,
-            derivedKeyType,
-            extractable,
-            keyUsages
+            algorithm = algorithm,
+            baseKey = baseKey,
+            derivedKeyType = derivedKeyType,
+            extractable = extractable,
+            keyUsages = keyUsages
         )
     )
 }
@@ -1465,11 +1564,11 @@ suspend inline fun SubtleCrypto.deriveKey(
 ): CryptoKey {
     return awaitPromiseLike(
         deriveKeyAsync(
-            algorithm,
-            baseKey,
-            derivedKeyType,
-            extractable,
-            keyUsages
+            algorithm = algorithm,
+            baseKey = baseKey,
+            derivedKeyType = derivedKeyType,
+            extractable = extractable,
+            keyUsages = keyUsages
         )
     )
 }
@@ -1483,11 +1582,11 @@ suspend inline fun SubtleCrypto.deriveKey(
 ): CryptoKey {
     return awaitPromiseLike(
         deriveKeyAsync(
-            algorithm,
-            baseKey,
-            derivedKeyType,
-            extractable,
-            keyUsages
+            algorithm = algorithm,
+            baseKey = baseKey,
+            derivedKeyType = derivedKeyType,
+            extractable = extractable,
+            keyUsages = keyUsages
         )
     )
 }
@@ -1501,11 +1600,11 @@ suspend inline fun SubtleCrypto.deriveKey(
 ): CryptoKey {
     return awaitPromiseLike(
         deriveKeyAsync(
-            algorithm,
-            baseKey,
-            derivedKeyType,
-            extractable,
-            keyUsages
+            algorithm = algorithm,
+            baseKey = baseKey,
+            derivedKeyType = derivedKeyType,
+            extractable = extractable,
+            keyUsages = keyUsages
         )
     )
 }
@@ -1519,11 +1618,11 @@ suspend inline fun SubtleCrypto.deriveKey(
 ): CryptoKey {
     return awaitPromiseLike(
         deriveKeyAsync(
-            algorithm,
-            baseKey,
-            derivedKeyType,
-            extractable,
-            keyUsages
+            algorithm = algorithm,
+            baseKey = baseKey,
+            derivedKeyType = derivedKeyType,
+            extractable = extractable,
+            keyUsages = keyUsages
         )
     )
 }
@@ -1537,11 +1636,11 @@ suspend inline fun SubtleCrypto.deriveKey(
 ): CryptoKey {
     return awaitPromiseLike(
         deriveKeyAsync(
-            algorithm,
-            baseKey,
-            derivedKeyType,
-            extractable,
-            keyUsages
+            algorithm = algorithm,
+            baseKey = baseKey,
+            derivedKeyType = derivedKeyType,
+            extractable = extractable,
+            keyUsages = keyUsages
         )
     )
 }
@@ -1555,11 +1654,11 @@ suspend inline fun SubtleCrypto.deriveKey(
 ): CryptoKey {
     return awaitPromiseLike(
         deriveKeyAsync(
-            algorithm,
-            baseKey,
-            derivedKeyType,
-            extractable,
-            keyUsages
+            algorithm = algorithm,
+            baseKey = baseKey,
+            derivedKeyType = derivedKeyType,
+            extractable = extractable,
+            keyUsages = keyUsages
         )
     )
 }
@@ -1573,11 +1672,11 @@ suspend inline fun SubtleCrypto.deriveKey(
 ): CryptoKey {
     return awaitPromiseLike(
         deriveKeyAsync(
-            algorithm,
-            baseKey,
-            derivedKeyType,
-            extractable,
-            keyUsages
+            algorithm = algorithm,
+            baseKey = baseKey,
+            derivedKeyType = derivedKeyType,
+            extractable = extractable,
+            keyUsages = keyUsages
         )
     )
 }
@@ -1591,11 +1690,11 @@ suspend inline fun SubtleCrypto.deriveKey(
 ): CryptoKey {
     return awaitPromiseLike(
         deriveKeyAsync(
-            algorithm,
-            baseKey,
-            derivedKeyType,
-            extractable,
-            keyUsages
+            algorithm = algorithm,
+            baseKey = baseKey,
+            derivedKeyType = derivedKeyType,
+            extractable = extractable,
+            keyUsages = keyUsages
         )
     )
 }
@@ -1609,11 +1708,11 @@ suspend inline fun SubtleCrypto.deriveKey(
 ): CryptoKey {
     return awaitPromiseLike(
         deriveKeyAsync(
-            algorithm,
-            baseKey,
-            derivedKeyType,
-            extractable,
-            keyUsages
+            algorithm = algorithm,
+            baseKey = baseKey,
+            derivedKeyType = derivedKeyType,
+            extractable = extractable,
+            keyUsages = keyUsages
         )
     )
 }
@@ -1627,11 +1726,11 @@ suspend inline fun SubtleCrypto.deriveKey(
 ): CryptoKey {
     return awaitPromiseLike(
         deriveKeyAsync(
-            algorithm,
-            baseKey,
-            derivedKeyType,
-            extractable,
-            keyUsages
+            algorithm = algorithm,
+            baseKey = baseKey,
+            derivedKeyType = derivedKeyType,
+            extractable = extractable,
+            keyUsages = keyUsages
         )
     )
 }
@@ -1645,11 +1744,11 @@ suspend inline fun SubtleCrypto.deriveKey(
 ): CryptoKey {
     return awaitPromiseLike(
         deriveKeyAsync(
-            algorithm,
-            baseKey,
-            derivedKeyType,
-            extractable,
-            keyUsages
+            algorithm = algorithm,
+            baseKey = baseKey,
+            derivedKeyType = derivedKeyType,
+            extractable = extractable,
+            keyUsages = keyUsages
         )
     )
 }
@@ -1663,11 +1762,11 @@ suspend inline fun SubtleCrypto.deriveKey(
 ): CryptoKey {
     return awaitPromiseLike(
         deriveKeyAsync(
-            algorithm,
-            baseKey,
-            derivedKeyType,
-            extractable,
-            keyUsages
+            algorithm = algorithm,
+            baseKey = baseKey,
+            derivedKeyType = derivedKeyType,
+            extractable = extractable,
+            keyUsages = keyUsages
         )
     )
 }
@@ -1681,11 +1780,11 @@ suspend inline fun SubtleCrypto.deriveKey(
 ): CryptoKey {
     return awaitPromiseLike(
         deriveKeyAsync(
-            algorithm,
-            baseKey,
-            derivedKeyType,
-            extractable,
-            keyUsages
+            algorithm = algorithm,
+            baseKey = baseKey,
+            derivedKeyType = derivedKeyType,
+            extractable = extractable,
+            keyUsages = keyUsages
         )
     )
 }
@@ -1699,11 +1798,11 @@ suspend inline fun SubtleCrypto.deriveKey(
 ): CryptoKey {
     return awaitPromiseLike(
         deriveKeyAsync(
-            algorithm,
-            baseKey,
-            derivedKeyType,
-            extractable,
-            keyUsages
+            algorithm = algorithm,
+            baseKey = baseKey,
+            derivedKeyType = derivedKeyType,
+            extractable = extractable,
+            keyUsages = keyUsages
         )
     )
 }
@@ -1717,11 +1816,11 @@ suspend inline fun SubtleCrypto.deriveKey(
 ): CryptoKey {
     return awaitPromiseLike(
         deriveKeyAsync(
-            algorithm,
-            baseKey,
-            derivedKeyType,
-            extractable,
-            keyUsages
+            algorithm = algorithm,
+            baseKey = baseKey,
+            derivedKeyType = derivedKeyType,
+            extractable = extractable,
+            keyUsages = keyUsages
         )
     )
 }
@@ -1735,11 +1834,11 @@ suspend inline fun SubtleCrypto.deriveKey(
 ): CryptoKey {
     return awaitPromiseLike(
         deriveKeyAsync(
-            algorithm,
-            baseKey,
-            derivedKeyType,
-            extractable,
-            keyUsages
+            algorithm = algorithm,
+            baseKey = baseKey,
+            derivedKeyType = derivedKeyType,
+            extractable = extractable,
+            keyUsages = keyUsages
         )
     )
 }
@@ -1753,11 +1852,11 @@ suspend inline fun SubtleCrypto.deriveKey(
 ): CryptoKey {
     return awaitPromiseLike(
         deriveKeyAsync(
-            algorithm,
-            baseKey,
-            derivedKeyType,
-            extractable,
-            keyUsages
+            algorithm = algorithm,
+            baseKey = baseKey,
+            derivedKeyType = derivedKeyType,
+            extractable = extractable,
+            keyUsages = keyUsages
         )
     )
 }
@@ -1773,8 +1872,8 @@ suspend inline fun SubtleCrypto.digest(
 ): ArrayBuffer {
     return awaitPromiseLike(
         digestAsync(
-            algorithm,
-            data
+            algorithm = algorithm,
+            data = data
         )
     )
 }
@@ -1785,8 +1884,8 @@ suspend inline fun SubtleCrypto.digest(
 ): ArrayBuffer {
     return awaitPromiseLike(
         digestAsync(
-            algorithm,
-            data
+            algorithm = algorithm,
+            data = data
         )
     )
 }
@@ -1803,9 +1902,9 @@ suspend inline fun SubtleCrypto.encrypt(
 ): ArrayBuffer {
     return awaitPromiseLike(
         encryptAsync(
-            algorithm,
-            key,
-            data
+            algorithm = algorithm,
+            key = key,
+            data = data
         )
     )
 }
@@ -1817,9 +1916,9 @@ suspend inline fun SubtleCrypto.encrypt(
 ): ArrayBuffer {
     return awaitPromiseLike(
         encryptAsync(
-            algorithm,
-            key,
-            data
+            algorithm = algorithm,
+            key = key,
+            data = data
         )
     )
 }
@@ -1831,9 +1930,9 @@ suspend inline fun SubtleCrypto.encrypt(
 ): ArrayBuffer {
     return awaitPromiseLike(
         encryptAsync(
-            algorithm,
-            key,
-            data
+            algorithm = algorithm,
+            key = key,
+            data = data
         )
     )
 }
@@ -1845,9 +1944,9 @@ suspend inline fun SubtleCrypto.encrypt(
 ): ArrayBuffer {
     return awaitPromiseLike(
         encryptAsync(
-            algorithm,
-            key,
-            data
+            algorithm = algorithm,
+            key = key,
+            data = data
         )
     )
 }
@@ -1859,9 +1958,9 @@ suspend inline fun SubtleCrypto.encrypt(
 ): ArrayBuffer {
     return awaitPromiseLike(
         encryptAsync(
-            algorithm,
-            key,
-            data
+            algorithm = algorithm,
+            key = key,
+            data = data
         )
     )
 }
@@ -1873,9 +1972,9 @@ suspend inline fun SubtleCrypto.encrypt(
 ): ArrayBuffer {
     return awaitPromiseLike(
         encryptAsync(
-            algorithm,
-            key,
-            data
+            algorithm = algorithm,
+            key = key,
+            data = data
         )
     )
 }
@@ -1891,8 +1990,8 @@ suspend inline fun SubtleCrypto.exportKey(
 ): JsonWebKey {
     return awaitPromiseLike(
         exportKeyAsync(
-            format,
-            key
+            format = format,
+            key = key
         )
     )
 }
@@ -1903,8 +2002,8 @@ suspend inline fun SubtleCrypto.exportKey(
 ): ArrayBuffer {
     return awaitPromiseLike(
         exportKeyAsync(
-            format,
-            key
+            format = format,
+            key = key
         )
     )
 }
@@ -1921,9 +2020,9 @@ suspend inline fun SubtleCrypto.generateKey(
 ): CryptoKeyPair {
     return awaitPromiseLike(
         generateKeyAsync(
-            algorithm,
-            extractable,
-            keyUsages
+            algorithm = algorithm,
+            extractable = extractable,
+            keyUsages = keyUsages
         )
     )
 }
@@ -1935,9 +2034,9 @@ suspend inline fun SubtleCrypto.generateKey(
 ): CryptoKeyPair {
     return awaitPromiseLike(
         generateKeyAsync(
-            algorithm,
-            extractable,
-            keyUsages
+            algorithm = algorithm,
+            extractable = extractable,
+            keyUsages = keyUsages
         )
     )
 }
@@ -1949,9 +2048,9 @@ suspend inline fun SubtleCrypto.generateKey(
 ): CryptoKeyPair {
     return awaitPromiseLike(
         generateKeyAsync(
-            algorithm,
-            extractable,
-            keyUsages
+            algorithm = algorithm,
+            extractable = extractable,
+            keyUsages = keyUsages
         )
     )
 }
@@ -1963,9 +2062,9 @@ suspend inline fun SubtleCrypto.generateKey(
 ): CryptoKey {
     return awaitPromiseLike(
         generateKeyAsync(
-            algorithm,
-            extractable,
-            keyUsages
+            algorithm = algorithm,
+            extractable = extractable,
+            keyUsages = keyUsages
         )
     )
 }
@@ -1977,9 +2076,9 @@ suspend inline fun SubtleCrypto.generateKey(
 ): CryptoKey {
     return awaitPromiseLike(
         generateKeyAsync(
-            algorithm,
-            extractable,
-            keyUsages
+            algorithm = algorithm,
+            extractable = extractable,
+            keyUsages = keyUsages
         )
     )
 }
@@ -1991,9 +2090,9 @@ suspend inline fun SubtleCrypto.generateKey(
 ): CryptoKey {
     return awaitPromiseLike(
         generateKeyAsync(
-            algorithm,
-            extractable,
-            keyUsages
+            algorithm = algorithm,
+            extractable = extractable,
+            keyUsages = keyUsages
         )
     )
 }
@@ -2005,9 +2104,9 @@ suspend inline fun SubtleCrypto.generateKey(
 ): JsAny /* CryptoKeyPair | CryptoKey */ {
     return awaitPromiseLike(
         generateKeyAsync(
-            algorithm,
-            extractable,
-            keyUsages
+            algorithm = algorithm,
+            extractable = extractable,
+            keyUsages = keyUsages
         )
     )
 }
@@ -2019,9 +2118,9 @@ suspend inline fun SubtleCrypto.generateKey(
 ): JsAny /* CryptoKeyPair | CryptoKey */ {
     return awaitPromiseLike(
         generateKeyAsync(
-            algorithm,
-            extractable,
-            keyUsages
+            algorithm = algorithm,
+            extractable = extractable,
+            keyUsages = keyUsages
         )
     )
 }
@@ -2040,11 +2139,11 @@ suspend inline fun SubtleCrypto.importKey(
 ): CryptoKey {
     return awaitPromiseLike(
         importKeyAsync(
-            format,
-            keyData,
-            algorithm,
-            extractable,
-            keyUsages
+            format = format,
+            keyData = keyData,
+            algorithm = algorithm,
+            extractable = extractable,
+            keyUsages = keyUsages
         )
     )
 }
@@ -2058,11 +2157,11 @@ suspend inline fun SubtleCrypto.importKey(
 ): CryptoKey {
     return awaitPromiseLike(
         importKeyAsync(
-            format,
-            keyData,
-            algorithm,
-            extractable,
-            keyUsages
+            format = format,
+            keyData = keyData,
+            algorithm = algorithm,
+            extractable = extractable,
+            keyUsages = keyUsages
         )
     )
 }
@@ -2076,11 +2175,11 @@ suspend inline fun SubtleCrypto.importKey(
 ): CryptoKey {
     return awaitPromiseLike(
         importKeyAsync(
-            format,
-            keyData,
-            algorithm,
-            extractable,
-            keyUsages
+            format = format,
+            keyData = keyData,
+            algorithm = algorithm,
+            extractable = extractable,
+            keyUsages = keyUsages
         )
     )
 }
@@ -2094,11 +2193,11 @@ suspend inline fun SubtleCrypto.importKey(
 ): CryptoKey {
     return awaitPromiseLike(
         importKeyAsync(
-            format,
-            keyData,
-            algorithm,
-            extractable,
-            keyUsages
+            format = format,
+            keyData = keyData,
+            algorithm = algorithm,
+            extractable = extractable,
+            keyUsages = keyUsages
         )
     )
 }
@@ -2112,11 +2211,11 @@ suspend inline fun SubtleCrypto.importKey(
 ): CryptoKey {
     return awaitPromiseLike(
         importKeyAsync(
-            format,
-            keyData,
-            algorithm,
-            extractable,
-            keyUsages
+            format = format,
+            keyData = keyData,
+            algorithm = algorithm,
+            extractable = extractable,
+            keyUsages = keyUsages
         )
     )
 }
@@ -2130,11 +2229,11 @@ suspend inline fun SubtleCrypto.importKey(
 ): CryptoKey {
     return awaitPromiseLike(
         importKeyAsync(
-            format,
-            keyData,
-            algorithm,
-            extractable,
-            keyUsages
+            format = format,
+            keyData = keyData,
+            algorithm = algorithm,
+            extractable = extractable,
+            keyUsages = keyUsages
         )
     )
 }
@@ -2148,11 +2247,11 @@ suspend inline fun SubtleCrypto.importKey(
 ): CryptoKey {
     return awaitPromiseLike(
         importKeyAsync(
-            format,
-            keyData,
-            algorithm,
-            extractable,
-            keyUsages
+            format = format,
+            keyData = keyData,
+            algorithm = algorithm,
+            extractable = extractable,
+            keyUsages = keyUsages
         )
     )
 }
@@ -2166,11 +2265,11 @@ suspend inline fun SubtleCrypto.importKey(
 ): CryptoKey {
     return awaitPromiseLike(
         importKeyAsync(
-            format,
-            keyData,
-            algorithm,
-            extractable,
-            keyUsages
+            format = format,
+            keyData = keyData,
+            algorithm = algorithm,
+            extractable = extractable,
+            keyUsages = keyUsages
         )
     )
 }
@@ -2184,11 +2283,11 @@ suspend inline fun SubtleCrypto.importKey(
 ): CryptoKey {
     return awaitPromiseLike(
         importKeyAsync(
-            format,
-            keyData,
-            algorithm,
-            extractable,
-            keyUsages
+            format = format,
+            keyData = keyData,
+            algorithm = algorithm,
+            extractable = extractable,
+            keyUsages = keyUsages
         )
     )
 }
@@ -2202,11 +2301,11 @@ suspend inline fun SubtleCrypto.importKey(
 ): CryptoKey {
     return awaitPromiseLike(
         importKeyAsync(
-            format,
-            keyData,
-            algorithm,
-            extractable,
-            keyUsages
+            format = format,
+            keyData = keyData,
+            algorithm = algorithm,
+            extractable = extractable,
+            keyUsages = keyUsages
         )
     )
 }
@@ -2220,11 +2319,11 @@ suspend inline fun SubtleCrypto.importKey(
 ): CryptoKey {
     return awaitPromiseLike(
         importKeyAsync(
-            format,
-            keyData,
-            algorithm,
-            extractable,
-            keyUsages
+            format = format,
+            keyData = keyData,
+            algorithm = algorithm,
+            extractable = extractable,
+            keyUsages = keyUsages
         )
     )
 }
@@ -2238,11 +2337,11 @@ suspend inline fun SubtleCrypto.importKey(
 ): CryptoKey {
     return awaitPromiseLike(
         importKeyAsync(
-            format,
-            keyData,
-            algorithm,
-            extractable,
-            keyUsages
+            format = format,
+            keyData = keyData,
+            algorithm = algorithm,
+            extractable = extractable,
+            keyUsages = keyUsages
         )
     )
 }
@@ -2259,9 +2358,9 @@ suspend inline fun SubtleCrypto.sign(
 ): ArrayBuffer {
     return awaitPromiseLike(
         signAsync(
-            algorithm,
-            key,
-            data
+            algorithm = algorithm,
+            key = key,
+            data = data
         )
     )
 }
@@ -2273,9 +2372,9 @@ suspend inline fun SubtleCrypto.sign(
 ): ArrayBuffer {
     return awaitPromiseLike(
         signAsync(
-            algorithm,
-            key,
-            data
+            algorithm = algorithm,
+            key = key,
+            data = data
         )
     )
 }
@@ -2287,9 +2386,9 @@ suspend inline fun SubtleCrypto.sign(
 ): ArrayBuffer {
     return awaitPromiseLike(
         signAsync(
-            algorithm,
-            key,
-            data
+            algorithm = algorithm,
+            key = key,
+            data = data
         )
     )
 }
@@ -2301,9 +2400,9 @@ suspend inline fun SubtleCrypto.sign(
 ): ArrayBuffer {
     return awaitPromiseLike(
         signAsync(
-            algorithm,
-            key,
-            data
+            algorithm = algorithm,
+            key = key,
+            data = data
         )
     )
 }
@@ -2324,13 +2423,13 @@ suspend inline fun SubtleCrypto.unwrapKey(
 ): CryptoKey {
     return awaitPromiseLike(
         unwrapKeyAsync(
-            format,
-            wrappedKey,
-            unwrappingKey,
-            unwrapAlgorithm,
-            unwrappedKeyAlgorithm,
-            extractable,
-            keyUsages
+            format = format,
+            wrappedKey = wrappedKey,
+            unwrappingKey = unwrappingKey,
+            unwrapAlgorithm = unwrapAlgorithm,
+            unwrappedKeyAlgorithm = unwrappedKeyAlgorithm,
+            extractable = extractable,
+            keyUsages = keyUsages
         )
     )
 }
@@ -2346,13 +2445,13 @@ suspend inline fun SubtleCrypto.unwrapKey(
 ): CryptoKey {
     return awaitPromiseLike(
         unwrapKeyAsync(
-            format,
-            wrappedKey,
-            unwrappingKey,
-            unwrapAlgorithm,
-            unwrappedKeyAlgorithm,
-            extractable,
-            keyUsages
+            format = format,
+            wrappedKey = wrappedKey,
+            unwrappingKey = unwrappingKey,
+            unwrapAlgorithm = unwrapAlgorithm,
+            unwrappedKeyAlgorithm = unwrappedKeyAlgorithm,
+            extractable = extractable,
+            keyUsages = keyUsages
         )
     )
 }
@@ -2368,13 +2467,13 @@ suspend inline fun SubtleCrypto.unwrapKey(
 ): CryptoKey {
     return awaitPromiseLike(
         unwrapKeyAsync(
-            format,
-            wrappedKey,
-            unwrappingKey,
-            unwrapAlgorithm,
-            unwrappedKeyAlgorithm,
-            extractable,
-            keyUsages
+            format = format,
+            wrappedKey = wrappedKey,
+            unwrappingKey = unwrappingKey,
+            unwrapAlgorithm = unwrapAlgorithm,
+            unwrappedKeyAlgorithm = unwrappedKeyAlgorithm,
+            extractable = extractable,
+            keyUsages = keyUsages
         )
     )
 }
@@ -2390,13 +2489,13 @@ suspend inline fun SubtleCrypto.unwrapKey(
 ): CryptoKey {
     return awaitPromiseLike(
         unwrapKeyAsync(
-            format,
-            wrappedKey,
-            unwrappingKey,
-            unwrapAlgorithm,
-            unwrappedKeyAlgorithm,
-            extractable,
-            keyUsages
+            format = format,
+            wrappedKey = wrappedKey,
+            unwrappingKey = unwrappingKey,
+            unwrapAlgorithm = unwrapAlgorithm,
+            unwrappedKeyAlgorithm = unwrappedKeyAlgorithm,
+            extractable = extractable,
+            keyUsages = keyUsages
         )
     )
 }
@@ -2412,13 +2511,13 @@ suspend inline fun SubtleCrypto.unwrapKey(
 ): CryptoKey {
     return awaitPromiseLike(
         unwrapKeyAsync(
-            format,
-            wrappedKey,
-            unwrappingKey,
-            unwrapAlgorithm,
-            unwrappedKeyAlgorithm,
-            extractable,
-            keyUsages
+            format = format,
+            wrappedKey = wrappedKey,
+            unwrappingKey = unwrappingKey,
+            unwrapAlgorithm = unwrapAlgorithm,
+            unwrappedKeyAlgorithm = unwrappedKeyAlgorithm,
+            extractable = extractable,
+            keyUsages = keyUsages
         )
     )
 }
@@ -2434,13 +2533,13 @@ suspend inline fun SubtleCrypto.unwrapKey(
 ): CryptoKey {
     return awaitPromiseLike(
         unwrapKeyAsync(
-            format,
-            wrappedKey,
-            unwrappingKey,
-            unwrapAlgorithm,
-            unwrappedKeyAlgorithm,
-            extractable,
-            keyUsages
+            format = format,
+            wrappedKey = wrappedKey,
+            unwrappingKey = unwrappingKey,
+            unwrapAlgorithm = unwrapAlgorithm,
+            unwrappedKeyAlgorithm = unwrappedKeyAlgorithm,
+            extractable = extractable,
+            keyUsages = keyUsages
         )
     )
 }
@@ -2456,13 +2555,13 @@ suspend inline fun SubtleCrypto.unwrapKey(
 ): CryptoKey {
     return awaitPromiseLike(
         unwrapKeyAsync(
-            format,
-            wrappedKey,
-            unwrappingKey,
-            unwrapAlgorithm,
-            unwrappedKeyAlgorithm,
-            extractable,
-            keyUsages
+            format = format,
+            wrappedKey = wrappedKey,
+            unwrappingKey = unwrappingKey,
+            unwrapAlgorithm = unwrapAlgorithm,
+            unwrappedKeyAlgorithm = unwrappedKeyAlgorithm,
+            extractable = extractable,
+            keyUsages = keyUsages
         )
     )
 }
@@ -2478,13 +2577,13 @@ suspend inline fun SubtleCrypto.unwrapKey(
 ): CryptoKey {
     return awaitPromiseLike(
         unwrapKeyAsync(
-            format,
-            wrappedKey,
-            unwrappingKey,
-            unwrapAlgorithm,
-            unwrappedKeyAlgorithm,
-            extractable,
-            keyUsages
+            format = format,
+            wrappedKey = wrappedKey,
+            unwrappingKey = unwrappingKey,
+            unwrapAlgorithm = unwrapAlgorithm,
+            unwrappedKeyAlgorithm = unwrappedKeyAlgorithm,
+            extractable = extractable,
+            keyUsages = keyUsages
         )
     )
 }
@@ -2500,13 +2599,13 @@ suspend inline fun SubtleCrypto.unwrapKey(
 ): CryptoKey {
     return awaitPromiseLike(
         unwrapKeyAsync(
-            format,
-            wrappedKey,
-            unwrappingKey,
-            unwrapAlgorithm,
-            unwrappedKeyAlgorithm,
-            extractable,
-            keyUsages
+            format = format,
+            wrappedKey = wrappedKey,
+            unwrappingKey = unwrappingKey,
+            unwrapAlgorithm = unwrapAlgorithm,
+            unwrappedKeyAlgorithm = unwrappedKeyAlgorithm,
+            extractable = extractable,
+            keyUsages = keyUsages
         )
     )
 }
@@ -2522,13 +2621,13 @@ suspend inline fun SubtleCrypto.unwrapKey(
 ): CryptoKey {
     return awaitPromiseLike(
         unwrapKeyAsync(
-            format,
-            wrappedKey,
-            unwrappingKey,
-            unwrapAlgorithm,
-            unwrappedKeyAlgorithm,
-            extractable,
-            keyUsages
+            format = format,
+            wrappedKey = wrappedKey,
+            unwrappingKey = unwrappingKey,
+            unwrapAlgorithm = unwrapAlgorithm,
+            unwrappedKeyAlgorithm = unwrappedKeyAlgorithm,
+            extractable = extractable,
+            keyUsages = keyUsages
         )
     )
 }
@@ -2544,13 +2643,13 @@ suspend inline fun SubtleCrypto.unwrapKey(
 ): CryptoKey {
     return awaitPromiseLike(
         unwrapKeyAsync(
-            format,
-            wrappedKey,
-            unwrappingKey,
-            unwrapAlgorithm,
-            unwrappedKeyAlgorithm,
-            extractable,
-            keyUsages
+            format = format,
+            wrappedKey = wrappedKey,
+            unwrappingKey = unwrappingKey,
+            unwrapAlgorithm = unwrapAlgorithm,
+            unwrappedKeyAlgorithm = unwrappedKeyAlgorithm,
+            extractable = extractable,
+            keyUsages = keyUsages
         )
     )
 }
@@ -2566,13 +2665,13 @@ suspend inline fun SubtleCrypto.unwrapKey(
 ): CryptoKey {
     return awaitPromiseLike(
         unwrapKeyAsync(
-            format,
-            wrappedKey,
-            unwrappingKey,
-            unwrapAlgorithm,
-            unwrappedKeyAlgorithm,
-            extractable,
-            keyUsages
+            format = format,
+            wrappedKey = wrappedKey,
+            unwrappingKey = unwrappingKey,
+            unwrapAlgorithm = unwrapAlgorithm,
+            unwrappedKeyAlgorithm = unwrappedKeyAlgorithm,
+            extractable = extractable,
+            keyUsages = keyUsages
         )
     )
 }
@@ -2588,13 +2687,13 @@ suspend inline fun SubtleCrypto.unwrapKey(
 ): CryptoKey {
     return awaitPromiseLike(
         unwrapKeyAsync(
-            format,
-            wrappedKey,
-            unwrappingKey,
-            unwrapAlgorithm,
-            unwrappedKeyAlgorithm,
-            extractable,
-            keyUsages
+            format = format,
+            wrappedKey = wrappedKey,
+            unwrappingKey = unwrappingKey,
+            unwrapAlgorithm = unwrapAlgorithm,
+            unwrappedKeyAlgorithm = unwrappedKeyAlgorithm,
+            extractable = extractable,
+            keyUsages = keyUsages
         )
     )
 }
@@ -2610,13 +2709,13 @@ suspend inline fun SubtleCrypto.unwrapKey(
 ): CryptoKey {
     return awaitPromiseLike(
         unwrapKeyAsync(
-            format,
-            wrappedKey,
-            unwrappingKey,
-            unwrapAlgorithm,
-            unwrappedKeyAlgorithm,
-            extractable,
-            keyUsages
+            format = format,
+            wrappedKey = wrappedKey,
+            unwrappingKey = unwrappingKey,
+            unwrapAlgorithm = unwrapAlgorithm,
+            unwrappedKeyAlgorithm = unwrappedKeyAlgorithm,
+            extractable = extractable,
+            keyUsages = keyUsages
         )
     )
 }
@@ -2632,13 +2731,13 @@ suspend inline fun SubtleCrypto.unwrapKey(
 ): CryptoKey {
     return awaitPromiseLike(
         unwrapKeyAsync(
-            format,
-            wrappedKey,
-            unwrappingKey,
-            unwrapAlgorithm,
-            unwrappedKeyAlgorithm,
-            extractable,
-            keyUsages
+            format = format,
+            wrappedKey = wrappedKey,
+            unwrappingKey = unwrappingKey,
+            unwrapAlgorithm = unwrapAlgorithm,
+            unwrappedKeyAlgorithm = unwrappedKeyAlgorithm,
+            extractable = extractable,
+            keyUsages = keyUsages
         )
     )
 }
@@ -2654,13 +2753,13 @@ suspend inline fun SubtleCrypto.unwrapKey(
 ): CryptoKey {
     return awaitPromiseLike(
         unwrapKeyAsync(
-            format,
-            wrappedKey,
-            unwrappingKey,
-            unwrapAlgorithm,
-            unwrappedKeyAlgorithm,
-            extractable,
-            keyUsages
+            format = format,
+            wrappedKey = wrappedKey,
+            unwrappingKey = unwrappingKey,
+            unwrapAlgorithm = unwrapAlgorithm,
+            unwrappedKeyAlgorithm = unwrappedKeyAlgorithm,
+            extractable = extractable,
+            keyUsages = keyUsages
         )
     )
 }
@@ -2676,13 +2775,13 @@ suspend inline fun SubtleCrypto.unwrapKey(
 ): CryptoKey {
     return awaitPromiseLike(
         unwrapKeyAsync(
-            format,
-            wrappedKey,
-            unwrappingKey,
-            unwrapAlgorithm,
-            unwrappedKeyAlgorithm,
-            extractable,
-            keyUsages
+            format = format,
+            wrappedKey = wrappedKey,
+            unwrappingKey = unwrappingKey,
+            unwrapAlgorithm = unwrapAlgorithm,
+            unwrappedKeyAlgorithm = unwrappedKeyAlgorithm,
+            extractable = extractable,
+            keyUsages = keyUsages
         )
     )
 }
@@ -2698,13 +2797,13 @@ suspend inline fun SubtleCrypto.unwrapKey(
 ): CryptoKey {
     return awaitPromiseLike(
         unwrapKeyAsync(
-            format,
-            wrappedKey,
-            unwrappingKey,
-            unwrapAlgorithm,
-            unwrappedKeyAlgorithm,
-            extractable,
-            keyUsages
+            format = format,
+            wrappedKey = wrappedKey,
+            unwrappingKey = unwrappingKey,
+            unwrapAlgorithm = unwrapAlgorithm,
+            unwrappedKeyAlgorithm = unwrappedKeyAlgorithm,
+            extractable = extractable,
+            keyUsages = keyUsages
         )
     )
 }
@@ -2720,13 +2819,13 @@ suspend inline fun SubtleCrypto.unwrapKey(
 ): CryptoKey {
     return awaitPromiseLike(
         unwrapKeyAsync(
-            format,
-            wrappedKey,
-            unwrappingKey,
-            unwrapAlgorithm,
-            unwrappedKeyAlgorithm,
-            extractable,
-            keyUsages
+            format = format,
+            wrappedKey = wrappedKey,
+            unwrappingKey = unwrappingKey,
+            unwrapAlgorithm = unwrapAlgorithm,
+            unwrappedKeyAlgorithm = unwrappedKeyAlgorithm,
+            extractable = extractable,
+            keyUsages = keyUsages
         )
     )
 }
@@ -2742,13 +2841,13 @@ suspend inline fun SubtleCrypto.unwrapKey(
 ): CryptoKey {
     return awaitPromiseLike(
         unwrapKeyAsync(
-            format,
-            wrappedKey,
-            unwrappingKey,
-            unwrapAlgorithm,
-            unwrappedKeyAlgorithm,
-            extractable,
-            keyUsages
+            format = format,
+            wrappedKey = wrappedKey,
+            unwrappingKey = unwrappingKey,
+            unwrapAlgorithm = unwrapAlgorithm,
+            unwrappedKeyAlgorithm = unwrappedKeyAlgorithm,
+            extractable = extractable,
+            keyUsages = keyUsages
         )
     )
 }
@@ -2764,13 +2863,13 @@ suspend inline fun SubtleCrypto.unwrapKey(
 ): CryptoKey {
     return awaitPromiseLike(
         unwrapKeyAsync(
-            format,
-            wrappedKey,
-            unwrappingKey,
-            unwrapAlgorithm,
-            unwrappedKeyAlgorithm,
-            extractable,
-            keyUsages
+            format = format,
+            wrappedKey = wrappedKey,
+            unwrappingKey = unwrappingKey,
+            unwrapAlgorithm = unwrapAlgorithm,
+            unwrappedKeyAlgorithm = unwrappedKeyAlgorithm,
+            extractable = extractable,
+            keyUsages = keyUsages
         )
     )
 }
@@ -2786,13 +2885,13 @@ suspend inline fun SubtleCrypto.unwrapKey(
 ): CryptoKey {
     return awaitPromiseLike(
         unwrapKeyAsync(
-            format,
-            wrappedKey,
-            unwrappingKey,
-            unwrapAlgorithm,
-            unwrappedKeyAlgorithm,
-            extractable,
-            keyUsages
+            format = format,
+            wrappedKey = wrappedKey,
+            unwrappingKey = unwrappingKey,
+            unwrapAlgorithm = unwrapAlgorithm,
+            unwrappedKeyAlgorithm = unwrappedKeyAlgorithm,
+            extractable = extractable,
+            keyUsages = keyUsages
         )
     )
 }
@@ -2808,13 +2907,13 @@ suspend inline fun SubtleCrypto.unwrapKey(
 ): CryptoKey {
     return awaitPromiseLike(
         unwrapKeyAsync(
-            format,
-            wrappedKey,
-            unwrappingKey,
-            unwrapAlgorithm,
-            unwrappedKeyAlgorithm,
-            extractable,
-            keyUsages
+            format = format,
+            wrappedKey = wrappedKey,
+            unwrappingKey = unwrappingKey,
+            unwrapAlgorithm = unwrapAlgorithm,
+            unwrappedKeyAlgorithm = unwrappedKeyAlgorithm,
+            extractable = extractable,
+            keyUsages = keyUsages
         )
     )
 }
@@ -2830,13 +2929,13 @@ suspend inline fun SubtleCrypto.unwrapKey(
 ): CryptoKey {
     return awaitPromiseLike(
         unwrapKeyAsync(
-            format,
-            wrappedKey,
-            unwrappingKey,
-            unwrapAlgorithm,
-            unwrappedKeyAlgorithm,
-            extractable,
-            keyUsages
+            format = format,
+            wrappedKey = wrappedKey,
+            unwrappingKey = unwrappingKey,
+            unwrapAlgorithm = unwrapAlgorithm,
+            unwrappedKeyAlgorithm = unwrappedKeyAlgorithm,
+            extractable = extractable,
+            keyUsages = keyUsages
         )
     )
 }
@@ -2852,13 +2951,13 @@ suspend inline fun SubtleCrypto.unwrapKey(
 ): CryptoKey {
     return awaitPromiseLike(
         unwrapKeyAsync(
-            format,
-            wrappedKey,
-            unwrappingKey,
-            unwrapAlgorithm,
-            unwrappedKeyAlgorithm,
-            extractable,
-            keyUsages
+            format = format,
+            wrappedKey = wrappedKey,
+            unwrappingKey = unwrappingKey,
+            unwrapAlgorithm = unwrapAlgorithm,
+            unwrappedKeyAlgorithm = unwrappedKeyAlgorithm,
+            extractable = extractable,
+            keyUsages = keyUsages
         )
     )
 }
@@ -2874,13 +2973,13 @@ suspend inline fun SubtleCrypto.unwrapKey(
 ): CryptoKey {
     return awaitPromiseLike(
         unwrapKeyAsync(
-            format,
-            wrappedKey,
-            unwrappingKey,
-            unwrapAlgorithm,
-            unwrappedKeyAlgorithm,
-            extractable,
-            keyUsages
+            format = format,
+            wrappedKey = wrappedKey,
+            unwrappingKey = unwrappingKey,
+            unwrapAlgorithm = unwrapAlgorithm,
+            unwrappedKeyAlgorithm = unwrappedKeyAlgorithm,
+            extractable = extractable,
+            keyUsages = keyUsages
         )
     )
 }
@@ -2896,13 +2995,13 @@ suspend inline fun SubtleCrypto.unwrapKey(
 ): CryptoKey {
     return awaitPromiseLike(
         unwrapKeyAsync(
-            format,
-            wrappedKey,
-            unwrappingKey,
-            unwrapAlgorithm,
-            unwrappedKeyAlgorithm,
-            extractable,
-            keyUsages
+            format = format,
+            wrappedKey = wrappedKey,
+            unwrappingKey = unwrappingKey,
+            unwrapAlgorithm = unwrapAlgorithm,
+            unwrappedKeyAlgorithm = unwrappedKeyAlgorithm,
+            extractable = extractable,
+            keyUsages = keyUsages
         )
     )
 }
@@ -2918,13 +3017,13 @@ suspend inline fun SubtleCrypto.unwrapKey(
 ): CryptoKey {
     return awaitPromiseLike(
         unwrapKeyAsync(
-            format,
-            wrappedKey,
-            unwrappingKey,
-            unwrapAlgorithm,
-            unwrappedKeyAlgorithm,
-            extractable,
-            keyUsages
+            format = format,
+            wrappedKey = wrappedKey,
+            unwrappingKey = unwrappingKey,
+            unwrapAlgorithm = unwrapAlgorithm,
+            unwrappedKeyAlgorithm = unwrappedKeyAlgorithm,
+            extractable = extractable,
+            keyUsages = keyUsages
         )
     )
 }
@@ -2940,13 +3039,13 @@ suspend inline fun SubtleCrypto.unwrapKey(
 ): CryptoKey {
     return awaitPromiseLike(
         unwrapKeyAsync(
-            format,
-            wrappedKey,
-            unwrappingKey,
-            unwrapAlgorithm,
-            unwrappedKeyAlgorithm,
-            extractable,
-            keyUsages
+            format = format,
+            wrappedKey = wrappedKey,
+            unwrappingKey = unwrappingKey,
+            unwrapAlgorithm = unwrapAlgorithm,
+            unwrappedKeyAlgorithm = unwrappedKeyAlgorithm,
+            extractable = extractable,
+            keyUsages = keyUsages
         )
     )
 }
@@ -2962,13 +3061,13 @@ suspend inline fun SubtleCrypto.unwrapKey(
 ): CryptoKey {
     return awaitPromiseLike(
         unwrapKeyAsync(
-            format,
-            wrappedKey,
-            unwrappingKey,
-            unwrapAlgorithm,
-            unwrappedKeyAlgorithm,
-            extractable,
-            keyUsages
+            format = format,
+            wrappedKey = wrappedKey,
+            unwrappingKey = unwrappingKey,
+            unwrapAlgorithm = unwrapAlgorithm,
+            unwrappedKeyAlgorithm = unwrappedKeyAlgorithm,
+            extractable = extractable,
+            keyUsages = keyUsages
         )
     )
 }
@@ -2984,13 +3083,13 @@ suspend inline fun SubtleCrypto.unwrapKey(
 ): CryptoKey {
     return awaitPromiseLike(
         unwrapKeyAsync(
-            format,
-            wrappedKey,
-            unwrappingKey,
-            unwrapAlgorithm,
-            unwrappedKeyAlgorithm,
-            extractable,
-            keyUsages
+            format = format,
+            wrappedKey = wrappedKey,
+            unwrappingKey = unwrappingKey,
+            unwrapAlgorithm = unwrapAlgorithm,
+            unwrappedKeyAlgorithm = unwrappedKeyAlgorithm,
+            extractable = extractable,
+            keyUsages = keyUsages
         )
     )
 }
@@ -3006,13 +3105,13 @@ suspend inline fun SubtleCrypto.unwrapKey(
 ): CryptoKey {
     return awaitPromiseLike(
         unwrapKeyAsync(
-            format,
-            wrappedKey,
-            unwrappingKey,
-            unwrapAlgorithm,
-            unwrappedKeyAlgorithm,
-            extractable,
-            keyUsages
+            format = format,
+            wrappedKey = wrappedKey,
+            unwrappingKey = unwrappingKey,
+            unwrapAlgorithm = unwrapAlgorithm,
+            unwrappedKeyAlgorithm = unwrappedKeyAlgorithm,
+            extractable = extractable,
+            keyUsages = keyUsages
         )
     )
 }
@@ -3028,13 +3127,13 @@ suspend inline fun SubtleCrypto.unwrapKey(
 ): CryptoKey {
     return awaitPromiseLike(
         unwrapKeyAsync(
-            format,
-            wrappedKey,
-            unwrappingKey,
-            unwrapAlgorithm,
-            unwrappedKeyAlgorithm,
-            extractable,
-            keyUsages
+            format = format,
+            wrappedKey = wrappedKey,
+            unwrappingKey = unwrappingKey,
+            unwrapAlgorithm = unwrapAlgorithm,
+            unwrappedKeyAlgorithm = unwrappedKeyAlgorithm,
+            extractable = extractable,
+            keyUsages = keyUsages
         )
     )
 }
@@ -3050,13 +3149,13 @@ suspend inline fun SubtleCrypto.unwrapKey(
 ): CryptoKey {
     return awaitPromiseLike(
         unwrapKeyAsync(
-            format,
-            wrappedKey,
-            unwrappingKey,
-            unwrapAlgorithm,
-            unwrappedKeyAlgorithm,
-            extractable,
-            keyUsages
+            format = format,
+            wrappedKey = wrappedKey,
+            unwrappingKey = unwrappingKey,
+            unwrapAlgorithm = unwrapAlgorithm,
+            unwrappedKeyAlgorithm = unwrappedKeyAlgorithm,
+            extractable = extractable,
+            keyUsages = keyUsages
         )
     )
 }
@@ -3074,10 +3173,10 @@ suspend inline fun SubtleCrypto.verify(
 ): Boolean {
     return awaitPromiseLike(
         verifyAsync(
-            algorithm,
-            key,
-            signature,
-            data
+            algorithm = algorithm,
+            key = key,
+            signature = signature,
+            data = data
         )
     ).toBoolean()
 }
@@ -3090,10 +3189,10 @@ suspend inline fun SubtleCrypto.verify(
 ): Boolean {
     return awaitPromiseLike(
         verifyAsync(
-            algorithm,
-            key,
-            signature,
-            data
+            algorithm = algorithm,
+            key = key,
+            signature = signature,
+            data = data
         )
     ).toBoolean()
 }
@@ -3106,10 +3205,10 @@ suspend inline fun SubtleCrypto.verify(
 ): Boolean {
     return awaitPromiseLike(
         verifyAsync(
-            algorithm,
-            key,
-            signature,
-            data
+            algorithm = algorithm,
+            key = key,
+            signature = signature,
+            data = data
         )
     ).toBoolean()
 }
@@ -3122,10 +3221,10 @@ suspend inline fun SubtleCrypto.verify(
 ): Boolean {
     return awaitPromiseLike(
         verifyAsync(
-            algorithm,
-            key,
-            signature,
-            data
+            algorithm = algorithm,
+            key = key,
+            signature = signature,
+            data = data
         )
     ).toBoolean()
 }
@@ -3143,10 +3242,10 @@ suspend inline fun SubtleCrypto.wrapKey(
 ): ArrayBuffer {
     return awaitPromiseLike(
         wrapKeyAsync(
-            format,
-            key,
-            wrappingKey,
-            wrapAlgorithm
+            format = format,
+            key = key,
+            wrappingKey = wrappingKey,
+            wrapAlgorithm = wrapAlgorithm
         )
     )
 }
@@ -3159,10 +3258,10 @@ suspend inline fun SubtleCrypto.wrapKey(
 ): ArrayBuffer {
     return awaitPromiseLike(
         wrapKeyAsync(
-            format,
-            key,
-            wrappingKey,
-            wrapAlgorithm
+            format = format,
+            key = key,
+            wrappingKey = wrappingKey,
+            wrapAlgorithm = wrapAlgorithm
         )
     )
 }
@@ -3175,10 +3274,10 @@ suspend inline fun SubtleCrypto.wrapKey(
 ): ArrayBuffer {
     return awaitPromiseLike(
         wrapKeyAsync(
-            format,
-            key,
-            wrappingKey,
-            wrapAlgorithm
+            format = format,
+            key = key,
+            wrappingKey = wrappingKey,
+            wrapAlgorithm = wrapAlgorithm
         )
     )
 }
@@ -3191,10 +3290,10 @@ suspend inline fun SubtleCrypto.wrapKey(
 ): ArrayBuffer {
     return awaitPromiseLike(
         wrapKeyAsync(
-            format,
-            key,
-            wrappingKey,
-            wrapAlgorithm
+            format = format,
+            key = key,
+            wrappingKey = wrappingKey,
+            wrapAlgorithm = wrapAlgorithm
         )
     )
 }
@@ -3207,10 +3306,10 @@ suspend inline fun SubtleCrypto.wrapKey(
 ): ArrayBuffer {
     return awaitPromiseLike(
         wrapKeyAsync(
-            format,
-            key,
-            wrappingKey,
-            wrapAlgorithm
+            format = format,
+            key = key,
+            wrappingKey = wrappingKey,
+            wrapAlgorithm = wrapAlgorithm
         )
     )
 }
@@ -3223,10 +3322,10 @@ suspend inline fun SubtleCrypto.wrapKey(
 ): ArrayBuffer {
     return awaitPromiseLike(
         wrapKeyAsync(
-            format,
-            key,
-            wrappingKey,
-            wrapAlgorithm
+            format = format,
+            key = key,
+            wrappingKey = wrappingKey,
+            wrapAlgorithm = wrapAlgorithm
         )
     )
 }

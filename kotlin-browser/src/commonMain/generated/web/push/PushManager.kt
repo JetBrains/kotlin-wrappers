@@ -6,7 +6,6 @@ import js.array.ReadonlyArray
 import js.core.JsString
 import js.promise.Promise
 import js.promise.internal.awaitPromiseLike
-import seskar.js.JsAsync
 import web.permissions.PermissionState
 import kotlin.js.JsName
 import kotlin.js.definedExternally
@@ -32,10 +31,6 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PushManager/permissionState)
      */
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun permissionState(options: PushSubscriptionOptionsInit = definedExternally): PermissionState
-
     @JsName("permissionState")
     fun permissionStateAsync(options: PushSubscriptionOptionsInit = definedExternally): Promise<PermissionState>
 
@@ -44,10 +39,6 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PushManager/subscribe)
      */
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun subscribe(options: PushSubscriptionOptionsInit = definedExternally): PushSubscription
-
     @JsName("subscribe")
     fun subscribeAsync(options: PushSubscriptionOptionsInit = definedExternally): Promise<PushSubscription>
 
@@ -68,4 +59,40 @@ private constructor() {
  */
 suspend inline fun PushManager.getSubscription(): PushSubscription? {
     return awaitPromiseLike(getSubscriptionAsync())
+}
+
+/**
+ * The **`permissionState()`** method of the string indicating the permission state of the push manager.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PushManager/permissionState)
+ */
+suspend inline fun PushManager.permissionState(options: PushSubscriptionOptionsInit): PermissionState {
+    return awaitPromiseLike(permissionStateAsync(options = options))
+}
+
+/**
+ * The **`permissionState()`** method of the string indicating the permission state of the push manager.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PushManager/permissionState)
+ */
+suspend inline fun PushManager.permissionState(): PermissionState {
+    return awaitPromiseLike(permissionStateAsync())
+}
+
+/**
+ * The **`subscribe()`** method of the PushManager interface subscribes to a push service.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PushManager/subscribe)
+ */
+suspend inline fun PushManager.subscribe(options: PushSubscriptionOptionsInit): PushSubscription {
+    return awaitPromiseLike(subscribeAsync(options = options))
+}
+
+/**
+ * The **`subscribe()`** method of the PushManager interface subscribes to a push service.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PushManager/subscribe)
+ */
+suspend inline fun PushManager.subscribe(): PushSubscription {
+    return awaitPromiseLike(subscribeAsync())
 }

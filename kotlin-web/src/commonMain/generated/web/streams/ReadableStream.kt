@@ -9,8 +9,12 @@ import js.errors.JsError
 import js.iterable.AsyncIterable
 import js.iterable.AsyncIterator
 import js.promise.Promise
+import js.promise.internal.awaitPromiseLike
 import js.serialization.Transferable
-import seskar.js.JsAsync
+import web.abort.AbortController
+import web.abort.internal.awaitPromiseLike
+import web.abort.internal.createAbortable
+import web.abort.internal.patchAbortOptions
 import kotlin.js.JsName
 import kotlin.js.definedExternally
 
@@ -46,10 +50,6 @@ open external class ReadableStream<R : JsAny?>(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStream/cancel)
      */
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun cancel(reason: JsError? = definedExternally)
-
     @JsName("cancel")
     fun cancelAsync(reason: JsError? = definedExternally): Promise<Void>
 
@@ -76,13 +76,6 @@ open external class ReadableStream<R : JsAny?>(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStream/pipeTo)
      */
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun pipeTo(
-        destination: WritableStream<R>,
-        options: StreamPipeOptions = definedExternally,
-    )
-
     @JsName("pipeTo")
     fun pipeToAsync(
         destination: WritableStream<R>,
@@ -96,4 +89,57 @@ open external class ReadableStream<R : JsAny?>(
      */
     fun tee(): Tuple2<ReadableStream<R>, ReadableStream<R>>
     fun values(options: ReadableStreamIteratorOptions = definedExternally): AsyncIterator<R>
+}
+
+/**
+ * The **`cancel()`** method of the ReadableStream interface returns a Promise that resolves when the stream is canceled.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStream/cancel)
+ */
+suspend inline fun <R : JsAny?> ReadableStream<R>.cancel(reason: JsError?) {
+    awaitPromiseLike(cancelAsync(reason = reason))
+}
+
+/**
+ * The **`cancel()`** method of the ReadableStream interface returns a Promise that resolves when the stream is canceled.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStream/cancel)
+ */
+suspend inline fun <R : JsAny?> ReadableStream<R>.cancel() {
+    awaitPromiseLike(cancelAsync())
+}
+
+/**
+ * The **`pipeTo()`** method of the ReadableStream interface pipes the current `ReadableStream` to a given WritableStream and returns a Promise that fulfills when the piping process completes successfully, or rejects if any errors were encountered.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStream/pipeTo)
+ */
+suspend inline fun <R : JsAny?> ReadableStream<R>.pipeTo(
+    destination: WritableStream<R>,
+    options: StreamPipeOptions,
+) {
+    val controller = AbortController()
+    awaitPromiseLike(
+        pipeToAsync(
+            destination = destination,
+            options = patchAbortOptions(options, controller)
+        ), controller
+    )
+}
+
+/**
+ * The **`pipeTo()`** method of the ReadableStream interface pipes the current `ReadableStream` to a given WritableStream and returns a Promise that fulfills when the piping process completes successfully, or rejects if any errors were encountered.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStream/pipeTo)
+ */
+suspend inline fun <R : JsAny?> ReadableStream<R>.pipeTo(
+    destination: WritableStream<R>,
+) {
+    val controller = AbortController()
+    awaitPromiseLike(
+        pipeToAsync(
+            destination = destination,
+            options = createAbortable(controller.signal)
+        ), controller
+    )
 }

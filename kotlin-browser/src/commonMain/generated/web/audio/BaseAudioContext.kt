@@ -222,7 +222,7 @@ private constructor() :
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BaseAudioContext/decodeAudioData)
  */
 suspend inline fun BaseAudioContext.decodeAudioData(audioData: ArrayBuffer): AudioBuffer {
-    return awaitPromiseLike(decodeAudioDataAsync(audioData))
+    return awaitPromiseLike(decodeAudioDataAsync(audioData = audioData))
 }
 
 /**

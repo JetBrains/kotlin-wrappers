@@ -101,7 +101,7 @@ suspend inline fun AudioEncoder.flush() {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioEncoder/isConfigSupported_static)
  */
 suspend inline fun AudioEncoder.Companion.isConfigSupported(config: AudioEncoderConfig): AudioEncoderSupport {
-    return awaitPromiseLike(isConfigSupportedAsync(config))
+    return awaitPromiseLike(isConfigSupportedAsync(config = config))
 }
 
 /**

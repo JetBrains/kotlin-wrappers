@@ -105,7 +105,7 @@ suspend inline fun VideoEncoder.flush() {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoEncoder/isConfigSupported_static)
  */
 suspend inline fun VideoEncoder.Companion.isConfigSupported(config: VideoEncoderConfig): VideoEncoderSupport {
-    return awaitPromiseLike(isConfigSupportedAsync(config))
+    return awaitPromiseLike(isConfigSupportedAsync(config = config))
 }
 
 /**

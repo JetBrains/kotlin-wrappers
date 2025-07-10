@@ -7,7 +7,6 @@ import js.core.JsPrimitives.toInt
 import js.core.Void
 import js.promise.Promise
 import js.promise.internal.awaitPromiseLike
-import seskar.js.JsAsync
 import web.events.Event
 import web.events.EventHandler
 import web.events.EventInstance
@@ -50,10 +49,6 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RemotePlayback/cancelWatchAvailability)
      */
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun cancelWatchAvailability(id: Int = definedExternally)
-
     @JsName("cancelWatchAvailability")
     fun cancelWatchAvailabilityAsync(id: Int = definedExternally): Promise<Void>
 
@@ -75,6 +70,24 @@ private constructor() :
 }
 
 /**
+ * The **`cancelWatchAvailability()`** method of the RemotePlayback interface cancels the request to watch for one or all available devices.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RemotePlayback/cancelWatchAvailability)
+ */
+suspend inline fun RemotePlayback.cancelWatchAvailability(id: Int) {
+    awaitPromiseLike(cancelWatchAvailabilityAsync(id = id))
+}
+
+/**
+ * The **`cancelWatchAvailability()`** method of the RemotePlayback interface cancels the request to watch for one or all available devices.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RemotePlayback/cancelWatchAvailability)
+ */
+suspend inline fun RemotePlayback.cancelWatchAvailability() {
+    awaitPromiseLike(cancelWatchAvailabilityAsync())
+}
+
+/**
  * The **`prompt()`** method of the RemotePlayback interface prompts the user to select an available remote playback device and give permission for the current media to be played using that device.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RemotePlayback/prompt)
@@ -89,7 +102,7 @@ suspend inline fun RemotePlayback.prompt() {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RemotePlayback/watchAvailability)
  */
 suspend inline fun RemotePlayback.watchAvailability(noinline callback: RemotePlaybackAvailabilityCallback): Int {
-    return awaitPromiseLike(watchAvailabilityAsync(callback)).toInt()
+    return awaitPromiseLike(watchAvailabilityAsync(callback = callback)).toInt()
 }
 
 /**

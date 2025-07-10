@@ -8,7 +8,6 @@ import js.core.JsPrimitives.toBoolean
 import js.core.JsString
 import js.promise.Promise
 import js.promise.internal.awaitPromiseLike
-import seskar.js.JsAsync
 import web.http.Request
 import web.http.Response
 import web.url.URL
@@ -52,38 +51,17 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CacheStorage/match)
      */
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun match(
-        url: String,
-        options: MultiCacheQueryOptions = definedExternally,
-    ): Response?
-
     @JsName("match")
     fun matchAsync(
         url: String,
         options: MultiCacheQueryOptions = definedExternally,
     ): Promise<Response?>
 
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun match(
-        url: URL,
-        options: MultiCacheQueryOptions = definedExternally,
-    ): Response?
-
     @JsName("match")
     fun matchAsync(
         url: URL,
         options: MultiCacheQueryOptions = definedExternally,
     ): Promise<Response?>
-
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun match(
-        request: Request,
-        options: MultiCacheQueryOptions = definedExternally,
-    ): Response?
 
     @JsName("match")
     fun matchAsync(
@@ -106,7 +84,7 @@ private constructor() {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CacheStorage/delete)
  */
 suspend inline fun CacheStorage.delete(cacheName: String): Boolean {
-    return awaitPromiseLike(deleteAsync(cacheName)).toBoolean()
+    return awaitPromiseLike(deleteAsync(cacheName = cacheName)).toBoolean()
 }
 
 /**
@@ -115,7 +93,7 @@ suspend inline fun CacheStorage.delete(cacheName: String): Boolean {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CacheStorage/has)
  */
 suspend inline fun CacheStorage.has(cacheName: String): Boolean {
-    return awaitPromiseLike(hasAsync(cacheName)).toBoolean()
+    return awaitPromiseLike(hasAsync(cacheName = cacheName)).toBoolean()
 }
 
 /**
@@ -128,10 +106,74 @@ suspend inline fun CacheStorage.keys(): ReadonlyArray<JsString> {
 }
 
 /**
+ * The **`match()`** method of the CacheStorage interface checks if a given Request or URL string is a key for a stored Response.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CacheStorage/match)
+ */
+suspend inline fun CacheStorage.match(
+    url: String,
+    options: MultiCacheQueryOptions,
+): Response? {
+    return awaitPromiseLike(
+        matchAsync(
+            url = url,
+            options = options
+        )
+    )
+}
+
+/**
+ * The **`match()`** method of the CacheStorage interface checks if a given Request or URL string is a key for a stored Response.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CacheStorage/match)
+ */
+suspend inline fun CacheStorage.match(
+    url: String,
+): Response? {
+    return awaitPromiseLike(matchAsync(url = url))
+}
+
+suspend inline fun CacheStorage.match(
+    url: URL,
+    options: MultiCacheQueryOptions,
+): Response? {
+    return awaitPromiseLike(
+        matchAsync(
+            url = url,
+            options = options
+        )
+    )
+}
+
+suspend inline fun CacheStorage.match(
+    url: URL,
+): Response? {
+    return awaitPromiseLike(matchAsync(url = url))
+}
+
+suspend inline fun CacheStorage.match(
+    request: Request,
+    options: MultiCacheQueryOptions,
+): Response? {
+    return awaitPromiseLike(
+        matchAsync(
+            request = request,
+            options = options
+        )
+    )
+}
+
+suspend inline fun CacheStorage.match(
+    request: Request,
+): Response? {
+    return awaitPromiseLike(matchAsync(request = request))
+}
+
+/**
  * The **`open()`** method of the the Cache object matching the `cacheName`.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CacheStorage/open)
  */
 suspend inline fun CacheStorage.open(cacheName: String): Cache {
-    return awaitPromiseLike(openAsync(cacheName))
+    return awaitPromiseLike(openAsync(cacheName = cacheName))
 }

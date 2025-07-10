@@ -6,7 +6,6 @@ import js.array.ReadonlyArray
 import js.core.Void
 import js.promise.Promise
 import js.promise.internal.awaitPromiseLike
-import seskar.js.JsAsync
 import web.crypto.Algorithm
 import web.events.Event
 import web.events.EventHandler
@@ -159,10 +158,6 @@ open external class RTCPeerConnection(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/addIceCandidate)
      */
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun addIceCandidate(candidate: RTCIceCandidateInit? = definedExternally)
-
     @JsName("addIceCandidate")
     fun addIceCandidateAsync(candidate: RTCIceCandidateInit? = definedExternally): Promise<Void>
 
@@ -203,10 +198,6 @@ open external class RTCPeerConnection(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/createAnswer)
      */
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun createAnswer(options: RTCAnswerOptions = definedExternally): RTCSessionDescriptionInit
-
     @JsName("createAnswer")
     fun createAnswerAsync(options: RTCAnswerOptions = definedExternally): Promise<RTCSessionDescriptionInit>
 
@@ -225,10 +216,6 @@ open external class RTCPeerConnection(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/createOffer)
      */
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun createOffer(options: RTCOfferOptions = definedExternally): RTCSessionDescriptionInit
-
     @JsName("createOffer")
     fun createOfferAsync(options: RTCOfferOptions = definedExternally): Promise<RTCSessionDescriptionInit>
 
@@ -258,10 +245,6 @@ open external class RTCPeerConnection(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/getStats)
      */
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun getStats(selector: MediaStreamTrack? = definedExternally): RTCStatsReport
-
     @JsName("getStats")
     fun getStatsAsync(selector: MediaStreamTrack? = definedExternally): Promise<RTCStatsReport>
 
@@ -298,10 +281,6 @@ open external class RTCPeerConnection(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/setLocalDescription)
      */
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun setLocalDescription(description: RTCLocalSessionDescriptionInit = definedExternally)
-
     @JsName("setLocalDescription")
     fun setLocalDescriptionAsync(description: RTCLocalSessionDescriptionInit = definedExternally): Promise<Void>
 
@@ -328,12 +307,102 @@ open external class RTCPeerConnection(
 }
 
 /**
+ * The **`addIceCandidate()`** method of the RTCPeerConnection interface adds a new remote candidate to the connection's remote description, which describes the state of the remote end of the connection.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/addIceCandidate)
+ */
+suspend inline fun RTCPeerConnection.addIceCandidate(candidate: RTCIceCandidateInit?) {
+    awaitPromiseLike(addIceCandidateAsync(candidate = candidate))
+}
+
+/**
+ * The **`addIceCandidate()`** method of the RTCPeerConnection interface adds a new remote candidate to the connection's remote description, which describes the state of the remote end of the connection.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/addIceCandidate)
+ */
+suspend inline fun RTCPeerConnection.addIceCandidate() {
+    awaitPromiseLike(addIceCandidateAsync())
+}
+
+/**
+ * The **`createAnswer()`** method of the RTCPeerConnection interface creates an SDP answer to an offer received from a remote peer during the offer/answer negotiation of a WebRTC connection.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/createAnswer)
+ */
+suspend inline fun RTCPeerConnection.createAnswer(options: RTCAnswerOptions): RTCSessionDescriptionInit {
+    return awaitPromiseLike(createAnswerAsync(options = options))
+}
+
+/**
+ * The **`createAnswer()`** method of the RTCPeerConnection interface creates an SDP answer to an offer received from a remote peer during the offer/answer negotiation of a WebRTC connection.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/createAnswer)
+ */
+suspend inline fun RTCPeerConnection.createAnswer(): RTCSessionDescriptionInit {
+    return awaitPromiseLike(createAnswerAsync())
+}
+
+/**
+ * The **`createOffer()`** method of the RTCPeerConnection interface initiates the creation of an SDP offer for the purpose of starting a new WebRTC connection to a remote peer.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/createOffer)
+ */
+suspend inline fun RTCPeerConnection.createOffer(options: RTCOfferOptions): RTCSessionDescriptionInit {
+    return awaitPromiseLike(createOfferAsync(options = options))
+}
+
+/**
+ * The **`createOffer()`** method of the RTCPeerConnection interface initiates the creation of an SDP offer for the purpose of starting a new WebRTC connection to a remote peer.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/createOffer)
+ */
+suspend inline fun RTCPeerConnection.createOffer(): RTCSessionDescriptionInit {
+    return awaitPromiseLike(createOfferAsync())
+}
+
+/**
+ * The **`getStats()`** method of the RTCPeerConnection interface returns a promise which resolves with data providing statistics about either the overall connection or about the specified MediaStreamTrack.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/getStats)
+ */
+suspend inline fun RTCPeerConnection.getStats(selector: MediaStreamTrack?): RTCStatsReport {
+    return awaitPromiseLike(getStatsAsync(selector = selector))
+}
+
+/**
+ * The **`getStats()`** method of the RTCPeerConnection interface returns a promise which resolves with data providing statistics about either the overall connection or about the specified MediaStreamTrack.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/getStats)
+ */
+suspend inline fun RTCPeerConnection.getStats(): RTCStatsReport {
+    return awaitPromiseLike(getStatsAsync())
+}
+
+/**
+ * The **`setLocalDescription()`** method of the RTCPeerConnection interface changes the local description associated with the connection.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/setLocalDescription)
+ */
+suspend inline fun RTCPeerConnection.setLocalDescription(description: RTCLocalSessionDescriptionInit) {
+    awaitPromiseLike(setLocalDescriptionAsync(description = description))
+}
+
+/**
+ * The **`setLocalDescription()`** method of the RTCPeerConnection interface changes the local description associated with the connection.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/setLocalDescription)
+ */
+suspend inline fun RTCPeerConnection.setLocalDescription() {
+    awaitPromiseLike(setLocalDescriptionAsync())
+}
+
+/**
  * The **`setRemoteDescription()`** method of the RTCPeerConnection interface sets the specified session description as the remote peer's current offer or answer.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/setRemoteDescription)
  */
 suspend inline fun RTCPeerConnection.setRemoteDescription(description: RTCSessionDescriptionInit) {
-    awaitPromiseLike(setRemoteDescriptionAsync(description))
+    awaitPromiseLike(setRemoteDescriptionAsync(description = description))
 }
 
 /**
@@ -342,11 +411,11 @@ suspend inline fun RTCPeerConnection.setRemoteDescription(description: RTCSessio
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/generateCertificate_static)
  */
 suspend inline fun RTCPeerConnection.Companion.generateCertificate(keygenAlgorithm: Algorithm): RTCCertificate {
-    return awaitPromiseLike(generateCertificateAsync(keygenAlgorithm))
+    return awaitPromiseLike(generateCertificateAsync(keygenAlgorithm = keygenAlgorithm))
 }
 
 suspend inline fun RTCPeerConnection.Companion.generateCertificate(keygenAlgorithm: String): RTCCertificate {
-    return awaitPromiseLike(generateCertificateAsync(keygenAlgorithm))
+    return awaitPromiseLike(generateCertificateAsync(keygenAlgorithm = keygenAlgorithm))
 }
 
 /**

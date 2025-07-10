@@ -5,7 +5,6 @@ package web.rtc
 import js.core.Void
 import js.promise.Promise
 import js.promise.internal.awaitPromiseLike
-import seskar.js.JsAsync
 import web.mediastreams.MediaStream
 import web.mediastreams.MediaStreamTrack
 import kotlin.js.JsName
@@ -74,13 +73,6 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCRtpSender/setParameters)
      */
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun setParameters(
-        parameters: RTCRtpSendParameters,
-        setParameterOptions: RTCSetParameterOptions = definedExternally,
-    )
-
     @JsName("setParameters")
     fun setParametersAsync(
         parameters: RTCRtpSendParameters,
@@ -119,5 +111,33 @@ suspend inline fun RTCRtpSender.getStats(): RTCStatsReport {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCRtpSender/replaceTrack)
  */
 suspend inline fun RTCRtpSender.replaceTrack(withTrack: MediaStreamTrack?) {
-    awaitPromiseLike(replaceTrackAsync(withTrack))
+    awaitPromiseLike(replaceTrackAsync(withTrack = withTrack))
+}
+
+/**
+ * The **`setParameters()`** method of the RTCRtpSender interface applies changes the configuration of sender's RTCRtpSender.track, which is the MediaStreamTrack for which the `RTCRtpSender` is responsible.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCRtpSender/setParameters)
+ */
+suspend inline fun RTCRtpSender.setParameters(
+    parameters: RTCRtpSendParameters,
+    setParameterOptions: RTCSetParameterOptions,
+) {
+    awaitPromiseLike(
+        setParametersAsync(
+            parameters = parameters,
+            setParameterOptions = setParameterOptions
+        )
+    )
+}
+
+/**
+ * The **`setParameters()`** method of the RTCRtpSender interface applies changes the configuration of sender's RTCRtpSender.track, which is the MediaStreamTrack for which the `RTCRtpSender` is responsible.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCRtpSender/setParameters)
+ */
+suspend inline fun RTCRtpSender.setParameters(
+    parameters: RTCRtpSendParameters,
+) {
+    awaitPromiseLike(setParametersAsync(parameters = parameters))
 }

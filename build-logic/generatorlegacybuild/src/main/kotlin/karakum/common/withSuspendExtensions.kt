@@ -14,11 +14,6 @@ internal fun withSuspendExtensions(
     val optionality = match.groupValues[7]
     val definedExternally = match.groupValues[8]
 
-    // Externally defined parameters are not supported yet, fallback to `withSuspendAdapter`
-    if ("= definedExternally" in parameters) {
-        return withSuspendAdapter(source)
-    }
-
     val suspendReturnType = when (returnType) {
         "*" -> ": Any?"
         "Void" -> ""

@@ -6,7 +6,6 @@ import js.array.ReadonlyArray
 import js.core.JsAny
 import js.promise.Promise
 import js.promise.internal.awaitPromiseLike
-import seskar.js.JsAsync
 import web.events.Event
 import web.events.EventHandler
 import web.events.EventInstance
@@ -59,10 +58,6 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerContainer/getRegistration)
      */
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun getRegistration(clientURL: String = definedExternally): ServiceWorkerRegistration?
-
     @JsName("getRegistration")
     fun getRegistrationAsync(clientURL: String = definedExternally): Promise<ServiceWorkerRegistration?>
 
@@ -82,25 +77,11 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerContainer/register)
      */
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun register(
-        scriptURL: String,
-        options: RegistrationOptions = definedExternally,
-    ): ServiceWorkerRegistration
-
     @JsName("register")
     fun registerAsync(
         scriptURL: String,
         options: RegistrationOptions = definedExternally,
     ): Promise<ServiceWorkerRegistration>
-
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun register(
-        scriptURL: URL,
-        options: RegistrationOptions = definedExternally,
-    ): ServiceWorkerRegistration
 
     @JsName("register")
     fun registerAsync(
@@ -116,8 +97,26 @@ private constructor() :
     fun startMessages()
 }
 
+/**
+ * The **`getRegistration()`** method of the client URL.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerContainer/getRegistration)
+ */
+suspend inline fun ServiceWorkerContainer.getRegistration(clientURL: String): ServiceWorkerRegistration? {
+    return awaitPromiseLike(getRegistrationAsync(clientURL = clientURL))
+}
+
+/**
+ * The **`getRegistration()`** method of the client URL.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerContainer/getRegistration)
+ */
+suspend inline fun ServiceWorkerContainer.getRegistration(): ServiceWorkerRegistration? {
+    return awaitPromiseLike(getRegistrationAsync())
+}
+
 suspend inline fun ServiceWorkerContainer.getRegistration(clientURL: URL): ServiceWorkerRegistration? {
-    return awaitPromiseLike(getRegistrationAsync(clientURL))
+    return awaitPromiseLike(getRegistrationAsync(clientURL = clientURL))
 }
 
 /**
@@ -127,6 +126,52 @@ suspend inline fun ServiceWorkerContainer.getRegistration(clientURL: URL): Servi
  */
 suspend inline fun ServiceWorkerContainer.getRegistrations(): ReadonlyArray<ServiceWorkerRegistration> {
     return awaitPromiseLike(getRegistrationsAsync())
+}
+
+/**
+ * The **`register()`** method of the ServiceWorkerContainer interface creates or updates a ServiceWorkerRegistration for the given scope.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerContainer/register)
+ */
+suspend inline fun ServiceWorkerContainer.register(
+    scriptURL: String,
+    options: RegistrationOptions,
+): ServiceWorkerRegistration {
+    return awaitPromiseLike(
+        registerAsync(
+            scriptURL = scriptURL,
+            options = options
+        )
+    )
+}
+
+/**
+ * The **`register()`** method of the ServiceWorkerContainer interface creates or updates a ServiceWorkerRegistration for the given scope.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerContainer/register)
+ */
+suspend inline fun ServiceWorkerContainer.register(
+    scriptURL: String,
+): ServiceWorkerRegistration {
+    return awaitPromiseLike(registerAsync(scriptURL = scriptURL))
+}
+
+suspend inline fun ServiceWorkerContainer.register(
+    scriptURL: URL,
+    options: RegistrationOptions,
+): ServiceWorkerRegistration {
+    return awaitPromiseLike(
+        registerAsync(
+            scriptURL = scriptURL,
+            options = options
+        )
+    )
+}
+
+suspend inline fun ServiceWorkerContainer.register(
+    scriptURL: URL,
+): ServiceWorkerRegistration {
+    return awaitPromiseLike(registerAsync(scriptURL = scriptURL))
 }
 
 /**

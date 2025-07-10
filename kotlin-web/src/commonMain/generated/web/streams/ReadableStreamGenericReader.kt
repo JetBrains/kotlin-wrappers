@@ -9,7 +9,7 @@ package web.streams
 import js.core.Void
 import js.errors.JsError
 import js.promise.Promise
-import seskar.js.JsAsync
+import js.promise.internal.awaitPromiseLike
 import kotlin.js.JsName
 import kotlin.js.definedExternally
 
@@ -23,10 +23,20 @@ sealed external interface ReadableStreamGenericReader {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStreamBYOBReader/cancel)
      */
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun cancel(reason: JsError? = definedExternally): Unit = definedExternally
-
     @JsName("cancel")
     fun cancelAsync(reason: JsError? = definedExternally): Promise<Void> = definedExternally
+}
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStreamBYOBReader/cancel)
+ */
+suspend inline fun ReadableStreamGenericReader.cancel(reason: JsError?) {
+    awaitPromiseLike(cancelAsync(reason = reason))
+}
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStreamBYOBReader/cancel)
+ */
+suspend inline fun ReadableStreamGenericReader.cancel() {
+    awaitPromiseLike(cancelAsync())
 }

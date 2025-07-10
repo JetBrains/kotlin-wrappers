@@ -4,7 +4,7 @@ package web.worklets
 
 import js.core.Void
 import js.promise.Promise
-import seskar.js.JsAsync
+import js.promise.internal.awaitPromiseLike
 import web.url.URL
 import kotlin.js.JsName
 import kotlin.js.definedExternally
@@ -22,29 +22,61 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Worklet/addModule)
      */
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun addModule(
-        moduleURL: String,
-        options: WorkletOptions = definedExternally,
-    )
-
     @JsName("addModule")
     fun addModuleAsync(
         moduleURL: String,
         options: WorkletOptions = definedExternally,
     ): Promise<Void>
 
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun addModule(
-        moduleURL: URL,
-        options: WorkletOptions = definedExternally,
-    )
-
     @JsName("addModule")
     fun addModuleAsync(
         moduleURL: URL,
         options: WorkletOptions = definedExternally,
     ): Promise<Void>
+}
+
+/**
+ * The **`addModule()`** method of the adds it to the current `Worklet`.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Worklet/addModule)
+ */
+suspend inline fun Worklet.addModule(
+    moduleURL: String,
+    options: WorkletOptions,
+) {
+    awaitPromiseLike(
+        addModuleAsync(
+            moduleURL = moduleURL,
+            options = options
+        )
+    )
+}
+
+/**
+ * The **`addModule()`** method of the adds it to the current `Worklet`.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Worklet/addModule)
+ */
+suspend inline fun Worklet.addModule(
+    moduleURL: String,
+) {
+    awaitPromiseLike(addModuleAsync(moduleURL = moduleURL))
+}
+
+suspend inline fun Worklet.addModule(
+    moduleURL: URL,
+    options: WorkletOptions,
+) {
+    awaitPromiseLike(
+        addModuleAsync(
+            moduleURL = moduleURL,
+            options = options
+        )
+    )
+}
+
+suspend inline fun Worklet.addModule(
+    moduleURL: URL,
+) {
+    awaitPromiseLike(addModuleAsync(moduleURL = moduleURL))
 }

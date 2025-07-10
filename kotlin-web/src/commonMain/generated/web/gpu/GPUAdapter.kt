@@ -3,7 +3,7 @@
 package web.gpu
 
 import js.promise.Promise
-import seskar.js.JsAsync
+import js.promise.internal.awaitPromiseLike
 import kotlin.js.JsName
 import kotlin.js.definedExternally
 
@@ -37,10 +37,20 @@ private constructor() {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUAdapter/requestDevice)
      */
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun requestDevice(descriptor: GPUDeviceDescriptor = definedExternally): GPUDevice
-
     @JsName("requestDevice")
     fun requestDeviceAsync(descriptor: GPUDeviceDescriptor = definedExternally): Promise<GPUDevice>
+}
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUAdapter/requestDevice)
+ */
+suspend inline fun GPUAdapter.requestDevice(descriptor: GPUDeviceDescriptor): GPUDevice {
+    return awaitPromiseLike(requestDeviceAsync(descriptor = descriptor))
+}
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUAdapter/requestDevice)
+ */
+suspend inline fun GPUAdapter.requestDevice(): GPUDevice {
+    return awaitPromiseLike(requestDeviceAsync())
 }

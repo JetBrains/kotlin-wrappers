@@ -5,7 +5,7 @@ package web.gpu
 import js.buffer.ArrayBuffer
 import js.core.Void
 import js.promise.Promise
-import seskar.js.JsAsync
+import js.promise.internal.awaitPromiseLike
 import kotlin.js.definedExternally
 
 /**
@@ -47,14 +47,6 @@ private constructor() :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUBuffer/mapAsync)
      */
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun map(
-        mode: GPUMapModeFlags,
-        offset: GPUSize64 = definedExternally,
-        size: GPUSize64 = definedExternally,
-    )
-
     fun mapAsync(
         mode: GPUMapModeFlags,
         offset: GPUSize64 = definedExternally,
@@ -65,4 +57,45 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUBuffer/unmap)
      */
     fun unmap()
+}
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUBuffer/mapAsync)
+ */
+suspend inline fun GPUBuffer.map(
+    mode: GPUMapModeFlags,
+    offset: GPUSize64,
+    size: GPUSize64,
+) {
+    awaitPromiseLike(
+        mapAsync(
+            mode = mode,
+            offset = offset,
+            size = size
+        )
+    )
+}
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUBuffer/mapAsync)
+ */
+suspend inline fun GPUBuffer.map(
+    mode: GPUMapModeFlags,
+    offset: GPUSize64,
+) {
+    awaitPromiseLike(
+        mapAsync(
+            mode = mode,
+            offset = offset
+        )
+    )
+}
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUBuffer/mapAsync)
+ */
+suspend inline fun GPUBuffer.map(
+    mode: GPUMapModeFlags,
+) {
+    awaitPromiseLike(mapAsync(mode = mode))
 }

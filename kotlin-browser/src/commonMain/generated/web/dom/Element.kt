@@ -6,7 +6,7 @@ import js.array.ReadonlyArray
 import js.core.JsString
 import js.core.Void
 import js.promise.Promise
-import seskar.js.JsAsync
+import js.promise.internal.awaitPromiseLike
 import web.aria.ARIAMixin
 import web.components.ShadowRoot
 import web.components.ShadowRootInit
@@ -424,10 +424,6 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/requestFullscreen)
      */
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun requestFullscreen(options: FullscreenOptions = definedExternally)
-
     @JsName("requestFullscreen")
     fun requestFullscreenAsync(options: FullscreenOptions = definedExternally): Promise<Void>
 
@@ -436,10 +432,6 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/requestPointerLock)
      */
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun requestPointerLock(options: PointerLockOptions = definedExternally)
-
     @JsName("requestPointerLock")
     fun requestPointerLockAsync(options: PointerLockOptions = definedExternally): Promise<Void>
 
@@ -546,6 +538,42 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/Node/textContent)
      */
     override var textContent: String? // String
+}
+
+/**
+ * The **`Element.requestFullscreen()`** method issues an asynchronous request to make the element be displayed in fullscreen mode.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/requestFullscreen)
+ */
+suspend inline fun Element.requestFullscreen(options: FullscreenOptions) {
+    awaitPromiseLike(requestFullscreenAsync(options = options))
+}
+
+/**
+ * The **`Element.requestFullscreen()`** method issues an asynchronous request to make the element be displayed in fullscreen mode.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/requestFullscreen)
+ */
+suspend inline fun Element.requestFullscreen() {
+    awaitPromiseLike(requestFullscreenAsync())
+}
+
+/**
+ * The **`requestPointerLock()`** method of the Element interface lets you asynchronously ask for the pointer to be locked on the given element.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/requestPointerLock)
+ */
+suspend inline fun Element.requestPointerLock(options: PointerLockOptions) {
+    awaitPromiseLike(requestPointerLockAsync(options = options))
+}
+
+/**
+ * The **`requestPointerLock()`** method of the Element interface lets you asynchronously ask for the pointer to be locked on the given element.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/requestPointerLock)
+ */
+suspend inline fun Element.requestPointerLock() {
+    awaitPromiseLike(requestPointerLockAsync())
 }
 
 /**

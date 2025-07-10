@@ -47,5 +47,5 @@ private constructor() :
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemHandle/isSameEntry)
  */
 suspend inline fun FileSystemHandle.isSameEntry(other: FileSystemHandle): Boolean {
-    return awaitPromiseLike(isSameEntryAsync(other)).toBoolean()
+    return awaitPromiseLike(isSameEntryAsync(other = other)).toBoolean()
 }

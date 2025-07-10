@@ -4,7 +4,7 @@ package web.notifications
 
 import js.core.JsAny
 import js.promise.Promise
-import seskar.js.JsAsync
+import js.promise.internal.awaitPromiseLike
 import web.events.Event
 import web.events.EventHandler
 import web.events.EventInstance
@@ -122,13 +122,27 @@ open external class Notification(
          *
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Notification/requestPermission_static)
          */
-        @JsAsync
-        @Suppress("WRONG_EXTERNAL_DECLARATION")
-        suspend fun requestPermission(deprecatedCallback: NotificationPermissionCallback = definedExternally): NotificationPermission
-
         @JsName("requestPermission")
         fun requestPermissionAsync(deprecatedCallback: NotificationPermissionCallback = definedExternally): Promise<NotificationPermission>
     }
+}
+
+/**
+ * The **`requestPermission()`** static method of the Notification interface requests permission from the user for the current origin to display notifications.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Notification/requestPermission_static)
+ */
+suspend inline fun Notification.Companion.requestPermission(noinline deprecatedCallback: NotificationPermissionCallback): NotificationPermission {
+    return awaitPromiseLike(requestPermissionAsync(deprecatedCallback = deprecatedCallback))
+}
+
+/**
+ * The **`requestPermission()`** static method of the Notification interface requests permission from the user for the current origin to display notifications.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Notification/requestPermission_static)
+ */
+suspend inline fun Notification.Companion.requestPermission(): NotificationPermission {
+    return awaitPromiseLike(requestPermissionAsync())
 }
 
 /**

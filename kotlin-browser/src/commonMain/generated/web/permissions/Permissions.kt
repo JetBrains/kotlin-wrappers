@@ -28,5 +28,5 @@ private constructor() {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Permissions/query)
  */
 suspend inline fun Permissions.query(permissionDesc: PermissionDescriptor): PermissionStatus {
-    return awaitPromiseLike(queryAsync(permissionDesc))
+    return awaitPromiseLike(queryAsync(permissionDesc = permissionDesc))
 }

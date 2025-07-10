@@ -4,10 +4,10 @@ package web.rtc
 
 import js.core.JsAny
 import js.core.JsInt
+import js.core.JsPrimitives.toInt
 import js.core.Void
 import js.promise.Promise
 import js.promise.internal.awaitPromiseLike
-import seskar.js.JsAsync
 import web.events.EventTarget
 import web.streams.ReadableStream
 import web.streams.WritableStream
@@ -48,10 +48,6 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCRtpScriptTransformer/generateKeyFrame)
      */
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun generateKeyFrame(rid: String = definedExternally): Int
-
     @JsName("generateKeyFrame")
     fun generateKeyFrameAsync(rid: String = definedExternally): Promise<JsInt>
 
@@ -62,6 +58,24 @@ private constructor() :
      */
     @JsName("sendKeyFrameRequest")
     fun sendKeyFrameRequestAsync(): Promise<Void>
+}
+
+/**
+ * The **`generateKeyFrame()`** method of the RTCRtpScriptTransformer interface causes a video encoder to generate a key frame.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCRtpScriptTransformer/generateKeyFrame)
+ */
+suspend inline fun RTCRtpScriptTransformer.generateKeyFrame(rid: String): Int {
+    return awaitPromiseLike(generateKeyFrameAsync(rid = rid)).toInt()
+}
+
+/**
+ * The **`generateKeyFrame()`** method of the RTCRtpScriptTransformer interface causes a video encoder to generate a key frame.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCRtpScriptTransformer/generateKeyFrame)
+ */
+suspend inline fun RTCRtpScriptTransformer.generateKeyFrame(): Int {
+    return awaitPromiseLike(generateKeyFrameAsync()).toInt()
 }
 
 /**

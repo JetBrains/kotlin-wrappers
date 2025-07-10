@@ -9,7 +9,7 @@ package web.fonts
 import js.array.ReadonlyArray
 import js.collections.MutableSetLike
 import js.promise.Promise
-import seskar.js.JsAsync
+import js.promise.internal.awaitPromiseLike
 import web.events.EventHandler
 import web.events.EventInstance
 import web.events.EventTarget
@@ -68,18 +68,39 @@ sealed external interface FontFaceSet :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FontFaceSet/load)
      */
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun load(
-        font: String,
-        text: String = definedExternally,
-    ): ReadonlyArray<FontFace>
-
     @JsName("load")
     fun loadAsync(
         font: String,
         text: String = definedExternally,
     ): Promise<ReadonlyArray<FontFace>>
+}
+
+/**
+ * The `load()` method of the FontFaceSet forces all the fonts given in parameters to be loaded.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FontFaceSet/load)
+ */
+suspend inline fun FontFaceSet.load(
+    font: String,
+    text: String,
+): ReadonlyArray<FontFace> {
+    return awaitPromiseLike(
+        loadAsync(
+            font = font,
+            text = text
+        )
+    )
+}
+
+/**
+ * The `load()` method of the FontFaceSet forces all the fonts given in parameters to be loaded.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FontFaceSet/load)
+ */
+suspend inline fun FontFaceSet.load(
+    font: String,
+): ReadonlyArray<FontFace> {
+    return awaitPromiseLike(loadAsync(font = font))
 }
 
 /**
