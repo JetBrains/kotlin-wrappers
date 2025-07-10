@@ -53,6 +53,12 @@ pluginManager.withPlugin("version-catalog") {
 }
 
 signing {
+    val keyId = project.findProperty("libs.sign.key.id") as? String?
+    val signingKey = project.findProperty("libs.sign.key.private") as? String?
+    val signingKeyPassphrase = project.findProperty("libs.sign.passphrase") as? String?
+
+    useInMemoryPgpKeys(keyId, signingKey, signingKeyPassphrase)
+
     setRequired({
         gradle.taskGraph.hasTask("publish")
     })
