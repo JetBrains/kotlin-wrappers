@@ -20,8 +20,8 @@ publishing {
         maven("https://jetbrains.team/p/kt/packages/maven/kotlin-js-wrappers") {
             name = "kotlinSpace"
             credentials {
-                username = System.getenv("libs.repo.user")
-                password = System.getenv("libs.repo.password")
+                username = project.findProperty("libs.repo.user") as String?
+                password = project.findProperty("libs.repo.password") as String?
             }
         }
         // Create a local repo for testing publishing.
