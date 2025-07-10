@@ -4,11 +4,11 @@ package web.cache
 
 import js.array.ReadonlyArray
 import js.core.JsBoolean
+import js.core.JsPrimitives.toBoolean
 import js.core.JsString
 import js.core.Void
 import js.promise.Promise
 import js.promise.internal.awaitPromiseLike
-import seskar.js.JsAsync
 import web.http.Request
 import web.http.Response
 import web.url.URL
@@ -53,38 +53,17 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/delete)
      */
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun delete(
-        url: String,
-        options: CacheQueryOptions = definedExternally,
-    ): Boolean
-
     @JsName("delete")
     fun deleteAsync(
         url: String,
         options: CacheQueryOptions = definedExternally,
     ): Promise<JsBoolean>
 
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun delete(
-        url: URL,
-        options: CacheQueryOptions = definedExternally,
-    ): Boolean
-
     @JsName("delete")
     fun deleteAsync(
         url: URL,
         options: CacheQueryOptions = definedExternally,
     ): Promise<JsBoolean>
-
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun delete(
-        request: Request,
-        options: CacheQueryOptions = definedExternally,
-    ): Boolean
 
     @JsName("delete")
     fun deleteAsync(
@@ -97,38 +76,17 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/keys)
      */
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun keys(
-        url: String = definedExternally,
-        options: CacheQueryOptions = definedExternally,
-    ): ReadonlyArray<Request>
-
     @JsName("keys")
     fun keysAsync(
         url: String = definedExternally,
         options: CacheQueryOptions = definedExternally,
     ): Promise<ReadonlyArray<Request>>
 
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun keys(
-        url: URL,
-        options: CacheQueryOptions = definedExternally,
-    ): ReadonlyArray<Request>
-
     @JsName("keys")
     fun keysAsync(
         url: URL,
         options: CacheQueryOptions = definedExternally,
     ): Promise<ReadonlyArray<Request>>
-
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun keys(
-        request: Request,
-        options: CacheQueryOptions = definedExternally,
-    ): ReadonlyArray<Request>
 
     @JsName("keys")
     fun keysAsync(
@@ -141,38 +99,17 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/match)
      */
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun match(
-        url: String,
-        options: CacheQueryOptions = definedExternally,
-    ): Response?
-
     @JsName("match")
     fun matchAsync(
         url: String,
         options: CacheQueryOptions = definedExternally,
     ): Promise<Response?>
 
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun match(
-        url: URL,
-        options: CacheQueryOptions = definedExternally,
-    ): Response?
-
     @JsName("match")
     fun matchAsync(
         url: URL,
         options: CacheQueryOptions = definedExternally,
     ): Promise<Response?>
-
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun match(
-        request: Request,
-        options: CacheQueryOptions = definedExternally,
-    ): Response?
 
     @JsName("match")
     fun matchAsync(
@@ -185,38 +122,17 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/matchAll)
      */
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun matchAll(
-        url: String = definedExternally,
-        options: CacheQueryOptions = definedExternally,
-    ): ReadonlyArray<Response>
-
     @JsName("matchAll")
     fun matchAllAsync(
         url: String = definedExternally,
         options: CacheQueryOptions = definedExternally,
     ): Promise<ReadonlyArray<Response>>
 
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun matchAll(
-        url: URL,
-        options: CacheQueryOptions = definedExternally,
-    ): ReadonlyArray<Response>
-
     @JsName("matchAll")
     fun matchAllAsync(
         url: URL,
         options: CacheQueryOptions = definedExternally,
     ): Promise<ReadonlyArray<Response>>
-
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun matchAll(
-        request: Request,
-        options: CacheQueryOptions = definedExternally,
-    ): ReadonlyArray<Response>
 
     @JsName("matchAll")
     fun matchAllAsync(
@@ -254,15 +170,15 @@ private constructor() {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/add)
  */
 suspend inline fun Cache.add(url: String) {
-    awaitPromiseLike(addAsync(url))
+    awaitPromiseLike(addAsync(url = url))
 }
 
 suspend inline fun Cache.add(url: URL) {
-    awaitPromiseLike(addAsync(url))
+    awaitPromiseLike(addAsync(url = url))
 }
 
 suspend inline fun Cache.add(request: Request) {
-    awaitPromiseLike(addAsync(request))
+    awaitPromiseLike(addAsync(request = request))
 }
 
 /**
@@ -271,11 +187,285 @@ suspend inline fun Cache.add(request: Request) {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/addAll)
  */
 suspend inline fun Cache.addAll(requests: ReadonlyArray<Request>) {
-    awaitPromiseLike(addAllAsync(requests))
+    awaitPromiseLike(addAllAsync(requests = requests))
 }
 
 suspend inline fun Cache.addAll(urls: ReadonlyArray<JsString>) {
-    awaitPromiseLike(addAllAsync(urls))
+    awaitPromiseLike(addAllAsync(urls = urls))
+}
+
+/**
+ * The **`delete()`** method of the Cache interface finds the Cache entry whose key is the request, and if found, deletes the Cache entry and returns a Promise that resolves to `true`.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/delete)
+ */
+suspend inline fun Cache.delete(
+    url: String,
+    options: CacheQueryOptions,
+): Boolean {
+    return awaitPromiseLike(
+        deleteAsync(
+            url = url,
+            options = options
+        )
+    ).toBoolean()
+}
+
+/**
+ * The **`delete()`** method of the Cache interface finds the Cache entry whose key is the request, and if found, deletes the Cache entry and returns a Promise that resolves to `true`.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/delete)
+ */
+suspend inline fun Cache.delete(
+    url: String,
+): Boolean {
+    return awaitPromiseLike(deleteAsync(url = url)).toBoolean()
+}
+
+suspend inline fun Cache.delete(
+    url: URL,
+    options: CacheQueryOptions,
+): Boolean {
+    return awaitPromiseLike(
+        deleteAsync(
+            url = url,
+            options = options
+        )
+    ).toBoolean()
+}
+
+suspend inline fun Cache.delete(
+    url: URL,
+): Boolean {
+    return awaitPromiseLike(deleteAsync(url = url)).toBoolean()
+}
+
+suspend inline fun Cache.delete(
+    request: Request,
+    options: CacheQueryOptions,
+): Boolean {
+    return awaitPromiseLike(
+        deleteAsync(
+            request = request,
+            options = options
+        )
+    ).toBoolean()
+}
+
+suspend inline fun Cache.delete(
+    request: Request,
+): Boolean {
+    return awaitPromiseLike(deleteAsync(request = request)).toBoolean()
+}
+
+/**
+ * The **`keys()`** method of the Cache interface returns a representing the keys of the Cache.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/keys)
+ */
+suspend inline fun Cache.keys(
+    url: String,
+    options: CacheQueryOptions,
+): ReadonlyArray<Request> {
+    return awaitPromiseLike(
+        keysAsync(
+            url = url,
+            options = options
+        )
+    )
+}
+
+/**
+ * The **`keys()`** method of the Cache interface returns a representing the keys of the Cache.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/keys)
+ */
+suspend inline fun Cache.keys(
+    url: String,
+): ReadonlyArray<Request> {
+    return awaitPromiseLike(keysAsync(url = url))
+}
+
+/**
+ * The **`keys()`** method of the Cache interface returns a representing the keys of the Cache.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/keys)
+ */
+suspend inline fun Cache.keys(): ReadonlyArray<Request> {
+    return awaitPromiseLike(keysAsync())
+}
+
+suspend inline fun Cache.keys(
+    url: URL,
+    options: CacheQueryOptions,
+): ReadonlyArray<Request> {
+    return awaitPromiseLike(
+        keysAsync(
+            url = url,
+            options = options
+        )
+    )
+}
+
+suspend inline fun Cache.keys(
+    url: URL,
+): ReadonlyArray<Request> {
+    return awaitPromiseLike(keysAsync(url = url))
+}
+
+suspend inline fun Cache.keys(
+    request: Request,
+    options: CacheQueryOptions,
+): ReadonlyArray<Request> {
+    return awaitPromiseLike(
+        keysAsync(
+            request = request,
+            options = options
+        )
+    )
+}
+
+suspend inline fun Cache.keys(
+    request: Request,
+): ReadonlyArray<Request> {
+    return awaitPromiseLike(keysAsync(request = request))
+}
+
+/**
+ * The **`match()`** method of the Cache interface returns a Promise that resolves to the Response associated with the first matching request in the Cache object.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/match)
+ */
+suspend inline fun Cache.match(
+    url: String,
+    options: CacheQueryOptions,
+): Response? {
+    return awaitPromiseLike(
+        matchAsync(
+            url = url,
+            options = options
+        )
+    )
+}
+
+/**
+ * The **`match()`** method of the Cache interface returns a Promise that resolves to the Response associated with the first matching request in the Cache object.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/match)
+ */
+suspend inline fun Cache.match(
+    url: String,
+): Response? {
+    return awaitPromiseLike(matchAsync(url = url))
+}
+
+suspend inline fun Cache.match(
+    url: URL,
+    options: CacheQueryOptions,
+): Response? {
+    return awaitPromiseLike(
+        matchAsync(
+            url = url,
+            options = options
+        )
+    )
+}
+
+suspend inline fun Cache.match(
+    url: URL,
+): Response? {
+    return awaitPromiseLike(matchAsync(url = url))
+}
+
+suspend inline fun Cache.match(
+    request: Request,
+    options: CacheQueryOptions,
+): Response? {
+    return awaitPromiseLike(
+        matchAsync(
+            request = request,
+            options = options
+        )
+    )
+}
+
+suspend inline fun Cache.match(
+    request: Request,
+): Response? {
+    return awaitPromiseLike(matchAsync(request = request))
+}
+
+/**
+ * The **`matchAll()`** method of the Cache interface returns a Promise that resolves to an array of all matching responses in the Cache object.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/matchAll)
+ */
+suspend inline fun Cache.matchAll(
+    url: String,
+    options: CacheQueryOptions,
+): ReadonlyArray<Response> {
+    return awaitPromiseLike(
+        matchAllAsync(
+            url = url,
+            options = options
+        )
+    )
+}
+
+/**
+ * The **`matchAll()`** method of the Cache interface returns a Promise that resolves to an array of all matching responses in the Cache object.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/matchAll)
+ */
+suspend inline fun Cache.matchAll(
+    url: String,
+): ReadonlyArray<Response> {
+    return awaitPromiseLike(matchAllAsync(url = url))
+}
+
+/**
+ * The **`matchAll()`** method of the Cache interface returns a Promise that resolves to an array of all matching responses in the Cache object.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/matchAll)
+ */
+suspend inline fun Cache.matchAll(): ReadonlyArray<Response> {
+    return awaitPromiseLike(matchAllAsync())
+}
+
+suspend inline fun Cache.matchAll(
+    url: URL,
+    options: CacheQueryOptions,
+): ReadonlyArray<Response> {
+    return awaitPromiseLike(
+        matchAllAsync(
+            url = url,
+            options = options
+        )
+    )
+}
+
+suspend inline fun Cache.matchAll(
+    url: URL,
+): ReadonlyArray<Response> {
+    return awaitPromiseLike(matchAllAsync(url = url))
+}
+
+suspend inline fun Cache.matchAll(
+    request: Request,
+    options: CacheQueryOptions,
+): ReadonlyArray<Response> {
+    return awaitPromiseLike(
+        matchAllAsync(
+            request = request,
+            options = options
+        )
+    )
+}
+
+suspend inline fun Cache.matchAll(
+    request: Request,
+): ReadonlyArray<Response> {
+    return awaitPromiseLike(matchAllAsync(request = request))
 }
 
 /**
@@ -289,8 +479,8 @@ suspend inline fun Cache.put(
 ) {
     awaitPromiseLike(
         putAsync(
-            url,
-            response
+            url = url,
+            response = response
         )
     )
 }
@@ -301,8 +491,8 @@ suspend inline fun Cache.put(
 ) {
     awaitPromiseLike(
         putAsync(
-            url,
-            response
+            url = url,
+            response = response
         )
     )
 }
@@ -313,8 +503,8 @@ suspend inline fun Cache.put(
 ) {
     awaitPromiseLike(
         putAsync(
-            request,
-            response
+            request = request,
+            response = response
         )
     )
 }

@@ -9,7 +9,6 @@ import js.core.Void
 import js.promise.Promise
 import js.promise.PromiseLike
 import js.promise.internal.awaitPromiseLike
-import seskar.js.JsAsync
 import web.events.EventHandler
 import web.events.EventInstance
 import web.events.EventTarget
@@ -60,10 +59,6 @@ open external class PaymentRequest(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentRequest/show)
      */
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun show(detailsPromise: PaymentDetailsUpdate = definedExternally): PaymentResponse
-
     @JsName("show")
     fun showAsync(detailsPromise: PaymentDetailsUpdate = definedExternally): Promise<PaymentResponse>
 
@@ -89,8 +84,26 @@ suspend inline fun PaymentRequest.canMakePayment(): Boolean {
     return awaitPromiseLike(canMakePaymentAsync()).toBoolean()
 }
 
+/**
+ * The **PaymentRequest** interface's **`show()`** method instructs the user agent to begin the process of showing and handling the user interface for the payment request to the user.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentRequest/show)
+ */
+suspend inline fun PaymentRequest.show(detailsPromise: PaymentDetailsUpdate): PaymentResponse {
+    return awaitPromiseLike(showAsync(detailsPromise = detailsPromise))
+}
+
+/**
+ * The **PaymentRequest** interface's **`show()`** method instructs the user agent to begin the process of showing and handling the user interface for the payment request to the user.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentRequest/show)
+ */
+suspend inline fun PaymentRequest.show(): PaymentResponse {
+    return awaitPromiseLike(showAsync())
+}
+
 suspend inline fun PaymentRequest.show(detailsPromise: PromiseLike<PaymentDetailsUpdate>): PaymentResponse {
-    return awaitPromiseLike(showAsync(detailsPromise))
+    return awaitPromiseLike(showAsync(detailsPromise = detailsPromise))
 }
 
 /**

@@ -4,7 +4,7 @@ package web.transport
 
 import js.core.Void
 import js.promise.Promise
-import seskar.js.JsAsync
+import js.promise.internal.awaitPromiseLike
 import web.streams.ReadableStream
 import web.streams.WritableStream
 import web.url.URL
@@ -73,10 +73,6 @@ open external class WebTransport(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebTransport/createBidirectionalStream)
      */
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun createBidirectionalStream(options: WebTransportSendStreamOptions = definedExternally): WebTransportBidirectionalStream
-
     @JsName("createBidirectionalStream")
     fun createBidirectionalStreamAsync(options: WebTransportSendStreamOptions = definedExternally): Promise<WebTransportBidirectionalStream>
 
@@ -85,10 +81,42 @@ open external class WebTransport(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebTransport/createUnidirectionalStream)
      */
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun createUnidirectionalStream(options: WebTransportSendStreamOptions = definedExternally): WritableStream<*>
-
     @JsName("createUnidirectionalStream")
     fun createUnidirectionalStreamAsync(options: WebTransportSendStreamOptions = definedExternally): Promise<WritableStream<*>>
+}
+
+/**
+ * The **`createBidirectionalStream()`** method of the WebTransport interface asynchronously opens and returns a bidirectional stream.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebTransport/createBidirectionalStream)
+ */
+suspend inline fun WebTransport.createBidirectionalStream(options: WebTransportSendStreamOptions): WebTransportBidirectionalStream {
+    return awaitPromiseLike(createBidirectionalStreamAsync(options = options))
+}
+
+/**
+ * The **`createBidirectionalStream()`** method of the WebTransport interface asynchronously opens and returns a bidirectional stream.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebTransport/createBidirectionalStream)
+ */
+suspend inline fun WebTransport.createBidirectionalStream(): WebTransportBidirectionalStream {
+    return awaitPromiseLike(createBidirectionalStreamAsync())
+}
+
+/**
+ * The **`createUnidirectionalStream()`** method of the WebTransport interface asynchronously opens a unidirectional stream.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebTransport/createUnidirectionalStream)
+ */
+suspend inline fun WebTransport.createUnidirectionalStream(options: WebTransportSendStreamOptions): WritableStream<*> {
+    return awaitPromiseLike(createUnidirectionalStreamAsync(options = options))
+}
+
+/**
+ * The **`createUnidirectionalStream()`** method of the WebTransport interface asynchronously opens a unidirectional stream.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebTransport/createUnidirectionalStream)
+ */
+suspend inline fun WebTransport.createUnidirectionalStream(): WritableStream<*> {
+    return awaitPromiseLike(createUnidirectionalStreamAsync())
 }

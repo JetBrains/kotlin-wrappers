@@ -13,7 +13,7 @@ fun <T : Abortable> patchAbortOptions(
     options: T?,
     controller: AbortController,
 ): T {
-    val abortOptions = createAbortable(
+    val abortOptions = createAbortable<T>(
         signal = safeAny(options?.signal, controller.signal)
     )
 

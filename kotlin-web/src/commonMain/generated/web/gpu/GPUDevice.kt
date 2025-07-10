@@ -136,14 +136,14 @@ private constructor() :
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUDevice/createComputePipelineAsync)
  */
 suspend inline fun GPUDevice.createComputePipeline(descriptor: GPUComputePipelineDescriptor): GPUComputePipeline {
-    return awaitPromiseLike(createComputePipelineAsync(descriptor))
+    return awaitPromiseLike(createComputePipelineAsync(descriptor = descriptor))
 }
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUDevice/createRenderPipelineAsync)
  */
 suspend inline fun GPUDevice.createRenderPipeline(descriptor: GPURenderPipelineDescriptor): GPURenderPipeline {
-    return awaitPromiseLike(createRenderPipelineAsync(descriptor))
+    return awaitPromiseLike(createRenderPipelineAsync(descriptor = descriptor))
 }
 
 /**

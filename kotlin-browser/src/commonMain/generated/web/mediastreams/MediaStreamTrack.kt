@@ -4,7 +4,7 @@ package web.mediastreams
 
 import js.core.Void
 import js.promise.Promise
-import seskar.js.JsAsync
+import js.promise.internal.awaitPromiseLike
 import web.events.Event
 import web.events.EventHandler
 import web.events.EventInstance
@@ -89,10 +89,6 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStreamTrack/applyConstraints)
      */
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun applyConstraints(constraints: MediaTrackConstraints = definedExternally)
-
     @JsName("applyConstraints")
     fun applyConstraintsAsync(constraints: MediaTrackConstraints = definedExternally): Promise<Void>
 
@@ -130,6 +126,24 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStreamTrack/stop)
      */
     fun stop()
+}
+
+/**
+ * The **`applyConstraints()`** method of the MediaStreamTrack interface applies a set of constraints to the track; these constraints let the website or app establish ideal values and acceptable ranges of values for the constrainable properties of the track, such as frame rate, dimensions, echo cancellation, and so forth.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStreamTrack/applyConstraints)
+ */
+suspend inline fun MediaStreamTrack.applyConstraints(constraints: MediaTrackConstraints) {
+    awaitPromiseLike(applyConstraintsAsync(constraints = constraints))
+}
+
+/**
+ * The **`applyConstraints()`** method of the MediaStreamTrack interface applies a set of constraints to the track; these constraints let the website or app establish ideal values and acceptable ranges of values for the constrainable properties of the track, such as frame rate, dimensions, echo cancellation, and so forth.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStreamTrack/applyConstraints)
+ */
+suspend inline fun MediaStreamTrack.applyConstraints() {
+    awaitPromiseLike(applyConstraintsAsync())
 }
 
 /**

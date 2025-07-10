@@ -81,5 +81,5 @@ suspend inline fun NavigationPreloadManager.getState(): NavigationPreloadState {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigationPreloadManager/setHeaderValue)
  */
 suspend inline fun NavigationPreloadManager.setHeaderValue(value: String) {
-    awaitPromiseLike(setHeaderValueAsync(value))
+    awaitPromiseLike(setHeaderValueAsync(value = value))
 }

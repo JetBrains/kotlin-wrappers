@@ -4,7 +4,6 @@ package web.imagecapture
 
 import js.promise.Promise
 import js.promise.internal.awaitPromiseLike
-import seskar.js.JsAsync
 import web.blob.Blob
 import web.images.ImageBitmap
 import web.mediastreams.MediaStreamTrack
@@ -56,10 +55,6 @@ open external class ImageCapture(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageCapture/takePhoto)
      */
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun takePhoto(photoSettings: PhotoSettings = definedExternally): Blob
-
     @JsName("takePhoto")
     fun takePhotoAsync(photoSettings: PhotoSettings = definedExternally): Promise<Blob>
 }
@@ -89,4 +84,22 @@ suspend inline fun ImageCapture.getPhotoSettings(): PhotoSettings {
  */
 suspend inline fun ImageCapture.grabFrame(): ImageBitmap {
     return awaitPromiseLike(grabFrameAsync())
+}
+
+/**
+ * The **`takePhoto()`** method of the device sourcing a MediaStreamTrack and returns a Promise that resolves with a Blob containing the data.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageCapture/takePhoto)
+ */
+suspend inline fun ImageCapture.takePhoto(photoSettings: PhotoSettings): Blob {
+    return awaitPromiseLike(takePhotoAsync(photoSettings = photoSettings))
+}
+
+/**
+ * The **`takePhoto()`** method of the device sourcing a MediaStreamTrack and returns a Promise that resolves with a Blob containing the data.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageCapture/takePhoto)
+ */
+suspend inline fun ImageCapture.takePhoto(): Blob {
+    return awaitPromiseLike(takePhotoAsync())
 }

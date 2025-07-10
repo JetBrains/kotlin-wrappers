@@ -3,7 +3,7 @@
 package web.wakelock
 
 import js.promise.Promise
-import seskar.js.JsAsync
+import js.promise.internal.awaitPromiseLike
 import kotlin.js.JsName
 import kotlin.js.definedExternally
 
@@ -20,10 +20,24 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WakeLock/request)
      */
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun request(type: WakeLockType = definedExternally): WakeLockSentinel
-
     @JsName("request")
     fun requestAsync(type: WakeLockType = definedExternally): Promise<WakeLockSentinel>
+}
+
+/**
+ * The **`request()`** method of the WakeLock interface returns a Promise that fulfills with a WakeLockSentinel object if the system screen wake lock is granted.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WakeLock/request)
+ */
+suspend inline fun WakeLock.request(type: WakeLockType): WakeLockSentinel {
+    return awaitPromiseLike(requestAsync(type = type))
+}
+
+/**
+ * The **`request()`** method of the WakeLock interface returns a Promise that fulfills with a WakeLockSentinel object if the system screen wake lock is granted.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WakeLock/request)
+ */
+suspend inline fun WakeLock.request(): WakeLockSentinel {
+    return awaitPromiseLike(requestAsync())
 }

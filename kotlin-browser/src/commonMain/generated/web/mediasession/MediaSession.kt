@@ -69,7 +69,7 @@ private constructor() {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaSession/setCameraActive)
  */
 suspend inline fun MediaSession.setCameraActive(active: Boolean) {
-    awaitPromiseLike(setCameraActiveAsync(active))
+    awaitPromiseLike(setCameraActiveAsync(active = active))
 }
 
 /**
@@ -78,5 +78,5 @@ suspend inline fun MediaSession.setCameraActive(active: Boolean) {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaSession/setMicrophoneActive)
  */
 suspend inline fun MediaSession.setMicrophoneActive(active: Boolean) {
-    awaitPromiseLike(setMicrophoneActiveAsync(active))
+    awaitPromiseLike(setMicrophoneActiveAsync(active = active))
 }

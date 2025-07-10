@@ -56,7 +56,7 @@ suspend inline fun CookieStoreManager.getSubscriptions(): ReadonlyArray<CookieSt
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CookieStoreManager/subscribe)
  */
 suspend inline fun CookieStoreManager.subscribe(subscriptions: ReadonlyArray<CookieStoreGetOptions>) {
-    awaitPromiseLike(subscribeAsync(subscriptions))
+    awaitPromiseLike(subscribeAsync(subscriptions = subscriptions))
 }
 
 /**
@@ -65,5 +65,5 @@ suspend inline fun CookieStoreManager.subscribe(subscriptions: ReadonlyArray<Coo
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CookieStoreManager/unsubscribe)
  */
 suspend inline fun CookieStoreManager.unsubscribe(subscriptions: ReadonlyArray<CookieStoreGetOptions>) {
-    awaitPromiseLike(unsubscribeAsync(subscriptions))
+    awaitPromiseLike(unsubscribeAsync(subscriptions = subscriptions))
 }

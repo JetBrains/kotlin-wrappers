@@ -7,7 +7,6 @@ import js.core.Void
 import js.errors.JsError
 import js.promise.Promise
 import js.promise.internal.awaitPromiseLike
-import seskar.js.JsAsync
 import kotlin.js.JsName
 import kotlin.js.definedExternally
 
@@ -45,10 +44,6 @@ open external class WritableStreamDefaultWriter<W : JsAny?>(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WritableStreamDefaultWriter/abort)
      */
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun abort(reason: JsError? = definedExternally)
-
     @JsName("abort")
     fun abortAsync(reason: JsError? = definedExternally): Promise<Void>
 
@@ -72,12 +67,26 @@ open external class WritableStreamDefaultWriter<W : JsAny?>(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WritableStreamDefaultWriter/write)
      */
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun write(chunk: W = definedExternally)
-
     @JsName("write")
     fun writeAsync(chunk: W = definedExternally): Promise<Void>
+}
+
+/**
+ * The **`abort()`** method of the the producer can no longer successfully write to the stream and it is to be immediately moved to an error state, with any queued writes discarded.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WritableStreamDefaultWriter/abort)
+ */
+suspend inline fun <W : JsAny?> WritableStreamDefaultWriter<W>.abort(reason: JsError?) {
+    awaitPromiseLike(abortAsync(reason = reason))
+}
+
+/**
+ * The **`abort()`** method of the the producer can no longer successfully write to the stream and it is to be immediately moved to an error state, with any queued writes discarded.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WritableStreamDefaultWriter/abort)
+ */
+suspend inline fun <W : JsAny?> WritableStreamDefaultWriter<W>.abort() {
+    awaitPromiseLike(abortAsync())
 }
 
 /**
@@ -87,4 +96,22 @@ open external class WritableStreamDefaultWriter<W : JsAny?>(
  */
 suspend inline fun <W : JsAny?> WritableStreamDefaultWriter<W>.close() {
     awaitPromiseLike(closeAsync())
+}
+
+/**
+ * The **`write()`** method of the operation.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WritableStreamDefaultWriter/write)
+ */
+suspend inline fun <W : JsAny?> WritableStreamDefaultWriter<W>.write(chunk: W) {
+    awaitPromiseLike(writeAsync(chunk = chunk))
+}
+
+/**
+ * The **`write()`** method of the operation.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WritableStreamDefaultWriter/write)
+ */
+suspend inline fun <W : JsAny?> WritableStreamDefaultWriter<W>.write() {
+    awaitPromiseLike(writeAsync())
 }

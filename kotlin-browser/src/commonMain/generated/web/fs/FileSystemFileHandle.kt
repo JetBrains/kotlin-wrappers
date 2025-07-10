@@ -5,7 +5,6 @@ package web.fs
 import js.promise.Promise
 import js.promise.internal.awaitPromiseLike
 import js.serialization.Serializable
-import seskar.js.JsAsync
 import web.file.File
 import kotlin.js.JsName
 import kotlin.js.definedExternally
@@ -35,10 +34,6 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemFileHandle/createWritable)
      */
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun createWritable(options: FileSystemCreateWritableOptions = definedExternally): FileSystemWritableFileStream
-
     @JsName("createWritable")
     fun createWritableAsync(options: FileSystemCreateWritableOptions = definedExternally): Promise<FileSystemWritableFileStream>
 
@@ -58,6 +53,24 @@ private constructor() :
  */
 suspend inline fun FileSystemFileHandle.createSyncAccessHandle(): FileSystemSyncAccessHandle {
     return awaitPromiseLike(createSyncAccessHandleAsync())
+}
+
+/**
+ * The **`createWritable()`** method of the FileSystemFileHandle interface creates a FileSystemWritableFileStream that can be used to write to a file.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemFileHandle/createWritable)
+ */
+suspend inline fun FileSystemFileHandle.createWritable(options: FileSystemCreateWritableOptions): FileSystemWritableFileStream {
+    return awaitPromiseLike(createWritableAsync(options = options))
+}
+
+/**
+ * The **`createWritable()`** method of the FileSystemFileHandle interface creates a FileSystemWritableFileStream that can be used to write to a file.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemFileHandle/createWritable)
+ */
+suspend inline fun FileSystemFileHandle.createWritable(): FileSystemWritableFileStream {
+    return awaitPromiseLike(createWritableAsync())
 }
 
 /**

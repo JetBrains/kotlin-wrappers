@@ -75,7 +75,7 @@ suspend inline fun Clipboard.readText(): String {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Clipboard/write)
  */
 suspend inline fun Clipboard.write(data: ClipboardItems) {
-    awaitPromiseLike(writeAsync(data))
+    awaitPromiseLike(writeAsync(data = data))
 }
 
 /**
@@ -84,5 +84,5 @@ suspend inline fun Clipboard.write(data: ClipboardItems) {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Clipboard/writeText)
  */
 suspend inline fun Clipboard.writeText(data: String) {
-    awaitPromiseLike(writeTextAsync(data))
+    awaitPromiseLike(writeTextAsync(data = data))
 }

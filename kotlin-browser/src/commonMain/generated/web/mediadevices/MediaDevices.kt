@@ -5,7 +5,6 @@ package web.mediadevices
 import js.array.ReadonlyArray
 import js.promise.Promise
 import js.promise.internal.awaitPromiseLike
-import seskar.js.JsAsync
 import web.events.Event
 import web.events.EventHandler
 import web.events.EventTarget
@@ -42,10 +41,6 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaDevices/getDisplayMedia)
      */
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun getDisplayMedia(options: DisplayMediaStreamOptions = definedExternally): MediaStream
-
     @JsName("getDisplayMedia")
     fun getDisplayMediaAsync(options: DisplayMediaStreamOptions = definedExternally): Promise<MediaStream>
 
@@ -61,10 +56,6 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaDevices/getUserMedia)
      */
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun getUserMedia(constraints: MediaStreamConstraints = definedExternally): MediaStream
-
     @JsName("getUserMedia")
     fun getUserMediaAsync(constraints: MediaStreamConstraints = definedExternally): Promise<MediaStream>
 }
@@ -76,4 +67,40 @@ private constructor() :
  */
 suspend inline fun MediaDevices.enumerateDevices(): ReadonlyArray<MediaDeviceInfo> {
     return awaitPromiseLike(enumerateDevicesAsync())
+}
+
+/**
+ * The **`getDisplayMedia()`** method of the MediaDevices interface prompts the user to select and grant permission to capture the contents of a display or portion thereof (such as a window) as a MediaStream.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaDevices/getDisplayMedia)
+ */
+suspend inline fun MediaDevices.getDisplayMedia(options: DisplayMediaStreamOptions): MediaStream {
+    return awaitPromiseLike(getDisplayMediaAsync(options = options))
+}
+
+/**
+ * The **`getDisplayMedia()`** method of the MediaDevices interface prompts the user to select and grant permission to capture the contents of a display or portion thereof (such as a window) as a MediaStream.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaDevices/getDisplayMedia)
+ */
+suspend inline fun MediaDevices.getDisplayMedia(): MediaStream {
+    return awaitPromiseLike(getDisplayMediaAsync())
+}
+
+/**
+ * The **`getUserMedia()`** method of the MediaDevices interface prompts the user for permission to use a media input which produces a MediaStream with tracks containing the requested types of media.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaDevices/getUserMedia)
+ */
+suspend inline fun MediaDevices.getUserMedia(constraints: MediaStreamConstraints): MediaStream {
+    return awaitPromiseLike(getUserMediaAsync(constraints = constraints))
+}
+
+/**
+ * The **`getUserMedia()`** method of the MediaDevices interface prompts the user for permission to use a media input which produces a MediaStream with tracks containing the requested types of media.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaDevices/getUserMedia)
+ */
+suspend inline fun MediaDevices.getUserMedia(): MediaStream {
+    return awaitPromiseLike(getUserMediaAsync())
 }

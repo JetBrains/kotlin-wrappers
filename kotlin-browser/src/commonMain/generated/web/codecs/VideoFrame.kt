@@ -7,9 +7,9 @@ import js.buffer.AllowSharedBufferSource
 import js.core.Int53
 import js.core.UInt53
 import js.promise.Promise
+import js.promise.internal.awaitPromiseLike
 import js.serialization.Serializable
 import js.serialization.Transferable
-import seskar.js.JsAsync
 import web.canvas.CanvasImageSource
 import web.geometry.DOMRectReadOnly
 import web.gl.TexImageSource
@@ -131,16 +131,37 @@ open external class VideoFrame(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoFrame/copyTo)
      */
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun copyTo(
-        destination: AllowSharedBufferSource,
-        options: VideoFrameCopyToOptions = definedExternally,
-    ): ReadonlyArray<PlaneLayout>
-
     @JsName("copyTo")
     fun copyToAsync(
         destination: AllowSharedBufferSource,
         options: VideoFrameCopyToOptions = definedExternally,
     ): Promise<ReadonlyArray<PlaneLayout>>
+}
+
+/**
+ * The **`copyTo()`** method of the VideoFrame interface copies the contents of the `VideoFrame` to an `ArrayBuffer`.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoFrame/copyTo)
+ */
+suspend inline fun VideoFrame.copyTo(
+    destination: AllowSharedBufferSource,
+    options: VideoFrameCopyToOptions,
+): ReadonlyArray<PlaneLayout> {
+    return awaitPromiseLike(
+        copyToAsync(
+            destination = destination,
+            options = options
+        )
+    )
+}
+
+/**
+ * The **`copyTo()`** method of the VideoFrame interface copies the contents of the `VideoFrame` to an `ArrayBuffer`.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoFrame/copyTo)
+ */
+suspend inline fun VideoFrame.copyTo(
+    destination: AllowSharedBufferSource,
+): ReadonlyArray<PlaneLayout> {
+    return awaitPromiseLike(copyToAsync(destination = destination))
 }

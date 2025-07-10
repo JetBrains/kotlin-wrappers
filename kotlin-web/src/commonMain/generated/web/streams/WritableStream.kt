@@ -8,7 +8,6 @@ import js.errors.JsError
 import js.promise.Promise
 import js.promise.internal.awaitPromiseLike
 import js.serialization.Transferable
-import seskar.js.JsAsync
 import kotlin.js.JsName
 import kotlin.js.definedExternally
 
@@ -33,10 +32,6 @@ open external class WritableStream<W : JsAny?>(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WritableStream/abort)
      */
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun abort(reason: JsError? = definedExternally)
-
     @JsName("abort")
     fun abortAsync(reason: JsError? = definedExternally): Promise<Void>
 
@@ -54,6 +49,24 @@ open external class WritableStream<W : JsAny?>(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WritableStream/getWriter)
      */
     fun getWriter(): WritableStreamDefaultWriter<W>
+}
+
+/**
+ * The **`abort()`** method of the WritableStream interface aborts the stream, signaling that the producer can no longer successfully write to the stream and it is to be immediately moved to an error state, with any queued writes discarded.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WritableStream/abort)
+ */
+suspend inline fun <W : JsAny?> WritableStream<W>.abort(reason: JsError?) {
+    awaitPromiseLike(abortAsync(reason = reason))
+}
+
+/**
+ * The **`abort()`** method of the WritableStream interface aborts the stream, signaling that the producer can no longer successfully write to the stream and it is to be immediately moved to an error state, with any queued writes discarded.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WritableStream/abort)
+ */
+suspend inline fun <W : JsAny?> WritableStream<W>.abort() {
+    awaitPromiseLike(abortAsync())
 }
 
 /**

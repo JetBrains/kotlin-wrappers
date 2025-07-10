@@ -1,5 +1,7 @@
 package karakum.cesium
 
+import karakum.common.count
+
 private val OPTIONS_REGEX = Regex("""(options|apiOptions)\??: (\{.+})""", RegexOption.DOT_MATCHES_ALL)
 private val INNER_OPTIONS_REGEX = Regex("""(\w+\??): \{.+?}""", RegexOption.DOT_MATCHES_ALL)
 

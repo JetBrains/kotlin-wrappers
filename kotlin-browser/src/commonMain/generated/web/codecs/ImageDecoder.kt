@@ -7,7 +7,6 @@ import js.core.JsPrimitives.toBoolean
 import js.core.Void
 import js.promise.Promise
 import js.promise.internal.awaitPromiseLike
-import seskar.js.JsAsync
 import kotlin.js.JsName
 import kotlin.js.definedExternally
 
@@ -60,10 +59,6 @@ open external class ImageDecoder(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageDecoder/decode)
      */
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun decode(options: ImageDecodeOptions = definedExternally): ImageDecodeResult
-
     @JsName("decode")
     fun decodeAsync(options: ImageDecodeOptions = definedExternally): Promise<ImageDecodeResult>
 
@@ -86,10 +81,28 @@ open external class ImageDecoder(
 }
 
 /**
+ * The **`decode()`** method of the ImageDecoder interface enqueues a control message to decode the frame of an image.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageDecoder/decode)
+ */
+suspend inline fun ImageDecoder.decode(options: ImageDecodeOptions): ImageDecodeResult {
+    return awaitPromiseLike(decodeAsync(options = options))
+}
+
+/**
+ * The **`decode()`** method of the ImageDecoder interface enqueues a control message to decode the frame of an image.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageDecoder/decode)
+ */
+suspend inline fun ImageDecoder.decode(): ImageDecodeResult {
+    return awaitPromiseLike(decodeAsync())
+}
+
+/**
  * The **`ImageDecoder.isTypeSupported()`** static method checks if a given MIME type can be decoded by the user agent.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageDecoder/isTypeSupported_static)
  */
 suspend inline fun ImageDecoder.Companion.isTypeSupported(type: String): Boolean {
-    return awaitPromiseLike(isTypeSupportedAsync(type)).toBoolean()
+    return awaitPromiseLike(isTypeSupportedAsync(type = type)).toBoolean()
 }

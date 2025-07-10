@@ -6,7 +6,6 @@ import js.array.ReadonlyArray
 import js.core.Void
 import js.promise.Promise
 import js.promise.internal.awaitPromiseLike
-import seskar.js.JsAsync
 import web.clipboard.Clipboard
 import web.credentials.CredentialsContainer
 import web.fedcm.NavigatorLogin
@@ -160,10 +159,6 @@ protected /* private */ constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/requestMIDIAccess)
      */
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun requestMIDIAccess(options: MIDIOptions = definedExternally): MIDIAccess
-
     @JsName("requestMIDIAccess")
     fun requestMIDIAccessAsync(options: MIDIOptions = definedExternally): Promise<MIDIAccess>
 
@@ -200,10 +195,6 @@ protected /* private */ constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/share)
      */
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun share(data: ShareData = definedExternally)
-
     @JsName("share")
     fun shareAsync(data: ShareData = definedExternally): Promise<Void>
 
@@ -213,6 +204,26 @@ protected /* private */ constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/vibrate)
      */
     fun vibrate(pattern: VibratePattern): Boolean
+}
+
+/**
+ * The **`requestMIDIAccess()`** method of the Navigator interface returns a Promise representing a request for access to MIDI devices on a user's system.
+ * Available only in secure contexts.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/requestMIDIAccess)
+ */
+suspend inline fun Navigator.requestMIDIAccess(options: MIDIOptions): MIDIAccess {
+    return awaitPromiseLike(requestMIDIAccessAsync(options = options))
+}
+
+/**
+ * The **`requestMIDIAccess()`** method of the Navigator interface returns a Promise representing a request for access to MIDI devices on a user's system.
+ * Available only in secure contexts.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/requestMIDIAccess)
+ */
+suspend inline fun Navigator.requestMIDIAccess(): MIDIAccess {
+    return awaitPromiseLike(requestMIDIAccessAsync())
 }
 
 /**
@@ -227,8 +238,28 @@ suspend inline fun Navigator.requestMediaKeySystemAccess(
 ): MediaKeySystemAccess {
     return awaitPromiseLike(
         requestMediaKeySystemAccessAsync(
-            keySystem,
-            supportedConfigurations
+            keySystem = keySystem,
+            supportedConfigurations = supportedConfigurations
         )
     )
+}
+
+/**
+ * The **`share()`** method of the Navigator interface invokes the native sharing mechanism of the device to share data such as text, URLs, or files.
+ * Available only in secure contexts.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/share)
+ */
+suspend inline fun Navigator.share(data: ShareData) {
+    awaitPromiseLike(shareAsync(data = data))
+}
+
+/**
+ * The **`share()`** method of the Navigator interface invokes the native sharing mechanism of the device to share data such as text, URLs, or files.
+ * Available only in secure contexts.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/share)
+ */
+suspend inline fun Navigator.share() {
+    awaitPromiseLike(shareAsync())
 }

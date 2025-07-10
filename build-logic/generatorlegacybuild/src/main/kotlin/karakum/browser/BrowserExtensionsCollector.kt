@@ -9,13 +9,13 @@ internal class BrowserSuspendExtensionsCollector(
 
     override fun getResult(): String {
         val extensions = super.getResult()
-        return when {
-            parentName == "CustomElementRegistry"
-                -> extensions.replace(
+        return when (parentName) {
+            "CustomElementRegistry" -> extensions.replace(
                 "CustomElementRegistry.whenDefined(name: String): CustomElementConstructor",
                 "<T : HTMLElement> CustomElementRegistry.whenDefined(name: TagName<T>): CustomElementConstructor<T>"
             )
 
+            "Clients" -> extensions.replace("matchAllAsync()", "matchAllAsync<T>()")
             else -> extensions
         }
     }

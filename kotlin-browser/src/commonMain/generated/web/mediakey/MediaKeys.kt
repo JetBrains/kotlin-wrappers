@@ -7,7 +7,6 @@ import js.core.JsBoolean
 import js.core.JsPrimitives.toBoolean
 import js.promise.Promise
 import js.promise.internal.awaitPromiseLike
-import seskar.js.JsAsync
 import kotlin.js.JsName
 import kotlin.js.definedExternally
 
@@ -31,10 +30,6 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeys/getStatusForPolicy)
      */
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun getStatusForPolicy(policy: MediaKeysPolicy = definedExternally): MediaKeyStatus
-
     @JsName("getStatusForPolicy")
     fun getStatusForPolicyAsync(policy: MediaKeysPolicy = definedExternally): Promise<MediaKeyStatus>
 
@@ -48,10 +43,28 @@ private constructor() {
 }
 
 /**
+ * The `getStatusForPolicy()` method of the MediaKeys interface is used to check whether the Content Decryption Module (CDM) would allow the presentation of encrypted media data using the keys, based on the specified policy requirements.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeys/getStatusForPolicy)
+ */
+suspend inline fun MediaKeys.getStatusForPolicy(policy: MediaKeysPolicy): MediaKeyStatus {
+    return awaitPromiseLike(getStatusForPolicyAsync(policy = policy))
+}
+
+/**
+ * The `getStatusForPolicy()` method of the MediaKeys interface is used to check whether the Content Decryption Module (CDM) would allow the presentation of encrypted media data using the keys, based on the specified policy requirements.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeys/getStatusForPolicy)
+ */
+suspend inline fun MediaKeys.getStatusForPolicy(): MediaKeyStatus {
+    return awaitPromiseLike(getStatusForPolicyAsync())
+}
+
+/**
  * The **`setServerCertificate()`** method of the MediaKeys interface provides a server certificate to be used to encrypt messages to the license server.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeys/setServerCertificate)
  */
 suspend inline fun MediaKeys.setServerCertificate(serverCertificate: BufferSource): Boolean {
-    return awaitPromiseLike(setServerCertificateAsync(serverCertificate)).toBoolean()
+    return awaitPromiseLike(setServerCertificateAsync(serverCertificate = serverCertificate)).toBoolean()
 }

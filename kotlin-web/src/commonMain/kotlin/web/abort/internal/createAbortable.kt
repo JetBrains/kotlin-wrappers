@@ -4,9 +4,9 @@ import js.objects.unsafeJso
 import web.abort.AbortSignal
 import web.abort.Abortable
 
-internal fun createAbortable(
+fun <T : Abortable> createAbortable(
     signal: AbortSignal?,
-): Abortable =
+): T =
     unsafeJso {
         this.signal = signal
     }

@@ -5,7 +5,7 @@ package web.payment
 import js.core.JsAny
 import js.core.Void
 import js.promise.Promise
-import seskar.js.JsAsync
+import js.promise.internal.awaitPromiseLike
 import web.events.EventHandler
 import web.events.EventInstance
 import web.events.EventTarget
@@ -87,10 +87,6 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentResponse/complete)
      */
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun complete(result: PaymentComplete = definedExternally)
-
     @JsName("complete")
     fun completeAsync(result: PaymentComplete = definedExternally): Promise<Void>
 
@@ -99,10 +95,6 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentResponse/retry)
      */
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun retry(errorFields: PaymentValidationErrors = definedExternally)
-
     @JsName("retry")
     fun retryAsync(errorFields: PaymentValidationErrors = definedExternally): Promise<Void>
 
@@ -112,6 +104,42 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentResponse/toJSON)
      */
     fun toJSON(): JsAny
+}
+
+/**
+ * The PaymentRequest method **`complete()`** of the Payment Request API notifies the user interface to be closed.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentResponse/complete)
+ */
+suspend inline fun PaymentResponse.complete(result: PaymentComplete) {
+    awaitPromiseLike(completeAsync(result = result))
+}
+
+/**
+ * The PaymentRequest method **`complete()`** of the Payment Request API notifies the user interface to be closed.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentResponse/complete)
+ */
+suspend inline fun PaymentResponse.complete() {
+    awaitPromiseLike(completeAsync())
+}
+
+/**
+ * The PaymentResponse interface's **`retry()`** method makes it possible to ask the user to retry a payment after an error occurs during processing.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentResponse/retry)
+ */
+suspend inline fun PaymentResponse.retry(errorFields: PaymentValidationErrors) {
+    awaitPromiseLike(retryAsync(errorFields = errorFields))
+}
+
+/**
+ * The PaymentResponse interface's **`retry()`** method makes it possible to ask the user to retry a payment after an error occurs during processing.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentResponse/retry)
+ */
+suspend inline fun PaymentResponse.retry() {
+    awaitPromiseLike(retryAsync())
 }
 
 /**

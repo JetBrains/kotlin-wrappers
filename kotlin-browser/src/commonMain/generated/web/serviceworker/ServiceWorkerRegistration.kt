@@ -8,7 +8,6 @@ import js.core.JsPrimitives.toBoolean
 import js.core.Void
 import js.promise.Promise
 import js.promise.internal.awaitPromiseLike
-import seskar.js.JsAsync
 import web.cookie.CookieStoreManager
 import web.events.Event
 import web.events.EventHandler
@@ -95,10 +94,6 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/getNotifications)
      */
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun getNotifications(filter: GetNotificationOptions = definedExternally): ReadonlyArray<Notification>
-
     @JsName("getNotifications")
     fun getNotificationsAsync(filter: GetNotificationOptions = definedExternally): Promise<ReadonlyArray<Notification>>
 
@@ -107,13 +102,6 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/showNotification)
      */
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun showNotification(
-        title: String,
-        options: NotificationOptions = definedExternally,
-    )
-
     @JsName("showNotification")
     fun showNotificationAsync(
         title: String,
@@ -135,6 +123,52 @@ private constructor() :
      */
     @JsName("update")
     fun updateAsync(): Promise<ServiceWorkerRegistration>
+}
+
+/**
+ * The **`getNotifications()`** method of the ServiceWorkerRegistration interface returns a list of the notifications in the order that they were created from the current origin via the current service worker registration.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/getNotifications)
+ */
+suspend inline fun ServiceWorkerRegistration.getNotifications(filter: GetNotificationOptions): ReadonlyArray<Notification> {
+    return awaitPromiseLike(getNotificationsAsync(filter = filter))
+}
+
+/**
+ * The **`getNotifications()`** method of the ServiceWorkerRegistration interface returns a list of the notifications in the order that they were created from the current origin via the current service worker registration.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/getNotifications)
+ */
+suspend inline fun ServiceWorkerRegistration.getNotifications(): ReadonlyArray<Notification> {
+    return awaitPromiseLike(getNotificationsAsync())
+}
+
+/**
+ * The **`showNotification()`** method of the service worker.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/showNotification)
+ */
+suspend inline fun ServiceWorkerRegistration.showNotification(
+    title: String,
+    options: NotificationOptions,
+) {
+    awaitPromiseLike(
+        showNotificationAsync(
+            title = title,
+            options = options
+        )
+    )
+}
+
+/**
+ * The **`showNotification()`** method of the service worker.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/showNotification)
+ */
+suspend inline fun ServiceWorkerRegistration.showNotification(
+    title: String,
+) {
+    awaitPromiseLike(showNotificationAsync(title = title))
 }
 
 /**
