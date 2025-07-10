@@ -10,7 +10,7 @@ import js.buffer.ArrayBuffer
 import js.core.JsAny
 import js.core.JsString
 import js.promise.Promise
-import js.promise.internal.awaitPromiseLike
+import js.promise.await
 import js.typedarrays.Uint8Array
 import web.blob.Blob
 import web.form.FormData
@@ -72,40 +72,40 @@ sealed external interface Body {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/arrayBuffer)
  */
 suspend inline fun Body.arrayBuffer(): ArrayBuffer {
-    return awaitPromiseLike(arrayBufferAsync())
+    return arrayBufferAsync().await()
 }
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/blob)
  */
 suspend inline fun Body.blob(): Blob {
-    return awaitPromiseLike(blobAsync())
+    return blobAsync().await()
 }
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/bytes)
  */
 suspend inline fun Body.bytes(): Uint8Array<ArrayBuffer> {
-    return awaitPromiseLike(bytesAsync())
+    return bytesAsync().await()
 }
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/formData)
  */
 suspend inline fun Body.formData(): FormData {
-    return awaitPromiseLike(formDataAsync())
+    return formDataAsync().await()
 }
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/json)
  */
 suspend inline fun Body.json(): JsAny? {
-    return awaitPromiseLike(jsonAsync())
+    return jsonAsync().await()
 }
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/text)
  */
 suspend inline fun Body.text(): String {
-    return awaitPromiseLike(textAsync()).toString()
+    return textAsync().await().toString()
 }

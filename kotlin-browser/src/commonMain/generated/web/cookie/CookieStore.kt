@@ -4,7 +4,7 @@ package web.cookie
 
 import js.core.Void
 import js.promise.Promise
-import js.promise.internal.awaitPromiseLike
+import js.promise.await
 import web.events.EventHandler
 import web.events.EventInstance
 import web.events.EventTarget
@@ -79,11 +79,11 @@ private constructor() :
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CookieStore/delete)
  */
 suspend inline fun CookieStore.delete(name: String) {
-    awaitPromiseLike(deleteAsync(name = name))
+    deleteAsync(name = name).await()
 }
 
 suspend inline fun CookieStore.delete(options: CookieStoreDeleteOptions) {
-    awaitPromiseLike(deleteAsync(options = options))
+    deleteAsync(options = options).await()
 }
 
 /**
@@ -92,15 +92,15 @@ suspend inline fun CookieStore.delete(options: CookieStoreDeleteOptions) {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CookieStore/get)
  */
 suspend inline fun CookieStore.get(name: String): CookieListItem? {
-    return awaitPromiseLike(getAsync(name = name))
+    return getAsync(name = name).await()
 }
 
 suspend inline fun CookieStore.get(options: CookieStoreGetOptions): CookieListItem? {
-    return awaitPromiseLike(getAsync(options = options))
+    return getAsync(options = options).await()
 }
 
 suspend inline fun CookieStore.get(): CookieListItem? {
-    return awaitPromiseLike(getAsync())
+    return getAsync().await()
 }
 
 /**
@@ -109,15 +109,15 @@ suspend inline fun CookieStore.get(): CookieListItem? {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CookieStore/getAll)
  */
 suspend inline fun CookieStore.getAll(name: String): CookieList {
-    return awaitPromiseLike(getAllAsync(name = name))
+    return getAllAsync(name = name).await()
 }
 
 suspend inline fun CookieStore.getAll(options: CookieStoreGetOptions): CookieList {
-    return awaitPromiseLike(getAllAsync(options = options))
+    return getAllAsync(options = options).await()
 }
 
 suspend inline fun CookieStore.getAll(): CookieList {
-    return awaitPromiseLike(getAllAsync())
+    return getAllAsync().await()
 }
 
 /**
@@ -129,16 +129,14 @@ suspend inline fun CookieStore.set(
     name: String,
     value: String,
 ) {
-    awaitPromiseLike(
-        setAsync(
-            name = name,
-            value = value
-        )
-    )
+    setAsync(
+        name = name,
+        value = value
+    ).await()
 }
 
 suspend inline fun CookieStore.set(options: CookieInit) {
-    awaitPromiseLike(setAsync(options = options))
+    setAsync(options = options).await()
 }
 
 /**

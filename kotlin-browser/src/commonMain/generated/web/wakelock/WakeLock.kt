@@ -3,7 +3,7 @@
 package web.wakelock
 
 import js.promise.Promise
-import js.promise.internal.awaitPromiseLike
+import js.promise.await
 import kotlin.js.JsName
 import kotlin.js.definedExternally
 
@@ -30,7 +30,7 @@ private constructor() {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WakeLock/request)
  */
 suspend inline fun WakeLock.request(type: WakeLockType): WakeLockSentinel {
-    return awaitPromiseLike(requestAsync(type = type))
+    return requestAsync(type = type).await()
 }
 
 /**
@@ -39,5 +39,5 @@ suspend inline fun WakeLock.request(type: WakeLockType): WakeLockSentinel {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WakeLock/request)
  */
 suspend inline fun WakeLock.request(): WakeLockSentinel {
-    return awaitPromiseLike(requestAsync())
+    return requestAsync().await()
 }

@@ -4,7 +4,7 @@ package web.mediadevices
 
 import js.array.ReadonlyArray
 import js.promise.Promise
-import js.promise.internal.awaitPromiseLike
+import js.promise.await
 import web.events.Event
 import web.events.EventHandler
 import web.events.EventTarget
@@ -66,7 +66,7 @@ private constructor() :
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaDevices/enumerateDevices)
  */
 suspend inline fun MediaDevices.enumerateDevices(): ReadonlyArray<MediaDeviceInfo> {
-    return awaitPromiseLike(enumerateDevicesAsync())
+    return enumerateDevicesAsync().await()
 }
 
 /**
@@ -75,7 +75,7 @@ suspend inline fun MediaDevices.enumerateDevices(): ReadonlyArray<MediaDeviceInf
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaDevices/getDisplayMedia)
  */
 suspend inline fun MediaDevices.getDisplayMedia(options: DisplayMediaStreamOptions): MediaStream {
-    return awaitPromiseLike(getDisplayMediaAsync(options = options))
+    return getDisplayMediaAsync(options = options).await()
 }
 
 /**
@@ -84,7 +84,7 @@ suspend inline fun MediaDevices.getDisplayMedia(options: DisplayMediaStreamOptio
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaDevices/getDisplayMedia)
  */
 suspend inline fun MediaDevices.getDisplayMedia(): MediaStream {
-    return awaitPromiseLike(getDisplayMediaAsync())
+    return getDisplayMediaAsync().await()
 }
 
 /**
@@ -93,7 +93,7 @@ suspend inline fun MediaDevices.getDisplayMedia(): MediaStream {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaDevices/getUserMedia)
  */
 suspend inline fun MediaDevices.getUserMedia(constraints: MediaStreamConstraints): MediaStream {
-    return awaitPromiseLike(getUserMediaAsync(constraints = constraints))
+    return getUserMediaAsync(constraints = constraints).await()
 }
 
 /**
@@ -102,5 +102,5 @@ suspend inline fun MediaDevices.getUserMedia(constraints: MediaStreamConstraints
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaDevices/getUserMedia)
  */
 suspend inline fun MediaDevices.getUserMedia(): MediaStream {
-    return awaitPromiseLike(getUserMediaAsync())
+    return getUserMediaAsync().await()
 }

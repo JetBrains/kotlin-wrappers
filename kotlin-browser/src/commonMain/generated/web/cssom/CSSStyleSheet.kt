@@ -3,7 +3,7 @@
 package web.cssom
 
 import js.promise.Promise
-import js.promise.internal.awaitPromiseLike
+import js.promise.await
 import kotlin.js.JsName
 import kotlin.js.definedExternally
 
@@ -68,5 +68,5 @@ open external class CSSStyleSheet(
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleSheet/replace)
  */
 suspend inline fun CSSStyleSheet.replace(text: String): CSSStyleSheet {
-    return awaitPromiseLike(replaceAsync(text = text))
+    return replaceAsync(text = text).await()
 }

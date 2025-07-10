@@ -4,7 +4,7 @@ package web.html
 
 import js.core.Void
 import js.promise.Promise
-import js.promise.internal.awaitPromiseLike
+import js.promise.await
 import web.dom.HTMLOrSVGImageElement
 import web.gl.TexImageSource
 import web.gpu.GPUCopyExternalImageSource
@@ -172,5 +172,5 @@ protected constructor() :
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLImageElement/decode)
  */
 suspend inline fun HTMLImageElement.decode() {
-    awaitPromiseLike(decodeAsync())
+    decodeAsync().await()
 }

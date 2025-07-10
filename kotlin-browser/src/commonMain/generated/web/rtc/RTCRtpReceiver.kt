@@ -4,7 +4,7 @@ package web.rtc
 
 import js.array.ReadonlyArray
 import js.promise.Promise
-import js.promise.internal.awaitPromiseLike
+import js.promise.await
 import web.mediastreams.MediaStreamTrack
 import web.time.DOMHighResTimeStamp
 import kotlin.js.JsName
@@ -89,5 +89,5 @@ private constructor() {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCRtpReceiver/getStats)
  */
 suspend inline fun RTCRtpReceiver.getStats(): RTCStatsReport {
-    return awaitPromiseLike(getStatsAsync())
+    return getStatsAsync().await()
 }

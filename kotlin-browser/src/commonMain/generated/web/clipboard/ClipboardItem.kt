@@ -7,7 +7,7 @@ import js.core.JsAny
 import js.core.JsString
 import js.objects.ReadonlyRecord
 import js.promise.Promise
-import js.promise.internal.awaitPromiseLike
+import js.promise.await
 import web.blob.Blob
 import kotlin.js.JsName
 import kotlin.js.definedExternally
@@ -60,5 +60,5 @@ open external class ClipboardItem(
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ClipboardItem/getType)
  */
 suspend inline fun ClipboardItem.getType(type: String): Blob {
-    return awaitPromiseLike(getTypeAsync(type = type))
+    return getTypeAsync(type = type).await()
 }

@@ -9,7 +9,7 @@ package web.streams
 import js.core.Void
 import js.errors.JsError
 import js.promise.Promise
-import js.promise.internal.awaitPromiseLike
+import js.promise.await
 import kotlin.js.JsName
 import kotlin.js.definedExternally
 
@@ -31,12 +31,12 @@ sealed external interface ReadableStreamGenericReader {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStreamBYOBReader/cancel)
  */
 suspend inline fun ReadableStreamGenericReader.cancel(reason: JsError?) {
-    awaitPromiseLike(cancelAsync(reason = reason))
+    cancelAsync(reason = reason).await()
 }
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStreamBYOBReader/cancel)
  */
 suspend inline fun ReadableStreamGenericReader.cancel() {
-    awaitPromiseLike(cancelAsync())
+    cancelAsync().await()
 }

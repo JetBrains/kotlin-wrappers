@@ -5,7 +5,7 @@ package web.payment
 import js.core.JsAny
 import js.core.Void
 import js.promise.Promise
-import js.promise.internal.awaitPromiseLike
+import js.promise.await
 import web.events.EventHandler
 import web.events.EventInstance
 import web.events.EventTarget
@@ -112,7 +112,7 @@ private constructor() :
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentResponse/complete)
  */
 suspend inline fun PaymentResponse.complete(result: PaymentComplete) {
-    awaitPromiseLike(completeAsync(result = result))
+    completeAsync(result = result).await()
 }
 
 /**
@@ -121,7 +121,7 @@ suspend inline fun PaymentResponse.complete(result: PaymentComplete) {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentResponse/complete)
  */
 suspend inline fun PaymentResponse.complete() {
-    awaitPromiseLike(completeAsync())
+    completeAsync().await()
 }
 
 /**
@@ -130,7 +130,7 @@ suspend inline fun PaymentResponse.complete() {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentResponse/retry)
  */
 suspend inline fun PaymentResponse.retry(errorFields: PaymentValidationErrors) {
-    awaitPromiseLike(retryAsync(errorFields = errorFields))
+    retryAsync(errorFields = errorFields).await()
 }
 
 /**
@@ -139,7 +139,7 @@ suspend inline fun PaymentResponse.retry(errorFields: PaymentValidationErrors) {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentResponse/retry)
  */
 suspend inline fun PaymentResponse.retry() {
-    awaitPromiseLike(retryAsync())
+    retryAsync().await()
 }
 
 /**

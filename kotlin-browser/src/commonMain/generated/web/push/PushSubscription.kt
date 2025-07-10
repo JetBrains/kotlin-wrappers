@@ -6,7 +6,7 @@ import js.buffer.ArrayBuffer
 import js.core.JsBoolean
 import js.core.JsPrimitives.toBoolean
 import js.promise.Promise
-import js.promise.internal.awaitPromiseLike
+import js.promise.await
 import web.time.EpochTimeStamp
 import kotlin.js.JsName
 
@@ -68,5 +68,5 @@ private constructor() {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PushSubscription/unsubscribe)
  */
 suspend inline fun PushSubscription.unsubscribe(): Boolean {
-    return awaitPromiseLike(unsubscribeAsync()).toBoolean()
+    return unsubscribeAsync().await().toBoolean()
 }

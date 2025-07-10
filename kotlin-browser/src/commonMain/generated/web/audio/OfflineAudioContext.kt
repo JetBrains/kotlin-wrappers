@@ -4,7 +4,7 @@ package web.audio
 
 import js.core.Void
 import js.promise.Promise
-import js.promise.internal.awaitPromiseLike
+import js.promise.await
 import web.events.EventHandler
 import web.events.EventInstance
 import kotlin.js.JsName
@@ -66,7 +66,7 @@ open external class OfflineAudioContext(
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OfflineAudioContext/resume)
  */
 suspend inline fun OfflineAudioContext.resume() {
-    awaitPromiseLike(resumeAsync())
+    resumeAsync().await()
 }
 
 /**
@@ -75,7 +75,7 @@ suspend inline fun OfflineAudioContext.resume() {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OfflineAudioContext/startRendering)
  */
 suspend inline fun OfflineAudioContext.startRendering(): AudioBuffer {
-    return awaitPromiseLike(startRenderingAsync())
+    return startRenderingAsync().await()
 }
 
 /**
@@ -84,7 +84,7 @@ suspend inline fun OfflineAudioContext.startRendering(): AudioBuffer {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OfflineAudioContext/suspend)
  */
 suspend inline fun OfflineAudioContext.suspend(suspendTime: Double) {
-    awaitPromiseLike(suspendAsync(suspendTime = suspendTime))
+    suspendAsync(suspendTime = suspendTime).await()
 }
 
 /**

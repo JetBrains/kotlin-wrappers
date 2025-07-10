@@ -5,7 +5,7 @@ package web.fs
 import js.core.UInt53
 import js.core.Void
 import js.promise.Promise
-import js.promise.internal.awaitPromiseLike
+import js.promise.await
 import web.streams.WritableStream
 import kotlin.js.JsName
 
@@ -49,7 +49,7 @@ private constructor() :
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemWritableFileStream/seek)
  */
 suspend inline fun FileSystemWritableFileStream.seek(position: UInt53) {
-    awaitPromiseLike(seekAsync(position = position))
+    seekAsync(position = position).await()
 }
 
 /**
@@ -58,7 +58,7 @@ suspend inline fun FileSystemWritableFileStream.seek(position: UInt53) {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemWritableFileStream/truncate)
  */
 suspend inline fun FileSystemWritableFileStream.truncate(size: UInt53) {
-    awaitPromiseLike(truncateAsync(size = size))
+    truncateAsync(size = size).await()
 }
 
 /**
@@ -67,5 +67,5 @@ suspend inline fun FileSystemWritableFileStream.truncate(size: UInt53) {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemWritableFileStream/write)
  */
 suspend inline fun FileSystemWritableFileStream.write(data: FileSystemWriteChunkType) {
-    awaitPromiseLike(writeAsync(data = data))
+    writeAsync(data = data).await()
 }

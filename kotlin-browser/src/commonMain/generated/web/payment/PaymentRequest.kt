@@ -8,7 +8,7 @@ import js.core.JsPrimitives.toBoolean
 import js.core.Void
 import js.promise.Promise
 import js.promise.PromiseLike
-import js.promise.internal.awaitPromiseLike
+import js.promise.await
 import web.events.EventHandler
 import web.events.EventInstance
 import web.events.EventTarget
@@ -72,7 +72,7 @@ open external class PaymentRequest(
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentRequest/abort)
  */
 suspend inline fun PaymentRequest.abort() {
-    awaitPromiseLike(abortAsync())
+    abortAsync().await()
 }
 
 /**
@@ -81,7 +81,7 @@ suspend inline fun PaymentRequest.abort() {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentRequest/canMakePayment)
  */
 suspend inline fun PaymentRequest.canMakePayment(): Boolean {
-    return awaitPromiseLike(canMakePaymentAsync()).toBoolean()
+    return canMakePaymentAsync().await().toBoolean()
 }
 
 /**
@@ -90,7 +90,7 @@ suspend inline fun PaymentRequest.canMakePayment(): Boolean {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentRequest/show)
  */
 suspend inline fun PaymentRequest.show(detailsPromise: PaymentDetailsUpdate): PaymentResponse {
-    return awaitPromiseLike(showAsync(detailsPromise = detailsPromise))
+    return showAsync(detailsPromise = detailsPromise).await()
 }
 
 /**
@@ -99,11 +99,11 @@ suspend inline fun PaymentRequest.show(detailsPromise: PaymentDetailsUpdate): Pa
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentRequest/show)
  */
 suspend inline fun PaymentRequest.show(): PaymentResponse {
-    return awaitPromiseLike(showAsync())
+    return showAsync().await()
 }
 
 suspend inline fun PaymentRequest.show(detailsPromise: PromiseLike<PaymentDetailsUpdate>): PaymentResponse {
-    return awaitPromiseLike(showAsync(detailsPromise = detailsPromise))
+    return showAsync(detailsPromise = detailsPromise).await()
 }
 
 /**

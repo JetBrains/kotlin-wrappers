@@ -5,7 +5,7 @@ package web.cookie
 import js.array.ReadonlyArray
 import js.core.Void
 import js.promise.Promise
-import js.promise.internal.awaitPromiseLike
+import js.promise.await
 import kotlin.js.JsName
 
 /**
@@ -47,7 +47,7 @@ private constructor() {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CookieStoreManager/getSubscriptions)
  */
 suspend inline fun CookieStoreManager.getSubscriptions(): ReadonlyArray<CookieStoreGetOptions> {
-    return awaitPromiseLike(getSubscriptionsAsync())
+    return getSubscriptionsAsync().await()
 }
 
 /**
@@ -56,7 +56,7 @@ suspend inline fun CookieStoreManager.getSubscriptions(): ReadonlyArray<CookieSt
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CookieStoreManager/subscribe)
  */
 suspend inline fun CookieStoreManager.subscribe(subscriptions: ReadonlyArray<CookieStoreGetOptions>) {
-    awaitPromiseLike(subscribeAsync(subscriptions = subscriptions))
+    subscribeAsync(subscriptions = subscriptions).await()
 }
 
 /**
@@ -65,5 +65,5 @@ suspend inline fun CookieStoreManager.subscribe(subscriptions: ReadonlyArray<Coo
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CookieStoreManager/unsubscribe)
  */
 suspend inline fun CookieStoreManager.unsubscribe(subscriptions: ReadonlyArray<CookieStoreGetOptions>) {
-    awaitPromiseLike(unsubscribeAsync(subscriptions = subscriptions))
+    unsubscribeAsync(subscriptions = subscriptions).await()
 }

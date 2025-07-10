@@ -5,7 +5,7 @@ package web.fs
 import js.core.JsBoolean
 import js.core.JsPrimitives.toBoolean
 import js.promise.Promise
-import js.promise.internal.awaitPromiseLike
+import js.promise.await
 import js.serialization.Serializable
 import kotlin.js.JsName
 
@@ -47,5 +47,5 @@ private constructor() :
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemHandle/isSameEntry)
  */
 suspend inline fun FileSystemHandle.isSameEntry(other: FileSystemHandle): Boolean {
-    return awaitPromiseLike(isSameEntryAsync(other = other)).toBoolean()
+    return isSameEntryAsync(other = other).await().toBoolean()
 }

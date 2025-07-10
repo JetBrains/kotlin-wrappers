@@ -5,7 +5,7 @@ package web.clipboard
 import js.core.JsString
 import js.core.Void
 import js.promise.Promise
-import js.promise.internal.awaitPromiseLike
+import js.promise.await
 import web.events.EventTarget
 import kotlin.js.JsName
 
@@ -57,7 +57,7 @@ private constructor() :
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Clipboard/read)
  */
 suspend inline fun Clipboard.read(): ClipboardItems {
-    return awaitPromiseLike(readAsync())
+    return readAsync().await()
 }
 
 /**
@@ -66,7 +66,7 @@ suspend inline fun Clipboard.read(): ClipboardItems {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Clipboard/readText)
  */
 suspend inline fun Clipboard.readText(): String {
-    return awaitPromiseLike(readTextAsync()).toString()
+    return readTextAsync().await().toString()
 }
 
 /**
@@ -75,7 +75,7 @@ suspend inline fun Clipboard.readText(): String {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Clipboard/write)
  */
 suspend inline fun Clipboard.write(data: ClipboardItems) {
-    awaitPromiseLike(writeAsync(data = data))
+    writeAsync(data = data).await()
 }
 
 /**
@@ -84,5 +84,5 @@ suspend inline fun Clipboard.write(data: ClipboardItems) {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Clipboard/writeText)
  */
 suspend inline fun Clipboard.writeText(data: String) {
-    awaitPromiseLike(writeTextAsync(data = data))
+    writeTextAsync(data = data).await()
 }

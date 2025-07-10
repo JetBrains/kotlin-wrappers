@@ -7,7 +7,7 @@ import js.core.JsBoolean
 import js.core.JsPrimitives.toBoolean
 import js.core.JsString
 import js.promise.Promise
-import js.promise.internal.awaitPromiseLike
+import js.promise.await
 import web.http.Request
 import web.http.Response
 import web.url.URL
@@ -84,7 +84,7 @@ private constructor() {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CacheStorage/delete)
  */
 suspend inline fun CacheStorage.delete(cacheName: String): Boolean {
-    return awaitPromiseLike(deleteAsync(cacheName = cacheName)).toBoolean()
+    return deleteAsync(cacheName = cacheName).await().toBoolean()
 }
 
 /**
@@ -93,7 +93,7 @@ suspend inline fun CacheStorage.delete(cacheName: String): Boolean {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CacheStorage/has)
  */
 suspend inline fun CacheStorage.has(cacheName: String): Boolean {
-    return awaitPromiseLike(hasAsync(cacheName = cacheName)).toBoolean()
+    return hasAsync(cacheName = cacheName).await().toBoolean()
 }
 
 /**
@@ -102,7 +102,7 @@ suspend inline fun CacheStorage.has(cacheName: String): Boolean {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CacheStorage/keys)
  */
 suspend inline fun CacheStorage.keys(): ReadonlyArray<JsString> {
-    return awaitPromiseLike(keysAsync())
+    return keysAsync().await()
 }
 
 /**
@@ -114,12 +114,10 @@ suspend inline fun CacheStorage.match(
     url: String,
     options: MultiCacheQueryOptions,
 ): Response? {
-    return awaitPromiseLike(
-        matchAsync(
-            url = url,
-            options = options
-        )
-    )
+    return matchAsync(
+        url = url,
+        options = options
+    ).await()
 }
 
 /**
@@ -130,43 +128,39 @@ suspend inline fun CacheStorage.match(
 suspend inline fun CacheStorage.match(
     url: String,
 ): Response? {
-    return awaitPromiseLike(matchAsync(url = url))
+    return matchAsync(url = url).await()
 }
 
 suspend inline fun CacheStorage.match(
     url: URL,
     options: MultiCacheQueryOptions,
 ): Response? {
-    return awaitPromiseLike(
-        matchAsync(
-            url = url,
-            options = options
-        )
-    )
+    return matchAsync(
+        url = url,
+        options = options
+    ).await()
 }
 
 suspend inline fun CacheStorage.match(
     url: URL,
 ): Response? {
-    return awaitPromiseLike(matchAsync(url = url))
+    return matchAsync(url = url).await()
 }
 
 suspend inline fun CacheStorage.match(
     request: Request,
     options: MultiCacheQueryOptions,
 ): Response? {
-    return awaitPromiseLike(
-        matchAsync(
-            request = request,
-            options = options
-        )
-    )
+    return matchAsync(
+        request = request,
+        options = options
+    ).await()
 }
 
 suspend inline fun CacheStorage.match(
     request: Request,
 ): Response? {
-    return awaitPromiseLike(matchAsync(request = request))
+    return matchAsync(request = request).await()
 }
 
 /**
@@ -175,5 +169,5 @@ suspend inline fun CacheStorage.match(
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CacheStorage/open)
  */
 suspend inline fun CacheStorage.open(cacheName: String): Cache {
-    return awaitPromiseLike(openAsync(cacheName = cacheName))
+    return openAsync(cacheName = cacheName).await()
 }

@@ -8,7 +8,7 @@ import js.core.Int53
 import js.core.JsString
 import js.core.UInt53
 import js.promise.Promise
-import js.promise.internal.awaitPromiseLike
+import js.promise.await
 import js.serialization.Serializable
 import js.typedarrays.Uint8Array
 import web.images.ImageBitmapSource
@@ -89,7 +89,7 @@ open external class Blob(
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Blob/arrayBuffer)
  */
 suspend inline fun Blob.arrayBuffer(): ArrayBuffer {
-    return awaitPromiseLike(arrayBufferAsync())
+    return arrayBufferAsync().await()
 }
 
 /**
@@ -98,7 +98,7 @@ suspend inline fun Blob.arrayBuffer(): ArrayBuffer {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Blob/bytes)
  */
 suspend inline fun Blob.bytes(): Uint8Array<ArrayBuffer> {
-    return awaitPromiseLike(bytesAsync())
+    return bytesAsync().await()
 }
 
 /**
@@ -107,5 +107,5 @@ suspend inline fun Blob.bytes(): Uint8Array<ArrayBuffer> {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Blob/text)
  */
 suspend inline fun Blob.text(): String {
-    return awaitPromiseLike(textAsync()).toString()
+    return textAsync().await().toString()
 }

@@ -7,7 +7,7 @@ import js.buffer.AllowSharedBufferSource
 import js.core.Int53
 import js.core.UInt53
 import js.promise.Promise
-import js.promise.internal.awaitPromiseLike
+import js.promise.await
 import js.serialization.Serializable
 import js.serialization.Transferable
 import web.canvas.CanvasImageSource
@@ -147,12 +147,10 @@ suspend inline fun VideoFrame.copyTo(
     destination: AllowSharedBufferSource,
     options: VideoFrameCopyToOptions,
 ): ReadonlyArray<PlaneLayout> {
-    return awaitPromiseLike(
-        copyToAsync(
-            destination = destination,
-            options = options
-        )
-    )
+    return copyToAsync(
+        destination = destination,
+        options = options
+    ).await()
 }
 
 /**
@@ -163,5 +161,5 @@ suspend inline fun VideoFrame.copyTo(
 suspend inline fun VideoFrame.copyTo(
     destination: AllowSharedBufferSource,
 ): ReadonlyArray<PlaneLayout> {
-    return awaitPromiseLike(copyToAsync(destination = destination))
+    return copyToAsync(destination = destination).await()
 }

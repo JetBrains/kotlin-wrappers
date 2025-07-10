@@ -3,7 +3,7 @@
 package web.gpu
 
 import js.promise.Promise
-import js.promise.internal.awaitPromiseLike
+import js.promise.await
 import kotlin.js.JsName
 
 /**
@@ -25,5 +25,5 @@ private constructor() :
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUShaderModule/getCompilationInfo)
  */
 suspend inline fun GPUShaderModule.getCompilationInfo(): GPUCompilationInfo {
-    return awaitPromiseLike(getCompilationInfoAsync())
+    return getCompilationInfoAsync().await()
 }

@@ -9,10 +9,10 @@ import js.errors.JsError
 import js.iterable.AsyncIterable
 import js.iterable.AsyncIterator
 import js.promise.Promise
-import js.promise.internal.awaitPromiseLike
+import js.promise.await
 import js.serialization.Transferable
 import web.abort.AbortController
-import web.abort.internal.awaitPromiseLike
+import web.abort.internal.awaitCancellable
 import web.abort.internal.createAbortable
 import web.abort.internal.patchAbortOptions
 import kotlin.js.JsName
@@ -97,7 +97,7 @@ open external class ReadableStream<R : JsAny?>(
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStream/cancel)
  */
 suspend inline fun <R : JsAny?> ReadableStream<R>.cancel(reason: JsError?) {
-    awaitPromiseLike(cancelAsync(reason = reason))
+    cancelAsync(reason = reason).await()
 }
 
 /**
@@ -106,7 +106,7 @@ suspend inline fun <R : JsAny?> ReadableStream<R>.cancel(reason: JsError?) {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStream/cancel)
  */
 suspend inline fun <R : JsAny?> ReadableStream<R>.cancel() {
-    awaitPromiseLike(cancelAsync())
+    cancelAsync().await()
 }
 
 /**
@@ -119,12 +119,10 @@ suspend inline fun <R : JsAny?> ReadableStream<R>.pipeTo(
     options: StreamPipeOptions,
 ) {
     val controller = AbortController()
-    awaitPromiseLike(
-        pipeToAsync(
-            destination = destination,
-            options = patchAbortOptions(options, controller)
-        ), controller
-    )
+    pipeToAsync(
+        destination = destination,
+        options = patchAbortOptions(options, controller)
+    ).awaitCancellable(controller)
 }
 
 /**
@@ -136,10 +134,8 @@ suspend inline fun <R : JsAny?> ReadableStream<R>.pipeTo(
     destination: WritableStream<R>,
 ) {
     val controller = AbortController()
-    awaitPromiseLike(
-        pipeToAsync(
-            destination = destination,
-            options = createAbortable(controller.signal)
-        ), controller
-    )
+    pipeToAsync(
+        destination = destination,
+        options = createAbortable(controller.signal)
+    ).awaitCancellable(controller)
 }

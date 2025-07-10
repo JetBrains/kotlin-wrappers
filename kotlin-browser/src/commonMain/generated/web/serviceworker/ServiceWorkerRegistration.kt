@@ -7,7 +7,7 @@ import js.core.JsBoolean
 import js.core.JsPrimitives.toBoolean
 import js.core.Void
 import js.promise.Promise
-import js.promise.internal.awaitPromiseLike
+import js.promise.await
 import web.cookie.CookieStoreManager
 import web.events.Event
 import web.events.EventHandler
@@ -131,7 +131,7 @@ private constructor() :
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/getNotifications)
  */
 suspend inline fun ServiceWorkerRegistration.getNotifications(filter: GetNotificationOptions): ReadonlyArray<Notification> {
-    return awaitPromiseLike(getNotificationsAsync(filter = filter))
+    return getNotificationsAsync(filter = filter).await()
 }
 
 /**
@@ -140,7 +140,7 @@ suspend inline fun ServiceWorkerRegistration.getNotifications(filter: GetNotific
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/getNotifications)
  */
 suspend inline fun ServiceWorkerRegistration.getNotifications(): ReadonlyArray<Notification> {
-    return awaitPromiseLike(getNotificationsAsync())
+    return getNotificationsAsync().await()
 }
 
 /**
@@ -152,12 +152,10 @@ suspend inline fun ServiceWorkerRegistration.showNotification(
     title: String,
     options: NotificationOptions,
 ) {
-    awaitPromiseLike(
-        showNotificationAsync(
-            title = title,
-            options = options
-        )
-    )
+    showNotificationAsync(
+        title = title,
+        options = options
+    ).await()
 }
 
 /**
@@ -168,7 +166,7 @@ suspend inline fun ServiceWorkerRegistration.showNotification(
 suspend inline fun ServiceWorkerRegistration.showNotification(
     title: String,
 ) {
-    awaitPromiseLike(showNotificationAsync(title = title))
+    showNotificationAsync(title = title).await()
 }
 
 /**
@@ -177,7 +175,7 @@ suspend inline fun ServiceWorkerRegistration.showNotification(
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/unregister)
  */
 suspend inline fun ServiceWorkerRegistration.unregister(): Boolean {
-    return awaitPromiseLike(unregisterAsync()).toBoolean()
+    return unregisterAsync().await().toBoolean()
 }
 
 /**
@@ -186,7 +184,7 @@ suspend inline fun ServiceWorkerRegistration.unregister(): Boolean {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/update)
  */
 suspend inline fun ServiceWorkerRegistration.update(): ServiceWorkerRegistration {
-    return awaitPromiseLike(updateAsync())
+    return updateAsync().await()
 }
 
 /**

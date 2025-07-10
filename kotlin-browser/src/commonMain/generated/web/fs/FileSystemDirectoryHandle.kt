@@ -7,7 +7,7 @@ import js.collections.AsyncMapLike
 import js.core.JsString
 import js.core.Void
 import js.promise.Promise
-import js.promise.internal.awaitPromiseLike
+import js.promise.await
 import js.serialization.Serializable
 import kotlin.js.JsName
 import kotlin.js.definedExternally
@@ -77,12 +77,10 @@ suspend inline fun FileSystemDirectoryHandle.getDirectoryHandle(
     name: String,
     options: FileSystemGetDirectoryOptions,
 ): FileSystemDirectoryHandle {
-    return awaitPromiseLike(
-        getDirectoryHandleAsync(
-            name = name,
-            options = options
-        )
-    )
+    return getDirectoryHandleAsync(
+        name = name,
+        options = options
+    ).await()
 }
 
 /**
@@ -93,7 +91,7 @@ suspend inline fun FileSystemDirectoryHandle.getDirectoryHandle(
 suspend inline fun FileSystemDirectoryHandle.getDirectoryHandle(
     name: String,
 ): FileSystemDirectoryHandle {
-    return awaitPromiseLike(getDirectoryHandleAsync(name = name))
+    return getDirectoryHandleAsync(name = name).await()
 }
 
 /**
@@ -105,12 +103,10 @@ suspend inline fun FileSystemDirectoryHandle.getFileHandle(
     name: String,
     options: FileSystemGetFileOptions,
 ): FileSystemFileHandle {
-    return awaitPromiseLike(
-        getFileHandleAsync(
-            name = name,
-            options = options
-        )
-    )
+    return getFileHandleAsync(
+        name = name,
+        options = options
+    ).await()
 }
 
 /**
@@ -121,7 +117,7 @@ suspend inline fun FileSystemDirectoryHandle.getFileHandle(
 suspend inline fun FileSystemDirectoryHandle.getFileHandle(
     name: String,
 ): FileSystemFileHandle {
-    return awaitPromiseLike(getFileHandleAsync(name = name))
+    return getFileHandleAsync(name = name).await()
 }
 
 /**
@@ -133,12 +129,10 @@ suspend inline fun FileSystemDirectoryHandle.removeEntry(
     name: String,
     options: FileSystemRemoveOptions,
 ) {
-    awaitPromiseLike(
-        removeEntryAsync(
-            name = name,
-            options = options
-        )
-    )
+    removeEntryAsync(
+        name = name,
+        options = options
+    ).await()
 }
 
 /**
@@ -149,7 +143,7 @@ suspend inline fun FileSystemDirectoryHandle.removeEntry(
 suspend inline fun FileSystemDirectoryHandle.removeEntry(
     name: String,
 ) {
-    awaitPromiseLike(removeEntryAsync(name = name))
+    removeEntryAsync(name = name).await()
 }
 
 /**
@@ -158,5 +152,5 @@ suspend inline fun FileSystemDirectoryHandle.removeEntry(
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemDirectoryHandle/resolve)
  */
 suspend inline fun FileSystemDirectoryHandle.resolve(possibleDescendant: FileSystemHandle): ReadonlyArray<JsString>? {
-    return awaitPromiseLike(resolveAsync(possibleDescendant = possibleDescendant))
+    return resolveAsync(possibleDescendant = possibleDescendant).await()
 }

@@ -5,7 +5,7 @@ package web.push
 import js.array.ReadonlyArray
 import js.core.JsString
 import js.promise.Promise
-import js.promise.internal.awaitPromiseLike
+import js.promise.await
 import web.permissions.PermissionState
 import kotlin.js.JsName
 import kotlin.js.definedExternally
@@ -58,7 +58,7 @@ private constructor() {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PushManager/getSubscription)
  */
 suspend inline fun PushManager.getSubscription(): PushSubscription? {
-    return awaitPromiseLike(getSubscriptionAsync())
+    return getSubscriptionAsync().await()
 }
 
 /**
@@ -67,7 +67,7 @@ suspend inline fun PushManager.getSubscription(): PushSubscription? {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PushManager/permissionState)
  */
 suspend inline fun PushManager.permissionState(options: PushSubscriptionOptionsInit): PermissionState {
-    return awaitPromiseLike(permissionStateAsync(options = options))
+    return permissionStateAsync(options = options).await()
 }
 
 /**
@@ -76,7 +76,7 @@ suspend inline fun PushManager.permissionState(options: PushSubscriptionOptionsI
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PushManager/permissionState)
  */
 suspend inline fun PushManager.permissionState(): PermissionState {
-    return awaitPromiseLike(permissionStateAsync())
+    return permissionStateAsync().await()
 }
 
 /**
@@ -85,7 +85,7 @@ suspend inline fun PushManager.permissionState(): PermissionState {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PushManager/subscribe)
  */
 suspend inline fun PushManager.subscribe(options: PushSubscriptionOptionsInit): PushSubscription {
-    return awaitPromiseLike(subscribeAsync(options = options))
+    return subscribeAsync(options = options).await()
 }
 
 /**
@@ -94,5 +94,5 @@ suspend inline fun PushManager.subscribe(options: PushSubscriptionOptionsInit): 
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PushManager/subscribe)
  */
 suspend inline fun PushManager.subscribe(): PushSubscription {
-    return awaitPromiseLike(subscribeAsync())
+    return subscribeAsync().await()
 }

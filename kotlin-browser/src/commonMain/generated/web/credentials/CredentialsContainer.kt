@@ -4,9 +4,9 @@ package web.credentials
 
 import js.core.Void
 import js.promise.Promise
-import js.promise.internal.awaitPromiseLike
+import js.promise.await
 import web.abort.AbortController
-import web.abort.internal.awaitPromiseLike
+import web.abort.internal.awaitCancellable
 import web.abort.internal.createAbortable
 import web.abort.internal.patchAbortOptions
 import kotlin.js.JsName
@@ -60,7 +60,7 @@ private constructor() {
  */
 suspend inline fun CredentialsContainer.create(options: CredentialCreationOptions): Credential? {
     val controller = AbortController()
-    return awaitPromiseLike(createAsync(options = patchAbortOptions(options, controller)), controller)
+    return createAsync(options = patchAbortOptions(options, controller)).awaitCancellable(controller)
 }
 
 /**
@@ -70,11 +70,9 @@ suspend inline fun CredentialsContainer.create(options: CredentialCreationOption
  */
 suspend inline fun CredentialsContainer.create(): Credential? {
     val controller = AbortController()
-    return awaitPromiseLike(
-        createAsync(
-            options = createAbortable(controller.signal)
-        ), controller
-    )
+    return createAsync(
+        options = createAbortable(controller.signal)
+    ).awaitCancellable(controller)
 }
 
 /**
@@ -84,7 +82,7 @@ suspend inline fun CredentialsContainer.create(): Credential? {
  */
 suspend inline fun CredentialsContainer.get(options: CredentialRequestOptions): Credential? {
     val controller = AbortController()
-    return awaitPromiseLike(getAsync(options = patchAbortOptions(options, controller)), controller)
+    return getAsync(options = patchAbortOptions(options, controller)).awaitCancellable(controller)
 }
 
 /**
@@ -94,11 +92,9 @@ suspend inline fun CredentialsContainer.get(options: CredentialRequestOptions): 
  */
 suspend inline fun CredentialsContainer.get(): Credential? {
     val controller = AbortController()
-    return awaitPromiseLike(
-        getAsync(
-            options = createAbortable(controller.signal)
-        ), controller
-    )
+    return getAsync(
+        options = createAbortable(controller.signal)
+    ).awaitCancellable(controller)
 }
 
 /**
@@ -107,7 +103,7 @@ suspend inline fun CredentialsContainer.get(): Credential? {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CredentialsContainer/preventSilentAccess)
  */
 suspend inline fun CredentialsContainer.preventSilentAccess() {
-    awaitPromiseLike(preventSilentAccessAsync())
+    preventSilentAccessAsync().await()
 }
 
 /**
@@ -116,5 +112,5 @@ suspend inline fun CredentialsContainer.preventSilentAccess() {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CredentialsContainer/store)
  */
 suspend inline fun CredentialsContainer.store(credential: Credential) {
-    awaitPromiseLike(storeAsync(credential = credential))
+    storeAsync(credential = credential).await()
 }

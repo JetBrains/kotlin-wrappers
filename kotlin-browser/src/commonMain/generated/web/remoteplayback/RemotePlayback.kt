@@ -6,7 +6,7 @@ import js.core.JsInt
 import js.core.JsPrimitives.toInt
 import js.core.Void
 import js.promise.Promise
-import js.promise.internal.awaitPromiseLike
+import js.promise.await
 import web.events.Event
 import web.events.EventHandler
 import web.events.EventInstance
@@ -75,7 +75,7 @@ private constructor() :
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RemotePlayback/cancelWatchAvailability)
  */
 suspend inline fun RemotePlayback.cancelWatchAvailability(id: Int) {
-    awaitPromiseLike(cancelWatchAvailabilityAsync(id = id))
+    cancelWatchAvailabilityAsync(id = id).await()
 }
 
 /**
@@ -84,7 +84,7 @@ suspend inline fun RemotePlayback.cancelWatchAvailability(id: Int) {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RemotePlayback/cancelWatchAvailability)
  */
 suspend inline fun RemotePlayback.cancelWatchAvailability() {
-    awaitPromiseLike(cancelWatchAvailabilityAsync())
+    cancelWatchAvailabilityAsync().await()
 }
 
 /**
@@ -93,7 +93,7 @@ suspend inline fun RemotePlayback.cancelWatchAvailability() {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RemotePlayback/prompt)
  */
 suspend inline fun RemotePlayback.prompt() {
-    awaitPromiseLike(promptAsync())
+    promptAsync().await()
 }
 
 /**
@@ -102,7 +102,7 @@ suspend inline fun RemotePlayback.prompt() {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RemotePlayback/watchAvailability)
  */
 suspend inline fun RemotePlayback.watchAvailability(noinline callback: RemotePlaybackAvailabilityCallback): Int {
-    return awaitPromiseLike(watchAvailabilityAsync(callback = callback)).toInt()
+    return watchAvailabilityAsync(callback = callback).await().toInt()
 }
 
 /**

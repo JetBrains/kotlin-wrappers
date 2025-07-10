@@ -5,7 +5,7 @@ package web.canvas
 import js.core.JsAny
 import js.core.UInt53
 import js.promise.Promise
-import js.promise.internal.awaitPromiseLike
+import js.promise.await
 import js.serialization.Transferable
 import web.blob.Blob
 import web.events.Event
@@ -85,7 +85,7 @@ open external class OffscreenCanvas(
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OffscreenCanvas/convertToBlob)
  */
 suspend inline fun OffscreenCanvas.convertToBlob(options: ImageEncodeOptions): Blob {
-    return awaitPromiseLike(convertToBlobAsync(options = options))
+    return convertToBlobAsync(options = options).await()
 }
 
 /**
@@ -94,7 +94,7 @@ suspend inline fun OffscreenCanvas.convertToBlob(options: ImageEncodeOptions): B
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OffscreenCanvas/convertToBlob)
  */
 suspend inline fun OffscreenCanvas.convertToBlob(): Blob {
-    return awaitPromiseLike(convertToBlobAsync())
+    return convertToBlobAsync().await()
 }
 
 /**

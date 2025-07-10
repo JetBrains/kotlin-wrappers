@@ -3,7 +3,7 @@
 package web.html
 
 import js.promise.Promise
-import js.promise.internal.awaitPromiseLike
+import js.promise.await
 import web.canvas.CanvasImageSource
 import web.dom.Node
 import web.events.EventHandler
@@ -114,7 +114,7 @@ protected constructor() :
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLVideoElement/requestPictureInPicture)
  */
 suspend inline fun HTMLVideoElement.requestPictureInPicture(): PictureInPictureWindow {
-    return awaitPromiseLike(requestPictureInPictureAsync())
+    return requestPictureInPictureAsync().await()
 }
 
 /**

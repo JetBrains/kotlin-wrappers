@@ -4,7 +4,7 @@ package web.fonts
 
 import js.buffer.BufferSource
 import js.promise.Promise
-import js.promise.internal.awaitPromiseLike
+import js.promise.await
 import kotlin.js.JsName
 import kotlin.js.definedExternally
 
@@ -121,5 +121,5 @@ open external class FontFace(
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FontFace/load)
  */
 suspend inline fun FontFace.load(): FontFace {
-    return awaitPromiseLike(loadAsync())
+    return loadAsync().await()
 }

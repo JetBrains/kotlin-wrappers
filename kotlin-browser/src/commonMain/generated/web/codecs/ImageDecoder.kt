@@ -6,7 +6,7 @@ import js.core.JsBoolean
 import js.core.JsPrimitives.toBoolean
 import js.core.Void
 import js.promise.Promise
-import js.promise.internal.awaitPromiseLike
+import js.promise.await
 import kotlin.js.JsName
 import kotlin.js.definedExternally
 
@@ -86,7 +86,7 @@ open external class ImageDecoder(
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageDecoder/decode)
  */
 suspend inline fun ImageDecoder.decode(options: ImageDecodeOptions): ImageDecodeResult {
-    return awaitPromiseLike(decodeAsync(options = options))
+    return decodeAsync(options = options).await()
 }
 
 /**
@@ -95,7 +95,7 @@ suspend inline fun ImageDecoder.decode(options: ImageDecodeOptions): ImageDecode
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageDecoder/decode)
  */
 suspend inline fun ImageDecoder.decode(): ImageDecodeResult {
-    return awaitPromiseLike(decodeAsync())
+    return decodeAsync().await()
 }
 
 /**
@@ -104,5 +104,5 @@ suspend inline fun ImageDecoder.decode(): ImageDecodeResult {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageDecoder/isTypeSupported_static)
  */
 suspend inline fun ImageDecoder.Companion.isTypeSupported(type: String): Boolean {
-    return awaitPromiseLike(isTypeSupportedAsync(type = type)).toBoolean()
+    return isTypeSupportedAsync(type = type).await().toBoolean()
 }

@@ -3,7 +3,7 @@
 package web.mediacapabilities
 
 import js.promise.Promise
-import js.promise.internal.awaitPromiseLike
+import js.promise.await
 import kotlin.js.JsName
 
 /**
@@ -36,7 +36,7 @@ private constructor() {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaCapabilities/decodingInfo)
  */
 suspend inline fun MediaCapabilities.decodingInfo(configuration: MediaDecodingConfiguration): MediaCapabilitiesDecodingInfo {
-    return awaitPromiseLike(decodingInfoAsync(configuration = configuration))
+    return decodingInfoAsync(configuration = configuration).await()
 }
 
 /**
@@ -45,5 +45,5 @@ suspend inline fun MediaCapabilities.decodingInfo(configuration: MediaDecodingCo
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaCapabilities/encodingInfo)
  */
 suspend inline fun MediaCapabilities.encodingInfo(configuration: MediaEncodingConfiguration): MediaCapabilitiesEncodingInfo {
-    return awaitPromiseLike(encodingInfoAsync(configuration = configuration))
+    return encodingInfoAsync(configuration = configuration).await()
 }

@@ -3,7 +3,7 @@
 package web.imagecapture
 
 import js.promise.Promise
-import js.promise.internal.awaitPromiseLike
+import js.promise.await
 import web.blob.Blob
 import web.images.ImageBitmap
 import web.mediastreams.MediaStreamTrack
@@ -65,7 +65,7 @@ open external class ImageCapture(
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageCapture/getPhotoCapabilities)
  */
 suspend inline fun ImageCapture.getPhotoCapabilities(): PhotoCapabilities {
-    return awaitPromiseLike(getPhotoCapabilitiesAsync())
+    return getPhotoCapabilitiesAsync().await()
 }
 
 /**
@@ -74,7 +74,7 @@ suspend inline fun ImageCapture.getPhotoCapabilities(): PhotoCapabilities {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageCapture/getPhotoSettings)
  */
 suspend inline fun ImageCapture.getPhotoSettings(): PhotoSettings {
-    return awaitPromiseLike(getPhotoSettingsAsync())
+    return getPhotoSettingsAsync().await()
 }
 
 /**
@@ -83,7 +83,7 @@ suspend inline fun ImageCapture.getPhotoSettings(): PhotoSettings {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageCapture/grabFrame)
  */
 suspend inline fun ImageCapture.grabFrame(): ImageBitmap {
-    return awaitPromiseLike(grabFrameAsync())
+    return grabFrameAsync().await()
 }
 
 /**
@@ -92,7 +92,7 @@ suspend inline fun ImageCapture.grabFrame(): ImageBitmap {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageCapture/takePhoto)
  */
 suspend inline fun ImageCapture.takePhoto(photoSettings: PhotoSettings): Blob {
-    return awaitPromiseLike(takePhotoAsync(photoSettings = photoSettings))
+    return takePhotoAsync(photoSettings = photoSettings).await()
 }
 
 /**
@@ -101,5 +101,5 @@ suspend inline fun ImageCapture.takePhoto(photoSettings: PhotoSettings): Blob {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageCapture/takePhoto)
  */
 suspend inline fun ImageCapture.takePhoto(): Blob {
-    return awaitPromiseLike(takePhotoAsync())
+    return takePhotoAsync().await()
 }

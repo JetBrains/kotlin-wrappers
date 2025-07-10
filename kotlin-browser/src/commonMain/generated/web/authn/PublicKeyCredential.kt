@@ -6,7 +6,7 @@ import js.buffer.ArrayBuffer
 import js.core.JsBoolean
 import js.core.JsPrimitives.toBoolean
 import js.promise.Promise
-import js.promise.internal.awaitPromiseLike
+import js.promise.await
 import web.credentials.Credential
 import kotlin.js.JsName
 
@@ -101,7 +101,7 @@ private constructor() :
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PublicKeyCredential/getClientCapabilities_static)
  */
 suspend inline fun PublicKeyCredential.Companion.getClientCapabilities(): PublicKeyCredentialClientCapabilities {
-    return awaitPromiseLike(getClientCapabilitiesAsync())
+    return getClientCapabilitiesAsync().await()
 }
 
 /**
@@ -110,7 +110,7 @@ suspend inline fun PublicKeyCredential.Companion.getClientCapabilities(): Public
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PublicKeyCredential/isConditionalMediationAvailable_static)
  */
 suspend inline fun PublicKeyCredential.Companion.isConditionalMediationAvailable(): Boolean {
-    return awaitPromiseLike(isConditionalMediationAvailableAsync()).toBoolean()
+    return isConditionalMediationAvailableAsync().await().toBoolean()
 }
 
 /**
@@ -119,5 +119,5 @@ suspend inline fun PublicKeyCredential.Companion.isConditionalMediationAvailable
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PublicKeyCredential/isUserVerifyingPlatformAuthenticatorAvailable_static)
  */
 suspend inline fun PublicKeyCredential.Companion.isUserVerifyingPlatformAuthenticatorAvailable(): Boolean {
-    return awaitPromiseLike(isUserVerifyingPlatformAuthenticatorAvailableAsync()).toBoolean()
+    return isUserVerifyingPlatformAuthenticatorAvailableAsync().await().toBoolean()
 }

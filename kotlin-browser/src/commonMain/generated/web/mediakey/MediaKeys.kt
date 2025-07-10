@@ -6,7 +6,7 @@ import js.buffer.BufferSource
 import js.core.JsBoolean
 import js.core.JsPrimitives.toBoolean
 import js.promise.Promise
-import js.promise.internal.awaitPromiseLike
+import js.promise.await
 import kotlin.js.JsName
 import kotlin.js.definedExternally
 
@@ -48,7 +48,7 @@ private constructor() {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeys/getStatusForPolicy)
  */
 suspend inline fun MediaKeys.getStatusForPolicy(policy: MediaKeysPolicy): MediaKeyStatus {
-    return awaitPromiseLike(getStatusForPolicyAsync(policy = policy))
+    return getStatusForPolicyAsync(policy = policy).await()
 }
 
 /**
@@ -57,7 +57,7 @@ suspend inline fun MediaKeys.getStatusForPolicy(policy: MediaKeysPolicy): MediaK
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeys/getStatusForPolicy)
  */
 suspend inline fun MediaKeys.getStatusForPolicy(): MediaKeyStatus {
-    return awaitPromiseLike(getStatusForPolicyAsync())
+    return getStatusForPolicyAsync().await()
 }
 
 /**
@@ -66,5 +66,5 @@ suspend inline fun MediaKeys.getStatusForPolicy(): MediaKeyStatus {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeys/setServerCertificate)
  */
 suspend inline fun MediaKeys.setServerCertificate(serverCertificate: BufferSource): Boolean {
-    return awaitPromiseLike(setServerCertificateAsync(serverCertificate = serverCertificate)).toBoolean()
+    return setServerCertificateAsync(serverCertificate = serverCertificate).await().toBoolean()
 }

@@ -7,7 +7,7 @@ import js.core.JsBoolean
 import js.core.JsPrimitives.toBoolean
 import js.core.Void
 import js.promise.Promise
-import js.promise.internal.awaitPromiseLike
+import js.promise.await
 import web.events.Event
 import web.events.EventHandler
 import web.events.EventInstance
@@ -112,7 +112,7 @@ private constructor() :
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeySession/close)
  */
 suspend inline fun MediaKeySession.close() {
-    awaitPromiseLike(closeAsync())
+    closeAsync().await()
 }
 
 /**
@@ -124,12 +124,10 @@ suspend inline fun MediaKeySession.generateRequest(
     initDataType: String,
     initData: BufferSource,
 ) {
-    awaitPromiseLike(
-        generateRequestAsync(
-            initDataType = initDataType,
-            initData = initData
-        )
-    )
+    generateRequestAsync(
+        initDataType = initDataType,
+        initData = initData
+    ).await()
 }
 
 /**
@@ -138,7 +136,7 @@ suspend inline fun MediaKeySession.generateRequest(
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeySession/load)
  */
 suspend inline fun MediaKeySession.load(sessionId: String): Boolean {
-    return awaitPromiseLike(loadAsync(sessionId = sessionId)).toBoolean()
+    return loadAsync(sessionId = sessionId).await().toBoolean()
 }
 
 /**
@@ -147,7 +145,7 @@ suspend inline fun MediaKeySession.load(sessionId: String): Boolean {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeySession/remove)
  */
 suspend inline fun MediaKeySession.remove() {
-    awaitPromiseLike(removeAsync())
+    removeAsync().await()
 }
 
 /**
@@ -156,7 +154,7 @@ suspend inline fun MediaKeySession.remove() {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeySession/update)
  */
 suspend inline fun MediaKeySession.update(response: BufferSource) {
-    awaitPromiseLike(updateAsync(response = response))
+    updateAsync(response = response).await()
 }
 
 /**

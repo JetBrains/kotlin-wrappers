@@ -4,7 +4,7 @@ package web.streams
 
 import js.core.JsAny
 import js.promise.Promise
-import js.promise.internal.awaitPromiseLike
+import js.promise.await
 import kotlin.js.JsName
 
 /**
@@ -37,5 +37,5 @@ open external class ReadableStreamDefaultReader<R : JsAny?>(
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStreamDefaultReader/read)
  */
 suspend inline fun <R : JsAny?> ReadableStreamDefaultReader<R>.read(): ReadableStreamReadResult<R> {
-    return awaitPromiseLike(readAsync())
+    return readAsync().await()
 }

@@ -5,7 +5,7 @@ package web.streams
 import js.buffer.ArrayBuffer
 import js.buffer.ArrayBufferView
 import js.promise.Promise
-import js.promise.internal.awaitPromiseLike
+import js.promise.await
 import js.typedarrays.Uint8Array
 import kotlin.js.JsName
 
@@ -39,5 +39,5 @@ open external class ReadableStreamBYOBReader(
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStreamBYOBReader/read)
  */
 suspend inline fun <T : ArrayBufferView<*>> ReadableStreamBYOBReader.read(view: T): ReadableStreamReadResult<T> {
-    return awaitPromiseLike(readAsync(view = view))
+    return readAsync(view = view).await()
 }

@@ -3,7 +3,7 @@
 package web.mediakey
 
 import js.promise.Promise
-import js.promise.internal.awaitPromiseLike
+import js.promise.await
 import kotlin.js.JsName
 
 /**
@@ -43,5 +43,5 @@ private constructor() {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeySystemAccess/createMediaKeys)
  */
 suspend inline fun MediaKeySystemAccess.createMediaKeys(): MediaKeys {
-    return awaitPromiseLike(createMediaKeysAsync())
+    return createMediaKeysAsync().await()
 }

@@ -4,7 +4,7 @@ package web.mediasession
 
 import js.core.Void
 import js.promise.Promise
-import js.promise.internal.awaitPromiseLike
+import js.promise.await
 import kotlin.js.JsName
 import kotlin.js.definedExternally
 
@@ -69,7 +69,7 @@ private constructor() {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaSession/setCameraActive)
  */
 suspend inline fun MediaSession.setCameraActive(active: Boolean) {
-    awaitPromiseLike(setCameraActiveAsync(active = active))
+    setCameraActiveAsync(active = active).await()
 }
 
 /**
@@ -78,5 +78,5 @@ suspend inline fun MediaSession.setCameraActive(active: Boolean) {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaSession/setMicrophoneActive)
  */
 suspend inline fun MediaSession.setMicrophoneActive(active: Boolean) {
-    awaitPromiseLike(setMicrophoneActiveAsync(active = active))
+    setMicrophoneActiveAsync(active = active).await()
 }

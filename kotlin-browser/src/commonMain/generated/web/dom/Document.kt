@@ -6,7 +6,7 @@ import js.core.JsBoolean
 import js.core.JsPrimitives.toBoolean
 import js.core.Void
 import js.promise.Promise
-import js.promise.internal.awaitPromiseLike
+import js.promise.await
 import web.animations.AnimationEvent
 import web.animations.DocumentTimeline
 import web.clipboard.ClipboardEvent
@@ -599,7 +599,7 @@ open external class Document :
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/exitFullscreen)
  */
 suspend inline fun Document.exitFullscreen() {
-    awaitPromiseLike(exitFullscreenAsync())
+    exitFullscreenAsync().await()
 }
 
 /**
@@ -608,7 +608,7 @@ suspend inline fun Document.exitFullscreen() {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/exitPictureInPicture)
  */
 suspend inline fun Document.exitPictureInPicture() {
-    awaitPromiseLike(exitPictureInPictureAsync())
+    exitPictureInPictureAsync().await()
 }
 
 /**
@@ -617,7 +617,7 @@ suspend inline fun Document.exitPictureInPicture() {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/hasStorageAccess)
  */
 suspend inline fun Document.hasStorageAccess(): Boolean {
-    return awaitPromiseLike(hasStorageAccessAsync()).toBoolean()
+    return hasStorageAccessAsync().await().toBoolean()
 }
 
 /**
@@ -626,7 +626,7 @@ suspend inline fun Document.hasStorageAccess(): Boolean {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/requestStorageAccess)
  */
 suspend inline fun Document.requestStorageAccess() {
-    awaitPromiseLike(requestStorageAccessAsync())
+    requestStorageAccessAsync().await()
 }
 
 /**

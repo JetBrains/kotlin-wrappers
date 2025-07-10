@@ -126,17 +126,16 @@ internal open class SuspendExtensionsCollector(
         }
         val returnKeyword = when {
             (returnType.isEmpty() || returnType.contains(": Unit")) -> ""
-            else -> "return "
+            else -> "return"
         }
 
         return when {
             isAbortable -> """
                 val $CONTROLLER = AbortController()
-                ${returnKeyword}awaitPromiseLike($promiseCall, $CONTROLLER)$resultCast
+                $returnKeyword $promiseCall.awaitCancellable($CONTROLLER)$resultCast
             """.trimIndent()
 
-            optionalPromise -> "${returnKeyword}awaitOptionalPromiseLike($promiseCall)$resultCast"
-            else -> "${returnKeyword}awaitPromiseLike($promiseCall)$resultCast"
+            else -> "$returnKeyword $promiseCall.await()$resultCast"
         }
     }
 

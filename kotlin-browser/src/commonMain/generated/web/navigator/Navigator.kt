@@ -5,7 +5,7 @@ package web.navigator
 import js.array.ReadonlyArray
 import js.core.Void
 import js.promise.Promise
-import js.promise.internal.awaitPromiseLike
+import js.promise.await
 import web.clipboard.Clipboard
 import web.credentials.CredentialsContainer
 import web.fedcm.NavigatorLogin
@@ -213,7 +213,7 @@ protected /* private */ constructor() :
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/requestMIDIAccess)
  */
 suspend inline fun Navigator.requestMIDIAccess(options: MIDIOptions): MIDIAccess {
-    return awaitPromiseLike(requestMIDIAccessAsync(options = options))
+    return requestMIDIAccessAsync(options = options).await()
 }
 
 /**
@@ -223,7 +223,7 @@ suspend inline fun Navigator.requestMIDIAccess(options: MIDIOptions): MIDIAccess
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/requestMIDIAccess)
  */
 suspend inline fun Navigator.requestMIDIAccess(): MIDIAccess {
-    return awaitPromiseLike(requestMIDIAccessAsync())
+    return requestMIDIAccessAsync().await()
 }
 
 /**
@@ -236,12 +236,10 @@ suspend inline fun Navigator.requestMediaKeySystemAccess(
     keySystem: String,
     supportedConfigurations: ReadonlyArray<MediaKeySystemConfiguration>,
 ): MediaKeySystemAccess {
-    return awaitPromiseLike(
-        requestMediaKeySystemAccessAsync(
-            keySystem = keySystem,
-            supportedConfigurations = supportedConfigurations
-        )
-    )
+    return requestMediaKeySystemAccessAsync(
+        keySystem = keySystem,
+        supportedConfigurations = supportedConfigurations
+    ).await()
 }
 
 /**
@@ -251,7 +249,7 @@ suspend inline fun Navigator.requestMediaKeySystemAccess(
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/share)
  */
 suspend inline fun Navigator.share(data: ShareData) {
-    awaitPromiseLike(shareAsync(data = data))
+    shareAsync(data = data).await()
 }
 
 /**
@@ -261,5 +259,5 @@ suspend inline fun Navigator.share(data: ShareData) {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/share)
  */
 suspend inline fun Navigator.share() {
-    awaitPromiseLike(shareAsync())
+    shareAsync().await()
 }
