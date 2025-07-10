@@ -78,6 +78,7 @@ private fun generate(
                     && name != "queryClient-89a8a2bf"
                     && name != "utils"
                     && name != "queryOptions"
+                    && name != "mutationOptions"
                     && name != "infiniteQueryOptions"
                     && !(name == "QueryStatus" && pkg == Package.REACT)
                     // TEMP
