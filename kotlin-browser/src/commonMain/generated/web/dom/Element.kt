@@ -6,7 +6,7 @@ import js.array.ReadonlyArray
 import js.core.JsString
 import js.core.Void
 import js.promise.Promise
-import js.promise.internal.awaitPromiseLike
+import js.promise.await
 import web.aria.ARIAMixin
 import web.components.ShadowRoot
 import web.components.ShadowRootInit
@@ -546,7 +546,7 @@ private constructor() :
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/requestFullscreen)
  */
 suspend inline fun Element.requestFullscreen(options: FullscreenOptions) {
-    awaitPromiseLike(requestFullscreenAsync(options = options))
+    requestFullscreenAsync(options = options).await()
 }
 
 /**
@@ -555,7 +555,7 @@ suspend inline fun Element.requestFullscreen(options: FullscreenOptions) {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/requestFullscreen)
  */
 suspend inline fun Element.requestFullscreen() {
-    awaitPromiseLike(requestFullscreenAsync())
+    requestFullscreenAsync().await()
 }
 
 /**
@@ -564,7 +564,7 @@ suspend inline fun Element.requestFullscreen() {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/requestPointerLock)
  */
 suspend inline fun Element.requestPointerLock(options: PointerLockOptions) {
-    awaitPromiseLike(requestPointerLockAsync(options = options))
+    requestPointerLockAsync(options = options).await()
 }
 
 /**
@@ -573,7 +573,7 @@ suspend inline fun Element.requestPointerLock(options: PointerLockOptions) {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/requestPointerLock)
  */
 suspend inline fun Element.requestPointerLock() {
-    awaitPromiseLike(requestPointerLockAsync())
+    requestPointerLockAsync().await()
 }
 
 /**

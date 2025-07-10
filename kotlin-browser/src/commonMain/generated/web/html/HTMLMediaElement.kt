@@ -4,7 +4,7 @@ package web.html
 
 import js.core.Void
 import js.promise.Promise
-import js.promise.internal.awaitPromiseLike
+import js.promise.await
 import web.events.Event
 import web.events.EventHandler
 import web.events.EventInstance
@@ -344,7 +344,7 @@ private constructor() :
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/play)
  */
 suspend inline fun HTMLMediaElement.play() {
-    awaitPromiseLike(playAsync())
+    playAsync().await()
 }
 
 /**
@@ -354,7 +354,7 @@ suspend inline fun HTMLMediaElement.play() {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/setMediaKeys)
  */
 suspend inline fun HTMLMediaElement.setMediaKeys(mediaKeys: MediaKeys?) {
-    awaitPromiseLike(setMediaKeysAsync(mediaKeys = mediaKeys))
+    setMediaKeysAsync(mediaKeys = mediaKeys).await()
 }
 
 /**
@@ -364,7 +364,7 @@ suspend inline fun HTMLMediaElement.setMediaKeys(mediaKeys: MediaKeys?) {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/setSinkId)
  */
 suspend inline fun HTMLMediaElement.setSinkId(sinkId: String) {
-    awaitPromiseLike(setSinkIdAsync(sinkId = sinkId))
+    setSinkIdAsync(sinkId = sinkId).await()
 }
 
 /**

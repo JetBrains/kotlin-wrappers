@@ -3,7 +3,7 @@
 package web.midi
 
 import js.promise.Promise
-import js.promise.internal.awaitPromiseLike
+import js.promise.await
 import web.events.EventHandler
 import web.events.EventInstance
 import web.events.EventTarget
@@ -95,7 +95,7 @@ private constructor() :
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MIDIPort/close)
  */
 suspend inline fun MIDIPort.close(): MIDIPort {
-    return awaitPromiseLike(closeAsync())
+    return closeAsync().await()
 }
 
 /**
@@ -104,7 +104,7 @@ suspend inline fun MIDIPort.close(): MIDIPort {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MIDIPort/open)
  */
 suspend inline fun MIDIPort.open(): MIDIPort {
-    return awaitPromiseLike(openAsync())
+    return openAsync().await()
 }
 
 /**

@@ -8,7 +8,7 @@ import js.core.JsPrimitives.toBoolean
 import js.core.JsString
 import js.core.Void
 import js.promise.Promise
-import js.promise.internal.awaitPromiseLike
+import js.promise.await
 import web.http.Request
 import web.http.Response
 import web.url.URL
@@ -170,15 +170,15 @@ private constructor() {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/add)
  */
 suspend inline fun Cache.add(url: String) {
-    awaitPromiseLike(addAsync(url = url))
+    addAsync(url = url).await()
 }
 
 suspend inline fun Cache.add(url: URL) {
-    awaitPromiseLike(addAsync(url = url))
+    addAsync(url = url).await()
 }
 
 suspend inline fun Cache.add(request: Request) {
-    awaitPromiseLike(addAsync(request = request))
+    addAsync(request = request).await()
 }
 
 /**
@@ -187,11 +187,11 @@ suspend inline fun Cache.add(request: Request) {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/addAll)
  */
 suspend inline fun Cache.addAll(requests: ReadonlyArray<Request>) {
-    awaitPromiseLike(addAllAsync(requests = requests))
+    addAllAsync(requests = requests).await()
 }
 
 suspend inline fun Cache.addAll(urls: ReadonlyArray<JsString>) {
-    awaitPromiseLike(addAllAsync(urls = urls))
+    addAllAsync(urls = urls).await()
 }
 
 /**
@@ -203,12 +203,10 @@ suspend inline fun Cache.delete(
     url: String,
     options: CacheQueryOptions,
 ): Boolean {
-    return awaitPromiseLike(
-        deleteAsync(
-            url = url,
-            options = options
-        )
-    ).toBoolean()
+    return deleteAsync(
+        url = url,
+        options = options
+    ).await().toBoolean()
 }
 
 /**
@@ -219,43 +217,39 @@ suspend inline fun Cache.delete(
 suspend inline fun Cache.delete(
     url: String,
 ): Boolean {
-    return awaitPromiseLike(deleteAsync(url = url)).toBoolean()
+    return deleteAsync(url = url).await().toBoolean()
 }
 
 suspend inline fun Cache.delete(
     url: URL,
     options: CacheQueryOptions,
 ): Boolean {
-    return awaitPromiseLike(
-        deleteAsync(
-            url = url,
-            options = options
-        )
-    ).toBoolean()
+    return deleteAsync(
+        url = url,
+        options = options
+    ).await().toBoolean()
 }
 
 suspend inline fun Cache.delete(
     url: URL,
 ): Boolean {
-    return awaitPromiseLike(deleteAsync(url = url)).toBoolean()
+    return deleteAsync(url = url).await().toBoolean()
 }
 
 suspend inline fun Cache.delete(
     request: Request,
     options: CacheQueryOptions,
 ): Boolean {
-    return awaitPromiseLike(
-        deleteAsync(
-            request = request,
-            options = options
-        )
-    ).toBoolean()
+    return deleteAsync(
+        request = request,
+        options = options
+    ).await().toBoolean()
 }
 
 suspend inline fun Cache.delete(
     request: Request,
 ): Boolean {
-    return awaitPromiseLike(deleteAsync(request = request)).toBoolean()
+    return deleteAsync(request = request).await().toBoolean()
 }
 
 /**
@@ -267,12 +261,10 @@ suspend inline fun Cache.keys(
     url: String,
     options: CacheQueryOptions,
 ): ReadonlyArray<Request> {
-    return awaitPromiseLike(
-        keysAsync(
-            url = url,
-            options = options
-        )
-    )
+    return keysAsync(
+        url = url,
+        options = options
+    ).await()
 }
 
 /**
@@ -283,7 +275,7 @@ suspend inline fun Cache.keys(
 suspend inline fun Cache.keys(
     url: String,
 ): ReadonlyArray<Request> {
-    return awaitPromiseLike(keysAsync(url = url))
+    return keysAsync(url = url).await()
 }
 
 /**
@@ -292,43 +284,39 @@ suspend inline fun Cache.keys(
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/keys)
  */
 suspend inline fun Cache.keys(): ReadonlyArray<Request> {
-    return awaitPromiseLike(keysAsync())
+    return keysAsync().await()
 }
 
 suspend inline fun Cache.keys(
     url: URL,
     options: CacheQueryOptions,
 ): ReadonlyArray<Request> {
-    return awaitPromiseLike(
-        keysAsync(
-            url = url,
-            options = options
-        )
-    )
+    return keysAsync(
+        url = url,
+        options = options
+    ).await()
 }
 
 suspend inline fun Cache.keys(
     url: URL,
 ): ReadonlyArray<Request> {
-    return awaitPromiseLike(keysAsync(url = url))
+    return keysAsync(url = url).await()
 }
 
 suspend inline fun Cache.keys(
     request: Request,
     options: CacheQueryOptions,
 ): ReadonlyArray<Request> {
-    return awaitPromiseLike(
-        keysAsync(
-            request = request,
-            options = options
-        )
-    )
+    return keysAsync(
+        request = request,
+        options = options
+    ).await()
 }
 
 suspend inline fun Cache.keys(
     request: Request,
 ): ReadonlyArray<Request> {
-    return awaitPromiseLike(keysAsync(request = request))
+    return keysAsync(request = request).await()
 }
 
 /**
@@ -340,12 +328,10 @@ suspend inline fun Cache.match(
     url: String,
     options: CacheQueryOptions,
 ): Response? {
-    return awaitPromiseLike(
-        matchAsync(
-            url = url,
-            options = options
-        )
-    )
+    return matchAsync(
+        url = url,
+        options = options
+    ).await()
 }
 
 /**
@@ -356,43 +342,39 @@ suspend inline fun Cache.match(
 suspend inline fun Cache.match(
     url: String,
 ): Response? {
-    return awaitPromiseLike(matchAsync(url = url))
+    return matchAsync(url = url).await()
 }
 
 suspend inline fun Cache.match(
     url: URL,
     options: CacheQueryOptions,
 ): Response? {
-    return awaitPromiseLike(
-        matchAsync(
-            url = url,
-            options = options
-        )
-    )
+    return matchAsync(
+        url = url,
+        options = options
+    ).await()
 }
 
 suspend inline fun Cache.match(
     url: URL,
 ): Response? {
-    return awaitPromiseLike(matchAsync(url = url))
+    return matchAsync(url = url).await()
 }
 
 suspend inline fun Cache.match(
     request: Request,
     options: CacheQueryOptions,
 ): Response? {
-    return awaitPromiseLike(
-        matchAsync(
-            request = request,
-            options = options
-        )
-    )
+    return matchAsync(
+        request = request,
+        options = options
+    ).await()
 }
 
 suspend inline fun Cache.match(
     request: Request,
 ): Response? {
-    return awaitPromiseLike(matchAsync(request = request))
+    return matchAsync(request = request).await()
 }
 
 /**
@@ -404,12 +386,10 @@ suspend inline fun Cache.matchAll(
     url: String,
     options: CacheQueryOptions,
 ): ReadonlyArray<Response> {
-    return awaitPromiseLike(
-        matchAllAsync(
-            url = url,
-            options = options
-        )
-    )
+    return matchAllAsync(
+        url = url,
+        options = options
+    ).await()
 }
 
 /**
@@ -420,7 +400,7 @@ suspend inline fun Cache.matchAll(
 suspend inline fun Cache.matchAll(
     url: String,
 ): ReadonlyArray<Response> {
-    return awaitPromiseLike(matchAllAsync(url = url))
+    return matchAllAsync(url = url).await()
 }
 
 /**
@@ -429,43 +409,39 @@ suspend inline fun Cache.matchAll(
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/matchAll)
  */
 suspend inline fun Cache.matchAll(): ReadonlyArray<Response> {
-    return awaitPromiseLike(matchAllAsync())
+    return matchAllAsync().await()
 }
 
 suspend inline fun Cache.matchAll(
     url: URL,
     options: CacheQueryOptions,
 ): ReadonlyArray<Response> {
-    return awaitPromiseLike(
-        matchAllAsync(
-            url = url,
-            options = options
-        )
-    )
+    return matchAllAsync(
+        url = url,
+        options = options
+    ).await()
 }
 
 suspend inline fun Cache.matchAll(
     url: URL,
 ): ReadonlyArray<Response> {
-    return awaitPromiseLike(matchAllAsync(url = url))
+    return matchAllAsync(url = url).await()
 }
 
 suspend inline fun Cache.matchAll(
     request: Request,
     options: CacheQueryOptions,
 ): ReadonlyArray<Response> {
-    return awaitPromiseLike(
-        matchAllAsync(
-            request = request,
-            options = options
-        )
-    )
+    return matchAllAsync(
+        request = request,
+        options = options
+    ).await()
 }
 
 suspend inline fun Cache.matchAll(
     request: Request,
 ): ReadonlyArray<Response> {
-    return awaitPromiseLike(matchAllAsync(request = request))
+    return matchAllAsync(request = request).await()
 }
 
 /**
@@ -477,34 +453,28 @@ suspend inline fun Cache.put(
     url: String,
     response: Response,
 ) {
-    awaitPromiseLike(
-        putAsync(
-            url = url,
-            response = response
-        )
-    )
+    putAsync(
+        url = url,
+        response = response
+    ).await()
 }
 
 suspend inline fun Cache.put(
     url: URL,
     response: Response,
 ) {
-    awaitPromiseLike(
-        putAsync(
-            url = url,
-            response = response
-        )
-    )
+    putAsync(
+        url = url,
+        response = response
+    ).await()
 }
 
 suspend inline fun Cache.put(
     request: Request,
     response: Response,
 ) {
-    awaitPromiseLike(
-        putAsync(
-            request = request,
-            response = response
-        )
-    )
+    putAsync(
+        request = request,
+        response = response
+    ).await()
 }

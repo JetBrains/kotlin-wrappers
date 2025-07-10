@@ -5,7 +5,7 @@ package web.storage
 import js.core.JsBoolean
 import js.core.JsPrimitives.toBoolean
 import js.promise.Promise
-import js.promise.internal.awaitPromiseLike
+import js.promise.await
 import web.fs.FileSystemDirectoryHandle
 import kotlin.js.JsName
 
@@ -56,7 +56,7 @@ private constructor() {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/StorageManager/estimate)
  */
 suspend inline fun StorageManager.estimate(): StorageEstimate {
-    return awaitPromiseLike(estimateAsync())
+    return estimateAsync().await()
 }
 
 /**
@@ -65,7 +65,7 @@ suspend inline fun StorageManager.estimate(): StorageEstimate {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/StorageManager/getDirectory)
  */
 suspend inline fun StorageManager.getDirectory(): FileSystemDirectoryHandle {
-    return awaitPromiseLike(getDirectoryAsync())
+    return getDirectoryAsync().await()
 }
 
 /**
@@ -74,7 +74,7 @@ suspend inline fun StorageManager.getDirectory(): FileSystemDirectoryHandle {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/StorageManager/persist)
  */
 suspend inline fun StorageManager.persist(): Boolean {
-    return awaitPromiseLike(persistAsync()).toBoolean()
+    return persistAsync().await().toBoolean()
 }
 
 /**
@@ -83,5 +83,5 @@ suspend inline fun StorageManager.persist(): Boolean {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/StorageManager/persisted)
  */
 suspend inline fun StorageManager.persisted(): Boolean {
-    return awaitPromiseLike(persistedAsync()).toBoolean()
+    return persistedAsync().await().toBoolean()
 }

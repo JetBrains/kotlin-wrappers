@@ -7,7 +7,7 @@ import js.core.JsInt
 import js.core.JsPrimitives.toInt
 import js.core.Void
 import js.promise.Promise
-import js.promise.internal.awaitPromiseLike
+import js.promise.await
 import web.events.EventTarget
 import web.streams.ReadableStream
 import web.streams.WritableStream
@@ -66,7 +66,7 @@ private constructor() :
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCRtpScriptTransformer/generateKeyFrame)
  */
 suspend inline fun RTCRtpScriptTransformer.generateKeyFrame(rid: String): Int {
-    return awaitPromiseLike(generateKeyFrameAsync(rid = rid)).toInt()
+    return generateKeyFrameAsync(rid = rid).await().toInt()
 }
 
 /**
@@ -75,7 +75,7 @@ suspend inline fun RTCRtpScriptTransformer.generateKeyFrame(rid: String): Int {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCRtpScriptTransformer/generateKeyFrame)
  */
 suspend inline fun RTCRtpScriptTransformer.generateKeyFrame(): Int {
-    return awaitPromiseLike(generateKeyFrameAsync()).toInt()
+    return generateKeyFrameAsync().await().toInt()
 }
 
 /**
@@ -84,5 +84,5 @@ suspend inline fun RTCRtpScriptTransformer.generateKeyFrame(): Int {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCRtpScriptTransformer/sendKeyFrameRequest)
  */
 suspend inline fun RTCRtpScriptTransformer.sendKeyFrameRequest() {
-    awaitPromiseLike(sendKeyFrameRequestAsync())
+    sendKeyFrameRequestAsync().await()
 }

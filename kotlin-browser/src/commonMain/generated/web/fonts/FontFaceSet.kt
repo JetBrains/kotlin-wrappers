@@ -9,7 +9,7 @@ package web.fonts
 import js.array.ReadonlyArray
 import js.collections.MutableSetLike
 import js.promise.Promise
-import js.promise.internal.awaitPromiseLike
+import js.promise.await
 import web.events.EventHandler
 import web.events.EventInstance
 import web.events.EventTarget
@@ -84,12 +84,10 @@ suspend inline fun FontFaceSet.load(
     font: String,
     text: String,
 ): ReadonlyArray<FontFace> {
-    return awaitPromiseLike(
-        loadAsync(
-            font = font,
-            text = text
-        )
-    )
+    return loadAsync(
+        font = font,
+        text = text
+    ).await()
 }
 
 /**
@@ -100,7 +98,7 @@ suspend inline fun FontFaceSet.load(
 suspend inline fun FontFaceSet.load(
     font: String,
 ): ReadonlyArray<FontFace> {
-    return awaitPromiseLike(loadAsync(font = font))
+    return loadAsync(font = font).await()
 }
 
 /**

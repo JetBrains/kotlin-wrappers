@@ -4,7 +4,7 @@ package web.wakelock
 
 import js.core.Void
 import js.promise.Promise
-import js.promise.internal.awaitPromiseLike
+import js.promise.await
 import web.events.Event
 import web.events.EventHandler
 import web.events.EventInstance
@@ -54,7 +54,7 @@ private constructor() :
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WakeLockSentinel/release)
  */
 suspend inline fun WakeLockSentinel.release() {
-    awaitPromiseLike(releaseAsync())
+    releaseAsync().await()
 }
 
 /**

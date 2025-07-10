@@ -4,7 +4,7 @@ package web.codecs
 
 import js.core.Void
 import js.promise.Promise
-import js.promise.internal.awaitPromiseLike
+import js.promise.await
 import web.events.Event
 import web.events.EventHandler
 import web.events.EventInstance
@@ -92,7 +92,7 @@ open external class VideoDecoder(
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoDecoder/flush)
  */
 suspend inline fun VideoDecoder.flush() {
-    awaitPromiseLike(flushAsync())
+    flushAsync().await()
 }
 
 /**
@@ -101,7 +101,7 @@ suspend inline fun VideoDecoder.flush() {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoDecoder/isConfigSupported_static)
  */
 suspend inline fun VideoDecoder.Companion.isConfigSupported(config: VideoDecoderConfig): VideoDecoderSupport {
-    return awaitPromiseLike(isConfigSupportedAsync(config = config))
+    return isConfigSupportedAsync(config = config).await()
 }
 
 /**

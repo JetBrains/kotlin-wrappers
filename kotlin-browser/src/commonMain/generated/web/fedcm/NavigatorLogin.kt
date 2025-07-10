@@ -4,7 +4,7 @@ package web.fedcm
 
 import js.core.Void
 import js.promise.Promise
-import js.promise.internal.awaitPromiseLike
+import js.promise.await
 import kotlin.js.JsName
 
 /**
@@ -30,5 +30,5 @@ private constructor() {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigatorLogin/setStatus)
  */
 suspend inline fun NavigatorLogin.setStatus(status: LoginStatus) {
-    awaitPromiseLike(setStatusAsync(status = status))
+    setStatusAsync(status = status).await()
 }

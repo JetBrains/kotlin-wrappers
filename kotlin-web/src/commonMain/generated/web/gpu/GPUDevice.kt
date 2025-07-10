@@ -3,7 +3,7 @@
 package web.gpu
 
 import js.promise.Promise
-import js.promise.internal.awaitPromiseLike
+import js.promise.await
 import web.events.EventInstance
 import web.events.EventTarget
 import kotlin.js.JsName
@@ -136,21 +136,21 @@ private constructor() :
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUDevice/createComputePipelineAsync)
  */
 suspend inline fun GPUDevice.createComputePipeline(descriptor: GPUComputePipelineDescriptor): GPUComputePipeline {
-    return awaitPromiseLike(createComputePipelineAsync(descriptor = descriptor))
+    return createComputePipelineAsync(descriptor = descriptor).await()
 }
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUDevice/createRenderPipelineAsync)
  */
 suspend inline fun GPUDevice.createRenderPipeline(descriptor: GPURenderPipelineDescriptor): GPURenderPipeline {
-    return awaitPromiseLike(createRenderPipelineAsync(descriptor = descriptor))
+    return createRenderPipelineAsync(descriptor = descriptor).await()
 }
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUDevice/popErrorScope)
  */
 suspend inline fun GPUDevice.popErrorScope(): GPUError? {
-    return awaitPromiseLike(popErrorScopeAsync())
+    return popErrorScopeAsync().await()
 }
 
 /**

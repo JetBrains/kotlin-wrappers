@@ -6,7 +6,7 @@ import js.array.ReadonlyArray
 import js.core.JsAny
 import js.core.UInt53
 import js.promise.Promise
-import js.promise.internal.awaitPromiseLike
+import js.promise.await
 import kotlin.js.JsName
 import kotlin.js.definedExternally
 
@@ -59,5 +59,5 @@ private constructor() {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBFactory/databases)
  */
 suspend inline fun IDBFactory.databases(): ReadonlyArray<IDBDatabaseInfo> {
-    return awaitPromiseLike(databasesAsync())
+    return databasesAsync().await()
 }

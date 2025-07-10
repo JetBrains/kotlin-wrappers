@@ -3,7 +3,7 @@
 package web.components
 
 import js.promise.Promise
-import js.promise.internal.awaitPromiseLike
+import js.promise.await
 import web.dom.Node
 import web.dom.TagName
 import web.html.HTMLElement
@@ -63,5 +63,5 @@ open external class CustomElementRegistry {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CustomElementRegistry/whenDefined)
  */
 suspend inline fun <T : HTMLElement> CustomElementRegistry.whenDefined(name: TagName<T>): CustomElementConstructor<T> {
-    return awaitPromiseLike(whenDefinedAsync(name = name))
+    return whenDefinedAsync(name = name).await()
 }

@@ -4,7 +4,7 @@ package web.transport
 
 import js.core.Void
 import js.promise.Promise
-import js.promise.internal.awaitPromiseLike
+import js.promise.await
 import web.streams.ReadableStream
 import web.streams.WritableStream
 import web.url.URL
@@ -91,7 +91,7 @@ open external class WebTransport(
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebTransport/createBidirectionalStream)
  */
 suspend inline fun WebTransport.createBidirectionalStream(options: WebTransportSendStreamOptions): WebTransportBidirectionalStream {
-    return awaitPromiseLike(createBidirectionalStreamAsync(options = options))
+    return createBidirectionalStreamAsync(options = options).await()
 }
 
 /**
@@ -100,7 +100,7 @@ suspend inline fun WebTransport.createBidirectionalStream(options: WebTransportS
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebTransport/createBidirectionalStream)
  */
 suspend inline fun WebTransport.createBidirectionalStream(): WebTransportBidirectionalStream {
-    return awaitPromiseLike(createBidirectionalStreamAsync())
+    return createBidirectionalStreamAsync().await()
 }
 
 /**
@@ -109,7 +109,7 @@ suspend inline fun WebTransport.createBidirectionalStream(): WebTransportBidirec
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebTransport/createUnidirectionalStream)
  */
 suspend inline fun WebTransport.createUnidirectionalStream(options: WebTransportSendStreamOptions): WritableStream<*> {
-    return awaitPromiseLike(createUnidirectionalStreamAsync(options = options))
+    return createUnidirectionalStreamAsync(options = options).await()
 }
 
 /**
@@ -118,5 +118,5 @@ suspend inline fun WebTransport.createUnidirectionalStream(options: WebTransport
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebTransport/createUnidirectionalStream)
  */
 suspend inline fun WebTransport.createUnidirectionalStream(): WritableStream<*> {
-    return awaitPromiseLike(createUnidirectionalStreamAsync())
+    return createUnidirectionalStreamAsync().await()
 }

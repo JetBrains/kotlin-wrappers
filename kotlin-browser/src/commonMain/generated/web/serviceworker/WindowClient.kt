@@ -3,7 +3,7 @@
 package web.serviceworker
 
 import js.promise.Promise
-import js.promise.internal.awaitPromiseLike
+import js.promise.await
 import web.dom.DocumentVisibilityState
 import web.url.URL
 import kotlin.js.JsName
@@ -56,7 +56,7 @@ private constructor() :
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WindowClient/focus)
  */
 suspend inline fun WindowClient.focus(): WindowClient {
-    return awaitPromiseLike(focusAsync())
+    return focusAsync().await()
 }
 
 /**
@@ -65,9 +65,9 @@ suspend inline fun WindowClient.focus(): WindowClient {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WindowClient/navigate)
  */
 suspend inline fun WindowClient.navigate(url: String): WindowClient? {
-    return awaitPromiseLike(navigateAsync(url = url))
+    return navigateAsync(url = url).await()
 }
 
 suspend inline fun WindowClient.navigate(url: URL): WindowClient? {
-    return awaitPromiseLike(navigateAsync(url = url))
+    return navigateAsync(url = url).await()
 }

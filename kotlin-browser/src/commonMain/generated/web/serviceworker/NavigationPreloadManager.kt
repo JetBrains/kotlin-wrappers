@@ -4,7 +4,7 @@ package web.serviceworker
 
 import js.core.Void
 import js.promise.Promise
-import js.promise.internal.awaitPromiseLike
+import js.promise.await
 import kotlin.js.JsName
 
 /**
@@ -54,7 +54,7 @@ private constructor() {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigationPreloadManager/disable)
  */
 suspend inline fun NavigationPreloadManager.disable() {
-    awaitPromiseLike(disableAsync())
+    disableAsync().await()
 }
 
 /**
@@ -63,7 +63,7 @@ suspend inline fun NavigationPreloadManager.disable() {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigationPreloadManager/enable)
  */
 suspend inline fun NavigationPreloadManager.enable() {
-    awaitPromiseLike(enableAsync())
+    enableAsync().await()
 }
 
 /**
@@ -72,7 +72,7 @@ suspend inline fun NavigationPreloadManager.enable() {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigationPreloadManager/getState)
  */
 suspend inline fun NavigationPreloadManager.getState(): NavigationPreloadState {
-    return awaitPromiseLike(getStateAsync())
+    return getStateAsync().await()
 }
 
 /**
@@ -81,5 +81,5 @@ suspend inline fun NavigationPreloadManager.getState(): NavigationPreloadState {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigationPreloadManager/setHeaderValue)
  */
 suspend inline fun NavigationPreloadManager.setHeaderValue(value: String) {
-    awaitPromiseLike(setHeaderValueAsync(value = value))
+    setHeaderValueAsync(value = value).await()
 }

@@ -3,7 +3,7 @@
 package web.permissions
 
 import js.promise.Promise
-import js.promise.internal.awaitPromiseLike
+import js.promise.await
 import kotlin.js.JsName
 
 /**
@@ -28,5 +28,5 @@ private constructor() {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Permissions/query)
  */
 suspend inline fun Permissions.query(permissionDesc: PermissionDescriptor): PermissionStatus {
-    return awaitPromiseLike(queryAsync(permissionDesc = permissionDesc))
+    return queryAsync(permissionDesc = permissionDesc).await()
 }

@@ -3,7 +3,7 @@
 package web.gpu
 
 import js.promise.Promise
-import js.promise.internal.awaitPromiseLike
+import js.promise.await
 import kotlin.js.JsName
 import kotlin.js.definedExternally
 
@@ -35,12 +35,12 @@ private constructor() {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPU/requestAdapter)
  */
 suspend inline fun GPU.requestAdapter(options: GPURequestAdapterOptions): GPUAdapter? {
-    return awaitPromiseLike(requestAdapterAsync(options = options))
+    return requestAdapterAsync(options = options).await()
 }
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPU/requestAdapter)
  */
 suspend inline fun GPU.requestAdapter(): GPUAdapter? {
-    return awaitPromiseLike(requestAdapterAsync())
+    return requestAdapterAsync().await()
 }

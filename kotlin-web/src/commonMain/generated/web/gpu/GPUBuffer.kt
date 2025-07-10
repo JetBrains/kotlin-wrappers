@@ -5,7 +5,7 @@ package web.gpu
 import js.buffer.ArrayBuffer
 import js.core.Void
 import js.promise.Promise
-import js.promise.internal.awaitPromiseLike
+import js.promise.await
 import kotlin.js.definedExternally
 
 /**
@@ -67,13 +67,11 @@ suspend inline fun GPUBuffer.map(
     offset: GPUSize64,
     size: GPUSize64,
 ) {
-    awaitPromiseLike(
-        mapAsync(
-            mode = mode,
-            offset = offset,
-            size = size
-        )
-    )
+    mapAsync(
+        mode = mode,
+        offset = offset,
+        size = size
+    ).await()
 }
 
 /**
@@ -83,12 +81,10 @@ suspend inline fun GPUBuffer.map(
     mode: GPUMapModeFlags,
     offset: GPUSize64,
 ) {
-    awaitPromiseLike(
-        mapAsync(
-            mode = mode,
-            offset = offset
-        )
-    )
+    mapAsync(
+        mode = mode,
+        offset = offset
+    ).await()
 }
 
 /**
@@ -97,5 +93,5 @@ suspend inline fun GPUBuffer.map(
 suspend inline fun GPUBuffer.map(
     mode: GPUMapModeFlags,
 ) {
-    awaitPromiseLike(mapAsync(mode = mode))
+    mapAsync(mode = mode).await()
 }

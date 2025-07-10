@@ -4,7 +4,7 @@ package web.worklets
 
 import js.core.Void
 import js.promise.Promise
-import js.promise.internal.awaitPromiseLike
+import js.promise.await
 import web.url.URL
 import kotlin.js.JsName
 import kotlin.js.definedExternally
@@ -44,12 +44,10 @@ suspend inline fun Worklet.addModule(
     moduleURL: String,
     options: WorkletOptions,
 ) {
-    awaitPromiseLike(
-        addModuleAsync(
-            moduleURL = moduleURL,
-            options = options
-        )
-    )
+    addModuleAsync(
+        moduleURL = moduleURL,
+        options = options
+    ).await()
 }
 
 /**
@@ -60,23 +58,21 @@ suspend inline fun Worklet.addModule(
 suspend inline fun Worklet.addModule(
     moduleURL: String,
 ) {
-    awaitPromiseLike(addModuleAsync(moduleURL = moduleURL))
+    addModuleAsync(moduleURL = moduleURL).await()
 }
 
 suspend inline fun Worklet.addModule(
     moduleURL: URL,
     options: WorkletOptions,
 ) {
-    awaitPromiseLike(
-        addModuleAsync(
-            moduleURL = moduleURL,
-            options = options
-        )
-    )
+    addModuleAsync(
+        moduleURL = moduleURL,
+        options = options
+    ).await()
 }
 
 suspend inline fun Worklet.addModule(
     moduleURL: URL,
 ) {
-    awaitPromiseLike(addModuleAsync(moduleURL = moduleURL))
+    addModuleAsync(moduleURL = moduleURL).await()
 }

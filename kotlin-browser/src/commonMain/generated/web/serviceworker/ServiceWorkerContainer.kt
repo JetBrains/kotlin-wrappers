@@ -5,7 +5,7 @@ package web.serviceworker
 import js.array.ReadonlyArray
 import js.core.JsAny
 import js.promise.Promise
-import js.promise.internal.awaitPromiseLike
+import js.promise.await
 import web.events.Event
 import web.events.EventHandler
 import web.events.EventInstance
@@ -103,7 +103,7 @@ private constructor() :
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerContainer/getRegistration)
  */
 suspend inline fun ServiceWorkerContainer.getRegistration(clientURL: String): ServiceWorkerRegistration? {
-    return awaitPromiseLike(getRegistrationAsync(clientURL = clientURL))
+    return getRegistrationAsync(clientURL = clientURL).await()
 }
 
 /**
@@ -112,11 +112,11 @@ suspend inline fun ServiceWorkerContainer.getRegistration(clientURL: String): Se
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerContainer/getRegistration)
  */
 suspend inline fun ServiceWorkerContainer.getRegistration(): ServiceWorkerRegistration? {
-    return awaitPromiseLike(getRegistrationAsync())
+    return getRegistrationAsync().await()
 }
 
 suspend inline fun ServiceWorkerContainer.getRegistration(clientURL: URL): ServiceWorkerRegistration? {
-    return awaitPromiseLike(getRegistrationAsync(clientURL = clientURL))
+    return getRegistrationAsync(clientURL = clientURL).await()
 }
 
 /**
@@ -125,7 +125,7 @@ suspend inline fun ServiceWorkerContainer.getRegistration(clientURL: URL): Servi
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerContainer/getRegistrations)
  */
 suspend inline fun ServiceWorkerContainer.getRegistrations(): ReadonlyArray<ServiceWorkerRegistration> {
-    return awaitPromiseLike(getRegistrationsAsync())
+    return getRegistrationsAsync().await()
 }
 
 /**
@@ -137,12 +137,10 @@ suspend inline fun ServiceWorkerContainer.register(
     scriptURL: String,
     options: RegistrationOptions,
 ): ServiceWorkerRegistration {
-    return awaitPromiseLike(
-        registerAsync(
-            scriptURL = scriptURL,
-            options = options
-        )
-    )
+    return registerAsync(
+        scriptURL = scriptURL,
+        options = options
+    ).await()
 }
 
 /**
@@ -153,25 +151,23 @@ suspend inline fun ServiceWorkerContainer.register(
 suspend inline fun ServiceWorkerContainer.register(
     scriptURL: String,
 ): ServiceWorkerRegistration {
-    return awaitPromiseLike(registerAsync(scriptURL = scriptURL))
+    return registerAsync(scriptURL = scriptURL).await()
 }
 
 suspend inline fun ServiceWorkerContainer.register(
     scriptURL: URL,
     options: RegistrationOptions,
 ): ServiceWorkerRegistration {
-    return awaitPromiseLike(
-        registerAsync(
-            scriptURL = scriptURL,
-            options = options
-        )
-    )
+    return registerAsync(
+        scriptURL = scriptURL,
+        options = options
+    ).await()
 }
 
 suspend inline fun ServiceWorkerContainer.register(
     scriptURL: URL,
 ): ServiceWorkerRegistration {
-    return awaitPromiseLike(registerAsync(scriptURL = scriptURL))
+    return registerAsync(scriptURL = scriptURL).await()
 }
 
 /**

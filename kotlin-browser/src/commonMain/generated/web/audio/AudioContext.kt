@@ -4,7 +4,7 @@ package web.audio
 
 import js.core.Void
 import js.promise.Promise
-import js.promise.internal.awaitPromiseLike
+import js.promise.await
 import web.events.Event
 import web.events.EventInstance
 import web.html.HTMLMediaElement
@@ -93,7 +93,7 @@ open external class AudioContext(
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioContext/close)
  */
 suspend inline fun AudioContext.close() {
-    awaitPromiseLike(closeAsync())
+    closeAsync().await()
 }
 
 /**
@@ -102,7 +102,7 @@ suspend inline fun AudioContext.close() {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioContext/resume)
  */
 suspend inline fun AudioContext.resume() {
-    awaitPromiseLike(resumeAsync())
+    resumeAsync().await()
 }
 
 /**
@@ -111,7 +111,7 @@ suspend inline fun AudioContext.resume() {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioContext/suspend)
  */
 suspend inline fun AudioContext.suspend() {
-    awaitPromiseLike(suspendAsync())
+    suspendAsync().await()
 }
 
 /**

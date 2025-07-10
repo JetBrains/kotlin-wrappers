@@ -4,7 +4,7 @@ package web.mediastreams
 
 import js.core.Void
 import js.promise.Promise
-import js.promise.internal.awaitPromiseLike
+import js.promise.await
 import web.events.Event
 import web.events.EventHandler
 import web.events.EventInstance
@@ -134,7 +134,7 @@ private constructor() :
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStreamTrack/applyConstraints)
  */
 suspend inline fun MediaStreamTrack.applyConstraints(constraints: MediaTrackConstraints) {
-    awaitPromiseLike(applyConstraintsAsync(constraints = constraints))
+    applyConstraintsAsync(constraints = constraints).await()
 }
 
 /**
@@ -143,7 +143,7 @@ suspend inline fun MediaStreamTrack.applyConstraints(constraints: MediaTrackCons
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStreamTrack/applyConstraints)
  */
 suspend inline fun MediaStreamTrack.applyConstraints() {
-    awaitPromiseLike(applyConstraintsAsync())
+    applyConstraintsAsync().await()
 }
 
 /**

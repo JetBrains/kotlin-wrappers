@@ -5,7 +5,7 @@ package web.navigator
 import js.core.UInt53
 import js.core.Void
 import js.promise.Promise
-import js.promise.internal.awaitPromiseLike
+import js.promise.await
 import kotlin.js.JsName
 import kotlin.js.definedExternally
 
@@ -30,19 +30,19 @@ sealed external interface NavigatorBadge {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/clearAppBadge)
  */
 suspend inline fun NavigatorBadge.clearAppBadge() {
-    awaitPromiseLike(clearAppBadgeAsync())
+    clearAppBadgeAsync().await()
 }
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/setAppBadge)
  */
 suspend inline fun NavigatorBadge.setAppBadge(contents: UInt53) {
-    awaitPromiseLike(setAppBadgeAsync(contents = contents))
+    setAppBadgeAsync(contents = contents).await()
 }
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/setAppBadge)
  */
 suspend inline fun NavigatorBadge.setAppBadge() {
-    awaitPromiseLike(setAppBadgeAsync())
+    setAppBadgeAsync().await()
 }

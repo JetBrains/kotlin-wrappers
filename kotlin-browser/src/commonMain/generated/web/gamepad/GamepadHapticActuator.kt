@@ -3,7 +3,7 @@
 package web.gamepad
 
 import js.promise.Promise
-import js.promise.internal.awaitPromiseLike
+import js.promise.await
 import kotlin.js.JsName
 import kotlin.js.definedExternally
 
@@ -43,12 +43,10 @@ suspend inline fun GamepadHapticActuator.playEffect(
     type: GamepadHapticEffectType,
     params: GamepadEffectParameters,
 ): GamepadHapticsResult {
-    return awaitPromiseLike(
-        playEffectAsync(
-            type = type,
-            params = params
-        )
-    )
+    return playEffectAsync(
+        type = type,
+        params = params
+    ).await()
 }
 
 /**
@@ -59,7 +57,7 @@ suspend inline fun GamepadHapticActuator.playEffect(
 suspend inline fun GamepadHapticActuator.playEffect(
     type: GamepadHapticEffectType,
 ): GamepadHapticsResult {
-    return awaitPromiseLike(playEffectAsync(type = type))
+    return playEffectAsync(type = type).await()
 }
 
 /**
@@ -68,5 +66,5 @@ suspend inline fun GamepadHapticActuator.playEffect(
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GamepadHapticActuator/reset)
  */
 suspend inline fun GamepadHapticActuator.reset(): GamepadHapticsResult {
-    return awaitPromiseLike(resetAsync())
+    return resetAsync().await()
 }

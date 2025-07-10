@@ -5,7 +5,7 @@ package web.serviceworker
 import js.core.JsAny
 import js.core.Void
 import js.promise.Promise
-import js.promise.internal.awaitPromiseLike
+import js.promise.await
 import web.cookie.CookieStore
 import web.cookie.ExtendableCookieChangeEvent
 import web.events.EventHandler
@@ -118,7 +118,7 @@ private constructor() :
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope/skipWaiting)
  */
 suspend inline fun ServiceWorkerGlobalScope.skipWaiting() {
-    awaitPromiseLike(skipWaitingAsync())
+    skipWaitingAsync().await()
 }
 
 /**

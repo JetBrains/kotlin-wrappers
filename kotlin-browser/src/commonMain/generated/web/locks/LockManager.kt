@@ -4,7 +4,7 @@ package web.locks
 
 import js.core.JsAny
 import js.promise.Promise
-import js.promise.internal.awaitPromiseLike
+import js.promise.await
 import kotlin.js.JsName
 
 /**
@@ -48,7 +48,7 @@ private constructor() {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/LockManager/query)
  */
 suspend inline fun LockManager.query(): LockManagerSnapshot {
-    return awaitPromiseLike(queryAsync())
+    return queryAsync().await()
 }
 
 /**
@@ -60,12 +60,10 @@ suspend inline fun <T : JsAny?> LockManager.request(
     name: String,
     noinline callback: LockGrantedCallback<T>,
 ): T {
-    return awaitPromiseLike(
-        requestAsync(
-            name = name,
-            callback = callback
-        )
-    )
+    return requestAsync(
+        name = name,
+        callback = callback
+    ).await()
 }
 
 suspend inline fun <T : JsAny?> LockManager.request(
@@ -73,11 +71,9 @@ suspend inline fun <T : JsAny?> LockManager.request(
     options: LockOptions,
     noinline callback: LockGrantedCallback<T>,
 ): T {
-    return awaitPromiseLike(
-        requestAsync(
-            name = name,
-            options = options,
-            callback = callback
-        )
-    )
+    return requestAsync(
+        name = name,
+        options = options,
+        callback = callback
+    ).await()
 }

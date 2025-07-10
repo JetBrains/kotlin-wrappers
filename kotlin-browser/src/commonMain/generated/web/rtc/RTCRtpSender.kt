@@ -4,7 +4,7 @@ package web.rtc
 
 import js.core.Void
 import js.promise.Promise
-import js.promise.internal.awaitPromiseLike
+import js.promise.await
 import web.mediastreams.MediaStream
 import web.mediastreams.MediaStreamTrack
 import kotlin.js.JsName
@@ -102,7 +102,7 @@ private constructor() {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCRtpSender/getStats)
  */
 suspend inline fun RTCRtpSender.getStats(): RTCStatsReport {
-    return awaitPromiseLike(getStatsAsync())
+    return getStatsAsync().await()
 }
 
 /**
@@ -111,7 +111,7 @@ suspend inline fun RTCRtpSender.getStats(): RTCStatsReport {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCRtpSender/replaceTrack)
  */
 suspend inline fun RTCRtpSender.replaceTrack(withTrack: MediaStreamTrack?) {
-    awaitPromiseLike(replaceTrackAsync(withTrack = withTrack))
+    replaceTrackAsync(withTrack = withTrack).await()
 }
 
 /**
@@ -123,12 +123,10 @@ suspend inline fun RTCRtpSender.setParameters(
     parameters: RTCRtpSendParameters,
     setParameterOptions: RTCSetParameterOptions,
 ) {
-    awaitPromiseLike(
-        setParametersAsync(
-            parameters = parameters,
-            setParameterOptions = setParameterOptions
-        )
-    )
+    setParametersAsync(
+        parameters = parameters,
+        setParameterOptions = setParameterOptions
+    ).await()
 }
 
 /**
@@ -139,5 +137,5 @@ suspend inline fun RTCRtpSender.setParameters(
 suspend inline fun RTCRtpSender.setParameters(
     parameters: RTCRtpSendParameters,
 ) {
-    awaitPromiseLike(setParametersAsync(parameters = parameters))
+    setParametersAsync(parameters = parameters).await()
 }

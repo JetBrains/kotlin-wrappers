@@ -6,7 +6,7 @@ import js.core.JsAny
 import js.core.Void
 import js.errors.JsError
 import js.promise.Promise
-import js.promise.internal.awaitPromiseLike
+import js.promise.await
 import js.serialization.Transferable
 import kotlin.js.JsName
 import kotlin.js.definedExternally
@@ -57,7 +57,7 @@ open external class WritableStream<W : JsAny?>(
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WritableStream/abort)
  */
 suspend inline fun <W : JsAny?> WritableStream<W>.abort(reason: JsError?) {
-    awaitPromiseLike(abortAsync(reason = reason))
+    abortAsync(reason = reason).await()
 }
 
 /**
@@ -66,7 +66,7 @@ suspend inline fun <W : JsAny?> WritableStream<W>.abort(reason: JsError?) {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WritableStream/abort)
  */
 suspend inline fun <W : JsAny?> WritableStream<W>.abort() {
-    awaitPromiseLike(abortAsync())
+    abortAsync().await()
 }
 
 /**
@@ -75,5 +75,5 @@ suspend inline fun <W : JsAny?> WritableStream<W>.abort() {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WritableStream/close)
  */
 suspend inline fun <W : JsAny?> WritableStream<W>.close() {
-    awaitPromiseLike(closeAsync())
+    closeAsync().await()
 }

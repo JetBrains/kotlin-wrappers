@@ -5,7 +5,7 @@ package web.rtc
 import js.array.ReadonlyArray
 import js.core.Void
 import js.promise.Promise
-import js.promise.internal.awaitPromiseLike
+import js.promise.await
 import web.crypto.Algorithm
 import web.events.Event
 import web.events.EventHandler
@@ -312,7 +312,7 @@ open external class RTCPeerConnection(
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/addIceCandidate)
  */
 suspend inline fun RTCPeerConnection.addIceCandidate(candidate: RTCIceCandidateInit?) {
-    awaitPromiseLike(addIceCandidateAsync(candidate = candidate))
+    addIceCandidateAsync(candidate = candidate).await()
 }
 
 /**
@@ -321,7 +321,7 @@ suspend inline fun RTCPeerConnection.addIceCandidate(candidate: RTCIceCandidateI
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/addIceCandidate)
  */
 suspend inline fun RTCPeerConnection.addIceCandidate() {
-    awaitPromiseLike(addIceCandidateAsync())
+    addIceCandidateAsync().await()
 }
 
 /**
@@ -330,7 +330,7 @@ suspend inline fun RTCPeerConnection.addIceCandidate() {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/createAnswer)
  */
 suspend inline fun RTCPeerConnection.createAnswer(options: RTCAnswerOptions): RTCSessionDescriptionInit {
-    return awaitPromiseLike(createAnswerAsync(options = options))
+    return createAnswerAsync(options = options).await()
 }
 
 /**
@@ -339,7 +339,7 @@ suspend inline fun RTCPeerConnection.createAnswer(options: RTCAnswerOptions): RT
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/createAnswer)
  */
 suspend inline fun RTCPeerConnection.createAnswer(): RTCSessionDescriptionInit {
-    return awaitPromiseLike(createAnswerAsync())
+    return createAnswerAsync().await()
 }
 
 /**
@@ -348,7 +348,7 @@ suspend inline fun RTCPeerConnection.createAnswer(): RTCSessionDescriptionInit {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/createOffer)
  */
 suspend inline fun RTCPeerConnection.createOffer(options: RTCOfferOptions): RTCSessionDescriptionInit {
-    return awaitPromiseLike(createOfferAsync(options = options))
+    return createOfferAsync(options = options).await()
 }
 
 /**
@@ -357,7 +357,7 @@ suspend inline fun RTCPeerConnection.createOffer(options: RTCOfferOptions): RTCS
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/createOffer)
  */
 suspend inline fun RTCPeerConnection.createOffer(): RTCSessionDescriptionInit {
-    return awaitPromiseLike(createOfferAsync())
+    return createOfferAsync().await()
 }
 
 /**
@@ -366,7 +366,7 @@ suspend inline fun RTCPeerConnection.createOffer(): RTCSessionDescriptionInit {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/getStats)
  */
 suspend inline fun RTCPeerConnection.getStats(selector: MediaStreamTrack?): RTCStatsReport {
-    return awaitPromiseLike(getStatsAsync(selector = selector))
+    return getStatsAsync(selector = selector).await()
 }
 
 /**
@@ -375,7 +375,7 @@ suspend inline fun RTCPeerConnection.getStats(selector: MediaStreamTrack?): RTCS
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/getStats)
  */
 suspend inline fun RTCPeerConnection.getStats(): RTCStatsReport {
-    return awaitPromiseLike(getStatsAsync())
+    return getStatsAsync().await()
 }
 
 /**
@@ -384,7 +384,7 @@ suspend inline fun RTCPeerConnection.getStats(): RTCStatsReport {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/setLocalDescription)
  */
 suspend inline fun RTCPeerConnection.setLocalDescription(description: RTCLocalSessionDescriptionInit) {
-    awaitPromiseLike(setLocalDescriptionAsync(description = description))
+    setLocalDescriptionAsync(description = description).await()
 }
 
 /**
@@ -393,7 +393,7 @@ suspend inline fun RTCPeerConnection.setLocalDescription(description: RTCLocalSe
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/setLocalDescription)
  */
 suspend inline fun RTCPeerConnection.setLocalDescription() {
-    awaitPromiseLike(setLocalDescriptionAsync())
+    setLocalDescriptionAsync().await()
 }
 
 /**
@@ -402,7 +402,7 @@ suspend inline fun RTCPeerConnection.setLocalDescription() {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/setRemoteDescription)
  */
 suspend inline fun RTCPeerConnection.setRemoteDescription(description: RTCSessionDescriptionInit) {
-    awaitPromiseLike(setRemoteDescriptionAsync(description = description))
+    setRemoteDescriptionAsync(description = description).await()
 }
 
 /**
@@ -411,11 +411,11 @@ suspend inline fun RTCPeerConnection.setRemoteDescription(description: RTCSessio
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/generateCertificate_static)
  */
 suspend inline fun RTCPeerConnection.Companion.generateCertificate(keygenAlgorithm: Algorithm): RTCCertificate {
-    return awaitPromiseLike(generateCertificateAsync(keygenAlgorithm = keygenAlgorithm))
+    return generateCertificateAsync(keygenAlgorithm = keygenAlgorithm).await()
 }
 
 suspend inline fun RTCPeerConnection.Companion.generateCertificate(keygenAlgorithm: String): RTCCertificate {
-    return awaitPromiseLike(generateCertificateAsync(keygenAlgorithm = keygenAlgorithm))
+    return generateCertificateAsync(keygenAlgorithm = keygenAlgorithm).await()
 }
 
 /**

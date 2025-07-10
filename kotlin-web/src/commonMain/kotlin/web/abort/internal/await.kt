@@ -20,14 +20,18 @@ fun <T : Abortable> patchAbortOptions(
     return Object.assign(unsafeJso(), options, abortOptions)
 }
 
-suspend fun <T : JsAny?> awaitPromiseLike(
+// Used in the compiler plugin
+internal suspend fun <T : JsAny?> awaitPromiseLike(
     promise: PromiseLike<T>,
     controller: AbortController,
 ): T =
+    promise.awaitCancellable(controller)
+
+suspend fun <T : JsAny?> PromiseLike<T>.awaitCancellable(controller: AbortController): T =
     suspendCancellableCoroutine { continuation ->
         continuation.invokeOnCancellation {
             controller.abort()
         }
 
-        promise.thenTo(continuation)
+        thenTo(continuation)
     }

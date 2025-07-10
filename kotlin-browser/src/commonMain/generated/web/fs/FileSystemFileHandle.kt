@@ -3,7 +3,7 @@
 package web.fs
 
 import js.promise.Promise
-import js.promise.internal.awaitPromiseLike
+import js.promise.await
 import js.serialization.Serializable
 import web.file.File
 import kotlin.js.JsName
@@ -52,7 +52,7 @@ private constructor() :
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemFileHandle/createSyncAccessHandle)
  */
 suspend inline fun FileSystemFileHandle.createSyncAccessHandle(): FileSystemSyncAccessHandle {
-    return awaitPromiseLike(createSyncAccessHandleAsync())
+    return createSyncAccessHandleAsync().await()
 }
 
 /**
@@ -61,7 +61,7 @@ suspend inline fun FileSystemFileHandle.createSyncAccessHandle(): FileSystemSync
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemFileHandle/createWritable)
  */
 suspend inline fun FileSystemFileHandle.createWritable(options: FileSystemCreateWritableOptions): FileSystemWritableFileStream {
-    return awaitPromiseLike(createWritableAsync(options = options))
+    return createWritableAsync(options = options).await()
 }
 
 /**
@@ -70,7 +70,7 @@ suspend inline fun FileSystemFileHandle.createWritable(options: FileSystemCreate
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemFileHandle/createWritable)
  */
 suspend inline fun FileSystemFileHandle.createWritable(): FileSystemWritableFileStream {
-    return awaitPromiseLike(createWritableAsync())
+    return createWritableAsync().await()
 }
 
 /**
@@ -79,5 +79,5 @@ suspend inline fun FileSystemFileHandle.createWritable(): FileSystemWritableFile
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemFileHandle/getFile)
  */
 suspend inline fun FileSystemFileHandle.getFile(): File {
-    return awaitPromiseLike(getFileAsync())
+    return getFileAsync().await()
 }

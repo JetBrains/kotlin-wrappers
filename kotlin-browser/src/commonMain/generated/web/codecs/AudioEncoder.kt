@@ -4,7 +4,7 @@ package web.codecs
 
 import js.core.Void
 import js.promise.Promise
-import js.promise.internal.awaitPromiseLike
+import js.promise.await
 import web.events.Event
 import web.events.EventHandler
 import web.events.EventInstance
@@ -92,7 +92,7 @@ open external class AudioEncoder(
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioEncoder/flush)
  */
 suspend inline fun AudioEncoder.flush() {
-    awaitPromiseLike(flushAsync())
+    flushAsync().await()
 }
 
 /**
@@ -101,7 +101,7 @@ suspend inline fun AudioEncoder.flush() {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioEncoder/isConfigSupported_static)
  */
 suspend inline fun AudioEncoder.Companion.isConfigSupported(config: AudioEncoderConfig): AudioEncoderSupport {
-    return awaitPromiseLike(isConfigSupportedAsync(config = config))
+    return isConfigSupportedAsync(config = config).await()
 }
 
 /**

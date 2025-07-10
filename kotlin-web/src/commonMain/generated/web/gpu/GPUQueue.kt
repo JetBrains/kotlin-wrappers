@@ -6,7 +6,7 @@ import js.array.ReadonlyArray
 import js.buffer.AllowSharedBufferSource
 import js.core.Void
 import js.promise.Promise
-import js.promise.internal.awaitPromiseLike
+import js.promise.await
 import kotlin.js.JsName
 import kotlin.js.definedExternally
 
@@ -64,5 +64,5 @@ private constructor() :
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUQueue/onSubmittedWorkDone)
  */
 suspend inline fun GPUQueue.onSubmittedWorkDone() {
-    awaitPromiseLike(onSubmittedWorkDoneAsync())
+    onSubmittedWorkDoneAsync().await()
 }
