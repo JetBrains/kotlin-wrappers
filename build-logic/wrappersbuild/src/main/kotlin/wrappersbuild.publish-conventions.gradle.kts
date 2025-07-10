@@ -17,7 +17,7 @@ publishing {
     }
 
     repositories {
-        maven("https://jetbrains.team/p/kt/packages/maven/kotlin-js-wrappers") {
+        maven("https://packages.jetbrains.team/maven/p/kt/kotlin-js-wrappers") {
             name = "kotlinSpace"
             credentials {
                 username = project.findProperty("libs.repo.user") as String?
