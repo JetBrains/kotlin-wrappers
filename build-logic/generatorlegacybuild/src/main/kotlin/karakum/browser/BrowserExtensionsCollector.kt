@@ -3,7 +3,7 @@ package karakum.browser
 import karakum.common.SuspendExtensionsCollector
 
 internal class BrowserSuspendExtensionsCollector(
-    parentName: String,
+    parentName: String?,
     parentTypeParameters: String?,
 ) : SuspendExtensionsCollector(parentName, parentTypeParameters) {
 
