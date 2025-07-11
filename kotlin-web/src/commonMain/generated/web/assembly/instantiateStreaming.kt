@@ -7,7 +7,7 @@ package web.assembly
 import js.import.JsQualifier
 import js.promise.Promise
 import js.promise.PromiseLike
-import seskar.js.JsAsync
+import js.promise.await
 import web.http.Response
 import kotlin.js.JsName
 import kotlin.js.definedExternally
@@ -15,28 +15,50 @@ import kotlin.js.definedExternally
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/WebAssembly/Reference/JavaScript_interface/instantiateStreaming_static)
  */
-@JsAsync
-@Suppress("WRONG_EXTERNAL_DECLARATION")
-external suspend fun instantiateStreaming(
-    source: Response,
-    importObject: Imports = definedExternally,
-): WebAssemblyInstantiatedSource
-
 @JsName("instantiateStreaming")
 external fun instantiateStreamingAsync(
     source: Response,
     importObject: Imports = definedExternally,
 ): Promise<WebAssemblyInstantiatedSource>
 
-@JsAsync
-@Suppress("WRONG_EXTERNAL_DECLARATION")
-external suspend fun instantiateStreaming(
-    source: PromiseLike<Response>,
-    importObject: Imports = definedExternally,
-): WebAssemblyInstantiatedSource
+@Suppress("NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE")
+suspend inline fun instantiateStreaming(
+    source: Response,
+    importObject: Imports,
+): WebAssemblyInstantiatedSource {
+    return instantiateStreamingAsync(
+        source = source,
+        importObject = importObject
+    ).await()
+}
+
+@Suppress("NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE")
+suspend inline fun instantiateStreaming(
+    source: Response,
+): WebAssemblyInstantiatedSource {
+    return instantiateStreamingAsync(source = source).await()
+}
 
 @JsName("instantiateStreaming")
 external fun instantiateStreamingAsync(
     source: PromiseLike<Response>,
     importObject: Imports = definedExternally,
 ): Promise<WebAssemblyInstantiatedSource>
+
+@Suppress("NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE")
+suspend inline fun instantiateStreaming(
+    source: PromiseLike<Response>,
+    importObject: Imports,
+): WebAssemblyInstantiatedSource {
+    return instantiateStreamingAsync(
+        source = source,
+        importObject = importObject
+    ).await()
+}
+
+@Suppress("NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE")
+suspend inline fun instantiateStreaming(
+    source: PromiseLike<Response>,
+): WebAssemblyInstantiatedSource {
+    return instantiateStreamingAsync(source = source).await()
+}

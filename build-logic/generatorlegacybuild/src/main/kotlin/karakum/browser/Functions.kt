@@ -1,6 +1,6 @@
 package karakum.browser
 
-import karakum.common.withSuspendAdapter
+import karakum.common.withSuspendExtensions
 
 private val TIMERS = setOf(
     "setTimeout",
@@ -151,6 +151,9 @@ private fun getIdType(
         }
     }
 
+private fun String.suppressWrongExternalDeclaration(): String =
+    replace("suspend inline fun", "@Suppress(\"NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE\")\nsuspend inline fun")
+
 private fun convertFunctionResult(
     source: String,
     getPkg: (name: String) -> String?,
@@ -224,12 +227,13 @@ private fun convertFunctionResult(
 
     val declaration = "fun $typeParameters $finalName$bodySource"
 
+    val suspendFunctionsCollector = BrowserSuspendExtensionsCollector.forGlobal()
     var body = if (jsName != null) {
         "$jsName\nexternal $declaration"
     } else {
-        withSuspendAdapter(declaration)
+        withSuspendExtensions(declaration, null, suspendFunctionsCollector)
             .map { it.replaceFirst("fun ", "external fun ") }
-            .joinToString("\n\n")
+            .joinToString("\n\n") + suspendFunctionsCollector.getResult()
     }
 
     if (name in TIMERS && name.startsWith("set")) {
@@ -249,6 +253,8 @@ private fun convertFunctionResult(
             )
         """.trimIndent()
     }
+
+    body = body.suppressWrongExternalDeclaration()
 
     return ConversionResult(
         name = finalName,

@@ -29,7 +29,6 @@ internal fun withSuspendExtensions(
         functionSignature = functionSignature,
         parameters = parameters,
         returnType = suspendReturnType,
-        optionalPromise = optionality.isNotEmpty(),
         docs = comment
     )
 
