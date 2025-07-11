@@ -73,7 +73,7 @@ private fun String.withNoInline(parameterNames: List<String>): String {
 private const val DEFINED_EXTERNALLY = "= definedExternally"
 
 internal open class SuspendExtensionsCollector(
-    val parentName: String,
+    val parentName: String?,
     val parentTypeParameters: String?,
 ) : ExtensionsCollector {
 
@@ -89,12 +89,14 @@ internal open class SuspendExtensionsCollector(
         return extensions.joinToString("\n\n")
     }
 
-    val parentGenerics by lazy {
-        parentTypeParameters
-            ?.let { parseTypeParametersNames(it) }
-            ?.joinToString(",")
-            ?.let { "<$it>" }
-            .orEmpty()
+    val fullParentName by lazy {
+        when {
+            parentName == null -> ""
+            parentTypeParameters == null -> "$parentName."
+            else -> parseTypeParametersNames(parentTypeParameters)
+                .joinToString(",")
+                .let { "$parentName<$it>." }
+        }
     }
 
     private fun generateSuspendBody(
@@ -148,7 +150,7 @@ internal open class SuspendExtensionsCollector(
         docs: String?,
     ) {
         require(returnType.isEmpty() || returnType.startsWith(":")) {
-            "Return type should start with colon: $returnType in $parentName.$functionName"
+            "Return type should start with colon: $returnType in $fullParentName$functionName"
         }
         require("<" !in functionSignature || parentTypeParameters == null) {
             "Can't generate extension with parent type parameters and own generics."
@@ -177,7 +179,7 @@ internal open class SuspendExtensionsCollector(
             )
 
             val extension = """
-            ${comment}suspend inline $functionSignature $funTypeParameters $parentName$parentGenerics.$functionName$newParameters$returnType {
+            ${comment}suspend inline $functionSignature $funTypeParameters $fullParentName$functionName$newParameters$returnType {
                 $body
             }
             """.trimIndent()
