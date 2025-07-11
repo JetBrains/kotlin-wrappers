@@ -2,15 +2,20 @@
 
 package node.karakum.util
 
+import js.reflect.Reflect
 import kotlin.contracts.ExperimentalContracts
 import kotlin.contracts.InvocationKind
 import kotlin.contracts.contract
 import kotlin.coroutines.cancellation.CancellationException
 
-object RaiseCancellationException : CancellationException()
+fun RaiseCancellationException(): CancellationException {
+   return Any().also {
+       Reflect.setPrototypeOf(it, CancellationException::class.js.asDynamic().prototype)
+   }.unsafeCast<CancellationException>()
+}
 
-object Raise {
-    fun raise(): Nothing = throw RaiseCancellationException
+class Raise {
+    fun raise(): Nothing = throw RaiseCancellationException()
 
     fun ensure(condition: Boolean) {
         contract { returns() implies condition }
@@ -27,8 +32,8 @@ object Raise {
 fun <T> nullable(block: Raise.() -> T): T? {
     contract { callsInPlace(block, InvocationKind.AT_MOST_ONCE) }
     return try {
-        block(Raise)
-    } catch (_: RaiseCancellationException) {
+        block(Raise())
+    } catch (_: CancellationException) {
         null
     }
 }
