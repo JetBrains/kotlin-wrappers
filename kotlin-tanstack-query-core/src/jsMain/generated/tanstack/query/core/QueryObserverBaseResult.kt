@@ -29,6 +29,7 @@ external interface QueryObserverBaseResult<TData, TError> {
     val isRefetching: Boolean
     val isStale: Boolean
     val isSuccess: Boolean
+    val isEnabled: Boolean
     val refetch: (options: RefetchOptions?) -> Promise<QueryObserverResult<TData, TError>>
     val status: QueryStatus
     val fetchStatus: FetchStatus
