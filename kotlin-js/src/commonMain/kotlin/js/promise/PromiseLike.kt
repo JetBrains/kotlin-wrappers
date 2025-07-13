@@ -33,9 +33,6 @@ external interface PromiseLike<out T : JsAny?> :
 suspend inline fun <T : JsAny?> PromiseLike<T>.await(): T =
     awaitPromiseLike(this)
 
-suspend inline fun <T : JsAny?> PromiseLike<T>?.await(): T? =
-    this?.let { awaitPromiseLike(it) }
-
 inline fun <T : JsAny?> PromiseLike<T>.thenTo(
     continuation: Continuation<T>,
 ) {
