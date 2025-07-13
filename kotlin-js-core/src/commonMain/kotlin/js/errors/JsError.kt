@@ -14,3 +14,5 @@ expect open external class JsError :
 
     open val message: String?
 }
+
+expect fun JsError.toThrowable(): Throwable
