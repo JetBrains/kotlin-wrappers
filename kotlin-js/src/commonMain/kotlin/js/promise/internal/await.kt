@@ -5,7 +5,7 @@ import js.promise.PromiseLike
 import js.promise.PromiseResult
 import js.promise.thenTo
 import js.promise.toPromise
-import kotlinx.coroutines.suspendCancellableCoroutine
+import kotlin.coroutines.suspendCoroutine
 
 @PublishedApi
 internal suspend fun <T : JsAny?> awaitPromiseResult(
@@ -17,7 +17,7 @@ internal suspend fun <T : JsAny?> awaitPromiseResult(
 internal suspend fun <T : JsAny?> awaitPromiseLike(
     promise: PromiseLike<T>,
 ): T =
-    suspendCancellableCoroutine(promise::thenTo)
+    suspendCoroutine(promise::thenTo)
 
 // Used in the compiler plugin
 internal suspend fun <T : JsAny?> awaitOptionalPromiseLike(
