@@ -2,6 +2,7 @@
 
 package web.fs
 
+import kotlin.js.JsName
 import kotlin.js.definedExternally
 
 /**
@@ -51,7 +52,8 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemEntry/getParent)
      */
-    fun getParent(
+    @JsName("getParent")
+    fun getParentWithCallbacks(
         successCallback: FileSystemEntryCallback = definedExternally,
         errorCallback: ErrorCallback = definedExternally,
     )

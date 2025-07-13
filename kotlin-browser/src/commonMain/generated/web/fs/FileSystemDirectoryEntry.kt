@@ -2,6 +2,7 @@
 
 package web.fs
 
+import kotlin.js.JsName
 import kotlin.js.definedExternally
 
 /**
@@ -24,7 +25,8 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemDirectoryEntry/getDirectory)
      */
-    fun getDirectory(
+    @JsName("getDirectory")
+    fun getDirectoryWithCallbacks(
         path: String? = definedExternally,
         options: FileSystemFlags = definedExternally,
         successCallback: FileSystemEntryCallback = definedExternally,
@@ -36,7 +38,8 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemDirectoryEntry/getFile)
      */
-    fun getFile(
+    @JsName("getFile")
+    fun getFileWithCallbacks(
         path: String? = definedExternally,
         options: FileSystemFlags = definedExternally,
         successCallback: FileSystemEntryCallback = definedExternally,

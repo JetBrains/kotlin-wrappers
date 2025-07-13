@@ -2,6 +2,7 @@
 
 package web.fs
 
+import kotlin.js.JsName
 import kotlin.js.definedExternally
 
 /**
@@ -17,7 +18,8 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemFileEntry/file)
      */
-    fun file(
+    @JsName("file")
+    fun fileWithCallbacks(
         successCallback: FileCallback,
         errorCallback: ErrorCallback = definedExternally,
     )

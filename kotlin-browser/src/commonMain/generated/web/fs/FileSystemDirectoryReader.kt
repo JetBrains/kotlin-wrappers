@@ -2,6 +2,7 @@
 
 package web.fs
 
+import kotlin.js.JsName
 import kotlin.js.definedExternally
 
 /**
@@ -16,7 +17,8 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemDirectoryReader/readEntries)
      */
-    fun readEntries(
+    @JsName("readEntries")
+    fun readEntriesWithCallbacks(
         successCallback: FileSystemEntriesCallback,
         errorCallback: ErrorCallback = definedExternally,
     )

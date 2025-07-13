@@ -2300,12 +2300,18 @@ private fun convertFunction(
     } else ""
 
     val jsName: String?
-    when (name) {
-        "createComputePipeline",
-        "createRenderPipeline",
-            -> {
+    when {
+        name == "createComputePipeline" ||
+                name == "createRenderPipeline" -> {
             jsName = """@JsName("$name")"""
             safeName = "${name}Sync"
+        }
+
+        "successCallback: " in parameters &&
+                // Geolocation needs research
+                !name.endsWith("Position") -> {
+            jsName = """@JsName("$name")"""
+            safeName = "${name}WithCallbacks"
         }
 
         else -> jsName = null
