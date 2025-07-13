@@ -1,9 +1,8 @@
 package web.fs
 
-import js.errors.toThrowable
+import js.coroutines.resumeWithError
 import js.objects.unsafeJso
 import kotlin.coroutines.resume
-import kotlin.coroutines.resumeWithException
 import kotlin.coroutines.suspendCoroutine
 import kotlin.js.undefined
 
@@ -21,7 +20,7 @@ suspend fun FileSystemDirectoryEntry.getDirectory(
             path = path,
             options = options,
             successCallback = continuation::resume,
-            errorCallback = { error -> continuation.resumeWithException(error.toThrowable()) }
+            errorCallback = continuation::resumeWithError,
         )
     }
 
@@ -39,6 +38,6 @@ suspend fun FileSystemDirectoryEntry.getFile(
             path = path,
             options = options,
             successCallback = continuation::resume,
-            errorCallback = { error -> continuation.resumeWithException(error.toThrowable()) }
+            errorCallback = continuation::resumeWithError,
         )
     }

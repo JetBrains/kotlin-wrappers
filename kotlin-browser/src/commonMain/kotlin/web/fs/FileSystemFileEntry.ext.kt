@@ -1,9 +1,8 @@
 package web.fs
 
-import js.errors.toThrowable
+import js.coroutines.resumeWithError
 import web.file.File
 import kotlin.coroutines.resume
-import kotlin.coroutines.resumeWithException
 import kotlin.coroutines.suspendCoroutine
 
 /**
@@ -15,6 +14,6 @@ suspend fun FileSystemFileEntry.file(): File =
     suspendCoroutine { continuation ->
         fileWithCallbacks(
             successCallback = continuation::resume,
-            errorCallback = { error -> continuation.resumeWithException(error.toThrowable()) }
+            errorCallback = continuation::resumeWithError,
         )
     }

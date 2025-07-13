@@ -1,8 +1,7 @@
 package web.fs
 
-import js.errors.toThrowable
+import js.coroutines.resumeWithError
 import kotlin.coroutines.resume
-import kotlin.coroutines.resumeWithException
 import kotlin.coroutines.suspendCoroutine
 
 /**
@@ -14,6 +13,6 @@ suspend fun FileSystemEntry.getParent(): FileSystemEntry =
     suspendCoroutine { continuation ->
         getParentWithCallbacks(
             successCallback = continuation::resume,
-            errorCallback = { error -> continuation.resumeWithException(error.toThrowable()) }
+            errorCallback = continuation::resumeWithError,
         )
     }

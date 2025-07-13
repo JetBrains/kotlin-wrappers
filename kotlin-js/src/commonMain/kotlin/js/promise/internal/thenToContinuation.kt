@@ -1,11 +1,10 @@
 package js.promise.internal
 
 import js.core.JsAny
-import js.errors.toThrowable
+import js.coroutines.resumeWithError
 import js.promise.PromiseLike
 import kotlin.coroutines.Continuation
 import kotlin.coroutines.resume
-import kotlin.coroutines.resumeWithException
 
 @PublishedApi
 internal fun <T : JsAny?> thenToContinuation(
@@ -14,6 +13,6 @@ internal fun <T : JsAny?> thenToContinuation(
 ) {
     promise.then(
         onFulfilled = { continuation.resume(it); null },
-        onRejected = { continuation.resumeWithException(it.toThrowable()); null },
+        onRejected = { continuation.resumeWithError(it); null },
     )
 }
