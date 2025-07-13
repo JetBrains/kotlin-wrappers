@@ -5,7 +5,8 @@ internal fun withSuspendExtensions(
     comment: String?,
     collector: ExtensionsCollector,
 ): Sequence<String> {
-    val match = ASYNC_FUNCTION_REGEX.find(source) ?: return sequenceOf(source)
+    val match = ASYNC_FUNCTION_REGEX.find(source)
+        ?: return sequenceOf(source)
 
     val functionSignature = match.groupValues[3]
     val originalFunctionName = match.groupValues[4]
