@@ -27,7 +27,9 @@ internal suspend fun <T : JsAny?> awaitPromiseLike(
 ): T =
     promise.awaitCancellable(controller)
 
-suspend fun <T : JsAny?> PromiseLike<T>.awaitCancellable(controller: AbortController): T =
+suspend fun <T : JsAny?> PromiseLike<T>.awaitCancellable(
+    controller: AbortController,
+): T =
     suspendCancellableCoroutine { continuation ->
         continuation.invokeOnCancellation {
             controller.abort()
