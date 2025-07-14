@@ -165,7 +165,7 @@ private fun event(
             .substringAfter("{\n")
             .trimIndent()
 
-        val initExtensionsCollector = BrowserSuspendExtensionsCollector(name, null)
+        val initExtensionsCollector = BrowserSuspendExtensionsCollector.forParent(name, null)
         val members = if (membersSource.isNotEmpty()) {
             membersSource
                 .splitToSequence(";\n")
@@ -208,7 +208,7 @@ private fun event(
 
     val typeProvider = TypeProvider(name)
 
-    val eventExtensionsCollector = BrowserSuspendExtensionsCollector(name, eventParent)
+    val eventExtensionsCollector = BrowserSuspendExtensionsCollector.forParent(name, eventParent)
     val eventMembers = eventSource.substringAfter(" {\n")
         .trimIndent()
         .splitToSequence(";\n")
@@ -266,7 +266,7 @@ private fun event(
     val companionSource = eventClassBody
         .substringAfter("\n", "")
 
-    val companionExtensionsCollector = BrowserSuspendExtensionsCollector(name, null)
+    val companionExtensionsCollector = BrowserSuspendExtensionsCollector.forParent(name, null)
     val companionMembers = if (companionSource.isNotEmpty()) {
         companionSource
             .splitToSequence(";\n")

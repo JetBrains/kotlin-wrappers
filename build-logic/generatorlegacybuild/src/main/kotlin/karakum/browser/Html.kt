@@ -1033,7 +1033,7 @@ internal fun convertInterface(
         declaration = declaration.replaceFirst("<$typeParameters>", "<$newTypeParameters>")
     }
 
-    val extensionsCollector = BrowserSuspendExtensionsCollector(name, newTypeParameters)
+    val extensionsCollector = BrowserSuspendExtensionsCollector.forParent(name, newTypeParameters)
 
     var members = if (memberSource.isNotEmpty()) {
         var result = memberSource
@@ -1381,7 +1381,7 @@ internal fun convertInterface(
         else -> "sealed"
     }
 
-    val companionExtensionsCollector = BrowserSuspendExtensionsCollector("$name.Companion", null)
+    val companionExtensionsCollector = BrowserSuspendExtensionsCollector.forParent("$name.Companion", null)
     val idDeclaration = RenderingContextRegistry.getIdDeclaration(name)
     val companion = if (staticSource != null) {
         val companionContent = getCompanion(name, staticSource, companionExtensionsCollector)
