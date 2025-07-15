@@ -255,6 +255,10 @@ internal fun String.applyPatches(): String {
             "crossOrigin: string",
             "crossOrigin: CrossOrigin",
         )
+        .replace(
+            "closedBy: string",
+            "closedBy: ClosedBy",
+        )
         .patchInterface("DOMTokenList") {
             it.replace(": string", ": T")
         }

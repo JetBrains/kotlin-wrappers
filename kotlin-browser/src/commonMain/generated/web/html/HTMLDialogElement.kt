@@ -19,7 +19,7 @@ protected constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLDialogElement/closedBy)
      */
-    var closedBy: String
+    var closedBy: ClosedBy
 
     /**
      * The **`open`** property of the `open` HTML attribute, indicating whether the dialog is available for interaction.

@@ -252,6 +252,18 @@ internal fun htmlUnions(): Sequence<ConversionResult> =
             ),
             pkg = "web.html",
         ),
+        ConversionResult(
+            name = "ClosedBy",
+            body = sealedUnionBody(
+                name = "ClosedBy",
+                values = listOf(
+                    "any",
+                    "closerequest",
+                    "none",
+                )
+            ),
+            pkg = "web.html",
+        ),
     ).plus(
         UNION_DATA_LIST.map { data ->
             ConversionResult(
