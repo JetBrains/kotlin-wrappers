@@ -2,6 +2,7 @@
 
 package web.mediastreams
 
+import js.core.JsAny
 import js.objects.JsPlainObject
 
 @JsPlainObject
@@ -12,7 +13,7 @@ external interface MediaTrackSettings {
     var channelCount: Int?
     var deviceId: String?
     var displaySurface: String?
-    var echoCancellation: Boolean?
+    var echoCancellation: JsAny /* boolean | string */?
     var facingMode: String?
     var frameRate: Double?
     var groupId: String?

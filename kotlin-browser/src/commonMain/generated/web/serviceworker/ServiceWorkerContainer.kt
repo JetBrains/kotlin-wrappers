@@ -25,7 +25,7 @@ external class ServiceWorkerContainer
 private constructor() :
     EventTarget {
     /**
-     * The **`controller`** read-only property of the ServiceWorkerContainer interface returns a `activated` (the same object returned by `null` if the request is a force refresh (_Shift_ + refresh) or if there is no active worker.
+     * The **`controller`** read-only property of the ServiceWorkerContainer interface represents the active ServiceWorker controlling the current page (associated with this `ServiceWorkerContainer`), or `null` if the page has no active or activating service worker.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerContainer/controller)
      */

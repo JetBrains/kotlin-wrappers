@@ -18,50 +18,56 @@ open external class IntersectionObserver(
     options: IntersectionObserverInit = definedExternally,
 ) {
     /**
-     * The IntersectionObserver interface's read-only **`root`** property identifies the Element or of the viewport for the element which is the observer's target.
+     * The **`root`** read-only property of the IntersectionObserver interface identifies the Element or Document whose bounds are treated as the bounding box of the viewport for the element which is the observer's target.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IntersectionObserver/root)
      */
     val root: ParentNode /* Element | Document */?
 
     /**
-     * The IntersectionObserver interface's read-only **`rootMargin`** property is a string with syntax similar to that of the CSS margin property.
+     * The **`rootMargin`** read-only property of the IntersectionObserver interface is a string with syntax similar to that of the CSS margin property.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IntersectionObserver/rootMargin)
      */
     val rootMargin: String
+
+    /**
+     * The **`scrollMargin`** read-only property of the IntersectionObserver interface adds a margin to all nested scroll container within the root element, including the root element if it is a scroll container.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IntersectionObserver/scrollMargin)
+     */
     val scrollMargin: String
 
     /**
-     * The IntersectionObserver interface's read-only **`thresholds`** property returns the list of intersection thresholds that was specified when the observer was instantiated with only one threshold ratio was provided when instantiating the object, this will be an array containing that single value.
+     * The **`thresholds`** read-only property of the IntersectionObserver interface returns the list of intersection thresholds that was specified when the observer was instantiated with IntersectionObserver.IntersectionObserver.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IntersectionObserver/thresholds)
      */
     val thresholds: ReadonlyArray<JsDouble>
 
     /**
-     * The IntersectionObserver method **`disconnect()`** stops watching all of its target elements for visibility changes.
+     * The **`disconnect()`** method of the IntersectionObserver interface stops the observer watching all of its target elements for visibility changes.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IntersectionObserver/disconnect)
      */
     fun disconnect()
 
     /**
-     * The IntersectionObserver method **`observe()`** adds an element to the set of target elements being watched by the `IntersectionObserver`.
+     * The **`observe()`** method of the IntersectionObserver interface adds an element to the set of target elements being watched by the `IntersectionObserver`.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IntersectionObserver/observe)
      */
     fun observe(target: Element)
 
     /**
-     * The IntersectionObserver method **`takeRecords()`** returns an array of has experienced an intersection change since the last time the intersections were checked, either explicitly through a call to this method or implicitly by an automatic call to the observer's callback.
+     * The **`takeRecords()`** method of the IntersectionObserver interface returns an array of IntersectionObserverEntry objects, one for each targeted element which has experienced an intersection change since the last time the intersections were checked, either explicitly through a call to this method or implicitly by an automatic call to the observer's callback.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IntersectionObserver/takeRecords)
      */
     fun takeRecords(): ReadonlyArray<IntersectionObserverEntry>
 
     /**
-     * The IntersectionObserver method **`unobserve()`** instructs the `IntersectionObserver` to stop observing the specified target element.
+     * The **`unobserve()`** method of the IntersectionObserver interface instructs the `IntersectionObserver` to stop observing the specified target element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IntersectionObserver/unobserve)
      */

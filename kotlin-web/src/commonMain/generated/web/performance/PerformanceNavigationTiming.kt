@@ -70,14 +70,14 @@ private constructor() :
     val type: NavigationTimingType
 
     /**
-     * The **`unloadEventEnd`** read-only property returns a DOMHighResTimeStamp representing the time immediately after the current document's `unload` event handler completes.
+     * The **`unloadEventEnd`** read-only property returns a DOMHighResTimeStamp representing the time immediately after the previous document's `unload` event handler completes.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceNavigationTiming/unloadEventEnd)
      */
     val unloadEventEnd: DOMHighResTimeStamp
 
     /**
-     * The **`unloadEventStart`** read-only property returns a DOMHighResTimeStamp representing the time immediately before the current document's `unload` event handler starts.
+     * The **`unloadEventStart`** read-only property returns a DOMHighResTimeStamp representing the time immediately before the previous document's `unload` event handler starts.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceNavigationTiming/unloadEventStart)
      */

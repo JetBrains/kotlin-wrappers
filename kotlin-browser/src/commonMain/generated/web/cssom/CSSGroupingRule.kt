@@ -27,7 +27,7 @@ private constructor() :
     fun deleteRule(index: Int)
 
     /**
-     * The **`insertRule()`** method of the ```js-nolint insertRule(rule) insertRule(rule, index) ``` - `rule` - : A string - `index` [MISSING: optional_inline] - : An optional index at which to insert the rule; defaults to 0.
+     * The **`insertRule()`** method of the ```js-nolint insertRule(rule) insertRule(rule, index) ``` - `rule` - : A string - `index` MISSING: optional_inline] - : An optional index at which to insert the rule; defaults to 0.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSGroupingRule/insertRule)
      */

@@ -45,6 +45,13 @@ open external class PointerEvent(
     val isPrimary: Boolean
 
     /**
+     * The **`persistentDeviceId`** read-only property of the PointerEvent interface is a unique identifier for the pointing device generating the `PointerEvent`.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PointerEvent/persistentDeviceId)
+     */
+    val persistentDeviceId: Int
+
+    /**
      * The **`pointerId`** read-only property of the event.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PointerEvent/pointerId)

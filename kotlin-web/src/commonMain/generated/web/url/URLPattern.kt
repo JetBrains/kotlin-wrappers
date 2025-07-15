@@ -42,6 +42,11 @@ open external class URLPattern(
         options: URLPatternOptions = definedExternally,
     )
 
+    /**
+     * The **`hasRegExpGroups`** read-only property of the URLPattern interface is a boolean indicating whether or not any of the `URLPattern` components contain regular expression capturing groups.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/URLPattern/hasRegExpGroups)
+     */
     val hasRegExpGroups: Boolean
 
     /**

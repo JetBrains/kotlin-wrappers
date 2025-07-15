@@ -905,6 +905,11 @@ private constructor() :
     var fontVariantEastAsian: String
 
     /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/font-variant-emoji)
+     */
+    var fontVariantEmoji: String
+
+    /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/font-variant-ligatures)
      */
     var fontVariantLigatures: String

@@ -12,7 +12,7 @@ external interface MediaTrackConstraintSet {
     var channelCount: ConstrainULong?
     var deviceId: ConstrainDOMString?
     var displaySurface: ConstrainDOMString?
-    var echoCancellation: ConstrainBoolean?
+    var echoCancellation: ConstrainBooleanOrDOMString?
     var facingMode: ConstrainDOMString?
     var frameRate: ConstrainDouble?
     var groupId: ConstrainDOMString?

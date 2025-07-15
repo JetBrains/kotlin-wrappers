@@ -82,6 +82,7 @@ private val PKG_MAP = mapOf(
     "FillMode" to "web.animations",
     "IterationCompositeOperation" to "web.animations",
     "PlaybackDirection" to "web.animations",
+    "ScrollAxis" to "web.animations",
 
     "AutomationRate" to "web.audio",
     "BiquadFilterType" to "web.audio",
@@ -112,6 +113,7 @@ private val PKG_MAP = mapOf(
 
     "PushEncryptionKeyName" to "web.push",
 
+    "SpeechRecognitionErrorCode" to "web.speech",
     "SpeechSynthesisErrorCode" to "web.speech",
 
     "Base64URLString" to "web.authn",

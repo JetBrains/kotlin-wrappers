@@ -50,6 +50,8 @@ internal val EVENT_DATA = listOf(
     EventInfo("web.gl.WebGLContextEvent"),
     EventInfo("web.midi.MIDIConnectionEvent"),
     EventInfo("web.midi.MIDIMessageEvent"),
+    EventInfo("web.speech.SpeechRecognitionEvent"),
+    EventInfo("web.speech.SpeechRecognitionErrorEvent"),
     EventInfo("web.speech.SpeechSynthesisEvent"),
     EventInfo("web.speech.SpeechSynthesisErrorEvent"),
     EventInfo("web.vtt.TrackEvent"),

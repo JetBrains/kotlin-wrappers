@@ -31,6 +31,11 @@ private val ANIMATION_TYPES = setOf(
 
     "DocumentTimeline",
     "DocumentTimelineOptions",
+
+    "ScrollTimeline",
+    "ScrollTimelineOptions",
+    "ViewTimeline",
+    "ViewTimelineOptions",
 )
 
 private val RANGES_TYPES = setOf(
@@ -1230,24 +1235,9 @@ internal fun convertInterface(
         .joinToString("\n\n")
 
     val annotations = if (IDLRegistry.isPlainObjectInterface(name)) {
-        val futureJso = when (name) {
-            "CSPViolationReportBody",
-            "Report",
-            "ReportBody",
-                -> true
-
-            else -> false
-        }
-
         val isInterface = declaration.startsWith("interface ")
-        if (!futureJso) {
-            require(isInterface) {
-                "JSO `$name` should be interface"
-            }
-        } else {
-            require(!isInterface) {
-                "JSO workaround isn't required for `$name` anymore"
-            }
+        require(isInterface) {
+            "JSO `$name` should be interface"
         }
 
         require("= definedExternally" !in members) {
@@ -1255,7 +1245,7 @@ internal fun convertInterface(
         }
 
         when {
-            futureJso || name == "QueuingStrategy"
+            name == "QueuingStrategy"
                 -> "// @JsPlainObject"
 
             else -> "@JsPlainObject"
@@ -2019,7 +2009,12 @@ private fun convertProperty(
         "number | number[]",
             -> "ReadonlyArray<Double>"
 
+        "(boolean | string)[]",
+            -> "ReadonlyArray<*>"
+
+        "boolean | string",
         "string | string[]",
+        "string | (CSSNumericValue | CSSKeywordValue)[]",
             -> "JsAny /* $type */"
 
         "Promise<void>",

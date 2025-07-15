@@ -15,7 +15,7 @@ external interface MediaTrackCapabilities {
     var channelCount: ULongRange?
     var deviceId: String?
     var displaySurface: String?
-    var echoCancellation: ReadonlyArray<JsBoolean>?
+    var echoCancellation: ReadonlyArray<*>?
     var facingMode: ReadonlyArray<JsString>?
     var frameRate: DoubleRange?
     var groupId: String?

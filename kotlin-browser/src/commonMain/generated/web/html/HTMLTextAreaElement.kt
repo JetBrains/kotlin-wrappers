@@ -70,14 +70,14 @@ protected constructor() :
     override val labels: NodeList<HTMLLabelElement>
 
     /**
-     * The **`maxLength`** property of the HTMLTextAreaElement interface indicates the maximum number of characters (in UTF-16 code units) allowed to be entered for the value of the textarea element, and the maximum number of characters allowed for the value to be valid.
+     * The **`maxLength`** property of the HTMLTextAreaElement interface indicates the maximum number of characters (in UTF-16) allowed to be entered for the value of the textarea element, and the maximum number of characters allowed for the value to be valid.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/maxLength)
      */
     var maxLength: Int
 
     /**
-     * The **`minLength`** property of the HTMLTextAreaElement interface indicates the minimum number of characters (in UTF-16 code units) required for the value of the textarea element to be valid.
+     * The **`minLength`** property of the HTMLTextAreaElement interface indicates the minimum number of characters (in UTF-16) required for the value of the textarea element to be valid.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/minLength)
      */
@@ -140,7 +140,7 @@ protected constructor() :
     var selectionStart: Int
 
     /**
-     * The **`textLength`** read-only property of the HTMLTextAreaElement interface is a non-negative integer representing the number of characters, in UTF-16 code units, of the textarea element's value.
+     * The **`textLength`** read-only property of the HTMLTextAreaElement interface is a non-negative integer representing the number of characters, in UTF-16, of the textarea element's value.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/textLength)
      */
