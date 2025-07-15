@@ -15,7 +15,7 @@ internal fun atomicsDeclarations(
     val body = """
     external object Atomics {
         $members
-    }    
+    }
     """.trimIndent()
 
     return ConversionResult(
@@ -57,8 +57,11 @@ internal fun atomicsFunction(
         acc.replace(": $typedArray", ": $typedArray<*>")
     }
 
-    content = content.replace("value: number", "value: Int")
+    content = content
+        .replace("value: number", "value: Int")
+        .replace("n?: number", "n: Int = definedExternally")
         .replace(": number", ": Int")
+        .removeSuffix(": void")
 
     return "fun $content"
 }

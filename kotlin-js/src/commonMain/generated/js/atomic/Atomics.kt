@@ -109,6 +109,12 @@ external object Atomics {
     ): T
 
     /**
+     * Performs a finite-time microwait by signaling to the operating system or
+     * CPU that the current executing code is in a spin-wait loop.
+     */
+    fun pause(n: Int = definedExternally)
+
+    /**
      * Stores a value at the given position in the array, returning the new value. Until this
      * atomic operation completes, any other read or write operation against the array will block.
      */
