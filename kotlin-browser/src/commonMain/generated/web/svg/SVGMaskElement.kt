@@ -11,7 +11,7 @@ open external class SVGMaskElement
 private constructor() :
     SVGElement {
     /**
-     * The read-only **`height`** property of the SVGMaskElement interface returns an SVGAnimatedLength object containing the value of the height attribute of the marker.
+     * The read-only **`height`** property of the SVGMaskElement interface returns an SVGAnimatedLength object containing the value of the height attribute of the mask.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGMaskElement/height)
      */
@@ -32,7 +32,7 @@ private constructor() :
     val maskUnits: SVGAnimatedEnumeration<SVGUnitTypes.Type>
 
     /**
-     * The read-only **`width`** property of the SVGMaskElement interface returns an SVGAnimatedLength object containing the value of the width attribute of the marker.
+     * The read-only **`width`** property of the SVGMaskElement interface returns an SVGAnimatedLength object containing the value of the width attribute of the mask.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGMaskElement/width)
      */
@@ -46,7 +46,7 @@ private constructor() :
     val x: SVGAnimatedLength
 
     /**
-     * The read-only **`y`** property of the SVGMaskElement interface returns an SVGAnimatedLength object containing the value of the y attribute of the marker.
+     * The read-only **`y`** property of the SVGMaskElement interface returns an SVGAnimatedLength object containing the value of the y attribute of the mask.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGMaskElement/y)
      */
