@@ -7,11 +7,9 @@ package js.iterable
 import js.core.JsAny
 import js.iterable.internal.iteratorFromAsyncIterable
 import js.symbol.Symbol
-import seskar.js.JsNativeGetter
 import kotlin.js.definedExternally
 
 external interface AsyncIterable<out T : JsAny?> {
-    @JsNativeGetter
     operator fun get(
         key: Symbol.asyncIterator,
     ): () -> AsyncIterator<T> = definedExternally
@@ -19,4 +17,3 @@ external interface AsyncIterable<out T : JsAny?> {
 
 inline operator fun <T : JsAny?> AsyncIterable<T>.iterator(): SuspendableIterator<T> =
     iteratorFromAsyncIterable(this)
-

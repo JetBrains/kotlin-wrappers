@@ -23,7 +23,6 @@ private val DEFAULT_IMPORTS = listOf(
 
     "seskar.js.JsRawValue",
     "seskar.js.JsValue",
-    "seskar.js.JsNativeInvoke",
 ).map { it.substringAfterLast(".") to it }
 
 fun generateKotlinDeclarations(

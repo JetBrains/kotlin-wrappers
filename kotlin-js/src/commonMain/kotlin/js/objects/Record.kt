@@ -5,13 +5,11 @@
 package js.objects
 
 import js.core.JsAny
-import seskar.js.JsNativeSetter
 import kotlin.js.definedExternally
 
 external interface Record<K : JsAny, V : JsAny?> :
     ReadonlyRecord<K, V> {
 
-    @JsNativeSetter
     operator fun set(
         key: K,
         value: V,

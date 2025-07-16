@@ -28,8 +28,6 @@ import web.cssom.SizeQuery
 
 private val COMMON_IMPORTS = """
 import js.reflect.unsafeCast
-import seskar.js.JsNativeGetter
-import seskar.js.JsNativeSetter
 import seskar.js.JsRawValue
 import seskar.js.JsValue
 """.trimIndent()

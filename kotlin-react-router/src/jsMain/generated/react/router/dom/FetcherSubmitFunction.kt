@@ -6,6 +6,5 @@ package react.router.dom
  * Submits a fetcher `<form>` to the server without reloading the page.
  */
 sealed external interface FetcherSubmitFunction {
-    @seskar.js.JsNativeInvoke
     operator fun invoke(target: SubmitTarget, options: FetcherSubmitOptions = definedExternally)
 }

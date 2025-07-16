@@ -7,6 +7,5 @@ package remix.run.router
  * properties from framework-agnostic properties
  */
 sealed external interface MapRoutePropertiesFunction {
-    @seskar.js.JsNativeInvoke
     operator fun invoke(route: AgnosticRouteObject): MapRoutePropertiesFunctionResult
 }

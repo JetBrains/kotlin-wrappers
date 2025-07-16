@@ -5,13 +5,11 @@
 package js.array
 
 import js.core.JsAny
-import seskar.js.JsNativeGetter
 import kotlin.js.definedExternally
 
 external interface ArrayLike<out T : JsAny?> {
     val length: Int
 
-    @JsNativeGetter
     operator fun get(
         index: Int,
     ): T = definedExternally

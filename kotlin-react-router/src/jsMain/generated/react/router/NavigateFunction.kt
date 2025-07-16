@@ -8,9 +8,7 @@ import remix.run.router.To
  * The interface for the navigate() function returned from useNavigate().
  */
 sealed external interface NavigateFunction {
-    @seskar.js.JsNativeInvoke
     operator fun invoke(to: To, options: NavigateOptions = definedExternally)
 
-    @seskar.js.JsNativeInvoke
     operator fun invoke(delta: Double)
 }

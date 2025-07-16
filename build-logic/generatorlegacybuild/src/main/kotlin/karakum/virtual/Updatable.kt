@@ -5,7 +5,6 @@ import karakum.common.ConversionResult
 // language=kotlin
 private val UPDATABLE_CODE = """
 external interface Updatable<T, D>{
-    @JsNativeInvoke
     operator fun invoke(): T
 
     fun updateDeps(newDeps: D)

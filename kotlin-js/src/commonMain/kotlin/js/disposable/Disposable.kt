@@ -5,11 +5,9 @@
 package js.disposable
 
 import js.symbol.Symbol
-import seskar.js.JsNativeGetter
 import kotlin.js.definedExternally
 
 external interface Disposable {
-    @JsNativeGetter
     operator fun get(
         key: Symbol.dispose,
     ): Dispose = definedExternally
