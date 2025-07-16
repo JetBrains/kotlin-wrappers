@@ -2,19 +2,20 @@ package react
 
 import js.core.Void
 import js.promise.Promise
-import js.reflect.unsafeCast
+import js.promise.await
 import js.reflect.legacyUnsafeCast
+import js.reflect.unsafeCast
 import react.internal.isolatedPromise
-import seskar.js.JsAsync
-import seskar.js.JsNativeInvoke
 
 sealed external interface Action<in T> :
-    ActionOrString<T> {
-    @JsAsync
-    suspend operator fun invoke(data: T)
+    ActionOrString<T>
 
-    @JsNativeInvoke
-    fun invokeAsync(data: T): Promise<Void>?
+suspend operator fun <T> Action<T>.invoke(data: T) {
+    unsafeCast<ActionOriginal<T>>(this)(data)?.await()
+}
+
+private external interface ActionOriginal<in T> {
+    operator fun invoke(data: T): Promise<Void>?
 }
 
 inline fun Action(
