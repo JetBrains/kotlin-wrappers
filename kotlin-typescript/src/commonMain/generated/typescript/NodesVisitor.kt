@@ -14,7 +14,6 @@ package typescript
  * For the canonical implementation of this type, @see {visitNodes}.
  */
 sealed external interface NodesVisitor {
-    @seskar.js.JsNativeInvoke
     operator fun <TIn : Node, TInArray : NodeArray<TIn>?> invoke(
         nodes: TInArray,
         visitor: Visitor<TIn, Node?>,

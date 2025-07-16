@@ -8,10 +8,8 @@ sealed external interface TypeAcquisition {
     var exclude: js.array.ReadonlyArray<String>?
     var disableFilenameBasedTypeAcquisition: Boolean?
 
-    @seskar.js.JsNativeGetter
     operator fun get(key: String): CompilerOptionsValue
 
-    @seskar.js.JsNativeSetter
     operator fun set(
         key: String,
         value: CompilerOptionsValue,
