@@ -3,10 +3,8 @@
 package node.util
 
 sealed external interface ParseArgsOptionsConfig {
-    @seskar.js.JsNativeGetter
     operator fun get(key: String): ParseArgsOptionConfig?
 
-    @seskar.js.JsNativeSetter
     operator fun set(
         key: String,
         value: ParseArgsOptionConfig?,

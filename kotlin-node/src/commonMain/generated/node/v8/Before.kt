@@ -12,6 +12,5 @@ import js.promise.Promise
  * @since v17.1.0, v16.14.0
  */
 sealed external interface Before {
-    @seskar.js.JsNativeInvoke
     operator fun invoke(promise: Promise<Any?>)
 }

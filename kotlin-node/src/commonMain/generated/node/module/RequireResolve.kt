@@ -11,7 +11,6 @@ sealed external interface RequireResolve {
      * @since v0.3.0
      * @param request The module path to resolve.
      */
-    @seskar.js.JsNativeInvoke
     operator fun invoke(
         request: String,
         options: RequireResolveOptions = definedExternally,

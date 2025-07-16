@@ -3,40 +3,33 @@
 package node.fs
 
 sealed external interface StatSyncFn {
-    @seskar.js.JsNativeInvoke
     operator fun invoke(
         path: PathLike,
         options: Nothing? = definedExternally,
     ): Stats
 
-    @seskar.js.JsNativeInvoke
     operator fun invoke(
         path: PathLike,
         options: StatSyncFnSimpleOptions = definedExternally,
     ): Stats?
 
-    @seskar.js.JsNativeInvoke
     operator fun invoke(
         path: PathLike,
         options: StatSyncFnBigIntOptions,
     ): BigIntStats?
 
-    @seskar.js.JsNativeInvoke
     operator fun invoke(
         path: PathLike,
         options: StatSyncFnSimpleThrowIfNoEntryOptions = definedExternally,
     ): Stats
 
-    @seskar.js.JsNativeInvoke
     operator fun invoke(
         path: PathLike,
         options: StatSyncFnBigIntThrowIfNoEntryOptions,
     ): BigIntStats
 
-    @seskar.js.JsNativeInvoke
     operator fun invoke(path: PathLike, options: StatSyncFnOptions): Any // Stats | BigIntStats
 
-    @seskar.js.JsNativeInvoke
     operator fun invoke(
         path: PathLike,
         options: StatSyncOptions = definedExternally,

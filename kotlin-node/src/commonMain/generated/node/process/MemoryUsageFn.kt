@@ -7,7 +7,6 @@ sealed external interface MemoryUsageFn {
      * The `process.memoryUsage()` method iterate over each page to gather informations about memory
      * usage which can be slow depending on the program memory allocations.
      */
-    @seskar.js.JsNativeInvoke
     operator fun invoke(): MemoryUsage
 
     /**

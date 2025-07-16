@@ -5,10 +5,8 @@ package node.util.inspect
 import node.util.Style
 
 external interface Styles {
-    @seskar.js.JsNativeGetter
     operator fun <K : Style> get(key: K): String?
 
-    @seskar.js.JsNativeSetter
     operator fun <K : Style> set(
         key: K,
         value: String?,

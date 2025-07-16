@@ -4,7 +4,6 @@ package node.crypto
 
 sealed external class DiffieHellmanGroup {
     // new (name: string): DiffieHellmanGroup;
-    @seskar.js.JsNativeInvoke
     operator fun invoke(name: String): DiffieHellmanGroup
 
     constructor ()

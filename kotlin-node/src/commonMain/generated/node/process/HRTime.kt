@@ -35,7 +35,6 @@ sealed external interface HRTime {
      * @legacy Use {@link process.hrtime.bigint()} instead.
      * @param time The result of a previous call to `process.hrtime()`
      */
-    @seskar.js.JsNativeInvoke
     operator fun invoke(time: js.array.Tuple2<Double, Double> = definedExternally): js.array.Tuple2<Double, Double>
 
     /**

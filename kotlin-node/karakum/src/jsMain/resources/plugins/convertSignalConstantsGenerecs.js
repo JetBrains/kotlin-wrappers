@@ -44,7 +44,6 @@ export default function (node, context, render) {
         const type = karakum.renderNullable(node.type.type, true, context, render)
 
         const getter = `
-@seskar.js.JsNativeGetter
 ${karakum.ifPresent(accessorsInheritanceModifier, it => `${it} `)}operator fun <${typeParameter}> get(key: Key): ${type}
         `
 
@@ -52,7 +51,6 @@ ${karakum.ifPresent(accessorsInheritanceModifier, it => `${it} `)}operator fun <
 
         if (!readonly) {
             setter = `
-@seskar.js.JsNativeSetter
 ${karakum.ifPresent(accessorsInheritanceModifier, it => `${it} `)}operator fun <${typeParameter}> set(key: Key, value: ${type})
             `
         }
