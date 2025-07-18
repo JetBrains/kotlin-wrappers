@@ -47,7 +47,6 @@ private val DEFAULT_IMPORTS = Imports(
     "js.errors.JsErrorName",
     "js.function.JsFunction",
     "js.globals.GlobalScope",
-    "js.import.JsQualifier",
     "js.intl.DateTimeFormatOptions",
     "js.intl.Locale",
     "js.intl.Localizable",
@@ -80,6 +79,7 @@ private val DEFAULT_IMPORTS = Imports(
     "js.typedarrays.Uint8ClampedArray",
 
     "kotlin.js.JsName",
+    "kotlin.js.JsQualifier",
     "kotlin.js.definedExternally",
     "kotlin.js.undefined",
 

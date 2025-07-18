@@ -4,12 +4,12 @@
 
 package web.assembly
 
-import js.import.JsQualifier
 import js.promise.Promise
 import js.promise.PromiseLike
 import js.promise.await
 import web.http.Response
 import kotlin.js.JsName
+import kotlin.js.JsQualifier
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/WebAssembly/Reference/JavaScript_interface/compileStreaming_static)

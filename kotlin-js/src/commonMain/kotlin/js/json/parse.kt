@@ -3,7 +3,7 @@
 package js.json
 
 import js.core.JsAny
-import js.import.JsQualifier
+import kotlin.js.JsQualifier
 import kotlin.js.definedExternally
 
 /**

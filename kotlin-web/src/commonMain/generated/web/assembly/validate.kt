@@ -5,7 +5,7 @@
 package web.assembly
 
 import js.buffer.BufferSource
-import js.import.JsQualifier
+import kotlin.js.JsQualifier
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/WebAssembly/Reference/JavaScript_interface/validate_static)

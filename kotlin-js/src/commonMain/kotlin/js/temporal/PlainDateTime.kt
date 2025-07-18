@@ -5,7 +5,7 @@
 
 package js.temporal
 
-import js.import.JsQualifier
+import kotlin.js.JsQualifier
 import kotlin.js.definedExternally
 
 /**

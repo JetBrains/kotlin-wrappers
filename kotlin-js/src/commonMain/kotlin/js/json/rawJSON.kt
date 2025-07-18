@@ -2,7 +2,7 @@
 
 package js.json
 
-import js.import.JsQualifier
+import kotlin.js.JsQualifier
 
 /**
  * [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/rawJSON)

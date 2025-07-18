@@ -5,8 +5,8 @@
 
 package js.temporal
 
-import js.import.JsQualifier
 import js.objects.JsPlainObject
+import kotlin.js.JsQualifier
 import kotlin.js.definedExternally
 
 /**

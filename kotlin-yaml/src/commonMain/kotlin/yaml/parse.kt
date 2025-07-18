@@ -3,7 +3,7 @@
 package yaml
 
 import js.core.JsAny
-import js.import.JsModule
+import kotlin.js.JsModule
 
 /**
  * Parse an input string into JavaScript.

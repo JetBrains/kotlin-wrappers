@@ -1,4 +1,8 @@
-package js.import
+@file:Suppress(
+    "NO_ACTUAL_FOR_EXPECT",
+)
+
+package kotlin.js
 
 import kotlin.annotation.AnnotationTarget.*
 
