@@ -8,10 +8,12 @@ import js.promise.Promise
 import js.promise.await
 import web.clipboard.Clipboard
 import web.credentials.CredentialsContainer
+import web.experimental.ExperimentalWebApi
 import web.fedcm.NavigatorLogin
 import web.gamepad.Gamepad
 import web.geolocation.Geolocation
 import web.http.BodyInit
+import web.keyboard.Keyboard
 import web.mediacapabilities.MediaCapabilities
 import web.mediadevices.MediaDevices
 import web.mediakey.MediaKeySystemAccess
@@ -205,6 +207,12 @@ protected /* private */ constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/vibrate)
      */
     fun vibrate(pattern: VibratePattern): Boolean
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/keyboard)
+     */
+    @ExperimentalWebApi
+    val keyboard: Keyboard
 }
 
 /**
