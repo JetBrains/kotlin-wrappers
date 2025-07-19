@@ -93,6 +93,9 @@ suspend fun main() {
             convertGenericBuiltinModule,
             convertGetPeerCertificate,
             convertHttpTypeParameter,
+            convertImplicitArrayBuffer,
+            convertIncompatibleParameterName,
+            convertInspectorQualifiedName,
         ))
         injections = manyOf(values = jsInjections + arrayOf())
         annotations = manyOf(values = jsAnnotations + arrayOf())
