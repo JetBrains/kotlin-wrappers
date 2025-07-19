@@ -8,6 +8,8 @@ import io.github.sgrishchenko.karakum.extension.plugins.typeScriptServiceKey
 import io.github.sgrishchenko.karakum.util.getSourceFileOrNull
 import js.objects.Object
 import js.objects.recordOf
+import js.array.component1
+import js.array.component2
 import typescript.Declaration
 import typescript.Identifier
 import typescript.Node
