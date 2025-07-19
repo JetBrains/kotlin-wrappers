@@ -6,7 +6,7 @@ import web.dom.document
 import web.dom.dragOverEvent
 import web.events.addEventHandler
 import web.events.addHandler
-import web.uievents.DRAG_OVER
+import web.dnd.DRAG_OVER
 import web.dnd.DragEvent
 
 private fun preventDefaultExample_handler() {
