@@ -308,6 +308,11 @@ internal fun String.applyPatches(): String {
                 }
                 .joinToString("\n")
         }
+        // TEMP
+        .replace(
+            ", NavigatorCookies, NavigatorID",
+            ", NavigatorCookies, NavigatorGPU, NavigatorID",
+        )
 }
 
 internal val DOM_GEOMETRY_ALIASES = listOf(
