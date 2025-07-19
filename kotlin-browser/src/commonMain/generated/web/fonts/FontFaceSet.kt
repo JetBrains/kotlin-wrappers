@@ -1,9 +1,5 @@
 // Automatically generated - do not modify!
 
-@file:Suppress(
-    "INTERFACE_WITH_SUPERCLASS",
-)
-
 package web.fonts
 
 import js.array.ReadonlyArray
@@ -21,7 +17,8 @@ import kotlin.js.definedExternally
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FontFaceSet)
  */
-sealed external interface FontFaceSet :
+open external class FontFaceSet
+private constructor() :
     EventTarget,
     MutableSetLike<FontFace> {
     /**

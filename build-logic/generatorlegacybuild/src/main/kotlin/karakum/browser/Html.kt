@@ -1616,9 +1616,6 @@ internal fun getStaticSource(
     name: String,
     source: String,
 ): String? {
-    if (name == "FontFaceSet")
-        return null
-
     val contentSourceList = sequenceOf("declare var", "var", "const")
         .map { source.substringAfter("\n$it $name: {\n", "") }
         .plus(source.substringAfter("\ninterface ${name}Constructor {\n", ""))

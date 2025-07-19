@@ -400,7 +400,6 @@ fun generateKotlinDeclarations(
                 || name == "ParentNode"
                 || name == "AbstractWorker"
                 || name == "MessageEventTarget"
-                || name == "FontFaceSet"
                 || name == "AudioWorkletProcessorImpl"
                 || name == "GlobalEventHandlers"
                 || name == "WindowEventHandlers"
