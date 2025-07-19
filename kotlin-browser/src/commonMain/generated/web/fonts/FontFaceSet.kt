@@ -104,17 +104,17 @@ suspend inline fun FontFaceSet.load(
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FontFaceSet/loading_event)
  */
-inline val FontFaceSet.loadingEvent: EventInstance<FontFaceSetLoadEvent, FontFaceSet, FontFaceSet>
+inline val <C : FontFaceSet> C.loadingEvent: EventInstance<FontFaceSetLoadEvent, C, C>
     get() = EventInstance(this, "loading")
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FontFaceSet/loadingdone_event)
  */
-inline val FontFaceSet.loadingDoneEvent: EventInstance<FontFaceSetLoadEvent, FontFaceSet, FontFaceSet>
+inline val <C : FontFaceSet> C.loadingDoneEvent: EventInstance<FontFaceSetLoadEvent, C, C>
     get() = EventInstance(this, "loadingdone")
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FontFaceSet/loadingerror_event)
  */
-inline val FontFaceSet.loadingErrorEvent: EventInstance<FontFaceSetLoadEvent, FontFaceSet, FontFaceSet>
+inline val <C : FontFaceSet> C.loadingErrorEvent: EventInstance<FontFaceSetLoadEvent, C, C>
     get() = EventInstance(this, "loadingerror")

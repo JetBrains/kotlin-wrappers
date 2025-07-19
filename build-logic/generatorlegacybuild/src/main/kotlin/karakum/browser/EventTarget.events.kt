@@ -18,9 +18,7 @@ internal fun List<ConversionResult>.withEventInstances(
                 .getOrDefault(data.type, data.type)
                 .snakeToCamel()
 
-            val receiver = if ("open external" in declaration.body) "C" else name
             val typeParameters = when {
-                receiver != "C" -> ""
                 name == "IDBRequest" -> "<C : $name<*>>"
                 else -> "<C : $name>"
             }
@@ -28,7 +26,7 @@ internal fun List<ConversionResult>.withEventInstances(
             val targetType = EventDataRegistry.getTarget(
                 currentTarget = name,
                 eventType = data.type,
-                defaultTarget = receiver,
+                defaultTarget = "C",
             )
 
             val eventType = when (val eventClass = data.`interface`) {
@@ -40,7 +38,7 @@ internal fun List<ConversionResult>.withEventInstances(
             /**
              * [MDN Reference](https://developer.mozilla.org/docs/Web/API/$name/${data.type}_event)
              */
-            inline val $typeParameters $receiver.${memberName}Event: $EVENT_INSTANCE<$eventType, $receiver, $targetType>
+            inline val $typeParameters C.${memberName}Event: $EVENT_INSTANCE<$eventType, C, $targetType>
                 get() = $EVENT_INSTANCE(this, "${data.type}")
             """.trimIndent()
         }
