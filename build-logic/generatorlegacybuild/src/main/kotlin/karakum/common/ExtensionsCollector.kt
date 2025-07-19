@@ -1,6 +1,7 @@
 package karakum.common
 
 private const val CONTROLLER = "controller"
+private const val CONTROLLER_INIT = "val $CONTROLLER = AbortController()"
 
 private val ABORTABLE_TYPES = setOf(
     "AddEventListenerOptions",
@@ -138,7 +139,7 @@ internal open class SuspendExtensionsCollector(
 
         return when {
             isAbortable -> """
-                val $CONTROLLER = AbortController()
+                $CONTROLLER_INIT
                 $returnKeyword $promiseCall.awaitCancellable($CONTROLLER)$resultCast
             """.trimIndent()
 
@@ -181,8 +182,9 @@ internal open class SuspendExtensionsCollector(
                 isAbortable
             )
 
+            val modifiers = if (CONTROLLER_INIT !in body) "inline" else ""
             val extension = """
-            ${comment}suspend inline $functionSignature $funTypeParameters $fullParentName$functionName$newParameters$returnType {
+            ${comment}suspend $modifiers $functionSignature $funTypeParameters $fullParentName$functionName$newParameters$returnType {
                 $body
             }
             """.trimIndent()

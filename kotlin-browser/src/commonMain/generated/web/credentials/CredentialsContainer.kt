@@ -58,7 +58,7 @@ private constructor() {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CredentialsContainer/create)
  */
-suspend inline fun CredentialsContainer.create(options: CredentialCreationOptions): Credential? {
+suspend fun CredentialsContainer.create(options: CredentialCreationOptions): Credential? {
     val controller = AbortController()
     return createAsync(
         options = patchAbortOptions(options, controller),
@@ -70,7 +70,7 @@ suspend inline fun CredentialsContainer.create(options: CredentialCreationOption
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CredentialsContainer/create)
  */
-suspend inline fun CredentialsContainer.create(): Credential? {
+suspend fun CredentialsContainer.create(): Credential? {
     val controller = AbortController()
     return createAsync(
         options = createAbortable(controller),
@@ -82,7 +82,7 @@ suspend inline fun CredentialsContainer.create(): Credential? {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CredentialsContainer/get)
  */
-suspend inline fun CredentialsContainer.get(options: CredentialRequestOptions): Credential? {
+suspend fun CredentialsContainer.get(options: CredentialRequestOptions): Credential? {
     val controller = AbortController()
     return getAsync(
         options = patchAbortOptions(options, controller),
@@ -94,7 +94,7 @@ suspend inline fun CredentialsContainer.get(options: CredentialRequestOptions): 
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CredentialsContainer/get)
  */
-suspend inline fun CredentialsContainer.get(): Credential? {
+suspend fun CredentialsContainer.get(): Credential? {
     val controller = AbortController()
     return getAsync(
         options = createAbortable(controller),

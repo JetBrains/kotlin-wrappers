@@ -116,7 +116,7 @@ suspend inline fun <R : JsAny?> ReadableStream<R>.cancel() {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStream/pipeTo)
  */
-suspend inline fun <R : JsAny?> ReadableStream<R>.pipeTo(
+suspend fun <R : JsAny?> ReadableStream<R>.pipeTo(
     destination: WritableStream<R>,
     options: StreamPipeOptions,
 ) {
@@ -132,7 +132,7 @@ suspend inline fun <R : JsAny?> ReadableStream<R>.pipeTo(
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStream/pipeTo)
  */
-suspend inline fun <R : JsAny?> ReadableStream<R>.pipeTo(
+suspend fun <R : JsAny?> ReadableStream<R>.pipeTo(
     destination: WritableStream<R>,
 ) {
     val controller = AbortController()
