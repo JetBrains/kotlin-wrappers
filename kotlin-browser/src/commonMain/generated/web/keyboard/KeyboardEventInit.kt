@@ -1,9 +1,9 @@
 // Automatically generated - do not modify!
 
-package web.uievents
+package web.keyboard
 
 import js.objects.JsPlainObject
-import web.keyboard.KeyCode
+import web.uievents.EventModifierInit
 
 @JsPlainObject
 external interface KeyboardEventInit :

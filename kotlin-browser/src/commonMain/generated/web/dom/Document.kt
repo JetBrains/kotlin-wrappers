@@ -19,6 +19,7 @@ import web.fonts.FontFaceSource
 import web.form.FormDataEvent
 import web.form.SubmitEvent
 import web.html.*
+import web.keyboard.KeyboardEvent
 import web.location.Location
 import web.pip.PictureInPictureEvent
 import web.ranges.Range

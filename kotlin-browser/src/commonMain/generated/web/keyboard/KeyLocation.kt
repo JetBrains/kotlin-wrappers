@@ -1,5 +1,5 @@
 // Automatically generated - do not modify!
 
-package web.uievents
+package web.keyboard
 
 sealed external interface KeyLocation

@@ -17,6 +17,7 @@ import web.events.EventTarget
 import web.events.ProgressEvent
 import web.form.FormDataEvent
 import web.form.SubmitEvent
+import web.keyboard.KeyboardEvent
 import web.popover.ToggleEvent
 import web.touch.TouchEvent
 import web.uievents.*

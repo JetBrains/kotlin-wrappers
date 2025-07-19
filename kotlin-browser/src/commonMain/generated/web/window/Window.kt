@@ -27,6 +27,7 @@ import web.gamepad.GamepadEvent
 import web.history.HashChangeEvent
 import web.history.PageTransitionEvent
 import web.history.PopStateEvent
+import web.keyboard.KeyboardEvent
 import web.location.Location
 import web.messaging.MessageEvent
 import web.messaging.MessageEventSource

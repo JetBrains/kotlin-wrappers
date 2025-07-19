@@ -17,7 +17,7 @@ internal val EVENT_DATA = listOf(
     EventInfo("web.uievents.CompositionEvent"),
     EventInfo("web.uievents.DragEvent"),
     EventInfo("web.uievents.FocusEvent"),
-    EventInfo("web.uievents.KeyboardEvent"),
+    EventInfo("web.keyboard.KeyboardEvent"),
     EventInfo("web.uievents.MouseEvent"),
     EventInfo("web.touch.TouchEvent"),
     EventInfo("web.uievents.PointerEvent"),

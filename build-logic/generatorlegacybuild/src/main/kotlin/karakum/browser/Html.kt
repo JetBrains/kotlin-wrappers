@@ -657,7 +657,7 @@ internal fun htmlDeclarations(
                 "web.events" to EVENT_PHASE,
                 "web.html" to VIDEO_FRAME_REQUEST_ID,
                 "web.geolocation" to GEOLOCATION_WATCH_ID,
-                "web.uievents" to KEY_LOCATION,
+                "web.keyboard" to KEY_LOCATION,
                 "web.uievents" to DELTA_MODE,
             ).map { (pkg, name) ->
                 ConversionResult(

@@ -20,6 +20,7 @@ import web.fullscreen.FullscreenOptions
 import web.geometry.DOMRect
 import web.geometry.DOMRectList
 import web.html.HTMLCollection
+import web.keyboard.KeyboardEvent
 import web.scroll.ScrollIntoViewOptions
 import web.scroll.ScrollToOptions
 import web.touch.TouchEvent
