@@ -22,7 +22,7 @@ val convertGetPeerCertificate = createPlugin { node, context, _ ->
         ensure(isClassDeclaration(classNode))
 
         val className = ensureNotNull(classNode.name)
-        ensure(className.text === "TLSSocket")
+        ensure(className.text == "TLSSocket")
 
         ensure(node.parameters.asArray().size == 1)
 

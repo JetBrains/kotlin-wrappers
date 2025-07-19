@@ -101,6 +101,9 @@ suspend fun main() {
                 convertKeyUnionReferences,
                 convertKeyUnions,
                 convertMock,
+                convertMockTrackerGenerics,
+                convertModuleQualifiedName,
+                convertNodeJsQualifiedName,
                 // ---
                 convertTestContextHeritageClause,
                 convertTopLevelGlobals,

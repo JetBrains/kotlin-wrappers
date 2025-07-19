@@ -13,8 +13,8 @@ val convertKeyUnions = createPlugin { node, _, render ->
 
         ensure(isTypeAliasDeclaration(node))
         ensure(
-            node.name.text === "KeyType"
-                    || node.name.text === "KeyFormat"
+            node.name.text == "KeyType"
+                    || node.name.text == "KeyFormat"
         )
 
         val union = node.type
