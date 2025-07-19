@@ -1304,9 +1304,6 @@ internal fun convertInterface(
                 name == "Slottable" ||
                 name.endsWith("Handlers") ||
 
-                mainConstructor.isNotEmpty() ||
-                IDLRegistry.hasEmptyConstructor(name) ||
-                hasPrivateConstructor ||
                 hasTypeGuard
             -> ""
 
