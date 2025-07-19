@@ -12,8 +12,8 @@ import web.dom.HTMLOrSVGElement
 import web.dom.Node
 import web.events.Event
 import web.events.EventInstance
+import web.pointer.PointerEvent
 import web.uievents.DragEvent
-import web.uievents.PointerEvent
 
 /**
  * The **`MathMLElement`** interface represents any MathML element.

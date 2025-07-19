@@ -235,6 +235,7 @@ private val DEFAULT_IMPORTS = Imports(
     "web.permissions.Permissions",
     "web.pip.PictureInPictureEvent",
     "web.pip.PictureInPictureWindow",
+    "web.pointer.PointerEvent",
     "web.popover.Popover",
     "web.popover.PopoverTargetAction",
     "web.popover.ToggleEvent",
@@ -266,11 +267,14 @@ private val DEFAULT_IMPORTS = Imports(
     "web.time.EpochTimeStamp",
     "web.touch.TouchEvent",
     "web.uievents.EventModifierInit",
-    "web.uievents.FocusEvent",
+    "web.uievents.CompositionEvent",
     "web.uievents.DragEvent",
+    "web.uievents.FocusEvent",
+    "web.uievents.InputEvent",
     "web.uievents.MouseEvent",
-    "web.uievents.PointerEvent",
+    "web.uievents.MouseEventInit",
     "web.uievents.UIEvent",
+    "web.uievents.WheelEvent",
     "web.url.FragmentDirective",
     "web.url.URL",
     "web.url.URLSearchParams",
@@ -526,7 +530,6 @@ fun generateKotlinDeclarations(
             import web.popover.ToggleEvent
             import web.dom.*
             import web.window.*
-            import web.uievents.*
             import web.animations.AnimationEvent
             import web.gl.WebGLContextEvent
             import web.clipboard.ClipboardEvent

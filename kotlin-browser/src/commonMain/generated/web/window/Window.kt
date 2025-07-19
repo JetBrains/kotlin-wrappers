@@ -32,6 +32,7 @@ import web.location.Location
 import web.messaging.MessageEvent
 import web.messaging.MessageEventSource
 import web.pip.PictureInPictureEvent
+import web.pointer.PointerEvent
 import web.promise.PromiseRejectionEvent
 import web.scroll.ScrollToOptions
 import web.selection.Selection

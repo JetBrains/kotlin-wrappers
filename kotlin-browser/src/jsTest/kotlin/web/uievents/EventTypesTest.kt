@@ -1,5 +1,7 @@
 package web.uievents
 
+import web.pointer.CLICK
+import web.pointer.PointerEvent
 import kotlin.test.Test
 import kotlin.test.assertEquals
 

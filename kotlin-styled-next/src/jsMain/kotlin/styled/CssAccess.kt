@@ -10,10 +10,10 @@ import web.dom.Element
 import web.dom.document
 import web.html.HtmlTagName
 import web.location.location
+import web.pointer.CLICK
+import web.pointer.PointerEvent
+import web.pointer.PointerEventInit
 import web.storage.localStorage
-import web.uievents.CLICK
-import web.uievents.PointerEvent
-import web.uievents.PointerEventInit
 import web.url.URL
 import web.window.window
 

@@ -22,6 +22,7 @@ import web.html.*
 import web.keyboard.KeyboardEvent
 import web.location.Location
 import web.pip.PictureInPictureEvent
+import web.pointer.PointerEvent
 import web.ranges.Range
 import web.selection.Selection
 import web.touch.TouchEvent

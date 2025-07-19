@@ -4,8 +4,8 @@ package web.dom
 
 import web.components.Slottable
 import web.events.EventInstance
+import web.pointer.PointerEvent
 import web.uievents.DragEvent
-import web.uievents.PointerEvent
 import kotlin.js.definedExternally
 
 /**

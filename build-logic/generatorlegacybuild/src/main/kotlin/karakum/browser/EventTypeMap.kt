@@ -20,7 +20,7 @@ internal val EVENT_DATA = listOf(
     EventInfo("web.keyboard.KeyboardEvent"),
     EventInfo("web.uievents.MouseEvent"),
     EventInfo("web.touch.TouchEvent"),
-    EventInfo("web.uievents.PointerEvent"),
+    EventInfo("web.pointer.PointerEvent"),
     EventInfo("web.uievents.UIEvent"),
     EventInfo("web.uievents.WheelEvent"),
     EventInfo("web.uievents.InputEvent"),

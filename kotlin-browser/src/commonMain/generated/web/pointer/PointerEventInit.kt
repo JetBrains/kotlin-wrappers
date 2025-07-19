@@ -1,9 +1,10 @@
 // Automatically generated - do not modify!
 
-package web.uievents
+package web.pointer
 
 import js.array.ReadonlyArray
 import js.objects.JsPlainObject
+import web.uievents.MouseEventInit
 
 @JsPlainObject
 external interface PointerEventInit :

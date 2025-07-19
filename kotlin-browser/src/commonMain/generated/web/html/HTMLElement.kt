@@ -13,10 +13,10 @@ import web.dom.HTMLOrSVGElement
 import web.dom.Node
 import web.events.Event
 import web.events.EventInstance
+import web.pointer.PointerEvent
 import web.popover.Popover
 import web.popover.ToggleEvent
 import web.uievents.DragEvent
-import web.uievents.PointerEvent
 import kotlin.js.definedExternally
 
 /**

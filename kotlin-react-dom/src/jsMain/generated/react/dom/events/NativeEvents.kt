@@ -20,7 +20,7 @@ typealias NativeMouseEvent = web.uievents.MouseEvent
 
 typealias NativeTouchEvent = web.touch.TouchEvent
 
-typealias NativePointerEvent = web.uievents.PointerEvent
+typealias NativePointerEvent = web.pointer.PointerEvent
 
 typealias NativeToggleEvent = web.popover.ToggleEvent
 
