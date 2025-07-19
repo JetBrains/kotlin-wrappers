@@ -7,7 +7,7 @@ import web.keyboard.ModifierKeyCode
 
 external interface TouchEvent<out T : Element> : UIEvent<T, NativeTouchEvent> {
     val altKey: Boolean
-    val changedTouches: web.uievents.TouchList
+    val changedTouches: web.touch.TouchList
     val ctrlKey: Boolean
 
     /**
@@ -16,6 +16,6 @@ external interface TouchEvent<out T : Element> : UIEvent<T, NativeTouchEvent> {
     fun getModifierState(key: ModifierKeyCode): Boolean
     val metaKey: Boolean
     val shiftKey: Boolean
-    val targetTouches: web.uievents.TouchList
-    val touches: web.uievents.TouchList
+    val targetTouches: web.touch.TouchList
+    val touches: web.touch.TouchList
 }

@@ -263,6 +263,13 @@ private val DEFAULT_IMPORTS = Imports(
     "web.svg.SVG_NAMESPACE",
     "web.time.DOMHighResTimeStamp",
     "web.time.EpochTimeStamp",
+    "web.touch.TouchEvent",
+    "web.uievents.EventModifierInit",
+    "web.uievents.FocusEvent",
+    "web.uievents.DragEvent",
+    "web.uievents.KeyboardEvent",
+    "web.uievents.MouseEvent",
+    "web.uievents.UIEvent",
     "web.url.FragmentDirective",
     "web.url.URL",
     "web.url.URLSearchParams",
@@ -474,7 +481,6 @@ fun generateKotlinDeclarations(
             "FileReader",
                 -> """
             import web.cssom.TransitionEvent
-            import web.uievents.*
             import web.animations.AnimationEvent
             import web.clipboard.ClipboardEvent
             import web.csp.SecurityPolicyViolationEvent

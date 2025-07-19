@@ -23,6 +23,7 @@ import web.location.Location
 import web.pip.PictureInPictureEvent
 import web.ranges.Range
 import web.selection.Selection
+import web.touch.TouchEvent
 import web.uievents.*
 import web.url.FragmentDirective
 import web.url.URL

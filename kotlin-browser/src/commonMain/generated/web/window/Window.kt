@@ -35,6 +35,7 @@ import web.promise.PromiseRejectionEvent
 import web.scroll.ScrollToOptions
 import web.selection.Selection
 import web.storage.StorageEvent
+import web.touch.TouchEvent
 import web.uievents.*
 import web.url.URL
 import web.viewtransition.PageRevealEvent

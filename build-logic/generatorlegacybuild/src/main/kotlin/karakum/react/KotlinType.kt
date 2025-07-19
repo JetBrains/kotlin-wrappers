@@ -25,8 +25,7 @@ private val STANDARD_TYPE_MAP = mapOf(
     "Key" to "react.Key",
     "CSSProperties" to "react.CSSProperties",
 
-    // TODO: use React interface instead
-    "TouchList" to "web.uievents.TouchList",
+    "TouchList" to "web.touch.TouchList",
     "string | TrustedHTML" to "String /* | TrustedHTML */",
 
     // TODO: check

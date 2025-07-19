@@ -1,6 +1,6 @@
 // Automatically generated - do not modify!
 
-package web.uievents
+package web.touch
 
 import js.array.ArrayLike
 import js.iterable.JsIterable

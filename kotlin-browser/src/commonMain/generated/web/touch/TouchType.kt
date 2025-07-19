@@ -4,7 +4,7 @@
     "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
-package web.uievents
+package web.touch
 
 import js.reflect.unsafeCast
 

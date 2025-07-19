@@ -42,7 +42,7 @@ private val PKG_MAP = mapOf(
     "SelectionMode" to "web.html",
     "ShadowRootMode" to "web.components",
     "SlotAssignmentMode" to "web.components",
-    "TouchType" to "web.uievents",
+    "TouchType" to "web.touch",
     "DOMParserSupportedType" to "web.parsing",
     "CookieSameSite" to "web.cookie",
 

@@ -22,6 +22,7 @@ import web.geometry.DOMRectList
 import web.html.HTMLCollection
 import web.scroll.ScrollIntoViewOptions
 import web.scroll.ScrollToOptions
+import web.touch.TouchEvent
 import web.uievents.*
 import kotlin.js.JsName
 import kotlin.js.definedExternally

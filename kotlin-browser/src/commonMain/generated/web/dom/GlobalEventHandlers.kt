@@ -18,6 +18,7 @@ import web.events.ProgressEvent
 import web.form.FormDataEvent
 import web.form.SubmitEvent
 import web.popover.ToggleEvent
+import web.touch.TouchEvent
 import web.uievents.*
 import kotlin.js.definedExternally
 

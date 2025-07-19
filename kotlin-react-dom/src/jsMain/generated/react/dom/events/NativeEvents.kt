@@ -18,7 +18,7 @@ typealias NativeKeyboardEvent = web.uievents.KeyboardEvent
 
 typealias NativeMouseEvent = web.uievents.MouseEvent
 
-typealias NativeTouchEvent = web.uievents.TouchEvent
+typealias NativeTouchEvent = web.touch.TouchEvent
 
 typealias NativePointerEvent = web.uievents.PointerEvent
 

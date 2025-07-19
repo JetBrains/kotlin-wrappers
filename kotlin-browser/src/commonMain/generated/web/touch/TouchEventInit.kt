@@ -1,9 +1,10 @@
 // Automatically generated - do not modify!
 
-package web.uievents
+package web.touch
 
 import js.array.ReadonlyArray
 import js.objects.JsPlainObject
+import web.uievents.EventModifierInit
 
 @JsPlainObject
 external interface TouchEventInit :

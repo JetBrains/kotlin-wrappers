@@ -1389,7 +1389,7 @@ internal fun convertInterface(
 
         name == "RemotePlayback" -> "web.remoteplayback"
 
-        name.startsWith("Touch") -> "web.uievents"
+        name.startsWith("Touch") -> "web.touch"
         name in PARSING_TYPES -> "web.parsing"
         name.startsWith("SVG") -> "web.svg"
         name.startsWith("MathML") -> "web.mathml"
