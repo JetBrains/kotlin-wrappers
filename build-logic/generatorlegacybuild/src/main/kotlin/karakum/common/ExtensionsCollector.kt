@@ -118,7 +118,7 @@ internal open class SuspendExtensionsCollector(
 
         if (isAbortable && parametersToSkip > 0) {
             val comma = ",\n".takeIf { arguments.isNotEmpty() }.orEmpty()
-            arguments += "$comma${parameterNames.last()} = createAbortable($CONTROLLER.signal)\n"
+            arguments += "$comma${parameterNames.last()} = createAbortable($CONTROLLER)\n"
         }
 
         val promiseCall = "${functionName}Async($arguments)"

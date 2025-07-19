@@ -71,7 +71,7 @@ suspend inline fun CredentialsContainer.create(options: CredentialCreationOption
 suspend inline fun CredentialsContainer.create(): Credential? {
     val controller = AbortController()
     return createAsync(
-        options = createAbortable(controller.signal)
+        options = createAbortable(controller)
     ).awaitCancellable(controller)
 }
 
@@ -93,7 +93,7 @@ suspend inline fun CredentialsContainer.get(options: CredentialRequestOptions): 
 suspend inline fun CredentialsContainer.get(): Credential? {
     val controller = AbortController()
     return getAsync(
-        options = createAbortable(controller.signal)
+        options = createAbortable(controller)
     ).awaitCancellable(controller)
 }
 

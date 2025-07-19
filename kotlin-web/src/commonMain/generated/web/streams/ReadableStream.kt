@@ -136,6 +136,6 @@ suspend inline fun <R : JsAny?> ReadableStream<R>.pipeTo(
     val controller = AbortController()
     pipeToAsync(
         destination = destination,
-        options = createAbortable(controller.signal)
+        options = createAbortable(controller)
     ).awaitCancellable(controller)
 }
