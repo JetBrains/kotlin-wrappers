@@ -96,6 +96,9 @@ suspend fun main() {
             convertImplicitArrayBuffer,
             convertIncompatibleParameterName,
             convertInspectorQualifiedName,
+            // ---
+            convertWebCryptoQualifiedName,
+            convertWebStreamsQualifiedName,
         ))
         injections = manyOf(values = jsInjections + arrayOf())
         annotations = manyOf(values = jsAnnotations + arrayOf())
