@@ -21,14 +21,14 @@ import web.fullscreen.FullscreenOptions
 import web.geometry.DOMRect
 import web.geometry.DOMRectList
 import web.html.HTMLCollection
+import web.input.CompositionEvent
+import web.input.InputEvent
 import web.keyboard.KeyboardEvent
 import web.mouse.MouseEvent
 import web.mouse.WheelEvent
 import web.scroll.ScrollIntoViewOptions
 import web.scroll.ScrollToOptions
 import web.touch.TouchEvent
-import web.uievents.CompositionEvent
-import web.uievents.InputEvent
 import kotlin.js.JsName
 import kotlin.js.definedExternally
 

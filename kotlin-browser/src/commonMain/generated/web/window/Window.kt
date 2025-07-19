@@ -29,6 +29,8 @@ import web.gamepad.GamepadEvent
 import web.history.HashChangeEvent
 import web.history.PageTransitionEvent
 import web.history.PopStateEvent
+import web.input.CompositionEvent
+import web.input.InputEvent
 import web.keyboard.KeyboardEvent
 import web.location.Location
 import web.messaging.MessageEvent
@@ -42,8 +44,6 @@ import web.scroll.ScrollToOptions
 import web.selection.Selection
 import web.storage.StorageEvent
 import web.touch.TouchEvent
-import web.uievents.CompositionEvent
-import web.uievents.InputEvent
 import web.url.URL
 import web.viewtransition.PageRevealEvent
 import web.viewtransition.PageSwapEvent

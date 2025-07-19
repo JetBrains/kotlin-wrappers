@@ -1,11 +1,12 @@
 // Automatically generated - do not modify!
 
-package web.uievents
+package web.input
 
 import js.array.ReadonlyArray
 import js.objects.JsPlainObject
 import web.data.DataTransfer
 import web.ranges.StaticRange
+import web.uievents.UIEventInit
 
 @JsPlainObject
 external interface InputEventInit :

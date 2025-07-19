@@ -19,13 +19,13 @@ import web.events.ProgressEvent
 import web.focus.FocusEvent
 import web.form.FormDataEvent
 import web.form.SubmitEvent
+import web.input.InputEvent
 import web.keyboard.KeyboardEvent
 import web.mouse.MouseEvent
 import web.mouse.WheelEvent
 import web.pointer.PointerEvent
 import web.popover.ToggleEvent
 import web.touch.TouchEvent
-import web.uievents.InputEvent
 import web.uievents.UIEvent
 import kotlin.js.definedExternally
 

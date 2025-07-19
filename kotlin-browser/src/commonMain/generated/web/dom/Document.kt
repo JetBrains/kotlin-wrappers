@@ -21,6 +21,8 @@ import web.fonts.FontFaceSource
 import web.form.FormDataEvent
 import web.form.SubmitEvent
 import web.html.*
+import web.input.CompositionEvent
+import web.input.InputEvent
 import web.keyboard.KeyboardEvent
 import web.location.Location
 import web.mouse.MouseEvent
@@ -30,8 +32,6 @@ import web.pointer.PointerEvent
 import web.ranges.Range
 import web.selection.Selection
 import web.touch.TouchEvent
-import web.uievents.CompositionEvent
-import web.uievents.InputEvent
 import web.url.FragmentDirective
 import web.url.URL
 import web.viewtransition.StartViewTransitionOptions

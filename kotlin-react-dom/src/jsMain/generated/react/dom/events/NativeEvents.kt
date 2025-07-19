@@ -6,13 +6,13 @@ typealias NativeAnimationEvent = web.animations.AnimationEvent
 
 typealias NativeClipboardEvent = web.clipboard.ClipboardEvent
 
-typealias NativeCompositionEvent = web.uievents.CompositionEvent
+typealias NativeCompositionEvent = web.input.CompositionEvent
 
 typealias NativeDragEvent = web.dnd.DragEvent
 
 typealias NativeFocusEvent = web.focus.FocusEvent
 
-typealias NativeInputEvent = web.uievents.InputEvent
+typealias NativeInputEvent = web.input.InputEvent
 
 typealias NativeKeyboardEvent = web.keyboard.KeyboardEvent
 

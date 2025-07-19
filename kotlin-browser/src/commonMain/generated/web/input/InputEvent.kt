@@ -1,12 +1,13 @@
 // Automatically generated - do not modify!
 
-package web.uievents
+package web.input
 
 import js.array.ReadonlyArray
 import js.reflect.unsafeCast
 import web.data.DataTransfer
 import web.events.EventType
 import web.ranges.StaticRange
+import web.uievents.UIEvent
 import kotlin.js.definedExternally
 
 /**
