@@ -14,6 +14,7 @@ import web.csp.SecurityPolicyViolationEvent
 import web.cssom.TransitionEvent
 import web.device.DeviceMotionEvent
 import web.device.DeviceOrientationEvent
+import web.dnd.DragEvent
 import web.dom.Element
 import web.dom.GlobalEventHandlers
 import web.dom.Node
@@ -39,7 +40,10 @@ import web.scroll.ScrollToOptions
 import web.selection.Selection
 import web.storage.StorageEvent
 import web.touch.TouchEvent
-import web.uievents.*
+import web.uievents.CompositionEvent
+import web.uievents.InputEvent
+import web.uievents.MouseEvent
+import web.uievents.WheelEvent
 import web.url.URL
 import web.viewtransition.PageRevealEvent
 import web.viewtransition.PageSwapEvent

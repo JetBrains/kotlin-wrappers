@@ -12,6 +12,7 @@ import web.animations.DocumentTimeline
 import web.clipboard.ClipboardEvent
 import web.cssom.ClassName
 import web.cssom.TransitionEvent
+import web.dnd.DragEvent
 import web.events.Event
 import web.events.EventHandler
 import web.events.EventInstance
@@ -27,7 +28,10 @@ import web.pointer.PointerEvent
 import web.ranges.Range
 import web.selection.Selection
 import web.touch.TouchEvent
-import web.uievents.*
+import web.uievents.CompositionEvent
+import web.uievents.InputEvent
+import web.uievents.MouseEvent
+import web.uievents.WheelEvent
 import web.url.FragmentDirective
 import web.url.URL
 import web.viewtransition.StartViewTransitionOptions

@@ -11,6 +11,7 @@ import web.animations.AnimationEvent
 import web.clipboard.ClipboardEvent
 import web.csp.SecurityPolicyViolationEvent
 import web.cssom.TransitionEvent
+import web.dnd.DragEvent
 import web.events.Event
 import web.events.EventHandler
 import web.events.EventTarget
@@ -22,7 +23,10 @@ import web.keyboard.KeyboardEvent
 import web.pointer.PointerEvent
 import web.popover.ToggleEvent
 import web.touch.TouchEvent
-import web.uievents.*
+import web.uievents.InputEvent
+import web.uievents.MouseEvent
+import web.uievents.UIEvent
+import web.uievents.WheelEvent
 import kotlin.js.definedExternally
 
 external interface GlobalEventHandlers :

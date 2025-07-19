@@ -7,7 +7,7 @@ import web.dom.dragOverEvent
 import web.events.addEventHandler
 import web.events.addHandler
 import web.uievents.DRAG_OVER
-import web.uievents.DragEvent
+import web.dnd.DragEvent
 
 private fun preventDefaultExample_handler() {
     document.addEventHandler(DragEvent.DRAG_OVER) { event ->

@@ -8,7 +8,7 @@ typealias NativeClipboardEvent = web.clipboard.ClipboardEvent
 
 typealias NativeCompositionEvent = web.uievents.CompositionEvent
 
-typealias NativeDragEvent = web.uievents.DragEvent
+typealias NativeDragEvent = web.dnd.DragEvent
 
 typealias NativeFocusEvent = web.focus.FocusEvent
 

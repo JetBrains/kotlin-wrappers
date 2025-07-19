@@ -7,6 +7,7 @@ import web.clipboard.ClipboardEvent
 import web.components.ElementInternals
 import web.cssom.ElementCSSInlineStyle
 import web.cssom.TransitionEvent
+import web.dnd.DragEvent
 import web.dom.Element
 import web.dom.GlobalEventHandlers
 import web.dom.HTMLOrSVGElement
@@ -16,7 +17,6 @@ import web.events.EventInstance
 import web.pointer.PointerEvent
 import web.popover.Popover
 import web.popover.ToggleEvent
-import web.uievents.DragEvent
 import kotlin.js.definedExternally
 
 /**

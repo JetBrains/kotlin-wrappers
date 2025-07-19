@@ -1,10 +1,11 @@
 // Automatically generated - do not modify!
 
-package web.uievents
+package web.dnd
 
 import js.reflect.unsafeCast
 import web.data.DataTransfer
 import web.events.EventType
+import web.uievents.MouseEvent
 import kotlin.js.definedExternally
 
 /**

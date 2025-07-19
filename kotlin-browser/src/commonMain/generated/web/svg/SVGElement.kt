@@ -6,6 +6,7 @@ import web.animations.AnimationEvent
 import web.clipboard.ClipboardEvent
 import web.cssom.ElementCSSInlineStyle
 import web.cssom.TransitionEvent
+import web.dnd.DragEvent
 import web.dom.Element
 import web.dom.GlobalEventHandlers
 import web.dom.HTMLOrSVGElement
@@ -13,7 +14,6 @@ import web.dom.Node
 import web.events.Event
 import web.events.EventInstance
 import web.pointer.PointerEvent
-import web.uievents.DragEvent
 
 /**
  * All of the SVG DOM interfaces that correspond directly to elements in the SVG language derive from the `SVGElement` interface.
