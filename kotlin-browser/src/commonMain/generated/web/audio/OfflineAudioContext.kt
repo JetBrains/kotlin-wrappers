@@ -84,7 +84,9 @@ suspend inline fun OfflineAudioContext.startRendering(): AudioBuffer {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OfflineAudioContext/suspend)
  */
 suspend inline fun OfflineAudioContext.suspend(suspendTime: Double) {
-    suspendAsync(suspendTime = suspendTime).await()
+    suspendAsync(
+        suspendTime = suspendTime,
+    ).await()
 }
 
 /**

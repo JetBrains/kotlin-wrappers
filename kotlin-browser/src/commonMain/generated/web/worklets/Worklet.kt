@@ -46,7 +46,7 @@ suspend inline fun Worklet.addModule(
 ) {
     addModuleAsync(
         moduleURL = moduleURL,
-        options = options
+        options = options,
     ).await()
 }
 
@@ -58,7 +58,9 @@ suspend inline fun Worklet.addModule(
 suspend inline fun Worklet.addModule(
     moduleURL: String,
 ) {
-    addModuleAsync(moduleURL = moduleURL).await()
+    addModuleAsync(
+        moduleURL = moduleURL,
+    ).await()
 }
 
 suspend inline fun Worklet.addModule(
@@ -67,12 +69,14 @@ suspend inline fun Worklet.addModule(
 ) {
     addModuleAsync(
         moduleURL = moduleURL,
-        options = options
+        options = options,
     ).await()
 }
 
 suspend inline fun Worklet.addModule(
     moduleURL: URL,
 ) {
-    addModuleAsync(moduleURL = moduleURL).await()
+    addModuleAsync(
+        moduleURL = moduleURL,
+    ).await()
 }

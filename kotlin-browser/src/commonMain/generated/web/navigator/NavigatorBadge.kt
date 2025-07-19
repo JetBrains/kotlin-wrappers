@@ -37,7 +37,9 @@ suspend inline fun NavigatorBadge.clearAppBadge() {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/setAppBadge)
  */
 suspend inline fun NavigatorBadge.setAppBadge(contents: UInt53) {
-    setAppBadgeAsync(contents = contents).await()
+    setAppBadgeAsync(
+        contents = contents,
+    ).await()
 }
 
 /**

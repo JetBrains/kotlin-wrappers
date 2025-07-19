@@ -31,7 +31,9 @@ sealed external interface ReadableStreamGenericReader {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStreamBYOBReader/cancel)
  */
 suspend inline fun ReadableStreamGenericReader.cancel(reason: JsError?) {
-    cancelAsync(reason = reason).await()
+    cancelAsync(
+        reason = reason,
+    ).await()
 }
 
 /**

@@ -75,7 +75,9 @@ suspend inline fun Clipboard.readText(): String {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Clipboard/write)
  */
 suspend inline fun Clipboard.write(data: ClipboardItems) {
-    writeAsync(data = data).await()
+    writeAsync(
+        data = data,
+    ).await()
 }
 
 /**
@@ -84,5 +86,7 @@ suspend inline fun Clipboard.write(data: ClipboardItems) {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Clipboard/writeText)
  */
 suspend inline fun Clipboard.writeText(data: String) {
-    writeTextAsync(data = data).await()
+    writeTextAsync(
+        data = data,
+    ).await()
 }

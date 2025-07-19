@@ -23,7 +23,7 @@ suspend inline fun createImageBitmap(
 ): ImageBitmap {
     return createImageBitmapAsync(
         image = image,
-        options = options
+        options = options,
     ).await()
 }
 
@@ -31,7 +31,9 @@ suspend inline fun createImageBitmap(
 suspend inline fun createImageBitmap(
     image: ImageBitmapSource,
 ): ImageBitmap {
-    return createImageBitmapAsync(image = image).await()
+    return createImageBitmapAsync(
+        image = image,
+    ).await()
 }
 
 @JsName("createImageBitmap")
@@ -59,7 +61,7 @@ suspend inline fun createImageBitmap(
         sy = sy,
         sw = sw,
         sh = sh,
-        options = options
+        options = options,
     ).await()
 }
 
@@ -76,6 +78,6 @@ suspend inline fun createImageBitmap(
         sx = sx,
         sy = sy,
         sw = sw,
-        sh = sh
+        sh = sh,
     ).await()
 }

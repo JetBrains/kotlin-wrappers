@@ -126,7 +126,7 @@ suspend inline fun MediaKeySession.generateRequest(
 ) {
     generateRequestAsync(
         initDataType = initDataType,
-        initData = initData
+        initData = initData,
     ).await()
 }
 
@@ -136,7 +136,9 @@ suspend inline fun MediaKeySession.generateRequest(
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeySession/load)
  */
 suspend inline fun MediaKeySession.load(sessionId: String): Boolean {
-    return loadAsync(sessionId = sessionId).await().toBoolean()
+    return loadAsync(
+        sessionId = sessionId,
+    ).await().toBoolean()
 }
 
 /**
@@ -154,7 +156,9 @@ suspend inline fun MediaKeySession.remove() {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeySession/update)
  */
 suspend inline fun MediaKeySession.update(response: BufferSource) {
-    updateAsync(response = response).await()
+    updateAsync(
+        response = response,
+    ).await()
 }
 
 /**

@@ -49,7 +49,9 @@ private constructor() :
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemWritableFileStream/seek)
  */
 suspend inline fun FileSystemWritableFileStream.seek(position: UInt53) {
-    seekAsync(position = position).await()
+    seekAsync(
+        position = position,
+    ).await()
 }
 
 /**
@@ -58,7 +60,9 @@ suspend inline fun FileSystemWritableFileStream.seek(position: UInt53) {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemWritableFileStream/truncate)
  */
 suspend inline fun FileSystemWritableFileStream.truncate(size: UInt53) {
-    truncateAsync(size = size).await()
+    truncateAsync(
+        size = size,
+    ).await()
 }
 
 /**
@@ -67,5 +71,7 @@ suspend inline fun FileSystemWritableFileStream.truncate(size: UInt53) {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemWritableFileStream/write)
  */
 suspend inline fun FileSystemWritableFileStream.write(data: FileSystemWriteChunkType) {
-    writeAsync(data = data).await()
+    writeAsync(
+        data = data,
+    ).await()
 }

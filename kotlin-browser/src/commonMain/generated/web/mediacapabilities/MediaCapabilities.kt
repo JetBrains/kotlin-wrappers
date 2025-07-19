@@ -36,7 +36,9 @@ private constructor() {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaCapabilities/decodingInfo)
  */
 suspend inline fun MediaCapabilities.decodingInfo(configuration: MediaDecodingConfiguration): MediaCapabilitiesDecodingInfo {
-    return decodingInfoAsync(configuration = configuration).await()
+    return decodingInfoAsync(
+        configuration = configuration,
+    ).await()
 }
 
 /**
@@ -45,5 +47,7 @@ suspend inline fun MediaCapabilities.decodingInfo(configuration: MediaDecodingCo
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaCapabilities/encodingInfo)
  */
 suspend inline fun MediaCapabilities.encodingInfo(configuration: MediaEncodingConfiguration): MediaCapabilitiesEncodingInfo {
-    return encodingInfoAsync(configuration = configuration).await()
+    return encodingInfoAsync(
+        configuration = configuration,
+    ).await()
 }

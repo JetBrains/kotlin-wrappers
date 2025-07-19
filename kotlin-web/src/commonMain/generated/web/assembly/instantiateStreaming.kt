@@ -28,7 +28,7 @@ suspend inline fun instantiateStreaming(
 ): WebAssemblyInstantiatedSource {
     return instantiateStreamingAsync(
         source = source,
-        importObject = importObject
+        importObject = importObject,
     ).await()
 }
 
@@ -36,7 +36,9 @@ suspend inline fun instantiateStreaming(
 suspend inline fun instantiateStreaming(
     source: Response,
 ): WebAssemblyInstantiatedSource {
-    return instantiateStreamingAsync(source = source).await()
+    return instantiateStreamingAsync(
+        source = source,
+    ).await()
 }
 
 @JsName("instantiateStreaming")
@@ -52,7 +54,7 @@ suspend inline fun instantiateStreaming(
 ): WebAssemblyInstantiatedSource {
     return instantiateStreamingAsync(
         source = source,
-        importObject = importObject
+        importObject = importObject,
     ).await()
 }
 
@@ -60,5 +62,7 @@ suspend inline fun instantiateStreaming(
 suspend inline fun instantiateStreaming(
     source: PromiseLike<Response>,
 ): WebAssemblyInstantiatedSource {
-    return instantiateStreamingAsync(source = source).await()
+    return instantiateStreamingAsync(
+        source = source,
+    ).await()
 }

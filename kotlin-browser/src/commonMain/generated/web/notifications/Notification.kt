@@ -133,7 +133,9 @@ open external class Notification(
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Notification/requestPermission_static)
  */
 suspend inline fun Notification.Companion.requestPermission(noinline deprecatedCallback: NotificationPermissionCallback): NotificationPermission {
-    return requestPermissionAsync(deprecatedCallback = deprecatedCallback).await()
+    return requestPermissionAsync(
+        deprecatedCallback = deprecatedCallback,
+    ).await()
 }
 
 /**

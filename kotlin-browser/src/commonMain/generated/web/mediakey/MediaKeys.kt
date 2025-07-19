@@ -48,7 +48,9 @@ private constructor() {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeys/getStatusForPolicy)
  */
 suspend inline fun MediaKeys.getStatusForPolicy(policy: MediaKeysPolicy): MediaKeyStatus {
-    return getStatusForPolicyAsync(policy = policy).await()
+    return getStatusForPolicyAsync(
+        policy = policy,
+    ).await()
 }
 
 /**
@@ -66,5 +68,7 @@ suspend inline fun MediaKeys.getStatusForPolicy(): MediaKeyStatus {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeys/setServerCertificate)
  */
 suspend inline fun MediaKeys.setServerCertificate(serverCertificate: BufferSource): Boolean {
-    return setServerCertificateAsync(serverCertificate = serverCertificate).await().toBoolean()
+    return setServerCertificateAsync(
+        serverCertificate = serverCertificate,
+    ).await().toBoolean()
 }

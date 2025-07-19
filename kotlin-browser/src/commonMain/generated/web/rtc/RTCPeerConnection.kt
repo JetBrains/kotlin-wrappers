@@ -312,7 +312,9 @@ open external class RTCPeerConnection(
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/addIceCandidate)
  */
 suspend inline fun RTCPeerConnection.addIceCandidate(candidate: RTCIceCandidateInit?) {
-    addIceCandidateAsync(candidate = candidate).await()
+    addIceCandidateAsync(
+        candidate = candidate,
+    ).await()
 }
 
 /**
@@ -330,7 +332,9 @@ suspend inline fun RTCPeerConnection.addIceCandidate() {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/createAnswer)
  */
 suspend inline fun RTCPeerConnection.createAnswer(options: RTCAnswerOptions): RTCSessionDescriptionInit {
-    return createAnswerAsync(options = options).await()
+    return createAnswerAsync(
+        options = options,
+    ).await()
 }
 
 /**
@@ -348,7 +352,9 @@ suspend inline fun RTCPeerConnection.createAnswer(): RTCSessionDescriptionInit {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/createOffer)
  */
 suspend inline fun RTCPeerConnection.createOffer(options: RTCOfferOptions): RTCSessionDescriptionInit {
-    return createOfferAsync(options = options).await()
+    return createOfferAsync(
+        options = options,
+    ).await()
 }
 
 /**
@@ -366,7 +372,9 @@ suspend inline fun RTCPeerConnection.createOffer(): RTCSessionDescriptionInit {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/getStats)
  */
 suspend inline fun RTCPeerConnection.getStats(selector: MediaStreamTrack?): RTCStatsReport {
-    return getStatsAsync(selector = selector).await()
+    return getStatsAsync(
+        selector = selector,
+    ).await()
 }
 
 /**
@@ -384,7 +392,9 @@ suspend inline fun RTCPeerConnection.getStats(): RTCStatsReport {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/setLocalDescription)
  */
 suspend inline fun RTCPeerConnection.setLocalDescription(description: RTCLocalSessionDescriptionInit) {
-    setLocalDescriptionAsync(description = description).await()
+    setLocalDescriptionAsync(
+        description = description,
+    ).await()
 }
 
 /**
@@ -402,7 +412,9 @@ suspend inline fun RTCPeerConnection.setLocalDescription() {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/setRemoteDescription)
  */
 suspend inline fun RTCPeerConnection.setRemoteDescription(description: RTCSessionDescriptionInit) {
-    setRemoteDescriptionAsync(description = description).await()
+    setRemoteDescriptionAsync(
+        description = description,
+    ).await()
 }
 
 /**
@@ -411,11 +423,15 @@ suspend inline fun RTCPeerConnection.setRemoteDescription(description: RTCSessio
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/generateCertificate_static)
  */
 suspend inline fun RTCPeerConnection.Companion.generateCertificate(keygenAlgorithm: Algorithm): RTCCertificate {
-    return generateCertificateAsync(keygenAlgorithm = keygenAlgorithm).await()
+    return generateCertificateAsync(
+        keygenAlgorithm = keygenAlgorithm,
+    ).await()
 }
 
 suspend inline fun RTCPeerConnection.Companion.generateCertificate(keygenAlgorithm: String): RTCCertificate {
-    return generateCertificateAsync(keygenAlgorithm = keygenAlgorithm).await()
+    return generateCertificateAsync(
+        keygenAlgorithm = keygenAlgorithm,
+    ).await()
 }
 
 /**

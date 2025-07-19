@@ -22,5 +22,7 @@ external fun compileAsync(
 suspend inline fun compile(
     bytes: BufferSource,
 ): Module {
-    return compileAsync(bytes = bytes).await()
+    return compileAsync(
+        bytes = bytes,
+    ).await()
 }

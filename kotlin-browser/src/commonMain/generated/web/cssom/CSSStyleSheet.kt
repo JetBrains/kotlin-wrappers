@@ -68,5 +68,7 @@ open external class CSSStyleSheet(
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleSheet/replace)
  */
 suspend inline fun CSSStyleSheet.replace(text: String): CSSStyleSheet {
-    return replaceAsync(text = text).await()
+    return replaceAsync(
+        text = text,
+    ).await()
 }

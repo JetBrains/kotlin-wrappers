@@ -170,15 +170,21 @@ private constructor() {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/add)
  */
 suspend inline fun Cache.add(url: String) {
-    addAsync(url = url).await()
+    addAsync(
+        url = url,
+    ).await()
 }
 
 suspend inline fun Cache.add(url: URL) {
-    addAsync(url = url).await()
+    addAsync(
+        url = url,
+    ).await()
 }
 
 suspend inline fun Cache.add(request: Request) {
-    addAsync(request = request).await()
+    addAsync(
+        request = request,
+    ).await()
 }
 
 /**
@@ -187,11 +193,15 @@ suspend inline fun Cache.add(request: Request) {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/addAll)
  */
 suspend inline fun Cache.addAll(requests: ReadonlyArray<Request>) {
-    addAllAsync(requests = requests).await()
+    addAllAsync(
+        requests = requests,
+    ).await()
 }
 
 suspend inline fun Cache.addAll(urls: ReadonlyArray<JsString>) {
-    addAllAsync(urls = urls).await()
+    addAllAsync(
+        urls = urls,
+    ).await()
 }
 
 /**
@@ -205,7 +215,7 @@ suspend inline fun Cache.delete(
 ): Boolean {
     return deleteAsync(
         url = url,
-        options = options
+        options = options,
     ).await().toBoolean()
 }
 
@@ -217,7 +227,9 @@ suspend inline fun Cache.delete(
 suspend inline fun Cache.delete(
     url: String,
 ): Boolean {
-    return deleteAsync(url = url).await().toBoolean()
+    return deleteAsync(
+        url = url,
+    ).await().toBoolean()
 }
 
 suspend inline fun Cache.delete(
@@ -226,14 +238,16 @@ suspend inline fun Cache.delete(
 ): Boolean {
     return deleteAsync(
         url = url,
-        options = options
+        options = options,
     ).await().toBoolean()
 }
 
 suspend inline fun Cache.delete(
     url: URL,
 ): Boolean {
-    return deleteAsync(url = url).await().toBoolean()
+    return deleteAsync(
+        url = url,
+    ).await().toBoolean()
 }
 
 suspend inline fun Cache.delete(
@@ -242,14 +256,16 @@ suspend inline fun Cache.delete(
 ): Boolean {
     return deleteAsync(
         request = request,
-        options = options
+        options = options,
     ).await().toBoolean()
 }
 
 suspend inline fun Cache.delete(
     request: Request,
 ): Boolean {
-    return deleteAsync(request = request).await().toBoolean()
+    return deleteAsync(
+        request = request,
+    ).await().toBoolean()
 }
 
 /**
@@ -263,7 +279,7 @@ suspend inline fun Cache.keys(
 ): ReadonlyArray<Request> {
     return keysAsync(
         url = url,
-        options = options
+        options = options,
     ).await()
 }
 
@@ -275,7 +291,9 @@ suspend inline fun Cache.keys(
 suspend inline fun Cache.keys(
     url: String,
 ): ReadonlyArray<Request> {
-    return keysAsync(url = url).await()
+    return keysAsync(
+        url = url,
+    ).await()
 }
 
 /**
@@ -293,14 +311,16 @@ suspend inline fun Cache.keys(
 ): ReadonlyArray<Request> {
     return keysAsync(
         url = url,
-        options = options
+        options = options,
     ).await()
 }
 
 suspend inline fun Cache.keys(
     url: URL,
 ): ReadonlyArray<Request> {
-    return keysAsync(url = url).await()
+    return keysAsync(
+        url = url,
+    ).await()
 }
 
 suspend inline fun Cache.keys(
@@ -309,14 +329,16 @@ suspend inline fun Cache.keys(
 ): ReadonlyArray<Request> {
     return keysAsync(
         request = request,
-        options = options
+        options = options,
     ).await()
 }
 
 suspend inline fun Cache.keys(
     request: Request,
 ): ReadonlyArray<Request> {
-    return keysAsync(request = request).await()
+    return keysAsync(
+        request = request,
+    ).await()
 }
 
 /**
@@ -330,7 +352,7 @@ suspend inline fun Cache.match(
 ): Response? {
     return matchAsync(
         url = url,
-        options = options
+        options = options,
     ).await()
 }
 
@@ -342,7 +364,9 @@ suspend inline fun Cache.match(
 suspend inline fun Cache.match(
     url: String,
 ): Response? {
-    return matchAsync(url = url).await()
+    return matchAsync(
+        url = url,
+    ).await()
 }
 
 suspend inline fun Cache.match(
@@ -351,14 +375,16 @@ suspend inline fun Cache.match(
 ): Response? {
     return matchAsync(
         url = url,
-        options = options
+        options = options,
     ).await()
 }
 
 suspend inline fun Cache.match(
     url: URL,
 ): Response? {
-    return matchAsync(url = url).await()
+    return matchAsync(
+        url = url,
+    ).await()
 }
 
 suspend inline fun Cache.match(
@@ -367,14 +393,16 @@ suspend inline fun Cache.match(
 ): Response? {
     return matchAsync(
         request = request,
-        options = options
+        options = options,
     ).await()
 }
 
 suspend inline fun Cache.match(
     request: Request,
 ): Response? {
-    return matchAsync(request = request).await()
+    return matchAsync(
+        request = request,
+    ).await()
 }
 
 /**
@@ -388,7 +416,7 @@ suspend inline fun Cache.matchAll(
 ): ReadonlyArray<Response> {
     return matchAllAsync(
         url = url,
-        options = options
+        options = options,
     ).await()
 }
 
@@ -400,7 +428,9 @@ suspend inline fun Cache.matchAll(
 suspend inline fun Cache.matchAll(
     url: String,
 ): ReadonlyArray<Response> {
-    return matchAllAsync(url = url).await()
+    return matchAllAsync(
+        url = url,
+    ).await()
 }
 
 /**
@@ -418,14 +448,16 @@ suspend inline fun Cache.matchAll(
 ): ReadonlyArray<Response> {
     return matchAllAsync(
         url = url,
-        options = options
+        options = options,
     ).await()
 }
 
 suspend inline fun Cache.matchAll(
     url: URL,
 ): ReadonlyArray<Response> {
-    return matchAllAsync(url = url).await()
+    return matchAllAsync(
+        url = url,
+    ).await()
 }
 
 suspend inline fun Cache.matchAll(
@@ -434,14 +466,16 @@ suspend inline fun Cache.matchAll(
 ): ReadonlyArray<Response> {
     return matchAllAsync(
         request = request,
-        options = options
+        options = options,
     ).await()
 }
 
 suspend inline fun Cache.matchAll(
     request: Request,
 ): ReadonlyArray<Response> {
-    return matchAllAsync(request = request).await()
+    return matchAllAsync(
+        request = request,
+    ).await()
 }
 
 /**
@@ -455,7 +489,7 @@ suspend inline fun Cache.put(
 ) {
     putAsync(
         url = url,
-        response = response
+        response = response,
     ).await()
 }
 
@@ -465,7 +499,7 @@ suspend inline fun Cache.put(
 ) {
     putAsync(
         url = url,
-        response = response
+        response = response,
     ).await()
 }
 
@@ -475,6 +509,6 @@ suspend inline fun Cache.put(
 ) {
     putAsync(
         request = request,
-        response = response
+        response = response,
     ).await()
 }

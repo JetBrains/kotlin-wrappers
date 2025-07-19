@@ -354,7 +354,9 @@ suspend inline fun HTMLMediaElement.play() {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/setMediaKeys)
  */
 suspend inline fun HTMLMediaElement.setMediaKeys(mediaKeys: MediaKeys?) {
-    setMediaKeysAsync(mediaKeys = mediaKeys).await()
+    setMediaKeysAsync(
+        mediaKeys = mediaKeys,
+    ).await()
 }
 
 /**
@@ -364,7 +366,9 @@ suspend inline fun HTMLMediaElement.setMediaKeys(mediaKeys: MediaKeys?) {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/setSinkId)
  */
 suspend inline fun HTMLMediaElement.setSinkId(sinkId: String) {
-    setSinkIdAsync(sinkId = sinkId).await()
+    setSinkIdAsync(
+        sinkId = sinkId,
+    ).await()
 }
 
 /**

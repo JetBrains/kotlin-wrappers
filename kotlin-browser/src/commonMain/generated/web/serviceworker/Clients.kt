@@ -68,7 +68,9 @@ suspend inline fun Clients.claim() {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Clients/get)
  */
 suspend inline fun Clients.get(id: String): Client? {
-    return getAsync(id = id).await()
+    return getAsync(
+        id = id,
+    ).await()
 }
 
 /**
@@ -77,7 +79,9 @@ suspend inline fun Clients.get(id: String): Client? {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Clients/matchAll)
  */
 suspend inline fun <T : ClientQueryOptions> Clients.matchAll(options: T): ReadonlyArray<Client /* | WindowClient */> {
-    return matchAllAsync(options = options).await()
+    return matchAllAsync(
+        options = options,
+    ).await()
 }
 
 /**
@@ -95,9 +99,13 @@ suspend inline fun <T : ClientQueryOptions> Clients.matchAll(): ReadonlyArray<Cl
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Clients/openWindow)
  */
 suspend inline fun Clients.openWindow(url: String): WindowClient? {
-    return openWindowAsync(url = url).await()
+    return openWindowAsync(
+        url = url,
+    ).await()
 }
 
 suspend inline fun Clients.openWindow(url: URL): WindowClient? {
-    return openWindowAsync(url = url).await()
+    return openWindowAsync(
+        url = url,
+    ).await()
 }

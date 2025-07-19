@@ -134,7 +134,9 @@ private constructor() :
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStreamTrack/applyConstraints)
  */
 suspend inline fun MediaStreamTrack.applyConstraints(constraints: MediaTrackConstraints) {
-    applyConstraintsAsync(constraints = constraints).await()
+    applyConstraintsAsync(
+        constraints = constraints,
+    ).await()
 }
 
 /**

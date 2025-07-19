@@ -23,7 +23,9 @@ external fun compileStreamingAsync(
 suspend inline fun compileStreaming(
     source: Response,
 ): Module {
-    return compileStreamingAsync(source = source).await()
+    return compileStreamingAsync(
+        source = source,
+    ).await()
 }
 
 @JsName("compileStreaming")
@@ -35,5 +37,7 @@ external fun compileStreamingAsync(
 suspend inline fun compileStreaming(
     source: PromiseLike<Response>,
 ): Module {
-    return compileStreamingAsync(source = source).await()
+    return compileStreamingAsync(
+        source = source,
+    ).await()
 }

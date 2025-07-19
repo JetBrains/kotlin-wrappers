@@ -149,7 +149,7 @@ suspend inline fun VideoFrame.copyTo(
 ): ReadonlyArray<PlaneLayout> {
     return copyToAsync(
         destination = destination,
-        options = options
+        options = options,
     ).await()
 }
 
@@ -161,5 +161,7 @@ suspend inline fun VideoFrame.copyTo(
 suspend inline fun VideoFrame.copyTo(
     destination: AllowSharedBufferSource,
 ): ReadonlyArray<PlaneLayout> {
-    return copyToAsync(destination = destination).await()
+    return copyToAsync(
+        destination = destination,
+    ).await()
 }

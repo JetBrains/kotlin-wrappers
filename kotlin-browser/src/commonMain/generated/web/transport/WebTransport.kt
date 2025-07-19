@@ -91,7 +91,9 @@ open external class WebTransport(
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebTransport/createBidirectionalStream)
  */
 suspend inline fun WebTransport.createBidirectionalStream(options: WebTransportSendStreamOptions): WebTransportBidirectionalStream {
-    return createBidirectionalStreamAsync(options = options).await()
+    return createBidirectionalStreamAsync(
+        options = options,
+    ).await()
 }
 
 /**
@@ -109,7 +111,9 @@ suspend inline fun WebTransport.createBidirectionalStream(): WebTransportBidirec
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebTransport/createUnidirectionalStream)
  */
 suspend inline fun WebTransport.createUnidirectionalStream(options: WebTransportSendStreamOptions): WritableStream<*> {
-    return createUnidirectionalStreamAsync(options = options).await()
+    return createUnidirectionalStreamAsync(
+        options = options,
+    ).await()
 }
 
 /**

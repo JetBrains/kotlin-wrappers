@@ -103,7 +103,9 @@ private constructor() :
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerContainer/getRegistration)
  */
 suspend inline fun ServiceWorkerContainer.getRegistration(clientURL: String): ServiceWorkerRegistration? {
-    return getRegistrationAsync(clientURL = clientURL).await()
+    return getRegistrationAsync(
+        clientURL = clientURL,
+    ).await()
 }
 
 /**
@@ -116,7 +118,9 @@ suspend inline fun ServiceWorkerContainer.getRegistration(): ServiceWorkerRegist
 }
 
 suspend inline fun ServiceWorkerContainer.getRegistration(clientURL: URL): ServiceWorkerRegistration? {
-    return getRegistrationAsync(clientURL = clientURL).await()
+    return getRegistrationAsync(
+        clientURL = clientURL,
+    ).await()
 }
 
 /**
@@ -139,7 +143,7 @@ suspend inline fun ServiceWorkerContainer.register(
 ): ServiceWorkerRegistration {
     return registerAsync(
         scriptURL = scriptURL,
-        options = options
+        options = options,
     ).await()
 }
 
@@ -151,7 +155,9 @@ suspend inline fun ServiceWorkerContainer.register(
 suspend inline fun ServiceWorkerContainer.register(
     scriptURL: String,
 ): ServiceWorkerRegistration {
-    return registerAsync(scriptURL = scriptURL).await()
+    return registerAsync(
+        scriptURL = scriptURL,
+    ).await()
 }
 
 suspend inline fun ServiceWorkerContainer.register(
@@ -160,14 +166,16 @@ suspend inline fun ServiceWorkerContainer.register(
 ): ServiceWorkerRegistration {
     return registerAsync(
         scriptURL = scriptURL,
-        options = options
+        options = options,
     ).await()
 }
 
 suspend inline fun ServiceWorkerContainer.register(
     scriptURL: URL,
 ): ServiceWorkerRegistration {
-    return registerAsync(scriptURL = scriptURL).await()
+    return registerAsync(
+        scriptURL = scriptURL,
+    ).await()
 }
 
 /**

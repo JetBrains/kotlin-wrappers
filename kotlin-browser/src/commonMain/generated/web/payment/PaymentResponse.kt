@@ -112,7 +112,9 @@ private constructor() :
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentResponse/complete)
  */
 suspend inline fun PaymentResponse.complete(result: PaymentComplete) {
-    completeAsync(result = result).await()
+    completeAsync(
+        result = result,
+    ).await()
 }
 
 /**
@@ -130,7 +132,9 @@ suspend inline fun PaymentResponse.complete() {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentResponse/retry)
  */
 suspend inline fun PaymentResponse.retry(errorFields: PaymentValidationErrors) {
-    retryAsync(errorFields = errorFields).await()
+    retryAsync(
+        errorFields = errorFields,
+    ).await()
 }
 
 /**

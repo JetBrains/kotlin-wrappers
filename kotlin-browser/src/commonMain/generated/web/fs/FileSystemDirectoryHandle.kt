@@ -79,7 +79,7 @@ suspend inline fun FileSystemDirectoryHandle.getDirectoryHandle(
 ): FileSystemDirectoryHandle {
     return getDirectoryHandleAsync(
         name = name,
-        options = options
+        options = options,
     ).await()
 }
 
@@ -91,7 +91,9 @@ suspend inline fun FileSystemDirectoryHandle.getDirectoryHandle(
 suspend inline fun FileSystemDirectoryHandle.getDirectoryHandle(
     name: String,
 ): FileSystemDirectoryHandle {
-    return getDirectoryHandleAsync(name = name).await()
+    return getDirectoryHandleAsync(
+        name = name,
+    ).await()
 }
 
 /**
@@ -105,7 +107,7 @@ suspend inline fun FileSystemDirectoryHandle.getFileHandle(
 ): FileSystemFileHandle {
     return getFileHandleAsync(
         name = name,
-        options = options
+        options = options,
     ).await()
 }
 
@@ -117,7 +119,9 @@ suspend inline fun FileSystemDirectoryHandle.getFileHandle(
 suspend inline fun FileSystemDirectoryHandle.getFileHandle(
     name: String,
 ): FileSystemFileHandle {
-    return getFileHandleAsync(name = name).await()
+    return getFileHandleAsync(
+        name = name,
+    ).await()
 }
 
 /**
@@ -131,7 +135,7 @@ suspend inline fun FileSystemDirectoryHandle.removeEntry(
 ) {
     removeEntryAsync(
         name = name,
-        options = options
+        options = options,
     ).await()
 }
 
@@ -143,7 +147,9 @@ suspend inline fun FileSystemDirectoryHandle.removeEntry(
 suspend inline fun FileSystemDirectoryHandle.removeEntry(
     name: String,
 ) {
-    removeEntryAsync(name = name).await()
+    removeEntryAsync(
+        name = name,
+    ).await()
 }
 
 /**
@@ -152,5 +158,7 @@ suspend inline fun FileSystemDirectoryHandle.removeEntry(
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemDirectoryHandle/resolve)
  */
 suspend inline fun FileSystemDirectoryHandle.resolve(possibleDescendant: FileSystemHandle): ReadonlyArray<JsString>? {
-    return resolveAsync(possibleDescendant = possibleDescendant).await()
+    return resolveAsync(
+        possibleDescendant = possibleDescendant,
+    ).await()
 }

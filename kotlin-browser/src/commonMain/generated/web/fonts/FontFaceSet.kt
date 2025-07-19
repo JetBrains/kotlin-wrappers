@@ -84,7 +84,7 @@ suspend inline fun FontFaceSet.load(
 ): ReadonlyArray<FontFace> {
     return loadAsync(
         font = font,
-        text = text
+        text = text,
     ).await()
 }
 
@@ -96,7 +96,9 @@ suspend inline fun FontFaceSet.load(
 suspend inline fun FontFaceSet.load(
     font: String,
 ): ReadonlyArray<FontFace> {
-    return loadAsync(font = font).await()
+    return loadAsync(
+        font = font,
+    ).await()
 }
 
 /**

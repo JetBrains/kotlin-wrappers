@@ -45,7 +45,9 @@ private constructor() {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUAdapter/requestDevice)
  */
 suspend inline fun GPUAdapter.requestDevice(descriptor: GPUDeviceDescriptor): GPUDevice {
-    return requestDeviceAsync(descriptor = descriptor).await()
+    return requestDeviceAsync(
+        descriptor = descriptor,
+    ).await()
 }
 
 /**

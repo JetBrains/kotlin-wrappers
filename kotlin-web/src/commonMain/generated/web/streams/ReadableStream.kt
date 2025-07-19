@@ -97,7 +97,9 @@ open external class ReadableStream<R : JsAny?>(
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStream/cancel)
  */
 suspend inline fun <R : JsAny?> ReadableStream<R>.cancel(reason: JsError?) {
-    cancelAsync(reason = reason).await()
+    cancelAsync(
+        reason = reason,
+    ).await()
 }
 
 /**
@@ -121,7 +123,7 @@ suspend inline fun <R : JsAny?> ReadableStream<R>.pipeTo(
     val controller = AbortController()
     pipeToAsync(
         destination = destination,
-        options = patchAbortOptions(options, controller)
+        options = patchAbortOptions(options, controller),
     ).awaitCancellable(controller)
 }
 
@@ -136,6 +138,6 @@ suspend inline fun <R : JsAny?> ReadableStream<R>.pipeTo(
     val controller = AbortController()
     pipeToAsync(
         destination = destination,
-        options = createAbortable(controller)
+        options = createAbortable(controller),
     ).awaitCancellable(controller)
 }

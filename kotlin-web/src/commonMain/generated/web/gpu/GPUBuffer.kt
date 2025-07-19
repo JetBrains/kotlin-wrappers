@@ -70,7 +70,7 @@ suspend inline fun GPUBuffer.map(
     mapAsync(
         mode = mode,
         offset = offset,
-        size = size
+        size = size,
     ).await()
 }
 
@@ -83,7 +83,7 @@ suspend inline fun GPUBuffer.map(
 ) {
     mapAsync(
         mode = mode,
-        offset = offset
+        offset = offset,
     ).await()
 }
 
@@ -93,5 +93,7 @@ suspend inline fun GPUBuffer.map(
 suspend inline fun GPUBuffer.map(
     mode: GPUMapModeFlags,
 ) {
-    mapAsync(mode = mode).await()
+    mapAsync(
+        mode = mode,
+    ).await()
 }

@@ -63,5 +63,7 @@ open external class CustomElementRegistry {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CustomElementRegistry/whenDefined)
  */
 suspend inline fun <T : HTMLElement> CustomElementRegistry.whenDefined(name: TagName<T>): CustomElementConstructor<T> {
-    return whenDefinedAsync(name = name).await()
+    return whenDefinedAsync(
+        name = name,
+    ).await()
 }

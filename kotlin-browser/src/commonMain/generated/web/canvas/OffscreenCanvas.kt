@@ -85,7 +85,9 @@ open external class OffscreenCanvas(
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OffscreenCanvas/convertToBlob)
  */
 suspend inline fun OffscreenCanvas.convertToBlob(options: ImageEncodeOptions): Blob {
-    return convertToBlobAsync(options = options).await()
+    return convertToBlobAsync(
+        options = options,
+    ).await()
 }
 
 /**

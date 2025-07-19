@@ -112,13 +112,16 @@ internal open class SuspendExtensionsCollector(
         val argumentNames = parameterNames.subList(0, parameterNames.size - parametersToSkip)
         var arguments = argumentNames.mapIndexed { i, arg ->
             if (i == parameterNames.lastIndex && isAbortable) {
-                "$arg = patchAbortOptions($arg, $CONTROLLER)"
-            } else "$arg = $arg"
-        }.joinToString(",\n")
+                "$arg = patchAbortOptions($arg, $CONTROLLER),"
+            } else "$arg = $arg,"
+        }.joinToString(
+            separator = "\n",
+            prefix = (if (argumentNames.isNotEmpty()) "\n" else ""),
+            postfix = (if (argumentNames.isNotEmpty()) "\n" else ""),
+        )
 
         if (isAbortable && parametersToSkip > 0) {
-            val comma = ",\n".takeIf { arguments.isNotEmpty() }.orEmpty()
-            arguments += "$comma${parameterNames.last()} = createAbortable($CONTROLLER)\n"
+            arguments += "${parameterNames.last()} = createAbortable($CONTROLLER),\n"
         }
 
         val promiseCall = "${functionName}Async($arguments)"

@@ -213,7 +213,9 @@ protected /* private */ constructor() :
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/requestMIDIAccess)
  */
 suspend inline fun Navigator.requestMIDIAccess(options: MIDIOptions): MIDIAccess {
-    return requestMIDIAccessAsync(options = options).await()
+    return requestMIDIAccessAsync(
+        options = options,
+    ).await()
 }
 
 /**
@@ -238,7 +240,7 @@ suspend inline fun Navigator.requestMediaKeySystemAccess(
 ): MediaKeySystemAccess {
     return requestMediaKeySystemAccessAsync(
         keySystem = keySystem,
-        supportedConfigurations = supportedConfigurations
+        supportedConfigurations = supportedConfigurations,
     ).await()
 }
 
@@ -249,7 +251,9 @@ suspend inline fun Navigator.requestMediaKeySystemAccess(
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/share)
  */
 suspend inline fun Navigator.share(data: ShareData) {
-    shareAsync(data = data).await()
+    shareAsync(
+        data = data,
+    ).await()
 }
 
 /**

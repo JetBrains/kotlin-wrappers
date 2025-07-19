@@ -39,5 +39,7 @@ open external class ReadableStreamBYOBReader(
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStreamBYOBReader/read)
  */
 suspend inline fun <T : ArrayBufferView<*>> ReadableStreamBYOBReader.read(view: T): ReadableStreamReadResult<T> {
-    return readAsync(view = view).await()
+    return readAsync(
+        view = view,
+    ).await()
 }

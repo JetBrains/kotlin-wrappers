@@ -27,7 +27,7 @@ suspend inline fun instantiate(
 ): WebAssemblyInstantiatedSource {
     return instantiateAsync(
         bytes = bytes,
-        importObject = importObject
+        importObject = importObject,
     ).await()
 }
 
@@ -35,7 +35,9 @@ suspend inline fun instantiate(
 suspend inline fun instantiate(
     bytes: BufferSource,
 ): WebAssemblyInstantiatedSource {
-    return instantiateAsync(bytes = bytes).await()
+    return instantiateAsync(
+        bytes = bytes,
+    ).await()
 }
 
 @JsName("instantiate")
@@ -51,7 +53,7 @@ suspend inline fun instantiate(
 ): Instance {
     return instantiateAsync(
         moduleObject = moduleObject,
-        importObject = importObject
+        importObject = importObject,
     ).await()
 }
 
@@ -59,5 +61,7 @@ suspend inline fun instantiate(
 suspend inline fun instantiate(
     moduleObject: Module,
 ): Instance {
-    return instantiateAsync(moduleObject = moduleObject).await()
+    return instantiateAsync(
+        moduleObject = moduleObject,
+    ).await()
 }

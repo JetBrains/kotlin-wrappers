@@ -84,7 +84,9 @@ private constructor() {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CacheStorage/delete)
  */
 suspend inline fun CacheStorage.delete(cacheName: String): Boolean {
-    return deleteAsync(cacheName = cacheName).await().toBoolean()
+    return deleteAsync(
+        cacheName = cacheName,
+    ).await().toBoolean()
 }
 
 /**
@@ -93,7 +95,9 @@ suspend inline fun CacheStorage.delete(cacheName: String): Boolean {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CacheStorage/has)
  */
 suspend inline fun CacheStorage.has(cacheName: String): Boolean {
-    return hasAsync(cacheName = cacheName).await().toBoolean()
+    return hasAsync(
+        cacheName = cacheName,
+    ).await().toBoolean()
 }
 
 /**
@@ -116,7 +120,7 @@ suspend inline fun CacheStorage.match(
 ): Response? {
     return matchAsync(
         url = url,
-        options = options
+        options = options,
     ).await()
 }
 
@@ -128,7 +132,9 @@ suspend inline fun CacheStorage.match(
 suspend inline fun CacheStorage.match(
     url: String,
 ): Response? {
-    return matchAsync(url = url).await()
+    return matchAsync(
+        url = url,
+    ).await()
 }
 
 suspend inline fun CacheStorage.match(
@@ -137,14 +143,16 @@ suspend inline fun CacheStorage.match(
 ): Response? {
     return matchAsync(
         url = url,
-        options = options
+        options = options,
     ).await()
 }
 
 suspend inline fun CacheStorage.match(
     url: URL,
 ): Response? {
-    return matchAsync(url = url).await()
+    return matchAsync(
+        url = url,
+    ).await()
 }
 
 suspend inline fun CacheStorage.match(
@@ -153,14 +161,16 @@ suspend inline fun CacheStorage.match(
 ): Response? {
     return matchAsync(
         request = request,
-        options = options
+        options = options,
     ).await()
 }
 
 suspend inline fun CacheStorage.match(
     request: Request,
 ): Response? {
-    return matchAsync(request = request).await()
+    return matchAsync(
+        request = request,
+    ).await()
 }
 
 /**
@@ -169,5 +179,7 @@ suspend inline fun CacheStorage.match(
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CacheStorage/open)
  */
 suspend inline fun CacheStorage.open(cacheName: String): Cache {
-    return openAsync(cacheName = cacheName).await()
+    return openAsync(
+        cacheName = cacheName,
+    ).await()
 }

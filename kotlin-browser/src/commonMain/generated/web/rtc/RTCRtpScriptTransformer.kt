@@ -66,7 +66,9 @@ private constructor() :
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCRtpScriptTransformer/generateKeyFrame)
  */
 suspend inline fun RTCRtpScriptTransformer.generateKeyFrame(rid: String): Int {
-    return generateKeyFrameAsync(rid = rid).await().toInt()
+    return generateKeyFrameAsync(
+        rid = rid,
+    ).await().toInt()
 }
 
 /**

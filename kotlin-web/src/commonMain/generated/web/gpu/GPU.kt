@@ -35,7 +35,9 @@ private constructor() {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPU/requestAdapter)
  */
 suspend inline fun GPU.requestAdapter(options: GPURequestAdapterOptions): GPUAdapter? {
-    return requestAdapterAsync(options = options).await()
+    return requestAdapterAsync(
+        options = options,
+    ).await()
 }
 
 /**

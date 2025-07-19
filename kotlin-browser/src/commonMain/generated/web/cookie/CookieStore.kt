@@ -79,11 +79,15 @@ private constructor() :
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CookieStore/delete)
  */
 suspend inline fun CookieStore.delete(name: String) {
-    deleteAsync(name = name).await()
+    deleteAsync(
+        name = name,
+    ).await()
 }
 
 suspend inline fun CookieStore.delete(options: CookieStoreDeleteOptions) {
-    deleteAsync(options = options).await()
+    deleteAsync(
+        options = options,
+    ).await()
 }
 
 /**
@@ -92,11 +96,15 @@ suspend inline fun CookieStore.delete(options: CookieStoreDeleteOptions) {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CookieStore/get)
  */
 suspend inline fun CookieStore.get(name: String): CookieListItem? {
-    return getAsync(name = name).await()
+    return getAsync(
+        name = name,
+    ).await()
 }
 
 suspend inline fun CookieStore.get(options: CookieStoreGetOptions): CookieListItem? {
-    return getAsync(options = options).await()
+    return getAsync(
+        options = options,
+    ).await()
 }
 
 suspend inline fun CookieStore.get(): CookieListItem? {
@@ -109,11 +117,15 @@ suspend inline fun CookieStore.get(): CookieListItem? {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CookieStore/getAll)
  */
 suspend inline fun CookieStore.getAll(name: String): CookieList {
-    return getAllAsync(name = name).await()
+    return getAllAsync(
+        name = name,
+    ).await()
 }
 
 suspend inline fun CookieStore.getAll(options: CookieStoreGetOptions): CookieList {
-    return getAllAsync(options = options).await()
+    return getAllAsync(
+        options = options,
+    ).await()
 }
 
 suspend inline fun CookieStore.getAll(): CookieList {
@@ -131,12 +143,14 @@ suspend inline fun CookieStore.set(
 ) {
     setAsync(
         name = name,
-        value = value
+        value = value,
     ).await()
 }
 
 suspend inline fun CookieStore.set(options: CookieInit) {
-    setAsync(options = options).await()
+    setAsync(
+        options = options,
+    ).await()
 }
 
 /**

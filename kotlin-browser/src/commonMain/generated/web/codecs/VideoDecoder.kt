@@ -101,7 +101,9 @@ suspend inline fun VideoDecoder.flush() {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoDecoder/isConfigSupported_static)
  */
 suspend inline fun VideoDecoder.Companion.isConfigSupported(config: VideoDecoderConfig): VideoDecoderSupport {
-    return isConfigSupportedAsync(config = config).await()
+    return isConfigSupportedAsync(
+        config = config,
+    ).await()
 }
 
 /**

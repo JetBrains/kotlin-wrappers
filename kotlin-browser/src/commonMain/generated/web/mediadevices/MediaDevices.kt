@@ -75,7 +75,9 @@ suspend inline fun MediaDevices.enumerateDevices(): ReadonlyArray<MediaDeviceInf
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaDevices/getDisplayMedia)
  */
 suspend inline fun MediaDevices.getDisplayMedia(options: DisplayMediaStreamOptions): MediaStream {
-    return getDisplayMediaAsync(options = options).await()
+    return getDisplayMediaAsync(
+        options = options,
+    ).await()
 }
 
 /**
@@ -93,7 +95,9 @@ suspend inline fun MediaDevices.getDisplayMedia(): MediaStream {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaDevices/getUserMedia)
  */
 suspend inline fun MediaDevices.getUserMedia(constraints: MediaStreamConstraints): MediaStream {
-    return getUserMediaAsync(constraints = constraints).await()
+    return getUserMediaAsync(
+        constraints = constraints,
+    ).await()
 }
 
 /**

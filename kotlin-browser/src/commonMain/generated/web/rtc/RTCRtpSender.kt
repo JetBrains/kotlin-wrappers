@@ -111,7 +111,9 @@ suspend inline fun RTCRtpSender.getStats(): RTCStatsReport {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCRtpSender/replaceTrack)
  */
 suspend inline fun RTCRtpSender.replaceTrack(withTrack: MediaStreamTrack?) {
-    replaceTrackAsync(withTrack = withTrack).await()
+    replaceTrackAsync(
+        withTrack = withTrack,
+    ).await()
 }
 
 /**
@@ -125,7 +127,7 @@ suspend inline fun RTCRtpSender.setParameters(
 ) {
     setParametersAsync(
         parameters = parameters,
-        setParameterOptions = setParameterOptions
+        setParameterOptions = setParameterOptions,
     ).await()
 }
 
@@ -137,5 +139,7 @@ suspend inline fun RTCRtpSender.setParameters(
 suspend inline fun RTCRtpSender.setParameters(
     parameters: RTCRtpSendParameters,
 ) {
-    setParametersAsync(parameters = parameters).await()
+    setParametersAsync(
+        parameters = parameters,
+    ).await()
 }

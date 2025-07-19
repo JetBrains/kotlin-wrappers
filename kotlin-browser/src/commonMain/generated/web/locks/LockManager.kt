@@ -62,7 +62,7 @@ suspend inline fun <T : JsAny?> LockManager.request(
 ): T {
     return requestAsync(
         name = name,
-        callback = callback
+        callback = callback,
     ).await()
 }
 
@@ -74,6 +74,6 @@ suspend inline fun <T : JsAny?> LockManager.request(
     return requestAsync(
         name = name,
         options = options,
-        callback = callback
+        callback = callback,
     ).await()
 }

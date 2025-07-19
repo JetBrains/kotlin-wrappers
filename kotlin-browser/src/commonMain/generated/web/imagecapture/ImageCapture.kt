@@ -92,7 +92,9 @@ suspend inline fun ImageCapture.grabFrame(): ImageBitmap {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageCapture/takePhoto)
  */
 suspend inline fun ImageCapture.takePhoto(photoSettings: PhotoSettings): Blob {
-    return takePhotoAsync(photoSettings = photoSettings).await()
+    return takePhotoAsync(
+        photoSettings = photoSettings,
+    ).await()
 }
 
 /**

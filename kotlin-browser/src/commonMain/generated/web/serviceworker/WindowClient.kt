@@ -65,9 +65,13 @@ suspend inline fun WindowClient.focus(): WindowClient {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WindowClient/navigate)
  */
 suspend inline fun WindowClient.navigate(url: String): WindowClient? {
-    return navigateAsync(url = url).await()
+    return navigateAsync(
+        url = url,
+    ).await()
 }
 
 suspend inline fun WindowClient.navigate(url: URL): WindowClient? {
-    return navigateAsync(url = url).await()
+    return navigateAsync(
+        url = url,
+    ).await()
 }

@@ -67,7 +67,9 @@ suspend inline fun PushManager.getSubscription(): PushSubscription? {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PushManager/permissionState)
  */
 suspend inline fun PushManager.permissionState(options: PushSubscriptionOptionsInit): PermissionState {
-    return permissionStateAsync(options = options).await()
+    return permissionStateAsync(
+        options = options,
+    ).await()
 }
 
 /**
@@ -85,7 +87,9 @@ suspend inline fun PushManager.permissionState(): PermissionState {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PushManager/subscribe)
  */
 suspend inline fun PushManager.subscribe(options: PushSubscriptionOptionsInit): PushSubscription {
-    return subscribeAsync(options = options).await()
+    return subscribeAsync(
+        options = options,
+    ).await()
 }
 
 /**

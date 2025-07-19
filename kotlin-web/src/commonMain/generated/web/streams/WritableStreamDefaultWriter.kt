@@ -77,7 +77,9 @@ open external class WritableStreamDefaultWriter<W : JsAny?>(
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WritableStreamDefaultWriter/abort)
  */
 suspend inline fun <W : JsAny?> WritableStreamDefaultWriter<W>.abort(reason: JsError?) {
-    abortAsync(reason = reason).await()
+    abortAsync(
+        reason = reason,
+    ).await()
 }
 
 /**
@@ -104,7 +106,9 @@ suspend inline fun <W : JsAny?> WritableStreamDefaultWriter<W>.close() {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WritableStreamDefaultWriter/write)
  */
 suspend inline fun <W : JsAny?> WritableStreamDefaultWriter<W>.write(chunk: W) {
-    writeAsync(chunk = chunk).await()
+    writeAsync(
+        chunk = chunk,
+    ).await()
 }
 
 /**

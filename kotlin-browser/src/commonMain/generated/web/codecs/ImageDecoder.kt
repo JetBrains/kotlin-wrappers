@@ -86,7 +86,9 @@ open external class ImageDecoder(
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageDecoder/decode)
  */
 suspend inline fun ImageDecoder.decode(options: ImageDecodeOptions): ImageDecodeResult {
-    return decodeAsync(options = options).await()
+    return decodeAsync(
+        options = options,
+    ).await()
 }
 
 /**
@@ -104,5 +106,7 @@ suspend inline fun ImageDecoder.decode(): ImageDecodeResult {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageDecoder/isTypeSupported_static)
  */
 suspend inline fun ImageDecoder.Companion.isTypeSupported(type: String): Boolean {
-    return isTypeSupportedAsync(type = type).await().toBoolean()
+    return isTypeSupportedAsync(
+        type = type,
+    ).await().toBoolean()
 }

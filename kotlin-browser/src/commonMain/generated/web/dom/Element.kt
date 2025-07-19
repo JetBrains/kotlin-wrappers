@@ -546,7 +546,9 @@ private constructor() :
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/requestFullscreen)
  */
 suspend inline fun Element.requestFullscreen(options: FullscreenOptions) {
-    requestFullscreenAsync(options = options).await()
+    requestFullscreenAsync(
+        options = options,
+    ).await()
 }
 
 /**
@@ -564,7 +566,9 @@ suspend inline fun Element.requestFullscreen() {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/requestPointerLock)
  */
 suspend inline fun Element.requestPointerLock(options: PointerLockOptions) {
-    requestPointerLockAsync(options = options).await()
+    requestPointerLockAsync(
+        options = options,
+    ).await()
 }
 
 /**

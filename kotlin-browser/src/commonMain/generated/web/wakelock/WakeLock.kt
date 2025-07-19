@@ -30,7 +30,9 @@ private constructor() {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WakeLock/request)
  */
 suspend inline fun WakeLock.request(type: WakeLockType): WakeLockSentinel {
-    return requestAsync(type = type).await()
+    return requestAsync(
+        type = type,
+    ).await()
 }
 
 /**

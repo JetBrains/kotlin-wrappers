@@ -101,7 +101,9 @@ suspend inline fun AudioDecoder.flush() {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioDecoder/isConfigSupported_static)
  */
 suspend inline fun AudioDecoder.Companion.isConfigSupported(config: AudioDecoderConfig): AudioDecoderSupport {
-    return isConfigSupportedAsync(config = config).await()
+    return isConfigSupportedAsync(
+        config = config,
+    ).await()
 }
 
 /**

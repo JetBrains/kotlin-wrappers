@@ -131,7 +131,9 @@ private constructor() :
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/getNotifications)
  */
 suspend inline fun ServiceWorkerRegistration.getNotifications(filter: GetNotificationOptions): ReadonlyArray<Notification> {
-    return getNotificationsAsync(filter = filter).await()
+    return getNotificationsAsync(
+        filter = filter,
+    ).await()
 }
 
 /**
@@ -154,7 +156,7 @@ suspend inline fun ServiceWorkerRegistration.showNotification(
 ) {
     showNotificationAsync(
         title = title,
-        options = options
+        options = options,
     ).await()
 }
 
@@ -166,7 +168,9 @@ suspend inline fun ServiceWorkerRegistration.showNotification(
 suspend inline fun ServiceWorkerRegistration.showNotification(
     title: String,
 ) {
-    showNotificationAsync(title = title).await()
+    showNotificationAsync(
+        title = title,
+    ).await()
 }
 
 /**

@@ -60,7 +60,9 @@ private constructor() {
  */
 suspend inline fun CredentialsContainer.create(options: CredentialCreationOptions): Credential? {
     val controller = AbortController()
-    return createAsync(options = patchAbortOptions(options, controller)).awaitCancellable(controller)
+    return createAsync(
+        options = patchAbortOptions(options, controller),
+    ).awaitCancellable(controller)
 }
 
 /**
@@ -71,7 +73,7 @@ suspend inline fun CredentialsContainer.create(options: CredentialCreationOption
 suspend inline fun CredentialsContainer.create(): Credential? {
     val controller = AbortController()
     return createAsync(
-        options = createAbortable(controller)
+        options = createAbortable(controller),
     ).awaitCancellable(controller)
 }
 
@@ -82,7 +84,9 @@ suspend inline fun CredentialsContainer.create(): Credential? {
  */
 suspend inline fun CredentialsContainer.get(options: CredentialRequestOptions): Credential? {
     val controller = AbortController()
-    return getAsync(options = patchAbortOptions(options, controller)).awaitCancellable(controller)
+    return getAsync(
+        options = patchAbortOptions(options, controller),
+    ).awaitCancellable(controller)
 }
 
 /**
@@ -93,7 +97,7 @@ suspend inline fun CredentialsContainer.get(options: CredentialRequestOptions): 
 suspend inline fun CredentialsContainer.get(): Credential? {
     val controller = AbortController()
     return getAsync(
-        options = createAbortable(controller)
+        options = createAbortable(controller),
     ).awaitCancellable(controller)
 }
 
@@ -112,5 +116,7 @@ suspend inline fun CredentialsContainer.preventSilentAccess() {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CredentialsContainer/store)
  */
 suspend inline fun CredentialsContainer.store(credential: Credential) {
-    storeAsync(credential = credential).await()
+    storeAsync(
+        credential = credential,
+    ).await()
 }
