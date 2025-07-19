@@ -1279,6 +1279,7 @@ internal fun convertInterface(
                         || name == "RadioNodeList"
                         || name == "GPUSupportedFeatures"
                         || name == "WGSLLanguageFeatures"
+                        || name == "FontFaceSet"
                 )
             -> {
             declaration = declaration

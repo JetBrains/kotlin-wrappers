@@ -17,8 +17,9 @@ import kotlin.js.definedExternally
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FontFaceSet)
  */
-open external class FontFaceSet
-private constructor() :
+sealed /* final */
+external class FontFaceSet
+protected /* private */ constructor() :
     EventTarget,
     MutableSetLike<FontFace> {
     /**
