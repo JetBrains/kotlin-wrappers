@@ -73,40 +73,42 @@ suspend fun main() {
     )
 
     generate {
-        plugins = manyOf(
-            values = jsPlugins + arrayOf(
-                convertArgumentsTypeReferenceNode,
-                convertAssertStrict,
-                convertAssertStrictNames,
-                convertBufferBlob,
-                convertBufferReference,
-                convertCollections,
-                convertCompareResultType,
-                convertConflictingEntityNames,
-                convertConflictingOverloads,
-                convertDeprecated,
-                convertDnsErrorCodes,
-                convertDotTestReporterPayload,
-                convertErrorTypeReferenceNode,
-                convertEventEmitterListener,
-                convertExecFileExceptionCodeType,
-                convertFunctionInheritance,
-                convertGenericBuiltinModule,
-                convertGetPeerCertificate,
-                convertHttpTypeParameter,
-                convertImplicitArrayBuffer,
-                convertIncompatibleParameterName,
-                convertInspectorQualifiedName,
-                // ---
-                convertTypealiasParameterBounds,
-                convertUndiciTypesReexport,
-                convertURL,
-                convertUtilityTypes,
-                convertUtilTypeHelpers,
-                convertWebCryptoQualifiedName,
-                convertWebStreamsQualifiedName,
-            )
-        )
+        plugins = manyOf(values = jsPlugins + arrayOf(
+            convertArgumentsTypeReferenceNode,
+            convertAssertStrict,
+            convertAssertStrictNames,
+            convertBufferBlob,
+            convertBufferReference,
+            convertCollections,
+            convertCompareResultType,
+            convertConflictingEntityNames,
+            convertConflictingOverloads,
+            convertDeprecated,
+            convertDnsErrorCodes,
+            convertDotTestReporterPayload,
+            convertErrorTypeReferenceNode,
+            convertEventEmitterListener,
+            convertExecFileExceptionCodeType,
+            convertFunctionInheritance,
+            convertGenericBuiltinModule,
+            convertGetPeerCertificate,
+            convertHttpTypeParameter,
+            convertImplicitArrayBuffer,
+            convertIncompatibleParameterName,
+            convertInspectorQualifiedName,
+            convertIterableIterator,
+            convertKeyUnionReferences,
+            convertKeyUnions,
+            convertMock,
+            // ---
+            convertTypealiasParameterBounds,
+            convertUndiciTypesReexport,
+            convertURL,
+            convertUtilityTypes,
+            convertUtilTypeHelpers,
+            convertWebCryptoQualifiedName,
+            convertWebStreamsQualifiedName,
+        ))
         injections = manyOf(values = jsInjections + arrayOf())
         annotations = manyOf(values = jsAnnotations + arrayOf())
         nameResolvers = manyOf(values = jsNameResolvers + arrayOf())
