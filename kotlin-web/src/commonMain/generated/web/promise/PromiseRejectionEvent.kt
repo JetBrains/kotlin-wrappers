@@ -2,7 +2,7 @@
 
 package web.promise
 
-import js.errors.JsError
+import js.errors.JsErrorLike
 import js.promise.Promise
 import js.reflect.unsafeCast
 import web.events.Event
@@ -29,7 +29,7 @@ open external class PromiseRejectionEvent(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PromiseRejectionEvent/reason)
      */
-    val reason: JsError?
+    val reason: JsErrorLike?
 
     companion object
 }

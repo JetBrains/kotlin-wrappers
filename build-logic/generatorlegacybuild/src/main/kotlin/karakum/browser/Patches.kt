@@ -99,7 +99,7 @@ internal fun String.applyPatches(): String {
         }
         .replace(""""Ed25519" | { name: "Ed25519" }""", "${ED25519}Algorithm")
         .replace("    reason?: any;", "    reason?: JsError | undefined;")
-        .replace("readonly reason: any;", "readonly reason: JsError | undefined;")
+        .replace("readonly reason: any;", "readonly reason: JsErrorLike | undefined;")
         .replace("(reason?: any)", "(reason?: JsError | undefined)")
         .replace("\n    exportKey(format: KeyFormat, key: CryptoKey): Promise<ArrayBuffer | JsonWebKey>;", "")
         .splitUnion("string | string[]")

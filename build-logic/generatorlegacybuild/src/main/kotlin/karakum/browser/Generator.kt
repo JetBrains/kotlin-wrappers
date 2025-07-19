@@ -44,6 +44,7 @@ private val DEFAULT_IMPORTS = Imports(
     "js.core.JsPrimitives.toBoolean",
     "js.date.Date",
     "js.errors.JsError",
+    "js.errors.JsErrorLike",
     "js.errors.JsErrorName",
     "js.function.JsFunction",
     "js.globals.GlobalScope",

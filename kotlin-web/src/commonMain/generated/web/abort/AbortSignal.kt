@@ -5,6 +5,7 @@ package web.abort
 import js.array.ReadonlyArray
 import js.core.UInt53
 import js.errors.JsError
+import js.errors.JsErrorLike
 import web.events.Event
 import web.events.EventHandler
 import web.events.EventInstance
@@ -36,7 +37,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AbortSignal/reason)
      */
-    val reason: JsError?
+    val reason: JsErrorLike?
 
     /**
      * The **`throwIfAborted()`** method throws the signal's abort AbortSignal.reason if the signal has been aborted; otherwise it does nothing.
