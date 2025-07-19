@@ -932,6 +932,7 @@ internal fun convertInterface(
         .flatten()
         .plus(additionalIterableParent)
         .plus(ABORTABLE.takeIf { abortable })
+        .plus("StartInDirectory".takeIf { name == "FileSystemHandle" })
         .plus(SERIALIZABLE.takeIf { IDLRegistry.isSerializable(name) })
         .filterNotNull()
         .forEach { additionalParent ->

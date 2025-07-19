@@ -17,6 +17,7 @@ import kotlin.js.JsName
  */
 open external class FileSystemHandle
 private constructor() :
+    StartInDirectory,
     Serializable {
     /**
      * The **`kind`** read-only property of the `'file'` if the associated entry is a file or `'directory'`.
