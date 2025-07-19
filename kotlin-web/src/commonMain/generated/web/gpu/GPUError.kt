@@ -6,6 +6,7 @@
 
 package web.gpu
 
+import js.errors.JsErrorLike
 import kotlin.js.definedExternally
 
 /**
@@ -14,7 +15,8 @@ import kotlin.js.definedExternally
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUError)
  */
-sealed external interface GPUError {
+sealed external interface GPUError :
+    JsErrorLike {
     /**
      * The **`message`** read-only property of the A string.
      *

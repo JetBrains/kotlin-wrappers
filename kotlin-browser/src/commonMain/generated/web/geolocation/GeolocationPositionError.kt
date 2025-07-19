@@ -2,13 +2,16 @@
 
 package web.geolocation
 
+import js.errors.JsErrorLike
+
 /**
  * The **`GeolocationPositionError`** interface represents the reason of an error occurring when using the geolocating device.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GeolocationPositionError)
  */
 open external class GeolocationPositionError
-private constructor() {
+private constructor() :
+    JsErrorLike {
     /**
      * The **`code`** read-only property of the GeolocationPositionError interface is an `unsigned short` representing the error code.
      *
