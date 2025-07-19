@@ -7,7 +7,7 @@ package web.gpu
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUTextureView)
  */
-external class GPUTextureView
+open external class GPUTextureView
 private constructor() :
     GPUObjectBase,
     GPUBindingResource

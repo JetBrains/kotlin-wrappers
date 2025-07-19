@@ -11,7 +11,7 @@ import js.core.UInt53
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStreamBYOBRequest)
  */
-external class ReadableStreamBYOBRequest
+open external class ReadableStreamBYOBRequest
 private constructor() {
     /**
      * The **`view`** getter property of the ReadableStreamBYOBRequest interface returns the current view.

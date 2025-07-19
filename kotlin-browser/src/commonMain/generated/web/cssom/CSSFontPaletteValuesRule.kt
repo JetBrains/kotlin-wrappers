@@ -7,7 +7,7 @@ package web.cssom
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSFontPaletteValuesRule)
  */
-external class CSSFontPaletteValuesRule
+open external class CSSFontPaletteValuesRule
 private constructor() :
     CSSRule {
     /**

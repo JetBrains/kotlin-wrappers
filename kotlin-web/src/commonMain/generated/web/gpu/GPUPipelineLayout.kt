@@ -7,6 +7,6 @@ package web.gpu
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUPipelineLayout)
  */
-external class GPUPipelineLayout
+open external class GPUPipelineLayout
 private constructor() :
     GPUObjectBase

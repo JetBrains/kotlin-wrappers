@@ -13,7 +13,7 @@ import web.blob.Blob
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PushMessageData)
  */
-external class PushMessageData
+open external class PushMessageData
 private constructor() {
     /**
      * The **`arrayBuffer()`** method of the PushMessageData interface extracts push message data as an ArrayBuffer object.

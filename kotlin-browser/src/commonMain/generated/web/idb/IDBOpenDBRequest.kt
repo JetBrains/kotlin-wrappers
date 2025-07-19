@@ -10,7 +10,7 @@ import web.events.EventInstance
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBOpenDBRequest)
  */
-external class IDBOpenDBRequest
+open external class IDBOpenDBRequest
 private constructor() :
     IDBRequest<IDBDatabase> {
     /**
@@ -27,17 +27,17 @@ private constructor() :
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBOpenDBRequest/blocked_event)
  */
-inline val IDBOpenDBRequest.blockedEvent: EventInstance<IDBVersionChangeEvent, IDBOpenDBRequest, IDBOpenDBRequest>
+inline val <C : IDBOpenDBRequest> C.blockedEvent: EventInstance<IDBVersionChangeEvent, C, C>
     get() = EventInstance(this, "blocked")
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBOpenDBRequest/success_event)
  */
-inline val IDBOpenDBRequest.successEvent: EventInstance<IDBVersionChangeEvent, IDBOpenDBRequest, IDBOpenDBRequest>
+inline val <C : IDBOpenDBRequest> C.successEvent: EventInstance<IDBVersionChangeEvent, C, C>
     get() = EventInstance(this, "success")
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBOpenDBRequest/upgradeneeded_event)
  */
-inline val IDBOpenDBRequest.upgradeneededEvent: EventInstance<IDBVersionChangeEvent, IDBOpenDBRequest, IDBOpenDBRequest>
+inline val <C : IDBOpenDBRequest> C.upgradeneededEvent: EventInstance<IDBVersionChangeEvent, C, C>
     get() = EventInstance(this, "upgradeneeded")

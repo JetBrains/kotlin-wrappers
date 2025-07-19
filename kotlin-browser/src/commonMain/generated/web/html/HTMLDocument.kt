@@ -4,6 +4,6 @@ package web.html
 
 import web.dom.Document
 
-external class HTMLDocument
+open external class HTMLDocument
 private constructor() :
     Document

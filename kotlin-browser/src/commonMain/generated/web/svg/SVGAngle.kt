@@ -7,7 +7,7 @@ package web.svg
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAngle)
  */
-external class SVGAngle
+open external class SVGAngle
 private constructor() {
     /**
      * The **`unitType`** property of the SVGAngle interface is one of the unit type constants and represents the units in which this angle's value is expressed.

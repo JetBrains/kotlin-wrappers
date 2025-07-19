@@ -7,7 +7,7 @@ package web.window
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BarProp)
  */
-external class BarProp
+open external class BarProp
 private constructor() {
     /**
      * The **`visible`** read-only property of the BarProp interface returns `true` if the user interface element it represents is visible.

@@ -9,7 +9,7 @@ import js.core.JsAny
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBCursorWithValue)
  */
-external class IDBCursorWithValue
+open external class IDBCursorWithValue
 private constructor() :
     IDBCursor {
     /**

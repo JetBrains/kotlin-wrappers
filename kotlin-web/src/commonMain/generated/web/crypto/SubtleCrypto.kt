@@ -19,7 +19,7 @@ import kotlin.js.definedExternally
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto)
  */
-external class SubtleCrypto
+open external class SubtleCrypto
 private constructor() {
     /**
      * The **`decrypt()`** method of the SubtleCrypto interface decrypts some encrypted data.

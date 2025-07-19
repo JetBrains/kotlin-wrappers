@@ -13,7 +13,7 @@ import kotlin.js.JsName
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WindowClient)
  */
-external class WindowClient
+open external class WindowClient
 private constructor() :
     Client {
     /**

@@ -7,7 +7,7 @@ package web.codecs
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageTrack)
  */
-external class ImageTrack
+open external class ImageTrack
 private constructor() {
     /**
      * The **`animated`** property of the ImageTrack interface returns `true` if the track is animated and therefore has multiple frames.

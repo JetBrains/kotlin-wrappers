@@ -21,7 +21,7 @@ import kotlin.js.definedExternally
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache)
  */
-external class Cache
+open external class Cache
 private constructor() {
     /**
      * The **`add()`** method of the Cache interface takes a URL, retrieves it, and adds the resulting response object to the given cache.

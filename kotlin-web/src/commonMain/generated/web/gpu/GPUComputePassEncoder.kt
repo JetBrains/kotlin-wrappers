@@ -9,7 +9,7 @@ import kotlin.js.definedExternally
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUComputePassEncoder)
  */
-external class GPUComputePassEncoder
+open external class GPUComputePassEncoder
 private constructor() :
     GPUBindingCommandsMixin,
     GPUDebugCommandsMixin,

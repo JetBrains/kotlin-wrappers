@@ -7,7 +7,7 @@ package web.workers
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WorkerLocation)
  */
-external class WorkerLocation
+open external class WorkerLocation
 private constructor() {
     /**
      * The **`hash`** property of a WorkerLocation object returns the URL.hash part of the worker's location.

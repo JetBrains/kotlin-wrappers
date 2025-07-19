@@ -11,7 +11,7 @@ import js.typedarrays.Float32Array
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioParam)
  */
-external class AudioParam
+open external class AudioParam
 private constructor() {
     var automationRate: AutomationRate
 

@@ -15,7 +15,7 @@ import kotlin.js.JsName
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemWritableFileStream)
  */
-external class FileSystemWritableFileStream
+open external class FileSystemWritableFileStream
 private constructor() :
     WritableStream<FileSystemWriteChunkType> {
     /**

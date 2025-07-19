@@ -7,7 +7,7 @@ package web.svg
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedBoolean)
  */
-external class SVGAnimatedBoolean
+open external class SVGAnimatedBoolean
 private constructor() {
     /**
      * The **`animVal`** read-only property of the SVGAnimatedBoolean interface represents the current animated value of the associated animatable boolean SVG attribute.

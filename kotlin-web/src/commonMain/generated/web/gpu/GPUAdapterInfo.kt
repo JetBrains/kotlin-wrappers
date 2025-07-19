@@ -7,7 +7,7 @@ package web.gpu
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUAdapterInfo)
  */
-external class GPUAdapterInfo
+open external class GPUAdapterInfo
 private constructor() {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUAdapterInfo/architecture)

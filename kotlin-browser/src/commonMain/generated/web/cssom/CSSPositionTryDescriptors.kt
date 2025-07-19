@@ -7,7 +7,7 @@ package web.cssom
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSPositionTryDescriptors)
  */
-external class CSSPositionTryDescriptors
+open external class CSSPositionTryDescriptors
 private constructor() :
     CSSStyleDeclaration {
     /**

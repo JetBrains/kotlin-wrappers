@@ -11,7 +11,7 @@ import kotlin.js.JsName
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUShaderModule)
  */
-external class GPUShaderModule
+open external class GPUShaderModule
 private constructor() :
     GPUObjectBase {
     /**

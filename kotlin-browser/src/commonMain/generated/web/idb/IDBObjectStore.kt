@@ -15,7 +15,7 @@ import kotlin.js.definedExternally
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBObjectStore)
  */
-external class IDBObjectStore
+open external class IDBObjectStore
 private constructor() {
     /**
      * The **`autoIncrement`** read-only property of the for this object store.

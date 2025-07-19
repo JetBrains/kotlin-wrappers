@@ -10,6 +10,6 @@ import js.objects.Record
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMStringMap)
  */
-external class DOMStringMap
+open external class DOMStringMap
 private constructor() :
     Record<JsString, JsString>

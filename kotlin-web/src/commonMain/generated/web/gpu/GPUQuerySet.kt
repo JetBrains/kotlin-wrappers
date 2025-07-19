@@ -7,7 +7,7 @@ package web.gpu
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUQuerySet)
  */
-external class GPUQuerySet
+open external class GPUQuerySet
 private constructor() :
     GPUObjectBase {
     /**

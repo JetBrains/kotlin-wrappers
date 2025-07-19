@@ -7,6 +7,6 @@ package web.gpu
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUBindGroup)
  */
-external class GPUBindGroup
+open external class GPUBindGroup
 private constructor() :
     GPUObjectBase

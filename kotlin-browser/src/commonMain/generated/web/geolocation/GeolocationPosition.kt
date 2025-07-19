@@ -11,7 +11,7 @@ import web.time.EpochTimeStamp
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GeolocationPosition)
  */
-external class GeolocationPosition
+open external class GeolocationPosition
 private constructor() {
     /**
      * The **`coords`** read-only property of the GeolocationPosition interface returns a GeolocationCoordinates object representing a geographic position.

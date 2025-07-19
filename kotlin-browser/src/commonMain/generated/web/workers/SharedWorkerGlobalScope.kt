@@ -12,7 +12,7 @@ import web.messaging.MessageEvent
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SharedWorkerGlobalScope)
  */
-external class SharedWorkerGlobalScope
+open external class SharedWorkerGlobalScope
 private constructor() :
     WorkerGlobalScope {
     /**
@@ -38,5 +38,5 @@ private constructor() :
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SharedWorkerGlobalScope/connect_event)
  */
-inline val SharedWorkerGlobalScope.connectEvent: EventInstance<MessageEvent<JsAny?>, SharedWorkerGlobalScope, SharedWorkerGlobalScope>
+inline val <C : SharedWorkerGlobalScope> C.connectEvent: EventInstance<MessageEvent<JsAny?>, C, C>
     get() = EventInstance(this, "connect")

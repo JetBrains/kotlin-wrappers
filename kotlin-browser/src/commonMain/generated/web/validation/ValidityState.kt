@@ -7,7 +7,7 @@ package web.validation
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ValidityState)
  */
-external class ValidityState
+open external class ValidityState
 private constructor() {
     /**
      * The read-only **`badInput`** property of the ValidityState interface indicates if the user has provided input that the browser is unable to convert.

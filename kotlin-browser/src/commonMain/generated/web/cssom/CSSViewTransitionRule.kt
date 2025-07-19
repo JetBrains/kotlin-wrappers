@@ -5,7 +5,7 @@ package web.cssom
 import js.array.ReadonlyArray
 import js.core.JsString
 
-external class CSSViewTransitionRule
+open external class CSSViewTransitionRule
 private constructor() :
     CSSRule {
     val navigation: String

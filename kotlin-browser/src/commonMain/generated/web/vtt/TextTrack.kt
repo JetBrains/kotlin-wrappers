@@ -12,7 +12,7 @@ import web.events.EventTarget
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextTrack)
  */
-external class TextTrack
+open external class TextTrack
 private constructor() :
     EventTarget {
     /**
@@ -94,5 +94,5 @@ private constructor() :
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextTrack/cuechange_event)
  */
-inline val TextTrack.cueChangeEvent: EventInstance<Event, TextTrack, TextTrack>
+inline val <C : TextTrack> C.cueChangeEvent: EventInstance<Event, C, C>
     get() = EventInstance(this, "cuechange")

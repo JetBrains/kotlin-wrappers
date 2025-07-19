@@ -16,7 +16,7 @@ import kotlin.js.definedExternally
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MessagePort)
  */
-external class MessagePort
+open external class MessagePort
 private constructor() :
     EventTarget,
     MessageEventTarget,
@@ -55,17 +55,17 @@ private constructor() :
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MessagePort/close_event)
  */
-inline val MessagePort.closeEvent: EventInstance<Event, MessagePort, MessagePort>
+inline val <C : MessagePort> C.closeEvent: EventInstance<Event, C, C>
     get() = EventInstance(this, "close")
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MessagePort/message_event)
  */
-inline val MessagePort.messageEvent: EventInstance<MessageEvent<JsAny?>, MessagePort, MessagePort>
+inline val <C : MessagePort> C.messageEvent: EventInstance<MessageEvent<JsAny?>, C, C>
     get() = EventInstance(this, "message")
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MessagePort/messageerror_event)
  */
-inline val MessagePort.messageErrorEvent: EventInstance<MessageEvent<JsAny?>, MessagePort, MessagePort>
+inline val <C : MessagePort> C.messageErrorEvent: EventInstance<MessageEvent<JsAny?>, C, C>
     get() = EventInstance(this, "messageerror")

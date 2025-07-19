@@ -17,7 +17,7 @@ import kotlin.js.definedExternally
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CookieStore)
  */
-external class CookieStore
+open external class CookieStore
 private constructor() :
     EventTarget {
     /**
@@ -142,5 +142,5 @@ suspend inline fun CookieStore.set(options: CookieInit) {
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CookieStore/change_event)
  */
-inline val CookieStore.changeEvent: EventInstance<CookieChangeEvent, CookieStore, CookieStore>
+inline val <C : CookieStore> C.changeEvent: EventInstance<CookieChangeEvent, C, C>
     get() = EventInstance(this, "change")

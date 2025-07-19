@@ -11,7 +11,7 @@ import js.iterable.JsIterable
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGStringList)
  */
-external class SVGStringList
+open external class SVGStringList
 private constructor() :
     ArrayLike<JsString>,
     JsIterable<JsString> {

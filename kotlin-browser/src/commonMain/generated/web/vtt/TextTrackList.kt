@@ -14,7 +14,7 @@ import web.events.EventTarget
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextTrackList)
  */
-external class TextTrackList
+open external class TextTrackList
 private constructor() :
     EventTarget,
     ArrayLike<TextTrack>,
@@ -52,17 +52,17 @@ private constructor() :
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextTrackList/addtrack_event)
  */
-inline val TextTrackList.addTrackEvent: EventInstance<TrackEvent, TextTrackList, TextTrackList>
+inline val <C : TextTrackList> C.addTrackEvent: EventInstance<TrackEvent, C, C>
     get() = EventInstance(this, "addtrack")
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextTrackList/change_event)
  */
-inline val TextTrackList.changeEvent: EventInstance<Event, TextTrackList, TextTrackList>
+inline val <C : TextTrackList> C.changeEvent: EventInstance<Event, C, C>
     get() = EventInstance(this, "change")
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextTrackList/removetrack_event)
  */
-inline val TextTrackList.removeTrackEvent: EventInstance<TrackEvent, TextTrackList, TextTrackList>
+inline val <C : TextTrackList> C.removeTrackEvent: EventInstance<TrackEvent, C, C>
     get() = EventInstance(this, "removetrack")

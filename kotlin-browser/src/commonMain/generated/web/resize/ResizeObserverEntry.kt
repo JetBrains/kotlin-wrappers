@@ -11,7 +11,7 @@ import web.geometry.DOMRectReadOnly
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ResizeObserverEntry)
  */
-external class ResizeObserverEntry
+open external class ResizeObserverEntry
 private constructor() {
     /**
      * The **`borderBoxSize`** read-only property of the ResizeObserverEntry interface returns an array containing the new border box size of the observed element when the callback is run.

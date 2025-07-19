@@ -11,7 +11,7 @@ import kotlin.js.definedExternally
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStreamDefaultController)
  */
-external class ReadableStreamDefaultController<R : JsAny?>
+open external class ReadableStreamDefaultController<R : JsAny?>
 private constructor() :
     ReadableStreamController<R> {
     /**

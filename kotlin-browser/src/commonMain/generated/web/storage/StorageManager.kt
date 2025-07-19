@@ -15,7 +15,7 @@ import kotlin.js.JsName
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/StorageManager)
  */
-external class StorageManager
+open external class StorageManager
 private constructor() {
     /**
      * The **`estimate()`** method of the StorageManager interface asks the Storage Manager for how much storage the current origin takes up (`usage`), and how much space is available (`quota`).

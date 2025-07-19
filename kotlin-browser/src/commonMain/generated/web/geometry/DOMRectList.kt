@@ -10,7 +10,7 @@ import js.iterable.JsIterable
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMRectList)
  */
-external class DOMRectList
+open external class DOMRectList
 private constructor() :
     ArrayLike<DOMRect>,
     JsIterable<DOMRect> {

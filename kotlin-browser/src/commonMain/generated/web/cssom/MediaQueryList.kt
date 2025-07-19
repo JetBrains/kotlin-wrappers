@@ -11,7 +11,7 @@ import web.events.EventTarget
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaQueryList)
  */
-external class MediaQueryList
+open external class MediaQueryList
 private constructor() :
     EventTarget {
     /**
@@ -37,5 +37,5 @@ private constructor() :
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaQueryList/change_event)
  */
-inline val MediaQueryList.changeEvent: EventInstance<MediaQueryListEvent, MediaQueryList, MediaQueryList>
+inline val <C : MediaQueryList> C.changeEvent: EventInstance<MediaQueryListEvent, C, C>
     get() = EventInstance(this, "change")

@@ -7,7 +7,7 @@ package web.audio
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioDestinationNode)
  */
-external class AudioDestinationNode
+open external class AudioDestinationNode
 private constructor() :
     AudioNode {
     /**

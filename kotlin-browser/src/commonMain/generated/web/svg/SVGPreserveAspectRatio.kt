@@ -7,7 +7,7 @@ package web.svg
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGPreserveAspectRatio)
  */
-external class SVGPreserveAspectRatio
+open external class SVGPreserveAspectRatio
 private constructor() {
     /**
      * The **`align`** read-only property of the SVGPreserveAspectRatio interface reflects the type of the alignment value as specified by one of the `SVG_PRESERVEASPECTRATIO_*` constants defined on this interface.

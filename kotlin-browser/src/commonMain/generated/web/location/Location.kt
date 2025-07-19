@@ -10,7 +10,7 @@ import web.url.URL
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Location)
  */
-external class Location
+open external class Location
 private constructor() {
     /**
      * The **`ancestorOrigins`** read-only property of the Location interface is a static browsing contexts of the document associated with the given Location object.

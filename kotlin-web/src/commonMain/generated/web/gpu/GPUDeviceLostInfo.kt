@@ -7,7 +7,7 @@ package web.gpu
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUDeviceLostInfo)
  */
-external class GPUDeviceLostInfo
+open external class GPUDeviceLostInfo
 private constructor() {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUDeviceLostInfo/message)

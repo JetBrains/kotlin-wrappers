@@ -7,7 +7,7 @@ package web.resize
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ResizeObserverSize)
  */
-external class ResizeObserverSize
+open external class ResizeObserverSize
 private constructor() {
     /**
      * The **`blockSize`** read-only property of the ResizeObserverSize interface returns the length of the observed element's border box in the block dimension.

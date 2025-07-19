@@ -10,7 +10,7 @@ import js.iterable.JsIterable
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NamedNodeMap)
  */
-external class NamedNodeMap
+open external class NamedNodeMap
 private constructor() :
     ArrayLike<Attr>,
     JsIterable<Attr> {

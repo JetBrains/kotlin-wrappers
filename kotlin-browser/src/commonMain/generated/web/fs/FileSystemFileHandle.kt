@@ -15,7 +15,7 @@ import kotlin.js.definedExternally
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemFileHandle)
  */
-external class FileSystemFileHandle
+open external class FileSystemFileHandle
 private constructor() :
     FileSystemHandle,
     Serializable {

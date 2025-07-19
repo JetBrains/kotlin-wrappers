@@ -7,7 +7,7 @@ package web.svg
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedNumberList)
  */
-external class SVGAnimatedNumberList
+open external class SVGAnimatedNumberList
 private constructor() {
     /**
      * The **`animVal`** read-only property of the SVGAnimatedNumberList interface represents the current animated value of an animatable attribute that accepts a list of `<number>` values.

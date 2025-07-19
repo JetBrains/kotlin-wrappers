@@ -7,7 +7,7 @@ package web.speech
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechSynthesisVoice)
  */
-external class SpeechSynthesisVoice
+open external class SpeechSynthesisVoice
 private constructor() {
     /**
      * The **`default`** read-only property of the indicating whether the voice is the default voice for the current app (`true`), or not (`false`.) A boolean value.

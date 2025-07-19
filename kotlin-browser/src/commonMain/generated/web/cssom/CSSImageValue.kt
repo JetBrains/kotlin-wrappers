@@ -7,6 +7,6 @@ package web.cssom
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSImageValue)
  */
-external class CSSImageValue
+open external class CSSImageValue
 private constructor() :
     CSSStyleValue

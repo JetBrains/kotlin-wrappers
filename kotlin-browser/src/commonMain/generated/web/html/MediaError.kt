@@ -7,7 +7,7 @@ package web.html
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaError)
  */
-external class MediaError
+open external class MediaError
 private constructor() {
     /**
      * The read-only property **`MediaError.code`** returns a numeric value which represents the kind of error that occurred on a media element.

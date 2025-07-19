@@ -15,7 +15,7 @@ import kotlin.js.JsName
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Clipboard)
  */
-external class Clipboard
+open external class Clipboard
 private constructor() :
     EventTarget {
     /**

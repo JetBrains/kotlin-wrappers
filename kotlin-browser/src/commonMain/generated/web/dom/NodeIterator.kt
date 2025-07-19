@@ -7,7 +7,7 @@ package web.dom
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NodeIterator)
  */
-external class NodeIterator
+open external class NodeIterator
 private constructor() {
     /**
      * The **`NodeIterator.filter`** read-only property returns a `NodeFilter` object, that is an object which implements an `acceptNode(node)` method, used to screen nodes.

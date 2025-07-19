@@ -11,7 +11,7 @@ import web.time.DOMHighResTimeStamp
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceEventTiming)
  */
-external class PerformanceEventTiming
+open external class PerformanceEventTiming
 private constructor() :
     PerformanceEntry {
     /**

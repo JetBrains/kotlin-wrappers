@@ -10,7 +10,7 @@ import js.buffer.ArrayBuffer
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AuthenticatorAssertionResponse)
  */
-external class AuthenticatorAssertionResponse
+open external class AuthenticatorAssertionResponse
 private constructor() :
     AuthenticatorResponse {
     /**

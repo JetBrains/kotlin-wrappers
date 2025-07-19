@@ -10,7 +10,7 @@ import js.serialization.Serializable
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUCompilationMessage)
  */
-external class GPUCompilationMessage
+open external class GPUCompilationMessage
 private constructor() :
     Serializable {
     /**

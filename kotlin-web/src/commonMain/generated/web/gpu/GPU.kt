@@ -12,7 +12,7 @@ import kotlin.js.definedExternally
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPU)
  */
-external class GPU
+open external class GPU
 private constructor() {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPU/wgslLanguageFeatures)

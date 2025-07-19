@@ -7,7 +7,7 @@ package web.dom
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TreeWalker)
  */
-external class TreeWalker
+open external class TreeWalker
 private constructor() {
     /**
      * The **`TreeWalker.currentNode`** property represents the A Node.

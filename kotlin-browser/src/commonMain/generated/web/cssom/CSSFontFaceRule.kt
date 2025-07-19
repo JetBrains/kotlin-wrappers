@@ -7,7 +7,7 @@ package web.cssom
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSFontFaceRule)
  */
-external class CSSFontFaceRule
+open external class CSSFontFaceRule
 private constructor() :
     CSSRule {
     /**

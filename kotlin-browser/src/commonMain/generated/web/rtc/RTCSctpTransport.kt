@@ -12,7 +12,7 @@ import web.events.EventTarget
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCSctpTransport)
  */
-external class RTCSctpTransport
+open external class RTCSctpTransport
 private constructor() :
     EventTarget {
     /**
@@ -52,5 +52,5 @@ private constructor() :
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCSctpTransport/statechange_event)
  */
-inline val RTCSctpTransport.stateChangeEvent: EventInstance<Event, RTCSctpTransport, RTCSctpTransport>
+inline val <C : RTCSctpTransport> C.stateChangeEvent: EventInstance<Event, C, C>
     get() = EventInstance(this, "statechange")

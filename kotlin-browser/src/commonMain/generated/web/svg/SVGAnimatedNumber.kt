@@ -7,7 +7,7 @@ package web.svg
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedNumber)
  */
-external class SVGAnimatedNumber
+open external class SVGAnimatedNumber
 private constructor() {
     /**
      * The **`animVal`** read-only property of the SVGAnimatedNumber interface represents the animated value of an SVG element's numeric attribute.

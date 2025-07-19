@@ -10,7 +10,7 @@ import web.time.DOMHighResTimeStamp
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceServerTiming)
  */
-external class PerformanceServerTiming
+open external class PerformanceServerTiming
 private constructor() {
     /**
      * The **`description`** read-only property returns a string value of the server-specified metric description, or an empty string.

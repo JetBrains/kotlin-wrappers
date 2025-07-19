@@ -12,7 +12,7 @@ import web.events.EventTarget
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCIceTransport)
  */
-external class RTCIceTransport
+open external class RTCIceTransport
 private constructor() :
     EventTarget {
     /**
@@ -55,29 +55,29 @@ private constructor() :
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCIceTransport/gatheringstatechange_event)
  */
-inline val RTCIceTransport.gatheringStateChangeEvent: EventInstance<Event, RTCIceTransport, RTCIceTransport>
+inline val <C : RTCIceTransport> C.gatheringStateChangeEvent: EventInstance<Event, C, C>
     get() = EventInstance(this, "gatheringstatechange")
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCIceTransport/icecandidate_event)
  */
-inline val RTCIceTransport.iceCandidateEvent: EventInstance<RTCPeerConnectionIceEvent, RTCIceTransport, RTCIceTransport>
+inline val <C : RTCIceTransport> C.iceCandidateEvent: EventInstance<RTCPeerConnectionIceEvent, C, C>
     get() = EventInstance(this, "icecandidate")
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCIceTransport/icecandidateerror_event)
  */
-inline val RTCIceTransport.iceCandidateErrorEvent: EventInstance<RTCPeerConnectionIceErrorEvent, RTCIceTransport, RTCIceTransport>
+inline val <C : RTCIceTransport> C.iceCandidateErrorEvent: EventInstance<RTCPeerConnectionIceErrorEvent, C, C>
     get() = EventInstance(this, "icecandidateerror")
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCIceTransport/selectedcandidatepairchange_event)
  */
-inline val RTCIceTransport.selectedCandidatePairChangeEvent: EventInstance<Event, RTCIceTransport, RTCIceTransport>
+inline val <C : RTCIceTransport> C.selectedCandidatePairChangeEvent: EventInstance<Event, C, C>
     get() = EventInstance(this, "selectedcandidatepairchange")
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCIceTransport/statechange_event)
  */
-inline val RTCIceTransport.stateChangeEvent: EventInstance<Event, RTCIceTransport, RTCIceTransport>
+inline val <C : RTCIceTransport> C.stateChangeEvent: EventInstance<Event, C, C>
     get() = EventInstance(this, "statechange")

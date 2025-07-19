@@ -10,7 +10,7 @@ import js.iterable.JsIterable
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSKeyframesRule)
  */
-external class CSSKeyframesRule
+open external class CSSKeyframesRule
 private constructor() :
     CSSRule,
     ArrayLike<CSSKeyframeRule>,

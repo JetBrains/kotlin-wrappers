@@ -10,7 +10,7 @@ import web.geometry.DOMRectReadOnly
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedRect)
  */
-external class SVGAnimatedRect
+open external class SVGAnimatedRect
 private constructor() {
     /**
      * The **`animVal`** read-only property of the SVGAnimatedRect interface represents the current animated value of the `viewBox` attribute of an SVG element as a read-only DOMRectReadOnly object.

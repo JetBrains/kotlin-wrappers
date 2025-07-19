@@ -16,7 +16,7 @@ import kotlin.js.definedExternally
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeys)
  */
-external class MediaKeys
+open external class MediaKeys
 private constructor() {
     /**
      * The `createSession()` method of the MediaKeys interface returns a new MediaKeySession object, which represents a context for message exchange with a content decryption module (CDM).

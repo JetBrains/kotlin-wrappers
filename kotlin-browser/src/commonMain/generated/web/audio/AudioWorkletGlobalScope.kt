@@ -10,7 +10,7 @@ import web.worklets.WorkletGlobalScope
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioWorkletGlobalScope)
  */
-external class AudioWorkletGlobalScope
+open external class AudioWorkletGlobalScope
 private constructor() :
     WorkletGlobalScope {
     /**

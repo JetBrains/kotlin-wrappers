@@ -12,7 +12,7 @@ import kotlin.js.definedExternally
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDTMFSender)
  */
-external class RTCDTMFSender
+open external class RTCDTMFSender
 private constructor() :
     EventTarget {
     /**
@@ -49,5 +49,5 @@ private constructor() :
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDTMFSender/tonechange_event)
  */
-inline val RTCDTMFSender.toneChangeEvent: EventInstance<RTCDTMFToneChangeEvent, RTCDTMFSender, RTCDTMFSender>
+inline val <C : RTCDTMFSender> C.toneChangeEvent: EventInstance<RTCDTMFToneChangeEvent, C, C>
     get() = EventInstance(this, "tonechange")

@@ -9,7 +9,7 @@ import kotlin.js.definedExternally
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPURenderBundleEncoder)
  */
-external class GPURenderBundleEncoder
+open external class GPURenderBundleEncoder
 private constructor() :
     GPUBindingCommandsMixin,
     GPUDebugCommandsMixin,

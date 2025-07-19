@@ -7,7 +7,7 @@ package web.svg
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedString)
  */
-external class SVGAnimatedString
+open external class SVGAnimatedString
 private constructor() {
     /**
      * The `animVal` read-only property of the SVGAnimatedString interface contains the same value as the SVGAnimatedString.baseVal property.

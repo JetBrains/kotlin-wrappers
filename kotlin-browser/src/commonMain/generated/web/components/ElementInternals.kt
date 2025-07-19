@@ -19,7 +19,7 @@ import kotlin.js.definedExternally
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals)
  */
-external class ElementInternals
+open external class ElementInternals
 private constructor() :
     ARIAMixin,
     ValidationTarget {

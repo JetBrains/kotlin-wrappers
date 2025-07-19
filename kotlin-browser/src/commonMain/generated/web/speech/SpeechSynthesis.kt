@@ -13,7 +13,7 @@ import web.events.EventTarget
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechSynthesis)
  */
-external class SpeechSynthesis
+open external class SpeechSynthesis
 private constructor() :
     EventTarget {
     /**
@@ -81,5 +81,5 @@ private constructor() :
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechSynthesis/voiceschanged_event)
  */
-inline val SpeechSynthesis.voicesChangedEvent: EventInstance<Event, SpeechSynthesis, SpeechSynthesis>
+inline val <C : SpeechSynthesis> C.voicesChangedEvent: EventInstance<Event, C, C>
     get() = EventInstance(this, "voiceschanged")

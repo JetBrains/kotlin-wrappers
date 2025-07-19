@@ -11,7 +11,7 @@ import web.events.EventTarget
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Screen)
  */
-external class Screen
+open external class Screen
 private constructor() :
     EventTarget {
     /**
@@ -67,5 +67,5 @@ private constructor() :
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Screen/change_event)
  */
-inline val Screen.changeEvent: EventInstance<Event, Screen, Screen>
+inline val <C : Screen> C.changeEvent: EventInstance<Event, C, C>
     get() = EventInstance(this, "change")

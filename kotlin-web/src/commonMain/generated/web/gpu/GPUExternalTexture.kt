@@ -7,7 +7,7 @@ package web.gpu
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUExternalTexture)
  */
-external class GPUExternalTexture
+open external class GPUExternalTexture
 private constructor() :
     GPUObjectBase,
     GPUBindingResource

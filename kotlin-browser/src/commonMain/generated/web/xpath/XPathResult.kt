@@ -9,7 +9,7 @@ import web.dom.Node
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XPathResult)
  */
-external class XPathResult
+open external class XPathResult
 private constructor() {
     /**
      * The read-only **`booleanValue`** property of the The return value is the boolean value of the `XPathResult` returned by In case XPathResult.resultType is not `BOOLEAN_TYPE`, a The following example shows the use of the `booleanValue` property.

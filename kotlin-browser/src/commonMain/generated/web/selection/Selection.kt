@@ -13,7 +13,7 @@ import kotlin.js.definedExternally
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Selection)
  */
-external class Selection
+open external class Selection
 private constructor() {
     /**
      * The **`Selection.anchorNode`** read-only property returns the Node in which the selection begins.

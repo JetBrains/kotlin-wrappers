@@ -12,7 +12,7 @@ import kotlin.js.definedExternally
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBIndex)
  */
-external class IDBIndex
+open external class IDBIndex
 private constructor() {
     /**
      * The **`keyPath`** property of the IDBIndex interface returns the key path of the current index.

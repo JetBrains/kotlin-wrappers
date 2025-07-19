@@ -7,7 +7,7 @@ package web.svg
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGNumber)
  */
-external class SVGNumber
+open external class SVGNumber
 private constructor() {
     /**
      * The **`value`** read-only property of the SVGNumber interface represents the number.

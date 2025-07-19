@@ -14,7 +14,7 @@ import kotlin.js.JsName
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CookieStoreManager)
  */
-external class CookieStoreManager
+open external class CookieStoreManager
 private constructor() {
     /**
      * The **`getSubscriptions()`** method of the CookieStoreManager interface returns a list of all the cookie change subscriptions for this ServiceWorkerRegistration.

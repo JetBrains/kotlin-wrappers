@@ -9,6 +9,6 @@ import js.serialization.Transferable
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaSourceHandle)
  */
-external class MediaSourceHandle
+open external class MediaSourceHandle
 private constructor() :
     Transferable

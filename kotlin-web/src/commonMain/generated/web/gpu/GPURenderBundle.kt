@@ -7,6 +7,6 @@ package web.gpu
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPURenderBundle)
  */
-external class GPURenderBundle
+open external class GPURenderBundle
 private constructor() :
     GPUObjectBase

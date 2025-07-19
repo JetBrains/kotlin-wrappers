@@ -19,7 +19,7 @@ import kotlin.js.definedExternally
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RemotePlayback)
  */
-external class RemotePlayback
+open external class RemotePlayback
 private constructor() :
     EventTarget {
     /**
@@ -108,17 +108,17 @@ suspend inline fun RemotePlayback.watchAvailability(noinline callback: RemotePla
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RemotePlayback/connect_event)
  */
-inline val RemotePlayback.connectEvent: EventInstance<Event, RemotePlayback, RemotePlayback>
+inline val <C : RemotePlayback> C.connectEvent: EventInstance<Event, C, C>
     get() = EventInstance(this, "connect")
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RemotePlayback/connecting_event)
  */
-inline val RemotePlayback.connectingEvent: EventInstance<Event, RemotePlayback, RemotePlayback>
+inline val <C : RemotePlayback> C.connectingEvent: EventInstance<Event, C, C>
     get() = EventInstance(this, "connecting")
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RemotePlayback/disconnect_event)
  */
-inline val RemotePlayback.disconnectEvent: EventInstance<Event, RemotePlayback, RemotePlayback>
+inline val <C : RemotePlayback> C.disconnectEvent: EventInstance<Event, C, C>
     get() = EventInstance(this, "disconnect")

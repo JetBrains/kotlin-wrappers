@@ -10,7 +10,7 @@ import js.core.JsAny
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GeolocationCoordinates)
  */
-external class GeolocationCoordinates
+open external class GeolocationCoordinates
 private constructor() {
     /**
      * The **`accuracy`** read-only property of the GeolocationCoordinates interface is a strictly positive `double` representing the accuracy, with a 95% confidence level, of the GeolocationCoordinates.latitude and GeolocationCoordinates.longitude properties expressed in meters.

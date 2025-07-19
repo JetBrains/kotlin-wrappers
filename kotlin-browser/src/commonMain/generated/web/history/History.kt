@@ -11,7 +11,7 @@ import kotlin.js.definedExternally
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/History)
  */
-external class History
+open external class History
 private constructor() {
     /**
      * The **`length`** read-only property of the History interface returns an integer representing the number of entries in the session history, including the currently loaded page.

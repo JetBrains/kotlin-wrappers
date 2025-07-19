@@ -7,7 +7,7 @@ package web.dom
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Attr)
  */
-external class Attr
+open external class Attr
 private constructor() :
     Node {
     /**

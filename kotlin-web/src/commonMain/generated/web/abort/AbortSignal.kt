@@ -16,7 +16,7 @@ import kotlin.js.definedExternally
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AbortSignal)
  */
-external class AbortSignal
+open external class AbortSignal
 private constructor() :
     EventTarget {
     /**
@@ -72,5 +72,5 @@ private constructor() :
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AbortSignal/abort_event)
  */
-inline val AbortSignal.abortEvent: EventInstance<Event, AbortSignal, AbortSignal>
+inline val <C : AbortSignal> C.abortEvent: EventInstance<Event, C, C>
     get() = EventInstance(this, "abort")

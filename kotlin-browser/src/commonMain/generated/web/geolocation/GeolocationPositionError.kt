@@ -7,7 +7,7 @@ package web.geolocation
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GeolocationPositionError)
  */
-external class GeolocationPositionError
+open external class GeolocationPositionError
 private constructor() {
     /**
      * The **`code`** read-only property of the GeolocationPositionError interface is an `unsigned short` representing the error code.

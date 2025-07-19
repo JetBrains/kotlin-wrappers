@@ -8,7 +8,7 @@ package web.speech
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechRecognitionAlternative)
  */
-external class SpeechRecognitionAlternative
+open external class SpeechRecognitionAlternative
 private constructor() {
     /**
      * The **`confidence`** read-only property of the confident the speech recognition system is that the recognition is correct.

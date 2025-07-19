@@ -7,7 +7,7 @@ package web.cssom
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSNamespaceRule)
  */
-external class CSSNamespaceRule
+open external class CSSNamespaceRule
 private constructor() :
     CSSRule {
     /**

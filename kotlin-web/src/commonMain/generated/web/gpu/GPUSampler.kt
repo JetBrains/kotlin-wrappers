@@ -7,7 +7,7 @@ package web.gpu
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUSampler)
  */
-external class GPUSampler
+open external class GPUSampler
 private constructor() :
     GPUObjectBase,
     GPUBindingResource

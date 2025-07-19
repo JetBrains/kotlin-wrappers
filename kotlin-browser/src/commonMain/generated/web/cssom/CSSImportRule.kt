@@ -7,7 +7,7 @@ package web.cssom
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSImportRule)
  */
-external class CSSImportRule
+open external class CSSImportRule
 private constructor() :
     CSSRule {
     /**

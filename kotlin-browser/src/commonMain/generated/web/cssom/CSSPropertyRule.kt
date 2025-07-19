@@ -7,7 +7,7 @@ package web.cssom
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSPropertyRule)
  */
-external class CSSPropertyRule
+open external class CSSPropertyRule
 private constructor() :
     CSSRule {
     /**

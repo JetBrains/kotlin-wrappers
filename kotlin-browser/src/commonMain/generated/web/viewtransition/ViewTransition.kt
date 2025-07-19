@@ -10,7 +10,7 @@ import js.promise.Promise
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ViewTransition)
  */
-external class ViewTransition
+open external class ViewTransition
 private constructor() {
     /**
      * The **`finished`** read-only property of the `finished` will only reject in the case of a same-document (SPA) transition, if the callback passed to Document.startViewTransition() throws or returns a promise that rejects.

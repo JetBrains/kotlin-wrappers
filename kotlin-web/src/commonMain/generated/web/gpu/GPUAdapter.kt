@@ -12,7 +12,7 @@ import kotlin.js.definedExternally
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUAdapter)
  */
-external class GPUAdapter
+open external class GPUAdapter
 private constructor() {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUAdapter/features)

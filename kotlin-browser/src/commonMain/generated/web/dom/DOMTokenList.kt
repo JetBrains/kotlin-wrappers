@@ -14,7 +14,7 @@ import kotlin.js.definedExternally
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMTokenList)
  */
-external class DOMTokenList<T : JsAny>
+open external class DOMTokenList<T : JsAny>
 private constructor() :
     ListLike<T> {
     /**

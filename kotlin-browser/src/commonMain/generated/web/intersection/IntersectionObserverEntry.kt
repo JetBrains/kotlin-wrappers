@@ -11,7 +11,7 @@ import web.time.DOMHighResTimeStamp
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IntersectionObserverEntry)
  */
-external class IntersectionObserverEntry
+open external class IntersectionObserverEntry
 private constructor() {
     /**
      * The **`boundingClientRect`** read-only property of the IntersectionObserverEntry interface returns a DOMRectReadOnly which in essence describes a rectangle describing the smallest rectangle that contains the entire target element.

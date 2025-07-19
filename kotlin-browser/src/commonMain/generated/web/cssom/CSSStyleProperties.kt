@@ -2,7 +2,7 @@
 
 package web.cssom
 
-external class CSSStyleProperties
+open external class CSSStyleProperties
 private constructor() :
     CSSStyleDeclaration {
     /**

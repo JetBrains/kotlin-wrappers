@@ -9,7 +9,7 @@ import kotlin.js.definedExternally
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Geolocation)
  */
-external class Geolocation
+open external class Geolocation
 private constructor() {
     /**
      * The **`clearWatch()`** method of the Geolocation interface is used to unregister location/error monitoring handlers previously installed using Geolocation.watchPosition().

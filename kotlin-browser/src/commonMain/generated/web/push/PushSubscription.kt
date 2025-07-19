@@ -16,7 +16,7 @@ import kotlin.js.JsName
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PushSubscription)
  */
-external class PushSubscription
+open external class PushSubscription
 private constructor() {
     /**
      * The **`endpoint`** read-only property of the the endpoint associated with the push subscription.

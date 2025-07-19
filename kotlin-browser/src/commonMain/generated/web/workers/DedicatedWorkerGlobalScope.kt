@@ -18,7 +18,7 @@ import kotlin.js.definedExternally
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DedicatedWorkerGlobalScope)
  */
-external class DedicatedWorkerGlobalScope
+open external class DedicatedWorkerGlobalScope
 private constructor() :
     WorkerGlobalScope,
     MessageEventTarget {
@@ -60,17 +60,17 @@ private constructor() :
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DedicatedWorkerGlobalScope/message_event)
  */
-inline val DedicatedWorkerGlobalScope.messageEvent: EventInstance<MessageEvent<JsAny?>, DedicatedWorkerGlobalScope, DedicatedWorkerGlobalScope>
+inline val <C : DedicatedWorkerGlobalScope> C.messageEvent: EventInstance<MessageEvent<JsAny?>, C, C>
     get() = EventInstance(this, "message")
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DedicatedWorkerGlobalScope/messageerror_event)
  */
-inline val DedicatedWorkerGlobalScope.messageErrorEvent: EventInstance<MessageEvent<JsAny?>, DedicatedWorkerGlobalScope, DedicatedWorkerGlobalScope>
+inline val <C : DedicatedWorkerGlobalScope> C.messageErrorEvent: EventInstance<MessageEvent<JsAny?>, C, C>
     get() = EventInstance(this, "messageerror")
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DedicatedWorkerGlobalScope/rtctransform_event)
  */
-inline val DedicatedWorkerGlobalScope.rtcTransformEvent: EventInstance<RTCTransformEvent, DedicatedWorkerGlobalScope, DedicatedWorkerGlobalScope>
+inline val <C : DedicatedWorkerGlobalScope> C.rtcTransformEvent: EventInstance<RTCTransformEvent, C, C>
     get() = EventInstance(this, "rtctransform")

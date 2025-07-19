@@ -7,7 +7,7 @@ package web.cssom
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSLayerBlockRule)
  */
-external class CSSLayerBlockRule
+open external class CSSLayerBlockRule
 private constructor() :
     CSSGroupingRule {
     /**

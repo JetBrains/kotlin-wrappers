@@ -11,7 +11,7 @@ import kotlin.js.definedExternally
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WritableStreamDefaultController)
  */
-external class WritableStreamDefaultController
+open external class WritableStreamDefaultController
 private constructor() {
     /**
      * The read-only **`signal`** property of the WritableStreamDefaultController interface returns the AbortSignal associated with the controller.

@@ -9,7 +9,7 @@ import js.buffer.ArrayBufferView
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Crypto)
  */
-external class Crypto
+open external class Crypto
 private constructor() {
     /**
      * The **`Crypto.subtle`** read-only property returns a cryptographic operations.

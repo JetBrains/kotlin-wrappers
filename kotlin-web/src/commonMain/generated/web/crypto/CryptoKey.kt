@@ -10,7 +10,7 @@ import js.array.ReadonlyArray
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CryptoKey)
  */
-external class CryptoKey
+open external class CryptoKey
 private constructor() {
     /**
      * The read-only **`algorithm`** property of the CryptoKey interface returns an object describing the algorithm for which this key can be used, and any associated extra parameters.

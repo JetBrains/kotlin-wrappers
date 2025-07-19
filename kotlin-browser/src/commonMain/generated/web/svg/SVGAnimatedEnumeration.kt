@@ -9,7 +9,7 @@ import js.core.JsAny
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedEnumeration)
  */
-external class SVGAnimatedEnumeration<T : JsAny?>
+open external class SVGAnimatedEnumeration<T : JsAny?>
 private constructor() {
     /**
      * The **`animVal`** property of the SVGAnimatedEnumeration interface contains the current value of an SVG enumeration.

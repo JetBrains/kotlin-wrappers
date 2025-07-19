@@ -9,7 +9,7 @@ import js.core.JsAny
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceMeasure)
  */
-external class PerformanceMeasure
+open external class PerformanceMeasure
 private constructor() :
     PerformanceEntry {
     /**

@@ -7,7 +7,7 @@ package web.audio
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioListener)
  */
-external class AudioListener
+open external class AudioListener
 private constructor() {
     /**
      * The `forwardX` read-only property of the AudioListener interface is an AudioParam representing the x value of the direction vector defining the forward direction the listener is pointing in.

@@ -11,7 +11,7 @@ import web.time.DOMHighResTimeStamp
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/LargestContentfulPaint)
  */
-external class LargestContentfulPaint
+open external class LargestContentfulPaint
 private constructor() :
     PerformanceEntry {
     /**

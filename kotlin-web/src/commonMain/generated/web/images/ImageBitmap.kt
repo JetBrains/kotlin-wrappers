@@ -13,7 +13,7 @@ import web.gpu.GPUCopyExternalImageSource
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageBitmap)
  */
-external class ImageBitmap
+open external class ImageBitmap
 private constructor() :
     CanvasImageSource,
     TexImageSource,

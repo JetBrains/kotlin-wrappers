@@ -14,7 +14,7 @@ import kotlin.js.definedExternally
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUDevice)
  */
-external class GPUDevice
+open external class GPUDevice
 private constructor() :
     EventTarget,
     GPUObjectBase {
@@ -156,5 +156,5 @@ suspend inline fun GPUDevice.popErrorScope(): GPUError? {
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUDevice/uncapturederror_event)
  */
-inline val GPUDevice.uncapturedErrorEvent: EventInstance<GPUUncapturedErrorEvent, GPUDevice, GPUDevice>
+inline val <C : GPUDevice> C.uncapturedErrorEvent: EventInstance<GPUUncapturedErrorEvent, C, C>
     get() = EventInstance(this, "uncapturederror")

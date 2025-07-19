@@ -11,7 +11,7 @@ import web.streams.WritableStream
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebTransportDatagramDuplexStream)
  */
-external class WebTransportDatagramDuplexStream
+open external class WebTransportDatagramDuplexStream
 private constructor() {
     /**
      * The **`incomingHighWaterMark`** property of the WebTransportDatagramDuplexStream interface gets or sets the high water mark for incoming chunks of data — this is the maximum size, in chunks, that the incoming ReadableStream's internal queue can reach before it is considered full.

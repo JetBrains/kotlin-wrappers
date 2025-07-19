@@ -10,7 +10,7 @@ import js.iterable.JsIterable
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGNumberList)
  */
-external class SVGNumberList
+open external class SVGNumberList
 private constructor() :
     ArrayLike<SVGNumber>,
     JsIterable<SVGNumber> {

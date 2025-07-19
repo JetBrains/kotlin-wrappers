@@ -18,7 +18,7 @@ import kotlin.js.definedExternally
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CredentialsContainer)
  */
-external class CredentialsContainer
+open external class CredentialsContainer
 private constructor() {
     /**
      * The **`create()`** method of the CredentialsContainer interface creates a new credential, which can then be stored and later retrieved using the CredentialsContainer.get method.

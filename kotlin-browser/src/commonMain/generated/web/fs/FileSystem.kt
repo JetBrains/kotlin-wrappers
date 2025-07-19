@@ -7,7 +7,7 @@ package web.fs
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystem)
  */
-external class FileSystem
+open external class FileSystem
 private constructor() {
     /**
      * The read-only **`name`** property of the string is unique among all file systems currently exposed by the File and Directory Entries API.

@@ -10,7 +10,7 @@ import kotlin.js.definedExternally
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBKeyRange)
  */
-external class IDBKeyRange
+open external class IDBKeyRange
 private constructor() {
     /**
      * The **`lower`** read-only property of the The lower bound of the key range (can be any type.) The following example illustrates how you'd use a key range.

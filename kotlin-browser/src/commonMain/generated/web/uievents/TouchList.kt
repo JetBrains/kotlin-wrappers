@@ -10,7 +10,7 @@ import js.iterable.JsIterable
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TouchList)
  */
-external class TouchList
+open external class TouchList
 private constructor() :
     ArrayLike<Touch>,
     JsIterable<Touch> {

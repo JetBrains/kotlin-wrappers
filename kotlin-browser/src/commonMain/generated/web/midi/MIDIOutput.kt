@@ -13,7 +13,7 @@ import kotlin.js.definedExternally
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MIDIOutput)
  */
-external class MIDIOutput
+open external class MIDIOutput
 private constructor() :
     MIDIPort {
     /**

@@ -19,7 +19,7 @@ import kotlin.js.definedExternally
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCRtpScriptTransformer)
  */
-external class RTCRtpScriptTransformer
+open external class RTCRtpScriptTransformer
 private constructor() :
     EventTarget {
     /**

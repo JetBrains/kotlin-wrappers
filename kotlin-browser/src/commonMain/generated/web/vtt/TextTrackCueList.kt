@@ -10,7 +10,7 @@ import js.iterable.JsIterable
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextTrackCueList)
  */
-external class TextTrackCueList
+open external class TextTrackCueList
 private constructor() :
     ArrayLike<TextTrackCue>,
     JsIterable<TextTrackCue> {

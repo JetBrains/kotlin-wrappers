@@ -9,7 +9,7 @@ import kotlin.js.definedExternally
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUCommandEncoder)
  */
-external class GPUCommandEncoder
+open external class GPUCommandEncoder
 private constructor() :
     GPUDebugCommandsMixin,
     GPUObjectBase {

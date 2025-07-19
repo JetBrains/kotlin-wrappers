@@ -10,7 +10,7 @@ import web.dom.NodeList
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MutationRecord)
  */
-external class MutationRecord
+open external class MutationRecord
 private constructor() {
     /**
      * The MutationRecord read-only property **`addedNodes`** is a NodeList of nodes added to a target node by a mutation observed with a MutationObserver.

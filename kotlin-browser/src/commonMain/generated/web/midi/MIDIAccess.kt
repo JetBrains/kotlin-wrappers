@@ -12,7 +12,7 @@ import web.events.EventTarget
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MIDIAccess)
  */
-external class MIDIAccess
+open external class MIDIAccess
 private constructor() :
     EventTarget {
     /**
@@ -45,5 +45,5 @@ private constructor() :
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MIDIAccess/statechange_event)
  */
-inline val MIDIAccess.stateChangeEvent: EventInstance<MIDIConnectionEvent, MIDIAccess, MIDIAccess>
+inline val <C : MIDIAccess> C.stateChangeEvent: EventInstance<MIDIConnectionEvent, C, C>
     get() = EventInstance(this, "statechange")

@@ -7,7 +7,7 @@ package web.cssom
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSMediaRule)
  */
-external class CSSMediaRule
+open external class CSSMediaRule
 private constructor() :
     CSSConditionRule {
     /**

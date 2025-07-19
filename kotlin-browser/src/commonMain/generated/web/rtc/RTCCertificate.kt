@@ -11,7 +11,7 @@ import web.time.EpochTimeStamp
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCCertificate)
  */
-external class RTCCertificate
+open external class RTCCertificate
 private constructor() :
     Serializable {
     /**

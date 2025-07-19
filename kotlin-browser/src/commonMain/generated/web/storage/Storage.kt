@@ -7,7 +7,7 @@ package web.storage
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Storage)
  */
-external class Storage
+open external class Storage
 private constructor() {
     /**
      * The **`length`** read-only property of the `Storage` object.

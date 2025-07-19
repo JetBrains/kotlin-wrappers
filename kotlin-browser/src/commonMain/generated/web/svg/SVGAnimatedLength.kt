@@ -7,7 +7,7 @@ package web.svg
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedLength)
  */
-external class SVGAnimatedLength
+open external class SVGAnimatedLength
 private constructor() {
     /**
      * The **`animVal`** property of the SVGAnimatedLength interface contains the current value of an SVG enumeration.

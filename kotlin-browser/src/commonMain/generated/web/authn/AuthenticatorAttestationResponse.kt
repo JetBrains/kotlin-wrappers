@@ -12,7 +12,7 @@ import js.core.JsString
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AuthenticatorAttestationResponse)
  */
-external class AuthenticatorAttestationResponse
+open external class AuthenticatorAttestationResponse
 private constructor() :
     AuthenticatorResponse {
     /**

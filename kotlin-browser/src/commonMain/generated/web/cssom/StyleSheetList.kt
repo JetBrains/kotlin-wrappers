@@ -10,7 +10,7 @@ import js.iterable.JsIterable
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/StyleSheetList)
  */
-external class StyleSheetList
+open external class StyleSheetList
 private constructor() :
     ArrayLike<CSSStyleSheet>,
     JsIterable<CSSStyleSheet> {

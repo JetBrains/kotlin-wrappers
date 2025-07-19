@@ -12,7 +12,7 @@ import kotlin.js.definedExternally
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GamepadHapticActuator)
  */
-external class GamepadHapticActuator
+open external class GamepadHapticActuator
 private constructor() {
     /**
      * The **`playEffect()`** method of the GamepadHapticActuator interface causes the hardware to play a specific vibration effect.

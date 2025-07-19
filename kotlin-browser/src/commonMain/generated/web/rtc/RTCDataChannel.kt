@@ -19,7 +19,7 @@ import web.sockets.BinaryType
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDataChannel)
  */
-external class RTCDataChannel
+open external class RTCDataChannel
 private constructor() :
     EventTarget,
     Transferable {
@@ -151,35 +151,35 @@ private constructor() :
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDataChannel/bufferedamountlow_event)
  */
-inline val RTCDataChannel.bufferedAmountLowEvent: EventInstance<Event, RTCDataChannel, RTCDataChannel>
+inline val <C : RTCDataChannel> C.bufferedAmountLowEvent: EventInstance<Event, C, C>
     get() = EventInstance(this, "bufferedamountlow")
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDataChannel/close_event)
  */
-inline val RTCDataChannel.closeEvent: EventInstance<Event, RTCDataChannel, RTCDataChannel>
+inline val <C : RTCDataChannel> C.closeEvent: EventInstance<Event, C, C>
     get() = EventInstance(this, "close")
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDataChannel/closing_event)
  */
-inline val RTCDataChannel.closingEvent: EventInstance<Event, RTCDataChannel, RTCDataChannel>
+inline val <C : RTCDataChannel> C.closingEvent: EventInstance<Event, C, C>
     get() = EventInstance(this, "closing")
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDataChannel/error_event)
  */
-inline val RTCDataChannel.errorEvent: EventInstance<RTCErrorEvent, RTCDataChannel, RTCDataChannel>
+inline val <C : RTCDataChannel> C.errorEvent: EventInstance<RTCErrorEvent, C, C>
     get() = EventInstance(this, "error")
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDataChannel/message_event)
  */
-inline val RTCDataChannel.messageEvent: EventInstance<MessageEvent<JsAny?>, RTCDataChannel, RTCDataChannel>
+inline val <C : RTCDataChannel> C.messageEvent: EventInstance<MessageEvent<JsAny?>, C, C>
     get() = EventInstance(this, "message")
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDataChannel/open_event)
  */
-inline val RTCDataChannel.openEvent: EventInstance<Event, RTCDataChannel, RTCDataChannel>
+inline val <C : RTCDataChannel> C.openEvent: EventInstance<Event, C, C>
     get() = EventInstance(this, "open")

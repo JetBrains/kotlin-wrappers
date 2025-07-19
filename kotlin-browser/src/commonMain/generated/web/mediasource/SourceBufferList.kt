@@ -14,7 +14,7 @@ import web.events.EventTarget
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SourceBufferList)
  */
-external class SourceBufferList
+open external class SourceBufferList
 private constructor() :
     EventTarget,
     ArrayLike<SourceBuffer>,
@@ -32,11 +32,11 @@ private constructor() :
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SourceBufferList/addsourcebuffer_event)
  */
-inline val SourceBufferList.addSourceBufferEvent: EventInstance<Event, SourceBufferList, SourceBufferList>
+inline val <C : SourceBufferList> C.addSourceBufferEvent: EventInstance<Event, C, C>
     get() = EventInstance(this, "addsourcebuffer")
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SourceBufferList/removesourcebuffer_event)
  */
-inline val SourceBufferList.removeSourceBufferEvent: EventInstance<Event, SourceBufferList, SourceBufferList>
+inline val <C : SourceBufferList> C.removeSourceBufferEvent: EventInstance<Event, C, C>
     get() = EventInstance(this, "removesourcebuffer")

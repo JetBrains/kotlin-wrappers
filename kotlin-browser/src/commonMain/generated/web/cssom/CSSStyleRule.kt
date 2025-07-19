@@ -7,7 +7,7 @@ package web.cssom
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleRule)
  */
-external class CSSStyleRule
+open external class CSSStyleRule
 private constructor() :
     CSSGroupingRule {
     /**

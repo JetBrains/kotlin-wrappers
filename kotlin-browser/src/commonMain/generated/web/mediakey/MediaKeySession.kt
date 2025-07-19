@@ -21,7 +21,7 @@ import kotlin.js.JsName
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeySession)
  */
-external class MediaKeySession
+open external class MediaKeySession
 private constructor() :
     EventTarget {
     /**
@@ -160,11 +160,11 @@ suspend inline fun MediaKeySession.update(response: BufferSource) {
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeySession/keystatuseschange_event)
  */
-inline val MediaKeySession.keyStatusesChangeEvent: EventInstance<Event, MediaKeySession, MediaKeySession>
+inline val <C : MediaKeySession> C.keyStatusesChangeEvent: EventInstance<Event, C, C>
     get() = EventInstance(this, "keystatuseschange")
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeySession/message_event)
  */
-inline val MediaKeySession.messageEvent: EventInstance<MediaKeyMessageEvent, MediaKeySession, MediaKeySession>
+inline val <C : MediaKeySession> C.messageEvent: EventInstance<MediaKeyMessageEvent, C, C>
     get() = EventInstance(this, "message")

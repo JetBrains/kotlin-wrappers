@@ -11,7 +11,7 @@ import web.time.DOMHighResTimeStamp
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Gamepad)
  */
-external class Gamepad
+open external class Gamepad
 private constructor() {
     /**
      * The **`Gamepad.axes`** property of the Gamepad interface returns an array representing the controls with axes present on the device (e.g., analog thumb sticks).

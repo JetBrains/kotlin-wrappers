@@ -15,7 +15,7 @@ import kotlin.js.definedExternally
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCRtpSender)
  */
-external class RTCRtpSender
+open external class RTCRtpSender
 private constructor() {
     /**
      * The read-only **`dtmf`** property on the **RTCRtpSender** interface returns a over the RTCPeerConnection.

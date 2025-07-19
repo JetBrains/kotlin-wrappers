@@ -18,7 +18,7 @@ import kotlin.js.definedExternally
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentResponse)
  */
-external class PaymentResponse
+open external class PaymentResponse
 private constructor() :
     EventTarget {
     /**
@@ -145,5 +145,5 @@ suspend inline fun PaymentResponse.retry() {
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentResponse/payerdetailchange_event)
  */
-inline val PaymentResponse.payerDetailChangeEvent: EventInstance<PaymentRequestUpdateEvent, PaymentResponse, PaymentResponse>
+inline val <C : PaymentResponse> C.payerDetailChangeEvent: EventInstance<PaymentRequestUpdateEvent, C, C>
     get() = EventInstance(this, "payerdetailchange")

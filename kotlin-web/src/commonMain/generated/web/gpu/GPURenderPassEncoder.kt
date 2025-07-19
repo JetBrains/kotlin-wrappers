@@ -9,7 +9,7 @@ import js.array.ReadonlyArray
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPURenderPassEncoder)
  */
-external class GPURenderPassEncoder
+open external class GPURenderPassEncoder
 private constructor() :
     GPUBindingCommandsMixin,
     GPUDebugCommandsMixin,

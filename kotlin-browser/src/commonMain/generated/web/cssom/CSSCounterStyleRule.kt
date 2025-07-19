@@ -7,7 +7,7 @@ package web.cssom
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSCounterStyleRule)
  */
-external class CSSCounterStyleRule
+open external class CSSCounterStyleRule
 private constructor() :
     CSSRule {
     /**

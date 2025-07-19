@@ -10,7 +10,7 @@ import kotlin.js.definedExternally
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XPathExpression)
  */
-external class XPathExpression
+open external class XPathExpression
 private constructor() {
     /**
      * The **`evaluate()`** method of the returns an XPathResult.

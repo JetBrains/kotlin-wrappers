@@ -10,7 +10,7 @@ import js.core.JsString
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSLayerStatementRule)
  */
-external class CSSLayerStatementRule
+open external class CSSLayerStatementRule
 private constructor() :
     CSSRule {
     /**

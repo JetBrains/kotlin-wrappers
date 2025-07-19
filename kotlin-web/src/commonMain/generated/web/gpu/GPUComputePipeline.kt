@@ -7,7 +7,7 @@ package web.gpu
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUComputePipeline)
  */
-external class GPUComputePipeline
+open external class GPUComputePipeline
 private constructor() :
     GPUObjectBase,
     GPUPipelineBase

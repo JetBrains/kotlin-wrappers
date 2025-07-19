@@ -15,7 +15,7 @@ import kotlin.js.definedExternally
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Performance)
  */
-external class Performance
+open external class Performance
 private constructor() :
     EventTarget {
     /**
@@ -134,5 +134,5 @@ private constructor() :
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Performance/resourcetimingbufferfull_event)
  */
-inline val Performance.resourceTimingBufferFullEvent: EventInstance<Event, Performance, Performance>
+inline val <C : Performance> C.resourceTimingBufferFullEvent: EventInstance<Event, C, C>
     get() = EventInstance(this, "resourcetimingbufferfull")

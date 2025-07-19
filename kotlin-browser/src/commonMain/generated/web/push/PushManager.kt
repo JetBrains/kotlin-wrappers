@@ -16,7 +16,7 @@ import kotlin.js.definedExternally
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PushManager)
  */
-external class PushManager
+open external class PushManager
 private constructor() {
     /**
      * The **`PushManager.getSubscription()`** method of the PushManager interface retrieves an existing push subscription.

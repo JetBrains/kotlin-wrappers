@@ -7,7 +7,7 @@ package web.svg
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGLength)
  */
-external class SVGLength
+open external class SVGLength
 private constructor() {
     /**
      * The **`unitType`** property of the SVGLength interface that represents type of the value as specified by one of the `SVG_LENGTHTYPE_*` constants defined on this interface.

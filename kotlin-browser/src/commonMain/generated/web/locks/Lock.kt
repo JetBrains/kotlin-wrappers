@@ -8,7 +8,7 @@ package web.locks
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Lock)
  */
-external class Lock
+open external class Lock
 private constructor() {
     /**
      * The **`mode`** read-only property of the Lock interface returns the access mode passed to LockManager.request() when the lock was requested.

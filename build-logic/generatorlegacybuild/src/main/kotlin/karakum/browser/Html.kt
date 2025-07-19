@@ -1256,69 +1256,6 @@ internal fun convertInterface(
     }
 
     val modifier = when {
-        isClass && !hasPrivateConstructor
-            -> "open"
-
-        // TODO: calculate
-        hasPrivateConstructor && (
-                name == "CSSStyleDeclaration" ||
-                        name == "CSSRule" ||
-                        name == "CSSConditionRule" ||
-                        name == "CSSGroupingRule" ||
-                        name == "CSSMathValue" ||
-                        name == "CSSNumericValue" ||
-                        name == "CSSStyleValue" ||
-                        name == "CSSTransformComponent" ||
-
-                        name == "IDBCursor" ||
-                        name == "IDBRequest" ||
-
-                        name == "MIDIPort" ||
-
-                        name == "FileSystemEntry" ||
-                        name == "FileSystemHandle" ||
-
-                        name == "AudioNode" ||
-                        name == "AudioScheduledSourceNode" ||
-                        name == "AudioWorkletProcessor" ||
-
-                        name == "PerformanceEntry" ||
-                        name == "PerformanceResourceTiming" ||
-
-                        name == "Credential" ||
-                        name == "AbstractRange" ||
-
-                        name == "MediaDeviceInfo" ||
-                        name == "MediaStreamTrack" ||
-
-                        name == "HTMLCollection" ||
-
-                        name == "AnimationEffect" ||
-                        name == "AnimationTimeline" ||
-
-                        name == "AuthenticatorResponse" ||
-
-                        name == "TextTrackCue" ||
-
-                        name == "ReportBody" ||
-                        name == "XMLHttpRequestEventTarget" ||
-
-                        name == "StyleSheet" ||
-                        name == "WorkerGlobalScope" ||
-                        name == "WorkletGlobalScope" ||
-                        name == "Client" ||
-
-                        name == "BaseAudioContext" ||
-                        name == "Node" ||
-                        name == "Element" ||
-                        name == "CharacterData" ||
-                        name == "HTMLMediaElement" ||
-                        name == "MathMLElement" ||
-
-                        name == "Worklet"
-                )
-            -> "open"
-
         hasPrivateConstructor && name == "NodeList"
             -> "abstract /* open */\n"
 
@@ -1349,6 +1286,9 @@ internal fun convertInterface(
 
             "sealed /* final */\n"
         }
+
+        isClass
+            -> "open"
 
         annotations.startsWith("@") ||
                 name in CSSOM_INTERFACES ||

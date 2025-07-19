@@ -12,7 +12,7 @@ import web.events.EventTarget
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PermissionStatus)
  */
-external class PermissionStatus
+open external class PermissionStatus
 private constructor() :
     EventTarget {
     /**
@@ -38,5 +38,5 @@ private constructor() :
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PermissionStatus/change_event)
  */
-inline val PermissionStatus.changeEvent: EventInstance<Event, PermissionStatus, PermissionStatus>
+inline val <C : PermissionStatus> C.changeEvent: EventInstance<Event, C, C>
     get() = EventInstance(this, "change")

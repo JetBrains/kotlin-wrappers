@@ -7,7 +7,7 @@ package web.cssom
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSPageDescriptors)
  */
-external class CSSPageDescriptors
+open external class CSSPageDescriptors
 private constructor() :
     CSSStyleDeclaration {
     /**

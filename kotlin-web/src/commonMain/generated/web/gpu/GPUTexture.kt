@@ -9,7 +9,7 @@ import kotlin.js.definedExternally
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUTexture)
  */
-external class GPUTexture
+open external class GPUTexture
 private constructor() :
     GPUObjectBase {
     /**

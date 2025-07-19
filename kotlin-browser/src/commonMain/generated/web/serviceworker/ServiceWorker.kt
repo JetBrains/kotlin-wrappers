@@ -20,7 +20,7 @@ import kotlin.js.definedExternally
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorker)
  */
-external class ServiceWorker
+open external class ServiceWorker
 private constructor() :
     EventTarget,
     AbstractWorker,
@@ -63,11 +63,11 @@ private constructor() :
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorker/error_event)
  */
-inline val ServiceWorker.errorEvent: EventInstance<Event, ServiceWorker, ServiceWorker>
+inline val <C : ServiceWorker> C.errorEvent: EventInstance<Event, C, C>
     get() = EventInstance(this, "error")
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorker/statechange_event)
  */
-inline val ServiceWorker.stateChangeEvent: EventInstance<Event, ServiceWorker, ServiceWorker>
+inline val <C : ServiceWorker> C.stateChangeEvent: EventInstance<Event, C, C>
     get() = EventInstance(this, "statechange")

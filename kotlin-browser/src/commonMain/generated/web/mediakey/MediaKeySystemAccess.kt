@@ -12,7 +12,7 @@ import kotlin.js.JsName
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeySystemAccess)
  */
-external class MediaKeySystemAccess
+open external class MediaKeySystemAccess
 private constructor() {
     /**
      * The **`keySystem`** read-only property of the MediaKeySystemAccess interface returns a string identifying the key system being used.

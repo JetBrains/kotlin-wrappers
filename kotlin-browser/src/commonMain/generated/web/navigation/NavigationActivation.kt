@@ -7,7 +7,7 @@ package web.navigation
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigationActivation)
  */
-external class NavigationActivation
+open external class NavigationActivation
 private constructor() {
     /**
      * The **`entry`** read-only property of the NavigationActivation interface contains a NavigationHistoryEntry object representing the history entry for the inbound ('to') document in the navigation.

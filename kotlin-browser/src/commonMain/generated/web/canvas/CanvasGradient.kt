@@ -7,7 +7,7 @@ package web.canvas
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasGradient)
  */
-external class CanvasGradient
+open external class CanvasGradient
 private constructor() {
     /**
      * The **`CanvasGradient.addColorStop()`** method adds a new color stop, defined by an `offset` and a `color`, to a given canvas gradient.

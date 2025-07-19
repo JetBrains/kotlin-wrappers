@@ -14,7 +14,7 @@ import web.events.EventTarget
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigationHistoryEntry)
  */
-external class NavigationHistoryEntry
+open external class NavigationHistoryEntry
 private constructor() :
     EventTarget {
     /**
@@ -68,5 +68,5 @@ private constructor() :
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigationHistoryEntry/dispose_event)
  */
-inline val NavigationHistoryEntry.disposeEvent: EventInstance<Event, NavigationHistoryEntry, NavigationHistoryEntry>
+inline val <C : NavigationHistoryEntry> C.disposeEvent: EventInstance<Event, C, C>
     get() = EventInstance(this, "dispose")

@@ -7,7 +7,7 @@ package web.useractivation
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/UserActivation)
  */
-external class UserActivation
+open external class UserActivation
 private constructor() {
     /**
      * The read-only **`hasBeenActive`** property of the UserActivation interface indicates whether the current window has sticky activation.

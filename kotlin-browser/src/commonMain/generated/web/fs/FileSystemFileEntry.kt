@@ -10,7 +10,7 @@ import kotlin.js.definedExternally
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemFileEntry)
  */
-external class FileSystemFileEntry
+open external class FileSystemFileEntry
 private constructor() :
     FileSystemEntry {
     /**

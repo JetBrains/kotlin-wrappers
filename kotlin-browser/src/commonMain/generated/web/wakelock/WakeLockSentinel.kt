@@ -17,7 +17,7 @@ import kotlin.js.JsName
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WakeLockSentinel)
  */
-external class WakeLockSentinel
+open external class WakeLockSentinel
 private constructor() :
     EventTarget {
     /**
@@ -60,5 +60,5 @@ suspend inline fun WakeLockSentinel.release() {
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WakeLockSentinel/release_event)
  */
-inline val WakeLockSentinel.releaseEvent: EventInstance<Event, WakeLockSentinel, WakeLockSentinel>
+inline val <C : WakeLockSentinel> C.releaseEvent: EventInstance<Event, C, C>
     get() = EventInstance(this, "release")

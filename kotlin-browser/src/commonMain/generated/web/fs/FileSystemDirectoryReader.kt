@@ -10,7 +10,7 @@ import kotlin.js.definedExternally
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemDirectoryReader)
  */
-external class FileSystemDirectoryReader
+open external class FileSystemDirectoryReader
 private constructor() {
     /**
      * The FileSystemDirectoryReader interface's **`readEntries()`** method retrieves the directory entries within the directory being read and delivers them in an array to a provided callback function.

@@ -7,7 +7,7 @@ package web.svg
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedTransformList)
  */
-external class SVGAnimatedTransformList
+open external class SVGAnimatedTransformList
 private constructor() {
     /**
      * The **`animVal`** read-only property of the SVGAnimatedTransformList interface represents the animated value of the `transform` attribute of an SVG element.

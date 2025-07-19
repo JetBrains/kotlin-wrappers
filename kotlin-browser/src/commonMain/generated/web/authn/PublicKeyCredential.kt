@@ -16,7 +16,7 @@ import kotlin.js.JsName
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PublicKeyCredential)
  */
-external class PublicKeyCredential
+open external class PublicKeyCredential
 private constructor() :
     Credential {
     /**

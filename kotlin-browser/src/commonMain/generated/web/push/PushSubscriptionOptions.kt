@@ -10,7 +10,7 @@ import js.buffer.ArrayBuffer
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PushSubscriptionOptions)
  */
-external class PushSubscriptionOptions
+open external class PushSubscriptionOptions
 private constructor() {
     /**
      * The **`applicationServerKey`** read-only property of the PushSubscriptionOptions interface contains the public key used by the push server.

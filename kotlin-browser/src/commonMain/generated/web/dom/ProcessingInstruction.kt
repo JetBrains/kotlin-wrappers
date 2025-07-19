@@ -9,7 +9,7 @@ import web.cssom.LinkStyle
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ProcessingInstruction)
  */
-external class ProcessingInstruction
+open external class ProcessingInstruction
 private constructor() :
     CharacterData,
     LinkStyle {

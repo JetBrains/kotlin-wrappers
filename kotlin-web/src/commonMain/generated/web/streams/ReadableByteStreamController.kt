@@ -13,7 +13,7 @@ import kotlin.js.definedExternally
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableByteStreamController)
  */
-external class ReadableByteStreamController
+open external class ReadableByteStreamController
 private constructor() :
     ReadableStreamController<Void> {
     /**

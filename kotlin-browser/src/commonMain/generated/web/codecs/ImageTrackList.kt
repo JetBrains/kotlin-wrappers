@@ -12,7 +12,7 @@ import js.promise.Promise
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageTrackList)
  */
-external class ImageTrackList
+open external class ImageTrackList
 private constructor() :
     ArrayLike<ImageTrack>,
     JsIterable<ImageTrack> {

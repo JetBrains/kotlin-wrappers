@@ -10,7 +10,7 @@ import js.iterable.JsIterable
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSRuleList)
  */
-external class CSSRuleList
+open external class CSSRuleList
 private constructor() :
     ArrayLike<CSSRule>,
     JsIterable<CSSRule> {

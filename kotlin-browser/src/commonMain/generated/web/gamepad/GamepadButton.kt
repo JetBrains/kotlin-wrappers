@@ -7,7 +7,7 @@ package web.gamepad
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GamepadButton)
  */
-external class GamepadButton
+open external class GamepadButton
 private constructor() {
     /**
      * The **`GamepadButton.pressed`** property of the the button is currently pressed (`true`) or unpressed (`false`).

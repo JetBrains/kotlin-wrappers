@@ -13,7 +13,7 @@ import web.rendering.RenderingContextId
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUCanvasContext)
  */
-external class GPUCanvasContext
+open external class GPUCanvasContext
 private constructor() :
     OffscreenRenderingContext,
     RenderingContext {

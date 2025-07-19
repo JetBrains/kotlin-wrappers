@@ -7,6 +7,6 @@ package web.dom
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CDATASection)
  */
-external class CDATASection
+open external class CDATASection
 private constructor() :
     Text

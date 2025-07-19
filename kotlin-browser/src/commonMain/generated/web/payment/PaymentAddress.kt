@@ -11,7 +11,7 @@ import js.core.JsString
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ContactAddress)
  */
-external class PaymentAddress
+open external class PaymentAddress
 private constructor() {
     /**
      * The **`addressLine`** read-only property of the ContactAddress interface is an array of strings, each specifying a line of the address that is not covered by one of the other properties of `ContactAddress`.

@@ -7,7 +7,7 @@ package web.svg
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedInteger)
  */
-external class SVGAnimatedInteger
+open external class SVGAnimatedInteger
 private constructor() {
     /**
      * The **`animVal`** property of the SVGAnimatedInteger interface represents the animated value of an `<integer>`.

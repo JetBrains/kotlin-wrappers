@@ -7,6 +7,6 @@ package web.gpu
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUCommandBuffer)
  */
-external class GPUCommandBuffer
+open external class GPUCommandBuffer
 private constructor() :
     GPUObjectBase

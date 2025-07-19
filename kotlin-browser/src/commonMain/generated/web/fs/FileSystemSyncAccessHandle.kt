@@ -12,7 +12,7 @@ import kotlin.js.definedExternally
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemSyncAccessHandle)
  */
-external class FileSystemSyncAccessHandle
+open external class FileSystemSyncAccessHandle
 private constructor() {
     /**
      * The **`close()`** method of the ```js-nolint close() ``` None.

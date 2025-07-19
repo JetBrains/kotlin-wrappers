@@ -7,7 +7,7 @@ package web.cssom
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSScopeRule)
  */
-external class CSSScopeRule
+open external class CSSScopeRule
 private constructor() :
     CSSGroupingRule {
     /**

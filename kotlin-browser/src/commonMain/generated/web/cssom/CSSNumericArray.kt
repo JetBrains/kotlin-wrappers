@@ -12,7 +12,7 @@ import js.iterable.JsIterator
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSNumericArray)
  */
-external class CSSNumericArray
+open external class CSSNumericArray
 private constructor() :
     ListLike<CSSNumericValue> {
     /**

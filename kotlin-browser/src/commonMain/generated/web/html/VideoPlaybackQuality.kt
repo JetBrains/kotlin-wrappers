@@ -9,7 +9,7 @@ import web.time.DOMHighResTimeStamp
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoPlaybackQuality)
  */
-external class VideoPlaybackQuality
+open external class VideoPlaybackQuality
 private constructor() {
     /**
      * The read-only **`creationTime`** property on the the browsing context was created this quality sample was recorded.

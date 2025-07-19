@@ -14,7 +14,7 @@ import web.events.EventTarget
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDtlsTransport)
  */
-external class RTCDtlsTransport
+open external class RTCDtlsTransport
 private constructor() :
     EventTarget {
     /**
@@ -42,11 +42,11 @@ private constructor() :
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDtlsTransport/error_event)
  */
-inline val RTCDtlsTransport.errorEvent: EventInstance<RTCErrorEvent, RTCDtlsTransport, RTCDtlsTransport>
+inline val <C : RTCDtlsTransport> C.errorEvent: EventInstance<RTCErrorEvent, C, C>
     get() = EventInstance(this, "error")
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDtlsTransport/statechange_event)
  */
-inline val RTCDtlsTransport.stateChangeEvent: EventInstance<Event, RTCDtlsTransport, RTCDtlsTransport>
+inline val <C : RTCDtlsTransport> C.stateChangeEvent: EventInstance<Event, C, C>
     get() = EventInstance(this, "statechange")

@@ -20,7 +20,7 @@ import kotlin.js.definedExternally
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaDevices)
  */
-external class MediaDevices
+open external class MediaDevices
 private constructor() :
     EventTarget {
     /**

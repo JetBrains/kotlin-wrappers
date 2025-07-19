@@ -12,7 +12,7 @@ import web.events.EventTarget
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PictureInPictureWindow)
  */
-external class PictureInPictureWindow
+open external class PictureInPictureWindow
 private constructor() :
     EventTarget {
     /**
@@ -38,5 +38,5 @@ private constructor() :
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PictureInPictureWindow/resize_event)
  */
-inline val PictureInPictureWindow.resizeEvent: EventInstance<Event, PictureInPictureWindow, PictureInPictureWindow>
+inline val <C : PictureInPictureWindow> C.resizeEvent: EventInstance<Event, C, C>
     get() = EventInstance(this, "resize")

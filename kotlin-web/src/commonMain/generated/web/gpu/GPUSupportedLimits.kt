@@ -9,7 +9,7 @@ import js.core.UInt53
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUSupportedLimits)
  */
-external class GPUSupportedLimits
+open external class GPUSupportedLimits
 private constructor() {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUSupportedLimits#instance_properties)

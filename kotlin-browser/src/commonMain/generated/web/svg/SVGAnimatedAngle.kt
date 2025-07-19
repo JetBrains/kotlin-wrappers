@@ -7,7 +7,7 @@ package web.svg
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedAngle)
  */
-external class SVGAnimatedAngle
+open external class SVGAnimatedAngle
 private constructor() {
     /**
      * The **`animVal`** read-only property of the SVGAnimatedAngle interface represents the current animated value of the associated `<angle>` on an SVG element.

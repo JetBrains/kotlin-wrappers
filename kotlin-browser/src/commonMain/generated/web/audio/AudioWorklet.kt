@@ -10,6 +10,6 @@ import web.worklets.Worklet
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioWorklet)
  */
-external class AudioWorklet
+open external class AudioWorklet
 private constructor() :
     Worklet

@@ -11,7 +11,7 @@ import js.iterable.JsIterable
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechRecognitionResultList)
  */
-external class SpeechRecognitionResultList
+open external class SpeechRecognitionResultList
 private constructor() :
     ArrayLike<SpeechRecognitionResult>,
     JsIterable<SpeechRecognitionResult> {

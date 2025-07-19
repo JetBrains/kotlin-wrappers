@@ -10,7 +10,7 @@ import js.iterable.JsIterable
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGLengthList)
  */
-external class SVGLengthList
+open external class SVGLengthList
 private constructor() :
     ArrayLike<SVGLength>,
     JsIterable<SVGLength> {

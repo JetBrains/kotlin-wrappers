@@ -11,7 +11,7 @@ import web.streams.WritableStream
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebTransportBidirectionalStream)
  */
-external class WebTransportBidirectionalStream
+open external class WebTransportBidirectionalStream
 private constructor() {
     /**
      * The **`readable`** read-only property of the WebTransportBidirectionalStream interface returns a WebTransportReceiveStream instance that can be used to reliably read incoming data.

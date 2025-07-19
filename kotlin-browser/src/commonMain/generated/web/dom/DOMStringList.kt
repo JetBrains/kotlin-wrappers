@@ -11,7 +11,7 @@ import js.iterable.JsIterable
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMStringList)
  */
-external class DOMStringList
+open external class DOMStringList
 private constructor() :
     ArrayLike<JsString>,
     JsIterable<JsString> {

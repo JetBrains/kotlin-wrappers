@@ -11,7 +11,7 @@ import web.geometry.DOMPoint
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGPointList)
  */
-external class SVGPointList
+open external class SVGPointList
 private constructor() :
     ArrayLike<DOMPoint>,
     JsIterable<DOMPoint> {

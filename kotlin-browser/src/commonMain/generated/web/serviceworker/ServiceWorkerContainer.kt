@@ -21,7 +21,7 @@ import kotlin.js.definedExternally
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerContainer)
  */
-external class ServiceWorkerContainer
+open external class ServiceWorkerContainer
 private constructor() :
     EventTarget {
     /**
@@ -173,17 +173,17 @@ suspend inline fun ServiceWorkerContainer.register(
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerContainer/controllerchange_event)
  */
-inline val ServiceWorkerContainer.controllerChangeEvent: EventInstance<Event, ServiceWorkerContainer, ServiceWorkerContainer>
+inline val <C : ServiceWorkerContainer> C.controllerChangeEvent: EventInstance<Event, C, C>
     get() = EventInstance(this, "controllerchange")
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerContainer/message_event)
  */
-inline val ServiceWorkerContainer.messageEvent: EventInstance<MessageEvent<JsAny?>, ServiceWorkerContainer, ServiceWorkerContainer>
+inline val <C : ServiceWorkerContainer> C.messageEvent: EventInstance<MessageEvent<JsAny?>, C, C>
     get() = EventInstance(this, "message")
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerContainer/messageerror_event)
  */
-inline val ServiceWorkerContainer.messageErrorEvent: EventInstance<MessageEvent<JsAny?>, ServiceWorkerContainer, ServiceWorkerContainer>
+inline val <C : ServiceWorkerContainer> C.messageErrorEvent: EventInstance<MessageEvent<JsAny?>, C, C>
     get() = EventInstance(this, "messageerror")

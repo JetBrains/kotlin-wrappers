@@ -11,7 +11,7 @@ import web.events.EventInstance
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MIDIInput)
  */
-external class MIDIInput
+open external class MIDIInput
 private constructor() :
     MIDIPort {
     /**
@@ -23,5 +23,5 @@ private constructor() :
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MIDIInput/midimessage_event)
  */
-inline val MIDIInput.midiMessageEvent: EventInstance<MIDIMessageEvent, MIDIInput, MIDIInput>
+inline val <C : MIDIInput> C.midiMessageEvent: EventInstance<MIDIMessageEvent, C, C>
     get() = EventInstance(this, "midimessage")

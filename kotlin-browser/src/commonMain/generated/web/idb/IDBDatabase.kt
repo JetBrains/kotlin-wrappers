@@ -17,7 +17,7 @@ import kotlin.js.definedExternally
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBDatabase)
  */
-external class IDBDatabase
+open external class IDBDatabase
 private constructor() :
     EventTarget {
     /**
@@ -98,23 +98,23 @@ private constructor() :
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBDatabase/abort_event)
  */
-inline val IDBDatabase.abortEvent: EventInstance<Event, IDBDatabase, IDBDatabase>
+inline val <C : IDBDatabase> C.abortEvent: EventInstance<Event, C, IDBDatabase>
     get() = EventInstance(this, "abort")
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBDatabase/close_event)
  */
-inline val IDBDatabase.closeEvent: EventInstance<Event, IDBDatabase, IDBDatabase>
+inline val <C : IDBDatabase> C.closeEvent: EventInstance<Event, C, C>
     get() = EventInstance(this, "close")
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBDatabase/error_event)
  */
-inline val IDBDatabase.errorEvent: EventInstance<Event, IDBDatabase, IDBTransaction>
+inline val <C : IDBDatabase> C.errorEvent: EventInstance<Event, C, IDBTransaction>
     get() = EventInstance(this, "error")
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBDatabase/versionchange_event)
  */
-inline val IDBDatabase.versionChangeEvent: EventInstance<IDBVersionChangeEvent, IDBDatabase, IDBDatabase>
+inline val <C : IDBDatabase> C.versionChangeEvent: EventInstance<IDBVersionChangeEvent, C, C>
     get() = EventInstance(this, "versionchange")

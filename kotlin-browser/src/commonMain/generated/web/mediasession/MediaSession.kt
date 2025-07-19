@@ -13,7 +13,7 @@ import kotlin.js.definedExternally
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaSession)
  */
-external class MediaSession
+open external class MediaSession
 private constructor() {
     /**
      * The **`metadata`** property of the MediaSession interface contains a MediaMetadata object providing descriptive information about the currently playing media, or `null` if the metadata has not been set.

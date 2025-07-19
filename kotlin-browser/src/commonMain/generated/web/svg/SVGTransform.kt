@@ -11,7 +11,7 @@ import kotlin.js.definedExternally
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTransform)
  */
-external class SVGTransform
+open external class SVGTransform
 private constructor() {
     /**
      * The **`angle`** read-only property of the SVGTransform interface represents the angle of the transformation in degrees.

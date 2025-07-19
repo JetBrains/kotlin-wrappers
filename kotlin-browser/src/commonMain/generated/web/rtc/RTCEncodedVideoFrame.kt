@@ -11,7 +11,7 @@ import js.serialization.Serializable
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCEncodedVideoFrame)
  */
-external class RTCEncodedVideoFrame
+open external class RTCEncodedVideoFrame
 private constructor() :
     Serializable {
     /**

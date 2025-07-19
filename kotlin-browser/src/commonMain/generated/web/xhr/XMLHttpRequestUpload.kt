@@ -10,48 +10,48 @@ import web.events.ProgressEvent
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XMLHttpRequestUpload)
  */
-external class XMLHttpRequestUpload
+open external class XMLHttpRequestUpload
 private constructor() :
     XMLHttpRequestEventTarget
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XMLHttpRequestUpload/abort_event)
  */
-inline val XMLHttpRequestUpload.abortEvent: EventInstance<ProgressEvent, XMLHttpRequestUpload, XMLHttpRequestUpload>
+inline val <C : XMLHttpRequestUpload> C.abortEvent: EventInstance<ProgressEvent, C, C>
     get() = EventInstance(this, "abort")
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XMLHttpRequestUpload/error_event)
  */
-inline val XMLHttpRequestUpload.errorEvent: EventInstance<ProgressEvent, XMLHttpRequestUpload, XMLHttpRequestUpload>
+inline val <C : XMLHttpRequestUpload> C.errorEvent: EventInstance<ProgressEvent, C, C>
     get() = EventInstance(this, "error")
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XMLHttpRequestUpload/load_event)
  */
-inline val XMLHttpRequestUpload.loadEvent: EventInstance<ProgressEvent, XMLHttpRequestUpload, XMLHttpRequestUpload>
+inline val <C : XMLHttpRequestUpload> C.loadEvent: EventInstance<ProgressEvent, C, C>
     get() = EventInstance(this, "load")
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XMLHttpRequestUpload/loadend_event)
  */
-inline val XMLHttpRequestUpload.loadEndEvent: EventInstance<ProgressEvent, XMLHttpRequestUpload, XMLHttpRequestUpload>
+inline val <C : XMLHttpRequestUpload> C.loadEndEvent: EventInstance<ProgressEvent, C, C>
     get() = EventInstance(this, "loadend")
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XMLHttpRequestUpload/loadstart_event)
  */
-inline val XMLHttpRequestUpload.loadStartEvent: EventInstance<ProgressEvent, XMLHttpRequestUpload, XMLHttpRequestUpload>
+inline val <C : XMLHttpRequestUpload> C.loadStartEvent: EventInstance<ProgressEvent, C, C>
     get() = EventInstance(this, "loadstart")
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XMLHttpRequestUpload/progress_event)
  */
-inline val XMLHttpRequestUpload.progressEvent: EventInstance<ProgressEvent, XMLHttpRequestUpload, XMLHttpRequestUpload>
+inline val <C : XMLHttpRequestUpload> C.progressEvent: EventInstance<ProgressEvent, C, C>
     get() = EventInstance(this, "progress")
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XMLHttpRequestUpload/timeout_event)
  */
-inline val XMLHttpRequestUpload.timeoutEvent: EventInstance<ProgressEvent, XMLHttpRequestUpload, XMLHttpRequestUpload>
+inline val <C : XMLHttpRequestUpload> C.timeoutEvent: EventInstance<ProgressEvent, C, C>
     get() = EventInstance(this, "timeout")

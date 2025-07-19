@@ -9,7 +9,7 @@ import js.array.ReadonlyArray
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCRtpTransceiver)
  */
-external class RTCRtpTransceiver
+open external class RTCRtpTransceiver
 private constructor() {
     /**
      * The read-only RTCRtpTransceiver property **`currentDirection`** is a string which indicates the current negotiated directionality of the transceiver.

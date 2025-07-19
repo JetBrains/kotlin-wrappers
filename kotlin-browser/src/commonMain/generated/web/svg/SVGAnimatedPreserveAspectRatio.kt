@@ -7,7 +7,7 @@ package web.svg
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedPreserveAspectRatio)
  */
-external class SVGAnimatedPreserveAspectRatio
+open external class SVGAnimatedPreserveAspectRatio
 private constructor() {
     /**
      * The **`animVal`** read-only property of the SVGAnimatedPreserveAspectRatio interface represents the value of the preserveAspectRatio attribute of an SVG element after any animations or transformations are applied.

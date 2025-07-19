@@ -11,7 +11,7 @@ import web.file.File
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DataTransferItemList)
  */
-external class DataTransferItemList
+open external class DataTransferItemList
 private constructor() :
     ArrayLike<DataTransferItem>,
     JsIterable<DataTransferItem> {

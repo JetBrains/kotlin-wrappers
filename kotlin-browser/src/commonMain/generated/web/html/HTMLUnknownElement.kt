@@ -7,6 +7,6 @@ package web.html
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLUnknownElement)
  */
-external class HTMLUnknownElement
+open external class HTMLUnknownElement
 private constructor() :
     HTMLElement

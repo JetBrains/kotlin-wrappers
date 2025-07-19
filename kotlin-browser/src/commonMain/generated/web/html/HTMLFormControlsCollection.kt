@@ -10,7 +10,7 @@ import web.dom.Element
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFormControlsCollection)
  */
-external class HTMLFormControlsCollection
+open external class HTMLFormControlsCollection
 private constructor() :
     HTMLCollectionBase<Element> {
     override val length: Int

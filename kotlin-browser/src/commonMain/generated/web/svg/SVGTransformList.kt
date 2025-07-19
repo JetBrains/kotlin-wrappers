@@ -12,7 +12,7 @@ import kotlin.js.definedExternally
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTransformList)
  */
-external class SVGTransformList
+open external class SVGTransformList
 private constructor() :
     ArrayLike<SVGTransform>,
     JsIterable<SVGTransform> {

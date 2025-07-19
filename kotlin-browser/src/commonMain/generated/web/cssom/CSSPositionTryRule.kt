@@ -7,7 +7,7 @@ package web.cssom
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSPositionTryRule)
  */
-external class CSSPositionTryRule
+open external class CSSPositionTryRule
 private constructor() :
     CSSRule {
     /**

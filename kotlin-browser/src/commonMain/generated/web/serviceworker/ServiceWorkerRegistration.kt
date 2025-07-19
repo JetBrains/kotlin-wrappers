@@ -25,7 +25,7 @@ import kotlin.js.definedExternally
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration)
  */
-external class ServiceWorkerRegistration
+open external class ServiceWorkerRegistration
 private constructor() :
     EventTarget {
     /**
@@ -190,5 +190,5 @@ suspend inline fun ServiceWorkerRegistration.update(): ServiceWorkerRegistration
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/updatefound_event)
  */
-inline val ServiceWorkerRegistration.updateFoundEvent: EventInstance<Event, ServiceWorkerRegistration, ServiceWorkerRegistration>
+inline val <C : ServiceWorkerRegistration> C.updateFoundEvent: EventInstance<Event, C, C>
     get() = EventInstance(this, "updatefound")

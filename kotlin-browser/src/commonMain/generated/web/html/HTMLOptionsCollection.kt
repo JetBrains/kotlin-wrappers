@@ -9,7 +9,7 @@ import kotlin.js.definedExternally
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOptionsCollection)
  */
-external class HTMLOptionsCollection
+open external class HTMLOptionsCollection
 private constructor() :
     HTMLCollection<HTMLOptionElement> {
     /**

@@ -9,7 +9,7 @@ import web.html.HTMLCanvasElement
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasCaptureMediaStreamTrack)
  */
-external class CanvasCaptureMediaStreamTrack
+open external class CanvasCaptureMediaStreamTrack
 private constructor() :
     MediaStreamTrack {
     /**

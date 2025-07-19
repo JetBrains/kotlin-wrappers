@@ -12,7 +12,7 @@ import web.events.EventTarget
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ScreenOrientation)
  */
-external class ScreenOrientation
+open external class ScreenOrientation
 private constructor() :
     EventTarget {
     /**
@@ -45,5 +45,5 @@ private constructor() :
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ScreenOrientation/change_event)
  */
-inline val ScreenOrientation.changeEvent: EventInstance<Event, ScreenOrientation, ScreenOrientation>
+inline val <C : ScreenOrientation> C.changeEvent: EventInstance<Event, C, C>
     get() = EventInstance(this, "change")
