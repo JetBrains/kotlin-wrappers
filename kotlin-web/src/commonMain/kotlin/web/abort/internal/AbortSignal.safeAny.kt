@@ -1,5 +1,6 @@
 package web.abort.internal
 
+import js.errors.toJsError
 import web.abort.AbortController
 import web.abort.AbortSignal
 import web.events.ABORT
@@ -25,7 +26,7 @@ internal fun safeAny(
     val abortHandler = EventHandler<Event, AbortSignal, AbortSignal, _> { event ->
         handlers.forEach { it() }
 
-        controller.abort(event.currentTarget.reason)
+        controller.abort(event.currentTarget.reason?.toJsError())
     }
 
     sequenceOf(signal1, signal2)

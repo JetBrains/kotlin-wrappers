@@ -1,6 +1,7 @@
 package web.http
 
 import js.errors.TypeError
+import js.errors.toJsError
 import js.globals.globalThis
 import js.promise.Promise
 import js.promise.invoke
@@ -79,7 +80,10 @@ class FetchTest {
                 request.signal.abortEvent.addHandler {
                     isCanceled = true
 
-                    reject(request.signal.reason ?: TypeError("Failed to fetch"))
+                    val reason = request.signal.reason?.toJsError()
+                        ?: TypeError("Failed to fetch")
+
+                    reject(reason)
                 }
             }
         }
