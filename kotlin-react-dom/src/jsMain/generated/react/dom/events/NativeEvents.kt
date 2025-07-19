@@ -10,7 +10,7 @@ typealias NativeCompositionEvent = web.uievents.CompositionEvent
 
 typealias NativeDragEvent = web.uievents.DragEvent
 
-typealias NativeFocusEvent = web.uievents.FocusEvent
+typealias NativeFocusEvent = web.focus.FocusEvent
 
 typealias NativeInputEvent = web.uievents.InputEvent
 

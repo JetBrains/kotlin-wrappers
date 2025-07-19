@@ -16,6 +16,7 @@ import web.cssom.StylePropertyMapReadOnly
 import web.events.Event
 import web.events.EventHandler
 import web.events.EventInstance
+import web.focus.FocusEvent
 import web.fullscreen.FullscreenOptions
 import web.geometry.DOMRect
 import web.geometry.DOMRectList
@@ -24,7 +25,10 @@ import web.keyboard.KeyboardEvent
 import web.scroll.ScrollIntoViewOptions
 import web.scroll.ScrollToOptions
 import web.touch.TouchEvent
-import web.uievents.*
+import web.uievents.CompositionEvent
+import web.uievents.InputEvent
+import web.uievents.MouseEvent
+import web.uievents.WheelEvent
 import kotlin.js.JsName
 import kotlin.js.definedExternally
 

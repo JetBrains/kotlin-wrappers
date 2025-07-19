@@ -1,10 +1,11 @@
 // Automatically generated - do not modify!
 
-package web.uievents
+package web.focus
 
 import js.reflect.unsafeCast
 import web.events.EventTarget
 import web.events.EventType
+import web.uievents.UIEvent
 import kotlin.js.definedExternally
 
 /**

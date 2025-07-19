@@ -15,6 +15,7 @@ import web.events.Event
 import web.events.EventHandler
 import web.events.EventTarget
 import web.events.ProgressEvent
+import web.focus.FocusEvent
 import web.form.FormDataEvent
 import web.form.SubmitEvent
 import web.keyboard.KeyboardEvent

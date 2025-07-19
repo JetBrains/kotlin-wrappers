@@ -15,6 +15,7 @@ import web.cssom.TransitionEvent
 import web.events.Event
 import web.events.EventHandler
 import web.events.EventInstance
+import web.focus.FocusEvent
 import web.fonts.FontFaceSource
 import web.form.FormDataEvent
 import web.form.SubmitEvent
