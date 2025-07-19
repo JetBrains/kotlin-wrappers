@@ -4,7 +4,7 @@ package web.pointer
 
 import js.array.ReadonlyArray
 import js.objects.JsPlainObject
-import web.uievents.MouseEventInit
+import web.mouse.MouseEventInit
 
 @JsPlainObject
 external interface PointerEventInit :

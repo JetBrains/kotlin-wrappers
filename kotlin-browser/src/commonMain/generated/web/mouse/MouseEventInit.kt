@@ -1,9 +1,10 @@
 // Automatically generated - do not modify!
 
-package web.uievents
+package web.mouse
 
 import js.objects.JsPlainObject
 import web.events.EventTarget
+import web.uievents.EventModifierInit
 
 @JsPlainObject
 external interface MouseEventInit :

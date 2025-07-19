@@ -5,7 +5,7 @@ package web.dnd
 import js.reflect.unsafeCast
 import web.data.DataTransfer
 import web.events.EventType
-import web.uievents.MouseEvent
+import web.mouse.MouseEvent
 import kotlin.js.definedExternally
 
 /**

@@ -2,6 +2,6 @@
 
 package react.router.dom
 
-import web.uievents.MouseEvent
+import web.mouse.MouseEvent
 
 typealias LimitedMouseEvent = MouseEvent

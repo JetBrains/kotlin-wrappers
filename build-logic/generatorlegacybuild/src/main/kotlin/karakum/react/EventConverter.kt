@@ -51,8 +51,8 @@ import web.events.EventType
 import web.keyboard.ModifierKeyCode
 import web.keyboard.KeyCode
 import web.data.DataTransfer
-import web.uievents.MouseButton
-import web.uievents.MouseButtons
+import web.mouse.MouseButton
+import web.mouse.MouseButtons
 import web.time.DOMHighResTimeStamp
 import web.popover.ToggleState
 """

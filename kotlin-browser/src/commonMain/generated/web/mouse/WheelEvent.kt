@@ -1,6 +1,6 @@
 // Automatically generated - do not modify!
 
-package web.uievents
+package web.mouse
 
 import js.reflect.unsafeCast
 import web.events.EventType

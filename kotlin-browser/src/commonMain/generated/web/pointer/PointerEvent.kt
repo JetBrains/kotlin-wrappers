@@ -5,7 +5,7 @@ package web.pointer
 import js.array.ReadonlyArray
 import js.reflect.unsafeCast
 import web.events.EventType
-import web.uievents.MouseEvent
+import web.mouse.MouseEvent
 import kotlin.js.definedExternally
 
 /**

@@ -83,6 +83,6 @@ private fun mouseButtonType(
     return ConversionResult(
         name = type,
         body = body,
-        pkg = "web.uievents",
+        pkg = "web.mouse",
     )
 }

@@ -4,7 +4,7 @@ package web.dnd
 
 import js.objects.JsPlainObject
 import web.data.DataTransfer
-import web.uievents.MouseEventInit
+import web.mouse.MouseEventInit
 
 @JsPlainObject
 external interface DragEventInit :

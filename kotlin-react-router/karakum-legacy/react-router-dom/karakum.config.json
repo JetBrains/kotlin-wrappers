@@ -65,7 +65,7 @@
             "web.window.Window"
         ],
         "LimitedMouseEvent.kt": [
-            "web.uievents.MouseEvent"
+            "web.mouse.MouseEvent"
         ],
         "LinkProps.kt": [
             "web.html.HTMLAnchorElement"
@@ -81,7 +81,7 @@
         ],
         "useLinkClickHandler.kt": [
             "web.dom.Element",
-            "web.uievents.MouseEvent"
+            "web.mouse.MouseEvent"
         ],
         "useSearchParams.kt": [
             "web.url.URLSearchParams"

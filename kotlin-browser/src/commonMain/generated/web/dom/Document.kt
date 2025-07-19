@@ -23,6 +23,8 @@ import web.form.SubmitEvent
 import web.html.*
 import web.keyboard.KeyboardEvent
 import web.location.Location
+import web.mouse.MouseEvent
+import web.mouse.WheelEvent
 import web.pip.PictureInPictureEvent
 import web.pointer.PointerEvent
 import web.ranges.Range
@@ -30,8 +32,6 @@ import web.selection.Selection
 import web.touch.TouchEvent
 import web.uievents.CompositionEvent
 import web.uievents.InputEvent
-import web.uievents.MouseEvent
-import web.uievents.WheelEvent
 import web.url.FragmentDirective
 import web.url.URL
 import web.viewtransition.StartViewTransitionOptions

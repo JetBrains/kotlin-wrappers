@@ -1,5 +1,7 @@
 package web.uievents
 
+import web.mouse.WHEEL
+import web.mouse.WheelEvent
 import web.pointer.CLICK
 import web.pointer.PointerEvent
 import kotlin.test.Test

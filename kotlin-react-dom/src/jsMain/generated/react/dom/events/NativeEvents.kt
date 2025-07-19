@@ -16,7 +16,7 @@ typealias NativeInputEvent = web.uievents.InputEvent
 
 typealias NativeKeyboardEvent = web.keyboard.KeyboardEvent
 
-typealias NativeMouseEvent = web.uievents.MouseEvent
+typealias NativeMouseEvent = web.mouse.MouseEvent
 
 typealias NativeTouchEvent = web.touch.TouchEvent
 
@@ -28,4 +28,4 @@ typealias NativeTransitionEvent = web.cssom.TransitionEvent
 
 typealias NativeUIEvent = web.uievents.UIEvent
 
-typealias NativeWheelEvent = web.uievents.WheelEvent
+typealias NativeWheelEvent = web.mouse.WheelEvent

@@ -20,13 +20,13 @@ import web.focus.FocusEvent
 import web.form.FormDataEvent
 import web.form.SubmitEvent
 import web.keyboard.KeyboardEvent
+import web.mouse.MouseEvent
+import web.mouse.WheelEvent
 import web.pointer.PointerEvent
 import web.popover.ToggleEvent
 import web.touch.TouchEvent
 import web.uievents.InputEvent
-import web.uievents.MouseEvent
 import web.uievents.UIEvent
-import web.uievents.WheelEvent
 import kotlin.js.definedExternally
 
 external interface GlobalEventHandlers :

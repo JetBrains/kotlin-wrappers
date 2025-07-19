@@ -1,11 +1,12 @@
 // Automatically generated - do not modify!
 
-package web.uievents
+package web.mouse
 
 import js.reflect.unsafeCast
 import web.events.EventTarget
 import web.events.EventType
 import web.keyboard.ModifierKeyCode
+import web.uievents.UIEvent
 import kotlin.js.definedExternally
 
 /**

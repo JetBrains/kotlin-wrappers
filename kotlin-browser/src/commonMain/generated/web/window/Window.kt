@@ -33,6 +33,8 @@ import web.keyboard.KeyboardEvent
 import web.location.Location
 import web.messaging.MessageEvent
 import web.messaging.MessageEventSource
+import web.mouse.MouseEvent
+import web.mouse.WheelEvent
 import web.pip.PictureInPictureEvent
 import web.pointer.PointerEvent
 import web.promise.PromiseRejectionEvent
@@ -42,8 +44,6 @@ import web.storage.StorageEvent
 import web.touch.TouchEvent
 import web.uievents.CompositionEvent
 import web.uievents.InputEvent
-import web.uievents.MouseEvent
-import web.uievents.WheelEvent
 import web.url.URL
 import web.viewtransition.PageRevealEvent
 import web.viewtransition.PageSwapEvent

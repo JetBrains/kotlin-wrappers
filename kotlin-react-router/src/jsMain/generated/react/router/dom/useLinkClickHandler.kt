@@ -6,7 +6,7 @@ package react.router.dom
 
 import remix.run.router.To
 import web.dom.Element
-import web.uievents.MouseEvent
+import web.mouse.MouseEvent
 
 /**
  * Handles the click behavior for router `<Link>` components. This is useful if
