@@ -356,6 +356,7 @@ private val WORKERS_TYPES = listOf(
 )
 
 private val WEB_AUTHN_TYPES = listOf(
+    "AllAcceptedCredentialsOptions",
     "AuthenticationExtensionsClientInputs",
     "AuthenticationExtensionsClientInputsJSON",
     "AuthenticationExtensionsClientOutputs",
@@ -372,6 +373,7 @@ private val WEB_AUTHN_TYPES = listOf(
     "AuthenticatorResponse",
     "AuthenticatorSelectionCriteria",
     "CredentialPropertiesOutput",
+    "CurrentUserDetailsOptions",
     "PublicKeyCredential",
     "PublicKeyCredentialCreationOptions",
     "PublicKeyCredentialCreationOptionsJSON",
@@ -384,6 +386,7 @@ private val WEB_AUTHN_TYPES = listOf(
     "PublicKeyCredentialRpEntity",
     "PublicKeyCredentialUserEntity",
     "PublicKeyCredentialUserEntityJSON",
+    "UnknownCredentialOptions",
 )
 
 private val CREDENTIALS_TYPES = listOf(

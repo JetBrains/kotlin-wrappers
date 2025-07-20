@@ -5,6 +5,7 @@ package web.authn
 import js.buffer.ArrayBuffer
 import js.core.JsBoolean
 import js.core.JsPrimitives.toBoolean
+import js.core.Void
 import js.promise.Promise
 import js.promise.await
 import web.credentials.Credential
@@ -92,6 +93,30 @@ private constructor() :
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PublicKeyCredential/parseRequestOptionsFromJSON_static)
          */
         fun parseRequestOptionsFromJSON(options: PublicKeyCredentialRequestOptionsJSON): PublicKeyCredentialRequestOptions
+
+        /**
+         * The **`signalAllAcceptedCredentials()`** static method of the PublicKeyCredential interface signals to the authenticator all of the valid credential IDs that the relying party (RP) server still holds for a particular user.
+         *
+         * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PublicKeyCredential/signalAllAcceptedCredentials_static)
+         */
+        @JsName("signalAllAcceptedCredentials")
+        fun signalAllAcceptedCredentialsAsync(options: AllAcceptedCredentialsOptions): Promise<Void>
+
+        /**
+         * The **`signalCurrentUserDetails()`** static method of the PublicKeyCredential interface signals to the authenticator that a particular user has updated their user name and/or display name on the relying party (RP) server.
+         *
+         * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PublicKeyCredential/signalCurrentUserDetails_static)
+         */
+        @JsName("signalCurrentUserDetails")
+        fun signalCurrentUserDetailsAsync(options: CurrentUserDetailsOptions): Promise<Void>
+
+        /**
+         * The **`signalUnknownCredential()`** static method of the PublicKeyCredential interface signals to the authenticator that a credential ID was not recognized by the relying party (RP) server.
+         *
+         * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PublicKeyCredential/signalUnknownCredential_static)
+         */
+        @JsName("signalUnknownCredential")
+        fun signalUnknownCredentialAsync(options: UnknownCredentialOptions): Promise<Void>
     }
 }
 
@@ -120,4 +145,37 @@ suspend inline fun PublicKeyCredential.Companion.isConditionalMediationAvailable
  */
 suspend inline fun PublicKeyCredential.Companion.isUserVerifyingPlatformAuthenticatorAvailable(): Boolean {
     return isUserVerifyingPlatformAuthenticatorAvailableAsync().await().toBoolean()
+}
+
+/**
+ * The **`signalAllAcceptedCredentials()`** static method of the PublicKeyCredential interface signals to the authenticator all of the valid credential IDs that the relying party (RP) server still holds for a particular user.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PublicKeyCredential/signalAllAcceptedCredentials_static)
+ */
+suspend inline fun PublicKeyCredential.Companion.signalAllAcceptedCredentials(options: AllAcceptedCredentialsOptions) {
+    signalAllAcceptedCredentialsAsync(
+        options = options,
+    ).await()
+}
+
+/**
+ * The **`signalCurrentUserDetails()`** static method of the PublicKeyCredential interface signals to the authenticator that a particular user has updated their user name and/or display name on the relying party (RP) server.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PublicKeyCredential/signalCurrentUserDetails_static)
+ */
+suspend inline fun PublicKeyCredential.Companion.signalCurrentUserDetails(options: CurrentUserDetailsOptions) {
+    signalCurrentUserDetailsAsync(
+        options = options,
+    ).await()
+}
+
+/**
+ * The **`signalUnknownCredential()`** static method of the PublicKeyCredential interface signals to the authenticator that a credential ID was not recognized by the relying party (RP) server.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PublicKeyCredential/signalUnknownCredential_static)
+ */
+suspend inline fun PublicKeyCredential.Companion.signalUnknownCredential(options: UnknownCredentialOptions) {
+    signalUnknownCredentialAsync(
+        options = options,
+    ).await()
 }
