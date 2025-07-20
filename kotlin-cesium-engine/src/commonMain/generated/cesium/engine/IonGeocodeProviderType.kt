@@ -4,6 +4,8 @@
 
 package cesium.engine
 
+import kotlin.js.JsModule
+
 /**
  * Underlying geocoding services that can be used via Cesium ion.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#IonGeocodeProviderType">Online Documentation</a>

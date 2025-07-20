@@ -6,6 +6,8 @@ package cesium.engine
 
 import js.array.ReadonlyArray
 import js.objects.JsPlainObject
+import kotlin.js.JsModule
+import kotlin.js.definedExternally
 
 /**
  * A description of an ellipse on an ellipsoid. Ellipse geometry can be rendered with both [Primitive] and [GroundPrimitive].

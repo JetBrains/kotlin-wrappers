@@ -4,6 +4,8 @@
 
 package cesium.engine
 
+import kotlin.js.JsModule
+
 /**
  * Default settings for accessing the Cesium ion API.
  *

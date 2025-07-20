@@ -4,6 +4,8 @@
 
 package cesium.engine
 
+import kotlin.js.JsModule
+
 /**
  * Atmosphere lighting effects (sky atmosphere, ground atmosphere, fog) can be
  * further modified with dynamic lighting from the sun or other light source

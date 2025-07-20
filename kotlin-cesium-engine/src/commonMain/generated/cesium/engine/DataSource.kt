@@ -4,6 +4,8 @@
 
 package cesium.engine
 
+import kotlin.js.JsModule
+
 /**
  * Defines the interface for data sources, which turn arbitrary data into a
  * [EntityCollection] for generic consumption. This object is an interface

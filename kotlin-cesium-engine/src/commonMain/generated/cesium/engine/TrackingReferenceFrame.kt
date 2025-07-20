@@ -4,6 +4,8 @@
 
 package cesium.engine
 
+import kotlin.js.JsModule
+
 /**
  * Constants for identifying well-known tracking reference frames.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#TrackingReferenceFrame">Online Documentation</a>

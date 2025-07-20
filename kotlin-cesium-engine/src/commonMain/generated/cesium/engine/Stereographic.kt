@@ -4,6 +4,9 @@
 
 package cesium.engine
 
+import kotlin.js.JsModule
+import kotlin.js.definedExternally
+
 /**
  * Represents a point in stereographic coordinates, which can be obtained by projecting a cartesian coordinate from one pole onto a tangent plane at the other pole.
  * The stereographic projection faithfully represents the relative directions of all great circles passing through its center point.

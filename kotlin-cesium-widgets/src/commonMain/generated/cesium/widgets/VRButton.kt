@@ -6,6 +6,8 @@ package cesium.widgets
 
 import cesium.engine.Scene
 import web.dom.Element
+import kotlin.js.JsModule
+import kotlin.js.definedExternally
 
 /**
  * A single button widget for toggling vr mode.

@@ -5,6 +5,8 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
+import kotlin.js.JsModule
+import kotlin.js.definedExternally
 
 /**
  * A plane tangent to the provided ellipsoid at the provided origin.

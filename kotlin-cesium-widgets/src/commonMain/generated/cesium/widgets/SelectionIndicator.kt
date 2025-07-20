@@ -6,6 +6,7 @@ package cesium.widgets
 
 import cesium.engine.Scene
 import web.dom.Element
+import kotlin.js.JsModule
 
 /**
  * A widget for displaying an indicator on a selected object.

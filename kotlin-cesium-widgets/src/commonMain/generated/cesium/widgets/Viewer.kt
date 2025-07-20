@@ -11,6 +11,9 @@ import js.promise.Promise
 import seskar.js.JsAsync
 import web.dom.Element
 import web.html.HTMLCanvasElement
+import kotlin.js.JsModule
+import kotlin.js.JsName
+import kotlin.js.definedExternally
 
 /**
  * A base widget for building applications.  It composites all of the standard Cesium widgets into one reusable package.

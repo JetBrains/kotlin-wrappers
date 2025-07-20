@@ -5,6 +5,7 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
+import kotlin.js.JsModule
 
 /**
  * Defines functions for 4th order polynomial functions of one variable with only real coefficients.

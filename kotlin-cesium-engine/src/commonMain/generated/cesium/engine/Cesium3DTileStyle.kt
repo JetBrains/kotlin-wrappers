@@ -4,6 +4,9 @@
 
 package cesium.engine
 
+import kotlin.js.JsModule
+import kotlin.js.definedExternally
+
 /**
  * A style that is applied to a [Cesium3DTileset].
  *

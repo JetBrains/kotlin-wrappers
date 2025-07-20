@@ -5,6 +5,7 @@
 package cesium.widgets
 
 import cesium.engine.DefaultEvent
+import kotlin.js.JsModule
 
 /**
  * A Command is a function with an extra `canExecute` observable property to determine

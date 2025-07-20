@@ -4,6 +4,8 @@
 
 package cesium.engine
 
+import kotlin.js.JsModule
+
 /**
  * A [Visualizer] which maps the [LabelGraphics] instance
  * in [Entity.label] to a [Label].

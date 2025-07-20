@@ -5,6 +5,7 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
+import kotlin.js.JsModule
 
 /**
  * This class implements an I3S sublayer for Building Scene Layer.

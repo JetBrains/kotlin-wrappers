@@ -4,6 +4,9 @@
 
 package cesium.engine
 
+import kotlin.js.JsModule
+import kotlin.js.definedExternally
+
 /**
  * A set of curvilinear 3-dimensional coordinates.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Spherical.html">Online Documentation</a>

@@ -10,6 +10,9 @@ import js.objects.JsPlainObject
 import js.promise.Promise
 import seskar.js.JsAsync
 import web.html.HTMLCanvasElement
+import kotlin.js.JsModule
+import kotlin.js.JsName
+import kotlin.js.definedExternally
 
 /**
  * An [ImageryProvider] that draws a wireframe grid on every tile with controllable background and glow.

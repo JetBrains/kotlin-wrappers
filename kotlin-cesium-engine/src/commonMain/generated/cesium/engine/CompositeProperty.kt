@@ -4,6 +4,9 @@
 
 package cesium.engine
 
+import kotlin.js.JsModule
+import kotlin.js.definedExternally
+
 /**
  * A [Property] which is defined by a [TimeIntervalCollection], where the
  * data property of each [TimeInterval] is another Property instance which is

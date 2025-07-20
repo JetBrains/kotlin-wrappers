@@ -5,6 +5,7 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
+import kotlin.js.JsModule
 
 /**
  * Uses the Tridiagonal Matrix Algorithm, also known as the Thomas Algorithm, to solve

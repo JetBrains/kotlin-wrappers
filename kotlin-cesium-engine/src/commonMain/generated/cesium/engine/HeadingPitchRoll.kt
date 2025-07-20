@@ -4,6 +4,9 @@
 
 package cesium.engine
 
+import kotlin.js.JsModule
+import kotlin.js.definedExternally
+
 /**
  * A rotation expressed as a heading, pitch, and roll. Heading is the rotation about the
  * negative z axis. Pitch is the rotation about the negative y axis. Roll is the rotation about

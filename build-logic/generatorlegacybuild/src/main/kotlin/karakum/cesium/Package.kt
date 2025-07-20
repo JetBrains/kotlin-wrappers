@@ -17,6 +17,9 @@ import js.typedarrays.Float64Array
 import js.typedarrays.TypedArray
 import js.typedarrays.Uint16Array
 import js.typedarrays.Uint8Array
+import kotlin.js.JsName
+import kotlin.js.JsModule
+import kotlin.js.definedExternally
 import seskar.js.JsAsync
 import web.blob.Blob
 import web.canvas.CanvasImageSource

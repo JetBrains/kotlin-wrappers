@@ -5,6 +5,7 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
+import kotlin.js.JsModule
 
 /**
  * A cell from a [VoxelPrimitive].

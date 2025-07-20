@@ -5,6 +5,7 @@
 package cesium.engine
 
 import js.objects.JsPlainObject
+import kotlin.js.JsModule
 
 /**
  * Visualizes a vertex attribute by displaying it as a color for debugging.

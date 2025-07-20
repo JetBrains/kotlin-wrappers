@@ -4,6 +4,8 @@
 
 package cesium.engine
 
+import kotlin.js.JsModule
+
 /**
  * Creates an `AnchorPointDirect` from the given JSON representation
  * @param [anchorPointDirectJson] The input JSON

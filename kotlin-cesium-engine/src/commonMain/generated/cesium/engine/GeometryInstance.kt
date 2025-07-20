@@ -5,6 +5,7 @@
 package cesium.engine
 
 import js.objects.JsPlainObject
+import kotlin.js.JsModule
 
 /**
  * Geometry instancing allows one [Geometry] object to be positions in several

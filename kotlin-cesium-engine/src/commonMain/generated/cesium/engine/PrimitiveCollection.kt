@@ -4,6 +4,9 @@
 
 package cesium.engine
 
+import kotlin.js.JsModule
+import kotlin.js.definedExternally
+
 /**
  * A collection of primitives.  This is most often used with [Scene.primitives],
  * but `PrimitiveCollection` is also a primitive itself so collections can

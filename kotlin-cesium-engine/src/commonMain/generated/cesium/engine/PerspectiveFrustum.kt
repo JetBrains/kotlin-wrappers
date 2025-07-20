@@ -5,6 +5,8 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
+import kotlin.js.JsModule
+import kotlin.js.definedExternally
 
 /**
  * The viewing frustum is defined by 6 planes.

@@ -6,6 +6,8 @@ package cesium.engine
 
 import js.objects.JsPlainObject
 import web.html.HTMLCanvasElement
+import kotlin.js.JsModule
+import kotlin.js.definedExternally
 
 /**
  * Handles user input events. Custom functions can be added to be executed on

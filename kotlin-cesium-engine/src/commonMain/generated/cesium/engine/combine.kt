@@ -4,6 +4,9 @@
 
 package cesium.engine
 
+import kotlin.js.JsModule
+import kotlin.js.definedExternally
+
 /**
  * Merges two objects, copying their properties onto a new combined object. When two objects have the same
  * property, the value of the property on the first object is used.  If either object is undefined,

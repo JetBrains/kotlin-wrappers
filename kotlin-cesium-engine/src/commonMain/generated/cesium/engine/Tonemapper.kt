@@ -4,6 +4,8 @@
 
 package cesium.engine
 
+import kotlin.js.JsModule
+
 /**
  * A tonemapping algorithm when rendering with high dynamic range.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#Tonemapper">Online Documentation</a>

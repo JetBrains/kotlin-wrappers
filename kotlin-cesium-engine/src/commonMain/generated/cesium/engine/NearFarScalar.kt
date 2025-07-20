@@ -5,6 +5,8 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
+import kotlin.js.JsModule
+import kotlin.js.definedExternally
 
 /**
  * Represents a scalar value's lower and upper bound at a near distance and far distance in eye space.

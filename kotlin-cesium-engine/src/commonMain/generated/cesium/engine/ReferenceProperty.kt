@@ -5,6 +5,8 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
+import kotlin.js.JsModule
+import kotlin.js.definedExternally
 
 /**
  * A [Property] which transparently links to another property on a provided object.

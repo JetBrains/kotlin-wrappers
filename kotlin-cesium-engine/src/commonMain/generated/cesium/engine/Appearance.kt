@@ -5,6 +5,8 @@
 package cesium.engine
 
 import js.objects.JsPlainObject
+import kotlin.js.JsModule
+import kotlin.js.definedExternally
 
 /**
  * An appearance defines the full GLSL vertex and fragment shaders and the

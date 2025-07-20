@@ -6,6 +6,8 @@ package cesium.engine
 
 import js.objects.JsPlainObject
 import js.promise.Promise
+import kotlin.js.JsModule
+import kotlin.js.definedExternally
 
 /**
  * An imagery layer that displays tiled image data from a single imagery provider

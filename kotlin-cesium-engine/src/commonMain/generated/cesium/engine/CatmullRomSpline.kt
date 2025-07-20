@@ -6,6 +6,8 @@ package cesium.engine
 
 import js.array.ReadonlyArray
 import js.objects.JsPlainObject
+import kotlin.js.JsModule
+import kotlin.js.definedExternally
 
 /**
  * A Catmull-Rom spline is a cubic spline where the tangent at control points,

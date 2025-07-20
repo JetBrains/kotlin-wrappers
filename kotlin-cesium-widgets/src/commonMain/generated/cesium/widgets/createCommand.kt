@@ -4,6 +4,9 @@
 
 package cesium.widgets
 
+import kotlin.js.JsModule
+import kotlin.js.definedExternally
+
 /**
  * Create a Command from a given function, for use with ViewModels.
  *

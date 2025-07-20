@@ -7,6 +7,9 @@ package cesium.engine
 import js.objects.JsPlainObject
 import js.promise.Promise
 import seskar.js.JsAsync
+import kotlin.js.JsModule
+import kotlin.js.JsName
+import kotlin.js.definedExternally
 
 /**
  * A [DataSource] which processes the GPS Exchange Format (GPX).

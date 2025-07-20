@@ -4,6 +4,9 @@
 
 package cesium.engine
 
+import kotlin.js.JsModule
+import kotlin.js.definedExternally
+
 /**
  * A Plane in Hessian Normal form to be used with [ClippingPlaneCollection].
  * Compatible with mathematics functions in [Plane]

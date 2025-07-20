@@ -5,6 +5,8 @@
 package cesium.engine
 
 import js.objects.JsPlainObject
+import kotlin.js.JsModule
+import kotlin.js.definedExternally
 
 /**
  * An appearance for geometry on the surface of the ellipsoid like [PolygonGeometry]

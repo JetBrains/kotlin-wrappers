@@ -5,6 +5,8 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
+import kotlin.js.JsModule
+import kotlin.js.definedExternally
 
 /**
  * A 3x3 matrix, indexable as a column-major order array.

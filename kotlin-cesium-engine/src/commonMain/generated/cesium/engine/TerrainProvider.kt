@@ -8,6 +8,9 @@ import js.core.Void
 import js.promise.Promise
 import js.typedarrays.TypedArray
 import seskar.js.JsAsync
+import kotlin.js.JsModule
+import kotlin.js.JsName
+import kotlin.js.definedExternally
 
 /**
  * Provides terrain or other geometry for the surface of an ellipsoid.  The surface geometry is

@@ -6,6 +6,8 @@ package cesium.engine
 
 import cesium.engine.Quaternion.Companion.convertPackedArrayForInterpolation
 import js.array.ReadonlyArray
+import kotlin.js.JsModule
+import kotlin.js.definedExternally
 
 /**
  * A set of 4-dimensional coordinates used to represent rotation in 3-dimensional space.

@@ -4,6 +4,9 @@
 
 package cesium.engine
 
+import kotlin.js.JsModule
+import kotlin.js.definedExternally
+
 /**
  * Describes the format in which to request GetFeatureInfo from a Web Map Service (WMS) server.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GetFeatureInfoFormat.html">Online Documentation</a>

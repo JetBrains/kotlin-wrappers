@@ -7,6 +7,8 @@ package cesium.widgets
 import cesium.engine.Proxy
 import js.objects.JsPlainObject
 import web.dom.Element
+import kotlin.js.JsModule
+import kotlin.js.definedExternally
 
 /**
  * A mixin which adds default drag and drop support for CZML files to the Viewer widget.

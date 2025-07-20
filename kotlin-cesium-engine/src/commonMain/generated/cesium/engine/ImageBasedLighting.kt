@@ -5,6 +5,7 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
+import kotlin.js.JsModule
 
 /**
  * Properties for managing image-based lighting on tilesets and models.

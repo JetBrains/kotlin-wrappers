@@ -4,6 +4,9 @@
 
 package cesium.engine
 
+import kotlin.js.JsModule
+import kotlin.js.definedExternally
+
 /**
  * An atmosphere drawn around the limb of the provided ellipsoid. Based on
  * [Display of The Earth Taking Into Account Atmospheric Scattering](http://nishitalab.org/user/nis/cdrom/sig93_nis.pdf).

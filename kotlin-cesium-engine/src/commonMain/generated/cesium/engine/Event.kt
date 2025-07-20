@@ -4,6 +4,9 @@
 
 package cesium.engine
 
+import kotlin.js.JsModule
+import kotlin.js.definedExternally
+
 /**
  * A generic utility class for managing subscribers for a particular event.
  * This class is usually instantiated inside of a container class and

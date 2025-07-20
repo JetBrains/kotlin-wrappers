@@ -7,6 +7,7 @@ package cesium.widgets
 import cesium.engine.*
 import js.array.ReadonlyArray
 import web.html.HTMLElement
+import kotlin.js.JsModule
 
 /**
  * The view model for [Cesium3DTilesInspector].

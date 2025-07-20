@@ -4,6 +4,8 @@
 
 package cesium.engine
 
+import kotlin.js.JsModule
+
 /**
  * A singleton that contains all of the servers that are trusted. Credentials will be sent with
  * any requests to these servers.

@@ -7,6 +7,7 @@ package cesium.engine
 import js.array.ReadonlyArray
 import js.objects.JsPlainObject
 import web.html.HTMLImageElement
+import kotlin.js.JsModule
 
 /**
  * A policy for discarding tile images that match a known image containing a

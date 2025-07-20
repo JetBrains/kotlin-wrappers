@@ -4,6 +4,8 @@
 
 package cesium.engine
 
+import kotlin.js.JsModule
+
 /**
  * Converts an object representing a set of name/value pairs into a query string,
  * with names and values encoded properly for use in a URL.  Values that are arrays

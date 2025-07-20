@@ -4,6 +4,9 @@
 
 package cesium.engine
 
+import kotlin.js.JsModule
+import kotlin.js.definedExternally
+
 /**
  * Clones an object, returning a new object containing the same properties.
  * @param [object] The object to clone.

@@ -4,6 +4,8 @@
 
 package cesium.engine
 
+import kotlin.js.JsModule
+
 /**
  * Properties for controlling globe translucency.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GlobeTranslucency.html">Online Documentation</a>

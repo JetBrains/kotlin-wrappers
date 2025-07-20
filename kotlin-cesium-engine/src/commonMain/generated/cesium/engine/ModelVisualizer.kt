@@ -4,6 +4,8 @@
 
 package cesium.engine
 
+import kotlin.js.JsModule
+
 /**
  * A [Visualizer] which maps [Entity.model] to a [Model].
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ModelVisualizer.html">Online Documentation</a>

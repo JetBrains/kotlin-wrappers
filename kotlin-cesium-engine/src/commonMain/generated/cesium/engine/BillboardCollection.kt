@@ -5,6 +5,8 @@
 package cesium.engine
 
 import js.objects.JsPlainObject
+import kotlin.js.JsModule
+import kotlin.js.definedExternally
 
 /**
  * A renderable collection of billboards.  Billboards are viewport-aligned

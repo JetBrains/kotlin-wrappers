@@ -4,6 +4,9 @@
 
 package cesium.engine
 
+import kotlin.js.JsModule
+import kotlin.js.definedExternally
+
 /**
  * A [GeometryUpdater] for ellipsoids.
  * Clients do not normally create this class directly, but instead rely on [DataSourceDisplay].

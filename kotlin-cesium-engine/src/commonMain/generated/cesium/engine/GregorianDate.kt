@@ -4,6 +4,9 @@
 
 package cesium.engine
 
+import kotlin.js.JsModule
+import kotlin.js.definedExternally
+
 /**
  * Represents a Gregorian date in a more precise format than the JavaScript Date object.
  * In addition to submillisecond precision, this object can also represent leap seconds.

@@ -4,6 +4,9 @@
 
 package cesium.engine
 
+import kotlin.js.JsModule
+import kotlin.js.definedExternally
+
 /**
  * Math functions.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Math.html">Online Documentation</a>

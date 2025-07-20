@@ -7,6 +7,7 @@ package cesium.engine
 import js.core.Void
 import js.objects.JsPlainObject
 import js.promise.Promise
+import kotlin.js.JsModule
 
 /**
  * <div class="notice">

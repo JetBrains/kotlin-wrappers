@@ -8,6 +8,9 @@ import js.array.ReadonlyArray
 import js.core.Void
 import js.promise.Promise
 import seskar.js.JsAsync
+import kotlin.js.JsModule
+import kotlin.js.JsName
+import kotlin.js.definedExternally
 
 /**
  * This class implements an I3S layer. In CesiumJS each I3SLayer creates a Cesium3DTileset.

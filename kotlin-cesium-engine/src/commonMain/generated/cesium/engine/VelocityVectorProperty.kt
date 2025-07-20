@@ -4,6 +4,9 @@
 
 package cesium.engine
 
+import kotlin.js.JsModule
+import kotlin.js.definedExternally
+
 /**
  * A [Property] which evaluates to a [Cartesian3] vector
  * based on the velocity of the provided [PositionProperty].

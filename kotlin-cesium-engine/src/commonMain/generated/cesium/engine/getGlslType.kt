@@ -4,6 +4,8 @@
 
 package cesium.engine
 
+import kotlin.js.JsModule
+
 /**
  * Returns the type that the given class property has in a GLSL shader.
  *

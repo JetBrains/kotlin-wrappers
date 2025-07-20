@@ -5,6 +5,7 @@
 package cesium.engine
 
 import js.objects.JsPlainObject
+import kotlin.js.JsModule
 
 /**
  * Variables for a Strictly Positive-Definite Correlation Function.

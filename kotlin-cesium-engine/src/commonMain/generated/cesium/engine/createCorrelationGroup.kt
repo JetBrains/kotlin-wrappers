@@ -4,6 +4,8 @@
 
 package cesium.engine
 
+import kotlin.js.JsModule
+
 /**
  * Creates a `CorrelationGroup` from the given JSON representation
  * @param [correlationGroupJson] The input JSON

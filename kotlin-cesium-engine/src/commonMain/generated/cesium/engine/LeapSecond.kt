@@ -4,6 +4,9 @@
 
 package cesium.engine
 
+import kotlin.js.JsModule
+import kotlin.js.definedExternally
+
 /**
  * Describes a single leap second, which is constructed from a [JulianDate] and a
  * numerical offset representing the number of seconds TAI is ahead of the UTC time standard.

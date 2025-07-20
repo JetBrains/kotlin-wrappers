@@ -10,6 +10,9 @@ import js.promise.Promise
 import seskar.js.JsAsync
 import web.dom.Element
 import web.html.HTMLCanvasElement
+import kotlin.js.JsModule
+import kotlin.js.JsName
+import kotlin.js.definedExternally
 
 /**
  * A widget containing a Cesium scene.

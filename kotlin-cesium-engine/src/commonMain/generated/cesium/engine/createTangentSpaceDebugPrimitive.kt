@@ -5,6 +5,7 @@
 package cesium.engine
 
 import js.objects.JsPlainObject
+import kotlin.js.JsModule
 
 /**
  * Creates a [Primitive] to visualize well-known vector vertex attributes:

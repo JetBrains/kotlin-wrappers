@@ -6,6 +6,7 @@ package cesium.engine
 
 import js.array.ReadonlyArray
 import js.objects.JsPlainObject
+import kotlin.js.JsModule
 
 /**
  * Draws the outline of the camera's view frustum.

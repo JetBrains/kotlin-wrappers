@@ -4,6 +4,9 @@
 
 package cesium.engine
 
+import kotlin.js.JsModule
+import kotlin.js.definedExternally
+
 /**
  * Functions for computing the intersection between geometries such as rays, planes, triangles, and ellipsoids.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/IntersectionTests.html">Online Documentation</a>

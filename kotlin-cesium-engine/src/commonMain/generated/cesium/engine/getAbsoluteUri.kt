@@ -4,6 +4,9 @@
 
 package cesium.engine
 
+import kotlin.js.JsModule
+import kotlin.js.definedExternally
+
 /**
  * Given a relative Uri and a base Uri, returns the absolute Uri of the relative Uri.
  * ```

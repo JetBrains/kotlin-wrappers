@@ -4,6 +4,9 @@
 
 package cesium.engine
 
+import kotlin.js.JsModule
+import kotlin.js.definedExternally
+
 /**
  * A spline that evaluates to a constant value. Although this follows the [Spline] interface,
  * it does not maintain an internal array of times since its value never changes.

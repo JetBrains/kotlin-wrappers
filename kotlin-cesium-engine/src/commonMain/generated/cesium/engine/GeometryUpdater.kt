@@ -6,6 +6,7 @@ package cesium.engine
 
 import js.array.ReadonlyArray
 import js.objects.JsPlainObject
+import kotlin.js.JsModule
 
 /**
  * An abstract class for updating geometry entities.

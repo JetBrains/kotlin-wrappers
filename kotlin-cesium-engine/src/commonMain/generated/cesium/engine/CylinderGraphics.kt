@@ -4,6 +4,9 @@
 
 package cesium.engine
 
+import kotlin.js.JsModule
+import kotlin.js.definedExternally
+
 /**
  * Describes a cylinder, truncated cone, or cone defined by a length, top radius, and bottom radius.
  * The center position and orientation are determined by the containing [Entity].

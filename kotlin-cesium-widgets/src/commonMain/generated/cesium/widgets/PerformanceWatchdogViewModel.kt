@@ -5,6 +5,7 @@
 package cesium.widgets
 
 import cesium.engine.Scene
+import kotlin.js.JsModule
 
 /**
  * The view model for [PerformanceWatchdog].

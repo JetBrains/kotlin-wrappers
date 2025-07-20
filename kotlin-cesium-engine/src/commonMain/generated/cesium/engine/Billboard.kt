@@ -7,6 +7,8 @@ package cesium.engine
 import js.objects.JsPlainObject
 import web.html.HTMLCanvasElement
 import web.html.HTMLImageElement
+import kotlin.js.JsModule
+import kotlin.js.definedExternally
 
 /**
  * <div class="notice">

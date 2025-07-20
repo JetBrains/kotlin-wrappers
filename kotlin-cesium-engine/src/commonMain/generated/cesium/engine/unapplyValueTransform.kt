@@ -4,6 +4,8 @@
 
 package cesium.engine
 
+import kotlin.js.JsModule
+
 /**
  * Returns a shader statement that applies the inverse of the
  * value transform to the given value, based on the given offset

@@ -5,6 +5,8 @@
 package cesium.engine
 
 import web.html.HTMLElement
+import kotlin.js.JsModule
+import kotlin.js.definedExternally
 
 /**
  * A credit contains data pertaining to how to display attributions/credits for certain content on the screen.

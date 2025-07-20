@@ -4,6 +4,9 @@
 
 package cesium.engine
 
+import kotlin.js.JsModule
+import kotlin.js.definedExternally
+
 /**
  * A general purpose visualizer for geometry represented by [Primitive] instances.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GeometryVisualizer.html">Online Documentation</a>

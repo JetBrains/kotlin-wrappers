@@ -4,6 +4,9 @@
 
 package cesium.engine
 
+import kotlin.js.JsModule
+import kotlin.js.definedExternally
+
 /**
  * A convenience object that simplifies the common pattern of attaching event listeners
  * to several events, then removing all those listeners at once later, for example, in

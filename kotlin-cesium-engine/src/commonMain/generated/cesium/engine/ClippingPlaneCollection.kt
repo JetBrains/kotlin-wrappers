@@ -6,6 +6,8 @@ package cesium.engine
 
 import js.array.ReadonlyArray
 import js.objects.JsPlainObject
+import kotlin.js.JsModule
+import kotlin.js.definedExternally
 
 /**
  * Specifies a set of clipping planes. Clipping planes selectively disable rendering in a region on the

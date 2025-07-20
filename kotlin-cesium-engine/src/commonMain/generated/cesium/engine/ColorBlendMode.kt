@@ -4,6 +4,8 @@
 
 package cesium.engine
 
+import kotlin.js.JsModule
+
 /**
  * Defines different modes for blending between a target color and a primitive's source color.
  *

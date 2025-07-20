@@ -6,6 +6,8 @@ package cesium.engine
 
 import js.array.ReadonlyArray
 import js.typedarrays.Float64Array
+import kotlin.js.JsModule
+import kotlin.js.definedExternally
 
 /**
  * A feature of a [Cesium3DTileset].

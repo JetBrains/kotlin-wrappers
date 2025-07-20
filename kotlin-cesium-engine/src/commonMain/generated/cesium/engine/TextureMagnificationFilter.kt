@@ -4,6 +4,8 @@
 
 package cesium.engine
 
+import kotlin.js.JsModule
+
 /**
  * Enumerates all possible filters used when magnifying WebGL textures.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#TextureMagnificationFilter">Online Documentation</a>

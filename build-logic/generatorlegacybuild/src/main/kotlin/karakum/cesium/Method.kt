@@ -82,6 +82,14 @@ internal class Method(
             }
             .joinToString("\n\n")
 
+        // WA for WASM
+        /*
+        declaration.replace(
+            "\nsuspend ",
+            "@Suppress(\"WRONG_EXTERNAL_DECLARATION\")\nsuspend ",
+        )
+        */
+
         return doc + declaration
     }
 }

@@ -4,6 +4,8 @@
 
 package cesium.engine
 
+import kotlin.js.JsModule
+
 /**
  * A [MaterialProperty] that maps to stripe [Material] uniforms.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/StripeMaterialProperty.html">Online Documentation</a>

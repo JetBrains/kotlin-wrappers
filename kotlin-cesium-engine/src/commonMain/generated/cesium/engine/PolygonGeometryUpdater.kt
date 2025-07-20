@@ -4,6 +4,8 @@
 
 package cesium.engine
 
+import kotlin.js.JsModule
+
 /**
  * A [GeometryUpdater] for polygons.
  * Clients do not normally create this class directly, but instead rely on [DataSourceDisplay].

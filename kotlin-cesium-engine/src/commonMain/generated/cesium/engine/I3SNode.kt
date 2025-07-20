@@ -9,6 +9,8 @@ import js.core.Void
 import js.objects.JsPlainObject
 import js.promise.Promise
 import seskar.js.JsAsync
+import kotlin.js.JsModule
+import kotlin.js.JsName
 
 /**
  * This class implements an I3S Node. In CesiumJS each I3SNode creates a Cesium3DTile.

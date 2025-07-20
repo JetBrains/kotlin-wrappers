@@ -4,6 +4,8 @@
 
 package cesium.engine
 
+import kotlin.js.JsModule
+
 /**
  * An enum of metadata types. These metadata types are containers containing
  * one or more components of type [MetadataComponentType]

@@ -5,6 +5,7 @@
 package cesium.engine
 
 import web.html.HTMLImageElement
+import kotlin.js.JsModule
 
 /**
  * A [TileDiscardPolicy] specifying that tile images should never be discard.

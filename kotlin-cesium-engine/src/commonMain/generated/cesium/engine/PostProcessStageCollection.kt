@@ -4,6 +4,8 @@
 
 package cesium.engine
 
+import kotlin.js.JsModule
+
 /**
  * A collection of [PostProcessStage]s and/or [PostProcessStageComposite]s.
  *

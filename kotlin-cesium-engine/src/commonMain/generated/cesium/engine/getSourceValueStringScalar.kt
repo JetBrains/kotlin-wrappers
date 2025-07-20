@@ -4,6 +4,8 @@
 
 package cesium.engine
 
+import kotlin.js.JsModule
+
 /**
  * Creates a shader statement that returns the value of the specified
  * property, normalized to the range [0, 1].

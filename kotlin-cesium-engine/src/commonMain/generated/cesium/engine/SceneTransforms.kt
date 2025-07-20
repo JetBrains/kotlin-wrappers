@@ -4,6 +4,9 @@
 
 package cesium.engine
 
+import kotlin.js.JsModule
+import kotlin.js.definedExternally
+
 /**
  * Functions that do scene-dependent transforms between rendering-related coordinate systems.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/SceneTransforms.html">Online Documentation</a>

@@ -5,6 +5,8 @@
 package cesium.engine
 
 import cesium.engine.Plane.Companion.transform
+import kotlin.js.JsModule
+import kotlin.js.definedExternally
 
 /**
  * A plane in Hessian Normal Form defined by

@@ -4,6 +4,8 @@
 
 package cesium.engine
 
+import kotlin.js.JsModule
+
 /**
  * Formats an error object into a String.  If available, uses name, message, and stack
  * properties, otherwise, falls back on toString().

@@ -5,6 +5,8 @@
 package cesium.widgets
 
 import web.dom.Element
+import kotlin.js.JsModule
+import kotlin.js.definedExternally
 
 /**
  * A single button widget for toggling fullscreen mode.

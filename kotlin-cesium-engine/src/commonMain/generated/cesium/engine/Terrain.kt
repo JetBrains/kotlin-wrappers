@@ -6,6 +6,8 @@ package cesium.engine
 
 import js.objects.JsPlainObject
 import js.promise.Promise
+import kotlin.js.JsModule
+import kotlin.js.definedExternally
 
 /**
  * A helper to manage async operations of a terrain provider.

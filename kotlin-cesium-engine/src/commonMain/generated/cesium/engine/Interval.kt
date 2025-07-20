@@ -4,6 +4,9 @@
 
 package cesium.engine
 
+import kotlin.js.JsModule
+import kotlin.js.definedExternally
+
 /**
  * Represents the closed interval [start, stop].
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Interval.html">Online Documentation</a>

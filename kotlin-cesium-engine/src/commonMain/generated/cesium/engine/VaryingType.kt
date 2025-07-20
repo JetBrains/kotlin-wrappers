@@ -4,6 +4,8 @@
 
 package cesium.engine
 
+import kotlin.js.JsModule
+
 /**
  * An enum for the GLSL varying types. These can be used for declaring varyings
  * in [CustomShader]

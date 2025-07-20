@@ -5,6 +5,7 @@
 package cesium.engine
 
 import js.objects.JsPlainObject
+import kotlin.js.JsModule
 
 /**
  * A particle emitted by a [ParticleSystem].

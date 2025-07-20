@@ -7,6 +7,9 @@ package cesium.engine
 import js.array.ReadonlyArray
 import js.promise.Promise
 import seskar.js.JsAsync
+import kotlin.js.JsModule
+import kotlin.js.JsName
+import kotlin.js.definedExternally
 
 /**
  * Initiates a terrain height query for an array of [Cartographic] positions by

@@ -6,6 +6,8 @@ package cesium.engine
 
 import js.array.ReadonlyArray
 import js.date.Date
+import kotlin.js.JsModule
+import kotlin.js.definedExternally
 
 /**
  * Represents an astronomical Julian date, which is the number of days since noon on January 1, -4712 (4713 BC).

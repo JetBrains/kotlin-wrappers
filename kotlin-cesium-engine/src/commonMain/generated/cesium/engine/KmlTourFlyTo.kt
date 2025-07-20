@@ -4,6 +4,9 @@
 
 package cesium.engine
 
+import kotlin.js.JsModule
+import kotlin.js.definedExternally
+
 /**
  * Transitions the KmlTour to the next destination. This transition is facilitated
  * using a specified flyToMode over a given number of seconds.

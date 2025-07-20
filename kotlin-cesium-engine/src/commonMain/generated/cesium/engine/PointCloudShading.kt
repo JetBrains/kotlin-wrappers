@@ -4,6 +4,8 @@
 
 package cesium.engine
 
+import kotlin.js.JsModule
+
 /**
  * Options for performing point attenuation based on geometric error when rendering
  * point clouds using 3D Tiles.

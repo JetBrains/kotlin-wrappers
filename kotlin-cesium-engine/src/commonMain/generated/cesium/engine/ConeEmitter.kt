@@ -4,6 +4,9 @@
 
 package cesium.engine
 
+import kotlin.js.JsModule
+import kotlin.js.definedExternally
+
 /**
  * A ParticleEmitter that emits particles within a cone.
  * Particles will be positioned at the tip of the cone and have initial velocities going towards the base.

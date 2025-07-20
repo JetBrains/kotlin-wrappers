@@ -4,6 +4,9 @@
 
 package cesium.engine
 
+import kotlin.js.JsModule
+import kotlin.js.definedExternally
+
 /**
  * A utility object for tracking an entity with the camera.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/EntityView.html">Online Documentation</a>

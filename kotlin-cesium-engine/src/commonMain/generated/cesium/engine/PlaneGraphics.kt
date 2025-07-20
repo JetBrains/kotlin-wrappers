@@ -4,6 +4,9 @@
 
 package cesium.engine
 
+import kotlin.js.JsModule
+import kotlin.js.definedExternally
+
 /**
  * Describes a plane. The center position and orientation are determined by the containing [Entity].
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PlaneGraphics.html">Online Documentation</a>

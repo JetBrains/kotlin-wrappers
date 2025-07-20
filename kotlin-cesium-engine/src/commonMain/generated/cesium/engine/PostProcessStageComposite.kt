@@ -6,6 +6,7 @@ package cesium.engine
 
 import js.array.ReadonlyArray
 import js.objects.JsPlainObject
+import kotlin.js.JsModule
 
 /**
  * A collection of [PostProcessStage]s or other post-process composite stages that execute together logically.

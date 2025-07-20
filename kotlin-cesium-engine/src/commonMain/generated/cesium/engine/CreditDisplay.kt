@@ -5,6 +5,8 @@
 package cesium.engine
 
 import web.html.HTMLElement
+import kotlin.js.JsModule
+import kotlin.js.definedExternally
 
 /**
  * The credit display is responsible for displaying credits on screen.

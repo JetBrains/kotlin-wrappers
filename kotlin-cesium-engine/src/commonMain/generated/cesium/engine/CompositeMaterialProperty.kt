@@ -4,6 +4,8 @@
 
 package cesium.engine
 
+import kotlin.js.JsModule
+
 /**
  * A [CompositeProperty] which is also a [MaterialProperty].
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CompositeMaterialProperty.html">Online Documentation</a>

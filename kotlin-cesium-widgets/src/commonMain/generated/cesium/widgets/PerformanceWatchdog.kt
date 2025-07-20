@@ -7,6 +7,8 @@ package cesium.widgets
 import cesium.engine.Scene
 import js.objects.JsPlainObject
 import web.dom.Element
+import kotlin.js.JsModule
+import kotlin.js.definedExternally
 
 /**
  * Monitors performance of the application and displays a message if poor performance is detected.

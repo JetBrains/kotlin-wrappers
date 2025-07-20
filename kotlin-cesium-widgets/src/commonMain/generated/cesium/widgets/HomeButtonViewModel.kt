@@ -5,6 +5,8 @@
 package cesium.widgets
 
 import cesium.engine.Scene
+import kotlin.js.JsModule
+import kotlin.js.definedExternally
 
 /**
  * The view model for [HomeButton].

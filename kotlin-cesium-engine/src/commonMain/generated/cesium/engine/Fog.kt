@@ -4,6 +4,8 @@
 
 package cesium.engine
 
+import kotlin.js.JsModule
+
 /**
  * Blends the atmosphere to geometry far from the camera for horizon views. Allows for additional
  * performance improvements by rendering less geometry and dispatching less terrain requests.

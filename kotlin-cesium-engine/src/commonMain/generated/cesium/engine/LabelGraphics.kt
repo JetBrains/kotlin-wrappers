@@ -4,6 +4,9 @@
 
 package cesium.engine
 
+import kotlin.js.JsModule
+import kotlin.js.definedExternally
+
 /**
  * Describes a two dimensional label located at the position of the containing [Entity].
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/LabelGraphics.html">Online Documentation</a>

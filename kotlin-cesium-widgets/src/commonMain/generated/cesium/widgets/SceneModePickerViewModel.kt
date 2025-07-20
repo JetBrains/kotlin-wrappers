@@ -6,6 +6,8 @@ package cesium.widgets
 
 import cesium.engine.Scene
 import cesium.engine.SceneMode
+import kotlin.js.JsModule
+import kotlin.js.definedExternally
 
 /**
  * The view model for [SceneModePicker].

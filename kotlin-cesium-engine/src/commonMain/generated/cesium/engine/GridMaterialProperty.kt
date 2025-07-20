@@ -4,6 +4,8 @@
 
 package cesium.engine
 
+import kotlin.js.JsModule
+
 /**
  * A [MaterialProperty] that maps to grid [Material] uniforms.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GridMaterialProperty.html">Online Documentation</a>

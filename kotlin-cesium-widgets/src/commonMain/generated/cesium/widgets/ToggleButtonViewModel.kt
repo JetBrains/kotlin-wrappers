@@ -4,6 +4,8 @@
 
 package cesium.widgets
 
+import kotlin.js.JsModule
+
 /**
  * A view model which exposes the properties of a toggle button.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ToggleButtonViewModel.html">Online Documentation</a>

@@ -4,6 +4,8 @@
 
 package cesium.engine
 
+import kotlin.js.JsModule
+
 /**
  * The blending state combines [BlendEquation] and [BlendFunction] and the
  * `enabled` flag to define the full blending state for combining source and

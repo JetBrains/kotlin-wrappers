@@ -9,6 +9,9 @@ import js.objects.JsPlainObject
 import js.promise.Promise
 import seskar.js.JsAsync
 import web.canvas.CanvasImageSource
+import kotlin.js.JsModule
+import kotlin.js.JsName
+import kotlin.js.definedExternally
 
 /**
  * A [Resource] instance that encapsulates Cesium ion asset access.

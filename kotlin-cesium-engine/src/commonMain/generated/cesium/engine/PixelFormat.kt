@@ -4,6 +4,8 @@
 
 package cesium.engine
 
+import kotlin.js.JsModule
+
 /**
  * The format of a pixel, i.e., the number of components it has and what they represent.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#PixelFormat">Online Documentation</a>

@@ -4,6 +4,9 @@
 
 package cesium.engine
 
+import kotlin.js.JsModule
+import kotlin.js.definedExternally
+
 /**
  * A ParticleEmitter that emits particles within a sphere.
  * Particles will be positioned randomly within the sphere and have initial velocities emanating from the center of the sphere.

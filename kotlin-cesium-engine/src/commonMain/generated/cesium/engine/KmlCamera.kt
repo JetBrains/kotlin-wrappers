@@ -4,6 +4,8 @@
 
 package cesium.engine
 
+import kotlin.js.JsModule
+
 /**
  * Representation of <Camera> from KML
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/KmlCamera.html">Online Documentation</a>

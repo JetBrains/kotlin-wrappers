@@ -4,6 +4,9 @@
 
 package cesium.engine
 
+import kotlin.js.JsModule
+import kotlin.js.definedExternally
+
 /**
  * A [DataSource] implementation which can be used to manually manage a group of entities.
  * ```

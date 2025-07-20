@@ -4,6 +4,8 @@
 
 package cesium.engine
 
+import kotlin.js.JsModule
+
 /**
  * Represents a burst of [Particle]s from a [ParticleSystem] at a given time in the systems lifetime.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ParticleBurst.html">Online Documentation</a>

@@ -4,6 +4,9 @@
 
 package cesium.engine
 
+import kotlin.js.JsModule
+import kotlin.js.definedExternally
+
 /**
  * Represents a ray that extends infinitely from the provided origin in the provided direction.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Ray.html">Online Documentation</a>

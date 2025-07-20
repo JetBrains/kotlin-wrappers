@@ -4,6 +4,8 @@
 
 package cesium.widgets
 
+import kotlin.js.JsModule
+
 /**
  * The view model for [NavigationHelpButton].
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/NavigationHelpButtonViewModel.html">Online Documentation</a>

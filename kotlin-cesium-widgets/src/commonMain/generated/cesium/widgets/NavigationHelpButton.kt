@@ -6,6 +6,7 @@ package cesium.widgets
 
 import js.objects.JsPlainObject
 import web.dom.Element
+import kotlin.js.JsModule
 
 /**
  * The NavigationHelpButton is a single button widget for displaying instructions for

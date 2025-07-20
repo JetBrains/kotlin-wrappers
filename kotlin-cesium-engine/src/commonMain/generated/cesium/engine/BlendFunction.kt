@@ -4,6 +4,8 @@
 
 package cesium.engine
 
+import kotlin.js.JsModule
+
 /**
  * Determines how blending factors are computed.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#BlendFunction">Online Documentation</a>

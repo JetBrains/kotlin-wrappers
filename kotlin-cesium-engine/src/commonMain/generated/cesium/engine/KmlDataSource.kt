@@ -12,6 +12,9 @@ import web.blob.Blob
 import web.dom.Document
 import web.dom.Element
 import web.html.HTMLCanvasElement
+import kotlin.js.JsModule
+import kotlin.js.JsName
+import kotlin.js.definedExternally
 
 /**
  * A [DataSource] which processes Keyhole Markup Language 2.2 (KML).

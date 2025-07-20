@@ -7,6 +7,7 @@ package cesium.widgets
 import cesium.engine.Clock
 import cesium.engine.JulianDate
 import web.dom.Element
+import kotlin.js.JsModule
 
 /**
  * The Timeline is a widget for displaying and controlling the current scene time.

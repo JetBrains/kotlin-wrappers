@@ -4,6 +4,9 @@
 
 package cesium.engine
 
+import kotlin.js.JsModule
+import kotlin.js.definedExternally
+
 /**
  * A tiling scheme for geometry or imagery on the surface of an ellipsoid.  At level-of-detail zero,
  * the coarsest, least-detailed level, the number of tiles is configurable.

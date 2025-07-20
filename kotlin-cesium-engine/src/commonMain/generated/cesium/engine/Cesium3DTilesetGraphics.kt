@@ -4,6 +4,9 @@
 
 package cesium.engine
 
+import kotlin.js.JsModule
+import kotlin.js.definedExternally
+
 /**
  * A 3D Tiles tileset represented by an [Entity].
  * The tileset modelMatrix is determined by the containing Entity position and orientation

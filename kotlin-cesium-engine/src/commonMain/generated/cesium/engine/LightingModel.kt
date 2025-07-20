@@ -4,6 +4,8 @@
 
 package cesium.engine
 
+import kotlin.js.JsModule
+
 /**
  * The lighting model to use for lighting a [Model].
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#LightingModel">Online Documentation</a>

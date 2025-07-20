@@ -4,6 +4,8 @@
 
 package cesium.engine
 
+import kotlin.js.JsModule
+
 /**
  * <div class="notice">
  * Use [Model.getNode] to get a node from a loaded model. Do not call the constructor directly.

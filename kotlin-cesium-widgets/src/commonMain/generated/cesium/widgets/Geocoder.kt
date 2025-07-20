@@ -9,6 +9,7 @@ import cesium.engine.Scene
 import js.array.ReadonlyArray
 import js.objects.JsPlainObject
 import web.dom.Element
+import kotlin.js.JsModule
 
 /**
  * A widget for finding addresses and landmarks, and flying the camera to them.  Geocoding is

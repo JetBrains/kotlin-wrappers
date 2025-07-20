@@ -5,6 +5,8 @@
 package cesium.engine
 
 import js.typedarrays.Uint8Array
+import kotlin.js.JsModule
+import kotlin.js.definedExternally
 
 /**
  * Value and type information for per-instance geometry attribute that determines if the geometry instance will be shown.

@@ -4,6 +4,9 @@
 
 package cesium.engine
 
+import kotlin.js.JsModule
+import kotlin.js.definedExternally
+
 /**
  * Describes a polyline. The first two positions define a line segment,
  * and each additional position defines a line segment from the previous position. The segments

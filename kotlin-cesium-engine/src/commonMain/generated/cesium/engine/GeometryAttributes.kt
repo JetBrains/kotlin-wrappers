@@ -4,6 +4,8 @@
 
 package cesium.engine
 
+import kotlin.js.JsModule
+
 /**
  * Attributes, which make up a geometry's vertices.  Each property in this object corresponds to a
  * [GeometryAttribute] containing the attribute's data.

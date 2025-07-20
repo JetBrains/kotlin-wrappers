@@ -5,6 +5,7 @@
 package cesium.widgets
 
 import cesium.engine.I3SDataProvider
+import kotlin.js.JsModule
 
 /**
  * The view model for [I3SBuildingSceneLayerExplorer].

@@ -6,6 +6,7 @@ package cesium.engine
 
 import js.array.ReadonlyArray
 import js.objects.JsPlainObject
+import kotlin.js.JsModule
 
 /**
  * Runs a post-process stage on either the texture rendered by the scene or the output of a previous post-process stage.

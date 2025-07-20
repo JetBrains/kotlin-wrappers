@@ -4,6 +4,8 @@
 
 package cesium.engine
 
+import kotlin.js.JsModule
+
 /**
  * A [MaterialProperty] that maps to polyline outline [Material] uniforms.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PolylineOutlineMaterialProperty.html">Online Documentation</a>

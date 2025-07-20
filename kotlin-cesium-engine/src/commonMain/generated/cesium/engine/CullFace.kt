@@ -4,6 +4,8 @@
 
 package cesium.engine
 
+import kotlin.js.JsModule
+
 /**
  * Determines which triangles, if any, are culled.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#CullFace">Online Documentation</a>

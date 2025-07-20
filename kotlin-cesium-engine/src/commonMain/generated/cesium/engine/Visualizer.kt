@@ -4,6 +4,8 @@
 
 package cesium.engine
 
+import kotlin.js.JsModule
+
 /**
  * Defines the interface for visualizers. Visualizers are plug-ins to
  * [DataSourceDisplay] that render data associated with
