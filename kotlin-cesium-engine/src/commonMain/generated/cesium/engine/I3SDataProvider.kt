@@ -168,6 +168,7 @@ external class I3SDataProvider(
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/I3SDataProvider.html#filterByAttributes">Online Documentation</a>
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun filterByAttributes(filters: ReadonlyArray<I3SNode.AttributeFilter>? = definedExternally)
 
     @JsName("filterByAttributes")
@@ -254,6 +255,7 @@ external class I3SDataProvider(
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/I3SDataProvider.html#.fromUrl">Online Documentation</a>
          */
         @JsAsync
+        @Suppress("WRONG_EXTERNAL_DECLARATION")
         suspend fun fromUrl(
             url: Resource,
             options: ConstructorOptions,

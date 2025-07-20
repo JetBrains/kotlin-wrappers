@@ -52,12 +52,14 @@ external class DataSourceCollection() {
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/DataSourceCollection.html#add">Online Documentation</a>
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun add(dataSource: DataSource): DataSource
 
     @JsName("add")
     fun addAsync(dataSource: DataSource): Promise<DataSource>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun add(dataSource: Promise<DataSource>): DataSource
 
     @JsName("add")

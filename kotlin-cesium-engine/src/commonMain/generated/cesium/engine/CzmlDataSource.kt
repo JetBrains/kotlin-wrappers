@@ -87,6 +87,7 @@ external class CzmlDataSource(
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CzmlDataSource.html#process">Online Documentation</a>
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun process(
         czml: Resource,
         options: LoadOptions? = definedExternally,
@@ -99,6 +100,7 @@ external class CzmlDataSource(
     ): Promise<CzmlDataSource>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun process(
         czml: String,
         options: LoadOptions? = definedExternally,
@@ -111,6 +113,7 @@ external class CzmlDataSource(
     ): Promise<CzmlDataSource>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun process(
         czml: Any,
         options: LoadOptions? = definedExternally,
@@ -130,6 +133,7 @@ external class CzmlDataSource(
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CzmlDataSource.html#load">Online Documentation</a>
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun load(
         czml: Resource,
         options: LoadOptions? = definedExternally,
@@ -142,6 +146,7 @@ external class CzmlDataSource(
     ): Promise<CzmlDataSource>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun load(
         czml: String,
         options: LoadOptions? = definedExternally,
@@ -154,6 +159,7 @@ external class CzmlDataSource(
     ): Promise<CzmlDataSource>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun load(
         czml: Any,
         options: LoadOptions? = definedExternally,
@@ -185,6 +191,7 @@ external class CzmlDataSource(
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CzmlDataSource.html#.load">Online Documentation</a>
          */
         @JsAsync
+        @Suppress("WRONG_EXTERNAL_DECLARATION")
         suspend fun load(
             czml: Resource,
             options: LoadOptions? = definedExternally,
@@ -197,6 +204,7 @@ external class CzmlDataSource(
         ): Promise<CzmlDataSource>
 
         @JsAsync
+        @Suppress("WRONG_EXTERNAL_DECLARATION")
         suspend fun load(
             czml: String,
             options: LoadOptions? = definedExternally,
@@ -209,6 +217,7 @@ external class CzmlDataSource(
         ): Promise<CzmlDataSource>
 
         @JsAsync
+        @Suppress("WRONG_EXTERNAL_DECLARATION")
         suspend fun load(
             czml: Any,
             options: LoadOptions? = definedExternally,

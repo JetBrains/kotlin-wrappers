@@ -62,6 +62,7 @@ external class TimeDynamicImagery(
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/TimeDynamicImagery.html#getFromCache">Online Documentation</a>
      */
     @JsAsync(optional = true)
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun getFromCache(
         x: Double,
         y: Double,

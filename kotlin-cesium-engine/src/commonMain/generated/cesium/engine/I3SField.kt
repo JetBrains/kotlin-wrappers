@@ -46,6 +46,7 @@ external class I3SField() {
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/I3SField.html#load">Online Documentation</a>
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun load()
 
     @JsName("load")

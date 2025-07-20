@@ -57,6 +57,7 @@ import kotlin.js.definedExternally
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#createGooglePhotorealistic3DTileset">Online Documentation</a>
  */
 @JsAsync
+@Suppress("WRONG_EXTERNAL_DECLARATION")
 external suspend fun createGooglePhotorealistic3DTileset(
     apiOptions: CreateGooglePhotorealistic3DTilesetOptions? = definedExternally,
     tilesetOptions: Cesium3DTileset.ConstructorOptions? = definedExternally,

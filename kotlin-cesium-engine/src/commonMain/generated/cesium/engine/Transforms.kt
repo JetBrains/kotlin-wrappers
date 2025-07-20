@@ -280,6 +280,7 @@ external object Transforms {
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Transforms.html#.preloadIcrfFixed">Online Documentation</a>
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun preloadIcrfFixed(timeInterval: TimeInterval)
 
     @JsName("preloadIcrfFixed")

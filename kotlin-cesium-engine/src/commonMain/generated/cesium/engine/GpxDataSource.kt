@@ -113,6 +113,7 @@ external class GpxDataSource() {
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GpxDataSource.html#load">Online Documentation</a>
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun load(
         data: Any, /* string | Document | Blob */
         options: LoadOptions? = definedExternally,
@@ -148,6 +149,7 @@ external class GpxDataSource() {
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GpxDataSource.html#.load">Online Documentation</a>
          */
         @JsAsync
+        @Suppress("WRONG_EXTERNAL_DECLARATION")
         suspend fun load(
             data: Any, /* string | Document | Blob */
             options: LoadOptions? = definedExternally,

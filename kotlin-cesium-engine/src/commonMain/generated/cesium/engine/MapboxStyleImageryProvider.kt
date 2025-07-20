@@ -136,6 +136,7 @@ external class MapboxStyleImageryProvider(
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/MapboxStyleImageryProvider.html#requestImage">Online Documentation</a>
      */
     @JsAsync(optional = true)
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun requestImage(
         x: Double,
         y: Double,
@@ -166,6 +167,7 @@ external class MapboxStyleImageryProvider(
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/MapboxStyleImageryProvider.html#pickFeatures">Online Documentation</a>
      */
     @JsAsync(optional = true)
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun pickFeatures(
         x: Double,
         y: Double,

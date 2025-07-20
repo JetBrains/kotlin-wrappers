@@ -90,12 +90,14 @@ private constructor() {
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GoogleEarthEnterpriseMetadata.html#.fromUrl">Online Documentation</a>
          */
         @JsAsync
+        @Suppress("WRONG_EXTERNAL_DECLARATION")
         suspend fun fromUrl(resourceOrUrl: Resource): GoogleEarthEnterpriseMetadata
 
         @JsName("fromUrl")
         fun fromUrlAsync(resourceOrUrl: Resource): Promise<GoogleEarthEnterpriseMetadata>
 
         @JsAsync
+        @Suppress("WRONG_EXTERNAL_DECLARATION")
         suspend fun fromUrl(resourceOrUrl: String): GoogleEarthEnterpriseMetadata
 
         @JsName("fromUrl")

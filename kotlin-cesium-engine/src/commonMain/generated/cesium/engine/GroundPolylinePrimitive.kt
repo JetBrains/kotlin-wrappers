@@ -235,6 +235,7 @@ external class GroundPolylinePrimitive(
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GroundPolylinePrimitive.html#.initializeTerrainHeights">Online Documentation</a>
          */
         @JsAsync
+        @Suppress("WRONG_EXTERNAL_DECLARATION")
         suspend fun initializeTerrainHeights()
 
         @JsName("initializeTerrainHeights")

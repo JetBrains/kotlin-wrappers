@@ -168,6 +168,7 @@ private constructor() {
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GoogleEarthEnterpriseMapsProvider.html#requestImage">Online Documentation</a>
      */
     @JsAsync(optional = true)
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun requestImage(
         x: Double,
         y: Double,
@@ -253,6 +254,7 @@ private constructor() {
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GoogleEarthEnterpriseMapsProvider.html#.fromUrl">Online Documentation</a>
          */
         @JsAsync
+        @Suppress("WRONG_EXTERNAL_DECLARATION")
         suspend fun fromUrl(
             url: Resource,
             options: ConstructorOptions? = definedExternally,
@@ -265,6 +267,7 @@ private constructor() {
         ): Promise<GoogleEarthEnterpriseMapsProvider>
 
         @JsAsync
+        @Suppress("WRONG_EXTERNAL_DECLARATION")
         suspend fun fromUrl(
             url: String,
             options: ConstructorOptions? = definedExternally,

@@ -51,6 +51,7 @@ import kotlin.js.definedExternally
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#sampleTerrain">Online Documentation</a>
  */
 @JsAsync
+@Suppress("WRONG_EXTERNAL_DECLARATION")
 external suspend fun sampleTerrain(
     terrainProvider: TerrainProvider,
     level: Int,

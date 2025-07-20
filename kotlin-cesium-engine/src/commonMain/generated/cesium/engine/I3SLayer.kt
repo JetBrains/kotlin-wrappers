@@ -76,6 +76,7 @@ private constructor() {
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/I3SLayer.html#filterByAttributes">Online Documentation</a>
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun filterByAttributes(filters: ReadonlyArray<I3SNode.AttributeFilter>? = definedExternally)
 
     @JsName("filterByAttributes")

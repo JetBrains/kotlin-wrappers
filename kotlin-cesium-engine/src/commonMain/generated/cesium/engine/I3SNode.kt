@@ -80,6 +80,7 @@ private constructor() {
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/I3SNode.html#loadFields">Online Documentation</a>
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun loadFields()
 
     @JsName("loadFields")
@@ -92,6 +93,7 @@ private constructor() {
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/I3SNode.html#loadField">Online Documentation</a>
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun loadField(name: String)
 
     @JsName("loadField")

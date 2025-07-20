@@ -1174,6 +1174,7 @@ external class Cesium3DTileset(
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTileset.html#.fromIonAssetId">Online Documentation</a>
          */
         @JsAsync
+        @Suppress("WRONG_EXTERNAL_DECLARATION")
         suspend fun fromIonAssetId(
             assetId: Int,
             options: ConstructorOptions? = definedExternally,
@@ -1228,6 +1229,7 @@ external class Cesium3DTileset(
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTileset.html#.fromUrl">Online Documentation</a>
          */
         @JsAsync
+        @Suppress("WRONG_EXTERNAL_DECLARATION")
         suspend fun fromUrl(
             url: Resource,
             options: ConstructorOptions? = definedExternally,
@@ -1240,6 +1242,7 @@ external class Cesium3DTileset(
         ): Promise<Cesium3DTileset>
 
         @JsAsync
+        @Suppress("WRONG_EXTERNAL_DECLARATION")
         suspend fun fromUrl(
             url: String,
             options: ConstructorOptions? = definedExternally,
@@ -1259,12 +1262,14 @@ external class Cesium3DTileset(
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTileset.html#.loadJson">Online Documentation</a>
          */
         @JsAsync
+        @Suppress("WRONG_EXTERNAL_DECLARATION")
         suspend fun loadJson(tilesetUrl: Resource): Any
 
         @JsName("loadJson")
         fun loadJsonAsync(tilesetUrl: Resource): Promise<Any>
 
         @JsAsync
+        @Suppress("WRONG_EXTERNAL_DECLARATION")
         suspend fun loadJson(tilesetUrl: String): Any
 
         @JsName("loadJson")

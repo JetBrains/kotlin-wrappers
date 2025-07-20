@@ -162,6 +162,7 @@ private constructor() {
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BingMapsImageryProvider.html#requestImage">Online Documentation</a>
      */
     @JsAsync(optional = true)
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun requestImage(
         x: Double,
         y: Double,
@@ -243,6 +244,7 @@ private constructor() {
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BingMapsImageryProvider.html#.fromUrl">Online Documentation</a>
          */
         @JsAsync
+        @Suppress("WRONG_EXTERNAL_DECLARATION")
         suspend fun fromUrl(
             url: Resource,
             options: ConstructorOptions,
@@ -255,6 +257,7 @@ private constructor() {
         ): Promise<BingMapsImageryProvider>
 
         @JsAsync
+        @Suppress("WRONG_EXTERNAL_DECLARATION")
         suspend fun fromUrl(
             url: String,
             options: ConstructorOptions,

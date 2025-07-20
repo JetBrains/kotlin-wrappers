@@ -211,6 +211,7 @@ external class ImageryLayerCollection() {
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ImageryLayerCollection.html#pickImageryLayerFeatures">Online Documentation</a>
      */
     @JsAsync(optional = true)
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun pickImageryLayerFeatures(
         ray: Ray,
         scene: Scene,

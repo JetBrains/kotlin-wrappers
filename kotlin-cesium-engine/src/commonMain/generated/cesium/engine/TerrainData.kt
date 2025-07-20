@@ -80,6 +80,7 @@ abstract external class TerrainData() {
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/TerrainData.html#upsample">Online Documentation</a>
      */
     @JsAsync(optional = true)
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun upsample(
         tilingScheme: TilingScheme,
         thisX: Double,

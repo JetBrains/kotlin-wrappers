@@ -58,6 +58,7 @@ external class TaskProcessor(
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/TaskProcessor.html#scheduleTask">Online Documentation</a>
      */
     @JsAsync(optional = true)
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun scheduleTask(
         parameters: Any,
         transferableObjects: ReadonlyArray<Any>? = definedExternally,
@@ -77,6 +78,7 @@ external class TaskProcessor(
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/TaskProcessor.html#initWebAssemblyModule">Online Documentation</a>
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun initWebAssemblyModule(options: InitWebAssemblyModuleOptions? = definedExternally): Any
 
     @JsName("initWebAssemblyModule")

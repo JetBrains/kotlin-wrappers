@@ -121,6 +121,7 @@ abstract external class ImageryProvider() {
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ImageryProvider.html#requestImage">Online Documentation</a>
      */
     @JsAsync(optional = true)
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun requestImage(
         x: Double,
         y: Double,
@@ -152,6 +153,7 @@ abstract external class ImageryProvider() {
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ImageryProvider.html#pickFeatures">Online Documentation</a>
      */
     @JsAsync(optional = true)
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun pickFeatures(
         x: Double,
         y: Double,
@@ -181,6 +183,7 @@ abstract external class ImageryProvider() {
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ImageryProvider.html#.loadImage">Online Documentation</a>
          */
         @JsAsync(optional = true)
+        @Suppress("WRONG_EXTERNAL_DECLARATION")
         suspend fun loadImage(
             imageryProvider: ImageryProvider,
             url: Resource,
@@ -193,6 +196,7 @@ abstract external class ImageryProvider() {
         ): Promise<Any /* ImageryTypes | CompressedTextureBuffer */>?
 
         @JsAsync(optional = true)
+        @Suppress("WRONG_EXTERNAL_DECLARATION")
         suspend fun loadImage(
             imageryProvider: ImageryProvider,
             url: String,

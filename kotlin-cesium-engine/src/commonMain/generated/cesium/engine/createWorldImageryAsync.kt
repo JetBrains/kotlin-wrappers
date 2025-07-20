@@ -33,6 +33,7 @@ import kotlin.js.definedExternally
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#createWorldImageryAsync">Online Documentation</a>
  */
 @JsAsync
+@Suppress("WRONG_EXTERNAL_DECLARATION")
 external suspend fun createWorldImagery(options: CreateWorldImageryAsyncOptions? = definedExternally): IonImageryProvider
 
 external fun createWorldImageryAsync(options: CreateWorldImageryAsyncOptions? = definedExternally): Promise<IonImageryProvider>

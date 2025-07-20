@@ -535,6 +535,7 @@ private constructor() {
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Model.html#.fromGltfAsync">Online Documentation</a>
          */
         @JsAsync
+        @Suppress("WRONG_EXTERNAL_DECLARATION")
         suspend fun fromGltf(options: FromGltfAsyncOptions): Model
 
         fun fromGltfAsync(options: FromGltfAsyncOptions): Promise<Model>

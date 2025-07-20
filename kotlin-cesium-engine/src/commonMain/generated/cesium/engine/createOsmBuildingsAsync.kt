@@ -50,6 +50,7 @@ import kotlin.js.definedExternally
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#createOsmBuildingsAsync">Online Documentation</a>
  */
 @JsAsync
+@Suppress("WRONG_EXTERNAL_DECLARATION")
 external suspend fun createOsmBuildings(options: CreateOsmBuildingsAsyncOptions? = definedExternally): Cesium3DTileset
 
 external fun createOsmBuildingsAsync(options: CreateOsmBuildingsAsyncOptions? = definedExternally): Promise<Cesium3DTileset>

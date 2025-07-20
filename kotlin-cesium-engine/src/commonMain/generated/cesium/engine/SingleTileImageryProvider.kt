@@ -127,6 +127,7 @@ external class SingleTileImageryProvider(
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/SingleTileImageryProvider.html#requestImage">Online Documentation</a>
      */
     @JsAsync(optional = true)
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun requestImage(
         x: Double,
         y: Double,
@@ -194,6 +195,7 @@ external class SingleTileImageryProvider(
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/SingleTileImageryProvider.html#.fromUrl">Online Documentation</a>
          */
         @JsAsync
+        @Suppress("WRONG_EXTERNAL_DECLARATION")
         suspend fun fromUrl(
             url: Resource,
             options: fromUrlOptions? = definedExternally,
@@ -206,6 +208,7 @@ external class SingleTileImageryProvider(
         ): Promise<SingleTileImageryProvider>
 
         @JsAsync
+        @Suppress("WRONG_EXTERNAL_DECLARATION")
         suspend fun fromUrl(
             url: String,
             options: fromUrlOptions? = definedExternally,

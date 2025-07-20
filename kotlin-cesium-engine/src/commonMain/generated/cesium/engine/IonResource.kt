@@ -62,6 +62,7 @@ external class IonResource(
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/IonResource.html#fetchImage">Online Documentation</a>
      */
     @JsAsync(optional = true)
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun fetchImage(options: FetchImageOptions? = definedExternally): CanvasImageSource?
 
     @JsName("fetchImage")
@@ -110,6 +111,7 @@ external class IonResource(
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/IonResource.html#.fromAssetId">Online Documentation</a>
          */
         @JsAsync
+        @Suppress("WRONG_EXTERNAL_DECLARATION")
         suspend fun fromAssetId(
             assetId: Int,
             options: FromAssetIdOptions? = definedExternally,

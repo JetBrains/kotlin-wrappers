@@ -37,6 +37,7 @@ import kotlin.js.JsName
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#exportKml">Online Documentation</a>
  */
 @JsAsync
+@Suppress("WRONG_EXTERNAL_DECLARATION")
 external suspend fun exportKml(options: ExportKmlOptions): Any /* exportKmlResultKml | exportKmlResultKmz */
 
 @JsName("exportKml")

@@ -39,6 +39,7 @@ import kotlin.js.definedExternally
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#createWorldTerrainAsync">Online Documentation</a>
  */
 @JsAsync
+@Suppress("WRONG_EXTERNAL_DECLARATION")
 external suspend fun createWorldTerrain(options: CreateWorldTerrainAsyncOptions? = definedExternally): CesiumTerrainProvider
 
 external fun createWorldTerrainAsync(options: CreateWorldTerrainAsyncOptions? = definedExternally): Promise<CesiumTerrainProvider>

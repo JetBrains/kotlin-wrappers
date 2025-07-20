@@ -33,6 +33,7 @@ external object ITwinData {
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ITwinData.html#.createTilesetFromIModelId">Online Documentation</a>
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun createTilesetFromIModelId(
         iModelId: String,
         options: Cesium3DTileset.ConstructorOptions? = definedExternally,
@@ -57,6 +58,7 @@ external object ITwinData {
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ITwinData.html#.createTilesetForRealityDataId">Online Documentation</a>
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun createTilesetForRealityDataId(
         iTwinId: String,
         realityDataId: String,
@@ -85,6 +87,7 @@ external object ITwinData {
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ITwinData.html#.createDataSourceForRealityDataId">Online Documentation</a>
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun createDataSourceForRealityDataId(
         iTwinId: String,
         realityDataId: String,
@@ -109,6 +112,7 @@ external object ITwinData {
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ITwinData.html#.loadGeospatialFeatures">Online Documentation</a>
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun loadGeospatialFeatures(
         iTwinId: String,
         collectionId: String,

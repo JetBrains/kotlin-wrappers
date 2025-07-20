@@ -32,6 +32,7 @@ external class GeocoderService() {
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GeocoderService.html#geocode">Online Documentation</a>
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun geocode(
         query: String,
         type: GeocodeType? = definedExternally,

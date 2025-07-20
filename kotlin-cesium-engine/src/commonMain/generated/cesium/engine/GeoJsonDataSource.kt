@@ -97,6 +97,7 @@ external class GeoJsonDataSource(
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GeoJsonDataSource.html#load">Online Documentation</a>
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun load(
         data: Resource,
         options: LoadOptions? = definedExternally,
@@ -109,6 +110,7 @@ external class GeoJsonDataSource(
     ): Promise<GeoJsonDataSource>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun load(
         data: String,
         options: LoadOptions? = definedExternally,
@@ -121,6 +123,7 @@ external class GeoJsonDataSource(
     ): Promise<GeoJsonDataSource>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun load(
         data: Any,
         options: LoadOptions? = definedExternally,
@@ -140,6 +143,7 @@ external class GeoJsonDataSource(
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GeoJsonDataSource.html#process">Online Documentation</a>
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun process(
         data: Resource,
         options: LoadOptions? = definedExternally,
@@ -152,6 +156,7 @@ external class GeoJsonDataSource(
     ): Promise<GeoJsonDataSource>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun process(
         data: String,
         options: LoadOptions? = definedExternally,
@@ -164,6 +169,7 @@ external class GeoJsonDataSource(
     ): Promise<GeoJsonDataSource>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun process(
         data: Any,
         options: LoadOptions? = definedExternally,
@@ -195,6 +201,7 @@ external class GeoJsonDataSource(
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GeoJsonDataSource.html#.load">Online Documentation</a>
          */
         @JsAsync
+        @Suppress("WRONG_EXTERNAL_DECLARATION")
         suspend fun load(
             data: Resource,
             options: LoadOptions? = definedExternally,
@@ -207,6 +214,7 @@ external class GeoJsonDataSource(
         ): Promise<GeoJsonDataSource>
 
         @JsAsync
+        @Suppress("WRONG_EXTERNAL_DECLARATION")
         suspend fun load(
             data: String,
             options: LoadOptions? = definedExternally,
@@ -219,6 +227,7 @@ external class GeoJsonDataSource(
         ): Promise<GeoJsonDataSource>
 
         @JsAsync
+        @Suppress("WRONG_EXTERNAL_DECLARATION")
         suspend fun load(
             data: Any,
             options: LoadOptions? = definedExternally,

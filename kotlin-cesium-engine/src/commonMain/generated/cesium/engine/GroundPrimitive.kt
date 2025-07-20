@@ -272,6 +272,7 @@ external class GroundPrimitive(
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GroundPrimitive.html#.initializeTerrainHeights">Online Documentation</a>
          */
         @JsAsync
+        @Suppress("WRONG_EXTERNAL_DECLARATION")
         suspend fun initializeTerrainHeights()
 
         @JsName("initializeTerrainHeights")

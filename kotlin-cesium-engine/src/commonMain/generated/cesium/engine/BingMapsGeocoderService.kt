@@ -52,6 +52,7 @@ external class BingMapsGeocoderService(
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BingMapsGeocoderService.html#geocode">Online Documentation</a>
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun geocode(query: String): ReadonlyArray<GeocoderService.Result>
 
     @JsName("geocode")

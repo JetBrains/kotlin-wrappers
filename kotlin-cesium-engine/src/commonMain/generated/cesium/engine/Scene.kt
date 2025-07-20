@@ -882,6 +882,7 @@ external class Scene(
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Scene.html#sampleHeightMostDetailed">Online Documentation</a>
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun sampleHeightMostDetailed(
         positions: ReadonlyArray<Cartographic>,
         objectsToExclude: ReadonlyArray<Any>? = definedExternally,
@@ -919,6 +920,7 @@ external class Scene(
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Scene.html#clampToHeightMostDetailed">Online Documentation</a>
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun clampToHeightMostDetailed(
         cartesians: ReadonlyArray<Cartesian3>,
         objectsToExclude: ReadonlyArray<Any>? = definedExternally,

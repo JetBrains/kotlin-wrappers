@@ -122,6 +122,7 @@ external class TileCoordinatesImageryProvider(
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/TileCoordinatesImageryProvider.html#requestImage">Online Documentation</a>
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun requestImage(
         x: Double,
         y: Double,

@@ -75,6 +75,7 @@ abstract external class TerrainProvider() {
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/TerrainProvider.html#requestTileGeometry">Online Documentation</a>
      */
     @JsAsync(optional = true)
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun requestTileGeometry(
         x: Double,
         y: Double,
@@ -121,6 +122,7 @@ abstract external class TerrainProvider() {
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/TerrainProvider.html#loadTileDataAvailability">Online Documentation</a>
      */
     @JsAsync(optional = true)
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun loadTileDataAvailability(
         x: Double,
         y: Double,

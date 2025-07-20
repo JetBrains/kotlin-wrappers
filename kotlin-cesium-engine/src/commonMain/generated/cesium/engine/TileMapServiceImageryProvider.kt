@@ -98,6 +98,7 @@ private constructor() {
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/TileMapServiceImageryProvider.html#.fromUrl">Online Documentation</a>
          */
         @JsAsync
+        @Suppress("WRONG_EXTERNAL_DECLARATION")
         suspend fun fromUrl(
             url: Resource,
             options: ConstructorOptions? = definedExternally,
@@ -110,6 +111,7 @@ private constructor() {
         ): Promise<TileMapServiceImageryProvider>
 
         @JsAsync
+        @Suppress("WRONG_EXTERNAL_DECLARATION")
         suspend fun fromUrl(
             url: String,
             options: ConstructorOptions? = definedExternally,

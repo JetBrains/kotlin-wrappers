@@ -184,6 +184,7 @@ external class ArcGisMapServerImageryProvider(
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ArcGisMapServerImageryProvider.html#requestImage">Online Documentation</a>
      */
     @JsAsync(optional = true)
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun requestImage(
         x: Double,
         y: Double,
@@ -213,6 +214,7 @@ external class ArcGisMapServerImageryProvider(
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ArcGisMapServerImageryProvider.html#pickFeatures">Online Documentation</a>
      */
     @JsAsync(optional = true)
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun pickFeatures(
         x: Double,
         y: Double,
@@ -316,6 +318,7 @@ external class ArcGisMapServerImageryProvider(
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ArcGisMapServerImageryProvider.html#.fromBasemapType">Online Documentation</a>
          */
         @JsAsync
+        @Suppress("WRONG_EXTERNAL_DECLARATION")
         suspend fun fromBasemapType(
             style: ArcGisBaseMapType,
             options: ConstructorOptions? = definedExternally,
@@ -341,6 +344,7 @@ external class ArcGisMapServerImageryProvider(
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ArcGisMapServerImageryProvider.html#.fromUrl">Online Documentation</a>
          */
         @JsAsync
+        @Suppress("WRONG_EXTERNAL_DECLARATION")
         suspend fun fromUrl(
             url: Resource,
             options: ConstructorOptions? = definedExternally,
@@ -353,6 +357,7 @@ external class ArcGisMapServerImageryProvider(
         ): Promise<ArcGisMapServerImageryProvider>
 
         @JsAsync
+        @Suppress("WRONG_EXTERNAL_DECLARATION")
         suspend fun fromUrl(
             url: String,
             options: ConstructorOptions? = definedExternally,

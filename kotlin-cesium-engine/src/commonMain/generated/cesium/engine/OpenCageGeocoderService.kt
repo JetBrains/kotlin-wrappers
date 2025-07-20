@@ -61,6 +61,7 @@ external class OpenCageGeocoderService(
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/OpenCageGeocoderService.html#geocode">Online Documentation</a>
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun geocode(query: String): ReadonlyArray<GeocoderService.Result>
 
     @JsName("geocode")

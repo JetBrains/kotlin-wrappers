@@ -218,6 +218,7 @@ private constructor() :
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CesiumTerrainProvider.html#.fromIonAssetId">Online Documentation</a>
          */
         @JsAsync
+        @Suppress("WRONG_EXTERNAL_DECLARATION")
         suspend fun fromIonAssetId(
             assetId: Int,
             options: ConstructorOptions? = definedExternally,
@@ -252,6 +253,7 @@ private constructor() :
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CesiumTerrainProvider.html#.fromUrl">Online Documentation</a>
          */
         @JsAsync
+        @Suppress("WRONG_EXTERNAL_DECLARATION")
         suspend fun fromUrl(
             url: Any, /* Resource | string | Promise<Resource> | Promise<string> */
             options: ConstructorOptions? = definedExternally,

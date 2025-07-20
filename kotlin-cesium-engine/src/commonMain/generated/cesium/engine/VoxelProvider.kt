@@ -112,6 +112,7 @@ abstract external class VoxelProvider() {
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/VoxelProvider.html#requestData">Online Documentation</a>
      */
     @JsAsync(optional = true)
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun requestData(options: RequestDataOptions? = definedExternally): VoxelContent?
 
     @JsName("requestData")

@@ -38,6 +38,7 @@ import kotlin.js.definedExternally
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#createWorldBathymetryAsync">Online Documentation</a>
  */
 @JsAsync
+@Suppress("WRONG_EXTERNAL_DECLARATION")
 external suspend fun createWorldBathymetry(options: CreateWorldBathymetryAsyncOptions? = definedExternally): CesiumTerrainProvider
 
 external fun createWorldBathymetryAsync(options: CreateWorldBathymetryAsyncOptions? = definedExternally): Promise<CesiumTerrainProvider>

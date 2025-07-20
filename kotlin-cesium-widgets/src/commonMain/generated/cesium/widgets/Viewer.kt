@@ -412,6 +412,7 @@ external class Viewer(
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Viewer.html#zoomTo">Online Documentation</a>
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun zoomTo(
         target: Entity,
         offset: HeadingPitchRange? = definedExternally,
@@ -424,6 +425,7 @@ external class Viewer(
     ): Promise<Boolean>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun zoomTo(
         target: ReadonlyArray<Entity>,
         offset: HeadingPitchRange? = definedExternally,
@@ -436,6 +438,7 @@ external class Viewer(
     ): Promise<Boolean>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun zoomTo(
         target: EntityCollection,
         offset: HeadingPitchRange? = definedExternally,
@@ -448,6 +451,7 @@ external class Viewer(
     ): Promise<Boolean>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun zoomTo(
         target: DataSource,
         offset: HeadingPitchRange? = definedExternally,
@@ -460,6 +464,7 @@ external class Viewer(
     ): Promise<Boolean>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun zoomTo(
         target: ImageryLayer,
         offset: HeadingPitchRange? = definedExternally,
@@ -472,6 +477,7 @@ external class Viewer(
     ): Promise<Boolean>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun zoomTo(
         target: Cesium3DTileset,
         offset: HeadingPitchRange? = definedExternally,
@@ -484,6 +490,7 @@ external class Viewer(
     ): Promise<Boolean>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun zoomTo(
         target: TimeDynamicPointCloud,
         offset: HeadingPitchRange? = definedExternally,
@@ -496,6 +503,7 @@ external class Viewer(
     ): Promise<Boolean>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun zoomTo(
         target: Promise<Entity>,
         offset: HeadingPitchRange? = definedExternally,
@@ -508,6 +516,7 @@ external class Viewer(
     ): Promise<Boolean>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun zoomTo(
         target: Promise<ReadonlyArray<Entity>>,
         offset: HeadingPitchRange? = definedExternally,
@@ -520,6 +529,7 @@ external class Viewer(
     ): Promise<Boolean>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun zoomTo(
         target: Promise<EntityCollection>,
         offset: HeadingPitchRange? = definedExternally,
@@ -532,6 +542,7 @@ external class Viewer(
     ): Promise<Boolean>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun zoomTo(
         target: Promise<DataSource>,
         offset: HeadingPitchRange? = definedExternally,
@@ -544,6 +555,7 @@ external class Viewer(
     ): Promise<Boolean>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun zoomTo(
         target: Promise<ImageryLayer>,
         offset: HeadingPitchRange? = definedExternally,
@@ -556,6 +568,7 @@ external class Viewer(
     ): Promise<Boolean>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun zoomTo(
         target: Promise<Cesium3DTileset>,
         offset: HeadingPitchRange? = definedExternally,
@@ -568,6 +581,7 @@ external class Viewer(
     ): Promise<Boolean>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun zoomTo(
         target: Promise<TimeDynamicPointCloud>,
         offset: HeadingPitchRange? = definedExternally,
@@ -580,6 +594,7 @@ external class Viewer(
     ): Promise<Boolean>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun zoomTo(
         target: Promise<VoxelPrimitive>,
         offset: HeadingPitchRange? = definedExternally,
@@ -610,6 +625,7 @@ external class Viewer(
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Viewer.html#flyTo">Online Documentation</a>
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun flyTo(
         target: Entity,
         options: FlyToOptions? = definedExternally,
@@ -635,6 +651,7 @@ external class Viewer(
     }
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun flyTo(
         target: ReadonlyArray<Entity>,
         options: FlyToOptions? = definedExternally,
@@ -647,6 +664,7 @@ external class Viewer(
     ): Promise<Boolean>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun flyTo(
         target: EntityCollection,
         options: FlyToOptions? = definedExternally,
@@ -659,6 +677,7 @@ external class Viewer(
     ): Promise<Boolean>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun flyTo(
         target: DataSource,
         options: FlyToOptions? = definedExternally,
@@ -671,6 +690,7 @@ external class Viewer(
     ): Promise<Boolean>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun flyTo(
         target: ImageryLayer,
         options: FlyToOptions? = definedExternally,
@@ -683,6 +703,7 @@ external class Viewer(
     ): Promise<Boolean>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun flyTo(
         target: Cesium3DTileset,
         options: FlyToOptions? = definedExternally,
@@ -695,6 +716,7 @@ external class Viewer(
     ): Promise<Boolean>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun flyTo(
         target: TimeDynamicPointCloud,
         options: FlyToOptions? = definedExternally,
@@ -707,6 +729,7 @@ external class Viewer(
     ): Promise<Boolean>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun flyTo(
         target: Promise<Entity>,
         options: FlyToOptions? = definedExternally,
@@ -719,6 +742,7 @@ external class Viewer(
     ): Promise<Boolean>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun flyTo(
         target: Promise<ReadonlyArray<Entity>>,
         options: FlyToOptions? = definedExternally,
@@ -731,6 +755,7 @@ external class Viewer(
     ): Promise<Boolean>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun flyTo(
         target: Promise<EntityCollection>,
         options: FlyToOptions? = definedExternally,
@@ -743,6 +768,7 @@ external class Viewer(
     ): Promise<Boolean>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun flyTo(
         target: Promise<DataSource>,
         options: FlyToOptions? = definedExternally,
@@ -755,6 +781,7 @@ external class Viewer(
     ): Promise<Boolean>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun flyTo(
         target: Promise<ImageryLayer>,
         options: FlyToOptions? = definedExternally,
@@ -767,6 +794,7 @@ external class Viewer(
     ): Promise<Boolean>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun flyTo(
         target: Promise<Cesium3DTileset>,
         options: FlyToOptions? = definedExternally,
@@ -779,6 +807,7 @@ external class Viewer(
     ): Promise<Boolean>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun flyTo(
         target: Promise<TimeDynamicPointCloud>,
         options: FlyToOptions? = definedExternally,
@@ -791,6 +820,7 @@ external class Viewer(
     ): Promise<Boolean>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun flyTo(
         target: Promise<VoxelPrimitive>,
         options: FlyToOptions? = definedExternally,

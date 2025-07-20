@@ -147,6 +147,7 @@ external class KmlDataSource(
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/KmlDataSource.html#load">Online Documentation</a>
      */
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun load(
         data: Resource,
         options: LoadOptions? = definedExternally,
@@ -159,6 +160,7 @@ external class KmlDataSource(
     ): Promise<KmlDataSource>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun load(
         data: String,
         options: LoadOptions? = definedExternally,
@@ -171,6 +173,7 @@ external class KmlDataSource(
     ): Promise<KmlDataSource>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun load(
         data: Document,
         options: LoadOptions? = definedExternally,
@@ -183,6 +186,7 @@ external class KmlDataSource(
     ): Promise<KmlDataSource>
 
     @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun load(
         data: Blob,
         options: LoadOptions? = definedExternally,
@@ -241,6 +245,7 @@ external class KmlDataSource(
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/KmlDataSource.html#.load">Online Documentation</a>
          */
         @JsAsync
+        @Suppress("WRONG_EXTERNAL_DECLARATION")
         suspend fun load(
             data: Resource,
             options: ConstructorOptions? = definedExternally,
@@ -253,6 +258,7 @@ external class KmlDataSource(
         ): Promise<KmlDataSource>
 
         @JsAsync
+        @Suppress("WRONG_EXTERNAL_DECLARATION")
         suspend fun load(
             data: String,
             options: ConstructorOptions? = definedExternally,
@@ -265,6 +271,7 @@ external class KmlDataSource(
         ): Promise<KmlDataSource>
 
         @JsAsync
+        @Suppress("WRONG_EXTERNAL_DECLARATION")
         suspend fun load(
             data: Document,
             options: ConstructorOptions? = definedExternally,
@@ -277,6 +284,7 @@ external class KmlDataSource(
         ): Promise<KmlDataSource>
 
         @JsAsync
+        @Suppress("WRONG_EXTERNAL_DECLARATION")
         suspend fun load(
             data: Blob,
             options: ConstructorOptions? = definedExternally,

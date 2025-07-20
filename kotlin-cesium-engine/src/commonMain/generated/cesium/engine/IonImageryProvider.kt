@@ -130,6 +130,7 @@ private constructor() {
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/IonImageryProvider.html#requestImage">Online Documentation</a>
      */
     @JsAsync(optional = true)
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun requestImage(
         x: Double,
         y: Double,
@@ -160,6 +161,7 @@ private constructor() {
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/IonImageryProvider.html#pickFeatures">Online Documentation</a>
      */
     @JsAsync(optional = true)
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun pickFeatures(
         x: Double,
         y: Double,
@@ -204,6 +206,7 @@ private constructor() {
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/IonImageryProvider.html#.fromAssetId">Online Documentation</a>
          */
         @JsAsync
+        @Suppress("WRONG_EXTERNAL_DECLARATION")
         suspend fun fromAssetId(
             assetId: Int,
             options: ConstructorOptions? = definedExternally,

@@ -257,6 +257,7 @@ external class Resource(
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Resource.html#fetchArrayBuffer">Online Documentation</a>
      */
     @JsAsync(optional = true)
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun fetchArrayBuffer(): ArrayBuffer?
 
     @JsName("fetchArrayBuffer")
@@ -279,6 +280,7 @@ external class Resource(
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Resource.html#fetchBlob">Online Documentation</a>
      */
     @JsAsync(optional = true)
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun fetchBlob(): Blob?
 
     @JsName("fetchBlob")
@@ -305,6 +307,7 @@ external class Resource(
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Resource.html#fetchImage">Online Documentation</a>
      */
     @JsAsync(optional = true)
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun fetchImage(options: FetchImageOptions? = definedExternally): CanvasImageSource?
 
     @JsName("fetchImage")
@@ -351,6 +354,7 @@ external class Resource(
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Resource.html#fetchText">Online Documentation</a>
      */
     @JsAsync(optional = true)
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun fetchText(): String?
 
     @JsName("fetchText")
@@ -374,6 +378,7 @@ external class Resource(
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Resource.html#fetchJson">Online Documentation</a>
      */
     @JsAsync(optional = true)
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun fetchJson(): Any?
 
     @JsName("fetchJson")
@@ -398,6 +403,7 @@ external class Resource(
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Resource.html#fetchXML">Online Documentation</a>
      */
     @JsAsync(optional = true)
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun fetchXML(): XMLDocument?
 
     @JsName("fetchXML")
@@ -419,6 +425,7 @@ external class Resource(
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Resource.html#fetchJsonp">Online Documentation</a>
      */
     @JsAsync(optional = true)
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun fetchJsonp(callbackParameterName: String? = definedExternally): Any?
 
     @JsName("fetchJsonp")
@@ -442,6 +449,7 @@ external class Resource(
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Resource.html#fetch">Online Documentation</a>
      */
     @JsAsync(optional = true)
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun fetch(options: FetchOptions? = definedExternally): Any?
 
     @JsName("fetch")
@@ -476,6 +484,7 @@ external class Resource(
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Resource.html#delete">Online Documentation</a>
      */
     @JsAsync(optional = true)
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun delete(options: DeleteOptions? = definedExternally): Any?
 
     @JsName("delete")
@@ -510,6 +519,7 @@ external class Resource(
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Resource.html#head">Online Documentation</a>
      */
     @JsAsync(optional = true)
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun head(options: HeadOptions? = definedExternally): Any?
 
     @JsName("head")
@@ -544,6 +554,7 @@ external class Resource(
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Resource.html#options">Online Documentation</a>
      */
     @JsAsync(optional = true)
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun options(options: OptionsOptions? = definedExternally): Any?
 
     @JsName("options")
@@ -579,6 +590,7 @@ external class Resource(
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Resource.html#post">Online Documentation</a>
      */
     @JsAsync(optional = true)
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun post(
         data: Any,
         options: PostOptions? = definedExternally,
@@ -622,6 +634,7 @@ external class Resource(
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Resource.html#put">Online Documentation</a>
      */
     @JsAsync(optional = true)
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun put(
         data: Any,
         options: PutOptions? = definedExternally,
@@ -663,6 +676,7 @@ external class Resource(
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Resource.html#patch">Online Documentation</a>
      */
     @JsAsync(optional = true)
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun patch(
         data: Any,
         options: PatchOptions? = definedExternally,
@@ -729,6 +743,7 @@ external class Resource(
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Resource.html#.fetchArrayBuffer">Online Documentation</a>
          */
         @JsAsync(optional = true)
+        @Suppress("WRONG_EXTERNAL_DECLARATION")
         suspend fun fetchArrayBuffer(options: FetchArrayBufferOptions): ArrayBuffer?
 
         @JsName("fetchArrayBuffer")
@@ -765,6 +780,7 @@ external class Resource(
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Resource.html#.fetchBlob">Online Documentation</a>
          */
         @JsAsync(optional = true)
+        @Suppress("WRONG_EXTERNAL_DECLARATION")
         suspend fun fetchBlob(options: FetchBlobOptions): Blob?
 
         @JsName("fetchBlob")
@@ -801,6 +817,7 @@ external class Resource(
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Resource.html#.fetchImage">Online Documentation</a>
          */
         @JsAsync(optional = true)
+        @Suppress("WRONG_EXTERNAL_DECLARATION")
         suspend fun fetchImage(options: FetchImageOptions): CanvasImageSource?
 
         @JsName("fetchImage")
@@ -849,6 +866,7 @@ external class Resource(
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Resource.html#.fetchText">Online Documentation</a>
          */
         @JsAsync(optional = true)
+        @Suppress("WRONG_EXTERNAL_DECLARATION")
         suspend fun fetchText(options: FetchTextOptions): String?
 
         @JsName("fetchText")
@@ -885,6 +903,7 @@ external class Resource(
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Resource.html#.fetchJson">Online Documentation</a>
          */
         @JsAsync(optional = true)
+        @Suppress("WRONG_EXTERNAL_DECLARATION")
         suspend fun fetchJson(options: FetchJsonOptions): Any?
 
         @JsName("fetchJson")
@@ -921,6 +940,7 @@ external class Resource(
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Resource.html#.fetchXML">Online Documentation</a>
          */
         @JsAsync(optional = true)
+        @Suppress("WRONG_EXTERNAL_DECLARATION")
         suspend fun fetchXML(options: FetchXMLOptions): XMLDocument?
 
         @JsName("fetchXML")
@@ -957,6 +977,7 @@ external class Resource(
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Resource.html#.fetchJsonp">Online Documentation</a>
          */
         @JsAsync(optional = true)
+        @Suppress("WRONG_EXTERNAL_DECLARATION")
         suspend fun fetchJsonp(options: FetchJsonpOptions): Any?
 
         @JsName("fetchJsonp")
@@ -996,6 +1017,7 @@ external class Resource(
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Resource.html#.fetch">Online Documentation</a>
          */
         @JsAsync(optional = true)
+        @Suppress("WRONG_EXTERNAL_DECLARATION")
         suspend fun fetch(options: FetchOptions): Any?
 
         @JsName("fetch")
@@ -1036,6 +1058,7 @@ external class Resource(
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Resource.html#.delete">Online Documentation</a>
          */
         @JsAsync(optional = true)
+        @Suppress("WRONG_EXTERNAL_DECLARATION")
         suspend fun delete(options: DeleteOptions): Any?
 
         @JsName("delete")
@@ -1078,6 +1101,7 @@ external class Resource(
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Resource.html#.head">Online Documentation</a>
          */
         @JsAsync(optional = true)
+        @Suppress("WRONG_EXTERNAL_DECLARATION")
         suspend fun head(options: HeadOptions): Any?
 
         @JsName("head")
@@ -1118,6 +1142,7 @@ external class Resource(
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Resource.html#.options">Online Documentation</a>
          */
         @JsAsync(optional = true)
+        @Suppress("WRONG_EXTERNAL_DECLARATION")
         suspend fun options(options: OptionsOptions): Any?
 
         @JsName("options")
@@ -1158,6 +1183,7 @@ external class Resource(
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Resource.html#.post">Online Documentation</a>
          */
         @JsAsync(optional = true)
+        @Suppress("WRONG_EXTERNAL_DECLARATION")
         suspend fun post(options: PostOptions): Any?
 
         @JsName("post")
@@ -1200,6 +1226,7 @@ external class Resource(
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Resource.html#.put">Online Documentation</a>
          */
         @JsAsync(optional = true)
+        @Suppress("WRONG_EXTERNAL_DECLARATION")
         suspend fun put(options: PutOptions): Any?
 
         @JsName("put")
@@ -1242,6 +1269,7 @@ external class Resource(
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Resource.html#.patch">Online Documentation</a>
          */
         @JsAsync(optional = true)
+        @Suppress("WRONG_EXTERNAL_DECLARATION")
         suspend fun patch(options: PatchOptions): Any?
 
         @JsName("patch")

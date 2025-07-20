@@ -131,6 +131,7 @@ external class Cesium3DTilesVoxelProvider(
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTilesVoxelProvider.html#requestData">Online Documentation</a>
      */
     @JsAsync(optional = true)
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun requestData(options: RequestDataOptions? = definedExternally): VoxelContent?
 
     @JsName("requestData")
@@ -218,12 +219,14 @@ external class Cesium3DTilesVoxelProvider(
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTilesVoxelProvider.html#.fromUrl">Online Documentation</a>
          */
         @JsAsync
+        @Suppress("WRONG_EXTERNAL_DECLARATION")
         suspend fun fromUrl(url: Resource): Cesium3DTilesVoxelProvider
 
         @JsName("fromUrl")
         fun fromUrlAsync(url: Resource): Promise<Cesium3DTilesVoxelProvider>
 
         @JsAsync
+        @Suppress("WRONG_EXTERNAL_DECLARATION")
         suspend fun fromUrl(url: String): Cesium3DTilesVoxelProvider
 
         @JsName("fromUrl")
