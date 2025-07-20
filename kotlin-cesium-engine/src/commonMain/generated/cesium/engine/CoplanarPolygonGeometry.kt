@@ -5,6 +5,7 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
+import js.core.JsDouble
 import js.objects.JsPlainObject
 import kotlin.js.JsModule
 import kotlin.js.definedExternally
@@ -102,9 +103,9 @@ external class CoplanarPolygonGeometry(
          */
         fun pack(
             value: CoplanarPolygonGeometry,
-            array: ReadonlyArray<Double>,
+            array: ReadonlyArray<JsDouble>,
             startingIndex: Int? = definedExternally,
-        ): ReadonlyArray<Double>
+        ): ReadonlyArray<JsDouble>
 
         /**
          * Retrieves an instance from a packed array.
@@ -116,7 +117,7 @@ external class CoplanarPolygonGeometry(
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CoplanarPolygonGeometry.html#.unpack">Online Documentation</a>
          */
         fun unpack(
-            array: ReadonlyArray<Double>,
+            array: ReadonlyArray<JsDouble>,
             startingIndex: Int? = definedExternally,
             result: CoplanarPolygonGeometry? = definedExternally,
         ): CoplanarPolygonGeometry

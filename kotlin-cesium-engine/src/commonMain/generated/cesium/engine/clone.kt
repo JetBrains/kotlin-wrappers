@@ -4,6 +4,7 @@
 
 package cesium.engine
 
+import js.core.JsAny
 import kotlin.js.JsModule
 import kotlin.js.definedExternally
 
@@ -16,6 +17,6 @@ import kotlin.js.definedExternally
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#clone">Online Documentation</a>
  */
 external fun clone(
-    obj: Any,
+    obj: JsAny,
     deep: Boolean? = definedExternally,
-): Any
+): JsAny

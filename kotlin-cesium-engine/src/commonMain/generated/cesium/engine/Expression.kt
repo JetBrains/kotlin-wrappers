@@ -4,6 +4,7 @@
 
 package cesium.engine
 
+import js.core.JsAny
 import kotlin.js.JsModule
 import kotlin.js.definedExternally
 
@@ -31,7 +32,7 @@ import kotlin.js.definedExternally
  */
 external class Expression(
     val expression: String = definedExternally,
-    defines: Any? = definedExternally,
+    defines: JsAny? = definedExternally,
 ) : StyleExpression {
     /**
      * Evaluates the result of an expression, optionally using the provided feature's properties. If the result of
@@ -49,8 +50,8 @@ external class Expression(
      */
     override fun evaluate(
         feature: Cesium3DTileFeature,
-        result: Any?,
-    ): Any /* boolean | number | string | RegExp | Cartesian2 | Cartesian3 | Cartesian4 | Color */
+        result: JsAny?,
+    ): JsAny /* boolean | number | string | RegExp | Cartesian2 | Cartesian3 | Cartesian4 | Color */
 
     /**
      * Evaluates the result of a Color expression, optionally using the provided feature's properties.

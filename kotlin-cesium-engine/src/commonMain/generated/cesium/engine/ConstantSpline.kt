@@ -4,6 +4,7 @@
 
 package cesium.engine
 
+import js.core.JsAny
 import kotlin.js.JsModule
 import kotlin.js.definedExternally
 
@@ -23,7 +24,7 @@ import kotlin.js.definedExternally
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ConstantSpline.html">Online Documentation</a>
  */
 external class ConstantSpline(
-    val value: Any, /* number | Cartesian3 | Quaternion */
+    val value: JsAny, /* number | Cartesian3 | Quaternion */
 ) {
     /**
      * Finds an index `i` in `times` such that the parameter
@@ -60,6 +61,6 @@ external class ConstantSpline(
      */
     fun evaluate(
         time: Double,
-        result: Any /* Cartesian3 | Quaternion */? = definedExternally,
-    ): Any /* number | Cartesian3 | Quaternion */
+        result: JsAny /* Cartesian3 | Quaternion */? = definedExternally,
+    ): JsAny /* number | Cartesian3 | Quaternion */
 }

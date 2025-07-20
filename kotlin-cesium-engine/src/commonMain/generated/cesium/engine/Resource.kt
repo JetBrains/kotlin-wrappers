@@ -6,6 +6,8 @@ package cesium.engine
 
 import cesium.engine.Resource.Companion.options
 import js.buffer.ArrayBuffer
+import js.core.JsAny
+import js.core.JsString
 import js.objects.JsPlainObject
 import js.promise.Promise
 import seskar.js.JsAsync
@@ -55,13 +57,13 @@ import kotlin.js.definedExternally
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Resource.html">Online Documentation</a>
  */
 external class Resource(
-    options: Any, /* string | Resource.ConstructorOptions */
+    options: JsAny, /* string | Resource.ConstructorOptions */
 ) {
     /**
      * Additional HTTP headers that will be sent with the request.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Resource.html#headers">Online Documentation</a>
      */
-    var headers: Any
+    var headers: JsAny
 
     /**
      * A Request object that will be used. Intended for internal use only.
@@ -91,13 +93,13 @@ external class Resource(
      * Query parameters appended to the url.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Resource.html#queryParameters">Online Documentation</a>
      */
-    val queryParameters: Any
+    val queryParameters: JsAny
 
     /**
      * The key/value pairs used to replace template parameters in the url.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Resource.html#templateValues">Online Documentation</a>
      */
-    val templateValues: Any
+    val templateValues: JsAny
 
     /**
      * The url to the resource with template values replaced, query string appended and encoded by proxy if one was set.
@@ -158,7 +160,7 @@ external class Resource(
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Resource.html#setQueryParameters">Online Documentation</a>
      */
     fun setQueryParameters(
-        params: Any,
+        params: JsAny,
         useAsDefault: Boolean? = definedExternally,
     )
 
@@ -168,7 +170,7 @@ external class Resource(
      * @param [params] The query parameters
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Resource.html#appendQueryParameters">Online Documentation</a>
      */
-    fun appendQueryParameters(params: Any)
+    fun appendQueryParameters(params: JsAny)
 
     /**
      * Combines the specified object and the existing template values. This allows you to add many values at once,
@@ -179,7 +181,7 @@ external class Resource(
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Resource.html#setTemplateValues">Online Documentation</a>
      */
     fun setTemplateValues(
-        template: Any,
+        template: JsAny,
         useAsDefault: Boolean? = definedExternally,
     )
 
@@ -207,9 +209,9 @@ external class Resource(
     @JsPlainObject
     interface GetDerivedResourceOptions {
         val url: String?
-        val queryParameters: Any?
-        val templateValues: Any?
-        val headers: Any?
+        val queryParameters: JsAny?
+        val templateValues: JsAny?
+        val headers: JsAny?
         val proxy: Proxy?
         val retryCallback: RetryCallback?
         val retryAttempts: Int?
@@ -358,7 +360,7 @@ external class Resource(
     suspend fun fetchText(): String?
 
     @JsName("fetchText")
-    fun fetchTextAsync(): Promise<String>?
+    fun fetchTextAsync(): Promise<JsString>?
 
     /**
      * Asynchronously loads the given resource as JSON.  Returns a promise that will resolve to
@@ -379,10 +381,10 @@ external class Resource(
      */
     @JsAsync(optional = true)
     @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun fetchJson(): Any?
+    suspend fun fetchJson(): JsAny?
 
     @JsName("fetchJson")
-    fun fetchJsonAsync(): Promise<Any>?
+    fun fetchJsonAsync(): Promise<JsAny>?
 
     /**
      * Asynchronously loads the given resource as XML.  Returns a promise that will resolve to
@@ -426,10 +428,10 @@ external class Resource(
      */
     @JsAsync(optional = true)
     @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun fetchJsonp(callbackParameterName: String? = definedExternally): Any?
+    suspend fun fetchJsonp(callbackParameterName: String? = definedExternally): JsAny?
 
     @JsName("fetchJsonp")
-    fun fetchJsonpAsync(callbackParameterName: String? = definedExternally): Promise<Any>?
+    fun fetchJsonpAsync(callbackParameterName: String? = definedExternally): Promise<JsAny>?
 
     /**
      * Asynchronously loads the given resource.  Returns a promise that will resolve to
@@ -450,10 +452,10 @@ external class Resource(
      */
     @JsAsync(optional = true)
     @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun fetch(options: FetchOptions? = definedExternally): Any?
+    suspend fun fetch(options: FetchOptions? = definedExternally): JsAny?
 
     @JsName("fetch")
-    fun fetchAsync(options: FetchOptions? = definedExternally): Promise<Any>?
+    fun fetchAsync(options: FetchOptions? = definedExternally): Promise<JsAny>?
 
     /**
      * @property [responseType] The type of response.  This controls the type of item returned.
@@ -463,7 +465,7 @@ external class Resource(
     @JsPlainObject
     interface FetchOptions {
         val responseType: String?
-        val headers: Any?
+        val headers: JsAny?
         val overrideMimeType: String?
     }
 
@@ -485,10 +487,10 @@ external class Resource(
      */
     @JsAsync(optional = true)
     @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun delete(options: DeleteOptions? = definedExternally): Any?
+    suspend fun delete(options: DeleteOptions? = definedExternally): JsAny?
 
     @JsName("delete")
-    fun deleteAsync(options: DeleteOptions? = definedExternally): Promise<Any>?
+    fun deleteAsync(options: DeleteOptions? = definedExternally): Promise<JsAny>?
 
     /**
      * @property [responseType] The type of response.  This controls the type of item returned.
@@ -498,7 +500,7 @@ external class Resource(
     @JsPlainObject
     interface DeleteOptions {
         val responseType: String?
-        val headers: Any?
+        val headers: JsAny?
         val overrideMimeType: String?
     }
 
@@ -520,10 +522,10 @@ external class Resource(
      */
     @JsAsync(optional = true)
     @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun head(options: HeadOptions? = definedExternally): Any?
+    suspend fun head(options: HeadOptions? = definedExternally): JsAny?
 
     @JsName("head")
-    fun headAsync(options: HeadOptions? = definedExternally): Promise<Any>?
+    fun headAsync(options: HeadOptions? = definedExternally): Promise<JsAny>?
 
     /**
      * @property [responseType] The type of response.  This controls the type of item returned.
@@ -533,7 +535,7 @@ external class Resource(
     @JsPlainObject
     interface HeadOptions {
         val responseType: String?
-        val headers: Any?
+        val headers: JsAny?
         val overrideMimeType: String?
     }
 
@@ -555,10 +557,10 @@ external class Resource(
      */
     @JsAsync(optional = true)
     @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun options(options: OptionsOptions? = definedExternally): Any?
+    suspend fun options(options: OptionsOptions? = definedExternally): JsAny?
 
     @JsName("options")
-    fun optionsAsync(options: OptionsOptions? = definedExternally): Promise<Any>?
+    fun optionsAsync(options: OptionsOptions? = definedExternally): Promise<JsAny>?
 
     /**
      * @property [responseType] The type of response.  This controls the type of item returned.
@@ -568,7 +570,7 @@ external class Resource(
     @JsPlainObject
     interface OptionsOptions {
         val responseType: String?
-        val headers: Any?
+        val headers: JsAny?
         val overrideMimeType: String?
     }
 
@@ -592,15 +594,15 @@ external class Resource(
     @JsAsync(optional = true)
     @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun post(
-        data: Any,
+        data: JsAny,
         options: PostOptions? = definedExternally,
-    ): Any?
+    ): JsAny?
 
     @JsName("post")
     fun postAsync(
-        data: Any,
+        data: JsAny,
         options: PostOptions? = definedExternally,
-    ): Promise<Any>?
+    ): Promise<JsAny>?
 
     /**
      * @property [data] Data that is posted with the resource.
@@ -610,9 +612,9 @@ external class Resource(
      */
     @JsPlainObject
     interface PostOptions {
-        val data: Any?
+        val data: JsAny?
         val responseType: String?
-        val headers: Any?
+        val headers: JsAny?
         val overrideMimeType: String?
     }
 
@@ -636,15 +638,15 @@ external class Resource(
     @JsAsync(optional = true)
     @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun put(
-        data: Any,
+        data: JsAny,
         options: PutOptions? = definedExternally,
-    ): Any?
+    ): JsAny?
 
     @JsName("put")
     fun putAsync(
-        data: Any,
+        data: JsAny,
         options: PutOptions? = definedExternally,
-    ): Promise<Any>?
+    ): Promise<JsAny>?
 
     /**
      * @property [responseType] The type of response.  This controls the type of item returned.
@@ -654,7 +656,7 @@ external class Resource(
     @JsPlainObject
     interface PutOptions {
         val responseType: String?
-        val headers: Any?
+        val headers: JsAny?
         val overrideMimeType: String?
     }
 
@@ -678,15 +680,15 @@ external class Resource(
     @JsAsync(optional = true)
     @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun patch(
-        data: Any,
+        data: JsAny,
         options: PatchOptions? = definedExternally,
-    ): Any?
+    ): JsAny?
 
     @JsName("patch")
     fun patchAsync(
-        data: Any,
+        data: JsAny,
         options: PatchOptions? = definedExternally,
-    ): Promise<Any>?
+    ): Promise<JsAny>?
 
     /**
      * @property [responseType] The type of response.  This controls the type of item returned.
@@ -696,7 +698,7 @@ external class Resource(
     @JsPlainObject
     interface PatchOptions {
         val responseType: String?
-        val headers: Any?
+        val headers: JsAny?
         val overrideMimeType: String?
     }
 
@@ -719,9 +721,9 @@ external class Resource(
     @JsPlainObject
     interface ConstructorOptions {
         val url: String
-        val queryParameters: Any?
-        val templateValues: Any?
-        val headers: Any?
+        val queryParameters: JsAny?
+        val templateValues: JsAny?
+        val headers: JsAny?
         val proxy: Proxy?
         val retryCallback: RetryCallback?
         val retryAttempts: Int?
@@ -764,9 +766,9 @@ external class Resource(
         @JsPlainObject
         interface FetchArrayBufferOptions {
             val url: String
-            val queryParameters: Any?
-            val templateValues: Any?
-            val headers: Any?
+            val queryParameters: JsAny?
+            val templateValues: JsAny?
+            val headers: JsAny?
             val proxy: Proxy?
             val retryCallback: RetryCallback?
             val retryAttempts: Int?
@@ -801,9 +803,9 @@ external class Resource(
         @JsPlainObject
         interface FetchBlobOptions {
             val url: String
-            val queryParameters: Any?
-            val templateValues: Any?
-            val headers: Any?
+            val queryParameters: JsAny?
+            val templateValues: JsAny?
+            val headers: JsAny?
             val proxy: Proxy?
             val retryCallback: RetryCallback?
             val retryAttempts: Int?
@@ -846,9 +848,9 @@ external class Resource(
         @JsPlainObject
         interface FetchImageOptions {
             val url: String
-            val queryParameters: Any?
-            val templateValues: Any?
-            val headers: Any?
+            val queryParameters: JsAny?
+            val templateValues: JsAny?
+            val headers: JsAny?
             val proxy: Proxy?
             val flipY: Boolean?
             val retryCallback: RetryCallback?
@@ -870,7 +872,7 @@ external class Resource(
         suspend fun fetchText(options: FetchTextOptions): String?
 
         @JsName("fetchText")
-        fun fetchTextAsync(options: FetchTextOptions): Promise<String>?
+        fun fetchTextAsync(options: FetchTextOptions): Promise<JsString>?
 
         /**
          * @property [url] The url of the resource.
@@ -887,9 +889,9 @@ external class Resource(
         @JsPlainObject
         interface FetchTextOptions {
             val url: String
-            val queryParameters: Any?
-            val templateValues: Any?
-            val headers: Any?
+            val queryParameters: JsAny?
+            val templateValues: JsAny?
+            val headers: JsAny?
             val proxy: Proxy?
             val retryCallback: RetryCallback?
             val retryAttempts: Int?
@@ -904,10 +906,10 @@ external class Resource(
          */
         @JsAsync(optional = true)
         @Suppress("WRONG_EXTERNAL_DECLARATION")
-        suspend fun fetchJson(options: FetchJsonOptions): Any?
+        suspend fun fetchJson(options: FetchJsonOptions): JsAny?
 
         @JsName("fetchJson")
-        fun fetchJsonAsync(options: FetchJsonOptions): Promise<Any>?
+        fun fetchJsonAsync(options: FetchJsonOptions): Promise<JsAny>?
 
         /**
          * @property [url] The url of the resource.
@@ -924,9 +926,9 @@ external class Resource(
         @JsPlainObject
         interface FetchJsonOptions {
             val url: String
-            val queryParameters: Any?
-            val templateValues: Any?
-            val headers: Any?
+            val queryParameters: JsAny?
+            val templateValues: JsAny?
+            val headers: JsAny?
             val proxy: Proxy?
             val retryCallback: RetryCallback?
             val retryAttempts: Int?
@@ -961,9 +963,9 @@ external class Resource(
         @JsPlainObject
         interface FetchXMLOptions {
             val url: String
-            val queryParameters: Any?
-            val templateValues: Any?
-            val headers: Any?
+            val queryParameters: JsAny?
+            val templateValues: JsAny?
+            val headers: JsAny?
             val proxy: Proxy?
             val retryCallback: RetryCallback?
             val retryAttempts: Int?
@@ -978,10 +980,10 @@ external class Resource(
          */
         @JsAsync(optional = true)
         @Suppress("WRONG_EXTERNAL_DECLARATION")
-        suspend fun fetchJsonp(options: FetchJsonpOptions): Any?
+        suspend fun fetchJsonp(options: FetchJsonpOptions): JsAny?
 
         @JsName("fetchJsonp")
-        fun fetchJsonpAsync(options: FetchJsonpOptions): Promise<Any>?
+        fun fetchJsonpAsync(options: FetchJsonpOptions): Promise<JsAny>?
 
         /**
          * @property [url] The url of the resource.
@@ -1000,9 +1002,9 @@ external class Resource(
         @JsPlainObject
         interface FetchJsonpOptions {
             val url: String
-            val queryParameters: Any?
-            val templateValues: Any?
-            val headers: Any?
+            val queryParameters: JsAny?
+            val templateValues: JsAny?
+            val headers: JsAny?
             val proxy: Proxy?
             val retryCallback: RetryCallback?
             val retryAttempts: Int?
@@ -1018,10 +1020,10 @@ external class Resource(
          */
         @JsAsync(optional = true)
         @Suppress("WRONG_EXTERNAL_DECLARATION")
-        suspend fun fetch(options: FetchOptions): Any?
+        suspend fun fetch(options: FetchOptions): JsAny?
 
         @JsName("fetch")
-        fun fetchAsync(options: FetchOptions): Promise<Any>?
+        fun fetchAsync(options: FetchOptions): Promise<JsAny>?
 
         /**
          * @property [url] The url of the resource.
@@ -1040,9 +1042,9 @@ external class Resource(
         @JsPlainObject
         interface FetchOptions {
             val url: String
-            val queryParameters: Any?
-            val templateValues: Any?
-            val headers: Any?
+            val queryParameters: JsAny?
+            val templateValues: JsAny?
+            val headers: JsAny?
             val proxy: Proxy?
             val retryCallback: RetryCallback?
             val retryAttempts: Int?
@@ -1059,10 +1061,10 @@ external class Resource(
          */
         @JsAsync(optional = true)
         @Suppress("WRONG_EXTERNAL_DECLARATION")
-        suspend fun delete(options: DeleteOptions): Any?
+        suspend fun delete(options: DeleteOptions): JsAny?
 
         @JsName("delete")
-        fun deleteAsync(options: DeleteOptions): Promise<Any>?
+        fun deleteAsync(options: DeleteOptions): Promise<JsAny>?
 
         /**
          * @property [url] The url of the resource.
@@ -1082,10 +1084,10 @@ external class Resource(
         @JsPlainObject
         interface DeleteOptions {
             val url: String
-            val data: Any?
-            val queryParameters: Any?
-            val templateValues: Any?
-            val headers: Any?
+            val data: JsAny?
+            val queryParameters: JsAny?
+            val templateValues: JsAny?
+            val headers: JsAny?
             val proxy: Proxy?
             val retryCallback: RetryCallback?
             val retryAttempts: Int?
@@ -1102,10 +1104,10 @@ external class Resource(
          */
         @JsAsync(optional = true)
         @Suppress("WRONG_EXTERNAL_DECLARATION")
-        suspend fun head(options: HeadOptions): Any?
+        suspend fun head(options: HeadOptions): JsAny?
 
         @JsName("head")
-        fun headAsync(options: HeadOptions): Promise<Any>?
+        fun headAsync(options: HeadOptions): Promise<JsAny>?
 
         /**
          * @property [url] The url of the resource.
@@ -1124,9 +1126,9 @@ external class Resource(
         @JsPlainObject
         interface HeadOptions {
             val url: String
-            val queryParameters: Any?
-            val templateValues: Any?
-            val headers: Any?
+            val queryParameters: JsAny?
+            val templateValues: JsAny?
+            val headers: JsAny?
             val proxy: Proxy?
             val retryCallback: RetryCallback?
             val retryAttempts: Int?
@@ -1143,10 +1145,10 @@ external class Resource(
          */
         @JsAsync(optional = true)
         @Suppress("WRONG_EXTERNAL_DECLARATION")
-        suspend fun options(options: OptionsOptions): Any?
+        suspend fun options(options: OptionsOptions): JsAny?
 
         @JsName("options")
-        fun optionsAsync(options: OptionsOptions): Promise<Any>?
+        fun optionsAsync(options: OptionsOptions): Promise<JsAny>?
 
         /**
          * @property [url] The url of the resource.
@@ -1165,9 +1167,9 @@ external class Resource(
         @JsPlainObject
         interface OptionsOptions {
             val url: String
-            val queryParameters: Any?
-            val templateValues: Any?
-            val headers: Any?
+            val queryParameters: JsAny?
+            val templateValues: JsAny?
+            val headers: JsAny?
             val proxy: Proxy?
             val retryCallback: RetryCallback?
             val retryAttempts: Int?
@@ -1184,10 +1186,10 @@ external class Resource(
          */
         @JsAsync(optional = true)
         @Suppress("WRONG_EXTERNAL_DECLARATION")
-        suspend fun post(options: PostOptions): Any?
+        suspend fun post(options: PostOptions): JsAny?
 
         @JsName("post")
-        fun postAsync(options: PostOptions): Promise<Any>?
+        fun postAsync(options: PostOptions): Promise<JsAny>?
 
         /**
          * @property [url] The url of the resource.
@@ -1207,10 +1209,10 @@ external class Resource(
         @JsPlainObject
         interface PostOptions {
             val url: String
-            val data: Any
-            val queryParameters: Any?
-            val templateValues: Any?
-            val headers: Any?
+            val data: JsAny
+            val queryParameters: JsAny?
+            val templateValues: JsAny?
+            val headers: JsAny?
             val proxy: Proxy?
             val retryCallback: RetryCallback?
             val retryAttempts: Int?
@@ -1227,10 +1229,10 @@ external class Resource(
          */
         @JsAsync(optional = true)
         @Suppress("WRONG_EXTERNAL_DECLARATION")
-        suspend fun put(options: PutOptions): Any?
+        suspend fun put(options: PutOptions): JsAny?
 
         @JsName("put")
-        fun putAsync(options: PutOptions): Promise<Any>?
+        fun putAsync(options: PutOptions): Promise<JsAny>?
 
         /**
          * @property [url] The url of the resource.
@@ -1250,10 +1252,10 @@ external class Resource(
         @JsPlainObject
         interface PutOptions {
             val url: String
-            val data: Any
-            val queryParameters: Any?
-            val templateValues: Any?
-            val headers: Any?
+            val data: JsAny
+            val queryParameters: JsAny?
+            val templateValues: JsAny?
+            val headers: JsAny?
             val proxy: Proxy?
             val retryCallback: RetryCallback?
             val retryAttempts: Int?
@@ -1270,10 +1272,10 @@ external class Resource(
          */
         @JsAsync(optional = true)
         @Suppress("WRONG_EXTERNAL_DECLARATION")
-        suspend fun patch(options: PatchOptions): Any?
+        suspend fun patch(options: PatchOptions): JsAny?
 
         @JsName("patch")
-        fun patchAsync(options: PatchOptions): Promise<Any>?
+        fun patchAsync(options: PatchOptions): Promise<JsAny>?
 
         /**
          * @property [url] The url of the resource.
@@ -1293,10 +1295,10 @@ external class Resource(
         @JsPlainObject
         interface PatchOptions {
             val url: String
-            val data: Any
-            val queryParameters: Any?
-            val templateValues: Any?
-            val headers: Any?
+            val data: JsAny
+            val queryParameters: JsAny?
+            val templateValues: JsAny?
+            val headers: JsAny?
             val proxy: Proxy?
             val retryCallback: RetryCallback?
             val retryAttempts: Int?

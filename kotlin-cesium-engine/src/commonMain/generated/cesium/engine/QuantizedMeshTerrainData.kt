@@ -5,6 +5,8 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
+import js.core.JsAny
+import js.core.JsDouble
 import js.objects.JsPlainObject
 import js.promise.Promise
 import js.typedarrays.TypedArray
@@ -89,10 +91,10 @@ external class QuantizedMeshTerrainData(
         val boundingSphere: BoundingSphere
         val orientedBoundingBox: OrientedBoundingBox?
         val horizonOcclusionPoint: Cartesian3
-        val westIndices: ReadonlyArray<Double>
-        val southIndices: ReadonlyArray<Double>
-        val eastIndices: ReadonlyArray<Double>
-        val northIndices: ReadonlyArray<Double>
+        val westIndices: ReadonlyArray<JsDouble>
+        val southIndices: ReadonlyArray<JsDouble>
+        val eastIndices: ReadonlyArray<JsDouble>
+        val northIndices: ReadonlyArray<JsDouble>
         val westSkirtHeight: Double
         val southSkirtHeight: Double
         val eastSkirtHeight: Double
@@ -116,7 +118,7 @@ external class QuantizedMeshTerrainData(
      * Values in between 0 and 255 are allowed as well to smoothly blend between land and water.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/QuantizedMeshTerrainData.html#waterMask">Online Documentation</a>
      */
-    override var waterMask: Any? /* Uint8Array | HTMLImageElement | HTMLCanvasElement | undefined */
+    override var waterMask: JsAny? /* Uint8Array | HTMLImageElement | HTMLCanvasElement | undefined */
 
     /**
      * Upsamples this terrain data for use by a descendant tile.  The resulting instance will contain a subset of the

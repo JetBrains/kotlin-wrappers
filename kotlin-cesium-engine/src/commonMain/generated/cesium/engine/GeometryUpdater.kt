@@ -5,6 +5,8 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
+import js.core.JsAny
+import js.core.JsString
 import js.objects.JsPlainObject
 import kotlin.js.JsModule
 
@@ -26,9 +28,9 @@ external class GeometryUpdater(
     interface ConstructorOptions {
         val entity: Entity
         val scene: Scene
-        val geometryOptions: Any
+        val geometryOptions: JsAny
         val geometryPropertyName: String
-        val observedPropertyNames: ReadonlyArray<String>
+        val observedPropertyNames: ReadonlyArray<JsString>
     }
 
     /**

@@ -5,6 +5,7 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
+import js.core.JsAny
 import js.objects.JsPlainObject
 import kotlin.js.JsModule
 import kotlin.js.definedExternally
@@ -186,6 +187,6 @@ external class ClippingPolygonCollection(
          * @return `true` if the context supports clipping polygons.
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ClippingPolygonCollection.html#.isSupported">Online Documentation</a>
          */
-        fun isSupported(scene: Any /* Scene | any */): Boolean
+        fun isSupported(scene: JsAny /* Scene | any */): Boolean
     }
 }

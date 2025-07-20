@@ -4,6 +4,7 @@
 
 package cesium.engine
 
+import js.core.JsAny
 import js.objects.JsPlainObject
 import js.promise.Promise
 import seskar.js.JsAsync
@@ -43,7 +44,7 @@ external class GpxDataSource() {
      * Gets an object containing metadata about the GPX file.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GpxDataSource.html#metadata">Online Documentation</a>
      */
-    var metadata: Any
+    var metadata: JsAny
 
     /**
      * Gets the clock settings defined by the loaded GPX. This represents the total
@@ -115,13 +116,13 @@ external class GpxDataSource() {
     @JsAsync
     @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun load(
-        data: Any, /* string | Document | Blob */
+        data: JsAny, /* string | Document | Blob */
         options: LoadOptions? = definedExternally,
     ): GpxDataSource
 
     @JsName("load")
     fun loadAsync(
-        data: Any, /* string | Document | Blob */
+        data: JsAny, /* string | Document | Blob */
         options: LoadOptions? = definedExternally,
     ): Promise<GpxDataSource>
 
@@ -151,13 +152,13 @@ external class GpxDataSource() {
         @JsAsync
         @Suppress("WRONG_EXTERNAL_DECLARATION")
         suspend fun load(
-            data: Any, /* string | Document | Blob */
+            data: JsAny, /* string | Document | Blob */
             options: LoadOptions? = definedExternally,
         ): GpxDataSource
 
         @JsName("load")
         fun loadAsync(
-            data: Any, /* string | Document | Blob */
+            data: JsAny, /* string | Document | Blob */
             options: LoadOptions? = definedExternally,
         ): Promise<GpxDataSource>
 

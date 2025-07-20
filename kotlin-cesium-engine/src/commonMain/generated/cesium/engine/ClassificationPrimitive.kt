@@ -4,6 +4,7 @@
 
 package cesium.engine
 
+import js.core.JsAny
 import js.objects.JsPlainObject
 import kotlin.js.JsModule
 import kotlin.js.definedExternally
@@ -180,7 +181,7 @@ external class ClassificationPrimitive(
      * @return The typed array in the attribute's format or undefined if the is no instance with id.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ClassificationPrimitive.html#getGeometryInstanceAttributes">Online Documentation</a>
      */
-    fun getGeometryInstanceAttributes(id: Any): Any
+    fun getGeometryInstanceAttributes(id: JsAny): JsAny
 
     /**
      * Returns true if this object was destroyed; otherwise, false.

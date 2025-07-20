@@ -4,6 +4,7 @@
 
 package cesium.engine
 
+import js.core.JsAny
 import kotlin.js.JsModule
 import kotlin.js.definedExternally
 
@@ -130,7 +131,7 @@ private constructor() {
      * Gets or sets the user-defined value returned when the point is picked.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PointPrimitive.html#id">Online Documentation</a>
      */
-    var id: Any
+    var id: JsAny
 
     /**
      * The [SplitDirection] to apply to this point.

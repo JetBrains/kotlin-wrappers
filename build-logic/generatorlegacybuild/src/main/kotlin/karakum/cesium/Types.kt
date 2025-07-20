@@ -22,7 +22,7 @@ internal fun typeDeclaration(
             -> "typealias $name = CanvasImageSource /* $body */"
 
         body == "number | bigint | string | boolean | Cartesian2 | Cartesian3 | Cartesian4 | Matrix2 | Matrix3 | Matrix4 | number[] | bigint[] | string[] | boolean[] | Cartesian2[] | Cartesian3[] | Cartesian4[] | Matrix2[] | Matrix3[] | Matrix4[]"
-            -> "typealias $name = Any /* $body */"
+            -> "typealias $name = JsAny /* $body */"
 
         body == IMAGERY_LAYER_CONSTRUCTOR_OPTIONS
             -> {

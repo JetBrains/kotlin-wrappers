@@ -6,6 +6,8 @@ package cesium.widgets
 
 import cesium.engine.*
 import js.array.ReadonlyArray
+import js.core.JsAny
+import js.core.JsString
 import web.html.HTMLElement
 import kotlin.js.JsModule
 
@@ -111,7 +113,7 @@ external class Cesium3DTilesInspectorViewModel(
      * Gets the names of the properties in the tileset.  This property is observable.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTilesInspectorViewModel.html#properties">Online Documentation</a>
      */
-    val properties: ReadonlyArray<String>
+    val properties: ReadonlyArray<JsString>
 
     /**
      * Gets or sets the flag to enable dynamic screen space error.  This property is observable.
@@ -332,7 +334,7 @@ external class Cesium3DTilesInspectorViewModel(
      * Gets the available blend modes
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTilesInspectorViewModel.html#colorBlendModes">Online Documentation</a>
      */
-    val colorBlendModes: ReadonlyArray<Any>
+    val colorBlendModes: ReadonlyArray<JsAny>
 
     /**
      * Gets the editor error message

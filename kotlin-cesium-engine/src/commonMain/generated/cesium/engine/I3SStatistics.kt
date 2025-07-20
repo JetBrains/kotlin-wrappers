@@ -5,6 +5,8 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
+import js.core.JsAny
+import js.core.JsString
 import kotlin.js.JsModule
 
 /**
@@ -25,11 +27,11 @@ private constructor() {
      * Gets the I3S data for this object.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/I3SStatistics.html#data">Online Documentation</a>
      */
-    val data: Any
+    val data: JsAny
 
     /**
      * Gets the collection of attribute names.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/I3SStatistics.html#names">Online Documentation</a>
      */
-    val names: ReadonlyArray<String>
+    val names: ReadonlyArray<JsString>
 }

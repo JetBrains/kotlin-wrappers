@@ -4,6 +4,7 @@
 
 package cesium.engine
 
+import js.core.JsAny
 import kotlin.js.JsModule
 
 /**
@@ -69,6 +70,6 @@ external class PolylineDashMaterialProperty() :
      */
     override fun getValue(
         time: JulianDate?,
-        result: Any?,
-    ): Any
+        result: JsAny?,
+    ): JsAny
 }

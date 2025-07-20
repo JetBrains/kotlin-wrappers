@@ -5,6 +5,8 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
+import js.core.JsAny
+import js.core.JsString
 import js.objects.JsPlainObject
 import kotlin.js.JsModule
 import kotlin.js.definedExternally
@@ -86,7 +88,7 @@ private constructor() {
      * @return The value of the property or `undefined` if the feature does not have this property.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ModelFeature.html#getProperty">Online Documentation</a>
      */
-    fun getProperty(name: String): Any
+    fun getProperty(name: String): JsAny
 
     /**
      * Returns a copy of the feature's property with the given name, examining all
@@ -104,7 +106,7 @@ private constructor() {
      * @return The value of the property or `undefined` if the feature does not have this property.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ModelFeature.html#getPropertyInherited">Online Documentation</a>
      */
-    fun getPropertyInherited(name: String): Any
+    fun getPropertyInherited(name: String): JsAny
 
     /**
      * Returns an array of property IDs for the feature.
@@ -112,7 +114,7 @@ private constructor() {
      * @return The IDs of the feature's properties.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ModelFeature.html#getPropertyIds">Online Documentation</a>
      */
-    fun getPropertyIds(results: ReadonlyArray<String>? = definedExternally): ReadonlyArray<String>
+    fun getPropertyIds(results: ReadonlyArray<JsString>? = definedExternally): ReadonlyArray<JsString>
 
     /**
      * Sets the value of the feature's property with the given name.
@@ -135,6 +137,6 @@ private constructor() {
      */
     fun setProperty(
         name: String,
-        value: Any,
+        value: JsAny,
     ): Boolean
 }

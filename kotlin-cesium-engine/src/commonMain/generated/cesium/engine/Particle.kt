@@ -4,6 +4,7 @@
 
 package cesium.engine
 
+import js.core.JsAny
 import js.objects.JsPlainObject
 import kotlin.js.JsModule
 
@@ -41,7 +42,7 @@ external class Particle(
         val position: Cartesian3?
         val velocity: Cartesian3?
         val life: Double?
-        val image: Any?
+        val image: JsAny?
         val startColor: Color?
         val endColor: Color?
         val startScale: Double?
@@ -77,7 +78,7 @@ external class Particle(
      * The image to use for the particle.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Particle.html#image">Online Documentation</a>
      */
-    var image: Any
+    var image: JsAny
 
     /**
      * The color of the particle when it is born.

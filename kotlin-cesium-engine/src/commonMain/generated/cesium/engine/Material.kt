@@ -4,6 +4,7 @@
 
 package cesium.engine
 
+import js.core.JsAny
 import js.objects.JsPlainObject
 import kotlin.js.JsModule
 import kotlin.js.definedExternally
@@ -57,7 +58,7 @@ external class Material(
         val translucent: Boolean /* | Function */?
         val minificationFilter: TextureMinificationFilter?
         val magnificationFilter: TextureMagnificationFilter?
-        val fabric: Any
+        val fabric: JsAny
     }
 
     /**
@@ -76,13 +77,13 @@ external class Material(
      * Maps sub-material names to Material objects.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Material.html#materials">Online Documentation</a>
      */
-    var materials: Any
+    var materials: JsAny
 
     /**
      * Maps uniform names to their values.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Material.html#uniforms">Online Documentation</a>
      */
-    var uniforms: Any
+    var uniforms: JsAny
 
     /**
      * When `true` or a function that returns `true`,
@@ -139,7 +140,7 @@ external class Material(
          */
         fun fromType(
             type: String,
-            uniforms: Any? = definedExternally,
+            uniforms: JsAny? = definedExternally,
         ): Material
 
         /**

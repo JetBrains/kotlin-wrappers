@@ -5,6 +5,7 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
+import js.core.JsDouble
 import js.objects.JsPlainObject
 import kotlin.js.JsModule
 import kotlin.js.definedExternally
@@ -199,13 +200,13 @@ external class VoxelPrimitive(
      * Gets the minimum value per channel of the voxel data.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/VoxelPrimitive.html#minimumValues">Online Documentation</a>
      */
-    val minimumValues: ReadonlyArray<ReadonlyArray<Double>>
+    val minimumValues: ReadonlyArray<ReadonlyArray<JsDouble>>
 
     /**
      * Gets the maximum value per channel of the voxel data.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/VoxelPrimitive.html#maximumValues">Online Documentation</a>
      */
-    val maximumValues: ReadonlyArray<ReadonlyArray<Double>>
+    val maximumValues: ReadonlyArray<ReadonlyArray<JsDouble>>
 
     /**
      * Gets or sets whether or not this primitive should be displayed.

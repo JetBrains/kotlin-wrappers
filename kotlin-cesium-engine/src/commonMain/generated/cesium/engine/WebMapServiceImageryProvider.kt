@@ -5,6 +5,8 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
+import js.core.JsAny
+import js.core.JsString
 import js.objects.JsPlainObject
 import js.promise.Promise
 import seskar.js.JsAsync
@@ -269,8 +271,8 @@ external class WebMapServiceImageryProvider(
     interface ConstructorOptions {
         val url: Resource
         val layers: String
-        val parameters: Any?
-        val getFeatureInfoParameters: Any?
+        val parameters: JsAny?
+        val getFeatureInfoParameters: JsAny?
         val enablePickFeatures: Boolean?
         val getFeatureInfoFormats: ReadonlyArray<GetFeatureInfoFormat>?
         val rectangle: Rectangle?
@@ -283,7 +285,7 @@ external class WebMapServiceImageryProvider(
         val crs: String?
         val srs: String?
         val credit: Credit?
-        val subdomains: ReadonlyArray<String>?
+        val subdomains: ReadonlyArray<JsString>?
         val clock: Clock?
         val times: TimeIntervalCollection?
         val getFeatureInfoUrl: Resource?
@@ -299,7 +301,7 @@ external class WebMapServiceImageryProvider(
          *    format=image/jpeg
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/WebMapServiceImageryProvider.html#.DefaultParameters">Online Documentation</a>
          */
-        val DefaultParameters: Any
+        val DefaultParameters: JsAny
 
         /**
          * The default parameters to include in the WMS URL to get feature information.  The values are as follows:
@@ -308,6 +310,6 @@ external class WebMapServiceImageryProvider(
          *     request=GetFeatureInfo
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/WebMapServiceImageryProvider.html#.GetFeatureInfoDefaultParameters">Online Documentation</a>
          */
-        val GetFeatureInfoDefaultParameters: Any
+        val GetFeatureInfoDefaultParameters: JsAny
     }
 }

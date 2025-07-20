@@ -4,6 +4,7 @@
 
 package cesium.engine
 
+import js.core.JsAny
 import kotlin.js.JsModule
 
 /**
@@ -18,6 +19,6 @@ import kotlin.js.JsModule
  */
 external fun getSourceValueStringComponent(
     classProperty: MetadataClassProperty,
-    metadataProperty: Any,
+    metadataProperty: JsAny,
     componentName: String,
 ): String

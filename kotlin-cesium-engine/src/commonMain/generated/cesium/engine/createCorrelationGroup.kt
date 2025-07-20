@@ -4,6 +4,7 @@
 
 package cesium.engine
 
+import js.core.JsAny
 import kotlin.js.JsModule
 
 /**
@@ -12,4 +13,4 @@ import kotlin.js.JsModule
  * @return The correlation group
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#createCorrelationGroup">Online Documentation</a>
  */
-external fun createCorrelationGroup(correlationGroupJson: Any): CorrelationGroup
+external fun createCorrelationGroup(correlationGroupJson: JsAny): CorrelationGroup

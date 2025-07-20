@@ -5,6 +5,7 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
+import js.core.JsAny
 import js.promise.Promise
 import seskar.js.JsAsync
 import kotlin.js.JsModule
@@ -28,7 +29,7 @@ abstract external class TerrainData() {
      * Values in between 0 and 255 are allowed as well to smoothly blend between land and water.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/TerrainData.html#waterMask">Online Documentation</a>
      */
-    abstract var waterMask: Any? /* Uint8Array | HTMLImageElement | HTMLCanvasElement | undefined */
+    abstract var waterMask: JsAny? /* Uint8Array | HTMLImageElement | HTMLCanvasElement | undefined */
 
     /**
      * Computes the terrain height at a specified longitude and latitude.

@@ -5,6 +5,8 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
+import js.core.JsAny
+import js.core.JsDouble
 import js.objects.JsPlainObject
 import kotlin.js.JsModule
 import kotlin.js.definedExternally
@@ -25,7 +27,7 @@ external class FrustumGeometry(
      */
     @JsPlainObject
     interface ConstructorOptions {
-        val frustum: Any /* PerspectiveFrustum | OrthographicFrustum */
+        val frustum: JsAny /* PerspectiveFrustum | OrthographicFrustum */
         val origin: Cartesian3
         val orientation: Quaternion
         val vertexFormat: VertexFormat?
@@ -49,9 +51,9 @@ external class FrustumGeometry(
          */
         fun pack(
             value: FrustumGeometry,
-            array: ReadonlyArray<Double>,
+            array: ReadonlyArray<JsDouble>,
             startingIndex: Int? = definedExternally,
-        ): ReadonlyArray<Double>
+        ): ReadonlyArray<JsDouble>
 
         /**
          * Retrieves an instance from a packed array.
@@ -62,7 +64,7 @@ external class FrustumGeometry(
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/FrustumGeometry.html#.unpack">Online Documentation</a>
          */
         fun unpack(
-            array: ReadonlyArray<Double>,
+            array: ReadonlyArray<JsDouble>,
             startingIndex: Int? = definedExternally,
             result: FrustumGeometry? = definedExternally,
         )

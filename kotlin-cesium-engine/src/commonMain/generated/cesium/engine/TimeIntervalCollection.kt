@@ -5,6 +5,8 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
+import js.core.JsAny
+import js.core.JsString
 import js.objects.JsPlainObject
 import kotlin.js.JsModule
 import kotlin.js.definedExternally
@@ -103,7 +105,7 @@ external class TimeIntervalCollection(
      * @return The data for the interval containing the specified date, or `undefined` if no such interval exists.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/TimeIntervalCollection.html#findDataForIntervalContainingDate">Online Documentation</a>
      */
-    fun findDataForIntervalContainingDate(date: JulianDate): Any
+    fun findDataForIntervalContainingDate(date: JulianDate): JsAny
 
     /**
      * Checks if the specified date is inside this collection.
@@ -274,7 +276,7 @@ external class TimeIntervalCollection(
          */
         @JsPlainObject
         interface FromIso8601DateArrayOptions {
-            val iso8601Dates: ReadonlyArray<String>
+            val iso8601Dates: ReadonlyArray<JsString>
             val isStartIncluded: Boolean?
             val isStopIncluded: Boolean?
             val leadingInterval: Boolean?

@@ -5,6 +5,7 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
+import js.core.JsDouble
 import kotlin.js.JsModule
 
 /**
@@ -38,5 +39,5 @@ external object QuadraticRealPolynomial {
         a: Double,
         b: Double,
         c: Double,
-    ): ReadonlyArray<Double>
+    ): ReadonlyArray<JsDouble>
 }

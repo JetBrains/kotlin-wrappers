@@ -4,6 +4,7 @@
 
 package cesium.engine
 
+import js.core.JsAny
 import kotlin.js.JsModule
 
 /**
@@ -24,5 +25,5 @@ private constructor() {
      * Gets the I3S data for this object.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/I3SFeature.html#data">Online Documentation</a>
      */
-    val data: Any
+    val data: JsAny
 }

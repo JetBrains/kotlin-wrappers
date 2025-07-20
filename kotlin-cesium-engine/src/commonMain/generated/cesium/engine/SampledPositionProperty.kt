@@ -5,6 +5,8 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
+import js.core.JsAny
+import js.core.JsDouble
 import js.objects.JsPlainObject
 import kotlin.js.JsModule
 import kotlin.js.definedExternally
@@ -145,7 +147,7 @@ external class SampledPositionProperty(
     fun addSamples(
         times: ReadonlyArray<JulianDate>,
         positions: ReadonlyArray<Cartesian3>,
-        derivatives: ReadonlyArray<ReadonlyArray<Any>>? = definedExternally,
+        derivatives: ReadonlyArray<ReadonlyArray<JsAny>>? = definedExternally,
     )
 
     /**
@@ -156,7 +158,7 @@ external class SampledPositionProperty(
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/SampledPositionProperty.html#addSamplesPackedArray">Online Documentation</a>
      */
     fun addSamplesPackedArray(
-        packedSamples: ReadonlyArray<Double>,
+        packedSamples: ReadonlyArray<JsDouble>,
         epoch: JulianDate? = definedExternally,
     )
 

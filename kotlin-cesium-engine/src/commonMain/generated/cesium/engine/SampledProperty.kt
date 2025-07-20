@@ -5,6 +5,8 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
+import js.core.JsAny
+import js.core.JsDouble
 import js.objects.JsPlainObject
 import kotlin.js.JsModule
 import kotlin.js.definedExternally
@@ -79,7 +81,7 @@ external class SampledProperty(
      * Gets the type of property.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/SampledProperty.html#type">Online Documentation</a>
      */
-    var type: Any
+    var type: JsAny
 
     /**
      * Gets the degree of interpolation to perform when retrieving a value.
@@ -131,8 +133,8 @@ external class SampledProperty(
      */
     fun getValue(
         time: JulianDate? = definedExternally,
-        result: Any? = definedExternally,
-    ): Any
+        result: JsAny? = definedExternally,
+    ): JsAny
 
     /**
      * Sets the algorithm and degree to use when interpolating a value.
@@ -173,7 +175,7 @@ external class SampledProperty(
     fun addSamples(
         times: ReadonlyArray<JulianDate>,
         values: ReadonlyArray<Packable<*>>,
-        derivativeValues: ReadonlyArray<ReadonlyArray<Any>>? = definedExternally,
+        derivativeValues: ReadonlyArray<ReadonlyArray<JsAny>>? = definedExternally,
     )
 
     /**
@@ -192,7 +194,7 @@ external class SampledProperty(
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/SampledProperty.html#addSamplesPackedArray">Online Documentation</a>
      */
     fun addSamplesPackedArray(
-        packedSamples: ReadonlyArray<Double>,
+        packedSamples: ReadonlyArray<JsDouble>,
         epoch: JulianDate? = definedExternally,
     )
 

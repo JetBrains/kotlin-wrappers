@@ -8,6 +8,7 @@ import cesium.engine.DefaultEvent
 import cesium.engine.GeocoderService
 import cesium.engine.Scene
 import js.array.ReadonlyArray
+import js.core.JsAny
 import js.objects.JsPlainObject
 import kotlin.js.JsModule
 
@@ -96,13 +97,13 @@ external class GeocoderViewModel(
      * Gets the currently selected geocoder search suggestion
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GeocoderViewModel.html#selectedSuggestion">Online Documentation</a>
      */
-    var selectedSuggestion: Any
+    var selectedSuggestion: JsAny
 
     /**
      * Gets the list of geocoder search suggestions
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GeocoderViewModel.html#suggestions">Online Documentation</a>
      */
-    var suggestions: ReadonlyArray<Any>
+    var suggestions: ReadonlyArray<JsAny>
 
     /**
      * @return true if the object has been destroyed, false otherwise.

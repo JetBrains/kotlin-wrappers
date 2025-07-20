@@ -5,6 +5,7 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
+import js.core.JsAny
 import kotlin.js.JsModule
 
 /**
@@ -17,12 +18,12 @@ external object Frozen {
      * an object literal.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Frozen.html#.EMPTY_OBJECT">Online Documentation</a>
      */
-    var EMPTY_OBJECT: Any
+    var EMPTY_OBJECT: JsAny
 
     /**
      * A frozen empty array that can be used as the default value for options passed as
      * an array literal.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Frozen.html#.EMPTY_ARRAY">Online Documentation</a>
      */
-    var EMPTY_ARRAY: ReadonlyArray<Any>
+    var EMPTY_ARRAY: ReadonlyArray<JsAny>
 }

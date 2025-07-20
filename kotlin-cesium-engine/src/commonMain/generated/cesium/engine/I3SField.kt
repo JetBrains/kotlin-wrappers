@@ -4,6 +4,7 @@
 
 package cesium.engine
 
+import js.core.JsAny
 import js.core.Void
 import js.promise.Promise
 import seskar.js.JsAsync
@@ -26,13 +27,13 @@ external class I3SField() {
      * Gets the header for this field.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/I3SField.html#header">Online Documentation</a>
      */
-    val header: Any
+    val header: JsAny
 
     /**
      * Gets the values for this field.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/I3SField.html#values">Online Documentation</a>
      */
-    val values: Any
+    val values: JsAny
 
     /**
      * Gets the name for the field.

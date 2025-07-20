@@ -5,6 +5,7 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
+import js.core.JsBoolean
 import js.objects.JsPlainObject
 import js.promise.Promise
 import seskar.js.JsAsync
@@ -371,7 +372,7 @@ external class CesiumWidget(
     fun zoomToAsync(
         target: Entity,
         offset: HeadingPitchRange? = definedExternally,
-    ): Promise<Boolean>
+    ): Promise<JsBoolean>
 
     @JsAsync
     @Suppress("WRONG_EXTERNAL_DECLARATION")
@@ -384,7 +385,7 @@ external class CesiumWidget(
     fun zoomToAsync(
         target: ReadonlyArray<Entity>,
         offset: HeadingPitchRange? = definedExternally,
-    ): Promise<Boolean>
+    ): Promise<JsBoolean>
 
     @JsAsync
     @Suppress("WRONG_EXTERNAL_DECLARATION")
@@ -397,7 +398,7 @@ external class CesiumWidget(
     fun zoomToAsync(
         target: EntityCollection,
         offset: HeadingPitchRange? = definedExternally,
-    ): Promise<Boolean>
+    ): Promise<JsBoolean>
 
     @JsAsync
     @Suppress("WRONG_EXTERNAL_DECLARATION")
@@ -410,7 +411,7 @@ external class CesiumWidget(
     fun zoomToAsync(
         target: DataSource,
         offset: HeadingPitchRange? = definedExternally,
-    ): Promise<Boolean>
+    ): Promise<JsBoolean>
 
     @JsAsync
     @Suppress("WRONG_EXTERNAL_DECLARATION")
@@ -423,7 +424,7 @@ external class CesiumWidget(
     fun zoomToAsync(
         target: ImageryLayer,
         offset: HeadingPitchRange? = definedExternally,
-    ): Promise<Boolean>
+    ): Promise<JsBoolean>
 
     @JsAsync
     @Suppress("WRONG_EXTERNAL_DECLARATION")
@@ -436,7 +437,7 @@ external class CesiumWidget(
     fun zoomToAsync(
         target: Cesium3DTileset,
         offset: HeadingPitchRange? = definedExternally,
-    ): Promise<Boolean>
+    ): Promise<JsBoolean>
 
     @JsAsync
     @Suppress("WRONG_EXTERNAL_DECLARATION")
@@ -449,7 +450,7 @@ external class CesiumWidget(
     fun zoomToAsync(
         target: TimeDynamicPointCloud,
         offset: HeadingPitchRange? = definedExternally,
-    ): Promise<Boolean>
+    ): Promise<JsBoolean>
 
     @JsAsync
     @Suppress("WRONG_EXTERNAL_DECLARATION")
@@ -462,7 +463,7 @@ external class CesiumWidget(
     fun zoomToAsync(
         target: Promise<Entity>,
         offset: HeadingPitchRange? = definedExternally,
-    ): Promise<Boolean>
+    ): Promise<JsBoolean>
 
     @JsAsync
     @Suppress("WRONG_EXTERNAL_DECLARATION")
@@ -475,7 +476,7 @@ external class CesiumWidget(
     fun zoomToAsync(
         target: Promise<ReadonlyArray<Entity>>,
         offset: HeadingPitchRange? = definedExternally,
-    ): Promise<Boolean>
+    ): Promise<JsBoolean>
 
     @JsAsync
     @Suppress("WRONG_EXTERNAL_DECLARATION")
@@ -488,7 +489,7 @@ external class CesiumWidget(
     fun zoomToAsync(
         target: Promise<EntityCollection>,
         offset: HeadingPitchRange? = definedExternally,
-    ): Promise<Boolean>
+    ): Promise<JsBoolean>
 
     @JsAsync
     @Suppress("WRONG_EXTERNAL_DECLARATION")
@@ -501,7 +502,7 @@ external class CesiumWidget(
     fun zoomToAsync(
         target: Promise<DataSource>,
         offset: HeadingPitchRange? = definedExternally,
-    ): Promise<Boolean>
+    ): Promise<JsBoolean>
 
     @JsAsync
     @Suppress("WRONG_EXTERNAL_DECLARATION")
@@ -514,7 +515,7 @@ external class CesiumWidget(
     fun zoomToAsync(
         target: Promise<ImageryLayer>,
         offset: HeadingPitchRange? = definedExternally,
-    ): Promise<Boolean>
+    ): Promise<JsBoolean>
 
     @JsAsync
     @Suppress("WRONG_EXTERNAL_DECLARATION")
@@ -527,7 +528,7 @@ external class CesiumWidget(
     fun zoomToAsync(
         target: Promise<Cesium3DTileset>,
         offset: HeadingPitchRange? = definedExternally,
-    ): Promise<Boolean>
+    ): Promise<JsBoolean>
 
     @JsAsync
     @Suppress("WRONG_EXTERNAL_DECLARATION")
@@ -540,7 +541,7 @@ external class CesiumWidget(
     fun zoomToAsync(
         target: Promise<TimeDynamicPointCloud>,
         offset: HeadingPitchRange? = definedExternally,
-    ): Promise<Boolean>
+    ): Promise<JsBoolean>
 
     @JsAsync
     @Suppress("WRONG_EXTERNAL_DECLARATION")
@@ -553,7 +554,7 @@ external class CesiumWidget(
     fun zoomToAsync(
         target: Promise<VoxelPrimitive>,
         offset: HeadingPitchRange? = definedExternally,
-    ): Promise<Boolean>
+    ): Promise<JsBoolean>
 
     /**
      * Flies the camera to the provided entity, entities, or data source.
@@ -584,7 +585,7 @@ external class CesiumWidget(
     fun flyToAsync(
         target: Entity,
         options: FlyToOptions? = definedExternally,
-    ): Promise<Boolean>
+    ): Promise<JsBoolean>
 
     /**
      * @property [duration] The duration of the flight in seconds.
@@ -610,7 +611,7 @@ external class CesiumWidget(
     fun flyToAsync(
         target: ReadonlyArray<Entity>,
         options: FlyToOptions? = definedExternally,
-    ): Promise<Boolean>
+    ): Promise<JsBoolean>
 
     @JsAsync
     @Suppress("WRONG_EXTERNAL_DECLARATION")
@@ -623,7 +624,7 @@ external class CesiumWidget(
     fun flyToAsync(
         target: EntityCollection,
         options: FlyToOptions? = definedExternally,
-    ): Promise<Boolean>
+    ): Promise<JsBoolean>
 
     @JsAsync
     @Suppress("WRONG_EXTERNAL_DECLARATION")
@@ -636,7 +637,7 @@ external class CesiumWidget(
     fun flyToAsync(
         target: DataSource,
         options: FlyToOptions? = definedExternally,
-    ): Promise<Boolean>
+    ): Promise<JsBoolean>
 
     @JsAsync
     @Suppress("WRONG_EXTERNAL_DECLARATION")
@@ -649,7 +650,7 @@ external class CesiumWidget(
     fun flyToAsync(
         target: ImageryLayer,
         options: FlyToOptions? = definedExternally,
-    ): Promise<Boolean>
+    ): Promise<JsBoolean>
 
     @JsAsync
     @Suppress("WRONG_EXTERNAL_DECLARATION")
@@ -662,7 +663,7 @@ external class CesiumWidget(
     fun flyToAsync(
         target: Cesium3DTileset,
         options: FlyToOptions? = definedExternally,
-    ): Promise<Boolean>
+    ): Promise<JsBoolean>
 
     @JsAsync
     @Suppress("WRONG_EXTERNAL_DECLARATION")
@@ -675,7 +676,7 @@ external class CesiumWidget(
     fun flyToAsync(
         target: TimeDynamicPointCloud,
         options: FlyToOptions? = definedExternally,
-    ): Promise<Boolean>
+    ): Promise<JsBoolean>
 
     @JsAsync
     @Suppress("WRONG_EXTERNAL_DECLARATION")
@@ -688,7 +689,7 @@ external class CesiumWidget(
     fun flyToAsync(
         target: Promise<Entity>,
         options: FlyToOptions? = definedExternally,
-    ): Promise<Boolean>
+    ): Promise<JsBoolean>
 
     @JsAsync
     @Suppress("WRONG_EXTERNAL_DECLARATION")
@@ -701,7 +702,7 @@ external class CesiumWidget(
     fun flyToAsync(
         target: Promise<ReadonlyArray<Entity>>,
         options: FlyToOptions? = definedExternally,
-    ): Promise<Boolean>
+    ): Promise<JsBoolean>
 
     @JsAsync
     @Suppress("WRONG_EXTERNAL_DECLARATION")
@@ -714,7 +715,7 @@ external class CesiumWidget(
     fun flyToAsync(
         target: Promise<EntityCollection>,
         options: FlyToOptions? = definedExternally,
-    ): Promise<Boolean>
+    ): Promise<JsBoolean>
 
     @JsAsync
     @Suppress("WRONG_EXTERNAL_DECLARATION")
@@ -727,7 +728,7 @@ external class CesiumWidget(
     fun flyToAsync(
         target: Promise<DataSource>,
         options: FlyToOptions? = definedExternally,
-    ): Promise<Boolean>
+    ): Promise<JsBoolean>
 
     @JsAsync
     @Suppress("WRONG_EXTERNAL_DECLARATION")
@@ -740,7 +741,7 @@ external class CesiumWidget(
     fun flyToAsync(
         target: Promise<ImageryLayer>,
         options: FlyToOptions? = definedExternally,
-    ): Promise<Boolean>
+    ): Promise<JsBoolean>
 
     @JsAsync
     @Suppress("WRONG_EXTERNAL_DECLARATION")
@@ -753,7 +754,7 @@ external class CesiumWidget(
     fun flyToAsync(
         target: Promise<Cesium3DTileset>,
         options: FlyToOptions? = definedExternally,
-    ): Promise<Boolean>
+    ): Promise<JsBoolean>
 
     @JsAsync
     @Suppress("WRONG_EXTERNAL_DECLARATION")
@@ -766,7 +767,7 @@ external class CesiumWidget(
     fun flyToAsync(
         target: Promise<TimeDynamicPointCloud>,
         options: FlyToOptions? = definedExternally,
-    ): Promise<Boolean>
+    ): Promise<JsBoolean>
 
     @JsAsync
     @Suppress("WRONG_EXTERNAL_DECLARATION")
@@ -779,5 +780,5 @@ external class CesiumWidget(
     fun flyToAsync(
         target: Promise<VoxelPrimitive>,
         options: FlyToOptions? = definedExternally,
-    ): Promise<Boolean>
+    ): Promise<JsBoolean>
 }

@@ -2,6 +2,8 @@
 
 package cesium.widgets
 
+import js.core.JsAny
+
 /**
  * A function that augments a Viewer instance with additional functionality.
  * @param [viewer] The viewer instance.
@@ -10,5 +12,5 @@ package cesium.widgets
  */
 typealias ViewerMixin = (
     viewer: Viewer,
-    options: Any,
+    options: JsAny,
 ) -> Unit

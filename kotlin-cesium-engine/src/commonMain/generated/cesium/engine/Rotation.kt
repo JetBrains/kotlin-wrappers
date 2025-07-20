@@ -5,6 +5,7 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
+import js.core.JsDouble
 import kotlin.js.JsModule
 import kotlin.js.definedExternally
 
@@ -51,9 +52,9 @@ external interface Rotation {
          */
         override fun pack(
             value: Rotation,
-            array: ReadonlyArray<Double>,
+            array: ReadonlyArray<JsDouble>,
             startingIndex: Int?,
-        ): ReadonlyArray<Double>
+        ): ReadonlyArray<JsDouble>
 
         /**
          * Retrieves an instance from a packed array.
@@ -65,7 +66,7 @@ external interface Rotation {
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Rotation.html#.unpack">Online Documentation</a>
          */
         override fun unpack(
-            array: ReadonlyArray<Double>,
+            array: ReadonlyArray<JsDouble>,
             startingIndex: Int?,
             result: Rotation?,
         ): Rotation
@@ -81,10 +82,10 @@ external interface Rotation {
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Rotation.html#.convertPackedArrayForInterpolation">Online Documentation</a>
          */
         fun convertPackedArrayForInterpolation(
-            packedArray: ReadonlyArray<Double>,
+            packedArray: ReadonlyArray<JsDouble>,
             startingIndex: Int? = definedExternally,
             lastIndex: Int? = definedExternally,
-            result: ReadonlyArray<Double>? = definedExternally,
+            result: ReadonlyArray<JsDouble>? = definedExternally,
         )
 
         /**
@@ -100,8 +101,8 @@ external interface Rotation {
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Rotation.html#.unpackInterpolationResult">Online Documentation</a>
          */
         fun unpackInterpolationResult(
-            array: ReadonlyArray<Double>,
-            sourceArray: ReadonlyArray<Double>,
+            array: ReadonlyArray<JsDouble>,
+            sourceArray: ReadonlyArray<JsDouble>,
             firstIndex: Int? = definedExternally,
             lastIndex: Int? = definedExternally,
             result: Rotation? = definedExternally,

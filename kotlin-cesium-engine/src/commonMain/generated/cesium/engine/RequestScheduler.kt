@@ -5,6 +5,7 @@
 package cesium.engine
 
 import cesium.engine.RequestScheduler.requestsByServer
+import js.core.JsAny
 import kotlin.js.JsModule
 
 /**
@@ -42,7 +43,7 @@ external object RequestScheduler {
      * ```
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/RequestScheduler.html#.requestsByServer">Online Documentation</a>
      */
-    var requestsByServer: Any
+    var requestsByServer: JsAny
 
     /**
      * Specifies if the request scheduler should throttle incoming requests, or let the browser queue requests under its control.

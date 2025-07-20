@@ -3,6 +3,7 @@
 package cesium.engine
 
 import js.buffer.DataView
+import js.core.JsAny
 
 /**
  * Reads and returns a value with the given type
@@ -14,4 +15,4 @@ import js.buffer.DataView
 typealias ComponentReaderCallback = (
     dataView: DataView<*>,
     byteOffset: Int,
-) -> Any /* number | bigint */
+) -> JsAny /* number | bigint */

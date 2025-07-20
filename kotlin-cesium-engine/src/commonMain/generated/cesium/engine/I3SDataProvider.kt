@@ -5,6 +5,8 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
+import js.core.JsAny
+import js.core.JsString
 import js.core.Void
 import js.objects.JsPlainObject
 import js.promise.Promise
@@ -86,7 +88,7 @@ external class I3SDataProvider(
      * Gets the I3S data for this object.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/I3SDataProvider.html#data">Online Documentation</a>
      */
-    val data: Any
+    val data: JsAny
 
     /**
      * Gets the extent covered by this I3S.
@@ -150,7 +152,7 @@ external class I3SDataProvider(
      * @return The collection of attribute names
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/I3SDataProvider.html#getAttributeNames">Online Documentation</a>
      */
-    fun getAttributeNames(): ReadonlyArray<String>
+    fun getAttributeNames(): ReadonlyArray<JsString>
 
     /**
      * Returns the collection of values for the attribute with the given name
@@ -158,7 +160,7 @@ external class I3SDataProvider(
      * @return The collection of attribute values
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/I3SDataProvider.html#getAttributeValues">Online Documentation</a>
      */
-    fun getAttributeValues(name: String): ReadonlyArray<String>
+    fun getAttributeValues(name: String): ReadonlyArray<JsString>
 
     /**
      * Filters the drawn elements of a scene to specific attribute names and values

@@ -4,6 +4,7 @@ package cesium.engine
 
 import js.array.ReadonlyArray
 import js.buffer.DataView
+import js.core.JsDouble
 
 /**
  * Reads and returns a value with the given type
@@ -18,5 +19,5 @@ typealias ComponentsReaderCallback = (
     dataView: DataView<*>,
     byteOffset: Int,
     numberOfComponents: Int,
-    result: ReadonlyArray<Double>,
+    result: ReadonlyArray<JsDouble>,
 ) -> Unit

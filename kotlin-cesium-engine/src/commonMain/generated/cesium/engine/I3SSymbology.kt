@@ -4,6 +4,7 @@
 
 package cesium.engine
 
+import js.core.JsAny
 import kotlin.js.JsModule
 
 /**
@@ -18,5 +19,5 @@ private constructor() {
      * Gets the default symbology data.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/I3SSymbology.html#defaultSymbology">Online Documentation</a>
      */
-    val defaultSymbology: Any
+    val defaultSymbology: JsAny
 }

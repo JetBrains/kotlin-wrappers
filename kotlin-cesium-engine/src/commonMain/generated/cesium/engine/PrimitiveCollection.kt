@@ -4,6 +4,7 @@
 
 package cesium.engine
 
+import js.core.JsAny
 import kotlin.js.JsModule
 import kotlin.js.definedExternally
 
@@ -87,9 +88,9 @@ external class PrimitiveCollection() {
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PrimitiveCollection.html#add">Online Documentation</a>
      */
     fun add(
-        primitive: Any,
+        primitive: JsAny,
         index: Int? = definedExternally,
-    ): Any
+    ): JsAny
 
     /**
      * Removes a primitive from the collection.
@@ -101,7 +102,7 @@ external class PrimitiveCollection() {
      * @return `true` if the primitive was removed; `false` if the primitive is `undefined` or was not found in the collection.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PrimitiveCollection.html#remove">Online Documentation</a>
      */
-    fun remove(primitive: Any? = definedExternally): Boolean
+    fun remove(primitive: JsAny? = definedExternally): Boolean
 
     /**
      * Removes all primitives in the collection.
@@ -115,7 +116,7 @@ external class PrimitiveCollection() {
      * @return `true` if the primitive is in the collection; `false` if the primitive is `undefined` or was not found in the collection.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PrimitiveCollection.html#contains">Online Documentation</a>
      */
-    fun contains(primitive: Any? = definedExternally): Boolean
+    fun contains(primitive: JsAny? = definedExternally): Boolean
 
     /**
      * Raises a primitive "up one" in the collection.  If all primitives in the collection are drawn
@@ -123,7 +124,7 @@ external class PrimitiveCollection() {
      * @param [primitive] The primitive to raise.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PrimitiveCollection.html#raise">Online Documentation</a>
      */
-    fun raise(primitive: Any? = definedExternally)
+    fun raise(primitive: JsAny? = definedExternally)
 
     /**
      * Raises a primitive to the "top" of the collection.  If all primitives in the collection are drawn
@@ -131,7 +132,7 @@ external class PrimitiveCollection() {
      * @param [primitive] The primitive to raise the top.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PrimitiveCollection.html#raiseToTop">Online Documentation</a>
      */
-    fun raiseToTop(primitive: Any? = definedExternally)
+    fun raiseToTop(primitive: JsAny? = definedExternally)
 
     /**
      * Lowers a primitive "down one" in the collection.  If all primitives in the collection are drawn
@@ -139,7 +140,7 @@ external class PrimitiveCollection() {
      * @param [primitive] The primitive to lower.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PrimitiveCollection.html#lower">Online Documentation</a>
      */
-    fun lower(primitive: Any? = definedExternally)
+    fun lower(primitive: JsAny? = definedExternally)
 
     /**
      * Lowers a primitive to the "bottom" of the collection.  If all primitives in the collection are drawn
@@ -147,7 +148,7 @@ external class PrimitiveCollection() {
      * @param [primitive] The primitive to lower to the bottom.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PrimitiveCollection.html#lowerToBottom">Online Documentation</a>
      */
-    fun lowerToBottom(primitive: Any? = definedExternally)
+    fun lowerToBottom(primitive: JsAny? = definedExternally)
 
     /**
      * Returns the primitive in the collection at the specified index.
@@ -164,7 +165,7 @@ external class PrimitiveCollection() {
      * @return The primitive at the `index`.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PrimitiveCollection.html#get">Online Documentation</a>
      */
-    fun get(index: Int): Any
+    fun get(index: Int): JsAny
 
     /**
      * Returns true if this object was destroyed; otherwise, false.

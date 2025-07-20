@@ -5,6 +5,7 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
+import js.core.JsDouble
 import js.objects.JsPlainObject
 import kotlin.js.JsModule
 import kotlin.js.definedExternally
@@ -76,9 +77,9 @@ external class EllipseGeometry(
          */
         override fun pack(
             value: EllipseGeometry,
-            array: ReadonlyArray<Double>,
+            array: ReadonlyArray<JsDouble>,
             startingIndex: Int?,
-        ): ReadonlyArray<Double>
+        ): ReadonlyArray<JsDouble>
 
         /**
          * Retrieves an instance from a packed array.
@@ -90,7 +91,7 @@ external class EllipseGeometry(
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/EllipseGeometry.html#.unpack">Online Documentation</a>
          */
         override fun unpack(
-            array: ReadonlyArray<Double>,
+            array: ReadonlyArray<JsDouble>,
             startingIndex: Int?,
             result: EllipseGeometry?,
         ): EllipseGeometry

@@ -2,6 +2,8 @@
 
 package cesium.engine
 
+import js.core.JsAny
+
 /**
  * A function used to compare two items while sorting a queue.
  * ```
@@ -14,6 +16,6 @@ package cesium.engine
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Queue.html#.Comparator">Online Documentation</a>
  */
 typealias Comparator = (
-    a: Any,
-    b: Any,
+    a: JsAny,
+    b: JsAny,
 ) -> Double

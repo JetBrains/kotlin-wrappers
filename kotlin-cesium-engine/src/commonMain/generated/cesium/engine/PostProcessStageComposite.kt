@@ -5,6 +5,7 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
+import js.core.JsAny
 import js.objects.JsPlainObject
 import kotlin.js.JsModule
 
@@ -77,10 +78,10 @@ external class PostProcessStageComposite(
      */
     @JsPlainObject
     interface ConstructorOptions {
-        val stages: ReadonlyArray<Any>
+        val stages: ReadonlyArray<JsAny>
         val inputPreviousStageTexture: Boolean?
         val name: String?
-        val uniforms: Any?
+        val uniforms: JsAny?
     }
 
     /**
@@ -105,7 +106,7 @@ external class PostProcessStageComposite(
      * An alias to the uniform values of the post-process stages. May be `undefined`; in which case, get each stage to set uniform values.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PostProcessStageComposite.html#uniforms">Online Documentation</a>
      */
-    var uniforms: Any
+    var uniforms: JsAny
 
     /**
      * All post-process stages are executed in the order of the array. The input texture changes based on the value of `inputPreviousStageTexture`.
@@ -126,7 +127,7 @@ external class PostProcessStageComposite(
      * The features selected for applying the post-process.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PostProcessStageComposite.html#selected">Online Documentation</a>
      */
-    var selected: ReadonlyArray<Any>
+    var selected: ReadonlyArray<JsAny>
 
     /**
      * Gets the post-process stage at `index`
@@ -134,7 +135,7 @@ external class PostProcessStageComposite(
      * @return The post-process stage or composite at index.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PostProcessStageComposite.html#get">Online Documentation</a>
      */
-    fun get(index: Int): Any /* PostProcessStage | PostProcessStageComposite */
+    fun get(index: Int): JsAny /* PostProcessStage | PostProcessStageComposite */
 
     /**
      * Returns true if this object was destroyed; otherwise, false.

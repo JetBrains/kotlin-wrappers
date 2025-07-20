@@ -5,6 +5,7 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
+import js.core.JsAny
 import js.objects.JsPlainObject
 import kotlin.js.JsModule
 
@@ -34,8 +35,8 @@ external class MetadataEnum(
         val valueType: MetadataComponentType?
         val name: String?
         val description: String?
-        val extras: Any?
-        val extensions: Any?
+        val extras: JsAny?
+        val extensions: JsAny?
     }
 
     /**
@@ -72,11 +73,11 @@ external class MetadataEnum(
      * Extra user-defined properties.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/MetadataEnum.html#extras">Online Documentation</a>
      */
-    val extras: Any
+    val extras: JsAny
 
     /**
      * An object containing extensions.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/MetadataEnum.html#extensions">Online Documentation</a>
      */
-    val extensions: Any
+    val extensions: JsAny
 }

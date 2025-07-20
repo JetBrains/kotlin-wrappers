@@ -5,6 +5,7 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
+import js.core.JsAny
 import js.objects.JsPlainObject
 import kotlin.js.JsModule
 
@@ -84,7 +85,7 @@ external class PostProcessStage(
     @JsPlainObject
     interface ConstructorOptions {
         val fragmentShader: String
-        val uniforms: Any?
+        val uniforms: JsAny?
         val textureScale: Double?
         val forcePowerOfTwo: Boolean?
         val sampleMode: PostProcessStageSampleMode?
@@ -139,7 +140,7 @@ external class PostProcessStage(
      * the name of another stage in a composite. This will set the uniform to the output texture the stage with that name.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PostProcessStage.html#uniforms">Online Documentation</a>
      */
-    val uniforms: Any
+    val uniforms: JsAny
 
     /**
      * A number in the range (0.0, 1.0] used to scale the output texture dimensions. A scale of 1.0 will render this post-process stage to a texture the size of the viewport.
@@ -197,7 +198,7 @@ external class PostProcessStage(
      * ```
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PostProcessStage.html#selected">Online Documentation</a>
      */
-    var selected: ReadonlyArray<Any>
+    var selected: ReadonlyArray<JsAny>
 
     /**
      * Returns true if this object was destroyed; otherwise, false.

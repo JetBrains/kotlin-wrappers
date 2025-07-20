@@ -4,6 +4,7 @@
 
 package cesium.engine
 
+import js.core.JsAny
 import js.objects.JsPlainObject
 import js.promise.Promise
 import seskar.js.JsAsync
@@ -547,13 +548,13 @@ external class Cesium3DTileset(
      * in the 3D Tiles spec for the full set of properties.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTileset.html#asset">Online Documentation</a>
      */
-    val asset: Any
+    val asset: JsAny
 
     /**
      * Gets the tileset's extensions object property.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTileset.html#extensions">Online Documentation</a>
      */
-    val extensions: Any
+    val extensions: JsAny
 
     /**
      * The [ClippingPlaneCollection] used to selectively disable rendering the tileset.
@@ -595,7 +596,7 @@ external class Cesium3DTileset(
      * ```
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTileset.html#properties">Online Documentation</a>
      */
-    val properties: Any
+    val properties: JsAny
 
     /**
      * When `true`, all tiles that meet the screen space error this frame are loaded. The tileset is
@@ -825,7 +826,7 @@ external class Cesium3DTileset(
      * Returns `undefined` if `extras` does not exist.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTileset.html#extras">Online Documentation</a>
      */
-    val extras: Any
+    val extras: JsAny
 
     /**
      * The properties for managing image-based lighting on this tileset.
@@ -1124,7 +1125,7 @@ external class Cesium3DTileset(
         val heightReference: HeightReference?
         val scene: Scene?
         val ellipsoid: Ellipsoid?
-        val pointCloudShading: Any?
+        val pointCloudShading: JsAny?
         val lightColor: Cartesian3?
         val imageBasedLighting: ImageBasedLighting?
         val environmentMapOptions: DynamicEnvironmentMapManager.ConstructorOptions?
@@ -1263,16 +1264,16 @@ external class Cesium3DTileset(
          */
         @JsAsync
         @Suppress("WRONG_EXTERNAL_DECLARATION")
-        suspend fun loadJson(tilesetUrl: Resource): Any
+        suspend fun loadJson(tilesetUrl: Resource): JsAny
 
         @JsName("loadJson")
-        fun loadJsonAsync(tilesetUrl: Resource): Promise<Any>
+        fun loadJsonAsync(tilesetUrl: Resource): Promise<JsAny>
 
         @JsAsync
         @Suppress("WRONG_EXTERNAL_DECLARATION")
-        suspend fun loadJson(tilesetUrl: String): Any
+        suspend fun loadJson(tilesetUrl: String): JsAny
 
         @JsName("loadJson")
-        fun loadJsonAsync(tilesetUrl: String): Promise<Any>
+        fun loadJsonAsync(tilesetUrl: String): Promise<JsAny>
     }
 }

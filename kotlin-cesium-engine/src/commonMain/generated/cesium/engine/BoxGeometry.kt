@@ -5,6 +5,7 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
+import js.core.JsDouble
 import js.objects.JsPlainObject
 import kotlin.js.JsModule
 
@@ -95,9 +96,9 @@ external class BoxGeometry(
          */
         override fun pack(
             value: BoxGeometry,
-            array: ReadonlyArray<Double>,
+            array: ReadonlyArray<JsDouble>,
             startingIndex: Int?,
-        ): ReadonlyArray<Double>
+        ): ReadonlyArray<JsDouble>
 
         /**
          * Retrieves an instance from a packed array.
@@ -109,7 +110,7 @@ external class BoxGeometry(
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BoxGeometry.html#.unpack">Online Documentation</a>
          */
         override fun unpack(
-            array: ReadonlyArray<Double>,
+            array: ReadonlyArray<JsDouble>,
             startingIndex: Int?,
             result: BoxGeometry?,
         ): BoxGeometry

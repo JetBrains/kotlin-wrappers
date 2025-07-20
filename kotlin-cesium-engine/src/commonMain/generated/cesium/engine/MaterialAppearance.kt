@@ -4,6 +4,7 @@
 
 package cesium.engine
 
+import js.core.JsAny
 import js.objects.JsPlainObject
 import kotlin.js.JsModule
 import kotlin.js.definedExternally
@@ -58,7 +59,7 @@ external class MaterialAppearance(
         val material: Material?
         val vertexShaderSource: String?
         val fragmentShaderSource: String?
-        val renderState: Any?
+        val renderState: JsAny?
     }
 
     /**
@@ -97,7 +98,7 @@ external class MaterialAppearance(
      * and [MaterialAppearance.closed].
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/MaterialAppearance.html#renderState">Online Documentation</a>
      */
-    val renderState: Any
+    val renderState: JsAny
 
     /**
      * When `true`, the geometry is expected to be closed so
@@ -161,7 +162,7 @@ external class MaterialAppearance(
      * @return The render state.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/MaterialAppearance.html#getRenderState">Online Documentation</a>
      */
-    fun getRenderState(): Any
+    fun getRenderState(): JsAny
 
     @JsPlainObject
     interface MaterialSupportType {

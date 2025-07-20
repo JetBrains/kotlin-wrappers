@@ -4,6 +4,7 @@
 
 package cesium.engine
 
+import js.core.JsAny
 import kotlin.js.JsModule
 import kotlin.js.definedExternally
 
@@ -39,7 +40,7 @@ external class KmlTourFlyTo(
     fun play(
         done: DoneCallback,
         camera: Camera,
-        cameraOptions: Any? = definedExternally,
+        cameraOptions: JsAny? = definedExternally,
     )
 
     /**
@@ -55,5 +56,5 @@ external class KmlTourFlyTo(
      * @return [Camera.flyTo] or [Camera.flyToBoundingSphere] options
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/KmlTourFlyTo.html#getCameraOptions">Online Documentation</a>
      */
-    fun getCameraOptions(cameraOptions: Any): Any
+    fun getCameraOptions(cameraOptions: JsAny): JsAny
 }

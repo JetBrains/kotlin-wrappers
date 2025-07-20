@@ -4,6 +4,7 @@
 
 package cesium.engine
 
+import js.core.JsAny
 import kotlin.js.JsModule
 import kotlin.js.definedExternally
 
@@ -97,7 +98,7 @@ external class CloudCollection() {
      * @return The cloud that was added to the collection.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CloudCollection.html#add">Online Documentation</a>
      */
-    fun add(options: Any? = definedExternally): CumulusCloud
+    fun add(options: JsAny? = definedExternally): CumulusCloud
 
     /**
      * Removes a cloud from the collection.

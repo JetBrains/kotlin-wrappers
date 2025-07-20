@@ -4,6 +4,7 @@
 
 package cesium.engine
 
+import js.core.JsAny
 import js.objects.JsPlainObject
 import kotlin.js.JsModule
 import kotlin.js.definedExternally
@@ -69,7 +70,7 @@ external class TimeInterval() {
      * Gets or sets the data associated with this interval.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/TimeInterval.html#data">Online Documentation</a>
      */
-    var data: Any
+    var data: JsAny
 
     /**
      * Gets or sets whether or not the start time is included in this interval.
@@ -152,7 +153,7 @@ external class TimeInterval() {
             val iso8601: String
             val isStartIncluded: Boolean?
             val isStopIncluded: Boolean?
-            val data: Any?
+            val data: JsAny?
         }
 
         /**

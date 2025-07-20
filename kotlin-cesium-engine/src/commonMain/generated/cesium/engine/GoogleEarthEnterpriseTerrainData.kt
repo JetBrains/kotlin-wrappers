@@ -6,6 +6,7 @@ package cesium.engine
 
 import js.array.ReadonlyArray
 import js.buffer.ArrayBuffer
+import js.core.JsAny
 import js.objects.JsPlainObject
 import js.promise.Promise
 import kotlin.js.JsModule
@@ -61,7 +62,7 @@ external class GoogleEarthEnterpriseTerrainData(
      * Values in between 0 and 255 are allowed as well to smoothly blend between land and water.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GoogleEarthEnterpriseTerrainData.html#waterMask">Online Documentation</a>
      */
-    override var waterMask: Any? /* Uint8Array | HTMLImageElement | HTMLCanvasElement | undefined */
+    override var waterMask: JsAny? /* Uint8Array | HTMLImageElement | HTMLCanvasElement | undefined */
 
     /**
      * Computes the terrain height at a specified longitude and latitude.

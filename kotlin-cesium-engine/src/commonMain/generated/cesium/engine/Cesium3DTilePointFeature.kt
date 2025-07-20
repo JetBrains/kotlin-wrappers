@@ -5,6 +5,8 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
+import js.core.JsAny
+import js.core.JsString
 import kotlin.js.JsModule
 import kotlin.js.definedExternally
 
@@ -257,7 +259,7 @@ private constructor() {
      * @return The IDs of the feature's properties.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTilePointFeature.html#getPropertyIds">Online Documentation</a>
      */
-    fun getPropertyIds(results: ReadonlyArray<String>? = definedExternally): ReadonlyArray<String>
+    fun getPropertyIds(results: ReadonlyArray<JsString>? = definedExternally): ReadonlyArray<JsString>
 
     /**
      * Returns a copy of the value of the feature's property with the given name. This includes properties from this feature's
@@ -275,7 +277,7 @@ private constructor() {
      * @return The value of the property or `undefined` if the feature does not have this property.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTilePointFeature.html#getProperty">Online Documentation</a>
      */
-    fun getProperty(name: String): Any
+    fun getProperty(name: String): JsAny
 
     /**
      * Sets the value of the feature's property with the given name.
@@ -299,6 +301,6 @@ private constructor() {
      */
     fun setProperty(
         name: String,
-        value: Any,
+        value: JsAny,
     )
 }

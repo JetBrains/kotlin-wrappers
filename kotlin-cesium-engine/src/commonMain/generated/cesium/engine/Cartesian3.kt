@@ -5,6 +5,7 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
+import js.core.JsDouble
 import kotlin.js.JsModule
 import kotlin.js.definedExternally
 
@@ -123,9 +124,9 @@ external class Cartesian3(
          */
         override fun pack(
             value: Cartesian3,
-            array: ReadonlyArray<Double>,
+            array: ReadonlyArray<JsDouble>,
             startingIndex: Int?,
-        ): ReadonlyArray<Double>
+        ): ReadonlyArray<JsDouble>
 
         /**
          * Retrieves an instance from a packed array.
@@ -137,7 +138,7 @@ external class Cartesian3(
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cartesian3.html#.unpack">Online Documentation</a>
          */
         override fun unpack(
-            array: ReadonlyArray<Double>,
+            array: ReadonlyArray<JsDouble>,
             startingIndex: Int?,
             result: Cartesian3?,
         ): Cartesian3
@@ -151,8 +152,8 @@ external class Cartesian3(
          */
         fun packArray(
             array: ReadonlyArray<Cartesian3>,
-            result: ReadonlyArray<Double>? = definedExternally,
-        ): ReadonlyArray<Double>
+            result: ReadonlyArray<JsDouble>? = definedExternally,
+        ): ReadonlyArray<JsDouble>
 
         /**
          * Unpacks an array of cartesian components into an array of Cartesian3s.
@@ -162,7 +163,7 @@ external class Cartesian3(
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cartesian3.html#.unpackArray">Online Documentation</a>
          */
         fun unpackArray(
-            array: ReadonlyArray<Double>,
+            array: ReadonlyArray<JsDouble>,
             result: ReadonlyArray<Cartesian3>? = definedExternally,
         ): ReadonlyArray<Cartesian3>
 
@@ -185,7 +186,7 @@ external class Cartesian3(
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cartesian3.html#.fromArray">Online Documentation</a>
          */
         fun fromArray(
-            array: ReadonlyArray<Double>,
+            array: ReadonlyArray<JsDouble>,
             startingIndex: Int? = definedExternally,
             result: Cartesian3? = definedExternally,
         ): Cartesian3
@@ -605,7 +606,7 @@ external class Cartesian3(
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cartesian3.html#.fromDegreesArray">Online Documentation</a>
          */
         fun fromDegreesArray(
-            coordinates: ReadonlyArray<Double>,
+            coordinates: ReadonlyArray<JsDouble>,
             ellipsoid: Ellipsoid? = definedExternally,
             result: ReadonlyArray<Cartesian3>? = definedExternally,
         ): ReadonlyArray<Cartesian3>
@@ -623,7 +624,7 @@ external class Cartesian3(
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cartesian3.html#.fromRadiansArray">Online Documentation</a>
          */
         fun fromRadiansArray(
-            coordinates: ReadonlyArray<Double>,
+            coordinates: ReadonlyArray<JsDouble>,
             ellipsoid: Ellipsoid? = definedExternally,
             result: ReadonlyArray<Cartesian3>? = definedExternally,
         ): ReadonlyArray<Cartesian3>
@@ -641,7 +642,7 @@ external class Cartesian3(
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cartesian3.html#.fromDegreesArrayHeights">Online Documentation</a>
          */
         fun fromDegreesArrayHeights(
-            coordinates: ReadonlyArray<Double>,
+            coordinates: ReadonlyArray<JsDouble>,
             ellipsoid: Ellipsoid? = definedExternally,
             result: ReadonlyArray<Cartesian3>? = definedExternally,
         ): ReadonlyArray<Cartesian3>
@@ -659,7 +660,7 @@ external class Cartesian3(
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cartesian3.html#.fromRadiansArrayHeights">Online Documentation</a>
          */
         fun fromRadiansArrayHeights(
-            coordinates: ReadonlyArray<Double>,
+            coordinates: ReadonlyArray<JsDouble>,
             ellipsoid: Ellipsoid? = definedExternally,
             result: ReadonlyArray<Cartesian3>? = definedExternally,
         ): ReadonlyArray<Cartesian3>

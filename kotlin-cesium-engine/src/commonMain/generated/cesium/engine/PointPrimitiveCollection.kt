@@ -4,6 +4,7 @@
 
 package cesium.engine
 
+import js.core.JsAny
 import kotlin.js.JsModule
 import kotlin.js.definedExternally
 
@@ -112,7 +113,7 @@ external class PointPrimitiveCollection() {
      * @return The point that was added to the collection.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PointPrimitiveCollection.html#add">Online Documentation</a>
      */
-    fun add(options: Any? = definedExternally): PointPrimitive
+    fun add(options: JsAny? = definedExternally): PointPrimitive
 
     /**
      * Removes a point from the collection.

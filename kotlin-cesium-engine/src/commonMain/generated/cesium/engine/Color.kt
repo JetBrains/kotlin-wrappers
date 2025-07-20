@@ -5,6 +5,7 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
+import js.core.JsDouble
 import js.objects.JsPlainObject
 import kotlin.js.JsModule
 import kotlin.js.definedExternally
@@ -73,7 +74,7 @@ external class Color(
      * @return The modified result parameter or a new instance if result was undefined.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Color.html#toBytes">Online Documentation</a>
      */
-    fun toBytes(result: ReadonlyArray<Double>? = definedExternally): ReadonlyArray<Double>
+    fun toBytes(result: ReadonlyArray<JsDouble>? = definedExternally): ReadonlyArray<JsDouble>
 
     /**
      * Converts this color to a single numeric unsigned 32-bit RGBA value, using the endianness
@@ -327,9 +328,9 @@ external class Color(
          */
         override fun pack(
             value: Color,
-            array: ReadonlyArray<Double>,
+            array: ReadonlyArray<JsDouble>,
             startingIndex: Int?,
-        ): ReadonlyArray<Double>
+        ): ReadonlyArray<JsDouble>
 
         /**
          * Retrieves an instance from a packed array.
@@ -341,7 +342,7 @@ external class Color(
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Color.html#.unpack">Online Documentation</a>
          */
         override fun unpack(
-            array: ReadonlyArray<Double>,
+            array: ReadonlyArray<JsDouble>,
             startingIndex: Int?,
             result: Color?,
         ): Color

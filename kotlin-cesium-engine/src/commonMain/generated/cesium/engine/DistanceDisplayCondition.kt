@@ -5,6 +5,7 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
+import js.core.JsDouble
 import kotlin.js.JsModule
 import kotlin.js.definedExternally
 
@@ -53,9 +54,9 @@ external class DistanceDisplayCondition(
          */
         override fun pack(
             value: DistanceDisplayCondition,
-            array: ReadonlyArray<Double>,
+            array: ReadonlyArray<JsDouble>,
             startingIndex: Int?,
-        ): ReadonlyArray<Double>
+        ): ReadonlyArray<JsDouble>
 
         /**
          * Retrieves an instance from a packed array.
@@ -67,7 +68,7 @@ external class DistanceDisplayCondition(
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/DistanceDisplayCondition.html#.unpack">Online Documentation</a>
          */
         override fun unpack(
-            array: ReadonlyArray<Double>,
+            array: ReadonlyArray<JsDouble>,
             startingIndex: Int?,
             result: DistanceDisplayCondition?,
         ): DistanceDisplayCondition

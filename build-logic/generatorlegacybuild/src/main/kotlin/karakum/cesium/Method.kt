@@ -66,7 +66,7 @@ internal class Method(
             return doc + modifiers + declarations.single()
         }
 
-        var declaration = declarations
+        val declaration = declarations
             .asSequence()
             .drop(if ("override" in modifierList) 1 else 0)
             .map {
@@ -81,17 +81,6 @@ internal class Method(
                 } else result
             }
             .joinToString("\n\n")
-
-        // WA for WASM
-        declaration = declaration
-            .replace(
-                "@JsAsync\n",
-                "@JsAsync\n@Suppress(\"WRONG_EXTERNAL_DECLARATION\")\n",
-            )
-            .replace(
-                "@JsAsync(optional = true)\n",
-                "@JsAsync(optional = true)\n@Suppress(\"WRONG_EXTERNAL_DECLARATION\")\n",
-            )
 
         return doc + declaration
     }

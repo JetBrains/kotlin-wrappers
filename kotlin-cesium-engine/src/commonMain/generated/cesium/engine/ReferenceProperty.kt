@@ -5,6 +5,8 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
+import js.core.JsAny
+import js.core.JsString
 import kotlin.js.JsModule
 import kotlin.js.definedExternally
 
@@ -53,7 +55,7 @@ import kotlin.js.definedExternally
 external class ReferenceProperty(
     val targetCollection: EntityCollection,
     val targetId: String,
-    val targetPropertyNames: ReadonlyArray<String>,
+    val targetPropertyNames: ReadonlyArray<JsString>,
 ) {
     /**
      * Gets a value indicating if this property is constant.
@@ -91,8 +93,8 @@ external class ReferenceProperty(
      */
     fun getValue(
         time: JulianDate? = definedExternally,
-        result: Any? = definedExternally,
-    ): Any
+        result: JsAny? = definedExternally,
+    ): JsAny
 
     /**
      * Gets the value of the property at the provided time and in the provided reference frame.

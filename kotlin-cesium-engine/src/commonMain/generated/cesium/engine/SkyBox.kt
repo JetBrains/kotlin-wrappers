@@ -4,6 +4,7 @@
 
 package cesium.engine
 
+import js.core.JsAny
 import js.objects.JsPlainObject
 import kotlin.js.JsModule
 
@@ -36,7 +37,7 @@ external class SkyBox(
      */
     @JsPlainObject
     interface ConstructorOptions {
-        val sources: Any?
+        val sources: JsAny?
         val show: Boolean?
     }
 
@@ -47,7 +48,7 @@ external class SkyBox(
      * These can be either URLs or `Image` objects.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/SkyBox.html#sources">Online Documentation</a>
      */
-    var sources: Any
+    var sources: JsAny
 
     /**
      * Determines if the sky box will be shown.

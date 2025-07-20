@@ -5,6 +5,8 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
+import js.core.JsAny
+import js.core.JsDouble
 import js.objects.JsPlainObject
 import kotlin.js.JsModule
 import kotlin.js.definedExternally
@@ -57,7 +59,7 @@ external class HermiteSpline(
      */
     @JsPlainObject
     interface ConstructorOptions {
-        val times: ReadonlyArray<Double>
+        val times: ReadonlyArray<JsDouble>
         val points: ReadonlyArray<Cartesian3>
         val inTangents: ReadonlyArray<Cartesian3>
         val outTangents: ReadonlyArray<Cartesian3>
@@ -67,7 +69,7 @@ external class HermiteSpline(
      * An array of times for the control points.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/HermiteSpline.html#times">Online Documentation</a>
      */
-    val times: ReadonlyArray<Double>
+    val times: ReadonlyArray<JsDouble>
 
     /**
      * An array of control points.
@@ -164,7 +166,7 @@ external class HermiteSpline(
          */
         @JsPlainObject
         interface CreateC1Options {
-            val times: ReadonlyArray<Double>
+            val times: ReadonlyArray<JsDouble>
             val points: ReadonlyArray<Cartesian3>
             val tangents: ReadonlyArray<Cartesian3>
         }
@@ -188,7 +190,7 @@ external class HermiteSpline(
          * @return A hermite spline, or a linear spline if less than 3 control points were given.
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/HermiteSpline.html#.createNaturalCubic">Online Documentation</a>
          */
-        fun createNaturalCubic(options: CreateNaturalCubicOptions): Any /* HermiteSpline | LinearSpline */
+        fun createNaturalCubic(options: CreateNaturalCubicOptions): JsAny /* HermiteSpline | LinearSpline */
 
         /**
          * @property [times] The array of control point times.
@@ -196,7 +198,7 @@ external class HermiteSpline(
          */
         @JsPlainObject
         interface CreateNaturalCubicOptions {
-            val times: ReadonlyArray<Double>
+            val times: ReadonlyArray<JsDouble>
             val points: ReadonlyArray<Cartesian3>
         }
 
@@ -221,7 +223,7 @@ external class HermiteSpline(
          * @return A hermite spline, or a linear spline if less than 3 control points were given.
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/HermiteSpline.html#.createClampedCubic">Online Documentation</a>
          */
-        fun createClampedCubic(options: CreateClampedCubicOptions): Any /* HermiteSpline | LinearSpline */
+        fun createClampedCubic(options: CreateClampedCubicOptions): JsAny /* HermiteSpline | LinearSpline */
 
         /**
          * @property [times] The array of control point times.
@@ -231,7 +233,7 @@ external class HermiteSpline(
          */
         @JsPlainObject
         interface CreateClampedCubicOptions {
-            val times: ReadonlyArray<Double>
+            val times: ReadonlyArray<JsDouble>
             val points: ReadonlyArray<Cartesian3 /* or number */>
             val firstTangent: Cartesian3
             val lastTangent: Cartesian3

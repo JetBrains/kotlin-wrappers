@@ -4,6 +4,7 @@
 
 package cesium.engine
 
+import js.core.JsAny
 import kotlin.js.JsModule
 import kotlin.js.definedExternally
 
@@ -84,7 +85,7 @@ external class PolylineCollection() {
      * @return The polyline that was added to the collection.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PolylineCollection.html#add">Online Documentation</a>
      */
-    fun add(options: Any? = definedExternally): Polyline
+    fun add(options: JsAny? = definedExternally): Polyline
 
     /**
      * Removes a polyline from the collection.

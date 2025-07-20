@@ -5,6 +5,7 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
+import js.core.JsAny
 import js.promise.Promise
 import seskar.js.JsAsync
 import kotlin.js.JsModule
@@ -31,14 +32,14 @@ import kotlin.js.definedExternally
 external class OpenCageGeocoderService(
     val url: Resource,
     apiKey: String,
-    params: Any /* {
+    params: JsAny /* {
         abbrv?: number;
     } */? = definedExternally,
 ) {
     constructor(
         url: String,
         apiKey: String,
-        params: Any /* {
+        params: JsAny /* {
         abbrv?: number;
     } */? = definedExternally,
     )
@@ -47,7 +48,7 @@ external class OpenCageGeocoderService(
      * Optional params passed to OpenCage in order to customize geocoding
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/OpenCageGeocoderService.html#params">Online Documentation</a>
      */
-    val params: Any
+    val params: JsAny
 
     /**
      * Gets the credit to display after a geocode is performed. Typically this is used to credit

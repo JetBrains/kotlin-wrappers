@@ -4,6 +4,7 @@
 
 package cesium.engine
 
+import js.core.JsAny
 import kotlin.js.JsModule
 import kotlin.js.definedExternally
 
@@ -20,13 +21,13 @@ import kotlin.js.definedExternally
  */
 external class RequestErrorEvent(
     var statusCode: Int = definedExternally,
-    var response: Any = definedExternally,
-    responseHeaders: Any /* string | any */? = definedExternally,
+    var response: JsAny = definedExternally,
+    responseHeaders: JsAny /* string | any */? = definedExternally,
 ) {
     /**
      * The headers included in the response, represented as an object literal of key/value pairs.
      * If the error does not include any headers, this property will be undefined.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/RequestErrorEvent.html#responseHeaders">Online Documentation</a>
      */
-    var responseHeaders: Any
+    var responseHeaders: JsAny
 }

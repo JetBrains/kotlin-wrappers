@@ -22,8 +22,8 @@ private val WHITE_LIST = setOf(
 )
 
 private val STANDARD_TYPE_MAP = mapOf(
-    "any" to "Any",
-    "object" to "Any",
+    "any" to "JsAny",
+    "object" to "JsAny",
 
     "boolean" to "Boolean",
     "number" to "Double",
@@ -48,7 +48,7 @@ private val STANDARD_TYPE_MAP = mapOf(
     "HTMLCanvasElement | Promise<HTMLCanvasElement>" to "PromiseResult<HTMLCanvasElement>",
     "HTMLImageElement | HTMLCanvasElement | Promise<HTMLImageElement | HTMLCanvasElement>" to "PromiseResult<$HTML_ELEMENT /* HTMLImageElement | HTMLCanvasElement */>",
     "ArcGISTiledElevationTerrainProvider | Promise<ArcGISTiledElevationTerrainProvider>" to "PromiseResult<ArcGISTiledElevationTerrainProvider>",
-    "Promise<ImageryTypes | CompressedTextureBuffer> | undefined" to "$PROMISE<Any /* ImageryTypes | CompressedTextureBuffer */>?",
+    "Promise<ImageryTypes | CompressedTextureBuffer> | undefined" to "$PROMISE<JsAny /* ImageryTypes | CompressedTextureBuffer */>?",
     "boolean | Promise<boolean>" to "PromiseResult<Boolean>",
     "Promise<void>" to "$PROMISE<Void>",
     "undefined | Promise<void>" to "$PROMISE<Void>?",
@@ -147,15 +147,15 @@ internal fun kotlinType(
             -> "PromiseResult<TypedArray<*, *, *, *>>"
 
         "number[] | Cartesian3[] | Quaternion[]",
-            -> "ReadonlyArray<Any>"
+            -> "ReadonlyArray<JsAny>"
 
         "Cartesian3[] | Quaternion[]",
-            -> "ReadonlyArray<Any>"
+            -> "ReadonlyArray<JsAny>"
 
         "string[] | number[]",
             -> "ReadonlyArray<Comparable<*>>"
 
-        else -> if (type.endsWith(" | undefined")) "Any?" else "Any"
+        else -> if (type.endsWith(" | undefined")) "JsAny?" else "JsAny"
     }
 
     return "$placeholder /* $type */"

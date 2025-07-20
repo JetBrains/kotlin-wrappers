@@ -5,6 +5,7 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
+import js.core.JsAny
 import js.objects.JsPlainObject
 import js.promise.Promise
 import seskar.js.JsAsync
@@ -555,7 +556,7 @@ external class Scene(
      * three frustums.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Scene.html#debugFrustumStatistics">Online Documentation</a>
      */
-    val debugFrustumStatistics: Any
+    val debugFrustumStatistics: JsAny
 
     /**
      * Gets whether or not the scene is optimized for 3D only viewing.
@@ -704,7 +705,7 @@ external class Scene(
         windowPosition: Cartesian2,
         width: Double? = definedExternally,
         height: Double? = definedExternally,
-    ): Any
+    ): JsAny
 
     /**
      * Returns a [VoxelCell] for the voxel sample rendered at a particular window coordinate,
@@ -803,7 +804,7 @@ external class Scene(
         limit: Double? = definedExternally,
         width: Double? = definedExternally,
         height: Double? = definedExternally,
-    ): ReadonlyArray<Any>
+    ): ReadonlyArray<JsAny>
 
     /**
      * Returns the height of scene geometry at the given cartographic position or `undefined` if there was no
@@ -826,7 +827,7 @@ external class Scene(
      */
     fun sampleHeight(
         position: Cartographic,
-        objectsToExclude: ReadonlyArray<Any>? = definedExternally,
+        objectsToExclude: ReadonlyArray<JsAny>? = definedExternally,
         width: Double? = definedExternally,
     ): Double
 
@@ -852,7 +853,7 @@ external class Scene(
      */
     fun clampToHeight(
         cartesian: Cartesian3,
-        objectsToExclude: ReadonlyArray<Any>? = definedExternally,
+        objectsToExclude: ReadonlyArray<JsAny>? = definedExternally,
         width: Double? = definedExternally,
         result: Cartesian3? = definedExternally,
     ): Cartesian3
@@ -885,14 +886,14 @@ external class Scene(
     @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun sampleHeightMostDetailed(
         positions: ReadonlyArray<Cartographic>,
-        objectsToExclude: ReadonlyArray<Any>? = definedExternally,
+        objectsToExclude: ReadonlyArray<JsAny>? = definedExternally,
         width: Double? = definedExternally,
     ): ReadonlyArray<Cartographic>
 
     @JsName("sampleHeightMostDetailed")
     fun sampleHeightMostDetailedAsync(
         positions: ReadonlyArray<Cartographic>,
-        objectsToExclude: ReadonlyArray<Any>? = definedExternally,
+        objectsToExclude: ReadonlyArray<JsAny>? = definedExternally,
         width: Double? = definedExternally,
     ): Promise<ReadonlyArray<Cartographic>>
 
@@ -923,14 +924,14 @@ external class Scene(
     @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun clampToHeightMostDetailed(
         cartesians: ReadonlyArray<Cartesian3>,
-        objectsToExclude: ReadonlyArray<Any>? = definedExternally,
+        objectsToExclude: ReadonlyArray<JsAny>? = definedExternally,
         width: Double? = definedExternally,
     ): ReadonlyArray<Cartesian3>
 
     @JsName("clampToHeightMostDetailed")
     fun clampToHeightMostDetailedAsync(
         cartesians: ReadonlyArray<Cartesian3>,
-        objectsToExclude: ReadonlyArray<Any>? = definedExternally,
+        objectsToExclude: ReadonlyArray<JsAny>? = definedExternally,
         width: Double? = definedExternally,
     ): Promise<ReadonlyArray<Cartesian3>>
 
@@ -1037,6 +1038,6 @@ external class Scene(
          * This property relies on fragmentDepth being supported.
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Scene.html#.defaultLogDepthBuffer">Online Documentation</a>
          */
-        var defaultLogDepthBuffer: Any
+        var defaultLogDepthBuffer: JsAny
     }
 }

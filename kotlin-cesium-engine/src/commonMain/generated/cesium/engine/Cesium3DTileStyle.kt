@@ -4,6 +4,7 @@
 
 package cesium.engine
 
+import js.core.JsAny
 import kotlin.js.JsModule
 import kotlin.js.definedExternally
 
@@ -40,7 +41,7 @@ import kotlin.js.definedExternally
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTileStyle.html">Online Documentation</a>
  */
 external class Cesium3DTileStyle(
-    val style: Any = definedExternally,
+    val style: JsAny = definedExternally,
 ) {
     /**
      * Gets or sets the [StyleExpression] object used to evaluate the style's `show` property. Alternatively a boolean, string, or object defining a show style can be used.

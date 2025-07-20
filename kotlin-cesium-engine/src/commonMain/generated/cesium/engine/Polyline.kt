@@ -5,6 +5,7 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
+import js.core.JsAny
 import kotlin.js.JsModule
 
 /**
@@ -60,7 +61,7 @@ private constructor() {
      * Gets or sets the user-defined value returned when the polyline is picked.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Polyline.html#id">Online Documentation</a>
      */
-    var id: Any
+    var id: JsAny
 
     /**
      * Gets or sets the condition specifying at what distance from the camera that this polyline will be displayed.

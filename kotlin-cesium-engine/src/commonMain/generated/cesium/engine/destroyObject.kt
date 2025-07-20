@@ -4,6 +4,7 @@
 
 package cesium.engine
 
+import js.core.JsAny
 import kotlin.js.JsModule
 import kotlin.js.definedExternally
 
@@ -30,6 +31,6 @@ import kotlin.js.definedExternally
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#destroyObject">Online Documentation</a>
  */
 external fun destroyObject(
-    obj: Any,
+    obj: JsAny,
     message: String? = definedExternally,
 )

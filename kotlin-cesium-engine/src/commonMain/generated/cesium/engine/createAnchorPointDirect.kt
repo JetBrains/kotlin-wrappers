@@ -4,6 +4,7 @@
 
 package cesium.engine
 
+import js.core.JsAny
 import kotlin.js.JsModule
 
 /**
@@ -12,4 +13,4 @@ import kotlin.js.JsModule
  * @return The direct anchor point
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#createAnchorPointDirect">Online Documentation</a>
  */
-external fun createAnchorPointDirect(anchorPointDirectJson: Any): AnchorPointDirect
+external fun createAnchorPointDirect(anchorPointDirectJson: JsAny): AnchorPointDirect

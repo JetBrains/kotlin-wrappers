@@ -5,6 +5,7 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
+import js.core.JsDouble
 import kotlin.js.JsModule
 import kotlin.js.definedExternally
 
@@ -31,8 +32,8 @@ external class PlaneOutlineGeometry() {
          */
         fun pack(
             value: PlaneOutlineGeometry,
-            array: ReadonlyArray<Double>,
-        ): ReadonlyArray<Double>
+            array: ReadonlyArray<JsDouble>,
+        ): ReadonlyArray<JsDouble>
 
         /**
          * Retrieves an instance from a packed array.
@@ -44,7 +45,7 @@ external class PlaneOutlineGeometry() {
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PlaneOutlineGeometry.html#.unpack">Online Documentation</a>
          */
         fun unpack(
-            array: ReadonlyArray<Double>,
+            array: ReadonlyArray<JsDouble>,
             startingIndex: Int? = definedExternally,
             result: PlaneOutlineGeometry? = definedExternally,
         ): PlaneOutlineGeometry

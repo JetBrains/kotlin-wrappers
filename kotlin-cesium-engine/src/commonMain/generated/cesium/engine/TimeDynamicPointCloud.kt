@@ -4,6 +4,7 @@
 
 package cesium.engine
 
+import js.core.JsAny
 import js.objects.JsPlainObject
 import kotlin.js.JsModule
 
@@ -41,7 +42,7 @@ external class TimeDynamicPointCloud(
         val modelMatrix: Matrix4?
         val shadows: ShadowMode?
         val maximumMemoryUsage: Int?
-        val shading: Any?
+        val shading: JsAny?
         val style: Cesium3DTileStyle?
         val clippingPlanes: ClippingPlaneCollection?
     }

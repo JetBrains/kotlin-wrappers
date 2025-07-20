@@ -5,6 +5,7 @@
 package cesium.widgets
 
 import js.array.ReadonlyArray
+import js.core.JsDouble
 import kotlin.js.JsModule
 
 /**
@@ -61,7 +62,7 @@ external class AnimationViewModel(
      * @return The array of known clock multipliers associated with the shuttle ring.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/AnimationViewModel.html#getShuttleRingTicks">Online Documentation</a>
      */
-    fun getShuttleRingTicks(): ReadonlyArray<Double>
+    fun getShuttleRingTicks(): ReadonlyArray<JsDouble>
 
     /**
      * Sets the array of positive known clock multipliers to associate with the shuttle ring.
@@ -72,7 +73,7 @@ external class AnimationViewModel(
      * @param [positiveTicks] The list of known positive clock multipliers to associate with the shuttle ring.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/AnimationViewModel.html#setShuttleRingTicks">Online Documentation</a>
      */
-    fun setShuttleRingTicks(positiveTicks: ReadonlyArray<Double>)
+    fun setShuttleRingTicks(positiveTicks: ReadonlyArray<JsDouble>)
 
     /**
      * Gets a command that decreases the speed of animation.
@@ -133,7 +134,7 @@ external class AnimationViewModel(
          * Gets or sets the default array of known clock multipliers associated with new instances of the shuttle ring.
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/AnimationViewModel.html#.defaultTicks">Online Documentation</a>
          */
-        var defaultTicks: ReadonlyArray<Double>
+        var defaultTicks: ReadonlyArray<JsDouble>
 
         /**
          * Gets or sets the default time formatter used by new instances.

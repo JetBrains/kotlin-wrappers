@@ -2,6 +2,7 @@
 
 package cesium.engine
 
+import js.core.JsAny
 import js.objects.JsPlainObject
 
 /**
@@ -12,5 +13,5 @@ import js.objects.JsPlainObject
 @JsPlainObject
 external interface UniformSpecifier {
     val type: UniformType
-    val value: Any /* boolean | number | Cartesian2 | Cartesian3 | Cartesian4 | Matrix2 | Matrix3 | Matrix4 | TextureUniform */
+    val value: JsAny /* boolean | number | Cartesian2 | Cartesian3 | Cartesian4 | Matrix2 | Matrix3 | Matrix4 | TextureUniform */
 }

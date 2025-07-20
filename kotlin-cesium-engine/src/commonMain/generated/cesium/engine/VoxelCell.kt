@@ -5,6 +5,8 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
+import js.core.JsAny
+import js.core.JsString
 import kotlin.js.JsModule
 
 /**
@@ -75,7 +77,7 @@ private constructor() {
      * @return The IDs of the feature's properties.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/VoxelCell.html#getNames">Online Documentation</a>
      */
-    fun getNames(): ReadonlyArray<String>
+    fun getNames(): ReadonlyArray<JsString>
 
     /**
      * Returns a copy of the value of the metadata in the cell with the given name.
@@ -91,5 +93,5 @@ private constructor() {
      * @return The value of the property or `undefined` if the feature does not have this property.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/VoxelCell.html#getProperty">Online Documentation</a>
      */
-    fun getProperty(name: String): Any
+    fun getProperty(name: String): JsAny
 }

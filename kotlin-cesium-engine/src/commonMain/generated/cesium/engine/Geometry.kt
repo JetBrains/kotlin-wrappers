@@ -5,6 +5,7 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
+import js.core.JsAny
 import js.objects.JsPlainObject
 import js.typedarrays.TypedArray
 import kotlin.js.JsModule
@@ -96,7 +97,7 @@ external class Geometry(
      * determines the primitives in the geometry.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Geometry.html#indices">Online Documentation</a>
      */
-    var indices: ReadonlyArray<Any>?
+    var indices: ReadonlyArray<JsAny>?
 
     /**
      * The type of primitives in the geometry.  This is most often [PrimitiveType.TRIANGLES],

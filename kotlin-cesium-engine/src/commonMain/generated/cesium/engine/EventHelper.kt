@@ -4,6 +4,7 @@
 
 package cesium.engine
 
+import js.core.JsAny
 import kotlin.js.JsModule
 import kotlin.js.definedExternally
 
@@ -35,7 +36,7 @@ external class EventHelper() {
     fun add(
         event: DefaultEvent,
         listener: () -> Unit,
-        scope: Any? = definedExternally,
+        scope: JsAny? = definedExternally,
     ): RemoveCallback
 
     /**

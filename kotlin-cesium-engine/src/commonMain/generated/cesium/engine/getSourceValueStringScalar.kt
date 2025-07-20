@@ -4,6 +4,7 @@
 
 package cesium.engine
 
+import js.core.JsAny
 import kotlin.js.JsModule
 
 /**
@@ -17,5 +18,5 @@ import kotlin.js.JsModule
  */
 external fun getSourceValueStringScalar(
     classProperty: MetadataClassProperty,
-    metadataProperty: Any,
+    metadataProperty: JsAny,
 ): String

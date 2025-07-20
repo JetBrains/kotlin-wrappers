@@ -4,6 +4,7 @@
 
 package cesium.engine
 
+import js.core.JsAny
 import kotlin.js.JsModule
 
 /**
@@ -52,7 +53,7 @@ external class DebugModelMatrixPrimitive() {
      * User-defined value returned when the primitive is picked.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/DebugModelMatrixPrimitive.html#id">Online Documentation</a>
      */
-    var id: Any
+    var id: JsAny
 
     /**
      * Returns true if this object was destroyed; otherwise, false.

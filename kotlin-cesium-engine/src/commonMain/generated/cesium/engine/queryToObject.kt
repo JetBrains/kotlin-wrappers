@@ -4,6 +4,7 @@
 
 package cesium.engine
 
+import js.core.JsAny
 import kotlin.js.JsModule
 
 /**
@@ -23,4 +24,4 @@ import kotlin.js.JsModule
  * @return An object containing the parameters parsed from the query string.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#queryToObject">Online Documentation</a>
  */
-external fun queryToObject(queryString: String): Any
+external fun queryToObject(queryString: String): JsAny

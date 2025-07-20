@@ -5,6 +5,7 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
+import js.core.JsString
 import kotlin.js.JsModule
 import kotlin.js.definedExternally
 
@@ -80,7 +81,7 @@ external class Entity() {
      * Gets the names of all properties registered on this instance.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Entity.html#propertyNames">Online Documentation</a>
      */
-    var propertyNames: ReadonlyArray<String>
+    var propertyNames: ReadonlyArray<JsString>
 
     /**
      * Gets or sets the billboard.

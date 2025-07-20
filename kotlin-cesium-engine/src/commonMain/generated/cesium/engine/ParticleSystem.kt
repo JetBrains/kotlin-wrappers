@@ -5,6 +5,7 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
+import js.core.JsAny
 import js.objects.JsPlainObject
 import kotlin.js.JsModule
 import kotlin.js.definedExternally
@@ -76,7 +77,7 @@ external class ParticleSystem(
         val color: Color?
         val startColor: Color?
         val endColor: Color?
-        val image: Any?
+        val image: JsAny?
         val imageSize: Cartesian2?
         val minimumImageSize: Cartesian2?
         val maximumImageSize: Cartesian2?
@@ -115,7 +116,7 @@ external class ParticleSystem(
      * The URI, HTMLImageElement, or HTMLCanvasElement to use for the billboard.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ParticleSystem.html#image">Online Documentation</a>
      */
-    var image: Any
+    var image: JsAny
 
     /**
      * The particle emitter for this

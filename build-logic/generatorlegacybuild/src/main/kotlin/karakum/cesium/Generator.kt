@@ -49,7 +49,7 @@ private fun generate(
                     moduleDeclaration.takeIf { isRuntime } ?: "",
                     "package $pkg",
                     defaultImports,
-                    body,
+                    toCommonBody(body),
                 ).filter { it.isNotEmpty() }
                     .joinToString("\n\n")
 
@@ -74,3 +74,28 @@ private fun hasRuntimeDeclarations(code: String): Boolean {
 
     return true
 }
+
+private fun toCommonBody(
+    body: String,
+): String =
+    body.replace("<String>", "<JsString>")
+        .replace("<String,", "<JsString,")
+        .replace(", String>", ", JsString>")
+        .replace(", String?>", ", JsString?>")
+        .replace("<Double>", "<JsDouble>")
+        .replace("<Double,", "<JsDouble,")
+        .replace(", Double>", ", JsDouble>")
+        .replace("<Double?>", "<JsDouble?>")
+        .replace("<Int>", "<JsInt>")
+        .replace("<Int,", "<JsInt,")
+        .replace(", Int>", ", JsInt>")
+        .replace("<Boolean>", "<JsBoolean>")
+        .replace(
+            "@JsAsync\n",
+            "@JsAsync\n@Suppress(\"WRONG_EXTERNAL_DECLARATION\")\n",
+        )
+        .replace(
+            "@JsAsync(optional = true)\n",
+            "@JsAsync(optional = true)\n@Suppress(\"WRONG_EXTERNAL_DECLARATION\")\n",
+        )
+

@@ -4,6 +4,7 @@
 
 package cesium.engine
 
+import js.core.JsAny
 import js.objects.JsPlainObject
 import js.promise.Promise
 import seskar.js.JsAsync
@@ -38,10 +39,10 @@ import kotlin.js.JsName
  */
 @JsAsync
 @Suppress("WRONG_EXTERNAL_DECLARATION")
-external suspend fun exportKml(options: ExportKmlOptions): Any /* exportKmlResultKml | exportKmlResultKmz */
+external suspend fun exportKml(options: ExportKmlOptions): JsAny /* exportKmlResultKml | exportKmlResultKmz */
 
 @JsName("exportKml")
-external fun exportKmlAsync(options: ExportKmlOptions): Promise<Any /* exportKmlResultKml | exportKmlResultKmz */>
+external fun exportKmlAsync(options: ExportKmlOptions): Promise<JsAny /* exportKmlResultKml | exportKmlResultKmz */>
 
 /**
  * @property [entities] The EntityCollection to export as KML.

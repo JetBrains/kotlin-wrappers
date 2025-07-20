@@ -4,6 +4,7 @@
 
 package cesium.engine
 
+import js.core.JsAny
 import kotlin.js.JsModule
 
 /**
@@ -25,13 +26,13 @@ private constructor() {
      * Gets the I3S data for this object.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/I3SGeometry.html#data">Online Documentation</a>
      */
-    val data: Any
+    val data: JsAny
 
     /**
      * Gets the custom attributes of the geometry.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/I3SGeometry.html#customAttributes">Online Documentation</a>
      */
-    val customAttributes: Any
+    val customAttributes: JsAny
 
     /**
      * Find a triangle touching the point [px, py, pz], then return the vertex closest to the search point
@@ -49,5 +50,5 @@ private constructor() {
         px: Double,
         py: Double,
         pz: Double,
-    ): Any
+    ): JsAny
 }

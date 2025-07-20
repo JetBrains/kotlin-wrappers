@@ -4,6 +4,7 @@
 
 package cesium.engine
 
+import js.core.JsAny
 import js.core.Void
 import js.objects.JsPlainObject
 import js.promise.Promise
@@ -164,13 +165,13 @@ private constructor() :
         @JsAsync
         @Suppress("WRONG_EXTERNAL_DECLARATION")
         suspend fun fromUrl(
-            url: Any, /* Resource | string | Promise<Resource> | Promise<string> */
+            url: JsAny, /* Resource | string | Promise<Resource> | Promise<string> */
             options: ConstructorOptions? = definedExternally,
         ): ArcGISTiledElevationTerrainProvider
 
         @JsName("fromUrl")
         fun fromUrlAsync(
-            url: Any, /* Resource | string | Promise<Resource> | Promise<string> */
+            url: JsAny, /* Resource | string | Promise<Resource> | Promise<string> */
             options: ConstructorOptions? = definedExternally,
         ): Promise<ArcGISTiledElevationTerrainProvider>
     }

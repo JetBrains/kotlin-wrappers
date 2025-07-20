@@ -4,6 +4,7 @@
 
 package cesium.engine
 
+import js.core.JsAny
 import kotlin.js.JsModule
 import kotlin.js.definedExternally
 
@@ -203,5 +204,5 @@ external object IntersectionTests {
         p1: Cartesian3,
         p2: Cartesian3,
         plane: Plane,
-    ): Any
+    ): JsAny
 }

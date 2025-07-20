@@ -4,6 +4,7 @@
 
 package cesium.engine
 
+import js.core.JsAny
 import js.objects.JsPlainObject
 import js.promise.Promise
 import seskar.js.JsAsync
@@ -125,13 +126,13 @@ external class GeoJsonDataSource(
     @JsAsync
     @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun load(
-        data: Any,
+        data: JsAny,
         options: LoadOptions? = definedExternally,
     ): GeoJsonDataSource
 
     @JsName("load")
     fun loadAsync(
-        data: Any,
+        data: JsAny,
         options: LoadOptions? = definedExternally,
     ): Promise<GeoJsonDataSource>
 
@@ -171,13 +172,13 @@ external class GeoJsonDataSource(
     @JsAsync
     @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun process(
-        data: Any,
+        data: JsAny,
         options: LoadOptions? = definedExternally,
     ): GeoJsonDataSource
 
     @JsName("process")
     fun processAsync(
-        data: Any,
+        data: JsAny,
         options: LoadOptions? = definedExternally,
     ): Promise<GeoJsonDataSource>
 
@@ -229,13 +230,13 @@ external class GeoJsonDataSource(
         @JsAsync
         @Suppress("WRONG_EXTERNAL_DECLARATION")
         suspend fun load(
-            data: Any,
+            data: JsAny,
             options: LoadOptions? = definedExternally,
         ): GeoJsonDataSource
 
         @JsName("load")
         fun loadAsync(
-            data: Any,
+            data: JsAny,
             options: LoadOptions? = definedExternally,
         ): Promise<GeoJsonDataSource>
 
@@ -290,7 +291,7 @@ external class GeoJsonDataSource(
          * for example 'EPSG:4326'.
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GeoJsonDataSource.html#.crsNames">Online Documentation</a>
          */
-        var crsNames: Any
+        var crsNames: JsAny
 
         /**
          * Gets an object that maps the href property of a crs link to a callback function
@@ -300,7 +301,7 @@ external class GeoJsonDataSource(
          * the link has a type specified.
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GeoJsonDataSource.html#.crsLinkHrefs">Online Documentation</a>
          */
-        var crsLinkHrefs: Any
+        var crsLinkHrefs: JsAny
 
         /**
          * Gets an object that maps the type property of a crs link to a callback function
@@ -309,7 +310,7 @@ external class GeoJsonDataSource(
          * Items in `crsLinkHrefs` take precedence over this object.
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GeoJsonDataSource.html#.crsLinkTypes">Online Documentation</a>
          */
-        var crsLinkTypes: Any
+        var crsLinkTypes: JsAny
 
         /**
          * Initialization options for the `load` method.

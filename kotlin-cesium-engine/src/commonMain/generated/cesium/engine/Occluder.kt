@@ -5,6 +5,7 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
+import js.core.JsAny
 import kotlin.js.JsModule
 import kotlin.js.definedExternally
 
@@ -131,7 +132,7 @@ external class Occluder(
             occluderBoundingSphere: BoundingSphere,
             occludeePosition: Cartesian3,
             positions: ReadonlyArray<Cartesian3>,
-        ): Any
+        ): JsAny
 
         /**
          * Computes a point that can be used as the occludee position to the visibility functions from a rectangle.
@@ -145,6 +146,6 @@ external class Occluder(
         fun computeOccludeePointFromRectangle(
             rectangle: Rectangle,
             ellipsoid: Ellipsoid? = definedExternally,
-        ): Any
+        ): JsAny
     }
 }

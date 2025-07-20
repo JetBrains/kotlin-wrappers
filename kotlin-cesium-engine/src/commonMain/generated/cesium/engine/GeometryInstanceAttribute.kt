@@ -5,6 +5,7 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
+import js.core.JsDouble
 import js.objects.JsPlainObject
 import kotlin.js.JsModule
 
@@ -45,7 +46,7 @@ external class GeometryInstanceAttribute(
         val componentDatatype: ComponentDatatype
         val componentsPerAttribute: Int
         val normalize: Boolean?
-        val value: ReadonlyArray<Double>
+        val value: ReadonlyArray<JsDouble>
     }
 
     /**
@@ -106,5 +107,5 @@ external class GeometryInstanceAttribute(
      * ```
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GeometryInstanceAttribute.html#value">Online Documentation</a>
      */
-    var value: ReadonlyArray<Double>
+    var value: ReadonlyArray<JsDouble>
 }

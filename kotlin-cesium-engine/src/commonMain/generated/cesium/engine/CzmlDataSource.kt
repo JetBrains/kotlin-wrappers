@@ -5,6 +5,7 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
+import js.core.JsAny
 import js.objects.JsPlainObject
 import js.promise.Promise
 import seskar.js.JsAsync
@@ -115,13 +116,13 @@ external class CzmlDataSource(
     @JsAsync
     @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun process(
-        czml: Any,
+        czml: JsAny,
         options: LoadOptions? = definedExternally,
     ): CzmlDataSource
 
     @JsName("process")
     fun processAsync(
-        czml: Any,
+        czml: JsAny,
         options: LoadOptions? = definedExternally,
     ): Promise<CzmlDataSource>
 
@@ -161,13 +162,13 @@ external class CzmlDataSource(
     @JsAsync
     @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun load(
-        czml: Any,
+        czml: JsAny,
         options: LoadOptions? = definedExternally,
     ): CzmlDataSource
 
     @JsName("load")
     fun loadAsync(
-        czml: Any,
+        czml: JsAny,
         options: LoadOptions? = definedExternally,
     ): Promise<CzmlDataSource>
 
@@ -219,13 +220,13 @@ external class CzmlDataSource(
         @JsAsync
         @Suppress("WRONG_EXTERNAL_DECLARATION")
         suspend fun load(
-            czml: Any,
+            czml: JsAny,
             options: LoadOptions? = definedExternally,
         ): CzmlDataSource
 
         @JsName("load")
         fun loadAsync(
-            czml: Any,
+            czml: JsAny,
             options: LoadOptions? = definedExternally,
         ): Promise<CzmlDataSource>
 
@@ -249,9 +250,9 @@ external class CzmlDataSource(
          */
         fun processPacketData(
             type: Function<*>,
-            obj: Any,
+            obj: JsAny,
             propertyName: String,
-            packetData: Any,
+            packetData: JsAny,
             interval: TimeInterval,
             sourceUri: String,
             entityCollection: EntityCollection,
@@ -269,9 +270,9 @@ external class CzmlDataSource(
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CzmlDataSource.html#.processPositionPacketData">Online Documentation</a>
          */
         fun processPositionPacketData(
-            obj: Any,
+            obj: JsAny,
             propertyName: String,
-            packetData: Any,
+            packetData: JsAny,
             interval: TimeInterval,
             sourceUri: String,
             entityCollection: EntityCollection,
@@ -289,9 +290,9 @@ external class CzmlDataSource(
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CzmlDataSource.html#.processMaterialPacketData">Online Documentation</a>
          */
         fun processMaterialPacketData(
-            obj: Any,
+            obj: JsAny,
             propertyName: String,
-            packetData: Any,
+            packetData: JsAny,
             interval: TimeInterval,
             sourceUri: String,
             entityCollection: EntityCollection,

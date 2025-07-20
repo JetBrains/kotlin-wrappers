@@ -5,6 +5,7 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
+import js.core.JsAny
 import kotlin.js.JsModule
 
 /**
@@ -94,7 +95,7 @@ private constructor() {
      * Returns `undefined` if `extras` does not exist.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTile.html#extras">Online Documentation</a>
      */
-    val extras: Any
+    val extras: JsAny
 
     /**
      * Gets the I3S Node for the tile.

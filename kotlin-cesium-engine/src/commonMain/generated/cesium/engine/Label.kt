@@ -4,6 +4,7 @@
 
 package cesium.engine
 
+import js.core.JsAny
 import js.objects.JsPlainObject
 import kotlin.js.JsModule
 import kotlin.js.definedExternally
@@ -248,7 +249,7 @@ private constructor() {
      * Gets or sets the user-defined value returned when the label is picked.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Label.html#id">Online Documentation</a>
      */
-    var id: Any
+    var id: JsAny
 
     /**
      * Computes the screen-space position of the label's origin, taking into account eye and pixel offsets.
@@ -322,7 +323,7 @@ private constructor() {
     @JsPlainObject
     interface ConstructorOptions {
         val position: Cartesian3
-        val id: Any?
+        val id: JsAny?
         val show: Boolean?
         val text: String?
         val font: String?

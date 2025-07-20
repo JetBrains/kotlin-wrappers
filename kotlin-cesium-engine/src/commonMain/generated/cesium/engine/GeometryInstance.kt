@@ -4,6 +4,7 @@
 
 package cesium.engine
 
+import js.core.JsAny
 import js.objects.JsPlainObject
 import kotlin.js.JsModule
 
@@ -53,10 +54,10 @@ external class GeometryInstance(
      */
     @JsPlainObject
     interface ConstructorOptions {
-        val geometry: Any /* Geometry | GeometryFactory */
+        val geometry: JsAny /* Geometry | GeometryFactory */
         val modelMatrix: Matrix4?
-        val id: Any?
-        val attributes: Any?
+        val id: JsAny?
+        val attributes: JsAny?
     }
 
     /**
@@ -78,12 +79,12 @@ external class GeometryInstance(
      * User-defined object returned when the instance is picked or used to get/set per-instance attributes.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GeometryInstance.html#id">Online Documentation</a>
      */
-    var id: Any?
+    var id: JsAny?
 
     /**
      * Per-instance attributes like [ColorGeometryInstanceAttribute] or [ShowGeometryInstanceAttribute].
      * [Geometry] attributes varying per vertex; these attributes are constant for the entire instance.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GeometryInstance.html#attributes">Online Documentation</a>
      */
-    var attributes: Any
+    var attributes: JsAny
 }

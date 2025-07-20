@@ -6,6 +6,8 @@ package cesium.engine
 
 import cesium.engine.BoundingSphere.Companion.transform
 import js.array.ReadonlyArray
+import js.core.JsAny
+import js.core.JsDouble
 import kotlin.js.JsModule
 import kotlin.js.definedExternally
 
@@ -116,7 +118,7 @@ external class BoundingSphere(
          */
         fun fromRectangle2D(
             rectangle: Rectangle? = definedExternally,
-            projection: Any? = definedExternally,
+            projection: JsAny? = definedExternally,
             result: BoundingSphere? = definedExternally,
         ): BoundingSphere
 
@@ -136,7 +138,7 @@ external class BoundingSphere(
          */
         fun fromRectangleWithHeights2D(
             rectangle: Rectangle? = definedExternally,
-            projection: Any? = definedExternally,
+            projection: JsAny? = definedExternally,
             minimumHeight: Double? = definedExternally,
             maximumHeight: Double? = definedExternally,
             result: BoundingSphere? = definedExternally,
@@ -194,7 +196,7 @@ external class BoundingSphere(
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BoundingSphere.html#.fromVertices">Online Documentation</a>
          */
         fun fromVertices(
-            positions: ReadonlyArray<Double>? = definedExternally,
+            positions: ReadonlyArray<JsDouble>? = definedExternally,
             center: Cartesian3? = definedExternally,
             stride: Int? = definedExternally,
             result: BoundingSphere? = definedExternally,
@@ -214,8 +216,8 @@ external class BoundingSphere(
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BoundingSphere.html#.fromEncodedCartesianVertices">Online Documentation</a>
          */
         fun fromEncodedCartesianVertices(
-            positionsHigh: ReadonlyArray<Double>? = definedExternally,
-            positionsLow: ReadonlyArray<Double>? = definedExternally,
+            positionsHigh: ReadonlyArray<JsDouble>? = definedExternally,
+            positionsLow: ReadonlyArray<JsDouble>? = definedExternally,
             result: BoundingSphere? = definedExternally,
         ): BoundingSphere
 
@@ -318,9 +320,9 @@ external class BoundingSphere(
          */
         override fun pack(
             value: BoundingSphere,
-            array: ReadonlyArray<Double>,
+            array: ReadonlyArray<JsDouble>,
             startingIndex: Int?,
-        ): ReadonlyArray<Double>
+        ): ReadonlyArray<JsDouble>
 
         /**
          * Retrieves an instance from a packed array.
@@ -332,7 +334,7 @@ external class BoundingSphere(
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BoundingSphere.html#.unpack">Online Documentation</a>
          */
         override fun unpack(
-            array: ReadonlyArray<Double>,
+            array: ReadonlyArray<JsDouble>,
             startingIndex: Int?,
             result: BoundingSphere?,
         ): BoundingSphere
@@ -464,7 +466,7 @@ external class BoundingSphere(
          */
         fun projectTo2D(
             sphere: BoundingSphere,
-            projection: Any? = definedExternally,
+            projection: JsAny? = definedExternally,
             result: BoundingSphere? = definedExternally,
         ): BoundingSphere
 

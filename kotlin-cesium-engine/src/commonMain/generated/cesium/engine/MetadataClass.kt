@@ -4,6 +4,8 @@
 
 package cesium.engine
 
+import js.core.JsAny
+import js.core.JsString
 import js.objects.JsPlainObject
 import js.objects.ReadonlyRecord
 import kotlin.js.JsModule
@@ -30,16 +32,16 @@ external class MetadataClass(
         val id: String
         val name: String?
         val description: String?
-        val properties: ReadonlyRecord<String, MetadataClassProperty>?
-        val extras: Any?
-        val extensions: Any?
+        val properties: ReadonlyRecord<JsString, MetadataClassProperty>?
+        val extras: JsAny?
+        val extensions: JsAny?
     }
 
     /**
      * The class properties.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/MetadataClass.html#properties">Online Documentation</a>
      */
-    val properties: ReadonlyRecord<String, MetadataClassProperty>
+    val properties: ReadonlyRecord<JsString, MetadataClassProperty>
 
     /**
      * The ID of the class.
@@ -63,11 +65,11 @@ external class MetadataClass(
      * Extra user-defined properties.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/MetadataClass.html#extras">Online Documentation</a>
      */
-    val extras: Any
+    val extras: JsAny
 
     /**
      * An object containing extensions.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/MetadataClass.html#extensions">Online Documentation</a>
      */
-    val extensions: Any
+    val extensions: JsAny
 }

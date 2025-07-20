@@ -2,6 +2,8 @@
 
 package cesium.engine
 
+import js.core.JsAny
+
 /**
  * A function used to compare two items while performing a merge sort.
  * ```
@@ -14,7 +16,7 @@ package cesium.engine
  * @param [userDefinedObject] An object that was passed to [mergeSort].
  */
 typealias mergeSortComparator = (
-    a: Any,
-    b: Any,
-    userDefinedObject: Any?,
+    a: JsAny,
+    b: JsAny,
+    userDefinedObject: JsAny?,
 ) -> Double

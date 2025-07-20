@@ -5,6 +5,8 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
+import js.core.JsAny
+import js.core.JsString
 import js.objects.JsPlainObject
 import js.promise.Promise
 import seskar.js.JsAsync
@@ -98,7 +100,7 @@ external class UrlTemplateImageryProvider(
      * - `{reverseZ}`: The zero padding for the reverseZ coordinate of the tile in the tiling scheme.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/UrlTemplateImageryProvider.html#urlSchemeZeroPadding">Online Documentation</a>
      */
-    val urlSchemeZeroPadding: Any
+    val urlSchemeZeroPadding: JsAny
 
     /**
      * Gets the URL template to use to use to pick features.  If this property is not specified,
@@ -359,8 +361,8 @@ external class UrlTemplateImageryProvider(
     interface ConstructorOptions {
         val url: Resource
         val pickFeaturesUrl: Resource?
-        val urlSchemeZeroPadding: Any?
-        val subdomains: ReadonlyArray<String>?
+        val urlSchemeZeroPadding: JsAny?
+        val subdomains: ReadonlyArray<JsString>?
         val credit: Credit?
         val minimumLevel: Int?
         val maximumLevel: Int?
@@ -373,6 +375,6 @@ external class UrlTemplateImageryProvider(
         val getFeatureInfoFormats: ReadonlyArray<GetFeatureInfoFormat>?
         val enablePickFeatures: Boolean?
         val tileDiscardPolicy: TileDiscardPolicy?
-        val customTags: Any?
+        val customTags: JsAny?
     }
 }

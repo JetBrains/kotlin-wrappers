@@ -5,6 +5,7 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
+import js.core.JsDouble
 import kotlin.js.JsModule
 import kotlin.js.definedExternally
 
@@ -41,11 +42,11 @@ external object HermitePolynomialApproximation {
      */
     fun interpolateOrderZero(
         x: Double,
-        xTable: ReadonlyArray<Double>,
-        yTable: ReadonlyArray<Double>,
+        xTable: ReadonlyArray<JsDouble>,
+        yTable: ReadonlyArray<JsDouble>,
         yStride: Double,
-        result: ReadonlyArray<Double>? = definedExternally,
-    ): ReadonlyArray<Double>
+        result: ReadonlyArray<JsDouble>? = definedExternally,
+    ): ReadonlyArray<JsDouble>
 
     /**
      * Interpolates values using Hermite Polynomial Approximation.
@@ -64,11 +65,11 @@ external object HermitePolynomialApproximation {
      */
     fun interpolate(
         x: Double,
-        xTable: ReadonlyArray<Double>,
-        yTable: ReadonlyArray<Double>,
+        xTable: ReadonlyArray<JsDouble>,
+        yTable: ReadonlyArray<JsDouble>,
         yStride: Double,
         inputOrder: Int,
         outputOrder: Int,
-        result: ReadonlyArray<Double>? = definedExternally,
-    ): ReadonlyArray<Double>
+        result: ReadonlyArray<JsDouble>? = definedExternally,
+    ): ReadonlyArray<JsDouble>
 }

@@ -3,6 +3,7 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
+import js.core.JsAny
 
 /**
  * A event listener function used to style clusters.
@@ -20,7 +21,7 @@ import js.array.ReadonlyArray
  */
 typealias newClusterCallback = (
     clusteredEntities: ReadonlyArray<Entity>,
-    cluster: Any,
+    cluster: JsAny,
     /* {
         billboard: Billboard;
         label: Label;

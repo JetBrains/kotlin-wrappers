@@ -5,6 +5,8 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
+import js.core.JsAny
+import js.core.JsDouble
 import kotlin.js.JsModule
 import kotlin.js.definedExternally
 
@@ -26,7 +28,7 @@ import kotlin.js.definedExternally
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/VertexFormat.html">Online Documentation</a>
  */
 external class VertexFormat(
-    options: Any? = definedExternally,
+    options: JsAny? = definedExternally,
 ) {
     /**
      * When `true`, the vertex has a 3D position attribute.
@@ -143,9 +145,9 @@ external class VertexFormat(
          */
         override fun pack(
             value: VertexFormat,
-            array: ReadonlyArray<Double>,
+            array: ReadonlyArray<JsDouble>,
             startingIndex: Int?,
-        ): ReadonlyArray<Double>
+        ): ReadonlyArray<JsDouble>
 
         /**
          * Retrieves an instance from a packed array.
@@ -157,7 +159,7 @@ external class VertexFormat(
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/VertexFormat.html#.unpack">Online Documentation</a>
          */
         override fun unpack(
-            array: ReadonlyArray<Double>,
+            array: ReadonlyArray<JsDouble>,
             startingIndex: Int?,
             result: VertexFormat?,
         ): VertexFormat

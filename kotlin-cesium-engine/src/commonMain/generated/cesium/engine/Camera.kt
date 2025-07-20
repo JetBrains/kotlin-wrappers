@@ -4,6 +4,7 @@
 
 package cesium.engine
 
+import js.core.JsAny
 import js.objects.JsPlainObject
 import kotlin.js.JsModule
 import kotlin.js.definedExternally
@@ -65,7 +66,7 @@ external class Camera(
      * The region of space in view.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Camera.html#frustum">Online Documentation</a>
      */
-    var frustum: Any /* PerspectiveFrustum | PerspectiveOffCenterFrustum | OrthographicFrustum */
+    var frustum: JsAny /* PerspectiveFrustum | PerspectiveOffCenterFrustum | OrthographicFrustum */
 
     /**
      * The default amount to move the camera when an argument is not
@@ -262,7 +263,7 @@ external class Camera(
      */
     @JsPlainObject
     interface SetViewOptions {
-        val destination: Any /* Cartesian3 | Rectangle */?
+        val destination: JsAny /* Cartesian3 | Rectangle */?
         val orientation: CameraOrientation?
         val endTransform: Matrix4?
         val convert: Boolean?
@@ -740,7 +741,7 @@ external class Camera(
      */
     @JsPlainObject
     interface FlyToOptions {
-        val destination: Any /* Cartesian3 | Rectangle */
+        val destination: JsAny /* Cartesian3 | Rectangle */
         val orientation: CameraOrientation?
         val duration: Double?
         val complete: FlightCompleteCallback?

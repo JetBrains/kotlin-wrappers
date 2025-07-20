@@ -5,6 +5,7 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
+import js.core.JsDouble
 import js.objects.JsPlainObject
 import kotlin.js.JsModule
 
@@ -60,9 +61,9 @@ external class CylinderGeometry(
          */
         override fun pack(
             value: CylinderGeometry,
-            array: ReadonlyArray<Double>,
+            array: ReadonlyArray<JsDouble>,
             startingIndex: Int?,
-        ): ReadonlyArray<Double>
+        ): ReadonlyArray<JsDouble>
 
         /**
          * Retrieves an instance from a packed array.
@@ -74,7 +75,7 @@ external class CylinderGeometry(
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CylinderGeometry.html#.unpack">Online Documentation</a>
          */
         override fun unpack(
-            array: ReadonlyArray<Double>,
+            array: ReadonlyArray<JsDouble>,
             startingIndex: Int?,
             result: CylinderGeometry?,
         ): CylinderGeometry

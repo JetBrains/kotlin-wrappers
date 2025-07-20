@@ -2,6 +2,8 @@
 
 package cesium.engine
 
+import js.core.JsAny
+
 /**
  * A function used to compare two items while performing a binary search.
  * ```
@@ -13,6 +15,6 @@ package cesium.engine
  * @param [b] The item being searched for.
  */
 typealias binarySearchComparator = (
-    a: Any,
-    b: Any,
+    a: JsAny,
+    b: JsAny,
 ) -> Double

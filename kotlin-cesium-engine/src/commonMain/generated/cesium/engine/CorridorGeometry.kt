@@ -5,6 +5,7 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
+import js.core.JsDouble
 import js.objects.JsPlainObject
 import kotlin.js.JsModule
 import kotlin.js.definedExternally
@@ -68,9 +69,9 @@ external class CorridorGeometry(
          */
         fun pack(
             value: CorridorGeometry,
-            array: ReadonlyArray<Double>,
+            array: ReadonlyArray<JsDouble>,
             startingIndex: Int? = definedExternally,
-        ): ReadonlyArray<Double>
+        ): ReadonlyArray<JsDouble>
 
         /**
          * Retrieves an instance from a packed array.
@@ -82,7 +83,7 @@ external class CorridorGeometry(
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CorridorGeometry.html#.unpack">Online Documentation</a>
          */
         fun unpack(
-            array: ReadonlyArray<Double>,
+            array: ReadonlyArray<JsDouble>,
             startingIndex: Int? = definedExternally,
             result: CorridorGeometry? = definedExternally,
         ): CorridorGeometry

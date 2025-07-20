@@ -5,6 +5,8 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
+import js.core.JsAny
+import js.core.JsDouble
 import js.objects.JsPlainObject
 import kotlin.js.JsModule
 import kotlin.js.definedExternally
@@ -37,21 +39,21 @@ external class SteppedSpline(
      */
     @JsPlainObject
     interface ConstructorOptions {
-        val times: ReadonlyArray<Double>
-        val points: ReadonlyArray<Any> /* number[] | Cartesian3[] | Quaternion[] */
+        val times: ReadonlyArray<JsDouble>
+        val points: ReadonlyArray<JsAny> /* number[] | Cartesian3[] | Quaternion[] */
     }
 
     /**
      * An array of times for the control points.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/SteppedSpline.html#times">Online Documentation</a>
      */
-    val times: ReadonlyArray<Double>
+    val times: ReadonlyArray<JsDouble>
 
     /**
      * An array of control points.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/SteppedSpline.html#points">Online Documentation</a>
      */
-    val points: ReadonlyArray<Any> /* number[] | Cartesian3[] | Quaternion[] */
+    val points: ReadonlyArray<JsAny> /* number[] | Cartesian3[] | Quaternion[] */
 
     /**
      * Finds an index `i` in `times` such that the parameter
@@ -91,6 +93,6 @@ external class SteppedSpline(
      */
     fun evaluate(
         time: Double,
-        result: Any /* Cartesian3 | Quaternion */? = definedExternally,
-    ): Any /* number | Cartesian3 | Quaternion */
+        result: JsAny /* Cartesian3 | Quaternion */? = definedExternally,
+    ): JsAny /* number | Cartesian3 | Quaternion */
 }

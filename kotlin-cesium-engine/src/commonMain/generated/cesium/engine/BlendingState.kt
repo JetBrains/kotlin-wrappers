@@ -4,6 +4,7 @@
 
 package cesium.engine
 
+import js.core.JsAny
 import kotlin.js.JsModule
 
 /**
@@ -18,20 +19,20 @@ external object BlendingState {
     /**
      * Blending is disabled.
      */
-    val DISABLED: Any
+    val DISABLED: JsAny
 
     /**
      * Blending is enabled using alpha blending, `source(source.alpha) + destination(1 - source.alpha)`.
      */
-    val ALPHA_BLEND: Any
+    val ALPHA_BLEND: JsAny
 
     /**
      * Blending is enabled using alpha blending with premultiplied alpha, `source + destination(1 - source.alpha)`.
      */
-    val PRE_MULTIPLIED_ALPHA_BLEND: Any
+    val PRE_MULTIPLIED_ALPHA_BLEND: JsAny
 
     /**
      * Blending is enabled using additive blending, `source(source.alpha) + destination`.
      */
-    val ADDITIVE_BLEND: Any
+    val ADDITIVE_BLEND: JsAny
 }

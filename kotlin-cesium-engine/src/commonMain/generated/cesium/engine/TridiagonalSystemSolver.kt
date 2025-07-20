@@ -5,6 +5,7 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
+import js.core.JsDouble
 import kotlin.js.JsModule
 
 /**
@@ -37,9 +38,9 @@ external object TridiagonalSystemSolver {
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/TridiagonalSystemSolver.html#.solve">Online Documentation</a>
      */
     fun solve(
-        diagonal: ReadonlyArray<Double>,
-        lower: ReadonlyArray<Double>,
-        upper: ReadonlyArray<Double>,
+        diagonal: ReadonlyArray<JsDouble>,
+        lower: ReadonlyArray<JsDouble>,
+        upper: ReadonlyArray<JsDouble>,
         right: ReadonlyArray<Cartesian3>,
     ): ReadonlyArray<Cartesian3>
 }

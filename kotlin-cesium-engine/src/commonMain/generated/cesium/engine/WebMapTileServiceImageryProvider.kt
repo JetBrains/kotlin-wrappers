@@ -5,6 +5,8 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
+import js.core.JsAny
+import js.core.JsString
 import js.core.Void
 import js.objects.JsPlainObject
 import js.promise.Promise
@@ -176,7 +178,7 @@ external class WebMapTileServiceImageryProvider(
      * Gets or sets an object that contains static dimensions and their values.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/WebMapTileServiceImageryProvider.html#dimensions">Online Documentation</a>
      */
-    var dimensions: Any
+    var dimensions: JsAny
 
     /**
      * Gets the credits to be displayed when a given tile is displayed.
@@ -275,10 +277,10 @@ external class WebMapTileServiceImageryProvider(
         val layer: String
         val style: String
         val tileMatrixSetID: String
-        val tileMatrixLabels: ReadonlyArray<Any>?
+        val tileMatrixLabels: ReadonlyArray<JsAny>?
         val clock: Clock?
         val times: TimeIntervalCollection?
-        val dimensions: Any?
+        val dimensions: JsAny?
         val tileWidth: Int?
         val tileHeight: Int?
         val tilingScheme: TilingScheme?
@@ -287,6 +289,6 @@ external class WebMapTileServiceImageryProvider(
         val maximumLevel: Int?
         val ellipsoid: Ellipsoid?
         val credit: Credit?
-        val subdomains: ReadonlyArray<String>?
+        val subdomains: ReadonlyArray<JsString>?
     }
 }

@@ -5,6 +5,7 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
+import js.core.JsAny
 import js.objects.JsPlainObject
 import js.promise.Promise
 import seskar.js.JsAsync
@@ -52,8 +53,8 @@ external class GeocoderService() {
     @JsPlainObject
     interface Result {
         val displayName: String
-        val destination: Any /* Rectangle | Cartesian3 */
-        val attributions: ReadonlyArray<Any>?
+        val destination: JsAny /* Rectangle | Cartesian3 */
+        val attributions: ReadonlyArray<JsAny>?
     }
 
     companion object {

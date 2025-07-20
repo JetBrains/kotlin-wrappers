@@ -5,6 +5,7 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
+import js.core.JsAny
 import js.promise.Promise
 import seskar.js.JsAsync
 import kotlin.js.JsModule
@@ -187,25 +188,25 @@ abstract external class ImageryProvider() {
         suspend fun loadImage(
             imageryProvider: ImageryProvider,
             url: Resource,
-        ): Any /* ImageryTypes | CompressedTextureBuffer */?
+        ): JsAny /* ImageryTypes | CompressedTextureBuffer */?
 
         @JsName("loadImage")
         fun loadImageAsync(
             imageryProvider: ImageryProvider,
             url: Resource,
-        ): Promise<Any /* ImageryTypes | CompressedTextureBuffer */>?
+        ): Promise<JsAny /* ImageryTypes | CompressedTextureBuffer */>?
 
         @JsAsync(optional = true)
         @Suppress("WRONG_EXTERNAL_DECLARATION")
         suspend fun loadImage(
             imageryProvider: ImageryProvider,
             url: String,
-        ): Any /* ImageryTypes | CompressedTextureBuffer */?
+        ): JsAny /* ImageryTypes | CompressedTextureBuffer */?
 
         @JsName("loadImage")
         fun loadImageAsync(
             imageryProvider: ImageryProvider,
             url: String,
-        ): Promise<Any /* ImageryTypes | CompressedTextureBuffer */>?
+        ): Promise<JsAny /* ImageryTypes | CompressedTextureBuffer */>?
     }
 }

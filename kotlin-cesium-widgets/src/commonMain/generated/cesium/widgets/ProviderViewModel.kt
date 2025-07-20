@@ -4,6 +4,7 @@
 
 package cesium.widgets
 
+import js.core.JsAny
 import js.objects.JsPlainObject
 import kotlin.js.JsModule
 
@@ -32,7 +33,7 @@ external class ProviderViewModel(
         val tooltip: String
         val iconUrl: String
         val category: String?
-        val creationFunction: Any /* ProviderViewModel.CreationFunction | Command */
+        val creationFunction: JsAny /* ProviderViewModel.CreationFunction | Command */
     }
 
     /**

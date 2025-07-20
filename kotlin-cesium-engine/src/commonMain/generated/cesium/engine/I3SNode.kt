@@ -5,6 +5,7 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
+import js.core.JsAny
 import js.core.Void
 import js.objects.JsPlainObject
 import js.promise.Promise
@@ -72,7 +73,7 @@ private constructor() {
      * Gets the I3S data for this object.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/I3SNode.html#data">Online Documentation</a>
      */
-    val data: Any
+    val data: JsAny
 
     /**
      * Loads the node fields.
@@ -105,7 +106,7 @@ private constructor() {
      * @return Object containing field names and their values
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/I3SNode.html#getFieldsForPickedPosition">Online Documentation</a>
      */
-    fun getFieldsForPickedPosition(pickedPosition: Cartesian3): Any
+    fun getFieldsForPickedPosition(pickedPosition: Cartesian3): JsAny
 
     /**
      * Returns the fields for a given feature
@@ -113,7 +114,7 @@ private constructor() {
      * @return Object containing field names and their values
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/I3SNode.html#getFieldsForFeature">Online Documentation</a>
      */
-    fun getFieldsForFeature(featureIndex: Int): Any
+    fun getFieldsForFeature(featureIndex: Int): JsAny
 
     /**
      * A filter given by an attribute name and values.

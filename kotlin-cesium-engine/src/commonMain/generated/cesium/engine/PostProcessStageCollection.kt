@@ -4,6 +4,7 @@
 
 package cesium.engine
 
+import js.core.JsAny
 import kotlin.js.JsModule
 
 /**
@@ -137,7 +138,7 @@ external class PostProcessStageCollection() {
      * @return The post-process stage at index.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PostProcessStageCollection.html#get">Online Documentation</a>
      */
-    fun get(index: Int): Any /* PostProcessStage | PostProcessStageComposite */
+    fun get(index: Int): JsAny /* PostProcessStage | PostProcessStageComposite */
 
     /**
      * Removes all post-process stages from the collection and destroys them.

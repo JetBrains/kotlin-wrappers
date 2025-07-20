@@ -5,6 +5,7 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
+import js.core.JsDouble
 import kotlin.js.JsModule
 
 /**
@@ -15,4 +16,4 @@ import kotlin.js.JsModule
  * @return The Matrix3
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#createCovarianceMatrixFromUpperTriangle">Online Documentation</a>
  */
-external fun createCovarianceMatrixFromUpperTriangle(array: ReadonlyArray<Double>): Matrix3
+external fun createCovarianceMatrixFromUpperTriangle(array: ReadonlyArray<JsDouble>): Matrix3

@@ -5,6 +5,8 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
+import js.core.JsAny
+import js.core.JsDouble
 import kotlin.js.JsModule
 import kotlin.js.definedExternally
 
@@ -18,13 +20,13 @@ abstract external class Spline() {
      * An array of times for the control points.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Spline.html#times">Online Documentation</a>
      */
-    abstract var times: ReadonlyArray<Double>
+    abstract var times: ReadonlyArray<JsDouble>
 
     /**
      * An array of control points.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Spline.html#points">Online Documentation</a>
      */
-    abstract var points: ReadonlyArray<Any> /* Cartesian3[] | Quaternion[] */
+    abstract var points: ReadonlyArray<JsAny> /* Cartesian3[] | Quaternion[] */
 
     /**
      * Evaluates the curve at a given time.
@@ -35,8 +37,8 @@ abstract external class Spline() {
      */
     abstract fun evaluate(
         time: Double,
-        result: Any /* Cartesian3 | Quaternion | number[] */? = definedExternally,
-    ): Any /* Cartesian3 | Quaternion | number[] */
+        result: JsAny /* Cartesian3 | Quaternion | number[] */? = definedExternally,
+    ): JsAny /* Cartesian3 | Quaternion | number[] */
 
     /**
      * Finds an index `i` in `times` such that the parameter

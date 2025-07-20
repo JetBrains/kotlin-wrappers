@@ -4,6 +4,7 @@
 
 package cesium.engine
 
+import js.core.JsAny
 import kotlin.js.JsModule
 
 /**
@@ -22,28 +23,28 @@ external class Queue() {
      * @param [item] The item to enqueue.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Queue.html#enqueue">Online Documentation</a>
      */
-    fun enqueue(item: Any)
+    fun enqueue(item: JsAny)
 
     /**
      * Dequeues an item.  Returns undefined if the queue is empty.
      * @return The the dequeued item.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Queue.html#dequeue">Online Documentation</a>
      */
-    fun dequeue(): Any
+    fun dequeue(): JsAny
 
     /**
      * Returns the item at the front of the queue.  Returns undefined if the queue is empty.
      * @return The item at the front of the queue.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Queue.html#peek">Online Documentation</a>
      */
-    fun peek(): Any
+    fun peek(): JsAny
 
     /**
      * Check whether this queue contains the specified item.
      * @param [item] The item to search for.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Queue.html#contains">Online Documentation</a>
      */
-    fun contains(item: Any)
+    fun contains(item: JsAny)
 
     /**
      * Remove all items from the queue.

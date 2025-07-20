@@ -4,6 +4,11 @@ internal val DEFAULT_PACKAGE: String = """
 import js.array.ReadonlyArray
 import js.buffer.ArrayBuffer
 import js.buffer.DataView
+import js.core.JsAny
+import js.core.JsBoolean
+import js.core.JsDouble
+import js.core.JsInt
+import js.core.JsString
 import js.core.Void
 import js.date.Date
 import js.errors.JsError

@@ -5,6 +5,7 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
+import js.core.JsDouble
 import kotlin.js.JsModule
 import kotlin.js.definedExternally
 
@@ -45,8 +46,8 @@ external object Intersections2D {
         u0: Double,
         u1: Double,
         u2: Double,
-        result: ReadonlyArray<Double>? = definedExternally,
-    ): ReadonlyArray<Double>
+        result: ReadonlyArray<JsDouble>? = definedExternally,
+    ): ReadonlyArray<JsDouble>
 
     /**
      * Compute the barycentric coordinates of a 2D position within a 2D triangle.

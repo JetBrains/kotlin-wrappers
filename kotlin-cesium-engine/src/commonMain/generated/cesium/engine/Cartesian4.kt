@@ -5,6 +5,7 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
+import js.core.JsDouble
 import kotlin.js.JsModule
 import kotlin.js.definedExternally
 
@@ -116,9 +117,9 @@ external class Cartesian4(
          */
         override fun pack(
             value: Cartesian4,
-            array: ReadonlyArray<Double>,
+            array: ReadonlyArray<JsDouble>,
             startingIndex: Int?,
-        ): ReadonlyArray<Double>
+        ): ReadonlyArray<JsDouble>
 
         /**
          * Retrieves an instance from a packed array.
@@ -130,7 +131,7 @@ external class Cartesian4(
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cartesian4.html#.unpack">Online Documentation</a>
          */
         override fun unpack(
-            array: ReadonlyArray<Double>,
+            array: ReadonlyArray<JsDouble>,
             startingIndex: Int?,
             result: Cartesian4?,
         ): Cartesian4
@@ -144,8 +145,8 @@ external class Cartesian4(
          */
         fun packArray(
             array: ReadonlyArray<Cartesian4>,
-            result: ReadonlyArray<Double>? = definedExternally,
-        ): ReadonlyArray<Double>
+            result: ReadonlyArray<JsDouble>? = definedExternally,
+        ): ReadonlyArray<JsDouble>
 
         /**
          * Unpacks an array of cartesian components into an array of Cartesian4s.
@@ -155,7 +156,7 @@ external class Cartesian4(
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cartesian4.html#.unpackArray">Online Documentation</a>
          */
         fun unpackArray(
-            array: ReadonlyArray<Double>,
+            array: ReadonlyArray<JsDouble>,
             result: ReadonlyArray<Cartesian4>? = definedExternally,
         ): ReadonlyArray<Cartesian4>
 
@@ -178,7 +179,7 @@ external class Cartesian4(
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cartesian4.html#.fromArray">Online Documentation</a>
          */
         fun fromArray(
-            array: ReadonlyArray<Double>,
+            array: ReadonlyArray<JsDouble>,
             startingIndex: Int? = definedExternally,
             result: Cartesian4? = definedExternally,
         ): Cartesian4

@@ -5,6 +5,7 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
+import js.core.JsAny
 import js.objects.JsPlainObject
 import js.promise.Promise
 import seskar.js.JsAsync
@@ -24,7 +25,7 @@ import kotlin.js.definedExternally
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/IonResource.html">Online Documentation</a>
  */
 external class IonResource(
-    endpoint: Any,
+    endpoint: JsAny,
     endpointResource: Resource,
 ) {
     /**

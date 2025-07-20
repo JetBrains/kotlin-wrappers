@@ -5,6 +5,8 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
+import js.core.JsAny
+import js.core.JsDouble
 import js.objects.JsPlainObject
 import kotlin.js.JsModule
 
@@ -35,11 +37,11 @@ external class DebugCameraPrimitive(
     @JsPlainObject
     interface ConstructorOptions {
         val camera: Camera
-        val frustumSplits: ReadonlyArray<Double>?
+        val frustumSplits: ReadonlyArray<JsDouble>?
         val color: Color?
         val updateOnChange: Boolean?
         val show: Boolean?
-        val id: Any?
+        val id: JsAny?
     }
 
     /**
@@ -52,7 +54,7 @@ external class DebugCameraPrimitive(
      * User-defined value returned when the primitive is picked.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/DebugCameraPrimitive.html#id">Online Documentation</a>
      */
-    var id: Any
+    var id: JsAny
 
     /**
      * Returns true if this object was destroyed; otherwise, false.

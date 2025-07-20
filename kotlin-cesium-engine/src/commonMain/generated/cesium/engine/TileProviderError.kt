@@ -4,6 +4,7 @@
 
 package cesium.engine
 
+import js.core.JsAny
 import js.errors.JsError
 import kotlin.js.JsModule
 import kotlin.js.definedExternally
@@ -49,7 +50,7 @@ external class TileProviderError(
      * The [ImageryProvider] or [TerrainProvider] that experienced the error.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/TileProviderError.html#provider">Online Documentation</a>
      */
-    var provider: Any /* ImageryProvider | TerrainProvider */
+    var provider: JsAny /* ImageryProvider | TerrainProvider */
 
     /**
      * True if the failed operation should be retried; otherwise, false.  The imagery or terrain provider

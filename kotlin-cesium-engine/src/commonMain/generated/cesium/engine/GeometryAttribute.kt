@@ -4,6 +4,7 @@
 
 package cesium.engine
 
+import js.core.JsAny
 import kotlin.js.JsModule
 
 /**
@@ -89,5 +90,5 @@ external class GeometryAttribute() {
      * ```
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GeometryAttribute.html#values">Online Documentation</a>
      */
-    var values: Any /* number[] | Int8Array | Uint8Array | Int16Array | Uint16Array | Int32Array | Uint32Array | Float32Array | Float64Array */
+    var values: JsAny /* number[] | Int8Array | Uint8Array | Int16Array | Uint16Array | Int32Array | Uint32Array | Float32Array | Float64Array */
 }

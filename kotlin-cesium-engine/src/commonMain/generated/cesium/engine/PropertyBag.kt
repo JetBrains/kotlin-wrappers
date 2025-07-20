@@ -5,6 +5,7 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
+import js.core.JsAny
 import kotlin.js.JsModule
 import kotlin.js.definedExternally
 
@@ -18,14 +19,14 @@ import kotlin.js.definedExternally
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PropertyBag.html">Online Documentation</a>
  */
 external class PropertyBag(
-    value: Any? = definedExternally,
+    value: JsAny? = definedExternally,
     createPropertyCallback: Function<*>? = definedExternally,
 ) {
     /**
      * Gets the names of all properties registered on this instance.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PropertyBag.html#propertyNames">Online Documentation</a>
      */
-    var propertyNames: ReadonlyArray<Any>
+    var propertyNames: ReadonlyArray<JsAny>
 
     /**
      * Gets a value indicating if this property is constant.  This property
@@ -58,7 +59,7 @@ external class PropertyBag(
      */
     fun addProperty(
         propertyName: String,
-        value: Any? = definedExternally,
+        value: JsAny? = definedExternally,
         createPropertyCallback: Function<*>? = definedExternally,
     )
 
@@ -81,8 +82,8 @@ external class PropertyBag(
      */
     fun getValue(
         time: JulianDate? = definedExternally,
-        result: Any? = definedExternally,
-    ): Any
+        result: JsAny? = definedExternally,
+    ): JsAny
 
     /**
      * Assigns each unassigned property on this object to the value
@@ -92,7 +93,7 @@ external class PropertyBag(
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PropertyBag.html#merge">Online Documentation</a>
      */
     fun merge(
-        source: Any,
+        source: JsAny,
         createPropertyCallback: Function<*>? = definedExternally,
     )
 }

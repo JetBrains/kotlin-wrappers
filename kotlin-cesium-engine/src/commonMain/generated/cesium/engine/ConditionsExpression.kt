@@ -4,6 +4,7 @@
 
 package cesium.engine
 
+import js.core.JsAny
 import kotlin.js.JsModule
 import kotlin.js.definedExternally
 
@@ -32,8 +33,8 @@ import kotlin.js.definedExternally
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ConditionsExpression.html">Online Documentation</a>
  */
 external class ConditionsExpression(
-    val conditionsExpression: Any = definedExternally,
-    defines: Any? = definedExternally,
+    val conditionsExpression: JsAny = definedExternally,
+    defines: JsAny? = definedExternally,
 ) : StyleExpression {
     /**
      * Evaluates the result of an expression, optionally using the provided feature's properties. If the result of
@@ -51,8 +52,8 @@ external class ConditionsExpression(
      */
     override fun evaluate(
         feature: Cesium3DTileFeature,
-        result: Any?,
-    ): Any /* boolean | number | string | RegExp | Cartesian2 | Cartesian3 | Cartesian4 | Color */
+        result: JsAny?,
+    ): JsAny /* boolean | number | string | RegExp | Cartesian2 | Cartesian3 | Cartesian4 | Color */
 
     /**
      * Evaluates the result of a Color expression, using the values defined by a feature.

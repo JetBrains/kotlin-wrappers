@@ -5,6 +5,7 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
+import js.core.JsAny
 import kotlin.js.JsModule
 
 /**
@@ -24,7 +25,7 @@ external class I3SSublayer() {
      * Gets the I3S data for this object.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/I3SSublayer.html#data">Online Documentation</a>
      */
-    val data: Any
+    val data: JsAny
 
     /**
      * Gets the name for the sublayer.

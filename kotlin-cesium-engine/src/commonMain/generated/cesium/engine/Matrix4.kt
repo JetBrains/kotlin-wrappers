@@ -5,6 +5,8 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
+import js.core.JsAny
+import js.core.JsDouble
 import kotlin.js.JsModule
 import kotlin.js.definedExternally
 
@@ -113,9 +115,9 @@ external class Matrix4(
          */
         override fun pack(
             value: Matrix4,
-            array: ReadonlyArray<Double>,
+            array: ReadonlyArray<JsDouble>,
             startingIndex: Int?,
-        ): ReadonlyArray<Double>
+        ): ReadonlyArray<JsDouble>
 
         /**
          * Retrieves an instance from a packed array.
@@ -127,7 +129,7 @@ external class Matrix4(
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Matrix4.html#.unpack">Online Documentation</a>
          */
         override fun unpack(
-            array: ReadonlyArray<Double>,
+            array: ReadonlyArray<JsDouble>,
             startingIndex: Int?,
             result: Matrix4?,
         ): Matrix4
@@ -142,8 +144,8 @@ external class Matrix4(
          */
         fun packArray(
             array: ReadonlyArray<Matrix4>,
-            result: ReadonlyArray<Double>? = definedExternally,
-        ): ReadonlyArray<Double>
+            result: ReadonlyArray<JsDouble>? = definedExternally,
+        ): ReadonlyArray<JsDouble>
 
         /**
          * Unpacks an array of column-major matrix components into an array of Matrix4s.
@@ -153,7 +155,7 @@ external class Matrix4(
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Matrix4.html#.unpackArray">Online Documentation</a>
          */
         fun unpackArray(
-            array: ReadonlyArray<Double>,
+            array: ReadonlyArray<JsDouble>,
             result: ReadonlyArray<Matrix4>? = definedExternally,
         ): ReadonlyArray<Matrix4>
 
@@ -193,7 +195,7 @@ external class Matrix4(
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Matrix4.html#.fromArray">Online Documentation</a>
          */
         fun fromArray(
-            array: ReadonlyArray<Double>,
+            array: ReadonlyArray<JsDouble>,
             startingIndex: Int? = definedExternally,
             result: Matrix4? = definedExternally,
         ): Matrix4
@@ -206,7 +208,7 @@ external class Matrix4(
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Matrix4.html#.fromColumnMajorArray">Online Documentation</a>
          */
         fun fromColumnMajorArray(
-            values: ReadonlyArray<Double>,
+            values: ReadonlyArray<JsDouble>,
             result: Matrix4? = definedExternally,
         ): Matrix4
 
@@ -219,7 +221,7 @@ external class Matrix4(
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Matrix4.html#.fromRowMajorArray">Online Documentation</a>
          */
         fun fromRowMajorArray(
-            values: ReadonlyArray<Double>,
+            values: ReadonlyArray<JsDouble>,
             result: Matrix4? = definedExternally,
         ): Matrix4
 
@@ -455,7 +457,7 @@ external class Matrix4(
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Matrix4.html#.computeViewportTransformation">Online Documentation</a>
          */
         fun computeViewportTransformation(
-            viewport: Any? = definedExternally,
+            viewport: JsAny? = definedExternally,
             nearDepthRange: Double? = definedExternally,
             farDepthRange: Double? = definedExternally,
             result: Matrix4? = definedExternally,
@@ -500,8 +502,8 @@ external class Matrix4(
          */
         fun toArray(
             matrix: Matrix4,
-            result: ReadonlyArray<Double>? = definedExternally,
-        ): ReadonlyArray<Double>
+            result: ReadonlyArray<JsDouble>? = definedExternally,
+        ): ReadonlyArray<JsDouble>
 
         /**
          * Computes the array index of the element at the provided row and column.

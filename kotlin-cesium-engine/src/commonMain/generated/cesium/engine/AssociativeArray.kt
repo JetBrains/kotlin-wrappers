@@ -5,6 +5,7 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
+import js.core.JsAny
 import kotlin.js.JsModule
 
 /**
@@ -25,7 +26,7 @@ external class AssociativeArray() {
      * it should not be modified directly.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/AssociativeArray.html#values">Online Documentation</a>
      */
-    var values: ReadonlyArray<Any>
+    var values: ReadonlyArray<JsAny>
 
     /**
      * Determines if the provided key is in the array.
@@ -46,12 +47,12 @@ external class AssociativeArray() {
      */
     fun set(
         key: String,
-        value: Any,
+        value: JsAny,
     )
 
     fun set(
         key: Int,
-        value: Any,
+        value: JsAny,
     )
 
     /**
@@ -60,9 +61,9 @@ external class AssociativeArray() {
      * @return The associated value, or undefined if the key does not exist in the collection.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/AssociativeArray.html#get">Online Documentation</a>
      */
-    fun get(key: String): Any
+    fun get(key: String): JsAny
 
-    fun get(key: Int): Any
+    fun get(key: Int): JsAny
 
     /**
      * Removes a key-value pair from the collection.

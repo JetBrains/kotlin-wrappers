@@ -4,6 +4,7 @@
 
 package cesium.engine
 
+import js.core.JsAny
 import kotlin.js.JsModule
 import kotlin.js.definedExternally
 
@@ -44,7 +45,7 @@ external class Event<Listener : Function<Unit>>() {
      */
     fun addEventListener(
         listener: Listener,
-        scope: Any? = definedExternally,
+        scope: JsAny? = definedExternally,
     ): RemoveCallback
 
     /**
@@ -56,7 +57,7 @@ external class Event<Listener : Function<Unit>>() {
      */
     fun removeEventListener(
         listener: Listener,
-        scope: Any? = definedExternally,
+        scope: JsAny? = definedExternally,
     ): Boolean
 
     /**
@@ -64,5 +65,5 @@ external class Event<Listener : Function<Unit>>() {
      * @param [arguments] This method takes any number of parameters and passes them through to the listener functions.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Event.html#raiseEvent">Online Documentation</a>
      */
-    fun raiseEvent(vararg arguments: Any /* Parameters<Listener> */)
+    fun raiseEvent(vararg arguments: JsAny /* Parameters<Listener> */)
 }

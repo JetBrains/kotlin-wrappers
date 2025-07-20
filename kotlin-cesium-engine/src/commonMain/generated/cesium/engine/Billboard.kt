@@ -4,6 +4,7 @@
 
 package cesium.engine
 
+import js.core.JsAny
 import js.objects.JsPlainObject
 import web.html.HTMLCanvasElement
 import web.html.HTMLImageElement
@@ -257,7 +258,7 @@ private constructor() {
      * Gets or sets the user-defined object returned when the billboard is picked.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Billboard.html#id">Online Documentation</a>
      */
-    var id: Any
+    var id: JsAny
 
     /**
      * Gets or sets the image to be used for this billboard.  If a texture has already been created for the
@@ -415,7 +416,7 @@ private constructor() {
     @JsPlainObject
     interface ConstructorOptions {
         val position: Cartesian3
-        val id: Any?
+        val id: JsAny?
         val show: Boolean?
         val image: HTMLCanvasElement?
         val scale: Double?

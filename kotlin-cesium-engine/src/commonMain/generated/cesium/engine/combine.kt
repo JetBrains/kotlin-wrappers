@@ -4,6 +4,7 @@
 
 package cesium.engine
 
+import js.core.JsAny
 import kotlin.js.JsModule
 import kotlin.js.definedExternally
 
@@ -38,7 +39,7 @@ import kotlin.js.definedExternally
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#combine">Online Documentation</a>
  */
 external fun combine(
-    object1: Any? = definedExternally,
-    object2: Any? = definedExternally,
+    object1: JsAny? = definedExternally,
+    object2: JsAny? = definedExternally,
     deep: Boolean? = definedExternally,
-): Any
+): JsAny

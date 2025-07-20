@@ -4,6 +4,7 @@
 
 package cesium.engine
 
+import js.core.JsAny
 import js.date.Date
 import web.html.HTMLCanvasElement
 import kotlin.js.JsModule
@@ -57,7 +58,7 @@ external class CameraEventAggregator(
     fun getMovement(
         type: CameraEventType,
         modifier: KeyboardEventModifier? = definedExternally,
-    ): Any
+    ): JsAny
 
     /**
      * Gets the start and end position of the last move event (not the aggregated event).
@@ -69,7 +70,7 @@ external class CameraEventAggregator(
     fun getLastMovement(
         type: CameraEventType,
         modifier: KeyboardEventModifier? = definedExternally,
-    ): Any?
+    ): JsAny?
 
     /**
      * Gets whether the mouse button is down or a touch has started.

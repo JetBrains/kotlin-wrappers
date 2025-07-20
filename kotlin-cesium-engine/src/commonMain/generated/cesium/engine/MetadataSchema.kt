@@ -4,6 +4,8 @@
 
 package cesium.engine
 
+import js.core.JsAny
+import js.core.JsString
 import js.objects.JsPlainObject
 import js.objects.ReadonlyRecord
 import kotlin.js.JsModule
@@ -33,23 +35,23 @@ external class MetadataSchema(
         val name: String?
         val description: String?
         val version: String?
-        val classes: ReadonlyRecord<String, MetadataClass>?
-        val enums: ReadonlyRecord<String, MetadataEnum>?
-        val extras: Any?
-        val extensions: Any?
+        val classes: ReadonlyRecord<JsString, MetadataClass>?
+        val enums: ReadonlyRecord<JsString, MetadataEnum>?
+        val extras: JsAny?
+        val extensions: JsAny?
     }
 
     /**
      * Classes defined in the schema.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/MetadataSchema.html#classes">Online Documentation</a>
      */
-    val classes: ReadonlyRecord<String, MetadataClass>
+    val classes: ReadonlyRecord<JsString, MetadataClass>
 
     /**
      * Enums defined in the schema.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/MetadataSchema.html#enums">Online Documentation</a>
      */
-    val enums: ReadonlyRecord<String, MetadataEnum>
+    val enums: ReadonlyRecord<JsString, MetadataEnum>
 
     /**
      * The ID of the schema.
@@ -79,11 +81,11 @@ external class MetadataSchema(
      * Extra user-defined properties.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/MetadataSchema.html#extras">Online Documentation</a>
      */
-    val extras: Any
+    val extras: JsAny
 
     /**
      * An object containing extensions.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/MetadataSchema.html#extensions">Online Documentation</a>
      */
-    val extensions: Any
+    val extensions: JsAny
 }

@@ -4,6 +4,7 @@
 
 package cesium.engine
 
+import js.core.JsAny
 import kotlin.js.JsModule
 import kotlin.js.definedExternally
 
@@ -38,6 +39,6 @@ abstract external class Property() {
      */
     abstract fun getValue(
         time: JulianDate? = definedExternally,
-        result: Any? = definedExternally,
-    ): Any
+        result: JsAny? = definedExternally,
+    ): JsAny
 }

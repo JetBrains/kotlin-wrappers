@@ -5,6 +5,7 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
+import js.core.JsAny
 import kotlin.js.JsModule
 import kotlin.js.definedExternally
 
@@ -45,8 +46,8 @@ external class PropertyArray(
      */
     fun getValue(
         time: JulianDate? = definedExternally,
-        result: ReadonlyArray<Any>? = definedExternally,
-    ): ReadonlyArray<Any>
+        result: ReadonlyArray<JsAny>? = definedExternally,
+    ): ReadonlyArray<JsAny>
 
     /**
      * Sets the value of the property.

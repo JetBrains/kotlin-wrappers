@@ -5,6 +5,7 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
+import js.core.JsAny
 import js.core.Void
 import js.promise.Promise
 import seskar.js.JsAsync
@@ -42,7 +43,7 @@ private constructor() {
      * Gets the I3S data for this object.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/I3SLayer.html#data">Online Documentation</a>
      */
-    val data: Any
+    val data: JsAny
 
     /**
      * The version string of the loaded I3S dataset

@@ -5,6 +5,7 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
+import js.core.JsDouble
 import js.objects.JsPlainObject
 import kotlin.js.JsModule
 import kotlin.js.definedExternally
@@ -71,9 +72,9 @@ external class PolylineVolumeOutlineGeometry(
          */
         fun pack(
             value: PolylineVolumeOutlineGeometry,
-            array: ReadonlyArray<Double>,
+            array: ReadonlyArray<JsDouble>,
             startingIndex: Int? = definedExternally,
-        ): ReadonlyArray<Double>
+        ): ReadonlyArray<JsDouble>
 
         /**
          * Retrieves an instance from a packed array.
@@ -85,7 +86,7 @@ external class PolylineVolumeOutlineGeometry(
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PolylineVolumeOutlineGeometry.html#.unpack">Online Documentation</a>
          */
         fun unpack(
-            array: ReadonlyArray<Double>,
+            array: ReadonlyArray<JsDouble>,
             startingIndex: Int? = definedExternally,
             result: PolylineVolumeOutlineGeometry? = definedExternally,
         ): PolylineVolumeOutlineGeometry

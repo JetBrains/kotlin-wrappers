@@ -4,6 +4,7 @@
 
 package cesium.engine
 
+import js.core.JsAny
 import web.images.ImageData
 import kotlin.js.JsModule
 
@@ -17,7 +18,7 @@ import kotlin.js.JsModule
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#getImagePixels">Online Documentation</a>
  */
 external fun getImagePixels(
-    image: Any, /* HTMLImageElement | ImageBitmap */
+    image: JsAny, /* HTMLImageElement | ImageBitmap */
     width: Double,
     height: Double,
 ): ImageData

@@ -4,6 +4,7 @@
 
 package cesium.engine
 
+import js.core.JsAny
 import js.objects.JsPlainObject
 import kotlin.js.JsModule
 import kotlin.js.definedExternally
@@ -103,7 +104,7 @@ external class GeographicTilingScheme(
         x: Double,
         y: Double,
         level: Int,
-        result: Any?,
+        result: JsAny?,
     ): Rectangle
 
     /**
@@ -121,7 +122,7 @@ external class GeographicTilingScheme(
         x: Double,
         y: Double,
         level: Int,
-        result: Any?,
+        result: JsAny?,
     ): Rectangle
 
     /**

@@ -4,6 +4,7 @@
 
 package cesium.engine
 
+import js.core.JsAny
 import kotlin.js.JsModule
 
 /**
@@ -14,6 +15,6 @@ import kotlin.js.JsModule
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#removeExtension">Online Documentation</a>
  */
 external fun removeExtension(
-    gltf: Any,
+    gltf: JsAny,
     extension: String,
-): Any
+): JsAny

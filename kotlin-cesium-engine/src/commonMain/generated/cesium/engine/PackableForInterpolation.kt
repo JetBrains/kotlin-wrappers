@@ -5,6 +5,8 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
+import js.core.JsAny
+import js.core.JsDouble
 import kotlin.js.JsModule
 import kotlin.js.definedExternally
 
@@ -32,10 +34,10 @@ external object PackableForInterpolation {
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PackableForInterpolation.html#.convertPackedArrayForInterpolation">Online Documentation</a>
      */
     fun convertPackedArrayForInterpolation(
-        packedArray: ReadonlyArray<Double>,
+        packedArray: ReadonlyArray<JsDouble>,
         startingIndex: Int? = definedExternally,
         lastIndex: Int? = definedExternally,
-        result: ReadonlyArray<Double>? = definedExternally,
+        result: ReadonlyArray<JsDouble>? = definedExternally,
     )
 
     /**
@@ -51,10 +53,10 @@ external object PackableForInterpolation {
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PackableForInterpolation.html#.unpackInterpolationResult">Online Documentation</a>
      */
     fun unpackInterpolationResult(
-        array: ReadonlyArray<Double>,
-        sourceArray: ReadonlyArray<Double>,
+        array: ReadonlyArray<JsDouble>,
+        sourceArray: ReadonlyArray<JsDouble>,
         startingIndex: Int? = definedExternally,
         lastIndex: Int? = definedExternally,
-        result: Any? = definedExternally,
-    ): Any
+        result: JsAny? = definedExternally,
+    ): JsAny
 }

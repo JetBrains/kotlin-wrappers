@@ -5,6 +5,7 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
+import js.core.JsAny
 import kotlin.js.JsModule
 import kotlin.js.definedExternally
 
@@ -22,7 +23,7 @@ import kotlin.js.definedExternally
 external class KmlTour(
     var name: String,
     var id: String,
-    var playlist: ReadonlyArray<Any>,
+    var playlist: ReadonlyArray<JsAny>,
 ) {
     /**
      * Index of current entry from playlist
@@ -83,7 +84,7 @@ external class KmlTour(
      */
     fun play(
         widget: CesiumWidget,
-        cameraOptions: Any? = definedExternally,
+        cameraOptions: JsAny? = definedExternally,
     )
 
     /**

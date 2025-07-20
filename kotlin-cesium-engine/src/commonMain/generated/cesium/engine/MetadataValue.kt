@@ -2,6 +2,8 @@
 
 package cesium.engine
 
+import js.core.JsAny
+
 /**
  * An instance of a metadata value.
  *
@@ -18,4 +20,4 @@ package cesium.engine
  * - `Matrix4` for type `MAT4`
  * - Arrays of these types when the metadata value is an array
  */
-typealias MetadataValue = Any /* number | bigint | string | boolean | Cartesian2 | Cartesian3 | Cartesian4 | Matrix2 | Matrix3 | Matrix4 | number[] | bigint[] | string[] | boolean[] | Cartesian2[] | Cartesian3[] | Cartesian4[] | Matrix2[] | Matrix3[] | Matrix4[] */
+typealias MetadataValue = JsAny /* number | bigint | string | boolean | Cartesian2 | Cartesian3 | Cartesian4 | Matrix2 | Matrix3 | Matrix4 | number[] | bigint[] | string[] | boolean[] | Cartesian2[] | Cartesian3[] | Cartesian4[] | Matrix2[] | Matrix3[] | Matrix4[] */

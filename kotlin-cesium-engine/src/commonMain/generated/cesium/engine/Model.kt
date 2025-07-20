@@ -4,6 +4,7 @@
 
 package cesium.engine
 
+import js.core.JsAny
 import js.objects.JsPlainObject
 import js.promise.Promise
 import seskar.js.JsAsync
@@ -148,7 +149,7 @@ private constructor() {
      * A user-defined object that is returned when the model is picked.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Model.html#id">Online Documentation</a>
      */
-    var id: Any
+    var id: JsAny
 
     /**
      * The style to apply to the features in the model. Cannot be applied if a [CustomShader] is also applied.
@@ -166,7 +167,7 @@ private constructor() {
      * Defines how the color blends with the model.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Model.html#colorBlendMode">Online Documentation</a>
      */
-    var colorBlendMode: Any /* Cesium3DTileColorBlendMode | ColorBlendMode */
+    var colorBlendMode: JsAny /* Cesium3DTileColorBlendMode | ColorBlendMode */
 
     /**
      * Value used to determine the color strength when the `colorBlendMode` is `MIX`. A value of 0.0 results in the model's rendered color while a value of 1.0 results in a solid color, with any value in-between resulting in a mix of the two.
@@ -421,7 +422,7 @@ private constructor() {
      * @return The object, or `undefined`
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Model.html#getExtension">Online Documentation</a>
      */
-    fun getExtension(extensionName: String): Any?
+    fun getExtension(extensionName: String): JsAny?
 
     /**
      * Marks the model's [Model.style] as dirty, which forces all features
@@ -637,7 +638,7 @@ private constructor() {
             val enableVerticalExaggeration: Boolean?
             val minimumPixelSize: Double?
             val maximumScale: Double?
-            val id: Any?
+            val id: JsAny?
             val allowPicking: Boolean?
             val incrementallyLoadTextures: Boolean?
             val asynchronous: Boolean?
@@ -677,7 +678,7 @@ private constructor() {
             val enablePick: Boolean?
             val featureIdLabel: String?
             val instanceFeatureIdLabel: String?
-            val pointCloudShading: Any?
+            val pointCloudShading: JsAny?
             val classificationType: ClassificationType?
             val gltfCallback: GltfCallback?
         }

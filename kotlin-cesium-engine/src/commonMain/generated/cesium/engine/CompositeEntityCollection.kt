@@ -5,6 +5,7 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
+import js.core.JsAny
 import kotlin.js.JsModule
 import kotlin.js.definedExternally
 
@@ -59,7 +60,7 @@ external class CompositeEntityCollection(
      * Gets the owner of this composite entity collection, ie. the data source or composite entity collection which created it.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CompositeEntityCollection.html#owner">Online Documentation</a>
      */
-    val owner: Any /* DataSource | CompositeEntityCollection */
+    val owner: JsAny /* DataSource | CompositeEntityCollection */
 
     /**
      * Adds a collection to the composite.

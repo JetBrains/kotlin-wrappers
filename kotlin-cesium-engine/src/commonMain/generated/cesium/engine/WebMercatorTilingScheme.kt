@@ -4,6 +4,7 @@
 
 package cesium.engine
 
+import js.core.JsAny
 import js.objects.JsPlainObject
 import kotlin.js.JsModule
 import kotlin.js.definedExternally
@@ -109,7 +110,7 @@ external class WebMercatorTilingScheme(
         x: Double,
         y: Double,
         level: Int,
-        result: Any?,
+        result: JsAny?,
     ): Rectangle
 
     /**
@@ -127,7 +128,7 @@ external class WebMercatorTilingScheme(
         x: Double,
         y: Double,
         level: Int,
-        result: Any?,
+        result: JsAny?,
     ): Rectangle
 
     /**

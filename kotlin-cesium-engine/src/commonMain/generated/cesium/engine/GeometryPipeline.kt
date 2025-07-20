@@ -5,6 +5,7 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
+import js.core.JsAny
 import kotlin.js.JsModule
 import kotlin.js.definedExternally
 
@@ -64,7 +65,7 @@ external object GeometryPipeline {
      * @return An object with attribute name / index pairs.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GeometryPipeline.html#.createAttributeLocations">Online Documentation</a>
      */
-    fun createAttributeLocations(geometry: Geometry): Any
+    fun createAttributeLocations(geometry: Geometry): JsAny
 
     /**
      * Reorders a geometry's attributes and `indices` to achieve better performance from the GPU's pre-vertex-shader cache.
@@ -132,7 +133,7 @@ external object GeometryPipeline {
         attributeName: String,
         attributeName3D: String,
         attributeName2D: String,
-        projection: Any? = definedExternally,
+        projection: JsAny? = definedExternally,
     ): Geometry
 
     /**

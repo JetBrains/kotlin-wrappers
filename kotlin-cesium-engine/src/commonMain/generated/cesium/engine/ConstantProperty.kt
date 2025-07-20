@@ -4,6 +4,7 @@
 
 package cesium.engine
 
+import js.core.JsAny
 import kotlin.js.JsModule
 import kotlin.js.definedExternally
 
@@ -16,7 +17,7 @@ import kotlin.js.definedExternally
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ConstantProperty.html">Online Documentation</a>
  */
 external class ConstantProperty(
-    value: Any? = definedExternally,
+    value: JsAny? = definedExternally,
 ) {
     /**
      * Gets a value indicating if this property is constant.
@@ -42,20 +43,20 @@ external class ConstantProperty(
      */
     fun getValue(
         time: JulianDate? = definedExternally,
-        result: Any? = definedExternally,
-    ): Any
+        result: JsAny? = definedExternally,
+    ): JsAny
 
     /**
      * Sets the value of the property.
      * @param [value] The property value.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ConstantProperty.html#setValue">Online Documentation</a>
      */
-    fun setValue(value: Any)
+    fun setValue(value: JsAny)
 
     /**
      * Gets this property's value.
      * @return This property's value.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ConstantProperty.html#valueOf">Online Documentation</a>
      */
-    fun valueOf(): Any
+    fun valueOf(): JsAny
 }

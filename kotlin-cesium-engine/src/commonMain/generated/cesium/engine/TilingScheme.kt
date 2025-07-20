@@ -4,6 +4,7 @@
 
 package cesium.engine
 
+import js.core.JsAny
 import kotlin.js.JsModule
 import kotlin.js.definedExternally
 
@@ -81,7 +82,7 @@ abstract external class TilingScheme() {
         x: Double,
         y: Double,
         level: Int,
-        result: Any? = definedExternally,
+        result: JsAny? = definedExternally,
     ): Rectangle
 
     /**
@@ -99,7 +100,7 @@ abstract external class TilingScheme() {
         x: Double,
         y: Double,
         level: Int,
-        result: Any? = definedExternally,
+        result: JsAny? = definedExternally,
     ): Rectangle
 
     /**

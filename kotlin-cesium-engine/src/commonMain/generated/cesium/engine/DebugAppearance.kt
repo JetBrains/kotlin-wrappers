@@ -4,6 +4,7 @@
 
 package cesium.engine
 
+import js.core.JsAny
 import js.objects.JsPlainObject
 import kotlin.js.JsModule
 
@@ -43,7 +44,7 @@ external class DebugAppearance(
         val glslDatatype: String?
         val vertexShaderSource: String?
         val fragmentShaderSource: String?
-        val renderState: Any?
+        val renderState: JsAny?
     }
 
     /**
@@ -77,7 +78,7 @@ external class DebugAppearance(
      * The WebGL fixed-function state to use when rendering the geometry.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/DebugAppearance.html#renderState">Online Documentation</a>
      */
-    val renderState: Any
+    val renderState: JsAny
 
     /**
      * When `true`, the geometry is expected to be closed.
@@ -119,5 +120,5 @@ external class DebugAppearance(
      * @return The render state.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/DebugAppearance.html#getRenderState">Online Documentation</a>
      */
-    fun getRenderState(): Any
+    fun getRenderState(): JsAny
 }

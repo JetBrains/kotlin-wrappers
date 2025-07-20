@@ -5,6 +5,7 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
+import js.core.JsAny
 import kotlin.js.JsModule
 import kotlin.js.definedExternally
 
@@ -25,7 +26,7 @@ external class CullingVolume(
      * @return Intersect.OUTSIDE, Intersect.INTERSECTING, or Intersect.INSIDE.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CullingVolume.html#computeVisibility">Online Documentation</a>
      */
-    fun computeVisibility(boundingVolume: Any): Intersect
+    fun computeVisibility(boundingVolume: JsAny): Intersect
 
     companion object {
         /**

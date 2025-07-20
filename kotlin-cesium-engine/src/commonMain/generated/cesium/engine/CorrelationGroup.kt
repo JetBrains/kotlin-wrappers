@@ -5,6 +5,7 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
+import js.core.JsBoolean
 import js.objects.JsPlainObject
 import kotlin.js.JsModule
 
@@ -28,7 +29,7 @@ external class CorrelationGroup(
      * used in the correlation group
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CorrelationGroup.html#groupFlags">Online Documentation</a>
      */
-    val groupFlags: ReadonlyArray<Boolean>
+    val groupFlags: ReadonlyArray<JsBoolean>
 
     /**
      * Rotations in milliradians about X, Y, Z axes, respectively
@@ -54,7 +55,7 @@ external class CorrelationGroup(
      */
     @JsPlainObject
     interface ConstructorOptions {
-        val groupFlags: ReadonlyArray<Boolean>
+        val groupFlags: ReadonlyArray<JsBoolean>
         val rotationThetas: Cartesian3
         val params: ReadonlyArray<Spdcf>
     }

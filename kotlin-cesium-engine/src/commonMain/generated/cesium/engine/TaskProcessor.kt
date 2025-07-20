@@ -5,6 +5,7 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
+import js.core.JsAny
 import js.objects.JsPlainObject
 import js.promise.Promise
 import seskar.js.JsAsync
@@ -60,15 +61,15 @@ external class TaskProcessor(
     @JsAsync(optional = true)
     @Suppress("WRONG_EXTERNAL_DECLARATION")
     suspend fun scheduleTask(
-        parameters: Any,
-        transferableObjects: ReadonlyArray<Any>? = definedExternally,
-    ): Any?
+        parameters: JsAny,
+        transferableObjects: ReadonlyArray<JsAny>? = definedExternally,
+    ): JsAny?
 
     @JsName("scheduleTask")
     fun scheduleTaskAsync(
-        parameters: Any,
-        transferableObjects: ReadonlyArray<Any>? = definedExternally,
-    ): Promise<Any>?
+        parameters: JsAny,
+        transferableObjects: ReadonlyArray<JsAny>? = definedExternally,
+    ): Promise<JsAny>?
 
     /**
      * Posts a message to a web worker with configuration to initialize loading
@@ -79,10 +80,10 @@ external class TaskProcessor(
      */
     @JsAsync
     @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun initWebAssemblyModule(options: InitWebAssemblyModuleOptions? = definedExternally): Any
+    suspend fun initWebAssemblyModule(options: InitWebAssemblyModuleOptions? = definedExternally): JsAny
 
     @JsName("initWebAssemblyModule")
-    fun initWebAssemblyModuleAsync(options: InitWebAssemblyModuleOptions? = definedExternally): Promise<Any>
+    fun initWebAssemblyModuleAsync(options: InitWebAssemblyModuleOptions? = definedExternally): Promise<JsAny>
 
     /**
      * @property [modulePath] The path of the web assembly JavaScript wrapper module.

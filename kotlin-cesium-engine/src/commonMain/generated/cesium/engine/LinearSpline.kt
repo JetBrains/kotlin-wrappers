@@ -5,6 +5,8 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
+import js.core.JsAny
+import js.core.JsDouble
 import js.objects.JsPlainObject
 import kotlin.js.JsModule
 import kotlin.js.definedExternally
@@ -38,7 +40,7 @@ external class LinearSpline(
      */
     @JsPlainObject
     interface ConstructorOptions {
-        val times: ReadonlyArray<Double>
+        val times: ReadonlyArray<JsDouble>
         val points: ReadonlyArray<Cartesian3 /* or number */>
     }
 
@@ -46,7 +48,7 @@ external class LinearSpline(
      * An array of times for the control points.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/LinearSpline.html#times">Online Documentation</a>
      */
-    val times: ReadonlyArray<Double>
+    val times: ReadonlyArray<JsDouble>
 
     /**
      * An array of [Cartesian3] control points.
@@ -89,5 +91,5 @@ external class LinearSpline(
     fun evaluate(
         time: Double,
         result: Cartesian3? = definedExternally,
-    ): Any /* number | Cartesian3 */
+    ): JsAny /* number | Cartesian3 */
 }

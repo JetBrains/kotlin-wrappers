@@ -5,6 +5,7 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
+import js.core.JsAny
 import kotlin.js.JsModule
 
 /**
@@ -28,7 +29,7 @@ import kotlin.js.JsModule
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#binarySearch">Online Documentation</a>
  */
 external fun binarySearch(
-    array: ReadonlyArray<Any>,
-    itemToFind: Any,
+    array: ReadonlyArray<JsAny>,
+    itemToFind: JsAny,
     comparator: binarySearchComparator,
 ): Int

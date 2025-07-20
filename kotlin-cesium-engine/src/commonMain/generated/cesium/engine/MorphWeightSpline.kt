@@ -5,6 +5,7 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
+import js.core.JsDouble
 import js.objects.JsPlainObject
 import kotlin.js.JsModule
 import kotlin.js.definedExternally
@@ -36,8 +37,8 @@ external class MorphWeightSpline(
      */
     @JsPlainObject
     interface ConstructorOptions {
-        val times: ReadonlyArray<Double>
-        val weights: ReadonlyArray<Double>
+        val times: ReadonlyArray<JsDouble>
+        val weights: ReadonlyArray<JsDouble>
     }
 
     /**
@@ -74,6 +75,6 @@ external class MorphWeightSpline(
      */
     fun evaluate(
         time: Double,
-        result: ReadonlyArray<Double>? = definedExternally,
-    ): ReadonlyArray<Double>
+        result: ReadonlyArray<JsDouble>? = definedExternally,
+    ): ReadonlyArray<JsDouble>
 }

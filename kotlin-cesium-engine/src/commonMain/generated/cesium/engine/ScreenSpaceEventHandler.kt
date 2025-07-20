@@ -4,6 +4,7 @@
 
 package cesium.engine
 
+import js.core.JsAny
 import js.objects.JsPlainObject
 import web.html.HTMLCanvasElement
 import kotlin.js.JsModule
@@ -31,7 +32,7 @@ external class ScreenSpaceEventHandler(
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ScreenSpaceEventHandler.html#setInputAction">Online Documentation</a>
      */
     fun setInputAction(
-        action: Any, /* ScreenSpaceEventHandler.PositionedEventCallback | ScreenSpaceEventHandler.MotionEventCallback | ScreenSpaceEventHandler.WheelEventCallback | ScreenSpaceEventHandler.TwoPointEventCallback | ScreenSpaceEventHandler.TwoPointMotionEventCallback */
+        action: JsAny, /* ScreenSpaceEventHandler.PositionedEventCallback | ScreenSpaceEventHandler.MotionEventCallback | ScreenSpaceEventHandler.WheelEventCallback | ScreenSpaceEventHandler.TwoPointEventCallback | ScreenSpaceEventHandler.TwoPointMotionEventCallback */
         type: ScreenSpaceEventType,
         modifier: KeyboardEventModifier? = definedExternally,
     )
@@ -47,7 +48,7 @@ external class ScreenSpaceEventHandler(
     fun getInputAction(
         type: ScreenSpaceEventType,
         modifier: KeyboardEventModifier? = definedExternally,
-    ): Any /* ScreenSpaceEventHandler.PositionedEventCallback | ScreenSpaceEventHandler.MotionEventCallback | ScreenSpaceEventHandler.WheelEventCallback | ScreenSpaceEventHandler.TwoPointEventCallback | ScreenSpaceEventHandler.TwoPointMotionEventCallback */
+    ): JsAny /* ScreenSpaceEventHandler.PositionedEventCallback | ScreenSpaceEventHandler.MotionEventCallback | ScreenSpaceEventHandler.WheelEventCallback | ScreenSpaceEventHandler.TwoPointEventCallback | ScreenSpaceEventHandler.TwoPointMotionEventCallback */
 
     /**
      * Removes the function to be executed on an input event.

@@ -5,6 +5,8 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
+import js.core.JsAny
+import js.core.JsDouble
 import kotlin.js.JsModule
 import kotlin.js.definedExternally
 
@@ -63,9 +65,9 @@ external class BoundingRectangle(
          */
         override fun pack(
             value: BoundingRectangle,
-            array: ReadonlyArray<Double>,
+            array: ReadonlyArray<JsDouble>,
             startingIndex: Int?,
-        ): ReadonlyArray<Double>
+        ): ReadonlyArray<JsDouble>
 
         /**
          * Retrieves an instance from a packed array.
@@ -77,7 +79,7 @@ external class BoundingRectangle(
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BoundingRectangle.html#.unpack">Online Documentation</a>
          */
         override fun unpack(
-            array: ReadonlyArray<Double>,
+            array: ReadonlyArray<JsDouble>,
             startingIndex: Int?,
             result: BoundingRectangle?,
         ): BoundingRectangle
@@ -106,7 +108,7 @@ external class BoundingRectangle(
          */
         fun fromRectangle(
             rectangle: Rectangle,
-            projection: Any? = definedExternally,
+            projection: JsAny? = definedExternally,
             result: BoundingRectangle? = definedExternally,
         ): BoundingRectangle
 

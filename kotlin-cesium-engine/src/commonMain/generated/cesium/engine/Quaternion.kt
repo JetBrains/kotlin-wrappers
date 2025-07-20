@@ -6,6 +6,7 @@ package cesium.engine
 
 import cesium.engine.Quaternion.Companion.convertPackedArrayForInterpolation
 import js.array.ReadonlyArray
+import js.core.JsDouble
 import kotlin.js.JsModule
 import kotlin.js.definedExternally
 
@@ -111,9 +112,9 @@ external class Quaternion(
          */
         override fun pack(
             value: Quaternion,
-            array: ReadonlyArray<Double>,
+            array: ReadonlyArray<JsDouble>,
             startingIndex: Int?,
-        ): ReadonlyArray<Double>
+        ): ReadonlyArray<JsDouble>
 
         /**
          * Retrieves an instance from a packed array.
@@ -125,7 +126,7 @@ external class Quaternion(
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Quaternion.html#.unpack">Online Documentation</a>
          */
         override fun unpack(
-            array: ReadonlyArray<Double>,
+            array: ReadonlyArray<JsDouble>,
             startingIndex: Int?,
             result: Quaternion?,
         ): Quaternion
@@ -147,10 +148,10 @@ external class Quaternion(
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Quaternion.html#.convertPackedArrayForInterpolation">Online Documentation</a>
          */
         fun convertPackedArrayForInterpolation(
-            packedArray: ReadonlyArray<Double>,
+            packedArray: ReadonlyArray<JsDouble>,
             startingIndex: Int? = definedExternally,
             lastIndex: Int? = definedExternally,
-            result: ReadonlyArray<Double>? = definedExternally,
+            result: ReadonlyArray<JsDouble>? = definedExternally,
         )
 
         /**
@@ -166,8 +167,8 @@ external class Quaternion(
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Quaternion.html#.unpackInterpolationResult">Online Documentation</a>
          */
         fun unpackInterpolationResult(
-            array: ReadonlyArray<Double>,
-            sourceArray: ReadonlyArray<Double>,
+            array: ReadonlyArray<JsDouble>,
+            sourceArray: ReadonlyArray<JsDouble>,
             firstIndex: Int? = definedExternally,
             lastIndex: Int? = definedExternally,
             result: Quaternion? = definedExternally,

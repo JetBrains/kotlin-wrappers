@@ -5,6 +5,7 @@
 package cesium.engine
 
 import js.buffer.ArrayBuffer
+import js.core.JsAny
 import js.promise.Promise
 import seskar.js.JsAsync
 import kotlin.js.JsModule
@@ -55,7 +56,7 @@ private constructor() {
      * Dictionary of provider id to copyright strings.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GoogleEarthEnterpriseMetadata.html#providers">Online Documentation</a>
      */
-    var providers: Any
+    var providers: JsAny
 
     /**
      * Key used to decode packets

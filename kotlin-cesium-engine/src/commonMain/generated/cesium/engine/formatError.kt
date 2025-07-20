@@ -4,6 +4,7 @@
 
 package cesium.engine
 
+import js.core.JsAny
 import kotlin.js.JsModule
 
 /**
@@ -13,4 +14,4 @@ import kotlin.js.JsModule
  * @return A string containing the formatted error.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#formatError">Online Documentation</a>
  */
-external fun formatError(obj: Any): String
+external fun formatError(obj: JsAny): String

@@ -5,6 +5,8 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
+import js.core.JsDouble
+import js.core.JsString
 import js.objects.JsPlainObject
 import js.promise.Promise
 import seskar.js.JsAsync
@@ -85,7 +87,7 @@ external class Cesium3DTilesVoxelProvider(
      * Gets the metadata names.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTilesVoxelProvider.html#names">Online Documentation</a>
      */
-    val names: ReadonlyArray<String>
+    val names: ReadonlyArray<JsString>
 
     /**
      * Gets the metadata types.
@@ -103,13 +105,13 @@ external class Cesium3DTilesVoxelProvider(
      * Gets the metadata minimum values.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTilesVoxelProvider.html#minimumValues">Online Documentation</a>
      */
-    val minimumValues: ReadonlyArray<ReadonlyArray<Double>>?
+    val minimumValues: ReadonlyArray<ReadonlyArray<JsDouble>>?
 
     /**
      * Gets the metadata maximum values.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTilesVoxelProvider.html#maximumValues">Online Documentation</a>
      */
-    val maximumValues: ReadonlyArray<ReadonlyArray<Double>>?
+    val maximumValues: ReadonlyArray<ReadonlyArray<JsDouble>>?
 
     /**
      * The maximum number of tiles that exist for this provider.
@@ -181,7 +183,7 @@ external class Cesium3DTilesVoxelProvider(
     @JsPlainObject
     interface ConstructorOptions {
         val className: String
-        val names: ReadonlyArray<String>
+        val names: ReadonlyArray<JsString>
         val types: ReadonlyArray<MetadataType>
         val componentTypes: ReadonlyArray<MetadataComponentType>
         val shape: VoxelShapeType
@@ -192,8 +194,8 @@ external class Cesium3DTilesVoxelProvider(
         val shapeTransform: Matrix4?
         val minBounds: Cartesian3?
         val maxBounds: Cartesian3?
-        val minimumValues: ReadonlyArray<ReadonlyArray<Double>>?
-        val maximumValues: ReadonlyArray<ReadonlyArray<Double>>?
+        val minimumValues: ReadonlyArray<ReadonlyArray<JsDouble>>?
+        val maximumValues: ReadonlyArray<ReadonlyArray<JsDouble>>?
         val maximumTileCount: Double?
     }
 

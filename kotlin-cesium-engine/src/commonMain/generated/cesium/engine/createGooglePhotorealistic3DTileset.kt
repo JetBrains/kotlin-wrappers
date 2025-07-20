@@ -4,6 +4,7 @@
 
 package cesium.engine
 
+import js.core.JsAny
 import js.objects.JsPlainObject
 import js.promise.Promise
 import seskar.js.JsAsync
@@ -72,5 +73,5 @@ external fun createGooglePhotorealistic3DTilesetAsync(
 @JsPlainObject
 external interface CreateGooglePhotorealistic3DTilesetOptions {
     val key: String?
-    val onlyUsingWithGoogleGeocoder: Any /* true */?
+    val onlyUsingWithGoogleGeocoder: JsAny /* true */?
 }

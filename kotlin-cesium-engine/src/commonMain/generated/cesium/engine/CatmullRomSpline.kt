@@ -5,6 +5,7 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
+import js.core.JsDouble
 import js.objects.JsPlainObject
 import kotlin.js.JsModule
 import kotlin.js.definedExternally
@@ -45,7 +46,7 @@ external class CatmullRomSpline(
      */
     @JsPlainObject
     interface ConstructorOptions {
-        val times: ReadonlyArray<Double>
+        val times: ReadonlyArray<JsDouble>
         val points: ReadonlyArray<Cartesian3>
         val firstTangent: Cartesian3?
         val lastTangent: Cartesian3?
@@ -55,7 +56,7 @@ external class CatmullRomSpline(
      * An array of times for the control points.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CatmullRomSpline.html#times">Online Documentation</a>
      */
-    val times: ReadonlyArray<Double>
+    val times: ReadonlyArray<JsDouble>
 
     /**
      * An array of [Cartesian3] control points.

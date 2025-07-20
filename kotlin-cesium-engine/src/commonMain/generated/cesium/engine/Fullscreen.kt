@@ -4,6 +4,7 @@
 
 package cesium.engine
 
+import js.core.JsAny
 import kotlin.js.JsModule
 import kotlin.js.definedExternally
 
@@ -16,7 +17,7 @@ external object Fullscreen {
      * The element that is currently fullscreen, if any.  To simply check if the
      * browser is in fullscreen mode or not, use [Fullscreen.fullscreen].
      */
-    val element: Any
+    val element: JsAny
 
     /**
      * The name of the event on the document that is fired when fullscreen is
@@ -67,8 +68,8 @@ external object Fullscreen {
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Fullscreen.html#.requestFullscreen">Online Documentation</a>
      */
     fun requestFullscreen(
-        element: Any,
-        vrDevice: Any? = definedExternally,
+        element: JsAny,
+        vrDevice: JsAny? = definedExternally,
     )
 
     /**

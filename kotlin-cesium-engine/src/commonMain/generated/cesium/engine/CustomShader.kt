@@ -4,6 +4,8 @@
 
 package cesium.engine
 
+import js.core.JsAny
+import js.core.JsString
 import js.objects.JsPlainObject
 import js.objects.ReadonlyRecord
 import kotlin.js.JsModule
@@ -78,8 +80,8 @@ external class CustomShader(
         val mode: CustomShaderMode?
         val lightingModel: LightingModel?
         val translucencyMode: CustomShaderTranslucencyMode?
-        val uniforms: ReadonlyRecord<String, UniformSpecifier>?
-        val varyings: ReadonlyRecord<String, VaryingType>?
+        val uniforms: ReadonlyRecord<JsString, UniformSpecifier>?
+        val varyings: ReadonlyRecord<JsString, VaryingType>?
         val vertexShaderText: String?
         val fragmentShaderText: String?
     }
@@ -102,14 +104,14 @@ external class CustomShader(
      * Additional uniforms as declared by the user.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CustomShader.html#uniforms">Online Documentation</a>
      */
-    val uniforms: ReadonlyRecord<String, UniformSpecifier>
+    val uniforms: ReadonlyRecord<JsString, UniformSpecifier>
 
     /**
      * Additional varyings as declared by the user.
      * This is used by [CustomShaderPipelineStage]
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CustomShader.html#varyings">Online Documentation</a>
      */
-    val varyings: ReadonlyRecord<String, VaryingType>
+    val varyings: ReadonlyRecord<JsString, VaryingType>
 
     /**
      * The user-defined GLSL code for the vertex shader
@@ -140,7 +142,7 @@ external class CustomShader(
      */
     fun setUniform(
         uniformName: String,
-        value: Any, /* boolean | number | Cartesian2 | Cartesian3 | Cartesian4 | Matrix2 | Matrix3 | Matrix4 | string | Resource | TextureUniform */
+        value: JsAny, /* boolean | number | Cartesian2 | Cartesian3 | Cartesian4 | Matrix2 | Matrix3 | Matrix4 | string | Resource | TextureUniform */
     )
 
     /**

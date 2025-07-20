@@ -4,6 +4,7 @@
 
 package cesium.engine
 
+import js.core.JsAny
 import js.objects.JsPlainObject
 import kotlin.js.JsModule
 import kotlin.js.definedExternally
@@ -56,7 +57,7 @@ external class EllipsoidSurfaceAppearance(
         val material: Material?
         val vertexShaderSource: String?
         val fragmentShaderSource: String?
-        val renderState: Any?
+        val renderState: JsAny?
     }
 
     /**
@@ -95,7 +96,7 @@ external class EllipsoidSurfaceAppearance(
      * and [EllipsoidSurfaceAppearance.aboveGround].
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/EllipsoidSurfaceAppearance.html#renderState">Online Documentation</a>
      */
-    val renderState: Any
+    val renderState: JsAny
 
     /**
      * When `true`, the geometry is expected to be closed so
@@ -160,7 +161,7 @@ external class EllipsoidSurfaceAppearance(
      * @return The render state.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/EllipsoidSurfaceAppearance.html#getRenderState">Online Documentation</a>
      */
-    fun getRenderState(): Any
+    fun getRenderState(): JsAny
 
     companion object {
         /**

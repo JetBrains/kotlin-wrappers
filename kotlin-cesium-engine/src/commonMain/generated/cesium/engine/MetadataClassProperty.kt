@@ -4,6 +4,7 @@
 
 package cesium.engine
 
+import js.core.JsAny
 import js.objects.JsPlainObject
 import kotlin.js.JsModule
 
@@ -52,18 +53,18 @@ external class MetadataClassProperty(
         val isVariableLengthArray: Boolean?
         val arrayLength: Int?
         val normalized: Boolean?
-        val min: Any /* number | number[] | number[][] */?
-        val max: Any /* number | number[] | number[][] */?
-        val offset: Any /* number | number[] | number[][] */?
-        val scale: Any /* number | number[] | number[][] */?
-        val noData: Any /* boolean | number | string | any[] */?
-        val default: Any /* boolean | number | string | any[] */?
+        val min: JsAny /* number | number[] | number[][] */?
+        val max: JsAny /* number | number[] | number[][] */?
+        val offset: JsAny /* number | number[] | number[][] */?
+        val scale: JsAny /* number | number[] | number[][] */?
+        val noData: JsAny /* boolean | number | string | any[] */?
+        val default: JsAny /* boolean | number | string | any[] */?
         val required: Boolean?
         val name: String?
         val description: String?
         val semantic: String?
-        val extras: Any?
-        val extensions: Any?
+        val extras: JsAny?
+        val extensions: JsAny?
     }
 
     /**
@@ -133,25 +134,25 @@ external class MetadataClassProperty(
      * A number or an array of numbers storing the maximum allowable value of this property. Only defined when type is a numeric type.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/MetadataClassProperty.html#max">Online Documentation</a>
      */
-    val max: Any /* number | number[] | number[][] */
+    val max: JsAny /* number | number[] | number[][] */
 
     /**
      * A number or an array of numbers storing the minimum allowable value of this property. Only defined when type is a numeric type.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/MetadataClassProperty.html#min">Online Documentation</a>
      */
-    val min: Any /* number | number[] | number[][] */
+    val min: JsAny /* number | number[] | number[][] */
 
     /**
      * The no-data sentinel value that represents null values
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/MetadataClassProperty.html#noData">Online Documentation</a>
      */
-    val noData: Any /* boolean | number | string | any[] */
+    val noData: JsAny /* boolean | number | string | any[] */
 
     /**
      * A default value to use when an entity's property value is not defined.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/MetadataClassProperty.html#default">Online Documentation</a>
      */
-    val default: Any /* boolean | number | string | any[] */
+    val default: JsAny /* boolean | number | string | any[] */
 
     /**
      * Whether the property is required.
@@ -173,7 +174,7 @@ external class MetadataClassProperty(
      * initialized to the default value.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/MetadataClassProperty.html#offset">Online Documentation</a>
      */
-    val offset: Any /* number | number[] | number[][] */
+    val offset: JsAny /* number | number[] | number[][] */
 
     /**
      * The scale to be multiplied to property values as part of the value transform.
@@ -183,17 +184,17 @@ external class MetadataClassProperty(
      * initialized to the default value.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/MetadataClassProperty.html#scale">Online Documentation</a>
      */
-    val scale: Any /* number | number[] | number[][] */
+    val scale: JsAny /* number | number[] | number[][] */
 
     /**
      * Extra user-defined properties.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/MetadataClassProperty.html#extras">Online Documentation</a>
      */
-    val extras: Any
+    val extras: JsAny
 
     /**
      * An object containing extensions.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/MetadataClassProperty.html#extensions">Online Documentation</a>
      */
-    val extensions: Any
+    val extensions: JsAny
 }

@@ -5,6 +5,7 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
+import js.core.JsAny
 import kotlin.js.JsModule
 import kotlin.js.definedExternally
 
@@ -24,7 +25,7 @@ import kotlin.js.definedExternally
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#mergeSort">Online Documentation</a>
  */
 external fun mergeSort(
-    array: ReadonlyArray<Any>,
+    array: ReadonlyArray<JsAny>,
     comparator: mergeSortComparator,
-    userDefinedObject: Any? = definedExternally,
+    userDefinedObject: JsAny? = definedExternally,
 )

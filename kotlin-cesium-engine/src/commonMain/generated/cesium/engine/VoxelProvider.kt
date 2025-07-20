@@ -5,6 +5,8 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
+import js.core.JsDouble
+import js.core.JsString
 import js.objects.JsPlainObject
 import js.promise.Promise
 import seskar.js.JsAsync
@@ -72,7 +74,7 @@ abstract external class VoxelProvider() {
      * Gets the metadata names.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/VoxelProvider.html#names">Online Documentation</a>
      */
-    abstract val names: ReadonlyArray<String>
+    abstract val names: ReadonlyArray<JsString>
 
     /**
      * Gets the metadata types.
@@ -90,13 +92,13 @@ abstract external class VoxelProvider() {
      * Gets the metadata minimum values.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/VoxelProvider.html#minimumValues">Online Documentation</a>
      */
-    abstract val minimumValues: ReadonlyArray<ReadonlyArray<Double>>?
+    abstract val minimumValues: ReadonlyArray<ReadonlyArray<JsDouble>>?
 
     /**
      * Gets the metadata maximum values.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/VoxelProvider.html#maximumValues">Online Documentation</a>
      */
-    abstract val maximumValues: ReadonlyArray<ReadonlyArray<Double>>?
+    abstract val maximumValues: ReadonlyArray<ReadonlyArray<JsDouble>>?
 
     /**
      * The maximum number of tiles that exist for this provider.

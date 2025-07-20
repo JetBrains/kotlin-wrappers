@@ -4,6 +4,7 @@
 
 package cesium.engine
 
+import js.core.JsAny
 import js.promise.Promise
 import seskar.js.JsAsync
 import kotlin.js.JsModule
@@ -93,7 +94,7 @@ external object ITwinData {
         realityDataId: String,
         type: ITwinPlatform.RealityDataType? = definedExternally,
         rootDocument: String? = definedExternally,
-    ): Any /* GeoJsonDataSource | KmlDataSource */
+    ): JsAny /* GeoJsonDataSource | KmlDataSource */
 
     @JsName("createDataSourceForRealityDataId")
     fun createDataSourceForRealityDataIdAsync(
@@ -101,7 +102,7 @@ external object ITwinData {
         realityDataId: String,
         type: ITwinPlatform.RealityDataType? = definedExternally,
         rootDocument: String? = definedExternally,
-    ): Promise<Any /* GeoJsonDataSource | KmlDataSource */>
+    ): Promise<JsAny /* GeoJsonDataSource | KmlDataSource */>
 
     /**
      * Load data from the Geospatial Features API as GeoJSON.

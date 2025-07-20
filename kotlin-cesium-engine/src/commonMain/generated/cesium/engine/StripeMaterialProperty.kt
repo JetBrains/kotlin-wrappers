@@ -4,6 +4,7 @@
 
 package cesium.engine
 
+import js.core.JsAny
 import kotlin.js.JsModule
 
 /**
@@ -78,6 +79,6 @@ external class StripeMaterialProperty() :
      */
     override fun getValue(
         time: JulianDate?,
-        result: Any?,
-    ): Any
+        result: JsAny?,
+    ): JsAny
 }

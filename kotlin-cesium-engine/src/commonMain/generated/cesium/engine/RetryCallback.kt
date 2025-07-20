@@ -2,6 +2,7 @@
 
 package cesium.engine
 
+import js.core.JsBoolean
 import js.promise.PromiseResult
 
 /**
@@ -13,4 +14,4 @@ import js.promise.PromiseResult
 typealias RetryCallback = (
     resource: Resource?,
     error: RequestErrorEvent?,
-) -> PromiseResult<Boolean>
+) -> PromiseResult<JsBoolean>

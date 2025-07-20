@@ -2,6 +2,8 @@
 
 package cesium.widgets
 
+import js.core.JsAny
+
 /**
  * A function that handles the result of a successful geocode.
  * @param [viewModel] The view model.
@@ -10,5 +12,5 @@ package cesium.widgets
  */
 typealias DestinationFoundFunction = (
     viewModel: GeocoderViewModel,
-    destination: Any, /* Cartesian3 | Rectangle */
+    destination: JsAny, /* Cartesian3 | Rectangle */
 ) -> Unit

@@ -4,6 +4,7 @@
 
 package cesium.engine
 
+import js.core.JsAny
 import kotlin.js.JsModule
 
 /**
@@ -120,7 +121,7 @@ external class FrameRateMonitor() {
          * [FrameRateMonitor] constructor.
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/FrameRateMonitor.html#.defaultSettings">Online Documentation</a>
          */
-        var defaultSettings: Any
+        var defaultSettings: JsAny
 
         /**
          * Gets the [FrameRateMonitor] for a given scene.  If the scene does not yet have
