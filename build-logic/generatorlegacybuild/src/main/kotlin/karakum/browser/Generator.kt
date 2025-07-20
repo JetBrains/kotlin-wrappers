@@ -598,8 +598,7 @@ fun generateKotlinDeclarations(
 private fun toCommonBody(
     body: String,
 ): String =
-    body.replace("@JsAsync\n", "@JsAsync\n@Suppress(\"WRONG_EXTERNAL_DECLARATION\")\n")
-        .replace("<String>", "<JsString>")
+    body.replace("<String>", "<JsString>")
         .replace("<String,", "<JsString,")
         .replace(", String>", ", JsString>")
         .replace(", String?>", ", JsString?>")
