@@ -1,8 +1,10 @@
 package js.errors
 
+import js.reflect.JsExternalInheritorsOnly
 import js.reflect.upcast
 
-sealed external interface JsErrorLike
+@JsExternalInheritorsOnly
+external interface JsErrorLike
 
 inline fun JsErrorLike?.toJsErrorOrNull(): JsError? =
     upcast<Any?>() as? JsError
