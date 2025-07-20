@@ -13,11 +13,9 @@ val convertTestContextHeritageClause = createPlugin { node, context, render ->
 
         ensure(isHeritageClause(node))
 
-        val parent = node.getParentOrNull()
-        ensureNotNull(parent)
-
-        ensure(isInterfaceDeclaration(parent))
-        ensure(parent.name.text == "TestContextAssert")
+        val interfaceNode = ensureNotNull(node.getParentOrNull())
+        ensure(isInterfaceDeclaration(interfaceNode))
+        ensure(interfaceNode.name.text == "TestContextAssert")
 
         val types = node.types.asArray()
         ensure(types.size == 1)

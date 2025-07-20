@@ -104,6 +104,9 @@ suspend fun main() {
                 convertMockTrackerGenerics,
                 convertModuleQualifiedName,
                 convertNodeJsQualifiedName,
+                convertNumberParameter,
+                convertNumbers,
+                convertObjectParam,
                 // ---
                 convertTestContextHeritageClause,
                 convertTopLevelGlobals,
