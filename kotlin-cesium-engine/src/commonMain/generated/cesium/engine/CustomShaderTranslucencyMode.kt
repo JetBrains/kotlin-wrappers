@@ -9,7 +9,8 @@ package cesium.engine
  * primitive.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#CustomShaderTranslucencyMode">Online Documentation</a>
  */
-sealed external interface CustomShaderTranslucencyMode {
+external class CustomShaderTranslucencyMode
+private constructor() {
     companion object {
 
         /**

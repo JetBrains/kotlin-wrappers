@@ -10,7 +10,8 @@ package cesium.engine
  * that changes over time. This enum determines which light source to use.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#DynamicAtmosphereLightingType">Online Documentation</a>
  */
-sealed external interface DynamicAtmosphereLightingType {
+external class DynamicAtmosphereLightingType
+private constructor() {
     companion object {
 
         /**

@@ -8,7 +8,8 @@ package cesium.engine
  * A tonemapping algorithm when rendering with high dynamic range.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#Tonemapper">Online Documentation</a>
  */
-sealed external interface Tonemapper {
+external class Tonemapper
+private constructor() {
     companion object {
 
         /**

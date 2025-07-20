@@ -8,7 +8,8 @@ package cesium.engine
  * Whether a classification affects terrain, 3D Tiles or both.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#ClassificationType">Online Documentation</a>
  */
-sealed external interface ClassificationType {
+external class ClassificationType
+private constructor() {
     companion object {
 
         /**

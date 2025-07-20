@@ -9,7 +9,8 @@ package cesium.engine
  * that are held down in addition to other event types.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#KeyboardEventModifier">Online Documentation</a>
  */
-sealed external interface KeyboardEventModifier {
+external class KeyboardEventModifier
+private constructor() {
     companion object {
 
         /**

@@ -8,7 +8,8 @@ package cesium.engine
  * Constants used to indicated what part of the sensor volume to display.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#SensorVolumePortionToDisplay">Online Documentation</a>
  */
-sealed external interface SensorVolumePortionToDisplay {
+external class SensorVolumePortionToDisplay
+private constructor() {
     companion object {
 
         /**

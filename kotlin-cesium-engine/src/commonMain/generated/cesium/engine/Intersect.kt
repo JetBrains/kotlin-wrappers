@@ -11,7 +11,8 @@ package cesium.engine
  * outside of the frustum's 6 planes (OUTSIDE).
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#Intersect">Online Documentation</a>
  */
-sealed external interface Intersect {
+external class Intersect
+private constructor() {
     companion object {
 
         /**

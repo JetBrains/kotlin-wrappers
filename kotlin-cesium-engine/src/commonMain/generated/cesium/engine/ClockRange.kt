@@ -9,7 +9,8 @@ package cesium.engine
  * when [Clock.startTime] or [Clock.stopTime] is reached.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#ClockRange">Online Documentation</a>
  */
-sealed external interface ClockRange {
+external class ClockRange
+private constructor() {
     companion object {
 
         /**

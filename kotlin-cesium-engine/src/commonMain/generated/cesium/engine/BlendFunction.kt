@@ -8,7 +8,8 @@ package cesium.engine
  * Determines how blending factors are computed.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#BlendFunction">Online Documentation</a>
  */
-sealed external interface BlendFunction {
+external class BlendFunction
+private constructor() {
     companion object {
 
         /**

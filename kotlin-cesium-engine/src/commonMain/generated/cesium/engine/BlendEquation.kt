@@ -8,7 +8,8 @@ package cesium.engine
  * Determines how two pixels' values are combined.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#BlendEquation">Online Documentation</a>
  */
-sealed external interface BlendEquation {
+external class BlendEquation
+private constructor() {
     companion object {
 
         /**

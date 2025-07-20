@@ -8,7 +8,8 @@ package cesium.engine
  * The types of imagery provided by [createWorldImagery].
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#IonWorldImageryStyle">Online Documentation</a>
  */
-sealed external interface IonWorldImageryStyle {
+external class IonWorldImageryStyle
+private constructor() {
     companion object {
 
         /**

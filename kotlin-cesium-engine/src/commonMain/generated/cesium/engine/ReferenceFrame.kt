@@ -8,7 +8,8 @@ package cesium.engine
  * Constants for identifying well-known reference frames.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#ReferenceFrame">Online Documentation</a>
  */
-sealed external interface ReferenceFrame {
+external class ReferenceFrame
+private constructor() {
     companion object {
 
         /**

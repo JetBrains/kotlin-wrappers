@@ -8,7 +8,8 @@ package cesium.engine
  * ArcGisBaseMapType enumerates the ArcGIS image tile layers that are supported by default.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#ArcGisBaseMapType">Online Documentation</a>
  */
-sealed external interface ArcGisBaseMapType {
+external class ArcGisBaseMapType
+private constructor() {
     companion object {
 
         val SATELLITE: ArcGisBaseMapType

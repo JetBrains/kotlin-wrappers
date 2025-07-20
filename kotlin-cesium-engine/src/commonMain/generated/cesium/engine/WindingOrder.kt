@@ -8,7 +8,8 @@ package cesium.engine
  * Winding order defines the order of vertices for a triangle to be considered front-facing.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#WindingOrder">Online Documentation</a>
  */
-sealed external interface WindingOrder {
+external class WindingOrder
+private constructor() {
     companion object {
 
         /**

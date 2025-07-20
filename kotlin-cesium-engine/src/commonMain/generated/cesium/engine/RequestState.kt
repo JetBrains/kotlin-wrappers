@@ -8,7 +8,8 @@ package cesium.engine
  * State of the request.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#RequestState">Online Documentation</a>
  */
-sealed external interface RequestState {
+external class RequestState
+private constructor() {
     companion object {
 
         /**

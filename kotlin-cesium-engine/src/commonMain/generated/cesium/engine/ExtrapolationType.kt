@@ -9,7 +9,8 @@ package cesium.engine
  * when querying outside the bounds of available data.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#ExtrapolationType">Online Documentation</a>
  */
-sealed external interface ExtrapolationType {
+external class ExtrapolationType
+private constructor() {
     companion object {
 
         /**

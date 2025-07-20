@@ -8,7 +8,8 @@ package cesium.engine
  * Provides the type of time standards which JulianDate can take as input.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#TimeStandard">Online Documentation</a>
  */
-sealed external interface TimeStandard {
+external class TimeStandard
+private constructor() {
     companion object {
 
         /**

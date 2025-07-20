@@ -8,7 +8,8 @@ package cesium.engine
  * The data type of a pixel.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#PixelDatatype">Online Documentation</a>
  */
-sealed external interface PixelDatatype {
+external class PixelDatatype
+private constructor() {
     companion object {
 
         val UNSIGNED_BYTE: PixelDatatype

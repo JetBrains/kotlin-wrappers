@@ -28,7 +28,8 @@ package cesium.engine
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#Cesium3DTileColorBlendMode">Online Documentation</a>
  */
-sealed external interface Cesium3DTileColorBlendMode {
+external class Cesium3DTileColorBlendMode
+private constructor() {
     companion object {
 
         /**
