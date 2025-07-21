@@ -250,13 +250,13 @@ readonly name?: string;
  * If you only care about file events in a specific workspace folder:
  *
  * ```ts
- * vscode.workspace.createFileSystemWatcher(new vscode.RelativePattern(vscode.workspace.workspaceFolders[0], '**​/ *.js'));
+ * vscode.workspace.createFileSystemWatcher(new vscode.RelativePattern(vscode.workspace.workspaceFolders[0], '**​/​*.js'));
  * ```
  *
  * If you want to monitor file events across all opened workspace folders:
  *
  * ```ts
- * vscode.workspace.createFileSystemWatcher('**​/ *.js');
+ * vscode.workspace.createFileSystemWatcher('**​/​*.js');
  * ```
  *
  * *Note:* the array of workspace folders can be empty if no workspace is opened (empty window).
@@ -273,7 +273,7 @@ readonly name?: string;
  * And use a complex glob pattern to watch recursively:
  *
  * ```ts
- * vscode.workspace.createFileSystemWatcher(new vscode.RelativePattern(vscode.Uri.file(<path to folder outside workspace>), '**​/ *.js'));
+ * vscode.workspace.createFileSystemWatcher(new vscode.RelativePattern(vscode.Uri.file(<path to folder outside workspace>), '**​/​*.js'));
  * ```
  *
  * Here is an example for watching the active editor for file changes:
@@ -294,7 +294,7 @@ export function createFileSystemWatcher(globPattern: GlobPattern, ignoreCreateEv
  * Find files across all {@link workspace.workspaceFolders workspace folders} in the workspace.
  *
  * @example
- * findFiles('**​/ *.js', '**​/node_modules/ **', 10)
+ * findFiles('**​/​*.js', '**​/node_modules/​**', 10)
  *
  * @param include A {@link GlobPattern glob pattern} that defines the files to search for. The glob pattern
  * will be matched against the file paths of resulting matches relative to their workspace. Use a {@link RelativePattern relative pattern}
@@ -873,4 +873,4 @@ readonly uri: Uri;
 }
 
 // ORIGINAL SOURCE
-**/
+ **/

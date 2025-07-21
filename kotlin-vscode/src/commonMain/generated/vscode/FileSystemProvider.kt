@@ -42,7 +42,7 @@ readonly onDidChangeFile: Event<FileChangeEvent[]>;
  * is configurable by the user. Each entry can be be:
  * - the absolute path to exclude
  * - a relative path to exclude (for example `build/output`)
- * - a simple glob pattern (for example `**​/build`, `output/ **`)
+ * - a simple glob pattern (for example `**​/build`, `output/​**`)
  *
  * It is the file system provider's job to call {@linkcode FileSystemProvider.onDidChangeFile onDidChangeFile}
  * for every change given these rules. No event should be emitted for files that match any of the provided
@@ -180,4 +180,4 @@ readonly overwrite: boolean;
 }
 
 // ORIGINAL SOURCE
-**/
+ **/

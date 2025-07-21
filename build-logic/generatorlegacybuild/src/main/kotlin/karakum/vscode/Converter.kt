@@ -12,6 +12,12 @@ internal fun parseDeclarations(
         .trimIndent()
         .trim()
         .replace("\n */\n/**\n", "\n")
+        .replace("\u200B/*", "\u200B/\u200B*")
+        .replace("`/*", "`/\u200B*")
+        .replace("/**`", "/\u200B**`")
+        .replace("/**'", "/\u200B**'")
+        .replace("/*`", "/\u200B*`")
+        .replace("/*.", "/\u200B*.")
 
     return content
         .splitToSequence("\n/**")
