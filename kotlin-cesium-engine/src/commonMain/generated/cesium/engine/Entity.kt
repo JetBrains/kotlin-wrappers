@@ -6,8 +6,6 @@ package cesium.engine
 
 import js.array.ReadonlyArray
 import js.core.JsString
-import kotlin.js.JsModule
-import kotlin.js.definedExternally
 
 /**
  * Entity instances aggregate multiple forms of visualization into a single high-level object.

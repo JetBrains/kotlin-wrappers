@@ -8,8 +8,6 @@ import js.array.ReadonlyArray
 import js.core.JsAny
 import js.core.JsString
 import js.typedarrays.Float64Array
-import kotlin.js.JsModule
-import kotlin.js.definedExternally
 
 /**
  * A feature of a [Cesium3DTileset].

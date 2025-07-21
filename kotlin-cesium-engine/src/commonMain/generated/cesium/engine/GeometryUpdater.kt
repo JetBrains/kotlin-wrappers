@@ -8,7 +8,6 @@ import js.array.ReadonlyArray
 import js.core.JsAny
 import js.core.JsString
 import js.objects.JsPlainObject
-import kotlin.js.JsModule
 
 /**
  * An abstract class for updating geometry entities.

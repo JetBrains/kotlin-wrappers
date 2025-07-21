@@ -9,9 +9,6 @@ import js.core.JsAny
 import js.objects.JsPlainObject
 import js.promise.Promise
 import seskar.js.JsAsync
-import kotlin.js.JsModule
-import kotlin.js.JsName
-import kotlin.js.definedExternally
 
 /**
  * Provides geocoding through an external service. This type describes an interface and

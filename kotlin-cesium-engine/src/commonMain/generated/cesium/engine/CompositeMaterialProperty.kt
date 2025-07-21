@@ -5,7 +5,6 @@
 package cesium.engine
 
 import js.core.JsAny
-import kotlin.js.JsModule
 
 /**
  * A [CompositeProperty] which is also a [MaterialProperty].

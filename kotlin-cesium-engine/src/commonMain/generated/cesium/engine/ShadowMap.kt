@@ -4,8 +4,6 @@
 
 package cesium.engine
 
-import kotlin.js.JsModule
-
 /**
  * <div class="notice">
  * Use [Viewer.shadowMap] to get the scene's shadow map. Do not construct this directly.

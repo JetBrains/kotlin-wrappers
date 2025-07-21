@@ -4,8 +4,6 @@
 
 package cesium.engine
 
-import kotlin.js.JsModule
-
 /**
  * Defined the orientation of stripes in [StripeMaterialProperty].
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#StripeOrientation">Online Documentation</a>

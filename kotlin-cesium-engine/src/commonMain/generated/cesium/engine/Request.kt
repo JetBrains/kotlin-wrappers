@@ -5,8 +5,6 @@
 package cesium.engine
 
 import js.objects.JsPlainObject
-import kotlin.js.JsModule
-import kotlin.js.definedExternally
 
 /**
  * Stores information for making a request. In general this does not need to be constructed directly.

@@ -4,8 +4,6 @@
 
 package cesium.engine
 
-import kotlin.js.JsModule
-
 /**
  * Constants to determine how much time advances with each call
  * to [Clock.tick].

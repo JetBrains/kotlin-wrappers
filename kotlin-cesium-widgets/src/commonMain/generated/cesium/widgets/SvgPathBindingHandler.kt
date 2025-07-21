@@ -4,8 +4,6 @@
 
 package cesium.widgets
 
-import kotlin.js.JsModule
-
 /**
  * A Knockout binding handler that creates a DOM element for a single SVG path.
  * This binding handler will be registered as cesiumSvgPath.

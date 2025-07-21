@@ -14,9 +14,6 @@ import seskar.js.JsAsync
 import web.blob.Blob
 import web.canvas.CanvasImageSource
 import web.xml.XMLDocument
-import kotlin.js.JsModule
-import kotlin.js.JsName
-import kotlin.js.definedExternally
 
 /**
  * A resource that includes the location and any other parameters we need to retrieve it or create derived resources. It also provides the ability to retry requests.

@@ -10,9 +10,6 @@ import js.core.JsString
 import js.objects.JsPlainObject
 import js.promise.Promise
 import seskar.js.JsAsync
-import kotlin.js.JsModule
-import kotlin.js.JsName
-import kotlin.js.definedExternally
 
 /**
  * Provides imagery by requesting tiles using a specified URL template.

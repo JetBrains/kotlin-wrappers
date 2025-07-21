@@ -6,8 +6,6 @@ package cesium.engine
 
 import js.core.JsAny
 import js.objects.JsPlainObject
-import kotlin.js.JsModule
-import kotlin.js.definedExternally
 
 /**
  * A classification primitive represents a volume enclosing geometry in the [Scene] to be highlighted.

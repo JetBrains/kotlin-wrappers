@@ -4,8 +4,6 @@
 
 package cesium.engine
 
-import kotlin.js.JsModule
-
 /**
  * An object that initializes a [Particle] from a [ParticleSystem].
  *

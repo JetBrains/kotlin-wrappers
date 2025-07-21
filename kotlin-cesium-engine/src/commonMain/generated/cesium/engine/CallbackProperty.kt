@@ -5,8 +5,6 @@
 package cesium.engine
 
 import js.core.JsAny
-import kotlin.js.JsModule
-import kotlin.js.definedExternally
 
 /**
  * A [Property] whose value is lazily evaluated by a callback function.

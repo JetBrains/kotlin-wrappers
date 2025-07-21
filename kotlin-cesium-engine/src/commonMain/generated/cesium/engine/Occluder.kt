@@ -6,8 +6,6 @@ package cesium.engine
 
 import js.array.ReadonlyArray
 import js.core.JsAny
-import kotlin.js.JsModule
-import kotlin.js.definedExternally
 
 /**
  * Creates an Occluder derived from an object's position and radius, as well as the camera position.

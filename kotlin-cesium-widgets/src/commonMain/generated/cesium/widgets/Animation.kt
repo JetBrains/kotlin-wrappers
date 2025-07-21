@@ -6,7 +6,6 @@ package cesium.widgets
 
 import cesium.engine.Clock
 import web.dom.Element
-import kotlin.js.JsModule
 
 /**
  * The Animation widget provides buttons for play, pause, and reverse, along with the

@@ -6,7 +6,6 @@ package cesium.widgets
 
 import cesium.engine.DefaultEvent
 import cesium.engine.Event
-import kotlin.js.JsModule
 
 /**
  * The view model for [InfoBox].

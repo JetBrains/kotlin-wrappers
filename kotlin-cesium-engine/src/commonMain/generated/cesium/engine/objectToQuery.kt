@@ -5,7 +5,6 @@
 package cesium.engine
 
 import js.core.JsAny
-import kotlin.js.JsModule
 
 /**
  * Converts an object representing a set of name/value pairs into a query string,

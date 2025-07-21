@@ -5,7 +5,6 @@
 package cesium.engine
 
 import js.core.JsAny
-import kotlin.js.JsModule
 
 /**
  * Creates a shader statement that returns the value of the specified

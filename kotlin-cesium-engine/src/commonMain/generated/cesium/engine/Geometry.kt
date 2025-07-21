@@ -8,7 +8,6 @@ import js.array.ReadonlyArray
 import js.core.JsAny
 import js.objects.JsPlainObject
 import js.typedarrays.TypedArray
-import kotlin.js.JsModule
 
 /**
  * A geometry representation with attributes forming vertices and optional index data

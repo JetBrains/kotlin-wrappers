@@ -4,9 +4,6 @@
 
 package cesium.engine
 
-import kotlin.js.JsModule
-import kotlin.js.definedExternally
-
 /**
  * A simple map projection where longitude and latitude are linearly mapped to X and Y by multiplying
  * them by the [Ellipsoid.maximumRadius].  This projection

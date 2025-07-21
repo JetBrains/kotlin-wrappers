@@ -4,8 +4,6 @@
 
 package cesium.engine
 
-import kotlin.js.JsModule
-
 /**
  * A [GeometryUpdater] for rectangles.
  * Clients do not normally create this class directly, but instead rely on [DataSourceDisplay].

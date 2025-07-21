@@ -6,8 +6,6 @@ package cesium.engine
 
 import js.array.ReadonlyArray
 import js.core.JsDouble
-import kotlin.js.JsModule
-import kotlin.js.definedExternally
 
 /**
  * Describes geometry representing the outline of a plane centered at the origin, with a unit width and length.

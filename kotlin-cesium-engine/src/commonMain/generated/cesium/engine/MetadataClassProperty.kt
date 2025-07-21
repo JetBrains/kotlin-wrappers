@@ -6,7 +6,6 @@ package cesium.engine
 
 import js.core.JsAny
 import js.objects.JsPlainObject
-import kotlin.js.JsModule
 
 /**
  * A metadata property, as part of a [MetadataClass].

@@ -4,8 +4,6 @@
 
 package cesium.engine
 
-import kotlin.js.JsModule
-
 /**
  * Enum containing WebGL Constant values by name.
  * for use without an active WebGL context, or in cases where certain constants are unavailable using the WebGL context

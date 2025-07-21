@@ -7,8 +7,6 @@ package cesium.engine
 import js.core.JsAny
 import js.date.Date
 import web.html.HTMLCanvasElement
-import kotlin.js.JsModule
-import kotlin.js.definedExternally
 
 /**
  * Aggregates input events. For example, suppose the following inputs are received between frames:

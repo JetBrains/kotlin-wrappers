@@ -5,8 +5,6 @@
 package cesium.engine
 
 import js.typedarrays.Float32Array
-import kotlin.js.JsModule
-import kotlin.js.definedExternally
 
 /**
  * Value and type information for per-instance geometry attribute that determines if the geometry instance has a distance display condition.

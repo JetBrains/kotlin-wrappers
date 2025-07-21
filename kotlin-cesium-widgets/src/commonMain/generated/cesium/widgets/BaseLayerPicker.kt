@@ -8,7 +8,6 @@ import cesium.engine.Globe
 import js.array.ReadonlyArray
 import js.objects.JsPlainObject
 import web.dom.Element
-import kotlin.js.JsModule
 
 /**
  * The BaseLayerPicker is a single button widget that displays a panel of available imagery and

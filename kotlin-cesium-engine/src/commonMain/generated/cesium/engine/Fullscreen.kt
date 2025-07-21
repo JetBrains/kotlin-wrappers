@@ -5,8 +5,6 @@
 package cesium.engine
 
 import js.core.JsAny
-import kotlin.js.JsModule
-import kotlin.js.definedExternally
 
 /**
  * Browser-independent functions for working with the standard fullscreen API.

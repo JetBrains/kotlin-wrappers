@@ -4,8 +4,6 @@
 
 package cesium.engine
 
-import kotlin.js.JsModule
-
 /**
  * Base class for all geometry creation utility classes that can be passed to [GeometryInstance]
  * for asynchronous geometry creation.

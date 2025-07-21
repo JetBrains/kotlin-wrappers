@@ -10,7 +10,6 @@ import cesium.engine.Scene
 import js.array.ReadonlyArray
 import js.core.JsAny
 import js.objects.JsPlainObject
-import kotlin.js.JsModule
 
 /**
  * The view model for the [Geocoder] widget.

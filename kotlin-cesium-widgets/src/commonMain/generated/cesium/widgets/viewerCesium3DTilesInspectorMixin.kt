@@ -4,8 +4,6 @@
 
 package cesium.widgets
 
-import kotlin.js.JsModule
-
 /**
  * A mixin which adds the [Cesium3DTilesInspector] widget to the [Viewer] widget.
  * Rather than being called directly, this function is normally passed as

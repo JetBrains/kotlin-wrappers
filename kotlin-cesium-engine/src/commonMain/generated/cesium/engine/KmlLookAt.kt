@@ -4,8 +4,6 @@
 
 package cesium.engine
 
-import kotlin.js.JsModule
-
 /**
  * @param [position] camera position
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/KmlLookAt.html">Online Documentation</a>

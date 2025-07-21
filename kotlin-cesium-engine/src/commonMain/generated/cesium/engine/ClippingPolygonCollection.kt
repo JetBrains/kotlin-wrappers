@@ -7,8 +7,6 @@ package cesium.engine
 import js.array.ReadonlyArray
 import js.core.JsAny
 import js.objects.JsPlainObject
-import kotlin.js.JsModule
-import kotlin.js.definedExternally
 
 /**
  * Specifies a set of clipping polygons. Clipping polygons selectively disable rendering in a region

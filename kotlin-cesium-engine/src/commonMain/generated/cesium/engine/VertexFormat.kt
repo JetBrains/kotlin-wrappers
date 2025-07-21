@@ -7,8 +7,6 @@ package cesium.engine
 import js.array.ReadonlyArray
 import js.core.JsAny
 import js.core.JsDouble
-import kotlin.js.JsModule
-import kotlin.js.definedExternally
 
 /**
  * A vertex format defines what attributes make up a vertex.  A VertexFormat can be provided

@@ -4,9 +4,6 @@
 
 package cesium.engine
 
-import kotlin.js.JsModule
-import kotlin.js.definedExternally
-
 /**
  * Initializes a geodesic on the ellipsoid connecting the two provided planetodetic points.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/EllipsoidGeodesic.html">Online Documentation</a>

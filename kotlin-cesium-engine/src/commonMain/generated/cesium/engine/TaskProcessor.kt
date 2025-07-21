@@ -9,9 +9,6 @@ import js.core.JsAny
 import js.objects.JsPlainObject
 import js.promise.Promise
 import seskar.js.JsAsync
-import kotlin.js.JsModule
-import kotlin.js.JsName
-import kotlin.js.definedExternally
 
 /**
  * A wrapper around a web worker that allows scheduling tasks for a given worker,

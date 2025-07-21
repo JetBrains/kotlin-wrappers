@@ -4,8 +4,6 @@
 
 package cesium.engine
 
-import kotlin.js.JsModule
-
 /**
  * Defines how per-feature colors set from the Cesium API or declarative styling blend with the source colors from
  * the original feature, e.g. glTF material or per-point color in the tile.

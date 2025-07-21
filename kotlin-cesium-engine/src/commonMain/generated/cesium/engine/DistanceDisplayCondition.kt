@@ -6,8 +6,6 @@ package cesium.engine
 
 import js.array.ReadonlyArray
 import js.core.JsDouble
-import kotlin.js.JsModule
-import kotlin.js.definedExternally
 
 /**
  * Determines visibility based on the distance to the camera.

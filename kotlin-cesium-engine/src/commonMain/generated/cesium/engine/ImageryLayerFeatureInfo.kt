@@ -5,7 +5,6 @@
 package cesium.engine
 
 import js.core.JsAny
-import kotlin.js.JsModule
 
 /**
  * Describes a rasterized feature, such as a point, polygon, polyline, etc., in an imagery layer.

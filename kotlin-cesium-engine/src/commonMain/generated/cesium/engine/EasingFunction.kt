@@ -4,8 +4,6 @@
 
 package cesium.engine
 
-import kotlin.js.JsModule
-
 /**
  * Easing functions for use with TweenCollection.  These function are from
  * [Tween.js](https://github.com/sole/tween.js/) and Robert Penner.  See the

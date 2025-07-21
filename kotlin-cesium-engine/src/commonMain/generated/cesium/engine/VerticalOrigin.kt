@@ -4,8 +4,6 @@
 
 package cesium.engine
 
-import kotlin.js.JsModule
-
 /**
  * The vertical location of an origin relative to an object, e.g., a [Billboard]
  * or [Label].  For example, setting the vertical origin to `TOP`

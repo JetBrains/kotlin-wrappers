@@ -4,8 +4,6 @@
 
 package cesium.engine
 
-import kotlin.js.JsModule
-
 /**
  * Compute the rectangle that describes the part of the drawing buffer
  * that is relevant for picking.

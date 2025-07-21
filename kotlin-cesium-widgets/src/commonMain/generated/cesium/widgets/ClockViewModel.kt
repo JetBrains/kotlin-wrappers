@@ -8,8 +8,6 @@ import cesium.engine.Clock
 import cesium.engine.ClockRange
 import cesium.engine.ClockStep
 import cesium.engine.JulianDate
-import kotlin.js.JsModule
-import kotlin.js.definedExternally
 
 /**
  * A view model which exposes a [Clock] for user interfaces.

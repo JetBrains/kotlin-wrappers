@@ -5,7 +5,6 @@
 package cesium.engine
 
 import js.objects.JsPlainObject
-import kotlin.js.JsModule
 
 /**
  * A light that gets emitted in a single direction from infinitely far away.

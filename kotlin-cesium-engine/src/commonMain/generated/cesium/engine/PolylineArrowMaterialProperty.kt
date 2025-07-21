@@ -5,7 +5,6 @@
 package cesium.engine
 
 import js.core.JsAny
-import kotlin.js.JsModule
 
 /**
  * A [MaterialProperty] that maps to PolylineArrow [Material] uniforms.

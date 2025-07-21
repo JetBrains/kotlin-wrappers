@@ -4,8 +4,6 @@
 
 package cesium.engine
 
-import kotlin.js.JsModule
-
 /**
  * The horizontal location of an origin relative to an object, e.g., a [Billboard]
  * or [Label].  For example, setting the horizontal origin to `LEFT`

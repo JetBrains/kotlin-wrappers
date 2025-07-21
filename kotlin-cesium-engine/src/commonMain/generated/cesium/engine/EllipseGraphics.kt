@@ -4,9 +4,6 @@
 
 package cesium.engine
 
-import kotlin.js.JsModule
-import kotlin.js.definedExternally
-
 /**
  * Describes an ellipse defined by a center point and semi-major and semi-minor axes.
  * The ellipse conforms to the curvature of the globe and can be placed on the surface or

@@ -8,8 +8,6 @@ import js.array.ReadonlyArray
 import js.core.JsAny
 import js.core.JsDouble
 import js.objects.JsPlainObject
-import kotlin.js.JsModule
-import kotlin.js.definedExternally
 
 /**
  * A [SampledProperty] which is also a [PositionProperty].

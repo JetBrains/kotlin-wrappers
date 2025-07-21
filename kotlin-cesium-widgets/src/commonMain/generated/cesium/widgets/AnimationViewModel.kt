@@ -6,7 +6,6 @@ package cesium.widgets
 
 import js.array.ReadonlyArray
 import js.core.JsDouble
-import kotlin.js.JsModule
 
 /**
  * The view model for the [Animation] widget.

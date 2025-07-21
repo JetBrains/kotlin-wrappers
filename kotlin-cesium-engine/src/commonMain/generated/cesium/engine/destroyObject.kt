@@ -5,8 +5,6 @@
 package cesium.engine
 
 import js.core.JsAny
-import kotlin.js.JsModule
-import kotlin.js.definedExternally
 
 /**
  * Destroys an object.  Each of the object's functions, including functions in its prototype,

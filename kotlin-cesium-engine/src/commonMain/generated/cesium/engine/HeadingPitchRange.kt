@@ -4,9 +4,6 @@
 
 package cesium.engine
 
-import kotlin.js.JsModule
-import kotlin.js.definedExternally
-
 /**
  * Defines a heading angle, pitch angle, and range in a local frame.
  * Heading is the rotation from the local east direction where a positive angle is increasing southward.

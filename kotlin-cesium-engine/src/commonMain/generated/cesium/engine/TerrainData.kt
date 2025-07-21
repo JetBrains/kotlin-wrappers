@@ -8,8 +8,6 @@ import js.array.ReadonlyArray
 import js.core.JsAny
 import js.promise.Promise
 import seskar.js.JsAsync
-import kotlin.js.JsModule
-import kotlin.js.JsName
 
 /**
  * Terrain data for a single tile.  This type describes an

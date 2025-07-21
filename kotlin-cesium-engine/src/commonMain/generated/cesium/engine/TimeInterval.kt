@@ -6,8 +6,6 @@ package cesium.engine
 
 import js.core.JsAny
 import js.objects.JsPlainObject
-import kotlin.js.JsModule
-import kotlin.js.definedExternally
 
 /**
  * An interval defined by a start and a stop time; optionally including those times as part of the interval.

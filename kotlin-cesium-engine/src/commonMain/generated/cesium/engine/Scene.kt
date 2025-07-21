@@ -11,9 +11,6 @@ import js.promise.Promise
 import seskar.js.JsAsync
 import web.dom.Element
 import web.html.HTMLCanvasElement
-import kotlin.js.JsModule
-import kotlin.js.JsName
-import kotlin.js.definedExternally
 
 /**
  * The container for all 3D graphical objects and state in a Cesium virtual scene.  Generally,

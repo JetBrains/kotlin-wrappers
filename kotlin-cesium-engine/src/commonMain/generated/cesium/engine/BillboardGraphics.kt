@@ -4,9 +4,6 @@
 
 package cesium.engine
 
-import kotlin.js.JsModule
-import kotlin.js.definedExternally
-
 /**
  * Describes a two dimensional icon located at the position of the containing [Entity].
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BillboardGraphics.html">Online Documentation</a>

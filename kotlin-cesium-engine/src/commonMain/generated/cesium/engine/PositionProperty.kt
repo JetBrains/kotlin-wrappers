@@ -4,9 +4,6 @@
 
 package cesium.engine
 
-import kotlin.js.JsModule
-import kotlin.js.definedExternally
-
 /**
  * The interface for all [Property] objects that define a world
  * location as a [Cartesian3] with an associated [ReferenceFrame].

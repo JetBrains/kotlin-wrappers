@@ -6,8 +6,6 @@ package cesium.engine
 
 import js.core.JsAny
 import js.objects.JsPlainObject
-import kotlin.js.JsModule
-import kotlin.js.definedExternally
 
 /**
  * The camera is defined by a position, orientation, and view frustum.

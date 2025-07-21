@@ -4,8 +4,6 @@
 
 package cesium.engine
 
-import kotlin.js.JsModule
-
 /**
  * Constants used to indicated what part of the sensor volume to display.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#SensorVolumePortionToDisplay">Online Documentation</a>

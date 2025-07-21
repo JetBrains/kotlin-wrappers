@@ -4,8 +4,6 @@
 
 package cesium.engine
 
-import kotlin.js.JsModule
-
 /**
  * Returns a shader statement that applies the inverse of the
  * normalization, based on the given component type

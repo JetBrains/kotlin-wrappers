@@ -4,9 +4,6 @@
 
 package cesium.engine
 
-import kotlin.js.JsModule
-import kotlin.js.definedExternally
-
 /**
  * Describes graphics for a [Rectangle].
  * The rectangle conforms to the curvature of the globe and can be placed on the surface or

@@ -4,9 +4,6 @@
 
 package cesium.engine
 
-import kotlin.js.JsModule
-import kotlin.js.definedExternally
-
 /**
  * Represents desired clock settings for a particular [DataSource].  These settings may be applied
  * to the [Clock] when the DataSource is loaded.

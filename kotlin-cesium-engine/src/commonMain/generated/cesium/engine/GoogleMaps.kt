@@ -4,8 +4,6 @@
 
 package cesium.engine
 
-import kotlin.js.JsModule
-
 /**
  * Default settings for accessing the Google Maps API.
  * <br/>

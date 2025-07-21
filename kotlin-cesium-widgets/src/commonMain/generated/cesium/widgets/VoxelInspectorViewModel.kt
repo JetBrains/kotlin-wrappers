@@ -6,7 +6,6 @@ package cesium.widgets
 
 import cesium.engine.Scene
 import cesium.engine.VoxelPrimitive
-import kotlin.js.JsModule
 
 /**
  * The view model for [VoxelInspector].

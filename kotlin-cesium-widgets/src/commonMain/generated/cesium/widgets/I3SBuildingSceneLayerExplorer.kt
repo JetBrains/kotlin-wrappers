@@ -5,7 +5,6 @@
 package cesium.widgets
 
 import cesium.engine.I3SDataProvider
-import kotlin.js.JsModule
 
 /**
  * I3S Building Scene Layer widget

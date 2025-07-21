@@ -5,8 +5,6 @@
 package cesium.engine
 
 import js.errors.JsError
-import kotlin.js.JsModule
-import kotlin.js.definedExternally
 
 /**
  * Constructs an exception object that is thrown due to a developer error, e.g., invalid argument,

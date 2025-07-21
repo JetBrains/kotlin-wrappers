@@ -6,8 +6,6 @@ package cesium.engine
 
 import js.array.ReadonlyArray
 import js.core.JsAny
-import kotlin.js.JsModule
-import kotlin.js.definedExternally
 
 /**
  * The culling volume defined by planes.

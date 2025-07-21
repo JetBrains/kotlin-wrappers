@@ -8,8 +8,6 @@ import js.buffer.ArrayBuffer
 import js.core.JsAny
 import js.promise.Promise
 import seskar.js.JsAsync
-import kotlin.js.JsModule
-import kotlin.js.JsName
 
 /**
  * <div class="notice">

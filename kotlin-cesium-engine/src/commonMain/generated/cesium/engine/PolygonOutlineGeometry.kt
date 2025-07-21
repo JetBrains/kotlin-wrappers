@@ -7,8 +7,6 @@ package cesium.engine
 import js.array.ReadonlyArray
 import js.core.JsDouble
 import js.objects.JsPlainObject
-import kotlin.js.JsModule
-import kotlin.js.definedExternally
 
 /**
  * A description of the outline of a polygon on the ellipsoid. The polygon is defined by a polygon hierarchy.

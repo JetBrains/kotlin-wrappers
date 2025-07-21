@@ -6,8 +6,6 @@ package cesium.engine
 
 import js.core.JsAny
 import js.objects.JsPlainObject
-import kotlin.js.JsModule
-import kotlin.js.definedExternally
 
 /**
  * A tiling scheme for geometry referenced to a [WebMercatorProjection], EPSG:3857.  This is

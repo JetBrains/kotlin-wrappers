@@ -7,8 +7,6 @@ package cesium.engine
 import js.objects.JsPlainObject
 import js.promise.Promise
 import seskar.js.JsAsync
-import kotlin.js.JsModule
-import kotlin.js.definedExternally
 
 /**
  * Creates a [Cesium3DTileset] instance for the

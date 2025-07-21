@@ -4,8 +4,6 @@
 
 package cesium.engine
 
-import kotlin.js.JsModule
-
 /**
  * Reports the availability of tiles in a [TilingScheme].
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/TileAvailability.html">Online Documentation</a>

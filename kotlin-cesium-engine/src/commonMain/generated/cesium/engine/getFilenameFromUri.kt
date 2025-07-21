@@ -4,8 +4,6 @@
 
 package cesium.engine
 
-import kotlin.js.JsModule
-
 /**
  * Given a URI, returns the last segment of the URI, removing any path or query information.
  * ```

@@ -4,8 +4,6 @@
 
 package cesium.engine
 
-import kotlin.js.JsModule
-
 /**
  * Specifies whether the object casts or receives shadows from light sources when
  * shadows are enabled.

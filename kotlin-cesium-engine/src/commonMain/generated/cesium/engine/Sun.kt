@@ -4,8 +4,6 @@
 
 package cesium.engine
 
-import kotlin.js.JsModule
-
 /**
  * Draws a sun billboard.
  * This is only supported in 3D and Columbus view.

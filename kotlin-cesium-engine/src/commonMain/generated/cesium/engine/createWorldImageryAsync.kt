@@ -7,8 +7,6 @@ package cesium.engine
 import js.objects.JsPlainObject
 import js.promise.Promise
 import seskar.js.JsAsync
-import kotlin.js.JsModule
-import kotlin.js.definedExternally
 
 /**
  * Creates an [IonImageryProvider] instance for ion's default global base imagery layer, currently Bing Maps.

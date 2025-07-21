@@ -7,7 +7,6 @@ package cesium.engine
 import js.array.ReadonlyArray
 import js.core.JsDouble
 import js.objects.JsPlainObject
-import kotlin.js.JsModule
 
 /**
  * Describes a cube centered at the origin.

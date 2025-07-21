@@ -4,8 +4,6 @@
 
 package cesium.engine
 
-import kotlin.js.JsModule
-
 /**
  * This enumerated type is for representing keyboard modifiers. These are keys
  * that are held down in addition to other event types.

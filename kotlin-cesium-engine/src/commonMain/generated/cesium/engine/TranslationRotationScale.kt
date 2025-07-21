@@ -4,9 +4,6 @@
 
 package cesium.engine
 
-import kotlin.js.JsModule
-import kotlin.js.definedExternally
-
 /**
  * An affine transformation defined by a translation, rotation, and scale.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/TranslationRotationScale.html">Online Documentation</a>

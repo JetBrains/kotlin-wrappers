@@ -6,8 +6,6 @@ package cesium.engine
 
 import js.objects.JsPlainObject
 import web.html.HTMLCanvasElement
-import kotlin.js.JsModule
-import kotlin.js.definedExternally
 
 /**
  * Writes the given text into a new canvas.  The canvas will be sized to fit the text.

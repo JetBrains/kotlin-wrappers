@@ -9,7 +9,6 @@ import js.buffer.ArrayBuffer
 import js.core.JsAny
 import js.objects.JsPlainObject
 import js.promise.Promise
-import kotlin.js.JsModule
 
 /**
  * Terrain data for a single tile from a Google Earth Enterprise server.

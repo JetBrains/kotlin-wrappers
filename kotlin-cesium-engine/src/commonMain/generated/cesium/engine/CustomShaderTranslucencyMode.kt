@@ -4,8 +4,6 @@
 
 package cesium.engine
 
-import kotlin.js.JsModule
-
 /**
  * An enum for controling how [CustomShader] handles translucency compared with the original
  * primitive.

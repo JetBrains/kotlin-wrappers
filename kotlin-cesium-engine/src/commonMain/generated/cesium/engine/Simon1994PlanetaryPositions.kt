@@ -4,9 +4,6 @@
 
 package cesium.engine
 
-import kotlin.js.JsModule
-import kotlin.js.definedExternally
-
 /**
  * Contains functions for finding the Cartesian coordinates of the sun and the moon in the
  * Earth-centered inertial frame.

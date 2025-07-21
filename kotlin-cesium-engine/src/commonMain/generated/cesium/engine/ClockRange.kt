@@ -4,8 +4,6 @@
 
 package cesium.engine
 
-import kotlin.js.JsModule
-
 /**
  * Constants used by [Clock.tick] to determine behavior
  * when [Clock.startTime] or [Clock.stopTime] is reached.

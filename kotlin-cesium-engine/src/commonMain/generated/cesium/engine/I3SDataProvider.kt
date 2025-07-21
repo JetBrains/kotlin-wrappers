@@ -12,9 +12,6 @@ import js.objects.JsPlainObject
 import js.promise.Promise
 import js.promise.PromiseResult
 import seskar.js.JsAsync
-import kotlin.js.JsModule
-import kotlin.js.JsName
-import kotlin.js.definedExternally
 
 /**
  * An I3SDataProvider is the main public class for I3S support. The url option

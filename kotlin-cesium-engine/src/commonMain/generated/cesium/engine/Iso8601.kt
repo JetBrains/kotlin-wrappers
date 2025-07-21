@@ -4,8 +4,6 @@
 
 package cesium.engine
 
-import kotlin.js.JsModule
-
 /**
  * Constants related to ISO8601 support.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Iso8601.html">Online Documentation</a>

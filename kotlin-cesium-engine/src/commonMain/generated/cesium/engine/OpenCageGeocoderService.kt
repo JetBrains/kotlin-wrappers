@@ -8,9 +8,6 @@ import js.array.ReadonlyArray
 import js.core.JsAny
 import js.promise.Promise
 import seskar.js.JsAsync
-import kotlin.js.JsModule
-import kotlin.js.JsName
-import kotlin.js.definedExternally
 
 /**
  * Provides geocoding via a [OpenCage](https://opencagedata.com/) server.

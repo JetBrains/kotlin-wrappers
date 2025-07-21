@@ -4,9 +4,6 @@
 
 package cesium.engine
 
-import kotlin.js.JsModule
-import kotlin.js.definedExternally
-
 /**
  * Describes a polygon defined by an hierarchy of linear rings which make up the outer shape and any nested holes.
  * The polygon conforms to the curvature of the globe and can be placed on the surface or

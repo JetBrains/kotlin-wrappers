@@ -4,9 +4,6 @@
 
 package cesium.engine
 
-import kotlin.js.JsModule
-import kotlin.js.definedExternally
-
 /**
  * A 3D model based on [glTF](https://github.com/KhronosGroup/glTF), the runtime asset format for WebGL, OpenGL ES, and OpenGL.
  * The position and orientation of the model is determined by the containing [Entity].

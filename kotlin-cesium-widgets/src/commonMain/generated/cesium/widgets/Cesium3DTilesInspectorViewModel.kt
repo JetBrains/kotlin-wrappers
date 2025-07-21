@@ -9,7 +9,6 @@ import js.array.ReadonlyArray
 import js.core.JsAny
 import js.core.JsString
 import web.html.HTMLElement
-import kotlin.js.JsModule
 
 /**
  * The view model for [Cesium3DTilesInspector].

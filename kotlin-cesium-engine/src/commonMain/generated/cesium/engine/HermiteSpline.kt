@@ -8,8 +8,6 @@ import js.array.ReadonlyArray
 import js.core.JsAny
 import js.core.JsDouble
 import js.objects.JsPlainObject
-import kotlin.js.JsModule
-import kotlin.js.definedExternally
 
 /**
  * A Hermite spline is a cubic interpolating spline. Points, incoming tangents, outgoing tangents, and times

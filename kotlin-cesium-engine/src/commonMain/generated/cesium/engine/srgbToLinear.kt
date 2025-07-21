@@ -4,8 +4,6 @@
 
 package cesium.engine
 
-import kotlin.js.JsModule
-
 /**
  * Converts the value from sRGB color space to linear color space.
  * ```

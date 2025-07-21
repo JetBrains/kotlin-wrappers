@@ -4,9 +4,6 @@
 
 package cesium.engine
 
-import kotlin.js.JsModule
-import kotlin.js.definedExternally
-
 /**
  * A position defined by longitude, latitude, and height.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cartographic.html">Online Documentation</a>

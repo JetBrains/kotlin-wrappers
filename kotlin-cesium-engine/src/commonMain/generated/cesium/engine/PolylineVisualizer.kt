@@ -4,9 +4,6 @@
 
 package cesium.engine
 
-import kotlin.js.JsModule
-import kotlin.js.definedExternally
-
 /**
  * A visualizer for polylines represented by [Primitive] instances.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PolylineVisualizer.html">Online Documentation</a>

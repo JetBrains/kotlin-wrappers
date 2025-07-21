@@ -6,7 +6,6 @@ package cesium.engine
 
 import js.array.ReadonlyArray
 import js.core.JsDouble
-import kotlin.js.JsModule
 
 /**
  * Defines functions for 3rd order polynomial functions of one variable with only real coefficients.

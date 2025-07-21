@@ -4,8 +4,6 @@
 
 package cesium.engine
 
-import kotlin.js.JsModule
-
 /**
  * An enum of the basic GLSL uniform types. These can be used with
  * [CustomShader] to declare user-defined uniforms.

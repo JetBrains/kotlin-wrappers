@@ -4,8 +4,6 @@
 
 package cesium.engine
 
-import kotlin.js.JsModule
-
 /**
  * This enumerated type is used in determining to what extent an object, the occludee,
  * is visible during horizon culling. An occluder may fully block an occludee, in which case

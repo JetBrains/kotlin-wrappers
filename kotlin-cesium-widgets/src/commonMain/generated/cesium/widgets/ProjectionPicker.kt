@@ -6,7 +6,6 @@ package cesium.widgets
 
 import cesium.engine.Scene
 import web.dom.Element
-import kotlin.js.JsModule
 
 /**
  * The ProjectionPicker is a single button widget for switching between perspective and orthographic projections.

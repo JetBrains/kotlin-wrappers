@@ -4,8 +4,6 @@
 
 package cesium.engine
 
-import kotlin.js.JsModule
-
 /**
  * A simple proxy that appends the desired resource as the sole query parameter
  * to the given proxy URL.

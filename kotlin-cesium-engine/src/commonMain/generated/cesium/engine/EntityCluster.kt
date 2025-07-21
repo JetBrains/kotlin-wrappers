@@ -4,8 +4,6 @@
 
 package cesium.engine
 
-import kotlin.js.JsModule
-
 /**
  * Defines how screen space objects (billboards, points, labels) are clustered.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/EntityCluster.html">Online Documentation</a>

@@ -4,9 +4,6 @@
 
 package cesium.engine
 
-import kotlin.js.JsModule
-import kotlin.js.definedExternally
-
 /**
  * A [Property] that produces [TranslationRotationScale] data.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/NodeTransformationProperty.html">Online Documentation</a>

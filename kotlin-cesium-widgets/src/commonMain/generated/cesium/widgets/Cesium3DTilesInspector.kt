@@ -6,7 +6,6 @@ package cesium.widgets
 
 import cesium.engine.Scene
 import web.dom.Element
-import kotlin.js.JsModule
 
 /**
  * Inspector widget to aid in debugging 3D Tiles

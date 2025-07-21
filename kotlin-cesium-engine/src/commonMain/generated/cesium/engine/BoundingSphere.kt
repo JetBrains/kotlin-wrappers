@@ -8,8 +8,6 @@ import cesium.engine.BoundingSphere.Companion.transform
 import js.array.ReadonlyArray
 import js.core.JsAny
 import js.core.JsDouble
-import kotlin.js.JsModule
-import kotlin.js.definedExternally
 
 /**
  * A bounding sphere with a center and a radius.

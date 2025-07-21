@@ -6,8 +6,6 @@ package cesium.widgets
 
 import cesium.engine.Scene
 import web.dom.Element
-import kotlin.js.JsModule
-import kotlin.js.definedExternally
 
 /**
  * The view model for [VRButton].

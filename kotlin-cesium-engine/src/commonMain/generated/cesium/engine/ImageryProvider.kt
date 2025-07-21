@@ -8,9 +8,6 @@ import js.array.ReadonlyArray
 import js.core.JsAny
 import js.promise.Promise
 import seskar.js.JsAsync
-import kotlin.js.JsModule
-import kotlin.js.JsName
-import kotlin.js.definedExternally
 
 /**
  * Provides imagery to be displayed on the surface of an ellipsoid.  This type describes an

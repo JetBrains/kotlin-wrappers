@@ -6,7 +6,6 @@ package cesium.widgets
 
 import js.core.JsAny
 import js.objects.JsPlainObject
-import kotlin.js.JsModule
 
 /**
  * A view model that represents each item in the [BaseLayerPicker].

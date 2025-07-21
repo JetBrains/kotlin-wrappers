@@ -5,7 +5,6 @@
 package cesium.engine
 
 import js.objects.JsPlainObject
-import kotlin.js.JsModule
 
 /**
  * Visualizes a collection of [DataSource] instances.

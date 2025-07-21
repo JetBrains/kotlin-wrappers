@@ -5,7 +5,6 @@
 package cesium.engine
 
 import js.typedarrays.Uint8Array
-import kotlin.js.JsModule
 
 /**
  * Describes a compressed texture and contains a compressed texture buffer.

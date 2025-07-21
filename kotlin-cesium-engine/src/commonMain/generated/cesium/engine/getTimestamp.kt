@@ -4,8 +4,6 @@
 
 package cesium.engine
 
-import kotlin.js.JsModule
-
 /**
  * Gets a timestamp that can be used in measuring the time between events.  Timestamps
  * are expressed in milliseconds, but it is not specified what the milliseconds are

@@ -5,8 +5,6 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
-import kotlin.js.JsModule
-import kotlin.js.definedExternally
 
 /**
  * A [Property] whose value is an array whose items are the computed value

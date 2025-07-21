@@ -6,7 +6,6 @@ package cesium.engine
 
 import js.array.ReadonlyArray
 import js.core.JsAny
-import kotlin.js.JsModule
 
 /**
  * Finds an item in a sorted array.

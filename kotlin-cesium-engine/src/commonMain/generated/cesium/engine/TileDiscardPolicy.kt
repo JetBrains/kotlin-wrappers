@@ -5,7 +5,6 @@
 package cesium.engine
 
 import web.html.HTMLImageElement
-import kotlin.js.JsModule
 
 /**
  * A policy for discarding tile images according to some criteria.  This type describes an

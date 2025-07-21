@@ -7,7 +7,6 @@ package cesium.engine
 import js.array.ReadonlyArray
 import js.core.JsAny
 import js.objects.JsPlainObject
-import kotlin.js.JsModule
 
 /**
  * A metadata enum.

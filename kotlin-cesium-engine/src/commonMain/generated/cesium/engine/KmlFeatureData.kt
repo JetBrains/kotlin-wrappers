@@ -5,7 +5,6 @@
 package cesium.engine
 
 import js.objects.JsPlainObject
-import kotlin.js.JsModule
 
 /**
  * Contains KML Feature data loaded into the `Entity.kml` property by [KmlDataSource].

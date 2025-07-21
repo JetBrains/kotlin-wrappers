@@ -6,7 +6,6 @@ package cesium.engine
 
 import js.objects.JsPlainObject
 import js.typedarrays.Uint8Array
-import kotlin.js.JsModule
 
 /**
  * A simple struct that serves as a value of a `sampler2D`-valued

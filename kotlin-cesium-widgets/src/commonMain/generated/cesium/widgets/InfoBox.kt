@@ -6,7 +6,6 @@ package cesium.widgets
 
 import web.dom.Element
 import web.html.HTMLIFrameElement
-import kotlin.js.JsModule
 
 /**
  * A widget for displaying information or a description.

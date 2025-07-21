@@ -8,7 +8,6 @@ import js.core.JsAny
 import js.core.JsString
 import js.objects.JsPlainObject
 import js.objects.ReadonlyRecord
-import kotlin.js.JsModule
 
 /**
  * A metadata class.

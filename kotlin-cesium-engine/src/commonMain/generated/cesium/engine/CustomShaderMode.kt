@@ -4,8 +4,6 @@
 
 package cesium.engine
 
-import kotlin.js.JsModule
-
 /**
  * An enum describing how the [CustomShader] will be added to the
  * fragment shader. This determines how the shader interacts with the material.

@@ -6,7 +6,6 @@ package cesium.engine
 
 import js.array.ReadonlyArray
 import js.objects.JsPlainObject
-import kotlin.js.JsModule
 
 /**
  * The GPM metadata for a Ground-Space Indirect implementation stored

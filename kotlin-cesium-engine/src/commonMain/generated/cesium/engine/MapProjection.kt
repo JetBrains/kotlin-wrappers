@@ -4,9 +4,6 @@
 
 package cesium.engine
 
-import kotlin.js.JsModule
-import kotlin.js.definedExternally
-
 /**
  * Defines how geodetic ellipsoid coordinates ([Cartographic]) project to a
  * flat map like Cesium's 2D and Columbus View modes.

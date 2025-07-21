@@ -4,8 +4,6 @@
 
 package cesium.engine
 
-import kotlin.js.JsModule
-
 /**
  * Given a relative URL under the Cesium base URL, returns an absolute URL.
  * ```

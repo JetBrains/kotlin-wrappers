@@ -6,7 +6,6 @@ package cesium.engine
 
 import js.core.JsAny
 import web.images.ImageData
-import kotlin.js.JsModule
 
 /**
  * Extract a pixel array from a loaded image.  Draws the image

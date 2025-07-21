@@ -8,9 +8,6 @@ import js.objects.JsPlainObject
 import js.promise.Promise
 import seskar.js.JsAsync
 import web.html.HTMLImageElement
-import kotlin.js.JsModule
-import kotlin.js.JsName
-import kotlin.js.definedExternally
 
 /**
  * Provides functionality for ImageryProviders that have time dynamic imagery

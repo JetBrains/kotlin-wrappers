@@ -7,7 +7,6 @@ package cesium.widgets
 import cesium.engine.DebugModelMatrixPrimitive
 import cesium.engine.Scene
 import web.dom.Element
-import kotlin.js.JsModule
 
 /**
  * The view model for [CesiumInspector].

@@ -4,8 +4,6 @@
 
 package cesium.engine
 
-import kotlin.js.JsModule
-
 /**
  * <div class="notice">
  * A cloud is created and its initial properties are set by calling [CloudCollection.add].

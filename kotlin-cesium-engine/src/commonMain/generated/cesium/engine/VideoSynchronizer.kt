@@ -5,7 +5,6 @@
 package cesium.engine
 
 import web.html.HTMLVideoElement
-import kotlin.js.JsModule
 
 /**
  * Synchronizes a video element with a simulation clock.

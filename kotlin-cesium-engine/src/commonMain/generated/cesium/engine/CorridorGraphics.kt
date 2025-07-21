@@ -4,9 +4,6 @@
 
 package cesium.engine
 
-import kotlin.js.JsModule
-import kotlin.js.definedExternally
-
 /**
  * Describes a corridor, which is a shape defined by a centerline and width that
  * conforms to the curvature of the globe. It can be placed on the surface or at altitude

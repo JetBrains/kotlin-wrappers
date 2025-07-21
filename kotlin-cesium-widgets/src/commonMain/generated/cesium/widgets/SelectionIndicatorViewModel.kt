@@ -7,7 +7,6 @@ package cesium.widgets
 import cesium.engine.Cartesian3
 import cesium.engine.Scene
 import web.dom.Element
-import kotlin.js.JsModule
 
 /**
  * The view model for [SelectionIndicator].

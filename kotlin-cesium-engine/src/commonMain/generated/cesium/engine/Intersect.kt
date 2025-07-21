@@ -4,8 +4,6 @@
 
 package cesium.engine
 
-import kotlin.js.JsModule
-
 /**
  * This enumerated type is used in determining where, relative to the frustum, an
  * object is located. The object can either be fully contained within the frustum (INSIDE),

@@ -6,8 +6,6 @@ package cesium.engine
 
 import js.core.JsAny
 import js.errors.JsError
-import kotlin.js.JsModule
-import kotlin.js.definedExternally
 
 /**
  * Provides details about an error that occurred in an [ImageryProvider] or a [TerrainProvider].

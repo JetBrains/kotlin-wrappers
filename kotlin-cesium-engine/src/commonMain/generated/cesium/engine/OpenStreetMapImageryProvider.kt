@@ -5,7 +5,6 @@
 package cesium.engine
 
 import js.objects.JsPlainObject
-import kotlin.js.JsModule
 
 /**
  * An imagery provider that provides tiled imagery hosted by OpenStreetMap

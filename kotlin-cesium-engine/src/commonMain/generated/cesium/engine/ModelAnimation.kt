@@ -4,8 +4,6 @@
 
 package cesium.engine
 
-import kotlin.js.JsModule
-
 /**
  * <div class="notice">
  * Create animations by calling [ModelAnimationCollection.add]. Do not call the constructor directly.

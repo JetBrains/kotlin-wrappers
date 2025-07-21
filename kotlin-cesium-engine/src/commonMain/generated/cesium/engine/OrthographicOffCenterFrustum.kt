@@ -4,9 +4,6 @@
 
 package cesium.engine
 
-import kotlin.js.JsModule
-import kotlin.js.definedExternally
-
 /**
  * The viewing frustum is defined by 6 planes.
  * Each plane is represented by a [Cartesian4] object, where the x, y, and z components

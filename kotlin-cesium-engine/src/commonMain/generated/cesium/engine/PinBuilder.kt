@@ -6,7 +6,6 @@ package cesium.engine
 
 import js.promise.PromiseResult
 import web.html.HTMLCanvasElement
-import kotlin.js.JsModule
 
 /**
  * A utility class for generating custom map pins as canvas elements.

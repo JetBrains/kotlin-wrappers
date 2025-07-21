@@ -4,8 +4,6 @@
 
 package cesium.engine
 
-import kotlin.js.JsModule
-
 /**
  * Base class for proxying requested made by [Resource].
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Proxy.html">Online Documentation</a>
