@@ -8,13 +8,11 @@ tasks.named("generateDeclarations") {
 
         delete(sourceDir)
 
-        /*
         val definitionFile = nodeModules.resolve("@types/vscode/index.d.ts")
 
         karakum.vscode.generateKotlinDeclarations(
-            definitionFile = definitionFile,
-            sourceDir = sourceDir,
+            definitionsFile = definitionFile,
+            sourceDir = sourceDir.asFile,
         )
-        */
     }
 }
