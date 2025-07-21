@@ -248,6 +248,9 @@ includeKarakum("kotlin-typescript")
 // Kotlin/JS: @vercel/ncc wrappers
 include("kotlin-vercel-ncc")
 
+// Kotlin/JS: VS Code wrappers
+include("kotlin-vscode")
+
 // Kotlin/JS: Common web wrappers
 include("kotlin-web")
 
