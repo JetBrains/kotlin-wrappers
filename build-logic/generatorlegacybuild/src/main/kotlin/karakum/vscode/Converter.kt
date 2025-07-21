@@ -48,17 +48,7 @@ private fun parseDeclaration(
         .substringBefore(" ")
 
     val body = when (type) {
-        "enum" -> source
-            .replaceFirst("\nexport enum ", "\nsealed /* enum */\nexternal interface ")
-            .replaceFirst("{\n", "{\ncompanion object {")
-            .replaceFirst("\n}", "\n}\n}")
-            .splitToSequence("\n")
-            .map {
-                if (" = " in it) {
-                    "val " + it.removeSuffix(",").replace(" = ", ": $name // ")
-                } else it
-            }
-            .joinToString("\n")
+        "enum" -> convertEnum(source, name)
 
         else -> sequenceOf(
             """
@@ -75,3 +65,19 @@ private fun parseDeclaration(
 
     return ConversionResult(name, body)
 }
+
+private fun convertEnum(
+    source: String,
+    name: String,
+): String =
+    source
+        .replaceFirst("\nexport enum ", "\nsealed /* enum */\nexternal interface ")
+        .replaceFirst("{\n", "{\ncompanion object {")
+        .replaceFirst("\n}", "\n}\n}")
+        .splitToSequence("\n")
+        .map {
+            if (" = " in it) {
+                "val " + it.removeSuffix(",").replace(" = ", ": $name // ")
+            } else it
+        }
+        .joinToString("\n")
