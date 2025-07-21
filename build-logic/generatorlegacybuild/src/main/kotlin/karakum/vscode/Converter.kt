@@ -50,17 +50,7 @@ private fun parseDeclaration(
     val body = when (type) {
         "enum" -> convertEnum(source, name)
 
-        else -> sequenceOf(
-            """
-            /**
-            // ORIGINAL SOURCE
-            """.trimIndent(),
-            source,
-            """
-            // ORIGINAL SOURCE
-            **/
-            """.trimIndent()
-        ).joinToString("\n\n")
+        else -> commentedOriginal(source)
     }
 
     return ConversionResult(name, body)
@@ -81,3 +71,18 @@ private fun convertEnum(
             } else it
         }
         .joinToString("\n")
+
+private fun commentedOriginal(
+    source: String,
+): String =
+    sequenceOf(
+        """
+            /**
+            // ORIGINAL SOURCE
+            """.trimIndent(),
+        source,
+        """
+            // ORIGINAL SOURCE
+            **/
+            """.trimIndent()
+    ).joinToString("\n\n")
