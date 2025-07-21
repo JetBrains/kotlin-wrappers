@@ -8,8 +8,8 @@ package cesium.engine
  * Underlying geocoding services that can be used via Cesium ion.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#IonGeocodeProviderType">Online Documentation</a>
  */
-external class IonGeocodeProviderType
-private constructor() {
+sealed /* enum */
+external interface IonGeocodeProviderType {
     companion object {
 
         /**

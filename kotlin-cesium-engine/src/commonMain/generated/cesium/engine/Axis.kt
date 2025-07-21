@@ -8,8 +8,8 @@ package cesium.engine
  * An enum describing the x, y, and z axes and helper conversion functions.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#Axis">Online Documentation</a>
  */
-external class Axis
-private constructor() {
+sealed /* enum */
+external interface Axis {
     companion object {
 
         /**

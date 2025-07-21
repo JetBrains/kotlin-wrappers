@@ -8,8 +8,8 @@ package cesium.engine
  * Determines the function used to compare two depths for the depth test.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#DepthFunction">Online Documentation</a>
  */
-external class DepthFunction
-private constructor() {
+sealed /* enum */
+external interface DepthFunction {
     companion object {
 
         /**

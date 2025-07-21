@@ -14,8 +14,8 @@ package cesium.engine
  * specifications.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#WebGLConstants">Online Documentation</a>
  */
-external class WebGLConstants
-private constructor() {
+sealed /* enum */
+external interface WebGLConstants {
     companion object {
 
         val DEPTH_BUFFER_BIT: WebGLConstants

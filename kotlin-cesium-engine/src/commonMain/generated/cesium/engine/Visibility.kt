@@ -11,8 +11,8 @@ package cesium.engine
  * leading to full visibility.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#Visibility">Online Documentation</a>
  */
-external class Visibility
-private constructor() {
+sealed /* enum */
+external interface Visibility {
     companion object {
 
         /**

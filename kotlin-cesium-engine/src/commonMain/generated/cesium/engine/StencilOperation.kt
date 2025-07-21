@@ -8,8 +8,8 @@ package cesium.engine
  * Determines the action taken based on the result of the stencil test.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#StencilOperation">Online Documentation</a>
  */
-external class StencilOperation
-private constructor() {
+sealed /* enum */
+external interface StencilOperation {
     companion object {
 
         /**

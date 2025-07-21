@@ -8,8 +8,8 @@ package cesium.engine
  * The type of a geometric primitive, i.e., points, lines, and triangles.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#PrimitiveType">Online Documentation</a>
  */
-external class PrimitiveType
-private constructor() {
+sealed /* enum */
+external interface PrimitiveType {
     companion object {
 
         /**

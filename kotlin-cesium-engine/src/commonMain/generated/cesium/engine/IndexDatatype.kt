@@ -9,8 +9,8 @@ package cesium.engine
  * `type` parameter of [drawElements](http://www.khronos.org/opengles/sdk/docs/man/xhtml/glDrawElements.xml).
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#IndexDatatype">Online Documentation</a>
  */
-external class IndexDatatype
-private constructor() {
+sealed /* enum */
+external interface IndexDatatype {
     companion object {
 
         /**

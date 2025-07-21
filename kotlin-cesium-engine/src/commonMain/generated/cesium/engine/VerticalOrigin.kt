@@ -11,8 +11,8 @@ package cesium.engine
  * the anchor position.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#VerticalOrigin">Online Documentation</a>
  */
-external class VerticalOrigin
-private constructor() {
+sealed /* enum */
+external interface VerticalOrigin {
     companion object {
 
         /**

@@ -8,8 +8,8 @@ package cesium.engine
  * An enum of metadata component types.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#MetadataComponentType">Online Documentation</a>
  */
-external class MetadataComponentType
-private constructor() {
+sealed /* enum */
+external interface MetadataComponentType {
     companion object {
 
         /**

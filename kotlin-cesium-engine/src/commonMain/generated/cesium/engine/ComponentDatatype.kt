@@ -9,8 +9,8 @@ package cesium.engine
  * which form attributes, which form vertices.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#ComponentDatatype">Online Documentation</a>
  */
-external class ComponentDatatype
-private constructor() {
+sealed /* enum */
+external interface ComponentDatatype {
     companion object {
 
         /**

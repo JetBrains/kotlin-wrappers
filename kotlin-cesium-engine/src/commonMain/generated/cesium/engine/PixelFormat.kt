@@ -8,8 +8,8 @@ package cesium.engine
  * The format of a pixel, i.e., the number of components it has and what they represent.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#PixelFormat">Online Documentation</a>
  */
-external class PixelFormat
-private constructor() {
+sealed /* enum */
+external interface PixelFormat {
     companion object {
 
         /**

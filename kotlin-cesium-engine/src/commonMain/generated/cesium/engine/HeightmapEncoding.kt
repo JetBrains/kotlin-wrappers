@@ -8,8 +8,8 @@ package cesium.engine
  * The encoding that is used for a heightmap
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#HeightmapEncoding">Online Documentation</a>
  */
-external class HeightmapEncoding
-private constructor() {
+sealed /* enum */
+external interface HeightmapEncoding {
     companion object {
 
         /**

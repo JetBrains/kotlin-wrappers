@@ -8,8 +8,8 @@ package cesium.engine
  * Constants for identifying well-known tracking reference frames.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#TrackingReferenceFrame">Online Documentation</a>
  */
-external class TrackingReferenceFrame
-private constructor() {
+sealed /* enum */
+external interface TrackingReferenceFrame {
     companion object {
 
         /**

@@ -8,8 +8,8 @@ package cesium.engine
  * Enumerates all possible filters used when minifying WebGL textures.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#TextureMinificationFilter">Online Documentation</a>
  */
-external class TextureMinificationFilter
-private constructor() {
+sealed /* enum */
+external interface TextureMinificationFilter {
     companion object {
 
         /**

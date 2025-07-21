@@ -9,8 +9,8 @@ package cesium.engine
  * one or more components of type [MetadataComponentType]
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#MetadataType">Online Documentation</a>
  */
-external class MetadataType
-private constructor() {
+sealed /* enum */
+external interface MetadataType {
     companion object {
 
         /**

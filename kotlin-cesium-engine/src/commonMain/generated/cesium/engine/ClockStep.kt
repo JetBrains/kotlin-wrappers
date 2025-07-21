@@ -9,8 +9,8 @@ package cesium.engine
  * to [Clock.tick].
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#ClockStep">Online Documentation</a>
  */
-external class ClockStep
-private constructor() {
+sealed /* enum */
+external interface ClockStep {
     companion object {
 
         /**

@@ -8,8 +8,8 @@ package cesium.engine
  * Determines how input texture to a [PostProcessStage] is sampled.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#PostProcessStageSampleMode">Online Documentation</a>
  */
-external class PostProcessStageSampleMode
-private constructor() {
+sealed /* enum */
+external interface PostProcessStageSampleMode {
     companion object {
 
         /**

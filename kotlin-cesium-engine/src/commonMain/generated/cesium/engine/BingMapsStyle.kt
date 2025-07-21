@@ -8,8 +8,8 @@ package cesium.engine
  * The types of imagery provided by Bing Maps.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#BingMapsStyle">Online Documentation</a>
  */
-external class BingMapsStyle
-private constructor() {
+sealed /* enum */
+external interface BingMapsStyle {
     companion object {
 
         /**

@@ -8,8 +8,8 @@ package cesium.engine
  * This enumerated type is for classifying mouse events: down, up, click, double click, move and move while a button is held down.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#ScreenSpaceEventType">Online Documentation</a>
  */
-external class ScreenSpaceEventType
-private constructor() {
+sealed /* enum */
+external interface ScreenSpaceEventType {
     companion object {
 
         /**

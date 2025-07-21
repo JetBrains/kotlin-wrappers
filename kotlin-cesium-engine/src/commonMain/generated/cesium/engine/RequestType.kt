@@ -8,8 +8,8 @@ package cesium.engine
  * An enum identifying the type of request. Used for finer grained logging and priority sorting.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#RequestType">Online Documentation</a>
  */
-external class RequestType
-private constructor() {
+sealed /* enum */
+external interface RequestType {
     companion object {
 
         /**

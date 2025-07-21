@@ -8,8 +8,8 @@ package cesium.engine
  * Represents the position relative to the terrain.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#HeightReference">Online Documentation</a>
  */
-external class HeightReference
-private constructor() {
+sealed /* enum */
+external interface HeightReference {
     companion object {
 
         /**

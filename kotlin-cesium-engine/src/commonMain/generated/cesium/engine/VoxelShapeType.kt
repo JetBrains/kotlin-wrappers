@@ -8,8 +8,8 @@ package cesium.engine
  * An enum of voxel shapes. The shape controls how the voxel grid is mapped to 3D space.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/global.html#VoxelShapeType">Online Documentation</a>
  */
-external class VoxelShapeType
-private constructor() {
+sealed /* enum */
+external interface VoxelShapeType {
     companion object {
 
         /**
