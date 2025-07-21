@@ -13,7 +13,7 @@ internal fun generateKotlinDeclarations(
 
     for ((name, body) in parseDeclarations(definitionsFile)) {
         val annotations = if ("export interface " !in body) {
-            """@JsModule("vscode")"""
+            """@file:JsModule("vscode")"""
         } else ""
 
         targetDir.resolve("$name.kt")
