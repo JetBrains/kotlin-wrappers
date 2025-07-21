@@ -15,13 +15,13 @@ import kotlin.js.definedExternally
  */
 open external class DOMException(
     /**
-     * The **`message`** read-only property of the a message or description associated with the given error name.
+     * The **`message`** read-only property of the DOMException interface returns a string representing a message or description associated with the given error name.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMException/message)
      */
     override val message: String = definedExternally,
     /**
-     * The **`name`** read-only property of the one of the strings associated with an error name.
+     * The **`name`** read-only property of the DOMException interface returns a string that contains one of the strings associated with an error name.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMException/name)
      */

@@ -13,28 +13,28 @@ import kotlin.js.definedExternally
 open external class IDBKeyRange
 private constructor() {
     /**
-     * The **`lower`** read-only property of the The lower bound of the key range (can be any type.) The following example illustrates how you'd use a key range.
+     * The **`lower`** read-only property of the IDBKeyRange interface returns the lower bound of the key range.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBKeyRange/lower)
      */
     val lower: JsAny?
 
     /**
-     * The **`lowerOpen`** read-only property of the lower-bound value is included in the key range.
+     * The **`lowerOpen`** read-only property of the IDBKeyRange interface returns a boolean indicating whether the lower-bound value is included in the key range.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBKeyRange/lowerOpen)
      */
     val lowerOpen: Boolean
 
     /**
-     * The **`upper`** read-only property of the The upper bound of the key range (can be any type.) The following example illustrates how you'd use a key range.
+     * The **`upper`** read-only property of the IDBKeyRange interface returns the upper bound of the key range.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBKeyRange/upper)
      */
     val upper: JsAny?
 
     /**
-     * The **`upperOpen`** read-only property of the upper-bound value is included in the key range.
+     * The **`upperOpen`** read-only property of the IDBKeyRange interface returns a boolean indicating whether the upper-bound value is included in the key range.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBKeyRange/upperOpen)
      */
@@ -61,7 +61,7 @@ private constructor() {
         ): IDBKeyRange
 
         /**
-         * The **`lowerBound()`** static method of the By default, it includes the lower endpoint value and is closed.
+         * The **`lowerBound()`** static method of the IDBKeyRange interface creates a new key range with only a lower bound.
          *
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBKeyRange/lowerBound_static)
          */
@@ -78,7 +78,7 @@ private constructor() {
         fun only(value: JsAny?): IDBKeyRange
 
         /**
-         * The **`upperBound()`** static method of the it includes the upper endpoint value and is closed.
+         * The **`upperBound()`** static method of the IDBKeyRange interface creates a new upper-bound key range.
          *
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBKeyRange/upperBound_static)
          */

@@ -22,7 +22,7 @@ private constructor() {
     val keySystem: String
 
     /**
-     * The `MediaKeySystemAccess.createMediaKeys()` method returns a ```js-nolint createMediaKeys() ``` None.
+     * The `MediaKeySystemAccess.createMediaKeys()` method returns a Promise that resolves to a new MediaKeys object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeySystemAccess/createMediaKeys)
      */
@@ -30,7 +30,7 @@ private constructor() {
     fun createMediaKeysAsync(): Promise<MediaKeys>
 
     /**
-     * The **`getConfiguration()`** method of the MediaKeySystemAccess interface returns an object with the supported combination of the following configuration options: - `initDataTypes` [MISSING: ReadOnlyInline] - : Returns a list of supported initialization data type names.
+     * The **`getConfiguration()`** method of the MediaKeySystemAccess interface returns an object with the supported combination of the following configuration options:
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeySystemAccess/getConfiguration)
      */
@@ -38,7 +38,7 @@ private constructor() {
 }
 
 /**
- * The `MediaKeySystemAccess.createMediaKeys()` method returns a ```js-nolint createMediaKeys() ``` None.
+ * The `MediaKeySystemAccess.createMediaKeys()` method returns a Promise that resolves to a new MediaKeys object.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeySystemAccess/createMediaKeys)
  */

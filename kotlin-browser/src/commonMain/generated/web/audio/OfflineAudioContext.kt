@@ -24,7 +24,7 @@ open external class OfflineAudioContext(
     )
 
     /**
-     * The **`length`** property of the the buffer in sample-frames.
+     * The **`length`** property of the OfflineAudioContext interface returns an integer representing the size of the buffer in sample-frames.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OfflineAudioContext/length)
      */
@@ -36,7 +36,7 @@ open external class OfflineAudioContext(
     var oncomplete: EventHandler<OfflineAudioCompletionEvent, OfflineAudioContext, OfflineAudioContext>?
 
     /**
-     * The **`resume()`** method of the context that has been suspended.
+     * The **`resume()`** method of the OfflineAudioContext interface resumes the progression of time in an audio context that has been suspended.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OfflineAudioContext/resume)
      */
@@ -61,7 +61,7 @@ open external class OfflineAudioContext(
 }
 
 /**
- * The **`resume()`** method of the context that has been suspended.
+ * The **`resume()`** method of the OfflineAudioContext interface resumes the progression of time in an audio context that has been suspended.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OfflineAudioContext/resume)
  */

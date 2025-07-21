@@ -17,14 +17,14 @@ open external class MediaQueryListEvent(
     init: MediaQueryListEventInit = definedExternally,
 ) : Event {
     /**
-     * The **`matches`** read-only property of the `true` if the document currently matches the media query list, or `false` if not.
+     * The **`matches`** read-only property of the MediaQueryListEvent interface is a boolean value that is `true` if the document currently matches the media query list, or `false` if not.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaQueryListEvent/matches)
      */
     val matches: Boolean
 
     /**
-     * The **`media`** read-only property of the a serialized media query.
+     * The **`media`** read-only property of the MediaQueryListEvent interface is a string representing a serialized media query.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaQueryListEvent/media)
      */

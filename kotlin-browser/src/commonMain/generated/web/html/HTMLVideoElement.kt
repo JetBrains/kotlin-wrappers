@@ -86,7 +86,7 @@ protected constructor() :
     fun cancelVideoFrameCallback(requestId: VideoFrameRequestId)
 
     /**
-     * The **HTMLVideoElement** method **`getVideoPlaybackQuality()`** creates and returns a frames have been lost.
+     * The **HTMLVideoElement** method **`getVideoPlaybackQuality()`** creates and returns a VideoPlaybackQuality object containing metrics including how many frames have been lost.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLVideoElement/getVideoPlaybackQuality)
      */

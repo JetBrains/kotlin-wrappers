@@ -28,28 +28,28 @@ open external class CustomElementRegistry {
     )
 
     /**
-     * The **`get()`** method of the previously-defined custom element.
+     * The **`get()`** method of the CustomElementRegistry interface returns the constructor for a previously-defined custom element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CustomElementRegistry/get)
      */
     fun <T : HTMLElement> get(name: TagName<T>): CustomElementConstructor<T>?
 
     /**
-     * The **`getName()`** method of the previously-defined custom element.
+     * The **`getName()`** method of the CustomElementRegistry interface returns the name for a previously-defined custom element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CustomElementRegistry/getName)
      */
     fun <T : HTMLElement> getName(constructor: CustomElementConstructor<T>): TagName<T>?
 
     /**
-     * The **`upgrade()`** method of the elements in a Node subtree, even before they are connected to the main document.
+     * The **`upgrade()`** method of the CustomElementRegistry interface upgrades all shadow-containing custom elements in a Node subtree, even before they are connected to the main document.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CustomElementRegistry/upgrade)
      */
     fun upgrade(root: Node)
 
     /**
-     * The **`whenDefined()`** method of the resolves when the named element is defined.
+     * The **`whenDefined()`** method of the CustomElementRegistry interface returns a Promise that resolves when the named element is defined.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CustomElementRegistry/whenDefined)
      */
@@ -58,7 +58,7 @@ open external class CustomElementRegistry {
 }
 
 /**
- * The **`whenDefined()`** method of the resolves when the named element is defined.
+ * The **`whenDefined()`** method of the CustomElementRegistry interface returns a Promise that resolves when the named element is defined.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CustomElementRegistry/whenDefined)
  */

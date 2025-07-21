@@ -64,7 +64,7 @@ open external class Document :
     val URL: String
 
     /**
-     * The **`Document.body`** property represents the `null` if no such element exists.
+     * The **`Document.body`** property represents the body or frameset node of the current document, or `null` if no such element exists.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/body)
      */
@@ -106,7 +106,7 @@ open external class Document :
     val currentScript: HTMLOrSVGScriptElement?
 
     /**
-     * In browsers, **`document.defaultView`** returns the This property is read-only.
+     * In browsers, **`document.defaultView`** returns the Window object associated with Browsing_context, or `null` if none is available.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/defaultView)
      */
@@ -134,21 +134,21 @@ open external class Document :
     val doctype: DocumentType?
 
     /**
-     * The **`documentElement`** read-only property of the Document interface returns the example, the html element for HTML documents).
+     * The **`documentElement`** read-only property of the Document interface returns the Element that is the root element of the document (for example, the html element for HTML documents).
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/documentElement)
      */
     val documentElement: HTMLElement
 
     /**
-     * The **`documentURI`** read-only property of the A string.
+     * The **`documentURI`** read-only property of the Document interface returns the document location as a string.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/documentURI)
      */
     val documentURI: String
 
     /**
-     * The **`embeds`** read-only property of the An HTMLCollection.
+     * The **`embeds`** read-only property of the Document interface returns a list of the embedded embed elements within the current document.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/embeds)
      */
@@ -197,7 +197,7 @@ open external class Document :
     val images: HTMLCollection<HTMLImageElement>
 
     /**
-     * The **`Document.implementation`** property returns a A DOMImplementation object.
+     * The **`Document.implementation`** property returns a DOMImplementation object associated with the current document.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/implementation)
      */
@@ -218,7 +218,7 @@ open external class Document :
     val links: HTMLCollection<HTMLElement /* HTMLAnchorElement | HTMLAreaElement */>
 
     /**
-     * The **`Document.location`** read-only property returns a and provides methods for changing that URL and loading another URL.
+     * The **`Document.location`** read-only property returns a Location object, which contains information about the URL of the document and provides methods for changing that URL and loading another URL.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/location)
      */
@@ -258,14 +258,14 @@ open external class Document :
     override val ownerDocument: Void
 
     /**
-     * The read-only **`pictureInPictureEnabled`** property of the available.
+     * The read-only **`pictureInPictureEnabled`** property of the Document interface indicates whether or not picture-in-picture mode is available.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/pictureInPictureEnabled)
      */
     val pictureInPictureEnabled: Boolean
 
     /**
-     * The **`plugins`** read-only property of the containing one or more HTMLEmbedElements representing the An HTMLCollection.
+     * The **`plugins`** read-only property of the Document interface returns an HTMLCollection object containing one or more HTMLEmbedElements representing the embed elements in the current document.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/plugins)
      */
@@ -293,7 +293,7 @@ open external class Document :
     val scripts: HTMLCollection<HTMLScriptElement>
 
     /**
-     * The **`scrollingElement`** read-only property of the scrolls the document.
+     * The **`scrollingElement`** read-only property of the Document interface returns a reference to the Element that scrolls the document.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/scrollingElement)
      */
@@ -437,7 +437,7 @@ open external class Document :
     ): ProcessingInstruction
 
     /**
-     * The **`Document.createRange()`** method returns a new ```js-nolint createRange() ``` None.
+     * The **`Document.createRange()`** method returns a new Range object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/createRange)
      */
@@ -486,7 +486,7 @@ open external class Document :
     override fun getElementById(elementId: ElementId): HTMLElement?
 
     /**
-     * The **`getElementsByClassName`** method of of all child elements which have all of the given class name(s).
+     * The **`getElementsByClassName`** method of Document interface returns an array-like object of all child elements which have all of the given class name(s).
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/getElementsByClassName)
      */
@@ -500,7 +500,7 @@ open external class Document :
     fun getElementsByName(elementName: String): NodeList<HTMLElement>
 
     /**
-     * The **`getElementsByTagName`** method of The complete document is searched, including the root node.
+     * The **`getElementsByTagName`** method of Document interface returns an HTMLCollection of elements with the given tag name.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/getElementsByTagName)
      */
@@ -539,7 +539,7 @@ open external class Document :
     fun hasStorageAccessAsync(): Promise<JsBoolean>
 
     /**
-     * The Document object's **`importNode()`** method creates a copy of a inserted into the current document later.
+     * The Document object's **`importNode()`** method creates a copy of a Node or DocumentFragment from another document, to be inserted into the current document later.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/importNode)
      */
@@ -554,7 +554,7 @@ open external class Document :
     ): T
 
     /**
-     * The **`Document.open()`** method opens a document for This does come with some side effects.
+     * The **`Document.open()`** method opens a document for Document.write.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/open)
      */

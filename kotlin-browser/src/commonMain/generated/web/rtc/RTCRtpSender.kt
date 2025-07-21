@@ -18,7 +18,7 @@ import kotlin.js.definedExternally
 open external class RTCRtpSender
 private constructor() {
     /**
-     * The read-only **`dtmf`** property on the **RTCRtpSender** interface returns a over the RTCPeerConnection.
+     * The read-only **`dtmf`** property on the **RTCRtpSender** interface returns a RTCDTMFSender object which can be used to send DTMF tones over the RTCPeerConnection.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCRtpSender/dtmf)
      */
@@ -39,7 +39,7 @@ private constructor() {
     var transform: RTCRtpTransform?
 
     /**
-     * The read-only **`transport`** property of an used to interact with the underlying transport over which the sender is exchanging Real-time Transport Control Protocol (RTCP) packets.
+     * The read-only **`transport`** property of an RTCRtpSender object provides the RTCDtlsTransport object used to interact with the underlying transport over which the sender is exchanging Real-time Transport Control Protocol (RTCP) packets.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCRtpSender/transport)
      */

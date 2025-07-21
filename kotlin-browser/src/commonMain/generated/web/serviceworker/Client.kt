@@ -44,7 +44,7 @@ private constructor() {
     val url: String
 
     /**
-     * The **`postMessage()`** method of the (a Window, Worker, or SharedWorker).
+     * The **`postMessage()`** method of the Client interface allows a service worker to send a message to a client (a Window, Worker, or SharedWorker).
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Client/postMessage)
      */

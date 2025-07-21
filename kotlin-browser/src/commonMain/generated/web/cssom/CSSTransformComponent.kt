@@ -19,7 +19,7 @@ private constructor() {
     var is2D: Boolean
 
     /**
-     * The **`toMatrix()`** method of the object.
+     * The **`toMatrix()`** method of the CSSTransformComponent interface returns a DOMMatrix object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSTransformComponent/toMatrix)
      */

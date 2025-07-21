@@ -35,7 +35,7 @@ open external class ImageData(
     val colorSpace: PredefinedColorSpace
 
     /**
-     * The readonly **`ImageData.data`** property returns a pixel data.
+     * The readonly **`ImageData.data`** property returns a Uint8ClampedArray or Float16Array that contains the ImageData object's pixel data.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageData/data)
      */

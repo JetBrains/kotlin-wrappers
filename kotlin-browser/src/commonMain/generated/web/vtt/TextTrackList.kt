@@ -42,7 +42,7 @@ private constructor() :
     var onremovetrack: EventHandler<TrackEvent, TextTrackList, TextTrackList>?
 
     /**
-     * The **TextTrackList** method **`getTrackById()`** returns the first `id` matches the specified string.
+     * The **TextTrackList** method **`getTrackById()`** returns the first TextTrack object from the track list whose `id` matches the specified string.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextTrackList/getTrackById)
      */

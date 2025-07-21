@@ -10,14 +10,14 @@ package web.fs
 open external class FileSystem
 private constructor() {
     /**
-     * The read-only **`name`** property of the string is unique among all file systems currently exposed by the File and Directory Entries API.
+     * The read-only **`name`** property of the FileSystem interface indicates the file system's name.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystem/name)
      */
     val name: String
 
     /**
-     * The read-only **`root`** property of the object representing the root directory of the file system, for use with the File and Directory Entries API.
+     * The read-only **`root`** property of the FileSystem interface specifies a FileSystemDirectoryEntry object representing the root directory of the file system, for use with the File and Directory Entries API.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystem/root)
      */

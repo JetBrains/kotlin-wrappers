@@ -17,21 +17,21 @@ open external class WindowClient
 private constructor() :
     Client {
     /**
-     * The **`focused`** read-only property of the the current client has focus.
+     * The **`focused`** read-only property of the WindowClient interface is a boolean value that indicates whether the current client has focus.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WindowClient/focused)
      */
     val focused: Boolean
 
     /**
-     * The **`visibilityState`** read-only property of the This value can be one of `'hidden'`, `'visible'`, or `'prerender'`.
+     * The **`visibilityState`** read-only property of the WindowClient interface indicates the visibility of the current client.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WindowClient/visibilityState)
      */
     val visibilityState: DocumentVisibilityState
 
     /**
-     * The **`focus()`** method of the WindowClient interface gives user input focus to the current client and returns a ```js-nolint focus() ``` None.
+     * The **`focus()`** method of the WindowClient interface gives user input focus to the current client and returns a Promise that resolves to the existing WindowClient.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WindowClient/focus)
      */
@@ -39,7 +39,7 @@ private constructor() :
     fun focusAsync(): Promise<WindowClient>
 
     /**
-     * The **`navigate()`** method of the WindowClient interface loads a specified URL into a controlled client page then returns a ```js-nolint navigate(url) ``` - `url` - : The location to navigate to.
+     * The **`navigate()`** method of the WindowClient interface loads a specified URL into a controlled client page then returns a Promise that resolves to the existing WindowClient.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WindowClient/navigate)
      */
@@ -51,7 +51,7 @@ private constructor() :
 }
 
 /**
- * The **`focus()`** method of the WindowClient interface gives user input focus to the current client and returns a ```js-nolint focus() ``` None.
+ * The **`focus()`** method of the WindowClient interface gives user input focus to the current client and returns a Promise that resolves to the existing WindowClient.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WindowClient/focus)
  */
@@ -60,7 +60,7 @@ suspend inline fun WindowClient.focus(): WindowClient {
 }
 
 /**
- * The **`navigate()`** method of the WindowClient interface loads a specified URL into a controlled client page then returns a ```js-nolint navigate(url) ``` - `url` - : The location to navigate to.
+ * The **`navigate()`** method of the WindowClient interface loads a specified URL into a controlled client page then returns a Promise that resolves to the existing WindowClient.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WindowClient/navigate)
  */

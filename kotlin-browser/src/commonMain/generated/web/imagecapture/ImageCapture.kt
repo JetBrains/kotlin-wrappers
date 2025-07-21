@@ -20,7 +20,7 @@ open external class ImageCapture(
     videoTrack: MediaStreamTrack,
 ) {
     /**
-     * The **`track`** read-only property of the A MediaStreamTrack object.
+     * The **`track`** read-only property of the ImageCapture interface returns a reference to the MediaStreamTrack passed to the ImageCapture.ImageCapture constructor.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageCapture/track)
      */
@@ -43,7 +43,7 @@ open external class ImageCapture(
     fun getPhotoSettingsAsync(): Promise<PhotoSettings>
 
     /**
-     * The **`grabFrame()`** method of the a ImageBitmap containing the snapshot.
+     * The **`grabFrame()`** method of the ImageCapture interface takes a snapshot of the live video in a MediaStreamTrack and returns a Promise that resolves with a ImageBitmap containing the snapshot.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageCapture/grabFrame)
      */
@@ -51,7 +51,7 @@ open external class ImageCapture(
     fun grabFrameAsync(): Promise<ImageBitmap>
 
     /**
-     * The **`takePhoto()`** method of the device sourcing a MediaStreamTrack and returns a Promise that resolves with a Blob containing the data.
+     * The **`takePhoto()`** method of the ImageCapture interface takes a single exposure using the video capture device sourcing a MediaStreamTrack and returns a Promise that resolves with a Blob containing the data.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageCapture/takePhoto)
      */
@@ -78,7 +78,7 @@ suspend inline fun ImageCapture.getPhotoSettings(): PhotoSettings {
 }
 
 /**
- * The **`grabFrame()`** method of the a ImageBitmap containing the snapshot.
+ * The **`grabFrame()`** method of the ImageCapture interface takes a snapshot of the live video in a MediaStreamTrack and returns a Promise that resolves with a ImageBitmap containing the snapshot.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageCapture/grabFrame)
  */
@@ -87,7 +87,7 @@ suspend inline fun ImageCapture.grabFrame(): ImageBitmap {
 }
 
 /**
- * The **`takePhoto()`** method of the device sourcing a MediaStreamTrack and returns a Promise that resolves with a Blob containing the data.
+ * The **`takePhoto()`** method of the ImageCapture interface takes a single exposure using the video capture device sourcing a MediaStreamTrack and returns a Promise that resolves with a Blob containing the data.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageCapture/takePhoto)
  */
@@ -98,7 +98,7 @@ suspend inline fun ImageCapture.takePhoto(photoSettings: PhotoSettings): Blob {
 }
 
 /**
- * The **`takePhoto()`** method of the device sourcing a MediaStreamTrack and returns a Promise that resolves with a Blob containing the data.
+ * The **`takePhoto()`** method of the ImageCapture interface takes a single exposure using the video capture device sourcing a MediaStreamTrack and returns a Promise that resolves with a Blob containing the data.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageCapture/takePhoto)
  */

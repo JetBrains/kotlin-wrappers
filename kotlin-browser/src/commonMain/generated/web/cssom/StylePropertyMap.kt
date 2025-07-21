@@ -12,7 +12,7 @@ external class StylePropertyMap
 protected /* private */ constructor() :
     StylePropertyMapReadOnly {
     /**
-     * The **`append()`** method of the `StylePropertyMap` with the given property.
+     * The **`append()`** method of the StylePropertyMap interface adds the passed CSS value to the `StylePropertyMap` with the given property.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/StylePropertyMap/append)
      */
@@ -34,7 +34,7 @@ protected /* private */ constructor() :
     fun clear()
 
     /**
-     * The **`delete()`** method of the property.
+     * The **`delete()`** method of the StylePropertyMap interface removes the CSS declaration with the given property.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/StylePropertyMap/delete)
      */

@@ -43,7 +43,7 @@ private constructor() :
     val height: Int
 
     /**
-     * The **`orientation`** read-only property of the An instance of ScreenOrientation representing the orientation of the screen.
+     * The **`orientation`** read-only property of the Screen interface returns the current orientation of the screen.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Screen/orientation)
      */

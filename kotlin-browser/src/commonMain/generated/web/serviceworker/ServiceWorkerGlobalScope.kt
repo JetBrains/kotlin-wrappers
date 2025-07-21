@@ -26,7 +26,7 @@ open external class ServiceWorkerGlobalScope
 private constructor() :
     WorkerGlobalScope {
     /**
-     * The **`clients`** read-only property of the object associated with the service worker.
+     * The **`clients`** read-only property of the ServiceWorkerGlobalScope interface returns the `Clients` object associated with the service worker.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope/clients)
      */

@@ -90,7 +90,7 @@ open external class MediaRecorder(
     fun pause()
 
     /**
-     * The **`requestData()`** method of the MediaRecorder interface is used to raise a MediaRecorder.dataavailable_event event containing a called.
+     * The **`requestData()`** method of the MediaRecorder interface is used to raise a MediaRecorder.dataavailable_event event containing a Blob object of the captured media as it was when the method was called.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaRecorder/requestData)
      */

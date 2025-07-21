@@ -15,7 +15,7 @@ open external class SVGGeometryElement
 private constructor() :
     SVGGraphicsElement {
     /**
-     * The **`SVGGeometryElement.pathLength`** property reflects the A number.
+     * The **`SVGGeometryElement.pathLength`** property reflects the pathLength attribute and returns the total length of the path, in user units.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGGeometryElement/pathLength)
      */

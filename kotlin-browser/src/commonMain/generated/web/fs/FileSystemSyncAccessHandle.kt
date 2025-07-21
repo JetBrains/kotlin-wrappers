@@ -15,28 +15,28 @@ import kotlin.js.definedExternally
 open external class FileSystemSyncAccessHandle
 private constructor() {
     /**
-     * The **`close()`** method of the ```js-nolint close() ``` None.
+     * The **`close()`** method of the FileSystemSyncAccessHandle interface closes an open synchronous file handle, disabling any further operations on it and releasing the exclusive lock previously put on the file associated with the file handle.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemSyncAccessHandle/close)
      */
     fun close()
 
     /**
-     * The **`flush()`** method of the Bear in mind that you only need to call this method if you need the changes committed to disk at a specific time, otherwise you can leave the underlying operating system to handle this when it sees fit, which should be OK in most cases.
+     * The **`flush()`** method of the FileSystemSyncAccessHandle interface persists any changes made to the file associated with the handle via the FileSystemSyncAccessHandle.write method to disk.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemSyncAccessHandle/flush)
      */
     fun flush()
 
     /**
-     * The **`getSize()`** method of the ```js-nolint getSize() ``` None.
+     * The **`getSize()`** method of the FileSystemSyncAccessHandle interface returns the size of the file associated with the handle in bytes.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemSyncAccessHandle/getSize)
      */
     fun getSize(): UInt53
 
     /**
-     * The **`read()`** method of the ```js-nolint read(buffer, options) ``` - `buffer` - : An ArrayBuffer or `ArrayBufferView` (such as a DataView) representing the buffer that the file content should be read into.
+     * The **`read()`** method of the FileSystemSyncAccessHandle interface reads the content of the file associated with the handle into a specified buffer, optionally at a given offset.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemSyncAccessHandle/read)
      */
@@ -46,14 +46,14 @@ private constructor() {
     ): UInt53
 
     /**
-     * The **`truncate()`** method of the ```js-nolint truncate(newSize) ``` - `newSize` - : The number of bytes to resize the file to.
+     * The **`truncate()`** method of the FileSystemSyncAccessHandle interface resizes the file associated with the handle to a specified number of bytes.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemSyncAccessHandle/truncate)
      */
     fun truncate(newSize: UInt53)
 
     /**
-     * The **`write()`** method of the Files within the origin private file system are not visible to end-users, therefore are not subject to the same security checks as methods running on files within the user-visible file system.
+     * The **`write()`** method of the FileSystemSyncAccessHandle interface writes the content of a specified buffer to the file associated with the handle, optionally at a given offset.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemSyncAccessHandle/write)
      */

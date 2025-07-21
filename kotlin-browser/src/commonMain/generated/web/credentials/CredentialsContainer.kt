@@ -45,7 +45,7 @@ private constructor() {
     fun preventSilentAccessAsync(): Promise<Void>
 
     /**
-     * The **`store()`** method of the ```js-nolint store(credentials) ``` - `credentials` - : A valid Credential instance.
+     * The **`store()`** method of the CredentialsContainer stores a set of credentials for the user inside a Credential instance, returning this in a Promise.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CredentialsContainer/store)
      */
@@ -111,7 +111,7 @@ suspend inline fun CredentialsContainer.preventSilentAccess() {
 }
 
 /**
- * The **`store()`** method of the ```js-nolint store(credentials) ``` - `credentials` - : A valid Credential instance.
+ * The **`store()`** method of the CredentialsContainer stores a set of credentials for the user inside a Credential instance, returning this in a Promise.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CredentialsContainer/store)
  */

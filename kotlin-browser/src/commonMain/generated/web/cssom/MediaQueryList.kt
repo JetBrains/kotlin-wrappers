@@ -15,14 +15,14 @@ open external class MediaQueryList
 private constructor() :
     EventTarget {
     /**
-     * The **`matches`** read-only property of the `true` if the document currently matches the media query list, or `false` if not.
+     * The **`matches`** read-only property of the MediaQueryList interface is a boolean value that returns `true` if the document currently matches the media query list, or `false` if not.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaQueryList/matches)
      */
     val matches: Boolean
 
     /**
-     * The **`media`** read-only property of the serialized media query.
+     * The **`media`** read-only property of the MediaQueryList interface is a string representing a serialized media query.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaQueryList/media)
      */

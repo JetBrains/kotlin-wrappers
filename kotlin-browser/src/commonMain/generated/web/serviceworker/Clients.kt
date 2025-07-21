@@ -26,7 +26,7 @@ private constructor() {
     fun claimAsync(): Promise<Void>
 
     /**
-     * The **`get()`** method of the `id` and returns it in a Promise.
+     * The **`get()`** method of the Clients interface gets a service worker client matching a given `id` and returns it in a Promise.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Clients/get)
      */
@@ -34,7 +34,7 @@ private constructor() {
     fun getAsync(id: String): Promise<Client?>
 
     /**
-     * The **`matchAll()`** method of the Clients interface returns a Promise for a list of service worker clients whose origin is the same as the associated service worker's origin.
+     * The **`matchAll()`** method of the Clients interface returns a Promise for a list of service worker Client objects.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Clients/matchAll)
      */
@@ -63,7 +63,7 @@ suspend inline fun Clients.claim() {
 }
 
 /**
- * The **`get()`** method of the `id` and returns it in a Promise.
+ * The **`get()`** method of the Clients interface gets a service worker client matching a given `id` and returns it in a Promise.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Clients/get)
  */
@@ -74,7 +74,7 @@ suspend inline fun Clients.get(id: String): Client? {
 }
 
 /**
- * The **`matchAll()`** method of the Clients interface returns a Promise for a list of service worker clients whose origin is the same as the associated service worker's origin.
+ * The **`matchAll()`** method of the Clients interface returns a Promise for a list of service worker Client objects.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Clients/matchAll)
  */
@@ -85,7 +85,7 @@ suspend inline fun <T : ClientQueryOptions> Clients.matchAll(options: T): Readon
 }
 
 /**
- * The **`matchAll()`** method of the Clients interface returns a Promise for a list of service worker clients whose origin is the same as the associated service worker's origin.
+ * The **`matchAll()`** method of the Clients interface returns a Promise for a list of service worker Client objects.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Clients/matchAll)
  */

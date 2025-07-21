@@ -14,7 +14,7 @@ open external class FileSystemFileEntry
 private constructor() :
     FileSystemEntry {
     /**
-     * The FileSystemFileEntry interface's method **`file()`** returns a the directory entry.
+     * The FileSystemFileEntry interface's method **`file()`** returns a File object which can be used to read data from the file represented by the directory entry.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemFileEntry/file)
      */

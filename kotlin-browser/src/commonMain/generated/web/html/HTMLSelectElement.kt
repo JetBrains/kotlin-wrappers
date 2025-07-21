@@ -44,7 +44,7 @@ protected constructor() :
     override val form: HTMLFormElement?
 
     /**
-     * The **`HTMLSelectElement.labels`** read-only property returns a A NodeList containing the `<label>` elements associated with the `<select>` element.
+     * The **`HTMLSelectElement.labels`** read-only property returns a NodeList of the label elements associated with the select element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSelectElement/labels)
      */
@@ -93,7 +93,7 @@ protected constructor() :
     var selectedIndex: Int
 
     /**
-     * The **read-only** HTMLSelectElement property **`selectedOptions`** contains a list of the element that are currently selected.
+     * The **read-only** HTMLSelectElement property **`selectedOptions`** contains a list of the option elements contained within the select element that are currently selected.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSelectElement/selectedOptions)
      */
@@ -174,14 +174,14 @@ protected constructor() :
     override fun checkValidity(): Boolean
 
     /**
-     * The **`HTMLSelectElement.item()`** method returns the position in the options list corresponds to the index given in the parameter, or `null` if there are none.
+     * The **`HTMLSelectElement.item()`** method returns the Element corresponding to the HTMLOptionElement whose position in the options list corresponds to the index given in the parameter, or `null` if there are none.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSelectElement/item)
      */
     fun item(index: Int): HTMLOptionElement?
 
     /**
-     * The **`HTMLSelectElement.namedItem()`** method returns the whose `name` or `id` match the specified name, or `null` if no option matches.
+     * The **`HTMLSelectElement.namedItem()`** method returns the HTMLOptionElement corresponding to the HTMLOptionElement whose `name` or `id` match the specified name, or `null` if no option matches.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSelectElement/namedItem)
      */

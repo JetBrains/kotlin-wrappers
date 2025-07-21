@@ -20,7 +20,7 @@ private constructor() :
     ArrayLike<SourceBuffer>,
     JsIterable<SourceBuffer> {
     /**
-     * The **`length`** read-only property of the An unsigned long number.
+     * The **`length`** read-only property of the SourceBufferList interface returns the number of SourceBuffer objects in the list.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SourceBufferList/length)
      */

@@ -28,7 +28,7 @@ private constructor() {
     val contentBoxSize: ReadonlyArray<ResizeObserverSize>
 
     /**
-     * The `contentRect` read-only property of the object containing the new size of the observed element when the callback is run.
+     * The `contentRect` read-only property of the ResizeObserverEntry interface returns a DOMRectReadOnly object containing the new size of the observed element when the callback is run.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ResizeObserverEntry/contentRect)
      */
@@ -42,7 +42,7 @@ private constructor() {
     val devicePixelContentBoxSize: ReadonlyArray<ResizeObserverSize>
 
     /**
-     * The **`target`** read-only property of the An Element or SVGElement representing the element being observed.
+     * The **`target`** read-only property of the ResizeObserverEntry interface returns a reference to the Element or SVGElement that is being observed.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ResizeObserverEntry/target)
      */

@@ -18,7 +18,7 @@ import kotlin.js.definedExternally
 open external class Worklet
 private constructor() {
     /**
-     * The **`addModule()`** method of the adds it to the current `Worklet`.
+     * The **`addModule()`** method of the Worklet interface loads the module in the given JavaScript file and adds it to the current `Worklet`.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Worklet/addModule)
      */
@@ -36,7 +36,7 @@ private constructor() {
 }
 
 /**
- * The **`addModule()`** method of the adds it to the current `Worklet`.
+ * The **`addModule()`** method of the Worklet interface loads the module in the given JavaScript file and adds it to the current `Worklet`.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Worklet/addModule)
  */
@@ -51,7 +51,7 @@ suspend inline fun Worklet.addModule(
 }
 
 /**
- * The **`addModule()`** method of the adds it to the current `Worklet`.
+ * The **`addModule()`** method of the Worklet interface loads the module in the given JavaScript file and adds it to the current `Worklet`.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Worklet/addModule)
  */

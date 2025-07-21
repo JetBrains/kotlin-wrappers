@@ -11,7 +11,7 @@ open external class CSSMathNegate(
     arg: CSSNumberish,
 ) : CSSMathValue {
     /**
-     * The CSSMathNegate.value read-only property of the A CSSNumericValue.
+     * The CSSMathNegate.value read-only property of the CSSMathNegate interface returns a CSSNumericValue object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSMathNegate/value)
      */

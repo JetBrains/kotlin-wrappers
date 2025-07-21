@@ -15,14 +15,14 @@ open external class HTMLDialogElement
 protected constructor() :
     HTMLElement {
     /**
-     * The **`closedBy`** property of the A string; possible values are: - `any` - : The dialog can be dismissed with a light dismiss user action, a platform-specific user action, or a developer-specified mechanism.
+     * The **`closedBy`** property of the HTMLDialogElement interface indicates the types of user actions that can be used to close the associated dialog element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLDialogElement/closedBy)
      */
     var closedBy: ClosedBy
 
     /**
-     * The **`open`** property of the `open` HTML attribute, indicating whether the dialog is available for interaction.
+     * The **`open`** property of the HTMLDialogElement interface is a boolean value reflecting the `open` HTML attribute, indicating whether the dialog is available for interaction.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLDialogElement/open)
      */
@@ -57,7 +57,7 @@ protected constructor() :
     fun show()
 
     /**
-     * The **`showModal()`** method of the of any other dialogs that might be present.
+     * The **`showModal()`** method of the HTMLDialogElement interface displays the dialog as a modal, over the top of any other dialogs that might be present.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLDialogElement/showModal)
      */

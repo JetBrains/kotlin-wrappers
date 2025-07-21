@@ -17,14 +17,14 @@ open external class SpeechRecognitionEvent(
     init: SpeechRecognitionEventInit,
 ) : Event {
     /**
-     * The **`resultIndex`** read-only property of the the SpeechRecognitionResultList 'array' that has actually changed.
+     * The **`resultIndex`** read-only property of the SpeechRecognitionEvent interface returns the lowest index value result in the SpeechRecognitionResultList 'array' that has actually changed.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechRecognitionEvent/resultIndex)
      */
     val resultIndex: Int
 
     /**
-     * The **`results`** read-only property of the recognition results for the current session.
+     * The **`results`** read-only property of the SpeechRecognitionEvent interface returns a SpeechRecognitionResultList object representing all the speech recognition results for the current session.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechRecognitionEvent/results)
      */

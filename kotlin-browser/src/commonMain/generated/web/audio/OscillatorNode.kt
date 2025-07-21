@@ -35,7 +35,7 @@ open external class OscillatorNode(
     var type: OscillatorType
 
     /**
-     * The **`setPeriodicWave()`** method of the OscillatorNode interface is used to point to a PeriodicWave defining a periodic waveform that can be used to shape the oscillator's output, when ```js-nolint setPeriodicWave(wave) ``` - `wave` - : A PeriodicWave object representing the waveform to use as the shape of the oscillator's output.
+     * The **`setPeriodicWave()`** method of the OscillatorNode interface is used to point to a PeriodicWave defining a periodic waveform that can be used to shape the oscillator's output, when OscillatorNode.type is `custom`.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OscillatorNode/setPeriodicWave)
      */

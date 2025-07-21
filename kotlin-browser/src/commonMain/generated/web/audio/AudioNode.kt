@@ -35,7 +35,7 @@ private constructor() :
     var channelInterpretation: ChannelInterpretation
 
     /**
-     * The read-only `context` property of the the node is participating in.
+     * The read-only `context` property of the AudioNode interface returns the associated BaseAudioContext, that is the object representing the processing graph the node is participating in.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioNode/context)
      */
@@ -56,7 +56,7 @@ private constructor() :
     val numberOfOutputs: Int
 
     /**
-     * The `connect()` method of the AudioNode interface lets you connect one of the node's outputs to a target, which may be either another `AudioNode` (thereby directing the sound data to the specified node) or an change the value of that parameter over time.
+     * The `connect()` method of the AudioNode interface lets you connect one of the node's outputs to a target, which may be either another `AudioNode` (thereby directing the sound data to the specified node) or an AudioParam, so that the node's output data is automatically used to change the value of that parameter over time.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioNode/connect)
      */

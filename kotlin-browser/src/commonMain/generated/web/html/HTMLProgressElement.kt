@@ -13,7 +13,7 @@ open external class HTMLProgressElement
 protected constructor() :
     HTMLElement {
     /**
-     * The **`HTMLProgressElement.labels`** read-only property returns a NodeList of the label elements associated with the A NodeList containing the `<label>` elements associated with the `<progress>` element.
+     * The **`HTMLProgressElement.labels`** read-only property returns a NodeList of the label elements associated with the progress element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLProgressElement/labels)
      */

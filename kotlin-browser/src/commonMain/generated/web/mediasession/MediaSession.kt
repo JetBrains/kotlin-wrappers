@@ -23,7 +23,7 @@ private constructor() {
     var metadata: MediaMetadata?
 
     /**
-     * The **`playbackState`** property of the playing or paused.
+     * The **`playbackState`** property of the MediaSession interface indicates whether the current media session is playing or paused.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaSession/playbackState)
      */
@@ -56,7 +56,7 @@ private constructor() {
     fun setMicrophoneActiveAsync(active: Boolean): Promise<Void>
 
     /**
-     * The **`setPositionState()`** method of the document's media playback position and speed for presentation by user's device in any kind of interface that provides details about ongoing media.
+     * The **`setPositionState()`** method of the MediaSession interface is used to update the current document's media playback position and speed for presentation by user's device in any kind of interface that provides details about ongoing media.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaSession/setPositionState)
      */

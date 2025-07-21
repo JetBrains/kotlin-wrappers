@@ -18,7 +18,7 @@ open external class ClipboardEvent(
     init: ClipboardEventInit = definedExternally,
 ) : Event {
     /**
-     * The **`clipboardData`** property of the ClipboardEvent interface holds a DataTransfer object, which can be used to: - specify what data should be put into the clipboard from the Element/cut_event and Element/copy_event event handlers, typically with a DataTransfer.setData call; - obtain the data to be pasted from the Element/paste_event event handler, typically with a DataTransfer.getData call.
+     * The **`clipboardData`** property of the ClipboardEvent interface holds a DataTransfer object, which can be used to:
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ClipboardEvent/clipboardData)
      */

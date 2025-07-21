@@ -27,7 +27,7 @@ open external class PaymentRequest(
     options: PaymentOptions = definedExternally,
 ) : EventTarget {
     /**
-     * The **`id`** read-only attribute of the When constructing an instance of the PaymentRequest, you are able to supply an custom id.
+     * The **`id`** read-only attribute of the PaymentRequest interface returns a unique identifier for a particular PaymentRequest instance.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentRequest/id)
      */

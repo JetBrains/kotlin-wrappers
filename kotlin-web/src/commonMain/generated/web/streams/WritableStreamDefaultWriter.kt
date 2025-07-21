@@ -19,28 +19,28 @@ open external class WritableStreamDefaultWriter<W : JsAny?>(
     stream: WritableStream<W>,
 ) {
     /**
-     * The **`closed`** read-only property of the the stream errors or the writer's lock is released.
+     * The **`closed`** read-only property of the WritableStreamDefaultWriter interface returns a Promise that fulfills if the stream becomes closed, or rejects if the stream errors or the writer's lock is released.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WritableStreamDefaultWriter/closed)
      */
     val closed: Promise<Void>
 
     /**
-     * The **`desiredSize`** read-only property of the to fill the stream's internal queue.
+     * The **`desiredSize`** read-only property of the WritableStreamDefaultWriter interface returns the desired size required to fill the stream's internal queue.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WritableStreamDefaultWriter/desiredSize)
      */
     val desiredSize: Double?
 
     /**
-     * The **`ready`** read-only property of the that resolves when the desired size of the stream's internal queue transitions from non-positive to positive, signaling that it is no longer applying backpressure.
+     * The **`ready`** read-only property of the WritableStreamDefaultWriter interface returns a Promise that resolves when the desired size of the stream's internal queue transitions from non-positive to positive, signaling that it is no longer applying backpressure.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WritableStreamDefaultWriter/ready)
      */
     val ready: Promise<Void>
 
     /**
-     * The **`abort()`** method of the the producer can no longer successfully write to the stream and it is to be immediately moved to an error state, with any queued writes discarded.
+     * The **`abort()`** method of the WritableStreamDefaultWriter interface aborts the stream, signaling that the producer can no longer successfully write to the stream and it is to be immediately moved to an error state, with any queued writes discarded.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WritableStreamDefaultWriter/abort)
      */
@@ -48,7 +48,7 @@ open external class WritableStreamDefaultWriter<W : JsAny?>(
     fun abortAsync(reason: JsError? = definedExternally): Promise<Void>
 
     /**
-     * The **`close()`** method of the stream.
+     * The **`close()`** method of the WritableStreamDefaultWriter interface closes the associated writable stream.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WritableStreamDefaultWriter/close)
      */
@@ -56,14 +56,14 @@ open external class WritableStreamDefaultWriter<W : JsAny?>(
     fun closeAsync(): Promise<Void>
 
     /**
-     * The **`releaseLock()`** method of the corresponding stream.
+     * The **`releaseLock()`** method of the WritableStreamDefaultWriter interface releases the writer's lock on the corresponding stream.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WritableStreamDefaultWriter/releaseLock)
      */
     fun releaseLock()
 
     /**
-     * The **`write()`** method of the operation.
+     * The **`write()`** method of the WritableStreamDefaultWriter interface writes a passed chunk of data to a WritableStream and its underlying sink, then returns a Promise that resolves to indicate the success or failure of the write operation.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WritableStreamDefaultWriter/write)
      */
@@ -72,7 +72,7 @@ open external class WritableStreamDefaultWriter<W : JsAny?>(
 }
 
 /**
- * The **`abort()`** method of the the producer can no longer successfully write to the stream and it is to be immediately moved to an error state, with any queued writes discarded.
+ * The **`abort()`** method of the WritableStreamDefaultWriter interface aborts the stream, signaling that the producer can no longer successfully write to the stream and it is to be immediately moved to an error state, with any queued writes discarded.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WritableStreamDefaultWriter/abort)
  */
@@ -83,7 +83,7 @@ suspend inline fun <W : JsAny?> WritableStreamDefaultWriter<W>.abort(reason: JsE
 }
 
 /**
- * The **`abort()`** method of the the producer can no longer successfully write to the stream and it is to be immediately moved to an error state, with any queued writes discarded.
+ * The **`abort()`** method of the WritableStreamDefaultWriter interface aborts the stream, signaling that the producer can no longer successfully write to the stream and it is to be immediately moved to an error state, with any queued writes discarded.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WritableStreamDefaultWriter/abort)
  */
@@ -92,7 +92,7 @@ suspend inline fun <W : JsAny?> WritableStreamDefaultWriter<W>.abort() {
 }
 
 /**
- * The **`close()`** method of the stream.
+ * The **`close()`** method of the WritableStreamDefaultWriter interface closes the associated writable stream.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WritableStreamDefaultWriter/close)
  */
@@ -101,7 +101,7 @@ suspend inline fun <W : JsAny?> WritableStreamDefaultWriter<W>.close() {
 }
 
 /**
- * The **`write()`** method of the operation.
+ * The **`write()`** method of the WritableStreamDefaultWriter interface writes a passed chunk of data to a WritableStream and its underlying sink, then returns a Promise that resolves to indicate the success or failure of the write operation.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WritableStreamDefaultWriter/write)
  */
@@ -112,7 +112,7 @@ suspend inline fun <W : JsAny?> WritableStreamDefaultWriter<W>.write(chunk: W) {
 }
 
 /**
- * The **`write()`** method of the operation.
+ * The **`write()`** method of the WritableStreamDefaultWriter interface writes a passed chunk of data to a WritableStream and its underlying sink, then returns a Promise that resolves to indicate the success or failure of the write operation.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WritableStreamDefaultWriter/write)
  */

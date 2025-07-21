@@ -69,7 +69,7 @@ protected /* private */ constructor() :
     val doNotTrack: String?
 
     /**
-     * The **`Navigator.geolocation`** read-only property returns a device.
+     * The **`Navigator.geolocation`** read-only property returns a Geolocation object that gives Web content access to the location of the device.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/geolocation)
      */
@@ -84,7 +84,7 @@ protected /* private */ constructor() :
     val login: NavigatorLogin
 
     /**
-     * The **`maxTouchPoints`** read-only property of the contact points that are supported by the current device.
+     * The **`maxTouchPoints`** read-only property of the Navigator interface returns the maximum number of simultaneous touch contact points that are supported by the current device.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/maxTouchPoints)
      */
@@ -113,7 +113,7 @@ protected /* private */ constructor() :
     val mediaSession: MediaSession
 
     /**
-     * The **`permissions`** read-only property of the Navigator interface returns a status of APIs covered by the Permissions API.
+     * The **`permissions`** read-only property of the Navigator interface returns a Permissions object that can be used to query and update permission status of APIs covered by the Permissions API.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/permissions)
      */
@@ -150,7 +150,7 @@ protected /* private */ constructor() :
     fun canShare(data: ShareData = definedExternally): Boolean
 
     /**
-     * The **`Navigator.getGamepads()`** method returns an array of Elements in the array may be `null` if a gamepad disconnects during a session, so that the remaining gamepads retain the same index.
+     * The **`Navigator.getGamepads()`** method returns an array of Gamepad objects, one for each gamepad connected to the device.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/getGamepads)
      */

@@ -31,7 +31,7 @@ protected constructor() :
     val contentWindow: WindowProxy?
 
     /**
-     * The **`data`** property of the reflects the `data` HTML attribute, specifying the address of a resource's data.
+     * The **`data`** property of the HTMLObjectElement interface returns a string that reflects the `data` HTML attribute, specifying the address of a resource's data.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLObjectElement/data)
      */
@@ -45,21 +45,21 @@ protected constructor() :
     override val form: HTMLFormElement?
 
     /**
-     * The **`height`** property of the reflects the `height` HTML attribute, specifying the displayed height of the resource in CSS pixels.
+     * The **`height`** property of the HTMLObjectElement interface Returns a string that reflects the `height` HTML attribute, specifying the displayed height of the resource in CSS pixels.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLObjectElement/height)
      */
     var height: String
 
     /**
-     * The **`name`** property of the reflects the `name` HTML attribute, specifying the name of the browsing context.
+     * The **`name`** property of the HTMLObjectElement interface returns a string that reflects the `name` HTML attribute, specifying the name of the browsing context.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLObjectElement/name)
      */
     override var name: String
 
     /**
-     * The **`type`** property of the reflects the `type` HTML attribute, specifying the MIME type of the resource.
+     * The **`type`** property of the HTMLObjectElement interface returns a string that reflects the `type` HTML attribute, specifying the MIME type of the resource.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLObjectElement/type)
      */
@@ -80,7 +80,7 @@ protected constructor() :
     override val validity: ValidityState
 
     /**
-     * The **`width`** property of the reflects the `width` HTML attribute, specifying the displayed width of the resource in CSS pixels.
+     * The **`width`** property of the HTMLObjectElement interface returns a string that reflects the `width` HTML attribute, specifying the displayed width of the resource in CSS pixels.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLObjectElement/width)
      */
@@ -115,7 +115,7 @@ protected constructor() :
     override fun reportValidity(): Boolean
 
     /**
-     * The **`setCustomValidity()`** method of the element.
+     * The **`setCustomValidity()`** method of the HTMLObjectElement interface sets a custom validity message for the element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLObjectElement/setCustomValidity)
      */

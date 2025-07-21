@@ -61,7 +61,7 @@ private constructor() :
     val classList: DOMTokenList<ClassName>
 
     /**
-     * The **`className`** property of the of the specified element.
+     * The **`className`** property of the Element interface gets and sets the value of the `class` attribute of the specified element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/className)
      */
@@ -241,7 +241,7 @@ private constructor() :
     fun computedStyleMap(): StylePropertyMapReadOnly
 
     /**
-     * The **`getAttribute()`** method of the element.
+     * The **`getAttribute()`** method of the Element interface returns the value of a specified attribute on the element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/getAttribute)
      */
@@ -258,7 +258,7 @@ private constructor() :
     ): String?
 
     /**
-     * The **`getAttributeNames()`** method of the array.
+     * The **`getAttributeNames()`** method of the Element interface returns the attribute names of the element as an Array of strings.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/getAttributeNames)
      */
@@ -282,7 +282,7 @@ private constructor() :
     ): Attr?
 
     /**
-     * The **`Element.getBoundingClientRect()`** method returns a position relative to the viewport.
+     * The **`Element.getBoundingClientRect()`** method returns a DOMRect object providing information about the size of an element and its position relative to the viewport.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/getBoundingClientRect)
      */
@@ -296,14 +296,14 @@ private constructor() :
     fun getClientRects(): DOMRectList
 
     /**
-     * The Element method **`getElementsByClassName()`** returns a live specified class name or names.
+     * The Element method **`getElementsByClassName()`** returns a live HTMLCollection which contains every descendant element which has the specified class name or names.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/getElementsByClassName)
      */
     fun getElementsByClassName(classNames: ClassName): HTMLCollection<Element>
 
     /**
-     * The **`Element.getElementsByTagName()`** method returns a live All descendants of the specified element are searched, but not the element itself.
+     * The **`Element.getElementsByTagName()`** method returns a live HTMLCollection of elements with the given tag name.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/getElementsByTagName)
      */
@@ -351,14 +351,14 @@ private constructor() :
     fun hasAttributes(): Boolean
 
     /**
-     * The **`hasPointerCapture()`** method of the pointer capture for the pointer identified by the given pointer ID.
+     * The **`hasPointerCapture()`** method of the Element interface checks whether the element on which it is invoked has pointer capture for the pointer identified by the given pointer ID.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/hasPointerCapture)
      */
     fun hasPointerCapture(pointerId: Int): Boolean
 
     /**
-     * The **`insertAdjacentElement()`** method of the relative to the element it is invoked upon.
+     * The **`insertAdjacentElement()`** method of the Element interface inserts a given element node at a given position relative to the element it is invoked upon.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/insertAdjacentElement)
      */
@@ -368,7 +368,7 @@ private constructor() :
     ): Element?
 
     /**
-     * The **`insertAdjacentHTML()`** method of the the resulting nodes into the DOM tree at a specified position.
+     * The **`insertAdjacentHTML()`** method of the Element interface parses the specified text as HTML or XML and inserts the resulting nodes into the DOM tree at a specified position.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/insertAdjacentHTML)
      */
@@ -395,7 +395,7 @@ private constructor() :
     fun matches(selectors: String): Boolean
 
     /**
-     * The **`releasePointerCapture()`** method of the previously set for a specific (PointerEvent) _pointer_.
+     * The **`releasePointerCapture()`** method of the Element interface releases (stops) _pointer capture_ that was previously set for a specific (PointerEvent) _pointer_.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/releasePointerCapture)
      */
@@ -409,7 +409,7 @@ private constructor() :
     fun removeAttribute(qualifiedName: String)
 
     /**
-     * The **`removeAttributeNS()`** method of the If you are working with HTML and you don't need to specify the requested attribute as being part of a specific namespace, use the Element.removeAttribute() method instead.
+     * The **`removeAttributeNS()`** method of the Element interface removes the specified attribute with the specified namespace from an element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/removeAttributeNS)
      */
@@ -524,14 +524,14 @@ private constructor() :
     fun setHTMLUnsafe(html: String)
 
     /**
-     * The **`setPointerCapture()`** method of the _capture target_ of future pointer events.
+     * The **`setPointerCapture()`** method of the Element interface is used to designate a specific element as the _capture target_ of future pointer events.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/setPointerCapture)
      */
     fun setPointerCapture(pointerId: Int)
 
     /**
-     * The **`toggleAttribute()`** method of the present and adding it if it is not present) on the given element.
+     * The **`toggleAttribute()`** method of the Element interface toggles a Boolean attribute (removing it if it is present and adding it if it is not present) on the given element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/toggleAttribute)
      */

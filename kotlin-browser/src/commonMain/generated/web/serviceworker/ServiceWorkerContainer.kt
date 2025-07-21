@@ -54,7 +54,7 @@ private constructor() :
     val ready: Promise<ServiceWorkerRegistration>
 
     /**
-     * The **`getRegistration()`** method of the client URL.
+     * The **`getRegistration()`** method of the ServiceWorkerContainer interface gets a ServiceWorkerRegistration object whose scope URL matches the provided client URL.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerContainer/getRegistration)
      */
@@ -65,7 +65,7 @@ private constructor() :
     fun getRegistrationAsync(clientURL: URL): Promise<ServiceWorkerRegistration?>
 
     /**
-     * The **`getRegistrations()`** method of the `ServiceWorkerContainer`, in an array.
+     * The **`getRegistrations()`** method of the ServiceWorkerContainer interface gets all ServiceWorkerRegistrations associated with a `ServiceWorkerContainer`, in an array.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerContainer/getRegistrations)
      */
@@ -98,7 +98,7 @@ private constructor() :
 }
 
 /**
- * The **`getRegistration()`** method of the client URL.
+ * The **`getRegistration()`** method of the ServiceWorkerContainer interface gets a ServiceWorkerRegistration object whose scope URL matches the provided client URL.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerContainer/getRegistration)
  */
@@ -109,7 +109,7 @@ suspend inline fun ServiceWorkerContainer.getRegistration(clientURL: String): Se
 }
 
 /**
- * The **`getRegistration()`** method of the client URL.
+ * The **`getRegistration()`** method of the ServiceWorkerContainer interface gets a ServiceWorkerRegistration object whose scope URL matches the provided client URL.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerContainer/getRegistration)
  */
@@ -124,7 +124,7 @@ suspend inline fun ServiceWorkerContainer.getRegistration(clientURL: URL): Servi
 }
 
 /**
- * The **`getRegistrations()`** method of the `ServiceWorkerContainer`, in an array.
+ * The **`getRegistrations()`** method of the ServiceWorkerContainer interface gets all ServiceWorkerRegistrations associated with a `ServiceWorkerContainer`, in an array.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerContainer/getRegistrations)
  */

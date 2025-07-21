@@ -53,7 +53,7 @@ open external class DOMQuad(
     fun getBounds(): DOMRect
 
     /**
-     * The DOMQuad method `toJSON()` returns a ```js-nolint toJSON() ``` None.
+     * The DOMQuad method `toJSON()` returns a JSON representation of the `DOMQuad` object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMQuad/toJSON)
      */

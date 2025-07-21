@@ -16,7 +16,7 @@ open external class AuthenticatorAttestationResponse
 private constructor() :
     AuthenticatorResponse {
     /**
-     * The **`attestationObject`** property of the entire `attestationObject` with a private key that is stored in the authenticator when it is manufactured.
+     * The **`attestationObject`** property of the AuthenticatorAttestationResponse interface returns an ArrayBuffer containing the new public key, as well as signature over the entire `attestationObject` with a private key that is stored in the authenticator when it is manufactured.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AuthenticatorAttestationResponse/attestationObject)
      */

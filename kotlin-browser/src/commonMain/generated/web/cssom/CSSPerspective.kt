@@ -9,7 +9,7 @@ package web.cssom
  */
 open external class CSSPerspective(
     /**
-     * The **`length`** property of the It is used to apply a perspective transform to the element and its content.
+     * The **`length`** property of the CSSPerspective interface sets the distance from z=0.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSPerspective/length)
      */

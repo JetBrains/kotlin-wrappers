@@ -14,21 +14,21 @@ import kotlin.js.definedExternally
 open external class IDBCursor
 private constructor() {
     /**
-     * The **`direction`** read-only property of the direction of traversal of the cursor (set using section below for possible values.
+     * The **`direction`** read-only property of the IDBCursor interface is a string that returns the direction of traversal of the cursor (set using IDBObjectStore.openCursor for example).
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBCursor/direction)
      */
     val direction: IDBCursorDirection
 
     /**
-     * The **`key`** read-only property of the position.
+     * The **`key`** read-only property of the IDBCursor interface returns the key for the record at the cursor's position.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBCursor/key)
      */
     val key: IDBValidKey
 
     /**
-     * The **`primaryKey`** read-only property of the cursor is currently being iterated or has iterated outside its range, this is set to undefined.
+     * The **`primaryKey`** read-only property of the IDBCursor interface returns the cursor's current effective key.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBCursor/primaryKey)
      */
@@ -42,7 +42,7 @@ private constructor() {
     val request: IDBRequest<*>
 
     /**
-     * The **`source`** read-only property of the null or throws an exception, even if the cursor is currently being iterated, has iterated past its end, or its transaction is not active.
+     * The **`source`** read-only property of the IDBCursor interface returns the IDBObjectStore or IDBIndex that the cursor is iterating over.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBCursor/source)
      */
@@ -63,7 +63,7 @@ private constructor() {
     fun `continue`(key: IDBValidKey = definedExternally)
 
     /**
-     * The **`continuePrimaryKey()`** method of the matches the key parameter as well as whose primary key matches the primary key parameter.
+     * The **`continuePrimaryKey()`** method of the IDBCursor interface advances the cursor to the item whose key matches the key parameter as well as whose primary key matches the primary key parameter.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBCursor/continuePrimaryKey)
      */

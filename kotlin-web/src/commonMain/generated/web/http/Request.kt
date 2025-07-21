@@ -52,7 +52,7 @@ open external class Request(
     val destination: RequestDestination
 
     /**
-     * The **`headers`** read-only property of the with the request.
+     * The **`headers`** read-only property of the Request interface contains the Headers object associated with the request.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/headers)
      */
@@ -73,7 +73,7 @@ open external class Request(
     val keepalive: Boolean
 
     /**
-     * The **`method`** read-only property of the `POST`, etc.) A String indicating the method of the request.
+     * The **`method`** read-only property of the Request interface contains the request's method (`GET`, `POST`, etc.)
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/method)
      */
@@ -94,14 +94,14 @@ open external class Request(
     val redirect: RequestRedirect
 
     /**
-     * The **`referrer`** read-only property of the Request.
+     * The **`referrer`** read-only property of the Request interface is set by the user agent to be the referrer of the Request.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/referrer)
      */
     val referrer: String
 
     /**
-     * The **`referrerPolicy`** read-only property of the referrer information, sent in the Referer header, should be included with the request.
+     * The **`referrerPolicy`** read-only property of the Request interface returns the referrer policy, which governs what referrer information, sent in the Referer header, should be included with the request.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/referrerPolicy)
      */

@@ -45,7 +45,7 @@ protected constructor() :
     var ping: String
 
     /**
-     * The **`HTMLAreaElement.referrerPolicy`** property reflect the HTML `referrerpolicy` attribute of the resource.
+     * The **`HTMLAreaElement.referrerPolicy`** property reflect the HTML `referrerpolicy` attribute of the area element defining which referrer is sent when fetching the resource.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLAreaElement/referrerPolicy)
      */

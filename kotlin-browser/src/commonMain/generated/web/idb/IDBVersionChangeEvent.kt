@@ -18,14 +18,14 @@ open external class IDBVersionChangeEvent(
     init: IDBVersionChangeEventInit = definedExternally,
 ) : Event {
     /**
-     * The **`newVersion`** read-only property of the database.
+     * The **`newVersion`** read-only property of the IDBVersionChangeEvent interface returns the new version number of the database.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBVersionChangeEvent/newVersion)
      */
     val newVersion: UInt53?
 
     /**
-     * The **`oldVersion`** read-only property of the database.
+     * The **`oldVersion`** read-only property of the IDBVersionChangeEvent interface returns the old version number of the database.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBVersionChangeEvent/oldVersion)
      */

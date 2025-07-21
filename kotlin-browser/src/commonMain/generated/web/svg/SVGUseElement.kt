@@ -3,7 +3,7 @@
 package web.svg
 
 /**
- * The **`SVGUseElement`** interface corresponds to the use element.
+ * ## SVG use DOM interface
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGUseElement)
  */

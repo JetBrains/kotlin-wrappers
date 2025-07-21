@@ -69,7 +69,7 @@ private constructor() {
     ): Promise<ArrayBuffer>
 
     /**
-     * The **`deriveBits()`** method of the key.
+     * The **`deriveBits()`** method of the SubtleCrypto interface can be used to derive an array of bits from a base key.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/deriveBits)
      */
@@ -1201,7 +1201,7 @@ suspend inline fun SubtleCrypto.decrypt(
 }
 
 /**
- * The **`deriveBits()`** method of the key.
+ * The **`deriveBits()`** method of the SubtleCrypto interface can be used to derive an array of bits from a base key.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/deriveBits)
  */
@@ -1218,7 +1218,7 @@ suspend inline fun SubtleCrypto.deriveBits(
 }
 
 /**
- * The **`deriveBits()`** method of the key.
+ * The **`deriveBits()`** method of the SubtleCrypto interface can be used to derive an array of bits from a base key.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/deriveBits)
  */

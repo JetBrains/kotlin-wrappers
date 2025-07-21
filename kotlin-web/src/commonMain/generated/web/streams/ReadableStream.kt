@@ -83,7 +83,7 @@ open external class ReadableStream<R : JsAny?>(
     ): Promise<Void>
 
     /**
-     * The **`tee()`** method of the two-element array containing the two resulting branches as new ReadableStream instances.
+     * The **`tee()`** method of the ReadableStream interface tees the current readable stream, returning a two-element array containing the two resulting branches as new ReadableStream instances.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStream/tee)
      */

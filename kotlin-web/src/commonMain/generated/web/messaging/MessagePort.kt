@@ -30,7 +30,7 @@ private constructor() :
     fun close()
 
     /**
-     * The **`postMessage()`** method of the transfers ownership of objects to other browsing contexts.
+     * The **`postMessage()`** method of the MessagePort interface sends a message from the port, and optionally, transfers ownership of objects to other browsing contexts.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MessagePort/postMessage)
      */

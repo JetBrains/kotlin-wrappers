@@ -17,14 +17,14 @@ open external class SpeechRecognitionErrorEvent(
     init: SpeechRecognitionErrorEventInit,
 ) : Event {
     /**
-     * The **`error`** read-only property of the A string naming the type of error.
+     * The **`error`** read-only property of the SpeechRecognitionErrorEvent interface returns the type of error raised.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechRecognitionErrorEvent/error)
      */
     val error: SpeechRecognitionErrorCode
 
     /**
-     * The **`message`** read-only property of the error in more detail.
+     * The **`message`** read-only property of the SpeechRecognitionErrorEvent interface returns a message describing the error in more detail.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechRecognitionErrorEvent/message)
      */

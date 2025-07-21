@@ -35,7 +35,7 @@ private constructor() :
     val sampleRate: Float
 
     /**
-     * The **`registerProcessor`** method of the from AudioWorkletProcessor interface under a specified _name_.
+     * The **`registerProcessor`** method of the AudioWorkletGlobalScope interface registers a class constructor derived from AudioWorkletProcessor interface under a specified _name_.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioWorkletGlobalScope/registerProcessor)
      */

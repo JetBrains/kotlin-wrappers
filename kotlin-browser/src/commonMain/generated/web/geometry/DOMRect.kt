@@ -39,7 +39,7 @@ open external class DOMRect(
     Serializable {
     companion object {
         /**
-         * The **`fromRect()`** static method of the object with a given location and dimensions.
+         * The **`fromRect()`** static method of the DOMRect object creates a new `DOMRect` object with a given location and dimensions.
          *
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMRect/fromRect_static)
          */

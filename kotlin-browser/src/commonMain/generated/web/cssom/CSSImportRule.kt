@@ -11,7 +11,7 @@ open external class CSSImportRule
 private constructor() :
     CSSRule {
     /**
-     * The read-only **`href`** property of the The resolved URL will be the `href` attribute of the associated stylesheet.
+     * The read-only **`href`** property of the CSSImportRule interface returns the URL specified by the @import at-rule.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSImportRule/href)
      */
@@ -25,14 +25,14 @@ private constructor() :
     val layerName: String?
 
     /**
-     * The read-only **`media`** property of the containing the value of the `media` attribute of the associated stylesheet.
+     * The read-only **`media`** property of the CSSImportRule interface returns a MediaList object, containing the value of the `media` attribute of the associated stylesheet.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSImportRule/media)
      */
     val media: MediaList
 
     /**
-     * The read-only **`styleSheet`** property of the in the form of a CSSStyleSheet object.
+     * The read-only **`styleSheet`** property of the CSSImportRule interface returns the CSS Stylesheet specified by the @import at-rule.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSImportRule/styleSheet)
      */

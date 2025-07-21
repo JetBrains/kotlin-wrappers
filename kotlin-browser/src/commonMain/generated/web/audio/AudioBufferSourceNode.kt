@@ -21,7 +21,7 @@ open external class AudioBufferSourceNode(
     var buffer: AudioBuffer?
 
     /**
-     * The **`detune`** property of the representing detuning of oscillation in cents.
+     * The **`detune`** property of the AudioBufferSourceNode interface is a k-rate AudioParam representing detuning of oscillation in cents.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioBufferSourceNode/detune)
      */

@@ -66,7 +66,7 @@ open external class KeyboardEvent(
     val metaKey: Boolean
 
     /**
-     * The **`repeat`** read-only property of the `true` if the given key is being held down such that it is automatically repeating.
+     * The **`repeat`** read-only property of the KeyboardEvent interface returns a boolean value that is `true` if the given key is being held down such that it is automatically repeating.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/KeyboardEvent/repeat)
      */

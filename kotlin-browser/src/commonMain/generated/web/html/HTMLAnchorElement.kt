@@ -38,7 +38,7 @@ protected constructor() :
     var ping: String
 
     /**
-     * The **`HTMLAnchorElement.referrerPolicy`** property reflect the HTML `referrerpolicy` attribute of the A string; one of the following: - `no-referrer` - : The Referer header will be omitted entirely.
+     * The **`HTMLAnchorElement.referrerPolicy`** property reflect the HTML `referrerpolicy` attribute of the a element defining which referrer is sent when fetching the resource.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLAnchorElement/referrerPolicy)
      */

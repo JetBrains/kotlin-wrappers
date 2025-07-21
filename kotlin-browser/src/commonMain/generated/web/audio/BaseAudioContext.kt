@@ -24,7 +24,7 @@ open external class BaseAudioContext
 private constructor() :
     EventTarget {
     /**
-     * The `audioWorklet` read-only property of the processing.
+     * The `audioWorklet` read-only property of the BaseAudioContext interface returns an instance of AudioWorklet that can be used for adding AudioWorkletProcessor-derived classes which implement custom audio processing.
      * Available only in secure contexts.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BaseAudioContext/audioWorklet)
@@ -72,7 +72,7 @@ private constructor() :
     val state: AudioContextState
 
     /**
-     * The `createAnalyser()` method of the can be used to expose audio time and frequency data and create data visualizations.
+     * The `createAnalyser()` method of the BaseAudioContext interface creates an AnalyserNode, which can be used to expose audio time and frequency data and create data visualizations.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BaseAudioContext/createAnalyser)
      */
@@ -118,7 +118,7 @@ private constructor() :
     fun createChannelSplitter(numberOfOutputs: Int = definedExternally): ChannelSplitterNode
 
     /**
-     * The **`createConstantSource()`** property of the BaseAudioContext interface creates a outputs a monaural (one-channel) sound signal whose samples all have the same value.
+     * The **`createConstantSource()`** property of the BaseAudioContext interface creates a ConstantSourceNode object, which is an audio source that continuously outputs a monaural (one-channel) sound signal whose samples all have the same value.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BaseAudioContext/createConstantSource)
      */
@@ -132,7 +132,7 @@ private constructor() :
     fun createConvolver(): ConvolverNode
 
     /**
-     * The `createDelay()` method of the which is used to delay the incoming audio signal by a certain amount of time.
+     * The `createDelay()` method of the BaseAudioContext Interface is used to create a DelayNode, which is used to delay the incoming audio signal by a certain amount of time.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BaseAudioContext/createDelay)
      */
@@ -208,7 +208,7 @@ private constructor() :
     fun createWaveShaper(): WaveShaperNode
 
     /**
-     * The `decodeAudioData()` method of the BaseAudioContext Interface is used to asynchronously decode audio file data contained in an rate, then passed to a callback or promise.
+     * The `decodeAudioData()` method of the BaseAudioContext Interface is used to asynchronously decode audio file data contained in an ArrayBuffer that is loaded from Window/fetch, XMLHttpRequest, or FileReader.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BaseAudioContext/decodeAudioData)
      */
@@ -217,7 +217,7 @@ private constructor() :
 }
 
 /**
- * The `decodeAudioData()` method of the BaseAudioContext Interface is used to asynchronously decode audio file data contained in an rate, then passed to a callback or promise.
+ * The `decodeAudioData()` method of the BaseAudioContext Interface is used to asynchronously decode audio file data contained in an ArrayBuffer that is loaded from Window/fetch, XMLHttpRequest, or FileReader.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BaseAudioContext/decodeAudioData)
  */

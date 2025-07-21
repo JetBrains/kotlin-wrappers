@@ -17,21 +17,21 @@ private constructor() {
     val filter: NodeFilter?
 
     /**
-     * The **`NodeIterator.pointerBeforeReferenceNode`** read-only property returns a boolean flag that indicates whether the `NodeFilter` is anchored before (if this value is `true`) or after (if this value is `false`) the anchor node indicated by the A boolean.
+     * The **`NodeIterator.pointerBeforeReferenceNode`** read-only property returns a boolean flag that indicates whether the `NodeFilter` is anchored before (if this value is `true`) or after (if this value is `false`) the anchor node indicated by the NodeIterator.referenceNode property.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NodeIterator/pointerBeforeReferenceNode)
      */
     val pointerBeforeReferenceNode: Boolean
 
     /**
-     * The **`NodeIterator.referenceNode`** read-only property returns the iterator remains anchored to the reference node as specified by this property.
+     * The **`NodeIterator.referenceNode`** read-only property returns the Node to which the iterator is anchored; as new nodes are inserted, the iterator remains anchored to the reference node as specified by this property.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NodeIterator/referenceNode)
      */
     val referenceNode: Node
 
     /**
-     * The **`NodeIterator.root`** read-only property represents the traverses.
+     * The **`NodeIterator.root`** read-only property represents the Node that is the root of what the NodeIterator traverses.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NodeIterator/root)
      */

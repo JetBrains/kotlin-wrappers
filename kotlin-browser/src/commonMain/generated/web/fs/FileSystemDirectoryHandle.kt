@@ -27,7 +27,7 @@ protected /* private */ constructor() :
     override val kind: FileSystemHandleKind.directory
 
     /**
-     * The **`getDirectoryHandle()`** method of the within the directory handle on which the method is called.
+     * The **`getDirectoryHandle()`** method of the FileSystemDirectoryHandle interface returns a FileSystemDirectoryHandle for a subdirectory with the specified name within the directory handle on which the method is called.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemDirectoryHandle/getDirectoryHandle)
      */
@@ -38,7 +38,7 @@ protected /* private */ constructor() :
     ): Promise<FileSystemDirectoryHandle>
 
     /**
-     * The **`getFileHandle()`** method of the directory the method is called.
+     * The **`getFileHandle()`** method of the FileSystemDirectoryHandle interface returns a FileSystemFileHandle for a file with the specified name, within the directory the method is called.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemDirectoryHandle/getFileHandle)
      */
@@ -49,7 +49,7 @@ protected /* private */ constructor() :
     ): Promise<FileSystemFileHandle>
 
     /**
-     * The **`removeEntry()`** method of the directory handle contains a file or directory called the name specified.
+     * The **`removeEntry()`** method of the FileSystemDirectoryHandle interface attempts to remove an entry if the directory handle contains a file or directory called the name specified.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemDirectoryHandle/removeEntry)
      */
@@ -60,7 +60,7 @@ protected /* private */ constructor() :
     ): Promise<Void>
 
     /**
-     * The **`resolve()`** method of the directory names from the parent handle to the specified child entry, with the name of the child entry as the last array item.
+     * The **`resolve()`** method of the FileSystemDirectoryHandle interface returns an Array of directory names from the parent handle to the specified child entry, with the name of the child entry as the last array item.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemDirectoryHandle/resolve)
      */
@@ -69,7 +69,7 @@ protected /* private */ constructor() :
 }
 
 /**
- * The **`getDirectoryHandle()`** method of the within the directory handle on which the method is called.
+ * The **`getDirectoryHandle()`** method of the FileSystemDirectoryHandle interface returns a FileSystemDirectoryHandle for a subdirectory with the specified name within the directory handle on which the method is called.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemDirectoryHandle/getDirectoryHandle)
  */
@@ -84,7 +84,7 @@ suspend inline fun FileSystemDirectoryHandle.getDirectoryHandle(
 }
 
 /**
- * The **`getDirectoryHandle()`** method of the within the directory handle on which the method is called.
+ * The **`getDirectoryHandle()`** method of the FileSystemDirectoryHandle interface returns a FileSystemDirectoryHandle for a subdirectory with the specified name within the directory handle on which the method is called.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemDirectoryHandle/getDirectoryHandle)
  */
@@ -97,7 +97,7 @@ suspend inline fun FileSystemDirectoryHandle.getDirectoryHandle(
 }
 
 /**
- * The **`getFileHandle()`** method of the directory the method is called.
+ * The **`getFileHandle()`** method of the FileSystemDirectoryHandle interface returns a FileSystemFileHandle for a file with the specified name, within the directory the method is called.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemDirectoryHandle/getFileHandle)
  */
@@ -112,7 +112,7 @@ suspend inline fun FileSystemDirectoryHandle.getFileHandle(
 }
 
 /**
- * The **`getFileHandle()`** method of the directory the method is called.
+ * The **`getFileHandle()`** method of the FileSystemDirectoryHandle interface returns a FileSystemFileHandle for a file with the specified name, within the directory the method is called.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemDirectoryHandle/getFileHandle)
  */
@@ -125,7 +125,7 @@ suspend inline fun FileSystemDirectoryHandle.getFileHandle(
 }
 
 /**
- * The **`removeEntry()`** method of the directory handle contains a file or directory called the name specified.
+ * The **`removeEntry()`** method of the FileSystemDirectoryHandle interface attempts to remove an entry if the directory handle contains a file or directory called the name specified.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemDirectoryHandle/removeEntry)
  */
@@ -140,7 +140,7 @@ suspend inline fun FileSystemDirectoryHandle.removeEntry(
 }
 
 /**
- * The **`removeEntry()`** method of the directory handle contains a file or directory called the name specified.
+ * The **`removeEntry()`** method of the FileSystemDirectoryHandle interface attempts to remove an entry if the directory handle contains a file or directory called the name specified.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemDirectoryHandle/removeEntry)
  */
@@ -153,7 +153,7 @@ suspend inline fun FileSystemDirectoryHandle.removeEntry(
 }
 
 /**
- * The **`resolve()`** method of the directory names from the parent handle to the specified child entry, with the name of the child entry as the last array item.
+ * The **`resolve()`** method of the FileSystemDirectoryHandle interface returns an Array of directory names from the parent handle to the specified child entry, with the name of the child entry as the last array item.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemDirectoryHandle/resolve)
  */

@@ -43,7 +43,7 @@ open external class AudioBuffer(
     val sampleRate: Float
 
     /**
-     * The **`copyFromChannel()`** method of the channel of the `AudioBuffer` to a specified ```js-nolint copyFromChannel(destination, channelNumber, startInChannel) ``` - `destination` - : A Float32Array to copy the channel's samples to.
+     * The **`copyFromChannel()`** method of the AudioBuffer interface copies the audio sample data from the specified channel of the `AudioBuffer` to a specified Float32Array.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioBuffer/copyFromChannel)
      */

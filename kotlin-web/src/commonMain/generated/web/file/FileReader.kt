@@ -84,7 +84,7 @@ open external class FileReader :
     fun readAsArrayBuffer(blob: Blob)
 
     /**
-     * The **`readAsDataURL()`** method of the FileReader interface is used to read the contents of the specified file's data as a base64 encoded string.
+     * The **`readAsDataURL()`** method of the FileReader interface is used to read the contents of the specified Blob or File.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileReader/readAsDataURL)
      */

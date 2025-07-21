@@ -44,7 +44,7 @@ private constructor() {
     var value: Float
 
     /**
-     * The **`cancelAndHoldAtTime()`** method of the `AudioParam` but holds its value at a given time until further changes are made using other methods.
+     * The **`cancelAndHoldAtTime()`** method of the AudioParam interface cancels all scheduled future changes to the `AudioParam` but holds its value at a given time until further changes are made using other methods.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioParam/cancelAndHoldAtTime)
      */
@@ -78,7 +78,7 @@ private constructor() {
     ): AudioParam
 
     /**
-     * The `setTargetAtTime()` method of the `AudioParam` value.
+     * The `setTargetAtTime()` method of the AudioParam interface schedules the start of a gradual change to the `AudioParam` value.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioParam/setTargetAtTime)
      */
@@ -89,7 +89,7 @@ private constructor() {
     ): AudioParam
 
     /**
-     * The `setValueAtTime()` method of the `AudioParam` value at a precise time, as measured against ```js-nolint setValueAtTime(value, startTime) ``` - `value` - : A floating point number representing the value the AudioParam will change to at the given time.
+     * The `setValueAtTime()` method of the AudioParam interface schedules an instant change to the `AudioParam` value at a precise time, as measured against BaseAudioContext/currentTime.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioParam/setValueAtTime)
      */
@@ -99,7 +99,7 @@ private constructor() {
     ): AudioParam
 
     /**
-     * The **`setValueCurveAtTime()`** method of the following a curve defined by a list of values.
+     * The **`setValueCurveAtTime()`** method of the AudioParam interface schedules the parameter's value to change following a curve defined by a list of values.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioParam/setValueCurveAtTime)
      */

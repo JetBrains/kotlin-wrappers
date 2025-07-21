@@ -36,7 +36,7 @@ private constructor() {
     fun databasesAsync(): Promise<ReadonlyArray<IDBDatabaseInfo>>
 
     /**
-     * The **`deleteDatabase()`** method of the returns an IDBOpenDBRequest object immediately, and performs the deletion operation asynchronously.
+     * The **`deleteDatabase()`** method of the IDBFactory interface requests the deletion of a database.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBFactory/deleteDatabase)
      */

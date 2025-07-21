@@ -30,7 +30,7 @@ protected /* private */ constructor() :
     override fun get(key: BufferSource): MediaKeyStatus?
 
     /**
-     * The **`has()`** method of the whether a value has been associated with the given key.
+     * The **`has()`** method of the MediaKeyStatusMap interface returns a Boolean, asserting whether a value has been associated with the given key.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeyStatusMap/has)
      */

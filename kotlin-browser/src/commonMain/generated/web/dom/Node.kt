@@ -22,7 +22,7 @@ private constructor() :
     val baseURI: String
 
     /**
-     * The read-only **`childNodes`** property of the Node interface returns a live the first child node is assigned index `0`.
+     * The read-only **`childNodes`** property of the Node interface returns a live NodeList of child Node of the given element where the first child node is assigned index `0`.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Node/childNodes)
      */
@@ -99,7 +99,7 @@ private constructor() :
     val parentNode: ParentNode?
 
     /**
-     * The read-only **`previousSibling`** property of the Node interface returns the node immediately preceding the specified one in its parent's or `null` if the specified node is the first in that list.
+     * The read-only **`previousSibling`** property of the Node interface returns the node immediately preceding the specified one in its parent's Node.childNodes list, or `null` if the specified node is the first in that list.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Node/previousSibling)
      */

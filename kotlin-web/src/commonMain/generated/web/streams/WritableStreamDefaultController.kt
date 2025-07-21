@@ -21,7 +21,7 @@ private constructor() {
     val signal: AbortSignal
 
     /**
-     * The **`error()`** method of the with the associated stream to error.
+     * The **`error()`** method of the WritableStreamDefaultController interface causes any future interactions with the associated stream to error.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WritableStreamDefaultController/error)
      */

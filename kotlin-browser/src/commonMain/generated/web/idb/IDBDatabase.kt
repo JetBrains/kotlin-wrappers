@@ -28,7 +28,7 @@ private constructor() :
     val name: String
 
     /**
-     * The **`objectStoreNames`** read-only property of the list of the names of the object stores currently in the connected database.
+     * The **`objectStoreNames`** read-only property of the IDBDatabase interface is a DOMStringList containing a list of the names of the object stores currently in the connected database.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBDatabase/objectStoreNames)
      */
@@ -61,7 +61,7 @@ private constructor() :
     fun close()
 
     /**
-     * The **`createObjectStore()`** method of the The method takes the name of the store as well as a parameter object that lets you define important optional properties.
+     * The **`createObjectStore()`** method of the IDBDatabase interface creates and returns a new IDBObjectStore.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBDatabase/createObjectStore)
      */
@@ -71,7 +71,7 @@ private constructor() :
     ): IDBObjectStore
 
     /**
-     * The **`deleteObjectStore()`** method of the the connected database, along with any indexes that reference it.
+     * The **`deleteObjectStore()`** method of the IDBDatabase interface destroys the object store with the given name in the connected database, along with any indexes that reference it.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBDatabase/deleteObjectStore)
      */

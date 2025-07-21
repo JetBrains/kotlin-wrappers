@@ -18,7 +18,7 @@ private constructor() {
     val mode: LockMode
 
     /**
-     * The **`name`** read-only property of the Lock interface returns the _name_ passed to The name of a lock is passed by script when the lock is requested.
+     * The **`name`** read-only property of the Lock interface returns the _name_ passed to LockManager.request selected when the lock was requested.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Lock/name)
      */

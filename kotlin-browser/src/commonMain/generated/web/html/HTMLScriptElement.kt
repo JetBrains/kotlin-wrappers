@@ -67,7 +67,7 @@ protected constructor() :
     var noModule: Boolean
 
     /**
-     * The **`referrerPolicy`** property of the `referrerpolicy` of the script element, which defines how the referrer is set when fetching the script and any scripts it imports.
+     * The **`referrerPolicy`** property of the HTMLScriptElement interface reflects the HTML `referrerpolicy` of the script element, which defines how the referrer is set when fetching the script and any scripts it imports.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLScriptElement/referrerPolicy)
      */

@@ -75,7 +75,7 @@ open external class Blob(
     fun stream(): ReadableStream<Uint8Array<ArrayBuffer>>
 
     /**
-     * The **`text()`** method of the string containing the contents of the blob, interpreted as UTF-8.
+     * The **`text()`** method of the Blob interface returns a Promise that resolves with a string containing the contents of the blob, interpreted as UTF-8.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Blob/text)
      */
@@ -102,7 +102,7 @@ suspend inline fun Blob.bytes(): Uint8Array<ArrayBuffer> {
 }
 
 /**
- * The **`text()`** method of the string containing the contents of the blob, interpreted as UTF-8.
+ * The **`text()`** method of the Blob interface returns a Promise that resolves with a string containing the contents of the blob, interpreted as UTF-8.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Blob/text)
  */

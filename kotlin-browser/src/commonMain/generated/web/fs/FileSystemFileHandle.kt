@@ -22,7 +22,7 @@ private constructor() :
     override val kind: FileSystemHandleKind.file
 
     /**
-     * The **`createSyncAccessHandle()`** method of the that can be used to synchronously read from and write to a file.
+     * The **`createSyncAccessHandle()`** method of the FileSystemFileHandle interface returns a Promise which resolves to a FileSystemSyncAccessHandle object that can be used to synchronously read from and write to a file.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemFileHandle/createSyncAccessHandle)
      */
@@ -38,7 +38,7 @@ private constructor() :
     fun createWritableAsync(options: FileSystemCreateWritableOptions = definedExternally): Promise<FileSystemWritableFileStream>
 
     /**
-     * The **`getFile()`** method of the If the file on disk changes or is removed after this method is called, the returned ```js-nolint getFile() ``` None.
+     * The **`getFile()`** method of the FileSystemFileHandle interface returns a Promise which resolves to a File object representing the state on disk of the entry represented by the handle.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemFileHandle/getFile)
      */
@@ -47,7 +47,7 @@ private constructor() :
 }
 
 /**
- * The **`createSyncAccessHandle()`** method of the that can be used to synchronously read from and write to a file.
+ * The **`createSyncAccessHandle()`** method of the FileSystemFileHandle interface returns a Promise which resolves to a FileSystemSyncAccessHandle object that can be used to synchronously read from and write to a file.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemFileHandle/createSyncAccessHandle)
  */
@@ -76,7 +76,7 @@ suspend inline fun FileSystemFileHandle.createWritable(): FileSystemWritableFile
 }
 
 /**
- * The **`getFile()`** method of the If the file on disk changes or is removed after this method is called, the returned ```js-nolint getFile() ``` None.
+ * The **`getFile()`** method of the FileSystemFileHandle interface returns a Promise which resolves to a File object representing the state on disk of the entry represented by the handle.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemFileHandle/getFile)
  */

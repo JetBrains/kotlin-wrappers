@@ -9,13 +9,13 @@ package web.cssom
  */
 open external class CSSSkew(
     /**
-     * The **`ax`** property of the along the x-axis (or abscissa).
+     * The **`ax`** property of the CSSSkew interface gets and sets the angle used to distort the element along the x-axis (or abscissa).
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSSkew/ax)
      */
     var ax: CSSNumericValue,
     /**
-     * The **`ay`** property of the along the y-axis (or ordinate).
+     * The **`ay`** property of the CSSSkew interface gets and sets the angle used to distort the element along the y-axis (or ordinate).
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSSkew/ay)
      */

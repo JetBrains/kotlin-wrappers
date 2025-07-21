@@ -27,7 +27,7 @@ protected constructor() :
     fun deleteRow(index: Int)
 
     /**
-     * The **`insertRow()`** method of the HTMLTableSectionElement interface inserts a new row (tr) in the given table sectioning element (thead, tfoot, or ```js-nolint insertRow() insertRow(index) ``` - `index` [MISSING: optional_inline] - : The row index of the new row.
+     * The **`insertRow()`** method of the HTMLTableSectionElement interface inserts a new row (tr) in the given table sectioning element (thead, tfoot, or tbody), then returns a reference to this new row.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableSectionElement/insertRow)
      */

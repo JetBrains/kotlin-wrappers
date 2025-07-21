@@ -33,14 +33,14 @@ private constructor() {
     val mid: String?
 
     /**
-     * The read-only **`receiver`** property of WebRTC's RTCRtpTransceiver interface indicates the data for the transceiver's stream.
+     * The read-only **`receiver`** property of WebRTC's RTCRtpTransceiver interface indicates the RTCRtpReceiver responsible for receiving and decoding incoming media data for the transceiver's stream.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCRtpTransceiver/receiver)
      */
     val receiver: RTCRtpReceiver
 
     /**
-     * The read-only **`sender`** property of WebRTC's RTCRtpTransceiver interface indicates the for the transceiver's stream.
+     * The read-only **`sender`** property of WebRTC's RTCRtpTransceiver interface indicates the RTCRtpSender responsible for encoding and sending outgoing media data for the transceiver's stream.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCRtpTransceiver/sender)
      */
@@ -54,7 +54,7 @@ private constructor() {
     fun setCodecPreferences(codecs: ReadonlyArray<RTCRtpCodec>)
 
     /**
-     * The **`stop()`** method in the RTCRtpTransceiver interface permanently stops the transceiver by stopping both the associated RTCRtpSender and ```js-nolint stop() ``` None.
+     * The **`stop()`** method in the RTCRtpTransceiver interface permanently stops the transceiver by stopping both the associated RTCRtpSender and RTCRtpReceiver.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCRtpTransceiver/stop)
      */

@@ -18,7 +18,7 @@ open external class IDBRequest<T : JsAny?>
 private constructor() :
     EventTarget {
     /**
-     * The **`error`** read-only property of the request.
+     * The **`error`** read-only property of the IDBRequest interface returns the error in the event of an unsuccessful request.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBRequest/error)
      */
@@ -35,21 +35,21 @@ private constructor() :
     var onsuccess: EventHandler<Event, IDBRequest<T>, IDBRequest<T>>?
 
     /**
-     * The **`readyState`** read-only property of the Every request starts in the `pending` state.
+     * The **`readyState`** read-only property of the IDBRequest interface returns the state of the request.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBRequest/readyState)
      */
     val readyState: IDBRequestReadyState
 
     /**
-     * The **`result`** read-only property of the any - `InvalidStateError` DOMException - : Thrown when attempting to access the property if the request is not completed, and therefore the result is not available.
+     * The **`result`** read-only property of the IDBRequest interface returns the result of the request.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBRequest/result)
      */
     val result: T
 
     /**
-     * The **`source`** read-only property of the Index or an object store.
+     * The **`source`** read-only property of the IDBRequest interface returns the source of the request, such as an Index or an object store.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBRequest/source)
      */

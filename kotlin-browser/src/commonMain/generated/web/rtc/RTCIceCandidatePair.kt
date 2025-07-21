@@ -12,7 +12,7 @@ sealed external interface RTCIceCandidatePair {
     var local: RTCIceCandidate
 
     /**
-     * The **`remote`** property of the **RTCIceCandidatePair** dictionary specifies the viable WebRTC connection.
+     * The **`remote`** property of the **RTCIceCandidatePair** dictionary specifies the RTCIceCandidate describing the configuration of the remote end of a viable WebRTC connection.
      */
     var remote: RTCIceCandidate
 }

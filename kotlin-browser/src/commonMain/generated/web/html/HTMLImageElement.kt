@@ -67,7 +67,7 @@ protected constructor() :
     var fetchPriority: FetchPriority
 
     /**
-     * The **`height`** property of the drawn, in CSS pixel if the image is being drawn or rendered to any visual medium such as the screen or a printer; otherwise, it's the natural, pixel density corrected height of the image.
+     * The **`height`** property of the HTMLImageElement interface indicates the height at which the image is drawn, in CSS pixel if the image is being drawn or rendered to any visual medium such as the screen or a printer; otherwise, it's the natural, pixel density corrected height of the image.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLImageElement/height)
      */
@@ -88,7 +88,7 @@ protected constructor() :
     var loading: Loading
 
     /**
-     * The HTMLImageElement interface's **`naturalHeight`** property is a read-only value which returns the intrinsic (natural), density-corrected height of the image in This is the height the image is if drawn with nothing constraining its height; if you don't specify a height for the image, or place the image inside a container that either limits or expressly specifies the image height, it will be rendered this tall.
+     * The HTMLImageElement interface's **`naturalHeight`** property is a read-only value which returns the intrinsic (natural), density-corrected height of the image in CSS pixel.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLImageElement/naturalHeight)
      */
@@ -102,7 +102,7 @@ protected constructor() :
     val naturalWidth: Int
 
     /**
-     * The **`HTMLImageElement.referrerPolicy`** property reflects the HTML `referrerpolicy` attribute of the resource.
+     * The **`HTMLImageElement.referrerPolicy`** property reflects the HTML `referrerpolicy` attribute of the img element defining which referrer is sent when fetching the resource.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLImageElement/referrerPolicy)
      */
@@ -130,35 +130,35 @@ protected constructor() :
     var srcset: String
 
     /**
-     * The **`useMap`** property on the providing the name of the client-side image map to apply to the image.
+     * The **`useMap`** property on the HTMLImageElement interface reflects the value of the HTML `usemap` attribute, which is a string providing the name of the client-side image map to apply to the image.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLImageElement/useMap)
      */
     var useMap: String
 
     /**
-     * The **`width`** property of the drawn in CSS pixel if it's being drawn or rendered to any visual medium such as a screen or printer.
+     * The **`width`** property of the HTMLImageElement interface indicates the width at which an image is drawn in CSS pixel if it's being drawn or rendered to any visual medium such as a screen or printer.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLImageElement/width)
      */
     var width: Int
 
     /**
-     * The read-only HTMLImageElement property **`x`** indicates the x-coordinate of the origin.
+     * The read-only HTMLImageElement property **`x`** indicates the x-coordinate of the img element's left border edge relative to the root element's origin.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLImageElement/x)
      */
     val x: Int
 
     /**
-     * The read-only HTMLImageElement property **`y`** indicates the y-coordinate of the origin.
+     * The read-only HTMLImageElement property **`y`** indicates the y-coordinate of the img element's top border edge relative to the root element's origin.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLImageElement/y)
      */
     val y: Int
 
     /**
-     * The **`decode()`** method of the HTMLImageElement interface returns a it to the DOM.
+     * The **`decode()`** method of the HTMLImageElement interface returns a Promise that resolves once the image is decoded and it is safe to append it to the DOM.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLImageElement/decode)
      */
@@ -167,7 +167,7 @@ protected constructor() :
 }
 
 /**
- * The **`decode()`** method of the HTMLImageElement interface returns a it to the DOM.
+ * The **`decode()`** method of the HTMLImageElement interface returns a Promise that resolves once the image is decoded and it is safe to append it to the DOM.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLImageElement/decode)
  */

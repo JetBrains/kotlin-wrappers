@@ -17,14 +17,14 @@ open external class HashChangeEvent(
     init: HashChangeEventInit = definedExternally,
 ) : Event {
     /**
-     * The **`newURL`** read-only property of the navigating.
+     * The **`newURL`** read-only property of the HashChangeEvent interface returns the new URL to which the window is navigating.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HashChangeEvent/newURL)
      */
     val newURL: String
 
     /**
-     * The **`oldURL`** read-only property of the was navigated.
+     * The **`oldURL`** read-only property of the HashChangeEvent interface returns the previous URL from which the window was navigated.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HashChangeEvent/oldURL)
      */

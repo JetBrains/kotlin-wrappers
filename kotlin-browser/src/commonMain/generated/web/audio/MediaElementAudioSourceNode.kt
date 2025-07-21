@@ -14,7 +14,7 @@ open external class MediaElementAudioSourceNode(
     options: MediaElementAudioSourceOptions,
 ) : AudioNode {
     /**
-     * The MediaElementAudioSourceNode interface's read-only **`mediaElement`** property indicates the receiving audio.
+     * The MediaElementAudioSourceNode interface's read-only **`mediaElement`** property indicates the HTMLMediaElement that contains the audio track from which the node is receiving audio.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaElementAudioSourceNode/mediaElement)
      */

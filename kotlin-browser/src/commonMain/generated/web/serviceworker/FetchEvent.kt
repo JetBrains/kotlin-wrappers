@@ -20,7 +20,7 @@ open external class FetchEvent(
     init: FetchEventInit,
 ) : ExtendableEvent {
     /**
-     * The **`clientId`** read-only property of the current service worker is controlling.
+     * The **`clientId`** read-only property of the FetchEvent interface returns the id of the Client that the current service worker is controlling.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FetchEvent/clientId)
      */
@@ -41,21 +41,21 @@ open external class FetchEvent(
     val preloadResponse: Promise<*>
 
     /**
-     * The **`request`** read-only property of the the event handler.
+     * The **`request`** read-only property of the FetchEvent interface returns the Request that triggered the event handler.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FetchEvent/request)
      */
     val request: Request
 
     /**
-     * The **`resultingClientId`** read-only property of the navigation.
+     * The **`resultingClientId`** read-only property of the FetchEvent interface is the Client.id of the Client that replaces the previous client during a page navigation.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FetchEvent/resultingClientId)
      */
     val resultingClientId: String
 
     /**
-     * The **`respondWith()`** method of allows you to provide a promise for a Response yourself.
+     * The **`respondWith()`** method of FetchEvent prevents the browser's default fetch handling, and allows you to provide a promise for a Response yourself.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FetchEvent/respondWith)
      */

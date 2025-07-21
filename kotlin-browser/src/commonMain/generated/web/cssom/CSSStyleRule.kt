@@ -25,7 +25,7 @@ private constructor() :
     val style: CSSStyleProperties
 
     /**
-     * The **`styleMap`** read-only property of the which provides access to the rule's property-value pairs.
+     * The **`styleMap`** read-only property of the CSSStyleRule interface returns a StylePropertyMap object which provides access to the rule's property-value pairs.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleRule/styleMap)
      */

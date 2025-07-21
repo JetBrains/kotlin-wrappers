@@ -14,28 +14,28 @@ open external class MediaMetadata(
     init: MediaMetadataInit = definedExternally,
 ) {
     /**
-     * The **`album`** property of the collection containing the media to be played.
+     * The **`album`** property of the MediaMetadata interface returns or sets the name of the album or collection containing the media to be played.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaMetadata/album)
      */
     var album: String
 
     /**
-     * The **`artist`** property of the creator, etc., of the media to be played.
+     * The **`artist`** property of the MediaMetadata interface returns or sets the name of the artist, group, creator, etc., of the media to be played.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaMetadata/artist)
      */
     var artist: String
 
     /**
-     * The **`artwork`** property of the objects representing images associated with playing media.
+     * The **`artwork`** property of the MediaMetadata interface returns or sets an array of objects representing images associated with playing media.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaMetadata/artwork)
      */
     var artwork: ReadonlyArray<MediaImage>
 
     /**
-     * The **`title`** property of the played.
+     * The **`title`** property of the MediaMetadata interface returns or sets the title of the media to be played.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaMetadata/title)
      */

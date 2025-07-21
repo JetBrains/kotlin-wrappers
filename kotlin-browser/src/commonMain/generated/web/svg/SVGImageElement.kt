@@ -23,35 +23,35 @@ private constructor() :
     var crossOrigin: CrossOrigin?
 
     /**
-     * The **`height`** read-only property of the corresponding to the height attribute of the given An SVGAnimatedLength.
+     * The **`height`** read-only property of the SVGImageElement interface returns an SVGAnimatedLength corresponding to the height attribute of the given image element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGImageElement/height)
      */
     val height: SVGAnimatedLength
 
     /**
-     * The **`preserveAspectRatio`** read-only property of the SVGImageElement interface returns an element.
+     * The **`preserveAspectRatio`** read-only property of the SVGImageElement interface returns an SVGAnimatedPreserveAspectRatio corresponding to the preserveAspectRatio attribute of the given image element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGImageElement/preserveAspectRatio)
      */
     val preserveAspectRatio: SVGAnimatedPreserveAspectRatio
 
     /**
-     * The **`width`** read-only property of the corresponding to the width attribute of the given image element.
+     * The **`width`** read-only property of the SVGImageElement interface returns an SVGAnimatedLength corresponding to the width attribute of the given image element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGImageElement/width)
      */
     val width: SVGAnimatedLength
 
     /**
-     * The **`x`** read-only property of the corresponding to the x attribute of the given image element.
+     * The **`x`** read-only property of the SVGImageElement interface returns an SVGAnimatedLength corresponding to the x attribute of the given image element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGImageElement/x)
      */
     val x: SVGAnimatedLength
 
     /**
-     * The **`y`** read-only property of the corresponding to the y attribute of the given image element.
+     * The **`y`** read-only property of the SVGImageElement interface returns an SVGAnimatedLength corresponding to the y attribute of the given image element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGImageElement/y)
      */

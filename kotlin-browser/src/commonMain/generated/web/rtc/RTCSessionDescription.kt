@@ -25,7 +25,7 @@ open external class RTCSessionDescription(
     val type: RTCSdpType
 
     /**
-     * The **`RTCSessionDescription.toJSON()`** method generates a ```js-nolint toJSON() ``` None.
+     * The **`RTCSessionDescription.toJSON()`** method generates a JSON description of the object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCSessionDescription/toJSON)
      */

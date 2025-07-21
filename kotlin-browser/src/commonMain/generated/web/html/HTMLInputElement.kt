@@ -155,7 +155,7 @@ protected constructor() :
     var indeterminate: Boolean
 
     /**
-     * The **`HTMLInputElement.labels`** read-only property returns a type `hidden`, the property returns `null`.
+     * The **`HTMLInputElement.labels`** read-only property returns a NodeList of the label elements associated with the input element, if the element is not hidden.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/labels)
      */

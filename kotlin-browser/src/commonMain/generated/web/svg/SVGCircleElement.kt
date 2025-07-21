@@ -11,7 +11,7 @@ open external class SVGCircleElement
 private constructor() :
     SVGGeometryElement {
     /**
-     * The **`cx`** read-only property of the SVGCircleElement interface reflects the cx attribute of a circle element and by that defines the x-coordinate of the circle's center.< If unspecified, the effect is as if the value is set to `0`.
+     * The **`cx`** read-only property of the SVGCircleElement interface reflects the cx attribute of a circle element and by that defines the x-coordinate of the circle's center.<
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGCircleElement/cx)
      */

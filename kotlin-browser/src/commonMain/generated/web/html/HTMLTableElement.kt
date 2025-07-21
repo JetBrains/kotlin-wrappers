@@ -20,7 +20,7 @@ protected constructor() :
     var caption: HTMLTableCaptionElement?
 
     /**
-     * The read-only HTMLTableElement property **`rows`** returns a live contained within any thead, tfoot, and Although the property itself is read-only, the returned object is live and allows the modification of its content.
+     * The read-only HTMLTableElement property **`rows`** returns a live HTMLCollection of all the rows in the table, including the rows contained within any thead, tfoot, and tbody elements.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableElement/rows)
      */
@@ -34,49 +34,49 @@ protected constructor() :
     val tBodies: HTMLCollection<HTMLTableSectionElement>
 
     /**
-     * The **`HTMLTableElement.tFoot`** property represents the `null` if there is no such element.
+     * The **`HTMLTableElement.tFoot`** property represents the tfoot element of a table.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableElement/tFoot)
      */
     var tFoot: HTMLTableSectionElement?
 
     /**
-     * The **`HTMLTableElement.tHead`** represents the `null` if there is no such element.
+     * The **`HTMLTableElement.tHead`** represents the thead element of a table.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableElement/tHead)
      */
     var tHead: HTMLTableSectionElement?
 
     /**
-     * The **`HTMLTableElement.createCaption()`** method returns the If no `<caption>` element exists on the table, this method creates it, and then returns it.
+     * The **`HTMLTableElement.createCaption()`** method returns the caption element associated with a given table.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableElement/createCaption)
      */
     fun createCaption(): HTMLTableCaptionElement
 
     /**
-     * The **`createTBody()`** method of ```js-nolint createTBody() ``` None.
+     * The **`createTBody()`** method of HTMLTableElement objects creates and returns a new tbody element associated with a given table.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableElement/createTBody)
      */
     fun createTBody(): HTMLTableSectionElement
 
     /**
-     * The **`createTFoot()`** method of associated with a given table.
+     * The **`createTFoot()`** method of HTMLTableElement objects returns the tfoot element associated with a given table.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableElement/createTFoot)
      */
     fun createTFoot(): HTMLTableSectionElement
 
     /**
-     * The **`createTHead()`** method of associated with a given table.
+     * The **`createTHead()`** method of HTMLTableElement objects returns the thead element associated with a given table.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableElement/createTHead)
      */
     fun createTHead(): HTMLTableSectionElement
 
     /**
-     * The **`HTMLTableElement.deleteCaption()`** method removes the `<caption>` element associated with the table, this method does nothing.
+     * The **`HTMLTableElement.deleteCaption()`** method removes the caption element from a given table.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableElement/deleteCaption)
      */
@@ -90,14 +90,14 @@ protected constructor() :
     fun deleteRow(index: Int)
 
     /**
-     * The **`HTMLTableElement.deleteTFoot()`** method removes the ```js-nolint deleteTFoot() ``` None.
+     * The **`HTMLTableElement.deleteTFoot()`** method removes the tfoot element from a given table.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableElement/deleteTFoot)
      */
     fun deleteTFoot()
 
     /**
-     * The **`HTMLTableElement.deleteTHead()`** removes the ```js-nolint deleteTHead() ``` None.
+     * The **`HTMLTableElement.deleteTHead()`** removes the thead element from a given table.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTableElement/deleteTHead)
      */

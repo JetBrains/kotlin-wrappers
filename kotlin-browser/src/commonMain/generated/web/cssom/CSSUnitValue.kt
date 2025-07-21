@@ -9,7 +9,7 @@ package web.cssom
  */
 open external class CSSUnitValue(
     /**
-     * The **`CSSUnitValue.value`** property of the A double.
+     * The **`CSSUnitValue.value`** property of the CSSUnitValue interface returns a double indicating the number of units.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSUnitValue/value)
      */

@@ -11,7 +11,7 @@ open external class CSSMathInvert(
     arg: CSSNumberish,
 ) : CSSMathValue {
     /**
-     * The CSSMathInvert.value read-only property of the A CSSNumericValue.
+     * The CSSMathInvert.value read-only property of the CSSMathInvert interface returns a CSSNumericValue object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSMathInvert/value)
      */

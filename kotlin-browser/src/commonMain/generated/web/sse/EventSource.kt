@@ -18,7 +18,7 @@ import kotlin.js.definedExternally
  */
 open external class EventSource(
     /**
-     * The **`url`** read-only property of the URL of the source.
+     * The **`url`** read-only property of the EventSource interface returns a string representing the URL of the source.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/EventSource/url)
      */
@@ -46,21 +46,21 @@ open external class EventSource(
     var onopen: EventHandler<Event, EventSource, EventSource>?
 
     /**
-     * The **`readyState`** read-only property of the connection.
+     * The **`readyState`** read-only property of the EventSource interface returns a number representing the state of the connection.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/EventSource/readyState)
      */
     val readyState: ReadyState
 
     /**
-     * The **`withCredentials`** read-only property of the the `EventSource` object was instantiated with CORS credentials set.
+     * The **`withCredentials`** read-only property of the EventSource interface returns a boolean value indicating whether the `EventSource` object was instantiated with CORS credentials set.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/EventSource/withCredentials)
      */
     val withCredentials: Boolean
 
     /**
-     * The **`close()`** method of the EventSource interface closes the connection, if one is made, and sets the ```js-nolint close() ``` None.
+     * The **`close()`** method of the EventSource interface closes the connection, if one is made, and sets the EventSource.readyState attribute to `2` (closed).
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/EventSource/close)
      */

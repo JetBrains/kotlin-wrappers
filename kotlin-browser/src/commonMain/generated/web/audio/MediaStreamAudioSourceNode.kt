@@ -14,7 +14,7 @@ open external class MediaStreamAudioSourceNode(
     options: MediaStreamAudioSourceOptions,
 ) : AudioNode {
     /**
-     * The MediaStreamAudioSourceNode interface's read-only **`mediaStream`** property indicates the receiving audio.
+     * The MediaStreamAudioSourceNode interface's read-only **`mediaStream`** property indicates the MediaStream that contains the audio track from which the node is receiving audio.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStreamAudioSourceNode/mediaStream)
      */

@@ -21,7 +21,7 @@ open external class AudioContext(
     contextOptions: AudioContextOptions = definedExternally,
 ) : BaseAudioContext {
     /**
-     * The **`baseLatency`** read-only property of the seconds of processing latency incurred by the `AudioContext` passing an audio buffer from the AudioDestinationNode — i.e., the end of the audio graph — into the host system's audio subsystem ready for playing.
+     * The **`baseLatency`** read-only property of the AudioContext interface returns a double that represents the number of seconds of processing latency incurred by the `AudioContext` passing an audio buffer from the AudioDestinationNode — i.e., the end of the audio graph — into the host system's audio subsystem ready for playing.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioContext/baseLatency)
      */
@@ -64,7 +64,7 @@ open external class AudioContext(
     fun createMediaStreamSource(mediaStream: MediaStream): MediaStreamAudioSourceNode
 
     /**
-     * The **`getOutputTimestamp()`** method of the containing two audio timestamp values relating to the current audio context.
+     * The **`getOutputTimestamp()`** method of the AudioContext interface returns a new `AudioTimestamp` object containing two audio timestamp values relating to the current audio context.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioContext/getOutputTimestamp)
      */

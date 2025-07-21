@@ -155,7 +155,7 @@ open external class Animation(
     fun reverse()
 
     /**
-     * The **`updatePlaybackRate()`** method of the Web Animations API's synchronizing its playback position.
+     * The **`updatePlaybackRate()`** method of the Web Animations API's Animation Interface sets the speed of an animation after first synchronizing its playback position.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Animation/updatePlaybackRate)
      */

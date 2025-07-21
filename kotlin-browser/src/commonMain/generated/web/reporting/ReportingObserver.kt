@@ -14,21 +14,21 @@ open external class ReportingObserver(
     options: ReportingObserverOptions = definedExternally,
 ) {
     /**
-     * The **`disconnect()`** method of the previously started observing from collecting reports.
+     * The **`disconnect()`** method of the ReportingObserver interface stops a reporting observer that had previously started observing from collecting reports.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReportingObserver/disconnect)
      */
     fun disconnect()
 
     /**
-     * The **`observe()`** method of the collecting reports in its report queue.
+     * The **`observe()`** method of the ReportingObserver interface instructs a reporting observer to start collecting reports in its report queue.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReportingObserver/observe)
      */
     fun observe()
 
     /**
-     * The **`takeRecords()`** method of the in the observer's report queue, and empties the queue.
+     * The **`takeRecords()`** method of the ReportingObserver interface returns the current list of reports contained in the observer's report queue, and empties the queue.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReportingObserver/takeRecords)
      */

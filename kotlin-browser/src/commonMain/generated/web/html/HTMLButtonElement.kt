@@ -71,7 +71,7 @@ protected constructor() :
     var formTarget: WindowName
 
     /**
-     * The **`HTMLButtonElement.labels`** read-only property returns a A NodeList containing the `<label>` elements associated with the `<button>` element.
+     * The **`HTMLButtonElement.labels`** read-only property returns a NodeList of the label elements associated with the button element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLButtonElement/labels)
      */

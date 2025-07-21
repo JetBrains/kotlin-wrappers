@@ -14,14 +14,14 @@ open external class FileSystemDirectoryEntry
 private constructor() :
     FileSystemEntry {
     /**
-     * The FileSystemDirectoryEntry interface's method **`createReader()`** returns a the directory.
+     * The FileSystemDirectoryEntry interface's method **`createReader()`** returns a FileSystemDirectoryReader object which can be used to read the entries in the directory.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemDirectoryEntry/createReader)
      */
     fun createReader(): FileSystemDirectoryReader
 
     /**
-     * The FileSystemDirectoryEntry interface's method **`getDirectory()`** returns a somewhere within the directory subtree rooted at the directory on which it's called.
+     * The FileSystemDirectoryEntry interface's method **`getDirectory()`** returns a FileSystemDirectoryEntry object corresponding to a directory contained somewhere within the directory subtree rooted at the directory on which it's called.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemDirectoryEntry/getDirectory)
      */
@@ -34,7 +34,7 @@ private constructor() :
     )
 
     /**
-     * The FileSystemDirectoryEntry interface's method **`getFile()`** returns a within the directory subtree rooted at the directory on which it's called.
+     * The FileSystemDirectoryEntry interface's method **`getFile()`** returns a FileSystemFileEntry object corresponding to a file contained somewhere within the directory subtree rooted at the directory on which it's called.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemDirectoryEntry/getFile)
      */

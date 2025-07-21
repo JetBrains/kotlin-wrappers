@@ -12,7 +12,7 @@ import kotlin.js.definedExternally
  */
 open external class OverconstrainedError(
     /**
-     * The **`constraint`** read-only property of the in the constructor, meaning the constraint that was not satisfied.
+     * The **`constraint`** read-only property of the OverconstrainedError interface returns the constraint that was supplied in the constructor, meaning the constraint that was not satisfied.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OverconstrainedError/constraint)
      */

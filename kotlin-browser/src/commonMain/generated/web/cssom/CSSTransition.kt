@@ -13,7 +13,7 @@ open external class CSSTransition
 private constructor() :
     Animation {
     /**
-     * The **`transitionProperty`** property of the name** of the transition.
+     * The **`transitionProperty`** property of the CSSTransition interface returns the **expanded transition property name** of the transition.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSTransition/transitionProperty)
      */

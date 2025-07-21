@@ -13,7 +13,7 @@ import kotlin.js.definedExternally
 open external class FileSystemEntry
 private constructor() {
     /**
-     * The read-only **`filesystem`** property of the FileSystemEntry interface contains a resides.
+     * The read-only **`filesystem`** property of the FileSystemEntry interface contains a FileSystem object that represents the file system on which the entry resides.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemEntry/filesystem)
      */
@@ -48,7 +48,7 @@ private constructor() {
     val name: String
 
     /**
-     * The FileSystemEntry interface's method **`getParent()`** obtains a ```js-nolint getParent(successCallback, errorCallback) getParent(successCallback) ``` - `successCallback` - : A function which is called when the parent directory entry has been retrieved.
+     * The FileSystemEntry interface's method **`getParent()`** obtains a FileSystemDirectoryEntry.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemEntry/getParent)
      */

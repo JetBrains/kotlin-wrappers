@@ -31,7 +31,7 @@ private constructor() {
     fun deleteAsync(cacheName: String): Promise<JsBoolean>
 
     /**
-     * The **`has()`** method of the CacheStorage interface returns a Promise that resolves to `true` if a You can access `CacheStorage` through the Window.caches property in windows or through the WorkerGlobalScope.caches property in workers.
+     * The **`has()`** method of the CacheStorage interface returns a Promise that resolves to `true` if a Cache object matches the `cacheName`.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CacheStorage/has)
      */
@@ -70,7 +70,7 @@ private constructor() {
     ): Promise<Response?>
 
     /**
-     * The **`open()`** method of the the Cache object matching the `cacheName`.
+     * The **`open()`** method of the CacheStorage interface returns a Promise that resolves to the Cache object matching the `cacheName`.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CacheStorage/open)
      */
@@ -90,7 +90,7 @@ suspend inline fun CacheStorage.delete(cacheName: String): Boolean {
 }
 
 /**
- * The **`has()`** method of the CacheStorage interface returns a Promise that resolves to `true` if a You can access `CacheStorage` through the Window.caches property in windows or through the WorkerGlobalScope.caches property in workers.
+ * The **`has()`** method of the CacheStorage interface returns a Promise that resolves to `true` if a Cache object matches the `cacheName`.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CacheStorage/has)
  */
@@ -174,7 +174,7 @@ suspend inline fun CacheStorage.match(
 }
 
 /**
- * The **`open()`** method of the the Cache object matching the `cacheName`.
+ * The **`open()`** method of the CacheStorage interface returns a Promise that resolves to the Cache object matching the `cacheName`.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CacheStorage/open)
  */

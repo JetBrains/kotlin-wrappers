@@ -18,7 +18,7 @@ open external class CSSUnparsedValue(
 ) : CSSStyleValue,
     ListLike<CSSUnparsedSegment> {
     /**
-     * The **`length`** read-only property of the An integer.
+     * The **`length`** read-only property of the CSSUnparsedValue interface returns the number of items in the object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSUnparsedValue/length)
      */

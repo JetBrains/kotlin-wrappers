@@ -18,7 +18,7 @@ open external class MediaStream() :
     constructor(tracks: ReadonlyArray<MediaStreamTrack>)
 
     /**
-     * The **`active`** read-only property of the `true` if the stream is currently active; otherwise, it returns `false`.
+     * The **`active`** read-only property of the MediaStream interface returns a Boolean value which is `true` if the stream is currently active; otherwise, it returns `false`.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStream/active)
      */
@@ -56,7 +56,7 @@ open external class MediaStream() :
     fun clone(): MediaStream
 
     /**
-     * The **`getAudioTracks()`** method of the stream's track set where MediaStreamTrack.kind is `audio`.
+     * The **`getAudioTracks()`** method of the MediaStream interface returns a sequence that represents all the MediaStreamTrack objects in this stream's track set where MediaStreamTrack.kind is `audio`.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStream/getAudioTracks)
      */
@@ -70,21 +70,21 @@ open external class MediaStream() :
     fun getTrackById(trackId: String): MediaStreamTrack?
 
     /**
-     * The **`getTracks()`** method of the stream's track set, regardless of MediaStreamTrack.kind.
+     * The **`getTracks()`** method of the MediaStream interface returns a sequence that represents all the MediaStreamTrack objects in this stream's track set, regardless of MediaStreamTrack.kind.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStream/getTracks)
      */
     fun getTracks(): ReadonlyArray<MediaStreamTrack>
 
     /**
-     * The **`getVideoTracks()`** method of the ```js-nolint getVideoTracks() ``` None.
+     * The **`getVideoTracks()`** method of the MediaStream interface returns a sequence of MediaStreamTrack objects representing the video tracks in this stream.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStream/getVideoTracks)
      */
     fun getVideoTracks(): ReadonlyArray<MediaStreamTrack>
 
     /**
-     * The **`removeTrack()`** method of the MediaStream interface removes a ```js-nolint removeTrack(track) ``` - `track` - : A MediaStreamTrack that will be removed from the stream.
+     * The **`removeTrack()`** method of the MediaStream interface removes a MediaStreamTrack from a stream.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStream/removeTrack)
      */

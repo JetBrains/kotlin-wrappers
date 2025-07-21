@@ -9,25 +9,25 @@ package web.cssom
  */
 open external class CSSRotate(
     /**
-     * The **`x`** property of the translating vector.
+     * The **`x`** property of the CSSRotate interface gets and sets the abscissa or x-axis of the translating vector.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSRotate/x)
      */
     var x: CSSNumberish,
     /**
-     * The **`y`** property of the translating vector.
+     * The **`y`** property of the CSSRotate interface gets and sets the ordinate or y-axis of the translating vector.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSRotate/y)
      */
     var y: CSSNumberish,
     /**
-     * The **`z`** property of the vector.
+     * The **`z`** property of the CSSRotate interface representing the z-component of the translating vector.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSRotate/z)
      */
     var z: CSSNumberish,
     /**
-     * The **`angle`** property of the denotes a clockwise rotation, a negative angle a counter-clockwise one.
+     * The **`angle`** property of the CSSRotate interface gets and sets the angle of rotation.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSRotate/angle)
      */

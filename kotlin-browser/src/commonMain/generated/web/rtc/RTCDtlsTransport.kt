@@ -31,7 +31,7 @@ private constructor() :
     var onstatechange: EventHandler<Event, RTCDtlsTransport, RTCDtlsTransport>?
 
     /**
-     * The **`state`** read-only property of the Datagram Transport Layer Security (**DTLS**) transport state.
+     * The **`state`** read-only property of the RTCDtlsTransport interface provides information which describes a Datagram Transport Layer Security (**DTLS**) transport state.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDtlsTransport/state)
      */

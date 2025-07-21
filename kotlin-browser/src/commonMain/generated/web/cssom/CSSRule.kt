@@ -24,7 +24,7 @@ private constructor() {
     val parentRule: CSSRule?
 
     /**
-     * The **`parentStyleSheet`** property of the the current rule is defined.
+     * The **`parentStyleSheet`** property of the CSSRule interface returns the StyleSheet object in which the current rule is defined.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSRule/parentStyleSheet)
      */

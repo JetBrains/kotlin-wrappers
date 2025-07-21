@@ -13,7 +13,7 @@ open external class IDBCursorWithValue
 private constructor() :
     IDBCursor {
     /**
-     * The **`value`** read-only property of the whatever that is.
+     * The **`value`** read-only property of the IDBCursorWithValue interface returns the value of the current cursor, whatever that is.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBCursorWithValue/value)
      */

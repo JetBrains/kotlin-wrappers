@@ -18,7 +18,7 @@ private constructor() :
     OffscreenRenderingContext,
     RenderingContext {
     /**
-     * The **`ImageBitmapRenderingContext.canvas`** property, part of the Canvas API, is a read-only reference to the A HTMLCanvasElement or OffscreenCanvas object.
+     * The **`ImageBitmapRenderingContext.canvas`** property, part of the Canvas API, is a read-only reference to the HTMLCanvasElement or OffscreenCanvas object that is associated with the given context.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageBitmapRenderingContext/canvas)
      */

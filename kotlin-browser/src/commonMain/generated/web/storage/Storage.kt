@@ -10,7 +10,7 @@ package web.storage
 open external class Storage
 private constructor() {
     /**
-     * The **`length`** read-only property of the `Storage` object.
+     * The **`length`** read-only property of the Storage interface returns the number of data items stored in a given `Storage` object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Storage/length)
      */

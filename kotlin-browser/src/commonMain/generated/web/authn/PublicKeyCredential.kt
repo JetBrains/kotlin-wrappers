@@ -28,14 +28,14 @@ private constructor() :
     val authenticatorAttachment: String?
 
     /**
-     * The **`rawId`** read-only property of the containing the identifier of the credentials.
+     * The **`rawId`** read-only property of the PublicKeyCredential interface is an ArrayBuffer object containing the identifier of the credentials.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PublicKeyCredential/rawId)
      */
     val rawId: ArrayBuffer
 
     /**
-     * The **`response`** read-only property of the object which is sent from the authenticator to the user agent for the creation/fetching of credentials.
+     * The **`response`** read-only property of the PublicKeyCredential interface is an AuthenticatorResponse object which is sent from the authenticator to the user agent for the creation/fetching of credentials.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PublicKeyCredential/response)
      */

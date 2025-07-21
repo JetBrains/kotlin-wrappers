@@ -24,7 +24,7 @@ private constructor() :
     EventTarget,
     Transferable {
     /**
-     * The property **`binaryType`** on the the type of object which should be used to represent binary data received on the RTCDataChannel.
+     * The property **`binaryType`** on the RTCDataChannel interface is a string which specifies the type of object which should be used to represent binary data received on the RTCDataChannel.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDataChannel/binaryType)
      */
@@ -73,7 +73,7 @@ private constructor() :
     val maxRetransmits: Short?
 
     /**
-     * The read-only `RTCDataChannel` property **`negotiated`** indicates whether the (`true`) or by the WebRTC layer (`false`).
+     * The read-only `RTCDataChannel` property **`negotiated`** indicates whether the RTCDataChannel's connection was negotiated by the Web app (`true`) or by the WebRTC layer (`false`).
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDataChannel/negotiated)
      */
@@ -131,14 +131,14 @@ private constructor() :
     val readyState: RTCDataChannelState
 
     /**
-     * The **`RTCDataChannel.close()`** method closes the closure of the channel.
+     * The **`RTCDataChannel.close()`** method closes the RTCDataChannel.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDataChannel/close)
      */
     fun close()
 
     /**
-     * The **`send()`** method of the remote peer.
+     * The **`send()`** method of the RTCDataChannel interface sends data across the data channel to the remote peer.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDataChannel/send)
      */

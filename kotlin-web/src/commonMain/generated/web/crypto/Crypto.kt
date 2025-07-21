@@ -12,7 +12,7 @@ import js.buffer.ArrayBufferView
 open external class Crypto
 private constructor() {
     /**
-     * The **`Crypto.subtle`** read-only property returns a cryptographic operations.
+     * The **`Crypto.subtle`** read-only property returns a SubtleCrypto which can then be used to perform low-level cryptographic operations.
      * Available only in secure contexts.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Crypto/subtle)

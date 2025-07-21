@@ -19,35 +19,35 @@ open external class ExtendableMessageEvent(
     init: ExtendableMessageEventInit = definedExternally,
 ) : ExtendableEvent {
     /**
-     * The **`data`** read-only property of the data type.
+     * The **`data`** read-only property of the ExtendableMessageEvent interface returns the event's data.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ExtendableMessageEvent/data)
      */
     val data: JsAny?
 
     /**
-     * The **`lastEventID`** read-only property of the A string.
+     * The **`lastEventID`** read-only property of the ExtendableMessageEvent interface represents, in server-sent events, the last event ID of the event source.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ExtendableMessageEvent/lastEventId)
      */
     val lastEventId: String
 
     /**
-     * The **`origin`** read-only property of the A string.
+     * The **`origin`** read-only property of the ExtendableMessageEvent interface returns the origin of the Client that sent the message.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ExtendableMessageEvent/origin)
      */
     val origin: String
 
     /**
-     * The **`ports`** read-only property of the channel (the channel the message is being sent through.) An array of MessagePort objects.
+     * The **`ports`** read-only property of the ExtendableMessageEvent interface returns the array containing the MessagePort objects representing the ports of the associated message channel (the channel the message is being sent through.)
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ExtendableMessageEvent/ports)
      */
     val ports: ReadonlyArray<MessagePort>
 
     /**
-     * The **`source`** read-only property of the A Client, ServiceWorker or MessagePort object.
+     * The **`source`** read-only property of the ExtendableMessageEvent interface returns a reference to the Client object from which the message was sent.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ExtendableMessageEvent/source)
      */

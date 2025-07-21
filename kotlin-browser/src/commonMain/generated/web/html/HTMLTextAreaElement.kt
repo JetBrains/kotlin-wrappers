@@ -63,7 +63,7 @@ protected constructor() :
     override val form: HTMLFormElement?
 
     /**
-     * The **`HTMLTextAreaElement.labels`** read-only property returns a NodeList of the label elements associated with the A NodeList containing the `<label>` elements associated with the `<textArea>` element.
+     * The **`HTMLTextAreaElement.labels`** read-only property returns a NodeList of the label elements associated with the textArea element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/labels)
      */
@@ -119,7 +119,7 @@ protected constructor() :
     var rows: Int
 
     /**
-     * <!-- --> The **`selectionDirection`** property of the HTMLTextAreaElement interface specifies the current direction of the selection.
+     * The **`selectionDirection`** property of the HTMLTextAreaElement interface specifies the current direction of the selection.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/selectionDirection)
      */

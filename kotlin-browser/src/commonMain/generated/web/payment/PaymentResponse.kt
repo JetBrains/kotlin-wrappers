@@ -22,7 +22,7 @@ open external class PaymentResponse
 private constructor() :
     EventTarget {
     /**
-     * The **`details`** read-only property of the provides a payment method specific message used by the merchant to process the transaction and determine a successful funds transfer.
+     * The **`details`** read-only property of the PaymentResponse interface returns a JSON-serializable object that provides a payment method specific message used by the merchant to process the transaction and determine a successful funds transfer.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentResponse/details)
      */
@@ -48,7 +48,7 @@ private constructor() :
     val payerEmail: String?
 
     /**
-     * The **`payerName`** read-only property of the option is only present when the `requestPayerName` option is set to `true` in the options parameter of the A string containing the payer name.
+     * The **`payerName`** read-only property of the PaymentResponse interface returns the name supplied by the user.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentResponse/payerName)
      */
@@ -62,7 +62,7 @@ private constructor() :
     val payerPhone: String?
 
     /**
-     * The **`requestId`** read-only property of the the `PaymentResponse()` constructor by details.id.
+     * The **`requestId`** read-only property of the PaymentResponse interface returns the free-form identifier supplied by the `PaymentResponse()` constructor by details.id.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentResponse/requestId)
      */
@@ -83,7 +83,7 @@ private constructor() :
     val shippingOption: String?
 
     /**
-     * The PaymentRequest method **`complete()`** of the Payment Request API notifies the user interface to be closed.
+     * The PaymentRequest method **`complete()`** of the Payment Request API notifies the user agent that the user interaction is over, and causes any remaining user interface to be closed.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentResponse/complete)
      */
@@ -107,7 +107,7 @@ private constructor() :
 }
 
 /**
- * The PaymentRequest method **`complete()`** of the Payment Request API notifies the user interface to be closed.
+ * The PaymentRequest method **`complete()`** of the Payment Request API notifies the user agent that the user interaction is over, and causes any remaining user interface to be closed.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentResponse/complete)
  */
@@ -118,7 +118,7 @@ suspend inline fun PaymentResponse.complete(result: PaymentComplete) {
 }
 
 /**
- * The PaymentRequest method **`complete()`** of the Payment Request API notifies the user interface to be closed.
+ * The PaymentRequest method **`complete()`** of the Payment Request API notifies the user agent that the user interaction is over, and causes any remaining user interface to be closed.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentResponse/complete)
  */

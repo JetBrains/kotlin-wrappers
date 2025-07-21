@@ -13,21 +13,21 @@ open external class CSSGroupingRule
 private constructor() :
     CSSRule {
     /**
-     * The **`cssRules`** property of the a collection of CSSRule objects.
+     * The **`cssRules`** property of the CSSGroupingRule interface returns a CSSRuleList containing a collection of CSSRule objects.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSGroupingRule/cssRules)
      */
     val cssRules: CSSRuleList
 
     /**
-     * The **`deleteRule()`** method of the rules.
+     * The **`deleteRule()`** method of the CSSGroupingRule interface removes a CSS rule from a list of child CSS rules.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSGroupingRule/deleteRule)
      */
     fun deleteRule(index: Int)
 
     /**
-     * The **`insertRule()`** method of the ```js-nolint insertRule(rule) insertRule(rule, index) ``` - `rule` - : A string - `index` MISSING: optional_inline] - : An optional index at which to insert the rule; defaults to 0.
+     * The **`insertRule()`** method of the CSSGroupingRule interface adds a new CSS rule to a list of CSS rules.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSGroupingRule/insertRule)
      */

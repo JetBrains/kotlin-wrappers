@@ -18,7 +18,7 @@ import kotlin.js.definedExternally
 sealed external interface GPUError :
     JsErrorLike {
     /**
-     * The **`message`** read-only property of the A string.
+     * The **`message`** read-only property of the GPUError interface provides a human-readable message that explains why the error occurred.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUError/message)
      */

@@ -16,7 +16,7 @@ import kotlin.js.definedExternally
 open external class MediaSource :
     EventTarget {
     /**
-     * The **`activeSourceBuffers`** read-only property of the containing a subset of the SourceBuffer objects contained within providing the selected video track, enabled audio tracks, and shown/hidden text tracks.
+     * The **`activeSourceBuffers`** read-only property of the MediaSource interface returns a SourceBufferList object containing a subset of the SourceBuffer objects contained within MediaSource.sourceBuffers — the list of objects providing the selected video track, enabled audio tracks, and shown/hidden text tracks.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaSource/activeSourceBuffers)
      */
@@ -45,35 +45,35 @@ open external class MediaSource :
     var onsourceopen: EventHandler<Event, MediaSource, MediaSource>?
 
     /**
-     * The **`readyState`** read-only property of the current `MediaSource`.
+     * The **`readyState`** read-only property of the MediaSource interface returns an enum representing the state of the current `MediaSource`.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaSource/readyState)
      */
     val readyState: ReadyState
 
     /**
-     * The **`sourceBuffers`** read-only property of the containing the list of SourceBuffer objects associated with this `MediaSource`.
+     * The **`sourceBuffers`** read-only property of the MediaSource interface returns a SourceBufferList object containing the list of SourceBuffer objects associated with this `MediaSource`.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaSource/sourceBuffers)
      */
     val sourceBuffers: SourceBufferList
 
     /**
-     * The **`addSourceBuffer()`** method of the given MIME type and adds it to the `MediaSource`'s `SourceBuffer` is also returned.
+     * The **`addSourceBuffer()`** method of the MediaSource interface creates a new SourceBuffer of the given MIME type and adds it to the `MediaSource`'s MediaSource.sourceBuffers list.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaSource/addSourceBuffer)
      */
     fun addSourceBuffer(type: String): SourceBuffer
 
     /**
-     * The **`clearLiveSeekableRange()`** method of the to MediaSource.setLiveSeekableRange().
+     * The **`clearLiveSeekableRange()`** method of the MediaSource interface clears a seekable range previously set with a call to MediaSource.setLiveSeekableRange().
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaSource/clearLiveSeekableRange)
      */
     fun clearLiveSeekableRange()
 
     /**
-     * The **`endOfStream()`** method of the ```js-nolint endOfStream() endOfStream(endOfStreamError) ``` - `endOfStreamError` MISSING: optional_inline] - : A string representing an error to throw when the end of the stream is reached.
+     * The **`endOfStream()`** method of the MediaSource interface signals the end of the stream.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaSource/endOfStream)
      */
@@ -87,7 +87,7 @@ open external class MediaSource :
     fun removeSourceBuffer(sourceBuffer: SourceBuffer)
 
     /**
-     * The **`setLiveSeekableRange()`** method of the media element.
+     * The **`setLiveSeekableRange()`** method of the MediaSource interface sets the range that the user can seek to in the media element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaSource/setLiveSeekableRange)
      */

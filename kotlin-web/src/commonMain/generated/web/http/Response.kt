@@ -16,7 +16,7 @@ open external class Response(
     init: ResponseInit = definedExternally,
 ) : Body {
     /**
-     * The **`headers`** read-only property of the with the response.
+     * The **`headers`** read-only property of the Response interface contains the Headers object associated with the response.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Response/headers)
      */

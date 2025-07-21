@@ -29,21 +29,21 @@ open external class RTCError(
     val receivedAlert: Int?
 
     /**
-     * The read-only **`sctpCauseCode`** property in an why the SCTP negotiation failed, if the `RTCError` represents an SCTP error.
+     * The read-only **`sctpCauseCode`** property in an RTCError object provides the SCTP cause code explaining why the SCTP negotiation failed, if the `RTCError` represents an SCTP error.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCError/sctpCauseCode)
      */
     val sctpCauseCode: Int?
 
     /**
-     * The RTCError interface's read-only property **`sdpLineNumber`** specifies the line number within the An unsigned integer value indicating the line within the SDP at which the syntax error described by the `RTCError` object occurred.
+     * The RTCError interface's read-only property **`sdpLineNumber`** specifies the line number within the SDP at which a syntax error occurred while parsing it.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCError/sdpLineNumber)
      */
     val sdpLineNumber: Int?
 
     /**
-     * The read-only **`sentAlert`** property in an while sending data to the remote peer, if the error represents an outbound DTLS error.
+     * The read-only **`sentAlert`** property in an RTCError object specifies the DTLS alert number occurred while sending data to the remote peer, if the error represents an outbound DTLS error.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCError/sentAlert)
      */

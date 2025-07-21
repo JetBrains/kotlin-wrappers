@@ -12,7 +12,7 @@ import web.time.DOMHighResTimeStamp
 open external class VideoPlaybackQuality
 private constructor() {
     /**
-     * The read-only **`creationTime`** property on the the browsing context was created this quality sample was recorded.
+     * The read-only **`creationTime`** property on the VideoPlaybackQuality interface reports the number of milliseconds since the browsing context was created this quality sample was recorded.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoPlaybackQuality/creationTime)
      */

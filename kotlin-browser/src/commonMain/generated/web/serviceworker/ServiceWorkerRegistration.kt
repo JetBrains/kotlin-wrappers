@@ -29,7 +29,7 @@ open external class ServiceWorkerRegistration
 private constructor() :
     EventTarget {
     /**
-     * The **`active`** read-only property of the This property is initially set to `null`.
+     * The **`active`** read-only property of the ServiceWorkerRegistration interface returns a service worker whose ServiceWorker.state is `activating` or `activated`.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/active)
      */
@@ -43,7 +43,7 @@ private constructor() :
     val cookies: CookieStoreManager
 
     /**
-     * The **`installing`** read-only property of the initially set to `null`.
+     * The **`installing`** read-only property of the ServiceWorkerRegistration interface returns a service worker whose ServiceWorker.state is `installing`.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/installing)
      */
@@ -62,7 +62,7 @@ private constructor() :
     var onupdatefound: EventHandler<Event, ServiceWorkerRegistration, ServiceWorkerRegistration>?
 
     /**
-     * The **`pushManager`** read-only property of the support for subscribing, getting an active subscription, and accessing push permission status.
+     * The **`pushManager`** read-only property of the ServiceWorkerRegistration interface returns a reference to the PushManager interface for managing push subscriptions; this includes support for subscribing, getting an active subscription, and accessing push permission status.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/pushManager)
      */
@@ -83,7 +83,7 @@ private constructor() :
     val updateViaCache: ServiceWorkerUpdateViaCache
 
     /**
-     * The **`waiting`** read-only property of the set to `null`.
+     * The **`waiting`** read-only property of the ServiceWorkerRegistration interface returns a service worker whose ServiceWorker.state is `installed`.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/waiting)
      */
@@ -98,7 +98,7 @@ private constructor() :
     fun getNotificationsAsync(filter: GetNotificationOptions = definedExternally): Promise<ReadonlyArray<Notification>>
 
     /**
-     * The **`showNotification()`** method of the service worker.
+     * The **`showNotification()`** method of the ServiceWorkerRegistration interface creates a notification on an active service worker.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/showNotification)
      */
@@ -109,7 +109,7 @@ private constructor() :
     ): Promise<Void>
 
     /**
-     * The **`unregister()`** method of the registration and returns a Promise.
+     * The **`unregister()`** method of the ServiceWorkerRegistration interface unregisters the service worker registration and returns a Promise.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/unregister)
      */
@@ -117,7 +117,7 @@ private constructor() :
     fun unregisterAsync(): Promise<JsBoolean>
 
     /**
-     * The **`update()`** method of the worker.
+     * The **`update()`** method of the ServiceWorkerRegistration interface attempts to update the service worker.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/update)
      */
@@ -146,7 +146,7 @@ suspend inline fun ServiceWorkerRegistration.getNotifications(): ReadonlyArray<N
 }
 
 /**
- * The **`showNotification()`** method of the service worker.
+ * The **`showNotification()`** method of the ServiceWorkerRegistration interface creates a notification on an active service worker.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/showNotification)
  */
@@ -161,7 +161,7 @@ suspend inline fun ServiceWorkerRegistration.showNotification(
 }
 
 /**
- * The **`showNotification()`** method of the service worker.
+ * The **`showNotification()`** method of the ServiceWorkerRegistration interface creates a notification on an active service worker.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/showNotification)
  */
@@ -174,7 +174,7 @@ suspend inline fun ServiceWorkerRegistration.showNotification(
 }
 
 /**
- * The **`unregister()`** method of the registration and returns a Promise.
+ * The **`unregister()`** method of the ServiceWorkerRegistration interface unregisters the service worker registration and returns a Promise.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/unregister)
  */
@@ -183,7 +183,7 @@ suspend inline fun ServiceWorkerRegistration.unregister(): Boolean {
 }
 
 /**
- * The **`update()`** method of the worker.
+ * The **`update()`** method of the ServiceWorkerRegistration interface attempts to update the service worker.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/update)
  */

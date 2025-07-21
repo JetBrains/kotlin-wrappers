@@ -36,7 +36,7 @@ open external class DataTransfer {
     val files: FileList
 
     /**
-     * The read-only `items` property of the DataTransfer interface is a A DataTransferItemList object containing DataTransferItem objects representing the items being dragged in a drag operation, one list item for each object being dragged.
+     * The read-only `items` property of the DataTransfer interface is a DataTransferItemList of the DataTransferItem in a drag operation.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DataTransfer/items)
      */

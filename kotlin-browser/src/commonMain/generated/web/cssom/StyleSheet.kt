@@ -12,7 +12,7 @@ import js.core.JsAny
 open external class StyleSheet
 private constructor() {
     /**
-     * The **`disabled`** property of the applying to the document.
+     * The **`disabled`** property of the StyleSheet interface determines whether the style sheet is prevented from applying to the document.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/StyleSheet/disabled)
      */
@@ -33,14 +33,14 @@ private constructor() {
     val media: MediaList
 
     /**
-     * The **`ownerNode`** property of the with the document.
+     * The **`ownerNode`** property of the StyleSheet interface returns the node that associates this style sheet with the document.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/StyleSheet/ownerNode)
      */
     val ownerNode: JsAny /* Element | ProcessingInstruction */?
 
     /**
-     * The **`parentStyleSheet`** property of the the given style sheet.
+     * The **`parentStyleSheet`** property of the StyleSheet interface returns the style sheet, if any, that is including the given style sheet.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/StyleSheet/parentStyleSheet)
      */

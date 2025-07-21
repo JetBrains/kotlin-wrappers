@@ -16,7 +16,7 @@ open external class GamepadEvent(
     init: GamepadEventInit,
 ) : Event {
     /**
-     * The **`GamepadEvent.gamepad`** property of the **GamepadEvent interface** returns a Gamepad object, providing access to the associated gamepad data for fired A Gamepad object.
+     * The **`GamepadEvent.gamepad`** property of the **GamepadEvent interface** returns a Gamepad object, providing access to the associated gamepad data for fired Window.gamepadconnected_event and Window.gamepaddisconnected_event events.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GamepadEvent/gamepad)
      */

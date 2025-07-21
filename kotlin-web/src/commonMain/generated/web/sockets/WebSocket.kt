@@ -100,7 +100,7 @@ open external class WebSocket(
     val readyState: ReadyState
 
     /**
-     * The **`WebSocket.close()`** method closes the already `CLOSED`, this method does nothing.
+     * The **`WebSocket.close()`** method closes the WebSocket connection or connection attempt, if any.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebSocket/close)
      */

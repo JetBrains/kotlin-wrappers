@@ -50,7 +50,7 @@ protected constructor() :
     var autocomplete: AutoFillBase
 
     /**
-     * The HTMLFormElement property **`elements`** returns an the form element.
+     * The HTMLFormElement property **`elements`** returns an HTMLFormControlsCollection listing all the form controls contained in the form element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFormElement/elements)
      */
@@ -78,7 +78,7 @@ protected constructor() :
     override val length: Int
 
     /**
-     * The **`HTMLFormElement.method`** property represents the Unless explicitly specified, the default method is 'get'.
+     * The **`HTMLFormElement.method`** property represents the HTTP method used to submit the form.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFormElement/method)
      */
@@ -148,7 +148,7 @@ protected constructor() :
     fun reset()
 
     /**
-     * The **`HTMLFormElement.submit()`** method submits a given This method is similar, but not identical to, activating a form's submit - No HTMLFormElement/submit_event event is raised.
+     * The **`HTMLFormElement.submit()`** method submits a given form.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFormElement/submit)
      */

@@ -30,14 +30,14 @@ open external class Range :
     fun cloneContents(): DocumentFragment
 
     /**
-     * The **`Range.cloneRange()`** method returns a The returned clone is copied by value, not reference, so a change in either ```js-nolint cloneRange() ``` None.
+     * The **`Range.cloneRange()`** method returns a Range object with boundary points identical to the cloned Range.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Range/cloneRange)
      */
     fun cloneRange(): Range
 
     /**
-     * The **`collapse()`** method of the Range interface collapses the A collapsed Range is empty, containing no content, specifying a single-point in a DOM tree.
+     * The **`collapse()`** method of the Range interface collapses the Range to one of its boundary points.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Range/collapse)
      */
@@ -64,7 +64,7 @@ open external class Range :
     ): Short
 
     /**
-     * The **`Range.createContextualFragment()`** method returns a XML fragment parsing algorithm with the start of the range (the _parent_ of the selected node) as the context node.
+     * The **`Range.createContextualFragment()`** method returns a DocumentFragment by invoking the HTML fragment parsing algorithm or the XML fragment parsing algorithm with the start of the range (the _parent_ of the selected node) as the context node.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Range/createContextualFragment)
      */
@@ -130,7 +130,7 @@ open external class Range :
     ): Boolean
 
     /**
-     * The **`Range.selectNode()`** method sets the the parent of the _referenceNode_.
+     * The **`Range.selectNode()`** method sets the Range to contain the Node and its contents.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Range/selectNode)
      */
@@ -154,7 +154,7 @@ open external class Range :
     )
 
     /**
-     * The **`Range.setEndAfter()`** method sets the end position of a `Node` of end of the `Range` will be the same as that for the `referenceNode`.
+     * The **`Range.setEndAfter()`** method sets the end position of a Range relative to another Node.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Range/setEndAfter)
      */
@@ -168,7 +168,7 @@ open external class Range :
     fun setEndBefore(node: Node)
 
     /**
-     * The **`Range.setStart()`** method sets the start position of a If the `startNode` is a Node of type Text, the number of characters from the start of `startNode`.
+     * The **`Range.setStart()`** method sets the start position of a Range.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Range/setStart)
      */

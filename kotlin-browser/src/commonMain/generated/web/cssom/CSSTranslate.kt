@@ -11,19 +11,19 @@ import kotlin.js.definedExternally
  */
 open external class CSSTranslate(
     /**
-     * The **`x`** property of the translating vector.
+     * The **`x`** property of the CSSTranslate interface gets and sets the abscissa or x-axis of the translating vector.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSTranslate/x)
      */
     var x: CSSNumericValue,
     /**
-     * The **`y`** property of the translating vector.
+     * The **`y`** property of the CSSTranslate interface gets and sets the ordinate or y-axis of the translating vector.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSTranslate/y)
      */
     var y: CSSNumericValue,
     /**
-     * The **`z`** property of the vector.
+     * The **`z`** property of the CSSTranslate interface representing the z-component of the translating vector.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSTranslate/z)
      */

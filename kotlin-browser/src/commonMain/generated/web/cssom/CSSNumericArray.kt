@@ -16,7 +16,7 @@ open external class CSSNumericArray
 private constructor() :
     ListLike<CSSNumericValue> {
     /**
-     * The read-only **`length`** property of the An integer representing the number of CSSNumericValue objects in the list.
+     * The read-only **`length`** property of the CSSNumericArray interface returns the number of CSSNumericValue objects in the list.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSNumericArray/length)
      */

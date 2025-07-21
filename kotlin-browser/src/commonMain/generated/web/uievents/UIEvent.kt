@@ -25,7 +25,7 @@ open external class UIEvent(
     val detail: Int
 
     /**
-     * The **`UIEvent.view`** read-only property returns the is the Window object the event happened in.
+     * The **`UIEvent.view`** read-only property returns the WindowProxy object from which the event was generated.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/UIEvent/view)
      */

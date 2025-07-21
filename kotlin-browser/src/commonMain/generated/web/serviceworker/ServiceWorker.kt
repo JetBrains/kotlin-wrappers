@@ -38,7 +38,7 @@ private constructor() :
     val scriptURL: String
 
     /**
-     * The **`state`** read-only property of the of the service worker.
+     * The **`state`** read-only property of the ServiceWorker interface returns a string representing the current state of the service worker.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorker/state)
      */

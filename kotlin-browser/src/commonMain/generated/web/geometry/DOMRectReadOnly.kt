@@ -74,7 +74,7 @@ open external class DOMRectReadOnly(
 
     companion object {
         /**
-         * The **`fromRect()`** static method of the object with a given location and dimensions.
+         * The **`fromRect()`** static method of the DOMRectReadOnly object creates a new `DOMRectReadOnly` object with a given location and dimensions.
          *
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMRectReadOnly/fromRect_static)
          */

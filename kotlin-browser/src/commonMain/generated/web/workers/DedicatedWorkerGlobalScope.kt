@@ -23,7 +23,7 @@ private constructor() :
     WorkerGlobalScope,
     MessageEventTarget {
     /**
-     * The **`name`** read-only property of the the Worker.Worker constructor can pass to get a reference to the DedicatedWorkerGlobalScope.
+     * The **`name`** read-only property of the DedicatedWorkerGlobalScope interface returns the name that the Worker was (optionally) given when it was created.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DedicatedWorkerGlobalScope/name)
      */

@@ -97,7 +97,7 @@ protected constructor() :
     var media: MediaQuery
 
     /**
-     * The **`referrerPolicy`** property of the HTMLLinkElement interface reflects the HTML `referrerpolicy` attribute of the resource.
+     * The **`referrerPolicy`** property of the HTMLLinkElement interface reflects the HTML `referrerpolicy` attribute of the link element defining which referrer is sent when fetching the resource.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLLinkElement/referrerPolicy)
      */

@@ -19,28 +19,28 @@ protected /* private */ constructor() :
     MapLike<JsString, JsIterable<CSSStyleValue>>,
     ReadonlySetLike<JsString> {
     /**
-     * The **`size`** read-only property of the containing the size of the `StylePropertyMapReadOnly` object.
+     * The **`size`** read-only property of the StylePropertyMapReadOnly interface returns an unsigned long integer containing the size of the `StylePropertyMapReadOnly` object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/StylePropertyMapReadOnly/size)
      */
     override val size: Int
 
     /**
-     * The **`get()`** method of the object for the first value of the specified property.
+     * The **`get()`** method of the StylePropertyMapReadOnly interface returns a CSSStyleValue object for the first value of the specified property.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/StylePropertyMapReadOnly/get)
      */
     fun get(property: String): CSSStyleValue?
 
     /**
-     * The **`getAll()`** method of the ```js-nolint getAll(property) ``` - `property` - : The name of the property to retrieve all values of.
+     * The **`getAll()`** method of the StylePropertyMapReadOnly interface returns an array of CSSStyleValue objects containing the values for the provided property.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/StylePropertyMapReadOnly/getAll)
      */
     fun getAll(property: String): ReadonlyArray<CSSStyleValue>
 
     /**
-     * The **`has()`** method of the property is in the `StylePropertyMapReadOnly` object.
+     * The **`has()`** method of the StylePropertyMapReadOnly interface indicates whether the specified property is in the `StylePropertyMapReadOnly` object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/StylePropertyMapReadOnly/has)
      */

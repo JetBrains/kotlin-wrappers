@@ -14,7 +14,7 @@ import kotlin.js.definedExternally
  */
 open external class SpeechSynthesisUtterance(
     /**
-     * The **`text`** property of the The text may be provided as plain text, or a well-formed SSML document.
+     * The **`text`** property of the SpeechSynthesisUtterance interface gets and sets the text that will be synthesized when the utterance is spoken.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechSynthesisUtterance/text)
      */

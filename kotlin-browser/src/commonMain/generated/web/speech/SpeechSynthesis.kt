@@ -22,21 +22,21 @@ private constructor() :
     var onvoiceschanged: EventHandler<Event, SpeechSynthesis, SpeechSynthesis>?
 
     /**
-     * The **`paused`** read-only property of the `true` if the `SpeechSynthesis` object is in a paused state, or `false` if not.
+     * The **`paused`** read-only property of the SpeechSynthesis interface is a boolean value that returns `true` if the `SpeechSynthesis` object is in a paused state, or `false` if not.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechSynthesis/paused)
      */
     val paused: Boolean
 
     /**
-     * The **`pending`** read-only property of the `true` if the utterance queue contains as-yet-unspoken utterances.
+     * The **`pending`** read-only property of the SpeechSynthesis interface is a boolean value that returns `true` if the utterance queue contains as-yet-unspoken utterances.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechSynthesis/pending)
      */
     val pending: Boolean
 
     /**
-     * The **`speaking`** read-only property of the `true` if an utterance is currently in the process of being spoken — even if `SpeechSynthesis` is in a A boolean value.
+     * The **`speaking`** read-only property of the SpeechSynthesis interface is a boolean value that returns `true` if an utterance is currently in the process of being spoken — even if `SpeechSynthesis` is in a SpeechSynthesis/pause() state.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechSynthesis/speaking)
      */
@@ -50,7 +50,7 @@ private constructor() :
     fun cancel()
 
     /**
-     * The **`getVoices()`** method of the current device.
+     * The **`getVoices()`** method of the SpeechSynthesis interface returns a list of SpeechSynthesisVoice objects representing all the available voices on the current device.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechSynthesis/getVoices)
      */

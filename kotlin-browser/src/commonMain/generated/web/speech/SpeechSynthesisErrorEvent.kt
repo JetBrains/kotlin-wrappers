@@ -15,7 +15,7 @@ open external class SpeechSynthesisErrorEvent(
     init: SpeechSynthesisErrorEventInit,
 ) : SpeechSynthesisEvent {
     /**
-     * The **`error`** property of the A string containing the error reason.
+     * The **`error`** property of the SpeechSynthesisErrorEvent interface returns an error code indicating what has gone wrong with a speech synthesis attempt.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechSynthesisErrorEvent/error)
      */

@@ -16,7 +16,7 @@ open external class CSSMatrixComponent(
     options: CSSMatrixComponentOptions = definedExternally,
 ) : CSSTransformComponent {
     /**
-     * The **`matrix`** property of the See the matrix() and matrix3d() pages for examples.
+     * The **`matrix`** property of the CSSMatrixComponent interface gets and sets a 2d or 3d matrix.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSMatrixComponent/matrix)
      */

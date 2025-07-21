@@ -21,7 +21,7 @@ private constructor() :
     val authenticatorData: ArrayBuffer
 
     /**
-     * The **`signature`** read-only property of the object which is the signature of the authenticator for both the client data (AuthenticatorResponse.clientDataJSON).
+     * The **`signature`** read-only property of the AuthenticatorAssertionResponse interface is an ArrayBuffer object which is the signature of the authenticator for both AuthenticatorAssertionResponse.authenticatorData and a SHA-256 hash of the client data (AuthenticatorResponse.clientDataJSON).
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AuthenticatorAssertionResponse/signature)
      */

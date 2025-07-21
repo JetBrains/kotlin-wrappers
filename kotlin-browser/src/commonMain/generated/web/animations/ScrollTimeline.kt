@@ -14,14 +14,14 @@ open external class ScrollTimeline(
     options: ScrollTimelineOptions = definedExternally,
 ) : AnimationTimeline {
     /**
-     * The **`axis`** read-only property of the An enumerated value.
+     * The **`axis`** read-only property of the ScrollTimeline interface returns an enumerated value representing the scroll axis that is driving the progress of the timeline.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ScrollTimeline/axis)
      */
     val axis: ScrollAxis
 
     /**
-     * The **`source`** read-only property of the An Element.
+     * The **`source`** read-only property of the ScrollTimeline interface returns a reference to the scrollable element (_scroller_) whose scroll position is driving the progress of the timeline and therefore the animation.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ScrollTimeline/source)
      */

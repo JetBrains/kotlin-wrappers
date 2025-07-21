@@ -21,7 +21,7 @@ protected constructor() :
     var name: String
 
     /**
-     * The **`open`** property of the `open` HTML attribute, indicating whether the details's contents (not counting the summary) is to be shown to the user.
+     * The **`open`** property of the HTMLDetailsElement interface is a boolean value reflecting the `open` HTML attribute, indicating whether the details's contents (not counting the summary) is to be shown to the user.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLDetailsElement/open)
      */

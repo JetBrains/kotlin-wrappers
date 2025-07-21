@@ -9,7 +9,7 @@ package web.cssom
  */
 open external class CSSSkewY(
     /**
-     * The **`ay`** property of the along the y-axis (or ordinate).
+     * The **`ay`** property of the CSSSkewY interface gets and sets the angle used to distort the element along the y-axis (or ordinate).
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSSkewY/ay)
      */

@@ -72,7 +72,7 @@ private constructor() {
     ): Promise<JsBoolean>
 
     /**
-     * The **`keys()`** method of the Cache interface returns a representing the keys of the Cache.
+     * The **`keys()`** method of the Cache interface returns a Promise that resolves to an array of Request objects representing the keys of the Cache.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/keys)
      */
@@ -141,7 +141,7 @@ private constructor() {
     ): Promise<ReadonlyArray<Response>>
 
     /**
-     * The **`put()`** method of the Often, you will just want to Window/fetch one or more requests, then add the result straight to your cache.
+     * The **`put()`** method of the Cache interface allows key/value pairs to be added to the current Cache object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/put)
      */
@@ -269,7 +269,7 @@ suspend inline fun Cache.delete(
 }
 
 /**
- * The **`keys()`** method of the Cache interface returns a representing the keys of the Cache.
+ * The **`keys()`** method of the Cache interface returns a Promise that resolves to an array of Request objects representing the keys of the Cache.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/keys)
  */
@@ -284,7 +284,7 @@ suspend inline fun Cache.keys(
 }
 
 /**
- * The **`keys()`** method of the Cache interface returns a representing the keys of the Cache.
+ * The **`keys()`** method of the Cache interface returns a Promise that resolves to an array of Request objects representing the keys of the Cache.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/keys)
  */
@@ -297,7 +297,7 @@ suspend inline fun Cache.keys(
 }
 
 /**
- * The **`keys()`** method of the Cache interface returns a representing the keys of the Cache.
+ * The **`keys()`** method of the Cache interface returns a Promise that resolves to an array of Request objects representing the keys of the Cache.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/keys)
  */
@@ -479,7 +479,7 @@ suspend inline fun Cache.matchAll(
 }
 
 /**
- * The **`put()`** method of the Often, you will just want to Window/fetch one or more requests, then add the result straight to your cache.
+ * The **`put()`** method of the Cache interface allows key/value pairs to be added to the current Cache object.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/put)
  */

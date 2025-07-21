@@ -9,7 +9,7 @@ package web.cssom
  */
 open external class CSSSkewX(
     /**
-     * The **`ax`** property of the along the x-axis (or abscissa).
+     * The **`ax`** property of the CSSSkewX interface gets and sets the angle used to distort the element along the x-axis (or abscissa).
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSSkewX/ax)
      */

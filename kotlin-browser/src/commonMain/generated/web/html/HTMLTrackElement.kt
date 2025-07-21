@@ -36,7 +36,7 @@ protected constructor() :
     var label: String
 
     /**
-     * The **`readyState`** read-only property of the HTMLTrackElement interface returns a number representing the track element's text track readiness state: 0.
+     * The **`readyState`** read-only property of the HTMLTrackElement interface returns a number representing the track element's text track readiness state:
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTrackElement/readyState)
      */

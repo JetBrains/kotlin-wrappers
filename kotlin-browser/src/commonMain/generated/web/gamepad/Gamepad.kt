@@ -28,7 +28,7 @@ private constructor() {
     val buttons: ReadonlyArray<GamepadButton>
 
     /**
-     * The **`Gamepad.connected`** property of the still connected to the system.
+     * The **`Gamepad.connected`** property of the Gamepad interface returns a boolean indicating whether the gamepad is still connected to the system.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Gamepad/connected)
      */
@@ -49,14 +49,14 @@ private constructor() {
     val index: Int
 
     /**
-     * The **`Gamepad.mapping`** property of the remapped the controls on the device to a known layout.
+     * The **`Gamepad.mapping`** property of the Gamepad interface returns a string indicating whether the browser has remapped the controls on the device to a known layout.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Gamepad/mapping)
      */
     val mapping: GamepadMappingType
 
     /**
-     * The **`Gamepad.timestamp`** property of the representing the last time the data for this gamepad was updated.
+     * The **`Gamepad.timestamp`** property of the Gamepad interface returns a DOMHighResTimeStamp representing the last time the data for this gamepad was updated.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Gamepad/timestamp)
      */

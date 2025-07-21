@@ -28,7 +28,7 @@ private constructor() :
     var contentHint: String
 
     /**
-     * The **`enabled`** property of the `true` if the track is allowed to render the source stream or `false` if it is not.
+     * The **`enabled`** property of the MediaStreamTrack interface is a Boolean value which is `true` if the track is allowed to render the source stream or `false` if it is not.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStreamTrack/enabled)
      */
@@ -56,7 +56,7 @@ private constructor() :
     val label: String
 
     /**
-     * The **`muted`** read-only property of the indicating whether or not the track is currently unable to provide media output.
+     * The **`muted`** read-only property of the MediaStreamTrack interface returns a boolean value indicating whether or not the track is currently unable to provide media output.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStreamTrack/muted)
      */
@@ -107,14 +107,14 @@ private constructor() :
     fun getCapabilities(): MediaTrackCapabilities
 
     /**
-     * The **`getConstraints()`** method of the MediaStreamTrack interface returns a recently established for the track using a prior call to constraints indicate values and ranges of values that the website or application has specified are required or acceptable for the included constrainable properties.
+     * The **`getConstraints()`** method of the MediaStreamTrack interface returns a MediaTrackConstraints object containing the set of constraints most recently established for the track using a prior call to MediaStreamTrack.applyConstraints.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStreamTrack/getConstraints)
      */
     fun getConstraints(): MediaTrackConstraints
 
     /**
-     * The **`getSettings()`** method of the object containing the current values of each of the constrainable properties for the current `MediaStreamTrack`.
+     * The **`getSettings()`** method of the MediaStreamTrack interface returns a MediaTrackSettings object containing the current values of each of the constrainable properties for the current `MediaStreamTrack`.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStreamTrack/getSettings)
      */

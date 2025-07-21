@@ -16,7 +16,7 @@ open external class SharedWorkerGlobalScope
 private constructor() :
     WorkerGlobalScope {
     /**
-     * The **`name`** read-only property of the that the SharedWorker.SharedWorker constructor can pass to get a reference to the SharedWorkerGlobalScope.
+     * The **`name`** read-only property of the SharedWorkerGlobalScope interface returns the name that the SharedWorker was (optionally) given when it was created.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SharedWorkerGlobalScope/name)
      */

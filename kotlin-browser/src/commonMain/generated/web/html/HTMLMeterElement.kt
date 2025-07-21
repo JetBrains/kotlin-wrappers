@@ -20,7 +20,7 @@ protected constructor() :
     var high: Double
 
     /**
-     * The **`HTMLMeterElement.labels`** read-only property returns a A NodeList containing the `<label>` elements associated with the `<meter>` element.
+     * The **`HTMLMeterElement.labels`** read-only property returns a NodeList of the label elements associated with the meter element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMeterElement/labels)
      */

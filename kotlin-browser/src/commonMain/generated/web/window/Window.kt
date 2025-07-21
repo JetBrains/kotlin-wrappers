@@ -90,7 +90,7 @@ private constructor() :
     val frames: ArrayLike<Window>
 
     /**
-     * The read-only **`innerHeight`** property of the including the height of the horizontal scroll bar, if present.
+     * The read-only **`innerHeight`** property of the Window interface returns the interior height of the window in pixels, including the height of the horizontal scroll bar, if present.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/innerHeight)
      */

@@ -16,14 +16,14 @@ private constructor() :
     ArrayLike<SpeechRecognitionResult>,
     JsIterable<SpeechRecognitionResult> {
     /**
-     * The **`length`** read-only property of the 'array' — the number of SpeechRecognitionResult objects in the list.
+     * The **`length`** read-only property of the SpeechRecognitionResultList interface returns the length of the 'array' — the number of SpeechRecognitionResult objects in the list.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechRecognitionResultList/length)
      */
     override val length: Int
 
     /**
-     * The **`item`** getter of the syntax.
+     * The **`item`** getter of the SpeechRecognitionResultList interface is a standard getter — it allows SpeechRecognitionResult objects in the list to be accessed via array syntax.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechRecognitionResultList/item)
      */

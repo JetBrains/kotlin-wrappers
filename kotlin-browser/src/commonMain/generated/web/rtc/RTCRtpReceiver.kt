@@ -24,7 +24,7 @@ private constructor() {
     var jitterBufferTarget: DOMHighResTimeStamp?
 
     /**
-     * The **`track`** read-only property of the associated with the current RTCRtpReceiver instance.
+     * The **`track`** read-only property of the RTCRtpReceiver interface returns the MediaStreamTrack associated with the current RTCRtpReceiver instance.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCRtpReceiver/track)
      */
@@ -38,7 +38,7 @@ private constructor() {
     var transform: RTCRtpTransform?
 
     /**
-     * The read-only **`transport`** property of an used to interact with the underlying transport over which the receiver is exchanging Real-time Transport Control Protocol (RTCP) packets.
+     * The read-only **`transport`** property of an RTCRtpReceiver object provides the RTCDtlsTransport object used to interact with the underlying transport over which the receiver is exchanging Real-time Transport Control Protocol (RTCP) packets.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCRtpReceiver/transport)
      */

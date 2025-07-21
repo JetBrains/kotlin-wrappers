@@ -23,7 +23,7 @@ private constructor() {
     val anchorNode: Node?
 
     /**
-     * The **`Selection.anchorOffset`** read-only property returns the number of characters that the selection's anchor is offset within the In the case of Selection.anchorNode being another type of node, **`Selection.anchorOffset`** returns the number of Node.childNodes the selection's anchor is offset within the Selection.anchorNode.
+     * The **`Selection.anchorOffset`** read-only property returns the number of characters that the selection's anchor is offset within the Selection.anchorNode if said node is of type Text, CDATASection or Comment.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Selection/anchorOffset)
      */
@@ -44,7 +44,7 @@ private constructor() {
     val focusNode: Node?
 
     /**
-     * The **`Selection.focusOffset`** read-only property returns the number of characters that the selection's focus is offset within the In the case of Selection.focusNode being another type of node, **`Selection.focusOffset`** returns the number of Node.childNodes the selection's focus is offset within the Selection.focusNode.
+     * The **`Selection.focusOffset`** read-only property returns the number of characters that the selection's focus is offset within the Selection.focusNode if said node is of type Text, CDATASection or Comment.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Selection/focusOffset)
      */
@@ -65,14 +65,14 @@ private constructor() {
     val rangeCount: Int
 
     /**
-     * The **`type`** read-only property of the type of the current selection.
+     * The **`type`** read-only property of the Selection interface returns a string describing the type of the current selection.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Selection/type)
      */
     val type: String
 
     /**
-     * The **`Selection.addRange()`** method adds a ```js-nolint addRange(range) ``` - `range` - : A Range object that will be added to the Selection.
+     * The **`Selection.addRange()`** method adds a Range to a Selection.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Selection/addRange)
      */
@@ -113,7 +113,7 @@ private constructor() {
     ): Boolean
 
     /**
-     * The **`deleteFromDocument()`** method of the ```js-nolint deleteFromDocument() ``` None.
+     * The **`deleteFromDocument()`** method of the Selection interface invokes the Range.deleteContents() method on the selected Range.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Selection/deleteFromDocument)
      */

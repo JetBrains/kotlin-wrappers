@@ -32,14 +32,14 @@ open external class PointerEvent(
     val azimuthAngle: Double
 
     /**
-     * The **`height`** read-only property of the geometry, along the y-axis (in CSS pixels).
+     * The **`height`** read-only property of the PointerEvent interface represents the height of the pointer's contact geometry, along the y-axis (in CSS pixels).
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PointerEvent/height)
      */
     val height: Double
 
     /**
-     * The **`isPrimary`** read-only property of the created the event is the _primary_ pointer.
+     * The **`isPrimary`** read-only property of the PointerEvent interface indicates whether or not the pointer device that created the event is the _primary_ pointer.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PointerEvent/isPrimary)
      */
@@ -53,28 +53,28 @@ open external class PointerEvent(
     val persistentDeviceId: Int
 
     /**
-     * The **`pointerId`** read-only property of the event.
+     * The **`pointerId`** read-only property of the PointerEvent interface is an identifier assigned to a given pointer event.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PointerEvent/pointerId)
      */
     val pointerId: Int
 
     /**
-     * The **`pointerType`** read-only property of the that caused a given pointer event.
+     * The **`pointerType`** read-only property of the PointerEvent interface indicates the device type (mouse, pen, or touch) that caused a given pointer event.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PointerEvent/pointerType)
      */
     val pointerType: String
 
     /**
-     * The **`pressure`** read-only property of the input.
+     * The **`pressure`** read-only property of the PointerEvent interface indicates the normalized pressure of the pointer input.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PointerEvent/pressure)
      */
     val pressure: Float
 
     /**
-     * The **`tangentialPressure`** read-only property of the the pointer input (also known as barrel pressure or cylinder stress).
+     * The **`tangentialPressure`** read-only property of the PointerEvent interface represents the normalized tangential pressure of the pointer input (also known as barrel pressure or cylinder stress).
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PointerEvent/tangentialPressure)
      */
@@ -95,14 +95,14 @@ open external class PointerEvent(
     val tiltY: Int
 
     /**
-     * The **`twist`** read-only property of the (e.g., pen stylus) around its major axis, in degrees.
+     * The **`twist`** read-only property of the PointerEvent interface represents the clockwise rotation of the pointer (e.g., pen stylus) around its major axis, in degrees.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PointerEvent/twist)
      */
     val twist: Int
 
     /**
-     * The **`width`** read-only property of the geometry along the x-axis, measured in CSS pixels.
+     * The **`width`** read-only property of the PointerEvent interface represents the width of the pointer's contact geometry along the x-axis, measured in CSS pixels.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PointerEvent/width)
      */

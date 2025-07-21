@@ -39,7 +39,7 @@ protected constructor() :
     val htmlFor: DOMTokenList<ElementId>
 
     /**
-     * The **`HTMLOutputElement.labels`** read-only property returns a A NodeList containing the `<label>` elements associated with the `<output>` element.
+     * The **`HTMLOutputElement.labels`** read-only property returns a NodeList of the label elements associated with the output element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOutputElement/labels)
      */

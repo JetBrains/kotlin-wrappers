@@ -104,7 +104,7 @@ private constructor() :
     val ended: Boolean
 
     /**
-     * The **`HTMLMediaElement.error`** property is the there has not been an error.
+     * The **`HTMLMediaElement.error`** property is the MediaError object for the most recent error, or `null` if there has not been an error.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/error)
      */
@@ -228,14 +228,14 @@ private constructor() :
     var src: String
 
     /**
-     * The **`srcObject`** property of the the source of the media associated with the HTMLMediaElement, or `null` if not assigned.
+     * The **`srcObject`** property of the HTMLMediaElement interface sets or returns the object which serves as the source of the media associated with the HTMLMediaElement, or `null` if not assigned.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/srcObject)
      */
     var srcObject: MediaProvider?
 
     /**
-     * The read-only **`textTracks`** property on HTMLMediaElement objects returns a objects representing the media element's text tracks, in the same order as in the list of text tracks.
+     * The read-only **`textTracks`** property on HTMLMediaElement objects returns a TextTrackList object listing all of the TextTrack objects representing the media element's text tracks, in the same order as in the list of text tracks.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/textTracks)
      */

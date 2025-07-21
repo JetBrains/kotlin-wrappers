@@ -17,7 +17,7 @@ open external class RTCPeerConnectionIceEvent(
     init: RTCPeerConnectionIceEventInit = definedExternally,
 ) : Event {
     /**
-     * The read-only **`candidate`** property of the RTCPeerConnectionIceEvent interface returns the An RTCIceCandidate object representing the ICE candidate that has been received, or `null` to indicate that there are no further candidates for this negotiation session.
+     * The read-only **`candidate`** property of the RTCPeerConnectionIceEvent interface returns the RTCIceCandidate associated with the event.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnectionIceEvent/candidate)
      */

@@ -18,7 +18,7 @@ open external class FontFaceSetLoadEvent(
     init: FontFaceSetLoadEventInit = definedExternally,
 ) : Event {
     /**
-     * The **`fontfaces`** read-only property of the An array of FontFace instance.
+     * The **`fontfaces`** read-only property of the FontFaceSetLoadEvent interface returns an array of FontFace instances, each of which represents a single usable font.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FontFaceSetLoadEvent/fontfaces)
      */
