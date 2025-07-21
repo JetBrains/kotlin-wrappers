@@ -39,3 +39,10 @@ TanStack Virtual
 ./gradlew :kotlin-tanstack-virtual-karakum:generate
 ./gradlew :kotlin-tanstack-react-virtual:build
 ```
+
+VS Code
+
+```sh
+./gradlew :kotlin-vscode-karakum:generate
+./gradlew :kotlin-vscode:build
+```

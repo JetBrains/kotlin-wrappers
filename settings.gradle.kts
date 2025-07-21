@@ -251,6 +251,8 @@ include("kotlin-vercel-ncc")
 // Kotlin/JS: VS Code wrappers
 include("kotlin-vscode")
 
+includeKarakum("kotlin-vscode")
+
 // Kotlin/JS: Common web wrappers
 include("kotlin-web")
 
