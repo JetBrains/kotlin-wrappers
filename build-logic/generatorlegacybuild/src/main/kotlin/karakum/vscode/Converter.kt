@@ -25,7 +25,6 @@ internal fun parseDeclarations(
         .map { it.trim() }
         .map { parseDeclaration(it) }
         .toList()
-        .also { println("ITEMS: " + it.size) }
 }
 
 private fun parseDeclaration(
