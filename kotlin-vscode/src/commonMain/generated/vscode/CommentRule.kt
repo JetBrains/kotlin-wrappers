@@ -16,7 +16,7 @@ export interface CommentRule {
 lineComment?: string;
 
 /**
- * The block comment character pair, like `/* block comment *&#47;`
+ * The block comment character pair, like `/ * block comment *&#47;`
 */
 blockComment?: CharacterPair;
 }

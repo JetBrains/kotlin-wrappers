@@ -19,7 +19,7 @@ readonly providedDropEditKinds?: readonly DocumentDropOrPasteEditKind[];
 /**
  * List of {@link DataTransfer} mime types that the provider can handle.
  *
- * This can either be an exact mime type such as `image/png`, or a wildcard pattern such as `image/*`.
+ * This can either be an exact mime type such as `image/png`, or a wildcard pattern such as `image/ *`.
  *
  * Use `text/uri-list` for resources dropped from the explorer or other tree views in the workbench.
  *

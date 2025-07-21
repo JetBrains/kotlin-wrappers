@@ -24,7 +24,7 @@ readonly copyMimeTypes?: readonly string[];
 /**
  * Mime types that {@linkcode DocumentPasteEditProvider.provideDocumentPasteEdits provideDocumentPasteEdits} should be invoked for.
  *
- * This can either be an exact mime type such as `image/png`, or a wildcard pattern such as `image/*`.
+ * This can either be an exact mime type such as `image/png`, or a wildcard pattern such as `image/ *`.
  *
  * Use `text/uri-list` for resources dropped from the explorer or other tree views in the workbench.
  *

@@ -56,7 +56,7 @@ pattern: string;
  *   const pattern1 = new vscode.RelativePattern(folder, '*.ts');
  *
  *   // Match any TypeScript file in `someFolder` inside this workspace folder
- *   const pattern2 = new vscode.RelativePattern(folder, 'someFolder/*.ts');
+ *   const pattern2 = new vscode.RelativePattern(folder, 'someFolder/ *.ts');
  * }
  * ```
  *
