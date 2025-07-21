@@ -12,7 +12,12 @@ internal fun generateKotlinDeclarations(
     targetDir.mkdirs()
 
     for ((name, body) in parseDeclarations(definitionsFile)) {
-        val annotations = if ("export interface " !in body) {
+        val hasRuntime = when {
+            "export interface " in body -> false
+            "external interface " in body -> "sealed /* enum */" in body
+            else -> true
+        }
+        val annotations = if (hasRuntime) {
             """@file:JsModule("vscode")"""
         } else ""
 

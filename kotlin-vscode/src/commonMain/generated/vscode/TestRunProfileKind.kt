@@ -5,25 +5,24 @@
 package vscode
 
 /**
-// ORIGINAL SOURCE
-
-/**
  * The kind of executions that {@link TestRunProfile TestRunProfiles} control.
-*/
-export enum TestRunProfileKind {
-/**
- * The `Run` test profile kind.
-*/
-Run = 1,
-/**
- * The `Debug` test profile kind.
-*/
-Debug = 2,
-/**
- * The `Coverage` test profile kind.
-*/
-Coverage = 3,
-}
+ */
+sealed /* enum */
+external interface TestRunProfileKind {
+    companion object {
+        /**
+         * The `Run` test profile kind.
+         */
+        val Run: TestRunProfileKind // 1
 
-// ORIGINAL SOURCE
- **/
+        /**
+         * The `Debug` test profile kind.
+         */
+        val Debug: TestRunProfileKind // 2
+
+        /**
+         * The `Coverage` test profile kind.
+         */
+        val Coverage: TestRunProfileKind // 3
+    }
+}

@@ -5,37 +5,34 @@
 package vscode
 
 /**
-// ORIGINAL SOURCE
-
-/**
  * Terminal exit reason kind.
-*/
-export enum TerminalExitReason {
-/**
- * Unknown reason.
-*/
-Unknown = 0,
+ */
+sealed /* enum */
+external interface TerminalExitReason {
+    companion object {
+        /**
+         * Unknown reason.
+         */
+        val Unknown: TerminalExitReason // 0
 
-/**
- * The window closed/reloaded.
-*/
-Shutdown = 1,
+        /**
+         * The window closed/reloaded.
+         */
+        val Shutdown: TerminalExitReason // 1
 
-/**
- * The shell process exited.
-*/
-Process = 2,
+        /**
+         * The shell process exited.
+         */
+        val Process: TerminalExitReason // 2
 
-/**
- * The user closed the terminal.
-*/
-User = 3,
+        /**
+         * The user closed the terminal.
+         */
+        val User: TerminalExitReason // 3
 
-/**
- * An extension disposed the terminal.
-*/
-Extension = 4,
+        /**
+         * An extension disposed the terminal.
+         */
+        val Extension: TerminalExitReason // 4
+    }
 }
-
-// ORIGINAL SOURCE
- **/

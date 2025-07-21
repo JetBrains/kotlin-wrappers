@@ -5,25 +5,24 @@
 package vscode
 
 /**
-// ORIGINAL SOURCE
-
-/**
  * How a {@link CompletionItemProvider completion provider} was triggered
-*/
-export enum CompletionTriggerKind {
-/**
- * Completion was triggered normally.
-*/
-Invoke = 0,
-/**
- * Completion was triggered by a trigger character.
-*/
-TriggerCharacter = 1,
-/**
- * Completion was re-triggered as current completion list is incomplete
-*/
-TriggerForIncompleteCompletions = 2
-}
+ */
+sealed /* enum */
+external interface CompletionTriggerKind {
+    companion object {
+        /**
+         * Completion was triggered normally.
+         */
+        val Invoke: CompletionTriggerKind // 0
 
-// ORIGINAL SOURCE
- **/
+        /**
+         * Completion was triggered by a trigger character.
+         */
+        val TriggerCharacter: CompletionTriggerKind // 1
+
+        /**
+         * Completion was re-triggered as current completion list is incomplete
+         */
+        val TriggerForIncompleteCompletions: CompletionTriggerKind // 2
+    }
+}

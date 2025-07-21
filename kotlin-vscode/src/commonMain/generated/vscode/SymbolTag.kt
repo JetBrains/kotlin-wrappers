@@ -5,18 +5,14 @@
 package vscode
 
 /**
-// ORIGINAL SOURCE
-
-/**
  * Symbol tags are extra annotations that tweak the rendering of a symbol.
-*/
-export enum SymbolTag {
-
-/**
- * Render a symbol as obsolete, usually using a strike-out.
-*/
-Deprecated = 1
+ */
+sealed /* enum */
+external interface SymbolTag {
+    companion object {
+        /**
+         * Render a symbol as obsolete, usually using a strike-out.
+         */
+        val Deprecated: SymbolTag // 1
+    }
 }
-
-// ORIGINAL SOURCE
- **/

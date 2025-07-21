@@ -5,21 +5,19 @@
 package vscode
 
 /**
-// ORIGINAL SOURCE
-
-/**
  * The location of the terminal.
-*/
-export enum TerminalLocation {
-/**
- * In the terminal view
-*/
-Panel = 1,
-/**
- * In the editor area
-*/
-Editor = 2,
-}
+ */
+sealed /* enum */
+external interface TerminalLocation {
+	companion object {
+		/**
+		 * In the terminal view
+		 */
+		val Panel: TerminalLocation // 1
 
-// ORIGINAL SOURCE
- **/
+		/**
+		 * In the editor area
+		 */
+		val Editor: TerminalLocation // 2
+	}
+}

@@ -5,25 +5,24 @@
 package vscode
 
 /**
-// ORIGINAL SOURCE
-
-/**
  * Collapsible state of the tree item
-*/
-export enum TreeItemCollapsibleState {
-/**
- * Determines an item can be neither collapsed nor expanded. Implies it has no children.
-*/
-None = 0,
-/**
- * Determines an item is collapsed
-*/
-Collapsed = 1,
-/**
- * Determines an item is expanded
-*/
-Expanded = 2
-}
+ */
+sealed /* enum */
+external interface TreeItemCollapsibleState {
+    companion object {
+        /**
+         * Determines an item can be neither collapsed nor expanded. Implies it has no children.
+         */
+        val None: TreeItemCollapsibleState // 0
 
-// ORIGINAL SOURCE
- **/
+        /**
+         * Determines an item is collapsed
+         */
+        val Collapsed: TreeItemCollapsibleState // 1
+
+        /**
+         * Determines an item is expanded
+         */
+        val Expanded: TreeItemCollapsibleState // 2
+    }
+}

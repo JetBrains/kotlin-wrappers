@@ -5,27 +5,24 @@
 package vscode
 
 /**
-// ORIGINAL SOURCE
-
-/**
  * The configuration target
-*/
-export enum ConfigurationTarget {
-/**
- * Global configuration
-*/
-Global = 1,
+ */
+sealed /* enum */
+external interface ConfigurationTarget {
+    companion object {
+        /**
+         * Global configuration
+         */
+        val Global: ConfigurationTarget // 1
 
-/**
- * Workspace configuration
-*/
-Workspace = 2,
+        /**
+         * Workspace configuration
+         */
+        val Workspace: ConfigurationTarget // 2
 
-/**
- * Workspace folder configuration
-*/
-WorkspaceFolder = 3
+        /**
+         * Workspace folder configuration
+         */
+        val WorkspaceFolder: ConfigurationTarget // 3
+    }
 }
-
-// ORIGINAL SOURCE
- **/

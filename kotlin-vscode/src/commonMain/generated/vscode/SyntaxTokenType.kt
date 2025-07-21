@@ -5,29 +5,29 @@
 package vscode
 
 /**
-// ORIGINAL SOURCE
-
-/**
  * Enumeration of commonly encountered syntax token types.
-*/
-export enum SyntaxTokenType {
-/**
- * Everything except tokens that are part of comments, string literals and regular expressions.
-*/
-Other = 0,
-/**
- * A comment.
-*/
-Comment = 1,
-/**
- * A string literal.
-*/
-String = 2,
-/**
- * A regular expression.
-*/
-RegEx = 3
-}
+ */
+sealed /* enum */
+external interface SyntaxTokenType {
+    companion object {
+        /**
+         * Everything except tokens that are part of comments, string literals and regular expressions.
+         */
+        val Other: SyntaxTokenType // 0
 
-// ORIGINAL SOURCE
- **/
+        /**
+         * A comment.
+         */
+        val Comment: SyntaxTokenType // 1
+
+        /**
+         * A string literal.
+         */
+        val String: SyntaxTokenType // 2
+
+        /**
+         * A regular expression.
+         */
+        val RegEx: SyntaxTokenType // 3
+    }
+}

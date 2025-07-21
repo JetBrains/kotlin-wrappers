@@ -5,25 +5,24 @@
 package vscode
 
 /**
-// ORIGINAL SOURCE
-
-/**
  * Represents sources that can cause {@link window.onDidChangeTextEditorSelection selection change events}.
-*/
-export enum TextEditorSelectionChangeKind {
-/**
- * Selection changed due to typing in the editor.
-*/
-Keyboard = 1,
-/**
- * Selection change due to clicking in the editor.
-*/
-Mouse = 2,
-/**
- * Selection changed because a command ran.
-*/
-Command = 3
-}
+ */
+sealed /* enum */
+external interface TextEditorSelectionChangeKind {
+    companion object {
+        /**
+         * Selection changed due to typing in the editor.
+         */
+        val Keyboard: TextEditorSelectionChangeKind // 1
 
-// ORIGINAL SOURCE
- **/
+        /**
+         * Selection change due to clicking in the editor.
+         */
+        val Mouse: TextEditorSelectionChangeKind // 2
+
+        /**
+         * Selection changed because a command ran.
+         */
+        val Command: TextEditorSelectionChangeKind // 3
+    }
+}

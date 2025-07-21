@@ -5,28 +5,24 @@
 package vscode
 
 /**
-// ORIGINAL SOURCE
-
-/**
  * Enumeration of file change types.
-*/
-export enum FileChangeType {
+ */
+sealed /* enum */
+external interface FileChangeType {
+    companion object {
+        /**
+         * The contents or metadata of a file have changed.
+         */
+        val Changed: FileChangeType // 1
 
-/**
- * The contents or metadata of a file have changed.
-*/
-Changed = 1,
+        /**
+         * A file has been created.
+         */
+        val Created: FileChangeType // 2
 
-/**
- * A file has been created.
-*/
-Created = 2,
-
-/**
- * A file has been deleted.
-*/
-Deleted = 3,
+        /**
+         * A file has been deleted.
+         */
+        val Deleted: FileChangeType // 3
+    }
 }
-
-// ORIGINAL SOURCE
- **/

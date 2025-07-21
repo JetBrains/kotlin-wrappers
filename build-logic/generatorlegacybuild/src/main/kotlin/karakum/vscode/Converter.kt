@@ -43,17 +43,35 @@ private fun parseDeclaration(
         .substringBefore("(")
         .substringBefore("<")
 
-    val body = sequenceOf(
-        """
-        /**
-        // ORIGINAL SOURCE
-        """.trimIndent(),
-        source,
-        """
-        // ORIGINAL SOURCE
-        **/
-        """.trimIndent()
-    ).joinToString("\n\n")
+    val type = source
+        .substringAfter("export ")
+        .substringBefore(" ")
+
+    val body = when (type) {
+        "enum" -> source
+            .replaceFirst("\nexport enum ", "\nsealed /* enum */\nexternal interface ")
+            .replaceFirst("{\n", "{\ncompanion object {")
+            .replaceFirst("\n}", "\n}\n}")
+            .splitToSequence("\n")
+            .map {
+                if (" = " in it) {
+                    "val " + it.removeSuffix(",").replace(" = ", ": $name // ")
+                } else it
+            }
+            .joinToString("\n")
+
+        else -> sequenceOf(
+            """
+            /**
+            // ORIGINAL SOURCE
+            """.trimIndent(),
+            source,
+            """
+            // ORIGINAL SOURCE
+            **/
+            """.trimIndent()
+        ).joinToString("\n\n")
+    }
 
     return ConversionResult(name, body)
 }

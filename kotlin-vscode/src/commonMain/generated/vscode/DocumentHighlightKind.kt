@@ -5,28 +5,24 @@
 package vscode
 
 /**
-// ORIGINAL SOURCE
-
-/**
  * A document highlight kind.
-*/
-export enum DocumentHighlightKind {
+ */
+sealed /* enum */
+external interface DocumentHighlightKind {
+    companion object {
+        /**
+         * A textual occurrence.
+         */
+        val Text: DocumentHighlightKind // 0
 
-/**
- * A textual occurrence.
-*/
-Text = 0,
+        /**
+         * Read-access of a symbol, like reading a variable.
+         */
+        val Read: DocumentHighlightKind // 1
 
-/**
- * Read-access of a symbol, like reading a variable.
-*/
-Read = 1,
-
-/**
- * Write-access of a symbol, like writing to a variable.
-*/
-Write = 2
+        /**
+         * Write-access of a symbol, like writing to a variable.
+         */
+        val Write: DocumentHighlightKind // 2
+    }
 }
-
-// ORIGINAL SOURCE
- **/

@@ -5,27 +5,24 @@
 package vscode
 
 /**
-// ORIGINAL SOURCE
-
-/**
  * How a {@linkcode SignatureHelpProvider} was triggered.
-*/
-export enum SignatureHelpTriggerKind {
-/**
- * Signature help was invoked manually by the user or by a command.
-*/
-Invoke = 1,
+ */
+sealed /* enum */
+external interface SignatureHelpTriggerKind {
+    companion object {
+        /**
+         * Signature help was invoked manually by the user or by a command.
+         */
+        val Invoke: SignatureHelpTriggerKind // 1
 
-/**
- * Signature help was triggered by a trigger character.
-*/
-TriggerCharacter = 2,
+        /**
+         * Signature help was triggered by a trigger character.
+         */
+        val TriggerCharacter: SignatureHelpTriggerKind // 2
 
-/**
- * Signature help was triggered by the cursor moving or by the document content changing.
-*/
-ContentChange = 3,
+        /**
+         * Signature help was triggered by the cursor moving or by the document content changing.
+         */
+        val ContentChange: SignatureHelpTriggerKind // 3
+    }
 }
-
-// ORIGINAL SOURCE
- **/

@@ -5,23 +5,19 @@
 package vscode
 
 /**
-// ORIGINAL SOURCE
-
-/**
  * Possible kinds of UI that can use extensions.
-*/
-export enum UIKind {
+ */
+sealed /* enum */
+external interface UIKind {
+    companion object {
+        /**
+         * Extensions are accessed from a desktop application.
+         */
+        val Desktop: UIKind // 1
 
-/**
- * Extensions are accessed from a desktop application.
-*/
-Desktop = 1,
-
-/**
- * Extensions are accessed from a web browser.
-*/
-Web = 2
+        /**
+         * Extensions are accessed from a web browser.
+         */
+        val Web: UIKind // 2
+    }
 }
-
-// ORIGINAL SOURCE
- **/

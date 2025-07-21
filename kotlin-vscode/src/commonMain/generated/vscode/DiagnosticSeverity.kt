@@ -5,34 +5,30 @@
 package vscode
 
 /**
-// ORIGINAL SOURCE
-
-/**
  * Represents the severity of diagnostics.
-*/
-export enum DiagnosticSeverity {
+ */
+sealed /* enum */
+external interface DiagnosticSeverity {
+    companion object {
+        /**
+         * Something not allowed by the rules of a language or other means.
+         */
+        val Error: DiagnosticSeverity // 0
 
-/**
- * Something not allowed by the rules of a language or other means.
-*/
-Error = 0,
+        /**
+         * Something suspicious but allowed.
+         */
+        val Warning: DiagnosticSeverity // 1
 
-/**
- * Something suspicious but allowed.
-*/
-Warning = 1,
+        /**
+         * Something to inform about but not a problem.
+         */
+        val Information: DiagnosticSeverity // 2
 
-/**
- * Something to inform about but not a problem.
-*/
-Information = 2,
-
-/**
- * Something to hint to a better way of doing it, like proposing
- * a refactoring.
-*/
-Hint = 3
+        /**
+         * Something to hint to a better way of doing it, like proposing
+         * a refactoring.
+         */
+        val Hint: DiagnosticSeverity // 3
+    }
 }
-
-// ORIGINAL SOURCE
- **/

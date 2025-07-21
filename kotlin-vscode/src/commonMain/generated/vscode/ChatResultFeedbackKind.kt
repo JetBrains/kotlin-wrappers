@@ -5,22 +5,19 @@
 package vscode
 
 /**
-// ORIGINAL SOURCE
-
-/**
  * Represents the type of user feedback received.
-*/
-export enum ChatResultFeedbackKind {
-/**
- * The user marked the result as unhelpful.
-*/
-Unhelpful = 0,
+ */
+sealed /* enum */
+external interface ChatResultFeedbackKind {
+    companion object {
+        /**
+         * The user marked the result as unhelpful.
+         */
+        val Unhelpful: ChatResultFeedbackKind // 0
 
-/**
- * The user marked the result as helpful.
-*/
-Helpful = 1,
+        /**
+         * The user marked the result as helpful.
+         */
+        val Helpful: ChatResultFeedbackKind // 1
+    }
 }
-
-// ORIGINAL SOURCE
- **/

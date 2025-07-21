@@ -5,22 +5,19 @@
 package vscode
 
 /**
-// ORIGINAL SOURCE
-
-/**
  * Represents the role of a chat message. This is either the user or the assistant.
-*/
-export enum LanguageModelChatMessageRole {
-/**
- * The user role, e.g the human interacting with a language model.
-*/
-User = 1,
+ */
+sealed /* enum */
+external interface LanguageModelChatMessageRole {
+    companion object {
+        /**
+         * The user role, e.g the human interacting with a language model.
+         */
+        val User: LanguageModelChatMessageRole // 1
 
-/**
- * The assistant role, e.g. the language model generating responses.
-*/
-Assistant = 2
+        /**
+         * The assistant role, e.g. the language model generating responses.
+         */
+        val Assistant: LanguageModelChatMessageRole // 2
+    }
 }
-
-// ORIGINAL SOURCE
- **/

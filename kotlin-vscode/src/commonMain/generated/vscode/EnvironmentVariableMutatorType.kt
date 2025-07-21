@@ -5,25 +5,24 @@
 package vscode
 
 /**
-// ORIGINAL SOURCE
-
-/**
  * A type of mutation that can be applied to an environment variable.
-*/
-export enum EnvironmentVariableMutatorType {
-/**
- * Replace the variable's existing value.
-*/
-Replace = 1,
-/**
- * Append to the end of the variable's existing value.
-*/
-Append = 2,
-/**
- * Prepend to the start of the variable's existing value.
-*/
-Prepend = 3
-}
+ */
+sealed /* enum */
+external interface EnvironmentVariableMutatorType {
+    companion object {
+        /**
+         * Replace the variable's existing value.
+         */
+        val Replace: EnvironmentVariableMutatorType // 1
 
-// ORIGINAL SOURCE
- **/
+        /**
+         * Append to the end of the variable's existing value.
+         */
+        val Append: EnvironmentVariableMutatorType // 2
+
+        /**
+         * Prepend to the start of the variable's existing value.
+         */
+        val Prepend: EnvironmentVariableMutatorType // 3
+    }
+}

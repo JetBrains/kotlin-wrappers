@@ -5,121 +5,144 @@
 package vscode
 
 /**
-// ORIGINAL SOURCE
-
-/**
  * Completion item kinds.
-*/
-export enum CompletionItemKind {
-/**
- * The `Text` completion item kind.
-*/
-Text = 0,
-/**
- * The `Method` completion item kind.
-*/
-Method = 1,
-/**
- * The `Function` completion item kind.
-*/
-Function = 2,
-/**
- * The `Constructor` completion item kind.
-*/
-Constructor = 3,
-/**
- * The `Field` completion item kind.
-*/
-Field = 4,
-/**
- * The `Variable` completion item kind.
-*/
-Variable = 5,
-/**
- * The `Class` completion item kind.
-*/
-Class = 6,
-/**
- * The `Interface` completion item kind.
-*/
-Interface = 7,
-/**
- * The `Module` completion item kind.
-*/
-Module = 8,
-/**
- * The `Property` completion item kind.
-*/
-Property = 9,
-/**
- * The `Unit` completion item kind.
-*/
-Unit = 10,
-/**
- * The `Value` completion item kind.
-*/
-Value = 11,
-/**
- * The `Enum` completion item kind.
-*/
-Enum = 12,
-/**
- * The `Keyword` completion item kind.
-*/
-Keyword = 13,
-/**
- * The `Snippet` completion item kind.
-*/
-Snippet = 14,
-/**
- * The `Color` completion item kind.
-*/
-Color = 15,
-/**
- * The `Reference` completion item kind.
-*/
-Reference = 17,
-/**
- * The `File` completion item kind.
-*/
-File = 16,
-/**
- * The `Folder` completion item kind.
-*/
-Folder = 18,
-/**
- * The `EnumMember` completion item kind.
-*/
-EnumMember = 19,
-/**
- * The `Constant` completion item kind.
-*/
-Constant = 20,
-/**
- * The `Struct` completion item kind.
-*/
-Struct = 21,
-/**
- * The `Event` completion item kind.
-*/
-Event = 22,
-/**
- * The `Operator` completion item kind.
-*/
-Operator = 23,
-/**
- * The `TypeParameter` completion item kind.
-*/
-TypeParameter = 24,
-/**
- * The `User` completion item kind.
-*/
-User = 25,
-/**
- * The `Issue` completion item kind.
-*/
-Issue = 26,
-}
+ */
+sealed /* enum */
+external interface CompletionItemKind {
+    companion object {
+        /**
+         * The `Text` completion item kind.
+         */
+        val Text: CompletionItemKind // 0
 
-// ORIGINAL SOURCE
- **/
+        /**
+         * The `Method` completion item kind.
+         */
+        val Method: CompletionItemKind // 1
+
+        /**
+         * The `Function` completion item kind.
+         */
+        val Function: CompletionItemKind // 2
+
+        /**
+         * The `Constructor` completion item kind.
+         */
+        val Constructor: CompletionItemKind // 3
+
+        /**
+         * The `Field` completion item kind.
+         */
+        val Field: CompletionItemKind // 4
+
+        /**
+         * The `Variable` completion item kind.
+         */
+        val Variable: CompletionItemKind // 5
+
+        /**
+         * The `Class` completion item kind.
+         */
+        val Class: CompletionItemKind // 6
+
+        /**
+         * The `Interface` completion item kind.
+         */
+        val Interface: CompletionItemKind // 7
+
+        /**
+         * The `Module` completion item kind.
+         */
+        val Module: CompletionItemKind // 8
+
+        /**
+         * The `Property` completion item kind.
+         */
+        val Property: CompletionItemKind // 9
+
+        /**
+         * The `Unit` completion item kind.
+         */
+        val Unit: CompletionItemKind // 10
+
+        /**
+         * The `Value` completion item kind.
+         */
+        val Value: CompletionItemKind // 11
+
+        /**
+         * The `Enum` completion item kind.
+         */
+        val Enum: CompletionItemKind // 12
+
+        /**
+         * The `Keyword` completion item kind.
+         */
+        val Keyword: CompletionItemKind // 13
+
+        /**
+         * The `Snippet` completion item kind.
+         */
+        val Snippet: CompletionItemKind // 14
+
+        /**
+         * The `Color` completion item kind.
+         */
+        val Color: CompletionItemKind // 15
+
+        /**
+         * The `Reference` completion item kind.
+         */
+        val Reference: CompletionItemKind // 17
+
+        /**
+         * The `File` completion item kind.
+         */
+        val File: CompletionItemKind // 16
+
+        /**
+         * The `Folder` completion item kind.
+         */
+        val Folder: CompletionItemKind // 18
+
+        /**
+         * The `EnumMember` completion item kind.
+         */
+        val EnumMember: CompletionItemKind // 19
+
+        /**
+         * The `Constant` completion item kind.
+         */
+        val Constant: CompletionItemKind // 20
+
+        /**
+         * The `Struct` completion item kind.
+         */
+        val Struct: CompletionItemKind // 21
+
+        /**
+         * The `Event` completion item kind.
+         */
+        val Event: CompletionItemKind // 22
+
+        /**
+         * The `Operator` completion item kind.
+         */
+        val Operator: CompletionItemKind // 23
+
+        /**
+         * The `TypeParameter` completion item kind.
+         */
+        val TypeParameter: CompletionItemKind // 24
+
+        /**
+         * The `User` completion item kind.
+         */
+        val User: CompletionItemKind // 25
+
+        /**
+         * The `Issue` completion item kind.
+         */
+        val Issue: CompletionItemKind // 26
+    }
+}

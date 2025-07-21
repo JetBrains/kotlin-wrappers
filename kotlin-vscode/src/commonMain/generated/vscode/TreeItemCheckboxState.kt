@@ -5,21 +5,19 @@
 package vscode
 
 /**
-// ORIGINAL SOURCE
-
-/**
  * Checkbox state of the tree item
-*/
-export enum TreeItemCheckboxState {
-/**
- * Determines an item is unchecked
-*/
-Unchecked = 0,
-/**
- * Determines an item is checked
-*/
-Checked = 1
-}
+ */
+sealed /* enum */
+external interface TreeItemCheckboxState {
+    companion object {
+        /**
+         * Determines an item is unchecked
+         */
+        val Unchecked: TreeItemCheckboxState // 0
 
-// ORIGINAL SOURCE
- **/
+        /**
+         * Determines an item is checked
+         */
+        val Checked: TreeItemCheckboxState // 1
+    }
+}

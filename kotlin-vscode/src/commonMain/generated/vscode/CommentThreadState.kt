@@ -5,21 +5,19 @@
 package vscode
 
 /**
-// ORIGINAL SOURCE
-
-/**
  * The state of a comment thread.
-*/
-export enum CommentThreadState {
-/**
- * Unresolved thread state
-*/
-Unresolved = 0,
-/**
- * Resolved thread state
-*/
-Resolved = 1
-}
+ */
+sealed /* enum */
+external interface CommentThreadState {
+    companion object {
+        /**
+         * Unresolved thread state
+         */
+        val Unresolved: CommentThreadState // 0
 
-// ORIGINAL SOURCE
- **/
+        /**
+         * Resolved thread state
+         */
+        val Resolved: CommentThreadState // 1
+    }
+}

@@ -5,29 +5,25 @@
 package vscode
 
 /**
-// ORIGINAL SOURCE
-
-/**
  * Controls how the task channel is used between tasks
-*/
-export enum TaskPanelKind {
+ */
+sealed /* enum */
+external interface TaskPanelKind {
+    companion object {
+        /**
+         * Shares a panel with other tasks. This is the default.
+         */
+        val Shared: TaskPanelKind // 1
 
-/**
- * Shares a panel with other tasks. This is the default.
-*/
-Shared = 1,
+        /**
+         * Uses a dedicated panel for this tasks. The panel is not
+         * shared with other tasks.
+         */
+        val Dedicated: TaskPanelKind // 2
 
-/**
- * Uses a dedicated panel for this tasks. The panel is not
- * shared with other tasks.
-*/
-Dedicated = 2,
-
-/**
- * Creates a new panel whenever this task is executed.
-*/
-New = 3
+        /**
+         * Creates a new panel whenever this task is executed.
+         */
+        val New: TaskPanelKind // 3
+    }
 }
-
-// ORIGINAL SOURCE
- **/

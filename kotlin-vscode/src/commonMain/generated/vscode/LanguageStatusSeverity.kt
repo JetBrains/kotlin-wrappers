@@ -5,26 +5,25 @@
 package vscode
 
 /**
-// ORIGINAL SOURCE
-
-/**
  * Represents the severity of a language status item.
  * Represents the severity level of a language status.
-*/
-export enum LanguageStatusSeverity {
-/**
- * Informational severity level.
-*/
-Information = 0,
-/**
- * Warning severity level.
-*/
-Warning = 1,
-/**
- * Error severity level.
-*/
-Error = 2
-}
+ */
+sealed /* enum */
+external interface LanguageStatusSeverity {
+    companion object {
+        /**
+         * Informational severity level.
+         */
+        val Information: LanguageStatusSeverity // 0
 
-// ORIGINAL SOURCE
- **/
+        /**
+         * Warning severity level.
+         */
+        val Warning: LanguageStatusSeverity // 1
+
+        /**
+         * Error severity level.
+         */
+        val Error: LanguageStatusSeverity // 2
+    }
+}

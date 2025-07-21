@@ -5,22 +5,19 @@
 package vscode
 
 /**
-// ORIGINAL SOURCE
-
-/**
  * Comment mode of a {@link Comment}
-*/
-export enum CommentMode {
-/**
- * Displays the comment editor
-*/
-Editing = 0,
+ */
+sealed /* enum */
+external interface CommentMode {
+    companion object {
+        /**
+         * Displays the comment editor
+         */
+        val Editing: CommentMode // 0
 
-/**
- * Displays the preview of the comment
-*/
-Preview = 1
+        /**
+         * Displays the preview of the comment
+         */
+        val Preview: CommentMode // 1
+    }
 }
-
-// ORIGINAL SOURCE
- **/

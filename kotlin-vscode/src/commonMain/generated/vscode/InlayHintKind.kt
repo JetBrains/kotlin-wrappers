@@ -5,24 +5,22 @@
 package vscode
 
 /**
-// ORIGINAL SOURCE
-
-/**
  * Inlay hint kinds.
  *
  * The kind of an inline hint defines its appearance, e.g the corresponding foreground and background colors are being
  * used.
-*/
-export enum InlayHintKind {
-/**
- * An inlay hint that is for a type annotation.
-*/
-Type = 1,
-/**
- * An inlay hint that is for a parameter.
-*/
-Parameter = 2,
-}
+ */
+sealed /* enum */
+external interface InlayHintKind {
+    companion object {
+        /**
+         * An inlay hint that is for a type annotation.
+         */
+        val Type: InlayHintKind // 1
 
-// ORIGINAL SOURCE
- **/
+        /**
+         * An inlay hint that is for a parameter.
+         */
+        val Parameter: InlayHintKind // 2
+    }
+}

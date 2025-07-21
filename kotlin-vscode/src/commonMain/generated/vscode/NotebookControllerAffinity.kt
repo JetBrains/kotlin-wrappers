@@ -5,23 +5,21 @@
 package vscode
 
 /**
-// ORIGINAL SOURCE
-
-/**
  * Notebook controller affinity for notebook documents.
  *
  * @see {@link NotebookController.updateNotebookAffinity}
-*/
-export enum NotebookControllerAffinity {
-/**
- * Default affinity.
-*/
-Default = 1,
-/**
- * A controller is preferred for a notebook.
-*/
-Preferred = 2
-}
+ */
+sealed /* enum */
+external interface NotebookControllerAffinity {
+    companion object {
+        /**
+         * Default affinity.
+         */
+        val Default: NotebookControllerAffinity // 1
 
-// ORIGINAL SOURCE
- **/
+        /**
+         * A controller is preferred for a notebook.
+         */
+        val Preferred: NotebookControllerAffinity // 2
+    }
+}

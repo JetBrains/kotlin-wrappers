@@ -5,18 +5,15 @@
 package vscode
 
 /**
-// ORIGINAL SOURCE
-
-/**
  * Reasons for why a text document has changed.
-*/
-export enum TextDocumentChangeReason {
-/** The text change is caused by an undo operation. */
-Undo = 1,
+ */
+sealed /* enum */
+external interface TextDocumentChangeReason {
+    companion object {
+        /** The text change is caused by an undo operation. */
+        val Undo: TextDocumentChangeReason // 1
 
-/** The text change is caused by an redo operation. */
-Redo = 2,
+        /** The text change is caused by an redo operation. */
+        val Redo: TextDocumentChangeReason // 2
+    }
 }
-
-// ORIGINAL SOURCE
- **/

@@ -5,21 +5,19 @@
 package vscode
 
 /**
-// ORIGINAL SOURCE
-
-/**
  * Represents an end of line character sequence in a {@link TextDocument document}.
-*/
-export enum EndOfLine {
-/**
- * The line feed `\n` character.
-*/
-LF = 1,
-/**
- * The carriage return line feed `\r\n` sequence.
-*/
-CRLF = 2
-}
+ */
+sealed /* enum */
+external interface EndOfLine {
+    companion object {
+        /**
+         * The line feed `\n` character.
+         */
+        val LF: EndOfLine // 1
 
-// ORIGINAL SOURCE
- **/
+        /**
+         * The carriage return line feed `\r\n` sequence.
+         */
+        val CRLF: EndOfLine // 2
+    }
+}

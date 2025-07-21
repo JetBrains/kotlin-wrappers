@@ -5,24 +5,20 @@
 package vscode
 
 /**
-// ORIGINAL SOURCE
-
-/**
  * In a remote window the extension kind describes if an extension
  * runs where the UI (window) runs or if an extension runs remotely.
-*/
-export enum ExtensionKind {
+ */
+sealed /* enum */
+external interface ExtensionKind {
+    companion object {
+        /**
+         * Extension runs where the UI runs.
+         */
+        val UI: ExtensionKind // 1
 
-/**
- * Extension runs where the UI runs.
-*/
-UI = 1,
-
-/**
- * Extension runs where the remote extension host runs.
-*/
-Workspace = 2
+        /**
+         * Extension runs where the remote extension host runs.
+         */
+        val Workspace: ExtensionKind // 2
+    }
 }
-
-// ORIGINAL SOURCE
- **/

@@ -5,29 +5,29 @@
 package vscode
 
 /**
-// ORIGINAL SOURCE
-
-/**
  * Describes the behavior of decorations when typing/editing at their edges.
-*/
-export enum DecorationRangeBehavior {
-/**
- * The decoration's range will widen when edits occur at the start or end.
-*/
-OpenOpen = 0,
-/**
- * The decoration's range will not widen when edits occur at the start or end.
-*/
-ClosedClosed = 1,
-/**
- * The decoration's range will widen when edits occur at the start, but not at the end.
-*/
-OpenClosed = 2,
-/**
- * The decoration's range will widen when edits occur at the end, but not at the start.
-*/
-ClosedOpen = 3
-}
+ */
+sealed /* enum */
+external interface DecorationRangeBehavior {
+    companion object {
+        /**
+         * The decoration's range will widen when edits occur at the start or end.
+         */
+        val OpenOpen: DecorationRangeBehavior // 0
 
-// ORIGINAL SOURCE
- **/
+        /**
+         * The decoration's range will not widen when edits occur at the start or end.
+         */
+        val ClosedClosed: DecorationRangeBehavior // 1
+
+        /**
+         * The decoration's range will widen when edits occur at the start, but not at the end.
+         */
+        val OpenClosed: DecorationRangeBehavior // 2
+
+        /**
+         * The decoration's range will widen when edits occur at the end, but not at the start.
+         */
+        val ClosedOpen: DecorationRangeBehavior // 3
+    }
+}

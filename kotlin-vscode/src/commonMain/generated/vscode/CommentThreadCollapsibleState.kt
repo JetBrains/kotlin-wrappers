@@ -5,22 +5,19 @@
 package vscode
 
 /**
-// ORIGINAL SOURCE
-
-/**
  * Collapsible state of a {@link CommentThread comment thread}
-*/
-export enum CommentThreadCollapsibleState {
-/**
- * Determines an item is collapsed
-*/
-Collapsed = 0,
+ */
+sealed /* enum */
+external interface CommentThreadCollapsibleState {
+    companion object {
+        /**
+         * Determines an item is collapsed
+         */
+        val Collapsed: CommentThreadCollapsibleState // 0
 
-/**
- * Determines an item is expanded
-*/
-Expanded = 1
+        /**
+         * Determines an item is expanded
+         */
+        val Expanded: CommentThreadCollapsibleState // 1
+    }
 }
-
-// ORIGINAL SOURCE
- **/

@@ -5,26 +5,25 @@
 package vscode
 
 /**
-// ORIGINAL SOURCE
-
-/**
  * Impacts the behavior and appearance of the validation message.
  * The severity level for input box validation.
-*/
-export enum InputBoxValidationSeverity {
-/**
- * Informational severity level.
-*/
-Info = 1,
-/**
- * Warning severity level.
-*/
-Warning = 2,
-/**
- * Error severity level.
-*/
-Error = 3
-}
+ */
+sealed /* enum */
+external interface InputBoxValidationSeverity {
+    companion object {
+        /**
+         * Informational severity level.
+         */
+        val Info: InputBoxValidationSeverity // 1
 
-// ORIGINAL SOURCE
- **/
+        /**
+         * Warning severity level.
+         */
+        val Warning: InputBoxValidationSeverity // 2
+
+        /**
+         * Error severity level.
+         */
+        val Error: InputBoxValidationSeverity // 3
+    }
+}

@@ -5,23 +5,20 @@
 package vscode
 
 /**
-// ORIGINAL SOURCE
-
-/**
  * A tool-calling mode for the language model to use.
-*/
-export enum LanguageModelChatToolMode {
-/**
- * The language model can choose to call a tool or generate a message. Is the default.
-*/
-Auto = 1,
+ */
+sealed /* enum */
+external interface LanguageModelChatToolMode {
+    companion object {
+        /**
+         * The language model can choose to call a tool or generate a message. Is the default.
+         */
+        val Auto: LanguageModelChatToolMode // 1
 
-/**
- * The language model must call one of the provided tools. Note- some models only support a single tool when using this
- * mode.
-*/
-Required = 2
+        /**
+         * The language model must call one of the provided tools. Note- some models only support a single tool when using this
+         * mode.
+         */
+        val Required: LanguageModelChatToolMode // 2
+    }
 }
-
-// ORIGINAL SOURCE
- **/

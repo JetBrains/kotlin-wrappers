@@ -5,30 +5,30 @@
 package vscode
 
 /**
-// ORIGINAL SOURCE
-
-/**
  * Represents different positions for rendering a decoration in an {@link DecorationRenderOptions.overviewRulerLane overview ruler}.
  * The overview ruler supports three lanes.
-*/
-export enum OverviewRulerLane {
-/**
- * The left lane of the overview ruler.
-*/
-Left = 1,
-/**
- * The center lane of the overview ruler.
-*/
-Center = 2,
-/**
- * The right lane of the overview ruler.
-*/
-Right = 4,
-/**
- * All lanes of the overview ruler.
-*/
-Full = 7
-}
+ */
+sealed /* enum */
+external interface OverviewRulerLane {
+    companion object {
+        /**
+         * The left lane of the overview ruler.
+         */
+        val Left: OverviewRulerLane // 1
 
-// ORIGINAL SOURCE
- **/
+        /**
+         * The center lane of the overview ruler.
+         */
+        val Center: OverviewRulerLane // 2
+
+        /**
+         * The right lane of the overview ruler.
+         */
+        val Right: OverviewRulerLane // 4
+
+        /**
+         * All lanes of the overview ruler.
+         */
+        val Full: OverviewRulerLane // 7
+    }
+}

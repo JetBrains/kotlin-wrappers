@@ -5,23 +5,19 @@
 package vscode
 
 /**
-// ORIGINAL SOURCE
-
-/**
  * Represents the alignment of status bar items.
-*/
-export enum NotebookCellStatusBarAlignment {
+ */
+sealed /* enum */
+external interface NotebookCellStatusBarAlignment {
+    companion object {
+        /**
+         * Aligned to the left side.
+         */
+        val Left: NotebookCellStatusBarAlignment // 1
 
-/**
- * Aligned to the left side.
-*/
-Left = 1,
-
-/**
- * Aligned to the right side.
-*/
-Right = 2
+        /**
+         * Aligned to the right side.
+         */
+        val Right: NotebookCellStatusBarAlignment // 2
+    }
 }
-
-// ORIGINAL SOURCE
- **/
