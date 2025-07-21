@@ -7,5 +7,5 @@
 
 ### Internals
 
-Declarations in [src/jsMain/generated](./src/jsMain/generated) are generated.
+Declarations in [src/commonMain/generated](./src/commonMain/generated) are generated.
 Manual changes are prohibited.
