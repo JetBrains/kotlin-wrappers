@@ -2,6 +2,8 @@
 
 package vscode
 
+import js.promise.PromiseLike
+
 /**
  * An individual terminal instance within the integrated terminal.
  */
@@ -14,7 +16,7 @@ external interface Terminal {
     /**
      * The process ID of the shell process.
      */
-    val processId: Any /* Thenable<number | undefined> */
+    val processId: PromiseLike<Int?>
 
     /**
      * The object used to initialize the terminal, this is useful for example to detecting the

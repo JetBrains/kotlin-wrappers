@@ -5,6 +5,7 @@
 package vscode
 
 import js.array.ReadonlyArray
+import js.objects.Record
 
 /**
  * McpStdioServerDefinition represents an MCP server available by running
@@ -39,7 +40,7 @@ open external class McpStdioServerDefinition {
      * in this environment will overwrite or remove (if null) the default
      * environment variables of the editor's extension host.
      */
-    var env: Any /* Record<string, string | number | null> */
+    var env: Record<String, String?>
 
     /**
      * Optional version identification for the server. If this changes, the

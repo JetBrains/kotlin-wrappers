@@ -20,6 +20,8 @@ private val STANDARD_TYPE_MAP = mapOf(
 
     "AsyncIterable<string>" to "AsyncIterable<String>",
 
+    "Thenable<number | undefined>" to "PromiseLike<Int?>",
+
     "Uint8Array" to "Uint8Array<*>",
     "Uint32Array" to "Uint32Array<*>",
 
@@ -31,12 +33,14 @@ private val STANDARD_TYPE_MAP = mapOf(
     "{ [name: string]: any }" to "Record<String, *>",
     "{ [name: string]: string[] }" to "Record<String, ReadonlyArray<String>>",
     "{ [key: string]: boolean | undefined }" to "Record<String, Boolean?>",
+    "{ [key: string]: boolean | undefined }" to "Record<String, Boolean?>",
     "{ [key: string]: string | null | undefined }" to "Record<String, Boolean?>",
 
-    "ReadonlyArray<[T, TreeItemCheckboxState]>" to "ReadonlyArray<Tuple2<T, TreeItemCheckboxState>>",
-    "ReadonlyArray<[number, number]>" to "ReadonlyArray<Tuple2<Int, Int>>",
+    "[T, TreeItemCheckboxState]" to "Tuple2<T, TreeItemCheckboxState>",
+
     "Record<string, any>" to "Record<String, *>",
     "Record<string, string>" to "Record<String, String>",
+    "Record<string, string | number | null>" to "Record<String, String?>",
 )
 
 internal fun kotlinType(
@@ -54,6 +58,12 @@ internal fun kotlinType(
 
     if (type.startsWith("Array<") && type.endsWith(">"))
         return "ReadonlyArray<" + kotlinType(type.removeSurrounding("Array<", ">"), name) + ">"
+
+    if (type.startsWith("ReadonlyArray<") && type.endsWith(">"))
+        return "ReadonlyArray<" + kotlinType(type.removeSurrounding("ReadonlyArray<", ">"), name) + ">"
+
+    if (type.startsWith("AsyncIterable<") && type.endsWith(">"))
+        return "AsyncIterable<" + kotlinType(type.removeSurrounding("AsyncIterable<", ">"), name) + ">"
 
     STANDARD_TYPE_MAP[type]
         ?.also { return it }
