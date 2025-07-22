@@ -8,9 +8,6 @@ package vscode
 external interface GlobalEnvironmentVariableCollection :
     EnvironmentVariableCollection {
     /**
-    // ORIGINAL SOURCE
-
-    /**
      * Gets scope-specific environment variable collection for the extension. This enables alterations to
      * terminal environment variables solely within the designated scope, and is applied in addition to (and
      * after) the global collection.
@@ -25,9 +22,6 @@ external interface GlobalEnvironmentVariableCollection :
      * across all workspace folders will be returned.
      *
      * @returns Environment variable collection for the passed in scope.
-    */
-    getScoped(scope: EnvironmentVariableScope): EnvironmentVariableCollection;
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  getScoped(scope: EnvironmentVariableScope): EnvironmentVariableCollection;
 }

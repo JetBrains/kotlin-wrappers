@@ -7,17 +7,12 @@ package vscode
  */
 external interface TextEditorOptionsChangeEvent {
     /**
-    // ORIGINAL SOURCE
-
-    /**
      * The {@link TextEditor text editor} for which the options have changed.
-    */
-    readonly textEditor: TextEditor;
+     */
+//  readonly textEditor: TextEditor;
+
     /**
      * The new value for the {@link TextEditor.options text editor's options}.
-    */
-    readonly options: TextEditorOptions;
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  readonly options: TextEditorOptions;
 }

@@ -7,17 +7,11 @@ package vscode
  */
 external interface ChatFollowupProvider {
     /**
-    // ORIGINAL SOURCE
-
-    /**
      * Provide followups for the given result.
      *
      * @param result This object has the same properties as the result returned from the participant callback, including `metadata`, but is not the same instance.
      * @param context Extra context passed to a participant.
      * @param token A cancellation token.
-    */
-    provideFollowups(result: ChatResult, context: ChatContext, token: CancellationToken): ProviderResult<ChatFollowup[]>;
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  provideFollowups(result: ChatResult, context: ChatContext, token: CancellationToken): ProviderResult<ChatFollowup[]>;
 }

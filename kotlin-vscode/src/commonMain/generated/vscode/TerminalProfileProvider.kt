@@ -8,15 +8,9 @@ package vscode
  */
 external interface TerminalProfileProvider {
     /**
-    // ORIGINAL SOURCE
-
-    /**
      * Provide the terminal profile.
      * @param token A cancellation token that indicates the result is no longer needed.
      * @returns The terminal profile.
-    */
-    provideTerminalProfile(token: CancellationToken): ProviderResult<TerminalProfile>;
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  provideTerminalProfile(token: CancellationToken): ProviderResult<TerminalProfile>;
 }

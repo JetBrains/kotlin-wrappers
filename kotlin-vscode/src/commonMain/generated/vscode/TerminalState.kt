@@ -7,9 +7,6 @@ package vscode
  */
 external interface TerminalState {
     /**
-    // ORIGINAL SOURCE
-
-    /**
      * Whether the {@link Terminal} has been interacted with. Interaction means that the
      * terminal has sent data to the process which depending on the terminal's _mode_. By
      * default input is sent when a key is pressed or when a command or extension sends text,
@@ -22,8 +19,8 @@ external interface TerminalState {
      *
      * For more information on events that can send data see "DEC Private Mode Set (DECSET)" on
      * https://invisible-island.net/xterm/ctlseqs/ctlseqs.html
-    */
-    readonly isInteractedWith: boolean;
+     */
+//  readonly isInteractedWith: boolean;
 
     /**
      * The detected shell type of the {@link Terminal}. This will be `undefined` when there is
@@ -34,9 +31,6 @@ external interface TerminalState {
      * Note that the possible values are currently defined as any of the following:
      * 'bash', 'cmd', 'csh', 'fish', 'gitbash', 'julia', 'ksh', 'node', 'nu', 'pwsh', 'python',
      * 'sh', 'wsl', 'zsh'.
-    */
-    readonly shell: string | undefined;
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  readonly shell: string | undefined;
 }

@@ -7,18 +7,12 @@ package vscode
  */
 external interface ShellQuotedString {
     /**
-    // ORIGINAL SOURCE
-
-    /**
      * The actual string value.
-    */
-    value: string;
+     */
+//  value: string;
 
     /**
      * The quoting style to use.
-    */
-    quoting: ShellQuoting;
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  quoting: ShellQuoting;
 }

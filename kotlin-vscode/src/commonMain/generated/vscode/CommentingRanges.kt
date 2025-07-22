@@ -7,18 +7,12 @@ package vscode
  */
 external interface CommentingRanges {
     /**
-    // ORIGINAL SOURCE
-
-    /**
      * Enables comments to be added to a file without a specific range.
-    */
-    enableFileComments: boolean;
+     */
+//  enableFileComments: boolean;
 
     /**
      * The ranges which allow new comment threads creation.
-    */
-    ranges?: Range[];
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  ranges?: Range[];
 }

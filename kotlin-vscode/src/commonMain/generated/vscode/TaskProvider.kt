@@ -8,14 +8,11 @@ package vscode
  */
 external interface TaskProvider<T : Task> {
     /**
-    // ORIGINAL SOURCE
-
-    /**
      * Provides tasks.
      * @param token A cancellation token.
      * @returns an array of tasks
-    */
-    provideTasks(token: CancellationToken): ProviderResult<T[]>;
+     */
+//  provideTasks(token: CancellationToken): ProviderResult<T[]>;
 
     /**
      * Resolves a task that has no {@linkcode Task.execution execution} set. Tasks are
@@ -33,9 +30,6 @@ external interface TaskProvider<T : Task> {
      * @param task The task to resolve.
      * @param token A cancellation token.
      * @returns The resolved task
-    */
-    resolveTask(task: T, token: CancellationToken): ProviderResult<T>;
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  resolveTask(task: T, token: CancellationToken): ProviderResult<T>;
 }

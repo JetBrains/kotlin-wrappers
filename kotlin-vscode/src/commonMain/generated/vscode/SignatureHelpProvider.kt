@@ -8,10 +8,6 @@ package vscode
  */
 external interface SignatureHelpProvider {
     /**
-    // ORIGINAL SOURCE
-
-
-    /**
      * Provide help for the signature at the given position and document.
      *
      * @param document The document in which the command was invoked.
@@ -21,9 +17,6 @@ external interface SignatureHelpProvider {
      *
      * @returns Signature help or a thenable that resolves to such. The lack of a result can be
      * signaled by returning `undefined` or `null`.
-    */
-    provideSignatureHelp(document: TextDocument, position: Position, token: CancellationToken, context: SignatureHelpContext): ProviderResult<SignatureHelp>;
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  provideSignatureHelp(document: TextDocument, position: Position, token: CancellationToken, context: SignatureHelpContext): ProviderResult<SignatureHelp>;
 }

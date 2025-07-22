@@ -9,25 +9,22 @@ package vscode
  */
 open external class StatementCoverage {
     /**
-    // ORIGINAL SOURCE
-
-    /**
      * The number of times this statement was executed, or a boolean indicating
      * whether it was executed if the exact count is unknown. If zero or false,
      * the statement will be marked as un-covered.
-    */
-    executed: number | boolean;
+     */
+//  executed: number | boolean;
 
     /**
      * Statement location.
-    */
-    location: Position | Range;
+     */
+//  location: Position | Range;
 
     /**
      * Coverage from branches of this line or statement. If it's not a
      * conditional, this will be empty.
-    */
-    branches: BranchCoverage[];
+     */
+//  branches: BranchCoverage[];
 
     /**
      * @param location The statement position.
@@ -36,9 +33,6 @@ open external class StatementCoverage {
      * unknown. If zero or false, the statement will be marked as un-covered.
      * @param branches Coverage from branches of this line.  If it's not a
      * conditional, this should be omitted.
-    */
-    constructor(executed: number | boolean, location: Position | Range, branches?: BranchCoverage[]);
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  constructor(executed: number | boolean, location: Position | Range, branches?: BranchCoverage[]);
 }

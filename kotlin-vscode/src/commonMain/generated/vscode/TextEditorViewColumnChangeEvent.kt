@@ -7,17 +7,12 @@ package vscode
  */
 external interface TextEditorViewColumnChangeEvent {
     /**
-    // ORIGINAL SOURCE
-
-    /**
      * The {@link TextEditor text editor} for which the view column has changed.
-    */
-    readonly textEditor: TextEditor;
+     */
+//  readonly textEditor: TextEditor;
+
     /**
      * The new value for the {@link TextEditor.viewColumn text editor's view column}.
-    */
-    readonly viewColumn: ViewColumn;
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  readonly viewColumn: ViewColumn;
 }

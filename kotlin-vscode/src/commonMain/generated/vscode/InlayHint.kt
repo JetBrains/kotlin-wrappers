@@ -9,33 +9,29 @@ package vscode
  */
 open external class InlayHint {
     /**
-    // ORIGINAL SOURCE
-
-
-    /**
      * The position of this hint.
-    */
-    position: Position;
+     */
+//  position: Position;
 
     /**
      * The label of this hint. A human readable string or an array of {@link InlayHintLabelPart label parts}.
      *
      * *Note* that neither the string nor the label part can be empty.
-    */
-    label: string | InlayHintLabelPart[];
+     */
+//  label: string | InlayHintLabelPart[];
 
     /**
      * The tooltip text when you hover over this item.
      *
      * *Note* that this property can be set late during
      * {@link InlayHintsProvider.resolveInlayHint resolving} of inlay hints.
-    */
-    tooltip?: string | MarkdownString | undefined;
+     */
+//  tooltip?: string | MarkdownString | undefined;
 
     /**
      * The kind of this hint. The inlay hint kind defines the appearance of this inlay hint.
-    */
-    kind?: InlayHintKind;
+     */
+//  kind?: InlayHintKind;
 
     /**
      * Optional {@link TextEdit text edits} that are performed when accepting this inlay hint. The default
@@ -46,22 +42,22 @@ open external class InlayHint {
      *
      * *Note* that this property can be set late during
      * {@link InlayHintsProvider.resolveInlayHint resolving} of inlay hints.
-    */
-    textEdits?: TextEdit[];
+     */
+//  textEdits?: TextEdit[];
 
     /**
      * Render padding before the hint. Padding will use the editor's background color,
      * not the background color of the hint itself. That means padding can be used to visually
      * align/separate an inlay hint.
-    */
-    paddingLeft?: boolean;
+     */
+//  paddingLeft?: boolean;
 
     /**
      * Render padding after the hint. Padding will use the editor's background color,
      * not the background color of the hint itself. That means padding can be used to visually
      * align/separate an inlay hint.
-    */
-    paddingRight?: boolean;
+     */
+//  paddingRight?: boolean;
 
     /**
      * Creates a new inlay hint.
@@ -69,9 +65,6 @@ open external class InlayHint {
      * @param position The position of the hint.
      * @param label The label of the hint.
      * @param kind The {@link InlayHintKind kind} of the hint.
-    */
-    constructor(position: Position, label: string | InlayHintLabelPart[], kind?: InlayHintKind);
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  constructor(position: Position, label: string | InlayHintLabelPart[], kind?: InlayHintKind);
 }

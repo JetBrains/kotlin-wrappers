@@ -10,31 +10,25 @@ package vscode
  */
 external interface NotebookDocumentContentOptions {
     /**
-    // ORIGINAL SOURCE
-
-    /**
      * Controls if output change events will trigger notebook document content change events and
      * if it will be used in the diff editor, defaults to false. If the content provider doesn't
      * persist the outputs in the file document, this should be set to true.
-    */
-    transientOutputs?: boolean;
+     */
+//  transientOutputs?: boolean;
 
     /**
      * Controls if a cell metadata property change event will trigger notebook document content
      * change events and if it will be used in the diff editor, defaults to false. If the
      * content provider doesn't persist a metadata property in the file document, it should be
      * set to true.
-    */
-    transientCellMetadata?: { [key: string]: boolean | undefined };
+     */
+//  transientCellMetadata?: { [key: string]: boolean | undefined };
 
     /**
      * Controls if a document metadata property change event will trigger notebook document
      * content change event and if it will be used in the diff editor, defaults to false. If the
      * content provider doesn't persist a metadata property in the file document, it should be
      * set to true.
-    */
-    transientDocumentMetadata?: { [key: string]: boolean | undefined };
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  transientDocumentMetadata?: { [key: string]: boolean | undefined };
 }

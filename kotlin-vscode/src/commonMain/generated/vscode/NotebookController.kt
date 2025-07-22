@@ -17,21 +17,17 @@ package vscode
  */
 external interface NotebookController {
     /**
-    // ORIGINAL SOURCE
-
-
-    /**
      * The identifier of this notebook controller.
      *
      * _Note_ that controllers are remembered by their identifier and that extensions should use
      * stable identifiers across sessions.
-    */
-    readonly id: string;
+     */
+//  readonly id: string;
 
     /**
      * The notebook type this controller is for.
-    */
-    readonly notebookType: string;
+     */
+//  readonly notebookType: string;
 
     /**
      * An array of language identifiers that are supported by this
@@ -47,29 +43,29 @@ external interface NotebookController {
      * myController.supportedLanguages = undefined; // falsy
      * myController.supportedLanguages = []; // falsy
      * ```
-    */
-    supportedLanguages?: string[];
+     */
+//  supportedLanguages?: string[];
 
     /**
      * The human-readable label of this notebook controller.
-    */
-    label: string;
+     */
+//  label: string;
 
     /**
      * The human-readable description which is rendered less prominent.
-    */
-    description?: string;
+     */
+//  description?: string;
 
     /**
      * The human-readable detail which is rendered less prominent.
-    */
-    detail?: string;
+     */
+//  detail?: string;
 
     /**
      * Whether this controller supports execution order so that the
      * editor can render placeholders for them.
-    */
-    supportsExecutionOrder?: boolean;
+     */
+//  supportsExecutionOrder?: boolean;
 
     /**
      * Create a cell execution task.
@@ -83,14 +79,14 @@ external interface NotebookController {
      *
      * @param cell The notebook cell for which to create the execution.
      * @returns A notebook cell execution.
-    */
-    createNotebookCellExecution(cell: NotebookCell): NotebookCellExecution;
+     */
+//  createNotebookCellExecution(cell: NotebookCell): NotebookCellExecution;
 
     /**
      * The execute handler is invoked when the run gestures in the UI are selected, e.g Run Cell, Run All,
      * Run Selection etc. The execute handler is responsible for creating and managing {@link NotebookCellExecution execution}-objects.
-    */
-    executeHandler: (cells: NotebookCell[], notebook: NotebookDocument, controller: NotebookController) => void | Thenable<void>;
+     */
+//  executeHandler: (cells: NotebookCell[], notebook: NotebookDocument, controller: NotebookController) => void | Thenable<void>;
 
     /**
      * Optional interrupt handler.
@@ -103,8 +99,8 @@ external interface NotebookController {
      *
      * _Note_ that supporting {@link NotebookCellExecution.token cancellation tokens} is preferred and that interrupt handlers should
      * only be used when tokens cannot be supported.
-    */
-    interruptHandler?: (notebook: NotebookDocument) => void | Thenable<void>;
+     */
+//  interruptHandler?: (notebook: NotebookDocument) => void | Thenable<void>;
 
     /**
      * An event that fires whenever a controller has been selected or un-selected for a notebook document.
@@ -115,17 +111,19 @@ external interface NotebookController {
      *
      * _Note_ that controller selection is persisted (by the controllers {@link NotebookController.id id}) and restored as soon as a
      * controller is re-created or as a notebook is {@link workspace.onDidOpenNotebookDocument opened}.
-    */
+     */
+    /*
     readonly onDidChangeSelectedNotebooks: Event<{
-    /**
-     * The notebook for which the controller has been selected or un-selected.
-    */
-    readonly notebook: NotebookDocument;
-    /**
-     * Whether the controller has been selected or un-selected.
-    */
-    readonly selected: boolean;
+        /**
+         * The notebook for which the controller has been selected or un-selected.
+         */
+        readonly notebook: NotebookDocument;
+        /**
+         * Whether the controller has been selected or un-selected.
+         */
+        readonly selected: boolean;
     }>;
+    */
 
     /**
      * A controller can set affinities for specific notebook documents. This allows a controller
@@ -133,14 +131,11 @@ external interface NotebookController {
      *
      * @param notebook The notebook for which a priority is set.
      * @param affinity A controller affinity
-    */
-    updateNotebookAffinity(notebook: NotebookDocument, affinity: NotebookControllerAffinity): void;
+     */
+//  updateNotebookAffinity(notebook: NotebookDocument, affinity: NotebookControllerAffinity): void;
 
     /**
      * Dispose and free associated resources.
-    */
-    dispose(): void;
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  dispose(): void;
 }

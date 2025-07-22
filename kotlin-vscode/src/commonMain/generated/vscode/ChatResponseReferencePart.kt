@@ -9,25 +9,19 @@ package vscode
  */
 open external class ChatResponseReferencePart {
     /**
-    // ORIGINAL SOURCE
-
-    /**
      * The reference target.
-    */
-    value: Uri | Location;
+     */
+//  value: Uri | Location;
 
     /**
      * The icon for the reference.
-    */
-    iconPath?: IconPath;
+     */
+//  iconPath?: IconPath;
 
     /**
      * Create a new ChatResponseReferencePart.
      * @param value A uri or location
      * @param iconPath Icon for the reference shown in UI
-    */
-    constructor(value: Uri | Location, iconPath?: IconPath);
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  constructor(value: Uri | Location, iconPath?: IconPath);
 }

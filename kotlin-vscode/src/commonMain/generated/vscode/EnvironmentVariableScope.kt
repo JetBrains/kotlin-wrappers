@@ -7,13 +7,7 @@ package vscode
  */
 external interface EnvironmentVariableScope {
     /**
-    // ORIGINAL SOURCE
-
-    /**
      * Any specific workspace folder to get collection for.
-    */
-    workspaceFolder?: WorkspaceFolder;
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  workspaceFolder?: WorkspaceFolder;
 }

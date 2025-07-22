@@ -10,20 +10,13 @@ package vscode
  */
 open external class ThemeColor {
     /**
-    // ORIGINAL SOURCE
-
-
-    /**
      * The id of this color.
-    */
-    readonly id: string;
+     */
+//  readonly id: string;
 
     /**
      * Creates a reference to a theme color.
      * @param id of the color. The available colors are listed in https://code.visualstudio.com/api/references/theme-color.
-    */
-    constructor(id: string);
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  constructor(id: string);
 }

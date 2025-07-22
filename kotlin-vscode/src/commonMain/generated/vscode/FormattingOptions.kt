@@ -7,24 +7,17 @@ package vscode
  */
 external interface FormattingOptions {
     /**
-    // ORIGINAL SOURCE
-
-
-    /**
      * Size of a tab in spaces.
-    */
-    tabSize: number;
+     */
+//  tabSize: number;
 
     /**
      * Prefer spaces over tabs.
-    */
-    insertSpaces: boolean;
+     */
+//  insertSpaces: boolean;
 
     /**
      * Signature for further properties.
-    */
-    [key: string]: boolean | number | string;
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  [key: string]: boolean | number | string;
 }

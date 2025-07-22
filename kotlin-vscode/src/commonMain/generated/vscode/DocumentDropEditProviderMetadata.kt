@@ -7,14 +7,11 @@ package vscode
  */
 external interface DocumentDropEditProviderMetadata {
     /**
-    // ORIGINAL SOURCE
-
-    /**
      * List of {@link DocumentDropOrPasteEditKind kinds} that the provider may return in {@linkcode DocumentDropEditProvider.provideDocumentDropEdits provideDocumentDropEdits}.
      *
      * This is used to filter out providers when a specific {@link DocumentDropOrPasteEditKind kind} of edit is requested.
-    */
-    readonly providedDropEditKinds?: readonly DocumentDropOrPasteEditKind[];
+     */
+//  readonly providedDropEditKinds?: readonly DocumentDropOrPasteEditKind[];
 
     /**
      * List of {@link DataTransfer} mime types that the provider can handle.
@@ -26,9 +23,6 @@ external interface DocumentDropEditProviderMetadata {
      * Use `files` to indicate that the provider should be invoked if any {@link DataTransferFile files} are present in the {@link DataTransfer}.
      * Note that {@link DataTransferFile} entries are only created when dropping content from outside the editor, such as
      * from the operating system.
-    */
-    readonly dropMimeTypes: readonly string[];
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  readonly dropMimeTypes: readonly string[];
 }

@@ -8,12 +8,9 @@ package vscode
  */
 external interface ChatLanguageModelToolReference {
     /**
-    // ORIGINAL SOURCE
-
-    /**
      * The tool name. Refers to a tool listed in {@link lm.tools}.
-    */
-    readonly name: string;
+     */
+//  readonly name: string;
 
     /**
      * The start and end index of the reference in the {@link ChatRequest.prompt prompt}. When undefined, the reference was
@@ -21,9 +18,6 @@ external interface ChatLanguageModelToolReference {
      *
      * *Note* that the indices take the leading `#`-character into account which means they can be used to modify the prompt
      * as-is.
-    */
-    readonly range?: [start: number, end: number];
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  readonly range?: [start: number, end: number];
 }

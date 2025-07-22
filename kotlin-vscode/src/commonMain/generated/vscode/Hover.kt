@@ -10,29 +10,22 @@ package vscode
  */
 open external class Hover {
     /**
-    // ORIGINAL SOURCE
-
-
-    /**
      * The contents of this hover.
-    */
-    contents: Array<MarkdownString | MarkedString>;
+     */
+//  contents: Array<MarkdownString | MarkedString>;
 
     /**
      * The range to which this hover applies. When missing, the
      * editor will use the range at the current position or the
      * current position itself.
-    */
-    range?: Range;
+     */
+//  range?: Range;
 
     /**
      * Creates a new hover object.
      *
      * @param contents The contents of the hover.
      * @param range The range to which the hover applies.
-    */
-    constructor(contents: MarkdownString | MarkedString | Array<MarkdownString | MarkedString>, range?: Range);
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  constructor(contents: MarkdownString | MarkedString | Array<MarkdownString | MarkedString>, range?: Range);
 }

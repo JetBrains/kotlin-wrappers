@@ -9,34 +9,28 @@ package vscode
  */
 open external class BranchCoverage {
     /**
-    // ORIGINAL SOURCE
-
-    /**
      * The number of times this branch was executed, or a boolean indicating
      * whether it was executed if the exact count is unknown. If zero or false,
      * the branch will be marked as un-covered.
-    */
-    executed: number | boolean;
+     */
+//  executed: number | boolean;
 
     /**
      * Branch location.
-    */
-    location?: Position | Range;
+     */
+//  location?: Position | Range;
 
     /**
      * Label for the branch, used in the context of "the ${label} branch was
      * not taken," for example.
-    */
-    label?: string;
+     */
+//  label?: string;
 
     /**
      * @param executed The number of times this branch was executed, or a
      * boolean indicating  whether it was executed if the exact count is
      * unknown. If zero or false, the branch will be marked as un-covered.
      * @param location The branch position.
-    */
-    constructor(executed: number | boolean, location?: Position | Range, label?: string);
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  constructor(executed: number | boolean, location?: Position | Range, label?: string);
 }

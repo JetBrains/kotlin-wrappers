@@ -10,27 +10,20 @@ package vscode
  */
 open external class Location {
     /**
-    // ORIGINAL SOURCE
-
-
-    /**
      * The resource identifier of this location.
-    */
-    uri: Uri;
+     */
+//  uri: Uri;
 
     /**
      * The document range of this location.
-    */
-    range: Range;
+     */
+//  range: Range;
 
     /**
      * Creates a new location object.
      *
      * @param uri The resource identifier.
      * @param rangeOrPosition The range or position. Positions will be converted to an empty range.
-    */
-    constructor(uri: Uri, rangeOrPosition: Range | Position);
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  constructor(uri: Uri, rangeOrPosition: Range | Position);
 }

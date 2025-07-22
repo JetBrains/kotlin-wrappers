@@ -8,17 +8,13 @@ package vscode
  */
 external interface FileDecorationProvider {
     /**
-    // ORIGINAL SOURCE
-
-
-    /**
      * An optional event to signal that decorations for one or many files have changed.
      *
      * *Note* that this event should be used to propagate information about children.
      *
      * @see {@link EventEmitter}
-    */
-    onDidChangeFileDecorations?: Event<undefined | Uri | Uri[]>;
+     */
+//  onDidChangeFileDecorations?: Event<undefined | Uri | Uri[]>;
 
     /**
      * Provide decorations for a given uri.
@@ -30,9 +26,6 @@ external interface FileDecorationProvider {
      * @param uri The uri of the file to provide a decoration for.
      * @param token A cancellation token.
      * @returns A decoration or a thenable that resolves to such.
-    */
-    provideFileDecoration(uri: Uri, token: CancellationToken): ProviderResult<FileDecoration>;
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  provideFileDecoration(uri: Uri, token: CancellationToken): ProviderResult<FileDecoration>;
 }

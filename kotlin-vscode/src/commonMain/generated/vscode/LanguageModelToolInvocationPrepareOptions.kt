@@ -7,13 +7,7 @@ package vscode
  */
 external interface LanguageModelToolInvocationPrepareOptions<T> {
     /**
-    // ORIGINAL SOURCE
-
-    /**
      * The input that the tool is being invoked with.
-    */
-    input: T;
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  input: T;
 }

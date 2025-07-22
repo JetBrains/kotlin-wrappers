@@ -17,9 +17,6 @@ package vscode
  */
 external interface CodeActionProvider<T : CodeAction> {
     /**
-    // ORIGINAL SOURCE
-
-    /**
      * Get code actions for a given range in a document.
      *
      * Only return code actions that are relevant to user for the requested range. Also keep in mind how the
@@ -39,8 +36,8 @@ external interface CodeActionProvider<T : CodeAction> {
      *
      * We also support returning `Command` for legacy reasons, however all new extensions should return
      * `CodeAction` object instead.
-    */
-    provideCodeActions(document: TextDocument, range: Range | Selection, context: CodeActionContext, token: CancellationToken): ProviderResult<Array<Command | T>>;
+     */
+//  provideCodeActions(document: TextDocument, range: Range | Selection, context: CodeActionContext, token: CancellationToken): ProviderResult<Array<Command | T>>;
 
     /**
      * Given a code action fill in its {@linkcode CodeAction.edit edit}-property. Changes to
@@ -55,9 +52,6 @@ external interface CodeActionProvider<T : CodeAction> {
      * @param token A cancellation token.
      * @returns The resolved code action or a thenable that resolves to such. It is OK to return the given
      * `item`. When no result is returned, the given `item` will be used.
-    */
-    resolveCodeAction?(codeAction: T, token: CancellationToken): ProviderResult<T>;
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  resolveCodeAction?(codeAction: T, token: CancellationToken): ProviderResult<T>;
 }

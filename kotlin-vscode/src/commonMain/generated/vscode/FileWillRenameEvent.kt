@@ -11,27 +11,25 @@ package vscode
  */
 external interface FileWillRenameEvent {
     /**
-    // ORIGINAL SOURCE
-
-
-    /**
      * A cancellation token.
-    */
-    readonly token: CancellationToken;
+     */
+//  readonly token: CancellationToken;
 
     /**
      * The files that are going to be renamed.
-    */
+     */
+    /*
     readonly files: ReadonlyArray<{
-    /**
-     * The old uri of a file.
-    */
-    readonly oldUri: Uri;
-    /**
-     * The new uri of a file.
-    */
-    readonly newUri: Uri;
+        /**
+         * The old uri of a file.
+         */
+        readonly oldUri: Uri;
+        /**
+         * The new uri of a file.
+         */
+        readonly newUri: Uri;
     }>;
+    */
 
     /**
      * Allows to pause the event and to apply a {@link WorkspaceEdit workspace edit}.
@@ -50,8 +48,8 @@ external interface FileWillRenameEvent {
      * ```
      *
      * @param thenable A thenable that delays saving.
-    */
-    waitUntil(thenable: Thenable<WorkspaceEdit>): void;
+     */
+//  waitUntil(thenable: Thenable<WorkspaceEdit>): void;
 
     /**
      * Allows to pause the event until the provided thenable resolves.
@@ -59,9 +57,6 @@ external interface FileWillRenameEvent {
      * *Note:* This function can only be called during event dispatch.
      *
      * @param thenable A thenable that delays saving.
-    */
-    waitUntil(thenable: Thenable<any>): void;
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  waitUntil(thenable: Thenable<any>): void;
 }

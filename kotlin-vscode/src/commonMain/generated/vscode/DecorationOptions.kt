@@ -7,25 +7,18 @@ package vscode
  */
 external interface DecorationOptions {
     /**
-    // ORIGINAL SOURCE
-
-
-    /**
      * Range to which this decoration is applied. The range must not be empty.
-    */
-    range: Range;
+     */
+//  range: Range;
 
     /**
      * A message that should be rendered when hovering over the decoration.
-    */
-    hoverMessage?: MarkdownString | MarkedString | Array<MarkdownString | MarkedString>;
+     */
+//  hoverMessage?: MarkdownString | MarkedString | Array<MarkdownString | MarkedString>;
 
     /**
      * Render options applied to the current decoration. For performance reasons, keep the
      * number of decoration specific options small, and use decoration types wherever possible.
-    */
-    renderOptions?: DecorationInstanceRenderOptions;
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  renderOptions?: DecorationInstanceRenderOptions;
 }

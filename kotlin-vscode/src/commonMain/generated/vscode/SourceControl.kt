@@ -8,28 +8,24 @@ package vscode
  */
 external interface SourceControl {
     /**
-    // ORIGINAL SOURCE
-
-
-    /**
      * The id of this source control.
-    */
-    readonly id: string;
+     */
+//  readonly id: string;
 
     /**
      * The human-readable label of this source control.
-    */
-    readonly label: string;
+     */
+//  readonly label: string;
 
     /**
      * The (optional) Uri of the root of this source control.
-    */
-    readonly rootUri: Uri | undefined;
+     */
+//  readonly rootUri: Uri | undefined;
 
     /**
      * The {@link SourceControlInputBox input box} for this source control.
-    */
-    readonly inputBox: SourceControlInputBox;
+     */
+//  readonly inputBox: SourceControlInputBox;
 
     /**
      * The UI-visible count of {@link SourceControlResourceState resource states} of
@@ -38,47 +34,44 @@ external interface SourceControl {
      * If undefined, this source control will
      * - display its UI-visible count as zero, and
      * - contribute the count of its {@link SourceControlResourceState resource states} to the UI-visible aggregated count for all source controls
-    */
-    count?: number;
+     */
+//  count?: number;
 
     /**
      * An optional {@link QuickDiffProvider quick diff provider}.
-    */
-    quickDiffProvider?: QuickDiffProvider;
+     */
+//  quickDiffProvider?: QuickDiffProvider;
 
     /**
      * Optional commit template string.
      *
      * The Source Control viewlet will populate the Source Control
      * input with this value when appropriate.
-    */
-    commitTemplate?: string;
+     */
+//  commitTemplate?: string;
 
     /**
      * Optional accept input command.
      *
      * This command will be invoked when the user accepts the value
      * in the Source Control input.
-    */
-    acceptInputCommand?: Command;
+     */
+//  acceptInputCommand?: Command;
 
     /**
      * Optional status bar commands.
      *
      * These commands will be displayed in the editor's status bar.
-    */
-    statusBarCommands?: Command[];
+     */
+//  statusBarCommands?: Command[];
 
     /**
      * Create a new {@link SourceControlResourceGroup resource group}.
-    */
-    createResourceGroup(id: string, label: string): SourceControlResourceGroup;
+     */
+//  createResourceGroup(id: string, label: string): SourceControlResourceGroup;
 
     /**
      * Dispose this source control.
-    */
-    dispose(): void;
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  dispose(): void;
 }

@@ -7,18 +7,12 @@ package vscode
  */
 external interface QuickInputButton {
     /**
-    // ORIGINAL SOURCE
-
-
-    /**
      * Icon for the button.
-    */
-    readonly iconPath: IconPath;
+     */
+//  readonly iconPath: IconPath;
+
     /**
      * An optional tooltip.
-    */
-    readonly tooltip?: string | undefined;
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  readonly tooltip?: string | undefined;
 }

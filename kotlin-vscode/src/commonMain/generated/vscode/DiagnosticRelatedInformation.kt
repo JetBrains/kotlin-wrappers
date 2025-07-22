@@ -11,27 +11,20 @@ package vscode
  */
 open external class DiagnosticRelatedInformation {
     /**
-    // ORIGINAL SOURCE
-
-
-    /**
      * The location of this related diagnostic information.
-    */
-    location: Location;
+     */
+//  location: Location;
 
     /**
      * The message of this related diagnostic information.
-    */
-    message: string;
+     */
+//  message: string;
 
     /**
      * Creates a new related diagnostic information object.
      *
      * @param location The location.
      * @param message The message.
-    */
-    constructor(location: Location, message: string);
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  constructor(location: Location, message: string);
 }

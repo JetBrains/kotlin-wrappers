@@ -7,15 +7,7 @@ package vscode
  */
 external interface TreeViewSelectionChangeEvent<T> {
     /**
-    // ORIGINAL SOURCE
-
-
-    /**
      * Selected elements.
-    */
-    readonly selection: readonly T[];
-
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  readonly selection: readonly T[];
 }

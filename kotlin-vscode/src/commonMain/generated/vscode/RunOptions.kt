@@ -7,13 +7,7 @@ package vscode
  */
 external interface RunOptions {
     /**
-    // ORIGINAL SOURCE
-
-    /**
      * Controls whether task variables are re-evaluated on rerun.
-    */
-    reevaluateOnRerun?: boolean;
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  reevaluateOnRerun?: boolean;
 }

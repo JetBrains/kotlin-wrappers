@@ -9,14 +9,11 @@ package vscode
  */
 open external class DataTransferItem {
     /**
-    // ORIGINAL SOURCE
-
-    /**
      * Get a string representation of this item.
      *
      * If {@linkcode DataTransferItem.value} is an object, this returns the result of json stringifying {@linkcode DataTransferItem.value} value.
-    */
-    asString(): Thenable<string>;
+     */
+//  asString(): Thenable<string>;
 
     /**
      * Try getting the {@link DataTransferFile file} associated with this data transfer item.
@@ -25,22 +22,19 @@ open external class DataTransferItem {
      *
      * @returns The file for the data transfer or `undefined` if the item is either not a file or the
      * file data cannot be accessed.
-    */
-    asFile(): DataTransferFile | undefined;
+     */
+//  asFile(): DataTransferFile | undefined;
 
     /**
      * Custom data stored on this item.
      *
      * You can use `value` to share data across operations. The original object can be retrieved so long as the extension that
      * created the `DataTransferItem` runs in the same extension host.
-    */
-    readonly value: any;
+     */
+//  readonly value: any;
 
     /**
      * @param value Custom data stored on this item. Can be retrieved using {@linkcode DataTransferItem.value}.
-    */
-    constructor(value: any);
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  constructor(value: any);
 }

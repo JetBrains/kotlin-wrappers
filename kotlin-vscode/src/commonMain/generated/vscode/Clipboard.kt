@@ -7,21 +7,14 @@ package vscode
  */
 external interface Clipboard {
     /**
-    // ORIGINAL SOURCE
-
-
-    /**
      * Read the current clipboard contents as text.
      * @returns A thenable that resolves to a string.
-    */
-    readText(): Thenable<string>;
+     */
+//  readText(): Thenable<string>;
 
     /**
      * Writes text into the clipboard.
      * @returns A thenable that resolves when writing happened.
-    */
-    writeText(value: string): Thenable<void>;
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  writeText(value: string): Thenable<void>;
 }

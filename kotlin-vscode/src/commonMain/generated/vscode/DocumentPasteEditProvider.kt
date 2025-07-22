@@ -7,10 +7,6 @@ package vscode
  */
 external interface DocumentPasteEditProvider<T : DocumentPasteEdit> {
     /**
-    // ORIGINAL SOURCE
-
-
-    /**
      * Optional method invoked after the user copies from a {@link TextEditor text editor}.
      *
      * This allows the provider to attach metadata about the copied text to the {@link DataTransfer}. This data
@@ -26,8 +22,8 @@ external interface DocumentPasteEditProvider<T : DocumentPasteEdit> {
      * @param token A cancellation token.
      *
      * @return Optional thenable that resolves when all changes to the `dataTransfer` are complete.
-    */
-    prepareDocumentPaste?(document: TextDocument, ranges: readonly Range[], dataTransfer: DataTransfer, token: CancellationToken): void | Thenable<void>;
+     */
+//  prepareDocumentPaste?(document: TextDocument, ranges: readonly Range[], dataTransfer: DataTransfer, token: CancellationToken): void | Thenable<void>;
 
     /**
      * Invoked before the user pastes into a {@link TextEditor text editor}.
@@ -44,8 +40,8 @@ external interface DocumentPasteEditProvider<T : DocumentPasteEdit> {
      * @return Set of potential {@link DocumentPasteEdit edits} that can apply the paste. Only a single returned
      * {@linkcode DocumentPasteEdit} is applied at a time. If multiple edits are returned from all providers, then
      * the first is automatically applied and a widget is shown that lets the user switch to the other edits.
-    */
-    provideDocumentPasteEdits?(document: TextDocument, ranges: readonly Range[], dataTransfer: DataTransfer, context: DocumentPasteEditContext, token: CancellationToken): ProviderResult<T[]>;
+     */
+//  provideDocumentPasteEdits?(document: TextDocument, ranges: readonly Range[], dataTransfer: DataTransfer, context: DocumentPasteEditContext, token: CancellationToken): ProviderResult<T[]>;
 
     /**
      * Optional method which fills in the {@linkcode DocumentPasteEdit.additionalEdit} before the edit is applied.
@@ -58,9 +54,6 @@ external interface DocumentPasteEditProvider<T : DocumentPasteEdit> {
      *
      * @returns The resolved paste edit or a thenable that resolves to such. It is OK to return the given
      * `pasteEdit`. If no result is returned, the given `pasteEdit` is used.
-    */
-    resolveDocumentPasteEdit?(pasteEdit: T, token: CancellationToken): ProviderResult<T>;
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  resolveDocumentPasteEdit?(pasteEdit: T, token: CancellationToken): ProviderResult<T>;
 }

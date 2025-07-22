@@ -8,13 +8,9 @@ package vscode
  */
 external interface FoldingRangeProvider {
     /**
-    // ORIGINAL SOURCE
-
-
-    /**
      * An optional event to signal that the folding ranges from this provider have changed.
-    */
-    onDidChangeFoldingRanges?: Event<void>;
+     */
+//  onDidChangeFoldingRanges?: Event<void>;
 
     /**
      * Returns a list of folding ranges or null and undefined if the provider
@@ -22,9 +18,6 @@ external interface FoldingRangeProvider {
      * @param document The document in which the command was invoked.
      * @param context Additional context information (for future use)
      * @param token A cancellation token.
-    */
-    provideFoldingRanges(document: TextDocument, context: FoldingContext, token: CancellationToken): ProviderResult<FoldingRange[]>;
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  provideFoldingRanges(document: TextDocument, context: FoldingContext, token: CancellationToken): ProviderResult<FoldingRange[]>;
 }

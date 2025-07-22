@@ -7,9 +7,6 @@ package vscode
  */
 external interface WebviewViewProvider {
     /**
-    // ORIGINAL SOURCE
-
-    /**
      * Resolves a webview view.
      *
      * `resolveWebviewView` is called when a view first becomes visible. This may happen when the view is
@@ -21,9 +18,6 @@ external interface WebviewViewProvider {
      * @param token Cancellation token indicating that the view being provided is no longer needed.
      *
      * @returns Optional thenable indicating that the view has been fully resolved.
-    */
-    resolveWebviewView(webviewView: WebviewView, context: WebviewViewResolveContext, token: CancellationToken): Thenable<void> | void;
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  resolveWebviewView(webviewView: WebviewView, context: WebviewViewResolveContext, token: CancellationToken): Thenable<void> | void;
 }

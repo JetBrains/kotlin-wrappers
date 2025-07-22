@@ -7,21 +7,20 @@ package vscode
  */
 external interface NotebookRendererMessaging {
     /**
-    // ORIGINAL SOURCE
-
-    /**
      * An event that fires when a message is received from a renderer.
-    */
+     */
+    /*
     readonly onDidReceiveMessage: Event<{
-    /**
-     * The {@link NotebookEditor editor} that sent the message.
-    */
-    readonly editor: NotebookEditor;
-    /**
-     * The actual message.
-    */
-    readonly message: any;
+        /**
+         * The {@link NotebookEditor editor} that sent the message.
+         */
+        readonly editor: NotebookEditor;
+        /**
+         * The actual message.
+         */
+        readonly message: any;
     }>;
+    */
 
     /**
      * Send a message to one or all renderer.
@@ -31,9 +30,6 @@ external interface NotebookRendererMessaging {
      * message is sent to all renderers.
      * @returns a boolean indicating whether the message was successfully
      * delivered to any renderer.
-    */
-    postMessage(message: any, editor?: NotebookEditor): Thenable<boolean>;
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  postMessage(message: any, editor?: NotebookEditor): Thenable<boolean>;
 }

@@ -7,33 +7,28 @@ package vscode
  */
 external interface NotebookCellExecutionSummary {
     /**
-    // ORIGINAL SOURCE
-
-
-    /**
      * The order in which the execution happened.
-    */
-    readonly executionOrder?: number;
+     */
+//  readonly executionOrder?: number;
 
     /**
      * If the execution finished successfully.
-    */
-    readonly success?: boolean;
+     */
+//  readonly success?: boolean;
 
     /**
      * The times at which execution started and ended, as unix timestamps
-    */
+     */
+    /*
     readonly timing?: {
-    /**
-     * Execution start time.
-    */
-    readonly startTime: number;
-    /**
-     * Execution end time.
-    */
-    readonly endTime: number;
+        /**
+         * Execution start time.
+         */
+        readonly startTime: number;
+        /**
+         * Execution end time.
+         */
+        readonly endTime: number;
     };
-
-    // ORIGINAL SOURCE
-     **/
+    */
 }

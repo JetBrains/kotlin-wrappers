@@ -148,16 +148,38 @@ private fun convertInterface(
         .replace(" extends Error", " :\nJsError")
         .replace(" extends ", " :\n")
 
-    val members = source
+    val membersSource = source
         .substringAfter(" {\n")
         .substringBefore("\n}")
+        .trimIndent()
 
     return sequenceOf(
         comment,
         "$declaration {",
-        commentedOriginal(members),
+        commentMembers(membersSource),
         "}",
     ).joinToString("\n")
+}
+
+private fun commentMembers(
+    source: String,
+): String {
+    return source.splitToSequence("\n/**")
+        .mapIndexed { index, it -> if (index > 0) "/**$it" else it }
+        .map { it.trim() }
+        .map {
+            val declarationSource = it.substringAfter(" */\n")
+            val comment = it.removeSuffix(declarationSource)
+
+            val declaration = if ("\n" in declarationSource) {
+                "/*\n$declarationSource\n*/"
+            } else {
+                "//  $declarationSource"
+            }
+
+            comment + declaration
+        }
+        .joinToString("\n\n")
 }
 
 private fun commentedOriginal(

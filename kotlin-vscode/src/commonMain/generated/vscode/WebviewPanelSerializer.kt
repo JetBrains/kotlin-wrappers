@@ -37,9 +37,6 @@ package vscode
  */
 external interface WebviewPanelSerializer<T> {
     /**
-    // ORIGINAL SOURCE
-
-    /**
      * Restore a webview panel from its serialized `state`.
      *
      * Called when a serialized webview first becomes visible.
@@ -49,9 +46,6 @@ external interface WebviewPanelSerializer<T> {
      * @param state Persisted state from the webview content.
      *
      * @returns Thenable indicating that the webview has been fully restored.
-    */
-    deserializeWebviewPanel(webviewPanel: WebviewPanel, state: T): Thenable<void>;
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  deserializeWebviewPanel(webviewPanel: WebviewPanel, state: T): Thenable<void>;
 }

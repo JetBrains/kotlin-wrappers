@@ -11,22 +11,19 @@ package vscode
  */
 external interface NotebookDocumentWillSaveEvent {
     /**
-    // ORIGINAL SOURCE
-
-    /**
      * A cancellation token.
-    */
-    readonly token: CancellationToken;
+     */
+//  readonly token: CancellationToken;
 
     /**
      * The {@link NotebookDocument notebook document} that will be saved.
-    */
-    readonly notebook: NotebookDocument;
+     */
+//  readonly notebook: NotebookDocument;
 
     /**
      * The reason why save was triggered.
-    */
-    readonly reason: TextDocumentSaveReason;
+     */
+//  readonly reason: TextDocumentSaveReason;
 
     /**
      * Allows to pause the event loop and to apply {@link WorkspaceEdit workspace edit}.
@@ -47,8 +44,8 @@ external interface NotebookDocumentWillSaveEvent {
      * ```
      *
      * @param thenable A thenable that resolves to {@link WorkspaceEdit workspace edit}.
-    */
-    waitUntil(thenable: Thenable<WorkspaceEdit>): void;
+     */
+//  waitUntil(thenable: Thenable<WorkspaceEdit>): void;
 
     /**
      * Allows to pause the event loop until the provided thenable resolved.
@@ -56,9 +53,6 @@ external interface NotebookDocumentWillSaveEvent {
      * *Note:* This function can only be called during event dispatch.
      *
      * @param thenable A thenable that delays saving.
-    */
-    waitUntil(thenable: Thenable<any>): void;
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  waitUntil(thenable: Thenable<any>): void;
 }

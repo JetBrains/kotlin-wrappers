@@ -9,33 +9,26 @@ package vscode
  */
 external interface LanguageModelChatSelector {
     /**
-    // ORIGINAL SOURCE
-
-
-    /**
      * A vendor of language models.
      * @see {@link LanguageModelChat.vendor}
-    */
-    vendor?: string;
+     */
+//  vendor?: string;
 
     /**
      * A family of language models.
      * @see {@link LanguageModelChat.family}
-    */
-    family?: string;
+     */
+//  family?: string;
 
     /**
      * The version of a language model.
      * @see {@link LanguageModelChat.version}
-    */
-    version?: string;
+     */
+//  version?: string;
 
     /**
      * The identifier of a language model.
      * @see {@link LanguageModelChat.id}
-    */
-    id?: string;
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  id?: string;
 }

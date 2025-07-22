@@ -7,45 +7,38 @@ package vscode
  */
 external interface QuickPickOptions {
     /**
-    // ORIGINAL SOURCE
-
-
-    /**
      * An optional string that represents the title of the quick pick.
-    */
-    title?: string;
+     */
+//  title?: string;
 
     /**
      * An optional flag to include the description when filtering the picks.
-    */
-    matchOnDescription?: boolean;
+     */
+//  matchOnDescription?: boolean;
 
     /**
      * An optional flag to include the detail when filtering the picks.
-    */
-    matchOnDetail?: boolean;
+     */
+//  matchOnDetail?: boolean;
 
     /**
      * An optional string to show as placeholder in the input box to guide the user what to pick on.
-    */
-    placeHolder?: string;
+     */
+//  placeHolder?: string;
 
     /**
      * Set to `true` to keep the picker open when focus moves to another part of the editor or to another window.
      * This setting is ignored on iPad and is always false.
-    */
-    ignoreFocusOut?: boolean;
+     */
+//  ignoreFocusOut?: boolean;
 
     /**
      * An optional flag to make the picker accept multiple selections, if true the result is an array of picks.
-    */
-    canPickMany?: boolean;
+     */
+//  canPickMany?: boolean;
 
     /**
      * An optional function that is invoked whenever an item is selected.
-    */
-    onDidSelectItem?(item: QuickPickItem | string): any;
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  onDidSelectItem?(item: QuickPickItem | string): any;
 }

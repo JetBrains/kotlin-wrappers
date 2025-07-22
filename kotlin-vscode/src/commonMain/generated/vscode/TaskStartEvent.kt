@@ -9,13 +9,7 @@ package vscode
  */
 external interface TaskStartEvent {
     /**
-    // ORIGINAL SOURCE
-
-    /**
      * The task item representing the task that got started.
-    */
-    readonly execution: TaskExecution;
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  readonly execution: TaskExecution;
 }

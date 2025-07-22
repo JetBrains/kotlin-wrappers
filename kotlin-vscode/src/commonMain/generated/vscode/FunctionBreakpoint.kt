@@ -10,18 +10,12 @@ package vscode
 open external class FunctionBreakpoint :
     Breakpoint {
     /**
-    // ORIGINAL SOURCE
-
-    /**
      * The name of the function to which this breakpoint is attached.
-    */
-    readonly functionName: string;
+     */
+//  readonly functionName: string;
 
     /**
      * Create a new function breakpoint.
-    */
-    constructor(functionName: string, enabled?: boolean, condition?: string, hitCondition?: string, logMessage?: string);
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  constructor(functionName: string, enabled?: boolean, condition?: string, hitCondition?: string, logMessage?: string);
 }

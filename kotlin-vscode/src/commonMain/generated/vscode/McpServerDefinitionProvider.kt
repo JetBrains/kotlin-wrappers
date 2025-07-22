@@ -9,12 +9,9 @@ package vscode
  */
 external interface McpServerDefinitionProvider<T : McpServerDefinition> {
     /**
-    // ORIGINAL SOURCE
-
-    /**
      * Optional event fired to signal that the set of available servers has changed.
-    */
-    readonly onDidChangeMcpServerDefinitions?: Event<void>;
+     */
+//  readonly onDidChangeMcpServerDefinitions?: Event<void>;
 
     /**
      * Provides available MCP servers. The editor will call this method eagerly
@@ -24,8 +21,8 @@ external interface McpServerDefinitionProvider<T : McpServerDefinition> {
      *
      * @param token A cancellation token.
      * @returns An array of MCP available MCP servers
-    */
-    provideMcpServerDefinitions(token: CancellationToken): ProviderResult<T[]>;
+     */
+//  provideMcpServerDefinitions(token: CancellationToken): ProviderResult<T[]>;
 
     /**
      * This function will be called when the editor needs to start a MCP server.
@@ -42,9 +39,6 @@ external interface McpServerDefinitionProvider<T : McpServerDefinition> {
      * @param token A cancellation token.
      * @returns The resolved server or thenable that resolves to such. This may
      * be the given `server` definition with non-readonly properties filled in.
-    */
-    resolveMcpServerDefinition?(server: T, token: CancellationToken): ProviderResult<T>;
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  resolveMcpServerDefinition?(server: T, token: CancellationToken): ProviderResult<T>;
 }

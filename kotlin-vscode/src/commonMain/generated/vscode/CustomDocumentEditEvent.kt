@@ -9,13 +9,9 @@ package vscode
  */
 external interface CustomDocumentEditEvent<T : CustomDocument> {
     /**
-    // ORIGINAL SOURCE
-
-
-    /**
      * The document that the edit is for.
-    */
-    readonly document: T;
+     */
+//  readonly document: T;
 
     /**
      * Undo the edit operation.
@@ -23,8 +19,8 @@ external interface CustomDocumentEditEvent<T : CustomDocument> {
      * This is invoked by the editor when the user undoes this edit. To implement `undo`, your
      * extension should restore the document and editor to the state they were in just before this
      * edit was added to the editor's internal edit stack by `onDidChangeCustomDocument`.
-    */
-    undo(): Thenable<void> | void;
+     */
+//  undo(): Thenable<void> | void;
 
     /**
      * Redo the edit operation.
@@ -32,16 +28,13 @@ external interface CustomDocumentEditEvent<T : CustomDocument> {
      * This is invoked by the editor when the user redoes this edit. To implement `redo`, your
      * extension should restore the document and editor to the state they were in just after this
      * edit was added to the editor's internal edit stack by `onDidChangeCustomDocument`.
-    */
-    redo(): Thenable<void> | void;
+     */
+//  redo(): Thenable<void> | void;
 
     /**
      * Display name describing the edit.
      *
      * This will be shown to users in the UI for undo/redo operations.
-    */
-    readonly label?: string;
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  readonly label?: string;
 }

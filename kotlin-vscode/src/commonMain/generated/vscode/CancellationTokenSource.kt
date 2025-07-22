@@ -9,24 +9,17 @@ package vscode
  */
 open external class CancellationTokenSource {
     /**
-    // ORIGINAL SOURCE
-
-
-    /**
      * The cancellation token of this source.
-    */
-    token: CancellationToken;
+     */
+//  token: CancellationToken;
 
     /**
      * Signal cancellation on the token.
-    */
-    cancel(): void;
+     */
+//  cancel(): void;
 
     /**
      * Dispose object and free resources.
-    */
-    dispose(): void;
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  dispose(): void;
 }

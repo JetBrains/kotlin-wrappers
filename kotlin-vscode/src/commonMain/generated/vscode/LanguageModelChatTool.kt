@@ -8,23 +8,17 @@ package vscode
  */
 external interface LanguageModelChatTool {
     /**
-    // ORIGINAL SOURCE
-
-    /**
      * The name of the tool.
-    */
-    name: string;
+     */
+//  name: string;
 
     /**
      * The description of the tool.
-    */
-    description: string;
+     */
+//  description: string;
 
     /**
      * A JSON schema for the input this tool accepts.
-    */
-    inputSchema?: object | undefined;
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  inputSchema?: object | undefined;
 }

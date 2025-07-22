@@ -10,25 +10,20 @@ package vscode
  */
 open external class SemanticTokensLegend {
     /**
-    // ORIGINAL SOURCE
+     * The possible token types.
+     */
+//  readonly tokenTypes: string[];
 
     /**
-     * The possible token types.
-    */
-    readonly tokenTypes: string[];
-    /**
      * The possible token modifiers.
-    */
-    readonly tokenModifiers: string[];
+     */
+//  readonly tokenModifiers: string[];
 
     /**
      * Creates a semantic tokens legend.
      *
      * @param tokenTypes An array of token types.
      * @param tokenModifiers An array of token modifiers.
-    */
-    constructor(tokenTypes: string[], tokenModifiers?: string[]);
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  constructor(tokenTypes: string[], tokenModifiers?: string[]);
 }

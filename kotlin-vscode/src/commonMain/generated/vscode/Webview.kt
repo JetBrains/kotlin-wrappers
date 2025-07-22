@@ -7,12 +7,9 @@ package vscode
  */
 external interface Webview {
     /**
-    // ORIGINAL SOURCE
-
-    /**
      * Content settings for the webview.
-    */
-    options: WebviewOptions;
+     */
+//  options: WebviewOptions;
 
     /**
      * HTML contents of the webview.
@@ -38,8 +35,8 @@ external interface Webview {
      * so extensions must follow all standard web security best practices when working with webviews. This includes
      * properly sanitizing all untrusted input (including content from the workspace) and
      * setting a [content security policy](https://aka.ms/vscode-api-webview-csp).
-    */
-    html: string;
+     */
+//  html: string;
 
     /**
      * Fired when the webview content posts a message.
@@ -47,8 +44,8 @@ external interface Webview {
      * Webview content can post strings or json serializable objects back to an extension. They cannot
      * post `Blob`, `File`, `ImageData` and other DOM specific objects since the extension that receives the
      * message does not run in a browser environment.
-    */
-    readonly onDidReceiveMessage: Event<any>;
+     */
+//  readonly onDidReceiveMessage: Event<any>;
 
     /**
      * Post a message to the webview content.
@@ -80,8 +77,8 @@ external interface Webview {
      *
      *   If you want confirm that a message as actually received, you can try having your webview posting a
      *   confirmation message back to your extension.
-    */
-    postMessage(message: any): Thenable<boolean>;
+     */
+//  postMessage(message: any): Thenable<boolean>;
 
     /**
      * Convert a uri for the local file system to one that can be used inside webviews.
@@ -93,8 +90,8 @@ external interface Webview {
      * ```ts
      * webview.html = `<img src="${webview.asWebviewUri(vscode.Uri.file('/Users/codey/workspace/cat.gif'))}">`
      * ```
-    */
-    asWebviewUri(localResource: Uri): Uri;
+     */
+//  asWebviewUri(localResource: Uri): Uri;
 
     /**
      * Content security policy source for webview resources.
@@ -104,9 +101,6 @@ external interface Webview {
      * ```ts
      * `img-src https: ${webview.cspSource} ...;`
      * ```
-    */
-    readonly cspSource: string;
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  readonly cspSource: string;
 }

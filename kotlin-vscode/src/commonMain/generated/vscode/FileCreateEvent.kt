@@ -7,14 +7,7 @@ package vscode
  */
 external interface FileCreateEvent {
     /**
-    // ORIGINAL SOURCE
-
-
-    /**
      * The files that got created.
-    */
-    readonly files: readonly Uri[];
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  readonly files: readonly Uri[];
 }

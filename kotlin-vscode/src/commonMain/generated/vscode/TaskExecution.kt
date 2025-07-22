@@ -10,18 +10,12 @@ package vscode
  */
 external interface TaskExecution {
     /**
-    // ORIGINAL SOURCE
-
-    /**
      * The task that got started.
-    */
-    task: Task;
+     */
+//  task: Task;
 
     /**
      * Terminates the task execution.
-    */
-    terminate(): void;
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  terminate(): void;
 }

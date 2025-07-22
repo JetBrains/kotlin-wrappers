@@ -7,23 +7,17 @@ package vscode
  */
 external interface TerminalShellExecutionStartEvent {
     /**
-    // ORIGINAL SOURCE
-
-    /**
      * The terminal that shell integration has been activated in.
-    */
-    readonly terminal: Terminal;
+     */
+//  readonly terminal: Terminal;
 
     /**
      * The shell integration object.
-    */
-    readonly shellIntegration: TerminalShellIntegration;
+     */
+//  readonly shellIntegration: TerminalShellIntegration;
 
     /**
      * The terminal shell execution that has ended.
-    */
-    readonly execution: TerminalShellExecution;
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  readonly execution: TerminalShellExecution;
 }

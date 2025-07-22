@@ -10,16 +10,12 @@ package vscode
  */
 open external class ProcessExecution {
     /**
-    // ORIGINAL SOURCE
-
-
-    /**
      * Creates a process execution.
      *
      * @param process The process to start.
      * @param options Optional options for the started process.
-    */
-    constructor(process: string, options?: ProcessExecutionOptions);
+     */
+//  constructor(process: string, options?: ProcessExecutionOptions);
 
     /**
      * Creates a process execution.
@@ -27,25 +23,22 @@ open external class ProcessExecution {
      * @param process The process to start.
      * @param args Arguments to be passed to the process.
      * @param options Optional options for the started process.
-    */
-    constructor(process: string, args: string[], options?: ProcessExecutionOptions);
+     */
+//  constructor(process: string, args: string[], options?: ProcessExecutionOptions);
 
     /**
      * The process to be executed.
-    */
-    process: string;
+     */
+//  process: string;
 
     /**
      * The arguments passed to the process. Defaults to an empty array.
-    */
-    args: string[];
+     */
+//  args: string[];
 
     /**
      * The process options used when the process is executed.
      * Defaults to undefined.
-    */
-    options?: ProcessExecutionOptions;
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  options?: ProcessExecutionOptions;
 }

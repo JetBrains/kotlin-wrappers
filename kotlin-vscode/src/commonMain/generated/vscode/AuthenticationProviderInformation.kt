@@ -7,18 +7,12 @@ package vscode
  */
 external interface AuthenticationProviderInformation {
     /**
-    // ORIGINAL SOURCE
-
-    /**
      * The unique identifier of the authentication provider.
-    */
-    readonly id: string;
+     */
+//  readonly id: string;
 
     /**
      * The human-readable name of the authentication provider.
-    */
-    readonly label: string;
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  readonly label: string;
 }

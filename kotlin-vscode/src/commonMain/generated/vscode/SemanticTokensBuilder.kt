@@ -10,15 +10,11 @@ package vscode
  */
 open external class SemanticTokensBuilder {
     /**
-    // ORIGINAL SOURCE
-
-
-    /**
      * Creates a semantic tokens builder.
      *
      * @param legend A semantic tokens legend.
-    */
-    constructor(legend?: SemanticTokensLegend);
+     */
+//  constructor(legend?: SemanticTokensLegend);
 
     /**
      * Add another token.
@@ -28,8 +24,8 @@ open external class SemanticTokensBuilder {
      * @param length The token length in characters.
      * @param tokenType The encoded token type.
      * @param tokenModifiers The encoded token modifiers.
-    */
-    push(line: number, char: number, length: number, tokenType: number, tokenModifiers?: number): void;
+     */
+//  push(line: number, char: number, length: number, tokenType: number, tokenModifiers?: number): void;
 
     /**
      * Add another token. Use only when providing a legend.
@@ -37,14 +33,11 @@ open external class SemanticTokensBuilder {
      * @param range The range of the token. Must be single-line.
      * @param tokenType The token type.
      * @param tokenModifiers The token modifiers.
-    */
-    push(range: Range, tokenType: string, tokenModifiers?: readonly string[]): void;
+     */
+//  push(range: Range, tokenType: string, tokenModifiers?: readonly string[]): void;
 
     /**
      * Finish and create a `SemanticTokens` instance.
-    */
-    build(resultId?: string): SemanticTokens;
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  build(resultId?: string): SemanticTokens;
 }

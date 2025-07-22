@@ -7,13 +7,7 @@ package vscode
  */
 external interface WebviewPanelOnDidChangeViewStateEvent {
     /**
-    // ORIGINAL SOURCE
-
-    /**
      * Webview panel whose view state changed.
-    */
-    readonly webviewPanel: WebviewPanel;
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  readonly webviewPanel: WebviewPanel;
 }

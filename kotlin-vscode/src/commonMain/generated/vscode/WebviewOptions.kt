@@ -7,22 +7,19 @@ package vscode
  */
 external interface WebviewOptions {
     /**
-    // ORIGINAL SOURCE
-
-    /**
      * Controls whether scripts are enabled in the webview content or not.
      *
      * Defaults to false (scripts-disabled).
-    */
-    readonly enableScripts?: boolean;
+     */
+//  readonly enableScripts?: boolean;
 
     /**
      * Controls whether forms are enabled in the webview content or not.
      *
      * Defaults to true if {@link WebviewOptions.enableScripts scripts are enabled}. Otherwise defaults to false.
      * Explicitly setting this property to either true or false overrides the default.
-    */
-    readonly enableForms?: boolean;
+     */
+//  readonly enableForms?: boolean;
 
     /**
      * Controls whether command uris are enabled in webview content or not.
@@ -30,8 +27,8 @@ external interface WebviewOptions {
      * Defaults to `false` (command uris are disabled).
      *
      * If you pass in an array, only the commands in the array are allowed.
-    */
-    readonly enableCommandUris?: boolean | readonly string[];
+     */
+//  readonly enableCommandUris?: boolean | readonly string[];
 
     /**
      * Root paths from which the webview can load local (filesystem) resources using uris from `asWebviewUri`
@@ -39,8 +36,8 @@ external interface WebviewOptions {
      * Default to the root folders of the current workspace plus the extension's install directory.
      *
      * Pass in an empty array to disallow access to any local resources.
-    */
-    readonly localResourceRoots?: readonly Uri[];
+     */
+//  readonly localResourceRoots?: readonly Uri[];
 
     /**
      * Mappings of localhost ports used inside the webview.
@@ -54,9 +51,6 @@ external interface WebviewOptions {
      *
      * *Note* that port mappings only work for `http` or `https` urls. Websocket urls (e.g. `ws://localhost:3000`)
      * cannot be mapped to another port.
-    */
-    readonly portMapping?: readonly WebviewPortMapping[];
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  readonly portMapping?: readonly WebviewPortMapping[];
 }

@@ -7,9 +7,6 @@ package vscode
  */
 external interface LanguageModelToolInvocationOptions<T> {
     /**
-    // ORIGINAL SOURCE
-
-    /**
      * An opaque object that ties a tool invocation to a chat request from a {@link ChatParticipant chat participant}.
      *
      * The _only_ way to get a valid tool invocation token is using the provided {@link ChatRequest.toolInvocationToken toolInvocationToken}
@@ -20,21 +17,18 @@ external interface LanguageModelToolInvocationOptions<T> {
      * confirmations will be shown.
      *
      * *Note* that a tool that invokes another tool during its invocation, can pass along the `toolInvocationToken` that it received.
-    */
-    toolInvocationToken: ChatParticipantToolToken | undefined;
+     */
+//  toolInvocationToken: ChatParticipantToolToken | undefined;
 
     /**
      * The input with which to invoke the tool. The input must match the schema defined in
      * {@link LanguageModelToolInformation.inputSchema}
-    */
-    input: T;
+     */
+//  input: T;
 
     /**
      * Options to hint at how many tokens the tool should return in its response, and enable the tool to count tokens
      * accurately.
-    */
-    tokenizationOptions?: LanguageModelToolTokenizationOptions;
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  tokenizationOptions?: LanguageModelToolTokenizationOptions;
 }

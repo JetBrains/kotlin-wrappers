@@ -9,21 +9,15 @@ package vscode
  */
 open external class LanguageModelToolResult {
     /**
-    // ORIGINAL SOURCE
-
-    /**
      * A list of tool result content parts. Includes `unknown` because this list may be extended with new content types in
      * the future.
      * @see {@link lm.invokeTool}.
-    */
-    content: Array<LanguageModelTextPart | LanguageModelPromptTsxPart | unknown>;
+     */
+//  content: Array<LanguageModelTextPart | LanguageModelPromptTsxPart | unknown>;
 
     /**
      * Create a LanguageModelToolResult
      * @param content A list of tool result content parts
-    */
-    constructor(content: Array<LanguageModelTextPart | LanguageModelPromptTsxPart>);
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  constructor(content: Array<LanguageModelTextPart | LanguageModelPromptTsxPart>);
 }

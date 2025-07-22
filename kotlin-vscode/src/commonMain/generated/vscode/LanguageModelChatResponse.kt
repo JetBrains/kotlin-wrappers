@@ -9,10 +9,6 @@ package vscode
  */
 external interface LanguageModelChatResponse {
     /**
-    // ORIGINAL SOURCE
-
-
-    /**
      * An async iterable that is a stream of text and tool-call parts forming the overall response. A
      * {@link LanguageModelTextPart} is part of the assistant's response to be shown to the user. A
      * {@link LanguageModelToolCallPart} is a request from the language model to call a tool. The latter will
@@ -42,16 +38,13 @@ external interface LanguageModelChatResponse {
      *   console.error(e);
      * }
      * ```
-    */
-    stream: AsyncIterable<LanguageModelTextPart | LanguageModelToolCallPart | unknown>;
+     */
+//  stream: AsyncIterable<LanguageModelTextPart | LanguageModelToolCallPart | unknown>;
 
     /**
      * This is equivalent to filtering everything except for text parts from a {@link LanguageModelChatResponse.stream}.
      *
      * @see {@link LanguageModelChatResponse.stream}
-    */
-    text: AsyncIterable<string>;
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  text: AsyncIterable<string>;
 }

@@ -9,19 +9,13 @@ package vscode
  */
 open external class ChatResponseCommandButtonPart {
     /**
-    // ORIGINAL SOURCE
-
-    /**
      * The command that will be executed when the button is clicked.
-    */
-    value: Command;
+     */
+//  value: Command;
 
     /**
      * Create a new ChatResponseCommandButtonPart.
      * @param value A Command that will be executed when the button is clicked.
-    */
-    constructor(value: Command);
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  constructor(value: Command);
 }

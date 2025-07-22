@@ -7,17 +7,12 @@ package vscode
  */
 external interface TextEditorVisibleRangesChangeEvent {
     /**
-    // ORIGINAL SOURCE
-
-    /**
      * The {@link TextEditor text editor} for which the visible ranges have changed.
-    */
-    readonly textEditor: TextEditor;
+     */
+//  readonly textEditor: TextEditor;
+
     /**
      * The new value for the {@link TextEditor.visibleRanges text editor's visible ranges}.
-    */
-    readonly visibleRanges: readonly Range[];
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  readonly visibleRanges: readonly Range[];
 }

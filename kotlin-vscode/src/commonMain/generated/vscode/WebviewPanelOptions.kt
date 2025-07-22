@@ -7,14 +7,11 @@ package vscode
  */
 external interface WebviewPanelOptions {
     /**
-    // ORIGINAL SOURCE
-
-    /**
      * Controls if the find widget is enabled in the panel.
      *
      * Defaults to `false`.
-    */
-    readonly enableFindWidget?: boolean;
+     */
+//  readonly enableFindWidget?: boolean;
 
     /**
      * Controls if the webview panel's content (iframe) is kept around even when the panel
@@ -31,9 +28,6 @@ external interface WebviewPanelOptions {
      *
      * `retainContextWhenHidden` has a high memory overhead and should only be used if
      * your panel's context cannot be quickly saved and restored.
-    */
-    readonly retainContextWhenHidden?: boolean;
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  readonly retainContextWhenHidden?: boolean;
 }

@@ -7,18 +7,12 @@ package vscode
  */
 external interface CommentOptions {
     /**
-    // ORIGINAL SOURCE
-
-    /**
      * An optional string to show on the comment input box when it's collapsed.
-    */
-    prompt?: string;
+     */
+//  prompt?: string;
 
     /**
      * An optional string to show as placeholder in the comment input box when it's focused.
-    */
-    placeHolder?: string;
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  placeHolder?: string;
 }

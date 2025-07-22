@@ -8,13 +8,9 @@ package vscode
  */
 external interface InlayHintsProvider<T : InlayHint> {
     /**
-    // ORIGINAL SOURCE
-
-
-    /**
      * An optional event to signal that inlay hints from this provider have changed.
-    */
-    onDidChangeInlayHints?: Event<void>;
+     */
+//  onDidChangeInlayHints?: Event<void>;
 
     /**
      * Provide inlay hints for the given range and document.
@@ -25,8 +21,8 @@ external interface InlayHintsProvider<T : InlayHint> {
      * @param range The range for which inlay hints should be computed.
      * @param token A cancellation token.
      * @returns An array of inlay hints or a thenable that resolves to such.
-    */
-    provideInlayHints(document: TextDocument, range: Range, token: CancellationToken): ProviderResult<T[]>;
+     */
+//  provideInlayHints(document: TextDocument, range: Range, token: CancellationToken): ProviderResult<T[]>;
 
     /**
      * Given an inlay hint fill in {@link InlayHint.tooltip tooltip}, {@link InlayHint.textEdits text edits},
@@ -37,9 +33,6 @@ external interface InlayHintsProvider<T : InlayHint> {
      * @param hint An inlay hint.
      * @param token A cancellation token.
      * @returns The resolved inlay hint or a thenable that resolves to such. It is OK to return the given `item`. When no result is returned, the given `item` will be used.
-    */
-    resolveInlayHint?(hint: T, token: CancellationToken): ProviderResult<T>;
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  resolveInlayHint?(hint: T, token: CancellationToken): ProviderResult<T>;
 }

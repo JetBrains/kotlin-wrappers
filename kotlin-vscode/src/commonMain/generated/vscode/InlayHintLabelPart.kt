@@ -9,21 +9,17 @@ package vscode
  */
 open external class InlayHintLabelPart {
     /**
-    // ORIGINAL SOURCE
-
-
-    /**
      * The value of this label part.
-    */
-    value: string;
+     */
+//  value: string;
 
     /**
      * The tooltip text when you hover over this label part.
      *
      * *Note* that this property can be set late during
      * {@link InlayHintsProvider.resolveInlayHint resolving} of inlay hints.
-    */
-    tooltip?: string | MarkdownString | undefined;
+     */
+//  tooltip?: string | MarkdownString | undefined;
 
     /**
      * An optional {@link Location source code location} that represents this label
@@ -36,8 +32,8 @@ open external class InlayHintLabelPart {
      *
      * *Note* that this property can be set late during
      * {@link InlayHintsProvider.resolveInlayHint resolving} of inlay hints.
-    */
-    location?: Location | undefined;
+     */
+//  location?: Location | undefined;
 
     /**
      * An optional command for this label part.
@@ -47,16 +43,13 @@ open external class InlayHintLabelPart {
      *
      * *Note* that this property can be set late during
      * {@link InlayHintsProvider.resolveInlayHint resolving} of inlay hints.
-    */
-    command?: Command | undefined;
+     */
+//  command?: Command | undefined;
 
     /**
      * Creates a new inlay hint label part.
      *
      * @param value The value of the part.
-    */
-    constructor(value: string);
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  constructor(value: string);
 }

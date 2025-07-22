@@ -9,44 +9,41 @@ package vscode
  */
 open external class TypeHierarchyItem {
     /**
-    // ORIGINAL SOURCE
-
-    /**
      * The name of this item.
-    */
-    name: string;
+     */
+//  name: string;
 
     /**
      * The kind of this item.
-    */
-    kind: SymbolKind;
+     */
+//  kind: SymbolKind;
 
     /**
      * Tags for this item.
-    */
-    tags?: ReadonlyArray<SymbolTag>;
+     */
+//  tags?: ReadonlyArray<SymbolTag>;
 
     /**
      * More detail for this item, e.g. the signature of a function.
-    */
-    detail?: string;
+     */
+//  detail?: string;
 
     /**
      * The resource identifier of this item.
-    */
-    uri: Uri;
+     */
+//  uri: Uri;
 
     /**
      * The range enclosing this symbol not including leading/trailing whitespace
      * but everything else, e.g. comments and code.
-    */
-    range: Range;
+     */
+//  range: Range;
 
     /**
      * The range that should be selected and revealed when this symbol is being
      * picked, e.g. the name of a class. Must be contained by the {@link TypeHierarchyItem.range range}-property.
-    */
-    selectionRange: Range;
+     */
+//  selectionRange: Range;
 
     /**
      * Creates a new type hierarchy item.
@@ -57,9 +54,6 @@ open external class TypeHierarchyItem {
      * @param uri The Uri of the item.
      * @param range The whole range of the item.
      * @param selectionRange The selection range of the item.
-    */
-    constructor(kind: SymbolKind, name: string, detail: string, uri: Uri, range: Range, selectionRange: Range);
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  constructor(kind: SymbolKind, name: string, detail: string, uri: Uri, range: Range, selectionRange: Range);
 }

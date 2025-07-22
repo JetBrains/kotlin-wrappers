@@ -8,14 +8,7 @@ package vscode
  */
 external interface ReferenceContext {
     /**
-    // ORIGINAL SOURCE
-
-
-    /**
      * Include the declaration of the current symbol.
-    */
-    readonly includeDeclaration: boolean;
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  readonly includeDeclaration: boolean;
 }

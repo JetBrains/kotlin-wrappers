@@ -8,10 +8,6 @@ package vscode
  */
 external interface DocumentFormattingEditProvider {
     /**
-    // ORIGINAL SOURCE
-
-
-    /**
      * Provide formatting edits for a whole document.
      *
      * @param document The document in which the command was invoked.
@@ -19,9 +15,6 @@ external interface DocumentFormattingEditProvider {
      * @param token A cancellation token.
      * @returns A set of text edits or a thenable that resolves to such. The lack of a result can be
      * signaled by returning `undefined`, `null`, or an empty array.
-    */
-    provideDocumentFormattingEdits(document: TextDocument, options: FormattingOptions, token: CancellationToken): ProviderResult<TextEdit[]>;
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  provideDocumentFormattingEdits(document: TextDocument, options: FormattingOptions, token: CancellationToken): ProviderResult<TextEdit[]>;
 }

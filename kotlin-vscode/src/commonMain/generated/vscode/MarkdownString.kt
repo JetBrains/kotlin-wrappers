@@ -14,31 +14,29 @@ package vscode
  */
 open external class MarkdownString {
     /**
-    // ORIGINAL SOURCE
-
-
-    /**
      * The markdown string.
-    */
-    value: string;
+     */
+//  value: string;
 
     /**
      * Indicates that this markdown string is from a trusted source. Only *trusted*
      * markdown supports links that execute commands, e.g. `[Run it](command:myCommandId)`.
      *
      * Defaults to `false` (commands are disabled).
-    */
+     */
+    /*
     isTrusted?: boolean | {
-    /**
-     * A set of commend ids that are allowed to be executed by this markdown string.
-    */
-    readonly enabledCommands: readonly string[];
+        /**
+         * A set of commend ids that are allowed to be executed by this markdown string.
+         */
+        readonly enabledCommands: readonly string[];
     };
+    */
 
     /**
      * Indicates that this markdown string can contain {@link ThemeIcon ThemeIcons}, e.g. `$(zap)`.
-    */
-    supportThemeIcons?: boolean;
+     */
+//  supportThemeIcons?: boolean;
 
     /**
      * Indicates that this markdown string can contain raw html tags. Defaults to `false`.
@@ -49,8 +47,8 @@ open external class MarkdownString {
      * When `supportHtml` is true, the markdown render will also allow a safe subset of html tags
      * and attributes to be rendered. See https://github.com/microsoft/vscode/blob/6d2920473c6f13759c978dd89104c4270a83422d/src/vs/base/browser/markdownRenderer.ts#L296
      * for a list of all supported tags and attributes.
-    */
-    supportHtml?: boolean;
+     */
+//  supportHtml?: boolean;
 
     /**
      * Uri that relative paths are resolved relative to.
@@ -70,36 +68,33 @@ open external class MarkdownString {
      * md.baseUri = vscode.Uri.file('/path/to/otherFile.js');
      * // Here 'link' in the rendered markdown resolves to '/path/to/file.js'
      * ```
-    */
-    baseUri?: Uri;
+     */
+//  baseUri?: Uri;
 
     /**
      * Creates a new markdown string with the given value.
      *
      * @param value Optional, initial value.
      * @param supportThemeIcons Optional, Specifies whether {@link ThemeIcon ThemeIcons} are supported within the {@linkcode MarkdownString}.
-    */
-    constructor(value?: string, supportThemeIcons?: boolean);
+     */
+//  constructor(value?: string, supportThemeIcons?: boolean);
 
     /**
      * Appends and escapes the given string to this markdown string.
      * @param value Plain text.
-    */
-    appendText(value: string): MarkdownString;
+     */
+//  appendText(value: string): MarkdownString;
 
     /**
      * Appends the given string 'as is' to this markdown string. When {@linkcode MarkdownString.supportThemeIcons supportThemeIcons} is `true`, {@link ThemeIcon ThemeIcons} in the `value` will be iconified.
      * @param value Markdown string.
-    */
-    appendMarkdown(value: string): MarkdownString;
+     */
+//  appendMarkdown(value: string): MarkdownString;
 
     /**
      * Appends the given string as codeblock using the provided language.
      * @param value A code snippet.
      * @param language An optional {@link languages.getLanguages language identifier}.
-    */
-    appendCodeblock(value: string, language?: string): MarkdownString;
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  appendCodeblock(value: string, language?: string): MarkdownString;
 }

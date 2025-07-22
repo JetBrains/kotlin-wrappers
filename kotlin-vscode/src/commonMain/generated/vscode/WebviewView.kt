@@ -7,35 +7,32 @@ package vscode
  */
 external interface WebviewView {
     /**
-    // ORIGINAL SOURCE
-
-    /**
      * Identifies the type of the webview view, such as `'hexEditor.dataView'`.
-    */
-    readonly viewType: string;
+     */
+//  readonly viewType: string;
 
     /**
      * The underlying webview for the view.
-    */
-    readonly webview: Webview;
+     */
+//  readonly webview: Webview;
 
     /**
      * View title displayed in the UI.
      *
      * The view title is initially taken from the extension `package.json` contribution.
-    */
-    title?: string;
+     */
+//  title?: string;
 
     /**
      * Human-readable string which is rendered less prominently in the title.
-    */
-    description?: string;
+     */
+//  description?: string;
 
     /**
      * The badge to display for this webview view.
      * To remove the badge, set to undefined.
-    */
-    badge?: ViewBadge | undefined;
+     */
+//  badge?: ViewBadge | undefined;
 
     /**
      * Event fired when the view is disposed.
@@ -44,15 +41,15 @@ external interface WebviewView {
      * right clicks in a view and unchecks the webview view).
      *
      * Trying to use the view after it has been disposed throws an exception.
-    */
-    readonly onDidDispose: Event<void>;
+     */
+//  readonly onDidDispose: Event<void>;
 
     /**
      * Tracks if the webview is currently visible.
      *
      * Views are visible when they are on the screen and expanded.
-    */
-    readonly visible: boolean;
+     */
+//  readonly visible: boolean;
 
     /**
      * Event fired when the visibility of the view changes.
@@ -63,8 +60,8 @@ external interface WebviewView {
      * - The user switches to a different view group in the sidebar or panel.
      *
      * Note that hiding a view using the context menu instead disposes of the view and fires `onDidDispose`.
-    */
-    readonly onDidChangeVisibility: Event<void>;
+     */
+//  readonly onDidChangeVisibility: Event<void>;
 
     /**
      * Reveal the view in the UI.
@@ -72,9 +69,6 @@ external interface WebviewView {
      * If the view is collapsed, this will expand it.
      *
      * @param preserveFocus When `true` the view will not take focus.
-    */
-    show(preserveFocus?: boolean): void;
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  show(preserveFocus?: boolean): void;
 }

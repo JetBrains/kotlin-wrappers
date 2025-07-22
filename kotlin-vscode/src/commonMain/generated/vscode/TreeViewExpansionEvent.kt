@@ -7,15 +7,7 @@ package vscode
  */
 external interface TreeViewExpansionEvent<T> {
     /**
-    // ORIGINAL SOURCE
-
-
-    /**
      * Element that is expanded or collapsed.
-    */
-    readonly element: T;
-
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  readonly element: T;
 }

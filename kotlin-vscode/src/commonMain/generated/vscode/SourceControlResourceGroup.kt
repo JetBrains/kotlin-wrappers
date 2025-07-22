@@ -8,24 +8,20 @@ package vscode
  */
 external interface SourceControlResourceGroup {
     /**
-    // ORIGINAL SOURCE
-
-
-    /**
      * The id of this source control resource group.
-    */
-    readonly id: string;
+     */
+//  readonly id: string;
 
     /**
      * The label of this source control resource group.
-    */
-    label: string;
+     */
+//  label: string;
 
     /**
      * Whether this source control resource group is hidden when it contains
      * no {@link SourceControlResourceState source control resource states}.
-    */
-    hideWhenEmpty?: boolean;
+     */
+//  hideWhenEmpty?: boolean;
 
     /**
      * Context value of the resource group. This can be used to contribute resource group specific actions.
@@ -44,20 +40,17 @@ external interface SourceControlResourceGroup {
      * }
      * ```
      * This will show action `extension.export` only for resource groups with `contextValue` equal to `exportable`.
-    */
-    contextValue?: string;
+     */
+//  contextValue?: string;
 
     /**
      * This group's collection of
      * {@link SourceControlResourceState source control resource states}.
-    */
-    resourceStates: SourceControlResourceState[];
+     */
+//  resourceStates: SourceControlResourceState[];
 
     /**
      * Dispose this source control resource group.
-    */
-    dispose(): void;
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  dispose(): void;
 }

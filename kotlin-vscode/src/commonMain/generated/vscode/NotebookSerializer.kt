@@ -12,17 +12,13 @@ package vscode
  */
 external interface NotebookSerializer {
     /**
-    // ORIGINAL SOURCE
-
-
-    /**
      * Deserialize contents of a notebook file into the notebook data structure.
      *
      * @param content Contents of a notebook file.
      * @param token A cancellation token.
      * @returns Notebook data or a thenable that resolves to such.
-    */
-    deserializeNotebook(content: Uint8Array, token: CancellationToken): NotebookData | Thenable<NotebookData>;
+     */
+//  deserializeNotebook(content: Uint8Array, token: CancellationToken): NotebookData | Thenable<NotebookData>;
 
     /**
      * Serialize notebook data into file contents.
@@ -30,9 +26,6 @@ external interface NotebookSerializer {
      * @param data A notebook data structure.
      * @param token A cancellation token.
      * @returns An array of bytes or a thenable that resolves to such.
-    */
-    serializeNotebook(data: NotebookData, token: CancellationToken): Uint8Array | Thenable<Uint8Array>;
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  serializeNotebook(data: NotebookData, token: CancellationToken): Uint8Array | Thenable<Uint8Array>;
 }

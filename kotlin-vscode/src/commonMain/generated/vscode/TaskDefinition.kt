@@ -8,9 +8,6 @@ package vscode
  */
 external interface TaskDefinition {
     /**
-    // ORIGINAL SOURCE
-
-    /**
      * The task definition describing the task provided by an extension.
      * Usually a task provider defines more properties to identify
      * a task. They need to be defined in the package.json of the
@@ -24,14 +21,11 @@ external interface TaskDefinition {
      *
      * Note that type identifier starting with a '$' are reserved for internal
      * usages and shouldn't be used by extensions.
-    */
-    readonly type: string;
+     */
+//  readonly type: string;
 
     /**
      * Additional attributes of a concrete task definition.
-    */
-    [name: string]: any;
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  [name: string]: any;
 }

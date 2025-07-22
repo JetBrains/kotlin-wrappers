@@ -7,25 +7,18 @@ package vscode
  */
 external interface TextDocumentChangeEvent {
     /**
-    // ORIGINAL SOURCE
-
-
-    /**
      * The affected document.
-    */
-    readonly document: TextDocument;
+     */
+//  readonly document: TextDocument;
 
     /**
      * An array of content changes.
-    */
-    readonly contentChanges: readonly TextDocumentContentChangeEvent[];
+     */
+//  readonly contentChanges: readonly TextDocumentContentChangeEvent[];
 
     /**
      * The reason why the document was changed.
      * Is `undefined` if the reason is not known.
-    */
-    readonly reason: TextDocumentChangeReason | undefined;
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  readonly reason: TextDocumentChangeReason | undefined;
 }

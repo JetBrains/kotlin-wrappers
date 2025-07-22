@@ -8,12 +8,9 @@ package vscode
  */
 external interface CompletionContext {
     /**
-    // ORIGINAL SOURCE
-
-    /**
      * How the completion was triggered.
-    */
-    readonly triggerKind: CompletionTriggerKind;
+     */
+//  readonly triggerKind: CompletionTriggerKind;
 
     /**
      * Character that triggered the completion item provider.
@@ -21,9 +18,6 @@ external interface CompletionContext {
      * `undefined` if the provider was not triggered by a character.
      *
      * The trigger character is already in the document when the completion provider is triggered.
-    */
-    readonly triggerCharacter: string | undefined;
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  readonly triggerCharacter: string | undefined;
 }

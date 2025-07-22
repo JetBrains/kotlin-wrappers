@@ -9,19 +9,13 @@ package vscode
  */
 open external class LanguageModelTextPart {
     /**
-    // ORIGINAL SOURCE
-
-    /**
      * The text content of the part.
-    */
-    value: string;
+     */
+//  value: string;
 
     /**
      * Construct a text part with the given content.
      * @param value The text content of the part.
-    */
-    constructor(value: string);
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  constructor(value: string);
 }

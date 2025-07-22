@@ -9,18 +9,12 @@ package vscode
  */
 open external class DebugAdapterNamedPipeServer {
     /**
-    // ORIGINAL SOURCE
-
-    /**
      * The path to the NamedPipe/UNIX Domain Socket.
-    */
-    readonly path: string;
+     */
+//  readonly path: string;
 
     /**
      * Create a description for a debug adapter running as a Named Pipe (on Windows)/UNIX Domain Socket (on non-Windows) based server.
-    */
-    constructor(path: string);
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  constructor(path: string);
 }

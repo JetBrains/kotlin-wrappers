@@ -9,17 +9,14 @@ package vscode
  */
 open external class NotebookCellStatusBarItem {
     /**
-    // ORIGINAL SOURCE
-
-    /**
      * The text to show for the item.
-    */
-    text: string;
+     */
+//  text: string;
 
     /**
      * Whether the item is aligned to the left or right.
-    */
-    alignment: NotebookCellStatusBarAlignment;
+     */
+//  alignment: NotebookCellStatusBarAlignment;
 
     /**
      * An optional {@linkcode Command} or identifier of a command to run on click.
@@ -28,31 +25,28 @@ open external class NotebookCellStatusBarItem {
      *
      * Note that if this is a {@linkcode Command} object, only the {@linkcode Command.command command} and {@linkcode Command.arguments arguments}
      * are used by the editor.
-    */
-    command?: string | Command;
+     */
+//  command?: string | Command;
 
     /**
      * A tooltip to show when the item is hovered.
-    */
-    tooltip?: string;
+     */
+//  tooltip?: string;
 
     /**
      * The priority of the item. A higher value item will be shown more to the left.
-    */
-    priority?: number;
+     */
+//  priority?: number;
 
     /**
      * Accessibility information used when a screen reader interacts with this item.
-    */
-    accessibilityInformation?: AccessibilityInformation;
+     */
+//  accessibilityInformation?: AccessibilityInformation;
 
     /**
      * Creates a new NotebookCellStatusBarItem.
      * @param text The text to show for the item.
      * @param alignment Whether the item is aligned to the left or right.
-    */
-    constructor(text: string, alignment: NotebookCellStatusBarAlignment);
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  constructor(text: string, alignment: NotebookCellStatusBarAlignment);
 }

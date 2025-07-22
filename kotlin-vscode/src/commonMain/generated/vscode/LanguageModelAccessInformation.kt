@@ -7,13 +7,9 @@ package vscode
  */
 external interface LanguageModelAccessInformation {
     /**
-    // ORIGINAL SOURCE
-
-
-    /**
      * An event that fires when access information changes.
-    */
-    onDidChange: Event<void>;
+     */
+//  onDidChange: Event<void>;
 
     /**
      * Checks if a request can be made to a language model.
@@ -23,9 +19,6 @@ external interface LanguageModelAccessInformation {
      * @param chat A language model chat object.
      * @return `true` if a request can be made, `false` if not, `undefined` if the language
      * model does not exist or consent hasn't been asked for.
-    */
-    canSendRequest(chat: LanguageModelChat): boolean | undefined;
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  canSendRequest(chat: LanguageModelChat): boolean | undefined;
 }

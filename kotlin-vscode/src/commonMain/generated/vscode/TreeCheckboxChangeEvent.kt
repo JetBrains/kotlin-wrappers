@@ -7,13 +7,7 @@ package vscode
  */
 external interface TreeCheckboxChangeEvent<T> {
     /**
-    // ORIGINAL SOURCE
-
-    /**
      * The items that were checked or unchecked.
-    */
-    readonly items: ReadonlyArray<[T, TreeItemCheckboxState]>;
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  readonly items: ReadonlyArray<[T, TreeItemCheckboxState]>;
 }

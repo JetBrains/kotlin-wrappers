@@ -9,18 +9,13 @@ package vscode
  */
 open external class TabInputText {
     /**
-    // ORIGINAL SOURCE
-
-    /**
      * The uri represented by the tab.
-    */
-    readonly uri: Uri;
+     */
+//  readonly uri: Uri;
+
     /**
      * Constructs a text tab input with the given URI.
      * @param uri The URI of the tab.
-    */
-    constructor(uri: Uri);
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  constructor(uri: Uri);
 }

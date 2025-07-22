@@ -17,23 +17,19 @@ package vscode
  */
 external interface TelemetryLogger {
     /**
-    // ORIGINAL SOURCE
-
-
-    /**
      * An {@link Event} which fires when the enablement state of usage or error telemetry changes.
-    */
-    readonly onDidChangeEnableStates: Event<TelemetryLogger>;
+     */
+//  readonly onDidChangeEnableStates: Event<TelemetryLogger>;
 
     /**
      * Whether or not usage telemetry is enabled for this logger.
-    */
-    readonly isUsageEnabled: boolean;
+     */
+//  readonly isUsageEnabled: boolean;
 
     /**
      * Whether or not error telemetry is enabled for this logger.
-    */
-    readonly isErrorsEnabled: boolean;
+     */
+//  readonly isErrorsEnabled: boolean;
 
     /**
      * Log a usage event.
@@ -42,8 +38,8 @@ external interface TelemetryLogger {
      * Automatically supports echoing to extension telemetry output channel.
      * @param eventName The event name to log
      * @param data The data to log
-    */
-    logUsage(eventName: string, data?: Record<string, any | TelemetryTrustedValue>): void;
+     */
+//  logUsage(eventName: string, data?: Record<string, any | TelemetryTrustedValue>): void;
 
     /**
      * Log an error event.
@@ -52,8 +48,8 @@ external interface TelemetryLogger {
      * Automatically supports echoing to extension telemetry output channel.
      * @param eventName The event name to log
      * @param data The data to log
-    */
-    logError(eventName: string, data?: Record<string, any | TelemetryTrustedValue>): void;
+     */
+//  logError(eventName: string, data?: Record<string, any | TelemetryTrustedValue>): void;
 
     /**
      * Log an error event.
@@ -63,14 +59,11 @@ external interface TelemetryLogger {
      * Will also automatically log any exceptions thrown within the extension host process.
      * @param error The error object which contains the stack trace cleaned of PII
      * @param data Additional data to log alongside the stack trace
-    */
-    logError(error: Error, data?: Record<string, any | TelemetryTrustedValue>): void;
+     */
+//  logError(error: Error, data?: Record<string, any | TelemetryTrustedValue>): void;
 
     /**
      * Dispose this object and free resources.
-    */
-    dispose(): void;
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  dispose(): void;
 }

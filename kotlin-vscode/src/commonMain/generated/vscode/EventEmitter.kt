@@ -14,27 +14,20 @@ package vscode
  */
 open external class EventEmitter<T> {
     /**
-    // ORIGINAL SOURCE
-
-
-    /**
      * The event listeners can subscribe to.
-    */
-    event: Event<T>;
+     */
+//  event: Event<T>;
 
     /**
      * Notify all subscribers of the {@link EventEmitter.event event}. Failure
      * of one or more listener will not fail this function call.
      *
      * @param data The event object.
-    */
-    fire(data: T): void;
+     */
+//  fire(data: T): void;
 
     /**
      * Dispose this object and free resources.
-    */
-    dispose(): void;
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  dispose(): void;
 }

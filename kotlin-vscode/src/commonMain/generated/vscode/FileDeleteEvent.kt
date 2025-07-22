@@ -7,14 +7,7 @@ package vscode
  */
 external interface FileDeleteEvent {
     /**
-    // ORIGINAL SOURCE
-
-
-    /**
      * The files that got deleted.
-    */
-    readonly files: readonly Uri[];
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  readonly files: readonly Uri[];
 }

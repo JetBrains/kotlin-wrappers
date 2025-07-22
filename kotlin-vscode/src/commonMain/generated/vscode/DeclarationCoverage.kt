@@ -10,33 +10,27 @@ package vscode
  */
 open external class DeclarationCoverage {
     /**
-    // ORIGINAL SOURCE
-
-    /**
      * Name of the declaration.
-    */
-    name: string;
+     */
+//  name: string;
 
     /**
      * The number of times this declaration was executed, or a boolean
      * indicating whether it was executed if the exact count is unknown. If
      * zero or false, the declaration will be marked as un-covered.
-    */
-    executed: number | boolean;
+     */
+//  executed: number | boolean;
 
     /**
      * Declaration location.
-    */
-    location: Position | Range;
+     */
+//  location: Position | Range;
 
     /**
      * @param executed The number of times this declaration was executed, or a
      * boolean indicating  whether it was executed if the exact count is
      * unknown. If zero or false, the declaration will be marked as un-covered.
      * @param location The declaration position.
-    */
-    constructor(name: string, executed: number | boolean, location: Position | Range);
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  constructor(name: string, executed: number | boolean, location: Position | Range);
 }

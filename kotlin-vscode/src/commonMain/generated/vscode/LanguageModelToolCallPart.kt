@@ -10,22 +10,19 @@ package vscode
  */
 open external class LanguageModelToolCallPart {
     /**
-    // ORIGINAL SOURCE
-
-    /**
      * The ID of the tool call. This is a unique identifier for the tool call within the chat request.
-    */
-    callId: string;
+     */
+//  callId: string;
 
     /**
      * The name of the tool to call.
-    */
-    name: string;
+     */
+//  name: string;
 
     /**
      * The input with which to call the tool.
-    */
-    input: object;
+     */
+//  input: object;
 
     /**
      * Create a new LanguageModelToolCallPart.
@@ -33,9 +30,6 @@ open external class LanguageModelToolCallPart {
      * @param callId The ID of the tool call.
      * @param name The name of the tool to call.
      * @param input The input with which to call the tool.
-    */
-    constructor(callId: string, name: string, input: object);
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  constructor(callId: string, name: string, input: object);
 }

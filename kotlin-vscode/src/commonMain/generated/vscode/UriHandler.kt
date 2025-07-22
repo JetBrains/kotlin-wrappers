@@ -9,16 +9,9 @@ package vscode
  */
 external interface UriHandler {
     /**
-    // ORIGINAL SOURCE
-
-
-    /**
      * Handle the provided system-wide {@link Uri}.
      *
      * @see {@link window.registerUriHandler}.
-    */
-    handleUri(uri: Uri): ProviderResult<void>;
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  handleUri(uri: Uri): ProviderResult<void>;
 }

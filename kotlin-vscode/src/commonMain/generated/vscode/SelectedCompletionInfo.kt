@@ -7,18 +7,12 @@ package vscode
  */
 external interface SelectedCompletionInfo {
     /**
-    // ORIGINAL SOURCE
-
-    /**
      * The range that will be replaced if this completion item is accepted.
-    */
-    readonly range: Range;
+     */
+//  readonly range: Range;
 
     /**
      * The text the range will be replaced with if this completion is accepted.
-    */
-    readonly text: string;
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  readonly text: string;
 }

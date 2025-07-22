@@ -8,10 +8,6 @@ package vscode
  */
 external interface WorkspaceSymbolProvider<T : SymbolInformation> {
     /**
-    // ORIGINAL SOURCE
-
-
-    /**
      * Project-wide search for a symbol matching the given query string.
      *
      * The `query`-parameter should be interpreted in a *relaxed way* as the editor will apply its own highlighting
@@ -27,8 +23,8 @@ external interface WorkspaceSymbolProvider<T : SymbolInformation> {
      * @param token A cancellation token.
      * @returns An array of document highlights or a thenable that resolves to such. The lack of a result can be
      * signaled by returning `undefined`, `null`, or an empty array.
-    */
-    provideWorkspaceSymbols(query: string, token: CancellationToken): ProviderResult<T[]>;
+     */
+//  provideWorkspaceSymbols(query: string, token: CancellationToken): ProviderResult<T[]>;
 
     /**
      * Given a symbol fill in its {@link SymbolInformation.location location}. This method is called whenever a symbol
@@ -41,9 +37,6 @@ external interface WorkspaceSymbolProvider<T : SymbolInformation> {
      * @param token A cancellation token.
      * @returns The resolved symbol or a thenable that resolves to that. When no result is returned,
      * the given `symbol` is used.
-    */
-    resolveWorkspaceSymbol?(symbol: T, token: CancellationToken): ProviderResult<T>;
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  resolveWorkspaceSymbol?(symbol: T, token: CancellationToken): ProviderResult<T>;
 }

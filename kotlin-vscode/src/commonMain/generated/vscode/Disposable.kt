@@ -10,10 +10,6 @@ package vscode
  */
 open external class Disposable {
     /**
-    // ORIGINAL SOURCE
-
-
-    /**
      * Combine many disposable-likes into one. You can use this method when having objects with
      * a dispose function which aren't instances of `Disposable`.
      *
@@ -21,13 +17,15 @@ open external class Disposable {
      * dispose-functions aren't awaited.
      * @returns Returns a new disposable which, upon dispose, will
      * dispose all provided disposables.
-    */
+     */
+    /*
     static from(...disposableLikes: {
-    /**
-     * Function to clean up resources.
-    */
-    dispose: () => any;
+        /**
+         * Function to clean up resources.
+         */
+        dispose: () => any;
     }[]): Disposable;
+    */
 
     /**
      * Creates a new disposable that calls the provided function
@@ -36,14 +34,11 @@ open external class Disposable {
      * *Note* that an asynchronous function is not awaited.
      *
      * @param callOnDispose Function that disposes something.
-    */
-    constructor(callOnDispose: () => any);
+     */
+//  constructor(callOnDispose: () => any);
 
     /**
      * Dispose this object.
-    */
-    dispose(): any;
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  dispose(): any;
 }

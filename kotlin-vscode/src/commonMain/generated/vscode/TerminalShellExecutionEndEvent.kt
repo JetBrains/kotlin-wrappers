@@ -7,22 +7,19 @@ package vscode
  */
 external interface TerminalShellExecutionEndEvent {
     /**
-    // ORIGINAL SOURCE
-
-    /**
      * The terminal that shell integration has been activated in.
-    */
-    readonly terminal: Terminal;
+     */
+//  readonly terminal: Terminal;
 
     /**
      * The shell integration object.
-    */
-    readonly shellIntegration: TerminalShellIntegration;
+     */
+//  readonly shellIntegration: TerminalShellIntegration;
 
     /**
      * The terminal shell execution that has ended.
-    */
-    readonly execution: TerminalShellExecution;
+     */
+//  readonly execution: TerminalShellExecution;
 
     /**
      * The exit code reported by the shell.
@@ -55,9 +52,6 @@ external interface TerminalShellExecutionEndEvent {
      *     }
      *   }
      * });
-    */
-    readonly exitCode: number | undefined;
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  readonly exitCode: number | undefined;
 }

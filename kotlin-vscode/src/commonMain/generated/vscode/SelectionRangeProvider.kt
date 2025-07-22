@@ -7,9 +7,6 @@ package vscode
  */
 external interface SelectionRangeProvider {
     /**
-    // ORIGINAL SOURCE
-
-    /**
      * Provide selection ranges for the given positions.
      *
      * Selection ranges should be computed individually and independent for each position. The editor will merge
@@ -21,9 +18,6 @@ external interface SelectionRangeProvider {
      * @param token A cancellation token.
      * @returns Selection ranges or a thenable that resolves to such. The lack of a result can be
      * signaled by returning `undefined` or `null`.
-    */
-    provideSelectionRanges(document: TextDocument, positions: readonly Position[], token: CancellationToken): ProviderResult<SelectionRange[]>;
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  provideSelectionRanges(document: TextDocument, positions: readonly Position[], token: CancellationToken): ProviderResult<SelectionRange[]>;
 }

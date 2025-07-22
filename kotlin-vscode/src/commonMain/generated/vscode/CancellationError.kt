@@ -16,14 +16,7 @@ import js.errors.JsError
 open external class CancellationError :
     JsError {
     /**
-    // ORIGINAL SOURCE
-
-
-    /**
      * Creates a new cancellation error.
-    */
-    constructor();
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  constructor();
 }

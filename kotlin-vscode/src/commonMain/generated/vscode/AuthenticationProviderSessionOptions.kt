@@ -8,14 +8,8 @@ package vscode
  */
 external interface AuthenticationProviderSessionOptions {
     /**
-    // ORIGINAL SOURCE
-
-    /**
      * The account that is being asked about. If this is passed in, the provider should
      * attempt to return the sessions that are only related to this account.
-    */
-    account?: AuthenticationSessionAccountInformation;
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  account?: AuthenticationSessionAccountInformation;
 }

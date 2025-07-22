@@ -9,33 +9,27 @@ package vscode
  */
 open external class ChatResponseTurn {
     /**
-    // ORIGINAL SOURCE
-
-    /**
      * The content that was received from the chat participant. Only the stream parts that represent actual content (not metadata) are represented.
-    */
-    readonly response: ReadonlyArray<ChatResponseMarkdownPart | ChatResponseFileTreePart | ChatResponseAnchorPart | ChatResponseCommandButtonPart>;
+     */
+//  readonly response: ReadonlyArray<ChatResponseMarkdownPart | ChatResponseFileTreePart | ChatResponseAnchorPart | ChatResponseCommandButtonPart>;
 
     /**
      * The result that was received from the chat participant.
-    */
-    readonly result: ChatResult;
+     */
+//  readonly result: ChatResult;
 
     /**
      * The id of the chat participant that this response came from.
-    */
-    readonly participant: string;
+     */
+//  readonly participant: string;
 
     /**
      * The name of the command that this response came from.
-    */
-    readonly command?: string;
+     */
+//  readonly command?: string;
 
     /**
      * @hidden
-    */
-    private constructor(response: ReadonlyArray<ChatResponseMarkdownPart | ChatResponseFileTreePart | ChatResponseAnchorPart | ChatResponseCommandButtonPart>, result: ChatResult, participant: string);
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  private constructor(response: ReadonlyArray<ChatResponseMarkdownPart | ChatResponseFileTreePart | ChatResponseAnchorPart | ChatResponseCommandButtonPart>, result: ChatResult, participant: string);
 }

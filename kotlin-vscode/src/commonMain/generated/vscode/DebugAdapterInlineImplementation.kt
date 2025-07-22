@@ -9,14 +9,7 @@ package vscode
  */
 open external class DebugAdapterInlineImplementation {
     /**
-    // ORIGINAL SOURCE
-
-
-    /**
      * Create a descriptor for an inline implementation of a debug adapter.
-    */
-    constructor(implementation: DebugAdapter);
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  constructor(implementation: DebugAdapter);
 }

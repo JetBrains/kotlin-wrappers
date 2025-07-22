@@ -8,10 +8,6 @@ package vscode
  */
 external interface ReferenceProvider {
     /**
-    // ORIGINAL SOURCE
-
-
-    /**
      * Provide a set of project-wide references for the given position and document.
      *
      * @param document The document in which the command was invoked.
@@ -21,9 +17,6 @@ external interface ReferenceProvider {
      *
      * @returns An array of locations or a thenable that resolves to such. The lack of a result can be
      * signaled by returning `undefined`, `null`, or an empty array.
-    */
-    provideReferences(document: TextDocument, position: Position, context: ReferenceContext, token: CancellationToken): ProviderResult<Location[]>;
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  provideReferences(document: TextDocument, position: Position, context: ReferenceContext, token: CancellationToken): ProviderResult<Location[]>;
 }

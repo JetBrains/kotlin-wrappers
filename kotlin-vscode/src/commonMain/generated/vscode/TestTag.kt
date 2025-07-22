@@ -11,20 +11,14 @@ package vscode
  */
 open external class TestTag {
     /**
-    // ORIGINAL SOURCE
-
-    /**
      * ID of the test tag. `TestTag` instances with the same ID are considered
      * to be identical.
-    */
-    readonly id: string;
+     */
+//  readonly id: string;
 
     /**
      * Creates a new TestTag instance.
      * @param id ID of the test tag.
-    */
-    constructor(id: string);
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  constructor(id: string);
 }

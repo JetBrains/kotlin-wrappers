@@ -7,29 +7,22 @@ package vscode
  */
 external interface NotebookDocumentChangeEvent {
     /**
-    // ORIGINAL SOURCE
-
-
-    /**
      * The affected notebook.
-    */
-    readonly notebook: NotebookDocument;
+     */
+//  readonly notebook: NotebookDocument;
 
     /**
      * The new metadata of the notebook or `undefined` when it did not change.
-    */
-    readonly metadata: { [key: string]: any } | undefined;
+     */
+//  readonly metadata: { [key: string]: any } | undefined;
 
     /**
      * An array of content changes describing added or removed {@link NotebookCell cells}.
-    */
-    readonly contentChanges: readonly NotebookDocumentContentChange[];
+     */
+//  readonly contentChanges: readonly NotebookDocumentContentChange[];
 
     /**
      * An array of {@link NotebookDocumentCellChange cell changes}.
-    */
-    readonly cellChanges: readonly NotebookDocumentCellChange[];
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  readonly cellChanges: readonly NotebookDocumentCellChange[];
 }

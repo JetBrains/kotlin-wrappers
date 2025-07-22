@@ -7,18 +7,12 @@ package vscode
  */
 external interface NotebookEditorSelectionChangeEvent {
     /**
-    // ORIGINAL SOURCE
-
-    /**
      * The {@link NotebookEditor notebook editor} for which the selections have changed.
-    */
-    readonly notebookEditor: NotebookEditor;
+     */
+//  readonly notebookEditor: NotebookEditor;
 
     /**
      * The new value for the {@link NotebookEditor.selections notebook editor's selections}.
-    */
-    readonly selections: readonly NotebookRange[];
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  readonly selections: readonly NotebookRange[];
 }

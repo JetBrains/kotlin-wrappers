@@ -9,34 +9,30 @@ package vscode
  */
 external interface Extension<T> {
     /**
-    // ORIGINAL SOURCE
-
-
-    /**
      * The canonical extension identifier in the form of: `publisher.name`.
-    */
-    readonly id: string;
+     */
+//  readonly id: string;
 
     /**
      * The uri of the directory containing the extension.
-    */
-    readonly extensionUri: Uri;
+     */
+//  readonly extensionUri: Uri;
 
     /**
      * The absolute file path of the directory containing this extension. Shorthand
      * notation for {@link Extension.extensionUri Extension.extensionUri.fsPath} (independent of the uri scheme).
-    */
-    readonly extensionPath: string;
+     */
+//  readonly extensionPath: string;
 
     /**
      * `true` if the extension has been activated.
-    */
-    readonly isActive: boolean;
+     */
+//  readonly isActive: boolean;
 
     /**
      * The parsed contents of the extension's package.json.
-    */
-    readonly packageJSON: any;
+     */
+//  readonly packageJSON: any;
 
     /**
      * The extension kind describes if an extension runs where the UI runs
@@ -44,22 +40,19 @@ external interface Extension<T> {
      * is defined in the `package.json`-file of extensions but can also be refined
      * via the `remote.extensionKind`-setting. When no remote extension host exists,
      * the value is {@linkcode ExtensionKind.UI}.
-    */
-    extensionKind: ExtensionKind;
+     */
+//  extensionKind: ExtensionKind;
 
     /**
      * The public API exported by this extension (return value of `activate`).
      * It is an invalid action to access this field before this extension has been activated.
-    */
-    readonly exports: T;
+     */
+//  readonly exports: T;
 
     /**
      * Activates this extension and returns its public API.
      *
      * @returns A promise that will resolve when this extension has been activated.
-    */
-    activate(): Thenable<T>;
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  activate(): Thenable<T>;
 }

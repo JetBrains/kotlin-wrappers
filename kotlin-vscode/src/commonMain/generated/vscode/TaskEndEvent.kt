@@ -9,13 +9,7 @@ package vscode
  */
 external interface TaskEndEvent {
     /**
-    // ORIGINAL SOURCE
-
-    /**
      * The task item representing the task that finished.
-    */
-    readonly execution: TaskExecution;
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  readonly execution: TaskExecution;
 }

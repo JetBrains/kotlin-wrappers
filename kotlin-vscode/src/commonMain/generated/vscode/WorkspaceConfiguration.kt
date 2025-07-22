@@ -67,16 +67,12 @@ package vscode
  */
 external interface WorkspaceConfiguration {
     /**
-    // ORIGINAL SOURCE
-
-
-    /**
      * Return a value from this configuration.
      *
      * @param section Configuration name, supports _dotted_ names.
      * @returns The value `section` denotes or `undefined`.
-    */
-    get<T>(section: string): T | undefined;
+     */
+//  get<T>(section: string): T | undefined;
 
     /**
      * Return a value from this configuration.
@@ -84,16 +80,16 @@ external interface WorkspaceConfiguration {
      * @param section Configuration name, supports _dotted_ names.
      * @param defaultValue A value should be returned when no value could be found, is `undefined`.
      * @returns The value `section` denotes or the default.
-    */
-    get<T>(section: string, defaultValue: T): T;
+     */
+//  get<T>(section: string, defaultValue: T): T;
 
     /**
      * Check if this configuration has a certain value.
      *
      * @param section Configuration name, supports _dotted_ names.
      * @returns `true` if the section doesn't resolve to `undefined`.
-    */
-    has(section: string): boolean;
+     */
+//  has(section: string): boolean;
 
     /**
      * Retrieve all information about a configuration setting. A configuration value
@@ -108,60 +104,62 @@ external interface WorkspaceConfiguration {
      *
      * @param section Configuration name, supports _dotted_ names.
      * @returns Information about a configuration setting or `undefined`.
-    */
+     */
+    /*
     inspect<T>(section: string): {
 
-    /**
-     * The fully qualified key of the configuration value
-    */
-    key: string;
+        /**
+         * The fully qualified key of the configuration value
+         */
+        key: string;
 
-    /**
-     * The default value which is used when no other value is defined
-    */
-    defaultValue?: T;
+        /**
+         * The default value which is used when no other value is defined
+         */
+        defaultValue?: T;
 
-    /**
-     * The global or installation-wide value.
-    */
-    globalValue?: T;
+        /**
+         * The global or installation-wide value.
+         */
+        globalValue?: T;
 
-    /**
-     * The workspace-specific value.
-    */
-    workspaceValue?: T;
+        /**
+         * The workspace-specific value.
+         */
+        workspaceValue?: T;
 
-    /**
-     * The workspace-folder-specific value.
-    */
-    workspaceFolderValue?: T;
+        /**
+         * The workspace-folder-specific value.
+         */
+        workspaceFolderValue?: T;
 
-    /**
-     * Language specific default value when this configuration value is created for a {@link ConfigurationScope language scope}.
-    */
-    defaultLanguageValue?: T;
+        /**
+         * Language specific default value when this configuration value is created for a {@link ConfigurationScope language scope}.
+         */
+        defaultLanguageValue?: T;
 
-    /**
-     * Language specific global value when this configuration value is created for a {@link ConfigurationScope language scope}.
-    */
-    globalLanguageValue?: T;
+        /**
+         * Language specific global value when this configuration value is created for a {@link ConfigurationScope language scope}.
+         */
+        globalLanguageValue?: T;
 
-    /**
-     * Language specific workspace value when this configuration value is created for a {@link ConfigurationScope language scope}.
-    */
-    workspaceLanguageValue?: T;
+        /**
+         * Language specific workspace value when this configuration value is created for a {@link ConfigurationScope language scope}.
+         */
+        workspaceLanguageValue?: T;
 
-    /**
-     * Language specific workspace-folder value when this configuration value is created for a {@link ConfigurationScope language scope}.
-    */
-    workspaceFolderLanguageValue?: T;
+        /**
+         * Language specific workspace-folder value when this configuration value is created for a {@link ConfigurationScope language scope}.
+         */
+        workspaceFolderLanguageValue?: T;
 
-    /**
-     * All language identifiers for which this configuration is defined.
-    */
-    languageIds?: string[];
+        /**
+         * All language identifiers for which this configuration is defined.
+         */
+        languageIds?: string[];
 
     } | undefined;
+    */
 
     /**
      * Update a configuration value. The updated configuration values are persisted.
@@ -191,14 +189,11 @@ external interface WorkspaceConfiguration {
      *	- configuration to workspace or workspace folder when no workspace is opened.
      *	- configuration to workspace folder when there is no workspace folder settings.
      *	- configuration to workspace folder when {@link WorkspaceConfiguration} is not scoped to a resource.
-    */
-    update(section: string, value: any, configurationTarget?: ConfigurationTarget | boolean | null, overrideInLanguage?: boolean): Thenable<void>;
+     */
+//  update(section: string, value: any, configurationTarget?: ConfigurationTarget | boolean | null, overrideInLanguage?: boolean): Thenable<void>;
 
     /**
      * Readable dictionary that backs this configuration.
-    */
-    readonly [key: string]: any;
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  readonly [key: string]: any;
 }

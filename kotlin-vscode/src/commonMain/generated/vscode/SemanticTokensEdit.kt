@@ -10,20 +10,19 @@ package vscode
  */
 open external class SemanticTokensEdit {
     /**
-    // ORIGINAL SOURCE
+     * The start offset of the edit.
+     */
+//  readonly start: number;
 
     /**
-     * The start offset of the edit.
-    */
-    readonly start: number;
-    /**
      * The count of elements to remove.
-    */
-    readonly deleteCount: number;
+     */
+//  readonly deleteCount: number;
+
     /**
      * The elements to insert.
-    */
-    readonly data: Uint32Array | undefined;
+     */
+//  readonly data: Uint32Array | undefined;
 
     /**
      * Create a semantic token edit.
@@ -31,9 +30,6 @@ open external class SemanticTokensEdit {
      * @param start Start offset
      * @param deleteCount Number of elements to remove.
      * @param data Elements to insert
-    */
-    constructor(start: number, deleteCount: number, data?: Uint32Array);
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  constructor(start: number, deleteCount: number, data?: Uint32Array);
 }

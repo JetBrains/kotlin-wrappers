@@ -8,19 +8,12 @@ package vscode
  */
 external interface TaskProcessStartEvent {
     /**
-    // ORIGINAL SOURCE
-
-
-    /**
      * The task execution for which the process got started.
-    */
-    readonly execution: TaskExecution;
+     */
+//  readonly execution: TaskExecution;
 
     /**
      * The underlying process id.
-    */
-    readonly processId: number;
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  readonly processId: number;
 }

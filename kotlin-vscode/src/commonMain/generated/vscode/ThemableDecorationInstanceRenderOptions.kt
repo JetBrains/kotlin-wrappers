@@ -7,18 +7,12 @@ package vscode
  */
 external interface ThemableDecorationInstanceRenderOptions {
     /**
-    // ORIGINAL SOURCE
-
-    /**
      * Defines the rendering options of the attachment that is inserted before the decorated text.
-    */
-    before?: ThemableDecorationAttachmentRenderOptions;
+     */
+//  before?: ThemableDecorationAttachmentRenderOptions;
 
     /**
      * Defines the rendering options of the attachment that is inserted after the decorated text.
-    */
-    after?: ThemableDecorationAttachmentRenderOptions;
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  after?: ThemableDecorationAttachmentRenderOptions;
 }

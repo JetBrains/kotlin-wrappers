@@ -7,13 +7,7 @@ package vscode
  */
 external interface ChatContext {
     /**
-    // ORIGINAL SOURCE
-
-    /**
      * All of the chat messages so far in the current chat session. Currently, only chat messages for the current participant are included.
-    */
-    readonly history: ReadonlyArray<ChatRequestTurn | ChatResponseTurn>;
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  readonly history: ReadonlyArray<ChatRequestTurn | ChatResponseTurn>;
 }

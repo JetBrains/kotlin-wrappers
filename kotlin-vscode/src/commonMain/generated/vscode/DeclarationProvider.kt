@@ -8,10 +8,6 @@ package vscode
  */
 external interface DeclarationProvider {
     /**
-    // ORIGINAL SOURCE
-
-
-    /**
      * Provide the declaration of the symbol at the given position and document.
      *
      * @param document The document in which the command was invoked.
@@ -19,9 +15,6 @@ external interface DeclarationProvider {
      * @param token A cancellation token.
      * @returns A declaration or a thenable that resolves to such. The lack of a result can be
      * signaled by returning `undefined` or `null`.
-    */
-    provideDeclaration(document: TextDocument, position: Position, token: CancellationToken): ProviderResult<Declaration>;
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  provideDeclaration(document: TextDocument, position: Position, token: CancellationToken): ProviderResult<Declaration>;
 }

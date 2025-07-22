@@ -8,23 +8,19 @@ package vscode
  */
 external interface Memento {
     /**
-    // ORIGINAL SOURCE
-
-
-    /**
      * Returns the stored keys.
      *
      * @returns The stored keys.
-    */
-    keys(): readonly string[];
+     */
+//  keys(): readonly string[];
 
     /**
      * Return a value.
      *
      * @param key A string.
      * @returns The stored value or `undefined`.
-    */
-    get<T>(key: string): T | undefined;
+     */
+//  get<T>(key: string): T | undefined;
 
     /**
      * Return a value.
@@ -33,8 +29,8 @@ external interface Memento {
      * @param defaultValue A value that should be returned when there is no
      * value (`undefined`) with the given key.
      * @returns The stored value or the defaultValue.
-    */
-    get<T>(key: string, defaultValue: T): T;
+     */
+//  get<T>(key: string, defaultValue: T): T;
 
     /**
      * Store a value. The value must be JSON-stringifyable.
@@ -44,9 +40,6 @@ external interface Memento {
      *
      * @param key A string.
      * @param value A value. MUST not contain cyclic references.
-    */
-    update(key: string, value: any): Thenable<void>;
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  update(key: string, value: any): Thenable<void>;
 }

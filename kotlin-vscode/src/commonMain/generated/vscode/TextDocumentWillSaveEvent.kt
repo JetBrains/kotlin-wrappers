@@ -11,18 +11,14 @@ package vscode
  */
 external interface TextDocumentWillSaveEvent {
     /**
-    // ORIGINAL SOURCE
-
-
-    /**
      * The document that will be saved.
-    */
-    readonly document: TextDocument;
+     */
+//  readonly document: TextDocument;
 
     /**
      * The reason why save was triggered.
-    */
-    readonly reason: TextDocumentSaveReason;
+     */
+//  readonly reason: TextDocumentSaveReason;
 
     /**
      * Allows to pause the event loop and to apply {@link TextEdit pre-save-edits}.
@@ -43,8 +39,8 @@ external interface TextDocumentWillSaveEvent {
      * ```
      *
      * @param thenable A thenable that resolves to {@link TextEdit pre-save-edits}.
-    */
-    waitUntil(thenable: Thenable<readonly TextEdit[]>): void;
+     */
+//  waitUntil(thenable: Thenable<readonly TextEdit[]>): void;
 
     /**
      * Allows to pause the event loop until the provided thenable resolved.
@@ -52,9 +48,6 @@ external interface TextDocumentWillSaveEvent {
      * *Note:* This function can only be called during event dispatch.
      *
      * @param thenable A thenable that delays saving.
-    */
-    waitUntil(thenable: Thenable<any>): void;
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  waitUntil(thenable: Thenable<any>): void;
 }

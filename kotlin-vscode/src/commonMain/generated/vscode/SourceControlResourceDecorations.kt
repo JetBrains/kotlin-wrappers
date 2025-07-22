@@ -9,37 +9,30 @@ package vscode
 external interface SourceControlResourceDecorations :
     SourceControlResourceThemableDecorations {
     /**
-    // ORIGINAL SOURCE
-
-
-    /**
      * Whether the {@link SourceControlResourceState source control resource state} should
      * be striked-through in the UI.
-    */
-    readonly strikeThrough?: boolean;
+     */
+//  readonly strikeThrough?: boolean;
 
     /**
      * Whether the {@link SourceControlResourceState source control resource state} should
      * be faded in the UI.
-    */
-    readonly faded?: boolean;
+     */
+//  readonly faded?: boolean;
 
     /**
      * The title for a specific
      * {@link SourceControlResourceState source control resource state}.
-    */
-    readonly tooltip?: string;
+     */
+//  readonly tooltip?: string;
 
     /**
      * The light theme decorations.
-    */
-    readonly light?: SourceControlResourceThemableDecorations;
+     */
+//  readonly light?: SourceControlResourceThemableDecorations;
 
     /**
      * The dark theme decorations.
-    */
-    readonly dark?: SourceControlResourceThemableDecorations;
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  readonly dark?: SourceControlResourceThemableDecorations;
 }

@@ -9,25 +9,19 @@ package vscode
  */
 open external class ChatResponseFileTreePart {
     /**
-    // ORIGINAL SOURCE
-
-    /**
      * File tree data.
-    */
-    value: ChatResponseFileTree[];
+     */
+//  value: ChatResponseFileTree[];
 
     /**
      * The base uri to which this file tree is relative
-    */
-    baseUri: Uri;
+     */
+//  baseUri: Uri;
 
     /**
      * Create a new ChatResponseFileTreePart.
      * @param value File tree data.
      * @param baseUri The base uri to which this file tree is relative.
-    */
-    constructor(value: ChatResponseFileTree[], baseUri: Uri);
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  constructor(value: ChatResponseFileTree[], baseUri: Uri);
 }

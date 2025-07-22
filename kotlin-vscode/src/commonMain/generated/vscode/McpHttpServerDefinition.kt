@@ -10,37 +10,31 @@ package vscode
  */
 open external class McpHttpServerDefinition {
     /**
-    // ORIGINAL SOURCE
-
-    /**
      * The human-readable name of the server.
-    */
-    readonly label: string;
+     */
+//  readonly label: string;
 
     /**
      * The URI of the server. The editor will make a POST request to this URI
      * to begin each session.
-    */
-    uri: Uri;
+     */
+//  uri: Uri;
 
     /**
      * Optional additional heads included with each request to the server.
-    */
-    headers: Record<string, string>;
+     */
+//  headers: Record<string, string>;
 
     /**
      * Optional version identification for the server. If this changes, the
      * editor will indicate that tools have changed and prompt to refresh them.
-    */
-    version?: string;
+     */
+//  version?: string;
 
     /**
      * @param label The human-readable name of the server.
      * @param uri The URI of the server.
      * @param headers Optional additional heads included with each request to the server.
-    */
-    constructor(label: string, uri: Uri, headers?: Record<string, string>, version?: string);
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  constructor(label: string, uri: Uri, headers?: Record<string, string>, version?: string);
 }

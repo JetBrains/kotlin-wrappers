@@ -9,27 +9,20 @@ package vscode
  */
 external interface NotebookDocumentContentChange {
     /**
-    // ORIGINAL SOURCE
-
-
-    /**
      * The range at which cells have been either added or removed.
      *
      * Note that no cells have been {@link NotebookDocumentContentChange.removedCells removed}
      * when this range is {@link NotebookRange.isEmpty empty}.
-    */
-    readonly range: NotebookRange;
+     */
+//  readonly range: NotebookRange;
 
     /**
      * Cells that have been added to the document.
-    */
-    readonly addedCells: readonly NotebookCell[];
+     */
+//  readonly addedCells: readonly NotebookCell[];
 
     /**
      * Cells that have been removed from the document.
-    */
-    readonly removedCells: readonly NotebookCell[];
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  readonly removedCells: readonly NotebookCell[];
 }

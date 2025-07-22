@@ -12,15 +12,11 @@ package vscode
  */
 open external class RelativePattern {
     /**
-    // ORIGINAL SOURCE
-
-
-    /**
      * A base file path to which this pattern will be matched against relatively. The
      * file path must be absolute, should not have any trailing path separators and
      * not include any relative segments (`.` or `..`).
-    */
-    baseUri: Uri;
+     */
+//  baseUri: Uri;
 
     /**
      * A base file path to which this pattern will be matched against relatively.
@@ -31,8 +27,8 @@ open external class RelativePattern {
      * be a uri with `file` scheme.
      *
      * @deprecated This property is deprecated, please use {@link RelativePattern.baseUri} instead.
-    */
-    base: string;
+     */
+//  base: string;
 
     /**
      * A file glob pattern like `*.{ts,js}` that will be matched on file paths
@@ -40,8 +36,8 @@ open external class RelativePattern {
      *
      * Example: Given a base of `/home/work/folder` and a file path of `/home/work/folder/index.js`,
      * the file glob pattern will match on `index.js`.
-    */
-    pattern: string;
+     */
+//  pattern: string;
 
     /**
      * Creates a new relative pattern object with a base file path and pattern to match. This pattern
@@ -64,9 +60,6 @@ open external class RelativePattern {
      * to pass in a {@link WorkspaceFolder workspace folder} if the pattern should match inside the workspace.
      * Otherwise, a uri or string should only be used if the pattern is for a file path outside the workspace.
      * @param pattern A file glob pattern like `*.{ts,js}` that will be matched on paths relative to the base.
-    */
-    constructor(base: WorkspaceFolder | Uri | string, pattern: string);
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  constructor(base: WorkspaceFolder | Uri | string, pattern: string);
 }

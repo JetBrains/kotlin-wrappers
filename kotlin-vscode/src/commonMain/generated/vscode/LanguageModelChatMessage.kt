@@ -9,40 +9,36 @@ package vscode
  */
 open external class LanguageModelChatMessage {
     /**
-    // ORIGINAL SOURCE
-
-
-    /**
      * Utility to create a new user message.
      *
      * @param content The content of the message.
      * @param name The optional name of a user for the message.
-    */
-    static User(content: string | Array<LanguageModelTextPart | LanguageModelToolResultPart>, name?: string): LanguageModelChatMessage;
+     */
+//  static User(content: string | Array<LanguageModelTextPart | LanguageModelToolResultPart>, name?: string): LanguageModelChatMessage;
 
     /**
      * Utility to create a new assistant message.
      *
      * @param content The content of the message.
      * @param name The optional name of a user for the message.
-    */
-    static Assistant(content: string | Array<LanguageModelTextPart | LanguageModelToolCallPart>, name?: string): LanguageModelChatMessage;
+     */
+//  static Assistant(content: string | Array<LanguageModelTextPart | LanguageModelToolCallPart>, name?: string): LanguageModelChatMessage;
 
     /**
      * The role of this message.
-    */
-    role: LanguageModelChatMessageRole;
+     */
+//  role: LanguageModelChatMessageRole;
 
     /**
      * A string or heterogeneous array of things that a message can contain as content. Some parts may be message-type
      * specific for some models.
-    */
-    content: Array<LanguageModelTextPart | LanguageModelToolResultPart | LanguageModelToolCallPart>;
+     */
+//  content: Array<LanguageModelTextPart | LanguageModelToolResultPart | LanguageModelToolCallPart>;
 
     /**
      * The optional name of a user for this message.
-    */
-    name: string | undefined;
+     */
+//  name: string | undefined;
 
     /**
      * Create a new user message.
@@ -50,9 +46,6 @@ open external class LanguageModelChatMessage {
      * @param role The role of the message.
      * @param content The content of the message.
      * @param name The optional name of a user for the message.
-    */
-    constructor(role: LanguageModelChatMessageRole, content: string | Array<LanguageModelTextPart | LanguageModelToolResultPart | LanguageModelToolCallPart>, name?: string);
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  constructor(role: LanguageModelChatMessageRole, content: string | Array<LanguageModelTextPart | LanguageModelToolResultPart | LanguageModelToolCallPart>, name?: string);
 }

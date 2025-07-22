@@ -10,21 +10,14 @@ package vscode
  */
 open external class TelemetryTrustedValue<T> {
     /**
-    // ORIGINAL SOURCE
-
-
-    /**
      * The value that is trusted to not contain PII.
-    */
-    readonly value: T;
+     */
+//  readonly value: T;
 
     /**
      * Creates a new telemetry trusted value.
      *
      * @param value A value to trust
-    */
-    constructor(value: T);
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  constructor(value: T);
 }

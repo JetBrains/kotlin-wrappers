@@ -8,13 +8,7 @@ package vscode
  */
 external interface DocumentRangeSemanticTokensProvider {
     /**
-    // ORIGINAL SOURCE
-
-    /**
      * @see {@link DocumentSemanticTokensProvider.provideDocumentSemanticTokens provideDocumentSemanticTokens}.
-    */
-    provideDocumentRangeSemanticTokens(document: TextDocument, range: Range, token: CancellationToken): ProviderResult<SemanticTokens>;
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  provideDocumentRangeSemanticTokens(document: TextDocument, range: Range, token: CancellationToken): ProviderResult<SemanticTokens>;
 }

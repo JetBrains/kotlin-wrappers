@@ -7,17 +7,14 @@ package vscode
  */
 external interface SaveDialogOptions {
     /**
-    // ORIGINAL SOURCE
-
-    /**
      * The resource the dialog shows when opened.
-    */
-    defaultUri?: Uri;
+     */
+//  defaultUri?: Uri;
 
     /**
      * A human-readable string for the save button.
-    */
-    saveLabel?: string;
+     */
+//  saveLabel?: string;
 
     /**
      * A set of file filters that are used by the dialog. Each entry is a human-readable label,
@@ -28,17 +25,14 @@ external interface SaveDialogOptions {
      * 	'TypeScript': ['ts', 'tsx']
      * }
      * ```
-    */
-    filters?: { [name: string]: string[] };
+     */
+//  filters?: { [name: string]: string[] };
 
     /**
      * Dialog title.
      *
      * This parameter might be ignored, as not all operating systems display a title on save dialogs
      * (for example, macOS).
-    */
-    title?: string;
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  title?: string;
 }

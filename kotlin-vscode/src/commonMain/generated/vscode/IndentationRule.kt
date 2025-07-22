@@ -7,25 +7,22 @@ package vscode
  */
 external interface IndentationRule {
     /**
-    // ORIGINAL SOURCE
-
-    /**
      * If a line matches this pattern, then all the lines after it should be unindented once (until another rule matches).
-    */
-    decreaseIndentPattern: RegExp;
+     */
+//  decreaseIndentPattern: RegExp;
+
     /**
      * If a line matches this pattern, then all the lines after it should be indented once (until another rule matches).
-    */
-    increaseIndentPattern: RegExp;
+     */
+//  increaseIndentPattern: RegExp;
+
     /**
      * If a line matches this pattern, then **only the next line** after it should be indented once.
-    */
-    indentNextLinePattern?: RegExp;
+     */
+//  indentNextLinePattern?: RegExp;
+
     /**
      * If a line matches this pattern, then its indentation should not be changed and it should not be evaluated against the other rules.
-    */
-    unIndentedLinePattern?: RegExp;
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  unIndentedLinePattern?: RegExp;
 }

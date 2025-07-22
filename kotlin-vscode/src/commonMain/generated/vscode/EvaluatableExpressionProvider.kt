@@ -9,10 +9,6 @@ package vscode
  */
 external interface EvaluatableExpressionProvider {
     /**
-    // ORIGINAL SOURCE
-
-
-    /**
      * Provide an evaluatable expression for the given document and position.
      * The editor will evaluate this expression in the active debug session and will show the result in the debug hover.
      * The expression can be implicitly specified by the range in the underlying document or by explicitly returning an expression.
@@ -22,9 +18,6 @@ external interface EvaluatableExpressionProvider {
      * @param token A cancellation token.
      * @returns An EvaluatableExpression or a thenable that resolves to such. The lack of a result can be
      * signaled by returning `undefined` or `null`.
-    */
-    provideEvaluatableExpression(document: TextDocument, position: Position, token: CancellationToken): ProviderResult<EvaluatableExpression>;
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  provideEvaluatableExpression(document: TextDocument, position: Position, token: CancellationToken): ProviderResult<EvaluatableExpression>;
 }

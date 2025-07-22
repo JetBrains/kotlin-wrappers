@@ -7,19 +7,12 @@ package vscode
  */
 external interface ViewBadge {
     /**
-    // ORIGINAL SOURCE
-
-
-    /**
      * A label to present in tooltip for the badge.
-    */
-    readonly tooltip: string;
+     */
+//  readonly tooltip: string;
 
     /**
      * The value to present in the badge.
-    */
-    readonly value: number;
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  readonly value: number;
 }

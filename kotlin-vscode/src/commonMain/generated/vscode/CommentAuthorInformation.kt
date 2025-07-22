@@ -7,18 +7,12 @@ package vscode
  */
 external interface CommentAuthorInformation {
     /**
-    // ORIGINAL SOURCE
-
-    /**
      * The display name of the author of the comment
-    */
-    name: string;
+     */
+//  name: string;
 
     /**
      * The optional icon path for the author
-    */
-    iconPath?: Uri;
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  iconPath?: Uri;
 }

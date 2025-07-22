@@ -7,18 +7,12 @@ package vscode
  */
 external interface NotebookEditorVisibleRangesChangeEvent {
     /**
-    // ORIGINAL SOURCE
-
-    /**
      * The {@link NotebookEditor notebook editor} for which the visible ranges have changed.
-    */
-    readonly notebookEditor: NotebookEditor;
+     */
+//  readonly notebookEditor: NotebookEditor;
 
     /**
      * The new value for the {@link NotebookEditor.visibleRanges notebook editor's visibleRanges}.
-    */
-    readonly visibleRanges: readonly NotebookRange[];
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  readonly visibleRanges: readonly NotebookRange[];
 }

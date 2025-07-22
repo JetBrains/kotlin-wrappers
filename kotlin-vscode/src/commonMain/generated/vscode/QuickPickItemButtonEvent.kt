@@ -11,17 +11,12 @@ external interface QuickPickItemButtonEvent<
         QuickPickItem,
         > {
     /**
-    // ORIGINAL SOURCE
-
-    /**
      * The button that was clicked.
-    */
-    readonly button: QuickInputButton;
+     */
+//  readonly button: QuickInputButton;
+
     /**
      * The item that the button belongs to.
-    */
-    readonly item: T;
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  readonly item: T;
 }

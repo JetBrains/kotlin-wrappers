@@ -8,10 +8,6 @@ package vscode
  */
 external interface DocumentHighlightProvider {
     /**
-    // ORIGINAL SOURCE
-
-
-    /**
      * Provide a set of document highlights, like all occurrences of a variable or
      * all exit-points of a function.
      *
@@ -20,9 +16,6 @@ external interface DocumentHighlightProvider {
      * @param token A cancellation token.
      * @returns An array of document highlights or a thenable that resolves to such. The lack of a result can be
      * signaled by returning `undefined`, `null`, or an empty array.
-    */
-    provideDocumentHighlights(document: TextDocument, position: Position, token: CancellationToken): ProviderResult<DocumentHighlight[]>;
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  provideDocumentHighlights(document: TextDocument, position: Position, token: CancellationToken): ProviderResult<DocumentHighlight[]>;
 }

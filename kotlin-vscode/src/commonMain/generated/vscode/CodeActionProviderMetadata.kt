@@ -7,17 +7,14 @@ package vscode
  */
 external interface CodeActionProviderMetadata {
     /**
-    // ORIGINAL SOURCE
-
-    /**
      * List of {@link CodeActionKind CodeActionKinds} that a {@link CodeActionProvider} may return.
      *
      * This list is used to determine if a given `CodeActionProvider` should be invoked or not.
      * To avoid unnecessary computation, every `CodeActionProvider` should list use `providedCodeActionKinds`. The
      * list of kinds may either be generic, such as `[CodeActionKind.Refactor]`, or list out every kind provided,
      * such as `[CodeActionKind.Refactor.Extract.append('function'), CodeActionKind.Refactor.Extract.append('constant'), ...]`.
-    */
-    readonly providedCodeActionKinds?: readonly CodeActionKind[];
+     */
+//  readonly providedCodeActionKinds?: readonly CodeActionKind[];
 
     /**
      * Static documentation for a class of code actions.
@@ -32,27 +29,26 @@ external interface CodeActionProviderMetadata {
      * - Any code actions of `kind` are returned by the provider.
      *
      * At most one documentation entry will be shown per provider.
-    */
+     */
+    /*
     readonly documentation?: ReadonlyArray<{
-    /**
-     * The kind of the code action being documented.
-     *
-     * If the kind is generic, such as `CodeActionKind.Refactor`, the documentation will be shown whenever any
-     * refactorings are returned. If the kind if more specific, such as `CodeActionKind.RefactorExtract`, the
-     * documentation will only be shown when extract refactoring code actions are returned.
-    */
-    readonly kind: CodeActionKind;
+        /**
+         * The kind of the code action being documented.
+         *
+         * If the kind is generic, such as `CodeActionKind.Refactor`, the documentation will be shown whenever any
+         * refactorings are returned. If the kind if more specific, such as `CodeActionKind.RefactorExtract`, the
+         * documentation will only be shown when extract refactoring code actions are returned.
+         */
+        readonly kind: CodeActionKind;
 
-    /**
-     * Command that displays the documentation to the user.
-     *
-     * This can display the documentation directly in the editor or open a website using {@linkcode env.openExternal};
-     *
-     * The title of this documentation code action is taken from {@linkcode Command.title}
-    */
-    readonly command: Command;
+        /**
+         * Command that displays the documentation to the user.
+         *
+         * This can display the documentation directly in the editor or open a website using {@linkcode env.openExternal};
+         *
+         * The title of this documentation code action is taken from {@linkcode Command.title}
+         */
+        readonly command: Command;
     }>;
-
-    // ORIGINAL SOURCE
-     **/
+    */
 }

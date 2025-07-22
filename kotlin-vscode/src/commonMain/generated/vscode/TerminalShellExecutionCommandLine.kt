@@ -7,12 +7,9 @@ package vscode
  */
 external interface TerminalShellExecutionCommandLine {
     /**
-    // ORIGINAL SOURCE
-
-    /**
      * The full command line that was executed, including both the command and its arguments.
-    */
-    readonly value: string;
+     */
+//  readonly value: string;
 
     /**
      * Whether the command line value came from a trusted source and is therefore safe to
@@ -23,15 +20,12 @@ external interface TerminalShellExecutionCommandLine {
      * This is `true` only when the command line was reported explicitly by the shell
      * integration script (ie. {@link TerminalShellExecutionCommandLineConfidence.High high confidence})
      * and it used a nonce for verification.
-    */
-    readonly isTrusted: boolean;
+     */
+//  readonly isTrusted: boolean;
 
     /**
      * The confidence of the command line value which is determined by how the value was
      * obtained. This depends upon the implementation of the shell integration script.
-    */
-    readonly confidence: TerminalShellExecutionCommandLineConfidence;
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  readonly confidence: TerminalShellExecutionCommandLineConfidence;
 }

@@ -11,19 +11,12 @@ package vscode
  */
 external interface TextEditorDecorationType {
     /**
-    // ORIGINAL SOURCE
-
-
-    /**
      * Internal representation of the handle.
-    */
-    readonly key: string;
+     */
+//  readonly key: string;
 
     /**
      * Remove this decoration type and all decorations on all text editors using it.
-    */
-    dispose(): void;
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  dispose(): void;
 }

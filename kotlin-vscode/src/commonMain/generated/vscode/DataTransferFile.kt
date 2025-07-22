@@ -9,25 +9,19 @@ package vscode
  */
 external interface DataTransferFile {
     /**
-    // ORIGINAL SOURCE
-
-    /**
      * The name of the file.
-    */
-    readonly name: string;
+     */
+//  readonly name: string;
 
     /**
      * The full file path of the file.
      *
      * May be `undefined` on web.
-    */
-    readonly uri?: Uri;
+     */
+//  readonly uri?: Uri;
 
     /**
      * The full file contents of the file.
-    */
-    data(): Thenable<Uint8Array>;
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  data(): Thenable<Uint8Array>;
 }

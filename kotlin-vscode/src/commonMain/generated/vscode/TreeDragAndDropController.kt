@@ -7,10 +7,6 @@ package vscode
  */
 external interface TreeDragAndDropController<T> {
     /**
-    // ORIGINAL SOURCE
-
-
-    /**
      * The mime types that the {@link TreeDragAndDropController.handleDrop `handleDrop`} method of this `DragAndDropController` supports.
      * This could be well-defined, existing, mime types, and also mime types defined by the extension.
      *
@@ -26,16 +22,16 @@ external interface TreeDragAndDropController<T> {
      * 3. Open the developer tools and drag the item with unknown mime type over your tree. The mime types will be logged to the developer console
      *
      * Note that mime types that cannot be sent to the extension will be omitted.
-    */
-    readonly dropMimeTypes: readonly string[];
+     */
+//  readonly dropMimeTypes: readonly string[];
 
     /**
      * The mime types that the {@link TreeDragAndDropController.handleDrag `handleDrag`} method of this `TreeDragAndDropController` may add to the tree data transfer.
      * This could be well-defined, existing, mime types, and also mime types defined by the extension.
      *
      * The recommended mime type of the tree (`application/vnd.code.tree.<treeidlowercase>`) will be automatically added.
-    */
-    readonly dragMimeTypes: readonly string[];
+     */
+//  readonly dragMimeTypes: readonly string[];
 
     /**
      * When the user starts dragging items from this `DragAndDropController`, `handleDrag` will be called.
@@ -54,8 +50,8 @@ external interface TreeDragAndDropController<T> {
      * @param source The source items for the drag and drop operation.
      * @param dataTransfer The data transfer associated with this drag.
      * @param token A cancellation token indicating that drag has been cancelled.
-    */
-    handleDrag?(source: readonly T[], dataTransfer: DataTransfer, token: CancellationToken): Thenable<void> | void;
+     */
+//  handleDrag?(source: readonly T[], dataTransfer: DataTransfer, token: CancellationToken): Thenable<void> | void;
 
     /**
      * Called when a drag and drop action results in a drop on the tree that this `DragAndDropController` belongs to.
@@ -65,9 +61,6 @@ external interface TreeDragAndDropController<T> {
      * @param target The target tree element that the drop is occurring on. When undefined, the target is the root.
      * @param dataTransfer The data transfer items of the source of the drag.
      * @param token A cancellation token indicating that the drop has been cancelled.
-    */
-    handleDrop?(target: T | undefined, dataTransfer: DataTransfer, token: CancellationToken): Thenable<void> | void;
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  handleDrop?(target: T | undefined, dataTransfer: DataTransfer, token: CancellationToken): Thenable<void> | void;
 }

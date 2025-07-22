@@ -7,23 +7,17 @@ package vscode
  */
 external interface DebugSessionCustomEvent {
     /**
-    // ORIGINAL SOURCE
-
-    /**
      * The {@link DebugSession debug session} for which the custom event was received.
-    */
-    readonly session: DebugSession;
+     */
+//  readonly session: DebugSession;
 
     /**
      * Type of event.
-    */
-    readonly event: string;
+     */
+//  readonly event: string;
 
     /**
      * Event specific information.
-    */
-    readonly body: any;
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  readonly body: any;
 }

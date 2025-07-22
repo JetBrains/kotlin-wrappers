@@ -8,10 +8,6 @@ package vscode
  */
 external interface OnTypeFormattingEditProvider {
     /**
-    // ORIGINAL SOURCE
-
-
-    /**
      * Provide formatting edits after a character has been typed.
      *
      * The given position and character should hint to the provider
@@ -25,9 +21,6 @@ external interface OnTypeFormattingEditProvider {
      * @param token A cancellation token.
      * @returns A set of text edits or a thenable that resolves to such. The lack of a result can be
      * signaled by returning `undefined`, `null`, or an empty array.
-    */
-    provideOnTypeFormattingEdits(document: TextDocument, position: Position, ch: string, options: FormattingOptions, token: CancellationToken): ProviderResult<TextEdit[]>;
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  provideOnTypeFormattingEdits(document: TextDocument, position: Position, ch: string, options: FormattingOptions, token: CancellationToken): ProviderResult<TextEdit[]>;
 }

@@ -7,36 +7,33 @@ package vscode
  */
 external interface CommentThread {
     /**
-    // ORIGINAL SOURCE
-
-    /**
      * The uri of the document the thread has been created on.
-    */
-    readonly uri: Uri;
+     */
+//  readonly uri: Uri;
 
     /**
      * The range the comment thread is located within the document. The thread icon will be shown
      * at the last line of the range. When set to undefined, the comment will be associated with the
      * file, and not a specific range.
-    */
-    range: Range | undefined;
+     */
+//  range: Range | undefined;
 
     /**
      * The ordered comments of the thread.
-    */
-    comments: readonly Comment[];
+     */
+//  comments: readonly Comment[];
 
     /**
      * Whether the thread should be collapsed or expanded when opening the document.
      * Defaults to Collapsed.
-    */
-    collapsibleState: CommentThreadCollapsibleState;
+     */
+//  collapsibleState: CommentThreadCollapsibleState;
 
     /**
      * Whether the thread supports reply.
      * Defaults to true.
-    */
-    canReply: boolean | CommentAuthorInformation;
+     */
+//  canReply: boolean | CommentAuthorInformation;
 
     /**
      * Context value of the comment thread. This can be used to contribute thread specific actions.
@@ -55,26 +52,23 @@ external interface CommentThread {
      * }
      * ```
      * This will show action `extension.deleteCommentThread` only for comment threads with `contextValue` is `editable`.
-    */
-    contextValue?: string;
+     */
+//  contextValue?: string;
 
     /**
      * The optional human-readable label describing the {@link CommentThread Comment Thread}
-    */
-    label?: string;
+     */
+//  label?: string;
 
     /**
      * The optional state of a comment thread, which may affect how the comment is displayed.
-    */
-    state?: CommentThreadState;
+     */
+//  state?: CommentThreadState;
 
     /**
      * Dispose this comment thread.
      *
      * Once disposed, this comment thread will be removed from visible editors and Comment Panel when appropriate.
-    */
-    dispose(): void;
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  dispose(): void;
 }

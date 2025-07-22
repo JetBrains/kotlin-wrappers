@@ -9,19 +9,13 @@ package vscode
  */
 open external class ChatResponseProgressPart {
     /**
-    // ORIGINAL SOURCE
-
-    /**
      * The progress message
-    */
-    value: string;
+     */
+//  value: string;
 
     /**
      * Create a new ChatResponseProgressPart.
      * @param value A progress message
-    */
-    constructor(value: string);
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  constructor(value: string);
 }

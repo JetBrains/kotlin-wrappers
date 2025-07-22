@@ -9,29 +9,25 @@ package vscode
  */
 open external class FileDecoration {
     /**
-    // ORIGINAL SOURCE
-
-
-    /**
      * A very short string that represents this decoration.
-    */
-    badge?: string;
+     */
+//  badge?: string;
 
     /**
      * A human-readable tooltip for this decoration.
-    */
-    tooltip?: string;
+     */
+//  tooltip?: string;
 
     /**
      * The color of this decoration.
-    */
-    color?: ThemeColor;
+     */
+//  color?: ThemeColor;
 
     /**
      * A flag expressing that this decoration should be
      * propagated to its parents.
-    */
-    propagate?: boolean;
+     */
+//  propagate?: boolean;
 
     /**
      * Creates a new decoration.
@@ -39,9 +35,6 @@ open external class FileDecoration {
      * @param badge A letter that represents the decoration.
      * @param tooltip The tooltip of the decoration.
      * @param color The color of the decoration.
-    */
-    constructor(badge?: string, tooltip?: string, color?: ThemeColor);
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  constructor(badge?: string, tooltip?: string, color?: ThemeColor);
 }

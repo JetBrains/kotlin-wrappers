@@ -10,13 +10,7 @@ package vscode
  */
 external interface CustomDocumentContentChangeEvent<T : CustomDocument> {
     /**
-    // ORIGINAL SOURCE
-
-    /**
      * The document that the change is for.
-    */
-    readonly document: T;
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  readonly document: T;
 }

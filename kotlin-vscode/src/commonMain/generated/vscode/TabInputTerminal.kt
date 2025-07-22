@@ -9,13 +9,7 @@ package vscode
  */
 open external class TabInputTerminal {
     /**
-    // ORIGINAL SOURCE
-
-    /**
      * Constructs a terminal tab input.
-    */
-    constructor();
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  constructor();
 }

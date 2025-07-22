@@ -7,25 +7,22 @@ package vscode
  */
 external interface TextDocumentContentChangeEvent {
     /**
-    // ORIGINAL SOURCE
-
-    /**
      * The range that got replaced.
-    */
-    readonly range: Range;
+     */
+//  readonly range: Range;
+
     /**
      * The offset of the range that got replaced.
-    */
-    readonly rangeOffset: number;
+     */
+//  readonly rangeOffset: number;
+
     /**
      * The length of the range that got replaced.
-    */
-    readonly rangeLength: number;
+     */
+//  readonly rangeLength: number;
+
     /**
      * The new text for the range.
-    */
-    readonly text: string;
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  readonly text: string;
 }

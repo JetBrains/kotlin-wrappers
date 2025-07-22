@@ -7,14 +7,11 @@ package vscode
  */
 external interface TerminalShellIntegration {
     /**
-    // ORIGINAL SOURCE
-
-    /**
      * The current working directory of the terminal. This {@link Uri} may represent a file on
      * another machine (eg. ssh into another machine). This requires the shell integration to
      * support working directory reporting.
-    */
-    readonly cwd: Uri | undefined;
+     */
+//  readonly cwd: Uri | undefined;
 
     /**
      * Execute a command, sending ^C as necessary to interrupt any running command if needed.
@@ -59,8 +56,8 @@ external interface TerminalShellIntegration {
      *   // Without shell integration, we can't know when the command has finished or what the
      *   // exit code was.
      * }
-    */
-    executeCommand(commandLine: string): TerminalShellExecution;
+     */
+//  executeCommand(commandLine: string): TerminalShellExecution;
 
     /**
      * Execute a command, sending ^C as necessary to interrupt any running command if needed.
@@ -115,9 +112,6 @@ external interface TerminalShellIntegration {
      *   // Without shell integration, we can't know when the command has finished or what the
      *   // exit code was.
      * }
-    */
-    executeCommand(executable: string, args: string[]): TerminalShellExecution;
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  executeCommand(executable: string, args: string[]): TerminalShellExecution;
 }

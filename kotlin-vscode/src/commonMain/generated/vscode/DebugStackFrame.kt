@@ -9,27 +9,22 @@ package vscode
  */
 open external class DebugStackFrame {
     /**
-    // ORIGINAL SOURCE
-
-    /**
      * Debug session for thread.
-    */
-    readonly session: DebugSession;
+     */
+//  readonly session: DebugSession;
 
     /**
      * ID of the associated thread in the debug protocol.
-    */
-    readonly threadId: number;
+     */
+//  readonly threadId: number;
+
     /**
      * ID of the stack frame in the debug protocol.
-    */
-    readonly frameId: number;
+     */
+//  readonly frameId: number;
 
     /**
      * @hidden
-    */
-    private constructor(session: DebugSession, threadId: number, frameId: number);
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  private constructor(session: DebugSession, threadId: number, frameId: number);
 }

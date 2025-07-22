@@ -8,25 +8,21 @@ package vscode
  */
 external interface SourceControlResourceState {
     /**
-    // ORIGINAL SOURCE
-
-
-    /**
      * The {@link Uri} of the underlying resource inside the workspace.
-    */
-    readonly resourceUri: Uri;
+     */
+//  readonly resourceUri: Uri;
 
     /**
      * The {@link Command} which should be run when the resource
      * state is open in the Source Control viewlet.
-    */
-    readonly command?: Command;
+     */
+//  readonly command?: Command;
 
     /**
      * The {@link SourceControlResourceDecorations decorations} for this source control
      * resource state.
-    */
-    readonly decorations?: SourceControlResourceDecorations;
+     */
+//  readonly decorations?: SourceControlResourceDecorations;
 
     /**
      * Context value of the resource state. This can be used to contribute resource specific actions.
@@ -45,9 +41,6 @@ external interface SourceControlResourceState {
      * }
      * ```
      * This will show action `extension.diff` only for resources with `contextValue` is `diffable`.
-    */
-    readonly contextValue?: string;
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  readonly contextValue?: string;
 }

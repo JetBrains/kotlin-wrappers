@@ -7,14 +7,7 @@ package vscode
  */
 external interface ColorTheme {
     /**
-    // ORIGINAL SOURCE
-
-
-    /**
      * The kind of this color theme: light, dark, high contrast dark and high contrast light.
-    */
-    readonly kind: ColorThemeKind;
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  readonly kind: ColorThemeKind;
 }

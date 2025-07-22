@@ -7,21 +7,17 @@ package vscode
  */
 external interface EnterAction {
     /**
-    // ORIGINAL SOURCE
-
-    /**
      * Describe what to do with the indentation.
-    */
-    indentAction: IndentAction;
+     */
+//  indentAction: IndentAction;
+
     /**
      * Describes text to be appended after the new line and after the indentation.
-    */
-    appendText?: string;
+     */
+//  appendText?: string;
+
     /**
      * Describes the number of characters to remove from the new line's indentation.
-    */
-    removeText?: number;
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  removeText?: number;
 }

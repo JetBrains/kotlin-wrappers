@@ -7,13 +7,7 @@ package vscode
  */
 external interface WorkspaceEditMetadata {
     /**
-    // ORIGINAL SOURCE
-
-    /**
      * Signal to the editor that this edit is a refactoring.
-    */
-    isRefactoring?: boolean;
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  isRefactoring?: boolean;
 }

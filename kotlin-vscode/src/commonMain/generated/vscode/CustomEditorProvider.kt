@@ -16,9 +16,6 @@ package vscode
 external interface CustomEditorProvider<T : CustomDocument> :
     CustomReadonlyEditorProvider<T> {
     /**
-    // ORIGINAL SOURCE
-
-    /**
      * Signal that an edit has occurred inside a custom editor.
      *
      * This event must be fired by your extension whenever an edit happens in a custom editor. An edit can be
@@ -37,8 +34,8 @@ external interface CustomEditorProvider<T : CustomDocument> :
      * `save` or `revert` the file.
      *
      * An editor should only ever fire `CustomDocumentEditEvent` events, or only ever fire `CustomDocumentContentChangeEvent` events.
-    */
-    readonly onDidChangeCustomDocument: Event<CustomDocumentEditEvent<T>> | Event<CustomDocumentContentChangeEvent<T>>;
+     */
+//  readonly onDidChangeCustomDocument: Event<CustomDocumentEditEvent<T>> | Event<CustomDocumentContentChangeEvent<T>>;
 
     /**
      * Save a custom document.
@@ -54,8 +51,8 @@ external interface CustomEditorProvider<T : CustomDocument> :
      * @param cancellation Token that signals the save is no longer required (for example, if another save was triggered).
      *
      * @returns Thenable signaling that saving has completed.
-    */
-    saveCustomDocument(document: T, cancellation: CancellationToken): Thenable<void>;
+     */
+//  saveCustomDocument(document: T, cancellation: CancellationToken): Thenable<void>;
 
     /**
      * Save a custom document to a different location.
@@ -70,8 +67,8 @@ external interface CustomEditorProvider<T : CustomDocument> :
      * @param cancellation Token that signals the save is no longer required.
      *
      * @returns Thenable signaling that saving has completed.
-    */
-    saveCustomDocumentAs(document: T, destination: Uri, cancellation: CancellationToken): Thenable<void>;
+     */
+//  saveCustomDocumentAs(document: T, destination: Uri, cancellation: CancellationToken): Thenable<void>;
 
     /**
      * Revert a custom document to its last saved state.
@@ -87,8 +84,8 @@ external interface CustomEditorProvider<T : CustomDocument> :
      * @param cancellation Token that signals the revert is no longer required.
      *
      * @returns Thenable signaling that the change has completed.
-    */
-    revertCustomDocument(document: T, cancellation: CancellationToken): Thenable<void>;
+     */
+//  revertCustomDocument(document: T, cancellation: CancellationToken): Thenable<void>;
 
     /**
      * Back up a dirty custom document.
@@ -110,9 +107,6 @@ external interface CustomEditorProvider<T : CustomDocument> :
      * extension to decided how to respond to cancellation. If for example your extension is backing up a large file
      * in an operation that takes time to complete, your extension may decide to finish the ongoing backup rather
      * than cancelling it to ensure that the editor has some valid backup.
-    */
-    backupCustomDocument(document: T, context: CustomDocumentBackupContext, cancellation: CancellationToken): Thenable<CustomDocumentBackup>;
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  backupCustomDocument(document: T, context: CustomDocumentBackupContext, cancellation: CancellationToken): Thenable<CustomDocumentBackup>;
 }

@@ -8,10 +8,6 @@ package vscode
  */
 external interface DocumentRangeFormattingEditProvider {
     /**
-    // ORIGINAL SOURCE
-
-
-    /**
      * Provide formatting edits for a range in a document.
      *
      * The given range is a hint and providers can decide to format a smaller
@@ -24,9 +20,8 @@ external interface DocumentRangeFormattingEditProvider {
      * @param token A cancellation token.
      * @returns A set of text edits or a thenable that resolves to such. The lack of a result can be
      * signaled by returning `undefined`, `null`, or an empty array.
-    */
-    provideDocumentRangeFormattingEdits(document: TextDocument, range: Range, options: FormattingOptions, token: CancellationToken): ProviderResult<TextEdit[]>;
-
+     */
+//  provideDocumentRangeFormattingEdits(document: TextDocument, range: Range, options: FormattingOptions, token: CancellationToken): ProviderResult<TextEdit[]>;
 
     /**
      * Provide formatting edits for multiple ranges in a document.
@@ -44,9 +39,6 @@ external interface DocumentRangeFormattingEditProvider {
      * @param token A cancellation token.
      * @returns A set of text edits or a thenable that resolves to such. The lack of a result can be
      * signaled by returning `undefined`, `null`, or an empty array.
-    */
-    provideDocumentRangesFormattingEdits?(document: TextDocument, ranges: Range[], options: FormattingOptions, token: CancellationToken): ProviderResult<TextEdit[]>;
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  provideDocumentRangesFormattingEdits?(document: TextDocument, ranges: Range[], options: FormattingOptions, token: CancellationToken): ProviderResult<TextEdit[]>;
 }

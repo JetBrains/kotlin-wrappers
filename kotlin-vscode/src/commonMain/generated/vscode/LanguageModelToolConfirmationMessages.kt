@@ -8,18 +8,12 @@ package vscode
  */
 external interface LanguageModelToolConfirmationMessages {
     /**
-    // ORIGINAL SOURCE
-
-    /**
      * The title of the confirmation message.
-    */
-    title: string;
+     */
+//  title: string;
 
     /**
      * The body of the confirmation message.
-    */
-    message: string | MarkdownString;
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  message: string | MarkdownString;
 }

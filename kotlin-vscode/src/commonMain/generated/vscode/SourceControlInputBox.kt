@@ -7,29 +7,22 @@ package vscode
  */
 external interface SourceControlInputBox {
     /**
-    // ORIGINAL SOURCE
-
-
-    /**
      * Setter and getter for the contents of the input box.
-    */
-    value: string;
+     */
+//  value: string;
 
     /**
      * A string to show as placeholder in the input box to guide the user.
-    */
-    placeholder: string;
+     */
+//  placeholder: string;
 
     /**
      * Controls whether the input box is enabled (default is `true`).
-    */
-    enabled: boolean;
+     */
+//  enabled: boolean;
 
     /**
      * Controls whether the input box is visible (default is `true`).
-    */
-    visible: boolean;
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  visible: boolean;
 }

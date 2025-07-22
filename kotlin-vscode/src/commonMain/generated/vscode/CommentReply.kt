@@ -7,18 +7,12 @@ package vscode
  */
 external interface CommentReply {
     /**
-    // ORIGINAL SOURCE
-
-    /**
      * The active {@link CommentThread comment thread}
-    */
-    thread: CommentThread;
+     */
+//  thread: CommentThread;
 
     /**
      * The value in the comment editor
-    */
-    text: string;
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  text: string;
 }

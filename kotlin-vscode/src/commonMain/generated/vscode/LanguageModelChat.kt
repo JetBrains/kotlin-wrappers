@@ -9,41 +9,37 @@ package vscode
  */
 external interface LanguageModelChat {
     /**
-    // ORIGINAL SOURCE
-
-
-    /**
      * Human-readable name of the language model.
-    */
-    readonly name: string;
+     */
+//  readonly name: string;
 
     /**
      * Opaque identifier of the language model.
-    */
-    readonly id: string;
+     */
+//  readonly id: string;
 
     /**
      * A well-known identifier of the vendor of the language model. An example is `copilot`, but
      * values are defined by extensions contributing chat models and need to be looked up with them.
-    */
-    readonly vendor: string;
+     */
+//  readonly vendor: string;
 
     /**
      * Opaque family-name of the language model. Values might be `gpt-3.5-turbo`, `gpt4`, `phi2`, or `llama`
      * but they are defined by extensions contributing languages and subject to change.
-    */
-    readonly family: string;
+     */
+//  readonly family: string;
 
     /**
      * Opaque version string of the model. This is defined by the extension contributing the language model
      * and subject to change.
-    */
-    readonly version: string;
+     */
+//  readonly version: string;
 
     /**
      * The maximum number of tokens that can be sent to the model in a single request.
-    */
-    readonly maxInputTokens: number;
+     */
+//  readonly maxInputTokens: number;
 
     /**
      * Make a chat request using a language model.
@@ -69,8 +65,8 @@ external interface LanguageModelChat {
      * @param options Options that control the request.
      * @param token A cancellation token which controls the request. See {@link CancellationTokenSource} for how to create one.
      * @returns A thenable that resolves to a {@link LanguageModelChatResponse}. The promise will reject when the request couldn't be made.
-    */
-    sendRequest(messages: LanguageModelChatMessage[], options?: LanguageModelChatRequestOptions, token?: CancellationToken): Thenable<LanguageModelChatResponse>;
+     */
+//  sendRequest(messages: LanguageModelChatMessage[], options?: LanguageModelChatRequestOptions, token?: CancellationToken): Thenable<LanguageModelChatResponse>;
 
     /**
      * Count the number of tokens in a message using the model specific tokenizer-logic.
@@ -78,9 +74,6 @@ external interface LanguageModelChat {
      * @param text A string or a message instance.
      * @param token Optional cancellation token.  See {@link CancellationTokenSource} for how to create one.
      * @returns A thenable that resolves to the number of tokens.
-    */
-    countTokens(text: string | LanguageModelChatMessage, token?: CancellationToken): Thenable<number>;
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  countTokens(text: string | LanguageModelChatMessage, token?: CancellationToken): Thenable<number>;
 }

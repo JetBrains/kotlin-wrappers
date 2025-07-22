@@ -11,41 +11,34 @@ package vscode
  */
 open external class SignatureInformation {
     /**
-    // ORIGINAL SOURCE
-
-
-    /**
      * The label of this signature. Will be shown in
      * the UI.
-    */
-    label: string;
+     */
+//  label: string;
 
     /**
      * The human-readable doc-comment of this signature. Will be shown
      * in the UI but can be omitted.
-    */
-    documentation?: string | MarkdownString;
+     */
+//  documentation?: string | MarkdownString;
 
     /**
      * The parameters of this signature.
-    */
-    parameters: ParameterInformation[];
+     */
+//  parameters: ParameterInformation[];
 
     /**
      * The index of the active parameter.
      *
      * If provided, this is used in place of {@linkcode SignatureHelp.activeParameter}.
-    */
-    activeParameter?: number;
+     */
+//  activeParameter?: number;
 
     /**
      * Creates a new signature information object.
      *
      * @param label A label string.
      * @param documentation A doc string.
-    */
-    constructor(label: string, documentation?: string | MarkdownString);
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  constructor(label: string, documentation?: string | MarkdownString);
 }

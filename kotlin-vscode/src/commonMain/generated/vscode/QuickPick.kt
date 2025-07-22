@@ -18,91 +18,84 @@ external interface QuickPick<
         > :
     QuickInput {
     /**
-    // ORIGINAL SOURCE
-
-
-    /**
      * Current value of the filter text.
-    */
-    value: string;
+     */
+//  value: string;
 
     /**
      * Optional placeholder shown in the filter textbox when no filter has been entered.
-    */
-    placeholder: string | undefined;
+     */
+//  placeholder: string | undefined;
 
     /**
      * An event signaling when the value of the filter text has changed.
-    */
-    readonly onDidChangeValue: Event<string>;
+     */
+//  readonly onDidChangeValue: Event<string>;
 
     /**
      * An event signaling when the user indicated acceptance of the selected item(s).
-    */
-    readonly onDidAccept: Event<void>;
+     */
+//  readonly onDidAccept: Event<void>;
 
     /**
      * Buttons for actions in the UI.
-    */
-    buttons: readonly QuickInputButton[];
+     */
+//  buttons: readonly QuickInputButton[];
 
     /**
      * An event signaling when a top level button (buttons stored in {@link buttons}) was triggered.
      * This event does not fire for buttons on a {@link QuickPickItem}.
-    */
-    readonly onDidTriggerButton: Event<QuickInputButton>;
+     */
+//  readonly onDidTriggerButton: Event<QuickInputButton>;
 
     /**
      * An event signaling when a button in a particular {@link QuickPickItem} was triggered.
      * This event does not fire for buttons in the title bar.
-    */
-    readonly onDidTriggerItemButton: Event<QuickPickItemButtonEvent<T>>;
+     */
+//  readonly onDidTriggerItemButton: Event<QuickPickItemButtonEvent<T>>;
 
     /**
      * Items to pick from. This can be read and updated by the extension.
-    */
-    items: readonly T[];
+     */
+//  items: readonly T[];
 
     /**
      * If multiple items can be selected at the same time. Defaults to false.
-    */
-    canSelectMany: boolean;
+     */
+//  canSelectMany: boolean;
 
     /**
      * If the filter text should also be matched against the description of the items. Defaults to false.
-    */
-    matchOnDescription: boolean;
+     */
+//  matchOnDescription: boolean;
 
     /**
      * If the filter text should also be matched against the detail of the items. Defaults to false.
-    */
-    matchOnDetail: boolean;
+     */
+//  matchOnDetail: boolean;
 
     /**
      * An optional flag to maintain the scroll position of the quick pick when the quick pick items are updated. Defaults to false.
-    */
-    keepScrollPosition?: boolean;
+     */
+//  keepScrollPosition?: boolean;
 
     /**
      * Active items. This can be read and updated by the extension.
-    */
-    activeItems: readonly T[];
+     */
+//  activeItems: readonly T[];
 
     /**
      * An event signaling when the active items have changed.
-    */
-    readonly onDidChangeActive: Event<readonly T[]>;
+     */
+//  readonly onDidChangeActive: Event<readonly T[]>;
 
     /**
      * Selected items. This can be read and updated by the extension.
-    */
-    selectedItems: readonly T[];
+     */
+//  selectedItems: readonly T[];
 
     /**
      * An event signaling when the selected items have changed.
-    */
-    readonly onDidChangeSelection: Event<readonly T[]>;
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  readonly onDidChangeSelection: Event<readonly T[]>;
 }

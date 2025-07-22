@@ -8,19 +8,12 @@ package vscode
  */
 external interface TaskProcessEndEvent {
     /**
-    // ORIGINAL SOURCE
-
-
-    /**
      * The task execution for which the process got started.
-    */
-    readonly execution: TaskExecution;
+     */
+//  readonly execution: TaskExecution;
 
     /**
      * The process's exit code. Will be `undefined` when the task is terminated.
-    */
-    readonly exitCode: number | undefined;
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  readonly exitCode: number | undefined;
 }

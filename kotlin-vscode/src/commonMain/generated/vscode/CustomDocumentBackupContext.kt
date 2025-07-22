@@ -7,9 +7,6 @@ package vscode
  */
 external interface CustomDocumentBackupContext {
     /**
-    // ORIGINAL SOURCE
-
-    /**
      * Suggested file location to write the new backup.
      *
      * Note that your extension is free to ignore this and use its own strategy for backup.
@@ -17,9 +14,6 @@ external interface CustomDocumentBackupContext {
      * If the editor is for a resource from the current workspace, `destination` will point to a file inside
      * `ExtensionContext.storagePath`. The parent folder of `destination` may not exist, so make sure to created it
      * before writing the backup to this location.
-    */
-    readonly destination: Uri;
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  readonly destination: Uri;
 }

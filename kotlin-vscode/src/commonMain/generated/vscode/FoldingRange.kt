@@ -10,20 +10,16 @@ package vscode
  */
 open external class FoldingRange {
     /**
-    // ORIGINAL SOURCE
-
-
-    /**
      * The zero-based start line of the range to fold. The folded area starts after the line's last character.
      * To be valid, the end must be zero or larger and smaller than the number of lines in the document.
-    */
-    start: number;
+     */
+//  start: number;
 
     /**
      * The zero-based end line of the range to fold. The folded area ends with the line's last character.
      * To be valid, the end must be zero or larger and smaller than the number of lines in the document.
-    */
-    end: number;
+     */
+//  end: number;
 
     /**
      * Describes the {@link FoldingRangeKind Kind} of the folding range such as {@link FoldingRangeKind.Comment Comment} or
@@ -31,8 +27,8 @@ open external class FoldingRange {
      * like 'Fold all comments'. See
      * {@link FoldingRangeKind} for an enumeration of all kinds.
      * If not set, the range is originated from a syntax element.
-    */
-    kind?: FoldingRangeKind;
+     */
+//  kind?: FoldingRangeKind;
 
     /**
      * Creates a new folding range.
@@ -40,9 +36,6 @@ open external class FoldingRange {
      * @param start The start line of the folded range.
      * @param end The end line of the folded range.
      * @param kind The kind of the folding range.
-    */
-    constructor(start: number, end: number, kind?: FoldingRangeKind);
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  constructor(start: number, end: number, kind?: FoldingRangeKind);
 }

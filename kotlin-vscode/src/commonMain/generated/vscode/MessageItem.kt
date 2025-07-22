@@ -12,13 +12,9 @@ package vscode
  */
 external interface MessageItem {
     /**
-    // ORIGINAL SOURCE
-
-
-    /**
      * A short title like 'Retry', 'Open Log' etc.
-    */
-    title: string;
+     */
+//  title: string;
 
     /**
      * A hint for modal dialogs that the item should be triggered
@@ -26,9 +22,6 @@ external interface MessageItem {
      * key).
      *
      * Note: this option is ignored for non-modal messages.
-    */
-    isCloseAffordance?: boolean;
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  isCloseAffordance?: boolean;
 }

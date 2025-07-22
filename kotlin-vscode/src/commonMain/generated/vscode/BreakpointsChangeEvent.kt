@@ -7,23 +7,17 @@ package vscode
  */
 external interface BreakpointsChangeEvent {
     /**
-    // ORIGINAL SOURCE
-
-    /**
      * Added breakpoints.
-    */
-    readonly added: readonly Breakpoint[];
+     */
+//  readonly added: readonly Breakpoint[];
 
     /**
      * Removed breakpoints.
-    */
-    readonly removed: readonly Breakpoint[];
+     */
+//  readonly removed: readonly Breakpoint[];
 
     /**
      * Changed breakpoints.
-    */
-    readonly changed: readonly Breakpoint[];
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  readonly changed: readonly Breakpoint[];
 }

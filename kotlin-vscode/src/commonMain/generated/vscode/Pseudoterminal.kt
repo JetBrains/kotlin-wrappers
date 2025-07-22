@@ -7,9 +7,6 @@ package vscode
  */
 external interface Pseudoterminal {
     /**
-    // ORIGINAL SOURCE
-
-    /**
      * An event that when fired will write data to the terminal. Unlike
      * {@link Terminal.sendText} which sends text to the underlying child
      * pseudo-device (the child), this will write the text to parent pseudo-device (the
@@ -35,8 +32,8 @@ external interface Pseudoterminal {
      * ```typescript
      * writeEmitter.fire('\x1b[10;20H*');
      * ```
-    */
-    onDidWrite: Event<string>;
+     */
+//  onDidWrite: Event<string>;
 
     /**
      * An event that when fired allows overriding the {@link Pseudoterminal.setDimensions dimensions} of the
@@ -63,8 +60,8 @@ external interface Pseudoterminal {
      * };
      * vscode.window.createTerminal({ name: 'My terminal', pty });
      * ```
-    */
-    onDidOverrideDimensions?: Event<TerminalDimensions | undefined>;
+     */
+//  onDidOverrideDimensions?: Event<TerminalDimensions | undefined>;
 
     /**
      * An event that when fired will signal that the pty is closed and dispose of the terminal.
@@ -95,8 +92,8 @@ external interface Pseudoterminal {
      * const terminal = vscode.window.createTerminal({ name: 'Exit example', pty });
      * terminal.show(true);
      * ```
-    */
-    onDidClose?: Event<void | number>;
+     */
+//  onDidClose?: Event<void | number>;
 
     /**
      * An event that when fired allows changing the name of the terminal.
@@ -115,21 +112,21 @@ external interface Pseudoterminal {
      * };
      * vscode.window.createTerminal({ name: 'My terminal', pty });
      * ```
-    */
-    onDidChangeName?: Event<string>;
+     */
+//  onDidChangeName?: Event<string>;
 
     /**
      * Implement to handle when the pty is open and ready to start firing events.
      *
      * @param initialDimensions The dimensions of the terminal, this will be undefined if the
      * terminal panel has not been opened before this is called.
-    */
-    open(initialDimensions: TerminalDimensions | undefined): void;
+     */
+//  open(initialDimensions: TerminalDimensions | undefined): void;
 
     /**
      * Implement to handle when the terminal is closed by an act of the user.
-    */
-    close(): void;
+     */
+//  close(): void;
 
     /**
      * Implement to handle incoming keystrokes in the terminal or when an extension calls
@@ -150,8 +147,8 @@ external interface Pseudoterminal {
      * };
      * vscode.window.createTerminal({ name: 'Local echo', pty });
      * ```
-    */
-    handleInput?(data: string): void;
+     */
+//  handleInput?(data: string): void;
 
     /**
      * Implement to handle when the number of rows and columns that fit into the terminal panel
@@ -165,9 +162,6 @@ external interface Pseudoterminal {
      * to react dimension changes.
      *
      * @param dimensions The new dimensions.
-    */
-    setDimensions?(dimensions: TerminalDimensions): void;
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  setDimensions?(dimensions: TerminalDimensions): void;
 }

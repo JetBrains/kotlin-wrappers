@@ -7,22 +7,18 @@ package vscode
  */
 external interface TextEditorSelectionChangeEvent {
     /**
-    // ORIGINAL SOURCE
+     * The {@link TextEditor text editor} for which the selections have changed.
+     */
+//  readonly textEditor: TextEditor;
 
     /**
-     * The {@link TextEditor text editor} for which the selections have changed.
-    */
-    readonly textEditor: TextEditor;
-    /**
      * The new value for the {@link TextEditor.selections text editor's selections}.
-    */
-    readonly selections: readonly Selection[];
+     */
+//  readonly selections: readonly Selection[];
+
     /**
      * The {@link TextEditorSelectionChangeKind change kind} which has triggered this
      * event. Can be `undefined`.
-    */
-    readonly kind: TextEditorSelectionChangeKind | undefined;
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  readonly kind: TextEditorSelectionChangeKind | undefined;
 }

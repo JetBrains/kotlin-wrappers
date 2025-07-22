@@ -10,33 +10,29 @@ package vscode
  */
 open external class SymbolInformation {
     /**
-    // ORIGINAL SOURCE
-
-
-    /**
      * The name of this symbol.
-    */
-    name: string;
+     */
+//  name: string;
 
     /**
      * The name of the symbol containing this symbol.
-    */
-    containerName: string;
+     */
+//  containerName: string;
 
     /**
      * The kind of this symbol.
-    */
-    kind: SymbolKind;
+     */
+//  kind: SymbolKind;
 
     /**
      * Tags for this symbol.
-    */
-    tags?: readonly SymbolTag[];
+     */
+//  tags?: readonly SymbolTag[];
 
     /**
      * The location of this symbol.
-    */
-    location: Location;
+     */
+//  location: Location;
 
     /**
      * Creates a new symbol information object.
@@ -45,8 +41,8 @@ open external class SymbolInformation {
      * @param kind The kind of the symbol.
      * @param containerName The name of the symbol containing the symbol.
      * @param location The location of the symbol.
-    */
-    constructor(name: string, kind: SymbolKind, containerName: string, location: Location);
+     */
+//  constructor(name: string, kind: SymbolKind, containerName: string, location: Location);
 
     /**
      * Creates a new symbol information object.
@@ -58,9 +54,6 @@ open external class SymbolInformation {
      * @param range The range of the location of the symbol.
      * @param uri The resource of the location of symbol, defaults to the current document.
      * @param containerName The name of the symbol containing the symbol.
-    */
-    constructor(name: string, kind: SymbolKind, range: Range, uri?: Uri, containerName?: string);
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  constructor(name: string, kind: SymbolKind, range: Range, uri?: Uri, containerName?: string);
 }

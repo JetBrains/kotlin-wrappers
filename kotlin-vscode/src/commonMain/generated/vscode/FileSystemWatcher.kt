@@ -16,42 +16,35 @@ package vscode
 external interface FileSystemWatcher :
     Disposable {
     /**
-    // ORIGINAL SOURCE
-
-
-    /**
      * true if this file system watcher has been created such that
      * it ignores creation file system events.
-    */
-    readonly ignoreCreateEvents: boolean;
+     */
+//  readonly ignoreCreateEvents: boolean;
 
     /**
      * true if this file system watcher has been created such that
      * it ignores change file system events.
-    */
-    readonly ignoreChangeEvents: boolean;
+     */
+//  readonly ignoreChangeEvents: boolean;
 
     /**
      * true if this file system watcher has been created such that
      * it ignores delete file system events.
-    */
-    readonly ignoreDeleteEvents: boolean;
+     */
+//  readonly ignoreDeleteEvents: boolean;
 
     /**
      * An event which fires on file/folder creation.
-    */
-    readonly onDidCreate: Event<Uri>;
+     */
+//  readonly onDidCreate: Event<Uri>;
 
     /**
      * An event which fires on file/folder change.
-    */
-    readonly onDidChange: Event<Uri>;
+     */
+//  readonly onDidChange: Event<Uri>;
 
     /**
      * An event which fires on file/folder deletion.
-    */
-    readonly onDidDelete: Event<Uri>;
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  readonly onDidDelete: Event<Uri>;
 }

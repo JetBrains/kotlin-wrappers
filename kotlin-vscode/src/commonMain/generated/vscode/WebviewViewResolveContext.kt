@@ -9,9 +9,6 @@ package vscode
  */
 external interface WebviewViewResolveContext<T> {
     /**
-    // ORIGINAL SOURCE
-
-    /**
      * Persisted state from the webview content.
      *
      * To save resources, the editor normally deallocates webview documents (the iframe content) that are not visible.
@@ -39,9 +36,6 @@ external interface WebviewViewResolveContext<T> {
      *
      * The editor ensures that the persisted state is saved correctly when a webview is hidden and across
      * editor restarts.
-    */
-    readonly state: T | undefined;
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  readonly state: T | undefined;
 }

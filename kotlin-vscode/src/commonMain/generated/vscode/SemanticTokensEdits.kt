@@ -10,28 +10,23 @@ package vscode
  */
 open external class SemanticTokensEdits {
     /**
-    // ORIGINAL SOURCE
-
-    /**
      * The result id of the tokens.
      *
      * This is the id that will be passed to `DocumentSemanticTokensProvider.provideDocumentSemanticTokensEdits` (if implemented).
-    */
-    readonly resultId: string | undefined;
+     */
+//  readonly resultId: string | undefined;
+
     /**
      * The edits to the tokens data.
      * All edits refer to the initial data state.
-    */
-    readonly edits: SemanticTokensEdit[];
+     */
+//  readonly edits: SemanticTokensEdit[];
 
     /**
      * Create new semantic tokens edits.
      *
      * @param edits An array of semantic token edits
      * @param resultId Result identifier.
-    */
-    constructor(edits: SemanticTokensEdit[], resultId?: string);
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  constructor(edits: SemanticTokensEdit[], resultId?: string);
 }

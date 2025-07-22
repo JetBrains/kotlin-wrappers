@@ -10,18 +10,12 @@ package vscode
  */
 open external class InlineCompletionList {
     /**
-    // ORIGINAL SOURCE
-
-    /**
      * The inline completion items.
-    */
-    items: InlineCompletionItem[];
+     */
+//  items: InlineCompletionItem[];
 
     /**
      * Creates a new list of inline completion items.
-    */
-    constructor(items: InlineCompletionItem[]);
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  constructor(items: InlineCompletionItem[]);
 }

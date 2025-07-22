@@ -10,19 +10,13 @@ package vscode
  */
 open external class LanguageModelPromptTsxPart {
     /**
-    // ORIGINAL SOURCE
-
-    /**
      * The value of the part.
-    */
-    value: unknown;
+     */
+//  value: unknown;
 
     /**
      * Construct a prompt-tsx part with the given content.
      * @param value The value of the part, the result of `renderPromptElementJSON` from `@vscode/prompt-tsx`.
-    */
-    constructor(value: unknown);
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  constructor(value: unknown);
 }

@@ -10,28 +10,24 @@ package vscode
 open external class Selection :
     Range {
     /**
-    // ORIGINAL SOURCE
-
-
-    /**
      * The position at which the selection starts.
      * This position might be before or after {@link Selection.active active}.
-    */
-    readonly anchor: Position;
+     */
+//  readonly anchor: Position;
 
     /**
      * The position of the cursor.
      * This position might be before or after {@link Selection.anchor anchor}.
-    */
-    readonly active: Position;
+     */
+//  readonly active: Position;
 
     /**
      * Create a selection from two positions.
      *
      * @param anchor A position.
      * @param active A position.
-    */
-    constructor(anchor: Position, active: Position);
+     */
+//  constructor(anchor: Position, active: Position);
 
     /**
      * Create a selection from four coordinates.
@@ -40,14 +36,11 @@ open external class Selection :
      * @param anchorCharacter A zero-based character value.
      * @param activeLine A zero-based line value.
      * @param activeCharacter A zero-based character value.
-    */
-    constructor(anchorLine: number, anchorCharacter: number, activeLine: number, activeCharacter: number);
+     */
+//  constructor(anchorLine: number, anchorCharacter: number, activeLine: number, activeCharacter: number);
 
     /**
      * A selection is reversed if its {@link Selection.anchor anchor} is the {@link Selection.end end} position.
-    */
-    readonly isReversed: boolean;
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  readonly isReversed: boolean;
 }

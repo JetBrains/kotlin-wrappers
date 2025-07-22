@@ -11,10 +11,6 @@ package vscode
  */
 external interface CustomTextEditorProvider {
     /**
-    // ORIGINAL SOURCE
-
-
-    /**
      * Resolve a custom editor for a given text resource.
      *
      * This is called when a user first opens a resource for a `CustomTextEditorProvider`, or if they reopen an
@@ -32,9 +28,6 @@ external interface CustomTextEditorProvider {
      * @param token A cancellation token that indicates the result is no longer needed.
      *
      * @returns Thenable indicating that the custom editor has been resolved.
-    */
-    resolveCustomTextEditor(document: TextDocument, webviewPanel: WebviewPanel, token: CancellationToken): Thenable<void> | void;
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  resolveCustomTextEditor(document: TextDocument, webviewPanel: WebviewPanel, token: CancellationToken): Thenable<void> | void;
 }

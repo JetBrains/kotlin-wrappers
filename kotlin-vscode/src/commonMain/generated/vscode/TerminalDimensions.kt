@@ -7,18 +7,12 @@ package vscode
  */
 external interface TerminalDimensions {
     /**
-    // ORIGINAL SOURCE
-
-    /**
      * The number of columns in the terminal.
-    */
-    readonly columns: number;
+     */
+//  readonly columns: number;
 
     /**
      * The number of rows in the terminal.
-    */
-    readonly rows: number;
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  readonly rows: number;
 }

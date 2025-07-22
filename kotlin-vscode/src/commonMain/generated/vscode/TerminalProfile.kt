@@ -9,19 +9,13 @@ package vscode
  */
 open external class TerminalProfile {
     /**
-    // ORIGINAL SOURCE
-
-    /**
      * The options that the terminal will launch with.
-    */
-    options: TerminalOptions | ExtensionTerminalOptions;
+     */
+//  options: TerminalOptions | ExtensionTerminalOptions;
 
     /**
      * Creates a new terminal profile.
      * @param options The options that the terminal will launch with.
-    */
-    constructor(options: TerminalOptions | ExtensionTerminalOptions);
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  constructor(options: TerminalOptions | ExtensionTerminalOptions);
 }

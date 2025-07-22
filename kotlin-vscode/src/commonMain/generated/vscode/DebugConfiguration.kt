@@ -7,28 +7,22 @@ package vscode
  */
 external interface DebugConfiguration {
     /**
-    // ORIGINAL SOURCE
-
-    /**
      * The type of the debug session.
-    */
-    type: string;
+     */
+//  type: string;
 
     /**
      * The name of the debug session.
-    */
-    name: string;
+     */
+//  name: string;
 
     /**
      * The request type of the debug session.
-    */
-    request: string;
+     */
+//  request: string;
 
     /**
      * Additional debug type specific properties.
-    */
-    [key: string]: any;
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  [key: string]: any;
 }

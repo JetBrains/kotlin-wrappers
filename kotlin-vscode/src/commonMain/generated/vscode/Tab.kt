@@ -9,46 +9,39 @@ package vscode
  */
 external interface Tab {
     /**
-    // ORIGINAL SOURCE
-
-
-    /**
      * The text displayed on the tab.
-    */
-    readonly label: string;
+     */
+//  readonly label: string;
 
     /**
      * The group which the tab belongs to.
-    */
-    readonly group: TabGroup;
+     */
+//  readonly group: TabGroup;
 
     /**
      * Defines the structure of the tab i.e. text, notebook, custom, etc.
      * Resource and other useful properties are defined on the tab kind.
-    */
-    readonly input: TabInputText | TabInputTextDiff | TabInputCustom | TabInputWebview | TabInputNotebook | TabInputNotebookDiff | TabInputTerminal | unknown;
+     */
+//  readonly input: TabInputText | TabInputTextDiff | TabInputCustom | TabInputWebview | TabInputNotebook | TabInputNotebookDiff | TabInputTerminal | unknown;
 
     /**
      * Whether or not the tab is currently active.
      * This is dictated by being the selected tab in the group.
-    */
-    readonly isActive: boolean;
+     */
+//  readonly isActive: boolean;
 
     /**
      * Whether or not the dirty indicator is present on the tab.
-    */
-    readonly isDirty: boolean;
+     */
+//  readonly isDirty: boolean;
 
     /**
      * Whether or not the tab is pinned (pin icon is present).
-    */
-    readonly isPinned: boolean;
+     */
+//  readonly isPinned: boolean;
 
     /**
      * Whether or not the tab is in preview mode.
-    */
-    readonly isPreview: boolean;
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  readonly isPreview: boolean;
 }

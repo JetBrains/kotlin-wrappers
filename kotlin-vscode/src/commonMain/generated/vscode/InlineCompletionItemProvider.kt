@@ -10,10 +10,6 @@ package vscode
  */
 external interface InlineCompletionItemProvider {
     /**
-    // ORIGINAL SOURCE
-
-
-    /**
      * Provides inline completion items for the given position and document.
      * If inline completions are enabled, this method will be called whenever the user stopped typing.
      * It will also be called when the user explicitly triggers inline completions or explicitly asks for the next or previous inline completion.
@@ -25,9 +21,6 @@ external interface InlineCompletionItemProvider {
      * @param context A context object with additional information.
      * @param token A cancellation token.
      * @returns An array of completion items or a thenable that resolves to an array of completion items.
-    */
-    provideInlineCompletionItems(document: TextDocument, position: Position, context: InlineCompletionContext, token: CancellationToken): ProviderResult<InlineCompletionItem[] | InlineCompletionList>;
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  provideInlineCompletionItems(document: TextDocument, position: Position, context: InlineCompletionContext, token: CancellationToken): ProviderResult<InlineCompletionItem[] | InlineCompletionList>;
 }

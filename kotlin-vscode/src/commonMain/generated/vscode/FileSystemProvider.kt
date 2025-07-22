@@ -16,10 +16,6 @@ package vscode
  */
 external interface FileSystemProvider {
     /**
-    // ORIGINAL SOURCE
-
-
-    /**
      * An event to signal that a resource has been created, changed, or deleted. This
      * event should fire for resources that are being {@link FileSystemProvider.watch watched}
      * by clients of this provider.
@@ -28,8 +24,8 @@ external interface FileSystemProvider {
      * updated `mtime` that advanced from the previous value in the {@link FileStat stat} and a
      * correct `size` value. Otherwise there may be optimizations in place that will not show
      * the change in an editor for example.
-    */
-    readonly onDidChangeFile: Event<FileChangeEvent[]>;
+     */
+//  readonly onDidChangeFile: Event<FileChangeEvent[]>;
 
     /**
      * Subscribes to file change events in the file or folder denoted by `uri`. For folders,
@@ -51,17 +47,19 @@ external interface FileSystemProvider {
      * @param uri The uri of the file or folder to be watched.
      * @param options Configures the watch.
      * @returns A disposable that tells the provider to stop watching the `uri`.
-    */
+     */
+    /*
     watch(uri: Uri, options: {
-    /**
-     * When enabled also watch subfolders.
-    */
-    readonly recursive: boolean;
-    /**
-     * A list of paths and pattern to exclude from watching.
-    */
-    readonly excludes: readonly string[];
+        /**
+         * When enabled also watch subfolders.
+         */
+        readonly recursive: boolean;
+        /**
+         * A list of paths and pattern to exclude from watching.
+         */
+        readonly excludes: readonly string[];
     }): Disposable;
+    */
 
     /**
      * Retrieve metadata about a file.
@@ -73,8 +71,8 @@ external interface FileSystemProvider {
      * @param uri The uri of the file to retrieve metadata about.
      * @returns The file metadata about the file.
      * @throws {@linkcode FileSystemError.FileNotFound FileNotFound} when `uri` doesn't exist.
-    */
-    stat(uri: Uri): FileStat | Thenable<FileStat>;
+     */
+//  stat(uri: Uri): FileStat | Thenable<FileStat>;
 
     /**
      * Retrieve all entries of a {@link FileType.Directory directory}.
@@ -82,8 +80,8 @@ external interface FileSystemProvider {
      * @param uri The uri of the folder.
      * @returns An array of name/type-tuples or a thenable that resolves to such.
      * @throws {@linkcode FileSystemError.FileNotFound FileNotFound} when `uri` doesn't exist.
-    */
-    readDirectory(uri: Uri): [string, FileType][] | Thenable<[string, FileType][]>;
+     */
+//  readDirectory(uri: Uri): [string, FileType][] | Thenable<[string, FileType][]>;
 
     /**
      * Create a new directory (Note, that new files are created via `write`-calls).
@@ -92,8 +90,8 @@ external interface FileSystemProvider {
      * @throws {@linkcode FileSystemError.FileNotFound FileNotFound} when the parent of `uri` doesn't exist, e.g. no mkdirp-logic required.
      * @throws {@linkcode FileSystemError.FileExists FileExists} when `uri` already exists.
      * @throws {@linkcode FileSystemError.NoPermissions NoPermissions} when permissions aren't sufficient.
-    */
-    createDirectory(uri: Uri): void | Thenable<void>;
+     */
+//  createDirectory(uri: Uri): void | Thenable<void>;
 
     /**
      * Read the entire contents of a file.
@@ -101,8 +99,8 @@ external interface FileSystemProvider {
      * @param uri The uri of the file.
      * @returns An array of bytes or a thenable that resolves to such.
      * @throws {@linkcode FileSystemError.FileNotFound FileNotFound} when `uri` doesn't exist.
-    */
-    readFile(uri: Uri): Uint8Array | Thenable<Uint8Array>;
+     */
+//  readFile(uri: Uri): Uint8Array | Thenable<Uint8Array>;
 
     /**
      * Write data to a file, replacing its entire contents.
@@ -114,17 +112,19 @@ external interface FileSystemProvider {
      * @throws {@linkcode FileSystemError.FileNotFound FileNotFound} when the parent of `uri` doesn't exist and `create` is set, e.g. no mkdirp-logic required.
      * @throws {@linkcode FileSystemError.FileExists FileExists} when `uri` already exists, `create` is set but `overwrite` is not set.
      * @throws {@linkcode FileSystemError.NoPermissions NoPermissions} when permissions aren't sufficient.
-    */
+     */
+    /*
     writeFile(uri: Uri, content: Uint8Array, options: {
-    /**
-     * Create the file if it does not exist already.
-    */
-    readonly create: boolean;
-    /**
-     * Overwrite the file if it does exist.
-    */
-    readonly overwrite: boolean;
+        /**
+         * Create the file if it does not exist already.
+         */
+        readonly create: boolean;
+        /**
+         * Overwrite the file if it does exist.
+         */
+        readonly overwrite: boolean;
     }): void | Thenable<void>;
+    */
 
     /**
      * Delete a file.
@@ -133,13 +133,15 @@ external interface FileSystemProvider {
      * @param options Defines if deletion of folders is recursive.
      * @throws {@linkcode FileSystemError.FileNotFound FileNotFound} when `uri` doesn't exist.
      * @throws {@linkcode FileSystemError.NoPermissions NoPermissions} when permissions aren't sufficient.
-    */
+     */
+    /*
     delete(uri: Uri, options: {
-    /**
-     * Delete the content recursively if a folder is denoted.
-    */
-    readonly recursive: boolean;
+        /**
+         * Delete the content recursively if a folder is denoted.
+         */
+        readonly recursive: boolean;
     }): void | Thenable<void>;
+    */
 
     /**
      * Rename a file or folder.
@@ -151,13 +153,15 @@ external interface FileSystemProvider {
      * @throws {@linkcode FileSystemError.FileNotFound FileNotFound} when parent of `newUri` doesn't exist, e.g. no mkdirp-logic required.
      * @throws {@linkcode FileSystemError.FileExists FileExists} when `newUri` exists and when the `overwrite` option is not `true`.
      * @throws {@linkcode FileSystemError.NoPermissions NoPermissions} when permissions aren't sufficient.
-    */
+     */
+    /*
     rename(oldUri: Uri, newUri: Uri, options: {
-    /**
-     * Overwrite the file if it does exist.
-    */
-    readonly overwrite: boolean;
+        /**
+         * Overwrite the file if it does exist.
+         */
+        readonly overwrite: boolean;
     }): void | Thenable<void>;
+    */
 
     /**
      * Copy files or folders. Implementing this function is optional but it will speedup
@@ -170,14 +174,13 @@ external interface FileSystemProvider {
      * @throws {@linkcode FileSystemError.FileNotFound FileNotFound} when parent of `destination` doesn't exist, e.g. no mkdirp-logic required.
      * @throws {@linkcode FileSystemError.FileExists FileExists} when `destination` exists and when the `overwrite` option is not `true`.
      * @throws {@linkcode FileSystemError.NoPermissions NoPermissions} when permissions aren't sufficient.
-    */
+     */
+    /*
     copy?(source: Uri, destination: Uri, options: {
-    /**
-     * Overwrite the file if it does exist.
-    */
-    readonly overwrite: boolean;
+        /**
+         * Overwrite the file if it does exist.
+         */
+        readonly overwrite: boolean;
     }): void | Thenable<void>;
-
-    // ORIGINAL SOURCE
-     **/
+    */
 }

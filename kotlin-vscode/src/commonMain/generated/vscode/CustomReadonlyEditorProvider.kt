@@ -14,10 +14,6 @@ package vscode
  */
 external interface CustomReadonlyEditorProvider<T : CustomDocument> {
     /**
-    // ORIGINAL SOURCE
-
-
-    /**
      * Create a new document for a given resource.
      *
      * `openCustomDocument` is called when the first time an editor for a given resource is opened. The opened
@@ -32,8 +28,8 @@ external interface CustomReadonlyEditorProvider<T : CustomDocument> {
      * @param token A cancellation token that indicates the result is no longer needed.
      *
      * @returns The custom document.
-    */
-    openCustomDocument(uri: Uri, openContext: CustomDocumentOpenContext, token: CancellationToken): Thenable<T> | T;
+     */
+//  openCustomDocument(uri: Uri, openContext: CustomDocumentOpenContext, token: CancellationToken): Thenable<T> | T;
 
     /**
      * Resolve a custom editor for a given resource.
@@ -51,9 +47,6 @@ external interface CustomReadonlyEditorProvider<T : CustomDocument> {
      * @param token A cancellation token that indicates the result is no longer needed.
      *
      * @returns Optional thenable indicating that the custom editor has been resolved.
-    */
-    resolveCustomEditor(document: T, webviewPanel: WebviewPanel, token: CancellationToken): Thenable<void> | void;
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  resolveCustomEditor(document: T, webviewPanel: WebviewPanel, token: CancellationToken): Thenable<void> | void;
 }

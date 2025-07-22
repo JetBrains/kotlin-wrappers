@@ -7,18 +7,12 @@ package vscode
  */
 external interface ChatResponseFileTree {
     /**
-    // ORIGINAL SOURCE
-
-    /**
      * The name of the file or directory.
-    */
-    name: string;
+     */
+//  name: string;
 
     /**
      * An array of child file trees, if the current file tree is a directory.
-    */
-    children?: ChatResponseFileTree[];
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  children?: ChatResponseFileTree[];
 }

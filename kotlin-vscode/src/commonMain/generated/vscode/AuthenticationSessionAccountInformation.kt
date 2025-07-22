@@ -7,18 +7,12 @@ package vscode
  */
 external interface AuthenticationSessionAccountInformation {
     /**
-    // ORIGINAL SOURCE
-
-    /**
      * The unique identifier of the account.
-    */
-    readonly id: string;
+     */
+//  readonly id: string;
 
     /**
      * The human-readable name of the account.
-    */
-    readonly label: string;
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  readonly label: string;
 }

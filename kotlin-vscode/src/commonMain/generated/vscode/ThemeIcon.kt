@@ -14,35 +14,29 @@ package vscode
  */
 open external class ThemeIcon {
     /**
-    // ORIGINAL SOURCE
-
-    /**
      * Reference to an icon representing a file. The icon is taken from the current file icon theme or a placeholder icon is used.
-    */
-    static readonly File: ThemeIcon;
+     */
+//  static readonly File: ThemeIcon;
 
     /**
      * Reference to an icon representing a folder. The icon is taken from the current file icon theme or a placeholder icon is used.
-    */
-    static readonly Folder: ThemeIcon;
+     */
+//  static readonly Folder: ThemeIcon;
 
     /**
      * The id of the icon. The available icons are listed in https://code.visualstudio.com/api/references/icons-in-labels#icon-listing.
-    */
-    readonly id: string;
+     */
+//  readonly id: string;
 
     /**
      * The optional ThemeColor of the icon. The color is currently only used in {@link TreeItem}.
-    */
-    readonly color?: ThemeColor | undefined;
+     */
+//  readonly color?: ThemeColor | undefined;
 
     /**
      * Creates a reference to a theme icon.
      * @param id id of the icon. The available icons are listed in https://code.visualstudio.com/api/references/icons-in-labels#icon-listing.
      * @param color optional `ThemeColor` for the icon. The color is currently only used in {@link TreeItem}.
-    */
-    constructor(id: string, color?: ThemeColor);
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  constructor(id: string, color?: ThemeColor);
 }

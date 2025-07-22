@@ -10,23 +10,18 @@ package vscode
  */
 open external class TestCoverageCount {
     /**
-    // ORIGINAL SOURCE
+     * Number of items covered in the file.
+     */
+//  covered: number;
 
     /**
-     * Number of items covered in the file.
-    */
-    covered: number;
-    /**
      * Total number of covered items in the file.
-    */
-    total: number;
+     */
+//  total: number;
 
     /**
      * @param covered Value for {@link TestCoverageCount.covered}
      * @param total Value for {@link TestCoverageCount.total}
-    */
-    constructor(covered: number, total: number);
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  constructor(covered: number, total: number);
 }

@@ -8,15 +8,8 @@ package vscode
  */
 external interface SourceControlResourceThemableDecorations {
     /**
-    // ORIGINAL SOURCE
-
-
-    /**
      * The icon path for a specific
      * {@link SourceControlResourceState source control resource state}.
-    */
-    readonly iconPath?: string | Uri | ThemeIcon;
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  readonly iconPath?: string | Uri | ThemeIcon;
 }

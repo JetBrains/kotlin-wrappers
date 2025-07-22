@@ -7,9 +7,6 @@ package vscode
  */
 external interface DebugAdapterDescriptorFactory {
     /**
-    // ORIGINAL SOURCE
-
-    /**
      * 'createDebugAdapterDescriptor' is called at the start of a debug session to provide details about the debug adapter to use.
      * These details must be returned as objects of type {@link DebugAdapterDescriptor}.
      * Currently two types of debug adapters are supported:
@@ -25,9 +22,6 @@ external interface DebugAdapterDescriptorFactory {
      * @param session The {@link DebugSession debug session} for which the debug adapter will be used.
      * @param executable The debug adapter's executable information as specified in the package.json (or undefined if no such information exists).
      * @returns a {@link DebugAdapterDescriptor debug adapter descriptor} or undefined.
-    */
-    createDebugAdapterDescriptor(session: DebugSession, executable: DebugAdapterExecutable | undefined): ProviderResult<DebugAdapterDescriptor>;
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  createDebugAdapterDescriptor(session: DebugSession, executable: DebugAdapterExecutable | undefined): ProviderResult<DebugAdapterDescriptor>;
 }

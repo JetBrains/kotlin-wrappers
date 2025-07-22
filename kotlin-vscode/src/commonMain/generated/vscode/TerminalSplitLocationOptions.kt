@@ -7,14 +7,8 @@ package vscode
  */
 external interface TerminalSplitLocationOptions {
     /**
-    // ORIGINAL SOURCE
-
-    /**
      * The parent terminal to split this terminal beside. This works whether the parent terminal
      * is in the panel or the editor area.
-    */
-    parentTerminal: Terminal;
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  parentTerminal: Terminal;
 }

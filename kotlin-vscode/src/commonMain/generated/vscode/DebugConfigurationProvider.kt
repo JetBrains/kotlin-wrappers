@@ -9,17 +9,14 @@ package vscode
  */
 external interface DebugConfigurationProvider {
     /**
-    // ORIGINAL SOURCE
-
-    /**
      * Provides {@link DebugConfiguration debug configuration} to the debug service. If more than one debug configuration provider is
      * registered for the same type, debug configurations are concatenated in arbitrary order.
      *
      * @param folder The workspace folder for which the configurations are used or `undefined` for a folderless setup.
      * @param token A cancellation token.
      * @returns An array of {@link DebugConfiguration debug configurations}.
-    */
-    provideDebugConfigurations?(folder: WorkspaceFolder | undefined, token?: CancellationToken): ProviderResult<DebugConfiguration[]>;
+     */
+//  provideDebugConfigurations?(folder: WorkspaceFolder | undefined, token?: CancellationToken): ProviderResult<DebugConfiguration[]>;
 
     /**
      * Resolves a {@link DebugConfiguration debug configuration} by filling in missing values or by adding/changing/removing attributes.
@@ -32,8 +29,8 @@ external interface DebugConfigurationProvider {
      * @param debugConfiguration The {@link DebugConfiguration debug configuration} to resolve.
      * @param token A cancellation token.
      * @returns The resolved debug configuration or undefined or null.
-    */
-    resolveDebugConfiguration?(folder: WorkspaceFolder | undefined, debugConfiguration: DebugConfiguration, token?: CancellationToken): ProviderResult<DebugConfiguration>;
+     */
+//  resolveDebugConfiguration?(folder: WorkspaceFolder | undefined, debugConfiguration: DebugConfiguration, token?: CancellationToken): ProviderResult<DebugConfiguration>;
 
     /**
      * This hook is directly called after 'resolveDebugConfiguration' but with all variables substituted.
@@ -47,9 +44,6 @@ external interface DebugConfigurationProvider {
      * @param debugConfiguration The {@link DebugConfiguration debug configuration} to resolve.
      * @param token A cancellation token.
      * @returns The resolved debug configuration or undefined or null.
-    */
-    resolveDebugConfigurationWithSubstitutedVariables?(folder: WorkspaceFolder | undefined, debugConfiguration: DebugConfiguration, token?: CancellationToken): ProviderResult<DebugConfiguration>;
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  resolveDebugConfigurationWithSubstitutedVariables?(folder: WorkspaceFolder | undefined, debugConfiguration: DebugConfiguration, token?: CancellationToken): ProviderResult<DebugConfiguration>;
 }

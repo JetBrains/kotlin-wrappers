@@ -9,14 +9,10 @@ package vscode
  */
 external interface InlineValuesProvider {
     /**
-    // ORIGINAL SOURCE
-
-
-    /**
      * An optional event to signal that inline values have changed.
      * @see {@link EventEmitter}
-    */
-    onDidChangeInlineValues?: Event<void> | undefined;
+     */
+//  onDidChangeInlineValues?: Event<void> | undefined;
 
     /**
      * Provide "inline value" information for a given document and range.
@@ -29,9 +25,6 @@ external interface InlineValuesProvider {
      * @param token A cancellation token.
      * @returns An array of InlineValueDescriptors or a thenable that resolves to such. The lack of a result can be
      * signaled by returning `undefined` or `null`.
-    */
-    provideInlineValues(document: TextDocument, viewPort: Range, context: InlineValueContext, token: CancellationToken): ProviderResult<InlineValue[]>;
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  provideInlineValues(document: TextDocument, viewPort: Range, context: InlineValueContext, token: CancellationToken): ProviderResult<InlineValue[]>;
 }

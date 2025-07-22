@@ -10,48 +10,41 @@ package vscode
  */
 open external class TaskGroup {
     /**
-    // ORIGINAL SOURCE
-
-
-    /**
      * The clean task group;
-    */
-    static Clean: TaskGroup;
+     */
+//  static Clean: TaskGroup;
 
     /**
      * The build task group;
-    */
-    static Build: TaskGroup;
+     */
+//  static Build: TaskGroup;
 
     /**
      * The rebuild all task group;
-    */
-    static Rebuild: TaskGroup;
+     */
+//  static Rebuild: TaskGroup;
 
     /**
      * The test all task group;
-    */
-    static Test: TaskGroup;
+     */
+//  static Test: TaskGroup;
 
     /**
      * Whether the task that is part of this group is the default for the group.
      * This property cannot be set through API, and is controlled by a user's task configurations.
-    */
-    readonly isDefault: boolean | undefined;
+     */
+//  readonly isDefault: boolean | undefined;
 
     /**
      * The ID of the task group. Is one of TaskGroup.Clean.id, TaskGroup.Build.id, TaskGroup.Rebuild.id, or TaskGroup.Test.id.
-    */
-    readonly id: string;
+     */
+//  readonly id: string;
 
     /**
      * Private constructor
      *
      * @param id Identifier of a task group.
      * @param label The human-readable name of a task group.
-    */
-    private constructor(id: string, label: string);
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  private constructor(id: string, label: string);
 }

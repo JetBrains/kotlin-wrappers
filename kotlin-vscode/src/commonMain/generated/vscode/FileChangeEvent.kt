@@ -7,19 +7,12 @@ package vscode
  */
 external interface FileChangeEvent {
     /**
-    // ORIGINAL SOURCE
-
-
-    /**
      * The type of change.
-    */
-    readonly type: FileChangeType;
+     */
+//  readonly type: FileChangeType;
 
     /**
      * The uri of the file that has changed.
-    */
-    readonly uri: Uri;
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  readonly uri: Uri;
 }

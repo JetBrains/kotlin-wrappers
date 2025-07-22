@@ -8,18 +8,12 @@ package vscode
 external interface DecorationInstanceRenderOptions :
     ThemableDecorationInstanceRenderOptions {
     /**
-    // ORIGINAL SOURCE
-
-    /**
      * Overwrite options for light themes.
-    */
-    light?: ThemableDecorationInstanceRenderOptions;
+     */
+//  light?: ThemableDecorationInstanceRenderOptions;
 
     /**
      * Overwrite options for dark themes.
-    */
-    dark?: ThemableDecorationInstanceRenderOptions;
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  dark?: ThemableDecorationInstanceRenderOptions;
 }

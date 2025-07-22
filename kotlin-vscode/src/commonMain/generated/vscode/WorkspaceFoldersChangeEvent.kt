@@ -7,18 +7,12 @@ package vscode
  */
 external interface WorkspaceFoldersChangeEvent {
     /**
-    // ORIGINAL SOURCE
-
-    /**
      * Added workspace folders.
-    */
-    readonly added: readonly WorkspaceFolder[];
+     */
+//  readonly added: readonly WorkspaceFolder[];
 
     /**
      * Removed workspace folders.
-    */
-    readonly removed: readonly WorkspaceFolder[];
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  readonly removed: readonly WorkspaceFolder[];
 }

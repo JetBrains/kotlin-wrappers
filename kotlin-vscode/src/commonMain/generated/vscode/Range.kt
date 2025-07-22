@@ -14,18 +14,14 @@ package vscode
  */
 open external class Range {
     /**
-    // ORIGINAL SOURCE
-
-
-    /**
      * The start position. It is before or equal to {@link Range.end end}.
-    */
-    readonly start: Position;
+     */
+//  readonly start: Position;
 
     /**
      * The end position. It is after or equal to {@link Range.start start}.
-    */
-    readonly end: Position;
+     */
+//  readonly end: Position;
 
     /**
      * Create a new range from two positions. If `start` is not
@@ -33,8 +29,8 @@ open external class Range {
      *
      * @param start A position.
      * @param end A position.
-    */
-    constructor(start: Position, end: Position);
+     */
+//  constructor(start: Position, end: Position);
 
     /**
      * Create a new range from number coordinates. It is a shorter equivalent of
@@ -44,18 +40,18 @@ open external class Range {
      * @param startCharacter A zero-based character value.
      * @param endLine A zero-based line value.
      * @param endCharacter A zero-based character value.
-    */
-    constructor(startLine: number, startCharacter: number, endLine: number, endCharacter: number);
+     */
+//  constructor(startLine: number, startCharacter: number, endLine: number, endCharacter: number);
 
     /**
      * `true` if `start` and `end` are equal.
-    */
-    isEmpty: boolean;
+     */
+//  isEmpty: boolean;
 
     /**
      * `true` if `start.line` and `end.line` are equal.
-    */
-    isSingleLine: boolean;
+     */
+//  isSingleLine: boolean;
 
     /**
      * Check if a position or a range is contained in this range.
@@ -63,8 +59,8 @@ open external class Range {
      * @param positionOrRange A position or a range.
      * @returns `true` if the position or range is inside or equal
      * to this range.
-    */
-    contains(positionOrRange: Position | Range): boolean;
+     */
+//  contains(positionOrRange: Position | Range): boolean;
 
     /**
      * Check if `other` equals this range.
@@ -72,8 +68,8 @@ open external class Range {
      * @param other A range.
      * @returns `true` when start and end are {@link Position.isEqual equal} to
      * start and end of this range.
-    */
-    isEqual(other: Range): boolean;
+     */
+//  isEqual(other: Range): boolean;
 
     /**
      * Intersect `range` with this range and returns a new range or `undefined`
@@ -82,16 +78,16 @@ open external class Range {
      * @param range A range.
      * @returns A range of the greater start and smaller end positions. Will
      * return undefined when there is no overlap.
-    */
-    intersection(range: Range): Range | undefined;
+     */
+//  intersection(range: Range): Range | undefined;
 
     /**
      * Compute the union of `other` with this range.
      *
      * @param other A range.
      * @returns A range of smaller start position and the greater end position.
-    */
-    union(other: Range): Range;
+     */
+//  union(other: Range): Range;
 
     /**
      * Derived a new range from this range.
@@ -100,8 +96,8 @@ open external class Range {
      * @param end A position that should be used as end. The default value is the {@link Range.end current end}.
      * @returns A range derived from this range with the given start and end position.
      * If start and end are not different `this` range will be returned.
-    */
-    with(start?: Position, end?: Position): Range;
+     */
+//  with(start?: Position, end?: Position): Range;
 
     /**
      * Derived a new range from this range.
@@ -109,18 +105,17 @@ open external class Range {
      * @param change An object that describes a change to this range.
      * @returns A range that reflects the given change. Will return `this` range if the change
      * is not changing anything.
-    */
+     */
+    /*
     with(change: {
-    /**
-     * New start position, defaults to {@link Range.start current start}
-    */
-    start?: Position;
-    /**
-     * New end position, defaults to {@link Range.end current end}
-    */
-    end?: Position;
+        /**
+         * New start position, defaults to {@link Range.start current start}
+         */
+        start?: Position;
+        /**
+         * New end position, defaults to {@link Range.end current end}
+         */
+        end?: Position;
     }): Range;
-
-    // ORIGINAL SOURCE
-     **/
+    */
 }

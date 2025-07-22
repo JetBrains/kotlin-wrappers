@@ -17,15 +17,11 @@ import js.iterable.JsIterable
 external interface DiagnosticCollection :
     JsIterable<Tuple2</* uri: */ Uri, /* diagnostics: */ ReadonlyArray<Diagnostic>>> {
     /**
-    // ORIGINAL SOURCE
-
-
-    /**
      * The name of this diagnostic collection, for instance `typescript`. Every diagnostic
      * from this collection will be associated with this name. Also, the task framework uses this
      * name when defining [problem matchers](https://code.visualstudio.com/docs/editor/tasks#_defining-a-problem-matcher).
-    */
-    readonly name: string;
+     */
+//  readonly name: string;
 
     /**
      * Assign diagnostics for given resource. Will replace
@@ -33,8 +29,8 @@ external interface DiagnosticCollection :
      *
      * @param uri A resource identifier.
      * @param diagnostics Array of diagnostics or `undefined`
-    */
-    set(uri: Uri, diagnostics: readonly Diagnostic[] | undefined): void;
+     */
+//  set(uri: Uri, diagnostics: readonly Diagnostic[] | undefined): void;
 
     /**
      * Replace diagnostics for multiple resources in this collection.
@@ -45,30 +41,30 @@ external interface DiagnosticCollection :
      * all previous but not subsequent diagnostics are removed.
      *
      * @param entries An array of tuples, like `[[file1, [d1, d2]], [file2, [d3, d4, d5]]]`, or `undefined`.
-    */
-    set(entries: ReadonlyArray<[Uri, readonly Diagnostic[] | undefined]>): void;
+     */
+//  set(entries: ReadonlyArray<[Uri, readonly Diagnostic[] | undefined]>): void;
 
     /**
      * Remove all diagnostics from this collection that belong
      * to the provided `uri`. The same as `#set(uri, undefined)`.
      *
      * @param uri A resource identifier.
-    */
-    delete(uri: Uri): void;
+     */
+//  delete(uri: Uri): void;
 
     /**
      * Remove all diagnostics from this collection. The same
      * as calling `#set(undefined)`;
-    */
-    clear(): void;
+     */
+//  clear(): void;
 
     /**
      * Iterate over each entry in this collection.
      *
      * @param callback Function to execute for each entry.
      * @param thisArg The `this` context used when invoking the handler function.
-    */
-    forEach(callback: (uri: Uri, diagnostics: readonly Diagnostic[], collection: DiagnosticCollection) => any, thisArg?: any): void;
+     */
+//  forEach(callback: (uri: Uri, diagnostics: readonly Diagnostic[], collection: DiagnosticCollection) => any, thisArg?: any): void;
 
     /**
      * Get the diagnostics for a given resource. *Note* that you cannot
@@ -76,8 +72,8 @@ external interface DiagnosticCollection :
      *
      * @param uri A resource identifier.
      * @returns An immutable array of {@link Diagnostic diagnostics} or `undefined`.
-    */
-    get(uri: Uri): readonly Diagnostic[] | undefined;
+     */
+//  get(uri: Uri): readonly Diagnostic[] | undefined;
 
     /**
      * Check if this collection contains diagnostics for a
@@ -85,15 +81,12 @@ external interface DiagnosticCollection :
      *
      * @param uri A resource identifier.
      * @returns `true` if this collection has diagnostic for the given resource.
-    */
-    has(uri: Uri): boolean;
+     */
+//  has(uri: Uri): boolean;
 
     /**
      * Dispose and free associated resources. Calls
      * {@link DiagnosticCollection.clear clear}.
-    */
-    dispose(): void;
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  dispose(): void;
 }

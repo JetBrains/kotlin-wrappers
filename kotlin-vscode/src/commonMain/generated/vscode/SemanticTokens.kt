@@ -11,28 +11,23 @@ package vscode
  */
 open external class SemanticTokens {
     /**
-    // ORIGINAL SOURCE
-
-    /**
      * The result id of the tokens.
      *
      * This is the id that will be passed to `DocumentSemanticTokensProvider.provideDocumentSemanticTokensEdits` (if implemented).
-    */
-    readonly resultId: string | undefined;
+     */
+//  readonly resultId: string | undefined;
+
     /**
      * The actual tokens data.
      * @see {@link DocumentSemanticTokensProvider.provideDocumentSemanticTokens provideDocumentSemanticTokens} for an explanation of the format.
-    */
-    readonly data: Uint32Array;
+     */
+//  readonly data: Uint32Array;
 
     /**
      * Create new semantic tokens.
      *
      * @param data Token data.
      * @param resultId Result identifier.
-    */
-    constructor(data: Uint32Array, resultId?: string);
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  constructor(data: Uint32Array, resultId?: string);
 }

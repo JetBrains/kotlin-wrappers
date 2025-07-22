@@ -10,27 +10,24 @@ package vscode
  */
 open external class TestMessage {
     /**
-    // ORIGINAL SOURCE
-
-    /**
      * Human-readable message text to display.
-    */
-    message: string | MarkdownString;
+     */
+//  message: string | MarkdownString;
 
     /**
      * Expected test output. If given with {@link TestMessage.actualOutput actualOutput }, a diff view will be shown.
-    */
-    expectedOutput?: string;
+     */
+//  expectedOutput?: string;
 
     /**
      * Actual test output. If given with {@link TestMessage.expectedOutput expectedOutput }, a diff view will be shown.
-    */
-    actualOutput?: string;
+     */
+//  actualOutput?: string;
 
     /**
      * Associated file location.
-    */
-    location?: Location;
+     */
+//  location?: Location;
 
     /**
      * Context value of the test item. This can be used to contribute message-
@@ -60,28 +57,25 @@ open external class TestMessage {
      * - `test`: the {@link TestItem} the message is associated with, *if* it
      *    is still present in the {@link TestController.items} collection.
      * - `message`: the {@link TestMessage} instance.
-    */
-    contextValue?: string;
+     */
+//  contextValue?: string;
 
     /**
      * The stack trace associated with the message or failure.
-    */
-    stackTrace?: TestMessageStackFrame[];
+     */
+//  stackTrace?: TestMessageStackFrame[];
 
     /**
      * Creates a new TestMessage that will present as a diff in the editor.
      * @param message Message to display to the user.
      * @param expected Expected output.
      * @param actual Actual output.
-    */
-    static diff(message: string | MarkdownString, expected: string, actual: string): TestMessage;
+     */
+//  static diff(message: string | MarkdownString, expected: string, actual: string): TestMessage;
 
     /**
      * Creates a new TestMessage instance.
      * @param message The message to show to the user.
-    */
-    constructor(message: string | MarkdownString);
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  constructor(message: string | MarkdownString);
 }

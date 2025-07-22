@@ -7,14 +7,7 @@ package vscode
  */
 external interface TreeViewVisibilityChangeEvent {
     /**
-    // ORIGINAL SOURCE
-
-
-    /**
      * `true` if the {@link TreeView tree view} is visible otherwise `false`.
-    */
-    readonly visible: boolean;
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  readonly visible: boolean;
 }

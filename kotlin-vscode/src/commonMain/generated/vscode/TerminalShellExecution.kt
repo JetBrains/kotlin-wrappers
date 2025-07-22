@@ -7,9 +7,6 @@ package vscode
  */
 external interface TerminalShellExecution {
     /**
-    // ORIGINAL SOURCE
-
-    /**
      * The command line that was executed. The {@link TerminalShellExecutionCommandLineConfidence confidence}
      * of this value depends on the specific shell's shell integration implementation. This
      * value may become more accurate after {@link window.onDidEndTerminalShellExecution} is
@@ -32,15 +29,15 @@ external interface TerminalShellExecution {
      *     `  Trusted: ${command.commandLine.isTrusted}
      *   ].join('\n');
      * }
-    */
-    readonly commandLine: TerminalShellExecutionCommandLine;
+     */
+//  readonly commandLine: TerminalShellExecutionCommandLine;
 
     /**
      * The working directory that was reported by the shell when this command executed. This
      * {@link Uri} may represent a file on another machine (eg. ssh into another machine). This
      * requires the shell integration to support working directory reporting.
-    */
-    readonly cwd: Uri | undefined;
+     */
+//  readonly cwd: Uri | undefined;
 
     /**
      * Creates a stream of raw data (including escape sequences) that is written to the
@@ -56,9 +53,6 @@ external interface TerminalShellExecution {
      * for await (const data of stream) {
      *   console.log(data);
      * }
-    */
-    read(): AsyncIterable<string>;
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  read(): AsyncIterable<string>;
 }

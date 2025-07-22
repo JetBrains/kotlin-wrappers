@@ -11,24 +11,17 @@ package vscode
  */
 open external class SignatureHelp {
     /**
-    // ORIGINAL SOURCE
-
-
-    /**
      * One or more signatures.
-    */
-    signatures: SignatureInformation[];
+     */
+//  signatures: SignatureInformation[];
 
     /**
      * The active signature.
-    */
-    activeSignature: number;
+     */
+//  activeSignature: number;
 
     /**
      * The active parameter of the active signature.
-    */
-    activeParameter: number;
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  activeParameter: number;
 }

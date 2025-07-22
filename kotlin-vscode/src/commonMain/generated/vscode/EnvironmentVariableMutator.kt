@@ -7,23 +7,17 @@ package vscode
  */
 external interface EnvironmentVariableMutator {
     /**
-    // ORIGINAL SOURCE
-
-    /**
      * The type of mutation that will occur to the variable.
-    */
-    readonly type: EnvironmentVariableMutatorType;
+     */
+//  readonly type: EnvironmentVariableMutatorType;
 
     /**
      * The value to use for the variable.
-    */
-    readonly value: string;
+     */
+//  readonly value: string;
 
     /**
      * Options applied to the mutator.
-    */
-    readonly options: EnvironmentVariableMutatorOptions;
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  readonly options: EnvironmentVariableMutatorOptions;
 }

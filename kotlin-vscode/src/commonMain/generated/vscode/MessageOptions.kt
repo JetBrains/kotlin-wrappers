@@ -11,20 +11,13 @@ package vscode
  */
 external interface MessageOptions {
     /**
-    // ORIGINAL SOURCE
-
-
-    /**
      * Indicates that this message should be modal.
-    */
-    modal?: boolean;
+     */
+//  modal?: boolean;
 
     /**
      * Human-readable detail message that is rendered less prominent. _Note_ that detail
      * is only shown for {@link MessageOptions.modal modal} messages.
-    */
-    detail?: string;
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  detail?: string;
 }

@@ -10,21 +10,15 @@ package vscode
  */
 external interface CustomDocument {
     /**
-    // ORIGINAL SOURCE
-
-    /**
      * The associated uri for this document.
-    */
-    readonly uri: Uri;
+     */
+//  readonly uri: Uri;
 
     /**
      * Dispose of the custom document.
      *
      * This is invoked by the editor when there are no more references to a given `CustomDocument` (for example when
      * all editors associated with the document have been closed.)
-    */
-    dispose(): void;
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  dispose(): void;
 }

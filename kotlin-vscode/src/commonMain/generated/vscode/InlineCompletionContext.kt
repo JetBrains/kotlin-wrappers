@@ -7,12 +7,9 @@ package vscode
  */
 external interface InlineCompletionContext {
     /**
-    // ORIGINAL SOURCE
-
-    /**
      * Describes how the inline completion was triggered.
-    */
-    readonly triggerKind: InlineCompletionTriggerKind;
+     */
+//  readonly triggerKind: InlineCompletionTriggerKind;
 
     /**
      * Provides information about the currently selected item in the autocomplete widget if it is visible.
@@ -23,9 +20,6 @@ external interface InlineCompletionContext {
      * the inline completion must also replace `.` and start with `.log`, for example `.log()`.
      *
      * Inline completion providers are requested again whenever the selected item changes.
-    */
-    readonly selectedCompletionInfo: SelectedCompletionInfo | undefined;
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  readonly selectedCompletionInfo: SelectedCompletionInfo | undefined;
 }

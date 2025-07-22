@@ -7,13 +7,7 @@ package vscode
  */
 external interface AuthenticationSessionsChangeEvent {
     /**
-    // ORIGINAL SOURCE
-
-    /**
      * The {@link AuthenticationProvider} that has had its sessions change.
-    */
-    readonly provider: AuthenticationProviderInformation;
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  readonly provider: AuthenticationProviderInformation;
 }

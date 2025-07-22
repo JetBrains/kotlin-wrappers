@@ -12,28 +12,23 @@ package vscode
  * In this case the range is still used to highlight the range in the document.
  */
 open external class EvaluatableExpression {
-    /**
-    // ORIGINAL SOURCE
-
-
     /*
      * The range is used to extract the evaluatable expression from the underlying document and to highlight it.
-    */
+     */
+    /*
     readonly range: Range;
 
     /*
      * If specified the expression overrides the extracted expression.
-    */
+     */
     readonly expression?: string | undefined;
+    */
 
     /**
      * Creates a new evaluatable expression object.
      *
      * @param range The range in the underlying document from which the evaluatable expression is extracted.
      * @param expression If specified overrides the extracted expression.
-    */
-    constructor(range: Range, expression?: string);
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  constructor(range: Range, expression?: string);
 }

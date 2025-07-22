@@ -10,27 +10,20 @@ package vscode
  */
 open external class SelectionRange {
     /**
-    // ORIGINAL SOURCE
-
-
-    /**
      * The {@link Range} of this selection range.
-    */
-    range: Range;
+     */
+//  range: Range;
 
     /**
      * The parent selection range containing this range.
-    */
-    parent?: SelectionRange;
+     */
+//  parent?: SelectionRange;
 
     /**
      * Creates a new selection range.
      *
      * @param range The range of the selection range.
      * @param parent The parent of the selection range.
-    */
-    constructor(range: Range, parent?: SelectionRange);
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  constructor(range: Range, parent?: SelectionRange);
 }

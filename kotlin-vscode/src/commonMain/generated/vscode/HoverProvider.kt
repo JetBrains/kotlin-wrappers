@@ -8,10 +8,6 @@ package vscode
  */
 external interface HoverProvider {
     /**
-    // ORIGINAL SOURCE
-
-
-    /**
      * Provide a hover for the given position and document. Multiple hovers at the same
      * position will be merged by the editor. A hover can have a range which defaults
      * to the word range at the position when omitted.
@@ -21,9 +17,6 @@ external interface HoverProvider {
      * @param token A cancellation token.
      * @returns A hover or a thenable that resolves to such. The lack of a result can be
      * signaled by returning `undefined` or `null`.
-    */
-    provideHover(document: TextDocument, position: Position, token: CancellationToken): ProviderResult<Hover>;
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  provideHover(document: TextDocument, position: Position, token: CancellationToken): ProviderResult<Hover>;
 }

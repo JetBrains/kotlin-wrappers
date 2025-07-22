@@ -12,32 +12,29 @@ package vscode
  */
 external interface OpenDialogOptions {
     /**
-    // ORIGINAL SOURCE
-
-    /**
      * The resource the dialog shows when opened.
-    */
-    defaultUri?: Uri;
+     */
+//  defaultUri?: Uri;
 
     /**
      * A human-readable string for the open button.
-    */
-    openLabel?: string;
+     */
+//  openLabel?: string;
 
     /**
      * Allow to select files, defaults to `true`.
-    */
-    canSelectFiles?: boolean;
+     */
+//  canSelectFiles?: boolean;
 
     /**
      * Allow to select folders, defaults to `false`.
-    */
-    canSelectFolders?: boolean;
+     */
+//  canSelectFolders?: boolean;
 
     /**
      * Allow to select many files or folders.
-    */
-    canSelectMany?: boolean;
+     */
+//  canSelectMany?: boolean;
 
     /**
      * A set of file filters that are used by the dialog. Each entry is a human-readable label,
@@ -48,17 +45,14 @@ external interface OpenDialogOptions {
      * 	'TypeScript': ['ts', 'tsx']
      * }
      * ```
-    */
-    filters?: { [name: string]: string[] };
+     */
+//  filters?: { [name: string]: string[] };
 
     /**
      * Dialog title.
      *
      * This parameter might be ignored, as not all operating systems display a title on open dialogs
      * (for example, macOS).
-    */
-    title?: string;
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  title?: string;
 }

@@ -9,31 +9,25 @@ package vscode
  */
 open external class TestMessageStackFrame {
     /**
-    // ORIGINAL SOURCE
-
-    /**
      * The location of this stack frame. This should be provided as a URI if the
      * location of the call frame can be accessed by the editor.
-    */
-    uri?: Uri;
+     */
+//  uri?: Uri;
 
     /**
      * Position of the stack frame within the file.
-    */
-    position?: Position;
+     */
+//  position?: Position;
 
     /**
      * The name of the stack frame, typically a method or function name.
-    */
-    label: string;
+     */
+//  label: string;
 
     /**
      * @param label The name of the stack frame
      * @param file The file URI of the stack frame
      * @param position The position of the stack frame within the file
-    */
-    constructor(label: string, uri?: Uri, position?: Position);
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  constructor(label: string, uri?: Uri, position?: Position);
 }

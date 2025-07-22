@@ -8,10 +8,6 @@ package vscode
  */
 external interface RenameProvider {
     /**
-    // ORIGINAL SOURCE
-
-
-    /**
      * Provide an edit that describes changes that have to be made to one
      * or many resources to rename a symbol to a different name.
      *
@@ -21,8 +17,8 @@ external interface RenameProvider {
      * @param token A cancellation token.
      * @returns A workspace edit or a thenable that resolves to such. The lack of a result can be
      * signaled by returning `undefined` or `null`.
-    */
-    provideRenameEdits(document: TextDocument, position: Position, newName: string, token: CancellationToken): ProviderResult<WorkspaceEdit>;
+     */
+//  provideRenameEdits(document: TextDocument, position: Position, newName: string, token: CancellationToken): ProviderResult<WorkspaceEdit>;
 
     /**
      * Optional function for resolving and validating a position *before* running rename. The result can
@@ -36,18 +32,17 @@ external interface RenameProvider {
      * @param position The position at which rename will be invoked.
      * @param token A cancellation token.
      * @returns The range or range and placeholder text of the identifier that is to be renamed. The lack of a result can signaled by returning `undefined` or `null`.
-    */
+     */
+    /*
     prepareRename?(document: TextDocument, position: Position, token: CancellationToken): ProviderResult<Range | {
-    /**
-     * The range of the identifier that can be renamed.
-    */
-    range: Range;
-    /**
-     * The placeholder of the editors rename input box.
-    */
-    placeholder: string;
+        /**
+         * The range of the identifier that can be renamed.
+         */
+        range: Range;
+        /**
+         * The placeholder of the editors rename input box.
+         */
+        placeholder: string;
     }>;
-
-    // ORIGINAL SOURCE
-     **/
+    */
 }

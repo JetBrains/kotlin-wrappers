@@ -10,10 +10,6 @@ package vscode
  */
 open external class Uri {
     /**
-    // ORIGINAL SOURCE
-
-
-    /**
      * Create an URI from a string, e.g. `http://www.example.com/some/path`,
      * `file:///usr/home`, or `scheme:with/path`.
      *
@@ -25,8 +21,8 @@ open external class Uri {
      * @param value The string value of an Uri.
      * @param strict Throw an error when `value` is empty or when no `scheme` can be parsed.
      * @returns A new Uri instance.
-    */
-    static parse(value: string, strict?: boolean): Uri;
+     */
+//  static parse(value: string, strict?: boolean): Uri;
 
     /**
      * Create an URI from a file system path. The {@link Uri.scheme scheme}
@@ -50,8 +46,8 @@ open external class Uri {
      *
      * @param path A file system or UNC path.
      * @returns A new Uri instance.
-    */
-    static file(path: string): Uri;
+     */
+//  static file(path: string): Uri;
 
     /**
      * Create a new uri which path is the result of joining
@@ -72,8 +68,8 @@ open external class Uri {
      * @param base An uri. Must have a path.
      * @param pathSegments One more more path fragments
      * @returns A new uri which path is joined with the given fragments
-    */
-    static joinPath(base: Uri, ...pathSegments: string[]): Uri;
+     */
+//  static joinPath(base: Uri, ...pathSegments: string[]): Uri;
 
     /**
      * Create an URI from its component parts
@@ -81,61 +77,63 @@ open external class Uri {
      * @see {@link Uri.toString}
      * @param components The component parts of an Uri.
      * @returns A new Uri instance.
-    */
+     */
+    /*
     static from(components: {
-    /**
-     * The scheme of the uri
-    */
-    readonly scheme: string;
-    /**
-     * The authority of the uri
-    */
-    readonly authority?: string;
-    /**
-     * The path of the uri
-    */
-    readonly path?: string;
-    /**
-     * The query string of the uri
-    */
-    readonly query?: string;
-    /**
-     * The fragment identifier of the uri
-    */
-    readonly fragment?: string;
+        /**
+         * The scheme of the uri
+         */
+        readonly scheme: string;
+        /**
+         * The authority of the uri
+         */
+        readonly authority?: string;
+        /**
+         * The path of the uri
+         */
+        readonly path?: string;
+        /**
+         * The query string of the uri
+         */
+        readonly query?: string;
+        /**
+         * The fragment identifier of the uri
+         */
+        readonly fragment?: string;
     }): Uri;
+    */
 
     /**
      * Use the `file` and `parse` factory functions to create new `Uri` objects.
-    */
-    private constructor(scheme: string, authority: string, path: string, query: string, fragment: string);
+     */
+//  private constructor(scheme: string, authority: string, path: string, query: string, fragment: string);
 
     /**
      * Scheme is the `http` part of `http://www.example.com/some/path?query#fragment`.
      * The part before the first colon.
-    */
-    readonly scheme: string;
+     */
+//  readonly scheme: string;
 
     /**
      * Authority is the `www.example.com` part of `http://www.example.com/some/path?query#fragment`.
      * The part between the first double slashes and the next slash.
-    */
-    readonly authority: string;
+     */
+//  readonly authority: string;
 
     /**
      * Path is the `/some/path` part of `http://www.example.com/some/path?query#fragment`.
-    */
-    readonly path: string;
+     */
+//  readonly path: string;
 
     /**
      * Query is the `query` part of `http://www.example.com/some/path?query#fragment`.
-    */
-    readonly query: string;
+     */
+//  readonly query: string;
 
     /**
      * Fragment is the `fragment` part of `http://www.example.com/some/path?query#fragment`.
-    */
-    readonly fragment: string;
+     */
+//  readonly fragment: string;
 
     /**
      * The string representing the corresponding file system path of this Uri.
@@ -156,8 +154,8 @@ open external class Uri {
      * u.path === '/c$/folder/file.txt'
      * u.fsPath === '\\server\c$\folder\file.txt'
      * ```
-    */
-    readonly fsPath: string;
+     */
+//  readonly fsPath: string;
 
     /**
      * Derive a new Uri from this Uri.
@@ -172,29 +170,31 @@ open external class Uri {
      *  the empty string.
      * @returns A new Uri that reflects the given change. Will return `this` Uri if the change
      *  is not changing anything.
-    */
+     */
+    /*
     with(change: {
-    /**
-     * The new scheme, defaults to this Uri's scheme.
-    */
-    scheme?: string;
-    /**
-     * The new authority, defaults to this Uri's authority.
-    */
-    authority?: string;
-    /**
-     * The new path, defaults to this Uri's path.
-    */
-    path?: string;
-    /**
-     * The new query, defaults to this Uri's query.
-    */
-    query?: string;
-    /**
-     * The new fragment, defaults to this Uri's fragment.
-    */
-    fragment?: string;
+        /**
+         * The new scheme, defaults to this Uri's scheme.
+         */
+        scheme?: string;
+        /**
+         * The new authority, defaults to this Uri's authority.
+         */
+        authority?: string;
+        /**
+         * The new path, defaults to this Uri's path.
+         */
+        path?: string;
+        /**
+         * The new query, defaults to this Uri's query.
+         */
+        query?: string;
+        /**
+         * The new fragment, defaults to this Uri's fragment.
+         */
+        fragment?: string;
     }): Uri;
+    */
 
     /**
      * Returns a string representation of this Uri. The representation and normalization
@@ -212,16 +212,13 @@ open external class Uri {
      * @param skipEncoding Do not percentage-encode the result, defaults to `false`. Note that
      *	the `#` and `?` characters occurring in the path will always be encoded.
      * @returns A string representation of this Uri.
-    */
-    toString(skipEncoding?: boolean): string;
+     */
+//  toString(skipEncoding?: boolean): string;
 
     /**
      * Returns a JSON representation of this Uri.
      *
      * @returns An object.
-    */
-    toJSON(): any;
-
-    // ORIGINAL SOURCE
-     **/
+     */
+//  toJSON(): any;
 }
