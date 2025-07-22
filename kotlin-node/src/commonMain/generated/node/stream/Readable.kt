@@ -177,7 +177,6 @@ open external class Readable :
      * @since v0.9.4
      * @param size Optional argument to specify how much data to read.
      */
-
     @JsName("read")
     open fun readOrNull(size: Number = definedExternally): Any?
 

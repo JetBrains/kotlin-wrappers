@@ -107,6 +107,11 @@ suspend fun main() {
                 convertNumberParameter,
                 convertNumbers,
                 convertObjectParam,
+                convertObjectTypeReferenceNode,
+                convertOverriddenFsOptionPropertySignature,
+                convertOverriddenMethodDeclaration,
+                convertOverriddenPropertyDeclaration,
+                convertOverriddenPropertySignature,
                 // ---
                 convertTestContextHeritageClause,
                 convertTopLevelGlobals,
