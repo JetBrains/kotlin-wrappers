@@ -52,6 +52,11 @@ private fun parseDeclaration(
         "interface" -> convertInterface(source, name)
         "class" -> convertInterface(source, name)
 
+        "type" -> if (name == "McpServerDefinition") {
+            source.replace("export type ", "typealias ")
+                .replace(" = ", " = Any // ")
+        } else commentedOriginal(source)
+
         else -> commentedOriginal(source)
     }
 
