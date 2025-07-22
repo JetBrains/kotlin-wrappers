@@ -28,7 +28,7 @@ open external class CodeLens {
     /**
      * `true` when there is a command associated.
      */
-//  readonly isResolved: boolean;
+    val isResolved: Boolean
 
     /**
      * Creates a new code lens object.

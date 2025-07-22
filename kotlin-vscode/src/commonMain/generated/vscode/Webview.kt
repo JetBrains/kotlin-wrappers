@@ -45,7 +45,7 @@ external interface Webview {
      * post `Blob`, `File`, `ImageData` and other DOM specific objects since the extension that receives the
      * message does not run in a browser environment.
      */
-//  readonly onDidReceiveMessage: Event<any>;
+    val onDidReceiveMessage: Event<Any?>
 
     /**
      * Post a message to the webview content.
@@ -102,5 +102,5 @@ external interface Webview {
      * `img-src https: ${webview.cspSource} ...;`
      * ```
      */
-//  readonly cspSource: string;
+    val cspSource: String
 }

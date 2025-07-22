@@ -11,28 +11,28 @@ external interface Extension<T> {
     /**
      * The canonical extension identifier in the form of: `publisher.name`.
      */
-//  readonly id: string;
+    val id: String
 
     /**
      * The uri of the directory containing the extension.
      */
-//  readonly extensionUri: Uri;
+    val extensionUri: Uri
 
     /**
      * The absolute file path of the directory containing this extension. Shorthand
      * notation for {@link Extension.extensionUri Extension.extensionUri.fsPath} (independent of the uri scheme).
      */
-//  readonly extensionPath: string;
+    val extensionPath: String
 
     /**
      * `true` if the extension has been activated.
      */
-//  readonly isActive: boolean;
+    val isActive: Boolean
 
     /**
      * The parsed contents of the extension's package.json.
      */
-//  readonly packageJSON: any;
+    val packageJSON: Any?
 
     /**
      * The extension kind describes if an extension runs where the UI runs
@@ -47,7 +47,7 @@ external interface Extension<T> {
      * The public API exported by this extension (return value of `activate`).
      * It is an invalid action to access this field before this extension has been activated.
      */
-//  readonly exports: T;
+    val exports: T
 
     /**
      * Activates this extension and returns its public API.

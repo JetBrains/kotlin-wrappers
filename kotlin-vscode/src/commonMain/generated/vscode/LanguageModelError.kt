@@ -39,5 +39,5 @@ open external class LanguageModelError :
      * or `Unknown` for unspecified errors from the language model itself. In the latter case the
      * `cause`-property will contain the actual error.
      */
-//  readonly code: string;
+    val code: String
 }

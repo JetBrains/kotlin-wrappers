@@ -11,22 +11,22 @@ open external class Color {
     /**
      * The red component of this color in the range `[0-1]`.
      */
-//  readonly red: number;
+    val red: Double
 
     /**
      * The green component of this color in the range `[0-1]`.
      */
-//  readonly green: number;
+    val green: Double
 
     /**
      * The blue component of this color in the range `[0-1]`.
      */
-//  readonly blue: number;
+    val blue: Double
 
     /**
      * The alpha component of this color in the range `[0-1]`.
      */
-//  readonly alpha: number;
+    val alpha: Double
 
     /**
      * Creates a new color instance.

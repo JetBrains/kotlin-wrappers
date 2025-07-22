@@ -2,6 +2,8 @@
 
 package vscode
 
+import js.array.ReadonlyArray
+
 /**
  * An event describing the changes to the set of {@link Breakpoint breakpoints}.
  */
@@ -9,15 +11,15 @@ external interface BreakpointsChangeEvent {
     /**
      * Added breakpoints.
      */
-//  readonly added: readonly Breakpoint[];
+    val added: ReadonlyArray<Breakpoint>
 
     /**
      * Removed breakpoints.
      */
-//  readonly removed: readonly Breakpoint[];
+    val removed: ReadonlyArray<Breakpoint>
 
     /**
      * Changed breakpoints.
      */
-//  readonly changed: readonly Breakpoint[];
+    val changed: ReadonlyArray<Breakpoint>
 }

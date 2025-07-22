@@ -9,10 +9,10 @@ external interface AuthenticationSessionAccountInformation {
     /**
      * The unique identifier of the account.
      */
-//  readonly id: string;
+    val id: String
 
     /**
      * The human-readable name of the account.
      */
-//  readonly label: string;
+    val label: String
 }

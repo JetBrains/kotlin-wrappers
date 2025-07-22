@@ -9,10 +9,10 @@ external interface ViewBadge {
     /**
      * A label to present in tooltip for the badge.
      */
-//  readonly tooltip: string;
+    val tooltip: String
 
     /**
      * The value to present in the badge.
      */
-//  readonly value: number;
+    val value: Int
 }

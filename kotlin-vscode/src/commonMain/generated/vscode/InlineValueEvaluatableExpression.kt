@@ -14,12 +14,12 @@ open external class InlineValueEvaluatableExpression {
      * The document range for which the inline value applies.
      * The range is used to extract the evaluatable expression from the underlying document.
      */
-//  readonly range: Range;
+    val range: Range
 
     /**
      * If specified the expression overrides the extracted expression.
      */
-//  readonly expression?: string | undefined;
+    val expression: String?
 
     /**
      * Creates a new InlineValueEvaluatableExpression object.

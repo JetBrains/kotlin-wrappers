@@ -13,7 +13,7 @@ external interface FileWillRenameEvent {
     /**
      * A cancellation token.
      */
-//  readonly token: CancellationToken;
+    val token: CancellationToken
 
     /**
      * The files that are going to be renamed.

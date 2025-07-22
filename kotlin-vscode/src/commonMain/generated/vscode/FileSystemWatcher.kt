@@ -19,32 +19,32 @@ external interface FileSystemWatcher :
      * true if this file system watcher has been created such that
      * it ignores creation file system events.
      */
-//  readonly ignoreCreateEvents: boolean;
+    val ignoreCreateEvents: Boolean
 
     /**
      * true if this file system watcher has been created such that
      * it ignores change file system events.
      */
-//  readonly ignoreChangeEvents: boolean;
+    val ignoreChangeEvents: Boolean
 
     /**
      * true if this file system watcher has been created such that
      * it ignores delete file system events.
      */
-//  readonly ignoreDeleteEvents: boolean;
+    val ignoreDeleteEvents: Boolean
 
     /**
      * An event which fires on file/folder creation.
      */
-//  readonly onDidCreate: Event<Uri>;
+    val onDidCreate: Event<Uri>
 
     /**
      * An event which fires on file/folder change.
      */
-//  readonly onDidChange: Event<Uri>;
+    val onDidChange: Event<Uri>
 
     /**
      * An event which fires on file/folder deletion.
      */
-//  readonly onDidDelete: Event<Uri>;
+    val onDidDelete: Event<Uri>
 }

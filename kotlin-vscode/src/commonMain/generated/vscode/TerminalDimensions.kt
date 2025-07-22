@@ -9,10 +9,10 @@ external interface TerminalDimensions {
     /**
      * The number of columns in the terminal.
      */
-//  readonly columns: number;
+    val columns: Int
 
     /**
      * The number of rows in the terminal.
      */
-//  readonly rows: number;
+    val rows: Int
 }

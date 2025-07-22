@@ -11,7 +11,7 @@ open external class TabInputWebview {
     /**
      * The type of webview. Maps to {@linkcode WebviewPanel.viewType WebviewPanel's viewType}
      */
-//  readonly viewType: string;
+    val viewType: String
 
     /**
      * Constructs a webview tab input with the given view type.

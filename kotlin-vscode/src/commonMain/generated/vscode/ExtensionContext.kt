@@ -29,7 +29,7 @@ external interface ExtensionContext {
      * A memento object that stores state in the context
      * of the currently opened {@link workspace.workspaceFolders workspace}.
      */
-//  readonly workspaceState: Memento;
+    val workspaceState: Memento
 
     /**
      * A memento object that stores state independent
@@ -58,24 +58,24 @@ external interface ExtensionContext {
      * A secret storage object that stores state independent
      * of the current opened {@link workspace.workspaceFolders workspace}.
      */
-//  readonly secrets: SecretStorage;
+    val secrets: SecretStorage
 
     /**
      * The uri of the directory containing the extension.
      */
-//  readonly extensionUri: Uri;
+    val extensionUri: Uri
 
     /**
      * The absolute file path of the directory containing the extension. Shorthand
      * notation for {@link TextDocument.uri ExtensionContext.extensionUri.fsPath} (independent of the uri scheme).
      */
-//  readonly extensionPath: string;
+    val extensionPath: String
 
     /**
      * Gets the extension's global environment variable collection for this workspace, enabling changes to be
      * applied to terminal environment variables.
      */
-//  readonly environmentVariableCollection: GlobalEnvironmentVariableCollection;
+    val environmentVariableCollection: GlobalEnvironmentVariableCollection
 
     /**
      * Get the absolute path of a resource contained in the extension.
@@ -100,7 +100,7 @@ external interface ExtensionContext {
      * @see {@linkcode FileSystem workspace.fs} for how to read and write files and folders from
      *  a uri.
      */
-//  readonly storageUri: Uri | undefined;
+    val storageUri: Uri
 
     /**
      * An absolute file path of a workspace specific directory in which the extension
@@ -112,7 +112,7 @@ external interface ExtensionContext {
      *
      * @deprecated Use {@link ExtensionContext.storageUri storageUri} instead.
      */
-//  readonly storagePath: string | undefined;
+    val storagePath: String
 
     /**
      * The uri of a directory in which the extension can store global state.
@@ -124,7 +124,7 @@ external interface ExtensionContext {
      * @see {@linkcode FileSystem workspace.fs} for how to read and write files and folders from
      *  an uri.
      */
-//  readonly globalStorageUri: Uri;
+    val globalStorageUri: Uri
 
     /**
      * An absolute file path in which the extension can store global state.
@@ -135,7 +135,7 @@ external interface ExtensionContext {
      *
      * @deprecated Use {@link ExtensionContext.globalStorageUri globalStorageUri} instead.
      */
-//  readonly globalStoragePath: string;
+    val globalStoragePath: String
 
     /**
      * The uri of a directory in which the extension can create log files.
@@ -145,7 +145,7 @@ external interface ExtensionContext {
      * @see {@linkcode FileSystem workspace.fs} for how to read and write files and folders from
      *  an uri.
      */
-//  readonly logUri: Uri;
+    val logUri: Uri
 
     /**
      * An absolute file path of a directory in which the extension can create log files.
@@ -154,23 +154,23 @@ external interface ExtensionContext {
      *
      * @deprecated Use {@link ExtensionContext.logUri logUri} instead.
      */
-//  readonly logPath: string;
+    val logPath: String
 
     /**
      * The mode the extension is running in. See {@link ExtensionMode}
      * for possible values and scenarios.
      */
-//  readonly extensionMode: ExtensionMode;
+    val extensionMode: ExtensionMode
 
     /**
      * The current `Extension` instance.
      */
-//  readonly extension: Extension<any>;
+    val extension: Extension<*>
 
     /**
      * An object that keeps information about how this extension can use language models.
      *
      * @see {@link LanguageModelChat.sendRequest}
      */
-//  readonly languageModelAccessInformation: LanguageModelAccessInformation;
+    val languageModelAccessInformation: LanguageModelAccessInformation
 }

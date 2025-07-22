@@ -9,10 +9,10 @@ external interface WebviewPortMapping {
     /**
      * Localhost port to remap inside the webview.
      */
-//  readonly webviewPort: number;
+    val webviewPort: Int
 
     /**
      * Destination port. The `webviewPort` is resolved to this port.
      */
-//  readonly extensionHostPort: number;
+    val extensionHostPort: Int
 }

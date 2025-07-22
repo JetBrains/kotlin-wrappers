@@ -2,6 +2,8 @@
 
 package vscode
 
+import js.array.ReadonlyArray
+
 /**
  * An event that is fired when files are going to be created.
  *
@@ -13,12 +15,12 @@ external interface FileWillCreateEvent {
     /**
      * A cancellation token.
      */
-//  readonly token: CancellationToken;
+    val token: CancellationToken
 
     /**
      * The files that are going to be created.
      */
-//  readonly files: readonly Uri[];
+    val files: ReadonlyArray<Uri>
 
     /**
      * Allows to pause the event and to apply a {@link WorkspaceEdit workspace edit}.

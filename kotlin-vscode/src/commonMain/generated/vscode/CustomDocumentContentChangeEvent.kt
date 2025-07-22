@@ -12,5 +12,5 @@ external interface CustomDocumentContentChangeEvent<T : CustomDocument> {
     /**
      * The document that the change is for.
      */
-//  readonly document: T;
+    val document: T
 }

@@ -12,7 +12,7 @@ open external class ThemeColor {
     /**
      * The id of this color.
      */
-//  readonly id: string;
+    val id: String
 
     /**
      * Creates a reference to a theme color.

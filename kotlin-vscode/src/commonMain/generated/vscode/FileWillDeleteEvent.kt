@@ -2,6 +2,8 @@
 
 package vscode
 
+import js.array.ReadonlyArray
+
 /**
  * An event that is fired when files are going to be deleted.
  *
@@ -13,12 +15,12 @@ external interface FileWillDeleteEvent {
     /**
      * A cancellation token.
      */
-//  readonly token: CancellationToken;
+    val token: CancellationToken
 
     /**
      * The files that are going to be deleted.
      */
-//  readonly files: readonly Uri[];
+    val files: ReadonlyArray<Uri>
 
     /**
      * Allows to pause the event and to apply a {@link WorkspaceEdit workspace edit}.

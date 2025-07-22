@@ -19,17 +19,17 @@ external interface TelemetryLogger {
     /**
      * An {@link Event} which fires when the enablement state of usage or error telemetry changes.
      */
-//  readonly onDidChangeEnableStates: Event<TelemetryLogger>;
+    val onDidChangeEnableStates: Event<TelemetryLogger>
 
     /**
      * Whether or not usage telemetry is enabled for this logger.
      */
-//  readonly isUsageEnabled: boolean;
+    val isUsageEnabled: Boolean
 
     /**
      * Whether or not error telemetry is enabled for this logger.
      */
-//  readonly isErrorsEnabled: boolean;
+    val isErrorsEnabled: Boolean
 
     /**
      * Log a usage event.

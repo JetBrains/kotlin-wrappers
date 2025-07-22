@@ -13,18 +13,18 @@ external interface StatusBarItem {
      * *Note*: if no identifier was provided by the {@linkcode window.createStatusBarItem}
      * method, the identifier will match the {@link Extension.id extension identifier}.
      */
-//  readonly id: string;
+    val id: String
 
     /**
      * The alignment of this item.
      */
-//  readonly alignment: StatusBarAlignment;
+    val alignment: StatusBarAlignment
 
     /**
      * The priority of this item. Higher value means the item should
      * be shown more to the left.
      */
-//  readonly priority: number | undefined;
+    val priority: Int
 
     /**
      * The name of the entry, like 'Python Language Indicator', 'Git Status' etc.

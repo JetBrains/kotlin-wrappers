@@ -12,7 +12,7 @@ open external class FunctionBreakpoint :
     /**
      * The name of the function to which this breakpoint is attached.
      */
-//  readonly functionName: string;
+    val functionName: String
 
     /**
      * Create a new function breakpoint.

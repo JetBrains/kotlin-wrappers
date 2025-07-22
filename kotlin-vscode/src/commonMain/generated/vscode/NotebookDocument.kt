@@ -2,6 +2,8 @@
 
 package vscode
 
+import js.objects.Record
+
 /**
  * Represents a notebook which itself is a sequence of {@link NotebookCell code or markup cells}. Notebook documents are
  * created from {@link NotebookData notebook data}.
@@ -15,44 +17,44 @@ external interface NotebookDocument {
      *
      * @see {@link FileSystemProvider}
      */
-//  readonly uri: Uri;
+    val uri: Uri
 
     /**
      * The type of notebook.
      */
-//  readonly notebookType: string;
+    val notebookType: String
 
     /**
      * The version number of this notebook (it will strictly increase after each
      * change, including undo/redo).
      */
-//  readonly version: number;
+    val version: Int
 
     /**
      * `true` if there are unpersisted changes.
      */
-//  readonly isDirty: boolean;
+    val isDirty: Boolean
 
     /**
      * Is this notebook representing an untitled file which has not been saved yet.
      */
-//  readonly isUntitled: boolean;
+    val isUntitled: Boolean
 
     /**
      * `true` if the notebook has been closed. A closed notebook isn't synchronized anymore
      * and won't be re-used when the same resource is opened again.
      */
-//  readonly isClosed: boolean;
+    val isClosed: Boolean
 
     /**
      * Arbitrary metadata for this notebook. Can be anything but must be JSON-stringifyable.
      */
-//  readonly metadata: { [key: string]: any };
+    val metadata: Record<String, *>
 
     /**
      * The number of cells in the notebook.
      */
-//  readonly cellCount: number;
+    val cellCount: Int
 
     /**
      * Return the cell at the specified index. The index will be adjusted to the notebook.

@@ -12,7 +12,7 @@ open external class SourceBreakpoint :
     /**
      * The source and line position of this breakpoint.
      */
-//  readonly location: Location;
+    val location: Location
 
     /**
      * Create a new breakpoint for a source location.

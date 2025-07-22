@@ -26,12 +26,12 @@ open external class ThemeIcon {
     /**
      * The id of the icon. The available icons are listed in https://code.visualstudio.com/api/references/icons-in-labels#icon-listing.
      */
-//  readonly id: string;
+    val id: String
 
     /**
      * The optional ThemeColor of the icon. The color is currently only used in {@link TreeItem}.
      */
-//  readonly color?: ThemeColor | undefined;
+    val color: ThemeColor?
 
     /**
      * Creates a reference to a theme icon.

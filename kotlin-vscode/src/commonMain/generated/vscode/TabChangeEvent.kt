@@ -2,6 +2,8 @@
 
 package vscode
 
+import js.array.ReadonlyArray
+
 /**
  * An event describing change to tabs.
  */
@@ -9,16 +11,16 @@ external interface TabChangeEvent {
     /**
      * The tabs that have been opened.
      */
-//  readonly opened: readonly Tab[];
+    val opened: ReadonlyArray<Tab>
 
     /**
      * The tabs that have been closed.
      */
-//  readonly closed: readonly Tab[];
+    val closed: ReadonlyArray<Tab>
 
     /**
      * Tabs that have changed, e.g have changed
      * their {@link Tab.isActive active} state.
      */
-//  readonly changed: readonly Tab[];
+    val changed: ReadonlyArray<Tab>
 }

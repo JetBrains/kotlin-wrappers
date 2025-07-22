@@ -11,27 +11,27 @@ open external class Breakpoint {
     /**
      * The unique ID of the breakpoint.
      */
-//  readonly id: string;
+    val id: String
 
     /**
      * Is breakpoint enabled.
      */
-//  readonly enabled: boolean;
+    val enabled: Boolean
 
     /**
      * An optional expression for conditional breakpoints.
      */
-//  readonly condition?: string | undefined;
+    val condition: String?
 
     /**
      * An optional expression that controls how many hits of the breakpoint are ignored.
      */
-//  readonly hitCondition?: string | undefined;
+    val hitCondition: String?
 
     /**
      * An optional message that gets logged when this breakpoint is hit. Embedded expressions within {} are interpolated by the debug adapter.
      */
-//  readonly logMessage?: string | undefined;
+    val logMessage: String?
 
     /**
      * Creates a new breakpoint

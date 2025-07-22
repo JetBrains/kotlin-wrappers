@@ -2,6 +2,8 @@
 
 package vscode
 
+import js.core.Void
+
 /**
  * A type that can provide Model Context Protocol server definitions. This
  * should be registered using {@link lm.registerMcpServerDefinitionProvider}
@@ -11,7 +13,7 @@ external interface McpServerDefinitionProvider<T : McpServerDefinition> {
     /**
      * Optional event fired to signal that the set of available servers has changed.
      */
-//  readonly onDidChangeMcpServerDefinitions?: Event<void>;
+    val onDidChangeMcpServerDefinitions: Event<Void>?
 
     /**
      * Provides available MCP servers. The editor will call this method eagerly

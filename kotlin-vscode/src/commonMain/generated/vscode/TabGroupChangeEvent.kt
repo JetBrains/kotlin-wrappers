@@ -2,6 +2,8 @@
 
 package vscode
 
+import js.array.ReadonlyArray
+
 /**
  * An event describing changes to tab groups.
  */
@@ -9,16 +11,16 @@ external interface TabGroupChangeEvent {
     /**
      * Tab groups that have been opened.
      */
-//  readonly opened: readonly TabGroup[];
+    val opened: ReadonlyArray<TabGroup>
 
     /**
      * Tab groups that have been closed.
      */
-//  readonly closed: readonly TabGroup[];
+    val closed: ReadonlyArray<TabGroup>
 
     /**
      * Tab groups that have changed, e.g have changed
      * their {@link TabGroup.isActive active} state.
      */
-//  readonly changed: readonly TabGroup[];
+    val changed: ReadonlyArray<TabGroup>
 }

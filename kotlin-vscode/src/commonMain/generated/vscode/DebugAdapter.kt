@@ -15,7 +15,7 @@ external interface DebugAdapter :
      * An event which fires after the debug adapter has sent a Debug Adapter Protocol message to the editor.
      * Messages can be requests, responses, or events.
      */
-//  readonly onDidSendMessage: Event<DebugProtocolMessage>;
+    val onDidSendMessage: Event<DebugProtocolMessage>
 
     /**
      * Handle a Debug Adapter Protocol message.

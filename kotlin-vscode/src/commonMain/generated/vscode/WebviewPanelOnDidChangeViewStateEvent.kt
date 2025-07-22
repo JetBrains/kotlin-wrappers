@@ -9,5 +9,5 @@ external interface WebviewPanelOnDidChangeViewStateEvent {
     /**
      * Webview panel whose view state changed.
      */
-//  readonly webviewPanel: WebviewPanel;
+    val webviewPanel: WebviewPanel
 }

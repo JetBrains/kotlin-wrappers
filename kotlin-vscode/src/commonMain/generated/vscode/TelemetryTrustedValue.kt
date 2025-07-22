@@ -12,7 +12,7 @@ open external class TelemetryTrustedValue<T> {
     /**
      * The value that is trusted to not contain PII.
      */
-//  readonly value: T;
+    val value: T
 
     /**
      * Creates a new telemetry trusted value.

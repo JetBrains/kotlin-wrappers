@@ -2,6 +2,8 @@
 
 package vscode
 
+import js.core.Void
+
 /**
  * A concrete {@link QuickInput} to let the user input a text value.
  *
@@ -40,12 +42,12 @@ external interface InputBox :
     /**
      * An event signaling when the value has changed.
      */
-//  readonly onDidChangeValue: Event<string>;
+    val onDidChangeValue: Event<String>
 
     /**
      * An event signaling when the user indicated acceptance of the input value.
      */
-//  readonly onDidAccept: Event<void>;
+    val onDidAccept: Event<Void>
 
     /**
      * Buttons for actions in the UI.
@@ -55,7 +57,7 @@ external interface InputBox :
     /**
      * An event signaling when a button was triggered.
      */
-//  readonly onDidTriggerButton: Event<QuickInputButton>;
+    val onDidTriggerButton: Event<QuickInputButton>
 
     /**
      * An optional prompt text providing some ask or explanation to the user.

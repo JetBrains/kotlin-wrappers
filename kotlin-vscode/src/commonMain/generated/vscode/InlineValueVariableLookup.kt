@@ -14,17 +14,17 @@ open external class InlineValueVariableLookup {
      * The document range for which the inline value applies.
      * The range is used to extract the variable name from the underlying document.
      */
-//  readonly range: Range;
+    val range: Range
 
     /**
      * If specified the name of the variable to look up.
      */
-//  readonly variableName?: string | undefined;
+    val variableName: String?
 
     /**
      * How to perform the lookup.
      */
-//  readonly caseSensitiveLookup: boolean;
+    val caseSensitiveLookup: Boolean
 
     /**
      * Creates a new InlineValueVariableLookup object.

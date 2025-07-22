@@ -11,5 +11,5 @@ external interface TaskEndEvent {
     /**
      * The task item representing the task that finished.
      */
-//  readonly execution: TaskExecution;
+    val execution: TaskExecution
 }

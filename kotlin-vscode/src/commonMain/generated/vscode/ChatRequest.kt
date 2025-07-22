@@ -2,6 +2,8 @@
 
 package vscode
 
+import js.array.ReadonlyArray
+
 /**
  * A request to a chat participant.
  */
@@ -14,12 +16,12 @@ external interface ChatRequest {
      * *Note* that the {@link ChatParticipant.name name} of the participant and the {@link ChatCommand.name command}
      * are not part of the prompt.
      */
-//  readonly prompt: string;
+    val prompt: String
 
     /**
      * The name of the {@link ChatCommand command} that was selected for this request.
      */
-//  readonly command: string | undefined;
+    val command: String
 
     /**
      * The list of references and their values that are referenced in the prompt.
@@ -30,7 +32,7 @@ external interface ChatRequest {
      * in the prompt. That means the last reference in the prompt is the first in this list. This simplifies
      * string-manipulation of the prompt.
      */
-//  readonly references: readonly ChatPromptReference[];
+    val references: ReadonlyArray<ChatPromptReference>
 
     /**
      * The list of tools that the user attached to their request.
@@ -40,17 +42,17 @@ external interface ChatRequest {
      * participant can use {@link lm.invokeTool} to use the tool attach the result to its request for the user's prompt. The
      * tool may contribute useful extra context for the user's request.
      */
-//  readonly toolReferences: readonly ChatLanguageModelToolReference[];
+    val toolReferences: ReadonlyArray<ChatLanguageModelToolReference>
 
     /**
      * A token that can be passed to {@link lm.invokeTool} when invoking a tool inside the context of handling a chat request.
      * This associates the tool invocation to a chat session.
      */
-//  readonly toolInvocationToken: ChatParticipantToolToken;
+    val toolInvocationToken: ChatParticipantToolToken
 
     /**
      * This is the model that is currently selected in the UI. Extensions can use this or use {@link lm.selectChatModels} to
      * pick another model. Don't hold onto this past the lifetime of the request.
      */
-//  readonly model: LanguageModelChat;
+    val model: LanguageModelChat
 }

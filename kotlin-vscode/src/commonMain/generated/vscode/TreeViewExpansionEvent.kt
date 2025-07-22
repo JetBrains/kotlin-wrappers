@@ -9,5 +9,5 @@ external interface TreeViewExpansionEvent<T> {
     /**
      * Element that is expanded or collapsed.
      */
-//  readonly element: T;
+    val element: T
 }

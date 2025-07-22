@@ -13,7 +13,7 @@ external interface TestController {
      * The id of the controller passed in {@link tests.createTestController}.
      * This must be globally unique.
      */
-//  readonly id: string;
+    val id: String
 
     /**
      * Human-readable label for the test controller.
@@ -32,7 +32,7 @@ external interface TestController {
      * However, the editor may sometimes explicitly request children using the
      * {@link resolveHandler} See the documentation on that method for more details.
      */
-//  readonly items: TestItemCollection;
+    val items: TestItemCollection
 
     /**
      * Creates a profile used for running tests. Extensions must create

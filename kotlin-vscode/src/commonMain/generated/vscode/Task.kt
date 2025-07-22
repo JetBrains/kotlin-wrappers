@@ -45,7 +45,7 @@ open external class Task {
     /**
      * The task's scope.
      */
-//  readonly scope: TaskScope.Global | TaskScope.Workspace | WorkspaceFolder | undefined;
+    val scope: Any /* TaskScope.Global | TaskScope.Workspace | WorkspaceFolder */
 
     /**
      * The task's name

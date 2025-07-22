@@ -20,7 +20,7 @@ external interface TerminalState {
      * For more information on events that can send data see "DEC Private Mode Set (DECSET)" on
      * https://invisible-island.net/xterm/ctlseqs/ctlseqs.html
      */
-//  readonly isInteractedWith: boolean;
+    val isInteractedWith: Boolean
 
     /**
      * The detected shell type of the {@link Terminal}. This will be `undefined` when there is
@@ -32,5 +32,5 @@ external interface TerminalState {
      * 'bash', 'cmd', 'csh', 'fish', 'gitbash', 'julia', 'ksh', 'node', 'nu', 'pwsh', 'python',
      * 'sh', 'wsl', 'zsh'.
      */
-//  readonly shell: string | undefined;
+    val shell: String
 }

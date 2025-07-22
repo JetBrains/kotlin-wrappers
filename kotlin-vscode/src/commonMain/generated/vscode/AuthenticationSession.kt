@@ -2,6 +2,8 @@
 
 package vscode
 
+import js.array.ReadonlyArray
+
 /**
  * Represents a session of a currently logged in user.
  */
@@ -9,21 +11,21 @@ external interface AuthenticationSession {
     /**
      * The identifier of the authentication session.
      */
-//  readonly id: string;
+    val id: String
 
     /**
      * The access token.
      */
-//  readonly accessToken: string;
+    val accessToken: String
 
     /**
      * The account associated with the session.
      */
-//  readonly account: AuthenticationSessionAccountInformation;
+    val account: AuthenticationSessionAccountInformation
 
     /**
      * The permissions granted by the session's access token. Available scopes
      * are defined by the {@link AuthenticationProvider}.
      */
-//  readonly scopes: readonly string[];
+    val scopes: ReadonlyArray<String>
 }

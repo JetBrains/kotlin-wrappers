@@ -14,7 +14,7 @@ open external class McpStdioServerDefinition {
     /**
      * The human-readable name of the server.
      */
-//  readonly label: string;
+    val label: String
 
     /**
      * The working directory used to start the server.

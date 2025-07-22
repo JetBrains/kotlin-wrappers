@@ -10,22 +10,22 @@ external interface SourceControl {
     /**
      * The id of this source control.
      */
-//  readonly id: string;
+    val id: String
 
     /**
      * The human-readable label of this source control.
      */
-//  readonly label: string;
+    val label: String
 
     /**
      * The (optional) Uri of the root of this source control.
      */
-//  readonly rootUri: Uri | undefined;
+    val rootUri: Uri
 
     /**
      * The {@link SourceControlInputBox input box} for this source control.
      */
-//  readonly inputBox: SourceControlInputBox;
+    val inputBox: SourceControlInputBox
 
     /**
      * The UI-visible count of {@link SourceControlResourceState resource states} of

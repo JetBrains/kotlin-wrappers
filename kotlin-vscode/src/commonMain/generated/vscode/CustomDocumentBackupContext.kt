@@ -15,5 +15,5 @@ external interface CustomDocumentBackupContext {
      * `ExtensionContext.storagePath`. The parent folder of `destination` may not exist, so make sure to created it
      * before writing the backup to this location.
      */
-//  readonly destination: Uri;
+    val destination: Uri
 }

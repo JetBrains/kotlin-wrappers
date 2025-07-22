@@ -13,10 +13,10 @@ external interface TerminalExitStatus {
      * - `undefined`: the user forcibly closed the terminal or a custom execution exited
      *   without providing an exit code.
      */
-//  readonly code: number | undefined;
+    val code: Int
 
     /**
      * The reason that triggered the exit of a terminal.
      */
-//  readonly reason: TerminalExitReason;
+    val reason: TerminalExitReason
 }

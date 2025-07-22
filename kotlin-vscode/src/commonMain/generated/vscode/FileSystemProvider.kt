@@ -2,6 +2,8 @@
 
 package vscode
 
+import js.array.ReadonlyArray
+
 /**
  * The filesystem provider defines what the editor needs to read, write, discover,
  * and to manage files and folders. It allows extensions to serve files from remote places,
@@ -25,7 +27,7 @@ external interface FileSystemProvider {
      * correct `size` value. Otherwise there may be optimizations in place that will not show
      * the change in an editor for example.
      */
-//  readonly onDidChangeFile: Event<FileChangeEvent[]>;
+    val onDidChangeFile: Event<ReadonlyArray<FileChangeEvent>>
 
     /**
      * Subscribes to file change events in the file or folder denoted by `uri`. For folders,

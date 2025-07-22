@@ -2,6 +2,8 @@
 
 package vscode
 
+import js.array.ReadonlyArray
+
 /**
  * Content settings for a webview.
  */
@@ -11,7 +13,7 @@ external interface WebviewOptions {
      *
      * Defaults to false (scripts-disabled).
      */
-//  readonly enableScripts?: boolean;
+    val enableScripts: Boolean?
 
     /**
      * Controls whether forms are enabled in the webview content or not.
@@ -19,7 +21,7 @@ external interface WebviewOptions {
      * Defaults to true if {@link WebviewOptions.enableScripts scripts are enabled}. Otherwise defaults to false.
      * Explicitly setting this property to either true or false overrides the default.
      */
-//  readonly enableForms?: boolean;
+    val enableForms: Boolean?
 
     /**
      * Controls whether command uris are enabled in webview content or not.
@@ -28,7 +30,7 @@ external interface WebviewOptions {
      *
      * If you pass in an array, only the commands in the array are allowed.
      */
-//  readonly enableCommandUris?: boolean | readonly string[];
+    val enableCommandUris: ReadonlyArray<Any /* boolean | readonly string */>?
 
     /**
      * Root paths from which the webview can load local (filesystem) resources using uris from `asWebviewUri`
@@ -37,7 +39,7 @@ external interface WebviewOptions {
      *
      * Pass in an empty array to disallow access to any local resources.
      */
-//  readonly localResourceRoots?: readonly Uri[];
+    val localResourceRoots: ReadonlyArray<Uri>?
 
     /**
      * Mappings of localhost ports used inside the webview.
@@ -52,5 +54,5 @@ external interface WebviewOptions {
      * *Note* that port mappings only work for `http` or `https` urls. Websocket urls (e.g. `ws://localhost:3000`)
      * cannot be mapped to another port.
      */
-//  readonly portMapping?: readonly WebviewPortMapping[];
+    val portMapping: ReadonlyArray<WebviewPortMapping>?
 }

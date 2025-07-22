@@ -16,25 +16,25 @@ external interface TextDocument {
      * @see {@link FileSystemProvider}
      * @see {@link TextDocumentContentProvider}
      */
-//  readonly uri: Uri;
+    val uri: Uri
 
     /**
      * The file system path of the associated resource. Shorthand
      * notation for {@link TextDocument.uri TextDocument.uri.fsPath}. Independent of the uri scheme.
      */
-//  readonly fileName: string;
+    val fileName: String
 
     /**
      * Is this document representing an untitled file which has never been saved yet. *Note* that
      * this does not mean the document will be saved to disk, use {@linkcode Uri.scheme}
      * to figure out where a document will be {@link FileSystemProvider saved}, e.g. `file`, `ftp` etc.
      */
-//  readonly isUntitled: boolean;
+    val isUntitled: Boolean
 
     /**
      * The identifier of the language associated with this document.
      */
-//  readonly languageId: string;
+    val languageId: String
 
     /**
      * The file encoding of this document that will be used when the document is saved.
@@ -52,24 +52,24 @@ external interface TextDocument {
      * 'eucjp', 'euckr', 'windows874', 'iso885911', 'koi8ru', 'koi8t', 'gb2312',
      * 'cp865', 'cp850'.
      */
-//  readonly encoding: string;
+    val encoding: String
 
     /**
      * The version number of this document (it will strictly increase after each
      * change, including undo/redo).
      */
-//  readonly version: number;
+    val version: Int
 
     /**
      * `true` if there are unpersisted changes.
      */
-//  readonly isDirty: boolean;
+    val isDirty: Boolean
 
     /**
      * `true` if the document has been closed. A closed document isn't synchronized anymore
      * and won't be re-used when the same resource is opened again.
      */
-//  readonly isClosed: boolean;
+    val isClosed: Boolean
 
     /**
      * Save the underlying file.
@@ -83,12 +83,12 @@ external interface TextDocument {
      * The {@link EndOfLine end of line} sequence that is predominately
      * used in this document.
      */
-//  readonly eol: EndOfLine;
+    val eol: EndOfLine
 
     /**
      * The number of lines in this document.
      */
-//  readonly lineCount: number;
+    val lineCount: Int
 
     /**
      * Returns a text line denoted by the line number. Note

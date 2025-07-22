@@ -22,12 +22,12 @@ external interface NotebookController {
      * _Note_ that controllers are remembered by their identifier and that extensions should use
      * stable identifiers across sessions.
      */
-//  readonly id: string;
+    val id: String
 
     /**
      * The notebook type this controller is for.
      */
-//  readonly notebookType: string;
+    val notebookType: String
 
     /**
      * An array of language identifiers that are supported by this

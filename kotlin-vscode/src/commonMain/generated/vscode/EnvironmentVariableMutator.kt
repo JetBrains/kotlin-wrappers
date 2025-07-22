@@ -9,15 +9,15 @@ external interface EnvironmentVariableMutator {
     /**
      * The type of mutation that will occur to the variable.
      */
-//  readonly type: EnvironmentVariableMutatorType;
+    val type: EnvironmentVariableMutatorType
 
     /**
      * The value to use for the variable.
      */
-//  readonly value: string;
+    val value: String
 
     /**
      * Options applied to the mutator.
      */
-//  readonly options: EnvironmentVariableMutatorOptions;
+    val options: EnvironmentVariableMutatorOptions
 }

@@ -14,7 +14,7 @@ open external class WorkspaceEdit {
     /**
      * The number of affected resources of textual or resource changes.
      */
-//  readonly size: number;
+    val size: Int
 
     /**
      * Replace the given range with given text for the given resource.

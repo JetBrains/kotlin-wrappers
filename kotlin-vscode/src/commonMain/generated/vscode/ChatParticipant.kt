@@ -10,7 +10,7 @@ external interface ChatParticipant {
     /**
      * A unique ID for this participant.
      */
-//  readonly id: string;
+    val id: String
 
     /**
      * An icon for the participant shown in UI.

@@ -9,20 +9,20 @@ external interface TextDocumentContentChangeEvent {
     /**
      * The range that got replaced.
      */
-//  readonly range: Range;
+    val range: Range
 
     /**
      * The offset of the range that got replaced.
      */
-//  readonly rangeOffset: number;
+    val rangeOffset: Int
 
     /**
      * The length of the range that got replaced.
      */
-//  readonly rangeLength: number;
+    val rangeLength: Int
 
     /**
      * The new text for the range.
      */
-//  readonly text: string;
+    val text: String
 }

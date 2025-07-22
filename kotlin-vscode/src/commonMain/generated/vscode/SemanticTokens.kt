@@ -4,6 +4,8 @@
 
 package vscode
 
+import js.typedarrays.Uint32Array
+
 /**
  * Represents semantic tokens, either in a range or in an entire document.
  * @see {@link DocumentSemanticTokensProvider.provideDocumentSemanticTokens provideDocumentSemanticTokens} for an explanation of the format.
@@ -15,13 +17,13 @@ open external class SemanticTokens {
      *
      * This is the id that will be passed to `DocumentSemanticTokensProvider.provideDocumentSemanticTokensEdits` (if implemented).
      */
-//  readonly resultId: string | undefined;
+    val resultId: String
 
     /**
      * The actual tokens data.
      * @see {@link DocumentSemanticTokensProvider.provideDocumentSemanticTokens provideDocumentSemanticTokens} for an explanation of the format.
      */
-//  readonly data: Uint32Array;
+    val data: Uint32Array<*>
 
     /**
      * Create new semantic tokens.

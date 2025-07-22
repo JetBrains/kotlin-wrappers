@@ -65,5 +65,5 @@ open external class FileSystemError :
      * Possible values are names of errors, like {@linkcode FileSystemError.FileNotFound FileNotFound},
      * or `Unknown` for unspecified errors.
      */
-//  readonly code: string;
+    val code: String
 }

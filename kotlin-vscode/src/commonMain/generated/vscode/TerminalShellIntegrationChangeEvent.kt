@@ -9,10 +9,10 @@ external interface TerminalShellIntegrationChangeEvent {
     /**
      * The terminal that shell integration has been activated in.
      */
-//  readonly terminal: Terminal;
+    val terminal: Terminal
 
     /**
      * The shell integration object.
      */
-//  readonly shellIntegration: TerminalShellIntegration;
+    val shellIntegration: TerminalShellIntegration
 }

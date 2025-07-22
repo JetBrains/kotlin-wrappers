@@ -11,7 +11,7 @@ external interface CustomDocumentBackup {
      *
      * This id is passed back to your extension in `openCustomDocument` when opening a custom editor from a backup.
      */
-//  readonly id: string;
+    val id: String
 
     /**
      * Delete the current backup.

@@ -13,17 +13,17 @@ external interface NotebookDocumentWillSaveEvent {
     /**
      * A cancellation token.
      */
-//  readonly token: CancellationToken;
+    val token: CancellationToken
 
     /**
      * The {@link NotebookDocument notebook document} that will be saved.
      */
-//  readonly notebook: NotebookDocument;
+    val notebook: NotebookDocument
 
     /**
      * The reason why save was triggered.
      */
-//  readonly reason: TextDocumentSaveReason;
+    val reason: TextDocumentSaveReason
 
     /**
      * Allows to pause the event loop and to apply {@link WorkspaceEdit workspace edit}.

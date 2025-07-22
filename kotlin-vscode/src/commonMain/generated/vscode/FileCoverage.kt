@@ -11,7 +11,7 @@ open external class FileCoverage {
     /**
      * File URI.
      */
-//  readonly uri: Uri;
+    val uri: Uri
 
     /**
      * Statement coverage information. If the reporter does not provide statement

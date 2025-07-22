@@ -2,6 +2,8 @@
 
 package vscode
 
+import js.array.ReadonlyArray
+
 /**
  * Provides additional metadata about how a {@linkcode DocumentDropEditProvider} works.
  */
@@ -11,7 +13,7 @@ external interface DocumentDropEditProviderMetadata {
      *
      * This is used to filter out providers when a specific {@link DocumentDropOrPasteEditKind kind} of edit is requested.
      */
-//  readonly providedDropEditKinds?: readonly DocumentDropOrPasteEditKind[];
+    val providedDropEditKinds: ReadonlyArray<DocumentDropOrPasteEditKind>?
 
     /**
      * List of {@link DataTransfer} mime types that the provider can handle.
@@ -24,5 +26,5 @@ external interface DocumentDropEditProviderMetadata {
      * Note that {@link DataTransferFile} entries are only created when dropping content from outside the editor, such as
      * from the operating system.
      */
-//  readonly dropMimeTypes: readonly string[];
+    val dropMimeTypes: ReadonlyArray<String>
 }

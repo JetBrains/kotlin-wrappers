@@ -4,6 +4,8 @@
 
 package vscode
 
+import js.typedarrays.Uint32Array
+
 /**
  * Represents an edit to semantic tokens.
  * @see {@link DocumentSemanticTokensProvider.provideDocumentSemanticTokensEdits provideDocumentSemanticTokensEdits} for an explanation of the format.
@@ -12,17 +14,17 @@ open external class SemanticTokensEdit {
     /**
      * The start offset of the edit.
      */
-//  readonly start: number;
+    val start: Int
 
     /**
      * The count of elements to remove.
      */
-//  readonly deleteCount: number;
+    val deleteCount: Int
 
     /**
      * The elements to insert.
      */
-//  readonly data: Uint32Array | undefined;
+    val data: Uint32Array<*>
 
     /**
      * Create a semantic token edit.

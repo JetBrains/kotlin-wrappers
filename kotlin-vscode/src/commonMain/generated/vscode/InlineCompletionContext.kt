@@ -9,7 +9,7 @@ external interface InlineCompletionContext {
     /**
      * Describes how the inline completion was triggered.
      */
-//  readonly triggerKind: InlineCompletionTriggerKind;
+    val triggerKind: InlineCompletionTriggerKind
 
     /**
      * Provides information about the currently selected item in the autocomplete widget if it is visible.
@@ -21,5 +21,5 @@ external interface InlineCompletionContext {
      *
      * Inline completion providers are requested again whenever the selected item changes.
      */
-//  readonly selectedCompletionInfo: SelectedCompletionInfo | undefined;
+    val selectedCompletionInfo: SelectedCompletionInfo
 }

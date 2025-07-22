@@ -4,6 +4,8 @@
 
 package vscode
 
+import js.array.ReadonlyArray
+
 /**
  * Represents edits to semantic tokens.
  * @see {@link DocumentSemanticTokensProvider.provideDocumentSemanticTokensEdits provideDocumentSemanticTokensEdits} for an explanation of the format.
@@ -14,13 +16,13 @@ open external class SemanticTokensEdits {
      *
      * This is the id that will be passed to `DocumentSemanticTokensProvider.provideDocumentSemanticTokensEdits` (if implemented).
      */
-//  readonly resultId: string | undefined;
+    val resultId: String
 
     /**
      * The edits to the tokens data.
      * All edits refer to the initial data state.
      */
-//  readonly edits: SemanticTokensEdit[];
+    val edits: ReadonlyArray<SemanticTokensEdit>
 
     /**
      * Create new semantic tokens edits.

@@ -2,6 +2,9 @@
 
 package vscode
 
+import js.array.ReadonlyArray
+import js.objects.ReadonlyRecord
+
 /**
  * Represents a cell of a {@link NotebookDocument notebook}, either a {@link NotebookCellKind.Code code}-cell
  * or {@link NotebookCellKind.Markup markup}-cell.
@@ -14,35 +17,35 @@ external interface NotebookCell {
      * index is updated when a cell is moved within its notebook. The index is `-1`
      * when the cell has been removed from its notebook.
      */
-//  readonly index: number;
+    val index: Int
 
     /**
      * The {@link NotebookDocument notebook} that contains this cell.
      */
-//  readonly notebook: NotebookDocument;
+    val notebook: NotebookDocument
 
     /**
      * The kind of this cell.
      */
-//  readonly kind: NotebookCellKind;
+    val kind: NotebookCellKind
 
     /**
      * The {@link TextDocument text} of this cell, represented as text document.
      */
-//  readonly document: TextDocument;
+    val document: TextDocument
 
     /**
      * The metadata of this cell. Can be anything but must be JSON-stringifyable.
      */
-//  readonly metadata: { readonly [key: string]: any };
+    val metadata: ReadonlyRecord<String, *>
 
     /**
      * The outputs of this cell.
      */
-//  readonly outputs: readonly NotebookCellOutput[];
+    val outputs: ReadonlyArray<NotebookCellOutput>
 
     /**
      * The most recent {@link NotebookCellExecutionSummary execution summary} for this cell.
      */
-//  readonly executionSummary: NotebookCellExecutionSummary | undefined;
+    val executionSummary: NotebookCellExecutionSummary
 }

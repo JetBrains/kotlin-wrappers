@@ -98,7 +98,7 @@ private fun convertType(
             -> "PromiseResult<T?>"
 
         bodySource == "[string, string]" -> "Tuple2<String, String>"
-        bodySource == "never" -> "Nothing"
+        bodySource == "never" -> "Nothing?"
         " | " in bodySource -> "Any /* $bodySource */"
 
         else -> bodySource
@@ -168,7 +168,8 @@ private fun commentMembers(
         .mapIndexed { index, it -> if (index > 0) "/**$it" else it }
         .map { it.trim() }
         .map {
-            val declarationSource = it.substringAfter(" */\n")
+            val declarationSource = it
+                .substringAfter(" */\n")
 
             commentMember(
                 comment = it.removeSuffix(declarationSource),
@@ -182,13 +183,39 @@ private fun commentMember(
     comment: String,
     source: String,
 ): String {
-    val declaration = if ("\n" in source) {
-        "/*\n$source\n*/"
-    } else {
-        "//  $source"
+    val declaration = when {
+        "\n" in source
+            -> "/*\n$source\n*/"
+
+        source == "readonly [key: string]: any;"
+            -> "    // $source"
+
+        source.startsWith("readonly ")
+            -> convertProperty(source.removeSuffix(";"))
+
+        else -> "//  $source"
     }
 
     return comment + declaration
+}
+
+private fun convertProperty(
+    source: String,
+): String {
+    val modifier = if (source.startsWith("readonly ")) "val" else "var"
+    val name = source
+        .removePrefix("readonly ")
+        .substringBefore(":")
+        .substringBefore("?")
+
+    val optional = "$name?: " in source
+    val typeSource = source
+        .substringAfter(": ")
+
+    val type = kotlinType(typeSource, name)
+        .let { (if (optional && !it.endsWith("?")) "$it?" else it) }
+
+    return "$modifier $name: $type"
 }
 
 private fun commentedOriginal(

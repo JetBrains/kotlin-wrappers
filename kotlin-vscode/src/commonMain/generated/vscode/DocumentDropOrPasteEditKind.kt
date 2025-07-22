@@ -37,7 +37,7 @@ open external class DocumentDropOrPasteEditKind {
     /**
      * The raw string value of the kind.
      */
-//  readonly value: string;
+    val value: String
 
     /**
      * Create a new kind by appending additional scopes to the current kind.

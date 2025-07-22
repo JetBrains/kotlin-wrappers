@@ -9,10 +9,10 @@ external interface QuickInputButton {
     /**
      * Icon for the button.
      */
-//  readonly iconPath: IconPath;
+    val iconPath: IconPath
 
     /**
      * An optional tooltip.
      */
-//  readonly tooltip?: string | undefined;
+    val tooltip: String?
 }

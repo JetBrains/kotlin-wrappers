@@ -12,17 +12,17 @@ open external class NotebookRange {
     /**
      * The zero-based start index of this range.
      */
-//  readonly start: number;
+    val start: Int
 
     /**
      * The exclusive end index of this range (zero-based).
      */
-//  readonly end: number;
+    val end: Int
 
     /**
      * `true` if `start` and `end` are equal.
      */
-//  readonly isEmpty: boolean;
+    val isEmpty: Boolean
 
     /**
      * Create a new notebook range. If `start` is not

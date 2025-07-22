@@ -13,7 +13,7 @@ external interface TextEditorDecorationType {
     /**
      * Internal representation of the handle.
      */
-//  readonly key: string;
+    val key: String
 
     /**
      * Remove this decoration type and all decorations on all text editors using it.

@@ -2,6 +2,8 @@
 
 package vscode
 
+import js.array.ReadonlyArray
+
 /**
  * Represents an event describing the change in a {@link NotebookEditor.visibleRanges notebook editor's visibleRanges}.
  */
@@ -9,10 +11,10 @@ external interface NotebookEditorVisibleRangesChangeEvent {
     /**
      * The {@link NotebookEditor notebook editor} for which the visible ranges have changed.
      */
-//  readonly notebookEditor: NotebookEditor;
+    val notebookEditor: NotebookEditor
 
     /**
      * The new value for the {@link NotebookEditor.visibleRanges notebook editor's visibleRanges}.
      */
-//  readonly visibleRanges: readonly NotebookRange[];
+    val visibleRanges: ReadonlyArray<NotebookRange>
 }

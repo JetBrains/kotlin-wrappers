@@ -10,7 +10,7 @@ external interface SignatureHelpContext {
     /**
      * Action that caused signature help to be triggered.
      */
-//  readonly triggerKind: SignatureHelpTriggerKind;
+    val triggerKind: SignatureHelpTriggerKind
 
     /**
      * Character that caused signature help to be triggered.
@@ -18,7 +18,7 @@ external interface SignatureHelpContext {
      * This is `undefined` when signature help is not triggered by typing, such as when manually invoking
      * signature help or when moving the cursor.
      */
-//  readonly triggerCharacter: string | undefined;
+    val triggerCharacter: String
 
     /**
      * `true` if signature help was already showing when it was triggered.
@@ -26,7 +26,7 @@ external interface SignatureHelpContext {
      * Retriggers occur when the signature help is already active and can be caused by actions such as
      * typing a trigger character, a cursor move, or document content changes.
      */
-//  readonly isRetrigger: boolean;
+    val isRetrigger: Boolean
 
     /**
      * The currently active {@linkcode SignatureHelp}.
@@ -34,5 +34,5 @@ external interface SignatureHelpContext {
      * The `activeSignatureHelp` has its {@linkcode SignatureHelp.activeSignature activeSignature} field updated based on
      * the user arrowing through available signatures.
      */
-//  readonly activeSignatureHelp: SignatureHelp | undefined;
+    val activeSignatureHelp: SignatureHelp
 }

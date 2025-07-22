@@ -9,15 +9,15 @@ external interface TerminalShellExecutionStartEvent {
     /**
      * The terminal that shell integration has been activated in.
      */
-//  readonly terminal: Terminal;
+    val terminal: Terminal
 
     /**
      * The shell integration object.
      */
-//  readonly shellIntegration: TerminalShellIntegration;
+    val shellIntegration: TerminalShellIntegration
 
     /**
      * The terminal shell execution that has ended.
      */
-//  readonly execution: TerminalShellExecution;
+    val execution: TerminalShellExecution
 }

@@ -9,5 +9,5 @@ external interface AuthenticationSessionsChangeEvent {
     /**
      * The {@link AuthenticationProvider} that has had its sessions change.
      */
-//  readonly provider: AuthenticationProviderInformation;
+    val provider: AuthenticationProviderInformation
 }

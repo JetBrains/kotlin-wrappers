@@ -11,12 +11,12 @@ open external class InlineValueText {
     /**
      * The document range for which the inline value applies.
      */
-//  readonly range: Range;
+    val range: Range
 
     /**
      * The text of the inline value.
      */
-//  readonly text: string;
+    val text: String
 
     /**
      * Creates a new InlineValueText object.

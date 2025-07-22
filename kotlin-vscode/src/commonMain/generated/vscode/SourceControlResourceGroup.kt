@@ -10,7 +10,7 @@ external interface SourceControlResourceGroup {
     /**
      * The id of this source control resource group.
      */
-//  readonly id: string;
+    val id: String
 
     /**
      * The label of this source control resource group.

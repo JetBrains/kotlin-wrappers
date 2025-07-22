@@ -11,17 +11,17 @@ open external class TabInputNotebookDiff {
     /**
      * The uri of the original notebook.
      */
-//  readonly original: Uri;
+    val original: Uri
 
     /**
      * The uri of the modified notebook.
      */
-//  readonly modified: Uri;
+    val modified: Uri
 
     /**
      * The type of notebook. Maps to {@linkcode NotebookDocument.notebookType NotebookDocuments's notebookType}
      */
-//  readonly notebookType: string;
+    val notebookType: String
 
     /**
      * Constructs a notebook diff tab input.

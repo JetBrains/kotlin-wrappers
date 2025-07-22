@@ -10,10 +10,10 @@ external interface TaskProcessEndEvent {
     /**
      * The task execution for which the process got started.
      */
-//  readonly execution: TaskExecution;
+    val execution: TaskExecution
 
     /**
      * The process's exit code. Will be `undefined` when the task is terminated.
      */
-//  readonly exitCode: number | undefined;
+    val exitCode: Int
 }

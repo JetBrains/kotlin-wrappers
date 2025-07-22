@@ -14,7 +14,7 @@ external interface TestItemCollection :
     /**
      * Gets the number of items in the collection.
      */
-//  readonly size: number;
+    val size: Int
 
     /**
      * Replaces the items stored by the collection.

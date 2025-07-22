@@ -13,10 +13,10 @@ external interface QuickPickItemButtonEvent<
     /**
      * The button that was clicked.
      */
-//  readonly button: QuickInputButton;
+    val button: QuickInputButton
 
     /**
      * The item that the button belongs to.
      */
-//  readonly item: T;
+    val item: T
 }

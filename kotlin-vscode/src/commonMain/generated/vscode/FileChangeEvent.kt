@@ -9,10 +9,10 @@ external interface FileChangeEvent {
     /**
      * The type of change.
      */
-//  readonly type: FileChangeType;
+    val type: FileChangeType
 
     /**
      * The uri of the file that has changed.
      */
-//  readonly uri: Uri;
+    val uri: Uri
 }

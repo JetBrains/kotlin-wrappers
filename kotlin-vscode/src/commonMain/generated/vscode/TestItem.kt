@@ -15,25 +15,25 @@ external interface TestItem {
      * (test explorer). This cannot change for the lifetime of the `TestItem`,
      * and must be unique among its parent's direct children.
      */
-//  readonly id: string;
+    val id: String
 
     /**
      * URI this `TestItem` is associated with. May be a file or directory.
      */
-//  readonly uri: Uri | undefined;
+    val uri: Uri
 
     /**
      * The children of this test item. For a test suite, this may contain the
      * individual test cases or nested suites.
      */
-//  readonly children: TestItemCollection;
+    val children: TestItemCollection
 
     /**
      * The parent of this item. It's set automatically, and is undefined
      * top-level items in the {@link TestController.items} and for items that
      * aren't yet included in another item's {@link TestItem.children children}.
      */
-//  readonly parent: TestItem | undefined;
+    val parent: TestItem
 
     /**
      * Tags associated with this test item. May be used in combination with

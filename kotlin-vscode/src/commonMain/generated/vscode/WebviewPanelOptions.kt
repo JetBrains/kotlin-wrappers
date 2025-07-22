@@ -11,7 +11,7 @@ external interface WebviewPanelOptions {
      *
      * Defaults to `false`.
      */
-//  readonly enableFindWidget?: boolean;
+    val enableFindWidget: Boolean?
 
     /**
      * Controls if the webview panel's content (iframe) is kept around even when the panel
@@ -29,5 +29,5 @@ external interface WebviewPanelOptions {
      * `retainContextWhenHidden` has a high memory overhead and should only be used if
      * your panel's context cannot be quickly saved and restored.
      */
-//  readonly retainContextWhenHidden?: boolean;
+    val retainContextWhenHidden: Boolean?
 }

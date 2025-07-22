@@ -9,18 +9,18 @@ external interface DebugSession {
     /**
      * The unique ID of this debug session.
      */
-//  readonly id: string;
+    val id: String
 
     /**
      * The debug session's type from the {@link DebugConfiguration debug configuration}.
      */
-//  readonly type: string;
+    val type: String
 
     /**
      * The parent session of this debug session, if it was created as a child.
      * @see DebugSessionOptions.parentSession
      */
-//  readonly parentSession?: DebugSession;
+    val parentSession: DebugSession?
 
     /**
      * The debug session's name is initially taken from the {@link DebugConfiguration debug configuration}.
@@ -31,7 +31,7 @@ external interface DebugSession {
     /**
      * The workspace folder of this session or `undefined` for a folderless setup.
      */
-//  readonly workspaceFolder: WorkspaceFolder | undefined;
+    val workspaceFolder: WorkspaceFolder
 
     /**
      * The "resolved" {@link DebugConfiguration debug configuration} of this session.
@@ -39,7 +39,7 @@ external interface DebugSession {
      * - all variables have been substituted and
      * - platform specific attribute sections have been "flattened" for the matching platform and removed for non-matching platforms.
      */
-//  readonly configuration: DebugConfiguration;
+    val configuration: DebugConfiguration
 
     /**
      * Send a custom request to the debug adapter.

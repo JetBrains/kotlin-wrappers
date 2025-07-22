@@ -9,10 +9,10 @@ external interface SelectedCompletionInfo {
     /**
      * The range that will be replaced if this completion item is accepted.
      */
-//  readonly range: Range;
+    val range: Range
 
     /**
      * The text the range will be replaced with if this completion is accepted.
      */
-//  readonly text: string;
+    val text: String
 }

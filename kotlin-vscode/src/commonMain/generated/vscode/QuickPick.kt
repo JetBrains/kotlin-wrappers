@@ -2,6 +2,9 @@
 
 package vscode
 
+import js.array.ReadonlyArray
+import js.core.Void
+
 /**
  * A concrete {@link QuickInput} to let the user pick an item from a
  * list of items of type T. The items can be filtered through a filter text field and
@@ -30,12 +33,12 @@ external interface QuickPick<
     /**
      * An event signaling when the value of the filter text has changed.
      */
-//  readonly onDidChangeValue: Event<string>;
+    val onDidChangeValue: Event<String>
 
     /**
      * An event signaling when the user indicated acceptance of the selected item(s).
      */
-//  readonly onDidAccept: Event<void>;
+    val onDidAccept: Event<Void>
 
     /**
      * Buttons for actions in the UI.
@@ -46,13 +49,13 @@ external interface QuickPick<
      * An event signaling when a top level button (buttons stored in {@link buttons}) was triggered.
      * This event does not fire for buttons on a {@link QuickPickItem}.
      */
-//  readonly onDidTriggerButton: Event<QuickInputButton>;
+    val onDidTriggerButton: Event<QuickInputButton>
 
     /**
      * An event signaling when a button in a particular {@link QuickPickItem} was triggered.
      * This event does not fire for buttons in the title bar.
      */
-//  readonly onDidTriggerItemButton: Event<QuickPickItemButtonEvent<T>>;
+    val onDidTriggerItemButton: Event<QuickPickItemButtonEvent<T>>
 
     /**
      * Items to pick from. This can be read and updated by the extension.
@@ -87,7 +90,7 @@ external interface QuickPick<
     /**
      * An event signaling when the active items have changed.
      */
-//  readonly onDidChangeActive: Event<readonly T[]>;
+    val onDidChangeActive: Event<ReadonlyArray<T>>
 
     /**
      * Selected items. This can be read and updated by the extension.
@@ -97,5 +100,5 @@ external interface QuickPick<
     /**
      * An event signaling when the selected items have changed.
      */
-//  readonly onDidChangeSelection: Event<readonly T[]>;
+    val onDidChangeSelection: Event<ReadonlyArray<T>>
 }

@@ -112,28 +112,28 @@ open external class Uri {
      * Scheme is the `http` part of `http://www.example.com/some/path?query#fragment`.
      * The part before the first colon.
      */
-//  readonly scheme: string;
+    val scheme: String
 
     /**
      * Authority is the `www.example.com` part of `http://www.example.com/some/path?query#fragment`.
      * The part between the first double slashes and the next slash.
      */
-//  readonly authority: string;
+    val authority: String
 
     /**
      * Path is the `/some/path` part of `http://www.example.com/some/path?query#fragment`.
      */
-//  readonly path: string;
+    val path: String
 
     /**
      * Query is the `query` part of `http://www.example.com/some/path?query#fragment`.
      */
-//  readonly query: string;
+    val query: String
 
     /**
      * Fragment is the `fragment` part of `http://www.example.com/some/path?query#fragment`.
      */
-//  readonly fragment: string;
+    val fragment: String
 
     /**
      * The string representing the corresponding file system path of this Uri.
@@ -155,7 +155,7 @@ open external class Uri {
      * u.fsPath === '\\server\c$\folder\file.txt'
      * ```
      */
-//  readonly fsPath: string;
+    val fsPath: String
 
     /**
      * Derive a new Uri from this Uri.

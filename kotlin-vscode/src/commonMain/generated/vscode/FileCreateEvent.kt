@@ -2,6 +2,8 @@
 
 package vscode
 
+import js.array.ReadonlyArray
+
 /**
  * An event that is fired after files are created.
  */
@@ -9,5 +11,5 @@ external interface FileCreateEvent {
     /**
      * The files that got created.
      */
-//  readonly files: readonly Uri[];
+    val files: ReadonlyArray<Uri>
 }

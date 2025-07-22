@@ -10,7 +10,7 @@ external interface CompletionContext {
     /**
      * How the completion was triggered.
      */
-//  readonly triggerKind: CompletionTriggerKind;
+    val triggerKind: CompletionTriggerKind
 
     /**
      * Character that triggered the completion item provider.
@@ -19,5 +19,5 @@ external interface CompletionContext {
      *
      * The trigger character is already in the document when the completion provider is triggered.
      */
-//  readonly triggerCharacter: string | undefined;
+    val triggerCharacter: String
 }

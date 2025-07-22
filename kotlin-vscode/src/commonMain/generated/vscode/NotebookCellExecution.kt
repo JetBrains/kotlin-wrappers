@@ -14,7 +14,7 @@ external interface NotebookCellExecution {
     /**
      * The {@link NotebookCell cell} for which this execution has been created.
      */
-//  readonly cell: NotebookCell;
+    val cell: NotebookCell
 
     /**
      * A cancellation token which will be triggered when the cell execution is canceled
@@ -23,7 +23,7 @@ external interface NotebookCellExecution {
      * _Note_ that the cancellation token will not be triggered when the {@link NotebookController controller}
      * that created this execution uses an {@link NotebookController.interruptHandler interrupt-handler}.
      */
-//  readonly token: CancellationToken;
+    val token: CancellationToken
 
     /**
      * Set and unset the order of this cell execution.

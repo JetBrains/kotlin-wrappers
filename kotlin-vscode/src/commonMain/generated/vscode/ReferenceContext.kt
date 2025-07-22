@@ -10,5 +10,5 @@ external interface ReferenceContext {
     /**
      * Include the declaration of the current symbol.
      */
-//  readonly includeDeclaration: boolean;
+    val includeDeclaration: Boolean
 }

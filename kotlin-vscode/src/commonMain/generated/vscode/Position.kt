@@ -16,14 +16,14 @@ open external class Position {
     /**
      * The zero-based line value.
      */
-//  readonly line: number;
+    val line: Int
 
     /**
      * The zero-based character value.
      *
      * Character offsets are expressed using UTF-16 [code units](https://developer.mozilla.org/en-US/docs/Glossary/Code_unit).
      */
-//  readonly character: number;
+    val character: Int
 
     /**
      * @param line A zero-based line value.

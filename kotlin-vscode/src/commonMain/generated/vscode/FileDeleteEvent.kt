@@ -2,6 +2,8 @@
 
 package vscode
 
+import js.array.ReadonlyArray
+
 /**
  * An event that is fired after files are deleted.
  */
@@ -9,5 +11,5 @@ external interface FileDeleteEvent {
     /**
      * The files that got deleted.
      */
-//  readonly files: readonly Uri[];
+    val files: ReadonlyArray<Uri>
 }

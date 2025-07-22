@@ -10,7 +10,7 @@ external interface LanguageStatusItem {
     /**
      * The identifier of this item.
      */
-//  readonly id: string;
+    val id: String
 
     /**
      * The short name of this item, like 'Java Language Status', etc.

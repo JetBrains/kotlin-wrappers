@@ -9,12 +9,12 @@ external interface NotebookCellExecutionSummary {
     /**
      * The order in which the execution happened.
      */
-//  readonly executionOrder?: number;
+    val executionOrder: Int?
 
     /**
      * If the execution finished successfully.
      */
-//  readonly success?: boolean;
+    val success: Boolean?
 
     /**
      * The times at which execution started and ended, as unix timestamps

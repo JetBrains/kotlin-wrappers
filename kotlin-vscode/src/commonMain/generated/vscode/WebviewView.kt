@@ -2,6 +2,8 @@
 
 package vscode
 
+import js.core.Void
+
 /**
  * A webview based view.
  */
@@ -9,12 +11,12 @@ external interface WebviewView {
     /**
      * Identifies the type of the webview view, such as `'hexEditor.dataView'`.
      */
-//  readonly viewType: string;
+    val viewType: String
 
     /**
      * The underlying webview for the view.
      */
-//  readonly webview: Webview;
+    val webview: Webview
 
     /**
      * View title displayed in the UI.
@@ -42,14 +44,14 @@ external interface WebviewView {
      *
      * Trying to use the view after it has been disposed throws an exception.
      */
-//  readonly onDidDispose: Event<void>;
+    val onDidDispose: Event<Void>
 
     /**
      * Tracks if the webview is currently visible.
      *
      * Views are visible when they are on the screen and expanded.
      */
-//  readonly visible: boolean;
+    val visible: Boolean
 
     /**
      * Event fired when the visibility of the view changes.
@@ -61,7 +63,7 @@ external interface WebviewView {
      *
      * Note that hiding a view using the context menu instead disposes of the view and fires `onDidDispose`.
      */
-//  readonly onDidChangeVisibility: Event<void>;
+    val onDidChangeVisibility: Event<Void>
 
     /**
      * Reveal the view in the UI.

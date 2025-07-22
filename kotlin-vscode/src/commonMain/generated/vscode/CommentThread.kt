@@ -9,7 +9,7 @@ external interface CommentThread {
     /**
      * The uri of the document the thread has been created on.
      */
-//  readonly uri: Uri;
+    val uri: Uri
 
     /**
      * The range the comment thread is located within the document. The thread icon will be shown

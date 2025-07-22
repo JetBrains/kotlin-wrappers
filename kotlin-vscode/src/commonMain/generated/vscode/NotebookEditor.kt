@@ -2,6 +2,8 @@
 
 package vscode
 
+import js.array.ReadonlyArray
+
 /**
  * Represents a notebook editor that is attached to a {@link NotebookDocument notebook}.
  * Additional properties of the NotebookEditor are available in the proposed
@@ -11,7 +13,7 @@ external interface NotebookEditor {
     /**
      * The {@link NotebookDocument notebook document} associated with this notebook editor.
      */
-//  readonly notebook: NotebookDocument;
+    val notebook: NotebookDocument
 
     /**
      * The primary selection in this notebook editor.
@@ -28,12 +30,12 @@ external interface NotebookEditor {
     /**
      * The current visible ranges in the editor (vertically).
      */
-//  readonly visibleRanges: readonly NotebookRange[];
+    val visibleRanges: ReadonlyArray<NotebookRange>
 
     /**
      * The column in which this editor shows.
      */
-//  readonly viewColumn?: ViewColumn;
+    val viewColumn: ViewColumn?
 
     /**
      * Scroll as indicated by `revealType` in order to reveal the given range.

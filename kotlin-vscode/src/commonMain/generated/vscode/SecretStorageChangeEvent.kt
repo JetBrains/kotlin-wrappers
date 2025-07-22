@@ -9,5 +9,5 @@ external interface SecretStorageChangeEvent {
     /**
      * The key of the secret that has changed.
      */
-//  readonly key: string;
+    val key: String
 }

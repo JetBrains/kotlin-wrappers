@@ -2,6 +2,8 @@
 
 package vscode
 
+import js.array.ReadonlyArray
+
 /**
  * Represents the main editor area which consists of multiple groups which contain tabs.
  */
@@ -9,22 +11,22 @@ external interface TabGroups {
     /**
      * All the groups within the group container.
      */
-//  readonly all: readonly TabGroup[];
+    val all: ReadonlyArray<TabGroup>
 
     /**
      * The currently active group.
      */
-//  readonly activeTabGroup: TabGroup;
+    val activeTabGroup: TabGroup
 
     /**
      * An {@link Event event} which fires when {@link TabGroup tab groups} have changed.
      */
-//  readonly onDidChangeTabGroups: Event<TabGroupChangeEvent>;
+    val onDidChangeTabGroups: Event<TabGroupChangeEvent>
 
     /**
      * An {@link Event event} which fires when {@link Tab tabs} have changed.
      */
-//  readonly onDidChangeTabs: Event<TabChangeEvent>;
+    val onDidChangeTabs: Event<TabChangeEvent>
 
     /**
      * Closes the tab. This makes the tab object invalid and the tab

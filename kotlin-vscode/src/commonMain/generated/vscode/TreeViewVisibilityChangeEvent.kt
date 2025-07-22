@@ -9,5 +9,5 @@ external interface TreeViewVisibilityChangeEvent {
     /**
      * `true` if the {@link TreeView tree view} is visible otherwise `false`.
      */
-//  readonly visible: boolean;
+    val visible: Boolean
 }

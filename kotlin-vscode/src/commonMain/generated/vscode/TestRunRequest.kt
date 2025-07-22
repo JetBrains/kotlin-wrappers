@@ -4,6 +4,8 @@
 
 package vscode
 
+import js.array.ReadonlyArray
+
 /**
  * A TestRunRequest is a precursor to a {@link TestRun}, which in turn is
  * created by passing a request to {@link TestController.createTestRun}. The
@@ -24,7 +26,7 @@ open external class TestRunRequest {
      * The process of running tests should resolve the children of any test
      * items who have not yet been resolved.
      */
-//  readonly include: readonly TestItem[] | undefined;
+    val include: ReadonlyArray<TestItem>
 
     /**
      * An array of tests the user has marked as excluded from the test included
@@ -33,20 +35,20 @@ open external class TestRunRequest {
      * May be omitted if no exclusions were requested. Test controllers should
      * not run excluded tests or any children of excluded tests.
      */
-//  readonly exclude: readonly TestItem[] | undefined;
+    val exclude: ReadonlyArray<TestItem>
 
     /**
      * The profile used for this request. This will always be defined
      * for requests issued from the editor UI, though extensions may
      * programmatically create requests not associated with any profile.
      */
-//  readonly profile: TestRunProfile | undefined;
+    val profile: TestRunProfile
 
     /**
      * Whether the profile should run continuously as source code changes. Only
      * relevant for profiles that set {@link TestRunProfile.supportsContinuousRun}.
      */
-//  readonly continuous?: boolean;
+    val continuous: Boolean?
 
     /**
      * Controls how test Test Results view is focused.  If true, the editor
@@ -54,7 +56,7 @@ open external class TestRunRequest {
      * prefer to move focus into the Test Results view, although
      * this may be configured by users.
      */
-//  readonly preserveFocus: boolean;
+    val preserveFocus: Boolean
 
     /**
      * @param include Array of specific tests to run, or undefined to run all tests

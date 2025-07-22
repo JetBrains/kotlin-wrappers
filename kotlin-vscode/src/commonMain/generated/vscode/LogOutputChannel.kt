@@ -13,12 +13,12 @@ external interface LogOutputChannel :
     /**
      * The current log level of the channel. Defaults to {@link env.logLevel editor log level}.
      */
-//  readonly logLevel: LogLevel;
+    val logLevel: LogLevel
 
     /**
      * An {@link Event} which fires when the log level of the channel changes.
      */
-//  readonly onDidChangeLogLevel: Event<LogLevel>;
+    val onDidChangeLogLevel: Event<LogLevel>
 
     /**
      * Outputs the given trace message to the channel. Use this method to log verbose information.

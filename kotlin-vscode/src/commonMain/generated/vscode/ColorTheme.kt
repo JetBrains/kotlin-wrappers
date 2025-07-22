@@ -9,5 +9,5 @@ external interface ColorTheme {
     /**
      * The kind of this color theme: light, dark, high contrast dark and high contrast light.
      */
-//  readonly kind: ColorThemeKind;
+    val kind: ColorThemeKind
 }

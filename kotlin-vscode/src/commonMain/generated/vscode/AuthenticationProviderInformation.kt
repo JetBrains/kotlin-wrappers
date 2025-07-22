@@ -9,10 +9,10 @@ external interface AuthenticationProviderInformation {
     /**
      * The unique identifier of the authentication provider.
      */
-//  readonly id: string;
+    val id: String
 
     /**
      * The human-readable name of the authentication provider.
      */
-//  readonly label: string;
+    val label: String
 }

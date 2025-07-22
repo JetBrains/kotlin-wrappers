@@ -21,7 +21,7 @@ external interface DiagnosticCollection :
      * from this collection will be associated with this name. Also, the task framework uses this
      * name when defining [problem matchers](https://code.visualstudio.com/docs/editor/tasks#_defining-a-problem-matcher).
      */
-//  readonly name: string;
+    val name: String
 
     /**
      * Assign diagnostics for given resource. Will replace

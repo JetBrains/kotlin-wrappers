@@ -13,16 +13,16 @@ external interface WorkspaceFolder {
      * *Note:* The {@link Uri}-type was intentionally chosen such that future releases of the editor can support
      * workspace folders that are not stored on the local disk, e.g. `ftp://server/workspaces/foo`.
      */
-//  readonly uri: Uri;
+    val uri: Uri
 
     /**
      * The name of this workspace folder. Defaults to
      * the basename of its {@link Uri.path uri-path}
      */
-//  readonly name: string;
+    val name: String
 
     /**
      * The ordinal number of this workspace folder.
      */
-//  readonly index: number;
+    val index: Int
 }

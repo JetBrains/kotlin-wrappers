@@ -12,12 +12,12 @@ open external class TabInputTextDiff {
     /**
      * The uri of the original text resource.
      */
-//  readonly original: Uri;
+    val original: Uri
 
     /**
      * The uri of the modified text resource.
      */
-//  readonly modified: Uri;
+    val modified: Uri
 
     /**
      * Constructs a new text diff tab input with the given URIs.

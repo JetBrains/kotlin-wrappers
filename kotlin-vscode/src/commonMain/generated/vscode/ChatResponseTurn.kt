@@ -11,22 +11,22 @@ open external class ChatResponseTurn {
     /**
      * The content that was received from the chat participant. Only the stream parts that represent actual content (not metadata) are represented.
      */
-//  readonly response: ReadonlyArray<ChatResponseMarkdownPart | ChatResponseFileTreePart | ChatResponseAnchorPart | ChatResponseCommandButtonPart>;
+    val response: Any /* ReadonlyArray<ChatResponseMarkdownPart | ChatResponseFileTreePart | ChatResponseAnchorPart | ChatResponseCommandButtonPart> */
 
     /**
      * The result that was received from the chat participant.
      */
-//  readonly result: ChatResult;
+    val result: ChatResult
 
     /**
      * The id of the chat participant that this response came from.
      */
-//  readonly participant: string;
+    val participant: String
 
     /**
      * The name of the command that this response came from.
      */
-//  readonly command?: string;
+    val command: String?
 
     /**
      * @hidden

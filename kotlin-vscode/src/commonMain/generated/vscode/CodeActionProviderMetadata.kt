@@ -2,6 +2,8 @@
 
 package vscode
 
+import js.array.ReadonlyArray
+
 /**
  * Metadata about the type of code actions that a {@link CodeActionProvider} provides.
  */
@@ -14,7 +16,7 @@ external interface CodeActionProviderMetadata {
      * list of kinds may either be generic, such as `[CodeActionKind.Refactor]`, or list out every kind provided,
      * such as `[CodeActionKind.Refactor.Extract.append('function'), CodeActionKind.Refactor.Extract.append('constant'), ...]`.
      */
-//  readonly providedCodeActionKinds?: readonly CodeActionKind[];
+    val providedCodeActionKinds: ReadonlyArray<CodeActionKind>?
 
     /**
      * Static documentation for a class of code actions.

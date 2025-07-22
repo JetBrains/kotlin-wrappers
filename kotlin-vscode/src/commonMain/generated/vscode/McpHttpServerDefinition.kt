@@ -12,7 +12,7 @@ open external class McpHttpServerDefinition {
     /**
      * The human-readable name of the server.
      */
-//  readonly label: string;
+    val label: String
 
     /**
      * The URI of the server. The editor will make a POST request to this URI

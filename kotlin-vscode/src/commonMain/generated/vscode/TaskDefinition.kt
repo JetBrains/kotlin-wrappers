@@ -22,7 +22,7 @@ external interface TaskDefinition {
      * Note that type identifier starting with a '$' are reserved for internal
      * usages and shouldn't be used by extensions.
      */
-//  readonly type: string;
+    val type: String
 
     /**
      * Additional attributes of a concrete task definition.

@@ -11,7 +11,7 @@ external interface CustomDocumentEditEvent<T : CustomDocument> {
     /**
      * The document that the edit is for.
      */
-//  readonly document: T;
+    val document: T
 
     /**
      * Undo the edit operation.
@@ -36,5 +36,5 @@ external interface CustomDocumentEditEvent<T : CustomDocument> {
      *
      * This will be shown to users in the UI for undo/redo operations.
      */
-//  readonly label?: string;
+    val label: String?
 }

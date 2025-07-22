@@ -35,7 +35,7 @@ external interface CustomEditorProvider<T : CustomDocument> :
      *
      * An editor should only ever fire `CustomDocumentEditEvent` events, or only ever fire `CustomDocumentContentChangeEvent` events.
      */
-//  readonly onDidChangeCustomDocument: Event<CustomDocumentEditEvent<T>> | Event<CustomDocumentContentChangeEvent<T>>;
+    val onDidChangeCustomDocument: Event<Any /* CustomDocumentEditEvent<T>> | Event<CustomDocumentContentChangeEvent<T> */>
 
     /**
      * Save a custom document.

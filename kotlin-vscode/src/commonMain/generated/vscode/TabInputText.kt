@@ -11,7 +11,7 @@ open external class TabInputText {
     /**
      * The uri represented by the tab.
      */
-//  readonly uri: Uri;
+    val uri: Uri
 
     /**
      * Constructs a text tab input with the given URI.

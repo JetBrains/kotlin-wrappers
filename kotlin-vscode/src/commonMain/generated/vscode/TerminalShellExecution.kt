@@ -30,14 +30,14 @@ external interface TerminalShellExecution {
      *   ].join('\n');
      * }
      */
-//  readonly commandLine: TerminalShellExecutionCommandLine;
+    val commandLine: TerminalShellExecutionCommandLine
 
     /**
      * The working directory that was reported by the shell when this command executed. This
      * {@link Uri} may represent a file on another machine (eg. ssh into another machine). This
      * requires the shell integration to support working directory reporting.
      */
-//  readonly cwd: Uri | undefined;
+    val cwd: Uri
 
     /**
      * Creates a stream of raw data (including escape sequences) that is written to the

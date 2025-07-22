@@ -6,6 +6,8 @@
 
 package vscode
 
+import js.array.ReadonlyArray
+
 /**
  * Represents a Tree view
  */
@@ -14,37 +16,37 @@ external interface TreeView<T> :
     /**
      * Event that is fired when an element is expanded
      */
-//  readonly onDidExpandElement: Event<TreeViewExpansionEvent<T>>;
+    val onDidExpandElement: Event<TreeViewExpansionEvent<T>>
 
     /**
      * Event that is fired when an element is collapsed
      */
-//  readonly onDidCollapseElement: Event<TreeViewExpansionEvent<T>>;
+    val onDidCollapseElement: Event<TreeViewExpansionEvent<T>>
 
     /**
      * Currently selected elements.
      */
-//  readonly selection: readonly T[];
+    val selection: ReadonlyArray<T>
 
     /**
      * Event that is fired when the {@link TreeView.selection selection} has changed
      */
-//  readonly onDidChangeSelection: Event<TreeViewSelectionChangeEvent<T>>;
+    val onDidChangeSelection: Event<TreeViewSelectionChangeEvent<T>>
 
     /**
      * `true` if the {@link TreeView tree view} is visible otherwise `false`.
      */
-//  readonly visible: boolean;
+    val visible: Boolean
 
     /**
      * Event that is fired when {@link TreeView.visible visibility} has changed
      */
-//  readonly onDidChangeVisibility: Event<TreeViewVisibilityChangeEvent>;
+    val onDidChangeVisibility: Event<TreeViewVisibilityChangeEvent>
 
     /**
      * An event to signal that an element or root has either been checked or unchecked.
      */
-//  readonly onDidChangeCheckboxState: Event<TreeCheckboxChangeEvent<T>>;
+    val onDidChangeCheckboxState: Event<TreeCheckboxChangeEvent<T>>
 
     /**
      * An optional human-readable message that will be rendered in the view.

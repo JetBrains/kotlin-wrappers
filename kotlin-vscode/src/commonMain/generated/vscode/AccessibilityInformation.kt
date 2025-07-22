@@ -9,7 +9,7 @@ external interface AccessibilityInformation {
     /**
      * Label to be read out by a screen reader once the item has focus.
      */
-//  readonly label: string;
+    val label: String
 
     /**
      * Role of the widget which defines how a screen reader interacts with it.
@@ -17,5 +17,5 @@ external interface AccessibilityInformation {
      * If role is not specified the editor will pick the appropriate role automatically.
      * More about aria roles can be found here https://w3c.github.io/aria/#widget_roles
      */
-//  readonly role?: string;
+    val role: String?
 }

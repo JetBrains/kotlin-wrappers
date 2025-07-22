@@ -11,5 +11,5 @@ external interface SourceControlResourceThemableDecorations {
      * The icon path for a specific
      * {@link SourceControlResourceState source control resource state}.
      */
-//  readonly iconPath?: string | Uri | ThemeIcon;
+    val iconPath: Any /* string | Uri | ThemeIcon */?
 }

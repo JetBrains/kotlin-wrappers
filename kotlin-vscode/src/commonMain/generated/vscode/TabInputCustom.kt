@@ -11,12 +11,12 @@ open external class TabInputCustom {
     /**
      * The uri that the tab is representing.
      */
-//  readonly uri: Uri;
+    val uri: Uri
 
     /**
      * The type of custom editor.
      */
-//  readonly viewType: string;
+    val viewType: String
 
     /**
      * Constructs a custom editor tab input.

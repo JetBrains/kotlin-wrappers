@@ -9,15 +9,15 @@ external interface DebugSessionCustomEvent {
     /**
      * The {@link DebugSession debug session} for which the custom event was received.
      */
-//  readonly session: DebugSession;
+    val session: DebugSession
 
     /**
      * Type of event.
      */
-//  readonly event: string;
+    val event: String
 
     /**
      * Event specific information.
      */
-//  readonly body: any;
+    val body: Any?
 }

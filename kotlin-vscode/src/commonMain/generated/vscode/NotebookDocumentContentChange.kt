@@ -2,6 +2,8 @@
 
 package vscode
 
+import js.array.ReadonlyArray
+
 /**
  * Describes a structural change to a notebook document, e.g newly added and removed cells.
  *
@@ -14,15 +16,15 @@ external interface NotebookDocumentContentChange {
      * Note that no cells have been {@link NotebookDocumentContentChange.removedCells removed}
      * when this range is {@link NotebookRange.isEmpty empty}.
      */
-//  readonly range: NotebookRange;
+    val range: NotebookRange
 
     /**
      * Cells that have been added to the document.
      */
-//  readonly addedCells: readonly NotebookCell[];
+    val addedCells: ReadonlyArray<NotebookCell>
 
     /**
      * Cells that have been removed from the document.
      */
-//  readonly removedCells: readonly NotebookCell[];
+    val removedCells: ReadonlyArray<NotebookCell>
 }

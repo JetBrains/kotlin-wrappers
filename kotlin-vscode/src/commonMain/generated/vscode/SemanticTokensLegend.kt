@@ -4,6 +4,8 @@
 
 package vscode
 
+import js.array.ReadonlyArray
+
 /**
  * A semantic tokens legend contains the needed information to decipher
  * the integer encoded representation of semantic tokens.
@@ -12,12 +14,12 @@ open external class SemanticTokensLegend {
     /**
      * The possible token types.
      */
-//  readonly tokenTypes: string[];
+    val tokenTypes: ReadonlyArray<String>
 
     /**
      * The possible token modifiers.
      */
-//  readonly tokenModifiers: string[];
+    val tokenModifiers: ReadonlyArray<String>
 
     /**
      * Creates a semantic tokens legend.

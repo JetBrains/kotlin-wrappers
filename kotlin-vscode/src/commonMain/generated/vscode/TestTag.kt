@@ -14,7 +14,7 @@ open external class TestTag {
      * ID of the test tag. `TestTag` instances with the same ID are considered
      * to be identical.
      */
-//  readonly id: string;
+    val id: String
 
     /**
      * Creates a new TestTag instance.

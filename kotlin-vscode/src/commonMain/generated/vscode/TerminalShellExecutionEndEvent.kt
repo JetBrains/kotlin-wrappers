@@ -9,17 +9,17 @@ external interface TerminalShellExecutionEndEvent {
     /**
      * The terminal that shell integration has been activated in.
      */
-//  readonly terminal: Terminal;
+    val terminal: Terminal
 
     /**
      * The shell integration object.
      */
-//  readonly shellIntegration: TerminalShellIntegration;
+    val shellIntegration: TerminalShellIntegration
 
     /**
      * The terminal shell execution that has ended.
      */
-//  readonly execution: TerminalShellExecution;
+    val execution: TerminalShellExecution
 
     /**
      * The exit code reported by the shell.
@@ -53,5 +53,5 @@ external interface TerminalShellExecutionEndEvent {
      *   }
      * });
      */
-//  readonly exitCode: number | undefined;
+    val exitCode: Int
 }

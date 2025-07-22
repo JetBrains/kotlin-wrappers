@@ -2,6 +2,8 @@
 
 package vscode
 
+import js.core.Void
+
 /**
  * A panel that contains a webview.
  */
@@ -9,7 +11,7 @@ external interface WebviewPanel {
     /**
      * Identifies the type of the webview panel, such as `'markdown.preview'`.
      */
-//  readonly viewType: string;
+    val viewType: String
 
     /**
      * Title of the panel shown in UI.
@@ -35,33 +37,33 @@ external interface WebviewPanel {
     /**
      * {@linkcode Webview} belonging to the panel.
      */
-//  readonly webview: Webview;
+    val webview: Webview
 
     /**
      * Content settings for the webview panel.
      */
-//  readonly options: WebviewPanelOptions;
+    val options: WebviewPanelOptions
 
     /**
      * Editor position of the panel. This property is only set if the webview is in
      * one of the editor view columns.
      */
-//  readonly viewColumn: ViewColumn | undefined;
+    val viewColumn: ViewColumn
 
     /**
      * Whether the panel is active (focused by the user).
      */
-//  readonly active: boolean;
+    val active: Boolean
 
     /**
      * Whether the panel is visible.
      */
-//  readonly visible: boolean;
+    val visible: Boolean
 
     /**
      * Fired when the panel's view state changes.
      */
-//  readonly onDidChangeViewState: Event<WebviewPanelOnDidChangeViewStateEvent>;
+    val onDidChangeViewState: Event<WebviewPanelOnDidChangeViewStateEvent>
 
     /**
      * Fired when the panel is disposed.
@@ -71,7 +73,7 @@ external interface WebviewPanel {
      *
      * Trying to use the panel after it has been disposed throws an exception.
      */
-//  readonly onDidDispose: Event<void>;
+    val onDidDispose: Event<Void>
 
     /**
      * Show the webview panel in a given column.

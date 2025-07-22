@@ -12,27 +12,27 @@ external interface SourceControlResourceDecorations :
      * Whether the {@link SourceControlResourceState source control resource state} should
      * be striked-through in the UI.
      */
-//  readonly strikeThrough?: boolean;
+    val strikeThrough: Boolean?
 
     /**
      * Whether the {@link SourceControlResourceState source control resource state} should
      * be faded in the UI.
      */
-//  readonly faded?: boolean;
+    val faded: Boolean?
 
     /**
      * The title for a specific
      * {@link SourceControlResourceState source control resource state}.
      */
-//  readonly tooltip?: string;
+    val tooltip: String?
 
     /**
      * The light theme decorations.
      */
-//  readonly light?: SourceControlResourceThemableDecorations;
+    val light: SourceControlResourceThemableDecorations?
 
     /**
      * The dark theme decorations.
      */
-//  readonly dark?: SourceControlResourceThemableDecorations;
+    val dark: SourceControlResourceThemableDecorations?
 }

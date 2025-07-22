@@ -195,5 +195,5 @@ external interface WorkspaceConfiguration {
     /**
      * Readable dictionary that backs this configuration.
      */
-//  readonly [key: string]: any;
+    // readonly [key: string]: any;
 }

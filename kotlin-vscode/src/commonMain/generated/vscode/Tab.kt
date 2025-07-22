@@ -11,37 +11,37 @@ external interface Tab {
     /**
      * The text displayed on the tab.
      */
-//  readonly label: string;
+    val label: String
 
     /**
      * The group which the tab belongs to.
      */
-//  readonly group: TabGroup;
+    val group: TabGroup
 
     /**
      * Defines the structure of the tab i.e. text, notebook, custom, etc.
      * Resource and other useful properties are defined on the tab kind.
      */
-//  readonly input: TabInputText | TabInputTextDiff | TabInputCustom | TabInputWebview | TabInputNotebook | TabInputNotebookDiff | TabInputTerminal | unknown;
+    val input: Any /* TabInputText | TabInputTextDiff | TabInputCustom | TabInputWebview | TabInputNotebook | TabInputNotebookDiff | TabInputTerminal | unknown */
 
     /**
      * Whether or not the tab is currently active.
      * This is dictated by being the selected tab in the group.
      */
-//  readonly isActive: boolean;
+    val isActive: Boolean
 
     /**
      * Whether or not the dirty indicator is present on the tab.
      */
-//  readonly isDirty: boolean;
+    val isDirty: Boolean
 
     /**
      * Whether or not the tab is pinned (pin icon is present).
      */
-//  readonly isPinned: boolean;
+    val isPinned: Boolean
 
     /**
      * Whether or not the tab is in preview mode.
      */
-//  readonly isPreview: boolean;
+    val isPreview: Boolean
 }

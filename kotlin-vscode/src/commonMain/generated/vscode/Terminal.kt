@@ -9,19 +9,19 @@ external interface Terminal {
     /**
      * The name of the terminal.
      */
-//  readonly name: string;
+    val name: String
 
     /**
      * The process ID of the shell process.
      */
-//  readonly processId: Thenable<number | undefined>;
+    val processId: Any /* Thenable<number | undefined> */
 
     /**
      * The object used to initialize the terminal, this is useful for example to detecting the
      * shell type of when the terminal was not launched by this extension or for detecting what
      * folder the shell was launched in.
      */
-//  readonly creationOptions: Readonly<TerminalOptions | ExtensionTerminalOptions>;
+    val creationOptions: Any /* Readonly<TerminalOptions | ExtensionTerminalOptions> */
 
     /**
      * The exit status of the terminal, this will be undefined while the terminal is active.
@@ -36,12 +36,12 @@ external interface Terminal {
      * });
      * ```
      */
-//  readonly exitStatus: TerminalExitStatus | undefined;
+    val exitStatus: TerminalExitStatus
 
     /**
      * The current state of the {@link Terminal}.
      */
-//  readonly state: TerminalState;
+    val state: TerminalState
 
     /**
      * An object that contains [shell integration](https://code.visualstudio.com/docs/terminal/shell-integration)-powered
@@ -53,7 +53,7 @@ external interface Terminal {
      * example Command Prompt does not support shell integration and a user's shell setup could
      * conflict with the automatic shell integration activation.
      */
-//  readonly shellIntegration: TerminalShellIntegration | undefined;
+    val shellIntegration: TerminalShellIntegration
 
     /**
      * Send text to the terminal. The text is written to the stdin of the underlying pty process

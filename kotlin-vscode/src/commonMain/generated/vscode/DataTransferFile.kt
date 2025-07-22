@@ -11,14 +11,14 @@ external interface DataTransferFile {
     /**
      * The name of the file.
      */
-//  readonly name: string;
+    val name: String
 
     /**
      * The full file path of the file.
      *
      * May be `undefined` on web.
      */
-//  readonly uri?: Uri;
+    val uri: Uri?
 
     /**
      * The full file contents of the file.

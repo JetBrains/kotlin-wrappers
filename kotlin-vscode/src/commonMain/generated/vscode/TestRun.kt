@@ -12,18 +12,18 @@ external interface TestRun {
      * disambiguate multiple sets of results in a test run. It is useful if
      * tests are run across multiple platforms, for example.
      */
-//  readonly name: string | undefined;
+    val name: String
 
     /**
      * A cancellation token which will be triggered when the test run is
      * canceled from the UI.
      */
-//  readonly token: CancellationToken;
+    val token: CancellationToken
 
     /**
      * Whether the test run will be persisted across reloads by the editor.
      */
-//  readonly isPersisted: boolean;
+    val isPersisted: Boolean
 
     /**
      * Indicates a test is queued for later execution.

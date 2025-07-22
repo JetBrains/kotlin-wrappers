@@ -11,35 +11,35 @@ external interface LanguageModelChat {
     /**
      * Human-readable name of the language model.
      */
-//  readonly name: string;
+    val name: String
 
     /**
      * Opaque identifier of the language model.
      */
-//  readonly id: string;
+    val id: String
 
     /**
      * A well-known identifier of the vendor of the language model. An example is `copilot`, but
      * values are defined by extensions contributing chat models and need to be looked up with them.
      */
-//  readonly vendor: string;
+    val vendor: String
 
     /**
      * Opaque family-name of the language model. Values might be `gpt-3.5-turbo`, `gpt4`, `phi2`, or `llama`
      * but they are defined by extensions contributing languages and subject to change.
      */
-//  readonly family: string;
+    val family: String
 
     /**
      * Opaque version string of the model. This is defined by the extension contributing the language model
      * and subject to change.
      */
-//  readonly version: string;
+    val version: String
 
     /**
      * The maximum number of tokens that can be sent to the model in a single request.
      */
-//  readonly maxInputTokens: number;
+    val maxInputTokens: Int
 
     /**
      * Make a chat request using a language model.

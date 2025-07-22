@@ -10,7 +10,7 @@ external interface AuthenticationProvider {
      * An {@link Event} which fires when the array of sessions has changed, or data
      * within a session has changed.
      */
-//  readonly onDidChangeSessions: Event<AuthenticationProviderAuthenticationSessionsChangeEvent>;
+    val onDidChangeSessions: Event<AuthenticationProviderAuthenticationSessionsChangeEvent>
 
     /**
      * Get a list of sessions.

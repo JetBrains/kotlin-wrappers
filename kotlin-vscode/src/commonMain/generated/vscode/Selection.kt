@@ -13,13 +13,13 @@ open external class Selection :
      * The position at which the selection starts.
      * This position might be before or after {@link Selection.active active}.
      */
-//  readonly anchor: Position;
+    val anchor: Position
 
     /**
      * The position of the cursor.
      * This position might be before or after {@link Selection.anchor anchor}.
      */
-//  readonly active: Position;
+    val active: Position
 
     /**
      * Create a selection from two positions.
@@ -42,5 +42,5 @@ open external class Selection :
     /**
      * A selection is reversed if its {@link Selection.anchor anchor} is the {@link Selection.end end} position.
      */
-//  readonly isReversed: boolean;
+    val isReversed: Boolean
 }

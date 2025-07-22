@@ -12,7 +12,7 @@ external interface CustomDocument {
     /**
      * The associated uri for this document.
      */
-//  readonly uri: Uri;
+    val uri: Uri
 
     /**
      * Dispose of the custom document.

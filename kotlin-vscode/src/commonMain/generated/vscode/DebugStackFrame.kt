@@ -11,17 +11,17 @@ open external class DebugStackFrame {
     /**
      * Debug session for thread.
      */
-//  readonly session: DebugSession;
+    val session: DebugSession
 
     /**
      * ID of the associated thread in the debug protocol.
      */
-//  readonly threadId: number;
+    val threadId: Int
 
     /**
      * ID of the stack frame in the debug protocol.
      */
-//  readonly frameId: number;
+    val frameId: Int
 
     /**
      * @hidden

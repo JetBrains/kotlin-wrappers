@@ -2,6 +2,8 @@
 
 package vscode
 
+import js.array.ReadonlyArray
+
 /**
  * Information about a registered tool available in {@link lm.tools}.
  */
@@ -9,21 +11,21 @@ external interface LanguageModelToolInformation {
     /**
      * A unique name for the tool.
      */
-//  readonly name: string;
+    val name: String
 
     /**
      * A description of this tool that may be passed to a language model.
      */
-//  readonly description: string;
+    val description: String
 
     /**
      * A JSON schema for the input this tool accepts.
      */
-//  readonly inputSchema: object | undefined;
+    val inputSchema: Any
 
     /**
      * A set of tags, declared by the tool, that roughly describe the tool's capabilities. A tool user may use these to filter
      * the set of tools to just ones that are relevant for the task at hand.
      */
-//  readonly tags: readonly string[];
+    val tags: ReadonlyArray<String>
 }

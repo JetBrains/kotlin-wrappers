@@ -11,12 +11,12 @@ open external class TabInputNotebook {
     /**
      * The uri that the tab is representing.
      */
-//  readonly uri: Uri;
+    val uri: Uri
 
     /**
      * The type of notebook. Maps to {@linkcode NotebookDocument.notebookType NotebookDocuments's notebookType}
      */
-//  readonly notebookType: string;
+    val notebookType: String
 
     /**
      * Constructs a new tab input for a notebook.

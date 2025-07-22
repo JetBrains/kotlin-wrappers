@@ -4,6 +4,8 @@
 
 package vscode
 
+import js.array.ReadonlyArray
+
 /**
  * Represents a user request in chat history.
  */
@@ -16,27 +18,27 @@ open external class ChatRequestTurn {
      * *Note* that the {@link ChatParticipant.name name} of the participant and the {@link ChatCommand.name command}
      * are not part of the prompt.
      */
-//  readonly prompt: string;
+    val prompt: String
 
     /**
      * The id of the chat participant to which this request was directed.
      */
-//  readonly participant: string;
+    val participant: String
 
     /**
      * The name of the {@link ChatCommand command} that was selected for this request.
      */
-//  readonly command?: string;
+    val command: String?
 
     /**
      * The references that were used in this message.
      */
-//  readonly references: ChatPromptReference[];
+    val references: ReadonlyArray<ChatPromptReference>
 
     /**
      * The list of tools were attached to this request.
      */
-//  readonly toolReferences: readonly ChatLanguageModelToolReference[];
+    val toolReferences: ReadonlyArray<ChatLanguageModelToolReference>
 
     /**
      * @hidden

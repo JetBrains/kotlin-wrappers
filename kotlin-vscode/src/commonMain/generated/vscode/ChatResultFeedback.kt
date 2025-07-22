@@ -10,10 +10,10 @@ external interface ChatResultFeedback {
      * The ChatResult for which the user is providing feedback.
      * This object has the same properties as the result returned from the participant callback, including `metadata`, but is not the same instance.
      */
-//  readonly result: ChatResult;
+    val result: ChatResult
 
     /**
      * The kind of feedback that was received.
      */
-//  readonly kind: ChatResultFeedbackKind;
+    val kind: ChatResultFeedbackKind
 }

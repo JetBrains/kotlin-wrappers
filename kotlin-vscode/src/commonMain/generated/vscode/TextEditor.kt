@@ -2,6 +2,8 @@
 
 package vscode
 
+import js.array.ReadonlyArray
+
 /**
  * Represents an editor that is attached to a {@link TextDocument document}.
  */
@@ -9,7 +11,7 @@ external interface TextEditor {
     /**
      * The document associated with this text editor. The document will be the same for the entire lifetime of this text editor.
      */
-//  readonly document: TextDocument;
+    val document: TextDocument
 
     /**
      * The primary selection on this text editor. Shorthand for `TextEditor.selections[0]`.
@@ -25,7 +27,7 @@ external interface TextEditor {
      * The current visible ranges in the editor (vertically).
      * This accounts only for vertical scrolling, and not for horizontal scrolling.
      */
-//  readonly visibleRanges: readonly Range[];
+    val visibleRanges: ReadonlyArray<Range>
 
     /**
      * Text editor options.
@@ -37,7 +39,7 @@ external interface TextEditor {
      * isn't one of the main editors, e.g. an embedded editor, or when the editor
      * column is larger than three.
      */
-//  readonly viewColumn: ViewColumn | undefined;
+    val viewColumn: ViewColumn
 
     /**
      * Perform an edit on the document associated with this text editor.

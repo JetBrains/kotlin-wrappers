@@ -9,7 +9,7 @@ external interface TerminalShellExecutionCommandLine {
     /**
      * The full command line that was executed, including both the command and its arguments.
      */
-//  readonly value: string;
+    val value: String
 
     /**
      * Whether the command line value came from a trusted source and is therefore safe to
@@ -21,11 +21,11 @@ external interface TerminalShellExecutionCommandLine {
      * integration script (ie. {@link TerminalShellExecutionCommandLineConfidence.High high confidence})
      * and it used a nonce for verification.
      */
-//  readonly isTrusted: boolean;
+    val isTrusted: Boolean
 
     /**
      * The confidence of the command line value which is determined by how the value was
      * obtained. This depends upon the implementation of the shell integration script.
      */
-//  readonly confidence: TerminalShellExecutionCommandLineConfidence;
+    val confidence: TerminalShellExecutionCommandLineConfidence
 }

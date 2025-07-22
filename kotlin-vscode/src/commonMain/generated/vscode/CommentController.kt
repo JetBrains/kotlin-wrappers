@@ -10,12 +10,12 @@ external interface CommentController {
     /**
      * The id of this comment controller.
      */
-//  readonly id: string;
+    val id: String
 
     /**
      * The human-readable label of this comment controller.
      */
-//  readonly label: string;
+    val label: String
 
     /**
      * Comment controller options

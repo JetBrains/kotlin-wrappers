@@ -13,12 +13,12 @@ external interface TextDocumentWillSaveEvent {
     /**
      * The document that will be saved.
      */
-//  readonly document: TextDocument;
+    val document: TextDocument
 
     /**
      * The reason why save was triggered.
      */
-//  readonly reason: TextDocumentSaveReason;
+    val reason: TextDocumentSaveReason
 
     /**
      * Allows to pause the event loop and to apply {@link TextEdit pre-save-edits}.

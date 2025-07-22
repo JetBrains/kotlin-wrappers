@@ -12,7 +12,7 @@ external interface OutputChannel {
     /**
      * The human-readable name of this output channel.
      */
-//  readonly name: string;
+    val name: String
 
     /**
      * Append the given value to the channel.

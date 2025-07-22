@@ -21,7 +21,7 @@ external interface TestRunProfile {
      * Configures what kind of execution this profile controls. If there
      * are no profiles for a kind, it will not be available in the UI.
      */
-//  readonly kind: TestRunProfileKind;
+    val kind: TestRunProfileKind
 
     /**
      * Controls whether this profile is the default action that will

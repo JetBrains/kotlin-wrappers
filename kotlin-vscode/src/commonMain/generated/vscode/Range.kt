@@ -16,12 +16,12 @@ open external class Range {
     /**
      * The start position. It is before or equal to {@link Range.end end}.
      */
-//  readonly start: Position;
+    val start: Position
 
     /**
      * The end position. It is after or equal to {@link Range.start start}.
      */
-//  readonly end: Position;
+    val end: Position
 
     /**
      * Create a new range from two positions. If `start` is not
