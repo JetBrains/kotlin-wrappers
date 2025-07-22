@@ -249,13 +249,16 @@ private fun convertConstructor(
         return source
     }
 
-    if ("Record<" in source || "[number, " in source)
-        return "//  $source"
-
     return source
         .removePrefix("constructor(")
         .removeSuffix(")")
+        .replace("[number, number]", "[number_,_number]")
+        .replace("<string, string", "<string_,_string")
         .splitToSequence(", ")
+        .map {
+            it.replace("[number_,_number]", "[number, number]")
+                .replace("<string_,_string", "<string, string")
+        }
         .map {
             val name = it
                 .substringBefore(": ")

@@ -30,5 +30,8 @@ open external class ParameterInformation {
      * @param label A label string or inclusive start and exclusive end offsets within its containing signature label.
      * @param documentation A doc string.
      */
-//  constructor(label: string | [number, number], documentation?: string | MarkdownString)
+    constructor(
+        label: Any, /* string | [number, number] */
+        documentation: Any /* string | MarkdownString */ = definedExternally,
+    )
 }

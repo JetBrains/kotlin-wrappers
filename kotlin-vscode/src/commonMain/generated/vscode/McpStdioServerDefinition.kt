@@ -55,5 +55,11 @@ open external class McpStdioServerDefinition {
      * @param env Optional additional environment information for the server.
      * @param version Optional version identification for the server.
      */
-//  constructor(label: string, command: string, args?: string[], env?: Record<string, string | number | null>, version?: string)
+    constructor(
+        label: String,
+        command: String,
+        args: ReadonlyArray<String> = definedExternally,
+        env: Record<String, String?> = definedExternally,
+        version: String = definedExternally,
+    )
 }

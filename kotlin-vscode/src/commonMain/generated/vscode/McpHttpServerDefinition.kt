@@ -38,5 +38,10 @@ open external class McpHttpServerDefinition {
      * @param uri The URI of the server.
      * @param headers Optional additional heads included with each request to the server.
      */
-//  constructor(label: string, uri: Uri, headers?: Record<string, string>, version?: string)
+    constructor(
+        label: String,
+        uri: Uri,
+        headers: Record<String, String> = definedExternally,
+        version: String = definedExternally,
+    )
 }
