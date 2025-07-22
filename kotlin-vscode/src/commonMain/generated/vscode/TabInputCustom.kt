@@ -5,27 +5,27 @@
 package vscode
 
 /**
-// ORIGINAL SOURCE
-
-/**
  * The tab represents a custom editor.
-*/
-export class TabInputCustom {
-/**
- * The uri that the tab is representing.
-*/
-readonly uri: Uri;
-/**
- * The type of custom editor.
-*/
-readonly viewType: string;
-/**
- * Constructs a custom editor tab input.
- * @param uri The uri of the tab.
- * @param viewType The viewtype of the custom editor.
-*/
-constructor(uri: Uri, viewType: string);
-}
+ */
+open external class TabInputCustom {
+    /**
+    // ORIGINAL SOURCE
 
-// ORIGINAL SOURCE
- **/
+    /**
+     * The uri that the tab is representing.
+    */
+    readonly uri: Uri;
+    /**
+     * The type of custom editor.
+    */
+    readonly viewType: string;
+    /**
+     * Constructs a custom editor tab input.
+     * @param uri The uri of the tab.
+     * @param viewType The viewtype of the custom editor.
+    */
+    constructor(uri: Uri, viewType: string);
+
+    // ORIGINAL SOURCE
+     **/
+}

@@ -5,9 +5,6 @@
 package vscode
 
 /**
-// ORIGINAL SOURCE
-
-/**
  * A code lens represents a {@link Command} that should be shown along with
  * source text, like the number of references, a way to run tests, etc.
  *
@@ -16,32 +13,35 @@ package vscode
  *
  * @see {@link CodeLensProvider.provideCodeLenses}
  * @see {@link CodeLensProvider.resolveCodeLens}
-*/
-export class CodeLens {
+ */
+open external class CodeLens {
+    /**
+    // ORIGINAL SOURCE
 
-/**
- * The range in which this code lens is valid. Should only span a single line.
-*/
-range: Range;
 
-/**
- * The command this code lens represents.
-*/
-command?: Command;
+    /**
+     * The range in which this code lens is valid. Should only span a single line.
+    */
+    range: Range;
 
-/**
- * `true` when there is a command associated.
-*/
-readonly isResolved: boolean;
+    /**
+     * The command this code lens represents.
+    */
+    command?: Command;
 
-/**
- * Creates a new code lens object.
- *
- * @param range The range to which this code lens applies.
- * @param command The command associated to this code lens.
-*/
-constructor(range: Range, command?: Command);
+    /**
+     * `true` when there is a command associated.
+    */
+    readonly isResolved: boolean;
+
+    /**
+     * Creates a new code lens object.
+     *
+     * @param range The range to which this code lens applies.
+     * @param command The command associated to this code lens.
+    */
+    constructor(range: Range, command?: Command);
+
+    // ORIGINAL SOURCE
+     **/
 }
-
-// ORIGINAL SOURCE
- **/

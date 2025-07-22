@@ -3,32 +3,32 @@
 package vscode
 
 /**
-// ORIGINAL SOURCE
-
-/**
  * Reactions of a {@link Comment}
-*/
-export interface CommentReaction {
-/**
- * The human-readable label for the reaction
-*/
-readonly label: string;
+ */
+external interface CommentReaction {
+    /**
+    // ORIGINAL SOURCE
 
-/**
- * Icon for the reaction shown in UI.
-*/
-readonly iconPath: string | Uri;
+    /**
+     * The human-readable label for the reaction
+    */
+    readonly label: string;
 
-/**
- * The number of users who have reacted to this reaction
-*/
-readonly count: number;
+    /**
+     * Icon for the reaction shown in UI.
+    */
+    readonly iconPath: string | Uri;
 
-/**
- * Whether the {@link CommentAuthorInformation author} of the comment has reacted to this reaction
-*/
-readonly authorHasReacted: boolean;
+    /**
+     * The number of users who have reacted to this reaction
+    */
+    readonly count: number;
+
+    /**
+     * Whether the {@link CommentAuthorInformation author} of the comment has reacted to this reaction
+    */
+    readonly authorHasReacted: boolean;
+
+    // ORIGINAL SOURCE
+     **/
 }
-
-// ORIGINAL SOURCE
- **/

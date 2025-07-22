@@ -3,17 +3,17 @@
 package vscode
 
 /**
-// ORIGINAL SOURCE
-
-/**
  * Event fired when a webview panel's view state changes.
-*/
-export interface WebviewPanelOnDidChangeViewStateEvent {
-/**
- * Webview panel whose view state changed.
-*/
-readonly webviewPanel: WebviewPanel;
-}
+ */
+external interface WebviewPanelOnDidChangeViewStateEvent {
+    /**
+    // ORIGINAL SOURCE
 
-// ORIGINAL SOURCE
- **/
+    /**
+     * Webview panel whose view state changed.
+    */
+    readonly webviewPanel: WebviewPanel;
+
+    // ORIGINAL SOURCE
+     **/
+}

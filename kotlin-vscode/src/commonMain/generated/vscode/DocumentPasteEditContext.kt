@@ -3,26 +3,26 @@
 package vscode
 
 /**
-// ORIGINAL SOURCE
-
-/**
  * Additional information about the paste operation.
-*/
-export interface DocumentPasteEditContext {
+ */
+external interface DocumentPasteEditContext {
+    /**
+    // ORIGINAL SOURCE
 
-/**
- * Requested kind of paste edits to return.
- *
- * When a explicit kind if requested by {@linkcode DocumentPasteTriggerKind.PasteAs PasteAs}, providers are
- * encourage to be more flexible when generating an edit of the requested kind.
-*/
-readonly only: DocumentDropOrPasteEditKind | undefined;
 
-/**
- * The reason why paste edits were requested.
-*/
-readonly triggerKind: DocumentPasteTriggerKind;
+    /**
+     * Requested kind of paste edits to return.
+     *
+     * When a explicit kind if requested by {@linkcode DocumentPasteTriggerKind.PasteAs PasteAs}, providers are
+     * encourage to be more flexible when generating an edit of the requested kind.
+    */
+    readonly only: DocumentDropOrPasteEditKind | undefined;
+
+    /**
+     * The reason why paste edits were requested.
+    */
+    readonly triggerKind: DocumentPasteTriggerKind;
+
+    // ORIGINAL SOURCE
+     **/
 }
-
-// ORIGINAL SOURCE
- **/

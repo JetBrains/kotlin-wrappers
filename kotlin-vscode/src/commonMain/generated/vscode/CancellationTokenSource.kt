@@ -5,28 +5,28 @@
 package vscode
 
 /**
-// ORIGINAL SOURCE
-
-/**
  * A cancellation source creates and controls a {@link CancellationToken cancellation token}.
-*/
-export class CancellationTokenSource {
+ */
+open external class CancellationTokenSource {
+    /**
+    // ORIGINAL SOURCE
 
-/**
- * The cancellation token of this source.
-*/
-token: CancellationToken;
 
-/**
- * Signal cancellation on the token.
-*/
-cancel(): void;
+    /**
+     * The cancellation token of this source.
+    */
+    token: CancellationToken;
 
-/**
- * Dispose object and free resources.
-*/
-dispose(): void;
+    /**
+     * Signal cancellation on the token.
+    */
+    cancel(): void;
+
+    /**
+     * Dispose object and free resources.
+    */
+    dispose(): void;
+
+    // ORIGINAL SOURCE
+     **/
 }
-
-// ORIGINAL SOURCE
- **/

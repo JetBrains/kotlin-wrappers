@@ -3,17 +3,17 @@
 package vscode
 
 /**
-// ORIGINAL SOURCE
-
-/**
  * Additional data about a workspace edit.
-*/
-export interface WorkspaceEditMetadata {
-/**
- * Signal to the editor that this edit is a refactoring.
-*/
-isRefactoring?: boolean;
-}
+ */
+external interface WorkspaceEditMetadata {
+    /**
+    // ORIGINAL SOURCE
 
-// ORIGINAL SOURCE
- **/
+    /**
+     * Signal to the editor that this edit is a refactoring.
+    */
+    isRefactoring?: boolean;
+
+    // ORIGINAL SOURCE
+     **/
+}

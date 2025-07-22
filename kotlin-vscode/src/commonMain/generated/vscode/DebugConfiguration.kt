@@ -3,32 +3,32 @@
 package vscode
 
 /**
-// ORIGINAL SOURCE
-
-/**
  * Configuration for a debug session.
-*/
-export interface DebugConfiguration {
-/**
- * The type of the debug session.
-*/
-type: string;
+ */
+external interface DebugConfiguration {
+    /**
+    // ORIGINAL SOURCE
 
-/**
- * The name of the debug session.
-*/
-name: string;
+    /**
+     * The type of the debug session.
+    */
+    type: string;
 
-/**
- * The request type of the debug session.
-*/
-request: string;
+    /**
+     * The name of the debug session.
+    */
+    name: string;
 
-/**
- * Additional debug type specific properties.
-*/
-[key: string]: any;
+    /**
+     * The request type of the debug session.
+    */
+    request: string;
+
+    /**
+     * Additional debug type specific properties.
+    */
+    [key: string]: any;
+
+    // ORIGINAL SOURCE
+     **/
 }
-
-// ORIGINAL SOURCE
- **/

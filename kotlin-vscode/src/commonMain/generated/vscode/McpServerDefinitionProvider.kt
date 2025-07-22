@@ -3,48 +3,48 @@
 package vscode
 
 /**
-// ORIGINAL SOURCE
-
-/**
  * A type that can provide Model Context Protocol server definitions. This
  * should be registered using {@link lm.registerMcpServerDefinitionProvider}
  * during extension activation.
-*/
-export interface McpServerDefinitionProvider<T extends McpServerDefinition = McpServerDefinition> {
-/**
- * Optional event fired to signal that the set of available servers has changed.
-*/
-readonly onDidChangeMcpServerDefinitions?: Event<void>;
+ */
+external interface McpServerDefinitionProvider<T : McpServerDefinition> {
+    /**
+    // ORIGINAL SOURCE
 
-/**
- * Provides available MCP servers. The editor will call this method eagerly
- * to ensure the availability of servers for the language model, and so
- * extensions should not take actions which would require user
- * interaction, such as authentication.
- *
- * @param token A cancellation token.
- * @returns An array of MCP available MCP servers
-*/
-provideMcpServerDefinitions(token: CancellationToken): ProviderResult<T[]>;
+    /**
+     * Optional event fired to signal that the set of available servers has changed.
+    */
+    readonly onDidChangeMcpServerDefinitions?: Event<void>;
 
-/**
- * This function will be called when the editor needs to start a MCP server.
- * At this point, the extension may take any actions which may require user
- * interaction, such as authentication. Any non-`readonly` property of the
- * server may be modified, and the extension should return the resolved server.
- *
- * The extension may return undefined to indicate that the server
- * should not be started, or throw an error. If there is a pending tool
- * call, the editor will cancel it and return an error message to the
- * language model.
- *
- * @param server The MCP server to resolve
- * @param token A cancellation token.
- * @returns The resolved server or thenable that resolves to such. This may
- * be the given `server` definition with non-readonly properties filled in.
-*/
-resolveMcpServerDefinition?(server: T, token: CancellationToken): ProviderResult<T>;
+    /**
+     * Provides available MCP servers. The editor will call this method eagerly
+     * to ensure the availability of servers for the language model, and so
+     * extensions should not take actions which would require user
+     * interaction, such as authentication.
+     *
+     * @param token A cancellation token.
+     * @returns An array of MCP available MCP servers
+    */
+    provideMcpServerDefinitions(token: CancellationToken): ProviderResult<T[]>;
+
+    /**
+     * This function will be called when the editor needs to start a MCP server.
+     * At this point, the extension may take any actions which may require user
+     * interaction, such as authentication. Any non-`readonly` property of the
+     * server may be modified, and the extension should return the resolved server.
+     *
+     * The extension may return undefined to indicate that the server
+     * should not be started, or throw an error. If there is a pending tool
+     * call, the editor will cancel it and return an error message to the
+     * language model.
+     *
+     * @param server The MCP server to resolve
+     * @param token A cancellation token.
+     * @returns The resolved server or thenable that resolves to such. This may
+     * be the given `server` definition with non-readonly properties filled in.
+    */
+    resolveMcpServerDefinition?(server: T, token: CancellationToken): ProviderResult<T>;
+
+    // ORIGINAL SOURCE
+     **/
 }
-
-// ORIGINAL SOURCE
- **/

@@ -5,17 +5,17 @@
 package vscode
 
 /**
-// ORIGINAL SOURCE
-
-/**
  * The tab represents a terminal in the editor area.
-*/
-export class TabInputTerminal {
-/**
- * Constructs a terminal tab input.
-*/
-constructor();
-}
+ */
+open external class TabInputTerminal {
+    /**
+    // ORIGINAL SOURCE
 
-// ORIGINAL SOURCE
- **/
+    /**
+     * Constructs a terminal tab input.
+    */
+    constructor();
+
+    // ORIGINAL SOURCE
+     **/
+}

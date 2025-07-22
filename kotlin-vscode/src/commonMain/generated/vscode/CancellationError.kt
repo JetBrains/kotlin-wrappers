@@ -4,8 +4,7 @@
 
 package vscode
 
-/**
-// ORIGINAL SOURCE
+import js.errors.JsError
 
 /**
  * An error type that should be used to signal cancellation of an operation.
@@ -13,14 +12,18 @@ package vscode
  * This type can be used in response to a {@link CancellationToken cancellation token}
  * being cancelled or when an operation is being cancelled by the
  * executor of that operation.
-*/
-export class CancellationError extends Error {
+ */
+open external class CancellationError :
+    JsError {
+    /**
+    // ORIGINAL SOURCE
 
-/**
- * Creates a new cancellation error.
-*/
-constructor();
+
+    /**
+     * Creates a new cancellation error.
+    */
+    constructor();
+
+    // ORIGINAL SOURCE
+     **/
 }
-
-// ORIGINAL SOURCE
- **/

@@ -3,24 +3,24 @@
 package vscode
 
 /**
-// ORIGINAL SOURCE
-
-/**
  * Label describing the {@link TreeItem Tree item}
-*/
-export interface TreeItemLabel {
+ */
+external interface TreeItemLabel {
+    /**
+    // ORIGINAL SOURCE
 
-/**
- * A human-readable string describing the {@link TreeItem Tree item}.
-*/
-label: string;
 
-/**
- * Ranges in the label to highlight. A range is defined as a tuple of two number where the
- * first is the inclusive start index and the second the exclusive end index
-*/
-highlights?: [number, number][];
+    /**
+     * A human-readable string describing the {@link TreeItem Tree item}.
+    */
+    label: string;
+
+    /**
+     * Ranges in the label to highlight. A range is defined as a tuple of two number where the
+     * first is the inclusive start index and the second the exclusive end index
+    */
+    highlights?: [number, number][];
+
+    // ORIGINAL SOURCE
+     **/
 }
-
-// ORIGINAL SOURCE
- **/

@@ -3,18 +3,18 @@
 package vscode
 
 /**
-// ORIGINAL SOURCE
-
-/**
  * Represents a color theme.
-*/
-export interface ColorTheme {
+ */
+external interface ColorTheme {
+    /**
+    // ORIGINAL SOURCE
 
-/**
- * The kind of this color theme: light, dark, high contrast dark and high contrast light.
-*/
-readonly kind: ColorThemeKind;
+
+    /**
+     * The kind of this color theme: light, dark, high contrast dark and high contrast light.
+    */
+    readonly kind: ColorThemeKind;
+
+    // ORIGINAL SOURCE
+     **/
 }
-
-// ORIGINAL SOURCE
- **/

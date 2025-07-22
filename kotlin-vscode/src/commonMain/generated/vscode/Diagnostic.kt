@@ -5,72 +5,72 @@
 package vscode
 
 /**
-// ORIGINAL SOURCE
-
-/**
  * Represents a diagnostic, such as a compiler error or warning. Diagnostic objects
  * are only valid in the scope of a file.
-*/
-export class Diagnostic {
+ */
+open external class Diagnostic {
+    /**
+    // ORIGINAL SOURCE
 
-/**
- * The range to which this diagnostic applies.
-*/
-range: Range;
 
-/**
- * The human-readable message.
-*/
-message: string;
+    /**
+     * The range to which this diagnostic applies.
+    */
+    range: Range;
 
-/**
- * The severity, default is {@link DiagnosticSeverity.Error error}.
-*/
-severity: DiagnosticSeverity;
+    /**
+     * The human-readable message.
+    */
+    message: string;
 
-/**
- * A human-readable string describing the source of this
- * diagnostic, e.g. 'typescript' or 'super lint'.
-*/
-source?: string;
+    /**
+     * The severity, default is {@link DiagnosticSeverity.Error error}.
+    */
+    severity: DiagnosticSeverity;
 
-/**
- * A code or identifier for this diagnostic.
- * Should be used for later processing, e.g. when providing {@link CodeActionContext code actions}.
-*/
-code?: string | number | {
-/**
- * A code or identifier for this diagnostic.
- * Should be used for later processing, e.g. when providing {@link CodeActionContext code actions}.
-*/
-value: string | number;
+    /**
+     * A human-readable string describing the source of this
+     * diagnostic, e.g. 'typescript' or 'super lint'.
+    */
+    source?: string;
 
-/**
- * A target URI to open with more information about the diagnostic error.
-*/
-target: Uri;
-};
+    /**
+     * A code or identifier for this diagnostic.
+     * Should be used for later processing, e.g. when providing {@link CodeActionContext code actions}.
+    */
+    code?: string | number | {
+    /**
+     * A code or identifier for this diagnostic.
+     * Should be used for later processing, e.g. when providing {@link CodeActionContext code actions}.
+    */
+    value: string | number;
 
-/**
- * An array of related diagnostic information, e.g. when symbol-names within
- * a scope collide all definitions can be marked via this property.
-*/
-relatedInformation?: DiagnosticRelatedInformation[];
+    /**
+     * A target URI to open with more information about the diagnostic error.
+    */
+    target: Uri;
+    };
 
-/**
- * Additional metadata about the diagnostic.
-*/
-tags?: DiagnosticTag[];
+    /**
+     * An array of related diagnostic information, e.g. when symbol-names within
+     * a scope collide all definitions can be marked via this property.
+    */
+    relatedInformation?: DiagnosticRelatedInformation[];
 
-/**
- * Creates a new diagnostic object.
- *
- * @param range The range to which this diagnostic applies.
- * @param message The human-readable message.
- * @param severity The severity, default is {@link DiagnosticSeverity.Error error}.
-*/
-constructor(range: Range, message: string, severity?: DiagnosticSeverity);
+    /**
+     * Additional metadata about the diagnostic.
+    */
+    tags?: DiagnosticTag[];
+
+    /**
+     * Creates a new diagnostic object.
+     *
+     * @param range The range to which this diagnostic applies.
+     * @param message The human-readable message.
+     * @param severity The severity, default is {@link DiagnosticSeverity.Error error}.
+    */
+    constructor(range: Range, message: string, severity?: DiagnosticSeverity);
+
+    // ORIGINAL SOURCE
+     **/
 }
-
-// ORIGINAL SOURCE
- **/

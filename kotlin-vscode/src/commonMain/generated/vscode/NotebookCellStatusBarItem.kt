@@ -5,54 +5,54 @@
 package vscode
 
 /**
-// ORIGINAL SOURCE
-
-/**
  * A contribution to a cell's status bar
-*/
-export class NotebookCellStatusBarItem {
-/**
- * The text to show for the item.
-*/
-text: string;
+ */
+open external class NotebookCellStatusBarItem {
+    /**
+    // ORIGINAL SOURCE
 
-/**
- * Whether the item is aligned to the left or right.
-*/
-alignment: NotebookCellStatusBarAlignment;
+    /**
+     * The text to show for the item.
+    */
+    text: string;
 
-/**
- * An optional {@linkcode Command} or identifier of a command to run on click.
- *
- * The command must be {@link commands.getCommands known}.
- *
- * Note that if this is a {@linkcode Command} object, only the {@linkcode Command.command command} and {@linkcode Command.arguments arguments}
- * are used by the editor.
-*/
-command?: string | Command;
+    /**
+     * Whether the item is aligned to the left or right.
+    */
+    alignment: NotebookCellStatusBarAlignment;
 
-/**
- * A tooltip to show when the item is hovered.
-*/
-tooltip?: string;
+    /**
+     * An optional {@linkcode Command} or identifier of a command to run on click.
+     *
+     * The command must be {@link commands.getCommands known}.
+     *
+     * Note that if this is a {@linkcode Command} object, only the {@linkcode Command.command command} and {@linkcode Command.arguments arguments}
+     * are used by the editor.
+    */
+    command?: string | Command;
 
-/**
- * The priority of the item. A higher value item will be shown more to the left.
-*/
-priority?: number;
+    /**
+     * A tooltip to show when the item is hovered.
+    */
+    tooltip?: string;
 
-/**
- * Accessibility information used when a screen reader interacts with this item.
-*/
-accessibilityInformation?: AccessibilityInformation;
+    /**
+     * The priority of the item. A higher value item will be shown more to the left.
+    */
+    priority?: number;
 
-/**
- * Creates a new NotebookCellStatusBarItem.
- * @param text The text to show for the item.
- * @param alignment Whether the item is aligned to the left or right.
-*/
-constructor(text: string, alignment: NotebookCellStatusBarAlignment);
+    /**
+     * Accessibility information used when a screen reader interacts with this item.
+    */
+    accessibilityInformation?: AccessibilityInformation;
+
+    /**
+     * Creates a new NotebookCellStatusBarItem.
+     * @param text The text to show for the item.
+     * @param alignment Whether the item is aligned to the left or right.
+    */
+    constructor(text: string, alignment: NotebookCellStatusBarAlignment);
+
+    // ORIGINAL SOURCE
+     **/
 }
-
-// ORIGINAL SOURCE
- **/

@@ -5,23 +5,23 @@
 package vscode
 
 /**
-// ORIGINAL SOURCE
-
-/**
  * Represents a part of a chat response that is a progress message.
-*/
-export class ChatResponseProgressPart {
-/**
- * The progress message
-*/
-value: string;
+ */
+open external class ChatResponseProgressPart {
+    /**
+    // ORIGINAL SOURCE
 
-/**
- * Create a new ChatResponseProgressPart.
- * @param value A progress message
-*/
-constructor(value: string);
+    /**
+     * The progress message
+    */
+    value: string;
+
+    /**
+     * Create a new ChatResponseProgressPart.
+     * @param value A progress message
+    */
+    constructor(value: string);
+
+    // ORIGINAL SOURCE
+     **/
 }
-
-// ORIGINAL SOURCE
- **/

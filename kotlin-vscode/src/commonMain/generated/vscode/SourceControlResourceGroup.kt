@@ -3,61 +3,61 @@
 package vscode
 
 /**
-// ORIGINAL SOURCE
-
-/**
  * A source control resource group is a collection of
  * {@link SourceControlResourceState source control resource states}.
-*/
-export interface SourceControlResourceGroup {
+ */
+external interface SourceControlResourceGroup {
+    /**
+    // ORIGINAL SOURCE
 
-/**
- * The id of this source control resource group.
-*/
-readonly id: string;
 
-/**
- * The label of this source control resource group.
-*/
-label: string;
+    /**
+     * The id of this source control resource group.
+    */
+    readonly id: string;
 
-/**
- * Whether this source control resource group is hidden when it contains
- * no {@link SourceControlResourceState source control resource states}.
-*/
-hideWhenEmpty?: boolean;
+    /**
+     * The label of this source control resource group.
+    */
+    label: string;
 
-/**
- * Context value of the resource group. This can be used to contribute resource group specific actions.
- * For example, if a resource group is given a context value of `exportable`, when contributing actions to `scm/resourceGroup/context`
- * using `menus` extension point, you can specify context value for key `scmResourceGroupState` in `when` expressions, like `scmResourceGroupState == exportable`.
- * ```json
- * "contributes": {
- *   "menus": {
- *     "scm/resourceGroup/context": [
- *       {
- *         "command": "extension.export",
- *         "when": "scmResourceGroupState == exportable"
- *       }
- *     ]
- *   }
- * }
- * ```
- * This will show action `extension.export` only for resource groups with `contextValue` equal to `exportable`.
-*/
-contextValue?: string;
+    /**
+     * Whether this source control resource group is hidden when it contains
+     * no {@link SourceControlResourceState source control resource states}.
+    */
+    hideWhenEmpty?: boolean;
 
-/**
- * This group's collection of
- * {@link SourceControlResourceState source control resource states}.
-*/
-resourceStates: SourceControlResourceState[];
+    /**
+     * Context value of the resource group. This can be used to contribute resource group specific actions.
+     * For example, if a resource group is given a context value of `exportable`, when contributing actions to `scm/resourceGroup/context`
+     * using `menus` extension point, you can specify context value for key `scmResourceGroupState` in `when` expressions, like `scmResourceGroupState == exportable`.
+     * ```json
+     * "contributes": {
+     *   "menus": {
+     *     "scm/resourceGroup/context": [
+     *       {
+     *         "command": "extension.export",
+     *         "when": "scmResourceGroupState == exportable"
+     *       }
+     *     ]
+     *   }
+     * }
+     * ```
+     * This will show action `extension.export` only for resource groups with `contextValue` equal to `exportable`.
+    */
+    contextValue?: string;
 
-/**
- * Dispose this source control resource group.
-*/
-dispose(): void;
+    /**
+     * This group's collection of
+     * {@link SourceControlResourceState source control resource states}.
+    */
+    resourceStates: SourceControlResourceState[];
+
+    /**
+     * Dispose this source control resource group.
+    */
+    dispose(): void;
+
+    // ORIGINAL SOURCE
+     **/
 }
-
-// ORIGINAL SOURCE
- **/

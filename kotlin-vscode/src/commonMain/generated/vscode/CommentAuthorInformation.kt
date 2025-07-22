@@ -3,22 +3,22 @@
 package vscode
 
 /**
-// ORIGINAL SOURCE
-
-/**
  * Author information of a {@link Comment}
-*/
-export interface CommentAuthorInformation {
-/**
- * The display name of the author of the comment
-*/
-name: string;
+ */
+external interface CommentAuthorInformation {
+    /**
+    // ORIGINAL SOURCE
 
-/**
- * The optional icon path for the author
-*/
-iconPath?: Uri;
+    /**
+     * The display name of the author of the comment
+    */
+    name: string;
+
+    /**
+     * The optional icon path for the author
+    */
+    iconPath?: Uri;
+
+    // ORIGINAL SOURCE
+     **/
 }
-
-// ORIGINAL SOURCE
- **/

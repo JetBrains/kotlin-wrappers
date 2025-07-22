@@ -5,32 +5,32 @@
 package vscode
 
 /**
-// ORIGINAL SOURCE
-
-/**
  * Represents an incoming call, e.g. a caller of a method or constructor.
-*/
-export class CallHierarchyIncomingCall {
+ */
+open external class CallHierarchyIncomingCall {
+    /**
+    // ORIGINAL SOURCE
 
-/**
- * The item that makes the call.
-*/
-from: CallHierarchyItem;
 
-/**
- * The range at which at which the calls appears. This is relative to the caller
- * denoted by {@linkcode CallHierarchyIncomingCall.from this.from}.
-*/
-fromRanges: Range[];
+    /**
+     * The item that makes the call.
+    */
+    from: CallHierarchyItem;
 
-/**
- * Create a new call object.
- *
- * @param item The item making the call.
- * @param fromRanges The ranges at which the calls appear.
-*/
-constructor(item: CallHierarchyItem, fromRanges: Range[]);
+    /**
+     * The range at which at which the calls appears. This is relative to the caller
+     * denoted by {@linkcode CallHierarchyIncomingCall.from this.from}.
+    */
+    fromRanges: Range[];
+
+    /**
+     * Create a new call object.
+     *
+     * @param item The item making the call.
+     * @param fromRanges The ranges at which the calls appear.
+    */
+    constructor(item: CallHierarchyItem, fromRanges: Range[]);
+
+    // ORIGINAL SOURCE
+     **/
 }
-
-// ORIGINAL SOURCE
- **/

@@ -5,53 +5,53 @@
 package vscode
 
 /**
-// ORIGINAL SOURCE
-
-/**
  * A grouping for tasks. The editor by default supports the
  * 'Clean', 'Build', 'RebuildAll' and 'Test' group.
-*/
-export class TaskGroup {
+ */
+open external class TaskGroup {
+    /**
+    // ORIGINAL SOURCE
 
-/**
- * The clean task group;
-*/
-static Clean: TaskGroup;
 
-/**
- * The build task group;
-*/
-static Build: TaskGroup;
+    /**
+     * The clean task group;
+    */
+    static Clean: TaskGroup;
 
-/**
- * The rebuild all task group;
-*/
-static Rebuild: TaskGroup;
+    /**
+     * The build task group;
+    */
+    static Build: TaskGroup;
 
-/**
- * The test all task group;
-*/
-static Test: TaskGroup;
+    /**
+     * The rebuild all task group;
+    */
+    static Rebuild: TaskGroup;
 
-/**
- * Whether the task that is part of this group is the default for the group.
- * This property cannot be set through API, and is controlled by a user's task configurations.
-*/
-readonly isDefault: boolean | undefined;
+    /**
+     * The test all task group;
+    */
+    static Test: TaskGroup;
 
-/**
- * The ID of the task group. Is one of TaskGroup.Clean.id, TaskGroup.Build.id, TaskGroup.Rebuild.id, or TaskGroup.Test.id.
-*/
-readonly id: string;
+    /**
+     * Whether the task that is part of this group is the default for the group.
+     * This property cannot be set through API, and is controlled by a user's task configurations.
+    */
+    readonly isDefault: boolean | undefined;
 
-/**
- * Private constructor
- *
- * @param id Identifier of a task group.
- * @param label The human-readable name of a task group.
-*/
-private constructor(id: string, label: string);
+    /**
+     * The ID of the task group. Is one of TaskGroup.Clean.id, TaskGroup.Build.id, TaskGroup.Rebuild.id, or TaskGroup.Test.id.
+    */
+    readonly id: string;
+
+    /**
+     * Private constructor
+     *
+     * @param id Identifier of a task group.
+     * @param label The human-readable name of a task group.
+    */
+    private constructor(id: string, label: string);
+
+    // ORIGINAL SOURCE
+     **/
 }
-
-// ORIGINAL SOURCE
- **/

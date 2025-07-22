@@ -3,18 +3,18 @@
 package vscode
 
 /**
-// ORIGINAL SOURCE
-
-/**
  * An event that is fired after files are created.
-*/
-export interface FileCreateEvent {
+ */
+external interface FileCreateEvent {
+    /**
+    // ORIGINAL SOURCE
 
-/**
- * The files that got created.
-*/
-readonly files: readonly Uri[];
+
+    /**
+     * The files that got created.
+    */
+    readonly files: readonly Uri[];
+
+    // ORIGINAL SOURCE
+     **/
 }
-
-// ORIGINAL SOURCE
- **/

@@ -5,27 +5,27 @@
 package vscode
 
 /**
-// ORIGINAL SOURCE
-
-/**
  * Represents a thread in a debug session.
-*/
-export class DebugThread {
-/**
- * Debug session for thread.
-*/
-readonly session: DebugSession;
+ */
+open external class DebugThread {
+    /**
+    // ORIGINAL SOURCE
 
-/**
- * ID of the associated thread in the debug protocol.
-*/
-readonly threadId: number;
+    /**
+     * Debug session for thread.
+    */
+    readonly session: DebugSession;
 
-/**
- * @hidden
-*/
-private constructor(session: DebugSession, threadId: number);
+    /**
+     * ID of the associated thread in the debug protocol.
+    */
+    readonly threadId: number;
+
+    /**
+     * @hidden
+    */
+    private constructor(session: DebugSession, threadId: number);
+
+    // ORIGINAL SOURCE
+     **/
 }
-
-// ORIGINAL SOURCE
- **/

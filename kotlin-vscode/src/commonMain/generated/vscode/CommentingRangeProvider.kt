@@ -3,17 +3,17 @@
 package vscode
 
 /**
-// ORIGINAL SOURCE
-
-/**
  * Commenting range provider for a {@link CommentController comment controller}.
-*/
-export interface CommentingRangeProvider {
-/**
- * Provide a list of ranges which allow new comment threads creation or null for a given document
-*/
-provideCommentingRanges(document: TextDocument, token: CancellationToken): ProviderResult<Range[] | CommentingRanges>;
-}
+ */
+external interface CommentingRangeProvider {
+    /**
+    // ORIGINAL SOURCE
 
-// ORIGINAL SOURCE
- **/
+    /**
+     * Provide a list of ranges which allow new comment threads creation or null for a given document
+    */
+    provideCommentingRanges(document: TextDocument, token: CancellationToken): ProviderResult<Range[] | CommentingRanges>;
+
+    // ORIGINAL SOURCE
+     **/
+}

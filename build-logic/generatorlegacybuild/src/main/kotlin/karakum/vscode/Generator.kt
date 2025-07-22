@@ -35,6 +35,12 @@ private fun fileContent(
         "// $GENERATOR_COMMENT",
         annotations,
         "package vscode",
+        """
+        import js.array.ReadonlyArray
+        import js.array.Tuple2
+        import js.iterable.JsIterable
+        import js.errors.JsError
+        """.trimIndent(),
         body,
     ).filter { it.isNotEmpty() }
         .joinToString("\n\n")

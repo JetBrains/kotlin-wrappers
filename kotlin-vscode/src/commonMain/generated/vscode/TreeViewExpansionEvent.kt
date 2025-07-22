@@ -3,19 +3,19 @@
 package vscode
 
 /**
-// ORIGINAL SOURCE
-
-/**
  * The event that is fired when an element in the {@link TreeView} is expanded or collapsed
-*/
-export interface TreeViewExpansionEvent<T> {
+ */
+external interface TreeViewExpansionEvent<T> {
+    /**
+    // ORIGINAL SOURCE
 
-/**
- * Element that is expanded or collapsed.
-*/
-readonly element: T;
 
+    /**
+     * Element that is expanded or collapsed.
+    */
+    readonly element: T;
+
+
+    // ORIGINAL SOURCE
+     **/
 }
-
-// ORIGINAL SOURCE
- **/

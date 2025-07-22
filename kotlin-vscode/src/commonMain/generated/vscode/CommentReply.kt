@@ -3,22 +3,22 @@
 package vscode
 
 /**
-// ORIGINAL SOURCE
-
-/**
  * Command argument for actions registered in `comments/commentThread/context`.
-*/
-export interface CommentReply {
-/**
- * The active {@link CommentThread comment thread}
-*/
-thread: CommentThread;
+ */
+external interface CommentReply {
+    /**
+    // ORIGINAL SOURCE
 
-/**
- * The value in the comment editor
-*/
-text: string;
+    /**
+     * The active {@link CommentThread comment thread}
+    */
+    thread: CommentThread;
+
+    /**
+     * The value in the comment editor
+    */
+    text: string;
+
+    // ORIGINAL SOURCE
+     **/
 }
-
-// ORIGINAL SOURCE
- **/

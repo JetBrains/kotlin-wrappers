@@ -5,31 +5,31 @@
 package vscode
 
 /**
-// ORIGINAL SOURCE
-
-/**
  * Represents a stack frame in a debug session.
-*/
-export class DebugStackFrame {
-/**
- * Debug session for thread.
-*/
-readonly session: DebugSession;
+ */
+open external class DebugStackFrame {
+    /**
+    // ORIGINAL SOURCE
 
-/**
- * ID of the associated thread in the debug protocol.
-*/
-readonly threadId: number;
-/**
- * ID of the stack frame in the debug protocol.
-*/
-readonly frameId: number;
+    /**
+     * Debug session for thread.
+    */
+    readonly session: DebugSession;
 
-/**
- * @hidden
-*/
-private constructor(session: DebugSession, threadId: number, frameId: number);
+    /**
+     * ID of the associated thread in the debug protocol.
+    */
+    readonly threadId: number;
+    /**
+     * ID of the stack frame in the debug protocol.
+    */
+    readonly frameId: number;
+
+    /**
+     * @hidden
+    */
+    private constructor(session: DebugSession, threadId: number, frameId: number);
+
+    // ORIGINAL SOURCE
+     **/
 }
-
-// ORIGINAL SOURCE
- **/

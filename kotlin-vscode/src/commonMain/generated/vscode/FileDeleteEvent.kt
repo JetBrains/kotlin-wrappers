@@ -3,18 +3,18 @@
 package vscode
 
 /**
-// ORIGINAL SOURCE
-
-/**
  * An event that is fired after files are deleted.
-*/
-export interface FileDeleteEvent {
+ */
+external interface FileDeleteEvent {
+    /**
+    // ORIGINAL SOURCE
 
-/**
- * The files that got deleted.
-*/
-readonly files: readonly Uri[];
+
+    /**
+     * The files that got deleted.
+    */
+    readonly files: readonly Uri[];
+
+    // ORIGINAL SOURCE
+     **/
 }
-
-// ORIGINAL SOURCE
- **/

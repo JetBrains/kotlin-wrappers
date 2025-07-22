@@ -3,27 +3,27 @@
 package vscode
 
 /**
-// ORIGINAL SOURCE
-
-/**
  * An event describing the changes to the set of {@link Breakpoint breakpoints}.
-*/
-export interface BreakpointsChangeEvent {
-/**
- * Added breakpoints.
-*/
-readonly added: readonly Breakpoint[];
+ */
+external interface BreakpointsChangeEvent {
+    /**
+    // ORIGINAL SOURCE
 
-/**
- * Removed breakpoints.
-*/
-readonly removed: readonly Breakpoint[];
+    /**
+     * Added breakpoints.
+    */
+    readonly added: readonly Breakpoint[];
 
-/**
- * Changed breakpoints.
-*/
-readonly changed: readonly Breakpoint[];
+    /**
+     * Removed breakpoints.
+    */
+    readonly removed: readonly Breakpoint[];
+
+    /**
+     * Changed breakpoints.
+    */
+    readonly changed: readonly Breakpoint[];
+
+    // ORIGINAL SOURCE
+     **/
 }
-
-// ORIGINAL SOURCE
- **/

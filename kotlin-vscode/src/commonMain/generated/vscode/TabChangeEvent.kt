@@ -3,26 +3,26 @@
 package vscode
 
 /**
-// ORIGINAL SOURCE
-
-/**
  * An event describing change to tabs.
-*/
-export interface TabChangeEvent {
-/**
- * The tabs that have been opened.
-*/
-readonly opened: readonly Tab[];
-/**
- * The tabs that have been closed.
-*/
-readonly closed: readonly Tab[];
-/**
- * Tabs that have changed, e.g have changed
- * their {@link Tab.isActive active} state.
-*/
-readonly changed: readonly Tab[];
-}
+ */
+external interface TabChangeEvent {
+    /**
+    // ORIGINAL SOURCE
 
-// ORIGINAL SOURCE
- **/
+    /**
+     * The tabs that have been opened.
+    */
+    readonly opened: readonly Tab[];
+    /**
+     * The tabs that have been closed.
+    */
+    readonly closed: readonly Tab[];
+    /**
+     * Tabs that have changed, e.g have changed
+     * their {@link Tab.isActive active} state.
+    */
+    readonly changed: readonly Tab[];
+
+    // ORIGINAL SOURCE
+     **/
+}

@@ -3,33 +3,33 @@
 package vscode
 
 /**
-// ORIGINAL SOURCE
-
-/**
  * Represents a session of a currently logged in user.
-*/
-export interface AuthenticationSession {
-/**
- * The identifier of the authentication session.
-*/
-readonly id: string;
+ */
+external interface AuthenticationSession {
+    /**
+    // ORIGINAL SOURCE
 
-/**
- * The access token.
-*/
-readonly accessToken: string;
+    /**
+     * The identifier of the authentication session.
+    */
+    readonly id: string;
 
-/**
- * The account associated with the session.
-*/
-readonly account: AuthenticationSessionAccountInformation;
+    /**
+     * The access token.
+    */
+    readonly accessToken: string;
 
-/**
- * The permissions granted by the session's access token. Available scopes
- * are defined by the {@link AuthenticationProvider}.
-*/
-readonly scopes: readonly string[];
+    /**
+     * The account associated with the session.
+    */
+    readonly account: AuthenticationSessionAccountInformation;
+
+    /**
+     * The permissions granted by the session's access token. Available scopes
+     * are defined by the {@link AuthenticationProvider}.
+    */
+    readonly scopes: readonly string[];
+
+    // ORIGINAL SOURCE
+     **/
 }
-
-// ORIGINAL SOURCE
- **/

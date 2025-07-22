@@ -5,25 +5,25 @@
 package vscode
 
 /**
-// ORIGINAL SOURCE
-
-/**
  * A result returned from a tool invocation. If using `@vscode/prompt-tsx`, this result may be rendered using a `ToolResult`.
-*/
-export class LanguageModelToolResult {
-/**
- * A list of tool result content parts. Includes `unknown` because this list may be extended with new content types in
- * the future.
- * @see {@link lm.invokeTool}.
-*/
-content: Array<LanguageModelTextPart | LanguageModelPromptTsxPart | unknown>;
+ */
+open external class LanguageModelToolResult {
+    /**
+    // ORIGINAL SOURCE
 
-/**
- * Create a LanguageModelToolResult
- * @param content A list of tool result content parts
-*/
-constructor(content: Array<LanguageModelTextPart | LanguageModelPromptTsxPart>);
+    /**
+     * A list of tool result content parts. Includes `unknown` because this list may be extended with new content types in
+     * the future.
+     * @see {@link lm.invokeTool}.
+    */
+    content: Array<LanguageModelTextPart | LanguageModelPromptTsxPart | unknown>;
+
+    /**
+     * Create a LanguageModelToolResult
+     * @param content A list of tool result content parts
+    */
+    constructor(content: Array<LanguageModelTextPart | LanguageModelPromptTsxPart>);
+
+    // ORIGINAL SOURCE
+     **/
 }
-
-// ORIGINAL SOURCE
- **/

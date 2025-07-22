@@ -3,27 +3,27 @@
 package vscode
 
 /**
-// ORIGINAL SOURCE
-
-/**
  * An event signalling that an execution has started in a terminal.
-*/
-export interface TerminalShellExecutionStartEvent {
-/**
- * The terminal that shell integration has been activated in.
-*/
-readonly terminal: Terminal;
+ */
+external interface TerminalShellExecutionStartEvent {
+    /**
+    // ORIGINAL SOURCE
 
-/**
- * The shell integration object.
-*/
-readonly shellIntegration: TerminalShellIntegration;
+    /**
+     * The terminal that shell integration has been activated in.
+    */
+    readonly terminal: Terminal;
 
-/**
- * The terminal shell execution that has ended.
-*/
-readonly execution: TerminalShellExecution;
+    /**
+     * The shell integration object.
+    */
+    readonly shellIntegration: TerminalShellIntegration;
+
+    /**
+     * The terminal shell execution that has ended.
+    */
+    readonly execution: TerminalShellExecution;
+
+    // ORIGINAL SOURCE
+     **/
 }
-
-// ORIGINAL SOURCE
- **/

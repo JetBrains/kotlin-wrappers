@@ -5,29 +5,29 @@
 package vscode
 
 /**
-// ORIGINAL SOURCE
-
-/**
  * Represents a part of a chat response that is a file tree.
-*/
-export class ChatResponseFileTreePart {
-/**
- * File tree data.
-*/
-value: ChatResponseFileTree[];
+ */
+open external class ChatResponseFileTreePart {
+    /**
+    // ORIGINAL SOURCE
 
-/**
- * The base uri to which this file tree is relative
-*/
-baseUri: Uri;
+    /**
+     * File tree data.
+    */
+    value: ChatResponseFileTree[];
 
-/**
- * Create a new ChatResponseFileTreePart.
- * @param value File tree data.
- * @param baseUri The base uri to which this file tree is relative.
-*/
-constructor(value: ChatResponseFileTree[], baseUri: Uri);
+    /**
+     * The base uri to which this file tree is relative
+    */
+    baseUri: Uri;
+
+    /**
+     * Create a new ChatResponseFileTreePart.
+     * @param value File tree data.
+     * @param baseUri The base uri to which this file tree is relative.
+    */
+    constructor(value: ChatResponseFileTree[], baseUri: Uri);
+
+    // ORIGINAL SOURCE
+     **/
 }
-
-// ORIGINAL SOURCE
- **/

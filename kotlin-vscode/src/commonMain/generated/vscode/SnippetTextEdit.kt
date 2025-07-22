@@ -5,9 +5,6 @@
 package vscode
 
 /**
-// ORIGINAL SOURCE
-
-/**
  * A snippet edit represents an interactive edit that is performed by
  * the editor.
  *
@@ -15,50 +12,53 @@ package vscode
  * This will happen when no matching editor is open or when a {@link WorkspaceEdit workspace edit}
  * contains snippet edits for multiple files. In that case only those that match the active editor
  * will be performed as snippet edits and the others as normal text edits.
-*/
-export class SnippetTextEdit {
+ */
+open external class SnippetTextEdit {
+    /**
+    // ORIGINAL SOURCE
 
-/**
- * Utility to create a replace snippet edit.
- *
- * @param range A range.
- * @param snippet A snippet string.
- * @returns A new snippet edit object.
-*/
-static replace(range: Range, snippet: SnippetString): SnippetTextEdit;
 
-/**
- * Utility to create an insert snippet edit.
- *
- * @param position A position, will become an empty range.
- * @param snippet A snippet string.
- * @returns A new snippet edit object.
-*/
-static insert(position: Position, snippet: SnippetString): SnippetTextEdit;
+    /**
+     * Utility to create a replace snippet edit.
+     *
+     * @param range A range.
+     * @param snippet A snippet string.
+     * @returns A new snippet edit object.
+    */
+    static replace(range: Range, snippet: SnippetString): SnippetTextEdit;
 
-/**
- * The range this edit applies to.
-*/
-range: Range;
+    /**
+     * Utility to create an insert snippet edit.
+     *
+     * @param position A position, will become an empty range.
+     * @param snippet A snippet string.
+     * @returns A new snippet edit object.
+    */
+    static insert(position: Position, snippet: SnippetString): SnippetTextEdit;
 
-/**
- * The {@link SnippetString snippet} this edit will perform.
-*/
-snippet: SnippetString;
+    /**
+     * The range this edit applies to.
+    */
+    range: Range;
 
-/**
- * Whether the snippet edit should be applied with existing whitespace preserved.
-*/
-keepWhitespace?: boolean;
+    /**
+     * The {@link SnippetString snippet} this edit will perform.
+    */
+    snippet: SnippetString;
 
-/**
- * Create a new snippet edit.
- *
- * @param range A range.
- * @param snippet A snippet string.
-*/
-constructor(range: Range, snippet: SnippetString);
+    /**
+     * Whether the snippet edit should be applied with existing whitespace preserved.
+    */
+    keepWhitespace?: boolean;
+
+    /**
+     * Create a new snippet edit.
+     *
+     * @param range A range.
+     * @param snippet A snippet string.
+    */
+    constructor(range: Range, snippet: SnippetString);
+
+    // ORIGINAL SOURCE
+     **/
 }
-
-// ORIGINAL SOURCE
- **/

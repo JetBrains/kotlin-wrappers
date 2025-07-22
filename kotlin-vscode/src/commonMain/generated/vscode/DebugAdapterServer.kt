@@ -5,28 +5,28 @@
 package vscode
 
 /**
-// ORIGINAL SOURCE
-
-/**
  * Represents a debug adapter running as a socket based server.
-*/
-export class DebugAdapterServer {
+ */
+open external class DebugAdapterServer {
+    /**
+    // ORIGINAL SOURCE
 
-/**
- * The port.
-*/
-readonly port: number;
 
-/**
- * The host.
-*/
-readonly host?: string | undefined;
+    /**
+     * The port.
+    */
+    readonly port: number;
 
-/**
- * Create a description for a debug adapter running as a socket based server.
-*/
-constructor(port: number, host?: string);
+    /**
+     * The host.
+    */
+    readonly host?: string | undefined;
+
+    /**
+     * Create a description for a debug adapter running as a socket based server.
+    */
+    constructor(port: number, host?: string);
+
+    // ORIGINAL SOURCE
+     **/
 }
-
-// ORIGINAL SOURCE
- **/

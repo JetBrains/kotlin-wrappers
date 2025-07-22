@@ -3,13 +3,14 @@
 package vscode
 
 /**
-// ORIGINAL SOURCE
-
-/**
  * Folding context (for future use)
-*/
-export interface FoldingContext {
-}
+ */
+external interface FoldingContext {
+    /**
+    // ORIGINAL SOURCE
 
-// ORIGINAL SOURCE
- **/
+    }
+
+    // ORIGINAL SOURCE
+     **/
+}

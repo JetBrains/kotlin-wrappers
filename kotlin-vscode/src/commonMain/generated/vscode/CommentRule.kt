@@ -3,23 +3,23 @@
 package vscode
 
 /**
-// ORIGINAL SOURCE
-
-/**
  * Describes how comments for a language work.
-*/
-export interface CommentRule {
+ */
+external interface CommentRule {
+    /**
+    // ORIGINAL SOURCE
 
-/**
- * The line comment token, like `// this is a comment`
-*/
-lineComment?: string;
 
-/**
- * The block comment character pair, like `/​* block comment *&#47;`
-*/
-blockComment?: CharacterPair;
+    /**
+     * The line comment token, like `// this is a comment`
+    */
+    lineComment?: string;
+
+    /**
+     * The block comment character pair, like `/​* block comment *&#47;`
+    */
+    blockComment?: CharacterPair;
+
+    // ORIGINAL SOURCE
+     **/
 }
-
-// ORIGINAL SOURCE
- **/

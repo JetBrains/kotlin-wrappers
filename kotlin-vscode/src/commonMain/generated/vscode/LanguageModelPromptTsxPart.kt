@@ -5,24 +5,24 @@
 package vscode
 
 /**
-// ORIGINAL SOURCE
-
-/**
  * A language model response part containing a PromptElementJSON from `@vscode/prompt-tsx`.
  * @see {@link LanguageModelToolResult}
-*/
-export class LanguageModelPromptTsxPart {
-/**
- * The value of the part.
-*/
-value: unknown;
+ */
+open external class LanguageModelPromptTsxPart {
+    /**
+    // ORIGINAL SOURCE
 
-/**
- * Construct a prompt-tsx part with the given content.
- * @param value The value of the part, the result of `renderPromptElementJSON` from `@vscode/prompt-tsx`.
-*/
-constructor(value: unknown);
+    /**
+     * The value of the part.
+    */
+    value: unknown;
+
+    /**
+     * Construct a prompt-tsx part with the given content.
+     * @param value The value of the part, the result of `renderPromptElementJSON` from `@vscode/prompt-tsx`.
+    */
+    constructor(value: unknown);
+
+    // ORIGINAL SOURCE
+     **/
 }
-
-// ORIGINAL SOURCE
- **/

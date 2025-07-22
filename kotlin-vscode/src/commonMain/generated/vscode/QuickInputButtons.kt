@@ -5,26 +5,26 @@
 package vscode
 
 /**
-// ORIGINAL SOURCE
-
-/**
  * Predefined buttons for {@link QuickPick} and {@link InputBox}.
-*/
-export class QuickInputButtons {
+ */
+open external class QuickInputButtons {
+    /**
+    // ORIGINAL SOURCE
 
-/**
- * A back button for {@link QuickPick} and {@link InputBox}.
- *
- * When a navigation 'back' button is needed this one should be used for consistency.
- * It comes with a predefined icon, tooltip and location.
-*/
-static readonly Back: QuickInputButton;
 
-/**
- * @hidden
-*/
-private constructor();
+    /**
+     * A back button for {@link QuickPick} and {@link InputBox}.
+     *
+     * When a navigation 'back' button is needed this one should be used for consistency.
+     * It comes with a predefined icon, tooltip and location.
+    */
+    static readonly Back: QuickInputButton;
+
+    /**
+     * @hidden
+    */
+    private constructor();
+
+    // ORIGINAL SOURCE
+     **/
 }
-
-// ORIGINAL SOURCE
- **/

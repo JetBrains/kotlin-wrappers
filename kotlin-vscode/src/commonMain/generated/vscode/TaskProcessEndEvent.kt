@@ -3,24 +3,24 @@
 package vscode
 
 /**
-// ORIGINAL SOURCE
-
-/**
  * An event signaling the end of a process execution
  * triggered through a task
-*/
-export interface TaskProcessEndEvent {
+ */
+external interface TaskProcessEndEvent {
+    /**
+    // ORIGINAL SOURCE
 
-/**
- * The task execution for which the process got started.
-*/
-readonly execution: TaskExecution;
 
-/**
- * The process's exit code. Will be `undefined` when the task is terminated.
-*/
-readonly exitCode: number | undefined;
+    /**
+     * The task execution for which the process got started.
+    */
+    readonly execution: TaskExecution;
+
+    /**
+     * The process's exit code. Will be `undefined` when the task is terminated.
+    */
+    readonly exitCode: number | undefined;
+
+    // ORIGINAL SOURCE
+     **/
 }
-
-// ORIGINAL SOURCE
- **/

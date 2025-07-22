@@ -5,30 +5,30 @@
 package vscode
 
 /**
-// ORIGINAL SOURCE
-
-/**
  * A semantic tokens legend contains the needed information to decipher
  * the integer encoded representation of semantic tokens.
-*/
-export class SemanticTokensLegend {
-/**
- * The possible token types.
-*/
-readonly tokenTypes: string[];
-/**
- * The possible token modifiers.
-*/
-readonly tokenModifiers: string[];
+ */
+open external class SemanticTokensLegend {
+    /**
+    // ORIGINAL SOURCE
 
-/**
- * Creates a semantic tokens legend.
- *
- * @param tokenTypes An array of token types.
- * @param tokenModifiers An array of token modifiers.
-*/
-constructor(tokenTypes: string[], tokenModifiers?: string[]);
+    /**
+     * The possible token types.
+    */
+    readonly tokenTypes: string[];
+    /**
+     * The possible token modifiers.
+    */
+    readonly tokenModifiers: string[];
+
+    /**
+     * Creates a semantic tokens legend.
+     *
+     * @param tokenTypes An array of token types.
+     * @param tokenModifiers An array of token modifiers.
+    */
+    constructor(tokenTypes: string[], tokenModifiers?: string[]);
+
+    // ORIGINAL SOURCE
+     **/
 }
-
-// ORIGINAL SOURCE
- **/

@@ -3,32 +3,32 @@
 package vscode
 
 /**
-// ORIGINAL SOURCE
-
-/**
  * Provides additional metadata about how a {@linkcode DocumentDropEditProvider} works.
-*/
-export interface DocumentDropEditProviderMetadata {
-/**
- * List of {@link DocumentDropOrPasteEditKind kinds} that the provider may return in {@linkcode DocumentDropEditProvider.provideDocumentDropEdits provideDocumentDropEdits}.
- *
- * This is used to filter out providers when a specific {@link DocumentDropOrPasteEditKind kind} of edit is requested.
-*/
-readonly providedDropEditKinds?: readonly DocumentDropOrPasteEditKind[];
+ */
+external interface DocumentDropEditProviderMetadata {
+    /**
+    // ORIGINAL SOURCE
 
-/**
- * List of {@link DataTransfer} mime types that the provider can handle.
- *
- * This can either be an exact mime type such as `image/png`, or a wildcard pattern such as `image/​*`.
- *
- * Use `text/uri-list` for resources dropped from the explorer or other tree views in the workbench.
- *
- * Use `files` to indicate that the provider should be invoked if any {@link DataTransferFile files} are present in the {@link DataTransfer}.
- * Note that {@link DataTransferFile} entries are only created when dropping content from outside the editor, such as
- * from the operating system.
-*/
-readonly dropMimeTypes: readonly string[];
+    /**
+     * List of {@link DocumentDropOrPasteEditKind kinds} that the provider may return in {@linkcode DocumentDropEditProvider.provideDocumentDropEdits provideDocumentDropEdits}.
+     *
+     * This is used to filter out providers when a specific {@link DocumentDropOrPasteEditKind kind} of edit is requested.
+    */
+    readonly providedDropEditKinds?: readonly DocumentDropOrPasteEditKind[];
+
+    /**
+     * List of {@link DataTransfer} mime types that the provider can handle.
+     *
+     * This can either be an exact mime type such as `image/png`, or a wildcard pattern such as `image/​*`.
+     *
+     * Use `text/uri-list` for resources dropped from the explorer or other tree views in the workbench.
+     *
+     * Use `files` to indicate that the provider should be invoked if any {@link DataTransferFile files} are present in the {@link DataTransfer}.
+     * Note that {@link DataTransferFile} entries are only created when dropping content from outside the editor, such as
+     * from the operating system.
+    */
+    readonly dropMimeTypes: readonly string[];
+
+    // ORIGINAL SOURCE
+     **/
 }
-
-// ORIGINAL SOURCE
- **/

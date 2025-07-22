@@ -5,38 +5,38 @@
 package vscode
 
 /**
-// ORIGINAL SOURCE
-
-/**
  * Contains coverage information for a declaration. Depending on the reporter
  * and language, this may be types such as functions, methods, or namespaces.
-*/
-export class DeclarationCoverage {
-/**
- * Name of the declaration.
-*/
-name: string;
+ */
+open external class DeclarationCoverage {
+    /**
+    // ORIGINAL SOURCE
 
-/**
- * The number of times this declaration was executed, or a boolean
- * indicating whether it was executed if the exact count is unknown. If
- * zero or false, the declaration will be marked as un-covered.
-*/
-executed: number | boolean;
+    /**
+     * Name of the declaration.
+    */
+    name: string;
 
-/**
- * Declaration location.
-*/
-location: Position | Range;
+    /**
+     * The number of times this declaration was executed, or a boolean
+     * indicating whether it was executed if the exact count is unknown. If
+     * zero or false, the declaration will be marked as un-covered.
+    */
+    executed: number | boolean;
 
-/**
- * @param executed The number of times this declaration was executed, or a
- * boolean indicating  whether it was executed if the exact count is
- * unknown. If zero or false, the declaration will be marked as un-covered.
- * @param location The declaration position.
-*/
-constructor(name: string, executed: number | boolean, location: Position | Range);
+    /**
+     * Declaration location.
+    */
+    location: Position | Range;
+
+    /**
+     * @param executed The number of times this declaration was executed, or a
+     * boolean indicating  whether it was executed if the exact count is
+     * unknown. If zero or false, the declaration will be marked as un-covered.
+     * @param location The declaration position.
+    */
+    constructor(name: string, executed: number | boolean, location: Position | Range);
+
+    // ORIGINAL SOURCE
+     **/
 }
-
-// ORIGINAL SOURCE
- **/

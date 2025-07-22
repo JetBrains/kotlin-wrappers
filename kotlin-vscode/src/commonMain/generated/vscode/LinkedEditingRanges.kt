@@ -5,32 +5,32 @@
 package vscode
 
 /**
-// ORIGINAL SOURCE
-
-/**
  * Represents a list of ranges that can be edited together along with a word pattern to describe valid range contents.
-*/
-export class LinkedEditingRanges {
-/**
- * Create a new linked editing ranges object.
- *
- * @param ranges A list of ranges that can be edited together
- * @param wordPattern An optional word pattern that describes valid contents for the given ranges
-*/
-constructor(ranges: Range[], wordPattern?: RegExp);
+ */
+open external class LinkedEditingRanges {
+    /**
+    // ORIGINAL SOURCE
 
-/**
- * A list of ranges that can be edited together. The ranges must have
- * identical length and text content. The ranges cannot overlap.
-*/
-readonly ranges: Range[];
+    /**
+     * Create a new linked editing ranges object.
+     *
+     * @param ranges A list of ranges that can be edited together
+     * @param wordPattern An optional word pattern that describes valid contents for the given ranges
+    */
+    constructor(ranges: Range[], wordPattern?: RegExp);
 
-/**
- * An optional word pattern that describes valid contents for the given ranges.
- * If no pattern is provided, the language configuration's word pattern will be used.
-*/
-readonly wordPattern: RegExp | undefined;
+    /**
+     * A list of ranges that can be edited together. The ranges must have
+     * identical length and text content. The ranges cannot overlap.
+    */
+    readonly ranges: Range[];
+
+    /**
+     * An optional word pattern that describes valid contents for the given ranges.
+     * If no pattern is provided, the language configuration's word pattern will be used.
+    */
+    readonly wordPattern: RegExp | undefined;
+
+    // ORIGINAL SOURCE
+     **/
 }
-
-// ORIGINAL SOURCE
- **/

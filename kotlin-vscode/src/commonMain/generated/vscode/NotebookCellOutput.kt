@@ -5,43 +5,43 @@
 package vscode
 
 /**
-// ORIGINAL SOURCE
-
-/**
  * Notebook cell output represents a result of executing a cell. It is a container type for multiple
  * {@link NotebookCellOutputItem output items} where contained items represent the same result but
  * use different MIME types.
-*/
-export class NotebookCellOutput {
+ */
+open external class NotebookCellOutput {
+    /**
+    // ORIGINAL SOURCE
 
-/**
- * The output items of this output. Each item must represent the same result. _Note_ that repeated
- * MIME types per output is invalid and that the editor will just pick one of them.
- *
- * ```ts
- * new vscode.NotebookCellOutput([
- * 	vscode.NotebookCellOutputItem.text('Hello', 'text/plain'),
- * 	vscode.NotebookCellOutputItem.text('<i>Hello</i>', 'text/html'),
- * 	vscode.NotebookCellOutputItem.text('_Hello_', 'text/markdown'),
- * 	vscode.NotebookCellOutputItem.text('Hey', 'text/plain'), // INVALID: repeated type, editor will pick just one
- * ])
- * ```
-*/
-items: NotebookCellOutputItem[];
 
-/**
- * Arbitrary metadata for this cell output. Can be anything but must be JSON-stringifyable.
-*/
-metadata?: { [key: string]: any };
+    /**
+     * The output items of this output. Each item must represent the same result. _Note_ that repeated
+     * MIME types per output is invalid and that the editor will just pick one of them.
+     *
+     * ```ts
+     * new vscode.NotebookCellOutput([
+     * 	vscode.NotebookCellOutputItem.text('Hello', 'text/plain'),
+     * 	vscode.NotebookCellOutputItem.text('<i>Hello</i>', 'text/html'),
+     * 	vscode.NotebookCellOutputItem.text('_Hello_', 'text/markdown'),
+     * 	vscode.NotebookCellOutputItem.text('Hey', 'text/plain'), // INVALID: repeated type, editor will pick just one
+     * ])
+     * ```
+    */
+    items: NotebookCellOutputItem[];
 
-/**
- * Create new notebook output.
- *
- * @param items Notebook output items.
- * @param metadata Optional metadata.
-*/
-constructor(items: NotebookCellOutputItem[], metadata?: { [key: string]: any });
+    /**
+     * Arbitrary metadata for this cell output. Can be anything but must be JSON-stringifyable.
+    */
+    metadata?: { [key: string]: any };
+
+    /**
+     * Create new notebook output.
+     *
+     * @param items Notebook output items.
+     * @param metadata Optional metadata.
+    */
+    constructor(items: NotebookCellOutputItem[], metadata?: { [key: string]: any });
+
+    // ORIGINAL SOURCE
+     **/
 }
-
-// ORIGINAL SOURCE
- **/

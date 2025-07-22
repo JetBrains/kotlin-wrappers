@@ -3,28 +3,28 @@
 package vscode
 
 /**
-// ORIGINAL SOURCE
-
-/**
  * A tool that is available to the language model via {@link LanguageModelChatRequestOptions}. A language model uses all the
  * properties of this interface to decide which tool to call, and how to call it.
-*/
-export interface LanguageModelChatTool {
-/**
- * The name of the tool.
-*/
-name: string;
+ */
+external interface LanguageModelChatTool {
+    /**
+    // ORIGINAL SOURCE
 
-/**
- * The description of the tool.
-*/
-description: string;
+    /**
+     * The name of the tool.
+    */
+    name: string;
 
-/**
- * A JSON schema for the input this tool accepts.
-*/
-inputSchema?: object | undefined;
+    /**
+     * The description of the tool.
+    */
+    description: string;
+
+    /**
+     * A JSON schema for the input this tool accepts.
+    */
+    inputSchema?: object | undefined;
+
+    // ORIGINAL SOURCE
+     **/
 }
-
-// ORIGINAL SOURCE
- **/

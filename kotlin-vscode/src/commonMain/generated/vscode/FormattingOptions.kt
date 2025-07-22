@@ -3,28 +3,28 @@
 package vscode
 
 /**
-// ORIGINAL SOURCE
-
-/**
  * Value-object describing what options formatting should use.
-*/
-export interface FormattingOptions {
+ */
+external interface FormattingOptions {
+    /**
+    // ORIGINAL SOURCE
 
-/**
- * Size of a tab in spaces.
-*/
-tabSize: number;
 
-/**
- * Prefer spaces over tabs.
-*/
-insertSpaces: boolean;
+    /**
+     * Size of a tab in spaces.
+    */
+    tabSize: number;
 
-/**
- * Signature for further properties.
-*/
-[key: string]: boolean | number | string;
+    /**
+     * Prefer spaces over tabs.
+    */
+    insertSpaces: boolean;
+
+    /**
+     * Signature for further properties.
+    */
+    [key: string]: boolean | number | string;
+
+    // ORIGINAL SOURCE
+     **/
 }
-
-// ORIGINAL SOURCE
- **/

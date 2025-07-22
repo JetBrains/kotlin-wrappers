@@ -5,24 +5,24 @@
 package vscode
 
 /**
-// ORIGINAL SOURCE
-
-/**
  * Represents a part of a chat response that is formatted as Markdown.
-*/
-export class ChatResponseMarkdownPart {
-/**
- * A markdown string or a string that should be interpreted as markdown.
-*/
-value: MarkdownString;
+ */
+open external class ChatResponseMarkdownPart {
+    /**
+    // ORIGINAL SOURCE
 
-/**
- * Create a new ChatResponseMarkdownPart.
- *
- * @param value A markdown string or a string that should be interpreted as markdown. The boolean form of {@link MarkdownString.isTrusted} is NOT supported.
-*/
-constructor(value: string | MarkdownString);
+    /**
+     * A markdown string or a string that should be interpreted as markdown.
+    */
+    value: MarkdownString;
+
+    /**
+     * Create a new ChatResponseMarkdownPart.
+     *
+     * @param value A markdown string or a string that should be interpreted as markdown. The boolean form of {@link MarkdownString.isTrusted} is NOT supported.
+    */
+    constructor(value: string | MarkdownString);
+
+    // ORIGINAL SOURCE
+     **/
 }
-
-// ORIGINAL SOURCE
- **/

@@ -5,30 +5,30 @@
 package vscode
 
 /**
-// ORIGINAL SOURCE
-
-/**
  * Signature help represents the signature of something
  * callable. There can be multiple signatures but only one
  * active and only one active parameter.
-*/
-export class SignatureHelp {
+ */
+open external class SignatureHelp {
+    /**
+    // ORIGINAL SOURCE
 
-/**
- * One or more signatures.
-*/
-signatures: SignatureInformation[];
 
-/**
- * The active signature.
-*/
-activeSignature: number;
+    /**
+     * One or more signatures.
+    */
+    signatures: SignatureInformation[];
 
-/**
- * The active parameter of the active signature.
-*/
-activeParameter: number;
+    /**
+     * The active signature.
+    */
+    activeSignature: number;
+
+    /**
+     * The active parameter of the active signature.
+    */
+    activeParameter: number;
+
+    // ORIGINAL SOURCE
+     **/
 }
-
-// ORIGINAL SOURCE
- **/

@@ -3,63 +3,63 @@
 package vscode
 
 /**
-// ORIGINAL SOURCE
-
-/**
  * Represents an extension.
  *
  * To get an instance of an `Extension` use {@link extensions.getExtension getExtension}.
-*/
-export interface Extension<T> {
+ */
+external interface Extension<T> {
+    /**
+    // ORIGINAL SOURCE
 
-/**
- * The canonical extension identifier in the form of: `publisher.name`.
-*/
-readonly id: string;
 
-/**
- * The uri of the directory containing the extension.
-*/
-readonly extensionUri: Uri;
+    /**
+     * The canonical extension identifier in the form of: `publisher.name`.
+    */
+    readonly id: string;
 
-/**
- * The absolute file path of the directory containing this extension. Shorthand
- * notation for {@link Extension.extensionUri Extension.extensionUri.fsPath} (independent of the uri scheme).
-*/
-readonly extensionPath: string;
+    /**
+     * The uri of the directory containing the extension.
+    */
+    readonly extensionUri: Uri;
 
-/**
- * `true` if the extension has been activated.
-*/
-readonly isActive: boolean;
+    /**
+     * The absolute file path of the directory containing this extension. Shorthand
+     * notation for {@link Extension.extensionUri Extension.extensionUri.fsPath} (independent of the uri scheme).
+    */
+    readonly extensionPath: string;
 
-/**
- * The parsed contents of the extension's package.json.
-*/
-readonly packageJSON: any;
+    /**
+     * `true` if the extension has been activated.
+    */
+    readonly isActive: boolean;
 
-/**
- * The extension kind describes if an extension runs where the UI runs
- * or if an extension runs where the remote extension host runs. The extension kind
- * is defined in the `package.json`-file of extensions but can also be refined
- * via the `remote.extensionKind`-setting. When no remote extension host exists,
- * the value is {@linkcode ExtensionKind.UI}.
-*/
-extensionKind: ExtensionKind;
+    /**
+     * The parsed contents of the extension's package.json.
+    */
+    readonly packageJSON: any;
 
-/**
- * The public API exported by this extension (return value of `activate`).
- * It is an invalid action to access this field before this extension has been activated.
-*/
-readonly exports: T;
+    /**
+     * The extension kind describes if an extension runs where the UI runs
+     * or if an extension runs where the remote extension host runs. The extension kind
+     * is defined in the `package.json`-file of extensions but can also be refined
+     * via the `remote.extensionKind`-setting. When no remote extension host exists,
+     * the value is {@linkcode ExtensionKind.UI}.
+    */
+    extensionKind: ExtensionKind;
 
-/**
- * Activates this extension and returns its public API.
- *
- * @returns A promise that will resolve when this extension has been activated.
-*/
-activate(): Thenable<T>;
+    /**
+     * The public API exported by this extension (return value of `activate`).
+     * It is an invalid action to access this field before this extension has been activated.
+    */
+    readonly exports: T;
+
+    /**
+     * Activates this extension and returns its public API.
+     *
+     * @returns A promise that will resolve when this extension has been activated.
+    */
+    activate(): Thenable<T>;
+
+    // ORIGINAL SOURCE
+     **/
 }
-
-// ORIGINAL SOURCE
- **/

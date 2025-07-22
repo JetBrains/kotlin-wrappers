@@ -3,9 +3,6 @@
 package vscode
 
 /**
-// ORIGINAL SOURCE
-
-/**
  * Restore webview panels that have been persisted when vscode shuts down.
  *
  * There are two types of webview persistence:
@@ -37,21 +34,24 @@ package vscode
  * The extension can then restore the old `WebviewPanel` from this state.
  *
  * @param T Type of the webview's state.
-*/
-export interface WebviewPanelSerializer<T = unknown> {
-/**
- * Restore a webview panel from its serialized `state`.
- *
- * Called when a serialized webview first becomes visible.
- *
- * @param webviewPanel Webview panel to restore. The serializer should take ownership of this panel. The
- * serializer must restore the webview's `.html` and hook up all webview events.
- * @param state Persisted state from the webview content.
- *
- * @returns Thenable indicating that the webview has been fully restored.
-*/
-deserializeWebviewPanel(webviewPanel: WebviewPanel, state: T): Thenable<void>;
-}
+ */
+external interface WebviewPanelSerializer<T> {
+    /**
+    // ORIGINAL SOURCE
 
-// ORIGINAL SOURCE
- **/
+    /**
+     * Restore a webview panel from its serialized `state`.
+     *
+     * Called when a serialized webview first becomes visible.
+     *
+     * @param webviewPanel Webview panel to restore. The serializer should take ownership of this panel. The
+     * serializer must restore the webview's `.html` and hook up all webview events.
+     * @param state Persisted state from the webview content.
+     *
+     * @returns Thenable indicating that the webview has been fully restored.
+    */
+    deserializeWebviewPanel(webviewPanel: WebviewPanel, state: T): Thenable<void>;
+
+    // ORIGINAL SOURCE
+     **/
+}

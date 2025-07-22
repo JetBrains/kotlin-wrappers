@@ -3,24 +3,24 @@
 package vscode
 
 /**
-// ORIGINAL SOURCE
-
-/**
  * An event signaling the start of a process execution
  * triggered through a task
-*/
-export interface TaskProcessStartEvent {
+ */
+external interface TaskProcessStartEvent {
+    /**
+    // ORIGINAL SOURCE
 
-/**
- * The task execution for which the process got started.
-*/
-readonly execution: TaskExecution;
 
-/**
- * The underlying process id.
-*/
-readonly processId: number;
+    /**
+     * The task execution for which the process got started.
+    */
+    readonly execution: TaskExecution;
+
+    /**
+     * The underlying process id.
+    */
+    readonly processId: number;
+
+    // ORIGINAL SOURCE
+     **/
 }
-
-// ORIGINAL SOURCE
- **/

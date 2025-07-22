@@ -3,97 +3,97 @@
 package vscode
 
 /**
-// ORIGINAL SOURCE
-
-/**
  * A panel that contains a webview.
-*/
-export interface WebviewPanel {
-/**
- * Identifies the type of the webview panel, such as `'markdown.preview'`.
-*/
-readonly viewType: string;
+ */
+external interface WebviewPanel {
+    /**
+    // ORIGINAL SOURCE
 
-/**
- * Title of the panel shown in UI.
-*/
-title: string;
+    /**
+     * Identifies the type of the webview panel, such as `'markdown.preview'`.
+    */
+    readonly viewType: string;
 
-/**
- * Icon for the panel shown in UI.
-*/
-iconPath?: Uri | {
-/**
- * The icon path for the light theme.
-*/
-readonly light: Uri;
-/**
- * The icon path for the dark theme.
-*/
-readonly dark: Uri;
-};
+    /**
+     * Title of the panel shown in UI.
+    */
+    title: string;
 
-/**
- * {@linkcode Webview} belonging to the panel.
-*/
-readonly webview: Webview;
+    /**
+     * Icon for the panel shown in UI.
+    */
+    iconPath?: Uri | {
+    /**
+     * The icon path for the light theme.
+    */
+    readonly light: Uri;
+    /**
+     * The icon path for the dark theme.
+    */
+    readonly dark: Uri;
+    };
 
-/**
- * Content settings for the webview panel.
-*/
-readonly options: WebviewPanelOptions;
+    /**
+     * {@linkcode Webview} belonging to the panel.
+    */
+    readonly webview: Webview;
 
-/**
- * Editor position of the panel. This property is only set if the webview is in
- * one of the editor view columns.
-*/
-readonly viewColumn: ViewColumn | undefined;
+    /**
+     * Content settings for the webview panel.
+    */
+    readonly options: WebviewPanelOptions;
 
-/**
- * Whether the panel is active (focused by the user).
-*/
-readonly active: boolean;
+    /**
+     * Editor position of the panel. This property is only set if the webview is in
+     * one of the editor view columns.
+    */
+    readonly viewColumn: ViewColumn | undefined;
 
-/**
- * Whether the panel is visible.
-*/
-readonly visible: boolean;
+    /**
+     * Whether the panel is active (focused by the user).
+    */
+    readonly active: boolean;
 
-/**
- * Fired when the panel's view state changes.
-*/
-readonly onDidChangeViewState: Event<WebviewPanelOnDidChangeViewStateEvent>;
+    /**
+     * Whether the panel is visible.
+    */
+    readonly visible: boolean;
 
-/**
- * Fired when the panel is disposed.
- *
- * This may be because the user closed the panel or because `.dispose()` was
- * called on it.
- *
- * Trying to use the panel after it has been disposed throws an exception.
-*/
-readonly onDidDispose: Event<void>;
+    /**
+     * Fired when the panel's view state changes.
+    */
+    readonly onDidChangeViewState: Event<WebviewPanelOnDidChangeViewStateEvent>;
 
-/**
- * Show the webview panel in a given column.
- *
- * A webview panel may only show in a single column at a time. If it is already showing, this
- * method moves it to a new column.
- *
- * @param viewColumn View column to show the panel in. Shows in the current `viewColumn` if undefined.
- * @param preserveFocus When `true`, the webview will not take focus.
-*/
-reveal(viewColumn?: ViewColumn, preserveFocus?: boolean): void;
+    /**
+     * Fired when the panel is disposed.
+     *
+     * This may be because the user closed the panel or because `.dispose()` was
+     * called on it.
+     *
+     * Trying to use the panel after it has been disposed throws an exception.
+    */
+    readonly onDidDispose: Event<void>;
 
-/**
- * Dispose of the webview panel.
- *
- * This closes the panel if it showing and disposes of the resources owned by the webview.
- * Webview panels are also disposed when the user closes the webview panel. Both cases
- * fire the `onDispose` event.
-*/
-dispose(): any;
+    /**
+     * Show the webview panel in a given column.
+     *
+     * A webview panel may only show in a single column at a time. If it is already showing, this
+     * method moves it to a new column.
+     *
+     * @param viewColumn View column to show the panel in. Shows in the current `viewColumn` if undefined.
+     * @param preserveFocus When `true`, the webview will not take focus.
+    */
+    reveal(viewColumn?: ViewColumn, preserveFocus?: boolean): void;
+
+    /**
+     * Dispose of the webview panel.
+     *
+     * This closes the panel if it showing and disposes of the resources owned by the webview.
+     * Webview panels are also disposed when the user closes the webview panel. Both cases
+     * fire the `onDispose` event.
+    */
+    dispose(): any;
+
+    // ORIGINAL SOURCE
+     **/
 }
-
-// ORIGINAL SOURCE
- **/

@@ -3,27 +3,27 @@
 package vscode
 
 /**
-// ORIGINAL SOURCE
-
-/**
  * An event that is fired after files are renamed.
-*/
-export interface FileRenameEvent {
+ */
+external interface FileRenameEvent {
+    /**
+    // ORIGINAL SOURCE
 
-/**
- * The files that got renamed.
-*/
-readonly files: ReadonlyArray<{
-/**
- * The old uri of a file.
-*/
-readonly oldUri: Uri;
-/**
- * The new uri of a file.
-*/
-readonly newUri: Uri;
-}>;
+
+    /**
+     * The files that got renamed.
+    */
+    readonly files: ReadonlyArray<{
+    /**
+     * The old uri of a file.
+    */
+    readonly oldUri: Uri;
+    /**
+     * The new uri of a file.
+    */
+    readonly newUri: Uri;
+    }>;
+
+    // ORIGINAL SOURCE
+     **/
 }
-
-// ORIGINAL SOURCE
- **/

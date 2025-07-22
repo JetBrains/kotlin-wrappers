@@ -5,122 +5,122 @@
 package vscode
 
 /**
-// ORIGINAL SOURCE
-
-/**
  * A range represents an ordered pair of two positions.
  * It is guaranteed that {@link Range.start start}.isBeforeOrEqual({@link Range.end end})
  *
  * Range objects are __immutable__. Use the {@link Range.with with},
  * {@link Range.intersection intersection}, or {@link Range.union union} methods
  * to derive new ranges from an existing range.
-*/
-export class Range {
+ */
+open external class Range {
+    /**
+    // ORIGINAL SOURCE
 
-/**
- * The start position. It is before or equal to {@link Range.end end}.
-*/
-readonly start: Position;
 
-/**
- * The end position. It is after or equal to {@link Range.start start}.
-*/
-readonly end: Position;
+    /**
+     * The start position. It is before or equal to {@link Range.end end}.
+    */
+    readonly start: Position;
 
-/**
- * Create a new range from two positions. If `start` is not
- * before or equal to `end`, the values will be swapped.
- *
- * @param start A position.
- * @param end A position.
-*/
-constructor(start: Position, end: Position);
+    /**
+     * The end position. It is after or equal to {@link Range.start start}.
+    */
+    readonly end: Position;
 
-/**
- * Create a new range from number coordinates. It is a shorter equivalent of
- * using `new Range(new Position(startLine, startCharacter), new Position(endLine, endCharacter))`
- *
- * @param startLine A zero-based line value.
- * @param startCharacter A zero-based character value.
- * @param endLine A zero-based line value.
- * @param endCharacter A zero-based character value.
-*/
-constructor(startLine: number, startCharacter: number, endLine: number, endCharacter: number);
+    /**
+     * Create a new range from two positions. If `start` is not
+     * before or equal to `end`, the values will be swapped.
+     *
+     * @param start A position.
+     * @param end A position.
+    */
+    constructor(start: Position, end: Position);
 
-/**
- * `true` if `start` and `end` are equal.
-*/
-isEmpty: boolean;
+    /**
+     * Create a new range from number coordinates. It is a shorter equivalent of
+     * using `new Range(new Position(startLine, startCharacter), new Position(endLine, endCharacter))`
+     *
+     * @param startLine A zero-based line value.
+     * @param startCharacter A zero-based character value.
+     * @param endLine A zero-based line value.
+     * @param endCharacter A zero-based character value.
+    */
+    constructor(startLine: number, startCharacter: number, endLine: number, endCharacter: number);
 
-/**
- * `true` if `start.line` and `end.line` are equal.
-*/
-isSingleLine: boolean;
+    /**
+     * `true` if `start` and `end` are equal.
+    */
+    isEmpty: boolean;
 
-/**
- * Check if a position or a range is contained in this range.
- *
- * @param positionOrRange A position or a range.
- * @returns `true` if the position or range is inside or equal
- * to this range.
-*/
-contains(positionOrRange: Position | Range): boolean;
+    /**
+     * `true` if `start.line` and `end.line` are equal.
+    */
+    isSingleLine: boolean;
 
-/**
- * Check if `other` equals this range.
- *
- * @param other A range.
- * @returns `true` when start and end are {@link Position.isEqual equal} to
- * start and end of this range.
-*/
-isEqual(other: Range): boolean;
+    /**
+     * Check if a position or a range is contained in this range.
+     *
+     * @param positionOrRange A position or a range.
+     * @returns `true` if the position or range is inside or equal
+     * to this range.
+    */
+    contains(positionOrRange: Position | Range): boolean;
 
-/**
- * Intersect `range` with this range and returns a new range or `undefined`
- * if the ranges have no overlap.
- *
- * @param range A range.
- * @returns A range of the greater start and smaller end positions. Will
- * return undefined when there is no overlap.
-*/
-intersection(range: Range): Range | undefined;
+    /**
+     * Check if `other` equals this range.
+     *
+     * @param other A range.
+     * @returns `true` when start and end are {@link Position.isEqual equal} to
+     * start and end of this range.
+    */
+    isEqual(other: Range): boolean;
 
-/**
- * Compute the union of `other` with this range.
- *
- * @param other A range.
- * @returns A range of smaller start position and the greater end position.
-*/
-union(other: Range): Range;
+    /**
+     * Intersect `range` with this range and returns a new range or `undefined`
+     * if the ranges have no overlap.
+     *
+     * @param range A range.
+     * @returns A range of the greater start and smaller end positions. Will
+     * return undefined when there is no overlap.
+    */
+    intersection(range: Range): Range | undefined;
 
-/**
- * Derived a new range from this range.
- *
- * @param start A position that should be used as start. The default value is the {@link Range.start current start}.
- * @param end A position that should be used as end. The default value is the {@link Range.end current end}.
- * @returns A range derived from this range with the given start and end position.
- * If start and end are not different `this` range will be returned.
-*/
-with(start?: Position, end?: Position): Range;
+    /**
+     * Compute the union of `other` with this range.
+     *
+     * @param other A range.
+     * @returns A range of smaller start position and the greater end position.
+    */
+    union(other: Range): Range;
 
-/**
- * Derived a new range from this range.
- *
- * @param change An object that describes a change to this range.
- * @returns A range that reflects the given change. Will return `this` range if the change
- * is not changing anything.
-*/
-with(change: {
-/**
- * New start position, defaults to {@link Range.start current start}
-*/
-start?: Position;
-/**
- * New end position, defaults to {@link Range.end current end}
-*/
-end?: Position;
-}): Range;
+    /**
+     * Derived a new range from this range.
+     *
+     * @param start A position that should be used as start. The default value is the {@link Range.start current start}.
+     * @param end A position that should be used as end. The default value is the {@link Range.end current end}.
+     * @returns A range derived from this range with the given start and end position.
+     * If start and end are not different `this` range will be returned.
+    */
+    with(start?: Position, end?: Position): Range;
+
+    /**
+     * Derived a new range from this range.
+     *
+     * @param change An object that describes a change to this range.
+     * @returns A range that reflects the given change. Will return `this` range if the change
+     * is not changing anything.
+    */
+    with(change: {
+    /**
+     * New start position, defaults to {@link Range.start current start}
+    */
+    start?: Position;
+    /**
+     * New end position, defaults to {@link Range.end current end}
+    */
+    end?: Position;
+    }): Range;
+
+    // ORIGINAL SOURCE
+     **/
 }
-
-// ORIGINAL SOURCE
- **/

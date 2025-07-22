@@ -3,99 +3,100 @@
 package vscode
 
 /**
-// ORIGINAL SOURCE
-
-/**
  * Represents a Tree view
-*/
-export interface TreeView<T> extends Disposable {
+ */
+external interface TreeView<T> :
+    Disposable {
+    /**
+    // ORIGINAL SOURCE
 
-/**
- * Event that is fired when an element is expanded
-*/
-readonly onDidExpandElement: Event<TreeViewExpansionEvent<T>>;
 
-/**
- * Event that is fired when an element is collapsed
-*/
-readonly onDidCollapseElement: Event<TreeViewExpansionEvent<T>>;
+    /**
+     * Event that is fired when an element is expanded
+    */
+    readonly onDidExpandElement: Event<TreeViewExpansionEvent<T>>;
 
-/**
- * Currently selected elements.
-*/
-readonly selection: readonly T[];
+    /**
+     * Event that is fired when an element is collapsed
+    */
+    readonly onDidCollapseElement: Event<TreeViewExpansionEvent<T>>;
 
-/**
- * Event that is fired when the {@link TreeView.selection selection} has changed
-*/
-readonly onDidChangeSelection: Event<TreeViewSelectionChangeEvent<T>>;
+    /**
+     * Currently selected elements.
+    */
+    readonly selection: readonly T[];
 
-/**
- * `true` if the {@link TreeView tree view} is visible otherwise `false`.
-*/
-readonly visible: boolean;
+    /**
+     * Event that is fired when the {@link TreeView.selection selection} has changed
+    */
+    readonly onDidChangeSelection: Event<TreeViewSelectionChangeEvent<T>>;
 
-/**
- * Event that is fired when {@link TreeView.visible visibility} has changed
-*/
-readonly onDidChangeVisibility: Event<TreeViewVisibilityChangeEvent>;
+    /**
+     * `true` if the {@link TreeView tree view} is visible otherwise `false`.
+    */
+    readonly visible: boolean;
 
-/**
- * An event to signal that an element or root has either been checked or unchecked.
-*/
-readonly onDidChangeCheckboxState: Event<TreeCheckboxChangeEvent<T>>;
+    /**
+     * Event that is fired when {@link TreeView.visible visibility} has changed
+    */
+    readonly onDidChangeVisibility: Event<TreeViewVisibilityChangeEvent>;
 
-/**
- * An optional human-readable message that will be rendered in the view.
- * Setting the message to null, undefined, or empty string will remove the message from the view.
-*/
-message?: string;
+    /**
+     * An event to signal that an element or root has either been checked or unchecked.
+    */
+    readonly onDidChangeCheckboxState: Event<TreeCheckboxChangeEvent<T>>;
 
-/**
- * The tree view title is initially taken from the extension package.json
- * Changes to the title property will be properly reflected in the UI in the title of the view.
-*/
-title?: string;
+    /**
+     * An optional human-readable message that will be rendered in the view.
+     * Setting the message to null, undefined, or empty string will remove the message from the view.
+    */
+    message?: string;
 
-/**
- * An optional human-readable description which is rendered less prominently in the title of the view.
- * Setting the title description to null, undefined, or empty string will remove the description from the view.
-*/
-description?: string;
+    /**
+     * The tree view title is initially taken from the extension package.json
+     * Changes to the title property will be properly reflected in the UI in the title of the view.
+    */
+    title?: string;
 
-/**
- * The badge to display for this TreeView.
- * To remove the badge, set to undefined.
-*/
-badge?: ViewBadge | undefined;
+    /**
+     * An optional human-readable description which is rendered less prominently in the title of the view.
+     * Setting the title description to null, undefined, or empty string will remove the description from the view.
+    */
+    description?: string;
 
-/**
- * Reveals the given element in the tree view.
- * If the tree view is not visible then the tree view is shown and element is revealed.
- *
- * By default revealed element is selected.
- * In order to not to select, set the option `select` to `false`.
- * In order to focus, set the option `focus` to `true`.
- * In order to expand the revealed element, set the option `expand` to `true`. To expand recursively set `expand` to the number of levels to expand.
- *
- * * *NOTE:* You can expand only to 3 levels maximum.
- * * *NOTE:* The {@link TreeDataProvider} that the `TreeView` {@link window.createTreeView is registered with} with must implement {@link TreeDataProvider.getParent getParent} method to access this API.
-*/
-reveal(element: T, options?: {
-/**
- * If true, then the element will be selected.
-*/
-readonly select?: boolean;
-/**
- * If true, then the element will be focused.
-*/
-readonly focus?: boolean;
-/**
- * If true, then the element will be expanded. If a number is passed, then up to that number of levels of children will be expanded
-*/
-readonly expand?: boolean | number;
-}): Thenable<void>;
+    /**
+     * The badge to display for this TreeView.
+     * To remove the badge, set to undefined.
+    */
+    badge?: ViewBadge | undefined;
+
+    /**
+     * Reveals the given element in the tree view.
+     * If the tree view is not visible then the tree view is shown and element is revealed.
+     *
+     * By default revealed element is selected.
+     * In order to not to select, set the option `select` to `false`.
+     * In order to focus, set the option `focus` to `true`.
+     * In order to expand the revealed element, set the option `expand` to `true`. To expand recursively set `expand` to the number of levels to expand.
+     *
+     * * *NOTE:* You can expand only to 3 levels maximum.
+     * * *NOTE:* The {@link TreeDataProvider} that the `TreeView` {@link window.createTreeView is registered with} with must implement {@link TreeDataProvider.getParent getParent} method to access this API.
+    */
+    reveal(element: T, options?: {
+    /**
+     * If true, then the element will be selected.
+    */
+    readonly select?: boolean;
+    /**
+     * If true, then the element will be focused.
+    */
+    readonly focus?: boolean;
+    /**
+     * If true, then the element will be expanded. If a number is passed, then up to that number of levels of children will be expanded
+    */
+    readonly expand?: boolean | number;
+    }): Thenable<void>;
+
+    // ORIGINAL SOURCE
+     **/
 }
-
-// ORIGINAL SOURCE
- **/

@@ -3,18 +3,18 @@
 package vscode
 
 /**
-// ORIGINAL SOURCE
-
-/**
  * The event that is fired when there is a change in {@link TreeView.visible tree view's visibility}
-*/
-export interface TreeViewVisibilityChangeEvent {
+ */
+external interface TreeViewVisibilityChangeEvent {
+    /**
+    // ORIGINAL SOURCE
 
-/**
- * `true` if the {@link TreeView tree view} is visible otherwise `false`.
-*/
-readonly visible: boolean;
+
+    /**
+     * `true` if the {@link TreeView tree view} is visible otherwise `false`.
+    */
+    readonly visible: boolean;
+
+    // ORIGINAL SOURCE
+     **/
 }
-
-// ORIGINAL SOURCE
- **/

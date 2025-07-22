@@ -3,17 +3,17 @@
 package vscode
 
 /**
-// ORIGINAL SOURCE
-
-/**
  * The scope object to which the environment variable collection applies.
-*/
-export interface EnvironmentVariableScope {
-/**
- * Any specific workspace folder to get collection for.
-*/
-workspaceFolder?: WorkspaceFolder;
-}
+ */
+external interface EnvironmentVariableScope {
+    /**
+    // ORIGINAL SOURCE
 
-// ORIGINAL SOURCE
- **/
+    /**
+     * Any specific workspace folder to get collection for.
+    */
+    workspaceFolder?: WorkspaceFolder;
+
+    // ORIGINAL SOURCE
+     **/
+}

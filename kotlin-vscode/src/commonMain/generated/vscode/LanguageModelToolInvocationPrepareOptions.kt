@@ -3,17 +3,17 @@
 package vscode
 
 /**
-// ORIGINAL SOURCE
-
-/**
  * Options for {@link LanguageModelTool.prepareInvocation}.
-*/
-export interface LanguageModelToolInvocationPrepareOptions<T> {
-/**
- * The input that the tool is being invoked with.
-*/
-input: T;
-}
+ */
+external interface LanguageModelToolInvocationPrepareOptions<T> {
+    /**
+    // ORIGINAL SOURCE
 
-// ORIGINAL SOURCE
- **/
+    /**
+     * The input that the tool is being invoked with.
+    */
+    input: T;
+
+    // ORIGINAL SOURCE
+     **/
+}

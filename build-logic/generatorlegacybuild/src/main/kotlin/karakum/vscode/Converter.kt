@@ -49,6 +49,8 @@ private fun parseDeclaration(
 
     val body = when (type) {
         "enum" -> convertEnum(source, name)
+        "interface" -> convertInterface(source, name)
+        "class" -> convertInterface(source, name)
 
         else -> commentedOriginal(source)
     }
@@ -71,6 +73,59 @@ private fun convertEnum(
             } else it
         }
         .joinToString("\n")
+
+private fun convertInterface(
+    source: String,
+    name: String,
+): String {
+    val comment = source.substringBefore("\nexport ", "")
+
+    val declaration = "external " + source
+        .replace("class ", "open class ")
+        .substringAfter("export ", "")
+        .substringBefore(" {\n", "")
+        .replace(Regex(""" extends (\w+?) = (\w+?)>""")) {
+            val bound = it.groupValues[1]
+            val defaultBound = it.groupValues[2]
+
+            if (bound == defaultBound) {
+                " : $bound>"
+            } else {
+                " : $bound /* = $defaultBound */>"
+            }
+        }
+        .replace("<T = unknown>", "<T>")
+        .replace("<T = any>", "<T>")
+        .replace(
+            " implements Iterable<[mimeType: string, item: DataTransferItem]>",
+            " :\nJsIterable<Tuple2</* mimeType: */ String, /* item: */ DataTransferItem>>",
+        )
+        .replace(
+            " extends Iterable<[uri: Uri, diagnostics: readonly Diagnostic[]]>",
+            " :\nJsIterable<Tuple2</* uri: */ Uri, /* diagnostics: */ ReadonlyArray<Diagnostic>>>",
+        )
+        .replace(
+            " extends Iterable<[variable: string, mutator: EnvironmentVariableMutator]>",
+            " :\nJsIterable<Tuple2</* variable: */ String, /* mutator: */ EnvironmentVariableMutator>>",
+        )
+        .replace(
+            " extends Iterable<[id: string, testItem: TestItem]>",
+            " :\nJsIterable<Tuple2</* id: */ String, /* testItem: */ TestItem>>",
+        )
+        .replace(" extends Error", " :\nJsError")
+        .replace(" extends ", " :\n")
+
+    val members = source
+        .substringAfter(" {\n")
+        .substringBefore("\n}")
+
+    return sequenceOf(
+        comment,
+        "$declaration {",
+        commentedOriginal(members),
+        "}",
+    ).joinToString("\n")
+}
 
 private fun commentedOriginal(
     source: String,

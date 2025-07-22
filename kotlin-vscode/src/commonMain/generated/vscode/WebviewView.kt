@@ -3,78 +3,78 @@
 package vscode
 
 /**
-// ORIGINAL SOURCE
-
-/**
  * A webview based view.
-*/
-export interface WebviewView {
-/**
- * Identifies the type of the webview view, such as `'hexEditor.dataView'`.
-*/
-readonly viewType: string;
+ */
+external interface WebviewView {
+    /**
+    // ORIGINAL SOURCE
 
-/**
- * The underlying webview for the view.
-*/
-readonly webview: Webview;
+    /**
+     * Identifies the type of the webview view, such as `'hexEditor.dataView'`.
+    */
+    readonly viewType: string;
 
-/**
- * View title displayed in the UI.
- *
- * The view title is initially taken from the extension `package.json` contribution.
-*/
-title?: string;
+    /**
+     * The underlying webview for the view.
+    */
+    readonly webview: Webview;
 
-/**
- * Human-readable string which is rendered less prominently in the title.
-*/
-description?: string;
+    /**
+     * View title displayed in the UI.
+     *
+     * The view title is initially taken from the extension `package.json` contribution.
+    */
+    title?: string;
 
-/**
- * The badge to display for this webview view.
- * To remove the badge, set to undefined.
-*/
-badge?: ViewBadge | undefined;
+    /**
+     * Human-readable string which is rendered less prominently in the title.
+    */
+    description?: string;
 
-/**
- * Event fired when the view is disposed.
- *
- * Views are disposed when they are explicitly hidden by a user (this happens when a user
- * right clicks in a view and unchecks the webview view).
- *
- * Trying to use the view after it has been disposed throws an exception.
-*/
-readonly onDidDispose: Event<void>;
+    /**
+     * The badge to display for this webview view.
+     * To remove the badge, set to undefined.
+    */
+    badge?: ViewBadge | undefined;
 
-/**
- * Tracks if the webview is currently visible.
- *
- * Views are visible when they are on the screen and expanded.
-*/
-readonly visible: boolean;
+    /**
+     * Event fired when the view is disposed.
+     *
+     * Views are disposed when they are explicitly hidden by a user (this happens when a user
+     * right clicks in a view and unchecks the webview view).
+     *
+     * Trying to use the view after it has been disposed throws an exception.
+    */
+    readonly onDidDispose: Event<void>;
 
-/**
- * Event fired when the visibility of the view changes.
- *
- * Actions that trigger a visibility change:
- *
- * - The view is collapsed or expanded.
- * - The user switches to a different view group in the sidebar or panel.
- *
- * Note that hiding a view using the context menu instead disposes of the view and fires `onDidDispose`.
-*/
-readonly onDidChangeVisibility: Event<void>;
+    /**
+     * Tracks if the webview is currently visible.
+     *
+     * Views are visible when they are on the screen and expanded.
+    */
+    readonly visible: boolean;
 
-/**
- * Reveal the view in the UI.
- *
- * If the view is collapsed, this will expand it.
- *
- * @param preserveFocus When `true` the view will not take focus.
-*/
-show(preserveFocus?: boolean): void;
+    /**
+     * Event fired when the visibility of the view changes.
+     *
+     * Actions that trigger a visibility change:
+     *
+     * - The view is collapsed or expanded.
+     * - The user switches to a different view group in the sidebar or panel.
+     *
+     * Note that hiding a view using the context menu instead disposes of the view and fires `onDidDispose`.
+    */
+    readonly onDidChangeVisibility: Event<void>;
+
+    /**
+     * Reveal the view in the UI.
+     *
+     * If the view is collapsed, this will expand it.
+     *
+     * @param preserveFocus When `true` the view will not take focus.
+    */
+    show(preserveFocus?: boolean): void;
+
+    // ORIGINAL SOURCE
+     **/
 }
-
-// ORIGINAL SOURCE
- **/
