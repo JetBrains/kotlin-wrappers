@@ -6,6 +6,7 @@ import js.serialization.Serializable
 import web.errors.DOMException
 
 /**
+ * The **`GPUPipelineError`** interface of the WebGPU API describes a pipeline failure.
  * Available only in secure contexts.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUPipelineError)
@@ -16,6 +17,8 @@ open external class GPUPipelineError(
 ) : DOMException,
     Serializable {
     /**
+     * The **`reason`** read-only property of the GPUPipelineError interface defines the reason the pipeline creation failed in a machine-readable way.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUPipelineError/reason)
      */
     val reason: GPUPipelineErrorReason

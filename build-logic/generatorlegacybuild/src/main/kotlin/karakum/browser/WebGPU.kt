@@ -34,6 +34,8 @@ private fun getWebGPUContent(
         .plus(getItems(content, "\ndeclare var WGSLLanguageFeatures", "\n};\n"))
         .plus(getItems(content, "\ntype GPU", "\n"))
         .filter { "\ninterface GPUError" !in it }
+        .filter { "interface GPUPipelineError" !in it }
+        .filter { "type GPUPipelineError" !in it }
         .joinToString("\n\n")
 
 private fun getItems(
