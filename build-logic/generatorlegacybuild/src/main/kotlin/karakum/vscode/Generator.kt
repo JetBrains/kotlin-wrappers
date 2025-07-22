@@ -1,6 +1,8 @@
 package karakum.vscode
 
 import karakum.common.GENERATOR_COMMENT
+import karakum.common.Suppress.INTERFACE_WITH_SUPERCLASS
+import karakum.common.fileSuppress
 import karakum.common.writeCode
 import java.io.File
 
@@ -17,9 +19,15 @@ internal fun generateKotlinDeclarations(
             "external interface " in body -> "sealed /* enum */" in body
             else -> true
         }
-        val annotations = if (hasRuntime) {
-            """@file:JsModule("vscode")"""
-        } else ""
+        val annotations = when {
+            hasRuntime
+                -> """@file:JsModule("vscode")"""
+
+            ":\nDisposable {" in body
+                -> fileSuppress(INTERFACE_WITH_SUPERCLASS)
+
+            else -> ""
+        }
 
         targetDir.resolve("$name.kt")
             .also { check(!it.exists()) { "Duplicated file: ${it.name}" } }

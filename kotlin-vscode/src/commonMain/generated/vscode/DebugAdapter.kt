@@ -1,5 +1,9 @@
 // Automatically generated - do not modify!
 
+@file:Suppress(
+    "INTERFACE_WITH_SUPERCLASS",
+)
+
 package vscode
 
 /**
