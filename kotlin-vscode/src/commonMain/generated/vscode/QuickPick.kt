@@ -23,12 +23,12 @@ external interface QuickPick<
     /**
      * Current value of the filter text.
      */
-//  value: string
+    var value: String
 
     /**
      * Optional placeholder shown in the filter textbox when no filter has been entered.
      */
-//  placeholder: string | undefined
+    var placeholder: String
 
     /**
      * An event signaling when the value of the filter text has changed.
@@ -43,7 +43,7 @@ external interface QuickPick<
     /**
      * Buttons for actions in the UI.
      */
-//  buttons: readonly QuickInputButton[]
+    var buttons: ReadonlyArray<QuickInputButton>
 
     /**
      * An event signaling when a top level button (buttons stored in {@link buttons}) was triggered.
@@ -60,32 +60,32 @@ external interface QuickPick<
     /**
      * Items to pick from. This can be read and updated by the extension.
      */
-//  items: readonly T[]
+    var items: ReadonlyArray<T>
 
     /**
      * If multiple items can be selected at the same time. Defaults to false.
      */
-//  canSelectMany: boolean
+    var canSelectMany: Boolean
 
     /**
      * If the filter text should also be matched against the description of the items. Defaults to false.
      */
-//  matchOnDescription: boolean
+    var matchOnDescription: Boolean
 
     /**
      * If the filter text should also be matched against the detail of the items. Defaults to false.
      */
-//  matchOnDetail: boolean
+    var matchOnDetail: Boolean
 
     /**
      * An optional flag to maintain the scroll position of the quick pick when the quick pick items are updated. Defaults to false.
      */
-//  keepScrollPosition?: boolean
+    var keepScrollPosition: Boolean?
 
     /**
      * Active items. This can be read and updated by the extension.
      */
-//  activeItems: readonly T[]
+    var activeItems: ReadonlyArray<T>
 
     /**
      * An event signaling when the active items have changed.
@@ -95,7 +95,7 @@ external interface QuickPick<
     /**
      * Selected items. This can be read and updated by the extension.
      */
-//  selectedItems: readonly T[]
+    var selectedItems: ReadonlyArray<T>
 
     /**
      * An event signaling when the selected items have changed.

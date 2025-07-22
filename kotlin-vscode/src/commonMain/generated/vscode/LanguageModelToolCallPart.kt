@@ -12,17 +12,17 @@ open external class LanguageModelToolCallPart {
     /**
      * The ID of the tool call. This is a unique identifier for the tool call within the chat request.
      */
-//  callId: string
+    var callId: String
 
     /**
      * The name of the tool to call.
      */
-//  name: string
+    var name: String
 
     /**
      * The input with which to call the tool.
      */
-//  input: object
+    var input: Any
 
     /**
      * Create a new LanguageModelToolCallPart.

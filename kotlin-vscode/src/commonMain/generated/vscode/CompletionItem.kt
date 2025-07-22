@@ -4,6 +4,8 @@
 
 package vscode
 
+import js.array.ReadonlyArray
+
 /**
  * A completion item represents a text snippet that is proposed to complete text that is being typed.
  *
@@ -25,29 +27,29 @@ open external class CompletionItem {
      * this is also the text that is inserted when selecting
      * this completion.
      */
-//  label: string | CompletionItemLabel
+    var label: Any /* string | CompletionItemLabel */
 
     /**
      * The kind of this completion item. Based on the kind
      * an icon is chosen by the editor.
      */
-//  kind?: CompletionItemKind
+    var kind: CompletionItemKind?
 
     /**
      * Tags for this completion item.
      */
-//  tags?: readonly CompletionItemTag[]
+    var tags: ReadonlyArray<CompletionItemTag>?
 
     /**
      * A human-readable string with additional information
      * about this item, like type or symbol information.
      */
-//  detail?: string
+    var detail: String?
 
     /**
      * A human-readable string that represents a doc-comment.
      */
-//  documentation?: string | MarkdownString
+    var documentation: Any /* string | MarkdownString */?
 
     /**
      * A string that should be used when comparing this item
@@ -61,7 +63,7 @@ open external class CompletionItem {
      * {@linkcode CompletionItem.range range}-property and can therefore be different
      * for each completion.
      */
-//  sortText?: string
+    var sortText: String?
 
     /**
      * A string that should be used when filtering a set of
@@ -71,21 +73,21 @@ open external class CompletionItem {
      * Note that the filter text is matched against the leading word (prefix) which is defined
      * by the {@linkcode CompletionItem.range range}-property.
      */
-//  filterText?: string
+    var filterText: String?
 
     /**
      * Select this item when showing. *Note* that only one completion item can be selected and
      * that the editor decides which item that is. The rule is that the *first* item of those
      * that match best is selected.
      */
-//  preselect?: boolean
+    var preselect: Boolean?
 
     /**
      * A string or snippet that should be inserted in a document when selecting
      * this completion. When `falsy` the {@link CompletionItem.label label}
      * is used.
      */
-//  insertText?: string | SnippetString
+    var insertText: Any /* string | SnippetString */?
 
     /**
      * A range or a insert and replace range selecting the text that should be replaced by this completion item.
@@ -116,14 +118,14 @@ open external class CompletionItem {
      * then type that character. *Note* that all commit characters should have `length=1` and that superfluous
      * characters will be ignored.
      */
-//  commitCharacters?: string[]
+    var commitCharacters: ReadonlyArray<String>?
 
     /**
      * Keep whitespace of the {@link CompletionItem.insertText insertText} as is. By default, the editor adjusts leading
      * whitespace of new lines so that they match the indentation of the line for which the item is accepted - setting
      * this to `true` will prevent that.
      */
-//  keepWhitespace?: boolean
+    var keepWhitespace: Boolean?
 
     /**
      * @deprecated Use `CompletionItem.insertText` and `CompletionItem.range` instead.
@@ -135,21 +137,21 @@ open external class CompletionItem {
      * The {@link Range} of the edit must be single-line and on the same
      * line completions were {@link CompletionItemProvider.provideCompletionItems requested} at.
      */
-//  textEdit?: TextEdit
+    var textEdit: TextEdit?
 
     /**
      * An optional array of additional {@link TextEdit text edits} that are applied when
      * selecting this completion. Edits must not overlap with the main {@link CompletionItem.textEdit edit}
      * nor with themselves.
      */
-//  additionalTextEdits?: TextEdit[]
+    var additionalTextEdits: ReadonlyArray<TextEdit>?
 
     /**
      * An optional {@link Command} that is executed *after* inserting this completion. *Note* that
      * additional modifications to the current document should be described with the
      * {@link CompletionItem.additionalTextEdits additionalTextEdits}-property.
      */
-//  command?: Command
+    var command: Command?
 
     /**
      * Creates a new completion item.

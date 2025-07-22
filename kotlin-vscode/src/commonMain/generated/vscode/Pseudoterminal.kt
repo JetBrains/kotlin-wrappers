@@ -33,7 +33,7 @@ external interface Pseudoterminal {
      * writeEmitter.fire('\x1b[10;20H*');
      * ```
      */
-//  onDidWrite: Event<string>
+    var onDidWrite: Event<String>
 
     /**
      * An event that when fired allows overriding the {@link Pseudoterminal.setDimensions dimensions} of the
@@ -61,7 +61,7 @@ external interface Pseudoterminal {
      * vscode.window.createTerminal({ name: 'My terminal', pty });
      * ```
      */
-//  onDidOverrideDimensions?: Event<TerminalDimensions | undefined>
+    var onDidOverrideDimensions: Event<TerminalDimensions>?
 
     /**
      * An event that when fired will signal that the pty is closed and dispose of the terminal.
@@ -93,7 +93,7 @@ external interface Pseudoterminal {
      * terminal.show(true);
      * ```
      */
-//  onDidClose?: Event<void | number>
+    var onDidClose: Event<Any /* void | number */>?
 
     /**
      * An event that when fired allows changing the name of the terminal.
@@ -113,7 +113,7 @@ external interface Pseudoterminal {
      * vscode.window.createTerminal({ name: 'My terminal', pty });
      * ```
      */
-//  onDidChangeName?: Event<string>
+    var onDidChangeName: Event<String>?
 
     /**
      * Implement to handle when the pty is open and ready to start firing events.

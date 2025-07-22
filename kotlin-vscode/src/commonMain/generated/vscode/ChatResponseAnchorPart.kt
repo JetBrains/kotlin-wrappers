@@ -11,12 +11,12 @@ open external class ChatResponseAnchorPart {
     /**
      * The target of this anchor.
      */
-//  value: Uri | Location
+    var value: Any /* Uri | Location */
 
     /**
      * An optional title that is rendered with value.
      */
-//  title?: string
+    var title: String?
 
     /**
      * Create a new ChatResponseAnchorPart.

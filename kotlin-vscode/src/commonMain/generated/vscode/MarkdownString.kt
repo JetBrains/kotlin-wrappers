@@ -16,7 +16,7 @@ open external class MarkdownString {
     /**
      * The markdown string.
      */
-//  value: string
+    var value: String
 
     /**
      * Indicates that this markdown string is from a trusted source. Only *trusted*
@@ -36,7 +36,7 @@ open external class MarkdownString {
     /**
      * Indicates that this markdown string can contain {@link ThemeIcon ThemeIcons}, e.g. `$(zap)`.
      */
-//  supportThemeIcons?: boolean
+    var supportThemeIcons: Boolean?
 
     /**
      * Indicates that this markdown string can contain raw html tags. Defaults to `false`.
@@ -48,7 +48,7 @@ open external class MarkdownString {
      * and attributes to be rendered. See https://github.com/microsoft/vscode/blob/6d2920473c6f13759c978dd89104c4270a83422d/src/vs/base/browser/markdownRenderer.ts#L296
      * for a list of all supported tags and attributes.
      */
-//  supportHtml?: boolean
+    var supportHtml: Boolean?
 
     /**
      * Uri that relative paths are resolved relative to.
@@ -69,7 +69,7 @@ open external class MarkdownString {
      * // Here 'link' in the rendered markdown resolves to '/path/to/file.js'
      * ```
      */
-//  baseUri?: Uri
+    var baseUri: Uri?
 
     /**
      * Creates a new markdown string with the given value.

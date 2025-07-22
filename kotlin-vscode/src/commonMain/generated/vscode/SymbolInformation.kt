@@ -4,6 +4,8 @@
 
 package vscode
 
+import js.array.ReadonlyArray
+
 /**
  * Represents information about programming constructs like variables, classes,
  * interfaces etc.
@@ -12,27 +14,27 @@ open external class SymbolInformation {
     /**
      * The name of this symbol.
      */
-//  name: string
+    var name: String
 
     /**
      * The name of the symbol containing this symbol.
      */
-//  containerName: string
+    var containerName: String
 
     /**
      * The kind of this symbol.
      */
-//  kind: SymbolKind
+    var kind: SymbolKind
 
     /**
      * Tags for this symbol.
      */
-//  tags?: readonly SymbolTag[]
+    var tags: ReadonlyArray<SymbolTag>?
 
     /**
      * The location of this symbol.
      */
-//  location: Location
+    var location: Location
 
     /**
      * Creates a new symbol information object.

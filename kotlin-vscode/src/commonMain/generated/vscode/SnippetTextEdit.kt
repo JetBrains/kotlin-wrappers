@@ -35,17 +35,17 @@ open external class SnippetTextEdit {
     /**
      * The range this edit applies to.
      */
-//  range: Range
+    var range: Range
 
     /**
      * The {@link SnippetString snippet} this edit will perform.
      */
-//  snippet: SnippetString
+    var snippet: SnippetString
 
     /**
      * Whether the snippet edit should be applied with existing whitespace preserved.
      */
-//  keepWhitespace?: boolean
+    var keepWhitespace: Boolean?
 
     /**
      * Create a new snippet edit.

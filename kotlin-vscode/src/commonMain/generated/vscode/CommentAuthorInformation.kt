@@ -9,10 +9,10 @@ external interface CommentAuthorInformation {
     /**
      * The display name of the author of the comment
      */
-//  name: string
+    var name: String
 
     /**
      * The optional icon path for the author
      */
-//  iconPath?: Uri
+    var iconPath: Uri?
 }

@@ -187,16 +187,37 @@ private fun commentMember(
         "\n" in source
             -> "/*\n$source\n*/"
 
-        source == "readonly [key: string]: any"
+        source.startsWith("// Properties: ")
+            -> "    $source"
+
+        source == "readonly [key: string]: any" ||
+                source == "[key: string]: boolean | number | string" ||
+                source == "[key: string]: any" ||
+                source == "[name: string]: any"
             -> "    // $source"
 
-        source.startsWith("readonly ")
+        source.startsWith("static ")
+            -> "//  $source"
+
+        isPropertySource(source)
             -> convertProperty(source)
 
         else -> "//  $source"
     }
 
     return comment + declaration
+}
+
+private fun isPropertySource(
+    source: String,
+): Boolean {
+    if (":" !in source)
+        return false
+
+    if ("(" !in source)
+        return true
+
+    return source.indexOf(":") < source.indexOf("(")
 }
 
 private fun convertProperty(

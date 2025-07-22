@@ -9,15 +9,15 @@ external interface FormattingOptions {
     /**
      * Size of a tab in spaces.
      */
-//  tabSize: number
+    var tabSize: Int
 
     /**
      * Prefer spaces over tabs.
      */
-//  insertSpaces: boolean
+    var insertSpaces: Boolean
 
     /**
      * Signature for further properties.
      */
-//  [key: string]: boolean | number | string
+    // [key: string]: boolean | number | string
 }

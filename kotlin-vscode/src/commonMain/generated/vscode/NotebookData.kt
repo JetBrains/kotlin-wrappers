@@ -4,6 +4,9 @@
 
 package vscode
 
+import js.array.ReadonlyArray
+import js.objects.Record
+
 /**
  * Raw representation of a notebook.
  *
@@ -16,12 +19,12 @@ open external class NotebookData {
     /**
      * The cell data of this notebook data.
      */
-//  cells: NotebookCellData[]
+    var cells: ReadonlyArray<NotebookCellData>
 
     /**
      * Arbitrary metadata of notebook data.
      */
-//  metadata?: { [key: string]: any }
+    var metadata: Record<String, *>?
 
     /**
      * Create new notebook data.

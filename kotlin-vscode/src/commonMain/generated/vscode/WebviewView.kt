@@ -23,18 +23,18 @@ external interface WebviewView {
      *
      * The view title is initially taken from the extension `package.json` contribution.
      */
-//  title?: string
+    var title: String?
 
     /**
      * Human-readable string which is rendered less prominently in the title.
      */
-//  description?: string
+    var description: String?
 
     /**
      * The badge to display for this webview view.
      * To remove the badge, set to undefined.
      */
-//  badge?: ViewBadge | undefined
+    var badge: ViewBadge?
 
     /**
      * Event fired when the view is disposed.

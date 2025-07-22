@@ -4,6 +4,8 @@
 
 package vscode
 
+import js.array.ReadonlyArray
+
 /**
  * Contains coverage information for a single statement or line.
  */
@@ -13,18 +15,18 @@ open external class StatementCoverage {
      * whether it was executed if the exact count is unknown. If zero or false,
      * the statement will be marked as un-covered.
      */
-//  executed: number | boolean
+    var executed: Any /* number | boolean */
 
     /**
      * Statement location.
      */
-//  location: Position | Range
+    var location: Any /* Position | Range */
 
     /**
      * Coverage from branches of this line or statement. If it's not a
      * conditional, this will be empty.
      */
-//  branches: BranchCoverage[]
+    var branches: ReadonlyArray<BranchCoverage>
 
     /**
      * @param location The statement position.

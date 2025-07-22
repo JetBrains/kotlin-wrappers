@@ -16,7 +16,7 @@ external interface WebviewPanel {
     /**
      * Title of the panel shown in UI.
      */
-//  title: string
+    var title: String
 
     /**
      * Icon for the panel shown in UI.

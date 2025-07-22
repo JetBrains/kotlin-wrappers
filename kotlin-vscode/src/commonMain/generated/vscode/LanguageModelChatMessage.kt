@@ -27,18 +27,18 @@ open external class LanguageModelChatMessage {
     /**
      * The role of this message.
      */
-//  role: LanguageModelChatMessageRole
+    var role: LanguageModelChatMessageRole
 
     /**
      * A string or heterogeneous array of things that a message can contain as content. Some parts may be message-type
      * specific for some models.
      */
-//  content: Array<LanguageModelTextPart | LanguageModelToolResultPart | LanguageModelToolCallPart>
+    var content: Any /* Array<LanguageModelTextPart | LanguageModelToolResultPart | LanguageModelToolCallPart> */
 
     /**
      * The optional name of a user for this message.
      */
-//  name: string | undefined
+    var name: String
 
     /**
      * Create a new user message.

@@ -2,6 +2,8 @@
 
 package vscode
 
+import js.iterable.AsyncIterable
+
 /**
  * Represents a language model response.
  *
@@ -39,12 +41,12 @@ external interface LanguageModelChatResponse {
      * }
      * ```
      */
-//  stream: AsyncIterable<LanguageModelTextPart | LanguageModelToolCallPart | unknown>
+    var stream: Any /* AsyncIterable<LanguageModelTextPart | LanguageModelToolCallPart | unknown> */
 
     /**
      * This is equivalent to filtering everything except for text parts from a {@link LanguageModelChatResponse.stream}.
      *
      * @see {@link LanguageModelChatResponse.stream}
      */
-//  text: AsyncIterable<string>
+    var text: AsyncIterable<String>
 }

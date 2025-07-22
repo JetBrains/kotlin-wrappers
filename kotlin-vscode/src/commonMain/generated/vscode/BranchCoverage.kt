@@ -13,18 +13,18 @@ open external class BranchCoverage {
      * whether it was executed if the exact count is unknown. If zero or false,
      * the branch will be marked as un-covered.
      */
-//  executed: number | boolean
+    var executed: Any /* number | boolean */
 
     /**
      * Branch location.
      */
-//  location?: Position | Range
+    var location: Any /* Position | Range */?
 
     /**
      * Label for the branch, used in the context of "the ${label} branch was
      * not taken," for example.
      */
-//  label?: string
+    var label: String?
 
     /**
      * @param executed The number of times this branch was executed, or a

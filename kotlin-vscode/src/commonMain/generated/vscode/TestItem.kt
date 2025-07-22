@@ -2,6 +2,8 @@
 
 package vscode
 
+import js.array.ReadonlyArray
+
 /**
  * An item shown in the "test explorer" view.
  *
@@ -39,7 +41,7 @@ external interface TestItem {
      * Tags associated with this test item. May be used in combination with
      * {@link TestRunProfile.tag tags}, or simply as an organizational feature.
      */
-//  tags: readonly TestTag[]
+    var tags: ReadonlyArray<TestTag>
 
     /**
      * Indicates whether this test item may have children discovered by resolving.
@@ -50,7 +52,7 @@ external interface TestItem {
      *
      * Default to `false`.
      */
-//  canResolveChildren: boolean
+    var canResolveChildren: Boolean
 
     /**
      * Controls whether the item is shown as "busy" in the Test Explorer view.
@@ -58,31 +60,31 @@ external interface TestItem {
      *
      * Defaults to `false`.
      */
-//  busy: boolean
+    var busy: Boolean
 
     /**
      * Display name describing the test case.
      */
-//  label: string
+    var label: String
 
     /**
      * Optional description that appears next to the label.
      */
-//  description?: string
+    var description: String?
 
     /**
      * A string that should be used when comparing this item
      * with other items. When `falsy` the {@link TestItem.label label}
      * is used.
      */
-//  sortText?: string | undefined
+    var sortText: String?
 
     /**
      * Location of the test item in its {@link TestItem.uri uri}.
      *
      * This is only meaningful if the `uri` points to a file.
      */
-//  range: Range | undefined
+    var range: Range
 
     /**
      * Optional error encountered while loading the test.
@@ -90,5 +92,5 @@ external interface TestItem {
      * Note that this is not a test result and should only be used to represent errors in
      * test discovery, such as syntax errors.
      */
-//  error: string | MarkdownString | undefined
+    var error: Any /* string | MarkdownString */
 }

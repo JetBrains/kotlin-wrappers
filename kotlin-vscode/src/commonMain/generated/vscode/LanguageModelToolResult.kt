@@ -13,7 +13,7 @@ open external class LanguageModelToolResult {
      * the future.
      * @see {@link lm.invokeTool}.
      */
-//  content: Array<LanguageModelTextPart | LanguageModelPromptTsxPart | unknown>
+    var content: Any /* Array<LanguageModelTextPart | LanguageModelPromptTsxPart | unknown> */
 
     /**
      * Create a LanguageModelToolResult

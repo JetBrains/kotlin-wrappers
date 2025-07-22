@@ -31,21 +31,21 @@ open external class ShellExecution {
     /**
      * The shell command line. Is `undefined` if created with a command and arguments.
      */
-//  commandLine: string | undefined
+    var commandLine: String
 
     /**
      * The shell command. Is `undefined` if created with a full command line.
      */
-//  command: string | ShellQuotedString | undefined
+    var command: Any /* string | ShellQuotedString */
 
     /**
      * The shell args. Is `undefined` if created with a full command line.
      */
-//  args: Array<string | ShellQuotedString> | undefined
+    var args: Any /* Array<string | ShellQuotedString> */
 
     /**
      * The shell options used when the command line is executed in a shell.
      * Defaults to undefined.
      */
-//  options?: ShellExecutionOptions
+    var options: ShellExecutionOptions?
 }

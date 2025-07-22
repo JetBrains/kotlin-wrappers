@@ -2,6 +2,8 @@
 
 package vscode
 
+import js.core.Void
+
 /**
  * A light-weight user input UI that is initially not visible. After
  * configuring it through its properties the extension can make it
@@ -27,17 +29,17 @@ external interface QuickInput {
     /**
      * An optional title.
      */
-//  title: string | undefined
+    var title: String
 
     /**
      * An optional current step count.
      */
-//  step: number | undefined
+    var step: Int
 
     /**
      * An optional total step count.
      */
-//  totalSteps: number | undefined
+    var totalSteps: Int
 
     /**
      * If the UI should allow for user input. Defaults to true.
@@ -45,7 +47,7 @@ external interface QuickInput {
      * Change this to false, e.g., while validating user input or
      * loading data for the next step in user input.
      */
-//  enabled: boolean
+    var enabled: Boolean
 
     /**
      * If the UI should show a progress indicator. Defaults to false.
@@ -53,13 +55,13 @@ external interface QuickInput {
      * Change this to true, e.g., while loading more data or validating
      * user input.
      */
-//  busy: boolean
+    var busy: Boolean
 
     /**
      * If the UI should stay open even when loosing UI focus. Defaults to false.
      * This setting is ignored on iPad and is always false.
      */
-//  ignoreFocusOut: boolean
+    var ignoreFocusOut: Boolean
 
     /**
      * Makes the input UI visible in its current configuration. Any other input
@@ -81,7 +83,7 @@ external interface QuickInput {
      * (Examples include: an explicit call to {@link QuickInput.hide},
      * the user pressing Esc, some other input UI opening, etc.)
      */
-//  onDidHide: Event<void>
+    var onDidHide: Event<Void>
 
     /**
      * Dispose of this input UI and any associated resources. If it is still

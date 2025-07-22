@@ -11,27 +11,27 @@ open external class TreeItem {
     /**
      * A human-readable string describing this item. When `falsy`, it is derived from {@link TreeItem.resourceUri resourceUri}.
      */
-//  label?: string | TreeItemLabel
+    var label: Any /* string | TreeItemLabel */?
 
     /**
      * Optional id for the tree item that has to be unique across tree. The id is used to preserve the selection and expansion state of the tree item.
      *
      * If not provided, an id is generated using the tree item's label. **Note** that when labels change, ids will change and that selection and expansion state cannot be kept stable anymore.
      */
-//  id?: string
+    var id: String?
 
     /**
      * The icon path or {@link ThemeIcon} for the tree item.
      * When `falsy`, {@link ThemeIcon.Folder Folder Theme Icon} is assigned, if item is collapsible otherwise {@link ThemeIcon.File File Theme Icon}.
      * When a file or folder {@link ThemeIcon} is specified, icon is derived from the current file icon theme for the specified theme icon using {@link TreeItem.resourceUri resourceUri} (if provided).
      */
-//  iconPath?: string | IconPath
+    var iconPath: Any /* string | IconPath */?
 
     /**
      * A human-readable string which is rendered less prominent.
      * When `true`, it is derived from {@link TreeItem.resourceUri resourceUri} and when `falsy`, it is not shown.
      */
-//  description?: string | boolean
+    var description: Any /* string | boolean */?
 
     /**
      * The {@link Uri} of the resource representing this item.
@@ -39,12 +39,12 @@ open external class TreeItem {
      * Will be used to derive the {@link TreeItem.label label}, when it is not provided.
      * Will be used to derive the icon from current file icon theme, when {@link TreeItem.iconPath iconPath} has {@link ThemeIcon} value.
      */
-//  resourceUri?: Uri
+    var resourceUri: Uri?
 
     /**
      * The tooltip text when you hover over this item.
      */
-//  tooltip?: string | MarkdownString | undefined
+    var tooltip: Any /* string | MarkdownString */?
 
     /**
      * The {@link Command} that should be executed when the tree item is selected.
@@ -53,12 +53,12 @@ open external class TreeItem {
      * something in the editor. Using these commands ensures that the resulting editor will
      * appear consistent with how other built-in trees open editors.
      */
-//  command?: Command
+    var command: Command?
 
     /**
      * {@link TreeItemCollapsibleState} of the tree item.
      */
-//  collapsibleState?: TreeItemCollapsibleState
+    var collapsibleState: TreeItemCollapsibleState?
 
     /**
      * Context value of the tree item. This can be used to contribute item specific actions in the tree.
@@ -78,14 +78,14 @@ open external class TreeItem {
      * ```
      * This will show action `extension.deleteFolder` only for items with `contextValue` is `folder`.
      */
-//  contextValue?: string
+    var contextValue: String?
 
     /**
      * Accessibility information used when screen reader interacts with this tree item.
      * Generally, a TreeItem has no need to set the `role` of the accessibilityInformation;
      * however, there are cases where a TreeItem is not displayed in a tree-like way where setting the `role` may make sense.
      */
-//  accessibilityInformation?: AccessibilityInformation
+    var accessibilityInformation: AccessibilityInformation?
 
     /**
      * {@link TreeItemCheckboxState TreeItemCheckboxState} of the tree item.

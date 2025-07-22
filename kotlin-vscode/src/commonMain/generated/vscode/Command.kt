@@ -2,6 +2,8 @@
 
 package vscode
 
+import js.array.ReadonlyArray
+
 /**
  * Represents a reference to a command. Provides a title which
  * will be used to represent a command in the UI and, optionally,
@@ -12,22 +14,22 @@ external interface Command {
     /**
      * Title of the command, like `save`.
      */
-//  title: string
+    var title: String
 
     /**
      * The identifier of the actual command handler.
      * @see {@link commands.registerCommand}
      */
-//  command: string
+    var command: String
 
     /**
      * A tooltip for the command, when represented in the UI.
      */
-//  tooltip?: string
+    var tooltip: String?
 
     /**
      * Arguments that the command handler should be
      * invoked with.
      */
-//  arguments?: any[]
+    var arguments: ReadonlyArray<Any?>?
 }

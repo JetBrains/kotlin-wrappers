@@ -2,6 +2,8 @@
 
 package vscode
 
+import js.array.ReadonlyArray
+
 /**
  * Represents an item that can be selected from
  * a list of items.
@@ -14,18 +16,18 @@ external interface QuickPickItem {
      * Note: When {@link QuickPickItem.kind kind} is set to {@link QuickPickItemKind.Default} (so a regular item
      * instead of a separator), it supports rendering of {@link ThemeIcon theme icons} via the `$(<name>)`-syntax.
      */
-//  label: string
+    var label: String
 
     /**
      * The kind of QuickPickItem that will determine how this item is rendered in the quick pick. When not specified,
      * the default is {@link QuickPickItemKind.Default}.
      */
-//  kind?: QuickPickItemKind
+    var kind: QuickPickItemKind?
 
     /**
      * The icon path or {@link ThemeIcon} for the QuickPickItem.
      */
-//  iconPath?: IconPath
+    var iconPath: IconPath?
 
     /**
      * A human-readable string which is rendered less prominent in the same line. Supports rendering of
@@ -33,7 +35,7 @@ external interface QuickPickItem {
      *
      * Note: this property is ignored when {@link QuickPickItem.kind kind} is set to {@link QuickPickItemKind.Separator}
      */
-//  description?: string
+    var description: String?
 
     /**
      * A human-readable string which is rendered less prominent in a separate line. Supports rendering of
@@ -41,7 +43,7 @@ external interface QuickPickItem {
      *
      * Note: this property is ignored when {@link QuickPickItem.kind kind} is set to {@link QuickPickItemKind.Separator}
      */
-//  detail?: string
+    var detail: String?
 
     /**
      * Optional flag indicating if this item is picked initially. This is only honored when using
@@ -54,14 +56,14 @@ external interface QuickPickItem {
      *
      * Note: this property is ignored when {@link QuickPickItem.kind kind} is set to {@link QuickPickItemKind.Separator}
      */
-//  picked?: boolean
+    var picked: Boolean?
 
     /**
      * Always show this item.
      *
      * Note: this property is ignored when {@link QuickPickItem.kind kind} is set to {@link QuickPickItemKind.Separator}
      */
-//  alwaysShow?: boolean
+    var alwaysShow: Boolean?
 
     /**
      * Optional buttons that will be rendered on this particular item. These buttons will trigger
@@ -71,5 +73,5 @@ external interface QuickPickItem {
      *
      * Note: this property is ignored when {@link QuickPickItem.kind kind} is set to {@link QuickPickItemKind.Separator}
      */
-//  buttons?: readonly QuickInputButton[]
+    var buttons: ReadonlyArray<QuickInputButton>?
 }

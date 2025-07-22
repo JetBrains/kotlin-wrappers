@@ -18,12 +18,12 @@ open external class CodeLens {
     /**
      * The range in which this code lens is valid. Should only span a single line.
      */
-//  range: Range
+    var range: Range
 
     /**
      * The command this code lens represents.
      */
-//  command?: Command
+    var command: Command?
 
     /**
      * `true` when there is a command associated.

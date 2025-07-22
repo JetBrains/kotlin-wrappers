@@ -2,6 +2,8 @@
 
 package vscode
 
+import js.core.Void
+
 /**
  * Represents extension specific information about the access to language models.
  */
@@ -9,7 +11,7 @@ external interface LanguageModelAccessInformation {
     /**
      * An event that fires when access information changes.
      */
-//  onDidChange: Event<void>
+    var onDidChange: Event<Void>
 
     /**
      * Checks if a request can be made to a language model.

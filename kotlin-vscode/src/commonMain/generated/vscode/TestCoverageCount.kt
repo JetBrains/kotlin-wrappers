@@ -12,12 +12,12 @@ open external class TestCoverageCount {
     /**
      * Number of items covered in the file.
      */
-//  covered: number
+    var covered: Int
 
     /**
      * Total number of covered items in the file.
      */
-//  total: number
+    var total: Int
 
     /**
      * @param covered Value for {@link TestCoverageCount.covered}

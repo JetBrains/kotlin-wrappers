@@ -10,61 +10,61 @@ external interface ThemableDecorationAttachmentRenderOptions {
     /**
      * Defines a text content that is shown in the attachment. Either an icon or a text can be shown, but not both.
      */
-//  contentText?: string
+    var contentText: String?
 
     /**
      * An **absolute path** or an URI to an image to be rendered in the attachment. Either an icon
      * or a text can be shown, but not both.
      */
-//  contentIconPath?: string | Uri
+    var contentIconPath: Any /* string | Uri */?
 
     /**
      * CSS styling property that will be applied to the decoration attachment.
      */
-//  border?: string
+    var border: String?
 
     /**
      * CSS styling property that will be applied to text enclosed by a decoration.
      */
-//  borderColor?: string | ThemeColor
+    var borderColor: Any /* string | ThemeColor */?
 
     /**
      * CSS styling property that will be applied to the decoration attachment.
      */
-//  fontStyle?: string
+    var fontStyle: String?
 
     /**
      * CSS styling property that will be applied to the decoration attachment.
      */
-//  fontWeight?: string
+    var fontWeight: String?
 
     /**
      * CSS styling property that will be applied to the decoration attachment.
      */
-//  textDecoration?: string
+    var textDecoration: String?
 
     /**
      * CSS styling property that will be applied to the decoration attachment.
      */
-//  color?: string | ThemeColor
+    var color: Any /* string | ThemeColor */?
 
     /**
      * CSS styling property that will be applied to the decoration attachment.
      */
-//  backgroundColor?: string | ThemeColor
+    var backgroundColor: Any /* string | ThemeColor */?
 
     /**
      * CSS styling property that will be applied to the decoration attachment.
      */
-//  margin?: string
+    var margin: String?
 
     /**
      * CSS styling property that will be applied to the decoration attachment.
      */
-//  width?: string
+    var width: String?
 
     /**
      * CSS styling property that will be applied to the decoration attachment.
      */
-//  height?: string
+    var height: String?
 }

@@ -12,14 +12,14 @@ open external class Hover {
     /**
      * The contents of this hover.
      */
-//  contents: Array<MarkdownString | MarkedString>
+    var contents: Any /* Array<MarkdownString | MarkedString> */
 
     /**
      * The range to which this hover applies. When missing, the
      * editor will use the range at the current position or the
      * current position itself.
      */
-//  range?: Range
+    var range: Range?
 
     /**
      * Creates a new hover object.

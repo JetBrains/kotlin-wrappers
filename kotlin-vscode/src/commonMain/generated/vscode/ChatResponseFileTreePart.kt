@@ -4,6 +4,8 @@
 
 package vscode
 
+import js.array.ReadonlyArray
+
 /**
  * Represents a part of a chat response that is a file tree.
  */
@@ -11,12 +13,12 @@ open external class ChatResponseFileTreePart {
     /**
      * File tree data.
      */
-//  value: ChatResponseFileTree[]
+    var value: ReadonlyArray<ChatResponseFileTree>
 
     /**
      * The base uri to which this file tree is relative
      */
-//  baseUri: Uri
+    var baseUri: Uri
 
     /**
      * Create a new ChatResponseFileTreePart.

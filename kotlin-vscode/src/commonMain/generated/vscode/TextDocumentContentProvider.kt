@@ -15,7 +15,7 @@ external interface TextDocumentContentProvider {
     /**
      * An event to signal a resource has changed.
      */
-//  onDidChange?: Event<Uri>
+    var onDidChange: Event<Uri>?
 
     /**
      * Provide textual content for a given uri.

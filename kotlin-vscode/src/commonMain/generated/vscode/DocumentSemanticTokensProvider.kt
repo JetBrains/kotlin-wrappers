@@ -2,6 +2,8 @@
 
 package vscode
 
+import js.core.Void
+
 /**
  * The document semantic tokens provider interface defines the contract between extensions and
  * semantic tokens.
@@ -10,7 +12,7 @@ external interface DocumentSemanticTokensProvider {
     /**
      * An optional event to signal that the semantic tokens from this provider have changed.
      */
-//  onDidChangeSemanticTokens?: Event<void>
+    var onDidChangeSemanticTokens: Event<Void>?
 
     /**
      * Tokens in a file are represented as an array of integers. The position of each token is expressed relative to

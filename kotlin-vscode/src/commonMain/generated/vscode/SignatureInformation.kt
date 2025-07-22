@@ -4,6 +4,8 @@
 
 package vscode
 
+import js.array.ReadonlyArray
+
 /**
  * Represents the signature of something callable. A signature
  * can have a label, like a function-name, a doc-comment, and
@@ -14,25 +16,25 @@ open external class SignatureInformation {
      * The label of this signature. Will be shown in
      * the UI.
      */
-//  label: string
+    var label: String
 
     /**
      * The human-readable doc-comment of this signature. Will be shown
      * in the UI but can be omitted.
      */
-//  documentation?: string | MarkdownString
+    var documentation: Any /* string | MarkdownString */?
 
     /**
      * The parameters of this signature.
      */
-//  parameters: ParameterInformation[]
+    var parameters: ReadonlyArray<ParameterInformation>
 
     /**
      * The index of the active parameter.
      *
      * If provided, this is used in place of {@linkcode SignatureHelp.activeParameter}.
      */
-//  activeParameter?: number
+    var activeParameter: Int?
 
     /**
      * Creates a new signature information object.

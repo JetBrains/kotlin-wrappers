@@ -4,6 +4,8 @@
 
 package vscode
 
+import js.array.ReadonlyArray
+
 /**
  * Represents a collection of {@link CompletionItem completion items} to be presented
  * in the editor.
@@ -13,12 +15,12 @@ open external class CompletionList<T : CompletionItem> {
      * This list is not complete. Further typing should result in recomputing
      * this list.
      */
-//  isIncomplete?: boolean
+    var isIncomplete: Boolean?
 
     /**
      * The completion items.
      */
-//  items: T[]
+    var items: ReadonlyArray<T>
 
     /**
      * Creates a new completion list.

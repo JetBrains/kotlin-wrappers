@@ -11,7 +11,7 @@ open external class InlayHintLabelPart {
     /**
      * The value of this label part.
      */
-//  value: string
+    var value: String
 
     /**
      * The tooltip text when you hover over this label part.
@@ -19,7 +19,7 @@ open external class InlayHintLabelPart {
      * *Note* that this property can be set late during
      * {@link InlayHintsProvider.resolveInlayHint resolving} of inlay hints.
      */
-//  tooltip?: string | MarkdownString | undefined
+    var tooltip: Any /* string | MarkdownString */?
 
     /**
      * An optional {@link Location source code location} that represents this label
@@ -33,7 +33,7 @@ open external class InlayHintLabelPart {
      * *Note* that this property can be set late during
      * {@link InlayHintsProvider.resolveInlayHint resolving} of inlay hints.
      */
-//  location?: Location | undefined
+    var location: Location?
 
     /**
      * An optional command for this label part.
@@ -44,7 +44,7 @@ open external class InlayHintLabelPart {
      * *Note* that this property can be set late during
      * {@link InlayHintsProvider.resolveInlayHint resolving} of inlay hints.
      */
-//  command?: Command | undefined
+    var command: Command?
 
     /**
      * Creates a new inlay hint label part.

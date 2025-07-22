@@ -9,5 +9,5 @@ external interface RunOptions {
     /**
      * Controls whether task variables are re-evaluated on rerun.
      */
-//  reevaluateOnRerun?: boolean
+    var reevaluateOnRerun: Boolean?
 }

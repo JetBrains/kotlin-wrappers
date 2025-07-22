@@ -9,20 +9,20 @@ external interface DebugConfiguration {
     /**
      * The type of the debug session.
      */
-//  type: string
+    var type: String
 
     /**
      * The name of the debug session.
      */
-//  name: string
+    var name: String
 
     /**
      * The request type of the debug session.
      */
-//  request: string
+    var request: String
 
     /**
      * Additional debug type specific properties.
      */
-//  [key: string]: any
+    // [key: string]: any
 }

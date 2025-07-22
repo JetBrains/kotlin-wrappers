@@ -16,7 +16,7 @@ open external class RelativePattern {
      * file path must be absolute, should not have any trailing path separators and
      * not include any relative segments (`.` or `..`).
      */
-//  baseUri: Uri
+    var baseUri: Uri
 
     /**
      * A base file path to which this pattern will be matched against relatively.
@@ -28,7 +28,7 @@ open external class RelativePattern {
      *
      * @deprecated This property is deprecated, please use {@link RelativePattern.baseUri} instead.
      */
-//  base: string
+    var base: String
 
     /**
      * A file glob pattern like `*.{ts,js}` that will be matched on file paths
@@ -37,7 +37,7 @@ open external class RelativePattern {
      * Example: Given a base of `/home/work/folder` and a file path of `/home/work/folder/index.js`,
      * the file glob pattern will match on `index.js`.
      */
-//  pattern: string
+    var pattern: String
 
     /**
      * Creates a new relative pattern object with a base file path and pattern to match. This pattern

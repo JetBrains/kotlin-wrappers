@@ -2,6 +2,8 @@
 
 package vscode
 
+import js.array.ReadonlyArray
+
 /**
  * The ranges a CommentingRangeProvider enables commenting on.
  */
@@ -9,10 +11,10 @@ external interface CommentingRanges {
     /**
      * Enables comments to be added to a file without a specific range.
      */
-//  enableFileComments: boolean
+    var enableFileComments: Boolean
 
     /**
      * The ranges which allow new comment threads creation.
      */
-//  ranges?: Range[]
+    var ranges: ReadonlyArray<Range>?
 }

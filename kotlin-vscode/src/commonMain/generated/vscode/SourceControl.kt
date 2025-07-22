@@ -2,6 +2,8 @@
 
 package vscode
 
+import js.array.ReadonlyArray
+
 /**
  * An source control is able to provide {@link SourceControlResourceState resource states}
  * to the editor and interact with the editor in several source control related ways.
@@ -35,12 +37,12 @@ external interface SourceControl {
      * - display its UI-visible count as zero, and
      * - contribute the count of its {@link SourceControlResourceState resource states} to the UI-visible aggregated count for all source controls
      */
-//  count?: number
+    var count: Int?
 
     /**
      * An optional {@link QuickDiffProvider quick diff provider}.
      */
-//  quickDiffProvider?: QuickDiffProvider
+    var quickDiffProvider: QuickDiffProvider?
 
     /**
      * Optional commit template string.
@@ -48,7 +50,7 @@ external interface SourceControl {
      * The Source Control viewlet will populate the Source Control
      * input with this value when appropriate.
      */
-//  commitTemplate?: string
+    var commitTemplate: String?
 
     /**
      * Optional accept input command.
@@ -56,14 +58,14 @@ external interface SourceControl {
      * This command will be invoked when the user accepts the value
      * in the Source Control input.
      */
-//  acceptInputCommand?: Command
+    var acceptInputCommand: Command?
 
     /**
      * Optional status bar commands.
      *
      * These commands will be displayed in the editor's status bar.
      */
-//  statusBarCommands?: Command[]
+    var statusBarCommands: ReadonlyArray<Command>?
 
     /**
      * Create a new {@link SourceControlResourceGroup resource group}.

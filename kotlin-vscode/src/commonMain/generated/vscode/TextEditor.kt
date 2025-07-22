@@ -16,12 +16,12 @@ external interface TextEditor {
     /**
      * The primary selection on this text editor. Shorthand for `TextEditor.selections[0]`.
      */
-//  selection: Selection
+    var selection: Selection
 
     /**
      * The selections in this text editor. The primary selection is always at index 0.
      */
-//  selections: readonly Selection[]
+    var selections: ReadonlyArray<Selection>
 
     /**
      * The current visible ranges in the editor (vertically).
@@ -32,7 +32,7 @@ external interface TextEditor {
     /**
      * Text editor options.
      */
-//  options: TextEditorOptions
+    var options: TextEditorOptions
 
     /**
      * The column in which this editor shows. Will be `undefined` in case this

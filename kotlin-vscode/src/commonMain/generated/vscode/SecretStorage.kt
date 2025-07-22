@@ -33,5 +33,5 @@ external interface SecretStorage {
     /**
      * Fires when a secret is stored or deleted.
      */
-//  onDidChange: Event<SecretStorageChangeEvent>
+    var onDidChange: Event<SecretStorageChangeEvent>
 }

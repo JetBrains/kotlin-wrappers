@@ -2,6 +2,8 @@
 
 package vscode
 
+import js.array.ReadonlyArray
+
 /**
  * A source control resource group is a collection of
  * {@link SourceControlResourceState source control resource states}.
@@ -15,13 +17,13 @@ external interface SourceControlResourceGroup {
     /**
      * The label of this source control resource group.
      */
-//  label: string
+    var label: String
 
     /**
      * Whether this source control resource group is hidden when it contains
      * no {@link SourceControlResourceState source control resource states}.
      */
-//  hideWhenEmpty?: boolean
+    var hideWhenEmpty: Boolean?
 
     /**
      * Context value of the resource group. This can be used to contribute resource group specific actions.
@@ -41,13 +43,13 @@ external interface SourceControlResourceGroup {
      * ```
      * This will show action `extension.export` only for resource groups with `contextValue` equal to `exportable`.
      */
-//  contextValue?: string
+    var contextValue: String?
 
     /**
      * This group's collection of
      * {@link SourceControlResourceState source control resource states}.
      */
-//  resourceStates: SourceControlResourceState[]
+    var resourceStates: ReadonlyArray<SourceControlResourceState>
 
     /**
      * Dispose this source control resource group.

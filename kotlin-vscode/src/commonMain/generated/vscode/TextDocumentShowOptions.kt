@@ -13,12 +13,12 @@ external interface TextDocumentShowOptions {
      * Use {@linkcode ViewColumn.Beside} to open the editor to the side of the currently
      * active one.
      */
-//  viewColumn?: ViewColumn
+    var viewColumn: ViewColumn?
 
     /**
      * An optional flag that when `true` will stop the {@link TextEditor editor} from taking focus.
      */
-//  preserveFocus?: boolean
+    var preserveFocus: Boolean?
 
     /**
      * An optional flag that controls if an {@link TextEditor editor}-tab shows as preview. Preview tabs will
@@ -26,10 +26,10 @@ external interface TextDocumentShowOptions {
      *
      * *Note* that the flag is ignored if a user has disabled preview editors in settings.
      */
-//  preview?: boolean
+    var preview: Boolean?
 
     /**
      * An optional selection to apply for the document in the {@link TextEditor editor}.
      */
-//  selection?: Range
+    var selection: Range?
 }

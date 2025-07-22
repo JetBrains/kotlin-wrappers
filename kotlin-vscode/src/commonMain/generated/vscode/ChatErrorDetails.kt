@@ -9,10 +9,10 @@ external interface ChatErrorDetails {
     /**
      * An error message that is shown to the user.
      */
-//  message: string
+    var message: String
 
     /**
      * If set to true, the response will be partly blurred out.
      */
-//  responseIsFiltered?: boolean
+    var responseIsFiltered: Boolean?
 }

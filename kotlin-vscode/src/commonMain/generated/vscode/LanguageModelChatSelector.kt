@@ -12,23 +12,23 @@ external interface LanguageModelChatSelector {
      * A vendor of language models.
      * @see {@link LanguageModelChat.vendor}
      */
-//  vendor?: string
+    var vendor: String?
 
     /**
      * A family of language models.
      * @see {@link LanguageModelChat.family}
      */
-//  family?: string
+    var family: String?
 
     /**
      * The version of a language model.
      * @see {@link LanguageModelChat.version}
      */
-//  version?: string
+    var version: String?
 
     /**
      * The identifier of a language model.
      * @see {@link LanguageModelChat.id}
      */
-//  id?: string
+    var id: String?
 }

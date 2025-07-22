@@ -14,10 +14,10 @@ external interface TerminalEditorLocationOptions {
      * Use {@linkcode ViewColumn.Beside} to open the editor to the side of the currently
      * active one.
      */
-//  viewColumn: ViewColumn
+    var viewColumn: ViewColumn
 
     /**
      * An optional flag that when `true` will stop the {@link Terminal} from taking focus.
      */
-//  preserveFocus?: boolean
+    var preserveFocus: Boolean?
 }

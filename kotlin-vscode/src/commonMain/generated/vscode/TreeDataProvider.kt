@@ -11,7 +11,7 @@ external interface TreeDataProvider<T> {
      * This will trigger the view to update the changed element/root and its children recursively (if shown).
      * To signal that root has changed, do not pass any argument or pass `undefined` or `null`.
      */
-//  onDidChangeTreeData?: Event<T | T[] | undefined | null | void>
+    var onDidChangeTreeData: Event<Any /* T | T[] | undefined | null | void */>?
 
     /**
      * Get {@link TreeItem} representation of the `element`

@@ -12,7 +12,7 @@ open external class LanguageModelPromptTsxPart {
     /**
      * The value of the part.
      */
-//  value: unknown
+    var value: Any?
 
     /**
      * Construct a prompt-tsx part with the given content.

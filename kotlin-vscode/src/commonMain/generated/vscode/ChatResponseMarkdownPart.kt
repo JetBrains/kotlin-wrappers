@@ -11,7 +11,7 @@ open external class ChatResponseMarkdownPart {
     /**
      * A markdown string or a string that should be interpreted as markdown.
      */
-//  value: MarkdownString
+    var value: MarkdownString
 
     /**
      * Create a new ChatResponseMarkdownPart.

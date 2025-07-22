@@ -4,6 +4,8 @@
 
 package vscode
 
+import js.objects.Record
+
 /**
  * McpHttpServerDefinition represents an MCP server available using the
  * Streamable HTTP transport.
@@ -18,18 +20,18 @@ open external class McpHttpServerDefinition {
      * The URI of the server. The editor will make a POST request to this URI
      * to begin each session.
      */
-//  uri: Uri
+    var uri: Uri
 
     /**
      * Optional additional heads included with each request to the server.
      */
-//  headers: Record<string, string>
+    var headers: Record<String, String>
 
     /**
      * Optional version identification for the server. If this changes, the
      * editor will indicate that tools have changed and prompt to refresh them.
      */
-//  version?: string
+    var version: String?
 
     /**
      * @param label The human-readable name of the server.

@@ -12,19 +12,19 @@ open external class DeclarationCoverage {
     /**
      * Name of the declaration.
      */
-//  name: string
+    var name: String
 
     /**
      * The number of times this declaration was executed, or a boolean
      * indicating whether it was executed if the exact count is unknown. If
      * zero or false, the declaration will be marked as un-covered.
      */
-//  executed: number | boolean
+    var executed: Any /* number | boolean */
 
     /**
      * Declaration location.
      */
-//  location: Position | Range
+    var location: Any /* Position | Range */
 
     /**
      * @param executed The number of times this declaration was executed, or a

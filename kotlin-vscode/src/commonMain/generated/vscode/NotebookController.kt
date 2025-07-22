@@ -2,6 +2,8 @@
 
 package vscode
 
+import js.array.ReadonlyArray
+
 /**
  * A notebook controller represents an entity that can execute notebook cells. This is often referred to as a kernel.
  *
@@ -44,28 +46,28 @@ external interface NotebookController {
      * myController.supportedLanguages = []; // falsy
      * ```
      */
-//  supportedLanguages?: string[]
+    var supportedLanguages: ReadonlyArray<String>?
 
     /**
      * The human-readable label of this notebook controller.
      */
-//  label: string
+    var label: String
 
     /**
      * The human-readable description which is rendered less prominent.
      */
-//  description?: string
+    var description: String?
 
     /**
      * The human-readable detail which is rendered less prominent.
      */
-//  detail?: string
+    var detail: String?
 
     /**
      * Whether this controller supports execution order so that the
      * editor can render placeholders for them.
      */
-//  supportsExecutionOrder?: boolean
+    var supportsExecutionOrder: Boolean?
 
     /**
      * Create a cell execution task.
@@ -86,7 +88,7 @@ external interface NotebookController {
      * The execute handler is invoked when the run gestures in the UI are selected, e.g Run Cell, Run All,
      * Run Selection etc. The execute handler is responsible for creating and managing {@link NotebookCellExecution execution}-objects.
      */
-//  executeHandler: (cells: NotebookCell[], notebook: NotebookDocument, controller: NotebookController) => void | Thenable<void>
+    var executeHandler: Any /* (cells: NotebookCell[], notebook: NotebookDocument, controller: NotebookController) => void | Thenable<void> */
 
     /**
      * Optional interrupt handler.
@@ -100,7 +102,7 @@ external interface NotebookController {
      * _Note_ that supporting {@link NotebookCellExecution.token cancellation tokens} is preferred and that interrupt handlers should
      * only be used when tokens cannot be supported.
      */
-//  interruptHandler?: (notebook: NotebookDocument) => void | Thenable<void>
+    var interruptHandler: Any /* (notebook: NotebookDocument) => void | Thenable<void> */?
 
     /**
      * An event that fires whenever a controller has been selected or un-selected for a notebook document.

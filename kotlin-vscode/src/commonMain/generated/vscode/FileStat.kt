@@ -2,6 +2,8 @@
 
 package vscode
 
+import js.core.Int53
+
 /**
  * The `FileStat`-type represents metadata about a file
  */
@@ -12,12 +14,12 @@ external interface FileStat {
      *
      * *Note:* This value might be a bitmask, e.g. `FileType.File | FileType.SymbolicLink`.
      */
-//  type: FileType
+    var type: FileType
 
     /**
      * The creation timestamp in milliseconds elapsed since January 1, 1970 00:00:00 UTC.
      */
-//  ctime: number
+    var ctime: Int53
 
     /**
      * The modification timestamp in milliseconds elapsed since January 1, 1970 00:00:00 UTC.
@@ -26,7 +28,7 @@ external interface FileStat {
      * from the previous value. Otherwise there may be optimizations in place that will not show
      * the updated file contents in an editor for example.
      */
-//  mtime: number
+    var mtime: Int53
 
     /**
      * The size in bytes.
@@ -35,12 +37,12 @@ external interface FileStat {
      * may be optimizations in place that will not show the updated file contents in an editor for
      * example.
      */
-//  size: number
+    var size: Int
 
     /**
      * The permissions of the file, e.g. whether the file is readonly.
      *
      * *Note:* This value might be a bitmask, e.g. `FilePermission.Readonly | FilePermission.Other`.
      */
-//  permissions?: FilePermission
+    var permissions: FilePermission?
 }

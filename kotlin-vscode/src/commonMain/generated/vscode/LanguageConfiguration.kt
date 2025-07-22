@@ -2,6 +2,9 @@
 
 package vscode
 
+import js.array.ReadonlyArray
+import js.regexp.RegExp
+
 /**
  * The language configuration interfaces defines the contract between extensions
  * and various editor features, like automatic bracket insertion, automatic indentation etc.
@@ -10,13 +13,13 @@ external interface LanguageConfiguration {
     /**
      * The language's comment settings.
      */
-//  comments?: CommentRule
+    var comments: CommentRule?
 
     /**
      * The language's brackets.
      * This configuration implicitly affects pressing Enter around these brackets.
      */
-//  brackets?: CharacterPair[]
+    var brackets: ReadonlyArray<CharacterPair>?
 
     /**
      * The language's word definition.
@@ -27,22 +30,22 @@ external interface LanguageConfiguration {
      * /(-?\d*\.\d\w*)|([^\`\~\!\@\#\%\^\&\*\(\)\-\=\+\[\{\]\}\\\|\;\:\'\"\,\.\<\>\/\?\s]+)/g
      * ```
      */
-//  wordPattern?: RegExp
+    var wordPattern: RegExp?
 
     /**
      * The language's indentation settings.
      */
-//  indentationRules?: IndentationRule
+    var indentationRules: IndentationRule?
 
     /**
      * The language's rules to be evaluated when pressing Enter.
      */
-//  onEnterRules?: OnEnterRule[]
+    var onEnterRules: ReadonlyArray<OnEnterRule>?
 
     /**
      * The language's auto closing pairs.
      */
-//  autoClosingPairs?: AutoClosingPair[]
+    var autoClosingPairs: ReadonlyArray<AutoClosingPair>?
 
     /**
      * **Deprecated** Do not use.

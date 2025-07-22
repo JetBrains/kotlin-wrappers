@@ -13,13 +13,13 @@ open external class FoldingRange {
      * The zero-based start line of the range to fold. The folded area starts after the line's last character.
      * To be valid, the end must be zero or larger and smaller than the number of lines in the document.
      */
-//  start: number
+    var start: Int
 
     /**
      * The zero-based end line of the range to fold. The folded area ends with the line's last character.
      * To be valid, the end must be zero or larger and smaller than the number of lines in the document.
      */
-//  end: number
+    var end: Int
 
     /**
      * Describes the {@link FoldingRangeKind Kind} of the folding range such as {@link FoldingRangeKind.Comment Comment} or
@@ -28,7 +28,7 @@ open external class FoldingRange {
      * {@link FoldingRangeKind} for an enumeration of all kinds.
      * If not set, the range is originated from a syntax element.
      */
-//  kind?: FoldingRangeKind
+    var kind: FoldingRangeKind?
 
     /**
      * Creates a new folding range.

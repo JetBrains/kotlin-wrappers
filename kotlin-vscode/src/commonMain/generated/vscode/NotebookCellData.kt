@@ -4,6 +4,9 @@
 
 package vscode
 
+import js.array.ReadonlyArray
+import js.objects.Record
+
 /**
  * NotebookCellData is the raw representation of notebook cells. Its is part of {@linkcode NotebookData}.
  */
@@ -11,33 +14,33 @@ open external class NotebookCellData {
     /**
      * The {@link NotebookCellKind kind} of this cell data.
      */
-//  kind: NotebookCellKind
+    var kind: NotebookCellKind
 
     /**
      * The source value of this cell data - either source code or formatted text.
      */
-//  value: string
+    var value: String
 
     /**
      * The language identifier of the source value of this cell data. Any value from
      * {@linkcode languages.getLanguages getLanguages} is possible.
      */
-//  languageId: string
+    var languageId: String
 
     /**
      * The outputs of this cell data.
      */
-//  outputs?: NotebookCellOutput[]
+    var outputs: ReadonlyArray<NotebookCellOutput>?
 
     /**
      * Arbitrary metadata of this cell data. Can be anything but must be JSON-stringifyable.
      */
-//  metadata?: { [key: string]: any }
+    var metadata: Record<String, *>?
 
     /**
      * The execution summary of this cell data.
      */
-//  executionSummary?: NotebookCellExecutionSummary
+    var executionSummary: NotebookCellExecutionSummary?
 
     /**
      * Create new cell data. Minimal cell data specifies its kind, its source value, and the

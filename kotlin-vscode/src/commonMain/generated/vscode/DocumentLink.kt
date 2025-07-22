@@ -12,12 +12,12 @@ open external class DocumentLink {
     /**
      * The range this link applies to.
      */
-//  range: Range
+    var range: Range
 
     /**
      * The uri this link points to.
      */
-//  target?: Uri
+    var target: Uri?
 
     /**
      * The tooltip text when you hover over this link.
@@ -26,7 +26,7 @@ open external class DocumentLink {
      * trigger the link, such as `{0} (ctrl + click)`. The specific instructions vary depending on OS,
      * user settings, and localization.
      */
-//  tooltip?: string
+    var tooltip: String?
 
     /**
      * Creates a new document link.

@@ -12,12 +12,12 @@ open external class SelectionRange {
     /**
      * The {@link Range} of this selection range.
      */
-//  range: Range
+    var range: Range
 
     /**
      * The parent selection range containing this range.
      */
-//  parent?: SelectionRange
+    var parent: SelectionRange?
 
     /**
      * Creates a new selection range.

@@ -10,10 +10,10 @@ external interface DecorationInstanceRenderOptions :
     /**
      * Overwrite options for light themes.
      */
-//  light?: ThemableDecorationInstanceRenderOptions
+    var light: ThemableDecorationInstanceRenderOptions?
 
     /**
      * Overwrite options for dark themes.
      */
-//  dark?: ThemableDecorationInstanceRenderOptions
+    var dark: ThemableDecorationInstanceRenderOptions?
 }

@@ -14,10 +14,10 @@ external interface CancellationToken {
     /**
      * Is `true` when the token has been cancelled, `false` otherwise.
      */
-//  isCancellationRequested: boolean
+    var isCancellationRequested: Boolean
 
     /**
      * An {@link Event} which fires upon cancellation.
      */
-//  onCancellationRequested: Event<any>
+    var onCancellationRequested: Event<Any?>
 }

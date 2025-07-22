@@ -2,6 +2,8 @@
 
 package vscode
 
+import js.core.Void
+
 /**
  * A TestRun represents an in-progress or completed test run and
  * provides methods to report the state of individual tests in the run.
@@ -98,5 +100,5 @@ external interface TestRun {
      * An event fired when the editor is no longer interested in data
      * associated with the test run.
      */
-//  onDidDispose: Event<void>
+    var onDidDispose: Event<Void>
 }

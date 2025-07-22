@@ -4,6 +4,8 @@
 
 package vscode
 
+import js.array.ReadonlyArray
+
 /**
  * Signature help represents the signature of something
  * callable. There can be multiple signatures but only one
@@ -13,15 +15,15 @@ open external class SignatureHelp {
     /**
      * One or more signatures.
      */
-//  signatures: SignatureInformation[]
+    var signatures: ReadonlyArray<SignatureInformation>
 
     /**
      * The active signature.
      */
-//  activeSignature: number
+    var activeSignature: Int
 
     /**
      * The active parameter of the active signature.
      */
-//  activeParameter: number
+    var activeParameter: Int
 }

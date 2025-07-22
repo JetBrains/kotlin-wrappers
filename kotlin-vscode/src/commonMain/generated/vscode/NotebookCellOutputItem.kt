@@ -4,6 +4,8 @@
 
 package vscode
 
+import js.typedarrays.Uint8Array
+
 /**
  * One representation of a {@link NotebookCellOutput notebook output}, defined by MIME type and data.
  */
@@ -67,12 +69,12 @@ open external class NotebookCellOutputItem {
      * Notebooks have built-in support for certain mime-types, extensions can add support for new
      * types and override existing types.
      */
-//  mime: string
+    var mime: String
 
     /**
      * The data of this output item. Must always be an array of unsigned 8-bit integers.
      */
-//  data: Uint8Array
+    var data: Uint8Array<*>
 
     /**
      * Create a new notebook cell output item.

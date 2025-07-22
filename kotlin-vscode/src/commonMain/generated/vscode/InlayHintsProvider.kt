@@ -2,6 +2,8 @@
 
 package vscode
 
+import js.core.Void
+
 /**
  * The inlay hints provider interface defines the contract between extensions and
  * the inlay hints feature.
@@ -10,7 +12,7 @@ external interface InlayHintsProvider<T : InlayHint> {
     /**
      * An optional event to signal that inlay hints from this provider have changed.
      */
-//  onDidChangeInlayHints?: Event<void>
+    var onDidChangeInlayHints: Event<Void>?
 
     /**
      * Provide inlay hints for the given range and document.

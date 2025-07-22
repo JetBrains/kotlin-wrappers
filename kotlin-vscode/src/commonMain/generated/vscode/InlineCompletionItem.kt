@@ -14,7 +14,7 @@ open external class InlineCompletionItem {
      * The text to replace the range with. Must be set.
      * Is used both for the preview and the accept operation.
      */
-//  insertText: string | SnippetString
+    var insertText: Any /* string | SnippetString */
 
     /**
      * A text that is used to decide if this inline completion should be shown. When `falsy`
@@ -22,7 +22,7 @@ open external class InlineCompletionItem {
      *
      * An inline completion is shown if the text to replace is a prefix of the filter text.
      */
-//  filterText?: string
+    var filterText: String?
 
     /**
      * The range to replace.
@@ -30,12 +30,12 @@ open external class InlineCompletionItem {
      *
      * Prefer replacements over insertions to provide a better experience when the user deletes typed text.
      */
-//  range?: Range
+    var range: Range?
 
     /**
      * An optional {@link Command} that is executed *after* inserting this completion.
      */
-//  command?: Command
+    var command: Command?
 
     /**
      * Creates a new inline completion item.

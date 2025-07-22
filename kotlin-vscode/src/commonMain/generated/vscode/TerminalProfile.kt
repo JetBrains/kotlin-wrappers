@@ -11,7 +11,7 @@ open external class TerminalProfile {
     /**
      * The options that the terminal will launch with.
      */
-//  options: TerminalOptions | ExtensionTerminalOptions
+    var options: Any /* TerminalOptions | ExtensionTerminalOptions */
 
     /**
      * Creates a new terminal profile.

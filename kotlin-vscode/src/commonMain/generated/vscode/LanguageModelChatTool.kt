@@ -10,15 +10,15 @@ external interface LanguageModelChatTool {
     /**
      * The name of the tool.
      */
-//  name: string
+    var name: String
 
     /**
      * The description of the tool.
      */
-//  description: string
+    var description: String
 
     /**
      * A JSON schema for the input this tool accepts.
      */
-//  inputSchema?: object | undefined
+    var inputSchema: Any?
 }

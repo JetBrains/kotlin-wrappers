@@ -9,7 +9,7 @@ external interface Webview {
     /**
      * Content settings for the webview.
      */
-//  options: WebviewOptions
+    var options: WebviewOptions
 
     /**
      * HTML contents of the webview.
@@ -36,7 +36,7 @@ external interface Webview {
      * properly sanitizing all untrusted input (including content from the workspace) and
      * setting a [content security policy](https://aka.ms/vscode-api-webview-csp).
      */
-//  html: string
+    var html: String
 
     /**
      * Fired when the webview content posts a message.

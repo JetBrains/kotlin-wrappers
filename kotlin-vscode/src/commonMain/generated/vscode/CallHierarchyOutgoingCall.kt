@@ -4,6 +4,8 @@
 
 package vscode
 
+import js.array.ReadonlyArray
+
 /**
  * Represents an outgoing call, e.g. calling a getter from a method or a method from a constructor etc.
  */
@@ -11,14 +13,14 @@ open external class CallHierarchyOutgoingCall {
     /**
      * The item that is called.
      */
-//  to: CallHierarchyItem
+    var to: CallHierarchyItem
 
     /**
      * The range at which this item is called. This is the range relative to the caller, e.g the item
      * passed to {@linkcode CallHierarchyProvider.provideCallHierarchyOutgoingCalls provideCallHierarchyOutgoingCalls}
      * and not {@linkcode CallHierarchyOutgoingCall.to this.to}.
      */
-//  fromRanges: Range[]
+    var fromRanges: ReadonlyArray<Range>
 
     /**
      * Create a new call object.

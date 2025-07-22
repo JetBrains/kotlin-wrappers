@@ -4,6 +4,8 @@
 
 package vscode
 
+import js.array.ReadonlyArray
+
 /**
  * An edit operation applied {@link DocumentDropEditProvider on drop}.
  */
@@ -11,27 +13,27 @@ open external class DocumentDropEdit {
     /**
      * Human readable label that describes the edit.
      */
-//  title?: string
+    var title: String?
 
     /**
      * {@link DocumentDropOrPasteEditKind Kind} of the edit.
      */
-//  kind?: DocumentDropOrPasteEditKind
+    var kind: DocumentDropOrPasteEditKind?
 
     /**
      * Controls the ordering or multiple edits. If this provider yield to edits, it will be shown lower in the list.
      */
-//  yieldTo?: readonly DocumentDropOrPasteEditKind[]
+    var yieldTo: ReadonlyArray<DocumentDropOrPasteEditKind>?
 
     /**
      * The text or snippet to insert at the drop location.
      */
-//  insertText: string | SnippetString
+    var insertText: Any /* string | SnippetString */
 
     /**
      * An optional additional edit to apply on drop.
      */
-//  additionalEdit?: WorkspaceEdit
+    var additionalEdit: WorkspaceEdit?
 
     /**
      * @param insertText The text or snippet to insert at the drop location.

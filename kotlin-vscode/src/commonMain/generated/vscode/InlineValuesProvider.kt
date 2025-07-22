@@ -2,6 +2,8 @@
 
 package vscode
 
+import js.core.Void
+
 /**
  * The inline values provider interface defines the contract between extensions and the editor's debugger inline values feature.
  * In this contract the provider returns inline value information for a given document range
@@ -12,7 +14,7 @@ external interface InlineValuesProvider {
      * An optional event to signal that inline values have changed.
      * @see {@link EventEmitter}
      */
-//  onDidChangeInlineValues?: Event<void> | undefined
+    var onDidChangeInlineValues: Event<Void>?
 
     /**
      * Provide "inline value" information for a given document and range.

@@ -14,12 +14,12 @@ open external class LanguageModelToolResultPart {
      *
      * *Note* that this should match the {@link LanguageModelToolCallPart.callId callId} of a tool call part.
      */
-//  callId: string
+    var callId: String
 
     /**
      * The value of the tool result.
      */
-//  content: Array<LanguageModelTextPart | LanguageModelPromptTsxPart | unknown>
+    var content: Any /* Array<LanguageModelTextPart | LanguageModelPromptTsxPart | unknown> */
 
     /**
      * @param callId The ID of the tool call.

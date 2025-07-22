@@ -12,7 +12,7 @@ external interface TaskExecution {
     /**
      * The task that got started.
      */
-//  task: Task
+    var task: Task
 
     /**
      * Terminates the task execution.

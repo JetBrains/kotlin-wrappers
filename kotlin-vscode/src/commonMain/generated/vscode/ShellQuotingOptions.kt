@@ -27,10 +27,10 @@ external interface ShellQuotingOptions {
     /**
      * The character used for strong quoting. The string's length must be 1.
      */
-//  strong?: string
+    var strong: String?
 
     /**
      * The character used for weak quoting. The string's length must be 1.
      */
-//  weak?: string
+    var weak: String?
 }

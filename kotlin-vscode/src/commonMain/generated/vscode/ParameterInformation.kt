@@ -16,13 +16,13 @@ open external class ParameterInformation {
      * {@link SignatureInformation.label signature label}. *Note*: A label of type string must be
      * a substring of its containing signature information's {@link SignatureInformation.label label}.
      */
-//  label: string | [number, number]
+    var label: Any /* string | [number, number] */
 
     /**
      * The human-readable doc-comment of this signature. Will be shown
      * in the UI but can be omitted.
      */
-//  documentation?: string | MarkdownString
+    var documentation: Any /* string | MarkdownString */?
 
     /**
      * Creates a new parameter information object.

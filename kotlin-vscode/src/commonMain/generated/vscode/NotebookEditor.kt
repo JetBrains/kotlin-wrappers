@@ -18,14 +18,14 @@ external interface NotebookEditor {
     /**
      * The primary selection in this notebook editor.
      */
-//  selection: NotebookRange
+    var selection: NotebookRange
 
     /**
      * All selections in this notebook editor.
      *
      * The primary selection (or focused range) is `selections[0]`. When the document has no cells, the primary selection is empty `{ start: 0, end: 0 }`;
      */
-//  selections: readonly NotebookRange[]
+    var selections: ReadonlyArray<NotebookRange>
 
     /**
      * The current visible ranges in the editor (vertically).

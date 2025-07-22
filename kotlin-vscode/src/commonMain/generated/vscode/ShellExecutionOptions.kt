@@ -2,6 +2,9 @@
 
 package vscode
 
+import js.array.ReadonlyArray
+import js.objects.Record
+
 /**
  * Options for a shell execution
  */
@@ -9,7 +12,7 @@ external interface ShellExecutionOptions {
     /**
      * The shell executable.
      */
-//  executable?: string
+    var executable: String?
 
     /**
      * The arguments to be passed to the shell executable used to run the task. Most shells
@@ -17,23 +20,23 @@ external interface ShellExecutionOptions {
      * argument to execute a command, `PowerShell` requires `-Command` and `cmd` requires both
      * `/d` and `/c`.
      */
-//  shellArgs?: string[]
+    var shellArgs: ReadonlyArray<String>?
 
     /**
      * The shell quotes supported by this shell.
      */
-//  shellQuoting?: ShellQuotingOptions
+    var shellQuoting: ShellQuotingOptions?
 
     /**
      * The current working directory of the executed shell.
      * If omitted the tools current workspace root is used.
      */
-//  cwd?: string
+    var cwd: String?
 
     /**
      * The additional environment of the executed shell. If omitted
      * the parent process' environment is used. If provided it is merged with
      * the parent process' environment.
      */
-//  env?: { [key: string]: string }
+    var env: Record<String, String>?
 }

@@ -11,12 +11,12 @@ open external class TerminalLink {
     /**
      * The start index of the link on {@link TerminalLinkContext.line}.
      */
-//  startIndex: number
+    var startIndex: Int
 
     /**
      * The length of the link on {@link TerminalLinkContext.line}.
      */
-//  length: number
+    var length: Int
 
     /**
      * The tooltip text when you hover over this link.
@@ -25,7 +25,7 @@ open external class TerminalLink {
      * how to trigger the link, such as `{0} (ctrl + click)`. The specific instructions vary
      * depending on OS, user settings, and localization.
      */
-//  tooltip?: string
+    var tooltip: String?
 
     /**
      * Creates a new terminal link.

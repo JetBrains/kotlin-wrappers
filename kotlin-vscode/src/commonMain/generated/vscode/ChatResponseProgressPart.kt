@@ -11,7 +11,7 @@ open external class ChatResponseProgressPart {
     /**
      * The progress message
      */
-//  value: string
+    var value: String
 
     /**
      * Create a new ChatResponseProgressPart.

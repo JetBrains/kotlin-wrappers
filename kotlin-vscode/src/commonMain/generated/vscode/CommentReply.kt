@@ -9,10 +9,10 @@ external interface CommentReply {
     /**
      * The active {@link CommentThread comment thread}
      */
-//  thread: CommentThread
+    var thread: CommentThread
 
     /**
      * The value in the comment editor
      */
-//  text: string
+    var text: String
 }

@@ -11,12 +11,12 @@ open external class NotebookCellStatusBarItem {
     /**
      * The text to show for the item.
      */
-//  text: string
+    var text: String
 
     /**
      * Whether the item is aligned to the left or right.
      */
-//  alignment: NotebookCellStatusBarAlignment
+    var alignment: NotebookCellStatusBarAlignment
 
     /**
      * An optional {@linkcode Command} or identifier of a command to run on click.
@@ -26,22 +26,22 @@ open external class NotebookCellStatusBarItem {
      * Note that if this is a {@linkcode Command} object, only the {@linkcode Command.command command} and {@linkcode Command.arguments arguments}
      * are used by the editor.
      */
-//  command?: string | Command
+    var command: Any /* string | Command */?
 
     /**
      * A tooltip to show when the item is hovered.
      */
-//  tooltip?: string
+    var tooltip: String?
 
     /**
      * The priority of the item. A higher value item will be shown more to the left.
      */
-//  priority?: number
+    var priority: Int?
 
     /**
      * Accessibility information used when a screen reader interacts with this item.
      */
-//  accessibilityInformation?: AccessibilityInformation
+    var accessibilityInformation: AccessibilityInformation?
 
     /**
      * Creates a new NotebookCellStatusBarItem.

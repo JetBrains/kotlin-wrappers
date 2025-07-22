@@ -17,13 +17,13 @@ external interface EnvironmentVariableCollection :
      * collection will be invalidated when the extension is uninstalled or when the collection
      * is cleared. Defaults to true.
      */
-//  persistent: boolean
+    var persistent: Boolean
 
     /**
      * A description for the environment variable collection, this will be used to describe the
      * changes in the UI.
      */
-//  description: string | MarkdownString | undefined
+    var description: Any /* string | MarkdownString */
 
     /**
      * Replace an environment variable with a value.

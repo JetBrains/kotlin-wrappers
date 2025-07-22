@@ -9,7 +9,7 @@ external interface LanguageModelToolTokenizationOptions {
     /**
      * If known, the maximum number of tokens the tool should emit in its result.
      */
-//  tokenBudget: number
+    var tokenBudget: Int
 
     /**
      * Count the number of tokens in a message using the model specific tokenizer-logic.

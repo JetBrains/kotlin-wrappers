@@ -2,6 +2,9 @@
 
 package vscode
 
+import js.array.ReadonlyArray
+import js.promise.PromiseLike
+
 /**
  * A TestRunProfile describes one way to execute tests in a {@link TestController}.
  */
@@ -15,7 +18,7 @@ external interface TestRunProfile {
      * will attempt use a configuration with the same label of the `Debug`
      * kind. If there is no such configuration, the default will be used.
      */
-//  label: string
+    var label: String
 
     /**
      * Configures what kind of execution this profile controls. If there
@@ -33,26 +36,26 @@ external interface TestRunProfile {
      * Changes the user makes in their default profiles will be reflected
      * in this property after a {@link onDidChangeDefault} event.
      */
-//  isDefault: boolean
+    var isDefault: Boolean
 
     /**
      * Fired when a user has changed whether this is a default profile. The
      * event contains the new value of {@link isDefault}
      */
-//  onDidChangeDefault: Event<boolean>
+    var onDidChangeDefault: Event<Boolean>
 
     /**
      * Whether this profile supports continuous running of requests. If so,
      * then {@link TestRunRequest.continuous} may be set to `true`. Defaults
      * to false.
      */
-//  supportsContinuousRun: boolean
+    var supportsContinuousRun: Boolean
 
     /**
      * Associated tag for the profile. If this is set, only {@link TestItem}
      * instances with the same tag will be eligible to execute in this profile.
      */
-//  tag: TestTag | undefined
+    var tag: TestTag
 
     /**
      * If this method is present, a configuration gear will be present in the
@@ -60,7 +63,7 @@ external interface TestRunProfile {
      * you can take other editor actions, such as showing a quick pick or
      * opening a configuration file.
      */
-//  configureHandler: (() => void) | undefined
+    var configureHandler: (() -> Unit)
 
     /**
      * Handler called to start a test run. When invoked, the function should call
@@ -79,7 +82,7 @@ external interface TestRunProfile {
      * instances associated with the request will be
      * automatically cancelled as well.
      */
-//  runHandler: (request: TestRunRequest, token: CancellationToken) => Thenable<void> | void
+    var runHandler: Any /* (request: TestRunRequest, token: CancellationToken) => Thenable<void> | void */
 
     /**
      * An extension-provided function that provides detailed statement and
@@ -90,7 +93,11 @@ external interface TestRunProfile {
      * The {@link FileCoverage} object passed to this function is the same instance
      * emitted on {@link TestRun.addCoverage} calls associated with this profile.
      */
-//  loadDetailedCoverage?: (testRun: TestRun, fileCoverage: FileCoverage, token: CancellationToken) => Thenable<FileCoverageDetail[]>
+    var loadDetailedCoverage: (
+        testRun: TestRun,
+        fileCoverage: FileCoverage,
+        token: CancellationToken,
+    ) -> PromiseLike<ReadonlyArray<FileCoverageDetail>>?
 
     /**
      * An extension-provided function that provides detailed statement and
@@ -113,7 +120,12 @@ external interface TestRunProfile {
      * @param fromTestItem The test item to request coverage information for.
      * @param token A cancellation token that indicates the operation should be cancelled.
      */
-//  loadDetailedCoverageForTest?: (testRun: TestRun, fileCoverage: FileCoverage, fromTestItem: TestItem, token: CancellationToken) => Thenable<FileCoverageDetail[]>
+    var loadDetailedCoverageForTest: (
+        testRun: TestRun,
+        fileCoverage: FileCoverage,
+        fromTestItem: TestItem,
+        token: CancellationToken,
+    ) -> PromiseLike<ReadonlyArray<FileCoverageDetail>>?
 
     /**
      * Deletes the run profile.

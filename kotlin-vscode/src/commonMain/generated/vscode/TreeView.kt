@@ -52,25 +52,25 @@ external interface TreeView<T> :
      * An optional human-readable message that will be rendered in the view.
      * Setting the message to null, undefined, or empty string will remove the message from the view.
      */
-//  message?: string
+    var message: String?
 
     /**
      * The tree view title is initially taken from the extension package.json
      * Changes to the title property will be properly reflected in the UI in the title of the view.
      */
-//  title?: string
+    var title: String?
 
     /**
      * An optional human-readable description which is rendered less prominently in the title of the view.
      * Setting the title description to null, undefined, or empty string will remove the description from the view.
      */
-//  description?: string
+    var description: String?
 
     /**
      * The badge to display for this TreeView.
      * To remove the badge, set to undefined.
      */
-//  badge?: ViewBadge | undefined
+    var badge: ViewBadge?
 
     /**
      * Reveals the given element in the tree view.

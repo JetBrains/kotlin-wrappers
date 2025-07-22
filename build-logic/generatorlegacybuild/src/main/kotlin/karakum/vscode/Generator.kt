@@ -47,11 +47,15 @@ private fun fileContent(
         """
         import js.array.ReadonlyArray
         import js.array.Tuple2
+        import js.core.Int53
         import js.core.Void
+        import js.date.Date
+        import js.iterable.AsyncIterable
         import js.iterable.JsIterable
         import js.errors.JsError
         import js.objects.ReadonlyRecord
         import js.objects.Record
+        import js.promise.PromiseLike
         import js.promise.PromiseResult
         import js.regexp.RegExp
         import js.typedarrays.Uint32Array

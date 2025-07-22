@@ -22,7 +22,7 @@ external interface ProgressOptions {
      * A human-readable string which will be used to describe the
      * operation.
      */
-//  title?: string
+    var title: String?
 
     /**
      * Controls if a cancel button should show to allow the user to
@@ -30,5 +30,5 @@ external interface ProgressOptions {
      * `ProgressLocation.Notification` is supporting to show a cancel
      * button.
      */
-//  cancellable?: boolean
+    var cancellable: Boolean?
 }

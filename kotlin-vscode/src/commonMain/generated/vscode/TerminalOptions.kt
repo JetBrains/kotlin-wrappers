@@ -9,28 +9,28 @@ external interface TerminalOptions {
     /**
      * A human-readable string which will be used to represent the terminal in the UI.
      */
-//  name?: string
+    var name: String?
 
     /**
      * A path to a custom shell executable to be used in the terminal.
      */
-//  shellPath?: string
+    var shellPath: String?
 
     /**
      * Args for the custom shell executable. A string can be used on Windows only which allows
      * specifying shell args in [command-line format](https://msdn.microsoft.com/en-au/08dfcab2-eb6e-49a4-80eb-87d4076c98c6).
      */
-//  shellArgs?: string[] | string
+    var shellArgs: Any /* string[] | string */?
 
     /**
      * A path or Uri for the current working directory to be used for the terminal.
      */
-//  cwd?: string | Uri
+    var cwd: Any /* string | Uri */?
 
     /**
      * Object with environment variables that will be added to the editor process.
      */
-//  env?: { [key: string]: string | null | undefined }
+    var env: Any /* { [key: string]: string | null | undefined } */?
 
     /**
      * Whether the terminal process environment should be exactly as provided in
@@ -39,7 +39,7 @@ external interface TerminalOptions {
      * `terminal.integrated.env.windows` on top. When this is true, the complete environment
      * must be provided as nothing will be inherited from the process or any configuration.
      */
-//  strictEnv?: boolean
+    var strictEnv: Boolean?
 
     /**
      * When enabled the terminal will run the process as normal but not be surfaced to the user
@@ -48,35 +48,35 @@ external interface TerminalOptions {
      * interaction is needed. Note that the terminals will still be exposed to all extensions
      * as normal. The hidden terminals will not be restored when the workspace is next opened.
      */
-//  hideFromUser?: boolean
+    var hideFromUser: Boolean?
 
     /**
      * A message to write to the terminal on first launch, note that this is not sent to the
      * process but, rather written directly to the terminal. This supports escape sequences such
      * a setting text style.
      */
-//  message?: string
+    var message: String?
 
     /**
      * The icon path or {@link ThemeIcon} for the terminal.
      */
-//  iconPath?: IconPath
+    var iconPath: IconPath?
 
     /**
      * The icon {@link ThemeColor} for the terminal.
      * The `terminal.ansi*` theme keys are
      * recommended for the best contrast and consistency across themes.
      */
-//  color?: ThemeColor
+    var color: ThemeColor?
 
     /**
      * The {@link TerminalLocation} or {@link TerminalEditorLocationOptions} or {@link TerminalSplitLocationOptions} for the terminal.
      */
-//  location?: TerminalLocation | TerminalEditorLocationOptions | TerminalSplitLocationOptions
+    var location: Any /* TerminalLocation | TerminalEditorLocationOptions | TerminalSplitLocationOptions */?
 
     /**
      * Opt-out of the default terminal persistence on restart and reload.
      * This will only take effect when `terminal.integrated.enablePersistentSessions` is enabled.
      */
-//  isTransient?: boolean
+    var isTransient: Boolean?
 }

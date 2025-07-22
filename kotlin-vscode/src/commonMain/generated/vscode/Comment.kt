@@ -2,6 +2,9 @@
 
 package vscode
 
+import js.array.ReadonlyArray
+import js.date.Date
+
 /**
  * A comment is displayed within the editor or the Comments Panel, depending on how it is provided.
  */
@@ -9,17 +12,17 @@ external interface Comment {
     /**
      * The human-readable comment body
      */
-//  body: string | MarkdownString
+    var body: Any /* string | MarkdownString */
 
     /**
      * {@link CommentMode Comment mode} of the comment
      */
-//  mode: CommentMode
+    var mode: CommentMode
 
     /**
      * The {@link CommentAuthorInformation author information} of the comment
      */
-//  author: CommentAuthorInformation
+    var author: CommentAuthorInformation
 
     /**
      * Context value of the comment. This can be used to contribute comment specific actions.
@@ -39,22 +42,22 @@ external interface Comment {
      * ```
      * This will show action `extension.deleteComment` only for comments with `contextValue` is `editable`.
      */
-//  contextValue?: string
+    var contextValue: String?
 
     /**
      * Optional reactions of the {@link Comment}
      */
-//  reactions?: CommentReaction[]
+    var reactions: ReadonlyArray<CommentReaction>?
 
     /**
      * Optional label describing the {@link Comment}
      * Label will be rendered next to authorName if exists.
      */
-//  label?: string
+    var label: String?
 
     /**
      * Optional timestamp that will be displayed in comments.
      * The date will be formatted according to the user's locale and settings.
      */
-//  timestamp?: Date
+    var timestamp: Date?
 }

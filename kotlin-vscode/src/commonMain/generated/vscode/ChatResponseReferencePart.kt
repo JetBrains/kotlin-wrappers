@@ -11,12 +11,12 @@ open external class ChatResponseReferencePart {
     /**
      * The reference target.
      */
-//  value: Uri | Location
+    var value: Any /* Uri | Location */
 
     /**
      * The icon for the reference.
      */
-//  iconPath?: IconPath
+    var iconPath: IconPath?
 
     /**
      * Create a new ChatResponseReferencePart.

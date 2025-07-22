@@ -15,13 +15,13 @@ external interface LanguageStatusItem {
     /**
      * The short name of this item, like 'Java Language Status', etc.
      */
-//  name: string | undefined
+    var name: String
 
     /**
      * A {@link DocumentSelector selector} that defines for what editors
      * this item shows.
      */
-//  selector: DocumentSelector
+    var selector: DocumentSelector
 
     /**
      * The severity of this item.
@@ -30,7 +30,7 @@ external interface LanguageStatusItem {
      * signal to users that there is a problem that needs attention, like a missing executable or an
      * invalid configuration.
      */
-//  severity: LanguageStatusSeverity
+    var severity: LanguageStatusSeverity
 
     /**
      * The text to show for the entry. You can embed icons in the text by leveraging the syntax:
@@ -40,27 +40,27 @@ external interface LanguageStatusItem {
      * Where the icon-name is taken from the ThemeIcon [icon set](https://code.visualstudio.com/api/references/icons-in-labels#icon-listing), e.g.
      * `light-bulb`, `thumbsup`, `zap` etc.
      */
-//  text: string
+    var text: String
 
     /**
      * Optional, human-readable details for this item.
      */
-//  detail?: string
+    var detail: String?
 
     /**
      * Controls whether the item is shown as "busy". Defaults to `false`.
      */
-//  busy: boolean
+    var busy: Boolean
 
     /**
      * A {@linkcode Command command} for this item.
      */
-//  command: Command | undefined
+    var command: Command
 
     /**
      * Accessibility information used when a screen reader interacts with this item
      */
-//  accessibilityInformation?: AccessibilityInformation
+    var accessibilityInformation: AccessibilityInformation?
 
     /**
      * Dispose and free associated resources.

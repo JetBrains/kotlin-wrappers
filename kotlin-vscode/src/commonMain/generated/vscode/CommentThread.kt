@@ -2,6 +2,8 @@
 
 package vscode
 
+import js.array.ReadonlyArray
+
 /**
  * A collection of {@link Comment comments} representing a conversation at a particular range in a document.
  */
@@ -16,24 +18,24 @@ external interface CommentThread {
      * at the last line of the range. When set to undefined, the comment will be associated with the
      * file, and not a specific range.
      */
-//  range: Range | undefined
+    var range: Range
 
     /**
      * The ordered comments of the thread.
      */
-//  comments: readonly Comment[]
+    var comments: ReadonlyArray<Comment>
 
     /**
      * Whether the thread should be collapsed or expanded when opening the document.
      * Defaults to Collapsed.
      */
-//  collapsibleState: CommentThreadCollapsibleState
+    var collapsibleState: CommentThreadCollapsibleState
 
     /**
      * Whether the thread supports reply.
      * Defaults to true.
      */
-//  canReply: boolean | CommentAuthorInformation
+    var canReply: Any /* boolean | CommentAuthorInformation */
 
     /**
      * Context value of the comment thread. This can be used to contribute thread specific actions.
@@ -53,17 +55,17 @@ external interface CommentThread {
      * ```
      * This will show action `extension.deleteCommentThread` only for comment threads with `contextValue` is `editable`.
      */
-//  contextValue?: string
+    var contextValue: String?
 
     /**
      * The optional human-readable label describing the {@link CommentThread Comment Thread}
      */
-//  label?: string
+    var label: String?
 
     /**
      * The optional state of a comment thread, which may affect how the comment is displayed.
      */
-//  state?: CommentThreadState
+    var state: CommentThreadState?
 
     /**
      * Dispose this comment thread.

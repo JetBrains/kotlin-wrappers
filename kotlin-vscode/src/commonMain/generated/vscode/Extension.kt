@@ -41,7 +41,7 @@ external interface Extension<T> {
      * via the `remote.extensionKind`-setting. When no remote extension host exists,
      * the value is {@linkcode ExtensionKind.UI}.
      */
-//  extensionKind: ExtensionKind
+    var extensionKind: ExtensionKind
 
     /**
      * The public API exported by this extension (return value of `activate`).

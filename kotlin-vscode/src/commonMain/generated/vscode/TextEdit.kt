@@ -46,12 +46,12 @@ open external class TextEdit {
     /**
      * The range this edit applies to.
      */
-//  range: Range
+    var range: Range
 
     /**
      * The string this edit will insert.
      */
-//  newText: string
+    var newText: String
 
     /**
      * The eol-sequence used in the document.
@@ -59,7 +59,7 @@ open external class TextEdit {
      * *Note* that the eol-sequence will be applied to the
      * whole document.
      */
-//  newEol?: EndOfLine
+    var newEol: EndOfLine?
 
     /**
      * Create a new TextEdit.

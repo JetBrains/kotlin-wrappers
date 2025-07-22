@@ -11,23 +11,23 @@ open external class FileDecoration {
     /**
      * A very short string that represents this decoration.
      */
-//  badge?: string
+    var badge: String?
 
     /**
      * A human-readable tooltip for this decoration.
      */
-//  tooltip?: string
+    var tooltip: String?
 
     /**
      * The color of this decoration.
      */
-//  color?: ThemeColor
+    var color: ThemeColor?
 
     /**
      * A flag expressing that this decoration should be
      * propagated to its parents.
      */
-//  propagate?: boolean
+    var propagate: Boolean?
 
     /**
      * Creates a new decoration.

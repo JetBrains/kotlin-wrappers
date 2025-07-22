@@ -2,6 +2,8 @@
 
 package vscode
 
+import js.core.Void
+
 /**
  * A provider that can contribute items to the status bar that appears below a cell's editor.
  */
@@ -9,7 +11,7 @@ external interface NotebookCellStatusBarItemProvider {
     /**
      * An optional event to signal that statusbar items have changed. The provide method will be called again.
      */
-//  onDidChangeCellStatusBarItems?: Event<void>
+    var onDidChangeCellStatusBarItems: Event<Void>?
 
     /**
      * The provider will be called when the cell scrolls into view, when its content, outputs, language, or metadata change, and when it changes execution state.

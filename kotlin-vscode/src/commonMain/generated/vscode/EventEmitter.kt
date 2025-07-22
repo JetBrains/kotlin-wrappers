@@ -16,7 +16,7 @@ open external class EventEmitter<T> {
     /**
      * The event listeners can subscribe to.
      */
-//  event: Event<T>
+    var event: Event<T>
 
     /**
      * Notify all subscribers of the {@link EventEmitter.event event}. Failure

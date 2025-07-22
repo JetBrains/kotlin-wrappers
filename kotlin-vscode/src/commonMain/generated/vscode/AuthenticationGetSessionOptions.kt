@@ -22,7 +22,7 @@ external interface AuthenticationGetSessionOptions {
      *
      * Defaults to false.
      */
-//  clearSessionPreference?: boolean
+    var clearSessionPreference: Boolean?
 
     /**
      * Whether login should be performed if there is no matching session.
@@ -40,7 +40,7 @@ external interface AuthenticationGetSessionOptions {
      *
      * Note: you cannot use this option with {@link AuthenticationGetSessionOptions.silent silent}.
      */
-//  createIfNone?: boolean | AuthenticationGetSessionPresentationOptions
+    var createIfNone: Any /* boolean | AuthenticationGetSessionPresentationOptions */?
 
     /**
      * Whether we should attempt to reauthenticate even if there is already a session available.
@@ -55,7 +55,7 @@ external interface AuthenticationGetSessionOptions {
      *
      * This defaults to false.
      */
-//  forceNewSession?: boolean | AuthenticationGetSessionPresentationOptions | AuthenticationForceNewSessionOptions
+    var forceNewSession: Any /* boolean | AuthenticationGetSessionPresentationOptions | AuthenticationForceNewSessionOptions */?
 
     /**
      * Whether we should show the indication to sign in in the Accounts menu.
@@ -67,10 +67,10 @@ external interface AuthenticationGetSessionOptions {
      *
      * Note: you cannot use this option with any other options that prompt the user like {@link AuthenticationGetSessionOptions.createIfNone createIfNone}.
      */
-//  silent?: boolean
+    var silent: Boolean?
 
     /**
      * The account that you would like to get a session for. This is passed down to the Authentication Provider to be used for creating the correct session.
      */
-//  account?: AuthenticationSessionAccountInformation
+    var account: AuthenticationSessionAccountInformation?
 }

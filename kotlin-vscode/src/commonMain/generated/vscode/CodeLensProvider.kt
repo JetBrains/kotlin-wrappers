@@ -2,6 +2,8 @@
 
 package vscode
 
+import js.core.Void
+
 /**
  * A code lens provider adds {@link Command commands} to source text. The commands will be shown
  * as dedicated horizontal lines in between the source text.
@@ -10,7 +12,7 @@ external interface CodeLensProvider<T : CodeLens> {
     /**
      * An optional event to signal that the code lenses from this provider have changed.
      */
-//  onDidChangeCodeLenses?: Event<void>
+    var onDidChangeCodeLenses: Event<Void>?
 
     /**
      * Compute a list of {@link CodeLens lenses}. This call should return as fast as possible and if

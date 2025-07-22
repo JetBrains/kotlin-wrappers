@@ -11,7 +11,7 @@ open external class LanguageModelTextPart {
     /**
      * The text content of the part.
      */
-//  value: string
+    var value: String
 
     /**
      * Construct a text part with the given content.

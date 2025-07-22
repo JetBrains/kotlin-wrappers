@@ -4,6 +4,8 @@
 
 package vscode
 
+import js.array.ReadonlyArray
+
 /**
  * Message associated with the test state. Can be linked to a specific
  * source range -- useful for assertion failures, for example.
@@ -12,22 +14,22 @@ open external class TestMessage {
     /**
      * Human-readable message text to display.
      */
-//  message: string | MarkdownString
+    var message: Any /* string | MarkdownString */
 
     /**
      * Expected test output. If given with {@link TestMessage.actualOutput actualOutput }, a diff view will be shown.
      */
-//  expectedOutput?: string
+    var expectedOutput: String?
 
     /**
      * Actual test output. If given with {@link TestMessage.expectedOutput expectedOutput }, a diff view will be shown.
      */
-//  actualOutput?: string
+    var actualOutput: String?
 
     /**
      * Associated file location.
      */
-//  location?: Location
+    var location: Location?
 
     /**
      * Context value of the test item. This can be used to contribute message-
@@ -58,12 +60,12 @@ open external class TestMessage {
      *    is still present in the {@link TestController.items} collection.
      * - `message`: the {@link TestMessage} instance.
      */
-//  contextValue?: string
+    var contextValue: String?
 
     /**
      * The stack trace associated with the message or failure.
      */
-//  stackTrace?: TestMessageStackFrame[]
+    var stackTrace: ReadonlyArray<TestMessageStackFrame>?
 
     /**
      * Creates a new TestMessage that will present as a diff in the editor.

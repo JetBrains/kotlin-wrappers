@@ -11,7 +11,7 @@ open external class CancellationTokenSource {
     /**
      * The cancellation token of this source.
      */
-//  token: CancellationToken
+    var token: CancellationToken
 
     /**
      * Signal cancellation on the token.

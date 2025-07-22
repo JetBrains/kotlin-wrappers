@@ -4,6 +4,8 @@
 
 package vscode
 
+import js.array.ReadonlyArray
+
 /**
  * Represents an item of a type hierarchy, like a class or an interface.
  */
@@ -11,39 +13,39 @@ open external class TypeHierarchyItem {
     /**
      * The name of this item.
      */
-//  name: string
+    var name: String
 
     /**
      * The kind of this item.
      */
-//  kind: SymbolKind
+    var kind: SymbolKind
 
     /**
      * Tags for this item.
      */
-//  tags?: ReadonlyArray<SymbolTag>
+    var tags: ReadonlyArray<SymbolTag>?
 
     /**
      * More detail for this item, e.g. the signature of a function.
      */
-//  detail?: string
+    var detail: String?
 
     /**
      * The resource identifier of this item.
      */
-//  uri: Uri
+    var uri: Uri
 
     /**
      * The range enclosing this symbol not including leading/trailing whitespace
      * but everything else, e.g. comments and code.
      */
-//  range: Range
+    var range: Range
 
     /**
      * The range that should be selected and revealed when this symbol is being
      * picked, e.g. the name of a class. Must be contained by the {@link TypeHierarchyItem.range range}-property.
      */
-//  selectionRange: Range
+    var selectionRange: Range
 
     /**
      * Creates a new type hierarchy item.

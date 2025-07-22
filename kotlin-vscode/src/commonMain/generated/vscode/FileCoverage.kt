@@ -4,6 +4,8 @@
 
 package vscode
 
+import js.array.ReadonlyArray
+
 /**
  * Contains coverage metadata for a file.
  */
@@ -17,25 +19,25 @@ open external class FileCoverage {
      * Statement coverage information. If the reporter does not provide statement
      * coverage information, this can instead be used to represent line coverage.
      */
-//  statementCoverage: TestCoverageCount
+    var statementCoverage: TestCoverageCount
 
     /**
      * Branch coverage information.
      */
-//  branchCoverage?: TestCoverageCount
+    var branchCoverage: TestCoverageCount?
 
     /**
      * Declaration coverage information. Depending on the reporter and
      * language, this may be types such as functions, methods, or namespaces.
      */
-//  declarationCoverage?: TestCoverageCount
+    var declarationCoverage: TestCoverageCount?
 
     /**
      * A list of {@link TestItem test cases} that generated coverage in this
      * file. If set, then {@link TestRunProfile.loadDetailedCoverageForTest}
      * should also be defined in order to retrieve detailed coverage information.
      */
-//  includesTests?: TestItem[]
+    var includesTests: ReadonlyArray<TestItem>?
 
     /**
      * Creates a {@link FileCoverage} instance with counts filled in from

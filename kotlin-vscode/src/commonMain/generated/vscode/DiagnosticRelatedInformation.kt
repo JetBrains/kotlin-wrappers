@@ -13,12 +13,12 @@ open external class DiagnosticRelatedInformation {
     /**
      * The location of this related diagnostic information.
      */
-//  location: Location
+    var location: Location
 
     /**
      * The message of this related diagnostic information.
      */
-//  message: string
+    var message: String
 
     /**
      * Creates a new related diagnostic information object.

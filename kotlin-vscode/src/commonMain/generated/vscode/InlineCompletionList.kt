@@ -4,6 +4,8 @@
 
 package vscode
 
+import js.array.ReadonlyArray
+
 /**
  * Represents a collection of {@link InlineCompletionItem inline completion items} to be presented
  * in the editor.
@@ -12,7 +14,7 @@ open external class InlineCompletionList {
     /**
      * The inline completion items.
      */
-//  items: InlineCompletionItem[]
+    var items: ReadonlyArray<InlineCompletionItem>
 
     /**
      * Creates a new list of inline completion items.

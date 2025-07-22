@@ -18,7 +18,7 @@ open external class SnippetString {
     /**
      * The snippet string.
      */
-//  value: string
+    var value: String
 
     /**
      * Create a new snippet string.

@@ -9,20 +9,20 @@ external interface SourceControlInputBox {
     /**
      * Setter and getter for the contents of the input box.
      */
-//  value: string
+    var value: String
 
     /**
      * A string to show as placeholder in the input box to guide the user.
      */
-//  placeholder: string
+    var placeholder: String
 
     /**
      * Controls whether the input box is enabled (default is `true`).
      */
-//  enabled: boolean
+    var enabled: Boolean
 
     /**
      * Controls whether the input box is visible (default is `true`).
      */
-//  visible: boolean
+    var visible: Boolean
 }

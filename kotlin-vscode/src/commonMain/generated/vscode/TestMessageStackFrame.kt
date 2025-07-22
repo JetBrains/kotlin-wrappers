@@ -12,17 +12,17 @@ open external class TestMessageStackFrame {
      * The location of this stack frame. This should be provided as a URI if the
      * location of the call frame can be accessed by the editor.
      */
-//  uri?: Uri
+    var uri: Uri?
 
     /**
      * Position of the stack frame within the file.
      */
-//  position?: Position
+    var position: Position?
 
     /**
      * The name of the stack frame, typically a method or function name.
      */
-//  label: string
+    var label: String
 
     /**
      * @param label The name of the stack frame

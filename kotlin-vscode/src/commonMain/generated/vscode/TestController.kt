@@ -18,7 +18,7 @@ external interface TestController {
     /**
      * Human-readable label for the test controller.
      */
-//  label: string
+    var label: String
 
     /**
      * A collection of "top-level" {@link TestItem} instances, which can in
@@ -66,7 +66,7 @@ external interface TestController {
      * @param item An unresolved test item for which children are being
      * requested, or `undefined` to resolve the controller's initial {@link TestController.items items}.
      */
-//  resolveHandler?: (item: TestItem | undefined) => Thenable<void> | void
+    var resolveHandler: Any /* (item: TestItem | undefined) => Thenable<void> | void */?
 
     /**
      * If this method is present, a refresh button will be present in the
@@ -79,7 +79,7 @@ external interface TestController {
      *
      * @returns A thenable that resolves when tests have been refreshed.
      */
-//  refreshHandler: ((token: CancellationToken) => Thenable<void> | void) | undefined
+    var refreshHandler: Any /* ((token: CancellationToken) => Thenable<void> | void) */
 
     /**
      * Creates a {@link TestRun}. This should be called by the

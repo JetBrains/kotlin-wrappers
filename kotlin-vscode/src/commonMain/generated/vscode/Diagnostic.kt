@@ -4,6 +4,8 @@
 
 package vscode
 
+import js.array.ReadonlyArray
+
 /**
  * Represents a diagnostic, such as a compiler error or warning. Diagnostic objects
  * are only valid in the scope of a file.
@@ -12,23 +14,23 @@ open external class Diagnostic {
     /**
      * The range to which this diagnostic applies.
      */
-//  range: Range
+    var range: Range
 
     /**
      * The human-readable message.
      */
-//  message: string
+    var message: String
 
     /**
      * The severity, default is {@link DiagnosticSeverity.Error error}.
      */
-//  severity: DiagnosticSeverity
+    var severity: DiagnosticSeverity
 
     /**
      * A human-readable string describing the source of this
      * diagnostic, e.g. 'typescript' or 'super lint'.
      */
-//  source?: string
+    var source: String?
 
     /**
      * A code or identifier for this diagnostic.
@@ -53,12 +55,12 @@ open external class Diagnostic {
      * An array of related diagnostic information, e.g. when symbol-names within
      * a scope collide all definitions can be marked via this property.
      */
-//  relatedInformation?: DiagnosticRelatedInformation[]
+    var relatedInformation: ReadonlyArray<DiagnosticRelatedInformation>?
 
     /**
      * Additional metadata about the diagnostic.
      */
-//  tags?: DiagnosticTag[]
+    var tags: ReadonlyArray<DiagnosticTag>?
 
     /**
      * Creates a new diagnostic object.

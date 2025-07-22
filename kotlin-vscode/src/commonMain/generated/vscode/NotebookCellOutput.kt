@@ -4,6 +4,9 @@
 
 package vscode
 
+import js.array.ReadonlyArray
+import js.objects.Record
+
 /**
  * Notebook cell output represents a result of executing a cell. It is a container type for multiple
  * {@link NotebookCellOutputItem output items} where contained items represent the same result but
@@ -23,12 +26,12 @@ open external class NotebookCellOutput {
      * ])
      * ```
      */
-//  items: NotebookCellOutputItem[]
+    var items: ReadonlyArray<NotebookCellOutputItem>
 
     /**
      * Arbitrary metadata for this cell output. Can be anything but must be JSON-stringifyable.
      */
-//  metadata?: { [key: string]: any }
+    var metadata: Record<String, *>?
 
     /**
      * Create new notebook output.

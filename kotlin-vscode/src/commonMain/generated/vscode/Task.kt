@@ -4,6 +4,8 @@
 
 package vscode
 
+import js.array.ReadonlyArray
+
 /**
  * A task to execute
  */
@@ -40,7 +42,7 @@ open external class Task {
     /**
      * The task's definition.
      */
-//  definition: TaskDefinition
+    var definition: TaskDefinition
 
     /**
      * The task's scope.
@@ -50,30 +52,30 @@ open external class Task {
     /**
      * The task's name
      */
-//  name: string
+    var name: String
 
     /**
      * A human-readable string which is rendered less prominently on a separate line in places
      * where the task's name is displayed. Supports rendering of {@link ThemeIcon theme icons}
      * via the `$(<name>)`-syntax.
      */
-//  detail?: string
+    var detail: String?
 
     /**
      * The task's execution engine
      */
-//  execution?: ProcessExecution | ShellExecution | CustomExecution
+    var execution: Any /* ProcessExecution | ShellExecution | CustomExecution */?
 
     /**
      * Whether the task is a background task or not.
      */
-//  isBackground: boolean
+    var isBackground: Boolean
 
     /**
      * A human-readable string describing the source of this shell task, e.g. 'gulp'
      * or 'npm'. Supports rendering of {@link ThemeIcon theme icons} via the `$(<name>)`-syntax.
      */
-//  source: string
+    var source: String
 
     /**
      * The task group this tasks belongs to. See TaskGroup
@@ -81,21 +83,21 @@ open external class Task {
      * Defaults to undefined meaning that the task doesn't
      * belong to any special group.
      */
-//  group?: TaskGroup
+    var group: TaskGroup?
 
     /**
      * The presentation options. Defaults to an empty literal.
      */
-//  presentationOptions: TaskPresentationOptions
+    var presentationOptions: TaskPresentationOptions
 
     /**
      * The problem matchers attached to the task. Defaults to an empty
      * array.
      */
-//  problemMatchers: string[]
+    var problemMatchers: ReadonlyArray<String>
 
     /**
      * Run options for the task
      */
-//  runOptions: RunOptions
+    var runOptions: RunOptions
 }

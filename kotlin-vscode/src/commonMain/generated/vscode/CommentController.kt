@@ -2,6 +2,9 @@
 
 package vscode
 
+import js.core.Void
+import js.promise.PromiseLike
+
 /**
  * A comment controller is able to provide {@link CommentThread comments} support to the editor and
  * provide users various ways to interact with comments.
@@ -20,14 +23,14 @@ external interface CommentController {
     /**
      * Comment controller options
      */
-//  options?: CommentOptions
+    var options: CommentOptions?
 
     /**
      * Optional commenting range provider. Provide a list {@link Range ranges} which support commenting to any given resource uri.
      *
      * If not provided, users cannot leave any comments.
      */
-//  commentingRangeProvider?: CommentingRangeProvider
+    var commentingRangeProvider: CommentingRangeProvider?
 
     /**
      * Create a {@link CommentThread comment thread}. The comment thread will be displayed in visible text editors (if the resource matches)
@@ -42,7 +45,10 @@ external interface CommentController {
     /**
      * Optional reaction handler for creating and deleting reactions on a {@link Comment}.
      */
-//  reactionHandler?: (comment: Comment, reaction: CommentReaction) => Thenable<void>
+    var reactionHandler: (
+        comment: Comment,
+        reaction: CommentReaction,
+    ) -> PromiseLike<Void>?
 
     /**
      * Dispose this comment controller.

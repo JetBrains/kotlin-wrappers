@@ -9,10 +9,10 @@ external interface TerminalLinkContext {
     /**
      * This is the text from the unwrapped line in the terminal.
      */
-//  line: string
+    var line: String
 
     /**
      * The terminal the link belongs to.
      */
-//  terminal: Terminal
+    var terminal: Terminal
 }

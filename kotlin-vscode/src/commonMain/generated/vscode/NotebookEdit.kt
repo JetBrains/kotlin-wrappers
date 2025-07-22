@@ -4,6 +4,9 @@
 
 package vscode
 
+import js.array.ReadonlyArray
+import js.objects.Record
+
 /**
  * A notebook edit represents edits that should be applied to the contents of a notebook.
  */
@@ -49,22 +52,22 @@ open external class NotebookEdit {
     /**
      * Range of the cells being edited. May be empty.
      */
-//  range: NotebookRange
+    var range: NotebookRange
 
     /**
      * New cells being inserted. May be empty.
      */
-//  newCells: NotebookCellData[]
+    var newCells: ReadonlyArray<NotebookCellData>
 
     /**
      * Optional new metadata for the cells.
      */
-//  newCellMetadata?: { [key: string]: any }
+    var newCellMetadata: Record<String, *>?
 
     /**
      * Optional new metadata for the notebook.
      */
-//  newNotebookMetadata?: { [key: string]: any }
+    var newNotebookMetadata: Record<String, *>?
 
     /**
      * Create a new notebook edit.

@@ -11,7 +11,7 @@ open external class ChatResponseCommandButtonPart {
     /**
      * The command that will be executed when the button is clicked.
      */
-//  value: Command
+    var value: Command
 
     /**
      * Create a new ChatResponseCommandButtonPart.

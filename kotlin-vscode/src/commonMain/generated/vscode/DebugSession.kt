@@ -26,7 +26,7 @@ external interface DebugSession {
      * The debug session's name is initially taken from the {@link DebugConfiguration debug configuration}.
      * Any changes will be properly reflected in the UI.
      */
-//  name: string
+    var name: String
 
     /**
      * The workspace folder of this session or `undefined` for a folderless setup.

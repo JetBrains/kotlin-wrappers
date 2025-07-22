@@ -46,12 +46,12 @@ open external class Range {
     /**
      * `true` if `start` and `end` are equal.
      */
-//  isEmpty: boolean
+    var isEmpty: Boolean
 
     /**
      * `true` if `start.line` and `end.line` are equal.
      */
-//  isSingleLine: boolean
+    var isSingleLine: Boolean
 
     /**
      * Check if a position or a range is contained in this range.

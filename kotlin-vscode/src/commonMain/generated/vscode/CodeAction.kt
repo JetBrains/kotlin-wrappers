@@ -4,6 +4,8 @@
 
 package vscode
 
+import js.array.ReadonlyArray
+
 /**
  * A code action represents a change that can be performed in code, e.g. to fix a problem or
  * to refactor code.
@@ -14,17 +16,17 @@ open external class CodeAction {
     /**
      * A short, human-readable, title for this code action.
      */
-//  title: string
+    var title: String
 
     /**
      * A {@link WorkspaceEdit workspace edit} this code action performs.
      */
-//  edit?: WorkspaceEdit
+    var edit: WorkspaceEdit?
 
     /**
      * {@link Diagnostic Diagnostics} that this code action resolves.
      */
-//  diagnostics?: Diagnostic[]
+    var diagnostics: ReadonlyArray<Diagnostic>?
 
     /**
      * A {@link Command} this code action executes.
@@ -32,14 +34,14 @@ open external class CodeAction {
      * If this command throws an exception, the editor displays the exception message to users in the editor at the
      * current cursor position.
      */
-//  command?: Command
+    var command: Command?
 
     /**
      * {@link CodeActionKind Kind} of the code action.
      *
      * Used to filter code actions.
      */
-//  kind?: CodeActionKind
+    var kind: CodeActionKind?
 
     /**
      * Marks this as a preferred action. Preferred actions are used by the `auto fix` command and can be targeted
@@ -48,7 +50,7 @@ open external class CodeAction {
      * A quick fix should be marked preferred if it properly addresses the underlying error.
      * A refactoring should be marked preferred if it is the most reasonable choice of actions to take.
      */
-//  isPreferred?: boolean
+    var isPreferred: Boolean?
 
     /**
      * Marks that the code action cannot currently be applied.

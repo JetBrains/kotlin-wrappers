@@ -11,12 +11,12 @@ open external class ColorInformation {
     /**
      * The range in the document where this color appears.
      */
-//  range: Range
+    var range: Range
 
     /**
      * The actual color value for this color range.
      */
-//  color: Color
+    var color: Color
 
     /**
      * Creates a new color range.

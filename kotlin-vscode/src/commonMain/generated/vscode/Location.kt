@@ -12,12 +12,12 @@ open external class Location {
     /**
      * The resource identifier of this location.
      */
-//  uri: Uri
+    var uri: Uri
 
     /**
      * The document range of this location.
      */
-//  range: Range
+    var range: Range
 
     /**
      * Creates a new location object.

@@ -2,6 +2,8 @@
 
 package vscode
 
+import js.array.ReadonlyArray
+import js.array.Tuple2
 import js.core.Void
 
 /**
@@ -16,7 +18,7 @@ external interface InputBox :
     /**
      * Current input value.
      */
-//  value: string
+    var value: String
 
     /**
      * Selection range in the input value. Defined as tuple of two number where the
@@ -27,17 +29,17 @@ external interface InputBox :
      * This property does not get updated when the user types or makes a selection,
      * but it can be updated by the extension.
      */
-//  valueSelection: readonly [number, number] | undefined
+    var valueSelection: Tuple2<Int, Int>
 
     /**
      * Optional placeholder shown when no value has been input.
      */
-//  placeholder: string | undefined
+    var placeholder: String
 
     /**
      * If the input value should be hidden. Defaults to false.
      */
-//  password: boolean
+    var password: Boolean
 
     /**
      * An event signaling when the value has changed.
@@ -52,7 +54,7 @@ external interface InputBox :
     /**
      * Buttons for actions in the UI.
      */
-//  buttons: readonly QuickInputButton[]
+    var buttons: ReadonlyArray<QuickInputButton>
 
     /**
      * An event signaling when a button was triggered.
@@ -62,12 +64,12 @@ external interface InputBox :
     /**
      * An optional prompt text providing some ask or explanation to the user.
      */
-//  prompt: string | undefined
+    var prompt: String
 
     /**
      * An optional validation message indicating a problem with the current input value.
      * By returning a string, the InputBox will use a default {@link InputBoxValidationSeverity} of Error.
      * Returning undefined clears the validation message.
      */
-//  validationMessage: string | InputBoxValidationMessage | undefined
+    var validationMessage: Any /* string | InputBoxValidationMessage */
 }
