@@ -1,7 +1,5 @@
 // Automatically generated - do not modify!
 
-@file:JsModule("vscode")
-
 package vscode
 
 /**

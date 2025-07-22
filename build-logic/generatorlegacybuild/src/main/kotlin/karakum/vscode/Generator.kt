@@ -17,7 +17,10 @@ internal fun generateKotlinDeclarations(
         val hasRuntime = when {
             "export interface " in body -> false
             "external interface " in body -> "sealed /* enum */" in body
-            else -> true
+
+            "export type " in body -> false
+
+            else -> "export " in body || "external " in body
         }
         val annotations = when {
             hasRuntime
