@@ -2,14 +2,10 @@
 
 package vscode
 
-/**
-// ORIGINAL SOURCE
+import js.array.Tuple2
 
 /**
  * A tuple of two characters, like a pair of
  * opening and closing brackets.
-*/
-export type CharacterPair = [string, string];
-
-// ORIGINAL SOURCE
- **/
+ */
+typealias CharacterPair = Tuple2<String, String>

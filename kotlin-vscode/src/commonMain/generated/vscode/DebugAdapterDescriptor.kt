@@ -3,12 +3,6 @@
 package vscode
 
 /**
-// ORIGINAL SOURCE
-
-/**
  * Represents the different types of debug adapters
-*/
-export type DebugAdapterDescriptor = DebugAdapterExecutable | DebugAdapterServer | DebugAdapterNamedPipeServer | DebugAdapterInlineImplementation;
-
-// ORIGINAL SOURCE
- **/
+ */
+typealias DebugAdapterDescriptor = Any /* DebugAdapterExecutable | DebugAdapterServer | DebugAdapterNamedPipeServer | DebugAdapterInlineImplementation */

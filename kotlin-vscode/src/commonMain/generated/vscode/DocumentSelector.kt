@@ -3,9 +3,6 @@
 package vscode
 
 /**
-// ORIGINAL SOURCE
-
-/**
  * A language selector is the combination of one or many language identifiers
  * and {@link DocumentFilter language filters}.
  *
@@ -16,8 +13,5 @@ package vscode
  *
  * @example
  * let sel:DocumentSelector = { scheme: 'file', language: 'typescript' };
-*/
-export type DocumentSelector = DocumentFilter | string | ReadonlyArray<DocumentFilter | string>;
-
-// ORIGINAL SOURCE
- **/
+ */
+typealias DocumentSelector = Any /* DocumentFilter | string | ReadonlyArray<DocumentFilter | string> */

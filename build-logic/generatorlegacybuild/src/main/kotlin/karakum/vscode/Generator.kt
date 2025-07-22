@@ -18,8 +18,6 @@ internal fun generateKotlinDeclarations(
             "export interface " in body -> false
             "external interface " in body -> "sealed /* enum */" in body
 
-            "export type " in body -> false
-
             else -> "export " in body || "external " in body
         }
         val annotations = when {
@@ -51,6 +49,7 @@ private fun fileContent(
         import js.array.Tuple2
         import js.iterable.JsIterable
         import js.errors.JsError
+        import js.promise.PromiseResult
         """.trimIndent(),
         body,
     ).filter { it.isNotEmpty() }

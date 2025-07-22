@@ -2,8 +2,7 @@
 
 package vscode
 
-/**
-// ORIGINAL SOURCE
+import js.promise.PromiseResult
 
 /**
  * A provider result represents the values a provider, like the {@linkcode HoverProvider},
@@ -34,8 +33,5 @@ package vscode
  * 	}
  * }
  * ```
-*/
-export type ProviderResult<T> = T | undefined | null | Thenable<T | undefined | null>;
-
-// ORIGINAL SOURCE
- **/
+ */
+typealias ProviderResult<T> = PromiseResult<T?>

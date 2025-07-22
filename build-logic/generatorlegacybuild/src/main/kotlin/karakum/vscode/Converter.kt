@@ -49,13 +49,11 @@ private fun parseDeclaration(
 
     val body = when (type) {
         "enum" -> convertEnum(source, name)
+
+        "type" -> convertType(source)
+
         "interface" -> convertInterface(source, name)
         "class" -> convertInterface(source, name)
-
-        "type" -> if (name == "McpServerDefinition") {
-            source.replace("export type ", "typealias ")
-                .replace(" = ", " = Any // ")
-        } else commentedOriginal(source)
 
         else -> commentedOriginal(source)
     }
@@ -78,6 +76,36 @@ private fun convertEnum(
             } else it
         }
         .joinToString("\n")
+
+private fun convertType(
+    source: String,
+): String {
+    val comment = source.substringBefore("\nexport ")
+
+    val decclaration = source.substringAfter("\nexport type")
+    val name = decclaration.substringBefore(" = ")
+    val bodySource = decclaration.substringAfter(" = ")
+        .removeSuffix(";")
+
+    val body = when {
+        bodySource.startsWith("(") ->
+            bodySource
+                .replace("<ChatResult | void>", "<ChatResult?>")
+                .replace(" => ", " -> ")
+                .replace(", ", ",\n")
+
+        bodySource == "T | undefined | null | Thenable<T | undefined | null>"
+            -> "PromiseResult<T?>"
+
+        bodySource == "[string, string]" -> "Tuple2<String, String>"
+        bodySource == "never" -> "Nothing"
+        " | " in bodySource -> "Any /* $bodySource */"
+
+        else -> bodySource
+    }
+
+    return "$comment\ntypealias $name = $body"
+}
 
 private fun convertInterface(
     source: String,
