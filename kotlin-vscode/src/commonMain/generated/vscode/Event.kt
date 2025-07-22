@@ -21,5 +21,5 @@ external interface Event<T> {
      * @param disposables An array to which a {@link Disposable} will be added.
      * @returns A disposable which unsubscribes the event listener.
      */
-//  (listener: (e: T) => any, thisArgs?: any, disposables?: Disposable[]): Disposable;
+//  (listener: (e: T) => any, thisArgs?: any, disposables?: Disposable[]): Disposable
 }

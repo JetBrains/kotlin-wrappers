@@ -12,23 +12,23 @@ open external class Diagnostic {
     /**
      * The range to which this diagnostic applies.
      */
-//  range: Range;
+//  range: Range
 
     /**
      * The human-readable message.
      */
-//  message: string;
+//  message: string
 
     /**
      * The severity, default is {@link DiagnosticSeverity.Error error}.
      */
-//  severity: DiagnosticSeverity;
+//  severity: DiagnosticSeverity
 
     /**
      * A human-readable string describing the source of this
      * diagnostic, e.g. 'typescript' or 'super lint'.
      */
-//  source?: string;
+//  source?: string
 
     /**
      * A code or identifier for this diagnostic.
@@ -46,19 +46,19 @@ open external class Diagnostic {
          * A target URI to open with more information about the diagnostic error.
          */
         target: Uri;
-    };
+    }
     */
 
     /**
      * An array of related diagnostic information, e.g. when symbol-names within
      * a scope collide all definitions can be marked via this property.
      */
-//  relatedInformation?: DiagnosticRelatedInformation[];
+//  relatedInformation?: DiagnosticRelatedInformation[]
 
     /**
      * Additional metadata about the diagnostic.
      */
-//  tags?: DiagnosticTag[];
+//  tags?: DiagnosticTag[]
 
     /**
      * Creates a new diagnostic object.
@@ -67,5 +67,5 @@ open external class Diagnostic {
      * @param message The human-readable message.
      * @param severity The severity, default is {@link DiagnosticSeverity.Error error}.
      */
-//  constructor(range: Range, message: string, severity?: DiagnosticSeverity);
+//  constructor(range: Range, message: string, severity?: DiagnosticSeverity)
 }

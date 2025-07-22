@@ -14,7 +14,7 @@ external interface MessageItem {
     /**
      * A short title like 'Retry', 'Open Log' etc.
      */
-//  title: string;
+//  title: string
 
     /**
      * A hint for modal dialogs that the item should be triggered
@@ -23,5 +23,5 @@ external interface MessageItem {
      *
      * Note: this option is ignored for non-modal messages.
      */
-//  isCloseAffordance?: boolean;
+//  isCloseAffordance?: boolean
 }

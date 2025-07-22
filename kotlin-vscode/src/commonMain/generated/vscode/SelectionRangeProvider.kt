@@ -19,5 +19,5 @@ external interface SelectionRangeProvider {
      * @returns Selection ranges or a thenable that resolves to such. The lack of a result can be
      * signaled by returning `undefined` or `null`.
      */
-//  provideSelectionRanges(document: TextDocument, positions: readonly Position[], token: CancellationToken): ProviderResult<SelectionRange[]>;
+//  provideSelectionRanges(document: TextDocument, positions: readonly Position[], token: CancellationToken): ProviderResult<SelectionRange[]>
 }

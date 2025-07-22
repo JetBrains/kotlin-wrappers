@@ -16,5 +16,5 @@ external interface ImplementationProvider {
      * @returns A definition or a thenable that resolves to such. The lack of a result can be
      * signaled by returning `undefined` or `null`.
      */
-//  provideImplementation(document: TextDocument, position: Position, token: CancellationToken): ProviderResult<Definition | DefinitionLink[]>;
+//  provideImplementation(document: TextDocument, position: Position, token: CancellationToken): ProviderResult<Definition | DefinitionLink[]>
 }

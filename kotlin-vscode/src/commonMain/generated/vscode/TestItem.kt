@@ -39,7 +39,7 @@ external interface TestItem {
      * Tags associated with this test item. May be used in combination with
      * {@link TestRunProfile.tag tags}, or simply as an organizational feature.
      */
-//  tags: readonly TestTag[];
+//  tags: readonly TestTag[]
 
     /**
      * Indicates whether this test item may have children discovered by resolving.
@@ -50,7 +50,7 @@ external interface TestItem {
      *
      * Default to `false`.
      */
-//  canResolveChildren: boolean;
+//  canResolveChildren: boolean
 
     /**
      * Controls whether the item is shown as "busy" in the Test Explorer view.
@@ -58,31 +58,31 @@ external interface TestItem {
      *
      * Defaults to `false`.
      */
-//  busy: boolean;
+//  busy: boolean
 
     /**
      * Display name describing the test case.
      */
-//  label: string;
+//  label: string
 
     /**
      * Optional description that appears next to the label.
      */
-//  description?: string;
+//  description?: string
 
     /**
      * A string that should be used when comparing this item
      * with other items. When `falsy` the {@link TestItem.label label}
      * is used.
      */
-//  sortText?: string | undefined;
+//  sortText?: string | undefined
 
     /**
      * Location of the test item in its {@link TestItem.uri uri}.
      *
      * This is only meaningful if the `uri` points to a file.
      */
-//  range: Range | undefined;
+//  range: Range | undefined
 
     /**
      * Optional error encountered while loading the test.
@@ -90,5 +90,5 @@ external interface TestItem {
      * Note that this is not a test result and should only be used to represent errors in
      * test discovery, such as syntax errors.
      */
-//  error: string | MarkdownString | undefined;
+//  error: string | MarkdownString | undefined
 }

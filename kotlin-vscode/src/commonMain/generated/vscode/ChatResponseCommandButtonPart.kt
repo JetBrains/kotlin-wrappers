@@ -11,11 +11,11 @@ open external class ChatResponseCommandButtonPart {
     /**
      * The command that will be executed when the button is clicked.
      */
-//  value: Command;
+//  value: Command
 
     /**
      * Create a new ChatResponseCommandButtonPart.
      * @param value A Command that will be executed when the button is clicked.
      */
-//  constructor(value: Command);
+//  constructor(value: Command)
 }

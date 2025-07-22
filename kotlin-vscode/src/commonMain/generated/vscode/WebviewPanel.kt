@@ -16,7 +16,7 @@ external interface WebviewPanel {
     /**
      * Title of the panel shown in UI.
      */
-//  title: string;
+//  title: string
 
     /**
      * Icon for the panel shown in UI.
@@ -31,7 +31,7 @@ external interface WebviewPanel {
          * The icon path for the dark theme.
          */
         readonly dark: Uri;
-    };
+    }
     */
 
     /**
@@ -84,7 +84,7 @@ external interface WebviewPanel {
      * @param viewColumn View column to show the panel in. Shows in the current `viewColumn` if undefined.
      * @param preserveFocus When `true`, the webview will not take focus.
      */
-//  reveal(viewColumn?: ViewColumn, preserveFocus?: boolean): void;
+//  reveal(viewColumn?: ViewColumn, preserveFocus?: boolean): void
 
     /**
      * Dispose of the webview panel.
@@ -93,5 +93,5 @@ external interface WebviewPanel {
      * Webview panels are also disposed when the user closes the webview panel. Both cases
      * fire the `onDispose` event.
      */
-//  dispose(): any;
+//  dispose(): any
 }

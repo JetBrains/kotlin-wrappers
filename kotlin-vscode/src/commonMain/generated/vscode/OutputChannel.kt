@@ -19,7 +19,7 @@ external interface OutputChannel {
      *
      * @param value A string, falsy values will not be printed.
      */
-//  append(value: string): void;
+//  append(value: string): void
 
     /**
      * Append the given value and a line feed character
@@ -27,26 +27,26 @@ external interface OutputChannel {
      *
      * @param value A string, falsy values will be printed.
      */
-//  appendLine(value: string): void;
+//  appendLine(value: string): void
 
     /**
      * Replaces all output from the channel with the given value.
      *
      * @param value A string, falsy values will not be printed.
      */
-//  replace(value: string): void;
+//  replace(value: string): void
 
     /**
      * Removes all output from the channel.
      */
-//  clear(): void;
+//  clear(): void
 
     /**
      * Reveal this channel in the UI.
      *
      * @param preserveFocus When `true` the channel will not take focus.
      */
-//  show(preserveFocus?: boolean): void;
+//  show(preserveFocus?: boolean): void
 
     /**
      * Reveal this channel in the UI.
@@ -56,15 +56,15 @@ external interface OutputChannel {
      * @param column This argument is **deprecated** and will be ignored.
      * @param preserveFocus When `true` the channel will not take focus.
      */
-//  show(column?: ViewColumn, preserveFocus?: boolean): void;
+//  show(column?: ViewColumn, preserveFocus?: boolean): void
 
     /**
      * Hide this channel from the UI.
      */
-//  hide(): void;
+//  hide(): void
 
     /**
      * Dispose and free associated resources.
      */
-//  dispose(): void;
+//  dispose(): void
 }

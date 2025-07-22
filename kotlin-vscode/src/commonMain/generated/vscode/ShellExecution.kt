@@ -14,7 +14,7 @@ open external class ShellExecution {
      * @param commandLine The command line to execute.
      * @param options Optional options for the started the shell.
      */
-//  constructor(commandLine: string, options?: ShellExecutionOptions);
+//  constructor(commandLine: string, options?: ShellExecutionOptions)
 
     /**
      * Creates a shell execution with a command and arguments. For the real execution the editor will
@@ -26,26 +26,26 @@ open external class ShellExecution {
      * @param args The command arguments.
      * @param options Optional options for the started the shell.
      */
-//  constructor(command: string | ShellQuotedString, args: Array<string | ShellQuotedString>, options?: ShellExecutionOptions);
+//  constructor(command: string | ShellQuotedString, args: Array<string | ShellQuotedString>, options?: ShellExecutionOptions)
 
     /**
      * The shell command line. Is `undefined` if created with a command and arguments.
      */
-//  commandLine: string | undefined;
+//  commandLine: string | undefined
 
     /**
      * The shell command. Is `undefined` if created with a full command line.
      */
-//  command: string | ShellQuotedString | undefined;
+//  command: string | ShellQuotedString | undefined
 
     /**
      * The shell args. Is `undefined` if created with a full command line.
      */
-//  args: Array<string | ShellQuotedString> | undefined;
+//  args: Array<string | ShellQuotedString> | undefined
 
     /**
      * The shell options used when the command line is executed in a shell.
      * Defaults to undefined.
      */
-//  options?: ShellExecutionOptions;
+//  options?: ShellExecutionOptions
 }

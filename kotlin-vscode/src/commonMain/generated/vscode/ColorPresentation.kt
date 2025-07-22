@@ -18,25 +18,25 @@ open external class ColorPresentation {
      * picker header. By default this is also the text that is inserted when selecting
      * this color presentation.
      */
-//  label: string;
+//  label: string
 
     /**
      * An {@link TextEdit edit} which is applied to a document when selecting
      * this presentation for the color.  When `falsy` the {@link ColorPresentation.label label}
      * is used.
      */
-//  textEdit?: TextEdit;
+//  textEdit?: TextEdit
 
     /**
      * An optional array of additional {@link TextEdit text edits} that are applied when
      * selecting this color presentation. Edits must not overlap with the main {@link ColorPresentation.textEdit edit} nor with themselves.
      */
-//  additionalTextEdits?: TextEdit[];
+//  additionalTextEdits?: TextEdit[]
 
     /**
      * Creates a new color presentation.
      *
      * @param label The label of this color presentation.
      */
-//  constructor(label: string);
+//  constructor(label: string)
 }

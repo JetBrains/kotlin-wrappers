@@ -9,10 +9,10 @@ external interface CommentRule {
     /**
      * The line comment token, like `// this is a comment`
      */
-//  lineComment?: string;
+//  lineComment?: string
 
     /**
      * The block comment character pair, like `/​* block comment *&#47;`
      */
-//  blockComment?: CharacterPair;
+//  blockComment?: CharacterPair
 }

@@ -12,12 +12,12 @@ external interface FileStat {
      *
      * *Note:* This value might be a bitmask, e.g. `FileType.File | FileType.SymbolicLink`.
      */
-//  type: FileType;
+//  type: FileType
 
     /**
      * The creation timestamp in milliseconds elapsed since January 1, 1970 00:00:00 UTC.
      */
-//  ctime: number;
+//  ctime: number
 
     /**
      * The modification timestamp in milliseconds elapsed since January 1, 1970 00:00:00 UTC.
@@ -26,7 +26,7 @@ external interface FileStat {
      * from the previous value. Otherwise there may be optimizations in place that will not show
      * the updated file contents in an editor for example.
      */
-//  mtime: number;
+//  mtime: number
 
     /**
      * The size in bytes.
@@ -35,12 +35,12 @@ external interface FileStat {
      * may be optimizations in place that will not show the updated file contents in an editor for
      * example.
      */
-//  size: number;
+//  size: number
 
     /**
      * The permissions of the file, e.g. whether the file is readonly.
      *
      * *Note:* This value might be a bitmask, e.g. `FilePermission.Readonly | FilePermission.Other`.
      */
-//  permissions?: FilePermission;
+//  permissions?: FilePermission
 }

@@ -31,7 +31,7 @@ open external class NotebookRange {
      * @param start start index
      * @param end end index.
      */
-//  constructor(start: number, end: number);
+//  constructor(start: number, end: number)
 
     /**
      * Derive a new range for this range.
@@ -50,6 +50,6 @@ open external class NotebookRange {
          * New end index, defaults to `this.end`.
          */
         end?: number;
-    }): NotebookRange;
+    }): NotebookRange
     */
 }

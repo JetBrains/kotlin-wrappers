@@ -21,16 +21,16 @@ external interface ShellQuotingOptions {
          * The characters to escape.
          */
         charsToEscape: string;
-    };
+    }
     */
 
     /**
      * The character used for strong quoting. The string's length must be 1.
      */
-//  strong?: string;
+//  strong?: string
 
     /**
      * The character used for weak quoting. The string's length must be 1.
      */
-//  weak?: string;
+//  weak?: string
 }

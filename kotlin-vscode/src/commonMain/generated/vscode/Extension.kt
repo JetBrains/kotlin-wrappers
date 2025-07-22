@@ -41,7 +41,7 @@ external interface Extension<T> {
      * via the `remote.extensionKind`-setting. When no remote extension host exists,
      * the value is {@linkcode ExtensionKind.UI}.
      */
-//  extensionKind: ExtensionKind;
+//  extensionKind: ExtensionKind
 
     /**
      * The public API exported by this extension (return value of `activate`).
@@ -54,5 +54,5 @@ external interface Extension<T> {
      *
      * @returns A promise that will resolve when this extension has been activated.
      */
-//  activate(): Thenable<T>;
+//  activate(): Thenable<T>
 }

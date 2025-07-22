@@ -9,7 +9,7 @@ external interface NotebookCellStatusBarItemProvider {
     /**
      * An optional event to signal that statusbar items have changed. The provide method will be called again.
      */
-//  onDidChangeCellStatusBarItems?: Event<void>;
+//  onDidChangeCellStatusBarItems?: Event<void>
 
     /**
      * The provider will be called when the cell scrolls into view, when its content, outputs, language, or metadata change, and when it changes execution state.
@@ -17,5 +17,5 @@ external interface NotebookCellStatusBarItemProvider {
      * @param token A token triggered if this request should be cancelled.
      * @returns One or more {@link NotebookCellStatusBarItem cell statusbar items}
      */
-//  provideCellStatusBarItems(cell: NotebookCell, token: CancellationToken): ProviderResult<NotebookCellStatusBarItem | NotebookCellStatusBarItem[]>;
+//  provideCellStatusBarItems(cell: NotebookCell, token: CancellationToken): ProviderResult<NotebookCellStatusBarItem | NotebookCellStatusBarItem[]>
 }

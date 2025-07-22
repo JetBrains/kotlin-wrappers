@@ -19,7 +19,7 @@ external interface AuthenticationProvider {
      * @param options Additional options for getting sessions.
      * @returns A promise that resolves to an array of authentication sessions.
      */
-//  getSessions(scopes: readonly string[] | undefined, options: AuthenticationProviderSessionOptions): Thenable<AuthenticationSession[]>;
+//  getSessions(scopes: readonly string[] | undefined, options: AuthenticationProviderSessionOptions): Thenable<AuthenticationSession[]>
 
     /**
      * Prompts a user to login.
@@ -35,7 +35,7 @@ external interface AuthenticationProvider {
      * @param options Additional options for creating a session.
      * @returns A promise that resolves to an authentication session.
      */
-//  createSession(scopes: readonly string[], options: AuthenticationProviderSessionOptions): Thenable<AuthenticationSession>;
+//  createSession(scopes: readonly string[], options: AuthenticationProviderSessionOptions): Thenable<AuthenticationSession>
 
     /**
      * Removes the session corresponding to session id.
@@ -45,5 +45,5 @@ external interface AuthenticationProvider {
      * If a session cannot be removed, the provider should reject with an error message.
      * @param sessionId The id of the session to remove.
      */
-//  removeSession(sessionId: string): Thenable<void>;
+//  removeSession(sessionId: string): Thenable<void>
 }

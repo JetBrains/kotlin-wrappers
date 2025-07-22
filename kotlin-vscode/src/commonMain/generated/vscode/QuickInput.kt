@@ -27,17 +27,17 @@ external interface QuickInput {
     /**
      * An optional title.
      */
-//  title: string | undefined;
+//  title: string | undefined
 
     /**
      * An optional current step count.
      */
-//  step: number | undefined;
+//  step: number | undefined
 
     /**
      * An optional total step count.
      */
-//  totalSteps: number | undefined;
+//  totalSteps: number | undefined
 
     /**
      * If the UI should allow for user input. Defaults to true.
@@ -45,7 +45,7 @@ external interface QuickInput {
      * Change this to false, e.g., while validating user input or
      * loading data for the next step in user input.
      */
-//  enabled: boolean;
+//  enabled: boolean
 
     /**
      * If the UI should show a progress indicator. Defaults to false.
@@ -53,25 +53,25 @@ external interface QuickInput {
      * Change this to true, e.g., while loading more data or validating
      * user input.
      */
-//  busy: boolean;
+//  busy: boolean
 
     /**
      * If the UI should stay open even when loosing UI focus. Defaults to false.
      * This setting is ignored on iPad and is always false.
      */
-//  ignoreFocusOut: boolean;
+//  ignoreFocusOut: boolean
 
     /**
      * Makes the input UI visible in its current configuration. Any other input
      * UI will first fire an {@link QuickInput.onDidHide} event.
      */
-//  show(): void;
+//  show(): void
 
     /**
      * Hides this input UI. This will also fire an {@link QuickInput.onDidHide}
      * event.
      */
-//  hide(): void;
+//  hide(): void
 
     /**
      * An event signaling when this input UI is hidden.
@@ -81,7 +81,7 @@ external interface QuickInput {
      * (Examples include: an explicit call to {@link QuickInput.hide},
      * the user pressing Esc, some other input UI opening, etc.)
      */
-//  onDidHide: Event<void>;
+//  onDidHide: Event<void>
 
     /**
      * Dispose of this input UI and any associated resources. If it is still
@@ -89,5 +89,5 @@ external interface QuickInput {
      * functional and no additional methods or properties on it should be
      * accessed. Instead a new input UI should be created.
      */
-//  dispose(): void;
+//  dispose(): void
 }

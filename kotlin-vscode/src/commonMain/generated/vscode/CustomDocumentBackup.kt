@@ -19,5 +19,5 @@ external interface CustomDocumentBackup {
      * This is called by the editor when it is clear the current backup is no longer needed, such as when a new backup
      * is made or when the file is saved.
      */
-//  delete(): void;
+//  delete(): void
 }

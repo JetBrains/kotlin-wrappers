@@ -24,5 +24,5 @@ open external class InlineValueText {
      * @param range The document line where to show the inline value.
      * @param text The value to be shown for the line.
      */
-//  constructor(range: Range, text: string);
+//  constructor(range: Range, text: string)
 }

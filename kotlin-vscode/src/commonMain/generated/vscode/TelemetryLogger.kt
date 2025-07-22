@@ -39,7 +39,7 @@ external interface TelemetryLogger {
      * @param eventName The event name to log
      * @param data The data to log
      */
-//  logUsage(eventName: string, data?: Record<string, any | TelemetryTrustedValue>): void;
+//  logUsage(eventName: string, data?: Record<string, any | TelemetryTrustedValue>): void
 
     /**
      * Log an error event.
@@ -49,7 +49,7 @@ external interface TelemetryLogger {
      * @param eventName The event name to log
      * @param data The data to log
      */
-//  logError(eventName: string, data?: Record<string, any | TelemetryTrustedValue>): void;
+//  logError(eventName: string, data?: Record<string, any | TelemetryTrustedValue>): void
 
     /**
      * Log an error event.
@@ -60,10 +60,10 @@ external interface TelemetryLogger {
      * @param error The error object which contains the stack trace cleaned of PII
      * @param data Additional data to log alongside the stack trace
      */
-//  logError(error: Error, data?: Record<string, any | TelemetryTrustedValue>): void;
+//  logError(error: Error, data?: Record<string, any | TelemetryTrustedValue>): void
 
     /**
      * Dispose this object and free resources.
      */
-//  dispose(): void;
+//  dispose(): void
 }

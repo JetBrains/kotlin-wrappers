@@ -57,7 +57,7 @@ external interface TerminalShellIntegration {
      *   // exit code was.
      * }
      */
-//  executeCommand(commandLine: string): TerminalShellExecution;
+//  executeCommand(commandLine: string): TerminalShellExecution
 
     /**
      * Execute a command, sending ^C as necessary to interrupt any running command if needed.
@@ -113,5 +113,5 @@ external interface TerminalShellIntegration {
      *   // exit code was.
      * }
      */
-//  executeCommand(executable: string, args: string[]): TerminalShellExecution;
+//  executeCommand(executable: string, args: string[]): TerminalShellExecution
 }

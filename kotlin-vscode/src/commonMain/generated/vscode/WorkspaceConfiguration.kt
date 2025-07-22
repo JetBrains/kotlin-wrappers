@@ -72,7 +72,7 @@ external interface WorkspaceConfiguration {
      * @param section Configuration name, supports _dotted_ names.
      * @returns The value `section` denotes or `undefined`.
      */
-//  get<T>(section: string): T | undefined;
+//  get<T>(section: string): T | undefined
 
     /**
      * Return a value from this configuration.
@@ -81,7 +81,7 @@ external interface WorkspaceConfiguration {
      * @param defaultValue A value should be returned when no value could be found, is `undefined`.
      * @returns The value `section` denotes or the default.
      */
-//  get<T>(section: string, defaultValue: T): T;
+//  get<T>(section: string, defaultValue: T): T
 
     /**
      * Check if this configuration has a certain value.
@@ -89,7 +89,7 @@ external interface WorkspaceConfiguration {
      * @param section Configuration name, supports _dotted_ names.
      * @returns `true` if the section doesn't resolve to `undefined`.
      */
-//  has(section: string): boolean;
+//  has(section: string): boolean
 
     /**
      * Retrieve all information about a configuration setting. A configuration value
@@ -158,7 +158,7 @@ external interface WorkspaceConfiguration {
          */
         languageIds?: string[];
 
-    } | undefined;
+    } | undefined
     */
 
     /**
@@ -190,10 +190,10 @@ external interface WorkspaceConfiguration {
      *	- configuration to workspace folder when there is no workspace folder settings.
      *	- configuration to workspace folder when {@link WorkspaceConfiguration} is not scoped to a resource.
      */
-//  update(section: string, value: any, configurationTarget?: ConfigurationTarget | boolean | null, overrideInLanguage?: boolean): Thenable<void>;
+//  update(section: string, value: any, configurationTarget?: ConfigurationTarget | boolean | null, overrideInLanguage?: boolean): Thenable<void>
 
     /**
      * Readable dictionary that backs this configuration.
      */
-    // readonly [key: string]: any;
+    // readonly [key: string]: any
 }

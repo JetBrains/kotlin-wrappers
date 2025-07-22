@@ -13,5 +13,5 @@ external interface UriHandler {
      *
      * @see {@link window.registerUriHandler}.
      */
-//  handleUri(uri: Uri): ProviderResult<void>;
+//  handleUri(uri: Uri): ProviderResult<void>
 }

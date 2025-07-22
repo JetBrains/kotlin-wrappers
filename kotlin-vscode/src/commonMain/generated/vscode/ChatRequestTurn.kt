@@ -43,5 +43,5 @@ open external class ChatRequestTurn {
     /**
      * @hidden
      */
-//  private constructor(prompt: string, command: string | undefined, references: ChatPromptReference[], participant: string, toolReferences: ChatLanguageModelToolReference[]);
+//  private constructor(prompt: string, command: string | undefined, references: ChatPromptReference[], participant: string, toolReferences: ChatLanguageModelToolReference[])
 }

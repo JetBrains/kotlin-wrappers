@@ -23,18 +23,18 @@ external interface WebviewView {
      *
      * The view title is initially taken from the extension `package.json` contribution.
      */
-//  title?: string;
+//  title?: string
 
     /**
      * Human-readable string which is rendered less prominently in the title.
      */
-//  description?: string;
+//  description?: string
 
     /**
      * The badge to display for this webview view.
      * To remove the badge, set to undefined.
      */
-//  badge?: ViewBadge | undefined;
+//  badge?: ViewBadge | undefined
 
     /**
      * Event fired when the view is disposed.
@@ -72,5 +72,5 @@ external interface WebviewView {
      *
      * @param preserveFocus When `true` the view will not take focus.
      */
-//  show(preserveFocus?: boolean): void;
+//  show(preserveFocus?: boolean): void
 }

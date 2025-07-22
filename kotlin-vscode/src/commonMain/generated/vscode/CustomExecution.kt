@@ -17,5 +17,5 @@ open external class CustomExecution {
      * @param callback The callback that will be called when the task is started by a user. Any ${} style variables that
      * were in the task definition will be resolved and passed into the callback as `resolvedDefinition`.
      */
-//  constructor(callback: (resolvedDefinition: TaskDefinition) => Thenable<Pseudoterminal>);
+//  constructor(callback: (resolvedDefinition: TaskDefinition) => Thenable<Pseudoterminal>)
 }

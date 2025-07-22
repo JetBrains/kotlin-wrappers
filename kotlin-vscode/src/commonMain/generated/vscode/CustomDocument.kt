@@ -20,5 +20,5 @@ external interface CustomDocument {
      * This is invoked by the editor when there are no more references to a given `CustomDocument` (for example when
      * all editors associated with the document have been closed.)
      */
-//  dispose(): void;
+//  dispose(): void
 }

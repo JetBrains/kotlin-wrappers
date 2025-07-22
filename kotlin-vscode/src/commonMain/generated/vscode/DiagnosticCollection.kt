@@ -30,7 +30,7 @@ external interface DiagnosticCollection :
      * @param uri A resource identifier.
      * @param diagnostics Array of diagnostics or `undefined`
      */
-//  set(uri: Uri, diagnostics: readonly Diagnostic[] | undefined): void;
+//  set(uri: Uri, diagnostics: readonly Diagnostic[] | undefined): void
 
     /**
      * Replace diagnostics for multiple resources in this collection.
@@ -42,7 +42,7 @@ external interface DiagnosticCollection :
      *
      * @param entries An array of tuples, like `[[file1, [d1, d2]], [file2, [d3, d4, d5]]]`, or `undefined`.
      */
-//  set(entries: ReadonlyArray<[Uri, readonly Diagnostic[] | undefined]>): void;
+//  set(entries: ReadonlyArray<[Uri, readonly Diagnostic[] | undefined]>): void
 
     /**
      * Remove all diagnostics from this collection that belong
@@ -50,13 +50,13 @@ external interface DiagnosticCollection :
      *
      * @param uri A resource identifier.
      */
-//  delete(uri: Uri): void;
+//  delete(uri: Uri): void
 
     /**
      * Remove all diagnostics from this collection. The same
      * as calling `#set(undefined)`;
      */
-//  clear(): void;
+//  clear(): void
 
     /**
      * Iterate over each entry in this collection.
@@ -64,7 +64,7 @@ external interface DiagnosticCollection :
      * @param callback Function to execute for each entry.
      * @param thisArg The `this` context used when invoking the handler function.
      */
-//  forEach(callback: (uri: Uri, diagnostics: readonly Diagnostic[], collection: DiagnosticCollection) => any, thisArg?: any): void;
+//  forEach(callback: (uri: Uri, diagnostics: readonly Diagnostic[], collection: DiagnosticCollection) => any, thisArg?: any): void
 
     /**
      * Get the diagnostics for a given resource. *Note* that you cannot
@@ -73,7 +73,7 @@ external interface DiagnosticCollection :
      * @param uri A resource identifier.
      * @returns An immutable array of {@link Diagnostic diagnostics} or `undefined`.
      */
-//  get(uri: Uri): readonly Diagnostic[] | undefined;
+//  get(uri: Uri): readonly Diagnostic[] | undefined
 
     /**
      * Check if this collection contains diagnostics for a
@@ -82,11 +82,11 @@ external interface DiagnosticCollection :
      * @param uri A resource identifier.
      * @returns `true` if this collection has diagnostic for the given resource.
      */
-//  has(uri: Uri): boolean;
+//  has(uri: Uri): boolean
 
     /**
      * Dispose and free associated resources. Calls
      * {@link DiagnosticCollection.clear clear}.
      */
-//  dispose(): void;
+//  dispose(): void
 }

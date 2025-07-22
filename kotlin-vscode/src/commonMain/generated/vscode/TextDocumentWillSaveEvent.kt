@@ -40,7 +40,7 @@ external interface TextDocumentWillSaveEvent {
      *
      * @param thenable A thenable that resolves to {@link TextEdit pre-save-edits}.
      */
-//  waitUntil(thenable: Thenable<readonly TextEdit[]>): void;
+//  waitUntil(thenable: Thenable<readonly TextEdit[]>): void
 
     /**
      * Allows to pause the event loop until the provided thenable resolved.
@@ -49,5 +49,5 @@ external interface TextDocumentWillSaveEvent {
      *
      * @param thenable A thenable that delays saving.
      */
-//  waitUntil(thenable: Thenable<any>): void;
+//  waitUntil(thenable: Thenable<any>): void
 }

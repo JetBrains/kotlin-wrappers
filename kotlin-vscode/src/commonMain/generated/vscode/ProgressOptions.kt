@@ -15,14 +15,14 @@ external interface ProgressOptions {
          * The identifier of a view for which progress should be shown.
          */
         viewId: string;
-    };
+    }
     */
 
     /**
      * A human-readable string which will be used to describe the
      * operation.
      */
-//  title?: string;
+//  title?: string
 
     /**
      * Controls if a cancel button should show to allow the user to
@@ -30,5 +30,5 @@ external interface ProgressOptions {
      * `ProgressLocation.Notification` is supporting to show a cancel
      * button.
      */
-//  cancellable?: boolean;
+//  cancellable?: boolean
 }

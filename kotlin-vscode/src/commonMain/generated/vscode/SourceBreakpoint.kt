@@ -17,5 +17,5 @@ open external class SourceBreakpoint :
     /**
      * Create a new breakpoint for a source location.
      */
-//  constructor(location: Location, enabled?: boolean, condition?: string, hitCondition?: string, logMessage?: string);
+//  constructor(location: Location, enabled?: boolean, condition?: string, hitCondition?: string, logMessage?: string)
 }

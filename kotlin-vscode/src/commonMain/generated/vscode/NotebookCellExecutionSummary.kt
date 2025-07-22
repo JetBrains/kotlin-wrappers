@@ -29,6 +29,6 @@ external interface NotebookCellExecutionSummary {
          * Execution end time.
          */
         readonly endTime: number;
-    };
+    }
     */
 }

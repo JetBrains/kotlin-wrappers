@@ -21,7 +21,7 @@ open external class SnippetTextEdit {
      * @param snippet A snippet string.
      * @returns A new snippet edit object.
      */
-//  static replace(range: Range, snippet: SnippetString): SnippetTextEdit;
+//  static replace(range: Range, snippet: SnippetString): SnippetTextEdit
 
     /**
      * Utility to create an insert snippet edit.
@@ -30,22 +30,22 @@ open external class SnippetTextEdit {
      * @param snippet A snippet string.
      * @returns A new snippet edit object.
      */
-//  static insert(position: Position, snippet: SnippetString): SnippetTextEdit;
+//  static insert(position: Position, snippet: SnippetString): SnippetTextEdit
 
     /**
      * The range this edit applies to.
      */
-//  range: Range;
+//  range: Range
 
     /**
      * The {@link SnippetString snippet} this edit will perform.
      */
-//  snippet: SnippetString;
+//  snippet: SnippetString
 
     /**
      * Whether the snippet edit should be applied with existing whitespace preserved.
      */
-//  keepWhitespace?: boolean;
+//  keepWhitespace?: boolean
 
     /**
      * Create a new snippet edit.
@@ -53,5 +53,5 @@ open external class SnippetTextEdit {
      * @param range A range.
      * @param snippet A snippet string.
      */
-//  constructor(range: Range, snippet: SnippetString);
+//  constructor(range: Range, snippet: SnippetString)
 }

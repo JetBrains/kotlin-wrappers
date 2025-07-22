@@ -24,7 +24,7 @@ external interface WorkspaceSymbolProvider<T : SymbolInformation> {
      * @returns An array of document highlights or a thenable that resolves to such. The lack of a result can be
      * signaled by returning `undefined`, `null`, or an empty array.
      */
-//  provideWorkspaceSymbols(query: string, token: CancellationToken): ProviderResult<T[]>;
+//  provideWorkspaceSymbols(query: string, token: CancellationToken): ProviderResult<T[]>
 
     /**
      * Given a symbol fill in its {@link SymbolInformation.location location}. This method is called whenever a symbol
@@ -38,5 +38,5 @@ external interface WorkspaceSymbolProvider<T : SymbolInformation> {
      * @returns The resolved symbol or a thenable that resolves to that. When no result is returned,
      * the given `symbol` is used.
      */
-//  resolveWorkspaceSymbol?(symbol: T, token: CancellationToken): ProviderResult<T>;
+//  resolveWorkspaceSymbol?(symbol: T, token: CancellationToken): ProviderResult<T>
 }

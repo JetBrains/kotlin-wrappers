@@ -16,12 +16,12 @@ open external class ThemeIcon {
     /**
      * Reference to an icon representing a file. The icon is taken from the current file icon theme or a placeholder icon is used.
      */
-//  static readonly File: ThemeIcon;
+//  static readonly File: ThemeIcon
 
     /**
      * Reference to an icon representing a folder. The icon is taken from the current file icon theme or a placeholder icon is used.
      */
-//  static readonly Folder: ThemeIcon;
+//  static readonly Folder: ThemeIcon
 
     /**
      * The id of the icon. The available icons are listed in https://code.visualstudio.com/api/references/icons-in-labels#icon-listing.
@@ -38,5 +38,5 @@ open external class ThemeIcon {
      * @param id id of the icon. The available icons are listed in https://code.visualstudio.com/api/references/icons-in-labels#icon-listing.
      * @param color optional `ThemeColor` for the icon. The color is currently only used in {@link TreeItem}.
      */
-//  constructor(id: string, color?: ThemeColor);
+//  constructor(id: string, color?: ThemeColor)
 }

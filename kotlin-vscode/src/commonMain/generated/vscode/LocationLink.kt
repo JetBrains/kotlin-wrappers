@@ -13,20 +13,20 @@ external interface LocationLink {
      * Used as the underlined span for mouse definition hover. Defaults to the word range at
      * the definition position.
      */
-//  originSelectionRange?: Range;
+//  originSelectionRange?: Range
 
     /**
      * The target resource identifier of this link.
      */
-//  targetUri: Uri;
+//  targetUri: Uri
 
     /**
      * The full target range of this link.
      */
-//  targetRange: Range;
+//  targetRange: Range
 
     /**
      * The span of this link.
      */
-//  targetSelectionRange?: Range;
+//  targetSelectionRange?: Range
 }

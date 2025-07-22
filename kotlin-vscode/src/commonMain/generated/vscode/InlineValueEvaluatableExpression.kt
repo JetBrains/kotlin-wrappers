@@ -27,5 +27,5 @@ open external class InlineValueEvaluatableExpression {
      * @param range The range in the underlying document from which the evaluatable expression is extracted.
      * @param expression If specified overrides the extracted expression.
      */
-//  constructor(range: Range, expression?: string);
+//  constructor(range: Range, expression?: string)
 }

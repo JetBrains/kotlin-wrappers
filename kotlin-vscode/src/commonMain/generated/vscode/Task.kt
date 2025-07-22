@@ -20,7 +20,7 @@ open external class Task {
      *  or '$eslint'. Problem matchers can be contributed by an extension using
      *  the `problemMatchers` extension point.
      */
-//  constructor(taskDefinition: TaskDefinition, scope: WorkspaceFolder | TaskScope.Global | TaskScope.Workspace, name: string, source: string, execution?: ProcessExecution | ShellExecution | CustomExecution, problemMatchers?: string | string[]);
+//  constructor(taskDefinition: TaskDefinition, scope: WorkspaceFolder | TaskScope.Global | TaskScope.Workspace, name: string, source: string, execution?: ProcessExecution | ShellExecution | CustomExecution, problemMatchers?: string | string[])
 
     /**
      * Creates a new task.
@@ -35,12 +35,12 @@ open external class Task {
      *  or '$eslint'. Problem matchers can be contributed by an extension using
      *  the `problemMatchers` extension point.
      */
-//  constructor(taskDefinition: TaskDefinition, name: string, source: string, execution?: ProcessExecution | ShellExecution, problemMatchers?: string | string[]);
+//  constructor(taskDefinition: TaskDefinition, name: string, source: string, execution?: ProcessExecution | ShellExecution, problemMatchers?: string | string[])
 
     /**
      * The task's definition.
      */
-//  definition: TaskDefinition;
+//  definition: TaskDefinition
 
     /**
      * The task's scope.
@@ -50,30 +50,30 @@ open external class Task {
     /**
      * The task's name
      */
-//  name: string;
+//  name: string
 
     /**
      * A human-readable string which is rendered less prominently on a separate line in places
      * where the task's name is displayed. Supports rendering of {@link ThemeIcon theme icons}
      * via the `$(<name>)`-syntax.
      */
-//  detail?: string;
+//  detail?: string
 
     /**
      * The task's execution engine
      */
-//  execution?: ProcessExecution | ShellExecution | CustomExecution;
+//  execution?: ProcessExecution | ShellExecution | CustomExecution
 
     /**
      * Whether the task is a background task or not.
      */
-//  isBackground: boolean;
+//  isBackground: boolean
 
     /**
      * A human-readable string describing the source of this shell task, e.g. 'gulp'
      * or 'npm'. Supports rendering of {@link ThemeIcon theme icons} via the `$(<name>)`-syntax.
      */
-//  source: string;
+//  source: string
 
     /**
      * The task group this tasks belongs to. See TaskGroup
@@ -81,21 +81,21 @@ open external class Task {
      * Defaults to undefined meaning that the task doesn't
      * belong to any special group.
      */
-//  group?: TaskGroup;
+//  group?: TaskGroup
 
     /**
      * The presentation options. Defaults to an empty literal.
      */
-//  presentationOptions: TaskPresentationOptions;
+//  presentationOptions: TaskPresentationOptions
 
     /**
      * The problem matchers attached to the task. Defaults to an empty
      * array.
      */
-//  problemMatchers: string[];
+//  problemMatchers: string[]
 
     /**
      * Run options for the task
      */
-//  runOptions: RunOptions;
+//  runOptions: RunOptions
 }

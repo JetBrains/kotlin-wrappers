@@ -15,7 +15,7 @@ external interface TextDocumentContentProvider {
     /**
      * An event to signal a resource has changed.
      */
-//  onDidChange?: Event<Uri>;
+//  onDidChange?: Event<Uri>
 
     /**
      * Provide textual content for a given uri.
@@ -31,5 +31,5 @@ external interface TextDocumentContentProvider {
      * @param token A cancellation token.
      * @returns A string or a thenable that resolves to such.
      */
-//  provideTextDocumentContent(uri: Uri, token: CancellationToken): ProviderResult<string>;
+//  provideTextDocumentContent(uri: Uri, token: CancellationToken): ProviderResult<string>
 }

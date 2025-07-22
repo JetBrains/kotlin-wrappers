@@ -9,12 +9,12 @@ external interface InputBoxOptions {
     /**
      * An optional string that represents the title of the input box.
      */
-//  title?: string;
+//  title?: string
 
     /**
      * The value to pre-fill in the input box.
      */
-//  value?: string;
+//  value?: string
 
     /**
      * Selection of the pre-filled {@linkcode InputBoxOptions.value value}. Defined as tuple of two number where the
@@ -22,28 +22,28 @@ external interface InputBoxOptions {
      * pre-filled value will be selected, when empty (start equals end) only the cursor will be set,
      * otherwise the defined range will be selected.
      */
-//  valueSelection?: [number, number];
+//  valueSelection?: [number, number]
 
     /**
      * The text to display underneath the input box.
      */
-//  prompt?: string;
+//  prompt?: string
 
     /**
      * An optional string to show as placeholder in the input box to guide the user what to type.
      */
-//  placeHolder?: string;
+//  placeHolder?: string
 
     /**
      * Controls if a password input is shown. Password input hides the typed text.
      */
-//  password?: boolean;
+//  password?: boolean
 
     /**
      * Set to `true` to keep the input box open when focus moves to another part of the editor or to another window.
      * This setting is ignored on iPad and is always false.
      */
-//  ignoreFocusOut?: boolean;
+//  ignoreFocusOut?: boolean
 
     /**
      * An optional function that will be called to validate input and to give a hint
@@ -55,6 +55,6 @@ external interface InputBoxOptions {
      */
     /*
     validateInput?(value: string): string | InputBoxValidationMessage | undefined | null |
-        Thenable<string | InputBoxValidationMessage | undefined | null>;
+        Thenable<string | InputBoxValidationMessage | undefined | null>
     */
 }

@@ -18,7 +18,7 @@ external interface NotebookSerializer {
      * @param token A cancellation token.
      * @returns Notebook data or a thenable that resolves to such.
      */
-//  deserializeNotebook(content: Uint8Array, token: CancellationToken): NotebookData | Thenable<NotebookData>;
+//  deserializeNotebook(content: Uint8Array, token: CancellationToken): NotebookData | Thenable<NotebookData>
 
     /**
      * Serialize notebook data into file contents.
@@ -27,5 +27,5 @@ external interface NotebookSerializer {
      * @param token A cancellation token.
      * @returns An array of bytes or a thenable that resolves to such.
      */
-//  serializeNotebook(data: NotebookData, token: CancellationToken): Uint8Array | Thenable<Uint8Array>;
+//  serializeNotebook(data: NotebookData, token: CancellationToken): Uint8Array | Thenable<Uint8Array>
 }

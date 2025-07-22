@@ -8,7 +8,7 @@ package vscode
  * Identifies a {@linkcode DocumentDropEdit} or {@linkcode DocumentPasteEdit}
  */
 open external class DocumentDropOrPasteEditKind {
-//  static readonly Empty: DocumentDropOrPasteEditKind;
+//  static readonly Empty: DocumentDropOrPasteEditKind
 
     /**
      * The root kind for basic text edits.
@@ -22,17 +22,17 @@ open external class DocumentDropOrPasteEditKind {
      * inserted should be used instead. For example, if the edit adds a Markdown link, use `markdown.link` since even
      * though the content being inserted is text, it's more important to know that the edit inserts Markdown syntax.
      */
-//  static readonly Text: DocumentDropOrPasteEditKind;
+//  static readonly Text: DocumentDropOrPasteEditKind
 
     /**
      * Root kind for edits that update imports in a document in addition to inserting text.
      */
-//  static readonly TextUpdateImports: DocumentDropOrPasteEditKind;
+//  static readonly TextUpdateImports: DocumentDropOrPasteEditKind
 
     /**
      * Use {@linkcode DocumentDropOrPasteEditKind.Empty} instead.
      */
-//  private constructor(value: string);
+//  private constructor(value: string)
 
     /**
      * The raw string value of the kind.
@@ -44,7 +44,7 @@ open external class DocumentDropOrPasteEditKind {
      *
      * Does not modify the current kind.
      */
-//  append(...parts: string[]): DocumentDropOrPasteEditKind;
+//  append(...parts: string[]): DocumentDropOrPasteEditKind
 
     /**
      * Checks if this kind intersects `other`.
@@ -54,7 +54,7 @@ open external class DocumentDropOrPasteEditKind {
      *
      * @param other Kind to check.
      */
-//  intersects(other: DocumentDropOrPasteEditKind): boolean;
+//  intersects(other: DocumentDropOrPasteEditKind): boolean
 
     /**
      * Checks if `other` is a sub-kind of this `DocumentDropOrPasteEditKind`.
@@ -64,5 +64,5 @@ open external class DocumentDropOrPasteEditKind {
      *
      * @param other Kind to check.
      */
-//  contains(other: DocumentDropOrPasteEditKind): boolean;
+//  contains(other: DocumentDropOrPasteEditKind): boolean
 }

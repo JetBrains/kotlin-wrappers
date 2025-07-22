@@ -23,5 +23,5 @@ external interface DataTransferFile {
     /**
      * The full file contents of the file.
      */
-//  data(): Thenable<Uint8Array>;
+//  data(): Thenable<Uint8Array>
 }

@@ -11,7 +11,7 @@ external interface TreeDataProvider<T> {
      * This will trigger the view to update the changed element/root and its children recursively (if shown).
      * To signal that root has changed, do not pass any argument or pass `undefined` or `null`.
      */
-//  onDidChangeTreeData?: Event<T | T[] | undefined | null | void>;
+//  onDidChangeTreeData?: Event<T | T[] | undefined | null | void>
 
     /**
      * Get {@link TreeItem} representation of the `element`
@@ -19,7 +19,7 @@ external interface TreeDataProvider<T> {
      * @param element The element for which {@link TreeItem} representation is asked for.
      * @returns TreeItem representation of the element.
      */
-//  getTreeItem(element: T): TreeItem | Thenable<TreeItem>;
+//  getTreeItem(element: T): TreeItem | Thenable<TreeItem>
 
     /**
      * Get the children of `element` or root if no element is passed.
@@ -27,7 +27,7 @@ external interface TreeDataProvider<T> {
      * @param element The element from which the provider gets children. Can be `undefined`.
      * @returns Children of `element` or root if no element is passed.
      */
-//  getChildren(element?: T): ProviderResult<T[]>;
+//  getChildren(element?: T): ProviderResult<T[]>
 
     /**
      * Optional method to return the parent of `element`.
@@ -38,7 +38,7 @@ external interface TreeDataProvider<T> {
      * @param element The element for which the parent has to be returned.
      * @returns Parent of `element`.
      */
-//  getParent?(element: T): ProviderResult<T>;
+//  getParent?(element: T): ProviderResult<T>
 
     /**
      * Called on hover to resolve the {@link TreeItem.tooltip TreeItem} property if it is undefined.
@@ -61,5 +61,5 @@ external interface TreeDataProvider<T> {
      * @returns The resolved tree item or a thenable that resolves to such. It is OK to return the given
      * `item`. When no result is returned, the given `item` will be used.
      */
-//  resolveTreeItem?(item: TreeItem, element: T, token: CancellationToken): ProviderResult<TreeItem>;
+//  resolveTreeItem?(item: TreeItem, element: T, token: CancellationToken): ProviderResult<TreeItem>
 }

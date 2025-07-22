@@ -10,11 +10,11 @@ external interface Clipboard {
      * Read the current clipboard contents as text.
      * @returns A thenable that resolves to a string.
      */
-//  readText(): Thenable<string>;
+//  readText(): Thenable<string>
 
     /**
      * Writes text into the clipboard.
      * @returns A thenable that resolves when writing happened.
      */
-//  writeText(value: string): Thenable<void>;
+//  writeText(value: string): Thenable<void>
 }

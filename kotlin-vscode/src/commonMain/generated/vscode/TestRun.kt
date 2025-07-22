@@ -29,19 +29,19 @@ external interface TestRun {
      * Indicates a test is queued for later execution.
      * @param test Test item to update.
      */
-//  enqueued(test: TestItem): void;
+//  enqueued(test: TestItem): void
 
     /**
      * Indicates a test has started running.
      * @param test Test item to update.
      */
-//  started(test: TestItem): void;
+//  started(test: TestItem): void
 
     /**
      * Indicates a test has been skipped.
      * @param test Test item to update.
      */
-//  skipped(test: TestItem): void;
+//  skipped(test: TestItem): void
 
     /**
      * Indicates a test has failed. You should pass one or more
@@ -50,7 +50,7 @@ external interface TestRun {
      * @param message Messages associated with the test failure.
      * @param duration How long the test took to execute, in milliseconds.
      */
-//  failed(test: TestItem, message: TestMessage | readonly TestMessage[], duration?: number): void;
+//  failed(test: TestItem, message: TestMessage | readonly TestMessage[], duration?: number): void
 
     /**
      * Indicates a test has errored. You should pass one or more
@@ -61,14 +61,14 @@ external interface TestRun {
      * @param message Messages associated with the test failure.
      * @param duration How long the test took to execute, in milliseconds.
      */
-//  errored(test: TestItem, message: TestMessage | readonly TestMessage[], duration?: number): void;
+//  errored(test: TestItem, message: TestMessage | readonly TestMessage[], duration?: number): void
 
     /**
      * Indicates a test has passed.
      * @param test Test item to update.
      * @param duration How long the test took to execute, in milliseconds.
      */
-//  passed(test: TestItem, duration?: number): void;
+//  passed(test: TestItem, duration?: number): void
 
     /**
      * Appends raw output from the test runner. On the user's request, the
@@ -81,22 +81,22 @@ external interface TestRun {
      * location.
      * @param test Test item to associate the output with.
      */
-//  appendOutput(output: string, location?: Location, test?: TestItem): void;
+//  appendOutput(output: string, location?: Location, test?: TestItem): void
 
     /**
      * Adds coverage for a file in the run.
      */
-//  addCoverage(fileCoverage: FileCoverage): void;
+//  addCoverage(fileCoverage: FileCoverage): void
 
     /**
      * Signals the end of the test run. Any tests included in the run whose
      * states have not been updated will have their state reset.
      */
-//  end(): void;
+//  end(): void
 
     /**
      * An event fired when the editor is no longer interested in data
      * associated with the test run.
      */
-//  onDidDispose: Event<void>;
+//  onDidDispose: Event<void>
 }

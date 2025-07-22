@@ -21,5 +21,5 @@ open external class DebugThread {
     /**
      * @hidden
      */
-//  private constructor(session: DebugSession, threadId: number);
+//  private constructor(session: DebugSession, threadId: number)
 }

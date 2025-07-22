@@ -60,7 +60,7 @@ external interface FileSystemProvider {
          * A list of paths and pattern to exclude from watching.
          */
         readonly excludes: readonly string[];
-    }): Disposable;
+    }): Disposable
     */
 
     /**
@@ -74,7 +74,7 @@ external interface FileSystemProvider {
      * @returns The file metadata about the file.
      * @throws {@linkcode FileSystemError.FileNotFound FileNotFound} when `uri` doesn't exist.
      */
-//  stat(uri: Uri): FileStat | Thenable<FileStat>;
+//  stat(uri: Uri): FileStat | Thenable<FileStat>
 
     /**
      * Retrieve all entries of a {@link FileType.Directory directory}.
@@ -83,7 +83,7 @@ external interface FileSystemProvider {
      * @returns An array of name/type-tuples or a thenable that resolves to such.
      * @throws {@linkcode FileSystemError.FileNotFound FileNotFound} when `uri` doesn't exist.
      */
-//  readDirectory(uri: Uri): [string, FileType][] | Thenable<[string, FileType][]>;
+//  readDirectory(uri: Uri): [string, FileType][] | Thenable<[string, FileType][]>
 
     /**
      * Create a new directory (Note, that new files are created via `write`-calls).
@@ -93,7 +93,7 @@ external interface FileSystemProvider {
      * @throws {@linkcode FileSystemError.FileExists FileExists} when `uri` already exists.
      * @throws {@linkcode FileSystemError.NoPermissions NoPermissions} when permissions aren't sufficient.
      */
-//  createDirectory(uri: Uri): void | Thenable<void>;
+//  createDirectory(uri: Uri): void | Thenable<void>
 
     /**
      * Read the entire contents of a file.
@@ -102,7 +102,7 @@ external interface FileSystemProvider {
      * @returns An array of bytes or a thenable that resolves to such.
      * @throws {@linkcode FileSystemError.FileNotFound FileNotFound} when `uri` doesn't exist.
      */
-//  readFile(uri: Uri): Uint8Array | Thenable<Uint8Array>;
+//  readFile(uri: Uri): Uint8Array | Thenable<Uint8Array>
 
     /**
      * Write data to a file, replacing its entire contents.
@@ -125,7 +125,7 @@ external interface FileSystemProvider {
          * Overwrite the file if it does exist.
          */
         readonly overwrite: boolean;
-    }): void | Thenable<void>;
+    }): void | Thenable<void>
     */
 
     /**
@@ -142,7 +142,7 @@ external interface FileSystemProvider {
          * Delete the content recursively if a folder is denoted.
          */
         readonly recursive: boolean;
-    }): void | Thenable<void>;
+    }): void | Thenable<void>
     */
 
     /**
@@ -162,7 +162,7 @@ external interface FileSystemProvider {
          * Overwrite the file if it does exist.
          */
         readonly overwrite: boolean;
-    }): void | Thenable<void>;
+    }): void | Thenable<void>
     */
 
     /**
@@ -183,6 +183,6 @@ external interface FileSystemProvider {
          * Overwrite the file if it does exist.
          */
         readonly overwrite: boolean;
-    }): void | Thenable<void>;
+    }): void | Thenable<void>
     */
 }

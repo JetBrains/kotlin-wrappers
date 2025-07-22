@@ -25,29 +25,29 @@ open external class CompletionItem {
      * this is also the text that is inserted when selecting
      * this completion.
      */
-//  label: string | CompletionItemLabel;
+//  label: string | CompletionItemLabel
 
     /**
      * The kind of this completion item. Based on the kind
      * an icon is chosen by the editor.
      */
-//  kind?: CompletionItemKind;
+//  kind?: CompletionItemKind
 
     /**
      * Tags for this completion item.
      */
-//  tags?: readonly CompletionItemTag[];
+//  tags?: readonly CompletionItemTag[]
 
     /**
      * A human-readable string with additional information
      * about this item, like type or symbol information.
      */
-//  detail?: string;
+//  detail?: string
 
     /**
      * A human-readable string that represents a doc-comment.
      */
-//  documentation?: string | MarkdownString;
+//  documentation?: string | MarkdownString
 
     /**
      * A string that should be used when comparing this item
@@ -61,7 +61,7 @@ open external class CompletionItem {
      * {@linkcode CompletionItem.range range}-property and can therefore be different
      * for each completion.
      */
-//  sortText?: string;
+//  sortText?: string
 
     /**
      * A string that should be used when filtering a set of
@@ -71,21 +71,21 @@ open external class CompletionItem {
      * Note that the filter text is matched against the leading word (prefix) which is defined
      * by the {@linkcode CompletionItem.range range}-property.
      */
-//  filterText?: string;
+//  filterText?: string
 
     /**
      * Select this item when showing. *Note* that only one completion item can be selected and
      * that the editor decides which item that is. The rule is that the *first* item of those
      * that match best is selected.
      */
-//  preselect?: boolean;
+//  preselect?: boolean
 
     /**
      * A string or snippet that should be inserted in a document when selecting
      * this completion. When `falsy` the {@link CompletionItem.label label}
      * is used.
      */
-//  insertText?: string | SnippetString;
+//  insertText?: string | SnippetString
 
     /**
      * A range or a insert and replace range selecting the text that should be replaced by this completion item.
@@ -108,7 +108,7 @@ open external class CompletionItem {
          * The range that should be used when replace-accepting a completion.
          */
         replacing: Range;
-    };
+    }
     */
 
     /**
@@ -116,14 +116,14 @@ open external class CompletionItem {
      * then type that character. *Note* that all commit characters should have `length=1` and that superfluous
      * characters will be ignored.
      */
-//  commitCharacters?: string[];
+//  commitCharacters?: string[]
 
     /**
      * Keep whitespace of the {@link CompletionItem.insertText insertText} as is. By default, the editor adjusts leading
      * whitespace of new lines so that they match the indentation of the line for which the item is accepted - setting
      * this to `true` will prevent that.
      */
-//  keepWhitespace?: boolean;
+//  keepWhitespace?: boolean
 
     /**
      * @deprecated Use `CompletionItem.insertText` and `CompletionItem.range` instead.
@@ -135,21 +135,21 @@ open external class CompletionItem {
      * The {@link Range} of the edit must be single-line and on the same
      * line completions were {@link CompletionItemProvider.provideCompletionItems requested} at.
      */
-//  textEdit?: TextEdit;
+//  textEdit?: TextEdit
 
     /**
      * An optional array of additional {@link TextEdit text edits} that are applied when
      * selecting this completion. Edits must not overlap with the main {@link CompletionItem.textEdit edit}
      * nor with themselves.
      */
-//  additionalTextEdits?: TextEdit[];
+//  additionalTextEdits?: TextEdit[]
 
     /**
      * An optional {@link Command} that is executed *after* inserting this completion. *Note* that
      * additional modifications to the current document should be described with the
      * {@link CompletionItem.additionalTextEdits additionalTextEdits}-property.
      */
-//  command?: Command;
+//  command?: Command
 
     /**
      * Creates a new completion item.
@@ -160,5 +160,5 @@ open external class CompletionItem {
      * @param label The label of the completion.
      * @param kind The {@link CompletionItemKind kind} of the completion.
      */
-//  constructor(label: string | CompletionItemLabel, kind?: CompletionItemKind);
+//  constructor(label: string | CompletionItemLabel, kind?: CompletionItemKind)
 }

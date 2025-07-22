@@ -22,7 +22,7 @@ external interface ExtensionContext {
          * Function to clean up resources.
          */
         dispose(): any;
-    }[];
+    }[]
     */
 
     /**
@@ -51,7 +51,7 @@ external interface ExtensionContext {
          * @param keys The set of keys whose values are synced.
          */
         setKeysForSync(keys: readonly string[]): void;
-    };
+    }
     */
 
     /**
@@ -86,7 +86,7 @@ external interface ExtensionContext {
      * @param relativePath A relative path to a resource contained in the extension.
      * @returns The absolute path of the resource.
      */
-//  asAbsolutePath(relativePath: string): string;
+//  asAbsolutePath(relativePath: string): string
 
     /**
      * The uri of a workspace specific directory in which the extension

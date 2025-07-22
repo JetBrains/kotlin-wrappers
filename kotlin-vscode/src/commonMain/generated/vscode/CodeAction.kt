@@ -14,17 +14,17 @@ open external class CodeAction {
     /**
      * A short, human-readable, title for this code action.
      */
-//  title: string;
+//  title: string
 
     /**
      * A {@link WorkspaceEdit workspace edit} this code action performs.
      */
-//  edit?: WorkspaceEdit;
+//  edit?: WorkspaceEdit
 
     /**
      * {@link Diagnostic Diagnostics} that this code action resolves.
      */
-//  diagnostics?: Diagnostic[];
+//  diagnostics?: Diagnostic[]
 
     /**
      * A {@link Command} this code action executes.
@@ -32,14 +32,14 @@ open external class CodeAction {
      * If this command throws an exception, the editor displays the exception message to users in the editor at the
      * current cursor position.
      */
-//  command?: Command;
+//  command?: Command
 
     /**
      * {@link CodeActionKind Kind} of the code action.
      *
      * Used to filter code actions.
      */
-//  kind?: CodeActionKind;
+//  kind?: CodeActionKind
 
     /**
      * Marks this as a preferred action. Preferred actions are used by the `auto fix` command and can be targeted
@@ -48,7 +48,7 @@ open external class CodeAction {
      * A quick fix should be marked preferred if it properly addresses the underlying error.
      * A refactoring should be marked preferred if it is the most reasonable choice of actions to take.
      */
-//  isPreferred?: boolean;
+//  isPreferred?: boolean
 
     /**
      * Marks that the code action cannot currently be applied.
@@ -71,7 +71,7 @@ open external class CodeAction {
          * This is displayed in the code actions UI.
          */
         readonly reason: string;
-    };
+    }
     */
 
     /**
@@ -83,5 +83,5 @@ open external class CodeAction {
      * @param title The title of the code action.
      * @param kind The kind of the code action.
      */
-//  constructor(title: string, kind?: CodeActionKind);
+//  constructor(title: string, kind?: CodeActionKind)
 }

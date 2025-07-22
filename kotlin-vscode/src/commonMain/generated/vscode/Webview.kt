@@ -9,7 +9,7 @@ external interface Webview {
     /**
      * Content settings for the webview.
      */
-//  options: WebviewOptions;
+//  options: WebviewOptions
 
     /**
      * HTML contents of the webview.
@@ -36,7 +36,7 @@ external interface Webview {
      * properly sanitizing all untrusted input (including content from the workspace) and
      * setting a [content security policy](https://aka.ms/vscode-api-webview-csp).
      */
-//  html: string;
+//  html: string
 
     /**
      * Fired when the webview content posts a message.
@@ -78,7 +78,7 @@ external interface Webview {
      *   If you want confirm that a message as actually received, you can try having your webview posting a
      *   confirmation message back to your extension.
      */
-//  postMessage(message: any): Thenable<boolean>;
+//  postMessage(message: any): Thenable<boolean>
 
     /**
      * Convert a uri for the local file system to one that can be used inside webviews.
@@ -91,7 +91,7 @@ external interface Webview {
      * webview.html = `<img src="${webview.asWebviewUri(vscode.Uri.file('/Users/codey/workspace/cat.gif'))}">`
      * ```
      */
-//  asWebviewUri(localResource: Uri): Uri;
+//  asWebviewUri(localResource: Uri): Uri
 
     /**
      * Content security policy source for webview resources.

@@ -30,5 +30,5 @@ open external class SemanticTokensEdits {
      * @param edits An array of semantic token edits
      * @param resultId Result identifier.
      */
-//  constructor(edits: SemanticTokensEdit[], resultId?: string);
+//  constructor(edits: SemanticTokensEdit[], resultId?: string)
 }

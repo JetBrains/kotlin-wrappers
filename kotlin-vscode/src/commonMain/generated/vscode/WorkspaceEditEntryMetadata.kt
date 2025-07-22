@@ -11,20 +11,20 @@ external interface WorkspaceEditEntryMetadata {
     /**
      * A flag which indicates that user confirmation is needed.
      */
-//  needsConfirmation: boolean;
+//  needsConfirmation: boolean
 
     /**
      * A human-readable string which is rendered prominent.
      */
-//  label: string;
+//  label: string
 
     /**
      * A human-readable string which is rendered less prominent on the same line.
      */
-//  description?: string;
+//  description?: string
 
     /**
      * The icon path or {@link ThemeIcon} for the edit.
      */
-//  iconPath?: IconPath;
+//  iconPath?: IconPath
 }

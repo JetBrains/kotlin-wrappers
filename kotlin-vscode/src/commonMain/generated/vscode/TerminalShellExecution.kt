@@ -54,5 +54,5 @@ external interface TerminalShellExecution {
      *   console.log(data);
      * }
      */
-//  read(): AsyncIterable<string>;
+//  read(): AsyncIterable<string>
 }

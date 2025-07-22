@@ -16,5 +16,5 @@ external interface DeclarationProvider {
      * @returns A declaration or a thenable that resolves to such. The lack of a result can be
      * signaled by returning `undefined` or `null`.
      */
-//  provideDeclaration(document: TextDocument, position: Position, token: CancellationToken): ProviderResult<Declaration>;
+//  provideDeclaration(document: TextDocument, position: Position, token: CancellationToken): ProviderResult<Declaration>
 }

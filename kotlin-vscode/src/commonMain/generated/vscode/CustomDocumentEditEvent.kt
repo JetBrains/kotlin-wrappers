@@ -20,7 +20,7 @@ external interface CustomDocumentEditEvent<T : CustomDocument> {
      * extension should restore the document and editor to the state they were in just before this
      * edit was added to the editor's internal edit stack by `onDidChangeCustomDocument`.
      */
-//  undo(): Thenable<void> | void;
+//  undo(): Thenable<void> | void
 
     /**
      * Redo the edit operation.
@@ -29,7 +29,7 @@ external interface CustomDocumentEditEvent<T : CustomDocument> {
      * extension should restore the document and editor to the state they were in just after this
      * edit was added to the editor's internal edit stack by `onDidChangeCustomDocument`.
      */
-//  redo(): Thenable<void> | void;
+//  redo(): Thenable<void> | void
 
     /**
      * Display name describing the edit.

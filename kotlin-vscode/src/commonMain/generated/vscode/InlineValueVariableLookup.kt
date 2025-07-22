@@ -33,5 +33,5 @@ open external class InlineValueVariableLookup {
      * @param variableName The name of the variable to look up.
      * @param caseSensitiveLookup How to perform the lookup. If missing lookup is case sensitive.
      */
-//  constructor(range: Range, variableName?: string, caseSensitiveLookup?: boolean);
+//  constructor(range: Range, variableName?: string, caseSensitiveLookup?: boolean)
 }

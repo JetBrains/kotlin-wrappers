@@ -28,7 +28,7 @@ external interface NotebookCellExecution {
     /**
      * Set and unset the order of this cell execution.
      */
-//  executionOrder: number | undefined;
+//  executionOrder: number | undefined
 
     /**
      * Signal that the execution has begun.
@@ -36,7 +36,7 @@ external interface NotebookCellExecution {
      * @param startTime The time that execution began, in milliseconds in the Unix epoch. Used to drive the clock
      * that shows for how long a cell has been running. If not given, the clock won't be shown.
      */
-//  start(startTime?: number): void;
+//  start(startTime?: number): void
 
     /**
      * Signal that execution has ended.
@@ -46,7 +46,7 @@ external interface NotebookCellExecution {
      * If undefined, no check or X icon is shown.
      * @param endTime The time that execution finished, in milliseconds in the Unix epoch.
      */
-//  end(success: boolean | undefined, endTime?: number): void;
+//  end(success: boolean | undefined, endTime?: number): void
 
     /**
      * Clears the output of the cell that is executing or of another cell that is affected by this execution.
@@ -55,7 +55,7 @@ external interface NotebookCellExecution {
      * this execution.
      * @returns A thenable that resolves when the operation finished.
      */
-//  clearOutput(cell?: NotebookCell): Thenable<void>;
+//  clearOutput(cell?: NotebookCell): Thenable<void>
 
     /**
      * Replace the output of the cell that is executing or of another cell that is affected by this execution.
@@ -65,7 +65,7 @@ external interface NotebookCellExecution {
      * this execution.
      * @returns A thenable that resolves when the operation finished.
      */
-//  replaceOutput(out: NotebookCellOutput | readonly NotebookCellOutput[], cell?: NotebookCell): Thenable<void>;
+//  replaceOutput(out: NotebookCellOutput | readonly NotebookCellOutput[], cell?: NotebookCell): Thenable<void>
 
     /**
      * Append to the output of the cell that is executing or to another cell that is affected by this execution.
@@ -75,7 +75,7 @@ external interface NotebookCellExecution {
      * this execution.
      * @returns A thenable that resolves when the operation finished.
      */
-//  appendOutput(out: NotebookCellOutput | readonly NotebookCellOutput[], cell?: NotebookCell): Thenable<void>;
+//  appendOutput(out: NotebookCellOutput | readonly NotebookCellOutput[], cell?: NotebookCell): Thenable<void>
 
     /**
      * Replace all output items of existing cell output.
@@ -84,7 +84,7 @@ external interface NotebookCellExecution {
      * @param output Output object that already exists.
      * @returns A thenable that resolves when the operation finished.
      */
-//  replaceOutputItems(items: NotebookCellOutputItem | readonly NotebookCellOutputItem[], output: NotebookCellOutput): Thenable<void>;
+//  replaceOutputItems(items: NotebookCellOutputItem | readonly NotebookCellOutputItem[], output: NotebookCellOutput): Thenable<void>
 
     /**
      * Append output items to existing cell output.
@@ -93,5 +93,5 @@ external interface NotebookCellExecution {
      * @param output Output object that already exists.
      * @returns A thenable that resolves when the operation finished.
      */
-//  appendOutputItems(items: NotebookCellOutputItem | readonly NotebookCellOutputItem[], output: NotebookCellOutput): Thenable<void>;
+//  appendOutputItems(items: NotebookCellOutputItem | readonly NotebookCellOutputItem[], output: NotebookCellOutput): Thenable<void>
 }

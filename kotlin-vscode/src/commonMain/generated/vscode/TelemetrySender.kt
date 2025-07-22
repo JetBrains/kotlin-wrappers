@@ -24,7 +24,7 @@ external interface TelemetrySender {
      * @param eventName The name of the event which you are logging
      * @param data A serializable key value pair that is being logged
      */
-//  sendEventData(eventName: string, data?: Record<string, any>): void;
+//  sendEventData(eventName: string, data?: Record<string, any>): void
 
     /**
      * Function to send an error. Used within a {@link TelemetryLogger}
@@ -32,11 +32,11 @@ external interface TelemetrySender {
      * @param error The error being logged
      * @param data Any additional data to be collected with the exception
      */
-//  sendErrorData(error: Error, data?: Record<string, any>): void;
+//  sendErrorData(error: Error, data?: Record<string, any>): void
 
     /**
      * Optional flush function which will give this sender a chance to send any remaining events
      * as its {@link TelemetryLogger} is being disposed
      */
-//  flush?(): void | Thenable<void>;
+//  flush?(): void | Thenable<void>
 }

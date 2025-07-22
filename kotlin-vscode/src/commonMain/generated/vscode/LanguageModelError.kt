@@ -20,17 +20,17 @@ open external class LanguageModelError :
      * The requestor does not have permissions to use this
      * language model
      */
-//  static NoPermissions(message?: string): LanguageModelError;
+//  static NoPermissions(message?: string): LanguageModelError
 
     /**
      * The requestor is blocked from using this language model.
      */
-//  static Blocked(message?: string): LanguageModelError;
+//  static Blocked(message?: string): LanguageModelError
 
     /**
      * The language model does not exist.
      */
-//  static NotFound(message?: string): LanguageModelError;
+//  static NotFound(message?: string): LanguageModelError
 
     /**
      * A code that identifies this error.

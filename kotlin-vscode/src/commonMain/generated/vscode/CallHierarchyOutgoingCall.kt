@@ -11,14 +11,14 @@ open external class CallHierarchyOutgoingCall {
     /**
      * The item that is called.
      */
-//  to: CallHierarchyItem;
+//  to: CallHierarchyItem
 
     /**
      * The range at which this item is called. This is the range relative to the caller, e.g the item
      * passed to {@linkcode CallHierarchyProvider.provideCallHierarchyOutgoingCalls provideCallHierarchyOutgoingCalls}
      * and not {@linkcode CallHierarchyOutgoingCall.to this.to}.
      */
-//  fromRanges: Range[];
+//  fromRanges: Range[]
 
     /**
      * Create a new call object.
@@ -26,5 +26,5 @@ open external class CallHierarchyOutgoingCall {
      * @param item The item being called
      * @param fromRanges The ranges at which the calls appear.
      */
-//  constructor(item: CallHierarchyItem, fromRanges: Range[]);
+//  constructor(item: CallHierarchyItem, fromRanges: Range[])
 }

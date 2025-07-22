@@ -11,12 +11,12 @@ open external class ChatResponseMarkdownPart {
     /**
      * A markdown string or a string that should be interpreted as markdown.
      */
-//  value: MarkdownString;
+//  value: MarkdownString
 
     /**
      * Create a new ChatResponseMarkdownPart.
      *
      * @param value A markdown string or a string that should be interpreted as markdown. The boolean form of {@link MarkdownString.isTrusted} is NOT supported.
      */
-//  constructor(value: string | MarkdownString);
+//  constructor(value: string | MarkdownString)
 }

@@ -35,12 +35,12 @@ external interface SourceControl {
      * - display its UI-visible count as zero, and
      * - contribute the count of its {@link SourceControlResourceState resource states} to the UI-visible aggregated count for all source controls
      */
-//  count?: number;
+//  count?: number
 
     /**
      * An optional {@link QuickDiffProvider quick diff provider}.
      */
-//  quickDiffProvider?: QuickDiffProvider;
+//  quickDiffProvider?: QuickDiffProvider
 
     /**
      * Optional commit template string.
@@ -48,7 +48,7 @@ external interface SourceControl {
      * The Source Control viewlet will populate the Source Control
      * input with this value when appropriate.
      */
-//  commitTemplate?: string;
+//  commitTemplate?: string
 
     /**
      * Optional accept input command.
@@ -56,22 +56,22 @@ external interface SourceControl {
      * This command will be invoked when the user accepts the value
      * in the Source Control input.
      */
-//  acceptInputCommand?: Command;
+//  acceptInputCommand?: Command
 
     /**
      * Optional status bar commands.
      *
      * These commands will be displayed in the editor's status bar.
      */
-//  statusBarCommands?: Command[];
+//  statusBarCommands?: Command[]
 
     /**
      * Create a new {@link SourceControlResourceGroup resource group}.
      */
-//  createResourceGroup(id: string, label: string): SourceControlResourceGroup;
+//  createResourceGroup(id: string, label: string): SourceControlResourceGroup
 
     /**
      * Dispose this source control.
      */
-//  dispose(): void;
+//  dispose(): void
 }

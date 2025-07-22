@@ -21,7 +21,7 @@ open external class EvaluatableExpression {
     /*
      * If specified the expression overrides the extracted expression.
      */
-    readonly expression?: string | undefined;
+    readonly expression?: string | undefined
     */
 
     /**
@@ -30,5 +30,5 @@ open external class EvaluatableExpression {
      * @param range The range in the underlying document from which the evaluatable expression is extracted.
      * @param expression If specified overrides the extracted expression.
      */
-//  constructor(range: Range, expression?: string);
+//  constructor(range: Range, expression?: string)
 }

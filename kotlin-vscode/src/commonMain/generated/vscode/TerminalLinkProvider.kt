@@ -14,11 +14,11 @@ external interface TerminalLinkProvider<T : TerminalLink> {
      * @param token A cancellation token.
      * @returns A list of terminal links for the given line.
      */
-//  provideTerminalLinks(context: TerminalLinkContext, token: CancellationToken): ProviderResult<T[]>;
+//  provideTerminalLinks(context: TerminalLinkContext, token: CancellationToken): ProviderResult<T[]>
 
     /**
      * Handle an activated terminal link.
      * @param link The link to handle.
      */
-//  handleTerminalLink(link: T): ProviderResult<void>;
+//  handleTerminalLink(link: T): ProviderResult<void>
 }

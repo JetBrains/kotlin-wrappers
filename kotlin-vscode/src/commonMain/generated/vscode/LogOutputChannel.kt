@@ -27,7 +27,7 @@ external interface LogOutputChannel :
      *
      * @param message trace message to log
      */
-//  trace(message: string, ...args: any[]): void;
+//  trace(message: string, ...args: any[]): void
 
     /**
      * Outputs the given debug message to the channel.
@@ -36,7 +36,7 @@ external interface LogOutputChannel :
      *
      * @param message debug message to log
      */
-//  debug(message: string, ...args: any[]): void;
+//  debug(message: string, ...args: any[]): void
 
     /**
      * Outputs the given information message to the channel.
@@ -45,7 +45,7 @@ external interface LogOutputChannel :
      *
      * @param message info message to log
      */
-//  info(message: string, ...args: any[]): void;
+//  info(message: string, ...args: any[]): void
 
     /**
      * Outputs the given warning message to the channel.
@@ -54,7 +54,7 @@ external interface LogOutputChannel :
      *
      * @param message warning message to log
      */
-//  warn(message: string, ...args: any[]): void;
+//  warn(message: string, ...args: any[]): void
 
     /**
      * Outputs the given error or error message to the channel.
@@ -63,5 +63,5 @@ external interface LogOutputChannel :
      *
      * @param error Error or error message to log
      */
-//  error(error: string | Error, ...args: any[]): void;
+//  error(error: string | Error, ...args: any[]): void
 }

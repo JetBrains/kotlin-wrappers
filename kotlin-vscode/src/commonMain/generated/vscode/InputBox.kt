@@ -16,7 +16,7 @@ external interface InputBox :
     /**
      * Current input value.
      */
-//  value: string;
+//  value: string
 
     /**
      * Selection range in the input value. Defined as tuple of two number where the
@@ -27,17 +27,17 @@ external interface InputBox :
      * This property does not get updated when the user types or makes a selection,
      * but it can be updated by the extension.
      */
-//  valueSelection: readonly [number, number] | undefined;
+//  valueSelection: readonly [number, number] | undefined
 
     /**
      * Optional placeholder shown when no value has been input.
      */
-//  placeholder: string | undefined;
+//  placeholder: string | undefined
 
     /**
      * If the input value should be hidden. Defaults to false.
      */
-//  password: boolean;
+//  password: boolean
 
     /**
      * An event signaling when the value has changed.
@@ -52,7 +52,7 @@ external interface InputBox :
     /**
      * Buttons for actions in the UI.
      */
-//  buttons: readonly QuickInputButton[];
+//  buttons: readonly QuickInputButton[]
 
     /**
      * An event signaling when a button was triggered.
@@ -62,12 +62,12 @@ external interface InputBox :
     /**
      * An optional prompt text providing some ask or explanation to the user.
      */
-//  prompt: string | undefined;
+//  prompt: string | undefined
 
     /**
      * An optional validation message indicating a problem with the current input value.
      * By returning a string, the InputBox will use a default {@link InputBoxValidationSeverity} of Error.
      * Returning undefined clears the validation message.
      */
-//  validationMessage: string | InputBoxValidationMessage | undefined;
+//  validationMessage: string | InputBoxValidationMessage | undefined
 }

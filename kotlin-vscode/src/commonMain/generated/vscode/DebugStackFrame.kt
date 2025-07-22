@@ -26,5 +26,5 @@ open external class DebugStackFrame {
     /**
      * @hidden
      */
-//  private constructor(session: DebugSession, threadId: number, frameId: number);
+//  private constructor(session: DebugSession, threadId: number, frameId: number)
 }

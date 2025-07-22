@@ -22,7 +22,7 @@ open external class Uri {
      * @param strict Throw an error when `value` is empty or when no `scheme` can be parsed.
      * @returns A new Uri instance.
      */
-//  static parse(value: string, strict?: boolean): Uri;
+//  static parse(value: string, strict?: boolean): Uri
 
     /**
      * Create an URI from a file system path. The {@link Uri.scheme scheme}
@@ -47,7 +47,7 @@ open external class Uri {
      * @param path A file system or UNC path.
      * @returns A new Uri instance.
      */
-//  static file(path: string): Uri;
+//  static file(path: string): Uri
 
     /**
      * Create a new uri which path is the result of joining
@@ -69,7 +69,7 @@ open external class Uri {
      * @param pathSegments One more more path fragments
      * @returns A new uri which path is joined with the given fragments
      */
-//  static joinPath(base: Uri, ...pathSegments: string[]): Uri;
+//  static joinPath(base: Uri, ...pathSegments: string[]): Uri
 
     /**
      * Create an URI from its component parts
@@ -100,13 +100,13 @@ open external class Uri {
          * The fragment identifier of the uri
          */
         readonly fragment?: string;
-    }): Uri;
+    }): Uri
     */
 
     /**
      * Use the `file` and `parse` factory functions to create new `Uri` objects.
      */
-//  private constructor(scheme: string, authority: string, path: string, query: string, fragment: string);
+//  private constructor(scheme: string, authority: string, path: string, query: string, fragment: string)
 
     /**
      * Scheme is the `http` part of `http://www.example.com/some/path?query#fragment`.
@@ -193,7 +193,7 @@ open external class Uri {
          * The new fragment, defaults to this Uri's fragment.
          */
         fragment?: string;
-    }): Uri;
+    }): Uri
     */
 
     /**
@@ -213,12 +213,12 @@ open external class Uri {
      *	the `#` and `?` characters occurring in the path will always be encoded.
      * @returns A string representation of this Uri.
      */
-//  toString(skipEncoding?: boolean): string;
+//  toString(skipEncoding?: boolean): string
 
     /**
      * Returns a JSON representation of this Uri.
      *
      * @returns An object.
      */
-//  toJSON(): any;
+//  toJSON(): any
 }

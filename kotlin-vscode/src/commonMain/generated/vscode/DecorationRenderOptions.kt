@@ -11,26 +11,26 @@ external interface DecorationRenderOptions :
      * Should the decoration be rendered also on the whitespace after the line text.
      * Defaults to `false`.
      */
-//  isWholeLine?: boolean;
+//  isWholeLine?: boolean
 
     /**
      * Customize the growing behavior of the decoration when edits occur at the edges of the decoration's range.
      * Defaults to `DecorationRangeBehavior.OpenOpen`.
      */
-//  rangeBehavior?: DecorationRangeBehavior;
+//  rangeBehavior?: DecorationRangeBehavior
 
     /**
      * The position in the overview ruler where the decoration should be rendered.
      */
-//  overviewRulerLane?: OverviewRulerLane;
+//  overviewRulerLane?: OverviewRulerLane
 
     /**
      * Overwrite options for light themes.
      */
-//  light?: ThemableDecorationRenderOptions;
+//  light?: ThemableDecorationRenderOptions
 
     /**
      * Overwrite options for dark themes.
      */
-//  dark?: ThemableDecorationRenderOptions;
+//  dark?: ThemableDecorationRenderOptions
 }

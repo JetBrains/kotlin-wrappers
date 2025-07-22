@@ -10,7 +10,7 @@ external interface DocumentSemanticTokensProvider {
     /**
      * An optional event to signal that the semantic tokens from this provider have changed.
      */
-//  onDidChangeSemanticTokens?: Event<void>;
+//  onDidChangeSemanticTokens?: Event<void>
 
     /**
      * Tokens in a file are represented as an array of integers. The position of each token is expressed relative to
@@ -71,7 +71,7 @@ external interface DocumentSemanticTokensProvider {
      * *NOTE*: When doing edits, it is possible that multiple edits occur until the editor decides to invoke the semantic tokens provider.
      * *NOTE*: If the provider cannot temporarily compute semantic tokens, it can indicate this by throwing an error with the message 'Busy'.
      */
-//  provideDocumentSemanticTokens(document: TextDocument, token: CancellationToken): ProviderResult<SemanticTokens>;
+//  provideDocumentSemanticTokens(document: TextDocument, token: CancellationToken): ProviderResult<SemanticTokens>
 
     /**
      * Instead of always returning all the tokens in a file, it is possible for a `DocumentSemanticTokensProvider` to implement
@@ -102,5 +102,5 @@ external interface DocumentSemanticTokensProvider {
      * *NOTE*: If the provider cannot compute `SemanticTokensEdits`, it can "give up" and return all the tokens in the document again.
      * *NOTE*: All edits in `SemanticTokensEdits` contain indices in the old integers array, so they all refer to the previous result state.
      */
-//  provideDocumentSemanticTokensEdits?(document: TextDocument, previousResultId: string, token: CancellationToken): ProviderResult<SemanticTokens | SemanticTokensEdits>;
+//  provideDocumentSemanticTokensEdits?(document: TextDocument, previousResultId: string, token: CancellationToken): ProviderResult<SemanticTokens | SemanticTokensEdits>
 }

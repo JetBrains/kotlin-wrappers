@@ -16,17 +16,17 @@ open external class NotebookData {
     /**
      * The cell data of this notebook data.
      */
-//  cells: NotebookCellData[];
+//  cells: NotebookCellData[]
 
     /**
      * Arbitrary metadata of notebook data.
      */
-//  metadata?: { [key: string]: any };
+//  metadata?: { [key: string]: any }
 
     /**
      * Create new notebook data.
      *
      * @param cells An array of cell data.
      */
-//  constructor(cells: NotebookCellData[]);
+//  constructor(cells: NotebookCellData[])
 }

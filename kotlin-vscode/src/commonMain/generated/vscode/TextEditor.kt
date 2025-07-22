@@ -16,12 +16,12 @@ external interface TextEditor {
     /**
      * The primary selection on this text editor. Shorthand for `TextEditor.selections[0]`.
      */
-//  selection: Selection;
+//  selection: Selection
 
     /**
      * The selections in this text editor. The primary selection is always at index 0.
      */
-//  selections: readonly Selection[];
+//  selections: readonly Selection[]
 
     /**
      * The current visible ranges in the editor (vertically).
@@ -32,7 +32,7 @@ external interface TextEditor {
     /**
      * Text editor options.
      */
-//  options: TextEditorOptions;
+//  options: TextEditorOptions
 
     /**
      * The column in which this editor shows. Will be `undefined` in case this
@@ -62,7 +62,7 @@ external interface TextEditor {
          * Add undo stop after making the edits.
          */
         readonly undoStopAfter: boolean;
-    }): Thenable<boolean>;
+    }): Thenable<boolean>
     */
 
     /**
@@ -90,7 +90,7 @@ external interface TextEditor {
          * Keep whitespace of the {@link SnippetString.value} as is.
          */
         readonly keepWhitespace?: boolean;
-    }): Thenable<boolean>;
+    }): Thenable<boolean>
     */
 
     /**
@@ -104,7 +104,7 @@ external interface TextEditor {
      * @param decorationType A decoration type.
      * @param rangesOrOptions Either {@link Range ranges} or more detailed {@link DecorationOptions options}.
      */
-//  setDecorations(decorationType: TextEditorDecorationType, rangesOrOptions: readonly Range[] | readonly DecorationOptions[]): void;
+//  setDecorations(decorationType: TextEditorDecorationType, rangesOrOptions: readonly Range[] | readonly DecorationOptions[]): void
 
     /**
      * Scroll as indicated by `revealType` in order to reveal the given range.
@@ -112,7 +112,7 @@ external interface TextEditor {
      * @param range A range.
      * @param revealType The scrolling strategy for revealing `range`.
      */
-//  revealRange(range: Range, revealType?: TextEditorRevealType): void;
+//  revealRange(range: Range, revealType?: TextEditorRevealType): void
 
     /**
      * Show the text editor.
@@ -122,7 +122,7 @@ external interface TextEditor {
      * @param column The {@link ViewColumn column} in which to show this editor.
      * This method shows unexpected behavior and will be removed in the next major update.
      */
-//  show(column?: ViewColumn): void;
+//  show(column?: ViewColumn): void
 
     /**
      * Hide the text editor.
@@ -130,5 +130,5 @@ external interface TextEditor {
      * @deprecated Use the command `workbench.action.closeActiveEditor` instead.
      * This method shows unexpected behavior and will be removed in the next major update.
      */
-//  hide(): void;
+//  hide(): void
 }

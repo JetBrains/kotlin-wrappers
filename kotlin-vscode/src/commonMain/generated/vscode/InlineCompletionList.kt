@@ -12,10 +12,10 @@ open external class InlineCompletionList {
     /**
      * The inline completion items.
      */
-//  items: InlineCompletionItem[];
+//  items: InlineCompletionItem[]
 
     /**
      * Creates a new list of inline completion items.
      */
-//  constructor(items: InlineCompletionItem[]);
+//  constructor(items: InlineCompletionItem[])
 }

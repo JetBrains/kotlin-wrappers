@@ -17,7 +17,7 @@ external interface FileSystem {
      * @param uri The uri of the file to retrieve metadata about.
      * @returns The file metadata about the file.
      */
-//  stat(uri: Uri): Thenable<FileStat>;
+//  stat(uri: Uri): Thenable<FileStat>
 
     /**
      * Retrieve all entries of a {@link FileType.Directory directory}.
@@ -25,7 +25,7 @@ external interface FileSystem {
      * @param uri The uri of the folder.
      * @returns An array of name/type-tuples or a thenable that resolves to such.
      */
-//  readDirectory(uri: Uri): Thenable<[string, FileType][]>;
+//  readDirectory(uri: Uri): Thenable<[string, FileType][]>
 
     /**
      * Create a new directory (Note, that new files are created via `write`-calls).
@@ -35,7 +35,7 @@ external interface FileSystem {
      *
      * @param uri The uri of the new folder.
      */
-//  createDirectory(uri: Uri): Thenable<void>;
+//  createDirectory(uri: Uri): Thenable<void>
 
     /**
      * Read the entire contents of a file.
@@ -43,7 +43,7 @@ external interface FileSystem {
      * @param uri The uri of the file.
      * @returns An array of bytes or a thenable that resolves to such.
      */
-//  readFile(uri: Uri): Thenable<Uint8Array>;
+//  readFile(uri: Uri): Thenable<Uint8Array>
 
     /**
      * Write data to a file, replacing its entire contents.
@@ -51,7 +51,7 @@ external interface FileSystem {
      * @param uri The uri of the file.
      * @param content The new content of the file.
      */
-//  writeFile(uri: Uri, content: Uint8Array): Thenable<void>;
+//  writeFile(uri: Uri, content: Uint8Array): Thenable<void>
 
     /**
      * Delete a file.
@@ -69,7 +69,7 @@ external interface FileSystem {
          * Use the os's trashcan instead of permanently deleting files whenever possible.
          */
         useTrash?: boolean;
-    }): Thenable<void>;
+    }): Thenable<void>
     */
 
     /**
@@ -85,7 +85,7 @@ external interface FileSystem {
          * Overwrite the file if it does exist.
          */
         overwrite?: boolean;
-    }): Thenable<void>;
+    }): Thenable<void>
     */
 
     /**
@@ -101,7 +101,7 @@ external interface FileSystem {
          * Overwrite the file if it does exist.
          */
         overwrite?: boolean;
-    }): Thenable<void>;
+    }): Thenable<void>
     */
 
     /**
@@ -117,5 +117,5 @@ external interface FileSystem {
      * support writing (i.e. it is readonly), and `undefined` if the editor does not
      * know about the filesystem.
      */
-//  isWritableFileSystem(scheme: string): boolean | undefined;
+//  isWritableFileSystem(scheme: string): boolean | undefined
 }

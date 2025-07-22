@@ -13,12 +13,12 @@ open external class DocumentHighlight {
     /**
      * The range this highlight applies to.
      */
-//  range: Range;
+//  range: Range
 
     /**
      * The highlight kind, default is {@link DocumentHighlightKind.Text text}.
      */
-//  kind?: DocumentHighlightKind;
+//  kind?: DocumentHighlightKind
 
     /**
      * Creates a new document highlight object.
@@ -26,5 +26,5 @@ open external class DocumentHighlight {
      * @param range The range the highlight applies to.
      * @param kind The highlight kind, default is {@link DocumentHighlightKind.Text text}.
      */
-//  constructor(range: Range, kind?: DocumentHighlightKind);
+//  constructor(range: Range, kind?: DocumentHighlightKind)
 }

@@ -18,5 +18,5 @@ open external class CancellationError :
     /**
      * Creates a new cancellation error.
      */
-//  constructor();
+//  constructor()
 }

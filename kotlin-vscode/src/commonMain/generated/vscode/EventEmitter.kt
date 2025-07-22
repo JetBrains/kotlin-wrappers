@@ -16,7 +16,7 @@ open external class EventEmitter<T> {
     /**
      * The event listeners can subscribe to.
      */
-//  event: Event<T>;
+//  event: Event<T>
 
     /**
      * Notify all subscribers of the {@link EventEmitter.event event}. Failure
@@ -24,10 +24,10 @@ open external class EventEmitter<T> {
      *
      * @param data The event object.
      */
-//  fire(data: T): void;
+//  fire(data: T): void
 
     /**
      * Dispose this object and free resources.
      */
-//  dispose(): void;
+//  dispose(): void
 }

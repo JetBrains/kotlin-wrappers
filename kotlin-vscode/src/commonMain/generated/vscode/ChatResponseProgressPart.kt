@@ -11,11 +11,11 @@ open external class ChatResponseProgressPart {
     /**
      * The progress message
      */
-//  value: string;
+//  value: string
 
     /**
      * Create a new ChatResponseProgressPart.
      * @param value A progress message
      */
-//  constructor(value: string);
+//  constructor(value: string)
 }

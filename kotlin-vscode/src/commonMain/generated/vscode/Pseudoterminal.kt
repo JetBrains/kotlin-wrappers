@@ -33,7 +33,7 @@ external interface Pseudoterminal {
      * writeEmitter.fire('\x1b[10;20H*');
      * ```
      */
-//  onDidWrite: Event<string>;
+//  onDidWrite: Event<string>
 
     /**
      * An event that when fired allows overriding the {@link Pseudoterminal.setDimensions dimensions} of the
@@ -61,7 +61,7 @@ external interface Pseudoterminal {
      * vscode.window.createTerminal({ name: 'My terminal', pty });
      * ```
      */
-//  onDidOverrideDimensions?: Event<TerminalDimensions | undefined>;
+//  onDidOverrideDimensions?: Event<TerminalDimensions | undefined>
 
     /**
      * An event that when fired will signal that the pty is closed and dispose of the terminal.
@@ -93,7 +93,7 @@ external interface Pseudoterminal {
      * terminal.show(true);
      * ```
      */
-//  onDidClose?: Event<void | number>;
+//  onDidClose?: Event<void | number>
 
     /**
      * An event that when fired allows changing the name of the terminal.
@@ -113,7 +113,7 @@ external interface Pseudoterminal {
      * vscode.window.createTerminal({ name: 'My terminal', pty });
      * ```
      */
-//  onDidChangeName?: Event<string>;
+//  onDidChangeName?: Event<string>
 
     /**
      * Implement to handle when the pty is open and ready to start firing events.
@@ -121,12 +121,12 @@ external interface Pseudoterminal {
      * @param initialDimensions The dimensions of the terminal, this will be undefined if the
      * terminal panel has not been opened before this is called.
      */
-//  open(initialDimensions: TerminalDimensions | undefined): void;
+//  open(initialDimensions: TerminalDimensions | undefined): void
 
     /**
      * Implement to handle when the terminal is closed by an act of the user.
      */
-//  close(): void;
+//  close(): void
 
     /**
      * Implement to handle incoming keystrokes in the terminal or when an extension calls
@@ -148,7 +148,7 @@ external interface Pseudoterminal {
      * vscode.window.createTerminal({ name: 'Local echo', pty });
      * ```
      */
-//  handleInput?(data: string): void;
+//  handleInput?(data: string): void
 
     /**
      * Implement to handle when the number of rows and columns that fit into the terminal panel
@@ -163,5 +163,5 @@ external interface Pseudoterminal {
      *
      * @param dimensions The new dimensions.
      */
-//  setDimensions?(dimensions: TerminalDimensions): void;
+//  setDimensions?(dimensions: TerminalDimensions): void
 }

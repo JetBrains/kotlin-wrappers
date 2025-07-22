@@ -45,7 +45,7 @@ external interface NotebookDocumentWillSaveEvent {
      *
      * @param thenable A thenable that resolves to {@link WorkspaceEdit workspace edit}.
      */
-//  waitUntil(thenable: Thenable<WorkspaceEdit>): void;
+//  waitUntil(thenable: Thenable<WorkspaceEdit>): void
 
     /**
      * Allows to pause the event loop until the provided thenable resolved.
@@ -54,5 +54,5 @@ external interface NotebookDocumentWillSaveEvent {
      *
      * @param thenable A thenable that delays saving.
      */
-//  waitUntil(thenable: Thenable<any>): void;
+//  waitUntil(thenable: Thenable<any>): void
 }

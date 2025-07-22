@@ -16,21 +16,21 @@ open external class CodeActionKind {
     /**
      * Empty kind.
      */
-//  static readonly Empty: CodeActionKind;
+//  static readonly Empty: CodeActionKind
 
     /**
      * Base kind for quickfix actions: `quickfix`.
      *
      * Quick fix actions address a problem in the code and are shown in the normal code action context menu.
      */
-//  static readonly QuickFix: CodeActionKind;
+//  static readonly QuickFix: CodeActionKind
 
     /**
      * Base kind for refactoring actions: `refactor`
      *
      * Refactoring actions are shown in the refactoring context menu.
      */
-//  static readonly Refactor: CodeActionKind;
+//  static readonly Refactor: CodeActionKind
 
     /**
      * Base kind for refactoring extraction actions: `refactor.extract`
@@ -43,7 +43,7 @@ open external class CodeActionKind {
      * - Extract interface from class
      * - ...
      */
-//  static readonly RefactorExtract: CodeActionKind;
+//  static readonly RefactorExtract: CodeActionKind
 
     /**
      * Base kind for refactoring inline actions: `refactor.inline`
@@ -55,7 +55,7 @@ open external class CodeActionKind {
      * - Inline constant
      * - ...
      */
-//  static readonly RefactorInline: CodeActionKind;
+//  static readonly RefactorInline: CodeActionKind
 
     /**
      * Base kind for refactoring move actions: `refactor.move`
@@ -67,7 +67,7 @@ open external class CodeActionKind {
      * - Move method to base class
      * - ...
      */
-//  static readonly RefactorMove: CodeActionKind;
+//  static readonly RefactorMove: CodeActionKind
 
     /**
      * Base kind for refactoring rewrite actions: `refactor.rewrite`
@@ -80,7 +80,7 @@ open external class CodeActionKind {
      * - Make method static
      * - ...
      */
-//  static readonly RefactorRewrite: CodeActionKind;
+//  static readonly RefactorRewrite: CodeActionKind
 
     /**
      * Base kind for source actions: `source`
@@ -89,12 +89,12 @@ open external class CodeActionKind {
      * normal [lightbulb](https://code.visualstudio.com/docs/editor/editingevolved#_code-action) menu. Source actions
      * can be run on save using `editor.codeActionsOnSave` and are also shown in the `source` context menu.
      */
-//  static readonly Source: CodeActionKind;
+//  static readonly Source: CodeActionKind
 
     /**
      * Base kind for an organize imports source action: `source.organizeImports`.
      */
-//  static readonly SourceOrganizeImports: CodeActionKind;
+//  static readonly SourceOrganizeImports: CodeActionKind
 
     /**
      * Base kind for auto-fix source actions: `source.fixAll`.
@@ -102,7 +102,7 @@ open external class CodeActionKind {
      * Fix all actions automatically fix errors that have a clear fix that do not require user input.
      * They should not suppress errors or perform unsafe fixes such as generating new types or classes.
      */
-//  static readonly SourceFixAll: CodeActionKind;
+//  static readonly SourceFixAll: CodeActionKind
 
     /**
      * Base kind for all code actions applying to the entire notebook's scope. CodeActionKinds using
@@ -120,14 +120,14 @@ open external class CodeActionKind {
      * - `notebook.source.organizeImports` (might move all imports to a new top cell)
      * - `notebook.source.normalizeVariableNames` (might rename all variables to a standardized casing format)
      */
-//  static readonly Notebook: CodeActionKind;
+//  static readonly Notebook: CodeActionKind
 
     /**
      * Private constructor, use static `CodeActionKind.XYZ` to derive from an existing code action kind.
      *
      * @param value The value of the kind, such as `refactor.extract.function`.
      */
-//  private constructor(value: string);
+//  private constructor(value: string)
 
     /**
      * String value of the kind, e.g. `"refactor.extract.function"`.
@@ -139,7 +139,7 @@ open external class CodeActionKind {
      *
      * Does not modify the current kind.
      */
-//  append(parts: string): CodeActionKind;
+//  append(parts: string): CodeActionKind
 
     /**
      * Checks if this code action kind intersects `other`.
@@ -149,7 +149,7 @@ open external class CodeActionKind {
      *
      * @param other Kind to check.
      */
-//  intersects(other: CodeActionKind): boolean;
+//  intersects(other: CodeActionKind): boolean
 
     /**
      * Checks if `other` is a sub-kind of this `CodeActionKind`.
@@ -159,5 +159,5 @@ open external class CodeActionKind {
      *
      * @param other Kind to check.
      */
-//  contains(other: CodeActionKind): boolean;
+//  contains(other: CodeActionKind): boolean
 }

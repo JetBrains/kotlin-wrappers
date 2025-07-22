@@ -10,10 +10,10 @@ external interface LanguageModelToolConfirmationMessages {
     /**
      * The title of the confirmation message.
      */
-//  title: string;
+//  title: string
 
     /**
      * The body of the confirmation message.
      */
-//  message: string | MarkdownString;
+//  message: string | MarkdownString
 }

@@ -12,12 +12,12 @@ open external class Location {
     /**
      * The resource identifier of this location.
      */
-//  uri: Uri;
+//  uri: Uri
 
     /**
      * The document range of this location.
      */
-//  range: Range;
+//  range: Range
 
     /**
      * Creates a new location object.
@@ -25,5 +25,5 @@ open external class Location {
      * @param uri The resource identifier.
      * @param rangeOrPosition The range or position. Positions will be converted to an empty range.
      */
-//  constructor(uri: Uri, rangeOrPosition: Range | Position);
+//  constructor(uri: Uri, rangeOrPosition: Range | Position)
 }

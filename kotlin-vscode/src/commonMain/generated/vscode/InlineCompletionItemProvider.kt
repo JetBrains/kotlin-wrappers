@@ -22,5 +22,5 @@ external interface InlineCompletionItemProvider {
      * @param token A cancellation token.
      * @returns An array of completion items or a thenable that resolves to an array of completion items.
      */
-//  provideInlineCompletionItems(document: TextDocument, position: Position, context: InlineCompletionContext, token: CancellationToken): ProviderResult<InlineCompletionItem[] | InlineCompletionList>;
+//  provideInlineCompletionItems(document: TextDocument, position: Position, context: InlineCompletionContext, token: CancellationToken): ProviderResult<InlineCompletionItem[] | InlineCompletionList>
 }

@@ -19,7 +19,7 @@ external interface CallHierarchyProvider {
      * @returns One or multiple call hierarchy items or a thenable that resolves to such. The lack of a result can be
      * signaled by returning `undefined`, `null`, or an empty array.
      */
-//  prepareCallHierarchy(document: TextDocument, position: Position, token: CancellationToken): ProviderResult<CallHierarchyItem | CallHierarchyItem[]>;
+//  prepareCallHierarchy(document: TextDocument, position: Position, token: CancellationToken): ProviderResult<CallHierarchyItem | CallHierarchyItem[]>
 
     /**
      * Provide all incoming calls for an item, e.g all callers for a method. In graph terms this describes directed
@@ -31,7 +31,7 @@ external interface CallHierarchyProvider {
      * @returns A set of incoming calls or a thenable that resolves to such. The lack of a result can be
      * signaled by returning `undefined` or `null`.
      */
-//  provideCallHierarchyIncomingCalls(item: CallHierarchyItem, token: CancellationToken): ProviderResult<CallHierarchyIncomingCall[]>;
+//  provideCallHierarchyIncomingCalls(item: CallHierarchyItem, token: CancellationToken): ProviderResult<CallHierarchyIncomingCall[]>
 
     /**
      * Provide all outgoing calls for an item, e.g call calls to functions, methods, or constructors from the given item. In
@@ -43,5 +43,5 @@ external interface CallHierarchyProvider {
      * @returns A set of outgoing calls or a thenable that resolves to such. The lack of a result can be
      * signaled by returning `undefined` or `null`.
      */
-//  provideCallHierarchyOutgoingCalls(item: CallHierarchyItem, token: CancellationToken): ProviderResult<CallHierarchyOutgoingCall[]>;
+//  provideCallHierarchyOutgoingCalls(item: CallHierarchyItem, token: CancellationToken): ProviderResult<CallHierarchyOutgoingCall[]>
 }

@@ -13,7 +13,7 @@ open external class DataTransferItem {
      *
      * If {@linkcode DataTransferItem.value} is an object, this returns the result of json stringifying {@linkcode DataTransferItem.value} value.
      */
-//  asString(): Thenable<string>;
+//  asString(): Thenable<string>
 
     /**
      * Try getting the {@link DataTransferFile file} associated with this data transfer item.
@@ -23,7 +23,7 @@ open external class DataTransferItem {
      * @returns The file for the data transfer or `undefined` if the item is either not a file or the
      * file data cannot be accessed.
      */
-//  asFile(): DataTransferFile | undefined;
+//  asFile(): DataTransferFile | undefined
 
     /**
      * Custom data stored on this item.
@@ -36,5 +36,5 @@ open external class DataTransferItem {
     /**
      * @param value Custom data stored on this item. Can be retrieved using {@linkcode DataTransferItem.value}.
      */
-//  constructor(value: any);
+//  constructor(value: any)
 }

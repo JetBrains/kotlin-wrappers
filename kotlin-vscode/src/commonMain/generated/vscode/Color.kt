@@ -36,5 +36,5 @@ open external class Color {
      * @param blue The blue component.
      * @param alpha The alpha component.
      */
-//  constructor(red: number, green: number, blue: number, alpha: number);
+//  constructor(red: number, green: number, blue: number, alpha: number)
 }

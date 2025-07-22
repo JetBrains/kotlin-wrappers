@@ -10,10 +10,10 @@ external interface TaskFilter {
      * The task version as used in the tasks.json file.
      * The string support the package.json semver notation.
      */
-//  version?: string;
+//  version?: string
 
     /**
      * The task type to return;
      */
-//  type?: string;
+//  type?: string
 }

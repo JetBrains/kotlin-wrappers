@@ -24,7 +24,7 @@ open external class Disposable {
          * Function to clean up resources.
          */
         dispose: () => any;
-    }[]): Disposable;
+    }[]): Disposable
     */
 
     /**
@@ -35,10 +35,10 @@ open external class Disposable {
      *
      * @param callOnDispose Function that disposes something.
      */
-//  constructor(callOnDispose: () => any);
+//  constructor(callOnDispose: () => any)
 
     /**
      * Dispose this object.
      */
-//  dispose(): any;
+//  dispose(): any
 }

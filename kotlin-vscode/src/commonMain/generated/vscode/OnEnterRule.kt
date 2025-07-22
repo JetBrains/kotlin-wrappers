@@ -9,20 +9,20 @@ external interface OnEnterRule {
     /**
      * This rule will only execute if the text before the cursor matches this regular expression.
      */
-//  beforeText: RegExp;
+//  beforeText: RegExp
 
     /**
      * This rule will only execute if the text after the cursor matches this regular expression.
      */
-//  afterText?: RegExp;
+//  afterText?: RegExp
 
     /**
      * This rule will only execute if the text above the current line matches this regular expression.
      */
-//  previousLineText?: RegExp;
+//  previousLineText?: RegExp
 
     /**
      * The action to execute.
      */
-//  action: EnterAction;
+//  action: EnterAction
 }

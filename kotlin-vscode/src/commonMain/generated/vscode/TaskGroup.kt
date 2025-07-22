@@ -12,22 +12,22 @@ open external class TaskGroup {
     /**
      * The clean task group;
      */
-//  static Clean: TaskGroup;
+//  static Clean: TaskGroup
 
     /**
      * The build task group;
      */
-//  static Build: TaskGroup;
+//  static Build: TaskGroup
 
     /**
      * The rebuild all task group;
      */
-//  static Rebuild: TaskGroup;
+//  static Rebuild: TaskGroup
 
     /**
      * The test all task group;
      */
-//  static Test: TaskGroup;
+//  static Test: TaskGroup
 
     /**
      * Whether the task that is part of this group is the default for the group.
@@ -46,5 +46,5 @@ open external class TaskGroup {
      * @param id Identifier of a task group.
      * @param label The human-readable name of a task group.
      */
-//  private constructor(id: string, label: string);
+//  private constructor(id: string, label: string)
 }

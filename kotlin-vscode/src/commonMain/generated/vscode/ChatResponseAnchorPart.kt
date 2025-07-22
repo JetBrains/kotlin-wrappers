@@ -11,17 +11,17 @@ open external class ChatResponseAnchorPart {
     /**
      * The target of this anchor.
      */
-//  value: Uri | Location;
+//  value: Uri | Location
 
     /**
      * An optional title that is rendered with value.
      */
-//  title?: string;
+//  title?: string
 
     /**
      * Create a new ChatResponseAnchorPart.
      * @param value A uri or location.
      * @param title An optional title that is rendered with value.
      */
-//  constructor(value: Uri | Location, title?: string);
+//  constructor(value: Uri | Location, title?: string)
 }

@@ -27,7 +27,7 @@ external interface CompletionItemProvider<T : CompletionItem> {
      * @returns An array of completions, a {@link CompletionList completion list}, or a thenable that resolves to either.
      * The lack of a result can be signaled by returning `undefined`, `null`, or an empty array.
      */
-//  provideCompletionItems(document: TextDocument, position: Position, token: CancellationToken, context: CompletionContext): ProviderResult<T[] | CompletionList<T>>;
+//  provideCompletionItems(document: TextDocument, position: Position, token: CancellationToken, context: CompletionContext): ProviderResult<T[] | CompletionList<T>>
 
     /**
      * Given a completion item fill in more data, like {@link CompletionItem.documentation doc-comment}
@@ -48,5 +48,5 @@ external interface CompletionItemProvider<T : CompletionItem> {
      * @returns The resolved completion item or a thenable that resolves to of such. It is OK to return the given
      * `item`. When no result is returned, the given `item` will be used.
      */
-//  resolveCompletionItem?(item: T, token: CancellationToken): ProviderResult<T>;
+//  resolveCompletionItem?(item: T, token: CancellationToken): ProviderResult<T>
 }

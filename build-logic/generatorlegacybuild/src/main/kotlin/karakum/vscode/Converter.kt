@@ -173,7 +173,7 @@ private fun commentMembers(
 
             commentMember(
                 comment = it.removeSuffix(declarationSource),
-                source = declarationSource,
+                source = declarationSource.removeSuffix(";"),
             )
         }
         .joinToString("\n\n")
@@ -187,11 +187,11 @@ private fun commentMember(
         "\n" in source
             -> "/*\n$source\n*/"
 
-        source == "readonly [key: string]: any;"
+        source == "readonly [key: string]: any"
             -> "    // $source"
 
         source.startsWith("readonly ")
-            -> convertProperty(source.removeSuffix(";"))
+            -> convertProperty(source)
 
         else -> "//  $source"
     }

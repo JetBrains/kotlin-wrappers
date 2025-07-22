@@ -23,5 +23,5 @@ external interface DebugAdapter :
      * Results or errors are returned via onSendMessage events.
      * @param message A Debug Adapter Protocol message
      */
-//  handleMessage(message: DebugProtocolMessage): void;
+//  handleMessage(message: DebugProtocolMessage): void
 }

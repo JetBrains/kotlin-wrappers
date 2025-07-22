@@ -26,7 +26,7 @@ open external class DataTransfer :
      * - `text/uri-list` — A string with `toString()`ed Uris separated by `\r\n`. To specify a cursor position in the file,
      * set the Uri's fragment to `L3,5`, where 3 is the line number and 5 is the column number.
      */
-//  get(mimeType: string): DataTransferItem | undefined;
+//  get(mimeType: string): DataTransferItem | undefined
 
     /**
      * Sets a mime type to data transfer item mapping.
@@ -34,7 +34,7 @@ open external class DataTransfer :
      * @param mimeType The mime type to set the data for. Mimes types stored in lower case, with case-insensitive looks up.
      * @param value The data transfer item for the given mime type.
      */
-//  set(mimeType: string, value: DataTransferItem): void;
+//  set(mimeType: string, value: DataTransferItem): void
 
     /**
      * Allows iteration through the data transfer items.
@@ -42,10 +42,10 @@ open external class DataTransfer :
      * @param callbackfn Callback for iteration through the data transfer items.
      * @param thisArg The `this` context used when invoking the handler function.
      */
-//  forEach(callbackfn: (item: DataTransferItem, mimeType: string, dataTransfer: DataTransfer) => void, thisArg?: any): void;
+//  forEach(callbackfn: (item: DataTransferItem, mimeType: string, dataTransfer: DataTransfer) => void, thisArg?: any): void
 
     /**
      * Get a new iterator with the `[mime, item]` pairs for each element in this data transfer.
      */
-//  [Symbol.iterator](): IterableIterator<[mimeType: string, item: DataTransferItem]>;
+//  [Symbol.iterator](): IterableIterator<[mimeType: string, item: DataTransferItem]>
 }

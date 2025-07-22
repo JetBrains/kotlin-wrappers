@@ -14,10 +14,10 @@ open external class QuickInputButtons {
      * When a navigation 'back' button is needed this one should be used for consistency.
      * It comes with a predefined icon, tooltip and location.
      */
-//  static readonly Back: QuickInputButton;
+//  static readonly Back: QuickInputButton
 
     /**
      * @hidden
      */
-//  private constructor();
+//  private constructor()
 }

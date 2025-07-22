@@ -12,7 +12,7 @@ external interface TaskProvider<T : Task> {
      * @param token A cancellation token.
      * @returns an array of tasks
      */
-//  provideTasks(token: CancellationToken): ProviderResult<T[]>;
+//  provideTasks(token: CancellationToken): ProviderResult<T[]>
 
     /**
      * Resolves a task that has no {@linkcode Task.execution execution} set. Tasks are
@@ -31,5 +31,5 @@ external interface TaskProvider<T : Task> {
      * @param token A cancellation token.
      * @returns The resolved task
      */
-//  resolveTask(task: T, token: CancellationToken): ProviderResult<T>;
+//  resolveTask(task: T, token: CancellationToken): ProviderResult<T>
 }

@@ -23,5 +23,5 @@ open external class TabInputCustom {
      * @param uri The uri of the tab.
      * @param viewType The viewtype of the custom editor.
      */
-//  constructor(uri: Uri, viewType: string);
+//  constructor(uri: Uri, viewType: string)
 }

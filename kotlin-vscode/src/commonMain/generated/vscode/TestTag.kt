@@ -20,5 +20,5 @@ open external class TestTag {
      * Creates a new TestTag instance.
      * @param id ID of the test tag.
      */
-//  constructor(id: string);
+//  constructor(id: string)
 }

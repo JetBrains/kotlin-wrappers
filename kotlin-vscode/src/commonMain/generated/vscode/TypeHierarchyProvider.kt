@@ -18,7 +18,7 @@ external interface TypeHierarchyProvider {
      * @returns One or multiple type hierarchy items or a thenable that resolves to such. The lack of a result can be
      * signaled by returning `undefined`, `null`, or an empty array.
      */
-//  prepareTypeHierarchy(document: TextDocument, position: Position, token: CancellationToken): ProviderResult<TypeHierarchyItem | TypeHierarchyItem[]>;
+//  prepareTypeHierarchy(document: TextDocument, position: Position, token: CancellationToken): ProviderResult<TypeHierarchyItem | TypeHierarchyItem[]>
 
     /**
      * Provide all supertypes for an item, e.g all types from which a type is derived/inherited. In graph terms this describes directed
@@ -30,7 +30,7 @@ external interface TypeHierarchyProvider {
      * @returns A set of direct supertypes or a thenable that resolves to such. The lack of a result can be
      * signaled by returning `undefined` or `null`.
      */
-//  provideTypeHierarchySupertypes(item: TypeHierarchyItem, token: CancellationToken): ProviderResult<TypeHierarchyItem[]>;
+//  provideTypeHierarchySupertypes(item: TypeHierarchyItem, token: CancellationToken): ProviderResult<TypeHierarchyItem[]>
 
     /**
      * Provide all subtypes for an item, e.g all types which are derived/inherited from the given item. In
@@ -42,5 +42,5 @@ external interface TypeHierarchyProvider {
      * @returns A set of direct subtypes or a thenable that resolves to such. The lack of a result can be
      * signaled by returning `undefined` or `null`.
      */
-//  provideTypeHierarchySubtypes(item: TypeHierarchyItem, token: CancellationToken): ProviderResult<TypeHierarchyItem[]>;
+//  provideTypeHierarchySubtypes(item: TypeHierarchyItem, token: CancellationToken): ProviderResult<TypeHierarchyItem[]>
 }

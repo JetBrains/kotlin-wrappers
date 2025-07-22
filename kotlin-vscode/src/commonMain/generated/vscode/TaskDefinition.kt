@@ -27,5 +27,5 @@ external interface TaskDefinition {
     /**
      * Additional attributes of a concrete task definition.
      */
-//  [name: string]: any;
+//  [name: string]: any
 }

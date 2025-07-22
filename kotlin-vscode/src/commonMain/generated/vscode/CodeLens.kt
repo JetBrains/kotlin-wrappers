@@ -18,12 +18,12 @@ open external class CodeLens {
     /**
      * The range in which this code lens is valid. Should only span a single line.
      */
-//  range: Range;
+//  range: Range
 
     /**
      * The command this code lens represents.
      */
-//  command?: Command;
+//  command?: Command
 
     /**
      * `true` when there is a command associated.
@@ -36,5 +36,5 @@ open external class CodeLens {
      * @param range The range to which this code lens applies.
      * @param command The command associated to this code lens.
      */
-//  constructor(range: Range, command?: Command);
+//  constructor(range: Range, command?: Command)
 }

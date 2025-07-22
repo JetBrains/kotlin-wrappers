@@ -14,7 +14,7 @@ external interface FileDecorationProvider {
      *
      * @see {@link EventEmitter}
      */
-//  onDidChangeFileDecorations?: Event<undefined | Uri | Uri[]>;
+//  onDidChangeFileDecorations?: Event<undefined | Uri | Uri[]>
 
     /**
      * Provide decorations for a given uri.
@@ -27,5 +27,5 @@ external interface FileDecorationProvider {
      * @param token A cancellation token.
      * @returns A decoration or a thenable that resolves to such.
      */
-//  provideFileDecoration(uri: Uri, token: CancellationToken): ProviderResult<FileDecoration>;
+//  provideFileDecoration(uri: Uri, token: CancellationToken): ProviderResult<FileDecoration>
 }

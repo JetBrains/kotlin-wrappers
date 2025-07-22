@@ -13,5 +13,5 @@ external interface ChatFollowupProvider {
      * @param context Extra context passed to a participant.
      * @param token A cancellation token.
      */
-//  provideFollowups(result: ChatResult, context: ChatContext, token: CancellationToken): ProviderResult<ChatFollowup[]>;
+//  provideFollowups(result: ChatResult, context: ChatContext, token: CancellationToken): ProviderResult<ChatFollowup[]>
 }

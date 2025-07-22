@@ -17,7 +17,7 @@ open external class NotebookCellOutputItem {
      * @param mime Optional MIME type, defaults to `text/plain`.
      * @returns A new output item object.
      */
-//  static text(value: string, mime?: string): NotebookCellOutputItem;
+//  static text(value: string, mime?: string): NotebookCellOutputItem
 
     /**
      * Factory function to create a `NotebookCellOutputItem` from
@@ -31,7 +31,7 @@ open external class NotebookCellOutputItem {
      * @param mime Optional MIME type, defaults to `application/json`
      * @returns A new output item object.
      */
-//  static json(value: any, mime?: string): NotebookCellOutputItem;
+//  static json(value: any, mime?: string): NotebookCellOutputItem
 
     /**
      * Factory function to create a `NotebookCellOutputItem` that uses
@@ -40,7 +40,7 @@ open external class NotebookCellOutputItem {
      * @param value A string.
      * @returns A new output item object.
      */
-//  static stdout(value: string): NotebookCellOutputItem;
+//  static stdout(value: string): NotebookCellOutputItem
 
     /**
      * Factory function to create a `NotebookCellOutputItem` that uses
@@ -49,7 +49,7 @@ open external class NotebookCellOutputItem {
      * @param value A string.
      * @returns A new output item object.
      */
-//  static stderr(value: string): NotebookCellOutputItem;
+//  static stderr(value: string): NotebookCellOutputItem
 
     /**
      * Factory function to create a `NotebookCellOutputItem` that uses
@@ -58,7 +58,7 @@ open external class NotebookCellOutputItem {
      * @param value An error object.
      * @returns A new output item object.
      */
-//  static error(value: Error): NotebookCellOutputItem;
+//  static error(value: Error): NotebookCellOutputItem
 
     /**
      * The mime type which determines how the {@linkcode NotebookCellOutputItem.data data}-property
@@ -67,12 +67,12 @@ open external class NotebookCellOutputItem {
      * Notebooks have built-in support for certain mime-types, extensions can add support for new
      * types and override existing types.
      */
-//  mime: string;
+//  mime: string
 
     /**
      * The data of this output item. Must always be an array of unsigned 8-bit integers.
      */
-//  data: Uint8Array;
+//  data: Uint8Array
 
     /**
      * Create a new notebook cell output item.
@@ -80,5 +80,5 @@ open external class NotebookCellOutputItem {
      * @param data The value of the output item.
      * @param mime The mime type of the output item.
      */
-//  constructor(data: Uint8Array, mime: string);
+//  constructor(data: Uint8Array, mime: string)
 }

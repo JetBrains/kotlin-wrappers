@@ -15,7 +15,7 @@ external interface DocumentColorProvider {
      * @returns An array of {@link ColorInformation color information} or a thenable that resolves to such. The lack of a result
      * can be signaled by returning `undefined`, `null`, or an empty array.
      */
-//  provideDocumentColors(document: TextDocument, token: CancellationToken): ProviderResult<ColorInformation[]>;
+//  provideDocumentColors(document: TextDocument, token: CancellationToken): ProviderResult<ColorInformation[]>
 
     /**
      * Provide {@link ColorPresentation representations} for a color.
@@ -36,6 +36,6 @@ external interface DocumentColorProvider {
          * The range in the document where the color is located.
          */
         readonly range: Range;
-    }, token: CancellationToken): ProviderResult<ColorPresentation[]>;
+    }, token: CancellationToken): ProviderResult<ColorPresentation[]>
     */
 }

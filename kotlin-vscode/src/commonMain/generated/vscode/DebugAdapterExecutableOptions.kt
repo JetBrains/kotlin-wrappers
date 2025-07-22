@@ -11,10 +11,10 @@ external interface DebugAdapterExecutableOptions {
      * the parent process' environment is used. If provided it is merged with
      * the parent process' environment.
      */
-//  env?: { [key: string]: string };
+//  env?: { [key: string]: string }
 
     /**
      * The current working directory for the executed debug adapter.
      */
-//  cwd?: string;
+//  cwd?: string
 }

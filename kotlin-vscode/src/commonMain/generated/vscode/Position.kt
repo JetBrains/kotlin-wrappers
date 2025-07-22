@@ -29,7 +29,7 @@ open external class Position {
      * @param line A zero-based line value.
      * @param character A zero-based character value.
      */
-//  constructor(line: number, character: number);
+//  constructor(line: number, character: number)
 
     /**
      * Check if this position is before `other`.
@@ -38,7 +38,7 @@ open external class Position {
      * @returns `true` if position is on a smaller line
      * or on the same line on a smaller character.
      */
-//  isBefore(other: Position): boolean;
+//  isBefore(other: Position): boolean
 
     /**
      * Check if this position is before or equal to `other`.
@@ -47,7 +47,7 @@ open external class Position {
      * @returns `true` if position is on a smaller line
      * or on the same line on a smaller or equal character.
      */
-//  isBeforeOrEqual(other: Position): boolean;
+//  isBeforeOrEqual(other: Position): boolean
 
     /**
      * Check if this position is after `other`.
@@ -56,7 +56,7 @@ open external class Position {
      * @returns `true` if position is on a greater line
      * or on the same line on a greater character.
      */
-//  isAfter(other: Position): boolean;
+//  isAfter(other: Position): boolean
 
     /**
      * Check if this position is after or equal to `other`.
@@ -65,7 +65,7 @@ open external class Position {
      * @returns `true` if position is on a greater line
      * or on the same line on a greater or equal character.
      */
-//  isAfterOrEqual(other: Position): boolean;
+//  isAfterOrEqual(other: Position): boolean
 
     /**
      * Check if this position is equal to `other`.
@@ -74,7 +74,7 @@ open external class Position {
      * @returns `true` if the line and character of the given position are equal to
      * the line and character of this position.
      */
-//  isEqual(other: Position): boolean;
+//  isEqual(other: Position): boolean
 
     /**
      * Compare this to `other`.
@@ -84,7 +84,7 @@ open external class Position {
      * a number greater than zero if this position is after the given position, or zero when
      * this and the given position are equal.
      */
-//  compareTo(other: Position): number;
+//  compareTo(other: Position): number
 
     /**
      * Create a new position relative to this position.
@@ -94,7 +94,7 @@ open external class Position {
      * @returns A position which line and character is the sum of the current line and
      * character and the corresponding deltas.
      */
-//  translate(lineDelta?: number, characterDelta?: number): Position;
+//  translate(lineDelta?: number, characterDelta?: number): Position
 
     /**
      * Derived a new position relative to this position.
@@ -113,7 +113,7 @@ open external class Position {
          * Delta value for the character value, default is `0`.
          */
         characterDelta?: number;
-    }): Position;
+    }): Position
     */
 
     /**
@@ -123,7 +123,7 @@ open external class Position {
      * @param character Value that should be used as character value, default is the {@link Position.character existing value}
      * @returns A position where line and character are replaced by the given values.
      */
-//  with(line?: number, character?: number): Position;
+//  with(line?: number, character?: number): Position
 
     /**
      * Derived a new position from this position.
@@ -142,6 +142,6 @@ open external class Position {
          * New character value, defaults the character value of `this`.
          */
         character?: number;
-    }): Position;
+    }): Position
     */
 }

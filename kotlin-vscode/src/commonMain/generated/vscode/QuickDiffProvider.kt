@@ -15,5 +15,5 @@ external interface QuickDiffProvider {
      * @param token A cancellation token.
      * @returns A thenable that resolves to uri of the matching original resource.
      */
-//  provideOriginalResource?(uri: Uri, token: CancellationToken): ProviderResult<Uri>;
+//  provideOriginalResource?(uri: Uri, token: CancellationToken): ProviderResult<Uri>
 }

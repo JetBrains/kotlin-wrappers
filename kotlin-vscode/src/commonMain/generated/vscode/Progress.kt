@@ -11,5 +11,5 @@ external interface Progress<T> {
      * @param value A progress item, like a message and/or an
      * report on how much work finished
      */
-//  report(value: T): void;
+//  report(value: T): void
 }

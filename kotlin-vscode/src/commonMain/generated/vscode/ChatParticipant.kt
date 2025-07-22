@@ -15,17 +15,17 @@ external interface ChatParticipant {
     /**
      * An icon for the participant shown in UI.
      */
-//  iconPath?: IconPath;
+//  iconPath?: IconPath
 
     /**
      * The handler for requests to this participant.
      */
-//  requestHandler: ChatRequestHandler;
+//  requestHandler: ChatRequestHandler
 
     /**
      * This provider will be called once after each request to retrieve suggested followup questions.
      */
-//  followupProvider?: ChatFollowupProvider;
+//  followupProvider?: ChatFollowupProvider
 
     /**
      * An event that fires whenever feedback for a result is received, e.g. when a user up- or down-votes
@@ -34,10 +34,10 @@ external interface ChatParticipant {
      * The passed {@link ChatResultFeedback.result result} is guaranteed to have the same properties as the result that was
      * previously returned from this chat participant's handler.
      */
-//  onDidReceiveFeedback: Event<ChatResultFeedback>;
+//  onDidReceiveFeedback: Event<ChatResultFeedback>
 
     /**
      * Dispose this participant and free resources.
      */
-//  dispose(): void;
+//  dispose(): void
 }

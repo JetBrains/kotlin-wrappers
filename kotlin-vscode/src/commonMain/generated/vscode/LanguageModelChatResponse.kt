@@ -39,12 +39,12 @@ external interface LanguageModelChatResponse {
      * }
      * ```
      */
-//  stream: AsyncIterable<LanguageModelTextPart | LanguageModelToolCallPart | unknown>;
+//  stream: AsyncIterable<LanguageModelTextPart | LanguageModelToolCallPart | unknown>
 
     /**
      * This is equivalent to filtering everything except for text parts from a {@link LanguageModelChatResponse.stream}.
      *
      * @see {@link LanguageModelChatResponse.stream}
      */
-//  text: AsyncIterable<string>;
+//  text: AsyncIterable<string>
 }

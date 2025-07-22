@@ -52,7 +52,7 @@ external interface CustomEditorProvider<T : CustomDocument> :
      *
      * @returns Thenable signaling that saving has completed.
      */
-//  saveCustomDocument(document: T, cancellation: CancellationToken): Thenable<void>;
+//  saveCustomDocument(document: T, cancellation: CancellationToken): Thenable<void>
 
     /**
      * Save a custom document to a different location.
@@ -68,7 +68,7 @@ external interface CustomEditorProvider<T : CustomDocument> :
      *
      * @returns Thenable signaling that saving has completed.
      */
-//  saveCustomDocumentAs(document: T, destination: Uri, cancellation: CancellationToken): Thenable<void>;
+//  saveCustomDocumentAs(document: T, destination: Uri, cancellation: CancellationToken): Thenable<void>
 
     /**
      * Revert a custom document to its last saved state.
@@ -85,7 +85,7 @@ external interface CustomEditorProvider<T : CustomDocument> :
      *
      * @returns Thenable signaling that the change has completed.
      */
-//  revertCustomDocument(document: T, cancellation: CancellationToken): Thenable<void>;
+//  revertCustomDocument(document: T, cancellation: CancellationToken): Thenable<void>
 
     /**
      * Back up a dirty custom document.
@@ -108,5 +108,5 @@ external interface CustomEditorProvider<T : CustomDocument> :
      * in an operation that takes time to complete, your extension may decide to finish the ongoing backup rather
      * than cancelling it to ensure that the editor has some valid backup.
      */
-//  backupCustomDocument(document: T, context: CustomDocumentBackupContext, cancellation: CancellationToken): Thenable<CustomDocumentBackup>;
+//  backupCustomDocument(document: T, context: CustomDocumentBackupContext, cancellation: CancellationToken): Thenable<CustomDocumentBackup>
 }

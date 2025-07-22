@@ -9,10 +9,10 @@ external interface TerminalLinkContext {
     /**
      * This is the text from the unwrapped line in the terminal.
      */
-//  line: string;
+//  line: string
 
     /**
      * The terminal the link belongs to.
      */
-//  terminal: Terminal;
+//  terminal: Terminal
 }

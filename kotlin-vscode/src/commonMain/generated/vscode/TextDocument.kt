@@ -77,7 +77,7 @@ external interface TextDocument {
      * @returns A promise that will resolve to `true` when the file
      * has been saved. If the save failed, will return `false`.
      */
-//  save(): Thenable<boolean>;
+//  save(): Thenable<boolean>
 
     /**
      * The {@link EndOfLine end of line} sequence that is predominately
@@ -98,7 +98,7 @@ external interface TextDocument {
      * @param line A line number in `[0, lineCount)`.
      * @returns A {@link TextLine line}.
      */
-//  lineAt(line: number): TextLine;
+//  lineAt(line: number): TextLine
 
     /**
      * Returns a text line denoted by the position. Note
@@ -112,7 +112,7 @@ external interface TextDocument {
      * @param position A position.
      * @returns A {@link TextLine line}.
      */
-//  lineAt(position: Position): TextLine;
+//  lineAt(position: Position): TextLine
 
     /**
      * Converts the position to a zero-based offset.
@@ -122,7 +122,7 @@ external interface TextDocument {
      * @param position A position.
      * @returns A valid zero-based offset in UTF-16 [code units](https://developer.mozilla.org/en-US/docs/Glossary/Code_unit).
      */
-//  offsetAt(position: Position): number;
+//  offsetAt(position: Position): number
 
     /**
      * Converts a zero-based offset to a position.
@@ -130,7 +130,7 @@ external interface TextDocument {
      * @param offset A zero-based offset into the document. This offset is in UTF-16 [code units](https://developer.mozilla.org/en-US/docs/Glossary/Code_unit).
      * @returns A valid {@link Position}.
      */
-//  positionAt(offset: number): Position;
+//  positionAt(offset: number): Position
 
     /**
      * Get the text of this document. A substring can be retrieved by providing
@@ -139,7 +139,7 @@ external interface TextDocument {
      * @param range Include only the text included by the range.
      * @returns The text inside the provided range or the entire text.
      */
-//  getText(range?: Range): string;
+//  getText(range?: Range): string
 
     /**
      * Get a word-range at the given position. By default words are defined by
@@ -159,7 +159,7 @@ external interface TextDocument {
      * @param regex Optional regular expression that describes what a word is.
      * @returns A range spanning a word, or `undefined`.
      */
-//  getWordRangeAtPosition(position: Position, regex?: RegExp): Range | undefined;
+//  getWordRangeAtPosition(position: Position, regex?: RegExp): Range | undefined
 
     /**
      * Ensure a range is completely contained in this document.
@@ -167,7 +167,7 @@ external interface TextDocument {
      * @param range A range.
      * @returns The given range or a new, adjusted range.
      */
-//  validateRange(range: Range): Range;
+//  validateRange(range: Range): Range
 
     /**
      * Ensure a position is contained in the range of this document.
@@ -175,5 +175,5 @@ external interface TextDocument {
      * @param position A position.
      * @returns The given position or a new, adjusted position.
      */
-//  validatePosition(position: Position): Position;
+//  validatePosition(position: Position): Position
 }

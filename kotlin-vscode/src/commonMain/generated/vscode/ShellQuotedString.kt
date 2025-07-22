@@ -9,10 +9,10 @@ external interface ShellQuotedString {
     /**
      * The actual string value.
      */
-//  value: string;
+//  value: string
 
     /**
      * The quoting style to use.
      */
-//  quoting: ShellQuoting;
+//  quoting: ShellQuoting
 }

@@ -11,11 +11,11 @@ open external class TerminalProfile {
     /**
      * The options that the terminal will launch with.
      */
-//  options: TerminalOptions | ExtensionTerminalOptions;
+//  options: TerminalOptions | ExtensionTerminalOptions
 
     /**
      * Creates a new terminal profile.
      * @param options The options that the terminal will launch with.
      */
-//  constructor(options: TerminalOptions | ExtensionTerminalOptions);
+//  constructor(options: TerminalOptions | ExtensionTerminalOptions)
 }

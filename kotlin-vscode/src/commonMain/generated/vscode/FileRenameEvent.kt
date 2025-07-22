@@ -19,6 +19,6 @@ external interface FileRenameEvent {
          * The new uri of a file.
          */
         readonly newUri: Uri;
-    }>;
+    }>
     */
 }

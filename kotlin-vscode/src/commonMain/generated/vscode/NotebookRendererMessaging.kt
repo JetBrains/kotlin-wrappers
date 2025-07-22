@@ -19,7 +19,7 @@ external interface NotebookRendererMessaging {
          * The actual message.
          */
         readonly message: any;
-    }>;
+    }>
     */
 
     /**
@@ -31,5 +31,5 @@ external interface NotebookRendererMessaging {
      * @returns a boolean indicating whether the message was successfully
      * delivered to any renderer.
      */
-//  postMessage(message: any, editor?: NotebookEditor): Thenable<boolean>;
+//  postMessage(message: any, editor?: NotebookEditor): Thenable<boolean>
 }

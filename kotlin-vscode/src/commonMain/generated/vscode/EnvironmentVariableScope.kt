@@ -9,5 +9,5 @@ external interface EnvironmentVariableScope {
     /**
      * Any specific workspace folder to get collection for.
      */
-//  workspaceFolder?: WorkspaceFolder;
+//  workspaceFolder?: WorkspaceFolder
 }

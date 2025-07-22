@@ -10,7 +10,7 @@ external interface InlayHintsProvider<T : InlayHint> {
     /**
      * An optional event to signal that inlay hints from this provider have changed.
      */
-//  onDidChangeInlayHints?: Event<void>;
+//  onDidChangeInlayHints?: Event<void>
 
     /**
      * Provide inlay hints for the given range and document.
@@ -22,7 +22,7 @@ external interface InlayHintsProvider<T : InlayHint> {
      * @param token A cancellation token.
      * @returns An array of inlay hints or a thenable that resolves to such.
      */
-//  provideInlayHints(document: TextDocument, range: Range, token: CancellationToken): ProviderResult<T[]>;
+//  provideInlayHints(document: TextDocument, range: Range, token: CancellationToken): ProviderResult<T[]>
 
     /**
      * Given an inlay hint fill in {@link InlayHint.tooltip tooltip}, {@link InlayHint.textEdits text edits},
@@ -34,5 +34,5 @@ external interface InlayHintsProvider<T : InlayHint> {
      * @param token A cancellation token.
      * @returns The resolved inlay hint or a thenable that resolves to such. It is OK to return the given `item`. When no result is returned, the given `item` will be used.
      */
-//  resolveInlayHint?(hint: T, token: CancellationToken): ProviderResult<T>;
+//  resolveInlayHint?(hint: T, token: CancellationToken): ProviderResult<T>
 }

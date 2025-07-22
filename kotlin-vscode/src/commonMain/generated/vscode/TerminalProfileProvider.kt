@@ -12,5 +12,5 @@ external interface TerminalProfileProvider {
      * @param token A cancellation token that indicates the result is no longer needed.
      * @returns The terminal profile.
      */
-//  provideTerminalProfile(token: CancellationToken): ProviderResult<TerminalProfile>;
+//  provideTerminalProfile(token: CancellationToken): ProviderResult<TerminalProfile>
 }

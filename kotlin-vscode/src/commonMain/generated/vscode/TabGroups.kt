@@ -37,7 +37,7 @@ external interface TabGroups {
      * @param preserveFocus When `true` focus will remain in its current position. If `false` it will jump to the next tab.
      * @returns A promise that resolves to `true` when all tabs have been closed.
      */
-//  close(tab: Tab | readonly Tab[], preserveFocus?: boolean): Thenable<boolean>;
+//  close(tab: Tab | readonly Tab[], preserveFocus?: boolean): Thenable<boolean>
 
     /**
      * Closes the tab group. This makes the tab group object invalid and the tab group
@@ -46,5 +46,5 @@ external interface TabGroups {
      * @param preserveFocus When `true` focus will remain in its current position.
      * @returns A promise that resolves to `true` when all tab groups have been closed.
      */
-//  close(tabGroup: TabGroup | readonly TabGroup[], preserveFocus?: boolean): Thenable<boolean>;
+//  close(tabGroup: TabGroup | readonly TabGroup[], preserveFocus?: boolean): Thenable<boolean>
 }

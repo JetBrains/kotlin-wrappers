@@ -12,16 +12,16 @@ open external class TestCoverageCount {
     /**
      * Number of items covered in the file.
      */
-//  covered: number;
+//  covered: number
 
     /**
      * Total number of covered items in the file.
      */
-//  total: number;
+//  total: number
 
     /**
      * @param covered Value for {@link TestCoverageCount.covered}
      * @param total Value for {@link TestCoverageCount.total}
      */
-//  constructor(covered: number, total: number);
+//  constructor(covered: number, total: number)
 }

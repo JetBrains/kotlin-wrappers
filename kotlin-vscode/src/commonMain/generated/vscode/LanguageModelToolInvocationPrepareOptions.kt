@@ -9,5 +9,5 @@ external interface LanguageModelToolInvocationPrepareOptions<T> {
     /**
      * The input that the tool is being invoked with.
      */
-//  input: T;
+//  input: T
 }

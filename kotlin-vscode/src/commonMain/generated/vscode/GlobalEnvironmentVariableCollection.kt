@@ -23,5 +23,5 @@ external interface GlobalEnvironmentVariableCollection :
      *
      * @returns Environment variable collection for the passed in scope.
      */
-//  getScoped(scope: EnvironmentVariableScope): EnvironmentVariableCollection;
+//  getScoped(scope: EnvironmentVariableScope): EnvironmentVariableCollection
 }

@@ -10,13 +10,13 @@ external interface LanguageConfiguration {
     /**
      * The language's comment settings.
      */
-//  comments?: CommentRule;
+//  comments?: CommentRule
 
     /**
      * The language's brackets.
      * This configuration implicitly affects pressing Enter around these brackets.
      */
-//  brackets?: CharacterPair[];
+//  brackets?: CharacterPair[]
 
     /**
      * The language's word definition.
@@ -27,22 +27,22 @@ external interface LanguageConfiguration {
      * /(-?\d*\.\d\w*)|([^\`\~\!\@\#\%\^\&\*\(\)\-\=\+\[\{\]\}\\\|\;\:\'\"\,\.\<\>\/\?\s]+)/g
      * ```
      */
-//  wordPattern?: RegExp;
+//  wordPattern?: RegExp
 
     /**
      * The language's indentation settings.
      */
-//  indentationRules?: IndentationRule;
+//  indentationRules?: IndentationRule
 
     /**
      * The language's rules to be evaluated when pressing Enter.
      */
-//  onEnterRules?: OnEnterRule[];
+//  onEnterRules?: OnEnterRule[]
 
     /**
      * The language's auto closing pairs.
      */
-//  autoClosingPairs?: AutoClosingPair[];
+//  autoClosingPairs?: AutoClosingPair[]
 
     /**
      * **Deprecated** Do not use.
@@ -81,7 +81,7 @@ external interface LanguageConfiguration {
              */
             close?: string;
         };
-    };
+    }
     */
 
     /**
@@ -108,6 +108,6 @@ external interface LanguageConfiguration {
              */
             notIn?: string[];
         }[];
-    };
+    }
     */
 }

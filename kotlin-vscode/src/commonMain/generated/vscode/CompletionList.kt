@@ -13,12 +13,12 @@ open external class CompletionList<T : CompletionItem> {
      * This list is not complete. Further typing should result in recomputing
      * this list.
      */
-//  isIncomplete?: boolean;
+//  isIncomplete?: boolean
 
     /**
      * The completion items.
      */
-//  items: T[];
+//  items: T[]
 
     /**
      * Creates a new completion list.
@@ -26,5 +26,5 @@ open external class CompletionList<T : CompletionItem> {
      * @param items The completion items.
      * @param isIncomplete The list is not complete.
      */
-//  constructor(items?: T[], isIncomplete?: boolean);
+//  constructor(items?: T[], isIncomplete?: boolean)
 }

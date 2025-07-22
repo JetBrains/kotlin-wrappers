@@ -12,22 +12,22 @@ open external class TestMessage {
     /**
      * Human-readable message text to display.
      */
-//  message: string | MarkdownString;
+//  message: string | MarkdownString
 
     /**
      * Expected test output. If given with {@link TestMessage.actualOutput actualOutput }, a diff view will be shown.
      */
-//  expectedOutput?: string;
+//  expectedOutput?: string
 
     /**
      * Actual test output. If given with {@link TestMessage.expectedOutput expectedOutput }, a diff view will be shown.
      */
-//  actualOutput?: string;
+//  actualOutput?: string
 
     /**
      * Associated file location.
      */
-//  location?: Location;
+//  location?: Location
 
     /**
      * Context value of the test item. This can be used to contribute message-
@@ -58,12 +58,12 @@ open external class TestMessage {
      *    is still present in the {@link TestController.items} collection.
      * - `message`: the {@link TestMessage} instance.
      */
-//  contextValue?: string;
+//  contextValue?: string
 
     /**
      * The stack trace associated with the message or failure.
      */
-//  stackTrace?: TestMessageStackFrame[];
+//  stackTrace?: TestMessageStackFrame[]
 
     /**
      * Creates a new TestMessage that will present as a diff in the editor.
@@ -71,11 +71,11 @@ open external class TestMessage {
      * @param expected Expected output.
      * @param actual Actual output.
      */
-//  static diff(message: string | MarkdownString, expected: string, actual: string): TestMessage;
+//  static diff(message: string | MarkdownString, expected: string, actual: string): TestMessage
 
     /**
      * Creates a new TestMessage instance.
      * @param message The message to show to the user.
      */
-//  constructor(message: string | MarkdownString);
+//  constructor(message: string | MarkdownString)
 }

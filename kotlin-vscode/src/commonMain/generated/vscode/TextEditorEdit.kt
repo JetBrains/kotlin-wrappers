@@ -15,7 +15,7 @@ external interface TextEditorEdit {
      * @param location The range this operation should remove.
      * @param value The new text this operation should insert after removing `location`.
      */
-//  replace(location: Position | Range | Selection, value: string): void;
+//  replace(location: Position | Range | Selection, value: string): void
 
     /**
      * Insert text at a location.
@@ -25,19 +25,19 @@ external interface TextEditorEdit {
      * @param location The position where the new text should be inserted.
      * @param value The new text this operation should insert.
      */
-//  insert(location: Position, value: string): void;
+//  insert(location: Position, value: string): void
 
     /**
      * Delete a certain text region.
      *
      * @param location The range this operation should remove.
      */
-//  delete(location: Range | Selection): void;
+//  delete(location: Range | Selection): void
 
     /**
      * Set the end of line sequence.
      *
      * @param endOfLine The new end of line for the {@link TextDocument document}.
      */
-//  setEndOfLine(endOfLine: EndOfLine): void;
+//  setEndOfLine(endOfLine: EndOfLine): void
 }

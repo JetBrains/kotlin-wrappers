@@ -11,15 +11,15 @@ open external class CancellationTokenSource {
     /**
      * The cancellation token of this source.
      */
-//  token: CancellationToken;
+//  token: CancellationToken
 
     /**
      * Signal cancellation on the token.
      */
-//  cancel(): void;
+//  cancel(): void
 
     /**
      * Dispose object and free resources.
      */
-//  dispose(): void;
+//  dispose(): void
 }

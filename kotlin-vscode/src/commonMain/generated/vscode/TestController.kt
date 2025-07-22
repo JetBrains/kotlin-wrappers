@@ -18,7 +18,7 @@ external interface TestController {
     /**
      * Human-readable label for the test controller.
      */
-//  label: string;
+//  label: string
 
     /**
      * A collection of "top-level" {@link TestItem} instances, which can in
@@ -46,7 +46,7 @@ external interface TestController {
      * @returns An instance of a {@link TestRunProfile}, which is automatically
      * associated with this controller.
      */
-//  createRunProfile(label: string, kind: TestRunProfileKind, runHandler: (request: TestRunRequest, token: CancellationToken) => Thenable<void> | void, isDefault?: boolean, tag?: TestTag, supportsContinuousRun?: boolean): TestRunProfile;
+//  createRunProfile(label: string, kind: TestRunProfileKind, runHandler: (request: TestRunRequest, token: CancellationToken) => Thenable<void> | void, isDefault?: boolean, tag?: TestTag, supportsContinuousRun?: boolean): TestRunProfile
 
     /**
      * A function provided by the extension that the editor may call to request
@@ -66,7 +66,7 @@ external interface TestController {
      * @param item An unresolved test item for which children are being
      * requested, or `undefined` to resolve the controller's initial {@link TestController.items items}.
      */
-//  resolveHandler?: (item: TestItem | undefined) => Thenable<void> | void;
+//  resolveHandler?: (item: TestItem | undefined) => Thenable<void> | void
 
     /**
      * If this method is present, a refresh button will be present in the
@@ -79,7 +79,7 @@ external interface TestController {
      *
      * @returns A thenable that resolves when tests have been refreshed.
      */
-//  refreshHandler: ((token: CancellationToken) => Thenable<void> | void) | undefined;
+//  refreshHandler: ((token: CancellationToken) => Thenable<void> | void) | undefined
 
     /**
      * Creates a {@link TestRun}. This should be called by the
@@ -102,7 +102,7 @@ external interface TestController {
      * @returns An instance of the {@link TestRun}. It will be considered "running"
      * from the moment this method is invoked until {@link TestRun.end} is called.
      */
-//  createTestRun(request: TestRunRequest, name?: string, persist?: boolean): TestRun;
+//  createTestRun(request: TestRunRequest, name?: string, persist?: boolean): TestRun
 
     /**
      * Creates a new managed {@link TestItem} instance. It can be added into
@@ -114,7 +114,7 @@ external interface TestController {
      * @param label Human-readable label of the test item.
      * @param uri URI this TestItem is associated with. May be a file or directory.
      */
-//  createTestItem(id: string, label: string, uri?: Uri): TestItem;
+//  createTestItem(id: string, label: string, uri?: Uri): TestItem
 
     /**
      * Marks an item's results as being outdated. This is commonly called when
@@ -132,11 +132,11 @@ external interface TestController {
      *
      * @param items Item to mark as outdated. If undefined, all the controller's items are marked outdated.
      */
-//  invalidateTestResults(items?: TestItem | readonly TestItem[]): void;
+//  invalidateTestResults(items?: TestItem | readonly TestItem[]): void
 
     /**
      * Unregisters the test controller, disposing of its associated tests
      * and unpersisted results.
      */
-//  dispose(): void;
+//  dispose(): void
 }

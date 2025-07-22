@@ -24,7 +24,7 @@ external interface McpServerDefinitionProvider<T : McpServerDefinition> {
      * @param token A cancellation token.
      * @returns An array of MCP available MCP servers
      */
-//  provideMcpServerDefinitions(token: CancellationToken): ProviderResult<T[]>;
+//  provideMcpServerDefinitions(token: CancellationToken): ProviderResult<T[]>
 
     /**
      * This function will be called when the editor needs to start a MCP server.
@@ -42,5 +42,5 @@ external interface McpServerDefinitionProvider<T : McpServerDefinition> {
      * @returns The resolved server or thenable that resolves to such. This may
      * be the given `server` definition with non-readonly properties filled in.
      */
-//  resolveMcpServerDefinition?(server: T, token: CancellationToken): ProviderResult<T>;
+//  resolveMcpServerDefinition?(server: T, token: CancellationToken): ProviderResult<T>
 }

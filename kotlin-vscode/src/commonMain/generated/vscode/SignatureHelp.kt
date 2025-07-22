@@ -13,15 +13,15 @@ open external class SignatureHelp {
     /**
      * One or more signatures.
      */
-//  signatures: SignatureInformation[];
+//  signatures: SignatureInformation[]
 
     /**
      * The active signature.
      */
-//  activeSignature: number;
+//  activeSignature: number
 
     /**
      * The active parameter of the active signature.
      */
-//  activeParameter: number;
+//  activeParameter: number
 }

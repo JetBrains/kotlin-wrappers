@@ -9,17 +9,17 @@ external interface Comment {
     /**
      * The human-readable comment body
      */
-//  body: string | MarkdownString;
+//  body: string | MarkdownString
 
     /**
      * {@link CommentMode Comment mode} of the comment
      */
-//  mode: CommentMode;
+//  mode: CommentMode
 
     /**
      * The {@link CommentAuthorInformation author information} of the comment
      */
-//  author: CommentAuthorInformation;
+//  author: CommentAuthorInformation
 
     /**
      * Context value of the comment. This can be used to contribute comment specific actions.
@@ -39,22 +39,22 @@ external interface Comment {
      * ```
      * This will show action `extension.deleteComment` only for comments with `contextValue` is `editable`.
      */
-//  contextValue?: string;
+//  contextValue?: string
 
     /**
      * Optional reactions of the {@link Comment}
      */
-//  reactions?: CommentReaction[];
+//  reactions?: CommentReaction[]
 
     /**
      * Optional label describing the {@link Comment}
      * Label will be rendered next to authorName if exists.
      */
-//  label?: string;
+//  label?: string
 
     /**
      * Optional timestamp that will be displayed in comments.
      * The date will be formatted according to the user's locale and settings.
      */
-//  timestamp?: Date;
+//  timestamp?: Date
 }

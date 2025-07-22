@@ -12,10 +12,10 @@ external interface TaskExecution {
     /**
      * The task that got started.
      */
-//  task: Task;
+//  task: Task
 
     /**
      * Terminates the task execution.
      */
-//  terminate(): void;
+//  terminate(): void
 }

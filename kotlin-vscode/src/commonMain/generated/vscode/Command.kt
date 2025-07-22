@@ -12,22 +12,22 @@ external interface Command {
     /**
      * Title of the command, like `save`.
      */
-//  title: string;
+//  title: string
 
     /**
      * The identifier of the actual command handler.
      * @see {@link commands.registerCommand}
      */
-//  command: string;
+//  command: string
 
     /**
      * A tooltip for the command, when represented in the UI.
      */
-//  tooltip?: string;
+//  tooltip?: string
 
     /**
      * Arguments that the command handler should be
      * invoked with.
      */
-//  arguments?: any[];
+//  arguments?: any[]
 }

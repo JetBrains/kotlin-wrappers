@@ -13,38 +13,38 @@ open external class DocumentSymbol {
     /**
      * The name of this symbol.
      */
-//  name: string;
+//  name: string
 
     /**
      * More detail for this symbol, e.g. the signature of a function.
      */
-//  detail: string;
+//  detail: string
 
     /**
      * The kind of this symbol.
      */
-//  kind: SymbolKind;
+//  kind: SymbolKind
 
     /**
      * Tags for this symbol.
      */
-//  tags?: readonly SymbolTag[];
+//  tags?: readonly SymbolTag[]
 
     /**
      * The range enclosing this symbol not including leading/trailing whitespace but everything else, e.g. comments and code.
      */
-//  range: Range;
+//  range: Range
 
     /**
      * The range that should be selected and reveal when this symbol is being picked, e.g. the name of a function.
      * Must be contained by the {@linkcode DocumentSymbol.range range}.
      */
-//  selectionRange: Range;
+//  selectionRange: Range
 
     /**
      * Children of this symbol, e.g. properties of a class.
      */
-//  children: DocumentSymbol[];
+//  children: DocumentSymbol[]
 
     /**
      * Creates a new document symbol.
@@ -55,5 +55,5 @@ open external class DocumentSymbol {
      * @param range The full range of the symbol.
      * @param selectionRange The range that should be reveal.
      */
-//  constructor(name: string, detail: string, kind: SymbolKind, range: Range, selectionRange: Range);
+//  constructor(name: string, detail: string, kind: SymbolKind, range: Range, selectionRange: Range)
 }

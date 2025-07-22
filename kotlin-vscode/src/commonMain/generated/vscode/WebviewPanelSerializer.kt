@@ -47,5 +47,5 @@ external interface WebviewPanelSerializer<T> {
      *
      * @returns Thenable indicating that the webview has been fully restored.
      */
-//  deserializeWebviewPanel(webviewPanel: WebviewPanel, state: T): Thenable<void>;
+//  deserializeWebviewPanel(webviewPanel: WebviewPanel, state: T): Thenable<void>
 }

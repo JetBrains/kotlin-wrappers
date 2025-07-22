@@ -11,7 +11,7 @@ external interface DebugConsole {
      *
      * @param value A string, falsy values will not be printed.
      */
-//  append(value: string): void;
+//  append(value: string): void
 
     /**
      * Append the given value and a line feed character
@@ -19,5 +19,5 @@ external interface DebugConsole {
      *
      * @param value A string, falsy values will be printed.
      */
-//  appendLine(value: string): void;
+//  appendLine(value: string): void
 }

@@ -23,12 +23,12 @@ open external class NotebookCellOutput {
      * ])
      * ```
      */
-//  items: NotebookCellOutputItem[];
+//  items: NotebookCellOutputItem[]
 
     /**
      * Arbitrary metadata for this cell output. Can be anything but must be JSON-stringifyable.
      */
-//  metadata?: { [key: string]: any };
+//  metadata?: { [key: string]: any }
 
     /**
      * Create new notebook output.
@@ -36,5 +36,5 @@ open external class NotebookCellOutput {
      * @param items Notebook output items.
      * @param metadata Optional metadata.
      */
-//  constructor(items: NotebookCellOutputItem[], metadata?: { [key: string]: any });
+//  constructor(items: NotebookCellOutputItem[], metadata?: { [key: string]: any })
 }

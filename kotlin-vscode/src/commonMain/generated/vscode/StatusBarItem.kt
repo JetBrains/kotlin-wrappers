@@ -31,7 +31,7 @@ external interface StatusBarItem {
      * Try to keep the length of the name short, yet descriptive enough that
      * users can understand what the status bar item is about.
      */
-//  name: string | undefined;
+//  name: string | undefined
 
     /**
      * The text to show for the entry. You can embed icons in the text by leveraging the syntax:
@@ -41,17 +41,17 @@ external interface StatusBarItem {
      * Where the icon-name is taken from the ThemeIcon [icon set](https://code.visualstudio.com/api/references/icons-in-labels#icon-listing), e.g.
      * `light-bulb`, `thumbsup`, `zap` etc.
      */
-//  text: string;
+//  text: string
 
     /**
      * The tooltip text when you hover over this entry.
      */
-//  tooltip: string | MarkdownString | undefined;
+//  tooltip: string | MarkdownString | undefined
 
     /**
      * The foreground color for this entry.
      */
-//  color: string | ThemeColor | undefined;
+//  color: string | ThemeColor | undefined
 
     /**
      * The background color for this entry.
@@ -65,7 +65,7 @@ external interface StatusBarItem {
      * *Note*: when a background color is set, the statusbar may override
      * the `color` choice to ensure the entry is readable in all themes.
      */
-//  backgroundColor: ThemeColor | undefined;
+//  backgroundColor: ThemeColor | undefined
 
     /**
      * {@linkcode Command} or identifier of a command to run on click.
@@ -75,26 +75,26 @@ external interface StatusBarItem {
      * Note that if this is a {@linkcode Command} object, only the {@linkcode Command.command command} and {@linkcode Command.arguments arguments}
      * are used by the editor.
      */
-//  command: string | Command | undefined;
+//  command: string | Command | undefined
 
     /**
      * Accessibility information used when a screen reader interacts with this StatusBar item
      */
-//  accessibilityInformation: AccessibilityInformation | undefined;
+//  accessibilityInformation: AccessibilityInformation | undefined
 
     /**
      * Shows the entry in the status bar.
      */
-//  show(): void;
+//  show(): void
 
     /**
      * Hide the entry in the status bar.
      */
-//  hide(): void;
+//  hide(): void
 
     /**
      * Dispose and free associated resources. Call
      * {@link StatusBarItem.hide hide}.
      */
-//  dispose(): void;
+//  dispose(): void
 }

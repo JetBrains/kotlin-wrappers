@@ -9,10 +9,10 @@ external interface CommentOptions {
     /**
      * An optional string to show on the comment input box when it's collapsed.
      */
-//  prompt?: string;
+//  prompt?: string
 
     /**
      * An optional string to show as placeholder in the comment input box when it's focused.
      */
-//  placeHolder?: string;
+//  placeHolder?: string
 }

@@ -9,15 +9,15 @@ external interface AutoClosingPair {
     /**
      * The string that will trigger the automatic insertion of the closing string.
      */
-//  open: string;
+//  open: string
 
     /**
      * The closing string that will be automatically inserted when typing the opening string.
      */
-//  close: string;
+//  close: string
 
     /**
      * A set of tokens where the pair should not be auto closed.
      */
-//  notIn?: SyntaxTokenType[];
+//  notIn?: SyntaxTokenType[]
 }

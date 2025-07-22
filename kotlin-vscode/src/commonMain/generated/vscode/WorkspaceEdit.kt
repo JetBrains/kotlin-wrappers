@@ -24,7 +24,7 @@ open external class WorkspaceEdit {
      * @param newText A string.
      * @param metadata Optional metadata for the entry.
      */
-//  replace(uri: Uri, range: Range, newText: string, metadata?: WorkspaceEditEntryMetadata): void;
+//  replace(uri: Uri, range: Range, newText: string, metadata?: WorkspaceEditEntryMetadata): void
 
     /**
      * Insert the given text at the given position.
@@ -34,7 +34,7 @@ open external class WorkspaceEdit {
      * @param newText A string.
      * @param metadata Optional metadata for the entry.
      */
-//  insert(uri: Uri, position: Position, newText: string, metadata?: WorkspaceEditEntryMetadata): void;
+//  insert(uri: Uri, position: Position, newText: string, metadata?: WorkspaceEditEntryMetadata): void
 
     /**
      * Delete the text at the given range.
@@ -43,7 +43,7 @@ open external class WorkspaceEdit {
      * @param range A range.
      * @param metadata Optional metadata for the entry.
      */
-//  delete(uri: Uri, range: Range, metadata?: WorkspaceEditEntryMetadata): void;
+//  delete(uri: Uri, range: Range, metadata?: WorkspaceEditEntryMetadata): void
 
     /**
      * Check if a text edit for a resource exists.
@@ -51,7 +51,7 @@ open external class WorkspaceEdit {
      * @param uri A resource identifier.
      * @returns `true` if the given resource will be touched by this edit.
      */
-//  has(uri: Uri): boolean;
+//  has(uri: Uri): boolean
 
     /**
      * Set (and replace) text edits or snippet edits for a resource.
@@ -59,7 +59,7 @@ open external class WorkspaceEdit {
      * @param uri A resource identifier.
      * @param edits An array of edits.
      */
-//  set(uri: Uri, edits: ReadonlyArray<TextEdit | SnippetTextEdit>): void;
+//  set(uri: Uri, edits: ReadonlyArray<TextEdit | SnippetTextEdit>): void
 
     /**
      * Set (and replace) text edits or snippet edits with metadata for a resource.
@@ -67,7 +67,7 @@ open external class WorkspaceEdit {
      * @param uri A resource identifier.
      * @param edits An array of edits.
      */
-//  set(uri: Uri, edits: ReadonlyArray<[TextEdit | SnippetTextEdit, WorkspaceEditEntryMetadata | undefined]>): void;
+//  set(uri: Uri, edits: ReadonlyArray<[TextEdit | SnippetTextEdit, WorkspaceEditEntryMetadata | undefined]>): void
 
     /**
      * Set (and replace) notebook edits for a resource.
@@ -75,7 +75,7 @@ open external class WorkspaceEdit {
      * @param uri A resource identifier.
      * @param edits An array of edits.
      */
-//  set(uri: Uri, edits: readonly NotebookEdit[]): void;
+//  set(uri: Uri, edits: readonly NotebookEdit[]): void
 
     /**
      * Set (and replace) notebook edits with metadata for a resource.
@@ -83,7 +83,7 @@ open external class WorkspaceEdit {
      * @param uri A resource identifier.
      * @param edits An array of edits.
      */
-//  set(uri: Uri, edits: ReadonlyArray<[NotebookEdit, WorkspaceEditEntryMetadata | undefined]>): void;
+//  set(uri: Uri, edits: ReadonlyArray<[NotebookEdit, WorkspaceEditEntryMetadata | undefined]>): void
 
     /**
      * Get the text edits for a resource.
@@ -91,7 +91,7 @@ open external class WorkspaceEdit {
      * @param uri A resource identifier.
      * @returns An array of text edits.
      */
-//  get(uri: Uri): TextEdit[];
+//  get(uri: Uri): TextEdit[]
 
     /**
      * Create a regular file.
@@ -121,7 +121,7 @@ open external class WorkspaceEdit {
          * pass in a {@link DataTransferFile} to improve performance by avoiding extra data copying.
          */
         readonly contents?: Uint8Array | DataTransferFile;
-    }, metadata?: WorkspaceEditEntryMetadata): void;
+    }, metadata?: WorkspaceEditEntryMetadata): void
     */
 
     /**
@@ -140,7 +140,7 @@ open external class WorkspaceEdit {
          * Do nothing if a file with `uri` exists already.
          */
         readonly ignoreIfNotExists?: boolean;
-    }, metadata?: WorkspaceEditEntryMetadata): void;
+    }, metadata?: WorkspaceEditEntryMetadata): void
     */
 
     /**
@@ -162,7 +162,7 @@ open external class WorkspaceEdit {
          * Do nothing if a file with `uri` exists already.
          */
         readonly ignoreIfExists?: boolean;
-    }, metadata?: WorkspaceEditEntryMetadata): void;
+    }, metadata?: WorkspaceEditEntryMetadata): void
     */
 
     /**
@@ -170,5 +170,5 @@ open external class WorkspaceEdit {
      *
      * @returns A shallow copy of `[Uri, TextEdit[]]`-tuples.
      */
-//  entries(): [Uri, TextEdit[]][];
+//  entries(): [Uri, TextEdit[]][]
 }

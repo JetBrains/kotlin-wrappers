@@ -51,6 +51,6 @@ external interface CodeActionProviderMetadata {
          * The title of this documentation code action is taken from {@linkcode Command.title}
          */
         readonly command: Command;
-    }>;
+    }>
     */
 }

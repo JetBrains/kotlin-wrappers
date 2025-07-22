@@ -13,12 +13,12 @@ open external class DiagnosticRelatedInformation {
     /**
      * The location of this related diagnostic information.
      */
-//  location: Location;
+//  location: Location
 
     /**
      * The message of this related diagnostic information.
      */
-//  message: string;
+//  message: string
 
     /**
      * Creates a new related diagnostic information object.
@@ -26,5 +26,5 @@ open external class DiagnosticRelatedInformation {
      * @param location The location.
      * @param message The message.
      */
-//  constructor(location: Location, message: string);
+//  constructor(location: Location, message: string)
 }
