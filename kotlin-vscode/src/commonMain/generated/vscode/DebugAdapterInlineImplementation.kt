@@ -11,5 +11,5 @@ open external class DebugAdapterInlineImplementation {
     /**
      * Create a descriptor for an inline implementation of a debug adapter.
      */
-//  constructor(implementation: DebugAdapter)
+    constructor(implementation: DebugAdapter)
 }

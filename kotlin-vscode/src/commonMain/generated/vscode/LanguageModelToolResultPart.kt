@@ -27,5 +27,8 @@ open external class LanguageModelToolResultPart {
      * @param callId The ID of the tool call.
      * @param content The content of the tool result.
      */
-//  constructor(callId: string, content: Array<LanguageModelTextPart | LanguageModelPromptTsxPart | unknown>)
+    constructor(
+        callId: String,
+        content: ReadonlyArray<Any /* LanguageModelTextPart | LanguageModelPromptTsxPart | unknown */>,
+    )
 }

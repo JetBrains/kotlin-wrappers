@@ -49,5 +49,9 @@ open external class LanguageModelChatMessage {
      * @param content The content of the message.
      * @param name The optional name of a user for the message.
      */
-//  constructor(role: LanguageModelChatMessageRole, content: string | Array<LanguageModelTextPart | LanguageModelToolResultPart | LanguageModelToolCallPart>, name?: string)
+    constructor(
+        role: LanguageModelChatMessageRole,
+        content: Any, /* string | Array<LanguageModelTextPart | LanguageModelToolResultPart | LanguageModelToolCallPart> */
+        name: String = definedExternally,
+    )
 }

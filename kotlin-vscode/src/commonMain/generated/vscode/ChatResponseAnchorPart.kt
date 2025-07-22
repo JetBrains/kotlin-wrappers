@@ -23,5 +23,8 @@ open external class ChatResponseAnchorPart {
      * @param value A uri or location.
      * @param title An optional title that is rendered with value.
      */
-//  constructor(value: Uri | Location, title?: string)
+    constructor(
+        value: Any, /* Uri | Location */
+        title: String = definedExternally,
+    )
 }

@@ -31,5 +31,5 @@ open external class NotebookData {
      *
      * @param cells An array of cell data.
      */
-//  constructor(cells: NotebookCellData[])
+    constructor(cells: ReadonlyArray<NotebookCellData>)
 }

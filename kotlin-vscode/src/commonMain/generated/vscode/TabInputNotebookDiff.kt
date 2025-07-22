@@ -29,5 +29,9 @@ open external class TabInputNotebookDiff {
      * @param modified The uri of the modified notebook.
      * @param notebookType The type of notebook. Maps to {@linkcode NotebookDocument.notebookType NotebookDocuments's notebookType}
      */
-//  constructor(original: Uri, modified: Uri, notebookType: string)
+    constructor(
+        original: Uri,
+        modified: Uri,
+        notebookType: String,
+    )
 }

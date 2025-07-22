@@ -31,7 +31,10 @@ open external class NotebookRange {
      * @param start start index
      * @param end end index.
      */
-//  constructor(start: number, end: number)
+    constructor(
+        start: Int,
+        end: Int,
+    )
 
     /**
      * Derive a new range for this range.

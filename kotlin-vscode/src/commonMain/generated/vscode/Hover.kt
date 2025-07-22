@@ -29,5 +29,8 @@ open external class Hover {
      * @param contents The contents of the hover.
      * @param range The range to which the hover applies.
      */
-//  constructor(contents: MarkdownString | MarkedString | Array<MarkdownString | MarkedString>, range?: Range)
+    constructor(
+        contents: Any, /* MarkdownString | MarkedString | Array<MarkdownString | MarkedString> */
+        range: Range = definedExternally,
+    )
 }

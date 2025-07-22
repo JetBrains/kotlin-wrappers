@@ -34,5 +34,8 @@ open external class DocumentLink {
      * @param range The range the document link applies to. Must not be empty.
      * @param target The uri the document link points to.
      */
-//  constructor(range: Range, target?: Uri)
+    constructor(
+        range: Range,
+        target: Uri = definedExternally,
+    )
 }

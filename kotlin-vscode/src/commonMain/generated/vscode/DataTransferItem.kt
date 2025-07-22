@@ -36,5 +36,5 @@ open external class DataTransferItem {
     /**
      * @param value Custom data stored on this item. Can be retrieved using {@linkcode DataTransferItem.value}.
      */
-//  constructor(value: any)
+    constructor(value: Any?)
 }

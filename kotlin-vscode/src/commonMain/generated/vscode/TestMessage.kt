@@ -79,5 +79,5 @@ open external class TestMessage {
      * Creates a new TestMessage instance.
      * @param message The message to show to the user.
      */
-//  constructor(message: string | MarkdownString)
+    constructor(message: Any /* string | MarkdownString */)
 }

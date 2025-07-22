@@ -25,7 +25,7 @@ open external class SnippetString {
      *
      * @param value A snippet string.
      */
-//  constructor(value?: string)
+    constructor(value: String = definedExternally)
 
     /**
      * Builder-function that appends the given string to

@@ -57,5 +57,12 @@ open external class TypeHierarchyItem {
      * @param range The whole range of the item.
      * @param selectionRange The selection range of the item.
      */
-//  constructor(kind: SymbolKind, name: string, detail: string, uri: Uri, range: Range, selectionRange: Range)
+    constructor(
+        kind: SymbolKind,
+        name: String,
+        detail: String,
+        uri: Uri,
+        range: Range,
+        selectionRange: Range,
+    )
 }

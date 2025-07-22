@@ -18,6 +18,8 @@ private val STANDARD_TYPE_MAP = mapOf(
     "void" to "Void",
     "null" to "Void",
 
+    "() => any" to "() -> Unit",
+
     "AsyncIterable<string>" to "AsyncIterable<String>",
 
     "Thenable<number | undefined>" to "PromiseLike<Int?>",
@@ -122,6 +124,7 @@ internal fun kotlinType(
             "webviewPort",
             "tabSize",
             "startIndex",
+            "startLine",
             "activeParameter",
             "activeSignature",
             "removeText",
@@ -130,6 +133,13 @@ internal fun kotlinType(
             "totalSteps",
             "covered",
             "total",
+            "startCharacter",
+            "endLine",
+            "endCharacter",
+            "anchorLine",
+            "anchorCharacter",
+            "activeLine",
+            "activeCharacter",
 
                 // ???
             "value",
@@ -150,6 +160,7 @@ internal fun kotlinType(
         .replace(" => void | Thenable<void>", " -> PromiseLike<Void>?")
         .replace(" => void", " -> Unit")
         .replace(" => Thenable<FileCoverageDetail[]>", " -> PromiseLike<ReadonlyArray<FileCoverageDetail>>")
+        .replace(" => Thenable<Pseudoterminal>", " -> PromiseLike<Pseudoterminal>")
         .replace(": NotebookCell[]", ": ReadonlyArray<NotebookCell>")
         .replace(" | undefined", "?")
         .let { if (it.startsWith("(")) it.replace(", ", ",\n") else it }

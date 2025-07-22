@@ -162,5 +162,8 @@ open external class CompletionItem {
      * @param label The label of the completion.
      * @param kind The {@link CompletionItemKind kind} of the completion.
      */
-//  constructor(label: string | CompletionItemLabel, kind?: CompletionItemKind)
+    constructor(
+        label: Any, /* string | CompletionItemLabel */
+        kind: CompletionItemKind = definedExternally,
+    )
 }

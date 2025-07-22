@@ -23,5 +23,8 @@ open external class ChatResponseReferencePart {
      * @param value A uri or location
      * @param iconPath Icon for the reference shown in UI
      */
-//  constructor(value: Uri | Location, iconPath?: IconPath)
+    constructor(
+        value: Any, /* Uri | Location */
+        iconPath: IconPath = definedExternally,
+    )
 }

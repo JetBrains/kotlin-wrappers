@@ -27,7 +27,10 @@ open external class Selection :
      * @param anchor A position.
      * @param active A position.
      */
-//  constructor(anchor: Position, active: Position)
+    constructor(
+        anchor: Position,
+        active: Position,
+    )
 
     /**
      * Create a selection from four coordinates.
@@ -37,7 +40,12 @@ open external class Selection :
      * @param activeLine A zero-based line value.
      * @param activeCharacter A zero-based character value.
      */
-//  constructor(anchorLine: number, anchorCharacter: number, activeLine: number, activeCharacter: number)
+    constructor(
+        anchorLine: Int,
+        anchorCharacter: Int,
+        activeLine: Int,
+        activeCharacter: Int,
+    )
 
     /**
      * A selection is reversed if its {@link Selection.anchor anchor} is the {@link Selection.end end} position.

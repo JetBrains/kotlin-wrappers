@@ -21,5 +21,8 @@ open external class DebugAdapterServer {
     /**
      * Create a description for a debug adapter running as a socket based server.
      */
-//  constructor(port: number, host?: string)
+    constructor(
+        port: Int,
+        host: String = definedExternally,
+    )
 }

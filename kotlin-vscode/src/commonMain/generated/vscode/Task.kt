@@ -22,7 +22,14 @@ open external class Task {
      *  or '$eslint'. Problem matchers can be contributed by an extension using
      *  the `problemMatchers` extension point.
      */
-//  constructor(taskDefinition: TaskDefinition, scope: WorkspaceFolder | TaskScope.Global | TaskScope.Workspace, name: string, source: string, execution?: ProcessExecution | ShellExecution | CustomExecution, problemMatchers?: string | string[])
+    constructor(
+        taskDefinition: TaskDefinition,
+        scope: Any, /* WorkspaceFolder | TaskScope.Global | TaskScope.Workspace */
+        name: String,
+        source: String,
+        execution: Any /* ProcessExecution | ShellExecution | CustomExecution */ = definedExternally,
+        problemMatchers: ReadonlyArray<Any /* string | string */> = definedExternally,
+    )
 
     /**
      * Creates a new task.
@@ -37,7 +44,13 @@ open external class Task {
      *  or '$eslint'. Problem matchers can be contributed by an extension using
      *  the `problemMatchers` extension point.
      */
-//  constructor(taskDefinition: TaskDefinition, name: string, source: string, execution?: ProcessExecution | ShellExecution, problemMatchers?: string | string[])
+    constructor(
+        taskDefinition: TaskDefinition,
+        name: String,
+        source: String,
+        execution: Any /* ProcessExecution | ShellExecution */ = definedExternally,
+        problemMatchers: ReadonlyArray<Any /* string | string */> = definedExternally,
+    )
 
     /**
      * The task's definition.

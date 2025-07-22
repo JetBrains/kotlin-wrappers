@@ -53,5 +53,8 @@ open external class SnippetTextEdit {
      * @param range A range.
      * @param snippet A snippet string.
      */
-//  constructor(range: Range, snippet: SnippetString)
+    constructor(
+        range: Range,
+        snippet: SnippetString,
+    )
 }

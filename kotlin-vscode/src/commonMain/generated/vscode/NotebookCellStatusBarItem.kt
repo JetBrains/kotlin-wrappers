@@ -48,5 +48,8 @@ open external class NotebookCellStatusBarItem {
      * @param text The text to show for the item.
      * @param alignment Whether the item is aligned to the left or right.
      */
-//  constructor(text: string, alignment: NotebookCellStatusBarAlignment)
+    constructor(
+        text: String,
+        alignment: NotebookCellStatusBarAlignment,
+    )
 }

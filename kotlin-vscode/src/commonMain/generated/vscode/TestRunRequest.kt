@@ -65,5 +65,11 @@ open external class TestRunRequest {
      * @param continuous Whether to run tests continuously as source changes.
      * @param preserveFocus Whether to preserve the user's focus when the run is started
      */
-//  constructor(include?: readonly TestItem[], exclude?: readonly TestItem[], profile?: TestRunProfile, continuous?: boolean, preserveFocus?: boolean)
+    constructor(
+        include: ReadonlyArray<TestItem> = definedExternally,
+        exclude: ReadonlyArray<TestItem> = definedExternally,
+        profile: TestRunProfile = definedExternally,
+        continuous: Boolean = definedExternally,
+        preserveFocus: Boolean = definedExternally,
+    )
 }

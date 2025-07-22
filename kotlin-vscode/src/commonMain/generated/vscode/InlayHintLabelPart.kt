@@ -51,5 +51,5 @@ open external class InlayHintLabelPart {
      *
      * @param value The value of the part.
      */
-//  constructor(value: string)
+    constructor(value: String)
 }

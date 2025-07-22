@@ -17,5 +17,5 @@ open external class LanguageModelTextPart {
      * Construct a text part with the given content.
      * @param value The text content of the part.
      */
-//  constructor(value: string)
+    constructor(value: String)
 }

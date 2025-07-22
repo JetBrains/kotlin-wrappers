@@ -50,5 +50,9 @@ open external class NotebookCellData {
      * @param value The source value.
      * @param languageId The language identifier of the source value.
      */
-//  constructor(kind: NotebookCellKind, value: string, languageId: string)
+    constructor(
+        kind: NotebookCellKind,
+        value: String,
+        languageId: String,
+    )
 }

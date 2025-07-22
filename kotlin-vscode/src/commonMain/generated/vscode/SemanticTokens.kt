@@ -31,5 +31,8 @@ open external class SemanticTokens {
      * @param data Token data.
      * @param resultId Result identifier.
      */
-//  constructor(data: Uint32Array, resultId?: string)
+    constructor(
+        data: Uint32Array<*>,
+        resultId: String = definedExternally,
+    )
 }

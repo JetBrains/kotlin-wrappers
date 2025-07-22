@@ -75,5 +75,8 @@ open external class NotebookEdit {
      * @param range A notebook range.
      * @param newCells An array of new cell data.
      */
-//  constructor(range: NotebookRange, newCells: NotebookCellData[])
+    constructor(
+        range: NotebookRange,
+        newCells: ReadonlyArray<NotebookCellData>,
+    )
 }

@@ -44,5 +44,9 @@ open external class InlineCompletionItem {
      * @param range The range to replace. If not set, the word at the requested position will be used.
      * @param command An optional {@link Command} that is executed *after* inserting this completion.
      */
-//  constructor(insertText: string | SnippetString, range?: Range, command?: Command)
+    constructor(
+        insertText: Any, /* string | SnippetString */
+        range: Range = definedExternally,
+        command: Command = definedExternally,
+    )
 }

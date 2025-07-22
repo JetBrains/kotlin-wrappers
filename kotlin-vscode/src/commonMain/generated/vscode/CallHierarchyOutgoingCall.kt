@@ -28,5 +28,8 @@ open external class CallHierarchyOutgoingCall {
      * @param item The item being called
      * @param fromRanges The ranges at which the calls appear.
      */
-//  constructor(item: CallHierarchyItem, fromRanges: Range[])
+    constructor(
+        item: CallHierarchyItem,
+        fromRanges: ReadonlyArray<Range>,
+    )
 }

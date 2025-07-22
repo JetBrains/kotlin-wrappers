@@ -32,5 +32,9 @@ open external class BranchCoverage {
      * unknown. If zero or false, the branch will be marked as un-covered.
      * @param location The branch position.
      */
-//  constructor(executed: number | boolean, location?: Position | Range, label?: string)
+    constructor(
+        executed: Any, /* number | boolean */
+        location: Any /* Position | Range */ = definedExternally,
+        label: String = definedExternally,
+    )
 }

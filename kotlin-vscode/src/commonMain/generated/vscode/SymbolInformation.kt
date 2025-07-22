@@ -44,7 +44,12 @@ open external class SymbolInformation {
      * @param containerName The name of the symbol containing the symbol.
      * @param location The location of the symbol.
      */
-//  constructor(name: string, kind: SymbolKind, containerName: string, location: Location)
+    constructor(
+        name: String,
+        kind: SymbolKind,
+        containerName: String,
+        location: Location,
+    )
 
     /**
      * Creates a new symbol information object.
@@ -57,5 +62,11 @@ open external class SymbolInformation {
      * @param uri The resource of the location of symbol, defaults to the current document.
      * @param containerName The name of the symbol containing the symbol.
      */
-//  constructor(name: string, kind: SymbolKind, range: Range, uri?: Uri, containerName?: string)
+    constructor(
+        name: String,
+        kind: SymbolKind,
+        range: Range,
+        uri: Uri = definedExternally,
+        containerName: String = definedExternally,
+    )
 }

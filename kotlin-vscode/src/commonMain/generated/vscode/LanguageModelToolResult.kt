@@ -21,5 +21,5 @@ open external class LanguageModelToolResult {
      * Create a LanguageModelToolResult
      * @param content A list of tool result content parts
      */
-//  constructor(content: Array<LanguageModelTextPart | LanguageModelPromptTsxPart>)
+    constructor(content: ReadonlyArray<Any /* LanguageModelTextPart | LanguageModelPromptTsxPart */>)
 }

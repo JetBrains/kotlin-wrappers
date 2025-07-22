@@ -82,5 +82,8 @@ open external class NotebookCellOutputItem {
      * @param data The value of the output item.
      * @param mime The mime type of the output item.
      */
-//  constructor(data: Uint8Array, mime: string)
+    constructor(
+        data: Uint8Array<*>,
+        mime: String,
+    )
 }

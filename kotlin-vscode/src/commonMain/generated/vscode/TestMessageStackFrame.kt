@@ -29,5 +29,9 @@ open external class TestMessageStackFrame {
      * @param file The file URI of the stack frame
      * @param position The position of the stack frame within the file
      */
-//  constructor(label: string, uri?: Uri, position?: Position)
+    constructor(
+        label: String,
+        uri: Uri = definedExternally,
+        position: Position = definedExternally,
+    )
 }

@@ -67,5 +67,8 @@ open external class TextEdit {
      * @param range A range.
      * @param newText A string.
      */
-//  constructor(range: Range, newText: string)
+    constructor(
+        range: Range,
+        newText: String,
+    )
 }

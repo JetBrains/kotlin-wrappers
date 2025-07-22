@@ -26,5 +26,8 @@ open external class DiagnosticRelatedInformation {
      * @param location The location.
      * @param message The message.
      */
-//  constructor(location: Location, message: string)
+    constructor(
+        location: Location,
+        message: String,
+    )
 }

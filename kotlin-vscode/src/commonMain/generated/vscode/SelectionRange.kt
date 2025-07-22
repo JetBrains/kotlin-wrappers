@@ -25,5 +25,8 @@ open external class SelectionRange {
      * @param range The range of the selection range.
      * @param parent The parent of the selection range.
      */
-//  constructor(range: Range, parent?: SelectionRange)
+    constructor(
+        range: Range,
+        parent: SelectionRange = definedExternally,
+    )
 }

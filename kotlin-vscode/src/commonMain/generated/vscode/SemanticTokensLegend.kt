@@ -27,5 +27,8 @@ open external class SemanticTokensLegend {
      * @param tokenTypes An array of token types.
      * @param tokenModifiers An array of token modifiers.
      */
-//  constructor(tokenTypes: string[], tokenModifiers?: string[])
+    constructor(
+        tokenTypes: ReadonlyArray<String>,
+        tokenModifiers: ReadonlyArray<String> = definedExternally,
+    )
 }

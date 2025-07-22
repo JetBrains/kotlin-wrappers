@@ -85,5 +85,8 @@ open external class CodeAction {
      * @param title The title of the code action.
      * @param kind The kind of the code action.
      */
-//  constructor(title: string, kind?: CodeActionKind)
+    constructor(
+        title: String,
+        kind: CodeActionKind = definedExternally,
+    )
 }

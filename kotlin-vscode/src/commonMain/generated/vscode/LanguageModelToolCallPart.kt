@@ -31,5 +31,9 @@ open external class LanguageModelToolCallPart {
      * @param name The name of the tool to call.
      * @param input The input with which to call the tool.
      */
-//  constructor(callId: string, name: string, input: object)
+    constructor(
+        callId: String,
+        name: String,
+        input: Any,
+    )
 }

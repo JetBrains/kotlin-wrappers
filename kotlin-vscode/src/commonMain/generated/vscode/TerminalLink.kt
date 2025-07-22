@@ -37,5 +37,9 @@ open external class TerminalLink {
      * how to trigger the link, such as `{0} (ctrl + click)`. The specific instructions vary
      * depending on OS, user settings, and localization.
      */
-//  constructor(startIndex: number, length: number, tooltip?: string)
+    constructor(
+        startIndex: Int,
+        length: Int,
+        tooltip: String = definedExternally,
+    )
 }

@@ -112,11 +112,17 @@ open external class TreeItem {
      * @param label A human-readable string describing this item
      * @param collapsibleState {@link TreeItemCollapsibleState} of the tree item. Default is {@link TreeItemCollapsibleState.None}
      */
-//  constructor(label: string | TreeItemLabel, collapsibleState?: TreeItemCollapsibleState)
+    constructor(
+        label: Any, /* string | TreeItemLabel */
+        collapsibleState: TreeItemCollapsibleState = definedExternally,
+    )
 
     /**
      * @param resourceUri The {@link Uri} of the resource representing this item.
      * @param collapsibleState {@link TreeItemCollapsibleState} of the tree item. Default is {@link TreeItemCollapsibleState.None}
      */
-//  constructor(resourceUri: Uri, collapsibleState?: TreeItemCollapsibleState)
+    constructor(
+        resourceUri: Uri,
+        collapsibleState: TreeItemCollapsibleState = definedExternally,
+    )
 }

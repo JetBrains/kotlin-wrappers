@@ -68,5 +68,9 @@ open external class InlayHint {
      * @param label The label of the hint.
      * @param kind The {@link InlayHintKind kind} of the hint.
      */
-//  constructor(position: Position, label: string | InlayHintLabelPart[], kind?: InlayHintKind)
+    constructor(
+        position: Position,
+        label: ReadonlyArray<Any /* string | InlayHintLabelPart */>,
+        kind: InlayHintKind = definedExternally,
+    )
 }

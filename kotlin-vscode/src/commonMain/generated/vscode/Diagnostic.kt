@@ -69,5 +69,9 @@ open external class Diagnostic {
      * @param message The human-readable message.
      * @param severity The severity, default is {@link DiagnosticSeverity.Error error}.
      */
-//  constructor(range: Range, message: string, severity?: DiagnosticSeverity)
+    constructor(
+        range: Range,
+        message: String,
+        severity: DiagnosticSeverity = definedExternally,
+    )
 }

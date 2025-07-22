@@ -42,5 +42,8 @@ open external class SignatureInformation {
      * @param label A label string.
      * @param documentation A doc string.
      */
-//  constructor(label: string, documentation?: string | MarkdownString)
+    constructor(
+        label: String,
+        documentation: Any /* string | MarkdownString */ = definedExternally,
+    )
 }

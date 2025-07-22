@@ -50,5 +50,12 @@ open external class CallHierarchyItem {
     /**
      * Creates a new call hierarchy item.
      */
-//  constructor(kind: SymbolKind, name: string, detail: string, uri: Uri, range: Range, selectionRange: Range)
+    constructor(
+        kind: SymbolKind,
+        name: String,
+        detail: String,
+        uri: Uri,
+        range: Range,
+        selectionRange: Range,
+    )
 }

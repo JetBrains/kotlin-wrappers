@@ -25,5 +25,8 @@ open external class ChatResponseFileTreePart {
      * @param value File tree data.
      * @param baseUri The base uri to which this file tree is relative.
      */
-//  constructor(value: ChatResponseFileTree[], baseUri: Uri)
+    constructor(
+        value: ReadonlyArray<ChatResponseFileTree>,
+        baseUri: Uri,
+    )
 }

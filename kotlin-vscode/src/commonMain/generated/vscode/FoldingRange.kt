@@ -37,5 +37,9 @@ open external class FoldingRange {
      * @param end The end line of the folded range.
      * @param kind The kind of the folding range.
      */
-//  constructor(start: number, end: number, kind?: FoldingRangeKind)
+    constructor(
+        start: Int,
+        end: Int,
+        kind: FoldingRangeKind = definedExternally,
+    )
 }

@@ -39,5 +39,8 @@ open external class NotebookCellOutput {
      * @param items Notebook output items.
      * @param metadata Optional metadata.
      */
-//  constructor(items: NotebookCellOutputItem[], metadata?: { [key: string]: any })
+    constructor(
+        items: ReadonlyArray<NotebookCellOutputItem>,
+        metadata: Record<String, *> = definedExternally,
+    )
 }

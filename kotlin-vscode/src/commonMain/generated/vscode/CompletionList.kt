@@ -28,5 +28,8 @@ open external class CompletionList<T : CompletionItem> {
      * @param items The completion items.
      * @param isIncomplete The list is not complete.
      */
-//  constructor(items?: T[], isIncomplete?: boolean)
+    constructor(
+        items: ReadonlyArray<T> = definedExternally,
+        isIncomplete: Boolean = definedExternally,
+    )
 }

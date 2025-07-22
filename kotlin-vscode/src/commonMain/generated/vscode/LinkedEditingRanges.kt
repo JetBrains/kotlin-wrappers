@@ -17,7 +17,10 @@ open external class LinkedEditingRanges {
      * @param ranges A list of ranges that can be edited together
      * @param wordPattern An optional word pattern that describes valid contents for the given ranges
      */
-//  constructor(ranges: Range[], wordPattern?: RegExp)
+    constructor(
+        ranges: ReadonlyArray<Range>,
+        wordPattern: RegExp = definedExternally,
+    )
 
     /**
      * A list of ranges that can be edited together. The ranges must have

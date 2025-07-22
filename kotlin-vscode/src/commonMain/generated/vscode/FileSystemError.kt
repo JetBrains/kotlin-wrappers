@@ -57,7 +57,7 @@ open external class FileSystemError :
      *
      * @param messageOrUri Message or uri.
      */
-//  constructor(messageOrUri?: string | Uri)
+    constructor(messageOrUri: Any /* string | Uri */ = definedExternally)
 
     /**
      * A code that identifies this error.

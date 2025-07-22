@@ -17,5 +17,5 @@ open external class ChatResponseProgressPart {
      * Create a new ChatResponseProgressPart.
      * @param value A progress message
      */
-//  constructor(value: string)
+    constructor(value: String)
 }

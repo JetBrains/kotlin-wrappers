@@ -14,7 +14,7 @@ open external class SemanticTokensBuilder {
      *
      * @param legend A semantic tokens legend.
      */
-//  constructor(legend?: SemanticTokensLegend)
+    constructor(legend: SemanticTokensLegend = definedExternally)
 
     /**
      * Add another token.

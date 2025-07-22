@@ -187,6 +187,9 @@ private fun commentMember(
         "\n" in source
             -> "/*\n$source\n*/"
 
+        source.startsWith("constructor(")
+            -> convertConstructor(source)
+
         source.startsWith("// Properties: ")
             -> "    $source"
 
@@ -237,6 +240,33 @@ private fun convertProperty(
         .let { (if (optional && !it.endsWith("?")) "$it?" else it) }
 
     return "$modifier $name: $type"
+}
+
+private fun convertConstructor(
+    source: String,
+): String {
+    if (source == "constructor()") {
+        return source
+    }
+
+    if ("Record<" in source || "[number, " in source)
+        return "//  $source"
+
+    return source
+        .removePrefix("constructor(")
+        .removeSuffix(")")
+        .splitToSequence(", ")
+        .map {
+            val name = it
+                .substringBefore(": ")
+                .removeSuffix("?")
+
+            val optional = it.startsWith("$name?")
+            val type = kotlinType(it.substringAfter(": "), name)
+
+            "$name: $type" + if (optional) " = definedExternally" else ""
+        }
+        .joinToString(",\n", "constructor(", ")")
 }
 
 private fun commentedOriginal(

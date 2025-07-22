@@ -46,5 +46,9 @@ open external class DocumentPasteEdit {
      * @param title Human readable label that describes the edit.
      * @param kind {@link DocumentDropOrPasteEditKind Kind} of the edit.
      */
-//  constructor(insertText: string | SnippetString, title: string, kind: DocumentDropOrPasteEditKind)
+    constructor(
+        insertText: Any, /* string | SnippetString */
+        title: String,
+        kind: DocumentDropOrPasteEditKind,
+    )
 }

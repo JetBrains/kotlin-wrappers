@@ -19,5 +19,5 @@ open external class InlineCompletionList {
     /**
      * Creates a new list of inline completion items.
      */
-//  constructor(items: InlineCompletionItem[])
+    constructor(items: ReadonlyArray<InlineCompletionItem>)
 }

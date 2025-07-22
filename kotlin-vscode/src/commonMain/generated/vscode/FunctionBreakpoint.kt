@@ -17,5 +17,11 @@ open external class FunctionBreakpoint :
     /**
      * Create a new function breakpoint.
      */
-//  constructor(functionName: string, enabled?: boolean, condition?: string, hitCondition?: string, logMessage?: string)
+    constructor(
+        functionName: String,
+        enabled: Boolean = definedExternally,
+        condition: String = definedExternally,
+        hitCondition: String = definedExternally,
+        logMessage: String = definedExternally,
+    )
 }

@@ -40,5 +40,5 @@ open external class ColorPresentation {
      *
      * @param label The label of this color presentation.
      */
-//  constructor(label: string)
+    constructor(label: String)
 }

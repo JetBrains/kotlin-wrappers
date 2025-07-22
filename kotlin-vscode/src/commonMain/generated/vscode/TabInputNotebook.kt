@@ -23,5 +23,8 @@ open external class TabInputNotebook {
      * @param uri The uri of the notebook.
      * @param notebookType The type of notebook. Maps to {@linkcode NotebookDocument.notebookType NotebookDocuments's notebookType}
      */
-//  constructor(uri: Uri, notebookType: string)
+    constructor(
+        uri: Uri,
+        notebookType: String,
+    )
 }

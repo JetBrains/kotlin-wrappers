@@ -33,5 +33,9 @@ open external class SemanticTokensEdit {
      * @param deleteCount Number of elements to remove.
      * @param data Elements to insert
      */
-//  constructor(start: number, deleteCount: number, data?: Uint32Array)
+    constructor(
+        start: Int,
+        deleteCount: Int,
+        data: Uint32Array<*> = definedExternally,
+    )
 }

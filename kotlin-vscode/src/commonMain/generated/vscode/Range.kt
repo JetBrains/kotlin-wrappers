@@ -30,7 +30,10 @@ open external class Range {
      * @param start A position.
      * @param end A position.
      */
-//  constructor(start: Position, end: Position)
+    constructor(
+        start: Position,
+        end: Position,
+    )
 
     /**
      * Create a new range from number coordinates. It is a shorter equivalent of
@@ -41,7 +44,12 @@ open external class Range {
      * @param endLine A zero-based line value.
      * @param endCharacter A zero-based character value.
      */
-//  constructor(startLine: number, startCharacter: number, endLine: number, endCharacter: number)
+    constructor(
+        startLine: Int,
+        startCharacter: Int,
+        endLine: Int,
+        endCharacter: Int,
+    )
 
     /**
      * `true` if `start` and `end` are equal.

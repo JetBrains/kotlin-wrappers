@@ -19,5 +19,5 @@ open external class TelemetryTrustedValue<T> {
      *
      * @param value A value to trust
      */
-//  constructor(value: T)
+    constructor(value: T)
 }

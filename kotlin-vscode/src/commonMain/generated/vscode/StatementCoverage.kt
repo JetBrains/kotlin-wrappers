@@ -36,5 +36,9 @@ open external class StatementCoverage {
      * @param branches Coverage from branches of this line.  If it's not a
      * conditional, this should be omitted.
      */
-//  constructor(executed: number | boolean, location: Position | Range, branches?: BranchCoverage[])
+    constructor(
+        executed: Any, /* number | boolean */
+        location: Any, /* Position | Range */
+        branches: ReadonlyArray<BranchCoverage> = definedExternally,
+    )
 }

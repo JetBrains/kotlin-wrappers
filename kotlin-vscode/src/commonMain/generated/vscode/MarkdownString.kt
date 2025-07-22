@@ -77,7 +77,10 @@ open external class MarkdownString {
      * @param value Optional, initial value.
      * @param supportThemeIcons Optional, Specifies whether {@link ThemeIcon ThemeIcons} are supported within the {@linkcode MarkdownString}.
      */
-//  constructor(value?: string, supportThemeIcons?: boolean)
+    constructor(
+        value: String = definedExternally,
+        supportThemeIcons: Boolean = definedExternally,
+    )
 
     /**
      * Appends and escapes the given string to this markdown string.

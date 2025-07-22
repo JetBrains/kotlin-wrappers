@@ -32,5 +32,9 @@ open external class DeclarationCoverage {
      * unknown. If zero or false, the declaration will be marked as un-covered.
      * @param location The declaration position.
      */
-//  constructor(name: string, executed: number | boolean, location: Position | Range)
+    constructor(
+        name: String,
+        executed: Any, /* number | boolean */
+        location: Any, /* Position | Range */
+    )
 }

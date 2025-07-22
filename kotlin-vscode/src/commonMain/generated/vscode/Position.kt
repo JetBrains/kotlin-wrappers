@@ -29,7 +29,10 @@ open external class Position {
      * @param line A zero-based line value.
      * @param character A zero-based character value.
      */
-//  constructor(line: number, character: number)
+    constructor(
+        line: Int,
+        character: Int,
+    )
 
     /**
      * Check if this position is before `other`.

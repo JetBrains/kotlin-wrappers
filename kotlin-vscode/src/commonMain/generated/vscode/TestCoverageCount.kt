@@ -23,5 +23,8 @@ open external class TestCoverageCount {
      * @param covered Value for {@link TestCoverageCount.covered}
      * @param total Value for {@link TestCoverageCount.total}
      */
-//  constructor(covered: number, total: number)
+    constructor(
+        covered: Int,
+        total: Int,
+    )
 }

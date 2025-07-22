@@ -35,7 +35,7 @@ open external class Disposable {
      *
      * @param callOnDispose Function that disposes something.
      */
-//  constructor(callOnDispose: () => any)
+    constructor(callOnDispose: () -> Unit)
 
     /**
      * Dispose this object.

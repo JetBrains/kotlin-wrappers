@@ -17,7 +17,11 @@ open external class DebugAdapterExecutable {
      * @param args Optional arguments to be passed to the command or executable.
      * @param options Optional options to be used when starting the command or executable.
      */
-//  constructor(command: string, args?: string[], options?: DebugAdapterExecutableOptions)
+    constructor(
+        command: String,
+        args: ReadonlyArray<String> = definedExternally,
+        options: DebugAdapterExecutableOptions = definedExternally,
+    )
 
     /**
      * The command or path of the debug adapter executable.
