@@ -30,6 +30,8 @@ private val STANDARD_TYPE_MAP = mapOf(
     "{ [key: string]: any }" to "Record<String, *>",
     "{ [name: string]: any }" to "Record<String, *>",
     "{ [name: string]: string[] }" to "Record<String, ReadonlyArray<String>>",
+    "{ [key: string]: boolean | undefined }" to "Record<String, Boolean?>",
+    "{ [key: string]: string | null | undefined }" to "Record<String, Boolean?>",
 
     "ReadonlyArray<[T, TreeItemCheckboxState]>" to "ReadonlyArray<Tuple2<T, TreeItemCheckboxState>>",
     "ReadonlyArray<[number, number]>" to "ReadonlyArray<Tuple2<Int, Int>>",
@@ -47,8 +49,11 @@ internal fun kotlinType(
     if (type.endsWith(" | undefined"))
         return kotlinType(type.removeSuffix(" | undefined"), name)
 
-    if (type.startsWith("Event<"))
+    if (type.startsWith("Event<") && type.endsWith(">"))
         return "Event<" + kotlinType(type.removeSurrounding("Event<", ">"), name) + ">"
+
+    if (type.startsWith("Array<") && type.endsWith(">"))
+        return "ReadonlyArray<" + kotlinType(type.removeSurrounding("Array<", ">"), name) + ">"
 
     STANDARD_TYPE_MAP[type]
         ?.also { return it }
@@ -63,8 +68,10 @@ internal fun kotlinType(
         return "ReadonlyArray<$itemType>"
     }
 
-    if (" | " in type)
-        return "Any /* $type */"
+    if (" | " in type
+        && !type.startsWith("(")
+        && !type.startsWith("{")
+    ) return "Any /* $type */"
 
     if (type == "number") {
         return when (name) {
@@ -128,8 +135,12 @@ internal fun kotlinType(
 
     return type
         .replace("<any>", "<*>")
-        .replace(" => void", " -> Unit")
+        .replace(" => Thenable<void> | void", " -> PromiseLike<Void>?")
         .replace(" => Thenable<void>", " -> PromiseLike<Void>")
+        .replace(" => void | Thenable<void>", " -> PromiseLike<Void>?")
+        .replace(" => void", " -> Unit")
         .replace(" => Thenable<FileCoverageDetail[]>", " -> PromiseLike<ReadonlyArray<FileCoverageDetail>>")
+        .replace(": NotebookCell[]", ": ReadonlyArray<NotebookCell>")
+        .replace(" | undefined", "?")
         .let { if (it.startsWith("(")) it.replace(", ", ",\n") else it }
 }

@@ -2,6 +2,8 @@
 
 package vscode
 
+import js.objects.Record
+
 /**
  * Value-object describing what options a terminal should use.
  */
@@ -30,7 +32,7 @@ external interface TerminalOptions {
     /**
      * Object with environment variables that will be added to the editor process.
      */
-    var env: Any /* { [key: string]: string | null | undefined } */?
+    var env: Record<String, Boolean?>?
 
     /**
      * Whether the terminal process environment should be exactly as provided in

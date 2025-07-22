@@ -2,6 +2,8 @@
 
 package vscode
 
+import js.objects.Record
+
 /**
  * Notebook content options define what parts of a notebook are persisted. Note
  *
@@ -22,7 +24,7 @@ external interface NotebookDocumentContentOptions {
      * content provider doesn't persist a metadata property in the file document, it should be
      * set to true.
      */
-    var transientCellMetadata: Any /* { [key: string]: boolean | undefined } */?
+    var transientCellMetadata: Record<String, Boolean?>?
 
     /**
      * Controls if a document metadata property change event will trigger notebook document
@@ -30,5 +32,5 @@ external interface NotebookDocumentContentOptions {
      * content provider doesn't persist a metadata property in the file document, it should be
      * set to true.
      */
-    var transientDocumentMetadata: Any /* { [key: string]: boolean | undefined } */?
+    var transientDocumentMetadata: Record<String, Boolean?>?
 }

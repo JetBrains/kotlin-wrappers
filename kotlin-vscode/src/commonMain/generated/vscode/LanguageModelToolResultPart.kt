@@ -4,6 +4,8 @@
 
 package vscode
 
+import js.array.ReadonlyArray
+
 /**
  * The result of a tool call. This is the counterpart of a {@link LanguageModelToolCallPart tool call} and
  * it can only be included in the content of a User message
@@ -19,7 +21,7 @@ open external class LanguageModelToolResultPart {
     /**
      * The value of the tool result.
      */
-    var content: Any /* Array<LanguageModelTextPart | LanguageModelPromptTsxPart | unknown> */
+    var content: ReadonlyArray<Any /* LanguageModelTextPart | LanguageModelPromptTsxPart | unknown */>
 
     /**
      * @param callId The ID of the tool call.

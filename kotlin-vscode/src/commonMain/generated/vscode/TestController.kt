@@ -2,6 +2,9 @@
 
 package vscode
 
+import js.core.Void
+import js.promise.PromiseLike
+
 /**
  * Entry point to discover and execute tests. It contains {@link TestController.items} which
  * are used to populate the editor UI, and is associated with
@@ -66,7 +69,7 @@ external interface TestController {
      * @param item An unresolved test item for which children are being
      * requested, or `undefined` to resolve the controller's initial {@link TestController.items items}.
      */
-    var resolveHandler: Any /* (item: TestItem | undefined) => Thenable<void> | void */?
+    var resolveHandler: (item: TestItem?) -> PromiseLike<Void>?
 
     /**
      * If this method is present, a refresh button will be present in the
@@ -79,7 +82,7 @@ external interface TestController {
      *
      * @returns A thenable that resolves when tests have been refreshed.
      */
-    var refreshHandler: Any /* ((token: CancellationToken) => Thenable<void> | void) */
+    var refreshHandler: ((token: CancellationToken) -> PromiseLike<Void>?)
 
     /**
      * Creates a {@link TestRun}. This should be called by the

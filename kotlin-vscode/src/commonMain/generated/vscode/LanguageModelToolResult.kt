@@ -4,6 +4,8 @@
 
 package vscode
 
+import js.array.ReadonlyArray
+
 /**
  * A result returned from a tool invocation. If using `@vscode/prompt-tsx`, this result may be rendered using a `ToolResult`.
  */
@@ -13,7 +15,7 @@ open external class LanguageModelToolResult {
      * the future.
      * @see {@link lm.invokeTool}.
      */
-    var content: Any /* Array<LanguageModelTextPart | LanguageModelPromptTsxPart | unknown> */
+    var content: ReadonlyArray<Any /* LanguageModelTextPart | LanguageModelPromptTsxPart | unknown */>
 
     /**
      * Create a LanguageModelToolResult

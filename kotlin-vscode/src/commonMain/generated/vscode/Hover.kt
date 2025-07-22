@@ -4,6 +4,8 @@
 
 package vscode
 
+import js.array.ReadonlyArray
+
 /**
  * A hover represents additional information for a symbol or word. Hovers are
  * rendered in a tooltip-like widget.
@@ -12,7 +14,7 @@ open external class Hover {
     /**
      * The contents of this hover.
      */
-    var contents: Any /* Array<MarkdownString | MarkedString> */
+    var contents: ReadonlyArray<Any /* MarkdownString | MarkedString */>
 
     /**
      * The range to which this hover applies. When missing, the

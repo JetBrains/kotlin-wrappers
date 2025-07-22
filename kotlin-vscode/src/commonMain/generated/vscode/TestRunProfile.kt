@@ -3,6 +3,7 @@
 package vscode
 
 import js.array.ReadonlyArray
+import js.core.Void
 import js.promise.PromiseLike
 
 /**
@@ -82,7 +83,10 @@ external interface TestRunProfile {
      * instances associated with the request will be
      * automatically cancelled as well.
      */
-    var runHandler: Any /* (request: TestRunRequest, token: CancellationToken) => Thenable<void> | void */
+    var runHandler: (
+        request: TestRunRequest,
+        token: CancellationToken,
+    ) -> PromiseLike<Void>?
 
     /**
      * An extension-provided function that provides detailed statement and

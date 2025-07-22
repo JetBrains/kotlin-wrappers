@@ -4,6 +4,8 @@
 
 package vscode
 
+import js.array.ReadonlyArray
+
 /**
  * Represents a message in a chat. Can assume different roles, like user or assistant.
  */
@@ -33,7 +35,7 @@ open external class LanguageModelChatMessage {
      * A string or heterogeneous array of things that a message can contain as content. Some parts may be message-type
      * specific for some models.
      */
-    var content: Any /* Array<LanguageModelTextPart | LanguageModelToolResultPart | LanguageModelToolCallPart> */
+    var content: ReadonlyArray<Any /* LanguageModelTextPart | LanguageModelToolResultPart | LanguageModelToolCallPart */>
 
     /**
      * The optional name of a user for this message.
