@@ -169,17 +169,26 @@ private fun commentMembers(
         .map { it.trim() }
         .map {
             val declarationSource = it.substringAfter(" */\n")
-            val comment = it.removeSuffix(declarationSource)
 
-            val declaration = if ("\n" in declarationSource) {
-                "/*\n$declarationSource\n*/"
-            } else {
-                "//  $declarationSource"
-            }
-
-            comment + declaration
+            commentMember(
+                comment = it.removeSuffix(declarationSource),
+                source = declarationSource,
+            )
         }
         .joinToString("\n\n")
+}
+
+private fun commentMember(
+    comment: String,
+    source: String,
+): String {
+    val declaration = if ("\n" in source) {
+        "/*\n$source\n*/"
+    } else {
+        "//  $source"
+    }
+
+    return comment + declaration
 }
 
 private fun commentedOriginal(
