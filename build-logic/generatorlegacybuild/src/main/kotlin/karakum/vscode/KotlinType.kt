@@ -155,6 +155,9 @@ internal fun kotlinType(
             "position",
             "offset",
 
+            "countTokens",
+            "offsetAt",
+
                 // ???
             "value",
                 -> INT
@@ -165,8 +168,7 @@ internal fun kotlinType(
             "mtime",
                 -> "Int53"
 
-            else -> "--NUMBER--"
-            // else -> TODO("Unknown number with name '$name'!")
+            else -> TODO("Unknown number with name '$name'!")
         }
     }
 
