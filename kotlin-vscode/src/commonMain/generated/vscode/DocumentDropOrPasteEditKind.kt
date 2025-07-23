@@ -4,8 +4,6 @@
 
 package vscode
 
-import js.array.ReadonlyArray
-
 /**
  * Identifies a {@linkcode DocumentDropEdit} or {@linkcode DocumentPasteEdit}
  */
@@ -46,7 +44,7 @@ open external class DocumentDropOrPasteEditKind {
      *
      * Does not modify the current kind.
      */
-    fun append(parts: ReadonlyArray<String>): DocumentDropOrPasteEditKind
+    fun append(vararg parts: String): DocumentDropOrPasteEditKind
 
     /**
      * Checks if this kind intersects `other`.

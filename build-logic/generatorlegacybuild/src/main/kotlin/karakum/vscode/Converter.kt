@@ -329,10 +329,17 @@ private fun convertFunction(
                     .substringBefore(": ")
                     .removeSuffix("?")
 
+                val vararg = it.startsWith("...")
                 val optional = it.startsWith("$name?")
-                val type = kotlinType(it.substringAfter(": "), name)
+                var typeSource = it.substringAfter(": ")
+                if (vararg) {
+                    require(typeSource.endsWith("[]"))
+                    typeSource = typeSource.removeSuffix("[]")
+                }
 
-                (if (source.startsWith("...")) "vararg " else "") +
+                val type = kotlinType(typeSource, name)
+
+                (if (vararg) "vararg " else "") +
                         "$name: $type" +
                         if (optional) " = definedExternally" else ""
             }

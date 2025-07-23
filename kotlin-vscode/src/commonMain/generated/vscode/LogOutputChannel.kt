@@ -2,8 +2,6 @@
 
 package vscode
 
-import js.array.ReadonlyArray
-
 /**
  * A channel for containing log output.
  *
@@ -31,7 +29,7 @@ external interface LogOutputChannel :
      */
     fun trace(
         message: String,
-        args: ReadonlyArray<Any?>,
+        vararg args: Any?,
     )
 
     /**
@@ -43,7 +41,7 @@ external interface LogOutputChannel :
      */
     fun debug(
         message: String,
-        args: ReadonlyArray<Any?>,
+        vararg args: Any?,
     )
 
     /**
@@ -55,7 +53,7 @@ external interface LogOutputChannel :
      */
     fun info(
         message: String,
-        args: ReadonlyArray<Any?>,
+        vararg args: Any?,
     )
 
     /**
@@ -67,7 +65,7 @@ external interface LogOutputChannel :
      */
     fun warn(
         message: String,
-        args: ReadonlyArray<Any?>,
+        vararg args: Any?,
     )
 
     /**
@@ -79,6 +77,6 @@ external interface LogOutputChannel :
      */
     fun error(
         error: Any, /* string | Error */
-        args: ReadonlyArray<Any?>,
+        vararg args: Any?,
     )
 }
