@@ -112,6 +112,12 @@ suspend fun main() {
                 convertOverriddenMethodDeclaration,
                 convertOverriddenPropertyDeclaration,
                 convertOverriddenPropertySignature,
+                convertParsedResults,
+                convertPipelinePromise,
+                convertPromiseResult,
+                convertQuerystringAliases,
+                convertReadableSymbol,
+                convertReporterConstructorWrapperTypeParameter,
                 // ---
                 convertTestContextHeritageClause,
                 convertTopLevelGlobals,

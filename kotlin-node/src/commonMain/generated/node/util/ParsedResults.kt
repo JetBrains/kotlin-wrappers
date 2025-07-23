@@ -4,7 +4,6 @@ package node.util
 
 // If ParseArgsConfig extends T, then the user passed config constructed elsewhere.
 // So we can't rely on the `"not definitely present" implies "definitely not present"` assumption mentioned above.
-
 sealed external interface ParsedResults<T : ParseArgsConfig> {
     var values: ParsedResultsValues
     var positionals: js.array.ReadonlyArray<String>
