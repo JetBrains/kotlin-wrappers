@@ -16,7 +16,7 @@ open external class SemanticTokensEdits {
      *
      * This is the id that will be passed to `DocumentSemanticTokensProvider.provideDocumentSemanticTokensEdits` (if implemented).
      */
-    val resultId: String
+    val resultId: String?
 
     /**
      * The edits to the tokens data.

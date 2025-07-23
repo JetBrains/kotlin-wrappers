@@ -18,7 +18,7 @@ external interface SignatureHelpContext {
      * This is `undefined` when signature help is not triggered by typing, such as when manually invoking
      * signature help or when moving the cursor.
      */
-    val triggerCharacter: String
+    val triggerCharacter: String?
 
     /**
      * `true` if signature help was already showing when it was triggered.
@@ -34,5 +34,5 @@ external interface SignatureHelpContext {
      * The `activeSignatureHelp` has its {@linkcode SignatureHelp.activeSignature activeSignature} field updated based on
      * the user arrowing through available signatures.
      */
-    val activeSignatureHelp: SignatureHelp
+    val activeSignatureHelp: SignatureHelp?
 }

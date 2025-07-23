@@ -53,5 +53,5 @@ external interface TerminalShellExecutionEndEvent {
      *   }
      * });
      */
-    val exitCode: Int
+    val exitCode: Int?
 }

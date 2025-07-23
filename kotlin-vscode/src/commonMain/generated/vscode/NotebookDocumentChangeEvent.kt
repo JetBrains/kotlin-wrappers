@@ -17,7 +17,7 @@ external interface NotebookDocumentChangeEvent {
     /**
      * The new metadata of the notebook or `undefined` when it did not change.
      */
-    val metadata: Record<String, *>
+    val metadata: Record<String, *>?
 
     /**
      * An array of content changes describing added or removed {@link NotebookCell cells}.

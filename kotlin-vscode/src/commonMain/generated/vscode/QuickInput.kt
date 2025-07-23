@@ -29,17 +29,17 @@ external interface QuickInput {
     /**
      * An optional title.
      */
-    var title: String
+    var title: String?
 
     /**
      * An optional current step count.
      */
-    var step: Int
+    var step: Int?
 
     /**
      * An optional total step count.
      */
-    var totalSteps: Int
+    var totalSteps: Int?
 
     /**
      * If the UI should allow for user input. Defaults to true.

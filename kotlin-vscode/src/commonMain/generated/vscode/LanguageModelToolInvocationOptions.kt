@@ -18,7 +18,7 @@ external interface LanguageModelToolInvocationOptions<T> {
      *
      * *Note* that a tool that invokes another tool during its invocation, can pass along the `toolInvocationToken` that it received.
      */
-    var toolInvocationToken: ChatParticipantToolToken
+    var toolInvocationToken: ChatParticipantToolToken?
 
     /**
      * The input with which to invoke the tool. The input must match the schema defined in

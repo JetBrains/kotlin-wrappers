@@ -18,7 +18,7 @@ external interface CommentThread {
      * at the last line of the range. When set to undefined, the comment will be associated with the
      * file, and not a specific range.
      */
-    var range: Range
+    var range: Range?
 
     /**
      * The ordered comments of the thread.

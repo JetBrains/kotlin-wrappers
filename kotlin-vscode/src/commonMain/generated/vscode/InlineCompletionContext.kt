@@ -21,5 +21,5 @@ external interface InlineCompletionContext {
      *
      * Inline completion providers are requested again whenever the selected item changes.
      */
-    val selectedCompletionInfo: SelectedCompletionInfo
+    val selectedCompletionInfo: SelectedCompletionInfo?
 }

@@ -22,7 +22,7 @@ external interface TestItem {
     /**
      * URI this `TestItem` is associated with. May be a file or directory.
      */
-    val uri: Uri
+    val uri: Uri?
 
     /**
      * The children of this test item. For a test suite, this may contain the
@@ -35,7 +35,7 @@ external interface TestItem {
      * top-level items in the {@link TestController.items} and for items that
      * aren't yet included in another item's {@link TestItem.children children}.
      */
-    val parent: TestItem
+    val parent: TestItem?
 
     /**
      * Tags associated with this test item. May be used in combination with
@@ -84,7 +84,7 @@ external interface TestItem {
      *
      * This is only meaningful if the `uri` points to a file.
      */
-    var range: Range
+    var range: Range?
 
     /**
      * Optional error encountered while loading the test.
@@ -92,5 +92,5 @@ external interface TestItem {
      * Note that this is not a test result and should only be used to represent errors in
      * test discovery, such as syntax errors.
      */
-    var error: Any /* string | MarkdownString */
+    var error: Any /* string | MarkdownString */?
 }

@@ -32,5 +32,5 @@ open external class LinkedEditingRanges {
      * An optional word pattern that describes valid contents for the given ranges.
      * If no pattern is provided, the language configuration's word pattern will be used.
      */
-    val wordPattern: RegExp
+    val wordPattern: RegExp?
 }

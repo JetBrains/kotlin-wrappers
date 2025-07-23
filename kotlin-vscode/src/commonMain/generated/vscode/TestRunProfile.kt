@@ -56,7 +56,7 @@ external interface TestRunProfile {
      * Associated tag for the profile. If this is set, only {@link TestItem}
      * instances with the same tag will be eligible to execute in this profile.
      */
-    var tag: TestTag
+    var tag: TestTag?
 
     /**
      * If this method is present, a configuration gear will be present in the
@@ -64,7 +64,7 @@ external interface TestRunProfile {
      * you can take other editor actions, such as showing a quick pick or
      * opening a configuration file.
      */
-    var configureHandler: (() -> Unit)
+    var configureHandler: (() -> Unit)?
 
     /**
      * Handler called to start a test run. When invoked, the function should call

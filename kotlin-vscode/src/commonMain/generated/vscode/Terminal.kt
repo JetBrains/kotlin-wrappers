@@ -38,7 +38,7 @@ external interface Terminal {
      * });
      * ```
      */
-    val exitStatus: TerminalExitStatus
+    val exitStatus: TerminalExitStatus?
 
     /**
      * The current state of the {@link Terminal}.
@@ -55,7 +55,7 @@ external interface Terminal {
      * example Command Prompt does not support shell integration and a user's shell setup could
      * conflict with the automatic shell integration activation.
      */
-    val shellIntegration: TerminalShellIntegration
+    val shellIntegration: TerminalShellIntegration?
 
     /**
      * Send text to the terminal. The text is written to the stdin of the underlying pty process

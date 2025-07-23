@@ -15,7 +15,7 @@ external interface LanguageStatusItem {
     /**
      * The short name of this item, like 'Java Language Status', etc.
      */
-    var name: String
+    var name: String?
 
     /**
      * A {@link DocumentSelector selector} that defines for what editors
@@ -55,7 +55,7 @@ external interface LanguageStatusItem {
     /**
      * A {@linkcode Command command} for this item.
      */
-    var command: Command
+    var command: Command?
 
     /**
      * Accessibility information used when a screen reader interacts with this item

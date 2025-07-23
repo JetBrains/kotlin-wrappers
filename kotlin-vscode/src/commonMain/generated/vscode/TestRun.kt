@@ -14,7 +14,7 @@ external interface TestRun {
      * disambiguate multiple sets of results in a test run. It is useful if
      * tests are run across multiple platforms, for example.
      */
-    val name: String
+    val name: String?
 
     /**
      * A cancellation token which will be triggered when the test run is

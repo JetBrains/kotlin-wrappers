@@ -22,20 +22,20 @@ external interface NotebookDocumentCellChange {
      * *Note* that you should use the {@link workspace.onDidChangeTextDocument onDidChangeTextDocument}-event
      * for detailed change information, like what edits have been performed.
      */
-    val document: TextDocument
+    val document: TextDocument?
 
     /**
      * The new metadata of the cell or `undefined` when it did not change.
      */
-    val metadata: Record<String, *>
+    val metadata: Record<String, *>?
 
     /**
      * The new outputs of the cell or `undefined` when they did not change.
      */
-    val outputs: ReadonlyArray<NotebookCellOutput>
+    val outputs: ReadonlyArray<NotebookCellOutput>?
 
     /**
      * The new execution summary of the cell or `undefined` when it did not change.
      */
-    val executionSummary: NotebookCellExecutionSummary
+    val executionSummary: NotebookCellExecutionSummary?
 }

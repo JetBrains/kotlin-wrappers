@@ -21,7 +21,7 @@ external interface ChatRequest {
     /**
      * The name of the {@link ChatCommand command} that was selected for this request.
      */
-    val command: String
+    val command: String?
 
     /**
      * The list of references and their values that are referenced in the prompt.

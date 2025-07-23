@@ -29,7 +29,7 @@ external interface TabGroup {
      *
      * *Note* that there can be one active tab per group but there can only be one {@link TabGroups.activeTabGroup active group}.
      */
-    val activeTab: Tab
+    val activeTab: Tab?
 
     /**
      * The list of tabs contained within the group.

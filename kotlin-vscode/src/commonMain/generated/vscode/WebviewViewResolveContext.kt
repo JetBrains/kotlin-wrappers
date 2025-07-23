@@ -37,5 +37,5 @@ external interface WebviewViewResolveContext<T> {
      * The editor ensures that the persisted state is saved correctly when a webview is hidden and across
      * editor restarts.
      */
-    val state: T
+    val state: T?
 }

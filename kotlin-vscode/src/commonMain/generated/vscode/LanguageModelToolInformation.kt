@@ -21,7 +21,7 @@ external interface LanguageModelToolInformation {
     /**
      * A JSON schema for the input this tool accepts.
      */
-    val inputSchema: Any
+    val inputSchema: Any?
 
     /**
      * A set of tags, declared by the tool, that roughly describe the tool's capabilities. A tool user may use these to filter

@@ -26,7 +26,7 @@ open external class TestRunRequest {
      * The process of running tests should resolve the children of any test
      * items who have not yet been resolved.
      */
-    val include: ReadonlyArray<TestItem>
+    val include: ReadonlyArray<TestItem>?
 
     /**
      * An array of tests the user has marked as excluded from the test included
@@ -35,14 +35,14 @@ open external class TestRunRequest {
      * May be omitted if no exclusions were requested. Test controllers should
      * not run excluded tests or any children of excluded tests.
      */
-    val exclude: ReadonlyArray<TestItem>
+    val exclude: ReadonlyArray<TestItem>?
 
     /**
      * The profile used for this request. This will always be defined
      * for requests issued from the editor UI, though extensions may
      * programmatically create requests not associated with any profile.
      */
-    val profile: TestRunProfile
+    val profile: TestRunProfile?
 
     /**
      * Whether the profile should run continuously as source code changes. Only

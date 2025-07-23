@@ -19,5 +19,5 @@ external interface CompletionContext {
      *
      * The trigger character is already in the document when the completion provider is triggered.
      */
-    val triggerCharacter: String
+    val triggerCharacter: String?
 }

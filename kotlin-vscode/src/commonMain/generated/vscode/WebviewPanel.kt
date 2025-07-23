@@ -48,7 +48,7 @@ external interface WebviewPanel {
      * Editor position of the panel. This property is only set if the webview is in
      * one of the editor view columns.
      */
-    val viewColumn: ViewColumn
+    val viewColumn: ViewColumn?
 
     /**
      * Whether the panel is active (focused by the user).

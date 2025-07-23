@@ -47,5 +47,5 @@ external interface NotebookCell {
     /**
      * The most recent {@link NotebookCellExecutionSummary execution summary} for this cell.
      */
-    val executionSummary: NotebookCellExecutionSummary
+    val executionSummary: NotebookCellExecutionSummary?
 }

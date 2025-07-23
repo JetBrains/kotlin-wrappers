@@ -31,7 +31,7 @@ external interface DebugSession {
     /**
      * The workspace folder of this session or `undefined` for a folderless setup.
      */
-    val workspaceFolder: WorkspaceFolder
+    val workspaceFolder: WorkspaceFolder?
 
     /**
      * The "resolved" {@link DebugConfiguration debug configuration} of this session.

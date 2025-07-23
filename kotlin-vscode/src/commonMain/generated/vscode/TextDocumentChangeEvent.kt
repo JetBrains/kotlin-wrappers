@@ -22,5 +22,5 @@ external interface TextDocumentChangeEvent {
      * The reason why the document was changed.
      * Is `undefined` if the reason is not known.
      */
-    val reason: TextDocumentChangeReason
+    val reason: TextDocumentChangeReason?
 }

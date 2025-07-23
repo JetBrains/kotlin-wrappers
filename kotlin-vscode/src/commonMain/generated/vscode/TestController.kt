@@ -82,7 +82,7 @@ external interface TestController {
      *
      * @returns A thenable that resolves when tests have been refreshed.
      */
-    var refreshHandler: ((token: CancellationToken) -> PromiseLike<Void>?)
+    var refreshHandler: ((token: CancellationToken) -> PromiseLike<Void>?)?
 
     /**
      * Creates a {@link TestRun}. This should be called by the

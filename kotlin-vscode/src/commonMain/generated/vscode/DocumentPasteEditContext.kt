@@ -12,7 +12,7 @@ external interface DocumentPasteEditContext {
      * When a explicit kind if requested by {@linkcode DocumentPasteTriggerKind.PasteAs PasteAs}, providers are
      * encourage to be more flexible when generating an edit of the requested kind.
      */
-    val only: DocumentDropOrPasteEditKind
+    val only: DocumentDropOrPasteEditKind?
 
     /**
      * The reason why paste edits were requested.

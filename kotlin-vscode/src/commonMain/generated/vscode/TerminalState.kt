@@ -32,5 +32,5 @@ external interface TerminalState {
      * 'bash', 'cmd', 'csh', 'fish', 'gitbash', 'julia', 'ksh', 'node', 'nu', 'pwsh', 'python',
      * 'sh', 'wsl', 'zsh'.
      */
-    val shell: String
+    val shell: String?
 }

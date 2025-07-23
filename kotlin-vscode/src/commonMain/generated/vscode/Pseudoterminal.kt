@@ -61,7 +61,7 @@ external interface Pseudoterminal {
      * vscode.window.createTerminal({ name: 'My terminal', pty });
      * ```
      */
-    var onDidOverrideDimensions: Event<TerminalDimensions>?
+    var onDidOverrideDimensions: Event<TerminalDimensions?>?
 
     /**
      * An event that when fired will signal that the pty is closed and dispose of the terminal.

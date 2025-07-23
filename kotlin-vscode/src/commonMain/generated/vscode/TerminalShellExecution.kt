@@ -37,7 +37,7 @@ external interface TerminalShellExecution {
      * {@link Uri} may represent a file on another machine (eg. ssh into another machine). This
      * requires the shell integration to support working directory reporting.
      */
-    val cwd: Uri
+    val cwd: Uri?
 
     /**
      * Creates a stream of raw data (including escape sequences) that is written to the

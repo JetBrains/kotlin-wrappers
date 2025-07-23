@@ -15,5 +15,5 @@ external interface TaskProcessEndEvent {
     /**
      * The process's exit code. Will be `undefined` when the task is terminated.
      */
-    val exitCode: Int
+    val exitCode: Int?
 }

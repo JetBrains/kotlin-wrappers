@@ -28,7 +28,7 @@ external interface QuickPick<
     /**
      * Optional placeholder shown in the filter textbox when no filter has been entered.
      */
-    var placeholder: String
+    var placeholder: String?
 
     /**
      * An event signaling when the value of the filter text has changed.

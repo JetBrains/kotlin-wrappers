@@ -40,17 +40,17 @@ open external class ShellExecution {
     /**
      * The shell command line. Is `undefined` if created with a command and arguments.
      */
-    var commandLine: String
+    var commandLine: String?
 
     /**
      * The shell command. Is `undefined` if created with a full command line.
      */
-    var command: Any /* string | ShellQuotedString */
+    var command: Any /* string | ShellQuotedString */?
 
     /**
      * The shell args. Is `undefined` if created with a full command line.
      */
-    var args: ReadonlyArray<Any /* string | ShellQuotedString */>
+    var args: ReadonlyArray<Any /* string | ShellQuotedString */>?
 
     /**
      * The shell options used when the command line is executed in a shell.

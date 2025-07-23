@@ -23,7 +23,7 @@ external interface EnvironmentVariableCollection :
      * A description for the environment variable collection, this will be used to describe the
      * changes in the UI.
      */
-    var description: Any /* string | MarkdownString */
+    var description: Any /* string | MarkdownString */?
 
     /**
      * Replace an environment variable with a value.

@@ -60,7 +60,7 @@ open external class Task {
     /**
      * The task's scope.
      */
-    val scope: Any /* TaskScope.Global | TaskScope.Workspace | WorkspaceFolder */
+    val scope: Any /* TaskScope.Global | TaskScope.Workspace | WorkspaceFolder */?
 
     /**
      * The task's name

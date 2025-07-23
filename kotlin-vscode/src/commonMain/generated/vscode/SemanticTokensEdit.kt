@@ -24,7 +24,7 @@ open external class SemanticTokensEdit {
     /**
      * The elements to insert.
      */
-    val data: Uint32Array<*>
+    val data: Uint32Array<*>?
 
     /**
      * Create a semantic token edit.

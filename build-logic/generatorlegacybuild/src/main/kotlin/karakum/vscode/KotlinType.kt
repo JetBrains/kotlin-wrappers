@@ -22,9 +22,6 @@ private val STANDARD_TYPE_MAP = mapOf(
 
     "AsyncIterable<string>" to "AsyncIterable<String>",
 
-    "Thenable<number | undefined>" to "PromiseLike<Int?>",
-    "Thenable<number>" to "PromiseLike<Int>",
-
     "Uint8Array" to "Uint8Array<*>",
     "Uint32Array" to "Uint32Array<*>",
 
@@ -54,7 +51,7 @@ internal fun kotlinType(
         return kotlinType(type.removePrefix("readonly "), name)
 
     if (type.endsWith(" | undefined"))
-        return kotlinType(type.removeSuffix(" | undefined"), name)
+        return kotlinType(type.removeSuffix(" | undefined"), name) + "?"
 
     if (type.startsWith("Event<") && type.endsWith(">"))
         return "Event<" + kotlinType(type.removeSurrounding("Event<", ">"), name) + ">"
@@ -78,8 +75,7 @@ internal fun kotlinType(
         ?.also { return it }
 
     if (type.endsWith(" | null")) {
-        val t = kotlinType(type.removeSuffix(" | null"), name)
-        return "$t?"
+        return kotlinType(type.removeSuffix(" | null"), name) + "?"
     }
 
     if (type.endsWith("[]")) {

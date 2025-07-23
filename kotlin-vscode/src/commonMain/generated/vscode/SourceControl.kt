@@ -22,7 +22,7 @@ external interface SourceControl {
     /**
      * The (optional) Uri of the root of this source control.
      */
-    val rootUri: Uri
+    val rootUri: Uri?
 
     /**
      * The {@link SourceControlInputBox input box} for this source control.

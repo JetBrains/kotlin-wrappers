@@ -29,12 +29,12 @@ external interface InputBox :
      * This property does not get updated when the user types or makes a selection,
      * but it can be updated by the extension.
      */
-    var valueSelection: Tuple2<Int, Int>
+    var valueSelection: Tuple2<Int, Int>?
 
     /**
      * Optional placeholder shown when no value has been input.
      */
-    var placeholder: String
+    var placeholder: String?
 
     /**
      * If the input value should be hidden. Defaults to false.
@@ -64,12 +64,12 @@ external interface InputBox :
     /**
      * An optional prompt text providing some ask or explanation to the user.
      */
-    var prompt: String
+    var prompt: String?
 
     /**
      * An optional validation message indicating a problem with the current input value.
      * By returning a string, the InputBox will use a default {@link InputBoxValidationSeverity} of Error.
      * Returning undefined clears the validation message.
      */
-    var validationMessage: Any /* string | InputBoxValidationMessage */
+    var validationMessage: Any /* string | InputBoxValidationMessage */?
 }

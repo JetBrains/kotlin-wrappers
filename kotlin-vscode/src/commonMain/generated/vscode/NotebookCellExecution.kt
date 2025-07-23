@@ -28,7 +28,7 @@ external interface NotebookCellExecution {
     /**
      * Set and unset the order of this cell execution.
      */
-    var executionOrder: Int
+    var executionOrder: Int?
 
     /**
      * Signal that the execution has begun.

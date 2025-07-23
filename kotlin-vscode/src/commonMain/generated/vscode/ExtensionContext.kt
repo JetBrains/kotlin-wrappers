@@ -100,7 +100,7 @@ external interface ExtensionContext {
      * @see {@linkcode FileSystem workspace.fs} for how to read and write files and folders from
      *  a uri.
      */
-    val storageUri: Uri
+    val storageUri: Uri?
 
     /**
      * An absolute file path of a workspace specific directory in which the extension
@@ -112,7 +112,7 @@ external interface ExtensionContext {
      *
      * @deprecated Use {@link ExtensionContext.storageUri storageUri} instead.
      */
-    val storagePath: String
+    val storagePath: String?
 
     /**
      * The uri of a directory in which the extension can store global state.

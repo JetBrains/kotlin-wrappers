@@ -24,5 +24,5 @@ external interface CodeActionContext {
      *
      * Actions not of this kind are filtered out before being shown by the [lightbulb](https://code.visualstudio.com/docs/editor/editingevolved#_code-action).
      */
-    val only: CodeActionKind
+    val only: CodeActionKind?
 }

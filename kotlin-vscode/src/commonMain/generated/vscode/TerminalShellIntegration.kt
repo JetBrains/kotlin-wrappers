@@ -11,7 +11,7 @@ external interface TerminalShellIntegration {
      * another machine (eg. ssh into another machine). This requires the shell integration to
      * support working directory reporting.
      */
-    val cwd: Uri
+    val cwd: Uri?
 
     /**
      * Execute a command, sending ^C as necessary to interrupt any running command if needed.

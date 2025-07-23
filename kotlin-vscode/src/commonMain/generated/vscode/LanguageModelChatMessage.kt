@@ -40,7 +40,7 @@ open external class LanguageModelChatMessage {
     /**
      * The optional name of a user for this message.
      */
-    var name: String
+    var name: String?
 
     /**
      * Create a new user message.
