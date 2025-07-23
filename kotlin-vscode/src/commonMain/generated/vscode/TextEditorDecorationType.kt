@@ -18,5 +18,5 @@ external interface TextEditorDecorationType {
     /**
      * Remove this decoration type and all decorations on all text editors using it.
      */
-//  dispose(): void
+    fun dispose()
 }

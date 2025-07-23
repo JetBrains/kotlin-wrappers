@@ -2,7 +2,9 @@
 
 package vscode
 
+import js.array.ReadonlyArray
 import js.objects.Record
+import js.promise.PromiseLike
 
 /**
  * Represents a notebook which itself is a sequence of {@link NotebookCell code or markup cells}. Notebook documents are
@@ -62,7 +64,7 @@ external interface NotebookDocument {
      * @param index - The index of the cell to retrieve.
      * @returns A {@link NotebookCell cell}.
      */
-//  cellAt(index: number): NotebookCell
+    fun cellAt(index: Int): NotebookCell
 
     /**
      * Get the cells of this notebook. A subset can be retrieved by providing
@@ -71,7 +73,7 @@ external interface NotebookDocument {
      * @param range A notebook range.
      * @returns The cells contained by the range or all cells.
      */
-//  getCells(range?: NotebookRange): NotebookCell[]
+    fun getCells(range: NotebookRange = definedExternally): ReadonlyArray<NotebookCell>
 
     /**
      * Save the document. The saving will be handled by the corresponding {@link NotebookSerializer serializer}.
@@ -79,5 +81,5 @@ external interface NotebookDocument {
      * @returns A promise that will resolve to true when the document
      * has been saved. Will return false if the file was not dirty or when save failed.
      */
-//  save(): Thenable<boolean>
+    fun save(): PromiseLike<Boolean>
 }

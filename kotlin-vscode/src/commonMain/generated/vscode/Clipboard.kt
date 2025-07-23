@@ -2,6 +2,9 @@
 
 package vscode
 
+import js.core.Void
+import js.promise.PromiseLike
+
 /**
  * The clipboard provides read and write access to the system's clipboard.
  */
@@ -10,11 +13,11 @@ external interface Clipboard {
      * Read the current clipboard contents as text.
      * @returns A thenable that resolves to a string.
      */
-//  readText(): Thenable<string>
+    fun readText(): PromiseLike<String>
 
     /**
      * Writes text into the clipboard.
      * @returns A thenable that resolves when writing happened.
      */
-//  writeText(value: string): Thenable<void>
+    fun writeText(value: String): PromiseLike<Void>
 }

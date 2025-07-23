@@ -36,7 +36,11 @@ external interface EnvironmentVariableCollection :
      * @param options Options applied to the mutator, when no options are provided this will
      * default to `{ applyAtProcessCreation: true }`.
      */
-//  replace(variable: string, value: string, options?: EnvironmentVariableMutatorOptions): void
+    fun replace(
+        variable: String,
+        value: String,
+        options: EnvironmentVariableMutatorOptions = definedExternally,
+    )
 
     /**
      * Append a value to an environment variable.
@@ -49,7 +53,11 @@ external interface EnvironmentVariableCollection :
      * @param options Options applied to the mutator, when no options are provided this will
      * default to `{ applyAtProcessCreation: true }`.
      */
-//  append(variable: string, value: string, options?: EnvironmentVariableMutatorOptions): void
+    fun append(
+        variable: String,
+        value: String,
+        options: EnvironmentVariableMutatorOptions = definedExternally,
+    )
 
     /**
      * Prepend a value to an environment variable.
@@ -62,14 +70,18 @@ external interface EnvironmentVariableCollection :
      * @param options Options applied to the mutator, when no options are provided this will
      * default to `{ applyAtProcessCreation: true }`.
      */
-//  prepend(variable: string, value: string, options?: EnvironmentVariableMutatorOptions): void
+    fun prepend(
+        variable: String,
+        value: String,
+        options: EnvironmentVariableMutatorOptions = definedExternally,
+    )
 
     /**
      * Gets the mutator that this collection applies to a variable, if any.
      *
      * @param variable The variable to get the mutator for.
      */
-//  get(variable: string): EnvironmentVariableMutator | undefined
+    fun get(variable: String): EnvironmentVariableMutator?
 
     /**
      * Iterate over each mutator in this collection.
@@ -77,17 +89,24 @@ external interface EnvironmentVariableCollection :
      * @param callback Function to execute for each entry.
      * @param thisArg The `this` context used when invoking the handler function.
      */
-//  forEach(callback: (variable: string, mutator: EnvironmentVariableMutator, collection: EnvironmentVariableCollection) => any, thisArg?: any): void
+    fun forEach(
+        callback: (
+            variable: String,
+            mutator: EnvironmentVariableMutator,
+            collection: EnvironmentVariableCollection,
+        ) -> Unit,
+        thisArg: Any? = definedExternally,
+    )
 
     /**
      * Deletes this collection's mutator for a variable.
      *
      * @param variable The variable to delete the mutator for.
      */
-//  delete(variable: string): void
+    fun delete(variable: String)
 
     /**
      * Clears all mutators from this collection.
      */
-//  clear(): void
+    fun clear()
 }

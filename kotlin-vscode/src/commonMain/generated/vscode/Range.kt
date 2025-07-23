@@ -68,7 +68,7 @@ open external class Range {
      * @returns `true` if the position or range is inside or equal
      * to this range.
      */
-//  contains(positionOrRange: Position | Range): boolean
+    fun contains(positionOrRange: Any /* Position | Range */): Boolean
 
     /**
      * Check if `other` equals this range.
@@ -77,7 +77,7 @@ open external class Range {
      * @returns `true` when start and end are {@link Position.isEqual equal} to
      * start and end of this range.
      */
-//  isEqual(other: Range): boolean
+    fun isEqual(other: Range): Boolean
 
     /**
      * Intersect `range` with this range and returns a new range or `undefined`
@@ -87,7 +87,7 @@ open external class Range {
      * @returns A range of the greater start and smaller end positions. Will
      * return undefined when there is no overlap.
      */
-//  intersection(range: Range): Range | undefined
+    fun intersection(range: Range): Range?
 
     /**
      * Compute the union of `other` with this range.
@@ -95,7 +95,7 @@ open external class Range {
      * @param other A range.
      * @returns A range of smaller start position and the greater end position.
      */
-//  union(other: Range): Range
+    fun union(other: Range): Range
 
     /**
      * Derived a new range from this range.
@@ -105,7 +105,10 @@ open external class Range {
      * @returns A range derived from this range with the given start and end position.
      * If start and end are not different `this` range will be returned.
      */
-//  with(start?: Position, end?: Position): Range
+    fun with(
+        start: Position = definedExternally,
+        end: Position = definedExternally,
+    ): Range
 
     /**
      * Derived a new range from this range.

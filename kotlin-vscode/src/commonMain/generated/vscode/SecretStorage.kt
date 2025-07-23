@@ -2,6 +2,9 @@
 
 package vscode
 
+import js.core.Void
+import js.promise.PromiseLike
+
 /**
  * Represents a storage utility for secrets (or any information that is sensitive)
  * that will be stored encrypted. The implementation of the secret storage will
@@ -15,20 +18,23 @@ external interface SecretStorage {
      * @param key The key the secret was stored under.
      * @returns The stored value or `undefined`.
      */
-//  get(key: string): Thenable<string | undefined>
+    fun get(key: String): PromiseLike<String?>
 
     /**
      * Store a secret under a given key.
      * @param key The key to store the secret under.
      * @param value The secret.
      */
-//  store(key: string, value: string): Thenable<void>
+    fun store(
+        key: String,
+        value: String,
+    ): PromiseLike<Void>
 
     /**
      * Remove a secret from storage.
      * @param key The key the secret was stored under.
      */
-//  delete(key: string): Thenable<void>
+    fun delete(key: String): PromiseLike<Void>
 
     /**
      * Fires when a secret is stored or deleted.

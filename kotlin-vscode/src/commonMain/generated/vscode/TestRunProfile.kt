@@ -134,5 +134,5 @@ external interface TestRunProfile {
     /**
      * Deletes the run profile.
      */
-//  dispose(): void
+    fun dispose()
 }

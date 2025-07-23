@@ -27,7 +27,12 @@ external interface CompletionItemProvider<T : CompletionItem> {
      * @returns An array of completions, a {@link CompletionList completion list}, or a thenable that resolves to either.
      * The lack of a result can be signaled by returning `undefined`, `null`, or an empty array.
      */
-//  provideCompletionItems(document: TextDocument, position: Position, token: CancellationToken, context: CompletionContext): ProviderResult<T[] | CompletionList<T>>
+    fun provideCompletionItems(
+        document: TextDocument,
+        position: Position,
+        token: CancellationToken,
+        context: CompletionContext,
+    ): ProviderResult<Any /* T[] | CompletionList<T> */>
 
     /**
      * Given a completion item fill in more data, like {@link CompletionItem.documentation doc-comment}

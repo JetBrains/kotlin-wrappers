@@ -67,13 +67,13 @@ external interface QuickInput {
      * Makes the input UI visible in its current configuration. Any other input
      * UI will first fire an {@link QuickInput.onDidHide} event.
      */
-//  show(): void
+    fun show()
 
     /**
      * Hides this input UI. This will also fire an {@link QuickInput.onDidHide}
      * event.
      */
-//  hide(): void
+    fun hide()
 
     /**
      * An event signaling when this input UI is hidden.
@@ -91,5 +91,5 @@ external interface QuickInput {
      * functional and no additional methods or properties on it should be
      * accessed. Instead a new input UI should be created.
      */
-//  dispose(): void
+    fun dispose()
 }

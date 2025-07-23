@@ -2,6 +2,8 @@
 
 package vscode
 
+import js.array.ReadonlyArray
+
 /**
  * A channel for containing log output.
  *
@@ -27,7 +29,10 @@ external interface LogOutputChannel :
      *
      * @param message trace message to log
      */
-//  trace(message: string, ...args: any[]): void
+    fun trace(
+        message: String,
+        args: ReadonlyArray<Any?>,
+    )
 
     /**
      * Outputs the given debug message to the channel.
@@ -36,7 +41,10 @@ external interface LogOutputChannel :
      *
      * @param message debug message to log
      */
-//  debug(message: string, ...args: any[]): void
+    fun debug(
+        message: String,
+        args: ReadonlyArray<Any?>,
+    )
 
     /**
      * Outputs the given information message to the channel.
@@ -45,7 +53,10 @@ external interface LogOutputChannel :
      *
      * @param message info message to log
      */
-//  info(message: string, ...args: any[]): void
+    fun info(
+        message: String,
+        args: ReadonlyArray<Any?>,
+    )
 
     /**
      * Outputs the given warning message to the channel.
@@ -54,7 +65,10 @@ external interface LogOutputChannel :
      *
      * @param message warning message to log
      */
-//  warn(message: string, ...args: any[]): void
+    fun warn(
+        message: String,
+        args: ReadonlyArray<Any?>,
+    )
 
     /**
      * Outputs the given error or error message to the channel.
@@ -63,5 +77,8 @@ external interface LogOutputChannel :
      *
      * @param error Error or error message to log
      */
-//  error(error: string | Error, ...args: any[]): void
+    fun error(
+        error: Any, /* string | Error */
+        args: ReadonlyArray<Any?>,
+    )
 }

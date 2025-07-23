@@ -29,7 +29,11 @@ external interface CustomReadonlyEditorProvider<T : CustomDocument> {
      *
      * @returns The custom document.
      */
-//  openCustomDocument(uri: Uri, openContext: CustomDocumentOpenContext, token: CancellationToken): Thenable<T> | T
+    fun openCustomDocument(
+        uri: Uri,
+        openContext: CustomDocumentOpenContext,
+        token: CancellationToken,
+    ): Any /* Thenable<T> | T */
 
     /**
      * Resolve a custom editor for a given resource.
@@ -48,5 +52,9 @@ external interface CustomReadonlyEditorProvider<T : CustomDocument> {
      *
      * @returns Optional thenable indicating that the custom editor has been resolved.
      */
-//  resolveCustomEditor(document: T, webviewPanel: WebviewPanel, token: CancellationToken): Thenable<void> | void
+    fun resolveCustomEditor(
+        document: T,
+        webviewPanel: WebviewPanel,
+        token: CancellationToken,
+    ): Any /* Thenable<void> | void */
 }

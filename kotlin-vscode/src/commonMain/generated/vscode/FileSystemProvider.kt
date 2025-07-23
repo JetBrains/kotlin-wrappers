@@ -74,7 +74,7 @@ external interface FileSystemProvider {
      * @returns The file metadata about the file.
      * @throws {@linkcode FileSystemError.FileNotFound FileNotFound} when `uri` doesn't exist.
      */
-//  stat(uri: Uri): FileStat | Thenable<FileStat>
+    fun stat(uri: Uri): Any /* FileStat | Thenable<FileStat> */
 
     /**
      * Retrieve all entries of a {@link FileType.Directory directory}.
@@ -83,7 +83,7 @@ external interface FileSystemProvider {
      * @returns An array of name/type-tuples or a thenable that resolves to such.
      * @throws {@linkcode FileSystemError.FileNotFound FileNotFound} when `uri` doesn't exist.
      */
-//  readDirectory(uri: Uri): [string, FileType][] | Thenable<[string, FileType][]>
+    fun readDirectory(uri: Uri): Any /* [string, FileType][] | Thenable<[string, FileType][]> */
 
     /**
      * Create a new directory (Note, that new files are created via `write`-calls).
@@ -93,7 +93,7 @@ external interface FileSystemProvider {
      * @throws {@linkcode FileSystemError.FileExists FileExists} when `uri` already exists.
      * @throws {@linkcode FileSystemError.NoPermissions NoPermissions} when permissions aren't sufficient.
      */
-//  createDirectory(uri: Uri): void | Thenable<void>
+    fun createDirectory(uri: Uri): Any /* void | Thenable<void> */
 
     /**
      * Read the entire contents of a file.
@@ -102,7 +102,7 @@ external interface FileSystemProvider {
      * @returns An array of bytes or a thenable that resolves to such.
      * @throws {@linkcode FileSystemError.FileNotFound FileNotFound} when `uri` doesn't exist.
      */
-//  readFile(uri: Uri): Uint8Array | Thenable<Uint8Array>
+    fun readFile(uri: Uri): Any /* Uint8Array | Thenable<Uint8Array> */
 
     /**
      * Write data to a file, replacing its entire contents.

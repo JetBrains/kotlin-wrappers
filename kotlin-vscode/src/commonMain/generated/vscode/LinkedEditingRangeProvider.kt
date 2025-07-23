@@ -18,5 +18,9 @@ external interface LinkedEditingRangeProvider {
      * @param token A cancellation token.
      * @returns A list of ranges that can be edited together
      */
-//  provideLinkedEditingRanges(document: TextDocument, position: Position, token: CancellationToken): ProviderResult<LinkedEditingRanges>
+    fun provideLinkedEditingRanges(
+        document: TextDocument,
+        position: Position,
+        token: CancellationToken,
+    ): ProviderResult<LinkedEditingRanges>
 }

@@ -65,5 +65,5 @@ external interface LanguageStatusItem {
     /**
      * Dispose and free associated resources.
      */
-//  dispose(): void
+    fun dispose()
 }

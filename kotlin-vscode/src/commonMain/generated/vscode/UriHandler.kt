@@ -2,6 +2,8 @@
 
 package vscode
 
+import js.core.Void
+
 /**
  * A uri handler is responsible for handling system-wide {@link Uri uris}.
  *
@@ -13,5 +15,5 @@ external interface UriHandler {
      *
      * @see {@link window.registerUriHandler}.
      */
-//  handleUri(uri: Uri): ProviderResult<void>
+    fun handleUri(uri: Uri): ProviderResult<Void>
 }

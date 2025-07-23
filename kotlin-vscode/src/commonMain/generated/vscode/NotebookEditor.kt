@@ -43,5 +43,8 @@ external interface NotebookEditor {
      * @param range A range.
      * @param revealType The scrolling strategy for revealing `range`.
      */
-//  revealRange(range: NotebookRange, revealType?: NotebookEditorRevealType): void
+    fun revealRange(
+        range: NotebookRange,
+        revealType: NotebookEditorRevealType = definedExternally,
+    )
 }

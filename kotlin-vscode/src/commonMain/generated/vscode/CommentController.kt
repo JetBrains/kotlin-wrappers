@@ -2,6 +2,7 @@
 
 package vscode
 
+import js.array.ReadonlyArray
 import js.core.Void
 import js.promise.PromiseLike
 
@@ -40,7 +41,11 @@ external interface CommentController {
      * @param range The range the comment thread is located within the document.
      * @param comments The ordered comments of the thread.
      */
-//  createCommentThread(uri: Uri, range: Range, comments: readonly Comment[]): CommentThread
+    fun createCommentThread(
+        uri: Uri,
+        range: Range,
+        comments: ReadonlyArray<Comment>,
+    ): CommentThread
 
     /**
      * Optional reaction handler for creating and deleting reactions on a {@link Comment}.
@@ -56,5 +61,5 @@ external interface CommentController {
      * Once disposed, all {@link CommentThread comment threads} created by this comment controller will also be removed from the editor
      * and Comments Panel.
      */
-//  dispose(): void
+    fun dispose()
 }

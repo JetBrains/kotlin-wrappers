@@ -104,7 +104,10 @@ external interface TextEditor {
      * @param decorationType A decoration type.
      * @param rangesOrOptions Either {@link Range ranges} or more detailed {@link DecorationOptions options}.
      */
-//  setDecorations(decorationType: TextEditorDecorationType, rangesOrOptions: readonly Range[] | readonly DecorationOptions[]): void
+    fun setDecorations(
+        decorationType: TextEditorDecorationType,
+        rangesOrOptions: ReadonlyArray<Any /* Range[] | readonly DecorationOptions */>,
+    )
 
     /**
      * Scroll as indicated by `revealType` in order to reveal the given range.
@@ -112,7 +115,10 @@ external interface TextEditor {
      * @param range A range.
      * @param revealType The scrolling strategy for revealing `range`.
      */
-//  revealRange(range: Range, revealType?: TextEditorRevealType): void
+    fun revealRange(
+        range: Range,
+        revealType: TextEditorRevealType = definedExternally,
+    )
 
     /**
      * Show the text editor.
@@ -122,7 +128,7 @@ external interface TextEditor {
      * @param column The {@link ViewColumn column} in which to show this editor.
      * This method shows unexpected behavior and will be removed in the next major update.
      */
-//  show(column?: ViewColumn): void
+    fun show(column: ViewColumn = definedExternally)
 
     /**
      * Hide the text editor.
@@ -130,5 +136,5 @@ external interface TextEditor {
      * @deprecated Use the command `workbench.action.closeActiveEditor` instead.
      * This method shows unexpected behavior and will be removed in the next major update.
      */
-//  hide(): void
+    fun hide()
 }

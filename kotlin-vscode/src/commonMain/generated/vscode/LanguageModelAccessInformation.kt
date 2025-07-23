@@ -22,5 +22,5 @@ external interface LanguageModelAccessInformation {
      * @return `true` if a request can be made, `false` if not, `undefined` if the language
      * model does not exist or consent hasn't been asked for.
      */
-//  canSendRequest(chat: LanguageModelChat): boolean | undefined
+    fun canSendRequest(chat: LanguageModelChat): Boolean?
 }

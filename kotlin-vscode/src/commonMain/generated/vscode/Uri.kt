@@ -219,12 +219,12 @@ open external class Uri {
      *	the `#` and `?` characters occurring in the path will always be encoded.
      * @returns A string representation of this Uri.
      */
-//  toString(skipEncoding?: boolean): string
+    fun toString(skipEncoding: Boolean = definedExternally): String
 
     /**
      * Returns a JSON representation of this Uri.
      *
      * @returns An object.
      */
-//  toJSON(): any
+    fun toJSON(): Any?
 }

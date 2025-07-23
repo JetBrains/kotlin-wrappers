@@ -19,5 +19,9 @@ external interface EvaluatableExpressionProvider {
      * @returns An EvaluatableExpression or a thenable that resolves to such. The lack of a result can be
      * signaled by returning `undefined` or `null`.
      */
-//  provideEvaluatableExpression(document: TextDocument, position: Position, token: CancellationToken): ProviderResult<EvaluatableExpression>
+    fun provideEvaluatableExpression(
+        document: TextDocument,
+        position: Position,
+        token: CancellationToken,
+    ): ProviderResult<EvaluatableExpression>
 }

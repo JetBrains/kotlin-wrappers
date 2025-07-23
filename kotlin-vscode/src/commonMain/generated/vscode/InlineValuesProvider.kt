@@ -2,6 +2,7 @@
 
 package vscode
 
+import js.array.ReadonlyArray
 import js.core.Void
 
 /**
@@ -28,5 +29,10 @@ external interface InlineValuesProvider {
      * @returns An array of InlineValueDescriptors or a thenable that resolves to such. The lack of a result can be
      * signaled by returning `undefined` or `null`.
      */
-//  provideInlineValues(document: TextDocument, viewPort: Range, context: InlineValueContext, token: CancellationToken): ProviderResult<InlineValue[]>
+    fun provideInlineValues(
+        document: TextDocument,
+        viewPort: Range,
+        context: InlineValueContext,
+        token: CancellationToken,
+    ): ProviderResult<ReadonlyArray<InlineValue>>
 }

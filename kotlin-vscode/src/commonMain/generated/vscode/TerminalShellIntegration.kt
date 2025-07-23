@@ -2,6 +2,8 @@
 
 package vscode
 
+import js.array.ReadonlyArray
+
 /**
  * [Shell integration](https://code.visualstudio.com/docs/terminal/shell-integration)-powered capabilities owned by a terminal.
  */
@@ -57,7 +59,7 @@ external interface TerminalShellIntegration {
      *   // exit code was.
      * }
      */
-//  executeCommand(commandLine: string): TerminalShellExecution
+    fun executeCommand(commandLine: String): TerminalShellExecution
 
     /**
      * Execute a command, sending ^C as necessary to interrupt any running command if needed.
@@ -113,5 +115,8 @@ external interface TerminalShellIntegration {
      *   // exit code was.
      * }
      */
-//  executeCommand(executable: string, args: string[]): TerminalShellExecution
+    fun executeCommand(
+        executable: String,
+        args: ReadonlyArray<String>,
+    ): TerminalShellExecution
 }

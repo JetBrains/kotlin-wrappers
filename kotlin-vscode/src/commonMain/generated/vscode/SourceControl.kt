@@ -70,10 +70,13 @@ external interface SourceControl {
     /**
      * Create a new {@link SourceControlResourceGroup resource group}.
      */
-//  createResourceGroup(id: string, label: string): SourceControlResourceGroup
+    fun createResourceGroup(
+        id: String,
+        label: String,
+    ): SourceControlResourceGroup
 
     /**
      * Dispose this source control.
      */
-//  dispose(): void
+    fun dispose()
 }

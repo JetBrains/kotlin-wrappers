@@ -2,6 +2,7 @@
 
 package vscode
 
+import js.array.ReadonlyArray
 import js.core.Void
 
 /**
@@ -24,7 +25,10 @@ external interface CodeLensProvider<T : CodeLens> {
      * @returns An array of code lenses or a thenable that resolves to such. The lack of a result can be
      * signaled by returning `undefined`, `null`, or an empty array.
      */
-//  provideCodeLenses(document: TextDocument, token: CancellationToken): ProviderResult<T[]>
+    fun provideCodeLenses(
+        document: TextDocument,
+        token: CancellationToken,
+    ): ProviderResult<ReadonlyArray<T>>
 
     /**
      * This function will be called for each visible code lens, usually when scrolling and after

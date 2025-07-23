@@ -2,6 +2,8 @@
 
 package vscode
 
+import js.typedarrays.Uint8Array
+
 /**
  * The notebook serializer enables the editor to open notebook files.
  *
@@ -18,7 +20,10 @@ external interface NotebookSerializer {
      * @param token A cancellation token.
      * @returns Notebook data or a thenable that resolves to such.
      */
-//  deserializeNotebook(content: Uint8Array, token: CancellationToken): NotebookData | Thenable<NotebookData>
+    fun deserializeNotebook(
+        content: Uint8Array<*>,
+        token: CancellationToken,
+    ): Any /* NotebookData | Thenable<NotebookData> */
 
     /**
      * Serialize notebook data into file contents.
@@ -27,5 +32,8 @@ external interface NotebookSerializer {
      * @param token A cancellation token.
      * @returns An array of bytes or a thenable that resolves to such.
      */
-//  serializeNotebook(data: NotebookData, token: CancellationToken): Uint8Array | Thenable<Uint8Array>
+    fun serializeNotebook(
+        data: NotebookData,
+        token: CancellationToken,
+    ): Any /* Uint8Array | Thenable<Uint8Array> */
 }

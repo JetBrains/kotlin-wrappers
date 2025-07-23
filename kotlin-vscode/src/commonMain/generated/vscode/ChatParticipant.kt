@@ -39,5 +39,5 @@ external interface ChatParticipant {
     /**
      * Dispose this participant and free resources.
      */
-//  dispose(): void
+    fun dispose()
 }

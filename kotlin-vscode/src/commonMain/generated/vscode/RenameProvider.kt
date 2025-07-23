@@ -18,7 +18,12 @@ external interface RenameProvider {
      * @returns A workspace edit or a thenable that resolves to such. The lack of a result can be
      * signaled by returning `undefined` or `null`.
      */
-//  provideRenameEdits(document: TextDocument, position: Position, newName: string, token: CancellationToken): ProviderResult<WorkspaceEdit>
+    fun provideRenameEdits(
+        document: TextDocument,
+        position: Position,
+        newName: String,
+        token: CancellationToken,
+    ): ProviderResult<WorkspaceEdit>
 
     /**
      * Optional function for resolving and validating a position *before* running rename. The result can

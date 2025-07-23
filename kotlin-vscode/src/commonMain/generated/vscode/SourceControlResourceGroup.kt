@@ -54,5 +54,5 @@ external interface SourceControlResourceGroup {
     /**
      * Dispose this source control resource group.
      */
-//  dispose(): void
+    fun dispose()
 }

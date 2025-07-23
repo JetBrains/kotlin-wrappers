@@ -139,7 +139,7 @@ open external class CodeActionKind {
      *
      * Does not modify the current kind.
      */
-//  append(parts: string): CodeActionKind
+    fun append(parts: String): CodeActionKind
 
     /**
      * Checks if this code action kind intersects `other`.
@@ -149,7 +149,7 @@ open external class CodeActionKind {
      *
      * @param other Kind to check.
      */
-//  intersects(other: CodeActionKind): boolean
+    fun intersects(other: CodeActionKind): Boolean
 
     /**
      * Checks if `other` is a sub-kind of this `CodeActionKind`.
@@ -159,5 +159,5 @@ open external class CodeActionKind {
      *
      * @param other Kind to check.
      */
-//  contains(other: CodeActionKind): boolean
+    fun contains(other: CodeActionKind): Boolean
 }

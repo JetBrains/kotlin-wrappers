@@ -2,6 +2,8 @@
 
 package vscode
 
+import js.objects.Record
+
 /**
  * The telemetry sender is the contract between a telemetry logger and some telemetry service. **Note** that extensions must NOT
  * call the methods of their sender directly as the logger provides extra guards and cleaning.
@@ -24,7 +26,10 @@ external interface TelemetrySender {
      * @param eventName The name of the event which you are logging
      * @param data A serializable key value pair that is being logged
      */
-//  sendEventData(eventName: string, data?: Record<string, any>): void
+    fun sendEventData(
+        eventName: String,
+        data: Record<String, *> = definedExternally,
+    )
 
     /**
      * Function to send an error. Used within a {@link TelemetryLogger}
@@ -32,7 +37,10 @@ external interface TelemetrySender {
      * @param error The error being logged
      * @param data Any additional data to be collected with the exception
      */
-//  sendErrorData(error: Error, data?: Record<string, any>): void
+    fun sendErrorData(
+        error: Error,
+        data: Record<String, *> = definedExternally,
+    )
 
     /**
      * Optional flush function which will give this sender a chance to send any remaining events

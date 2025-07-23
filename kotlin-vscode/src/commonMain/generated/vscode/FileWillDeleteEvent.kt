@@ -3,6 +3,7 @@
 package vscode
 
 import js.array.ReadonlyArray
+import js.promise.PromiseLike
 
 /**
  * An event that is fired when files are going to be deleted.
@@ -40,7 +41,7 @@ external interface FileWillDeleteEvent {
      *
      * @param thenable A thenable that delays saving.
      */
-//  waitUntil(thenable: Thenable<WorkspaceEdit>): void
+    fun waitUntil(thenable: PromiseLike<WorkspaceEdit>)
 
     /**
      * Allows to pause the event until the provided thenable resolves.
@@ -49,5 +50,5 @@ external interface FileWillDeleteEvent {
      *
      * @param thenable A thenable that delays saving.
      */
-//  waitUntil(thenable: Thenable<any>): void
+    fun waitUntil(thenable: PromiseLike<Any?>)
 }

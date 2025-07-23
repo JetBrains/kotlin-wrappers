@@ -4,6 +4,8 @@
 
 package vscode
 
+import js.array.ReadonlyArray
+
 /**
  * A snippet string is a template which allows to insert text
  * and to control the editor cursor when insertion happens.
@@ -34,7 +36,7 @@ open external class SnippetString {
      * @param string A value to append 'as given'. The string will be escaped.
      * @returns This snippet string.
      */
-//  appendText(string: string): SnippetString
+    fun appendText(string: String): SnippetString
 
     /**
      * Builder-function that appends a tabstop (`$1`, `$2` etc) to
@@ -44,7 +46,7 @@ open external class SnippetString {
      * value starting at 1.
      * @returns This snippet string.
      */
-//  appendTabstop(number?: number): SnippetString
+    fun appendTabstop(number: Int = definedExternally): SnippetString
 
     /**
      * Builder-function that appends a placeholder (`${1:value}`) to
@@ -56,7 +58,10 @@ open external class SnippetString {
      * value starting at 1.
      * @returns This snippet string.
      */
-//  appendPlaceholder(value: string | ((snippet: SnippetString) => any), number?: number): SnippetString
+    fun appendPlaceholder(
+        value: Any, /* string | ((snippet: SnippetString) => any) */
+        number: Int = definedExternally,
+    ): SnippetString
 
     /**
      * Builder-function that appends a choice (`${1|a,b,c|}`) to
@@ -67,7 +72,10 @@ open external class SnippetString {
      * value starting at 1.
      * @returns This snippet string.
      */
-//  appendChoice(values: readonly string[], number?: number): SnippetString
+    fun appendChoice(
+        values: ReadonlyArray<String>,
+        number: Int = definedExternally,
+    ): SnippetString
 
     /**
      * Builder-function that appends a variable (`${VAR}`) to
@@ -78,5 +86,8 @@ open external class SnippetString {
      * be resolved - either a string or a function with which a nested snippet can be created.
      * @returns This snippet string.
      */
-//  appendVariable(name: string, defaultValue: string | ((snippet: SnippetString) => any)): SnippetString
+    fun appendVariable(
+        name: String,
+        defaultValue: Any, /* string | ((snippet: SnippetString) => any) */
+    ): SnippetString
 }

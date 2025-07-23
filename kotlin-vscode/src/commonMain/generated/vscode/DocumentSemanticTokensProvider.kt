@@ -73,7 +73,10 @@ external interface DocumentSemanticTokensProvider {
      * *NOTE*: When doing edits, it is possible that multiple edits occur until the editor decides to invoke the semantic tokens provider.
      * *NOTE*: If the provider cannot temporarily compute semantic tokens, it can indicate this by throwing an error with the message 'Busy'.
      */
-//  provideDocumentSemanticTokens(document: TextDocument, token: CancellationToken): ProviderResult<SemanticTokens>
+    fun provideDocumentSemanticTokens(
+        document: TextDocument,
+        token: CancellationToken,
+    ): ProviderResult<SemanticTokens>
 
     /**
      * Instead of always returning all the tokens in a file, it is possible for a `DocumentSemanticTokensProvider` to implement

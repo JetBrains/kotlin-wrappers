@@ -2,6 +2,8 @@
 
 package vscode
 
+import js.promise.PromiseLike
+
 /**
  * A debug session.
  */
@@ -44,7 +46,10 @@ external interface DebugSession {
     /**
      * Send a custom request to the debug adapter.
      */
-//  customRequest(command: string, args?: any): Thenable<any>
+    fun customRequest(
+        command: String,
+        args: Any? = definedExternally,
+    ): PromiseLike<Any?>
 
     /**
      * Maps a breakpoint in the editor to the corresponding Debug Adapter Protocol (DAP) breakpoint that is managed by the debug adapter of the debug session.
@@ -53,5 +58,5 @@ external interface DebugSession {
      * @param breakpoint A {@link Breakpoint} in the editor.
      * @returns A promise that resolves to the Debug Adapter Protocol breakpoint or `undefined`.
      */
-//  getDebugProtocolBreakpoint(breakpoint: Breakpoint): Thenable<DebugProtocolBreakpoint | undefined>
+    fun getDebugProtocolBreakpoint(breakpoint: Breakpoint): PromiseLike<DebugProtocolBreakpoint?>
 }

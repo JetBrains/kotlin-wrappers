@@ -2,6 +2,8 @@
 
 package vscode
 
+import js.array.ReadonlyArray
+
 /**
  * The document formatting provider interface defines the contract between extensions and
  * the formatting-feature.
@@ -22,5 +24,11 @@ external interface OnTypeFormattingEditProvider {
      * @returns A set of text edits or a thenable that resolves to such. The lack of a result can be
      * signaled by returning `undefined`, `null`, or an empty array.
      */
-//  provideOnTypeFormattingEdits(document: TextDocument, position: Position, ch: string, options: FormattingOptions, token: CancellationToken): ProviderResult<TextEdit[]>
+    fun provideOnTypeFormattingEdits(
+        document: TextDocument,
+        position: Position,
+        ch: String,
+        options: FormattingOptions,
+        token: CancellationToken,
+    ): ProviderResult<ReadonlyArray<TextEdit>>
 }

@@ -86,18 +86,21 @@ open external class MarkdownString {
      * Appends and escapes the given string to this markdown string.
      * @param value Plain text.
      */
-//  appendText(value: string): MarkdownString
+    fun appendText(value: String): MarkdownString
 
     /**
      * Appends the given string 'as is' to this markdown string. When {@linkcode MarkdownString.supportThemeIcons supportThemeIcons} is `true`, {@link ThemeIcon ThemeIcons} in the `value` will be iconified.
      * @param value Markdown string.
      */
-//  appendMarkdown(value: string): MarkdownString
+    fun appendMarkdown(value: String): MarkdownString
 
     /**
      * Appends the given string as codeblock using the provided language.
      * @param value A code snippet.
      * @param language An optional {@link languages.getLanguages language identifier}.
      */
-//  appendCodeblock(value: string, language?: string): MarkdownString
+    fun appendCodeblock(
+        value: String,
+        language: String = definedExternally,
+    ): MarkdownString
 }

@@ -18,5 +18,9 @@ external interface HoverProvider {
      * @returns A hover or a thenable that resolves to such. The lack of a result can be
      * signaled by returning `undefined` or `null`.
      */
-//  provideHover(document: TextDocument, position: Position, token: CancellationToken): ProviderResult<Hover>
+    fun provideHover(
+        document: TextDocument,
+        position: Position,
+        token: CancellationToken,
+    ): ProviderResult<Hover>
 }

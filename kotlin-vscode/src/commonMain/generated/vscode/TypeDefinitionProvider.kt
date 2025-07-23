@@ -2,6 +2,8 @@
 
 package vscode
 
+import js.array.ReadonlyArray
+
 /**
  * The type definition provider defines the contract between extensions and
  * the go to type definition feature.
@@ -16,5 +18,9 @@ external interface TypeDefinitionProvider {
      * @returns A definition or a thenable that resolves to such. The lack of a result can be
      * signaled by returning `undefined` or `null`.
      */
-//  provideTypeDefinition(document: TextDocument, position: Position, token: CancellationToken): ProviderResult<Definition | DefinitionLink[]>
+    fun provideTypeDefinition(
+        document: TextDocument,
+        position: Position,
+        token: CancellationToken,
+    ): ProviderResult<ReadonlyArray<Any /* Definition | DefinitionLink */>>
 }

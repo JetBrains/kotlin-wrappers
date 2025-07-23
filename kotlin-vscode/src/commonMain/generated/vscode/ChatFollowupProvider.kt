@@ -2,6 +2,8 @@
 
 package vscode
 
+import js.array.ReadonlyArray
+
 /**
  * Will be invoked once after each request to get suggested followup questions to show the user. The user can click the followup to send it to the chat.
  */
@@ -13,5 +15,9 @@ external interface ChatFollowupProvider {
      * @param context Extra context passed to a participant.
      * @param token A cancellation token.
      */
-//  provideFollowups(result: ChatResult, context: ChatContext, token: CancellationToken): ProviderResult<ChatFollowup[]>
+    fun provideFollowups(
+        result: ChatResult,
+        context: ChatContext,
+        token: CancellationToken,
+    ): ProviderResult<ReadonlyArray<ChatFollowup>>
 }

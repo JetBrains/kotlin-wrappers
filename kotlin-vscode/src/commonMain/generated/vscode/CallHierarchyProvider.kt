@@ -2,6 +2,8 @@
 
 package vscode
 
+import js.array.ReadonlyArray
+
 /**
  * The call hierarchy provider interface describes the contract between extensions
  * and the call hierarchy feature which allows to browse calls and caller of function,
@@ -19,7 +21,11 @@ external interface CallHierarchyProvider {
      * @returns One or multiple call hierarchy items or a thenable that resolves to such. The lack of a result can be
      * signaled by returning `undefined`, `null`, or an empty array.
      */
-//  prepareCallHierarchy(document: TextDocument, position: Position, token: CancellationToken): ProviderResult<CallHierarchyItem | CallHierarchyItem[]>
+    fun prepareCallHierarchy(
+        document: TextDocument,
+        position: Position,
+        token: CancellationToken,
+    ): ProviderResult<ReadonlyArray<Any /* CallHierarchyItem | CallHierarchyItem */>>
 
     /**
      * Provide all incoming calls for an item, e.g all callers for a method. In graph terms this describes directed
@@ -31,7 +37,10 @@ external interface CallHierarchyProvider {
      * @returns A set of incoming calls or a thenable that resolves to such. The lack of a result can be
      * signaled by returning `undefined` or `null`.
      */
-//  provideCallHierarchyIncomingCalls(item: CallHierarchyItem, token: CancellationToken): ProviderResult<CallHierarchyIncomingCall[]>
+    fun provideCallHierarchyIncomingCalls(
+        item: CallHierarchyItem,
+        token: CancellationToken,
+    ): ProviderResult<ReadonlyArray<CallHierarchyIncomingCall>>
 
     /**
      * Provide all outgoing calls for an item, e.g call calls to functions, methods, or constructors from the given item. In
@@ -43,5 +52,8 @@ external interface CallHierarchyProvider {
      * @returns A set of outgoing calls or a thenable that resolves to such. The lack of a result can be
      * signaled by returning `undefined` or `null`.
      */
-//  provideCallHierarchyOutgoingCalls(item: CallHierarchyItem, token: CancellationToken): ProviderResult<CallHierarchyOutgoingCall[]>
+    fun provideCallHierarchyOutgoingCalls(
+        item: CallHierarchyItem,
+        token: CancellationToken,
+    ): ProviderResult<ReadonlyArray<CallHierarchyOutgoingCall>>
 }

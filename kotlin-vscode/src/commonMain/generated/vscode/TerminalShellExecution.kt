@@ -2,6 +2,8 @@
 
 package vscode
 
+import js.iterable.AsyncIterable
+
 /**
  * A command that was executed in a terminal.
  */
@@ -54,5 +56,5 @@ external interface TerminalShellExecution {
      *   console.log(data);
      * }
      */
-//  read(): AsyncIterable<string>
+    fun read(): AsyncIterable<String>
 }

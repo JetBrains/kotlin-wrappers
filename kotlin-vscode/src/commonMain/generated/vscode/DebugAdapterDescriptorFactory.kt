@@ -23,5 +23,8 @@ external interface DebugAdapterDescriptorFactory {
      * @param executable The debug adapter's executable information as specified in the package.json (or undefined if no such information exists).
      * @returns a {@link DebugAdapterDescriptor debug adapter descriptor} or undefined.
      */
-//  createDebugAdapterDescriptor(session: DebugSession, executable: DebugAdapterExecutable | undefined): ProviderResult<DebugAdapterDescriptor>
+    fun createDebugAdapterDescriptor(
+        session: DebugSession,
+        executable: DebugAdapterExecutable?,
+    ): ProviderResult<DebugAdapterDescriptor>
 }

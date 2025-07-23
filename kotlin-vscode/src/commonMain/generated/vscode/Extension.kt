@@ -2,6 +2,8 @@
 
 package vscode
 
+import js.promise.PromiseLike
+
 /**
  * Represents an extension.
  *
@@ -54,5 +56,5 @@ external interface Extension<T> {
      *
      * @returns A promise that will resolve when this extension has been activated.
      */
-//  activate(): Thenable<T>
+    fun activate(): PromiseLike<T>
 }

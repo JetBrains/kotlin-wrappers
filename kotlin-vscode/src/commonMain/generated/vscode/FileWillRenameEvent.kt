@@ -2,6 +2,8 @@
 
 package vscode
 
+import js.promise.PromiseLike
+
 /**
  * An event that is fired when files are going to be renamed.
  *
@@ -49,7 +51,7 @@ external interface FileWillRenameEvent {
      *
      * @param thenable A thenable that delays saving.
      */
-//  waitUntil(thenable: Thenable<WorkspaceEdit>): void
+    fun waitUntil(thenable: PromiseLike<WorkspaceEdit>)
 
     /**
      * Allows to pause the event until the provided thenable resolves.
@@ -58,5 +60,5 @@ external interface FileWillRenameEvent {
      *
      * @param thenable A thenable that delays saving.
      */
-//  waitUntil(thenable: Thenable<any>): void
+    fun waitUntil(thenable: PromiseLike<Any?>)
 }

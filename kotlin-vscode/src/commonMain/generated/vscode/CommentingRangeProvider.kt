@@ -9,5 +9,8 @@ external interface CommentingRangeProvider {
     /**
      * Provide a list of ranges which allow new comment threads creation or null for a given document
      */
-//  provideCommentingRanges(document: TextDocument, token: CancellationToken): ProviderResult<Range[] | CommentingRanges>
+    fun provideCommentingRanges(
+        document: TextDocument,
+        token: CancellationToken,
+    ): ProviderResult<Any /* Range[] | CommentingRanges */>
 }

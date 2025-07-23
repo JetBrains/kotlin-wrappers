@@ -2,6 +2,8 @@
 
 package vscode
 
+import js.promise.PromiseLike
+
 /**
  * Options related to tokenization for a tool invocation.
  */
@@ -17,5 +19,8 @@ external interface LanguageModelToolTokenizationOptions {
      * @param token Optional cancellation token.  See {@link CancellationTokenSource} for how to create one.
      * @returns A thenable that resolves to the number of tokens.
      */
-//  countTokens(text: string, token?: CancellationToken): Thenable<number>
+    fun countTokens(
+        text: String,
+        token: CancellationToken = definedExternally,
+    ): PromiseLike<Int>
 }

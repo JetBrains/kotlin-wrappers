@@ -31,5 +31,8 @@ external interface TextDocumentContentProvider {
      * @param token A cancellation token.
      * @returns A string or a thenable that resolves to such.
      */
-//  provideTextDocumentContent(uri: Uri, token: CancellationToken): ProviderResult<string>
+    fun provideTextDocumentContent(
+        uri: Uri,
+        token: CancellationToken,
+    ): ProviderResult<String>
 }

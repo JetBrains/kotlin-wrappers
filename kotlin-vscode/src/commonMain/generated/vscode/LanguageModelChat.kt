@@ -2,6 +2,9 @@
 
 package vscode
 
+import js.array.ReadonlyArray
+import js.promise.PromiseLike
+
 /**
  * Represents a language model for making chat requests.
  *
@@ -66,7 +69,11 @@ external interface LanguageModelChat {
      * @param token A cancellation token which controls the request. See {@link CancellationTokenSource} for how to create one.
      * @returns A thenable that resolves to a {@link LanguageModelChatResponse}. The promise will reject when the request couldn't be made.
      */
-//  sendRequest(messages: LanguageModelChatMessage[], options?: LanguageModelChatRequestOptions, token?: CancellationToken): Thenable<LanguageModelChatResponse>
+    fun sendRequest(
+        messages: ReadonlyArray<LanguageModelChatMessage>,
+        options: LanguageModelChatRequestOptions = definedExternally,
+        token: CancellationToken = definedExternally,
+    ): PromiseLike<LanguageModelChatResponse>
 
     /**
      * Count the number of tokens in a message using the model specific tokenizer-logic.
@@ -75,5 +82,8 @@ external interface LanguageModelChat {
      * @param token Optional cancellation token.  See {@link CancellationTokenSource} for how to create one.
      * @returns A thenable that resolves to the number of tokens.
      */
-//  countTokens(text: string | LanguageModelChatMessage, token?: CancellationToken): Thenable<number>
+    fun countTokens(
+        text: Any, /* string | LanguageModelChatMessage */
+        token: CancellationToken = definedExternally,
+    ): PromiseLike<Int>
 }

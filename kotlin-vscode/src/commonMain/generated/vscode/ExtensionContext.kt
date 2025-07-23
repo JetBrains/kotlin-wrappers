@@ -86,7 +86,7 @@ external interface ExtensionContext {
      * @param relativePath A relative path to a resource contained in the extension.
      * @returns The absolute path of the resource.
      */
-//  asAbsolutePath(relativePath: string): string
+    fun asAbsolutePath(relativePath: String): String
 
     /**
      * The uri of a workspace specific directory in which the extension

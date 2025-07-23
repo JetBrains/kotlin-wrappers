@@ -2,6 +2,8 @@
 
 package vscode
 
+import js.array.ReadonlyArray
+
 /**
  * The document highlight provider interface defines the contract between extensions and
  * the word-highlight-feature.
@@ -17,5 +19,9 @@ external interface DocumentHighlightProvider {
      * @returns An array of document highlights or a thenable that resolves to such. The lack of a result can be
      * signaled by returning `undefined`, `null`, or an empty array.
      */
-//  provideDocumentHighlights(document: TextDocument, position: Position, token: CancellationToken): ProviderResult<DocumentHighlight[]>
+    fun provideDocumentHighlights(
+        document: TextDocument,
+        position: Position,
+        token: CancellationToken,
+    ): ProviderResult<ReadonlyArray<DocumentHighlight>>
 }

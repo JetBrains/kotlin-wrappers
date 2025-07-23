@@ -2,6 +2,8 @@
 
 package vscode
 
+import js.promise.PromiseLike
+
 /**
  * Displays html content, similarly to an iframe.
  */
@@ -78,7 +80,7 @@ external interface Webview {
      *   If you want confirm that a message as actually received, you can try having your webview posting a
      *   confirmation message back to your extension.
      */
-//  postMessage(message: any): Thenable<boolean>
+    fun postMessage(message: Any?): PromiseLike<Boolean>
 
     /**
      * Convert a uri for the local file system to one that can be used inside webviews.
@@ -91,7 +93,7 @@ external interface Webview {
      * webview.html = `<img src="${webview.asWebviewUri(vscode.Uri.file('/Users/codey/workspace/cat.gif'))}">`
      * ```
      */
-//  asWebviewUri(localResource: Uri): Uri
+    fun asWebviewUri(localResource: Uri): Uri
 
     /**
      * Content security policy source for webview resources.

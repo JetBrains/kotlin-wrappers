@@ -14,5 +14,8 @@ external interface ConfigurationChangeEvent {
      * @param scope A scope in which to check.
      * @returns `true` if the given section has changed.
      */
-//  affectsConfiguration(section: string, scope?: ConfigurationScope): boolean
+    fun affectsConfiguration(
+        section: String,
+        scope: ConfigurationScope = definedExternally,
+    ): Boolean
 }

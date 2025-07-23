@@ -16,10 +16,10 @@ open external class CancellationTokenSource {
     /**
      * Signal cancellation on the token.
      */
-//  cancel(): void
+    fun cancel()
 
     /**
      * Dispose object and free resources.
      */
-//  dispose(): void
+    fun dispose()
 }

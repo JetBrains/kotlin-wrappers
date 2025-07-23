@@ -2,6 +2,8 @@
 
 package vscode
 
+import js.array.ReadonlyArray
+
 /**
  * Provider which handles dropping of resources into a text editor.
  *
@@ -21,7 +23,12 @@ external interface DocumentDropEditProvider<T : DocumentDropEdit> {
      * @returns A {@link DocumentDropEdit} or a thenable that resolves to such. The lack of a result can be
      * signaled by returning `undefined` or `null`.
      */
-//  provideDocumentDropEdits(document: TextDocument, position: Position, dataTransfer: DataTransfer, token: CancellationToken): ProviderResult<T | T[]>
+    fun provideDocumentDropEdits(
+        document: TextDocument,
+        position: Position,
+        dataTransfer: DataTransfer,
+        token: CancellationToken,
+    ): ProviderResult<ReadonlyArray<Any /* T | T */>>
 
     /**
      * Optional method which fills in the {@linkcode DocumentDropEdit.additionalEdit} before the edit is applied.

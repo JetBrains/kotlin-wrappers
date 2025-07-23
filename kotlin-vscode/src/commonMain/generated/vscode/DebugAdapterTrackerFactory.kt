@@ -13,5 +13,5 @@ external interface DebugAdapterTrackerFactory {
      * @param session The {@link DebugSession debug session} for which the debug adapter tracker will be used.
      * @returns A {@link DebugAdapterTracker debug adapter tracker} or undefined.
      */
-//  createDebugAdapterTracker(session: DebugSession): ProviderResult<DebugAdapterTracker>
+    fun createDebugAdapterTracker(session: DebugSession): ProviderResult<DebugAdapterTracker>
 }

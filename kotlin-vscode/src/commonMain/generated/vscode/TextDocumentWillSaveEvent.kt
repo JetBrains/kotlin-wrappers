@@ -2,6 +2,9 @@
 
 package vscode
 
+import js.array.ReadonlyArray
+import js.promise.PromiseLike
+
 /**
  * An event that is fired when a {@link TextDocument document} will be saved.
  *
@@ -40,7 +43,7 @@ external interface TextDocumentWillSaveEvent {
      *
      * @param thenable A thenable that resolves to {@link TextEdit pre-save-edits}.
      */
-//  waitUntil(thenable: Thenable<readonly TextEdit[]>): void
+    fun waitUntil(thenable: PromiseLike<ReadonlyArray<TextEdit>>)
 
     /**
      * Allows to pause the event loop until the provided thenable resolved.
@@ -49,5 +52,5 @@ external interface TextDocumentWillSaveEvent {
      *
      * @param thenable A thenable that delays saving.
      */
-//  waitUntil(thenable: Thenable<any>): void
+    fun waitUntil(thenable: PromiseLike<Any?>)
 }

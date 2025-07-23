@@ -29,5 +29,9 @@ external interface CustomTextEditorProvider {
      *
      * @returns Thenable indicating that the custom editor has been resolved.
      */
-//  resolveCustomTextEditor(document: TextDocument, webviewPanel: WebviewPanel, token: CancellationToken): Thenable<void> | void
+    fun resolveCustomTextEditor(
+        document: TextDocument,
+        webviewPanel: WebviewPanel,
+        token: CancellationToken,
+    ): Any /* Thenable<void> | void */
 }

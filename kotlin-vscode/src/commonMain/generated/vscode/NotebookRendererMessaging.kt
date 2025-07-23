@@ -2,6 +2,8 @@
 
 package vscode
 
+import js.promise.PromiseLike
+
 /**
  * Renderer messaging is used to communicate with a single renderer. It's returned from {@link notebooks.createRendererMessaging}.
  */
@@ -31,5 +33,8 @@ external interface NotebookRendererMessaging {
      * @returns a boolean indicating whether the message was successfully
      * delivered to any renderer.
      */
-//  postMessage(message: any, editor?: NotebookEditor): Thenable<boolean>
+    fun postMessage(
+        message: Any?,
+        editor: NotebookEditor = definedExternally,
+    ): PromiseLike<Boolean>
 }

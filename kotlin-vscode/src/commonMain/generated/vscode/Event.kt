@@ -2,6 +2,8 @@
 
 package vscode
 
+import js.array.ReadonlyArray
+
 /**
  * Represents a typed event.
  *
@@ -21,5 +23,9 @@ external interface Event<T> {
      * @param disposables An array to which a {@link Disposable} will be added.
      * @returns A disposable which unsubscribes the event listener.
      */
-//  (listener: (e: T) => any, thisArgs?: any, disposables?: Disposable[]): Disposable
+    operator fun invoke(
+        listener: (e: T) -> Unit,
+        thisArgs: Any? = definedExternally,
+        disposables: ReadonlyArray<Disposable> = definedExternally,
+    ): Disposable
 }

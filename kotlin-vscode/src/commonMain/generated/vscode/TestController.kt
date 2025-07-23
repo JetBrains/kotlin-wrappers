@@ -2,6 +2,7 @@
 
 package vscode
 
+import js.array.ReadonlyArray
 import js.core.Void
 import js.promise.PromiseLike
 
@@ -105,7 +106,11 @@ external interface TestController {
      * @returns An instance of the {@link TestRun}. It will be considered "running"
      * from the moment this method is invoked until {@link TestRun.end} is called.
      */
-//  createTestRun(request: TestRunRequest, name?: string, persist?: boolean): TestRun
+    fun createTestRun(
+        request: TestRunRequest,
+        name: String = definedExternally,
+        persist: Boolean = definedExternally,
+    ): TestRun
 
     /**
      * Creates a new managed {@link TestItem} instance. It can be added into
@@ -117,7 +122,11 @@ external interface TestController {
      * @param label Human-readable label of the test item.
      * @param uri URI this TestItem is associated with. May be a file or directory.
      */
-//  createTestItem(id: string, label: string, uri?: Uri): TestItem
+    fun createTestItem(
+        id: String,
+        label: String,
+        uri: Uri = definedExternally,
+    ): TestItem
 
     /**
      * Marks an item's results as being outdated. This is commonly called when
@@ -135,11 +144,11 @@ external interface TestController {
      *
      * @param items Item to mark as outdated. If undefined, all the controller's items are marked outdated.
      */
-//  invalidateTestResults(items?: TestItem | readonly TestItem[]): void
+    fun invalidateTestResults(items: ReadonlyArray<Any /* TestItem | readonly TestItem */> = definedExternally)
 
     /**
      * Unregisters the test controller, disposing of its associated tests
      * and unpersisted results.
      */
-//  dispose(): void
+    fun dispose()
 }

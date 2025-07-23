@@ -2,6 +2,8 @@
 
 package vscode
 
+import js.array.ReadonlyArray
+
 /**
  * The document link provider defines the contract between extensions and feature of showing
  * links in the editor.
@@ -16,7 +18,10 @@ external interface DocumentLinkProvider<T : DocumentLink> {
      * @returns An array of {@link DocumentLink document links} or a thenable that resolves to such. The lack of a result
      * can be signaled by returning `undefined`, `null`, or an empty array.
      */
-//  provideDocumentLinks(document: TextDocument, token: CancellationToken): ProviderResult<T[]>
+    fun provideDocumentLinks(
+        document: TextDocument,
+        token: CancellationToken,
+    ): ProviderResult<ReadonlyArray<T>>
 
     /**
      * Given a link fill in its {@link DocumentLink.target target}. This method is called when an incomplete

@@ -84,7 +84,7 @@ external interface NotebookController {
      * @param cell The notebook cell for which to create the execution.
      * @returns A notebook cell execution.
      */
-//  createNotebookCellExecution(cell: NotebookCell): NotebookCellExecution
+    fun createNotebookCellExecution(cell: NotebookCell): NotebookCellExecution
 
     /**
      * The execute handler is invoked when the run gestures in the UI are selected, e.g Run Cell, Run All,
@@ -140,10 +140,13 @@ external interface NotebookController {
      * @param notebook The notebook for which a priority is set.
      * @param affinity A controller affinity
      */
-//  updateNotebookAffinity(notebook: NotebookDocument, affinity: NotebookControllerAffinity): void
+    fun updateNotebookAffinity(
+        notebook: NotebookDocument,
+        affinity: NotebookControllerAffinity,
+    )
 
     /**
      * Dispose and free associated resources.
      */
-//  dispose(): void
+    fun dispose()
 }

@@ -2,6 +2,8 @@
 
 package vscode
 
+import js.array.ReadonlyArray
+
 /**
  * The implementation provider interface defines the contract between extensions and
  * the go to implementation feature.
@@ -16,5 +18,9 @@ external interface ImplementationProvider {
      * @returns A definition or a thenable that resolves to such. The lack of a result can be
      * signaled by returning `undefined` or `null`.
      */
-//  provideImplementation(document: TextDocument, position: Position, token: CancellationToken): ProviderResult<Definition | DefinitionLink[]>
+    fun provideImplementation(
+        document: TextDocument,
+        position: Position,
+        token: CancellationToken,
+    ): ProviderResult<ReadonlyArray<Any /* Definition | DefinitionLink */>>
 }

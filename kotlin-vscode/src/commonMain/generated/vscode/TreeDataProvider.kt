@@ -2,6 +2,8 @@
 
 package vscode
 
+import js.array.ReadonlyArray
+
 /**
  * A data provider that provides tree data
  */
@@ -19,7 +21,7 @@ external interface TreeDataProvider<T> {
      * @param element The element for which {@link TreeItem} representation is asked for.
      * @returns TreeItem representation of the element.
      */
-//  getTreeItem(element: T): TreeItem | Thenable<TreeItem>
+    fun getTreeItem(element: T): Any /* TreeItem | Thenable<TreeItem> */
 
     /**
      * Get the children of `element` or root if no element is passed.
@@ -27,7 +29,7 @@ external interface TreeDataProvider<T> {
      * @param element The element from which the provider gets children. Can be `undefined`.
      * @returns Children of `element` or root if no element is passed.
      */
-//  getChildren(element?: T): ProviderResult<T[]>
+    fun getChildren(element: T = definedExternally): ProviderResult<ReadonlyArray<T>>
 
     /**
      * Optional method to return the parent of `element`.

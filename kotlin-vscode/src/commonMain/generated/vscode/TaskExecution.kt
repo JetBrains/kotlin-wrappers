@@ -17,5 +17,5 @@ external interface TaskExecution {
     /**
      * Terminates the task execution.
      */
-//  terminate(): void
+    fun terminate()
 }

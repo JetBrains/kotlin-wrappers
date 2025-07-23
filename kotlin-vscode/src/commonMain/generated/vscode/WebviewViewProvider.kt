@@ -19,5 +19,9 @@ external interface WebviewViewProvider {
      *
      * @returns Optional thenable indicating that the view has been fully resolved.
      */
-//  resolveWebviewView(webviewView: WebviewView, context: WebviewViewResolveContext, token: CancellationToken): Thenable<void> | void
+    fun resolveWebviewView(
+        webviewView: WebviewView,
+        context: WebviewViewResolveContext<*>,
+        token: CancellationToken,
+    ): Any /* Thenable<void> | void */
 }

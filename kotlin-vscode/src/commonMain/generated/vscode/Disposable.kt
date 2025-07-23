@@ -40,5 +40,5 @@ open external class Disposable {
     /**
      * Dispose this object.
      */
-//  dispose(): any
+    fun dispose(): Any?
 }

@@ -11,7 +11,10 @@ external interface LanguageModelTool<T> {
      *
      * The provided {@link LanguageModelToolInvocationOptions.input} has been validated against the declared schema.
      */
-//  invoke(options: LanguageModelToolInvocationOptions<T>, token: CancellationToken): ProviderResult<LanguageModelToolResult>
+    fun invoke(
+        options: LanguageModelToolInvocationOptions<T>,
+        token: CancellationToken,
+    ): ProviderResult<LanguageModelToolResult>
 
     /**
      * Called once before a tool is invoked. It's recommended to implement this to customize the progress message that appears

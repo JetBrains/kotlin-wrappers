@@ -2,6 +2,7 @@
 
 package vscode
 
+import js.array.ReadonlyArray
 import js.core.Void
 
 /**
@@ -24,7 +25,7 @@ external interface McpServerDefinitionProvider<T : McpServerDefinition> {
      * @param token A cancellation token.
      * @returns An array of MCP available MCP servers
      */
-//  provideMcpServerDefinitions(token: CancellationToken): ProviderResult<T[]>
+    fun provideMcpServerDefinitions(token: CancellationToken): ProviderResult<ReadonlyArray<T>>
 
     /**
      * This function will be called when the editor needs to start a MCP server.

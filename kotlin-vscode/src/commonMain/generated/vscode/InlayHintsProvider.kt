@@ -2,6 +2,7 @@
 
 package vscode
 
+import js.array.ReadonlyArray
 import js.core.Void
 
 /**
@@ -24,7 +25,11 @@ external interface InlayHintsProvider<T : InlayHint> {
      * @param token A cancellation token.
      * @returns An array of inlay hints or a thenable that resolves to such.
      */
-//  provideInlayHints(document: TextDocument, range: Range, token: CancellationToken): ProviderResult<T[]>
+    fun provideInlayHints(
+        document: TextDocument,
+        range: Range,
+        token: CancellationToken,
+    ): ProviderResult<ReadonlyArray<T>>
 
     /**
      * Given an inlay hint fill in {@link InlayHint.tooltip tooltip}, {@link InlayHint.textEdits text edits},

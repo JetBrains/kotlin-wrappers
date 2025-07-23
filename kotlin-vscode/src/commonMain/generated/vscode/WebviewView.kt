@@ -72,5 +72,5 @@ external interface WebviewView {
      *
      * @param preserveFocus When `true` the view will not take focus.
      */
-//  show(preserveFocus?: boolean): void
+    fun show(preserveFocus: Boolean = definedExternally)
 }

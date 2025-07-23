@@ -2,6 +2,8 @@
 
 package vscode
 
+import js.array.ReadonlyArray
+
 /**
  * The reference provider interface defines the contract between extensions and
  * the [find references](https://code.visualstudio.com/docs/editor/editingevolved#_peek)-feature.
@@ -18,5 +20,10 @@ external interface ReferenceProvider {
      * @returns An array of locations or a thenable that resolves to such. The lack of a result can be
      * signaled by returning `undefined`, `null`, or an empty array.
      */
-//  provideReferences(document: TextDocument, position: Position, context: ReferenceContext, token: CancellationToken): ProviderResult<Location[]>
+    fun provideReferences(
+        document: TextDocument,
+        position: Position,
+        context: ReferenceContext,
+        token: CancellationToken,
+    ): ProviderResult<ReadonlyArray<Location>>
 }

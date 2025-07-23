@@ -2,6 +2,10 @@
 
 package vscode
 
+import js.array.ReadonlyArray
+import js.core.Void
+import js.promise.PromiseLike
+
 /**
  * A memento represents a storage utility. It can store and retrieve
  * values.
@@ -12,7 +16,7 @@ external interface Memento {
      *
      * @returns The stored keys.
      */
-//  keys(): readonly string[]
+    fun keys(): ReadonlyArray<String>
 
     /**
      * Return a value.
@@ -20,7 +24,7 @@ external interface Memento {
      * @param key A string.
      * @returns The stored value or `undefined`.
      */
-//  get<T>(key: string): T | undefined
+    fun <T> get(key: String): T?
 
     /**
      * Return a value.
@@ -30,7 +34,10 @@ external interface Memento {
      * value (`undefined`) with the given key.
      * @returns The stored value or the defaultValue.
      */
-//  get<T>(key: string, defaultValue: T): T
+    fun <T> get(
+        key: String,
+        defaultValue: T,
+    ): T
 
     /**
      * Store a value. The value must be JSON-stringifyable.
@@ -41,5 +48,8 @@ external interface Memento {
      * @param key A string.
      * @param value A value. MUST not contain cyclic references.
      */
-//  update(key: string, value: any): Thenable<void>
+    fun update(
+        key: String,
+        value: Any?,
+    ): PromiseLike<Void>
 }

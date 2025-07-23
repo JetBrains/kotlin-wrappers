@@ -4,6 +4,8 @@
 
 package vscode
 
+import js.array.ReadonlyArray
+
 /**
  * A semantic tokens builder can help with creating a `SemanticTokens` instance
  * which contains delta encoded semantic tokens.
@@ -25,7 +27,13 @@ open external class SemanticTokensBuilder {
      * @param tokenType The encoded token type.
      * @param tokenModifiers The encoded token modifiers.
      */
-//  push(line: number, char: number, length: number, tokenType: number, tokenModifiers?: number): void
+    fun push(
+        line: Int,
+        char: Int,
+        length: Int,
+        tokenType: Int,
+        tokenModifiers: Int = definedExternally,
+    )
 
     /**
      * Add another token. Use only when providing a legend.
@@ -34,10 +42,14 @@ open external class SemanticTokensBuilder {
      * @param tokenType The token type.
      * @param tokenModifiers The token modifiers.
      */
-//  push(range: Range, tokenType: string, tokenModifiers?: readonly string[]): void
+    fun push(
+        range: Range,
+        tokenType: String,
+        tokenModifiers: ReadonlyArray<String> = definedExternally,
+    )
 
     /**
      * Finish and create a `SemanticTokens` instance.
      */
-//  build(resultId?: string): SemanticTokens
+    fun build(resultId: String = definedExternally): SemanticTokens
 }

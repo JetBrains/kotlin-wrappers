@@ -29,6 +29,12 @@ private val STANDARD_TYPE_MAP = mapOf(
     "[start: number, end: number]" to "Tuple2</* start */ Int, /* end */ Int>",
     "[string, FileType]" to "Tuple2<String, FileType>",
 
+    "[TextEdit | SnippetTextEdit, WorkspaceEditEntryMetadata | undefined]" to
+            "Tuple2<Any /* TextEdit | SnippetTextEdit */, WorkspaceEditEntryMetadata?>",
+    "[NotebookEdit, WorkspaceEditEntryMetadata | undefined]" to
+            "Tuple2<NotebookEdit, WorkspaceEditEntryMetadata?>",
+    "[Uri, TextEdit[]]" to "Tuple2<Uri, ReadonlyArray<TextEdit>>",
+
     "{ readonly [key: string]: any }" to "ReadonlyRecord<String, *>",
     "{ [key: string]: string }" to "Record<String, String>",
     "{ [key: string]: any }" to "Record<String, *>",
@@ -190,6 +196,7 @@ internal fun kotlinType(
         .replace(" => Thenable<FileCoverageDetail[]>", " -> PromiseLike<ReadonlyArray<FileCoverageDetail>>")
         .replace(" => Thenable<Pseudoterminal>", " -> PromiseLike<Pseudoterminal>")
         .replace(": NotebookCell[]", ": ReadonlyArray<NotebookCell>")
+        .replace(": string", ": String")
         .replace(" | undefined", "?")
         .let { if (it.startsWith("(")) it.replace(", ", ",\n") else it }
 }

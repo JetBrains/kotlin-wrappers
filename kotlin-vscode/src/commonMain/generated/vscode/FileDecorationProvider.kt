@@ -29,5 +29,8 @@ external interface FileDecorationProvider {
      * @param token A cancellation token.
      * @returns A decoration or a thenable that resolves to such.
      */
-//  provideFileDecoration(uri: Uri, token: CancellationToken): ProviderResult<FileDecoration>
+    fun provideFileDecoration(
+        uri: Uri,
+        token: CancellationToken,
+    ): ProviderResult<FileDecoration>
 }

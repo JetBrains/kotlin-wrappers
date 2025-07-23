@@ -2,6 +2,7 @@
 
 package vscode
 
+import js.array.ReadonlyArray
 import js.array.Tuple2
 import js.iterable.JsIterable
 
@@ -20,7 +21,7 @@ external interface TestItemCollection :
      * Replaces the items stored by the collection.
      * @param items Items to store.
      */
-//  replace(items: readonly TestItem[]): void
+    fun replace(items: ReadonlyArray<TestItem>)
 
     /**
      * Iterate over each entry in this collection.
@@ -28,25 +29,31 @@ external interface TestItemCollection :
      * @param callback Function to execute for each entry.
      * @param thisArg The `this` context used when invoking the handler function.
      */
-//  forEach(callback: (item: TestItem, collection: TestItemCollection) => unknown, thisArg?: any): void
+    fun forEach(
+        callback: (
+            item: TestItem,
+            collection: TestItemCollection,
+        ) -> Unit,
+        thisArg: Any? = definedExternally,
+    )
 
     /**
      * Adds the test item to the children. If an item with the same ID already
      * exists, it'll be replaced.
      * @param item Item to add.
      */
-//  add(item: TestItem): void
+    fun add(item: TestItem)
 
     /**
      * Removes a single test item from the collection.
      * @param itemId Item ID to delete.
      */
-//  delete(itemId: string): void
+    fun delete(itemId: String)
 
     /**
      * Efficiently gets a test item by ID, if it exists, in the children.
      * @param itemId Item ID to get.
      * @returns The found item or undefined if it does not exist.
      */
-//  get(itemId: string): TestItem | undefined
+    fun get(itemId: String): TestItem?
 }

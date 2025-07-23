@@ -2,6 +2,9 @@
 
 package vscode
 
+import js.array.ReadonlyArray
+import js.core.Void
+
 /**
  * A provider that enables detection and handling of links within terminals.
  */
@@ -14,11 +17,14 @@ external interface TerminalLinkProvider<T : TerminalLink> {
      * @param token A cancellation token.
      * @returns A list of terminal links for the given line.
      */
-//  provideTerminalLinks(context: TerminalLinkContext, token: CancellationToken): ProviderResult<T[]>
+    fun provideTerminalLinks(
+        context: TerminalLinkContext,
+        token: CancellationToken,
+    ): ProviderResult<ReadonlyArray<T>>
 
     /**
      * Handle an activated terminal link.
      * @param link The link to handle.
      */
-//  handleTerminalLink(link: T): ProviderResult<void>
+    fun handleTerminalLink(link: T): ProviderResult<Void>
 }

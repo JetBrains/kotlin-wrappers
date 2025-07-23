@@ -2,6 +2,7 @@
 
 package vscode
 
+import js.array.ReadonlyArray
 import js.core.Void
 
 /**
@@ -31,19 +32,19 @@ external interface TestRun {
      * Indicates a test is queued for later execution.
      * @param test Test item to update.
      */
-//  enqueued(test: TestItem): void
+    fun enqueued(test: TestItem)
 
     /**
      * Indicates a test has started running.
      * @param test Test item to update.
      */
-//  started(test: TestItem): void
+    fun started(test: TestItem)
 
     /**
      * Indicates a test has been skipped.
      * @param test Test item to update.
      */
-//  skipped(test: TestItem): void
+    fun skipped(test: TestItem)
 
     /**
      * Indicates a test has failed. You should pass one or more
@@ -52,7 +53,11 @@ external interface TestRun {
      * @param message Messages associated with the test failure.
      * @param duration How long the test took to execute, in milliseconds.
      */
-//  failed(test: TestItem, message: TestMessage | readonly TestMessage[], duration?: number): void
+    fun failed(
+        test: TestItem,
+        message: ReadonlyArray<Any /* TestMessage | readonly TestMessage */>,
+        duration: Int = definedExternally,
+    )
 
     /**
      * Indicates a test has errored. You should pass one or more
@@ -63,14 +68,21 @@ external interface TestRun {
      * @param message Messages associated with the test failure.
      * @param duration How long the test took to execute, in milliseconds.
      */
-//  errored(test: TestItem, message: TestMessage | readonly TestMessage[], duration?: number): void
+    fun errored(
+        test: TestItem,
+        message: ReadonlyArray<Any /* TestMessage | readonly TestMessage */>,
+        duration: Int = definedExternally,
+    )
 
     /**
      * Indicates a test has passed.
      * @param test Test item to update.
      * @param duration How long the test took to execute, in milliseconds.
      */
-//  passed(test: TestItem, duration?: number): void
+    fun passed(
+        test: TestItem,
+        duration: Int = definedExternally,
+    )
 
     /**
      * Appends raw output from the test runner. On the user's request, the
@@ -83,18 +95,22 @@ external interface TestRun {
      * location.
      * @param test Test item to associate the output with.
      */
-//  appendOutput(output: string, location?: Location, test?: TestItem): void
+    fun appendOutput(
+        output: String,
+        location: Location = definedExternally,
+        test: TestItem = definedExternally,
+    )
 
     /**
      * Adds coverage for a file in the run.
      */
-//  addCoverage(fileCoverage: FileCoverage): void
+    fun addCoverage(fileCoverage: FileCoverage)
 
     /**
      * Signals the end of the test run. Any tests included in the run whose
      * states have not been updated will have their state reset.
      */
-//  end(): void
+    fun end()
 
     /**
      * An event fired when the editor is no longer interested in data

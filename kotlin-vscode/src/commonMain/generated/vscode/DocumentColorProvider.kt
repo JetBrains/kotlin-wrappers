@@ -2,6 +2,8 @@
 
 package vscode
 
+import js.array.ReadonlyArray
+
 /**
  * The document color provider defines the contract between extensions and feature of
  * picking and modifying colors in the editor.
@@ -15,7 +17,10 @@ external interface DocumentColorProvider {
      * @returns An array of {@link ColorInformation color information} or a thenable that resolves to such. The lack of a result
      * can be signaled by returning `undefined`, `null`, or an empty array.
      */
-//  provideDocumentColors(document: TextDocument, token: CancellationToken): ProviderResult<ColorInformation[]>
+    fun provideDocumentColors(
+        document: TextDocument,
+        token: CancellationToken,
+    ): ProviderResult<ReadonlyArray<ColorInformation>>
 
     /**
      * Provide {@link ColorPresentation representations} for a color.

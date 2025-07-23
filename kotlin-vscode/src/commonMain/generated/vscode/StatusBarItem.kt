@@ -85,16 +85,16 @@ external interface StatusBarItem {
     /**
      * Shows the entry in the status bar.
      */
-//  show(): void
+    fun show()
 
     /**
      * Hide the entry in the status bar.
      */
-//  hide(): void
+    fun hide()
 
     /**
      * Dispose and free associated resources. Call
      * {@link StatusBarItem.hide hide}.
      */
-//  dispose(): void
+    fun dispose()
 }

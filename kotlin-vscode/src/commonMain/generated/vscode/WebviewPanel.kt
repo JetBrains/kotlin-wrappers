@@ -84,7 +84,10 @@ external interface WebviewPanel {
      * @param viewColumn View column to show the panel in. Shows in the current `viewColumn` if undefined.
      * @param preserveFocus When `true`, the webview will not take focus.
      */
-//  reveal(viewColumn?: ViewColumn, preserveFocus?: boolean): void
+    fun reveal(
+        viewColumn: ViewColumn = definedExternally,
+        preserveFocus: Boolean = definedExternally,
+    )
 
     /**
      * Dispose of the webview panel.
@@ -93,5 +96,5 @@ external interface WebviewPanel {
      * Webview panels are also disposed when the user closes the webview panel. Both cases
      * fire the `onDispose` event.
      */
-//  dispose(): any
+    fun dispose(): Any?
 }

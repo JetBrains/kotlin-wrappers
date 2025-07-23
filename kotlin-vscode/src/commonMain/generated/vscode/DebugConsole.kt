@@ -11,7 +11,7 @@ external interface DebugConsole {
      *
      * @param value A string, falsy values will not be printed.
      */
-//  append(value: string): void
+    fun append(value: String)
 
     /**
      * Append the given value and a line feed character
@@ -19,5 +19,5 @@ external interface DebugConsole {
      *
      * @param value A string, falsy values will be printed.
      */
-//  appendLine(value: string): void
+    fun appendLine(value: String)
 }

@@ -2,6 +2,9 @@
 
 package vscode
 
+import js.core.Void
+import js.promise.PromiseLike
+
 /**
  * Represents the configuration. It is a merged view of
  *
@@ -72,7 +75,7 @@ external interface WorkspaceConfiguration {
      * @param section Configuration name, supports _dotted_ names.
      * @returns The value `section` denotes or `undefined`.
      */
-//  get<T>(section: string): T | undefined
+    fun <T> get(section: String): T?
 
     /**
      * Return a value from this configuration.
@@ -81,7 +84,10 @@ external interface WorkspaceConfiguration {
      * @param defaultValue A value should be returned when no value could be found, is `undefined`.
      * @returns The value `section` denotes or the default.
      */
-//  get<T>(section: string, defaultValue: T): T
+    fun <T> get(
+        section: String,
+        defaultValue: T,
+    ): T
 
     /**
      * Check if this configuration has a certain value.
@@ -89,7 +95,7 @@ external interface WorkspaceConfiguration {
      * @param section Configuration name, supports _dotted_ names.
      * @returns `true` if the section doesn't resolve to `undefined`.
      */
-//  has(section: string): boolean
+    fun has(section: String): Boolean
 
     /**
      * Retrieve all information about a configuration setting. A configuration value
@@ -190,7 +196,12 @@ external interface WorkspaceConfiguration {
      *	- configuration to workspace folder when there is no workspace folder settings.
      *	- configuration to workspace folder when {@link WorkspaceConfiguration} is not scoped to a resource.
      */
-//  update(section: string, value: any, configurationTarget?: ConfigurationTarget | boolean | null, overrideInLanguage?: boolean): Thenable<void>
+    fun update(
+        section: String,
+        value: Any?,
+        configurationTarget: Any /* ConfigurationTarget | boolean */? = definedExternally,
+        overrideInLanguage: Boolean = definedExternally,
+    ): PromiseLike<Void>
 
     /**
      * Readable dictionary that backs this configuration.

@@ -2,6 +2,9 @@
 
 package vscode
 
+import js.promise.PromiseLike
+import js.typedarrays.Uint8Array
+
 /**
  * A file associated with a {@linkcode DataTransferItem}.
  *
@@ -23,5 +26,5 @@ external interface DataTransferFile {
     /**
      * The full file contents of the file.
      */
-//  data(): Thenable<Uint8Array>
+    fun data(): PromiseLike<Uint8Array<*>>
 }

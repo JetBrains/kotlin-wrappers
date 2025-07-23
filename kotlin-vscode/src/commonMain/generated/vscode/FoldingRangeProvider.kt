@@ -2,6 +2,7 @@
 
 package vscode
 
+import js.array.ReadonlyArray
 import js.core.Void
 
 /**
@@ -21,5 +22,9 @@ external interface FoldingRangeProvider {
      * @param context Additional context information (for future use)
      * @param token A cancellation token.
      */
-//  provideFoldingRanges(document: TextDocument, context: FoldingContext, token: CancellationToken): ProviderResult<FoldingRange[]>
+    fun provideFoldingRanges(
+        document: TextDocument,
+        context: FoldingContext,
+        token: CancellationToken,
+    ): ProviderResult<ReadonlyArray<FoldingRange>>
 }

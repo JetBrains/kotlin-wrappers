@@ -2,6 +2,9 @@
 
 package vscode
 
+import js.core.Void
+import js.promise.PromiseLike
+
 /**
  * Restore webview panels that have been persisted when vscode shuts down.
  *
@@ -47,5 +50,8 @@ external interface WebviewPanelSerializer<T> {
      *
      * @returns Thenable indicating that the webview has been fully restored.
      */
-//  deserializeWebviewPanel(webviewPanel: WebviewPanel, state: T): Thenable<void>
+    fun deserializeWebviewPanel(
+        webviewPanel: WebviewPanel,
+        state: T,
+    ): PromiseLike<Void>
 }

@@ -210,7 +210,7 @@ private fun commentMember(
         isPropertySource(source)
             -> convertProperty(source)
 
-        else -> "//  $source"
+        else -> convertFunction(source)
     }
 
     return comment + declaration
@@ -289,7 +289,15 @@ private fun convertFunction(
     if ("?(" in source)
         return "//  $source"
 
-    val name = source.substringBefore("(")
+    var name = source.substringBefore("(")
+        .ifEmpty { "invoke" }
+
+    if (name == "get<T>")
+        name = "<T> get"
+
+    // TEMP
+    if (name == "createRunProfile")
+        return "//  $source"
 
     val parametersSource = source
         .substringAfter("(")
@@ -301,12 +309,19 @@ private fun convertFunction(
             .replace("<string, string", "<string_,_string")
             .replace("<string, any", "<string_,_any")
             .replace("[Uri, readonly", "[Uri_,_readonly")
+            .replace("SnippetTextEdit, WorkspaceEditEntryMetadata", "SnippetTextEdit_,_WorkspaceEditEntryMetadata")
+            .replace("NotebookEdit, WorkspaceEditEntryMetadata", "NotebookEdit_,_WorkspaceEditEntryMetadata")
             .splitToSequence(", ")
             .map {
                 it.replace("[number_,_number]", "[number, number]")
                     .replace("<string_,_string", "<string, string")
                     .replace("<string_,_any", "<string, any")
                     .replace("[Uri_,_readonly", "[Uri, readonly")
+                    .replace(
+                        "SnippetTextEdit_,_WorkspaceEditEntryMetadata",
+                        "SnippetTextEdit, WorkspaceEditEntryMetadata"
+                    )
+                    .replace("NotebookEdit_,_WorkspaceEditEntryMetadata", "NotebookEdit, WorkspaceEditEntryMetadata")
             }
             .map {
                 val name = it
@@ -327,7 +342,8 @@ private fun convertFunction(
     val returnType = kotlinType(source.substringAfterLast("): "), name)
         .let { if (it != "Void") ": $it" else "" }
 
-    return "fun $name($parameters)$returnType"
+    val modifier = if (source.startsWith("(")) "operator" else ""
+    return "$modifier fun $name($parameters)$returnType"
 }
 
 private fun commentedOriginal(

@@ -121,12 +121,12 @@ external interface Pseudoterminal {
      * @param initialDimensions The dimensions of the terminal, this will be undefined if the
      * terminal panel has not been opened before this is called.
      */
-//  open(initialDimensions: TerminalDimensions | undefined): void
+    fun open(initialDimensions: TerminalDimensions?)
 
     /**
      * Implement to handle when the terminal is closed by an act of the user.
      */
-//  close(): void
+    fun close()
 
     /**
      * Implement to handle incoming keystrokes in the terminal or when an extension calls

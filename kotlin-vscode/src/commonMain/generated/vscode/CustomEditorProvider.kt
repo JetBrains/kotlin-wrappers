@@ -2,6 +2,9 @@
 
 package vscode
 
+import js.core.Void
+import js.promise.PromiseLike
+
 /**
  * Provider for editable custom editors that use a custom document model.
  *
@@ -52,7 +55,10 @@ external interface CustomEditorProvider<T : CustomDocument> :
      *
      * @returns Thenable signaling that saving has completed.
      */
-//  saveCustomDocument(document: T, cancellation: CancellationToken): Thenable<void>
+    fun saveCustomDocument(
+        document: T,
+        cancellation: CancellationToken,
+    ): PromiseLike<Void>
 
     /**
      * Save a custom document to a different location.
@@ -68,7 +74,11 @@ external interface CustomEditorProvider<T : CustomDocument> :
      *
      * @returns Thenable signaling that saving has completed.
      */
-//  saveCustomDocumentAs(document: T, destination: Uri, cancellation: CancellationToken): Thenable<void>
+    fun saveCustomDocumentAs(
+        document: T,
+        destination: Uri,
+        cancellation: CancellationToken,
+    ): PromiseLike<Void>
 
     /**
      * Revert a custom document to its last saved state.
@@ -85,7 +95,10 @@ external interface CustomEditorProvider<T : CustomDocument> :
      *
      * @returns Thenable signaling that the change has completed.
      */
-//  revertCustomDocument(document: T, cancellation: CancellationToken): Thenable<void>
+    fun revertCustomDocument(
+        document: T,
+        cancellation: CancellationToken,
+    ): PromiseLike<Void>
 
     /**
      * Back up a dirty custom document.
@@ -108,5 +121,9 @@ external interface CustomEditorProvider<T : CustomDocument> :
      * in an operation that takes time to complete, your extension may decide to finish the ongoing backup rather
      * than cancelling it to ensure that the editor has some valid backup.
      */
-//  backupCustomDocument(document: T, context: CustomDocumentBackupContext, cancellation: CancellationToken): Thenable<CustomDocumentBackup>
+    fun backupCustomDocument(
+        document: T,
+        context: CustomDocumentBackupContext,
+        cancellation: CancellationToken,
+    ): PromiseLike<CustomDocumentBackup>
 }

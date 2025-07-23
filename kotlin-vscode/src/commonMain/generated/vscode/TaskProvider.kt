@@ -2,6 +2,8 @@
 
 package vscode
 
+import js.array.ReadonlyArray
+
 /**
  * A task provider allows to add tasks to the task service.
  * A task provider is registered via {@link tasks.registerTaskProvider}.
@@ -12,7 +14,7 @@ external interface TaskProvider<T : Task> {
      * @param token A cancellation token.
      * @returns an array of tasks
      */
-//  provideTasks(token: CancellationToken): ProviderResult<T[]>
+    fun provideTasks(token: CancellationToken): ProviderResult<ReadonlyArray<T>>
 
     /**
      * Resolves a task that has no {@linkcode Task.execution execution} set. Tasks are
@@ -31,5 +33,8 @@ external interface TaskProvider<T : Task> {
      * @param token A cancellation token.
      * @returns The resolved task
      */
-//  resolveTask(task: T, token: CancellationToken): ProviderResult<T>
+    fun resolveTask(
+        task: T,
+        token: CancellationToken,
+    ): ProviderResult<T>
 }

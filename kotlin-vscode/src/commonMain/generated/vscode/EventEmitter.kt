@@ -24,10 +24,10 @@ open external class EventEmitter<T> {
      *
      * @param data The event object.
      */
-//  fire(data: T): void
+    fun fire(data: T)
 
     /**
      * Dispose this object and free resources.
      */
-//  dispose(): void
+    fun dispose()
 }

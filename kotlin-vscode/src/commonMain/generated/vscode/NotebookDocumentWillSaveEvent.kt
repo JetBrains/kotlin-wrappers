@@ -2,6 +2,8 @@
 
 package vscode
 
+import js.promise.PromiseLike
+
 /**
  * An event that is fired when a {@link NotebookDocument notebook document} will be saved.
  *
@@ -45,7 +47,7 @@ external interface NotebookDocumentWillSaveEvent {
      *
      * @param thenable A thenable that resolves to {@link WorkspaceEdit workspace edit}.
      */
-//  waitUntil(thenable: Thenable<WorkspaceEdit>): void
+    fun waitUntil(thenable: PromiseLike<WorkspaceEdit>)
 
     /**
      * Allows to pause the event loop until the provided thenable resolved.
@@ -54,5 +56,5 @@ external interface NotebookDocumentWillSaveEvent {
      *
      * @param thenable A thenable that delays saving.
      */
-//  waitUntil(thenable: Thenable<any>): void
+    fun waitUntil(thenable: PromiseLike<Any?>)
 }

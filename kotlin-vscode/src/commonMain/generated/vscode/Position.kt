@@ -41,7 +41,7 @@ open external class Position {
      * @returns `true` if position is on a smaller line
      * or on the same line on a smaller character.
      */
-//  isBefore(other: Position): boolean
+    fun isBefore(other: Position): Boolean
 
     /**
      * Check if this position is before or equal to `other`.
@@ -50,7 +50,7 @@ open external class Position {
      * @returns `true` if position is on a smaller line
      * or on the same line on a smaller or equal character.
      */
-//  isBeforeOrEqual(other: Position): boolean
+    fun isBeforeOrEqual(other: Position): Boolean
 
     /**
      * Check if this position is after `other`.
@@ -59,7 +59,7 @@ open external class Position {
      * @returns `true` if position is on a greater line
      * or on the same line on a greater character.
      */
-//  isAfter(other: Position): boolean
+    fun isAfter(other: Position): Boolean
 
     /**
      * Check if this position is after or equal to `other`.
@@ -68,7 +68,7 @@ open external class Position {
      * @returns `true` if position is on a greater line
      * or on the same line on a greater or equal character.
      */
-//  isAfterOrEqual(other: Position): boolean
+    fun isAfterOrEqual(other: Position): Boolean
 
     /**
      * Check if this position is equal to `other`.
@@ -77,7 +77,7 @@ open external class Position {
      * @returns `true` if the line and character of the given position are equal to
      * the line and character of this position.
      */
-//  isEqual(other: Position): boolean
+    fun isEqual(other: Position): Boolean
 
     /**
      * Compare this to `other`.
@@ -87,7 +87,7 @@ open external class Position {
      * a number greater than zero if this position is after the given position, or zero when
      * this and the given position are equal.
      */
-//  compareTo(other: Position): number
+    fun compareTo(other: Position): Int
 
     /**
      * Create a new position relative to this position.
@@ -97,7 +97,10 @@ open external class Position {
      * @returns A position which line and character is the sum of the current line and
      * character and the corresponding deltas.
      */
-//  translate(lineDelta?: number, characterDelta?: number): Position
+    fun translate(
+        lineDelta: Int = definedExternally,
+        characterDelta: Int = definedExternally,
+    ): Position
 
     /**
      * Derived a new position relative to this position.
@@ -126,7 +129,10 @@ open external class Position {
      * @param character Value that should be used as character value, default is the {@link Position.character existing value}
      * @returns A position where line and character are replaced by the given values.
      */
-//  with(line?: number, character?: number): Position
+    fun with(
+        line: Int = definedExternally,
+        character: Int = definedExternally,
+    ): Position
 
     /**
      * Derived a new position from this position.

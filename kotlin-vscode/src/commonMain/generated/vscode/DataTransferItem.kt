@@ -4,6 +4,8 @@
 
 package vscode
 
+import js.promise.PromiseLike
+
 /**
  * Encapsulates data transferred during drag and drop operations.
  */
@@ -13,7 +15,7 @@ open external class DataTransferItem {
      *
      * If {@linkcode DataTransferItem.value} is an object, this returns the result of json stringifying {@linkcode DataTransferItem.value} value.
      */
-//  asString(): Thenable<string>
+    fun asString(): PromiseLike<String>
 
     /**
      * Try getting the {@link DataTransferFile file} associated with this data transfer item.
@@ -23,7 +25,7 @@ open external class DataTransferItem {
      * @returns The file for the data transfer or `undefined` if the item is either not a file or the
      * file data cannot be accessed.
      */
-//  asFile(): DataTransferFile | undefined
+    fun asFile(): DataTransferFile?
 
     /**
      * Custom data stored on this item.

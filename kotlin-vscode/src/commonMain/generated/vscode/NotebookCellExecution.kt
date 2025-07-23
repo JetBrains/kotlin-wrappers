@@ -2,6 +2,11 @@
 
 package vscode
 
+import js.array.ReadonlyArray
+import js.core.Int53
+import js.core.Void
+import js.promise.PromiseLike
+
 /**
  * A NotebookCellExecution is how {@link NotebookController notebook controller} modify a notebook cell as
  * it is executing.
@@ -36,7 +41,7 @@ external interface NotebookCellExecution {
      * @param startTime The time that execution began, in milliseconds in the Unix epoch. Used to drive the clock
      * that shows for how long a cell has been running. If not given, the clock won't be shown.
      */
-//  start(startTime?: number): void
+    fun start(startTime: Int53 = definedExternally)
 
     /**
      * Signal that execution has ended.
@@ -46,7 +51,10 @@ external interface NotebookCellExecution {
      * If undefined, no check or X icon is shown.
      * @param endTime The time that execution finished, in milliseconds in the Unix epoch.
      */
-//  end(success: boolean | undefined, endTime?: number): void
+    fun end(
+        success: Boolean?,
+        endTime: Int53 = definedExternally,
+    )
 
     /**
      * Clears the output of the cell that is executing or of another cell that is affected by this execution.
@@ -55,7 +63,7 @@ external interface NotebookCellExecution {
      * this execution.
      * @returns A thenable that resolves when the operation finished.
      */
-//  clearOutput(cell?: NotebookCell): Thenable<void>
+    fun clearOutput(cell: NotebookCell = definedExternally): PromiseLike<Void>
 
     /**
      * Replace the output of the cell that is executing or of another cell that is affected by this execution.
@@ -65,7 +73,10 @@ external interface NotebookCellExecution {
      * this execution.
      * @returns A thenable that resolves when the operation finished.
      */
-//  replaceOutput(out: NotebookCellOutput | readonly NotebookCellOutput[], cell?: NotebookCell): Thenable<void>
+    fun replaceOutput(
+        out: ReadonlyArray<Any /* NotebookCellOutput | readonly NotebookCellOutput */>,
+        cell: NotebookCell = definedExternally,
+    ): PromiseLike<Void>
 
     /**
      * Append to the output of the cell that is executing or to another cell that is affected by this execution.
@@ -75,7 +86,10 @@ external interface NotebookCellExecution {
      * this execution.
      * @returns A thenable that resolves when the operation finished.
      */
-//  appendOutput(out: NotebookCellOutput | readonly NotebookCellOutput[], cell?: NotebookCell): Thenable<void>
+    fun appendOutput(
+        out: ReadonlyArray<Any /* NotebookCellOutput | readonly NotebookCellOutput */>,
+        cell: NotebookCell = definedExternally,
+    ): PromiseLike<Void>
 
     /**
      * Replace all output items of existing cell output.
@@ -84,7 +98,10 @@ external interface NotebookCellExecution {
      * @param output Output object that already exists.
      * @returns A thenable that resolves when the operation finished.
      */
-//  replaceOutputItems(items: NotebookCellOutputItem | readonly NotebookCellOutputItem[], output: NotebookCellOutput): Thenable<void>
+    fun replaceOutputItems(
+        items: ReadonlyArray<Any /* NotebookCellOutputItem | readonly NotebookCellOutputItem */>,
+        output: NotebookCellOutput,
+    ): PromiseLike<Void>
 
     /**
      * Append output items to existing cell output.
@@ -93,5 +110,8 @@ external interface NotebookCellExecution {
      * @param output Output object that already exists.
      * @returns A thenable that resolves when the operation finished.
      */
-//  appendOutputItems(items: NotebookCellOutputItem | readonly NotebookCellOutputItem[], output: NotebookCellOutput): Thenable<void>
+    fun appendOutputItems(
+        items: ReadonlyArray<Any /* NotebookCellOutputItem | readonly NotebookCellOutputItem */>,
+        output: NotebookCellOutput,
+    ): PromiseLike<Void>
 }

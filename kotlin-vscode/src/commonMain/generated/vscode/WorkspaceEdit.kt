@@ -4,6 +4,9 @@
 
 package vscode
 
+import js.array.ReadonlyArray
+import js.array.Tuple2
+
 /**
  * A workspace edit is a collection of textual and files changes for
  * multiple resources and documents.
@@ -24,7 +27,12 @@ open external class WorkspaceEdit {
      * @param newText A string.
      * @param metadata Optional metadata for the entry.
      */
-//  replace(uri: Uri, range: Range, newText: string, metadata?: WorkspaceEditEntryMetadata): void
+    fun replace(
+        uri: Uri,
+        range: Range,
+        newText: String,
+        metadata: WorkspaceEditEntryMetadata = definedExternally,
+    )
 
     /**
      * Insert the given text at the given position.
@@ -34,7 +42,12 @@ open external class WorkspaceEdit {
      * @param newText A string.
      * @param metadata Optional metadata for the entry.
      */
-//  insert(uri: Uri, position: Position, newText: string, metadata?: WorkspaceEditEntryMetadata): void
+    fun insert(
+        uri: Uri,
+        position: Position,
+        newText: String,
+        metadata: WorkspaceEditEntryMetadata = definedExternally,
+    )
 
     /**
      * Delete the text at the given range.
@@ -43,7 +56,11 @@ open external class WorkspaceEdit {
      * @param range A range.
      * @param metadata Optional metadata for the entry.
      */
-//  delete(uri: Uri, range: Range, metadata?: WorkspaceEditEntryMetadata): void
+    fun delete(
+        uri: Uri,
+        range: Range,
+        metadata: WorkspaceEditEntryMetadata = definedExternally,
+    )
 
     /**
      * Check if a text edit for a resource exists.
@@ -51,7 +68,7 @@ open external class WorkspaceEdit {
      * @param uri A resource identifier.
      * @returns `true` if the given resource will be touched by this edit.
      */
-//  has(uri: Uri): boolean
+    fun has(uri: Uri): Boolean
 
     /**
      * Set (and replace) text edits or snippet edits for a resource.
@@ -59,7 +76,10 @@ open external class WorkspaceEdit {
      * @param uri A resource identifier.
      * @param edits An array of edits.
      */
-//  set(uri: Uri, edits: ReadonlyArray<TextEdit | SnippetTextEdit>): void
+    fun set(
+        uri: Uri,
+        edits: ReadonlyArray<Any /* TextEdit | SnippetTextEdit */>,
+    )
 
     /**
      * Set (and replace) text edits or snippet edits with metadata for a resource.
@@ -67,7 +87,10 @@ open external class WorkspaceEdit {
      * @param uri A resource identifier.
      * @param edits An array of edits.
      */
-//  set(uri: Uri, edits: ReadonlyArray<[TextEdit | SnippetTextEdit, WorkspaceEditEntryMetadata | undefined]>): void
+    fun set(
+        uri: Uri,
+        edits: ReadonlyArray<Tuple2<Any /* TextEdit | SnippetTextEdit */, WorkspaceEditEntryMetadata?>>,
+    )
 
     /**
      * Set (and replace) notebook edits for a resource.
@@ -75,7 +98,10 @@ open external class WorkspaceEdit {
      * @param uri A resource identifier.
      * @param edits An array of edits.
      */
-//  set(uri: Uri, edits: readonly NotebookEdit[]): void
+    fun set(
+        uri: Uri,
+        edits: ReadonlyArray<NotebookEdit>,
+    )
 
     /**
      * Set (and replace) notebook edits with metadata for a resource.
@@ -83,7 +109,10 @@ open external class WorkspaceEdit {
      * @param uri A resource identifier.
      * @param edits An array of edits.
      */
-//  set(uri: Uri, edits: ReadonlyArray<[NotebookEdit, WorkspaceEditEntryMetadata | undefined]>): void
+    fun set(
+        uri: Uri,
+        edits: ReadonlyArray<Tuple2<NotebookEdit, WorkspaceEditEntryMetadata?>>,
+    )
 
     /**
      * Get the text edits for a resource.
@@ -91,7 +120,7 @@ open external class WorkspaceEdit {
      * @param uri A resource identifier.
      * @returns An array of text edits.
      */
-//  get(uri: Uri): TextEdit[]
+    fun get(uri: Uri): ReadonlyArray<TextEdit>
 
     /**
      * Create a regular file.
@@ -170,5 +199,5 @@ open external class WorkspaceEdit {
      *
      * @returns A shallow copy of `[Uri, TextEdit[]]`-tuples.
      */
-//  entries(): [Uri, TextEdit[]][]
+    fun entries(): ReadonlyArray<Tuple2<Uri, ReadonlyArray<TextEdit>>>
 }

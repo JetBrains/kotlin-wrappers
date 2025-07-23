@@ -10,5 +10,9 @@ external interface DocumentRangeSemanticTokensProvider {
     /**
      * @see {@link DocumentSemanticTokensProvider.provideDocumentSemanticTokens provideDocumentSemanticTokens}.
      */
-//  provideDocumentRangeSemanticTokens(document: TextDocument, range: Range, token: CancellationToken): ProviderResult<SemanticTokens>
+    fun provideDocumentRangeSemanticTokens(
+        document: TextDocument,
+        range: Range,
+        token: CancellationToken,
+    ): ProviderResult<SemanticTokens>
 }

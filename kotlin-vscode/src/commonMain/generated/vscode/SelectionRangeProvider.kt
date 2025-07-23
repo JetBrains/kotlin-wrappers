@@ -2,6 +2,8 @@
 
 package vscode
 
+import js.array.ReadonlyArray
+
 /**
  * The selection range provider interface defines the contract between extensions and the "Expand and Shrink Selection" feature.
  */
@@ -19,5 +21,9 @@ external interface SelectionRangeProvider {
      * @returns Selection ranges or a thenable that resolves to such. The lack of a result can be
      * signaled by returning `undefined` or `null`.
      */
-//  provideSelectionRanges(document: TextDocument, positions: readonly Position[], token: CancellationToken): ProviderResult<SelectionRange[]>
+    fun provideSelectionRanges(
+        document: TextDocument,
+        positions: ReadonlyArray<Position>,
+        token: CancellationToken,
+    ): ProviderResult<ReadonlyArray<SelectionRange>>
 }
