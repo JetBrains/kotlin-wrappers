@@ -2,8 +2,6 @@
 
 package vscode
 
-import js.array.ReadonlyArray
-
 /**
  * The document symbol provider interface defines the contract between extensions and
  * the [go to symbol](https://code.visualstudio.com/docs/editor/editingevolved#_go-to-symbol)-feature.
@@ -20,5 +18,5 @@ external interface DocumentSymbolProvider {
     fun provideDocumentSymbols(
         document: TextDocument,
         token: CancellationToken,
-    ): ProviderResult<ReadonlyArray<Any /* SymbolInformation[] | DocumentSymbol */>>
+    ): ProviderResult<Any /* SymbolInformation[] | DocumentSymbol[] */>
 }

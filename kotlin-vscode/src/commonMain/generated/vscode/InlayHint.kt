@@ -20,7 +20,7 @@ open external class InlayHint {
      *
      * *Note* that neither the string nor the label part can be empty.
      */
-    var label: ReadonlyArray<Any /* string | InlayHintLabelPart */>
+    var label: Any /* string | InlayHintLabelPart[] */
 
     /**
      * The tooltip text when you hover over this item.
@@ -70,7 +70,7 @@ open external class InlayHint {
      */
     constructor(
         position: Position,
-        label: ReadonlyArray<Any /* string | InlayHintLabelPart */>,
+        label: Any, /* string | InlayHintLabelPart[] */
         kind: InlayHintKind = definedExternally,
     )
 }

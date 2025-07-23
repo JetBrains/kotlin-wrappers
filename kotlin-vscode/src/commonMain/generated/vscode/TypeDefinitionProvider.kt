@@ -2,8 +2,6 @@
 
 package vscode
 
-import js.array.ReadonlyArray
-
 /**
  * The type definition provider defines the contract between extensions and
  * the go to type definition feature.
@@ -22,5 +20,5 @@ external interface TypeDefinitionProvider {
         document: TextDocument,
         position: Position,
         token: CancellationToken,
-    ): ProviderResult<ReadonlyArray<Any /* Definition | DefinitionLink */>>
+    ): ProviderResult<Any /* Definition | DefinitionLink[] */>
 }

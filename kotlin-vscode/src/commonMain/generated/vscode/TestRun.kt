@@ -2,7 +2,6 @@
 
 package vscode
 
-import js.array.ReadonlyArray
 import js.core.Void
 
 /**
@@ -55,7 +54,7 @@ external interface TestRun {
      */
     fun failed(
         test: TestItem,
-        message: ReadonlyArray<Any /* TestMessage | readonly TestMessage */>,
+        message: Any, /* TestMessage | readonly TestMessage[] */
         duration: Int = definedExternally,
     )
 
@@ -70,7 +69,7 @@ external interface TestRun {
      */
     fun errored(
         test: TestItem,
-        message: ReadonlyArray<Any /* TestMessage | readonly TestMessage */>,
+        message: Any, /* TestMessage | readonly TestMessage[] */
         duration: Int = definedExternally,
     )
 

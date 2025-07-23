@@ -106,7 +106,7 @@ external interface TextEditor {
      */
     fun setDecorations(
         decorationType: TextEditorDecorationType,
-        rangesOrOptions: ReadonlyArray<Any /* Range[] | readonly DecorationOptions */>,
+        rangesOrOptions: Any, /* Range[] | readonly DecorationOptions[] */
     )
 
     /**

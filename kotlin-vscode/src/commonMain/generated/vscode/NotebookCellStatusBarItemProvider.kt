@@ -2,7 +2,6 @@
 
 package vscode
 
-import js.array.ReadonlyArray
 import js.core.Void
 
 /**
@@ -23,5 +22,5 @@ external interface NotebookCellStatusBarItemProvider {
     fun provideCellStatusBarItems(
         cell: NotebookCell,
         token: CancellationToken,
-    ): ProviderResult<ReadonlyArray<Any /* NotebookCellStatusBarItem | NotebookCellStatusBarItem */>>
+    ): ProviderResult<Any /* NotebookCellStatusBarItem | NotebookCellStatusBarItem[] */>
 }

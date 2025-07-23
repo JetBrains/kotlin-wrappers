@@ -28,7 +28,7 @@ open external class Task {
         name: String,
         source: String,
         execution: Any /* ProcessExecution | ShellExecution | CustomExecution */ = definedExternally,
-        problemMatchers: ReadonlyArray<Any /* string | string */> = definedExternally,
+        problemMatchers: Any /* string | string[] */ = definedExternally,
     )
 
     /**
@@ -49,7 +49,7 @@ open external class Task {
         name: String,
         source: String,
         execution: Any /* ProcessExecution | ShellExecution */ = definedExternally,
-        problemMatchers: ReadonlyArray<Any /* string | string */> = definedExternally,
+        problemMatchers: Any /* string | string[] */ = definedExternally,
     )
 
     /**

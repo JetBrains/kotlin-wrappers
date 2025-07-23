@@ -25,7 +25,7 @@ external interface CallHierarchyProvider {
         document: TextDocument,
         position: Position,
         token: CancellationToken,
-    ): ProviderResult<ReadonlyArray<Any /* CallHierarchyItem | CallHierarchyItem */>>
+    ): ProviderResult<Any /* CallHierarchyItem | CallHierarchyItem[] */>
 
     /**
      * Provide all incoming calls for an item, e.g all callers for a method. In graph terms this describes directed

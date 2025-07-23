@@ -39,7 +39,7 @@ external interface TabGroups {
      * @returns A promise that resolves to `true` when all tabs have been closed.
      */
     fun close(
-        tab: ReadonlyArray<Tab>,
+        tab: ReadonlyArray<Tab>, /* Tab */
         preserveFocus: Boolean = definedExternally,
     ): PromiseLike<Boolean>
 
@@ -51,7 +51,7 @@ external interface TabGroups {
      * @returns A promise that resolves to `true` when all tab groups have been closed.
      */
     fun close(
-        tabGroup: ReadonlyArray<TabGroup>,
+        tabGroup: ReadonlyArray<TabGroup>, /* TabGroup */
         preserveFocus: Boolean = definedExternally,
     ): PromiseLike<Boolean>
 }

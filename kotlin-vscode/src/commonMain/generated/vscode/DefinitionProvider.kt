@@ -2,8 +2,6 @@
 
 package vscode
 
-import js.array.ReadonlyArray
-
 /**
  * The definition provider interface defines the contract between extensions and
  * the [go to definition](https://code.visualstudio.com/docs/editor/editingevolved#_go-to-definition)
@@ -23,5 +21,5 @@ external interface DefinitionProvider {
         document: TextDocument,
         position: Position,
         token: CancellationToken,
-    ): ProviderResult<ReadonlyArray<Any /* Definition | DefinitionLink */>>
+    ): ProviderResult<Any /* Definition | DefinitionLink[] */>
 }

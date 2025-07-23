@@ -2,8 +2,6 @@
 
 package vscode
 
-import js.array.ReadonlyArray
-
 /**
  * The implementation provider interface defines the contract between extensions and
  * the go to implementation feature.
@@ -22,5 +20,5 @@ external interface ImplementationProvider {
         document: TextDocument,
         position: Position,
         token: CancellationToken,
-    ): ProviderResult<ReadonlyArray<Any /* Definition | DefinitionLink */>>
+    ): ProviderResult<Any /* Definition | DefinitionLink[] */>
 }

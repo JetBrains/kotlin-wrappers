@@ -24,7 +24,7 @@ external interface TypeHierarchyProvider {
         document: TextDocument,
         position: Position,
         token: CancellationToken,
-    ): ProviderResult<ReadonlyArray<Any /* TypeHierarchyItem | TypeHierarchyItem */>>
+    ): ProviderResult<Any /* TypeHierarchyItem | TypeHierarchyItem[] */>
 
     /**
      * Provide all supertypes for an item, e.g all types from which a type is derived/inherited. In graph terms this describes directed

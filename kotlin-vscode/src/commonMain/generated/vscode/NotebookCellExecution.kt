@@ -2,7 +2,6 @@
 
 package vscode
 
-import js.array.ReadonlyArray
 import js.core.Int53
 import js.core.Void
 import js.promise.PromiseLike
@@ -74,7 +73,7 @@ external interface NotebookCellExecution {
      * @returns A thenable that resolves when the operation finished.
      */
     fun replaceOutput(
-        out: ReadonlyArray<Any /* NotebookCellOutput | readonly NotebookCellOutput */>,
+        out: Any, /* NotebookCellOutput | readonly NotebookCellOutput[] */
         cell: NotebookCell = definedExternally,
     ): PromiseLike<Void>
 
@@ -87,7 +86,7 @@ external interface NotebookCellExecution {
      * @returns A thenable that resolves when the operation finished.
      */
     fun appendOutput(
-        out: ReadonlyArray<Any /* NotebookCellOutput | readonly NotebookCellOutput */>,
+        out: Any, /* NotebookCellOutput | readonly NotebookCellOutput[] */
         cell: NotebookCell = definedExternally,
     ): PromiseLike<Void>
 
@@ -99,7 +98,7 @@ external interface NotebookCellExecution {
      * @returns A thenable that resolves when the operation finished.
      */
     fun replaceOutputItems(
-        items: ReadonlyArray<Any /* NotebookCellOutputItem | readonly NotebookCellOutputItem */>,
+        items: Any, /* NotebookCellOutputItem | readonly NotebookCellOutputItem[] */
         output: NotebookCellOutput,
     ): PromiseLike<Void>
 
@@ -111,7 +110,7 @@ external interface NotebookCellExecution {
      * @returns A thenable that resolves when the operation finished.
      */
     fun appendOutputItems(
-        items: ReadonlyArray<Any /* NotebookCellOutputItem | readonly NotebookCellOutputItem */>,
+        items: Any, /* NotebookCellOutputItem | readonly NotebookCellOutputItem[] */
         output: NotebookCellOutput,
     ): PromiseLike<Void>
 }

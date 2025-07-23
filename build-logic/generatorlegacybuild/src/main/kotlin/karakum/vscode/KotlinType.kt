@@ -64,8 +64,8 @@ private val STANDARD_TYPE_MAP = mapOf(
     "Record<string, string>" to "Record<String, String>",
     "Record<string, string | number | null>" to "Record<String, String?>",
 
-    "Tab | readonly Tab" to "Tab",
-    "TabGroup | readonly TabGroup" to "TabGroup",
+    "Tab | readonly Tab[]" to "ReadonlyArray<Tab> /* Tab */",
+    "TabGroup | readonly TabGroup[]" to "ReadonlyArray<TabGroup> /* TabGroup */",
 
     "WebviewViewResolveContext" to "WebviewViewResolveContext<*>",
 )
@@ -105,15 +105,15 @@ internal fun kotlinType(
         return kotlinType(type.removeSuffix(" | null"), name) + "?"
     }
 
-    if (type.endsWith("[]")) {
-        val itemType = kotlinType(type.removeSuffix("[]"), name)
-        return "ReadonlyArray<$itemType>"
-    }
-
     if (" | " in type
         && !type.startsWith("(")
         && !type.startsWith("{")
     ) return "Any /* $type */"
+
+    if (type.endsWith("[]")) {
+        val itemType = kotlinType(type.removeSuffix("[]"), name)
+        return "ReadonlyArray<$itemType>"
+    }
 
     if (type == "number") {
         return when (name) {

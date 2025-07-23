@@ -30,7 +30,7 @@ external interface WebviewOptions {
      *
      * If you pass in an array, only the commands in the array are allowed.
      */
-    val enableCommandUris: ReadonlyArray<Any /* boolean | readonly string */>?
+    val enableCommandUris: Any /* boolean | readonly string[] */?
 
     /**
      * Root paths from which the webview can load local (filesystem) resources using uris from `asWebviewUri`
