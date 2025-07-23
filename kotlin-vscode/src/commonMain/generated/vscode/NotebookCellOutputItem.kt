@@ -11,58 +11,6 @@ import js.typedarrays.Uint8Array
  */
 open external class NotebookCellOutputItem {
     /**
-     * Factory function to create a `NotebookCellOutputItem` from a string.
-     *
-     * *Note* that an UTF-8 encoder is used to create bytes for the string.
-     *
-     * @param value A string.
-     * @param mime Optional MIME type, defaults to `text/plain`.
-     * @returns A new output item object.
-     */
-//  static text(value: string, mime?: string): NotebookCellOutputItem
-
-    /**
-     * Factory function to create a `NotebookCellOutputItem` from
-     * a JSON object.
-     *
-     * *Note* that this function is not expecting "stringified JSON" but
-     * an object that can be stringified. This function will throw an error
-     * when the passed value cannot be JSON-stringified.
-     *
-     * @param value A JSON-stringifyable value.
-     * @param mime Optional MIME type, defaults to `application/json`
-     * @returns A new output item object.
-     */
-//  static json(value: any, mime?: string): NotebookCellOutputItem
-
-    /**
-     * Factory function to create a `NotebookCellOutputItem` that uses
-     * uses the `application/vnd.code.notebook.stdout` mime type.
-     *
-     * @param value A string.
-     * @returns A new output item object.
-     */
-//  static stdout(value: string): NotebookCellOutputItem
-
-    /**
-     * Factory function to create a `NotebookCellOutputItem` that uses
-     * uses the `application/vnd.code.notebook.stderr` mime type.
-     *
-     * @param value A string.
-     * @returns A new output item object.
-     */
-//  static stderr(value: string): NotebookCellOutputItem
-
-    /**
-     * Factory function to create a `NotebookCellOutputItem` that uses
-     * uses the `application/vnd.code.notebook.error` mime type.
-     *
-     * @param value An error object.
-     * @returns A new output item object.
-     */
-//  static error(value: Error): NotebookCellOutputItem
-
-    /**
      * The mime type which determines how the {@linkcode NotebookCellOutputItem.data data}-property
      * is interpreted.
      *
@@ -86,4 +34,64 @@ open external class NotebookCellOutputItem {
         data: Uint8Array<*>,
         mime: String,
     )
+
+    companion object {
+        /**
+         * Factory function to create a `NotebookCellOutputItem` from a string.
+         *
+         * *Note* that an UTF-8 encoder is used to create bytes for the string.
+         *
+         * @param value A string.
+         * @param mime Optional MIME type, defaults to `text/plain`.
+         * @returns A new output item object.
+         */
+        fun text(
+            value: String,
+            mime: String = definedExternally,
+        ): NotebookCellOutputItem
+
+        /**
+         * Factory function to create a `NotebookCellOutputItem` from
+         * a JSON object.
+         *
+         * *Note* that this function is not expecting "stringified JSON" but
+         * an object that can be stringified. This function will throw an error
+         * when the passed value cannot be JSON-stringified.
+         *
+         * @param value A JSON-stringifyable value.
+         * @param mime Optional MIME type, defaults to `application/json`
+         * @returns A new output item object.
+         */
+        fun json(
+            value: Any?,
+            mime: String = definedExternally,
+        ): NotebookCellOutputItem
+
+        /**
+         * Factory function to create a `NotebookCellOutputItem` that uses
+         * uses the `application/vnd.code.notebook.stdout` mime type.
+         *
+         * @param value A string.
+         * @returns A new output item object.
+         */
+        fun stdout(value: String): NotebookCellOutputItem
+
+        /**
+         * Factory function to create a `NotebookCellOutputItem` that uses
+         * uses the `application/vnd.code.notebook.stderr` mime type.
+         *
+         * @param value A string.
+         * @returns A new output item object.
+         */
+        fun stderr(value: String): NotebookCellOutputItem
+
+        /**
+         * Factory function to create a `NotebookCellOutputItem` that uses
+         * uses the `application/vnd.code.notebook.error` mime type.
+         *
+         * @param value An error object.
+         * @returns A new output item object.
+         */
+        fun error(value: Error): NotebookCellOutputItem
+    }
 }

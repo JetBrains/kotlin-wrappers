@@ -11,22 +11,6 @@ import js.array.ReadonlyArray
  */
 open external class LanguageModelChatMessage {
     /**
-     * Utility to create a new user message.
-     *
-     * @param content The content of the message.
-     * @param name The optional name of a user for the message.
-     */
-//  static User(content: string | Array<LanguageModelTextPart | LanguageModelToolResultPart>, name?: string): LanguageModelChatMessage
-
-    /**
-     * Utility to create a new assistant message.
-     *
-     * @param content The content of the message.
-     * @param name The optional name of a user for the message.
-     */
-//  static Assistant(content: string | Array<LanguageModelTextPart | LanguageModelToolCallPart>, name?: string): LanguageModelChatMessage
-
-    /**
      * The role of this message.
      */
     var role: LanguageModelChatMessageRole
@@ -54,4 +38,28 @@ open external class LanguageModelChatMessage {
         content: Any, /* string | Array<LanguageModelTextPart | LanguageModelToolResultPart | LanguageModelToolCallPart> */
         name: String = definedExternally,
     )
+
+    companion object {
+        /**
+         * Utility to create a new user message.
+         *
+         * @param content The content of the message.
+         * @param name The optional name of a user for the message.
+         */
+        fun User(
+            content: Any, /* string | Array<LanguageModelTextPart | LanguageModelToolResultPart> */
+            name: String = definedExternally,
+        ): LanguageModelChatMessage
+
+        /**
+         * Utility to create a new assistant message.
+         *
+         * @param content The content of the message.
+         * @param name The optional name of a user for the message.
+         */
+        fun Assistant(
+            content: Any, /* string | Array<LanguageModelTextPart | LanguageModelToolCallPart> */
+            name: String = definedExternally,
+        ): LanguageModelChatMessage
+    }
 }

@@ -68,16 +68,22 @@ open external class TestMessage {
     var stackTrace: ReadonlyArray<TestMessageStackFrame>?
 
     /**
-     * Creates a new TestMessage that will present as a diff in the editor.
-     * @param message Message to display to the user.
-     * @param expected Expected output.
-     * @param actual Actual output.
-     */
-//  static diff(message: string | MarkdownString, expected: string, actual: string): TestMessage
-
-    /**
      * Creates a new TestMessage instance.
      * @param message The message to show to the user.
      */
     constructor(message: Any /* string | MarkdownString */)
+
+    companion object {
+        /**
+         * Creates a new TestMessage that will present as a diff in the editor.
+         * @param message Message to display to the user.
+         * @param expected Expected output.
+         * @param actual Actual output.
+         */
+        fun diff(
+            message: Any, /* string | MarkdownString */
+            expected: String,
+            actual: String,
+        ): TestMessage
+    }
 }

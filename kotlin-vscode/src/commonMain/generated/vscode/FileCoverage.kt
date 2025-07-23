@@ -40,14 +40,6 @@ open external class FileCoverage {
     var includesTests: ReadonlyArray<TestItem>?
 
     /**
-     * Creates a {@link FileCoverage} instance with counts filled in from
-     * the coverage details.
-     * @param uri Covered file URI
-     * @param detailed Detailed coverage information
-     */
-//  static fromDetails(uri: Uri, details: readonly FileCoverageDetail[]): FileCoverage
-
-    /**
      * @param uri Covered file URI
      * @param statementCoverage Statement coverage information. If the reporter
      * does not provide statement coverage information, this can instead be
@@ -65,4 +57,17 @@ open external class FileCoverage {
         includesTests?: TestItem[],
     )
     */
+
+    companion object {
+        /**
+         * Creates a {@link FileCoverage} instance with counts filled in from
+         * the coverage details.
+         * @param uri Covered file URI
+         * @param detailed Detailed coverage information
+         */
+        fun fromDetails(
+            uri: Uri,
+            details: ReadonlyArray<FileCoverageDetail>,
+        ): FileCoverage
+    }
 }

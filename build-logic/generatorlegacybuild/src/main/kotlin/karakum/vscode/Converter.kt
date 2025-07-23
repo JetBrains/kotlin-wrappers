@@ -164,19 +164,42 @@ private fun convertInterface(
 private fun commentMembers(
     source: String,
 ): String {
-    return source.splitToSequence("\n/**")
+    val members = mutableListOf<String>()
+    val staticMembers = mutableListOf<String>()
+
+    source.splitToSequence("\n/**")
         .mapIndexed { index, it -> if (index > 0) "/**$it" else it }
         .map { it.trim() }
-        .map {
+        .forEach {
             val declarationSource = it
                 .substringAfter(" */\n")
 
-            commentMember(
+            val memberSource = declarationSource
+                .removePrefix("static ")
+                .removeSuffix(";")
+
+            val result = commentMember(
                 comment = it.removeSuffix(declarationSource),
-                source = declarationSource.removeSuffix(";"),
+                source = memberSource,
             )
+
+            if (declarationSource.startsWith("static ")) {
+                staticMembers.add(result)
+            } else {
+                members.add(result)
+            }
         }
-        .joinToString("\n\n")
+
+    return buildString {
+        append(members.joinToString("\n\n"))
+
+        if (staticMembers.isNotEmpty()) {
+            append("\n\n")
+            append("companion object {\n")
+            append(staticMembers.joinToString("\n\n"))
+            append("\n}")
+        }
+    }
 }
 
 private fun commentMember(
@@ -203,9 +226,6 @@ private fun commentMember(
 
         source.startsWith("[Symbol.iterator]")
             -> "    // $source"
-
-        source.startsWith("static ")
-            -> "//  $source"
 
         isPropertySource(source)
             -> convertProperty(source)

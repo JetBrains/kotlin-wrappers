@@ -10,26 +10,6 @@ package vscode
  */
 open external class TaskGroup {
     /**
-     * The clean task group;
-     */
-//  static Clean: TaskGroup
-
-    /**
-     * The build task group;
-     */
-//  static Build: TaskGroup
-
-    /**
-     * The rebuild all task group;
-     */
-//  static Rebuild: TaskGroup
-
-    /**
-     * The test all task group;
-     */
-//  static Test: TaskGroup
-
-    /**
      * Whether the task that is part of this group is the default for the group.
      * This property cannot be set through API, and is controlled by a user's task configurations.
      */
@@ -50,4 +30,26 @@ open external class TaskGroup {
         id: String,
         label: String,
     )
+
+    companion object {
+        /**
+         * The clean task group;
+         */
+        var Clean: TaskGroup
+
+        /**
+         * The build task group;
+         */
+        var Build: TaskGroup
+
+        /**
+         * The rebuild all task group;
+         */
+        var Rebuild: TaskGroup
+
+        /**
+         * The test all task group;
+         */
+        var Test: TaskGroup
+    }
 }

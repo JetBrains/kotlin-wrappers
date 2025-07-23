@@ -12,44 +12,6 @@ import js.objects.Record
  */
 open external class NotebookEdit {
     /**
-     * Utility to create a edit that replaces cells in a notebook.
-     *
-     * @param range The range of cells to replace
-     * @param newCells The new notebook cells.
-     */
-//  static replaceCells(range: NotebookRange, newCells: NotebookCellData[]): NotebookEdit
-
-    /**
-     * Utility to create an edit that replaces cells in a notebook.
-     *
-     * @param index The index to insert cells at.
-     * @param newCells The new notebook cells.
-     */
-//  static insertCells(index: number, newCells: NotebookCellData[]): NotebookEdit
-
-    /**
-     * Utility to create an edit that deletes cells in a notebook.
-     *
-     * @param range The range of cells to delete.
-     */
-//  static deleteCells(range: NotebookRange): NotebookEdit
-
-    /**
-     * Utility to create an edit that update a cell's metadata.
-     *
-     * @param index The index of the cell to update.
-     * @param newCellMetadata The new metadata for the cell.
-     */
-//  static updateCellMetadata(index: number, newCellMetadata: { [key: string]: any }): NotebookEdit
-
-    /**
-     * Utility to create an edit that updates the notebook's metadata.
-     *
-     * @param newNotebookMetadata The new metadata for the notebook.
-     */
-//  static updateNotebookMetadata(newNotebookMetadata: { [key: string]: any }): NotebookEdit
-
-    /**
      * Range of the cells being edited. May be empty.
      */
     var range: NotebookRange
@@ -79,4 +41,53 @@ open external class NotebookEdit {
         range: NotebookRange,
         newCells: ReadonlyArray<NotebookCellData>,
     )
+
+    companion object {
+        /**
+         * Utility to create a edit that replaces cells in a notebook.
+         *
+         * @param range The range of cells to replace
+         * @param newCells The new notebook cells.
+         */
+        fun replaceCells(
+            range: NotebookRange,
+            newCells: ReadonlyArray<NotebookCellData>,
+        ): NotebookEdit
+
+        /**
+         * Utility to create an edit that replaces cells in a notebook.
+         *
+         * @param index The index to insert cells at.
+         * @param newCells The new notebook cells.
+         */
+        fun insertCells(
+            index: Int,
+            newCells: ReadonlyArray<NotebookCellData>,
+        ): NotebookEdit
+
+        /**
+         * Utility to create an edit that deletes cells in a notebook.
+         *
+         * @param range The range of cells to delete.
+         */
+        fun deleteCells(range: NotebookRange): NotebookEdit
+
+        /**
+         * Utility to create an edit that update a cell's metadata.
+         *
+         * @param index The index of the cell to update.
+         * @param newCellMetadata The new metadata for the cell.
+         */
+        fun updateCellMetadata(
+            index: Int,
+            newCellMetadata: Record<String, *>,
+        ): NotebookEdit
+
+        /**
+         * Utility to create an edit that updates the notebook's metadata.
+         *
+         * @param newNotebookMetadata The new metadata for the notebook.
+         */
+        fun updateNotebookMetadata(newNotebookMetadata: Record<String, *>): NotebookEdit
+    }
 }

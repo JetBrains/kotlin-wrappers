@@ -15,44 +15,6 @@ import js.errors.JsError
 open external class FileSystemError :
     JsError {
     /**
-     * Create an error to signal that a file or folder wasn't found.
-     * @param messageOrUri Message or uri.
-     */
-//  static FileNotFound(messageOrUri?: string | Uri): FileSystemError
-
-    /**
-     * Create an error to signal that a file or folder already exists, e.g. when
-     * creating but not overwriting a file.
-     * @param messageOrUri Message or uri.
-     */
-//  static FileExists(messageOrUri?: string | Uri): FileSystemError
-
-    /**
-     * Create an error to signal that a file is not a folder.
-     * @param messageOrUri Message or uri.
-     */
-//  static FileNotADirectory(messageOrUri?: string | Uri): FileSystemError
-
-    /**
-     * Create an error to signal that a file is a folder.
-     * @param messageOrUri Message or uri.
-     */
-//  static FileIsADirectory(messageOrUri?: string | Uri): FileSystemError
-
-    /**
-     * Create an error to signal that an operation lacks required permissions.
-     * @param messageOrUri Message or uri.
-     */
-//  static NoPermissions(messageOrUri?: string | Uri): FileSystemError
-
-    /**
-     * Create an error to signal that the file system is unavailable or too busy to
-     * complete a request.
-     * @param messageOrUri Message or uri.
-     */
-//  static Unavailable(messageOrUri?: string | Uri): FileSystemError
-
-    /**
      * Creates a new filesystem error.
      *
      * @param messageOrUri Message or uri.
@@ -66,4 +28,44 @@ open external class FileSystemError :
      * or `Unknown` for unspecified errors.
      */
     val code: String
+
+    companion object {
+        /**
+         * Create an error to signal that a file or folder wasn't found.
+         * @param messageOrUri Message or uri.
+         */
+        fun FileNotFound(messageOrUri: Any /* string | Uri */ = definedExternally): FileSystemError
+
+        /**
+         * Create an error to signal that a file or folder already exists, e.g. when
+         * creating but not overwriting a file.
+         * @param messageOrUri Message or uri.
+         */
+        fun FileExists(messageOrUri: Any /* string | Uri */ = definedExternally): FileSystemError
+
+        /**
+         * Create an error to signal that a file is not a folder.
+         * @param messageOrUri Message or uri.
+         */
+        fun FileNotADirectory(messageOrUri: Any /* string | Uri */ = definedExternally): FileSystemError
+
+        /**
+         * Create an error to signal that a file is a folder.
+         * @param messageOrUri Message or uri.
+         */
+        fun FileIsADirectory(messageOrUri: Any /* string | Uri */ = definedExternally): FileSystemError
+
+        /**
+         * Create an error to signal that an operation lacks required permissions.
+         * @param messageOrUri Message or uri.
+         */
+        fun NoPermissions(messageOrUri: Any /* string | Uri */ = definedExternally): FileSystemError
+
+        /**
+         * Create an error to signal that the file system is unavailable or too busy to
+         * complete a request.
+         * @param messageOrUri Message or uri.
+         */
+        fun Unavailable(messageOrUri: Any /* string | Uri */ = definedExternally): FileSystemError
+    }
 }

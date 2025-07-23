@@ -10,40 +10,6 @@ package vscode
  */
 open external class TextEdit {
     /**
-     * Utility to create a replace edit.
-     *
-     * @param range A range.
-     * @param newText A string.
-     * @returns A new text edit object.
-     */
-//  static replace(range: Range, newText: string): TextEdit
-
-    /**
-     * Utility to create an insert edit.
-     *
-     * @param position A position, will become an empty range.
-     * @param newText A string.
-     * @returns A new text edit object.
-     */
-//  static insert(position: Position, newText: string): TextEdit
-
-    /**
-     * Utility to create a delete edit.
-     *
-     * @param range A range.
-     * @returns A new text edit object.
-     */
-//  static delete(range: Range): TextEdit
-
-    /**
-     * Utility to create an eol-edit.
-     *
-     * @param eol An eol-sequence
-     * @returns A new text edit object.
-     */
-//  static setEndOfLine(eol: EndOfLine): TextEdit
-
-    /**
      * The range this edit applies to.
      */
     var range: Range
@@ -71,4 +37,46 @@ open external class TextEdit {
         range: Range,
         newText: String,
     )
+
+    companion object {
+        /**
+         * Utility to create a replace edit.
+         *
+         * @param range A range.
+         * @param newText A string.
+         * @returns A new text edit object.
+         */
+        fun replace(
+            range: Range,
+            newText: String,
+        ): TextEdit
+
+        /**
+         * Utility to create an insert edit.
+         *
+         * @param position A position, will become an empty range.
+         * @param newText A string.
+         * @returns A new text edit object.
+         */
+        fun insert(
+            position: Position,
+            newText: String,
+        ): TextEdit
+
+        /**
+         * Utility to create a delete edit.
+         *
+         * @param range A range.
+         * @returns A new text edit object.
+         */
+        fun delete(range: Range): TextEdit
+
+        /**
+         * Utility to create an eol-edit.
+         *
+         * @param eol An eol-sequence
+         * @returns A new text edit object.
+         */
+        fun setEndOfLine(eol: EndOfLine): TextEdit
+    }
 }

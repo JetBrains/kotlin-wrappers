@@ -14,16 +14,6 @@ package vscode
  */
 open external class ThemeIcon {
     /**
-     * Reference to an icon representing a file. The icon is taken from the current file icon theme or a placeholder icon is used.
-     */
-//  static readonly File: ThemeIcon
-
-    /**
-     * Reference to an icon representing a folder. The icon is taken from the current file icon theme or a placeholder icon is used.
-     */
-//  static readonly Folder: ThemeIcon
-
-    /**
      * The id of the icon. The available icons are listed in https://code.visualstudio.com/api/references/icons-in-labels#icon-listing.
      */
     val id: String
@@ -42,4 +32,16 @@ open external class ThemeIcon {
         id: String,
         color: ThemeColor = definedExternally,
     )
+
+    companion object {
+        /**
+         * Reference to an icon representing a file. The icon is taken from the current file icon theme or a placeholder icon is used.
+         */
+        val File: ThemeIcon
+
+        /**
+         * Reference to an icon representing a folder. The icon is taken from the current file icon theme or a placeholder icon is used.
+         */
+        val Folder: ThemeIcon
+    }
 }

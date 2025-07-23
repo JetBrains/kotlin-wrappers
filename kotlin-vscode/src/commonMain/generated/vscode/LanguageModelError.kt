@@ -17,22 +17,6 @@ import js.errors.JsError
 open external class LanguageModelError :
     JsError {
     /**
-     * The requestor does not have permissions to use this
-     * language model
-     */
-//  static NoPermissions(message?: string): LanguageModelError
-
-    /**
-     * The requestor is blocked from using this language model.
-     */
-//  static Blocked(message?: string): LanguageModelError
-
-    /**
-     * The language model does not exist.
-     */
-//  static NotFound(message?: string): LanguageModelError
-
-    /**
      * A code that identifies this error.
      *
      * Possible values are names of errors, like {@linkcode LanguageModelError.NotFound NotFound},
@@ -40,4 +24,22 @@ open external class LanguageModelError :
      * `cause`-property will contain the actual error.
      */
     val code: String
+
+    companion object {
+        /**
+         * The requestor does not have permissions to use this
+         * language model
+         */
+        fun NoPermissions(message: String = definedExternally): LanguageModelError
+
+        /**
+         * The requestor is blocked from using this language model.
+         */
+        fun Blocked(message: String = definedExternally): LanguageModelError
+
+        /**
+         * The language model does not exist.
+         */
+        fun NotFound(message: String = definedExternally): LanguageModelError
+    }
 }
