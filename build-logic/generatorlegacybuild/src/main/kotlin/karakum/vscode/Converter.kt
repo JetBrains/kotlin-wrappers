@@ -299,10 +299,14 @@ private fun convertFunction(
         parametersSource
             .replace("[number, number]", "[number_,_number]")
             .replace("<string, string", "<string_,_string")
+            .replace("<string, any", "<string_,_any")
+            .replace("[Uri, readonly", "[Uri_,_readonly")
             .splitToSequence(", ")
             .map {
                 it.replace("[number_,_number]", "[number, number]")
                     .replace("<string_,_string", "<string, string")
+                    .replace("<string_,_any", "<string, any")
+                    .replace("[Uri_,_readonly", "[Uri, readonly")
             }
             .map {
                 val name = it
