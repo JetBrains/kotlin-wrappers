@@ -106,7 +106,13 @@ open external class Uri {
     /**
      * Use the `file` and `parse` factory functions to create new `Uri` objects.
      */
-//  private constructor(scheme: string, authority: string, path: string, query: string, fragment: string)
+    private constructor(
+        scheme: String,
+        authority: String,
+        path: String,
+        query: String,
+        fragment: String,
+    )
 
     /**
      * Scheme is the `http` part of `http://www.example.com/some/path?query#fragment`.

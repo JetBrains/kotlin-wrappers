@@ -46,5 +46,8 @@ open external class TaskGroup {
      * @param id Identifier of a task group.
      * @param label The human-readable name of a task group.
      */
-//  private constructor(id: string, label: string)
+    private constructor(
+        id: String,
+        label: String,
+    )
 }

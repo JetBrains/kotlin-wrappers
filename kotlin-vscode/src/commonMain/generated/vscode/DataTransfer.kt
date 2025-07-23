@@ -47,5 +47,5 @@ open external class DataTransfer :
     /**
      * Get a new iterator with the `[mime, item]` pairs for each element in this data transfer.
      */
-//  [Symbol.iterator](): IterableIterator<[mimeType: string, item: DataTransferItem]>
+    // [Symbol.iterator](): IterableIterator<[mimeType: string, item: DataTransferItem]>
 }

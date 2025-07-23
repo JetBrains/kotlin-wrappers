@@ -19,5 +19,5 @@ open external class QuickInputButtons {
     /**
      * @hidden
      */
-//  private constructor()
+    private constructor()
 }

@@ -32,7 +32,7 @@ open external class DocumentDropOrPasteEditKind {
     /**
      * Use {@linkcode DocumentDropOrPasteEditKind.Empty} instead.
      */
-//  private constructor(value: string)
+    private constructor(value: String)
 
     /**
      * The raw string value of the kind.

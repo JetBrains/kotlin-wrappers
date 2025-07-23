@@ -127,7 +127,7 @@ open external class CodeActionKind {
      *
      * @param value The value of the kind, such as `refactor.extract.function`.
      */
-//  private constructor(value: string)
+    private constructor(value: String)
 
     /**
      * String value of the kind, e.g. `"refactor.extract.function"`.

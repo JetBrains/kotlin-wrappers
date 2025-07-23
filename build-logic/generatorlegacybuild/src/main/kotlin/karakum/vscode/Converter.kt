@@ -188,7 +188,8 @@ private fun commentMember(
             -> "/*\n$source\n*/"
 
         source.startsWith("constructor(") ||
-                source.startsWith("protected constructor(")
+                source.startsWith("protected constructor(") ||
+                source.startsWith("private constructor(")
             -> convertConstructor(source)
 
         source.startsWith("// Properties: ")
@@ -198,6 +199,9 @@ private fun commentMember(
                 source == "[key: string]: boolean | number | string" ||
                 source == "[key: string]: any" ||
                 source == "[name: string]: any"
+            -> "    // $source"
+
+        source.startsWith("[Symbol.iterator]")
             -> "    // $source"
 
         source.startsWith("static ")
@@ -246,8 +250,8 @@ private fun convertProperty(
 private fun convertConstructor(
     source: String,
 ): String {
-    if (source.startsWith("protected "))
-        return "protected " + convertConstructor(source.removePrefix("protected "))
+    if (source.startsWith("protected ") || source.startsWith("private "))
+        return source.substringBefore(" ") + " " + convertConstructor(source.substringAfter(" "))
 
     if (source == "constructor()") {
         return source
