@@ -49,7 +49,17 @@ external interface TestController {
      * @returns An instance of a {@link TestRunProfile}, which is automatically
      * associated with this controller.
      */
-//  createRunProfile(label: string, kind: TestRunProfileKind, runHandler: (request: TestRunRequest, token: CancellationToken) => Thenable<void> | void, isDefault?: boolean, tag?: TestTag, supportsContinuousRun?: boolean): TestRunProfile
+    fun createRunProfile(
+        label: String,
+        kind: TestRunProfileKind,
+        runHandler: (
+            request: TestRunRequest,
+            token: CancellationToken,
+        ) -> PromiseLike<Void>,
+        isDefault: Boolean = definedExternally,
+        tag: TestTag = definedExternally,
+        supportsContinuousRun: Boolean = definedExternally,
+    ): TestRunProfile
 
     /**
      * A function provided by the extension that the editor may call to request

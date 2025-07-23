@@ -353,6 +353,56 @@ private fun convertFunction(
     if ("/** literal-type defines return type */" in source)
         return "    // $source"
 
+    when (source) {
+        "createRunProfile(label: string, kind: TestRunProfileKind, runHandler: (request: TestRunRequest, token: CancellationToken) => Thenable<void> | void, isDefault?: boolean, tag?: TestTag, supportsContinuousRun?: boolean): TestRunProfile",
+            ->
+            // language=kotlin
+            return """
+            fun createRunProfile(
+                label: String,
+                kind: TestRunProfileKind,
+                runHandler: (
+                    request: TestRunRequest,
+                    token: CancellationToken,
+                ) -> PromiseLike<Void>,
+                isDefault: Boolean = definedExternally,
+                tag: TestTag = definedExternally,
+                supportsContinuousRun: Boolean = definedExternally,
+            ): TestRunProfile
+            """.trimIndent()
+
+        "registerTextEditorCommand(command: string, callback: (textEditor: TextEditor, edit: TextEditorEdit, ...args: any[]) => void, thisArg?: any): Disposable",
+            ->
+            // language=kotlin
+            return """
+            fun registerTextEditorCommand(
+                command: String,
+                callback: (
+                    textEditor: TextEditor,
+                    edit: TextEditorEdit,
+                    /* ...args: any[], */
+                ) -> Unit,
+                thisArg: Any = definedExternally,
+            ): Disposable
+            """.trimIndent()
+
+        "createNotebookController(id: string, notebookType: string, label: string, handler?: (cells: NotebookCell[], notebook: NotebookDocument, controller: NotebookController) => void | Thenable<void>): NotebookController",
+            ->
+            // language=kotlin
+            return """
+            fun createNotebookController(
+                id: String,
+                notebookType: String,
+                label: String,
+                handler: (
+                    cells: ReadonlyArray<NotebookCell>,
+                    notebook: NotebookDocument,
+                    controller: NotebookController,
+                ) -> PromiseLike<Void> = definedExternally,
+            ): NotebookController
+            """.trimIndent()
+    }
+
     val name = source
         .substringBefore("(")
         .substringBefore("<")
@@ -365,12 +415,6 @@ private fun convertFunction(
         .replace(" = any", "")
         .replace(" extends string", " : Comparable<String> /* String */")
         .replace(" extends ", " : ")
-
-    // TEMP
-    if (name == "createRunProfile"
-        || name == "registerTextEditorCommand"
-        || name == "createNotebookController"
-    ) return "//  $source"
 
     val parametersSource = source
         .substringAfter("(")

@@ -77,7 +77,15 @@ external object commands {
      * @param thisArg The `this` context used when invoking the handler function.
      * @returns Disposable which unregisters this command on disposal.
      */
-//  registerTextEditorCommand(command: string, callback: (textEditor: TextEditor, edit: TextEditorEdit, ...args: any[]) => void, thisArg?: any): Disposable
+    fun registerTextEditorCommand(
+        command: String,
+        callback: (
+            textEditor: TextEditor,
+            edit: TextEditorEdit,
+            /* ...args: any[], */
+        ) -> Unit,
+        thisArg: Any = definedExternally,
+    ): Disposable
 
     /**
      * Executes the command denoted by the given command identifier.

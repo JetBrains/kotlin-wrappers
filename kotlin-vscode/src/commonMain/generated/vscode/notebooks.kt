@@ -4,6 +4,10 @@
 
 package vscode
 
+import js.array.ReadonlyArray
+import js.core.Void
+import js.promise.PromiseLike
+
 /**
  * Namespace for notebooks.
  *
@@ -23,7 +27,16 @@ external object notebooks {
      * @param handler The execute-handler of the controller.
      * @returns A new notebook controller.
      */
-//  createNotebookController(id: string, notebookType: string, label: string, handler?: (cells: NotebookCell[], notebook: NotebookDocument, controller: NotebookController) => void | Thenable<void>): NotebookController
+    fun createNotebookController(
+        id: String,
+        notebookType: String,
+        label: String,
+        handler: (
+            cells: ReadonlyArray<NotebookCell>,
+            notebook: NotebookDocument,
+            controller: NotebookController,
+        ) -> PromiseLike<Void> = definedExternally,
+    ): NotebookController
 
     /**
      * Register a {@link NotebookCellStatusBarItemProvider cell statusbar item provider} for the given notebook type.
