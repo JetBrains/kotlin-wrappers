@@ -3,6 +3,11 @@
 package vscode
 
 import js.array.ReadonlyArray
+import js.array.Tuple2
+import js.core.Void
+import js.promise.PromiseLike
+import js.promise.PromiseResult
+import js.typedarrays.Uint8Array
 
 /**
  * The filesystem provider defines what the editor needs to read, write, discover,
@@ -74,7 +79,7 @@ external interface FileSystemProvider {
      * @returns The file metadata about the file.
      * @throws {@linkcode FileSystemError.FileNotFound FileNotFound} when `uri` doesn't exist.
      */
-    fun stat(uri: Uri): Any /* FileStat | Thenable<FileStat> */
+    fun stat(uri: Uri): PromiseResult<FileStat>
 
     /**
      * Retrieve all entries of a {@link FileType.Directory directory}.
@@ -83,7 +88,7 @@ external interface FileSystemProvider {
      * @returns An array of name/type-tuples or a thenable that resolves to such.
      * @throws {@linkcode FileSystemError.FileNotFound FileNotFound} when `uri` doesn't exist.
      */
-    fun readDirectory(uri: Uri): Any /* [string, FileType][] | Thenable<[string, FileType][]> */
+    fun readDirectory(uri: Uri): PromiseResult<ReadonlyArray<Tuple2<String, FileType>>>
 
     /**
      * Create a new directory (Note, that new files are created via `write`-calls).
@@ -93,7 +98,7 @@ external interface FileSystemProvider {
      * @throws {@linkcode FileSystemError.FileExists FileExists} when `uri` already exists.
      * @throws {@linkcode FileSystemError.NoPermissions NoPermissions} when permissions aren't sufficient.
      */
-    fun createDirectory(uri: Uri): Any /* void | Thenable<void> */
+    fun createDirectory(uri: Uri): PromiseLike<Void>?
 
     /**
      * Read the entire contents of a file.
@@ -102,7 +107,7 @@ external interface FileSystemProvider {
      * @returns An array of bytes or a thenable that resolves to such.
      * @throws {@linkcode FileSystemError.FileNotFound FileNotFound} when `uri` doesn't exist.
      */
-    fun readFile(uri: Uri): Any /* Uint8Array | Thenable<Uint8Array> */
+    fun readFile(uri: Uri): PromiseResult<Uint8Array<*>>
 
     /**
      * Write data to a file, replacing its entire contents.

@@ -3,6 +3,7 @@
 package vscode
 
 import js.array.ReadonlyArray
+import js.promise.PromiseResult
 
 /**
  * A data provider that provides tree data
@@ -21,7 +22,7 @@ external interface TreeDataProvider<T> {
      * @param element The element for which {@link TreeItem} representation is asked for.
      * @returns TreeItem representation of the element.
      */
-    fun getTreeItem(element: T): Any /* TreeItem | Thenable<TreeItem> */
+    fun getTreeItem(element: T): PromiseResult<TreeItem>
 
     /**
      * Get the children of `element` or root if no element is passed.

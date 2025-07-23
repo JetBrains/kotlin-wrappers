@@ -2,6 +2,9 @@
 
 package vscode
 
+import js.core.Void
+import js.promise.PromiseLike
+
 /**
  * Provider for text based custom editors.
  *
@@ -33,5 +36,5 @@ external interface CustomTextEditorProvider {
         document: TextDocument,
         webviewPanel: WebviewPanel,
         token: CancellationToken,
-    ): Any /* Thenable<void> | void */
+    ): PromiseLike<Void>?
 }

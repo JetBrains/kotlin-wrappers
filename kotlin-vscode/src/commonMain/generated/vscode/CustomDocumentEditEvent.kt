@@ -2,6 +2,9 @@
 
 package vscode
 
+import js.core.Void
+import js.promise.PromiseLike
+
 /**
  * Event triggered by extensions to signal to the editor that an edit has occurred on an {@linkcode CustomDocument}.
  *
@@ -20,7 +23,7 @@ external interface CustomDocumentEditEvent<T : CustomDocument> {
      * extension should restore the document and editor to the state they were in just before this
      * edit was added to the editor's internal edit stack by `onDidChangeCustomDocument`.
      */
-    fun undo(): Any /* Thenable<void> | void */
+    fun undo(): PromiseLike<Void>?
 
     /**
      * Redo the edit operation.
@@ -29,7 +32,7 @@ external interface CustomDocumentEditEvent<T : CustomDocument> {
      * extension should restore the document and editor to the state they were in just after this
      * edit was added to the editor's internal edit stack by `onDidChangeCustomDocument`.
      */
-    fun redo(): Any /* Thenable<void> | void */
+    fun redo(): PromiseLike<Void>?
 
     /**
      * Display name describing the edit.

@@ -18,6 +18,8 @@ private val STANDARD_TYPE_MAP = mapOf(
     "void" to "Void",
     "null" to "Void",
 
+    "void | number" to "Int?",
+
     "() => any" to "() -> Unit",
 
     "AsyncIterable<string>" to "AsyncIterable<String>",
@@ -25,10 +27,22 @@ private val STANDARD_TYPE_MAP = mapOf(
     "Uint8Array" to "Uint8Array<*>",
     "Uint32Array" to "Uint32Array<*>",
 
+    "Thenable<void> | void" to "PromiseLike<Void>?",
+    "void | Thenable<void>" to "PromiseLike<Void>?",
+    "Thenable<T> | T" to "PromiseResult<T>",
+    "Uint8Array | Thenable<Uint8Array>" to "PromiseResult<Uint8Array<*>>",
+    "FileStat | Thenable<FileStat>" to "PromiseResult<FileStat>",
+    "NotebookData | Thenable<NotebookData>" to "PromiseResult<NotebookData>",
+    "TreeItem | Thenable<TreeItem>" to "PromiseResult<TreeItem>",
+
+    "[string, FileType][] | Thenable<[string, FileType][]>" to
+            "PromiseResult<ReadonlyArray<Tuple2<String, FileType>>>",
+
     "[number, number]" to "Tuple2<Int, Int>",
     "[start: number, end: number]" to "Tuple2</* start */ Int, /* end */ Int>",
     "[string, FileType]" to "Tuple2<String, FileType>",
 
+    "[Uri, readonly Diagnostic[] | undefined]" to "Tuple2<Uri, ReadonlyArray<Diagnostic>?>",
     "[TextEdit | SnippetTextEdit, WorkspaceEditEntryMetadata | undefined]" to
             "Tuple2<Any /* TextEdit | SnippetTextEdit */, WorkspaceEditEntryMetadata?>",
     "[NotebookEdit, WorkspaceEditEntryMetadata | undefined]" to

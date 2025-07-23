@@ -2,6 +2,7 @@
 
 package vscode
 
+import js.promise.PromiseResult
 import js.typedarrays.Uint8Array
 
 /**
@@ -23,7 +24,7 @@ external interface NotebookSerializer {
     fun deserializeNotebook(
         content: Uint8Array<*>,
         token: CancellationToken,
-    ): Any /* NotebookData | Thenable<NotebookData> */
+    ): PromiseResult<NotebookData>
 
     /**
      * Serialize notebook data into file contents.
@@ -35,5 +36,5 @@ external interface NotebookSerializer {
     fun serializeNotebook(
         data: NotebookData,
         token: CancellationToken,
-    ): Any /* Uint8Array | Thenable<Uint8Array> */
+    ): PromiseResult<Uint8Array<*>>
 }

@@ -2,6 +2,9 @@
 
 package vscode
 
+import js.core.Void
+import js.promise.PromiseLike
+
 /**
  * Provider for creating `WebviewView` elements.
  */
@@ -23,5 +26,5 @@ external interface WebviewViewProvider {
         webviewView: WebviewView,
         context: WebviewViewResolveContext<*>,
         token: CancellationToken,
-    ): Any /* Thenable<void> | void */
+    ): PromiseLike<Void>?
 }

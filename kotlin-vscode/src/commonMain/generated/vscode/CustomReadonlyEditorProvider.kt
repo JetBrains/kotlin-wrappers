@@ -2,6 +2,10 @@
 
 package vscode
 
+import js.core.Void
+import js.promise.PromiseLike
+import js.promise.PromiseResult
+
 /**
  * Provider for readonly custom editors that use a custom document model.
  *
@@ -33,7 +37,7 @@ external interface CustomReadonlyEditorProvider<T : CustomDocument> {
         uri: Uri,
         openContext: CustomDocumentOpenContext,
         token: CancellationToken,
-    ): Any /* Thenable<T> | T */
+    ): PromiseResult<T>
 
     /**
      * Resolve a custom editor for a given resource.
@@ -56,5 +60,5 @@ external interface CustomReadonlyEditorProvider<T : CustomDocument> {
         document: T,
         webviewPanel: WebviewPanel,
         token: CancellationToken,
-    ): Any /* Thenable<void> | void */
+    ): PromiseLike<Void>?
 }

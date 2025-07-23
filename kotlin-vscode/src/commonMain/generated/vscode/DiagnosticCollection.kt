@@ -45,7 +45,7 @@ external interface DiagnosticCollection :
      *
      * @param entries An array of tuples, like `[[file1, [d1, d2]], [file2, [d3, d4, d5]]]`, or `undefined`.
      */
-    fun set(entries: ReadonlyArray<Any /* [Uri, readonly Diagnostic[] | undefined] */>)
+    fun set(entries: ReadonlyArray<Tuple2<Uri, ReadonlyArray<Diagnostic>?>>)
 
     /**
      * Remove all diagnostics from this collection that belong

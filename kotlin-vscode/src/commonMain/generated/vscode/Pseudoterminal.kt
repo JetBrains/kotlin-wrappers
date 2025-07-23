@@ -93,7 +93,7 @@ external interface Pseudoterminal {
      * terminal.show(true);
      * ```
      */
-    var onDidClose: Event<Any /* void | number */>?
+    var onDidClose: Event<Int?>?
 
     /**
      * An event that when fired allows changing the name of the terminal.
