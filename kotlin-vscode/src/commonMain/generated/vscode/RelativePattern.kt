@@ -19,18 +19,6 @@ open external class RelativePattern {
     var baseUri: Uri
 
     /**
-     * A base file path to which this pattern will be matched against relatively.
-     *
-     * This matches the `fsPath` value of {@link RelativePattern.baseUri}.
-     *
-     * *Note:* updating this value will update {@link RelativePattern.baseUri} to
-     * be a uri with `file` scheme.
-     *
-     * @deprecated This property is deprecated, please use {@link RelativePattern.baseUri} instead.
-     */
-    var base: String
-
-    /**
      * A file glob pattern like `*.{ts,js}` that will be matched on file paths
      * relative to the base path.
      *

@@ -132,11 +132,14 @@ private fun convertNamespace(
         .substringAfter(" {\n")
         .substringBefore("\n}")
         .trimIndent()
+        .replace("export const ", "readonly ")
+        .replace("export let ", "")
+        .replace("export function ", "")
 
     return sequenceOf(
         comment,
         "$declaration {",
-        commentedOriginal(membersSource),
+        convertMembers(membersSource),
         "}",
     ).joinToString("\n")
 }
@@ -189,12 +192,12 @@ private fun convertInterface(
     return sequenceOf(
         comment,
         "$declaration {",
-        commentMembers(membersSource),
+        convertMembers(membersSource),
         "}",
     ).joinToString("\n")
 }
 
-private fun commentMembers(
+private fun convertMembers(
     source: String,
 ): String {
     val members = mutableListOf<String>()
@@ -211,8 +214,13 @@ private fun commentMembers(
                 .removePrefix("static ")
                 .removeSuffix(";")
 
+            val comment = it.removeSuffix(declarationSource)
+            if ("@deprecated" in comment) {
+                return@forEach
+            }
+
             val result = commentMember(
-                comment = it.removeSuffix(declarationSource),
+                comment = comment,
                 source = memberSource,
             )
 
@@ -342,15 +350,27 @@ private fun convertFunction(
     if ("?(" in source)
         return "//  $source"
 
-    var name = source.substringBefore("(")
+    if ("/** literal-type defines return type */" in source)
+        return "    // $source"
+
+    val name = source
+        .substringBefore("(")
+        .substringBefore("<")
         .ifEmpty { "invoke" }
 
-    if (name == "get<T>")
-        name = "<T> get"
+    val typeParameters = source
+        .substringAfter(name)
+        .substringBefore("(")
+        .replace(" = unknown", "")
+        .replace(" = any", "")
+        .replace(" extends string", " : Comparable<String> /* String */")
+        .replace(" extends ", " : ")
 
     // TEMP
-    if (name == "createRunProfile")
-        return "//  $source"
+    if (name == "createRunProfile"
+        || name == "registerTextEditorCommand"
+        || name == "createNotebookController"
+    ) return "//  $source"
 
     val parametersSource = source
         .substringAfter("(")
@@ -386,8 +406,14 @@ private fun convertFunction(
                 val optional = it.startsWith("$name?")
                 var typeSource = it.substringAfter(": ")
                 if (vararg) {
-                    require(typeSource.endsWith("[]"))
-                    typeSource = typeSource.removeSuffix("[]")
+                    typeSource = if (typeSource.startsWith("Array<")) {
+                        kotlinType(typeSource.removeSurrounding("Array<", ">"), name)
+                    } else {
+                        require(typeSource.endsWith("[]")) {
+                            "No `[]` on type end:\n$typeSource"
+                        }
+                        typeSource.removeSuffix("[]")
+                    }
                 }
 
                 val type = kotlinType(typeSource, name)
@@ -403,20 +429,5 @@ private fun convertFunction(
         .let { if (it != "Void") ": $it" else "" }
 
     val modifier = if (source.startsWith("(")) "operator" else ""
-    return "$modifier fun $name($parameters)$returnType"
+    return "$modifier fun $typeParameters $name($parameters)$returnType"
 }
-
-private fun commentedOriginal(
-    source: String,
-): String =
-    sequenceOf(
-        """
-            /**
-            // ORIGINAL SOURCE
-            """.trimIndent(),
-        source,
-        """
-            // ORIGINAL SOURCE
-            **/
-            """.trimIndent()
-    ).joinToString("\n\n")

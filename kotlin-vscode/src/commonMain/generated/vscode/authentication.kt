@@ -4,12 +4,31 @@
 
 package vscode
 
+import js.array.ReadonlyArray
+import js.promise.PromiseLike
+
 /**
  * Namespace for authentication.
  */
 external object authentication {
     /**
-    // ORIGINAL SOURCE
+     * Get an authentication session matching the desired scopes. Rejects if a provider with providerId is not
+     * registered, or if the user does not consent to sharing authentication information with
+     * the extension. If there are multiple sessions with the same scopes, the user will be shown a
+     * quickpick to select which account they would like to use.
+     *
+     * Currently, there are only two authentication providers that are contributed from built in extensions
+     * to the editor that implement GitHub and Microsoft authentication: their providerId's are 'github' and 'microsoft'.
+     * @param providerId The id of the provider to use
+     * @param scopes A list of scopes representing the permissions requested. These are dependent on the authentication provider
+     * @param options The {@link AuthenticationGetSessionOptions} to use
+     * @returns A thenable that resolves to an authentication session
+     */
+    fun getSession(
+        providerId: String,
+        scopes: ReadonlyArray<String>,
+        options: Any, /* AuthenticationGetSessionOptions & { /** */createIfNone: true | AuthenticationGetSessionPresentationOptions } */
+    ): PromiseLike<AuthenticationSession>
 
     /**
      * Get an authentication session matching the desired scopes. Rejects if a provider with providerId is not
@@ -23,23 +42,8 @@ external object authentication {
      * @param scopes A list of scopes representing the permissions requested. These are dependent on the authentication provider
      * @param options The {@link AuthenticationGetSessionOptions} to use
      * @returns A thenable that resolves to an authentication session
-    */
-    export function getSession(providerId: string, scopes: readonly string[], options: AuthenticationGetSessionOptions & { /** */createIfNone: true | AuthenticationGetSessionPresentationOptions }): Thenable<AuthenticationSession>;
-
-    /**
-     * Get an authentication session matching the desired scopes. Rejects if a provider with providerId is not
-     * registered, or if the user does not consent to sharing authentication information with
-     * the extension. If there are multiple sessions with the same scopes, the user will be shown a
-     * quickpick to select which account they would like to use.
-     *
-     * Currently, there are only two authentication providers that are contributed from built in extensions
-     * to the editor that implement GitHub and Microsoft authentication: their providerId's are 'github' and 'microsoft'.
-     * @param providerId The id of the provider to use
-     * @param scopes A list of scopes representing the permissions requested. These are dependent on the authentication provider
-     * @param options The {@link AuthenticationGetSessionOptions} to use
-     * @returns A thenable that resolves to an authentication session
-    */
-    export function getSession(providerId: string, scopes: readonly string[], options: AuthenticationGetSessionOptions & { /** literal-type defines return type */forceNewSession: true | AuthenticationGetSessionPresentationOptions | AuthenticationForceNewSessionOptions }): Thenable<AuthenticationSession>;
+     */
+    // getSession(providerId: string, scopes: readonly string[], options: AuthenticationGetSessionOptions & { /** literal-type defines return type */forceNewSession: true | AuthenticationGetSessionPresentationOptions | AuthenticationForceNewSessionOptions }): Thenable<AuthenticationSession>
 
     /**
      * Get an authentication session matching the desired scopes. Rejects if a provider with providerId is not
@@ -53,8 +57,12 @@ external object authentication {
      * @param scopes A list of scopes representing the permissions requested. These are dependent on the authentication provider
      * @param options The {@link AuthenticationGetSessionOptions} to use
      * @returns A thenable that resolves to an authentication session if available, or undefined if there are no sessions
-    */
-    export function getSession(providerId: string, scopes: readonly string[], options?: AuthenticationGetSessionOptions): Thenable<AuthenticationSession | undefined>;
+     */
+    fun getSession(
+        providerId: String,
+        scopes: ReadonlyArray<String>,
+        options: AuthenticationGetSessionOptions = definedExternally,
+    ): PromiseLike<AuthenticationSession?>
 
     /**
      * Get all accounts that the user is logged in to for the specified provider.
@@ -67,14 +75,14 @@ external object authentication {
      *
      * @param providerId The id of the provider to use
      * @returns A thenable that resolves to a readonly array of authentication accounts.
-    */
-    export function getAccounts(providerId: string): Thenable<readonly AuthenticationSessionAccountInformation[]>;
+     */
+    fun getAccounts(providerId: String): PromiseLike<ReadonlyArray<AuthenticationSessionAccountInformation>>
 
     /**
      * An {@link Event} which fires when the authentication sessions of an authentication provider have
      * been added, removed, or changed.
-    */
-    export const onDidChangeSessions: Event<AuthenticationSessionsChangeEvent>;
+     */
+    val onDidChangeSessions: Event<AuthenticationSessionsChangeEvent>
 
     /**
      * Register an authentication provider.
@@ -87,9 +95,11 @@ external object authentication {
      * @param provider The authentication provider provider.
      * @param options Additional options for the provider.
      * @returns A {@link Disposable} that unregisters this provider when being disposed.
-    */
-    export function registerAuthenticationProvider(id: string, label: string, provider: AuthenticationProvider, options?: AuthenticationProviderOptions): Disposable;
-
-    // ORIGINAL SOURCE
-     **/
+     */
+    fun registerAuthenticationProvider(
+        id: String,
+        label: String,
+        provider: AuthenticationProvider,
+        options: AuthenticationProviderOptions = definedExternally,
+    ): Disposable
 }

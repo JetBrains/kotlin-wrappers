@@ -4,21 +4,24 @@
 
 package vscode
 
+import js.array.ReadonlyArray
+import js.promise.PromiseLike
+
 /**
  * Namespace for tasks functionality.
  */
 external object tasks {
-    /**
-    // ORIGINAL SOURCE
-
     /**
      * Register a task provider.
      *
      * @param type The task kind type this provider is registered for.
      * @param provider A task provider.
      * @returns A {@link Disposable} that unregisters this provider when being disposed.
-    */
-    export function registerTaskProvider(type: string, provider: TaskProvider): Disposable;
+     */
+    fun registerTaskProvider(
+        type: String,
+        provider: TaskProvider<*>,
+    ): Disposable
 
     /**
      * Fetches all tasks available in the systems. This includes tasks
@@ -27,8 +30,8 @@ external object tasks {
      *
      * @param filter Optional filter to select tasks of a certain type or version.
      * @returns A thenable that resolves to an array of tasks.
-    */
-    export function fetchTasks(filter?: TaskFilter): Thenable<Task[]>;
+     */
+    fun fetchTasks(filter: TaskFilter = definedExternally): PromiseLike<ReadonlyArray<Task>>
 
     /**
      * Executes a task that is managed by the editor. The returned
@@ -40,38 +43,35 @@ external object tasks {
      *
      * @param task the task to execute
      * @returns A thenable that resolves to a task execution.
-    */
-    export function executeTask(task: Task): Thenable<TaskExecution>;
+     */
+    fun executeTask(task: Task): PromiseLike<TaskExecution>
 
     /**
      * The currently active task executions or an empty array.
-    */
-    export const taskExecutions: readonly TaskExecution[];
+     */
+    val taskExecutions: ReadonlyArray<TaskExecution>
 
     /**
      * Fires when a task starts.
-    */
-    export const onDidStartTask: Event<TaskStartEvent>;
+     */
+    val onDidStartTask: Event<TaskStartEvent>
 
     /**
      * Fires when a task ends.
-    */
-    export const onDidEndTask: Event<TaskEndEvent>;
+     */
+    val onDidEndTask: Event<TaskEndEvent>
 
     /**
      * Fires when the underlying process has been started.
      * This event will not fire for tasks that don't
      * execute an underlying process.
-    */
-    export const onDidStartTaskProcess: Event<TaskProcessStartEvent>;
+     */
+    val onDidStartTaskProcess: Event<TaskProcessStartEvent>
 
     /**
      * Fires when the underlying process has ended.
      * This event will not fire for tasks that don't
      * execute an underlying process.
-    */
-    export const onDidEndTaskProcess: Event<TaskProcessEndEvent>;
-
-    // ORIGINAL SOURCE
-     **/
+     */
+    val onDidEndTaskProcess: Event<TaskProcessEndEvent>
 }

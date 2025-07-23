@@ -103,18 +103,6 @@ external interface ExtensionContext {
     val storageUri: Uri?
 
     /**
-     * An absolute file path of a workspace specific directory in which the extension
-     * can store private state. The directory might not exist on disk and creation is
-     * up to the extension. However, the parent directory is guaranteed to be existent.
-     *
-     * Use {@linkcode ExtensionContext.workspaceState workspaceState} or
-     * {@linkcode ExtensionContext.globalState globalState} to store key value data.
-     *
-     * @deprecated Use {@link ExtensionContext.storageUri storageUri} instead.
-     */
-    val storagePath: String?
-
-    /**
      * The uri of a directory in which the extension can store global state.
      * The directory might not exist on disk and creation is
      * up to the extension. However, the parent directory is guaranteed to be existent.
@@ -127,17 +115,6 @@ external interface ExtensionContext {
     val globalStorageUri: Uri
 
     /**
-     * An absolute file path in which the extension can store global state.
-     * The directory might not exist on disk and creation is
-     * up to the extension. However, the parent directory is guaranteed to be existent.
-     *
-     * Use {@linkcode ExtensionContext.globalState globalState} to store key value data.
-     *
-     * @deprecated Use {@link ExtensionContext.globalStorageUri globalStorageUri} instead.
-     */
-    val globalStoragePath: String
-
-    /**
      * The uri of a directory in which the extension can create log files.
      * The directory might not exist on disk and creation is up to the extension. However,
      * the parent directory is guaranteed to be existent.
@@ -146,15 +123,6 @@ external interface ExtensionContext {
      *  an uri.
      */
     val logUri: Uri
-
-    /**
-     * An absolute file path of a directory in which the extension can create log files.
-     * The directory might not exist on disk and creation is up to the extension. However,
-     * the parent directory is guaranteed to be existent.
-     *
-     * @deprecated Use {@link ExtensionContext.logUri logUri} instead.
-     */
-    val logPath: String
 
     /**
      * The mode the extension is running in. See {@link ExtensionMode}

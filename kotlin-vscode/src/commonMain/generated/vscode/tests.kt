@@ -12,17 +12,14 @@ package vscode
  */
 external object tests {
     /**
-    // ORIGINAL SOURCE
-
-    /**
      * Creates a new test controller.
      *
      * @param id Identifier for the controller, must be globally unique.
      * @param label A human-readable label for the controller.
      * @returns An instance of the {@link TestController}.
-    */
-    export function createTestController(id: string, label: string): TestController;
-
-    // ORIGINAL SOURCE
-     **/
+     */
+    fun createTestController(
+        id: String,
+        label: String,
+    ): TestController
 }

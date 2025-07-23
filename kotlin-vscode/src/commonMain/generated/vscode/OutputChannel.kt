@@ -49,19 +49,6 @@ external interface OutputChannel {
     fun show(preserveFocus: Boolean = definedExternally)
 
     /**
-     * Reveal this channel in the UI.
-     *
-     * @deprecated Use the overload with just one parameter (`show(preserveFocus?: boolean): void`).
-     *
-     * @param column This argument is **deprecated** and will be ignored.
-     * @param preserveFocus When `true` the channel will not take focus.
-     */
-    fun show(
-        column: ViewColumn = definedExternally,
-        preserveFocus: Boolean = definedExternally,
-    )
-
-    /**
      * Hide this channel from the UI.
      */
     fun hide()

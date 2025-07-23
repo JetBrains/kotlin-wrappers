@@ -119,22 +119,4 @@ external interface TextEditor {
         range: Range,
         revealType: TextEditorRevealType = definedExternally,
     )
-
-    /**
-     * Show the text editor.
-     *
-     * @deprecated Use {@link window.showTextDocument} instead.
-     *
-     * @param column The {@link ViewColumn column} in which to show this editor.
-     * This method shows unexpected behavior and will be removed in the next major update.
-     */
-    fun show(column: ViewColumn = definedExternally)
-
-    /**
-     * Hide the text editor.
-     *
-     * @deprecated Use the command `workbench.action.closeActiveEditor` instead.
-     * This method shows unexpected behavior and will be removed in the next major update.
-     */
-    fun hide()
 }

@@ -4,6 +4,9 @@
 
 package vscode
 
+import js.array.ReadonlyArray
+import js.promise.PromiseLike
+
 /**
  * Namespace for dealing with the current window of the editor. That is visible
  * and active editors, as well as, UI elements to show messages, selections, and
@@ -11,158 +14,155 @@ package vscode
  */
 external object window {
     /**
-    // ORIGINAL SOURCE
-
-    /**
      * Represents the grid widget within the main editor area
-    */
-    export const tabGroups: TabGroups;
+     */
+    val tabGroups: TabGroups
 
     /**
      * The currently active editor or `undefined`. The active editor is the one
      * that currently has focus or, when none has focus, the one that has changed
      * input most recently.
-    */
-    export let activeTextEditor: TextEditor | undefined;
+     */
+    var activeTextEditor: TextEditor?
 
     /**
      * The currently visible editors or an empty array.
-    */
-    export let visibleTextEditors: readonly TextEditor[];
+     */
+    var visibleTextEditors: ReadonlyArray<TextEditor>
 
     /**
      * An {@link Event} which fires when the {@link window.activeTextEditor active editor}
      * has changed. *Note* that the event also fires when the active editor changes
      * to `undefined`.
-    */
-    export const onDidChangeActiveTextEditor: Event<TextEditor | undefined>;
+     */
+    val onDidChangeActiveTextEditor: Event<TextEditor?>
 
     /**
      * An {@link Event} which fires when the array of {@link window.visibleTextEditors visible editors}
      * has changed.
-    */
-    export const onDidChangeVisibleTextEditors: Event<readonly TextEditor[]>;
+     */
+    val onDidChangeVisibleTextEditors: Event<ReadonlyArray<TextEditor>>
 
     /**
      * An {@link Event} which fires when the selection in an editor has changed.
-    */
-    export const onDidChangeTextEditorSelection: Event<TextEditorSelectionChangeEvent>;
+     */
+    val onDidChangeTextEditorSelection: Event<TextEditorSelectionChangeEvent>
 
     /**
      * An {@link Event} which fires when the visible ranges of an editor has changed.
-    */
-    export const onDidChangeTextEditorVisibleRanges: Event<TextEditorVisibleRangesChangeEvent>;
+     */
+    val onDidChangeTextEditorVisibleRanges: Event<TextEditorVisibleRangesChangeEvent>
 
     /**
      * An {@link Event} which fires when the options of an editor have changed.
-    */
-    export const onDidChangeTextEditorOptions: Event<TextEditorOptionsChangeEvent>;
+     */
+    val onDidChangeTextEditorOptions: Event<TextEditorOptionsChangeEvent>
 
     /**
      * An {@link Event} which fires when the view column of an editor has changed.
-    */
-    export const onDidChangeTextEditorViewColumn: Event<TextEditorViewColumnChangeEvent>;
+     */
+    val onDidChangeTextEditorViewColumn: Event<TextEditorViewColumnChangeEvent>
 
     /**
      * The currently visible {@link NotebookEditor notebook editors} or an empty array.
-    */
-    export const visibleNotebookEditors: readonly NotebookEditor[];
+     */
+    val visibleNotebookEditors: ReadonlyArray<NotebookEditor>
 
     /**
      * An {@link Event} which fires when the {@link window.visibleNotebookEditors visible notebook editors}
      * has changed.
-    */
-    export const onDidChangeVisibleNotebookEditors: Event<readonly NotebookEditor[]>;
+     */
+    val onDidChangeVisibleNotebookEditors: Event<ReadonlyArray<NotebookEditor>>
 
     /**
      * The currently active {@link NotebookEditor notebook editor} or `undefined`. The active editor is the one
      * that currently has focus or, when none has focus, the one that has changed
      * input most recently.
-    */
-    export const activeNotebookEditor: NotebookEditor | undefined;
+     */
+    val activeNotebookEditor: NotebookEditor?
 
     /**
      * An {@link Event} which fires when the {@link window.activeNotebookEditor active notebook editor}
      * has changed. *Note* that the event also fires when the active editor changes
      * to `undefined`.
-    */
-    export const onDidChangeActiveNotebookEditor: Event<NotebookEditor | undefined>;
+     */
+    val onDidChangeActiveNotebookEditor: Event<NotebookEditor?>
 
     /**
      * An {@link Event} which fires when the {@link NotebookEditor.selections notebook editor selections}
      * have changed.
-    */
-    export const onDidChangeNotebookEditorSelection: Event<NotebookEditorSelectionChangeEvent>;
+     */
+    val onDidChangeNotebookEditorSelection: Event<NotebookEditorSelectionChangeEvent>
 
     /**
      * An {@link Event} which fires when the {@link NotebookEditor.visibleRanges notebook editor visible ranges}
      * have changed.
-    */
-    export const onDidChangeNotebookEditorVisibleRanges: Event<NotebookEditorVisibleRangesChangeEvent>;
+     */
+    val onDidChangeNotebookEditorVisibleRanges: Event<NotebookEditorVisibleRangesChangeEvent>
 
     /**
      * The currently opened terminals or an empty array.
-    */
-    export const terminals: readonly Terminal[];
+     */
+    val terminals: ReadonlyArray<Terminal>
 
     /**
      * The currently active terminal or `undefined`. The active terminal is the one that
      * currently has focus or most recently had focus.
-    */
-    export const activeTerminal: Terminal | undefined;
+     */
+    val activeTerminal: Terminal?
 
     /**
      * An {@link Event} which fires when the {@link window.activeTerminal active terminal}
      * has changed. *Note* that the event also fires when the active terminal changes
      * to `undefined`.
-    */
-    export const onDidChangeActiveTerminal: Event<Terminal | undefined>;
+     */
+    val onDidChangeActiveTerminal: Event<Terminal?>
 
     /**
      * An {@link Event} which fires when a terminal has been created, either through the
      * {@link window.createTerminal createTerminal} API or commands.
-    */
-    export const onDidOpenTerminal: Event<Terminal>;
+     */
+    val onDidOpenTerminal: Event<Terminal>
 
     /**
      * An {@link Event} which fires when a terminal is disposed.
-    */
-    export const onDidCloseTerminal: Event<Terminal>;
+     */
+    val onDidCloseTerminal: Event<Terminal>
 
     /**
      * An {@link Event} which fires when a {@link Terminal.state terminal's state} has changed.
-    */
-    export const onDidChangeTerminalState: Event<Terminal>;
+     */
+    val onDidChangeTerminalState: Event<Terminal>
 
     /**
      * Fires when shell integration activates or one of its properties changes in a terminal.
-    */
-    export const onDidChangeTerminalShellIntegration: Event<TerminalShellIntegrationChangeEvent>;
+     */
+    val onDidChangeTerminalShellIntegration: Event<TerminalShellIntegrationChangeEvent>
 
     /**
      * This will be fired when a terminal command is started. This event will fire only when
      * [shell integration](https://code.visualstudio.com/docs/terminal/shell-integration) is
      * activated for the terminal.
-    */
-    export const onDidStartTerminalShellExecution: Event<TerminalShellExecutionStartEvent>;
+     */
+    val onDidStartTerminalShellExecution: Event<TerminalShellExecutionStartEvent>
 
     /**
      * This will be fired when a terminal command is ended. This event will fire only when
      * [shell integration](https://code.visualstudio.com/docs/terminal/shell-integration) is
      * activated for the terminal.
-    */
-    export const onDidEndTerminalShellExecution: Event<TerminalShellExecutionEndEvent>;
+     */
+    val onDidEndTerminalShellExecution: Event<TerminalShellExecutionEndEvent>
 
     /**
      * Represents the current window's state.
-    */
-    export const state: WindowState;
+     */
+    val state: WindowState
 
     /**
      * An {@link Event} which fires when the focus or activity state of the current window
      * changes. The value of the event represents whether the window is focused.
-    */
-    export const onDidChangeWindowState: Event<WindowState>;
+     */
+    val onDidChangeWindowState: Event<WindowState>
 
     /**
      * Show the given document in a text editor. A {@link ViewColumn column} can be provided
@@ -174,8 +174,12 @@ external object window {
      * to open the editor to the side of the currently active one.
      * @param preserveFocus When `true` the editor will not take focus.
      * @returns A promise that resolves to an {@link TextEditor editor}.
-    */
-    export function showTextDocument(document: TextDocument, column?: ViewColumn, preserveFocus?: boolean): Thenable<TextEditor>;
+     */
+    fun showTextDocument(
+        document: TextDocument,
+        column: ViewColumn = definedExternally,
+        preserveFocus: Boolean = definedExternally,
+    ): PromiseLike<TextEditor>
 
     /**
      * Show the given document in a text editor. {@link TextDocumentShowOptions Options} can be provided
@@ -184,8 +188,11 @@ external object window {
      * @param document A text document to be shown.
      * @param options {@link TextDocumentShowOptions Editor options} to configure the behavior of showing the {@link TextEditor editor}.
      * @returns A promise that resolves to an {@link TextEditor editor}.
-    */
-    export function showTextDocument(document: TextDocument, options?: TextDocumentShowOptions): Thenable<TextEditor>;
+     */
+    fun showTextDocument(
+        document: TextDocument,
+        options: TextDocumentShowOptions = definedExternally,
+    ): PromiseLike<TextEditor>
 
     /**
      * A short-hand for `openTextDocument(uri).then(document => showTextDocument(document, options))`.
@@ -195,8 +202,11 @@ external object window {
      * @param uri A resource identifier.
      * @param options {@link TextDocumentShowOptions Editor options} to configure the behavior of showing the {@link TextEditor editor}.
      * @returns A promise that resolves to an {@link TextEditor editor}.
-    */
-    export function showTextDocument(uri: Uri, options?: TextDocumentShowOptions): Thenable<TextEditor>;
+     */
+    fun showTextDocument(
+        uri: Uri,
+        options: TextDocumentShowOptions = definedExternally,
+    ): PromiseLike<TextEditor>
 
     /**
      * Show the given {@link NotebookDocument} in a {@link NotebookEditor notebook editor}.
@@ -205,16 +215,19 @@ external object window {
      * @param options {@link NotebookDocumentShowOptions Editor options} to configure the behavior of showing the {@link NotebookEditor notebook editor}.
      *
      * @returns A promise that resolves to an {@link NotebookEditor notebook editor}.
-    */
-    export function showNotebookDocument(document: NotebookDocument, options?: NotebookDocumentShowOptions): Thenable<NotebookEditor>;
+     */
+    fun showNotebookDocument(
+        document: NotebookDocument,
+        options: NotebookDocumentShowOptions = definedExternally,
+    ): PromiseLike<NotebookEditor>
 
     /**
      * Create a TextEditorDecorationType that can be used to add decorations to text editors.
      *
      * @param options Rendering options for the decoration type.
      * @returns A new decoration type instance.
-    */
-    export function createTextEditorDecorationType(options: DecorationRenderOptions): TextEditorDecorationType;
+     */
+    fun createTextEditorDecorationType(options: DecorationRenderOptions): TextEditorDecorationType
 
     /**
      * Show an information message to users. Optionally provide an array of items which will be presented as
@@ -223,8 +236,11 @@ external object window {
      * @param message The message to show.
      * @param items A set of items that will be rendered as actions in the message.
      * @returns A thenable that resolves to the selected item or `undefined` when being dismissed.
-    */
-    export function showInformationMessage<T extends string>(message: string, ...items: T[]): Thenable<T | undefined>;
+     */
+    fun <T : Comparable<String> /* String */> showInformationMessage(
+        message: String,
+        vararg items: T,
+    ): PromiseLike<T?>
 
     /**
      * Show an information message to users. Optionally provide an array of items which will be presented as
@@ -234,8 +250,12 @@ external object window {
      * @param options Configures the behaviour of the message.
      * @param items A set of items that will be rendered as actions in the message.
      * @returns A thenable that resolves to the selected item or `undefined` when being dismissed.
-    */
-    export function showInformationMessage<T extends string>(message: string, options: MessageOptions, ...items: T[]): Thenable<T | undefined>;
+     */
+    fun <T : Comparable<String> /* String */> showInformationMessage(
+        message: String,
+        options: MessageOptions,
+        vararg items: T,
+    ): PromiseLike<T?>
 
     /**
      * Show an information message.
@@ -245,8 +265,11 @@ external object window {
      * @param message The message to show.
      * @param items A set of items that will be rendered as actions in the message.
      * @returns A thenable that resolves to the selected item or `undefined` when being dismissed.
-    */
-    export function showInformationMessage<T extends MessageItem>(message: string, ...items: T[]): Thenable<T | undefined>;
+     */
+    fun <T : MessageItem> showInformationMessage(
+        message: String,
+        vararg items: T,
+    ): PromiseLike<T?>
 
     /**
      * Show an information message.
@@ -257,8 +280,12 @@ external object window {
      * @param options Configures the behaviour of the message.
      * @param items A set of items that will be rendered as actions in the message.
      * @returns A thenable that resolves to the selected item or `undefined` when being dismissed.
-    */
-    export function showInformationMessage<T extends MessageItem>(message: string, options: MessageOptions, ...items: T[]): Thenable<T | undefined>;
+     */
+    fun <T : MessageItem> showInformationMessage(
+        message: String,
+        options: MessageOptions,
+        vararg items: T,
+    ): PromiseLike<T?>
 
     /**
      * Show a warning message.
@@ -268,31 +295,11 @@ external object window {
      * @param message The message to show.
      * @param items A set of items that will be rendered as actions in the message.
      * @returns A thenable that resolves to the selected item or `undefined` when being dismissed.
-    */
-    export function showWarningMessage<T extends string>(message: string, ...items: T[]): Thenable<T | undefined>;
-
-    /**
-     * Show a warning message.
-     *
-     * @see {@link window.showInformationMessage showInformationMessage}
-     *
-     * @param message The message to show.
-     * @param options Configures the behaviour of the message.
-     * @param items A set of items that will be rendered as actions in the message.
-     * @returns A thenable that resolves to the selected item or `undefined` when being dismissed.
-    */
-    export function showWarningMessage<T extends string>(message: string, options: MessageOptions, ...items: T[]): Thenable<T | undefined>;
-
-    /**
-     * Show a warning message.
-     *
-     * @see {@link window.showInformationMessage showInformationMessage}
-     *
-     * @param message The message to show.
-     * @param items A set of items that will be rendered as actions in the message.
-     * @returns A thenable that resolves to the selected item or `undefined` when being dismissed.
-    */
-    export function showWarningMessage<T extends MessageItem>(message: string, ...items: T[]): Thenable<T | undefined>;
+     */
+    fun <T : Comparable<String> /* String */> showWarningMessage(
+        message: String,
+        vararg items: T,
+    ): PromiseLike<T?>
 
     /**
      * Show a warning message.
@@ -303,8 +310,42 @@ external object window {
      * @param options Configures the behaviour of the message.
      * @param items A set of items that will be rendered as actions in the message.
      * @returns A thenable that resolves to the selected item or `undefined` when being dismissed.
-    */
-    export function showWarningMessage<T extends MessageItem>(message: string, options: MessageOptions, ...items: T[]): Thenable<T | undefined>;
+     */
+    fun <T : Comparable<String> /* String */> showWarningMessage(
+        message: String,
+        options: MessageOptions,
+        vararg items: T,
+    ): PromiseLike<T?>
+
+    /**
+     * Show a warning message.
+     *
+     * @see {@link window.showInformationMessage showInformationMessage}
+     *
+     * @param message The message to show.
+     * @param items A set of items that will be rendered as actions in the message.
+     * @returns A thenable that resolves to the selected item or `undefined` when being dismissed.
+     */
+    fun <T : MessageItem> showWarningMessage(
+        message: String,
+        vararg items: T,
+    ): PromiseLike<T?>
+
+    /**
+     * Show a warning message.
+     *
+     * @see {@link window.showInformationMessage showInformationMessage}
+     *
+     * @param message The message to show.
+     * @param options Configures the behaviour of the message.
+     * @param items A set of items that will be rendered as actions in the message.
+     * @returns A thenable that resolves to the selected item or `undefined` when being dismissed.
+     */
+    fun <T : MessageItem> showWarningMessage(
+        message: String,
+        options: MessageOptions,
+        vararg items: T,
+    ): PromiseLike<T?>
 
     /**
      * Show an error message.
@@ -314,8 +355,11 @@ external object window {
      * @param message The message to show.
      * @param items A set of items that will be rendered as actions in the message.
      * @returns A thenable that resolves to the selected item or `undefined` when being dismissed.
-    */
-    export function showErrorMessage<T extends string>(message: string, ...items: T[]): Thenable<T | undefined>;
+     */
+    fun <T : Comparable<String> /* String */> showErrorMessage(
+        message: String,
+        vararg items: T,
+    ): PromiseLike<T?>
 
     /**
      * Show an error message.
@@ -326,8 +370,12 @@ external object window {
      * @param options Configures the behaviour of the message.
      * @param items A set of items that will be rendered as actions in the message.
      * @returns A thenable that resolves to the selected item or `undefined` when being dismissed.
-    */
-    export function showErrorMessage<T extends string>(message: string, options: MessageOptions, ...items: T[]): Thenable<T | undefined>;
+     */
+    fun <T : Comparable<String> /* String */> showErrorMessage(
+        message: String,
+        options: MessageOptions,
+        vararg items: T,
+    ): PromiseLike<T?>
 
     /**
      * Show an error message.
@@ -337,8 +385,11 @@ external object window {
      * @param message The message to show.
      * @param items A set of items that will be rendered as actions in the message.
      * @returns A thenable that resolves to the selected item or `undefined` when being dismissed.
-    */
-    export function showErrorMessage<T extends MessageItem>(message: string, ...items: T[]): Thenable<T | undefined>;
+     */
+    fun <T : MessageItem> showErrorMessage(
+        message: String,
+        vararg items: T,
+    ): PromiseLike<T?>
 
     /**
      * Show an error message.
@@ -349,8 +400,12 @@ external object window {
      * @param options Configures the behaviour of the message.
      * @param items A set of items that will be rendered as actions in the message.
      * @returns A thenable that resolves to the selected item or `undefined` when being dismissed.
-    */
-    export function showErrorMessage<T extends MessageItem>(message: string, options: MessageOptions, ...items: T[]): Thenable<T | undefined>;
+     */
+    fun <T : MessageItem> showErrorMessage(
+        message: String,
+        options: MessageOptions,
+        vararg items: T,
+    ): PromiseLike<T?>
 
     /**
      * Shows a selection list allowing multiple selections.
@@ -359,8 +414,8 @@ external object window {
      * @param options Configures the behavior of the selection list.
      * @param token A token that can be used to signal cancellation.
      * @returns A promise that resolves to the selected items or `undefined`.
-    */
-    export function showQuickPick(items: readonly string[] | Thenable<readonly string[]>, options: QuickPickOptions & { /** literal-type defines return type */canPickMany: true }, token?: CancellationToken): Thenable<string[] | undefined>;
+     */
+    // showQuickPick(items: readonly string[] | Thenable<readonly string[]>, options: QuickPickOptions & { /** literal-type defines return type */canPickMany: true }, token?: CancellationToken): Thenable<string[] | undefined>
 
     /**
      * Shows a selection list.
@@ -369,8 +424,12 @@ external object window {
      * @param options Configures the behavior of the selection list.
      * @param token A token that can be used to signal cancellation.
      * @returns A promise that resolves to the selection or `undefined`.
-    */
-    export function showQuickPick(items: readonly string[] | Thenable<readonly string[]>, options?: QuickPickOptions, token?: CancellationToken): Thenable<string | undefined>;
+     */
+    fun showQuickPick(
+        items: Any, /* string[] | Thenable<readonly string[]> */
+        options: QuickPickOptions = definedExternally,
+        token: CancellationToken = definedExternally,
+    ): PromiseLike<String?>
 
     /**
      * Shows a selection list allowing multiple selections.
@@ -379,8 +438,8 @@ external object window {
      * @param options Configures the behavior of the selection list.
      * @param token A token that can be used to signal cancellation.
      * @returns A promise that resolves to the selected items or `undefined`.
-    */
-    export function showQuickPick<T extends QuickPickItem>(items: readonly T[] | Thenable<readonly T[]>, options: QuickPickOptions & { /** literal-type defines return type */ canPickMany: true }, token?: CancellationToken): Thenable<T[] | undefined>;
+     */
+    // showQuickPick<T extends QuickPickItem>(items: readonly T[] | Thenable<readonly T[]>, options: QuickPickOptions & { /** literal-type defines return type */ canPickMany: true }, token?: CancellationToken): Thenable<T[] | undefined>
 
     /**
      * Shows a selection list.
@@ -389,8 +448,12 @@ external object window {
      * @param options Configures the behavior of the selection list.
      * @param token A token that can be used to signal cancellation.
      * @returns A promise that resolves to the selected item or `undefined`.
-    */
-    export function showQuickPick<T extends QuickPickItem>(items: readonly T[] | Thenable<readonly T[]>, options?: QuickPickOptions, token?: CancellationToken): Thenable<T | undefined>;
+     */
+    fun <T : QuickPickItem> showQuickPick(
+        items: Any, /* T[] | Thenable<readonly T[]> */
+        options: QuickPickOptions = definedExternally,
+        token: CancellationToken = definedExternally,
+    ): PromiseLike<T?>
 
     /**
      * Shows a selection list of {@link workspace.workspaceFolders workspace folders} to pick from.
@@ -398,8 +461,8 @@ external object window {
      *
      * @param options Configures the behavior of the workspace folder list.
      * @returns A promise that resolves to the workspace folder or `undefined`.
-    */
-    export function showWorkspaceFolderPick(options?: WorkspaceFolderPickOptions): Thenable<WorkspaceFolder | undefined>;
+     */
+    fun showWorkspaceFolderPick(options: WorkspaceFolderPickOptions = definedExternally): PromiseLike<WorkspaceFolder?>
 
     /**
      * Shows a file open dialog to the user which allows to select a file
@@ -407,8 +470,8 @@ external object window {
      *
      * @param options Options that control the dialog.
      * @returns A promise that resolves to the selected resources or `undefined`.
-    */
-    export function showOpenDialog(options?: OpenDialogOptions): Thenable<Uri[] | undefined>;
+     */
+    fun showOpenDialog(options: OpenDialogOptions = definedExternally): PromiseLike<ReadonlyArray<Uri>?>
 
     /**
      * Shows a file save dialog to the user which allows to select a file
@@ -416,8 +479,8 @@ external object window {
      *
      * @param options Options that control the dialog.
      * @returns A promise that resolves to the selected resource or `undefined`.
-    */
-    export function showSaveDialog(options?: SaveDialogOptions): Thenable<Uri | undefined>;
+     */
+    fun showSaveDialog(options: SaveDialogOptions = definedExternally): PromiseLike<Uri?>
 
     /**
      * Opens an input box to ask the user for input.
@@ -429,8 +492,11 @@ external object window {
      * @param options Configures the behavior of the input box.
      * @param token A token that can be used to signal cancellation.
      * @returns A promise that resolves to a string the user provided or to `undefined` in case of dismissal.
-    */
-    export function showInputBox(options?: InputBoxOptions, token?: CancellationToken): Thenable<string | undefined>;
+     */
+    fun showInputBox(
+        options: InputBoxOptions = definedExternally,
+        token: CancellationToken = definedExternally,
+    ): PromiseLike<String?>
 
     /**
      * Creates a {@link QuickPick} to let the user pick an item from a list
@@ -441,8 +507,8 @@ external object window {
      * when {@link window.showQuickPick} does not offer the required flexibility.
      *
      * @returns A new {@link QuickPick}.
-    */
-    export function createQuickPick<T extends QuickPickItem>(): QuickPick<T>;
+     */
+    fun <T : QuickPickItem> createQuickPick(): QuickPick<T>
 
     /**
      * Creates a {@link InputBox} to let the user enter some text input.
@@ -452,8 +518,8 @@ external object window {
      * when {@link window.showInputBox} does not offer the required flexibility.
      *
      * @returns A new {@link InputBox}.
-    */
-    export function createInputBox(): InputBox;
+     */
+    fun createInputBox(): InputBox
 
     /**
      * Creates a new {@link OutputChannel output channel} with the given name and language id
@@ -465,8 +531,11 @@ external object window {
      * @param name Human-readable string which will be used to represent the channel in the UI.
      * @param languageId The identifier of the language associated with the channel.
      * @returns A new output channel.
-    */
-    export function createOutputChannel(name: string, languageId?: string): OutputChannel;
+     */
+    fun createOutputChannel(
+        name: String,
+        languageId: String = definedExternally,
+    ): OutputChannel
 
     /**
      * Creates a new {@link LogOutputChannel log output channel} with the given name.
@@ -474,8 +543,8 @@ external object window {
      * @param name Human-readable string which will be used to represent the channel in the UI.
      * @param options Options for the log output channel.
      * @returns A new log output channel.
-    */
-    export function createOutputChannel(name: string, options: { /** literal-type defines return type */log: true }): LogOutputChannel;
+     */
+    // createOutputChannel(name: string, options: { /** literal-type defines return type */log: true }): LogOutputChannel
 
     /**
      * Create and show a new webview panel.
@@ -486,17 +555,19 @@ external object window {
      * @param options Settings for the new panel.
      *
      * @returns New webview panel.
+     */
+    /*
+    createWebviewPanel(viewType: string, title: string, showOptions: ViewColumn | {
+        /**
+         * The view column in which the {@link WebviewPanel} should be shown.
+         */
+        readonly viewColumn: ViewColumn;
+        /**
+         * An optional flag that when `true` will stop the panel from taking focus.
+         */
+        readonly preserveFocus?: boolean;
+    }, options?: WebviewPanelOptions & WebviewOptions): WebviewPanel
     */
-    export function createWebviewPanel(viewType: string, title: string, showOptions: ViewColumn | {
-    /**
-     * The view column in which the {@link WebviewPanel} should be shown.
-    */
-    readonly viewColumn: ViewColumn;
-    /**
-     * An optional flag that when `true` will stop the panel from taking focus.
-    */
-    readonly preserveFocus?: boolean;
-    }, options?: WebviewPanelOptions & WebviewOptions): WebviewPanel;
 
     /**
      * Set a message to the status bar. This is a short hand for the more powerful
@@ -505,8 +576,11 @@ external object window {
      * @param text The message to show, supports icon substitution as in status bar {@link StatusBarItem.text items}.
      * @param hideAfterTimeout Timeout in milliseconds after which the message will be disposed.
      * @returns A disposable which hides the status bar message.
-    */
-    export function setStatusBarMessage(text: string, hideAfterTimeout: number): Disposable;
+     */
+    fun setStatusBarMessage(
+        text: String,
+        hideAfterTimeout: Int,
+    ): Disposable
 
     /**
      * Set a message to the status bar. This is a short hand for the more powerful
@@ -515,8 +589,11 @@ external object window {
      * @param text The message to show, supports icon substitution as in status bar {@link StatusBarItem.text items}.
      * @param hideWhenDone Thenable on which completion (resolve or reject) the message will be disposed.
      * @returns A disposable which hides the status bar message.
-    */
-    export function setStatusBarMessage(text: string, hideWhenDone: Thenable<any>): Disposable;
+     */
+    fun setStatusBarMessage(
+        text: String,
+        hideWhenDone: PromiseLike<Any?>,
+    ): Disposable
 
     /**
      * Set a message to the status bar. This is a short hand for the more powerful
@@ -527,20 +604,8 @@ external object window {
      *
      * @param text The message to show, supports icon substitution as in status bar {@link StatusBarItem.text items}.
      * @returns A disposable which hides the status bar message.
-    */
-    export function setStatusBarMessage(text: string): Disposable;
-
-    /**
-     * Show progress in the Source Control viewlet while running the given callback and while
-     * its returned promise isn't resolve or rejected.
-     *
-     * @deprecated Use `withProgress` instead.
-     *
-     * @param task A callback returning a promise. Progress increments can be reported with
-     * the provided {@link Progress}-object.
-     * @returns The thenable the task did return.
-    */
-    export function withScmProgress<R>(task: (progress: Progress<number>) => Thenable<R>): Thenable<R>;
+     */
+    fun setStatusBarMessage(text: String): Disposable
 
     /**
      * Show progress in the editor. Progress is shown while running the given callback
@@ -561,17 +626,19 @@ external object window {
      * long running operation.
      *
      * @returns The thenable the task-callback returned.
+     */
+    /*
+    withProgress<R>(options: ProgressOptions, task: (progress: Progress<{
+        /**
+         * A progress message that represents a chunk of work
+         */
+        message?: string;
+        /**
+         * An increment for discrete progress. Increments will be summed up until 100% is reached
+         */
+        increment?: number;
+    }>, token: CancellationToken) => Thenable<R>): Thenable<R>
     */
-    export function withProgress<R>(options: ProgressOptions, task: (progress: Progress<{
-    /**
-     * A progress message that represents a chunk of work
-    */
-    message?: string;
-    /**
-     * An increment for discrete progress. Increments will be summed up until 100% is reached
-    */
-    increment?: number;
-    }>, token: CancellationToken) => Thenable<R>): Thenable<R>;
 
     /**
      * Creates a status bar {@link StatusBarItem item}.
@@ -580,8 +647,12 @@ external object window {
      * @param alignment The alignment of the item.
      * @param priority The priority of the item. Higher values mean the item should be shown more to the left.
      * @returns A new status bar item.
-    */
-    export function createStatusBarItem(id: string, alignment?: StatusBarAlignment, priority?: number): StatusBarItem;
+     */
+    fun createStatusBarItem(
+        id: String,
+        alignment: StatusBarAlignment = definedExternally,
+        priority: Int = definedExternally,
+    ): StatusBarItem
 
     /**
      * Creates a status bar {@link StatusBarItem item}.
@@ -590,8 +661,11 @@ external object window {
      * @param alignment The alignment of the item.
      * @param priority The priority of the item. Higher values mean the item should be shown more to the left.
      * @returns A new status bar item.
-    */
-    export function createStatusBarItem(alignment?: StatusBarAlignment, priority?: number): StatusBarItem;
+     */
+    fun createStatusBarItem(
+        alignment: StatusBarAlignment = definedExternally,
+        priority: Int = definedExternally,
+    ): StatusBarItem
 
     /**
      * Creates a {@link Terminal} with a backing shell process. The cwd of the terminal will be the workspace
@@ -604,8 +678,12 @@ external object window {
      * [command-line format](https://msdn.microsoft.com/en-au/08dfcab2-eb6e-49a4-80eb-87d4076c98c6).
      * @returns A new Terminal.
      * @throws When running in an environment where a new process cannot be started.
-    */
-    export function createTerminal(name?: string, shellPath?: string, shellArgs?: readonly string[] | string): Terminal;
+     */
+    fun createTerminal(
+        name: String = definedExternally,
+        shellPath: String = definedExternally,
+        shellArgs: Any /* string[] | string */ = definedExternally,
+    ): Terminal
 
     /**
      * Creates a {@link Terminal} with a backing shell process.
@@ -613,8 +691,8 @@ external object window {
      * @param options A TerminalOptions object describing the characteristics of the new terminal.
      * @returns A new Terminal.
      * @throws When running in an environment where a new process cannot be started.
-    */
-    export function createTerminal(options: TerminalOptions): Terminal;
+     */
+    fun createTerminal(options: TerminalOptions): Terminal
 
     /**
      * Creates a {@link Terminal} where an extension controls its input and output.
@@ -622,8 +700,8 @@ external object window {
      * @param options An {@link ExtensionTerminalOptions} object describing
      * the characteristics of the new terminal.
      * @returns A new Terminal.
-    */
-    export function createTerminal(options: ExtensionTerminalOptions): Terminal;
+     */
+    fun createTerminal(options: ExtensionTerminalOptions): Terminal
 
     /**
      * Register a {@link TreeDataProvider} for the view contributed using the extension point `views`.
@@ -634,16 +712,22 @@ external object window {
      * @param viewId Id of the view contributed using the extension point `views`.
      * @param treeDataProvider A {@link TreeDataProvider} that provides tree data for the view
      * @returns A {@link Disposable disposable} that unregisters the {@link TreeDataProvider}.
-    */
-    export function registerTreeDataProvider<T>(viewId: string, treeDataProvider: TreeDataProvider<T>): Disposable;
+     */
+    fun <T> registerTreeDataProvider(
+        viewId: String,
+        treeDataProvider: TreeDataProvider<T>,
+    ): Disposable
 
     /**
      * Create a {@link TreeView} for the view contributed using the extension point `views`.
      * @param viewId Id of the view contributed using the extension point `views`.
      * @param options Options for creating the {@link TreeView}
      * @returns a {@link TreeView}.
-    */
-    export function createTreeView<T>(viewId: string, options: TreeViewOptions<T>): TreeView<T>;
+     */
+    fun <T> createTreeView(
+        viewId: String,
+        options: TreeViewOptions<T>,
+    ): TreeView<T>
 
     /**
      * Registers a {@link UriHandler uri handler} capable of handling system-wide {@link Uri uris}.
@@ -666,8 +750,8 @@ external object window {
      *
      * @param handler The uri handler to register for this extension.
      * @returns A {@link Disposable disposable} that unregisters the handler.
-    */
-    export function registerUriHandler(handler: UriHandler): Disposable;
+     */
+    fun registerUriHandler(handler: UriHandler): Disposable
 
     /**
      * Registers a webview panel serializer.
@@ -680,8 +764,11 @@ external object window {
      * @param viewType Type of the webview panel that can be serialized.
      * @param serializer Webview serializer.
      * @returns A {@link Disposable disposable} that unregisters the serializer.
-    */
-    export function registerWebviewPanelSerializer(viewType: string, serializer: WebviewPanelSerializer): Disposable;
+     */
+    fun registerWebviewPanelSerializer(
+        viewType: String,
+        serializer: WebviewPanelSerializer<*>,
+    ): Disposable
 
     /**
      * Register a new provider for webview views.
@@ -691,31 +778,33 @@ external object window {
      * @param provider Provider for the webview views.
      *
      * @returns Disposable that unregisters the provider.
+     */
+    /*
+    registerWebviewViewProvider(viewId: string, provider: WebviewViewProvider, options?: {
+        /**
+         * Content settings for the webview created for this view.
+         */
+        readonly webviewOptions?: {
+            /**
+             * Controls if the webview element itself (iframe) is kept around even when the view
+             * is no longer visible.
+             *
+             * Normally the webview's html context is created when the view becomes visible
+             * and destroyed when it is hidden. Extensions that have complex state
+             * or UI can set the `retainContextWhenHidden` to make the editor keep the webview
+             * context around, even when the webview moves to a background tab. When a webview using
+             * `retainContextWhenHidden` becomes hidden, its scripts and other dynamic content are suspended.
+             * When the view becomes visible again, the context is automatically restored
+             * in the exact same state it was in originally. You cannot send messages to a
+             * hidden webview, even with `retainContextWhenHidden` enabled.
+             *
+             * `retainContextWhenHidden` has a high memory overhead and should only be used if
+             * your view's context cannot be quickly saved and restored.
+             */
+            readonly retainContextWhenHidden?: boolean;
+        };
+    }): Disposable
     */
-    export function registerWebviewViewProvider(viewId: string, provider: WebviewViewProvider, options?: {
-    /**
-     * Content settings for the webview created for this view.
-    */
-    readonly webviewOptions?: {
-    /**
-     * Controls if the webview element itself (iframe) is kept around even when the view
-     * is no longer visible.
-     *
-     * Normally the webview's html context is created when the view becomes visible
-     * and destroyed when it is hidden. Extensions that have complex state
-     * or UI can set the `retainContextWhenHidden` to make the editor keep the webview
-     * context around, even when the webview moves to a background tab. When a webview using
-     * `retainContextWhenHidden` becomes hidden, its scripts and other dynamic content are suspended.
-     * When the view becomes visible again, the context is automatically restored
-     * in the exact same state it was in originally. You cannot send messages to a
-     * hidden webview, even with `retainContextWhenHidden` enabled.
-     *
-     * `retainContextWhenHidden` has a high memory overhead and should only be used if
-     * your view's context cannot be quickly saved and restored.
-    */
-    readonly retainContextWhenHidden?: boolean;
-    };
-    }): Disposable;
 
     /**
      * Register a provider for custom editors for the `viewType` contributed by the `customEditors` extension point.
@@ -730,36 +819,38 @@ external object window {
      * @param options Options for the provider.
      *
      * @returns Disposable that unregisters the provider.
-    */
-    export function registerCustomEditorProvider(viewType: string, provider: CustomTextEditorProvider | CustomReadonlyEditorProvider | CustomEditorProvider, options?: {
-    /**
-     * Content settings for the webview panels created for this custom editor.
-    */
-    readonly webviewOptions?: WebviewPanelOptions;
+     */
+    /*
+    registerCustomEditorProvider(viewType: string, provider: CustomTextEditorProvider | CustomReadonlyEditorProvider | CustomEditorProvider, options?: {
+        /**
+         * Content settings for the webview panels created for this custom editor.
+         */
+        readonly webviewOptions?: WebviewPanelOptions;
 
-    /**
-     * Only applies to `CustomReadonlyEditorProvider | CustomEditorProvider`.
-     *
-     * Indicates that the provider allows multiple editor instances to be open at the same time for
-     * the same resource.
-     *
-     * By default, the editor only allows one editor instance to be open at a time for each resource. If the
-     * user tries to open a second editor instance for the resource, the first one is instead moved to where
-     * the second one was to be opened.
-     *
-     * When `supportsMultipleEditorsPerDocument` is enabled, users can split and create copies of the custom
-     * editor. In this case, the custom editor must make sure it can properly synchronize the states of all
-     * editor instances for a resource so that they are consistent.
+        /**
+         * Only applies to `CustomReadonlyEditorProvider | CustomEditorProvider`.
+         *
+         * Indicates that the provider allows multiple editor instances to be open at the same time for
+         * the same resource.
+         *
+         * By default, the editor only allows one editor instance to be open at a time for each resource. If the
+         * user tries to open a second editor instance for the resource, the first one is instead moved to where
+         * the second one was to be opened.
+         *
+         * When `supportsMultipleEditorsPerDocument` is enabled, users can split and create copies of the custom
+         * editor. In this case, the custom editor must make sure it can properly synchronize the states of all
+         * editor instances for a resource so that they are consistent.
+         */
+        readonly supportsMultipleEditorsPerDocument?: boolean;
+    }): Disposable
     */
-    readonly supportsMultipleEditorsPerDocument?: boolean;
-    }): Disposable;
 
     /**
      * Register provider that enables the detection and handling of links within the terminal.
      * @param provider The provider that provides the terminal links.
      * @returns Disposable that unregisters the provider.
-    */
-    export function registerTerminalLinkProvider(provider: TerminalLinkProvider): Disposable;
+     */
+    fun registerTerminalLinkProvider(provider: TerminalLinkProvider<*>): Disposable
 
     /**
      * Registers a provider for a contributed terminal profile.
@@ -767,27 +858,28 @@ external object window {
      * @param id The ID of the contributed terminal profile.
      * @param provider The terminal profile provider.
      * @returns A {@link Disposable disposable} that unregisters the provider.
-    */
-    export function registerTerminalProfileProvider(id: string, provider: TerminalProfileProvider): Disposable;
+     */
+    fun registerTerminalProfileProvider(
+        id: String,
+        provider: TerminalProfileProvider,
+    ): Disposable
+
     /**
      * Register a file decoration provider.
      *
      * @param provider A {@link FileDecorationProvider}.
      * @returns A {@link Disposable} that unregisters the provider.
-    */
-    export function registerFileDecorationProvider(provider: FileDecorationProvider): Disposable;
+     */
+    fun registerFileDecorationProvider(provider: FileDecorationProvider): Disposable
 
     /**
      * The currently active color theme as configured in the settings. The active
      * theme can be changed via the `workbench.colorTheme` setting.
-    */
-    export let activeColorTheme: ColorTheme;
+     */
+    var activeColorTheme: ColorTheme
 
     /**
      * An {@link Event} which fires when the active color theme is changed or has changes.
-    */
-    export const onDidChangeActiveColorTheme: Event<ColorTheme>;
-
-    // ORIGINAL SOURCE
-     **/
+     */
+    val onDidChangeActiveColorTheme: Event<ColorTheme>
 }

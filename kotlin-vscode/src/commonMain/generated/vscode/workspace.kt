@@ -4,6 +4,11 @@
 
 package vscode
 
+import js.array.ReadonlyArray
+import js.core.Void
+import js.promise.PromiseLike
+import js.typedarrays.Uint8Array
+
 /**
  * Namespace for dealing with the current workspace. A workspace is the collection of one
  * or more folders that are opened in an editor window (instance).
@@ -22,26 +27,12 @@ package vscode
  */
 external object workspace {
     /**
-    // ORIGINAL SOURCE
-
-    /**
      * A {@link FileSystem file system} instance that allows to interact with local and remote
      * files, e.g. `vscode.workspace.fs.readDirectory(someUri)` allows to retrieve all entries
      * of a directory or `vscode.workspace.fs.stat(anotherUri)` returns the meta data for a
      * file.
-    */
-    export const fs: FileSystem;
-
-    /**
-     * The uri of the first entry of {@linkcode workspace.workspaceFolders workspaceFolders}
-     * as `string`. `undefined` if there is no first entry.
-     *
-     * Refer to https://code.visualstudio.com/docs/editor/workspaces for more information
-     * on workspaces.
-     *
-     * @deprecated Use {@linkcode workspace.workspaceFolders workspaceFolders} instead.
-    */
-    export const rootPath: string | undefined;
+     */
+    val fs: FileSystem
 
     /**
      * List of workspace folders (0-N) that are open in the editor. `undefined` when no workspace
@@ -49,8 +40,8 @@ external object workspace {
      *
      * Refer to https://code.visualstudio.com/docs/editor/workspaces for more information
      * on workspaces.
-    */
-    export const workspaceFolders: readonly WorkspaceFolder[] | undefined;
+     */
+    val workspaceFolders: ReadonlyArray<WorkspaceFolder>?
 
     /**
      * The name of the workspace. `undefined` when no workspace
@@ -58,8 +49,8 @@ external object workspace {
      *
      * Refer to https://code.visualstudio.com/docs/editor/workspaces for more information on
      * the concept of workspaces.
-    */
-    export const name: string | undefined;
+     */
+    val name: String?
 
     /**
      * The location of the workspace file, for example:
@@ -92,8 +83,8 @@ external object workspace {
      * configuration data into the file. You can use `workspace.getConfiguration().update()`
      * for that purpose which will work both when a single folder is opened as
      * well as an untitled or saved workspace.
-    */
-    export const workspaceFile: Uri | undefined;
+     */
+    val workspaceFile: Uri?
 
     /**
      * An event that is emitted when a workspace folder is added or removed.
@@ -102,8 +93,8 @@ external object workspace {
      * because in that case the currently executing extensions (including the one that listens to this
      * event) will be terminated and restarted so that the (deprecated) `rootPath` property is updated
      * to point to the first workspace folder.
-    */
-    export const onDidChangeWorkspaceFolders: Event<WorkspaceFoldersChangeEvent>;
+     */
+    val onDidChangeWorkspaceFolders: Event<WorkspaceFoldersChangeEvent>
 
     /**
      * Returns the {@link WorkspaceFolder workspace folder} that contains a given uri.
@@ -112,8 +103,8 @@ external object workspace {
      *
      * @param uri An uri.
      * @returns A workspace folder or `undefined`
-    */
-    export function getWorkspaceFolder(uri: Uri): WorkspaceFolder | undefined;
+     */
+    fun getWorkspaceFolder(uri: Uri): WorkspaceFolder?
 
     /**
      * Returns a path that is relative to the workspace folder or folders.
@@ -126,8 +117,11 @@ external object workspace {
      * workspace folder the name of the workspace is prepended. Defaults to `true` when there are
      * multiple workspace folders and `false` otherwise.
      * @returns A path relative to the root or the input.
-    */
-    export function asRelativePath(pathOrUri: string | Uri, includeWorkspaceFolder?: boolean): string;
+     */
+    fun asRelativePath(
+        pathOrUri: Any, /* string | Uri */
+        includeWorkspaceFolder: Boolean = definedExternally,
+    ): String
 
     /**
      * This method replaces `deleteCount` {@link workspace.workspaceFolders workspace folders} starting at index `start`
@@ -171,17 +165,19 @@ external object workspace {
      * Each workspace is identified with a mandatory URI and an optional name.
      * @returns true if the operation was successfully started and false otherwise if arguments were used that would result
      * in invalid workspace folder state (e.g. 2 folders with the same URI).
+     */
+    /*
+    updateWorkspaceFolders(start: number, deleteCount: number | undefined | null, ...workspaceFoldersToAdd: {
+        /**
+         * The uri of a workspace folder that's to be added.
+         */
+        readonly uri: Uri;
+        /**
+         * The name of a workspace folder that's to be added.
+         */
+        readonly name?: string;
+    }[]): boolean
     */
-    export function updateWorkspaceFolders(start: number, deleteCount: number | undefined | null, ...workspaceFoldersToAdd: {
-    /**
-     * The uri of a workspace folder that's to be added.
-    */
-    readonly uri: Uri;
-    /**
-     * The name of a workspace folder that's to be added.
-    */
-    readonly name?: string;
-    }[]): boolean;
 
     /**
      * Creates a file system watcher that is notified on file events (create, change, delete)
@@ -286,8 +282,13 @@ external object workspace {
      * @param ignoreChangeEvents Ignore when files have been changed.
      * @param ignoreDeleteEvents Ignore when files have been deleted.
      * @returns A new file system watcher instance. Must be disposed when no longer needed.
-    */
-    export function createFileSystemWatcher(globPattern: GlobPattern, ignoreCreateEvents?: boolean, ignoreChangeEvents?: boolean, ignoreDeleteEvents?: boolean): FileSystemWatcher;
+     */
+    fun createFileSystemWatcher(
+        globPattern: GlobPattern,
+        ignoreCreateEvents: Boolean = definedExternally,
+        ignoreChangeEvents: Boolean = definedExternally,
+        ignoreDeleteEvents: Boolean = definedExternally,
+    ): FileSystemWatcher
 
     /**
      * Find files across all {@link workspace.workspaceFolders workspace folders} in the workspace.
@@ -305,8 +306,13 @@ external object workspace {
      * @param token A token that can be used to signal cancellation to the underlying search engine.
      * @returns A thenable that resolves to an array of resource identifiers. Will return no results if no
      * {@link workspace.workspaceFolders workspace folders} are opened.
-    */
-    export function findFiles(include: GlobPattern, exclude?: GlobPattern | null, maxResults?: number, token?: CancellationToken): Thenable<Uri[]>;
+     */
+    fun findFiles(
+        include: GlobPattern,
+        exclude: GlobPattern? = definedExternally,
+        maxResults: Int = definedExternally,
+        token: CancellationToken = definedExternally,
+    ): PromiseLike<ReadonlyArray<Uri>>
 
     /**
      * Saves the editor identified by the given resource and returns the resulting resource or `undefined`
@@ -316,8 +322,8 @@ external object workspace {
      *
      * @param uri the associated uri for the opened editor to save.
      * @returns A thenable that resolves when the save operation has finished.
-    */
-    export function save(uri: Uri): Thenable<Uri | undefined>;
+     */
+    fun save(uri: Uri): PromiseLike<Uri?>
 
     /**
      * Saves the editor identified by the given resource to a new file name as provided by the user and
@@ -328,8 +334,8 @@ external object workspace {
      *
      * @param uri the associated uri for the opened editor to save as.
      * @returns A thenable that resolves when the save-as operation has finished.
-    */
-    export function saveAs(uri: Uri): Thenable<Uri | undefined>;
+     */
+    fun saveAs(uri: Uri): PromiseLike<Uri?>
 
     /**
      * Save all dirty files.
@@ -337,8 +343,8 @@ external object workspace {
      * @param includeUntitled Also save files that have been created during this session.
      * @returns A thenable that resolves when the files have been saved. Will return `false`
      * for any file that failed to save.
-    */
-    export function saveAll(includeUntitled?: boolean): Thenable<boolean>;
+     */
+    fun saveAll(includeUntitled: Boolean = definedExternally): PromiseLike<Boolean>
 
     /**
      * Make changes to one or many resources or create, delete, and rename resources as defined by the given
@@ -356,13 +362,16 @@ external object workspace {
      * @param edit A workspace edit.
      * @param metadata Optional {@link WorkspaceEditMetadata metadata} for the edit.
      * @returns A thenable that resolves when the edit could be applied.
-    */
-    export function applyEdit(edit: WorkspaceEdit, metadata?: WorkspaceEditMetadata): Thenable<boolean>;
+     */
+    fun applyEdit(
+        edit: WorkspaceEdit,
+        metadata: WorkspaceEditMetadata = definedExternally,
+    ): PromiseLike<Boolean>
 
     /**
      * All text documents currently known to the editor.
-    */
-    export const textDocuments: readonly TextDocument[];
+     */
+    val textDocuments: ReadonlyArray<TextDocument>
 
     /**
      * Opens a document. Will return early if this document is already open. Otherwise
@@ -382,30 +391,32 @@ external object workspace {
      *
      * @param uri Identifies the resource to open.
      * @returns A promise that resolves to a {@link TextDocument document}.
+     */
+    /*
+    openTextDocument(uri: Uri, options?: {
+        /**
+         * The {@link TextDocument.encoding encoding} of the document to use
+         * for decoding the underlying buffer to text. If omitted, the encoding
+         * will be guessed based on the file content and/or the editor settings
+         * unless the document is already opened.
+         *
+         * Opening a text document that was already opened with a different encoding
+         * has the potential of changing the text contents of the text document.
+         * Specifically, when the encoding results in a different set of characters
+         * than the previous encoding. As such, an error is thrown for dirty documents
+         * when the specified encoding is different from the encoding of the document.
+         *
+         * See {@link TextDocument.encoding} for more information about valid
+         * values for encoding. Using an unsupported encoding will fallback to the
+         * default encoding for the document.
+         *
+         * *Note* that if you open a document with an encoding that does not
+         * support decoding the underlying bytes, content may be replaced with
+         * substitution characters as appropriate.
+         */
+        readonly encoding?: string;
+    }): Thenable<TextDocument>
     */
-    export function openTextDocument(uri: Uri, options?: {
-    /**
-     * The {@link TextDocument.encoding encoding} of the document to use
-     * for decoding the underlying buffer to text. If omitted, the encoding
-     * will be guessed based on the file content and/or the editor settings
-     * unless the document is already opened.
-     *
-     * Opening a text document that was already opened with a different encoding
-     * has the potential of changing the text contents of the text document.
-     * Specifically, when the encoding results in a different set of characters
-     * than the previous encoding. As such, an error is thrown for dirty documents
-     * when the specified encoding is different from the encoding of the document.
-     *
-     * See {@link TextDocument.encoding} for more information about valid
-     * values for encoding. Using an unsupported encoding will fallback to the
-     * default encoding for the document.
-     *
-     * *Note* that if you open a document with an encoding that does not
-     * support decoding the underlying bytes, content may be replaced with
-     * substitution characters as appropriate.
-    */
-    readonly encoding?: string;
-    }): Thenable<TextDocument>;
 
     /**
      * A short-hand for `openTextDocument(Uri.file(path))`.
@@ -413,30 +424,32 @@ external object workspace {
      * @see {@link workspace.openTextDocument}
      * @param path A path of a file on disk.
      * @returns A promise that resolves to a {@link TextDocument document}.
+     */
+    /*
+    openTextDocument(path: string, options?: {
+        /**
+         * The {@link TextDocument.encoding encoding} of the document to use
+         * for decoding the underlying buffer to text. If omitted, the encoding
+         * will be guessed based on the file content and/or the editor settings
+         * unless the document is already opened.
+         *
+         * Opening a text document that was already opened with a different encoding
+         * has the potential of changing the text contents of the text document.
+         * Specifically, when the encoding results in a different set of characters
+         * than the previous encoding. As such, an error is thrown for dirty documents
+         * when the specified encoding is different from the encoding of the document.
+         *
+         * See {@link TextDocument.encoding} for more information about valid
+         * values for encoding. Using an unsupported encoding will fallback to the
+         * default encoding for the document.
+         *
+         * *Note* that if you open a document with an encoding that does not
+         * support decoding the underlying bytes, content may be replaced with
+         * substitution characters as appropriate.
+         */
+        readonly encoding?: string;
+    }): Thenable<TextDocument>
     */
-    export function openTextDocument(path: string, options?: {
-    /**
-     * The {@link TextDocument.encoding encoding} of the document to use
-     * for decoding the underlying buffer to text. If omitted, the encoding
-     * will be guessed based on the file content and/or the editor settings
-     * unless the document is already opened.
-     *
-     * Opening a text document that was already opened with a different encoding
-     * has the potential of changing the text contents of the text document.
-     * Specifically, when the encoding results in a different set of characters
-     * than the previous encoding. As such, an error is thrown for dirty documents
-     * when the specified encoding is different from the encoding of the document.
-     *
-     * See {@link TextDocument.encoding} for more information about valid
-     * values for encoding. Using an unsupported encoding will fallback to the
-     * default encoding for the document.
-     *
-     * *Note* that if you open a document with an encoding that does not
-     * support decoding the underlying bytes, content may be replaced with
-     * substitution characters as appropriate.
-    */
-    readonly encoding?: string;
-    }): Thenable<TextDocument>;
 
     /**
      * Opens an untitled text document. The editor will prompt the user for a file
@@ -445,25 +458,27 @@ external object workspace {
      *
      * @param options Options to control how the document will be created.
      * @returns A promise that resolves to a {@link TextDocument document}.
+     */
+    /*
+    openTextDocument(options?: {
+        /**
+         * The {@link TextDocument.languageId language} of the document.
+         */
+        language?: string;
+        /**
+         * The initial contents of the document.
+         */
+        content?: string;
+        /**
+         * The {@link TextDocument.encoding encoding} of the document.
+         *
+         * See {@link TextDocument.encoding} for more information about valid
+         * values for encoding. Using an unsupported encoding will fallback to the
+         * default encoding for the document.
+         */
+        readonly encoding?: string;
+    }): Thenable<TextDocument>
     */
-    export function openTextDocument(options?: {
-    /**
-     * The {@link TextDocument.languageId language} of the document.
-    */
-    language?: string;
-    /**
-     * The initial contents of the document.
-    */
-    content?: string;
-    /**
-     * The {@link TextDocument.encoding encoding} of the document.
-     *
-     * See {@link TextDocument.encoding} for more information about valid
-     * values for encoding. Using an unsupported encoding will fallback to the
-     * default encoding for the document.
-    */
-    readonly encoding?: string;
-    }): Thenable<TextDocument>;
 
     /**
      * Register a text document content provider.
@@ -473,8 +488,11 @@ external object workspace {
      * @param scheme The uri-scheme to register for.
      * @param provider A content provider.
      * @returns A {@link Disposable} that unregisters this provider when being disposed.
-    */
-    export function registerTextDocumentContentProvider(scheme: string, provider: TextDocumentContentProvider): Disposable;
+     */
+    fun registerTextDocumentContentProvider(
+        scheme: String,
+        provider: TextDocumentContentProvider,
+    ): Disposable
 
     /**
      * An event that is emitted when a {@link TextDocument text document} is opened or when the language id
@@ -487,8 +505,8 @@ external object workspace {
      * {@link window.activeTextEditor active text editor}
      * - When a {@link TextDocument text document} is already open (e.g.: open in another {@link window.visibleTextEditors visible text editor}) this event is not emitted
      *
-    */
-    export const onDidOpenTextDocument: Event<TextDocument>;
+     */
+    val onDidOpenTextDocument: Event<TextDocument>
 
     /**
      * An event that is emitted when a {@link TextDocument text document} is disposed or when the language id
@@ -499,15 +517,15 @@ external object workspace {
      *
      * *Note 2:* A document can be open but not shown in an editor which means this event can fire
      * for a document that has not been shown in an editor.
-    */
-    export const onDidCloseTextDocument: Event<TextDocument>;
+     */
+    val onDidCloseTextDocument: Event<TextDocument>
 
     /**
      * An event that is emitted when a {@link TextDocument text document} is changed. This usually happens
      * when the {@link TextDocument.getText contents} changes but also when other things like the
      * {@link TextDocument.isDirty dirty}-state changes.
-    */
-    export const onDidChangeTextDocument: Event<TextDocumentChangeEvent>;
+     */
+    val onDidChangeTextDocument: Event<TextDocumentChangeEvent>
 
     /**
      * An event that is emitted when a {@link TextDocument text document} will be saved to disk.
@@ -521,18 +539,18 @@ external object workspace {
      *  * listeners that take a long time or produce errors frequently will not be called anymore
      *
      * The current thresholds are 1.5 seconds as overall time budget and a listener can misbehave 3 times before being ignored.
-    */
-    export const onWillSaveTextDocument: Event<TextDocumentWillSaveEvent>;
+     */
+    val onWillSaveTextDocument: Event<TextDocumentWillSaveEvent>
 
     /**
      * An event that is emitted when a {@link TextDocument text document} is saved to disk.
-    */
-    export const onDidSaveTextDocument: Event<TextDocument>;
+     */
+    val onDidSaveTextDocument: Event<TextDocument>
 
     /**
      * All notebook documents currently known to the editor.
-    */
-    export const notebookDocuments: readonly NotebookDocument[];
+     */
+    val notebookDocuments: ReadonlyArray<NotebookDocument>
 
     /**
      * Open a notebook. Will return early if this notebook is already {@link notebookDocuments loaded}. Otherwise
@@ -546,8 +564,8 @@ external object workspace {
      *
      * @param uri The resource to open.
      * @returns A promise that resolves to a {@link NotebookDocument notebook}
-    */
-    export function openNotebookDocument(uri: Uri): Thenable<NotebookDocument>;
+     */
+    fun openNotebookDocument(uri: Uri): PromiseLike<NotebookDocument>
 
     /**
      * Open an untitled notebook. The editor will prompt the user for a file
@@ -557,13 +575,16 @@ external object workspace {
      * @param notebookType The notebook type that should be used.
      * @param content The initial contents of the notebook.
      * @returns A promise that resolves to a {@link NotebookDocument notebook}.
-    */
-    export function openNotebookDocument(notebookType: string, content?: NotebookData): Thenable<NotebookDocument>;
+     */
+    fun openNotebookDocument(
+        notebookType: String,
+        content: NotebookData = definedExternally,
+    ): PromiseLike<NotebookDocument>
 
     /**
      * An event that is emitted when a {@link NotebookDocument notebook} has changed.
-    */
-    export const onDidChangeNotebookDocument: Event<NotebookDocumentChangeEvent>;
+     */
+    val onDidChangeNotebookDocument: Event<NotebookDocumentChangeEvent>
 
     /**
      * An event that is emitted when a {@link NotebookDocument notebook document} will be saved to disk.
@@ -577,13 +598,13 @@ external object workspace {
      *  * listeners that take a long time or produce errors frequently will not be called anymore
      *
      * The current thresholds are 1.5 seconds as overall time budget and a listener can misbehave 3 times before being ignored.
-    */
-    export const onWillSaveNotebookDocument: Event<NotebookDocumentWillSaveEvent>;
+     */
+    val onWillSaveNotebookDocument: Event<NotebookDocumentWillSaveEvent>
 
     /**
      * An event that is emitted when a {@link NotebookDocument notebook} is saved.
-    */
-    export const onDidSaveNotebookDocument: Event<NotebookDocument>;
+     */
+    val onDidSaveNotebookDocument: Event<NotebookDocument>
 
     /**
      * Register a {@link NotebookSerializer notebook serializer}.
@@ -595,13 +616,17 @@ external object workspace {
      * @param serializer A notebook serializer.
      * @param options Optional context options that define what parts of a notebook should be persisted
      * @returns A {@link Disposable} that unregisters this serializer when being disposed.
-    */
-    export function registerNotebookSerializer(notebookType: string, serializer: NotebookSerializer, options?: NotebookDocumentContentOptions): Disposable;
+     */
+    fun registerNotebookSerializer(
+        notebookType: String,
+        serializer: NotebookSerializer,
+        options: NotebookDocumentContentOptions = definedExternally,
+    ): Disposable
 
     /**
      * An event that is emitted when a {@link NotebookDocument notebook} is opened.
-    */
-    export const onDidOpenNotebookDocument: Event<NotebookDocument>;
+     */
+    val onDidOpenNotebookDocument: Event<NotebookDocument>
 
     /**
      * An event that is emitted when a {@link NotebookDocument notebook} is disposed.
@@ -610,8 +635,8 @@ external object workspace {
      *
      * *Note 2:* A notebook can be open but not shown in an editor which means this event can fire
      * for a notebook that has not been shown in an editor.
-    */
-    export const onDidCloseNotebookDocument: Event<NotebookDocument>;
+     */
+    val onDidCloseNotebookDocument: Event<NotebookDocument>
 
     /**
      * An event that is emitted when files are being created.
@@ -622,8 +647,8 @@ external object workspace {
      * {@linkcode FileSystem workspace.fs}-api.
      *
      * *Note 2:* When this event is fired, edits to files that are are being created cannot be applied.
-    */
-    export const onWillCreateFiles: Event<FileWillCreateEvent>;
+     */
+    val onWillCreateFiles: Event<FileWillCreateEvent>
 
     /**
      * An event that is emitted when files have been created.
@@ -632,8 +657,8 @@ external object workspace {
      * explorer, or from the {@linkcode workspace.applyEdit}-api, but this event is *not* fired when
      * files change on disk, e.g triggered by another application, or when using the
      * {@linkcode FileSystem workspace.fs}-api.
-    */
-    export const onDidCreateFiles: Event<FileCreateEvent>;
+     */
+    val onDidCreateFiles: Event<FileCreateEvent>
 
     /**
      * An event that is emitted when files are being deleted.
@@ -644,8 +669,8 @@ external object workspace {
      * {@linkcode FileSystem workspace.fs}-api.
      *
      * *Note 2:* When deleting a folder with children only one event is fired.
-    */
-    export const onWillDeleteFiles: Event<FileWillDeleteEvent>;
+     */
+    val onWillDeleteFiles: Event<FileWillDeleteEvent>
 
     /**
      * An event that is emitted when files have been deleted.
@@ -656,8 +681,8 @@ external object workspace {
      * {@linkcode FileSystem workspace.fs}-api.
      *
      * *Note 2:* When deleting a folder with children only one event is fired.
-    */
-    export const onDidDeleteFiles: Event<FileDeleteEvent>;
+     */
+    val onDidDeleteFiles: Event<FileDeleteEvent>
 
     /**
      * An event that is emitted when files are being renamed.
@@ -668,8 +693,8 @@ external object workspace {
      * {@linkcode FileSystem workspace.fs}-api.
      *
      * *Note 2:* When renaming a folder with children only one event is fired.
-    */
-    export const onWillRenameFiles: Event<FileWillRenameEvent>;
+     */
+    val onWillRenameFiles: Event<FileWillRenameEvent>
 
     /**
      * An event that is emitted when files have been renamed.
@@ -680,8 +705,8 @@ external object workspace {
      * {@linkcode FileSystem workspace.fs}-api.
      *
      * *Note 2:* When renaming a folder with children only one event is fired.
-    */
-    export const onDidRenameFiles: Event<FileRenameEvent>;
+     */
+    val onDidRenameFiles: Event<FileRenameEvent>
 
     /**
      * Get a workspace configuration object.
@@ -695,24 +720,16 @@ external object workspace {
      * @param section A dot-separated identifier.
      * @param scope A scope for which the configuration is asked for.
      * @returns The full configuration or a subset.
-    */
-    export function getConfiguration(section?: string, scope?: ConfigurationScope | null): WorkspaceConfiguration;
+     */
+    fun getConfiguration(
+        section: String = definedExternally,
+        scope: ConfigurationScope? = definedExternally,
+    ): WorkspaceConfiguration
 
     /**
      * An event that is emitted when the {@link WorkspaceConfiguration configuration} changed.
-    */
-    export const onDidChangeConfiguration: Event<ConfigurationChangeEvent>;
-
-    /**
-     * Register a task provider.
-     *
-     * @deprecated Use the corresponding function on the `tasks` namespace instead
-     *
-     * @param type The task kind type this provider is registered for.
-     * @param provider A task provider.
-     * @returns A {@link Disposable} that unregisters this provider when being disposed.
-    */
-    export function registerTaskProvider(type: string, provider: TaskProvider): Disposable;
+     */
+    val onDidChangeConfiguration: Event<ConfigurationChangeEvent>
 
     /**
      * Register a filesystem provider for a given scheme, e.g. `ftp`.
@@ -724,28 +741,30 @@ external object workspace {
      * @param provider The filesystem provider.
      * @param options Immutable metadata about the provider.
      * @returns A {@link Disposable} that unregisters this provider when being disposed.
+     */
+    /*
+    registerFileSystemProvider(scheme: string, provider: FileSystemProvider, options?: {
+        /**
+         * Whether the file system provider use case sensitive compare for {@link Uri.path paths}
+         */
+        readonly isCaseSensitive?: boolean;
+        /**
+         * Whether the file system provider is readonly, no modifications like write, delete, create are possible.
+         * If a {@link MarkdownString} is given, it will be shown as the reason why the file system is readonly.
+         */
+        readonly isReadonly?: boolean | MarkdownString;
+    }): Disposable
     */
-    export function registerFileSystemProvider(scheme: string, provider: FileSystemProvider, options?: {
-    /**
-     * Whether the file system provider use case sensitive compare for {@link Uri.path paths}
-    */
-    readonly isCaseSensitive?: boolean;
-    /**
-     * Whether the file system provider is readonly, no modifications like write, delete, create are possible.
-     * If a {@link MarkdownString} is given, it will be shown as the reason why the file system is readonly.
-    */
-    readonly isReadonly?: boolean | MarkdownString;
-    }): Disposable;
 
     /**
      * When true, the user has explicitly trusted the contents of the workspace.
-    */
-    export const isTrusted: boolean;
+     */
+    val isTrusted: Boolean
 
     /**
      * Event that fires when the current workspace has been trusted.
-    */
-    export const onDidGrantWorkspaceTrust: Event<void>;
+     */
+    val onDidGrantWorkspaceTrust: Event<Void>
 
     /**
      * Decodes the content from a `Uint8Array` to a `string`. You MUST
@@ -764,8 +783,8 @@ external object workspace {
      *
      * @param content The text content to decode as a `Uint8Array`.
      * @returns A thenable that resolves to the decoded `string`.
-    */
-    export function decode(content: Uint8Array): Thenable<string>;
+     */
+    fun decode(content: Uint8Array<*>): PromiseLike<String>
 
     /**
      * Decodes the content from a `Uint8Array` to a `string` using the
@@ -783,17 +802,19 @@ external object workspace {
      * @param content The text content to decode as a `Uint8Array`.
      * @param options Additional context for picking the encoding.
      * @returns A thenable that resolves to the decoded `string`.
+     */
+    /*
+    decode(content: Uint8Array, options: {
+        /**
+         * Allows to explicitly pick the encoding to use.
+         * See {@link TextDocument.encoding} for more information
+         * about valid values for encoding.
+         * Using an unsupported encoding will fallback to the
+         * default configured encoding.
+         */
+        readonly encoding: string;
+    }): Thenable<string>
     */
-    export function decode(content: Uint8Array, options: {
-    /**
-     * Allows to explicitly pick the encoding to use.
-     * See {@link TextDocument.encoding} for more information
-     * about valid values for encoding.
-     * Using an unsupported encoding will fallback to the
-     * default configured encoding.
-    */
-    readonly encoding: string;
-    }): Thenable<string>;
 
     /**
      * Decodes the content from a `Uint8Array` to a `string`. You MUST
@@ -813,15 +834,17 @@ external object workspace {
      * @param content The content to decode as a `Uint8Array`.
      * @param options Additional context for picking the encoding.
      * @returns A thenable that resolves to the decoded `string`.
+     */
+    /*
+    decode(content: Uint8Array, options: {
+        /**
+         * The URI that represents the file if known. This information
+         * is used to figure out the encoding related configuration
+         * for the file if any.
+         */
+        readonly uri: Uri;
+    }): Thenable<string>
     */
-    export function decode(content: Uint8Array, options: {
-    /**
-     * The URI that represents the file if known. This information
-     * is used to figure out the encoding related configuration
-     * for the file if any.
-    */
-    readonly uri: Uri;
-    }): Thenable<string>;
 
     /**
      * Encodes the content of a `string` to a `Uint8Array`.
@@ -830,8 +853,8 @@ external object workspace {
      *
      * @param content The content to decode as a `string`.
      * @returns A thenable that resolves to the encoded `Uint8Array`.
-    */
-    export function encode(content: string): Thenable<Uint8Array>;
+     */
+    fun encode(content: String): PromiseLike<Uint8Array<*>>
 
     /**
      * Encodes the content of a `string` to a `Uint8Array` using the
@@ -840,17 +863,19 @@ external object workspace {
      * @param content The content to decode as a `string`.
      * @param options Additional context for picking the encoding.
      * @returns A thenable that resolves to the encoded `Uint8Array`.
+     */
+    /*
+    encode(content: string, options: {
+        /**
+         * Allows to explicitly pick the encoding to use.
+         * See {@link TextDocument.encoding} for more information
+         * about valid values for encoding.
+         * Using an unsupported encoding will fallback to the
+         * default configured encoding.
+         */
+        readonly encoding: string;
+    }): Thenable<Uint8Array>
     */
-    export function encode(content: string, options: {
-    /**
-     * Allows to explicitly pick the encoding to use.
-     * See {@link TextDocument.encoding} for more information
-     * about valid values for encoding.
-     * Using an unsupported encoding will fallback to the
-     * default configured encoding.
-    */
-    readonly encoding: string;
-    }): Thenable<Uint8Array>;
 
     /**
      * Encodes the content of a `string` to a `Uint8Array`.
@@ -860,16 +885,15 @@ external object workspace {
      * @param content The content to decode as a `string`.
      * @param options Additional context for picking the encoding.
      * @returns A thenable that resolves to the encoded `Uint8Array`.
+     */
+    /*
+    encode(content: string, options: {
+        /**
+         * The URI that represents the file if known. This information
+         * is used to figure out the encoding related configuration
+         * for the file if any.
+         */
+        readonly uri: Uri;
+    }): Thenable<Uint8Array>
     */
-    export function encode(content: string, options: {
-    /**
-     * The URI that represents the file if known. This information
-     * is used to figure out the encoding related configuration
-     * for the file if any.
-    */
-    readonly uri: Uri;
-    }): Thenable<Uint8Array>;
-
-    // ORIGINAL SOURCE
-     **/
 }

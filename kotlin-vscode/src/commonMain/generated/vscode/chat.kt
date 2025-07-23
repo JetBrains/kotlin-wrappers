@@ -11,17 +11,14 @@ package vscode
  */
 external object chat {
     /**
-    // ORIGINAL SOURCE
-
-    /**
      * Create a new {@link ChatParticipant chat participant} instance.
      *
      * @param id A unique identifier for the participant.
      * @param handler A request handler for the participant.
      * @returns A new chat participant
-    */
-    export function createChatParticipant(id: string, handler: ChatRequestHandler): ChatParticipant;
-
-    // ORIGINAL SOURCE
-     **/
+     */
+    fun createChatParticipant(
+        id: String,
+        handler: ChatRequestHandler,
+    ): ChatParticipant
 }

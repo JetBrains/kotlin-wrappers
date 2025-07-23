@@ -21,6 +21,7 @@ private val STANDARD_TYPE_MAP = mapOf(
     "void | number" to "Int?",
 
     "() => any" to "() -> Unit",
+    "(...args: any[]) => any" to "() -> Unit",
 
     "AsyncIterable<string>" to "AsyncIterable<String>",
 
@@ -42,6 +43,7 @@ private val STANDARD_TYPE_MAP = mapOf(
     "[start: number, end: number]" to "Tuple2</* start */ Int, /* end */ Int>",
     "[string, FileType]" to "Tuple2<String, FileType>",
 
+    "[Uri, Diagnostic[]]" to "Tuple2<Uri, ReadonlyArray<Diagnostic>>",
     "[Uri, readonly Diagnostic[] | undefined]" to "Tuple2<Uri, ReadonlyArray<Diagnostic>?>",
     "[TextEdit | SnippetTextEdit, WorkspaceEditEntryMetadata | undefined]" to
             "Tuple2<Any /* TextEdit | SnippetTextEdit */, WorkspaceEditEntryMetadata?>",
@@ -67,7 +69,23 @@ private val STANDARD_TYPE_MAP = mapOf(
     "Tab | readonly Tab[]" to "ReadonlyArray<Tab> /* Tab */",
     "TabGroup | readonly TabGroup[]" to "ReadonlyArray<TabGroup> /* TabGroup */",
 
-    "WebviewViewResolveContext" to "WebviewViewResolveContext<*>",
+    "LanguageModelToolInvocationOptions<object>" to "LanguageModelToolInvocationOptions<* /* object */>",
+)
+
+private val GENERIC_REQUIRED = setOf(
+    "WebviewViewResolveContext",
+    "TaskProvider",
+    "McpServerDefinitionProvider",
+    "CompletionItemProvider",
+    "CodeActionProvider",
+    "CodeLensProvider",
+    "WorkspaceSymbolProvider",
+    "DocumentLinkProvider",
+    "InlayHintsProvider",
+    "DocumentDropEditProvider",
+    "DocumentPasteEditProvider",
+    "WebviewPanelSerializer",
+    "TerminalLinkProvider",
 )
 
 internal fun kotlinType(
@@ -97,6 +115,9 @@ internal fun kotlinType(
 
     if (type.startsWith("ProviderResult<") && type.endsWith(">"))
         return "ProviderResult<" + kotlinType(type.removeSurrounding("ProviderResult<", ">"), name) + ">"
+
+    if (type in GENERIC_REQUIRED)
+        return "$type<*>"
 
     STANDARD_TYPE_MAP[type]
         ?.also { return it }
@@ -184,6 +205,9 @@ internal fun kotlinType(
 
             "countTokens",
             "offsetAt",
+            "hideAfterTimeout",
+            "match",
+            "maxResults",
 
                 // ???
             "value",

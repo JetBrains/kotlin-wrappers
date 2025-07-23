@@ -4,17 +4,18 @@
 
 package vscode
 
+import js.array.ReadonlyArray
+import js.core.Void
+import js.promise.PromiseLike
+
 /**
  * Namespace for language model related functionality.
  */
 external object lm {
     /**
-    // ORIGINAL SOURCE
-
-    /**
      * An event that is fired when the set of available chat models changes.
-    */
-    export const onDidChangeChatModels: Event<void>;
+     */
+    val onDidChangeChatModels: Event<Void>
 
     /**
      * Select chat models by a {@link LanguageModelChatSelector selector}. This can yield multiple or no chat models and
@@ -40,22 +41,25 @@ external object lm {
      *
      * @param selector A chat model selector. When omitted all chat models are returned.
      * @returns An array of chat models, can be empty!
-    */
-    export function selectChatModels(selector?: LanguageModelChatSelector): Thenable<LanguageModelChat[]>;
+     */
+    fun selectChatModels(selector: LanguageModelChatSelector = definedExternally): PromiseLike<ReadonlyArray<LanguageModelChat>>
 
     /**
      * Register a LanguageModelTool. The tool must also be registered in the package.json `languageModelTools` contribution
      * point. A registered tool is available in the {@link lm.tools} list for any extension to see. But in order for it to
      * be seen by a language model, it must be passed in the list of available tools in {@link LanguageModelChatRequestOptions.tools}.
      * @returns A {@link Disposable} that unregisters the tool when disposed.
-    */
-    export function registerTool<T>(name: string, tool: LanguageModelTool<T>): Disposable;
+     */
+    fun <T> registerTool(
+        name: String,
+        tool: LanguageModelTool<T>,
+    ): Disposable
 
     /**
      * A list of all available tools that were registered by all extensions using {@link lm.registerTool}. They can be called
      * with {@link lm.invokeTool} with input that match their declared `inputSchema`.
-    */
-    export const tools: readonly LanguageModelToolInformation[];
+     */
+    val tools: ReadonlyArray<LanguageModelToolInformation>
 
     /**
      * Invoke a tool listed in {@link lm.tools} by name with the given input. The input will be validated against
@@ -82,8 +86,12 @@ external object lm {
      * @param options The options to use when invoking the tool.
      * @param token A cancellation token. See {@link CancellationTokenSource} for how to create one.
      * @returns The result of the tool invocation.
-    */
-    export function invokeTool(name: string, options: LanguageModelToolInvocationOptions<object>, token?: CancellationToken): Thenable<LanguageModelToolResult>;
+     */
+    fun invokeTool(
+        name: String,
+        options: LanguageModelToolInvocationOptions<* /* object */>,
+        token: CancellationToken = definedExternally,
+    ): PromiseLike<LanguageModelToolResult>
 
     /**
      * Registers a provider that publishes Model Context Protocol servers for the editor to
@@ -110,9 +118,9 @@ external object lm {
      * @param id The ID of the provider, which is unique to the extension.
      * @param provider The provider to register
      * @returns A disposable that unregisters the provider when disposed.
-    */
-    export function registerMcpServerDefinitionProvider(id: string, provider: McpServerDefinitionProvider): Disposable;
-
-    // ORIGINAL SOURCE
-     **/
+     */
+    fun registerMcpServerDefinitionProvider(
+        id: String,
+        provider: McpServerDefinitionProvider<*>,
+    ): Disposable
 }

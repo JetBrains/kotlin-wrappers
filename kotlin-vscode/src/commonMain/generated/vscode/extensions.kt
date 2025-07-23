@@ -4,6 +4,9 @@
 
 package vscode
 
+import js.array.ReadonlyArray
+import js.core.Void
+
 /**
  * Namespace for dealing with installed extensions. Extensions are represented
  * by an {@link Extension}-interface which enables reflection on them.
@@ -38,27 +41,21 @@ package vscode
  */
 external object extensions {
     /**
-    // ORIGINAL SOURCE
+     * Get an extension by its full identifier in the form of: `publisher.name`.
+     *
+     * @param extensionId An extension identifier.
+     * @returns An extension or `undefined`.
+     */
+    fun <T> getExtension(extensionId: String): Extension<T>?
 
-/**
- * Get an extension by its full identifier in the form of: `publisher.name`.
- *
- * @param extensionId An extension identifier.
- * @returns An extension or `undefined`.
-    */
-export function getExtension<T = any>(extensionId: string): Extension<T> | undefined;
+    /**
+     * All extensions currently known to the system.
+     */
+    val all: ReadonlyArray<Extension<*>>
 
-/**
- * All extensions currently known to the system.
-    */
-export const all: readonly Extension<any>[];
-
-/**
- * An event which fires when `extensions.all` changes. This can happen when extensions are
- * installed, uninstalled, enabled or disabled.
-    */
-export const onDidChange: Event<void>;
-
-// ORIGINAL SOURCE
-     **/
+    /**
+     * An event which fires when `extensions.all` changes. This can happen when extensions are
+     * installed, uninstalled, enabled or disabled.
+     */
+    val onDidChange: Event<Void>
 }

@@ -15,9 +15,6 @@ package vscode
  */
 external object notebooks {
     /**
-    // ORIGINAL SOURCE
-
-    /**
      * Creates a new notebook controller.
      *
      * @param id Identifier of the controller. Must be unique per extension.
@@ -25,8 +22,8 @@ external object notebooks {
      * @param label The label of the controller.
      * @param handler The execute-handler of the controller.
      * @returns A new notebook controller.
-    */
-    export function createNotebookController(id: string, notebookType: string, label: string, handler?: (cells: NotebookCell[], notebook: NotebookDocument, controller: NotebookController) => void | Thenable<void>): NotebookController;
+     */
+//  createNotebookController(id: string, notebookType: string, label: string, handler?: (cells: NotebookCell[], notebook: NotebookDocument, controller: NotebookController) => void | Thenable<void>): NotebookController
 
     /**
      * Register a {@link NotebookCellStatusBarItemProvider cell statusbar item provider} for the given notebook type.
@@ -34,8 +31,11 @@ external object notebooks {
      * @param notebookType The notebook type to register for.
      * @param provider A cell status bar provider.
      * @returns A {@link Disposable} that unregisters this provider when being disposed.
-    */
-    export function registerNotebookCellStatusBarItemProvider(notebookType: string, provider: NotebookCellStatusBarItemProvider): Disposable;
+     */
+    fun registerNotebookCellStatusBarItemProvider(
+        notebookType: String,
+        provider: NotebookCellStatusBarItemProvider,
+    ): Disposable
 
     /**
      * Creates a new messaging instance used to communicate with a specific renderer.
@@ -46,9 +46,6 @@ external object notebooks {
      *
      * @param rendererId The renderer ID to communicate with
      * @returns A new notebook renderer messaging object.
-    */
-    export function createRendererMessaging(rendererId: string): NotebookRendererMessaging;
-
-    // ORIGINAL SOURCE
-     **/
+     */
+    fun createRendererMessaging(rendererId: String): NotebookRendererMessaging
 }

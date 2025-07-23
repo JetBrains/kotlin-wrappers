@@ -128,18 +128,6 @@ open external class CompletionItem {
     var keepWhitespace: Boolean?
 
     /**
-     * @deprecated Use `CompletionItem.insertText` and `CompletionItem.range` instead.
-     *
-     * An {@link TextEdit edit} which is applied to a document when selecting
-     * this completion. When an edit is provided the value of
-     * {@link CompletionItem.insertText insertText} is ignored.
-     *
-     * The {@link Range} of the edit must be single-line and on the same
-     * line completions were {@link CompletionItemProvider.provideCompletionItems requested} at.
-     */
-    var textEdit: TextEdit?
-
-    /**
      * An optional array of additional {@link TextEdit text edits} that are applied when
      * selecting this completion. Edits must not overlap with the main {@link CompletionItem.textEdit edit}
      * nor with themselves.

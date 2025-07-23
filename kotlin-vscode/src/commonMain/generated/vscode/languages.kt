@@ -4,6 +4,10 @@
 
 package vscode
 
+import js.array.ReadonlyArray
+import js.array.Tuple2
+import js.promise.PromiseLike
+
 /**
  * Namespace for participating in language-specific editor [features](https://code.visualstudio.com/docs/editor/editingevolved),
  * like IntelliSense, code actions, diagnostics etc.
@@ -34,13 +38,10 @@ package vscode
  */
 external object languages {
     /**
-    // ORIGINAL SOURCE
-
-    /**
      * Return the identifiers of all known languages.
      * @returns Promise resolving to an array of identifier strings.
-    */
-    export function getLanguages(): Thenable<string[]>;
+     */
+    fun getLanguages(): PromiseLike<ReadonlyArray<String>>
 
     /**
      * Set (and change) the {@link TextDocument.languageId language} that is associated
@@ -52,8 +53,11 @@ external object languages {
      * @param document The document which language is to be changed
      * @param languageId The new language identifier.
      * @returns A thenable that resolves with the updated document.
-    */
-    export function setTextDocumentLanguage(document: TextDocument, languageId: string): Thenable<TextDocument>;
+     */
+    fun setTextDocumentLanguage(
+        document: TextDocument,
+        languageId: String,
+    ): PromiseLike<TextDocument>
 
     /**
      * Compute the match between a document {@link DocumentSelector selector} and a document. Values
@@ -99,37 +103,40 @@ external object languages {
      * @param selector A document selector.
      * @param document A text document.
      * @returns A number `>0` when the selector matches and `0` when the selector does not match.
-    */
-    export function match(selector: DocumentSelector, document: TextDocument): number;
+     */
+    fun match(
+        selector: DocumentSelector,
+        document: TextDocument,
+    ): Int
 
     /**
      * An {@link Event} which fires when the global set of diagnostics changes. This is
      * newly added and removed diagnostics.
-    */
-    export const onDidChangeDiagnostics: Event<DiagnosticChangeEvent>;
+     */
+    val onDidChangeDiagnostics: Event<DiagnosticChangeEvent>
 
     /**
      * Get all diagnostics for a given resource.
      *
      * @param resource A resource
      * @returns An array of {@link Diagnostic diagnostics} objects or an empty array.
-    */
-    export function getDiagnostics(resource: Uri): Diagnostic[];
+     */
+    fun getDiagnostics(resource: Uri): ReadonlyArray<Diagnostic>
 
     /**
      * Get all diagnostics.
      *
      * @returns An array of uri-diagnostics tuples or an empty array.
-    */
-    export function getDiagnostics(): [Uri, Diagnostic[]][];
+     */
+    fun getDiagnostics(): ReadonlyArray<Tuple2<Uri, ReadonlyArray<Diagnostic>>>
 
     /**
      * Create a diagnostics collection.
      *
      * @param name The {@link DiagnosticCollection.name name} of the collection.
      * @returns A new diagnostic collection.
-    */
-    export function createDiagnosticCollection(name?: string): DiagnosticCollection;
+     */
+    fun createDiagnosticCollection(name: String = definedExternally): DiagnosticCollection
 
     /**
      * Creates a new {@link LanguageStatusItem language status item}.
@@ -137,8 +144,11 @@ external object languages {
      * @param id The identifier of the item.
      * @param selector The document selector that defines for what editors the item shows.
      * @returns A new language status item.
-    */
-    export function createLanguageStatusItem(id: string, selector: DocumentSelector): LanguageStatusItem;
+     */
+    fun createLanguageStatusItem(
+        id: String,
+        selector: DocumentSelector,
+    ): LanguageStatusItem
 
     /**
      * Register a completion provider.
@@ -158,8 +168,12 @@ external object languages {
      * @param provider A completion provider.
      * @param triggerCharacters Trigger completion when the user types one of the characters.
      * @returns A {@link Disposable} that unregisters this provider when being disposed.
-    */
-    export function registerCompletionItemProvider(selector: DocumentSelector, provider: CompletionItemProvider, ...triggerCharacters: string[]): Disposable;
+     */
+    fun registerCompletionItemProvider(
+        selector: DocumentSelector,
+        provider: CompletionItemProvider<*>,
+        vararg triggerCharacters: String,
+    ): Disposable
 
     /**
      * Registers an inline completion provider.
@@ -171,8 +185,11 @@ external object languages {
      * @param selector A selector that defines the documents this provider is applicable to.
      * @param provider An inline completion provider.
      * @returns A {@link Disposable} that unregisters this provider when being disposed.
-    */
-    export function registerInlineCompletionItemProvider(selector: DocumentSelector, provider: InlineCompletionItemProvider): Disposable;
+     */
+    fun registerInlineCompletionItemProvider(
+        selector: DocumentSelector,
+        provider: InlineCompletionItemProvider,
+    ): Disposable
 
     /**
      * Register a code action provider.
@@ -185,8 +202,12 @@ external object languages {
      * @param provider A code action provider.
      * @param metadata Metadata about the kind of code actions the provider provides.
      * @returns A {@link Disposable} that unregisters this provider when being disposed.
-    */
-    export function registerCodeActionsProvider(selector: DocumentSelector, provider: CodeActionProvider, metadata?: CodeActionProviderMetadata): Disposable;
+     */
+    fun registerCodeActionsProvider(
+        selector: DocumentSelector,
+        provider: CodeActionProvider<*>,
+        metadata: CodeActionProviderMetadata = definedExternally,
+    ): Disposable
 
     /**
      * Register a code lens provider.
@@ -198,8 +219,11 @@ external object languages {
      * @param selector A selector that defines the documents this provider is applicable to.
      * @param provider A code lens provider.
      * @returns A {@link Disposable} that unregisters this provider when being disposed.
-    */
-    export function registerCodeLensProvider(selector: DocumentSelector, provider: CodeLensProvider): Disposable;
+     */
+    fun registerCodeLensProvider(
+        selector: DocumentSelector,
+        provider: CodeLensProvider<*>,
+    ): Disposable
 
     /**
      * Register a definition provider.
@@ -211,8 +235,11 @@ external object languages {
      * @param selector A selector that defines the documents this provider is applicable to.
      * @param provider A definition provider.
      * @returns A {@link Disposable} that unregisters this provider when being disposed.
-    */
-    export function registerDefinitionProvider(selector: DocumentSelector, provider: DefinitionProvider): Disposable;
+     */
+    fun registerDefinitionProvider(
+        selector: DocumentSelector,
+        provider: DefinitionProvider,
+    ): Disposable
 
     /**
      * Register an implementation provider.
@@ -224,8 +251,11 @@ external object languages {
      * @param selector A selector that defines the documents this provider is applicable to.
      * @param provider An implementation provider.
      * @returns A {@link Disposable} that unregisters this provider when being disposed.
-    */
-    export function registerImplementationProvider(selector: DocumentSelector, provider: ImplementationProvider): Disposable;
+     */
+    fun registerImplementationProvider(
+        selector: DocumentSelector,
+        provider: ImplementationProvider,
+    ): Disposable
 
     /**
      * Register a type definition provider.
@@ -237,8 +267,11 @@ external object languages {
      * @param selector A selector that defines the documents this provider is applicable to.
      * @param provider A type definition provider.
      * @returns A {@link Disposable} that unregisters this provider when being disposed.
-    */
-    export function registerTypeDefinitionProvider(selector: DocumentSelector, provider: TypeDefinitionProvider): Disposable;
+     */
+    fun registerTypeDefinitionProvider(
+        selector: DocumentSelector,
+        provider: TypeDefinitionProvider,
+    ): Disposable
 
     /**
      * Register a declaration provider.
@@ -250,8 +283,11 @@ external object languages {
      * @param selector A selector that defines the documents this provider is applicable to.
      * @param provider A declaration provider.
      * @returns A {@link Disposable} that unregisters this provider when being disposed.
-    */
-    export function registerDeclarationProvider(selector: DocumentSelector, provider: DeclarationProvider): Disposable;
+     */
+    fun registerDeclarationProvider(
+        selector: DocumentSelector,
+        provider: DeclarationProvider,
+    ): Disposable
 
     /**
      * Register a hover provider.
@@ -263,8 +299,11 @@ external object languages {
      * @param selector A selector that defines the documents this provider is applicable to.
      * @param provider A hover provider.
      * @returns A {@link Disposable} that unregisters this provider when being disposed.
-    */
-    export function registerHoverProvider(selector: DocumentSelector, provider: HoverProvider): Disposable;
+     */
+    fun registerHoverProvider(
+        selector: DocumentSelector,
+        provider: HoverProvider,
+    ): Disposable
 
     /**
      * Register a provider that locates evaluatable expressions in text documents.
@@ -275,8 +314,11 @@ external object languages {
      * @param selector A selector that defines the documents this provider is applicable to.
      * @param provider An evaluatable expression provider.
      * @returns A {@link Disposable} that unregisters this provider when being disposed.
-    */
-    export function registerEvaluatableExpressionProvider(selector: DocumentSelector, provider: EvaluatableExpressionProvider): Disposable;
+     */
+    fun registerEvaluatableExpressionProvider(
+        selector: DocumentSelector,
+        provider: EvaluatableExpressionProvider,
+    ): Disposable
 
     /**
      * Register a provider that returns data for the debugger's 'inline value' feature.
@@ -290,8 +332,11 @@ external object languages {
      * @param selector A selector that defines the documents this provider is applicable to.
      * @param provider An inline values provider.
      * @returns A {@link Disposable} that unregisters this provider when being disposed.
-    */
-    export function registerInlineValuesProvider(selector: DocumentSelector, provider: InlineValuesProvider): Disposable;
+     */
+    fun registerInlineValuesProvider(
+        selector: DocumentSelector,
+        provider: InlineValuesProvider,
+    ): Disposable
 
     /**
      * Register a document highlight provider.
@@ -303,8 +348,11 @@ external object languages {
      * @param selector A selector that defines the documents this provider is applicable to.
      * @param provider A document highlight provider.
      * @returns A {@link Disposable} that unregisters this provider when being disposed.
-    */
-    export function registerDocumentHighlightProvider(selector: DocumentSelector, provider: DocumentHighlightProvider): Disposable;
+     */
+    fun registerDocumentHighlightProvider(
+        selector: DocumentSelector,
+        provider: DocumentHighlightProvider,
+    ): Disposable
 
     /**
      * Register a document symbol provider.
@@ -317,8 +365,12 @@ external object languages {
      * @param provider A document symbol provider.
      * @param metaData metadata about the provider
      * @returns A {@link Disposable} that unregisters this provider when being disposed.
-    */
-    export function registerDocumentSymbolProvider(selector: DocumentSelector, provider: DocumentSymbolProvider, metaData?: DocumentSymbolProviderMetadata): Disposable;
+     */
+    fun registerDocumentSymbolProvider(
+        selector: DocumentSelector,
+        provider: DocumentSymbolProvider,
+        metaData: DocumentSymbolProviderMetadata = definedExternally,
+    ): Disposable
 
     /**
      * Register a workspace symbol provider.
@@ -329,8 +381,8 @@ external object languages {
      *
      * @param provider A workspace symbol provider.
      * @returns A {@link Disposable} that unregisters this provider when being disposed.
-    */
-    export function registerWorkspaceSymbolProvider(provider: WorkspaceSymbolProvider): Disposable;
+     */
+    fun registerWorkspaceSymbolProvider(provider: WorkspaceSymbolProvider<*>): Disposable
 
     /**
      * Register a reference provider.
@@ -342,8 +394,11 @@ external object languages {
      * @param selector A selector that defines the documents this provider is applicable to.
      * @param provider A reference provider.
      * @returns A {@link Disposable} that unregisters this provider when being disposed.
-    */
-    export function registerReferenceProvider(selector: DocumentSelector, provider: ReferenceProvider): Disposable;
+     */
+    fun registerReferenceProvider(
+        selector: DocumentSelector,
+        provider: ReferenceProvider,
+    ): Disposable
 
     /**
      * Register a rename provider.
@@ -355,8 +410,11 @@ external object languages {
      * @param selector A selector that defines the documents this provider is applicable to.
      * @param provider A rename provider.
      * @returns A {@link Disposable} that unregisters this provider when being disposed.
-    */
-    export function registerRenameProvider(selector: DocumentSelector, provider: RenameProvider): Disposable;
+     */
+    fun registerRenameProvider(
+        selector: DocumentSelector,
+        provider: RenameProvider,
+    ): Disposable
 
     /**
      * Register a semantic tokens provider for a whole document.
@@ -368,8 +426,12 @@ external object languages {
      * @param selector A selector that defines the documents this provider is applicable to.
      * @param provider A document semantic tokens provider.
      * @returns A {@link Disposable} that unregisters this provider when being disposed.
-    */
-    export function registerDocumentSemanticTokensProvider(selector: DocumentSelector, provider: DocumentSemanticTokensProvider, legend: SemanticTokensLegend): Disposable;
+     */
+    fun registerDocumentSemanticTokensProvider(
+        selector: DocumentSelector,
+        provider: DocumentSemanticTokensProvider,
+        legend: SemanticTokensLegend,
+    ): Disposable
 
     /**
      * Register a semantic tokens provider for a document range.
@@ -387,8 +449,12 @@ external object languages {
      * @param selector A selector that defines the documents this provider is applicable to.
      * @param provider A document range semantic tokens provider.
      * @returns A {@link Disposable} that unregisters this provider when being disposed.
-    */
-    export function registerDocumentRangeSemanticTokensProvider(selector: DocumentSelector, provider: DocumentRangeSemanticTokensProvider, legend: SemanticTokensLegend): Disposable;
+     */
+    fun registerDocumentRangeSemanticTokensProvider(
+        selector: DocumentSelector,
+        provider: DocumentRangeSemanticTokensProvider,
+        legend: SemanticTokensLegend,
+    ): Disposable
 
     /**
      * Register a formatting provider for a document.
@@ -400,8 +466,11 @@ external object languages {
      * @param selector A selector that defines the documents this provider is applicable to.
      * @param provider A document formatting edit provider.
      * @returns A {@link Disposable} that unregisters this provider when being disposed.
-    */
-    export function registerDocumentFormattingEditProvider(selector: DocumentSelector, provider: DocumentFormattingEditProvider): Disposable;
+     */
+    fun registerDocumentFormattingEditProvider(
+        selector: DocumentSelector,
+        provider: DocumentFormattingEditProvider,
+    ): Disposable
 
     /**
      * Register a formatting provider for a document range.
@@ -417,8 +486,11 @@ external object languages {
      * @param selector A selector that defines the documents this provider is applicable to.
      * @param provider A document range formatting edit provider.
      * @returns A {@link Disposable} that unregisters this provider when being disposed.
-    */
-    export function registerDocumentRangeFormattingEditProvider(selector: DocumentSelector, provider: DocumentRangeFormattingEditProvider): Disposable;
+     */
+    fun registerDocumentRangeFormattingEditProvider(
+        selector: DocumentSelector,
+        provider: DocumentRangeFormattingEditProvider,
+    ): Disposable
 
     /**
      * Register a formatting provider that works on type. The provider is active when the user enables the setting `editor.formatOnType`.
@@ -432,8 +504,13 @@ external object languages {
      * @param firstTriggerCharacter A character on which formatting should be triggered, like `}`.
      * @param moreTriggerCharacter More trigger characters.
      * @returns A {@link Disposable} that unregisters this provider when being disposed.
-    */
-    export function registerOnTypeFormattingEditProvider(selector: DocumentSelector, provider: OnTypeFormattingEditProvider, firstTriggerCharacter: string, ...moreTriggerCharacter: string[]): Disposable;
+     */
+    fun registerOnTypeFormattingEditProvider(
+        selector: DocumentSelector,
+        provider: OnTypeFormattingEditProvider,
+        firstTriggerCharacter: String,
+        vararg moreTriggerCharacter: String,
+    ): Disposable
 
     /**
      * Register a signature help provider.
@@ -446,8 +523,12 @@ external object languages {
      * @param provider A signature help provider.
      * @param triggerCharacters Trigger signature help when the user types one of the characters, like `,` or `(`.
      * @returns A {@link Disposable} that unregisters this provider when being disposed.
-    */
-    export function registerSignatureHelpProvider(selector: DocumentSelector, provider: SignatureHelpProvider, ...triggerCharacters: string[]): Disposable;
+     */
+    fun registerSignatureHelpProvider(
+        selector: DocumentSelector,
+        provider: SignatureHelpProvider,
+        vararg triggerCharacters: String,
+    ): Disposable
 
     /**
      * @see {@link languages.registerSignatureHelpProvider}
@@ -456,8 +537,12 @@ external object languages {
      * @param provider A signature help provider.
      * @param metadata Information about the provider.
      * @returns A {@link Disposable} that unregisters this provider when being disposed.
-    */
-    export function registerSignatureHelpProvider(selector: DocumentSelector, provider: SignatureHelpProvider, metadata: SignatureHelpProviderMetadata): Disposable;
+     */
+    fun registerSignatureHelpProvider(
+        selector: DocumentSelector,
+        provider: SignatureHelpProvider,
+        metadata: SignatureHelpProviderMetadata,
+    ): Disposable
 
     /**
      * Register a document link provider.
@@ -469,8 +554,11 @@ external object languages {
      * @param selector A selector that defines the documents this provider is applicable to.
      * @param provider A document link provider.
      * @returns A {@link Disposable} that unregisters this provider when being disposed.
-    */
-    export function registerDocumentLinkProvider(selector: DocumentSelector, provider: DocumentLinkProvider): Disposable;
+     */
+    fun registerDocumentLinkProvider(
+        selector: DocumentSelector,
+        provider: DocumentLinkProvider<*>,
+    ): Disposable
 
     /**
      * Register a color provider.
@@ -482,8 +570,11 @@ external object languages {
      * @param selector A selector that defines the documents this provider is applicable to.
      * @param provider A color provider.
      * @returns A {@link Disposable} that unregisters this provider when being disposed.
-    */
-    export function registerColorProvider(selector: DocumentSelector, provider: DocumentColorProvider): Disposable;
+     */
+    fun registerColorProvider(
+        selector: DocumentSelector,
+        provider: DocumentColorProvider,
+    ): Disposable
 
     /**
      * Register a inlay hints provider.
@@ -495,8 +586,11 @@ external object languages {
      * @param selector A selector that defines the documents this provider is applicable to.
      * @param provider An inlay hints provider.
      * @returns A {@link Disposable} that unregisters this provider when being disposed.
-    */
-    export function registerInlayHintsProvider(selector: DocumentSelector, provider: InlayHintsProvider): Disposable;
+     */
+    fun registerInlayHintsProvider(
+        selector: DocumentSelector,
+        provider: InlayHintsProvider<*>,
+    ): Disposable
 
     /**
      * Register a folding range provider.
@@ -512,8 +606,11 @@ external object languages {
      * @param selector A selector that defines the documents this provider is applicable to.
      * @param provider A folding range provider.
      * @returns A {@link Disposable} that unregisters this provider when being disposed.
-    */
-    export function registerFoldingRangeProvider(selector: DocumentSelector, provider: FoldingRangeProvider): Disposable;
+     */
+    fun registerFoldingRangeProvider(
+        selector: DocumentSelector,
+        provider: FoldingRangeProvider,
+    ): Disposable
 
     /**
      * Register a selection range provider.
@@ -525,8 +622,11 @@ external object languages {
      * @param selector A selector that defines the documents this provider is applicable to.
      * @param provider A selection range provider.
      * @returns A {@link Disposable} that unregisters this provider when being disposed.
-    */
-    export function registerSelectionRangeProvider(selector: DocumentSelector, provider: SelectionRangeProvider): Disposable;
+     */
+    fun registerSelectionRangeProvider(
+        selector: DocumentSelector,
+        provider: SelectionRangeProvider,
+    ): Disposable
 
     /**
      * Register a call hierarchy provider.
@@ -534,8 +634,11 @@ external object languages {
      * @param selector A selector that defines the documents this provider is applicable to.
      * @param provider A call hierarchy provider.
      * @returns A {@link Disposable} that unregisters this provider when being disposed.
-    */
-    export function registerCallHierarchyProvider(selector: DocumentSelector, provider: CallHierarchyProvider): Disposable;
+     */
+    fun registerCallHierarchyProvider(
+        selector: DocumentSelector,
+        provider: CallHierarchyProvider,
+    ): Disposable
 
     /**
      * Register a type hierarchy provider.
@@ -543,8 +646,11 @@ external object languages {
      * @param selector A selector that defines the documents this provider is applicable to.
      * @param provider A type hierarchy provider.
      * @returns A {@link Disposable} that unregisters this provider when being disposed.
-    */
-    export function registerTypeHierarchyProvider(selector: DocumentSelector, provider: TypeHierarchyProvider): Disposable;
+     */
+    fun registerTypeHierarchyProvider(
+        selector: DocumentSelector,
+        provider: TypeHierarchyProvider,
+    ): Disposable
 
     /**
      * Register a linked editing range provider.
@@ -556,8 +662,11 @@ external object languages {
      * @param selector A selector that defines the documents this provider is applicable to.
      * @param provider A linked editing range provider.
      * @returns A {@link Disposable} that unregisters this provider when being disposed.
-    */
-    export function registerLinkedEditingRangeProvider(selector: DocumentSelector, provider: LinkedEditingRangeProvider): Disposable;
+     */
+    fun registerLinkedEditingRangeProvider(
+        selector: DocumentSelector,
+        provider: LinkedEditingRangeProvider,
+    ): Disposable
 
     /**
      * Registers a new {@link DocumentDropEditProvider}.
@@ -575,8 +684,12 @@ external object languages {
      * @param metadata Additional metadata about the provider.
      *
      * @returns A {@linkcode Disposable} that unregisters this provider when disposed of.
-    */
-    export function registerDocumentDropEditProvider(selector: DocumentSelector, provider: DocumentDropEditProvider, metadata?: DocumentDropEditProviderMetadata): Disposable;
+     */
+    fun registerDocumentDropEditProvider(
+        selector: DocumentSelector,
+        provider: DocumentDropEditProvider<*>,
+        metadata: DocumentDropEditProviderMetadata = definedExternally,
+    ): Disposable
 
     /**
      * Registers a new {@linkcode DocumentPasteEditProvider}.
@@ -597,9 +710,12 @@ external object languages {
      * @param metadata Additional metadata about the provider.
      *
      * @returns A {@linkcode Disposable} that unregisters this provider when disposed of.
-    */
-    export function registerDocumentPasteEditProvider(selector: DocumentSelector, provider: DocumentPasteEditProvider, metadata: DocumentPasteProviderMetadata): Disposable;
-
+     */
+    fun registerDocumentPasteEditProvider(
+        selector: DocumentSelector,
+        provider: DocumentPasteEditProvider<*>,
+        metadata: DocumentPasteProviderMetadata,
+    ): Disposable
 
     /**
      * Set a {@link LanguageConfiguration language configuration} for a language.
@@ -607,9 +723,9 @@ external object languages {
      * @param language A language identifier like `typescript`.
      * @param configuration Language configuration.
      * @returns A {@link Disposable} that unsets this configuration.
-    */
-    export function setLanguageConfiguration(language: string, configuration: LanguageConfiguration): Disposable;
-
-    // ORIGINAL SOURCE
-     **/
+     */
+    fun setLanguageConfiguration(
+        language: String,
+        configuration: LanguageConfiguration,
+    ): Disposable
 }
