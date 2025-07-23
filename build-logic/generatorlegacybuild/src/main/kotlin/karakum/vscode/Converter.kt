@@ -272,6 +272,49 @@ private fun convertConstructor(
         .joinToString(",\n", "constructor(", ")")
 }
 
+private fun convertFunction(
+    source: String,
+): String {
+    if ("(" !in source)
+        return "//  $source"
+
+    if ("?(" in source)
+        return "//  $source"
+
+    val name = source.substringBefore("(")
+
+    val parametersSource = source
+        .substringAfter("(")
+        .substringBeforeLast("): ")
+
+    val parameters = if (parametersSource.isNotEmpty()) {
+        parametersSource
+            .replace("[number, number]", "[number_,_number]")
+            .replace("<string, string", "<string_,_string")
+            .splitToSequence(", ")
+            .map {
+                it.replace("[number_,_number]", "[number, number]")
+                    .replace("<string_,_string", "<string, string")
+            }
+            .map {
+                val name = it
+                    .substringBefore(": ")
+                    .removeSuffix("?")
+
+                val optional = it.startsWith("$name?")
+                val type = kotlinType(it.substringAfter(": "), name)
+
+                "$name: $type" + if (optional) " = definedExternally" else ""
+            }
+            .joinToString(",\n")
+    } else ""
+
+    val returnType = kotlinType(source.substringAfterLast("): "), name)
+        .let { if (it != "Void") ": $it" else "" }
+
+    return "fun $name($parameters)$returnType"
+}
+
 private fun commentedOriginal(
     source: String,
 ): String =

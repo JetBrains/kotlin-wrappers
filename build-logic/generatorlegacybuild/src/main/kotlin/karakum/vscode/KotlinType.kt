@@ -23,6 +23,7 @@ private val STANDARD_TYPE_MAP = mapOf(
     "AsyncIterable<string>" to "AsyncIterable<String>",
 
     "Thenable<number | undefined>" to "PromiseLike<Int?>",
+    "Thenable<number>" to "PromiseLike<Int>",
 
     "Uint8Array" to "Uint8Array<*>",
     "Uint32Array" to "Uint32Array<*>",
@@ -66,6 +67,12 @@ internal fun kotlinType(
 
     if (type.startsWith("AsyncIterable<") && type.endsWith(">"))
         return "AsyncIterable<" + kotlinType(type.removeSurrounding("AsyncIterable<", ">"), name) + ">"
+
+    if (type.startsWith("Thenable<") && type.endsWith(">"))
+        return "PromiseLike<" + kotlinType(type.removeSurrounding("Thenable<", ">"), name) + ">"
+
+    if (type.startsWith("ProviderResult<") && type.endsWith(">"))
+        return "ProviderResult<" + kotlinType(type.removeSurrounding("ProviderResult<", ">"), name) + ">"
 
     STANDARD_TYPE_MAP[type]
         ?.also { return it }
@@ -141,15 +148,29 @@ internal fun kotlinType(
             "activeLine",
             "activeCharacter",
 
+            "compareTo",
+            "lineDelta",
+            "characterDelta",
+            "char",
+            "tokenType",
+            "tokenModifiers",
+            "number",
+            "duration",
+            "position",
+            "offset",
+
                 // ???
             "value",
                 -> INT
 
+            "startTime",
+            "endTime",
             "ctime",
             "mtime",
                 -> "Int53"
 
-            else -> TODO("Unknown number with name '$name'!")
+            else -> "--NUMBER--"
+            // else -> TODO("Unknown number with name '$name'!")
         }
     }
 
