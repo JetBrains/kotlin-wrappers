@@ -306,13 +306,16 @@ private fun convertFunction(
             }
             .map {
                 val name = it
+                    .removePrefix("...")
                     .substringBefore(": ")
                     .removeSuffix("?")
 
                 val optional = it.startsWith("$name?")
                 val type = kotlinType(it.substringAfter(": "), name)
 
-                "$name: $type" + if (optional) " = definedExternally" else ""
+                (if (source.startsWith("...")) "vararg " else "") +
+                        "$name: $type" +
+                        if (optional) " = definedExternally" else ""
             }
             .joinToString(",\n")
     } else ""
