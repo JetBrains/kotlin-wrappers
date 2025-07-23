@@ -27,6 +27,8 @@ private val STANDARD_TYPE_MAP = mapOf(
 
     "[number, number]" to "Tuple2<Int, Int>",
     "[start: number, end: number]" to "Tuple2</* start */ Int, /* end */ Int>",
+    "[string, FileType]" to "Tuple2<String, FileType>",
+
     "{ readonly [key: string]: any }" to "ReadonlyRecord<String, *>",
     "{ [key: string]: string }" to "Record<String, String>",
     "{ [key: string]: any }" to "Record<String, *>",
@@ -41,6 +43,11 @@ private val STANDARD_TYPE_MAP = mapOf(
     "Record<string, any>" to "Record<String, *>",
     "Record<string, string>" to "Record<String, String>",
     "Record<string, string | number | null>" to "Record<String, String?>",
+
+    "Tab | readonly Tab" to "Tab",
+    "TabGroup | readonly TabGroup" to "TabGroup",
+
+    "WebviewViewResolveContext" to "WebviewViewResolveContext<*>",
 )
 
 internal fun kotlinType(
@@ -178,6 +185,8 @@ internal fun kotlinType(
         .replace(" => Thenable<void>", " -> PromiseLike<Void>")
         .replace(" => void | Thenable<void>", " -> PromiseLike<Void>?")
         .replace(" => void", " -> Unit")
+        .replace(" => any", " -> Unit")
+        .replace(" => unknown", " -> Unit")
         .replace(" => Thenable<FileCoverageDetail[]>", " -> PromiseLike<ReadonlyArray<FileCoverageDetail>>")
         .replace(" => Thenable<Pseudoterminal>", " -> PromiseLike<Pseudoterminal>")
         .replace(": NotebookCell[]", ": ReadonlyArray<NotebookCell>")
