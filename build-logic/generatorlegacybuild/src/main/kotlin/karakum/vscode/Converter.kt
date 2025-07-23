@@ -35,7 +35,7 @@ private fun parseDeclaration(
     }
 
     val name = source
-        .substringAfter("export ")
+        .substringAfter("\nexport ")
         .substringAfter(" ")
         .substringBefore(" ")
         .substringBefore("?")
@@ -44,7 +44,7 @@ private fun parseDeclaration(
         .substringBefore("<")
 
     val type = source
-        .substringAfter("export ")
+        .substringAfter("\nexport ")
         .substringBefore(" ")
 
     val body = when (type) {
@@ -52,14 +52,25 @@ private fun parseDeclaration(
 
         "type" -> convertType(source)
 
-        "interface" -> convertInterface(source, name)
-        "class" -> convertInterface(source, name)
+        "interface" -> convertInterface(source)
+        "class" -> convertInterface(source)
 
-        else -> commentedOriginal(source)
+        "namespace" -> convertNamespace(source)
+        "const" -> convertConst(source)
+
+        else -> TODO("Undefined source:\n---\n$source\n---")
     }
 
     return ConversionResult(name, body)
 }
+
+private fun convertConst(
+    source: String,
+): String =
+    source
+        .replace("\nexport const ", "\nexternal val ")
+        .replace(": string", ": String")
+        .removeSuffix(";")
 
 private fun convertEnum(
     source: String,
@@ -107,16 +118,38 @@ private fun convertType(
     return "$comment\ntypealias $name = $body"
 }
 
+private fun convertNamespace(
+    source: String,
+): String {
+    val comment = source.substringBefore("\nexport namespace ", "")
+
+    val declaration = "external object " + source
+        .substringAfter("\nexport namespace ", "")
+        .substringBefore(" {\n", "")
+
+    val membersSource = source
+        .substringAfter("\nexport namespace ")
+        .substringAfter(" {\n")
+        .substringBefore("\n}")
+        .trimIndent()
+
+    return sequenceOf(
+        comment,
+        "$declaration {",
+        commentedOriginal(membersSource),
+        "}",
+    ).joinToString("\n")
+}
+
 private fun convertInterface(
     source: String,
-    name: String,
 ): String {
     val comment = source.substringBefore("\nexport ", "")
 
     val declaration = "external " + source
-        .replace("class ", "open class ")
         .substringAfter("export ", "")
         .substringBefore(" {\n", "")
+        .replace("class ", "open class ")
         .replace(Regex(""" extends (\w+?) = (\w+?)>""")) {
             val bound = it.groupValues[1]
             val defaultBound = it.groupValues[2]

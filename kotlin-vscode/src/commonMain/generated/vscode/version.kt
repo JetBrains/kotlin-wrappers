@@ -5,12 +5,6 @@
 package vscode
 
 /**
-// ORIGINAL SOURCE
-
-/**
  * The version of the editor.
-*/
-export const version: string;
-
-// ORIGINAL SOURCE
- **/
+ */
+external val version: String

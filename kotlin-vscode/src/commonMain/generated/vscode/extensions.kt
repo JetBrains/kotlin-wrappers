@@ -5,9 +5,6 @@
 package vscode
 
 /**
-// ORIGINAL SOURCE
-
-/**
  * Namespace for dealing with installed extensions. Extensions are represented
  * by an {@link Extension}-interface which enables reflection on them.
  *
@@ -38,28 +35,30 @@ package vscode
  *
  * console.log(importedApi.mul(42, 1));
  * ```
-*/
-export namespace extensions {
+ */
+external object extensions {
+    /**
+    // ORIGINAL SOURCE
 
 /**
  * Get an extension by its full identifier in the form of: `publisher.name`.
  *
  * @param extensionId An extension identifier.
  * @returns An extension or `undefined`.
-*/
+    */
 export function getExtension<T = any>(extensionId: string): Extension<T> | undefined;
 
 /**
  * All extensions currently known to the system.
-*/
+    */
 export const all: readonly Extension<any>[];
 
 /**
  * An event which fires when `extensions.all` changes. This can happen when extensions are
  * installed, uninstalled, enabled or disabled.
-*/
+    */
 export const onDidChange: Event<void>;
-}
 
 // ORIGINAL SOURCE
- **/
+     **/
+}
