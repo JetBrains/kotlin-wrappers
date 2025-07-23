@@ -187,7 +187,8 @@ private fun commentMember(
         "\n" in source
             -> "/*\n$source\n*/"
 
-        source.startsWith("constructor(")
+        source.startsWith("constructor(") ||
+                source.startsWith("protected constructor(")
             -> convertConstructor(source)
 
         source.startsWith("// Properties: ")
@@ -245,6 +246,9 @@ private fun convertProperty(
 private fun convertConstructor(
     source: String,
 ): String {
+    if (source.startsWith("protected "))
+        return "protected " + convertConstructor(source.removePrefix("protected "))
+
     if (source == "constructor()") {
         return source
     }

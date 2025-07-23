@@ -41,5 +41,10 @@ open external class Breakpoint {
      * @param hitCondition Expression that controls how many hits of the breakpoint are ignored
      * @param logMessage Log message to display when breakpoint is hit
      */
-//  protected constructor(enabled?: boolean, condition?: string, hitCondition?: string, logMessage?: string)
+    protected constructor(
+        enabled: Boolean = definedExternally,
+        condition: String = definedExternally,
+        hitCondition: String = definedExternally,
+        logMessage: String = definedExternally,
+    )
 }
