@@ -118,6 +118,8 @@ suspend fun main() {
                 convertQuerystringAliases,
                 convertReadableSymbol,
                 convertReporterConstructorWrapperTypeParameter,
+                convertSignalConstantsGenerics,
+                convertSkippedGenerics,
                 // ---
                 convertTestContextHeritageClause,
                 convertTopLevelGlobals,
