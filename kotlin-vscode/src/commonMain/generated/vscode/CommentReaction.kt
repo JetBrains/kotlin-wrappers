@@ -5,7 +5,7 @@ package vscode
 import js.core.JsAny
 
 /**
- * Reactions of a {@link Comment}
+ * Reactions of a [Comment]
  */
 external interface CommentReaction {
     /**

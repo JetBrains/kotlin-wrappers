@@ -8,12 +8,12 @@ package vscode
  */
 external interface SourceControlResourceState {
     /**
-     * The {@link Uri} of the underlying resource inside the workspace.
+     * The [Uri] of the underlying resource inside the workspace.
      */
     val resourceUri: Uri
 
     /**
-     * The {@link Command} which should be run when the resource
+     * The [Command] which should be run when the resource
      * state is open in the Source Control viewlet.
      */
     val command: Command?

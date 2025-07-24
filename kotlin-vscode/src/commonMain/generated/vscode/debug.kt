@@ -35,29 +35,29 @@ external object debug {
     var breakpoints: ReadonlyArray<Breakpoint>
 
     /**
-     * An {@link Event} which fires when the {@link debug.activeDebugSession active debug session}
+     * An [Event] which fires when the {@link debug.activeDebugSession active debug session}
      * has changed. *Note* that the event also fires when the active debug session changes
      * to `undefined`.
      */
     val onDidChangeActiveDebugSession: Event<DebugSession?>
 
     /**
-     * An {@link Event} which fires when a new {@link DebugSession debug session} has been started.
+     * An [Event] which fires when a new {@link DebugSession debug session} has been started.
      */
     val onDidStartDebugSession: Event<DebugSession>
 
     /**
-     * An {@link Event} which fires when a custom DAP event is received from the {@link DebugSession debug session}.
+     * An [Event] which fires when a custom DAP event is received from the {@link DebugSession debug session}.
      */
     val onDidReceiveDebugSessionCustomEvent: Event<DebugSessionCustomEvent>
 
     /**
-     * An {@link Event} which fires when a {@link DebugSession debug session} has terminated.
+     * An [Event] which fires when a {@link DebugSession debug session} has terminated.
      */
     val onDidTerminateDebugSession: Event<DebugSession>
 
     /**
-     * An {@link Event} that is emitted when the set of breakpoints is added, removed, or changed.
+     * An [Event] that is emitted when the set of breakpoints is added, removed, or changed.
      */
     val onDidChangeBreakpoints: Event<BreakpointsChangeEvent>
 
@@ -86,7 +86,7 @@ external object debug {
      * @param debugType The debug type for which the provider is registered.
      * @param provider The {@link DebugConfigurationProvider debug configuration provider} to register.
      * @param triggerKind The {@link DebugConfigurationProviderTriggerKind trigger} for which the 'provideDebugConfiguration' method of the provider is registered. If `triggerKind` is missing, the value `DebugConfigurationProviderTriggerKind.Initial` is assumed.
-     * @returns A {@link Disposable} that unregisters this provider when being disposed.
+     * @returns A [Disposable] that unregisters this provider when being disposed.
      */
     fun registerDebugConfigurationProvider(
         debugType: String,
@@ -101,7 +101,7 @@ external object debug {
      *
      * @param debugType The debug type for which the factory is registered.
      * @param factory The {@link DebugAdapterDescriptorFactory debug adapter descriptor factory} to register.
-     * @returns A {@link Disposable} that unregisters this factory when being disposed.
+     * @returns A [Disposable] that unregisters this factory when being disposed.
      */
     fun registerDebugAdapterDescriptorFactory(
         debugType: String,
@@ -113,7 +113,7 @@ external object debug {
      *
      * @param debugType The debug type for which the factory is registered or '*' for matching all debug types.
      * @param factory The {@link DebugAdapterTrackerFactory debug adapter tracker factory} to register.
-     * @returns A {@link Disposable} that unregisters this factory when being disposed.
+     * @returns A [Disposable] that unregisters this factory when being disposed.
      */
     fun registerDebugAdapterTrackerFactory(
         debugType: String,
@@ -122,12 +122,12 @@ external object debug {
 
     /**
      * Start debugging by using either a named launch or named compound configuration,
-     * or by directly passing a {@link DebugConfiguration}.
+     * or by directly passing a [DebugConfiguration].
      * The named configurations are looked up in '.vscode/launch.json' found in the given folder.
      * Before debugging starts, all unsaved files are saved and the launch configurations are brought up-to-date.
      * Folder specific variables used in the configuration (e.g. '${workspaceFolder}') are resolved against the given folder.
      * @param folder The {@link WorkspaceFolder workspace folder} for looking up named configurations and resolving variables or `undefined` for a non-folder setup.
-     * @param nameOrConfiguration Either the name of a debug or compound configuration or a {@link DebugConfiguration} object.
+     * @param nameOrConfiguration Either the name of a debug or compound configuration or a [DebugConfiguration] object.
      * @param parentSessionOrOptions Debug session options. When passed a parent {@link DebugSession debug session}, assumes options with just this parent session.
      * @returns A thenable that resolves when debugging could be successfully started.
      */

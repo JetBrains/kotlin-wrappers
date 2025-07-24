@@ -8,7 +8,7 @@ import js.core.Void
 import js.promise.PromiseLike
 
 /**
- * A TestRunProfile describes one way to execute tests in a {@link TestController}.
+ * A TestRunProfile describes one way to execute tests in a [TestController].
  */
 external interface TestRunProfile :
     DisposableLike {
@@ -37,13 +37,13 @@ external interface TestRunProfile :
      * user can configure this.
      *
      * Changes the user makes in their default profiles will be reflected
-     * in this property after a {@link onDidChangeDefault} event.
+     * in this property after a [onDidChangeDefault] event.
      */
     var isDefault: Boolean
 
     /**
      * Fired when a user has changed whether this is a default profile. The
-     * event contains the new value of {@link isDefault}
+     * event contains the new value of [isDefault]
      */
     var onDidChangeDefault: Event<JsBoolean>
 
@@ -55,7 +55,7 @@ external interface TestRunProfile :
     var supportsContinuousRun: Boolean
 
     /**
-     * Associated tag for the profile. If this is set, only {@link TestItem}
+     * Associated tag for the profile. If this is set, only [TestItem]
      * instances with the same tag will be eligible to execute in this profile.
      */
     var tag: TestTag?
@@ -74,14 +74,14 @@ external interface TestRunProfile :
      * associated with the request should be created before the function returns
      * or the returned promise is resolved.
      *
-     * If {@link supportsContinuousRun} is set, then {@link TestRunRequest.continuous}
+     * If [supportsContinuousRun] is set, then {@link TestRunRequest.continuous}
      * may be `true`. In this case, the profile should observe changes to
      * source code and create new test runs by calling {@link TestController.createTestRun},
      * until the cancellation is requested on the `token`.
      *
      * @param request Request information for the test run.
      * @param cancellationToken Token that signals the used asked to abort the
-     * test run. If cancellation is requested on this token, all {@link TestRun}
+     * test run. If cancellation is requested on this token, all [TestRun]
      * instances associated with the request will be
      * automatically cancelled as well.
      */
@@ -96,7 +96,7 @@ external interface TestRunProfile :
      * detail is needed for a file, such as when it's opened in an editor or
      * expanded in the **Test Coverage** view.
      *
-     * The {@link FileCoverage} object passed to this function is the same instance
+     * The [FileCoverage] object passed to this function is the same instance
      * emitted on {@link TestRun.addCoverage} calls associated with this profile.
      */
     var loadDetailedCoverage: (
@@ -118,7 +118,7 @@ external interface TestRunProfile :
      * should then return coverage data only for statements and declarations
      * executed by the specific test during the run.
      *
-     * The {@link FileCoverage} object passed to this function is the same
+     * The [FileCoverage] object passed to this function is the same
      * instance emitted on {@link TestRun.addCoverage} calls associated with this profile.
      *
      * @param testRun The test run that generated the coverage data.

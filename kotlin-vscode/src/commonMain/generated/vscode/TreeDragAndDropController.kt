@@ -41,7 +41,7 @@ external interface TreeDragAndDropController<T : JsAny?> {
 
     /**
      * When the user starts dragging items from this `DragAndDropController`, `handleDrag` will be called.
-     * Extensions can use `handleDrag` to add their {@link DataTransferItem `DataTransferItem`} items to the drag and drop.
+     * Extensions can use `handleDrag` to add their [DataTransferItem][DataTransferItem] items to the drag and drop.
      *
      * Mime types added in `handleDrag` won't be available outside the application.
      *

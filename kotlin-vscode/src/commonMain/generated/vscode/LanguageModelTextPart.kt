@@ -7,7 +7,7 @@ package vscode
 import kotlin.js.JsModule
 
 /**
- * A language model response part containing a piece of text, returned from a {@link LanguageModelChatResponse}.
+ * A language model response part containing a piece of text, returned from a [LanguageModelChatResponse].
  */
 open external class LanguageModelTextPart {
     /**

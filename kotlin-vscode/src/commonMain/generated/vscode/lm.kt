@@ -8,6 +8,7 @@ import js.array.ReadonlyArray
 import js.core.JsAny
 import js.core.Void
 import js.promise.PromiseLike
+import vscode.lm.onDidChangeChatModels
 import kotlin.js.JsModule
 import kotlin.js.definedExternally
 
@@ -40,7 +41,7 @@ external object lm {
      * different models.
      *
      * *Note* that extensions can hold on to the results returned by this function and use them later. However, when the
-     * {@link onDidChangeChatModels}-event is fired the list of chat models might have changed and extensions should re-query.
+     * [onDidChangeChatModels]-event is fired the list of chat models might have changed and extensions should re-query.
      *
      * @param selector A chat model selector. When omitted all chat models are returned.
      * @returns An array of chat models, can be empty!
@@ -51,7 +52,7 @@ external object lm {
      * Register a LanguageModelTool. The tool must also be registered in the package.json `languageModelTools` contribution
      * point. A registered tool is available in the {@link lm.tools} list for any extension to see. But in order for it to
      * be seen by a language model, it must be passed in the list of available tools in {@link LanguageModelChatRequestOptions.tools}.
-     * @returns A {@link Disposable} that unregisters the tool when disposed.
+     * @returns A [Disposable] that unregisters the tool when disposed.
      */
     fun <T : JsAny?> registerTool(
         name: String,
@@ -79,7 +80,7 @@ external object lm {
      * A tool {@link LanguageModelToolResult result} is an array of {@link LanguageModelTextPart text-} and
      * {@link LanguageModelPromptTsxPart prompt-tsx}-parts. If the tool caller is using `@vscode/prompt-tsx`, it can
      * incorporate the response parts into its prompt using a `ToolResult`. If not, the parts can be passed along to the
-     * {@link LanguageModelChat} via a user message with a {@link LanguageModelToolResultPart}.
+     * [LanguageModelChat] via a user message with a [LanguageModelToolResultPart].
      *
      * If a chat participant wants to preserve tool results for requests across multiple turns, it can store tool results in
      * the {@link ChatResult.metadata} returned from the handler and retrieve them on the next turn from
@@ -87,7 +88,7 @@ external object lm {
      *
      * @param name The name of the tool to call.
      * @param options The options to use when invoking the tool.
-     * @param token A cancellation token. See {@link CancellationTokenSource} for how to create one.
+     * @param token A cancellation token. See [CancellationTokenSource] for how to create one.
      * @returns The result of the tool invocation.
      */
     fun invokeTool(
@@ -102,7 +103,7 @@ external object lm {
      * addition to those the user creates in their configuration files.
      *
      * Before calling this method, extensions must register the `contributes.mcpServerDefinitionProviders`
-     * extension point with the corresponding {@link id}, for example:
+     * extension point with the corresponding [id], for example:
      *
      * ```js
      * 	"contributes": {

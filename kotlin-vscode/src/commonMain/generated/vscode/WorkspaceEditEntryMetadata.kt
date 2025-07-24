@@ -24,7 +24,7 @@ external interface WorkspaceEditEntryMetadata {
     var description: String?
 
     /**
-     * The icon path or {@link ThemeIcon} for the edit.
+     * The icon path or [ThemeIcon] for the edit.
      */
     var iconPath: IconPath?
 }

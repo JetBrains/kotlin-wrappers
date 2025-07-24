@@ -25,9 +25,9 @@ open external class TreeItem {
     var id: String?
 
     /**
-     * The icon path or {@link ThemeIcon} for the tree item.
+     * The icon path or [ThemeIcon] for the tree item.
      * When `falsy`, {@link ThemeIcon.Folder Folder Theme Icon} is assigned, if item is collapsible otherwise {@link ThemeIcon.File File Theme Icon}.
-     * When a file or folder {@link ThemeIcon} is specified, icon is derived from the current file icon theme for the specified theme icon using {@link TreeItem.resourceUri resourceUri} (if provided).
+     * When a file or folder [ThemeIcon] is specified, icon is derived from the current file icon theme for the specified theme icon using {@link TreeItem.resourceUri resourceUri} (if provided).
      */
     var iconPath: JsAny /* string | IconPath */?
 
@@ -38,10 +38,10 @@ open external class TreeItem {
     var description: JsAny /* string | boolean */?
 
     /**
-     * The {@link Uri} of the resource representing this item.
+     * The [Uri] of the resource representing this item.
      *
      * Will be used to derive the {@link TreeItem.label label}, when it is not provided.
-     * Will be used to derive the icon from current file icon theme, when {@link TreeItem.iconPath iconPath} has {@link ThemeIcon} value.
+     * Will be used to derive the icon from current file icon theme, when {@link TreeItem.iconPath iconPath} has [ThemeIcon] value.
      */
     var resourceUri: Uri?
 
@@ -51,7 +51,7 @@ open external class TreeItem {
     var tooltip: JsAny /* string | MarkdownString */?
 
     /**
-     * The {@link Command} that should be executed when the tree item is selected.
+     * The [Command] that should be executed when the tree item is selected.
      *
      * Please use `vscode.open` or `vscode.diff` as command IDs when the tree item is opening
      * something in the editor. Using these commands ensures that the resulting editor will
@@ -60,7 +60,7 @@ open external class TreeItem {
     var command: Command?
 
     /**
-     * {@link TreeItemCollapsibleState} of the tree item.
+     * [TreeItemCollapsibleState] of the tree item.
      */
     var collapsibleState: TreeItemCollapsibleState?
 
@@ -114,7 +114,7 @@ open external class TreeItem {
 
     /**
      * @param label A human-readable string describing this item
-     * @param collapsibleState {@link TreeItemCollapsibleState} of the tree item. Default is {@link TreeItemCollapsibleState.None}
+     * @param collapsibleState [TreeItemCollapsibleState] of the tree item. Default is {@link TreeItemCollapsibleState.None}
      */
     constructor(
         label: JsAny, /* string | TreeItemLabel */
@@ -122,8 +122,8 @@ open external class TreeItem {
     )
 
     /**
-     * @param resourceUri The {@link Uri} of the resource representing this item.
-     * @param collapsibleState {@link TreeItemCollapsibleState} of the tree item. Default is {@link TreeItemCollapsibleState.None}
+     * @param resourceUri The [Uri] of the resource representing this item.
+     * @param collapsibleState [TreeItemCollapsibleState] of the tree item. Default is {@link TreeItemCollapsibleState.None}
      */
     constructor(
         resourceUri: Uri,

@@ -103,7 +103,7 @@ external interface WorkspaceConfiguration {
      * Retrieve all information about a configuration setting. A configuration value
      * often consists of a *default* value, a global or installation-wide value,
      * a workspace-specific value, folder-specific value
-     * and language-specific values (if {@link WorkspaceConfiguration} is scoped to a language).
+     * and language-specific values (if [WorkspaceConfiguration] is scoped to a language).
      *
      * Also provides all language ids under which the given configuration setting is defined.
      *
@@ -196,7 +196,7 @@ external interface WorkspaceConfiguration {
      *	- window configuration to workspace folder
      *	- configuration to workspace or workspace folder when no workspace is opened.
      *	- configuration to workspace folder when there is no workspace folder settings.
-     *	- configuration to workspace folder when {@link WorkspaceConfiguration} is not scoped to a resource.
+     *	- configuration to workspace folder when [WorkspaceConfiguration] is not scoped to a resource.
      */
     fun update(
         section: String,

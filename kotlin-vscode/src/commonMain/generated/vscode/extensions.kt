@@ -11,7 +11,7 @@ import kotlin.js.JsModule
 
 /**
  * Namespace for dealing with installed extensions. Extensions are represented
- * by an {@link Extension}-interface which enables reflection on them.
+ * by an [Extension]-interface which enables reflection on them.
  *
  * Extension writers can provide APIs to other extensions by returning their API public
  * surface from the `activate`-call.

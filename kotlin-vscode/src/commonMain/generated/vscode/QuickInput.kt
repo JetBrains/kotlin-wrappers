@@ -23,7 +23,7 @@ import js.core.Void
  * {@link QuickInput.dispose} it to allow for freeing up
  * any resources associated with it.
  *
- * See {@link QuickPick} and {@link InputBox} for concrete UIs.
+ * See [QuickPick] and [InputBox] for concrete UIs.
  */
 external interface QuickInput :
     DisposableLike {

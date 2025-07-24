@@ -49,7 +49,7 @@ external interface CommentController :
     ): CommentThread
 
     /**
-     * Optional reaction handler for creating and deleting reactions on a {@link Comment}.
+     * Optional reaction handler for creating and deleting reactions on a [Comment].
      */
     var reactionHandler: (
         comment: Comment,

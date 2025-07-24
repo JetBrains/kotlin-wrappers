@@ -3,7 +3,7 @@
 package vscode
 
 /**
- * Uses the parent {@link Terminal}'s location for the terminal
+ * Uses the parent [Terminal]'s location for the terminal
  */
 external interface TerminalSplitLocationOptions {
     /**

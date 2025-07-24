@@ -120,7 +120,7 @@ external interface ExtensionContext {
     val logUri: Uri
 
     /**
-     * The mode the extension is running in. See {@link ExtensionMode}
+     * The mode the extension is running in. See [ExtensionMode]
      * for possible values and scenarios.
      */
     val extensionMode: ExtensionMode

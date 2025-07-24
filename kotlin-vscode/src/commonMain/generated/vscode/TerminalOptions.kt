@@ -63,19 +63,19 @@ external interface TerminalOptions {
     var message: String?
 
     /**
-     * The icon path or {@link ThemeIcon} for the terminal.
+     * The icon path or [ThemeIcon] for the terminal.
      */
     var iconPath: IconPath?
 
     /**
-     * The icon {@link ThemeColor} for the terminal.
+     * The icon [ThemeColor] for the terminal.
      * The `terminal.ansi*` theme keys are
      * recommended for the best contrast and consistency across themes.
      */
     var color: ThemeColor?
 
     /**
-     * The {@link TerminalLocation} or {@link TerminalEditorLocationOptions} or {@link TerminalSplitLocationOptions} for the terminal.
+     * The [TerminalLocation] or [TerminalEditorLocationOptions] or [TerminalSplitLocationOptions] for the terminal.
      */
     var location: JsAny /* TerminalLocation | TerminalEditorLocationOptions | TerminalSplitLocationOptions */?
 

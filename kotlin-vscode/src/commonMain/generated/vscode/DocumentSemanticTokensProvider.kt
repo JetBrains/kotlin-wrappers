@@ -70,7 +70,7 @@ external interface DocumentSemanticTokensProvider {
      *    [  2,5,3,0,3,  0,5,4,1,0,  3,2,7,2,0 ]
      * ```
      *
-     * @see {@link SemanticTokensBuilder} for a helper to encode tokens as integers.
+     * @see [SemanticTokensBuilder] for a helper to encode tokens as integers.
      * *NOTE*: When doing edits, it is possible that multiple edits occur until the editor decides to invoke the semantic tokens provider.
      * *NOTE*: If the provider cannot temporarily compute semantic tokens, it can indicate this by throwing an error with the message 'Busy'.
      */

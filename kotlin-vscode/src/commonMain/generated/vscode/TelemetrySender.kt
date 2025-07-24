@@ -26,7 +26,7 @@ import kotlin.js.definedExternally
  */
 external interface TelemetrySender {
     /**
-     * Function to send event data without a stacktrace. Used within a {@link TelemetryLogger}
+     * Function to send event data without a stacktrace. Used within a [TelemetryLogger]
      *
      * @param eventName The name of the event which you are logging
      * @param data A serializable key value pair that is being logged
@@ -37,7 +37,7 @@ external interface TelemetrySender {
     )
 
     /**
-     * Function to send an error. Used within a {@link TelemetryLogger}
+     * Function to send an error. Used within a [TelemetryLogger]
      *
      * @param error The error being logged
      * @param data Any additional data to be collected with the exception
@@ -49,7 +49,7 @@ external interface TelemetrySender {
 
     /**
      * Optional flush function which will give this sender a chance to send any remaining events
-     * as its {@link TelemetryLogger} is being disposed
+     * as its [TelemetryLogger] is being disposed
      */
     var flush: (() -> PromiseLike<Void>?)?
 }

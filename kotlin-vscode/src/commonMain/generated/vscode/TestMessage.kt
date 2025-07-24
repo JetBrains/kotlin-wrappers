@@ -58,9 +58,9 @@ open external class TestMessage {
      * ```
      *
      * The command will be called with an object containing:
-     * - `test`: the {@link TestItem} the message is associated with, *if* it
+     * - `test`: the [TestItem] the message is associated with, *if* it
      *    is still present in the {@link TestController.items} collection.
-     * - `message`: the {@link TestMessage} instance.
+     * - `message`: the [TestMessage] instance.
      */
     var contextValue: String?
 

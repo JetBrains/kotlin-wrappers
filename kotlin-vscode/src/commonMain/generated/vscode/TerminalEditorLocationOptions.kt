@@ -3,7 +3,7 @@
 package vscode
 
 /**
- * Assumes a {@link TerminalLocation} of editor and allows specifying a {@link ViewColumn} and
+ * Assumes a [TerminalLocation] of editor and allows specifying a [ViewColumn] and
  * {@link TerminalEditorLocationOptions.preserveFocus preserveFocus } property
  */
 external interface TerminalEditorLocationOptions {
@@ -17,7 +17,7 @@ external interface TerminalEditorLocationOptions {
     var viewColumn: ViewColumn
 
     /**
-     * An optional flag that when `true` will stop the {@link Terminal} from taking focus.
+     * An optional flag that when `true` will stop the [Terminal] from taking focus.
      */
     var preserveFocus: Boolean?
 }

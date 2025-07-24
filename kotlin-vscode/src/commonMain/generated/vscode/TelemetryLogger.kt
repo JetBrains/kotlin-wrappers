@@ -22,7 +22,7 @@ import kotlin.js.definedExternally
 external interface TelemetryLogger :
     DisposableLike {
     /**
-     * An {@link Event} which fires when the enablement state of usage or error telemetry changes.
+     * An [Event] which fires when the enablement state of usage or error telemetry changes.
      */
     val onDidChangeEnableStates: Event<TelemetryLogger>
 

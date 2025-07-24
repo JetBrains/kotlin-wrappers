@@ -9,7 +9,7 @@ import kotlin.js.JsModule
 
 /**
  * A language model response part containing a PromptElementJSON from `@vscode/prompt-tsx`.
- * @see {@link LanguageModelToolResult}
+ * @see [LanguageModelToolResult]
  */
 open external class LanguageModelPromptTsxPart {
     /**

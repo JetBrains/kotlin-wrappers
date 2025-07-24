@@ -14,7 +14,7 @@ external interface FileDecorationProvider {
      *
      * *Note* that this event should be used to propagate information about children.
      *
-     * @see {@link EventEmitter}
+     * @see [EventEmitter]
      */
     var onDidChangeFileDecorations: Event<JsAny /* undefined | Uri | Uri[] */>?
 

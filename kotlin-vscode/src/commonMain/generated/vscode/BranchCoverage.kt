@@ -9,7 +9,7 @@ import kotlin.js.JsModule
 import kotlin.js.definedExternally
 
 /**
- * Contains coverage information for a branch of a {@link StatementCoverage}.
+ * Contains coverage information for a branch of a [StatementCoverage].
  */
 open external class BranchCoverage {
     /**

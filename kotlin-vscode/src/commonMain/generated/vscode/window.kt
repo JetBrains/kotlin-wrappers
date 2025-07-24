@@ -8,6 +8,7 @@ import js.array.ReadonlyArray
 import js.core.JsAny
 import js.core.JsString
 import js.promise.PromiseLike
+import vscode.window.createStatusBarItem
 import kotlin.js.JsModule
 import kotlin.js.definedExternally
 
@@ -35,35 +36,35 @@ external object window {
     var visibleTextEditors: ReadonlyArray<TextEditor>
 
     /**
-     * An {@link Event} which fires when the {@link window.activeTextEditor active editor}
+     * An [Event] which fires when the {@link window.activeTextEditor active editor}
      * has changed. *Note* that the event also fires when the active editor changes
      * to `undefined`.
      */
     val onDidChangeActiveTextEditor: Event<TextEditor?>
 
     /**
-     * An {@link Event} which fires when the array of {@link window.visibleTextEditors visible editors}
+     * An [Event] which fires when the array of {@link window.visibleTextEditors visible editors}
      * has changed.
      */
     val onDidChangeVisibleTextEditors: Event<ReadonlyArray<TextEditor>>
 
     /**
-     * An {@link Event} which fires when the selection in an editor has changed.
+     * An [Event] which fires when the selection in an editor has changed.
      */
     val onDidChangeTextEditorSelection: Event<TextEditorSelectionChangeEvent>
 
     /**
-     * An {@link Event} which fires when the visible ranges of an editor has changed.
+     * An [Event] which fires when the visible ranges of an editor has changed.
      */
     val onDidChangeTextEditorVisibleRanges: Event<TextEditorVisibleRangesChangeEvent>
 
     /**
-     * An {@link Event} which fires when the options of an editor have changed.
+     * An [Event] which fires when the options of an editor have changed.
      */
     val onDidChangeTextEditorOptions: Event<TextEditorOptionsChangeEvent>
 
     /**
-     * An {@link Event} which fires when the view column of an editor has changed.
+     * An [Event] which fires when the view column of an editor has changed.
      */
     val onDidChangeTextEditorViewColumn: Event<TextEditorViewColumnChangeEvent>
 
@@ -73,7 +74,7 @@ external object window {
     val visibleNotebookEditors: ReadonlyArray<NotebookEditor>
 
     /**
-     * An {@link Event} which fires when the {@link window.visibleNotebookEditors visible notebook editors}
+     * An [Event] which fires when the {@link window.visibleNotebookEditors visible notebook editors}
      * has changed.
      */
     val onDidChangeVisibleNotebookEditors: Event<ReadonlyArray<NotebookEditor>>
@@ -86,20 +87,20 @@ external object window {
     val activeNotebookEditor: NotebookEditor?
 
     /**
-     * An {@link Event} which fires when the {@link window.activeNotebookEditor active notebook editor}
+     * An [Event] which fires when the {@link window.activeNotebookEditor active notebook editor}
      * has changed. *Note* that the event also fires when the active editor changes
      * to `undefined`.
      */
     val onDidChangeActiveNotebookEditor: Event<NotebookEditor?>
 
     /**
-     * An {@link Event} which fires when the {@link NotebookEditor.selections notebook editor selections}
+     * An [Event] which fires when the {@link NotebookEditor.selections notebook editor selections}
      * have changed.
      */
     val onDidChangeNotebookEditorSelection: Event<NotebookEditorSelectionChangeEvent>
 
     /**
-     * An {@link Event} which fires when the {@link NotebookEditor.visibleRanges notebook editor visible ranges}
+     * An [Event] which fires when the {@link NotebookEditor.visibleRanges notebook editor visible ranges}
      * have changed.
      */
     val onDidChangeNotebookEditorVisibleRanges: Event<NotebookEditorVisibleRangesChangeEvent>
@@ -116,25 +117,25 @@ external object window {
     val activeTerminal: Terminal?
 
     /**
-     * An {@link Event} which fires when the {@link window.activeTerminal active terminal}
+     * An [Event] which fires when the {@link window.activeTerminal active terminal}
      * has changed. *Note* that the event also fires when the active terminal changes
      * to `undefined`.
      */
     val onDidChangeActiveTerminal: Event<Terminal?>
 
     /**
-     * An {@link Event} which fires when a terminal has been created, either through the
+     * An [Event] which fires when a terminal has been created, either through the
      * {@link window.createTerminal createTerminal} API or commands.
      */
     val onDidOpenTerminal: Event<Terminal>
 
     /**
-     * An {@link Event} which fires when a terminal is disposed.
+     * An [Event] which fires when a terminal is disposed.
      */
     val onDidCloseTerminal: Event<Terminal>
 
     /**
-     * An {@link Event} which fires when a {@link Terminal.state terminal's state} has changed.
+     * An [Event] which fires when a {@link Terminal.state terminal's state} has changed.
      */
     val onDidChangeTerminalState: Event<Terminal>
 
@@ -163,7 +164,7 @@ external object window {
     val state: WindowState
 
     /**
-     * An {@link Event} which fires when the focus or activity state of the current window
+     * An [Event] which fires when the focus or activity state of the current window
      * changes. The value of the event represents whether the window is focused.
      */
     val onDidChangeWindowState: Event<WindowState>
@@ -213,7 +214,7 @@ external object window {
     ): PromiseLike<TextEditor>
 
     /**
-     * Show the given {@link NotebookDocument} in a {@link NotebookEditor notebook editor}.
+     * Show the given [NotebookDocument] in a {@link NotebookEditor notebook editor}.
      *
      * @param document A text document to be shown.
      * @param options {@link NotebookDocumentShowOptions Editor options} to configure the behavior of showing the {@link NotebookEditor notebook editor}.
@@ -503,25 +504,25 @@ external object window {
     ): PromiseLike<JsString?>
 
     /**
-     * Creates a {@link QuickPick} to let the user pick an item from a list
+     * Creates a [QuickPick] to let the user pick an item from a list
      * of items of type T.
      *
      * Note that in many cases the more convenient {@link window.showQuickPick}
      * is easier to use. {@link window.createQuickPick} should be used
      * when {@link window.showQuickPick} does not offer the required flexibility.
      *
-     * @returns A new {@link QuickPick}.
+     * @returns A new [QuickPick].
      */
     fun <T : QuickPickItem> createQuickPick(): QuickPick<T>
 
     /**
-     * Creates a {@link InputBox} to let the user enter some text input.
+     * Creates a [InputBox] to let the user enter some text input.
      *
      * Note that in many cases the more convenient {@link window.showInputBox}
      * is easier to use. {@link window.createInputBox} should be used
      * when {@link window.showInputBox} does not offer the required flexibility.
      *
-     * @returns A new {@link InputBox}.
+     * @returns A new [InputBox].
      */
     fun createInputBox(): InputBox
 
@@ -618,7 +619,7 @@ external object window {
      *
      * @param options A {@linkcode ProgressOptions}-object describing the options to use for showing progress, like its location
      * @param task A callback returning a promise. Progress state can be reported with
-     * the provided {@link Progress}-object.
+     * the provided [Progress]-object.
      *
      * To report discrete progress, use `increment` to indicate how much work has been completed. Each call with
      * a `increment` value will be summed up and reflected as overall progress until 100% is reached (a value of
@@ -661,7 +662,7 @@ external object window {
     /**
      * Creates a status bar {@link StatusBarItem item}.
      *
-     * @see {@link createStatusBarItem} for creating a status bar item with an identifier.
+     * @see [createStatusBarItem] for creating a status bar item with an identifier.
      * @param alignment The alignment of the item.
      * @param priority The priority of the item. Higher values mean the item should be shown more to the left.
      * @returns A new status bar item.
@@ -672,7 +673,7 @@ external object window {
     ): StatusBarItem
 
     /**
-     * Creates a {@link Terminal} with a backing shell process. The cwd of the terminal will be the workspace
+     * Creates a [Terminal] with a backing shell process. The cwd of the terminal will be the workspace
      * directory if it exists.
      *
      * @param name Optional human-readable string which will be used to represent the terminal in the UI.
@@ -690,7 +691,7 @@ external object window {
     ): Terminal
 
     /**
-     * Creates a {@link Terminal} with a backing shell process.
+     * Creates a [Terminal] with a backing shell process.
      *
      * @param options A TerminalOptions object describing the characteristics of the new terminal.
      * @returns A new Terminal.
@@ -699,23 +700,23 @@ external object window {
     fun createTerminal(options: TerminalOptions): Terminal
 
     /**
-     * Creates a {@link Terminal} where an extension controls its input and output.
+     * Creates a [Terminal] where an extension controls its input and output.
      *
-     * @param options An {@link ExtensionTerminalOptions} object describing
+     * @param options An [ExtensionTerminalOptions] object describing
      * the characteristics of the new terminal.
      * @returns A new Terminal.
      */
     fun createTerminal(options: ExtensionTerminalOptions): Terminal
 
     /**
-     * Register a {@link TreeDataProvider} for the view contributed using the extension point `views`.
-     * This will allow you to contribute data to the {@link TreeView} and update if the data changes.
+     * Register a [TreeDataProvider] for the view contributed using the extension point `views`.
+     * This will allow you to contribute data to the [TreeView] and update if the data changes.
      *
-     * **Note:** To get access to the {@link TreeView} and perform operations on it, use {@link window.createTreeView createTreeView}.
+     * **Note:** To get access to the [TreeView] and perform operations on it, use {@link window.createTreeView createTreeView}.
      *
      * @param viewId Id of the view contributed using the extension point `views`.
-     * @param treeDataProvider A {@link TreeDataProvider} that provides tree data for the view
-     * @returns A {@link Disposable disposable} that unregisters the {@link TreeDataProvider}.
+     * @param treeDataProvider A [TreeDataProvider] that provides tree data for the view
+     * @returns A {@link Disposable disposable} that unregisters the [TreeDataProvider].
      */
     fun <T : JsAny?> registerTreeDataProvider(
         viewId: String,
@@ -723,10 +724,10 @@ external object window {
     ): Disposable
 
     /**
-     * Create a {@link TreeView} for the view contributed using the extension point `views`.
+     * Create a [TreeView] for the view contributed using the extension point `views`.
      * @param viewId Id of the view contributed using the extension point `views`.
-     * @param options Options for creating the {@link TreeView}
-     * @returns a {@link TreeView}.
+     * @param options Options for creating the [TreeView]
+     * @returns a [TreeView].
      */
     fun <T : JsAny?> createTreeView(
         viewId: String,
@@ -871,8 +872,8 @@ external object window {
     /**
      * Register a file decoration provider.
      *
-     * @param provider A {@link FileDecorationProvider}.
-     * @returns A {@link Disposable} that unregisters the provider.
+     * @param provider A [FileDecorationProvider].
+     * @returns A [Disposable] that unregisters the provider.
      */
     fun registerFileDecorationProvider(provider: FileDecorationProvider): Disposable
 
@@ -883,7 +884,7 @@ external object window {
     var activeColorTheme: ColorTheme
 
     /**
-     * An {@link Event} which fires when the active color theme is changed or has changes.
+     * An [Event] which fires when the active color theme is changed or has changes.
      */
     val onDidChangeActiveColorTheme: Event<ColorTheme>
 }

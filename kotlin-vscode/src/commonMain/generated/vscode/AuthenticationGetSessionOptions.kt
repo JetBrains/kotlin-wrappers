@@ -5,7 +5,7 @@ package vscode
 import js.core.JsAny
 
 /**
- * Options to be used when getting an {@link AuthenticationSession} from an {@link AuthenticationProvider}.
+ * Options to be used when getting an [AuthenticationSession] from an [AuthenticationProvider].
  */
 external interface AuthenticationGetSessionOptions {
     /**

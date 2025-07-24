@@ -10,7 +10,7 @@ external interface WorkspaceFolder {
     /**
      * The associated uri for this workspace folder.
      *
-     * *Note:* The {@link Uri}-type was intentionally chosen such that future releases of the editor can support
+     * *Note:* The [Uri]-type was intentionally chosen such that future releases of the editor can support
      * workspace folders that are not stored on the local disk, e.g. `ftp://server/workspaces/foo`.
      */
     val uri: Uri

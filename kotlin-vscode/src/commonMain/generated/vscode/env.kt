@@ -74,13 +74,13 @@ external object env {
     val isTelemetryEnabled: Boolean
 
     /**
-     * An {@link Event} which fires when the user enabled or disables telemetry.
+     * An [Event] which fires when the user enabled or disables telemetry.
      * `true` if the user has enabled telemetry or `false` if the user has disabled telemetry.
      */
     val onDidChangeTelemetryEnabled: Event<JsBoolean>
 
     /**
-     * An {@link Event} which fires when the default shell changes. This fires with the new
+     * An [Event] which fires when the default shell changes. This fires with the new
      * shell path.
      */
     val onDidChangeShell: Event<JsString>
@@ -155,7 +155,7 @@ external object env {
      *
      * #### `vscode.env.uriScheme`
      *
-     * Creates a uri that - if opened in a browser (e.g. via `openExternal`) - will result in a registered {@link UriHandler}
+     * Creates a uri that - if opened in a browser (e.g. via `openExternal`) - will result in a registered [UriHandler]
      * to trigger.
      *
      * Extensions should not make any assumptions about the resulting uri and should not alter it in any way.
@@ -163,7 +163,7 @@ external object env {
      * argument to the server to authenticate to.
      *
      * *Note* that if the server decides to add additional query parameters to the uri (e.g. a token or secret), it
-     * will appear in the uri that is passed to the {@link UriHandler}.
+     * will appear in the uri that is passed to the [UriHandler].
      *
      * **Example** of an authentication flow:
      * ```typescript
@@ -198,7 +198,7 @@ external object env {
     val logLevel: LogLevel
 
     /**
-     * An {@link Event} which fires when the log level of the editor changes.
+     * An [Event] which fires when the log level of the editor changes.
      */
     val onDidChangeLogLevel: Event<LogLevel>
 }

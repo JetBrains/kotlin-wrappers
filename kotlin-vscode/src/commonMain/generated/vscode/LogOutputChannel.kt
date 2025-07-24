@@ -18,7 +18,7 @@ external interface LogOutputChannel :
     val logLevel: LogLevel
 
     /**
-     * An {@link Event} which fires when the log level of the channel changes.
+     * An [Event] which fires when the log level of the channel changes.
      */
     val onDidChangeLogLevel: Event<LogLevel>
 

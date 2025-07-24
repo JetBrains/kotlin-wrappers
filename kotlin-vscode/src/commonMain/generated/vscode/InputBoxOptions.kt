@@ -53,7 +53,7 @@ external interface InputBoxOptions {
      * to the user.
      *
      * @param value The current value of the input box.
-     * @returns Either a human-readable string which is presented as an error message or an {@link InputBoxValidationMessage}
+     * @returns Either a human-readable string which is presented as an error message or an [InputBoxValidationMessage]
      *  which can provide a specific message severity. Return `undefined`, `null`, or the empty string when 'value' is valid.
      */
     /*

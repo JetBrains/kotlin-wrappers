@@ -8,7 +8,7 @@ import kotlin.js.JsModule
 import kotlin.js.definedExternally
 
 /**
- * A code lens represents a {@link Command} that should be shown along with
+ * A code lens represents a [Command] that should be shown along with
  * source text, like the number of references, a way to run tests, etc.
  *
  * A code lens is _unresolved_ when no command is associated to it. For performance

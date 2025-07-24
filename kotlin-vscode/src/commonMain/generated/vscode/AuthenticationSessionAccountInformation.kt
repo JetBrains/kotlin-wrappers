@@ -3,7 +3,7 @@
 package vscode
 
 /**
- * The information of an account associated with an {@link AuthenticationSession}.
+ * The information of an account associated with an [AuthenticationSession].
  */
 external interface AuthenticationSessionAccountInformation {
     /**

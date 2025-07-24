@@ -64,13 +64,13 @@ external interface LanguageModelChat {
      * - other issues in which case extension must check {@link LanguageModelError.cause `LanguageModelError.cause`}
      *
      * An extension can make use of language model tool calling by passing a set of tools to
-     * {@link LanguageModelChatRequestOptions.tools}. The language model will return a {@link LanguageModelToolCallPart} and
+     * {@link LanguageModelChatRequestOptions.tools}. The language model will return a [LanguageModelToolCallPart] and
      * the extension can invoke the tool and make another request with the result.
      *
      * @param messages An array of message instances.
      * @param options Options that control the request.
-     * @param token A cancellation token which controls the request. See {@link CancellationTokenSource} for how to create one.
-     * @returns A thenable that resolves to a {@link LanguageModelChatResponse}. The promise will reject when the request couldn't be made.
+     * @param token A cancellation token which controls the request. See [CancellationTokenSource] for how to create one.
+     * @returns A thenable that resolves to a [LanguageModelChatResponse]. The promise will reject when the request couldn't be made.
      */
     fun sendRequest(
         messages: ReadonlyArray<LanguageModelChatMessage>,
@@ -82,7 +82,7 @@ external interface LanguageModelChat {
      * Count the number of tokens in a message using the model specific tokenizer-logic.
 
      * @param text A string or a message instance.
-     * @param token Optional cancellation token.  See {@link CancellationTokenSource} for how to create one.
+     * @param token Optional cancellation token.  See [CancellationTokenSource] for how to create one.
      * @returns A thenable that resolves to the number of tokens.
      */
     fun countTokens(

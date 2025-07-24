@@ -9,13 +9,13 @@ import js.iterable.AsyncIterable
 /**
  * Represents a language model response.
  *
- * @see {@link ChatRequest}
+ * @see [ChatRequest]
  */
 external interface LanguageModelChatResponse {
     /**
      * An async iterable that is a stream of text and tool-call parts forming the overall response. A
-     * {@link LanguageModelTextPart} is part of the assistant's response to be shown to the user. A
-     * {@link LanguageModelToolCallPart} is a request from the language model to call a tool. The latter will
+     * [LanguageModelTextPart] is part of the assistant's response to be shown to the user. A
+     * [LanguageModelToolCallPart] is a request from the language model to call a tool. The latter will
      * only be returned if tools were passed in the request via {@link LanguageModelChatRequestOptions.tools}. The
      * `unknown`-type is used as a placeholder for future parts, like image data parts.
      *

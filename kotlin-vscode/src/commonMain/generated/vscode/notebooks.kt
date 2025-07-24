@@ -15,8 +15,8 @@ import kotlin.js.definedExternally
  *
  * The notebooks functionality is composed of three loosely coupled components:
  *
- * 1. {@link NotebookSerializer} enable the editor to open, show, and save notebooks
- * 2. {@link NotebookController} own the execution of notebooks, e.g they create output from code cells.
+ * 1. [NotebookSerializer] enable the editor to open, show, and save notebooks
+ * 2. [NotebookController] own the execution of notebooks, e.g they create output from code cells.
  * 3. NotebookRenderer present notebook output in the editor. They run in a separate context.
  */
 external object notebooks {
@@ -45,7 +45,7 @@ external object notebooks {
      *
      * @param notebookType The notebook type to register for.
      * @param provider A cell status bar provider.
-     * @returns A {@link Disposable} that unregisters this provider when being disposed.
+     * @returns A [Disposable] that unregisters this provider when being disposed.
      */
     fun registerNotebookCellStatusBarItemProvider(
         notebookType: String,

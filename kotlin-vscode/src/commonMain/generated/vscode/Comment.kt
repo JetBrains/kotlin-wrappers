@@ -46,12 +46,12 @@ external interface Comment {
     var contextValue: String?
 
     /**
-     * Optional reactions of the {@link Comment}
+     * Optional reactions of the [Comment]
      */
     var reactions: ReadonlyArray<CommentReaction>?
 
     /**
-     * Optional label describing the {@link Comment}
+     * Optional label describing the [Comment]
      * Label will be rendered next to authorName if exists.
      */
     var label: String?

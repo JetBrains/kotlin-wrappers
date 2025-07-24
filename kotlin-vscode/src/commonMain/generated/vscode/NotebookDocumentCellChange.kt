@@ -9,7 +9,7 @@ import js.objects.Record
 /**
  * Describes a change to a notebook cell.
  *
- * @see {@link NotebookDocumentChangeEvent}
+ * @see [NotebookDocumentChangeEvent]
  */
 external interface NotebookDocumentCellChange {
     /**

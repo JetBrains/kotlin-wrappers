@@ -10,7 +10,7 @@ import js.core.JsAny
  * for completion items because the user continued to type.
  *
  * To get an instance of a `CancellationToken` use a
- * {@link CancellationTokenSource}.
+ * [CancellationTokenSource].
  */
 external interface CancellationToken {
     /**
@@ -19,7 +19,7 @@ external interface CancellationToken {
     var isCancellationRequested: Boolean
 
     /**
-     * An {@link Event} which fires upon cancellation.
+     * An [Event] which fires upon cancellation.
      */
     var onCancellationRequested: Event<JsAny?>
 }

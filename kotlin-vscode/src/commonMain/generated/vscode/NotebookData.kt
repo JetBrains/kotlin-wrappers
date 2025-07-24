@@ -15,7 +15,7 @@ import kotlin.js.JsModule
  * Extensions are responsible for creating {@linkcode NotebookData} so that the editor
  * can create a {@linkcode NotebookDocument}.
  *
- * @see {@link NotebookSerializer}
+ * @see [NotebookSerializer]
  */
 open external class NotebookData {
     /**

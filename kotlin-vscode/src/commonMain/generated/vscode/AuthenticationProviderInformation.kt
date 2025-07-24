@@ -3,7 +3,7 @@
 package vscode
 
 /**
- * Basic information about an {@link AuthenticationProvider}
+ * Basic information about an [AuthenticationProvider]
  */
 external interface AuthenticationProviderInformation {
     /**

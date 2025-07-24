@@ -61,7 +61,7 @@ open external class FileCoverage {
 
     companion object {
         /**
-         * Creates a {@link FileCoverage} instance with counts filled in from
+         * Creates a [FileCoverage] instance with counts filled in from
          * the coverage details.
          * @param uri Covered file URI
          * @param detailed Detailed coverage information

@@ -12,7 +12,7 @@ import js.promise.PromiseLike
  */
 external interface AuthenticationProvider {
     /**
-     * An {@link Event} which fires when the array of sessions has changed, or data
+     * An [Event] which fires when the array of sessions has changed, or data
      * within a session has changed.
      */
     val onDidChangeSessions: Event<AuthenticationProviderAuthenticationSessionsChangeEvent>

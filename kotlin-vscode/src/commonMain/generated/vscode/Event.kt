@@ -22,7 +22,7 @@ external interface Event<T : JsAny?> {
      *
      * @param listener The listener function will be called when the event happens.
      * @param thisArgs The `this`-argument which will be used when calling the event listener.
-     * @param disposables An array to which a {@link Disposable} will be added.
+     * @param disposables An array to which a [Disposable] will be added.
      * @returns A disposable which unsubscribes the event listener.
      */
     operator fun invoke(

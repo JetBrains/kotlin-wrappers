@@ -5,7 +5,7 @@ package vscode
 import js.core.JsAny
 
 /**
- * Options for creating a {@link TreeView}
+ * Options for creating a [TreeView]
  */
 external interface TreeViewOptions<T : JsAny?> {
     /**

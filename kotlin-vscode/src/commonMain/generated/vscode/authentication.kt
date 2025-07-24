@@ -8,6 +8,7 @@ import js.array.ReadonlyArray
 import js.core.JsAny
 import js.core.JsString
 import js.promise.PromiseLike
+import vscode.authentication.getSession
 import kotlin.js.JsModule
 import kotlin.js.definedExternally
 
@@ -25,7 +26,7 @@ external object authentication {
      * to the editor that implement GitHub and Microsoft authentication: their providerId's are 'github' and 'microsoft'.
      * @param providerId The id of the provider to use
      * @param scopes A list of scopes representing the permissions requested. These are dependent on the authentication provider
-     * @param options The {@link AuthenticationGetSessionOptions} to use
+     * @param options The [AuthenticationGetSessionOptions] to use
      * @returns A thenable that resolves to an authentication session
      */
     fun getSession(
@@ -44,7 +45,7 @@ external object authentication {
      * to the editor that implement GitHub and Microsoft authentication: their providerId's are 'github' and 'microsoft'.
      * @param providerId The id of the provider to use
      * @param scopes A list of scopes representing the permissions requested. These are dependent on the authentication provider
-     * @param options The {@link AuthenticationGetSessionOptions} to use
+     * @param options The [AuthenticationGetSessionOptions] to use
      * @returns A thenable that resolves to an authentication session
      */
     // getSession(providerId: string, scopes: readonly string[], options: AuthenticationGetSessionOptions & { /** literal-type defines return type */forceNewSession: true | AuthenticationGetSessionPresentationOptions | AuthenticationForceNewSessionOptions }): Thenable<AuthenticationSession>
@@ -59,7 +60,7 @@ external object authentication {
      * to the editor that implement GitHub and Microsoft authentication: their providerId's are 'github' and 'microsoft'.
      * @param providerId The id of the provider to use
      * @param scopes A list of scopes representing the permissions requested. These are dependent on the authentication provider
-     * @param options The {@link AuthenticationGetSessionOptions} to use
+     * @param options The [AuthenticationGetSessionOptions] to use
      * @returns A thenable that resolves to an authentication session if available, or undefined if there are no sessions
      */
     fun getSession(
@@ -70,12 +71,12 @@ external object authentication {
 
     /**
      * Get all accounts that the user is logged in to for the specified provider.
-     * Use this paired with {@link getSession} in order to get an authentication session for a specific account.
+     * Use this paired with [getSession] in order to get an authentication session for a specific account.
      *
      * Currently, there are only two authentication providers that are contributed from built in extensions
      * to the editor that implement GitHub and Microsoft authentication: their providerId's are 'github' and 'microsoft'.
      *
-     * Note: Getting accounts does not imply that your extension has access to that account or its authentication sessions. You can verify access to the account by calling {@link getSession}.
+     * Note: Getting accounts does not imply that your extension has access to that account or its authentication sessions. You can verify access to the account by calling [getSession].
      *
      * @param providerId The id of the provider to use
      * @returns A thenable that resolves to a readonly array of authentication accounts.
@@ -83,7 +84,7 @@ external object authentication {
     fun getAccounts(providerId: String): PromiseLike<ReadonlyArray<AuthenticationSessionAccountInformation>>
 
     /**
-     * An {@link Event} which fires when the authentication sessions of an authentication provider have
+     * An [Event] which fires when the authentication sessions of an authentication provider have
      * been added, removed, or changed.
      */
     val onDidChangeSessions: Event<AuthenticationSessionsChangeEvent>
@@ -98,7 +99,7 @@ external object authentication {
      * @param label The human-readable name of the provider.
      * @param provider The authentication provider provider.
      * @param options Additional options for the provider.
-     * @returns A {@link Disposable} that unregisters this provider when being disposed.
+     * @returns A [Disposable] that unregisters this provider when being disposed.
      */
     fun registerAuthenticationProvider(
         id: String,

@@ -11,7 +11,7 @@ import js.core.Void
  */
 external interface UriHandler {
     /**
-     * Handle the provided system-wide {@link Uri}.
+     * Handle the provided system-wide [Uri].
      *
      * @see {@link window.registerUriHandler}.
      */

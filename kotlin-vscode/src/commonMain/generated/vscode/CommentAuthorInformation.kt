@@ -3,7 +3,7 @@
 package vscode
 
 /**
- * Author information of a {@link Comment}
+ * Author information of a [Comment]
  */
 external interface CommentAuthorInformation {
     /**

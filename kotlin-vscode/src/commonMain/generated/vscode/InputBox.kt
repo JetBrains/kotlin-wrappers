@@ -10,7 +10,7 @@ import js.core.JsString
 import js.core.Void
 
 /**
- * A concrete {@link QuickInput} to let the user input a text value.
+ * A concrete [QuickInput] to let the user input a text value.
  *
  * Note that in many cases the more convenient {@link window.showInputBox}
  * is easier to use. {@link window.createInputBox} should be used
@@ -71,7 +71,7 @@ external interface InputBox :
 
     /**
      * An optional validation message indicating a problem with the current input value.
-     * By returning a string, the InputBox will use a default {@link InputBoxValidationSeverity} of Error.
+     * By returning a string, the InputBox will use a default [InputBoxValidationSeverity] of Error.
      * Returning undefined clears the validation message.
      */
     var validationMessage: JsAny /* string | InputBoxValidationMessage */?

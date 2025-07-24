@@ -27,7 +27,7 @@ external interface TestController :
     var label: String
 
     /**
-     * A collection of "top-level" {@link TestItem} instances, which can in
+     * A collection of "top-level" [TestItem] instances, which can in
      * turn have their own {@link TestItem.children children} to form the
      * "test tree."
      *
@@ -36,7 +36,7 @@ external interface TestController :
      * fires in order for decorations for tests within a file to be visible.
      *
      * However, the editor may sometimes explicitly request children using the
-     * {@link resolveHandler} See the documentation on that method for more details.
+     * [resolveHandler] See the documentation on that method for more details.
      */
     val items: TestItemCollection
 
@@ -49,7 +49,7 @@ external interface TestController :
      * @param isDefault Whether this is the default action for its kind.
      * @param tag Profile test tag.
      * @param supportsContinuousRun Whether the profile supports continuous running.
-     * @returns An instance of a {@link TestRunProfile}, which is automatically
+     * @returns An instance of a [TestRunProfile], which is automatically
      * associated with this controller.
      */
     fun createRunProfile(
@@ -91,15 +91,15 @@ external interface TestController :
      * removed tests.
      *
      * It's recommended that extensions try to update tests in realtime, using
-     * a {@link FileSystemWatcher} for example, and use this method as a fallback.
+     * a [FileSystemWatcher] for example, and use this method as a fallback.
      *
      * @returns A thenable that resolves when tests have been refreshed.
      */
     var refreshHandler: ((token: CancellationToken) -> PromiseLike<Void>?)?
 
     /**
-     * Creates a {@link TestRun}. This should be called by the
-     * {@link TestRunProfile} when a request is made to execute tests, and may
+     * Creates a [TestRun]. This should be called by the
+     * [TestRunProfile] when a request is made to execute tests, and may
      * also be called if a test run is detected externally. Once created, tests
      * that are included in the request will be moved into the queued state.
      *
@@ -115,7 +115,7 @@ external interface TestController :
      * @param persist Whether the results created by the run should be
      * persisted in the editor. This may be false if the results are coming from
      * a file already saved externally, such as a coverage information file.
-     * @returns An instance of the {@link TestRun}. It will be considered "running"
+     * @returns An instance of the [TestRun]. It will be considered "running"
      * from the moment this method is invoked until {@link TestRun.end} is called.
      */
     fun createTestRun(
@@ -125,12 +125,12 @@ external interface TestController :
     ): TestRun
 
     /**
-     * Creates a new managed {@link TestItem} instance. It can be added into
+     * Creates a new managed [TestItem] instance. It can be added into
      * the {@link TestItem.children} of an existing item, or into the
      * {@link TestController.items}.
      *
      * @param id Identifier for the TestItem. The test item's ID must be unique
-     * in the {@link TestItemCollection} it's added to.
+     * in the [TestItemCollection] it's added to.
      * @param label Human-readable label of the test item.
      * @param uri URI this TestItem is associated with. May be a file or directory.
      */

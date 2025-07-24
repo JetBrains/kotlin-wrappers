@@ -13,7 +13,7 @@ external interface DocumentPasteEditProvider<T : DocumentPasteEdit> {
     /**
      * Optional method invoked after the user copies from a {@link TextEditor text editor}.
      *
-     * This allows the provider to attach metadata about the copied text to the {@link DataTransfer}. This data
+     * This allows the provider to attach metadata about the copied text to the [DataTransfer]. This data
      * transfer is then passed back to providers in {@linkcode provideDocumentPasteEdits}.
      *
      * Note that currently any changes to the {@linkcode DataTransfer} are isolated to the current editor window.

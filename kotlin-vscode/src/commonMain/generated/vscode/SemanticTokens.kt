@@ -11,7 +11,7 @@ import kotlin.js.definedExternally
 /**
  * Represents semantic tokens, either in a range or in an entire document.
  * @see {@link DocumentSemanticTokensProvider.provideDocumentSemanticTokens provideDocumentSemanticTokens} for an explanation of the format.
- * @see {@link SemanticTokensBuilder} for a helper to create an instance.
+ * @see [SemanticTokensBuilder] for a helper to create an instance.
  */
 open external class SemanticTokens {
     /**

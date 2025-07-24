@@ -27,12 +27,12 @@ external interface LanguageModelChatRequestOptions {
      * An optional list of tools that are available to the language model. These could be registered tools available via
      * {@link lm.tools}, or private tools that are just implemented within the calling extension.
      *
-     * If the LLM requests to call one of these tools, it will return a {@link LanguageModelToolCallPart} in
+     * If the LLM requests to call one of these tools, it will return a [LanguageModelToolCallPart] in
      * {@link LanguageModelChatResponse.stream}. It's the caller's responsibility to invoke the tool. If it's a tool
      * registered in {@link lm.tools}, that means calling {@link lm.invokeTool}.
      *
-     * Then, the tool result can be provided to the LLM by creating an Assistant-type {@link LanguageModelChatMessage} with a
-     * {@link LanguageModelToolCallPart}, followed by a User-type message with a {@link LanguageModelToolResultPart}.
+     * Then, the tool result can be provided to the LLM by creating an Assistant-type [LanguageModelChatMessage] with a
+     * [LanguageModelToolCallPart], followed by a User-type message with a [LanguageModelToolResultPart].
      */
     var tools: ReadonlyArray<LanguageModelChatTool>?
 

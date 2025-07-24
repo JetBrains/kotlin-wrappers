@@ -18,7 +18,7 @@ external interface LanguageModelToolTokenizationOptions {
     /**
      * Count the number of tokens in a message using the model specific tokenizer-logic.
      * @param text A string.
-     * @param token Optional cancellation token.  See {@link CancellationTokenSource} for how to create one.
+     * @param token Optional cancellation token.  See [CancellationTokenSource] for how to create one.
      * @returns A thenable that resolves to the number of tokens.
      */
     fun countTokens(

@@ -37,7 +37,7 @@ open external class InlineCompletionItem {
     var range: Range?
 
     /**
-     * An optional {@link Command} that is executed *after* inserting this completion.
+     * An optional [Command] that is executed *after* inserting this completion.
      */
     var command: Command?
 
@@ -46,7 +46,7 @@ open external class InlineCompletionItem {
      *
      * @param insertText The text to replace the range with.
      * @param range The range to replace. If not set, the word at the requested position will be used.
-     * @param command An optional {@link Command} that is executed *after* inserting this completion.
+     * @param command An optional [Command] that is executed *after* inserting this completion.
      */
     constructor(
         insertText: JsAny, /* string | SnippetString */

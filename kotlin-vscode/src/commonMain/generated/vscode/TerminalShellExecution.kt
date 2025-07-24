@@ -37,7 +37,7 @@ external interface TerminalShellExecution {
 
     /**
      * The working directory that was reported by the shell when this command executed. This
-     * {@link Uri} may represent a file on another machine (eg. ssh into another machine). This
+     * [Uri] may represent a file on another machine (eg. ssh into another machine). This
      * requires the shell integration to support working directory reporting.
      */
     val cwd: Uri?

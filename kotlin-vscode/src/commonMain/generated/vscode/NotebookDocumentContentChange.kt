@@ -7,7 +7,7 @@ import js.array.ReadonlyArray
 /**
  * Describes a structural change to a notebook document, e.g newly added and removed cells.
  *
- * @see {@link NotebookDocumentChangeEvent}
+ * @see [NotebookDocumentChangeEvent]
  */
 external interface NotebookDocumentContentChange {
     /**

@@ -19,9 +19,9 @@ external interface TreeDataProvider<T : JsAny?> {
     var onDidChangeTreeData: Event<JsAny /* T | T[] | undefined | null | void */>?
 
     /**
-     * Get {@link TreeItem} representation of the `element`
+     * Get [TreeItem] representation of the `element`
      *
-     * @param element The element for which {@link TreeItem} representation is asked for.
+     * @param element The element for which [TreeItem] representation is asked for.
      * @returns TreeItem representation of the element.
      */
     fun getTreeItem(element: T): PromiseResult<TreeItem>

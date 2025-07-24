@@ -5,11 +5,11 @@ package vscode
 import js.array.ReadonlyArray
 
 /**
- * Metadata about the type of code actions that a {@link CodeActionProvider} provides.
+ * Metadata about the type of code actions that a [CodeActionProvider] provides.
  */
 external interface CodeActionProviderMetadata {
     /**
-     * List of {@link CodeActionKind CodeActionKinds} that a {@link CodeActionProvider} may return.
+     * List of {@link CodeActionKind CodeActionKinds} that a [CodeActionProvider] may return.
      *
      * This list is used to determine if a given `CodeActionProvider` should be invoked or not.
      * To avoid unnecessary computation, every `CodeActionProvider` should list use `providedCodeActionKinds`. The

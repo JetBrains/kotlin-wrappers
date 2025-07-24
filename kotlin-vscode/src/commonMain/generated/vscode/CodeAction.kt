@@ -31,7 +31,7 @@ open external class CodeAction {
     var diagnostics: ReadonlyArray<Diagnostic>?
 
     /**
-     * A {@link Command} this code action executes.
+     * A [Command] this code action executes.
      *
      * If this command throws an exception, the editor displays the exception message to users in the editor at the
      * current cursor position.

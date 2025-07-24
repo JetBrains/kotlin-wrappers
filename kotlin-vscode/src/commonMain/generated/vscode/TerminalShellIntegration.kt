@@ -10,7 +10,7 @@ import js.core.JsString
  */
 external interface TerminalShellIntegration {
     /**
-     * The current working directory of the terminal. This {@link Uri} may represent a file on
+     * The current working directory of the terminal. This [Uri] may represent a file on
      * another machine (eg. ssh into another machine). This requires the shell integration to
      * support working directory reporting.
      */

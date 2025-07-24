@@ -45,7 +45,7 @@ external interface Terminal :
     val exitStatus: TerminalExitStatus?
 
     /**
-     * The current state of the {@link Terminal}.
+     * The current state of the [Terminal].
      */
     val state: TerminalState
 

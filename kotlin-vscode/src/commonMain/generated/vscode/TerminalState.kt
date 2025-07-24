@@ -3,11 +3,11 @@
 package vscode
 
 /**
- * Represents the state of a {@link Terminal}.
+ * Represents the state of a [Terminal].
  */
 external interface TerminalState {
     /**
-     * Whether the {@link Terminal} has been interacted with. Interaction means that the
+     * Whether the [Terminal] has been interacted with. Interaction means that the
      * terminal has sent data to the process which depending on the terminal's _mode_. By
      * default input is sent when a key is pressed or when a command or extension sends text,
      * but based on the terminal's mode it can also happen on:
@@ -23,7 +23,7 @@ external interface TerminalState {
     val isInteractedWith: Boolean
 
     /**
-     * The detected shell type of the {@link Terminal}. This will be `undefined` when there is
+     * The detected shell type of the [Terminal]. This will be `undefined` when there is
      * not a clear signal as to what the shell is, or the shell is not supported yet. This
      * value should change to the shell type of a sub-shell when launched (for example, running
      * `bash` inside `zsh`).

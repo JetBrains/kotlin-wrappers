@@ -20,7 +20,7 @@ external interface NotebookDocument {
      * *Note* that most notebooks use the `file`-scheme, which means they are files on disk. However, **not** all notebooks are
      * saved on disk and therefore the `scheme` must be checked before trying to access the underlying file or siblings on disk.
      *
-     * @see {@link FileSystemProvider}
+     * @see [FileSystemProvider]
      */
     val uri: Uri
 

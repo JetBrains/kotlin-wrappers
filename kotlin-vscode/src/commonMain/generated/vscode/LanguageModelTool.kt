@@ -5,7 +5,7 @@ package vscode
 import js.core.JsAny
 
 /**
- * A tool that can be invoked by a call to a {@link LanguageModelChat}.
+ * A tool that can be invoked by a call to a [LanguageModelChat].
  */
 external interface LanguageModelTool<T : JsAny?> {
     /**

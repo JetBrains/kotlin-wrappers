@@ -6,6 +6,6 @@ import js.core.JsAny
 
 /**
  * Definitions that describe different types of Model Context Protocol servers,
- * which can be returned from the {@link McpServerDefinitionProvider}.
+ * which can be returned from the [McpServerDefinitionProvider].
  */
 typealias McpServerDefinition = JsAny /* McpStdioServerDefinition | McpHttpServerDefinition */

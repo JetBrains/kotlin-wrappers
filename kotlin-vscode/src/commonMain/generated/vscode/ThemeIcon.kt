@@ -22,14 +22,14 @@ open external class ThemeIcon {
     val id: String
 
     /**
-     * The optional ThemeColor of the icon. The color is currently only used in {@link TreeItem}.
+     * The optional ThemeColor of the icon. The color is currently only used in [TreeItem].
      */
     val color: ThemeColor?
 
     /**
      * Creates a reference to a theme icon.
      * @param id id of the icon. The available icons are listed in https://code.visualstudio.com/api/references/icons-in-labels#icon-listing.
-     * @param color optional `ThemeColor` for the icon. The color is currently only used in {@link TreeItem}.
+     * @param color optional `ThemeColor` for the icon. The color is currently only used in [TreeItem].
      */
     constructor(
         id: String,

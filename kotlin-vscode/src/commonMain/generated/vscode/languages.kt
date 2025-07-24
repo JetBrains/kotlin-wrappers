@@ -21,7 +21,7 @@ import kotlin.js.definedExternally
  *
  * The editor provides an API that makes it simple to provide such common features by having all UI and actions already in place and
  * by allowing you to participate by providing data only. For instance, to contribute a hover all you have to do is provide a function
- * that can be called with a {@link TextDocument} and a {@link Position} returning hover info. The rest, like tracking the
+ * that can be called with a [TextDocument] and a [Position] returning hover info. The rest, like tracking the
  * mouse, positioning the hover, keeping the hover stable etc. is taken care of by the editor.
  *
  * ```javascript
@@ -113,7 +113,7 @@ external object languages {
     ): Int
 
     /**
-     * An {@link Event} which fires when the global set of diagnostics changes. This is
+     * An [Event] which fires when the global set of diagnostics changes. This is
      * newly added and removed diagnostics.
      */
     val onDidChangeDiagnostics: Event<DiagnosticChangeEvent>
@@ -170,7 +170,7 @@ external object languages {
      * @param selector A selector that defines the documents this provider is applicable to.
      * @param provider A completion provider.
      * @param triggerCharacters Trigger completion when the user types one of the characters.
-     * @returns A {@link Disposable} that unregisters this provider when being disposed.
+     * @returns A [Disposable] that unregisters this provider when being disposed.
      */
     fun registerCompletionItemProvider(
         selector: DocumentSelector,
@@ -187,7 +187,7 @@ external object languages {
      *
      * @param selector A selector that defines the documents this provider is applicable to.
      * @param provider An inline completion provider.
-     * @returns A {@link Disposable} that unregisters this provider when being disposed.
+     * @returns A [Disposable] that unregisters this provider when being disposed.
      */
     fun registerInlineCompletionItemProvider(
         selector: DocumentSelector,
@@ -204,7 +204,7 @@ external object languages {
      * @param selector A selector that defines the documents this provider is applicable to.
      * @param provider A code action provider.
      * @param metadata Metadata about the kind of code actions the provider provides.
-     * @returns A {@link Disposable} that unregisters this provider when being disposed.
+     * @returns A [Disposable] that unregisters this provider when being disposed.
      */
     fun registerCodeActionsProvider(
         selector: DocumentSelector,
@@ -221,7 +221,7 @@ external object languages {
      *
      * @param selector A selector that defines the documents this provider is applicable to.
      * @param provider A code lens provider.
-     * @returns A {@link Disposable} that unregisters this provider when being disposed.
+     * @returns A [Disposable] that unregisters this provider when being disposed.
      */
     fun registerCodeLensProvider(
         selector: DocumentSelector,
@@ -237,7 +237,7 @@ external object languages {
      *
      * @param selector A selector that defines the documents this provider is applicable to.
      * @param provider A definition provider.
-     * @returns A {@link Disposable} that unregisters this provider when being disposed.
+     * @returns A [Disposable] that unregisters this provider when being disposed.
      */
     fun registerDefinitionProvider(
         selector: DocumentSelector,
@@ -253,7 +253,7 @@ external object languages {
      *
      * @param selector A selector that defines the documents this provider is applicable to.
      * @param provider An implementation provider.
-     * @returns A {@link Disposable} that unregisters this provider when being disposed.
+     * @returns A [Disposable] that unregisters this provider when being disposed.
      */
     fun registerImplementationProvider(
         selector: DocumentSelector,
@@ -269,7 +269,7 @@ external object languages {
      *
      * @param selector A selector that defines the documents this provider is applicable to.
      * @param provider A type definition provider.
-     * @returns A {@link Disposable} that unregisters this provider when being disposed.
+     * @returns A [Disposable] that unregisters this provider when being disposed.
      */
     fun registerTypeDefinitionProvider(
         selector: DocumentSelector,
@@ -285,7 +285,7 @@ external object languages {
      *
      * @param selector A selector that defines the documents this provider is applicable to.
      * @param provider A declaration provider.
-     * @returns A {@link Disposable} that unregisters this provider when being disposed.
+     * @returns A [Disposable] that unregisters this provider when being disposed.
      */
     fun registerDeclarationProvider(
         selector: DocumentSelector,
@@ -301,7 +301,7 @@ external object languages {
      *
      * @param selector A selector that defines the documents this provider is applicable to.
      * @param provider A hover provider.
-     * @returns A {@link Disposable} that unregisters this provider when being disposed.
+     * @returns A [Disposable] that unregisters this provider when being disposed.
      */
     fun registerHoverProvider(
         selector: DocumentSelector,
@@ -316,7 +316,7 @@ external object languages {
      *
      * @param selector A selector that defines the documents this provider is applicable to.
      * @param provider An evaluatable expression provider.
-     * @returns A {@link Disposable} that unregisters this provider when being disposed.
+     * @returns A [Disposable] that unregisters this provider when being disposed.
      */
     fun registerEvaluatableExpressionProvider(
         selector: DocumentSelector,
@@ -334,7 +334,7 @@ external object languages {
      *
      * @param selector A selector that defines the documents this provider is applicable to.
      * @param provider An inline values provider.
-     * @returns A {@link Disposable} that unregisters this provider when being disposed.
+     * @returns A [Disposable] that unregisters this provider when being disposed.
      */
     fun registerInlineValuesProvider(
         selector: DocumentSelector,
@@ -350,7 +350,7 @@ external object languages {
      *
      * @param selector A selector that defines the documents this provider is applicable to.
      * @param provider A document highlight provider.
-     * @returns A {@link Disposable} that unregisters this provider when being disposed.
+     * @returns A [Disposable] that unregisters this provider when being disposed.
      */
     fun registerDocumentHighlightProvider(
         selector: DocumentSelector,
@@ -367,7 +367,7 @@ external object languages {
      * @param selector A selector that defines the documents this provider is applicable to.
      * @param provider A document symbol provider.
      * @param metaData metadata about the provider
-     * @returns A {@link Disposable} that unregisters this provider when being disposed.
+     * @returns A [Disposable] that unregisters this provider when being disposed.
      */
     fun registerDocumentSymbolProvider(
         selector: DocumentSelector,
@@ -383,7 +383,7 @@ external object languages {
      * a failure of the whole operation.
      *
      * @param provider A workspace symbol provider.
-     * @returns A {@link Disposable} that unregisters this provider when being disposed.
+     * @returns A [Disposable] that unregisters this provider when being disposed.
      */
     fun registerWorkspaceSymbolProvider(provider: WorkspaceSymbolProvider<*>): Disposable
 
@@ -396,7 +396,7 @@ external object languages {
      *
      * @param selector A selector that defines the documents this provider is applicable to.
      * @param provider A reference provider.
-     * @returns A {@link Disposable} that unregisters this provider when being disposed.
+     * @returns A [Disposable] that unregisters this provider when being disposed.
      */
     fun registerReferenceProvider(
         selector: DocumentSelector,
@@ -412,7 +412,7 @@ external object languages {
      *
      * @param selector A selector that defines the documents this provider is applicable to.
      * @param provider A rename provider.
-     * @returns A {@link Disposable} that unregisters this provider when being disposed.
+     * @returns A [Disposable] that unregisters this provider when being disposed.
      */
     fun registerRenameProvider(
         selector: DocumentSelector,
@@ -428,7 +428,7 @@ external object languages {
      *
      * @param selector A selector that defines the documents this provider is applicable to.
      * @param provider A document semantic tokens provider.
-     * @returns A {@link Disposable} that unregisters this provider when being disposed.
+     * @returns A [Disposable] that unregisters this provider when being disposed.
      */
     fun registerDocumentSemanticTokensProvider(
         selector: DocumentSelector,
@@ -451,7 +451,7 @@ external object languages {
      *
      * @param selector A selector that defines the documents this provider is applicable to.
      * @param provider A document range semantic tokens provider.
-     * @returns A {@link Disposable} that unregisters this provider when being disposed.
+     * @returns A [Disposable] that unregisters this provider when being disposed.
      */
     fun registerDocumentRangeSemanticTokensProvider(
         selector: DocumentSelector,
@@ -468,7 +468,7 @@ external object languages {
      *
      * @param selector A selector that defines the documents this provider is applicable to.
      * @param provider A document formatting edit provider.
-     * @returns A {@link Disposable} that unregisters this provider when being disposed.
+     * @returns A [Disposable] that unregisters this provider when being disposed.
      */
     fun registerDocumentFormattingEditProvider(
         selector: DocumentSelector,
@@ -488,7 +488,7 @@ external object languages {
      *
      * @param selector A selector that defines the documents this provider is applicable to.
      * @param provider A document range formatting edit provider.
-     * @returns A {@link Disposable} that unregisters this provider when being disposed.
+     * @returns A [Disposable] that unregisters this provider when being disposed.
      */
     fun registerDocumentRangeFormattingEditProvider(
         selector: DocumentSelector,
@@ -506,7 +506,7 @@ external object languages {
      * @param provider An on type formatting edit provider.
      * @param firstTriggerCharacter A character on which formatting should be triggered, like `}`.
      * @param moreTriggerCharacter More trigger characters.
-     * @returns A {@link Disposable} that unregisters this provider when being disposed.
+     * @returns A [Disposable] that unregisters this provider when being disposed.
      */
     fun registerOnTypeFormattingEditProvider(
         selector: DocumentSelector,
@@ -525,7 +525,7 @@ external object languages {
      * @param selector A selector that defines the documents this provider is applicable to.
      * @param provider A signature help provider.
      * @param triggerCharacters Trigger signature help when the user types one of the characters, like `,` or `(`.
-     * @returns A {@link Disposable} that unregisters this provider when being disposed.
+     * @returns A [Disposable] that unregisters this provider when being disposed.
      */
     fun registerSignatureHelpProvider(
         selector: DocumentSelector,
@@ -539,7 +539,7 @@ external object languages {
      * @param selector A selector that defines the documents this provider is applicable to.
      * @param provider A signature help provider.
      * @param metadata Information about the provider.
-     * @returns A {@link Disposable} that unregisters this provider when being disposed.
+     * @returns A [Disposable] that unregisters this provider when being disposed.
      */
     fun registerSignatureHelpProvider(
         selector: DocumentSelector,
@@ -556,7 +556,7 @@ external object languages {
      *
      * @param selector A selector that defines the documents this provider is applicable to.
      * @param provider A document link provider.
-     * @returns A {@link Disposable} that unregisters this provider when being disposed.
+     * @returns A [Disposable] that unregisters this provider when being disposed.
      */
     fun registerDocumentLinkProvider(
         selector: DocumentSelector,
@@ -572,7 +572,7 @@ external object languages {
      *
      * @param selector A selector that defines the documents this provider is applicable to.
      * @param provider A color provider.
-     * @returns A {@link Disposable} that unregisters this provider when being disposed.
+     * @returns A [Disposable] that unregisters this provider when being disposed.
      */
     fun registerColorProvider(
         selector: DocumentSelector,
@@ -588,7 +588,7 @@ external object languages {
      *
      * @param selector A selector that defines the documents this provider is applicable to.
      * @param provider An inlay hints provider.
-     * @returns A {@link Disposable} that unregisters this provider when being disposed.
+     * @returns A [Disposable] that unregisters this provider when being disposed.
      */
     fun registerInlayHintsProvider(
         selector: DocumentSelector,
@@ -608,7 +608,7 @@ external object languages {
      *
      * @param selector A selector that defines the documents this provider is applicable to.
      * @param provider A folding range provider.
-     * @returns A {@link Disposable} that unregisters this provider when being disposed.
+     * @returns A [Disposable] that unregisters this provider when being disposed.
      */
     fun registerFoldingRangeProvider(
         selector: DocumentSelector,
@@ -624,7 +624,7 @@ external object languages {
      *
      * @param selector A selector that defines the documents this provider is applicable to.
      * @param provider A selection range provider.
-     * @returns A {@link Disposable} that unregisters this provider when being disposed.
+     * @returns A [Disposable] that unregisters this provider when being disposed.
      */
     fun registerSelectionRangeProvider(
         selector: DocumentSelector,
@@ -636,7 +636,7 @@ external object languages {
      *
      * @param selector A selector that defines the documents this provider is applicable to.
      * @param provider A call hierarchy provider.
-     * @returns A {@link Disposable} that unregisters this provider when being disposed.
+     * @returns A [Disposable] that unregisters this provider when being disposed.
      */
     fun registerCallHierarchyProvider(
         selector: DocumentSelector,
@@ -648,7 +648,7 @@ external object languages {
      *
      * @param selector A selector that defines the documents this provider is applicable to.
      * @param provider A type hierarchy provider.
-     * @returns A {@link Disposable} that unregisters this provider when being disposed.
+     * @returns A [Disposable] that unregisters this provider when being disposed.
      */
     fun registerTypeHierarchyProvider(
         selector: DocumentSelector,
@@ -664,7 +664,7 @@ external object languages {
      *
      * @param selector A selector that defines the documents this provider is applicable to.
      * @param provider A linked editing range provider.
-     * @returns A {@link Disposable} that unregisters this provider when being disposed.
+     * @returns A [Disposable] that unregisters this provider when being disposed.
      */
     fun registerLinkedEditingRangeProvider(
         selector: DocumentSelector,
@@ -672,7 +672,7 @@ external object languages {
     ): Disposable
 
     /**
-     * Registers a new {@link DocumentDropEditProvider}.
+     * Registers a new [DocumentDropEditProvider].
      *
      * Multiple drop providers can be registered for a language. When dropping content into an editor, all
      * registered providers for the editor's language will be invoked based on the mimetypes they handle
@@ -725,7 +725,7 @@ external object languages {
      *
      * @param language A language identifier like `typescript`.
      * @param configuration Language configuration.
-     * @returns A {@link Disposable} that unsets this configuration.
+     * @returns A [Disposable] that unsets this configuration.
      */
     fun setLanguageConfiguration(
         language: String,

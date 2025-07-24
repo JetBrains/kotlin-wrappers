@@ -26,7 +26,7 @@ external interface AuthenticationSession {
 
     /**
      * The permissions granted by the session's access token. Available scopes
-     * are defined by the {@link AuthenticationProvider}.
+     * are defined by the [AuthenticationProvider].
      */
     val scopes: ReadonlyArray<JsString>
 }

@@ -5,7 +5,7 @@ package vscode
 import js.core.JsAny
 
 /**
- * When this is returned in {@link PreparedToolInvocation}, the user will be asked to confirm before running the tool. These
+ * When this is returned in [PreparedToolInvocation], the user will be asked to confirm before running the tool. These
  * messages will be shown with buttons that say "Continue" and "Cancel".
  */
 external interface LanguageModelToolConfirmationMessages {

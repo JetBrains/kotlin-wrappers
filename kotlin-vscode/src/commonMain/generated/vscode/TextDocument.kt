@@ -18,8 +18,8 @@ external interface TextDocument {
      * *Note* that most documents use the `file`-scheme, which means they are files on disk. However, **not** all documents are
      * saved on disk and therefore the `scheme` must be checked before trying to access the underlying file or siblings on disk.
      *
-     * @see {@link FileSystemProvider}
-     * @see {@link TextDocumentContentProvider}
+     * @see [FileSystemProvider]
+     * @see [TextDocumentContentProvider]
      */
     val uri: Uri
 
@@ -133,7 +133,7 @@ external interface TextDocument {
      * Converts a zero-based offset to a position.
      *
      * @param offset A zero-based offset into the document. This offset is in UTF-16 [code units](https://developer.mozilla.org/en-US/docs/Glossary/Code_unit).
-     * @returns A valid {@link Position}.
+     * @returns A valid [Position].
      */
     fun positionAt(offset: Int): Position
 

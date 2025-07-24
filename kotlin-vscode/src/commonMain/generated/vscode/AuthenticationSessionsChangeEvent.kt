@@ -3,11 +3,11 @@
 package vscode
 
 /**
- * An {@link Event} which fires when an {@link AuthenticationSession} is added, removed, or changed.
+ * An [Event] which fires when an [AuthenticationSession] is added, removed, or changed.
  */
 external interface AuthenticationSessionsChangeEvent {
     /**
-     * The {@link AuthenticationProvider} that has had its sessions change.
+     * The [AuthenticationProvider] that has had its sessions change.
      */
     val provider: AuthenticationProviderInformation
 }

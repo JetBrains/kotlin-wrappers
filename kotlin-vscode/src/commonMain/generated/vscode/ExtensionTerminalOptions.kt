@@ -14,25 +14,25 @@ external interface ExtensionTerminalOptions {
     var name: String
 
     /**
-     * An implementation of {@link Pseudoterminal} that allows an extension to
+     * An implementation of [Pseudoterminal] that allows an extension to
      * control a terminal.
      */
     var pty: Pseudoterminal
 
     /**
-     * The icon path or {@link ThemeIcon} for the terminal.
+     * The icon path or [ThemeIcon] for the terminal.
      */
     var iconPath: IconPath?
 
     /**
-     * The icon {@link ThemeColor} for the terminal.
+     * The icon [ThemeColor] for the terminal.
      * The standard `terminal.ansi*` theme keys are
      * recommended for the best contrast and consistency across themes.
      */
     var color: ThemeColor?
 
     /**
-     * The {@link TerminalLocation} or {@link TerminalEditorLocationOptions} or {@link TerminalSplitLocationOptions} for the terminal.
+     * The [TerminalLocation] or [TerminalEditorLocationOptions] or [TerminalSplitLocationOptions] for the terminal.
      */
     var location: JsAny /* TerminalLocation | TerminalEditorLocationOptions | TerminalSplitLocationOptions */?
 

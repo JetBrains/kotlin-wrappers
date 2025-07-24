@@ -139,7 +139,7 @@ open external class CompletionItem {
     var additionalTextEdits: ReadonlyArray<TextEdit>?
 
     /**
-     * An optional {@link Command} that is executed *after* inserting this completion. *Note* that
+     * An optional [Command] that is executed *after* inserting this completion. *Note* that
      * additional modifications to the current document should be described with the
      * {@link CompletionItem.additionalTextEdits additionalTextEdits}-property.
      */

@@ -3,7 +3,7 @@
 package vscode
 
 /**
- * Options for creating an {@link AuthenticationProvider}.
+ * Options for creating an [AuthenticationProvider].
  */
 external interface AuthenticationProviderOptions {
     /**

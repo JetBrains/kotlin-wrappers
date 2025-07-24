@@ -9,7 +9,7 @@ import kotlin.js.JsModule
 import kotlin.js.definedExternally
 
 /**
- * A TestRunRequest is a precursor to a {@link TestRun}, which in turn is
+ * A TestRunRequest is a precursor to a [TestRun], which in turn is
  * created by passing a request to {@link TestController.createTestRun}. The
  * TestRunRequest contains information about which tests should be run, which
  * should not be run, and how they are run (via the {@link TestRunRequest.profile profile}).

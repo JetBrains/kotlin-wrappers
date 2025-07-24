@@ -191,7 +191,7 @@ external object workspace {
      * By default, all opened {@link workspace.workspaceFolders workspace folders} will be watched
      * for file changes recursively.
      *
-     * Additional paths can be added for file watching by providing a {@link RelativePattern} with
+     * Additional paths can be added for file watching by providing a [RelativePattern] with
      * a `base` path to watch. If the path is a folder and the `pattern` is complex (e.g. contains
      * `**` or path segments), it will be watched recursively and otherwise will be watched
      * non-recursively (i.e. only changes to the first level of the path will be reported).
@@ -382,7 +382,7 @@ external object workspace {
      * Opens a document. Will return early if this document is already open. Otherwise
      * the document is loaded and the {@link workspace.onDidOpenTextDocument didOpen}-event fires.
      *
-     * The document is denoted by an {@link Uri}. Depending on the {@link Uri.scheme scheme} the
+     * The document is denoted by an [Uri]. Depending on the {@link Uri.scheme scheme} the
      * following rules apply:
      * * `file`-scheme: Open a file on disk (`openTextDocument(Uri.file(path))`). Will be rejected if the file
      * does not exist or cannot be loaded.
@@ -492,7 +492,7 @@ external object workspace {
      *
      * @param scheme The uri-scheme to register for.
      * @param provider A content provider.
-     * @returns A {@link Disposable} that unregisters this provider when being disposed.
+     * @returns A [Disposable] that unregisters this provider when being disposed.
      */
     fun registerTextDocumentContentProvider(
         scheme: String,
@@ -503,8 +503,8 @@ external object workspace {
      * An event that is emitted when a {@link TextDocument text document} is opened or when the language id
      * of a text document {@link languages.setTextDocumentLanguage has been changed}.
      *
-     * To add an event listener when a visible text document is opened, use the {@link TextEditor} events in the
-     * {@link window} namespace. Note that:
+     * To add an event listener when a visible text document is opened, use the [TextEditor] events in the
+     * [window] namespace. Note that:
      *
      * - The event is emitted before the {@link TextDocument document} is updated in the
      * {@link window.activeTextEditor active text editor}
@@ -620,7 +620,7 @@ external object workspace {
      * @param notebookType A notebook.
      * @param serializer A notebook serializer.
      * @param options Optional context options that define what parts of a notebook should be persisted
-     * @returns A {@link Disposable} that unregisters this serializer when being disposed.
+     * @returns A [Disposable] that unregisters this serializer when being disposed.
      */
     fun registerNotebookSerializer(
         notebookType: String,
@@ -745,7 +745,7 @@ external object workspace {
      * @param scheme The uri-{@link Uri.scheme scheme} the provider registers for.
      * @param provider The filesystem provider.
      * @param options Immutable metadata about the provider.
-     * @returns A {@link Disposable} that unregisters this provider when being disposed.
+     * @returns A [Disposable] that unregisters this provider when being disposed.
      */
     /*
     registerFileSystemProvider(scheme: string, provider: FileSystemProvider, options?: {

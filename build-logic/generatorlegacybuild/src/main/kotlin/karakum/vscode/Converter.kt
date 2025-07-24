@@ -94,7 +94,7 @@ private fun convertEnum(
 private fun convertType(
     source: String,
 ): String {
-    val comment = source.substringBefore("\nexport ")
+    val comment = kdoc(source.substringBefore("\nexport "))
 
     val decclaration = source.substringAfter("\nexport type")
     val name = decclaration.substringBefore(" = ")
@@ -124,7 +124,7 @@ private fun convertType(
 private fun convertNamespace(
     source: String,
 ): String {
-    val comment = source.substringBefore("\nexport namespace ", "")
+    val comment = kdoc(source.substringBefore("\nexport namespace ", ""))
 
     val declaration = "external object " + source
         .substringAfter("\nexport namespace ", "")
@@ -150,7 +150,7 @@ private fun convertNamespace(
 private fun convertInterface(
     source: String,
 ): String {
-    val comment = source.substringBefore("\nexport ", "")
+    val comment = kdoc(source.substringBefore("\nexport ", ""))
 
     var declaration = "external " + source
         .substringAfter("export ", "")
@@ -232,13 +232,13 @@ private fun convertMembers(
                 .removePrefix("static ")
                 .removeSuffix(";")
 
-            val comment = it.removeSuffix(declarationSource)
-            if ("@deprecated" in comment) {
+            val commentSource = it.removeSuffix(declarationSource)
+            if ("@deprecated" in commentSource) {
                 return@forEach
             }
 
             val result = commentMember(
-                comment = comment,
+                comment = kdoc(commentSource),
                 source = memberSource,
             )
 
@@ -526,3 +526,10 @@ private fun convertFunctionBody(
     val returnType = getReturnSignature(kotlinType(source.substringAfterLast("): "), name))
     return "($parameters)$returnType"
 }
+
+private fun kdoc(
+    source: String,
+): String =
+    source
+        .replace(Regex("""\{@link (\w+) `(\w+)`}"""), "[$2][$1]")
+        .replace(Regex("""\{@link (\w+)}"""), "[$1]")

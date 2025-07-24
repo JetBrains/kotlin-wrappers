@@ -13,7 +13,7 @@ import kotlin.js.definedExternally
  */
 open external class SelectionRange {
     /**
-     * The {@link Range} of this selection range.
+     * The [Range] of this selection range.
      */
     var range: Range
 

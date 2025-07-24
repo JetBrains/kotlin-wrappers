@@ -7,7 +7,7 @@ import js.core.JsString
 import js.core.Void
 
 /**
- * A concrete {@link QuickInput} to let the user pick an item from a
+ * A concrete [QuickInput] to let the user pick an item from a
  * list of items of type T. The items can be filtered through a filter text field and
  * there is an option {@link QuickPick.canSelectMany canSelectMany} to allow for
  * selecting multiple items.
@@ -47,13 +47,13 @@ external interface QuickPick<
     var buttons: ReadonlyArray<QuickInputButton>
 
     /**
-     * An event signaling when a top level button (buttons stored in {@link buttons}) was triggered.
-     * This event does not fire for buttons on a {@link QuickPickItem}.
+     * An event signaling when a top level button (buttons stored in [buttons]) was triggered.
+     * This event does not fire for buttons on a [QuickPickItem].
      */
     val onDidTriggerButton: Event<QuickInputButton>
 
     /**
-     * An event signaling when a button in a particular {@link QuickPickItem} was triggered.
+     * An event signaling when a button in a particular [QuickPickItem] was triggered.
      * This event does not fire for buttons in the title bar.
      */
     val onDidTriggerItemButton: Event<QuickPickItemButtonEvent<T>>

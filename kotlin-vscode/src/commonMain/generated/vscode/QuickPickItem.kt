@@ -25,7 +25,7 @@ external interface QuickPickItem {
     var kind: QuickPickItemKind?
 
     /**
-     * The icon path or {@link ThemeIcon} for the QuickPickItem.
+     * The icon path or [ThemeIcon] for the QuickPickItem.
      */
     var iconPath: IconPath?
 
@@ -67,7 +67,7 @@ external interface QuickPickItem {
 
     /**
      * Optional buttons that will be rendered on this particular item. These buttons will trigger
-     * an {@link QuickPickItemButtonEvent} when clicked. Buttons are only rendered when using a quickpick
+     * an [QuickPickItemButtonEvent] when clicked. Buttons are only rendered when using a quickpick
      * created by the {@link window.createQuickPick createQuickPick()} API. Buttons are not rendered when using
      * the {@link window.showQuickPick showQuickPick()} API.
      *

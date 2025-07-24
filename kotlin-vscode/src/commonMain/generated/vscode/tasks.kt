@@ -18,7 +18,7 @@ external object tasks {
      *
      * @param type The task kind type this provider is registered for.
      * @param provider A task provider.
-     * @returns A {@link Disposable} that unregisters this provider when being disposed.
+     * @returns A [Disposable] that unregisters this provider when being disposed.
      */
     fun registerTaskProvider(
         type: String,

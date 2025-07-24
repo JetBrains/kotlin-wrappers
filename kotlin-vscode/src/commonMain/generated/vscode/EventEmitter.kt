@@ -8,11 +8,11 @@ import js.core.JsAny
 import kotlin.js.JsModule
 
 /**
- * An event emitter can be used to create and manage an {@link Event} for others
+ * An event emitter can be used to create and manage an [Event] for others
  * to subscribe to. One emitter always owns one event.
  *
  * Use this class if you want to provide event from within your extension, for instance
- * inside a {@link TextDocumentContentProvider} or when providing
+ * inside a [TextDocumentContentProvider] or when providing
  * API to other extensions.
  */
 open external class EventEmitter<T : JsAny?> :

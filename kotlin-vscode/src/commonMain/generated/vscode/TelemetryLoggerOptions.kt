@@ -6,7 +6,7 @@ import js.core.JsString
 import js.objects.Record
 
 /**
- * Options for creating a {@link TelemetryLogger}
+ * Options for creating a [TelemetryLogger]
  */
 external interface TelemetryLoggerOptions {
     /**

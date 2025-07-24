@@ -7,7 +7,7 @@ package vscode
 import kotlin.js.JsModule
 
 /**
- * Predefined buttons for {@link QuickPick} and {@link InputBox}.
+ * Predefined buttons for [QuickPick] and [InputBox].
  */
 open external class QuickInputButtons {
     /**
@@ -17,7 +17,7 @@ open external class QuickInputButtons {
 
     companion object {
         /**
-         * A back button for {@link QuickPick} and {@link InputBox}.
+         * A back button for [QuickPick] and [InputBox].
          *
          * When a navigation 'back' button is needed this one should be used for consistency.
          * It comes with a predefined icon, tooltip and location.

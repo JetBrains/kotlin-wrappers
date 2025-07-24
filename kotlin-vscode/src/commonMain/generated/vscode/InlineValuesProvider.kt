@@ -13,7 +13,7 @@ import js.core.Void
 external interface InlineValuesProvider {
     /**
      * An optional event to signal that inline values have changed.
-     * @see {@link EventEmitter}
+     * @see [EventEmitter]
      */
     var onDidChangeInlineValues: Event<Void>?
 
