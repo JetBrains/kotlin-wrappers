@@ -26,7 +26,7 @@ external interface Memento {
      * @param key A string.
      * @returns The stored value or `undefined`.
      */
-    fun <T> get(key: String): T?
+    fun <T : JsAny?> get(key: String): T?
 
     /**
      * Return a value.
@@ -36,7 +36,7 @@ external interface Memento {
      * value (`undefined`) with the given key.
      * @returns The stored value or the defaultValue.
      */
-    fun <T> get(
+    fun <T : JsAny?> get(
         key: String,
         defaultValue: T,
     ): T

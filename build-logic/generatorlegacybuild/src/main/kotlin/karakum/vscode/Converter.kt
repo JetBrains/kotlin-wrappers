@@ -163,8 +163,8 @@ private fun convertInterface(
                 " : $bound /* = $defaultBound */>"
             }
         }
-        .replace("<T = unknown>", "<T>")
-        .replace("<T = any>", "<T>")
+        .replace("<T = unknown>", "<T : JsAny?>")
+        .replace("<T = any>", "<T : JsAny?>")
         .replace(
             " implements Iterable<[mimeType: string, item: DataTransferItem]>",
             " :\nJsIterable<Tuple2</* mimeType: */ String, /* item: */ DataTransferItem>>",
@@ -429,6 +429,7 @@ private fun convertFunction(
         .replace(" = unknown", "")
         .replace(" = any", "")
         .replace(" extends ", " : ")
+        .let { if (it == "<T>") "<T : JsAny?>" else it }
 
     val body = convertFunctionBody(
         name = name,

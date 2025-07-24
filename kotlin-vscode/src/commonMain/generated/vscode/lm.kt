@@ -5,6 +5,7 @@
 package vscode
 
 import js.array.ReadonlyArray
+import js.core.JsAny
 import js.core.Void
 import js.promise.PromiseLike
 
@@ -50,7 +51,7 @@ external object lm {
      * be seen by a language model, it must be passed in the list of available tools in {@link LanguageModelChatRequestOptions.tools}.
      * @returns A {@link Disposable} that unregisters the tool when disposed.
      */
-    fun <T> registerTool(
+    fun <T : JsAny?> registerTool(
         name: String,
         tool: LanguageModelTool<T>,
     ): Disposable

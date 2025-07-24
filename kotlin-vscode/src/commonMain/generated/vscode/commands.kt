@@ -103,7 +103,7 @@ external object commands {
      * @returns A thenable that resolves to the returned value of the given command. Returns `undefined` when
      * the command handler function doesn't return anything.
      */
-    fun <T> executeCommand(
+    fun <T : JsAny?> executeCommand(
         command: String,
         vararg rest: JsAny?,
     ): PromiseLike<T>

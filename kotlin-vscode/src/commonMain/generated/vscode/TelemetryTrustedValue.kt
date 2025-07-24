@@ -4,11 +4,13 @@
 
 package vscode
 
+import js.core.JsAny
+
 /**
  * A special value wrapper denoting a value that is safe to not clean.
  * This is to be used when you can guarantee no identifiable information is contained in the value and the cleaning is improperly redacting it.
  */
-open external class TelemetryTrustedValue<T> {
+open external class TelemetryTrustedValue<T : JsAny?> {
     /**
      * The value that is trusted to not contain PII.
      */

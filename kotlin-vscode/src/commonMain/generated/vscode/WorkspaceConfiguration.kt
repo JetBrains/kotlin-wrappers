@@ -76,7 +76,7 @@ external interface WorkspaceConfiguration {
      * @param section Configuration name, supports _dotted_ names.
      * @returns The value `section` denotes or `undefined`.
      */
-    fun <T> get(section: String): T?
+    fun <T : JsAny?> get(section: String): T?
 
     /**
      * Return a value from this configuration.
@@ -85,7 +85,7 @@ external interface WorkspaceConfiguration {
      * @param defaultValue A value should be returned when no value could be found, is `undefined`.
      * @returns The value `section` denotes or the default.
      */
-    fun <T> get(
+    fun <T : JsAny?> get(
         section: String,
         defaultValue: T,
     ): T

@@ -2,12 +2,14 @@
 
 package vscode
 
+import js.core.JsAny
+
 /**
  * Additional information the webview view being resolved.
  *
  * @param T Type of the webview's state.
  */
-external interface WebviewViewResolveContext<T> {
+external interface WebviewViewResolveContext<T : JsAny?> {
     /**
      * Persisted state from the webview content.
      *

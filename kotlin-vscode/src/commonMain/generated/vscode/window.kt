@@ -715,7 +715,7 @@ external object window {
      * @param treeDataProvider A {@link TreeDataProvider} that provides tree data for the view
      * @returns A {@link Disposable disposable} that unregisters the {@link TreeDataProvider}.
      */
-    fun <T> registerTreeDataProvider(
+    fun <T : JsAny?> registerTreeDataProvider(
         viewId: String,
         treeDataProvider: TreeDataProvider<T>,
     ): Disposable
@@ -726,7 +726,7 @@ external object window {
      * @param options Options for creating the {@link TreeView}
      * @returns a {@link TreeView}.
      */
-    fun <T> createTreeView(
+    fun <T : JsAny?> createTreeView(
         viewId: String,
         options: TreeViewOptions<T>,
     ): TreeView<T>

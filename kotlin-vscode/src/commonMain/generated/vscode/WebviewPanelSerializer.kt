@@ -2,6 +2,7 @@
 
 package vscode
 
+import js.core.JsAny
 import js.core.Void
 import js.promise.PromiseLike
 
@@ -38,7 +39,7 @@ import js.promise.PromiseLike
  *
  * @param T Type of the webview's state.
  */
-external interface WebviewPanelSerializer<T> {
+external interface WebviewPanelSerializer<T : JsAny?> {
     /**
      * Restore a webview panel from its serialized `state`.
      *

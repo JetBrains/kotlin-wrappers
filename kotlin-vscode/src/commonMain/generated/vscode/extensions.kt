@@ -5,6 +5,7 @@
 package vscode
 
 import js.array.ReadonlyArray
+import js.core.JsAny
 import js.core.Void
 
 /**
@@ -46,7 +47,7 @@ external object extensions {
      * @param extensionId An extension identifier.
      * @returns An extension or `undefined`.
      */
-    fun <T> getExtension(extensionId: String): Extension<T>?
+    fun <T : JsAny?> getExtension(extensionId: String): Extension<T>?
 
     /**
      * All extensions currently known to the system.
