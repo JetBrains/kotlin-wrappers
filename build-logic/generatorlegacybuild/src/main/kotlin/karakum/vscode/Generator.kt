@@ -60,6 +60,9 @@ private fun fileContent(
         import js.regexp.RegExp
         import js.typedarrays.Uint32Array
         import js.typedarrays.Uint8Array
+
+        import kotlin.js.JsModule
+        import kotlin.js.definedExternally
         """.trimIndent(),
         body,
     ).filter { it.isNotEmpty() }
