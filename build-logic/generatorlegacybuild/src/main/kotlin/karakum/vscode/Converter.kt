@@ -109,7 +109,7 @@ private fun convertType(
             -> "PromiseResult<T?>"
 
         bodySource == "[string, string]" -> "Tuple2<String, String>"
-        bodySource == "never" -> "Nothing?"
+        bodySource == "never" -> "JsAny? /* Nothing? */"
         " | " in bodySource -> "JsAny /* $bodySource */"
 
         else -> bodySource

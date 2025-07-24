@@ -2,6 +2,7 @@
 
 package vscode
 
+import js.core.JsInt
 import js.core.JsString
 
 /**
@@ -95,7 +96,7 @@ external interface Pseudoterminal {
      * terminal.show(true);
      * ```
      */
-    var onDidClose: Event<Int?>?
+    var onDidClose: Event<JsInt?>?
 
     /**
      * An event that when fired allows changing the name of the terminal.

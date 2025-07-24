@@ -3,6 +3,7 @@
 package vscode
 
 import js.core.JsAny
+import js.core.JsInt
 import js.promise.PromiseLike
 
 /**
@@ -17,7 +18,7 @@ external interface Terminal {
     /**
      * The process ID of the shell process.
      */
-    val processId: PromiseLike<Int?>
+    val processId: PromiseLike<JsInt?>
 
     /**
      * The object used to initialize the terminal, this is useful for example to detecting the

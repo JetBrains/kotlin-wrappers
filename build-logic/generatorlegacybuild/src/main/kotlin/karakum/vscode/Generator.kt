@@ -54,6 +54,7 @@ private fun toCommonBody(
         .replace(", Double>", ", JsDouble>")
         .replace("<Double?>", "<JsDouble?>")
         .replace("<Int>", "<JsInt>")
+        .replace("<Int?>", "<JsInt?>")
         .replace("<Int,", "<JsInt,")
         .replace(", Int>", ", JsInt>")
         .replace("<Boolean>", "<JsBoolean>")
