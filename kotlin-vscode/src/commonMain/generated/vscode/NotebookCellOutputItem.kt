@@ -4,6 +4,7 @@
 
 package vscode
 
+import js.errors.JsError
 import js.typedarrays.Uint8Array
 
 /**
@@ -92,6 +93,6 @@ open external class NotebookCellOutputItem {
          * @param value An error object.
          * @returns A new output item object.
          */
-        fun error(value: Error): NotebookCellOutputItem
+        fun error(value: JsError): NotebookCellOutputItem
     }
 }

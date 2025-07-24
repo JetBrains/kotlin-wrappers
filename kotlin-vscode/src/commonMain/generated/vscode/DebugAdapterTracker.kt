@@ -3,6 +3,7 @@
 package vscode
 
 import js.core.Void
+import js.errors.JsError
 
 /**
  * A Debug Adapter Tracker is a means to track the communication between the editor and a Debug Adapter.
@@ -31,7 +32,7 @@ external interface DebugAdapterTracker {
     /**
      * An error with the debug adapter has occurred.
      */
-    var onError: ((error: Error) -> Void)?
+    var onError: ((error: JsError) -> Void)?
 
     /**
      * The debug adapter has exited with the given exit code or signal.

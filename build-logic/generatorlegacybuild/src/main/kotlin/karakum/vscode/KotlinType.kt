@@ -23,6 +23,8 @@ private val STANDARD_TYPE_MAP = mapOf(
     "() => any" to "() -> Unit",
     "(...args: any[]) => any" to "() -> Unit",
 
+    "Error" to "JsError",
+
     "AsyncIterable<string>" to "AsyncIterable<String>",
 
     "Uint8Array" to "Uint8Array<*>",

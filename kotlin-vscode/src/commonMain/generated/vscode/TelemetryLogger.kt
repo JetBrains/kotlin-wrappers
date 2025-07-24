@@ -2,6 +2,8 @@
 
 package vscode
 
+import js.errors.JsError
+
 /**
  * A telemetry logger which can be used by extensions to log usage and error telemetry.
  *
@@ -67,7 +69,7 @@ external interface TelemetryLogger {
      * @param data Additional data to log alongside the stack trace
      */
     fun logError(
-        error: Error,
+        error: JsError,
         data: Any /* Record<string, any | TelemetryTrustedValue> */ = definedExternally,
     )
 

@@ -2,6 +2,7 @@
 
 package vscode
 
+import js.errors.JsError
 import js.objects.Record
 
 /**
@@ -38,7 +39,7 @@ external interface TelemetrySender {
      * @param data Any additional data to be collected with the exception
      */
     fun sendErrorData(
-        error: Error,
+        error: JsError,
         data: Record<String, *> = definedExternally,
     )
 
