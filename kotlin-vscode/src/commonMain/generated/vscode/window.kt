@@ -5,6 +5,7 @@
 package vscode
 
 import js.array.ReadonlyArray
+import js.core.JsString
 import js.promise.PromiseLike
 
 /**
@@ -240,7 +241,7 @@ external object window {
     fun showInformationMessage(
         message: String,
         vararg items: String,
-    ): PromiseLike<String?>
+    ): PromiseLike<JsString?>
 
     /**
      * Show an information message to users. Optionally provide an array of items which will be presented as
@@ -255,7 +256,7 @@ external object window {
         message: String,
         options: MessageOptions,
         vararg items: String,
-    ): PromiseLike<String?>
+    ): PromiseLike<JsString?>
 
     /**
      * Show an information message.
@@ -299,7 +300,7 @@ external object window {
     fun showWarningMessage(
         message: String,
         vararg items: String,
-    ): PromiseLike<String?>
+    ): PromiseLike<JsString?>
 
     /**
      * Show a warning message.
@@ -315,7 +316,7 @@ external object window {
         message: String,
         options: MessageOptions,
         vararg items: String,
-    ): PromiseLike<String?>
+    ): PromiseLike<JsString?>
 
     /**
      * Show a warning message.
@@ -359,7 +360,7 @@ external object window {
     fun showErrorMessage(
         message: String,
         vararg items: String,
-    ): PromiseLike<String?>
+    ): PromiseLike<JsString?>
 
     /**
      * Show an error message.
@@ -375,7 +376,7 @@ external object window {
         message: String,
         options: MessageOptions,
         vararg items: String,
-    ): PromiseLike<String?>
+    ): PromiseLike<JsString?>
 
     /**
      * Show an error message.
@@ -429,7 +430,7 @@ external object window {
         items: Any, /* string[] | Thenable<readonly string[]> */
         options: QuickPickOptions = definedExternally,
         token: CancellationToken = definedExternally,
-    ): PromiseLike<String?>
+    ): PromiseLike<JsString?>
 
     /**
      * Shows a selection list allowing multiple selections.
@@ -496,7 +497,7 @@ external object window {
     fun showInputBox(
         options: InputBoxOptions = definedExternally,
         token: CancellationToken = definedExternally,
-    ): PromiseLike<String?>
+    ): PromiseLike<JsString?>
 
     /**
      * Creates a {@link QuickPick} to let the user pick an item from a list

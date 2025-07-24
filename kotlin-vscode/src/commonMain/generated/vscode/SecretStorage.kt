@@ -2,6 +2,7 @@
 
 package vscode
 
+import js.core.JsString
 import js.core.Void
 import js.promise.PromiseLike
 
@@ -18,7 +19,7 @@ external interface SecretStorage {
      * @param key The key the secret was stored under.
      * @returns The stored value or `undefined`.
      */
-    fun get(key: String): PromiseLike<String?>
+    fun get(key: String): PromiseLike<JsString?>
 
     /**
      * Store a secret under a given key.

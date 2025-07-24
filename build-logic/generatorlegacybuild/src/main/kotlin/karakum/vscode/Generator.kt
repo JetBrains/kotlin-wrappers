@@ -45,6 +45,7 @@ private fun toCommonBody(
     body: String,
 ): String =
     body.replace("<String>", "<JsString>")
+        .replace("<String?>", "<JsString?>")
         .replace("<String,", "<JsString,")
         .replace(", String>", ", JsString>")
         .replace(", String?>", ", JsString?>")
