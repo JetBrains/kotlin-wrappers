@@ -350,6 +350,13 @@ private fun convertFunction(
     if ("/** literal-type defines return type */" in source)
         return "    // $source"
 
+    if ("<T extends string>" in source)
+        return convertFunction(
+            source.replace("<T extends string>", "")
+                .replace("T[]", "string[]")
+                .replace("Thenable<T |", "Thenable<string |")
+        )
+
     when (source) {
         "createRunProfile(label: string, kind: TestRunProfileKind, runHandler: (request: TestRunRequest, token: CancellationToken) => Thenable<void> | void, isDefault?: boolean, tag?: TestTag, supportsContinuousRun?: boolean): TestRunProfile",
             ->
@@ -421,7 +428,6 @@ private fun convertFunction(
         .substringBefore("(")
         .replace(" = unknown", "")
         .replace(" = any", "")
-        .replace(" extends string", " : Comparable<String> /* String */")
         .replace(" extends ", " : ")
 
     val body = convertFunctionBody(

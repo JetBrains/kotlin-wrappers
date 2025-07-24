@@ -5,7 +5,6 @@
 package vscode
 
 import js.array.ReadonlyArray
-import js.core.JsString
 import js.promise.PromiseLike
 
 /**
@@ -238,10 +237,10 @@ external object window {
      * @param items A set of items that will be rendered as actions in the message.
      * @returns A thenable that resolves to the selected item or `undefined` when being dismissed.
      */
-    fun <T : Comparable<JsString> /* String */> showInformationMessage(
+    fun showInformationMessage(
         message: String,
-        vararg items: T,
-    ): PromiseLike<T?>
+        vararg items: String,
+    ): PromiseLike<String?>
 
     /**
      * Show an information message to users. Optionally provide an array of items which will be presented as
@@ -252,11 +251,11 @@ external object window {
      * @param items A set of items that will be rendered as actions in the message.
      * @returns A thenable that resolves to the selected item or `undefined` when being dismissed.
      */
-    fun <T : Comparable<JsString> /* String */> showInformationMessage(
+    fun showInformationMessage(
         message: String,
         options: MessageOptions,
-        vararg items: T,
-    ): PromiseLike<T?>
+        vararg items: String,
+    ): PromiseLike<String?>
 
     /**
      * Show an information message.
@@ -297,10 +296,10 @@ external object window {
      * @param items A set of items that will be rendered as actions in the message.
      * @returns A thenable that resolves to the selected item or `undefined` when being dismissed.
      */
-    fun <T : Comparable<JsString> /* String */> showWarningMessage(
+    fun showWarningMessage(
         message: String,
-        vararg items: T,
-    ): PromiseLike<T?>
+        vararg items: String,
+    ): PromiseLike<String?>
 
     /**
      * Show a warning message.
@@ -312,11 +311,11 @@ external object window {
      * @param items A set of items that will be rendered as actions in the message.
      * @returns A thenable that resolves to the selected item or `undefined` when being dismissed.
      */
-    fun <T : Comparable<JsString> /* String */> showWarningMessage(
+    fun showWarningMessage(
         message: String,
         options: MessageOptions,
-        vararg items: T,
-    ): PromiseLike<T?>
+        vararg items: String,
+    ): PromiseLike<String?>
 
     /**
      * Show a warning message.
@@ -357,10 +356,10 @@ external object window {
      * @param items A set of items that will be rendered as actions in the message.
      * @returns A thenable that resolves to the selected item or `undefined` when being dismissed.
      */
-    fun <T : Comparable<JsString> /* String */> showErrorMessage(
+    fun showErrorMessage(
         message: String,
-        vararg items: T,
-    ): PromiseLike<T?>
+        vararg items: String,
+    ): PromiseLike<String?>
 
     /**
      * Show an error message.
@@ -372,11 +371,11 @@ external object window {
      * @param items A set of items that will be rendered as actions in the message.
      * @returns A thenable that resolves to the selected item or `undefined` when being dismissed.
      */
-    fun <T : Comparable<JsString> /* String */> showErrorMessage(
+    fun showErrorMessage(
         message: String,
         options: MessageOptions,
-        vararg items: T,
-    ): PromiseLike<T?>
+        vararg items: String,
+    ): PromiseLike<String?>
 
     /**
      * Show an error message.
