@@ -2,6 +2,8 @@
 
 package vscode
 
+import js.core.JsAny
+
 /**
  * The decoration provider interfaces defines the contract between extensions and
  * file decorations.
@@ -14,7 +16,7 @@ external interface FileDecorationProvider {
      *
      * @see {@link EventEmitter}
      */
-    var onDidChangeFileDecorations: Event<Any /* undefined | Uri | Uri[] */>?
+    var onDidChangeFileDecorations: Event<JsAny /* undefined | Uri | Uri[] */>?
 
     /**
      * Provide decorations for a given uri.

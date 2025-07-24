@@ -2,6 +2,7 @@
 
 package vscode
 
+import js.core.JsAny
 import js.promise.PromiseLike
 
 /**
@@ -48,8 +49,8 @@ external interface DebugSession {
      */
     fun customRequest(
         command: String,
-        args: Any? = definedExternally,
-    ): PromiseLike<Any?>
+        args: JsAny? = definedExternally,
+    ): PromiseLike<JsAny?>
 
     /**
      * Maps a breakpoint in the editor to the corresponding Debug Adapter Protocol (DAP) breakpoint that is managed by the debug adapter of the debug session.

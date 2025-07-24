@@ -5,6 +5,7 @@
 package vscode
 
 import js.array.ReadonlyArray
+import js.core.JsAny
 import js.core.JsBoolean
 import js.core.Void
 import js.promise.PromiseLike
@@ -64,12 +65,12 @@ external object debug {
      * an active debug session, while a stack frame can only be focused when
      * a session is paused and the call stack has been retrieved.
      */
-    val activeStackItem: Any /* DebugThread | DebugStackFrame */?
+    val activeStackItem: JsAny /* DebugThread | DebugStackFrame */?
 
     /**
      * An event which fires when the {@link debug.activeStackItem} has changed.
      */
-    val onDidChangeActiveStackItem: Event<Any /* DebugThread | DebugStackFrame */?>
+    val onDidChangeActiveStackItem: Event<JsAny /* DebugThread | DebugStackFrame */?>
 
     /**
      * Register a {@link DebugConfigurationProvider debug configuration provider} for a specific debug type.
@@ -130,8 +131,8 @@ external object debug {
      */
     fun startDebugging(
         folder: WorkspaceFolder?,
-        nameOrConfiguration: Any, /* string | DebugConfiguration */
-        parentSessionOrOptions: Any /* DebugSession | DebugSessionOptions */ = definedExternally,
+        nameOrConfiguration: JsAny, /* string | DebugConfiguration */
+        parentSessionOrOptions: JsAny /* DebugSession | DebugSessionOptions */ = definedExternally,
     ): PromiseLike<JsBoolean>
 
     /**

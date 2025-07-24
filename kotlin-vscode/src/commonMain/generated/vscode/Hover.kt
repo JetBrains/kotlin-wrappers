@@ -5,6 +5,7 @@
 package vscode
 
 import js.array.ReadonlyArray
+import js.core.JsAny
 
 /**
  * A hover represents additional information for a symbol or word. Hovers are
@@ -14,7 +15,7 @@ open external class Hover {
     /**
      * The contents of this hover.
      */
-    var contents: ReadonlyArray<Any /* MarkdownString | MarkedString */>
+    var contents: ReadonlyArray<JsAny /* MarkdownString | MarkedString */>
 
     /**
      * The range to which this hover applies. When missing, the
@@ -30,7 +31,7 @@ open external class Hover {
      * @param range The range to which the hover applies.
      */
     constructor(
-        contents: Any, /* MarkdownString | MarkedString | Array<MarkdownString | MarkedString> */
+        contents: JsAny, /* MarkdownString | MarkedString | Array<MarkdownString | MarkedString> */
         range: Range = definedExternally,
     )
 }

@@ -4,6 +4,8 @@
 
 package vscode
 
+import js.core.JsAny
+
 /**
  * A contribution to a cell's status bar
  */
@@ -26,7 +28,7 @@ open external class NotebookCellStatusBarItem {
      * Note that if this is a {@linkcode Command} object, only the {@linkcode Command.command command} and {@linkcode Command.arguments arguments}
      * are used by the editor.
      */
-    var command: Any /* string | Command */?
+    var command: JsAny /* string | Command */?
 
     /**
      * A tooltip to show when the item is hovered.

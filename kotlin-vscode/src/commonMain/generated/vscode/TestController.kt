@@ -2,6 +2,7 @@
 
 package vscode
 
+import js.core.JsAny
 import js.core.Void
 import js.promise.PromiseLike
 
@@ -153,7 +154,7 @@ external interface TestController {
      *
      * @param items Item to mark as outdated. If undefined, all the controller's items are marked outdated.
      */
-    fun invalidateTestResults(items: Any /* TestItem | readonly TestItem[] */ = definedExternally)
+    fun invalidateTestResults(items: JsAny /* TestItem | readonly TestItem[] */ = definedExternally)
 
     /**
      * Unregisters the test controller, disposing of its associated tests

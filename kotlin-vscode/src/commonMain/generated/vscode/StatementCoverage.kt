@@ -5,6 +5,7 @@
 package vscode
 
 import js.array.ReadonlyArray
+import js.core.JsAny
 
 /**
  * Contains coverage information for a single statement or line.
@@ -15,12 +16,12 @@ open external class StatementCoverage {
      * whether it was executed if the exact count is unknown. If zero or false,
      * the statement will be marked as un-covered.
      */
-    var executed: Any /* number | boolean */
+    var executed: JsAny /* number | boolean */
 
     /**
      * Statement location.
      */
-    var location: Any /* Position | Range */
+    var location: JsAny /* Position | Range */
 
     /**
      * Coverage from branches of this line or statement. If it's not a
@@ -37,8 +38,8 @@ open external class StatementCoverage {
      * conditional, this should be omitted.
      */
     constructor(
-        executed: Any, /* number | boolean */
-        location: Any, /* Position | Range */
+        executed: JsAny, /* number | boolean */
+        location: JsAny, /* Position | Range */
         branches: ReadonlyArray<BranchCoverage> = definedExternally,
     )
 }

@@ -3,6 +3,7 @@
 package vscode
 
 import js.array.ReadonlyArray
+import js.core.JsAny
 import js.promise.PromiseResult
 
 /**
@@ -14,7 +15,7 @@ external interface TreeDataProvider<T> {
      * This will trigger the view to update the changed element/root and its children recursively (if shown).
      * To signal that root has changed, do not pass any argument or pass `undefined` or `null`.
      */
-    var onDidChangeTreeData: Event<Any /* T | T[] | undefined | null | void */>?
+    var onDidChangeTreeData: Event<JsAny /* T | T[] | undefined | null | void */>?
 
     /**
      * Get {@link TreeItem} representation of the `element`

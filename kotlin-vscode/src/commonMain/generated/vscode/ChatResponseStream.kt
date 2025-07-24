@@ -3,6 +3,7 @@
 package vscode
 
 import js.array.ReadonlyArray
+import js.core.JsAny
 
 /**
  * The ChatResponseStream is how a participant is able to return content to the chat view. It provides several methods for streaming different types of content
@@ -17,7 +18,7 @@ external interface ChatResponseStream {
      * @see {@link ChatResponseStream.push}
      * @param value A markdown string or a string that should be interpreted as markdown. The boolean form of {@link MarkdownString.isTrusted} is NOT supported.
      */
-    fun markdown(value: Any /* string | MarkdownString */)
+    fun markdown(value: JsAny /* string | MarkdownString */)
 
     /**
      * Push an anchor part to this stream. Short-hand for
@@ -28,7 +29,7 @@ external interface ChatResponseStream {
      * @param title An optional title that is rendered with value.
      */
     fun anchor(
-        value: Any, /* Uri | Location */
+        value: JsAny, /* Uri | Location */
         title: String = definedExternally,
     )
 
@@ -70,7 +71,7 @@ external interface ChatResponseStream {
      * @param iconPath Icon for the reference shown in UI
      */
     fun reference(
-        value: Any, /* Uri | Location */
+        value: JsAny, /* Uri | Location */
         iconPath: IconPath = definedExternally,
     )
 

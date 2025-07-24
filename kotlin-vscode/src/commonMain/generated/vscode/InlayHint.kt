@@ -5,6 +5,7 @@
 package vscode
 
 import js.array.ReadonlyArray
+import js.core.JsAny
 
 /**
  * Inlay hint information.
@@ -20,7 +21,7 @@ open external class InlayHint {
      *
      * *Note* that neither the string nor the label part can be empty.
      */
-    var label: Any /* string | InlayHintLabelPart[] */
+    var label: JsAny /* string | InlayHintLabelPart[] */
 
     /**
      * The tooltip text when you hover over this item.
@@ -28,7 +29,7 @@ open external class InlayHint {
      * *Note* that this property can be set late during
      * {@link InlayHintsProvider.resolveInlayHint resolving} of inlay hints.
      */
-    var tooltip: Any /* string | MarkdownString */?
+    var tooltip: JsAny /* string | MarkdownString */?
 
     /**
      * The kind of this hint. The inlay hint kind defines the appearance of this inlay hint.
@@ -70,7 +71,7 @@ open external class InlayHint {
      */
     constructor(
         position: Position,
-        label: Any, /* string | InlayHintLabelPart[] */
+        label: JsAny, /* string | InlayHintLabelPart[] */
         kind: InlayHintKind = definedExternally,
     )
 }

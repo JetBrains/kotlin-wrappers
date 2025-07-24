@@ -2,6 +2,8 @@
 
 package vscode
 
+import js.core.JsAny
+
 /**
  * A complex edit that will be applied in one transaction on a TextEditor.
  * This holds a description of the edits and if the edits are valid (i.e. no overlapping regions, document was not changed in the meantime, etc.)
@@ -16,7 +18,7 @@ external interface TextEditorEdit {
      * @param value The new text this operation should insert after removing `location`.
      */
     fun replace(
-        location: Any, /* Position | Range | Selection */
+        location: JsAny, /* Position | Range | Selection */
         value: String,
     )
 
@@ -38,7 +40,7 @@ external interface TextEditorEdit {
      *
      * @param location The range this operation should remove.
      */
-    fun delete(location: Any /* Range | Selection */)
+    fun delete(location: JsAny /* Range | Selection */)
 
     /**
      * Set the end of line sequence.

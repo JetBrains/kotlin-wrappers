@@ -2,6 +2,8 @@
 
 package vscode
 
+import js.core.JsAny
+
 /**
  * The completion item provider interface defines the contract between extensions and
  * [IntelliSense](https://code.visualstudio.com/docs/editor/intellisense).
@@ -32,7 +34,7 @@ external interface CompletionItemProvider<T : CompletionItem> {
         position: Position,
         token: CancellationToken,
         context: CompletionContext,
-    ): ProviderResult<Any /* T[] | CompletionList<T> */>
+    ): ProviderResult<JsAny /* T[] | CompletionList<T> */>
 
     /**
      * Given a completion item fill in more data, like {@link CompletionItem.documentation doc-comment}

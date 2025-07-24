@@ -2,7 +2,9 @@
 
 package vscode
 
+import js.core.JsAny
+
 /**
  * Represents the different types of debug adapters
  */
-typealias DebugAdapterDescriptor = Any /* DebugAdapterExecutable | DebugAdapterServer | DebugAdapterNamedPipeServer | DebugAdapterInlineImplementation */
+typealias DebugAdapterDescriptor = JsAny /* DebugAdapterExecutable | DebugAdapterServer | DebugAdapterNamedPipeServer | DebugAdapterInlineImplementation */

@@ -3,6 +3,7 @@
 package vscode
 
 import js.array.Tuple2
+import js.core.JsAny
 import js.iterable.JsIterable
 
 /**
@@ -23,7 +24,7 @@ external interface EnvironmentVariableCollection :
      * A description for the environment variable collection, this will be used to describe the
      * changes in the UI.
      */
-    var description: Any /* string | MarkdownString */?
+    var description: JsAny /* string | MarkdownString */?
 
     /**
      * Replace an environment variable with a value.
@@ -95,7 +96,7 @@ external interface EnvironmentVariableCollection :
             mutator: EnvironmentVariableMutator,
             collection: EnvironmentVariableCollection,
         ) -> Unit,
-        thisArg: Any? = definedExternally,
+        thisArg: JsAny? = definedExternally,
     )
 
     /**

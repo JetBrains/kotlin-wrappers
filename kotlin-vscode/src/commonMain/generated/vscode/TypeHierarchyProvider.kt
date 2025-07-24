@@ -3,6 +3,7 @@
 package vscode
 
 import js.array.ReadonlyArray
+import js.core.JsAny
 
 /**
  * The type hierarchy provider interface describes the contract between extensions
@@ -24,7 +25,7 @@ external interface TypeHierarchyProvider {
         document: TextDocument,
         position: Position,
         token: CancellationToken,
-    ): ProviderResult<Any /* TypeHierarchyItem | TypeHierarchyItem[] */>
+    ): ProviderResult<JsAny /* TypeHierarchyItem | TypeHierarchyItem[] */>
 
     /**
      * Provide all supertypes for an item, e.g all types from which a type is derived/inherited. In graph terms this describes directed

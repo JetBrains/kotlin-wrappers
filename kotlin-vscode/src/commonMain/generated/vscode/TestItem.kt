@@ -3,6 +3,7 @@
 package vscode
 
 import js.array.ReadonlyArray
+import js.core.JsAny
 
 /**
  * An item shown in the "test explorer" view.
@@ -92,5 +93,5 @@ external interface TestItem {
      * Note that this is not a test result and should only be used to represent errors in
      * test discovery, such as syntax errors.
      */
-    var error: Any /* string | MarkdownString */?
+    var error: JsAny /* string | MarkdownString */?
 }

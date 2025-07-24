@@ -2,6 +2,7 @@
 
 package vscode
 
+import js.core.JsAny
 import js.core.JsBoolean
 import js.promise.PromiseLike
 
@@ -48,7 +49,7 @@ external interface Webview {
      * post `Blob`, `File`, `ImageData` and other DOM specific objects since the extension that receives the
      * message does not run in a browser environment.
      */
-    val onDidReceiveMessage: Event<Any?>
+    val onDidReceiveMessage: Event<JsAny?>
 
     /**
      * Post a message to the webview content.
@@ -81,7 +82,7 @@ external interface Webview {
      *   If you want confirm that a message as actually received, you can try having your webview posting a
      *   confirmation message back to your extension.
      */
-    fun postMessage(message: Any?): PromiseLike<JsBoolean>
+    fun postMessage(message: JsAny?): PromiseLike<JsBoolean>
 
     /**
      * Convert a uri for the local file system to one that can be used inside webviews.

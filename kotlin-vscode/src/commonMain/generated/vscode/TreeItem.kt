@@ -4,6 +4,8 @@
 
 package vscode
 
+import js.core.JsAny
+
 /**
  * A tree item is an UI element of the tree. Tree items are created by the {@link TreeDataProvider data provider}.
  */
@@ -11,7 +13,7 @@ open external class TreeItem {
     /**
      * A human-readable string describing this item. When `falsy`, it is derived from {@link TreeItem.resourceUri resourceUri}.
      */
-    var label: Any /* string | TreeItemLabel */?
+    var label: JsAny /* string | TreeItemLabel */?
 
     /**
      * Optional id for the tree item that has to be unique across tree. The id is used to preserve the selection and expansion state of the tree item.
@@ -25,13 +27,13 @@ open external class TreeItem {
      * When `falsy`, {@link ThemeIcon.Folder Folder Theme Icon} is assigned, if item is collapsible otherwise {@link ThemeIcon.File File Theme Icon}.
      * When a file or folder {@link ThemeIcon} is specified, icon is derived from the current file icon theme for the specified theme icon using {@link TreeItem.resourceUri resourceUri} (if provided).
      */
-    var iconPath: Any /* string | IconPath */?
+    var iconPath: JsAny /* string | IconPath */?
 
     /**
      * A human-readable string which is rendered less prominent.
      * When `true`, it is derived from {@link TreeItem.resourceUri resourceUri} and when `falsy`, it is not shown.
      */
-    var description: Any /* string | boolean */?
+    var description: JsAny /* string | boolean */?
 
     /**
      * The {@link Uri} of the resource representing this item.
@@ -44,7 +46,7 @@ open external class TreeItem {
     /**
      * The tooltip text when you hover over this item.
      */
-    var tooltip: Any /* string | MarkdownString */?
+    var tooltip: JsAny /* string | MarkdownString */?
 
     /**
      * The {@link Command} that should be executed when the tree item is selected.
@@ -113,7 +115,7 @@ open external class TreeItem {
      * @param collapsibleState {@link TreeItemCollapsibleState} of the tree item. Default is {@link TreeItemCollapsibleState.None}
      */
     constructor(
-        label: Any, /* string | TreeItemLabel */
+        label: JsAny, /* string | TreeItemLabel */
         collapsibleState: TreeItemCollapsibleState = definedExternally,
     )
 

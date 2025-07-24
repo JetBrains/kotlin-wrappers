@@ -2,6 +2,8 @@
 
 package vscode
 
+import js.core.JsAny
+
 /**
  * A file glob pattern to match file paths against. This can either be a glob pattern string
  * (like `**​/​*.{ts,js}` or `*.{ts,js}`) or a {@link RelativePattern relative pattern}.
@@ -19,4 +21,4 @@ package vscode
  * that takes care of converting any backslash into slash. Otherwise, make sure to convert
  * any backslash to slash when creating the glob pattern.
  */
-typealias GlobPattern = Any /* string | RelativePattern */
+typealias GlobPattern = JsAny /* string | RelativePattern */

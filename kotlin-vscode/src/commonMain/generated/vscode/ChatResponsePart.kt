@@ -2,8 +2,10 @@
 
 package vscode
 
+import js.core.JsAny
+
 /**
  * Represents the different chat response types.
  */
-typealias ChatResponsePart = Any /* ChatResponseMarkdownPart | ChatResponseFileTreePart | ChatResponseAnchorPart
+typealias ChatResponsePart = JsAny /* ChatResponseMarkdownPart | ChatResponseFileTreePart | ChatResponseAnchorPart
 	| ChatResponseProgressPart | ChatResponseReferencePart | ChatResponseCommandButtonPart */

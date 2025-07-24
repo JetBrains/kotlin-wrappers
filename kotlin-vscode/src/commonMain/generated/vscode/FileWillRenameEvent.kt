@@ -2,6 +2,7 @@
 
 package vscode
 
+import js.core.JsAny
 import js.promise.PromiseLike
 
 /**
@@ -60,5 +61,5 @@ external interface FileWillRenameEvent {
      *
      * @param thenable A thenable that delays saving.
      */
-    fun waitUntil(thenable: PromiseLike<Any?>)
+    fun waitUntil(thenable: PromiseLike<JsAny?>)
 }

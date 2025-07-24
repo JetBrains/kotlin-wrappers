@@ -2,6 +2,7 @@
 
 package vscode
 
+import js.core.JsAny
 import js.core.JsString
 import js.iterable.AsyncIterable
 
@@ -42,7 +43,7 @@ external interface LanguageModelChatResponse {
      * }
      * ```
      */
-    var stream: AsyncIterable<Any /* LanguageModelTextPart | LanguageModelToolCallPart | unknown */>
+    var stream: AsyncIterable<JsAny /* LanguageModelTextPart | LanguageModelToolCallPart | unknown */>
 
     /**
      * This is equivalent to filtering everything except for text parts from a {@link LanguageModelChatResponse.stream}.

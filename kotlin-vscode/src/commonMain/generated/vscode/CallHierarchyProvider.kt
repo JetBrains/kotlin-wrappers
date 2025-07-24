@@ -3,6 +3,7 @@
 package vscode
 
 import js.array.ReadonlyArray
+import js.core.JsAny
 
 /**
  * The call hierarchy provider interface describes the contract between extensions
@@ -25,7 +26,7 @@ external interface CallHierarchyProvider {
         document: TextDocument,
         position: Position,
         token: CancellationToken,
-    ): ProviderResult<Any /* CallHierarchyItem | CallHierarchyItem[] */>
+    ): ProviderResult<JsAny /* CallHierarchyItem | CallHierarchyItem[] */>
 
     /**
      * Provide all incoming calls for an item, e.g all callers for a method. In graph terms this describes directed

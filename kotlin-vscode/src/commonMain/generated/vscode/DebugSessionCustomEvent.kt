@@ -2,6 +2,8 @@
 
 package vscode
 
+import js.core.JsAny
+
 /**
  * A custom Debug Adapter Protocol event received from a {@link DebugSession debug session}.
  */
@@ -19,5 +21,5 @@ external interface DebugSessionCustomEvent {
     /**
      * Event specific information.
      */
-    val body: Any?
+    val body: JsAny?
 }

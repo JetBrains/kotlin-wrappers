@@ -3,6 +3,7 @@
 package vscode
 
 import js.array.ReadonlyArray
+import js.core.JsAny
 
 /**
  * Content settings for a webview.
@@ -30,7 +31,7 @@ external interface WebviewOptions {
      *
      * If you pass in an array, only the commands in the array are allowed.
      */
-    val enableCommandUris: Any /* boolean | readonly string[] */?
+    val enableCommandUris: JsAny /* boolean | readonly string[] */?
 
     /**
      * Root paths from which the webview can load local (filesystem) resources using uris from `asWebviewUri`

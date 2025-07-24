@@ -4,6 +4,7 @@
 
 package vscode
 
+import js.core.JsAny
 import js.errors.JsError
 
 /**
@@ -19,7 +20,7 @@ open external class FileSystemError :
      *
      * @param messageOrUri Message or uri.
      */
-    constructor(messageOrUri: Any /* string | Uri */ = definedExternally)
+    constructor(messageOrUri: JsAny /* string | Uri */ = definedExternally)
 
     /**
      * A code that identifies this error.
@@ -34,38 +35,38 @@ open external class FileSystemError :
          * Create an error to signal that a file or folder wasn't found.
          * @param messageOrUri Message or uri.
          */
-        fun FileNotFound(messageOrUri: Any /* string | Uri */ = definedExternally): FileSystemError
+        fun FileNotFound(messageOrUri: JsAny /* string | Uri */ = definedExternally): FileSystemError
 
         /**
          * Create an error to signal that a file or folder already exists, e.g. when
          * creating but not overwriting a file.
          * @param messageOrUri Message or uri.
          */
-        fun FileExists(messageOrUri: Any /* string | Uri */ = definedExternally): FileSystemError
+        fun FileExists(messageOrUri: JsAny /* string | Uri */ = definedExternally): FileSystemError
 
         /**
          * Create an error to signal that a file is not a folder.
          * @param messageOrUri Message or uri.
          */
-        fun FileNotADirectory(messageOrUri: Any /* string | Uri */ = definedExternally): FileSystemError
+        fun FileNotADirectory(messageOrUri: JsAny /* string | Uri */ = definedExternally): FileSystemError
 
         /**
          * Create an error to signal that a file is a folder.
          * @param messageOrUri Message or uri.
          */
-        fun FileIsADirectory(messageOrUri: Any /* string | Uri */ = definedExternally): FileSystemError
+        fun FileIsADirectory(messageOrUri: JsAny /* string | Uri */ = definedExternally): FileSystemError
 
         /**
          * Create an error to signal that an operation lacks required permissions.
          * @param messageOrUri Message or uri.
          */
-        fun NoPermissions(messageOrUri: Any /* string | Uri */ = definedExternally): FileSystemError
+        fun NoPermissions(messageOrUri: JsAny /* string | Uri */ = definedExternally): FileSystemError
 
         /**
          * Create an error to signal that the file system is unavailable or too busy to
          * complete a request.
          * @param messageOrUri Message or uri.
          */
-        fun Unavailable(messageOrUri: Any /* string | Uri */ = definedExternally): FileSystemError
+        fun Unavailable(messageOrUri: JsAny /* string | Uri */ = definedExternally): FileSystemError
     }
 }

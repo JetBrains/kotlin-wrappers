@@ -5,6 +5,7 @@
 package vscode
 
 import js.array.ReadonlyArray
+import js.core.JsAny
 
 /**
  * Represents a chat participant's response in chat history.
@@ -13,7 +14,7 @@ open external class ChatResponseTurn {
     /**
      * The content that was received from the chat participant. Only the stream parts that represent actual content (not metadata) are represented.
      */
-    val response: ReadonlyArray<Any /* ChatResponseMarkdownPart | ChatResponseFileTreePart | ChatResponseAnchorPart | ChatResponseCommandButtonPart */>
+    val response: ReadonlyArray<JsAny /* ChatResponseMarkdownPart | ChatResponseFileTreePart | ChatResponseAnchorPart | ChatResponseCommandButtonPart */>
 
     /**
      * The result that was received from the chat participant.
@@ -34,7 +35,7 @@ open external class ChatResponseTurn {
      * @hidden
      */
     private constructor(
-        response: ReadonlyArray<Any /* ChatResponseMarkdownPart | ChatResponseFileTreePart | ChatResponseAnchorPart | ChatResponseCommandButtonPart */>,
+        response: ReadonlyArray<JsAny /* ChatResponseMarkdownPart | ChatResponseFileTreePart | ChatResponseAnchorPart | ChatResponseCommandButtonPart */>,
         result: ChatResult,
         participant: String,
     )

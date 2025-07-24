@@ -4,6 +4,8 @@
 
 package vscode
 
+import js.core.JsAny
+
 /**
  * A terminal profile defines how a terminal will be launched.
  */
@@ -11,11 +13,11 @@ open external class TerminalProfile {
     /**
      * The options that the terminal will launch with.
      */
-    var options: Any /* TerminalOptions | ExtensionTerminalOptions */
+    var options: JsAny /* TerminalOptions | ExtensionTerminalOptions */
 
     /**
      * Creates a new terminal profile.
      * @param options The options that the terminal will launch with.
      */
-    constructor(options: Any /* TerminalOptions | ExtensionTerminalOptions */)
+    constructor(options: JsAny /* TerminalOptions | ExtensionTerminalOptions */)
 }

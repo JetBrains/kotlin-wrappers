@@ -5,6 +5,7 @@
 package vscode
 
 import js.array.ReadonlyArray
+import js.core.JsAny
 
 /**
  * The result of a tool call. This is the counterpart of a {@link LanguageModelToolCallPart tool call} and
@@ -21,7 +22,7 @@ open external class LanguageModelToolResultPart {
     /**
      * The value of the tool result.
      */
-    var content: ReadonlyArray<Any /* LanguageModelTextPart | LanguageModelPromptTsxPart | unknown */>
+    var content: ReadonlyArray<JsAny /* LanguageModelTextPart | LanguageModelPromptTsxPart | unknown */>
 
     /**
      * @param callId The ID of the tool call.
@@ -29,6 +30,6 @@ open external class LanguageModelToolResultPart {
      */
     constructor(
         callId: String,
-        content: ReadonlyArray<Any /* LanguageModelTextPart | LanguageModelPromptTsxPart | unknown */>,
+        content: ReadonlyArray<JsAny /* LanguageModelTextPart | LanguageModelPromptTsxPart | unknown */>,
     )
 }

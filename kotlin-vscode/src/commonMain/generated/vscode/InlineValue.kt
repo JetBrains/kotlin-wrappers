@@ -2,6 +2,8 @@
 
 package vscode
 
+import js.core.JsAny
+
 /**
  * Inline value information can be provided by different means:
  * - directly as a text value (class InlineValueText).
@@ -9,4 +11,4 @@ package vscode
  * - as an evaluatable expression (class InlineValueEvaluatableExpression)
  * The InlineValue types combines all inline value types into one type.
  */
-typealias InlineValue = Any /* InlineValueText | InlineValueVariableLookup | InlineValueEvaluatableExpression */
+typealias InlineValue = JsAny /* InlineValueText | InlineValueVariableLookup | InlineValueEvaluatableExpression */

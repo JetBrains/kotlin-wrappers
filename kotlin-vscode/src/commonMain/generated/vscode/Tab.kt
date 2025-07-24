@@ -2,6 +2,8 @@
 
 package vscode
 
+import js.core.JsAny
+
 /**
  * Represents a tab within a {@link TabGroup group of tabs}.
  * Tabs are merely the graphical representation within the editor area.
@@ -22,7 +24,7 @@ external interface Tab {
      * Defines the structure of the tab i.e. text, notebook, custom, etc.
      * Resource and other useful properties are defined on the tab kind.
      */
-    val input: Any /* TabInputText | TabInputTextDiff | TabInputCustom | TabInputWebview | TabInputNotebook | TabInputNotebookDiff | TabInputTerminal | unknown */
+    val input: JsAny /* TabInputText | TabInputTextDiff | TabInputCustom | TabInputWebview | TabInputNotebook | TabInputNotebookDiff | TabInputTerminal | unknown */
 
     /**
      * Whether or not the tab is currently active.

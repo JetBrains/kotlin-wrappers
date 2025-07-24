@@ -4,6 +4,8 @@
 
 package vscode
 
+import js.core.JsAny
+
 /**
  * Represents a parameter of a callable-signature. A parameter can
  * have a label and a doc-comment.
@@ -16,13 +18,13 @@ open external class ParameterInformation {
      * {@link SignatureInformation.label signature label}. *Note*: A label of type string must be
      * a substring of its containing signature information's {@link SignatureInformation.label label}.
      */
-    var label: Any /* string | [number, number] */
+    var label: JsAny /* string | [number, number] */
 
     /**
      * The human-readable doc-comment of this signature. Will be shown
      * in the UI but can be omitted.
      */
-    var documentation: Any /* string | MarkdownString */?
+    var documentation: JsAny /* string | MarkdownString */?
 
     /**
      * Creates a new parameter information object.
@@ -31,7 +33,7 @@ open external class ParameterInformation {
      * @param documentation A doc string.
      */
     constructor(
-        label: Any, /* string | [number, number] */
-        documentation: Any /* string | MarkdownString */ = definedExternally,
+        label: JsAny, /* string | [number, number] */
+        documentation: JsAny /* string | MarkdownString */ = definedExternally,
     )
 }

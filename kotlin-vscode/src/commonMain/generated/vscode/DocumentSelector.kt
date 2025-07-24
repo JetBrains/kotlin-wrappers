@@ -2,6 +2,8 @@
 
 package vscode
 
+import js.core.JsAny
+
 /**
  * A language selector is the combination of one or many language identifiers
  * and {@link DocumentFilter language filters}.
@@ -14,4 +16,4 @@ package vscode
  * @example
  * let sel:DocumentSelector = { scheme: 'file', language: 'typescript' };
  */
-typealias DocumentSelector = Any /* DocumentFilter | string | ReadonlyArray<DocumentFilter | string> */
+typealias DocumentSelector = JsAny /* DocumentFilter | string | ReadonlyArray<DocumentFilter | string> */

@@ -5,6 +5,7 @@
 package vscode
 
 import js.array.ReadonlyArray
+import js.core.JsAny
 import js.core.JsString
 import js.promise.PromiseLike
 
@@ -427,7 +428,7 @@ external object window {
      * @returns A promise that resolves to the selection or `undefined`.
      */
     fun showQuickPick(
-        items: Any, /* string[] | Thenable<readonly string[]> */
+        items: JsAny, /* string[] | Thenable<readonly string[]> */
         options: QuickPickOptions = definedExternally,
         token: CancellationToken = definedExternally,
     ): PromiseLike<JsString?>
@@ -451,7 +452,7 @@ external object window {
      * @returns A promise that resolves to the selected item or `undefined`.
      */
     fun <T : QuickPickItem> showQuickPick(
-        items: Any, /* T[] | Thenable<readonly T[]> */
+        items: JsAny, /* T[] | Thenable<readonly T[]> */
         options: QuickPickOptions = definedExternally,
         token: CancellationToken = definedExternally,
     ): PromiseLike<T?>
@@ -593,7 +594,7 @@ external object window {
      */
     fun setStatusBarMessage(
         text: String,
-        hideWhenDone: PromiseLike<Any?>,
+        hideWhenDone: PromiseLike<JsAny?>,
     ): Disposable
 
     /**
@@ -683,7 +684,7 @@ external object window {
     fun createTerminal(
         name: String = definedExternally,
         shellPath: String = definedExternally,
-        shellArgs: Any /* string[] | string */ = definedExternally,
+        shellArgs: JsAny /* string[] | string */ = definedExternally,
     ): Terminal
 
     /**

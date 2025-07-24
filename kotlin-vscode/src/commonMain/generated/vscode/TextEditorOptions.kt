@@ -2,6 +2,8 @@
 
 package vscode
 
+import js.core.JsAny
+
 /**
  * Represents a {@link TextEditor text editor}'s {@link TextEditor.options options}.
  */
@@ -15,7 +17,7 @@ external interface TextEditorOptions {
      * When getting a text editor's options, this property will always be a number (resolved).
      * When setting a text editor's options, this property is optional and it can be a number or `"auto"`.
      */
-    var tabSize: Any /* number | string */?
+    var tabSize: JsAny /* number | string */?
 
     /**
      * The number of spaces to insert when {@link TextEditorOptions.insertSpaces insertSpaces} is true.
@@ -23,14 +25,14 @@ external interface TextEditorOptions {
      * When getting a text editor's options, this property will always be a number (resolved).
      * When setting a text editor's options, this property is optional and it can be a number or `"tabSize"`.
      */
-    var indentSize: Any /* number | string */?
+    var indentSize: JsAny /* number | string */?
 
     /**
      * When pressing Tab insert {@link TextEditorOptions.tabSize n} spaces.
      * When getting a text editor's options, this property will always be a boolean (resolved).
      * When setting a text editor's options, this property is optional and it can be a boolean or `"auto"`.
      */
-    var insertSpaces: Any /* boolean | string */?
+    var insertSpaces: JsAny /* boolean | string */?
 
     /**
      * The rendering style of the cursor in this editor.

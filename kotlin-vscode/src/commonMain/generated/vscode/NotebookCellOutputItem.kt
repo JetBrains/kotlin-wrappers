@@ -4,6 +4,7 @@
 
 package vscode
 
+import js.core.JsAny
 import js.errors.JsError
 import js.typedarrays.Uint8Array
 
@@ -64,7 +65,7 @@ open external class NotebookCellOutputItem {
          * @returns A new output item object.
          */
         fun json(
-            value: Any?,
+            value: JsAny?,
             mime: String = definedExternally,
         ): NotebookCellOutputItem
 

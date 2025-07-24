@@ -4,6 +4,8 @@
 
 package vscode
 
+import js.core.JsAny
+
 /**
  * An inlay hint label part allows for interactive and composite labels of inlay hints.
  */
@@ -19,7 +21,7 @@ open external class InlayHintLabelPart {
      * *Note* that this property can be set late during
      * {@link InlayHintsProvider.resolveInlayHint resolving} of inlay hints.
      */
-    var tooltip: Any /* string | MarkdownString */?
+    var tooltip: JsAny /* string | MarkdownString */?
 
     /**
      * An optional {@link Location source code location} that represents this label

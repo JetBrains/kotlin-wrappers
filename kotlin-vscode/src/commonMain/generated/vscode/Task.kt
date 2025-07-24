@@ -5,6 +5,7 @@
 package vscode
 
 import js.array.ReadonlyArray
+import js.core.JsAny
 import js.core.JsString
 
 /**
@@ -25,11 +26,11 @@ open external class Task {
      */
     constructor(
         taskDefinition: TaskDefinition,
-        scope: Any, /* WorkspaceFolder | TaskScope.Global | TaskScope.Workspace */
+        scope: JsAny, /* WorkspaceFolder | TaskScope.Global | TaskScope.Workspace */
         name: String,
         source: String,
-        execution: Any /* ProcessExecution | ShellExecution | CustomExecution */ = definedExternally,
-        problemMatchers: Any /* string | string[] */ = definedExternally,
+        execution: JsAny /* ProcessExecution | ShellExecution | CustomExecution */ = definedExternally,
+        problemMatchers: JsAny /* string | string[] */ = definedExternally,
     )
 
     /**
@@ -40,7 +41,7 @@ open external class Task {
     /**
      * The task's scope.
      */
-    val scope: Any /* TaskScope.Global | TaskScope.Workspace | WorkspaceFolder */?
+    val scope: JsAny /* TaskScope.Global | TaskScope.Workspace | WorkspaceFolder */?
 
     /**
      * The task's name
@@ -57,7 +58,7 @@ open external class Task {
     /**
      * The task's execution engine
      */
-    var execution: Any /* ProcessExecution | ShellExecution | CustomExecution */?
+    var execution: JsAny /* ProcessExecution | ShellExecution | CustomExecution */?
 
     /**
      * Whether the task is a background task or not.

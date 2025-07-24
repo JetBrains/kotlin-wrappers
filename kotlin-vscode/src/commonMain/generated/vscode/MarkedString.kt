@@ -2,6 +2,8 @@
 
 package vscode
 
+import js.core.JsAny
+
 /**
  * MarkedString can be used to render human-readable text. It is either a markdown string
  * or a code-block that provides a language and a code snippet. Note that
@@ -9,7 +11,7 @@ package vscode
  *
  * @deprecated This type is deprecated, please use {@linkcode MarkdownString} instead.
  */
-typealias MarkedString = Any /* string | {
+typealias MarkedString = JsAny /* string | {
 	/**
 	 * The language of a markdown code block
 	 * @deprecated please use {@linkcode MarkdownString} instead

@@ -3,6 +3,7 @@
 package vscode
 
 import js.array.ReadonlyArray
+import js.core.JsAny
 
 /**
  * Provides contextual actions for code. Code actions typically either fix problems or beautify/refactor code.
@@ -41,10 +42,10 @@ external interface CodeActionProvider<T : CodeAction> {
      */
     fun provideCodeActions(
         document: TextDocument,
-        range: Any, /* Range | Selection */
+        range: JsAny, /* Range | Selection */
         context: CodeActionContext,
         token: CancellationToken,
-    ): ProviderResult<ReadonlyArray<Any /* Command | T */>>
+    ): ProviderResult<ReadonlyArray<JsAny /* Command | T */>>
 
     /**
      * Given a code action fill in its {@linkcode CodeAction.edit edit}-property. Changes to

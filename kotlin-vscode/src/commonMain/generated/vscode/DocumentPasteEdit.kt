@@ -5,6 +5,7 @@
 package vscode
 
 import js.array.ReadonlyArray
+import js.core.JsAny
 
 /**
  * An edit the applies a paste operation.
@@ -25,7 +26,7 @@ open external class DocumentPasteEdit {
      *
      * If your edit requires more advanced insertion logic, set this to an empty string and provide an {@link DocumentPasteEdit.additionalEdit additional edit} instead.
      */
-    var insertText: Any /* string | SnippetString */
+    var insertText: JsAny /* string | SnippetString */
 
     /**
      * An optional additional edit to apply on paste.
@@ -47,7 +48,7 @@ open external class DocumentPasteEdit {
      * @param kind {@link DocumentDropOrPasteEditKind Kind} of the edit.
      */
     constructor(
-        insertText: Any, /* string | SnippetString */
+        insertText: JsAny, /* string | SnippetString */
         title: String,
         kind: DocumentDropOrPasteEditKind,
     )

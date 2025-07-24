@@ -2,6 +2,7 @@
 
 package vscode
 
+import js.core.JsAny
 import js.core.Void
 import js.promise.PromiseLike
 
@@ -198,8 +199,8 @@ external interface WorkspaceConfiguration {
      */
     fun update(
         section: String,
-        value: Any?,
-        configurationTarget: Any /* ConfigurationTarget | boolean */? = definedExternally,
+        value: JsAny?,
+        configurationTarget: JsAny /* ConfigurationTarget | boolean */? = definedExternally,
         overrideInLanguage: Boolean = definedExternally,
     ): PromiseLike<Void>
 

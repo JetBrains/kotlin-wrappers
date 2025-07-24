@@ -2,6 +2,7 @@
 
 package vscode
 
+import js.core.JsAny
 import js.core.JsString
 import js.objects.Record
 
@@ -23,12 +24,12 @@ external interface TerminalOptions {
      * Args for the custom shell executable. A string can be used on Windows only which allows
      * specifying shell args in [command-line format](https://msdn.microsoft.com/en-au/08dfcab2-eb6e-49a4-80eb-87d4076c98c6).
      */
-    var shellArgs: Any /* string[] | string */?
+    var shellArgs: JsAny /* string[] | string */?
 
     /**
      * A path or Uri for the current working directory to be used for the terminal.
      */
-    var cwd: Any /* string | Uri */?
+    var cwd: JsAny /* string | Uri */?
 
     /**
      * Object with environment variables that will be added to the editor process.
@@ -75,7 +76,7 @@ external interface TerminalOptions {
     /**
      * The {@link TerminalLocation} or {@link TerminalEditorLocationOptions} or {@link TerminalSplitLocationOptions} for the terminal.
      */
-    var location: Any /* TerminalLocation | TerminalEditorLocationOptions | TerminalSplitLocationOptions */?
+    var location: JsAny /* TerminalLocation | TerminalEditorLocationOptions | TerminalSplitLocationOptions */?
 
     /**
      * Opt-out of the default terminal persistence on restart and reload.

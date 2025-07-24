@@ -2,6 +2,8 @@
 
 package vscode
 
+import js.core.JsAny
+
 /**
  * Provider which handles dropping of resources into a text editor.
  *
@@ -26,7 +28,7 @@ external interface DocumentDropEditProvider<T : DocumentDropEdit> {
         position: Position,
         dataTransfer: DataTransfer,
         token: CancellationToken,
-    ): ProviderResult<Any /* T | T[] */>
+    ): ProviderResult<JsAny /* T | T[] */>
 
     /**
      * Optional method which fills in the {@linkcode DocumentDropEdit.additionalEdit} before the edit is applied.

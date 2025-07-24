@@ -3,6 +3,7 @@
 package vscode
 
 import js.array.ReadonlyArray
+import js.core.JsAny
 
 /**
  * A collection of {@link Comment comments} representing a conversation at a particular range in a document.
@@ -35,7 +36,7 @@ external interface CommentThread {
      * Whether the thread supports reply.
      * Defaults to true.
      */
-    var canReply: Any /* boolean | CommentAuthorInformation */
+    var canReply: JsAny /* boolean | CommentAuthorInformation */
 
     /**
      * Context value of the comment thread. This can be used to contribute thread specific actions.

@@ -2,6 +2,7 @@
 
 package vscode
 
+import js.core.JsAny
 import js.core.Void
 import js.promise.PromiseLike
 
@@ -38,7 +39,7 @@ external interface CustomEditorProvider<T : CustomDocument> :
      *
      * An editor should only ever fire `CustomDocumentEditEvent` events, or only ever fire `CustomDocumentContentChangeEvent` events.
      */
-    val onDidChangeCustomDocument: Event<Any /* CustomDocumentEditEvent<T>> | Event<CustomDocumentContentChangeEvent<T> */>
+    val onDidChangeCustomDocument: Event<JsAny /* CustomDocumentEditEvent<T>> | Event<CustomDocumentContentChangeEvent<T> */>
 
     /**
      * Save a custom document.

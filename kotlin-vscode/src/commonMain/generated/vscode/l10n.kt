@@ -4,6 +4,7 @@
 
 package vscode
 
+import js.core.JsAny
 import js.core.JsString
 import js.objects.Record
 
@@ -34,7 +35,7 @@ external object l10n {
      */
     fun t(
         message: String,
-        vararg args: Any, /* Any /* string | number | boolean */ */
+        vararg args: JsAny, /* JsAny /* string | number | boolean */ */
     ): String
 
     /**

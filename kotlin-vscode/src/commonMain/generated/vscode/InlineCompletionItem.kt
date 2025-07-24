@@ -4,6 +4,8 @@
 
 package vscode
 
+import js.core.JsAny
+
 /**
  * An inline completion item represents a text snippet that is proposed inline to complete text that is being typed.
  *
@@ -14,7 +16,7 @@ open external class InlineCompletionItem {
      * The text to replace the range with. Must be set.
      * Is used both for the preview and the accept operation.
      */
-    var insertText: Any /* string | SnippetString */
+    var insertText: JsAny /* string | SnippetString */
 
     /**
      * A text that is used to decide if this inline completion should be shown. When `falsy`
@@ -45,7 +47,7 @@ open external class InlineCompletionItem {
      * @param command An optional {@link Command} that is executed *after* inserting this completion.
      */
     constructor(
-        insertText: Any, /* string | SnippetString */
+        insertText: JsAny, /* string | SnippetString */
         range: Range = definedExternally,
         command: Command = definedExternally,
     )

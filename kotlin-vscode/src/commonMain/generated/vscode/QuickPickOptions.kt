@@ -2,6 +2,8 @@
 
 package vscode
 
+import js.core.JsAny
+
 /**
  * Options to configure the behavior of the quick pick UI.
  */
@@ -40,5 +42,5 @@ external interface QuickPickOptions {
     /**
      * An optional function that is invoked whenever an item is selected.
      */
-    var onDidSelectItem: ((item: Any /* QuickPickItem | string */) -> Unit)?
+    var onDidSelectItem: ((item: JsAny /* QuickPickItem | string */) -> Unit)?
 }

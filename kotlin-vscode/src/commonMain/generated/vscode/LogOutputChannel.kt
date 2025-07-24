@@ -2,6 +2,8 @@
 
 package vscode
 
+import js.core.JsAny
+
 /**
  * A channel for containing log output.
  *
@@ -29,7 +31,7 @@ external interface LogOutputChannel :
      */
     fun trace(
         message: String,
-        vararg args: Any?,
+        vararg args: JsAny?,
     )
 
     /**
@@ -41,7 +43,7 @@ external interface LogOutputChannel :
      */
     fun debug(
         message: String,
-        vararg args: Any?,
+        vararg args: JsAny?,
     )
 
     /**
@@ -53,7 +55,7 @@ external interface LogOutputChannel :
      */
     fun info(
         message: String,
-        vararg args: Any?,
+        vararg args: JsAny?,
     )
 
     /**
@@ -65,7 +67,7 @@ external interface LogOutputChannel :
      */
     fun warn(
         message: String,
-        vararg args: Any?,
+        vararg args: JsAny?,
     )
 
     /**
@@ -76,7 +78,7 @@ external interface LogOutputChannel :
      * @param error Error or error message to log
      */
     fun error(
-        error: Any, /* string | Error */
-        vararg args: Any?,
+        error: JsAny, /* string | Error */
+        vararg args: JsAny?,
     )
 }

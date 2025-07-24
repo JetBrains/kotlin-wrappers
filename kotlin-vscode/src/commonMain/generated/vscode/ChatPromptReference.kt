@@ -3,6 +3,7 @@
 package vscode
 
 import js.array.Tuple2
+import js.core.JsAny
 
 /**
  * A reference to a value that the user added to their chat request.
@@ -29,5 +30,5 @@ external interface ChatPromptReference {
     /**
      * The value of this reference. The `string | Uri | Location` types are used today, but this could expand in the future.
      */
-    val value: Any /* string | Uri | Location | unknown */
+    val value: JsAny /* string | Uri | Location | unknown */
 }

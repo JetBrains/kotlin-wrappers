@@ -3,6 +3,7 @@
 package vscode
 
 import js.array.ReadonlyArray
+import js.core.JsAny
 import js.date.Date
 
 /**
@@ -12,7 +13,7 @@ external interface Comment {
     /**
      * The human-readable comment body
      */
-    var body: Any /* string | MarkdownString */
+    var body: JsAny /* string | MarkdownString */
 
     /**
      * {@link CommentMode Comment mode} of the comment

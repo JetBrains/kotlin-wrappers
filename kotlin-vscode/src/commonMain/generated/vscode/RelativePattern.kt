@@ -4,6 +4,8 @@
 
 package vscode
 
+import js.core.JsAny
+
 /**
  * A relative pattern is a helper to construct glob patterns that are matched
  * relatively to a base file path. The base path can either be an absolute file
@@ -50,7 +52,7 @@ open external class RelativePattern {
      * @param pattern A file glob pattern like `*.{ts,js}` that will be matched on paths relative to the base.
      */
     constructor(
-        base: Any, /* WorkspaceFolder | Uri | string */
+        base: JsAny, /* WorkspaceFolder | Uri | string */
         pattern: String,
     )
 }

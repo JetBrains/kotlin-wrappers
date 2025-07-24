@@ -2,6 +2,7 @@
 
 package vscode
 
+import js.core.JsAny
 import js.errors.JsError
 
 /**
@@ -43,7 +44,7 @@ external interface TelemetryLogger {
      */
     fun logUsage(
         eventName: String,
-        data: Any /* Record<string, any | TelemetryTrustedValue> */ = definedExternally,
+        data: JsAny /* Record<string, any | TelemetryTrustedValue> */ = definedExternally,
     )
 
     /**
@@ -56,7 +57,7 @@ external interface TelemetryLogger {
      */
     fun logError(
         eventName: String,
-        data: Any /* Record<string, any | TelemetryTrustedValue> */ = definedExternally,
+        data: JsAny /* Record<string, any | TelemetryTrustedValue> */ = definedExternally,
     )
 
     /**
@@ -70,7 +71,7 @@ external interface TelemetryLogger {
      */
     fun logError(
         error: JsError,
-        data: Any /* Record<string, any | TelemetryTrustedValue> */ = definedExternally,
+        data: JsAny /* Record<string, any | TelemetryTrustedValue> */ = definedExternally,
     )
 
     /**

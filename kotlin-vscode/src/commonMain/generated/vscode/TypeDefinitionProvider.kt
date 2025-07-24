@@ -2,6 +2,8 @@
 
 package vscode
 
+import js.core.JsAny
+
 /**
  * The type definition provider defines the contract between extensions and
  * the go to type definition feature.
@@ -20,5 +22,5 @@ external interface TypeDefinitionProvider {
         document: TextDocument,
         position: Position,
         token: CancellationToken,
-    ): ProviderResult<Any /* Definition | DefinitionLink[] */>
+    ): ProviderResult<JsAny /* Definition | DefinitionLink[] */>
 }

@@ -4,6 +4,8 @@
 
 package vscode
 
+import js.core.JsAny
+
 /**
  * Represents a location inside a resource, such as a line
  * inside a text file.
@@ -27,6 +29,6 @@ open external class Location {
      */
     constructor(
         uri: Uri,
-        rangeOrPosition: Any, /* Range | Position */
+        rangeOrPosition: JsAny, /* Range | Position */
     )
 }

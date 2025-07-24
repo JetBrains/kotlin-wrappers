@@ -2,6 +2,8 @@
 
 package vscode
 
+import js.core.JsAny
+
 /**
  * The configuration scope which can be:
  * - a {@link Uri} representing a resource
@@ -11,7 +13,7 @@ package vscode
  *   - `uri`: an optional {@link Uri} of a text document
  *   - `languageId`: the language identifier of a text document
  */
-typealias ConfigurationScope = Any /* Uri | TextDocument | WorkspaceFolder | {
+typealias ConfigurationScope = JsAny /* Uri | TextDocument | WorkspaceFolder | {
 	/**
 	 * The uri of a {@link TextDocument text document}
 	 */

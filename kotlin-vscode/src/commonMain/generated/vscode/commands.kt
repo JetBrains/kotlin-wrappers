@@ -5,6 +5,7 @@
 package vscode
 
 import js.array.ReadonlyArray
+import js.core.JsAny
 import js.core.JsString
 import js.promise.PromiseLike
 
@@ -60,7 +61,7 @@ external object commands {
     fun registerCommand(
         command: String,
         callback: () -> Unit,
-        thisArg: Any? = definedExternally,
+        thisArg: JsAny? = definedExternally,
     ): Disposable
 
     /**
@@ -85,7 +86,7 @@ external object commands {
             edit: TextEditorEdit,
             /* ...args: any[], */
         ) -> Unit,
-        thisArg: Any = definedExternally,
+        thisArg: JsAny = definedExternally,
     ): Disposable
 
     /**
@@ -104,7 +105,7 @@ external object commands {
      */
     fun <T> executeCommand(
         command: String,
-        vararg rest: Any?,
+        vararg rest: JsAny?,
     ): PromiseLike<T>
 
     /**

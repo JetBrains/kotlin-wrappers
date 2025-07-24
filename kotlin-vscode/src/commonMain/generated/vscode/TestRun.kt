@@ -2,6 +2,7 @@
 
 package vscode
 
+import js.core.JsAny
 import js.core.Void
 
 /**
@@ -54,7 +55,7 @@ external interface TestRun {
      */
     fun failed(
         test: TestItem,
-        message: Any, /* TestMessage | readonly TestMessage[] */
+        message: JsAny, /* TestMessage | readonly TestMessage[] */
         duration: Int = definedExternally,
     )
 
@@ -69,7 +70,7 @@ external interface TestRun {
      */
     fun errored(
         test: TestItem,
-        message: Any, /* TestMessage | readonly TestMessage[] */
+        message: JsAny, /* TestMessage | readonly TestMessage[] */
         duration: Int = definedExternally,
     )
 

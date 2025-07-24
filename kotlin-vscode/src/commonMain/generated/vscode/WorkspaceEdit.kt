@@ -6,6 +6,7 @@ package vscode
 
 import js.array.ReadonlyArray
 import js.array.Tuple2
+import js.core.JsAny
 
 /**
  * A workspace edit is a collection of textual and files changes for
@@ -78,7 +79,7 @@ open external class WorkspaceEdit {
      */
     fun set(
         uri: Uri,
-        edits: ReadonlyArray<Any /* TextEdit | SnippetTextEdit */>,
+        edits: ReadonlyArray<JsAny /* TextEdit | SnippetTextEdit */>,
     )
 
     /**
@@ -89,7 +90,7 @@ open external class WorkspaceEdit {
      */
     fun set(
         uri: Uri,
-        edits: ReadonlyArray<Tuple2<Any /* TextEdit | SnippetTextEdit */, WorkspaceEditEntryMetadata?>>,
+        edits: ReadonlyArray<Tuple2<JsAny /* TextEdit | SnippetTextEdit */, WorkspaceEditEntryMetadata?>>,
     )
 
     /**

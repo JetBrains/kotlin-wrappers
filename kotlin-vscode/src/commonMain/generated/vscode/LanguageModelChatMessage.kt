@@ -5,6 +5,7 @@
 package vscode
 
 import js.array.ReadonlyArray
+import js.core.JsAny
 
 /**
  * Represents a message in a chat. Can assume different roles, like user or assistant.
@@ -19,7 +20,7 @@ open external class LanguageModelChatMessage {
      * A string or heterogeneous array of things that a message can contain as content. Some parts may be message-type
      * specific for some models.
      */
-    var content: ReadonlyArray<Any /* LanguageModelTextPart | LanguageModelToolResultPart | LanguageModelToolCallPart */>
+    var content: ReadonlyArray<JsAny /* LanguageModelTextPart | LanguageModelToolResultPart | LanguageModelToolCallPart */>
 
     /**
      * The optional name of a user for this message.
@@ -35,7 +36,7 @@ open external class LanguageModelChatMessage {
      */
     constructor(
         role: LanguageModelChatMessageRole,
-        content: Any, /* string | Array<LanguageModelTextPart | LanguageModelToolResultPart | LanguageModelToolCallPart> */
+        content: JsAny, /* string | Array<LanguageModelTextPart | LanguageModelToolResultPart | LanguageModelToolCallPart> */
         name: String = definedExternally,
     )
 
@@ -47,7 +48,7 @@ open external class LanguageModelChatMessage {
          * @param name The optional name of a user for the message.
          */
         fun User(
-            content: Any, /* string | Array<LanguageModelTextPart | LanguageModelToolResultPart> */
+            content: JsAny, /* string | Array<LanguageModelTextPart | LanguageModelToolResultPart> */
             name: String = definedExternally,
         ): LanguageModelChatMessage
 
@@ -58,7 +59,7 @@ open external class LanguageModelChatMessage {
          * @param name The optional name of a user for the message.
          */
         fun Assistant(
-            content: Any, /* string | Array<LanguageModelTextPart | LanguageModelToolCallPart> */
+            content: JsAny, /* string | Array<LanguageModelTextPart | LanguageModelToolCallPart> */
             name: String = definedExternally,
         ): LanguageModelChatMessage
     }

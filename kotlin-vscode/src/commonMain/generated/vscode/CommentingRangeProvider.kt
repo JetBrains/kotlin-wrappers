@@ -2,6 +2,8 @@
 
 package vscode
 
+import js.core.JsAny
+
 /**
  * Commenting range provider for a {@link CommentController comment controller}.
  */
@@ -12,5 +14,5 @@ external interface CommentingRangeProvider {
     fun provideCommentingRanges(
         document: TextDocument,
         token: CancellationToken,
-    ): ProviderResult<Any /* Range[] | CommentingRanges */>
+    ): ProviderResult<JsAny /* Range[] | CommentingRanges */>
 }

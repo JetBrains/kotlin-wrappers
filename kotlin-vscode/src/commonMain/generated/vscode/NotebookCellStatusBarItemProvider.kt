@@ -2,6 +2,7 @@
 
 package vscode
 
+import js.core.JsAny
 import js.core.Void
 
 /**
@@ -22,5 +23,5 @@ external interface NotebookCellStatusBarItemProvider {
     fun provideCellStatusBarItems(
         cell: NotebookCell,
         token: CancellationToken,
-    ): ProviderResult<Any /* NotebookCellStatusBarItem | NotebookCellStatusBarItem[] */>
+    ): ProviderResult<JsAny /* NotebookCellStatusBarItem | NotebookCellStatusBarItem[] */>
 }

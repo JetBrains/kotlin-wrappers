@@ -5,6 +5,7 @@
 package vscode
 
 import js.array.ReadonlyArray
+import js.core.JsAny
 import js.core.JsString
 
 /**
@@ -28,7 +29,7 @@ open external class CompletionItem {
      * this is also the text that is inserted when selecting
      * this completion.
      */
-    var label: Any /* string | CompletionItemLabel */
+    var label: JsAny /* string | CompletionItemLabel */
 
     /**
      * The kind of this completion item. Based on the kind
@@ -50,7 +51,7 @@ open external class CompletionItem {
     /**
      * A human-readable string that represents a doc-comment.
      */
-    var documentation: Any /* string | MarkdownString */?
+    var documentation: JsAny /* string | MarkdownString */?
 
     /**
      * A string that should be used when comparing this item
@@ -88,7 +89,7 @@ open external class CompletionItem {
      * this completion. When `falsy` the {@link CompletionItem.label label}
      * is used.
      */
-    var insertText: Any /* string | SnippetString */?
+    var insertText: JsAny /* string | SnippetString */?
 
     /**
      * A range or a insert and replace range selecting the text that should be replaced by this completion item.
@@ -152,7 +153,7 @@ open external class CompletionItem {
      * @param kind The {@link CompletionItemKind kind} of the completion.
      */
     constructor(
-        label: Any, /* string | CompletionItemLabel */
+        label: JsAny, /* string | CompletionItemLabel */
         kind: CompletionItemKind = definedExternally,
     )
 }

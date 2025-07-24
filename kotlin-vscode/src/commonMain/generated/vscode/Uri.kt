@@ -4,6 +4,8 @@
 
 package vscode
 
+import js.core.JsAny
+
 /**
  * A universal resource identifier representing either a file on disk
  * or another resource, like untitled resources.
@@ -132,7 +134,7 @@ open external class Uri {
      *
      * @returns An object.
      */
-    fun toJSON(): Any?
+    fun toJSON(): JsAny?
 
     companion object {
         /**

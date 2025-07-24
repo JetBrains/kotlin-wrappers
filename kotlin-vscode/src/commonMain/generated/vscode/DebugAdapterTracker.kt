@@ -2,6 +2,7 @@
 
 package vscode
 
+import js.core.JsAny
 import js.core.Void
 import js.errors.JsError
 
@@ -17,12 +18,12 @@ external interface DebugAdapterTracker {
     /**
      * The debug adapter is about to receive a Debug Adapter Protocol message from the editor.
      */
-    var onWillReceiveMessage: ((message: Any?) -> Void)?
+    var onWillReceiveMessage: ((message: JsAny?) -> Void)?
 
     /**
      * The debug adapter has sent a Debug Adapter Protocol message to the editor.
      */
-    var onDidSendMessage: ((message: Any?) -> Void)?
+    var onDidSendMessage: ((message: JsAny?) -> Void)?
 
     /**
      * The debug adapter session is about to be stopped.

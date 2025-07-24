@@ -2,6 +2,8 @@
 
 package vscode
 
+import js.core.JsAny
+
 /**
  * The implementation provider interface defines the contract between extensions and
  * the go to implementation feature.
@@ -20,5 +22,5 @@ external interface ImplementationProvider {
         document: TextDocument,
         position: Position,
         token: CancellationToken,
-    ): ProviderResult<Any /* Definition | DefinitionLink[] */>
+    ): ProviderResult<JsAny /* Definition | DefinitionLink[] */>
 }

@@ -1,16 +1,14 @@
 package karakum.vscode
 
-internal const val UNIT = "Unit"
-
 internal const val STRING = "String"
 
 internal const val INT = "Int"
 internal const val DOUBLE = "Double"
 
 private val STANDARD_TYPE_MAP = mapOf(
-    "any" to "Any?",
-    "unknown" to "Any?",
-    "object" to "Any",
+    "any" to "JsAny?",
+    "unknown" to "JsAny?",
+    "object" to "JsAny",
 
     "boolean" to "Boolean",
     "string" to STRING,
@@ -48,7 +46,7 @@ private val STANDARD_TYPE_MAP = mapOf(
     "[Uri, Diagnostic[]]" to "Tuple2<Uri, ReadonlyArray<Diagnostic>>",
     "[Uri, readonly Diagnostic[] | undefined]" to "Tuple2<Uri, ReadonlyArray<Diagnostic>?>",
     "[TextEdit | SnippetTextEdit, WorkspaceEditEntryMetadata | undefined]" to
-            "Tuple2<Any /* TextEdit | SnippetTextEdit */, WorkspaceEditEntryMetadata?>",
+            "Tuple2<JsAny /* TextEdit | SnippetTextEdit */, WorkspaceEditEntryMetadata?>",
     "[NotebookEdit, WorkspaceEditEntryMetadata | undefined]" to
             "Tuple2<NotebookEdit, WorkspaceEditEntryMetadata?>",
     "[Uri, TextEdit[]]" to "Tuple2<Uri, ReadonlyArray<TextEdit>>",
@@ -131,7 +129,7 @@ internal fun kotlinType(
     if (" | " in type
         && !type.startsWith("(")
         && !type.startsWith("{")
-    ) return "Any /* $type */"
+    ) return "JsAny /* $type */"
 
     if (type.endsWith("[]")) {
         val itemType = kotlinType(type.removeSuffix("[]"), name)

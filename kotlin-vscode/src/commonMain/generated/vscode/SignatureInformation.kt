@@ -5,6 +5,7 @@
 package vscode
 
 import js.array.ReadonlyArray
+import js.core.JsAny
 
 /**
  * Represents the signature of something callable. A signature
@@ -22,7 +23,7 @@ open external class SignatureInformation {
      * The human-readable doc-comment of this signature. Will be shown
      * in the UI but can be omitted.
      */
-    var documentation: Any /* string | MarkdownString */?
+    var documentation: JsAny /* string | MarkdownString */?
 
     /**
      * The parameters of this signature.
@@ -44,6 +45,6 @@ open external class SignatureInformation {
      */
     constructor(
         label: String,
-        documentation: Any /* string | MarkdownString */ = definedExternally,
+        documentation: JsAny /* string | MarkdownString */ = definedExternally,
     )
 }

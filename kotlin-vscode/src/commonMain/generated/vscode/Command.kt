@@ -3,6 +3,7 @@
 package vscode
 
 import js.array.ReadonlyArray
+import js.core.JsAny
 
 /**
  * Represents a reference to a command. Provides a title which
@@ -31,5 +32,5 @@ external interface Command {
      * Arguments that the command handler should be
      * invoked with.
      */
-    var arguments: ReadonlyArray<Any?>?
+    var arguments: ReadonlyArray<JsAny?>?
 }

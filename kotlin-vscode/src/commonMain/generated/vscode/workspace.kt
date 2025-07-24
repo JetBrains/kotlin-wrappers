@@ -5,6 +5,7 @@
 package vscode
 
 import js.array.ReadonlyArray
+import js.core.JsAny
 import js.core.JsBoolean
 import js.core.JsString
 import js.core.Void
@@ -121,7 +122,7 @@ external object workspace {
      * @returns A path relative to the root or the input.
      */
     fun asRelativePath(
-        pathOrUri: Any, /* string | Uri */
+        pathOrUri: JsAny, /* string | Uri */
         includeWorkspaceFolder: Boolean = definedExternally,
     ): String
 

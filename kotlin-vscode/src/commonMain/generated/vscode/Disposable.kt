@@ -4,6 +4,8 @@
 
 package vscode
 
+import js.core.JsAny
+
 /**
  * Represents a type which can release resources, such
  * as event listening or a timer.
@@ -22,7 +24,7 @@ open external class Disposable {
     /**
      * Dispose this object.
      */
-    fun dispose(): Any?
+    fun dispose(): JsAny?
 
     companion object {
         /**

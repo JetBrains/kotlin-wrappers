@@ -5,6 +5,7 @@
 package vscode
 
 import js.array.ReadonlyArray
+import js.core.JsAny
 
 /**
  * Message associated with the test state. Can be linked to a specific
@@ -14,7 +15,7 @@ open external class TestMessage {
     /**
      * Human-readable message text to display.
      */
-    var message: Any /* string | MarkdownString */
+    var message: JsAny /* string | MarkdownString */
 
     /**
      * Expected test output. If given with {@link TestMessage.actualOutput actualOutput }, a diff view will be shown.
@@ -71,7 +72,7 @@ open external class TestMessage {
      * Creates a new TestMessage instance.
      * @param message The message to show to the user.
      */
-    constructor(message: Any /* string | MarkdownString */)
+    constructor(message: JsAny /* string | MarkdownString */)
 
     companion object {
         /**
@@ -81,7 +82,7 @@ open external class TestMessage {
          * @param actual Actual output.
          */
         fun diff(
-            message: Any, /* string | MarkdownString */
+            message: JsAny, /* string | MarkdownString */
             expected: String,
             actual: String,
         ): TestMessage

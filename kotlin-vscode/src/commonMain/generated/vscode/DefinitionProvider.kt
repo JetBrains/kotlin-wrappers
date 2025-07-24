@@ -2,6 +2,8 @@
 
 package vscode
 
+import js.core.JsAny
+
 /**
  * The definition provider interface defines the contract between extensions and
  * the [go to definition](https://code.visualstudio.com/docs/editor/editingevolved#_go-to-definition)
@@ -21,5 +23,5 @@ external interface DefinitionProvider {
         document: TextDocument,
         position: Position,
         token: CancellationToken,
-    ): ProviderResult<Any /* Definition | DefinitionLink[] */>
+    ): ProviderResult<JsAny /* Definition | DefinitionLink[] */>
 }

@@ -2,6 +2,7 @@
 
 package vscode
 
+import js.core.JsAny
 import js.promise.PromiseLike
 
 /**
@@ -23,7 +24,7 @@ external interface Terminal {
      * shell type of when the terminal was not launched by this extension or for detecting what
      * folder the shell was launched in.
      */
-    val creationOptions: Any /* Readonly<TerminalOptions | ExtensionTerminalOptions> */
+    val creationOptions: JsAny /* Readonly<TerminalOptions | ExtensionTerminalOptions> */
 
     /**
      * The exit status of the terminal, this will be undefined while the terminal is active.

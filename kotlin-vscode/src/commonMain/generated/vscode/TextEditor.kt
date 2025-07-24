@@ -3,6 +3,7 @@
 package vscode
 
 import js.array.ReadonlyArray
+import js.core.JsAny
 
 /**
  * Represents an editor that is attached to a {@link TextDocument document}.
@@ -106,7 +107,7 @@ external interface TextEditor {
      */
     fun setDecorations(
         decorationType: TextEditorDecorationType,
-        rangesOrOptions: Any, /* Range[] | readonly DecorationOptions[] */
+        rangesOrOptions: JsAny, /* Range[] | readonly DecorationOptions[] */
     )
 
     /**

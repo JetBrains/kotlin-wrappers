@@ -4,6 +4,8 @@
 
 package vscode
 
+import js.core.JsAny
+
 /**
  * Represents a part of a chat response that is an anchor, that is rendered as a link to a target.
  */
@@ -11,7 +13,7 @@ open external class ChatResponseAnchorPart {
     /**
      * The target of this anchor.
      */
-    var value: Any /* Uri | Location */
+    var value: JsAny /* Uri | Location */
 
     /**
      * An optional title that is rendered with value.
@@ -24,7 +26,7 @@ open external class ChatResponseAnchorPart {
      * @param title An optional title that is rendered with value.
      */
     constructor(
-        value: Any, /* Uri | Location */
+        value: JsAny, /* Uri | Location */
         title: String = definedExternally,
     )
 }

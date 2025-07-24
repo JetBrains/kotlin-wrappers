@@ -4,6 +4,7 @@
 
 package vscode
 
+import js.core.JsAny
 import js.core.JsString
 import js.promise.PromiseLike
 
@@ -34,10 +35,10 @@ open external class DataTransferItem {
      * You can use `value` to share data across operations. The original object can be retrieved so long as the extension that
      * created the `DataTransferItem` runs in the same extension host.
      */
-    val value: Any?
+    val value: JsAny?
 
     /**
      * @param value Custom data stored on this item. Can be retrieved using {@linkcode DataTransferItem.value}.
      */
-    constructor(value: Any?)
+    constructor(value: JsAny?)
 }

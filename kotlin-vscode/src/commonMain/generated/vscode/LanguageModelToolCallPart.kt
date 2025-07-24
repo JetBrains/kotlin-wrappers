@@ -4,6 +4,8 @@
 
 package vscode
 
+import js.core.JsAny
+
 /**
  * A language model response part indicating a tool call, returned from a {@link LanguageModelChatResponse}, and also can be
  * included as a content part on a {@link LanguageModelChatMessage}, to represent a previous tool call in a chat request.
@@ -22,7 +24,7 @@ open external class LanguageModelToolCallPart {
     /**
      * The input with which to call the tool.
      */
-    var input: Any
+    var input: JsAny
 
     /**
      * Create a new LanguageModelToolCallPart.
@@ -34,6 +36,6 @@ open external class LanguageModelToolCallPart {
     constructor(
         callId: String,
         name: String,
-        input: Any,
+        input: JsAny,
     )
 }

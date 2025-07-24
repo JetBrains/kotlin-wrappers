@@ -2,6 +2,8 @@
 
 package vscode
 
+import js.core.JsAny
+
 /**
  * Reactions of a {@link Comment}
  */
@@ -14,7 +16,7 @@ external interface CommentReaction {
     /**
      * Icon for the reaction shown in UI.
      */
-    val iconPath: Any /* string | Uri */
+    val iconPath: JsAny /* string | Uri */
 
     /**
      * The number of users who have reacted to this reaction

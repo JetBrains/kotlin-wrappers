@@ -4,6 +4,7 @@ package vscode
 
 import js.array.ReadonlyArray
 import js.array.Tuple2
+import js.core.JsAny
 import js.iterable.JsIterable
 
 /**
@@ -73,7 +74,7 @@ external interface DiagnosticCollection :
             diagnostics: ReadonlyArray<Diagnostic>,
             collection: DiagnosticCollection,
         ) -> Unit,
-        thisArg: Any? = definedExternally,
+        thisArg: JsAny? = definedExternally,
     )
 
     /**

@@ -2,6 +2,8 @@
 
 package vscode
 
+import js.core.JsAny
+
 /**
  * Value-object describing what options a virtual process terminal should use.
  */
@@ -32,7 +34,7 @@ external interface ExtensionTerminalOptions {
     /**
      * The {@link TerminalLocation} or {@link TerminalEditorLocationOptions} or {@link TerminalSplitLocationOptions} for the terminal.
      */
-    var location: Any /* TerminalLocation | TerminalEditorLocationOptions | TerminalSplitLocationOptions */?
+    var location: JsAny /* TerminalLocation | TerminalEditorLocationOptions | TerminalSplitLocationOptions */?
 
     /**
      * Opt-out of the default terminal persistence on restart and reload.

@@ -3,6 +3,7 @@
 package vscode
 
 import js.array.ReadonlyArray
+import js.core.JsAny
 import js.promise.PromiseLike
 
 /**
@@ -52,5 +53,5 @@ external interface TextDocumentWillSaveEvent {
      *
      * @param thenable A thenable that delays saving.
      */
-    fun waitUntil(thenable: PromiseLike<Any?>)
+    fun waitUntil(thenable: PromiseLike<JsAny?>)
 }

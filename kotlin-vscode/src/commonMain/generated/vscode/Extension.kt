@@ -2,6 +2,7 @@
 
 package vscode
 
+import js.core.JsAny
 import js.promise.PromiseLike
 
 /**
@@ -34,7 +35,7 @@ external interface Extension<T> {
     /**
      * The parsed contents of the extension's package.json.
      */
-    val packageJSON: Any?
+    val packageJSON: JsAny?
 
     /**
      * The extension kind describes if an extension runs where the UI runs

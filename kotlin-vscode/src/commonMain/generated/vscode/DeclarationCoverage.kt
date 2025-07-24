@@ -4,6 +4,8 @@
 
 package vscode
 
+import js.core.JsAny
+
 /**
  * Contains coverage information for a declaration. Depending on the reporter
  * and language, this may be types such as functions, methods, or namespaces.
@@ -19,12 +21,12 @@ open external class DeclarationCoverage {
      * indicating whether it was executed if the exact count is unknown. If
      * zero or false, the declaration will be marked as un-covered.
      */
-    var executed: Any /* number | boolean */
+    var executed: JsAny /* number | boolean */
 
     /**
      * Declaration location.
      */
-    var location: Any /* Position | Range */
+    var location: JsAny /* Position | Range */
 
     /**
      * @param executed The number of times this declaration was executed, or a
@@ -34,7 +36,7 @@ open external class DeclarationCoverage {
      */
     constructor(
         name: String,
-        executed: Any, /* number | boolean */
-        location: Any, /* Position | Range */
+        executed: JsAny, /* number | boolean */
+        location: JsAny, /* Position | Range */
     )
 }

@@ -110,7 +110,7 @@ private fun convertType(
 
         bodySource == "[string, string]" -> "Tuple2<String, String>"
         bodySource == "never" -> "Nothing?"
-        " | " in bodySource -> "Any /* $bodySource */"
+        " | " in bodySource -> "JsAny /* $bodySource */"
 
         else -> bodySource
     }
@@ -386,7 +386,7 @@ private fun convertFunction(
                     edit: TextEditorEdit,
                     /* ...args: any[], */
                 ) -> Unit,
-                thisArg: Any = definedExternally,
+                thisArg: JsAny = definedExternally,
             ): Disposable
             """.trimIndent()
 

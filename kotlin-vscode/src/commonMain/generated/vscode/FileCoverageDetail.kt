@@ -2,7 +2,9 @@
 
 package vscode
 
+import js.core.JsAny
+
 /**
  * Coverage details returned from {@link TestRunProfile.loadDetailedCoverage}.
  */
-typealias FileCoverageDetail = Any /* StatementCoverage | DeclarationCoverage */
+typealias FileCoverageDetail = JsAny /* StatementCoverage | DeclarationCoverage */

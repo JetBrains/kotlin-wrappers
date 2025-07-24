@@ -2,6 +2,8 @@
 
 package vscode
 
+import js.core.JsAny
+
 /**
  * Represents theme specific rendering styles for {@link ThemableDecorationRenderOptions.before before} and
  * {@link ThemableDecorationRenderOptions.after after} the content of text decorations.
@@ -16,7 +18,7 @@ external interface ThemableDecorationAttachmentRenderOptions {
      * An **absolute path** or an URI to an image to be rendered in the attachment. Either an icon
      * or a text can be shown, but not both.
      */
-    var contentIconPath: Any /* string | Uri */?
+    var contentIconPath: JsAny /* string | Uri */?
 
     /**
      * CSS styling property that will be applied to the decoration attachment.
@@ -26,7 +28,7 @@ external interface ThemableDecorationAttachmentRenderOptions {
     /**
      * CSS styling property that will be applied to text enclosed by a decoration.
      */
-    var borderColor: Any /* string | ThemeColor */?
+    var borderColor: JsAny /* string | ThemeColor */?
 
     /**
      * CSS styling property that will be applied to the decoration attachment.
@@ -46,12 +48,12 @@ external interface ThemableDecorationAttachmentRenderOptions {
     /**
      * CSS styling property that will be applied to the decoration attachment.
      */
-    var color: Any /* string | ThemeColor */?
+    var color: JsAny /* string | ThemeColor */?
 
     /**
      * CSS styling property that will be applied to the decoration attachment.
      */
-    var backgroundColor: Any /* string | ThemeColor */?
+    var backgroundColor: JsAny /* string | ThemeColor */?
 
     /**
      * CSS styling property that will be applied to the decoration attachment.

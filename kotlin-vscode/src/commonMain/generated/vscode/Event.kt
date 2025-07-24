@@ -3,6 +3,7 @@
 package vscode
 
 import js.array.ReadonlyArray
+import js.core.JsAny
 
 /**
  * Represents a typed event.
@@ -25,7 +26,7 @@ external interface Event<T> {
      */
     operator fun invoke(
         listener: (e: T) -> Unit,
-        thisArgs: Any? = definedExternally,
+        thisArgs: JsAny? = definedExternally,
         disposables: ReadonlyArray<Disposable> = definedExternally,
     ): Disposable
 }

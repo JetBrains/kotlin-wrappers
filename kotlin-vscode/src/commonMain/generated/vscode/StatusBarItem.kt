@@ -2,6 +2,8 @@
 
 package vscode
 
+import js.core.JsAny
+
 /**
  * A status bar item is a status bar contribution that can
  * show text and icons and run a command on click.
@@ -46,12 +48,12 @@ external interface StatusBarItem {
     /**
      * The tooltip text when you hover over this entry.
      */
-    var tooltip: Any /* string | MarkdownString */?
+    var tooltip: JsAny /* string | MarkdownString */?
 
     /**
      * The foreground color for this entry.
      */
-    var color: Any /* string | ThemeColor */?
+    var color: JsAny /* string | ThemeColor */?
 
     /**
      * The background color for this entry.
@@ -75,7 +77,7 @@ external interface StatusBarItem {
      * Note that if this is a {@linkcode Command} object, only the {@linkcode Command.command command} and {@linkcode Command.arguments arguments}
      * are used by the editor.
      */
-    var command: Any /* string | Command */?
+    var command: JsAny /* string | Command */?
 
     /**
      * Accessibility information used when a screen reader interacts with this StatusBar item

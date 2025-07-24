@@ -4,6 +4,7 @@ package vscode
 
 import js.array.ReadonlyArray
 import js.array.Tuple2
+import js.core.JsAny
 import js.core.JsInt
 import js.core.JsString
 import js.core.Void
@@ -73,5 +74,5 @@ external interface InputBox :
      * By returning a string, the InputBox will use a default {@link InputBoxValidationSeverity} of Error.
      * Returning undefined clears the validation message.
      */
-    var validationMessage: Any /* string | InputBoxValidationMessage */?
+    var validationMessage: JsAny /* string | InputBoxValidationMessage */?
 }

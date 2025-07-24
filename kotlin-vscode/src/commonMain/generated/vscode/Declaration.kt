@@ -2,8 +2,10 @@
 
 package vscode
 
+import js.core.JsAny
+
 /**
  * The declaration of a symbol representation as one or many {@link Location locations}
  * or {@link LocationLink location links}.
  */
-typealias Declaration = Any /* Location | Location[] | LocationLink[] */
+typealias Declaration = JsAny /* Location | Location[] | LocationLink[] */

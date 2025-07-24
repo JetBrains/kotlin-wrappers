@@ -4,6 +4,8 @@
 
 package vscode
 
+import js.core.JsAny
+
 /**
  * A range represents an ordered pair of two positions.
  * It is guaranteed that {@link Range.start start}.isBeforeOrEqual({@link Range.end end})
@@ -68,7 +70,7 @@ open external class Range {
      * @returns `true` if the position or range is inside or equal
      * to this range.
      */
-    fun contains(positionOrRange: Any /* Position | Range */): Boolean
+    fun contains(positionOrRange: JsAny /* Position | Range */): Boolean
 
     /**
      * Check if `other` equals this range.

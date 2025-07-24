@@ -2,6 +2,8 @@
 
 package vscode
 
+import js.core.JsAny
+
 /**
  * A cancellation token is passed to an asynchronous or long running
  * operation to request cancellation, like cancelling a request
@@ -19,5 +21,5 @@ external interface CancellationToken {
     /**
      * An {@link Event} which fires upon cancellation.
      */
-    var onCancellationRequested: Event<Any?>
+    var onCancellationRequested: Event<JsAny?>
 }

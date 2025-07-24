@@ -5,6 +5,7 @@
 package vscode
 
 import js.array.Tuple2
+import js.core.JsAny
 import js.iterable.JsIterable
 
 /**
@@ -51,7 +52,7 @@ open external class DataTransfer :
             mimeType: String,
             dataTransfer: DataTransfer,
         ) -> Unit,
-        thisArg: Any? = definedExternally,
+        thisArg: JsAny? = definedExternally,
     )
 
     /**

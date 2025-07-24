@@ -2,6 +2,8 @@
 
 package vscode
 
+import js.core.JsAny
+
 /**
  * Represents options for a specific decoration in a {@link TextEditorDecorationType decoration set}.
  */
@@ -14,7 +16,7 @@ external interface DecorationOptions {
     /**
      * A message that should be rendered when hovering over the decoration.
      */
-    var hoverMessage: Any /* MarkdownString | MarkedString | Array<MarkdownString | MarkedString> */?
+    var hoverMessage: JsAny /* MarkdownString | MarkedString | Array<MarkdownString | MarkedString> */?
 
     /**
      * Render options applied to the current decoration. For performance reasons, keep the

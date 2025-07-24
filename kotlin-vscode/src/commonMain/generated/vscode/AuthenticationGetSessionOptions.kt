@@ -2,6 +2,8 @@
 
 package vscode
 
+import js.core.JsAny
+
 /**
  * Options to be used when getting an {@link AuthenticationSession} from an {@link AuthenticationProvider}.
  */
@@ -40,7 +42,7 @@ external interface AuthenticationGetSessionOptions {
      *
      * Note: you cannot use this option with {@link AuthenticationGetSessionOptions.silent silent}.
      */
-    var createIfNone: Any /* boolean | AuthenticationGetSessionPresentationOptions */?
+    var createIfNone: JsAny /* boolean | AuthenticationGetSessionPresentationOptions */?
 
     /**
      * Whether we should attempt to reauthenticate even if there is already a session available.
@@ -55,7 +57,7 @@ external interface AuthenticationGetSessionOptions {
      *
      * This defaults to false.
      */
-    var forceNewSession: Any /* boolean | AuthenticationGetSessionPresentationOptions | AuthenticationForceNewSessionOptions */?
+    var forceNewSession: JsAny /* boolean | AuthenticationGetSessionPresentationOptions | AuthenticationForceNewSessionOptions */?
 
     /**
      * Whether we should show the indication to sign in in the Accounts menu.

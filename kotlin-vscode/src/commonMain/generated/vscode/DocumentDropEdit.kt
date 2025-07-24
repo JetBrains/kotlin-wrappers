@@ -5,6 +5,7 @@
 package vscode
 
 import js.array.ReadonlyArray
+import js.core.JsAny
 
 /**
  * An edit operation applied {@link DocumentDropEditProvider on drop}.
@@ -28,7 +29,7 @@ open external class DocumentDropEdit {
     /**
      * The text or snippet to insert at the drop location.
      */
-    var insertText: Any /* string | SnippetString */
+    var insertText: JsAny /* string | SnippetString */
 
     /**
      * An optional additional edit to apply on drop.
@@ -41,7 +42,7 @@ open external class DocumentDropEdit {
      * @param kind {@link DocumentDropOrPasteEditKind Kind} of the edit.
      */
     constructor(
-        insertText: Any, /* string | SnippetString */
+        insertText: JsAny, /* string | SnippetString */
         title: String = definedExternally,
         kind: DocumentDropOrPasteEditKind = definedExternally,
     )

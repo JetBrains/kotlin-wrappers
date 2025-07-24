@@ -3,6 +3,7 @@
 package vscode
 
 import js.array.ReadonlyArray
+import js.core.JsAny
 import js.core.JsString
 
 /**
@@ -22,7 +23,7 @@ external interface LanguageModelToolInformation {
     /**
      * A JSON schema for the input this tool accepts.
      */
-    val inputSchema: Any?
+    val inputSchema: JsAny?
 
     /**
      * A set of tags, declared by the tool, that roughly describe the tool's capabilities. A tool user may use these to filter

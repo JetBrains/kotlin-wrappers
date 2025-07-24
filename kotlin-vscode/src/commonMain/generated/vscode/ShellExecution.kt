@@ -5,6 +5,7 @@
 package vscode
 
 import js.array.ReadonlyArray
+import js.core.JsAny
 
 /**
  * Represents a task execution that happens inside a shell.
@@ -32,8 +33,8 @@ open external class ShellExecution {
      * @param options Optional options for the started the shell.
      */
     constructor(
-        command: Any, /* string | ShellQuotedString */
-        args: ReadonlyArray<Any /* string | ShellQuotedString */>,
+        command: JsAny, /* string | ShellQuotedString */
+        args: ReadonlyArray<JsAny /* string | ShellQuotedString */>,
         options: ShellExecutionOptions = definedExternally,
     )
 
@@ -45,12 +46,12 @@ open external class ShellExecution {
     /**
      * The shell command. Is `undefined` if created with a full command line.
      */
-    var command: Any /* string | ShellQuotedString */?
+    var command: JsAny /* string | ShellQuotedString */?
 
     /**
      * The shell args. Is `undefined` if created with a full command line.
      */
-    var args: ReadonlyArray<Any /* string | ShellQuotedString */>?
+    var args: ReadonlyArray<JsAny /* string | ShellQuotedString */>?
 
     /**
      * The shell options used when the command line is executed in a shell.

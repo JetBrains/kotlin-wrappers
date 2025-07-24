@@ -4,6 +4,8 @@
 
 package vscode
 
+import js.core.JsAny
+
 /**
  * Represents a part of a chat response that is a reference, rendered separately from the content.
  */
@@ -11,7 +13,7 @@ open external class ChatResponseReferencePart {
     /**
      * The reference target.
      */
-    var value: Any /* Uri | Location */
+    var value: JsAny /* Uri | Location */
 
     /**
      * The icon for the reference.
@@ -24,7 +26,7 @@ open external class ChatResponseReferencePart {
      * @param iconPath Icon for the reference shown in UI
      */
     constructor(
-        value: Any, /* Uri | Location */
+        value: JsAny, /* Uri | Location */
         iconPath: IconPath = definedExternally,
     )
 }

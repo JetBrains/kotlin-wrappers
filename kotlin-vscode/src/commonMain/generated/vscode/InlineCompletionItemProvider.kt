@@ -2,6 +2,8 @@
 
 package vscode
 
+import js.core.JsAny
+
 /**
  * The inline completion item provider interface defines the contract between extensions and
  * the inline completion feature.
@@ -27,5 +29,5 @@ external interface InlineCompletionItemProvider {
         position: Position,
         context: InlineCompletionContext,
         token: CancellationToken,
-    ): ProviderResult<Any /* InlineCompletionItem[] | InlineCompletionList */>
+    ): ProviderResult<JsAny /* InlineCompletionItem[] | InlineCompletionList */>
 }

@@ -5,6 +5,7 @@
 package vscode
 
 import js.array.ReadonlyArray
+import js.core.JsAny
 import js.core.JsString
 
 /**
@@ -60,7 +61,7 @@ open external class SnippetString {
      * @returns This snippet string.
      */
     fun appendPlaceholder(
-        value: Any, /* string | ((snippet: SnippetString) => any) */
+        value: JsAny, /* string | ((snippet: SnippetString) => any) */
         number: Int = definedExternally,
     ): SnippetString
 
@@ -89,6 +90,6 @@ open external class SnippetString {
      */
     fun appendVariable(
         name: String,
-        defaultValue: Any, /* string | ((snippet: SnippetString) => any) */
+        defaultValue: JsAny, /* string | ((snippet: SnippetString) => any) */
     ): SnippetString
 }
