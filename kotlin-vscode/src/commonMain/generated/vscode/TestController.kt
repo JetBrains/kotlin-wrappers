@@ -5,6 +5,7 @@ package vscode
 import js.core.JsAny
 import js.core.Void
 import js.promise.PromiseLike
+import kotlin.js.definedExternally
 
 /**
  * Entry point to discover and execute tests. It contains {@link TestController.items} which

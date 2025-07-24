@@ -3,6 +3,7 @@
 package vscode
 
 import js.array.ReadonlyArray
+import kotlin.js.definedExternally
 
 /**
  * Represents a notebook editor that is attached to a {@link NotebookDocument notebook}.

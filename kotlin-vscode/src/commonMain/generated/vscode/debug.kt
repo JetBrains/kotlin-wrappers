@@ -9,6 +9,8 @@ import js.core.JsAny
 import js.core.JsBoolean
 import js.core.Void
 import js.promise.PromiseLike
+import kotlin.js.JsModule
+import kotlin.js.definedExternally
 
 /**
  * Namespace for debug functionality.

@@ -6,6 +6,8 @@ package vscode
 
 import js.array.ReadonlyArray
 import js.core.JsAny
+import kotlin.js.JsModule
+import kotlin.js.definedExternally
 
 /**
  * Represents a task execution that happens inside a shell.

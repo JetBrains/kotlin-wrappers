@@ -4,6 +4,8 @@
 
 package vscode
 
+import kotlin.js.JsModule
+
 /**
  * A text edit represents edits that should be applied
  * to a document.

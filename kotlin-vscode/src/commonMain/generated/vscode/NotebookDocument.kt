@@ -7,6 +7,7 @@ import js.core.JsBoolean
 import js.core.JsString
 import js.objects.Record
 import js.promise.PromiseLike
+import kotlin.js.definedExternally
 
 /**
  * Represents a notebook which itself is a sequence of {@link NotebookCell code or markup cells}. Notebook documents are

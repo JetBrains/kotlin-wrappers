@@ -4,6 +4,7 @@ package vscode
 
 import js.array.ReadonlyArray
 import js.core.JsAny
+import kotlin.js.definedExternally
 
 /**
  * The ChatResponseStream is how a participant is able to return content to the chat view. It provides several methods for streaming different types of content

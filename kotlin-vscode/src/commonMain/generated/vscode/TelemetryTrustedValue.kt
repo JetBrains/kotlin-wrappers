@@ -5,6 +5,7 @@
 package vscode
 
 import js.core.JsAny
+import kotlin.js.JsModule
 
 /**
  * A special value wrapper denoting a value that is safe to not clean.

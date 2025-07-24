@@ -11,6 +11,8 @@ import js.core.JsString
 import js.core.Void
 import js.promise.PromiseLike
 import js.typedarrays.Uint8Array
+import kotlin.js.JsModule
+import kotlin.js.definedExternally
 
 /**
  * Namespace for dealing with the current workspace. A workspace is the collection of one

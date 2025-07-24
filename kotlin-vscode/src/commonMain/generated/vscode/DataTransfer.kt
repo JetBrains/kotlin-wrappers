@@ -8,6 +8,8 @@ import js.array.Tuple2
 import js.core.JsAny
 import js.core.JsString
 import js.iterable.JsIterable
+import kotlin.js.JsModule
+import kotlin.js.definedExternally
 
 /**
  * A map containing a mapping of the mime type of the corresponding transferred data.

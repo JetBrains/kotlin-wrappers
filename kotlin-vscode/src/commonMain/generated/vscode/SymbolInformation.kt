@@ -5,6 +5,7 @@
 package vscode
 
 import js.array.ReadonlyArray
+import kotlin.js.JsModule
 
 /**
  * Represents information about programming constructs like variables, classes,

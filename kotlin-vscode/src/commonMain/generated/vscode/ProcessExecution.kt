@@ -6,6 +6,8 @@ package vscode
 
 import js.array.ReadonlyArray
 import js.core.JsString
+import kotlin.js.JsModule
+import kotlin.js.definedExternally
 
 /**
  * The execution of a task happens as an external process

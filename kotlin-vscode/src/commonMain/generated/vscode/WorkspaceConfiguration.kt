@@ -5,6 +5,7 @@ package vscode
 import js.core.JsAny
 import js.core.Void
 import js.promise.PromiseLike
+import kotlin.js.definedExternally
 
 /**
  * Represents the configuration. It is a merged view of

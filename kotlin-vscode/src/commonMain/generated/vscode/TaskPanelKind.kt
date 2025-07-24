@@ -8,6 +8,8 @@
 
 package vscode
 
+import kotlin.js.JsModule
+
 /**
  * Controls how the task channel is used between tasks
  */

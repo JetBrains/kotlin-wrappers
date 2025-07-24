@@ -4,6 +4,9 @@
 
 package vscode
 
+import kotlin.js.JsModule
+import kotlin.js.definedExternally
+
 /**
  * Human-readable text that supports formatting via the [markdown syntax](https://commonmark.org).
  *

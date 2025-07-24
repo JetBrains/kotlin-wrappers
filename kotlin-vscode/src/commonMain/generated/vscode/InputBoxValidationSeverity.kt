@@ -8,6 +8,8 @@
 
 package vscode
 
+import kotlin.js.JsModule
+
 /**
  * Impacts the behavior and appearance of the validation message.
  * The severity level for input box validation.

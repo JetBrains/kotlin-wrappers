@@ -5,6 +5,8 @@
 package vscode
 
 import js.typedarrays.Uint32Array
+import kotlin.js.JsModule
+import kotlin.js.definedExternally
 
 /**
  * Represents an edit to semantic tokens.

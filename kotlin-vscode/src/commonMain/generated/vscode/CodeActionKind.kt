@@ -4,6 +4,8 @@
 
 package vscode
 
+import kotlin.js.JsModule
+
 /**
  * Kind of a code action.
  *

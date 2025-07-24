@@ -8,6 +8,8 @@
 
 package vscode
 
+import kotlin.js.JsModule
+
 /**
  * Completion item kinds.
  */

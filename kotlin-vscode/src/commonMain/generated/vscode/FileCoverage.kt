@@ -5,6 +5,7 @@
 package vscode
 
 import js.array.ReadonlyArray
+import kotlin.js.JsModule
 
 /**
  * Contains coverage metadata for a file.

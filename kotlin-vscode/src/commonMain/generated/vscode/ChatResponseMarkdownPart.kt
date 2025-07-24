@@ -5,6 +5,7 @@
 package vscode
 
 import js.core.JsAny
+import kotlin.js.JsModule
 
 /**
  * Represents a part of a chat response that is formatted as Markdown.

@@ -4,6 +4,9 @@
 
 package vscode
 
+import kotlin.js.JsModule
+import kotlin.js.definedExternally
+
 /**
  * Namespace for source control management.
  */

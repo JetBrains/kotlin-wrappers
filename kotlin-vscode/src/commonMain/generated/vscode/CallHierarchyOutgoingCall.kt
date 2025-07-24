@@ -5,6 +5,7 @@
 package vscode
 
 import js.array.ReadonlyArray
+import kotlin.js.JsModule
 
 /**
  * Represents an outgoing call, e.g. calling a getter from a method or a method from a constructor etc.

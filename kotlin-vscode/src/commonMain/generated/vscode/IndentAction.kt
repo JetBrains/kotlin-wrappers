@@ -8,6 +8,8 @@
 
 package vscode
 
+import kotlin.js.JsModule
+
 /**
  * Describes what to do with the indentation when pressing Enter.
  */

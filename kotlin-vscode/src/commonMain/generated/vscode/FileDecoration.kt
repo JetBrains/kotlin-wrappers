@@ -4,6 +4,9 @@
 
 package vscode
 
+import kotlin.js.JsModule
+import kotlin.js.definedExternally
+
 /**
  * A file decoration represents metadata that can be rendered with a file.
  */

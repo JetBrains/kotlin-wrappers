@@ -8,6 +8,8 @@
 
 package vscode
 
+import kotlin.js.JsModule
+
 /**
  * Represents a notebook editor that is attached to a {@link NotebookDocument notebook}.
  */

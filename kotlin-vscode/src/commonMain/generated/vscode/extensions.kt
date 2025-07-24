@@ -7,6 +7,7 @@ package vscode
 import js.array.ReadonlyArray
 import js.core.JsAny
 import js.core.Void
+import kotlin.js.JsModule
 
 /**
  * Namespace for dealing with installed extensions. Extensions are represented

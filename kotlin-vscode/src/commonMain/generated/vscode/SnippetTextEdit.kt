@@ -4,6 +4,8 @@
 
 package vscode
 
+import kotlin.js.JsModule
+
 /**
  * A snippet edit represents an interactive edit that is performed by
  * the editor.

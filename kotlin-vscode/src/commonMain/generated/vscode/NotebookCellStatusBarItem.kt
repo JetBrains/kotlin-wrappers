@@ -5,6 +5,7 @@
 package vscode
 
 import js.core.JsAny
+import kotlin.js.JsModule
 
 /**
  * A contribution to a cell's status bar

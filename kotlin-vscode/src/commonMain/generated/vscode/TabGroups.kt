@@ -5,6 +5,7 @@ package vscode
 import js.array.ReadonlyArray
 import js.core.JsBoolean
 import js.promise.PromiseLike
+import kotlin.js.definedExternally
 
 /**
  * Represents the main editor area which consists of multiple groups which contain tabs.

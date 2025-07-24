@@ -4,6 +4,8 @@
 
 package vscode
 
+import kotlin.js.JsModule
+
 /**
  * Represents a text selection in an editor.
  */

@@ -6,6 +6,7 @@ import js.array.ReadonlyArray
 import js.core.JsAny
 import js.core.JsInt
 import js.promise.PromiseLike
+import kotlin.js.definedExternally
 
 /**
  * Represents a language model for making chat requests.

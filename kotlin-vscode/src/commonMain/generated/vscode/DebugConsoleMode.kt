@@ -8,6 +8,8 @@
 
 package vscode
 
+import kotlin.js.JsModule
+
 /**
  * Debug console mode used by debug session, see {@link DebugSessionOptions options}.
  */

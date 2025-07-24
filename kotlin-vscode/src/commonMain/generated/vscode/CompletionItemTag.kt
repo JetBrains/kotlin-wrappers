@@ -8,6 +8,8 @@
 
 package vscode
 
+import kotlin.js.JsModule
+
 /**
  * Completion item tags are extra annotations that tweak the rendering of a completion
  * item.

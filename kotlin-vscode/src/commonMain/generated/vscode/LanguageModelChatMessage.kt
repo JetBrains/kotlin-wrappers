@@ -6,6 +6,8 @@ package vscode
 
 import js.array.ReadonlyArray
 import js.core.JsAny
+import kotlin.js.JsModule
+import kotlin.js.definedExternally
 
 /**
  * Represents a message in a chat. Can assume different roles, like user or assistant.

@@ -8,6 +8,8 @@
 
 package vscode
 
+import kotlin.js.JsModule
+
 /**
  * The kind of {@link QuickPickItem quick pick item}.
  */

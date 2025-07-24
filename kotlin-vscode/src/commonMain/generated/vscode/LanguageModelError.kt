@@ -5,6 +5,8 @@
 package vscode
 
 import js.errors.JsError
+import kotlin.js.JsModule
+import kotlin.js.definedExternally
 
 /**
  * An error type for language model specific errors.

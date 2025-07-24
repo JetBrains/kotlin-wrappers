@@ -8,6 +8,8 @@
 
 package vscode
 
+import kotlin.js.JsModule
+
 /**
  * Defines how an argument should be quoted if it contains
  * spaces or unsupported characters.

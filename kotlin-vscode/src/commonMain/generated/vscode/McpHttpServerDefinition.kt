@@ -6,6 +6,8 @@ package vscode
 
 import js.core.JsString
 import js.objects.Record
+import kotlin.js.JsModule
+import kotlin.js.definedExternally
 
 /**
  * McpHttpServerDefinition represents an MCP server available using the

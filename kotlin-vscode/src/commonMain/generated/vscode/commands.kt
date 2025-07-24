@@ -8,6 +8,8 @@ import js.array.ReadonlyArray
 import js.core.JsAny
 import js.core.JsString
 import js.promise.PromiseLike
+import kotlin.js.JsModule
+import kotlin.js.definedExternally
 
 /**
  * Namespace for dealing with commands. In short, a command is a function with a

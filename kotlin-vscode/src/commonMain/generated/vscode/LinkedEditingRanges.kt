@@ -6,6 +6,8 @@ package vscode
 
 import js.array.ReadonlyArray
 import js.regexp.RegExp
+import kotlin.js.JsModule
+import kotlin.js.definedExternally
 
 /**
  * Represents a list of ranges that can be edited together along with a word pattern to describe valid range contents.

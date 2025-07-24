@@ -6,6 +6,8 @@ package vscode
 
 import js.array.ReadonlyArray
 import js.core.JsAny
+import kotlin.js.JsModule
+import kotlin.js.definedExternally
 
 /**
  * An edit operation applied {@link DocumentDropEditProvider on drop}.

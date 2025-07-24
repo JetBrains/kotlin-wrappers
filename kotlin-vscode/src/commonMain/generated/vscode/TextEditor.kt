@@ -4,6 +4,7 @@ package vscode
 
 import js.array.ReadonlyArray
 import js.core.JsAny
+import kotlin.js.definedExternally
 
 /**
  * Represents an editor that is attached to a {@link TextDocument document}.

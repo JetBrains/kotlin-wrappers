@@ -5,6 +5,7 @@
 package vscode
 
 import js.core.JsAny
+import kotlin.js.JsModule
 
 /**
  * Represents a type which can release resources, such

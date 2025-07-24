@@ -7,6 +7,7 @@ package vscode
 import js.core.JsAny
 import js.core.JsString
 import js.objects.Record
+import kotlin.js.JsModule
 
 /**
  * Namespace for localization-related functionality in the extension API. To use this properly,

@@ -5,6 +5,7 @@ package vscode
 import js.core.JsAny
 import js.core.JsInt
 import js.promise.PromiseLike
+import kotlin.js.definedExternally
 
 /**
  * An individual terminal instance within the integrated terminal.

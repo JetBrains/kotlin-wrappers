@@ -5,6 +5,8 @@
 package vscode
 
 import js.core.JsAny
+import kotlin.js.JsModule
+import kotlin.js.definedExternally
 
 /**
  * Represents a parameter of a callable-signature. A parameter can

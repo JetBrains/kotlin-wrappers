@@ -5,6 +5,7 @@
 package vscode
 
 import js.core.JsAny
+import kotlin.js.JsModule
 
 /**
  * A relative pattern is a helper to construct glob patterns that are matched

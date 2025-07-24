@@ -8,6 +8,8 @@
 
 package vscode
 
+import kotlin.js.JsModule
+
 /**
  * Describes how an {@link InlineCompletionItemProvider inline completion provider} was triggered.
  */

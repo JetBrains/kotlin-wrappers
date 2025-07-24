@@ -5,6 +5,8 @@
 package vscode
 
 import js.array.ReadonlyArray
+import kotlin.js.JsModule
+import kotlin.js.definedExternally
 
 /**
  * Represents a collection of {@link CompletionItem completion items} to be presented

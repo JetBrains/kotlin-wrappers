@@ -5,6 +5,7 @@
 package vscode
 
 import js.core.JsAny
+import kotlin.js.JsModule
 
 /**
  * A language model response part indicating a tool call, returned from a {@link LanguageModelChatResponse}, and also can be

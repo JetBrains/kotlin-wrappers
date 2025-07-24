@@ -4,6 +4,8 @@
 
 package vscode
 
+import kotlin.js.JsModule
+
 /**
  * Represents a related message and source code location for a diagnostic. This should be
  * used to point to code locations that cause or related to a diagnostics, e.g. when duplicating

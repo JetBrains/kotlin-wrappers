@@ -5,6 +5,8 @@
 package vscode
 
 import js.core.JsAny
+import kotlin.js.JsModule
+import kotlin.js.definedExternally
 
 /**
  * Represents a part of a chat response that is an anchor, that is rendered as a link to a target.

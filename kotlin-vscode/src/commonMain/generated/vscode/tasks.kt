@@ -6,6 +6,8 @@ package vscode
 
 import js.array.ReadonlyArray
 import js.promise.PromiseLike
+import kotlin.js.JsModule
+import kotlin.js.definedExternally
 
 /**
  * Namespace for tasks functionality.

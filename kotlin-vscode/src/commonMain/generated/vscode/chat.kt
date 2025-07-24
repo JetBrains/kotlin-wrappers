@@ -4,6 +4,8 @@
 
 package vscode
 
+import kotlin.js.JsModule
+
 /**
  * Namespace for chat functionality. Users interact with chat participants by sending messages
  * to them in the chat view. Chat participants can respond with markdown or other types of content

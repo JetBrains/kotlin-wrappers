@@ -4,6 +4,8 @@
 
 package vscode
 
+import kotlin.js.JsModule
+
 /**
  * A notebook range represents an ordered pair of two cell indices.
  * It is guaranteed that start is less than or equal to end.

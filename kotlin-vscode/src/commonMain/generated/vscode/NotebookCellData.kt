@@ -7,6 +7,7 @@ package vscode
 import js.array.ReadonlyArray
 import js.core.JsString
 import js.objects.Record
+import kotlin.js.JsModule
 
 /**
  * NotebookCellData is the raw representation of notebook cells. Its is part of {@linkcode NotebookData}.

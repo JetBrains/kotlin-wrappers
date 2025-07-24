@@ -4,6 +4,9 @@
 
 package vscode
 
+import kotlin.js.JsModule
+import kotlin.js.definedExternally
+
 /**
  * A stack frame found in the {@link TestMessage.stackTrace}.
  */

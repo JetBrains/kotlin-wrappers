@@ -4,6 +4,9 @@
 
 package vscode
 
+import kotlin.js.JsModule
+import kotlin.js.definedExternally
+
 /**
  * Provide inline value through a variable lookup.
  * If only a range is specified, the variable name will be extracted from the underlying document.

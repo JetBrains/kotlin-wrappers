@@ -7,6 +7,8 @@ package vscode
 import js.array.ReadonlyArray
 import js.core.JsAny
 import js.core.JsString
+import kotlin.js.JsModule
+import kotlin.js.definedExternally
 
 /**
  * A task to execute

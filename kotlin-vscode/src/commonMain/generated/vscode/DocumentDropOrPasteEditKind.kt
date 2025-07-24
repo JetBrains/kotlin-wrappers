@@ -4,6 +4,8 @@
 
 package vscode
 
+import kotlin.js.JsModule
+
 /**
  * Identifies a {@linkcode DocumentDropEdit} or {@linkcode DocumentPasteEdit}
  */

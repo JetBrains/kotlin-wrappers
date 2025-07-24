@@ -5,6 +5,7 @@
 package vscode
 
 import js.array.ReadonlyArray
+import kotlin.js.JsModule
 
 /**
  * Represents a part of a chat response that is a file tree.

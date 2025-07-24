@@ -4,6 +4,8 @@
 
 package vscode
 
+import kotlin.js.JsModule
+
 /**
  * A cancellation source creates and controls a {@link CancellationToken cancellation token}.
  */

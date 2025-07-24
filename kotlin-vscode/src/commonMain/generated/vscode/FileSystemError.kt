@@ -6,6 +6,8 @@ package vscode
 
 import js.core.JsAny
 import js.errors.JsError
+import kotlin.js.JsModule
+import kotlin.js.definedExternally
 
 /**
  * A type that filesystem providers should use to signal errors.

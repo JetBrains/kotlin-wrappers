@@ -5,6 +5,8 @@
 package vscode
 
 import js.core.JsAny
+import kotlin.js.JsModule
+import kotlin.js.definedExternally
 
 /**
  * A range represents an ordered pair of two positions.

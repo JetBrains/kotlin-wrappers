@@ -4,6 +4,9 @@
 
 package vscode
 
+import kotlin.js.JsModule
+import kotlin.js.definedExternally
+
 /**
  * An EvaluatableExpression represents an expression in a document that can be evaluated by an active debugger or runtime.
  * The result of this evaluation is shown in a tooltip-like widget.

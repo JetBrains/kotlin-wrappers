@@ -7,6 +7,7 @@ import js.core.Void
 import js.errors.JsError
 import js.objects.Record
 import js.promise.PromiseLike
+import kotlin.js.definedExternally
 
 /**
  * The telemetry sender is the contract between a telemetry logger and some telemetry service. **Note** that extensions must NOT

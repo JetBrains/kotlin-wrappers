@@ -4,6 +4,8 @@
 
 package vscode
 
+import kotlin.js.JsModule
+
 /**
  * Tags can be associated with {@link TestItem TestItems} and
  * {@link TestRunProfile TestRunProfiles}. A profile with a tag can only

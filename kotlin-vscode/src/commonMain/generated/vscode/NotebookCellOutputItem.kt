@@ -7,6 +7,8 @@ package vscode
 import js.core.JsAny
 import js.errors.JsError
 import js.typedarrays.Uint8Array
+import kotlin.js.JsModule
+import kotlin.js.definedExternally
 
 /**
  * One representation of a {@link NotebookCellOutput notebook output}, defined by MIME type and data.

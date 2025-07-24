@@ -4,6 +4,9 @@
 
 package vscode
 
+import kotlin.js.JsModule
+import kotlin.js.definedExternally
+
 /**
  * A line based folding range. To be valid, start and end line must be bigger than zero and smaller than the number of lines in the document.
  * Invalid ranges will be ignored.

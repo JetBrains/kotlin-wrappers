@@ -8,6 +8,8 @@
 
 package vscode
 
+import kotlin.js.JsModule
+
 /**
  * The kind of executions that {@link TestRunProfile TestRunProfiles} control.
  */

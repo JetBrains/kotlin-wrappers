@@ -8,6 +8,8 @@ import js.array.ReadonlyArray
 import js.core.JsAny
 import js.core.JsString
 import js.promise.PromiseLike
+import kotlin.js.JsModule
+import kotlin.js.definedExternally
 
 /**
  * Namespace for dealing with the current window of the editor. That is visible

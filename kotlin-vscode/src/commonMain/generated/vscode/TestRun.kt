@@ -4,6 +4,7 @@ package vscode
 
 import js.core.JsAny
 import js.core.Void
+import kotlin.js.definedExternally
 
 /**
  * A TestRun represents an in-progress or completed test run and

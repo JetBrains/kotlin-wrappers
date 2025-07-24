@@ -4,6 +4,8 @@
 
 package vscode
 
+import kotlin.js.JsModule
+
 /**
  * A reference to one of the workbench colors as defined in https://code.visualstudio.com/api/references/theme-color.
  * Using a theme color is preferred over a custom color as it gives theme authors and users the possibility to change the color.

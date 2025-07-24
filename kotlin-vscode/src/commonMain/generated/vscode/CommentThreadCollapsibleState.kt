@@ -8,6 +8,8 @@
 
 package vscode
 
+import kotlin.js.JsModule
+
 /**
  * Collapsible state of a {@link CommentThread comment thread}
  */

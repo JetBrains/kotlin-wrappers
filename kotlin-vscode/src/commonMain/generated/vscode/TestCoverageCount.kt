@@ -4,6 +4,8 @@
 
 package vscode
 
+import kotlin.js.JsModule
+
 /**
  * A class that contains information about a covered resource. A count can
  * be give for lines, branches, and declarations in a file.

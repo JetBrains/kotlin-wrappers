@@ -6,6 +6,7 @@ import js.array.ReadonlyArray
 import js.array.Tuple2
 import js.core.JsAny
 import js.iterable.JsIterable
+import kotlin.js.definedExternally
 
 /**
  * A diagnostics collection is a container that manages a set of

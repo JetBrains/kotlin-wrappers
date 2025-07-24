@@ -4,6 +4,7 @@ package vscode
 
 import js.core.JsAny
 import js.promise.PromiseLike
+import kotlin.js.definedExternally
 
 /**
  * A debug session.

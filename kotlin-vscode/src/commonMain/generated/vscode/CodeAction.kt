@@ -5,6 +5,8 @@
 package vscode
 
 import js.array.ReadonlyArray
+import kotlin.js.JsModule
+import kotlin.js.definedExternally
 
 /**
  * A code action represents a change that can be performed in code, e.g. to fix a problem or

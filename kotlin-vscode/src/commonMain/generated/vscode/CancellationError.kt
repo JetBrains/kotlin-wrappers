@@ -5,6 +5,7 @@
 package vscode
 
 import js.errors.JsError
+import kotlin.js.JsModule
 
 /**
  * An error type that should be used to signal cancellation of an operation.

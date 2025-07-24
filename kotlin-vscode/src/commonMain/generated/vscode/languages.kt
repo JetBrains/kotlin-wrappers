@@ -8,6 +8,8 @@ import js.array.ReadonlyArray
 import js.array.Tuple2
 import js.core.JsString
 import js.promise.PromiseLike
+import kotlin.js.JsModule
+import kotlin.js.definedExternally
 
 /**
  * Namespace for participating in language-specific editor [features](https://code.visualstudio.com/docs/editor/editingevolved),

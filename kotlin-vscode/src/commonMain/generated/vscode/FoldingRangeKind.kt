@@ -8,6 +8,8 @@
 
 package vscode
 
+import kotlin.js.JsModule
+
 /**
  * An enumeration of specific folding range kinds. The kind is an optional field of a {@link FoldingRange}
  * and is used to distinguish specific folding ranges such as ranges originated from comments. The kind is used by commands like
