@@ -2,7 +2,7 @@
 
 package vscode
 
-import js.core.Int53
+import js.core.JsInt53
 
 /**
  * The `FileStat`-type represents metadata about a file
@@ -19,7 +19,7 @@ external interface FileStat {
     /**
      * The creation timestamp in milliseconds elapsed since January 1, 1970 00:00:00 UTC.
      */
-    var ctime: Int53
+    var ctime: JsInt53
 
     /**
      * The modification timestamp in milliseconds elapsed since January 1, 1970 00:00:00 UTC.
@@ -28,7 +28,7 @@ external interface FileStat {
      * from the previous value. Otherwise there may be optimizations in place that will not show
      * the updated file contents in an editor for example.
      */
-    var mtime: Int53
+    var mtime: JsInt53
 
     /**
      * The size in bytes.

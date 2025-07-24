@@ -57,6 +57,7 @@ private fun toCommonBody(
         .replace("<Int,", "<JsInt,")
         .replace(", Int>", ", JsInt>")
         .replace("<Boolean>", "<JsBoolean>")
+        .replace(", Boolean?>", ", JsBoolean?>")
 
 private fun fileContent(
     annotations: String = "",
@@ -69,11 +70,11 @@ private fun fileContent(
         """
         import js.array.ReadonlyArray
         import js.array.Tuple2
-        import js.core.Int53
         import js.core.JsAny
         import js.core.JsBoolean
         import js.core.JsDouble
         import js.core.JsInt
+        import js.core.JsInt53
         import js.core.JsString
         import js.core.Void
         import js.date.Date

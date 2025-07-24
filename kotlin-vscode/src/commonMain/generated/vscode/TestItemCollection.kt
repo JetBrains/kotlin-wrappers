@@ -5,6 +5,7 @@ package vscode
 import js.array.ReadonlyArray
 import js.array.Tuple2
 import js.core.JsAny
+import js.core.JsString
 import js.iterable.JsIterable
 
 /**
@@ -12,7 +13,7 @@ import js.iterable.JsIterable
  * {@link TestController.items}.
  */
 external interface TestItemCollection :
-    JsIterable<Tuple2</* id: */ String, /* testItem: */ TestItem>> {
+    JsIterable<Tuple2</* id: */ JsString, /* testItem: */ TestItem>> {
     /**
      * Gets the number of items in the collection.
      */

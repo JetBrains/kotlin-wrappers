@@ -6,6 +6,7 @@ package vscode
 
 import js.array.Tuple2
 import js.core.JsAny
+import js.core.JsString
 import js.iterable.JsIterable
 
 /**
@@ -16,7 +17,7 @@ import js.iterable.JsIterable
  * an element in the same drag and drop controller.
  */
 open external class DataTransfer :
-    JsIterable<Tuple2</* mimeType: */ String, /* item: */ DataTransferItem>> {
+    JsIterable<Tuple2</* mimeType: */ JsString, /* item: */ DataTransferItem>> {
     /**
      * Retrieves the data transfer item for a given mime type.
      *

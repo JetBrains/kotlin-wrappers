@@ -167,7 +167,7 @@ private fun convertInterface(
         .replace("<T = any>", "<T : JsAny?>")
         .replace(
             " implements Iterable<[mimeType: string, item: DataTransferItem]>",
-            " :\nJsIterable<Tuple2</* mimeType: */ String, /* item: */ DataTransferItem>>",
+            " :\nJsIterable<Tuple2</* mimeType: */ JsString, /* item: */ DataTransferItem>>",
         )
         .replace(
             " extends Iterable<[uri: Uri, diagnostics: readonly Diagnostic[]]>",
@@ -175,11 +175,11 @@ private fun convertInterface(
         )
         .replace(
             " extends Iterable<[variable: string, mutator: EnvironmentVariableMutator]>",
-            " :\nJsIterable<Tuple2</* variable: */ String, /* mutator: */ EnvironmentVariableMutator>>",
+            " :\nJsIterable<Tuple2</* variable: */ JsString, /* mutator: */ EnvironmentVariableMutator>>",
         )
         .replace(
             " extends Iterable<[id: string, testItem: TestItem]>",
-            " :\nJsIterable<Tuple2</* id: */ String, /* testItem: */ TestItem>>",
+            " :\nJsIterable<Tuple2</* id: */ JsString, /* testItem: */ TestItem>>",
         )
         .replace(" extends Error", " :\nJsError")
         .replace(" extends ", " :\n")

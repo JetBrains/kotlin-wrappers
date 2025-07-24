@@ -4,6 +4,7 @@ package vscode
 
 import js.array.Tuple2
 import js.core.JsAny
+import js.core.JsInt
 
 /**
  * A reference to a value that the user added to their chat request.
@@ -20,7 +21,7 @@ external interface ChatPromptReference {
      * *Note* that the indices take the leading `#`-character into account which means they can
      * used to modify the prompt as-is.
      */
-    val range: Tuple2</* start */ Int, /* end */ Int>?
+    val range: Tuple2</* start */ JsInt, /* end */ JsInt>?
 
     /**
      * A description of this value that could be used in an LLM prompt.

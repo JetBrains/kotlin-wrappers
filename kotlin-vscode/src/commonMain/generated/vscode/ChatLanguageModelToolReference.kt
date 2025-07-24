@@ -3,6 +3,7 @@
 package vscode
 
 import js.array.Tuple2
+import js.core.JsInt
 
 /**
  * A reference to a tool that the user manually attached to their request, either using the `#`-syntax inline, or as an
@@ -21,5 +22,5 @@ external interface ChatLanguageModelToolReference {
      * *Note* that the indices take the leading `#`-character into account which means they can be used to modify the prompt
      * as-is.
      */
-    val range: Tuple2</* start */ Int, /* end */ Int>?
+    val range: Tuple2</* start */ JsInt, /* end */ JsInt>?
 }

@@ -2,8 +2,8 @@
 
 package vscode
 
-import js.core.Int53
 import js.core.JsAny
+import js.core.JsInt53
 import js.core.Void
 import js.promise.PromiseLike
 
@@ -41,7 +41,7 @@ external interface NotebookCellExecution {
      * @param startTime The time that execution began, in milliseconds in the Unix epoch. Used to drive the clock
      * that shows for how long a cell has been running. If not given, the clock won't be shown.
      */
-    fun start(startTime: Int53 = definedExternally)
+    fun start(startTime: JsInt53 = definedExternally)
 
     /**
      * Signal that execution has ended.
@@ -53,7 +53,7 @@ external interface NotebookCellExecution {
      */
     fun end(
         success: Boolean?,
-        endTime: Int53 = definedExternally,
+        endTime: JsInt53 = definedExternally,
     )
 
     /**

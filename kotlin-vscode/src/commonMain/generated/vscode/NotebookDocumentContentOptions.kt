@@ -2,6 +2,7 @@
 
 package vscode
 
+import js.core.JsBoolean
 import js.core.JsString
 import js.objects.Record
 
@@ -25,7 +26,7 @@ external interface NotebookDocumentContentOptions {
      * content provider doesn't persist a metadata property in the file document, it should be
      * set to true.
      */
-    var transientCellMetadata: Record<JsString, Boolean?>?
+    var transientCellMetadata: Record<JsString, JsBoolean?>?
 
     /**
      * Controls if a document metadata property change event will trigger notebook document
@@ -33,5 +34,5 @@ external interface NotebookDocumentContentOptions {
      * content provider doesn't persist a metadata property in the file document, it should be
      * set to true.
      */
-    var transientDocumentMetadata: Record<JsString, Boolean?>?
+    var transientDocumentMetadata: Record<JsString, JsBoolean?>?
 }

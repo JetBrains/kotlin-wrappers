@@ -39,8 +39,8 @@ private val STANDARD_TYPE_MAP = mapOf(
     "[string, FileType][] | Thenable<[string, FileType][]>" to
             "PromiseResult<ReadonlyArray<Tuple2<String, FileType>>>",
 
-    "[number, number]" to "Tuple2<Int, Int>",
-    "[start: number, end: number]" to "Tuple2</* start */ Int, /* end */ Int>",
+    "[number, number]" to "Tuple2<JsInt, JsInt>",
+    "[start: number, end: number]" to "Tuple2</* start */ JsInt, /* end */ JsInt>",
     "[string, FileType]" to "Tuple2<String, FileType>",
 
     "[Uri, Diagnostic[]]" to "Tuple2<Uri, ReadonlyArray<Diagnostic>>",
@@ -217,7 +217,7 @@ internal fun kotlinType(
             "endTime",
             "ctime",
             "mtime",
-                -> "Int53"
+                -> "JsInt53"
 
             else -> TODO("Unknown number with name '$name'!")
         }
