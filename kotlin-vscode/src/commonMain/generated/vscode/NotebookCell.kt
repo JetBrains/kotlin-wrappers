@@ -3,6 +3,7 @@
 package vscode
 
 import js.array.ReadonlyArray
+import js.core.JsString
 import js.objects.ReadonlyRecord
 
 /**
@@ -37,7 +38,7 @@ external interface NotebookCell {
     /**
      * The metadata of this cell. Can be anything but must be JSON-stringifyable.
      */
-    val metadata: ReadonlyRecord<String, *>
+    val metadata: ReadonlyRecord<JsString, *>
 
     /**
      * The outputs of this cell.

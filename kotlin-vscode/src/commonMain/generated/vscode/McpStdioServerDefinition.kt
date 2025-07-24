@@ -5,6 +5,7 @@
 package vscode
 
 import js.array.ReadonlyArray
+import js.core.JsString
 import js.objects.Record
 
 /**
@@ -33,14 +34,14 @@ open external class McpStdioServerDefinition {
     /**
      * Additional command-line arguments passed to the server.
      */
-    var args: ReadonlyArray<String>
+    var args: ReadonlyArray<JsString>
 
     /**
      * Optional additional environment information for the server. Variables
      * in this environment will overwrite or remove (if null) the default
      * environment variables of the editor's extension host.
      */
-    var env: Record<String, String?>
+    var env: Record<JsString, JsString?>
 
     /**
      * Optional version identification for the server. If this changes, the
@@ -58,8 +59,8 @@ open external class McpStdioServerDefinition {
     constructor(
         label: String,
         command: String,
-        args: ReadonlyArray<String> = definedExternally,
-        env: Record<String, String?> = definedExternally,
+        args: ReadonlyArray<JsString> = definedExternally,
+        env: Record<JsString, JsString?> = definedExternally,
         version: String = definedExternally,
     )
 }

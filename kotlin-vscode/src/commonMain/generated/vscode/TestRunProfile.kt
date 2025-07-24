@@ -3,6 +3,7 @@
 package vscode
 
 import js.array.ReadonlyArray
+import js.core.JsBoolean
 import js.core.Void
 import js.promise.PromiseLike
 
@@ -43,7 +44,7 @@ external interface TestRunProfile {
      * Fired when a user has changed whether this is a default profile. The
      * event contains the new value of {@link isDefault}
      */
-    var onDidChangeDefault: Event<Boolean>
+    var onDidChangeDefault: Event<JsBoolean>
 
     /**
      * Whether this profile supports continuous running of requests. If so,

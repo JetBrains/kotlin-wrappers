@@ -5,6 +5,7 @@
 package vscode
 
 import js.array.ReadonlyArray
+import js.core.JsString
 
 /**
  * The execution of a task happens as an external process
@@ -31,7 +32,7 @@ open external class ProcessExecution {
      */
     constructor(
         process: String,
-        args: ReadonlyArray<String>,
+        args: ReadonlyArray<JsString>,
         options: ProcessExecutionOptions = definedExternally,
     )
 
@@ -43,7 +44,7 @@ open external class ProcessExecution {
     /**
      * The arguments passed to the process. Defaults to an empty array.
      */
-    var args: ReadonlyArray<String>
+    var args: ReadonlyArray<JsString>
 
     /**
      * The process options used when the process is executed.

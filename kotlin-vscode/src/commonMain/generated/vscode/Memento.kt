@@ -3,6 +3,7 @@
 package vscode
 
 import js.array.ReadonlyArray
+import js.core.JsString
 import js.core.Void
 import js.promise.PromiseLike
 
@@ -16,7 +17,7 @@ external interface Memento {
      *
      * @returns The stored keys.
      */
-    fun keys(): ReadonlyArray<String>
+    fun keys(): ReadonlyArray<JsString>
 
     /**
      * Return a value.

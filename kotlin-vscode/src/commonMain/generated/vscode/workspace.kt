@@ -5,6 +5,8 @@
 package vscode
 
 import js.array.ReadonlyArray
+import js.core.JsBoolean
+import js.core.JsString
 import js.core.Void
 import js.promise.PromiseLike
 import js.typedarrays.Uint8Array
@@ -344,7 +346,7 @@ external object workspace {
      * @returns A thenable that resolves when the files have been saved. Will return `false`
      * for any file that failed to save.
      */
-    fun saveAll(includeUntitled: Boolean = definedExternally): PromiseLike<Boolean>
+    fun saveAll(includeUntitled: Boolean = definedExternally): PromiseLike<JsBoolean>
 
     /**
      * Make changes to one or many resources or create, delete, and rename resources as defined by the given
@@ -366,7 +368,7 @@ external object workspace {
     fun applyEdit(
         edit: WorkspaceEdit,
         metadata: WorkspaceEditMetadata = definedExternally,
-    ): PromiseLike<Boolean>
+    ): PromiseLike<JsBoolean>
 
     /**
      * All text documents currently known to the editor.
@@ -784,7 +786,7 @@ external object workspace {
      * @param content The text content to decode as a `Uint8Array`.
      * @returns A thenable that resolves to the decoded `string`.
      */
-    fun decode(content: Uint8Array<*>): PromiseLike<String>
+    fun decode(content: Uint8Array<*>): PromiseLike<JsString>
 
     /**
      * Decodes the content from a `Uint8Array` to a `string` using the

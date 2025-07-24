@@ -3,6 +3,7 @@
 package vscode
 
 import js.array.ReadonlyArray
+import js.core.JsString
 import js.core.Void
 import js.promise.PromiseLike
 
@@ -48,7 +49,7 @@ external interface NotebookController {
      * myController.supportedLanguages = []; // falsy
      * ```
      */
-    var supportedLanguages: ReadonlyArray<String>?
+    var supportedLanguages: ReadonlyArray<JsString>?
 
     /**
      * The human-readable label of this notebook controller.

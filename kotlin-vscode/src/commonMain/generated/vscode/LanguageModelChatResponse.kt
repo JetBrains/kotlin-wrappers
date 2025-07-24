@@ -2,6 +2,7 @@
 
 package vscode
 
+import js.core.JsString
 import js.iterable.AsyncIterable
 
 /**
@@ -48,5 +49,5 @@ external interface LanguageModelChatResponse {
      *
      * @see {@link LanguageModelChatResponse.stream}
      */
-    var text: AsyncIterable<String>
+    var text: AsyncIterable<JsString>
 }

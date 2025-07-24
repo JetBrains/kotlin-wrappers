@@ -3,6 +3,7 @@
 package vscode
 
 import js.array.ReadonlyArray
+import js.core.JsString
 import js.core.Void
 
 /**
@@ -33,7 +34,7 @@ external interface QuickPick<
     /**
      * An event signaling when the value of the filter text has changed.
      */
-    val onDidChangeValue: Event<String>
+    val onDidChangeValue: Event<JsString>
 
     /**
      * An event signaling when the user indicated acceptance of the selected item(s).

@@ -3,6 +3,7 @@
 package vscode
 
 import js.array.ReadonlyArray
+import js.core.JsInt
 import js.promise.PromiseLike
 
 /**
@@ -85,5 +86,5 @@ external interface LanguageModelChat {
     fun countTokens(
         text: Any, /* string | LanguageModelChatMessage */
         token: CancellationToken = definedExternally,
-    ): PromiseLike<Int>
+    ): PromiseLike<JsInt>
 }

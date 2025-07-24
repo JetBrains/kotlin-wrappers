@@ -3,6 +3,7 @@
 package vscode
 
 import js.array.ReadonlyArray
+import js.core.JsString
 
 /**
  * Represents a session of a currently logged in user.
@@ -27,5 +28,5 @@ external interface AuthenticationSession {
      * The permissions granted by the session's access token. Available scopes
      * are defined by the {@link AuthenticationProvider}.
      */
-    val scopes: ReadonlyArray<String>
+    val scopes: ReadonlyArray<JsString>
 }

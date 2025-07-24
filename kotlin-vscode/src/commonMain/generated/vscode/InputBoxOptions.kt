@@ -3,6 +3,7 @@
 package vscode
 
 import js.array.Tuple2
+import js.core.JsInt
 
 /**
  * Options to configure the behavior of the input box UI.
@@ -24,7 +25,7 @@ external interface InputBoxOptions {
      * pre-filled value will be selected, when empty (start equals end) only the cursor will be set,
      * otherwise the defined range will be selected.
      */
-    var valueSelection: Tuple2<Int, Int>?
+    var valueSelection: Tuple2<JsInt, JsInt>?
 
     /**
      * The text to display underneath the input box.

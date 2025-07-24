@@ -2,6 +2,7 @@
 
 package vscode
 
+import js.core.JsInt
 import js.promise.PromiseLike
 
 /**
@@ -22,5 +23,5 @@ external interface LanguageModelToolTokenizationOptions {
     fun countTokens(
         text: String,
         token: CancellationToken = definedExternally,
-    ): PromiseLike<Int>
+    ): PromiseLike<JsInt>
 }

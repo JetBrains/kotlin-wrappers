@@ -2,6 +2,7 @@
 
 package vscode
 
+import js.core.JsBoolean
 import js.promise.PromiseLike
 
 /**
@@ -36,5 +37,5 @@ external interface NotebookRendererMessaging {
     fun postMessage(
         message: Any?,
         editor: NotebookEditor = definedExternally,
-    ): PromiseLike<Boolean>
+    ): PromiseLike<JsBoolean>
 }

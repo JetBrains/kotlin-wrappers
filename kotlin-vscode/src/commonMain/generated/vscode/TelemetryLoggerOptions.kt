@@ -2,6 +2,7 @@
 
 package vscode
 
+import js.core.JsString
 import js.objects.Record
 
 /**
@@ -23,5 +24,5 @@ external interface TelemetryLoggerOptions {
     /**
      * Any additional common properties which should be injected into the data object.
      */
-    val additionalCommonProperties: Record<String, *>?
+    val additionalCommonProperties: Record<JsString, *>?
 }

@@ -4,6 +4,7 @@ package vscode
 
 import js.array.ReadonlyArray
 import js.array.Tuple2
+import js.core.JsString
 import js.core.Void
 import js.promise.PromiseLike
 import js.typedarrays.Uint8Array
@@ -31,7 +32,7 @@ external interface FileSystem {
      * @param uri The uri of the folder.
      * @returns An array of name/type-tuples or a thenable that resolves to such.
      */
-    fun readDirectory(uri: Uri): PromiseLike<ReadonlyArray<Tuple2<String, FileType>>>
+    fun readDirectory(uri: Uri): PromiseLike<ReadonlyArray<Tuple2<JsString, FileType>>>
 
     /**
      * Create a new directory (Note, that new files are created via `write`-calls).

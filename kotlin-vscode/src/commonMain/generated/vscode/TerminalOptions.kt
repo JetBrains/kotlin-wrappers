@@ -2,6 +2,7 @@
 
 package vscode
 
+import js.core.JsString
 import js.objects.Record
 
 /**
@@ -32,7 +33,7 @@ external interface TerminalOptions {
     /**
      * Object with environment variables that will be added to the editor process.
      */
-    var env: Record<String, Boolean?>?
+    var env: Record<JsString, Boolean?>?
 
     /**
      * Whether the terminal process environment should be exactly as provided in

@@ -5,6 +5,7 @@
 package vscode
 
 import js.array.ReadonlyArray
+import js.core.JsString
 
 /**
  * A completion item represents a text snippet that is proposed to complete text that is being typed.
@@ -118,7 +119,7 @@ open external class CompletionItem {
      * then type that character. *Note* that all commit characters should have `length=1` and that superfluous
      * characters will be ignored.
      */
-    var commitCharacters: ReadonlyArray<String>?
+    var commitCharacters: ReadonlyArray<JsString>?
 
     /**
      * Keep whitespace of the {@link CompletionItem.insertText insertText} as is. By default, the editor adjusts leading

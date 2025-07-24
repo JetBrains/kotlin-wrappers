@@ -5,6 +5,7 @@
 package vscode
 
 import js.array.ReadonlyArray
+import js.core.JsString
 import js.objects.Record
 
 /**
@@ -35,7 +36,7 @@ open external class NotebookCellData {
     /**
      * Arbitrary metadata of this cell data. Can be anything but must be JSON-stringifyable.
      */
-    var metadata: Record<String, *>?
+    var metadata: Record<JsString, *>?
 
     /**
      * The execution summary of this cell data.

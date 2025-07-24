@@ -3,6 +3,7 @@
 package vscode
 
 import js.array.ReadonlyArray
+import js.core.JsString
 import js.objects.Record
 
 /**
@@ -17,7 +18,7 @@ external interface NotebookDocumentChangeEvent {
     /**
      * The new metadata of the notebook or `undefined` when it did not change.
      */
-    val metadata: Record<String, *>?
+    val metadata: Record<JsString, *>?
 
     /**
      * An array of content changes describing added or removed {@link NotebookCell cells}.

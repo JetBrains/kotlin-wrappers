@@ -5,6 +5,7 @@
 package vscode
 
 import js.array.ReadonlyArray
+import js.core.JsString
 import js.promise.PromiseLike
 
 /**
@@ -113,5 +114,5 @@ external object commands {
      * @param filterInternal Set `true` to not see internal commands (starting with an underscore)
      * @returns Thenable that resolves to a list of command ids.
      */
-    fun getCommands(filterInternal: Boolean = definedExternally): PromiseLike<ReadonlyArray<String>>
+    fun getCommands(filterInternal: Boolean = definedExternally): PromiseLike<ReadonlyArray<JsString>>
 }

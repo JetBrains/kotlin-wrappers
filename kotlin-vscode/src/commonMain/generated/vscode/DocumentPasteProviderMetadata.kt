@@ -3,6 +3,7 @@
 package vscode
 
 import js.array.ReadonlyArray
+import js.core.JsString
 
 /**
  * Provides additional metadata about how a {@linkcode DocumentPasteEditProvider} works.
@@ -18,7 +19,7 @@ external interface DocumentPasteProviderMetadata {
     /**
      * Mime types that {@linkcode DocumentPasteEditProvider.prepareDocumentPaste prepareDocumentPaste} may add on copy.
      */
-    val copyMimeTypes: ReadonlyArray<String>?
+    val copyMimeTypes: ReadonlyArray<JsString>?
 
     /**
      * Mime types that {@linkcode DocumentPasteEditProvider.provideDocumentPasteEdits provideDocumentPasteEdits} should be invoked for.
@@ -31,5 +32,5 @@ external interface DocumentPasteProviderMetadata {
      * Note that {@linkcode DataTransferFile} entries are only created when pasting content from outside the editor, such as
      * from the operating system.
      */
-    val pasteMimeTypes: ReadonlyArray<String>?
+    val pasteMimeTypes: ReadonlyArray<JsString>?
 }

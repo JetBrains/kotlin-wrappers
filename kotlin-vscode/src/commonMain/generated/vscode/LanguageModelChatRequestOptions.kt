@@ -3,6 +3,7 @@
 package vscode
 
 import js.array.ReadonlyArray
+import js.core.JsString
 import js.objects.Record
 
 /**
@@ -20,7 +21,7 @@ external interface LanguageModelChatRequestOptions {
      * A set of options that control the behavior of the language model. These options are specific to the language model
      * and need to be looked up in the respective documentation.
      */
-    var modelOptions: Record<String, *>?
+    var modelOptions: Record<JsString, *>?
 
     /**
      * An optional list of tools that are available to the language model. These could be registered tools available via

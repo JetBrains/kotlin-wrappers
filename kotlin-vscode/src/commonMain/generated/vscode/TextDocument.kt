@@ -2,6 +2,7 @@
 
 package vscode
 
+import js.core.JsBoolean
 import js.promise.PromiseLike
 import js.regexp.RegExp
 
@@ -80,7 +81,7 @@ external interface TextDocument {
      * @returns A promise that will resolve to `true` when the file
      * has been saved. If the save failed, will return `false`.
      */
-    fun save(): PromiseLike<Boolean>
+    fun save(): PromiseLike<JsBoolean>
 
     /**
      * The {@link EndOfLine end of line} sequence that is predominately

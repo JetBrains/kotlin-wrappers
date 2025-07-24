@@ -4,6 +4,7 @@
 
 package vscode
 
+import js.core.JsString
 import js.promise.PromiseLike
 
 /**
@@ -15,7 +16,7 @@ open external class DataTransferItem {
      *
      * If {@linkcode DataTransferItem.value} is an object, this returns the result of json stringifying {@linkcode DataTransferItem.value} value.
      */
-    fun asString(): PromiseLike<String>
+    fun asString(): PromiseLike<JsString>
 
     /**
      * Try getting the {@link DataTransferFile file} associated with this data transfer item.

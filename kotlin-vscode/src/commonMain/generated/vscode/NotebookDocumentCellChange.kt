@@ -3,6 +3,7 @@
 package vscode
 
 import js.array.ReadonlyArray
+import js.core.JsString
 import js.objects.Record
 
 /**
@@ -27,7 +28,7 @@ external interface NotebookDocumentCellChange {
     /**
      * The new metadata of the cell or `undefined` when it did not change.
      */
-    val metadata: Record<String, *>?
+    val metadata: Record<JsString, *>?
 
     /**
      * The new outputs of the cell or `undefined` when they did not change.

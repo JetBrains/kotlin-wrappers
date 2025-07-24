@@ -6,6 +6,7 @@ package vscode
 
 import js.array.ReadonlyArray
 import js.array.Tuple2
+import js.core.JsString
 import js.promise.PromiseLike
 
 /**
@@ -41,7 +42,7 @@ external object languages {
      * Return the identifiers of all known languages.
      * @returns Promise resolving to an array of identifier strings.
      */
-    fun getLanguages(): PromiseLike<ReadonlyArray<String>>
+    fun getLanguages(): PromiseLike<ReadonlyArray<JsString>>
 
     /**
      * Set (and change) the {@link TextDocument.languageId language} that is associated

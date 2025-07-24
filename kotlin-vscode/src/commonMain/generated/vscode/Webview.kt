@@ -2,6 +2,7 @@
 
 package vscode
 
+import js.core.JsBoolean
 import js.promise.PromiseLike
 
 /**
@@ -80,7 +81,7 @@ external interface Webview {
      *   If you want confirm that a message as actually received, you can try having your webview posting a
      *   confirmation message back to your extension.
      */
-    fun postMessage(message: Any?): PromiseLike<Boolean>
+    fun postMessage(message: Any?): PromiseLike<JsBoolean>
 
     /**
      * Convert a uri for the local file system to one that can be used inside webviews.

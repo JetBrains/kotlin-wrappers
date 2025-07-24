@@ -3,6 +3,7 @@
 package vscode
 
 import js.array.ReadonlyArray
+import js.core.JsBoolean
 import js.promise.PromiseLike
 
 /**
@@ -41,7 +42,7 @@ external interface TabGroups {
     fun close(
         tab: ReadonlyArray<Tab>, /* Tab */
         preserveFocus: Boolean = definedExternally,
-    ): PromiseLike<Boolean>
+    ): PromiseLike<JsBoolean>
 
     /**
      * Closes the tab group. This makes the tab group object invalid and the tab group
@@ -53,5 +54,5 @@ external interface TabGroups {
     fun close(
         tabGroup: ReadonlyArray<TabGroup>, /* TabGroup */
         preserveFocus: Boolean = definedExternally,
-    ): PromiseLike<Boolean>
+    ): PromiseLike<JsBoolean>
 }

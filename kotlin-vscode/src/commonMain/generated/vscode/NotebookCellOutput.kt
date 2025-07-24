@@ -5,6 +5,7 @@
 package vscode
 
 import js.array.ReadonlyArray
+import js.core.JsString
 import js.objects.Record
 
 /**
@@ -31,7 +32,7 @@ open external class NotebookCellOutput {
     /**
      * Arbitrary metadata for this cell output. Can be anything but must be JSON-stringifyable.
      */
-    var metadata: Record<String, *>?
+    var metadata: Record<JsString, *>?
 
     /**
      * Create new notebook output.
@@ -41,6 +42,6 @@ open external class NotebookCellOutput {
      */
     constructor(
         items: ReadonlyArray<NotebookCellOutputItem>,
-        metadata: Record<String, *> = definedExternally,
+        metadata: Record<JsString, *> = definedExternally,
     )
 }

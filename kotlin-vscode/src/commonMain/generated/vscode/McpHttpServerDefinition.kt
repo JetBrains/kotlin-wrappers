@@ -4,6 +4,7 @@
 
 package vscode
 
+import js.core.JsString
 import js.objects.Record
 
 /**
@@ -25,7 +26,7 @@ open external class McpHttpServerDefinition {
     /**
      * Optional additional heads included with each request to the server.
      */
-    var headers: Record<String, String>
+    var headers: Record<JsString, JsString>
 
     /**
      * Optional version identification for the server. If this changes, the
@@ -41,7 +42,7 @@ open external class McpHttpServerDefinition {
     constructor(
         label: String,
         uri: Uri,
-        headers: Record<String, String> = definedExternally,
+        headers: Record<JsString, JsString> = definedExternally,
         version: String = definedExternally,
     )
 }

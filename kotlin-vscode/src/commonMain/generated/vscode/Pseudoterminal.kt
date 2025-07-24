@@ -2,6 +2,7 @@
 
 package vscode
 
+import js.core.JsString
 import js.core.Void
 
 /**
@@ -35,7 +36,7 @@ external interface Pseudoterminal {
      * writeEmitter.fire('\x1b[10;20H*');
      * ```
      */
-    var onDidWrite: Event<String>
+    var onDidWrite: Event<JsString>
 
     /**
      * An event that when fired allows overriding the {@link Pseudoterminal.setDimensions dimensions} of the
@@ -115,7 +116,7 @@ external interface Pseudoterminal {
      * vscode.window.createTerminal({ name: 'My terminal', pty });
      * ```
      */
-    var onDidChangeName: Event<String>?
+    var onDidChangeName: Event<JsString>?
 
     /**
      * Implement to handle when the pty is open and ready to start firing events.

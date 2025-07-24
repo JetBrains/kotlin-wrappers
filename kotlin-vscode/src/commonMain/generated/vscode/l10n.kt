@@ -4,6 +4,7 @@
 
 package vscode
 
+import js.core.JsString
 import js.objects.Record
 
 /**
@@ -52,7 +53,7 @@ external object l10n {
      */
     fun t(
         message: String,
-        args: Record<String, *>,
+        args: Record<JsString, *>,
     ): String
 
     /**
@@ -90,7 +91,7 @@ external object l10n {
      * It's undefined if no bundle has been loaded. The bundle is typically not loaded if
      * there was no bundle found or when we are running with the default language.
      */
-    val bundle: Record<String, String>?
+    val bundle: Record<JsString, JsString>?
 
     /**
      * The URI of the localization bundle that has been loaded for the extension.

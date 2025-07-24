@@ -5,6 +5,7 @@
 package vscode
 
 import js.array.ReadonlyArray
+import js.core.JsString
 
 /**
  * Represents a debug adapter executable and optional arguments and runtime options passed to it.
@@ -19,7 +20,7 @@ open external class DebugAdapterExecutable {
      */
     constructor(
         command: String,
-        args: ReadonlyArray<String> = definedExternally,
+        args: ReadonlyArray<JsString> = definedExternally,
         options: DebugAdapterExecutableOptions = definedExternally,
     )
 
@@ -33,7 +34,7 @@ open external class DebugAdapterExecutable {
     /**
      * The arguments passed to the debug adapter executable. Defaults to an empty array.
      */
-    val args: ReadonlyArray<String>
+    val args: ReadonlyArray<JsString>
 
     /**
      * Optional options to be used when the debug adapter is started.

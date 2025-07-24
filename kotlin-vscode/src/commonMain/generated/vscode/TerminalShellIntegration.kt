@@ -3,6 +3,7 @@
 package vscode
 
 import js.array.ReadonlyArray
+import js.core.JsString
 
 /**
  * [Shell integration](https://code.visualstudio.com/docs/terminal/shell-integration)-powered capabilities owned by a terminal.
@@ -117,6 +118,6 @@ external interface TerminalShellIntegration {
      */
     fun executeCommand(
         executable: String,
-        args: ReadonlyArray<String>,
+        args: ReadonlyArray<JsString>,
     ): TerminalShellExecution
 }

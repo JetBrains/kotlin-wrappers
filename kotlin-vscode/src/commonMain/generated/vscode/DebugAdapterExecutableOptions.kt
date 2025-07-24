@@ -2,6 +2,7 @@
 
 package vscode
 
+import js.core.JsString
 import js.objects.Record
 
 /**
@@ -13,7 +14,7 @@ external interface DebugAdapterExecutableOptions {
      * the parent process' environment is used. If provided it is merged with
      * the parent process' environment.
      */
-    var env: Record<String, String>?
+    var env: Record<JsString, JsString>?
 
     /**
      * The current working directory for the executed debug adapter.

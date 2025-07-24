@@ -2,6 +2,7 @@
 
 package vscode
 
+import js.core.JsString
 import js.errors.JsError
 import js.objects.Record
 
@@ -29,7 +30,7 @@ external interface TelemetrySender {
      */
     fun sendEventData(
         eventName: String,
-        data: Record<String, *> = definedExternally,
+        data: Record<JsString, *> = definedExternally,
     )
 
     /**
@@ -40,7 +41,7 @@ external interface TelemetrySender {
      */
     fun sendErrorData(
         error: JsError,
-        data: Record<String, *> = definedExternally,
+        data: Record<JsString, *> = definedExternally,
     )
 
     /**

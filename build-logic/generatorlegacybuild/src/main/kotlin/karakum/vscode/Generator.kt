@@ -37,9 +37,25 @@ internal fun generateKotlinDeclarations(
 
         targetDir.resolve("$name.kt")
             .also { check(!it.exists()) { "Duplicated file: ${it.name}" } }
-            .writeCode(fileContent(annotations, body))
+            .writeCode(fileContent(annotations, toCommonBody(body)))
     }
 }
+
+private fun toCommonBody(
+    body: String,
+): String =
+    body.replace("<String>", "<JsString>")
+        .replace("<String,", "<JsString,")
+        .replace(", String>", ", JsString>")
+        .replace(", String?>", ", JsString?>")
+        .replace("<Double>", "<JsDouble>")
+        .replace("<Double,", "<JsDouble,")
+        .replace(", Double>", ", JsDouble>")
+        .replace("<Double?>", "<JsDouble?>")
+        .replace("<Int>", "<JsInt>")
+        .replace("<Int,", "<JsInt,")
+        .replace(", Int>", ", JsInt>")
+        .replace("<Boolean>", "<JsBoolean>")
 
 private fun fileContent(
     annotations: String = "",
@@ -53,6 +69,10 @@ private fun fileContent(
         import js.array.ReadonlyArray
         import js.array.Tuple2
         import js.core.Int53
+        import js.core.JsBoolean
+        import js.core.JsDouble
+        import js.core.JsInt
+        import js.core.JsString
         import js.core.Void
         import js.date.Date
         import js.iterable.AsyncIterable

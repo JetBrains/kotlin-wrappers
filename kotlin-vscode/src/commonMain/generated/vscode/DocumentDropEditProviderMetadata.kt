@@ -3,6 +3,7 @@
 package vscode
 
 import js.array.ReadonlyArray
+import js.core.JsString
 
 /**
  * Provides additional metadata about how a {@linkcode DocumentDropEditProvider} works.
@@ -26,5 +27,5 @@ external interface DocumentDropEditProviderMetadata {
      * Note that {@link DataTransferFile} entries are only created when dropping content from outside the editor, such as
      * from the operating system.
      */
-    val dropMimeTypes: ReadonlyArray<String>
+    val dropMimeTypes: ReadonlyArray<JsString>
 }

@@ -5,6 +5,7 @@
 package vscode
 
 import js.array.ReadonlyArray
+import js.core.JsString
 import js.objects.Record
 
 /**
@@ -24,7 +25,7 @@ open external class NotebookData {
     /**
      * Arbitrary metadata of notebook data.
      */
-    var metadata: Record<String, *>?
+    var metadata: Record<JsString, *>?
 
     /**
      * Create new notebook data.

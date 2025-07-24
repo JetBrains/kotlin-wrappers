@@ -3,6 +3,7 @@
 package vscode
 
 import js.array.ReadonlyArray
+import js.core.JsString
 
 /**
  * Information about a registered tool available in {@link lm.tools}.
@@ -27,5 +28,5 @@ external interface LanguageModelToolInformation {
      * A set of tags, declared by the tool, that roughly describe the tool's capabilities. A tool user may use these to filter
      * the set of tools to just ones that are relevant for the task at hand.
      */
-    val tags: ReadonlyArray<String>
+    val tags: ReadonlyArray<JsString>
 }

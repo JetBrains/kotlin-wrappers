@@ -2,6 +2,7 @@
 
 package vscode
 
+import js.core.JsString
 import js.core.Void
 import js.promise.PromiseLike
 
@@ -13,7 +14,7 @@ external interface Clipboard {
      * Read the current clipboard contents as text.
      * @returns A thenable that resolves to a string.
      */
-    fun readText(): PromiseLike<String>
+    fun readText(): PromiseLike<JsString>
 
     /**
      * Writes text into the clipboard.

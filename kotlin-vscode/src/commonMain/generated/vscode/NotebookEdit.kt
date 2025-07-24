@@ -5,6 +5,7 @@
 package vscode
 
 import js.array.ReadonlyArray
+import js.core.JsString
 import js.objects.Record
 
 /**
@@ -24,12 +25,12 @@ open external class NotebookEdit {
     /**
      * Optional new metadata for the cells.
      */
-    var newCellMetadata: Record<String, *>?
+    var newCellMetadata: Record<JsString, *>?
 
     /**
      * Optional new metadata for the notebook.
      */
-    var newNotebookMetadata: Record<String, *>?
+    var newNotebookMetadata: Record<JsString, *>?
 
     /**
      * Create a new notebook edit.
@@ -80,7 +81,7 @@ open external class NotebookEdit {
          */
         fun updateCellMetadata(
             index: Int,
-            newCellMetadata: Record<String, *>,
+            newCellMetadata: Record<JsString, *>,
         ): NotebookEdit
 
         /**
@@ -88,6 +89,6 @@ open external class NotebookEdit {
          *
          * @param newNotebookMetadata The new metadata for the notebook.
          */
-        fun updateNotebookMetadata(newNotebookMetadata: Record<String, *>): NotebookEdit
+        fun updateNotebookMetadata(newNotebookMetadata: Record<JsString, *>): NotebookEdit
     }
 }

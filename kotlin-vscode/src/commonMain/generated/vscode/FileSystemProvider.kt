@@ -4,6 +4,7 @@ package vscode
 
 import js.array.ReadonlyArray
 import js.array.Tuple2
+import js.core.JsString
 import js.core.Void
 import js.promise.PromiseLike
 import js.promise.PromiseResult
@@ -88,7 +89,7 @@ external interface FileSystemProvider {
      * @returns An array of name/type-tuples or a thenable that resolves to such.
      * @throws {@linkcode FileSystemError.FileNotFound FileNotFound} when `uri` doesn't exist.
      */
-    fun readDirectory(uri: Uri): PromiseResult<ReadonlyArray<Tuple2<String, FileType>>>
+    fun readDirectory(uri: Uri): PromiseResult<ReadonlyArray<Tuple2<JsString, FileType>>>
 
     /**
      * Create a new directory (Note, that new files are created via `write`-calls).

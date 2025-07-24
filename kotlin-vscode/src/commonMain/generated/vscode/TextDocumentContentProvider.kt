@@ -2,6 +2,8 @@
 
 package vscode
 
+import js.core.JsString
+
 /**
  * A text document content provider allows to add readonly documents
  * to the editor, such as source from a dll or generated html from md.
@@ -34,5 +36,5 @@ external interface TextDocumentContentProvider {
     fun provideTextDocumentContent(
         uri: Uri,
         token: CancellationToken,
-    ): ProviderResult<String>
+    ): ProviderResult<JsString>
 }

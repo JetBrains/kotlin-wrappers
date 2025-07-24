@@ -5,6 +5,7 @@
 package vscode
 
 import js.array.ReadonlyArray
+import js.core.JsBoolean
 import js.core.Void
 import js.promise.PromiseLike
 
@@ -131,7 +132,7 @@ external object debug {
         folder: WorkspaceFolder?,
         nameOrConfiguration: Any, /* string | DebugConfiguration */
         parentSessionOrOptions: Any /* DebugSession | DebugSessionOptions */ = definedExternally,
-    ): PromiseLike<Boolean>
+    ): PromiseLike<JsBoolean>
 
     /**
      * Stop the given debug session or stop all debug sessions if session is omitted.

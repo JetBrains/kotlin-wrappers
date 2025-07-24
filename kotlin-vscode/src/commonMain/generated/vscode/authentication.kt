@@ -5,6 +5,7 @@
 package vscode
 
 import js.array.ReadonlyArray
+import js.core.JsString
 import js.promise.PromiseLike
 
 /**
@@ -26,7 +27,7 @@ external object authentication {
      */
     fun getSession(
         providerId: String,
-        scopes: ReadonlyArray<String>,
+        scopes: ReadonlyArray<JsString>,
         options: Any, /* AuthenticationGetSessionOptions & { /** */createIfNone: true | AuthenticationGetSessionPresentationOptions } */
     ): PromiseLike<AuthenticationSession>
 
@@ -60,7 +61,7 @@ external object authentication {
      */
     fun getSession(
         providerId: String,
-        scopes: ReadonlyArray<String>,
+        scopes: ReadonlyArray<JsString>,
         options: AuthenticationGetSessionOptions = definedExternally,
     ): PromiseLike<AuthenticationSession?>
 

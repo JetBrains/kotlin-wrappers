@@ -3,6 +3,7 @@
 package vscode
 
 import js.array.ReadonlyArray
+import js.core.JsString
 
 /**
  * Provides support for drag and drop in `TreeView`.
@@ -25,7 +26,7 @@ external interface TreeDragAndDropController<T> {
      *
      * Note that mime types that cannot be sent to the extension will be omitted.
      */
-    val dropMimeTypes: ReadonlyArray<String>
+    val dropMimeTypes: ReadonlyArray<JsString>
 
     /**
      * The mime types that the {@link TreeDragAndDropController.handleDrag `handleDrag`} method of this `TreeDragAndDropController` may add to the tree data transfer.
@@ -33,7 +34,7 @@ external interface TreeDragAndDropController<T> {
      *
      * The recommended mime type of the tree (`application/vnd.code.tree.<treeidlowercase>`) will be automatically added.
      */
-    val dragMimeTypes: ReadonlyArray<String>
+    val dragMimeTypes: ReadonlyArray<JsString>
 
     /**
      * When the user starts dragging items from this `DragAndDropController`, `handleDrag` will be called.

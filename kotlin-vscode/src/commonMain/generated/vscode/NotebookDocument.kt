@@ -3,6 +3,8 @@
 package vscode
 
 import js.array.ReadonlyArray
+import js.core.JsBoolean
+import js.core.JsString
 import js.objects.Record
 import js.promise.PromiseLike
 
@@ -51,7 +53,7 @@ external interface NotebookDocument {
     /**
      * Arbitrary metadata for this notebook. Can be anything but must be JSON-stringifyable.
      */
-    val metadata: Record<String, *>
+    val metadata: Record<JsString, *>
 
     /**
      * The number of cells in the notebook.
@@ -81,5 +83,5 @@ external interface NotebookDocument {
      * @returns A promise that will resolve to true when the document
      * has been saved. Will return false if the file was not dirty or when save failed.
      */
-    fun save(): PromiseLike<Boolean>
+    fun save(): PromiseLike<JsBoolean>
 }

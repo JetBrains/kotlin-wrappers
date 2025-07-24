@@ -5,6 +5,7 @@
 package vscode
 
 import js.array.ReadonlyArray
+import js.core.JsString
 
 /**
  * A snippet string is a template which allows to insert text
@@ -73,7 +74,7 @@ open external class SnippetString {
      * @returns This snippet string.
      */
     fun appendChoice(
-        values: ReadonlyArray<String>,
+        values: ReadonlyArray<JsString>,
         number: Int = definedExternally,
     ): SnippetString
 

@@ -2,6 +2,7 @@
 
 package vscode
 
+import js.core.JsString
 import js.iterable.AsyncIterable
 
 /**
@@ -56,5 +57,5 @@ external interface TerminalShellExecution {
      *   console.log(data);
      * }
      */
-    fun read(): AsyncIterable<String>
+    fun read(): AsyncIterable<JsString>
 }

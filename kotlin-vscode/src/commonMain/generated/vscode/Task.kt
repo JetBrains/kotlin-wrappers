@@ -5,6 +5,7 @@
 package vscode
 
 import js.array.ReadonlyArray
+import js.core.JsString
 
 /**
  * A task to execute
@@ -86,7 +87,7 @@ open external class Task {
      * The problem matchers attached to the task. Defaults to an empty
      * array.
      */
-    var problemMatchers: ReadonlyArray<String>
+    var problemMatchers: ReadonlyArray<JsString>
 
     /**
      * Run options for the task

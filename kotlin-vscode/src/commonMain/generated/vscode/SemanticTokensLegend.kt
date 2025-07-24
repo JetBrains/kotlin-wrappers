@@ -5,6 +5,7 @@
 package vscode
 
 import js.array.ReadonlyArray
+import js.core.JsString
 
 /**
  * A semantic tokens legend contains the needed information to decipher
@@ -14,12 +15,12 @@ open external class SemanticTokensLegend {
     /**
      * The possible token types.
      */
-    val tokenTypes: ReadonlyArray<String>
+    val tokenTypes: ReadonlyArray<JsString>
 
     /**
      * The possible token modifiers.
      */
-    val tokenModifiers: ReadonlyArray<String>
+    val tokenModifiers: ReadonlyArray<JsString>
 
     /**
      * Creates a semantic tokens legend.
@@ -28,7 +29,7 @@ open external class SemanticTokensLegend {
      * @param tokenModifiers An array of token modifiers.
      */
     constructor(
-        tokenTypes: ReadonlyArray<String>,
-        tokenModifiers: ReadonlyArray<String> = definedExternally,
+        tokenTypes: ReadonlyArray<JsString>,
+        tokenModifiers: ReadonlyArray<JsString> = definedExternally,
     )
 }

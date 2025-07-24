@@ -4,6 +4,8 @@ package vscode
 
 import js.array.ReadonlyArray
 import js.array.Tuple2
+import js.core.JsInt
+import js.core.JsString
 import js.core.Void
 
 /**
@@ -29,7 +31,7 @@ external interface InputBox :
      * This property does not get updated when the user types or makes a selection,
      * but it can be updated by the extension.
      */
-    var valueSelection: Tuple2<Int, Int>?
+    var valueSelection: Tuple2<JsInt, JsInt>?
 
     /**
      * Optional placeholder shown when no value has been input.
@@ -44,7 +46,7 @@ external interface InputBox :
     /**
      * An event signaling when the value has changed.
      */
-    val onDidChangeValue: Event<String>
+    val onDidChangeValue: Event<JsString>
 
     /**
      * An event signaling when the user indicated acceptance of the input value.

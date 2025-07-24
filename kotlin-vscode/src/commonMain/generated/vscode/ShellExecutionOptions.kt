@@ -3,6 +3,7 @@
 package vscode
 
 import js.array.ReadonlyArray
+import js.core.JsString
 import js.objects.Record
 
 /**
@@ -20,7 +21,7 @@ external interface ShellExecutionOptions {
      * argument to execute a command, `PowerShell` requires `-Command` and `cmd` requires both
      * `/d` and `/c`.
      */
-    var shellArgs: ReadonlyArray<String>?
+    var shellArgs: ReadonlyArray<JsString>?
 
     /**
      * The shell quotes supported by this shell.
@@ -38,5 +39,5 @@ external interface ShellExecutionOptions {
      * the parent process' environment is used. If provided it is merged with
      * the parent process' environment.
      */
-    var env: Record<String, String>?
+    var env: Record<JsString, JsString>?
 }

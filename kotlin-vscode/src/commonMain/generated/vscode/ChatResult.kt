@@ -2,6 +2,7 @@
 
 package vscode
 
+import js.core.JsString
 import js.objects.ReadonlyRecord
 
 /**
@@ -16,5 +17,5 @@ external interface ChatResult {
     /**
      * Arbitrary metadata for this result. Can be anything, but must be JSON-stringifyable.
      */
-    val metadata: ReadonlyRecord<String, *>?
+    val metadata: ReadonlyRecord<JsString, *>?
 }

@@ -5,6 +5,7 @@
 package vscode
 
 import js.array.ReadonlyArray
+import js.core.JsString
 
 /**
  * A semantic tokens builder can help with creating a `SemanticTokens` instance
@@ -45,7 +46,7 @@ open external class SemanticTokensBuilder {
     fun push(
         range: Range,
         tokenType: String,
-        tokenModifiers: ReadonlyArray<String> = definedExternally,
+        tokenModifiers: ReadonlyArray<JsString> = definedExternally,
     )
 
     /**

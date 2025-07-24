@@ -3,6 +3,7 @@
 package vscode
 
 import js.array.ReadonlyArray
+import js.core.JsString
 import js.objects.Record
 
 /**
@@ -29,7 +30,7 @@ external interface SaveDialogOptions {
      * }
      * ```
      */
-    var filters: Record<String, ReadonlyArray<String>>?
+    var filters: Record<JsString, ReadonlyArray<JsString>>?
 
     /**
      * Dialog title.

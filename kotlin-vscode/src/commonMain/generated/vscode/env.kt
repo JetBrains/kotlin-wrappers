@@ -4,6 +4,8 @@
 
 package vscode
 
+import js.core.JsBoolean
+import js.core.JsString
 import js.promise.PromiseLike
 
 /**
@@ -73,13 +75,13 @@ external object env {
      * An {@link Event} which fires when the user enabled or disables telemetry.
      * `true` if the user has enabled telemetry or `false` if the user has disabled telemetry.
      */
-    val onDidChangeTelemetryEnabled: Event<Boolean>
+    val onDidChangeTelemetryEnabled: Event<JsBoolean>
 
     /**
      * An {@link Event} which fires when the default shell changes. This fires with the new
      * shell path.
      */
-    val onDidChangeShell: Event<String>
+    val onDidChangeShell: Event<JsString>
 
     /**
      * Creates a new {@link TelemetryLogger telemetry logger}.
@@ -131,7 +133,7 @@ external object env {
      * @param target The uri that should be opened.
      * @returns A promise indicating if open was successful.
      */
-    fun openExternal(target: Uri): PromiseLike<Boolean>
+    fun openExternal(target: Uri): PromiseLike<JsBoolean>
 
     /**
      * Resolves a uri to a form that is accessible externally.
