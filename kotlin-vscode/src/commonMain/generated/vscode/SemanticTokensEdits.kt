@@ -10,7 +10,7 @@ import kotlin.js.definedExternally
 
 /**
  * Represents edits to semantic tokens.
- * @see {@link DocumentSemanticTokensProvider.provideDocumentSemanticTokensEdits provideDocumentSemanticTokensEdits} for an explanation of the format.
+ * @see [provideDocumentSemanticTokensEdits][DocumentSemanticTokensProvider.provideDocumentSemanticTokensEdits] for an explanation of the format.
  */
 open external class SemanticTokensEdits {
     /**

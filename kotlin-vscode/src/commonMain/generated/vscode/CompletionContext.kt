@@ -4,7 +4,7 @@ package vscode
 
 /**
  * Contains additional information about the context in which
- * {@link CompletionItemProvider.provideCompletionItems completion provider} is triggered.
+ * [completion provider][CompletionItemProvider.provideCompletionItems] is triggered.
  */
 external interface CompletionContext {
     /**

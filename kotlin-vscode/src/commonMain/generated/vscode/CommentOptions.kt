@@ -3,7 +3,7 @@
 package vscode
 
 /**
- * Represents a {@link CommentController comment controller}'s {@link CommentController.options options}.
+ * Represents a [comment controller}'s {@link CommentController.options options][CommentController].
  */
 external interface CommentOptions {
     /**

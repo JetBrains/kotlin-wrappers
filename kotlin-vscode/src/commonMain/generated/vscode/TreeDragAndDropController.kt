@@ -13,14 +13,14 @@ import js.promise.PromiseLike
  */
 external interface TreeDragAndDropController<T : JsAny?> {
     /**
-     * The mime types that the {@link TreeDragAndDropController.handleDrop `handleDrop`} method of this `DragAndDropController` supports.
+     * The mime types that the [`handleDrop`][TreeDragAndDropController.handleDrop] method of this `DragAndDropController` supports.
      * This could be well-defined, existing, mime types, and also mime types defined by the extension.
      *
      * To support drops from trees, you will need to add the mime type of that tree.
      * This includes drops from within the same tree.
      * The mime type of a tree is recommended to be of the format `application/vnd.code.tree.<treeidlowercase>`.
      *
-     * Use the special `files` mime type to support all types of dropped files {@link DataTransferFile files}, regardless of the file's actual mime type.
+     * Use the special `files` mime type to support all types of dropped files [files][DataTransferFile], regardless of the file's actual mime type.
      *
      * To learn the mime type of a dragged item:
      * 1. Set up your `DragAndDropController`
@@ -32,7 +32,7 @@ external interface TreeDragAndDropController<T : JsAny?> {
     val dropMimeTypes: ReadonlyArray<JsString>
 
     /**
-     * The mime types that the {@link TreeDragAndDropController.handleDrag `handleDrag`} method of this `TreeDragAndDropController` may add to the tree data transfer.
+     * The mime types that the [`handleDrag`][TreeDragAndDropController.handleDrag] method of this `TreeDragAndDropController` may add to the tree data transfer.
      * This could be well-defined, existing, mime types, and also mime types defined by the extension.
      *
      * The recommended mime type of the tree (`application/vnd.code.tree.<treeidlowercase>`) will be automatically added.
@@ -41,7 +41,7 @@ external interface TreeDragAndDropController<T : JsAny?> {
 
     /**
      * When the user starts dragging items from this `DragAndDropController`, `handleDrag` will be called.
-     * Extensions can use `handleDrag` to add their [DataTransferItem][DataTransferItem] items to the drag and drop.
+     * Extensions can use `handleDrag` to add their [`DataTransferItem`][DataTransferItem] items to the drag and drop.
      *
      * Mime types added in `handleDrag` won't be available outside the application.
      *
@@ -66,7 +66,7 @@ external interface TreeDragAndDropController<T : JsAny?> {
     /**
      * Called when a drag and drop action results in a drop on the tree that this `DragAndDropController` belongs to.
      *
-     * Extensions should fire {@link TreeDataProvider.onDidChangeTreeData onDidChangeTreeData} for any elements that need to be refreshed.
+     * Extensions should fire [onDidChangeTreeData][TreeDataProvider.onDidChangeTreeData] for any elements that need to be refreshed.
      *
      * @param target The target tree element that the drop is occurring on. When undefined, the target is the root.
      * @param dataTransfer The data transfer items of the source of the drag.

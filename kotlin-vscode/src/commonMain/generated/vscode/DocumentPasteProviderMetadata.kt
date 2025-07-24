@@ -10,9 +10,9 @@ import js.core.JsString
  */
 external interface DocumentPasteProviderMetadata {
     /**
-     * List of {@link DocumentDropOrPasteEditKind kinds} that the provider may return in {@linkcode DocumentPasteEditProvider.provideDocumentPasteEdits provideDocumentPasteEdits}.
+     * List of [kinds} that the provider may return in {@linkcode DocumentPasteEditProvider.provideDocumentPasteEdits provideDocumentPasteEdits][DocumentDropOrPasteEditKind].
      *
-     * This is used to filter out providers when a specific {@link DocumentDropOrPasteEditKind kind} of edit is requested.
+     * This is used to filter out providers when a specific [kind][DocumentDropOrPasteEditKind] of edit is requested.
      */
     val providedPasteEditKinds: ReadonlyArray<DocumentDropOrPasteEditKind>
 
@@ -28,7 +28,7 @@ external interface DocumentPasteProviderMetadata {
      *
      * Use `text/uri-list` for resources dropped from the explorer or other tree views in the workbench.
      *
-     * Use `files` to indicate that the provider should be invoked if any {@link DataTransferFile files} are present in the {@linkcode DataTransfer}.
+     * Use `files` to indicate that the provider should be invoked if any [files} are present in the {@linkcode DataTransfer][DataTransferFile].
      * Note that {@linkcode DataTransferFile} entries are only created when pasting content from outside the editor, such as
      * from the operating system.
      */

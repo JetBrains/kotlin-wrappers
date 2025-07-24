@@ -18,7 +18,7 @@ external interface TerminalShellExecutionCommandLine {
      * execute the command again.
      *
      * This is `true` only when the command line was reported explicitly by the shell
-     * integration script (ie. {@link TerminalShellExecutionCommandLineConfidence.High high confidence})
+     * integration script (ie. [high confidence][TerminalShellExecutionCommandLineConfidence.High])
      * and it used a nonce for verification.
      */
     val isTrusted: Boolean

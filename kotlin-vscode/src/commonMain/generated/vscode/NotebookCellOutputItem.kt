@@ -11,7 +11,7 @@ import kotlin.js.JsModule
 import kotlin.js.definedExternally
 
 /**
- * One representation of a {@link NotebookCellOutput notebook output}, defined by MIME type and data.
+ * One representation of a [notebook output][NotebookCellOutput], defined by MIME type and data.
  */
 open external class NotebookCellOutputItem {
     /**

@@ -18,7 +18,7 @@ external interface NotebookCellStatusBarItemProvider {
      * The provider will be called when the cell scrolls into view, when its content, outputs, language, or metadata change, and when it changes execution state.
      * @param cell The cell for which to return items.
      * @param token A token triggered if this request should be cancelled.
-     * @returns One or more {@link NotebookCellStatusBarItem cell statusbar items}
+     * @returns One or more [cell statusbar items][NotebookCellStatusBarItem]
      */
     fun provideCellStatusBarItems(
         cell: NotebookCell,

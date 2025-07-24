@@ -66,7 +66,7 @@ external interface TerminalShellIntegration {
      * Execute a command, sending ^C as necessary to interrupt any running command if needed.
      *
      * *Note* This is not guaranteed to work as [shell integration](https://code.visualstudio.com/docs/terminal/shell-integration)
-     * must be activated. Check whether {@link TerminalShellExecution.exitCode} is rejected to
+     * must be activated. Check whether [TerminalShellExecution.exitCode] is rejected to
      * verify whether it was successful.
      *
      * @param executable A command to run.

@@ -3,7 +3,7 @@
 package vscode
 
 /**
- * An event describing an individual change in the text of a {@link TextDocument document}.
+ * An event describing an individual change in the text of a [document][TextDocument].
  */
 external interface TextDocumentContentChangeEvent {
     /**

@@ -9,7 +9,7 @@ import kotlin.js.JsModule
 import kotlin.js.definedExternally
 
 /**
- * Represents a collection of {@link CompletionItem completion items} to be presented
+ * Represents a collection of [completion items][CompletionItem] to be presented
  * in the editor.
  */
 open external class CompletionList<T : CompletionItem> {

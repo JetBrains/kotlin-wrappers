@@ -7,7 +7,7 @@ import js.core.Void
 import js.promise.PromiseLike
 
 /**
- * A comment controller is able to provide {@link CommentThread comments} support to the editor and
+ * A comment controller is able to provide [comments][CommentThread] support to the editor and
  * provide users various ways to interact with comments.
  */
 external interface CommentController :
@@ -28,14 +28,14 @@ external interface CommentController :
     var options: CommentOptions?
 
     /**
-     * Optional commenting range provider. Provide a list {@link Range ranges} which support commenting to any given resource uri.
+     * Optional commenting range provider. Provide a list [ranges][Range] which support commenting to any given resource uri.
      *
      * If not provided, users cannot leave any comments.
      */
     var commentingRangeProvider: CommentingRangeProvider?
 
     /**
-     * Create a {@link CommentThread comment thread}. The comment thread will be displayed in visible text editors (if the resource matches)
+     * Create a [comment thread][CommentThread]. The comment thread will be displayed in visible text editors (if the resource matches)
      * and Comments Panel once created.
      *
      * @param uri The uri of the document the thread has been created on.
@@ -59,7 +59,7 @@ external interface CommentController :
     /**
      * Dispose this comment controller.
      *
-     * Once disposed, all {@link CommentThread comment threads} created by this comment controller will also be removed from the editor
+     * Once disposed, all [comment threads][CommentThread] created by this comment controller will also be removed from the editor
      * and Comments Panel.
      */
     override fun dispose()

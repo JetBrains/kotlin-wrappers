@@ -22,13 +22,13 @@ external interface ExtensionContext {
 
     /**
      * A memento object that stores state in the context
-     * of the currently opened {@link workspace.workspaceFolders workspace}.
+     * of the currently opened [workspace][workspace.workspaceFolders].
      */
     val workspaceState: Memento
 
     /**
      * A memento object that stores state independent
-     * of the current opened {@link workspace.workspaceFolders workspace}.
+     * of the current opened [workspace][workspace.workspaceFolders].
      */
     /*
     readonly globalState: Memento & {
@@ -51,7 +51,7 @@ external interface ExtensionContext {
 
     /**
      * A secret storage object that stores state independent
-     * of the current opened {@link workspace.workspaceFolders workspace}.
+     * of the current opened [workspace][workspace.workspaceFolders].
      */
     val secrets: SecretStorage
 
@@ -62,7 +62,7 @@ external interface ExtensionContext {
 
     /**
      * The absolute file path of the directory containing the extension. Shorthand
-     * notation for {@link TextDocument.uri ExtensionContext.extensionUri.fsPath} (independent of the uri scheme).
+     * notation for [ExtensionContext.extensionUri.fsPath][TextDocument.uri] (independent of the uri scheme).
      */
     val extensionPath: String
 
@@ -133,7 +133,7 @@ external interface ExtensionContext {
     /**
      * An object that keeps information about how this extension can use language models.
      *
-     * @see {@link LanguageModelChat.sendRequest}
+     * @see [LanguageModelChat.sendRequest]
      */
     val languageModelAccessInformation: LanguageModelAccessInformation
 }

@@ -11,7 +11,7 @@ external interface LanguageModelTool<T : JsAny?> {
     /**
      * Invoke the tool with the given input and return a result.
      *
-     * The provided {@link LanguageModelToolInvocationOptions.input} has been validated against the declared schema.
+     * The provided [LanguageModelToolInvocationOptions.input] has been validated against the declared schema.
      */
     fun invoke(
         options: LanguageModelToolInvocationOptions<T>,

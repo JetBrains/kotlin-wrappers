@@ -5,7 +5,7 @@ package vscode
 import js.core.JsAny
 
 /**
- * Represents options for a specific decoration in a {@link TextEditorDecorationType decoration set}.
+ * Represents options for a specific decoration in a [decoration set][TextEditorDecorationType].
  */
 external interface DecorationOptions {
     /**

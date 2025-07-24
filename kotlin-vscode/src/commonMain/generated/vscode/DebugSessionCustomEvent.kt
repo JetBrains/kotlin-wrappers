@@ -5,11 +5,11 @@ package vscode
 import js.core.JsAny
 
 /**
- * A custom Debug Adapter Protocol event received from a {@link DebugSession debug session}.
+ * A custom Debug Adapter Protocol event received from a [debug session][DebugSession].
  */
 external interface DebugSessionCustomEvent {
     /**
-     * The {@link DebugSession debug session} for which the custom event was received.
+     * The [debug session][DebugSession] for which the custom event was received.
      */
     val session: DebugSession
 

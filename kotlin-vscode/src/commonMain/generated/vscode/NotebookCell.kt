@@ -7,21 +7,21 @@ import js.core.JsString
 import js.objects.ReadonlyRecord
 
 /**
- * Represents a cell of a {@link NotebookDocument notebook}, either a {@link NotebookCellKind.Code code}-cell
- * or {@link NotebookCellKind.Markup markup}-cell.
+ * Represents a cell of a [notebook}, either a {@link NotebookCellKind.Code code][NotebookDocument]-cell
+ * or [markup][NotebookCellKind.Markup]-cell.
  *
  * NotebookCell instances are immutable and are kept in sync for as long as they are part of their notebook.
  */
 external interface NotebookCell {
     /**
-     * The index of this cell in its {@link NotebookDocument.cellAt containing notebook}. The
+     * The index of this cell in its [containing notebook][NotebookDocument.cellAt]. The
      * index is updated when a cell is moved within its notebook. The index is `-1`
      * when the cell has been removed from its notebook.
      */
     val index: Int
 
     /**
-     * The {@link NotebookDocument notebook} that contains this cell.
+     * The [notebook][NotebookDocument] that contains this cell.
      */
     val notebook: NotebookDocument
 
@@ -31,7 +31,7 @@ external interface NotebookCell {
     val kind: NotebookCellKind
 
     /**
-     * The {@link TextDocument text} of this cell, represented as text document.
+     * The [text][TextDocument] of this cell, represented as text document.
      */
     val document: TextDocument
 
@@ -46,7 +46,7 @@ external interface NotebookCell {
     val outputs: ReadonlyArray<NotebookCellOutput>
 
     /**
-     * The most recent {@link NotebookCellExecutionSummary execution summary} for this cell.
+     * The most recent [execution summary][NotebookCellExecutionSummary] for this cell.
      */
     val executionSummary: NotebookCellExecutionSummary?
 }

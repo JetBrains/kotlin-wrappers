@@ -13,7 +13,7 @@ import kotlin.js.JsModule
  */
 external object chat {
     /**
-     * Create a new {@link ChatParticipant chat participant} instance.
+     * Create a new [chat participant][ChatParticipant] instance.
      *
      * @param id A unique identifier for the participant.
      * @param handler A request handler for the participant.

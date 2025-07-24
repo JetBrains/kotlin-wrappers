@@ -33,7 +33,7 @@ external interface TestRunProfile :
      * Controls whether this profile is the default action that will
      * be taken when its kind is actioned. For example, if the user clicks
      * the generic "run all" button, then the default profile for
-     * {@link TestRunProfileKind.Run} will be executed, although the
+     * [TestRunProfileKind.Run] will be executed, although the
      * user can configure this.
      *
      * Changes the user makes in their default profiles will be reflected
@@ -49,7 +49,7 @@ external interface TestRunProfile :
 
     /**
      * Whether this profile supports continuous running of requests. If so,
-     * then {@link TestRunRequest.continuous} may be set to `true`. Defaults
+     * then [TestRunRequest.continuous] may be set to `true`. Defaults
      * to false.
      */
     var supportsContinuousRun: Boolean
@@ -70,13 +70,13 @@ external interface TestRunProfile :
 
     /**
      * Handler called to start a test run. When invoked, the function should call
-     * {@link TestController.createTestRun} at least once, and all test runs
+     * [TestController.createTestRun] at least once, and all test runs
      * associated with the request should be created before the function returns
      * or the returned promise is resolved.
      *
-     * If [supportsContinuousRun] is set, then {@link TestRunRequest.continuous}
+     * If [supportsContinuousRun] is set, then [TestRunRequest.continuous]
      * may be `true`. In this case, the profile should observe changes to
-     * source code and create new test runs by calling {@link TestController.createTestRun},
+     * source code and create new test runs by calling [TestController.createTestRun],
      * until the cancellation is requested on the `token`.
      *
      * @param request Request information for the test run.
@@ -97,7 +97,7 @@ external interface TestRunProfile :
      * expanded in the **Test Coverage** view.
      *
      * The [FileCoverage] object passed to this function is the same instance
-     * emitted on {@link TestRun.addCoverage} calls associated with this profile.
+     * emitted on [TestRun.addCoverage] calls associated with this profile.
      */
     var loadDetailedCoverage: (
         testRun: TestRun,
@@ -108,18 +108,18 @@ external interface TestRunProfile :
     /**
      * An extension-provided function that provides detailed statement and
      * function-level coverage for a single test in a file. This is the per-test
-     * sibling of {@link TestRunProfile.loadDetailedCoverage}, called only if
-     * a test item is provided in {@link FileCoverage.includesTests} and only
+     * sibling of [TestRunProfile.loadDetailedCoverage], called only if
+     * a test item is provided in [FileCoverage.includesTests] and only
      * for files where such data is reported.
      *
-     * Often {@link TestRunProfile.loadDetailedCoverage} will be called first
+     * Often [TestRunProfile.loadDetailedCoverage] will be called first
      * when a user opens a file, and then this method will be called if they
      * drill down into specific per-test coverage information. This method
      * should then return coverage data only for statements and declarations
      * executed by the specific test during the run.
      *
      * The [FileCoverage] object passed to this function is the same
-     * instance emitted on {@link TestRun.addCoverage} calls associated with this profile.
+     * instance emitted on [TestRun.addCoverage] calls associated with this profile.
      *
      * @param testRun The test run that generated the coverage data.
      * @param fileCoverage The file coverage object to load detailed coverage for.

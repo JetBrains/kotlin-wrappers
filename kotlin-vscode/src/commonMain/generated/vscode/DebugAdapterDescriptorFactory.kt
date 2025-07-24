@@ -3,7 +3,7 @@
 package vscode
 
 /**
- * A debug adapter factory that creates {@link DebugAdapterDescriptor debug adapter descriptors}.
+ * A debug adapter factory that creates [debug adapter descriptors][DebugAdapterDescriptor].
  */
 external interface DebugAdapterDescriptorFactory {
     /**
@@ -19,9 +19,9 @@ external interface DebugAdapterDescriptorFactory {
      *      }
      *      return executable;
      *   }
-     * @param session The {@link DebugSession debug session} for which the debug adapter will be used.
+     * @param session The [debug session][DebugSession] for which the debug adapter will be used.
      * @param executable The debug adapter's executable information as specified in the package.json (or undefined if no such information exists).
-     * @returns a {@link DebugAdapterDescriptor debug adapter descriptor} or undefined.
+     * @returns a [debug adapter descriptor][DebugAdapterDescriptor] or undefined.
      */
     fun createDebugAdapterDescriptor(
         session: DebugSession,

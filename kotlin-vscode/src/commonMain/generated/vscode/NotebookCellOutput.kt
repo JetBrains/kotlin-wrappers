@@ -12,7 +12,7 @@ import kotlin.js.definedExternally
 
 /**
  * Notebook cell output represents a result of executing a cell. It is a container type for multiple
- * {@link NotebookCellOutputItem output items} where contained items represent the same result but
+ * [output items][NotebookCellOutputItem] where contained items represent the same result but
  * use different MIME types.
  */
 open external class NotebookCellOutput {

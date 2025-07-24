@@ -52,7 +52,7 @@ external interface Terminal :
     /**
      * An object that contains [shell integration](https://code.visualstudio.com/docs/terminal/shell-integration)-powered
      * features for the terminal. This will always be `undefined` immediately after the terminal
-     * is created. Listen to {@link window.onDidChangeTerminalShellIntegration} to be notified
+     * is created. Listen to [window.onDidChangeTerminalShellIntegration] to be notified
      * when shell integration is activated for a terminal.
      *
      * Note that this object may remain undefined if shell integration never activates. For

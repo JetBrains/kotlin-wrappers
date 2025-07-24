@@ -10,7 +10,7 @@ import js.objects.Record
  * Notebook content options define what parts of a notebook are persisted. Note
  *
  * For instance, a notebook serializer can opt-out of saving outputs and in that case the editor doesn't mark a
- * notebooks as {@link NotebookDocument.isDirty dirty} when its output has changed.
+ * notebooks as [dirty][NotebookDocument.isDirty] when its output has changed.
  */
 external interface NotebookDocumentContentOptions {
     /**

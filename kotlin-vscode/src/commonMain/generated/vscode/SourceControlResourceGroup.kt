@@ -6,7 +6,7 @@ import js.array.ReadonlyArray
 
 /**
  * A source control resource group is a collection of
- * {@link SourceControlResourceState source control resource states}.
+ * [source control resource states][SourceControlResourceState].
  */
 external interface SourceControlResourceGroup :
     DisposableLike {
@@ -22,7 +22,7 @@ external interface SourceControlResourceGroup :
 
     /**
      * Whether this source control resource group is hidden when it contains
-     * no {@link SourceControlResourceState source control resource states}.
+     * no [source control resource states][SourceControlResourceState].
      */
     var hideWhenEmpty: Boolean?
 
@@ -48,7 +48,7 @@ external interface SourceControlResourceGroup :
 
     /**
      * This group's collection of
-     * {@link SourceControlResourceState source control resource states}.
+     * [source control resource states][SourceControlResourceState].
      */
     var resourceStates: ReadonlyArray<SourceControlResourceState>
 

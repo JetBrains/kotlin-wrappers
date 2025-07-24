@@ -4,7 +4,7 @@ package vscode
 
 /**
  * An source control resource state represents the state of an underlying workspace
- * resource within a certain {@link SourceControlResourceGroup source control group}.
+ * resource within a certain [source control group][SourceControlResourceGroup].
  */
 external interface SourceControlResourceState {
     /**
@@ -19,7 +19,7 @@ external interface SourceControlResourceState {
     val command: Command?
 
     /**
-     * The {@link SourceControlResourceDecorations decorations} for this source control
+     * The [decorations][SourceControlResourceDecorations] for this source control
      * resource state.
      */
     val decorations: SourceControlResourceDecorations?

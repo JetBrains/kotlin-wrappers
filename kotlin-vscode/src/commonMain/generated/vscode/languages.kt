@@ -32,11 +32,11 @@ import kotlin.js.definedExternally
  * });
  * ```
  *
- * Registration is done using a {@link DocumentSelector document selector} which is either a language id, like `javascript` or
- * a more complex {@link DocumentFilter filter} like `{ language: 'typescript', scheme: 'file' }`. Matching a document against such
- * a selector will result in a {@link languages.match score} that is used to determine if and how a provider shall be used. When
- * scores are equal the provider that came last wins. For features that allow full arity, like {@link languages.registerHoverProvider hover},
- * the score is only checked to be `>0`, for other features, like {@link languages.registerCompletionItemProvider IntelliSense} the
+ * Registration is done using a [document selector][DocumentSelector] which is either a language id, like `javascript` or
+ * a more complex [filter} like `{ language: 'typescript', scheme: 'file' ][DocumentFilter]`. Matching a document against such
+ * a selector will result in a [score][languages.match] that is used to determine if and how a provider shall be used. When
+ * scores are equal the provider that came last wins. For features that allow full arity, like [hover][languages.registerHoverProvider],
+ * the score is only checked to be `>0`, for other features, like [IntelliSense][languages.registerCompletionItemProvider] the
  * score is used for determining the order in which providers are asked to participate.
  */
 external object languages {
@@ -47,7 +47,7 @@ external object languages {
     fun getLanguages(): PromiseLike<ReadonlyArray<JsString>>
 
     /**
-     * Set (and change) the {@link TextDocument.languageId language} that is associated
+     * Set (and change) the [language][TextDocument.languageId] that is associated
      * with the given document.
      *
      * *Note* that calling this function will trigger the {@linkcode workspace.onDidCloseTextDocument onDidCloseTextDocument} event
@@ -63,7 +63,7 @@ external object languages {
     ): PromiseLike<TextDocument>
 
     /**
-     * Compute the match between a document {@link DocumentSelector selector} and a document. Values
+     * Compute the match between a document [selector][DocumentSelector] and a document. Values
      * greater than zero mean the selector matches the document.
      *
      * A match is computed according to these rules:
@@ -122,7 +122,7 @@ external object languages {
      * Get all diagnostics for a given resource.
      *
      * @param resource A resource
-     * @returns An array of {@link Diagnostic diagnostics} objects or an empty array.
+     * @returns An array of [diagnostics][Diagnostic] objects or an empty array.
      */
     fun getDiagnostics(resource: Uri): ReadonlyArray<Diagnostic>
 
@@ -136,13 +136,13 @@ external object languages {
     /**
      * Create a diagnostics collection.
      *
-     * @param name The {@link DiagnosticCollection.name name} of the collection.
+     * @param name The [name][DiagnosticCollection.name] of the collection.
      * @returns A new diagnostic collection.
      */
     fun createDiagnosticCollection(name: String = definedExternally): DiagnosticCollection
 
     /**
-     * Creates a new {@link LanguageStatusItem language status item}.
+     * Creates a new [language status item][LanguageStatusItem].
      *
      * @param id The identifier of the item.
      * @param selector The document selector that defines for what editors the item shows.
@@ -157,14 +157,14 @@ external object languages {
      * Register a completion provider.
      *
      * Multiple providers can be registered for a language. In that case providers are sorted
-     * by their {@link languages.match score} and groups of equal score are sequentially asked for
+     * by their [score][languages.match] and groups of equal score are sequentially asked for
      * completion items. The process stops when one or many providers of a group return a
      * result. A failing provider (rejected promise or exception) will not fail the whole
      * operation.
      *
      * A completion item provider can be associated with a set of `triggerCharacters`. When trigger
      * characters are being typed, completions are requested but only from providers that registered
-     * the typed character. Because of that trigger characters should be different than {@link LanguageConfiguration.wordPattern word characters},
+     * the typed character. Because of that trigger characters should be different than [word characters][LanguageConfiguration.wordPattern],
      * a common trigger character is `.` to trigger member completions.
      *
      * @param selector A selector that defines the documents this provider is applicable to.
@@ -345,7 +345,7 @@ external object languages {
      * Register a document highlight provider.
      *
      * Multiple providers can be registered for a language. In that case providers are sorted
-     * by their {@link languages.match score} and groups sequentially asked for document highlights.
+     * by their [score][languages.match] and groups sequentially asked for document highlights.
      * The process stops when a provider returns a `non-falsy` or `non-failure` result.
      *
      * @param selector A selector that defines the documents this provider is applicable to.
@@ -407,7 +407,7 @@ external object languages {
      * Register a rename provider.
      *
      * Multiple providers can be registered for a language. In that case providers are sorted
-     * by their {@link languages.match score} and asked in sequence. The first provider producing a result
+     * by their [score][languages.match] and asked in sequence. The first provider producing a result
      * defines the result of the whole operation.
      *
      * @param selector A selector that defines the documents this provider is applicable to.
@@ -423,7 +423,7 @@ external object languages {
      * Register a semantic tokens provider for a whole document.
      *
      * Multiple providers can be registered for a language. In that case providers are sorted
-     * by their {@link languages.match score} and the best-matching provider is used. Failure
+     * by their [score][languages.match] and the best-matching provider is used. Failure
      * of the selected provider will cause a failure of the whole operation.
      *
      * @param selector A selector that defines the documents this provider is applicable to.
@@ -446,7 +446,7 @@ external object languages {
      * will be used.
      *
      * Multiple providers can be registered for a language. In that case providers are sorted
-     * by their {@link languages.match score} and the best-matching provider is used. Failure
+     * by their [score][languages.match] and the best-matching provider is used. Failure
      * of the selected provider will cause a failure of the whole operation.
      *
      * @param selector A selector that defines the documents this provider is applicable to.
@@ -463,7 +463,7 @@ external object languages {
      * Register a formatting provider for a document.
      *
      * Multiple providers can be registered for a language. In that case providers are sorted
-     * by their {@link languages.match score} and the best-matching provider is used. Failure
+     * by their [score][languages.match] and the best-matching provider is used. Failure
      * of the selected provider will cause a failure of the whole operation.
      *
      * @param selector A selector that defines the documents this provider is applicable to.
@@ -478,12 +478,12 @@ external object languages {
     /**
      * Register a formatting provider for a document range.
      *
-     * *Note:* A document range provider is also a {@link DocumentFormattingEditProvider document formatter}
-     * which means there is no need to {@link languages.registerDocumentFormattingEditProvider register} a document
+     * *Note:* A document range provider is also a [document formatter][DocumentFormattingEditProvider]
+     * which means there is no need to [register][languages.registerDocumentFormattingEditProvider] a document
      * formatter when also registering a range provider.
      *
      * Multiple providers can be registered for a language. In that case providers are sorted
-     * by their {@link languages.match score} and the best-matching provider is used. Failure
+     * by their [score][languages.match] and the best-matching provider is used. Failure
      * of the selected provider will cause a failure of the whole operation.
      *
      * @param selector A selector that defines the documents this provider is applicable to.
@@ -499,7 +499,7 @@ external object languages {
      * Register a formatting provider that works on type. The provider is active when the user enables the setting `editor.formatOnType`.
      *
      * Multiple providers can be registered for a language. In that case providers are sorted
-     * by their {@link languages.match score} and the best-matching provider is used. Failure
+     * by their [score][languages.match] and the best-matching provider is used. Failure
      * of the selected provider will cause a failure of the whole operation.
      *
      * @param selector A selector that defines the documents this provider is applicable to.
@@ -519,7 +519,7 @@ external object languages {
      * Register a signature help provider.
      *
      * Multiple providers can be registered for a language. In that case providers are sorted
-     * by their {@link languages.match score} and called sequentially until a provider returns a
+     * by their [score][languages.match] and called sequentially until a provider returns a
      * valid result.
      *
      * @param selector A selector that defines the documents this provider is applicable to.
@@ -534,7 +534,7 @@ external object languages {
     ): Disposable
 
     /**
-     * @see {@link languages.registerSignatureHelpProvider}
+     * @see [languages.registerSignatureHelpProvider]
      *
      * @param selector A selector that defines the documents this provider is applicable to.
      * @param provider A signature help provider.
@@ -659,7 +659,7 @@ external object languages {
      * Register a linked editing range provider.
      *
      * Multiple providers can be registered for a language. In that case providers are sorted
-     * by their {@link languages.match score} and the best-matching provider that has a result is used. Failure
+     * by their [score][languages.match] and the best-matching provider that has a result is used. Failure
      * of the selected provider will cause a failure of the whole operation.
      *
      * @param selector A selector that defines the documents this provider is applicable to.
@@ -700,10 +700,10 @@ external object languages {
      * Multiple providers can be registered for a language. All registered providers for a language will be invoked
      * for copy and paste operations based on their handled mimetypes as specified by the {@linkcode DocumentPasteProviderMetadata}.
      *
-     * For {@link DocumentPasteEditProvider.prepareDocumentPaste copy operations}, changes to the {@linkcode DataTransfer}
+     * For [copy operations}, changes to the {@linkcode DataTransfer][DocumentPasteEditProvider.prepareDocumentPaste]
      * made by each provider will be merged into a single {@linkcode DataTransfer} that is used to populate the clipboard.
      *
-     * For {@link DocumentPasteEditProvider.providerDocumentPasteEdits paste operations}, each provider will be invoked
+     * For [paste operations][DocumentPasteEditProvider.providerDocumentPasteEdits], each provider will be invoked
      * and can return one or more {@linkcode DocumentPasteEdit DocumentPasteEdits}. The edits are sorted using
      * the {@linkcode DocumentPasteEdit.yieldTo} property. By default the first edit will be applied
      * and the rest of the edits will be shown to the user as selectable paste options in the paste widget.
@@ -721,7 +721,7 @@ external object languages {
     ): Disposable
 
     /**
-     * Set a {@link LanguageConfiguration language configuration} for a language.
+     * Set a [language configuration][LanguageConfiguration] for a language.
      *
      * @param language A language identifier like `typescript`.
      * @param configuration Language configuration.

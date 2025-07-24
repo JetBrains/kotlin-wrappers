@@ -5,7 +5,7 @@ package vscode
 import js.core.JsAny
 
 /**
- * Represents a tab within a {@link TabGroup group of tabs}.
+ * Represents a tab within a [group of tabs][TabGroup].
  * Tabs are merely the graphical representation within the editor area.
  * A backing editor is not a guarantee.
  */

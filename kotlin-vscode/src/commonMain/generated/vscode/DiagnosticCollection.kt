@@ -10,11 +10,11 @@ import kotlin.js.definedExternally
 
 /**
  * A diagnostics collection is a container that manages a set of
- * {@link Diagnostic diagnostics}. Diagnostics are always scopes to a
+ * [diagnostics][Diagnostic]. Diagnostics are always scopes to a
  * diagnostics collection and a resource.
  *
  * To get an instance of a `DiagnosticCollection` use
- * {@link languages.createDiagnosticCollection createDiagnosticCollection}.
+ * [createDiagnosticCollection][languages.createDiagnosticCollection].
  */
 external interface DiagnosticCollection :
     JsIterable<Tuple2</* uri: */ Uri, /* diagnostics: */ ReadonlyArray<Diagnostic>>>,
@@ -84,7 +84,7 @@ external interface DiagnosticCollection :
      * modify the diagnostics-array returned from this call.
      *
      * @param uri A resource identifier.
-     * @returns An immutable array of {@link Diagnostic diagnostics} or `undefined`.
+     * @returns An immutable array of [diagnostics][Diagnostic] or `undefined`.
      */
     fun get(uri: Uri): ReadonlyArray<Diagnostic>?
 
@@ -99,7 +99,7 @@ external interface DiagnosticCollection :
 
     /**
      * Dispose and free associated resources. Calls
-     * {@link DiagnosticCollection.clear clear}.
+     * [clear][DiagnosticCollection.clear].
      */
     override fun dispose()
 }

@@ -8,7 +8,7 @@ import kotlin.js.JsModule
 import kotlin.js.definedExternally
 
 /**
- * A stack frame found in the {@link TestMessage.stackTrace}.
+ * A stack frame found in the [TestMessage.stackTrace].
  */
 open external class TestMessageStackFrame {
     /**

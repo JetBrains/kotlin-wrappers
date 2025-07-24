@@ -22,12 +22,12 @@ external interface TabGroups {
     val activeTabGroup: TabGroup
 
     /**
-     * An {@link Event event} which fires when {@link TabGroup tab groups} have changed.
+     * An [event} which fires when {@link TabGroup tab groups][Event] have changed.
      */
     val onDidChangeTabGroups: Event<TabGroupChangeEvent>
 
     /**
-     * An {@link Event event} which fires when {@link Tab tabs} have changed.
+     * An [event} which fires when {@link Tab tabs][Event] have changed.
      */
     val onDidChangeTabs: Event<TabChangeEvent>
 

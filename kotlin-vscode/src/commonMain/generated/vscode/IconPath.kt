@@ -6,7 +6,7 @@ import js.core.JsAny
 
 /**
  * Represents an icon in the UI. This is either an uri, separate uris for the light- and dark-themes,
- * or a {@link ThemeIcon theme icon}.
+ * or a [theme icon][ThemeIcon].
  */
 typealias IconPath = JsAny /* Uri | {
 	/**

@@ -5,7 +5,7 @@ package vscode
 import js.core.JsAny
 
 /**
- * Options for {@link LanguageModelTool.prepareInvocation}.
+ * Options for [LanguageModelTool.prepareInvocation].
  */
 external interface LanguageModelToolInvocationPrepareOptions<T : JsAny?> {
     /**

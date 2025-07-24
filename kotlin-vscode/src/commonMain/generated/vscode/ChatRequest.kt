@@ -11,15 +11,15 @@ external interface ChatRequest {
     /**
      * The prompt as entered by the user.
      *
-     * Information about references used in this request is stored in {@link ChatRequest.references}.
+     * Information about references used in this request is stored in [ChatRequest.references].
      *
-     * *Note* that the {@link ChatParticipant.name name} of the participant and the {@link ChatCommand.name command}
+     * *Note* that the [name} of the participant and the {@link ChatCommand.name command][ChatParticipant.name]
      * are not part of the prompt.
      */
     val prompt: String
 
     /**
-     * The name of the {@link ChatCommand command} that was selected for this request.
+     * The name of the [command][ChatCommand] that was selected for this request.
      */
     val command: String?
 
@@ -38,20 +38,20 @@ external interface ChatRequest {
      * The list of tools that the user attached to their request.
      *
      * When a tool reference is present, the chat participant should make a chat request using
-     * {@link LanguageModelChatToolMode.Required} to force the language model to generate input for the tool. Then, the
-     * participant can use {@link lm.invokeTool} to use the tool attach the result to its request for the user's prompt. The
+     * [LanguageModelChatToolMode.Required] to force the language model to generate input for the tool. Then, the
+     * participant can use [lm.invokeTool] to use the tool attach the result to its request for the user's prompt. The
      * tool may contribute useful extra context for the user's request.
      */
     val toolReferences: ReadonlyArray<ChatLanguageModelToolReference>
 
     /**
-     * A token that can be passed to {@link lm.invokeTool} when invoking a tool inside the context of handling a chat request.
+     * A token that can be passed to [lm.invokeTool] when invoking a tool inside the context of handling a chat request.
      * This associates the tool invocation to a chat session.
      */
     val toolInvocationToken: ChatParticipantToolToken
 
     /**
-     * This is the model that is currently selected in the UI. Extensions can use this or use {@link lm.selectChatModels} to
+     * This is the model that is currently selected in the UI. Extensions can use this or use [lm.selectChatModels] to
      * pick another model. Don't hold onto this past the lifetime of the request.
      */
     val model: LanguageModelChat

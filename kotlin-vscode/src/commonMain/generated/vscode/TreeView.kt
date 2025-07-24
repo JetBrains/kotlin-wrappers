@@ -30,17 +30,17 @@ external interface TreeView<T : JsAny?> :
     val selection: ReadonlyArray<T>
 
     /**
-     * Event that is fired when the {@link TreeView.selection selection} has changed
+     * Event that is fired when the [selection][TreeView.selection] has changed
      */
     val onDidChangeSelection: Event<TreeViewSelectionChangeEvent<T>>
 
     /**
-     * `true` if the {@link TreeView tree view} is visible otherwise `false`.
+     * `true` if the [tree view][TreeView] is visible otherwise `false`.
      */
     val visible: Boolean
 
     /**
-     * Event that is fired when {@link TreeView.visible visibility} has changed
+     * Event that is fired when [visibility][TreeView.visible] has changed
      */
     val onDidChangeVisibility: Event<TreeViewVisibilityChangeEvent>
 
@@ -83,7 +83,7 @@ external interface TreeView<T : JsAny?> :
      * In order to expand the revealed element, set the option `expand` to `true`. To expand recursively set `expand` to the number of levels to expand.
      *
      * * *NOTE:* You can expand only to 3 levels maximum.
-     * * *NOTE:* The [TreeDataProvider] that the `TreeView` {@link window.createTreeView is registered with} with must implement {@link TreeDataProvider.getParent getParent} method to access this API.
+     * * *NOTE:* The [TreeDataProvider] that the `TreeView` [is registered with} with must implement {@link TreeDataProvider.getParent getParent][window.createTreeView] method to access this API.
      */
     /*
     reveal(element: T, options?: {

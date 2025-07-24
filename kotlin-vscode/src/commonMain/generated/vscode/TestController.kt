@@ -8,15 +8,15 @@ import js.promise.PromiseLike
 import kotlin.js.definedExternally
 
 /**
- * Entry point to discover and execute tests. It contains {@link TestController.items} which
+ * Entry point to discover and execute tests. It contains [TestController.items] which
  * are used to populate the editor UI, and is associated with
- * {@link TestController.createRunProfile run profiles} to allow
+ * [run profiles][TestController.createRunProfile] to allow
  * for tests to be executed.
  */
 external interface TestController :
     DisposableLike {
     /**
-     * The id of the controller passed in {@link tests.createTestController}.
+     * The id of the controller passed in [tests.createTestController].
      * This must be globally unique.
      */
     val id: String
@@ -28,11 +28,11 @@ external interface TestController :
 
     /**
      * A collection of "top-level" [TestItem] instances, which can in
-     * turn have their own {@link TestItem.children children} to form the
+     * turn have their own [children][TestItem.children] to form the
      * "test tree."
      *
      * The extension controls when to add tests. For example, extensions should
-     * add tests for a file when {@link workspace.onDidOpenTextDocument}
+     * add tests for a file when [workspace.onDidOpenTextDocument]
      * fires in order for decorations for tests within a file to be visible.
      *
      * However, the editor may sometimes explicitly request children using the
@@ -66,9 +66,9 @@ external interface TestController :
 
     /**
      * A function provided by the extension that the editor may call to request
-     * children of a test item, if the {@link TestItem.canResolveChildren} is
+     * children of a test item, if the [TestItem.canResolveChildren] is
      * `true`. When called, the item should discover children and call
-     * {@link TestController.createTestItem} as children are discovered.
+     * [TestController.createTestItem] as children are discovered.
      *
      * Generally the extension manages the lifecycle of test items, but under
      * certain conditions the editor may request the children of a specific
@@ -80,7 +80,7 @@ external interface TestController :
      * the function returns or the returned thenable resolves.
      *
      * @param item An unresolved test item for which children are being
-     * requested, or `undefined` to resolve the controller's initial {@link TestController.items items}.
+     * requested, or `undefined` to resolve the controller's initial [items][TestController.items].
      */
     var resolveHandler: (item: TestItem?) -> PromiseLike<Void>?
 
@@ -116,7 +116,7 @@ external interface TestController :
      * persisted in the editor. This may be false if the results are coming from
      * a file already saved externally, such as a coverage information file.
      * @returns An instance of the [TestRun]. It will be considered "running"
-     * from the moment this method is invoked until {@link TestRun.end} is called.
+     * from the moment this method is invoked until [TestRun.end] is called.
      */
     fun createTestRun(
         request: TestRunRequest,
@@ -126,8 +126,8 @@ external interface TestController :
 
     /**
      * Creates a new managed [TestItem] instance. It can be added into
-     * the {@link TestItem.children} of an existing item, or into the
-     * {@link TestController.items}.
+     * the [TestItem.children] of an existing item, or into the
+     * [TestController.items].
      *
      * @param id Identifier for the TestItem. The test item's ID must be unique
      * in the [TestItemCollection] it's added to.
@@ -144,7 +144,7 @@ external interface TestController :
      * Marks an item's results as being outdated. This is commonly called when
      * code or configuration changes and previous results should no longer
      * be considered relevant. The same logic used to mark results as outdated
-     * may be used to drive {@link TestRunRequest.continuous continuous test runs}.
+     * may be used to drive [continuous test runs][TestRunRequest.continuous].
      *
      * If an item is passed to this method, test results for the item and all of
      * its children will be marked as outdated. If no item is passed, then all

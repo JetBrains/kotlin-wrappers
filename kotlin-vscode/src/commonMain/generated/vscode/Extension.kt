@@ -8,7 +8,7 @@ import js.promise.PromiseLike
 /**
  * Represents an extension.
  *
- * To get an instance of an `Extension` use {@link extensions.getExtension getExtension}.
+ * To get an instance of an `Extension` use [getExtension][extensions.getExtension].
  */
 external interface Extension<T : JsAny?> {
     /**
@@ -23,7 +23,7 @@ external interface Extension<T : JsAny?> {
 
     /**
      * The absolute file path of the directory containing this extension. Shorthand
-     * notation for {@link Extension.extensionUri Extension.extensionUri.fsPath} (independent of the uri scheme).
+     * notation for [Extension.extensionUri.fsPath][Extension.extensionUri] (independent of the uri scheme).
      */
     val extensionPath: String
 

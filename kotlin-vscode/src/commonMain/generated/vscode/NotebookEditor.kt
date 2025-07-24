@@ -6,13 +6,13 @@ import js.array.ReadonlyArray
 import kotlin.js.definedExternally
 
 /**
- * Represents a notebook editor that is attached to a {@link NotebookDocument notebook}.
+ * Represents a notebook editor that is attached to a [notebook][NotebookDocument].
  * Additional properties of the NotebookEditor are available in the proposed
  * API, which will be finalized later.
  */
 external interface NotebookEditor {
     /**
-     * The {@link NotebookDocument notebook document} associated with this notebook editor.
+     * The [notebook document][NotebookDocument] associated with this notebook editor.
      */
     val notebook: NotebookDocument
 

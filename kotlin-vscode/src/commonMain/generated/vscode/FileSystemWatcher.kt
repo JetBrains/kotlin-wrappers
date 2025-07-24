@@ -8,10 +8,10 @@ package vscode
 
 /**
  * A file system watcher notifies about changes to files and folders
- * on disk or from other {@link FileSystemProvider FileSystemProviders}.
+ * on disk or from other [FileSystemProviders][FileSystemProvider].
  *
  * To get an instance of a `FileSystemWatcher` use
- * {@link workspace.createFileSystemWatcher createFileSystemWatcher}.
+ * [createFileSystemWatcher][workspace.createFileSystemWatcher].
  */
 external interface FileSystemWatcher :
     Disposable {

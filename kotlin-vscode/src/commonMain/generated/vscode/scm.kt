@@ -12,12 +12,12 @@ import kotlin.js.definedExternally
  */
 external object scm {
     /**
-     * Creates a new {@link SourceControl source control} instance.
+     * Creates a new [source control][SourceControl] instance.
      *
      * @param id An `id` for the source control. Something short, e.g.: `git`.
      * @param label A human-readable string for the source control. E.g.: `Git`.
      * @param rootUri An optional Uri of the root of the source control. E.g.: `Uri.parse(workspaceRoot)`.
-     * @returns An instance of {@link SourceControl source control}.
+     * @returns An instance of [source control][SourceControl].
      */
     fun createSourceControl(
         id: String,

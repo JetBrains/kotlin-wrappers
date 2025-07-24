@@ -23,7 +23,7 @@ open external class EventEmitter<T : JsAny?> :
     var event: Event<T>
 
     /**
-     * Notify all subscribers of the {@link EventEmitter.event event}. Failure
+     * Notify all subscribers of the [event][EventEmitter.event]. Failure
      * of one or more listener will not fail this function call.
      *
      * @param data The event object.

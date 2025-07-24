@@ -7,7 +7,7 @@ import js.core.JsAny
 import js.core.JsString
 
 /**
- * Information about a registered tool available in {@link lm.tools}.
+ * Information about a registered tool available in [lm.tools].
  */
 external interface LanguageModelToolInformation {
     /**

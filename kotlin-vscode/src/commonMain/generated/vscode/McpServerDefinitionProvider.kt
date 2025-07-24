@@ -7,7 +7,7 @@ import js.core.Void
 
 /**
  * A type that can provide Model Context Protocol server definitions. This
- * should be registered using {@link lm.registerMcpServerDefinitionProvider}
+ * should be registered using [lm.registerMcpServerDefinitionProvider]
  * during extension activation.
  */
 external interface McpServerDefinitionProvider<T : McpServerDefinition> {

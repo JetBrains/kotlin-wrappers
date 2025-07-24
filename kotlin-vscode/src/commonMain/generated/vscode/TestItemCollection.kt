@@ -10,8 +10,8 @@ import js.iterable.JsIterable
 import kotlin.js.definedExternally
 
 /**
- * Collection of test items, found in {@link TestItem.children} and
- * {@link TestController.items}.
+ * Collection of test items, found in [TestItem.children] and
+ * [TestController.items].
  */
 external interface TestItemCollection :
     JsIterable<Tuple2</* id: */ JsString, /* testItem: */ TestItem>> {

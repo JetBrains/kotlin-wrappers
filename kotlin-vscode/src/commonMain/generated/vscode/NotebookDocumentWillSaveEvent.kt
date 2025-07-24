@@ -6,11 +6,11 @@ import js.core.JsAny
 import js.promise.PromiseLike
 
 /**
- * An event that is fired when a {@link NotebookDocument notebook document} will be saved.
+ * An event that is fired when a [notebook document][NotebookDocument] will be saved.
  *
  * To make modifications to the document before it is being saved, call the
  * {@linkcode NotebookDocumentWillSaveEvent.waitUntil waitUntil}-function with a thenable
- * that resolves to a {@link WorkspaceEdit workspace edit}.
+ * that resolves to a [workspace edit][WorkspaceEdit].
  */
 external interface NotebookDocumentWillSaveEvent {
     /**
@@ -19,7 +19,7 @@ external interface NotebookDocumentWillSaveEvent {
     val token: CancellationToken
 
     /**
-     * The {@link NotebookDocument notebook document} that will be saved.
+     * The [notebook document][NotebookDocument] that will be saved.
      */
     val notebook: NotebookDocument
 
@@ -29,7 +29,7 @@ external interface NotebookDocumentWillSaveEvent {
     val reason: TextDocumentSaveReason
 
     /**
-     * Allows to pause the event loop and to apply {@link WorkspaceEdit workspace edit}.
+     * Allows to pause the event loop and to apply [workspace edit][WorkspaceEdit].
      * Edits of subsequent calls to this function will be applied in order. The
      * edits will be *ignored* if concurrent modifications of the notebook document happened.
      *
@@ -46,7 +46,7 @@ external interface NotebookDocumentWillSaveEvent {
      * })
      * ```
      *
-     * @param thenable A thenable that resolves to {@link WorkspaceEdit workspace edit}.
+     * @param thenable A thenable that resolves to [workspace edit][WorkspaceEdit].
      */
     fun waitUntil(thenable: PromiseLike<WorkspaceEdit>)
 

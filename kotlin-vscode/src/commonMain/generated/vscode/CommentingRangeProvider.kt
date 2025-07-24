@@ -5,7 +5,7 @@ package vscode
 import js.core.JsAny
 
 /**
- * Commenting range provider for a {@link CommentController comment controller}.
+ * Commenting range provider for a [comment controller][CommentController].
  */
 external interface CommentingRangeProvider {
     /**

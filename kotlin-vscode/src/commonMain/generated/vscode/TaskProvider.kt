@@ -6,7 +6,7 @@ import js.array.ReadonlyArray
 
 /**
  * A task provider allows to add tasks to the task service.
- * A task provider is registered via {@link tasks.registerTaskProvider}.
+ * A task provider is registered via [tasks.registerTaskProvider].
  */
 external interface TaskProvider<T : Task> {
     /**

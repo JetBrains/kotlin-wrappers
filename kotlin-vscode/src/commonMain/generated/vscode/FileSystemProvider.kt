@@ -15,21 +15,21 @@ import js.typedarrays.Uint8Array
  * and to manage files and folders. It allows extensions to serve files from remote places,
  * like ftp-servers, and to seamlessly integrate those into the editor.
  *
- * * *Note 1:* The filesystem provider API works with {@link Uri uris} and assumes hierarchical
+ * * *Note 1:* The filesystem provider API works with [uris][Uri] and assumes hierarchical
  * paths, e.g. `foo:/my/path` is a child of `foo:/my/` and a parent of `foo:/my/path/deeper`.
  * * *Note 2:* There is an activation event `onFileSystem:<scheme>` that fires when a file
  * or folder is being accessed.
- * * *Note 3:* The word 'file' is often used to denote all {@link FileType kinds} of files, e.g.
+ * * *Note 3:* The word 'file' is often used to denote all [kinds][FileType] of files, e.g.
  * folders, symbolic links, and regular files.
  */
 external interface FileSystemProvider {
     /**
      * An event to signal that a resource has been created, changed, or deleted. This
-     * event should fire for resources that are being {@link FileSystemProvider.watch watched}
+     * event should fire for resources that are being [watched][FileSystemProvider.watch]
      * by clients of this provider.
      *
      * *Note:* It is important that the metadata of the file that changed provides an
-     * updated `mtime` that advanced from the previous value in the {@link FileStat stat} and a
+     * updated `mtime` that advanced from the previous value in the [stat][FileStat] and a
      * correct `size` value. Otherwise there may be optimizations in place that will not show
      * the change in an editor for example.
      */
@@ -73,7 +73,7 @@ external interface FileSystemProvider {
      * Retrieve metadata about a file.
      *
      * Note that the metadata for symbolic links should be the metadata of the file they refer to.
-     * Still, the {@link FileType.SymbolicLink SymbolicLink}-type must be used in addition to the actual type, e.g.
+     * Still, the [SymbolicLink][FileType.SymbolicLink]-type must be used in addition to the actual type, e.g.
      * `FileType.SymbolicLink | FileType.Directory`.
      *
      * @param uri The uri of the file to retrieve metadata about.
@@ -83,7 +83,7 @@ external interface FileSystemProvider {
     fun stat(uri: Uri): PromiseResult<FileStat>
 
     /**
-     * Retrieve all entries of a {@link FileType.Directory directory}.
+     * Retrieve all entries of a [directory][FileType.Directory].
      *
      * @param uri The uri of the folder.
      * @returns An array of name/type-tuples or a thenable that resolves to such.

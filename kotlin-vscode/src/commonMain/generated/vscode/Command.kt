@@ -19,7 +19,7 @@ external interface Command {
 
     /**
      * The identifier of the actual command handler.
-     * @see {@link commands.registerCommand}
+     * @see [commands.registerCommand]
      */
     var command: String
 

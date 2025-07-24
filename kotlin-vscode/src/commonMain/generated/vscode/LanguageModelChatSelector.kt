@@ -5,30 +5,30 @@ package vscode
 /**
  * Describes how to select language models for chat requests.
  *
- * @see {@link lm.selectChatModels}
+ * @see [lm.selectChatModels]
  */
 external interface LanguageModelChatSelector {
     /**
      * A vendor of language models.
-     * @see {@link LanguageModelChat.vendor}
+     * @see [LanguageModelChat.vendor]
      */
     var vendor: String?
 
     /**
      * A family of language models.
-     * @see {@link LanguageModelChat.family}
+     * @see [LanguageModelChat.family]
      */
     var family: String?
 
     /**
      * The version of a language model.
-     * @see {@link LanguageModelChat.version}
+     * @see [LanguageModelChat.version]
      */
     var version: String?
 
     /**
      * The identifier of a language model.
-     * @see {@link LanguageModelChat.id}
+     * @see [LanguageModelChat.id]
      */
     var id: String?
 }

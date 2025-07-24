@@ -5,7 +5,7 @@ package vscode
 /**
  * Represents a line of text, such as a line of source code.
  *
- * TextLine objects are __immutable__. When a {@link TextDocument document} changes,
+ * TextLine objects are __immutable__. When a [document][TextDocument] changes,
  * previously retrieved lines will not represent the latest state.
  */
 external interface TextLine {
@@ -37,7 +37,7 @@ external interface TextLine {
 
     /**
      * Whether this line is whitespace only, shorthand
-     * for {@link TextLine.firstNonWhitespaceCharacterIndex} === {@link TextLine.text TextLine.text.length}.
+     * for [TextLine.firstNonWhitespaceCharacterIndex] === [TextLine.text.length][TextLine.text].
      */
     val isEmptyOrWhitespace: Boolean
 }

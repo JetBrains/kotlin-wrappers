@@ -19,12 +19,12 @@ open external class TestMessage {
     var message: JsAny /* string | MarkdownString */
 
     /**
-     * Expected test output. If given with {@link TestMessage.actualOutput actualOutput }, a diff view will be shown.
+     * Expected test output. If given with [actualOutput ][TestMessage.actualOutput], a diff view will be shown.
      */
     var expectedOutput: String?
 
     /**
-     * Actual test output. If given with {@link TestMessage.expectedOutput expectedOutput }, a diff view will be shown.
+     * Actual test output. If given with [expectedOutput ][TestMessage.expectedOutput], a diff view will be shown.
      */
     var actualOutput: String?
 
@@ -59,7 +59,7 @@ open external class TestMessage {
      *
      * The command will be called with an object containing:
      * - `test`: the [TestItem] the message is associated with, *if* it
-     *    is still present in the {@link TestController.items} collection.
+     *    is still present in the [TestController.items] collection.
      * - `message`: the [TestMessage] instance.
      */
     var contextValue: String?

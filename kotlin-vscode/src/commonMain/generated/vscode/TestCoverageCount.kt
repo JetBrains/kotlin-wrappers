@@ -22,8 +22,8 @@ open external class TestCoverageCount {
     var total: Int
 
     /**
-     * @param covered Value for {@link TestCoverageCount.covered}
-     * @param total Value for {@link TestCoverageCount.total}
+     * @param covered Value for [TestCoverageCount.covered]
+     * @param total Value for [TestCoverageCount.total]
      */
     constructor(
         covered: Int,

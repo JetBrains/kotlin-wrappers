@@ -10,7 +10,7 @@ import kotlin.js.JsModule
 import kotlin.js.definedExternally
 
 /**
- * An edit operation applied {@link DocumentDropEditProvider on drop}.
+ * An edit operation applied [on drop][DocumentDropEditProvider].
  */
 open external class DocumentDropEdit {
     /**
@@ -19,7 +19,7 @@ open external class DocumentDropEdit {
     var title: String?
 
     /**
-     * {@link DocumentDropOrPasteEditKind Kind} of the edit.
+     * [Kind][DocumentDropOrPasteEditKind] of the edit.
      */
     var kind: DocumentDropOrPasteEditKind?
 
@@ -41,7 +41,7 @@ open external class DocumentDropEdit {
     /**
      * @param insertText The text or snippet to insert at the drop location.
      * @param title Human readable label that describes the edit.
-     * @param kind {@link DocumentDropOrPasteEditKind Kind} of the edit.
+     * @param kind [Kind][DocumentDropOrPasteEditKind] of the edit.
      */
     constructor(
         insertText: JsAny, /* string | SnippetString */

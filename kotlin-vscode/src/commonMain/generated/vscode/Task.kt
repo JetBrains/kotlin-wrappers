@@ -52,7 +52,7 @@ open external class Task {
 
     /**
      * A human-readable string which is rendered less prominently on a separate line in places
-     * where the task's name is displayed. Supports rendering of {@link ThemeIcon theme icons}
+     * where the task's name is displayed. Supports rendering of [theme icons][ThemeIcon]
      * via the `$(<name>)`-syntax.
      */
     var detail: String?
@@ -69,7 +69,7 @@ open external class Task {
 
     /**
      * A human-readable string describing the source of this shell task, e.g. 'gulp'
-     * or 'npm'. Supports rendering of {@link ThemeIcon theme icons} via the `$(<name>)`-syntax.
+     * or 'npm'. Supports rendering of [theme icons][ThemeIcon] via the `$(<name>)`-syntax.
      */
     var source: String
 

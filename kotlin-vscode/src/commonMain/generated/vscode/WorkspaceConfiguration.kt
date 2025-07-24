@@ -13,7 +13,7 @@ import kotlin.js.definedExternally
  * - *Default Settings*
  * - *Global (User) Settings*
  * - *Workspace settings*
- * - *Workspace Folder settings* - From one of the {@link workspace.workspaceFolders Workspace Folders} under which requested resource belongs to.
+ * - *Workspace Folder settings* - From one of the [Workspace Folders][workspace.workspaceFolders] under which requested resource belongs to.
  * - *Language settings* - Settings defined under requested language.
  *
  * The *effective* value (returned by {@linkcode WorkspaceConfiguration.get get}) is computed by overriding or merging the values in the following order:
@@ -174,20 +174,20 @@ external interface WorkspaceConfiguration {
      *
      * A value can be changed in
      *
-     * - {@link ConfigurationTarget.Global Global settings}: Changes the value for all instances of the editor.
-     * - {@link ConfigurationTarget.Workspace Workspace settings}: Changes the value for current workspace, if available.
-     * - {@link ConfigurationTarget.WorkspaceFolder Workspace folder settings}: Changes the value for settings from one of the {@link workspace.workspaceFolders Workspace Folders} under which the requested resource belongs to.
+     * - [Global settings][ConfigurationTarget.Global]: Changes the value for all instances of the editor.
+     * - [Workspace settings][ConfigurationTarget.Workspace]: Changes the value for current workspace, if available.
+     * - [Workspace folder settings}: Changes the value for settings from one of the {@link workspace.workspaceFolders Workspace Folders][ConfigurationTarget.WorkspaceFolder] under which the requested resource belongs to.
      * - Language settings: Changes the value for the requested languageId.
      *
      * *Note:* To remove a configuration value use `undefined`, like so: `config.update('somekey', undefined)`
      *
      * @param section Configuration name, supports _dotted_ names.
      * @param value The new value.
-     * @param configurationTarget The {@link ConfigurationTarget configuration target} or a boolean value.
-     *	- If `true` updates {@link ConfigurationTarget.Global Global settings}.
-     *	- If `false` updates {@link ConfigurationTarget.Workspace Workspace settings}.
-     *	- If `undefined` or `null` updates to {@link ConfigurationTarget.WorkspaceFolder Workspace folder settings} if configuration is resource specific,
-     * 	otherwise to {@link ConfigurationTarget.Workspace Workspace settings}.
+     * @param configurationTarget The [configuration target][ConfigurationTarget] or a boolean value.
+     *	- If `true` updates [Global settings][ConfigurationTarget.Global].
+     *	- If `false` updates [Workspace settings][ConfigurationTarget.Workspace].
+     *	- If `undefined` or `null` updates to [Workspace folder settings][ConfigurationTarget.WorkspaceFolder] if configuration is resource specific,
+     * 	otherwise to [Workspace settings][ConfigurationTarget.Workspace].
      * @param overrideInLanguage Whether to update the value in the scope of requested languageId or not.
      *	- If `true` updates the value under the requested languageId.
      *	- If `undefined` updates the value under the requested languageId only if the configuration is defined for the language.

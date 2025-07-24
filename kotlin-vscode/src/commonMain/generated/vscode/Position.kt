@@ -11,8 +11,8 @@ import kotlin.js.definedExternally
  * Represents a line and character position, such as
  * the position of the cursor.
  *
- * Position objects are __immutable__. Use the {@link Position.with with} or
- * {@link Position.translate translate} methods to derive new positions
+ * Position objects are __immutable__. Use the [with][Position.with] or
+ * [translate][Position.translate] methods to derive new positions
  * from an existing position.
  */
 open external class Position {
@@ -128,8 +128,8 @@ open external class Position {
     /**
      * Create a new position derived from this position.
      *
-     * @param line Value that should be used as line value, default is the {@link Position.line existing value}
-     * @param character Value that should be used as character value, default is the {@link Position.character existing value}
+     * @param line Value that should be used as line value, default is the [existing value][Position.line]
+     * @param character Value that should be used as character value, default is the [existing value][Position.character]
      * @returns A position where line and character are replaced by the given values.
      */
     fun with(

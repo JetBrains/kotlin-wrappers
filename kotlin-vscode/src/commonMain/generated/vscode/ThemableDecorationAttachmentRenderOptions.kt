@@ -5,8 +5,8 @@ package vscode
 import js.core.JsAny
 
 /**
- * Represents theme specific rendering styles for {@link ThemableDecorationRenderOptions.before before} and
- * {@link ThemableDecorationRenderOptions.after after} the content of text decorations.
+ * Represents theme specific rendering styles for [before][ThemableDecorationRenderOptions.before] and
+ * [after][ThemableDecorationRenderOptions.after] the content of text decorations.
  */
 external interface ThemableDecorationAttachmentRenderOptions {
     /**

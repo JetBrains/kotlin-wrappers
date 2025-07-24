@@ -9,14 +9,14 @@ import js.core.JsAny
 import kotlin.js.JsModule
 
 /**
- * The result of a tool call. This is the counterpart of a {@link LanguageModelToolCallPart tool call} and
+ * The result of a tool call. This is the counterpart of a [tool call][LanguageModelToolCallPart] and
  * it can only be included in the content of a User message
  */
 open external class LanguageModelToolResultPart {
     /**
      * The ID of the tool call.
      *
-     * *Note* that this should match the {@link LanguageModelToolCallPart.callId callId} of a tool call part.
+     * *Note* that this should match the [callId][LanguageModelToolCallPart.callId] of a tool call part.
      */
     var callId: String
 

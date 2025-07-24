@@ -38,7 +38,7 @@ external interface TreeDataProvider<T : JsAny?> {
      * Optional method to return the parent of `element`.
      * Return `null` or `undefined` if `element` is a child of root.
      *
-     * **NOTE:** This method should be implemented in order to access {@link TreeView.reveal reveal} API.
+     * **NOTE:** This method should be implemented in order to access [reveal][TreeView.reveal] API.
      *
      * @param element The element for which the parent has to be returned.
      * @returns Parent of `element`.
@@ -46,8 +46,8 @@ external interface TreeDataProvider<T : JsAny?> {
     var getParent: ((element: T) -> ProviderResult<T>)?
 
     /**
-     * Called on hover to resolve the {@link TreeItem.tooltip TreeItem} property if it is undefined.
-     * Called on tree item click/open to resolve the {@link TreeItem.command TreeItem} property if it is undefined.
+     * Called on hover to resolve the [TreeItem][TreeItem.tooltip] property if it is undefined.
+     * Called on tree item click/open to resolve the [TreeItem][TreeItem.command] property if it is undefined.
      * Only properties that were undefined can be resolved in `resolveTreeItem`.
      * Functionality may be expanded later to include being called to resolve other missing
      * properties on selection and/or on open.

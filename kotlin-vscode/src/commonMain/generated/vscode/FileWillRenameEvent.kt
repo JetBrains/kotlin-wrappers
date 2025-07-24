@@ -9,8 +9,8 @@ import js.promise.PromiseLike
  * An event that is fired when files are going to be renamed.
  *
  * To make modifications to the workspace before the files are renamed,
- * call the {@link FileWillCreateEvent.waitUntil `waitUntil`}-function with a
- * thenable that resolves to a {@link WorkspaceEdit workspace edit}.
+ * call the [`waitUntil`][FileWillCreateEvent.waitUntil]-function with a
+ * thenable that resolves to a [workspace edit][WorkspaceEdit].
  */
 external interface FileWillRenameEvent {
     /**
@@ -35,7 +35,7 @@ external interface FileWillRenameEvent {
     */
 
     /**
-     * Allows to pause the event and to apply a {@link WorkspaceEdit workspace edit}.
+     * Allows to pause the event and to apply a [workspace edit][WorkspaceEdit].
      *
      * *Note:* This function can only be called during event dispatch and not
      * in an asynchronous manner:

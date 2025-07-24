@@ -21,7 +21,7 @@ open external class DataTransferItem {
     fun asString(): PromiseLike<JsString>
 
     /**
-     * Try getting the {@link DataTransferFile file} associated with this data transfer item.
+     * Try getting the [file][DataTransferFile] associated with this data transfer item.
      *
      * Note that the file object is only valid for the scope of the drag and drop operation.
      *

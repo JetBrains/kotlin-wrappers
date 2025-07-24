@@ -20,12 +20,12 @@ open external class InlayHintLabelPart {
      * The tooltip text when you hover over this label part.
      *
      * *Note* that this property can be set late during
-     * {@link InlayHintsProvider.resolveInlayHint resolving} of inlay hints.
+     * [resolving][InlayHintsProvider.resolveInlayHint] of inlay hints.
      */
     var tooltip: JsAny /* string | MarkdownString */?
 
     /**
-     * An optional {@link Location source code location} that represents this label
+     * An optional [source code location][Location] that represents this label
      * part.
      *
      * The editor will use this location for the hover and for code navigation features: This
@@ -34,7 +34,7 @@ open external class InlayHintLabelPart {
      * the given location, and it shows a context menu with further code navigation commands.
      *
      * *Note* that this property can be set late during
-     * {@link InlayHintsProvider.resolveInlayHint resolving} of inlay hints.
+     * [resolving][InlayHintsProvider.resolveInlayHint] of inlay hints.
      */
     var location: Location?
 
@@ -42,10 +42,10 @@ open external class InlayHintLabelPart {
      * An optional command for this label part.
      *
      * The editor renders parts with commands as clickable links. The command is added to the context menu
-     * when a label part defines {@link InlayHintLabelPart.location location} and {@link InlayHintLabelPart.command command} .
+     * when a label part defines [location} and {@link InlayHintLabelPart.command command][InlayHintLabelPart.location] .
      *
      * *Note* that this property can be set late during
-     * {@link InlayHintsProvider.resolveInlayHint resolving} of inlay hints.
+     * [resolving][InlayHintsProvider.resolveInlayHint] of inlay hints.
      */
     var command: Command?
 

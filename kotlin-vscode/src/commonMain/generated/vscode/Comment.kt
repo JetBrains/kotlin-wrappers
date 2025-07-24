@@ -16,12 +16,12 @@ external interface Comment {
     var body: JsAny /* string | MarkdownString */
 
     /**
-     * {@link CommentMode Comment mode} of the comment
+     * [Comment mode][CommentMode] of the comment
      */
     var mode: CommentMode
 
     /**
-     * The {@link CommentAuthorInformation author information} of the comment
+     * The [author information][CommentAuthorInformation] of the comment
      */
     var author: CommentAuthorInformation
 

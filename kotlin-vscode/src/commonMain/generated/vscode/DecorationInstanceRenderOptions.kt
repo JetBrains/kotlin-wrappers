@@ -3,7 +3,7 @@
 package vscode
 
 /**
- * Represents render options for decoration instances. See {@link DecorationOptions.renderOptions}.
+ * Represents render options for decoration instances. See [DecorationOptions.renderOptions].
  */
 external interface DecorationInstanceRenderOptions :
     ThemableDecorationInstanceRenderOptions {

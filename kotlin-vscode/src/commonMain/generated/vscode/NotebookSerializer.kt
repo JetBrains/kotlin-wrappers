@@ -8,7 +8,7 @@ import js.typedarrays.Uint8Array
 /**
  * The notebook serializer enables the editor to open notebook files.
  *
- * At its core the editor only knows a {@link NotebookData notebook data structure} but not
+ * At its core the editor only knows a [notebook data structure][NotebookData] but not
  * how that data structure is written to a file, nor how it is read from a file. The
  * notebook serializer bridges this gap by deserializing bytes into notebook data and
  * vice versa.

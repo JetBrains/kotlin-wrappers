@@ -11,7 +11,7 @@ import kotlin.js.definedExternally
 /**
  * Represents a language model for making chat requests.
  *
- * @see {@link lm.selectChatModels}
+ * @see [lm.selectChatModels]
  */
 external interface LanguageModelChat {
     /**
@@ -52,19 +52,19 @@ external interface LanguageModelChat {
      *
      * *Note* that language model use may be subject to access restrictions and user consent. Calling this function
      * for the first time (for an extension) will show a consent dialog to the user and because of that this function
-     * must _only be called in response to a user action!_ Extensions can use {@link LanguageModelAccessInformation.canSendRequest}
+     * must _only be called in response to a user action!_ Extensions can use [LanguageModelAccessInformation.canSendRequest]
      * to check if they have the necessary permissions to make a request.
      *
      * This function will return a rejected promise if making a request to the language model is not
      * possible. Reasons for this can be:
      *
-     * - user consent not given, see {@link LanguageModelError.NoPermissions `NoPermissions`}
-     * - model does not exist anymore, see {@link LanguageModelError.NotFound `NotFound`}
-     * - quota limits exceeded, see {@link LanguageModelError.Blocked `Blocked`}
-     * - other issues in which case extension must check {@link LanguageModelError.cause `LanguageModelError.cause`}
+     * - user consent not given, see [`NoPermissions`][LanguageModelError.NoPermissions]
+     * - model does not exist anymore, see [`NotFound`][LanguageModelError.NotFound]
+     * - quota limits exceeded, see [`Blocked`][LanguageModelError.Blocked]
+     * - other issues in which case extension must check [`LanguageModelError.cause`][LanguageModelError.cause]
      *
      * An extension can make use of language model tool calling by passing a set of tools to
-     * {@link LanguageModelChatRequestOptions.tools}. The language model will return a [LanguageModelToolCallPart] and
+     * [LanguageModelChatRequestOptions.tools]. The language model will return a [LanguageModelToolCallPart] and
      * the extension can invoke the tool and make another request with the result.
      *
      * @param messages An array of message instances.

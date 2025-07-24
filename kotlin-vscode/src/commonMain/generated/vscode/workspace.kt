@@ -11,6 +11,7 @@ import js.core.JsString
 import js.core.Void
 import js.promise.PromiseLike
 import js.typedarrays.Uint8Array
+import vscode.workspace.notebookDocuments
 import kotlin.js.JsModule
 import kotlin.js.definedExternally
 
@@ -26,13 +27,13 @@ import kotlin.js.definedExternally
  * Refer to https://code.visualstudio.com/docs/editor/workspaces for more information on
  * the concept of workspaces.
  *
- * The workspace offers support for {@link workspace.createFileSystemWatcher listening} to fs
- * events and for {@link workspace.findFiles finding} files. Both perform well and run _outside_
+ * The workspace offers support for [listening][workspace.createFileSystemWatcher] to fs
+ * events and for [finding][workspace.findFiles] files. Both perform well and run _outside_
  * the editor-process so that they should be always used instead of nodejs-equivalents.
  */
 external object workspace {
     /**
-     * A {@link FileSystem file system} instance that allows to interact with local and remote
+     * A [file system][FileSystem] instance that allows to interact with local and remote
      * files, e.g. `vscode.workspace.fs.readDirectory(someUri)` allows to retrieve all entries
      * of a directory or `vscode.workspace.fs.stat(anotherUri)` returns the meta data for a
      * file.
@@ -102,7 +103,7 @@ external object workspace {
     val onDidChangeWorkspaceFolders: Event<WorkspaceFoldersChangeEvent>
 
     /**
-     * Returns the {@link WorkspaceFolder workspace folder} that contains a given uri.
+     * Returns the [workspace folder][WorkspaceFolder] that contains a given uri.
      * * returns `undefined` when the given uri doesn't match any workspace folder
      * * returns the *input* when the given uri is a workspace folder itself
      *
@@ -114,10 +115,10 @@ external object workspace {
     /**
      * Returns a path that is relative to the workspace folder or folders.
      *
-     * When there are no {@link workspace.workspaceFolders workspace folders} or when the path
+     * When there are no [workspace folders][workspace.workspaceFolders] or when the path
      * is not contained in them, the input is returned.
      *
-     * @param pathOrUri A path or uri. When a uri is given its {@link Uri.fsPath fsPath} is used.
+     * @param pathOrUri A path or uri. When a uri is given its [fsPath][Uri.fsPath] is used.
      * @param includeWorkspaceFolder When `true` and when the given path is contained inside a
      * workspace folder the name of the workspace is prepended. Defaults to `true` when there are
      * multiple workspace folders and `false` otherwise.
@@ -129,7 +130,7 @@ external object workspace {
     ): String
 
     /**
-     * This method replaces `deleteCount` {@link workspace.workspaceFolders workspace folders} starting at index `start`
+     * This method replaces `deleteCount` [workspace folders][workspace.workspaceFolders] starting at index `start`
      * by an optional set of `workspaceFoldersToAdd` on the `vscode.workspace.workspaceFolders` array. This "splice"
      * behavior can be used to add, remove and change workspace folders in a single operation.
      *
@@ -160,10 +161,10 @@ external object workspace {
      * It is valid to remove an existing workspace folder and add it again with a different name
      * to rename that folder.
      *
-     * **Note:** it is not valid to call {@link updateWorkspaceFolders updateWorkspaceFolders()} multiple times
+     * **Note:** it is not valid to call [updateWorkspaceFolders()][updateWorkspaceFolders] multiple times
      * without waiting for the {@linkcode onDidChangeWorkspaceFolders onDidChangeWorkspaceFolders()} to fire.
      *
-     * @param start the zero-based location in the list of currently opened {@link WorkspaceFolder workspace folders}
+     * @param start the zero-based location in the list of currently opened [workspace folders][WorkspaceFolder]
      * from which to start deleting workspace folders.
      * @param deleteCount the optional number of workspace folders to remove.
      * @param workspaceFoldersToAdd the optional variable set of workspace folders to add in place of the deleted ones.
@@ -188,7 +189,7 @@ external object workspace {
      * Creates a file system watcher that is notified on file events (create, change, delete)
      * depending on the parameters provided.
      *
-     * By default, all opened {@link workspace.workspaceFolders workspace folders} will be watched
+     * By default, all opened [workspace folders][workspace.workspaceFolders] will be watched
      * for file changes recursively.
      *
      * Additional paths can be added for file watching by providing a [RelativePattern] with
@@ -282,7 +283,7 @@ external object workspace {
      * vscode.workspace.createFileSystemWatcher(new vscode.RelativePattern(vscode.window.activeTextEditor.document.uri, '*'));
      * ```
      *
-     * @param globPattern A {@link GlobPattern glob pattern} that controls which file events the watcher should report.
+     * @param globPattern A [glob pattern][GlobPattern] that controls which file events the watcher should report.
      * @param ignoreCreateEvents Ignore when files have been created.
      * @param ignoreChangeEvents Ignore when files have been changed.
      * @param ignoreDeleteEvents Ignore when files have been deleted.
@@ -296,21 +297,21 @@ external object workspace {
     ): FileSystemWatcher
 
     /**
-     * Find files across all {@link workspace.workspaceFolders workspace folders} in the workspace.
+     * Find files across all [workspace folders][workspace.workspaceFolders] in the workspace.
      *
      * @example
      * findFiles('**​/​*.js', '**​/node_modules/​**', 10)
      *
-     * @param include A {@link GlobPattern glob pattern} that defines the files to search for. The glob pattern
-     * will be matched against the file paths of resulting matches relative to their workspace. Use a {@link RelativePattern relative pattern}
-     * to restrict the search results to a {@link WorkspaceFolder workspace folder}.
-     * @param exclude  A {@link GlobPattern glob pattern} that defines files and folders to exclude. The glob pattern
+     * @param include A [glob pattern][GlobPattern] that defines the files to search for. The glob pattern
+     * will be matched against the file paths of resulting matches relative to their workspace. Use a [relative pattern][RelativePattern]
+     * to restrict the search results to a [workspace folder][WorkspaceFolder].
+     * @param exclude  A [glob pattern][GlobPattern] that defines files and folders to exclude. The glob pattern
      * will be matched against the file paths of resulting matches relative to their workspace. When `undefined`, default file-excludes (e.g. the `files.exclude`-setting
      * but not `search.exclude`) will apply. When `null`, no excludes will apply.
      * @param maxResults An upper-bound for the result.
      * @param token A token that can be used to signal cancellation to the underlying search engine.
      * @returns A thenable that resolves to an array of resource identifiers. Will return no results if no
-     * {@link workspace.workspaceFolders workspace folders} are opened.
+     * [workspace folders][workspace.workspaceFolders] are opened.
      */
     fun findFiles(
         include: GlobPattern,
@@ -353,7 +354,7 @@ external object workspace {
 
     /**
      * Make changes to one or many resources or create, delete, and rename resources as defined by the given
-     * {@link WorkspaceEdit workspace edit}.
+     * [workspace edit][WorkspaceEdit].
      *
      * All changes of a workspace edit are applied in the same order in which they have been added. If
      * multiple textual inserts are made at the same position, these strings appear in the resulting text
@@ -365,7 +366,7 @@ external object workspace {
      * not be attempted, when a single edit fails.
      *
      * @param edit A workspace edit.
-     * @param metadata Optional {@link WorkspaceEditMetadata metadata} for the edit.
+     * @param metadata Optional [metadata][WorkspaceEditMetadata] for the edit.
      * @returns A thenable that resolves when the edit could be applied.
      */
     fun applyEdit(
@@ -380,22 +381,22 @@ external object workspace {
 
     /**
      * Opens a document. Will return early if this document is already open. Otherwise
-     * the document is loaded and the {@link workspace.onDidOpenTextDocument didOpen}-event fires.
+     * the document is loaded and the [didOpen][workspace.onDidOpenTextDocument]-event fires.
      *
-     * The document is denoted by an [Uri]. Depending on the {@link Uri.scheme scheme} the
+     * The document is denoted by an [Uri]. Depending on the [scheme][Uri.scheme] the
      * following rules apply:
      * * `file`-scheme: Open a file on disk (`openTextDocument(Uri.file(path))`). Will be rejected if the file
      * does not exist or cannot be loaded.
      * * `untitled`-scheme: Open a blank untitled file with associated path (`openTextDocument(Uri.file(path).with({ scheme: 'untitled' }))`).
      * The language will be derived from the file name.
-     * * For all other schemes contributed {@link TextDocumentContentProvider text document content providers} and
-     * {@link FileSystemProvider file system providers} are consulted.
+     * * For all other schemes contributed [text document content providers][TextDocumentContentProvider] and
+     * [file system providers][FileSystemProvider] are consulted.
      *
      * *Note* that the lifecycle of the returned document is owned by the editor and not by the extension. That means an
      * {@linkcode workspace.onDidCloseTextDocument onDidClose}-event can occur at any time after opening it.
      *
      * @param uri Identifies the resource to open.
-     * @returns A promise that resolves to a {@link TextDocument document}.
+     * @returns A promise that resolves to a [document][TextDocument].
      */
     /*
     openTextDocument(uri: Uri, options?: {
@@ -426,9 +427,9 @@ external object workspace {
     /**
      * A short-hand for `openTextDocument(Uri.file(path))`.
      *
-     * @see {@link workspace.openTextDocument}
+     * @see [workspace.openTextDocument]
      * @param path A path of a file on disk.
-     * @returns A promise that resolves to a {@link TextDocument document}.
+     * @returns A promise that resolves to a [document][TextDocument].
      */
     /*
     openTextDocument(path: string, options?: {
@@ -462,7 +463,7 @@ external object workspace {
      * specify the *language* and/or the *content* of the document.
      *
      * @param options Options to control how the document will be created.
-     * @returns A promise that resolves to a {@link TextDocument document}.
+     * @returns A promise that resolves to a [document][TextDocument].
      */
     /*
     openTextDocument(options?: {
@@ -500,22 +501,22 @@ external object workspace {
     ): Disposable
 
     /**
-     * An event that is emitted when a {@link TextDocument text document} is opened or when the language id
-     * of a text document {@link languages.setTextDocumentLanguage has been changed}.
+     * An event that is emitted when a [text document][TextDocument] is opened or when the language id
+     * of a text document [has been changed][languages.setTextDocumentLanguage].
      *
      * To add an event listener when a visible text document is opened, use the [TextEditor] events in the
      * [window] namespace. Note that:
      *
-     * - The event is emitted before the {@link TextDocument document} is updated in the
-     * {@link window.activeTextEditor active text editor}
-     * - When a {@link TextDocument text document} is already open (e.g.: open in another {@link window.visibleTextEditors visible text editor}) this event is not emitted
+     * - The event is emitted before the [document][TextDocument] is updated in the
+     * [active text editor][window.activeTextEditor]
+     * - When a [text document} is already open (e.g.: open in another {@link window.visibleTextEditors visible text editor][TextDocument]) this event is not emitted
      *
      */
     val onDidOpenTextDocument: Event<TextDocument>
 
     /**
-     * An event that is emitted when a {@link TextDocument text document} is disposed or when the language id
-     * of a text document {@link languages.setTextDocumentLanguage has been changed}.
+     * An event that is emitted when a [text document][TextDocument] is disposed or when the language id
+     * of a text document [has been changed][languages.setTextDocumentLanguage].
      *
      * *Note 1:* There is no guarantee that this event fires when an editor tab is closed, use the
      * {@linkcode window.onDidChangeVisibleTextEditors onDidChangeVisibleTextEditors}-event to know when editors change.
@@ -526,19 +527,19 @@ external object workspace {
     val onDidCloseTextDocument: Event<TextDocument>
 
     /**
-     * An event that is emitted when a {@link TextDocument text document} is changed. This usually happens
-     * when the {@link TextDocument.getText contents} changes but also when other things like the
-     * {@link TextDocument.isDirty dirty}-state changes.
+     * An event that is emitted when a [text document][TextDocument] is changed. This usually happens
+     * when the [contents][TextDocument.getText] changes but also when other things like the
+     * [dirty][TextDocument.isDirty]-state changes.
      */
     val onDidChangeTextDocument: Event<TextDocumentChangeEvent>
 
     /**
-     * An event that is emitted when a {@link TextDocument text document} will be saved to disk.
+     * An event that is emitted when a [text document][TextDocument] will be saved to disk.
      *
      * *Note 1:* Subscribers can delay saving by registering asynchronous work. For the sake of data integrity the editor
      * might save without firing this event. For instance when shutting down with dirty files.
      *
-     * *Note 2:* Subscribers are called sequentially and they can {@link TextDocumentWillSaveEvent.waitUntil delay} saving
+     * *Note 2:* Subscribers are called sequentially and they can [delay][TextDocumentWillSaveEvent.waitUntil] saving
      * by registering asynchronous work. Protection against misbehaving listeners is implemented as such:
      *  * there is an overall time budget that all listeners share and if that is exhausted no further listener is called
      *  * listeners that take a long time or produce errors frequently will not be called anymore
@@ -548,7 +549,7 @@ external object workspace {
     val onWillSaveTextDocument: Event<TextDocumentWillSaveEvent>
 
     /**
-     * An event that is emitted when a {@link TextDocument text document} is saved to disk.
+     * An event that is emitted when a [text document][TextDocument] is saved to disk.
      */
     val onDidSaveTextDocument: Event<TextDocument>
 
@@ -558,7 +559,7 @@ external object workspace {
     val notebookDocuments: ReadonlyArray<NotebookDocument>
 
     /**
-     * Open a notebook. Will return early if this notebook is already {@link notebookDocuments loaded}. Otherwise
+     * Open a notebook. Will return early if this notebook is already [loaded][notebookDocuments]. Otherwise
      * the notebook is loaded and the {@linkcode onDidOpenNotebookDocument}-event fires.
      *
      * *Note* that the lifecycle of the returned notebook is owned by the editor and not by the extension. That means an
@@ -568,7 +569,7 @@ external object workspace {
      * can be shown in a notebook editor but it can also be used for other things.
      *
      * @param uri The resource to open.
-     * @returns A promise that resolves to a {@link NotebookDocument notebook}
+     * @returns A promise that resolves to a [notebook][NotebookDocument]
      */
     fun openNotebookDocument(uri: Uri): PromiseLike<NotebookDocument>
 
@@ -576,10 +577,10 @@ external object workspace {
      * Open an untitled notebook. The editor will prompt the user for a file
      * path when the document is to be saved.
      *
-     * @see {@link workspace.openNotebookDocument}
+     * @see [workspace.openNotebookDocument]
      * @param notebookType The notebook type that should be used.
      * @param content The initial contents of the notebook.
-     * @returns A promise that resolves to a {@link NotebookDocument notebook}.
+     * @returns A promise that resolves to a [notebook][NotebookDocument].
      */
     fun openNotebookDocument(
         notebookType: String,
@@ -587,17 +588,17 @@ external object workspace {
     ): PromiseLike<NotebookDocument>
 
     /**
-     * An event that is emitted when a {@link NotebookDocument notebook} has changed.
+     * An event that is emitted when a [notebook][NotebookDocument] has changed.
      */
     val onDidChangeNotebookDocument: Event<NotebookDocumentChangeEvent>
 
     /**
-     * An event that is emitted when a {@link NotebookDocument notebook document} will be saved to disk.
+     * An event that is emitted when a [notebook document][NotebookDocument] will be saved to disk.
      *
      * *Note 1:* Subscribers can delay saving by registering asynchronous work. For the sake of data integrity the editor
      * might save without firing this event. For instance when shutting down with dirty files.
      *
-     * *Note 2:* Subscribers are called sequentially and they can {@link NotebookDocumentWillSaveEvent.waitUntil delay} saving
+     * *Note 2:* Subscribers are called sequentially and they can [delay][NotebookDocumentWillSaveEvent.waitUntil] saving
      * by registering asynchronous work. Protection against misbehaving listeners is implemented as such:
      *  * there is an overall time budget that all listeners share and if that is exhausted no further listener is called
      *  * listeners that take a long time or produce errors frequently will not be called anymore
@@ -607,12 +608,12 @@ external object workspace {
     val onWillSaveNotebookDocument: Event<NotebookDocumentWillSaveEvent>
 
     /**
-     * An event that is emitted when a {@link NotebookDocument notebook} is saved.
+     * An event that is emitted when a [notebook][NotebookDocument] is saved.
      */
     val onDidSaveNotebookDocument: Event<NotebookDocument>
 
     /**
-     * Register a {@link NotebookSerializer notebook serializer}.
+     * Register a [notebook serializer][NotebookSerializer].
      *
      * A notebook serializer must be contributed through the `notebooks` extension point. When opening a notebook file, the editor will send
      * the `onNotebook:<notebookType>` activation event, and extensions must register their serializer in return.
@@ -629,12 +630,12 @@ external object workspace {
     ): Disposable
 
     /**
-     * An event that is emitted when a {@link NotebookDocument notebook} is opened.
+     * An event that is emitted when a [notebook][NotebookDocument] is opened.
      */
     val onDidOpenNotebookDocument: Event<NotebookDocument>
 
     /**
-     * An event that is emitted when a {@link NotebookDocument notebook} is disposed.
+     * An event that is emitted when a [notebook][NotebookDocument] is disposed.
      *
      * *Note 1:* There is no guarantee that this event fires when an editor tab is closed.
      *
@@ -732,7 +733,7 @@ external object workspace {
     ): WorkspaceConfiguration
 
     /**
-     * An event that is emitted when the {@link WorkspaceConfiguration configuration} changed.
+     * An event that is emitted when the [configuration][WorkspaceConfiguration] changed.
      */
     val onDidChangeConfiguration: Event<ConfigurationChangeEvent>
 
@@ -742,7 +743,7 @@ external object workspace {
      * There can only be one provider per scheme and an error is being thrown when a scheme
      * has been claimed by another provider or when it is reserved.
      *
-     * @param scheme The uri-{@link Uri.scheme scheme} the provider registers for.
+     * @param scheme The uri-[scheme][Uri.scheme] the provider registers for.
      * @param provider The filesystem provider.
      * @param options Immutable metadata about the provider.
      * @returns A [Disposable] that unregisters this provider when being disposed.

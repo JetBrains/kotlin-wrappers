@@ -22,7 +22,7 @@ external object lm {
     val onDidChangeChatModels: Event<Void>
 
     /**
-     * Select chat models by a {@link LanguageModelChatSelector selector}. This can yield multiple or no chat models and
+     * Select chat models by a [selector][LanguageModelChatSelector]. This can yield multiple or no chat models and
      * extensions must handle these cases, esp. when no chat model exists, gracefully.
      *
      * ```ts
@@ -50,8 +50,8 @@ external object lm {
 
     /**
      * Register a LanguageModelTool. The tool must also be registered in the package.json `languageModelTools` contribution
-     * point. A registered tool is available in the {@link lm.tools} list for any extension to see. But in order for it to
-     * be seen by a language model, it must be passed in the list of available tools in {@link LanguageModelChatRequestOptions.tools}.
+     * point. A registered tool is available in the [lm.tools] list for any extension to see. But in order for it to
+     * be seen by a language model, it must be passed in the list of available tools in [LanguageModelChatRequestOptions.tools].
      * @returns A [Disposable] that unregisters the tool when disposed.
      */
     fun <T : JsAny?> registerTool(
@@ -60,31 +60,31 @@ external object lm {
     ): Disposable
 
     /**
-     * A list of all available tools that were registered by all extensions using {@link lm.registerTool}. They can be called
-     * with {@link lm.invokeTool} with input that match their declared `inputSchema`.
+     * A list of all available tools that were registered by all extensions using [lm.registerTool]. They can be called
+     * with [lm.invokeTool] with input that match their declared `inputSchema`.
      */
     val tools: ReadonlyArray<LanguageModelToolInformation>
 
     /**
-     * Invoke a tool listed in {@link lm.tools} by name with the given input. The input will be validated against
+     * Invoke a tool listed in [lm.tools] by name with the given input. The input will be validated against
      * the schema declared by the tool
      *
      * A tool can be invoked by a chat participant, in the context of handling a chat request, or globally by any extension in
      * any custom flow.
      *
      * In the former case, the caller shall pass the
-     * {@link LanguageModelToolInvocationOptions.toolInvocationToken toolInvocationToken}, which comes with the a
-     * {@link ChatRequest.toolInvocationToken chat request}. This makes sure the chat UI shows the tool invocation for the
+     * [toolInvocationToken][LanguageModelToolInvocationOptions.toolInvocationToken], which comes with the a
+     * [chat request][ChatRequest.toolInvocationToken]. This makes sure the chat UI shows the tool invocation for the
      * correct conversation.
      *
-     * A tool {@link LanguageModelToolResult result} is an array of {@link LanguageModelTextPart text-} and
-     * {@link LanguageModelPromptTsxPart prompt-tsx}-parts. If the tool caller is using `@vscode/prompt-tsx`, it can
+     * A tool [result} is an array of {@link LanguageModelTextPart text-][LanguageModelToolResult] and
+     * [prompt-tsx][LanguageModelPromptTsxPart]-parts. If the tool caller is using `@vscode/prompt-tsx`, it can
      * incorporate the response parts into its prompt using a `ToolResult`. If not, the parts can be passed along to the
      * [LanguageModelChat] via a user message with a [LanguageModelToolResultPart].
      *
      * If a chat participant wants to preserve tool results for requests across multiple turns, it can store tool results in
-     * the {@link ChatResult.metadata} returned from the handler and retrieve them on the next turn from
-     * {@link ChatResponseTurn.result}.
+     * the [ChatResult.metadata] returned from the handler and retrieve them on the next turn from
+     * [ChatResponseTurn.result].
      *
      * @param name The name of the tool to call.
      * @param options The options to use when invoking the tool.

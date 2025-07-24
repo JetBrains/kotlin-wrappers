@@ -16,7 +16,7 @@ external interface DebugSession {
     val id: String
 
     /**
-     * The debug session's type from the {@link DebugConfiguration debug configuration}.
+     * The debug session's type from the [debug configuration][DebugConfiguration].
      */
     val type: String
 
@@ -27,7 +27,7 @@ external interface DebugSession {
     val parentSession: DebugSession?
 
     /**
-     * The debug session's name is initially taken from the {@link DebugConfiguration debug configuration}.
+     * The debug session's name is initially taken from the [debug configuration][DebugConfiguration].
      * Any changes will be properly reflected in the UI.
      */
     var name: String
@@ -38,7 +38,7 @@ external interface DebugSession {
     val workspaceFolder: WorkspaceFolder?
 
     /**
-     * The "resolved" {@link DebugConfiguration debug configuration} of this session.
+     * The "resolved" [debug configuration][DebugConfiguration] of this session.
      * "Resolved" means that
      * - all variables have been substituted and
      * - platform specific attribute sections have been "flattened" for the matching platform and removed for non-matching platforms.

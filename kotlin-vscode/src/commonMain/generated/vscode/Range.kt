@@ -10,20 +10,20 @@ import kotlin.js.definedExternally
 
 /**
  * A range represents an ordered pair of two positions.
- * It is guaranteed that {@link Range.start start}.isBeforeOrEqual({@link Range.end end})
+ * It is guaranteed that [start}.isBeforeOrEqual({@link Range.end end][Range.start])
  *
- * Range objects are __immutable__. Use the {@link Range.with with},
- * {@link Range.intersection intersection}, or {@link Range.union union} methods
+ * Range objects are __immutable__. Use the [with][Range.with],
+ * [intersection}, or {@link Range.union union][Range.intersection] methods
  * to derive new ranges from an existing range.
  */
 open external class Range {
     /**
-     * The start position. It is before or equal to {@link Range.end end}.
+     * The start position. It is before or equal to [end][Range.end].
      */
     val start: Position
 
     /**
-     * The end position. It is after or equal to {@link Range.start start}.
+     * The end position. It is after or equal to [start][Range.start].
      */
     val end: Position
 
@@ -78,7 +78,7 @@ open external class Range {
      * Check if `other` equals this range.
      *
      * @param other A range.
-     * @returns `true` when start and end are {@link Position.isEqual equal} to
+     * @returns `true` when start and end are [equal][Position.isEqual] to
      * start and end of this range.
      */
     fun isEqual(other: Range): Boolean
@@ -104,8 +104,8 @@ open external class Range {
     /**
      * Derived a new range from this range.
      *
-     * @param start A position that should be used as start. The default value is the {@link Range.start current start}.
-     * @param end A position that should be used as end. The default value is the {@link Range.end current end}.
+     * @param start A position that should be used as start. The default value is the [current start][Range.start].
+     * @param end A position that should be used as end. The default value is the [current end][Range.end].
      * @returns A range derived from this range with the given start and end position.
      * If start and end are not different `this` range will be returned.
      */

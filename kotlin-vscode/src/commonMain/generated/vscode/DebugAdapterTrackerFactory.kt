@@ -3,15 +3,15 @@
 package vscode
 
 /**
- * A debug adapter factory that creates {@link DebugAdapterTracker debug adapter trackers}.
+ * A debug adapter factory that creates [debug adapter trackers][DebugAdapterTracker].
  */
 external interface DebugAdapterTrackerFactory {
     /**
      * The method 'createDebugAdapterTracker' is called at the start of a debug session in order
      * to return a "tracker" object that provides read-access to the communication between the editor and a debug adapter.
      *
-     * @param session The {@link DebugSession debug session} for which the debug adapter tracker will be used.
-     * @returns A {@link DebugAdapterTracker debug adapter tracker} or undefined.
+     * @param session The [debug session][DebugSession] for which the debug adapter tracker will be used.
+     * @returns A [debug adapter tracker][DebugAdapterTracker] or undefined.
      */
     fun createDebugAdapterTracker(session: DebugSession): ProviderResult<DebugAdapterTracker>
 }

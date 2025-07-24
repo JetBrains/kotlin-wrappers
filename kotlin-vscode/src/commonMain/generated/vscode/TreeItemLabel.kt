@@ -7,11 +7,11 @@ import js.array.Tuple2
 import js.core.JsInt
 
 /**
- * Label describing the {@link TreeItem Tree item}
+ * Label describing the [Tree item][TreeItem]
  */
 external interface TreeItemLabel {
     /**
-     * A human-readable string describing the {@link TreeItem Tree item}.
+     * A human-readable string describing the [Tree item][TreeItem].
      */
     var label: String
 

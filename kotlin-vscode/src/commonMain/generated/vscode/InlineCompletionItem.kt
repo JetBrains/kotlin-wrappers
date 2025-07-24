@@ -11,7 +11,7 @@ import kotlin.js.definedExternally
 /**
  * An inline completion item represents a text snippet that is proposed inline to complete text that is being typed.
  *
- * @see {@link InlineCompletionItemProvider.provideInlineCompletionItems}
+ * @see [InlineCompletionItemProvider.provideInlineCompletionItems]
  */
 open external class InlineCompletionItem {
     /**
@@ -22,7 +22,7 @@ open external class InlineCompletionItem {
 
     /**
      * A text that is used to decide if this inline completion should be shown. When `falsy`
-     * the {@link InlineCompletionItem.insertText} is used.
+     * the [InlineCompletionItem.insertText] is used.
      *
      * An inline completion is shown if the text to replace is a prefix of the filter text.
      */

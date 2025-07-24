@@ -10,7 +10,7 @@ import kotlin.js.definedExternally
 
 /**
  * Represents semantic tokens, either in a range or in an entire document.
- * @see {@link DocumentSemanticTokensProvider.provideDocumentSemanticTokens provideDocumentSemanticTokens} for an explanation of the format.
+ * @see [provideDocumentSemanticTokens][DocumentSemanticTokensProvider.provideDocumentSemanticTokens] for an explanation of the format.
  * @see [SemanticTokensBuilder] for a helper to create an instance.
  */
 open external class SemanticTokens {
@@ -23,7 +23,7 @@ open external class SemanticTokens {
 
     /**
      * The actual tokens data.
-     * @see {@link DocumentSemanticTokensProvider.provideDocumentSemanticTokens provideDocumentSemanticTokens} for an explanation of the format.
+     * @see [provideDocumentSemanticTokens][DocumentSemanticTokensProvider.provideDocumentSemanticTokens] for an explanation of the format.
      */
     val data: Uint32Array<*>
 

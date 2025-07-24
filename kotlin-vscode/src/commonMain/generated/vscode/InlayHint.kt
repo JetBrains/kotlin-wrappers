@@ -19,7 +19,7 @@ open external class InlayHint {
     var position: Position
 
     /**
-     * The label of this hint. A human readable string or an array of {@link InlayHintLabelPart label parts}.
+     * The label of this hint. A human readable string or an array of [label parts][InlayHintLabelPart].
      *
      * *Note* that neither the string nor the label part can be empty.
      */
@@ -29,7 +29,7 @@ open external class InlayHint {
      * The tooltip text when you hover over this item.
      *
      * *Note* that this property can be set late during
-     * {@link InlayHintsProvider.resolveInlayHint resolving} of inlay hints.
+     * [resolving][InlayHintsProvider.resolveInlayHint] of inlay hints.
      */
     var tooltip: JsAny /* string | MarkdownString */?
 
@@ -39,14 +39,14 @@ open external class InlayHint {
     var kind: InlayHintKind?
 
     /**
-     * Optional {@link TextEdit text edits} that are performed when accepting this inlay hint. The default
+     * Optional [text edits][TextEdit] that are performed when accepting this inlay hint. The default
      * gesture for accepting an inlay hint is the double click.
      *
      * *Note* that edits are expected to change the document so that the inlay hint (or its nearest variant) is
      * now part of the document and the inlay hint itself is now obsolete.
      *
      * *Note* that this property can be set late during
-     * {@link InlayHintsProvider.resolveInlayHint resolving} of inlay hints.
+     * [resolving][InlayHintsProvider.resolveInlayHint] of inlay hints.
      */
     var textEdits: ReadonlyArray<TextEdit>?
 
@@ -69,7 +69,7 @@ open external class InlayHint {
      *
      * @param position The position of the hint.
      * @param label The label of the hint.
-     * @param kind The {@link InlayHintKind kind} of the hint.
+     * @param kind The [kind][InlayHintKind] of the hint.
      */
     constructor(
         position: Position,

@@ -10,19 +10,19 @@ import kotlin.js.definedExternally
 
 /**
  * A TestRunRequest is a precursor to a [TestRun], which in turn is
- * created by passing a request to {@link TestController.createTestRun}. The
+ * created by passing a request to [TestController.createTestRun]. The
  * TestRunRequest contains information about which tests should be run, which
- * should not be run, and how they are run (via the {@link TestRunRequest.profile profile}).
+ * should not be run, and how they are run (via the [profile][TestRunRequest.profile]).
  *
  * In general, TestRunRequests are created by the editor and pass to
- * {@link TestRunProfile.runHandler}, however you can also create test
+ * [TestRunProfile.runHandler], however you can also create test
  * requests and runs outside of the `runHandler`.
  */
 open external class TestRunRequest {
     /**
      * A filter for specific tests to run. If given, the extension should run
      * all of the included tests and all their children, excluding any tests
-     * that appear in {@link TestRunRequest.exclude}. If this property is
+     * that appear in [TestRunRequest.exclude]. If this property is
      * undefined, then the extension should simply run all tests.
      *
      * The process of running tests should resolve the children of any test
@@ -48,7 +48,7 @@ open external class TestRunRequest {
 
     /**
      * Whether the profile should run continuously as source code changes. Only
-     * relevant for profiles that set {@link TestRunProfile.supportsContinuousRun}.
+     * relevant for profiles that set [TestRunProfile.supportsContinuousRun].
      */
     val continuous: Boolean?
 

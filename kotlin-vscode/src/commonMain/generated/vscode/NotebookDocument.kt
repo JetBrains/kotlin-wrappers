@@ -10,8 +10,8 @@ import js.promise.PromiseLike
 import kotlin.js.definedExternally
 
 /**
- * Represents a notebook which itself is a sequence of {@link NotebookCell code or markup cells}. Notebook documents are
- * created from {@link NotebookData notebook data}.
+ * Represents a notebook which itself is a sequence of [code or markup cells][NotebookCell]. Notebook documents are
+ * created from [notebook data][NotebookData].
  */
 external interface NotebookDocument {
     /**
@@ -65,7 +65,7 @@ external interface NotebookDocument {
      * Return the cell at the specified index. The index will be adjusted to the notebook.
      *
      * @param index - The index of the cell to retrieve.
-     * @returns A {@link NotebookCell cell}.
+     * @returns A [cell][NotebookCell].
      */
     fun cellAt(index: Int): NotebookCell
 
@@ -79,7 +79,7 @@ external interface NotebookDocument {
     fun getCells(range: NotebookRange = definedExternally): ReadonlyArray<NotebookCell>
 
     /**
-     * Save the document. The saving will be handled by the corresponding {@link NotebookSerializer serializer}.
+     * Save the document. The saving will be handled by the corresponding [serializer][NotebookSerializer].
      *
      * @returns A promise that will resolve to true when the document
      * has been saved. Will return false if the file was not dirty or when save failed.

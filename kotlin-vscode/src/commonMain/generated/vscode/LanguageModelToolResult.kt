@@ -15,7 +15,7 @@ open external class LanguageModelToolResult {
     /**
      * A list of tool result content parts. Includes `unknown` because this list may be extended with new content types in
      * the future.
-     * @see {@link lm.invokeTool}.
+     * @see [lm.invokeTool].
      */
     var content: ReadonlyArray<JsAny /* LanguageModelTextPart | LanguageModelPromptTsxPart | unknown */>
 

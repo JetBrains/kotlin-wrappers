@@ -12,9 +12,9 @@ import js.core.Void
 /**
  * A concrete [QuickInput] to let the user input a text value.
  *
- * Note that in many cases the more convenient {@link window.showInputBox}
- * is easier to use. {@link window.createInputBox} should be used
- * when {@link window.showInputBox} does not offer the required flexibility.
+ * Note that in many cases the more convenient [window.showInputBox]
+ * is easier to use. [window.createInputBox] should be used
+ * when [window.showInputBox] does not offer the required flexibility.
  */
 external interface InputBox :
     QuickInput {

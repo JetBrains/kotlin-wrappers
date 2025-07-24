@@ -12,9 +12,9 @@ external interface TabGroup {
      * Whether or not the group is currently active.
      *
      * *Note* that only one tab group is active at a time, but that multiple tab
-     * groups can have an {@link activeTab active tab}.
+     * groups can have an [active tab][activeTab].
      *
-     * @see {@link Tab.isActive}
+     * @see [Tab.isActive]
      */
     val isActive: Boolean
 
@@ -24,10 +24,10 @@ external interface TabGroup {
     val viewColumn: ViewColumn
 
     /**
-     * The active {@link Tab tab} in the group. This is the tab whose contents are currently
+     * The active [tab][Tab] in the group. This is the tab whose contents are currently
      * being rendered.
      *
-     * *Note* that there can be one active tab per group but there can only be one {@link TabGroups.activeTabGroup active group}.
+     * *Note* that there can be one active tab per group but there can only be one [active group][TabGroups.activeTabGroup].
      */
     val activeTab: Tab?
 

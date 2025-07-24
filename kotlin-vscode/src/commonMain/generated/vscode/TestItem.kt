@@ -33,14 +33,14 @@ external interface TestItem {
 
     /**
      * The parent of this item. It's set automatically, and is undefined
-     * top-level items in the {@link TestController.items} and for items that
-     * aren't yet included in another item's {@link TestItem.children children}.
+     * top-level items in the [TestController.items] and for items that
+     * aren't yet included in another item's [children][TestItem.children].
      */
     val parent: TestItem?
 
     /**
      * Tags associated with this test item. May be used in combination with
-     * {@link TestRunProfile.tag tags}, or simply as an organizational feature.
+     * [tags][TestRunProfile.tag], or simply as an organizational feature.
      */
     var tags: ReadonlyArray<TestTag>
 
@@ -48,7 +48,7 @@ external interface TestItem {
      * Indicates whether this test item may have children discovered by resolving.
      *
      * If true, this item is shown as expandable in the Test Explorer view and
-     * expanding the item will cause {@link TestController.resolveHandler}
+     * expanding the item will cause [TestController.resolveHandler]
      * to be invoked with the item.
      *
      * Default to `false`.
@@ -75,13 +75,13 @@ external interface TestItem {
 
     /**
      * A string that should be used when comparing this item
-     * with other items. When `falsy` the {@link TestItem.label label}
+     * with other items. When `falsy` the [label][TestItem.label]
      * is used.
      */
     var sortText: String?
 
     /**
-     * Location of the test item in its {@link TestItem.uri uri}.
+     * Location of the test item in its [uri][TestItem.uri].
      *
      * This is only meaningful if the `uri` points to a file.
      */

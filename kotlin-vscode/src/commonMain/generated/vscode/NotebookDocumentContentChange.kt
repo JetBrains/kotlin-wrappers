@@ -13,8 +13,8 @@ external interface NotebookDocumentContentChange {
     /**
      * The range at which cells have been either added or removed.
      *
-     * Note that no cells have been {@link NotebookDocumentContentChange.removedCells removed}
-     * when this range is {@link NotebookRange.isEmpty empty}.
+     * Note that no cells have been [removed][NotebookDocumentContentChange.removedCells]
+     * when this range is [empty][NotebookRange.isEmpty].
      */
     val range: NotebookRange
 

@@ -49,7 +49,7 @@ external interface TestRun {
 
     /**
      * Indicates a test has failed. You should pass one or more
-     * {@link TestMessage TestMessages} to describe the failure.
+     * [TestMessages][TestMessage] to describe the failure.
      * @param test Test item to update.
      * @param message Messages associated with the test failure.
      * @param duration How long the test took to execute, in milliseconds.
@@ -62,7 +62,7 @@ external interface TestRun {
 
     /**
      * Indicates a test has errored. You should pass one or more
-     * {@link TestMessage TestMessages} to describe the failure. This differs
+     * [TestMessages][TestMessage] to describe the failure. This differs
      * from the "failed" state in that it indicates a test that couldn't be
      * executed at all, from a compilation error for example.
      * @param test Test item to update.

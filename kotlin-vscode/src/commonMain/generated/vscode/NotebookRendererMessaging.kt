@@ -8,7 +8,7 @@ import js.promise.PromiseLike
 import kotlin.js.definedExternally
 
 /**
- * Renderer messaging is used to communicate with a single renderer. It's returned from {@link notebooks.createRendererMessaging}.
+ * Renderer messaging is used to communicate with a single renderer. It's returned from [notebooks.createRendererMessaging].
  */
 external interface NotebookRendererMessaging {
     /**

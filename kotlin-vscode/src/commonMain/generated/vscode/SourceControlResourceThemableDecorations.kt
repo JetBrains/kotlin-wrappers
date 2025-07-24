@@ -6,12 +6,12 @@ import js.core.JsAny
 
 /**
  * The theme-aware decorations for a
- * {@link SourceControlResourceState source control resource state}.
+ * [source control resource state][SourceControlResourceState].
  */
 external interface SourceControlResourceThemableDecorations {
     /**
      * The icon path for a specific
-     * {@link SourceControlResourceState source control resource state}.
+     * [source control resource state][SourceControlResourceState].
      */
     val iconPath: JsAny /* string | Uri | ThemeIcon */?
 }

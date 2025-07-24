@@ -9,7 +9,7 @@ import js.promise.PromiseLike
 import kotlin.js.definedExternally
 
 /**
- * A NotebookCellExecution is how {@link NotebookController notebook controller} modify a notebook cell as
+ * A NotebookCellExecution is how [notebook controller][NotebookController] modify a notebook cell as
  * it is executing.
  *
  * When a cell execution object is created, the cell enters the {@linkcode NotebookCellExecutionState.Pending Pending} state.
@@ -18,7 +18,7 @@ import kotlin.js.definedExternally
  */
 external interface NotebookCellExecution {
     /**
-     * The {@link NotebookCell cell} for which this execution has been created.
+     * The [cell][NotebookCell] for which this execution has been created.
      */
     val cell: NotebookCell
 
@@ -26,8 +26,8 @@ external interface NotebookCellExecution {
      * A cancellation token which will be triggered when the cell execution is canceled
      * from the UI.
      *
-     * _Note_ that the cancellation token will not be triggered when the {@link NotebookController controller}
-     * that created this execution uses an {@link NotebookController.interruptHandler interrupt-handler}.
+     * _Note_ that the cancellation token will not be triggered when the [controller][NotebookController]
+     * that created this execution uses an [interrupt-handler][NotebookController.interruptHandler].
      */
     val token: CancellationToken
 
@@ -60,7 +60,7 @@ external interface NotebookCellExecution {
     /**
      * Clears the output of the cell that is executing or of another cell that is affected by this execution.
      *
-     * @param cell Cell for which output is cleared. Defaults to the {@link NotebookCellExecution.cell cell} of
+     * @param cell Cell for which output is cleared. Defaults to the [cell][NotebookCellExecution.cell] of
      * this execution.
      * @returns A thenable that resolves when the operation finished.
      */
@@ -70,7 +70,7 @@ external interface NotebookCellExecution {
      * Replace the output of the cell that is executing or of another cell that is affected by this execution.
      *
      * @param out Output that replaces the current output.
-     * @param cell Cell for which output is cleared. Defaults to the {@link NotebookCellExecution.cell cell} of
+     * @param cell Cell for which output is cleared. Defaults to the [cell][NotebookCellExecution.cell] of
      * this execution.
      * @returns A thenable that resolves when the operation finished.
      */
@@ -83,7 +83,7 @@ external interface NotebookCellExecution {
      * Append to the output of the cell that is executing or to another cell that is affected by this execution.
      *
      * @param out Output that is appended to the current output.
-     * @param cell Cell for which output is cleared. Defaults to the {@link NotebookCellExecution.cell cell} of
+     * @param cell Cell for which output is cleared. Defaults to the [cell][NotebookCellExecution.cell] of
      * this execution.
      * @returns A thenable that resolves when the operation finished.
      */

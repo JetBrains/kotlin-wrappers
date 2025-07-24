@@ -44,7 +44,7 @@ open external class TypeHierarchyItem {
 
     /**
      * The range that should be selected and revealed when this symbol is being
-     * picked, e.g. the name of a class. Must be contained by the {@link TypeHierarchyItem.range range}-property.
+     * picked, e.g. the name of a class. Must be contained by the [range][TypeHierarchyItem.range]-property.
      */
     var selectionRange: Range
 

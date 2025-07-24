@@ -13,7 +13,7 @@ external interface SelectionRangeProvider {
      *
      * Selection ranges should be computed individually and independent for each position. The editor will merge
      * and deduplicate ranges but providers must return hierarchies of selection ranges so that a range
-     * is {@link Range.contains contained} by its parent.
+     * is [contained][Range.contains] by its parent.
      *
      * @param document The document in which the command was invoked.
      * @param positions The positions at which the command was invoked.

@@ -14,8 +14,8 @@ import kotlin.js.definedExternally
  * A code lens is _unresolved_ when no command is associated to it. For performance
  * reasons the creation of a code lens and resolving should be done to two stages.
  *
- * @see {@link CodeLensProvider.provideCodeLenses}
- * @see {@link CodeLensProvider.resolveCodeLens}
+ * @see [CodeLensProvider.provideCodeLenses]
+ * @see [CodeLensProvider.resolveCodeLens]
  */
 open external class CodeLens {
     /**

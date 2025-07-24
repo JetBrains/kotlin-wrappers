@@ -17,14 +17,14 @@ import kotlin.js.definedExternally
  */
 external object debug {
     /**
-     * The currently active {@link DebugSession debug session} or `undefined`. The active debug session is the one
+     * The currently active [debug session][DebugSession] or `undefined`. The active debug session is the one
      * represented by the debug action floating window or the one currently shown in the drop down menu of the debug action floating window.
      * If no debug session is active, the value is `undefined`.
      */
     var activeDebugSession: DebugSession?
 
     /**
-     * The currently active {@link DebugConsole debug console}.
+     * The currently active [debug console][DebugConsole].
      * If no debug session is active, output sent to the debug console is not shown.
      */
     var activeDebugConsole: DebugConsole
@@ -35,24 +35,24 @@ external object debug {
     var breakpoints: ReadonlyArray<Breakpoint>
 
     /**
-     * An [Event] which fires when the {@link debug.activeDebugSession active debug session}
+     * An [Event] which fires when the [active debug session][debug.activeDebugSession]
      * has changed. *Note* that the event also fires when the active debug session changes
      * to `undefined`.
      */
     val onDidChangeActiveDebugSession: Event<DebugSession?>
 
     /**
-     * An [Event] which fires when a new {@link DebugSession debug session} has been started.
+     * An [Event] which fires when a new [debug session][DebugSession] has been started.
      */
     val onDidStartDebugSession: Event<DebugSession>
 
     /**
-     * An [Event] which fires when a custom DAP event is received from the {@link DebugSession debug session}.
+     * An [Event] which fires when a custom DAP event is received from the [debug session][DebugSession].
      */
     val onDidReceiveDebugSessionCustomEvent: Event<DebugSessionCustomEvent>
 
     /**
-     * An [Event] which fires when a {@link DebugSession debug session} has terminated.
+     * An [Event] which fires when a [debug session][DebugSession] has terminated.
      */
     val onDidTerminateDebugSession: Event<DebugSession>
 
@@ -70,13 +70,13 @@ external object debug {
     val activeStackItem: JsAny /* DebugThread | DebugStackFrame */?
 
     /**
-     * An event which fires when the {@link debug.activeStackItem} has changed.
+     * An event which fires when the [debug.activeStackItem] has changed.
      */
     val onDidChangeActiveStackItem: Event<JsAny /* DebugThread | DebugStackFrame */?>
 
     /**
-     * Register a {@link DebugConfigurationProvider debug configuration provider} for a specific debug type.
-     * The optional {@link DebugConfigurationProviderTriggerKind triggerKind} can be used to specify when the `provideDebugConfigurations` method of the provider is triggered.
+     * Register a [debug configuration provider][DebugConfigurationProvider] for a specific debug type.
+     * The optional [triggerKind][DebugConfigurationProviderTriggerKind] can be used to specify when the `provideDebugConfigurations` method of the provider is triggered.
      * Currently two trigger kinds are possible: with the value `Initial` (or if no trigger kind argument is given) the `provideDebugConfigurations` method is used to provide the initial debug configurations to be copied into a newly created launch.json.
      * With the trigger kind `Dynamic` the `provideDebugConfigurations` method is used to dynamically determine debug configurations to be presented to the user (in addition to the static configurations from the launch.json).
      * Please note that the `triggerKind` argument only applies to the `provideDebugConfigurations` method: so the `resolveDebugConfiguration` methods are not affected at all.
@@ -84,8 +84,8 @@ external object debug {
      * More than one provider can be registered for the same type.
      *
      * @param debugType The debug type for which the provider is registered.
-     * @param provider The {@link DebugConfigurationProvider debug configuration provider} to register.
-     * @param triggerKind The {@link DebugConfigurationProviderTriggerKind trigger} for which the 'provideDebugConfiguration' method of the provider is registered. If `triggerKind` is missing, the value `DebugConfigurationProviderTriggerKind.Initial` is assumed.
+     * @param provider The [debug configuration provider][DebugConfigurationProvider] to register.
+     * @param triggerKind The [trigger][DebugConfigurationProviderTriggerKind] for which the 'provideDebugConfiguration' method of the provider is registered. If `triggerKind` is missing, the value `DebugConfigurationProviderTriggerKind.Initial` is assumed.
      * @returns A [Disposable] that unregisters this provider when being disposed.
      */
     fun registerDebugConfigurationProvider(
@@ -95,12 +95,12 @@ external object debug {
     ): Disposable
 
     /**
-     * Register a {@link DebugAdapterDescriptorFactory debug adapter descriptor factory} for a specific debug type.
+     * Register a [debug adapter descriptor factory][DebugAdapterDescriptorFactory] for a specific debug type.
      * An extension is only allowed to register a DebugAdapterDescriptorFactory for the debug type(s) defined by the extension. Otherwise an error is thrown.
      * Registering more than one DebugAdapterDescriptorFactory for a debug type results in an error.
      *
      * @param debugType The debug type for which the factory is registered.
-     * @param factory The {@link DebugAdapterDescriptorFactory debug adapter descriptor factory} to register.
+     * @param factory The [debug adapter descriptor factory][DebugAdapterDescriptorFactory] to register.
      * @returns A [Disposable] that unregisters this factory when being disposed.
      */
     fun registerDebugAdapterDescriptorFactory(
@@ -112,7 +112,7 @@ external object debug {
      * Register a debug adapter tracker factory for the given debug type.
      *
      * @param debugType The debug type for which the factory is registered or '*' for matching all debug types.
-     * @param factory The {@link DebugAdapterTrackerFactory debug adapter tracker factory} to register.
+     * @param factory The [debug adapter tracker factory][DebugAdapterTrackerFactory] to register.
      * @returns A [Disposable] that unregisters this factory when being disposed.
      */
     fun registerDebugAdapterTrackerFactory(
@@ -126,9 +126,9 @@ external object debug {
      * The named configurations are looked up in '.vscode/launch.json' found in the given folder.
      * Before debugging starts, all unsaved files are saved and the launch configurations are brought up-to-date.
      * Folder specific variables used in the configuration (e.g. '${workspaceFolder}') are resolved against the given folder.
-     * @param folder The {@link WorkspaceFolder workspace folder} for looking up named configurations and resolving variables or `undefined` for a non-folder setup.
+     * @param folder The [workspace folder][WorkspaceFolder] for looking up named configurations and resolving variables or `undefined` for a non-folder setup.
      * @param nameOrConfiguration Either the name of a debug or compound configuration or a [DebugConfiguration] object.
-     * @param parentSessionOrOptions Debug session options. When passed a parent {@link DebugSession debug session}, assumes options with just this parent session.
+     * @param parentSessionOrOptions Debug session options. When passed a parent [debug session][DebugSession], assumes options with just this parent session.
      * @returns A thenable that resolves when debugging could be successfully started.
      */
     fun startDebugging(
@@ -140,7 +140,7 @@ external object debug {
     /**
      * Stop the given debug session or stop all debug sessions if session is omitted.
      *
-     * @param session The {@link DebugSession debug session} to stop; if omitted all sessions are stopped.
+     * @param session The [debug session][DebugSession] to stop; if omitted all sessions are stopped.
      * @returns A thenable that resolves when the session(s) have been stopped.
      */
     fun stopDebugging(session: DebugSession = definedExternally): PromiseLike<Void>

@@ -531,5 +531,5 @@ private fun kdoc(
     source: String,
 ): String =
     source
-        .replace(Regex("""\{@link (\w+) `(\w+)`}"""), "[$2][$1]")
-        .replace(Regex("""\{@link (\w+)}"""), "[$1]")
+        .replace(Regex("""\{@link (\S+)}"""), "[$1]")
+        .replace(Regex("""\{@link (\S+) (.+)}"""), "[$2][$1]")

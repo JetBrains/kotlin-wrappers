@@ -15,9 +15,9 @@ import kotlin.js.definedExternally
  * Namespace for dealing with commands. In short, a command is a function with a
  * unique identifier. The function is sometimes also called _command handler_.
  *
- * Commands can be added to the editor using the {@link commands.registerCommand registerCommand}
- * and {@link commands.registerTextEditorCommand registerTextEditorCommand} functions. Commands
- * can be executed {@link commands.executeCommand manually} or from a UI gesture. Those are:
+ * Commands can be added to the editor using the [registerCommand][commands.registerCommand]
+ * and [registerTextEditorCommand][commands.registerTextEditorCommand] functions. Commands
+ * can be executed [manually][commands.executeCommand] or from a UI gesture. Those are:
  *
  * * palette - Use the `commands`-section in `package.json` to make a command show in
  * the [command palette](https://code.visualstudio.com/docs/getstarted/userinterface#_command-palette).
@@ -70,14 +70,14 @@ external object commands {
      * Registers a text editor command that can be invoked via a keyboard shortcut,
      * a menu item, an action, or directly.
      *
-     * Text editor commands are different from ordinary {@link commands.registerCommand commands} as
+     * Text editor commands are different from ordinary [commands][commands.registerCommand] as
      * they only execute when there is an active editor when the command is called. Also, the
      * command handler of an editor command has access to the active editor and to an
-     * {@link TextEditorEdit edit}-builder. Note that the edit-builder is only valid while the
+     * [edit][TextEditorEdit]-builder. Note that the edit-builder is only valid while the
      * callback executes.
      *
      * @param command A unique identifier for the command.
-     * @param callback A command handler function with access to an {@link TextEditor editor} and an {@link TextEditorEdit edit}.
+     * @param callback A command handler function with access to an [editor} and an {@link TextEditorEdit edit][TextEditor].
      * @param thisArg The `this` context used when invoking the handler function.
      * @returns Disposable which unregisters this command on disposal.
      */

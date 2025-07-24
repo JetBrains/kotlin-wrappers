@@ -9,11 +9,11 @@ import kotlin.js.JsModule
 import kotlin.js.definedExternally
 
 /**
- * A tree item is an UI element of the tree. Tree items are created by the {@link TreeDataProvider data provider}.
+ * A tree item is an UI element of the tree. Tree items are created by the [data provider][TreeDataProvider].
  */
 open external class TreeItem {
     /**
-     * A human-readable string describing this item. When `falsy`, it is derived from {@link TreeItem.resourceUri resourceUri}.
+     * A human-readable string describing this item. When `falsy`, it is derived from [resourceUri][TreeItem.resourceUri].
      */
     var label: JsAny /* string | TreeItemLabel */?
 
@@ -26,22 +26,22 @@ open external class TreeItem {
 
     /**
      * The icon path or [ThemeIcon] for the tree item.
-     * When `falsy`, {@link ThemeIcon.Folder Folder Theme Icon} is assigned, if item is collapsible otherwise {@link ThemeIcon.File File Theme Icon}.
-     * When a file or folder [ThemeIcon] is specified, icon is derived from the current file icon theme for the specified theme icon using {@link TreeItem.resourceUri resourceUri} (if provided).
+     * When `falsy`, [Folder Theme Icon} is assigned, if item is collapsible otherwise {@link ThemeIcon.File File Theme Icon][ThemeIcon.Folder].
+     * When a file or folder [ThemeIcon] is specified, icon is derived from the current file icon theme for the specified theme icon using [resourceUri][TreeItem.resourceUri] (if provided).
      */
     var iconPath: JsAny /* string | IconPath */?
 
     /**
      * A human-readable string which is rendered less prominent.
-     * When `true`, it is derived from {@link TreeItem.resourceUri resourceUri} and when `falsy`, it is not shown.
+     * When `true`, it is derived from [resourceUri][TreeItem.resourceUri] and when `falsy`, it is not shown.
      */
     var description: JsAny /* string | boolean */?
 
     /**
      * The [Uri] of the resource representing this item.
      *
-     * Will be used to derive the {@link TreeItem.label label}, when it is not provided.
-     * Will be used to derive the icon from current file icon theme, when {@link TreeItem.iconPath iconPath} has [ThemeIcon] value.
+     * Will be used to derive the [label][TreeItem.label], when it is not provided.
+     * Will be used to derive the icon from current file icon theme, when [iconPath][TreeItem.iconPath] has [ThemeIcon] value.
      */
     var resourceUri: Uri?
 
@@ -92,8 +92,8 @@ open external class TreeItem {
     var accessibilityInformation: AccessibilityInformation?
 
     /**
-     * {@link TreeItemCheckboxState TreeItemCheckboxState} of the tree item.
-     * {@link TreeDataProvider.onDidChangeTreeData onDidChangeTreeData} should be fired when {@link TreeItem.checkboxState checkboxState} changes.
+     * [TreeItemCheckboxState][TreeItemCheckboxState] of the tree item.
+     * [onDidChangeTreeData} should be fired when {@link TreeItem.checkboxState checkboxState][TreeDataProvider.onDidChangeTreeData] changes.
      */
     /*
     checkboxState?: TreeItemCheckboxState | {
@@ -114,7 +114,7 @@ open external class TreeItem {
 
     /**
      * @param label A human-readable string describing this item
-     * @param collapsibleState [TreeItemCollapsibleState] of the tree item. Default is {@link TreeItemCollapsibleState.None}
+     * @param collapsibleState [TreeItemCollapsibleState] of the tree item. Default is [TreeItemCollapsibleState.None]
      */
     constructor(
         label: JsAny, /* string | TreeItemLabel */
@@ -123,7 +123,7 @@ open external class TreeItem {
 
     /**
      * @param resourceUri The [Uri] of the resource representing this item.
-     * @param collapsibleState [TreeItemCollapsibleState] of the tree item. Default is {@link TreeItemCollapsibleState.None}
+     * @param collapsibleState [TreeItemCollapsibleState] of the tree item. Default is [TreeItemCollapsibleState.None]
      */
     constructor(
         resourceUri: Uri,

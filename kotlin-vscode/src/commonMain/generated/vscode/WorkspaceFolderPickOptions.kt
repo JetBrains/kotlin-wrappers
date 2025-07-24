@@ -3,7 +3,7 @@
 package vscode
 
 /**
- * Options to configure the behaviour of the {@link WorkspaceFolder workspace folder} pick UI.
+ * Options to configure the behaviour of the [workspace folder][WorkspaceFolder] pick UI.
  */
 external interface WorkspaceFolderPickOptions {
     /**

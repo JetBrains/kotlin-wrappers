@@ -26,7 +26,7 @@ external interface CompletionItemProvider<T : CompletionItem> {
      * @param token A cancellation token.
      * @param context How the completion was triggered.
      *
-     * @returns An array of completions, a {@link CompletionList completion list}, or a thenable that resolves to either.
+     * @returns An array of completions, a [completion list][CompletionList], or a thenable that resolves to either.
      * The lack of a result can be signaled by returning `undefined`, `null`, or an empty array.
      */
     fun provideCompletionItems(
@@ -37,16 +37,16 @@ external interface CompletionItemProvider<T : CompletionItem> {
     ): ProviderResult<JsAny /* T[] | CompletionList<T> */>
 
     /**
-     * Given a completion item fill in more data, like {@link CompletionItem.documentation doc-comment}
-     * or {@link CompletionItem.detail details}.
+     * Given a completion item fill in more data, like [doc-comment][CompletionItem.documentation]
+     * or [details][CompletionItem.detail].
      *
      * The editor will only resolve a completion item once.
      *
      * *Note* that this function is called when completion items are already showing in the UI or when an item has been
      * selected for insertion. Because of that, no property that changes the presentation (label, sorting, filtering etc)
-     * or the (primary) insert behaviour ({@link CompletionItem.insertText insertText}) can be changed.
+     * or the (primary) insert behaviour ([insertText][CompletionItem.insertText]) can be changed.
      *
-     * This function may fill in {@link CompletionItem.additionalTextEdits additionalTextEdits}. However, that means an item might be
+     * This function may fill in [additionalTextEdits][CompletionItem.additionalTextEdits]. However, that means an item might be
      * inserted *before* resolving is done and in that case the editor will do a best effort to still apply those additional
      * text edits.
      *

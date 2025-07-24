@@ -24,7 +24,7 @@ external interface CommentReaction {
     val count: Int
 
     /**
-     * Whether the {@link CommentAuthorInformation author} of the comment has reacted to this reaction
+     * Whether the [author][CommentAuthorInformation] of the comment has reacted to this reaction
      */
     val authorHasReacted: Boolean
 }

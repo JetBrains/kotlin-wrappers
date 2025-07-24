@@ -23,7 +23,7 @@ external interface FileDecorationProvider {
      *
      * *Note* that this function is only called when a file gets rendered in the UI.
      * This means a decoration from a descendent that propagates upwards must be signaled
-     * to the editor via the {@link FileDecorationProvider.onDidChangeFileDecorations onDidChangeFileDecorations}-event.
+     * to the editor via the [onDidChangeFileDecorations][FileDecorationProvider.onDidChangeFileDecorations]-event.
      *
      * @param uri The uri of the file to provide a decoration for.
      * @param token A cancellation token.

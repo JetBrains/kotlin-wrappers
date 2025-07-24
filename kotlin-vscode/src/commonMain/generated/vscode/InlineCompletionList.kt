@@ -8,7 +8,7 @@ import js.array.ReadonlyArray
 import kotlin.js.JsModule
 
 /**
- * Represents a collection of {@link InlineCompletionItem inline completion items} to be presented
+ * Represents a collection of [inline completion items][InlineCompletionItem] to be presented
  * in the editor.
  */
 open external class InlineCompletionList {

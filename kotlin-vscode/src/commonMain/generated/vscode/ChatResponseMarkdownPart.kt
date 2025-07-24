@@ -19,7 +19,7 @@ open external class ChatResponseMarkdownPart {
     /**
      * Create a new ChatResponseMarkdownPart.
      *
-     * @param value A markdown string or a string that should be interpreted as markdown. The boolean form of {@link MarkdownString.isTrusted} is NOT supported.
+     * @param value A markdown string or a string that should be interpreted as markdown. The boolean form of [MarkdownString.isTrusted] is NOT supported.
      */
     constructor(value: JsAny /* string | MarkdownString */)
 }

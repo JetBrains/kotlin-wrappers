@@ -10,7 +10,7 @@ import kotlin.js.JsModule
 /**
  * An error type that should be used to signal cancellation of an operation.
  *
- * This type can be used in response to a {@link CancellationToken cancellation token}
+ * This type can be used in response to a [cancellation token][CancellationToken]
  * being cancelled or when an operation is being cancelled by the
  * executor of that operation.
  */

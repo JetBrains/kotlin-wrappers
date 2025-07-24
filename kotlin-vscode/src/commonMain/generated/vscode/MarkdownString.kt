@@ -10,7 +10,7 @@ import kotlin.js.definedExternally
 /**
  * Human-readable text that supports formatting via the [markdown syntax](https://commonmark.org).
  *
- * Rendering of {@link ThemeIcon theme icons} via the `$(<name>)`-syntax is supported
+ * Rendering of [theme icons][ThemeIcon] via the `$(<name>)`-syntax is supported
  * when the {@linkcode supportThemeIcons} is set to `true`.
  *
  * Rendering of embedded html is supported when {@linkcode supportHtml} is set to `true`.
@@ -37,7 +37,7 @@ open external class MarkdownString {
     */
 
     /**
-     * Indicates that this markdown string can contain {@link ThemeIcon ThemeIcons}, e.g. `$(zap)`.
+     * Indicates that this markdown string can contain [ThemeIcons][ThemeIcon], e.g. `$(zap)`.
      */
     var supportThemeIcons: Boolean?
 
@@ -78,7 +78,7 @@ open external class MarkdownString {
      * Creates a new markdown string with the given value.
      *
      * @param value Optional, initial value.
-     * @param supportThemeIcons Optional, Specifies whether {@link ThemeIcon ThemeIcons} are supported within the {@linkcode MarkdownString}.
+     * @param supportThemeIcons Optional, Specifies whether [ThemeIcons} are supported within the {@linkcode MarkdownString][ThemeIcon].
      */
     constructor(
         value: String = definedExternally,
@@ -92,7 +92,7 @@ open external class MarkdownString {
     fun appendText(value: String): MarkdownString
 
     /**
-     * Appends the given string 'as is' to this markdown string. When {@linkcode MarkdownString.supportThemeIcons supportThemeIcons} is `true`, {@link ThemeIcon ThemeIcons} in the `value` will be iconified.
+     * Appends the given string 'as is' to this markdown string. When {@linkcode MarkdownString.supportThemeIcons supportThemeIcons} is `true`, [ThemeIcons][ThemeIcon] in the `value` will be iconified.
      * @param value Markdown string.
      */
     fun appendMarkdown(value: String): MarkdownString
@@ -100,7 +100,7 @@ open external class MarkdownString {
     /**
      * Appends the given string as codeblock using the provided language.
      * @param value A code snippet.
-     * @param language An optional {@link languages.getLanguages language identifier}.
+     * @param language An optional [language identifier][languages.getLanguages].
      */
     fun appendCodeblock(
         value: String,

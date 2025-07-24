@@ -6,7 +6,7 @@ import js.array.ReadonlyArray
 import js.core.JsAny
 
 /**
- * A collection of {@link Comment comments} representing a conversation at a particular range in a document.
+ * A collection of [comments][Comment] representing a conversation at a particular range in a document.
  */
 external interface CommentThread :
     DisposableLike {
@@ -60,7 +60,7 @@ external interface CommentThread :
     var contextValue: String?
 
     /**
-     * The optional human-readable label describing the {@link CommentThread Comment Thread}
+     * The optional human-readable label describing the [Comment Thread][CommentThread]
      */
     var label: String?
 

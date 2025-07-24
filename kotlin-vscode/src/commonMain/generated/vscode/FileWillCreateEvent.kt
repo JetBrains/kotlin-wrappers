@@ -11,7 +11,7 @@ import js.promise.PromiseLike
  *
  * To make modifications to the workspace before the files are created,
  * call the {@linkcode FileWillCreateEvent.waitUntil waitUntil}-function with a
- * thenable that resolves to a {@link WorkspaceEdit workspace edit}.
+ * thenable that resolves to a [workspace edit][WorkspaceEdit].
  */
 external interface FileWillCreateEvent {
     /**
@@ -25,7 +25,7 @@ external interface FileWillCreateEvent {
     val files: ReadonlyArray<Uri>
 
     /**
-     * Allows to pause the event and to apply a {@link WorkspaceEdit workspace edit}.
+     * Allows to pause the event and to apply a [workspace edit][WorkspaceEdit].
      *
      * *Note:* This function can only be called during event dispatch and not
      * in an asynchronous manner:

@@ -5,13 +5,13 @@ package vscode
 import js.core.JsAny
 
 /**
- * Represents a {@link TextEditor text editor}'s {@link TextEditor.options options}.
+ * Represents a [text editor}'s {@link TextEditor.options options][TextEditor].
  */
 external interface TextEditorOptions {
     /**
      * The size in spaces a tab takes. This is used for two purposes:
      *  - the rendering width of a tab character;
-     *  - the number of spaces to insert when {@link TextEditorOptions.insertSpaces insertSpaces} is true
+     *  - the number of spaces to insert when [insertSpaces][TextEditorOptions.insertSpaces] is true
      *    and `indentSize` is set to `"tabSize"`.
      *
      * When getting a text editor's options, this property will always be a number (resolved).
@@ -20,7 +20,7 @@ external interface TextEditorOptions {
     var tabSize: JsAny /* number | string */?
 
     /**
-     * The number of spaces to insert when {@link TextEditorOptions.insertSpaces insertSpaces} is true.
+     * The number of spaces to insert when [insertSpaces][TextEditorOptions.insertSpaces] is true.
      *
      * When getting a text editor's options, this property will always be a number (resolved).
      * When setting a text editor's options, this property is optional and it can be a number or `"tabSize"`.
@@ -28,7 +28,7 @@ external interface TextEditorOptions {
     var indentSize: JsAny /* number | string */?
 
     /**
-     * When pressing Tab insert {@link TextEditorOptions.tabSize n} spaces.
+     * When pressing Tab insert [n][TextEditorOptions.tabSize] spaces.
      * When getting a text editor's options, this property will always be a boolean (resolved).
      * When setting a text editor's options, this property is optional and it can be a boolean or `"auto"`.
      */

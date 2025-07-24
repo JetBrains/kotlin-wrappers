@@ -18,7 +18,7 @@ external interface WorkspaceSymbolProvider<T : SymbolInformation> {
      * strict matching.
      *
      * To improve performance implementors can implement `resolveWorkspaceSymbol` and then provide symbols with partial
-     * {@link SymbolInformation.location location}-objects, without a `range` defined. The editor will then call
+     * [location][SymbolInformation.location]-objects, without a `range` defined. The editor will then call
      * `resolveWorkspaceSymbol` for selected symbols only, e.g. when opening a workspace symbol.
      *
      * @param query A query string, can be the empty string in which case all symbols should be returned.
@@ -32,7 +32,7 @@ external interface WorkspaceSymbolProvider<T : SymbolInformation> {
     ): ProviderResult<ReadonlyArray<T>>
 
     /**
-     * Given a symbol fill in its {@link SymbolInformation.location location}. This method is called whenever a symbol
+     * Given a symbol fill in its [location][SymbolInformation.location]. This method is called whenever a symbol
      * is selected in the UI. Providers can implement this method and return incomplete symbols from
      * {@linkcode WorkspaceSymbolProvider.provideWorkspaceSymbols provideWorkspaceSymbols} which often helps to improve
      * performance.

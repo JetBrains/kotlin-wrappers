@@ -35,7 +35,7 @@ external interface TreeViewOptions<T : JsAny?> {
      * If the tree item is collapsed by default (meaning that the children haven't yet been fetched) then child checkboxes will not be updated.
      * To override this behavior and manage child and parent checkbox state in the extension, set this to `true`.
      *
-     * Examples where {@link TreeViewOptions.manageCheckboxStateManually} is false, the default behavior:
+     * Examples where [TreeViewOptions.manageCheckboxStateManually] is false, the default behavior:
      *
      * 1. A tree item is checked, then its children are fetched. The children will be checked.
      *

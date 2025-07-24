@@ -3,7 +3,7 @@
 package vscode
 
 /**
- * A structured label for a {@link CompletionItem completion item}.
+ * A structured label for a [completion item][CompletionItem].
  */
 external interface CompletionItemLabel {
     /**
@@ -14,13 +14,13 @@ external interface CompletionItemLabel {
     var label: String
 
     /**
-     * An optional string which is rendered less prominently directly after {@link CompletionItemLabel.label label},
+     * An optional string which is rendered less prominently directly after [label][CompletionItemLabel.label],
      * without any spacing. Should be used for function signatures or type annotations.
      */
     var detail: String?
 
     /**
-     * An optional string which is rendered less prominently after {@link CompletionItemLabel.detail}. Should be used
+     * An optional string which is rendered less prominently after [CompletionItemLabel.detail]. Should be used
      * for fully qualified names or file path.
      */
     var description: String?

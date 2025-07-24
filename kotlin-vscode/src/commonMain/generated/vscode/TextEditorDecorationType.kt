@@ -4,10 +4,10 @@ package vscode
 
 /**
  * Represents a handle to a set of decorations
- * sharing the same {@link DecorationRenderOptions styling options} in a {@link TextEditor text editor}.
+ * sharing the same [styling options} in a {@link TextEditor text editor][DecorationRenderOptions].
  *
  * To get an instance of a `TextEditorDecorationType` use
- * {@link window.createTextEditorDecorationType createTextEditorDecorationType}.
+ * [createTextEditorDecorationType][window.createTextEditorDecorationType].
  */
 external interface TextEditorDecorationType :
     DisposableLike {

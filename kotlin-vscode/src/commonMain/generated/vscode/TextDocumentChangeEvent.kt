@@ -5,7 +5,7 @@ package vscode
 import js.array.ReadonlyArray
 
 /**
- * An event describing a transactional {@link TextDocument document} change.
+ * An event describing a transactional [document][TextDocument] change.
  */
 external interface TextDocumentChangeEvent {
     /**

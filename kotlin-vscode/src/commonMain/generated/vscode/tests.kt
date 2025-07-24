@@ -8,7 +8,7 @@ import kotlin.js.JsModule
 
 /**
  * Namespace for testing functionality. Tests are published by registering
- * [TestController] instances, then adding {@link TestItem TestItems}.
+ * [TestController] instances, then adding [TestItems][TestItem].
  * Controllers may also describe how to run tests by creating one or more
  * [TestRunProfile] instances.
  */

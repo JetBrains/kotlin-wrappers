@@ -14,7 +14,7 @@ import kotlin.js.definedExternally
  * A workspace edit is a collection of textual and files changes for
  * multiple resources and documents.
  *
- * Use the {@link workspace.applyEdit applyEdit}-function to apply a workspace edit.
+ * Use the [applyEdit][workspace.applyEdit]-function to apply a workspace edit.
  */
 open external class WorkspaceEdit {
     /**

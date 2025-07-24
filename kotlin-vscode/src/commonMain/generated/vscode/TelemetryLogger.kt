@@ -9,7 +9,7 @@ import kotlin.js.definedExternally
 /**
  * A telemetry logger which can be used by extensions to log usage and error telemetry.
  *
- * A logger wraps around an {@link TelemetrySender sender} but it guarantees that
+ * A logger wraps around an [sender][TelemetrySender] but it guarantees that
  * - user settings to disable or tweak telemetry are respected, and that
  * - potential sensitive data is removed
  *
@@ -17,7 +17,7 @@ import kotlin.js.definedExternally
  * to forward unhandled errors to the respective extensions.
  *
  * To get an instance of a `TelemetryLogger`, use
- * {@link env.createTelemetryLogger `createTelemetryLogger`}.
+ * [`createTelemetryLogger`][env.createTelemetryLogger].
  */
 external interface TelemetryLogger :
     DisposableLike {

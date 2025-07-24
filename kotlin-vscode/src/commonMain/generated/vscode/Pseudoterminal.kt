@@ -11,14 +11,14 @@ import js.core.JsString
 external interface Pseudoterminal {
     /**
      * An event that when fired will write data to the terminal. Unlike
-     * {@link Terminal.sendText} which sends text to the underlying child
+     * [Terminal.sendText] which sends text to the underlying child
      * pseudo-device (the child), this will write the text to parent pseudo-device (the
      * _terminal_ itself).
      *
      * Note writing `\n` will just move the cursor down 1 row, you need to write `\r` as well
      * to move the cursor to the left-most cell.
      *
-     * Events fired before {@link Pseudoterminal.open} is called will be be ignored.
+     * Events fired before [Pseudoterminal.open] is called will be be ignored.
      *
      * **Example:** Write red text to the terminal
      * ```typescript
@@ -39,13 +39,13 @@ external interface Pseudoterminal {
     var onDidWrite: Event<JsString>
 
     /**
-     * An event that when fired allows overriding the {@link Pseudoterminal.setDimensions dimensions} of the
+     * An event that when fired allows overriding the [dimensions][Pseudoterminal.setDimensions] of the
      * terminal. Note that when set, the overridden dimensions will only take effect when they
      * are lower than the actual dimensions of the terminal (ie. there will never be a scroll
      * bar). Set to `undefined` for the terminal to go back to the regular dimensions (fit to
      * the size of the panel).
      *
-     * Events fired before {@link Pseudoterminal.open} is called will be be ignored.
+     * Events fired before [Pseudoterminal.open] is called will be be ignored.
      *
      * **Example:** Override the dimensions of a terminal to 20 columns and 10 rows
      * ```typescript
@@ -69,7 +69,7 @@ external interface Pseudoterminal {
     /**
      * An event that when fired will signal that the pty is closed and dispose of the terminal.
      *
-     * Events fired before {@link Pseudoterminal.open} is called will be be ignored.
+     * Events fired before [Pseudoterminal.open] is called will be be ignored.
      *
      * A number can be used to provide an exit code for the terminal. Exit codes must be
      * positive and a non-zero exit codes signals failure which shows a notification for a
@@ -101,7 +101,7 @@ external interface Pseudoterminal {
     /**
      * An event that when fired allows changing the name of the terminal.
      *
-     * Events fired before {@link Pseudoterminal.open} is called will be be ignored.
+     * Events fired before [Pseudoterminal.open] is called will be be ignored.
      *
      * **Example:** Change the terminal name to "My new terminal".
      * ```typescript
@@ -133,7 +133,7 @@ external interface Pseudoterminal {
 
     /**
      * Implement to handle incoming keystrokes in the terminal or when an extension calls
-     * {@link Terminal.sendText}. `data` contains the keystrokes/text serialized into
+     * [Terminal.sendText]. `data` contains the keystrokes/text serialized into
      * their corresponding VT sequence representation.
      *
      * @param data The incoming data.
@@ -160,7 +160,7 @@ external interface Pseudoterminal {
      * as the size of a terminal isn't known until it shows up in the user interface.
      *
      * When dimensions are overridden by
-     * {@link Pseudoterminal.onDidOverrideDimensions onDidOverrideDimensions}, `setDimensions` will
+     * [onDidOverrideDimensions][Pseudoterminal.onDidOverrideDimensions], `setDimensions` will
      * continue to be called with the regular panel dimensions, allowing the extension continue
      * to react dimension changes.
      *

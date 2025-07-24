@@ -24,7 +24,7 @@ open external class Diagnostic {
     var message: String
 
     /**
-     * The severity, default is {@link DiagnosticSeverity.Error error}.
+     * The severity, default is [error][DiagnosticSeverity.Error].
      */
     var severity: DiagnosticSeverity
 
@@ -36,7 +36,7 @@ open external class Diagnostic {
 
     /**
      * A code or identifier for this diagnostic.
-     * Should be used for later processing, e.g. when providing {@link CodeActionContext code actions}.
+     * Should be used for later processing, e.g. when providing [code actions][CodeActionContext].
      */
     /*
     code?: string | number | {
@@ -69,7 +69,7 @@ open external class Diagnostic {
      *
      * @param range The range to which this diagnostic applies.
      * @param message The human-readable message.
-     * @param severity The severity, default is {@link DiagnosticSeverity.Error error}.
+     * @param severity The severity, default is [error][DiagnosticSeverity.Error].
      */
     constructor(
         range: Range,

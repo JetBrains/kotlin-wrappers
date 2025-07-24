@@ -3,7 +3,7 @@
 package vscode
 
 /**
- * Optional options to be used when calling {@link authentication.getSession} with the flag `forceNewSession`.
+ * Optional options to be used when calling [authentication.getSession] with the flag `forceNewSession`.
  * @deprecated Use [AuthenticationGetSessionPresentationOptions] instead.
  */
 typealias AuthenticationForceNewSessionOptions = AuthenticationGetSessionPresentationOptions

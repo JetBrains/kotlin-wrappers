@@ -20,7 +20,7 @@ external interface TabGroupChangeEvent {
 
     /**
      * Tab groups that have changed, e.g have changed
-     * their {@link TabGroup.isActive active} state.
+     * their [active][TabGroup.isActive] state.
      */
     val changed: ReadonlyArray<TabGroup>
 }

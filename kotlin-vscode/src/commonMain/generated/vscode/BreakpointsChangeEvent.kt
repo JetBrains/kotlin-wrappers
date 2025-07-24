@@ -5,7 +5,7 @@ package vscode
 import js.array.ReadonlyArray
 
 /**
- * An event describing the changes to the set of {@link Breakpoint breakpoints}.
+ * An event describing the changes to the set of [breakpoints][Breakpoint].
  */
 external interface BreakpointsChangeEvent {
     /**

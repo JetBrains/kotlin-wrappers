@@ -3,7 +3,7 @@
 package vscode
 
 /**
- * Optional options to be used when calling {@link authentication.getSession} with interactive options `forceNewSession` & `createIfNone`.
+ * Optional options to be used when calling [authentication.getSession] with interactive options `forceNewSession` & `createIfNone`.
  */
 external interface AuthenticationGetSessionPresentationOptions {
     /**

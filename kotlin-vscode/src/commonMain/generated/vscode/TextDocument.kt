@@ -9,7 +9,7 @@ import kotlin.js.definedExternally
 
 /**
  * Represents a text document, such as a source file. Text documents have
- * {@link TextLine lines} and knowledge about an underlying resource like a file.
+ * [lines][TextLine] and knowledge about an underlying resource like a file.
  */
 external interface TextDocument {
     /**
@@ -25,14 +25,14 @@ external interface TextDocument {
 
     /**
      * The file system path of the associated resource. Shorthand
-     * notation for {@link TextDocument.uri TextDocument.uri.fsPath}. Independent of the uri scheme.
+     * notation for [TextDocument.uri.fsPath][TextDocument.uri]. Independent of the uri scheme.
      */
     val fileName: String
 
     /**
      * Is this document representing an untitled file which has never been saved yet. *Note* that
      * this does not mean the document will be saved to disk, use {@linkcode Uri.scheme}
-     * to figure out where a document will be {@link FileSystemProvider saved}, e.g. `file`, `ftp` etc.
+     * to figure out where a document will be [saved][FileSystemProvider], e.g. `file`, `ftp` etc.
      */
     val isUntitled: Boolean
 
@@ -44,7 +44,7 @@ external interface TextDocument {
     /**
      * The file encoding of this document that will be used when the document is saved.
      *
-     * Use the {@link workspace.onDidChangeTextDocument onDidChangeTextDocument}-event to
+     * Use the [onDidChangeTextDocument][workspace.onDidChangeTextDocument]-event to
      * get notified when the document encoding changes.
      *
      * Note that the possible encoding values are currently defined as any of the following:
@@ -85,7 +85,7 @@ external interface TextDocument {
     fun save(): PromiseLike<JsBoolean>
 
     /**
-     * The {@link EndOfLine end of line} sequence that is predominately
+     * The [end of line][EndOfLine] sequence that is predominately
      * used in this document.
      */
     val eol: EndOfLine
@@ -101,7 +101,7 @@ external interface TextDocument {
      * document are not reflected.
      *
      * @param line A line number in `[0, lineCount)`.
-     * @returns A {@link TextLine line}.
+     * @returns A [line][TextLine].
      */
     fun lineAt(line: Int): TextLine
 
@@ -110,19 +110,19 @@ external interface TextDocument {
      * that the returned object is *not* live and changes to the
      * document are not reflected.
      *
-     * The position will be {@link TextDocument.validatePosition adjusted}.
+     * The position will be [adjusted][TextDocument.validatePosition].
      *
-     * @see {@link TextDocument.lineAt}
+     * @see [TextDocument.lineAt]
      *
      * @param position A position.
-     * @returns A {@link TextLine line}.
+     * @returns A [line][TextLine].
      */
     fun lineAt(position: Position): TextLine
 
     /**
      * Converts the position to a zero-based offset.
      *
-     * The position will be {@link TextDocument.validatePosition adjusted}.
+     * The position will be [adjusted][TextDocument.validatePosition].
      *
      * @param position A position.
      * @returns A valid zero-based offset in UTF-16 [code units](https://developer.mozilla.org/en-US/docs/Glossary/Code_unit).
@@ -139,7 +139,7 @@ external interface TextDocument {
 
     /**
      * Get the text of this document. A substring can be retrieved by providing
-     * a range. The range will be {@link TextDocument.validateRange adjusted}.
+     * a range. The range will be [adjusted][TextDocument.validateRange].
      *
      * @param range Include only the text included by the range.
      * @returns The text inside the provided range or the entire text.
@@ -158,7 +158,7 @@ external interface TextDocument {
      * and in the name of speed regular expressions should not match words with
      * spaces. Use {@linkcode TextLine.text} for more complex, non-wordy, scenarios.
      *
-     * The position will be {@link TextDocument.validatePosition adjusted}.
+     * The position will be [adjusted][TextDocument.validatePosition].
      *
      * @param position A position.
      * @param regex Optional regular expression that describes what a word is.

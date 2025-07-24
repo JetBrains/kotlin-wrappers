@@ -15,7 +15,7 @@ external interface DocumentLinkProvider<T : DocumentLink> {
      *
      * @param document The document in which the command was invoked.
      * @param token A cancellation token.
-     * @returns An array of {@link DocumentLink document links} or a thenable that resolves to such. The lack of a result
+     * @returns An array of [document links][DocumentLink] or a thenable that resolves to such. The lack of a result
      * can be signaled by returning `undefined`, `null`, or an empty array.
      */
     fun provideDocumentLinks(
@@ -24,7 +24,7 @@ external interface DocumentLinkProvider<T : DocumentLink> {
     ): ProviderResult<ReadonlyArray<T>>
 
     /**
-     * Given a link fill in its {@link DocumentLink.target target}. This method is called when an incomplete
+     * Given a link fill in its [target][DocumentLink.target]. This method is called when an incomplete
      * link is selected in the UI. Providers can implement this method and return incomplete links
      * (without target) from the {@linkcode DocumentLinkProvider.provideDocumentLinks provideDocumentLinks} method which
      * often helps to improve performance.

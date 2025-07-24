@@ -17,8 +17,8 @@ open external class ParameterInformation {
      * The label of this signature.
      *
      * Either a string or inclusive start and exclusive end offsets within its containing
-     * {@link SignatureInformation.label signature label}. *Note*: A label of type string must be
-     * a substring of its containing signature information's {@link SignatureInformation.label label}.
+     * [signature label][SignatureInformation.label]. *Note*: A label of type string must be
+     * a substring of its containing signature information's [label][SignatureInformation.label].
      */
     var label: JsAny /* string | [number, number] */
 

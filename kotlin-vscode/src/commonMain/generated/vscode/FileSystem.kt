@@ -11,7 +11,7 @@ import js.typedarrays.Uint8Array
 
 /**
  * The file system interface exposes the editor's built-in and contributed
- * {@link FileSystemProvider file system providers}. It allows extensions to work
+ * [file system providers][FileSystemProvider]. It allows extensions to work
  * with files from the local disk as well as files from remote places, like the
  * remote extension host or ftp-servers.
  *
@@ -27,7 +27,7 @@ external interface FileSystem {
     fun stat(uri: Uri): PromiseLike<FileStat>
 
     /**
-     * Retrieve all entries of a {@link FileType.Directory directory}.
+     * Retrieve all entries of a [directory][FileType.Directory].
      *
      * @param uri The uri of the folder.
      * @returns An array of name/type-tuples or a thenable that resolves to such.

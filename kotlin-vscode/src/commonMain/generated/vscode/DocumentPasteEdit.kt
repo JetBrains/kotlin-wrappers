@@ -18,14 +18,14 @@ open external class DocumentPasteEdit {
     var title: String
 
     /**
-     * {@link DocumentDropOrPasteEditKind Kind} of the edit.
+     * [Kind][DocumentDropOrPasteEditKind] of the edit.
      */
     var kind: DocumentDropOrPasteEditKind
 
     /**
      * The text or snippet to insert at the pasted locations.
      *
-     * If your edit requires more advanced insertion logic, set this to an empty string and provide an {@link DocumentPasteEdit.additionalEdit additional edit} instead.
+     * If your edit requires more advanced insertion logic, set this to an empty string and provide an [additional edit][DocumentPasteEdit.additionalEdit] instead.
      */
     var insertText: JsAny /* string | SnippetString */
 
@@ -46,7 +46,7 @@ open external class DocumentPasteEdit {
      *
      * @param insertText The text or snippet to insert at the pasted locations.
      * @param title Human readable label that describes the edit.
-     * @param kind {@link DocumentDropOrPasteEditKind Kind} of the edit.
+     * @param kind [Kind][DocumentDropOrPasteEditKind] of the edit.
      */
     constructor(
         insertText: JsAny, /* string | SnippetString */

@@ -34,8 +34,8 @@ open external class FileCoverage {
     var declarationCoverage: TestCoverageCount?
 
     /**
-     * A list of {@link TestItem test cases} that generated coverage in this
-     * file. If set, then {@link TestRunProfile.loadDetailedCoverageForTest}
+     * A list of [test cases][TestItem] that generated coverage in this
+     * file. If set, then [TestRunProfile.loadDetailedCoverageForTest]
      * should also be defined in order to retrieve detailed coverage information.
      */
     var includesTests: ReadonlyArray<TestItem>?
@@ -47,7 +47,7 @@ open external class FileCoverage {
      * used to represent line coverage.
      * @param branchCoverage Branch coverage information
      * @param declarationCoverage Declaration coverage information
-     * @param includesTests Test cases included in this coverage report, see {@link FileCoverage.includesTests}
+     * @param includesTests Test cases included in this coverage report, see [FileCoverage.includesTests]
      */
     /*
     constructor(

@@ -19,7 +19,7 @@ external interface LanguageStatusItem :
     var name: String?
 
     /**
-     * A {@link DocumentSelector selector} that defines for what editors
+     * A [selector][DocumentSelector] that defines for what editors
      * this item shows.
      */
     var selector: DocumentSelector
@@ -27,7 +27,7 @@ external interface LanguageStatusItem :
     /**
      * The severity of this item.
      *
-     * Defaults to {@link LanguageStatusSeverity.Information information}. You can use this property to
+     * Defaults to [information][LanguageStatusSeverity.Information]. You can use this property to
      * signal to users that there is a problem that needs attention, like a missing executable or an
      * invalid configuration.
      */

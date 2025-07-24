@@ -24,15 +24,15 @@ open external class ColorPresentation {
     var label: String
 
     /**
-     * An {@link TextEdit edit} which is applied to a document when selecting
-     * this presentation for the color.  When `falsy` the {@link ColorPresentation.label label}
+     * An [edit][TextEdit] which is applied to a document when selecting
+     * this presentation for the color.  When `falsy` the [label][ColorPresentation.label]
      * is used.
      */
     var textEdit: TextEdit?
 
     /**
-     * An optional array of additional {@link TextEdit text edits} that are applied when
-     * selecting this color presentation. Edits must not overlap with the main {@link ColorPresentation.textEdit edit} nor with themselves.
+     * An optional array of additional [text edits][TextEdit] that are applied when
+     * selecting this color presentation. Edits must not overlap with the main [edit][ColorPresentation.textEdit] nor with themselves.
      */
     var additionalTextEdits: ReadonlyArray<TextEdit>?
 

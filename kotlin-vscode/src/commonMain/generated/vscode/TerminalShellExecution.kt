@@ -10,9 +10,9 @@ import js.iterable.AsyncIterable
  */
 external interface TerminalShellExecution {
     /**
-     * The command line that was executed. The {@link TerminalShellExecutionCommandLineConfidence confidence}
+     * The command line that was executed. The [confidence][TerminalShellExecutionCommandLineConfidence]
      * of this value depends on the specific shell's shell integration implementation. This
-     * value may become more accurate after {@link window.onDidEndTerminalShellExecution} is
+     * value may become more accurate after [window.onDidEndTerminalShellExecution] is
      * fired.
      *
      * @example
@@ -46,8 +46,8 @@ external interface TerminalShellExecution {
      * Creates a stream of raw data (including escape sequences) that is written to the
      * terminal. This will only include data that was written after `read` was called for
      * the first time, ie. you must call `read` immediately after the command is executed via
-     * {@link TerminalShellIntegration.executeCommand} or
-     * {@link window.onDidStartTerminalShellExecution} to not miss any data.
+     * [TerminalShellIntegration.executeCommand] or
+     * [window.onDidStartTerminalShellExecution] to not miss any data.
      *
      * @example
      * // Log all data written to the terminal for a command

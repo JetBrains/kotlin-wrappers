@@ -7,11 +7,11 @@ import js.core.JsAny
 import js.promise.PromiseLike
 
 /**
- * An event that is fired when a {@link TextDocument document} will be saved.
+ * An event that is fired when a [document][TextDocument] will be saved.
  *
  * To make modifications to the document before it is being saved, call the
  * {@linkcode TextDocumentWillSaveEvent.waitUntil waitUntil}-function with a thenable
- * that resolves to an array of {@link TextEdit text edits}.
+ * that resolves to an array of [text edits][TextEdit].
  */
 external interface TextDocumentWillSaveEvent {
     /**
@@ -25,7 +25,7 @@ external interface TextDocumentWillSaveEvent {
     val reason: TextDocumentSaveReason
 
     /**
-     * Allows to pause the event loop and to apply {@link TextEdit pre-save-edits}.
+     * Allows to pause the event loop and to apply [pre-save-edits][TextEdit].
      * Edits of subsequent calls to this function will be applied in order. The
      * edits will be *ignored* if concurrent modifications of the document happened.
      *
@@ -42,7 +42,7 @@ external interface TextDocumentWillSaveEvent {
      * })
      * ```
      *
-     * @param thenable A thenable that resolves to {@link TextEdit pre-save-edits}.
+     * @param thenable A thenable that resolves to [pre-save-edits][TextEdit].
      */
     fun waitUntil(thenable: PromiseLike<ReadonlyArray<TextEdit>>)
 

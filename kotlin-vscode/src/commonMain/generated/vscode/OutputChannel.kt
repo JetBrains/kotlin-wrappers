@@ -8,7 +8,7 @@ import kotlin.js.definedExternally
  * An output channel is a container for readonly textual information.
  *
  * To get an instance of an `OutputChannel` use
- * {@link window.createOutputChannel createOutputChannel}.
+ * [createOutputChannel][window.createOutputChannel].
  */
 external interface OutputChannel :
     DisposableLike {

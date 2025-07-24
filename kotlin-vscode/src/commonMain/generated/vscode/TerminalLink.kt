@@ -12,12 +12,12 @@ import kotlin.js.definedExternally
  */
 open external class TerminalLink {
     /**
-     * The start index of the link on {@link TerminalLinkContext.line}.
+     * The start index of the link on [TerminalLinkContext.line].
      */
     var startIndex: Int
 
     /**
-     * The length of the link on {@link TerminalLinkContext.line}.
+     * The length of the link on [TerminalLinkContext.line].
      */
     var length: Int
 
@@ -32,8 +32,8 @@ open external class TerminalLink {
 
     /**
      * Creates a new terminal link.
-     * @param startIndex The start index of the link on {@link TerminalLinkContext.line}.
-     * @param length The length of the link on {@link TerminalLinkContext.line}.
+     * @param startIndex The start index of the link on [TerminalLinkContext.line].
+     * @param length The length of the link on [TerminalLinkContext.line].
      * @param tooltip The tooltip text when you hover over this link.
      *
      * If a tooltip is provided, is will be displayed in a string that includes instructions on

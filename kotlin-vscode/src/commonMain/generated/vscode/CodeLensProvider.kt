@@ -6,7 +6,7 @@ import js.array.ReadonlyArray
 import js.core.Void
 
 /**
- * A code lens provider adds {@link Command commands} to source text. The commands will be shown
+ * A code lens provider adds [commands][Command] to source text. The commands will be shown
  * as dedicated horizontal lines in between the source text.
  */
 external interface CodeLensProvider<T : CodeLens> {
@@ -16,9 +16,9 @@ external interface CodeLensProvider<T : CodeLens> {
     var onDidChangeCodeLenses: Event<Void>?
 
     /**
-     * Compute a list of {@link CodeLens lenses}. This call should return as fast as possible and if
+     * Compute a list of [lenses][CodeLens]. This call should return as fast as possible and if
      * computing the commands is expensive implementors should only return code lens objects with the
-     * range set and implement {@link CodeLensProvider.resolveCodeLens resolve}.
+     * range set and implement [resolve][CodeLensProvider.resolveCodeLens].
      *
      * @param document The document in which the command was invoked.
      * @param token A cancellation token.
@@ -32,7 +32,7 @@ external interface CodeLensProvider<T : CodeLens> {
 
     /**
      * This function will be called for each visible code lens, usually when scrolling and after
-     * calls to {@link CodeLensProvider.provideCodeLenses compute}-lenses.
+     * calls to [compute][CodeLensProvider.provideCodeLenses]-lenses.
      *
      * @param codeLens Code lens that must be resolved.
      * @param token A cancellation token.

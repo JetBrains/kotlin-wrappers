@@ -14,7 +14,7 @@ import kotlin.js.JsModule
  */
 open external class NotebookCellData {
     /**
-     * The {@link NotebookCellKind kind} of this cell data.
+     * The [kind][NotebookCellKind] of this cell data.
      */
     var kind: NotebookCellKind
 

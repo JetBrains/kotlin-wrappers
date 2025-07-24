@@ -14,7 +14,7 @@ external interface StatusBarItem :
      * The identifier of this item.
      *
      * *Note*: if no identifier was provided by the {@linkcode window.createStatusBarItem}
-     * method, the identifier will match the {@link Extension.id extension identifier}.
+     * method, the identifier will match the [extension identifier][Extension.id].
      */
     val id: String
 
@@ -73,7 +73,7 @@ external interface StatusBarItem :
     /**
      * {@linkcode Command} or identifier of a command to run on click.
      *
-     * The command must be {@link commands.getCommands known}.
+     * The command must be [known][commands.getCommands].
      *
      * Note that if this is a {@linkcode Command} object, only the {@linkcode Command.command command} and {@linkcode Command.arguments arguments}
      * are used by the editor.
@@ -97,7 +97,7 @@ external interface StatusBarItem :
 
     /**
      * Dispose and free associated resources. Call
-     * {@link StatusBarItem.hide hide}.
+     * [hide][StatusBarItem.hide].
      */
     override fun dispose()
 }

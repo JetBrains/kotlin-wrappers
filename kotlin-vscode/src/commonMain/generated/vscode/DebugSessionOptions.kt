@@ -3,7 +3,7 @@
 package vscode
 
 /**
- * Options for {@link debug.startDebugging starting a debug session}.
+ * Options for [starting a debug session][debug.startDebugging].
  */
 external interface DebugSessionOptions {
     /**

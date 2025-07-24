@@ -9,12 +9,12 @@ import js.core.Void
 /**
  * A concrete [QuickInput] to let the user pick an item from a
  * list of items of type T. The items can be filtered through a filter text field and
- * there is an option {@link QuickPick.canSelectMany canSelectMany} to allow for
+ * there is an option [canSelectMany][QuickPick.canSelectMany] to allow for
  * selecting multiple items.
  *
- * Note that in many cases the more convenient {@link window.showQuickPick}
- * is easier to use. {@link window.createQuickPick} should be used
- * when {@link window.showQuickPick} does not offer the required flexibility.
+ * Note that in many cases the more convenient [window.showQuickPick]
+ * is easier to use. [window.createQuickPick] should be used
+ * when [window.showQuickPick] does not offer the required flexibility.
  */
 external interface QuickPick<
         T :

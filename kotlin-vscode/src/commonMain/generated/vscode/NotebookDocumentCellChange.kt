@@ -20,7 +20,7 @@ external interface NotebookDocumentCellChange {
     /**
      * The document of the cell or `undefined` when it did not change.
      *
-     * *Note* that you should use the {@link workspace.onDidChangeTextDocument onDidChangeTextDocument}-event
+     * *Note* that you should use the [onDidChangeTextDocument][workspace.onDidChangeTextDocument]-event
      * for detailed change information, like what edits have been performed.
      */
     val document: TextDocument?

@@ -3,16 +3,16 @@
 package vscode
 
 /**
- * Represents an event describing the change in a {@link TextEditor.options text editor's options}.
+ * Represents an event describing the change in a [text editor's options][TextEditor.options].
  */
 external interface TextEditorOptionsChangeEvent {
     /**
-     * The {@link TextEditor text editor} for which the options have changed.
+     * The [text editor][TextEditor] for which the options have changed.
      */
     val textEditor: TextEditor
 
     /**
-     * The new value for the {@link TextEditor.options text editor's options}.
+     * The new value for the [text editor's options][TextEditor.options].
      */
     val options: TextEditorOptions
 }

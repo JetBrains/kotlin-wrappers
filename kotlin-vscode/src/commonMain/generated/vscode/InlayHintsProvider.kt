@@ -18,7 +18,7 @@ external interface InlayHintsProvider<T : InlayHint> {
     /**
      * Provide inlay hints for the given range and document.
      *
-     * *Note* that inlay hints that are not {@link Range.contains contained} by the given range are ignored.
+     * *Note* that inlay hints that are not [contained][Range.contains] by the given range are ignored.
      *
      * @param document The document in which the command was invoked.
      * @param range The range for which inlay hints should be computed.
@@ -32,8 +32,8 @@ external interface InlayHintsProvider<T : InlayHint> {
     ): ProviderResult<ReadonlyArray<T>>
 
     /**
-     * Given an inlay hint fill in {@link InlayHint.tooltip tooltip}, {@link InlayHint.textEdits text edits},
-     * or complete label {@link InlayHintLabelPart parts}.
+     * Given an inlay hint fill in [tooltip}, {@link InlayHint.textEdits text edits][InlayHint.tooltip],
+     * or complete label [parts][InlayHintLabelPart].
      *
      * *Note* that the editor will resolve an inlay hint at most once.
      *

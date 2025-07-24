@@ -14,9 +14,9 @@ open external class ChatRequestTurn {
     /**
      * The prompt as entered by the user.
      *
-     * Information about references used in this request is stored in {@link ChatRequestTurn.references}.
+     * Information about references used in this request is stored in [ChatRequestTurn.references].
      *
-     * *Note* that the {@link ChatParticipant.name name} of the participant and the {@link ChatCommand.name command}
+     * *Note* that the [name} of the participant and the {@link ChatCommand.name command][ChatParticipant.name]
      * are not part of the prompt.
      */
     val prompt: String
@@ -27,7 +27,7 @@ open external class ChatRequestTurn {
     val participant: String
 
     /**
-     * The name of the {@link ChatCommand command} that was selected for this request.
+     * The name of the [command][ChatCommand] that was selected for this request.
      */
     val command: String?
 

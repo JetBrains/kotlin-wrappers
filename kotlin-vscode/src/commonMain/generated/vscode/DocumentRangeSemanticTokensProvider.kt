@@ -8,7 +8,7 @@ package vscode
  */
 external interface DocumentRangeSemanticTokensProvider {
     /**
-     * @see {@link DocumentSemanticTokensProvider.provideDocumentSemanticTokens provideDocumentSemanticTokens}.
+     * @see [provideDocumentSemanticTokens][DocumentSemanticTokensProvider.provideDocumentSemanticTokens].
      */
     fun provideDocumentRangeSemanticTokens(
         document: TextDocument,

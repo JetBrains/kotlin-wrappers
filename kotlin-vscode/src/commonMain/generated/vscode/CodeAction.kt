@@ -21,12 +21,12 @@ open external class CodeAction {
     var title: String
 
     /**
-     * A {@link WorkspaceEdit workspace edit} this code action performs.
+     * A [workspace edit][WorkspaceEdit] this code action performs.
      */
     var edit: WorkspaceEdit?
 
     /**
-     * {@link Diagnostic Diagnostics} that this code action resolves.
+     * [Diagnostics][Diagnostic] that this code action resolves.
      */
     var diagnostics: ReadonlyArray<Diagnostic>?
 
@@ -39,7 +39,7 @@ open external class CodeAction {
     var command: Command?
 
     /**
-     * {@link CodeActionKind Kind} of the code action.
+     * [Kind][CodeActionKind] of the code action.
      *
      * Used to filter code actions.
      */
@@ -81,8 +81,8 @@ open external class CodeAction {
     /**
      * Creates a new code action.
      *
-     * A code action must have at least a {@link CodeAction.title title} and {@link CodeAction.edit edits}
-     * and/or a {@link CodeAction.command command}.
+     * A code action must have at least a [title} and {@link CodeAction.edit edits][CodeAction.title]
+     * and/or a [command][CodeAction.command].
      *
      * @param title The title of the code action.
      * @param kind The kind of the code action.

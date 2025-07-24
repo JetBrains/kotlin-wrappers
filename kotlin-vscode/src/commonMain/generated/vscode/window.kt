@@ -9,6 +9,7 @@ import js.core.JsAny
 import js.core.JsString
 import js.promise.PromiseLike
 import vscode.window.createStatusBarItem
+import vscode.window.showInformationMessage
 import kotlin.js.JsModule
 import kotlin.js.definedExternally
 
@@ -36,14 +37,14 @@ external object window {
     var visibleTextEditors: ReadonlyArray<TextEditor>
 
     /**
-     * An [Event] which fires when the {@link window.activeTextEditor active editor}
+     * An [Event] which fires when the [active editor][window.activeTextEditor]
      * has changed. *Note* that the event also fires when the active editor changes
      * to `undefined`.
      */
     val onDidChangeActiveTextEditor: Event<TextEditor?>
 
     /**
-     * An [Event] which fires when the array of {@link window.visibleTextEditors visible editors}
+     * An [Event] which fires when the array of [visible editors][window.visibleTextEditors]
      * has changed.
      */
     val onDidChangeVisibleTextEditors: Event<ReadonlyArray<TextEditor>>
@@ -69,38 +70,38 @@ external object window {
     val onDidChangeTextEditorViewColumn: Event<TextEditorViewColumnChangeEvent>
 
     /**
-     * The currently visible {@link NotebookEditor notebook editors} or an empty array.
+     * The currently visible [notebook editors][NotebookEditor] or an empty array.
      */
     val visibleNotebookEditors: ReadonlyArray<NotebookEditor>
 
     /**
-     * An [Event] which fires when the {@link window.visibleNotebookEditors visible notebook editors}
+     * An [Event] which fires when the [visible notebook editors][window.visibleNotebookEditors]
      * has changed.
      */
     val onDidChangeVisibleNotebookEditors: Event<ReadonlyArray<NotebookEditor>>
 
     /**
-     * The currently active {@link NotebookEditor notebook editor} or `undefined`. The active editor is the one
+     * The currently active [notebook editor][NotebookEditor] or `undefined`. The active editor is the one
      * that currently has focus or, when none has focus, the one that has changed
      * input most recently.
      */
     val activeNotebookEditor: NotebookEditor?
 
     /**
-     * An [Event] which fires when the {@link window.activeNotebookEditor active notebook editor}
+     * An [Event] which fires when the [active notebook editor][window.activeNotebookEditor]
      * has changed. *Note* that the event also fires when the active editor changes
      * to `undefined`.
      */
     val onDidChangeActiveNotebookEditor: Event<NotebookEditor?>
 
     /**
-     * An [Event] which fires when the {@link NotebookEditor.selections notebook editor selections}
+     * An [Event] which fires when the [notebook editor selections][NotebookEditor.selections]
      * have changed.
      */
     val onDidChangeNotebookEditorSelection: Event<NotebookEditorSelectionChangeEvent>
 
     /**
-     * An [Event] which fires when the {@link NotebookEditor.visibleRanges notebook editor visible ranges}
+     * An [Event] which fires when the [notebook editor visible ranges][NotebookEditor.visibleRanges]
      * have changed.
      */
     val onDidChangeNotebookEditorVisibleRanges: Event<NotebookEditorVisibleRangesChangeEvent>
@@ -117,7 +118,7 @@ external object window {
     val activeTerminal: Terminal?
 
     /**
-     * An [Event] which fires when the {@link window.activeTerminal active terminal}
+     * An [Event] which fires when the [active terminal][window.activeTerminal]
      * has changed. *Note* that the event also fires when the active terminal changes
      * to `undefined`.
      */
@@ -125,7 +126,7 @@ external object window {
 
     /**
      * An [Event] which fires when a terminal has been created, either through the
-     * {@link window.createTerminal createTerminal} API or commands.
+     * [createTerminal][window.createTerminal] API or commands.
      */
     val onDidOpenTerminal: Event<Terminal>
 
@@ -135,7 +136,7 @@ external object window {
     val onDidCloseTerminal: Event<Terminal>
 
     /**
-     * An [Event] which fires when a {@link Terminal.state terminal's state} has changed.
+     * An [Event] which fires when a [terminal's state][Terminal.state] has changed.
      */
     val onDidChangeTerminalState: Event<Terminal>
 
@@ -170,15 +171,15 @@ external object window {
     val onDidChangeWindowState: Event<WindowState>
 
     /**
-     * Show the given document in a text editor. A {@link ViewColumn column} can be provided
-     * to control where the editor is being shown. Might change the {@link window.activeTextEditor active editor}.
+     * Show the given document in a text editor. A [column][ViewColumn] can be provided
+     * to control where the editor is being shown. Might change the [active editor][window.activeTextEditor].
      *
      * @param document A text document to be shown.
-     * @param column A view column in which the {@link TextEditor editor} should be shown. The default is the {@link ViewColumn.Active active}.
+     * @param column A view column in which the [editor} should be shown. The default is the {@link ViewColumn.Active active][TextEditor].
      * Columns that do not exist will be created as needed up to the maximum of {@linkcode ViewColumn.Nine}. Use {@linkcode ViewColumn.Beside}
      * to open the editor to the side of the currently active one.
      * @param preserveFocus When `true` the editor will not take focus.
-     * @returns A promise that resolves to an {@link TextEditor editor}.
+     * @returns A promise that resolves to an [editor][TextEditor].
      */
     fun showTextDocument(
         document: TextDocument,
@@ -187,12 +188,12 @@ external object window {
     ): PromiseLike<TextEditor>
 
     /**
-     * Show the given document in a text editor. {@link TextDocumentShowOptions Options} can be provided
-     * to control options of the editor is being shown. Might change the {@link window.activeTextEditor active editor}.
+     * Show the given document in a text editor. [Options][TextDocumentShowOptions] can be provided
+     * to control options of the editor is being shown. Might change the [active editor][window.activeTextEditor].
      *
      * @param document A text document to be shown.
-     * @param options {@link TextDocumentShowOptions Editor options} to configure the behavior of showing the {@link TextEditor editor}.
-     * @returns A promise that resolves to an {@link TextEditor editor}.
+     * @param options [Editor options} to configure the behavior of showing the {@link TextEditor editor][TextDocumentShowOptions].
+     * @returns A promise that resolves to an [editor][TextEditor].
      */
     fun showTextDocument(
         document: TextDocument,
@@ -202,11 +203,11 @@ external object window {
     /**
      * A short-hand for `openTextDocument(uri).then(document => showTextDocument(document, options))`.
      *
-     * @see {@link workspace.openTextDocument}
+     * @see [workspace.openTextDocument]
      *
      * @param uri A resource identifier.
-     * @param options {@link TextDocumentShowOptions Editor options} to configure the behavior of showing the {@link TextEditor editor}.
-     * @returns A promise that resolves to an {@link TextEditor editor}.
+     * @param options [Editor options} to configure the behavior of showing the {@link TextEditor editor][TextDocumentShowOptions].
+     * @returns A promise that resolves to an [editor][TextEditor].
      */
     fun showTextDocument(
         uri: Uri,
@@ -214,12 +215,12 @@ external object window {
     ): PromiseLike<TextEditor>
 
     /**
-     * Show the given [NotebookDocument] in a {@link NotebookEditor notebook editor}.
+     * Show the given [NotebookDocument] in a [notebook editor][NotebookEditor].
      *
      * @param document A text document to be shown.
-     * @param options {@link NotebookDocumentShowOptions Editor options} to configure the behavior of showing the {@link NotebookEditor notebook editor}.
+     * @param options [Editor options} to configure the behavior of showing the {@link NotebookEditor notebook editor][NotebookDocumentShowOptions].
      *
-     * @returns A promise that resolves to an {@link NotebookEditor notebook editor}.
+     * @returns A promise that resolves to an [notebook editor][NotebookEditor].
      */
     fun showNotebookDocument(
         document: NotebookDocument,
@@ -265,7 +266,7 @@ external object window {
     /**
      * Show an information message.
      *
-     * @see {@link window.showInformationMessage showInformationMessage}
+     * @see [showInformationMessage][window.showInformationMessage]
      *
      * @param message The message to show.
      * @param items A set of items that will be rendered as actions in the message.
@@ -279,7 +280,7 @@ external object window {
     /**
      * Show an information message.
      *
-     * @see {@link window.showInformationMessage showInformationMessage}
+     * @see [showInformationMessage][window.showInformationMessage]
      *
      * @param message The message to show.
      * @param options Configures the behaviour of the message.
@@ -295,7 +296,7 @@ external object window {
     /**
      * Show a warning message.
      *
-     * @see {@link window.showInformationMessage showInformationMessage}
+     * @see [showInformationMessage][window.showInformationMessage]
      *
      * @param message The message to show.
      * @param items A set of items that will be rendered as actions in the message.
@@ -309,7 +310,7 @@ external object window {
     /**
      * Show a warning message.
      *
-     * @see {@link window.showInformationMessage showInformationMessage}
+     * @see [showInformationMessage][window.showInformationMessage]
      *
      * @param message The message to show.
      * @param options Configures the behaviour of the message.
@@ -325,7 +326,7 @@ external object window {
     /**
      * Show a warning message.
      *
-     * @see {@link window.showInformationMessage showInformationMessage}
+     * @see [showInformationMessage][window.showInformationMessage]
      *
      * @param message The message to show.
      * @param items A set of items that will be rendered as actions in the message.
@@ -339,7 +340,7 @@ external object window {
     /**
      * Show a warning message.
      *
-     * @see {@link window.showInformationMessage showInformationMessage}
+     * @see [showInformationMessage][window.showInformationMessage]
      *
      * @param message The message to show.
      * @param options Configures the behaviour of the message.
@@ -355,7 +356,7 @@ external object window {
     /**
      * Show an error message.
      *
-     * @see {@link window.showInformationMessage showInformationMessage}
+     * @see [showInformationMessage][window.showInformationMessage]
      *
      * @param message The message to show.
      * @param items A set of items that will be rendered as actions in the message.
@@ -369,7 +370,7 @@ external object window {
     /**
      * Show an error message.
      *
-     * @see {@link window.showInformationMessage showInformationMessage}
+     * @see [showInformationMessage][window.showInformationMessage]
      *
      * @param message The message to show.
      * @param options Configures the behaviour of the message.
@@ -385,7 +386,7 @@ external object window {
     /**
      * Show an error message.
      *
-     * @see {@link window.showInformationMessage showInformationMessage}
+     * @see [showInformationMessage][window.showInformationMessage]
      *
      * @param message The message to show.
      * @param items A set of items that will be rendered as actions in the message.
@@ -399,7 +400,7 @@ external object window {
     /**
      * Show an error message.
      *
-     * @see {@link window.showInformationMessage showInformationMessage}
+     * @see [showInformationMessage][window.showInformationMessage]
      *
      * @param message The message to show.
      * @param options Configures the behaviour of the message.
@@ -461,7 +462,7 @@ external object window {
     ): PromiseLike<T?>
 
     /**
-     * Shows a selection list of {@link workspace.workspaceFolders workspace folders} to pick from.
+     * Shows a selection list of [workspace folders][workspace.workspaceFolders] to pick from.
      * Returns `undefined` if no folder is open.
      *
      * @param options Configures the behavior of the workspace folder list.
@@ -507,9 +508,9 @@ external object window {
      * Creates a [QuickPick] to let the user pick an item from a list
      * of items of type T.
      *
-     * Note that in many cases the more convenient {@link window.showQuickPick}
-     * is easier to use. {@link window.createQuickPick} should be used
-     * when {@link window.showQuickPick} does not offer the required flexibility.
+     * Note that in many cases the more convenient [window.showQuickPick]
+     * is easier to use. [window.createQuickPick] should be used
+     * when [window.showQuickPick] does not offer the required flexibility.
      *
      * @returns A new [QuickPick].
      */
@@ -518,19 +519,19 @@ external object window {
     /**
      * Creates a [InputBox] to let the user enter some text input.
      *
-     * Note that in many cases the more convenient {@link window.showInputBox}
-     * is easier to use. {@link window.createInputBox} should be used
-     * when {@link window.showInputBox} does not offer the required flexibility.
+     * Note that in many cases the more convenient [window.showInputBox]
+     * is easier to use. [window.createInputBox] should be used
+     * when [window.showInputBox] does not offer the required flexibility.
      *
      * @returns A new [InputBox].
      */
     fun createInputBox(): InputBox
 
     /**
-     * Creates a new {@link OutputChannel output channel} with the given name and language id
+     * Creates a new [output channel][OutputChannel] with the given name and language id
      * If language id is not provided, then **Log** is used as default language id.
      *
-     * You can access the visible or active output channel as a {@link TextDocument text document} from {@link window.visibleTextEditors visible editors} or {@link window.activeTextEditor active editor}
+     * You can access the visible or active output channel as a [text document} from {@link window.visibleTextEditors visible editors} or {@link window.activeTextEditor active editor][TextDocument]
      * and use the language id to contribute language features like syntax coloring, code lens etc.,
      *
      * @param name Human-readable string which will be used to represent the channel in the UI.
@@ -543,7 +544,7 @@ external object window {
     ): OutputChannel
 
     /**
-     * Creates a new {@link LogOutputChannel log output channel} with the given name.
+     * Creates a new [log output channel][LogOutputChannel] with the given name.
      *
      * @param name Human-readable string which will be used to represent the channel in the UI.
      * @param options Options for the log output channel.
@@ -576,9 +577,9 @@ external object window {
 
     /**
      * Set a message to the status bar. This is a short hand for the more powerful
-     * status bar {@link window.createStatusBarItem items}.
+     * status bar [items][window.createStatusBarItem].
      *
-     * @param text The message to show, supports icon substitution as in status bar {@link StatusBarItem.text items}.
+     * @param text The message to show, supports icon substitution as in status bar [items][StatusBarItem.text].
      * @param hideAfterTimeout Timeout in milliseconds after which the message will be disposed.
      * @returns A disposable which hides the status bar message.
      */
@@ -589,9 +590,9 @@ external object window {
 
     /**
      * Set a message to the status bar. This is a short hand for the more powerful
-     * status bar {@link window.createStatusBarItem items}.
+     * status bar [items][window.createStatusBarItem].
      *
-     * @param text The message to show, supports icon substitution as in status bar {@link StatusBarItem.text items}.
+     * @param text The message to show, supports icon substitution as in status bar [items][StatusBarItem.text].
      * @param hideWhenDone Thenable on which completion (resolve or reject) the message will be disposed.
      * @returns A disposable which hides the status bar message.
      */
@@ -602,12 +603,12 @@ external object window {
 
     /**
      * Set a message to the status bar. This is a short hand for the more powerful
-     * status bar {@link window.createStatusBarItem items}.
+     * status bar [items][window.createStatusBarItem].
      *
      * *Note* that status bar messages stack and that they must be disposed when no
      * longer used.
      *
-     * @param text The message to show, supports icon substitution as in status bar {@link StatusBarItem.text items}.
+     * @param text The message to show, supports icon substitution as in status bar [items][StatusBarItem.text].
      * @returns A disposable which hides the status bar message.
      */
     fun setStatusBarMessage(text: String): Disposable
@@ -646,7 +647,7 @@ external object window {
     */
 
     /**
-     * Creates a status bar {@link StatusBarItem item}.
+     * Creates a status bar [item][StatusBarItem].
      *
      * @param id The identifier of the item. Must be unique within the extension.
      * @param alignment The alignment of the item.
@@ -660,7 +661,7 @@ external object window {
     ): StatusBarItem
 
     /**
-     * Creates a status bar {@link StatusBarItem item}.
+     * Creates a status bar [item][StatusBarItem].
      *
      * @see [createStatusBarItem] for creating a status bar item with an identifier.
      * @param alignment The alignment of the item.
@@ -712,11 +713,11 @@ external object window {
      * Register a [TreeDataProvider] for the view contributed using the extension point `views`.
      * This will allow you to contribute data to the [TreeView] and update if the data changes.
      *
-     * **Note:** To get access to the [TreeView] and perform operations on it, use {@link window.createTreeView createTreeView}.
+     * **Note:** To get access to the [TreeView] and perform operations on it, use [createTreeView][window.createTreeView].
      *
      * @param viewId Id of the view contributed using the extension point `views`.
      * @param treeDataProvider A [TreeDataProvider] that provides tree data for the view
-     * @returns A {@link Disposable disposable} that unregisters the [TreeDataProvider].
+     * @returns A [disposable][Disposable] that unregisters the [TreeDataProvider].
      */
     fun <T : JsAny?> registerTreeDataProvider(
         viewId: String,
@@ -735,7 +736,7 @@ external object window {
     ): TreeView<T>
 
     /**
-     * Registers a {@link UriHandler uri handler} capable of handling system-wide {@link Uri uris}.
+     * Registers a [uri handler} capable of handling system-wide {@link Uri uris][UriHandler].
      * In case there are multiple windows open, the topmost window will handle the uri.
      * A uri handler is scoped to the extension it is contributed from; it will only
      * be able to handle uris which are directed to the extension itself. A uri must respect
@@ -754,7 +755,7 @@ external object window {
      * the current extension is about to be handled.
      *
      * @param handler The uri handler to register for this extension.
-     * @returns A {@link Disposable disposable} that unregisters the handler.
+     * @returns A [disposable][Disposable] that unregisters the handler.
      */
     fun registerUriHandler(handler: UriHandler): Disposable
 
@@ -768,7 +769,7 @@ external object window {
      *
      * @param viewType Type of the webview panel that can be serialized.
      * @param serializer Webview serializer.
-     * @returns A {@link Disposable disposable} that unregisters the serializer.
+     * @returns A [disposable][Disposable] that unregisters the serializer.
      */
     fun registerWebviewPanelSerializer(
         viewType: String,
@@ -862,7 +863,7 @@ external object window {
      *
      * @param id The ID of the contributed terminal profile.
      * @param provider The terminal profile provider.
-     * @returns A {@link Disposable disposable} that unregisters the provider.
+     * @returns A [disposable][Disposable] that unregisters the provider.
      */
     fun registerTerminalProfileProvider(
         id: String,

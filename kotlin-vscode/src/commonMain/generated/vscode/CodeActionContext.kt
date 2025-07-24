@@ -6,7 +6,7 @@ import js.array.ReadonlyArray
 
 /**
  * Contains additional diagnostic information about the context in which
- * a {@link CodeActionProvider.provideCodeActions code action} is run.
+ * a [code action][CodeActionProvider.provideCodeActions] is run.
  */
 external interface CodeActionContext {
     /**

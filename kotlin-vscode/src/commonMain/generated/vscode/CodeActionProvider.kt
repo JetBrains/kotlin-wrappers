@@ -15,7 +15,7 @@ import js.core.JsAny
  *   and refactorings.
  * - As commands that users can run, such as `Refactor`. Users can run these from the command palette or with keybindings.
  * - As source actions, such `Organize Imports`.
- * - {@link CodeActionKind.QuickFix Quick fixes} are shown in the problems view.
+ * - [Quick fixes][CodeActionKind.QuickFix] are shown in the problems view.
  * - Change applied on save by the `editor.codeActionsOnSave` setting.
  */
 external interface CodeActionProvider<T : CodeAction> {
@@ -28,7 +28,7 @@ external interface CodeActionProvider<T : CodeAction> {
      *
      * @param document The document in which the command was invoked.
      * @param range The selector or range for which the command was invoked. This will always be a
-     * {@link Selection selection} if the actions are being requested in the currently active editor.
+     * [selection][Selection] if the actions are being requested in the currently active editor.
      * @param context Provides additional information about what code actions are being requested. You can use this
      * to see what specific type of code actions are being requested by the editor in order to return more relevant
      * actions and avoid returning irrelevant code actions that the editor will discard.

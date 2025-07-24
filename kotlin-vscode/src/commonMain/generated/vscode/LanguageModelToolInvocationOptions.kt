@@ -9,9 +9,9 @@ import js.core.JsAny
  */
 external interface LanguageModelToolInvocationOptions<T : JsAny?> {
     /**
-     * An opaque object that ties a tool invocation to a chat request from a {@link ChatParticipant chat participant}.
+     * An opaque object that ties a tool invocation to a chat request from a [chat participant][ChatParticipant].
      *
-     * The _only_ way to get a valid tool invocation token is using the provided {@link ChatRequest.toolInvocationToken toolInvocationToken}
+     * The _only_ way to get a valid tool invocation token is using the provided [toolInvocationToken][ChatRequest.toolInvocationToken]
      * from a chat request. In that case, a progress bar will be automatically shown for the tool invocation in the chat response view, and if
      * the tool requires user confirmation, it will show up inline in the chat view.
      *
@@ -24,7 +24,7 @@ external interface LanguageModelToolInvocationOptions<T : JsAny?> {
 
     /**
      * The input with which to invoke the tool. The input must match the schema defined in
-     * {@link LanguageModelToolInformation.inputSchema}
+     * [LanguageModelToolInformation.inputSchema]
      */
     var input: T
 

@@ -19,7 +19,7 @@ open external class DocumentHighlight {
     var range: Range
 
     /**
-     * The highlight kind, default is {@link DocumentHighlightKind.Text text}.
+     * The highlight kind, default is [text][DocumentHighlightKind.Text].
      */
     var kind: DocumentHighlightKind?
 
@@ -27,7 +27,7 @@ open external class DocumentHighlight {
      * Creates a new document highlight object.
      *
      * @param range The range the highlight applies to.
-     * @param kind The highlight kind, default is {@link DocumentHighlightKind.Text text}.
+     * @param kind The highlight kind, default is [text][DocumentHighlightKind.Text].
      */
     constructor(
         range: Range,

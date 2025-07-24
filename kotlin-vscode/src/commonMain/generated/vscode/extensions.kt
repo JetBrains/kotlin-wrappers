@@ -31,8 +31,8 @@ import kotlin.js.JsModule
  * }
  * ```
  * When depending on the API of another extension add an `extensionDependencies`-entry
- * to `package.json`, and use the {@link extensions.getExtension getExtension}-function
- * and the {@link Extension.exports exports}-property, like below:
+ * to `package.json`, and use the [getExtension][extensions.getExtension]-function
+ * and the [exports][Extension.exports]-property, like below:
  *
  * ```javascript
  * let mathExt = extensions.getExtension('genius.math');

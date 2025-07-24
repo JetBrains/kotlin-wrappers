@@ -7,7 +7,7 @@ package vscode
  */
 external interface CommentReply {
     /**
-     * The active {@link CommentThread comment thread}
+     * The active [comment thread][CommentThread]
      */
     var thread: CommentThread
 

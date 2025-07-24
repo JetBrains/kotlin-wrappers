@@ -41,7 +41,7 @@ external object notebooks {
     ): NotebookController
 
     /**
-     * Register a {@link NotebookCellStatusBarItemProvider cell statusbar item provider} for the given notebook type.
+     * Register a [cell statusbar item provider][NotebookCellStatusBarItemProvider] for the given notebook type.
      *
      * @param notebookType The notebook type to register for.
      * @param provider A cell status bar provider.

@@ -5,7 +5,7 @@ package vscode
 import js.array.ReadonlyArray
 
 /**
- * An source control is able to provide {@link SourceControlResourceState resource states}
+ * An source control is able to provide [resource states][SourceControlResourceState]
  * to the editor and interact with the editor in several source control related ways.
  */
 external interface SourceControl :
@@ -26,22 +26,22 @@ external interface SourceControl :
     val rootUri: Uri?
 
     /**
-     * The {@link SourceControlInputBox input box} for this source control.
+     * The [input box][SourceControlInputBox] for this source control.
      */
     val inputBox: SourceControlInputBox
 
     /**
-     * The UI-visible count of {@link SourceControlResourceState resource states} of
+     * The UI-visible count of [resource states][SourceControlResourceState] of
      * this source control.
      *
      * If undefined, this source control will
      * - display its UI-visible count as zero, and
-     * - contribute the count of its {@link SourceControlResourceState resource states} to the UI-visible aggregated count for all source controls
+     * - contribute the count of its [resource states][SourceControlResourceState] to the UI-visible aggregated count for all source controls
      */
     var count: Int?
 
     /**
-     * An optional {@link QuickDiffProvider quick diff provider}.
+     * An optional [quick diff provider][QuickDiffProvider].
      */
     var quickDiffProvider: QuickDiffProvider?
 
@@ -69,7 +69,7 @@ external interface SourceControl :
     var statusBarCommands: ReadonlyArray<Command>?
 
     /**
-     * Create a new {@link SourceControlResourceGroup resource group}.
+     * Create a new [resource group][SourceControlResourceGroup].
      */
     fun createResourceGroup(
         id: String,

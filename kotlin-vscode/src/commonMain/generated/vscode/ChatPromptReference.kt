@@ -16,7 +16,7 @@ external interface ChatPromptReference {
     val id: String
 
     /**
-     * The start and end index of the reference in the {@link ChatRequest.prompt prompt}. When undefined, the reference was not part of the prompt text.
+     * The start and end index of the reference in the [prompt][ChatRequest.prompt]. When undefined, the reference was not part of the prompt text.
      *
      * *Note* that the indices take the leading `#`-character into account which means they can
      * used to modify the prompt as-is.

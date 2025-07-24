@@ -86,7 +86,7 @@ external object env {
     val onDidChangeShell: Event<JsString>
 
     /**
-     * Creates a new {@link TelemetryLogger telemetry logger}.
+     * Creates a new [telemetry logger][TelemetryLogger].
      *
      * @param sender The telemetry sender that is used by the telemetry logger.
      * @param options Options for the telemetry logger.
@@ -103,7 +103,7 @@ external object env {
      *
      * *Note* that the value is `undefined` when there is no remote extension host but that the
      * value is defined in all extension hosts (local and remote) in case a remote extension host
-     * exists. Use {@link Extension.extensionKind} to know if
+     * exists. Use [Extension.extensionKind] to know if
      * a specific extension runs remote or not.
      */
     val remoteName: String?

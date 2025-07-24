@@ -20,7 +20,7 @@ external interface TabChangeEvent {
 
     /**
      * Tabs that have changed, e.g have changed
-     * their {@link Tab.isActive active} state.
+     * their [active][Tab.isActive] state.
      */
     val changed: ReadonlyArray<Tab>
 }

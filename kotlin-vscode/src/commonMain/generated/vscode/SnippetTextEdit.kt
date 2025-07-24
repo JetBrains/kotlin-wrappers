@@ -10,8 +10,8 @@ import kotlin.js.JsModule
  * A snippet edit represents an interactive edit that is performed by
  * the editor.
  *
- * *Note* that a snippet edit can always be performed as a normal {@link TextEdit text edit}.
- * This will happen when no matching editor is open or when a {@link WorkspaceEdit workspace edit}
+ * *Note* that a snippet edit can always be performed as a normal [text edit][TextEdit].
+ * This will happen when no matching editor is open or when a [workspace edit][WorkspaceEdit]
  * contains snippet edits for multiple files. In that case only those that match the active editor
  * will be performed as snippet edits and the others as normal text edits.
  */
@@ -22,7 +22,7 @@ open external class SnippetTextEdit {
     var range: Range
 
     /**
-     * The {@link SnippetString snippet} this edit will perform.
+     * The [snippet][SnippetString] this edit will perform.
      */
     var snippet: SnippetString
 

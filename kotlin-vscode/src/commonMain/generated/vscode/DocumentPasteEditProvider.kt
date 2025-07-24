@@ -11,7 +11,7 @@ import js.promise.PromiseLike
  */
 external interface DocumentPasteEditProvider<T : DocumentPasteEdit> {
     /**
-     * Optional method invoked after the user copies from a {@link TextEditor text editor}.
+     * Optional method invoked after the user copies from a [text editor][TextEditor].
      *
      * This allows the provider to attach metadata about the copied text to the [DataTransfer]. This data
      * transfer is then passed back to providers in {@linkcode provideDocumentPasteEdits}.
@@ -35,18 +35,18 @@ external interface DocumentPasteEditProvider<T : DocumentPasteEdit> {
     ) -> PromiseLike<Void>?)?
 
     /**
-     * Invoked before the user pastes into a {@link TextEditor text editor}.
+     * Invoked before the user pastes into a [text editor][TextEditor].
      *
      * Returned edits can replace the standard pasting behavior.
      *
      * @param document Document being pasted into
      * @param ranges Range in the {@linkcode document} to paste into.
-     * @param dataTransfer The {@link DataTransfer data transfer} associated with the paste. This object is only
+     * @param dataTransfer The [data transfer][DataTransfer] associated with the paste. This object is only
      * valid for the duration of the paste operation.
      * @param context Additional context for the paste.
      * @param token A cancellation token.
      *
-     * @return Set of potential {@link DocumentPasteEdit edits} that can apply the paste. Only a single returned
+     * @return Set of potential [edits][DocumentPasteEdit] that can apply the paste. Only a single returned
      * {@linkcode DocumentPasteEdit} is applied at a time. If multiple edits are returned from all providers, then
      * the first is automatically applied and a widget is shown that lets the user switch to the other edits.
      */

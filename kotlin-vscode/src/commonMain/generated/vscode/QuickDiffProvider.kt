@@ -3,7 +3,7 @@
 package vscode
 
 /**
- * A quick diff provider provides a {@link Uri uri} to the original state of a
+ * A quick diff provider provides a [uri][Uri] to the original state of a
  * modified resource. The editor will use this information to render ad'hoc diffs
  * within the text.
  */

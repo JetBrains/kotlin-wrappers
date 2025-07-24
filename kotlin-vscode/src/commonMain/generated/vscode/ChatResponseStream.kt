@@ -9,15 +9,15 @@ import kotlin.js.definedExternally
 /**
  * The ChatResponseStream is how a participant is able to return content to the chat view. It provides several methods for streaming different types of content
  * which will be rendered in an appropriate way in the chat view. A participant can use the helper method for the type of content it wants to return, or it
- * can instantiate a [ChatResponsePart] and use the generic {@link ChatResponseStream.push} method to return it.
+ * can instantiate a [ChatResponsePart] and use the generic [ChatResponseStream.push] method to return it.
  */
 external interface ChatResponseStream {
     /**
      * Push a markdown part to this stream. Short-hand for
      * `push(new ChatResponseMarkdownPart(value))`.
      *
-     * @see {@link ChatResponseStream.push}
-     * @param value A markdown string or a string that should be interpreted as markdown. The boolean form of {@link MarkdownString.isTrusted} is NOT supported.
+     * @see [ChatResponseStream.push]
+     * @param value A markdown string or a string that should be interpreted as markdown. The boolean form of [MarkdownString.isTrusted] is NOT supported.
      */
     fun markdown(value: JsAny /* string | MarkdownString */)
 

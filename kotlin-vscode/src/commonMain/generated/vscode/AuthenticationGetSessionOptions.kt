@@ -12,12 +12,12 @@ external interface AuthenticationGetSessionOptions {
      * Whether the existing session preference should be cleared.
      *
      * For authentication providers that support being signed into multiple accounts at once, the user will be
-     * prompted to select an account to use when {@link authentication.getSession getSession} is called. This preference
-     * is remembered until {@link authentication.getSession getSession} is called with this flag.
+     * prompted to select an account to use when [getSession][authentication.getSession] is called. This preference
+     * is remembered until [getSession][authentication.getSession] is called with this flag.
      *
      * Note:
-     * The preference is extension specific. So if one extension calls {@link authentication.getSession getSession}, it will not
-     * affect the session preference for another extension calling {@link authentication.getSession getSession}. Additionally,
+     * The preference is extension specific. So if one extension calls [getSession][authentication.getSession], it will not
+     * affect the session preference for another extension calling [getSession][authentication.getSession]. Additionally,
      * the preference is set for the current workspace and also globally. This means that new workspaces will use the "global"
      * value at first and then when this flag is provided, a new value can be set for that workspace. This also means
      * that pre-existing workspaces will not lose their preference if a new workspace sets this flag.
@@ -40,7 +40,7 @@ external interface AuthenticationGetSessionOptions {
      *
      * Defaults to false.
      *
-     * Note: you cannot use this option with {@link AuthenticationGetSessionOptions.silent silent}.
+     * Note: you cannot use this option with [silent][AuthenticationGetSessionOptions.silent].
      */
     var createIfNone: JsAny /* boolean | AuthenticationGetSessionPresentationOptions */?
 
@@ -53,7 +53,7 @@ external interface AuthenticationGetSessionOptions {
      * If you provide options, you will also see the dialog but with the additional context provided.
      *
      * If there are no existing sessions and forceNewSession is true, it will behave identically to
-     * {@link AuthenticationGetSessionOptions.createIfNone createIfNone}.
+     * [createIfNone][AuthenticationGetSessionOptions.createIfNone].
      *
      * This defaults to false.
      */
@@ -67,7 +67,7 @@ external interface AuthenticationGetSessionOptions {
      *
      * Defaults to false.
      *
-     * Note: you cannot use this option with any other options that prompt the user like {@link AuthenticationGetSessionOptions.createIfNone createIfNone}.
+     * Note: you cannot use this option with any other options that prompt the user like [createIfNone][AuthenticationGetSessionOptions.createIfNone].
      */
     var silent: Boolean?
 

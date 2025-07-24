@@ -7,7 +7,7 @@ import js.core.JsString
 import js.objects.Record
 
 /**
- * An event describing a transactional {@link NotebookDocument notebook} change.
+ * An event describing a transactional [notebook][NotebookDocument] change.
  */
 external interface NotebookDocumentChangeEvent {
     /**
@@ -21,12 +21,12 @@ external interface NotebookDocumentChangeEvent {
     val metadata: Record<JsString, *>?
 
     /**
-     * An array of content changes describing added or removed {@link NotebookCell cells}.
+     * An array of content changes describing added or removed [cells][NotebookCell].
      */
     val contentChanges: ReadonlyArray<NotebookDocumentContentChange>
 
     /**
-     * An array of {@link NotebookDocumentCellChange cell changes}.
+     * An array of [cell changes][NotebookDocumentCellChange].
      */
     val cellChanges: ReadonlyArray<NotebookDocumentCellChange>
 }

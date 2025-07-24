@@ -3,8 +3,8 @@
 package vscode
 
 /**
- * The options passed in to the {@link AuthenticationProvider.getSessions} and
- * {@link AuthenticationProvider.createSession} call.
+ * The options passed in to the [AuthenticationProvider.getSessions] and
+ * [AuthenticationProvider.createSession] call.
  */
 external interface AuthenticationProviderSessionOptions {
     /**

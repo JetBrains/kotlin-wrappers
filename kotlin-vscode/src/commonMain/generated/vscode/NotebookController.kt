@@ -14,10 +14,10 @@ import js.promise.PromiseLike
  * {@linkcode NotebookController.notebookType notebookType}-property defines for what kind of notebooks a controller is for and
  * the {@linkcode NotebookController.updateNotebookAffinity updateNotebookAffinity}-function allows controllers to set a preference
  * for specific notebook documents. When a controller has been selected its
- * {@link NotebookController.onDidChangeSelectedNotebooks onDidChangeSelectedNotebooks}-event fires.
+ * [onDidChangeSelectedNotebooks][NotebookController.onDidChangeSelectedNotebooks]-event fires.
  *
  * When a cell is being run the editor will invoke the {@linkcode NotebookController.executeHandler executeHandler} and a controller
- * is expected to create and finalize a {@link NotebookCellExecution notebook cell execution}. However, controllers are also free
+ * is expected to create and finalize a [notebook cell execution][NotebookCellExecution]. However, controllers are also free
  * to create executions by themselves.
  */
 external interface NotebookController :
@@ -79,7 +79,7 @@ external interface NotebookController :
      * _Note_ that there can only be one execution per cell at a time and that an error is thrown if
      * a cell execution is created while another is still active.
      *
-     * This should be used in response to the {@link NotebookController.executeHandler execution handler}
+     * This should be used in response to the [execution handler][NotebookController.executeHandler]
      * being called or when cell execution has been started else, e.g when a cell was already
      * executing or when cell execution was triggered from another source.
      *
@@ -90,7 +90,7 @@ external interface NotebookController :
 
     /**
      * The execute handler is invoked when the run gestures in the UI are selected, e.g Run Cell, Run All,
-     * Run Selection etc. The execute handler is responsible for creating and managing {@link NotebookCellExecution execution}-objects.
+     * Run Selection etc. The execute handler is responsible for creating and managing [execution][NotebookCellExecution]-objects.
      */
     var executeHandler: (
         cells: ReadonlyArray<NotebookCell>,
@@ -101,13 +101,13 @@ external interface NotebookController :
     /**
      * Optional interrupt handler.
      *
-     * By default cell execution is canceled via {@link NotebookCellExecution.token tokens}. Cancellation
+     * By default cell execution is canceled via [tokens][NotebookCellExecution.token]. Cancellation
      * tokens require that a controller can keep track of its execution so that it can cancel a specific execution at a later
      * point. Not all scenarios allow for that, eg. REPL-style controllers often work by interrupting whatever is currently
      * running. For those cases the interrupt handler exists - it can be thought of as the equivalent of `SIGINT`
      * or `Control+C` in terminals.
      *
-     * _Note_ that supporting {@link NotebookCellExecution.token cancellation tokens} is preferred and that interrupt handlers should
+     * _Note_ that supporting [cancellation tokens][NotebookCellExecution.token] is preferred and that interrupt handlers should
      * only be used when tokens cannot be supported.
      */
     var interruptHandler: (notebook: NotebookDocument) -> PromiseLike<Void>?
@@ -119,8 +119,8 @@ external interface NotebookController :
      * and happens either explicitly or implicitly when interacting with a notebook for which a controller was _suggested_. When possible,
      * the editor _suggests_ a controller that is most likely to be _selected_.
      *
-     * _Note_ that controller selection is persisted (by the controllers {@link NotebookController.id id}) and restored as soon as a
-     * controller is re-created or as a notebook is {@link workspace.onDidOpenNotebookDocument opened}.
+     * _Note_ that controller selection is persisted (by the controllers [id][NotebookController.id]) and restored as soon as a
+     * controller is re-created or as a notebook is [opened][workspace.onDidOpenNotebookDocument].
      */
     /*
     readonly onDidChangeSelectedNotebooks: Event<{

@@ -13,13 +13,13 @@ open external class Selection :
     Range {
     /**
      * The position at which the selection starts.
-     * This position might be before or after {@link Selection.active active}.
+     * This position might be before or after [active][Selection.active].
      */
     val anchor: Position
 
     /**
      * The position of the cursor.
-     * This position might be before or after {@link Selection.anchor anchor}.
+     * This position might be before or after [anchor][Selection.anchor].
      */
     val active: Position
 
@@ -50,7 +50,7 @@ open external class Selection :
     )
 
     /**
-     * A selection is reversed if its {@link Selection.anchor anchor} is the {@link Selection.end end} position.
+     * A selection is reversed if its [anchor} is the {@link Selection.end end][Selection.anchor] position.
      */
     val isReversed: Boolean
 }
