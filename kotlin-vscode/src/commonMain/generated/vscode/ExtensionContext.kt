@@ -2,6 +2,8 @@
 
 package vscode
 
+import js.array.ReadonlyArray
+
 /**
  * An extension context is a collection of utilities private to an
  * extension.
@@ -16,14 +18,7 @@ external interface ExtensionContext {
      *
      * *Note* that asynchronous dispose-functions aren't awaited.
      */
-    /*
-    readonly subscriptions: {
-        /**
-         * Function to clean up resources.
-         */
-        dispose(): any;
-    }[]
-    */
+    val subscriptions: ReadonlyArray<DisposableLike>
 
     /**
      * A memento object that stores state in the context

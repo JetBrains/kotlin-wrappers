@@ -2,7 +2,6 @@
 
 package vscode
 
-import js.core.JsAny
 import js.core.Void
 import kotlin.js.definedExternally
 
@@ -98,5 +97,5 @@ external interface WebviewPanel {
      * Webview panels are also disposed when the user closes the webview panel. Both cases
      * fire the `onDispose` event.
      */
-    fun dispose(): JsAny?
+    fun dispose()
 }

@@ -4,7 +4,6 @@
 
 package vscode
 
-import js.core.JsAny
 import kotlin.js.JsModule
 
 /**
@@ -25,7 +24,7 @@ open external class Disposable {
     /**
      * Dispose this object.
      */
-    fun dispose(): JsAny?
+    fun dispose()
 
     companion object {
         /**
@@ -37,13 +36,6 @@ open external class Disposable {
          * @returns Returns a new disposable which, upon dispose, will
          * dispose all provided disposables.
          */
-        /*
-        from(...disposableLikes: {
-            /**
-             * Function to clean up resources.
-             */
-            dispose: () => any;
-        }[]): Disposable
-        */
+        fun from(vararg disposableLikes: DisposableLike): Disposable
     }
 }

@@ -18,12 +18,15 @@ internal fun parseDeclarations(
         .replace("/**'", "/\u200B**'")
         .replace("/*`", "/\u200B*`")
         .replace("/*.", "/\u200B*.")
+        .replace("dispose: () => any;", "dispose(): void;")
+        .replace("dispose(): any;", "dispose(): void;")
 
     return content
         .splitToSequence("\n/**")
         .mapIndexed { index, it -> if (index > 0) "/**$it" else it }
         .map { it.trim() }
         .map { parseDeclaration(it) }
+        .plus(ConversionResult(DISPOSABLE_LIKE, convertInterface(DISPOSABLE_LIKE_DECLARATION)))
         .toList()
 }
 
@@ -189,6 +192,7 @@ private fun convertInterface(
         .substringAfter(" {\n")
         .substringBefore("\n}")
         .trimIndent()
+        .addDisposableLikeSupport()
 
     return sequenceOf(
         comment,
