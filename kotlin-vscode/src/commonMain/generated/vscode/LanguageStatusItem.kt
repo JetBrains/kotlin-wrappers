@@ -6,7 +6,8 @@ package vscode
  * A language status item is the preferred way to present language status reports for the active text editors,
  * such as selected linter or notifying about a configuration problem.
  */
-external interface LanguageStatusItem {
+external interface LanguageStatusItem :
+    DisposableLike {
     /**
      * The identifier of this item.
      */
@@ -65,5 +66,5 @@ external interface LanguageStatusItem {
     /**
      * Dispose and free associated resources.
      */
-    fun dispose()
+    override fun dispose()
 }

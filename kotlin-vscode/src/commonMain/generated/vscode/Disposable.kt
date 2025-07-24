@@ -10,7 +10,8 @@ import kotlin.js.JsModule
  * Represents a type which can release resources, such
  * as event listening or a timer.
  */
-open external class Disposable {
+open external class Disposable :
+    DisposableLike {
     /**
      * Creates a new disposable that calls the provided function
      * on dispose.
@@ -24,7 +25,7 @@ open external class Disposable {
     /**
      * Dispose this object.
      */
-    fun dispose()
+    override fun dispose()
 
     companion object {
         /**

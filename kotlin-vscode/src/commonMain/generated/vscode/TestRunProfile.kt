@@ -10,7 +10,8 @@ import js.promise.PromiseLike
 /**
  * A TestRunProfile describes one way to execute tests in a {@link TestController}.
  */
-external interface TestRunProfile {
+external interface TestRunProfile :
+    DisposableLike {
     /**
      * Label shown to the user in the UI.
      *
@@ -135,5 +136,5 @@ external interface TestRunProfile {
     /**
      * Deletes the run profile.
      */
-    fun dispose()
+    override fun dispose()
 }

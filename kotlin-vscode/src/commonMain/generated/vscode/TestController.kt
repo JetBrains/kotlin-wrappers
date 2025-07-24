@@ -13,7 +13,8 @@ import kotlin.js.definedExternally
  * {@link TestController.createRunProfile run profiles} to allow
  * for tests to be executed.
  */
-external interface TestController {
+external interface TestController :
+    DisposableLike {
     /**
      * The id of the controller passed in {@link tests.createTestController}.
      * This must be globally unique.
@@ -161,5 +162,5 @@ external interface TestController {
      * Unregisters the test controller, disposing of its associated tests
      * and unpersisted results.
      */
-    fun dispose()
+    override fun dispose()
 }

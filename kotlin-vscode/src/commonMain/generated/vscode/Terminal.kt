@@ -10,7 +10,8 @@ import kotlin.js.definedExternally
 /**
  * An individual terminal instance within the integrated terminal.
  */
-external interface Terminal {
+external interface Terminal :
+    DisposableLike {
     /**
      * The name of the terminal.
      */
@@ -88,5 +89,5 @@ external interface Terminal {
     /**
      * Dispose and free associated resources.
      */
-    fun dispose()
+    override fun dispose()
 }

@@ -8,7 +8,8 @@ import kotlin.js.definedExternally
 /**
  * A panel that contains a webview.
  */
-external interface WebviewPanel {
+external interface WebviewPanel :
+    DisposableLike {
     /**
      * Identifies the type of the webview panel, such as `'markdown.preview'`.
      */
@@ -97,5 +98,5 @@ external interface WebviewPanel {
      * Webview panels are also disposed when the user closes the webview panel. Both cases
      * fire the `onDispose` event.
      */
-    fun dispose()
+    override fun dispose()
 }

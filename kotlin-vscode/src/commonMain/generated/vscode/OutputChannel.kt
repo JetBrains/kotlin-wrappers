@@ -10,7 +10,8 @@ import kotlin.js.definedExternally
  * To get an instance of an `OutputChannel` use
  * {@link window.createOutputChannel createOutputChannel}.
  */
-external interface OutputChannel {
+external interface OutputChannel :
+    DisposableLike {
     /**
      * The human-readable name of this output channel.
      */
@@ -58,5 +59,5 @@ external interface OutputChannel {
     /**
      * Dispose and free associated resources.
      */
-    fun dispose()
+    override fun dispose()
 }

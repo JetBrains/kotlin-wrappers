@@ -17,7 +17,8 @@ import kotlin.js.definedExternally
  * {@link languages.createDiagnosticCollection createDiagnosticCollection}.
  */
 external interface DiagnosticCollection :
-    JsIterable<Tuple2</* uri: */ Uri, /* diagnostics: */ ReadonlyArray<Diagnostic>>> {
+    JsIterable<Tuple2</* uri: */ Uri, /* diagnostics: */ ReadonlyArray<Diagnostic>>>,
+    DisposableLike {
     /**
      * The name of this diagnostic collection, for instance `typescript`. Every diagnostic
      * from this collection will be associated with this name. Also, the task framework uses this
@@ -100,5 +101,5 @@ external interface DiagnosticCollection :
      * Dispose and free associated resources. Calls
      * {@link DiagnosticCollection.clear clear}.
      */
-    fun dispose()
+    override fun dispose()
 }

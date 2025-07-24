@@ -152,7 +152,7 @@ private fun convertInterface(
 ): String {
     val comment = source.substringBefore("\nexport ", "")
 
-    val declaration = "external " + source
+    var declaration = "external " + source
         .substringAfter("export ", "")
         .substringBefore(" {\n", "")
         .replace("class ", "open class ")
@@ -194,10 +194,23 @@ private fun convertInterface(
         .trimIndent()
         .addDisposableLikeSupport()
 
+    var members = convertMembers(membersSource)
+
+    val isDisposable = "\nfun dispose()" in members
+            && DISPOSABLE_LIKE !in declaration
+
+    if (isDisposable) {
+        declaration = declaration +
+                (if ("\n" in declaration) "," else ":") +
+                "\n$DISPOSABLE_LIKE"
+
+        members = members.replace("\nfun dispose()", "\noverride fun dispose()")
+    }
+
     return sequenceOf(
         comment,
         "$declaration {",
-        convertMembers(membersSource),
+        members,
         "}",
     ).joinToString("\n")
 }
@@ -443,7 +456,13 @@ private fun convertFunction(
     )
 
     val modifier = if (source.startsWith("(")) "operator" else ""
-    return "$modifier fun $typeParameters $name$body"
+    return sequenceOf(
+        modifier,
+        "fun",
+        typeParameters,
+        "$name$body",
+    ).filter { it.isNotEmpty() }
+        .joinToString(" ")
 }
 
 private fun convertFunctionBody(

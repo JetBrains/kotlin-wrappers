@@ -20,7 +20,8 @@ import js.promise.PromiseLike
  * is expected to create and finalize a {@link NotebookCellExecution notebook cell execution}. However, controllers are also free
  * to create executions by themselves.
  */
-external interface NotebookController {
+external interface NotebookController :
+    DisposableLike {
     /**
      * The identifier of this notebook controller.
      *
@@ -149,5 +150,5 @@ external interface NotebookController {
     /**
      * Dispose and free associated resources.
      */
-    fun dispose()
+    override fun dispose()
 }

@@ -8,7 +8,8 @@ import js.core.JsAny
 /**
  * A collection of {@link Comment comments} representing a conversation at a particular range in a document.
  */
-external interface CommentThread {
+external interface CommentThread :
+    DisposableLike {
     /**
      * The uri of the document the thread has been created on.
      */
@@ -73,5 +74,5 @@ external interface CommentThread {
      *
      * Once disposed, this comment thread will be removed from visible editors and Comment Panel when appropriate.
      */
-    fun dispose()
+    override fun dispose()
 }

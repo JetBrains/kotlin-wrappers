@@ -15,7 +15,8 @@ import kotlin.js.JsModule
  * inside a {@link TextDocumentContentProvider} or when providing
  * API to other extensions.
  */
-open external class EventEmitter<T : JsAny?> {
+open external class EventEmitter<T : JsAny?> :
+    DisposableLike {
     /**
      * The event listeners can subscribe to.
      */
@@ -32,5 +33,5 @@ open external class EventEmitter<T : JsAny?> {
     /**
      * Dispose this object and free resources.
      */
-    fun dispose()
+    override fun dispose()
 }

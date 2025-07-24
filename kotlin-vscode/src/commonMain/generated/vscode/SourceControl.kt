@@ -8,7 +8,8 @@ import js.array.ReadonlyArray
  * An source control is able to provide {@link SourceControlResourceState resource states}
  * to the editor and interact with the editor in several source control related ways.
  */
-external interface SourceControl {
+external interface SourceControl :
+    DisposableLike {
     /**
      * The id of this source control.
      */
@@ -78,5 +79,5 @@ external interface SourceControl {
     /**
      * Dispose this source control.
      */
-    fun dispose()
+    override fun dispose()
 }

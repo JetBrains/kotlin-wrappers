@@ -9,7 +9,8 @@ import kotlin.js.JsModule
 /**
  * A cancellation source creates and controls a {@link CancellationToken cancellation token}.
  */
-open external class CancellationTokenSource {
+open external class CancellationTokenSource :
+    DisposableLike {
     /**
      * The cancellation token of this source.
      */
@@ -23,5 +24,5 @@ open external class CancellationTokenSource {
     /**
      * Dispose object and free resources.
      */
-    fun dispose()
+    override fun dispose()
 }

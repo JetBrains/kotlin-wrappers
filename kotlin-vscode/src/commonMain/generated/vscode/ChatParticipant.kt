@@ -6,7 +6,8 @@ package vscode
  * A chat participant can be invoked by the user in a chat session, using the `@` prefix. When it is invoked, it handles the chat request and is solely
  * responsible for providing a response to the user. A ChatParticipant is created using {@link chat.createChatParticipant}.
  */
-external interface ChatParticipant {
+external interface ChatParticipant :
+    DisposableLike {
     /**
      * A unique ID for this participant.
      */
@@ -39,5 +40,5 @@ external interface ChatParticipant {
     /**
      * Dispose this participant and free resources.
      */
-    fun dispose()
+    override fun dispose()
 }

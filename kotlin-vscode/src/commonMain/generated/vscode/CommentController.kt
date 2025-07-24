@@ -10,7 +10,8 @@ import js.promise.PromiseLike
  * A comment controller is able to provide {@link CommentThread comments} support to the editor and
  * provide users various ways to interact with comments.
  */
-external interface CommentController {
+external interface CommentController :
+    DisposableLike {
     /**
      * The id of this comment controller.
      */
@@ -61,5 +62,5 @@ external interface CommentController {
      * Once disposed, all {@link CommentThread comment threads} created by this comment controller will also be removed from the editor
      * and Comments Panel.
      */
-    fun dispose()
+    override fun dispose()
 }

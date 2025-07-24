@@ -19,7 +19,8 @@ import kotlin.js.definedExternally
  * To get an instance of a `TelemetryLogger`, use
  * {@link env.createTelemetryLogger `createTelemetryLogger`}.
  */
-external interface TelemetryLogger {
+external interface TelemetryLogger :
+    DisposableLike {
     /**
      * An {@link Event} which fires when the enablement state of usage or error telemetry changes.
      */
@@ -78,5 +79,5 @@ external interface TelemetryLogger {
     /**
      * Dispose this object and free resources.
      */
-    fun dispose()
+    override fun dispose()
 }

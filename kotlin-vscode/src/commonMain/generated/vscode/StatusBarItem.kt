@@ -8,7 +8,8 @@ import js.core.JsAny
  * A status bar item is a status bar contribution that can
  * show text and icons and run a command on click.
  */
-external interface StatusBarItem {
+external interface StatusBarItem :
+    DisposableLike {
     /**
      * The identifier of this item.
      *
@@ -98,5 +99,5 @@ external interface StatusBarItem {
      * Dispose and free associated resources. Call
      * {@link StatusBarItem.hide hide}.
      */
-    fun dispose()
+    override fun dispose()
 }

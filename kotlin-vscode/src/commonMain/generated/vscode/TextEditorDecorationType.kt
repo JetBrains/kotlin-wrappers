@@ -9,7 +9,8 @@ package vscode
  * To get an instance of a `TextEditorDecorationType` use
  * {@link window.createTextEditorDecorationType createTextEditorDecorationType}.
  */
-external interface TextEditorDecorationType {
+external interface TextEditorDecorationType :
+    DisposableLike {
     /**
      * Internal representation of the handle.
      */
@@ -18,5 +19,5 @@ external interface TextEditorDecorationType {
     /**
      * Remove this decoration type and all decorations on all text editors using it.
      */
-    fun dispose()
+    override fun dispose()
 }

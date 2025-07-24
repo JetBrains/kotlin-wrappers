@@ -8,7 +8,8 @@ import js.array.ReadonlyArray
  * A source control resource group is a collection of
  * {@link SourceControlResourceState source control resource states}.
  */
-external interface SourceControlResourceGroup {
+external interface SourceControlResourceGroup :
+    DisposableLike {
     /**
      * The id of this source control resource group.
      */
@@ -54,5 +55,5 @@ external interface SourceControlResourceGroup {
     /**
      * Dispose this source control resource group.
      */
-    fun dispose()
+    override fun dispose()
 }

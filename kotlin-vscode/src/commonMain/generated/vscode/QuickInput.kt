@@ -25,7 +25,8 @@ import js.core.Void
  *
  * See {@link QuickPick} and {@link InputBox} for concrete UIs.
  */
-external interface QuickInput {
+external interface QuickInput :
+    DisposableLike {
     /**
      * An optional title.
      */
@@ -91,5 +92,5 @@ external interface QuickInput {
      * functional and no additional methods or properties on it should be
      * accessed. Instead a new input UI should be created.
      */
-    fun dispose()
+    override fun dispose()
 }
