@@ -60,5 +60,8 @@ external interface CodeActionProvider<T : CodeAction> {
      * @returns The resolved code action or a thenable that resolves to such. It is OK to return the given
      * `item`. When no result is returned, the given `item` will be used.
      */
-//  resolveCodeAction?(codeAction: T, token: CancellationToken): ProviderResult<T>
+    var resolveCodeAction: ((
+        codeAction: T,
+        token: CancellationToken,
+    ) -> Unit)?
 }

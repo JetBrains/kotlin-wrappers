@@ -53,7 +53,11 @@ external interface TreeDragAndDropController<T> {
      * @param dataTransfer The data transfer associated with this drag.
      * @param token A cancellation token indicating that drag has been cancelled.
      */
-//  handleDrag?(source: readonly T[], dataTransfer: DataTransfer, token: CancellationToken): Thenable<void> | void
+    var handleDrag: ((
+        source: ReadonlyArray<T>,
+        dataTransfer: DataTransfer,
+        token: CancellationToken,
+    ) -> Unit)?
 
     /**
      * Called when a drag and drop action results in a drop on the tree that this `DragAndDropController` belongs to.
@@ -64,5 +68,9 @@ external interface TreeDragAndDropController<T> {
      * @param dataTransfer The data transfer items of the source of the drag.
      * @param token A cancellation token indicating that the drop has been cancelled.
      */
-//  handleDrop?(target: T | undefined, dataTransfer: DataTransfer, token: CancellationToken): Thenable<void> | void
+    var handleDrop: ((
+        target: T?,
+        dataTransfer: DataTransfer,
+        token: CancellationToken,
+    ) -> Unit)?
 }

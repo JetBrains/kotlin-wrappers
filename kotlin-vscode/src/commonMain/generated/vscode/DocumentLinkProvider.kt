@@ -32,5 +32,8 @@ external interface DocumentLinkProvider<T : DocumentLink> {
      * @param link The link that is to be resolved.
      * @param token A cancellation token.
      */
-//  resolveDocumentLink?(link: T, token: CancellationToken): ProviderResult<T>
+    var resolveDocumentLink: ((
+        link: T,
+        token: CancellationToken,
+    ) -> Unit)?
 }

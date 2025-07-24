@@ -53,5 +53,8 @@ external interface CompletionItemProvider<T : CompletionItem> {
      * @returns The resolved completion item or a thenable that resolves to of such. It is OK to return the given
      * `item`. When no result is returned, the given `item` will be used.
      */
-//  resolveCompletionItem?(item: T, token: CancellationToken): ProviderResult<T>
+    var resolveCompletionItem: ((
+        item: T,
+        token: CancellationToken,
+    ) -> Unit)?
 }

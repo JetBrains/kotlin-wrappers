@@ -41,7 +41,7 @@ external interface TreeDataProvider<T> {
      * @param element The element for which the parent has to be returned.
      * @returns Parent of `element`.
      */
-//  getParent?(element: T): ProviderResult<T>
+    var getParent: ((element: T) -> Unit)?
 
     /**
      * Called on hover to resolve the {@link TreeItem.tooltip TreeItem} property if it is undefined.
@@ -64,5 +64,9 @@ external interface TreeDataProvider<T> {
      * @returns The resolved tree item or a thenable that resolves to such. It is OK to return the given
      * `item`. When no result is returned, the given `item` will be used.
      */
-//  resolveTreeItem?(item: TreeItem, element: T, token: CancellationToken): ProviderResult<TreeItem>
+    var resolveTreeItem: ((
+        item: TreeItem,
+        element: T,
+        token: CancellationToken,
+    ) -> Unit)?
 }

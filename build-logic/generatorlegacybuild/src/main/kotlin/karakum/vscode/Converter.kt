@@ -347,9 +347,6 @@ private fun convertFunction(
     if ("(" !in source)
         return "//  $source"
 
-    if ("?(" in source)
-        return "//  $source"
-
     if ("/** literal-type defines return type */" in source)
         return "    // $source"
 
@@ -406,7 +403,18 @@ private fun convertFunction(
     val name = source
         .substringBefore("(")
         .substringBefore("<")
+        .removeSuffix("?")
         .ifEmpty { "invoke" }
+
+    if (source.startsWith("$name?(")) {
+        val body = convertFunctionBody(
+            name = name,
+            source = "(" + source.substringAfter("?("),
+            getReturnSignature = { if (it != "Void") " -> Unit" else " -> $it" },
+        ).replace(" = definedExternally", "?")
+
+        return "var $name: ($body)?"
+    }
 
     val typeParameters = source
         .substringAfter(name)
@@ -416,6 +424,21 @@ private fun convertFunction(
         .replace(" extends string", " : Comparable<String> /* String */")
         .replace(" extends ", " : ")
 
+    val body = convertFunctionBody(
+        name = name,
+        source = "(" + source.substringAfter("("),
+        getReturnSignature = { if (it != "Void") ": $it" else "" },
+    )
+
+    val modifier = if (source.startsWith("(")) "operator" else ""
+    return "$modifier fun $typeParameters $name$body"
+}
+
+private fun convertFunctionBody(
+    name: String,
+    source: String,
+    getReturnSignature: (String) -> String,
+): String {
     val parametersSource = source
         .substringAfter("(")
         .substringBeforeLast("): ")
@@ -469,9 +492,6 @@ private fun convertFunction(
             .joinToString(",\n")
     } else ""
 
-    val returnType = kotlinType(source.substringAfterLast("): "), name)
-        .let { if (it != "Void") ": $it" else "" }
-
-    val modifier = if (source.startsWith("(")) "operator" else ""
-    return "$modifier fun $typeParameters $name($parameters)$returnType"
+    val returnType = getReturnSignature(kotlinType(source.substringAfterLast("): "), name))
+    return "($parameters)$returnType"
 }

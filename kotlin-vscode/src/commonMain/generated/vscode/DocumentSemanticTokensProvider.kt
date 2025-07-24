@@ -107,5 +107,9 @@ external interface DocumentSemanticTokensProvider {
      * *NOTE*: If the provider cannot compute `SemanticTokensEdits`, it can "give up" and return all the tokens in the document again.
      * *NOTE*: All edits in `SemanticTokensEdits` contain indices in the old integers array, so they all refer to the previous result state.
      */
-//  provideDocumentSemanticTokensEdits?(document: TextDocument, previousResultId: string, token: CancellationToken): ProviderResult<SemanticTokens | SemanticTokensEdits>
+    var provideDocumentSemanticTokensEdits: ((
+        document: TextDocument,
+        previousResultId: String,
+        token: CancellationToken,
+    ) -> Unit)?
 }

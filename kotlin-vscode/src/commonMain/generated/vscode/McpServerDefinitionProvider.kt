@@ -43,5 +43,8 @@ external interface McpServerDefinitionProvider<T : McpServerDefinition> {
      * @returns The resolved server or thenable that resolves to such. This may
      * be the given `server` definition with non-readonly properties filled in.
      */
-//  resolveMcpServerDefinition?(server: T, token: CancellationToken): ProviderResult<T>
+    var resolveMcpServerDefinition: ((
+        server: T,
+        token: CancellationToken,
+    ) -> Unit)?
 }

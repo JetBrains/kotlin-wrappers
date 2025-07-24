@@ -43,5 +43,8 @@ external interface WorkspaceSymbolProvider<T : SymbolInformation> {
      * @returns The resolved symbol or a thenable that resolves to that. When no result is returned,
      * the given `symbol` is used.
      */
-//  resolveWorkspaceSymbol?(symbol: T, token: CancellationToken): ProviderResult<T>
+    var resolveWorkspaceSymbol: ((
+        symbol: T,
+        token: CancellationToken,
+    ) -> Unit)?
 }

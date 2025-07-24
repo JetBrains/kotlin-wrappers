@@ -24,5 +24,8 @@ external interface LanguageModelTool<T> {
      * * *Note 1:* Must be free of side-effects.
      * * *Note 2:* A call to `prepareInvocation` is not necessarily followed by a call to `invoke`.
      */
-//  prepareInvocation?(options: LanguageModelToolInvocationPrepareOptions<T>, token: CancellationToken): ProviderResult<PreparedToolInvocation>
+    var prepareInvocation: ((
+        options: LanguageModelToolInvocationPrepareOptions<T>,
+        token: CancellationToken,
+    ) -> Unit)?
 }

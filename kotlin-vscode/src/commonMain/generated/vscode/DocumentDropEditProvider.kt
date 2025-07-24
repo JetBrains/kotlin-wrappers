@@ -40,5 +40,8 @@ external interface DocumentDropEditProvider<T : DocumentDropEdit> {
      * @returns The resolved edit or a thenable that resolves to such. It is OK to return the given
      * `edit`. If no result is returned, the given `edit` is used.
      */
-//  resolveDocumentDropEdit?(edit: T, token: CancellationToken): ProviderResult<T>
+    var resolveDocumentDropEdit: ((
+        edit: T,
+        token: CancellationToken,
+    ) -> Unit)?
 }

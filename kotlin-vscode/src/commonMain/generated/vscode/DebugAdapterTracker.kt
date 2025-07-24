@@ -2,6 +2,8 @@
 
 package vscode
 
+import js.core.Void
+
 /**
  * A Debug Adapter Tracker is a means to track the communication between the editor and a Debug Adapter.
  */
@@ -9,30 +11,33 @@ external interface DebugAdapterTracker {
     /**
      * A session with the debug adapter is about to be started.
      */
-//  onWillStartSession?(): void
+    var onWillStartSession: (() -> Void)?
 
     /**
      * The debug adapter is about to receive a Debug Adapter Protocol message from the editor.
      */
-//  onWillReceiveMessage?(message: any): void
+    var onWillReceiveMessage: ((message: Any?) -> Void)?
 
     /**
      * The debug adapter has sent a Debug Adapter Protocol message to the editor.
      */
-//  onDidSendMessage?(message: any): void
+    var onDidSendMessage: ((message: Any?) -> Void)?
 
     /**
      * The debug adapter session is about to be stopped.
      */
-//  onWillStopSession?(): void
+    var onWillStopSession: (() -> Void)?
 
     /**
      * An error with the debug adapter has occurred.
      */
-//  onError?(error: Error): void
+    var onError: ((error: Error) -> Void)?
 
     /**
      * The debug adapter has exited with the given exit code or signal.
      */
-//  onExit?(code: number | undefined, signal: string | undefined): void
+    var onExit: ((
+        code: Int?,
+        signal: String?,
+    ) -> Void)?
 }

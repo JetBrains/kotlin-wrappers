@@ -40,5 +40,5 @@ external interface QuickPickOptions {
     /**
      * An optional function that is invoked whenever an item is selected.
      */
-//  onDidSelectItem?(item: QuickPickItem | string): any
+    var onDidSelectItem: ((item: Any /* QuickPickItem | string */) -> Unit)?
 }

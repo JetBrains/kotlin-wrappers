@@ -46,5 +46,5 @@ external interface TelemetrySender {
      * Optional flush function which will give this sender a chance to send any remaining events
      * as its {@link TelemetryLogger} is being disposed
      */
-//  flush?(): void | Thenable<void>
+    var flush: (() -> Unit)?
 }

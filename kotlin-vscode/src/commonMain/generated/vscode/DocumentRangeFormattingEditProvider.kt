@@ -47,5 +47,10 @@ external interface DocumentRangeFormattingEditProvider {
      * @returns A set of text edits or a thenable that resolves to such. The lack of a result can be
      * signaled by returning `undefined`, `null`, or an empty array.
      */
-//  provideDocumentRangesFormattingEdits?(document: TextDocument, ranges: Range[], options: FormattingOptions, token: CancellationToken): ProviderResult<TextEdit[]>
+    var provideDocumentRangesFormattingEdits: ((
+        document: TextDocument,
+        ranges: ReadonlyArray<Range>,
+        options: FormattingOptions,
+        token: CancellationToken,
+    ) -> Unit)?
 }

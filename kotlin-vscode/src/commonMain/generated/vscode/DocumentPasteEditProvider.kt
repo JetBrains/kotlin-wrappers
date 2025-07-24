@@ -2,6 +2,8 @@
 
 package vscode
 
+import js.array.ReadonlyArray
+
 /**
  * Provider invoked when the user copies or pastes in a {@linkcode TextDocument}.
  */
@@ -23,7 +25,12 @@ external interface DocumentPasteEditProvider<T : DocumentPasteEdit> {
      *
      * @return Optional thenable that resolves when all changes to the `dataTransfer` are complete.
      */
-//  prepareDocumentPaste?(document: TextDocument, ranges: readonly Range[], dataTransfer: DataTransfer, token: CancellationToken): void | Thenable<void>
+    var prepareDocumentPaste: ((
+        document: TextDocument,
+        ranges: ReadonlyArray<Range>,
+        dataTransfer: DataTransfer,
+        token: CancellationToken,
+    ) -> Unit)?
 
     /**
      * Invoked before the user pastes into a {@link TextEditor text editor}.
@@ -41,7 +48,13 @@ external interface DocumentPasteEditProvider<T : DocumentPasteEdit> {
      * {@linkcode DocumentPasteEdit} is applied at a time. If multiple edits are returned from all providers, then
      * the first is automatically applied and a widget is shown that lets the user switch to the other edits.
      */
-//  provideDocumentPasteEdits?(document: TextDocument, ranges: readonly Range[], dataTransfer: DataTransfer, context: DocumentPasteEditContext, token: CancellationToken): ProviderResult<T[]>
+    var provideDocumentPasteEdits: ((
+        document: TextDocument,
+        ranges: ReadonlyArray<Range>,
+        dataTransfer: DataTransfer,
+        context: DocumentPasteEditContext,
+        token: CancellationToken,
+    ) -> Unit)?
 
     /**
      * Optional method which fills in the {@linkcode DocumentPasteEdit.additionalEdit} before the edit is applied.
@@ -55,5 +68,8 @@ external interface DocumentPasteEditProvider<T : DocumentPasteEdit> {
      * @returns The resolved paste edit or a thenable that resolves to such. It is OK to return the given
      * `pasteEdit`. If no result is returned, the given `pasteEdit` is used.
      */
-//  resolveDocumentPasteEdit?(pasteEdit: T, token: CancellationToken): ProviderResult<T>
+    var resolveDocumentPasteEdit: ((
+        pasteEdit: T,
+        token: CancellationToken,
+    ) -> Unit)?
 }

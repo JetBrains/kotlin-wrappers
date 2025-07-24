@@ -38,5 +38,8 @@ external interface CodeLensProvider<T : CodeLens> {
      * @param token A cancellation token.
      * @returns The given, resolved code lens or thenable that resolves to such.
      */
-//  resolveCodeLens?(codeLens: T, token: CancellationToken): ProviderResult<T>
+    var resolveCodeLens: ((
+        codeLens: T,
+        token: CancellationToken,
+    ) -> Unit)?
 }

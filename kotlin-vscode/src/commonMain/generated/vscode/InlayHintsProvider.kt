@@ -41,5 +41,8 @@ external interface InlayHintsProvider<T : InlayHint> {
      * @param token A cancellation token.
      * @returns The resolved inlay hint or a thenable that resolves to such. It is OK to return the given `item`. When no result is returned, the given `item` will be used.
      */
-//  resolveInlayHint?(hint: T, token: CancellationToken): ProviderResult<T>
+    var resolveInlayHint: ((
+        hint: T,
+        token: CancellationToken,
+    ) -> Unit)?
 }
