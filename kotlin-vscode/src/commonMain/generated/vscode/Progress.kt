@@ -2,10 +2,12 @@
 
 package vscode
 
+import js.core.JsAny
+
 /**
  * Defines a generalized way of reporting progress updates.
  */
-external interface Progress<T> {
+external interface Progress<T : JsAny?> {
     /**
      * Report a progress update.
      * @param value A progress item, like a message and/or an

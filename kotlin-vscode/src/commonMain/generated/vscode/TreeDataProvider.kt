@@ -9,7 +9,7 @@ import js.promise.PromiseResult
 /**
  * A data provider that provides tree data
  */
-external interface TreeDataProvider<T> {
+external interface TreeDataProvider<T : JsAny?> {
     /**
      * An optional event to signal that an element or root has changed.
      * This will trigger the view to update the changed element/root and its children recursively (if shown).

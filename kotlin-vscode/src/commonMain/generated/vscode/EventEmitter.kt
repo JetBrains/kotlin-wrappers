@@ -4,6 +4,8 @@
 
 package vscode
 
+import js.core.JsAny
+
 /**
  * An event emitter can be used to create and manage an {@link Event} for others
  * to subscribe to. One emitter always owns one event.
@@ -12,7 +14,7 @@ package vscode
  * inside a {@link TextDocumentContentProvider} or when providing
  * API to other extensions.
  */
-open external class EventEmitter<T> {
+open external class EventEmitter<T : JsAny?> {
     /**
      * The event listeners can subscribe to.
      */

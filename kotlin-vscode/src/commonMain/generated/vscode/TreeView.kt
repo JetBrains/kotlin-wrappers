@@ -7,11 +7,12 @@
 package vscode
 
 import js.array.ReadonlyArray
+import js.core.JsAny
 
 /**
  * Represents a Tree view
  */
-external interface TreeView<T> :
+external interface TreeView<T : JsAny?> :
     Disposable {
     /**
      * Event that is fired when an element is expanded

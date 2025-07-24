@@ -2,10 +2,12 @@
 
 package vscode
 
+import js.core.JsAny
+
 /**
  * Options for creating a {@link TreeView}
  */
-external interface TreeViewOptions<T> {
+external interface TreeViewOptions<T : JsAny?> {
     /**
      * A data provider that provides tree data.
      */

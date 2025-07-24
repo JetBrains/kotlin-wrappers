@@ -10,7 +10,7 @@ import js.promise.PromiseLike
  *
  * To get an instance of an `Extension` use {@link extensions.getExtension getExtension}.
  */
-external interface Extension<T> {
+external interface Extension<T : JsAny?> {
     /**
      * The canonical extension identifier in the form of: `publisher.name`.
      */

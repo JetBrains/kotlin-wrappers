@@ -14,7 +14,7 @@ import js.core.JsAny
  * @example
  * item.onDidChange(function(event) { console.log("Event happened: " + event); });
  */
-external interface Event<T> {
+external interface Event<T : JsAny?> {
     /**
      * A function that represents an event to which you subscribe by calling it with
      * a listener function as argument.

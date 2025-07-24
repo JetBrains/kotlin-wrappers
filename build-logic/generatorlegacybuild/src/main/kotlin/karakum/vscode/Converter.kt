@@ -165,6 +165,7 @@ private fun convertInterface(
         }
         .replace("<T = unknown>", "<T : JsAny?>")
         .replace("<T = any>", "<T : JsAny?>")
+        .let { if ("<T>" in it.substringBefore(":")) it.replace("<T>", "<T : JsAny?>") else it }
         .replace(
             " implements Iterable<[mimeType: string, item: DataTransferItem]>",
             " :\nJsIterable<Tuple2</* mimeType: */ JsString, /* item: */ DataTransferItem>>",

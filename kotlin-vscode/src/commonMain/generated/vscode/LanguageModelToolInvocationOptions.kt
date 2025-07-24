@@ -2,10 +2,12 @@
 
 package vscode
 
+import js.core.JsAny
+
 /**
  * Options provided for tool invocation.
  */
-external interface LanguageModelToolInvocationOptions<T> {
+external interface LanguageModelToolInvocationOptions<T : JsAny?> {
     /**
      * An opaque object that ties a tool invocation to a chat request from a {@link ChatParticipant chat participant}.
      *

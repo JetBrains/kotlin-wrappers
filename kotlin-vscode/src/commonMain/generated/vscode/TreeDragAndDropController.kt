@@ -3,12 +3,13 @@
 package vscode
 
 import js.array.ReadonlyArray
+import js.core.JsAny
 import js.core.JsString
 
 /**
  * Provides support for drag and drop in `TreeView`.
  */
-external interface TreeDragAndDropController<T> {
+external interface TreeDragAndDropController<T : JsAny?> {
     /**
      * The mime types that the {@link TreeDragAndDropController.handleDrop `handleDrop`} method of this `DragAndDropController` supports.
      * This could be well-defined, existing, mime types, and also mime types defined by the extension.
