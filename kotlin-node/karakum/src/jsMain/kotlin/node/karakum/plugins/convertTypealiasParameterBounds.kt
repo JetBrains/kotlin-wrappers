@@ -15,10 +15,10 @@ val convertTypealiasParameterBounds = createPlugin { node, context, render ->
         nullable {
             ensure(sourceFileName.fileName.endsWith("buffer.buffer.d.ts"))
             ensure(isTypeParameterDeclaration(node))
-            val parent = node.getParentOrNull()
-            ensureNotNull(parent)
-            ensure(isTypeAliasDeclaration(parent))
-            ensure(parent.name.text == "ImplicitArrayBuffer")
+
+            val typeAlias = ensureNotNull(node.getParentOrNull())
+            ensure(isTypeAliasDeclaration(typeAlias))
+            ensure(typeAlias.name.text == "ImplicitArrayBuffer")
 
             val name = render(node.name)
 
@@ -30,15 +30,16 @@ val convertTypealiasParameterBounds = createPlugin { node, context, render ->
             "${name}${ifPresent(bound, { " /* ${it} */" })}"
         } ?: nullable {
             ensure(sourceFileName.fileName.endsWith("stream.d.ts"))
+
             ensure(isTypeParameterDeclaration(node))
-            val parent = node.getParentOrNull()
-            ensureNotNull(parent)
-            ensure(isTypeAliasDeclaration(parent))
+
+            val typeAlias = ensureNotNull(node.getParentOrNull())
+            ensure(isTypeAliasDeclaration(typeAlias))
             ensure(
-                parent.name.text == "PipelineCallback" ||
-                        parent.name.text == "PipelineDestination" ||
-                        parent.name.text == "PipelinePromise" ||
-                        parent.name.text == "PipelineTransform"
+                typeAlias.name.text == "PipelineCallback" ||
+                        typeAlias.name.text == "PipelineDestination" ||
+                        typeAlias.name.text == "PipelinePromise" ||
+                        typeAlias.name.text == "PipelineTransform"
             )
 
             val name = render(node.name)
@@ -51,11 +52,12 @@ val convertTypealiasParameterBounds = createPlugin { node, context, render ->
             "${name}${ifPresent(bound, { " /* ${it} */" })}"
         } ?: nullable {
             ensure(sourceFileName.fileName.endsWith("util.d.ts"))
+
             ensure(isTypeParameterDeclaration(node))
-            val parent = node.getParentOrNull()
-            ensureNotNull(parent)
-            ensure(isTypeAliasDeclaration(parent))
-            ensure(parent.name.text == "CustomPromisify")
+
+            val typeAlias = ensureNotNull(node.getParentOrNull())
+            ensure(isTypeAliasDeclaration(typeAlias))
+            ensure(typeAlias.name.text == "CustomPromisify")
 
             val name = render(node.name)
 

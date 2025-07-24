@@ -120,7 +120,10 @@ suspend fun main() {
                 convertReporterConstructorWrapperTypeParameter,
                 convertSignalConstantsGenerics,
                 convertSkippedGenerics,
-                // ---
+                convertStatSyncFnHeritageClause,
+                convertStreamDestroy,
+                convertStreamOptionsTypeParameter,
+                convertSymlinkType,
                 convertTestContextHeritageClause,
                 convertTopLevelGlobals,
                 convertToPrimitiveSymbolHolder,

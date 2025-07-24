@@ -14,10 +14,9 @@ val convertTopLevelGlobals = createPlugin { node, context, render ->
         val sourceFileName = ensureNotNull(node.getSourceFileOrNull())
         ensure(sourceFileName.fileName.endsWith("globals.d.ts"))
 
-        val parent = node.getParentOrNull()
-        ensureNotNull(parent)
+        val sourceFile = ensureNotNull(node.getParentOrNull())
+        ensure(isSourceFile(sourceFile))
 
-        ensure(isSourceFile(parent))
         ensure(!isNodeJsModuleDeclaration(node))
 
         ""

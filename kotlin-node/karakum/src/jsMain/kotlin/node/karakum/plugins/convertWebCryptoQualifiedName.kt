@@ -18,7 +18,9 @@ val convertWebCryptoQualifiedName = createPlugin { node, context, render ->
             ensure(node.right.text == "BufferSource")
 
             "js.buffer.BufferSource"
-        } ?: "web.crypto.${render(node.right)}"
+        } ?: run {
+            "web.crypto.${render(node.right)}"
+        }
     } ?: nullable {
         ensure(isPropertyAccessExpression(node))
 

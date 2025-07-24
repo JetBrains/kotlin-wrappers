@@ -16,6 +16,7 @@ val convertUtilityTypes = createPlugin { node, context, render ->
         ensure(typeName.text == "Partial" || typeName.text == "Pick" || typeName.text == "Omit")
 
         val typeArguments = ensureNotNull(node.typeArguments?.asArray())
+
         render(typeArguments.first())
     } ?: nullable {
         ensure(isExpressionWithTypeArguments(node))
@@ -26,6 +27,7 @@ val convertUtilityTypes = createPlugin { node, context, render ->
         ensure(expression.text == "Partial" || expression.text == "Omit")
 
         val typeArguments = ensureNotNull(node.typeArguments?.asArray())
+
         render(typeArguments.first())
     }
 }

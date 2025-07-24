@@ -20,13 +20,13 @@ val convertToPrimitiveSymbolHolder = createPlugin { node, context, render ->
         val expression = name.expression
         ensure(isPropertyAccessExpression(expression))
 
-        val expressionNode = expression.expression
-        ensure(isIdentifier(expressionNode))
-        ensure(expressionNode.text == "Symbol")
+        val expressionExpression = expression.expression
+        ensure(isIdentifier(expressionExpression))
+        ensure(expressionExpression.text == "Symbol")
 
-        val identifier = expression.name
-        ensure(isIdentifier(identifier))
-        ensure(identifier.text == "toPrimitive")
+        val expressionName = expression.name
+        ensure(isIdentifier(expressionName))
+        ensure(expressionName.text == "toPrimitive")
 
         "js.symbol.ToPrimitiveSymbolHolder"
     }

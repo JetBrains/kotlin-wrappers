@@ -19,24 +19,14 @@ import typescript.isQualifiedName
 import typescript.isTypeAliasDeclaration
 import typescript.isTypeParameterDeclaration
 import typescript.isTypeReferenceNode
-import kotlin.contracts.ExperimentalContracts
-import kotlin.contracts.contract
 
-@OptIn(ExperimentalContracts::class)
-@Suppress("CANNOT_CHECK_FOR_EXTERNAL_INTERFACE", "ERROR_IN_CONTRACT_DESCRIPTION")
-private fun isInstanceType(node: Node): Boolean {
-    contract {
-        returns(true) implies (node is TypeReferenceNode)
-    }
+private fun isInstanceType(node: Node) = nullable {
+    ensure(isTypeReferenceNode(node))
 
-    return nullable {
-        ensure(isTypeReferenceNode(node))
-
-        val name = node.typeName
-        ensure(isIdentifier(name))
-        ensure(name.text == "InstanceType")
-    } != null
-}
+    val name = node.typeName
+    ensure(isIdentifier(name))
+    ensure(name.text == "InstanceType")
+} != null
 
 private fun isTypeArgumentOfTypeWithTypeofBound(node: Node) = nullable {
     nullable {
@@ -147,6 +137,7 @@ val convertHttpTypeParameter = createPlugin { node, context, render ->
                 else -> null
             }
         } ?: nullable {
+            ensure(isTypeReferenceNode(node))
             ensure(isInstanceType(node))
 
             val firstTypeArgument = ensureNotNull(node.typeArguments?.asArray()?.getOrNull(0))
@@ -156,6 +147,7 @@ val convertHttpTypeParameter = createPlugin { node, context, render ->
             ensure(isIntersectionTypeNode(node))
 
             val firstType = ensureNotNull(node.types.asArray().getOrNull(0))
+            ensure(isTypeReferenceNode(firstType))
             ensure(isInstanceType(firstType))
 
             val firstTypeArgument = ensureNotNull(firstType.typeArguments?.asArray()?.getOrNull(0))

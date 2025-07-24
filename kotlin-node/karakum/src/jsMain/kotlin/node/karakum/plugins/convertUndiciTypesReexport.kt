@@ -12,12 +12,13 @@ val convertUndiciTypesReexport = createPlugin { node, context, render ->
         ensure(sourceFileName.fileName.endsWith("http.d.ts"))
 
         ensure(isVariableDeclaration(node))
-        val identifier = node.name
-        ensure(isIdentifier(identifier))
+
+        val name = node.name
+        ensure(isIdentifier(name))
         ensure(
-            identifier.text == "WebSocket" ||
-                    identifier.text == "CloseEvent" ||
-                    identifier.text == "MessageEvent"
+            name.text == "WebSocket" ||
+                    name.text == "CloseEvent" ||
+                    name.text == "MessageEvent"
         )
 
         ""
