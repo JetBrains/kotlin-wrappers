@@ -2,6 +2,10 @@
 
 @file:JsModule("vscode")
 
+@file:Suppress(
+    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
+)
+
 package vscode
 
 /**

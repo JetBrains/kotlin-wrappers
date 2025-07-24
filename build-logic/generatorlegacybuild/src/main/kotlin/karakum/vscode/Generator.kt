@@ -2,6 +2,7 @@ package karakum.vscode
 
 import karakum.common.GENERATOR_COMMENT
 import karakum.common.Suppress.INTERFACE_WITH_SUPERCLASS
+import karakum.common.Suppress.NESTED_CLASS_IN_EXTERNAL_INTERFACE
 import karakum.common.fileSuppress
 import karakum.common.writeCode
 import java.io.File
@@ -22,7 +23,11 @@ internal fun generateKotlinDeclarations(
         }
         val annotations = when {
             hasRuntime
-                -> """@file:JsModule("vscode")"""
+                -> listOfNotNull(
+                """@file:JsModule("vscode")""",
+                fileSuppress(NESTED_CLASS_IN_EXTERNAL_INTERFACE)
+                    .takeIf { "sealed /* enum */" in body }
+            ).joinToString("\n\n")
 
             ":\nDisposable {" in body
                 -> fileSuppress(INTERFACE_WITH_SUPERCLASS)
