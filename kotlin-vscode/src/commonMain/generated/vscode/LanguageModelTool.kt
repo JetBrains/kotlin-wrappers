@@ -29,5 +29,5 @@ external interface LanguageModelTool<T : JsAny?> {
     var prepareInvocation: ((
         options: LanguageModelToolInvocationPrepareOptions<T>,
         token: CancellationToken,
-    ) -> Unit)?
+    ) -> ProviderResult<PreparedToolInvocation>)?
 }

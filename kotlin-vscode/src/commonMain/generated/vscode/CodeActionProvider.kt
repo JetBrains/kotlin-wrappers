@@ -64,5 +64,5 @@ external interface CodeActionProvider<T : CodeAction> {
     var resolveCodeAction: ((
         codeAction: T,
         token: CancellationToken,
-    ) -> Unit)?
+    ) -> ProviderResult<T>)?
 }

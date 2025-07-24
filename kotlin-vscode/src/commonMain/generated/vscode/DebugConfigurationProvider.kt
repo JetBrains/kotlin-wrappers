@@ -2,6 +2,8 @@
 
 package vscode
 
+import js.array.ReadonlyArray
+
 /**
  * A debug configuration provider allows to add debug configurations to the debug service
  * and to resolve launch configurations before they are used to start a debug session.
@@ -19,7 +21,7 @@ external interface DebugConfigurationProvider {
     var provideDebugConfigurations: ((
         folder: WorkspaceFolder?,
         token: CancellationToken?,
-    ) -> Unit)?
+    ) -> ProviderResult<ReadonlyArray<DebugConfiguration>>)?
 
     /**
      * Resolves a {@link DebugConfiguration debug configuration} by filling in missing values or by adding/changing/removing attributes.
@@ -37,7 +39,7 @@ external interface DebugConfigurationProvider {
         folder: WorkspaceFolder?,
         debugConfiguration: DebugConfiguration,
         token: CancellationToken?,
-    ) -> Unit)?
+    ) -> ProviderResult<DebugConfiguration>)?
 
     /**
      * This hook is directly called after 'resolveDebugConfiguration' but with all variables substituted.
@@ -56,5 +58,5 @@ external interface DebugConfigurationProvider {
         folder: WorkspaceFolder?,
         debugConfiguration: DebugConfiguration,
         token: CancellationToken?,
-    ) -> Unit)?
+    ) -> ProviderResult<DebugConfiguration>)?
 }

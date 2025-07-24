@@ -41,5 +41,5 @@ external interface CodeLensProvider<T : CodeLens> {
     var resolveCodeLens: ((
         codeLens: T,
         token: CancellationToken,
-    ) -> Unit)?
+    ) -> ProviderResult<T>)?
 }

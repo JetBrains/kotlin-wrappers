@@ -18,5 +18,5 @@ external interface QuickDiffProvider {
     var provideOriginalResource: ((
         uri: Uri,
         token: CancellationToken,
-    ) -> Unit)?
+    ) -> ProviderResult<Uri>)?
 }

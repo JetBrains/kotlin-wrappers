@@ -3,7 +3,6 @@
 package vscode
 
 import js.core.JsString
-import js.core.Void
 
 /**
  * Defines the interface of a terminal pty, enabling extensions to control a terminal.
@@ -151,7 +150,7 @@ external interface Pseudoterminal {
      * vscode.window.createTerminal({ name: 'Local echo', pty });
      * ```
      */
-    var handleInput: ((data: String) -> Void)?
+    var handleInput: ((data: String) -> Unit)?
 
     /**
      * Implement to handle when the number of rows and columns that fit into the terminal panel
@@ -166,5 +165,5 @@ external interface Pseudoterminal {
      *
      * @param dimensions The new dimensions.
      */
-    var setDimensions: ((dimensions: TerminalDimensions) -> Void)?
+    var setDimensions: ((dimensions: TerminalDimensions) -> Unit)?
 }

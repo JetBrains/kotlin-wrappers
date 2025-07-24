@@ -46,5 +46,5 @@ external interface WorkspaceSymbolProvider<T : SymbolInformation> {
     var resolveWorkspaceSymbol: ((
         symbol: T,
         token: CancellationToken,
-    ) -> Unit)?
+    ) -> ProviderResult<T>)?
 }

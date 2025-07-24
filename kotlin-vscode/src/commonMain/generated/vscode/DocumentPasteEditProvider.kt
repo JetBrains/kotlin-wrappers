@@ -3,6 +3,8 @@
 package vscode
 
 import js.array.ReadonlyArray
+import js.core.Void
+import js.promise.PromiseLike
 
 /**
  * Provider invoked when the user copies or pastes in a {@linkcode TextDocument}.
@@ -30,7 +32,7 @@ external interface DocumentPasteEditProvider<T : DocumentPasteEdit> {
         ranges: ReadonlyArray<Range>,
         dataTransfer: DataTransfer,
         token: CancellationToken,
-    ) -> Unit)?
+    ) -> PromiseLike<Void>?)?
 
     /**
      * Invoked before the user pastes into a {@link TextEditor text editor}.
@@ -54,7 +56,7 @@ external interface DocumentPasteEditProvider<T : DocumentPasteEdit> {
         dataTransfer: DataTransfer,
         context: DocumentPasteEditContext,
         token: CancellationToken,
-    ) -> Unit)?
+    ) -> ProviderResult<ReadonlyArray<T>>)?
 
     /**
      * Optional method which fills in the {@linkcode DocumentPasteEdit.additionalEdit} before the edit is applied.
@@ -71,5 +73,5 @@ external interface DocumentPasteEditProvider<T : DocumentPasteEdit> {
     var resolveDocumentPasteEdit: ((
         pasteEdit: T,
         token: CancellationToken,
-    ) -> Unit)?
+    ) -> ProviderResult<T>)?
 }

@@ -42,7 +42,7 @@ external interface TreeDataProvider<T : JsAny?> {
      * @param element The element for which the parent has to be returned.
      * @returns Parent of `element`.
      */
-    var getParent: ((element: T) -> Unit)?
+    var getParent: ((element: T) -> ProviderResult<T>)?
 
     /**
      * Called on hover to resolve the {@link TreeItem.tooltip TreeItem} property if it is undefined.
@@ -69,5 +69,5 @@ external interface TreeDataProvider<T : JsAny?> {
         item: TreeItem,
         element: T,
         token: CancellationToken,
-    ) -> Unit)?
+    ) -> ProviderResult<TreeItem>)?
 }

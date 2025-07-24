@@ -52,5 +52,5 @@ external interface DocumentRangeFormattingEditProvider {
         ranges: ReadonlyArray<Range>,
         options: FormattingOptions,
         token: CancellationToken,
-    ) -> Unit)?
+    ) -> ProviderResult<ReadonlyArray<TextEdit>>)?
 }

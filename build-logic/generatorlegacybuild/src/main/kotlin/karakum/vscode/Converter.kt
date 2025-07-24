@@ -418,7 +418,7 @@ private fun convertFunction(
         val body = convertFunctionBody(
             name = name,
             source = "(" + source.substringAfter("?("),
-            getReturnSignature = { if (it != "Void") " -> Unit" else " -> $it" },
+            getReturnSignature = { if (it == "Void") " -> Unit" else " -> $it" },
         ).replace(" = definedExternally", "?")
 
         return "var $name: ($body)?"

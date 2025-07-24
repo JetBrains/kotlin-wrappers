@@ -44,5 +44,5 @@ external interface InlayHintsProvider<T : InlayHint> {
     var resolveInlayHint: ((
         hint: T,
         token: CancellationToken,
-    ) -> Unit)?
+    ) -> ProviderResult<T>)?
 }

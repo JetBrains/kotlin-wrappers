@@ -5,6 +5,8 @@ package vscode
 import js.array.ReadonlyArray
 import js.core.JsAny
 import js.core.JsString
+import js.core.Void
+import js.promise.PromiseLike
 
 /**
  * Provides support for drag and drop in `TreeView`.
@@ -59,7 +61,7 @@ external interface TreeDragAndDropController<T : JsAny?> {
         source: ReadonlyArray<T>,
         dataTransfer: DataTransfer,
         token: CancellationToken,
-    ) -> Unit)?
+    ) -> PromiseLike<Void>?)?
 
     /**
      * Called when a drag and drop action results in a drop on the tree that this `DragAndDropController` belongs to.
@@ -74,5 +76,5 @@ external interface TreeDragAndDropController<T : JsAny?> {
         target: T?,
         dataTransfer: DataTransfer,
         token: CancellationToken,
-    ) -> Unit)?
+    ) -> PromiseLike<Void>?)?
 }

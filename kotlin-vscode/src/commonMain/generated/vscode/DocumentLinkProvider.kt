@@ -35,5 +35,5 @@ external interface DocumentLinkProvider<T : DocumentLink> {
     var resolveDocumentLink: ((
         link: T,
         token: CancellationToken,
-    ) -> Unit)?
+    ) -> ProviderResult<T>)?
 }

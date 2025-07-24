@@ -3,8 +3,10 @@
 package vscode
 
 import js.core.JsString
+import js.core.Void
 import js.errors.JsError
 import js.objects.Record
+import js.promise.PromiseLike
 
 /**
  * The telemetry sender is the contract between a telemetry logger and some telemetry service. **Note** that extensions must NOT
@@ -48,5 +50,5 @@ external interface TelemetrySender {
      * Optional flush function which will give this sender a chance to send any remaining events
      * as its {@link TelemetryLogger} is being disposed
      */
-    var flush: (() -> Unit)?
+    var flush: (() -> PromiseLike<Void>?)?
 }

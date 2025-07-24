@@ -2,6 +2,7 @@
 
 package vscode
 
+import js.core.JsAny
 import js.core.Void
 
 /**
@@ -111,5 +112,5 @@ external interface DocumentSemanticTokensProvider {
         document: TextDocument,
         previousResultId: String,
         token: CancellationToken,
-    ) -> Unit)?
+    ) -> ProviderResult<JsAny /* SemanticTokens | SemanticTokensEdits */>)?
 }

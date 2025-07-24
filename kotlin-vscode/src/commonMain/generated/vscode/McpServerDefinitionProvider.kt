@@ -46,5 +46,5 @@ external interface McpServerDefinitionProvider<T : McpServerDefinition> {
     var resolveMcpServerDefinition: ((
         server: T,
         token: CancellationToken,
-    ) -> Unit)?
+    ) -> ProviderResult<T>)?
 }

@@ -45,5 +45,5 @@ external interface DocumentDropEditProvider<T : DocumentDropEdit> {
     var resolveDocumentDropEdit: ((
         edit: T,
         token: CancellationToken,
-    ) -> Unit)?
+    ) -> ProviderResult<T>)?
 }

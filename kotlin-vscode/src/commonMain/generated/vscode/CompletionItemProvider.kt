@@ -58,5 +58,5 @@ external interface CompletionItemProvider<T : CompletionItem> {
     var resolveCompletionItem: ((
         item: T,
         token: CancellationToken,
-    ) -> Unit)?
+    ) -> ProviderResult<T>)?
 }
