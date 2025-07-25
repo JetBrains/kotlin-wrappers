@@ -264,7 +264,7 @@ private fun convertMembers(
                 .substringAfterLast(" ")
                 .ifEmpty { "--invoke--" }
 
-            val result = commentMember(
+            val result = convertMember(
                 comment = kdoc(commentSource, parentCommenter.child(memberName)),
                 source = memberSource,
             )
@@ -288,12 +288,15 @@ private fun convertMembers(
     }
 }
 
-private fun commentMember(
+private fun convertMember(
     comment: String,
     source: String,
 ): String {
     val declaration = when {
         "\n" in source
+                && "options: {" !in source
+                && "options?: {" !in source
+                || "#workspace." in comment
             -> "/*\n$source\n*/"
 
         source.startsWith("constructor(") ||
@@ -386,6 +389,11 @@ private fun convertConstructor(
         .joinToString(",\n", "constructor(", ")")
 }
 
+private val OPTIONS_REGEX = Regex(
+    """options\??: (\{\n.+\n})""",
+    setOf(RegexOption.MULTILINE, RegexOption.DOT_MATCHES_ALL),
+)
+
 private fun convertFunction(
     source: String,
 ): String {
@@ -457,6 +465,19 @@ private fun convertFunction(
         .substringBefore("<")
         .removeSuffix("?")
         .ifEmpty { "invoke" }
+
+    val optionsBody = OPTIONS_REGEX
+        .find(source)
+        ?.let { it.groupValues[1] }
+
+    if (optionsBody != null) {
+        val optionsName = name.replaceFirstChar { it.uppercase() } + "Options"
+        val newSource = source.replace(optionsBody, optionsName)
+
+        return convertFunction(newSource) + "\n\n" +
+                convertInterface(optionsName, "export interface $optionsName $optionsBody")
+                    .replace("\nexternal interface ", "\ninterface ")
+    }
 
     if (source.startsWith("$name?(")) {
         val body = convertFunctionBody(

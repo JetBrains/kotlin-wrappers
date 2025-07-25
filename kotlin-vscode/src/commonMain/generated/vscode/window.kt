@@ -7,6 +7,7 @@ package vscode
 import js.array.ReadonlyArray
 import js.core.JsAny
 import js.core.JsString
+import js.objects.JsPlainObject
 import js.promise.PromiseLike
 import vscode.window.createStatusBarItem
 import vscode.window.showInformationMessage
@@ -927,11 +928,21 @@ external object window {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#window.registerWebviewViewProvider)
      */
-    /*
-    registerWebviewViewProvider(viewId: string, provider: WebviewViewProvider, options?: {
+    fun registerWebviewViewProvider(
+        viewId: String,
+        provider: WebviewViewProvider,
+        options: RegisterWebviewViewProviderOptions = definedExternally,
+    ): Disposable
+
+
+    @JsPlainObject
+    interface RegisterWebviewViewProviderOptions {
         /**
          * Content settings for the webview created for this view.
+         *
+         * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#RegisterWebviewViewProviderOptions.webviewOptions)
          */
+        /*
         readonly webviewOptions?: {
             /**
              * Controls if the webview element itself (iframe) is kept around even when the view
@@ -950,9 +961,9 @@ external object window {
              * your view's context cannot be quickly saved and restored.
              */
             readonly retainContextWhenHidden?: boolean;
-        };
-    }): Disposable
-    */
+        }
+        */
+    }
 
     /**
      * Register a provider for custom editors for the `viewType` contributed by the `customEditors` extension point.
@@ -970,12 +981,21 @@ external object window {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#window.registerCustomEditorProvider)
      */
-    /*
-    registerCustomEditorProvider(viewType: string, provider: CustomTextEditorProvider | CustomReadonlyEditorProvider | CustomEditorProvider, options?: {
+    fun registerCustomEditorProvider(
+        viewType: String,
+        provider: JsAny, /* CustomTextEditorProvider | CustomReadonlyEditorProvider | CustomEditorProvider */
+        options: RegisterCustomEditorProviderOptions = definedExternally,
+    ): Disposable
+
+
+    @JsPlainObject
+    interface RegisterCustomEditorProviderOptions {
         /**
          * Content settings for the webview panels created for this custom editor.
+         *
+         * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#RegisterCustomEditorProviderOptions.webviewOptions)
          */
-        readonly webviewOptions?: WebviewPanelOptions;
+        val webviewOptions: WebviewPanelOptions?
 
         /**
          * Only applies to `CustomReadonlyEditorProvider | CustomEditorProvider`.
@@ -990,10 +1010,11 @@ external object window {
          * When `supportsMultipleEditorsPerDocument` is enabled, users can split and create copies of the custom
          * editor. In this case, the custom editor must make sure it can properly synchronize the states of all
          * editor instances for a resource so that they are consistent.
+         *
+         * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#RegisterCustomEditorProviderOptions.supportsMultipleEditorsPerDocument)
          */
-        readonly supportsMultipleEditorsPerDocument?: boolean;
-    }): Disposable
-    */
+        val supportsMultipleEditorsPerDocument: Boolean?
+    }
 
     /**
      * Register provider that enables the detection and handling of links within the terminal.

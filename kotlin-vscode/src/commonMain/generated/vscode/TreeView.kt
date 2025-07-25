@@ -8,6 +8,10 @@ package vscode
 
 import js.array.ReadonlyArray
 import js.core.JsAny
+import js.core.Void
+import js.objects.JsPlainObject
+import js.promise.PromiseLike
+import kotlin.js.definedExternally
 
 /**
  * Represents a Tree view
@@ -111,20 +115,33 @@ external interface TreeView<T : JsAny?> :
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TreeView.reveal)
      */
-    /*
-    reveal(element: T, options?: {
+    fun reveal(
+        element: T,
+        options: RevealOptions = definedExternally,
+    ): PromiseLike<Void>
+
+
+    @JsPlainObject
+    interface RevealOptions {
         /**
          * If true, then the element will be selected.
+         *
+         * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#RevealOptions.select)
          */
-        readonly select?: boolean;
+        val select: Boolean?
+
         /**
          * If true, then the element will be focused.
+         *
+         * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#RevealOptions.focus)
          */
-        readonly focus?: boolean;
+        val focus: Boolean?
+
         /**
          * If true, then the element will be expanded. If a number is passed, then up to that number of levels of children will be expanded
+         *
+         * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#RevealOptions.expand)
          */
-        readonly expand?: boolean | number;
-    }): Thenable<void>
-    */
+        val expand: JsAny /* boolean | number */?
+    }
 }

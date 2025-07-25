@@ -6,8 +6,10 @@ import js.array.ReadonlyArray
 import js.array.Tuple2
 import js.core.JsString
 import js.core.Void
+import js.objects.JsPlainObject
 import js.promise.PromiseLike
 import js.typedarrays.Uint8Array
+import kotlin.js.definedExternally
 
 /**
  * The file system interface exposes the editor's built-in and contributed
@@ -83,18 +85,28 @@ external interface FileSystem {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#FileSystem.delete)
      */
-    /*
-    delete(uri: Uri, options?: {
+    fun delete(
+        uri: Uri,
+        options: DeleteOptions = definedExternally,
+    ): PromiseLike<Void>
+
+
+    @JsPlainObject
+    interface DeleteOptions {
         /**
          * Delete the content recursively if a folder is denoted.
+         *
+         * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#DeleteOptions.recursive)
          */
-        recursive?: boolean;
+        var recursive: Boolean?
+
         /**
          * Use the os's trashcan instead of permanently deleting files whenever possible.
+         *
+         * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#DeleteOptions.useTrash)
          */
-        useTrash?: boolean;
-    }): Thenable<void>
-    */
+        var useTrash: Boolean?
+    }
 
     /**
      * Rename a file or folder.
@@ -105,14 +117,22 @@ external interface FileSystem {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#FileSystem.rename)
      */
-    /*
-    rename(source: Uri, target: Uri, options?: {
+    fun rename(
+        source: Uri,
+        target: Uri,
+        options: RenameOptions = definedExternally,
+    ): PromiseLike<Void>
+
+
+    @JsPlainObject
+    interface RenameOptions {
         /**
          * Overwrite the file if it does exist.
+         *
+         * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#RenameOptions.overwrite)
          */
-        overwrite?: boolean;
-    }): Thenable<void>
-    */
+        var overwrite: Boolean?
+    }
 
     /**
      * Copy files or folders.
@@ -123,14 +143,22 @@ external interface FileSystem {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#FileSystem.copy)
      */
-    /*
-    copy(source: Uri, target: Uri, options?: {
+    fun copy(
+        source: Uri,
+        target: Uri,
+        options: CopyOptions = definedExternally,
+    ): PromiseLike<Void>
+
+
+    @JsPlainObject
+    interface CopyOptions {
         /**
          * Overwrite the file if it does exist.
+         *
+         * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#CopyOptions.overwrite)
          */
-        overwrite?: boolean;
-    }): Thenable<void>
-    */
+        var overwrite: Boolean?
+    }
 
     /**
      * Check if a given file system supports writing files.

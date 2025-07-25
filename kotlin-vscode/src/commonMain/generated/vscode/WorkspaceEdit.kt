@@ -7,6 +7,7 @@ package vscode
 import js.array.ReadonlyArray
 import js.array.Tuple2
 import js.core.JsAny
+import js.objects.JsPlainObject
 import kotlin.js.JsModule
 import kotlin.js.definedExternally
 
@@ -160,25 +161,39 @@ open external class WorkspaceEdit {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#WorkspaceEdit.createFile)
      */
-    /*
-    createFile(uri: Uri, options?: {
+    fun createFile(
+        uri: Uri,
+        options: CreateFileOptions = definedExternally,
+        metadata: WorkspaceEditEntryMetadata = definedExternally,
+    )
+
+
+    @JsPlainObject
+    interface CreateFileOptions {
         /**
          * Overwrite existing file. Overwrite wins over `ignoreIfExists`
+         *
+         * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#CreateFileOptions.overwrite)
          */
-        readonly overwrite?: boolean;
+        val overwrite: Boolean?
+
         /**
          * Do nothing if a file with `uri` exists already.
+         *
+         * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#CreateFileOptions.ignoreIfExists)
          */
-        readonly ignoreIfExists?: boolean;
+        val ignoreIfExists: Boolean?
+
         /**
          * The initial contents of the new file.
          *
-         * If creating a file from a {@link DocumentDropEditProvider drop operation}, you can
-         * pass in a {@link DataTransferFile} to improve performance by avoiding extra data copying.
+         * If creating a file from a [drop operation][DocumentDropEditProvider], you can
+         * pass in a [DataTransferFile] to improve performance by avoiding extra data copying.
+         *
+         * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#CreateFileOptions.contents)
          */
-        readonly contents?: Uint8Array | DataTransferFile;
-    }, metadata?: WorkspaceEditEntryMetadata): void
-    */
+        val contents: JsAny /* Uint8Array | DataTransferFile */?
+    }
 
     /**
      * Delete a file or folder.
@@ -188,18 +203,29 @@ open external class WorkspaceEdit {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#WorkspaceEdit.deleteFile)
      */
-    /*
-    deleteFile(uri: Uri, options?: {
+    fun deleteFile(
+        uri: Uri,
+        options: DeleteFileOptions = definedExternally,
+        metadata: WorkspaceEditEntryMetadata = definedExternally,
+    )
+
+
+    @JsPlainObject
+    interface DeleteFileOptions {
         /**
          * Delete the content recursively if a folder is denoted.
+         *
+         * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#DeleteFileOptions.recursive)
          */
-        readonly recursive?: boolean;
+        val recursive: Boolean?
+
         /**
          * Do nothing if a file with `uri` exists already.
+         *
+         * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#DeleteFileOptions.ignoreIfNotExists)
          */
-        readonly ignoreIfNotExists?: boolean;
-    }, metadata?: WorkspaceEditEntryMetadata): void
-    */
+        val ignoreIfNotExists: Boolean?
+    }
 
     /**
      * Rename a file or folder.
@@ -212,18 +238,30 @@ open external class WorkspaceEdit {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#WorkspaceEdit.renameFile)
      */
-    /*
-    renameFile(oldUri: Uri, newUri: Uri, options?: {
+    fun renameFile(
+        oldUri: Uri,
+        newUri: Uri,
+        options: RenameFileOptions = definedExternally,
+        metadata: WorkspaceEditEntryMetadata = definedExternally,
+    )
+
+
+    @JsPlainObject
+    interface RenameFileOptions {
         /**
          * Overwrite existing file. Overwrite wins over `ignoreIfExists`
+         *
+         * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#RenameFileOptions.overwrite)
          */
-        readonly overwrite?: boolean;
+        val overwrite: Boolean?
+
         /**
          * Do nothing if a file with `uri` exists already.
+         *
+         * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#RenameFileOptions.ignoreIfExists)
          */
-        readonly ignoreIfExists?: boolean;
-    }, metadata?: WorkspaceEditEntryMetadata): void
-    */
+        val ignoreIfExists: Boolean?
+    }
 
     /**
      * Get all text edits grouped by resource.

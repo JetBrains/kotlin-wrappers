@@ -6,6 +6,7 @@ import js.array.ReadonlyArray
 import js.array.Tuple2
 import js.core.JsString
 import js.core.Void
+import js.objects.JsPlainObject
 import js.promise.PromiseLike
 import js.promise.PromiseResult
 import js.typedarrays.Uint8Array
@@ -62,18 +63,28 @@ external interface FileSystemProvider {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#FileSystemProvider.watch)
      */
-    /*
-    watch(uri: Uri, options: {
+    fun watch(
+        uri: Uri,
+        options: WatchOptions,
+    ): Disposable
+
+
+    @JsPlainObject
+    interface WatchOptions {
         /**
          * When enabled also watch subfolders.
+         *
+         * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#WatchOptions.recursive)
          */
-        readonly recursive: boolean;
+        val recursive: Boolean
+
         /**
          * A list of paths and pattern to exclude from watching.
+         *
+         * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#WatchOptions.excludes)
          */
-        readonly excludes: readonly string[];
-    }): Disposable
-    */
+        val excludes: ReadonlyArray<JsString>
+    }
 
     /**
      * Retrieve metadata about a file.
@@ -137,18 +148,29 @@ external interface FileSystemProvider {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#FileSystemProvider.writeFile)
      */
-    /*
-    writeFile(uri: Uri, content: Uint8Array, options: {
+    fun writeFile(
+        uri: Uri,
+        content: Uint8Array<*>,
+        options: WriteFileOptions,
+    ): PromiseLike<Void>?
+
+
+    @JsPlainObject
+    interface WriteFileOptions {
         /**
          * Create the file if it does not exist already.
+         *
+         * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#WriteFileOptions.create)
          */
-        readonly create: boolean;
+        val create: Boolean
+
         /**
          * Overwrite the file if it does exist.
+         *
+         * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#WriteFileOptions.overwrite)
          */
-        readonly overwrite: boolean;
-    }): void | Thenable<void>
-    */
+        val overwrite: Boolean
+    }
 
     /**
      * Delete a file.
@@ -160,14 +182,21 @@ external interface FileSystemProvider {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#FileSystemProvider.delete)
      */
-    /*
-    delete(uri: Uri, options: {
+    fun delete(
+        uri: Uri,
+        options: DeleteOptions,
+    ): PromiseLike<Void>?
+
+
+    @JsPlainObject
+    interface DeleteOptions {
         /**
          * Delete the content recursively if a folder is denoted.
+         *
+         * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#DeleteOptions.recursive)
          */
-        readonly recursive: boolean;
-    }): void | Thenable<void>
-    */
+        val recursive: Boolean
+    }
 
     /**
      * Rename a file or folder.
@@ -182,14 +211,22 @@ external interface FileSystemProvider {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#FileSystemProvider.rename)
      */
-    /*
-    rename(oldUri: Uri, newUri: Uri, options: {
+    fun rename(
+        oldUri: Uri,
+        newUri: Uri,
+        options: RenameOptions,
+    ): PromiseLike<Void>?
+
+
+    @JsPlainObject
+    interface RenameOptions {
         /**
          * Overwrite the file if it does exist.
+         *
+         * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#RenameOptions.overwrite)
          */
-        readonly overwrite: boolean;
-    }): void | Thenable<void>
-    */
+        val overwrite: Boolean
+    }
 
     /**
      * Copy files or folders. Implementing this function is optional but it will speedup
@@ -205,12 +242,20 @@ external interface FileSystemProvider {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#FileSystemProvider.copy)
      */
-    /*
-    copy?(source: Uri, destination: Uri, options: {
+    var copy: ((
+        source: Uri,
+        destination: Uri,
+        options: CopyOptions,
+    ) -> PromiseLike<Void>?)?
+
+
+    @JsPlainObject
+    interface CopyOptions {
         /**
          * Overwrite the file if it does exist.
+         *
+         * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#CopyOptions.overwrite)
          */
-        readonly overwrite: boolean;
-    }): void | Thenable<void>
-    */
+        val overwrite: Boolean
+    }
 }

@@ -4,6 +4,9 @@ package vscode
 
 import js.array.ReadonlyArray
 import js.core.JsAny
+import js.core.JsBoolean
+import js.objects.JsPlainObject
+import js.promise.PromiseLike
 import kotlin.js.definedExternally
 
 /**
@@ -70,18 +73,28 @@ external interface TextEditor {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TextEditor.edit)
      */
-    /*
-    edit(callback: (editBuilder: TextEditorEdit) => void, options?: {
+    fun edit(
+        callback: (editBuilder: TextEditorEdit) -> Unit,
+        options: EditOptions = definedExternally,
+    ): PromiseLike<JsBoolean>
+
+
+    @JsPlainObject
+    interface EditOptions {
         /**
          * Add undo stop before making the edits.
+         *
+         * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#EditOptions.undoStopBefore)
          */
-        readonly undoStopBefore: boolean;
+        val undoStopBefore: Boolean
+
         /**
          * Add undo stop after making the edits.
+         *
+         * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#EditOptions.undoStopAfter)
          */
-        readonly undoStopAfter: boolean;
-    }): Thenable<boolean>
-    */
+        val undoStopAfter: Boolean
+    }
 
     /**
      * Insert a [snippet][SnippetString] and put the editor into snippet mode. "Snippet mode"
@@ -96,22 +109,36 @@ external interface TextEditor {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TextEditor.insertSnippet)
      */
-    /*
-    insertSnippet(snippet: SnippetString, location?: Position | Range | readonly Position[] | readonly Range[], options?: {
+    fun insertSnippet(
+        snippet: SnippetString,
+        location: JsAny /* Position | Range | readonly Position[] | readonly Range[] */ = definedExternally,
+        options: InsertSnippetOptions = definedExternally,
+    ): PromiseLike<JsBoolean>
+
+
+    @JsPlainObject
+    interface InsertSnippetOptions {
         /**
          * Add undo stop before making the edits.
+         *
+         * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#InsertSnippetOptions.undoStopBefore)
          */
-        readonly undoStopBefore: boolean;
+        val undoStopBefore: Boolean
+
         /**
          * Add undo stop after making the edits.
+         *
+         * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#InsertSnippetOptions.undoStopAfter)
          */
-        readonly undoStopAfter: boolean;
+        val undoStopAfter: Boolean
+
         /**
-         * Keep whitespace of the {@link SnippetString.value} as is.
+         * Keep whitespace of the [SnippetString.value] as is.
+         *
+         * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#InsertSnippetOptions.keepWhitespace)
          */
-        readonly keepWhitespace?: boolean;
-    }): Thenable<boolean>
-    */
+        val keepWhitespace: Boolean?
+    }
 
     /**
      * Adds a set of decorations to the text editor. If a set of decorations already exists with

@@ -4,16 +4,7 @@
 
 package vscode
 
-import js.array.ReadonlyArray
-import js.core.JsAny
-import js.core.JsBoolean
-import js.core.JsString
-import js.core.Void
-import js.promise.PromiseLike
-import js.typedarrays.Uint8Array
-import vscode.workspace.notebookDocuments
 import kotlin.js.JsModule
-import kotlin.js.definedExternally
 
 /**
  * Namespace for dealing with the current workspace. A workspace is the collection of one
@@ -42,7 +33,9 @@ external object workspace {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#workspace.fs)
      */
-    val fs: FileSystem
+    /*
+    readonly fs: FileSystem
+    */
 
     /**
      * List of workspace folders (0-N) that are open in the editor. `undefined` when no workspace
@@ -53,7 +46,9 @@ external object workspace {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#workspace.workspaceFolders)
      */
-    val workspaceFolders: ReadonlyArray<WorkspaceFolder>?
+    /*
+    readonly workspaceFolders: readonly WorkspaceFolder[] | undefined
+    */
 
     /**
      * The name of the workspace. `undefined` when no workspace
@@ -64,7 +59,9 @@ external object workspace {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#workspace.name)
      */
-    val name: String?
+    /*
+    readonly name: string | undefined
+    */
 
     /**
      * The location of the workspace file, for example:
@@ -100,7 +97,9 @@ external object workspace {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#workspace.workspaceFile)
      */
-    val workspaceFile: Uri?
+    /*
+    readonly workspaceFile: Uri | undefined
+    */
 
     /**
      * An event that is emitted when a workspace folder is added or removed.
@@ -112,7 +111,9 @@ external object workspace {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#workspace.onDidChangeWorkspaceFolders)
      */
-    val onDidChangeWorkspaceFolders: Event<WorkspaceFoldersChangeEvent>
+    /*
+    readonly onDidChangeWorkspaceFolders: Event<WorkspaceFoldersChangeEvent>
+    */
 
     /**
      * Returns the [workspace folder][WorkspaceFolder] that contains a given uri.
@@ -124,7 +125,9 @@ external object workspace {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#workspace.getWorkspaceFolder)
      */
-    fun getWorkspaceFolder(uri: Uri): WorkspaceFolder?
+    /*
+    getWorkspaceFolder(uri: Uri): WorkspaceFolder | undefined
+    */
 
     /**
      * Returns a path that is relative to the workspace folder or folders.
@@ -140,10 +143,9 @@ external object workspace {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#workspace.asRelativePath)
      */
-    fun asRelativePath(
-        pathOrUri: JsAny, /* string | Uri */
-        includeWorkspaceFolder: Boolean = definedExternally,
-    ): String
+    /*
+    asRelativePath(pathOrUri: string | Uri, includeWorkspaceFolder?: boolean): string
+    */
 
     /**
      * This method replaces `deleteCount` [workspace folders][workspace.workspaceFolders] starting at index `start`
@@ -309,12 +311,9 @@ external object workspace {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#workspace.createFileSystemWatcher)
      */
-    fun createFileSystemWatcher(
-        globPattern: GlobPattern,
-        ignoreCreateEvents: Boolean = definedExternally,
-        ignoreChangeEvents: Boolean = definedExternally,
-        ignoreDeleteEvents: Boolean = definedExternally,
-    ): FileSystemWatcher
+    /*
+    createFileSystemWatcher(globPattern: GlobPattern, ignoreCreateEvents?: boolean, ignoreChangeEvents?: boolean, ignoreDeleteEvents?: boolean): FileSystemWatcher
+    */
 
     /**
      * Find files across all [workspace folders][workspace.workspaceFolders] in the workspace.
@@ -335,12 +334,9 @@ external object workspace {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#workspace.findFiles)
      */
-    fun findFiles(
-        include: GlobPattern,
-        exclude: GlobPattern? = definedExternally,
-        maxResults: Int = definedExternally,
-        token: CancellationToken = definedExternally,
-    ): PromiseLike<ReadonlyArray<Uri>>
+    /*
+    findFiles(include: GlobPattern, exclude?: GlobPattern | null, maxResults?: number, token?: CancellationToken): Thenable<Uri[]>
+    */
 
     /**
      * Saves the editor identified by the given resource and returns the resulting resource or `undefined`
@@ -353,7 +349,9 @@ external object workspace {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#workspace.save)
      */
-    fun save(uri: Uri): PromiseLike<Uri?>
+    /*
+    save(uri: Uri): Thenable<Uri | undefined>
+    */
 
     /**
      * Saves the editor identified by the given resource to a new file name as provided by the user and
@@ -367,7 +365,9 @@ external object workspace {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#workspace.saveAs)
      */
-    fun saveAs(uri: Uri): PromiseLike<Uri?>
+    /*
+    saveAs(uri: Uri): Thenable<Uri | undefined>
+    */
 
     /**
      * Save all dirty files.
@@ -378,7 +378,9 @@ external object workspace {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#workspace.saveAll)
      */
-    fun saveAll(includeUntitled: Boolean = definedExternally): PromiseLike<JsBoolean>
+    /*
+    saveAll(includeUntitled?: boolean): Thenable<boolean>
+    */
 
     /**
      * Make changes to one or many resources or create, delete, and rename resources as defined by the given
@@ -399,17 +401,18 @@ external object workspace {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#workspace.applyEdit)
      */
-    fun applyEdit(
-        edit: WorkspaceEdit,
-        metadata: WorkspaceEditMetadata = definedExternally,
-    ): PromiseLike<JsBoolean>
+    /*
+    applyEdit(edit: WorkspaceEdit, metadata?: WorkspaceEditMetadata): Thenable<boolean>
+    */
 
     /**
      * All text documents currently known to the editor.
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#workspace.textDocuments)
      */
-    val textDocuments: ReadonlyArray<TextDocument>
+    /*
+    readonly textDocuments: readonly TextDocument[]
+    */
 
     /**
      * Opens a document. Will return early if this document is already open. Otherwise
@@ -535,10 +538,9 @@ external object workspace {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#workspace.registerTextDocumentContentProvider)
      */
-    fun registerTextDocumentContentProvider(
-        scheme: String,
-        provider: TextDocumentContentProvider,
-    ): Disposable
+    /*
+    registerTextDocumentContentProvider(scheme: string, provider: TextDocumentContentProvider): Disposable
+    */
 
     /**
      * An event that is emitted when a [text document][TextDocument] is opened or when the language id
@@ -554,7 +556,9 @@ external object workspace {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#workspace.onDidOpenTextDocument)
      */
-    val onDidOpenTextDocument: Event<TextDocument>
+    /*
+    readonly onDidOpenTextDocument: Event<TextDocument>
+    */
 
     /**
      * An event that is emitted when a [text document][TextDocument] is disposed or when the language id
@@ -568,7 +572,9 @@ external object workspace {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#workspace.onDidCloseTextDocument)
      */
-    val onDidCloseTextDocument: Event<TextDocument>
+    /*
+    readonly onDidCloseTextDocument: Event<TextDocument>
+    */
 
     /**
      * An event that is emitted when a [text document][TextDocument] is changed. This usually happens
@@ -577,7 +583,9 @@ external object workspace {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#workspace.onDidChangeTextDocument)
      */
-    val onDidChangeTextDocument: Event<TextDocumentChangeEvent>
+    /*
+    readonly onDidChangeTextDocument: Event<TextDocumentChangeEvent>
+    */
 
     /**
      * An event that is emitted when a [text document][TextDocument] will be saved to disk.
@@ -594,21 +602,27 @@ external object workspace {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#workspace.onWillSaveTextDocument)
      */
-    val onWillSaveTextDocument: Event<TextDocumentWillSaveEvent>
+    /*
+    readonly onWillSaveTextDocument: Event<TextDocumentWillSaveEvent>
+    */
 
     /**
      * An event that is emitted when a [text document][TextDocument] is saved to disk.
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#workspace.onDidSaveTextDocument)
      */
-    val onDidSaveTextDocument: Event<TextDocument>
+    /*
+    readonly onDidSaveTextDocument: Event<TextDocument>
+    */
 
     /**
      * All notebook documents currently known to the editor.
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#workspace.notebookDocuments)
      */
-    val notebookDocuments: ReadonlyArray<NotebookDocument>
+    /*
+    readonly notebookDocuments: readonly NotebookDocument[]
+    */
 
     /**
      * Open a notebook. Will return early if this notebook is already [loaded][notebookDocuments]. Otherwise
@@ -625,7 +639,9 @@ external object workspace {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#workspace.openNotebookDocument)
      */
-    fun openNotebookDocument(uri: Uri): PromiseLike<NotebookDocument>
+    /*
+    openNotebookDocument(uri: Uri): Thenable<NotebookDocument>
+    */
 
     /**
      * Open an untitled notebook. The editor will prompt the user for a file
@@ -638,17 +654,18 @@ external object workspace {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#workspace.openNotebookDocument)
      */
-    fun openNotebookDocument(
-        notebookType: String,
-        content: NotebookData = definedExternally,
-    ): PromiseLike<NotebookDocument>
+    /*
+    openNotebookDocument(notebookType: string, content?: NotebookData): Thenable<NotebookDocument>
+    */
 
     /**
      * An event that is emitted when a [notebook][NotebookDocument] has changed.
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#workspace.onDidChangeNotebookDocument)
      */
-    val onDidChangeNotebookDocument: Event<NotebookDocumentChangeEvent>
+    /*
+    readonly onDidChangeNotebookDocument: Event<NotebookDocumentChangeEvent>
+    */
 
     /**
      * An event that is emitted when a [notebook document][NotebookDocument] will be saved to disk.
@@ -665,14 +682,18 @@ external object workspace {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#workspace.onWillSaveNotebookDocument)
      */
-    val onWillSaveNotebookDocument: Event<NotebookDocumentWillSaveEvent>
+    /*
+    readonly onWillSaveNotebookDocument: Event<NotebookDocumentWillSaveEvent>
+    */
 
     /**
      * An event that is emitted when a [notebook][NotebookDocument] is saved.
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#workspace.onDidSaveNotebookDocument)
      */
-    val onDidSaveNotebookDocument: Event<NotebookDocument>
+    /*
+    readonly onDidSaveNotebookDocument: Event<NotebookDocument>
+    */
 
     /**
      * Register a [notebook serializer][NotebookSerializer].
@@ -687,18 +708,18 @@ external object workspace {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#workspace.registerNotebookSerializer)
      */
-    fun registerNotebookSerializer(
-        notebookType: String,
-        serializer: NotebookSerializer,
-        options: NotebookDocumentContentOptions = definedExternally,
-    ): Disposable
+    /*
+    registerNotebookSerializer(notebookType: string, serializer: NotebookSerializer, options?: NotebookDocumentContentOptions): Disposable
+    */
 
     /**
      * An event that is emitted when a [notebook][NotebookDocument] is opened.
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#workspace.onDidOpenNotebookDocument)
      */
-    val onDidOpenNotebookDocument: Event<NotebookDocument>
+    /*
+    readonly onDidOpenNotebookDocument: Event<NotebookDocument>
+    */
 
     /**
      * An event that is emitted when a [notebook][NotebookDocument] is disposed.
@@ -710,7 +731,9 @@ external object workspace {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#workspace.onDidCloseNotebookDocument)
      */
-    val onDidCloseNotebookDocument: Event<NotebookDocument>
+    /*
+    readonly onDidCloseNotebookDocument: Event<NotebookDocument>
+    */
 
     /**
      * An event that is emitted when files are being created.
@@ -724,7 +747,9 @@ external object workspace {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#workspace.onWillCreateFiles)
      */
-    val onWillCreateFiles: Event<FileWillCreateEvent>
+    /*
+    readonly onWillCreateFiles: Event<FileWillCreateEvent>
+    */
 
     /**
      * An event that is emitted when files have been created.
@@ -736,7 +761,9 @@ external object workspace {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#workspace.onDidCreateFiles)
      */
-    val onDidCreateFiles: Event<FileCreateEvent>
+    /*
+    readonly onDidCreateFiles: Event<FileCreateEvent>
+    */
 
     /**
      * An event that is emitted when files are being deleted.
@@ -750,7 +777,9 @@ external object workspace {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#workspace.onWillDeleteFiles)
      */
-    val onWillDeleteFiles: Event<FileWillDeleteEvent>
+    /*
+    readonly onWillDeleteFiles: Event<FileWillDeleteEvent>
+    */
 
     /**
      * An event that is emitted when files have been deleted.
@@ -764,7 +793,9 @@ external object workspace {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#workspace.onDidDeleteFiles)
      */
-    val onDidDeleteFiles: Event<FileDeleteEvent>
+    /*
+    readonly onDidDeleteFiles: Event<FileDeleteEvent>
+    */
 
     /**
      * An event that is emitted when files are being renamed.
@@ -778,7 +809,9 @@ external object workspace {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#workspace.onWillRenameFiles)
      */
-    val onWillRenameFiles: Event<FileWillRenameEvent>
+    /*
+    readonly onWillRenameFiles: Event<FileWillRenameEvent>
+    */
 
     /**
      * An event that is emitted when files have been renamed.
@@ -792,7 +825,9 @@ external object workspace {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#workspace.onDidRenameFiles)
      */
-    val onDidRenameFiles: Event<FileRenameEvent>
+    /*
+    readonly onDidRenameFiles: Event<FileRenameEvent>
+    */
 
     /**
      * Get a workspace configuration object.
@@ -809,17 +844,18 @@ external object workspace {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#workspace.getConfiguration)
      */
-    fun getConfiguration(
-        section: String = definedExternally,
-        scope: ConfigurationScope? = definedExternally,
-    ): WorkspaceConfiguration
+    /*
+    getConfiguration(section?: string, scope?: ConfigurationScope | null): WorkspaceConfiguration
+    */
 
     /**
      * An event that is emitted when the [configuration][WorkspaceConfiguration] changed.
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#workspace.onDidChangeConfiguration)
      */
-    val onDidChangeConfiguration: Event<ConfigurationChangeEvent>
+    /*
+    readonly onDidChangeConfiguration: Event<ConfigurationChangeEvent>
+    */
 
     /**
      * Register a filesystem provider for a given scheme, e.g. `ftp`.
@@ -853,14 +889,18 @@ external object workspace {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#workspace.isTrusted)
      */
-    val isTrusted: Boolean
+    /*
+    readonly isTrusted: boolean
+    */
 
     /**
      * Event that fires when the current workspace has been trusted.
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#workspace.onDidGrantWorkspaceTrust)
      */
-    val onDidGrantWorkspaceTrust: Event<Void>
+    /*
+    readonly onDidGrantWorkspaceTrust: Event<void>
+    */
 
     /**
      * Decodes the content from a `Uint8Array` to a `string`. You MUST
@@ -882,7 +922,9 @@ external object workspace {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#workspace.decode)
      */
-    fun decode(content: Uint8Array<*>): PromiseLike<JsString>
+    /*
+    decode(content: Uint8Array): Thenable<string>
+    */
 
     /**
      * Decodes the content from a `Uint8Array` to a `string` using the
@@ -958,7 +1000,9 @@ external object workspace {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#workspace.encode)
      */
-    fun encode(content: String): PromiseLike<Uint8Array<*>>
+    /*
+    encode(content: string): Thenable<Uint8Array>
+    */
 
     /**
      * Encodes the content of a `string` to a `Uint8Array` using the
