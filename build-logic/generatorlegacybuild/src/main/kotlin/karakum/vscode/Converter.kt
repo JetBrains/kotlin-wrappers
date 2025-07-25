@@ -293,10 +293,11 @@ private fun convertMember(
     source: String,
 ): String {
     val declaration = when {
-        "\n" in source
-                && "options: {" !in source
-                && "options?: {" !in source
-                || "#workspace." in comment
+        "\n" in source && (
+                "options: {" !in source
+                        && "options?: {" !in source
+                        || "#workspace." in comment
+                )
             -> "/*\n$source\n*/"
 
         source.startsWith("constructor(") ||
