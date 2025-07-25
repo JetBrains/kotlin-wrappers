@@ -7,6 +7,8 @@ import js.array.ReadonlyArray
 /**
  * The workspace symbol provider interface defines the contract between extensions and
  * the [symbol search](https://code.visualstudio.com/docs/editor/editingevolved#_open-symbol-by-name)-feature.
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#WorkspaceSymbolProvider)
  */
 external interface WorkspaceSymbolProvider<T : SymbolInformation> {
     /**
@@ -25,6 +27,8 @@ external interface WorkspaceSymbolProvider<T : SymbolInformation> {
      * @param token A cancellation token.
      * @returns An array of document highlights or a thenable that resolves to such. The lack of a result can be
      * signaled by returning `undefined`, `null`, or an empty array.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#WorkspaceSymbolProvider.provideWorkspaceSymbols)
      */
     fun provideWorkspaceSymbols(
         query: String,
@@ -42,6 +46,8 @@ external interface WorkspaceSymbolProvider<T : SymbolInformation> {
      * @param token A cancellation token.
      * @returns The resolved symbol or a thenable that resolves to that. When no result is returned,
      * the given `symbol` is used.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#WorkspaceSymbolProvider.resolveWorkspaceSymbol)
      */
     var resolveWorkspaceSymbol: ((
         symbol: T,

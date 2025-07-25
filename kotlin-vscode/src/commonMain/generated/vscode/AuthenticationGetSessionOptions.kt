@@ -6,6 +6,8 @@ import js.core.JsAny
 
 /**
  * Options to be used when getting an [AuthenticationSession] from an [AuthenticationProvider].
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#AuthenticationGetSessionOptions)
  */
 external interface AuthenticationGetSessionOptions {
     /**
@@ -23,6 +25,8 @@ external interface AuthenticationGetSessionOptions {
      * that pre-existing workspaces will not lose their preference if a new workspace sets this flag.
      *
      * Defaults to false.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#AuthenticationGetSessionOptions.clearSessionPreference)
      */
     var clearSessionPreference: Boolean?
 
@@ -41,6 +45,8 @@ external interface AuthenticationGetSessionOptions {
      * Defaults to false.
      *
      * Note: you cannot use this option with [silent][AuthenticationGetSessionOptions.silent].
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#AuthenticationGetSessionOptions.createIfNone)
      */
     var createIfNone: JsAny /* boolean | AuthenticationGetSessionPresentationOptions */?
 
@@ -56,6 +62,8 @@ external interface AuthenticationGetSessionOptions {
      * [createIfNone][AuthenticationGetSessionOptions.createIfNone].
      *
      * This defaults to false.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#AuthenticationGetSessionOptions.forceNewSession)
      */
     var forceNewSession: JsAny /* boolean | AuthenticationGetSessionPresentationOptions | AuthenticationForceNewSessionOptions */?
 
@@ -68,11 +76,15 @@ external interface AuthenticationGetSessionOptions {
      * Defaults to false.
      *
      * Note: you cannot use this option with any other options that prompt the user like [createIfNone][AuthenticationGetSessionOptions.createIfNone].
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#AuthenticationGetSessionOptions.silent)
      */
     var silent: Boolean?
 
     /**
      * The account that you would like to get a session for. This is passed down to the Authentication Provider to be used for creating the correct session.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#AuthenticationGetSessionOptions.account)
      */
     var account: AuthenticationSessionAccountInformation?
 }

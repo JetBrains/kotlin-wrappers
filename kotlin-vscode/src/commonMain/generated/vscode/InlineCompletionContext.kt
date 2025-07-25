@@ -4,10 +4,14 @@ package vscode
 
 /**
  * Provides information about the context in which an inline completion was requested.
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#InlineCompletionContext)
  */
 external interface InlineCompletionContext {
     /**
      * Describes how the inline completion was triggered.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#InlineCompletionContext.triggerKind)
      */
     val triggerKind: InlineCompletionTriggerKind
 
@@ -20,6 +24,8 @@ external interface InlineCompletionContext {
      * the inline completion must also replace `.` and start with `.log`, for example `.log()`.
      *
      * Inline completion providers are requested again whenever the selected item changes.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#InlineCompletionContext.selectedCompletionInfo)
      */
     val selectedCompletionInfo: SelectedCompletionInfo?
 }

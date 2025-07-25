@@ -5,10 +5,14 @@ package vscode
 /**
  * Additional information about the context in which a
  * {@linkcode SignatureHelpProvider.provideSignatureHelp SignatureHelpProvider} was triggered.
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#SignatureHelpContext)
  */
 external interface SignatureHelpContext {
     /**
      * Action that caused signature help to be triggered.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#SignatureHelpContext.triggerKind)
      */
     val triggerKind: SignatureHelpTriggerKind
 
@@ -17,6 +21,8 @@ external interface SignatureHelpContext {
      *
      * This is `undefined` when signature help is not triggered by typing, such as when manually invoking
      * signature help or when moving the cursor.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#SignatureHelpContext.triggerCharacter)
      */
     val triggerCharacter: String?
 
@@ -25,6 +31,8 @@ external interface SignatureHelpContext {
      *
      * Retriggers occur when the signature help is already active and can be caused by actions such as
      * typing a trigger character, a cursor move, or document content changes.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#SignatureHelpContext.isRetrigger)
      */
     val isRetrigger: Boolean
 
@@ -33,6 +41,8 @@ external interface SignatureHelpContext {
      *
      * The `activeSignatureHelp` has its {@linkcode SignatureHelp.activeSignature activeSignature} field updated based on
      * the user arrowing through available signatures.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#SignatureHelpContext.activeSignatureHelp)
      */
     val activeSignatureHelp: SignatureHelp?
 }

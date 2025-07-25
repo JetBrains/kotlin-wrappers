@@ -6,15 +6,21 @@ import js.core.JsAny
 
 /**
  * Options for creating a [TreeView]
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TreeViewOptions)
  */
 external interface TreeViewOptions<T : JsAny?> {
     /**
      * A data provider that provides tree data.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TreeViewOptions.treeDataProvider)
      */
     var treeDataProvider: TreeDataProvider<T>
 
     /**
      * Whether to show collapse all action or not.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TreeViewOptions.showCollapseAll)
      */
     var showCollapseAll: Boolean?
 
@@ -22,11 +28,15 @@ external interface TreeViewOptions<T : JsAny?> {
      * Whether the tree supports multi-select. When the tree supports multi-select and a command is executed from the tree,
      * the first argument to the command is the tree item that the command was executed on and the second argument is an
      * array containing all selected tree items.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TreeViewOptions.canSelectMany)
      */
     var canSelectMany: Boolean?
 
     /**
      * An optional interface to implement drag and drop in the tree view.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TreeViewOptions.dragAndDropController)
      */
     var dragAndDropController: TreeDragAndDropController<T>?
 
@@ -65,6 +75,8 @@ external interface TreeViewOptions<T : JsAny?> {
      *   - [ ] Parent
      *     - [ ] Child 1
      *     - [x] Child 2
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TreeViewOptions.manageCheckboxStateManually)
      */
     var manageCheckboxStateManually: Boolean?
 }

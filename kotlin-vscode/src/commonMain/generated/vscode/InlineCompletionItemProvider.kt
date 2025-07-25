@@ -9,6 +9,8 @@ import js.core.JsAny
  * the inline completion feature.
  *
  * Providers are asked for completions either explicitly by a user gesture or implicitly when typing.
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#InlineCompletionItemProvider)
  */
 external interface InlineCompletionItemProvider {
     /**
@@ -23,6 +25,8 @@ external interface InlineCompletionItemProvider {
      * @param context A context object with additional information.
      * @param token A cancellation token.
      * @returns An array of completion items or a thenable that resolves to an array of completion items.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#InlineCompletionItemProvider.provideInlineCompletionItems)
      */
     fun provideInlineCompletionItems(
         document: TextDocument,

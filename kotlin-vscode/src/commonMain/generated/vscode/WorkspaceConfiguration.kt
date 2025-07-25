@@ -69,6 +69,8 @@ import kotlin.js.definedExternally
  * ```
  *
  * Refer to [Settings](https://code.visualstudio.com/docs/getstarted/settings) for more information.
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#WorkspaceConfiguration)
  */
 external interface WorkspaceConfiguration {
     /**
@@ -76,6 +78,8 @@ external interface WorkspaceConfiguration {
      *
      * @param section Configuration name, supports _dotted_ names.
      * @returns The value `section` denotes or `undefined`.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#WorkspaceConfiguration.get)
      */
     fun <T : JsAny?> get(section: String): T?
 
@@ -85,6 +89,8 @@ external interface WorkspaceConfiguration {
      * @param section Configuration name, supports _dotted_ names.
      * @param defaultValue A value should be returned when no value could be found, is `undefined`.
      * @returns The value `section` denotes or the default.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#WorkspaceConfiguration.get)
      */
     fun <T : JsAny?> get(
         section: String,
@@ -96,6 +102,8 @@ external interface WorkspaceConfiguration {
      *
      * @param section Configuration name, supports _dotted_ names.
      * @returns `true` if the section doesn't resolve to `undefined`.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#WorkspaceConfiguration.has)
      */
     fun has(section: String): Boolean
 
@@ -112,6 +120,8 @@ external interface WorkspaceConfiguration {
      *
      * @param section Configuration name, supports _dotted_ names.
      * @returns Information about a configuration setting or `undefined`.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#WorkspaceConfiguration.inspect)
      */
     /*
     inspect<T>(section: string): {
@@ -197,6 +207,8 @@ external interface WorkspaceConfiguration {
      *	- configuration to workspace or workspace folder when no workspace is opened.
      *	- configuration to workspace folder when there is no workspace folder settings.
      *	- configuration to workspace folder when [WorkspaceConfiguration] is not scoped to a resource.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#WorkspaceConfiguration.update)
      */
     fun update(
         section: String,
@@ -207,6 +219,8 @@ external interface WorkspaceConfiguration {
 
     /**
      * Readable dictionary that backs this configuration.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#WorkspaceConfiguration.[key)
      */
     // readonly [key: string]: any
 }

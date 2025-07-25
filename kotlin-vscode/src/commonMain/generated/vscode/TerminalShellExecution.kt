@@ -7,6 +7,8 @@ import js.iterable.AsyncIterable
 
 /**
  * A command that was executed in a terminal.
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TerminalShellExecution)
  */
 external interface TerminalShellExecution {
     /**
@@ -32,6 +34,8 @@ external interface TerminalShellExecution {
      *     `  Trusted: ${command.commandLine.isTrusted}
      *   ].join('\n');
      * }
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TerminalShellExecution.commandLine)
      */
     val commandLine: TerminalShellExecutionCommandLine
 
@@ -39,6 +43,8 @@ external interface TerminalShellExecution {
      * The working directory that was reported by the shell when this command executed. This
      * [Uri] may represent a file on another machine (eg. ssh into another machine). This
      * requires the shell integration to support working directory reporting.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TerminalShellExecution.cwd)
      */
     val cwd: Uri?
 
@@ -56,6 +62,8 @@ external interface TerminalShellExecution {
      * for await (const data of stream) {
      *   console.log(data);
      * }
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TerminalShellExecution.read)
      */
     fun read(): AsyncIterable<JsString>
 }

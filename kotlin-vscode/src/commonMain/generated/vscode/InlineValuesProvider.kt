@@ -9,11 +9,15 @@ import js.core.Void
  * The inline values provider interface defines the contract between extensions and the editor's debugger inline values feature.
  * In this contract the provider returns inline value information for a given document range
  * and the editor shows this information in the editor at the end of lines.
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#InlineValuesProvider)
  */
 external interface InlineValuesProvider {
     /**
      * An optional event to signal that inline values have changed.
      * @see [EventEmitter]
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#InlineValuesProvider.onDidChangeInlineValues)
      */
     var onDidChangeInlineValues: Event<Void>?
 
@@ -28,6 +32,8 @@ external interface InlineValuesProvider {
      * @param token A cancellation token.
      * @returns An array of InlineValueDescriptors or a thenable that resolves to such. The lack of a result can be
      * signaled by returning `undefined` or `null`.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#InlineValuesProvider.provideInlineValues)
      */
     fun provideInlineValues(
         document: TextDocument,

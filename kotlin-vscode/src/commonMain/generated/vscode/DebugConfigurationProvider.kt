@@ -8,6 +8,8 @@ import js.array.ReadonlyArray
  * A debug configuration provider allows to add debug configurations to the debug service
  * and to resolve launch configurations before they are used to start a debug session.
  * A debug configuration provider is registered via [debug.registerDebugConfigurationProvider].
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#DebugConfigurationProvider)
  */
 external interface DebugConfigurationProvider {
     /**
@@ -17,6 +19,8 @@ external interface DebugConfigurationProvider {
      * @param folder The workspace folder for which the configurations are used or `undefined` for a folderless setup.
      * @param token A cancellation token.
      * @returns An array of [debug configurations][DebugConfiguration].
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#DebugConfigurationProvider.provideDebugConfigurations)
      */
     var provideDebugConfigurations: ((
         folder: WorkspaceFolder?,
@@ -34,6 +38,8 @@ external interface DebugConfigurationProvider {
      * @param debugConfiguration The [debug configuration][DebugConfiguration] to resolve.
      * @param token A cancellation token.
      * @returns The resolved debug configuration or undefined or null.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#DebugConfigurationProvider.resolveDebugConfiguration)
      */
     var resolveDebugConfiguration: ((
         folder: WorkspaceFolder?,
@@ -53,6 +59,8 @@ external interface DebugConfigurationProvider {
      * @param debugConfiguration The [debug configuration][DebugConfiguration] to resolve.
      * @param token A cancellation token.
      * @returns The resolved debug configuration or undefined or null.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#DebugConfigurationProvider.resolveDebugConfigurationWithSubstitutedVariables)
      */
     var resolveDebugConfigurationWithSubstitutedVariables: ((
         folder: WorkspaceFolder?,

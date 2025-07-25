@@ -4,20 +4,28 @@ package vscode
 
 /**
  * An event signalling that an execution has ended in a terminal.
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TerminalShellExecutionEndEvent)
  */
 external interface TerminalShellExecutionEndEvent {
     /**
      * The terminal that shell integration has been activated in.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TerminalShellExecutionEndEvent.terminal)
      */
     val terminal: Terminal
 
     /**
      * The shell integration object.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TerminalShellExecutionEndEvent.shellIntegration)
      */
     val shellIntegration: TerminalShellIntegration
 
     /**
      * The terminal shell execution that has ended.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TerminalShellExecutionEndEvent.execution)
      */
     val execution: TerminalShellExecution
 
@@ -52,6 +60,8 @@ external interface TerminalShellExecutionEndEvent {
      *     }
      *   }
      * });
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TerminalShellExecutionEndEvent.exitCode)
      */
     val exitCode: Int?
 }

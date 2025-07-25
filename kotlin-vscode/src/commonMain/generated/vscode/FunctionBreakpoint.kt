@@ -9,16 +9,22 @@ import kotlin.js.definedExternally
 
 /**
  * A breakpoint specified by a function name.
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#FunctionBreakpoint)
  */
 open external class FunctionBreakpoint :
     Breakpoint {
     /**
      * The name of the function to which this breakpoint is attached.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#FunctionBreakpoint.functionName)
      */
     val functionName: String
 
     /**
      * Create a new function breakpoint.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#FunctionBreakpoint.constructor)
      */
     constructor(
         functionName: String,

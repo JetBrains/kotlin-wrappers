@@ -4,6 +4,8 @@ package vscode
 
 /**
  * Represents the state of a [Terminal].
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TerminalState)
  */
 external interface TerminalState {
     /**
@@ -19,6 +21,8 @@ external interface TerminalState {
      *
      * For more information on events that can send data see "DEC Private Mode Set (DECSET)" on
      * https://invisible-island.net/xterm/ctlseqs/ctlseqs.html
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TerminalState.isInteractedWith)
      */
     val isInteractedWith: Boolean
 
@@ -31,6 +35,8 @@ external interface TerminalState {
      * Note that the possible values are currently defined as any of the following:
      * 'bash', 'cmd', 'csh', 'fish', 'gitbash', 'julia', 'ksh', 'node', 'nu', 'pwsh', 'python',
      * 'sh', 'wsl', 'zsh'.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TerminalState.shell)
      */
     val shell: String?
 }

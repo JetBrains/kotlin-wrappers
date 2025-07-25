@@ -9,16 +9,22 @@ import js.core.JsAny
  *
  * To get an instance of a `LogOutputChannel` use
  * [createOutputChannel][window.createOutputChannel].
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#LogOutputChannel)
  */
 external interface LogOutputChannel :
     OutputChannel {
     /**
      * The current log level of the channel. Defaults to [editor log level][env.logLevel].
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#LogOutputChannel.logLevel)
      */
     val logLevel: LogLevel
 
     /**
      * An [Event] which fires when the log level of the channel changes.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#LogOutputChannel.onDidChangeLogLevel)
      */
     val onDidChangeLogLevel: Event<LogLevel>
 
@@ -28,6 +34,8 @@ external interface LogOutputChannel :
      * The message is only logged if the channel is configured to display [trace][LogLevel.Trace] log level.
      *
      * @param message trace message to log
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#LogOutputChannel.trace)
      */
     fun trace(
         message: String,
@@ -40,6 +48,8 @@ external interface LogOutputChannel :
      * The message is only logged if the channel is configured to display [debug][LogLevel.Debug] log level or lower.
      *
      * @param message debug message to log
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#LogOutputChannel.debug)
      */
     fun debug(
         message: String,
@@ -52,6 +62,8 @@ external interface LogOutputChannel :
      * The message is only logged if the channel is configured to display [info][LogLevel.Info] log level or lower.
      *
      * @param message info message to log
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#LogOutputChannel.info)
      */
     fun info(
         message: String,
@@ -64,6 +76,8 @@ external interface LogOutputChannel :
      * The message is only logged if the channel is configured to display [warning][LogLevel.Warning] log level or lower.
      *
      * @param message warning message to log
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#LogOutputChannel.warn)
      */
     fun warn(
         message: String,
@@ -76,6 +90,8 @@ external interface LogOutputChannel :
      * The message is only logged if the channel is configured to display [error][LogLevel.Error] log level or lower.
      *
      * @param error Error or error message to log
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#LogOutputChannel.error)
      */
     fun error(
         error: JsAny, /* string | Error */

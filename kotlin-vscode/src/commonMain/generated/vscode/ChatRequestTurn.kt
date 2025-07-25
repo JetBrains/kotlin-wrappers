@@ -9,6 +9,8 @@ import kotlin.js.JsModule
 
 /**
  * Represents a user request in chat history.
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#ChatRequestTurn)
  */
 open external class ChatRequestTurn {
     /**
@@ -18,31 +20,43 @@ open external class ChatRequestTurn {
      *
      * *Note* that the [name} of the participant and the {@link ChatCommand.name command][ChatParticipant.name]
      * are not part of the prompt.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#ChatRequestTurn.prompt)
      */
     val prompt: String
 
     /**
      * The id of the chat participant to which this request was directed.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#ChatRequestTurn.participant)
      */
     val participant: String
 
     /**
      * The name of the [command][ChatCommand] that was selected for this request.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#ChatRequestTurn.command)
      */
     val command: String?
 
     /**
      * The references that were used in this message.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#ChatRequestTurn.references)
      */
     val references: ReadonlyArray<ChatPromptReference>
 
     /**
      * The list of tools were attached to this request.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#ChatRequestTurn.toolReferences)
      */
     val toolReferences: ReadonlyArray<ChatLanguageModelToolReference>
 
     /**
      * @hidden
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#ChatRequestTurn.constructor)
      */
     private constructor(
         prompt: String,

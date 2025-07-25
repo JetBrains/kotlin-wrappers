@@ -5,6 +5,8 @@ package vscode
 /**
  * The declaration provider interface defines the contract between extensions and
  * the go to declaration feature.
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#DeclarationProvider)
  */
 external interface DeclarationProvider {
     /**
@@ -15,6 +17,8 @@ external interface DeclarationProvider {
      * @param token A cancellation token.
      * @returns A declaration or a thenable that resolves to such. The lack of a result can be
      * signaled by returning `undefined` or `null`.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#DeclarationProvider.provideDeclaration)
      */
     fun provideDeclaration(
         document: TextDocument,

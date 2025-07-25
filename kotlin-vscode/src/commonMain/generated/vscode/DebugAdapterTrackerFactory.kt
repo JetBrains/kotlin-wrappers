@@ -4,6 +4,8 @@ package vscode
 
 /**
  * A debug adapter factory that creates [debug adapter trackers][DebugAdapterTracker].
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#DebugAdapterTrackerFactory)
  */
 external interface DebugAdapterTrackerFactory {
     /**
@@ -12,6 +14,8 @@ external interface DebugAdapterTrackerFactory {
      *
      * @param session The [debug session][DebugSession] for which the debug adapter tracker will be used.
      * @returns A [debug adapter tracker][DebugAdapterTracker] or undefined.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#DebugAdapterTrackerFactory.createDebugAdapterTracker)
      */
     fun createDebugAdapterTracker(session: DebugSession): ProviderResult<DebugAdapterTracker>
 }

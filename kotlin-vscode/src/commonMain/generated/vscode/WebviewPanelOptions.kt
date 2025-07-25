@@ -4,12 +4,16 @@ package vscode
 
 /**
  * Content settings for a webview panel.
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#WebviewPanelOptions)
  */
 external interface WebviewPanelOptions {
     /**
      * Controls if the find widget is enabled in the panel.
      *
      * Defaults to `false`.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#WebviewPanelOptions.enableFindWidget)
      */
     val enableFindWidget: Boolean?
 
@@ -28,6 +32,8 @@ external interface WebviewPanelOptions {
      *
      * `retainContextWhenHidden` has a high memory overhead and should only be used if
      * your panel's context cannot be quickly saved and restored.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#WebviewPanelOptions.retainContextWhenHidden)
      */
     val retainContextWhenHidden: Boolean?
 }

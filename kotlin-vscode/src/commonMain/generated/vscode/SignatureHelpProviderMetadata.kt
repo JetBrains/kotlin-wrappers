@@ -7,10 +7,14 @@ import js.core.JsString
 
 /**
  * Metadata about a registered {@linkcode SignatureHelpProvider}.
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#SignatureHelpProviderMetadata)
  */
 external interface SignatureHelpProviderMetadata {
     /**
      * List of characters that trigger signature help.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#SignatureHelpProviderMetadata.triggerCharacters)
      */
     val triggerCharacters: ReadonlyArray<JsString>
 
@@ -19,6 +23,8 @@ external interface SignatureHelpProviderMetadata {
      *
      * These trigger characters are only active when signature help is already showing. All trigger characters
      * are also counted as re-trigger characters.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#SignatureHelpProviderMetadata.retriggerCharacters)
      */
     val retriggerCharacters: ReadonlyArray<JsString>
 }

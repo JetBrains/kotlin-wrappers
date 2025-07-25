@@ -8,6 +8,8 @@ import js.core.JsAny
  * The definition provider interface defines the contract between extensions and
  * the [go to definition](https://code.visualstudio.com/docs/editor/editingevolved#_go-to-definition)
  * and peek definition features.
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#DefinitionProvider)
  */
 external interface DefinitionProvider {
     /**
@@ -18,6 +20,8 @@ external interface DefinitionProvider {
      * @param token A cancellation token.
      * @returns A definition or a thenable that resolves to such. The lack of a result can be
      * signaled by returning `undefined` or `null`.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#DefinitionProvider.provideDefinition)
      */
     fun provideDefinition(
         document: TextDocument,

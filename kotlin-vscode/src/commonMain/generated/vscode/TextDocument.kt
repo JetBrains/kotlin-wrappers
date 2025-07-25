@@ -10,6 +10,8 @@ import kotlin.js.definedExternally
 /**
  * Represents a text document, such as a source file. Text documents have
  * [lines][TextLine] and knowledge about an underlying resource like a file.
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TextDocument)
  */
 external interface TextDocument {
     /**
@@ -20,12 +22,16 @@ external interface TextDocument {
      *
      * @see [FileSystemProvider]
      * @see [TextDocumentContentProvider]
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TextDocument.uri)
      */
     val uri: Uri
 
     /**
      * The file system path of the associated resource. Shorthand
      * notation for [TextDocument.uri.fsPath][TextDocument.uri]. Independent of the uri scheme.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TextDocument.fileName)
      */
     val fileName: String
 
@@ -33,11 +39,15 @@ external interface TextDocument {
      * Is this document representing an untitled file which has never been saved yet. *Note* that
      * this does not mean the document will be saved to disk, use {@linkcode Uri.scheme}
      * to figure out where a document will be [saved][FileSystemProvider], e.g. `file`, `ftp` etc.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TextDocument.isUntitled)
      */
     val isUntitled: Boolean
 
     /**
      * The identifier of the language associated with this document.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TextDocument.languageId)
      */
     val languageId: String
 
@@ -56,23 +66,31 @@ external interface TextDocument {
      * 'iso88599', 'windows1258', 'gbk', 'gb18030', 'cp950', 'big5hkscs', 'shiftjis',
      * 'eucjp', 'euckr', 'windows874', 'iso885911', 'koi8ru', 'koi8t', 'gb2312',
      * 'cp865', 'cp850'.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TextDocument.encoding)
      */
     val encoding: String
 
     /**
      * The version number of this document (it will strictly increase after each
      * change, including undo/redo).
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TextDocument.version)
      */
     val version: Int
 
     /**
      * `true` if there are unpersisted changes.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TextDocument.isDirty)
      */
     val isDirty: Boolean
 
     /**
      * `true` if the document has been closed. A closed document isn't synchronized anymore
      * and won't be re-used when the same resource is opened again.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TextDocument.isClosed)
      */
     val isClosed: Boolean
 
@@ -81,17 +99,23 @@ external interface TextDocument {
      *
      * @returns A promise that will resolve to `true` when the file
      * has been saved. If the save failed, will return `false`.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TextDocument.save)
      */
     fun save(): PromiseLike<JsBoolean>
 
     /**
      * The [end of line][EndOfLine] sequence that is predominately
      * used in this document.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TextDocument.eol)
      */
     val eol: EndOfLine
 
     /**
      * The number of lines in this document.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TextDocument.lineCount)
      */
     val lineCount: Int
 
@@ -102,6 +126,8 @@ external interface TextDocument {
      *
      * @param line A line number in `[0, lineCount)`.
      * @returns A [line][TextLine].
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TextDocument.lineAt)
      */
     fun lineAt(line: Int): TextLine
 
@@ -116,6 +142,8 @@ external interface TextDocument {
      *
      * @param position A position.
      * @returns A [line][TextLine].
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TextDocument.lineAt)
      */
     fun lineAt(position: Position): TextLine
 
@@ -126,6 +154,8 @@ external interface TextDocument {
      *
      * @param position A position.
      * @returns A valid zero-based offset in UTF-16 [code units](https://developer.mozilla.org/en-US/docs/Glossary/Code_unit).
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TextDocument.offsetAt)
      */
     fun offsetAt(position: Position): Int
 
@@ -134,6 +164,8 @@ external interface TextDocument {
      *
      * @param offset A zero-based offset into the document. This offset is in UTF-16 [code units](https://developer.mozilla.org/en-US/docs/Glossary/Code_unit).
      * @returns A valid [Position].
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TextDocument.positionAt)
      */
     fun positionAt(offset: Int): Position
 
@@ -143,6 +175,8 @@ external interface TextDocument {
      *
      * @param range Include only the text included by the range.
      * @returns The text inside the provided range or the entire text.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TextDocument.getText)
      */
     fun getText(range: Range = definedExternally): String
 
@@ -163,6 +197,8 @@ external interface TextDocument {
      * @param position A position.
      * @param regex Optional regular expression that describes what a word is.
      * @returns A range spanning a word, or `undefined`.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TextDocument.getWordRangeAtPosition)
      */
     fun getWordRangeAtPosition(
         position: Position,
@@ -174,6 +210,8 @@ external interface TextDocument {
      *
      * @param range A range.
      * @returns The given range or a new, adjusted range.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TextDocument.validateRange)
      */
     fun validateRange(range: Range): Range
 
@@ -182,6 +220,8 @@ external interface TextDocument {
      *
      * @param position A position.
      * @returns The given position or a new, adjusted position.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TextDocument.validatePosition)
      */
     fun validatePosition(position: Position): Position
 }

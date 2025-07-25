@@ -7,6 +7,8 @@ import js.array.ReadonlyArray
 /**
  * The document formatting provider interface defines the contract between extensions and
  * the formatting-feature.
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#OnTypeFormattingEditProvider)
  */
 external interface OnTypeFormattingEditProvider {
     /**
@@ -23,6 +25,8 @@ external interface OnTypeFormattingEditProvider {
      * @param token A cancellation token.
      * @returns A set of text edits or a thenable that resolves to such. The lack of a result can be
      * signaled by returning `undefined`, `null`, or an empty array.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#OnTypeFormattingEditProvider.provideOnTypeFormattingEdits)
      */
     fun provideOnTypeFormattingEdits(
         document: TextDocument,

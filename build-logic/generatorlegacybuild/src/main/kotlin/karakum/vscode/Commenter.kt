@@ -1,7 +1,7 @@
 package karakum.vscode
 
 class Commenter(
-    private val name: String,
+    val name: String,
 ) {
     fun child(
         name: String,

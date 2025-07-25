@@ -8,6 +8,8 @@ import js.core.JsAny
 /**
  * The type hierarchy provider interface describes the contract between extensions
  * and the type hierarchy feature.
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TypeHierarchyProvider)
  */
 external interface TypeHierarchyProvider {
     /**
@@ -20,6 +22,8 @@ external interface TypeHierarchyProvider {
      * @param token A cancellation token.
      * @returns One or multiple type hierarchy items or a thenable that resolves to such. The lack of a result can be
      * signaled by returning `undefined`, `null`, or an empty array.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TypeHierarchyProvider.prepareTypeHierarchy)
      */
     fun prepareTypeHierarchy(
         document: TextDocument,
@@ -36,6 +40,8 @@ external interface TypeHierarchyProvider {
      * @param token A cancellation token.
      * @returns A set of direct supertypes or a thenable that resolves to such. The lack of a result can be
      * signaled by returning `undefined` or `null`.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TypeHierarchyProvider.provideTypeHierarchySupertypes)
      */
     fun provideTypeHierarchySupertypes(
         item: TypeHierarchyItem,
@@ -51,6 +57,8 @@ external interface TypeHierarchyProvider {
      * @param token A cancellation token.
      * @returns A set of direct subtypes or a thenable that resolves to such. The lack of a result can be
      * signaled by returning `undefined` or `null`.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TypeHierarchyProvider.provideTypeHierarchySubtypes)
      */
     fun provideTypeHierarchySubtypes(
         item: TypeHierarchyItem,

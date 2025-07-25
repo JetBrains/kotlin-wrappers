@@ -12,6 +12,8 @@ import kotlin.js.definedExternally
 
 /**
  * A task to execute
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#Task)
  */
 open external class Task {
     /**
@@ -25,6 +27,8 @@ open external class Task {
      * @param problemMatchers the names of problem matchers to use, like '$tsc'
      *  or '$eslint'. Problem matchers can be contributed by an extension using
      *  the `problemMatchers` extension point.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#Task.constructor)
      */
     constructor(
         taskDefinition: TaskDefinition,
@@ -37,16 +41,22 @@ open external class Task {
 
     /**
      * The task's definition.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#Task.definition)
      */
     var definition: TaskDefinition
 
     /**
      * The task's scope.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#Task.scope)
      */
     val scope: JsAny /* TaskScope.Global | TaskScope.Workspace | WorkspaceFolder */?
 
     /**
      * The task's name
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#Task.name)
      */
     var name: String
 
@@ -54,22 +64,30 @@ open external class Task {
      * A human-readable string which is rendered less prominently on a separate line in places
      * where the task's name is displayed. Supports rendering of [theme icons][ThemeIcon]
      * via the `$(<name>)`-syntax.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#Task.detail)
      */
     var detail: String?
 
     /**
      * The task's execution engine
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#Task.execution)
      */
     var execution: JsAny /* ProcessExecution | ShellExecution | CustomExecution */?
 
     /**
      * Whether the task is a background task or not.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#Task.isBackground)
      */
     var isBackground: Boolean
 
     /**
      * A human-readable string describing the source of this shell task, e.g. 'gulp'
      * or 'npm'. Supports rendering of [theme icons][ThemeIcon] via the `$(<name>)`-syntax.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#Task.source)
      */
     var source: String
 
@@ -78,22 +96,30 @@ open external class Task {
      * for a predefined set of available groups.
      * Defaults to undefined meaning that the task doesn't
      * belong to any special group.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#Task.group)
      */
     var group: TaskGroup?
 
     /**
      * The presentation options. Defaults to an empty literal.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#Task.presentationOptions)
      */
     var presentationOptions: TaskPresentationOptions
 
     /**
      * The problem matchers attached to the task. Defaults to an empty
      * array.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#Task.problemMatchers)
      */
     var problemMatchers: ReadonlyArray<JsString>
 
     /**
      * Run options for the task
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#Task.runOptions)
      */
     var runOptions: RunOptions
 }

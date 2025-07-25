@@ -20,5 +20,7 @@ import js.core.JsAny
  * path to match against, consider to use the [relative pattern][RelativePattern] support
  * that takes care of converting any backslash into slash. Otherwise, make sure to convert
  * any backslash to slash when creating the glob pattern.
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#GlobPattern)
  */
 typealias GlobPattern = JsAny /* string | RelativePattern */

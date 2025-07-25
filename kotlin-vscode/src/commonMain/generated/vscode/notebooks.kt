@@ -18,6 +18,8 @@ import kotlin.js.definedExternally
  * 1. [NotebookSerializer] enable the editor to open, show, and save notebooks
  * 2. [NotebookController] own the execution of notebooks, e.g they create output from code cells.
  * 3. NotebookRenderer present notebook output in the editor. They run in a separate context.
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#notebooks)
  */
 external object notebooks {
     /**
@@ -28,6 +30,8 @@ external object notebooks {
      * @param label The label of the controller.
      * @param handler The execute-handler of the controller.
      * @returns A new notebook controller.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#notebooks.createNotebookController)
      */
     fun createNotebookController(
         id: String,
@@ -46,6 +50,8 @@ external object notebooks {
      * @param notebookType The notebook type to register for.
      * @param provider A cell status bar provider.
      * @returns A [Disposable] that unregisters this provider when being disposed.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#notebooks.registerNotebookCellStatusBarItemProvider)
      */
     fun registerNotebookCellStatusBarItemProvider(
         notebookType: String,
@@ -61,6 +67,8 @@ external object notebooks {
      *
      * @param rendererId The renderer ID to communicate with
      * @returns A new notebook renderer messaging object.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#notebooks.createRendererMessaging)
      */
     fun createRendererMessaging(rendererId: String): NotebookRendererMessaging
 }

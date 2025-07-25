@@ -30,6 +30,8 @@ import kotlin.js.definedExternally
  * The workspace offers support for [listening][workspace.createFileSystemWatcher] to fs
  * events and for [finding][workspace.findFiles] files. Both perform well and run _outside_
  * the editor-process so that they should be always used instead of nodejs-equivalents.
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#workspace)
  */
 external object workspace {
     /**
@@ -37,6 +39,8 @@ external object workspace {
      * files, e.g. `vscode.workspace.fs.readDirectory(someUri)` allows to retrieve all entries
      * of a directory or `vscode.workspace.fs.stat(anotherUri)` returns the meta data for a
      * file.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#workspace.fs)
      */
     val fs: FileSystem
 
@@ -46,6 +50,8 @@ external object workspace {
      *
      * Refer to https://code.visualstudio.com/docs/editor/workspaces for more information
      * on workspaces.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#workspace.workspaceFolders)
      */
     val workspaceFolders: ReadonlyArray<WorkspaceFolder>?
 
@@ -55,6 +61,8 @@ external object workspace {
      *
      * Refer to https://code.visualstudio.com/docs/editor/workspaces for more information on
      * the concept of workspaces.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#workspace.name)
      */
     val name: String?
 
@@ -89,6 +97,8 @@ external object workspace {
      * configuration data into the file. You can use `workspace.getConfiguration().update()`
      * for that purpose which will work both when a single folder is opened as
      * well as an untitled or saved workspace.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#workspace.workspaceFile)
      */
     val workspaceFile: Uri?
 
@@ -99,6 +109,8 @@ external object workspace {
      * because in that case the currently executing extensions (including the one that listens to this
      * event) will be terminated and restarted so that the (deprecated) `rootPath` property is updated
      * to point to the first workspace folder.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#workspace.onDidChangeWorkspaceFolders)
      */
     val onDidChangeWorkspaceFolders: Event<WorkspaceFoldersChangeEvent>
 
@@ -109,6 +121,8 @@ external object workspace {
      *
      * @param uri An uri.
      * @returns A workspace folder or `undefined`
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#workspace.getWorkspaceFolder)
      */
     fun getWorkspaceFolder(uri: Uri): WorkspaceFolder?
 
@@ -123,6 +137,8 @@ external object workspace {
      * workspace folder the name of the workspace is prepended. Defaults to `true` when there are
      * multiple workspace folders and `false` otherwise.
      * @returns A path relative to the root or the input.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#workspace.asRelativePath)
      */
     fun asRelativePath(
         pathOrUri: JsAny, /* string | Uri */
@@ -171,6 +187,8 @@ external object workspace {
      * Each workspace is identified with a mandatory URI and an optional name.
      * @returns true if the operation was successfully started and false otherwise if arguments were used that would result
      * in invalid workspace folder state (e.g. 2 folders with the same URI).
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#workspace.updateWorkspaceFolders)
      */
     /*
     updateWorkspaceFolders(start: number, deleteCount: number | undefined | null, ...workspaceFoldersToAdd: {
@@ -288,6 +306,8 @@ external object workspace {
      * @param ignoreChangeEvents Ignore when files have been changed.
      * @param ignoreDeleteEvents Ignore when files have been deleted.
      * @returns A new file system watcher instance. Must be disposed when no longer needed.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#workspace.createFileSystemWatcher)
      */
     fun createFileSystemWatcher(
         globPattern: GlobPattern,
@@ -312,6 +332,8 @@ external object workspace {
      * @param token A token that can be used to signal cancellation to the underlying search engine.
      * @returns A thenable that resolves to an array of resource identifiers. Will return no results if no
      * [workspace folders][workspace.workspaceFolders] are opened.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#workspace.findFiles)
      */
     fun findFiles(
         include: GlobPattern,
@@ -328,6 +350,8 @@ external object workspace {
      *
      * @param uri the associated uri for the opened editor to save.
      * @returns A thenable that resolves when the save operation has finished.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#workspace.save)
      */
     fun save(uri: Uri): PromiseLike<Uri?>
 
@@ -340,6 +364,8 @@ external object workspace {
      *
      * @param uri the associated uri for the opened editor to save as.
      * @returns A thenable that resolves when the save-as operation has finished.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#workspace.saveAs)
      */
     fun saveAs(uri: Uri): PromiseLike<Uri?>
 
@@ -349,6 +375,8 @@ external object workspace {
      * @param includeUntitled Also save files that have been created during this session.
      * @returns A thenable that resolves when the files have been saved. Will return `false`
      * for any file that failed to save.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#workspace.saveAll)
      */
     fun saveAll(includeUntitled: Boolean = definedExternally): PromiseLike<JsBoolean>
 
@@ -368,6 +396,8 @@ external object workspace {
      * @param edit A workspace edit.
      * @param metadata Optional [metadata][WorkspaceEditMetadata] for the edit.
      * @returns A thenable that resolves when the edit could be applied.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#workspace.applyEdit)
      */
     fun applyEdit(
         edit: WorkspaceEdit,
@@ -376,6 +406,8 @@ external object workspace {
 
     /**
      * All text documents currently known to the editor.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#workspace.textDocuments)
      */
     val textDocuments: ReadonlyArray<TextDocument>
 
@@ -397,6 +429,8 @@ external object workspace {
      *
      * @param uri Identifies the resource to open.
      * @returns A promise that resolves to a [document][TextDocument].
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#workspace.openTextDocument)
      */
     /*
     openTextDocument(uri: Uri, options?: {
@@ -430,6 +464,8 @@ external object workspace {
      * @see [workspace.openTextDocument]
      * @param path A path of a file on disk.
      * @returns A promise that resolves to a [document][TextDocument].
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#workspace.openTextDocument)
      */
     /*
     openTextDocument(path: string, options?: {
@@ -464,6 +500,8 @@ external object workspace {
      *
      * @param options Options to control how the document will be created.
      * @returns A promise that resolves to a [document][TextDocument].
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#workspace.openTextDocument)
      */
     /*
     openTextDocument(options?: {
@@ -494,6 +532,8 @@ external object workspace {
      * @param scheme The uri-scheme to register for.
      * @param provider A content provider.
      * @returns A [Disposable] that unregisters this provider when being disposed.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#workspace.registerTextDocumentContentProvider)
      */
     fun registerTextDocumentContentProvider(
         scheme: String,
@@ -511,6 +551,8 @@ external object workspace {
      * [active text editor][window.activeTextEditor]
      * - When a [text document} is already open (e.g.: open in another {@link window.visibleTextEditors visible text editor][TextDocument]) this event is not emitted
      *
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#workspace.onDidOpenTextDocument)
      */
     val onDidOpenTextDocument: Event<TextDocument>
 
@@ -523,6 +565,8 @@ external object workspace {
      *
      * *Note 2:* A document can be open but not shown in an editor which means this event can fire
      * for a document that has not been shown in an editor.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#workspace.onDidCloseTextDocument)
      */
     val onDidCloseTextDocument: Event<TextDocument>
 
@@ -530,6 +574,8 @@ external object workspace {
      * An event that is emitted when a [text document][TextDocument] is changed. This usually happens
      * when the [contents][TextDocument.getText] changes but also when other things like the
      * [dirty][TextDocument.isDirty]-state changes.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#workspace.onDidChangeTextDocument)
      */
     val onDidChangeTextDocument: Event<TextDocumentChangeEvent>
 
@@ -545,16 +591,22 @@ external object workspace {
      *  * listeners that take a long time or produce errors frequently will not be called anymore
      *
      * The current thresholds are 1.5 seconds as overall time budget and a listener can misbehave 3 times before being ignored.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#workspace.onWillSaveTextDocument)
      */
     val onWillSaveTextDocument: Event<TextDocumentWillSaveEvent>
 
     /**
      * An event that is emitted when a [text document][TextDocument] is saved to disk.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#workspace.onDidSaveTextDocument)
      */
     val onDidSaveTextDocument: Event<TextDocument>
 
     /**
      * All notebook documents currently known to the editor.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#workspace.notebookDocuments)
      */
     val notebookDocuments: ReadonlyArray<NotebookDocument>
 
@@ -570,6 +622,8 @@ external object workspace {
      *
      * @param uri The resource to open.
      * @returns A promise that resolves to a [notebook][NotebookDocument]
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#workspace.openNotebookDocument)
      */
     fun openNotebookDocument(uri: Uri): PromiseLike<NotebookDocument>
 
@@ -581,6 +635,8 @@ external object workspace {
      * @param notebookType The notebook type that should be used.
      * @param content The initial contents of the notebook.
      * @returns A promise that resolves to a [notebook][NotebookDocument].
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#workspace.openNotebookDocument)
      */
     fun openNotebookDocument(
         notebookType: String,
@@ -589,6 +645,8 @@ external object workspace {
 
     /**
      * An event that is emitted when a [notebook][NotebookDocument] has changed.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#workspace.onDidChangeNotebookDocument)
      */
     val onDidChangeNotebookDocument: Event<NotebookDocumentChangeEvent>
 
@@ -604,11 +662,15 @@ external object workspace {
      *  * listeners that take a long time or produce errors frequently will not be called anymore
      *
      * The current thresholds are 1.5 seconds as overall time budget and a listener can misbehave 3 times before being ignored.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#workspace.onWillSaveNotebookDocument)
      */
     val onWillSaveNotebookDocument: Event<NotebookDocumentWillSaveEvent>
 
     /**
      * An event that is emitted when a [notebook][NotebookDocument] is saved.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#workspace.onDidSaveNotebookDocument)
      */
     val onDidSaveNotebookDocument: Event<NotebookDocument>
 
@@ -622,6 +684,8 @@ external object workspace {
      * @param serializer A notebook serializer.
      * @param options Optional context options that define what parts of a notebook should be persisted
      * @returns A [Disposable] that unregisters this serializer when being disposed.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#workspace.registerNotebookSerializer)
      */
     fun registerNotebookSerializer(
         notebookType: String,
@@ -631,6 +695,8 @@ external object workspace {
 
     /**
      * An event that is emitted when a [notebook][NotebookDocument] is opened.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#workspace.onDidOpenNotebookDocument)
      */
     val onDidOpenNotebookDocument: Event<NotebookDocument>
 
@@ -641,6 +707,8 @@ external object workspace {
      *
      * *Note 2:* A notebook can be open but not shown in an editor which means this event can fire
      * for a notebook that has not been shown in an editor.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#workspace.onDidCloseNotebookDocument)
      */
     val onDidCloseNotebookDocument: Event<NotebookDocument>
 
@@ -653,6 +721,8 @@ external object workspace {
      * {@linkcode FileSystem workspace.fs}-api.
      *
      * *Note 2:* When this event is fired, edits to files that are are being created cannot be applied.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#workspace.onWillCreateFiles)
      */
     val onWillCreateFiles: Event<FileWillCreateEvent>
 
@@ -663,6 +733,8 @@ external object workspace {
      * explorer, or from the {@linkcode workspace.applyEdit}-api, but this event is *not* fired when
      * files change on disk, e.g triggered by another application, or when using the
      * {@linkcode FileSystem workspace.fs}-api.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#workspace.onDidCreateFiles)
      */
     val onDidCreateFiles: Event<FileCreateEvent>
 
@@ -675,6 +747,8 @@ external object workspace {
      * {@linkcode FileSystem workspace.fs}-api.
      *
      * *Note 2:* When deleting a folder with children only one event is fired.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#workspace.onWillDeleteFiles)
      */
     val onWillDeleteFiles: Event<FileWillDeleteEvent>
 
@@ -687,6 +761,8 @@ external object workspace {
      * {@linkcode FileSystem workspace.fs}-api.
      *
      * *Note 2:* When deleting a folder with children only one event is fired.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#workspace.onDidDeleteFiles)
      */
     val onDidDeleteFiles: Event<FileDeleteEvent>
 
@@ -699,6 +775,8 @@ external object workspace {
      * {@linkcode FileSystem workspace.fs}-api.
      *
      * *Note 2:* When renaming a folder with children only one event is fired.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#workspace.onWillRenameFiles)
      */
     val onWillRenameFiles: Event<FileWillRenameEvent>
 
@@ -711,6 +789,8 @@ external object workspace {
      * {@linkcode FileSystem workspace.fs}-api.
      *
      * *Note 2:* When renaming a folder with children only one event is fired.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#workspace.onDidRenameFiles)
      */
     val onDidRenameFiles: Event<FileRenameEvent>
 
@@ -726,6 +806,8 @@ external object workspace {
      * @param section A dot-separated identifier.
      * @param scope A scope for which the configuration is asked for.
      * @returns The full configuration or a subset.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#workspace.getConfiguration)
      */
     fun getConfiguration(
         section: String = definedExternally,
@@ -734,6 +816,8 @@ external object workspace {
 
     /**
      * An event that is emitted when the [configuration][WorkspaceConfiguration] changed.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#workspace.onDidChangeConfiguration)
      */
     val onDidChangeConfiguration: Event<ConfigurationChangeEvent>
 
@@ -747,6 +831,8 @@ external object workspace {
      * @param provider The filesystem provider.
      * @param options Immutable metadata about the provider.
      * @returns A [Disposable] that unregisters this provider when being disposed.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#workspace.registerFileSystemProvider)
      */
     /*
     registerFileSystemProvider(scheme: string, provider: FileSystemProvider, options?: {
@@ -764,11 +850,15 @@ external object workspace {
 
     /**
      * When true, the user has explicitly trusted the contents of the workspace.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#workspace.isTrusted)
      */
     val isTrusted: Boolean
 
     /**
      * Event that fires when the current workspace has been trusted.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#workspace.onDidGrantWorkspaceTrust)
      */
     val onDidGrantWorkspaceTrust: Event<Void>
 
@@ -789,6 +879,8 @@ external object workspace {
      *
      * @param content The text content to decode as a `Uint8Array`.
      * @returns A thenable that resolves to the decoded `string`.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#workspace.decode)
      */
     fun decode(content: Uint8Array<*>): PromiseLike<JsString>
 
@@ -808,6 +900,8 @@ external object workspace {
      * @param content The text content to decode as a `Uint8Array`.
      * @param options Additional context for picking the encoding.
      * @returns A thenable that resolves to the decoded `string`.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#workspace.decode)
      */
     /*
     decode(content: Uint8Array, options: {
@@ -840,6 +934,8 @@ external object workspace {
      * @param content The content to decode as a `Uint8Array`.
      * @param options Additional context for picking the encoding.
      * @returns A thenable that resolves to the decoded `string`.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#workspace.decode)
      */
     /*
     decode(content: Uint8Array, options: {
@@ -859,6 +955,8 @@ external object workspace {
      *
      * @param content The content to decode as a `string`.
      * @returns A thenable that resolves to the encoded `Uint8Array`.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#workspace.encode)
      */
     fun encode(content: String): PromiseLike<Uint8Array<*>>
 
@@ -869,6 +967,8 @@ external object workspace {
      * @param content The content to decode as a `string`.
      * @param options Additional context for picking the encoding.
      * @returns A thenable that resolves to the encoded `Uint8Array`.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#workspace.encode)
      */
     /*
     encode(content: string, options: {
@@ -891,6 +991,8 @@ external object workspace {
      * @param content The content to decode as a `string`.
      * @param options Additional context for picking the encoding.
      * @returns A thenable that resolves to the encoded `Uint8Array`.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#workspace.encode)
      */
     /*
     encode(content: string, options: {

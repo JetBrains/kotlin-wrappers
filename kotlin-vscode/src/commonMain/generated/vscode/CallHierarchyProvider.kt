@@ -9,6 +9,8 @@ import js.core.JsAny
  * The call hierarchy provider interface describes the contract between extensions
  * and the call hierarchy feature which allows to browse calls and caller of function,
  * methods, constructor etc.
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#CallHierarchyProvider)
  */
 external interface CallHierarchyProvider {
     /**
@@ -21,6 +23,8 @@ external interface CallHierarchyProvider {
      * @param token A cancellation token.
      * @returns One or multiple call hierarchy items or a thenable that resolves to such. The lack of a result can be
      * signaled by returning `undefined`, `null`, or an empty array.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#CallHierarchyProvider.prepareCallHierarchy)
      */
     fun prepareCallHierarchy(
         document: TextDocument,
@@ -37,6 +41,8 @@ external interface CallHierarchyProvider {
      * @param token A cancellation token.
      * @returns A set of incoming calls or a thenable that resolves to such. The lack of a result can be
      * signaled by returning `undefined` or `null`.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#CallHierarchyProvider.provideCallHierarchyIncomingCalls)
      */
     fun provideCallHierarchyIncomingCalls(
         item: CallHierarchyItem,
@@ -52,6 +58,8 @@ external interface CallHierarchyProvider {
      * @param token A cancellation token.
      * @returns A set of outgoing calls or a thenable that resolves to such. The lack of a result can be
      * signaled by returning `undefined` or `null`.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#CallHierarchyProvider.provideCallHierarchyOutgoingCalls)
      */
     fun provideCallHierarchyOutgoingCalls(
         item: CallHierarchyItem,

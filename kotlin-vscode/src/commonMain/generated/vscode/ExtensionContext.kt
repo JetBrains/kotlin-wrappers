@@ -10,6 +10,8 @@ import js.array.ReadonlyArray
  *
  * An instance of an `ExtensionContext` is provided as the first
  * parameter to the `activate`-call of an extension.
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#ExtensionContext)
  */
 external interface ExtensionContext {
     /**
@@ -17,18 +19,24 @@ external interface ExtensionContext {
      * extension is deactivated the disposables will be disposed.
      *
      * *Note* that asynchronous dispose-functions aren't awaited.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#ExtensionContext.subscriptions)
      */
     val subscriptions: ReadonlyArray<DisposableLike>
 
     /**
      * A memento object that stores state in the context
      * of the currently opened [workspace][workspace.workspaceFolders].
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#ExtensionContext.workspaceState)
      */
     val workspaceState: Memento
 
     /**
      * A memento object that stores state independent
      * of the current opened [workspace][workspace.workspaceFolders].
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#ExtensionContext.globalState)
      */
     /*
     readonly globalState: Memento & {
@@ -52,23 +60,31 @@ external interface ExtensionContext {
     /**
      * A secret storage object that stores state independent
      * of the current opened [workspace][workspace.workspaceFolders].
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#ExtensionContext.secrets)
      */
     val secrets: SecretStorage
 
     /**
      * The uri of the directory containing the extension.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#ExtensionContext.extensionUri)
      */
     val extensionUri: Uri
 
     /**
      * The absolute file path of the directory containing the extension. Shorthand
      * notation for [ExtensionContext.extensionUri.fsPath][TextDocument.uri] (independent of the uri scheme).
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#ExtensionContext.extensionPath)
      */
     val extensionPath: String
 
     /**
      * Gets the extension's global environment variable collection for this workspace, enabling changes to be
      * applied to terminal environment variables.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#ExtensionContext.environmentVariableCollection)
      */
     val environmentVariableCollection: GlobalEnvironmentVariableCollection
 
@@ -80,6 +96,8 @@ external interface ExtensionContext {
      *
      * @param relativePath A relative path to a resource contained in the extension.
      * @returns The absolute path of the resource.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#ExtensionContext.asAbsolutePath)
      */
     fun asAbsolutePath(relativePath: String): String
 
@@ -94,6 +112,8 @@ external interface ExtensionContext {
      *
      * @see {@linkcode FileSystem workspace.fs} for how to read and write files and folders from
      *  a uri.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#ExtensionContext.storageUri)
      */
     val storageUri: Uri?
 
@@ -106,6 +126,8 @@ external interface ExtensionContext {
      *
      * @see {@linkcode FileSystem workspace.fs} for how to read and write files and folders from
      *  an uri.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#ExtensionContext.globalStorageUri)
      */
     val globalStorageUri: Uri
 
@@ -116,17 +138,23 @@ external interface ExtensionContext {
      *
      * @see {@linkcode FileSystem workspace.fs} for how to read and write files and folders from
      *  an uri.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#ExtensionContext.logUri)
      */
     val logUri: Uri
 
     /**
      * The mode the extension is running in. See [ExtensionMode]
      * for possible values and scenarios.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#ExtensionContext.extensionMode)
      */
     val extensionMode: ExtensionMode
 
     /**
      * The current `Extension` instance.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#ExtensionContext.extension)
      */
     val extension: Extension<*>
 
@@ -134,6 +162,8 @@ external interface ExtensionContext {
      * An object that keeps information about how this extension can use language models.
      *
      * @see [LanguageModelChat.sendRequest]
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#ExtensionContext.languageModelAccessInformation)
      */
     val languageModelAccessInformation: LanguageModelAccessInformation
 }

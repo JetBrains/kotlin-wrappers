@@ -8,10 +8,14 @@ import js.core.Void
 /**
  * The inlay hints provider interface defines the contract between extensions and
  * the inlay hints feature.
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#InlayHintsProvider)
  */
 external interface InlayHintsProvider<T : InlayHint> {
     /**
      * An optional event to signal that inlay hints from this provider have changed.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#InlayHintsProvider.onDidChangeInlayHints)
      */
     var onDidChangeInlayHints: Event<Void>?
 
@@ -24,6 +28,8 @@ external interface InlayHintsProvider<T : InlayHint> {
      * @param range The range for which inlay hints should be computed.
      * @param token A cancellation token.
      * @returns An array of inlay hints or a thenable that resolves to such.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#InlayHintsProvider.provideInlayHints)
      */
     fun provideInlayHints(
         document: TextDocument,
@@ -40,6 +46,8 @@ external interface InlayHintsProvider<T : InlayHint> {
      * @param hint An inlay hint.
      * @param token A cancellation token.
      * @returns The resolved inlay hint or a thenable that resolves to such. It is OK to return the given `item`. When no result is returned, the given `item` will be used.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#InlayHintsProvider.resolveInlayHint)
      */
     var resolveInlayHint: ((
         hint: T,

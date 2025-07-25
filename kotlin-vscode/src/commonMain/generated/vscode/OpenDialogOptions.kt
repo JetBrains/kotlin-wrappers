@@ -13,30 +13,42 @@ import js.objects.Record
  * set both `canSelectFiles` and `canSelectFolders` to `true` on these platforms, a folder selector will be shown.
  * * Note 2: Explicitly setting `canSelectFiles` and `canSelectFolders` to `false` is futile
  * and the editor then silently adjusts the options to select files.
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#OpenDialogOptions)
  */
 external interface OpenDialogOptions {
     /**
      * The resource the dialog shows when opened.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#OpenDialogOptions.defaultUri)
      */
     var defaultUri: Uri?
 
     /**
      * A human-readable string for the open button.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#OpenDialogOptions.openLabel)
      */
     var openLabel: String?
 
     /**
      * Allow to select files, defaults to `true`.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#OpenDialogOptions.canSelectFiles)
      */
     var canSelectFiles: Boolean?
 
     /**
      * Allow to select folders, defaults to `false`.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#OpenDialogOptions.canSelectFolders)
      */
     var canSelectFolders: Boolean?
 
     /**
      * Allow to select many files or folders.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#OpenDialogOptions.canSelectMany)
      */
     var canSelectMany: Boolean?
 
@@ -49,6 +61,8 @@ external interface OpenDialogOptions {
      * 	'TypeScript': ['ts', 'tsx']
      * }
      * ```
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#OpenDialogOptions.filters)
      */
     var filters: Record<JsString, ReadonlyArray<JsString>>?
 
@@ -57,6 +71,8 @@ external interface OpenDialogOptions {
      *
      * This parameter might be ignored, as not all operating systems display a title on open dialogs
      * (for example, macOS).
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#OpenDialogOptions.title)
      */
     var title: String?
 }

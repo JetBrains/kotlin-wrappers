@@ -13,22 +13,30 @@ import kotlin.js.definedExternally
  * Represents the signature of something callable. A signature
  * can have a label, like a function-name, a doc-comment, and
  * a set of parameters.
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#SignatureInformation)
  */
 open external class SignatureInformation {
     /**
      * The label of this signature. Will be shown in
      * the UI.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#SignatureInformation.label)
      */
     var label: String
 
     /**
      * The human-readable doc-comment of this signature. Will be shown
      * in the UI but can be omitted.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#SignatureInformation.documentation)
      */
     var documentation: JsAny /* string | MarkdownString */?
 
     /**
      * The parameters of this signature.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#SignatureInformation.parameters)
      */
     var parameters: ReadonlyArray<ParameterInformation>
 
@@ -36,6 +44,8 @@ open external class SignatureInformation {
      * The index of the active parameter.
      *
      * If provided, this is used in place of {@linkcode SignatureHelp.activeParameter}.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#SignatureInformation.activeParameter)
      */
     var activeParameter: Int?
 
@@ -44,6 +54,8 @@ open external class SignatureInformation {
      *
      * @param label A label string.
      * @param documentation A doc string.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#SignatureInformation.constructor)
      */
     constructor(
         label: String,

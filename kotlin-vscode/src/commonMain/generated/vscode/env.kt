@@ -12,10 +12,14 @@ import kotlin.js.definedExternally
 
 /**
  * Namespace describing the environment the editor runs in.
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#env)
  */
 external object env {
     /**
      * The application name of the editor, like 'VS Code'.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#env.appName)
      */
     val appName: String
 
@@ -24,6 +28,8 @@ external object env {
      *
      * *Note* that the value is the empty string when running in an
      * environment that has no representation of an application root folder.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#env.appRoot)
      */
     val appRoot: String
 
@@ -32,56 +38,76 @@ external object env {
      * On desktop this is 'desktop'
      * In the web this is the specified embedder i.e. 'github.dev', 'codespaces', or 'web' if the embedder
      * does not provide that information
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#env.appHost)
      */
     val appHost: String
 
     /**
      * The custom uri scheme the editor registers to in the operating system.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#env.uriScheme)
      */
     val uriScheme: String
 
     /**
      * Represents the preferred user-language, like `de-CH`, `fr`, or `en-US`.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#env.language)
      */
     val language: String
 
     /**
      * The system clipboard.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#env.clipboard)
      */
     val clipboard: Clipboard
 
     /**
      * A unique identifier for the computer.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#env.machineId)
      */
     val machineId: String
 
     /**
      * A unique identifier for the current session.
      * Changes each time the editor is started.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#env.sessionId)
      */
     val sessionId: String
 
     /**
      * Indicates that this is a fresh install of the application.
      * `true` if within the first day of installation otherwise `false`.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#env.isNewAppInstall)
      */
     val isNewAppInstall: Boolean
 
     /**
      * Indicates whether the users has telemetry enabled.
      * Can be observed to determine if the extension should send telemetry.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#env.isTelemetryEnabled)
      */
     val isTelemetryEnabled: Boolean
 
     /**
      * An [Event] which fires when the user enabled or disables telemetry.
      * `true` if the user has enabled telemetry or `false` if the user has disabled telemetry.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#env.onDidChangeTelemetryEnabled)
      */
     val onDidChangeTelemetryEnabled: Event<JsBoolean>
 
     /**
      * An [Event] which fires when the default shell changes. This fires with the new
      * shell path.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#env.onDidChangeShell)
      */
     val onDidChangeShell: Event<JsString>
 
@@ -91,6 +117,8 @@ external object env {
      * @param sender The telemetry sender that is used by the telemetry logger.
      * @param options Options for the telemetry logger.
      * @returns A new telemetry logger
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#env.createTelemetryLogger)
      */
     fun createTelemetryLogger(
         sender: TelemetrySender,
@@ -105,6 +133,8 @@ external object env {
      * value is defined in all extension hosts (local and remote) in case a remote extension host
      * exists. Use [Extension.extensionKind] to know if
      * a specific extension runs remote or not.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#env.remoteName)
      */
     val remoteName: String?
 
@@ -112,6 +142,8 @@ external object env {
      * The detected default shell for the extension host, this is overridden by the
      * `terminal.integrated.defaultProfile` setting for the extension host's platform. Note that in
      * environments that do not support a shell the value is the empty string.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#env.shell)
      */
     val shell: String
 
@@ -119,6 +151,8 @@ external object env {
      * The UI kind property indicates from which UI extensions
      * are accessed from. For example, extensions could be accessed
      * from a desktop application or a web browser.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#env.uiKind)
      */
     val uiKind: UIKind
 
@@ -134,6 +168,8 @@ external object env {
      *
      * @param target The uri that should be opened.
      * @returns A promise indicating if open was successful.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#env.openExternal)
      */
     fun openExternal(target: Uri): PromiseLike<JsBoolean>
 
@@ -189,16 +225,22 @@ external object env {
      * a URI which, when handled, will make the editor open the workspace.
      *
      * @returns A uri that can be used on the client machine.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#env.asExternalUri)
      */
     fun asExternalUri(target: Uri): PromiseLike<Uri>
 
     /**
      * The current log level of the editor.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#env.logLevel)
      */
     val logLevel: LogLevel
 
     /**
      * An [Event] which fires when the log level of the editor changes.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#env.onDidChangeLogLevel)
      */
     val onDidChangeLogLevel: Event<LogLevel>
 }

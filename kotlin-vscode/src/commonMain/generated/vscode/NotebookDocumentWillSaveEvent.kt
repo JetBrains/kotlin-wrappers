@@ -11,20 +11,28 @@ import js.promise.PromiseLike
  * To make modifications to the document before it is being saved, call the
  * {@linkcode NotebookDocumentWillSaveEvent.waitUntil waitUntil}-function with a thenable
  * that resolves to a [workspace edit][WorkspaceEdit].
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#NotebookDocumentWillSaveEvent)
  */
 external interface NotebookDocumentWillSaveEvent {
     /**
      * A cancellation token.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#NotebookDocumentWillSaveEvent.token)
      */
     val token: CancellationToken
 
     /**
      * The [notebook document][NotebookDocument] that will be saved.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#NotebookDocumentWillSaveEvent.notebook)
      */
     val notebook: NotebookDocument
 
     /**
      * The reason why save was triggered.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#NotebookDocumentWillSaveEvent.reason)
      */
     val reason: TextDocumentSaveReason
 
@@ -47,6 +55,8 @@ external interface NotebookDocumentWillSaveEvent {
      * ```
      *
      * @param thenable A thenable that resolves to [workspace edit][WorkspaceEdit].
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#NotebookDocumentWillSaveEvent.waitUntil)
      */
     fun waitUntil(thenable: PromiseLike<WorkspaceEdit>)
 
@@ -56,6 +66,8 @@ external interface NotebookDocumentWillSaveEvent {
      * *Note:* This function can only be called during event dispatch.
      *
      * @param thenable A thenable that delays saving.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#NotebookDocumentWillSaveEvent.waitUntil)
      */
     fun waitUntil(thenable: PromiseLike<JsAny?>)
 }

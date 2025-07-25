@@ -38,11 +38,15 @@ import kotlin.js.definedExternally
  * scores are equal the provider that came last wins. For features that allow full arity, like [hover][languages.registerHoverProvider],
  * the score is only checked to be `>0`, for other features, like [IntelliSense][languages.registerCompletionItemProvider] the
  * score is used for determining the order in which providers are asked to participate.
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#languages)
  */
 external object languages {
     /**
      * Return the identifiers of all known languages.
      * @returns Promise resolving to an array of identifier strings.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#languages.getLanguages)
      */
     fun getLanguages(): PromiseLike<ReadonlyArray<JsString>>
 
@@ -56,6 +60,8 @@ external object languages {
      * @param document The document which language is to be changed
      * @param languageId The new language identifier.
      * @returns A thenable that resolves with the updated document.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#languages.setTextDocumentLanguage)
      */
     fun setTextDocumentLanguage(
         document: TextDocument,
@@ -106,6 +112,8 @@ external object languages {
      * @param selector A document selector.
      * @param document A text document.
      * @returns A number `>0` when the selector matches and `0` when the selector does not match.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#languages.match)
      */
     fun match(
         selector: DocumentSelector,
@@ -115,6 +123,8 @@ external object languages {
     /**
      * An [Event] which fires when the global set of diagnostics changes. This is
      * newly added and removed diagnostics.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#languages.onDidChangeDiagnostics)
      */
     val onDidChangeDiagnostics: Event<DiagnosticChangeEvent>
 
@@ -123,6 +133,8 @@ external object languages {
      *
      * @param resource A resource
      * @returns An array of [diagnostics][Diagnostic] objects or an empty array.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#languages.getDiagnostics)
      */
     fun getDiagnostics(resource: Uri): ReadonlyArray<Diagnostic>
 
@@ -130,6 +142,8 @@ external object languages {
      * Get all diagnostics.
      *
      * @returns An array of uri-diagnostics tuples or an empty array.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#languages.getDiagnostics)
      */
     fun getDiagnostics(): ReadonlyArray<Tuple2<Uri, ReadonlyArray<Diagnostic>>>
 
@@ -138,6 +152,8 @@ external object languages {
      *
      * @param name The [name][DiagnosticCollection.name] of the collection.
      * @returns A new diagnostic collection.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#languages.createDiagnosticCollection)
      */
     fun createDiagnosticCollection(name: String = definedExternally): DiagnosticCollection
 
@@ -147,6 +163,8 @@ external object languages {
      * @param id The identifier of the item.
      * @param selector The document selector that defines for what editors the item shows.
      * @returns A new language status item.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#languages.createLanguageStatusItem)
      */
     fun createLanguageStatusItem(
         id: String,
@@ -171,6 +189,8 @@ external object languages {
      * @param provider A completion provider.
      * @param triggerCharacters Trigger completion when the user types one of the characters.
      * @returns A [Disposable] that unregisters this provider when being disposed.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#languages.registerCompletionItemProvider)
      */
     fun registerCompletionItemProvider(
         selector: DocumentSelector,
@@ -188,6 +208,8 @@ external object languages {
      * @param selector A selector that defines the documents this provider is applicable to.
      * @param provider An inline completion provider.
      * @returns A [Disposable] that unregisters this provider when being disposed.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#languages.registerInlineCompletionItemProvider)
      */
     fun registerInlineCompletionItemProvider(
         selector: DocumentSelector,
@@ -205,6 +227,8 @@ external object languages {
      * @param provider A code action provider.
      * @param metadata Metadata about the kind of code actions the provider provides.
      * @returns A [Disposable] that unregisters this provider when being disposed.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#languages.registerCodeActionsProvider)
      */
     fun registerCodeActionsProvider(
         selector: DocumentSelector,
@@ -222,6 +246,8 @@ external object languages {
      * @param selector A selector that defines the documents this provider is applicable to.
      * @param provider A code lens provider.
      * @returns A [Disposable] that unregisters this provider when being disposed.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#languages.registerCodeLensProvider)
      */
     fun registerCodeLensProvider(
         selector: DocumentSelector,
@@ -238,6 +264,8 @@ external object languages {
      * @param selector A selector that defines the documents this provider is applicable to.
      * @param provider A definition provider.
      * @returns A [Disposable] that unregisters this provider when being disposed.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#languages.registerDefinitionProvider)
      */
     fun registerDefinitionProvider(
         selector: DocumentSelector,
@@ -254,6 +282,8 @@ external object languages {
      * @param selector A selector that defines the documents this provider is applicable to.
      * @param provider An implementation provider.
      * @returns A [Disposable] that unregisters this provider when being disposed.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#languages.registerImplementationProvider)
      */
     fun registerImplementationProvider(
         selector: DocumentSelector,
@@ -270,6 +300,8 @@ external object languages {
      * @param selector A selector that defines the documents this provider is applicable to.
      * @param provider A type definition provider.
      * @returns A [Disposable] that unregisters this provider when being disposed.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#languages.registerTypeDefinitionProvider)
      */
     fun registerTypeDefinitionProvider(
         selector: DocumentSelector,
@@ -286,6 +318,8 @@ external object languages {
      * @param selector A selector that defines the documents this provider is applicable to.
      * @param provider A declaration provider.
      * @returns A [Disposable] that unregisters this provider when being disposed.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#languages.registerDeclarationProvider)
      */
     fun registerDeclarationProvider(
         selector: DocumentSelector,
@@ -302,6 +336,8 @@ external object languages {
      * @param selector A selector that defines the documents this provider is applicable to.
      * @param provider A hover provider.
      * @returns A [Disposable] that unregisters this provider when being disposed.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#languages.registerHoverProvider)
      */
     fun registerHoverProvider(
         selector: DocumentSelector,
@@ -317,6 +353,8 @@ external object languages {
      * @param selector A selector that defines the documents this provider is applicable to.
      * @param provider An evaluatable expression provider.
      * @returns A [Disposable] that unregisters this provider when being disposed.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#languages.registerEvaluatableExpressionProvider)
      */
     fun registerEvaluatableExpressionProvider(
         selector: DocumentSelector,
@@ -335,6 +373,8 @@ external object languages {
      * @param selector A selector that defines the documents this provider is applicable to.
      * @param provider An inline values provider.
      * @returns A [Disposable] that unregisters this provider when being disposed.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#languages.registerInlineValuesProvider)
      */
     fun registerInlineValuesProvider(
         selector: DocumentSelector,
@@ -351,6 +391,8 @@ external object languages {
      * @param selector A selector that defines the documents this provider is applicable to.
      * @param provider A document highlight provider.
      * @returns A [Disposable] that unregisters this provider when being disposed.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#languages.registerDocumentHighlightProvider)
      */
     fun registerDocumentHighlightProvider(
         selector: DocumentSelector,
@@ -368,6 +410,8 @@ external object languages {
      * @param provider A document symbol provider.
      * @param metaData metadata about the provider
      * @returns A [Disposable] that unregisters this provider when being disposed.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#languages.registerDocumentSymbolProvider)
      */
     fun registerDocumentSymbolProvider(
         selector: DocumentSelector,
@@ -384,6 +428,8 @@ external object languages {
      *
      * @param provider A workspace symbol provider.
      * @returns A [Disposable] that unregisters this provider when being disposed.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#languages.registerWorkspaceSymbolProvider)
      */
     fun registerWorkspaceSymbolProvider(provider: WorkspaceSymbolProvider<*>): Disposable
 
@@ -397,6 +443,8 @@ external object languages {
      * @param selector A selector that defines the documents this provider is applicable to.
      * @param provider A reference provider.
      * @returns A [Disposable] that unregisters this provider when being disposed.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#languages.registerReferenceProvider)
      */
     fun registerReferenceProvider(
         selector: DocumentSelector,
@@ -413,6 +461,8 @@ external object languages {
      * @param selector A selector that defines the documents this provider is applicable to.
      * @param provider A rename provider.
      * @returns A [Disposable] that unregisters this provider when being disposed.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#languages.registerRenameProvider)
      */
     fun registerRenameProvider(
         selector: DocumentSelector,
@@ -429,6 +479,8 @@ external object languages {
      * @param selector A selector that defines the documents this provider is applicable to.
      * @param provider A document semantic tokens provider.
      * @returns A [Disposable] that unregisters this provider when being disposed.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#languages.registerDocumentSemanticTokensProvider)
      */
     fun registerDocumentSemanticTokensProvider(
         selector: DocumentSelector,
@@ -452,6 +504,8 @@ external object languages {
      * @param selector A selector that defines the documents this provider is applicable to.
      * @param provider A document range semantic tokens provider.
      * @returns A [Disposable] that unregisters this provider when being disposed.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#languages.registerDocumentRangeSemanticTokensProvider)
      */
     fun registerDocumentRangeSemanticTokensProvider(
         selector: DocumentSelector,
@@ -469,6 +523,8 @@ external object languages {
      * @param selector A selector that defines the documents this provider is applicable to.
      * @param provider A document formatting edit provider.
      * @returns A [Disposable] that unregisters this provider when being disposed.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#languages.registerDocumentFormattingEditProvider)
      */
     fun registerDocumentFormattingEditProvider(
         selector: DocumentSelector,
@@ -489,6 +545,8 @@ external object languages {
      * @param selector A selector that defines the documents this provider is applicable to.
      * @param provider A document range formatting edit provider.
      * @returns A [Disposable] that unregisters this provider when being disposed.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#languages.registerDocumentRangeFormattingEditProvider)
      */
     fun registerDocumentRangeFormattingEditProvider(
         selector: DocumentSelector,
@@ -507,6 +565,8 @@ external object languages {
      * @param firstTriggerCharacter A character on which formatting should be triggered, like `}`.
      * @param moreTriggerCharacter More trigger characters.
      * @returns A [Disposable] that unregisters this provider when being disposed.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#languages.registerOnTypeFormattingEditProvider)
      */
     fun registerOnTypeFormattingEditProvider(
         selector: DocumentSelector,
@@ -526,6 +586,8 @@ external object languages {
      * @param provider A signature help provider.
      * @param triggerCharacters Trigger signature help when the user types one of the characters, like `,` or `(`.
      * @returns A [Disposable] that unregisters this provider when being disposed.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#languages.registerSignatureHelpProvider)
      */
     fun registerSignatureHelpProvider(
         selector: DocumentSelector,
@@ -540,6 +602,8 @@ external object languages {
      * @param provider A signature help provider.
      * @param metadata Information about the provider.
      * @returns A [Disposable] that unregisters this provider when being disposed.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#languages.registerSignatureHelpProvider)
      */
     fun registerSignatureHelpProvider(
         selector: DocumentSelector,
@@ -557,6 +621,8 @@ external object languages {
      * @param selector A selector that defines the documents this provider is applicable to.
      * @param provider A document link provider.
      * @returns A [Disposable] that unregisters this provider when being disposed.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#languages.registerDocumentLinkProvider)
      */
     fun registerDocumentLinkProvider(
         selector: DocumentSelector,
@@ -573,6 +639,8 @@ external object languages {
      * @param selector A selector that defines the documents this provider is applicable to.
      * @param provider A color provider.
      * @returns A [Disposable] that unregisters this provider when being disposed.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#languages.registerColorProvider)
      */
     fun registerColorProvider(
         selector: DocumentSelector,
@@ -589,6 +657,8 @@ external object languages {
      * @param selector A selector that defines the documents this provider is applicable to.
      * @param provider An inlay hints provider.
      * @returns A [Disposable] that unregisters this provider when being disposed.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#languages.registerInlayHintsProvider)
      */
     fun registerInlayHintsProvider(
         selector: DocumentSelector,
@@ -609,6 +679,8 @@ external object languages {
      * @param selector A selector that defines the documents this provider is applicable to.
      * @param provider A folding range provider.
      * @returns A [Disposable] that unregisters this provider when being disposed.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#languages.registerFoldingRangeProvider)
      */
     fun registerFoldingRangeProvider(
         selector: DocumentSelector,
@@ -625,6 +697,8 @@ external object languages {
      * @param selector A selector that defines the documents this provider is applicable to.
      * @param provider A selection range provider.
      * @returns A [Disposable] that unregisters this provider when being disposed.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#languages.registerSelectionRangeProvider)
      */
     fun registerSelectionRangeProvider(
         selector: DocumentSelector,
@@ -637,6 +711,8 @@ external object languages {
      * @param selector A selector that defines the documents this provider is applicable to.
      * @param provider A call hierarchy provider.
      * @returns A [Disposable] that unregisters this provider when being disposed.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#languages.registerCallHierarchyProvider)
      */
     fun registerCallHierarchyProvider(
         selector: DocumentSelector,
@@ -649,6 +725,8 @@ external object languages {
      * @param selector A selector that defines the documents this provider is applicable to.
      * @param provider A type hierarchy provider.
      * @returns A [Disposable] that unregisters this provider when being disposed.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#languages.registerTypeHierarchyProvider)
      */
     fun registerTypeHierarchyProvider(
         selector: DocumentSelector,
@@ -665,6 +743,8 @@ external object languages {
      * @param selector A selector that defines the documents this provider is applicable to.
      * @param provider A linked editing range provider.
      * @returns A [Disposable] that unregisters this provider when being disposed.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#languages.registerLinkedEditingRangeProvider)
      */
     fun registerLinkedEditingRangeProvider(
         selector: DocumentSelector,
@@ -687,6 +767,8 @@ external object languages {
      * @param metadata Additional metadata about the provider.
      *
      * @returns A {@linkcode Disposable} that unregisters this provider when disposed of.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#languages.registerDocumentDropEditProvider)
      */
     fun registerDocumentDropEditProvider(
         selector: DocumentSelector,
@@ -713,6 +795,8 @@ external object languages {
      * @param metadata Additional metadata about the provider.
      *
      * @returns A {@linkcode Disposable} that unregisters this provider when disposed of.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#languages.registerDocumentPasteEditProvider)
      */
     fun registerDocumentPasteEditProvider(
         selector: DocumentSelector,
@@ -726,6 +810,8 @@ external object languages {
      * @param language A language identifier like `typescript`.
      * @param configuration Language configuration.
      * @returns A [Disposable] that unsets this configuration.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#languages.setLanguageConfiguration)
      */
     fun setLanguageConfiguration(
         language: String,

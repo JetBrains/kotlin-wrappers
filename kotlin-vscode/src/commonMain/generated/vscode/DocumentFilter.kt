@@ -12,10 +12,14 @@ package vscode
  *
  * @example <caption>A language filter that applies to all package.json paths</caption>
  * { language: 'json', pattern: '**​/package.json' }
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#DocumentFilter)
  */
 external interface DocumentFilter {
     /**
      * A language id, like `typescript`.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#DocumentFilter.language)
      */
     val language: String?
 
@@ -28,17 +32,23 @@ external interface DocumentFilter {
      *
      * @example <caption>Match python document inside jupyter notebook that aren't stored yet (`untitled`)</caption>
      * { language: 'python', notebookType: 'jupyter-notebook', scheme: 'untitled' }
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#DocumentFilter.notebookType)
      */
     val notebookType: String?
 
     /**
      * A Uri [scheme][Uri.scheme], like `file` or `untitled`.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#DocumentFilter.scheme)
      */
     val scheme: String?
 
     /**
      * A [glob pattern} that is matched on the absolute path of the document. Use a {@link RelativePattern relative pattern][GlobPattern]
      * to filter documents to a [workspace folder][WorkspaceFolder].
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#DocumentFilter.pattern)
      */
     val pattern: GlobPattern?
 }

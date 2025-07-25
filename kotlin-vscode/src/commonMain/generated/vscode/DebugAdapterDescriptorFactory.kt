@@ -4,6 +4,8 @@ package vscode
 
 /**
  * A debug adapter factory that creates [debug adapter descriptors][DebugAdapterDescriptor].
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#DebugAdapterDescriptorFactory)
  */
 external interface DebugAdapterDescriptorFactory {
     /**
@@ -22,6 +24,8 @@ external interface DebugAdapterDescriptorFactory {
      * @param session The [debug session][DebugSession] for which the debug adapter will be used.
      * @param executable The debug adapter's executable information as specified in the package.json (or undefined if no such information exists).
      * @returns a [debug adapter descriptor][DebugAdapterDescriptor] or undefined.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#DebugAdapterDescriptorFactory.createDebugAdapterDescriptor)
      */
     fun createDebugAdapterDescriptor(
         session: DebugSession,

@@ -13,17 +13,23 @@ import kotlin.js.JsModule
  *
  * Code action kinds are used by the editor for UI elements such as the refactoring context menu. Users
  * can also trigger code actions with a specific kind with the `editor.action.codeAction` command.
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#CodeActionKind)
  */
 open external class CodeActionKind {
     /**
      * Private constructor, use static `CodeActionKind.XYZ` to derive from an existing code action kind.
      *
      * @param value The value of the kind, such as `refactor.extract.function`.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#CodeActionKind.constructor)
      */
     private constructor(value: String)
 
     /**
      * String value of the kind, e.g. `"refactor.extract.function"`.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#CodeActionKind.value)
      */
     val value: String
 
@@ -31,6 +37,8 @@ open external class CodeActionKind {
      * Create a new kind by appending a more specific selector to the current kind.
      *
      * Does not modify the current kind.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#CodeActionKind.append)
      */
     fun append(parts: String): CodeActionKind
 
@@ -41,6 +49,8 @@ open external class CodeActionKind {
      * but not `"unicorn.refactor.extract"`, or `"refactor.extractAll"`.
      *
      * @param other Kind to check.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#CodeActionKind.intersects)
      */
     fun intersects(other: CodeActionKind): Boolean
 
@@ -51,12 +61,16 @@ open external class CodeActionKind {
      * but not `"unicorn.refactor.extract"`, or `"refactor.extractAll"` or `refactor`.
      *
      * @param other Kind to check.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#CodeActionKind.contains)
      */
     fun contains(other: CodeActionKind): Boolean
 
     companion object {
         /**
          * Empty kind.
+         *
+         * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#CodeActionKind.Empty)
          */
         val Empty: CodeActionKind
 
@@ -64,6 +78,8 @@ open external class CodeActionKind {
          * Base kind for quickfix actions: `quickfix`.
          *
          * Quick fix actions address a problem in the code and are shown in the normal code action context menu.
+         *
+         * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#CodeActionKind.QuickFix)
          */
         val QuickFix: CodeActionKind
 
@@ -71,6 +87,8 @@ open external class CodeActionKind {
          * Base kind for refactoring actions: `refactor`
          *
          * Refactoring actions are shown in the refactoring context menu.
+         *
+         * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#CodeActionKind.Refactor)
          */
         val Refactor: CodeActionKind
 
@@ -84,6 +102,8 @@ open external class CodeActionKind {
          * - Extract variable
          * - Extract interface from class
          * - ...
+         *
+         * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#CodeActionKind.RefactorExtract)
          */
         val RefactorExtract: CodeActionKind
 
@@ -96,6 +116,8 @@ open external class CodeActionKind {
          * - Inline variable
          * - Inline constant
          * - ...
+         *
+         * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#CodeActionKind.RefactorInline)
          */
         val RefactorInline: CodeActionKind
 
@@ -108,6 +130,8 @@ open external class CodeActionKind {
          * - Move a property between classes
          * - Move method to base class
          * - ...
+         *
+         * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#CodeActionKind.RefactorMove)
          */
         val RefactorMove: CodeActionKind
 
@@ -121,6 +145,8 @@ open external class CodeActionKind {
          * - Encapsulate field
          * - Make method static
          * - ...
+         *
+         * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#CodeActionKind.RefactorRewrite)
          */
         val RefactorRewrite: CodeActionKind
 
@@ -130,11 +156,15 @@ open external class CodeActionKind {
          * Source code actions apply to the entire file. They must be explicitly requested and will not show in the
          * normal [lightbulb](https://code.visualstudio.com/docs/editor/editingevolved#_code-action) menu. Source actions
          * can be run on save using `editor.codeActionsOnSave` and are also shown in the `source` context menu.
+         *
+         * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#CodeActionKind.Source)
          */
         val Source: CodeActionKind
 
         /**
          * Base kind for an organize imports source action: `source.organizeImports`.
+         *
+         * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#CodeActionKind.SourceOrganizeImports)
          */
         val SourceOrganizeImports: CodeActionKind
 
@@ -143,6 +173,8 @@ open external class CodeActionKind {
          *
          * Fix all actions automatically fix errors that have a clear fix that do not require user input.
          * They should not suppress errors or perform unsafe fixes such as generating new types or classes.
+         *
+         * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#CodeActionKind.SourceFixAll)
          */
         val SourceFixAll: CodeActionKind
 
@@ -161,6 +193,8 @@ open external class CodeActionKind {
          * Example Kinds/Actions:
          * - `notebook.source.organizeImports` (might move all imports to a new top cell)
          * - `notebook.source.normalizeVariableNames` (might rename all variables to a standardized casing format)
+         *
+         * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#CodeActionKind.Notebook)
          */
         val Notebook: CodeActionKind
     }

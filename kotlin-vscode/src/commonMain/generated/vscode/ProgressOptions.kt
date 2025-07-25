@@ -4,10 +4,14 @@ package vscode
 
 /**
  * Value-object describing where and how progress should show.
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#ProgressOptions)
  */
 external interface ProgressOptions {
     /**
      * The location at which progress should show.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#ProgressOptions.location)
      */
     /*
     location: ProgressLocation | {
@@ -21,6 +25,8 @@ external interface ProgressOptions {
     /**
      * A human-readable string which will be used to describe the
      * operation.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#ProgressOptions.title)
      */
     var title: String?
 
@@ -29,6 +35,8 @@ external interface ProgressOptions {
      * cancel the long running operation.  Note that currently only
      * `ProgressLocation.Notification` is supporting to show a cancel
      * button.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#ProgressOptions.cancellable)
      */
     var cancellable: Boolean?
 }

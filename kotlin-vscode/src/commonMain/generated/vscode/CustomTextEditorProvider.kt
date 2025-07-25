@@ -11,6 +11,8 @@ import js.promise.PromiseLike
  * Text based custom editors use a {@linkcode TextDocument} as their data model. This considerably simplifies
  * implementing a custom editor as it allows the editor to handle many common operations such as
  * undo and backup. The provider is responsible for synchronizing text changes between the webview and the `TextDocument`.
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#CustomTextEditorProvider)
  */
 external interface CustomTextEditorProvider {
     /**
@@ -31,6 +33,8 @@ external interface CustomTextEditorProvider {
      * @param token A cancellation token that indicates the result is no longer needed.
      *
      * @returns Thenable indicating that the custom editor has been resolved.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#CustomTextEditorProvider.resolveCustomTextEditor)
      */
     fun resolveCustomTextEditor(
         document: TextDocument,

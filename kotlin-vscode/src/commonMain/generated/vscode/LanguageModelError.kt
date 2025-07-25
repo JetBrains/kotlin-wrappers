@@ -15,6 +15,8 @@ import kotlin.js.definedExternally
  * failure causes, like `if(someError.code === vscode.LanguageModelError.NotFound.name) {...}`
  * for the case of referring to an unknown language model. For unspecified errors the `cause`-property
  * will contain the actual error.
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#LanguageModelError)
  */
 open external class LanguageModelError :
     JsError {
@@ -24,6 +26,8 @@ open external class LanguageModelError :
      * Possible values are names of errors, like {@linkcode LanguageModelError.NotFound NotFound},
      * or `Unknown` for unspecified errors from the language model itself. In the latter case the
      * `cause`-property will contain the actual error.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#LanguageModelError.code)
      */
     val code: String
 
@@ -31,16 +35,22 @@ open external class LanguageModelError :
         /**
          * The requestor does not have permissions to use this
          * language model
+         *
+         * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#LanguageModelError.NoPermissions)
          */
         fun NoPermissions(message: String = definedExternally): LanguageModelError
 
         /**
          * The requestor is blocked from using this language model.
+         *
+         * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#LanguageModelError.Blocked)
          */
         fun Blocked(message: String = definedExternally): LanguageModelError
 
         /**
          * The language model does not exist.
+         *
+         * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#LanguageModelError.NotFound)
          */
         fun NotFound(message: String = definedExternally): LanguageModelError
     }

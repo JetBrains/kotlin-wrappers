@@ -12,15 +12,21 @@ import js.promise.PromiseLike
  * To make modifications to the workspace before the files are deleted,
  * call the [`waitUntil`][FileWillCreateEvent.waitUntil]-function with a
  * thenable that resolves to a [workspace edit][WorkspaceEdit].
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#FileWillDeleteEvent)
  */
 external interface FileWillDeleteEvent {
     /**
      * A cancellation token.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#FileWillDeleteEvent.token)
      */
     val token: CancellationToken
 
     /**
      * The files that are going to be deleted.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#FileWillDeleteEvent.files)
      */
     val files: ReadonlyArray<Uri>
 
@@ -41,6 +47,8 @@ external interface FileWillDeleteEvent {
      * ```
      *
      * @param thenable A thenable that delays saving.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#FileWillDeleteEvent.waitUntil)
      */
     fun waitUntil(thenable: PromiseLike<WorkspaceEdit>)
 
@@ -50,6 +58,8 @@ external interface FileWillDeleteEvent {
      * *Note:* This function can only be called during event dispatch.
      *
      * @param thenable A thenable that delays saving.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#FileWillDeleteEvent.waitUntil)
      */
     fun waitUntil(thenable: PromiseLike<JsAny?>)
 }

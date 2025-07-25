@@ -17,10 +17,14 @@ import kotlin.js.definedExternally
  * Namespace for dealing with the current window of the editor. That is visible
  * and active editors, as well as, UI elements to show messages, selections, and
  * asking for user input.
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#window)
  */
 external object window {
     /**
      * Represents the grid widget within the main editor area
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#window.tabGroups)
      */
     val tabGroups: TabGroups
 
@@ -28,11 +32,15 @@ external object window {
      * The currently active editor or `undefined`. The active editor is the one
      * that currently has focus or, when none has focus, the one that has changed
      * input most recently.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#window.activeTextEditor)
      */
     var activeTextEditor: TextEditor?
 
     /**
      * The currently visible editors or an empty array.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#window.visibleTextEditors)
      */
     var visibleTextEditors: ReadonlyArray<TextEditor>
 
@@ -40,43 +48,59 @@ external object window {
      * An [Event] which fires when the [active editor][window.activeTextEditor]
      * has changed. *Note* that the event also fires when the active editor changes
      * to `undefined`.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#window.onDidChangeActiveTextEditor)
      */
     val onDidChangeActiveTextEditor: Event<TextEditor?>
 
     /**
      * An [Event] which fires when the array of [visible editors][window.visibleTextEditors]
      * has changed.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#window.onDidChangeVisibleTextEditors)
      */
     val onDidChangeVisibleTextEditors: Event<ReadonlyArray<TextEditor>>
 
     /**
      * An [Event] which fires when the selection in an editor has changed.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#window.onDidChangeTextEditorSelection)
      */
     val onDidChangeTextEditorSelection: Event<TextEditorSelectionChangeEvent>
 
     /**
      * An [Event] which fires when the visible ranges of an editor has changed.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#window.onDidChangeTextEditorVisibleRanges)
      */
     val onDidChangeTextEditorVisibleRanges: Event<TextEditorVisibleRangesChangeEvent>
 
     /**
      * An [Event] which fires when the options of an editor have changed.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#window.onDidChangeTextEditorOptions)
      */
     val onDidChangeTextEditorOptions: Event<TextEditorOptionsChangeEvent>
 
     /**
      * An [Event] which fires when the view column of an editor has changed.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#window.onDidChangeTextEditorViewColumn)
      */
     val onDidChangeTextEditorViewColumn: Event<TextEditorViewColumnChangeEvent>
 
     /**
      * The currently visible [notebook editors][NotebookEditor] or an empty array.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#window.visibleNotebookEditors)
      */
     val visibleNotebookEditors: ReadonlyArray<NotebookEditor>
 
     /**
      * An [Event] which fires when the [visible notebook editors][window.visibleNotebookEditors]
      * has changed.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#window.onDidChangeVisibleNotebookEditors)
      */
     val onDidChangeVisibleNotebookEditors: Event<ReadonlyArray<NotebookEditor>>
 
@@ -84,6 +108,8 @@ external object window {
      * The currently active [notebook editor][NotebookEditor] or `undefined`. The active editor is the one
      * that currently has focus or, when none has focus, the one that has changed
      * input most recently.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#window.activeNotebookEditor)
      */
     val activeNotebookEditor: NotebookEditor?
 
@@ -91,29 +117,39 @@ external object window {
      * An [Event] which fires when the [active notebook editor][window.activeNotebookEditor]
      * has changed. *Note* that the event also fires when the active editor changes
      * to `undefined`.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#window.onDidChangeActiveNotebookEditor)
      */
     val onDidChangeActiveNotebookEditor: Event<NotebookEditor?>
 
     /**
      * An [Event] which fires when the [notebook editor selections][NotebookEditor.selections]
      * have changed.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#window.onDidChangeNotebookEditorSelection)
      */
     val onDidChangeNotebookEditorSelection: Event<NotebookEditorSelectionChangeEvent>
 
     /**
      * An [Event] which fires when the [notebook editor visible ranges][NotebookEditor.visibleRanges]
      * have changed.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#window.onDidChangeNotebookEditorVisibleRanges)
      */
     val onDidChangeNotebookEditorVisibleRanges: Event<NotebookEditorVisibleRangesChangeEvent>
 
     /**
      * The currently opened terminals or an empty array.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#window.terminals)
      */
     val terminals: ReadonlyArray<Terminal>
 
     /**
      * The currently active terminal or `undefined`. The active terminal is the one that
      * currently has focus or most recently had focus.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#window.activeTerminal)
      */
     val activeTerminal: Terminal?
 
@@ -121,27 +157,37 @@ external object window {
      * An [Event] which fires when the [active terminal][window.activeTerminal]
      * has changed. *Note* that the event also fires when the active terminal changes
      * to `undefined`.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#window.onDidChangeActiveTerminal)
      */
     val onDidChangeActiveTerminal: Event<Terminal?>
 
     /**
      * An [Event] which fires when a terminal has been created, either through the
      * [createTerminal][window.createTerminal] API or commands.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#window.onDidOpenTerminal)
      */
     val onDidOpenTerminal: Event<Terminal>
 
     /**
      * An [Event] which fires when a terminal is disposed.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#window.onDidCloseTerminal)
      */
     val onDidCloseTerminal: Event<Terminal>
 
     /**
      * An [Event] which fires when a [terminal's state][Terminal.state] has changed.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#window.onDidChangeTerminalState)
      */
     val onDidChangeTerminalState: Event<Terminal>
 
     /**
      * Fires when shell integration activates or one of its properties changes in a terminal.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#window.onDidChangeTerminalShellIntegration)
      */
     val onDidChangeTerminalShellIntegration: Event<TerminalShellIntegrationChangeEvent>
 
@@ -149,6 +195,8 @@ external object window {
      * This will be fired when a terminal command is started. This event will fire only when
      * [shell integration](https://code.visualstudio.com/docs/terminal/shell-integration) is
      * activated for the terminal.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#window.onDidStartTerminalShellExecution)
      */
     val onDidStartTerminalShellExecution: Event<TerminalShellExecutionStartEvent>
 
@@ -156,17 +204,23 @@ external object window {
      * This will be fired when a terminal command is ended. This event will fire only when
      * [shell integration](https://code.visualstudio.com/docs/terminal/shell-integration) is
      * activated for the terminal.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#window.onDidEndTerminalShellExecution)
      */
     val onDidEndTerminalShellExecution: Event<TerminalShellExecutionEndEvent>
 
     /**
      * Represents the current window's state.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#window.state)
      */
     val state: WindowState
 
     /**
      * An [Event] which fires when the focus or activity state of the current window
      * changes. The value of the event represents whether the window is focused.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#window.onDidChangeWindowState)
      */
     val onDidChangeWindowState: Event<WindowState>
 
@@ -180,6 +234,8 @@ external object window {
      * to open the editor to the side of the currently active one.
      * @param preserveFocus When `true` the editor will not take focus.
      * @returns A promise that resolves to an [editor][TextEditor].
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#window.showTextDocument)
      */
     fun showTextDocument(
         document: TextDocument,
@@ -194,6 +250,8 @@ external object window {
      * @param document A text document to be shown.
      * @param options [Editor options} to configure the behavior of showing the {@link TextEditor editor][TextDocumentShowOptions].
      * @returns A promise that resolves to an [editor][TextEditor].
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#window.showTextDocument)
      */
     fun showTextDocument(
         document: TextDocument,
@@ -208,6 +266,8 @@ external object window {
      * @param uri A resource identifier.
      * @param options [Editor options} to configure the behavior of showing the {@link TextEditor editor][TextDocumentShowOptions].
      * @returns A promise that resolves to an [editor][TextEditor].
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#window.showTextDocument)
      */
     fun showTextDocument(
         uri: Uri,
@@ -221,6 +281,8 @@ external object window {
      * @param options [Editor options} to configure the behavior of showing the {@link NotebookEditor notebook editor][NotebookDocumentShowOptions].
      *
      * @returns A promise that resolves to an [notebook editor][NotebookEditor].
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#window.showNotebookDocument)
      */
     fun showNotebookDocument(
         document: NotebookDocument,
@@ -232,6 +294,8 @@ external object window {
      *
      * @param options Rendering options for the decoration type.
      * @returns A new decoration type instance.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#window.createTextEditorDecorationType)
      */
     fun createTextEditorDecorationType(options: DecorationRenderOptions): TextEditorDecorationType
 
@@ -242,6 +306,8 @@ external object window {
      * @param message The message to show.
      * @param items A set of items that will be rendered as actions in the message.
      * @returns A thenable that resolves to the selected item or `undefined` when being dismissed.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#window.showInformationMessage)
      */
     fun showInformationMessage(
         message: String,
@@ -256,6 +322,8 @@ external object window {
      * @param options Configures the behaviour of the message.
      * @param items A set of items that will be rendered as actions in the message.
      * @returns A thenable that resolves to the selected item or `undefined` when being dismissed.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#window.showInformationMessage)
      */
     fun showInformationMessage(
         message: String,
@@ -271,6 +339,8 @@ external object window {
      * @param message The message to show.
      * @param items A set of items that will be rendered as actions in the message.
      * @returns A thenable that resolves to the selected item or `undefined` when being dismissed.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#window.showInformationMessage)
      */
     fun <T : MessageItem> showInformationMessage(
         message: String,
@@ -286,6 +356,8 @@ external object window {
      * @param options Configures the behaviour of the message.
      * @param items A set of items that will be rendered as actions in the message.
      * @returns A thenable that resolves to the selected item or `undefined` when being dismissed.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#window.showInformationMessage)
      */
     fun <T : MessageItem> showInformationMessage(
         message: String,
@@ -301,6 +373,8 @@ external object window {
      * @param message The message to show.
      * @param items A set of items that will be rendered as actions in the message.
      * @returns A thenable that resolves to the selected item or `undefined` when being dismissed.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#window.showWarningMessage)
      */
     fun showWarningMessage(
         message: String,
@@ -316,6 +390,8 @@ external object window {
      * @param options Configures the behaviour of the message.
      * @param items A set of items that will be rendered as actions in the message.
      * @returns A thenable that resolves to the selected item or `undefined` when being dismissed.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#window.showWarningMessage)
      */
     fun showWarningMessage(
         message: String,
@@ -331,6 +407,8 @@ external object window {
      * @param message The message to show.
      * @param items A set of items that will be rendered as actions in the message.
      * @returns A thenable that resolves to the selected item or `undefined` when being dismissed.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#window.showWarningMessage)
      */
     fun <T : MessageItem> showWarningMessage(
         message: String,
@@ -346,6 +424,8 @@ external object window {
      * @param options Configures the behaviour of the message.
      * @param items A set of items that will be rendered as actions in the message.
      * @returns A thenable that resolves to the selected item or `undefined` when being dismissed.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#window.showWarningMessage)
      */
     fun <T : MessageItem> showWarningMessage(
         message: String,
@@ -361,6 +441,8 @@ external object window {
      * @param message The message to show.
      * @param items A set of items that will be rendered as actions in the message.
      * @returns A thenable that resolves to the selected item or `undefined` when being dismissed.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#window.showErrorMessage)
      */
     fun showErrorMessage(
         message: String,
@@ -376,6 +458,8 @@ external object window {
      * @param options Configures the behaviour of the message.
      * @param items A set of items that will be rendered as actions in the message.
      * @returns A thenable that resolves to the selected item or `undefined` when being dismissed.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#window.showErrorMessage)
      */
     fun showErrorMessage(
         message: String,
@@ -391,6 +475,8 @@ external object window {
      * @param message The message to show.
      * @param items A set of items that will be rendered as actions in the message.
      * @returns A thenable that resolves to the selected item or `undefined` when being dismissed.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#window.showErrorMessage)
      */
     fun <T : MessageItem> showErrorMessage(
         message: String,
@@ -406,6 +492,8 @@ external object window {
      * @param options Configures the behaviour of the message.
      * @param items A set of items that will be rendered as actions in the message.
      * @returns A thenable that resolves to the selected item or `undefined` when being dismissed.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#window.showErrorMessage)
      */
     fun <T : MessageItem> showErrorMessage(
         message: String,
@@ -420,6 +508,8 @@ external object window {
      * @param options Configures the behavior of the selection list.
      * @param token A token that can be used to signal cancellation.
      * @returns A promise that resolves to the selected items or `undefined`.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#window.showQuickPick)
      */
     // showQuickPick(items: readonly string[] | Thenable<readonly string[]>, options: QuickPickOptions & { /** literal-type defines return type */canPickMany: true }, token?: CancellationToken): Thenable<string[] | undefined>
 
@@ -430,6 +520,8 @@ external object window {
      * @param options Configures the behavior of the selection list.
      * @param token A token that can be used to signal cancellation.
      * @returns A promise that resolves to the selection or `undefined`.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#window.showQuickPick)
      */
     fun showQuickPick(
         items: JsAny, /* string[] | Thenable<readonly string[]> */
@@ -444,6 +536,8 @@ external object window {
      * @param options Configures the behavior of the selection list.
      * @param token A token that can be used to signal cancellation.
      * @returns A promise that resolves to the selected items or `undefined`.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#window.showQuickPick)
      */
     // showQuickPick<T extends QuickPickItem>(items: readonly T[] | Thenable<readonly T[]>, options: QuickPickOptions & { /** literal-type defines return type */ canPickMany: true }, token?: CancellationToken): Thenable<T[] | undefined>
 
@@ -454,6 +548,8 @@ external object window {
      * @param options Configures the behavior of the selection list.
      * @param token A token that can be used to signal cancellation.
      * @returns A promise that resolves to the selected item or `undefined`.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#window.showQuickPick)
      */
     fun <T : QuickPickItem> showQuickPick(
         items: JsAny, /* T[] | Thenable<readonly T[]> */
@@ -467,6 +563,8 @@ external object window {
      *
      * @param options Configures the behavior of the workspace folder list.
      * @returns A promise that resolves to the workspace folder or `undefined`.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#window.showWorkspaceFolderPick)
      */
     fun showWorkspaceFolderPick(options: WorkspaceFolderPickOptions = definedExternally): PromiseLike<WorkspaceFolder?>
 
@@ -476,6 +574,8 @@ external object window {
      *
      * @param options Options that control the dialog.
      * @returns A promise that resolves to the selected resources or `undefined`.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#window.showOpenDialog)
      */
     fun showOpenDialog(options: OpenDialogOptions = definedExternally): PromiseLike<ReadonlyArray<Uri>?>
 
@@ -485,6 +585,8 @@ external object window {
      *
      * @param options Options that control the dialog.
      * @returns A promise that resolves to the selected resource or `undefined`.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#window.showSaveDialog)
      */
     fun showSaveDialog(options: SaveDialogOptions = definedExternally): PromiseLike<Uri?>
 
@@ -498,6 +600,8 @@ external object window {
      * @param options Configures the behavior of the input box.
      * @param token A token that can be used to signal cancellation.
      * @returns A promise that resolves to a string the user provided or to `undefined` in case of dismissal.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#window.showInputBox)
      */
     fun showInputBox(
         options: InputBoxOptions = definedExternally,
@@ -513,6 +617,8 @@ external object window {
      * when [window.showQuickPick] does not offer the required flexibility.
      *
      * @returns A new [QuickPick].
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#window.createQuickPick)
      */
     fun <T : QuickPickItem> createQuickPick(): QuickPick<T>
 
@@ -524,6 +630,8 @@ external object window {
      * when [window.showInputBox] does not offer the required flexibility.
      *
      * @returns A new [InputBox].
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#window.createInputBox)
      */
     fun createInputBox(): InputBox
 
@@ -537,6 +645,8 @@ external object window {
      * @param name Human-readable string which will be used to represent the channel in the UI.
      * @param languageId The identifier of the language associated with the channel.
      * @returns A new output channel.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#window.createOutputChannel)
      */
     fun createOutputChannel(
         name: String,
@@ -549,6 +659,8 @@ external object window {
      * @param name Human-readable string which will be used to represent the channel in the UI.
      * @param options Options for the log output channel.
      * @returns A new log output channel.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#window.createOutputChannel)
      */
     // createOutputChannel(name: string, options: { /** literal-type defines return type */log: true }): LogOutputChannel
 
@@ -561,6 +673,8 @@ external object window {
      * @param options Settings for the new panel.
      *
      * @returns New webview panel.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#window.createWebviewPanel)
      */
     /*
     createWebviewPanel(viewType: string, title: string, showOptions: ViewColumn | {
@@ -582,6 +696,8 @@ external object window {
      * @param text The message to show, supports icon substitution as in status bar [items][StatusBarItem.text].
      * @param hideAfterTimeout Timeout in milliseconds after which the message will be disposed.
      * @returns A disposable which hides the status bar message.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#window.setStatusBarMessage)
      */
     fun setStatusBarMessage(
         text: String,
@@ -595,6 +711,8 @@ external object window {
      * @param text The message to show, supports icon substitution as in status bar [items][StatusBarItem.text].
      * @param hideWhenDone Thenable on which completion (resolve or reject) the message will be disposed.
      * @returns A disposable which hides the status bar message.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#window.setStatusBarMessage)
      */
     fun setStatusBarMessage(
         text: String,
@@ -610,6 +728,8 @@ external object window {
      *
      * @param text The message to show, supports icon substitution as in status bar [items][StatusBarItem.text].
      * @returns A disposable which hides the status bar message.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#window.setStatusBarMessage)
      */
     fun setStatusBarMessage(text: String): Disposable
 
@@ -632,6 +752,8 @@ external object window {
      * long running operation.
      *
      * @returns The thenable the task-callback returned.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#window.withProgress)
      */
     /*
     withProgress<R>(options: ProgressOptions, task: (progress: Progress<{
@@ -653,6 +775,8 @@ external object window {
      * @param alignment The alignment of the item.
      * @param priority The priority of the item. Higher values mean the item should be shown more to the left.
      * @returns A new status bar item.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#window.createStatusBarItem)
      */
     fun createStatusBarItem(
         id: String,
@@ -667,6 +791,8 @@ external object window {
      * @param alignment The alignment of the item.
      * @param priority The priority of the item. Higher values mean the item should be shown more to the left.
      * @returns A new status bar item.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#window.createStatusBarItem)
      */
     fun createStatusBarItem(
         alignment: StatusBarAlignment = definedExternally,
@@ -684,6 +810,8 @@ external object window {
      * [command-line format](https://msdn.microsoft.com/en-au/08dfcab2-eb6e-49a4-80eb-87d4076c98c6).
      * @returns A new Terminal.
      * @throws When running in an environment where a new process cannot be started.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#window.createTerminal)
      */
     fun createTerminal(
         name: String = definedExternally,
@@ -697,6 +825,8 @@ external object window {
      * @param options A TerminalOptions object describing the characteristics of the new terminal.
      * @returns A new Terminal.
      * @throws When running in an environment where a new process cannot be started.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#window.createTerminal)
      */
     fun createTerminal(options: TerminalOptions): Terminal
 
@@ -706,6 +836,8 @@ external object window {
      * @param options An [ExtensionTerminalOptions] object describing
      * the characteristics of the new terminal.
      * @returns A new Terminal.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#window.createTerminal)
      */
     fun createTerminal(options: ExtensionTerminalOptions): Terminal
 
@@ -718,6 +850,8 @@ external object window {
      * @param viewId Id of the view contributed using the extension point `views`.
      * @param treeDataProvider A [TreeDataProvider] that provides tree data for the view
      * @returns A [disposable][Disposable] that unregisters the [TreeDataProvider].
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#window.registerTreeDataProvider)
      */
     fun <T : JsAny?> registerTreeDataProvider(
         viewId: String,
@@ -729,6 +863,8 @@ external object window {
      * @param viewId Id of the view contributed using the extension point `views`.
      * @param options Options for creating the [TreeView]
      * @returns a [TreeView].
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#window.createTreeView)
      */
     fun <T : JsAny?> createTreeView(
         viewId: String,
@@ -756,6 +892,8 @@ external object window {
      *
      * @param handler The uri handler to register for this extension.
      * @returns A [disposable][Disposable] that unregisters the handler.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#window.registerUriHandler)
      */
     fun registerUriHandler(handler: UriHandler): Disposable
 
@@ -770,6 +908,8 @@ external object window {
      * @param viewType Type of the webview panel that can be serialized.
      * @param serializer Webview serializer.
      * @returns A [disposable][Disposable] that unregisters the serializer.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#window.registerWebviewPanelSerializer)
      */
     fun registerWebviewPanelSerializer(
         viewType: String,
@@ -784,6 +924,8 @@ external object window {
      * @param provider Provider for the webview views.
      *
      * @returns Disposable that unregisters the provider.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#window.registerWebviewViewProvider)
      */
     /*
     registerWebviewViewProvider(viewId: string, provider: WebviewViewProvider, options?: {
@@ -825,6 +967,8 @@ external object window {
      * @param options Options for the provider.
      *
      * @returns Disposable that unregisters the provider.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#window.registerCustomEditorProvider)
      */
     /*
     registerCustomEditorProvider(viewType: string, provider: CustomTextEditorProvider | CustomReadonlyEditorProvider | CustomEditorProvider, options?: {
@@ -855,6 +999,8 @@ external object window {
      * Register provider that enables the detection and handling of links within the terminal.
      * @param provider The provider that provides the terminal links.
      * @returns Disposable that unregisters the provider.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#window.registerTerminalLinkProvider)
      */
     fun registerTerminalLinkProvider(provider: TerminalLinkProvider<*>): Disposable
 
@@ -864,6 +1010,8 @@ external object window {
      * @param id The ID of the contributed terminal profile.
      * @param provider The terminal profile provider.
      * @returns A [disposable][Disposable] that unregisters the provider.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#window.registerTerminalProfileProvider)
      */
     fun registerTerminalProfileProvider(
         id: String,
@@ -875,17 +1023,23 @@ external object window {
      *
      * @param provider A [FileDecorationProvider].
      * @returns A [Disposable] that unregisters the provider.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#window.registerFileDecorationProvider)
      */
     fun registerFileDecorationProvider(provider: FileDecorationProvider): Disposable
 
     /**
      * The currently active color theme as configured in the settings. The active
      * theme can be changed via the `workbench.colorTheme` setting.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#window.activeColorTheme)
      */
     var activeColorTheme: ColorTheme
 
     /**
      * An [Event] which fires when the active color theme is changed or has changes.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#window.onDidChangeActiveColorTheme)
      */
     val onDidChangeActiveColorTheme: Event<ColorTheme>
 }

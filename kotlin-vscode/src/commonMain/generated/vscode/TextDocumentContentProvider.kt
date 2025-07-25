@@ -12,10 +12,14 @@ import js.core.JsString
  * for a [uri-scheme][Uri.scheme]. When a uri with that scheme is to
  * be [loaded][workspace.openTextDocument] the content provider is
  * asked.
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TextDocumentContentProvider)
  */
 external interface TextDocumentContentProvider {
     /**
      * An event to signal a resource has changed.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TextDocumentContentProvider.onDidChange)
      */
     var onDidChange: Event<Uri>?
 
@@ -32,6 +36,8 @@ external interface TextDocumentContentProvider {
      * @param uri An uri which scheme matches the scheme this provider was [registered][workspace.registerTextDocumentContentProvider] for.
      * @param token A cancellation token.
      * @returns A string or a thenable that resolves to such.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TextDocumentContentProvider.provideTextDocumentContent)
      */
     fun provideTextDocumentContent(
         uri: Uri,

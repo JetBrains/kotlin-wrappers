@@ -13,20 +13,28 @@ import kotlin.js.definedExternally
  * to refactor code.
  *
  * A CodeAction must set either {@linkcode CodeAction.edit edit} and/or a {@linkcode CodeAction.command command}. If both are supplied, the `edit` is applied first, then the command is executed.
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#CodeAction)
  */
 open external class CodeAction {
     /**
      * A short, human-readable, title for this code action.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#CodeAction.title)
      */
     var title: String
 
     /**
      * A [workspace edit][WorkspaceEdit] this code action performs.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#CodeAction.edit)
      */
     var edit: WorkspaceEdit?
 
     /**
      * [Diagnostics][Diagnostic] that this code action resolves.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#CodeAction.diagnostics)
      */
     var diagnostics: ReadonlyArray<Diagnostic>?
 
@@ -35,6 +43,8 @@ open external class CodeAction {
      *
      * If this command throws an exception, the editor displays the exception message to users in the editor at the
      * current cursor position.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#CodeAction.command)
      */
     var command: Command?
 
@@ -42,6 +52,8 @@ open external class CodeAction {
      * [Kind][CodeActionKind] of the code action.
      *
      * Used to filter code actions.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#CodeAction.kind)
      */
     var kind: CodeActionKind?
 
@@ -51,6 +63,8 @@ open external class CodeAction {
      *
      * A quick fix should be marked preferred if it properly addresses the underlying error.
      * A refactoring should be marked preferred if it is the most reasonable choice of actions to take.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#CodeAction.isPreferred)
      */
     var isPreferred: Boolean?
 
@@ -66,6 +80,8 @@ open external class CodeAction {
      * - If the user has a [keybinding](https://code.visualstudio.com/docs/editor/refactoring#_keybindings-for-code-actions)
      * that auto applies a code action and only a disabled code actions are returned, the editor will show the user an
      * error message with `reason` in the editor.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#CodeAction.disabled)
      */
     /*
     disabled?: {
@@ -86,6 +102,8 @@ open external class CodeAction {
      *
      * @param title The title of the code action.
      * @param kind The kind of the code action.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#CodeAction.constructor)
      */
     constructor(
         title: String,

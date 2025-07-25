@@ -15,6 +15,8 @@ import kotlin.js.definedExternally
  *
  * To get an instance of a `DiagnosticCollection` use
  * [createDiagnosticCollection][languages.createDiagnosticCollection].
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#DiagnosticCollection)
  */
 external interface DiagnosticCollection :
     JsIterable<Tuple2</* uri: */ Uri, /* diagnostics: */ ReadonlyArray<Diagnostic>>>,
@@ -23,6 +25,8 @@ external interface DiagnosticCollection :
      * The name of this diagnostic collection, for instance `typescript`. Every diagnostic
      * from this collection will be associated with this name. Also, the task framework uses this
      * name when defining [problem matchers](https://code.visualstudio.com/docs/editor/tasks#_defining-a-problem-matcher).
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#DiagnosticCollection.name)
      */
     val name: String
 
@@ -32,6 +36,8 @@ external interface DiagnosticCollection :
      *
      * @param uri A resource identifier.
      * @param diagnostics Array of diagnostics or `undefined`
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#DiagnosticCollection.set)
      */
     fun set(
         uri: Uri,
@@ -47,6 +53,8 @@ external interface DiagnosticCollection :
      * all previous but not subsequent diagnostics are removed.
      *
      * @param entries An array of tuples, like `[[file1, [d1, d2]], [file2, [d3, d4, d5]]]`, or `undefined`.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#DiagnosticCollection.set)
      */
     fun set(entries: ReadonlyArray<Tuple2<Uri, ReadonlyArray<Diagnostic>?>>)
 
@@ -55,12 +63,16 @@ external interface DiagnosticCollection :
      * to the provided `uri`. The same as `#set(uri, undefined)`.
      *
      * @param uri A resource identifier.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#DiagnosticCollection.delete)
      */
     fun delete(uri: Uri)
 
     /**
      * Remove all diagnostics from this collection. The same
      * as calling `#set(undefined)`;
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#DiagnosticCollection.clear)
      */
     fun clear()
 
@@ -69,6 +81,8 @@ external interface DiagnosticCollection :
      *
      * @param callback Function to execute for each entry.
      * @param thisArg The `this` context used when invoking the handler function.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#DiagnosticCollection.forEach)
      */
     fun forEach(
         callback: (
@@ -85,6 +99,8 @@ external interface DiagnosticCollection :
      *
      * @param uri A resource identifier.
      * @returns An immutable array of [diagnostics][Diagnostic] or `undefined`.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#DiagnosticCollection.get)
      */
     fun get(uri: Uri): ReadonlyArray<Diagnostic>?
 
@@ -94,12 +110,16 @@ external interface DiagnosticCollection :
      *
      * @param uri A resource identifier.
      * @returns `true` if this collection has diagnostic for the given resource.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#DiagnosticCollection.has)
      */
     fun has(uri: Uri): Boolean
 
     /**
      * Dispose and free associated resources. Calls
      * [clear][DiagnosticCollection.clear].
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#DiagnosticCollection.dispose)
      */
     override fun dispose()
 }

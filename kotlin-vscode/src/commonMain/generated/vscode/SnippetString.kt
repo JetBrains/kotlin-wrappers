@@ -19,10 +19,14 @@ import kotlin.js.definedExternally
  * the end of the snippet. Variables are defined with `$name` and
  * `${name:default value}`. Also see
  * [the full snippet syntax](https://code.visualstudio.com/docs/editor/userdefinedsnippets#_create-your-own-snippets).
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#SnippetString)
  */
 open external class SnippetString {
     /**
      * The snippet string.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#SnippetString.value)
      */
     var value: String
 
@@ -30,6 +34,8 @@ open external class SnippetString {
      * Create a new snippet string.
      *
      * @param value A snippet string.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#SnippetString.constructor)
      */
     constructor(value: String = definedExternally)
 
@@ -39,6 +45,8 @@ open external class SnippetString {
      *
      * @param string A value to append 'as given'. The string will be escaped.
      * @returns This snippet string.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#SnippetString.appendText)
      */
     fun appendText(string: String): SnippetString
 
@@ -49,6 +57,8 @@ open external class SnippetString {
      * @param number The number of this tabstop, defaults to an auto-increment
      * value starting at 1.
      * @returns This snippet string.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#SnippetString.appendTabstop)
      */
     fun appendTabstop(number: Int = definedExternally): SnippetString
 
@@ -61,6 +71,8 @@ open external class SnippetString {
      * @param number The number of this tabstop, defaults to an auto-increment
      * value starting at 1.
      * @returns This snippet string.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#SnippetString.appendPlaceholder)
      */
     fun appendPlaceholder(
         value: JsAny, /* string | ((snippet: SnippetString) => any) */
@@ -75,6 +87,8 @@ open external class SnippetString {
      * @param number The number of this tabstop, defaults to an auto-increment
      * value starting at 1.
      * @returns This snippet string.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#SnippetString.appendChoice)
      */
     fun appendChoice(
         values: ReadonlyArray<JsString>,
@@ -89,6 +103,8 @@ open external class SnippetString {
      * @param defaultValue The default value which is used when the variable name cannot
      * be resolved - either a string or a function with which a nested snippet can be created.
      * @returns This snippet string.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#SnippetString.appendVariable)
      */
     fun appendVariable(
         name: String,

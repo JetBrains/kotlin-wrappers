@@ -9,6 +9,8 @@ import kotlin.js.JsModule
 /**
  * Represents a type which can release resources, such
  * as event listening or a timer.
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#Disposable)
  */
 open external class Disposable :
     DisposableLike {
@@ -19,11 +21,15 @@ open external class Disposable :
      * *Note* that an asynchronous function is not awaited.
      *
      * @param callOnDispose Function that disposes something.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#Disposable.constructor)
      */
     constructor(callOnDispose: () -> Unit)
 
     /**
      * Dispose this object.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#Disposable.dispose)
      */
     override fun dispose()
 
@@ -36,6 +42,8 @@ open external class Disposable :
          * dispose-functions aren't awaited.
          * @returns Returns a new disposable which, upon dispose, will
          * dispose all provided disposables.
+         *
+         * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#Disposable.from)
          */
         fun from(vararg disposableLikes: DisposableLike): Disposable
     }

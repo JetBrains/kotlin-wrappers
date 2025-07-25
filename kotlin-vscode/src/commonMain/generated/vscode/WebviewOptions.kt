@@ -7,12 +7,16 @@ import js.core.JsAny
 
 /**
  * Content settings for a webview.
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#WebviewOptions)
  */
 external interface WebviewOptions {
     /**
      * Controls whether scripts are enabled in the webview content or not.
      *
      * Defaults to false (scripts-disabled).
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#WebviewOptions.enableScripts)
      */
     val enableScripts: Boolean?
 
@@ -21,6 +25,8 @@ external interface WebviewOptions {
      *
      * Defaults to true if [scripts are enabled][WebviewOptions.enableScripts]. Otherwise defaults to false.
      * Explicitly setting this property to either true or false overrides the default.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#WebviewOptions.enableForms)
      */
     val enableForms: Boolean?
 
@@ -30,6 +36,8 @@ external interface WebviewOptions {
      * Defaults to `false` (command uris are disabled).
      *
      * If you pass in an array, only the commands in the array are allowed.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#WebviewOptions.enableCommandUris)
      */
     val enableCommandUris: JsAny /* boolean | readonly string[] */?
 
@@ -39,6 +47,8 @@ external interface WebviewOptions {
      * Default to the root folders of the current workspace plus the extension's install directory.
      *
      * Pass in an empty array to disallow access to any local resources.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#WebviewOptions.localResourceRoots)
      */
     val localResourceRoots: ReadonlyArray<Uri>?
 
@@ -54,6 +64,8 @@ external interface WebviewOptions {
      *
      * *Note* that port mappings only work for `http` or `https` urls. Websocket urls (e.g. `ws://localhost:3000`)
      * cannot be mapped to another port.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#WebviewOptions.portMapping)
      */
     val portMapping: ReadonlyArray<WebviewPortMapping>?
 }

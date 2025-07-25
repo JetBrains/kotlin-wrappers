@@ -542,6 +542,8 @@ private fun convertFunctionBody(
     return "($parameters)$returnType"
 }
 
+private val API_PAGE_URL = "https://code.visualstudio.com/api/references/vscode-api"
+
 private fun kdoc(
     source: String,
     commenter: Commenter,
@@ -549,3 +551,4 @@ private fun kdoc(
     source
         .replace(Regex("""\{@link (\S+)}"""), "[$1]")
         .replace(Regex("""\{@link (\S+) (.+)}"""), "[$2][$1]")
+        .replace("\n */", "\n *\n * [Online Documentation]($API_PAGE_URL#${commenter.name})\n */")

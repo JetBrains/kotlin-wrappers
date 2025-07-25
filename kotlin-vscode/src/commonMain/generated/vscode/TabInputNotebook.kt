@@ -8,15 +8,21 @@ import kotlin.js.JsModule
 
 /**
  * The tab represents a notebook.
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TabInputNotebook)
  */
 open external class TabInputNotebook {
     /**
      * The uri that the tab is representing.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TabInputNotebook.uri)
      */
     val uri: Uri
 
     /**
      * The type of notebook. Maps to {@linkcode NotebookDocument.notebookType NotebookDocuments's notebookType}
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TabInputNotebook.notebookType)
      */
     val notebookType: String
 
@@ -24,6 +30,8 @@ open external class TabInputNotebook {
      * Constructs a new tab input for a notebook.
      * @param uri The uri of the notebook.
      * @param notebookType The type of notebook. Maps to {@linkcode NotebookDocument.notebookType NotebookDocuments's notebookType}
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TabInputNotebook.constructor)
      */
     constructor(
         uri: Uri,

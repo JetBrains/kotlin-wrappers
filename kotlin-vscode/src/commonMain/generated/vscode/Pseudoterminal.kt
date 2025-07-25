@@ -7,6 +7,8 @@ import js.core.JsString
 
 /**
  * Defines the interface of a terminal pty, enabling extensions to control a terminal.
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#Pseudoterminal)
  */
 external interface Pseudoterminal {
     /**
@@ -35,6 +37,8 @@ external interface Pseudoterminal {
      * ```typescript
      * writeEmitter.fire('\x1b[10;20H*');
      * ```
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#Pseudoterminal.onDidWrite)
      */
     var onDidWrite: Event<JsString>
 
@@ -63,6 +67,8 @@ external interface Pseudoterminal {
      * };
      * vscode.window.createTerminal({ name: 'My terminal', pty });
      * ```
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#Pseudoterminal.onDidOverrideDimensions)
      */
     var onDidOverrideDimensions: Event<TerminalDimensions?>?
 
@@ -95,6 +101,8 @@ external interface Pseudoterminal {
      * const terminal = vscode.window.createTerminal({ name: 'Exit example', pty });
      * terminal.show(true);
      * ```
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#Pseudoterminal.onDidClose)
      */
     var onDidClose: Event<JsInt?>?
 
@@ -115,6 +123,8 @@ external interface Pseudoterminal {
      * };
      * vscode.window.createTerminal({ name: 'My terminal', pty });
      * ```
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#Pseudoterminal.onDidChangeName)
      */
     var onDidChangeName: Event<JsString>?
 
@@ -123,11 +133,15 @@ external interface Pseudoterminal {
      *
      * @param initialDimensions The dimensions of the terminal, this will be undefined if the
      * terminal panel has not been opened before this is called.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#Pseudoterminal.open)
      */
     fun open(initialDimensions: TerminalDimensions?)
 
     /**
      * Implement to handle when the terminal is closed by an act of the user.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#Pseudoterminal.close)
      */
     fun close()
 
@@ -150,6 +164,8 @@ external interface Pseudoterminal {
      * };
      * vscode.window.createTerminal({ name: 'Local echo', pty });
      * ```
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#Pseudoterminal.handleInput)
      */
     var handleInput: ((data: String) -> Unit)?
 
@@ -165,6 +181,8 @@ external interface Pseudoterminal {
      * to react dimension changes.
      *
      * @param dimensions The new dimensions.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#Pseudoterminal.setDimensions)
      */
     var setDimensions: ((dimensions: TerminalDimensions) -> Unit)?
 }

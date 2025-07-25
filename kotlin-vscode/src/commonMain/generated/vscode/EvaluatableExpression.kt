@@ -13,10 +13,14 @@ import kotlin.js.definedExternally
  * If only a range is specified, the expression will be extracted from the underlying document.
  * An optional expression can be used to override the extracted expression.
  * In this case the range is still used to highlight the range in the document.
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#EvaluatableExpression)
  */
 open external class EvaluatableExpression {
     /*
      * The range is used to extract the evaluatable expression from the underlying document and to highlight it.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#EvaluatableExpression.range)
      */
     /*
     readonly range: Range;
@@ -32,6 +36,8 @@ open external class EvaluatableExpression {
      *
      * @param range The range in the underlying document from which the evaluatable expression is extracted.
      * @param expression If specified overrides the extracted expression.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#EvaluatableExpression.constructor)
      */
     constructor(
         range: Range,

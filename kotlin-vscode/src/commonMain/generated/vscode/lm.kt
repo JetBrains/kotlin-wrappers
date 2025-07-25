@@ -14,10 +14,14 @@ import kotlin.js.definedExternally
 
 /**
  * Namespace for language model related functionality.
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#lm)
  */
 external object lm {
     /**
      * An event that is fired when the set of available chat models changes.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#lm.onDidChangeChatModels)
      */
     val onDidChangeChatModels: Event<Void>
 
@@ -45,6 +49,8 @@ external object lm {
      *
      * @param selector A chat model selector. When omitted all chat models are returned.
      * @returns An array of chat models, can be empty!
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#lm.selectChatModels)
      */
     fun selectChatModels(selector: LanguageModelChatSelector = definedExternally): PromiseLike<ReadonlyArray<LanguageModelChat>>
 
@@ -53,6 +59,8 @@ external object lm {
      * point. A registered tool is available in the [lm.tools] list for any extension to see. But in order for it to
      * be seen by a language model, it must be passed in the list of available tools in [LanguageModelChatRequestOptions.tools].
      * @returns A [Disposable] that unregisters the tool when disposed.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#lm.registerTool)
      */
     fun <T : JsAny?> registerTool(
         name: String,
@@ -62,6 +70,8 @@ external object lm {
     /**
      * A list of all available tools that were registered by all extensions using [lm.registerTool]. They can be called
      * with [lm.invokeTool] with input that match their declared `inputSchema`.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#lm.tools)
      */
     val tools: ReadonlyArray<LanguageModelToolInformation>
 
@@ -90,6 +100,8 @@ external object lm {
      * @param options The options to use when invoking the tool.
      * @param token A cancellation token. See [CancellationTokenSource] for how to create one.
      * @returns The result of the tool invocation.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#lm.invokeTool)
      */
     fun invokeTool(
         name: String,
@@ -122,6 +134,8 @@ external object lm {
      * @param id The ID of the provider, which is unique to the extension.
      * @param provider The provider to register
      * @returns A disposable that unregisters the provider when disposed.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#lm.registerMcpServerDefinitionProvider)
      */
     fun registerMcpServerDefinitionProvider(
         id: String,

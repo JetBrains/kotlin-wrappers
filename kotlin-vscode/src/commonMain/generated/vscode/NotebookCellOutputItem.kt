@@ -12,6 +12,8 @@ import kotlin.js.definedExternally
 
 /**
  * One representation of a [notebook output][NotebookCellOutput], defined by MIME type and data.
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#NotebookCellOutputItem)
  */
 open external class NotebookCellOutputItem {
     /**
@@ -20,11 +22,15 @@ open external class NotebookCellOutputItem {
      *
      * Notebooks have built-in support for certain mime-types, extensions can add support for new
      * types and override existing types.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#NotebookCellOutputItem.mime)
      */
     var mime: String
 
     /**
      * The data of this output item. Must always be an array of unsigned 8-bit integers.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#NotebookCellOutputItem.data)
      */
     var data: Uint8Array<*>
 
@@ -33,6 +39,8 @@ open external class NotebookCellOutputItem {
      *
      * @param data The value of the output item.
      * @param mime The mime type of the output item.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#NotebookCellOutputItem.constructor)
      */
     constructor(
         data: Uint8Array<*>,
@@ -48,6 +56,8 @@ open external class NotebookCellOutputItem {
          * @param value A string.
          * @param mime Optional MIME type, defaults to `text/plain`.
          * @returns A new output item object.
+         *
+         * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#NotebookCellOutputItem.text)
          */
         fun text(
             value: String,
@@ -65,6 +75,8 @@ open external class NotebookCellOutputItem {
          * @param value A JSON-stringifyable value.
          * @param mime Optional MIME type, defaults to `application/json`
          * @returns A new output item object.
+         *
+         * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#NotebookCellOutputItem.json)
          */
         fun json(
             value: JsAny?,
@@ -77,6 +89,8 @@ open external class NotebookCellOutputItem {
          *
          * @param value A string.
          * @returns A new output item object.
+         *
+         * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#NotebookCellOutputItem.stdout)
          */
         fun stdout(value: String): NotebookCellOutputItem
 
@@ -86,6 +100,8 @@ open external class NotebookCellOutputItem {
          *
          * @param value A string.
          * @returns A new output item object.
+         *
+         * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#NotebookCellOutputItem.stderr)
          */
         fun stderr(value: String): NotebookCellOutputItem
 
@@ -95,6 +111,8 @@ open external class NotebookCellOutputItem {
          *
          * @param value An error object.
          * @returns A new output item object.
+         *
+         * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#NotebookCellOutputItem.error)
          */
         fun error(value: JsError): NotebookCellOutputItem
     }

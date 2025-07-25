@@ -6,6 +6,8 @@ import js.core.JsAny
 
 /**
  * Represents a [text editor}'s {@link TextEditor.options options][TextEditor].
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TextEditorOptions)
  */
 external interface TextEditorOptions {
     /**
@@ -16,6 +18,8 @@ external interface TextEditorOptions {
      *
      * When getting a text editor's options, this property will always be a number (resolved).
      * When setting a text editor's options, this property is optional and it can be a number or `"auto"`.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TextEditorOptions.tabSize)
      */
     var tabSize: JsAny /* number | string */?
 
@@ -24,6 +28,8 @@ external interface TextEditorOptions {
      *
      * When getting a text editor's options, this property will always be a number (resolved).
      * When setting a text editor's options, this property is optional and it can be a number or `"tabSize"`.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TextEditorOptions.indentSize)
      */
     var indentSize: JsAny /* number | string */?
 
@@ -31,6 +37,8 @@ external interface TextEditorOptions {
      * When pressing Tab insert [n][TextEditorOptions.tabSize] spaces.
      * When getting a text editor's options, this property will always be a boolean (resolved).
      * When setting a text editor's options, this property is optional and it can be a boolean or `"auto"`.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TextEditorOptions.insertSpaces)
      */
     var insertSpaces: JsAny /* boolean | string */?
 
@@ -38,6 +46,8 @@ external interface TextEditorOptions {
      * The rendering style of the cursor in this editor.
      * When getting a text editor's options, this property will always be present.
      * When setting a text editor's options, this property is optional.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TextEditorOptions.cursorStyle)
      */
     var cursorStyle: TextEditorCursorStyle?
 
@@ -45,6 +55,8 @@ external interface TextEditorOptions {
      * Render relative line numbers w.r.t. the current line number.
      * When getting a text editor's options, this property will always be present.
      * When setting a text editor's options, this property is optional.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TextEditorOptions.lineNumbers)
      */
     var lineNumbers: TextEditorLineNumbersStyle?
 }

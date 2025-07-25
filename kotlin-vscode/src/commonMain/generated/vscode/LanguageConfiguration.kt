@@ -8,16 +8,22 @@ import js.regexp.RegExp
 /**
  * The language configuration interfaces defines the contract between extensions
  * and various editor features, like automatic bracket insertion, automatic indentation etc.
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#LanguageConfiguration)
  */
 external interface LanguageConfiguration {
     /**
      * The language's comment settings.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#LanguageConfiguration.comments)
      */
     var comments: CommentRule?
 
     /**
      * The language's brackets.
      * This configuration implicitly affects pressing Enter around these brackets.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#LanguageConfiguration.brackets)
      */
     var brackets: ReadonlyArray<CharacterPair>?
 
@@ -29,21 +35,29 @@ external interface LanguageConfiguration {
      * ```
      * /(-?\d*\.\d\w*)|([^\`\~\!\@\#\%\^\&\*\(\)\-\=\+\[\{\]\}\\\|\;\:\'\"\,\.\<\>\/\?\s]+)/g
      * ```
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#LanguageConfiguration.wordPattern)
      */
     var wordPattern: RegExp?
 
     /**
      * The language's indentation settings.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#LanguageConfiguration.indentationRules)
      */
     var indentationRules: IndentationRule?
 
     /**
      * The language's rules to be evaluated when pressing Enter.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#LanguageConfiguration.onEnterRules)
      */
     var onEnterRules: ReadonlyArray<OnEnterRule>?
 
     /**
      * The language's auto closing pairs.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#LanguageConfiguration.autoClosingPairs)
      */
     var autoClosingPairs: ReadonlyArray<AutoClosingPair>?
 }

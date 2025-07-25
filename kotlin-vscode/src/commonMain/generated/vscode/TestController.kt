@@ -12,17 +12,23 @@ import kotlin.js.definedExternally
  * are used to populate the editor UI, and is associated with
  * [run profiles][TestController.createRunProfile] to allow
  * for tests to be executed.
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TestController)
  */
 external interface TestController :
     DisposableLike {
     /**
      * The id of the controller passed in [tests.createTestController].
      * This must be globally unique.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TestController.id)
      */
     val id: String
 
     /**
      * Human-readable label for the test controller.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TestController.label)
      */
     var label: String
 
@@ -37,6 +43,8 @@ external interface TestController :
      *
      * However, the editor may sometimes explicitly request children using the
      * [resolveHandler] See the documentation on that method for more details.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TestController.items)
      */
     val items: TestItemCollection
 
@@ -51,6 +59,8 @@ external interface TestController :
      * @param supportsContinuousRun Whether the profile supports continuous running.
      * @returns An instance of a [TestRunProfile], which is automatically
      * associated with this controller.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TestController.createRunProfile)
      */
     fun createRunProfile(
         label: String,
@@ -81,6 +91,8 @@ external interface TestController :
      *
      * @param item An unresolved test item for which children are being
      * requested, or `undefined` to resolve the controller's initial [items][TestController.items].
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TestController.resolveHandler)
      */
     var resolveHandler: (item: TestItem?) -> PromiseLike<Void>?
 
@@ -94,6 +106,8 @@ external interface TestController :
      * a [FileSystemWatcher] for example, and use this method as a fallback.
      *
      * @returns A thenable that resolves when tests have been refreshed.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TestController.refreshHandler)
      */
     var refreshHandler: ((token: CancellationToken) -> PromiseLike<Void>?)?
 
@@ -117,6 +131,8 @@ external interface TestController :
      * a file already saved externally, such as a coverage information file.
      * @returns An instance of the [TestRun]. It will be considered "running"
      * from the moment this method is invoked until [TestRun.end] is called.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TestController.createTestRun)
      */
     fun createTestRun(
         request: TestRunRequest,
@@ -133,6 +149,8 @@ external interface TestController :
      * in the [TestItemCollection] it's added to.
      * @param label Human-readable label of the test item.
      * @param uri URI this TestItem is associated with. May be a file or directory.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TestController.createTestItem)
      */
     fun createTestItem(
         id: String,
@@ -155,12 +173,16 @@ external interface TestController :
      * in the editor's UI.
      *
      * @param items Item to mark as outdated. If undefined, all the controller's items are marked outdated.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TestController.invalidateTestResults)
      */
     fun invalidateTestResults(items: JsAny /* TestItem | readonly TestItem[] */ = definedExternally)
 
     /**
      * Unregisters the test controller, disposing of its associated tests
      * and unpersisted results.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TestController.dispose)
      */
     override fun dispose()
 }

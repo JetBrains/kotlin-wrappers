@@ -8,6 +8,8 @@ import js.array.ReadonlyArray
  * Describes a structural change to a notebook document, e.g newly added and removed cells.
  *
  * @see [NotebookDocumentChangeEvent]
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#NotebookDocumentContentChange)
  */
 external interface NotebookDocumentContentChange {
     /**
@@ -15,16 +17,22 @@ external interface NotebookDocumentContentChange {
      *
      * Note that no cells have been [removed][NotebookDocumentContentChange.removedCells]
      * when this range is [empty][NotebookRange.isEmpty].
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#NotebookDocumentContentChange.range)
      */
     val range: NotebookRange
 
     /**
      * Cells that have been added to the document.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#NotebookDocumentContentChange.addedCells)
      */
     val addedCells: ReadonlyArray<NotebookCell>
 
     /**
      * Cells that have been removed from the document.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#NotebookDocumentContentChange.removedCells)
      */
     val removedCells: ReadonlyArray<NotebookCell>
 }

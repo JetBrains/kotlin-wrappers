@@ -6,6 +6,8 @@ import js.core.JsAny
 
 /**
  * Options provided for tool invocation.
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#LanguageModelToolInvocationOptions)
  */
 external interface LanguageModelToolInvocationOptions<T : JsAny?> {
     /**
@@ -19,18 +21,24 @@ external interface LanguageModelToolInvocationOptions<T : JsAny?> {
      * confirmations will be shown.
      *
      * *Note* that a tool that invokes another tool during its invocation, can pass along the `toolInvocationToken` that it received.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#LanguageModelToolInvocationOptions.toolInvocationToken)
      */
     var toolInvocationToken: ChatParticipantToolToken?
 
     /**
      * The input with which to invoke the tool. The input must match the schema defined in
      * [LanguageModelToolInformation.inputSchema]
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#LanguageModelToolInvocationOptions.input)
      */
     var input: T
 
     /**
      * Options to hint at how many tokens the tool should return in its response, and enable the tool to count tokens
      * accurately.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#LanguageModelToolInvocationOptions.tokenizationOptions)
      */
     var tokenizationOptions: LanguageModelToolTokenizationOptions?
 }

@@ -10,6 +10,8 @@ import js.promise.PromiseLike
 
 /**
  * Provides support for drag and drop in `TreeView`.
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TreeDragAndDropController)
  */
 external interface TreeDragAndDropController<T : JsAny?> {
     /**
@@ -28,6 +30,8 @@ external interface TreeDragAndDropController<T : JsAny?> {
      * 3. Open the developer tools and drag the item with unknown mime type over your tree. The mime types will be logged to the developer console
      *
      * Note that mime types that cannot be sent to the extension will be omitted.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TreeDragAndDropController.dropMimeTypes)
      */
     val dropMimeTypes: ReadonlyArray<JsString>
 
@@ -36,6 +40,8 @@ external interface TreeDragAndDropController<T : JsAny?> {
      * This could be well-defined, existing, mime types, and also mime types defined by the extension.
      *
      * The recommended mime type of the tree (`application/vnd.code.tree.<treeidlowercase>`) will be automatically added.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TreeDragAndDropController.dragMimeTypes)
      */
     val dragMimeTypes: ReadonlyArray<JsString>
 
@@ -56,6 +62,8 @@ external interface TreeDragAndDropController<T : JsAny?> {
      * @param source The source items for the drag and drop operation.
      * @param dataTransfer The data transfer associated with this drag.
      * @param token A cancellation token indicating that drag has been cancelled.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TreeDragAndDropController.handleDrag)
      */
     var handleDrag: ((
         source: ReadonlyArray<T>,
@@ -71,6 +79,8 @@ external interface TreeDragAndDropController<T : JsAny?> {
      * @param target The target tree element that the drop is occurring on. When undefined, the target is the root.
      * @param dataTransfer The data transfer items of the source of the drag.
      * @param token A cancellation token indicating that the drop has been cancelled.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TreeDragAndDropController.handleDrop)
      */
     var handleDrop: ((
         target: T?,

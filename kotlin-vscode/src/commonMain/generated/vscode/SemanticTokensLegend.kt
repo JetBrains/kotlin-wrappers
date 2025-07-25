@@ -12,15 +12,21 @@ import kotlin.js.definedExternally
 /**
  * A semantic tokens legend contains the needed information to decipher
  * the integer encoded representation of semantic tokens.
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#SemanticTokensLegend)
  */
 open external class SemanticTokensLegend {
     /**
      * The possible token types.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#SemanticTokensLegend.tokenTypes)
      */
     val tokenTypes: ReadonlyArray<JsString>
 
     /**
      * The possible token modifiers.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#SemanticTokensLegend.tokenModifiers)
      */
     val tokenModifiers: ReadonlyArray<JsString>
 
@@ -29,6 +35,8 @@ open external class SemanticTokensLegend {
      *
      * @param tokenTypes An array of token types.
      * @param tokenModifiers An array of token modifiers.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#SemanticTokensLegend.constructor)
      */
     constructor(
         tokenTypes: ReadonlyArray<JsString>,

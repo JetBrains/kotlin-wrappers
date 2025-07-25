@@ -5,6 +5,8 @@ package vscode
 /**
  * A structure that defines a task kind in the system.
  * The value must be JSON-stringifyable.
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TaskDefinition)
  */
 external interface TaskDefinition {
     /**
@@ -21,11 +23,15 @@ external interface TaskDefinition {
      *
      * Note that type identifier starting with a '$' are reserved for internal
      * usages and shouldn't be used by extensions.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TaskDefinition.type)
      */
     val type: String
 
     /**
      * Additional attributes of a concrete task definition.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TaskDefinition.[name)
      */
     // [name: string]: any
 }

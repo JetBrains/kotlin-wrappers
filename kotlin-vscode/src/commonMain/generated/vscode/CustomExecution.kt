@@ -9,6 +9,8 @@ import kotlin.js.JsModule
 
 /**
  * Class used to execute an extension callback as a task.
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#CustomExecution)
  */
 open external class CustomExecution {
     /**
@@ -19,6 +21,8 @@ open external class CustomExecution {
      * [Pseudoterminal.onDidClose].
      * @param callback The callback that will be called when the task is started by a user. Any ${} style variables that
      * were in the task definition will be resolved and passed into the callback as `resolvedDefinition`.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#CustomExecution.constructor)
      */
     constructor(callback: (resolvedDefinition: TaskDefinition) -> PromiseLike<Pseudoterminal>)
 }

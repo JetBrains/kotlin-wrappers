@@ -12,12 +12,16 @@ import kotlin.js.definedExternally
 /**
  * A semantic tokens builder can help with creating a `SemanticTokens` instance
  * which contains delta encoded semantic tokens.
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#SemanticTokensBuilder)
  */
 open external class SemanticTokensBuilder {
     /**
      * Creates a semantic tokens builder.
      *
      * @param legend A semantic tokens legend.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#SemanticTokensBuilder.constructor)
      */
     constructor(legend: SemanticTokensLegend = definedExternally)
 
@@ -29,6 +33,8 @@ open external class SemanticTokensBuilder {
      * @param length The token length in characters.
      * @param tokenType The encoded token type.
      * @param tokenModifiers The encoded token modifiers.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#SemanticTokensBuilder.push)
      */
     fun push(
         line: Int,
@@ -44,6 +50,8 @@ open external class SemanticTokensBuilder {
      * @param range The range of the token. Must be single-line.
      * @param tokenType The token type.
      * @param tokenModifiers The token modifiers.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#SemanticTokensBuilder.push)
      */
     fun push(
         range: Range,
@@ -53,6 +61,8 @@ open external class SemanticTokensBuilder {
 
     /**
      * Finish and create a `SemanticTokens` instance.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#SemanticTokensBuilder.build)
      */
     fun build(resultId: String = definedExternally): SemanticTokens
 }

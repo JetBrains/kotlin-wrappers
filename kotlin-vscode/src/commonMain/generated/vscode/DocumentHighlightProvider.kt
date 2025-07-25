@@ -7,6 +7,8 @@ import js.array.ReadonlyArray
 /**
  * The document highlight provider interface defines the contract between extensions and
  * the word-highlight-feature.
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#DocumentHighlightProvider)
  */
 external interface DocumentHighlightProvider {
     /**
@@ -18,6 +20,8 @@ external interface DocumentHighlightProvider {
      * @param token A cancellation token.
      * @returns An array of document highlights or a thenable that resolves to such. The lack of a result can be
      * signaled by returning `undefined`, `null`, or an empty array.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#DocumentHighlightProvider.provideDocumentHighlights)
      */
     fun provideDocumentHighlights(
         document: TextDocument,

@@ -5,6 +5,8 @@ package vscode
 /**
  * The rename provider interface defines the contract between extensions and
  * the [rename](https://code.visualstudio.com/docs/editor/editingevolved#_rename-symbol)-feature.
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#RenameProvider)
  */
 external interface RenameProvider {
     /**
@@ -17,6 +19,8 @@ external interface RenameProvider {
      * @param token A cancellation token.
      * @returns A workspace edit or a thenable that resolves to such. The lack of a result can be
      * signaled by returning `undefined` or `null`.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#RenameProvider.provideRenameEdits)
      */
     fun provideRenameEdits(
         document: TextDocument,
@@ -37,6 +41,8 @@ external interface RenameProvider {
      * @param position The position at which rename will be invoked.
      * @param token A cancellation token.
      * @returns The range or range and placeholder text of the identifier that is to be renamed. The lack of a result can signaled by returning `undefined` or `null`.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#RenameProvider.prepareRename)
      */
     /*
     prepareRename?(document: TextDocument, position: Position, token: CancellationToken): ProviderResult<Range | {

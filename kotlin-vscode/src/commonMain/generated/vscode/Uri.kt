@@ -11,10 +11,14 @@ import kotlin.js.definedExternally
 /**
  * A universal resource identifier representing either a file on disk
  * or another resource, like untitled resources.
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#Uri)
  */
 open external class Uri {
     /**
      * Use the `file` and `parse` factory functions to create new `Uri` objects.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#Uri.constructor)
      */
     private constructor(
         scheme: String,
@@ -27,27 +31,37 @@ open external class Uri {
     /**
      * Scheme is the `http` part of `http://www.example.com/some/path?query#fragment`.
      * The part before the first colon.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#Uri.scheme)
      */
     val scheme: String
 
     /**
      * Authority is the `www.example.com` part of `http://www.example.com/some/path?query#fragment`.
      * The part between the first double slashes and the next slash.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#Uri.authority)
      */
     val authority: String
 
     /**
      * Path is the `/some/path` part of `http://www.example.com/some/path?query#fragment`.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#Uri.path)
      */
     val path: String
 
     /**
      * Query is the `query` part of `http://www.example.com/some/path?query#fragment`.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#Uri.query)
      */
     val query: String
 
     /**
      * Fragment is the `fragment` part of `http://www.example.com/some/path?query#fragment`.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#Uri.fragment)
      */
     val fragment: String
 
@@ -70,6 +84,8 @@ open external class Uri {
      * u.path === '/c$/folder/file.txt'
      * u.fsPath === '\\server\c$\folder\file.txt'
      * ```
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#Uri.fsPath)
      */
     val fsPath: String
 
@@ -86,6 +102,8 @@ open external class Uri {
      *  the empty string.
      * @returns A new Uri that reflects the given change. Will return `this` Uri if the change
      *  is not changing anything.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#Uri.with)
      */
     /*
     with(change: {
@@ -128,6 +146,8 @@ open external class Uri {
      * @param skipEncoding Do not percentage-encode the result, defaults to `false`. Note that
      *	the `#` and `?` characters occurring in the path will always be encoded.
      * @returns A string representation of this Uri.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#Uri.toString)
      */
     fun toString(skipEncoding: Boolean = definedExternally): String
 
@@ -135,6 +155,8 @@ open external class Uri {
      * Returns a JSON representation of this Uri.
      *
      * @returns An object.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#Uri.toJSON)
      */
     fun toJSON(): JsAny?
 
@@ -151,6 +173,8 @@ open external class Uri {
          * @param value The string value of an Uri.
          * @param strict Throw an error when `value` is empty or when no `scheme` can be parsed.
          * @returns A new Uri instance.
+         *
+         * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#Uri.parse)
          */
         fun parse(
             value: String,
@@ -179,6 +203,8 @@ open external class Uri {
          *
          * @param path A file system or UNC path.
          * @returns A new Uri instance.
+         *
+         * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#Uri.file)
          */
         fun file(path: String): Uri
 
@@ -201,6 +227,8 @@ open external class Uri {
          * @param base An uri. Must have a path.
          * @param pathSegments One more more path fragments
          * @returns A new uri which path is joined with the given fragments
+         *
+         * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#Uri.joinPath)
          */
         fun joinPath(
             base: Uri,
@@ -213,6 +241,8 @@ open external class Uri {
          * @see [Uri.toString]
          * @param components The component parts of an Uri.
          * @returns A new Uri instance.
+         *
+         * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#Uri.from)
          */
         /*
         from(components: {

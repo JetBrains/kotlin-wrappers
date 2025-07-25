@@ -7,6 +7,8 @@ import js.core.JsAny
 /**
  * The decoration provider interfaces defines the contract between extensions and
  * file decorations.
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#FileDecorationProvider)
  */
 external interface FileDecorationProvider {
     /**
@@ -15,6 +17,8 @@ external interface FileDecorationProvider {
      * *Note* that this event should be used to propagate information about children.
      *
      * @see [EventEmitter]
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#FileDecorationProvider.onDidChangeFileDecorations)
      */
     var onDidChangeFileDecorations: Event<JsAny /* undefined | Uri | Uri[] */>?
 
@@ -28,6 +32,8 @@ external interface FileDecorationProvider {
      * @param uri The uri of the file to provide a decoration for.
      * @param token A cancellation token.
      * @returns A decoration or a thenable that resolves to such.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#FileDecorationProvider.provideFileDecoration)
      */
     fun provideFileDecoration(
         uri: Uri,

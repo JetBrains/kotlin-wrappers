@@ -16,6 +16,8 @@ import js.promise.PromiseLike
  * text based documents, use {@linkcode CustomTextEditorProvider} instead.
  *
  * @param T Type of the custom document returned by this provider.
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#CustomEditorProvider)
  */
 external interface CustomEditorProvider<T : CustomDocument> :
     CustomReadonlyEditorProvider<T> {
@@ -38,6 +40,8 @@ external interface CustomEditorProvider<T : CustomDocument> :
      * `save` or `revert` the file.
      *
      * An editor should only ever fire `CustomDocumentEditEvent` events, or only ever fire `CustomDocumentContentChangeEvent` events.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#CustomEditorProvider.onDidChangeCustomDocument)
      */
     val onDidChangeCustomDocument: Event<JsAny /* CustomDocumentEditEvent<T>> | Event<CustomDocumentContentChangeEvent<T> */>
 
@@ -55,6 +59,8 @@ external interface CustomEditorProvider<T : CustomDocument> :
      * @param cancellation Token that signals the save is no longer required (for example, if another save was triggered).
      *
      * @returns Thenable signaling that saving has completed.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#CustomEditorProvider.saveCustomDocument)
      */
     fun saveCustomDocument(
         document: T,
@@ -74,6 +80,8 @@ external interface CustomEditorProvider<T : CustomDocument> :
      * @param cancellation Token that signals the save is no longer required.
      *
      * @returns Thenable signaling that saving has completed.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#CustomEditorProvider.saveCustomDocumentAs)
      */
     fun saveCustomDocumentAs(
         document: T,
@@ -95,6 +103,8 @@ external interface CustomEditorProvider<T : CustomDocument> :
      * @param cancellation Token that signals the revert is no longer required.
      *
      * @returns Thenable signaling that the change has completed.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#CustomEditorProvider.revertCustomDocument)
      */
     fun revertCustomDocument(
         document: T,
@@ -121,6 +131,8 @@ external interface CustomEditorProvider<T : CustomDocument> :
      * extension to decided how to respond to cancellation. If for example your extension is backing up a large file
      * in an operation that takes time to complete, your extension may decide to finish the ongoing backup rather
      * than cancelling it to ensure that the editor has some valid backup.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#CustomEditorProvider.backupCustomDocument)
      */
     fun backupCustomDocument(
         document: T,

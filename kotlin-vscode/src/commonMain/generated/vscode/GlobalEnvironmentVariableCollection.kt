@@ -4,6 +4,8 @@ package vscode
 
 /**
  * A collection of mutations that an extension can apply to a process environment. Applies to all scopes.
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#GlobalEnvironmentVariableCollection)
  */
 external interface GlobalEnvironmentVariableCollection :
     EnvironmentVariableCollection {
@@ -22,6 +24,8 @@ external interface GlobalEnvironmentVariableCollection :
      * across all workspace folders will be returned.
      *
      * @returns Environment variable collection for the passed in scope.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#GlobalEnvironmentVariableCollection.getScoped)
      */
     fun getScoped(scope: EnvironmentVariableScope): EnvironmentVariableCollection
 }

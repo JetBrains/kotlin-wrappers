@@ -6,6 +6,8 @@ import kotlin.js.definedExternally
 
 /**
  * An event describing the change in Configuration
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#ConfigurationChangeEvent)
  */
 external interface ConfigurationChangeEvent {
     /**
@@ -15,6 +17,8 @@ external interface ConfigurationChangeEvent {
      * @param section Configuration name, supports _dotted_ names.
      * @param scope A scope in which to check.
      * @returns `true` if the given section has changed.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#ConfigurationChangeEvent.affectsConfiguration)
      */
     fun affectsConfiguration(
         section: String,

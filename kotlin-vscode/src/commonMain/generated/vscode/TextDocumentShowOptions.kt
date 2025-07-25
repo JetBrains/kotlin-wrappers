@@ -4,6 +4,8 @@ package vscode
 
 /**
  * Represents options to configure the behavior of showing a [document} in an {@link TextEditor editor][TextDocument].
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TextDocumentShowOptions)
  */
 external interface TextDocumentShowOptions {
     /**
@@ -12,11 +14,15 @@ external interface TextDocumentShowOptions {
      * will be created as needed up to the maximum of {@linkcode ViewColumn.Nine}.
      * Use {@linkcode ViewColumn.Beside} to open the editor to the side of the currently
      * active one.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TextDocumentShowOptions.viewColumn)
      */
     var viewColumn: ViewColumn?
 
     /**
      * An optional flag that when `true` will stop the [editor][TextEditor] from taking focus.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TextDocumentShowOptions.preserveFocus)
      */
     var preserveFocus: Boolean?
 
@@ -25,11 +31,15 @@ external interface TextDocumentShowOptions {
      * be replaced and reused until set to stay - either explicitly or through editing.
      *
      * *Note* that the flag is ignored if a user has disabled preview editors in settings.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TextDocumentShowOptions.preview)
      */
     var preview: Boolean?
 
     /**
      * An optional selection to apply for the document in the [editor][TextEditor].
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TextDocumentShowOptions.selection)
      */
     var selection: Range?
 }

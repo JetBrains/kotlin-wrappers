@@ -33,5 +33,7 @@ import js.promise.PromiseResult
  * 	}
  * }
  * ```
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#ProviderResult)
  */
 typealias ProviderResult<T> = PromiseResult<T?>

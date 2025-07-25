@@ -10,6 +10,8 @@ import js.core.JsAny
  *
  * A `TestItem` can represent either a test suite or a test itself, since
  * they both have similar capabilities.
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TestItem)
  */
 external interface TestItem {
     /**
@@ -17,17 +19,23 @@ external interface TestItem {
      * test results and tests in the document with those in the workspace
      * (test explorer). This cannot change for the lifetime of the `TestItem`,
      * and must be unique among its parent's direct children.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TestItem.id)
      */
     val id: String
 
     /**
      * URI this `TestItem` is associated with. May be a file or directory.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TestItem.uri)
      */
     val uri: Uri?
 
     /**
      * The children of this test item. For a test suite, this may contain the
      * individual test cases or nested suites.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TestItem.children)
      */
     val children: TestItemCollection
 
@@ -35,12 +43,16 @@ external interface TestItem {
      * The parent of this item. It's set automatically, and is undefined
      * top-level items in the [TestController.items] and for items that
      * aren't yet included in another item's [children][TestItem.children].
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TestItem.parent)
      */
     val parent: TestItem?
 
     /**
      * Tags associated with this test item. May be used in combination with
      * [tags][TestRunProfile.tag], or simply as an organizational feature.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TestItem.tags)
      */
     var tags: ReadonlyArray<TestTag>
 
@@ -52,6 +64,8 @@ external interface TestItem {
      * to be invoked with the item.
      *
      * Default to `false`.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TestItem.canResolveChildren)
      */
     var canResolveChildren: Boolean
 
@@ -60,16 +74,22 @@ external interface TestItem {
      * This is useful for showing status while discovering children.
      *
      * Defaults to `false`.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TestItem.busy)
      */
     var busy: Boolean
 
     /**
      * Display name describing the test case.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TestItem.label)
      */
     var label: String
 
     /**
      * Optional description that appears next to the label.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TestItem.description)
      */
     var description: String?
 
@@ -77,6 +97,8 @@ external interface TestItem {
      * A string that should be used when comparing this item
      * with other items. When `falsy` the [label][TestItem.label]
      * is used.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TestItem.sortText)
      */
     var sortText: String?
 
@@ -84,6 +106,8 @@ external interface TestItem {
      * Location of the test item in its [uri][TestItem.uri].
      *
      * This is only meaningful if the `uri` points to a file.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TestItem.range)
      */
     var range: Range?
 
@@ -92,6 +116,8 @@ external interface TestItem {
      *
      * Note that this is not a test result and should only be used to represent errors in
      * test discovery, such as syntax errors.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TestItem.error)
      */
     var error: JsAny /* string | MarkdownString */?
 }

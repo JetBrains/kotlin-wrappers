@@ -12,6 +12,8 @@ import js.typedarrays.Uint8Array
  * how that data structure is written to a file, nor how it is read from a file. The
  * notebook serializer bridges this gap by deserializing bytes into notebook data and
  * vice versa.
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#NotebookSerializer)
  */
 external interface NotebookSerializer {
     /**
@@ -20,6 +22,8 @@ external interface NotebookSerializer {
      * @param content Contents of a notebook file.
      * @param token A cancellation token.
      * @returns Notebook data or a thenable that resolves to such.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#NotebookSerializer.deserializeNotebook)
      */
     fun deserializeNotebook(
         content: Uint8Array<*>,
@@ -32,6 +36,8 @@ external interface NotebookSerializer {
      * @param data A notebook data structure.
      * @param token A cancellation token.
      * @returns An array of bytes or a thenable that resolves to such.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#NotebookSerializer.serializeNotebook)
      */
     fun serializeNotebook(
         data: NotebookData,

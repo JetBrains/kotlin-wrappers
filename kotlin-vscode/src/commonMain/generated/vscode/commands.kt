@@ -46,6 +46,8 @@ import kotlin.js.definedExternally
  * 	}
  * }
  * ```
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#commands)
  */
 external object commands {
     /**
@@ -59,6 +61,8 @@ external object commands {
      * @param callback A command handler function.
      * @param thisArg The `this` context used when invoking the handler function.
      * @returns Disposable which unregisters this command on disposal.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#commands.registerCommand)
      */
     fun registerCommand(
         command: String,
@@ -80,6 +84,8 @@ external object commands {
      * @param callback A command handler function with access to an [editor} and an {@link TextEditorEdit edit][TextEditor].
      * @param thisArg The `this` context used when invoking the handler function.
      * @returns Disposable which unregisters this command on disposal.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#commands.registerTextEditorCommand)
      */
     fun registerTextEditorCommand(
         command: String,
@@ -104,6 +110,8 @@ external object commands {
      * @param rest Parameters passed to the command function.
      * @returns A thenable that resolves to the returned value of the given command. Returns `undefined` when
      * the command handler function doesn't return anything.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#commands.executeCommand)
      */
     fun <T : JsAny?> executeCommand(
         command: String,
@@ -116,6 +124,8 @@ external object commands {
      *
      * @param filterInternal Set `true` to not see internal commands (starting with an underscore)
      * @returns Thenable that resolves to a list of command ids.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#commands.getCommands)
      */
     fun getCommands(filterInternal: Boolean = definedExternally): PromiseLike<ReadonlyArray<JsString>>
 }

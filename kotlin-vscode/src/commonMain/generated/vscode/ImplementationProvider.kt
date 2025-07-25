@@ -7,6 +7,8 @@ import js.core.JsAny
 /**
  * The implementation provider interface defines the contract between extensions and
  * the go to implementation feature.
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#ImplementationProvider)
  */
 external interface ImplementationProvider {
     /**
@@ -17,6 +19,8 @@ external interface ImplementationProvider {
      * @param token A cancellation token.
      * @returns A definition or a thenable that resolves to such. The lack of a result can be
      * signaled by returning `undefined` or `null`.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#ImplementationProvider.provideImplementation)
      */
     fun provideImplementation(
         document: TextDocument,

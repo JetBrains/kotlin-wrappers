@@ -11,6 +11,8 @@ import js.promise.PromiseLike
  * that will be stored encrypted. The implementation of the secret storage will
  * be different on each platform and the secrets will not be synced across
  * machines.
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#SecretStorage)
  */
 external interface SecretStorage {
     /**
@@ -18,6 +20,8 @@ external interface SecretStorage {
      * is no password matching that key.
      * @param key The key the secret was stored under.
      * @returns The stored value or `undefined`.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#SecretStorage.get)
      */
     fun get(key: String): PromiseLike<JsString?>
 
@@ -25,6 +29,8 @@ external interface SecretStorage {
      * Store a secret under a given key.
      * @param key The key to store the secret under.
      * @param value The secret.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#SecretStorage.store)
      */
     fun store(
         key: String,
@@ -34,11 +40,15 @@ external interface SecretStorage {
     /**
      * Remove a secret from storage.
      * @param key The key the secret was stored under.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#SecretStorage.delete)
      */
     fun delete(key: String): PromiseLike<Void>
 
     /**
      * Fires when a secret is stored or deleted.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#SecretStorage.onDidChange)
      */
     var onDidChange: Event<SecretStorageChangeEvent>
 }

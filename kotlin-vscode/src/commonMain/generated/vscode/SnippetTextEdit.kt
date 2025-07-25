@@ -14,20 +14,28 @@ import kotlin.js.JsModule
  * This will happen when no matching editor is open or when a [workspace edit][WorkspaceEdit]
  * contains snippet edits for multiple files. In that case only those that match the active editor
  * will be performed as snippet edits and the others as normal text edits.
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#SnippetTextEdit)
  */
 open external class SnippetTextEdit {
     /**
      * The range this edit applies to.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#SnippetTextEdit.range)
      */
     var range: Range
 
     /**
      * The [snippet][SnippetString] this edit will perform.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#SnippetTextEdit.snippet)
      */
     var snippet: SnippetString
 
     /**
      * Whether the snippet edit should be applied with existing whitespace preserved.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#SnippetTextEdit.keepWhitespace)
      */
     var keepWhitespace: Boolean?
 
@@ -36,6 +44,8 @@ open external class SnippetTextEdit {
      *
      * @param range A range.
      * @param snippet A snippet string.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#SnippetTextEdit.constructor)
      */
     constructor(
         range: Range,
@@ -49,6 +59,8 @@ open external class SnippetTextEdit {
          * @param range A range.
          * @param snippet A snippet string.
          * @returns A new snippet edit object.
+         *
+         * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#SnippetTextEdit.replace)
          */
         fun replace(
             range: Range,
@@ -61,6 +73,8 @@ open external class SnippetTextEdit {
          * @param position A position, will become an empty range.
          * @param snippet A snippet string.
          * @returns A new snippet edit object.
+         *
+         * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#SnippetTextEdit.insert)
          */
         fun insert(
             position: Position,

@@ -11,6 +11,8 @@ import kotlin.js.JsModule
  * [TestController] instances, then adding [TestItems][TestItem].
  * Controllers may also describe how to run tests by creating one or more
  * [TestRunProfile] instances.
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#tests)
  */
 external object tests {
     /**
@@ -19,6 +21,8 @@ external object tests {
      * @param id Identifier for the controller, must be globally unique.
      * @param label A human-readable label for the controller.
      * @returns An instance of the [TestController].
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#tests.createTestController)
      */
     fun createTestController(
         id: String,

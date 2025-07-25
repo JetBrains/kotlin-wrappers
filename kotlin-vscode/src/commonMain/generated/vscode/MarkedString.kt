@@ -10,6 +10,8 @@ import js.core.JsAny
  * markdown strings will be sanitized - that means html will be escaped.
  *
  * @deprecated This type is deprecated, please use {@linkcode MarkdownString} instead.
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#MarkedString)
  */
 typealias MarkedString = JsAny /* string | {
 	/**

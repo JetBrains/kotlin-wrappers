@@ -7,12 +7,16 @@ import js.core.JsString
 
 /**
  * [Shell integration](https://code.visualstudio.com/docs/terminal/shell-integration)-powered capabilities owned by a terminal.
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TerminalShellIntegration)
  */
 external interface TerminalShellIntegration {
     /**
      * The current working directory of the terminal. This [Uri] may represent a file on
      * another machine (eg. ssh into another machine). This requires the shell integration to
      * support working directory reporting.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TerminalShellIntegration.cwd)
      */
     val cwd: Uri?
 
@@ -59,6 +63,8 @@ external interface TerminalShellIntegration {
      *   // Without shell integration, we can't know when the command has finished or what the
      *   // exit code was.
      * }
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TerminalShellIntegration.executeCommand)
      */
     fun executeCommand(commandLine: String): TerminalShellExecution
 
@@ -115,6 +121,8 @@ external interface TerminalShellIntegration {
      *   // Without shell integration, we can't know when the command has finished or what the
      *   // exit code was.
      * }
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TerminalShellIntegration.executeCommand)
      */
     fun executeCommand(
         executable: String,

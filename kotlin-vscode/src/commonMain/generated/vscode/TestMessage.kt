@@ -11,25 +11,35 @@ import kotlin.js.JsModule
 /**
  * Message associated with the test state. Can be linked to a specific
  * source range -- useful for assertion failures, for example.
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TestMessage)
  */
 open external class TestMessage {
     /**
      * Human-readable message text to display.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TestMessage.message)
      */
     var message: JsAny /* string | MarkdownString */
 
     /**
      * Expected test output. If given with [actualOutput ][TestMessage.actualOutput], a diff view will be shown.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TestMessage.expectedOutput)
      */
     var expectedOutput: String?
 
     /**
      * Actual test output. If given with [expectedOutput ][TestMessage.expectedOutput], a diff view will be shown.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TestMessage.actualOutput)
      */
     var actualOutput: String?
 
     /**
      * Associated file location.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TestMessage.location)
      */
     var location: Location?
 
@@ -61,17 +71,23 @@ open external class TestMessage {
      * - `test`: the [TestItem] the message is associated with, *if* it
      *    is still present in the [TestController.items] collection.
      * - `message`: the [TestMessage] instance.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TestMessage.contextValue)
      */
     var contextValue: String?
 
     /**
      * The stack trace associated with the message or failure.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TestMessage.stackTrace)
      */
     var stackTrace: ReadonlyArray<TestMessageStackFrame>?
 
     /**
      * Creates a new TestMessage instance.
      * @param message The message to show to the user.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TestMessage.constructor)
      */
     constructor(message: JsAny /* string | MarkdownString */)
 
@@ -81,6 +97,8 @@ open external class TestMessage {
          * @param message Message to display to the user.
          * @param expected Expected output.
          * @param actual Actual output.
+         *
+         * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TestMessage.diff)
          */
         fun diff(
             message: JsAny, /* string | MarkdownString */

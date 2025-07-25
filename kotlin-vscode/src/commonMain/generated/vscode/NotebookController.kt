@@ -19,6 +19,8 @@ import js.promise.PromiseLike
  * When a cell is being run the editor will invoke the {@linkcode NotebookController.executeHandler executeHandler} and a controller
  * is expected to create and finalize a [notebook cell execution][NotebookCellExecution]. However, controllers are also free
  * to create executions by themselves.
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#NotebookController)
  */
 external interface NotebookController :
     DisposableLike {
@@ -27,11 +29,15 @@ external interface NotebookController :
      *
      * _Note_ that controllers are remembered by their identifier and that extensions should use
      * stable identifiers across sessions.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#NotebookController.id)
      */
     val id: String
 
     /**
      * The notebook type this controller is for.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#NotebookController.notebookType)
      */
     val notebookType: String
 
@@ -49,27 +55,37 @@ external interface NotebookController :
      * myController.supportedLanguages = undefined; // falsy
      * myController.supportedLanguages = []; // falsy
      * ```
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#NotebookController.supportedLanguages)
      */
     var supportedLanguages: ReadonlyArray<JsString>?
 
     /**
      * The human-readable label of this notebook controller.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#NotebookController.label)
      */
     var label: String
 
     /**
      * The human-readable description which is rendered less prominent.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#NotebookController.description)
      */
     var description: String?
 
     /**
      * The human-readable detail which is rendered less prominent.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#NotebookController.detail)
      */
     var detail: String?
 
     /**
      * Whether this controller supports execution order so that the
      * editor can render placeholders for them.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#NotebookController.supportsExecutionOrder)
      */
     var supportsExecutionOrder: Boolean?
 
@@ -85,12 +101,16 @@ external interface NotebookController :
      *
      * @param cell The notebook cell for which to create the execution.
      * @returns A notebook cell execution.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#NotebookController.createNotebookCellExecution)
      */
     fun createNotebookCellExecution(cell: NotebookCell): NotebookCellExecution
 
     /**
      * The execute handler is invoked when the run gestures in the UI are selected, e.g Run Cell, Run All,
      * Run Selection etc. The execute handler is responsible for creating and managing [execution][NotebookCellExecution]-objects.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#NotebookController.executeHandler)
      */
     var executeHandler: (
         cells: ReadonlyArray<NotebookCell>,
@@ -109,6 +129,8 @@ external interface NotebookController :
      *
      * _Note_ that supporting [cancellation tokens][NotebookCellExecution.token] is preferred and that interrupt handlers should
      * only be used when tokens cannot be supported.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#NotebookController.interruptHandler)
      */
     var interruptHandler: (notebook: NotebookDocument) -> PromiseLike<Void>?
 
@@ -121,6 +143,8 @@ external interface NotebookController :
      *
      * _Note_ that controller selection is persisted (by the controllers [id][NotebookController.id]) and restored as soon as a
      * controller is re-created or as a notebook is [opened][workspace.onDidOpenNotebookDocument].
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#NotebookController.onDidChangeSelectedNotebooks)
      */
     /*
     readonly onDidChangeSelectedNotebooks: Event<{
@@ -141,6 +165,8 @@ external interface NotebookController :
      *
      * @param notebook The notebook for which a priority is set.
      * @param affinity A controller affinity
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#NotebookController.updateNotebookAffinity)
      */
     fun updateNotebookAffinity(
         notebook: NotebookDocument,
@@ -149,6 +175,8 @@ external interface NotebookController :
 
     /**
      * Dispose and free associated resources.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#NotebookController.dispose)
      */
     override fun dispose()
 }

@@ -7,12 +7,16 @@ import js.array.ReadonlyArray
 /**
  * A task provider allows to add tasks to the task service.
  * A task provider is registered via [tasks.registerTaskProvider].
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TaskProvider)
  */
 external interface TaskProvider<T : Task> {
     /**
      * Provides tasks.
      * @param token A cancellation token.
      * @returns an array of tasks
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TaskProvider.provideTasks)
      */
     fun provideTasks(token: CancellationToken): ProviderResult<ReadonlyArray<T>>
 
@@ -32,6 +36,8 @@ external interface TaskProvider<T : Task> {
      * @param task The task to resolve.
      * @param token A cancellation token.
      * @returns The resolved task
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TaskProvider.resolveTask)
      */
     fun resolveTask(
         task: T,

@@ -18,6 +18,8 @@ import kotlin.js.JsModule
  * Note: Built-in extensions (for example, Git, TypeScript Language Features, GitHub Authentication)
  * are excluded from the `l10n` property requirement. In other words, they do not need to specify
  * a `l10n` in the extension manifest because their translated strings come from Language Packs.
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#l10n)
  */
 external object l10n {
     /**
@@ -33,6 +35,8 @@ external object l10n {
      *
      * @example
      * l10n.t('Hello {0}!', 'World');
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#l10n.t)
      */
     fun t(
         message: String,
@@ -52,6 +56,8 @@ external object l10n {
      *
      * @example
      * l10n.t('Hello {name}', { name: 'Erich' });
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#l10n.t)
      */
     fun t(
         message: String,
@@ -65,6 +71,8 @@ external object l10n {
      *
      * @param options The options to use when localizing the message.
      * @returns localized string with injected arguments.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#l10n.t)
      */
     /*
     t(options: {
@@ -92,6 +100,8 @@ external object l10n {
      * The bundle of localized strings that have been loaded for the extension.
      * It's undefined if no bundle has been loaded. The bundle is typically not loaded if
      * there was no bundle found or when we are running with the default language.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#l10n.bundle)
      */
     val bundle: Record<JsString, JsString>?
 
@@ -99,6 +109,8 @@ external object l10n {
      * The URI of the localization bundle that has been loaded for the extension.
      * It's undefined if no bundle has been loaded. The bundle is typically not loaded if
      * there was no bundle found or when we are running with the default language.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#l10n.uri)
      */
     val uri: Uri?
 }

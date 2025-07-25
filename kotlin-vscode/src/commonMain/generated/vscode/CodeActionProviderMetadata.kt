@@ -6,6 +6,8 @@ import js.array.ReadonlyArray
 
 /**
  * Metadata about the type of code actions that a [CodeActionProvider] provides.
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#CodeActionProviderMetadata)
  */
 external interface CodeActionProviderMetadata {
     /**
@@ -15,6 +17,8 @@ external interface CodeActionProviderMetadata {
      * To avoid unnecessary computation, every `CodeActionProvider` should list use `providedCodeActionKinds`. The
      * list of kinds may either be generic, such as `[CodeActionKind.Refactor]`, or list out every kind provided,
      * such as `[CodeActionKind.Refactor.Extract.append('function'), CodeActionKind.Refactor.Extract.append('constant'), ...]`.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#CodeActionProviderMetadata.providedCodeActionKinds)
      */
     val providedCodeActionKinds: ReadonlyArray<CodeActionKind>?
 
@@ -31,6 +35,8 @@ external interface CodeActionProviderMetadata {
      * - Any code actions of `kind` are returned by the provider.
      *
      * At most one documentation entry will be shown per provider.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#CodeActionProviderMetadata.documentation)
      */
     /*
     readonly documentation?: ReadonlyArray<{

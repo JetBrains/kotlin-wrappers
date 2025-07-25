@@ -23,6 +23,8 @@ import kotlin.js.definedExternally
  * // BAD - uses the sender directly: no data cleansing, ignores user settings, no echoing to the telemetry output channel etc
  * sender.logEvent('myEvent', { myData: 'myValue' });
  * ```
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TelemetrySender)
  */
 external interface TelemetrySender {
     /**
@@ -30,6 +32,8 @@ external interface TelemetrySender {
      *
      * @param eventName The name of the event which you are logging
      * @param data A serializable key value pair that is being logged
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TelemetrySender.sendEventData)
      */
     fun sendEventData(
         eventName: String,
@@ -41,6 +45,8 @@ external interface TelemetrySender {
      *
      * @param error The error being logged
      * @param data Any additional data to be collected with the exception
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TelemetrySender.sendErrorData)
      */
     fun sendErrorData(
         error: JsError,
@@ -50,6 +56,8 @@ external interface TelemetrySender {
     /**
      * Optional flush function which will give this sender a chance to send any remaining events
      * as its [TelemetryLogger] is being disposed
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TelemetrySender.flush)
      */
     var flush: (() -> PromiseLike<Void>?)?
 }

@@ -9,12 +9,16 @@ import kotlin.js.definedExternally
 
 /**
  * A data provider that provides tree data
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TreeDataProvider)
  */
 external interface TreeDataProvider<T : JsAny?> {
     /**
      * An optional event to signal that an element or root has changed.
      * This will trigger the view to update the changed element/root and its children recursively (if shown).
      * To signal that root has changed, do not pass any argument or pass `undefined` or `null`.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TreeDataProvider.onDidChangeTreeData)
      */
     var onDidChangeTreeData: Event<JsAny /* T | T[] | undefined | null | void */>?
 
@@ -23,6 +27,8 @@ external interface TreeDataProvider<T : JsAny?> {
      *
      * @param element The element for which [TreeItem] representation is asked for.
      * @returns TreeItem representation of the element.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TreeDataProvider.getTreeItem)
      */
     fun getTreeItem(element: T): PromiseResult<TreeItem>
 
@@ -31,6 +37,8 @@ external interface TreeDataProvider<T : JsAny?> {
      *
      * @param element The element from which the provider gets children. Can be `undefined`.
      * @returns Children of `element` or root if no element is passed.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TreeDataProvider.getChildren)
      */
     fun getChildren(element: T = definedExternally): ProviderResult<ReadonlyArray<T>>
 
@@ -42,6 +50,8 @@ external interface TreeDataProvider<T : JsAny?> {
      *
      * @param element The element for which the parent has to be returned.
      * @returns Parent of `element`.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TreeDataProvider.getParent)
      */
     var getParent: ((element: T) -> ProviderResult<T>)?
 
@@ -65,6 +75,8 @@ external interface TreeDataProvider<T : JsAny?> {
      * @param token A cancellation token.
      * @returns The resolved tree item or a thenable that resolves to such. It is OK to return the given
      * `item`. When no result is returned, the given `item` will be used.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TreeDataProvider.resolveTreeItem)
      */
     var resolveTreeItem: ((
         item: TreeItem,

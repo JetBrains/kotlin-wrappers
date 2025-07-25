@@ -9,10 +9,14 @@ import js.core.Void
  * A type that can provide Model Context Protocol server definitions. This
  * should be registered using [lm.registerMcpServerDefinitionProvider]
  * during extension activation.
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#McpServerDefinitionProvider)
  */
 external interface McpServerDefinitionProvider<T : McpServerDefinition> {
     /**
      * Optional event fired to signal that the set of available servers has changed.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#McpServerDefinitionProvider.onDidChangeMcpServerDefinitions)
      */
     val onDidChangeMcpServerDefinitions: Event<Void>?
 
@@ -24,6 +28,8 @@ external interface McpServerDefinitionProvider<T : McpServerDefinition> {
      *
      * @param token A cancellation token.
      * @returns An array of MCP available MCP servers
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#McpServerDefinitionProvider.provideMcpServerDefinitions)
      */
     fun provideMcpServerDefinitions(token: CancellationToken): ProviderResult<ReadonlyArray<T>>
 
@@ -42,6 +48,8 @@ external interface McpServerDefinitionProvider<T : McpServerDefinition> {
      * @param token A cancellation token.
      * @returns The resolved server or thenable that resolves to such. This may
      * be the given `server` definition with non-readonly properties filled in.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#McpServerDefinitionProvider.resolveMcpServerDefinition)
      */
     var resolveMcpServerDefinition: ((
         server: T,

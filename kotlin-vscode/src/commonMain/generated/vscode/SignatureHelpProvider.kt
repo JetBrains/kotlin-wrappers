@@ -5,6 +5,8 @@ package vscode
 /**
  * The signature help provider interface defines the contract between extensions and
  * the [parameter hints](https://code.visualstudio.com/docs/editor/intellisense)-feature.
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#SignatureHelpProvider)
  */
 external interface SignatureHelpProvider {
     /**
@@ -17,6 +19,8 @@ external interface SignatureHelpProvider {
      *
      * @returns Signature help or a thenable that resolves to such. The lack of a result can be
      * signaled by returning `undefined` or `null`.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#SignatureHelpProvider.provideSignatureHelp)
      */
     fun provideSignatureHelp(
         document: TextDocument,

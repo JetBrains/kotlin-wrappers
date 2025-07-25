@@ -12,15 +12,21 @@ import js.promise.PromiseLike
  * To make modifications to the document before it is being saved, call the
  * {@linkcode TextDocumentWillSaveEvent.waitUntil waitUntil}-function with a thenable
  * that resolves to an array of [text edits][TextEdit].
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TextDocumentWillSaveEvent)
  */
 external interface TextDocumentWillSaveEvent {
     /**
      * The document that will be saved.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TextDocumentWillSaveEvent.document)
      */
     val document: TextDocument
 
     /**
      * The reason why save was triggered.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TextDocumentWillSaveEvent.reason)
      */
     val reason: TextDocumentSaveReason
 
@@ -43,6 +49,8 @@ external interface TextDocumentWillSaveEvent {
      * ```
      *
      * @param thenable A thenable that resolves to [pre-save-edits][TextEdit].
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TextDocumentWillSaveEvent.waitUntil)
      */
     fun waitUntil(thenable: PromiseLike<ReadonlyArray<TextEdit>>)
 
@@ -52,6 +60,8 @@ external interface TextDocumentWillSaveEvent {
      * *Note:* This function can only be called during event dispatch.
      *
      * @param thenable A thenable that delays saving.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TextDocumentWillSaveEvent.waitUntil)
      */
     fun waitUntil(thenable: PromiseLike<JsAny?>)
 }

@@ -15,10 +15,14 @@ import kotlin.js.definedExternally
  * When a cell execution object is created, the cell enters the {@linkcode NotebookCellExecutionState.Pending Pending} state.
  * When {@linkcode NotebookCellExecution.start start(...)} is called on the execution task, it enters the {@linkcode NotebookCellExecutionState.Executing Executing} state. When
  * {@linkcode NotebookCellExecution.end end(...)} is called, it enters the {@linkcode NotebookCellExecutionState.Idle Idle} state.
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#NotebookCellExecution)
  */
 external interface NotebookCellExecution {
     /**
      * The [cell][NotebookCell] for which this execution has been created.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#NotebookCellExecution.cell)
      */
     val cell: NotebookCell
 
@@ -28,11 +32,15 @@ external interface NotebookCellExecution {
      *
      * _Note_ that the cancellation token will not be triggered when the [controller][NotebookController]
      * that created this execution uses an [interrupt-handler][NotebookController.interruptHandler].
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#NotebookCellExecution.token)
      */
     val token: CancellationToken
 
     /**
      * Set and unset the order of this cell execution.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#NotebookCellExecution.executionOrder)
      */
     var executionOrder: Int?
 
@@ -41,6 +49,8 @@ external interface NotebookCellExecution {
      *
      * @param startTime The time that execution began, in milliseconds in the Unix epoch. Used to drive the clock
      * that shows for how long a cell has been running. If not given, the clock won't be shown.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#NotebookCellExecution.start)
      */
     fun start(startTime: JsInt53 = definedExternally)
 
@@ -51,6 +61,8 @@ external interface NotebookCellExecution {
      * If false, a red X is shown.
      * If undefined, no check or X icon is shown.
      * @param endTime The time that execution finished, in milliseconds in the Unix epoch.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#NotebookCellExecution.end)
      */
     fun end(
         success: Boolean?,
@@ -63,6 +75,8 @@ external interface NotebookCellExecution {
      * @param cell Cell for which output is cleared. Defaults to the [cell][NotebookCellExecution.cell] of
      * this execution.
      * @returns A thenable that resolves when the operation finished.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#NotebookCellExecution.clearOutput)
      */
     fun clearOutput(cell: NotebookCell = definedExternally): PromiseLike<Void>
 
@@ -73,6 +87,8 @@ external interface NotebookCellExecution {
      * @param cell Cell for which output is cleared. Defaults to the [cell][NotebookCellExecution.cell] of
      * this execution.
      * @returns A thenable that resolves when the operation finished.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#NotebookCellExecution.replaceOutput)
      */
     fun replaceOutput(
         out: JsAny, /* NotebookCellOutput | readonly NotebookCellOutput[] */
@@ -86,6 +102,8 @@ external interface NotebookCellExecution {
      * @param cell Cell for which output is cleared. Defaults to the [cell][NotebookCellExecution.cell] of
      * this execution.
      * @returns A thenable that resolves when the operation finished.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#NotebookCellExecution.appendOutput)
      */
     fun appendOutput(
         out: JsAny, /* NotebookCellOutput | readonly NotebookCellOutput[] */
@@ -98,6 +116,8 @@ external interface NotebookCellExecution {
      * @param items Output items that replace the items of existing output.
      * @param output Output object that already exists.
      * @returns A thenable that resolves when the operation finished.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#NotebookCellExecution.replaceOutputItems)
      */
     fun replaceOutputItems(
         items: JsAny, /* NotebookCellOutputItem | readonly NotebookCellOutputItem[] */
@@ -110,6 +130,8 @@ external interface NotebookCellExecution {
      * @param items Output items that are append to existing output.
      * @param output Output object that already exists.
      * @returns A thenable that resolves when the operation finished.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#NotebookCellExecution.appendOutputItems)
      */
     fun appendOutputItems(
         items: JsAny, /* NotebookCellOutputItem | readonly NotebookCellOutputItem[] */

@@ -21,6 +21,8 @@ import js.typedarrays.Uint8Array
  * or folder is being accessed.
  * * *Note 3:* The word 'file' is often used to denote all [kinds][FileType] of files, e.g.
  * folders, symbolic links, and regular files.
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#FileSystemProvider)
  */
 external interface FileSystemProvider {
     /**
@@ -32,6 +34,8 @@ external interface FileSystemProvider {
      * updated `mtime` that advanced from the previous value in the [stat][FileStat] and a
      * correct `size` value. Otherwise there may be optimizations in place that will not show
      * the change in an editor for example.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#FileSystemProvider.onDidChangeFile)
      */
     val onDidChangeFile: Event<ReadonlyArray<FileChangeEvent>>
 
@@ -55,6 +59,8 @@ external interface FileSystemProvider {
      * @param uri The uri of the file or folder to be watched.
      * @param options Configures the watch.
      * @returns A disposable that tells the provider to stop watching the `uri`.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#FileSystemProvider.watch)
      */
     /*
     watch(uri: Uri, options: {
@@ -79,6 +85,8 @@ external interface FileSystemProvider {
      * @param uri The uri of the file to retrieve metadata about.
      * @returns The file metadata about the file.
      * @throws {@linkcode FileSystemError.FileNotFound FileNotFound} when `uri` doesn't exist.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#FileSystemProvider.stat)
      */
     fun stat(uri: Uri): PromiseResult<FileStat>
 
@@ -88,6 +96,8 @@ external interface FileSystemProvider {
      * @param uri The uri of the folder.
      * @returns An array of name/type-tuples or a thenable that resolves to such.
      * @throws {@linkcode FileSystemError.FileNotFound FileNotFound} when `uri` doesn't exist.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#FileSystemProvider.readDirectory)
      */
     fun readDirectory(uri: Uri): PromiseResult<ReadonlyArray<Tuple2<JsString, FileType>>>
 
@@ -98,6 +108,8 @@ external interface FileSystemProvider {
      * @throws {@linkcode FileSystemError.FileNotFound FileNotFound} when the parent of `uri` doesn't exist, e.g. no mkdirp-logic required.
      * @throws {@linkcode FileSystemError.FileExists FileExists} when `uri` already exists.
      * @throws {@linkcode FileSystemError.NoPermissions NoPermissions} when permissions aren't sufficient.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#FileSystemProvider.createDirectory)
      */
     fun createDirectory(uri: Uri): PromiseLike<Void>?
 
@@ -107,6 +119,8 @@ external interface FileSystemProvider {
      * @param uri The uri of the file.
      * @returns An array of bytes or a thenable that resolves to such.
      * @throws {@linkcode FileSystemError.FileNotFound FileNotFound} when `uri` doesn't exist.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#FileSystemProvider.readFile)
      */
     fun readFile(uri: Uri): PromiseResult<Uint8Array<*>>
 
@@ -120,6 +134,8 @@ external interface FileSystemProvider {
      * @throws {@linkcode FileSystemError.FileNotFound FileNotFound} when the parent of `uri` doesn't exist and `create` is set, e.g. no mkdirp-logic required.
      * @throws {@linkcode FileSystemError.FileExists FileExists} when `uri` already exists, `create` is set but `overwrite` is not set.
      * @throws {@linkcode FileSystemError.NoPermissions NoPermissions} when permissions aren't sufficient.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#FileSystemProvider.writeFile)
      */
     /*
     writeFile(uri: Uri, content: Uint8Array, options: {
@@ -141,6 +157,8 @@ external interface FileSystemProvider {
      * @param options Defines if deletion of folders is recursive.
      * @throws {@linkcode FileSystemError.FileNotFound FileNotFound} when `uri` doesn't exist.
      * @throws {@linkcode FileSystemError.NoPermissions NoPermissions} when permissions aren't sufficient.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#FileSystemProvider.delete)
      */
     /*
     delete(uri: Uri, options: {
@@ -161,6 +179,8 @@ external interface FileSystemProvider {
      * @throws {@linkcode FileSystemError.FileNotFound FileNotFound} when parent of `newUri` doesn't exist, e.g. no mkdirp-logic required.
      * @throws {@linkcode FileSystemError.FileExists FileExists} when `newUri` exists and when the `overwrite` option is not `true`.
      * @throws {@linkcode FileSystemError.NoPermissions NoPermissions} when permissions aren't sufficient.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#FileSystemProvider.rename)
      */
     /*
     rename(oldUri: Uri, newUri: Uri, options: {
@@ -182,6 +202,8 @@ external interface FileSystemProvider {
      * @throws {@linkcode FileSystemError.FileNotFound FileNotFound} when parent of `destination` doesn't exist, e.g. no mkdirp-logic required.
      * @throws {@linkcode FileSystemError.FileExists FileExists} when `destination` exists and when the `overwrite` option is not `true`.
      * @throws {@linkcode FileSystemError.NoPermissions NoPermissions} when permissions aren't sufficient.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#FileSystemProvider.copy)
      */
     /*
     copy?(source: Uri, destination: Uri, options: {

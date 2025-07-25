@@ -12,6 +12,8 @@ import js.core.JsAny
  * - an object containing:
  *   - `uri`: an optional [Uri] of a text document
  *   - `languageId`: the language identifier of a text document
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#ConfigurationScope)
  */
 typealias ConfigurationScope = JsAny /* Uri | TextDocument | WorkspaceFolder | {
 	/**

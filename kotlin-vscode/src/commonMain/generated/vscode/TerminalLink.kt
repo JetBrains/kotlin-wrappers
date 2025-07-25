@@ -9,15 +9,21 @@ import kotlin.js.definedExternally
 
 /**
  * A link on a terminal line.
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TerminalLink)
  */
 open external class TerminalLink {
     /**
      * The start index of the link on [TerminalLinkContext.line].
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TerminalLink.startIndex)
      */
     var startIndex: Int
 
     /**
      * The length of the link on [TerminalLinkContext.line].
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TerminalLink.length)
      */
     var length: Int
 
@@ -27,6 +33,8 @@ open external class TerminalLink {
      * If a tooltip is provided, is will be displayed in a string that includes instructions on
      * how to trigger the link, such as `{0} (ctrl + click)`. The specific instructions vary
      * depending on OS, user settings, and localization.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TerminalLink.tooltip)
      */
     var tooltip: String?
 
@@ -39,6 +47,8 @@ open external class TerminalLink {
      * If a tooltip is provided, is will be displayed in a string that includes instructions on
      * how to trigger the link, such as `{0} (ctrl + click)`. The specific instructions vary
      * depending on OS, user settings, and localization.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TerminalLink.constructor)
      */
     constructor(
         startIndex: Int,

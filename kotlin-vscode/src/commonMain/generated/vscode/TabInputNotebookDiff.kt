@@ -8,20 +8,28 @@ import kotlin.js.JsModule
 
 /**
  * The tabs represents two notebooks in a diff configuration.
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TabInputNotebookDiff)
  */
 open external class TabInputNotebookDiff {
     /**
      * The uri of the original notebook.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TabInputNotebookDiff.original)
      */
     val original: Uri
 
     /**
      * The uri of the modified notebook.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TabInputNotebookDiff.modified)
      */
     val modified: Uri
 
     /**
      * The type of notebook. Maps to {@linkcode NotebookDocument.notebookType NotebookDocuments's notebookType}
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TabInputNotebookDiff.notebookType)
      */
     val notebookType: String
 
@@ -30,6 +38,8 @@ open external class TabInputNotebookDiff {
      * @param original The uri of the original unmodified notebook.
      * @param modified The uri of the modified notebook.
      * @param notebookType The type of notebook. Maps to {@linkcode NotebookDocument.notebookType NotebookDocuments's notebookType}
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TabInputNotebookDiff.constructor)
      */
     constructor(
         original: Uri,

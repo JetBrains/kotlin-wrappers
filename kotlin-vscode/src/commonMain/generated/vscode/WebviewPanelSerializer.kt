@@ -38,6 +38,8 @@ import js.promise.PromiseLike
  * The extension can then restore the old `WebviewPanel` from this state.
  *
  * @param T Type of the webview's state.
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#WebviewPanelSerializer)
  */
 external interface WebviewPanelSerializer<T : JsAny?> {
     /**
@@ -50,6 +52,8 @@ external interface WebviewPanelSerializer<T : JsAny?> {
      * @param state Persisted state from the webview content.
      *
      * @returns Thenable indicating that the webview has been fully restored.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#WebviewPanelSerializer.deserializeWebviewPanel)
      */
     fun deserializeWebviewPanel(
         webviewPanel: WebviewPanel,

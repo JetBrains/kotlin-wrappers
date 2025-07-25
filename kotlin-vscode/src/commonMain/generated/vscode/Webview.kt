@@ -8,10 +8,14 @@ import js.promise.PromiseLike
 
 /**
  * Displays html content, similarly to an iframe.
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#Webview)
  */
 external interface Webview {
     /**
      * Content settings for the webview.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#Webview.options)
      */
     var options: WebviewOptions
 
@@ -39,6 +43,8 @@ external interface Webview {
      * so extensions must follow all standard web security best practices when working with webviews. This includes
      * properly sanitizing all untrusted input (including content from the workspace) and
      * setting a [content security policy](https://aka.ms/vscode-api-webview-csp).
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#Webview.html)
      */
     var html: String
 
@@ -48,6 +54,8 @@ external interface Webview {
      * Webview content can post strings or json serializable objects back to an extension. They cannot
      * post `Blob`, `File`, `ImageData` and other DOM specific objects since the extension that receives the
      * message does not run in a browser environment.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#Webview.onDidReceiveMessage)
      */
     val onDidReceiveMessage: Event<JsAny?>
 
@@ -81,6 +89,8 @@ external interface Webview {
      *
      *   If you want confirm that a message as actually received, you can try having your webview posting a
      *   confirmation message back to your extension.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#Webview.postMessage)
      */
     fun postMessage(message: JsAny?): PromiseLike<JsBoolean>
 
@@ -94,6 +104,8 @@ external interface Webview {
      * ```ts
      * webview.html = `<img src="${webview.asWebviewUri(vscode.Uri.file('/Users/codey/workspace/cat.gif'))}">`
      * ```
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#Webview.asWebviewUri)
      */
     fun asWebviewUri(localResource: Uri): Uri
 
@@ -105,6 +117,8 @@ external interface Webview {
      * ```ts
      * `img-src https: ${webview.cspSource} ...;`
      * ```
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#Webview.cspSource)
      */
     val cspSource: String
 }

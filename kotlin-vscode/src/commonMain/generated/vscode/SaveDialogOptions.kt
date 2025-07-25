@@ -8,15 +8,21 @@ import js.objects.Record
 
 /**
  * Options to configure the behaviour of a file save dialog.
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#SaveDialogOptions)
  */
 external interface SaveDialogOptions {
     /**
      * The resource the dialog shows when opened.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#SaveDialogOptions.defaultUri)
      */
     var defaultUri: Uri?
 
     /**
      * A human-readable string for the save button.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#SaveDialogOptions.saveLabel)
      */
     var saveLabel: String?
 
@@ -29,6 +35,8 @@ external interface SaveDialogOptions {
      * 	'TypeScript': ['ts', 'tsx']
      * }
      * ```
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#SaveDialogOptions.filters)
      */
     var filters: Record<JsString, ReadonlyArray<JsString>>?
 
@@ -37,6 +45,8 @@ external interface SaveDialogOptions {
      *
      * This parameter might be ignored, as not all operating systems display a title on save dialogs
      * (for example, macOS).
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#SaveDialogOptions.title)
      */
     var title: String?
 }

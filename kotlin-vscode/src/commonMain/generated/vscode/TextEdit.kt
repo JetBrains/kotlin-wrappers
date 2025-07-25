@@ -9,15 +9,21 @@ import kotlin.js.JsModule
 /**
  * A text edit represents edits that should be applied
  * to a document.
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TextEdit)
  */
 open external class TextEdit {
     /**
      * The range this edit applies to.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TextEdit.range)
      */
     var range: Range
 
     /**
      * The string this edit will insert.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TextEdit.newText)
      */
     var newText: String
 
@@ -26,6 +32,8 @@ open external class TextEdit {
      *
      * *Note* that the eol-sequence will be applied to the
      * whole document.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TextEdit.newEol)
      */
     var newEol: EndOfLine?
 
@@ -34,6 +42,8 @@ open external class TextEdit {
      *
      * @param range A range.
      * @param newText A string.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TextEdit.constructor)
      */
     constructor(
         range: Range,
@@ -47,6 +57,8 @@ open external class TextEdit {
          * @param range A range.
          * @param newText A string.
          * @returns A new text edit object.
+         *
+         * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TextEdit.replace)
          */
         fun replace(
             range: Range,
@@ -59,6 +71,8 @@ open external class TextEdit {
          * @param position A position, will become an empty range.
          * @param newText A string.
          * @returns A new text edit object.
+         *
+         * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TextEdit.insert)
          */
         fun insert(
             position: Position,
@@ -70,6 +84,8 @@ open external class TextEdit {
          *
          * @param range A range.
          * @returns A new text edit object.
+         *
+         * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TextEdit.delete)
          */
         fun delete(range: Range): TextEdit
 
@@ -78,6 +94,8 @@ open external class TextEdit {
          *
          * @param eol An eol-sequence
          * @returns A new text edit object.
+         *
+         * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TextEdit.setEndOfLine)
          */
         fun setEndOfLine(eol: EndOfLine): TextEdit
     }

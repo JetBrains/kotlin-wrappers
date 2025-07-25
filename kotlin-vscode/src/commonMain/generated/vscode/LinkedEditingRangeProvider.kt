@@ -5,6 +5,8 @@ package vscode
 /**
  * The linked editing range provider interface defines the contract between extensions and
  * the linked editing feature.
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#LinkedEditingRangeProvider)
  */
 external interface LinkedEditingRangeProvider {
     /**
@@ -17,6 +19,8 @@ external interface LinkedEditingRangeProvider {
      * @param position The position at which the provider was invoked.
      * @param token A cancellation token.
      * @returns A list of ranges that can be edited together
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#LinkedEditingRangeProvider.provideLinkedEditingRanges)
      */
     fun provideLinkedEditingRanges(
         document: TextDocument,

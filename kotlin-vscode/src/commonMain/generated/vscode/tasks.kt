@@ -11,6 +11,8 @@ import kotlin.js.definedExternally
 
 /**
  * Namespace for tasks functionality.
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#tasks)
  */
 external object tasks {
     /**
@@ -19,6 +21,8 @@ external object tasks {
      * @param type The task kind type this provider is registered for.
      * @param provider A task provider.
      * @returns A [Disposable] that unregisters this provider when being disposed.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#tasks.registerTaskProvider)
      */
     fun registerTaskProvider(
         type: String,
@@ -32,6 +36,8 @@ external object tasks {
      *
      * @param filter Optional filter to select tasks of a certain type or version.
      * @returns A thenable that resolves to an array of tasks.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#tasks.fetchTasks)
      */
     fun fetchTasks(filter: TaskFilter = definedExternally): PromiseLike<ReadonlyArray<Task>>
 
@@ -45,21 +51,29 @@ external object tasks {
      *
      * @param task the task to execute
      * @returns A thenable that resolves to a task execution.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#tasks.executeTask)
      */
     fun executeTask(task: Task): PromiseLike<TaskExecution>
 
     /**
      * The currently active task executions or an empty array.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#tasks.taskExecutions)
      */
     val taskExecutions: ReadonlyArray<TaskExecution>
 
     /**
      * Fires when a task starts.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#tasks.onDidStartTask)
      */
     val onDidStartTask: Event<TaskStartEvent>
 
     /**
      * Fires when a task ends.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#tasks.onDidEndTask)
      */
     val onDidEndTask: Event<TaskEndEvent>
 
@@ -67,6 +81,8 @@ external object tasks {
      * Fires when the underlying process has been started.
      * This event will not fire for tasks that don't
      * execute an underlying process.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#tasks.onDidStartTaskProcess)
      */
     val onDidStartTaskProcess: Event<TaskProcessStartEvent>
 
@@ -74,6 +90,8 @@ external object tasks {
      * Fires when the underlying process has ended.
      * This event will not fire for tasks that don't
      * execute an underlying process.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#tasks.onDidEndTaskProcess)
      */
     val onDidEndTaskProcess: Event<TaskProcessEndEvent>
 }

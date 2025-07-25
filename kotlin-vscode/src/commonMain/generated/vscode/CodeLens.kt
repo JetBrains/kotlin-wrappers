@@ -16,20 +16,28 @@ import kotlin.js.definedExternally
  *
  * @see [CodeLensProvider.provideCodeLenses]
  * @see [CodeLensProvider.resolveCodeLens]
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#CodeLens)
  */
 open external class CodeLens {
     /**
      * The range in which this code lens is valid. Should only span a single line.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#CodeLens.range)
      */
     var range: Range
 
     /**
      * The command this code lens represents.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#CodeLens.command)
      */
     var command: Command?
 
     /**
      * `true` when there is a command associated.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#CodeLens.isResolved)
      */
     val isResolved: Boolean
 
@@ -38,6 +46,8 @@ open external class CodeLens {
      *
      * @param range The range to which this code lens applies.
      * @param command The command associated to this code lens.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#CodeLens.constructor)
      */
     constructor(
         range: Range,

@@ -5,22 +5,30 @@ package vscode
 /**
  * An source control resource state represents the state of an underlying workspace
  * resource within a certain [source control group][SourceControlResourceGroup].
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#SourceControlResourceState)
  */
 external interface SourceControlResourceState {
     /**
      * The [Uri] of the underlying resource inside the workspace.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#SourceControlResourceState.resourceUri)
      */
     val resourceUri: Uri
 
     /**
      * The [Command] which should be run when the resource
      * state is open in the Source Control viewlet.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#SourceControlResourceState.command)
      */
     val command: Command?
 
     /**
      * The [decorations][SourceControlResourceDecorations] for this source control
      * resource state.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#SourceControlResourceState.decorations)
      */
     val decorations: SourceControlResourceDecorations?
 
@@ -41,6 +49,8 @@ external interface SourceControlResourceState {
      * }
      * ```
      * This will show action `extension.diff` only for resources with `contextValue` is `diffable`.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#SourceControlResourceState.contextValue)
      */
     val contextValue: String?
 }

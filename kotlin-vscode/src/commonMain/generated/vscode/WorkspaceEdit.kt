@@ -15,10 +15,14 @@ import kotlin.js.definedExternally
  * multiple resources and documents.
  *
  * Use the [applyEdit][workspace.applyEdit]-function to apply a workspace edit.
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#WorkspaceEdit)
  */
 open external class WorkspaceEdit {
     /**
      * The number of affected resources of textual or resource changes.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#WorkspaceEdit.size)
      */
     val size: Int
 
@@ -29,6 +33,8 @@ open external class WorkspaceEdit {
      * @param range A range.
      * @param newText A string.
      * @param metadata Optional metadata for the entry.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#WorkspaceEdit.replace)
      */
     fun replace(
         uri: Uri,
@@ -44,6 +50,8 @@ open external class WorkspaceEdit {
      * @param position A position.
      * @param newText A string.
      * @param metadata Optional metadata for the entry.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#WorkspaceEdit.insert)
      */
     fun insert(
         uri: Uri,
@@ -58,6 +66,8 @@ open external class WorkspaceEdit {
      * @param uri A resource identifier.
      * @param range A range.
      * @param metadata Optional metadata for the entry.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#WorkspaceEdit.delete)
      */
     fun delete(
         uri: Uri,
@@ -70,6 +80,8 @@ open external class WorkspaceEdit {
      *
      * @param uri A resource identifier.
      * @returns `true` if the given resource will be touched by this edit.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#WorkspaceEdit.has)
      */
     fun has(uri: Uri): Boolean
 
@@ -78,6 +90,8 @@ open external class WorkspaceEdit {
      *
      * @param uri A resource identifier.
      * @param edits An array of edits.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#WorkspaceEdit.set)
      */
     fun set(
         uri: Uri,
@@ -89,6 +103,8 @@ open external class WorkspaceEdit {
      *
      * @param uri A resource identifier.
      * @param edits An array of edits.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#WorkspaceEdit.set)
      */
     fun set(
         uri: Uri,
@@ -100,6 +116,8 @@ open external class WorkspaceEdit {
      *
      * @param uri A resource identifier.
      * @param edits An array of edits.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#WorkspaceEdit.set)
      */
     fun set(
         uri: Uri,
@@ -111,6 +129,8 @@ open external class WorkspaceEdit {
      *
      * @param uri A resource identifier.
      * @param edits An array of edits.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#WorkspaceEdit.set)
      */
     fun set(
         uri: Uri,
@@ -122,6 +142,8 @@ open external class WorkspaceEdit {
      *
      * @param uri A resource identifier.
      * @returns An array of text edits.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#WorkspaceEdit.get)
      */
     fun get(uri: Uri): ReadonlyArray<TextEdit>
 
@@ -135,6 +157,8 @@ open external class WorkspaceEdit {
      * be applied successfully. The `content`-property allows to set the initial contents
      * the file is being created with.
      * @param metadata Optional metadata for the entry.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#WorkspaceEdit.createFile)
      */
     /*
     createFile(uri: Uri, options?: {
@@ -161,6 +185,8 @@ open external class WorkspaceEdit {
      *
      * @param uri The uri of the file that is to be deleted.
      * @param metadata Optional metadata for the entry.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#WorkspaceEdit.deleteFile)
      */
     /*
     deleteFile(uri: Uri, options?: {
@@ -183,6 +209,8 @@ open external class WorkspaceEdit {
      * @param options Defines if existing files should be overwritten or be
      * ignored. When overwrite and ignoreIfExists are both set overwrite wins.
      * @param metadata Optional metadata for the entry.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#WorkspaceEdit.renameFile)
      */
     /*
     renameFile(oldUri: Uri, newUri: Uri, options?: {
@@ -201,6 +229,8 @@ open external class WorkspaceEdit {
      * Get all text edits grouped by resource.
      *
      * @returns A shallow copy of `[Uri, TextEdit[]]`-tuples.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#WorkspaceEdit.entries)
      */
     fun entries(): ReadonlyArray<Tuple2<Uri, ReadonlyArray<TextEdit>>>
 }

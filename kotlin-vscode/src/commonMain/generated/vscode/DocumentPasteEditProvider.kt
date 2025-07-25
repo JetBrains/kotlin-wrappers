@@ -8,6 +8,8 @@ import js.promise.PromiseLike
 
 /**
  * Provider invoked when the user copies or pastes in a {@linkcode TextDocument}.
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#DocumentPasteEditProvider)
  */
 external interface DocumentPasteEditProvider<T : DocumentPasteEdit> {
     /**
@@ -26,6 +28,8 @@ external interface DocumentPasteEditProvider<T : DocumentPasteEdit> {
      * @param token A cancellation token.
      *
      * @return Optional thenable that resolves when all changes to the `dataTransfer` are complete.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#DocumentPasteEditProvider.prepareDocumentPaste)
      */
     var prepareDocumentPaste: ((
         document: TextDocument,
@@ -49,6 +53,8 @@ external interface DocumentPasteEditProvider<T : DocumentPasteEdit> {
      * @return Set of potential [edits][DocumentPasteEdit] that can apply the paste. Only a single returned
      * {@linkcode DocumentPasteEdit} is applied at a time. If multiple edits are returned from all providers, then
      * the first is automatically applied and a widget is shown that lets the user switch to the other edits.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#DocumentPasteEditProvider.provideDocumentPasteEdits)
      */
     var provideDocumentPasteEdits: ((
         document: TextDocument,
@@ -69,6 +75,8 @@ external interface DocumentPasteEditProvider<T : DocumentPasteEdit> {
      *
      * @returns The resolved paste edit or a thenable that resolves to such. It is OK to return the given
      * `pasteEdit`. If no result is returned, the given `pasteEdit` is used.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#DocumentPasteEditProvider.resolveDocumentPasteEdit)
      */
     var resolveDocumentPasteEdit: ((
         pasteEdit: T,

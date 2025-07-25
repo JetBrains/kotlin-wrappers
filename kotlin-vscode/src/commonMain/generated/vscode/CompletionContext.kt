@@ -5,10 +5,14 @@ package vscode
 /**
  * Contains additional information about the context in which
  * [completion provider][CompletionItemProvider.provideCompletionItems] is triggered.
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#CompletionContext)
  */
 external interface CompletionContext {
     /**
      * How the completion was triggered.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#CompletionContext.triggerKind)
      */
     val triggerKind: CompletionTriggerKind
 
@@ -18,6 +22,8 @@ external interface CompletionContext {
      * `undefined` if the provider was not triggered by a character.
      *
      * The trigger character is already in the document when the completion provider is triggered.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#CompletionContext.triggerCharacter)
      */
     val triggerCharacter: String?
 }

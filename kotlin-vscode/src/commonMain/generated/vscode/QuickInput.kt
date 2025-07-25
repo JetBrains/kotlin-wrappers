@@ -24,21 +24,29 @@ import js.core.Void
  * any resources associated with it.
  *
  * See [QuickPick] and [InputBox] for concrete UIs.
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#QuickInput)
  */
 external interface QuickInput :
     DisposableLike {
     /**
      * An optional title.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#QuickInput.title)
      */
     var title: String?
 
     /**
      * An optional current step count.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#QuickInput.step)
      */
     var step: Int?
 
     /**
      * An optional total step count.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#QuickInput.totalSteps)
      */
     var totalSteps: Int?
 
@@ -47,6 +55,8 @@ external interface QuickInput :
      *
      * Change this to false, e.g., while validating user input or
      * loading data for the next step in user input.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#QuickInput.enabled)
      */
     var enabled: Boolean
 
@@ -55,24 +65,32 @@ external interface QuickInput :
      *
      * Change this to true, e.g., while loading more data or validating
      * user input.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#QuickInput.busy)
      */
     var busy: Boolean
 
     /**
      * If the UI should stay open even when loosing UI focus. Defaults to false.
      * This setting is ignored on iPad and is always false.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#QuickInput.ignoreFocusOut)
      */
     var ignoreFocusOut: Boolean
 
     /**
      * Makes the input UI visible in its current configuration. Any other input
      * UI will first fire an [QuickInput.onDidHide] event.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#QuickInput.show)
      */
     fun show()
 
     /**
      * Hides this input UI. This will also fire an [QuickInput.onDidHide]
      * event.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#QuickInput.hide)
      */
     fun hide()
 
@@ -83,6 +101,8 @@ external interface QuickInput :
      * the extension will be notified through [QuickInput.onDidHide].
      * (Examples include: an explicit call to [QuickInput.hide],
      * the user pressing Esc, some other input UI opening, etc.)
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#QuickInput.onDidHide)
      */
     var onDidHide: Event<Void>
 
@@ -91,6 +111,8 @@ external interface QuickInput :
      * visible, it is first hidden. After this call the input UI is no longer
      * functional and no additional methods or properties on it should be
      * accessed. Instead a new input UI should be created.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#QuickInput.dispose)
      */
     override fun dispose()
 }

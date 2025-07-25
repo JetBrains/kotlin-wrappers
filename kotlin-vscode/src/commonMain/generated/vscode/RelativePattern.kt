@@ -12,12 +12,16 @@ import kotlin.js.JsModule
  * relatively to a base file path. The base path can either be an absolute file
  * path as string or uri or a [workspace folder][WorkspaceFolder], which is the
  * preferred way of creating the relative pattern.
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#RelativePattern)
  */
 open external class RelativePattern {
     /**
      * A base file path to which this pattern will be matched against relatively. The
      * file path must be absolute, should not have any trailing path separators and
      * not include any relative segments (`.` or `..`).
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#RelativePattern.baseUri)
      */
     var baseUri: Uri
 
@@ -27,6 +31,8 @@ open external class RelativePattern {
      *
      * Example: Given a base of `/home/work/folder` and a file path of `/home/work/folder/index.js`,
      * the file glob pattern will match on `index.js`.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#RelativePattern.pattern)
      */
     var pattern: String
 
@@ -51,6 +57,8 @@ open external class RelativePattern {
      * to pass in a [workspace folder][WorkspaceFolder] if the pattern should match inside the workspace.
      * Otherwise, a uri or string should only be used if the pattern is for a file path outside the workspace.
      * @param pattern A file glob pattern like `*.{ts,js}` that will be matched on paths relative to the base.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#RelativePattern.constructor)
      */
     constructor(
         base: JsAny, /* WorkspaceFolder | Uri | string */

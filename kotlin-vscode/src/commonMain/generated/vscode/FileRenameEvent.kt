@@ -4,10 +4,14 @@ package vscode
 
 /**
  * An event that is fired after files are renamed.
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#FileRenameEvent)
  */
 external interface FileRenameEvent {
     /**
      * The files that got renamed.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#FileRenameEvent.files)
      */
     /*
     readonly files: ReadonlyArray<{

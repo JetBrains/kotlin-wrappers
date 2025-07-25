@@ -11,65 +11,89 @@ import js.core.JsAny
 
 /**
  * Represents a Tree view
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TreeView)
  */
 external interface TreeView<T : JsAny?> :
     Disposable {
     /**
      * Event that is fired when an element is expanded
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TreeView.onDidExpandElement)
      */
     val onDidExpandElement: Event<TreeViewExpansionEvent<T>>
 
     /**
      * Event that is fired when an element is collapsed
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TreeView.onDidCollapseElement)
      */
     val onDidCollapseElement: Event<TreeViewExpansionEvent<T>>
 
     /**
      * Currently selected elements.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TreeView.selection)
      */
     val selection: ReadonlyArray<T>
 
     /**
      * Event that is fired when the [selection][TreeView.selection] has changed
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TreeView.onDidChangeSelection)
      */
     val onDidChangeSelection: Event<TreeViewSelectionChangeEvent<T>>
 
     /**
      * `true` if the [tree view][TreeView] is visible otherwise `false`.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TreeView.visible)
      */
     val visible: Boolean
 
     /**
      * Event that is fired when [visibility][TreeView.visible] has changed
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TreeView.onDidChangeVisibility)
      */
     val onDidChangeVisibility: Event<TreeViewVisibilityChangeEvent>
 
     /**
      * An event to signal that an element or root has either been checked or unchecked.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TreeView.onDidChangeCheckboxState)
      */
     val onDidChangeCheckboxState: Event<TreeCheckboxChangeEvent<T>>
 
     /**
      * An optional human-readable message that will be rendered in the view.
      * Setting the message to null, undefined, or empty string will remove the message from the view.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TreeView.message)
      */
     var message: String?
 
     /**
      * The tree view title is initially taken from the extension package.json
      * Changes to the title property will be properly reflected in the UI in the title of the view.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TreeView.title)
      */
     var title: String?
 
     /**
      * An optional human-readable description which is rendered less prominently in the title of the view.
      * Setting the title description to null, undefined, or empty string will remove the description from the view.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TreeView.description)
      */
     var description: String?
 
     /**
      * The badge to display for this TreeView.
      * To remove the badge, set to undefined.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TreeView.badge)
      */
     var badge: ViewBadge?
 
@@ -84,6 +108,8 @@ external interface TreeView<T : JsAny?> :
      *
      * * *NOTE:* You can expand only to 3 levels maximum.
      * * *NOTE:* The [TreeDataProvider] that the `TreeView` [is registered with} with must implement {@link TreeDataProvider.getParent getParent][window.createTreeView] method to access this API.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TreeView.reveal)
      */
     /*
     reveal(element: T, options?: {

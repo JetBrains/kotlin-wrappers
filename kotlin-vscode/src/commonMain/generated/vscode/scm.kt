@@ -9,6 +9,8 @@ import kotlin.js.definedExternally
 
 /**
  * Namespace for source control management.
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#scm)
  */
 external object scm {
     /**
@@ -18,6 +20,8 @@ external object scm {
      * @param label A human-readable string for the source control. E.g.: `Git`.
      * @param rootUri An optional Uri of the root of the source control. E.g.: `Uri.parse(workspaceRoot)`.
      * @returns An instance of [source control][SourceControl].
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#scm.createSourceControl)
      */
     fun createSourceControl(
         id: String,

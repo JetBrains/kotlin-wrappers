@@ -14,6 +14,8 @@ import kotlin.js.definedExternally
  *
  * @example
  * item.onDidChange(function(event) { console.log("Event happened: " + event); });
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#Event)
  */
 external interface Event<T : JsAny?> {
     /**
@@ -24,6 +26,8 @@ external interface Event<T : JsAny?> {
      * @param thisArgs The `this`-argument which will be used when calling the event listener.
      * @param disposables An array to which a [Disposable] will be added.
      * @returns A disposable which unsubscribes the event listener.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#Event.--invoke--)
      */
     operator fun invoke(
         listener: (e: T) -> Unit,

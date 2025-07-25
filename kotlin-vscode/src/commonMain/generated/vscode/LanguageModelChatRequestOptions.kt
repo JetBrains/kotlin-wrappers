@@ -10,16 +10,22 @@ import js.objects.Record
  * Options for making a chat request using a language model.
  *
  * @see [LanguageModelChat.sendRequest]
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#LanguageModelChatRequestOptions)
  */
 external interface LanguageModelChatRequestOptions {
     /**
      * A human-readable message that explains why access to a language model is needed and what feature is enabled by it.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#LanguageModelChatRequestOptions.justification)
      */
     var justification: String?
 
     /**
      * A set of options that control the behavior of the language model. These options are specific to the language model
      * and need to be looked up in the respective documentation.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#LanguageModelChatRequestOptions.modelOptions)
      */
     var modelOptions: Record<JsString, *>?
 
@@ -33,11 +39,15 @@ external interface LanguageModelChatRequestOptions {
      *
      * Then, the tool result can be provided to the LLM by creating an Assistant-type [LanguageModelChatMessage] with a
      * [LanguageModelToolCallPart], followed by a User-type message with a [LanguageModelToolResultPart].
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#LanguageModelChatRequestOptions.tools)
      */
     var tools: ReadonlyArray<LanguageModelChatTool>?
 
     /**
      * 	The tool-selecting mode to use. [LanguageModelChatToolMode.Auto] by default.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#LanguageModelChatRequestOptions.toolMode)
      */
     var toolMode: LanguageModelChatToolMode?
 }

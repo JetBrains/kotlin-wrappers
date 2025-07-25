@@ -15,6 +15,8 @@ import js.promise.PromiseResult
  * text based documents, use {@linkcode CustomTextEditorProvider} instead.
  *
  * @param T Type of the custom document returned by this provider.
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#CustomReadonlyEditorProvider)
  */
 external interface CustomReadonlyEditorProvider<T : CustomDocument> {
     /**
@@ -32,6 +34,8 @@ external interface CustomReadonlyEditorProvider<T : CustomDocument> {
      * @param token A cancellation token that indicates the result is no longer needed.
      *
      * @returns The custom document.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#CustomReadonlyEditorProvider.openCustomDocument)
      */
     fun openCustomDocument(
         uri: Uri,
@@ -55,6 +59,8 @@ external interface CustomReadonlyEditorProvider<T : CustomDocument> {
      * @param token A cancellation token that indicates the result is no longer needed.
      *
      * @returns Optional thenable indicating that the custom editor has been resolved.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#CustomReadonlyEditorProvider.resolveCustomEditor)
      */
     fun resolveCustomEditor(
         document: T,

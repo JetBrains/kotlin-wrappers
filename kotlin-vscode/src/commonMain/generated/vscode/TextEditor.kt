@@ -8,31 +8,43 @@ import kotlin.js.definedExternally
 
 /**
  * Represents an editor that is attached to a [document][TextDocument].
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TextEditor)
  */
 external interface TextEditor {
     /**
      * The document associated with this text editor. The document will be the same for the entire lifetime of this text editor.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TextEditor.document)
      */
     val document: TextDocument
 
     /**
      * The primary selection on this text editor. Shorthand for `TextEditor.selections[0]`.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TextEditor.selection)
      */
     var selection: Selection
 
     /**
      * The selections in this text editor. The primary selection is always at index 0.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TextEditor.selections)
      */
     var selections: ReadonlyArray<Selection>
 
     /**
      * The current visible ranges in the editor (vertically).
      * This accounts only for vertical scrolling, and not for horizontal scrolling.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TextEditor.visibleRanges)
      */
     val visibleRanges: ReadonlyArray<Range>
 
     /**
      * Text editor options.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TextEditor.options)
      */
     var options: TextEditorOptions
 
@@ -40,6 +52,8 @@ external interface TextEditor {
      * The column in which this editor shows. Will be `undefined` in case this
      * isn't one of the main editors, e.g. an embedded editor, or when the editor
      * column is larger than three.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TextEditor.viewColumn)
      */
     val viewColumn: ViewColumn?
 
@@ -53,6 +67,8 @@ external interface TextEditor {
      * @param callback A function which can create edits using an [edit-builder][TextEditorEdit].
      * @param options The undo/redo behavior around this edit. By default, undo stops will be created before and after this edit.
      * @returns A promise that resolves with a value indicating if the edits could be applied.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TextEditor.edit)
      */
     /*
     edit(callback: (editBuilder: TextEditorEdit) => void, options?: {
@@ -77,6 +93,8 @@ external interface TextEditor {
      * @param options The undo/redo behavior around this edit. By default, undo stops will be created before and after this edit.
      * @returns A promise that resolves with a value indicating if the snippet could be inserted. Note that the promise does not signal
      * that the snippet is completely filled-in or accepted.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TextEditor.insertSnippet)
      */
     /*
     insertSnippet(snippet: SnippetString, location?: Position | Range | readonly Position[] | readonly Range[], options?: {
@@ -105,6 +123,8 @@ external interface TextEditor {
      *
      * @param decorationType A decoration type.
      * @param rangesOrOptions Either [ranges} or more detailed {@link DecorationOptions options][Range].
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TextEditor.setDecorations)
      */
     fun setDecorations(
         decorationType: TextEditorDecorationType,
@@ -116,6 +136,8 @@ external interface TextEditor {
      *
      * @param range A range.
      * @param revealType The scrolling strategy for revealing `range`.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TextEditor.revealRange)
      */
     fun revealRange(
         range: Range,

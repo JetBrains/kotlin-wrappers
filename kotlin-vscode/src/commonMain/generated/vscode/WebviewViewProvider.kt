@@ -7,6 +7,8 @@ import js.promise.PromiseLike
 
 /**
  * Provider for creating `WebviewView` elements.
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#WebviewViewProvider)
  */
 external interface WebviewViewProvider {
     /**
@@ -21,6 +23,8 @@ external interface WebviewViewProvider {
      * @param token Cancellation token indicating that the view being provided is no longer needed.
      *
      * @returns Optional thenable indicating that the view has been fully resolved.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#WebviewViewProvider.resolveWebviewView)
      */
     fun resolveWebviewView(
         webviewView: WebviewView,

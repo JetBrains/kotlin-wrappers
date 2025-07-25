@@ -5,6 +5,8 @@ package vscode
 /**
  * The hover provider interface defines the contract between extensions and
  * the [hover](https://code.visualstudio.com/docs/editor/intellisense)-feature.
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#HoverProvider)
  */
 external interface HoverProvider {
     /**
@@ -17,6 +19,8 @@ external interface HoverProvider {
      * @param token A cancellation token.
      * @returns A hover or a thenable that resolves to such. The lack of a result can be
      * signaled by returning `undefined` or `null`.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#HoverProvider.provideHover)
      */
     fun provideHover(
         document: TextDocument,

@@ -40,6 +40,8 @@ import kotlin.js.JsModule
  *
  * console.log(importedApi.mul(42, 1));
  * ```
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#extensions)
  */
 external object extensions {
     /**
@@ -47,17 +49,23 @@ external object extensions {
      *
      * @param extensionId An extension identifier.
      * @returns An extension or `undefined`.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#extensions.getExtension)
      */
     fun <T : JsAny?> getExtension(extensionId: String): Extension<T>?
 
     /**
      * All extensions currently known to the system.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#extensions.all)
      */
     val all: ReadonlyArray<Extension<*>>
 
     /**
      * An event which fires when `extensions.all` changes. This can happen when extensions are
      * installed, uninstalled, enabled or disabled.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#extensions.onDidChange)
      */
     val onDidChange: Event<Void>
 }

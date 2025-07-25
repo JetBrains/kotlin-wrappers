@@ -11,12 +11,16 @@ import kotlin.js.JsModule
 
 /**
  * Encapsulates data transferred during drag and drop operations.
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#DataTransferItem)
  */
 open external class DataTransferItem {
     /**
      * Get a string representation of this item.
      *
      * If {@linkcode DataTransferItem.value} is an object, this returns the result of json stringifying {@linkcode DataTransferItem.value} value.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#DataTransferItem.asString)
      */
     fun asString(): PromiseLike<JsString>
 
@@ -27,6 +31,8 @@ open external class DataTransferItem {
      *
      * @returns The file for the data transfer or `undefined` if the item is either not a file or the
      * file data cannot be accessed.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#DataTransferItem.asFile)
      */
     fun asFile(): DataTransferFile?
 
@@ -35,11 +41,15 @@ open external class DataTransferItem {
      *
      * You can use `value` to share data across operations. The original object can be retrieved so long as the extension that
      * created the `DataTransferItem` runs in the same extension host.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#DataTransferItem.value)
      */
     val value: JsAny?
 
     /**
      * @param value Custom data stored on this item. Can be retrieved using {@linkcode DataTransferItem.value}.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#DataTransferItem.constructor)
      */
     constructor(value: JsAny?)
 }

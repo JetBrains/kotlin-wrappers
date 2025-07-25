@@ -6,6 +6,8 @@ import js.array.ReadonlyArray
 
 /**
  * The selection range provider interface defines the contract between extensions and the "Expand and Shrink Selection" feature.
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#SelectionRangeProvider)
  */
 external interface SelectionRangeProvider {
     /**
@@ -20,6 +22,8 @@ external interface SelectionRangeProvider {
      * @param token A cancellation token.
      * @returns Selection ranges or a thenable that resolves to such. The lack of a result can be
      * signaled by returning `undefined` or `null`.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#SelectionRangeProvider.provideSelectionRanges)
      */
     fun provideSelectionRanges(
         document: TextDocument,

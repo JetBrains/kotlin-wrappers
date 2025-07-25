@@ -17,6 +17,8 @@ import js.core.JsAny
  * - As source actions, such `Organize Imports`.
  * - [Quick fixes][CodeActionKind.QuickFix] are shown in the problems view.
  * - Change applied on save by the `editor.codeActionsOnSave` setting.
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#CodeActionProvider)
  */
 external interface CodeActionProvider<T : CodeAction> {
     /**
@@ -39,6 +41,8 @@ external interface CodeActionProvider<T : CodeAction> {
      *
      * We also support returning `Command` for legacy reasons, however all new extensions should return
      * `CodeAction` object instead.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#CodeActionProvider.provideCodeActions)
      */
     fun provideCodeActions(
         document: TextDocument,
@@ -60,6 +64,8 @@ external interface CodeActionProvider<T : CodeAction> {
      * @param token A cancellation token.
      * @returns The resolved code action or a thenable that resolves to such. It is OK to return the given
      * `item`. When no result is returned, the given `item` will be used.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#CodeActionProvider.resolveCodeAction)
      */
     var resolveCodeAction: ((
         codeAction: T,

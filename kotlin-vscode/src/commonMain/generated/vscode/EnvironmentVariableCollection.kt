@@ -10,6 +10,8 @@ import kotlin.js.definedExternally
 
 /**
  * A collection of mutations that an extension can apply to a process environment.
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#EnvironmentVariableCollection)
  */
 external interface EnvironmentVariableCollection :
     JsIterable<Tuple2</* variable: */ JsString, /* mutator: */ EnvironmentVariableMutator>> {
@@ -19,12 +21,16 @@ external interface EnvironmentVariableCollection :
      * window reloads. Additionally, this API will return the cached version if it exists. The
      * collection will be invalidated when the extension is uninstalled or when the collection
      * is cleared. Defaults to true.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#EnvironmentVariableCollection.persistent)
      */
     var persistent: Boolean
 
     /**
      * A description for the environment variable collection, this will be used to describe the
      * changes in the UI.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#EnvironmentVariableCollection.description)
      */
     var description: JsAny /* string | MarkdownString */?
 
@@ -38,6 +44,8 @@ external interface EnvironmentVariableCollection :
      * @param value The value to replace the variable with.
      * @param options Options applied to the mutator, when no options are provided this will
      * default to `{ applyAtProcessCreation: true }`.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#EnvironmentVariableCollection.replace)
      */
     fun replace(
         variable: String,
@@ -55,6 +63,8 @@ external interface EnvironmentVariableCollection :
      * @param value The value to append to the variable.
      * @param options Options applied to the mutator, when no options are provided this will
      * default to `{ applyAtProcessCreation: true }`.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#EnvironmentVariableCollection.append)
      */
     fun append(
         variable: String,
@@ -72,6 +82,8 @@ external interface EnvironmentVariableCollection :
      * @param value The value to prepend to the variable.
      * @param options Options applied to the mutator, when no options are provided this will
      * default to `{ applyAtProcessCreation: true }`.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#EnvironmentVariableCollection.prepend)
      */
     fun prepend(
         variable: String,
@@ -83,6 +95,8 @@ external interface EnvironmentVariableCollection :
      * Gets the mutator that this collection applies to a variable, if any.
      *
      * @param variable The variable to get the mutator for.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#EnvironmentVariableCollection.get)
      */
     fun get(variable: String): EnvironmentVariableMutator?
 
@@ -91,6 +105,8 @@ external interface EnvironmentVariableCollection :
      *
      * @param callback Function to execute for each entry.
      * @param thisArg The `this` context used when invoking the handler function.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#EnvironmentVariableCollection.forEach)
      */
     fun forEach(
         callback: (
@@ -105,11 +121,15 @@ external interface EnvironmentVariableCollection :
      * Deletes this collection's mutator for a variable.
      *
      * @param variable The variable to delete the mutator for.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#EnvironmentVariableCollection.delete)
      */
     fun delete(variable: String)
 
     /**
      * Clears all mutators from this collection.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#EnvironmentVariableCollection.clear)
      */
     fun clear()
 }

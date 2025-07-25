@@ -11,10 +11,14 @@ import kotlin.js.definedExternally
 
 /**
  * Inlay hint information.
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#InlayHint)
  */
 open external class InlayHint {
     /**
      * The position of this hint.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#InlayHint.position)
      */
     var position: Position
 
@@ -22,6 +26,8 @@ open external class InlayHint {
      * The label of this hint. A human readable string or an array of [label parts][InlayHintLabelPart].
      *
      * *Note* that neither the string nor the label part can be empty.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#InlayHint.label)
      */
     var label: JsAny /* string | InlayHintLabelPart[] */
 
@@ -30,11 +36,15 @@ open external class InlayHint {
      *
      * *Note* that this property can be set late during
      * [resolving][InlayHintsProvider.resolveInlayHint] of inlay hints.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#InlayHint.tooltip)
      */
     var tooltip: JsAny /* string | MarkdownString */?
 
     /**
      * The kind of this hint. The inlay hint kind defines the appearance of this inlay hint.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#InlayHint.kind)
      */
     var kind: InlayHintKind?
 
@@ -47,6 +57,8 @@ open external class InlayHint {
      *
      * *Note* that this property can be set late during
      * [resolving][InlayHintsProvider.resolveInlayHint] of inlay hints.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#InlayHint.textEdits)
      */
     var textEdits: ReadonlyArray<TextEdit>?
 
@@ -54,6 +66,8 @@ open external class InlayHint {
      * Render padding before the hint. Padding will use the editor's background color,
      * not the background color of the hint itself. That means padding can be used to visually
      * align/separate an inlay hint.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#InlayHint.paddingLeft)
      */
     var paddingLeft: Boolean?
 
@@ -61,6 +75,8 @@ open external class InlayHint {
      * Render padding after the hint. Padding will use the editor's background color,
      * not the background color of the hint itself. That means padding can be used to visually
      * align/separate an inlay hint.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#InlayHint.paddingRight)
      */
     var paddingRight: Boolean?
 
@@ -70,6 +86,8 @@ open external class InlayHint {
      * @param position The position of the hint.
      * @param label The label of the hint.
      * @param kind The [kind][InlayHintKind] of the hint.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#InlayHint.constructor)
      */
     constructor(
         position: Position,

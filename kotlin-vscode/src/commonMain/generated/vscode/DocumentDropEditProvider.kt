@@ -10,6 +10,8 @@ import js.core.JsAny
  * This allows users to drag and drop resources (including resources from external apps) into the editor. While dragging
  * and dropping files, users can hold down `shift` to drop the file into the editor instead of opening it.
  * Requires `editor.dropIntoEditor.enabled` to be on.
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#DocumentDropEditProvider)
  */
 external interface DocumentDropEditProvider<T : DocumentDropEdit> {
     /**
@@ -22,6 +24,8 @@ external interface DocumentDropEditProvider<T : DocumentDropEdit> {
      *
      * @returns A [DocumentDropEdit] or a thenable that resolves to such. The lack of a result can be
      * signaled by returning `undefined` or `null`.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#DocumentDropEditProvider.provideDocumentDropEdits)
      */
     fun provideDocumentDropEdits(
         document: TextDocument,
@@ -41,6 +45,8 @@ external interface DocumentDropEditProvider<T : DocumentDropEdit> {
      *
      * @returns The resolved edit or a thenable that resolves to such. It is OK to return the given
      * `edit`. If no result is returned, the given `edit` is used.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#DocumentDropEditProvider.resolveDocumentDropEdit)
      */
     var resolveDocumentDropEdit: ((
         edit: T,

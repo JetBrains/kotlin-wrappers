@@ -10,6 +10,8 @@ import js.iterable.AsyncIterable
  * Represents a language model response.
  *
  * @see [ChatRequest]
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#LanguageModelChatResponse)
  */
 external interface LanguageModelChatResponse {
     /**
@@ -42,6 +44,8 @@ external interface LanguageModelChatResponse {
      *   console.error(e);
      * }
      * ```
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#LanguageModelChatResponse.stream)
      */
     var stream: AsyncIterable<JsAny /* LanguageModelTextPart | LanguageModelToolCallPart | unknown */>
 
@@ -49,6 +53,8 @@ external interface LanguageModelChatResponse {
      * This is equivalent to filtering everything except for text parts from a [LanguageModelChatResponse.stream].
      *
      * @see [LanguageModelChatResponse.stream]
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#LanguageModelChatResponse.text)
      */
     var text: AsyncIterable<JsString>
 }

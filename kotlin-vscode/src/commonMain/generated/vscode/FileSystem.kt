@@ -16,6 +16,8 @@ import js.typedarrays.Uint8Array
  * remote extension host or ftp-servers.
  *
  * *Note* that an instance of this interface is available as {@linkcode workspace.fs}.
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#FileSystem)
  */
 external interface FileSystem {
     /**
@@ -23,6 +25,8 @@ external interface FileSystem {
      *
      * @param uri The uri of the file to retrieve metadata about.
      * @returns The file metadata about the file.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#FileSystem.stat)
      */
     fun stat(uri: Uri): PromiseLike<FileStat>
 
@@ -31,6 +35,8 @@ external interface FileSystem {
      *
      * @param uri The uri of the folder.
      * @returns An array of name/type-tuples or a thenable that resolves to such.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#FileSystem.readDirectory)
      */
     fun readDirectory(uri: Uri): PromiseLike<ReadonlyArray<Tuple2<JsString, FileType>>>
 
@@ -41,6 +47,8 @@ external interface FileSystem {
      * `mkdirp` semantics.
      *
      * @param uri The uri of the new folder.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#FileSystem.createDirectory)
      */
     fun createDirectory(uri: Uri): PromiseLike<Void>
 
@@ -49,6 +57,8 @@ external interface FileSystem {
      *
      * @param uri The uri of the file.
      * @returns An array of bytes or a thenable that resolves to such.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#FileSystem.readFile)
      */
     fun readFile(uri: Uri): PromiseLike<Uint8Array<*>>
 
@@ -57,6 +67,8 @@ external interface FileSystem {
      *
      * @param uri The uri of the file.
      * @param content The new content of the file.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#FileSystem.writeFile)
      */
     fun writeFile(
         uri: Uri,
@@ -68,6 +80,8 @@ external interface FileSystem {
      *
      * @param uri The resource that is to be deleted.
      * @param options Defines if trash can should be used and if deletion of folders is recursive
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#FileSystem.delete)
      */
     /*
     delete(uri: Uri, options?: {
@@ -88,6 +102,8 @@ external interface FileSystem {
      * @param source The existing file.
      * @param target The new location.
      * @param options Defines if existing files should be overwritten.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#FileSystem.rename)
      */
     /*
     rename(source: Uri, target: Uri, options?: {
@@ -104,6 +120,8 @@ external interface FileSystem {
      * @param source The existing file.
      * @param target The destination location.
      * @param options Defines if existing files should be overwritten.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#FileSystem.copy)
      */
     /*
     copy(source: Uri, target: Uri, options?: {
@@ -126,6 +144,8 @@ external interface FileSystem {
      * @returns `true` if the file system supports writing, `false` if it does not
      * support writing (i.e. it is readonly), and `undefined` if the editor does not
      * know about the filesystem.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#FileSystem.isWritableFileSystem)
      */
     fun isWritableFileSystem(scheme: String): Boolean?
 }

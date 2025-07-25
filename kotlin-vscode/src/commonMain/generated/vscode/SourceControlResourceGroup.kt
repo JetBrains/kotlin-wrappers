@@ -7,22 +7,30 @@ import js.array.ReadonlyArray
 /**
  * A source control resource group is a collection of
  * [source control resource states][SourceControlResourceState].
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#SourceControlResourceGroup)
  */
 external interface SourceControlResourceGroup :
     DisposableLike {
     /**
      * The id of this source control resource group.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#SourceControlResourceGroup.id)
      */
     val id: String
 
     /**
      * The label of this source control resource group.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#SourceControlResourceGroup.label)
      */
     var label: String
 
     /**
      * Whether this source control resource group is hidden when it contains
      * no [source control resource states][SourceControlResourceState].
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#SourceControlResourceGroup.hideWhenEmpty)
      */
     var hideWhenEmpty: Boolean?
 
@@ -43,17 +51,23 @@ external interface SourceControlResourceGroup :
      * }
      * ```
      * This will show action `extension.export` only for resource groups with `contextValue` equal to `exportable`.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#SourceControlResourceGroup.contextValue)
      */
     var contextValue: String?
 
     /**
      * This group's collection of
      * [source control resource states][SourceControlResourceState].
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#SourceControlResourceGroup.resourceStates)
      */
     var resourceStates: ReadonlyArray<SourceControlResourceState>
 
     /**
      * Dispose this source control resource group.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#SourceControlResourceGroup.dispose)
      */
     override fun dispose()
 }

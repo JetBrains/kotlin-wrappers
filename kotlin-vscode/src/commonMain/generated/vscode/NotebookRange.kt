@@ -9,20 +9,28 @@ import kotlin.js.JsModule
 /**
  * A notebook range represents an ordered pair of two cell indices.
  * It is guaranteed that start is less than or equal to end.
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#NotebookRange)
  */
 open external class NotebookRange {
     /**
      * The zero-based start index of this range.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#NotebookRange.start)
      */
     val start: Int
 
     /**
      * The exclusive end index of this range (zero-based).
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#NotebookRange.end)
      */
     val end: Int
 
     /**
      * `true` if `start` and `end` are equal.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#NotebookRange.isEmpty)
      */
     val isEmpty: Boolean
 
@@ -32,6 +40,8 @@ open external class NotebookRange {
      *
      * @param start start index
      * @param end end index.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#NotebookRange.constructor)
      */
     constructor(
         start: Int,
@@ -44,6 +54,8 @@ open external class NotebookRange {
      * @param change An object that describes a change to this range.
      * @returns A range that reflects the given change. Will return `this` range if the change
      * is not changing anything.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#NotebookRange.with)
      */
     /*
     with(change: {

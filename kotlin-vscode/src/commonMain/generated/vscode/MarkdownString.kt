@@ -14,10 +14,14 @@ import kotlin.js.definedExternally
  * when the {@linkcode supportThemeIcons} is set to `true`.
  *
  * Rendering of embedded html is supported when {@linkcode supportHtml} is set to `true`.
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#MarkdownString)
  */
 open external class MarkdownString {
     /**
      * The markdown string.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#MarkdownString.value)
      */
     var value: String
 
@@ -26,6 +30,8 @@ open external class MarkdownString {
      * markdown supports links that execute commands, e.g. `[Run it](command:myCommandId)`.
      *
      * Defaults to `false` (commands are disabled).
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#MarkdownString.isTrusted)
      */
     /*
     isTrusted?: boolean | {
@@ -38,6 +44,8 @@ open external class MarkdownString {
 
     /**
      * Indicates that this markdown string can contain [ThemeIcons][ThemeIcon], e.g. `$(zap)`.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#MarkdownString.supportThemeIcons)
      */
     var supportThemeIcons: Boolean?
 
@@ -50,6 +58,8 @@ open external class MarkdownString {
      * When `supportHtml` is true, the markdown render will also allow a safe subset of html tags
      * and attributes to be rendered. See https://github.com/microsoft/vscode/blob/6d2920473c6f13759c978dd89104c4270a83422d/src/vs/base/browser/markdownRenderer.ts#L296
      * for a list of all supported tags and attributes.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#MarkdownString.supportHtml)
      */
     var supportHtml: Boolean?
 
@@ -71,6 +81,8 @@ open external class MarkdownString {
      * md.baseUri = vscode.Uri.file('/path/to/otherFile.js');
      * // Here 'link' in the rendered markdown resolves to '/path/to/file.js'
      * ```
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#MarkdownString.baseUri)
      */
     var baseUri: Uri?
 
@@ -79,6 +91,8 @@ open external class MarkdownString {
      *
      * @param value Optional, initial value.
      * @param supportThemeIcons Optional, Specifies whether [ThemeIcons} are supported within the {@linkcode MarkdownString][ThemeIcon].
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#MarkdownString.constructor)
      */
     constructor(
         value: String = definedExternally,
@@ -88,12 +102,16 @@ open external class MarkdownString {
     /**
      * Appends and escapes the given string to this markdown string.
      * @param value Plain text.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#MarkdownString.appendText)
      */
     fun appendText(value: String): MarkdownString
 
     /**
      * Appends the given string 'as is' to this markdown string. When {@linkcode MarkdownString.supportThemeIcons supportThemeIcons} is `true`, [ThemeIcons][ThemeIcon] in the `value` will be iconified.
      * @param value Markdown string.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#MarkdownString.appendMarkdown)
      */
     fun appendMarkdown(value: String): MarkdownString
 
@@ -101,6 +119,8 @@ open external class MarkdownString {
      * Appends the given string as codeblock using the provided language.
      * @param value A code snippet.
      * @param language An optional [language identifier][languages.getLanguages].
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#MarkdownString.appendCodeblock)
      */
     fun appendCodeblock(
         value: String,

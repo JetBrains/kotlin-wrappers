@@ -14,6 +14,8 @@ import kotlin.js.definedExternally
  * Notebook cell output represents a result of executing a cell. It is a container type for multiple
  * [output items][NotebookCellOutputItem] where contained items represent the same result but
  * use different MIME types.
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#NotebookCellOutput)
  */
 open external class NotebookCellOutput {
     /**
@@ -28,11 +30,15 @@ open external class NotebookCellOutput {
      * 	vscode.NotebookCellOutputItem.text('Hey', 'text/plain'), // INVALID: repeated type, editor will pick just one
      * ])
      * ```
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#NotebookCellOutput.items)
      */
     var items: ReadonlyArray<NotebookCellOutputItem>
 
     /**
      * Arbitrary metadata for this cell output. Can be anything but must be JSON-stringifyable.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#NotebookCellOutput.metadata)
      */
     var metadata: Record<JsString, *>?
 
@@ -41,6 +47,8 @@ open external class NotebookCellOutput {
      *
      * @param items Notebook output items.
      * @param metadata Optional metadata.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#NotebookCellOutput.constructor)
      */
     constructor(
         items: ReadonlyArray<NotebookCellOutputItem>,

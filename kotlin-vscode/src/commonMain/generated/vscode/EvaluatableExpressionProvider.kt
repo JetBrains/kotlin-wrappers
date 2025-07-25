@@ -6,6 +6,8 @@ package vscode
  * The evaluatable expression provider interface defines the contract between extensions and
  * the debug hover. In this contract the provider returns an evaluatable expression for a given position
  * in a document and the editor evaluates this expression in the active debug session and shows the result in a debug hover.
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#EvaluatableExpressionProvider)
  */
 external interface EvaluatableExpressionProvider {
     /**
@@ -18,6 +20,8 @@ external interface EvaluatableExpressionProvider {
      * @param token A cancellation token.
      * @returns An EvaluatableExpression or a thenable that resolves to such. The lack of a result can be
      * signaled by returning `undefined` or `null`.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#EvaluatableExpressionProvider.provideEvaluatableExpression)
      */
     fun provideEvaluatableExpression(
         document: TextDocument,

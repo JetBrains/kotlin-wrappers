@@ -8,6 +8,8 @@ import js.core.JsAny
  * Additional information the webview view being resolved.
  *
  * @param T Type of the webview's state.
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#WebviewViewResolveContext)
  */
 external interface WebviewViewResolveContext<T : JsAny?> {
     /**
@@ -38,6 +40,8 @@ external interface WebviewViewResolveContext<T : JsAny?> {
      *
      * The editor ensures that the persisted state is saved correctly when a webview is hidden and across
      * editor restarts.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#WebviewViewResolveContext.state)
      */
     val state: T?
 }

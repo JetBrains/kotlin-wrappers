@@ -7,6 +7,8 @@ import js.array.ReadonlyArray
 /**
  * Represents an item that can be selected from
  * a list of items.
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#QuickPickItem)
  */
 external interface QuickPickItem {
     /**
@@ -15,17 +17,23 @@ external interface QuickPickItem {
      *
      * Note: When [kind][QuickPickItem.kind] is set to [QuickPickItemKind.Default] (so a regular item
      * instead of a separator), it supports rendering of [theme icons][ThemeIcon] via the `$(<name>)`-syntax.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#QuickPickItem.label)
      */
     var label: String
 
     /**
      * The kind of QuickPickItem that will determine how this item is rendered in the quick pick. When not specified,
      * the default is [QuickPickItemKind.Default].
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#QuickPickItem.kind)
      */
     var kind: QuickPickItemKind?
 
     /**
      * The icon path or [ThemeIcon] for the QuickPickItem.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#QuickPickItem.iconPath)
      */
     var iconPath: IconPath?
 
@@ -34,6 +42,8 @@ external interface QuickPickItem {
      * [theme icons][ThemeIcon] via the `$(<name>)`-syntax.
      *
      * Note: this property is ignored when [kind][QuickPickItem.kind] is set to [QuickPickItemKind.Separator]
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#QuickPickItem.description)
      */
     var description: String?
 
@@ -42,6 +52,8 @@ external interface QuickPickItem {
      * [theme icons][ThemeIcon] via the `$(<name>)`-syntax.
      *
      * Note: this property is ignored when [kind][QuickPickItem.kind] is set to [QuickPickItemKind.Separator]
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#QuickPickItem.detail)
      */
     var detail: String?
 
@@ -55,6 +67,8 @@ external interface QuickPickItem {
      * @see [QuickPickOptions.canPickMany]
      *
      * Note: this property is ignored when [kind][QuickPickItem.kind] is set to [QuickPickItemKind.Separator]
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#QuickPickItem.picked)
      */
     var picked: Boolean?
 
@@ -62,6 +76,8 @@ external interface QuickPickItem {
      * Always show this item.
      *
      * Note: this property is ignored when [kind][QuickPickItem.kind] is set to [QuickPickItemKind.Separator]
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#QuickPickItem.alwaysShow)
      */
     var alwaysShow: Boolean?
 
@@ -72,6 +88,8 @@ external interface QuickPickItem {
      * the [showQuickPick()][window.showQuickPick] API.
      *
      * Note: this property is ignored when [kind][QuickPickItem.kind] is set to [QuickPickItemKind.Separator]
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#QuickPickItem.buttons)
      */
     var buttons: ReadonlyArray<QuickInputButton>?
 }

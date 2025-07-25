@@ -16,6 +16,8 @@ import js.core.JsAny
  *
  * Providers are asked for completions either explicitly by a user gesture or -depending on the configuration-
  * implicitly when typing words or trigger characters.
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#CompletionItemProvider)
  */
 external interface CompletionItemProvider<T : CompletionItem> {
     /**
@@ -28,6 +30,8 @@ external interface CompletionItemProvider<T : CompletionItem> {
      *
      * @returns An array of completions, a [completion list][CompletionList], or a thenable that resolves to either.
      * The lack of a result can be signaled by returning `undefined`, `null`, or an empty array.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#CompletionItemProvider.provideCompletionItems)
      */
     fun provideCompletionItems(
         document: TextDocument,
@@ -54,6 +58,8 @@ external interface CompletionItemProvider<T : CompletionItem> {
      * @param token A cancellation token.
      * @returns The resolved completion item or a thenable that resolves to of such. It is OK to return the given
      * `item`. When no result is returned, the given `item` will be used.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#CompletionItemProvider.resolveCompletionItem)
      */
     var resolveCompletionItem: ((
         item: T,

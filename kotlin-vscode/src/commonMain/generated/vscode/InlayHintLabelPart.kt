@@ -9,10 +9,14 @@ import kotlin.js.JsModule
 
 /**
  * An inlay hint label part allows for interactive and composite labels of inlay hints.
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#InlayHintLabelPart)
  */
 open external class InlayHintLabelPart {
     /**
      * The value of this label part.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#InlayHintLabelPart.value)
      */
     var value: String
 
@@ -21,6 +25,8 @@ open external class InlayHintLabelPart {
      *
      * *Note* that this property can be set late during
      * [resolving][InlayHintsProvider.resolveInlayHint] of inlay hints.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#InlayHintLabelPart.tooltip)
      */
     var tooltip: JsAny /* string | MarkdownString */?
 
@@ -35,6 +41,8 @@ open external class InlayHintLabelPart {
      *
      * *Note* that this property can be set late during
      * [resolving][InlayHintsProvider.resolveInlayHint] of inlay hints.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#InlayHintLabelPart.location)
      */
     var location: Location?
 
@@ -46,6 +54,8 @@ open external class InlayHintLabelPart {
      *
      * *Note* that this property can be set late during
      * [resolving][InlayHintsProvider.resolveInlayHint] of inlay hints.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#InlayHintLabelPart.command)
      */
     var command: Command?
 
@@ -53,6 +63,8 @@ open external class InlayHintLabelPart {
      * Creates a new inlay hint label part.
      *
      * @param value The value of the part.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#InlayHintLabelPart.constructor)
      */
     constructor(value: String)
 }

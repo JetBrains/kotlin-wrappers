@@ -14,6 +14,8 @@ import kotlin.js.definedExternally
 
 /**
  * Namespace for authentication.
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#authentication)
  */
 external object authentication {
     /**
@@ -28,6 +30,8 @@ external object authentication {
      * @param scopes A list of scopes representing the permissions requested. These are dependent on the authentication provider
      * @param options The [AuthenticationGetSessionOptions] to use
      * @returns A thenable that resolves to an authentication session
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#authentication.getSession)
      */
     fun getSession(
         providerId: String,
@@ -47,6 +51,8 @@ external object authentication {
      * @param scopes A list of scopes representing the permissions requested. These are dependent on the authentication provider
      * @param options The [AuthenticationGetSessionOptions] to use
      * @returns A thenable that resolves to an authentication session
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#authentication.getSession)
      */
     // getSession(providerId: string, scopes: readonly string[], options: AuthenticationGetSessionOptions & { /** literal-type defines return type */forceNewSession: true | AuthenticationGetSessionPresentationOptions | AuthenticationForceNewSessionOptions }): Thenable<AuthenticationSession>
 
@@ -62,6 +68,8 @@ external object authentication {
      * @param scopes A list of scopes representing the permissions requested. These are dependent on the authentication provider
      * @param options The [AuthenticationGetSessionOptions] to use
      * @returns A thenable that resolves to an authentication session if available, or undefined if there are no sessions
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#authentication.getSession)
      */
     fun getSession(
         providerId: String,
@@ -80,12 +88,16 @@ external object authentication {
      *
      * @param providerId The id of the provider to use
      * @returns A thenable that resolves to a readonly array of authentication accounts.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#authentication.getAccounts)
      */
     fun getAccounts(providerId: String): PromiseLike<ReadonlyArray<AuthenticationSessionAccountInformation>>
 
     /**
      * An [Event] which fires when the authentication sessions of an authentication provider have
      * been added, removed, or changed.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#authentication.onDidChangeSessions)
      */
     val onDidChangeSessions: Event<AuthenticationSessionsChangeEvent>
 
@@ -100,6 +112,8 @@ external object authentication {
      * @param provider The authentication provider provider.
      * @param options Additional options for the provider.
      * @returns A [Disposable] that unregisters this provider when being disposed.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#authentication.registerAuthenticationProvider)
      */
     fun registerAuthenticationProvider(
         id: String,

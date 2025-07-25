@@ -8,10 +8,14 @@ import js.core.Void
 /**
  * The document semantic tokens provider interface defines the contract between extensions and
  * semantic tokens.
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#DocumentSemanticTokensProvider)
  */
 external interface DocumentSemanticTokensProvider {
     /**
      * An optional event to signal that the semantic tokens from this provider have changed.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#DocumentSemanticTokensProvider.onDidChangeSemanticTokens)
      */
     var onDidChangeSemanticTokens: Event<Void>?
 
@@ -73,6 +77,8 @@ external interface DocumentSemanticTokensProvider {
      * @see [SemanticTokensBuilder] for a helper to encode tokens as integers.
      * *NOTE*: When doing edits, it is possible that multiple edits occur until the editor decides to invoke the semantic tokens provider.
      * *NOTE*: If the provider cannot temporarily compute semantic tokens, it can indicate this by throwing an error with the message 'Busy'.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#DocumentSemanticTokensProvider.provideDocumentSemanticTokens)
      */
     fun provideDocumentSemanticTokens(
         document: TextDocument,
@@ -107,6 +113,8 @@ external interface DocumentSemanticTokensProvider {
      *
      * *NOTE*: If the provider cannot compute `SemanticTokensEdits`, it can "give up" and return all the tokens in the document again.
      * *NOTE*: All edits in `SemanticTokensEdits` contain indices in the old integers array, so they all refer to the previous result state.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#DocumentSemanticTokensProvider.provideDocumentSemanticTokensEdits)
      */
     var provideDocumentSemanticTokensEdits: ((
         document: TextDocument,

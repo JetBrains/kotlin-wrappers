@@ -8,10 +8,14 @@ import kotlin.js.JsModule
 
 /**
  * Predefined buttons for [QuickPick] and [InputBox].
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#QuickInputButtons)
  */
 open external class QuickInputButtons {
     /**
      * @hidden
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#QuickInputButtons.constructor)
      */
     private constructor()
 
@@ -21,6 +25,8 @@ open external class QuickInputButtons {
          *
          * When a navigation 'back' button is needed this one should be used for consistency.
          * It comes with a predefined icon, tooltip and location.
+         *
+         * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#QuickInputButtons.Back)
          */
         val Back: QuickInputButton
     }

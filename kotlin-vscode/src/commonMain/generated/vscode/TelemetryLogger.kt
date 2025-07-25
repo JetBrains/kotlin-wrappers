@@ -18,21 +18,29 @@ import kotlin.js.definedExternally
  *
  * To get an instance of a `TelemetryLogger`, use
  * [`createTelemetryLogger`][env.createTelemetryLogger].
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TelemetryLogger)
  */
 external interface TelemetryLogger :
     DisposableLike {
     /**
      * An [Event] which fires when the enablement state of usage or error telemetry changes.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TelemetryLogger.onDidChangeEnableStates)
      */
     val onDidChangeEnableStates: Event<TelemetryLogger>
 
     /**
      * Whether or not usage telemetry is enabled for this logger.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TelemetryLogger.isUsageEnabled)
      */
     val isUsageEnabled: Boolean
 
     /**
      * Whether or not error telemetry is enabled for this logger.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TelemetryLogger.isErrorsEnabled)
      */
     val isErrorsEnabled: Boolean
 
@@ -43,6 +51,8 @@ external interface TelemetryLogger :
      * Automatically supports echoing to extension telemetry output channel.
      * @param eventName The event name to log
      * @param data The data to log
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TelemetryLogger.logUsage)
      */
     fun logUsage(
         eventName: String,
@@ -56,6 +66,8 @@ external interface TelemetryLogger :
      * Automatically supports echoing to extension telemetry output channel.
      * @param eventName The event name to log
      * @param data The data to log
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TelemetryLogger.logError)
      */
     fun logError(
         eventName: String,
@@ -70,6 +82,8 @@ external interface TelemetryLogger :
      * Will also automatically log any exceptions thrown within the extension host process.
      * @param error The error object which contains the stack trace cleaned of PII
      * @param data Additional data to log alongside the stack trace
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TelemetryLogger.logError)
      */
     fun logError(
         error: JsError,
@@ -78,6 +92,8 @@ external interface TelemetryLogger :
 
     /**
      * Dispose this object and free resources.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TelemetryLogger.dispose)
      */
     override fun dispose()
 }

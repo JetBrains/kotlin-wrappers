@@ -10,10 +10,14 @@ import js.objects.Record
  * Describes a change to a notebook cell.
  *
  * @see [NotebookDocumentChangeEvent]
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#NotebookDocumentCellChange)
  */
 external interface NotebookDocumentCellChange {
     /**
      * The affected cell.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#NotebookDocumentCellChange.cell)
      */
     val cell: NotebookCell
 
@@ -22,21 +26,29 @@ external interface NotebookDocumentCellChange {
      *
      * *Note* that you should use the [onDidChangeTextDocument][workspace.onDidChangeTextDocument]-event
      * for detailed change information, like what edits have been performed.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#NotebookDocumentCellChange.document)
      */
     val document: TextDocument?
 
     /**
      * The new metadata of the cell or `undefined` when it did not change.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#NotebookDocumentCellChange.metadata)
      */
     val metadata: Record<JsString, *>?
 
     /**
      * The new outputs of the cell or `undefined` when they did not change.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#NotebookDocumentCellChange.outputs)
      */
     val outputs: ReadonlyArray<NotebookCellOutput>?
 
     /**
      * The new execution summary of the cell or `undefined` when it did not change.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#NotebookDocumentCellChange.executionSummary)
      */
     val executionSummary: NotebookCellExecutionSummary?
 }

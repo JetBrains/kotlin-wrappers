@@ -7,6 +7,8 @@ import js.array.ReadonlyArray
 /**
  * The document color provider defines the contract between extensions and feature of
  * picking and modifying colors in the editor.
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#DocumentColorProvider)
  */
 external interface DocumentColorProvider {
     /**
@@ -16,6 +18,8 @@ external interface DocumentColorProvider {
      * @param token A cancellation token.
      * @returns An array of [color information][ColorInformation] or a thenable that resolves to such. The lack of a result
      * can be signaled by returning `undefined`, `null`, or an empty array.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#DocumentColorProvider.provideDocumentColors)
      */
     fun provideDocumentColors(
         document: TextDocument,
@@ -30,6 +34,8 @@ external interface DocumentColorProvider {
      * @param token A cancellation token.
      * @returns An array of color presentations or a thenable that resolves to such. The lack of a result
      * can be signaled by returning `undefined`, `null`, or an empty array.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#DocumentColorProvider.provideColorPresentations)
      */
     /*
     provideColorPresentations(color: Color, context: {

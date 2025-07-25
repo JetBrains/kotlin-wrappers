@@ -9,11 +9,15 @@ import js.promise.PromiseLike
 
 /**
  * A provider for performing authentication to a service.
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#AuthenticationProvider)
  */
 external interface AuthenticationProvider {
     /**
      * An [Event] which fires when the array of sessions has changed, or data
      * within a session has changed.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#AuthenticationProvider.onDidChangeSessions)
      */
     val onDidChangeSessions: Event<AuthenticationProviderAuthenticationSessionsChangeEvent>
 
@@ -23,6 +27,8 @@ external interface AuthenticationProvider {
      * these permissions, otherwise all sessions should be returned.
      * @param options Additional options for getting sessions.
      * @returns A promise that resolves to an array of authentication sessions.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#AuthenticationProvider.getSessions)
      */
     fun getSessions(
         scopes: ReadonlyArray<JsString>?,
@@ -42,6 +48,8 @@ external interface AuthenticationProvider {
      * @param scopes A list of scopes, permissions, that the new session should be created with.
      * @param options Additional options for creating a session.
      * @returns A promise that resolves to an authentication session.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#AuthenticationProvider.createSession)
      */
     fun createSession(
         scopes: ReadonlyArray<JsString>,
@@ -55,6 +63,8 @@ external interface AuthenticationProvider {
      *
      * If a session cannot be removed, the provider should reject with an error message.
      * @param sessionId The id of the session to remove.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#AuthenticationProvider.removeSession)
      */
     fun removeSession(sessionId: String): PromiseLike<Void>
 }

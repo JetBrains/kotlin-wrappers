@@ -15,5 +15,7 @@ import js.core.JsAny
  *
  * @example
  * let sel:DocumentSelector = { scheme: 'file', language: 'typescript' };
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#DocumentSelector)
  */
 typealias DocumentSelector = JsAny /* DocumentFilter | string | ReadonlyArray<DocumentFilter | string> */

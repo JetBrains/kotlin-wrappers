@@ -9,21 +9,29 @@ import js.promise.PromiseLike
 /**
  * A comment controller is able to provide [comments][CommentThread] support to the editor and
  * provide users various ways to interact with comments.
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#CommentController)
  */
 external interface CommentController :
     DisposableLike {
     /**
      * The id of this comment controller.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#CommentController.id)
      */
     val id: String
 
     /**
      * The human-readable label of this comment controller.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#CommentController.label)
      */
     val label: String
 
     /**
      * Comment controller options
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#CommentController.options)
      */
     var options: CommentOptions?
 
@@ -31,6 +39,8 @@ external interface CommentController :
      * Optional commenting range provider. Provide a list [ranges][Range] which support commenting to any given resource uri.
      *
      * If not provided, users cannot leave any comments.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#CommentController.commentingRangeProvider)
      */
     var commentingRangeProvider: CommentingRangeProvider?
 
@@ -41,6 +51,8 @@ external interface CommentController :
      * @param uri The uri of the document the thread has been created on.
      * @param range The range the comment thread is located within the document.
      * @param comments The ordered comments of the thread.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#CommentController.createCommentThread)
      */
     fun createCommentThread(
         uri: Uri,
@@ -50,6 +62,8 @@ external interface CommentController :
 
     /**
      * Optional reaction handler for creating and deleting reactions on a [Comment].
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#CommentController.reactionHandler)
      */
     var reactionHandler: (
         comment: Comment,
@@ -61,6 +75,8 @@ external interface CommentController :
      *
      * Once disposed, all [comment threads][CommentThread] created by this comment controller will also be removed from the editor
      * and Comments Panel.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#CommentController.dispose)
      */
     override fun dispose()
 }

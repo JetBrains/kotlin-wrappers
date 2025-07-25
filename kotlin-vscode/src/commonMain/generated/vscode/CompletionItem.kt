@@ -24,34 +24,46 @@ import kotlin.js.definedExternally
  *
  * @see [CompletionItemProvider.provideCompletionItems]
  * @see [CompletionItemProvider.resolveCompletionItem]
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#CompletionItem)
  */
 open external class CompletionItem {
     /**
      * The label of this completion item. By default
      * this is also the text that is inserted when selecting
      * this completion.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#CompletionItem.label)
      */
     var label: JsAny /* string | CompletionItemLabel */
 
     /**
      * The kind of this completion item. Based on the kind
      * an icon is chosen by the editor.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#CompletionItem.kind)
      */
     var kind: CompletionItemKind?
 
     /**
      * Tags for this completion item.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#CompletionItem.tags)
      */
     var tags: ReadonlyArray<CompletionItemTag>?
 
     /**
      * A human-readable string with additional information
      * about this item, like type or symbol information.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#CompletionItem.detail)
      */
     var detail: String?
 
     /**
      * A human-readable string that represents a doc-comment.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#CompletionItem.documentation)
      */
     var documentation: JsAny /* string | MarkdownString */?
 
@@ -66,6 +78,8 @@ open external class CompletionItem {
      * when completions match equally well. The prefix is defined by the
      * {@linkcode CompletionItem.range range}-property and can therefore be different
      * for each completion.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#CompletionItem.sortText)
      */
     var sortText: String?
 
@@ -76,6 +90,8 @@ open external class CompletionItem {
      *
      * Note that the filter text is matched against the leading word (prefix) which is defined
      * by the {@linkcode CompletionItem.range range}-property.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#CompletionItem.filterText)
      */
     var filterText: String?
 
@@ -83,6 +99,8 @@ open external class CompletionItem {
      * Select this item when showing. *Note* that only one completion item can be selected and
      * that the editor decides which item that is. The rule is that the *first* item of those
      * that match best is selected.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#CompletionItem.preselect)
      */
     var preselect: Boolean?
 
@@ -90,6 +108,8 @@ open external class CompletionItem {
      * A string or snippet that should be inserted in a document when selecting
      * this completion. When `falsy` the [label][CompletionItem.label]
      * is used.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#CompletionItem.insertText)
      */
     var insertText: JsAny /* string | SnippetString */?
 
@@ -103,6 +123,8 @@ open external class CompletionItem {
      * *Note 1:* A range must be a [single line][Range.isSingleLine] and it must
      * [contain} the position at which completion has been {@link CompletionItemProvider.provideCompletionItems requested][Range.contains].
      * *Note 2:* A insert range must be a prefix of a replace range, that means it must be contained and starting at the same position.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#CompletionItem.range)
      */
     /*
     range?: Range | {
@@ -121,6 +143,8 @@ open external class CompletionItem {
      * An optional set of characters that when pressed while this completion is active will accept it first and
      * then type that character. *Note* that all commit characters should have `length=1` and that superfluous
      * characters will be ignored.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#CompletionItem.commitCharacters)
      */
     var commitCharacters: ReadonlyArray<JsString>?
 
@@ -128,6 +152,8 @@ open external class CompletionItem {
      * Keep whitespace of the [insertText][CompletionItem.insertText] as is. By default, the editor adjusts leading
      * whitespace of new lines so that they match the indentation of the line for which the item is accepted - setting
      * this to `true` will prevent that.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#CompletionItem.keepWhitespace)
      */
     var keepWhitespace: Boolean?
 
@@ -135,6 +161,8 @@ open external class CompletionItem {
      * An optional array of additional [text edits][TextEdit] that are applied when
      * selecting this completion. Edits must not overlap with the main [edit][CompletionItem.textEdit]
      * nor with themselves.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#CompletionItem.additionalTextEdits)
      */
     var additionalTextEdits: ReadonlyArray<TextEdit>?
 
@@ -142,6 +170,8 @@ open external class CompletionItem {
      * An optional [Command] that is executed *after* inserting this completion. *Note* that
      * additional modifications to the current document should be described with the
      * [additionalTextEdits][CompletionItem.additionalTextEdits]-property.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#CompletionItem.command)
      */
     var command: Command?
 
@@ -153,6 +183,8 @@ open external class CompletionItem {
      *
      * @param label The label of the completion.
      * @param kind The [kind][CompletionItemKind] of the completion.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#CompletionItem.constructor)
      */
     constructor(
         label: JsAny, /* string | CompletionItemLabel */

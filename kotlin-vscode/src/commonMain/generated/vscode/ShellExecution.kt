@@ -11,6 +11,8 @@ import kotlin.js.definedExternally
 
 /**
  * Represents a task execution that happens inside a shell.
+ *
+ * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#ShellExecution)
  */
 open external class ShellExecution {
     /**
@@ -18,6 +20,8 @@ open external class ShellExecution {
      *
      * @param commandLine The command line to execute.
      * @param options Optional options for the started the shell.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#ShellExecution.constructor)
      */
     constructor(
         commandLine: String,
@@ -33,6 +37,8 @@ open external class ShellExecution {
      * @param command The command to execute.
      * @param args The command arguments.
      * @param options Optional options for the started the shell.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#ShellExecution.constructor)
      */
     constructor(
         command: JsAny, /* string | ShellQuotedString */
@@ -42,22 +48,30 @@ open external class ShellExecution {
 
     /**
      * The shell command line. Is `undefined` if created with a command and arguments.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#ShellExecution.commandLine)
      */
     var commandLine: String?
 
     /**
      * The shell command. Is `undefined` if created with a full command line.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#ShellExecution.command)
      */
     var command: JsAny /* string | ShellQuotedString */?
 
     /**
      * The shell args. Is `undefined` if created with a full command line.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#ShellExecution.args)
      */
     var args: ReadonlyArray<JsAny /* string | ShellQuotedString */>?
 
     /**
      * The shell options used when the command line is executed in a shell.
      * Defaults to undefined.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#ShellExecution.options)
      */
     var options: ShellExecutionOptions?
 }
