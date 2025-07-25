@@ -14,7 +14,14 @@ open external class SVGAElement
 private constructor() :
     SVGGraphicsElement,
     SVGURIReference {
+    /**
+     * The **`rel`** property of the SVGAElement returns a string reflecting the value of the `rel` attribute of the SVG a element.
+     */
     var rel: String
+
+    /**
+     * The **`relList`** read-only property of the SVGAElement returns a live DOMTokenList reflecting the space-separated string `<list-of-Link-Types>` values of the `rel` attribute of the SVG a element.
+     */
     val relList: DOMTokenList<JsString>
 
     /**
