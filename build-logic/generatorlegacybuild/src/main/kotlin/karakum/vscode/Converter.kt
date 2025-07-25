@@ -146,7 +146,7 @@ private fun convertNamespace(
     return sequenceOf(
         comment,
         "$declaration {",
-        convertMembers(membersSource, commenter),
+        convertMembers(membersSource, commenter, true),
         "}",
     ).joinToString("\n")
 }
@@ -200,7 +200,11 @@ private fun convertInterface(
         .trimIndent()
         .addDisposableLikeSupport()
 
-    var members = convertMembers(membersSource, commenter)
+    var members = convertMembers(
+        source = membersSource,
+        parentCommenter = commenter,
+        asyncSupport = "export class " in source,
+    )
 
     val isDisposable = "\nfun dispose()" in members
             && DISPOSABLE_LIKE !in declaration
@@ -236,6 +240,7 @@ private val NON_JSO = setOf(
 private fun convertMembers(
     source: String,
     parentCommenter: Commenter,
+    asyncSupport: Boolean,
 ): String {
     val members = mutableListOf<String>()
     val staticMembers = mutableListOf<String>()
@@ -271,6 +276,7 @@ private fun convertMembers(
             var result = convertMember(
                 comment = kdoc(commentSource, commenter),
                 source = memberSource,
+                asyncSupport = asyncSupport,
             )
 
             if (invokeOperator) {
@@ -302,6 +308,7 @@ private fun convertMembers(
 private fun convertMember(
     comment: String,
     source: String,
+    asyncSupport: Boolean,
 ): String {
     val declaration = when {
         "\n" in source && (
@@ -331,7 +338,7 @@ private fun convertMember(
         isPropertySource(source)
             -> convertProperty(source)
 
-        else -> convertFunction(source)
+        else -> convertFunction(source, asyncSupport)
     }
 
     return comment + declaration
@@ -408,6 +415,7 @@ private val OPTIONS_REGEX = Regex(
 
 private fun convertFunction(
     source: String,
+    asyncSupport: Boolean,
 ): String {
     if ("(" !in source)
         return "//  $source"
@@ -419,7 +427,8 @@ private fun convertFunction(
         return convertFunction(
             source.replace("<T extends string>", "")
                 .replace("T[]", "string[]")
-                .replace("Thenable<T |", "Thenable<string |")
+                .replace("Thenable<T |", "Thenable<string |"),
+            asyncSupport,
         )
 
     when (source) {
@@ -486,7 +495,7 @@ private fun convertFunction(
         val optionsName = name.replaceFirstChar { it.uppercase() } + "Options"
         val newSource = source.replace(optionsBody, optionsName)
 
-        return convertFunction(newSource) + "\n\n" +
+        return convertFunction(newSource, asyncSupport) + "\n\n" +
                 convertInterface(optionsName, "export interface $optionsName $optionsBody")
                     .replace("\nexternal interface ", "\ninterface ")
     }
@@ -515,14 +524,25 @@ private fun convertFunction(
         getReturnSignature = { if (it != "Void") ": $it" else "" },
     )
 
+    val returnType = body.substringAfterLast("): ", "")
+    val isAsync = asyncSupport && (
+            returnType.startsWith("Promise<")
+                    || returnType.startsWith("PromiseLike<")
+                    || returnType.startsWith("PromiseResult<")
+                    || returnType.startsWith("ProviderResult<")
+            )
+
+    val finalName = if (isAsync) name + "Async" else name
     val modifier = if (source.startsWith("(")) "operator" else ""
-    return sequenceOf(
+    val result = sequenceOf(
         modifier,
         "fun",
         typeParameters,
-        "$name$body",
+        "$finalName$body",
     ).filter { it.isNotEmpty() }
         .joinToString(" ")
+
+    return (if (isAsync) "@JsName(\"$name\")\n" else "") + result
 }
 
 private fun convertFunctionBody(

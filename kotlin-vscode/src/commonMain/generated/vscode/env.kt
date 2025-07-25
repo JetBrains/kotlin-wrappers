@@ -8,6 +8,7 @@ import js.core.JsBoolean
 import js.core.JsString
 import js.promise.PromiseLike
 import kotlin.js.JsModule
+import kotlin.js.JsName
 import kotlin.js.definedExternally
 
 /**
@@ -171,7 +172,8 @@ external object env {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#env.openExternal)
      */
-    fun openExternal(target: Uri): PromiseLike<JsBoolean>
+    @JsName("openExternal")
+    fun openExternalAsync(target: Uri): PromiseLike<JsBoolean>
 
     /**
      * Resolves a uri to a form that is accessible externally.
@@ -228,7 +230,8 @@ external object env {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#env.asExternalUri)
      */
-    fun asExternalUri(target: Uri): PromiseLike<Uri>
+    @JsName("asExternalUri")
+    fun asExternalUriAsync(target: Uri): PromiseLike<Uri>
 
     /**
      * The current log level of the editor.

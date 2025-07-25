@@ -10,8 +10,8 @@ import js.core.JsString
 import js.objects.JsPlainObject
 import js.promise.PromiseLike
 import vscode.window.createStatusBarItem
-import vscode.window.showInformationMessage
 import kotlin.js.JsModule
+import kotlin.js.JsName
 import kotlin.js.definedExternally
 
 /**
@@ -238,7 +238,8 @@ external object window {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#window.showTextDocument)
      */
-    fun showTextDocument(
+    @JsName("showTextDocument")
+    fun showTextDocumentAsync(
         document: TextDocument,
         column: ViewColumn = definedExternally,
         preserveFocus: Boolean = definedExternally,
@@ -254,7 +255,8 @@ external object window {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#window.showTextDocument)
      */
-    fun showTextDocument(
+    @JsName("showTextDocument")
+    fun showTextDocumentAsync(
         document: TextDocument,
         options: TextDocumentShowOptions = definedExternally,
     ): PromiseLike<TextEditor>
@@ -270,7 +272,8 @@ external object window {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#window.showTextDocument)
      */
-    fun showTextDocument(
+    @JsName("showTextDocument")
+    fun showTextDocumentAsync(
         uri: Uri,
         options: TextDocumentShowOptions = definedExternally,
     ): PromiseLike<TextEditor>
@@ -285,7 +288,8 @@ external object window {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#window.showNotebookDocument)
      */
-    fun showNotebookDocument(
+    @JsName("showNotebookDocument")
+    fun showNotebookDocumentAsync(
         document: NotebookDocument,
         options: NotebookDocumentShowOptions = definedExternally,
     ): PromiseLike<NotebookEditor>
@@ -310,7 +314,8 @@ external object window {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#window.showInformationMessage)
      */
-    fun showInformationMessage(
+    @JsName("showInformationMessage")
+    fun showInformationMessageAsync(
         message: String,
         vararg items: String,
     ): PromiseLike<JsString?>
@@ -326,7 +331,8 @@ external object window {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#window.showInformationMessage)
      */
-    fun showInformationMessage(
+    @JsName("showInformationMessage")
+    fun showInformationMessageAsync(
         message: String,
         options: MessageOptions,
         vararg items: String,
@@ -343,7 +349,8 @@ external object window {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#window.showInformationMessage)
      */
-    fun <T : MessageItem> showInformationMessage(
+    @JsName("showInformationMessage")
+    fun <T : MessageItem> showInformationMessageAsync(
         message: String,
         vararg items: T,
     ): PromiseLike<T?>
@@ -360,7 +367,8 @@ external object window {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#window.showInformationMessage)
      */
-    fun <T : MessageItem> showInformationMessage(
+    @JsName("showInformationMessage")
+    fun <T : MessageItem> showInformationMessageAsync(
         message: String,
         options: MessageOptions,
         vararg items: T,
@@ -377,7 +385,8 @@ external object window {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#window.showWarningMessage)
      */
-    fun showWarningMessage(
+    @JsName("showWarningMessage")
+    fun showWarningMessageAsync(
         message: String,
         vararg items: String,
     ): PromiseLike<JsString?>
@@ -394,7 +403,8 @@ external object window {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#window.showWarningMessage)
      */
-    fun showWarningMessage(
+    @JsName("showWarningMessage")
+    fun showWarningMessageAsync(
         message: String,
         options: MessageOptions,
         vararg items: String,
@@ -411,7 +421,8 @@ external object window {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#window.showWarningMessage)
      */
-    fun <T : MessageItem> showWarningMessage(
+    @JsName("showWarningMessage")
+    fun <T : MessageItem> showWarningMessageAsync(
         message: String,
         vararg items: T,
     ): PromiseLike<T?>
@@ -428,7 +439,8 @@ external object window {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#window.showWarningMessage)
      */
-    fun <T : MessageItem> showWarningMessage(
+    @JsName("showWarningMessage")
+    fun <T : MessageItem> showWarningMessageAsync(
         message: String,
         options: MessageOptions,
         vararg items: T,
@@ -445,7 +457,8 @@ external object window {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#window.showErrorMessage)
      */
-    fun showErrorMessage(
+    @JsName("showErrorMessage")
+    fun showErrorMessageAsync(
         message: String,
         vararg items: String,
     ): PromiseLike<JsString?>
@@ -462,7 +475,8 @@ external object window {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#window.showErrorMessage)
      */
-    fun showErrorMessage(
+    @JsName("showErrorMessage")
+    fun showErrorMessageAsync(
         message: String,
         options: MessageOptions,
         vararg items: String,
@@ -479,7 +493,8 @@ external object window {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#window.showErrorMessage)
      */
-    fun <T : MessageItem> showErrorMessage(
+    @JsName("showErrorMessage")
+    fun <T : MessageItem> showErrorMessageAsync(
         message: String,
         vararg items: T,
     ): PromiseLike<T?>
@@ -496,7 +511,8 @@ external object window {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#window.showErrorMessage)
      */
-    fun <T : MessageItem> showErrorMessage(
+    @JsName("showErrorMessage")
+    fun <T : MessageItem> showErrorMessageAsync(
         message: String,
         options: MessageOptions,
         vararg items: T,
@@ -524,7 +540,8 @@ external object window {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#window.showQuickPick)
      */
-    fun showQuickPick(
+    @JsName("showQuickPick")
+    fun showQuickPickAsync(
         items: JsAny, /* string[] | Thenable<readonly string[]> */
         options: QuickPickOptions = definedExternally,
         token: CancellationToken = definedExternally,
@@ -552,7 +569,8 @@ external object window {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#window.showQuickPick)
      */
-    fun <T : QuickPickItem> showQuickPick(
+    @JsName("showQuickPick")
+    fun <T : QuickPickItem> showQuickPickAsync(
         items: JsAny, /* T[] | Thenable<readonly T[]> */
         options: QuickPickOptions = definedExternally,
         token: CancellationToken = definedExternally,
@@ -567,7 +585,8 @@ external object window {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#window.showWorkspaceFolderPick)
      */
-    fun showWorkspaceFolderPick(options: WorkspaceFolderPickOptions = definedExternally): PromiseLike<WorkspaceFolder?>
+    @JsName("showWorkspaceFolderPick")
+    fun showWorkspaceFolderPickAsync(options: WorkspaceFolderPickOptions = definedExternally): PromiseLike<WorkspaceFolder?>
 
     /**
      * Shows a file open dialog to the user which allows to select a file
@@ -578,7 +597,8 @@ external object window {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#window.showOpenDialog)
      */
-    fun showOpenDialog(options: OpenDialogOptions = definedExternally): PromiseLike<ReadonlyArray<Uri>?>
+    @JsName("showOpenDialog")
+    fun showOpenDialogAsync(options: OpenDialogOptions = definedExternally): PromiseLike<ReadonlyArray<Uri>?>
 
     /**
      * Shows a file save dialog to the user which allows to select a file
@@ -589,7 +609,8 @@ external object window {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#window.showSaveDialog)
      */
-    fun showSaveDialog(options: SaveDialogOptions = definedExternally): PromiseLike<Uri?>
+    @JsName("showSaveDialog")
+    fun showSaveDialogAsync(options: SaveDialogOptions = definedExternally): PromiseLike<Uri?>
 
     /**
      * Opens an input box to ask the user for input.
@@ -604,7 +625,8 @@ external object window {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#window.showInputBox)
      */
-    fun showInputBox(
+    @JsName("showInputBox")
+    fun showInputBoxAsync(
         options: InputBoxOptions = definedExternally,
         token: CancellationToken = definedExternally,
     ): PromiseLike<JsString?>

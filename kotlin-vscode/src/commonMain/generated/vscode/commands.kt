@@ -9,6 +9,7 @@ import js.core.JsAny
 import js.core.JsString
 import js.promise.PromiseLike
 import kotlin.js.JsModule
+import kotlin.js.JsName
 import kotlin.js.definedExternally
 
 /**
@@ -113,7 +114,8 @@ external object commands {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#commands.executeCommand)
      */
-    fun <T : JsAny?> executeCommand(
+    @JsName("executeCommand")
+    fun <T : JsAny?> executeCommandAsync(
         command: String,
         vararg rest: JsAny?,
     ): PromiseLike<T>
@@ -127,5 +129,6 @@ external object commands {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#commands.getCommands)
      */
-    fun getCommands(filterInternal: Boolean = definedExternally): PromiseLike<ReadonlyArray<JsString>>
+    @JsName("getCommands")
+    fun getCommandsAsync(filterInternal: Boolean = definedExternally): PromiseLike<ReadonlyArray<JsString>>
 }
