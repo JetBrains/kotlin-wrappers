@@ -2,9 +2,7 @@
 
 package vscode
 
-import js.array.ReadonlyArray
 import js.core.JsAny
-import kotlin.js.definedExternally
 
 /**
  * Represents a typed event.
@@ -23,15 +21,11 @@ external interface Event<T : JsAny?> {
      * a listener function as argument.
      *
      * @param listener The listener function will be called when the event happens.
-     * @param thisArgs The `this`-argument which will be used when calling the event listener.
-     * @param disposables An array to which a [Disposable] will be added.
      * @returns A disposable which unsubscribes the event listener.
      *
-     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#Event.--invoke--)
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#Event)
      */
     operator fun invoke(
         listener: (e: T) -> Unit,
-        thisArgs: JsAny? = definedExternally,
-        disposables: ReadonlyArray<Disposable> = definedExternally,
     ): Disposable
 }

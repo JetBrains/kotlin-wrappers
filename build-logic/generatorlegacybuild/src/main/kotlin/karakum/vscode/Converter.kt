@@ -262,12 +262,23 @@ private fun convertMembers(
                 .substringBefore("<")
                 .substringBefore(":")
                 .substringAfterLast(" ")
-                .ifEmpty { "--invoke--" }
 
-            val result = convertMember(
-                comment = kdoc(commentSource, parentCommenter.child(memberName)),
+            val invokeOperator = memberName.isEmpty()
+            val commenter = parentCommenter
+                .takeIf { invokeOperator }
+                ?: parentCommenter.child(memberName)
+
+            var result = convertMember(
+                comment = kdoc(commentSource, commenter),
                 source = memberSource,
             )
+
+            if (invokeOperator) {
+                result = result.splitToSequence("\n")
+                    .filter { "thisArg" !in it }
+                    .filter { "disposables" !in it }
+                    .joinToString("\n")
+            }
 
             if (declarationSource.startsWith("static ")) {
                 staticMembers.add(result)
@@ -533,7 +544,7 @@ private fun convertFunctionBody(
         .substringBeforeLast("): ")
 
     val parameters = if (parametersSource.isNotEmpty()) {
-        parametersSource
+        val items = parametersSource
             .replace("[number, number]", "[number_,_number]")
             .replace("<string, string", "<string_,_string")
             .replace("<string, any", "<string_,_any")
@@ -578,7 +589,10 @@ private fun convertFunctionBody(
                         "$name: $type" +
                         if (optional) " = definedExternally" else ""
             }
-            .joinToString(",\n")
+            .toList()
+
+        items.singleOrNull()
+            ?: items.joinToString(",\n", "", ",\n")
     } else ""
 
     val returnType = getReturnSignature(kotlinType(source.substringAfterLast("): "), name))
