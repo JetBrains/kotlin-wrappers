@@ -3,12 +3,14 @@
 package vscode
 
 import js.array.ReadonlyArray
+import js.objects.JsPlainObject
 
 /**
  * An [Event] which fires when an [AuthenticationSession] is added, removed, or changed.
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#AuthenticationProviderAuthenticationSessionsChangeEvent)
  */
+@JsPlainObject
 external interface AuthenticationProviderAuthenticationSessionsChangeEvent {
     /**
      * The [AuthenticationSessions][AuthenticationSession] of the [AuthenticationProvider] that have been added.

@@ -2,6 +2,7 @@
 
 package vscode
 
+import js.objects.JsPlainObject
 import js.regexp.RegExp
 
 /**
@@ -9,6 +10,7 @@ import js.regexp.RegExp
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#OnEnterRule)
  */
+@JsPlainObject
 external interface OnEnterRule {
     /**
      * This rule will only execute if the text before the cursor matches this regular expression.

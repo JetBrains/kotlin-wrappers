@@ -2,11 +2,14 @@
 
 package vscode
 
+import js.objects.JsPlainObject
+
 /**
  * Command argument for actions registered in `comments/commentThread/context`.
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#CommentReply)
  */
+@JsPlainObject
 external interface CommentReply {
     /**
      * The active [comment thread][CommentThread]

@@ -82,6 +82,7 @@ private fun fileContent(
         import js.iterable.AsyncIterable
         import js.iterable.JsIterable
         import js.errors.JsError
+        import js.objects.JsPlainObject
         import js.objects.ReadonlyRecord
         import js.objects.Record
         import js.promise.PromiseLike

@@ -3,6 +3,7 @@
 package vscode
 
 import js.core.JsAny
+import js.objects.JsPlainObject
 
 /**
  * A tool that is available to the language model via [LanguageModelChatRequestOptions]. A language model uses all the
@@ -10,6 +11,7 @@ import js.core.JsAny
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#LanguageModelChatTool)
  */
+@JsPlainObject
 external interface LanguageModelChatTool {
     /**
      * The name of the tool.

@@ -2,6 +2,8 @@
 
 package vscode
 
+import js.objects.JsPlainObject
+
 /**
  * Describes how to select language models for chat requests.
  *
@@ -9,6 +11,7 @@ package vscode
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#LanguageModelChatSelector)
  */
+@JsPlainObject
 external interface LanguageModelChatSelector {
     /**
      * A vendor of language models.

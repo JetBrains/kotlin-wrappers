@@ -213,6 +213,10 @@ private fun convertInterface(
         members = members.replace("\nfun dispose()", "\noverride fun dispose()")
     }
 
+    if (" interface " in declaration && "\nfun " !in members && !isDisposable && name !in NON_JSO) {
+        declaration = "@JsPlainObject\n$declaration"
+    }
+
     return sequenceOf(
         comment,
         "$declaration {",
@@ -220,6 +224,14 @@ private fun convertInterface(
         "}",
     ).joinToString("\n")
 }
+
+private val NON_JSO = setOf(
+    "Event",
+    "FileSystemWatcher",
+    "InputBox",
+    "QuickPick",
+    "TreeView",
+)
 
 private fun convertMembers(
     source: String,

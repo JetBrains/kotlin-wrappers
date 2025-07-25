@@ -3,6 +3,7 @@
 package vscode
 
 import js.core.JsAny
+import js.objects.JsPlainObject
 
 /**
  * Additional information the webview view being resolved.
@@ -11,6 +12,7 @@ import js.core.JsAny
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#WebviewViewResolveContext)
  */
+@JsPlainObject
 external interface WebviewViewResolveContext<T : JsAny?> {
     /**
      * Persisted state from the webview content.

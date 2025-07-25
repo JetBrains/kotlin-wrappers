@@ -2,11 +2,14 @@
 
 package vscode
 
+import js.objects.JsPlainObject
+
 /**
  * Represents the input box in the Source Control viewlet.
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#SourceControlInputBox)
  */
+@JsPlainObject
 external interface SourceControlInputBox {
     /**
      * Setter and getter for the contents of the input box.

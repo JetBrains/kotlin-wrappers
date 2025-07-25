@@ -3,12 +3,14 @@
 package vscode
 
 import js.core.JsInt53
+import js.objects.JsPlainObject
 
 /**
  * The `FileStat`-type represents metadata about a file
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#FileStat)
  */
+@JsPlainObject
 external interface FileStat {
     /**
      * The type of the file, e.g. is a regular file, a directory, or symbolic link

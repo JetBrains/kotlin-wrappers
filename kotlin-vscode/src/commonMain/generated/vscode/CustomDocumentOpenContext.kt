@@ -2,6 +2,7 @@
 
 package vscode
 
+import js.objects.JsPlainObject
 import js.typedarrays.Uint8Array
 
 /**
@@ -9,6 +10,7 @@ import js.typedarrays.Uint8Array
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#CustomDocumentOpenContext)
  */
+@JsPlainObject
 external interface CustomDocumentOpenContext {
     /**
      * The id of the backup to restore the document from or `undefined` if there is no backup.

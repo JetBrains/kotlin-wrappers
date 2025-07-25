@@ -3,12 +3,14 @@
 package vscode
 
 import js.array.ReadonlyArray
+import js.objects.JsPlainObject
 
 /**
  * The ranges a CommentingRangeProvider enables commenting on.
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#CommentingRanges)
  */
+@JsPlainObject
 external interface CommentingRanges {
     /**
      * Enables comments to be added to a file without a specific range.

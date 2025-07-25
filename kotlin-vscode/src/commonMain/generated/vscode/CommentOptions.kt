@@ -2,11 +2,14 @@
 
 package vscode
 
+import js.objects.JsPlainObject
+
 /**
  * Represents a [comment controller}'s {@link CommentController.options options][CommentController].
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#CommentOptions)
  */
+@JsPlainObject
 external interface CommentOptions {
     /**
      * An optional string to show on the comment input box when it's collapsed.

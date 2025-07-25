@@ -5,6 +5,7 @@ package vscode
 import js.core.JsAny
 import js.core.JsString
 import js.iterable.AsyncIterable
+import js.objects.JsPlainObject
 
 /**
  * Represents a language model response.
@@ -13,6 +14,7 @@ import js.iterable.AsyncIterable
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#LanguageModelChatResponse)
  */
+@JsPlainObject
 external interface LanguageModelChatResponse {
     /**
      * An async iterable that is a stream of text and tool-call parts forming the overall response. A

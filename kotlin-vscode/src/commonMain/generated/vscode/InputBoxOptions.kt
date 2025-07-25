@@ -4,12 +4,14 @@ package vscode
 
 import js.array.Tuple2
 import js.core.JsInt
+import js.objects.JsPlainObject
 
 /**
  * Options to configure the behavior of the input box UI.
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#InputBoxOptions)
  */
+@JsPlainObject
 external interface InputBoxOptions {
     /**
      * An optional string that represents the title of the input box.

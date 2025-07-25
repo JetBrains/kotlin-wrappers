@@ -2,11 +2,14 @@
 
 package vscode
 
+import js.objects.JsPlainObject
+
 /**
  * A task filter denotes tasks by their version and types
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TaskFilter)
  */
+@JsPlainObject
 external interface TaskFilter {
     /**
      * The task version as used in the tasks.json file.

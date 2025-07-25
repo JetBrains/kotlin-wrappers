@@ -2,11 +2,14 @@
 
 package vscode
 
+import js.objects.JsPlainObject
+
 /**
  * The information of an account associated with an [AuthenticationSession].
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#AuthenticationSessionAccountInformation)
  */
+@JsPlainObject
 external interface AuthenticationSessionAccountInformation {
     /**
      * The unique identifier of the account.

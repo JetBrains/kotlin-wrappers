@@ -3,6 +3,7 @@
 package vscode
 
 import js.core.JsString
+import js.objects.JsPlainObject
 import js.objects.ReadonlyRecord
 
 /**
@@ -10,6 +11,7 @@ import js.objects.ReadonlyRecord
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#ChatResult)
  */
+@JsPlainObject
 external interface ChatResult {
     /**
      * If the request resulted in an error, this property defines the error details.

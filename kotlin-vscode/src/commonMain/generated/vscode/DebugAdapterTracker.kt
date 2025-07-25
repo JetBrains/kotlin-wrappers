@@ -4,12 +4,14 @@ package vscode
 
 import js.core.JsAny
 import js.errors.JsError
+import js.objects.JsPlainObject
 
 /**
  * A Debug Adapter Tracker is a means to track the communication between the editor and a Debug Adapter.
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#DebugAdapterTracker)
  */
+@JsPlainObject
 external interface DebugAdapterTracker {
     /**
      * A session with the debug adapter is about to be started.

@@ -2,11 +2,14 @@
 
 package vscode
 
+import js.objects.JsPlainObject
+
 /**
  * Options to configure the behaviour of the [workspace folder][WorkspaceFolder] pick UI.
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#WorkspaceFolderPickOptions)
  */
+@JsPlainObject
 external interface WorkspaceFolderPickOptions {
     /**
      * An optional string to show as placeholder in the input box to guide the user what to pick on.

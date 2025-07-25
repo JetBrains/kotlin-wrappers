@@ -2,12 +2,15 @@
 
 package vscode
 
+import js.objects.JsPlainObject
+
 /**
  * Represents the connection of two locations. Provides additional metadata over normal [locations][Location],
  * including an origin range.
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#LocationLink)
  */
+@JsPlainObject
 external interface LocationLink {
     /**
      * Span of the origin of this link.

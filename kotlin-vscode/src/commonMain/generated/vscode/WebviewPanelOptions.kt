@@ -2,11 +2,14 @@
 
 package vscode
 
+import js.objects.JsPlainObject
+
 /**
  * Content settings for a webview panel.
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#WebviewPanelOptions)
  */
+@JsPlainObject
 external interface WebviewPanelOptions {
     /**
      * Controls if the find widget is enabled in the panel.

@@ -3,12 +3,14 @@
 package vscode
 
 import js.core.JsAny
+import js.objects.JsPlainObject
 
 /**
  * Options for creating a [TreeView]
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TreeViewOptions)
  */
+@JsPlainObject
 external interface TreeViewOptions<T : JsAny?> {
     /**
      * A data provider that provides tree data.

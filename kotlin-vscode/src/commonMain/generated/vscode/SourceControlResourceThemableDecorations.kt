@@ -3,6 +3,7 @@
 package vscode
 
 import js.core.JsAny
+import js.objects.JsPlainObject
 
 /**
  * The theme-aware decorations for a
@@ -10,6 +11,7 @@ import js.core.JsAny
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#SourceControlResourceThemableDecorations)
  */
+@JsPlainObject
 external interface SourceControlResourceThemableDecorations {
     /**
      * The icon path for a specific

@@ -2,11 +2,14 @@
 
 package vscode
 
+import js.objects.JsPlainObject
+
 /**
  * Additional information about the paste operation.
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#DocumentPasteEditContext)
  */
+@JsPlainObject
 external interface DocumentPasteEditContext {
     /**
      * Requested kind of paste edits to return.

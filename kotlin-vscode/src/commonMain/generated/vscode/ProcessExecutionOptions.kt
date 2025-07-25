@@ -3,6 +3,7 @@
 package vscode
 
 import js.core.JsString
+import js.objects.JsPlainObject
 import js.objects.Record
 
 /**
@@ -10,6 +11,7 @@ import js.objects.Record
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#ProcessExecutionOptions)
  */
+@JsPlainObject
 external interface ProcessExecutionOptions {
     /**
      * The current working directory of the executed program or shell.

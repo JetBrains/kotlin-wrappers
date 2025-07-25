@@ -2,11 +2,14 @@
 
 package vscode
 
+import js.objects.JsPlainObject
+
 /**
  * Represents an error result from a chat request.
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#ChatErrorDetails)
  */
+@JsPlainObject
 external interface ChatErrorDetails {
     /**
      * An error message that is shown to the user.

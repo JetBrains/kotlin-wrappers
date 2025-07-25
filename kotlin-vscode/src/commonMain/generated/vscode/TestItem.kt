@@ -4,6 +4,7 @@ package vscode
 
 import js.array.ReadonlyArray
 import js.core.JsAny
+import js.objects.JsPlainObject
 
 /**
  * An item shown in the "test explorer" view.
@@ -13,6 +14,7 @@ import js.core.JsAny
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TestItem)
  */
+@JsPlainObject
 external interface TestItem {
     /**
      * Identifier for the `TestItem`. This is used to correlate

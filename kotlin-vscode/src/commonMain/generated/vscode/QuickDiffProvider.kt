@@ -2,6 +2,8 @@
 
 package vscode
 
+import js.objects.JsPlainObject
+
 /**
  * A quick diff provider provides a [uri][Uri] to the original state of a
  * modified resource. The editor will use this information to render ad'hoc diffs
@@ -9,6 +11,7 @@ package vscode
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#QuickDiffProvider)
  */
+@JsPlainObject
 external interface QuickDiffProvider {
     /**
      * Provide a [Uri] to the original resource of any given resource uri.

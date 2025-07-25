@@ -2,11 +2,14 @@
 
 package vscode
 
+import js.objects.JsPlainObject
+
 /**
  * Object to configure the behavior of the validation message.
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#InputBoxValidationMessage)
  */
+@JsPlainObject
 external interface InputBoxValidationMessage {
     /**
      * The validation message to display.

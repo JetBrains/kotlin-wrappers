@@ -2,11 +2,14 @@
 
 package vscode
 
+import js.objects.JsPlainObject
+
 /**
  * A string that will be quoted depending on the used shell.
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#ShellQuotedString)
  */
+@JsPlainObject
 external interface ShellQuotedString {
     /**
      * The actual string value.

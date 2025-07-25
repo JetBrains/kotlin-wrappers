@@ -5,12 +5,14 @@ package vscode
 import js.array.ReadonlyArray
 import js.core.JsAny
 import js.date.Date
+import js.objects.JsPlainObject
 
 /**
  * A comment is displayed within the editor or the Comments Panel, depending on how it is provided.
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#Comment)
  */
+@JsPlainObject
 external interface Comment {
     /**
      * The human-readable comment body

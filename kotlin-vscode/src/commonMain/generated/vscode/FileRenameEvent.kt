@@ -2,11 +2,14 @@
 
 package vscode
 
+import js.objects.JsPlainObject
+
 /**
  * An event that is fired after files are renamed.
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#FileRenameEvent)
  */
+@JsPlainObject
 external interface FileRenameEvent {
     /**
      * The files that got renamed.

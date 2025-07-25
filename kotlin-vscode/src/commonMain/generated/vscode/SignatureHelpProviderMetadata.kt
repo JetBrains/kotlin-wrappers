@@ -4,12 +4,14 @@ package vscode
 
 import js.array.ReadonlyArray
 import js.core.JsString
+import js.objects.JsPlainObject
 
 /**
  * Metadata about a registered {@linkcode SignatureHelpProvider}.
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#SignatureHelpProviderMetadata)
  */
+@JsPlainObject
 external interface SignatureHelpProviderMetadata {
     /**
      * List of characters that trigger signature help.

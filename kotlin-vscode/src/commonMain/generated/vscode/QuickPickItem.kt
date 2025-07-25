@@ -3,6 +3,7 @@
 package vscode
 
 import js.array.ReadonlyArray
+import js.objects.JsPlainObject
 
 /**
  * Represents an item that can be selected from
@@ -10,6 +11,7 @@ import js.array.ReadonlyArray
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#QuickPickItem)
  */
+@JsPlainObject
 external interface QuickPickItem {
     /**
      * A human-readable string which is rendered prominent. Supports rendering of [theme icons][ThemeIcon] via

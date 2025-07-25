@@ -3,12 +3,14 @@
 package vscode
 
 import js.core.JsAny
+import js.objects.JsPlainObject
 
 /**
  * Represents options for a specific decoration in a [decoration set][TextEditorDecorationType].
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#DecorationOptions)
  */
+@JsPlainObject
 external interface DecorationOptions {
     /**
      * Range to which this decoration is applied. The range must not be empty.

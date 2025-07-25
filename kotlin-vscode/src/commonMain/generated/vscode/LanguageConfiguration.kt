@@ -3,6 +3,7 @@
 package vscode
 
 import js.array.ReadonlyArray
+import js.objects.JsPlainObject
 import js.regexp.RegExp
 
 /**
@@ -11,6 +12,7 @@ import js.regexp.RegExp
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#LanguageConfiguration)
  */
+@JsPlainObject
 external interface LanguageConfiguration {
     /**
      * The language's comment settings.

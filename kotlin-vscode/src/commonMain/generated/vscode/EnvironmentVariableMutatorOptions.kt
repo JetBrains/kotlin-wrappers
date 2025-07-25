@@ -2,11 +2,14 @@
 
 package vscode
 
+import js.objects.JsPlainObject
+
 /**
  * Options applied to the mutator.
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#EnvironmentVariableMutatorOptions)
  */
+@JsPlainObject
 external interface EnvironmentVariableMutatorOptions {
     /**
      * Apply to the environment just before the process is created. Defaults to false.

@@ -2,6 +2,7 @@
 
 package vscode
 
+import js.objects.JsPlainObject
 import js.regexp.RegExp
 
 /**
@@ -9,6 +10,7 @@ import js.regexp.RegExp
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#IndentationRule)
  */
+@JsPlainObject
 external interface IndentationRule {
     /**
      * If a line matches this pattern, then all the lines after it should be unindented once (until another rule matches).

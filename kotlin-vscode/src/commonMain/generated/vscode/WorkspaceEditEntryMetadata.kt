@@ -2,6 +2,8 @@
 
 package vscode
 
+import js.objects.JsPlainObject
+
 /**
  * Additional data for entries of a workspace edit. Supports to label entries and marks entries
  * as needing confirmation by the user. The editor groups edits with equal labels into tree nodes,
@@ -9,6 +11,7 @@ package vscode
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#WorkspaceEditEntryMetadata)
  */
+@JsPlainObject
 external interface WorkspaceEditEntryMetadata {
     /**
      * A flag which indicates that user confirmation is needed.

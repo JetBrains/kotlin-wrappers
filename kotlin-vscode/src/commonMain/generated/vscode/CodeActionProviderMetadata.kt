@@ -3,12 +3,14 @@
 package vscode
 
 import js.array.ReadonlyArray
+import js.objects.JsPlainObject
 
 /**
  * Metadata about the type of code actions that a [CodeActionProvider] provides.
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#CodeActionProviderMetadata)
  */
+@JsPlainObject
 external interface CodeActionProviderMetadata {
     /**
      * List of [CodeActionKinds][CodeActionKind] that a [CodeActionProvider] may return.

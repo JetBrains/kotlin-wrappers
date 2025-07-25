@@ -3,12 +3,14 @@
 package vscode
 
 import js.core.JsAny
+import js.objects.JsPlainObject
 
 /**
  * Represents theme specific rendering styles for a [text editor decoration][TextEditorDecorationType].
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#ThemableDecorationRenderOptions)
  */
+@JsPlainObject
 external interface ThemableDecorationRenderOptions {
     /**
      * Background color of the decoration. Use rgba() and define transparent background colors to play well with other decorations.

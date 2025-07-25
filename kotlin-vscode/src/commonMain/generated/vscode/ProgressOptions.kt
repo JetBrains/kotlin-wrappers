@@ -2,11 +2,14 @@
 
 package vscode
 
+import js.objects.JsPlainObject
+
 /**
  * Value-object describing where and how progress should show.
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#ProgressOptions)
  */
+@JsPlainObject
 external interface ProgressOptions {
     /**
      * The location at which progress should show.

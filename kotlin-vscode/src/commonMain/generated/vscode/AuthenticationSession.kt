@@ -4,12 +4,14 @@ package vscode
 
 import js.array.ReadonlyArray
 import js.core.JsString
+import js.objects.JsPlainObject
 
 /**
  * Represents a session of a currently logged in user.
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#AuthenticationSession)
  */
+@JsPlainObject
 external interface AuthenticationSession {
     /**
      * The identifier of the authentication session.

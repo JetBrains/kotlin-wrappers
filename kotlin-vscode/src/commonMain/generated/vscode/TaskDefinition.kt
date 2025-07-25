@@ -2,12 +2,15 @@
 
 package vscode
 
+import js.objects.JsPlainObject
+
 /**
  * A structure that defines a task kind in the system.
  * The value must be JSON-stringifyable.
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TaskDefinition)
  */
+@JsPlainObject
 external interface TaskDefinition {
     /**
      * The task definition describing the task provided by an extension.

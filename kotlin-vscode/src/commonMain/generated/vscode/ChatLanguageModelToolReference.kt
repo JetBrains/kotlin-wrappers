@@ -4,6 +4,7 @@ package vscode
 
 import js.array.Tuple2
 import js.core.JsInt
+import js.objects.JsPlainObject
 
 /**
  * A reference to a tool that the user manually attached to their request, either using the `#`-syntax inline, or as an
@@ -11,6 +12,7 @@ import js.core.JsInt
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#ChatLanguageModelToolReference)
  */
+@JsPlainObject
 external interface ChatLanguageModelToolReference {
     /**
      * The tool name. Refers to a tool listed in [lm.tools].

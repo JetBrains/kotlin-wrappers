@@ -3,12 +3,14 @@
 package vscode
 
 import js.array.ReadonlyArray
+import js.objects.JsPlainObject
 
 /**
  * Represents a group of tabs. A tab group itself consists of multiple tabs.
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TabGroup)
  */
+@JsPlainObject
 external interface TabGroup {
     /**
      * Whether or not the group is currently active.

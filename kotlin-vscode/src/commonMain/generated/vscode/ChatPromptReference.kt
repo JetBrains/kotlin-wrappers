@@ -5,12 +5,14 @@ package vscode
 import js.array.Tuple2
 import js.core.JsAny
 import js.core.JsInt
+import js.objects.JsPlainObject
 
 /**
  * A reference to a value that the user added to their chat request.
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#ChatPromptReference)
  */
+@JsPlainObject
 external interface ChatPromptReference {
     /**
      * A unique identifier for this kind of reference.

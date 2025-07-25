@@ -2,11 +2,14 @@
 
 package vscode
 
+import js.objects.JsPlainObject
+
 /**
  * A badge presenting a value for a view
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#ViewBadge)
  */
+@JsPlainObject
 external interface ViewBadge {
     /**
      * A label to present in tooltip for the badge.

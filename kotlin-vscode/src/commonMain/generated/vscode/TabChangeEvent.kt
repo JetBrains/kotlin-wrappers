@@ -3,12 +3,14 @@
 package vscode
 
 import js.array.ReadonlyArray
+import js.objects.JsPlainObject
 
 /**
  * An event describing change to tabs.
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TabChangeEvent)
  */
+@JsPlainObject
 external interface TabChangeEvent {
     /**
      * The tabs that have been opened.

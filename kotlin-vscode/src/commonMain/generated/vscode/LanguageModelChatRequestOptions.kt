@@ -4,6 +4,7 @@ package vscode
 
 import js.array.ReadonlyArray
 import js.core.JsString
+import js.objects.JsPlainObject
 import js.objects.Record
 
 /**
@@ -13,6 +14,7 @@ import js.objects.Record
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#LanguageModelChatRequestOptions)
  */
+@JsPlainObject
 external interface LanguageModelChatRequestOptions {
     /**
      * A human-readable message that explains why access to a language model is needed and what feature is enabled by it.

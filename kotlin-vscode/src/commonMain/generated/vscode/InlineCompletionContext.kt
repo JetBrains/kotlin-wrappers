@@ -2,11 +2,14 @@
 
 package vscode
 
+import js.objects.JsPlainObject
+
 /**
  * Provides information about the context in which an inline completion was requested.
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#InlineCompletionContext)
  */
+@JsPlainObject
 external interface InlineCompletionContext {
     /**
      * Describes how the inline completion was triggered.

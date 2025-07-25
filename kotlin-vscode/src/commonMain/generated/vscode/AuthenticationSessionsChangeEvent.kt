@@ -2,11 +2,14 @@
 
 package vscode
 
+import js.objects.JsPlainObject
+
 /**
  * An [Event] which fires when an [AuthenticationSession] is added, removed, or changed.
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#AuthenticationSessionsChangeEvent)
  */
+@JsPlainObject
 external interface AuthenticationSessionsChangeEvent {
     /**
      * The [AuthenticationProvider] that has had its sessions change.

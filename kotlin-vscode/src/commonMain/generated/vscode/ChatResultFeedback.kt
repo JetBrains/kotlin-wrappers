@@ -2,11 +2,14 @@
 
 package vscode
 
+import js.objects.JsPlainObject
+
 /**
  * Represents user feedback for a result.
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#ChatResultFeedback)
  */
+@JsPlainObject
 external interface ChatResultFeedback {
     /**
      * The ChatResult for which the user is providing feedback.

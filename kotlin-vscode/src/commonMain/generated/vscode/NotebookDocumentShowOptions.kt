@@ -3,12 +3,14 @@
 package vscode
 
 import js.array.ReadonlyArray
+import js.objects.JsPlainObject
 
 /**
  * Represents options to configure the behavior of showing a [notebook document} in an {@link NotebookEditor notebook editor][NotebookDocument].
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#NotebookDocumentShowOptions)
  */
+@JsPlainObject
 external interface NotebookDocumentShowOptions {
     /**
      * An optional view column in which the [notebook editor][NotebookEditor] should be shown.

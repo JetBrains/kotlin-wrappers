@@ -2,11 +2,14 @@
 
 package vscode
 
+import js.objects.JsPlainObject
+
 /**
  * A structured label for a [completion item][CompletionItem].
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#CompletionItemLabel)
  */
+@JsPlainObject
 external interface CompletionItemLabel {
     /**
      * The label of this completion item.

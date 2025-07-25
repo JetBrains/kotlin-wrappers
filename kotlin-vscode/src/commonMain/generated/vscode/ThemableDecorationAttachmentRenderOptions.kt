@@ -3,6 +3,7 @@
 package vscode
 
 import js.core.JsAny
+import js.objects.JsPlainObject
 
 /**
  * Represents theme specific rendering styles for [before][ThemableDecorationRenderOptions.before] and
@@ -10,6 +11,7 @@ import js.core.JsAny
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#ThemableDecorationAttachmentRenderOptions)
  */
+@JsPlainObject
 external interface ThemableDecorationAttachmentRenderOptions {
     /**
      * Defines a text content that is shown in the attachment. Either an icon or a text can be shown, but not both.

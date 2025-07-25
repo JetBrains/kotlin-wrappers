@@ -4,12 +4,14 @@ package vscode
 
 import js.array.ReadonlyArray
 import js.core.JsString
+import js.objects.JsPlainObject
 
 /**
  * Provides additional metadata about how a {@linkcode DocumentPasteEditProvider} works.
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#DocumentPasteProviderMetadata)
  */
+@JsPlainObject
 external interface DocumentPasteProviderMetadata {
     /**
      * List of [kinds} that the provider may return in {@linkcode DocumentPasteEditProvider.provideDocumentPasteEdits provideDocumentPasteEdits][DocumentDropOrPasteEditKind].

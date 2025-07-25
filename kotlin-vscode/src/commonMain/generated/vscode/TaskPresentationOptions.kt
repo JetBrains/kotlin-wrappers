@@ -2,11 +2,14 @@
 
 package vscode
 
+import js.objects.JsPlainObject
+
 /**
  * Controls how the task is presented in the UI.
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TaskPresentationOptions)
  */
+@JsPlainObject
 external interface TaskPresentationOptions {
     /**
      * Controls whether the task output is reveal in the user interface.

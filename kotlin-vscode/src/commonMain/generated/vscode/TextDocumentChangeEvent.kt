@@ -3,12 +3,14 @@
 package vscode
 
 import js.array.ReadonlyArray
+import js.objects.JsPlainObject
 
 /**
  * An event describing a transactional [document][TextDocument] change.
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TextDocumentChangeEvent)
  */
+@JsPlainObject
 external interface TextDocumentChangeEvent {
     /**
      * The affected document.

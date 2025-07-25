@@ -3,12 +3,14 @@
 package vscode
 
 import js.core.JsAny
+import js.objects.JsPlainObject
 
 /**
  * Represents a [text editor}'s {@link TextEditor.options options][TextEditor].
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TextEditorOptions)
  */
+@JsPlainObject
 external interface TextEditorOptions {
     /**
      * The size in spaces a tab takes. This is used for two purposes:

@@ -2,11 +2,14 @@
 
 package vscode
 
+import js.objects.JsPlainObject
+
 /**
  * Represents themable render options for decoration instances.
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#ThemableDecorationInstanceRenderOptions)
  */
+@JsPlainObject
 external interface ThemableDecorationInstanceRenderOptions {
     /**
      * Defines the rendering options of the attachment that is inserted before the decorated text.

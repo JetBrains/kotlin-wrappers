@@ -3,6 +3,7 @@
 package vscode
 
 import js.core.JsString
+import js.objects.JsPlainObject
 import js.objects.Record
 
 /**
@@ -10,6 +11,7 @@ import js.objects.Record
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TelemetryLoggerOptions)
  */
+@JsPlainObject
 external interface TelemetryLoggerOptions {
     /**
      * Whether or not you want to avoid having the built-in common properties such as os, extension name, etc injected into the data object.

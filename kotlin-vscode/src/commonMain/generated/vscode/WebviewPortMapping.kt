@@ -2,11 +2,14 @@
 
 package vscode
 
+import js.objects.JsPlainObject
+
 /**
  * Defines a port mapping used for localhost inside the webview.
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#WebviewPortMapping)
  */
+@JsPlainObject
 external interface WebviewPortMapping {
     /**
      * Localhost port to remap inside the webview.

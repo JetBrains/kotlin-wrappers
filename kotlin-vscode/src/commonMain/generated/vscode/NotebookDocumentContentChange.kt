@@ -3,6 +3,7 @@
 package vscode
 
 import js.array.ReadonlyArray
+import js.objects.JsPlainObject
 
 /**
  * Describes a structural change to a notebook document, e.g newly added and removed cells.
@@ -11,6 +12,7 @@ import js.array.ReadonlyArray
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#NotebookDocumentContentChange)
  */
+@JsPlainObject
 external interface NotebookDocumentContentChange {
     /**
      * The range at which cells have been either added or removed.

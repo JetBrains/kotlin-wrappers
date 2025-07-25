@@ -2,11 +2,14 @@
 
 package vscode
 
+import js.objects.JsPlainObject
+
 /**
  * Describes the currently selected completion item.
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#SelectedCompletionInfo)
  */
+@JsPlainObject
 external interface SelectedCompletionInfo {
     /**
      * The range that will be replaced if this completion item is accepted.

@@ -3,12 +3,14 @@
 package vscode
 
 import js.core.JsAny
+import js.objects.JsPlainObject
 
 /**
  * A custom Debug Adapter Protocol event received from a [debug session][DebugSession].
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#DebugSessionCustomEvent)
  */
+@JsPlainObject
 external interface DebugSessionCustomEvent {
     /**
      * The [debug session][DebugSession] for which the custom event was received.

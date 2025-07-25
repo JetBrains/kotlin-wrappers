@@ -2,11 +2,14 @@
 
 package vscode
 
+import js.objects.JsPlainObject
+
 /**
  * Represents the state of a [Terminal].
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TerminalState)
  */
+@JsPlainObject
 external interface TerminalState {
     /**
      * Whether the [Terminal] has been interacted with. Interaction means that the

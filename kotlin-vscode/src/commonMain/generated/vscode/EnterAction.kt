@@ -2,11 +2,14 @@
 
 package vscode
 
+import js.objects.JsPlainObject
+
 /**
  * Describes what to do when pressing Enter.
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#EnterAction)
  */
+@JsPlainObject
 external interface EnterAction {
     /**
      * Describe what to do with the indentation.

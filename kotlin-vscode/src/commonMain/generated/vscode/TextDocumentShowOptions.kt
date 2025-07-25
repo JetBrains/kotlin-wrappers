@@ -2,11 +2,14 @@
 
 package vscode
 
+import js.objects.JsPlainObject
+
 /**
  * Represents options to configure the behavior of showing a [document} in an {@link TextEditor editor][TextDocument].
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TextDocumentShowOptions)
  */
+@JsPlainObject
 external interface TextDocumentShowOptions {
     /**
      * An optional view column in which the [editor][TextEditor] should be shown.

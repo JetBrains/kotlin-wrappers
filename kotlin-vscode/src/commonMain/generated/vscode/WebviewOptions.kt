@@ -4,12 +4,14 @@ package vscode
 
 import js.array.ReadonlyArray
 import js.core.JsAny
+import js.objects.JsPlainObject
 
 /**
  * Content settings for a webview.
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#WebviewOptions)
  */
+@JsPlainObject
 external interface WebviewOptions {
     /**
      * Controls whether scripts are enabled in the webview content or not.

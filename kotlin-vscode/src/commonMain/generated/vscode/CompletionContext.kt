@@ -2,12 +2,15 @@
 
 package vscode
 
+import js.objects.JsPlainObject
+
 /**
  * Contains additional information about the context in which
  * [completion provider][CompletionItemProvider.provideCompletionItems] is triggered.
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#CompletionContext)
  */
+@JsPlainObject
 external interface CompletionContext {
     /**
      * How the completion was triggered.

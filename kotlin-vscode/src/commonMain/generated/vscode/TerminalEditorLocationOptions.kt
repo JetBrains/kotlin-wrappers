@@ -2,12 +2,15 @@
 
 package vscode
 
+import js.objects.JsPlainObject
+
 /**
  * Assumes a [TerminalLocation] of editor and allows specifying a [ViewColumn] and
  * [preserveFocus ][TerminalEditorLocationOptions.preserveFocus] property
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TerminalEditorLocationOptions)
  */
+@JsPlainObject
 external interface TerminalEditorLocationOptions {
     /**
      * A view column in which the [terminal][Terminal] should be shown in the editor area.

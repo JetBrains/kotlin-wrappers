@@ -2,11 +2,14 @@
 
 package vscode
 
+import js.objects.JsPlainObject
+
 /**
  * A followup question suggested by the participant.
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#ChatFollowup)
  */
+@JsPlainObject
 external interface ChatFollowup {
     /**
      * The message to send to the chat.

@@ -5,12 +5,14 @@ package vscode
 import js.array.ReadonlyArray
 import js.core.JsAny
 import js.core.JsString
+import js.objects.JsPlainObject
 
 /**
  * Information about a registered tool available in [lm.tools].
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#LanguageModelToolInformation)
  */
+@JsPlainObject
 external interface LanguageModelToolInformation {
     /**
      * A unique name for the tool.

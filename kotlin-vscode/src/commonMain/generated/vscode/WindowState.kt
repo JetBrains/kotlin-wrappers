@@ -2,11 +2,14 @@
 
 package vscode
 
+import js.objects.JsPlainObject
+
 /**
  * Represents the state of a window.
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#WindowState)
  */
+@JsPlainObject
 external interface WindowState {
     /**
      * Whether the current window is focused.

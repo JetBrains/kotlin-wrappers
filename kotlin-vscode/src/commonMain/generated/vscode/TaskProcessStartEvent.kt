@@ -2,12 +2,15 @@
 
 package vscode
 
+import js.objects.JsPlainObject
+
 /**
  * An event signaling the start of a process execution
  * triggered through a task
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TaskProcessStartEvent)
  */
+@JsPlainObject
 external interface TaskProcessStartEvent {
     /**
      * The task execution for which the process got started.

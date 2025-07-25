@@ -5,6 +5,7 @@ package vscode
 import js.core.JsAny
 import js.core.JsBoolean
 import js.core.JsString
+import js.objects.JsPlainObject
 import js.objects.Record
 
 /**
@@ -12,6 +13,7 @@ import js.objects.Record
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TerminalOptions)
  */
+@JsPlainObject
 external interface TerminalOptions {
     /**
      * A human-readable string which will be used to represent the terminal in the UI.

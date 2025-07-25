@@ -2,11 +2,14 @@
 
 package vscode
 
+import js.objects.JsPlainObject
+
 /**
  * The event filesystem providers must use to signal a file change.
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#FileChangeEvent)
  */
+@JsPlainObject
 external interface FileChangeEvent {
     /**
      * The type of change.

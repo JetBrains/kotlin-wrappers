@@ -5,12 +5,14 @@ package vscode
 import js.array.ReadonlyArray
 import js.array.Tuple2
 import js.core.JsInt
+import js.objects.JsPlainObject
 
 /**
  * Label describing the [Tree item][TreeItem]
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TreeItemLabel)
  */
+@JsPlainObject
 external interface TreeItemLabel {
     /**
      * A human-readable string describing the [Tree item][TreeItem].

@@ -3,6 +3,7 @@
 package vscode
 
 import js.core.JsAny
+import js.objects.JsPlainObject
 
 /**
  * Represents a tab within a [group of tabs][TabGroup].
@@ -11,6 +12,7 @@ import js.core.JsAny
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#Tab)
  */
+@JsPlainObject
 external interface Tab {
     /**
      * The text displayed on the tab.

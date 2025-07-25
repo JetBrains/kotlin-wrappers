@@ -2,11 +2,14 @@
 
 package vscode
 
+import js.objects.JsPlainObject
+
 /**
  * Options for [starting a debug session][debug.startDebugging].
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#DebugSessionOptions)
  */
+@JsPlainObject
 external interface DebugSessionOptions {
     /**
      * When specified the newly created debug session is registered as a "child" session of this

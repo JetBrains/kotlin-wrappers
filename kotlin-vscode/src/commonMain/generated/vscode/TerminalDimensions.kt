@@ -2,11 +2,14 @@
 
 package vscode
 
+import js.objects.JsPlainObject
+
 /**
  * Represents the dimensions of a terminal.
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TerminalDimensions)
  */
+@JsPlainObject
 external interface TerminalDimensions {
     /**
      * The number of columns in the terminal.

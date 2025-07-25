@@ -2,11 +2,14 @@
 
 package vscode
 
+import js.objects.JsPlainObject
+
 /**
  * An event describing an individual change in the text of a [document][TextDocument].
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TextDocumentContentChangeEvent)
  */
+@JsPlainObject
 external interface TextDocumentContentChangeEvent {
     /**
      * The range that got replaced.

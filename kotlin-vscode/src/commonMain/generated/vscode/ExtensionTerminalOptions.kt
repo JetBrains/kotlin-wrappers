@@ -3,12 +3,14 @@
 package vscode
 
 import js.core.JsAny
+import js.objects.JsPlainObject
 
 /**
  * Value-object describing what options a virtual process terminal should use.
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#ExtensionTerminalOptions)
  */
+@JsPlainObject
 external interface ExtensionTerminalOptions {
     /**
      * A human-readable string which will be used to represent the terminal in the UI.

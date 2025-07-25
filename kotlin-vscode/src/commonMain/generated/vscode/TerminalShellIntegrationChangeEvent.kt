@@ -2,11 +2,14 @@
 
 package vscode
 
+import js.objects.JsPlainObject
+
 /**
  * An event signalling that a terminal's shell integration has changed.
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TerminalShellIntegrationChangeEvent)
  */
+@JsPlainObject
 external interface TerminalShellIntegrationChangeEvent {
     /**
      * The terminal that shell integration has been activated in.

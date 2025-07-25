@@ -2,11 +2,14 @@
 
 package vscode
 
+import js.objects.JsPlainObject
+
 /**
  * An event signalling that an execution has started in a terminal.
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TerminalShellExecutionStartEvent)
  */
+@JsPlainObject
 external interface TerminalShellExecutionStartEvent {
     /**
      * The terminal that shell integration has been activated in.

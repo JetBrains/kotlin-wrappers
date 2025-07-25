@@ -2,11 +2,14 @@
 
 package vscode
 
+import js.objects.JsPlainObject
+
 /**
  * Options for creating an [AuthenticationProvider].
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#AuthenticationProviderOptions)
  */
+@JsPlainObject
 external interface AuthenticationProviderOptions {
     /**
      * Whether it is possible to be signed into multiple accounts at once with this provider.

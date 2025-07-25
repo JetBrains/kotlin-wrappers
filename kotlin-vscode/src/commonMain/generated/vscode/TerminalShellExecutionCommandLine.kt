@@ -2,11 +2,14 @@
 
 package vscode
 
+import js.objects.JsPlainObject
+
 /**
  * A command line that was executed in a terminal.
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TerminalShellExecutionCommandLine)
  */
+@JsPlainObject
 external interface TerminalShellExecutionCommandLine {
     /**
      * The full command line that was executed, including both the command and its arguments.

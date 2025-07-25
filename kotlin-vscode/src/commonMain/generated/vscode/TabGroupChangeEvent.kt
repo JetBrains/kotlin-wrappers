@@ -3,12 +3,14 @@
 package vscode
 
 import js.array.ReadonlyArray
+import js.objects.JsPlainObject
 
 /**
  * An event describing changes to tab groups.
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TabGroupChangeEvent)
  */
+@JsPlainObject
 external interface TabGroupChangeEvent {
     /**
      * Tab groups that have been opened.

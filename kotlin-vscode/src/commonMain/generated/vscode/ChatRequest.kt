@@ -3,12 +3,14 @@
 package vscode
 
 import js.array.ReadonlyArray
+import js.objects.JsPlainObject
 
 /**
  * A request to a chat participant.
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#ChatRequest)
  */
+@JsPlainObject
 external interface ChatRequest {
     /**
      * The prompt as entered by the user.

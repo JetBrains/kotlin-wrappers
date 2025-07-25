@@ -3,12 +3,14 @@
 package vscode
 
 import js.array.ReadonlyArray
+import js.objects.JsPlainObject
 
 /**
  * Represents an event describing the change in a [text editor's selections][TextEditor.selections].
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TextEditorSelectionChangeEvent)
  */
+@JsPlainObject
 external interface TextEditorSelectionChangeEvent {
     /**
      * The [text editor][TextEditor] for which the selections have changed.

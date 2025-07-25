@@ -3,6 +3,7 @@
 package vscode
 
 import js.core.JsAny
+import js.objects.JsPlainObject
 
 /**
  * When this is returned in [PreparedToolInvocation], the user will be asked to confirm before running the tool. These
@@ -10,6 +11,7 @@ import js.core.JsAny
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#LanguageModelToolConfirmationMessages)
  */
+@JsPlainObject
 external interface LanguageModelToolConfirmationMessages {
     /**
      * The title of the confirmation message.

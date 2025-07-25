@@ -4,6 +4,7 @@ package vscode
 
 import js.core.JsBoolean
 import js.core.JsString
+import js.objects.JsPlainObject
 import js.objects.Record
 
 /**
@@ -14,6 +15,7 @@ import js.objects.Record
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#NotebookDocumentContentOptions)
  */
+@JsPlainObject
 external interface NotebookDocumentContentOptions {
     /**
      * Controls if output change events will trigger notebook document content change events and

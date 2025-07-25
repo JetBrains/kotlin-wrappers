@@ -2,11 +2,14 @@
 
 package vscode
 
+import js.objects.JsPlainObject
+
 /**
  * Configuration for a debug session.
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#DebugConfiguration)
  */
+@JsPlainObject
 external interface DebugConfiguration {
     /**
      * The type of the debug session.

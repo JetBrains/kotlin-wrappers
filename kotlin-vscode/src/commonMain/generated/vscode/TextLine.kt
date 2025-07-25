@@ -2,6 +2,8 @@
 
 package vscode
 
+import js.objects.JsPlainObject
+
 /**
  * Represents a line of text, such as a line of source code.
  *
@@ -10,6 +12,7 @@ package vscode
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TextLine)
  */
+@JsPlainObject
 external interface TextLine {
     /**
      * The zero-based line number.

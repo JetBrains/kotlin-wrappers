@@ -2,12 +2,15 @@
 
 package vscode
 
+import js.objects.JsPlainObject
+
 /**
  * A workspace folder is one of potentially many roots opened by the editor. All workspace folders
  * are equal which means there is no notion of an active or primary workspace folder.
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#WorkspaceFolder)
  */
+@JsPlainObject
 external interface WorkspaceFolder {
     /**
      * The associated uri for this workspace folder.

@@ -4,6 +4,7 @@ package vscode
 
 import js.array.ReadonlyArray
 import js.core.JsString
+import js.objects.JsPlainObject
 import js.objects.ReadonlyRecord
 
 /**
@@ -14,6 +15,7 @@ import js.objects.ReadonlyRecord
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#NotebookCell)
  */
+@JsPlainObject
 external interface NotebookCell {
     /**
      * The index of this cell in its [containing notebook][NotebookDocument.cellAt]. The

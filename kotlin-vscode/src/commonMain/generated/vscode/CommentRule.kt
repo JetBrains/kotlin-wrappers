@@ -2,11 +2,14 @@
 
 package vscode
 
+import js.objects.JsPlainObject
+
 /**
  * Describes how comments for a language work.
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#CommentRule)
  */
+@JsPlainObject
 external interface CommentRule {
     /**
      * The line comment token, like `// this is a comment`

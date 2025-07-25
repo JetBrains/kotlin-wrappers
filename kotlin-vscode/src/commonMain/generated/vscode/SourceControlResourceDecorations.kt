@@ -2,12 +2,15 @@
 
 package vscode
 
+import js.objects.JsPlainObject
+
 /**
  * The decorations for a [source control resource state][SourceControlResourceState].
  * Can be independently specified for light and dark themes.
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#SourceControlResourceDecorations)
  */
+@JsPlainObject
 external interface SourceControlResourceDecorations :
     SourceControlResourceThemableDecorations {
     /**

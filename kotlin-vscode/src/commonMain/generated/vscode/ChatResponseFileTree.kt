@@ -3,12 +3,14 @@
 package vscode
 
 import js.array.ReadonlyArray
+import js.objects.JsPlainObject
 
 /**
  * Represents a file tree structure in a chat response.
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#ChatResponseFileTree)
  */
+@JsPlainObject
 external interface ChatResponseFileTree {
     /**
      * The name of the file or directory.

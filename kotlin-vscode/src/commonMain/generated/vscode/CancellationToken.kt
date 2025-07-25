@@ -3,6 +3,7 @@
 package vscode
 
 import js.core.JsAny
+import js.objects.JsPlainObject
 
 /**
  * A cancellation token is passed to an asynchronous or long running
@@ -14,6 +15,7 @@ import js.core.JsAny
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#CancellationToken)
  */
+@JsPlainObject
 external interface CancellationToken {
     /**
      * Is `true` when the token has been cancelled, `false` otherwise.

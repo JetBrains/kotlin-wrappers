@@ -2,6 +2,8 @@
 
 package vscode
 
+import js.objects.JsPlainObject
+
 /**
  * A document filter denotes a document by different properties like
  * the [language}, the {@link Uri.scheme scheme][TextDocument.languageId] of
@@ -15,6 +17,7 @@ package vscode
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#DocumentFilter)
  */
+@JsPlainObject
 external interface DocumentFilter {
     /**
      * A language id, like `typescript`.

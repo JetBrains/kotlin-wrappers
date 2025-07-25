@@ -4,6 +4,7 @@ package vscode
 
 import js.array.ReadonlyArray
 import js.core.JsAny
+import js.objects.JsPlainObject
 
 /**
  * Represents a reference to a command. Provides a title which
@@ -13,6 +14,7 @@ import js.core.JsAny
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#Command)
  */
+@JsPlainObject
 external interface Command {
     /**
      * Title of the command, like `save`.

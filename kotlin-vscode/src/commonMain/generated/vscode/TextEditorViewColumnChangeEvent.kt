@@ -2,11 +2,14 @@
 
 package vscode
 
+import js.objects.JsPlainObject
+
 /**
  * Represents an event describing the change of a [text editor's view column][TextEditor.viewColumn].
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TextEditorViewColumnChangeEvent)
  */
+@JsPlainObject
 external interface TextEditorViewColumnChangeEvent {
     /**
      * The [text editor][TextEditor] for which the view column has changed.

@@ -2,6 +2,8 @@
 
 package vscode
 
+import js.objects.JsPlainObject
+
 /**
  * Represents an action that is shown with an information, warning, or
  * error message.
@@ -12,6 +14,7 @@ package vscode
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#MessageItem)
  */
+@JsPlainObject
 external interface MessageItem {
     /**
      * A short title like 'Retry', 'Open Log' etc.

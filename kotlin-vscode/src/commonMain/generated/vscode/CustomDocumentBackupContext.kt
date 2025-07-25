@@ -2,11 +2,14 @@
 
 package vscode
 
+import js.objects.JsPlainObject
+
 /**
  * Additional information used to implement {@linkcode CustomDocumentBackup}.
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#CustomDocumentBackupContext)
  */
+@JsPlainObject
 external interface CustomDocumentBackupContext {
     /**
      * Suggested file location to write the new backup.

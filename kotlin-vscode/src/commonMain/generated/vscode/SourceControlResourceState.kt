@@ -2,12 +2,15 @@
 
 package vscode
 
+import js.objects.JsPlainObject
+
 /**
  * An source control resource state represents the state of an underlying workspace
  * resource within a certain [source control group][SourceControlResourceGroup].
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#SourceControlResourceState)
  */
+@JsPlainObject
 external interface SourceControlResourceState {
     /**
      * The [Uri] of the underlying resource inside the workspace.

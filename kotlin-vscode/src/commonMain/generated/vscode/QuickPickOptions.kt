@@ -3,12 +3,14 @@
 package vscode
 
 import js.core.JsAny
+import js.objects.JsPlainObject
 
 /**
  * Options to configure the behavior of the quick pick UI.
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#QuickPickOptions)
  */
+@JsPlainObject
 external interface QuickPickOptions {
     /**
      * An optional string that represents the title of the quick pick.

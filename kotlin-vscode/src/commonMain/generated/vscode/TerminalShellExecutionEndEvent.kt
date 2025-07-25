@@ -2,11 +2,14 @@
 
 package vscode
 
+import js.objects.JsPlainObject
+
 /**
  * An event signalling that an execution has ended in a terminal.
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TerminalShellExecutionEndEvent)
  */
+@JsPlainObject
 external interface TerminalShellExecutionEndEvent {
     /**
      * The terminal that shell integration has been activated in.

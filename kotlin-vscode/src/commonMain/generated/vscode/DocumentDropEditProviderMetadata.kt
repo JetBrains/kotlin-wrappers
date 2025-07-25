@@ -4,12 +4,14 @@ package vscode
 
 import js.array.ReadonlyArray
 import js.core.JsString
+import js.objects.JsPlainObject
 
 /**
  * Provides additional metadata about how a {@linkcode DocumentDropEditProvider} works.
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#DocumentDropEditProviderMetadata)
  */
+@JsPlainObject
 external interface DocumentDropEditProviderMetadata {
     /**
      * List of [kinds} that the provider may return in {@linkcode DocumentDropEditProvider.provideDocumentDropEdits provideDocumentDropEdits][DocumentDropOrPasteEditKind].

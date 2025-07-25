@@ -3,6 +3,7 @@
 package vscode
 
 import js.array.ReadonlyArray
+import js.objects.JsPlainObject
 
 /**
  * Contains additional diagnostic information about the context in which
@@ -10,6 +11,7 @@ import js.array.ReadonlyArray
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#CodeActionContext)
  */
+@JsPlainObject
 external interface CodeActionContext {
     /**
      * The reason why code actions were requested.

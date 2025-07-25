@@ -2,11 +2,14 @@
 
 package vscode
 
+import js.objects.JsPlainObject
+
 /**
  * Represents render options for decoration instances. See [DecorationOptions.renderOptions].
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#DecorationInstanceRenderOptions)
  */
+@JsPlainObject
 external interface DecorationInstanceRenderOptions :
     ThemableDecorationInstanceRenderOptions {
     /**

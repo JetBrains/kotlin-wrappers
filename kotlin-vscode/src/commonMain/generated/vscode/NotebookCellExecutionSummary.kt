@@ -2,11 +2,14 @@
 
 package vscode
 
+import js.objects.JsPlainObject
+
 /**
  * The summary of a notebook cell execution.
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#NotebookCellExecutionSummary)
  */
+@JsPlainObject
 external interface NotebookCellExecutionSummary {
     /**
      * The order in which the execution happened.

@@ -2,12 +2,15 @@
 
 package vscode
 
+import js.objects.JsPlainObject
+
 /**
  * Additional information about the context in which a
  * {@linkcode SignatureHelpProvider.provideSignatureHelp SignatureHelpProvider} was triggered.
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#SignatureHelpContext)
  */
+@JsPlainObject
 external interface SignatureHelpContext {
     /**
      * Action that caused signature help to be triggered.

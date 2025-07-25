@@ -2,11 +2,14 @@
 
 package vscode
 
+import js.objects.JsPlainObject
+
 /**
  * Value-object describing what options formatting should use.
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#FormattingOptions)
  */
+@JsPlainObject
 external interface FormattingOptions {
     /**
      * Size of a tab in spaces.

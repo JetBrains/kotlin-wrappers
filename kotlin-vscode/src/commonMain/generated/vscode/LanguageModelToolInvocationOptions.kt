@@ -3,12 +3,14 @@
 package vscode
 
 import js.core.JsAny
+import js.objects.JsPlainObject
 
 /**
  * Options provided for tool invocation.
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#LanguageModelToolInvocationOptions)
  */
+@JsPlainObject
 external interface LanguageModelToolInvocationOptions<T : JsAny?> {
     /**
      * An opaque object that ties a tool invocation to a chat request from a [chat participant][ChatParticipant].

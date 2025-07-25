@@ -2,11 +2,14 @@
 
 package vscode
 
+import js.objects.JsPlainObject
+
 /**
  * The shell quoting options.
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#ShellQuotingOptions)
  */
+@JsPlainObject
 external interface ShellQuotingOptions {
     /**
      * The character used to do character escaping. If a string is provided only spaces

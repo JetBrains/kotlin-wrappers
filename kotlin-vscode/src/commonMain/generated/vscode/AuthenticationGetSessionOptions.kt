@@ -3,12 +3,14 @@
 package vscode
 
 import js.core.JsAny
+import js.objects.JsPlainObject
 
 /**
  * Options to be used when getting an [AuthenticationSession] from an [AuthenticationProvider].
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#AuthenticationGetSessionOptions)
  */
+@JsPlainObject
 external interface AuthenticationGetSessionOptions {
     /**
      * Whether the existing session preference should be cleared.

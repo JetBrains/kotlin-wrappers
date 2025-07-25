@@ -4,6 +4,7 @@ package vscode
 
 import js.array.ReadonlyArray
 import js.core.Void
+import js.objects.JsPlainObject
 import js.promise.PromiseLike
 
 /**
@@ -11,6 +12,7 @@ import js.promise.PromiseLike
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#DocumentPasteEditProvider)
  */
+@JsPlainObject
 external interface DocumentPasteEditProvider<T : DocumentPasteEdit> {
     /**
      * Optional method invoked after the user copies from a [text editor][TextEditor].

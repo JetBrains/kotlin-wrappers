@@ -2,11 +2,14 @@
 
 package vscode
 
+import js.objects.JsPlainObject
+
 /**
  * Represents how a terminal exited.
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TerminalExitStatus)
  */
+@JsPlainObject
 external interface TerminalExitStatus {
     /**
      * The exit code that a terminal exited with, it can have the following values:

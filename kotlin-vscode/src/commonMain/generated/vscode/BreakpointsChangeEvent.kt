@@ -3,12 +3,14 @@
 package vscode
 
 import js.array.ReadonlyArray
+import js.objects.JsPlainObject
 
 /**
  * An event describing the changes to the set of [breakpoints][Breakpoint].
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#BreakpointsChangeEvent)
  */
+@JsPlainObject
 external interface BreakpointsChangeEvent {
     /**
      * Added breakpoints.

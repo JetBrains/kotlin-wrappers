@@ -2,11 +2,14 @@
 
 package vscode
 
+import js.objects.JsPlainObject
+
 /**
  * Accessibility information which controls screen reader behavior.
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#AccessibilityInformation)
  */
+@JsPlainObject
 external interface AccessibilityInformation {
     /**
      * Label to be read out by a screen reader once the item has focus.

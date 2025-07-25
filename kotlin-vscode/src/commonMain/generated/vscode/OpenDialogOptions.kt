@@ -4,6 +4,7 @@ package vscode
 
 import js.array.ReadonlyArray
 import js.core.JsString
+import js.objects.JsPlainObject
 import js.objects.Record
 
 /**
@@ -16,6 +17,7 @@ import js.objects.Record
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#OpenDialogOptions)
  */
+@JsPlainObject
 external interface OpenDialogOptions {
     /**
      * The resource the dialog shows when opened.

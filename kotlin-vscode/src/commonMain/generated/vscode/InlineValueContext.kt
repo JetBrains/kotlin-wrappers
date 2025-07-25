@@ -2,11 +2,14 @@
 
 package vscode
 
+import js.objects.JsPlainObject
+
 /**
  * A value-object that contains contextual information when requesting inline values from a InlineValuesProvider.
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#InlineValueContext)
  */
+@JsPlainObject
 external interface InlineValueContext {
     /**
      * The stack frame (as a DAP Id) where the execution has stopped.

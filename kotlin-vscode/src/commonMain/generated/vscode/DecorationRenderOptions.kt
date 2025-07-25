@@ -2,11 +2,14 @@
 
 package vscode
 
+import js.objects.JsPlainObject
+
 /**
  * Represents rendering styles for a [text editor decoration][TextEditorDecorationType].
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#DecorationRenderOptions)
  */
+@JsPlainObject
 external interface DecorationRenderOptions :
     ThemableDecorationRenderOptions {
     /**

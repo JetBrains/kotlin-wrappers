@@ -3,6 +3,7 @@
 package vscode
 
 import js.array.ReadonlyArray
+import js.objects.JsPlainObject
 
 /**
  * A debug configuration provider allows to add debug configurations to the debug service
@@ -11,6 +12,7 @@ import js.array.ReadonlyArray
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#DebugConfigurationProvider)
  */
+@JsPlainObject
 external interface DebugConfigurationProvider {
     /**
      * Provides [debug configuration][DebugConfiguration] to the debug service. If more than one debug configuration provider is

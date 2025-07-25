@@ -2,6 +2,8 @@
 
 package vscode
 
+import js.objects.JsPlainObject
+
 /**
  * Options to configure the behavior of the message.
  *
@@ -11,6 +13,7 @@ package vscode
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#MessageOptions)
  */
+@JsPlainObject
 external interface MessageOptions {
     /**
      * Indicates that this message should be modal.
