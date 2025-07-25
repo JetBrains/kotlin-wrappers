@@ -3,7 +3,6 @@
 package vscode
 
 import js.array.ReadonlyArray
-import kotlin.js.JsName
 
 /**
  * The document highlight provider interface defines the contract between extensions and
@@ -24,8 +23,7 @@ external interface DocumentHighlightProvider {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#DocumentHighlightProvider.provideDocumentHighlights)
      */
-    @JsName("provideDocumentHighlights")
-    fun provideDocumentHighlightsAsync(
+    fun provideDocumentHighlights(
         document: TextDocument,
         position: Position,
         token: CancellationToken,

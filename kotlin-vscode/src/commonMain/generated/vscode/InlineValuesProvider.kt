@@ -4,7 +4,6 @@ package vscode
 
 import js.array.ReadonlyArray
 import js.core.Void
-import kotlin.js.JsName
 
 /**
  * The inline values provider interface defines the contract between extensions and the editor's debugger inline values feature.
@@ -36,8 +35,7 @@ external interface InlineValuesProvider {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#InlineValuesProvider.provideInlineValues)
      */
-    @JsName("provideInlineValues")
-    fun provideInlineValuesAsync(
+    fun provideInlineValues(
         document: TextDocument,
         viewPort: Range,
         context: InlineValueContext,

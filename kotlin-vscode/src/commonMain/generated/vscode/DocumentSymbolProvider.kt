@@ -3,7 +3,6 @@
 package vscode
 
 import js.core.JsAny
-import kotlin.js.JsName
 
 /**
  * The document symbol provider interface defines the contract between extensions and
@@ -22,8 +21,7 @@ external interface DocumentSymbolProvider {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#DocumentSymbolProvider.provideDocumentSymbols)
      */
-    @JsName("provideDocumentSymbols")
-    fun provideDocumentSymbolsAsync(
+    fun provideDocumentSymbols(
         document: TextDocument,
         token: CancellationToken,
     ): ProviderResult<JsAny /* SymbolInformation[] | DocumentSymbol[] */>

@@ -3,7 +3,6 @@
 package vscode
 
 import js.array.ReadonlyArray
-import kotlin.js.JsName
 
 /**
  * The document link provider defines the contract between extensions and feature of showing
@@ -23,8 +22,7 @@ external interface DocumentLinkProvider<T : DocumentLink> {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#DocumentLinkProvider.provideDocumentLinks)
      */
-    @JsName("provideDocumentLinks")
-    fun provideDocumentLinksAsync(
+    fun provideDocumentLinks(
         document: TextDocument,
         token: CancellationToken,
     ): ProviderResult<ReadonlyArray<T>>

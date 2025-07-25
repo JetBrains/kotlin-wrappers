@@ -7,7 +7,6 @@ package vscode
 import js.array.ReadonlyArray
 import js.promise.PromiseLike
 import kotlin.js.JsModule
-import kotlin.js.JsName
 import kotlin.js.definedExternally
 
 /**
@@ -40,8 +39,7 @@ external object tasks {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#tasks.fetchTasks)
      */
-    @JsName("fetchTasks")
-    fun fetchTasksAsync(filter: TaskFilter = definedExternally): PromiseLike<ReadonlyArray<Task>>
+    fun fetchTasks(filter: TaskFilter = definedExternally): PromiseLike<ReadonlyArray<Task>>
 
     /**
      * Executes a task that is managed by the editor. The returned
@@ -56,8 +54,7 @@ external object tasks {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#tasks.executeTask)
      */
-    @JsName("executeTask")
-    fun executeTaskAsync(task: Task): PromiseLike<TaskExecution>
+    fun executeTask(task: Task): PromiseLike<TaskExecution>
 
     /**
      * The currently active task executions or an empty array.

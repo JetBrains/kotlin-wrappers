@@ -5,7 +5,6 @@ package vscode
 import js.core.JsAny
 import js.core.Void
 import js.promise.PromiseLike
-import kotlin.js.JsName
 import kotlin.js.definedExternally
 
 /**
@@ -211,8 +210,7 @@ external interface WorkspaceConfiguration {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#WorkspaceConfiguration.update)
      */
-    @JsName("update")
-    fun updateAsync(
+    fun update(
         section: String,
         value: JsAny?,
         configurationTarget: JsAny /* ConfigurationTarget | boolean */? = definedExternally,

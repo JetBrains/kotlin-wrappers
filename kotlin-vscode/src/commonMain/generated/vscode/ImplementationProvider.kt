@@ -3,7 +3,6 @@
 package vscode
 
 import js.core.JsAny
-import kotlin.js.JsName
 
 /**
  * The implementation provider interface defines the contract between extensions and
@@ -23,8 +22,7 @@ external interface ImplementationProvider {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#ImplementationProvider.provideImplementation)
      */
-    @JsName("provideImplementation")
-    fun provideImplementationAsync(
+    fun provideImplementation(
         document: TextDocument,
         position: Position,
         token: CancellationToken,

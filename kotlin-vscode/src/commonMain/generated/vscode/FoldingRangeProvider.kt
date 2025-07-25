@@ -4,7 +4,6 @@ package vscode
 
 import js.array.ReadonlyArray
 import js.core.Void
-import kotlin.js.JsName
 
 /**
  * The folding range provider interface defines the contract between extensions and
@@ -29,8 +28,7 @@ external interface FoldingRangeProvider {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#FoldingRangeProvider.provideFoldingRanges)
      */
-    @JsName("provideFoldingRanges")
-    fun provideFoldingRangesAsync(
+    fun provideFoldingRanges(
         document: TextDocument,
         context: FoldingContext,
         token: CancellationToken,

@@ -5,7 +5,6 @@ package vscode
 import js.core.JsAny
 import js.core.Void
 import js.promise.PromiseLike
-import kotlin.js.JsName
 
 /**
  * Restore webview panels that have been persisted when vscode shuts down.
@@ -56,8 +55,7 @@ external interface WebviewPanelSerializer<T : JsAny?> {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#WebviewPanelSerializer.deserializeWebviewPanel)
      */
-    @JsName("deserializeWebviewPanel")
-    fun deserializeWebviewPanelAsync(
+    fun deserializeWebviewPanel(
         webviewPanel: WebviewPanel,
         state: T,
     ): PromiseLike<Void>

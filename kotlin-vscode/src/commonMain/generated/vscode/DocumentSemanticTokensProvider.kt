@@ -4,7 +4,6 @@ package vscode
 
 import js.core.JsAny
 import js.core.Void
-import kotlin.js.JsName
 
 /**
  * The document semantic tokens provider interface defines the contract between extensions and
@@ -81,8 +80,7 @@ external interface DocumentSemanticTokensProvider {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#DocumentSemanticTokensProvider.provideDocumentSemanticTokens)
      */
-    @JsName("provideDocumentSemanticTokens")
-    fun provideDocumentSemanticTokensAsync(
+    fun provideDocumentSemanticTokens(
         document: TextDocument,
         token: CancellationToken,
     ): ProviderResult<SemanticTokens>

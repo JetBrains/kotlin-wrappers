@@ -5,7 +5,6 @@ package vscode
 import js.core.Void
 import js.promise.PromiseLike
 import js.promise.PromiseResult
-import kotlin.js.JsName
 
 /**
  * Provider for readonly custom editors that use a custom document model.
@@ -38,8 +37,7 @@ external interface CustomReadonlyEditorProvider<T : CustomDocument> {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#CustomReadonlyEditorProvider.openCustomDocument)
      */
-    @JsName("openCustomDocument")
-    fun openCustomDocumentAsync(
+    fun openCustomDocument(
         uri: Uri,
         openContext: CustomDocumentOpenContext,
         token: CancellationToken,
@@ -64,8 +62,7 @@ external interface CustomReadonlyEditorProvider<T : CustomDocument> {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#CustomReadonlyEditorProvider.resolveCustomEditor)
      */
-    @JsName("resolveCustomEditor")
-    fun resolveCustomEditorAsync(
+    fun resolveCustomEditor(
         document: T,
         webviewPanel: WebviewPanel,
         token: CancellationToken,

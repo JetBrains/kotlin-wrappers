@@ -3,7 +3,6 @@
 package vscode
 
 import js.core.Void
-import kotlin.js.JsName
 
 /**
  * A uri handler is responsible for handling system-wide [uris][Uri].
@@ -20,6 +19,5 @@ external interface UriHandler {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#UriHandler.handleUri)
      */
-    @JsName("handleUri")
-    fun handleUriAsync(uri: Uri): ProviderResult<Void>
+    fun handleUri(uri: Uri): ProviderResult<Void>
 }

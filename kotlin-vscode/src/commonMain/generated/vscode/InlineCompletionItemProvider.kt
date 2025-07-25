@@ -3,7 +3,6 @@
 package vscode
 
 import js.core.JsAny
-import kotlin.js.JsName
 
 /**
  * The inline completion item provider interface defines the contract between extensions and
@@ -29,8 +28,7 @@ external interface InlineCompletionItemProvider {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#InlineCompletionItemProvider.provideInlineCompletionItems)
      */
-    @JsName("provideInlineCompletionItems")
-    fun provideInlineCompletionItemsAsync(
+    fun provideInlineCompletionItems(
         document: TextDocument,
         position: Position,
         context: InlineCompletionContext,

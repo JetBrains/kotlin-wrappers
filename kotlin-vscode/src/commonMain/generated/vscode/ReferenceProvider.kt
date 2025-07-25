@@ -3,7 +3,6 @@
 package vscode
 
 import js.array.ReadonlyArray
-import kotlin.js.JsName
 
 /**
  * The reference provider interface defines the contract between extensions and
@@ -25,8 +24,7 @@ external interface ReferenceProvider {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#ReferenceProvider.provideReferences)
      */
-    @JsName("provideReferences")
-    fun provideReferencesAsync(
+    fun provideReferences(
         document: TextDocument,
         position: Position,
         context: ReferenceContext,

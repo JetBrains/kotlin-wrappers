@@ -9,7 +9,6 @@ import js.array.Tuple2
 import js.core.JsString
 import js.promise.PromiseLike
 import kotlin.js.JsModule
-import kotlin.js.JsName
 import kotlin.js.definedExternally
 
 /**
@@ -49,8 +48,7 @@ external object languages {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#languages.getLanguages)
      */
-    @JsName("getLanguages")
-    fun getLanguagesAsync(): PromiseLike<ReadonlyArray<JsString>>
+    fun getLanguages(): PromiseLike<ReadonlyArray<JsString>>
 
     /**
      * Set (and change) the [language][TextDocument.languageId] that is associated
@@ -65,8 +63,7 @@ external object languages {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#languages.setTextDocumentLanguage)
      */
-    @JsName("setTextDocumentLanguage")
-    fun setTextDocumentLanguageAsync(
+    fun setTextDocumentLanguage(
         document: TextDocument,
         languageId: String,
     ): PromiseLike<TextDocument>

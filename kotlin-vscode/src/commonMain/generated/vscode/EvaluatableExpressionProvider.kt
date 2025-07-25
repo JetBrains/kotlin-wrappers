@@ -2,8 +2,6 @@
 
 package vscode
 
-import kotlin.js.JsName
-
 /**
  * The evaluatable expression provider interface defines the contract between extensions and
  * the debug hover. In this contract the provider returns an evaluatable expression for a given position
@@ -25,8 +23,7 @@ external interface EvaluatableExpressionProvider {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#EvaluatableExpressionProvider.provideEvaluatableExpression)
      */
-    @JsName("provideEvaluatableExpression")
-    fun provideEvaluatableExpressionAsync(
+    fun provideEvaluatableExpression(
         document: TextDocument,
         position: Position,
         token: CancellationToken,

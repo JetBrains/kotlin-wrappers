@@ -10,7 +10,6 @@ import js.core.Void
 import js.promise.PromiseLike
 import vscode.lm.onDidChangeChatModels
 import kotlin.js.JsModule
-import kotlin.js.JsName
 import kotlin.js.definedExternally
 
 /**
@@ -53,8 +52,7 @@ external object lm {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#lm.selectChatModels)
      */
-    @JsName("selectChatModels")
-    fun selectChatModelsAsync(selector: LanguageModelChatSelector = definedExternally): PromiseLike<ReadonlyArray<LanguageModelChat>>
+    fun selectChatModels(selector: LanguageModelChatSelector = definedExternally): PromiseLike<ReadonlyArray<LanguageModelChat>>
 
     /**
      * Register a LanguageModelTool. The tool must also be registered in the package.json `languageModelTools` contribution
@@ -105,8 +103,7 @@ external object lm {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#lm.invokeTool)
      */
-    @JsName("invokeTool")
-    fun invokeToolAsync(
+    fun invokeTool(
         name: String,
         options: LanguageModelToolInvocationOptions<* /* object */>,
         token: CancellationToken = definedExternally,

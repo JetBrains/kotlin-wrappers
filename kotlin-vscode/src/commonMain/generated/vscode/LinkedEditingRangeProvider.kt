@@ -2,8 +2,6 @@
 
 package vscode
 
-import kotlin.js.JsName
-
 /**
  * The linked editing range provider interface defines the contract between extensions and
  * the linked editing feature.
@@ -24,8 +22,7 @@ external interface LinkedEditingRangeProvider {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#LinkedEditingRangeProvider.provideLinkedEditingRanges)
      */
-    @JsName("provideLinkedEditingRanges")
-    fun provideLinkedEditingRangesAsync(
+    fun provideLinkedEditingRanges(
         document: TextDocument,
         position: Position,
         token: CancellationToken,

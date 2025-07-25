@@ -3,7 +3,6 @@
 package vscode
 
 import js.core.JsAny
-import kotlin.js.JsName
 
 /**
  * The type definition provider defines the contract between extensions and
@@ -23,8 +22,7 @@ external interface TypeDefinitionProvider {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TypeDefinitionProvider.provideTypeDefinition)
      */
-    @JsName("provideTypeDefinition")
-    fun provideTypeDefinitionAsync(
+    fun provideTypeDefinition(
         document: TextDocument,
         position: Position,
         token: CancellationToken,

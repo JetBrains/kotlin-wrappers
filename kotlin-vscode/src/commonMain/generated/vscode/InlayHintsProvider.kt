@@ -4,7 +4,6 @@ package vscode
 
 import js.array.ReadonlyArray
 import js.core.Void
-import kotlin.js.JsName
 
 /**
  * The inlay hints provider interface defines the contract between extensions and
@@ -32,8 +31,7 @@ external interface InlayHintsProvider<T : InlayHint> {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#InlayHintsProvider.provideInlayHints)
      */
-    @JsName("provideInlayHints")
-    fun provideInlayHintsAsync(
+    fun provideInlayHints(
         document: TextDocument,
         range: Range,
         token: CancellationToken,

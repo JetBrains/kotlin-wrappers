@@ -2,8 +2,6 @@
 
 package vscode
 
-import kotlin.js.JsName
-
 /**
  * A debug adapter factory that creates [debug adapter descriptors][DebugAdapterDescriptor].
  *
@@ -29,8 +27,7 @@ external interface DebugAdapterDescriptorFactory {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#DebugAdapterDescriptorFactory.createDebugAdapterDescriptor)
      */
-    @JsName("createDebugAdapterDescriptor")
-    fun createDebugAdapterDescriptorAsync(
+    fun createDebugAdapterDescriptor(
         session: DebugSession,
         executable: DebugAdapterExecutable?,
     ): ProviderResult<DebugAdapterDescriptor>

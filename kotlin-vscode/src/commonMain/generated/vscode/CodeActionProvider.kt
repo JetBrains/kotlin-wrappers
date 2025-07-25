@@ -4,7 +4,6 @@ package vscode
 
 import js.array.ReadonlyArray
 import js.core.JsAny
-import kotlin.js.JsName
 
 /**
  * Provides contextual actions for code. Code actions typically either fix problems or beautify/refactor code.
@@ -45,8 +44,7 @@ external interface CodeActionProvider<T : CodeAction> {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#CodeActionProvider.provideCodeActions)
      */
-    @JsName("provideCodeActions")
-    fun provideCodeActionsAsync(
+    fun provideCodeActions(
         document: TextDocument,
         range: JsAny, /* Range | Selection */
         context: CodeActionContext,

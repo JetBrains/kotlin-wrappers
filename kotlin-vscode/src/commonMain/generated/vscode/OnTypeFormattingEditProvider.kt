@@ -3,7 +3,6 @@
 package vscode
 
 import js.array.ReadonlyArray
-import kotlin.js.JsName
 
 /**
  * The document formatting provider interface defines the contract between extensions and
@@ -29,8 +28,7 @@ external interface OnTypeFormattingEditProvider {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#OnTypeFormattingEditProvider.provideOnTypeFormattingEdits)
      */
-    @JsName("provideOnTypeFormattingEdits")
-    fun provideOnTypeFormattingEditsAsync(
+    fun provideOnTypeFormattingEdits(
         document: TextDocument,
         position: Position,
         ch: String,

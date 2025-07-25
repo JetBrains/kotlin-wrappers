@@ -5,7 +5,6 @@ package vscode
 import js.core.JsString
 import js.core.Void
 import js.promise.PromiseLike
-import kotlin.js.JsName
 
 /**
  * Represents a storage utility for secrets (or any information that is sensitive)
@@ -24,8 +23,7 @@ external interface SecretStorage {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#SecretStorage.get)
      */
-    @JsName("get")
-    fun getAsync(key: String): PromiseLike<JsString?>
+    fun get(key: String): PromiseLike<JsString?>
 
     /**
      * Store a secret under a given key.
@@ -34,8 +32,7 @@ external interface SecretStorage {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#SecretStorage.store)
      */
-    @JsName("store")
-    fun storeAsync(
+    fun store(
         key: String,
         value: String,
     ): PromiseLike<Void>
@@ -46,8 +43,7 @@ external interface SecretStorage {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#SecretStorage.delete)
      */
-    @JsName("delete")
-    fun deleteAsync(key: String): PromiseLike<Void>
+    fun delete(key: String): PromiseLike<Void>
 
     /**
      * Fires when a secret is stored or deleted.

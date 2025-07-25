@@ -2,8 +2,6 @@
 
 package vscode
 
-import kotlin.js.JsName
-
 /**
  * The declaration provider interface defines the contract between extensions and
  * the go to declaration feature.
@@ -22,8 +20,7 @@ external interface DeclarationProvider {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#DeclarationProvider.provideDeclaration)
      */
-    @JsName("provideDeclaration")
-    fun provideDeclarationAsync(
+    fun provideDeclaration(
         document: TextDocument,
         position: Position,
         token: CancellationToken,

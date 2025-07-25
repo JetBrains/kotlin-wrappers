@@ -2,8 +2,6 @@
 
 package vscode
 
-import kotlin.js.JsName
-
 /**
  * The hover provider interface defines the contract between extensions and
  * the [hover](https://code.visualstudio.com/docs/editor/intellisense)-feature.
@@ -24,8 +22,7 @@ external interface HoverProvider {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#HoverProvider.provideHover)
      */
-    @JsName("provideHover")
-    fun provideHoverAsync(
+    fun provideHover(
         document: TextDocument,
         position: Position,
         token: CancellationToken,

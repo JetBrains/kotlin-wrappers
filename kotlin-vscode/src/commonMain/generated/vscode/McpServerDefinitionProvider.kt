@@ -4,7 +4,6 @@ package vscode
 
 import js.array.ReadonlyArray
 import js.core.Void
-import kotlin.js.JsName
 
 /**
  * A type that can provide Model Context Protocol server definitions. This
@@ -32,8 +31,7 @@ external interface McpServerDefinitionProvider<T : McpServerDefinition> {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#McpServerDefinitionProvider.provideMcpServerDefinitions)
      */
-    @JsName("provideMcpServerDefinitions")
-    fun provideMcpServerDefinitionsAsync(token: CancellationToken): ProviderResult<ReadonlyArray<T>>
+    fun provideMcpServerDefinitions(token: CancellationToken): ProviderResult<ReadonlyArray<T>>
 
     /**
      * This function will be called when the editor needs to start a MCP server.

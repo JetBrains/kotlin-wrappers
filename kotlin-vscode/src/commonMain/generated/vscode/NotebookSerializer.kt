@@ -4,7 +4,6 @@ package vscode
 
 import js.promise.PromiseResult
 import js.typedarrays.Uint8Array
-import kotlin.js.JsName
 
 /**
  * The notebook serializer enables the editor to open notebook files.
@@ -26,8 +25,7 @@ external interface NotebookSerializer {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#NotebookSerializer.deserializeNotebook)
      */
-    @JsName("deserializeNotebook")
-    fun deserializeNotebookAsync(
+    fun deserializeNotebook(
         content: Uint8Array<*>,
         token: CancellationToken,
     ): PromiseResult<NotebookData>
@@ -41,8 +39,7 @@ external interface NotebookSerializer {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#NotebookSerializer.serializeNotebook)
      */
-    @JsName("serializeNotebook")
-    fun serializeNotebookAsync(
+    fun serializeNotebook(
         data: NotebookData,
         token: CancellationToken,
     ): PromiseResult<Uint8Array<*>>

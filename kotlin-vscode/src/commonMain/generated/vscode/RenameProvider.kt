@@ -2,8 +2,6 @@
 
 package vscode
 
-import kotlin.js.JsName
-
 /**
  * The rename provider interface defines the contract between extensions and
  * the [rename](https://code.visualstudio.com/docs/editor/editingevolved#_rename-symbol)-feature.
@@ -24,8 +22,7 @@ external interface RenameProvider {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#RenameProvider.provideRenameEdits)
      */
-    @JsName("provideRenameEdits")
-    fun provideRenameEditsAsync(
+    fun provideRenameEdits(
         document: TextDocument,
         position: Position,
         newName: String,

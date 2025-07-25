@@ -4,7 +4,6 @@ package vscode
 
 import js.array.ReadonlyArray
 import js.core.JsAny
-import kotlin.js.JsName
 
 /**
  * The call hierarchy provider interface describes the contract between extensions
@@ -27,8 +26,7 @@ external interface CallHierarchyProvider {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#CallHierarchyProvider.prepareCallHierarchy)
      */
-    @JsName("prepareCallHierarchy")
-    fun prepareCallHierarchyAsync(
+    fun prepareCallHierarchy(
         document: TextDocument,
         position: Position,
         token: CancellationToken,
@@ -46,8 +44,7 @@ external interface CallHierarchyProvider {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#CallHierarchyProvider.provideCallHierarchyIncomingCalls)
      */
-    @JsName("provideCallHierarchyIncomingCalls")
-    fun provideCallHierarchyIncomingCallsAsync(
+    fun provideCallHierarchyIncomingCalls(
         item: CallHierarchyItem,
         token: CancellationToken,
     ): ProviderResult<ReadonlyArray<CallHierarchyIncomingCall>>
@@ -64,8 +61,7 @@ external interface CallHierarchyProvider {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#CallHierarchyProvider.provideCallHierarchyOutgoingCalls)
      */
-    @JsName("provideCallHierarchyOutgoingCalls")
-    fun provideCallHierarchyOutgoingCallsAsync(
+    fun provideCallHierarchyOutgoingCalls(
         item: CallHierarchyItem,
         token: CancellationToken,
     ): ProviderResult<ReadonlyArray<CallHierarchyOutgoingCall>>

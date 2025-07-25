@@ -13,7 +13,6 @@ import js.promise.PromiseLike
 import js.typedarrays.Uint8Array
 import vscode.workspace.notebookDocuments
 import kotlin.js.JsModule
-import kotlin.js.JsName
 import kotlin.js.definedExternally
 
 /**
@@ -336,8 +335,7 @@ external object workspace {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#workspace.findFiles)
      */
-    @JsName("findFiles")
-    fun findFilesAsync(
+    fun findFiles(
         include: GlobPattern,
         exclude: GlobPattern? = definedExternally,
         maxResults: Int = definedExternally,
@@ -355,8 +353,7 @@ external object workspace {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#workspace.save)
      */
-    @JsName("save")
-    fun saveAsync(uri: Uri): PromiseLike<Uri?>
+    fun save(uri: Uri): PromiseLike<Uri?>
 
     /**
      * Saves the editor identified by the given resource to a new file name as provided by the user and
@@ -370,8 +367,7 @@ external object workspace {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#workspace.saveAs)
      */
-    @JsName("saveAs")
-    fun saveAsAsync(uri: Uri): PromiseLike<Uri?>
+    fun saveAs(uri: Uri): PromiseLike<Uri?>
 
     /**
      * Save all dirty files.
@@ -382,8 +378,7 @@ external object workspace {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#workspace.saveAll)
      */
-    @JsName("saveAll")
-    fun saveAllAsync(includeUntitled: Boolean = definedExternally): PromiseLike<JsBoolean>
+    fun saveAll(includeUntitled: Boolean = definedExternally): PromiseLike<JsBoolean>
 
     /**
      * Make changes to one or many resources or create, delete, and rename resources as defined by the given
@@ -404,8 +399,7 @@ external object workspace {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#workspace.applyEdit)
      */
-    @JsName("applyEdit")
-    fun applyEditAsync(
+    fun applyEdit(
         edit: WorkspaceEdit,
         metadata: WorkspaceEditMetadata = definedExternally,
     ): PromiseLike<JsBoolean>
@@ -631,8 +625,7 @@ external object workspace {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#workspace.openNotebookDocument)
      */
-    @JsName("openNotebookDocument")
-    fun openNotebookDocumentAsync(uri: Uri): PromiseLike<NotebookDocument>
+    fun openNotebookDocument(uri: Uri): PromiseLike<NotebookDocument>
 
     /**
      * Open an untitled notebook. The editor will prompt the user for a file
@@ -645,8 +638,7 @@ external object workspace {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#workspace.openNotebookDocument)
      */
-    @JsName("openNotebookDocument")
-    fun openNotebookDocumentAsync(
+    fun openNotebookDocument(
         notebookType: String,
         content: NotebookData = definedExternally,
     ): PromiseLike<NotebookDocument>
@@ -890,8 +882,7 @@ external object workspace {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#workspace.decode)
      */
-    @JsName("decode")
-    fun decodeAsync(content: Uint8Array<*>): PromiseLike<JsString>
+    fun decode(content: Uint8Array<*>): PromiseLike<JsString>
 
     /**
      * Decodes the content from a `Uint8Array` to a `string` using the
@@ -967,8 +958,7 @@ external object workspace {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#workspace.encode)
      */
-    @JsName("encode")
-    fun encodeAsync(content: String): PromiseLike<Uint8Array<*>>
+    fun encode(content: String): PromiseLike<Uint8Array<*>>
 
     /**
      * Encodes the content of a `string` to a `Uint8Array` using the

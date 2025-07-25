@@ -4,7 +4,6 @@ package vscode
 
 import js.array.ReadonlyArray
 import js.core.Void
-import kotlin.js.JsName
 
 /**
  * A provider that enables detection and handling of links within terminals.
@@ -22,8 +21,7 @@ external interface TerminalLinkProvider<T : TerminalLink> {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TerminalLinkProvider.provideTerminalLinks)
      */
-    @JsName("provideTerminalLinks")
-    fun provideTerminalLinksAsync(
+    fun provideTerminalLinks(
         context: TerminalLinkContext,
         token: CancellationToken,
     ): ProviderResult<ReadonlyArray<T>>
@@ -34,6 +32,5 @@ external interface TerminalLinkProvider<T : TerminalLink> {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TerminalLinkProvider.handleTerminalLink)
      */
-    @JsName("handleTerminalLink")
-    fun handleTerminalLinkAsync(link: T): ProviderResult<Void>
+    fun handleTerminalLink(link: T): ProviderResult<Void>
 }

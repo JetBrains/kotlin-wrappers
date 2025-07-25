@@ -5,7 +5,6 @@ package vscode
 import js.core.JsString
 import js.core.Void
 import js.promise.PromiseLike
-import kotlin.js.JsName
 
 /**
  * The clipboard provides read and write access to the system's clipboard.
@@ -19,8 +18,7 @@ external interface Clipboard {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#Clipboard.readText)
      */
-    @JsName("readText")
-    fun readTextAsync(): PromiseLike<JsString>
+    fun readText(): PromiseLike<JsString>
 
     /**
      * Writes text into the clipboard.
@@ -28,6 +26,5 @@ external interface Clipboard {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#Clipboard.writeText)
      */
-    @JsName("writeText")
-    fun writeTextAsync(value: String): PromiseLike<Void>
+    fun writeText(value: String): PromiseLike<Void>
 }

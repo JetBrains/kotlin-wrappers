@@ -3,7 +3,6 @@
 package vscode
 
 import js.core.JsAny
-import kotlin.js.JsName
 
 /**
  * The definition provider interface defines the contract between extensions and
@@ -24,8 +23,7 @@ external interface DefinitionProvider {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#DefinitionProvider.provideDefinition)
      */
-    @JsName("provideDefinition")
-    fun provideDefinitionAsync(
+    fun provideDefinition(
         document: TextDocument,
         position: Position,
         token: CancellationToken,

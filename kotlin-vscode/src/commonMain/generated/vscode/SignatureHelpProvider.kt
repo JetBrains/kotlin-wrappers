@@ -2,8 +2,6 @@
 
 package vscode
 
-import kotlin.js.JsName
-
 /**
  * The signature help provider interface defines the contract between extensions and
  * the [parameter hints](https://code.visualstudio.com/docs/editor/intellisense)-feature.
@@ -24,8 +22,7 @@ external interface SignatureHelpProvider {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#SignatureHelpProvider.provideSignatureHelp)
      */
-    @JsName("provideSignatureHelp")
-    fun provideSignatureHelpAsync(
+    fun provideSignatureHelp(
         document: TextDocument,
         position: Position,
         token: CancellationToken,

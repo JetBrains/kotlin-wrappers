@@ -7,7 +7,6 @@ import js.core.JsAny
 import js.core.JsString
 import js.core.Void
 import js.promise.PromiseLike
-import kotlin.js.JsName
 
 /**
  * A memento represents a storage utility. It can store and retrieve
@@ -61,8 +60,7 @@ external interface Memento {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#Memento.update)
      */
-    @JsName("update")
-    fun updateAsync(
+    fun update(
         key: String,
         value: JsAny?,
     ): PromiseLike<Void>

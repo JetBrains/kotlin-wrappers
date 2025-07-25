@@ -4,7 +4,6 @@ package vscode
 
 import js.core.JsInt
 import js.promise.PromiseLike
-import kotlin.js.JsName
 import kotlin.js.definedExternally
 
 /**
@@ -28,8 +27,7 @@ external interface LanguageModelToolTokenizationOptions {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#LanguageModelToolTokenizationOptions.countTokens)
      */
-    @JsName("countTokens")
-    fun countTokensAsync(
+    fun countTokens(
         text: String,
         token: CancellationToken = definedExternally,
     ): PromiseLike<JsInt>

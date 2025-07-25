@@ -4,7 +4,6 @@ package vscode
 
 import js.core.JsAny
 import js.core.Void
-import kotlin.js.JsName
 
 /**
  * A provider that can contribute items to the status bar that appears below a cell's editor.
@@ -27,8 +26,7 @@ external interface NotebookCellStatusBarItemProvider {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#NotebookCellStatusBarItemProvider.provideCellStatusBarItems)
      */
-    @JsName("provideCellStatusBarItems")
-    fun provideCellStatusBarItemsAsync(
+    fun provideCellStatusBarItems(
         cell: NotebookCell,
         token: CancellationToken,
     ): ProviderResult<JsAny /* NotebookCellStatusBarItem | NotebookCellStatusBarItem[] */>
