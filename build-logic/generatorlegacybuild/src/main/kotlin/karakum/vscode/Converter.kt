@@ -504,14 +504,23 @@ private fun convertFunction(
         getReturnSignature = { if (it != "Void") ": $it" else "" },
     )
 
+    val returnType = body.substringAfterLast("): ", "")
+    val isAsync = returnType.startsWith("Promise<")
+            || returnType.startsWith("PromiseLike<")
+            || returnType.startsWith("PromiseResult<")
+            || returnType.startsWith("ProviderResult<")
+
+    val finalName = if (isAsync) name + "Async" else name
     val modifier = if (source.startsWith("(")) "operator" else ""
-    return sequenceOf(
+    val result = sequenceOf(
         modifier,
         "fun",
         typeParameters,
-        "$name$body",
+        "$finalName$body",
     ).filter { it.isNotEmpty() }
         .joinToString(" ")
+
+    return (if (isAsync) "@JsName(\"$name\")\n" else "") + result
 }
 
 private fun convertFunctionBody(

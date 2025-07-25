@@ -4,6 +4,7 @@ package vscode
 
 import js.array.ReadonlyArray
 import js.core.JsAny
+import kotlin.js.JsName
 
 /**
  * The type hierarchy provider interface describes the contract between extensions
@@ -25,7 +26,8 @@ external interface TypeHierarchyProvider {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TypeHierarchyProvider.prepareTypeHierarchy)
      */
-    fun prepareTypeHierarchy(
+    @JsName("prepareTypeHierarchy")
+    fun prepareTypeHierarchyAsync(
         document: TextDocument,
         position: Position,
         token: CancellationToken,
@@ -43,7 +45,8 @@ external interface TypeHierarchyProvider {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TypeHierarchyProvider.provideTypeHierarchySupertypes)
      */
-    fun provideTypeHierarchySupertypes(
+    @JsName("provideTypeHierarchySupertypes")
+    fun provideTypeHierarchySupertypesAsync(
         item: TypeHierarchyItem,
         token: CancellationToken,
     ): ProviderResult<ReadonlyArray<TypeHierarchyItem>>
@@ -60,7 +63,8 @@ external interface TypeHierarchyProvider {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TypeHierarchyProvider.provideTypeHierarchySubtypes)
      */
-    fun provideTypeHierarchySubtypes(
+    @JsName("provideTypeHierarchySubtypes")
+    fun provideTypeHierarchySubtypesAsync(
         item: TypeHierarchyItem,
         token: CancellationToken,
     ): ProviderResult<ReadonlyArray<TypeHierarchyItem>>

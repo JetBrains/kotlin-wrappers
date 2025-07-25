@@ -3,6 +3,7 @@
 package vscode
 
 import js.array.ReadonlyArray
+import kotlin.js.JsName
 
 /**
  * The document color provider defines the contract between extensions and feature of
@@ -21,7 +22,8 @@ external interface DocumentColorProvider {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#DocumentColorProvider.provideDocumentColors)
      */
-    fun provideDocumentColors(
+    @JsName("provideDocumentColors")
+    fun provideDocumentColorsAsync(
         document: TextDocument,
         token: CancellationToken,
     ): ProviderResult<ReadonlyArray<ColorInformation>>

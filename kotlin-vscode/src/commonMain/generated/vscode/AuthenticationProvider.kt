@@ -6,6 +6,7 @@ import js.array.ReadonlyArray
 import js.core.JsString
 import js.core.Void
 import js.promise.PromiseLike
+import kotlin.js.JsName
 
 /**
  * A provider for performing authentication to a service.
@@ -30,7 +31,8 @@ external interface AuthenticationProvider {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#AuthenticationProvider.getSessions)
      */
-    fun getSessions(
+    @JsName("getSessions")
+    fun getSessionsAsync(
         scopes: ReadonlyArray<JsString>?,
         options: AuthenticationProviderSessionOptions,
     ): PromiseLike<ReadonlyArray<AuthenticationSession>>
@@ -51,7 +53,8 @@ external interface AuthenticationProvider {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#AuthenticationProvider.createSession)
      */
-    fun createSession(
+    @JsName("createSession")
+    fun createSessionAsync(
         scopes: ReadonlyArray<JsString>,
         options: AuthenticationProviderSessionOptions,
     ): PromiseLike<AuthenticationSession>
@@ -66,5 +69,6 @@ external interface AuthenticationProvider {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#AuthenticationProvider.removeSession)
      */
-    fun removeSession(sessionId: String): PromiseLike<Void>
+    @JsName("removeSession")
+    fun removeSessionAsync(sessionId: String): PromiseLike<Void>
 }

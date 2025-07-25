@@ -3,6 +3,7 @@
 package vscode
 
 import js.array.ReadonlyArray
+import kotlin.js.JsName
 
 /**
  * A task provider allows to add tasks to the task service.
@@ -18,7 +19,8 @@ external interface TaskProvider<T : Task> {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TaskProvider.provideTasks)
      */
-    fun provideTasks(token: CancellationToken): ProviderResult<ReadonlyArray<T>>
+    @JsName("provideTasks")
+    fun provideTasksAsync(token: CancellationToken): ProviderResult<ReadonlyArray<T>>
 
     /**
      * Resolves a task that has no {@linkcode Task.execution execution} set. Tasks are
@@ -39,7 +41,8 @@ external interface TaskProvider<T : Task> {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TaskProvider.resolveTask)
      */
-    fun resolveTask(
+    @JsName("resolveTask")
+    fun resolveTaskAsync(
         task: T,
         token: CancellationToken,
     ): ProviderResult<T>

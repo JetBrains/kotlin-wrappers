@@ -3,6 +3,7 @@
 package vscode
 
 import js.array.ReadonlyArray
+import kotlin.js.JsName
 
 /**
  * Will be invoked once after each request to get suggested followup questions to show the user. The user can click the followup to send it to the chat.
@@ -19,7 +20,8 @@ external interface ChatFollowupProvider {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#ChatFollowupProvider.provideFollowups)
      */
-    fun provideFollowups(
+    @JsName("provideFollowups")
+    fun provideFollowupsAsync(
         result: ChatResult,
         context: ChatContext,
         token: CancellationToken,

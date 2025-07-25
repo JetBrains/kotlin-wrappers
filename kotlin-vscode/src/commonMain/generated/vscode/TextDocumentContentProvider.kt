@@ -3,6 +3,7 @@
 package vscode
 
 import js.core.JsString
+import kotlin.js.JsName
 
 /**
  * A text document content provider allows to add readonly documents
@@ -39,7 +40,8 @@ external interface TextDocumentContentProvider {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TextDocumentContentProvider.provideTextDocumentContent)
      */
-    fun provideTextDocumentContent(
+    @JsName("provideTextDocumentContent")
+    fun provideTextDocumentContentAsync(
         uri: Uri,
         token: CancellationToken,
     ): ProviderResult<JsString>

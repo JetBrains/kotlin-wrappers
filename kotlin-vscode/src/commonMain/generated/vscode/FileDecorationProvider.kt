@@ -3,6 +3,7 @@
 package vscode
 
 import js.core.JsAny
+import kotlin.js.JsName
 
 /**
  * The decoration provider interfaces defines the contract between extensions and
@@ -35,7 +36,8 @@ external interface FileDecorationProvider {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#FileDecorationProvider.provideFileDecoration)
      */
-    fun provideFileDecoration(
+    @JsName("provideFileDecoration")
+    fun provideFileDecorationAsync(
         uri: Uri,
         token: CancellationToken,
     ): ProviderResult<FileDecoration>

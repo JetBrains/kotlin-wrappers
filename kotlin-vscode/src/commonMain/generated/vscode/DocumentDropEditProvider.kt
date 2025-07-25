@@ -3,6 +3,7 @@
 package vscode
 
 import js.core.JsAny
+import kotlin.js.JsName
 
 /**
  * Provider which handles dropping of resources into a text editor.
@@ -27,7 +28,8 @@ external interface DocumentDropEditProvider<T : DocumentDropEdit> {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#DocumentDropEditProvider.provideDocumentDropEdits)
      */
-    fun provideDocumentDropEdits(
+    @JsName("provideDocumentDropEdits")
+    fun provideDocumentDropEditsAsync(
         document: TextDocument,
         position: Position,
         dataTransfer: DataTransfer,

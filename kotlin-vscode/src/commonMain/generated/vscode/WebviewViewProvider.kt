@@ -4,6 +4,7 @@ package vscode
 
 import js.core.Void
 import js.promise.PromiseLike
+import kotlin.js.JsName
 
 /**
  * Provider for creating `WebviewView` elements.
@@ -26,7 +27,8 @@ external interface WebviewViewProvider {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#WebviewViewProvider.resolveWebviewView)
      */
-    fun resolveWebviewView(
+    @JsName("resolveWebviewView")
+    fun resolveWebviewViewAsync(
         webviewView: WebviewView,
         context: WebviewViewResolveContext<*>,
         token: CancellationToken,

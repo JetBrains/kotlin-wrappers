@@ -10,6 +10,7 @@ import js.core.JsBoolean
 import js.core.Void
 import js.promise.PromiseLike
 import kotlin.js.JsModule
+import kotlin.js.JsName
 import kotlin.js.definedExternally
 
 /**
@@ -161,7 +162,8 @@ external object debug {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#debug.startDebugging)
      */
-    fun startDebugging(
+    @JsName("startDebugging")
+    fun startDebuggingAsync(
         folder: WorkspaceFolder?,
         nameOrConfiguration: JsAny, /* string | DebugConfiguration */
         parentSessionOrOptions: JsAny /* DebugSession | DebugSessionOptions */ = definedExternally,
@@ -175,7 +177,8 @@ external object debug {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#debug.stopDebugging)
      */
-    fun stopDebugging(session: DebugSession = definedExternally): PromiseLike<Void>
+    @JsName("stopDebugging")
+    fun stopDebuggingAsync(session: DebugSession = definedExternally): PromiseLike<Void>
 
     /**
      * Add breakpoints.

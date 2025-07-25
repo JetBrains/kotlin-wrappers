@@ -5,6 +5,7 @@ package vscode
 import js.core.JsBoolean
 import js.promise.PromiseLike
 import js.regexp.RegExp
+import kotlin.js.JsName
 import kotlin.js.definedExternally
 
 /**
@@ -102,7 +103,8 @@ external interface TextDocument {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TextDocument.save)
      */
-    fun save(): PromiseLike<JsBoolean>
+    @JsName("save")
+    fun saveAsync(): PromiseLike<JsBoolean>
 
     /**
      * The [end of line][EndOfLine] sequence that is predominately

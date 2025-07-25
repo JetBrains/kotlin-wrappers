@@ -3,6 +3,7 @@
 package vscode
 
 import js.array.ReadonlyArray
+import kotlin.js.JsName
 
 /**
  * The selection range provider interface defines the contract between extensions and the "Expand and Shrink Selection" feature.
@@ -25,7 +26,8 @@ external interface SelectionRangeProvider {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#SelectionRangeProvider.provideSelectionRanges)
      */
-    fun provideSelectionRanges(
+    @JsName("provideSelectionRanges")
+    fun provideSelectionRangesAsync(
         document: TextDocument,
         positions: ReadonlyArray<Position>,
         token: CancellationToken,

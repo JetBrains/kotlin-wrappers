@@ -2,6 +2,8 @@
 
 package vscode
 
+import kotlin.js.JsName
+
 /**
  * Provides a terminal profile for the contributed terminal profile when launched via the UI or
  * command.
@@ -16,5 +18,6 @@ external interface TerminalProfileProvider {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TerminalProfileProvider.provideTerminalProfile)
      */
-    fun provideTerminalProfile(token: CancellationToken): ProviderResult<TerminalProfile>
+    @JsName("provideTerminalProfile")
+    fun provideTerminalProfileAsync(token: CancellationToken): ProviderResult<TerminalProfile>
 }

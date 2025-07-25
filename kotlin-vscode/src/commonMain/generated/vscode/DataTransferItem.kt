@@ -8,6 +8,7 @@ import js.core.JsAny
 import js.core.JsString
 import js.promise.PromiseLike
 import kotlin.js.JsModule
+import kotlin.js.JsName
 
 /**
  * Encapsulates data transferred during drag and drop operations.
@@ -22,7 +23,8 @@ open external class DataTransferItem {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#DataTransferItem.asString)
      */
-    fun asString(): PromiseLike<JsString>
+    @JsName("asString")
+    fun asStringAsync(): PromiseLike<JsString>
 
     /**
      * Try getting the [file][DataTransferFile] associated with this data transfer item.

@@ -4,6 +4,7 @@ package vscode
 
 import js.core.JsAny
 import js.promise.PromiseLike
+import kotlin.js.JsName
 import kotlin.js.definedExternally
 
 /**
@@ -64,7 +65,8 @@ external interface DebugSession {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#DebugSession.customRequest)
      */
-    fun customRequest(
+    @JsName("customRequest")
+    fun customRequestAsync(
         command: String,
         args: JsAny? = definedExternally,
     ): PromiseLike<JsAny?>
@@ -78,5 +80,6 @@ external interface DebugSession {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#DebugSession.getDebugProtocolBreakpoint)
      */
-    fun getDebugProtocolBreakpoint(breakpoint: Breakpoint): PromiseLike<DebugProtocolBreakpoint?>
+    @JsName("getDebugProtocolBreakpoint")
+    fun getDebugProtocolBreakpointAsync(breakpoint: Breakpoint): PromiseLike<DebugProtocolBreakpoint?>
 }

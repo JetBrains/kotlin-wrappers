@@ -5,6 +5,7 @@ package vscode
 import js.core.JsAny
 import js.core.JsBoolean
 import js.promise.PromiseLike
+import kotlin.js.JsName
 
 /**
  * Displays html content, similarly to an iframe.
@@ -92,7 +93,8 @@ external interface Webview {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#Webview.postMessage)
      */
-    fun postMessage(message: JsAny?): PromiseLike<JsBoolean>
+    @JsName("postMessage")
+    fun postMessageAsync(message: JsAny?): PromiseLike<JsBoolean>
 
     /**
      * Convert a uri for the local file system to one that can be used inside webviews.

@@ -7,6 +7,7 @@ import js.core.JsBoolean
 import js.core.JsString
 import js.objects.Record
 import js.promise.PromiseLike
+import kotlin.js.JsName
 import kotlin.js.definedExternally
 
 /**
@@ -108,5 +109,6 @@ external interface NotebookDocument {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#NotebookDocument.save)
      */
-    fun save(): PromiseLike<JsBoolean>
+    @JsName("save")
+    fun saveAsync(): PromiseLike<JsBoolean>
 }

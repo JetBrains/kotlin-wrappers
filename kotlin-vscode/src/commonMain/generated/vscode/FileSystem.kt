@@ -9,6 +9,7 @@ import js.core.Void
 import js.objects.JsPlainObject
 import js.promise.PromiseLike
 import js.typedarrays.Uint8Array
+import kotlin.js.JsName
 import kotlin.js.definedExternally
 
 /**
@@ -30,7 +31,8 @@ external interface FileSystem {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#FileSystem.stat)
      */
-    fun stat(uri: Uri): PromiseLike<FileStat>
+    @JsName("stat")
+    fun statAsync(uri: Uri): PromiseLike<FileStat>
 
     /**
      * Retrieve all entries of a [directory][FileType.Directory].
@@ -40,7 +42,8 @@ external interface FileSystem {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#FileSystem.readDirectory)
      */
-    fun readDirectory(uri: Uri): PromiseLike<ReadonlyArray<Tuple2<JsString, FileType>>>
+    @JsName("readDirectory")
+    fun readDirectoryAsync(uri: Uri): PromiseLike<ReadonlyArray<Tuple2<JsString, FileType>>>
 
     /**
      * Create a new directory (Note, that new files are created via `write`-calls).
@@ -52,7 +55,8 @@ external interface FileSystem {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#FileSystem.createDirectory)
      */
-    fun createDirectory(uri: Uri): PromiseLike<Void>
+    @JsName("createDirectory")
+    fun createDirectoryAsync(uri: Uri): PromiseLike<Void>
 
     /**
      * Read the entire contents of a file.
@@ -62,7 +66,8 @@ external interface FileSystem {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#FileSystem.readFile)
      */
-    fun readFile(uri: Uri): PromiseLike<Uint8Array<*>>
+    @JsName("readFile")
+    fun readFileAsync(uri: Uri): PromiseLike<Uint8Array<*>>
 
     /**
      * Write data to a file, replacing its entire contents.
@@ -72,7 +77,8 @@ external interface FileSystem {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#FileSystem.writeFile)
      */
-    fun writeFile(
+    @JsName("writeFile")
+    fun writeFileAsync(
         uri: Uri,
         content: Uint8Array<*>,
     ): PromiseLike<Void>
@@ -85,7 +91,8 @@ external interface FileSystem {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#FileSystem.delete)
      */
-    fun delete(
+    @JsName("delete")
+    fun deleteAsync(
         uri: Uri,
         options: DeleteOptions = definedExternally,
     ): PromiseLike<Void>
@@ -117,7 +124,8 @@ external interface FileSystem {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#FileSystem.rename)
      */
-    fun rename(
+    @JsName("rename")
+    fun renameAsync(
         source: Uri,
         target: Uri,
         options: RenameOptions = definedExternally,
@@ -143,7 +151,8 @@ external interface FileSystem {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#FileSystem.copy)
      */
-    fun copy(
+    @JsName("copy")
+    fun copyAsync(
         source: Uri,
         target: Uri,
         options: CopyOptions = definedExternally,

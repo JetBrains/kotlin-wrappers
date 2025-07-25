@@ -5,6 +5,7 @@ package vscode
 import js.array.ReadonlyArray
 import js.core.JsBoolean
 import js.promise.PromiseLike
+import kotlin.js.JsName
 import kotlin.js.definedExternally
 
 /**
@@ -52,7 +53,8 @@ external interface TabGroups {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TabGroups.close)
      */
-    fun close(
+    @JsName("close")
+    fun closeAsync(
         tab: ReadonlyArray<Tab>, /* Tab */
         preserveFocus: Boolean = definedExternally,
     ): PromiseLike<JsBoolean>
@@ -66,7 +68,8 @@ external interface TabGroups {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TabGroups.close)
      */
-    fun close(
+    @JsName("close")
+    fun closeAsync(
         tabGroup: ReadonlyArray<TabGroup>, /* TabGroup */
         preserveFocus: Boolean = definedExternally,
     ): PromiseLike<JsBoolean>

@@ -4,6 +4,7 @@ package vscode
 
 import js.array.ReadonlyArray
 import js.core.Void
+import kotlin.js.JsName
 
 /**
  * A code lens provider adds [commands][Command] to source text. The commands will be shown
@@ -31,7 +32,8 @@ external interface CodeLensProvider<T : CodeLens> {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#CodeLensProvider.provideCodeLenses)
      */
-    fun provideCodeLenses(
+    @JsName("provideCodeLenses")
+    fun provideCodeLensesAsync(
         document: TextDocument,
         token: CancellationToken,
     ): ProviderResult<ReadonlyArray<T>>

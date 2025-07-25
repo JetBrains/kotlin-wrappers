@@ -4,6 +4,7 @@ package vscode
 
 import js.promise.PromiseLike
 import js.typedarrays.Uint8Array
+import kotlin.js.JsName
 
 /**
  * A file associated with a {@linkcode DataTransferItem}.
@@ -34,5 +35,6 @@ external interface DataTransferFile {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#DataTransferFile.data)
      */
-    fun data(): PromiseLike<Uint8Array<*>>
+    @JsName("data")
+    fun dataAsync(): PromiseLike<Uint8Array<*>>
 }

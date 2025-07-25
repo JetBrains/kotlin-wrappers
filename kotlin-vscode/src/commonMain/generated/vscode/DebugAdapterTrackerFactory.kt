@@ -2,6 +2,8 @@
 
 package vscode
 
+import kotlin.js.JsName
+
 /**
  * A debug adapter factory that creates [debug adapter trackers][DebugAdapterTracker].
  *
@@ -17,5 +19,6 @@ external interface DebugAdapterTrackerFactory {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#DebugAdapterTrackerFactory.createDebugAdapterTracker)
      */
-    fun createDebugAdapterTracker(session: DebugSession): ProviderResult<DebugAdapterTracker>
+    @JsName("createDebugAdapterTracker")
+    fun createDebugAdapterTrackerAsync(session: DebugSession): ProviderResult<DebugAdapterTracker>
 }

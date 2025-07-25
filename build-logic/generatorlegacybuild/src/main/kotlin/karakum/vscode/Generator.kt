@@ -92,6 +92,7 @@ private fun fileContent(
         import js.typedarrays.Uint8Array
 
         import kotlin.js.JsModule
+        import kotlin.js.JsName
         import kotlin.js.definedExternally
         """.trimIndent(),
         body,

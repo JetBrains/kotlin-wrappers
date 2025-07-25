@@ -6,6 +6,7 @@ import js.core.JsAny
 import js.core.JsInt53
 import js.core.Void
 import js.promise.PromiseLike
+import kotlin.js.JsName
 import kotlin.js.definedExternally
 
 /**
@@ -78,7 +79,8 @@ external interface NotebookCellExecution {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#NotebookCellExecution.clearOutput)
      */
-    fun clearOutput(cell: NotebookCell = definedExternally): PromiseLike<Void>
+    @JsName("clearOutput")
+    fun clearOutputAsync(cell: NotebookCell = definedExternally): PromiseLike<Void>
 
     /**
      * Replace the output of the cell that is executing or of another cell that is affected by this execution.
@@ -90,7 +92,8 @@ external interface NotebookCellExecution {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#NotebookCellExecution.replaceOutput)
      */
-    fun replaceOutput(
+    @JsName("replaceOutput")
+    fun replaceOutputAsync(
         out: JsAny, /* NotebookCellOutput | readonly NotebookCellOutput[] */
         cell: NotebookCell = definedExternally,
     ): PromiseLike<Void>
@@ -105,7 +108,8 @@ external interface NotebookCellExecution {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#NotebookCellExecution.appendOutput)
      */
-    fun appendOutput(
+    @JsName("appendOutput")
+    fun appendOutputAsync(
         out: JsAny, /* NotebookCellOutput | readonly NotebookCellOutput[] */
         cell: NotebookCell = definedExternally,
     ): PromiseLike<Void>
@@ -119,7 +123,8 @@ external interface NotebookCellExecution {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#NotebookCellExecution.replaceOutputItems)
      */
-    fun replaceOutputItems(
+    @JsName("replaceOutputItems")
+    fun replaceOutputItemsAsync(
         items: JsAny, /* NotebookCellOutputItem | readonly NotebookCellOutputItem[] */
         output: NotebookCellOutput,
     ): PromiseLike<Void>
@@ -133,7 +138,8 @@ external interface NotebookCellExecution {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#NotebookCellExecution.appendOutputItems)
      */
-    fun appendOutputItems(
+    @JsName("appendOutputItems")
+    fun appendOutputItemsAsync(
         items: JsAny, /* NotebookCellOutputItem | readonly NotebookCellOutputItem[] */
         output: NotebookCellOutput,
     ): PromiseLike<Void>

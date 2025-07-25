@@ -7,6 +7,7 @@ import js.core.JsAny
 import js.core.JsBoolean
 import js.objects.JsPlainObject
 import js.promise.PromiseLike
+import kotlin.js.JsName
 import kotlin.js.definedExternally
 
 /**
@@ -73,7 +74,8 @@ external interface TextEditor {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TextEditor.edit)
      */
-    fun edit(
+    @JsName("edit")
+    fun editAsync(
         callback: (editBuilder: TextEditorEdit) -> Unit,
         options: EditOptions = definedExternally,
     ): PromiseLike<JsBoolean>
@@ -109,7 +111,8 @@ external interface TextEditor {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TextEditor.insertSnippet)
      */
-    fun insertSnippet(
+    @JsName("insertSnippet")
+    fun insertSnippetAsync(
         snippet: SnippetString,
         location: JsAny /* Position | Range | readonly Position[] | readonly Range[] */ = definedExternally,
         options: InsertSnippetOptions = definedExternally,

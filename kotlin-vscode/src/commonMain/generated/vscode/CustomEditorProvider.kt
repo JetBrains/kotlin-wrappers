@@ -5,6 +5,7 @@ package vscode
 import js.core.JsAny
 import js.core.Void
 import js.promise.PromiseLike
+import kotlin.js.JsName
 
 /**
  * Provider for editable custom editors that use a custom document model.
@@ -62,7 +63,8 @@ external interface CustomEditorProvider<T : CustomDocument> :
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#CustomEditorProvider.saveCustomDocument)
      */
-    fun saveCustomDocument(
+    @JsName("saveCustomDocument")
+    fun saveCustomDocumentAsync(
         document: T,
         cancellation: CancellationToken,
     ): PromiseLike<Void>
@@ -83,7 +85,8 @@ external interface CustomEditorProvider<T : CustomDocument> :
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#CustomEditorProvider.saveCustomDocumentAs)
      */
-    fun saveCustomDocumentAs(
+    @JsName("saveCustomDocumentAs")
+    fun saveCustomDocumentAsAsync(
         document: T,
         destination: Uri,
         cancellation: CancellationToken,
@@ -106,7 +109,8 @@ external interface CustomEditorProvider<T : CustomDocument> :
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#CustomEditorProvider.revertCustomDocument)
      */
-    fun revertCustomDocument(
+    @JsName("revertCustomDocument")
+    fun revertCustomDocumentAsync(
         document: T,
         cancellation: CancellationToken,
     ): PromiseLike<Void>
@@ -134,7 +138,8 @@ external interface CustomEditorProvider<T : CustomDocument> :
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#CustomEditorProvider.backupCustomDocument)
      */
-    fun backupCustomDocument(
+    @JsName("backupCustomDocument")
+    fun backupCustomDocumentAsync(
         document: T,
         context: CustomDocumentBackupContext,
         cancellation: CancellationToken,

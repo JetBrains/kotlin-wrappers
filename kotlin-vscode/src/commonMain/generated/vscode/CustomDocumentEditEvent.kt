@@ -4,6 +4,7 @@ package vscode
 
 import js.core.Void
 import js.promise.PromiseLike
+import kotlin.js.JsName
 
 /**
  * Event triggered by extensions to signal to the editor that an edit has occurred on an {@linkcode CustomDocument}.
@@ -29,7 +30,8 @@ external interface CustomDocumentEditEvent<T : CustomDocument> {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#CustomDocumentEditEvent.undo)
      */
-    fun undo(): PromiseLike<Void>?
+    @JsName("undo")
+    fun undoAsync(): PromiseLike<Void>?
 
     /**
      * Redo the edit operation.
@@ -40,7 +42,8 @@ external interface CustomDocumentEditEvent<T : CustomDocument> {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#CustomDocumentEditEvent.redo)
      */
-    fun redo(): PromiseLike<Void>?
+    @JsName("redo")
+    fun redoAsync(): PromiseLike<Void>?
 
     /**
      * Display name describing the edit.

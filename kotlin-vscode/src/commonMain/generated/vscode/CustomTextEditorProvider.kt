@@ -4,6 +4,7 @@ package vscode
 
 import js.core.Void
 import js.promise.PromiseLike
+import kotlin.js.JsName
 
 /**
  * Provider for text based custom editors.
@@ -36,7 +37,8 @@ external interface CustomTextEditorProvider {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#CustomTextEditorProvider.resolveCustomTextEditor)
      */
-    fun resolveCustomTextEditor(
+    @JsName("resolveCustomTextEditor")
+    fun resolveCustomTextEditorAsync(
         document: TextDocument,
         webviewPanel: WebviewPanel,
         token: CancellationToken,

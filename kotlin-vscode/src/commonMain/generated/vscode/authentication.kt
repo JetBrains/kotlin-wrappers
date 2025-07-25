@@ -8,8 +8,8 @@ import js.array.ReadonlyArray
 import js.core.JsAny
 import js.core.JsString
 import js.promise.PromiseLike
-import vscode.authentication.getSession
 import kotlin.js.JsModule
+import kotlin.js.JsName
 import kotlin.js.definedExternally
 
 /**
@@ -33,7 +33,8 @@ external object authentication {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#authentication.getSession)
      */
-    fun getSession(
+    @JsName("getSession")
+    fun getSessionAsync(
         providerId: String,
         scopes: ReadonlyArray<JsString>,
         options: JsAny, /* AuthenticationGetSessionOptions & { /** */createIfNone: true | AuthenticationGetSessionPresentationOptions } */
@@ -71,7 +72,8 @@ external object authentication {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#authentication.getSession)
      */
-    fun getSession(
+    @JsName("getSession")
+    fun getSessionAsync(
         providerId: String,
         scopes: ReadonlyArray<JsString>,
         options: AuthenticationGetSessionOptions = definedExternally,
@@ -91,7 +93,8 @@ external object authentication {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#authentication.getAccounts)
      */
-    fun getAccounts(providerId: String): PromiseLike<ReadonlyArray<AuthenticationSessionAccountInformation>>
+    @JsName("getAccounts")
+    fun getAccountsAsync(providerId: String): PromiseLike<ReadonlyArray<AuthenticationSessionAccountInformation>>
 
     /**
      * An [Event] which fires when the authentication sessions of an authentication provider have

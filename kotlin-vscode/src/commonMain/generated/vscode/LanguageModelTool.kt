@@ -3,6 +3,7 @@
 package vscode
 
 import js.core.JsAny
+import kotlin.js.JsName
 
 /**
  * A tool that can be invoked by a call to a [LanguageModelChat].
@@ -17,7 +18,8 @@ external interface LanguageModelTool<T : JsAny?> {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#LanguageModelTool.invoke)
      */
-    fun invoke(
+    @JsName("invoke")
+    fun invokeAsync(
         options: LanguageModelToolInvocationOptions<T>,
         token: CancellationToken,
     ): ProviderResult<LanguageModelToolResult>

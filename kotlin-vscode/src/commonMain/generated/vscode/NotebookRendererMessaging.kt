@@ -5,6 +5,7 @@ package vscode
 import js.core.JsAny
 import js.core.JsBoolean
 import js.promise.PromiseLike
+import kotlin.js.JsName
 import kotlin.js.definedExternally
 
 /**
@@ -42,7 +43,8 @@ external interface NotebookRendererMessaging {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#NotebookRendererMessaging.postMessage)
      */
-    fun postMessage(
+    @JsName("postMessage")
+    fun postMessageAsync(
         message: JsAny?,
         editor: NotebookEditor = definedExternally,
     ): PromiseLike<JsBoolean>

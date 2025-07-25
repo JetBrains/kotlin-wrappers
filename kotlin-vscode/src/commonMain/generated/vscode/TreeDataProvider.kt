@@ -5,6 +5,7 @@ package vscode
 import js.array.ReadonlyArray
 import js.core.JsAny
 import js.promise.PromiseResult
+import kotlin.js.JsName
 import kotlin.js.definedExternally
 
 /**
@@ -30,7 +31,8 @@ external interface TreeDataProvider<T : JsAny?> {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TreeDataProvider.getTreeItem)
      */
-    fun getTreeItem(element: T): PromiseResult<TreeItem>
+    @JsName("getTreeItem")
+    fun getTreeItemAsync(element: T): PromiseResult<TreeItem>
 
     /**
      * Get the children of `element` or root if no element is passed.
@@ -40,7 +42,8 @@ external interface TreeDataProvider<T : JsAny?> {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TreeDataProvider.getChildren)
      */
-    fun getChildren(element: T = definedExternally): ProviderResult<ReadonlyArray<T>>
+    @JsName("getChildren")
+    fun getChildrenAsync(element: T = definedExternally): ProviderResult<ReadonlyArray<T>>
 
     /**
      * Optional method to return the parent of `element`.

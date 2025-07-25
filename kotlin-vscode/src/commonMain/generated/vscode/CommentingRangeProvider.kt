@@ -3,6 +3,7 @@
 package vscode
 
 import js.core.JsAny
+import kotlin.js.JsName
 
 /**
  * Commenting range provider for a [comment controller][CommentController].
@@ -15,7 +16,8 @@ external interface CommentingRangeProvider {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#CommentingRangeProvider.provideCommentingRanges)
      */
-    fun provideCommentingRanges(
+    @JsName("provideCommentingRanges")
+    fun provideCommentingRangesAsync(
         document: TextDocument,
         token: CancellationToken,
     ): ProviderResult<JsAny /* Range[] | CommentingRanges */>

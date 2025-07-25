@@ -3,6 +3,7 @@
 package vscode
 
 import js.array.ReadonlyArray
+import kotlin.js.JsName
 
 /**
  * The document formatting provider interface defines the contract between extensions and
@@ -27,7 +28,8 @@ external interface DocumentRangeFormattingEditProvider {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#DocumentRangeFormattingEditProvider.provideDocumentRangeFormattingEdits)
      */
-    fun provideDocumentRangeFormattingEdits(
+    @JsName("provideDocumentRangeFormattingEdits")
+    fun provideDocumentRangeFormattingEditsAsync(
         document: TextDocument,
         range: Range,
         options: FormattingOptions,

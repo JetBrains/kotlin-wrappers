@@ -11,6 +11,7 @@ import js.core.JsAny
 import js.core.Void
 import js.objects.JsPlainObject
 import js.promise.PromiseLike
+import kotlin.js.JsName
 import kotlin.js.definedExternally
 
 /**
@@ -115,7 +116,8 @@ external interface TreeView<T : JsAny?> :
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TreeView.reveal)
      */
-    fun reveal(
+    @JsName("reveal")
+    fun revealAsync(
         element: T,
         options: RevealOptions = definedExternally,
     ): PromiseLike<Void>

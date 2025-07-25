@@ -2,6 +2,8 @@
 
 package vscode
 
+import kotlin.js.JsName
+
 /**
  * The document range semantic tokens provider interface defines the contract between extensions and
  * semantic tokens.
@@ -14,7 +16,8 @@ external interface DocumentRangeSemanticTokensProvider {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#DocumentRangeSemanticTokensProvider.provideDocumentRangeSemanticTokens)
      */
-    fun provideDocumentRangeSemanticTokens(
+    @JsName("provideDocumentRangeSemanticTokens")
+    fun provideDocumentRangeSemanticTokensAsync(
         document: TextDocument,
         range: Range,
         token: CancellationToken,

@@ -3,6 +3,7 @@
 package vscode
 
 import js.array.ReadonlyArray
+import kotlin.js.JsName
 
 /**
  * The workspace symbol provider interface defines the contract between extensions and
@@ -30,7 +31,8 @@ external interface WorkspaceSymbolProvider<T : SymbolInformation> {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#WorkspaceSymbolProvider.provideWorkspaceSymbols)
      */
-    fun provideWorkspaceSymbols(
+    @JsName("provideWorkspaceSymbols")
+    fun provideWorkspaceSymbolsAsync(
         query: String,
         token: CancellationToken,
     ): ProviderResult<ReadonlyArray<T>>

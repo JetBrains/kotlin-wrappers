@@ -4,6 +4,7 @@ package vscode
 
 import js.core.JsAny
 import js.promise.PromiseLike
+import kotlin.js.JsName
 
 /**
  * Represents an extension.
@@ -75,5 +76,6 @@ external interface Extension<T : JsAny?> {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#Extension.activate)
      */
-    fun activate(): PromiseLike<T>
+    @JsName("activate")
+    fun activateAsync(): PromiseLike<T>
 }
