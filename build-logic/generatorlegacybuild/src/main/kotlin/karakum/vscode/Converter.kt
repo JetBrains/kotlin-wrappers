@@ -26,7 +26,7 @@ internal fun parseDeclarations(
         .mapIndexed { index, it -> if (index > 0) "/**$it" else it }
         .map { it.trim() }
         .map { parseDeclaration(it) }
-        .plus(ConversionResult(DISPOSABLE_LIKE, convertInterface(DISPOSABLE_LIKE_DECLARATION)))
+        .plus(ConversionResult(DISPOSABLE_LIKE, convertInterface(DISPOSABLE_LIKE, DISPOSABLE_LIKE_DECLARATION)))
         .toList()
 }
 
@@ -51,14 +51,14 @@ private fun parseDeclaration(
         .substringBefore(" ")
 
     val body = when (type) {
-        "enum" -> convertEnum(source, name)
+        "enum" -> convertEnum(name, source)
 
-        "type" -> convertType(source)
+        "type" -> convertType(name, source)
 
-        "interface" -> convertInterface(source)
-        "class" -> convertInterface(source)
+        "interface" -> convertInterface(name, source)
+        "class" -> convertInterface(name, source)
 
-        "namespace" -> convertNamespace(source)
+        "namespace" -> convertNamespace(name, source)
         "const" -> convertConst(source)
 
         else -> TODO("Undefined source:\n---\n$source\n---")
@@ -76,8 +76,8 @@ private fun convertConst(
         .removeSuffix(";")
 
 private fun convertEnum(
-    source: String,
     name: String,
+    source: String,
 ): String =
     source
         .replaceFirst("\nexport enum ", "\nsealed /* enum */\nexternal interface ")
@@ -92,14 +92,16 @@ private fun convertEnum(
         .joinToString("\n")
 
 private fun convertType(
+    name: String,
     source: String,
 ): String {
-    val comment = kdoc(source.substringBefore("\nexport "))
+    val comment = kdoc(source.substringBefore("\nexport "), Commenter(name))
 
-    val decclaration = source.substringAfter("\nexport type")
-    val name = decclaration.substringBefore(" = ")
-    val bodySource = decclaration.substringAfter(" = ")
+    val (declaration, bodySource) = source
+        .substringAfter("\nexport type")
         .removeSuffix(";")
+        .split(" = ")
+        .also { check(it.size == 2) }
 
     val body = when {
         bodySource.startsWith("(") ->
@@ -118,13 +120,15 @@ private fun convertType(
         else -> bodySource
     }
 
-    return "$comment\ntypealias $name = $body"
+    return "$comment\ntypealias $declaration = $body"
 }
 
 private fun convertNamespace(
+    name: String,
     source: String,
 ): String {
-    val comment = kdoc(source.substringBefore("\nexport namespace ", ""))
+    val commenter = Commenter(name)
+    val comment = kdoc(source.substringBefore("\nexport namespace ", ""), commenter)
 
     val declaration = "external object " + source
         .substringAfter("\nexport namespace ", "")
@@ -142,15 +146,17 @@ private fun convertNamespace(
     return sequenceOf(
         comment,
         "$declaration {",
-        convertMembers(membersSource),
+        convertMembers(membersSource, commenter),
         "}",
     ).joinToString("\n")
 }
 
 private fun convertInterface(
+    name: String,
     source: String,
 ): String {
-    val comment = kdoc(source.substringBefore("\nexport ", ""))
+    val commenter = Commenter(name)
+    val comment = kdoc(source.substringBefore("\nexport ", ""), commenter)
 
     var declaration = "external " + source
         .substringAfter("export ", "")
@@ -194,7 +200,7 @@ private fun convertInterface(
         .trimIndent()
         .addDisposableLikeSupport()
 
-    var members = convertMembers(membersSource)
+    var members = convertMembers(membersSource, commenter)
 
     val isDisposable = "\nfun dispose()" in members
             && DISPOSABLE_LIKE !in declaration
@@ -217,6 +223,7 @@ private fun convertInterface(
 
 private fun convertMembers(
     source: String,
+    parentCommenter: Commenter,
 ): String {
     val members = mutableListOf<String>()
     val staticMembers = mutableListOf<String>()
@@ -237,8 +244,16 @@ private fun convertMembers(
                 return@forEach
             }
 
+            val memberName = memberSource
+                .substringBefore("?")
+                .substringBefore("(")
+                .substringBefore("<")
+                .substringBefore(":")
+                .substringAfterLast(" ")
+                .ifEmpty { "--invoke--" }
+
             val result = commentMember(
-                comment = kdoc(commentSource),
+                comment = kdoc(commentSource, parentCommenter.child(memberName)),
                 source = memberSource,
             )
 
@@ -529,6 +544,7 @@ private fun convertFunctionBody(
 
 private fun kdoc(
     source: String,
+    commenter: Commenter,
 ): String =
     source
         .replace(Regex("""\{@link (\S+)}"""), "[$1]")
