@@ -17,19 +17,19 @@ import kotlin.js.definedExternally
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#EvaluatableExpression)
  */
 open external class EvaluatableExpression {
-    /*
+    /**
      * The range is used to extract the evaluatable expression from the underlying document and to highlight it.
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#EvaluatableExpression.range)
      */
-    /*
-    readonly range: Range;
+    val range: Range
 
-    /*
+    /**
      * If specified the expression overrides the extracted expression.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#EvaluatableExpression.expression)
      */
-    readonly expression?: string | undefined
-    */
+    val expression: String?
 
     /**
      * Creates a new evaluatable expression object.
