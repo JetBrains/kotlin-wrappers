@@ -125,22 +125,16 @@ external interface TreeView<T : JsAny?> :
     interface RevealOptions {
         /**
          * If true, then the element will be selected.
-         *
-         * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#RevealOptions.select)
          */
         val select: Boolean?
 
         /**
          * If true, then the element will be focused.
-         *
-         * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#RevealOptions.focus)
          */
         val focus: Boolean?
 
         /**
          * If true, then the element will be expanded. If a number is passed, then up to that number of levels of children will be expanded
-         *
-         * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#RevealOptions.expand)
          */
         val expand: JsAny /* boolean | number */?
     }

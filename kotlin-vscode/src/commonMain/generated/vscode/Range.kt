@@ -155,15 +155,11 @@ open external class Range {
     interface WithChange {
         /**
          * New start position, defaults to [current start][Range.start]
-         *
-         * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#WithChange.start)
          */
         var start: Position?
 
         /**
          * New end position, defaults to [current end][Range.end]
-         *
-         * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#WithChange.end)
          */
         var end: Position?
     }

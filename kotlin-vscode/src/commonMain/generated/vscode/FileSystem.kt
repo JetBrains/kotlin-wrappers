@@ -95,15 +95,11 @@ external interface FileSystem {
     interface DeleteOptions {
         /**
          * Delete the content recursively if a folder is denoted.
-         *
-         * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#DeleteOptions.recursive)
          */
         var recursive: Boolean?
 
         /**
          * Use the os's trashcan instead of permanently deleting files whenever possible.
-         *
-         * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#DeleteOptions.useTrash)
          */
         var useTrash: Boolean?
     }
@@ -128,8 +124,6 @@ external interface FileSystem {
     interface RenameOptions {
         /**
          * Overwrite the file if it does exist.
-         *
-         * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#RenameOptions.overwrite)
          */
         var overwrite: Boolean?
     }
@@ -154,8 +148,6 @@ external interface FileSystem {
     interface CopyOptions {
         /**
          * Overwrite the file if it does exist.
-         *
-         * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#CopyOptions.overwrite)
          */
         var overwrite: Boolean?
     }

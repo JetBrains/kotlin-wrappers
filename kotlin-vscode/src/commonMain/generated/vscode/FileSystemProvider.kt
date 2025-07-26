@@ -73,15 +73,11 @@ external interface FileSystemProvider {
     interface WatchOptions {
         /**
          * When enabled also watch subfolders.
-         *
-         * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#WatchOptions.recursive)
          */
         val recursive: Boolean
 
         /**
          * A list of paths and pattern to exclude from watching.
-         *
-         * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#WatchOptions.excludes)
          */
         val excludes: ReadonlyArray<JsString>
     }
@@ -159,15 +155,11 @@ external interface FileSystemProvider {
     interface WriteFileOptions {
         /**
          * Create the file if it does not exist already.
-         *
-         * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#WriteFileOptions.create)
          */
         val create: Boolean
 
         /**
          * Overwrite the file if it does exist.
-         *
-         * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#WriteFileOptions.overwrite)
          */
         val overwrite: Boolean
     }
@@ -192,8 +184,6 @@ external interface FileSystemProvider {
     interface DeleteOptions {
         /**
          * Delete the content recursively if a folder is denoted.
-         *
-         * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#DeleteOptions.recursive)
          */
         val recursive: Boolean
     }
@@ -222,8 +212,6 @@ external interface FileSystemProvider {
     interface RenameOptions {
         /**
          * Overwrite the file if it does exist.
-         *
-         * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#RenameOptions.overwrite)
          */
         val overwrite: Boolean
     }
@@ -253,8 +241,6 @@ external interface FileSystemProvider {
     interface CopyOptions {
         /**
          * Overwrite the file if it does exist.
-         *
-         * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#CopyOptions.overwrite)
          */
         val overwrite: Boolean
     }

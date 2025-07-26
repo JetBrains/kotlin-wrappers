@@ -961,8 +961,6 @@ external object window {
     interface RegisterWebviewViewProviderOptions {
         /**
          * Content settings for the webview created for this view.
-         *
-         * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#RegisterWebviewViewProviderOptions.webviewOptions)
          */
         /*
         readonly webviewOptions?: {
@@ -1014,8 +1012,6 @@ external object window {
     interface RegisterCustomEditorProviderOptions {
         /**
          * Content settings for the webview panels created for this custom editor.
-         *
-         * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#RegisterCustomEditorProviderOptions.webviewOptions)
          */
         val webviewOptions: WebviewPanelOptions?
 
@@ -1032,8 +1028,6 @@ external object window {
          * When `supportsMultipleEditorsPerDocument` is enabled, users can split and create copies of the custom
          * editor. In this case, the custom editor must make sure it can properly synchronize the states of all
          * editor instances for a resource so that they are consistent.
-         *
-         * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#RegisterCustomEditorProviderOptions.supportsMultipleEditorsPerDocument)
          */
         val supportsMultipleEditorsPerDocument: Boolean?
     }

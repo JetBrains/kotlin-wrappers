@@ -113,36 +113,26 @@ open external class Uri {
     interface WithChange {
         /**
          * The new scheme, defaults to this Uri's scheme.
-         *
-         * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#WithChange.scheme)
          */
         var scheme: String?
 
         /**
          * The new authority, defaults to this Uri's authority.
-         *
-         * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#WithChange.authority)
          */
         var authority: String?
 
         /**
          * The new path, defaults to this Uri's path.
-         *
-         * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#WithChange.path)
          */
         var path: String?
 
         /**
          * The new query, defaults to this Uri's query.
-         *
-         * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#WithChange.query)
          */
         var query: String?
 
         /**
          * The new fragment, defaults to this Uri's fragment.
-         *
-         * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#WithChange.fragment)
          */
         var fragment: String?
     }

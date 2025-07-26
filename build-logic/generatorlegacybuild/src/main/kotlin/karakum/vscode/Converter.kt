@@ -26,7 +26,12 @@ internal fun parseDeclarations(
         .mapIndexed { index, it -> if (index > 0) "/**$it" else it }
         .map { it.trim() }
         .map { parseDeclaration(it) }
-        .plus(ConversionResult(DISPOSABLE_LIKE, convertInterface(DISPOSABLE_LIKE, DISPOSABLE_LIKE_DECLARATION)))
+        .plus(
+            ConversionResult(
+                DISPOSABLE_LIKE,
+                convertInterface(DISPOSABLE_LIKE, DISPOSABLE_LIKE_DECLARATION, Commenter.EMPTY),
+            )
+        )
         .toList()
 }
 
@@ -95,7 +100,10 @@ private fun convertType(
     name: String,
     source: String,
 ): String {
-    val comment = kdoc(source.substringBefore("\nexport "), Commenter(name))
+    val comment = kdoc(
+        source.substringBefore("\nexport "),
+        Commenter.create(name),
+    )
 
     val (declaration, bodySource) = source
         .substringAfter("\nexport type")
@@ -127,7 +135,7 @@ private fun convertNamespace(
     name: String,
     source: String,
 ): String {
-    val commenter = Commenter(name)
+    val commenter = Commenter.create(name)
     val comment = kdoc(source.substringBefore("\nexport namespace ", ""), commenter)
 
     val declaration = "external object " + source
@@ -154,8 +162,8 @@ private fun convertNamespace(
 private fun convertInterface(
     name: String,
     source: String,
+    commenter: Commenter = Commenter.create(name),
 ): String {
-    val commenter = Commenter(name)
     val comment = kdoc(source.substringBefore("\nexport ", ""), commenter)
 
     var declaration = "external " + source
@@ -501,7 +509,7 @@ private fun convertFunction(
         val newSource = source.replace(interfaceBody, optionsName)
 
         return convertFunction(newSource, asyncSupport) + "\n\n" +
-                convertInterface(optionsName, "export interface $optionsName $interfaceBody")
+                convertInterface(optionsName, "export interface $optionsName $interfaceBody", Commenter.EMPTY)
                     .replace("\nexternal interface ", "\ninterface ")
     }
 
@@ -620,8 +628,14 @@ private val API_PAGE_URL = "https://code.visualstudio.com/api/references/vscode-
 private fun kdoc(
     source: String,
     commenter: Commenter,
-): String =
-    source
+): String {
+    val result = source
         .replace(Regex("""\{@link (\S+)}"""), "[$1]")
         .replace(Regex("""\{@link (\S+) (.+)}"""), "[$2][$1]")
-        .replace("\n */", "\n *\n * [Online Documentation]($API_PAGE_URL#${commenter.name})\n */")
+
+    val name = commenter.name
+        ?: return result
+
+    return result
+        .replace("\n */", "\n *\n * [Online Documentation]($API_PAGE_URL#${name})\n */")
+}

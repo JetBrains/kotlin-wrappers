@@ -86,8 +86,6 @@ external object l10n {
          * `{0}` and `{1}` are replaced by the item at that index in the [args][options.args] array. If `args` is a `Record<string, any>`,
          * this supports named templating where strings like `{foo}` and `{bar}` are replaced by the value in
          * the Record for that key (foo, bar, etc).
-         *
-         * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TOptions.message)
          */
         var message: String
 
@@ -95,15 +93,11 @@ external object l10n {
          * The arguments to be used in the localized string. As an array, the index of the argument is used to
          * match the template placeholder in the localized string. As a Record, the key is used to match the template
          * placeholder in the localized string.
-         *
-         * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TOptions.args)
          */
         var args: ReadonlyArray<JsAny /* string | number | boolean> | Record<string, any */>?
 
         /**
          * A comment to help translators understand the context of the message.
-         *
-         * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TOptions.comment)
          */
         var comment: JsAny /* string | string[] */
     }

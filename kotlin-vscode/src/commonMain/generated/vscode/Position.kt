@@ -144,15 +144,11 @@ open external class Position {
     interface TranslateChange {
         /**
          * Delta value for the line value, default is `0`.
-         *
-         * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TranslateChange.lineDelta)
          */
         var lineDelta: Int?
 
         /**
          * Delta value for the character value, default is `0`.
-         *
-         * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TranslateChange.characterDelta)
          */
         var characterDelta: Int?
     }
@@ -187,15 +183,11 @@ open external class Position {
     interface WithChange {
         /**
          * New line value, defaults the line value of `this`.
-         *
-         * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#WithChange.line)
          */
         var line: Int?
 
         /**
          * New character value, defaults the character value of `this`.
-         *
-         * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#WithChange.character)
          */
         var character: Int?
     }

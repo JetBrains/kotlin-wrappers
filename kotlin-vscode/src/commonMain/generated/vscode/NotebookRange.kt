@@ -65,15 +65,11 @@ open external class NotebookRange {
     interface WithChange {
         /**
          * New start index, defaults to `this.start`.
-         *
-         * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#WithChange.start)
          */
         var start: Int?
 
         /**
          * New end index, defaults to `this.end`.
-         *
-         * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#WithChange.end)
          */
         var end: Int?
     }

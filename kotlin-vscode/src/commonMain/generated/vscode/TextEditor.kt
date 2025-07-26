@@ -83,15 +83,11 @@ external interface TextEditor {
     interface EditOptions {
         /**
          * Add undo stop before making the edits.
-         *
-         * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#EditOptions.undoStopBefore)
          */
         val undoStopBefore: Boolean
 
         /**
          * Add undo stop after making the edits.
-         *
-         * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#EditOptions.undoStopAfter)
          */
         val undoStopAfter: Boolean
     }
@@ -120,22 +116,16 @@ external interface TextEditor {
     interface InsertSnippetOptions {
         /**
          * Add undo stop before making the edits.
-         *
-         * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#InsertSnippetOptions.undoStopBefore)
          */
         val undoStopBefore: Boolean
 
         /**
          * Add undo stop after making the edits.
-         *
-         * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#InsertSnippetOptions.undoStopAfter)
          */
         val undoStopAfter: Boolean
 
         /**
          * Keep whitespace of the [SnippetString.value] as is.
-         *
-         * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#InsertSnippetOptions.keepWhitespace)
          */
         val keepWhitespace: Boolean?
     }
