@@ -5,6 +5,7 @@
 package vscode
 
 import js.core.JsAny
+import js.objects.JsPlainObject
 import kotlin.js.JsModule
 import kotlin.js.definedExternally
 
@@ -147,16 +148,23 @@ open external class Range {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#Range.with)
      */
-    /*
-    with(change: {
+    fun with(change: WithChange): Range
+
+
+    @JsPlainObject
+    interface WithChange {
         /**
-         * New start position, defaults to {@link Range.start current start}
+         * New start position, defaults to [current start][Range.start]
+         *
+         * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#WithChange.start)
          */
-        start?: Position;
+        var start: Position?
+
         /**
-         * New end position, defaults to {@link Range.end current end}
+         * New end position, defaults to [current end][Range.end]
+         *
+         * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#WithChange.end)
          */
-        end?: Position;
-    }): Range
-    */
+        var end: Position?
+    }
 }

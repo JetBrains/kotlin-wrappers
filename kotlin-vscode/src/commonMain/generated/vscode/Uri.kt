@@ -5,6 +5,7 @@
 package vscode
 
 import js.core.JsAny
+import js.objects.JsPlainObject
 import kotlin.js.JsModule
 import kotlin.js.definedExternally
 
@@ -105,30 +106,46 @@ open external class Uri {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#Uri.with)
      */
-    /*
-    with(change: {
+    fun with(change: WithChange): Uri
+
+
+    @JsPlainObject
+    interface WithChange {
         /**
          * The new scheme, defaults to this Uri's scheme.
+         *
+         * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#WithChange.scheme)
          */
-        scheme?: string;
+        var scheme: String?
+
         /**
          * The new authority, defaults to this Uri's authority.
+         *
+         * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#WithChange.authority)
          */
-        authority?: string;
+        var authority: String?
+
         /**
          * The new path, defaults to this Uri's path.
+         *
+         * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#WithChange.path)
          */
-        path?: string;
+        var path: String?
+
         /**
          * The new query, defaults to this Uri's query.
+         *
+         * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#WithChange.query)
          */
-        query?: string;
+        var query: String?
+
         /**
          * The new fragment, defaults to this Uri's fragment.
+         *
+         * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#WithChange.fragment)
          */
-        fragment?: string;
-    }): Uri
-    */
+        var fragment: String?
+    }
 
     /**
      * Returns a string representation of this Uri. The representation and normalization

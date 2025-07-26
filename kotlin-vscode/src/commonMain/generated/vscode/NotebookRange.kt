@@ -4,6 +4,7 @@
 
 package vscode
 
+import js.objects.JsPlainObject
 import kotlin.js.JsModule
 
 /**
@@ -57,16 +58,23 @@ open external class NotebookRange {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#NotebookRange.with)
      */
-    /*
-    with(change: {
+    fun with(change: WithChange): NotebookRange
+
+
+    @JsPlainObject
+    interface WithChange {
         /**
          * New start index, defaults to `this.start`.
+         *
+         * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#WithChange.start)
          */
-        start?: number;
+        var start: Int?
+
         /**
          * New end index, defaults to `this.end`.
+         *
+         * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#WithChange.end)
          */
-        end?: number;
-    }): NotebookRange
-    */
+        var end: Int?
+    }
 }

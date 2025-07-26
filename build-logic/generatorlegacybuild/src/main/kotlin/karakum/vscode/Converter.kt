@@ -315,7 +315,8 @@ private fun convertMember(
 ): String {
     val declaration = when {
         "\n" in source && (
-                "options: {" !in source
+                "change: {" !in source
+                        && "options: {" !in source
                         && "options?: {" !in source
                         || "#workspace." in comment
                 )
@@ -412,7 +413,7 @@ private fun convertConstructor(
 }
 
 private val OPTIONS_REGEX = Regex(
-    """options\??: (\{\n.+\n})""",
+    """(\w+)\??: (\{\n.+\n})""",
     setOf(RegexOption.MULTILINE, RegexOption.DOT_MATCHES_ALL),
 )
 
@@ -490,16 +491,17 @@ private fun convertFunction(
         .removeSuffix("?")
         .ifEmpty { "invoke" }
 
-    val optionsBody = OPTIONS_REGEX
+    val additionalInterfaceMatch = OPTIONS_REGEX
         .find(source)
-        ?.let { it.groupValues[1] }
 
-    if (optionsBody != null) {
-        val optionsName = name.replaceFirstChar { it.uppercase() } + "Options"
-        val newSource = source.replace(optionsBody, optionsName)
+    if (additionalInterfaceMatch != null) {
+        val (interfaceName, interfaceBody) = additionalInterfaceMatch.destructured
+        val optionsName = name.replaceFirstChar { it.uppercase() } +
+                interfaceName.replaceFirstChar { it.uppercase() }
+        val newSource = source.replace(interfaceBody, optionsName)
 
         return convertFunction(newSource, asyncSupport) + "\n\n" +
-                convertInterface(optionsName, "export interface $optionsName $optionsBody")
+                convertInterface(optionsName, "export interface $optionsName $interfaceBody")
                     .replace("\nexternal interface ", "\ninterface ")
     }
 

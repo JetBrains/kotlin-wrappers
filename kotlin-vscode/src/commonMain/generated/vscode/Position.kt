@@ -4,6 +4,7 @@
 
 package vscode
 
+import js.objects.JsPlainObject
 import kotlin.js.JsModule
 import kotlin.js.definedExternally
 
@@ -136,18 +137,25 @@ open external class Position {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#Position.translate)
      */
-    /*
-    translate(change: {
+    fun translate(change: TranslateChange): Position
+
+
+    @JsPlainObject
+    interface TranslateChange {
         /**
          * Delta value for the line value, default is `0`.
+         *
+         * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TranslateChange.lineDelta)
          */
-        lineDelta?: number;
+        var lineDelta: Int?
+
         /**
          * Delta value for the character value, default is `0`.
+         *
+         * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TranslateChange.characterDelta)
          */
-        characterDelta?: number;
-    }): Position
-    */
+        var characterDelta: Int?
+    }
 
     /**
      * Create a new position derived from this position.
@@ -172,16 +180,23 @@ open external class Position {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#Position.with)
      */
-    /*
-    with(change: {
+    fun with(change: WithChange): Position
+
+
+    @JsPlainObject
+    interface WithChange {
         /**
          * New line value, defaults the line value of `this`.
+         *
+         * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#WithChange.line)
          */
-        line?: number;
+        var line: Int?
+
         /**
          * New character value, defaults the character value of `this`.
+         *
+         * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#WithChange.character)
          */
-        character?: number;
-    }): Position
-    */
+        var character: Int?
+    }
 }
