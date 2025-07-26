@@ -1,12 +1,10 @@
 import org.gradle.api.tasks.PathSensitivity.RELATIVE
-import org.jetbrains.dokka.gradle.DokkaExtension
-import org.jetbrains.dokka.gradle.engine.plugins.DokkaHtmlPluginParameters
 
 plugins {
     id("org.jetbrains.dokka")
 }
 
-the<DokkaExtension>().apply {
+dokka {
     dokkaSourceSets.configureEach {
         includes.from(prepareReadmeForDokka)
 
@@ -35,7 +33,7 @@ the<DokkaExtension>().apply {
         maxHeapSize = "4g"
     }
 
-    pluginsConfiguration.named<DokkaHtmlPluginParameters>("html") {
+    pluginsConfiguration.html {
         homepageLink = "https://github.com/JetBrains/kotlin-wrappers/"
         templatesDir.convention(rootProject.layout.projectDirectory.dir("docs/templates"))
     }
