@@ -7,6 +7,9 @@ import js.core.JsAny
 import js.objects.JsPlainObject
 import web.events.EventInit
 
+/**
+ * [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/MessageEvent/MessageEvent#options)
+ */
 @JsPlainObject
 external interface MessageEventInit<D : JsAny?> :
     EventInit {

@@ -6,6 +6,9 @@ import js.objects.JsPlainObject
 import web.events.EventTarget
 import web.uievents.EventModifierInit
 
+/**
+ * [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/MouseEvent#options)
+ */
 @JsPlainObject
 external interface MouseEventInit :
     EventModifierInit {

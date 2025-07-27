@@ -5,6 +5,9 @@ package web.rtc
 import js.objects.JsPlainObject
 import web.events.EventInit
 
+/**
+ * [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/RTCPeerConnectionIceErrorEvent/RTCPeerConnectionIceErrorEvent#options)
+ */
 @JsPlainObject
 external interface RTCPeerConnectionIceErrorEventInit :
     EventInit {

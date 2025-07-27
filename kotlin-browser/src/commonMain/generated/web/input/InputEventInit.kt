@@ -8,6 +8,9 @@ import web.data.DataTransfer
 import web.ranges.StaticRange
 import web.uievents.UIEventInit
 
+/**
+ * [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/InputEvent/InputEvent#options)
+ */
 @JsPlainObject
 external interface InputEventInit :
     UIEventInit {

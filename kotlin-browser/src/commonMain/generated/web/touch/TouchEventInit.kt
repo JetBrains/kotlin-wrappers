@@ -6,6 +6,9 @@ import js.array.ReadonlyArray
 import js.objects.JsPlainObject
 import web.uievents.EventModifierInit
 
+/**
+ * [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/TouchEvent/TouchEvent#options)
+ */
 @JsPlainObject
 external interface TouchEventInit :
     EventModifierInit {

@@ -4,6 +4,9 @@ package web.mouse
 
 import js.objects.JsPlainObject
 
+/**
+ * [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/WheelEvent/WheelEvent#options)
+ */
 @JsPlainObject
 external interface WheelEventInit :
     MouseEventInit {

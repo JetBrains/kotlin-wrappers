@@ -7,6 +7,9 @@ import js.core.JsAny
 import js.objects.JsPlainObject
 import web.messaging.MessagePort
 
+/**
+ * [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/ExtendableMessageEvent/ExtendableMessageEvent#options)
+ */
 @JsPlainObject
 external interface ExtendableMessageEventInit :
     ExtendableEventInit {

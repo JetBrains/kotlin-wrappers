@@ -5,6 +5,9 @@ package web.keyboard
 import js.objects.JsPlainObject
 import web.uievents.EventModifierInit
 
+/**
+ * [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/KeyboardEvent#options)
+ */
 @JsPlainObject
 external interface KeyboardEventInit :
     EventModifierInit {

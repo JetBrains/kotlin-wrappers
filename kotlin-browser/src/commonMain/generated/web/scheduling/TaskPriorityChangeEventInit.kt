@@ -5,6 +5,9 @@ package web.scheduling
 import js.objects.JsPlainObject
 import web.events.EventInit
 
+/**
+ * [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/TaskPriorityChangeEvent/TaskPriorityChangeEvent#options)
+ */
 @JsPlainObject
 external interface TaskPriorityChangeEventInit :
     EventInit {

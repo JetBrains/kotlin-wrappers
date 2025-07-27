@@ -5,6 +5,9 @@ package web.storage
 import js.objects.JsPlainObject
 import web.events.EventInit
 
+/**
+ * [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/StorageEvent/StorageEvent#options)
+ */
 @JsPlainObject
 external interface StorageEventInit :
     EventInit {

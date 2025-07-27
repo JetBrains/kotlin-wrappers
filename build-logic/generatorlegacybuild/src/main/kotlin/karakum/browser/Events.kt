@@ -178,6 +178,11 @@ private fun event(
                 " $parentDeclaration"
 
         sequenceOf(
+            """
+            /**
+             * [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/$name/$name#options)
+             */
+            """.trimIndent(),
             "@JsPlainObject",
             "external interface $declaration {",
             members,
