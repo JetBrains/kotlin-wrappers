@@ -64,6 +64,13 @@ open external class Animation(
     var onremove: EventHandler<AnimationPlaybackEvent, Animation, Animation>?
 
     /**
+     * The **`overallProgress`** read-only property of the Animation interface returns a number between `0` and `1` indicating the animation's overall progress towards its finished state.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Animation/overallProgress)
+     */
+    val overallProgress: Double?
+
+    /**
      * The read-only **`Animation.pending`** property of the Web Animations API indicates whether the animation is currently waiting for an asynchronous operation such as initiating playback or pausing a running animation.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Animation/pending)

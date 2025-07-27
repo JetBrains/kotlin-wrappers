@@ -412,6 +412,13 @@ private val ERROR_TYPES = listOf(
 private val SCHEDULING_TYPES = listOf(
     "IdleDeadline",
     "IdleRequestOptions",
+
+    "Scheduler",
+    "SchedulerPostTaskOptions",
+    "TaskController",
+    "TaskControllerInit",
+    "TaskSignal",
+    "TaskSignalAnyInit",
 )
 
 private val WEB_SERIALIZATION = listOf(
@@ -2034,6 +2041,9 @@ private fun convertProperty(
             -> "String /* $type */"
 
         "AudioContextLatencyCategory | number",
+            -> "JsAny /* $type */"
+
+        "TaskPriority | TaskSignal",
             -> "JsAny /* $type */"
 
         // MediaStreamConstraints

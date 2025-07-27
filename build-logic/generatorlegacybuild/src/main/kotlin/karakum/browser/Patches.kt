@@ -310,6 +310,17 @@ internal fun String.applyPatches(): String {
             ", NavigatorCookies, NavigatorID",
             ", NavigatorCookies, NavigatorGPU, NavigatorID",
         )
+        // https://github.com/microsoft/TypeScript-DOM-lib-generator/issues/2084
+        .replace(
+            "interface SchedulerPostTaskCallback {\n    (): any;\n}",
+            "interface SchedulerPostTaskCallback<T> {\n    (): T;\n}",
+        )
+        .patchInterface("Scheduler") {
+            it.replace(
+                "postTask(callback: SchedulerPostTaskCallback, options?: SchedulerPostTaskOptions): Promise<any>;",
+                "postTask<T>(callback: SchedulerPostTaskCallback<T>, options?: SchedulerPostTaskOptions): Promise<T>;",
+            )
+        }
 }
 
 internal val DOM_GEOMETRY_ALIASES = listOf(

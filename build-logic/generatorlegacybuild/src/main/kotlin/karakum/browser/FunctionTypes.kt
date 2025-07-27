@@ -38,6 +38,7 @@ private fun convertFunctionType(
 
         name == "VoidFunction" -> "web.function"
         name == "IdleRequestCallback" -> "web.scheduling"
+        name == "SchedulerPostTaskCallback" -> "web.scheduling"
 
         name in STREAMS_FUNCTION_TYPES -> "web.streams"
 

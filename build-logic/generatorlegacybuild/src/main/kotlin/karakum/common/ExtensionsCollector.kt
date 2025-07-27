@@ -7,6 +7,7 @@ private val ABORTABLE_TYPES = setOf(
     "AddEventListenerOptions",
     "CredentialCreationOptions",
     "CredentialRequestOptions",
+    "SchedulerPostTaskOptions",
     "StreamPipeOptions",
     "SubscribeOptions",
     "RequestInit",
@@ -173,7 +174,6 @@ internal open class SuspendExtensionsCollector(
             val comment = docs?.let { "$it\n" }.orEmpty()
             val funTypeParameters = parentTypeParameters?.let { "<$it>" }.orEmpty()
             val parametersSlice = parametersList.subList(0, parametersList.size - parametersToSkip)
-            val newParameters = "(${parametersSlice.joinToString(",")})".withNoInline(parameterNames)
             val body = generateSuspendBody(
                 functionName,
                 parameterNames,
@@ -182,7 +182,14 @@ internal open class SuspendExtensionsCollector(
                 isAbortable
             )
 
-            val modifiers = if (CONTROLLER_INIT !in body) "inline" else ""
+            val isInline = CONTROLLER_INIT !in body
+            var newParameters = "(${parametersSlice.joinToString(",")})"
+            if (isInline) {
+                newParameters = newParameters.withNoInline(parameterNames)
+            }
+
+
+            val modifiers = if (isInline) "inline" else ""
             val extension = """
             ${comment}suspend $modifiers $functionSignature $funTypeParameters $fullParentName$functionName$newParameters$returnType {
                 $body

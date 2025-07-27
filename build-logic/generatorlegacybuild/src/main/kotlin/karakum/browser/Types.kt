@@ -141,6 +141,8 @@ private val PKG_MAP = mapOf(
 
     "WebTransportCongestionControl" to "web.transport",
     "WebTransportErrorSource" to "web.transport",
+
+    "TaskPriority" to "web.scheduling",
 )
 
 private val EXCLUDED_TYPES = setOf(

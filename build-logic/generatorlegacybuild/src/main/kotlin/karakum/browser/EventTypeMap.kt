@@ -54,6 +54,7 @@ internal val EVENT_DATA = listOf(
     EventInfo("web.speech.SpeechRecognitionErrorEvent"),
     EventInfo("web.speech.SpeechSynthesisEvent"),
     EventInfo("web.speech.SpeechSynthesisErrorEvent"),
+    EventInfo("web.scheduling.TaskPriorityChangeEvent"),
     EventInfo("web.vtt.TrackEvent"),
     EventInfo("web.sockets.CloseEvent"),
     EventInfo("web.device.DeviceMotionEvent"),
@@ -247,4 +248,6 @@ internal val EVENT_CORRECTION_MAP = mapOf(
 
     "pagereveal" to "page_reveal",
     "pageswap" to "page_swap",
+
+    "prioritychange" to "priority_change"
 )
