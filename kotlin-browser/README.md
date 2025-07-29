@@ -2,7 +2,7 @@
 
 # Module kotlin-browser
 
-Browser APIs missing from the standard library
+Wrappers of stable browser APIs. 
 
 ### Internals
 
