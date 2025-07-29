@@ -6,9 +6,6 @@ import node.test.SuiteFn
 import node.test.TestOptions
 
 @seskar.js.JsAsync
-external suspend fun todo(): js.core.Void
-
-@seskar.js.JsAsync
 external suspend fun todo(
     name: String = definedExternally,
     options: TestOptions = definedExternally,
@@ -29,3 +26,6 @@ external suspend fun todo(
 
 @seskar.js.JsAsync
 external suspend fun todo(fn: SuiteFn = definedExternally): js.core.Void
+
+@seskar.js.JsAsync
+external suspend fun todo(): js.core.Void
