@@ -22,7 +22,7 @@ abstract external class TerrainProvider() {
      * are passed an instance of [TileProviderError].
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/TerrainProvider.html#errorEvent">Online Documentation</a>
      */
-    abstract val errorEvent: Event<* /* ErrorEvent */>
+    abstract val errorEvent: Event<ErrorEvent /* TerrainProvider.ErrorEvent */>
 
     /**
      * Gets the credit to display when this terrain provider is active.  Typically this is used to credit

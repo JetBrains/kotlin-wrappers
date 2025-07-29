@@ -95,7 +95,7 @@ internal fun kotlinType(
             .replace(": boolean", ": Boolean")
             .replace("EntityCluster.", "")
             .replace("EntityCollection.", "")
-            .replace("TerrainProvider.ErrorEvent", "* /* ErrorEvent */")
+            .replace("TerrainProvider.ErrorEvent", "ErrorEvent /* TerrainProvider.ErrorEvent */")
 
     if (type.startsWith("Record<"))
         return "Readonly$type"
