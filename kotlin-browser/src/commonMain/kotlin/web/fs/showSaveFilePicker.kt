@@ -6,10 +6,10 @@ import kotlin.js.JsName
 import kotlin.js.definedExternally
 
 /**
- * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/showOpenFilePicker)
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/showSaveFilePicker)
  */
 @ExperimentalWebApi
-@JsName("showOpenFilePicker")
-external fun showOpenFilePickerAsync(
+@JsName("showSaveFilePicker")
+external fun showSaveFilePickerAsync(
     options: SaveFilePickerOptions = definedExternally,
 ): Promise<FileSystemFileHandle>
