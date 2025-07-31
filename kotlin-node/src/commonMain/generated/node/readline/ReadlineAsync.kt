@@ -39,7 +39,6 @@ external class Readline {
      * The `rl.commit()` method sends all the pending actions to the associated `stream` and clears the internal list of pending actions.
      * @since v17.0.0
      */
-
     @JsName("commit")
     fun commitAsync(): Promise<js.core.Void>
 

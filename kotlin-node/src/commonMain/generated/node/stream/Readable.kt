@@ -448,13 +448,23 @@ open external class Readable :
      * @param fn a function to call on each chunk of the stream. Async or not.
      * @returns a promise for when the stream has finished.
      */
-    fun forEach(
+    @JsName("forEach")
+    fun forEachAsync(
         fn: (
             data: Any?,
             options: ArrayOptions?, // use undefined for default
         ) -> js.promise.PromiseResult<js.core.Void>,
         options: ArrayOptions = definedExternally,
     ): Promise<js.core.Void>
+
+    @seskar.js.JsAsync
+    suspend fun forEach(
+        fn: (
+            data: Any?,
+            options: ArrayOptions?, // use undefined for default
+        ) -> js.promise.PromiseResult<js.core.Void>,
+        options: ArrayOptions = definedExternally,
+    ): js.core.Void
 
     /**
      * This method allows easily obtaining the contents of a stream.
@@ -464,7 +474,11 @@ open external class Readable :
      * @since v17.5.0
      * @returns a promise containing an array with the contents of the stream.
      */
-    fun toArray(options: ArrayOptions = definedExternally): Promise<js.array.ReadonlyArray<Any?>>
+    @JsName("toArray")
+    fun toArrayAsync(options: ArrayOptions = definedExternally): Promise<js.array.ReadonlyArray<Any?>>
+
+    @seskar.js.JsAsync
+    suspend fun toArray(options: ArrayOptions = definedExternally): js.array.ReadonlyArray<Any?>
 
     /**
      * This method is similar to `Array.prototype.some` and calls *fn* on each chunk in the stream
@@ -475,10 +489,17 @@ open external class Readable :
      * @param fn a function to call on each chunk of the stream. Async or not.
      * @returns a promise evaluating to `true` if *fn* returned a truthy value for at least one of the chunks.
      */
-    fun some(
+    @JsName("some")
+    fun someAsync(
         fn: (data: Any?, options: ArrayOptions? /* use undefined for default */) -> js.promise.PromiseResult<Boolean>,
         options: ArrayOptions = definedExternally,
     ): Promise<Boolean>
+
+    @seskar.js.JsAsync
+    suspend fun some(
+        fn: (data: Any?, options: ArrayOptions? /* use undefined for default */) -> js.promise.PromiseResult<Boolean>,
+        options: ArrayOptions = definedExternally,
+    ): Boolean
 
     /**
      * This method is similar to `Array.prototype.find` and calls *fn* on each chunk in the stream
@@ -490,15 +511,29 @@ open external class Readable :
      * @returns a promise evaluating to the first chunk for which *fn* evaluated with a truthy value,
      * or `undefined` if no element was found.
      */
-    fun <T> find(
+    @JsName("find")
+    fun <T> findAsync(
         fn: (data: Any?, options: ArrayOptions? /* use undefined for default */) -> Boolean, /* data is T */
         options: ArrayOptions = definedExternally,
     ): Promise<T?>
 
-    fun find(
+    @seskar.js.JsAsync
+    suspend fun <T> find(
+        fn: (data: Any?, options: ArrayOptions? /* use undefined for default */) -> Boolean, /* data is T */
+        options: ArrayOptions = definedExternally,
+    ): T?
+
+    @JsName("find")
+    fun findAsync(
         fn: (data: Any?, options: ArrayOptions? /* use undefined for default */) -> js.promise.PromiseResult<Boolean>,
         options: ArrayOptions = definedExternally,
     ): Promise<Any?>
+
+    @seskar.js.JsAsync
+    suspend fun find(
+        fn: (data: Any?, options: ArrayOptions? /* use undefined for default */) -> js.promise.PromiseResult<Boolean>,
+        options: ArrayOptions = definedExternally,
+    ): Any?
 
     /**
      * This method is similar to `Array.prototype.every` and calls *fn* on each chunk in the stream
@@ -509,10 +544,17 @@ open external class Readable :
      * @param fn a function to call on each chunk of the stream. Async or not.
      * @returns a promise evaluating to `true` if *fn* returned a truthy value for every one of the chunks.
      */
-    fun every(
+    @JsName("every")
+    fun everyAsync(
         fn: (data: Any?, options: ArrayOptions? /* use undefined for default */) -> js.promise.PromiseResult<Boolean>,
         options: ArrayOptions = definedExternally,
     ): Promise<Boolean>
+
+    @seskar.js.JsAsync
+    suspend fun every(
+        fn: (data: Any?, options: ArrayOptions? /* use undefined for default */) -> js.promise.PromiseResult<Boolean>,
+        options: ArrayOptions = definedExternally,
+    ): Boolean
 
     /**
      * This method returns a new stream by applying the given callback to each chunk of the stream
@@ -573,17 +615,33 @@ open external class Readable :
      * @param initial the initial value to use in the reduction.
      * @returns a promise for the final value of the reduction.
      */
-    fun <T /* default is Any? */> reduce(
+    @JsName("reduce")
+    fun <T /* default is Any? */> reduceAsync(
         fn: (previous: Any?, data: Any?, options: ArrayOptions? /* use undefined for default */) -> T,
         initial: Nothing? = definedExternally,
         options: ArrayOptions = definedExternally,
     ): Promise<T>
 
-    fun <T /* default is Any? */> reduce(
+    @seskar.js.JsAsync
+    suspend fun <T /* default is Any? */> reduce(
+        fn: (previous: Any?, data: Any?, options: ArrayOptions? /* use undefined for default */) -> T,
+        initial: Nothing? = definedExternally,
+        options: ArrayOptions = definedExternally,
+    ): T
+
+    @JsName("reduce")
+    fun <T /* default is Any? */> reduceAsync(
         fn: (previous: T, data: Any?, options: ArrayOptions? /* use undefined for default */) -> T,
         initial: T,
         options: ArrayOptions = definedExternally,
     ): Promise<T>
+
+    @seskar.js.JsAsync
+    suspend fun <T /* default is Any? */> reduce(
+        fn: (previous: T, data: Any?, options: ArrayOptions? /* use undefined for default */) -> T,
+        initial: T,
+        options: ArrayOptions = definedExternally,
+    ): T
 
     open fun _destroy(
         error: js.errors.JsError?,

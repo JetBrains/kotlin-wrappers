@@ -43,7 +43,11 @@ external class Dir : AsyncIterable<Dirent> {
      * closed.
      * @since v12.12.0
      */
-    fun close(): Promise<js.core.Void>
+    @JsName("close")
+    fun closeAsync(): Promise<js.core.Void>
+
+    @seskar.js.JsAsync
+    suspend fun close(): js.core.Void
 
     fun close(cb: NoParamCallback)
 
@@ -66,7 +70,11 @@ external class Dir : AsyncIterable<Dirent> {
      * @since v12.12.0
      * @return containing {fs.Dirent|null}
      */
-    fun read(): Promise<Dirent?>
+    @JsName("read")
+    fun readAsync(): Promise<Dirent?>
+
+    @seskar.js.JsAsync
+    suspend fun read(): Dirent?
 
     fun read(cb: (err: node.ErrnoException?, dirEnt: Dirent?) -> Unit)
 

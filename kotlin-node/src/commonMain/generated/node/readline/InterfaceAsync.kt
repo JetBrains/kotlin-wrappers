@@ -49,7 +49,6 @@ external class Interface : _Interface {
      * @param query A statement or query to write to `output`, prepended to the prompt.
      * @return A promise that is fulfilled with the user's input in response to the `query`.
      */
-
     @JsName("question")
     fun questionAsync(query: String): Promise<String>
 

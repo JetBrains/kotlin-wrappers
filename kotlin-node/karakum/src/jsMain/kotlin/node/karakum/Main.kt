@@ -76,6 +76,7 @@ suspend fun main() {
         plugins = manyOf(
             values = jsPlugins + arrayOf(
                 AmbiguousSignaturePlugin(),
+                PromiseClassApiPlugin,
 
                 convertArgumentsTypeReferenceNode,
                 convertAssertStrict,

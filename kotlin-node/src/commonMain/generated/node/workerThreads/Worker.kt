@@ -158,18 +158,35 @@ external class Worker : EventEmitter {
      * If the operation times out, a `ERR_WORKER_MESSAGING_TIMEOUT` error is thrown.
      * @since v22.5.0
      */
-    fun postMessageToThread(
+    @JsName("postMessageToThread")
+    fun postMessageToThreadAsync(
         threadId: Number,
         value: Any?,
         timeout: Number = definedExternally,
     ): Promise<js.core.Void>
 
-    fun postMessageToThread(
+    @seskar.js.JsAsync
+    suspend fun postMessageToThread(
+        threadId: Number,
+        value: Any?,
+        timeout: Number = definedExternally,
+    ): js.core.Void
+
+    @JsName("postMessageToThread")
+    fun postMessageToThreadAsync(
         threadId: Number,
         value: Any?,
         transferList: ReadonlyArray<TransferListItem>,
         timeout: Number = definedExternally,
     ): Promise<js.core.Void>
+
+    @seskar.js.JsAsync
+    suspend fun postMessageToThread(
+        threadId: Number,
+        value: Any?,
+        transferList: ReadonlyArray<TransferListItem>,
+        timeout: Number = definedExternally,
+    ): js.core.Void
 
     /**
      * Opposite of `unref()`, calling `ref()` on a previously `unref()`ed worker does _not_ let the program exit if it's the only active handle left (the default
@@ -191,7 +208,11 @@ external class Worker : EventEmitter {
      * Returns a Promise for the exit code that is fulfilled when the `'exit' event` is emitted.
      * @since v10.5.0
      */
-    fun terminate(): Promise<Double>
+    @JsName("terminate")
+    fun terminateAsync(): Promise<Double>
+
+    @seskar.js.JsAsync
+    suspend fun terminate(): Double
 
     /**
      * Returns a readable stream for a V8 snapshot of the current state of the Worker.
@@ -202,7 +223,11 @@ external class Worker : EventEmitter {
      * @since v13.9.0, v12.17.0
      * @return A promise for a Readable Stream containing a V8 heap snapshot
      */
-    fun getHeapSnapshot(): Promise<Readable>
+    @JsName("getHeapSnapshot")
+    fun getHeapSnapshotAsync(): Promise<Readable>
+
+    @seskar.js.JsAsync
+    suspend fun getHeapSnapshot(): Readable
 
     fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
 
