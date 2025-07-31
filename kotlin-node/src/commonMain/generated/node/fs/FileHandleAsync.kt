@@ -24,7 +24,6 @@ sealed external interface FileHandle {
      * @since v10.0.0
      * @return Fulfills with `undefined` upon success.
      */
-
     @JsName("appendFile")
     fun appendFileAsync(data: String): Promise<js.core.Void>
 
@@ -36,7 +35,6 @@ sealed external interface FileHandle {
      * @since v10.0.0
      * @return Fulfills with `undefined` upon success.
      */
-
     @JsName("appendFile")
     fun appendFileAsync(
         data: String,
@@ -51,7 +49,6 @@ sealed external interface FileHandle {
      * @since v10.0.0
      * @return Fulfills with `undefined` upon success.
      */
-
     @JsName("appendFile")
     fun appendFileAsync(
         data: String,
@@ -66,7 +63,6 @@ sealed external interface FileHandle {
      * @since v10.0.0
      * @return Fulfills with `undefined` upon success.
      */
-
     @JsName("appendFile")
     fun appendFileAsync(data: Uint8Array<*>): Promise<js.core.Void>
 
@@ -78,7 +74,6 @@ sealed external interface FileHandle {
      * @since v10.0.0
      * @return Fulfills with `undefined` upon success.
      */
-
     @JsName("appendFile")
     fun appendFileAsync(
         data: Uint8Array<*>,
@@ -93,7 +88,6 @@ sealed external interface FileHandle {
      * @since v10.0.0
      * @return Fulfills with `undefined` upon success.
      */
-
     @JsName("appendFile")
     fun appendFileAsync(
         data: Uint8Array<*>,
@@ -111,7 +105,6 @@ sealed external interface FileHandle {
      * @since v10.0.0
      * @return Fulfills with `undefined` upon success.
      */
-
     @seskar.js.JsAsync
     suspend fun appendFile(
         data: String,
@@ -126,7 +119,6 @@ sealed external interface FileHandle {
      * @since v10.0.0
      * @return Fulfills with `undefined` upon success.
      */
-
     @seskar.js.JsAsync
     suspend fun appendFile(
         data: String,
@@ -141,7 +133,6 @@ sealed external interface FileHandle {
      * @since v10.0.0
      * @return Fulfills with `undefined` upon success.
      */
-
     @seskar.js.JsAsync
     suspend fun appendFile(data: Uint8Array<*>): js.core.Void
 
@@ -153,7 +144,6 @@ sealed external interface FileHandle {
      * @since v10.0.0
      * @return Fulfills with `undefined` upon success.
      */
-
     @seskar.js.JsAsync
     suspend fun appendFile(
         data: Uint8Array<*>,
@@ -168,7 +158,6 @@ sealed external interface FileHandle {
      * @since v10.0.0
      * @return Fulfills with `undefined` upon success.
      */
-
     @seskar.js.JsAsync
     suspend fun appendFile(
         data: Uint8Array<*>,
@@ -182,7 +171,6 @@ sealed external interface FileHandle {
      * @param gid The file's new group's group id.
      * @return Fulfills with `undefined` upon success.
      */
-
     @JsName("chown")
     fun chownAsync(
         uid: Number,
@@ -201,7 +189,6 @@ sealed external interface FileHandle {
      * @param mode the file mode bit mask.
      * @return Fulfills with `undefined` upon success.
      */
-
     @JsName("chmod")
     fun chmodAsync(mode: Mode): Promise<js.core.Void>
 
@@ -289,7 +276,6 @@ sealed external interface FileHandle {
      * @since v10.0.0
      * @return Fulfills with `undefined` upon success.
      */
-
     @JsName("datasync")
     fun datasyncAsync(): Promise<js.core.Void>
 
@@ -303,7 +289,6 @@ sealed external interface FileHandle {
      * @since v10.0.0
      * @return Fulfills with `undefined` upon success.
      */
-
     @JsName("sync")
     fun syncAsync(): Promise<js.core.Void>
 
@@ -323,7 +308,6 @@ sealed external interface FileHandle {
      * integer, the current file position will remain unchanged.
      * @return Fulfills upon success with an object with two properties:
      */
-
     @JsName("read")
     fun <T : js.buffer.ArrayBufferView<*>> readAsync(
         buffer: T,
@@ -402,7 +386,6 @@ sealed external interface FileHandle {
      * @return Fulfills upon a successful read with the contents of the file. If no encoding is specified (using `options.encoding`), the data is returned as a {Buffer} object. Otherwise, the
      * data will be a string.
      */
-
     @JsName("readFile")
     fun readFileAsync(options: (FileHandleReadFileBufferAsyncOptions)? = definedExternally): Promise<node.buffer.Buffer<*>>
 
@@ -415,7 +398,6 @@ sealed external interface FileHandle {
      * @param options An object that may contain an optional flag.
      * If a flag is not provided, it defaults to `'r'`.
      */
-
     @JsName("readFile")
     fun readFileAsync(options: FileHandleReadFileStringAsyncOptions): Promise<String>
 
@@ -425,7 +407,6 @@ sealed external interface FileHandle {
      * @param options An object that may contain an optional flag.
      * If a flag is not provided, it defaults to `'r'`.
      */
-
     @JsName("readFile")
     fun readFileAsync(options: node.buffer.BufferEncoding): Promise<String>
 
@@ -438,7 +419,6 @@ sealed external interface FileHandle {
      * @param options An object that may contain an optional flag.
      * If a flag is not provided, it defaults to `'r'`.
      */
-
     @seskar.js.JsAsync
     suspend fun readFile(options: node.buffer.BufferEncoding): String
 
@@ -448,7 +428,6 @@ sealed external interface FileHandle {
      * @param options An object that may contain an optional flag.
      * If a flag is not provided, it defaults to `'r'`.
      */
-
     @JsName("readFile")
     fun readFileAsync(): Promise<Any /* string | Buffer */>
 
@@ -458,7 +437,6 @@ sealed external interface FileHandle {
      * @param options An object that may contain an optional flag.
      * If a flag is not provided, it defaults to `'r'`.
      */
-
     @JsName("readFile")
     fun readFileAsync(
         options: (FileHandleReadFileAsyncOptions)? = definedExternally,
@@ -470,7 +448,6 @@ sealed external interface FileHandle {
      * @param options An object that may contain an optional flag.
      * If a flag is not provided, it defaults to `'r'`.
      */
-
     @JsName("readFile")
     fun readFileAsync(options: node.buffer.BufferEncoding? = definedExternally): Promise<Any /* string | Buffer */>
 
@@ -483,7 +460,6 @@ sealed external interface FileHandle {
      * @param options An object that may contain an optional flag.
      * If a flag is not provided, it defaults to `'r'`.
      */
-
     @seskar.js.JsAsync
     suspend fun readFile(options: (FileHandleReadFileAsyncOptions)? = definedExternally): Any // string | Buffer
 
@@ -493,7 +469,6 @@ sealed external interface FileHandle {
      * @param options An object that may contain an optional flag.
      * If a flag is not provided, it defaults to `'r'`.
      */
-
     @seskar.js.JsAsync
     suspend fun readFile(options: node.buffer.BufferEncoding? = definedExternally): Any // string | Buffer
 
@@ -518,7 +493,6 @@ sealed external interface FileHandle {
      * @since v10.0.0
      * @return Fulfills with an {fs.Stats} for the file.
      */
-
     @JsName("stat")
     fun statAsync(opts: FileHandleStatOpts = definedExternally): Promise<Stats>
 
@@ -565,7 +539,6 @@ sealed external interface FileHandle {
      * @param [len=0]
      * @return Fulfills with `undefined` upon success.
      */
-
     @JsName("truncate")
     fun truncateAsync(len: Number = definedExternally): Promise<js.core.Void>
 
@@ -576,7 +549,6 @@ sealed external interface FileHandle {
      * Change the file system timestamps of the object referenced by the `FileHandle` then fulfills the promise with no arguments upon success.
      * @since v10.0.0
      */
-
     @JsName("utimes")
     fun utimesAsync(
         atime: TimeLike,
@@ -607,7 +579,6 @@ sealed external interface FileHandle {
      * beginning of the file.
      * @since v10.0.0
      */
-
     @JsName("writeFile")
     fun writeFileAsync(data: String): Promise<js.core.Void>
 
@@ -629,7 +600,6 @@ sealed external interface FileHandle {
      * beginning of the file.
      * @since v10.0.0
      */
-
     @JsName("writeFile")
     fun writeFileAsync(
         data: String,
@@ -654,7 +624,6 @@ sealed external interface FileHandle {
      * beginning of the file.
      * @since v10.0.0
      */
-
     @JsName("writeFile")
     fun writeFileAsync(
         data: String,
@@ -679,7 +648,6 @@ sealed external interface FileHandle {
      * beginning of the file.
      * @since v10.0.0
      */
-
     @JsName("writeFile")
     fun writeFileAsync(data: Uint8Array<*>): Promise<js.core.Void>
 
@@ -701,7 +669,6 @@ sealed external interface FileHandle {
      * beginning of the file.
      * @since v10.0.0
      */
-
     @JsName("writeFile")
     fun writeFileAsync(
         data: Uint8Array<*>,
@@ -726,7 +693,6 @@ sealed external interface FileHandle {
      * beginning of the file.
      * @since v10.0.0
      */
-
     @JsName("writeFile")
     fun writeFileAsync(
         data: Uint8Array<*>,
@@ -754,7 +720,6 @@ sealed external interface FileHandle {
      * beginning of the file.
      * @since v10.0.0
      */
-
     @seskar.js.JsAsync
     suspend fun writeFile(
         data: String,
@@ -779,7 +744,6 @@ sealed external interface FileHandle {
      * beginning of the file.
      * @since v10.0.0
      */
-
     @seskar.js.JsAsync
     suspend fun writeFile(
         data: String,
@@ -804,7 +768,6 @@ sealed external interface FileHandle {
      * beginning of the file.
      * @since v10.0.0
      */
-
     @seskar.js.JsAsync
     suspend fun writeFile(data: Uint8Array<*>): js.core.Void
 
@@ -826,7 +789,6 @@ sealed external interface FileHandle {
      * beginning of the file.
      * @since v10.0.0
      */
-
     @seskar.js.JsAsync
     suspend fun writeFile(
         data: Uint8Array<*>,
@@ -851,7 +813,6 @@ sealed external interface FileHandle {
      * beginning of the file.
      * @since v10.0.0
      */
-
     @seskar.js.JsAsync
     suspend fun writeFile(
         data: Uint8Array<*>,
@@ -876,7 +837,6 @@ sealed external interface FileHandle {
      * @param [position='null'] The offset from the beginning of the file where the data from `buffer` should be written. If `position` is not a `number`, the data will be written at the current
      * position. See the POSIX pwrite(2) documentation for more detail.
      */
-
     @JsName("write")
     fun <TBuffer : Uint8Array<*>> writeAsync(
         buffer: TBuffer,
@@ -934,7 +894,6 @@ sealed external interface FileHandle {
      * @param [position='null'] The offset from the beginning of the file where the data from `buffers` should be written. If `position` is not a `number`, the data will be written at the current
      * position.
      */
-
     @JsName("writev")
     fun writevAsync(
         buffers: ReadonlyArray<js.buffer.ArrayBufferView<*>>,
@@ -953,7 +912,6 @@ sealed external interface FileHandle {
      * @param [position='null'] The offset from the beginning of the file where the data should be read from. If `position` is not a `number`, the data will be read from the current position.
      * @return Fulfills upon success an object containing two properties:
      */
-
     @JsName("readv")
     fun readvAsync(
         buffers: ReadonlyArray<js.buffer.ArrayBufferView<*>>,
@@ -983,7 +941,6 @@ sealed external interface FileHandle {
      * @since v10.0.0
      * @return Fulfills with `undefined` upon success.
      */
-
     @JsName("close")
     fun closeAsync(): Promise<js.core.Void>
 
