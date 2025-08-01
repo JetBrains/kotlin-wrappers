@@ -6,5 +6,5 @@ Wrappers for [Popper](https://popper.js.org/), a tooltip & popover positioning e
 
 ### Internals
 
-Declarations in [src/commonMain/generated](./src/commonMain/generated) are generated.
+Declarations in [src/webMain/generated](./src/webMain/generated) are generated.
 Manual changes are prohibited.

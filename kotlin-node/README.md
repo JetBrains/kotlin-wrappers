@@ -6,7 +6,7 @@
 
 ### Internals
 
-Declarations in [src/commonMain/generated](./src/commonMain/generated) are generated
+Declarations in [src/webMain/generated](./src/webMain/generated) are generated
 by [Karakum](https://github.com/karakum-team/karakum).
 Manual changes are prohibited.
 
