@@ -51,18 +51,12 @@ kotlin {
         }
     }
 
-    val commonGeneratedDir = projectDir.resolve("src/commonMain/generated")
-    if (commonGeneratedDir.exists()) {
-        sourceSets.commonMain {
-            kotlin.srcDir(commonGeneratedDir)
-        }
+    sourceSets.commonMain {
+        kotlin.srcDir(projectDir.resolve("src/commonMain/generated"))
     }
 
-    val jsGeneratedDir = projectDir.resolve("src/jsMain/generated")
-    if (jsGeneratedDir.exists()) {
-        sourceSets.jsMain {
-            kotlin.srcDir(jsGeneratedDir)
-        }
+    sourceSets.jsMain {
+        kotlin.srcDir(projectDir.resolve("src/jsMain/generated"))
     }
 }
 
