@@ -52,7 +52,6 @@ kotlin {
     }
 
     sourceSets.commonMain {
-        kotlin.srcDir(projectDir.resolve("src/commonMain/generated"))
         kotlin.srcDir(projectDir.resolve("src/webMain/generated"))
         kotlin.srcDir(projectDir.resolve("src/webMain/kotlin"))
     }
