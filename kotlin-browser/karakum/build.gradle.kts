@@ -123,7 +123,7 @@ val syncKotlinJs by tasks.registering(SyncWrappers::class) {
         }
     }
 
-    into(kotlinWrappersCommonDir("kotlin-js"))
+    into(webMainDir("kotlin-js"))
 }
 
 val syncKotlinWeb by tasks.registering(SyncWrappers::class) {
@@ -131,7 +131,7 @@ val syncKotlinWeb by tasks.registering(SyncWrappers::class) {
         include(isFromWrapperProject(WrapperProject.WEB))
     }
 
-    into(kotlinWrappersCommonDir("kotlin-web"))
+    into(webMainDir("kotlin-web"))
 }
 
 val syncKotlinBrowser by tasks.registering(SyncWrappers::class) {
@@ -139,5 +139,5 @@ val syncKotlinBrowser by tasks.registering(SyncWrappers::class) {
         include(isFromWrapperProject(WrapperProject.BROWSER))
     }
 
-    into(kotlinWrappersCommonDir("kotlin-browser"))
+    into(webMainDir("kotlin-browser"))
 }

@@ -6,12 +6,12 @@ open class SyncWrappers : Sync() {
         includeEmptyDirs = false
     }
 
-    fun kotlinWrappersCommonDir(
+    fun webMainDir(
         projectName: String,
     ): File =
-        dir(projectName, "commonMain")
+        dir(projectName, "webMain")
 
-    fun kotlinWrappersDir(
+    fun jsMainDir(
         projectName: String,
     ): File =
         dir(projectName, "jsMain")

@@ -18,61 +18,61 @@ val syncActionsArtifact by tasks.registering(SyncWrappers::class) {
     from(jsGeneratedDir) {
         include("actions/artifact/")
     }
-    into(kotlinWrappersCommonDir("kotlin-actions-artifact"))
+    into(webMainDir("kotlin-actions-artifact"))
 }
 
 val syncActionsCache by tasks.registering(SyncWrappers::class) {
     from(jsGeneratedDir) {
         include("actions/cache/")
     }
-    into(kotlinWrappersCommonDir("kotlin-actions-cache"))
+    into(webMainDir("kotlin-actions-cache"))
 }
 
 val syncActionsCore by tasks.registering(SyncWrappers::class) {
     from(jsGeneratedDir) {
         include("actions/core/")
     }
-    into(kotlinWrappersCommonDir("kotlin-actions-core"))
+    into(webMainDir("kotlin-actions-core"))
 }
 
 val syncActionsExec by tasks.registering(SyncWrappers::class) {
     from(jsGeneratedDir) {
         include("actions/exec/")
     }
-    into(kotlinWrappersCommonDir("kotlin-actions-exec"))
+    into(webMainDir("kotlin-actions-exec"))
 }
 
 val syncActionsGlob by tasks.registering(SyncWrappers::class) {
     from(jsGeneratedDir) {
         include("actions/glob/")
     }
-    into(kotlinWrappersCommonDir("kotlin-actions-glob"))
+    into(webMainDir("kotlin-actions-glob"))
 }
 
 val syncActionsGitHub by tasks.registering(SyncWrappers::class) {
     from(jsGeneratedDir) {
         include("actions/github/")
     }
-    into(kotlinWrappersCommonDir("kotlin-actions-github"))
+    into(webMainDir("kotlin-actions-github"))
 }
 
 val syncActionsHttpClient by tasks.registering(SyncWrappers::class) {
     from(jsGeneratedDir) {
         include("actions/http/client/")
     }
-    into(kotlinWrappersCommonDir("kotlin-actions-http-client"))
+    into(webMainDir("kotlin-actions-http-client"))
 }
 
 val syncActionsIO by tasks.registering(SyncWrappers::class) {
     from(jsGeneratedDir) {
         include("actions/io/")
     }
-    into(kotlinWrappersCommonDir("kotlin-actions-io"))
+    into(webMainDir("kotlin-actions-io"))
 }
 
 val syncActionsToolCache by tasks.registering(SyncWrappers::class) {
     from(jsGeneratedDir) {
         include("actions/tool/cache/")
     }
-    into(kotlinWrappersCommonDir("kotlin-actions-tool-cache"))
+    into(webMainDir("kotlin-actions-tool-cache"))
 }

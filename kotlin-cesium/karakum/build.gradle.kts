@@ -11,12 +11,12 @@ val syncCesiumEngine by tasks.registering(SyncWrappers::class) {
     from(webGeneratedDir) {
         include("cesium/engine/")
     }
-    into(kotlinWrappersCommonDir("kotlin-cesium-engine"))
+    into(webMainDir("kotlin-cesium-engine"))
 }
 
 val syncCesiumWidgets by tasks.registering(SyncWrappers::class) {
     from(webGeneratedDir) {
         include("cesium/widgets/")
     }
-    into(kotlinWrappersCommonDir("kotlin-cesium-widgets"))
+    into(webMainDir("kotlin-cesium-widgets"))
 }

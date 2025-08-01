@@ -10,5 +10,5 @@ val syncTableCore by tasks.registering(SyncWrappers::class) {
     from(webGeneratedDir) {
         include("tanstack/table/")
     }
-    into(kotlinWrappersCommonDir("kotlin-tanstack-table-core"))
+    into(webMainDir("kotlin-tanstack-table-core"))
 }

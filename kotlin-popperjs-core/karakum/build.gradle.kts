@@ -8,5 +8,5 @@ dependencies {
 
 val syncPopperjsCore by tasks.registering(SyncWrappers::class) {
     from(webGeneratedDir)
-    into(kotlinWrappersCommonDir("kotlin-popperjs-core"))
+    into(webMainDir("kotlin-popperjs-core"))
 }

@@ -8,5 +8,5 @@ dependencies {
 
 val syncReactDom by tasks.registering(SyncWrappers::class) {
     from(jsGeneratedDir)
-    into(kotlinWrappersDir("kotlin-react-dom"))
+    into(jsMainDir("kotlin-react-dom"))
 }

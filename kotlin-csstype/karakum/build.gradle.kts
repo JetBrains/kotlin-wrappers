@@ -11,5 +11,5 @@ val syncCssomCore by tasks.registering(SyncWrappers::class) {
         include("web/cssom/**")
     }
 
-    into(kotlinWrappersCommonDir("kotlin-cssom-core"))
+    into(webMainDir("kotlin-cssom-core"))
 }
