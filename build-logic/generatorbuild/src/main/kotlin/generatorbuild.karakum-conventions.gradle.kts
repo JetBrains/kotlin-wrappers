@@ -4,5 +4,5 @@ plugins {
 }
 
 karakum {
-    output = layout.projectDirectory.dir("../src/commonMain/generated")
+    output = layout.projectDirectory.dir("../src/webMain/generated")
 }
