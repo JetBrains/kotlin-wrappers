@@ -21,12 +21,13 @@ dokka {
             }
         }
 
-        addSourceLink("src/commonMain/generated")
         addSourceLink("src/commonMain/kotlin")
         addSourceLink("src/jsMain/generated")
         addSourceLink("src/jsMain/kotlin")
         addSourceLink("src/wasmJsMain/generated")
         addSourceLink("src/wasmJsMain/kotlin")
+        addSourceLink("src/webMain/generated")
+        addSourceLink("src/webMain/kotlin")
     }
 
     dokkaGeneratorIsolation = ProcessIsolation {
