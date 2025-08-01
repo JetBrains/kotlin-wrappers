@@ -112,7 +112,7 @@ fun isFromWrapperProject(wp: WrapperProject): Spec<FileTreeElement> {
 }
 
 val syncKotlinJs by tasks.registering(SyncWrappers::class) {
-    from(commonGeneratedDir) {
+    from(webGeneratedDir) {
         include(isFromWrapperProject(WrapperProject.JS))
 
         preserve {
@@ -127,7 +127,7 @@ val syncKotlinJs by tasks.registering(SyncWrappers::class) {
 }
 
 val syncKotlinWeb by tasks.registering(SyncWrappers::class) {
-    from(commonGeneratedDir) {
+    from(webGeneratedDir) {
         include(isFromWrapperProject(WrapperProject.WEB))
     }
 
@@ -135,7 +135,7 @@ val syncKotlinWeb by tasks.registering(SyncWrappers::class) {
 }
 
 val syncKotlinBrowser by tasks.registering(SyncWrappers::class) {
-    from(commonGeneratedDir) {
+    from(webGeneratedDir) {
         include(isFromWrapperProject(WrapperProject.BROWSER))
     }
 

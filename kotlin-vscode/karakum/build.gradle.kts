@@ -7,6 +7,6 @@ dependencies {
 }
 
 val syncVscode by tasks.registering(SyncWrappers::class) {
-    from(commonGeneratedDir)
+    from(webGeneratedDir)
     into(kotlinWrappersCommonDir("kotlin-vscode"))
 }

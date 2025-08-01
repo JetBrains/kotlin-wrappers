@@ -7,7 +7,7 @@ dependencies {
 }
 
 val syncCssomCore by tasks.registering(SyncWrappers::class) {
-    from(commonGeneratedDir) {
+    from(webGeneratedDir) {
         include("web/cssom/**")
     }
 

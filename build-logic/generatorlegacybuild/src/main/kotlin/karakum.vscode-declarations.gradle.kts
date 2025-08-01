@@ -4,7 +4,7 @@ plugins {
 
 tasks.named("generateDeclarations") {
     doLast {
-        val sourceDir = commonGeneratedDir
+        val sourceDir = webGeneratedDir
 
         delete(sourceDir)
 

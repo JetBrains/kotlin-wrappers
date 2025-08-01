@@ -9,8 +9,8 @@ val Task.nodeModules: File
 val Task.rootGeneratedDir: Directory
     get() = project.layout.buildDirectory.dir("generated").get()
 
-val Task.commonGeneratedDir: Directory
-    get() = rootGeneratedDir.dir("src/commonMain/generated")
+val Task.webGeneratedDir: Directory
+    get() = rootGeneratedDir.dir("src/webMain/generated")
 
 val Task.jsGeneratedDir: Directory
     get() = rootGeneratedDir.dir("src/jsMain/generated")

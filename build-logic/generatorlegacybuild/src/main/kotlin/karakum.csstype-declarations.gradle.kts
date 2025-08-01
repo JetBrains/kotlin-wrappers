@@ -5,7 +5,7 @@ plugins {
 tasks.named("generateDeclarations") {
     doLast {
         val definitionsFile = nodeModules.resolve("csstype/index.d.ts")
-        val commonSourceDir = commonGeneratedDir
+        val commonSourceDir = webGeneratedDir
         val jsSourceDir = jsGeneratedDir
 
         delete(commonSourceDir)

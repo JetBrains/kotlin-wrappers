@@ -5,7 +5,7 @@ plugins {
 tasks.named("generateDeclarations") {
     doLast {
         val definitionsDir = nodeModules.resolve("@popperjs/core/lib")
-        val sourceDir = commonGeneratedDir
+        val sourceDir = webGeneratedDir
 
         delete(sourceDir)
 
