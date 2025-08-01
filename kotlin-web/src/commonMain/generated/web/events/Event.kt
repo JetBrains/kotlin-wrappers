@@ -92,7 +92,7 @@ open external class Event(
     fun composedPath(): ReadonlyArray<EventTarget>
 
     /**
-     * The **`preventDefault()`** method of the Event interface tells the user agent that if the event does not get explicitly handled, its default action should not be taken as it normally would be.
+     * The **`preventDefault()`** method of the Event interface tells the user agent that the event is being explicitly handled, so its default action, such as page scrolling, link navigation, or pasting text, should not be taken.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Event/preventDefault)
      */
