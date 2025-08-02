@@ -66,11 +66,11 @@ class ContractFunctionApiPlugin : Plugin {
 
         var contractType = next(typeType)
 
-        if (name === "isWeakMap") {
+        if (name == "isWeakMap") {
             contractType = "js.collections.WeakMap<*, *>"
         }
 
-        if (name === "isWeakSet") {
+        if (name == "isWeakSet") {
             contractType = "js.collections.WeakSet<*>"
         }
 

@@ -78,6 +78,7 @@ suspend fun main() {
                 AmbiguousSignaturePlugin(),
                 BufferPlugin(),
                 ContractFunctionApiPlugin(),
+                DiffieHellmanGroupPlugin(),
                 PromiseFunctionApiPlugin(),
                 PromiseClassApiPlugin,
                 PromiseInterfaceApiPlugin,
