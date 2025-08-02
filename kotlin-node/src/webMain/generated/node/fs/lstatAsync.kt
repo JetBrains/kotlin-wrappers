@@ -13,7 +13,6 @@ import js.promise.Promise
  * @since v10.0.0
  * @return Fulfills with the {fs.Stats} object for the given symbolic link `path`.
  */
-
 @JsName("lstat")
 external fun lstatAsync(
     path: PathLike,

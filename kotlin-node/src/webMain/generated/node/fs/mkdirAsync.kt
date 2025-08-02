@@ -29,7 +29,6 @@ import js.promise.Promise
  * @since v10.0.0
  * @return Upon success, fulfills with `undefined` if `recursive` is `false`, or the first directory path created if `recursive` is `true`.
  */
-
 @JsName("mkdir")
 external fun mkdirAsync(
     path: PathLike,
@@ -42,7 +41,6 @@ external fun mkdirAsync(
  * @param options Either the file mode, or an object optionally specifying the file mode and whether parent folders
  * should be created. If a string is passed, it is parsed as an octal integer. If not specified, defaults to `0o777`.
  */
-
 @JsName("mkdir")
 external fun mkdirAsync(path: PathLike): Promise<js.core.Void>
 
@@ -52,7 +50,6 @@ external fun mkdirAsync(path: PathLike): Promise<js.core.Void>
  * @param options Either the file mode, or an object optionally specifying the file mode and whether parent folders
  * should be created. If a string is passed, it is parsed as an octal integer. If not specified, defaults to `0o777`.
  */
-
 @JsName("mkdir")
 external fun mkdirAsync(
     path: PathLike,
@@ -65,7 +62,6 @@ external fun mkdirAsync(
  * @param options Either the file mode, or an object optionally specifying the file mode and whether parent folders
  * should be created. If a string is passed, it is parsed as an octal integer. If not specified, defaults to `0o777`.
  */
-
 @JsName("mkdir")
 external fun mkdirAsync(
     path: PathLike,
@@ -92,7 +88,6 @@ external fun mkdirAsync(
  * @param options Either the file mode, or an object optionally specifying the file mode and whether parent folders
  * should be created. If a string is passed, it is parsed as an octal integer. If not specified, defaults to `0o777`.
  */
-
 @JsName("mkdir")
 external fun mkdirAsync(
     path: PathLike,

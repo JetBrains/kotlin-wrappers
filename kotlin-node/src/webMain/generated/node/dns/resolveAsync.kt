@@ -20,7 +20,6 @@ import js.promise.Promise
  * @param hostname Host name to resolve.
  * @param [rrtype='A'] Resource record type.
  */
-
 @JsName("resolve")
 external fun resolveAsync(hostname: String): Promise<js.array.ReadonlyArray<String>>
 

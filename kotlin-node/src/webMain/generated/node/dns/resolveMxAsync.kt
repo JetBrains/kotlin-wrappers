@@ -11,6 +11,5 @@ import js.promise.Promise
  * containing both a `priority` and `exchange` property (e.g.`[{priority: 10, exchange: 'mx.example.com'}, ...]`).
  * @since v10.6.0
  */
-
 @JsName("resolveMx")
 external fun resolveMxAsync(hostname: String): Promise<js.array.ReadonlyArray<MxRecord>>

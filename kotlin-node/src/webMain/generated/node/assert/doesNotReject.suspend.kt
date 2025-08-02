@@ -49,7 +49,6 @@ external suspend fun doesNotReject(block: () -> Promise<Any?>): js.core.Void
  * ```
  * @since v10.0.0
  */
-
 @seskar.js.JsAsync
 external suspend fun doesNotReject(
     block: () -> Promise<Any?>,
@@ -98,7 +97,6 @@ external suspend fun doesNotReject(
  * ```
  * @since v10.0.0
  */
-
 @seskar.js.JsAsync
 external suspend fun doesNotReject(
     block: () -> Promise<Any?>,
@@ -147,7 +145,6 @@ external suspend fun doesNotReject(
  * ```
  * @since v10.0.0
  */
-
 @seskar.js.JsAsync
 external suspend fun doesNotReject(block: Promise<Any?>): js.core.Void
 
@@ -193,7 +190,6 @@ external suspend fun doesNotReject(block: Promise<Any?>): js.core.Void
  * ```
  * @since v10.0.0
  */
-
 @seskar.js.JsAsync
 external suspend fun doesNotReject(
     block: Promise<Any?>,
@@ -242,7 +238,6 @@ external suspend fun doesNotReject(
  * ```
  * @since v10.0.0
  */
-
 @seskar.js.JsAsync
 external suspend fun doesNotReject(
     block: Promise<Any?>,

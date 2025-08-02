@@ -58,7 +58,6 @@ import node.stream.Stream
  * @param file filename or `FileHandle`
  * @return Fulfills with `undefined` upon success.
  */
-
 @JsName("writeFile")
 external fun writeFileAsync(
     file: PathLike,
@@ -115,7 +114,6 @@ external fun writeFileAsync(
  * @param file filename or `FileHandle`
  * @return Fulfills with `undefined` upon success.
  */
-
 @JsName("writeFile")
 external fun writeFileAsync(
     file: PathLike,
@@ -173,7 +171,6 @@ external fun writeFileAsync(
  * @param file filename or `FileHandle`
  * @return Fulfills with `undefined` upon success.
  */
-
 @JsName("writeFile")
 external fun writeFileAsync(
     file: PathLike,
@@ -231,7 +228,6 @@ external fun writeFileAsync(
  * @param file filename or `FileHandle`
  * @return Fulfills with `undefined` upon success.
  */
-
 @JsName("writeFile")
 external fun writeFileAsync(
     file: PathLike,
@@ -288,7 +284,6 @@ external fun writeFileAsync(
  * @param file filename or `FileHandle`
  * @return Fulfills with `undefined` upon success.
  */
-
 @JsName("writeFile")
 external fun writeFileAsync(
     file: PathLike,
@@ -346,7 +341,6 @@ external fun writeFileAsync(
  * @param file filename or `FileHandle`
  * @return Fulfills with `undefined` upon success.
  */
-
 @JsName("writeFile")
 external fun writeFileAsync(
     file: PathLike,
@@ -404,7 +398,6 @@ external fun writeFileAsync(
  * @param file filename or `FileHandle`
  * @return Fulfills with `undefined` upon success.
  */
-
 @JsName("writeFile")
 external fun writeFileAsync(
     file: PathLike,
@@ -461,7 +454,6 @@ external fun writeFileAsync(
  * @param file filename or `FileHandle`
  * @return Fulfills with `undefined` upon success.
  */
-
 @JsName("writeFile")
 external fun writeFileAsync(
     file: PathLike,
@@ -519,7 +511,6 @@ external fun writeFileAsync(
  * @param file filename or `FileHandle`
  * @return Fulfills with `undefined` upon success.
  */
-
 @JsName("writeFile")
 external fun writeFileAsync(
     file: PathLike,
@@ -577,7 +568,6 @@ external fun writeFileAsync(
  * @param file filename or `FileHandle`
  * @return Fulfills with `undefined` upon success.
  */
-
 @JsName("writeFile")
 external fun writeFileAsync(
     file: PathLike,
@@ -634,7 +624,6 @@ external fun writeFileAsync(
  * @param file filename or `FileHandle`
  * @return Fulfills with `undefined` upon success.
  */
-
 @JsName("writeFile")
 external fun writeFileAsync(
     file: PathLike,
@@ -692,7 +681,6 @@ external fun writeFileAsync(
  * @param file filename or `FileHandle`
  * @return Fulfills with `undefined` upon success.
  */
-
 @JsName("writeFile")
 external fun writeFileAsync(
     file: PathLike,
@@ -750,7 +738,6 @@ external fun writeFileAsync(
  * @param file filename or `FileHandle`
  * @return Fulfills with `undefined` upon success.
  */
-
 @JsName("writeFile")
 external fun writeFileAsync(
     file: PathLike,
@@ -807,7 +794,6 @@ external fun writeFileAsync(
  * @param file filename or `FileHandle`
  * @return Fulfills with `undefined` upon success.
  */
-
 @JsName("writeFile")
 external fun writeFileAsync(
     file: PathLike,
@@ -865,7 +851,6 @@ external fun writeFileAsync(
  * @param file filename or `FileHandle`
  * @return Fulfills with `undefined` upon success.
  */
-
 @JsName("writeFile")
 external fun writeFileAsync(
     file: PathLike,
@@ -923,7 +908,6 @@ external fun writeFileAsync(
  * @param file filename or `FileHandle`
  * @return Fulfills with `undefined` upon success.
  */
-
 @JsName("writeFile")
 external fun writeFileAsync(
     file: FileHandle,
@@ -980,7 +964,6 @@ external fun writeFileAsync(
  * @param file filename or `FileHandle`
  * @return Fulfills with `undefined` upon success.
  */
-
 @JsName("writeFile")
 external fun writeFileAsync(
     file: FileHandle,
@@ -1038,7 +1021,6 @@ external fun writeFileAsync(
  * @param file filename or `FileHandle`
  * @return Fulfills with `undefined` upon success.
  */
-
 @JsName("writeFile")
 external fun writeFileAsync(
     file: FileHandle,
@@ -1096,7 +1078,6 @@ external fun writeFileAsync(
  * @param file filename or `FileHandle`
  * @return Fulfills with `undefined` upon success.
  */
-
 @JsName("writeFile")
 external fun writeFileAsync(
     file: FileHandle,
@@ -1153,7 +1134,6 @@ external fun writeFileAsync(
  * @param file filename or `FileHandle`
  * @return Fulfills with `undefined` upon success.
  */
-
 @JsName("writeFile")
 external fun writeFileAsync(
     file: FileHandle,
@@ -1211,7 +1191,6 @@ external fun writeFileAsync(
  * @param file filename or `FileHandle`
  * @return Fulfills with `undefined` upon success.
  */
-
 @JsName("writeFile")
 external fun writeFileAsync(
     file: FileHandle,
@@ -1269,7 +1248,6 @@ external fun writeFileAsync(
  * @param file filename or `FileHandle`
  * @return Fulfills with `undefined` upon success.
  */
-
 @JsName("writeFile")
 external fun writeFileAsync(
     file: FileHandle,
@@ -1326,7 +1304,6 @@ external fun writeFileAsync(
  * @param file filename or `FileHandle`
  * @return Fulfills with `undefined` upon success.
  */
-
 @JsName("writeFile")
 external fun writeFileAsync(
     file: FileHandle,
@@ -1384,7 +1361,6 @@ external fun writeFileAsync(
  * @param file filename or `FileHandle`
  * @return Fulfills with `undefined` upon success.
  */
-
 @JsName("writeFile")
 external fun writeFileAsync(
     file: FileHandle,
@@ -1442,7 +1418,6 @@ external fun writeFileAsync(
  * @param file filename or `FileHandle`
  * @return Fulfills with `undefined` upon success.
  */
-
 @JsName("writeFile")
 external fun writeFileAsync(
     file: FileHandle,
@@ -1499,7 +1474,6 @@ external fun writeFileAsync(
  * @param file filename or `FileHandle`
  * @return Fulfills with `undefined` upon success.
  */
-
 @JsName("writeFile")
 external fun writeFileAsync(
     file: FileHandle,
@@ -1557,7 +1531,6 @@ external fun writeFileAsync(
  * @param file filename or `FileHandle`
  * @return Fulfills with `undefined` upon success.
  */
-
 @JsName("writeFile")
 external fun writeFileAsync(
     file: FileHandle,
@@ -1615,7 +1588,6 @@ external fun writeFileAsync(
  * @param file filename or `FileHandle`
  * @return Fulfills with `undefined` upon success.
  */
-
 @JsName("writeFile")
 external fun writeFileAsync(
     file: FileHandle,
@@ -1672,7 +1644,6 @@ external fun writeFileAsync(
  * @param file filename or `FileHandle`
  * @return Fulfills with `undefined` upon success.
  */
-
 @JsName("writeFile")
 external fun writeFileAsync(
     file: FileHandle,
@@ -1730,7 +1701,6 @@ external fun writeFileAsync(
  * @param file filename or `FileHandle`
  * @return Fulfills with `undefined` upon success.
  */
-
 @JsName("writeFile")
 external fun writeFileAsync(
     file: FileHandle,

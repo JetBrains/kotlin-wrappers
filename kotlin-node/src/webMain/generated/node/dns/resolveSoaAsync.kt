@@ -32,6 +32,5 @@ import js.promise.Promise
  * ```
  * @since v10.6.0
  */
-
 @JsName("resolveSoa")
 external fun resolveSoaAsync(hostname: String): Promise<SoaRecord>

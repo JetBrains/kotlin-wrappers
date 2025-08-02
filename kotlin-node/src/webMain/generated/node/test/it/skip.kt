@@ -12,7 +12,6 @@ import node.test.TestOptions
 /**
  * Shorthand for skipping a test. This is the same as calling {@link it} with `options.skip` set to `true`.
  */
-
 @JsName("skip")
 external fun skipAsync(
     name: String = definedExternally,

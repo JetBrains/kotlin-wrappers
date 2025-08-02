@@ -6,6 +6,9 @@ import node.test.SuiteFn
 import node.test.TestOptions
 
 @seskar.js.JsAsync
+external suspend fun skip(): js.core.Void
+
+@seskar.js.JsAsync
 external suspend fun skip(
     name: String = definedExternally,
     options: TestOptions = definedExternally,
@@ -26,6 +29,3 @@ external suspend fun skip(
 
 @seskar.js.JsAsync
 external suspend fun skip(fn: SuiteFn = definedExternally): js.core.Void
-
-@seskar.js.JsAsync
-external suspend fun skip(): js.core.Void

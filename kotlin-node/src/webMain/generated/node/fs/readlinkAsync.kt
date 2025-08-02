@@ -17,7 +17,6 @@ import js.promise.Promise
  * @since v10.0.0
  * @return Fulfills with the `linkString` upon success.
  */
-
 @JsName("readlink")
 external fun readlinkAsync(path: PathLike): Promise<String>
 
@@ -32,7 +31,6 @@ external fun readlinkAsync(path: PathLike): Promise<String>
  * @since v10.0.0
  * @return Fulfills with the `linkString` upon success.
  */
-
 @JsName("readlink")
 external fun readlinkAsync(
     path: PathLike,
@@ -50,7 +48,6 @@ external fun readlinkAsync(
  * @since v10.0.0
  * @return Fulfills with the `linkString` upon success.
  */
-
 @JsName("readlink")
 external fun readlinkAsync(
     path: PathLike,
@@ -62,7 +59,6 @@ external fun readlinkAsync(
  * @param path A path to a file. If a URL is provided, it must use the `file:` protocol.
  * @param options The encoding (or an object specifying the encoding), used as the encoding of the result. If not provided, `'utf8'` is used.
  */
-
 @JsName("readlink")
 external fun readlinkAsync(
     path: PathLike,
@@ -86,6 +82,5 @@ external fun readlinkAsync(
  * @param path A path to a file. If a URL is provided, it must use the `file:` protocol.
  * @param options The encoding (or an object specifying the encoding), used as the encoding of the result. If not provided, `'utf8'` is used.
  */
-
 @JsName("readlink")
 external fun readlinkAsync(path: PathLike, options: String? = definedExternally): Promise<Any /* string | Buffer */>

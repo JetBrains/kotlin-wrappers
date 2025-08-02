@@ -50,7 +50,6 @@ import js.promise.Promise
  * ```
  * @since v10.6.0
  */
-
 @JsName("lookup")
 external fun lookupAsync(
     hostname: String,

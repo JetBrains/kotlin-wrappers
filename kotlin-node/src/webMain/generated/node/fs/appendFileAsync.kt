@@ -21,7 +21,6 @@ import js.typedarrays.Uint8Array
  * @param path filename or {FileHandle}
  * @return Fulfills with `undefined` upon success.
  */
-
 @JsName("appendFile")
 external fun appendFileAsync(
     path: PathLike,
@@ -42,7 +41,6 @@ external fun appendFileAsync(
  * @param path filename or {FileHandle}
  * @return Fulfills with `undefined` upon success.
  */
-
 @JsName("appendFile")
 external fun appendFileAsync(
     path: PathLike,
@@ -64,7 +62,6 @@ external fun appendFileAsync(
  * @param path filename or {FileHandle}
  * @return Fulfills with `undefined` upon success.
  */
-
 @JsName("appendFile")
 external fun appendFileAsync(
     path: PathLike,
@@ -86,7 +83,6 @@ external fun appendFileAsync(
  * @param path filename or {FileHandle}
  * @return Fulfills with `undefined` upon success.
  */
-
 @JsName("appendFile")
 external fun appendFileAsync(
     path: PathLike,
@@ -107,7 +103,6 @@ external fun appendFileAsync(
  * @param path filename or {FileHandle}
  * @return Fulfills with `undefined` upon success.
  */
-
 @JsName("appendFile")
 external fun appendFileAsync(
     path: PathLike,
@@ -129,7 +124,6 @@ external fun appendFileAsync(
  * @param path filename or {FileHandle}
  * @return Fulfills with `undefined` upon success.
  */
-
 @JsName("appendFile")
 external fun appendFileAsync(
     path: PathLike,
@@ -151,7 +145,6 @@ external fun appendFileAsync(
  * @param path filename or {FileHandle}
  * @return Fulfills with `undefined` upon success.
  */
-
 @JsName("appendFile")
 external fun appendFileAsync(
     path: FileHandle,
@@ -172,7 +165,6 @@ external fun appendFileAsync(
  * @param path filename or {FileHandle}
  * @return Fulfills with `undefined` upon success.
  */
-
 @JsName("appendFile")
 external fun appendFileAsync(
     path: FileHandle,
@@ -194,7 +186,6 @@ external fun appendFileAsync(
  * @param path filename or {FileHandle}
  * @return Fulfills with `undefined` upon success.
  */
-
 @JsName("appendFile")
 external fun appendFileAsync(
     path: FileHandle,
@@ -216,7 +207,6 @@ external fun appendFileAsync(
  * @param path filename or {FileHandle}
  * @return Fulfills with `undefined` upon success.
  */
-
 @JsName("appendFile")
 external fun appendFileAsync(
     path: FileHandle,
@@ -237,7 +227,6 @@ external fun appendFileAsync(
  * @param path filename or {FileHandle}
  * @return Fulfills with `undefined` upon success.
  */
-
 @JsName("appendFile")
 external fun appendFileAsync(
     path: FileHandle,
@@ -259,7 +248,6 @@ external fun appendFileAsync(
  * @param path filename or {FileHandle}
  * @return Fulfills with `undefined` upon success.
  */
-
 @JsName("appendFile")
 external fun appendFileAsync(
     path: FileHandle,

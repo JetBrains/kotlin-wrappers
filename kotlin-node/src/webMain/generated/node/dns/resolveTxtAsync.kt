@@ -13,6 +13,5 @@ import js.promise.Promise
  * treated separately.
  * @since v10.6.0
  */
-
 @JsName("resolveTxt")
 external fun resolveTxtAsync(hostname: String): Promise<js.array.ReadonlyArray<js.array.ReadonlyArray<String>>>

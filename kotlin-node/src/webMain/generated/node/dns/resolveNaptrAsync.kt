@@ -29,6 +29,5 @@ import js.promise.Promise
  * ```
  * @since v10.6.0
  */
-
 @JsName("resolveNaptr")
 external fun resolveNaptrAsync(hostname: String): Promise<js.array.ReadonlyArray<NaptrRecord>>

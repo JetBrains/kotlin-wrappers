@@ -10,7 +10,6 @@ import js.promise.Promise
  * Shorthand for skipping a test. This is the same as calling {@link test} with `options.skip` set to `true`.
  * @since v20.2.0
  */
-
 @JsName("skip")
 external fun skipAsync(
     name: String = definedExternally,

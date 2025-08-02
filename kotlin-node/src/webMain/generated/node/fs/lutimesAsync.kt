@@ -13,7 +13,6 @@ import js.promise.Promise
  * @since v14.5.0, v12.19.0
  * @return Fulfills with `undefined` upon success.
  */
-
 @JsName("lutimes")
 external fun lutimesAsync(
     path: PathLike,

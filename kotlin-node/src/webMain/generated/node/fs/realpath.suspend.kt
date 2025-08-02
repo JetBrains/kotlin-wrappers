@@ -21,7 +21,6 @@ external suspend fun realpath(path: PathLike): String
  * @since v10.0.0
  * @return Fulfills with the resolved path upon success.
  */
-
 @seskar.js.JsAsync
 external suspend fun realpath(
     path: PathLike,
@@ -44,7 +43,6 @@ external suspend fun realpath(
  * @since v10.0.0
  * @return Fulfills with the resolved path upon success.
  */
-
 @seskar.js.JsAsync
 external suspend fun realpath(
     path: PathLike,

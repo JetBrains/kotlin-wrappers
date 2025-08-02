@@ -19,7 +19,6 @@ import js.promise.Promise
  * @param [mode=0o666] Sets the file mode (permission and sticky bits) if the file is created.
  * @return Fulfills with a {FileHandle} object.
  */
-
 @JsName("open")
 external fun openAsync(path: PathLike): Promise<FileHandle>
 
@@ -36,7 +35,6 @@ external fun openAsync(path: PathLike): Promise<FileHandle>
  * @param [mode=0o666] Sets the file mode (permission and sticky bits) if the file is created.
  * @return Fulfills with a {FileHandle} object.
  */
-
 @JsName("open")
 external fun openAsync(
     path: PathLike,
@@ -57,7 +55,6 @@ external fun openAsync(
  * @param [mode=0o666] Sets the file mode (permission and sticky bits) if the file is created.
  * @return Fulfills with a {FileHandle} object.
  */
-
 @JsName("open")
 external fun openAsync(
     path: PathLike,

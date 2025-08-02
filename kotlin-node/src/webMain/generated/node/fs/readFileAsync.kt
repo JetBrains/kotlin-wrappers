@@ -62,7 +62,6 @@ import js.promise.Promise
  * @param path filename or `FileHandle`
  * @return Fulfills with the contents of the file.
  */
-
 @JsName("readFile")
 external fun readFileAsync(
     path: PathLike,
@@ -125,7 +124,6 @@ external fun readFileAsync(
  * @param path filename or `FileHandle`
  * @return Fulfills with the contents of the file.
  */
-
 @JsName("readFile")
 external fun readFileAsync(
     path: FileHandle,
@@ -139,7 +137,6 @@ external fun readFileAsync(
  * @param options An object that may contain an optional flag.
  * If a flag is not provided, it defaults to `'r'`.
  */
-
 @JsName("readFile")
 external fun readFileAsync(
     path: PathLike,
@@ -153,7 +150,6 @@ external fun readFileAsync(
  * @param options An object that may contain an optional flag.
  * If a flag is not provided, it defaults to `'r'`.
  */
-
 @JsName("readFile")
 external fun readFileAsync(
     path: PathLike,
@@ -167,7 +163,6 @@ external fun readFileAsync(
  * @param options An object that may contain an optional flag.
  * If a flag is not provided, it defaults to `'r'`.
  */
-
 @JsName("readFile")
 external fun readFileAsync(
     path: FileHandle,
@@ -181,7 +176,6 @@ external fun readFileAsync(
  * @param options An object that may contain an optional flag.
  * If a flag is not provided, it defaults to `'r'`.
  */
-
 @JsName("readFile")
 external fun readFileAsync(
     path: FileHandle,
@@ -195,7 +189,6 @@ external fun readFileAsync(
  * @param options An object that may contain an optional flag.
  * If a flag is not provided, it defaults to `'r'`.
  */
-
 @JsName("readFile")
 external fun readFileAsync(path: PathLike): Promise<Any /* string | Buffer */>
 
@@ -206,7 +199,6 @@ external fun readFileAsync(path: PathLike): Promise<Any /* string | Buffer */>
  * @param options An object that may contain an optional flag.
  * If a flag is not provided, it defaults to `'r'`.
  */
-
 @JsName("readFile")
 external fun readFileAsync(
     path: PathLike,
@@ -220,7 +212,6 @@ external fun readFileAsync(
  * @param options An object that may contain an optional flag.
  * If a flag is not provided, it defaults to `'r'`.
  */
-
 @JsName("readFile")
 external fun readFileAsync(
     path: PathLike,
@@ -234,7 +225,6 @@ external fun readFileAsync(
  * @param options An object that may contain an optional flag.
  * If a flag is not provided, it defaults to `'r'`.
  */
-
 @JsName("readFile")
 external fun readFileAsync(path: FileHandle): Promise<Any /* string | Buffer */>
 
@@ -245,7 +235,6 @@ external fun readFileAsync(path: FileHandle): Promise<Any /* string | Buffer */>
  * @param options An object that may contain an optional flag.
  * If a flag is not provided, it defaults to `'r'`.
  */
-
 @JsName("readFile")
 external fun readFileAsync(
     path: FileHandle,
@@ -259,7 +248,6 @@ external fun readFileAsync(
  * @param options An object that may contain an optional flag.
  * If a flag is not provided, it defaults to `'r'`.
  */
-
 @JsName("readFile")
 external fun readFileAsync(
     path: FileHandle,

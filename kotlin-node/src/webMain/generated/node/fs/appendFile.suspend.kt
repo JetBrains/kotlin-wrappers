@@ -24,7 +24,6 @@ external suspend fun appendFile(
  * @param path filename or {FileHandle}
  * @return Fulfills with `undefined` upon success.
  */
-
 @seskar.js.JsAsync
 external suspend fun appendFile(
     path: PathLike,
@@ -46,7 +45,6 @@ external suspend fun appendFile(
  * @param path filename or {FileHandle}
  * @return Fulfills with `undefined` upon success.
  */
-
 @seskar.js.JsAsync
 external suspend fun appendFile(
     path: PathLike,
@@ -68,7 +66,6 @@ external suspend fun appendFile(
  * @param path filename or {FileHandle}
  * @return Fulfills with `undefined` upon success.
  */
-
 @seskar.js.JsAsync
 external suspend fun appendFile(
     path: PathLike,
@@ -89,7 +86,6 @@ external suspend fun appendFile(
  * @param path filename or {FileHandle}
  * @return Fulfills with `undefined` upon success.
  */
-
 @seskar.js.JsAsync
 external suspend fun appendFile(
     path: PathLike,
@@ -111,7 +107,6 @@ external suspend fun appendFile(
  * @param path filename or {FileHandle}
  * @return Fulfills with `undefined` upon success.
  */
-
 @seskar.js.JsAsync
 external suspend fun appendFile(
     path: PathLike,
@@ -133,7 +128,6 @@ external suspend fun appendFile(
  * @param path filename or {FileHandle}
  * @return Fulfills with `undefined` upon success.
  */
-
 @seskar.js.JsAsync
 external suspend fun appendFile(
     path: FileHandle,
@@ -154,7 +148,6 @@ external suspend fun appendFile(
  * @param path filename or {FileHandle}
  * @return Fulfills with `undefined` upon success.
  */
-
 @seskar.js.JsAsync
 external suspend fun appendFile(
     path: FileHandle,
@@ -176,7 +169,6 @@ external suspend fun appendFile(
  * @param path filename or {FileHandle}
  * @return Fulfills with `undefined` upon success.
  */
-
 @seskar.js.JsAsync
 external suspend fun appendFile(
     path: FileHandle,
@@ -198,7 +190,6 @@ external suspend fun appendFile(
  * @param path filename or {FileHandle}
  * @return Fulfills with `undefined` upon success.
  */
-
 @seskar.js.JsAsync
 external suspend fun appendFile(
     path: FileHandle,
@@ -219,7 +210,6 @@ external suspend fun appendFile(
  * @param path filename or {FileHandle}
  * @return Fulfills with `undefined` upon success.
  */
-
 @seskar.js.JsAsync
 external suspend fun appendFile(
     path: FileHandle,
@@ -241,7 +231,6 @@ external suspend fun appendFile(
  * @param path filename or {FileHandle}
  * @return Fulfills with `undefined` upon success.
  */
-
 @seskar.js.JsAsync
 external suspend fun appendFile(
     path: FileHandle,

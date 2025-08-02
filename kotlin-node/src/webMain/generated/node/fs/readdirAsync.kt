@@ -30,7 +30,6 @@ import js.promise.Promise
  * @since v10.0.0
  * @return Fulfills with an array of the names of the files in the directory excluding `'.'` and `'..'`.
  */
-
 @JsName("readdir")
 external fun readdirAsync(path: PathLike): Promise<js.array.ReadonlyArray<String>>
 
@@ -58,7 +57,6 @@ external fun readdirAsync(path: PathLike): Promise<js.array.ReadonlyArray<String
  * @since v10.0.0
  * @return Fulfills with an array of the names of the files in the directory excluding `'.'` and `'..'`.
  */
-
 @JsName("readdir")
 external fun readdirAsync(
     path: PathLike,
@@ -89,7 +87,6 @@ external fun readdirAsync(
  * @since v10.0.0
  * @return Fulfills with an array of the names of the files in the directory excluding `'.'` and `'..'`.
  */
-
 @JsName("readdir")
 external fun readdirAsync(
     path: PathLike,
@@ -101,7 +98,6 @@ external fun readdirAsync(
  * @param path A path to a file. If a URL is provided, it must use the `file:` protocol.
  * @param options The encoding (or an object specifying the encoding), used as the encoding of the result. If not provided, `'utf8'` is used.
  */
-
 @JsName("readdir")
 external fun readdirAsync(
     path: PathLike,
@@ -113,7 +109,6 @@ external fun readdirAsync(
  * @param path A path to a file. If a URL is provided, it must use the `file:` protocol.
  * @param options The encoding (or an object specifying the encoding), used as the encoding of the result. If not provided, `'utf8'` is used.
  */
-
 @JsName("readdir")
 external fun readdirAsync(
     path: PathLike,
@@ -143,7 +138,6 @@ external fun readdirAsync(
  * @param path A path to a file. If a URL is provided, it must use the `file:` protocol.
  * @param options If called with `withFileTypes: true` the result data will be an array of Dirent.
  */
-
 @JsName("readdir")
 external fun readdirAsync(
     path: PathLike,

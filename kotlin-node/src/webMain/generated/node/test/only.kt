@@ -10,7 +10,6 @@ import js.promise.Promise
  * Shorthand for marking a test as `only`. This is the same as calling {@link test} with `options.only` set to `true`.
  * @since v20.2.0
  */
-
 @JsName("only")
 external fun onlyAsync(
     name: String = definedExternally,

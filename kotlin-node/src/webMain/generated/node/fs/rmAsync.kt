@@ -11,7 +11,6 @@ import js.promise.Promise
  * @since v14.14.0
  * @return Fulfills with `undefined` upon success.
  */
-
 @JsName("rm")
 external fun rmAsync(
     path: PathLike,

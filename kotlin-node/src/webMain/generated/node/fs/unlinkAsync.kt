@@ -13,6 +13,5 @@ import js.promise.Promise
  * @since v10.0.0
  * @return Fulfills with `undefined` upon success.
  */
-
 @JsName("unlink")
 external fun unlinkAsync(path: PathLike): Promise<js.core.Void>

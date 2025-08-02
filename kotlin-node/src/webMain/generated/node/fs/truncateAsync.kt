@@ -12,7 +12,6 @@ import js.promise.Promise
  * @param [len=0]
  * @return Fulfills with `undefined` upon success.
  */
-
 @JsName("truncate")
 external fun truncateAsync(
     path: PathLike,

@@ -11,7 +11,6 @@ import js.promise.Promise
  * @since v10.0.0
  * @return Fulfills with `undefined` upon success.
  */
-
 @JsName("chown")
 external fun chownAsync(
     path: PathLike,

@@ -12,7 +12,6 @@ import js.promise.Promise
  * @since v10.6.0
  * @param hostname Host name to resolve.
  */
-
 @JsName("resolve6")
 external fun resolve6Async(hostname: String): Promise<js.array.ReadonlyArray<String>>
 

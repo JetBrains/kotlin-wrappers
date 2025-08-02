@@ -12,7 +12,6 @@ import js.promise.Promise
  * The `it()` function is imported from the `node:test` module.
  * @since v18.6.0, v16.17.0
  */
-
 @JsName("it")
 external fun itAsync(
     name: String = definedExternally,

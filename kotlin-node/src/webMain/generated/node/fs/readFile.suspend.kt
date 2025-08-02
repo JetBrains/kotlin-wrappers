@@ -64,7 +64,6 @@ external suspend fun readFile(
  * @param path filename or `FileHandle`
  * @return Fulfills with the contents of the file.
  */
-
 @seskar.js.JsAsync
 external suspend fun readFile(
     path: FileHandle,
@@ -84,7 +83,6 @@ external suspend fun readFile(
  * @param options An object that may contain an optional flag.
  * If a flag is not provided, it defaults to `'r'`.
  */
-
 @seskar.js.JsAsync
 external suspend fun readFile(
     path: PathLike,
@@ -98,7 +96,6 @@ external suspend fun readFile(
  * @param options An object that may contain an optional flag.
  * If a flag is not provided, it defaults to `'r'`.
  */
-
 @seskar.js.JsAsync
 external suspend fun readFile(
     path: FileHandle,
@@ -112,7 +109,6 @@ external suspend fun readFile(
  * @param options An object that may contain an optional flag.
  * If a flag is not provided, it defaults to `'r'`.
  */
-
 @seskar.js.JsAsync
 external suspend fun readFile(
     path: FileHandle,
@@ -129,7 +125,6 @@ external suspend fun readFile(path: PathLike): Any // string | Buffer
  * @param options An object that may contain an optional flag.
  * If a flag is not provided, it defaults to `'r'`.
  */
-
 @seskar.js.JsAsync
 external suspend fun readFile(
     path: PathLike,
@@ -143,7 +138,6 @@ external suspend fun readFile(
  * @param options An object that may contain an optional flag.
  * If a flag is not provided, it defaults to `'r'`.
  */
-
 @seskar.js.JsAsync
 external suspend fun readFile(
     path: PathLike,
@@ -157,7 +151,6 @@ external suspend fun readFile(
  * @param options An object that may contain an optional flag.
  * If a flag is not provided, it defaults to `'r'`.
  */
-
 @seskar.js.JsAsync
 external suspend fun readFile(path: FileHandle): Any // string | Buffer
 
@@ -168,7 +161,6 @@ external suspend fun readFile(path: FileHandle): Any // string | Buffer
  * @param options An object that may contain an optional flag.
  * If a flag is not provided, it defaults to `'r'`.
  */
-
 @seskar.js.JsAsync
 external suspend fun readFile(
     path: FileHandle,
@@ -182,7 +174,6 @@ external suspend fun readFile(
  * @param options An object that may contain an optional flag.
  * If a flag is not provided, it defaults to `'r'`.
  */
-
 @seskar.js.JsAsync
 external suspend fun readFile(
     path: FileHandle,

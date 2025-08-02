@@ -10,7 +10,6 @@ import js.promise.Promise
  * Shorthand for marking a test as `TODO`. This is the same as calling {@link test} with `options.todo` set to `true`.
  * @since v20.2.0
  */
-
 @JsName("todo")
 external fun todoAsync(
     name: String = definedExternally,

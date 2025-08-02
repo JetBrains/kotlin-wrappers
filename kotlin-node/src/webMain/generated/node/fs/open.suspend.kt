@@ -18,7 +18,6 @@ external suspend fun open(path: PathLike): FileHandle
  * @param [mode=0o666] Sets the file mode (permission and sticky bits) if the file is created.
  * @return Fulfills with a {FileHandle} object.
  */
-
 @seskar.js.JsAsync
 external suspend fun open(
     path: PathLike,
@@ -39,7 +38,6 @@ external suspend fun open(
  * @param [mode=0o666] Sets the file mode (permission and sticky bits) if the file is created.
  * @return Fulfills with a {FileHandle} object.
  */
-
 @seskar.js.JsAsync
 external suspend fun open(
     path: PathLike,

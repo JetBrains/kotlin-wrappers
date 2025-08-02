@@ -19,7 +19,6 @@ import web.url.URL
  * @param dest destination path to copy to.
  * @return Fulfills with `undefined` upon success.
  */
-
 @JsName("cp")
 external fun cpAsync(
     source: String,
@@ -39,7 +38,6 @@ external fun cpAsync(
  * @param dest destination path to copy to.
  * @return Fulfills with `undefined` upon success.
  */
-
 @JsName("cp")
 external fun cpAsync(
     source: String,
@@ -59,7 +57,6 @@ external fun cpAsync(
  * @param dest destination path to copy to.
  * @return Fulfills with `undefined` upon success.
  */
-
 @JsName("cp")
 external fun cpAsync(
     source: URL,
@@ -79,7 +76,6 @@ external fun cpAsync(
  * @param dest destination path to copy to.
  * @return Fulfills with `undefined` upon success.
  */
-
 @JsName("cp")
 external fun cpAsync(
     source: URL,

@@ -39,7 +39,6 @@ import web.abort.AbortSignal
  * allowing Node.js to stop tracking it.
  * This helps prevent memory leaks in long-running or non-cancelable operations.
  */
-
 @JsName("aborted")
 external fun abortedAsync(
     signal: AbortSignal,

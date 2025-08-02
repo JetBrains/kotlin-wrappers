@@ -48,7 +48,6 @@ import js.promise.Promise
  * ```
  * @since v10.0.0
  */
-
 @JsName("doesNotReject")
 external fun doesNotRejectAsync(block: () -> Promise<Any?>): Promise<js.core.Void>
 
@@ -94,7 +93,6 @@ external fun doesNotRejectAsync(block: () -> Promise<Any?>): Promise<js.core.Voi
  * ```
  * @since v10.0.0
  */
-
 @JsName("doesNotReject")
 external fun doesNotRejectAsync(
     block: () -> Promise<Any?>,
@@ -143,7 +141,6 @@ external fun doesNotRejectAsync(
  * ```
  * @since v10.0.0
  */
-
 @JsName("doesNotReject")
 external fun doesNotRejectAsync(
     block: () -> Promise<Any?>,
@@ -192,7 +189,6 @@ external fun doesNotRejectAsync(
  * ```
  * @since v10.0.0
  */
-
 @JsName("doesNotReject")
 external fun doesNotRejectAsync(block: Promise<Any?>): Promise<js.core.Void>
 
@@ -238,7 +234,6 @@ external fun doesNotRejectAsync(block: Promise<Any?>): Promise<js.core.Void>
  * ```
  * @since v10.0.0
  */
-
 @JsName("doesNotReject")
 external fun doesNotRejectAsync(
     block: Promise<Any?>,
@@ -287,7 +282,6 @@ external fun doesNotRejectAsync(
  * ```
  * @since v10.0.0
  */
-
 @JsName("doesNotReject")
 external fun doesNotRejectAsync(
     block: Promise<Any?>,

@@ -11,6 +11,5 @@ import js.promise.Promise
  * containing the reply records.
  * @since v10.6.0
  */
-
 @JsName("resolvePtr")
 external fun resolvePtrAsync(hostname: String): Promise<js.array.ReadonlyArray<String>>

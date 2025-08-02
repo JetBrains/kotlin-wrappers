@@ -35,7 +35,6 @@ import js.promise.Promise
  * @since v10.0.0
  * @return Fulfills with a string containing the file system path of the newly created temporary directory.
  */
-
 @JsName("mkdtemp")
 external fun mkdtempAsync(prefix: String): Promise<String>
 
@@ -68,7 +67,6 @@ external fun mkdtempAsync(prefix: String): Promise<String>
  * @since v10.0.0
  * @return Fulfills with a string containing the file system path of the newly created temporary directory.
  */
-
 @JsName("mkdtemp")
 external fun mkdtempAsync(
     prefix: String,
@@ -104,7 +102,6 @@ external fun mkdtempAsync(
  * @since v10.0.0
  * @return Fulfills with a string containing the file system path of the newly created temporary directory.
  */
-
 @JsName("mkdtemp")
 external fun mkdtempAsync(
     prefix: String,
@@ -116,7 +113,6 @@ external fun mkdtempAsync(
  * Generates six random characters to be appended behind a required `prefix` to create a unique temporary directory.
  * @param options The encoding (or an object specifying the encoding), used as the encoding of the result. If not provided, `'utf8'` is used.
  */
-
 @JsName("mkdtemp")
 external fun mkdtempAsync(
     prefix: String,

@@ -10,7 +10,6 @@ import js.promise.Promise
  * @since v19.6.0, v18.15.0
  * @return Fulfills with the {fs.StatFs} object for the given `path`.
  */
-
 @JsName("statfs")
 external fun statfsAsync(
     path: PathLike,

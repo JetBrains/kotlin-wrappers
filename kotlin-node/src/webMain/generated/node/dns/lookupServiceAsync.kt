@@ -24,7 +24,6 @@ import js.promise.Promise
  * ```
  * @since v10.6.0
  */
-
 @JsName("lookupService")
 external fun lookupServiceAsync(
     address: String,

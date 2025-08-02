@@ -38,7 +38,6 @@ import js.promise.Promise
  * @param [mode=fs.constants.F_OK]
  * @return Fulfills with `undefined` upon success.
  */
-
 @JsName("access")
 external fun accessAsync(
     path: PathLike,

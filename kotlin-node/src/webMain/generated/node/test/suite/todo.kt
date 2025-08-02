@@ -13,7 +13,6 @@ import node.test.TestOptions
  * Shorthand for marking a suite as `TODO`. This is the same as calling {@link suite} with `options.todo` set to `true`.
  * @since v20.13.0
  */
-
 @JsName("todo")
 external fun todoAsync(
     name: String = definedExternally,

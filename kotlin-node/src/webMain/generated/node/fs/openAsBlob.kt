@@ -25,7 +25,6 @@ import web.blob.Blob
  * @since v19.8.0
  * @experimental
  */
-
 @JsName("openAsBlob")
 external fun openAsBlobAsync(
     path: PathLike,

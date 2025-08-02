@@ -17,7 +17,6 @@ import js.promise.Promise
  * @since v10.0.0
  * @return Fulfills with `undefined` upon success.
  */
-
 @JsName("utimes")
 external fun utimesAsync(
     path: PathLike,

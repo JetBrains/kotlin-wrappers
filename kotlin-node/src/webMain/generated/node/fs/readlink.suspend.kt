@@ -16,7 +16,6 @@ external suspend fun readlink(path: PathLike): String
  * @since v10.0.0
  * @return Fulfills with the `linkString` upon success.
  */
-
 @seskar.js.JsAsync
 external suspend fun readlink(
     path: PathLike,
@@ -34,7 +33,6 @@ external suspend fun readlink(
  * @since v10.0.0
  * @return Fulfills with the `linkString` upon success.
  */
-
 @seskar.js.JsAsync
 external suspend fun readlink(
     path: PathLike,
@@ -58,6 +56,5 @@ external suspend fun readlink(
  * @param path A path to a file. If a URL is provided, it must use the `file:` protocol.
  * @param options The encoding (or an object specifying the encoding), used as the encoding of the result. If not provided, `'utf8'` is used.
  */
-
 @seskar.js.JsAsync
 external suspend fun readlink(path: PathLike, options: String? = definedExternally): Any // string | Buffer

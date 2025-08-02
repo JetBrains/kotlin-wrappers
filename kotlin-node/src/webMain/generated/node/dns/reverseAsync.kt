@@ -14,6 +14,5 @@ import js.promise.Promise
  * is one of the [DNS error codes](https://nodejs.org/docs/latest-v20.x/api/dns.html#error-codes).
  * @since v10.6.0
  */
-
 @JsName("reverse")
 external fun reverseAsync(ip: String): Promise<js.array.ReadonlyArray<String>>

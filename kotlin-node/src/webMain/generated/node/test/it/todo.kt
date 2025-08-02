@@ -12,7 +12,6 @@ import node.test.TestOptions
 /**
  * Shorthand for marking a test as `TODO`. This is the same as calling {@link it} with `options.todo` set to `true`.
  */
-
 @JsName("todo")
 external fun todoAsync(
     name: String = definedExternally,

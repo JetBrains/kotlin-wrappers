@@ -34,7 +34,6 @@ external suspend fun mkdtemp(prefix: String): String
  * @since v10.0.0
  * @return Fulfills with a string containing the file system path of the newly created temporary directory.
  */
-
 @seskar.js.JsAsync
 external suspend fun mkdtemp(
     prefix: String,
@@ -70,7 +69,6 @@ external suspend fun mkdtemp(
  * @since v10.0.0
  * @return Fulfills with a string containing the file system path of the newly created temporary directory.
  */
-
 @seskar.js.JsAsync
 external suspend fun mkdtemp(
     prefix: String,

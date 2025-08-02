@@ -13,7 +13,6 @@ import node.test.TestOptions
  * Shorthand for skipping a suite. This is the same as calling {@link describe} with `options.skip` set to `true`.
  * @since v18.15.0
  */
-
 @JsName("skip")
 external fun skipAsync(
     name: String = definedExternally,

@@ -23,7 +23,6 @@ external suspend fun cp(
  * @param dest destination path to copy to.
  * @return Fulfills with `undefined` upon success.
  */
-
 @seskar.js.JsAsync
 external suspend fun cp(
     source: String,
@@ -43,7 +42,6 @@ external suspend fun cp(
  * @param dest destination path to copy to.
  * @return Fulfills with `undefined` upon success.
  */
-
 @seskar.js.JsAsync
 external suspend fun cp(
     source: URL,
@@ -63,7 +61,6 @@ external suspend fun cp(
  * @param dest destination path to copy to.
  * @return Fulfills with `undefined` upon success.
  */
-
 @seskar.js.JsAsync
 external suspend fun cp(
     source: URL,

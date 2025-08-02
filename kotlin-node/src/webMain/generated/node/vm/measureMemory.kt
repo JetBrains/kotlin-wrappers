@@ -61,6 +61,5 @@ import js.promise.Promise
  * @since v13.10.0
  * @experimental
  */
-
 @JsName("measureMemory")
 external fun measureMemoryAsync(options: MeasureMemoryOptions = definedExternally): Promise<MemoryMeasurement>

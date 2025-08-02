@@ -34,6 +34,5 @@ import js.promise.Promise
  * ```
  * @since v10.6.0
  */
-
 @JsName("resolveAny")
 external fun resolveAnyAsync(hostname: String): Promise<js.array.ReadonlyArray<AnyRecord>>

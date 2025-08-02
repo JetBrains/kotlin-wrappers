@@ -25,6 +25,5 @@ import js.promise.Promise
  * ```
  * @since v10.6.0
  */
-
 @JsName("resolveSrv")
 external fun resolveSrvAsync(hostname: String): Promise<js.array.ReadonlyArray<SrvRecord>>

@@ -15,7 +15,6 @@ import js.promise.Promise
  * @return Immediately fulfilled with `undefined`.
  * @since v20.13.0
  */
-
 @JsName("suite")
 external fun suiteAsync(
     name: String = definedExternally,

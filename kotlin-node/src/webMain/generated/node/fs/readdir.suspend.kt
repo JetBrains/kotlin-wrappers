@@ -29,7 +29,6 @@ external suspend fun readdir(path: PathLike): js.array.ReadonlyArray<String>
  * @since v10.0.0
  * @return Fulfills with an array of the names of the files in the directory excluding `'.'` and `'..'`.
  */
-
 @seskar.js.JsAsync
 external suspend fun readdir(
     path: PathLike,
@@ -60,7 +59,6 @@ external suspend fun readdir(
  * @since v10.0.0
  * @return Fulfills with an array of the names of the files in the directory excluding `'.'` and `'..'`.
  */
-
 @seskar.js.JsAsync
 external suspend fun readdir(
     path: PathLike,
@@ -78,7 +76,6 @@ external suspend fun readdir(
  * @param path A path to a file. If a URL is provided, it must use the `file:` protocol.
  * @param options The encoding (or an object specifying the encoding), used as the encoding of the result. If not provided, `'utf8'` is used.
  */
-
 @seskar.js.JsAsync
 external suspend fun readdir(
     path: PathLike,

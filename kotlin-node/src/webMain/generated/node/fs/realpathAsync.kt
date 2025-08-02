@@ -22,7 +22,6 @@ import js.promise.Promise
  * @since v10.0.0
  * @return Fulfills with the resolved path upon success.
  */
-
 @JsName("realpath")
 external fun realpathAsync(path: PathLike): Promise<String>
 
@@ -42,7 +41,6 @@ external fun realpathAsync(path: PathLike): Promise<String>
  * @since v10.0.0
  * @return Fulfills with the resolved path upon success.
  */
-
 @JsName("realpath")
 external fun realpathAsync(
     path: PathLike,
@@ -65,7 +63,6 @@ external fun realpathAsync(
  * @since v10.0.0
  * @return Fulfills with the resolved path upon success.
  */
-
 @JsName("realpath")
 external fun realpathAsync(
     path: PathLike,
@@ -77,7 +74,6 @@ external fun realpathAsync(
  * @param path A path to a file. If a URL is provided, it must use the `file:` protocol.
  * @param options The encoding (or an object specifying the encoding), used as the encoding of the result. If not provided, `'utf8'` is used.
  */
-
 @JsName("realpath")
 external fun realpathAsync(
     path: PathLike,

@@ -61,7 +61,6 @@ external suspend fun writeFile(
  * @param file filename or `FileHandle`
  * @return Fulfills with `undefined` upon success.
  */
-
 @seskar.js.JsAsync
 external suspend fun writeFile(
     file: PathLike,
@@ -119,7 +118,6 @@ external suspend fun writeFile(
  * @param file filename or `FileHandle`
  * @return Fulfills with `undefined` upon success.
  */
-
 @seskar.js.JsAsync
 external suspend fun writeFile(
     file: PathLike,
@@ -177,7 +175,6 @@ external suspend fun writeFile(
  * @param file filename or `FileHandle`
  * @return Fulfills with `undefined` upon success.
  */
-
 @seskar.js.JsAsync
 external suspend fun writeFile(
     file: PathLike,
@@ -234,7 +231,6 @@ external suspend fun writeFile(
  * @param file filename or `FileHandle`
  * @return Fulfills with `undefined` upon success.
  */
-
 @seskar.js.JsAsync
 external suspend fun writeFile(
     file: PathLike,
@@ -292,7 +288,6 @@ external suspend fun writeFile(
  * @param file filename or `FileHandle`
  * @return Fulfills with `undefined` upon success.
  */
-
 @seskar.js.JsAsync
 external suspend fun writeFile(
     file: PathLike,
@@ -350,7 +345,6 @@ external suspend fun writeFile(
  * @param file filename or `FileHandle`
  * @return Fulfills with `undefined` upon success.
  */
-
 @seskar.js.JsAsync
 external suspend fun writeFile(
     file: PathLike,
@@ -407,7 +401,6 @@ external suspend fun writeFile(
  * @param file filename or `FileHandle`
  * @return Fulfills with `undefined` upon success.
  */
-
 @seskar.js.JsAsync
 external suspend fun writeFile(
     file: PathLike,
@@ -465,7 +458,6 @@ external suspend fun writeFile(
  * @param file filename or `FileHandle`
  * @return Fulfills with `undefined` upon success.
  */
-
 @seskar.js.JsAsync
 external suspend fun writeFile(
     file: PathLike,
@@ -523,7 +515,6 @@ external suspend fun writeFile(
  * @param file filename or `FileHandle`
  * @return Fulfills with `undefined` upon success.
  */
-
 @seskar.js.JsAsync
 external suspend fun writeFile(
     file: PathLike,
@@ -580,7 +571,6 @@ external suspend fun writeFile(
  * @param file filename or `FileHandle`
  * @return Fulfills with `undefined` upon success.
  */
-
 @seskar.js.JsAsync
 external suspend fun writeFile(
     file: PathLike,
@@ -638,7 +628,6 @@ external suspend fun writeFile(
  * @param file filename or `FileHandle`
  * @return Fulfills with `undefined` upon success.
  */
-
 @seskar.js.JsAsync
 external suspend fun writeFile(
     file: PathLike,
@@ -696,7 +685,6 @@ external suspend fun writeFile(
  * @param file filename or `FileHandle`
  * @return Fulfills with `undefined` upon success.
  */
-
 @seskar.js.JsAsync
 external suspend fun writeFile(
     file: PathLike,
@@ -753,7 +741,6 @@ external suspend fun writeFile(
  * @param file filename or `FileHandle`
  * @return Fulfills with `undefined` upon success.
  */
-
 @seskar.js.JsAsync
 external suspend fun writeFile(
     file: PathLike,
@@ -811,7 +798,6 @@ external suspend fun writeFile(
  * @param file filename or `FileHandle`
  * @return Fulfills with `undefined` upon success.
  */
-
 @seskar.js.JsAsync
 external suspend fun writeFile(
     file: PathLike,
@@ -869,7 +855,6 @@ external suspend fun writeFile(
  * @param file filename or `FileHandle`
  * @return Fulfills with `undefined` upon success.
  */
-
 @seskar.js.JsAsync
 external suspend fun writeFile(
     file: FileHandle,
@@ -926,7 +911,6 @@ external suspend fun writeFile(
  * @param file filename or `FileHandle`
  * @return Fulfills with `undefined` upon success.
  */
-
 @seskar.js.JsAsync
 external suspend fun writeFile(
     file: FileHandle,
@@ -984,7 +968,6 @@ external suspend fun writeFile(
  * @param file filename or `FileHandle`
  * @return Fulfills with `undefined` upon success.
  */
-
 @seskar.js.JsAsync
 external suspend fun writeFile(
     file: FileHandle,
@@ -1042,7 +1025,6 @@ external suspend fun writeFile(
  * @param file filename or `FileHandle`
  * @return Fulfills with `undefined` upon success.
  */
-
 @seskar.js.JsAsync
 external suspend fun writeFile(
     file: FileHandle,
@@ -1099,7 +1081,6 @@ external suspend fun writeFile(
  * @param file filename or `FileHandle`
  * @return Fulfills with `undefined` upon success.
  */
-
 @seskar.js.JsAsync
 external suspend fun writeFile(
     file: FileHandle,
@@ -1157,7 +1138,6 @@ external suspend fun writeFile(
  * @param file filename or `FileHandle`
  * @return Fulfills with `undefined` upon success.
  */
-
 @seskar.js.JsAsync
 external suspend fun writeFile(
     file: FileHandle,
@@ -1215,7 +1195,6 @@ external suspend fun writeFile(
  * @param file filename or `FileHandle`
  * @return Fulfills with `undefined` upon success.
  */
-
 @seskar.js.JsAsync
 external suspend fun writeFile(
     file: FileHandle,
@@ -1272,7 +1251,6 @@ external suspend fun writeFile(
  * @param file filename or `FileHandle`
  * @return Fulfills with `undefined` upon success.
  */
-
 @seskar.js.JsAsync
 external suspend fun writeFile(
     file: FileHandle,
@@ -1330,7 +1308,6 @@ external suspend fun writeFile(
  * @param file filename or `FileHandle`
  * @return Fulfills with `undefined` upon success.
  */
-
 @seskar.js.JsAsync
 external suspend fun writeFile(
     file: FileHandle,
@@ -1388,7 +1365,6 @@ external suspend fun writeFile(
  * @param file filename or `FileHandle`
  * @return Fulfills with `undefined` upon success.
  */
-
 @seskar.js.JsAsync
 external suspend fun writeFile(
     file: FileHandle,
@@ -1445,7 +1421,6 @@ external suspend fun writeFile(
  * @param file filename or `FileHandle`
  * @return Fulfills with `undefined` upon success.
  */
-
 @seskar.js.JsAsync
 external suspend fun writeFile(
     file: FileHandle,
@@ -1503,7 +1478,6 @@ external suspend fun writeFile(
  * @param file filename or `FileHandle`
  * @return Fulfills with `undefined` upon success.
  */
-
 @seskar.js.JsAsync
 external suspend fun writeFile(
     file: FileHandle,
@@ -1561,7 +1535,6 @@ external suspend fun writeFile(
  * @param file filename or `FileHandle`
  * @return Fulfills with `undefined` upon success.
  */
-
 @seskar.js.JsAsync
 external suspend fun writeFile(
     file: FileHandle,
@@ -1618,7 +1591,6 @@ external suspend fun writeFile(
  * @param file filename or `FileHandle`
  * @return Fulfills with `undefined` upon success.
  */
-
 @seskar.js.JsAsync
 external suspend fun writeFile(
     file: FileHandle,
@@ -1676,7 +1648,6 @@ external suspend fun writeFile(
  * @param file filename or `FileHandle`
  * @return Fulfills with `undefined` upon success.
  */
-
 @seskar.js.JsAsync
 external suspend fun writeFile(
     file: FileHandle,

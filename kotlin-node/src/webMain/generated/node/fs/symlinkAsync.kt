@@ -19,7 +19,6 @@ import js.promise.Promise
  * @param [type='null']
  * @return Fulfills with `undefined` upon success.
  */
-
 @JsName("symlink")
 external fun symlinkAsync(
     target: PathLike,

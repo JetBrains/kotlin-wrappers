@@ -11,7 +11,6 @@ import js.promise.Promise
  *
  * The `describe()` function is imported from the `node:test` module.
  */
-
 @JsName("describe")
 external fun describeAsync(
     name: String = definedExternally,

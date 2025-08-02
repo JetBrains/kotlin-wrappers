@@ -69,7 +69,6 @@ import js.promise.Promise
  * example in {@link throws} carefully if using a string as the second argument gets considered.
  * @since v10.0.0
  */
-
 @JsName("rejects")
 external fun rejectsAsync(block: () -> Promise<Any?>): Promise<js.core.Void>
 
@@ -136,7 +135,6 @@ external fun rejectsAsync(block: () -> Promise<Any?>): Promise<js.core.Void>
  * example in {@link throws} carefully if using a string as the second argument gets considered.
  * @since v10.0.0
  */
-
 @JsName("rejects")
 external fun rejectsAsync(
     block: () -> Promise<Any?>,
@@ -206,7 +204,6 @@ external fun rejectsAsync(
  * example in {@link throws} carefully if using a string as the second argument gets considered.
  * @since v10.0.0
  */
-
 @JsName("rejects")
 external fun rejectsAsync(
     block: () -> Promise<Any?>,
@@ -276,7 +273,6 @@ external fun rejectsAsync(
  * example in {@link throws} carefully if using a string as the second argument gets considered.
  * @since v10.0.0
  */
-
 @JsName("rejects")
 external fun rejectsAsync(block: Promise<Any?>): Promise<js.core.Void>
 
@@ -343,7 +339,6 @@ external fun rejectsAsync(block: Promise<Any?>): Promise<js.core.Void>
  * example in {@link throws} carefully if using a string as the second argument gets considered.
  * @since v10.0.0
  */
-
 @JsName("rejects")
 external fun rejectsAsync(
     block: Promise<Any?>,
@@ -413,7 +408,6 @@ external fun rejectsAsync(
  * example in {@link throws} carefully if using a string as the second argument gets considered.
  * @since v10.0.0
  */
-
 @JsName("rejects")
 external fun rejectsAsync(
     block: Promise<Any?>,

@@ -12,6 +12,5 @@ import js.promise.Promise
  * the `hostname` (e.g. `['bar.example.com']`).
  * @since v10.6.0
  */
-
 @JsName("resolveCname")
 external fun resolveCnameAsync(hostname: String): Promise<js.array.ReadonlyArray<String>>

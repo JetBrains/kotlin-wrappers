@@ -70,7 +70,6 @@ external suspend fun rejects(block: () -> Promise<Any?>): js.core.Void
  * example in {@link throws} carefully if using a string as the second argument gets considered.
  * @since v10.0.0
  */
-
 @seskar.js.JsAsync
 external suspend fun rejects(
     block: () -> Promise<Any?>,
@@ -140,7 +139,6 @@ external suspend fun rejects(
  * example in {@link throws} carefully if using a string as the second argument gets considered.
  * @since v10.0.0
  */
-
 @seskar.js.JsAsync
 external suspend fun rejects(
     block: () -> Promise<Any?>,
@@ -210,7 +208,6 @@ external suspend fun rejects(
  * example in {@link throws} carefully if using a string as the second argument gets considered.
  * @since v10.0.0
  */
-
 @seskar.js.JsAsync
 external suspend fun rejects(block: Promise<Any?>): js.core.Void
 
@@ -277,7 +274,6 @@ external suspend fun rejects(block: Promise<Any?>): js.core.Void
  * example in {@link throws} carefully if using a string as the second argument gets considered.
  * @since v10.0.0
  */
-
 @seskar.js.JsAsync
 external suspend fun rejects(
     block: Promise<Any?>,
@@ -347,7 +343,6 @@ external suspend fun rejects(
  * example in {@link throws} carefully if using a string as the second argument gets considered.
  * @since v10.0.0
  */
-
 @seskar.js.JsAsync
 external suspend fun rejects(
     block: Promise<Any?>,

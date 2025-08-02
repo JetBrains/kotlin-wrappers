@@ -34,7 +34,6 @@ import js.promise.Promise
  * @since v12.12.0
  * @return Fulfills with an {fs.Dir}.
  */
-
 @JsName("opendir")
 external fun opendirAsync(
     path: PathLike,

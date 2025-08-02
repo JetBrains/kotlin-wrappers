@@ -1,7 +1,7 @@
 package node.karakum.plugins
 
 import arrow.core.raise.impure
-import arrow.core.raise.nullable
+import node.karakum.util.nullable
 import io.github.sgrishchenko.karakum.extension.Context
 import io.github.sgrishchenko.karakum.extension.GeneratedFile
 import io.github.sgrishchenko.karakum.extension.Plugin

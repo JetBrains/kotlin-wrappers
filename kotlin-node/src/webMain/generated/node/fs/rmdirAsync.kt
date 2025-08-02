@@ -16,7 +16,6 @@ import js.promise.Promise
  * @since v10.0.0
  * @return Fulfills with `undefined` upon success.
  */
-
 @JsName("rmdir")
 external fun rmdirAsync(
     path: PathLike,

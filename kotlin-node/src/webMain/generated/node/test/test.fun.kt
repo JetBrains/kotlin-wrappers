@@ -45,7 +45,6 @@ import js.promise.Promise
  * If the test uses callbacks, the callback function is passed as the second argument.
  * @return Fulfilled with `undefined` once the test completes, or immediately if the test runs within a suite.
  */
-
 @JsName("test")
 external fun testAsync(
     name: String = definedExternally,

@@ -13,7 +13,6 @@ import js.promise.Promise
  * @deprecated Since v10.0.0
  * @return Fulfills with `undefined` upon success.
  */
-
 @JsName("lchmod")
 external fun lchmodAsync(
     path: PathLike,

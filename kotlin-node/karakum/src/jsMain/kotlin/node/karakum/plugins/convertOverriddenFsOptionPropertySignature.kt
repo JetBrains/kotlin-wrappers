@@ -1,6 +1,6 @@
 package node.karakum.plugins
 
-import arrow.core.raise.nullable
+import node.karakum.util.nullable
 import io.github.sgrishchenko.karakum.extension.createPlugin
 import io.github.sgrishchenko.karakum.extension.renderNullable
 import io.github.sgrishchenko.karakum.util.capitalize
