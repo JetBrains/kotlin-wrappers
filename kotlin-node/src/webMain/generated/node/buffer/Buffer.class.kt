@@ -14,7 +14,7 @@ sealed external class Buffer<TArrayBuffer : ArrayBufferLike /* default is ArrayB
     constructor (size: Number)
     constructor (array: ArrayLike<Double>)
     constructor (arrayBuffer: TArrayBuffer)
-// see buffer.d.ts for implementation shared with all TypeScript versions
+    // see buffer.d.ts for implementation shared with all TypeScript versions
 
     /**
      * Returns a new `Buffer` that references the same memory as the original, but
