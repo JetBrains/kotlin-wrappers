@@ -25,9 +25,9 @@ val convertTypealiasParameterBounds = createPlugin { node, context, render ->
             val constraintType = node.constraint?.let { render(it) }
             val defaultType = node.default?.let { render(it) }
 
-            val bound = "${ifPresent(constraintType, { " : $it" })}${ifPresent(defaultType, { " default is $it" })}"
+            val bound = "${ifPresent(constraintType) { " : $it" }}${ifPresent(defaultType) { " default is $it" }}"
 
-            "${name}${ifPresent(bound, { " /* ${it} */" })}"
+            "${name}${ifPresent(bound) { " /* $it */" }}"
         } ?: nullable {
             ensure(sourceFileName.fileName.endsWith("stream.d.ts"))
 
@@ -47,9 +47,9 @@ val convertTypealiasParameterBounds = createPlugin { node, context, render ->
             val constraintType = node.constraint?.let { render(it) }
             val defaultType = node.default?.let { render(it) }
 
-            val bound = "${ifPresent(constraintType, { " : $it" })}${ifPresent(defaultType, { " default is $it" })}"
+            val bound = "${ifPresent(constraintType) { " : $it" }}${ifPresent(defaultType) { " default is $it" }}"
 
-            "${name}${ifPresent(bound, { " /* ${it} */" })}"
+            "${name}${ifPresent(bound) { " /* $it */" }}"
         } ?: nullable {
             ensure(sourceFileName.fileName.endsWith("util.d.ts"))
 
@@ -64,9 +64,9 @@ val convertTypealiasParameterBounds = createPlugin { node, context, render ->
             val constraintType = node.constraint?.let { render(it) }
             val defaultType = node.default?.let { render(it) }
 
-            val bound = "${ifPresent(constraintType, { " : $it" })}${ifPresent(defaultType, { " default is $it" })}"
+            val bound = "${ifPresent(constraintType) { " : $it" }}${ifPresent(defaultType) { " default is $it" }}"
 
-            "${name}${ifPresent(bound, { " /* ${it} */" })}"
+            "${name}${ifPresent(bound) { " /* $it */" }}"
         }
     }
 }

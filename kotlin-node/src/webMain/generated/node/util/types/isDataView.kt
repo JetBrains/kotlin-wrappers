@@ -16,6 +16,5 @@ package node.util.types
  * See also [`ArrayBuffer.isView()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer/isView).
  * @since v10.0.0
  */
-
 @JsName("isDataView")
 external fun isDataViewRaw(value: Any?): Boolean // object is DataView

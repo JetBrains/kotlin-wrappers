@@ -12,6 +12,5 @@ package node.util.types
  * ```
  * @since v10.0.0
  */
-
 @JsName("isWeakSet")
 external fun isWeakSetRaw(value: Any?): Boolean // object is WeakSet<object>

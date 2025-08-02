@@ -14,6 +14,5 @@ package node.util.types
  * ```
  * @since v10.0.0
  */
-
 @JsName("isInt8Array")
 external fun isInt8ArrayRaw(value: Any?): Boolean // object is Int8Array

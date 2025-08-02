@@ -12,6 +12,5 @@ package node.util.types
  * ```
  * @since v10.0.0
  */
-
 @JsName("isPromise")
 external fun isPromiseRaw(value: Any?): Boolean // object is Promise<unknown>

@@ -16,6 +16,5 @@ package node.util.types
  * ```
  * @since v10.0.0
  */
-
 @JsName("isAnyArrayBuffer")
 external fun isAnyArrayBufferRaw(value: Any?): Boolean // object is ArrayBufferLike

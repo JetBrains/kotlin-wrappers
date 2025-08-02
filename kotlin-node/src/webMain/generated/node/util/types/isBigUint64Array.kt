@@ -13,6 +13,5 @@ package node.util.types
  * ```
  * @since v10.0.0
  */
-
 @JsName("isBigUint64Array")
 external fun isBigUint64ArrayRaw(value: Any?): Boolean // value is BigUint64Array

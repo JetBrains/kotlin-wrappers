@@ -34,6 +34,5 @@ package node.util
  * @since v0.6.0
  * @deprecated Since v4.0.0 - Use {@link types.isNativeError} instead.
  */
-
 @JsName("isError")
 external fun isErrorRaw(value: Any?): Boolean // object is Error

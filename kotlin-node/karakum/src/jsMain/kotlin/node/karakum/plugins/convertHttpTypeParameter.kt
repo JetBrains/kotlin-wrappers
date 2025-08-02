@@ -7,7 +7,6 @@ import io.github.sgrishchenko.karakum.extension.plugins.typeScriptServiceKey
 import io.github.sgrishchenko.karakum.util.getParentOrNull
 import io.github.sgrishchenko.karakum.util.getSourceFileOrNull
 import typescript.Node
-import typescript.TypeReferenceNode
 import typescript.asArray
 import typescript.isClassDeclaration
 import typescript.isExpressionWithTypeArguments

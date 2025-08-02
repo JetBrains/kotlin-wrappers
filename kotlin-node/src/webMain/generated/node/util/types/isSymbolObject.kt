@@ -15,6 +15,5 @@ package node.util.types
  * ```
  * @since v10.0.0
  */
-
 @JsName("isSymbolObject")
 external fun isSymbolObjectRaw(value: Any?): Boolean // object is Symbol

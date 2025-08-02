@@ -26,9 +26,7 @@ private fun isPromiseFunction(node: Node) = nullable {
     ensure(isPromiseType(type))
 } != null
 
-private fun isConflictingOverload(node: Node, signature: Signature) = nullable {
-    ensure(isFunctionDeclaration(node))
-
+private fun isConflictingOverload(node: FunctionDeclaration, signature: Signature) = nullable {
     val name = ensureNotNull(node.name)
 
     nullable {

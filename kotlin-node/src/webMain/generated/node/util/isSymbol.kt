@@ -20,6 +20,5 @@ package node.util
  * @since v0.11.5
  * @deprecated Since v4.0.0 - Use `typeof value === 'symbol'` instead.
  */
-
 @JsName("isSymbol")
 external fun isSymbolRaw(value: Any?): Boolean // object is symbol

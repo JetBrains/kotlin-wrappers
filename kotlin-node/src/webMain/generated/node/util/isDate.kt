@@ -20,6 +20,5 @@ package node.util
  * @since v0.6.0
  * @deprecated Since v4.0.0 - Use {@link types.isDate} instead.
  */
-
 @JsName("isDate")
 external fun isDateRaw(value: Any?): Boolean // object is Date

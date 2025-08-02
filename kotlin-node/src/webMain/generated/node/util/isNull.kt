@@ -20,6 +20,5 @@ package node.util
  * @since v0.11.5
  * @deprecated Since v4.0.0 - Use `value === null` instead.
  */
-
 @JsName("isNull")
 external fun isNullRaw(value: Any?): Boolean // object is null
