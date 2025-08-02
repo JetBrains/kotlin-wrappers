@@ -18,7 +18,7 @@ external interface HeightReference {
         val NONE: HeightReference
 
         /**
-         * The position is clamped to the terrain and 3D Tiles.
+         * The position is clamped to the terrain and 3D Tiles. When clamping to 3D Tilesets such as photorealistic 3D Tiles, ensure the tileset has [Cesium3DTileset.enableCollision] set to `true`. Otherwise, the entity may not be correctly clamped to the tileset surface.
          */
         val CLAMP_TO_GROUND: HeightReference
 

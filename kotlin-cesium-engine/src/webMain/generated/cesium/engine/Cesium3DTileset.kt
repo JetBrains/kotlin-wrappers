@@ -1051,7 +1051,7 @@ external class Cesium3DTileset(
      *   Default value - `false`
      * @property [splitDirection] The [SplitDirection] split to apply to this tileset.
      *   Default value - [SplitDirection.NONE]
-     * @property [enableCollision] When `true`, enables collisions for camera or CPU picking. While this is `true` the camera will be prevented from going below the tileset surface if [ScreenSpaceCameraController.enableCollisionDetection] is true.
+     * @property [enableCollision] When `true`, enables collisions for camera or CPU picking. While this is `true` the camera will be prevented from going below the tileset surface if [ScreenSpaceCameraController.enableCollisionDetection] is true. This also affects the behavior of [HeightReference.CLAMP_TO_GROUND] when clamping to 3D Tiles surfaces. If `enableCollision` is `false`, entities may not be correctly clamped to the tileset geometry.
      *   Default value - `false`
      * @property [projectTo2D] Whether to accurately project the tileset to 2D. If this is true, the tileset will be projected accurately to 2D, but it will use more memory to do so. If this is false, the tileset will use less memory and will still render in 2D / CV mode, but its projected positions may be inaccurate. This cannot be set after the tileset has been created.
      *   Default value - `false`

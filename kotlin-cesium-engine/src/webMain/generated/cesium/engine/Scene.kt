@@ -105,19 +105,19 @@ external class Scene(
      * The [SkyBox] used to draw the stars.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Scene.html#skyBox">Online Documentation</a>
      */
-    var skyBox: SkyBox
+    var skyBox: SkyBox?
 
     /**
      * The sky atmosphere drawn around the globe.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Scene.html#skyAtmosphere">Online Documentation</a>
      */
-    var skyAtmosphere: SkyAtmosphere
+    var skyAtmosphere: SkyAtmosphere?
 
     /**
      * The [Sun].
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Scene.html#sun">Online Documentation</a>
      */
-    var sun: Sun
+    var sun: Sun?
 
     /**
      * Uses a bloom filter on the sun when enabled.
@@ -129,10 +129,10 @@ external class Scene(
      * The [Moon]
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Scene.html#moon">Online Documentation</a>
      */
-    var moon: Moon
+    var moon: Moon?
 
     /**
-     * The background color, which is only visible if there is no sky box, i.e., [Scene.skyBox] is undefined.
+     * The background color, which is only visible if there is no sky box, i.e., [Scene.skyBox] is `undefined`.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Scene.html#backgroundColor">Online Documentation</a>
      */
     var backgroundColor: Color
@@ -208,7 +208,7 @@ external class Scene(
      * ```
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Scene.html#debugCommandFilter">Online Documentation</a>
      */
-    var debugCommandFilter: Function<*>
+    var debugCommandFilter: Function<*>?
 
     /**
      * This property is for debugging only; it is not for production use.
@@ -536,11 +536,11 @@ external class Scene(
     val postRender: DefaultEvent
 
     /**
-     * Gets the simulation time when the scene was last rendered. Returns undefined if the scene has not yet been
-     * rendered.
+     * Gets the simulation time when the scene was last rendered. Returns `undefined`
+     * if the scene has not yet been rendered.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Scene.html#lastRenderTime">Online Documentation</a>
      */
-    val lastRenderTime: JulianDate
+    val lastRenderTime: JulianDate?
 
     /**
      * This property is for debugging only; it is not for production use.
@@ -553,7 +553,7 @@ external class Scene(
      * three frustums.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Scene.html#debugFrustumStatistics">Online Documentation</a>
      */
-    val debugFrustumStatistics: JsAny
+    val debugFrustumStatistics: JsAny?
 
     /**
      * Gets whether or not the scene is optimized for 3D only viewing.
@@ -677,7 +677,7 @@ external class Scene(
 
     /**
      * Returns an object with a `primitive` property that contains the first (top) primitive in the scene
-     * at a particular window coordinate or undefined if nothing is at the location. Other properties may
+     * at a particular window coordinate or `undefined` if nothing is at the location. Other properties may
      * potentially be set depending on the type of primitive and may be used to further identify the picked object.
      *
      * When a feature of a 3D Tiles tileset is picked, `pick` returns a [Cesium3DTileFeature] object.
@@ -695,18 +695,18 @@ external class Scene(
      *   Default value - `3`
      * @param [height] Height of the pick rectangle.
      *   Default value - `3`
-     * @return Object containing the picked primitive.
+     * @return Object containing the picked primitive or `undefined` if nothing is at the location.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Scene.html#pick">Online Documentation</a>
      */
     fun pick(
         windowPosition: Cartesian2,
         width: Double? = definedExternally,
         height: Double? = definedExternally,
-    ): JsAny
+    ): JsAny?
 
     /**
      * Returns a [VoxelCell] for the voxel sample rendered at a particular window coordinate,
-     * or undefined if no voxel is rendered at that position.
+     * or `undefined` if no voxel is rendered at that position.
      * ```
      * On left click, report the value of the "color" property at that voxel sample.
      * handler.setInputAction(function(movement) {
@@ -721,7 +721,7 @@ external class Scene(
      *   Default value - `3`
      * @param [height] Height of the pick rectangle.
      *   Default value - `3`
-     * @return Information about the voxel cell rendered at the picked position.
+     * @return Information about the voxel cell rendered at the picked position or `undefined` if no voxel is rendered at that position.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Scene.html#pickVoxel">Online Documentation</a>
      */
     fun pickVoxel(
@@ -758,7 +758,7 @@ external class Scene(
      *   associated metadata at the given position.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Scene.html#pickMetadataSchema">Online Documentation</a>
      */
-    fun pickMetadataSchema(windowPosition: Cartesian2): MetadataSchema
+    fun pickMetadataSchema(windowPosition: Cartesian2): MetadataSchema?
 
     /**
      * Returns the cartesian position reconstructed from the depth buffer and window position.
@@ -826,7 +826,7 @@ external class Scene(
         position: Cartographic,
         objectsToExclude: ReadonlyArray<JsAny>? = definedExternally,
         width: Double? = definedExternally,
-    ): Double
+    ): Double?
 
     /**
      * Clamps the given cartesian position to the scene geometry along the geodetic surface normal. Returns the
@@ -853,14 +853,14 @@ external class Scene(
         objectsToExclude: ReadonlyArray<JsAny>? = definedExternally,
         width: Double? = definedExternally,
         result: Cartesian3? = definedExternally,
-    ): Cartesian3
+    ): Cartesian3?
 
     /**
      * Initiates an asynchronous [Scene.sampleHeight] query for an array of [Cartographic] positions
      * using the maximum level of detail for 3D Tilesets in the scene. The height of the input positions is ignored.
      * Returns a promise that is resolved when the query completes. Each point height is modified in place.
      * If a height cannot be determined because no geometry can be sampled at that location, or another error occurs,
-     * the height is set to undefined.
+     * the height is set to `undefined`.
      * ```
      * const positions = [
      *     new Cartographic(-1.31968, 0.69887),
@@ -876,7 +876,7 @@ external class Scene(
      * @param [objectsToExclude] A list of primitives, entities, or 3D Tiles features to not sample height from.
      * @param [width] Width of the intersection volume in meters.
      *   Default value - `0.1`
-     * @return A promise that resolves to the provided list of positions when the query has completed.
+     * @return A promise that resolves to the provided list of positions when the query has completed. Positions may become `undefined` if the height cannot be determined.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Scene.html#sampleHeightMostDetailed">Online Documentation</a>
      */
     @JsAsync
@@ -885,14 +885,14 @@ external class Scene(
         positions: ReadonlyArray<Cartographic>,
         objectsToExclude: ReadonlyArray<JsAny>? = definedExternally,
         width: Double? = definedExternally,
-    ): ReadonlyArray<Cartographic>
+    ): ReadonlyArray<Cartographic?>
 
     @JsName("sampleHeightMostDetailed")
     fun sampleHeightMostDetailedAsync(
         positions: ReadonlyArray<Cartographic>,
         objectsToExclude: ReadonlyArray<JsAny>? = definedExternally,
         width: Double? = definedExternally,
-    ): Promise<ReadonlyArray<Cartographic>>
+    ): Promise<ReadonlyArray<Cartographic?>>
 
     /**
      * Initiates an asynchronous [Scene.clampToHeight] query for an array of [Cartesian3] positions
@@ -914,7 +914,7 @@ external class Scene(
      * @param [objectsToExclude] A list of primitives, entities, or 3D Tiles features to not clamp to.
      * @param [width] Width of the intersection volume in meters.
      *   Default value - `0.1`
-     * @return A promise that resolves to the provided list of positions when the query has completed.
+     * @return A promise that resolves to the provided list of positions when the query has completed. Positions may become `undefined` if they cannot be clamped.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Scene.html#clampToHeightMostDetailed">Online Documentation</a>
      */
     @JsAsync
@@ -923,14 +923,14 @@ external class Scene(
         cartesians: ReadonlyArray<Cartesian3>,
         objectsToExclude: ReadonlyArray<JsAny>? = definedExternally,
         width: Double? = definedExternally,
-    ): ReadonlyArray<Cartesian3>
+    ): ReadonlyArray<Cartesian3?>
 
     @JsName("clampToHeightMostDetailed")
     fun clampToHeightMostDetailedAsync(
         cartesians: ReadonlyArray<Cartesian3>,
         objectsToExclude: ReadonlyArray<JsAny>? = definedExternally,
         width: Double? = definedExternally,
-    ): Promise<ReadonlyArray<Cartesian3>>
+    ): Promise<ReadonlyArray<Cartesian3?>>
 
     /**
      * Transforms a position in cartesian coordinates to canvas coordinates.  This is commonly used to place an
@@ -952,7 +952,7 @@ external class Scene(
     fun cartesianToCanvasCoordinates(
         position: Cartesian3,
         result: Cartesian2? = definedExternally,
-    ): Cartesian2
+    ): Cartesian2?
 
     /**
      * Instantly completes an active transition.

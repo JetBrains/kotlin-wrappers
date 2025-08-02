@@ -195,6 +195,8 @@ external class ScreenSpaceCameraController(
 
     /**
      * When disabled, the values of `maximumZoomDistance` and `minimumZoomDistance` are ignored.
+     * Also used in conjunction with [Cesium3DTileset.enableCollision] to prevent the camera from moving through or below a 3D Tileset surface.
+     * This may also affect clamping behavior when using [HeightReference.CLAMP_TO_GROUND] on 3D Tiles.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ScreenSpaceCameraController.html#enableCollisionDetection">Online Documentation</a>
      */
     var enableCollisionDetection: Boolean

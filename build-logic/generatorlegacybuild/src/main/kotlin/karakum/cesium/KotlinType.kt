@@ -42,6 +42,8 @@ private val STANDARD_TYPE_MAP = mapOf(
     "CameraEventType | any[] | undefined" to "CameraEventType?",
     "any[] | GeometryInstance" to "GeometryInstance",
     "GeometryInstance[] | GeometryInstance" to "ReadonlyArray<GeometryInstance>",
+    "(Cartesian3 | undefined)[]" to "ReadonlyArray<Cartesian3?>",
+    "(Cartographic | undefined)[]" to "ReadonlyArray<Cartographic?>",
 
     "Promise<HTMLImageElement | HTMLCanvasElement> | undefined" to "$PROMISE<$HTML_ELEMENT>?",
     "Promise<ImageBitmap | HTMLImageElement> | undefined" to "$PROMISE<CanvasImageSource>?",

@@ -165,6 +165,14 @@ external class ImageryLayer(
     val ready: Boolean
 
     /**
+     * Gets an event that is raised when the imagery provider encounters an asynchronous error.  By subscribing
+     * to the event, you will be notified of the error and can potentially recover from it.  Event listeners
+     * are passed an instance of the thrown error.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ImageryLayer.html#errorEvent">Online Documentation</a>
+     */
+    val errorEvent: Event<ImageryLayerErrorEventCallback>
+
+    /**
      * Gets an event that is raised when the imagery provider has been successfully created. Event listeners
      * are passed the created instance of [ImageryProvider].
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ImageryLayer.html#readyEvent">Online Documentation</a>
@@ -433,7 +441,7 @@ external class ImageryLayer(
          * viewer.imageryLayers.add(imageryLayer);
          *
          * imageryLayer.readyEvent.addEventListener(provider => {
-         *   imageryLayer.provider.errorEvent.addEventListener(error => {
+         *   imageryLayer.imageryProvider.errorEvent.addEventListener(error => {
          *     alert(`Encountered an error while loading imagery tiles! ${error}`);
          *   });
          * });
@@ -466,7 +474,7 @@ external class ImageryLayer(
          * viewer.imageryLayers.add(imageryLayer);
          *
          * imageryLayer.readyEvent.addEventListener(provider => {
-         *   imageryLayer.provider.errorEvent.addEventListener(error => {
+         *   imageryLayer.imageryProvider.errorEvent.addEventListener(error => {
          *     alert(`Encountered an error while loading imagery tiles! ${error}`);
          *   });
          * });
