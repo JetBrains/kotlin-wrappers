@@ -1,6 +1,6 @@
 package node.karakum.plugins
 
-import arrow.core.raise.impure
+import node.karakum.util.impure
 import node.karakum.util.nullable
 import io.github.sgrishchenko.karakum.extension.Context
 import io.github.sgrishchenko.karakum.extension.GeneratedFile

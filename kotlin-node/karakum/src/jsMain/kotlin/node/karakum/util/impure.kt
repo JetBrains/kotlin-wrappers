@@ -7,11 +7,10 @@ import kotlin.contracts.InvocationKind
 import kotlin.contracts.contract
 
 // TODO: remove after new arrow release
-fun <T> nullable(block: Raise.() -> T): T? {
+fun impure(block: Raise.() -> Unit) {
     contract { callsInPlace(block, InvocationKind.AT_MOST_ONCE) }
     return try {
         block(Raise)
     } catch (_: RaiseCancellationException) {
-        null
     }
 }
