@@ -25,10 +25,10 @@ val convertDotTestReporterPayload = createPlugin { node, context, _ ->
         ensure(isIdentifier(typeReferenceName))
         ensure(typeReferenceName.text == "AsyncGenerator")
 
-        val functionDeclaration = ensureNotNull(typeReference.getParentOrNull())
-        ensure(isFunctionDeclaration(functionDeclaration))
+        val function = ensureNotNull(typeReference.getParentOrNull())
+        ensure(isFunctionDeclaration(function))
 
-        val functionName = ensureNotNull(functionDeclaration.name)
+        val functionName = ensureNotNull(function.name)
         ensure(functionName.text == "dot")
 
         val typeScriptService = context.lookupService<TypeScriptService>(typeScriptServiceKey)
