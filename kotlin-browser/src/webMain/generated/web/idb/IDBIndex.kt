@@ -71,12 +71,12 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBIndex/getAll)
      */
     fun getAll(
-        query: IDBValidKey? = definedExternally,
+        queryOrOptions: IDBValidKey? = definedExternally,
         count: Int = definedExternally,
     ): IDBRequest<ReadonlyArray<*>>
 
     fun getAll(
-        query: IDBKeyRange?,
+        queryOrOptions: IDBKeyRange?,
         count: Int = definedExternally,
     ): IDBRequest<ReadonlyArray<*>>
 
@@ -86,12 +86,12 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBIndex/getAllKeys)
      */
     fun getAllKeys(
-        query: IDBValidKey? = definedExternally,
+        queryOrOptions: IDBValidKey? = definedExternally,
         count: Int = definedExternally,
     ): IDBRequest<ReadonlyArray<IDBValidKey>>
 
     fun getAllKeys(
-        query: IDBKeyRange?,
+        queryOrOptions: IDBKeyRange?,
         count: Int = definedExternally,
     ): IDBRequest<ReadonlyArray<IDBValidKey>>
 
