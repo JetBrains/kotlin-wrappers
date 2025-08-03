@@ -225,7 +225,7 @@ interface CssBuilder : StyledElement, RuleContainer {
         return selectorString(block)
     }
 
-    // https://developer.mozilla.org/en-US/docs/Web/CSS/At-rule
+    // https://developer.mozilla.org/docs/Web/CSS/At-rule
     fun media(query: String, block: RuleSet) = "@media $query"(block)
 
     fun supports(query: String, block: RuleSet) = "@supports $query"(block)

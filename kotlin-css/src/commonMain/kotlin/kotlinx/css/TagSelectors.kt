@@ -2,7 +2,7 @@ package kotlinx.css
 
 import kotlin.reflect.KProperty
 
-/* HTML elements according to https://developer.mozilla.org/en-US/docs/Web/HTML/Element */
+/* HTML elements according to https://developer.mozilla.org/docs/Web/HTML/Element */
 
 class TagSelector(val tagName: String)
 
