@@ -79,6 +79,7 @@ suspend fun main() {
                 BufferPlugin(),
                 ContractFunctionApiPlugin(),
                 DiffieHellmanGroupPlugin(),
+                EventEmitterPlugin(),
                 PromiseFunctionApiPlugin(),
                 PromiseClassApiPlugin,
                 PromiseInterfaceApiPlugin,

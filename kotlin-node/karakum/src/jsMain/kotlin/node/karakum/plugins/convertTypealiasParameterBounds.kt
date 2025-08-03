@@ -10,10 +10,10 @@ import typescript.isTypeParameterDeclaration
 
 val convertTypealiasParameterBounds = createPlugin { node, context, render ->
     nullable {
-        val sourceFileName = ensureNotNull(node.getSourceFileOrNull())
+        val sourceFileName = ensureNotNull(node.getSourceFileOrNull()).fileName
 
         nullable {
-            ensure(sourceFileName.fileName.endsWith("buffer.buffer.d.ts"))
+            ensure(sourceFileName.endsWith("buffer.buffer.d.ts"))
             ensure(isTypeParameterDeclaration(node))
 
             val typeAlias = ensureNotNull(node.getParentOrNull())
@@ -29,7 +29,7 @@ val convertTypealiasParameterBounds = createPlugin { node, context, render ->
 
             "${name}${ifPresent(bound) { " /* $it */" }}"
         } ?: nullable {
-            ensure(sourceFileName.fileName.endsWith("stream.d.ts"))
+            ensure(sourceFileName.endsWith("stream.d.ts"))
 
             ensure(isTypeParameterDeclaration(node))
 
@@ -51,7 +51,7 @@ val convertTypealiasParameterBounds = createPlugin { node, context, render ->
 
             "${name}${ifPresent(bound) { " /* $it */" }}"
         } ?: nullable {
-            ensure(sourceFileName.fileName.endsWith("util.d.ts"))
+            ensure(sourceFileName.endsWith("util.d.ts"))
 
             ensure(isTypeParameterDeclaration(node))
 

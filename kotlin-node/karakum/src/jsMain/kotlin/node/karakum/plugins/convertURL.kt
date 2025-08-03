@@ -7,8 +7,8 @@ import typescript.isClassDeclaration
 
 val convertURL = createPlugin { node, context, render ->
     nullable {
-        val sourceFileName = ensureNotNull(node.getSourceFileOrNull())
-        ensure(sourceFileName.fileName.endsWith("url.d.ts"))
+        val sourceFileName = ensureNotNull(node.getSourceFileOrNull()).fileName
+        ensure(sourceFileName.endsWith("url.d.ts"))
 
         ensure(isClassDeclaration(node))
         ensure(node.name?.text == "URL")

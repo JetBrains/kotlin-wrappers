@@ -8,8 +8,8 @@ import typescript.isVariableDeclaration
 
 val convertUndiciTypesReexport = createPlugin { node, context, render ->
     nullable {
-        val sourceFileName = ensureNotNull(node.getSourceFileOrNull())
-        ensure(sourceFileName.fileName.endsWith("http.d.ts"))
+        val sourceFileName = ensureNotNull(node.getSourceFileOrNull()).fileName
+        ensure(sourceFileName.endsWith("http.d.ts"))
 
         ensure(isVariableDeclaration(node))
 

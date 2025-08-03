@@ -26,7 +26,6 @@ import web.events.EventTarget
  * It supports the following option:
  * @since v0.1.26
  */
-
 open external class EventEmitter {
     constructor (options: EventEmitterOptions = definedExternally)
 // [EventEmitter.captureRejectionSymbol]?<K>(error: Error, event: Key<K, T>, ...args: Args<K, T>): void;

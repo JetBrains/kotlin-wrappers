@@ -8,8 +8,8 @@ import typescript.isTypeReferenceNode
 
 val convertUtilTypeHelpers = createPlugin { node, context, render ->
     nullable {
-        val sourceFileName = ensureNotNull(node.getSourceFileOrNull())
-        ensure(sourceFileName.fileName.endsWith("util.d.ts"))
+        val sourceFileName = ensureNotNull(node.getSourceFileOrNull()).fileName
+        ensure(sourceFileName.endsWith("util.d.ts"))
 
         ensure(isTypeReferenceNode(node))
 

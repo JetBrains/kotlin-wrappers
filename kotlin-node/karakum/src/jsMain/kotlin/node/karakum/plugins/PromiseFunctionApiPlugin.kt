@@ -146,7 +146,7 @@ class PromiseFunctionApiPlugin : Plugin {
     override fun traverse(node: Node, context: Context) = Unit
 
     override fun render(node: Node, context: Context, next: Render<Node>) = nullable {
-        val sourceFileName = ensureNotNull(node.getSourceFileOrNull())
+        val sourceFileName = node.getSourceFileOrNull()?.fileName ?: "generated.d.ts"
 
         val typeScriptService = ensureNotNull(context.lookupService<TypeScriptService>(typeScriptServiceKey))
 
@@ -193,7 +193,7 @@ class PromiseFunctionApiPlugin : Plugin {
         )
 
         val nodeInfo = DerivedDeclaration(
-            sourceFileName.fileName,
+            sourceFileName,
             namespace,
             fileName = "${name}.suspend.kt",
             body,

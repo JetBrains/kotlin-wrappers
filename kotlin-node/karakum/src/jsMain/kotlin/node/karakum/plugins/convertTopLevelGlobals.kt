@@ -11,8 +11,8 @@ import typescript.isSourceFile
 
 val convertTopLevelGlobals = createPlugin { node, context, render ->
     nullable {
-        val sourceFileName = ensureNotNull(node.getSourceFileOrNull())
-        ensure(sourceFileName.fileName.endsWith("globals.d.ts"))
+        val sourceFileName = ensureNotNull(node.getSourceFileOrNull()).fileName
+        ensure(sourceFileName.endsWith("globals.d.ts"))
 
         val sourceFile = ensureNotNull(node.getParentOrNull())
         ensure(isSourceFile(sourceFile))

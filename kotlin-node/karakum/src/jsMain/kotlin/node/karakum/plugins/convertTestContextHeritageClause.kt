@@ -8,8 +8,8 @@ import typescript.*
 
 val convertTestContextHeritageClause = createPlugin { node, context, render ->
     nullable {
-        val sourceFileName = ensureNotNull(node.getSourceFileOrNull())
-        ensure(sourceFileName.fileName.endsWith("test.d.ts"))
+        val sourceFileName = ensureNotNull(node.getSourceFileOrNull()).fileName
+        ensure(sourceFileName.endsWith("test.d.ts"))
 
         ensure(isHeritageClause(node))
 
