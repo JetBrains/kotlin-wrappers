@@ -8,6 +8,9 @@ import web.url.URL.Companion.createObjectURL
 object Files {
     /**
      * Downloads the given content as a file.
+     * By default, the file is directly downloaded to the default download
+     * directory of the browser. If you want to select the download location via a file selector,
+     * then you have to configure that behaviour in your browser settings.
      * @param content - The file content.
      * @param fileName - The proposed filename.
      */
