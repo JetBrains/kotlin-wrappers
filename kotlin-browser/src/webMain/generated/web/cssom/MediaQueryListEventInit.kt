@@ -6,7 +6,7 @@ import js.objects.JsPlainObject
 import web.events.EventInit
 
 /**
- * [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/MediaQueryListEvent/MediaQueryListEvent#options)
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaQueryListEvent/MediaQueryListEvent#options)
  */
 @JsPlainObject
 external interface MediaQueryListEventInit :

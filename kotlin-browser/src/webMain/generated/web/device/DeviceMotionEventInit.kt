@@ -6,7 +6,7 @@ import js.objects.JsPlainObject
 import web.events.EventInit
 
 /**
- * [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/DeviceMotionEvent/DeviceMotionEvent#options)
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DeviceMotionEvent/DeviceMotionEvent#options)
  */
 @JsPlainObject
 external interface DeviceMotionEventInit :

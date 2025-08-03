@@ -9,7 +9,7 @@ import web.ranges.StaticRange
 import web.uievents.UIEventInit
 
 /**
- * [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/InputEvent/InputEvent#options)
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/InputEvent/InputEvent#options)
  */
 @JsPlainObject
 external interface InputEventInit :

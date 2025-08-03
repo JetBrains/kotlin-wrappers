@@ -8,7 +8,7 @@ import js.promise.Promise
 import web.events.EventInit
 
 /**
- * [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/PromiseRejectionEvent/PromiseRejectionEvent#options)
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PromiseRejectionEvent/PromiseRejectionEvent#options)
  */
 @JsPlainObject
 external interface PromiseRejectionEventInit :

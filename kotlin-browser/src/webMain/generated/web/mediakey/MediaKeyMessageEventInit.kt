@@ -7,7 +7,7 @@ import js.objects.JsPlainObject
 import web.events.EventInit
 
 /**
- * [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/MediaKeyMessageEvent/MediaKeyMessageEvent#options)
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeyMessageEvent/MediaKeyMessageEvent#options)
  */
 @JsPlainObject
 external interface MediaKeyMessageEventInit :

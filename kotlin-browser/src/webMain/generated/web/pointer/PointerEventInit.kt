@@ -7,7 +7,7 @@ import js.objects.JsPlainObject
 import web.mouse.MouseEventInit
 
 /**
- * [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/PointerEvent/PointerEvent#options)
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PointerEvent/PointerEvent#options)
  */
 @JsPlainObject
 external interface PointerEventInit :

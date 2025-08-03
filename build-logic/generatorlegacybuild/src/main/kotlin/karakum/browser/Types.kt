@@ -249,7 +249,7 @@ private fun convertType(
             if (name.endsWith("TimeStamp")) {
                 """
                 /**
-                 * [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/$name)
+                 * [MDN Reference](https://developer.mozilla.org/docs/Web/API/$name)
                  */
                 """.trimIndent()
             } else null,

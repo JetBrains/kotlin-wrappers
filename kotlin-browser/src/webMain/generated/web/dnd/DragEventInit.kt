@@ -7,7 +7,7 @@ import web.data.DataTransfer
 import web.mouse.MouseEventInit
 
 /**
- * [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/DragEvent/DragEvent#options)
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DragEvent/DragEvent#options)
  */
 @JsPlainObject
 external interface DragEventInit :

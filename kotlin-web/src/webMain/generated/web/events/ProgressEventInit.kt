@@ -5,7 +5,7 @@ package web.events
 import js.objects.JsPlainObject
 
 /**
- * [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/ProgressEvent/ProgressEvent#options)
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ProgressEvent/ProgressEvent#options)
  */
 @JsPlainObject
 external interface ProgressEventInit :

@@ -8,7 +8,7 @@ import web.events.EventInit
 import web.time.DOMHighResTimeStamp
 
 /**
- * [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/BlobEvent/BlobEvent#options)
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BlobEvent/BlobEvent#options)
  */
 @JsPlainObject
 external interface BlobEventInit :

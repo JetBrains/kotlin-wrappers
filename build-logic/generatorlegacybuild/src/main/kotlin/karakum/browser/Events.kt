@@ -180,7 +180,7 @@ private fun event(
         sequenceOf(
             """
             /**
-             * [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/$name/$name#options)
+             * [MDN Reference](https://developer.mozilla.org/docs/Web/API/$name/$name#options)
              */
             """.trimIndent(),
             "@JsPlainObject",

@@ -6,7 +6,7 @@ import js.objects.JsPlainObject
 import web.events.EventInit
 
 /**
- * [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/SecurityPolicyViolationEvent/SecurityPolicyViolationEvent#options)
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SecurityPolicyViolationEvent/SecurityPolicyViolationEvent#options)
  */
 @JsPlainObject
 external interface SecurityPolicyViolationEventInit :

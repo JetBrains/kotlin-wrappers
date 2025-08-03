@@ -13,28 +13,28 @@ external interface CustomElement {
 
     interface WithConnectedCallback {
         /**
-         * [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/Web_components#connectedcallback)
+         * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Web_components#connectedcallback)
          */
         fun connectedCallback()
     }
 
     interface WithDisconnectedCallback {
         /**
-         * [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/Web_components#disconnectedcallback)
+         * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Web_components#disconnectedcallback)
          */
         fun disconnectedCallback()
     }
 
     interface WithAdoptedCallback {
         /**
-         * [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/Web_components#adoptedcallback)
+         * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Web_components#adoptedcallback)
          */
         fun adoptedCallback()
     }
 
     interface WithAttributeChangedCallback {
         /**
-         * [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/Web_components#attributechangedcallback)
+         * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Web_components#attributechangedcallback)
          */
         fun attributeChangedCallback(
             name: String,

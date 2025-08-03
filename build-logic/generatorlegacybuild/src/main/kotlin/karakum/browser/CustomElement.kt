@@ -30,7 +30,7 @@ private fun CustomElement(): ConversionResult {
         """
         interface ${interfaceName(methodName)} {
             /**
-             * [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/Web_components#${methodName.lowercase()})
+             * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Web_components#${methodName.lowercase()})
              */
             fun ${methodName}${methodBody}
         }
@@ -40,7 +40,7 @@ private fun CustomElement(): ConversionResult {
     val body = """
     external interface $CUSTOM_ELEMENT {
         $mainInterface
-        
+
         $interfaces
     }
     """.trimIndent()
@@ -57,9 +57,9 @@ private fun CustomElementCompanion(): ConversionResult {
     external interface $CUSTOM_ELEMENT_COMPANION {
         val formAssociated: Boolean?
             get() = definedExternally
-    
+
         /**
-         * [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_custom_elements#responding_to_attribute_changes)
+         * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Web_components/Using_custom_elements#responding_to_attribute_changes)
          */
         val observedAttributes: ReadonlyArray<String>?
             get() = definedExternally

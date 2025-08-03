@@ -6,7 +6,7 @@ import js.core.JsAny
 import js.objects.JsPlainObject
 
 /**
- * [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/PaymentMethodChangeEvent/PaymentMethodChangeEvent#options)
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentMethodChangeEvent/PaymentMethodChangeEvent#options)
  */
 @JsPlainObject
 external interface PaymentMethodChangeEventInit :

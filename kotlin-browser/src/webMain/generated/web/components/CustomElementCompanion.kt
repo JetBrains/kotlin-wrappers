@@ -11,7 +11,7 @@ external interface CustomElementCompanion {
         get() = definedExternally
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_custom_elements#responding_to_attribute_changes)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Web_components/Using_custom_elements#responding_to_attribute_changes)
      */
     val observedAttributes: ReadonlyArray<JsString>?
         get() = definedExternally

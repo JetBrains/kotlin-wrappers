@@ -9,7 +9,7 @@ import web.mediastreams.MediaStream
 import web.mediastreams.MediaStreamTrack
 
 /**
- * [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/RTCTrackEvent/RTCTrackEvent#options)
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCTrackEvent/RTCTrackEvent#options)
  */
 @JsPlainObject
 external interface RTCTrackEventInit :

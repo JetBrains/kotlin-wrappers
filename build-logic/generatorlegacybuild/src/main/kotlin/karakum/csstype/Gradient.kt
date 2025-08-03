@@ -7,7 +7,7 @@ internal const val GRADIENT = "Gradient"
 private const val LINEAR_GRADIENT = "linear-gradient"
 private const val REPEATING_LINEAR_GRADIENT = "repeating-linear-gradient"
 
-// source - https://developer.mozilla.org/en-US/docs/Web/CSS/gradient
+// source - https://developer.mozilla.org/docs/Web/CSS/gradient
 private val PARENT_TYPES = setOf(
     IMAGE,
 )

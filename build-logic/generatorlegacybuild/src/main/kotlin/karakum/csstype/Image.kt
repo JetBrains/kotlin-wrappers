@@ -4,7 +4,7 @@ import karakum.common.ConversionResult
 
 internal const val IMAGE = "Image"
 
-// source - https://developer.mozilla.org/en-US/docs/Web/CSS/image
+// source - https://developer.mozilla.org/docs/Web/CSS/image
 private val PARENT_TYPES = setOf(
     "Background",
     "BackgroundImage",

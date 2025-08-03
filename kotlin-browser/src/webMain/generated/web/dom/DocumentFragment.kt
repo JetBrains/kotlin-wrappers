@@ -17,7 +17,7 @@ open external class DocumentFragment :
     override fun getElementById(elementId: ElementId): HTMLElement?
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/Node/textContent)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Node/textContent)
      */
     override var textContent: String? // String
 }

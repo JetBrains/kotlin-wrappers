@@ -8,7 +8,7 @@ import js.promise.Promise
 import web.http.Request
 
 /**
- * [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/FetchEvent/FetchEvent#options)
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FetchEvent/FetchEvent#options)
  */
 @JsPlainObject
 external interface FetchEventInit :

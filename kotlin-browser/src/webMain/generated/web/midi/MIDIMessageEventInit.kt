@@ -8,7 +8,7 @@ import js.typedarrays.Uint8Array
 import web.events.EventInit
 
 /**
- * [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/MIDIMessageEvent/MIDIMessageEvent#options)
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MIDIMessageEvent/MIDIMessageEvent#options)
  */
 @JsPlainObject
 external interface MIDIMessageEventInit :

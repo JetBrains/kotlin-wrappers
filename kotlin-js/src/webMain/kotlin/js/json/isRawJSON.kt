@@ -8,7 +8,7 @@ import js.core.JsAny
 import kotlin.contracts.contract
 
 /**
- * [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/isRawJSON)
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/JSON/isRawJSON)
  */
 fun isRawJSON(
     value: JsAny?,

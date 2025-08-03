@@ -7,7 +7,7 @@ import js.objects.JsPlainObject
 import web.events.EventInit
 
 /**
- * [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/FontFaceSetLoadEvent/FontFaceSetLoadEvent#options)
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FontFaceSetLoadEvent/FontFaceSetLoadEvent#options)
  */
 @JsPlainObject
 external interface FontFaceSetLoadEventInit :

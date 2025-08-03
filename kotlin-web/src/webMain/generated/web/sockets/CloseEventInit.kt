@@ -6,7 +6,7 @@ import js.objects.JsPlainObject
 import web.events.EventInit
 
 /**
- * [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/CloseEvent/CloseEvent#options)
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CloseEvent/CloseEvent#options)
  */
 @JsPlainObject
 external interface CloseEventInit :

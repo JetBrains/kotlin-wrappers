@@ -6,7 +6,7 @@ import js.objects.JsPlainObject
 import web.events.EventInit
 
 /**
- * [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/API/RTCErrorEvent/RTCErrorEvent#options)
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCErrorEvent/RTCErrorEvent#options)
  */
 @JsPlainObject
 external interface RTCErrorEventInit :
