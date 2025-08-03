@@ -7,7 +7,7 @@ import tanstack.query.core.QueryClient
 
 external interface HydrationBoundaryProps :
     react.PropsWithChildren {
-    var state: Any?
+    var state: Any /* DehydratedState | null | undefined */
     var options: HydrateOptions /* OmitKeyof<HydrateOptions, 'defaultOptions'> & { defaultOptions?: OmitKeyof<Exclude<HydrateOptions['defaultOptions'], undefined>, 'mutations'>; } */?
     override var children: react.ReactNode?
     var queryClient: QueryClient?
