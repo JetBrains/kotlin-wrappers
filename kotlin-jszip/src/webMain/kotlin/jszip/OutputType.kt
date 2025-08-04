@@ -29,7 +29,7 @@ inline val OutputType.Companion.binarystring: OutputType<JsString>
 inline val OutputType.Companion.array: OutputType<ReadonlyArray<JsUByte>>
     get() = unsafeCast("array")
 
-inline val OutputType.Companion.uint8array: OutputType<Uint8Array<*>>
+inline val OutputType.Companion.uint8array: OutputType<Uint8Array<ArrayBuffer>>
     get() = unsafeCast("uint8array")
 
 inline val OutputType.Companion.arraybuffer: OutputType<ArrayBuffer>
