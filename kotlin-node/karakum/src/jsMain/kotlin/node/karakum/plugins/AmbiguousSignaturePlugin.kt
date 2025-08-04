@@ -84,10 +84,15 @@ class AmbiguousSignaturePlugin : Plugin {
 
                     val parameterSymbols = declaration.parameters.asArray()
                         .filter { parameter -> parameter.questionToken == null }
-                        .map { parameter ->
-                            val typeNode = parameter.type ?: return@map "any"
-                            typeChecker.getTypeFromTypeNode(typeNode).symbol.unsafeCast<Symbol?>()
-                                ?: typeScriptService.printNode(typeNode)
+                        .mapNotNull { parameter ->
+                            nullable {
+                                val typeNode = parameter.type
+
+                                ensureNotNull(typeNode)
+
+                                typeChecker.getTypeFromTypeNode(typeNode).symbol.unsafeCast<Symbol?>()
+                                    ?: typeScriptService.printNode(typeNode)
+                            }
                         }
                         .toTypedArray()
 
