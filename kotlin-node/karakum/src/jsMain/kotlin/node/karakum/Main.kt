@@ -81,6 +81,7 @@ suspend fun main() {
                 DiffieHellmanGroupPlugin(),
                 EventEmitterPlugin(),
                 GenerateKeyPairTypePlugin(),
+                InspectorSessionMethodPlugin(),
                 PromiseFunctionApiPlugin(),
                 PromiseClassApiPlugin,
                 PromiseInterfaceApiPlugin,
