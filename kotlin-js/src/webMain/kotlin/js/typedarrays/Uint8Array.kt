@@ -1,8 +1,10 @@
 package js.typedarrays
 
+import js.array.ArrayLike
 import js.array.ReadonlyArray
 import js.buffer.ArrayBuffer
 import js.buffer.ArrayBufferLike
+import js.core.JsByte
 import js.core.JsUByte
 import js.iterable.JsIterable
 import js.serialization.Serializable
@@ -35,6 +37,10 @@ open external class Uint8Array<B : ArrayBufferLike>(
     fun toHex(): String
 
     companion object : TypedArrayCompanion<Uint8Array<ArrayBuffer>, JsUByte> {
+        internal fun _from(
+            source: ArrayLike<JsByte>,
+        ): Uint8Array<ArrayBuffer>
+
         fun fromBase64(
             string: String,
             options: FromBase64Options = definedExternally,
@@ -45,3 +51,6 @@ open external class Uint8Array<B : ArrayBufferLike>(
         ): Uint8Array<ArrayBuffer>
     }
 }
+
+fun Uint8Array<*>.toInt8Array(): Int8Array<ArrayBuffer> =
+    Int8Array._from(this)

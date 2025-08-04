@@ -1,9 +1,11 @@
 package js.typedarrays
 
+import js.array.ArrayLike
 import js.array.ReadonlyArray
 import js.buffer.ArrayBuffer
 import js.buffer.ArrayBufferLike
 import js.core.JsByte
+import js.core.JsUByte
 import js.iterable.JsIterable
 import js.serialization.Serializable
 import kotlin.js.definedExternally
@@ -19,5 +21,12 @@ open external class Int8Array<B : ArrayBufferLike>(
     constructor(elements: JsIterable<JsByte>)
     constructor(elements: ReadonlyArray<JsByte>)
 
-    companion object : TypedArrayCompanion<Int8Array<ArrayBuffer>, JsByte>
+    companion object : TypedArrayCompanion<Int8Array<ArrayBuffer>, JsByte> {
+        internal fun _from(
+            source: ArrayLike<JsUByte>,
+        ): Int8Array<ArrayBuffer>
+    }
 }
+
+fun Int8Array<*>.toUint8Array(): Uint8Array<ArrayBuffer> =
+    Uint8Array._from(this)
