@@ -85,6 +85,7 @@ class AmbiguousSignaturePlugin : Plugin {
                     val parameterSymbols = declaration.parameters.asArray()
                         .filter { parameter -> parameter.questionToken == null }
                         .map { parameter ->
+                            // TODO: maybe use Either<String, Symbol> here
                             val typeNode = parameter.type
 
                             when {
