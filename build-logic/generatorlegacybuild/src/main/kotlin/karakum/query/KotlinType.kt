@@ -110,6 +110,8 @@ private val STANDARD_TYPE_MAP = mapOf(
     "QueryErrorResetBoundaryFunction | React.ReactNode" to "QueryErrorResetBoundaryFunction",
 
     "UseQueryResult<NoInfer<TData>, TError>" to "UseQueryResult<TData, TError>",
+
+    "DehydratedState | null | undefined" to "DehydratedState?",
 )
 
 private val SAFE_PREFIXES = setOf(
