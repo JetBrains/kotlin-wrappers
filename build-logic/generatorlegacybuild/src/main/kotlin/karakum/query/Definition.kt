@@ -191,6 +191,7 @@ fun toDeclarations(
             "shouldThrowError<T extends (...args: Array<any>) => boolean>",
             "shouldThrowError<T extends Function<Boolean>>",
         )
+        .replace("DehydratedState | null | undefined", "DehydratedState?")
 
     content = when (definitionFile.name) {
         "focusManager.d.ts" -> content.replace("SetupFn", "FocusManagerSetupFn")

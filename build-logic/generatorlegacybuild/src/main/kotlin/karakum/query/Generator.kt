@@ -182,6 +182,7 @@ private fun generate(
             import tanstack.query.core.DefinedQueryObserverResult
             import tanstack.query.core.FetchInfiniteQueryOptions
             import tanstack.query.core.FetchQueryOptions
+            import tanstack.query.core.DehydratedState
             import tanstack.query.core.HydrateOptions
             import tanstack.query.core.QueryClient
             import tanstack.query.core.QueryFunction
