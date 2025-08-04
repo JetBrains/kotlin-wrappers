@@ -136,7 +136,9 @@ suspend fun main() {
         )
         injections = manyOf(values = jsInjections + arrayOf())
         annotations = manyOf(values = jsAnnotations + arrayOf())
-        nameResolvers = manyOf(values = jsNameResolvers + arrayOf())
+        nameResolvers = manyOf(values = jsNameResolvers + arrayOf(
+            ::resolveBufferConstantsName
+        ))
         inheritanceModifiers = manyOf(values = jsInheritanceModifiers + arrayOf())
         varianceModifiers = manyOf(values = jsVarianceModifiers + arrayOf())
 
