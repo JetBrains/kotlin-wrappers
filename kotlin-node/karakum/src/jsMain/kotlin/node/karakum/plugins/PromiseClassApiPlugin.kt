@@ -91,16 +91,14 @@ val PromiseClassApiPlugin = createPlugin { node, context, render ->
             convertAsyncSignature(name, propertyType, context, render)
         } ?: nullable {
             ensure(isTypeLiteralNode(propertyType))
-            ensure(
-                propertyType.members.asArray().all { member ->
-                    nullable {
-                        ensure(isCallSignatureDeclaration(member))
+            ensure(propertyType.members.asArray().all { member ->
+                nullable {
+                    ensure(isCallSignatureDeclaration(member))
 
-                        val memberType = ensureNotNull(member.type)
-                        ensure(isPromiseType(memberType))
-                    } != null
-                }
-            )
+                    val memberType = ensureNotNull(member.type)
+                    ensure(isPromiseType(memberType))
+                } != null
+            })
 
             propertyType.members.asArray().joinToString("\n") { member ->
                 require(isCallSignatureDeclaration(member))

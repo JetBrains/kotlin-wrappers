@@ -27,14 +27,12 @@ val convertBufferReference = createPlugin { node, context, render ->
         val symbol = ensureNotNull(typeChecker.getSymbolAtLocation(typeName))
         val declarations = symbol.declarations ?: emptyArray()
 
-        ensure(
-            declarations.any { declaration ->
-                nullable {
-                    val sourceFileName = ensureNotNull(declaration.getSourceFileOrNull()).fileName
-                    sourceFileName.endsWith("buffer.d.ts")
-                } != null
-            }
-        )
+        ensure(declarations.any { declaration ->
+            nullable {
+                val sourceFileName = ensureNotNull(declaration.getSourceFileOrNull()).fileName
+                sourceFileName.endsWith("buffer.d.ts")
+            } != null
+        })
 
         val typeArguments = if (typeName.text == "Buffer") {
             val typeArguments = node.typeArguments
