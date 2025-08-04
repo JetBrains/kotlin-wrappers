@@ -20,9 +20,6 @@ sealed external interface OutputType<T : JsAny> {
 inline val OutputType.Companion.base64: OutputType<JsString>
     get() = unsafeCast("base64")
 
-inline val OutputType.Companion.string: OutputType<JsString>
-    get() = unsafeCast("string")
-
 inline val OutputType.Companion.text: OutputType<JsString>
     get() = unsafeCast("text")
 
