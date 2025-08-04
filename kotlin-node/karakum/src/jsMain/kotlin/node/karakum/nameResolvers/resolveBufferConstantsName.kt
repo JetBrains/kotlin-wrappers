@@ -1,4 +1,4 @@
-package node.karakum.plugins
+package node.karakum.nameResolvers
 
 import io.github.sgrishchenko.karakum.extension.Context
 import io.github.sgrishchenko.karakum.extension.plugins.TypeScriptService

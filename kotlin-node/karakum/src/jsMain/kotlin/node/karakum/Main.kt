@@ -10,6 +10,7 @@ import io.github.sgrishchenko.karakum.util.manyOf
 import io.github.sgrishchenko.karakum.util.ruleOf
 import js.import.import
 import js.objects.recordOf
+import node.karakum.nameResolvers.*
 import node.karakum.plugins.*
 import node.path.path
 import node.process.process
@@ -137,7 +138,8 @@ suspend fun main() {
         injections = manyOf(values = jsInjections + arrayOf())
         annotations = manyOf(values = jsAnnotations + arrayOf())
         nameResolvers = manyOf(values = jsNameResolvers + arrayOf(
-            ::resolveBufferConstantsName
+            ::resolveBufferConstantsName,
+            ::resolveChildProcessOptionsName,
         ))
         inheritanceModifiers = manyOf(values = jsInheritanceModifiers + arrayOf())
         varianceModifiers = manyOf(values = jsVarianceModifiers + arrayOf())
