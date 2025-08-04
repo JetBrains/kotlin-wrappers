@@ -1,8 +1,8 @@
-[![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-vscode)](https://search.maven.org/artifact/org.jetbrains.kotlin-wrappers/kotlin-vscode)
+[![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-pako)](https://search.maven.org/artifact/org.jetbrains.kotlin-wrappers/kotlin-pako)
 
-# Module kotlin-vscode
+# Module kotlin-pako
 
-[VS Code API](https://code.visualstudio.com/api/references/vscode-api) declarations
+[pako](https://github.com/nodeca/pako) declarations
 
 ### Internals
 
