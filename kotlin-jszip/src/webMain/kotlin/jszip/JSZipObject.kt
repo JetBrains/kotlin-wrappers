@@ -1,8 +1,12 @@
 package jszip
 
+import js.buffer.ArrayBuffer
 import js.core.JsAny
 import js.date.Date
 import js.promise.Promise
+import js.promise.await
+import js.typedarrays.Uint8Array
+import web.blob.Blob
 import kotlin.js.definedExternally
 
 external interface JSZipObject {
@@ -37,3 +41,15 @@ external interface JSZipObject {
 
     // nodeStream(type?: 'nodebuffer', onUpdate?: OnUpdateCallback): NodeJS.ReadableStream;
 }
+
+suspend inline fun JSZipObject.arrayBuffer(): ArrayBuffer =
+    async(OutputType.arraybuffer).await()
+
+suspend inline fun JSZipObject.blob(): Blob =
+    async(OutputType.blob).await()
+
+suspend inline fun JSZipObject.bytes(): Uint8Array<ArrayBuffer> =
+    async(OutputType.uint8array).await()
+
+suspend inline fun JSZipObject.text(): String =
+    async(OutputType.text).await().toString()
