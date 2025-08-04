@@ -8,6 +8,7 @@ import js.core.JsByte
 import js.core.JsUByte
 import js.iterable.JsIterable
 import js.serialization.Serializable
+import kotlin.js.JsName
 import kotlin.js.definedExternally
 
 open external class Uint8Array<B : ArrayBufferLike>(
@@ -37,6 +38,8 @@ open external class Uint8Array<B : ArrayBufferLike>(
     fun toHex(): String
 
     companion object : TypedArrayCompanion<Uint8Array<ArrayBuffer>, JsUByte> {
+        @PublishedApi
+        @JsName("from")
         internal fun _from(
             source: ArrayLike<JsByte>,
         ): Uint8Array<ArrayBuffer>
@@ -52,5 +55,5 @@ open external class Uint8Array<B : ArrayBufferLike>(
     }
 }
 
-fun Uint8Array<*>.toInt8Array(): Int8Array<ArrayBuffer> =
+inline fun Uint8Array<*>.toInt8Array(): Int8Array<ArrayBuffer> =
     Int8Array._from(this)
