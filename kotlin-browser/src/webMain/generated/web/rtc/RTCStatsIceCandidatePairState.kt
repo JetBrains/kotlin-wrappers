@@ -21,9 +21,6 @@ inline val RTCStatsIceCandidatePairState.Companion.frozen: RTCStatsIceCandidateP
 inline val RTCStatsIceCandidatePairState.Companion.inProgress: RTCStatsIceCandidatePairState
     get() = unsafeCast("in-progress")
 
-inline val RTCStatsIceCandidatePairState.Companion.inprogress: RTCStatsIceCandidatePairState
-    get() = unsafeCast("inprogress")
-
 inline val RTCStatsIceCandidatePairState.Companion.succeeded: RTCStatsIceCandidatePairState
     get() = unsafeCast("succeeded")
 
