@@ -102,31 +102,36 @@ class AmbiguousSignaturePlugin : Plugin {
                 }
 
                 declarationMap.values()
-                    .filter { ambiguousDeclarations ->
-                        if (ambiguousDeclarations.size <= 1) return@filter false
+                    .mapNotNull { ambiguousDeclarations ->
+                        nullable {
+                            ensure(ambiguousDeclarations.size > 1)
 
-                        val declaration = ambiguousDeclarations.first()
+                            val declaration = ambiguousDeclarations.first()
 
-                        val optionalIndex = declaration.parameters.asArray()
-                            .indexOfFirst { parameter -> parameter.questionToken != null }
-                            .takeIf { it != -1 }
-                            ?: return@filter false
+                            val optionalIndex = declaration.parameters.asArray()
+                                .indexOfFirst { parameter -> parameter.questionToken != null }
+                                .takeIf { it != -1 }
+                                .let { ensureNotNull(it) }
 
-                        // exclude overloads with optional parameters that have union type,
-                        // because this case is handled by `convertParameterDeclarations`
-                        ambiguousDeclarations
-                            .map { it.parameters.asArray()[optionalIndex] }
-                            .all { parameter ->
-                                val type = parameter.type
+                            // exclude overloads with optional parameters that have union type,
+                            // because this case is handled by `convertParameterDeclarations`
+                            ambiguousDeclarations
+                                .map { it.parameters.asArray()[optionalIndex] }
+                                .all { parameter ->
+                                    val type = parameter.type
 
-                                if (type == null) return@all true
-                                if (!isUnionTypeNode(type)) return@all true
+                                    if (type == null) return@all true
+                                    if (!isUnionTypeNode(type)) return@all true
 
-                                val types = type.types.asArray()
-                                    .filter { !isNullableType(it) }
+                                    val types = type.types.asArray()
+                                        .filter { !isNullableType(it) }
 
-                                types.size < 2
-                            }
+                                    types.size < 2
+                                }
+                                .let { ensure(it) }
+
+                            ambiguousDeclarations
+                        }
                     }
                     .flatMap { ambiguousDeclarations ->
                         val declaration = ambiguousDeclarations.first()
