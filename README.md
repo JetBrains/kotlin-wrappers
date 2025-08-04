@@ -108,9 +108,9 @@ dependencyResolutionManagement {
 
 // build.gradle.kts
 dependencies {
-    jsMainImplementation(kotlinWrappers.emotion)
     jsMainImplementation(kotlinWrappers.react)
     jsMainImplementation(kotlinWrappers.reactDom)
+    jsMainImplementation(kotlinWrappers.emotion.styled)
     jsMainImplementation(kotlinWrappers.tanstack.reactTable)
     // other wrappers
 }
