@@ -85,6 +85,7 @@ suspend fun main() {
                 PromiseFunctionApiPlugin(),
                 PromiseClassApiPlugin,
                 PromiseInterfaceApiPlugin,
+                ResourceRecordTypePlugin(),
 
                 convertArgumentsTypeReferenceNode,
                 convertAssertStrict,
