@@ -79,7 +79,6 @@ internal fun eventDeclarations(
     val results = sequenceOf<ConversionResult>()
         .plus(EventType())
         .plus(EventHandler())
-        .plus(eventTargetTypes())
         .plus(HasTargets())
         .plus(eventPlaceholders(content, EVENT_DATA, dataMap, strict = true))
         .toList()

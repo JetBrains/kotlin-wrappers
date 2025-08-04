@@ -1,5 +1,3 @@
-// Automatically generated - do not modify!
-
 @file:Suppress(
     "BOUNDS_NOT_ALLOWED_IF_BOUNDED_BY_TYPE_PARAMETER",
 )
