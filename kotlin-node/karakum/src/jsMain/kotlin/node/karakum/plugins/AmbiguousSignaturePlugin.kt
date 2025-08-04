@@ -171,11 +171,7 @@ class AmbiguousSignaturePlugin : Plugin {
                                             )
                                         }
 
-                                    "${jsName}external fun ${ifPresent(typeParameters) { "<${it}> " }}${name}(${parameters})${
-                                        ifPresent(
-                                            returnType
-                                        ) { ": $it" }
-                                    }"
+                                    "${jsName}external fun ${ifPresent(typeParameters) { "<${it}> " }}${name}(${parameters})${ifPresent(returnType) { ": $it" }}"
                                 }
                             )
                         )
