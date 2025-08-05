@@ -2,5 +2,5 @@ package js.typedarrays
 
 import js.reflect.unsafeCast
 
-inline fun ByteArray.asInt8Array(): Int8Array<*> =
+inline fun UByteArray.asUint8Array(): Uint8Array<*> =
     unsafeCast(this)
