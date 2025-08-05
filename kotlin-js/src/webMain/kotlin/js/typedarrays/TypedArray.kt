@@ -364,3 +364,12 @@ sealed external class TypedArray<
 
     override fun values(): JsIterator<T>
 }
+
+internal fun <A : TypedArray<*, *, ArrayBuffer, T>, T : JsAny /* Number? */> A.fill(
+    getValue: (index: Int) -> T,
+): A {
+    for (index in 0 until length) {
+        this[index] = getValue(index)
+    }
+    return this
+}
