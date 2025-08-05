@@ -1,5 +1,7 @@
 package js.core
 
+import kotlin.toUByte as toKotlinUByte
+
 actual object JsPrimitives {
     actual inline fun JsBoolean.toBoolean(): Boolean = this
     actual inline fun Boolean.toJsBoolean(): JsBoolean = this
@@ -15,8 +17,8 @@ actual object JsPrimitives {
     actual inline fun JsByte.toByte(): Byte = this
     actual inline fun Byte.toJsByte(): JsByte = this
 
-    actual inline fun JsUByte.toUByte(): Short = this
-    actual inline fun Short.toJsUByte(): JsUByte = this
+    actual inline fun JsUByte.toUByte(): UByte = toKotlinUByte()
+    actual inline fun UByte.toJsUByte(): JsUByte = toShort()
 
     actual inline fun JsShort.toShort(): Short = this
     actual inline fun Short.toJsShort(): JsShort = this

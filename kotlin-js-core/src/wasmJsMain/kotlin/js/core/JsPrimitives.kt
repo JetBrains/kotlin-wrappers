@@ -34,10 +34,10 @@ actual object JsPrimitives {
     actual inline fun Byte.toJsByte(): JsByte =
         toInt().toJsNumber()
 
-    actual inline fun JsUByte.toUByte(): Short =
-        toKotlinInt().toShort()
+    actual inline fun JsUByte.toUByte(): UByte =
+        toKotlinInt().toUByte()
 
-    actual inline fun Short.toJsUByte(): JsUByte =
+    actual inline fun UByte.toJsUByte(): JsUByte =
         toInt().toJsNumber()
 
     actual inline fun JsShort.toShort(): Short =
