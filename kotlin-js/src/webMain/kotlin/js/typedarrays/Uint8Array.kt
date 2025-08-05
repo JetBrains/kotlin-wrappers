@@ -57,3 +57,9 @@ open external class Uint8Array<B : ArrayBufferLike>(
 
 inline fun Uint8Array<*>.toInt8Array(): Int8Array<ArrayBuffer> =
     Int8Array._from(this)
+
+inline fun Uint8Array<*>.toByteArray(): ByteArray =
+    toInt8Array().toByteArray()
+
+inline fun Uint8Array<*>.toUByteArray(): UByteArray =
+    toByteArray().asUByteArray()
