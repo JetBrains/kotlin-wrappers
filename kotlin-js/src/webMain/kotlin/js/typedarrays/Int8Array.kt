@@ -39,6 +39,3 @@ inline fun Int8Array<*>.toByteArray(): ByteArray =
     ByteArray(size = length) {
         get(it).toByte()
     }
-
-inline fun Int8Array<*>.toUByteArray(): UByteArray =
-    toByteArray().asUByteArray()

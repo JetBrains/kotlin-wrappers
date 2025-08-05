@@ -1,9 +1,12 @@
 package js.typedarrays
 
 import js.buffer.ArrayBuffer
+import js.core.JsPrimitives.toJsUByte
 
-inline fun UByteArray.toInt8Array(): Int8Array<ArrayBuffer> =
-    asByteArray().toInt8Array()
-
-inline fun UByteArray.toUint8Array(): Uint8Array<ArrayBuffer> =
-    asByteArray().toUint8Array()
+fun UByteArray.toUint8Array(): Uint8Array<ArrayBuffer> {
+    val array = Uint8Array<ArrayBuffer>(length = size)
+    repeat(size) { index ->
+        array[index] = this[index].toJsUByte()
+    }
+    return array
+}

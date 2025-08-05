@@ -10,6 +10,3 @@ fun ByteArray.toInt8Array(): Int8Array<ArrayBuffer> {
     }
     return array
 }
-
-inline fun ByteArray.toUint8Array(): Uint8Array<ArrayBuffer> =
-    toInt8Array().toUint8Array()
