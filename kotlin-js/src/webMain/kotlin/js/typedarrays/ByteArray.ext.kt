@@ -1,8 +1,5 @@
 package js.typedarrays
 
 import js.buffer.ArrayBuffer
-import js.core.JsPrimitives.toJsByte
 
-fun ByteArray.toInt8Array(): Int8Array<ArrayBuffer> =
-    Int8Array<ArrayBuffer>(length = size)
-        .fill { this[it].toJsByte() }
+expect fun ByteArray.toInt8Array(): Int8Array<ArrayBuffer>
