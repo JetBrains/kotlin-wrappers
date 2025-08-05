@@ -15,6 +15,9 @@ actual object JsPrimitives {
     actual inline fun JsByte.toByte(): Byte = this
     actual inline fun Byte.toJsByte(): JsByte = this
 
+    actual inline fun JsUByte.toUByte(): Short = this
+    actual inline fun Short.toJsUByte(): JsUByte = this
+
     actual inline fun JsShort.toShort(): Short = this
     actual inline fun Short.toJsShort(): JsShort = this
 

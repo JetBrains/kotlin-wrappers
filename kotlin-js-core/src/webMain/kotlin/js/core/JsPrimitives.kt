@@ -15,6 +15,9 @@ expect object JsPrimitives {
     inline fun JsByte.toByte(): Byte
     inline fun Byte.toJsByte(): JsByte
 
+    inline fun JsUByte.toUByte(): Short
+    inline fun Short.toJsUByte(): JsUByte
+
     inline fun JsShort.toShort(): Short
     inline fun Short.toJsShort(): JsShort
 
