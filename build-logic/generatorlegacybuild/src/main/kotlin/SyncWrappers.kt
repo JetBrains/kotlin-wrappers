@@ -1,7 +1,7 @@
 import org.gradle.api.tasks.Sync
 import java.io.File
 
-open class SyncWrappers : Sync() {
+abstract class SyncWrappers : Sync() {
     init {
         includeEmptyDirs = false
     }
