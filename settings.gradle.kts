@@ -66,9 +66,6 @@ include("kotlin-actions-io")
 // Kotlin/JS: GitHub Actions Tool Cache wrappers
 include("kotlin-actions-tool-cache")
 
-// Kotlin/JS: GitHub Actions Toolkit wrappers
-include("kotlin-actions-toolkit")
-
 // Kotlin/JS: Ajv JSON schema validator wrappers
 include("kotlin-ajv")
 
