@@ -9,4 +9,4 @@ actual inline fun Int8Array<*>.castOrConvertToByteArray(): ByteArray =
     asByteArray()
 
 actual inline fun Int8Array<*>.toByteArray(): ByteArray =
-    Int8Array.from(this).castOrConvertToByteArray()
+    Int8Array.from(this).asByteArray()
