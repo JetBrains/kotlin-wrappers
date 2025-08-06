@@ -1,6 +1,3 @@
-const puppeteer = require('puppeteer');
-process.env.CHROME_BIN = puppeteer.executablePath();
-
 config.client.mocha = config.client.mocha || {}
 config.client.mocha.timeout = 60000
 

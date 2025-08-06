@@ -11,9 +11,6 @@ kotlin {
                 testLogging.showStandardStreams = true
                 useKarma {
                     useChromeHeadlessNoSandbox()
-
-                    // TODO: Temporary disable browser tests
-                    enabled = false
                 }
             }
         }
