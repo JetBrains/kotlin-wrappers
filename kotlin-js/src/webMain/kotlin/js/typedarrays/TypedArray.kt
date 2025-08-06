@@ -10,6 +10,8 @@ import js.collections.ListLike
 import js.core.JsAny
 import js.core.JsInt
 import js.iterable.JsIterator
+import js.typedarrays.internal.castOrConvertToByteArray
+import js.typedarrays.internal.castOrConvertToUByteArray
 import kotlin.js.JsName
 import kotlin.js.definedExternally
 
@@ -391,9 +393,11 @@ fun <A : TypedArray<*, *, *, *>> A.toUint8Array(): Uint8Array<ArrayBuffer> {
     }
 }
 
-expect fun <A : TypedArray<*, *, *, *>> A.toByteArray(): ByteArray
+fun <A : TypedArray<*, *, *, *>> A.toByteArray(): ByteArray =
+    toInt8Array().castOrConvertToByteArray()
 
-expect fun <A : TypedArray<*, *, *, *>> A.toUByteArray(): UByteArray
+fun <A : TypedArray<*, *, *, *>> A.toUByteArray(): UByteArray =
+    toUint8Array().castOrConvertToUByteArray()
 
 internal fun <A : TypedArray<*, *, ArrayBuffer, T>, T : JsAny /* Number? */> A.fill(
     getValue: (index: Int) -> T,
