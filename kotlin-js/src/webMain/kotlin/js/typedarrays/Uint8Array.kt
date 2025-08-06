@@ -49,6 +49,6 @@ open external class Uint8Array<B : ArrayBufferLike>(
 inline fun Uint8Array<*>.toUint8Array(): Uint8Array<ArrayBuffer> =
     Uint8Array(this)
 
-expect inline fun Uint8Array<*>.asUByteArray(): UByteArray
+expect inline fun Uint8Array<*>.castOrConvertToUByteArray(): UByteArray
 
 expect fun Uint8Array<*>.toUByteArray(): UByteArray
