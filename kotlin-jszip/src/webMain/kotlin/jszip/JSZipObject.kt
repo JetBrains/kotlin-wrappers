@@ -9,6 +9,9 @@ import js.typedarrays.Uint8Array
 import web.blob.Blob
 import kotlin.js.definedExternally
 
+/**
+ * [Online Documentation](https://stuk.github.io/jszip/documentation/api_zipobject.html)
+ */
 external interface JSZipObject {
     val name: String
 

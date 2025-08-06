@@ -15,6 +15,9 @@ import kotlin.js.JsModule
 import kotlin.js.definedExternally
 import kotlin.js.undefined
 
+/**
+ * [Online Documentation](https://stuk.github.io/jszip/documentation/api_jszip.html)
+ */
 @JsModule("jszip")
 external class JSZip {
     val files: ReadonlyRecord<JsString, JSZipObject>
