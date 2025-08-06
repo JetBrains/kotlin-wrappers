@@ -25,6 +25,4 @@ open external class Int8Array<B : ArrayBufferLike>(
 inline fun Int8Array<*>.toInt8Array(): Int8Array<ArrayBuffer> =
     Int8Array(this)
 
-expect inline fun Int8Array<*>.castOrConvertToByteArray(): ByteArray
-
 expect fun Int8Array<*>.toByteArray(): ByteArray

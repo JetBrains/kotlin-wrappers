@@ -1,5 +1,8 @@
 package js.typedarrays
 
+import js.typedarrays.internal.castOrConvertToByteArray
+import js.typedarrays.internal.castOrConvertToUByteArray
+
 actual fun <A : TypedArray<*, *, *, *>> A.toByteArray(): ByteArray =
     toInt8Array().castOrConvertToByteArray()
 
