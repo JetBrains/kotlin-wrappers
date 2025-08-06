@@ -22,7 +22,7 @@ external interface JSZipObject {
     val unsafeOriginalName: String?
     val dir: Boolean
     val date: Date
-    val comment: String
+    val comment: String?
 
     /** The UNIX permissions of the file, if any. */
     val unixPermissions: Int?
