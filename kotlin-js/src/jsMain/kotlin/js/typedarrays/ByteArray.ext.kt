@@ -8,3 +8,6 @@ inline fun ByteArray.asInt8Array(): Int8Array<*> =
 
 actual inline fun ByteArray.toInt8Array(): Int8Array<ArrayBuffer> =
     Int8Array(asInt8Array())
+
+actual inline fun ByteArray.toUint8Array(): Uint8Array<ArrayBuffer> =
+    asInt8Array().toUint8Array()
