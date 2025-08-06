@@ -391,6 +391,10 @@ fun <A : TypedArray<*, *, *, *>> A.toUint8Array(): Uint8Array<ArrayBuffer> {
     }
 }
 
+expect fun <A : TypedArray<*, *, *, *>> A.toByteArray(): ByteArray
+
+expect fun <A : TypedArray<*, *, *, *>> A.toUByteArray(): UByteArray
+
 internal fun <A : TypedArray<*, *, ArrayBuffer, T>, T : JsAny /* Number? */> A.fill(
     getValue: (index: Int) -> T,
 ): A {
