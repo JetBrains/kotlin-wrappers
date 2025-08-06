@@ -2,7 +2,7 @@ package js.typedarrays
 
 import js.core.JsPrimitives.toByte
 
-actual inline fun Int8Array<*>.asByteArray(): ByteArray =
+actual inline fun Int8Array<*>.castOrConvertToByteArray(): ByteArray =
     toByteArray()
 
 actual fun Int8Array<*>.toByteArray(): ByteArray =
