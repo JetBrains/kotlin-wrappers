@@ -365,6 +365,22 @@ sealed external class TypedArray<
     override fun values(): JsIterator<T>
 }
 
+fun <A : TypedArray<*, *, *, *>> A.toInt8Array(): Int8Array<ArrayBuffer> {
+    val sourceBuffer = buffer.slice(begin = byteOffset, end = byteOffset + byteLength)
+    return when (sourceBuffer) {
+        is ArrayBuffer -> Int8Array(sourceBuffer)
+        else -> Int8Array(sourceBuffer).slice()
+    }
+}
+
+fun <A : TypedArray<*, *, *, *>> A.toUint8Array(): Uint8Array<ArrayBuffer> {
+    val sourceBuffer = buffer.slice(begin = byteOffset, end = byteOffset + byteLength)
+    return when (sourceBuffer) {
+        is ArrayBuffer -> Uint8Array(sourceBuffer)
+        else -> Uint8Array(sourceBuffer).slice()
+    }
+}
+
 internal fun <A : TypedArray<*, *, ArrayBuffer, T>, T : JsAny /* Number? */> A.fill(
     getValue: (index: Int) -> T,
 ): A {

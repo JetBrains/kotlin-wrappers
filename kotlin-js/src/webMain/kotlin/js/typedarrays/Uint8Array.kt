@@ -1,14 +1,11 @@
 package js.typedarrays
 
-import js.array.ArrayLike
 import js.array.ReadonlyArray
 import js.buffer.ArrayBuffer
 import js.buffer.ArrayBufferLike
-import js.core.JsByte
 import js.core.JsUByte
 import js.iterable.JsIterable
 import js.serialization.Serializable
-import kotlin.js.JsName
 import kotlin.js.definedExternally
 
 open external class Uint8Array<B : ArrayBufferLike>(
@@ -38,12 +35,6 @@ open external class Uint8Array<B : ArrayBufferLike>(
     fun toHex(): String
 
     companion object : TypedArrayCompanion<Uint8Array<ArrayBuffer>, JsUByte> {
-        @PublishedApi
-        @JsName("from")
-        internal fun _from(
-            source: ArrayLike<JsByte>,
-        ): Uint8Array<ArrayBuffer>
-
         fun fromBase64(
             string: String,
             options: FromBase64Options = definedExternally,
@@ -55,7 +46,7 @@ open external class Uint8Array<B : ArrayBufferLike>(
     }
 }
 
-inline fun Uint8Array<*>.toInt8Array(): Int8Array<ArrayBuffer> =
-    Int8Array._from(this)
+inline fun Uint8Array<*>.toUint8Array(): Uint8Array<ArrayBuffer> =
+    Uint8Array(this)
 
 expect fun Uint8Array<*>.toUByteArray(): UByteArray
