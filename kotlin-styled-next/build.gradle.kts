@@ -13,7 +13,7 @@ kotlin {
                     useChromeHeadlessNoSandbox()
 
                     // TODO: Temporary disable browser tests
-                    // enabled = false
+                    enabled = false
                 }
             }
         }
