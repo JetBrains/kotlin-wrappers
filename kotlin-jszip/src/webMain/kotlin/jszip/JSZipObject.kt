@@ -1,6 +1,7 @@
 package jszip
 
 import js.buffer.ArrayBuffer
+import js.buffer.internal.convertToByteArray
 import js.core.JsAny
 import js.date.Date
 import js.promise.Promise
@@ -45,6 +46,7 @@ external interface JSZipObject {
     // nodeStream(type?: 'nodebuffer', onUpdate?: OnUpdateCallback): NodeJS.ReadableStream;
 }
 
+// default `async` aliases
 suspend inline fun JSZipObject.arrayBuffer(): ArrayBuffer =
     async(OutputType.arraybuffer).await()
 
@@ -56,3 +58,7 @@ suspend inline fun JSZipObject.bytes(): Uint8Array<ArrayBuffer> =
 
 suspend inline fun JSZipObject.text(): String =
     async(OutputType.text).await().toString()
+
+// additional `async` aliases
+suspend fun JSZipObject.byteArray(): ByteArray =
+    convertToByteArray(arrayBuffer())
