@@ -26,6 +26,10 @@ val COMMON_OPT_INS = listOf(
     "kotlin.js.ExperimentalJsExport",
 )
 
+val JS_OPT_INS = listOf(
+    "js.internal.InternalApi",
+)
+
 val JS_FREE_COMPILER_ARGS = listOf(
     "-Xir-generate-inline-anonymous-functions",
 )
@@ -91,5 +95,8 @@ fun KotlinJsTargetDsl.configureJsTarget(
         target = "es2015"
 
         freeCompilerArgs.addAll(JS_FREE_COMPILER_ARGS)
+        if (project.name != "kotlin-css") {
+            optIn.addAll(JS_OPT_INS)
+        }
     }
 }
