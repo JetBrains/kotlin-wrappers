@@ -25,7 +25,7 @@ kotlin {
 
     if (jsTarget.js) {
         js {
-            configureJsTarget(moduleName = project.name)
+            configureJsTarget()
         }
 
         sourceSets {
@@ -40,15 +40,13 @@ kotlin {
 
     if (jsTarget.wasm) {
         wasmJs {
-            configureJsTarget(moduleName = project.name + "-wasm")
+            configureJsTarget()
         }
     }
 }
 
-fun KotlinJsTargetDsl.configureJsTarget(
-    moduleName: String,
-) {
-    outputModuleName = moduleName
+fun KotlinJsTargetDsl.configureJsTarget() {
+    outputModuleName = project.name
 
     val jsPlatform = project.jsPlatform
 
