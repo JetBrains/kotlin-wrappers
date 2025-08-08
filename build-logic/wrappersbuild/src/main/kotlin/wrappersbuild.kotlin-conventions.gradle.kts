@@ -26,7 +26,7 @@ val COMMON_OPT_INS = listOf(
     "kotlin.js.ExperimentalJsExport",
 )
 
-val JS_OPT_INS = listOf(
+val COMMON_INTERNAL_OPT_INS = listOf(
     "js.internal.InternalApi",
 )
 
@@ -39,6 +39,10 @@ kotlin {
         allWarningsAsErrors = true
         freeCompilerArgs.addAll(COMMON_FREE_COMPILER_ARGS)
         optIn.addAll(COMMON_OPT_INS)
+
+        if (project.name != "kotlin-css") {
+            optIn.addAll(COMMON_INTERNAL_OPT_INS)
+        }
     }
 
     val jsTarget = project.jsTarget
@@ -95,8 +99,5 @@ fun KotlinJsTargetDsl.configureJsTarget(
         target = "es2015"
 
         freeCompilerArgs.addAll(JS_FREE_COMPILER_ARGS)
-        if (project.name != "kotlin-css") {
-            optIn.addAll(JS_OPT_INS)
-        }
     }
 }
