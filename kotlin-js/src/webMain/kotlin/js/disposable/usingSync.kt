@@ -1,5 +1,6 @@
 package js.disposable
 
+import js.symbol.Symbol
 import kotlin.contracts.InvocationKind
 import kotlin.contracts.contract
 
@@ -12,8 +13,11 @@ internal inline fun <T : Disposable, R> usingSync(
         callsInPlace(block, InvocationKind.EXACTLY_ONCE)
     }
 
-    return disposable.asClosable()
-        .use { block(disposable) }
+    val closable = AutoCloseable {
+        disposable[Symbol.dispose]()
+    }
+
+    return closable.use { block(disposable) }
 }
 
 inline fun <R> usingSync(
