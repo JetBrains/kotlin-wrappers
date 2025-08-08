@@ -1,8 +1,10 @@
 package react.internal
 
+import js.internal.InternalApi
 import kotlinx.coroutines.CoroutineScope
 import react.Cleanup
 
+@InternalApi
 fun createCleanupCallback(
     block: suspend CoroutineScope.() -> Unit,
 ): () -> Cleanup = callback@{
@@ -13,6 +15,7 @@ fun createCleanupCallback(
     }
 }
 
+@InternalApi
 fun <T> createCleanupCallback(
     block: suspend CoroutineScope.(T) -> Unit,
 ): (T) -> Cleanup = callback@{ p1 ->

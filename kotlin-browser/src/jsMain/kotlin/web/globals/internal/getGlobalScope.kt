@@ -2,9 +2,11 @@ package web.globals.internal
 
 import js.globals.GlobalScope
 import js.globals.globalThis
+import js.internal.InternalApi
 import js.reflect.unsafeCast
 import kotlin.reflect.cast
 
+@InternalApi
 internal fun <S : GlobalScope> getGlobalScope(
     scopeClassName: String,
 ): S {

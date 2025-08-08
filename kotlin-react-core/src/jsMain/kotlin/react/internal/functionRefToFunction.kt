@@ -7,6 +7,7 @@ package react.internal
 import js.array.Tuple1
 import js.function.JsFunction
 import js.function.invoke
+import js.internal.InternalApi
 import react.RefObject
 
 private val FUNCTION_REF_TO_FUNCTION: JsFunction<Tuple1<RefObject<out Function<Unit>>>, Function<Unit>> =
@@ -15,6 +16,7 @@ private val FUNCTION_REF_TO_FUNCTION: JsFunction<Tuple1<RefObject<out Function<U
         "return (...args) => functionRef.current(...args)",
     )
 
+@InternalApi
 internal fun <T : Function<Unit>> functionRefToFunction(
     functionRef: RefObject<out T>,
 ): T =

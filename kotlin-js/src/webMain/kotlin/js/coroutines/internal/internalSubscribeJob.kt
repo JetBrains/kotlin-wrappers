@@ -1,7 +1,9 @@
 package js.coroutines.internal
 
+import js.internal.InternalApi
 import kotlinx.coroutines.*
 
+@InternalApi
 suspend fun internalSubscribeJob(
     subscribe: () -> () -> Unit,
 ): Job =
