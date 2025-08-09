@@ -437,6 +437,18 @@ private fun String.patchQuerySelectors(): String =
             "\"$MATHML_NAMESPACE\"",
             "MATHML_NAMESPACE"
         )
+        .replace(
+            "type ReadableStreamReadResult<T> = ReadableStreamReadValueResult<T> | ReadableStreamReadDoneResult<T>;\n",
+            "",
+        )
+        .replace(
+            "\ninterface ReadableStreamReadValueResult<T> {",
+            "\ninterface ReadableStreamReadResult<T> {",
+        )
+        .patchInterface("ReadableStreamReadResult") {
+            it.replace("done: false;", "done: boolean;")
+                .replace("value: T;", "value: T | undefined;")
+        }
 
 private fun String.patchDecodeAudioData(): String =
     patchInterface("BaseAudioContext") {

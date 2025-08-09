@@ -2,7 +2,6 @@ package karakum.browser
 
 internal val SEALED_MARKER_DECLARATIONS = setOf(
     "ReadableStreamController<T>",
-    "ReadableStreamReadResult<T>",
 
     "GPUBindingResource",
 )

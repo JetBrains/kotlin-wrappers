@@ -315,7 +315,6 @@ private fun convertType(
             "HashAlgorithmIdentifier" -> "web.crypto"
 
             "ReadableStreamController" -> "web.streams"
-            "ReadableStreamReadResult" -> "web.streams"
 
             "ReportList" -> "web.reporting"
             "LineAndPositionSetting" -> "web.vtt"

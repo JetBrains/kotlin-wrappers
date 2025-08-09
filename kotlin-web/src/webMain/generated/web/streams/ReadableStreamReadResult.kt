@@ -3,12 +3,10 @@
 package web.streams
 
 import js.core.JsAny
-import js.reflect.JsExternalInheritorsOnly
+import js.objects.JsPlainObject
 
-/**
- * Union of:
- * - `ReadableStreamReadValueResult`
- * - `ReadableStreamReadDoneResult`
- */
-@JsExternalInheritorsOnly
-sealed external interface ReadableStreamReadResult<T : JsAny?>
+@JsPlainObject
+external interface ReadableStreamReadResult<T : JsAny?> {
+    var done: Boolean
+    var value: T?
+}

@@ -11,6 +11,7 @@ internal const val GEOLOCATION_WATCH_ID = "GeolocationWatchId"
 
 private val DEPRECATED = setOf(
     "HTMLAllCollection",
+    "ReadableStreamReadDoneResult",
 )
 
 private val ANIMATION_TYPES = setOf(
@@ -551,9 +552,7 @@ private val STREAMS_TYPES = listOf(
     "ReadableStreamGenericReader",
     "ReadableStreamGetReaderOptions",
     "ReadableStreamIteratorOptions",
-    "ReadableStreamReadDoneResult",
     "ReadableStreamReadResult",
-    "ReadableStreamReadValueResult",
     "ReadableWritablePair",
     "StreamPipeOptions",
     "Transformer",
@@ -852,18 +851,6 @@ internal fun convertInterface(
             pkg = "web.components",
         )
 
-    val typeGuardSource = sequenceOf(
-        "done: false",
-        "done: true",
-    ).firstOrNull { memberSource.startsWith("$it;") }
-
-    if (typeGuardSource != null) {
-        declaration = declaration.replace("interface ", "class ")
-        memberSource = memberSource.removePrefix("$typeGuardSource;\n")
-    }
-
-    val hasTypeGuard = typeGuardSource != null
-
     val arrayType = if ("readonly length: number;" in memberSource) {
         val result = Regex("""\[index: number]: (\w+)""")
             .find(memberSource)
@@ -1006,7 +993,7 @@ internal fun convertInterface(
     val isHtmlElementClass = IDLRegistry.hasHtmlConstructor(name)
     val isSvgElementClass = isClass && name.startsWith("SVG") && name.endsWith("Element")
 
-    if (isHtmlElementClass || isSvgElementClass || hasTypeGuard) {
+    if (isHtmlElementClass || isSvgElementClass) {
         require(mainConstructor.isEmpty())
         require(":\n" in declaration)
 
@@ -1321,9 +1308,7 @@ internal fun convertInterface(
                 name == "HTMLOrSVGElement" ||
                 name == "DocumentOrShadowRoot" ||
                 name == "Slottable" ||
-                name.endsWith("Handlers") ||
-
-                hasTypeGuard
+                name.endsWith("Handlers")
             -> ""
 
         else -> "sealed"
@@ -1348,16 +1333,6 @@ internal fun convertInterface(
         ""
     }
 
-    val typeGuard = if (typeGuardSource != null) {
-        val (property, value) = typeGuardSource.split(": ")
-        """
-        @JsTypeGuard(
-            property = "$property",
-            value = "$value",
-        )
-        """.trimIndent()
-    } else ""
-
     val additionalAliases = getAdditionalAliasNames(name)
         ?.joinToString("\n") { "sealed interface $it" }
         ?: ""
@@ -1369,7 +1344,6 @@ internal fun convertInterface(
     }
 
     var body = sequenceOf(
-        typeGuard,
         annotations,
         "$modifier external $declaration {",
         members,
