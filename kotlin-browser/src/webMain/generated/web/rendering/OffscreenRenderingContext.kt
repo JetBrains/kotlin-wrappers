@@ -6,10 +6,10 @@ import js.reflect.JsExternalInheritorsOnly
 
 /**
  * Union of:
- * - `OffscreenCanvasRenderingContext2D`
- * - `ImageBitmapRenderingContext`
- * - `WebGLRenderingContext`
- * - `WebGL2RenderingContext`
+ * - [OffscreenCanvasRenderingContext2D]
+ * - [ImageBitmapRenderingContext]
+ * - [WebGLRenderingContext]
+ * - [WebGL2RenderingContext]
  */
 @JsExternalInheritorsOnly
 external interface OffscreenRenderingContext

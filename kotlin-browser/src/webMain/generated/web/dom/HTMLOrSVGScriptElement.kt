@@ -4,7 +4,7 @@ package web.dom
 
 /**
  * Union of:
- * - `HTMLScriptElement`
- * - `SVGScriptElement`
+ * - [HTMLScriptElement]
+ * - [SVGScriptElement]
  */
 external interface HTMLOrSVGScriptElement

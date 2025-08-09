@@ -6,8 +6,8 @@ import web.canvas.CanvasImageSource
 
 /**
  * Union of:
- * - `HTMLImageElement`
- * - `SVGImageElement`
+ * - [HTMLImageElement]
+ * - [SVGImageElement]
  */
 external interface HTMLOrSVGImageElement :
     CanvasImageSource

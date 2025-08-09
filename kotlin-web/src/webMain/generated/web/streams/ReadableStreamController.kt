@@ -7,8 +7,8 @@ import js.reflect.JsExternalInheritorsOnly
 
 /**
  * Union of:
- * - `ReadableStreamDefaultController`
- * - `ReadableByteStreamController`
+ * - [ReadableStreamDefaultController]
+ * - [ReadableByteStreamController]
  */
 @JsExternalInheritorsOnly
 sealed external interface ReadableStreamController<T : JsAny?>

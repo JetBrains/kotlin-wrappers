@@ -6,10 +6,10 @@ import js.reflect.JsExternalInheritorsOnly
 
 /**
  * Union of:
- * - `CanvasRenderingContext2D`
- * - `ImageBitmapRenderingContext`
- * - `WebGLRenderingContext`
- * - `WebGL2RenderingContext`
+ * - [CanvasRenderingContext2D]
+ * - [ImageBitmapRenderingContext]
+ * - [WebGLRenderingContext]
+ * - [WebGL2RenderingContext]
  */
 @JsExternalInheritorsOnly
 external interface RenderingContext

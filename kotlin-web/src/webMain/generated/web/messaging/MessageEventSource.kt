@@ -6,9 +6,9 @@ import js.reflect.JsExternalInheritorsOnly
 
 /**
  * Union of:
- * - `WindowProxy`
- * - `MessagePort`
- * - `ServiceWorker`
+ * - [WindowProxy]
+ * - [MessagePort]
+ * - [ServiceWorker]
  */
 @JsExternalInheritorsOnly
 external interface MessageEventSource

@@ -6,10 +6,10 @@ import js.reflect.JsExternalInheritorsOnly
 
 /**
  * Union of:
- * - `GPUSampler`
- * - `GPUTextureView`
- * - `GPUBufferBinding`
- * - `GPUExternalTexture`
+ * - [GPUSampler]
+ * - [GPUTextureView]
+ * - [GPUBufferBinding]
+ * - [GPUExternalTexture]
  */
 @JsExternalInheritorsOnly
 sealed external interface GPUBindingResource

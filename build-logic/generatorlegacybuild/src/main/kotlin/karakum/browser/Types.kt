@@ -571,7 +571,7 @@ private fun markerInterface(
             separator = "\n",
             prefix = "/**\n * Union of:\n",
             postfix = "\n */",
-            transform = { " * - `$it`" },
+            transform = { " * - [$it]" },
         )
 
     val finalDeclaration = declaration.replace("<T>", "<T : JsAny?>")
