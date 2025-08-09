@@ -1,11 +1,7 @@
 package react.dom
 
-import seskar.js.JsTypeGuard
+import js.objects.JsPlainObject
 
-@JsTypeGuard(
-    property = "pending",
-    value = "false",
-)
-external class FormStatusNotPending
-private constructor() :
+@JsPlainObject
+external interface FormStatusNotPending :
     FormStatus

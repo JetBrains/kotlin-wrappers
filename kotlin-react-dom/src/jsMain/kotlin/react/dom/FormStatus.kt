@@ -1,3 +1,8 @@
 package react.dom
 
-sealed external interface FormStatus
+import js.objects.JsPlainObject
+
+@JsPlainObject
+external interface FormStatus {
+    val pending: Boolean
+}
