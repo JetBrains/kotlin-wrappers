@@ -1,13 +1,9 @@
 package js.atomic
 
-import seskar.js.JsTypeGuard
+import js.objects.JsPlainObject
 
-@JsTypeGuard(
-    property = "async",
-    value = "false",
-)
-external class WaitSyncResult
-private constructor() :
+@JsPlainObject
+external interface WaitSyncResult :
     WaitResult {
     val value: WaitSyncStatus
 }
