@@ -7,7 +7,7 @@ actual external interface JsClass<T : JsAny> :
 }
 
 internal actual fun <T : JsAny> isInstanceOf(
-    value: JsAny?,
+    value: JsAny,
     jsClass: JsClass<T>,
 ): Boolean =
     js("value instanceof jsClass")

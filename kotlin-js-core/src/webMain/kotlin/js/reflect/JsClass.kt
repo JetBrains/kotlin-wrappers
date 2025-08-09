@@ -14,6 +14,6 @@ expect external interface JsClass<T : JsAny> :
 }
 
 internal expect fun <T : JsAny> isInstanceOf(
-    value: JsAny?,
+    value: JsAny,
     jsClass: JsClass<T>,
 ): Boolean
