@@ -2,14 +2,10 @@ package js.promise
 
 import js.core.Void
 import js.errors.JsErrorLike
-import seskar.js.JsTypeGuard
+import js.objects.JsPlainObject
 
-@JsTypeGuard(
-    property = "status",
-    value = "'rejected'",
-)
-external class PromiseRejectedResult
-private constructor() :
+@JsPlainObject
+external interface PromiseRejectedResult :
     PromiseSettledResult<Void> {
     val reason: JsErrorLike?
 }

@@ -1,14 +1,10 @@
 package js.promise
 
 import js.core.JsAny
-import seskar.js.JsTypeGuard
+import js.objects.JsPlainObject
 
-@JsTypeGuard(
-    property = "status",
-    value = "'fulfilled'",
-)
-external class PromiseFulfilledResult<T : JsAny?>
-private constructor() :
+@JsPlainObject
+external interface PromiseFulfilledResult<T : JsAny?> :
     PromiseSettledResult<T> {
     val value: T
 }
