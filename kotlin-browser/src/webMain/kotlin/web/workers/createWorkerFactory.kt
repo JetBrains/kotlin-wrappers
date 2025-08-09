@@ -20,7 +20,11 @@ internal fun <T : AbstractWorker, S : WorkerGlobalScope> createWorkerFactory(
             block = { block(self) },
         )
 
-    return unsafeCast { ->
-        error("Missed plugin integration! $workerName factory shouldn't be called directly!")
-    }
+    return unsafeCast(pluginIntegrationPlaceholder(workerName))
+}
+
+private fun pluginIntegrationPlaceholder(
+    workerName: String,
+): () -> Unit = {
+    error("Missed plugin integration! $workerName factory shouldn't be called directly!")
 }
