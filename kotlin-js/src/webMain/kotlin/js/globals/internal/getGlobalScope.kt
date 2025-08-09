@@ -1,17 +1,19 @@
-package web.globals.internal
+package js.globals.internal
 
+import js.core.JsPrimitives.toJsString
 import js.globals.GlobalScope
 import js.globals.globalThis
 import js.internal.InternalApi
+import js.reflect.JsClass
 import js.reflect.cast
 import js.reflect.unsafeCast
 
 @InternalApi
-internal fun <S : GlobalScope> getGlobalScope(
+fun <S : GlobalScope> getGlobalScope(
     scopeClassName: String,
 ): S {
     val jsClass = unsafeCast<JsClass<S>>(
-        globalThis[scopeClassName]
+        globalThis[scopeClassName.toJsString()]
             ?: error("Class `$scopeClassName` not found!")
     )
 

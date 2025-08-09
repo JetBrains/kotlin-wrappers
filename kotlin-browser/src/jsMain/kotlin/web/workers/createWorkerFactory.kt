@@ -1,11 +1,11 @@
 package web.workers
 
 import js.coroutines.internal.IsolatedCoroutineScope
+import js.globals.internal.getGlobalScope
 import js.reflect.unsafeCast
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.CoroutineStart
 import kotlinx.coroutines.launch
-import web.globals.internal.getGlobalScope
 
 internal fun <T : AbstractWorker, S : WorkerGlobalScope> createWorkerFactory(
     workerName: String,
