@@ -12,3 +12,8 @@ expect external interface JsClass<T : JsAny> :
 
     val name: String
 }
+
+internal expect fun <T : JsAny> isInstanceOf(
+    value: JsAny?,
+    jsClass: JsClass<T>,
+): Boolean
