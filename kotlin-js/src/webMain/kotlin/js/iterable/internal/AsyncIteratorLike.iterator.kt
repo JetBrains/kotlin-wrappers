@@ -4,8 +4,8 @@ import js.core.JsAny
 import js.internal.InternalApi
 import js.iterable.AsyncIteratorLike
 import js.iterable.IteratorResult
-import js.iterable.IteratorYieldResult
 import js.iterable.SuspendableIterator
+import js.iterable.isYield
 import js.promise.await
 
 @InternalApi
@@ -26,7 +26,7 @@ private class AsyncIteratorAdapter<T : JsAny?>(
 
         lastResult = result
 
-        return result is IteratorYieldResult<T>
+        return !result.done
     }
 
     override fun next(): T {
@@ -36,7 +36,7 @@ private class AsyncIteratorAdapter<T : JsAny?>(
 
         lastResult = null
 
-        result as IteratorYieldResult<T>
+        check(isYield(result))
         return result.value
     }
 }

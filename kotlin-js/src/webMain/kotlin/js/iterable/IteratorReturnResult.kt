@@ -2,14 +2,10 @@ package js.iterable
 
 import js.core.JsAny
 import js.core.Void
-import seskar.js.JsTypeGuard
+import js.objects.JsPlainObject
 
-@JsTypeGuard(
-    property = "done",
-    value = "true",
-)
-external class IteratorReturnResult<out TReturn : JsAny?>
-private constructor() :
+@JsPlainObject
+external interface IteratorReturnResult<out TReturn : JsAny?> :
     IteratorResult<Void, TReturn> {
     val value: TReturn
 }

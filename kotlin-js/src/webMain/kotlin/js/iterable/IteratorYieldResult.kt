@@ -2,14 +2,10 @@ package js.iterable
 
 import js.core.JsAny
 import js.core.Void
-import seskar.js.JsTypeGuard
+import js.objects.JsPlainObject
 
-@JsTypeGuard(
-    property = "done",
-    value = "false",
-)
-external class IteratorYieldResult<out TYield : JsAny?>
-private constructor() :
+@JsPlainObject
+external interface IteratorYieldResult<out TYield : JsAny?> :
     IteratorResult<TYield, Void> {
     val value: TYield
 }
