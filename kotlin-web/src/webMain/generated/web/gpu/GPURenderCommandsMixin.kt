@@ -6,9 +6,12 @@
 
 package web.gpu
 
+import js.reflect.JsExternalInheritorsOnly
 import kotlin.js.definedExternally
 
-sealed external interface GPURenderCommandsMixin {
+/* mixin */
+@JsExternalInheritorsOnly
+external interface GPURenderCommandsMixin {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPURenderBundleEncoder/draw)
      */

@@ -6,9 +6,12 @@
 
 package web.gpu
 
+import js.reflect.JsExternalInheritorsOnly
 import kotlin.js.definedExternally
 
-sealed external interface GPUDebugCommandsMixin {
+/* mixin */
+@JsExternalInheritorsOnly
+external interface GPUDebugCommandsMixin {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUCommandEncoder/insertDebugMarker)
      */
