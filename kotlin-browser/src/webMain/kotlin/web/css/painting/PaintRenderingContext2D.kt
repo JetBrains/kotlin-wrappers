@@ -1,9 +1,3 @@
-// TODO: remove suppress after canvas mixins update
-
-@file:Suppress(
-    "SEALED_INHERITOR_IN_DIFFERENT_PACKAGE",
-)
-
 package web.css.painting
 
 import web.canvas.*
