@@ -13,7 +13,9 @@ import web.animations.KeyframeAnimationOptions
 import web.animations.PropertyIndexedKeyframes
 import kotlin.js.definedExternally
 
-sealed external interface Animatable {
+/* mixin */
+sealed
+external interface Animatable {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/animate)
      */

@@ -8,7 +8,9 @@ package web.html
 
 import kotlin.js.definedExternally
 
-sealed external interface HTMLHyperlinkElementUtils {
+/* mixin */
+sealed
+external interface HTMLHyperlinkElementUtils {
     /**
      * Returns the hyperlink's URL's fragment (includes leading "#" if non-empty).
      *

@@ -13,7 +13,9 @@ import js.promise.await
 import kotlin.js.JsName
 import kotlin.js.definedExternally
 
-sealed external interface ReadableStreamGenericReader {
+/* mixin */
+sealed
+external interface ReadableStreamGenericReader {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStreamBYOBReader/closed)
      */

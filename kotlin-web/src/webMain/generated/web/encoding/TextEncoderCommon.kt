@@ -8,7 +8,9 @@ package web.encoding
 
 import kotlin.js.definedExternally
 
-sealed external interface TextEncoderCommon {
+/* mixin */
+sealed
+external interface TextEncoderCommon {
     /**
      * Returns "utf-8".
      *

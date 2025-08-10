@@ -9,7 +9,9 @@ package web.dom
 
 import kotlin.js.definedExternally
 
-sealed external interface ChildNode :
+/* mixin */
+sealed
+external interface ChildNode :
     Node {
     /**
      * Inserts nodes just after node, while replacing strings in nodes with equivalent Text nodes.

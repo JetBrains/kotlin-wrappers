@@ -2,7 +2,9 @@
 
 package web.dom
 
-sealed external interface NonElementParentNode {
+/* mixin */
+sealed
+external interface NonElementParentNode {
     /**
      * Returns the first element within node's descendants whose ID is elementId.
      *

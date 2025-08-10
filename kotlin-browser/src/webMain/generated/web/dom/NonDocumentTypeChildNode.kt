@@ -4,7 +4,9 @@ package web.dom
 
 import kotlin.js.definedExternally
 
-sealed external interface NonDocumentTypeChildNode {
+/* mixin */
+sealed
+external interface NonDocumentTypeChildNode {
     /**
      * Returns the first following sibling that is an element, and null otherwise.
      *

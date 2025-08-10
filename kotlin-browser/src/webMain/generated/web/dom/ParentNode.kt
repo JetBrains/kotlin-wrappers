@@ -10,7 +10,9 @@ package web.dom
 import web.html.HTMLCollection
 import kotlin.js.definedExternally
 
-sealed external interface ParentNode :
+/* mixin */
+sealed
+external interface ParentNode :
     Node {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/childElementCount)

@@ -1324,7 +1324,7 @@ internal fun convertInterface(
                 || name.startsWith("SVG")
             -> "/* mixin */\n@JsExternalInheritorsOnly\n"
 
-        else -> "sealed"
+        else -> "/* mixin */\nsealed\n"
     }
 
     val companionExtensionsCollector = BrowserSuspendExtensionsCollector.forParent("$name.Companion", null)

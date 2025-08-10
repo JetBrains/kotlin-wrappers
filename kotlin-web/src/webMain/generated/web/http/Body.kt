@@ -18,7 +18,9 @@ import web.streams.ReadableStream
 import kotlin.js.JsName
 import kotlin.js.definedExternally
 
-sealed external interface Body {
+/* mixin */
+sealed
+external interface Body {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/body)
      */

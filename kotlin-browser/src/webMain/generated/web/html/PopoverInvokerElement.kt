@@ -10,7 +10,9 @@ import web.dom.Element
 import web.popover.PopoverTargetAction
 import kotlin.js.definedExternally
 
-sealed external interface PopoverInvokerElement {
+/* mixin */
+sealed
+external interface PopoverInvokerElement {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLButtonElement/popoverTargetAction)
      */
