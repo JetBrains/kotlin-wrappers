@@ -449,6 +449,20 @@ private fun String.patchQuerySelectors(): String =
             it.replace("done: false;", "done: boolean;")
                 .replace("value: T;", "value: T | undefined;")
         }
+        .replace(
+            "\ninterface Worklet {",
+            "\ninterface Worklet<M extends WorkletModule> {",
+        )
+        .patchInterface("Worklet") {
+            val addModule = it.splitToSequence("\n")
+                .first { it.startsWith("    addModule(moduleURL: string | URL, ") }
+
+            it + "\n" + addModule.replaceFirst("URL: string | URL", ": M")
+        }
+        .replace(
+            "\ninterface AudioWorklet extends Worklet {",
+            "\ninterface AudioWorklet extends Worklet<AudioWorkletModule> {",
+        )
 
 private fun String.patchDecodeAudioData(): String =
     patchInterface("BaseAudioContext") {

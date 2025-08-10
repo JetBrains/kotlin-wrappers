@@ -15,7 +15,7 @@ import kotlin.js.definedExternally
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Worklet)
  */
-open external class Worklet
+open external class Worklet<M : WorkletModule>
 private constructor() {
     /**
      * The **`addModule()`** method of the Worklet interface loads the module in the given JavaScript file and adds it to the current `Worklet`.
@@ -33,6 +33,12 @@ private constructor() {
         moduleURL: URL,
         options: WorkletOptions = definedExternally,
     ): Promise<Void>
+
+    @JsName("addModule")
+    fun addModuleAsync(
+        module: M,
+        options: WorkletOptions = definedExternally,
+    ): Promise<Void>
 }
 
 /**
@@ -40,7 +46,7 @@ private constructor() {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Worklet/addModule)
  */
-suspend inline fun Worklet.addModule(
+suspend inline fun <M : WorkletModule> Worklet<M>.addModule(
     moduleURL: String,
     options: WorkletOptions,
 ) {
@@ -55,7 +61,7 @@ suspend inline fun Worklet.addModule(
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Worklet/addModule)
  */
-suspend inline fun Worklet.addModule(
+suspend inline fun <M : WorkletModule> Worklet<M>.addModule(
     moduleURL: String,
 ) {
     addModuleAsync(
@@ -63,7 +69,7 @@ suspend inline fun Worklet.addModule(
     ).await()
 }
 
-suspend inline fun Worklet.addModule(
+suspend inline fun <M : WorkletModule> Worklet<M>.addModule(
     moduleURL: URL,
     options: WorkletOptions,
 ) {
@@ -73,10 +79,28 @@ suspend inline fun Worklet.addModule(
     ).await()
 }
 
-suspend inline fun Worklet.addModule(
+suspend inline fun <M : WorkletModule> Worklet<M>.addModule(
     moduleURL: URL,
 ) {
     addModuleAsync(
         moduleURL = moduleURL,
+    ).await()
+}
+
+suspend inline fun <M : WorkletModule> Worklet<M>.addModule(
+    module: M,
+    options: WorkletOptions,
+) {
+    addModuleAsync(
+        module = module,
+        options = options,
+    ).await()
+}
+
+suspend inline fun <M : WorkletModule> Worklet<M>.addModule(
+    module: M,
+) {
+    addModuleAsync(
+        module = module,
     ).await()
 }

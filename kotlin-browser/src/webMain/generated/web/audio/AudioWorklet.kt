@@ -12,4 +12,4 @@ import web.worklets.Worklet
  */
 open external class AudioWorklet
 private constructor() :
-    Worklet
+    Worklet<AudioWorkletModule>
