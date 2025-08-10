@@ -7,8 +7,8 @@ import web.experimental.ExperimentalWebApi
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaintRenderingContext2D)
  */
 @ExperimentalWebApi
-sealed /* final */
-external class PaintRenderingContext2D :
+external class PaintRenderingContext2D
+private constructor() :
     CanvasState,
     CanvasTransform,
     CanvasCompositing,
