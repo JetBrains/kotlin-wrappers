@@ -1317,6 +1317,7 @@ internal fun convertInterface(
 
         // TODO: use IDL data instead
         name.startsWith("Canvas")
+                || name.startsWith("GPU")
                 || name.startsWith("Navigator")
                 || name.startsWith("SVG")
             -> "/* mixin */\n@JsExternalInheritorsOnly\n"
