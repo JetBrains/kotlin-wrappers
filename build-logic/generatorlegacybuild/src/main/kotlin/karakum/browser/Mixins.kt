@@ -1,58 +1,26 @@
 package karakum.browser
 
 internal object Mixins {
-    private val SAFE: Set<String> = setOf(
-        "LocaleOptions",
-        "AbstractWorker",
-        "MessageEventTarget",
+    fun isUnsafeMixin(
+        name: String,
+        body: String,
+    ): Boolean {
+        if (!IDLRegistry.isMixin(name))
+            return false
 
-        // CSS
-        "LinkStyle",
+        if (name == "GenericTransformStream")
+            return false
 
-        // DOM
-        "ARIAMixin",
-        "GlobalEventHandlers",
-        "NonDocumentTypeChildNode",
-        "Slottable",
+        // TEMP
+        if (name == "GlobalEventHandlers")
+            return false
 
-        // Window
-        "WindowEventHandlers",
-    )
+        if ("fun " in body)
+            return true
 
-    val UNSAFE: Set<String> = setOf(
-        "Body",
-        "CanvasPath",
-
-        "FontFaceSource",
-        "XPathEvaluatorBase",
-
-        "Animatable",
-        "ElementCSSInlineStyle",
-        "ChildNode",
-        "DocumentOrShadowRoot",
-        "HTMLHyperlinkElementUtils",
-        "HTMLOrSVGElement",
-        "ParentNode",
-        "ElementContentEditable",
-        "PopoverInvokerElement",
-
-        "TextDecoderCommon",
-        "TextEncoderCommon",
-
-        "ReadableStreamGenericReader",
-
-        "SVGAnimatedPoints",
-        "SVGFilterPrimitiveStandardAttributes",
-        "SVGFitToViewBox",
-        "SVGTests",
-        "SVGURIReference",
-
-        "GPUObjectBase",
-        "GPUPipelineBase",
-        "GPUBindingCommandsMixin",
-        "GPUDebugCommandsMixin",
-        "GPURenderCommandsMixin",
-    )
-
-    val ALL: Set<String> = SAFE + UNSAFE
+        return body
+            .splitToSequence("\n")
+            .filter { it.startsWith("val ") || it.startsWith("var ") }
+            .any { !it.endsWith("?") }
+    }
 }

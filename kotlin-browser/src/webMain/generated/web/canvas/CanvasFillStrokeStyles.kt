@@ -1,9 +1,14 @@
 // Automatically generated - do not modify!
 
+@file:Suppress(
+    "NON_ABSTRACT_MEMBER_OF_EXTERNAL_INTERFACE",
+)
+
 package web.canvas
 
 import js.core.JsAny
 import js.reflect.JsExternalInheritorsOnly
+import kotlin.js.definedExternally
 
 /* mixin */
 @JsExternalInheritorsOnly
@@ -12,11 +17,15 @@ external interface CanvasFillStrokeStyles {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/fillStyle)
      */
     var fillStyle: JsAny /* string | CanvasGradient | CanvasPattern */
+        get() = definedExternally
+        set(value) = definedExternally
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/strokeStyle)
      */
     var strokeStyle: JsAny /* string | CanvasGradient | CanvasPattern */
+        get() = definedExternally
+        set(value) = definedExternally
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/createConicGradient)
@@ -25,7 +34,7 @@ external interface CanvasFillStrokeStyles {
         startAngle: Double,
         x: Double,
         y: Double,
-    ): CanvasGradient
+    ): CanvasGradient = definedExternally
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/createLinearGradient)
@@ -35,7 +44,7 @@ external interface CanvasFillStrokeStyles {
         y0: Double,
         x1: Double,
         y1: Double,
-    ): CanvasGradient
+    ): CanvasGradient = definedExternally
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/createPattern)
@@ -43,7 +52,7 @@ external interface CanvasFillStrokeStyles {
     fun createPattern(
         image: CanvasImageSource,
         repetition: String?,
-    ): CanvasPattern?
+    ): CanvasPattern? = definedExternally
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/createRadialGradient)
@@ -55,5 +64,5 @@ external interface CanvasFillStrokeStyles {
         x1: Double,
         y1: Double,
         r1: Double,
-    ): CanvasGradient
+    ): CanvasGradient = definedExternally
 }

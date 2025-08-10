@@ -1,8 +1,13 @@
 // Automatically generated - do not modify!
 
+@file:Suppress(
+    "NON_ABSTRACT_MEMBER_OF_EXTERNAL_INTERFACE",
+)
+
 package web.canvas
 
 import js.reflect.JsExternalInheritorsOnly
+import kotlin.js.definedExternally
 
 /* mixin */
 @JsExternalInheritorsOnly
@@ -14,7 +19,7 @@ external interface CanvasDrawImage {
         image: CanvasImageSource,
         dx: Double,
         dy: Double,
-    )
+    ): Unit = definedExternally
 
     fun drawImage(
         image: CanvasImageSource,
@@ -22,7 +27,7 @@ external interface CanvasDrawImage {
         dy: Double,
         dw: Double,
         dh: Double,
-    )
+    ): Unit = definedExternally
 
     fun drawImage(
         image: CanvasImageSource,
@@ -34,5 +39,5 @@ external interface CanvasDrawImage {
         dy: Double,
         dw: Double,
         dh: Double,
-    )
+    ): Unit = definedExternally
 }

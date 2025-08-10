@@ -409,7 +409,7 @@ fun generateKotlinDeclarations(
             if (name == "Locale")
                 add(VIRTUAL_MEMBER_HIDDEN)
 
-            if (name in Mixins.UNSAFE || name == LOCALIZABLE)
+            if (Mixins.isUnsafeMixin(name, body) || name == LOCALIZABLE)
                 add(NON_ABSTRACT_MEMBER_OF_EXTERNAL_INTERFACE)
 
             if (name == "ChildNode"
