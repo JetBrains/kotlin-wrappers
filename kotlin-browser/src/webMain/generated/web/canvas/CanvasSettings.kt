@@ -2,7 +2,11 @@
 
 package web.canvas
 
-sealed external interface CanvasSettings {
+import js.reflect.JsExternalInheritorsOnly
+
+/* mixin */
+@JsExternalInheritorsOnly
+external interface CanvasSettings {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/getContextAttributes)
      */

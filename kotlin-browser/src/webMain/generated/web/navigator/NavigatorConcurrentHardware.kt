@@ -3,8 +3,11 @@
 package web.navigator
 
 import js.core.UInt53
+import js.reflect.JsExternalInheritorsOnly
 
-sealed external interface NavigatorConcurrentHardware {
+/* mixin */
+@JsExternalInheritorsOnly
+external interface NavigatorConcurrentHardware {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/hardwareConcurrency)
      */

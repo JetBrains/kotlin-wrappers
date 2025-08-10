@@ -6,9 +6,12 @@
 
 package web.svg
 
+import js.reflect.JsExternalInheritorsOnly
 import kotlin.js.definedExternally
 
-sealed external interface SVGFitToViewBox {
+/* mixin */
+@JsExternalInheritorsOnly
+external interface SVGFitToViewBox {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGMarkerElement/preserveAspectRatio)
      */

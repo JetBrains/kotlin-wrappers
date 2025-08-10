@@ -2,7 +2,11 @@
 
 package web.canvas
 
-sealed external interface CanvasImageSmoothing {
+import js.reflect.JsExternalInheritorsOnly
+
+/* mixin */
+@JsExternalInheritorsOnly
+external interface CanvasImageSmoothing {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/imageSmoothingEnabled)
      */

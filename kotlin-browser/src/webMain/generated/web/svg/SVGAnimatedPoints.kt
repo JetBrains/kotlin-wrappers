@@ -6,9 +6,12 @@
 
 package web.svg
 
+import js.reflect.JsExternalInheritorsOnly
 import kotlin.js.definedExternally
 
-sealed external interface SVGAnimatedPoints {
+/* mixin */
+@JsExternalInheritorsOnly
+external interface SVGAnimatedPoints {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGPolygonElement/animatedPoints)
      */

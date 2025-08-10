@@ -2,9 +2,12 @@
 
 package web.navigator
 
+import js.reflect.JsExternalInheritorsOnly
 import web.url.URL
 
-sealed external interface NavigatorContentUtils {
+/* mixin */
+@JsExternalInheritorsOnly
+external interface NavigatorContentUtils {
     /**
      * Available only in secure contexts.
      *

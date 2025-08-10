@@ -7,9 +7,12 @@
 package web.canvas
 
 import js.core.JsAny
+import js.reflect.JsExternalInheritorsOnly
 import kotlin.js.definedExternally
 
-sealed external interface CanvasPath {
+/* mixin */
+@JsExternalInheritorsOnly
+external interface CanvasPath {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/arc)
      */

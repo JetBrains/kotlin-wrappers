@@ -2,7 +2,11 @@
 
 package web.navigator
 
-sealed external interface NavigatorCookies {
+import js.reflect.JsExternalInheritorsOnly
+
+/* mixin */
+@JsExternalInheritorsOnly
+external interface NavigatorCookies {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/cookieEnabled)
      */

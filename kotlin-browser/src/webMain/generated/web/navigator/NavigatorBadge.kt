@@ -6,13 +6,16 @@ import js.core.UInt53
 import js.core.Void
 import js.promise.Promise
 import js.promise.await
+import js.reflect.JsExternalInheritorsOnly
 import kotlin.js.JsName
 import kotlin.js.definedExternally
 
 /**
  * Available only in secure contexts.
  */
-sealed external interface NavigatorBadge {
+/* mixin */
+@JsExternalInheritorsOnly
+external interface NavigatorBadge {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/clearAppBadge)
      */

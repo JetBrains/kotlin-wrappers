@@ -2,9 +2,12 @@
 
 package web.canvas
 
+import js.reflect.JsExternalInheritorsOnly
 import web.dom.Element
 
-sealed external interface CanvasUserInterface {
+/* mixin */
+@JsExternalInheritorsOnly
+external interface CanvasUserInterface {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/drawFocusIfNeeded)
      */

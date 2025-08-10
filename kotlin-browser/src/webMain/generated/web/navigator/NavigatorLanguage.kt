@@ -4,8 +4,11 @@ package web.navigator
 
 import js.array.ReadonlyArray
 import js.core.JsString
+import js.reflect.JsExternalInheritorsOnly
 
-sealed external interface NavigatorLanguage {
+/* mixin */
+@JsExternalInheritorsOnly
+external interface NavigatorLanguage {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/language)
      */

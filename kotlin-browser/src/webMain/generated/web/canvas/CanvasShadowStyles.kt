@@ -2,7 +2,11 @@
 
 package web.canvas
 
-sealed external interface CanvasShadowStyles {
+import js.reflect.JsExternalInheritorsOnly
+
+/* mixin */
+@JsExternalInheritorsOnly
+external interface CanvasShadowStyles {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/shadowBlur)
      */

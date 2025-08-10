@@ -2,7 +2,11 @@
 
 package web.navigator
 
-sealed external interface NavigatorPlugins {
+import js.reflect.JsExternalInheritorsOnly
+
+/* mixin */
+@JsExternalInheritorsOnly
+external interface NavigatorPlugins {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/pdfViewerEnabled)
      */

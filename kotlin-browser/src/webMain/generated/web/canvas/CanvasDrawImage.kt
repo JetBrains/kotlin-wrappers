@@ -2,7 +2,11 @@
 
 package web.canvas
 
-sealed external interface CanvasDrawImage {
+import js.reflect.JsExternalInheritorsOnly
+
+/* mixin */
+@JsExternalInheritorsOnly
+external interface CanvasDrawImage {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/drawImage)
      */

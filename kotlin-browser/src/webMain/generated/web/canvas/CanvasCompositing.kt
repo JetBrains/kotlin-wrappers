@@ -2,7 +2,11 @@
 
 package web.canvas
 
-sealed external interface CanvasCompositing {
+import js.reflect.JsExternalInheritorsOnly
+
+/* mixin */
+@JsExternalInheritorsOnly
+external interface CanvasCompositing {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/globalAlpha)
      */

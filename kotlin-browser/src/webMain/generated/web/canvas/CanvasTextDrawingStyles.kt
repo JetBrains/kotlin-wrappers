@@ -2,7 +2,11 @@
 
 package web.canvas
 
-sealed external interface CanvasTextDrawingStyles {
+import js.reflect.JsExternalInheritorsOnly
+
+/* mixin */
+@JsExternalInheritorsOnly
+external interface CanvasTextDrawingStyles {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/direction)
      */

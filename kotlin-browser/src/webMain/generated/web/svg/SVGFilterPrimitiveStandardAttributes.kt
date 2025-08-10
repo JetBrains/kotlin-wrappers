@@ -6,9 +6,12 @@
 
 package web.svg
 
+import js.reflect.JsExternalInheritorsOnly
 import kotlin.js.definedExternally
 
-sealed external interface SVGFilterPrimitiveStandardAttributes {
+/* mixin */
+@JsExternalInheritorsOnly
+external interface SVGFilterPrimitiveStandardAttributes {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFEBlendElement/height)
      */

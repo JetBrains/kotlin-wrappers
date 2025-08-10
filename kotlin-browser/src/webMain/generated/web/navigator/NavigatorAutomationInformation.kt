@@ -2,7 +2,11 @@
 
 package web.navigator
 
-sealed external interface NavigatorAutomationInformation {
+import js.reflect.JsExternalInheritorsOnly
+
+/* mixin */
+@JsExternalInheritorsOnly
+external interface NavigatorAutomationInformation {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/webdriver)
      */

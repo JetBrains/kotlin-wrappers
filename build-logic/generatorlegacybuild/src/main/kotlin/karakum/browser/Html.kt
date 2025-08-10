@@ -1311,6 +1311,12 @@ internal fun convertInterface(
                 name.endsWith("Handlers")
             -> ""
 
+        // TODO: use IDL data instead
+        name.startsWith("Canvas")
+                || name.startsWith("Navigator")
+                || name.startsWith("SVG")
+            -> "/* mixin */\n@JsExternalInheritorsOnly\n"
+
         else -> "sealed"
     }
 

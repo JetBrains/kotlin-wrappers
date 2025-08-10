@@ -6,9 +6,12 @@
 
 package web.svg
 
+import js.reflect.JsExternalInheritorsOnly
 import kotlin.js.definedExternally
 
-sealed external interface SVGURIReference {
+/* mixin */
+@JsExternalInheritorsOnly
+external interface SVGURIReference {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAElement/href)
      */

@@ -2,7 +2,11 @@
 
 package web.navigator
 
-sealed external interface NavigatorID {
+import js.reflect.JsExternalInheritorsOnly
+
+/* mixin */
+@JsExternalInheritorsOnly
+external interface NavigatorID {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/userAgent)
      */

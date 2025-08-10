@@ -3,8 +3,11 @@
 package web.canvas
 
 import js.core.JsAny
+import js.reflect.JsExternalInheritorsOnly
 
-sealed external interface CanvasFillStrokeStyles {
+/* mixin */
+@JsExternalInheritorsOnly
+external interface CanvasFillStrokeStyles {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/fillStyle)
      */
