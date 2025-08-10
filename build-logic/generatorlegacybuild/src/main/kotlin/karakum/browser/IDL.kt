@@ -78,6 +78,18 @@ internal object IDLRegistry {
             .toSet()
     }
 
+    private val mixinInterfaces: Set<String> by lazy {
+        idlData.asSequence()
+            .flatMap { content ->
+                content
+                    .splitToSequence("\ninterface mixin ")
+                    .drop(1)
+                    .map { it.substringBefore("\n") }
+                    .map { it.substringBefore(" ") }
+            }
+            .toSet()
+    }
+
     private fun hasContent(
         memberContent: String,
     ): Set<String> =
@@ -345,5 +357,11 @@ internal object IDLRegistry {
 
             else -> true
         }
+    }
+
+    fun isMixin(
+        name: String,
+    ): Boolean {
+        return name in mixinInterfaces
     }
 }
