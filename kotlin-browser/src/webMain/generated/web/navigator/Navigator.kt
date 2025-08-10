@@ -36,9 +36,8 @@ import kotlin.js.definedExternally
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator)
  */
-sealed /* final */
-external class Navigator
-protected /* private */ constructor() :
+open external class Navigator
+private constructor() :
     NavigatorAutomationInformation,
     NavigatorBadge,
     NavigatorConcurrentHardware,

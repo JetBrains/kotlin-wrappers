@@ -11,9 +11,8 @@ import web.rendering.RenderingContextId
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OffscreenCanvasRenderingContext2D)
  */
-sealed /* final */
-external class OffscreenCanvasRenderingContext2D
-protected /* private */ constructor() :
+open external class OffscreenCanvasRenderingContext2D
+private constructor() :
     CanvasCompositing,
     CanvasDrawImage,
     CanvasDrawPath,
