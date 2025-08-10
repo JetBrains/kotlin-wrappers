@@ -1,14 +1,14 @@
 package web.css.painting
 
-import js.globals.GlobalScope
 import js.reflect.JsClass
+import web.worklets.WorkletGlobalScope
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaintWorkletGlobalScope)
  */
 external class PaintWorkletGlobalScope
 private constructor() :
-    GlobalScope {
+    WorkletGlobalScope {
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaintWorkletGlobalScope/registerPaint)
