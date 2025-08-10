@@ -20,4 +20,3 @@ external class PaintRenderingContext2D :
     CanvasDrawImage,
     CanvasPathDrawingStyles,
     CanvasPath
-
