@@ -5,6 +5,7 @@ import web.worklets.WorkletModule
 import web.worklets.internal.createWorkletModule
 
 @ExperimentalWebApi
+sealed /* final */
 external interface PaintWorkletModule :
     WorkletModule
 

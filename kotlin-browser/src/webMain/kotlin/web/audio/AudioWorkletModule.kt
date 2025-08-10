@@ -3,6 +3,7 @@ package web.audio
 import web.worklets.WorkletModule
 import web.worklets.internal.createWorkletModule
 
+sealed /* final */
 external interface AudioWorkletModule :
     WorkletModule
 
