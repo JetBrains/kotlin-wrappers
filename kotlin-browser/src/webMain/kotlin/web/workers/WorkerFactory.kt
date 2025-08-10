@@ -2,7 +2,8 @@ package web.workers
 
 import kotlinx.coroutines.CoroutineScope
 
-sealed external interface WorkerFactory<T : AbstractWorker> {
+sealed /* final */
+external interface WorkerFactory<T : AbstractWorker> {
     operator fun invoke(): T
 }
 
