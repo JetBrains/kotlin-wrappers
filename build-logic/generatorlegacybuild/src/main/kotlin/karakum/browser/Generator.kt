@@ -422,8 +422,7 @@ fun generateKotlinDeclarations(
             )
                 add(INTERFACE_WITH_SUPERCLASS)
 
-            if (name == "WorkerNavigator"
-                || name == "CompressionStream"
+            if (name == "CompressionStream"
                 || name == "DecompressionStream"
                 || name == "TextEncoderStream"
                 || name == "TextDecoderStream"
