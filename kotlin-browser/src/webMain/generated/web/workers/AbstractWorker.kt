@@ -11,6 +11,7 @@ import web.events.EventHandler
 import web.events.EventTarget
 import kotlin.js.definedExternally
 
+/* mixin */
 external interface AbstractWorker :
     EventTarget {
     /**

@@ -6,6 +6,7 @@ import js.array.ReadonlyArray
 import web.dom.Element
 import kotlin.js.definedExternally
 
+/* mixin */
 external interface ARIAMixin {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/ariaActiveDescendantElement)

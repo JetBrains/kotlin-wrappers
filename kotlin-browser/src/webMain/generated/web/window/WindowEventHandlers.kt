@@ -20,6 +20,7 @@ import web.viewtransition.PageRevealEvent
 import web.viewtransition.PageSwapEvent
 import kotlin.js.definedExternally
 
+/* mixin */
 external interface WindowEventHandlers :
     EventTarget {
     /**

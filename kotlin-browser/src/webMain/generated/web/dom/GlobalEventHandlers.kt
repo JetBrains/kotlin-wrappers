@@ -29,6 +29,7 @@ import web.touch.TouchEvent
 import web.uievents.UIEvent
 import kotlin.js.definedExternally
 
+/* mixin */
 external interface GlobalEventHandlers :
     EventTarget {
     /**

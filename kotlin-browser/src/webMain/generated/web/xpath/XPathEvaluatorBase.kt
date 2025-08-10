@@ -9,6 +9,7 @@ package web.xpath
 import web.dom.Node
 import kotlin.js.definedExternally
 
+/* mixin */
 external interface XPathEvaluatorBase {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/createExpression)

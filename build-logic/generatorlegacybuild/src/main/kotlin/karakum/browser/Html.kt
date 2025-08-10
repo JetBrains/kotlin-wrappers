@@ -1315,7 +1315,7 @@ internal fun convertInterface(
                 || name == "Slottable"
                 || name == "GenericTransformStream"
                 || name.endsWith("Handlers")
-            -> ""
+            -> "/* mixin */\n"
 
         // TODO: use IDL data instead
         name.startsWith("Canvas")
