@@ -1300,18 +1300,18 @@ internal fun convertInterface(
         isClass
             -> "open"
 
-        annotations.startsWith("@") ||
-                name in CSSOM_INTERFACES ||
-                name == "AudioWorkletProcessorImpl" ||
-                name == "AbstractWorker" ||
-                name == "MessageEventTarget" ||
-                name == "FontFaceSource" ||
-                name == "XPathEvaluatorBase" ||
-                name == "ARIAMixin" ||
-                name == "HTMLOrSVGElement" ||
-                name == "DocumentOrShadowRoot" ||
-                name == "Slottable" ||
-                name.endsWith("Handlers")
+        annotations.startsWith("@")
+                || name in CSSOM_INTERFACES
+                || name == "AudioWorkletProcessorImpl"
+                || name == "AbstractWorker"
+                || name == "MessageEventTarget"
+                || name == "FontFaceSource"
+                || name == "XPathEvaluatorBase"
+                || name == "ARIAMixin"
+                || name == "HTMLOrSVGElement"
+                || name == "DocumentOrShadowRoot"
+                || name == "Slottable"
+                || name.endsWith("Handlers")
             -> ""
 
         // TODO: use IDL data instead
