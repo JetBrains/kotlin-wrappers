@@ -11,16 +11,14 @@ internal object Mixins {
         if (name == "GenericTransformStream")
             return false
 
-        // TEMP
-        if (name == "GlobalEventHandlers")
-            return false
-
         if ("fun " in body)
             return true
 
         return body
             .splitToSequence("\n")
             .filter { it.startsWith("val ") || it.startsWith("var ") }
+            /* GlobalEventHandlers */
+            .map { it.substringBefore(" /* ") }
             .any { !it.endsWith("?") }
     }
 }
