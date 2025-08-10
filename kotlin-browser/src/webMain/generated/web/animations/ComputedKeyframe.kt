@@ -2,7 +2,7 @@
 
 package web.animations
 
-sealed external interface ComputedKeyframe {
+external interface ComputedKeyframe {
     var composite: CompositeOperationOrAuto
     var computedOffset: Double
     var easing: String

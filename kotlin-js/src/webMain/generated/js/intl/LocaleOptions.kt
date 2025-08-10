@@ -4,7 +4,7 @@ package js.intl
 
 import kotlin.js.definedExternally
 
-sealed external interface LocaleOptions {
+external interface LocaleOptions {
     /**
      * A string containing the language, and the script and region if available.
      */

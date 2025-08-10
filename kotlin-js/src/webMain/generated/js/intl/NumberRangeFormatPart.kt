@@ -2,7 +2,7 @@
 
 package js.intl
 
-sealed external interface NumberRangeFormatPart :
+external interface NumberRangeFormatPart :
     NumberFormatPart {
     var source: PartSource
 }

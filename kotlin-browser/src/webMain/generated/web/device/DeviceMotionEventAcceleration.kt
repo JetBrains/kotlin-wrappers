@@ -8,7 +8,7 @@ package web.device
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DeviceMotionEventAcceleration)
  */
-sealed external interface DeviceMotionEventAcceleration {
+external interface DeviceMotionEventAcceleration {
     /**
      * The **`x`** read-only property of the DeviceMotionEventAcceleration interface indicates the amount of acceleration that occurred along the X axis in a `DeviceMotionEventAcceleration` object.
      *

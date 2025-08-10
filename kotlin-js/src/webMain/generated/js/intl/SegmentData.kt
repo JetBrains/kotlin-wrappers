@@ -2,7 +2,7 @@
 
 package js.intl
 
-sealed external interface SegmentData {
+external interface SegmentData {
     /**
      * A string containing the segment extracted from the original input string.
      */

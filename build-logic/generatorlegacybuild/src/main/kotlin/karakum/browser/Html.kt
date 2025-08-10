@@ -1300,9 +1300,11 @@ internal fun convertInterface(
         isClass
             -> "open"
 
+        !IDLRegistry.isMixin(name)
+            -> ""
+
         annotations.startsWith("@")
                 || name in CSSOM_INTERFACES
-                || name == "AudioWorkletProcessorImpl"
                 || name == "AbstractWorker"
                 || name == "MessageEventTarget"
                 || name == "FontFaceSource"

@@ -2,7 +2,7 @@
 
 package js.intl
 
-sealed external interface DateTimeRangeFormatPart :
+external interface DateTimeRangeFormatPart :
     DateTimeFormatPart {
     var source: PartSource
 }

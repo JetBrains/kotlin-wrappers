@@ -8,7 +8,7 @@ package web.device
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DeviceMotionEventRotationRate)
  */
-sealed external interface DeviceMotionEventRotationRate {
+external interface DeviceMotionEventRotationRate {
     /**
      * The **`alpha`** read-only property of the DeviceMotionEventRotationRate interface indicates the rate of rotation around the Z axis, in degrees per second.
      *

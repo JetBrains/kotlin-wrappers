@@ -11,7 +11,7 @@ import web.dom.Element
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLCollection)
  */
-sealed external interface HTMLCollectionBase<T : Element> :
+external interface HTMLCollectionBase<T : Element> :
     ArrayLike<T>,
     JsIterable<T> {
     /**

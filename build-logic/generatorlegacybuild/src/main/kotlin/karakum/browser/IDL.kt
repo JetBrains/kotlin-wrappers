@@ -75,6 +75,8 @@ internal object IDLRegistry {
                     .map { it.substringBefore("\n") }
                     .map { it.substringBefore(" ") }
             }
+            .plus("UnderlyingByteSource")
+            .plus("UnderlyingDefaultSource")
             .toSet()
     }
 

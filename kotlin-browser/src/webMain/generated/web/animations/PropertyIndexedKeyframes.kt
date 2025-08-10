@@ -6,7 +6,7 @@ import js.array.ReadonlyArray
 import js.core.JsAny
 import js.core.JsDouble
 
-sealed external interface PropertyIndexedKeyframes {
+external interface PropertyIndexedKeyframes {
     var composite: ReadonlyArray<CompositeOperationOrAuto> /* | CompositeOperationOrAuto */?
     var easing: JsAny /* string | string[] */?
     var offset: ReadonlyArray<JsDouble?> /* | Double */?

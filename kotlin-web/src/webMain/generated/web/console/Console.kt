@@ -12,7 +12,7 @@ import kotlin.js.definedExternally
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/console)
  */
-sealed external interface Console {
+external interface Console {
     /**
      * The **`console.assert()`** static method writes an error message to the console if the assertion is false.
      *
