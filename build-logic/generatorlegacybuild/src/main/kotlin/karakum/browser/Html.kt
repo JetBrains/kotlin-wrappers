@@ -1311,6 +1311,7 @@ internal fun convertInterface(
                 || name == "HTMLOrSVGElement"
                 || name == "DocumentOrShadowRoot"
                 || name == "Slottable"
+                || name == "GenericTransformStream"
                 || name.endsWith("Handlers")
             -> ""
 

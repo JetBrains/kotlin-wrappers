@@ -422,13 +422,6 @@ fun generateKotlinDeclarations(
             )
                 add(INTERFACE_WITH_SUPERCLASS)
 
-            if (name == "CompressionStream"
-                || name == "DecompressionStream"
-                || name == "TextEncoderStream"
-                || name == "TextDecoderStream"
-            )
-                add(SEALED_INHERITOR_IN_DIFFERENT_PACKAGE)
-
             if ("companion object" in body && "sealed external interface" in body)
                 add(NESTED_CLASS_IN_EXTERNAL_INTERFACE)
         }.toTypedArray()

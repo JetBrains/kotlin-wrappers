@@ -2,7 +2,7 @@
 
 package web.streams
 
-sealed external interface GenericTransformStream {
+external interface GenericTransformStream {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CompressionStream/readable)
      */
