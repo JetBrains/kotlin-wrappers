@@ -41,7 +41,17 @@ open external class Worker(
     )
 
     fun postMessage(
+        message: String,
+        transfer: ReadonlyArray<Transferable>,
+    )
+
+    fun postMessage(
         message: JsAny?,
+        options: StructuredSerializeOptions = definedExternally,
+    )
+
+    fun postMessage(
+        message: String,
         options: StructuredSerializeOptions = definedExternally,
     )
 

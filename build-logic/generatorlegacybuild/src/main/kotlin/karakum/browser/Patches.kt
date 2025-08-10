@@ -305,6 +305,7 @@ internal fun String.applyPatches(): String {
                 }
                 .joinToString("\n")
         }
+        .addStrictPostMessageSupport()
         // TEMP
         .replace(
             ", NavigatorCookies, NavigatorID",
@@ -347,6 +348,20 @@ private fun String.patchVideoFrameCallback(): String =
             "requestVideoFrameCallback(callback: VideoFrameRequestCallback): number;",
             "requestVideoFrameCallback(callback: VideoFrameRequestCallback): $VIDEO_FRAME_REQUEST_ID;"
         )
+
+internal fun String.addStrictPostMessageSupport(): String =
+    splitToSequence("\n")
+        .flatMap { line ->
+            if (line.startsWith("    postMessage(message: any")) {
+                sequenceOf(
+                    line,
+                    line.replaceFirst(": any", ": string"),
+                )
+            } else {
+                sequenceOf(line)
+            }
+        }
+        .joinToString("\n")
 
 private fun String.patchCollections(): String {
     var result = this

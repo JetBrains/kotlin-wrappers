@@ -114,6 +114,7 @@ internal fun webWorkerContent(
     definitionsFile
         .readText()
         .replace(", MessageEventTarget<DedicatedWorkerGlobalScope>", ", MessageEventTarget")
+        .addStrictPostMessageSupport()
 
 internal fun serviceWorkerContent(
     definitionsFile: File,
@@ -129,3 +130,4 @@ internal fun serviceWorkerContent(
         .splitUnion("string | URL")
         .splitUnion("(string | URL)[]", "string[] | URL[]")
         .splitUnion("Response | PromiseLike<Response>")
+        .addStrictPostMessageSupport()

@@ -44,6 +44,7 @@ open external class BroadcastChannel(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BroadcastChannel/postMessage)
      */
     fun postMessage(message: JsAny?)
+    fun postMessage(message: String)
 }
 
 /**

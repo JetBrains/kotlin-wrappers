@@ -344,7 +344,18 @@ private constructor() :
     )
 
     fun postMessage(
+        message: String,
+        targetOrigin: String,
+        transfer: ReadonlyArray<Transferable> = definedExternally,
+    )
+
+    fun postMessage(
         message: JsAny?,
+        options: WindowPostMessageOptions = definedExternally,
+    )
+
+    fun postMessage(
+        message: String,
         options: WindowPostMessageOptions = definedExternally,
     )
 
