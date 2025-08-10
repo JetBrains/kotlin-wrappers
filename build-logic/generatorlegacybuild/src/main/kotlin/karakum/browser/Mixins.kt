@@ -47,7 +47,6 @@ internal object Mixins {
         "SVGTests",
         "SVGURIReference",
 
-        "GPUError",
         "GPUObjectBase",
         "GPUPipelineBase",
         "GPUBindingCommandsMixin",
