@@ -2,13 +2,14 @@ package web.workers
 
 import js.coroutines.internal.IsolatedCoroutineScope
 import js.globals.internal.getGlobalScope
-import js.reflect.unsafeCast
+import js.internal.InternalApi
+import js.objects.unsafeJso
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.CoroutineStart
 import kotlinx.coroutines.launch
 
+@InternalApi
 internal fun <T : AbstractWorker, S : WorkerGlobalScope> createWorkerFactory(
-    workerName: String,
     scopeClassName: String,
     block: suspend CoroutineScope.(self: S) -> Unit,
 ): WorkerFactory<T> {
@@ -20,11 +21,5 @@ internal fun <T : AbstractWorker, S : WorkerGlobalScope> createWorkerFactory(
             block = { block(self) },
         )
 
-    return unsafeCast(pluginIntegrationPlaceholder(workerName))
-}
-
-private fun pluginIntegrationPlaceholder(
-    workerName: String,
-): () -> Unit = {
-    error("Missed plugin integration! $workerName factory shouldn't be called directly!")
+    return unsafeJso()
 }
