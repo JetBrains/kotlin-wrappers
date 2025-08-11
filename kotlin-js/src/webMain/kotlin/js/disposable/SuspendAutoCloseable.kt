@@ -10,8 +10,8 @@ fun interface SuspendAutoCloseable {
     suspend fun close()
 }
 
-suspend inline fun <T : SuspendAutoCloseable, R> T.use(
-    block: (T) -> R,
+suspend inline fun <R> SuspendAutoCloseable.use(
+    block: () -> R,
 ): R {
     contract {
         callsInPlace(block, InvocationKind.EXACTLY_ONCE)
@@ -19,7 +19,7 @@ suspend inline fun <T : SuspendAutoCloseable, R> T.use(
 
     var exception: Throwable? = null
     try {
-        return block(this)
+        return block()
     } catch (e: Throwable) {
         exception = e
         throw e
