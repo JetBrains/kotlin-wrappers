@@ -16,7 +16,7 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaintWorkletGlobalScope/registerPaint)
      */
     fun registerPaint(
-        name: String,
+        name: PaintName,
         paintCtor: JsClass<Paint>,
     )
 
