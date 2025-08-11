@@ -23,7 +23,6 @@ internal suspend fun <T : JsAny?> awaitPromiseLike(
     suspendCoroutine(promise::thenTo)
 
 // Used in the compiler plugin
-@InternalApi
 internal suspend fun <T : JsAny?> awaitOptionalPromiseLike(
     promise: PromiseLike<T>?,
 ): T? =

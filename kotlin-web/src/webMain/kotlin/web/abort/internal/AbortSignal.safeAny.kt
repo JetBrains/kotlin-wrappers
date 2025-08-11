@@ -1,7 +1,6 @@
 package web.abort.internal
 
 import js.errors.toJsError
-import js.internal.InternalApi
 import web.abort.AbortController
 import web.abort.AbortSignal
 import web.events.ABORT
@@ -9,7 +8,6 @@ import web.events.Event
 import web.events.EventHandler
 import web.events.addEventHandler
 
-@InternalApi
 internal fun safeAny(
     signal1: AbortSignal?,
     signal2: AbortSignal,

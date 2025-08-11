@@ -23,7 +23,6 @@ fun <T : Abortable> patchAbortOptions(
 }
 
 // Used in the compiler plugin
-@InternalApi
 internal suspend fun <T : JsAny?> awaitPromiseLike(
     promise: PromiseLike<T>,
     controller: AbortController,

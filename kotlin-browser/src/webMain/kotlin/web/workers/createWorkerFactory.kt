@@ -2,13 +2,11 @@ package web.workers
 
 import js.coroutines.internal.IsolatedCoroutineScope
 import js.globals.internal.getGlobalScope
-import js.internal.InternalApi
 import js.objects.unsafeJso
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.CoroutineStart
 import kotlinx.coroutines.launch
 
-@InternalApi
 internal fun <T : AbstractWorker, S : WorkerGlobalScope> createWorkerFactory(
     scopeClassName: String,
     block: suspend CoroutineScope.(self: S) -> Unit,
