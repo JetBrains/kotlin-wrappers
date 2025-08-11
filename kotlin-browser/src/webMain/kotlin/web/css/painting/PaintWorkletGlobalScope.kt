@@ -17,7 +17,7 @@ private constructor() :
      */
     fun registerPaint(
         name: PaintName,
-        paintCtor: JsClass<Paint>,
+        classRef: JsClass<Paint>,
     )
 
     /**
