@@ -4,7 +4,7 @@ import js.core.JsAny
 import js.internal.InternalApi
 import js.iterable.AsyncIteratorLike
 import js.iterable.IteratorResult
-import js.iterable.SuspendableIterator
+import js.iterable.SuspendIterator
 import js.iterable.isYield
 import js.promise.await
 
@@ -12,12 +12,12 @@ import js.promise.await
 @PublishedApi
 internal fun <T : JsAny?> iteratorFromAsyncIteratorLike(
     source: AsyncIteratorLike<T>,
-): SuspendableIterator<T> =
+): SuspendIterator<T> =
     AsyncIteratorAdapter(source)
 
 private class AsyncIteratorAdapter<T : JsAny?>(
     private val source: AsyncIteratorLike<T>,
-) : SuspendableIterator<T> {
+) : SuspendIterator<T> {
     private var lastResult: IteratorResult<T, *>? = null
 
     override suspend fun hasNext(): Boolean {

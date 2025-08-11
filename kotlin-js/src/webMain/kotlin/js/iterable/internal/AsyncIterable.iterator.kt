@@ -3,7 +3,7 @@ package js.iterable.internal
 import js.core.JsAny
 import js.internal.InternalApi
 import js.iterable.AsyncIterable
-import js.iterable.SuspendableIterator
+import js.iterable.SuspendIterator
 import js.iterable.iterator
 import js.symbol.Symbol
 
@@ -11,5 +11,5 @@ import js.symbol.Symbol
 @PublishedApi
 internal fun <T : JsAny?> iteratorFromAsyncIterable(
     source: AsyncIterable<T>,
-): SuspendableIterator<T> =
+): SuspendIterator<T> =
     source[Symbol.asyncIterator]().iterator()

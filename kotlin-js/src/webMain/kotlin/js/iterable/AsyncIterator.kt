@@ -12,5 +12,5 @@ abstract external class AsyncIterator<out T : JsAny?> :
     AsyncIterable<T>,
     AsyncDisposable
 
-inline operator fun <T : JsAny?> AsyncIterator<T>.iterator(): SuspendableIterator<T> =
+inline operator fun <T : JsAny?> AsyncIterator<T>.iterator(): SuspendIterator<T> =
     iteratorFromAsyncIteratorLike(this)

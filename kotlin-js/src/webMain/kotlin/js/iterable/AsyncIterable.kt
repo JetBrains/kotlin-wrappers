@@ -15,5 +15,5 @@ external interface AsyncIterable<out T : JsAny?> {
     ): () -> AsyncIterator<T> = definedExternally
 }
 
-inline operator fun <T : JsAny?> AsyncIterable<T>.iterator(): SuspendableIterator<T> =
+inline operator fun <T : JsAny?> AsyncIterable<T>.iterator(): SuspendIterator<T> =
     iteratorFromAsyncIterable(this)
