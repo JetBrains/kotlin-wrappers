@@ -17,7 +17,7 @@ external interface AsyncCloseableDisposable
 internal suspend fun AsyncCloseableDisposable.close() {
     val record = unsafeCast<ReadonlyRecord<JsAny, JsAny?>>(this)
 
-    val dispose = sequenceOf(
+    val dispose = listOfNotNull(
         Symbol.asyncDispose,
         "close".toJsString(),
         "cancel".toJsString(),
