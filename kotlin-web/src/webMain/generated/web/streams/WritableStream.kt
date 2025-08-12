@@ -4,6 +4,7 @@ package web.streams
 
 import js.core.JsAny
 import js.core.Void
+import js.disposable.internal.AsyncCloseableDisposable
 import js.errors.JsError
 import js.promise.Promise
 import js.promise.await
@@ -19,7 +20,8 @@ import kotlin.js.definedExternally
 open external class WritableStream<W : JsAny?>(
     underlyingSink: UnderlyingSink<W> = definedExternally,
     strategy: QueuingStrategy<W> = definedExternally,
-) : Transferable {
+) : Transferable,
+    AsyncCloseableDisposable {
     /**
      * The **`locked`** read-only property of the WritableStream interface returns a boolean indicating whether the `WritableStream` is locked to a writer.
      *

@@ -5,6 +5,7 @@ package web.streams
 import js.array.Tuple2
 import js.core.JsAny
 import js.core.Void
+import js.disposable.internal.AsyncCloseableDisposable
 import js.errors.JsError
 import js.iterable.AsyncIterable
 import js.iterable.AsyncIterator
@@ -27,7 +28,8 @@ open external class ReadableStream<R : JsAny?>(
     underlyingSource: UnderlyingByteSource,
     strategy: QueuingStrategy<R> = definedExternally,
 ) : Transferable,
-    AsyncIterable<R> {
+    AsyncIterable<R>,
+    AsyncCloseableDisposable {
     constructor(
         underlyingSource: UnderlyingDefaultSource<R>,
         strategy: QueuingStrategy<R> = definedExternally,

@@ -941,8 +941,15 @@ internal fun convertInterface(
         }
 
     when (name) {
-        "ElementInternals" -> declaration += ",\n$VALIDATION_TARGET"
-        in WELL_KNOWN_FORM_CONTROL -> declaration += ",\n$FORM_CONTROL"
+        "ElementInternals",
+            -> declaration += ",\n$VALIDATION_TARGET"
+
+        in WELL_KNOWN_FORM_CONTROL,
+            -> declaration += ",\n$FORM_CONTROL"
+
+        "ReadableStream",
+        "WritableStream",
+            -> declaration += ",\nAsyncCloseableDisposable"
     }
 
     val hideForEach = when {
