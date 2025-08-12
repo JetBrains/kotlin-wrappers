@@ -6,11 +6,13 @@ import kotlin.contracts.contract
 /**
  * Suspend analog of [AutoCloseable]
  */
-fun interface SuspendAutoCloseable {
+@PublishedApi
+internal fun interface SuspendAutoCloseable {
     suspend fun close()
 }
 
-suspend inline fun <R> SuspendAutoCloseable.use(
+@PublishedApi
+internal suspend inline fun <R> SuspendAutoCloseable.use(
     block: () -> R,
 ): R {
     contract {
