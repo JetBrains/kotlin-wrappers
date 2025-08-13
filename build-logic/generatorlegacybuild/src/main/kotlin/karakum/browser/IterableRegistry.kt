@@ -70,6 +70,7 @@ internal object IterableRegistry {
         }
 
         return result
+            .replace("<string, AudioParam>", "<AudioParamName, AudioParam>")
             .replace("string", "String")
             .replace(" any>", " JsAny?>")
     }
