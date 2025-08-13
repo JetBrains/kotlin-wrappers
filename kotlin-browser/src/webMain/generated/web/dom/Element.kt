@@ -141,7 +141,7 @@ private constructor() :
     var onfullscreenerror: EventHandler<Event, Element, Node>?
 
     /**
-     * The **`outerHTML`** attribute of the Element DOM interface gets the serialized HTML fragment describing the element including its descendants.
+     * The **`outerHTML`** attribute of the Element interface gets or sets the HTML or XML markup of the element and its descendants, omitting any shadow tree in both cases.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/outerHTML)
      */
