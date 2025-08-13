@@ -1372,8 +1372,8 @@ internal fun convertInterface(
     ).filter { it.isNotEmpty() }
         .joinToString("\n")
 
-    if (memberSource == "new (options: any): AudioWorkletProcessorImpl")
-        body = "typealias $name = JsClass<out AudioWorkletProcessorImpl>"
+    if (memberSource == "new (options: any): AudioWorkletProcessor")
+        body = "typealias $name = JsClass<out AudioWorkletProcessor>"
 
     when (name) {
         "MediaList",
@@ -2331,11 +2331,11 @@ private fun getFunctionParameters(
             "readableStrategy: QueuingStrategy<O> = definedExternally",
         )
 
-        "inputs: Float32Array[][], outputs: Float32Array[][], parameters: Record<string, Float32Array>",
+        "inputs: Float32Array[][], outputs: Float32Array[][], parameters: Record<AudioParamName, Float32Array>",
             -> listOf(
             "inputs: ReadonlyArray<ReadonlyArray<Float32Array<*>>>",
             "outputs: ReadonlyArray<ReadonlyArray<Float32Array<*>>>",
-            "parameters: ReadonlyRecord<String, Float32Array<*>>",
+            "parameters: ReadonlyRecord<AudioParamName, Float32Array<*>>",
         )
 
         "action: (item: AudioParam) => void",

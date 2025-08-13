@@ -4,4 +4,4 @@ package web.audio
 
 import js.reflect.JsClass
 
-typealias AudioWorkletProcessorConstructor = JsClass<out AudioWorkletProcessorImpl>
+typealias AudioWorkletProcessorConstructor = JsClass<out AudioWorkletProcessor>

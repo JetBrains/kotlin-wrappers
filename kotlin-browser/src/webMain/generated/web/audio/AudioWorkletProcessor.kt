@@ -2,6 +2,9 @@
 
 package web.audio
 
+import js.array.ReadonlyArray
+import js.objects.ReadonlyRecord
+import js.typedarrays.Float32Array
 import web.messaging.MessagePort
 
 /**
@@ -9,12 +12,16 @@ import web.messaging.MessagePort
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioWorkletProcessor)
  */
-open external class AudioWorkletProcessor
-private constructor() {
+abstract external class AudioWorkletProcessor {
     /**
      * The read-only **`port`** property of the AudioWorkletProcessor interface returns the associated MessagePort.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioWorkletProcessor/port)
      */
     val port: MessagePort
+    abstract fun process(
+        inputs: ReadonlyArray<ReadonlyArray<Float32Array<*>>>,
+        outputs: ReadonlyArray<ReadonlyArray<Float32Array<*>>>,
+        parameters: ReadonlyRecord<AudioParamName, Float32Array<*>>,
+    ): Boolean
 }

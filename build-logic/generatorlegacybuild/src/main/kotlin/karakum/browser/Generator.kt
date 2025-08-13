@@ -417,7 +417,6 @@ fun generateKotlinDeclarations(
                 || name == "ParentNode"
                 || name == "AbstractWorker"
                 || name == "MessageEventTarget"
-                || name == "AudioWorkletProcessorImpl"
                 || name == "GlobalEventHandlers"
                 || name == "WindowEventHandlers"
             )
