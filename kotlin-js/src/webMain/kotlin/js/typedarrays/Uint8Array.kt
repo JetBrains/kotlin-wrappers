@@ -3,6 +3,7 @@ package js.typedarrays
 import js.array.ReadonlyArray
 import js.buffer.ArrayBuffer
 import js.buffer.ArrayBufferLike
+import js.core.JsPrimitives.toUByte
 import js.core.JsUByte
 import js.iterable.JsIterable
 import js.serialization.Serializable
@@ -49,4 +50,7 @@ open external class Uint8Array<B : ArrayBufferLike>(
 inline fun Uint8Array<*>.toUint8Array(): Uint8Array<ArrayBuffer> =
     Uint8Array(this)
 
-expect fun Uint8Array<*>.toUByteArray(): UByteArray
+fun Uint8Array<*>.toUByteArray(): UByteArray =
+    UByteArray(size = length) { index ->
+        get(index).toUByte()
+    }
