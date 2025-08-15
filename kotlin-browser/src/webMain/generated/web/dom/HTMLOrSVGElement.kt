@@ -26,7 +26,7 @@ external interface HTMLOrSVGElement {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/nonce)
      */
-    var nonce: String?
+    var nonce: String
         get() = definedExternally
         set(value) = definedExternally
 
