@@ -378,7 +378,7 @@ fun generateKotlinDeclarations(
             .writeCode(fileContent(annotations, "", body, pkg))
     }
 
-    val aliases = domAliases()
+    val aliases = listOf<ConversionResult>()
         .plus(htmlFactories(content))
         .plus(htmlDeclarations(content))
         .plus(htmlUnions())
