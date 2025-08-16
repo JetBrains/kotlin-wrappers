@@ -142,6 +142,19 @@ suspend fun main() {
             ::resolveChildProcessOptionsName,
             ::resolveClassMethodParameterItemName,
             ::resolveFsOptionsName,
+            ::resolveFunctionReturnTypeNullableUnionName,
+            ::resolveFunctionReturnTypePromisePayloadName,
+            ::resolveHttpStatusCodesName,
+            ::resolveInterfaceMethodParameterItemName,
+            ::resolveInterfaceMethodReturnTypePromisePayloadName,
+            ::resolveInterfacePropertyIntersectionPropertyName,
+            ::resolveInterfacePropertyItemName,
+            ::resolveInterfacePropertyItemPropertyName,
+            ::resolveInterfacePropertyNullableCallbackParameterName,
+            ::resolveInterfacePropertyNullableUnionName,
+            ::resolveInterfacePropertyPropertyItemName,
+            ::resolveInterfacePropertyPropertyItemPropertyItemName,
+            ::resolveInterfacePropertyPropertyName,
         ))
         inheritanceModifiers = manyOf(values = jsInheritanceModifiers + arrayOf())
         varianceModifiers = manyOf(values = jsVarianceModifiers + arrayOf())
