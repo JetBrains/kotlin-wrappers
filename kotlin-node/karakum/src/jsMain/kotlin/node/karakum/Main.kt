@@ -43,7 +43,7 @@ suspend fun main() {
         cwd,
     )
 
-    val jsNameResolvers = loadExtensions<NameResolver>(
+    loadExtensions<NameResolver>(
         "Name Resolver",
         arrayOf("kotlin/nameResolvers/*.js"),
         cwd,
@@ -137,7 +137,7 @@ suspend fun main() {
         )
         injections = manyOf(values = jsInjections + arrayOf())
         annotations = manyOf(values = jsAnnotations + arrayOf())
-        nameResolvers = manyOf(values = jsNameResolvers + arrayOf(
+        nameResolvers = manyOf(
             ::resolveBufferConstantsName,
             ::resolveChildProcessOptionsName,
             ::resolveClassMethodParameterItemName,
@@ -160,7 +160,7 @@ suspend fun main() {
             ::resolveParsedResultsPropertyName,
             ::resolvePerformanceObserverOptionsName,
             ::resolveV8OptionsName,
-        ))
+        )
         inheritanceModifiers = manyOf(values = jsInheritanceModifiers + arrayOf())
         varianceModifiers = manyOf(values = jsVarianceModifiers + arrayOf())
 
