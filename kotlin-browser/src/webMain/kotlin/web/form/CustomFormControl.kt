@@ -2,32 +2,31 @@ package web.form
 
 import js.core.JsAny
 import web.html.HTMLFormElement
+import kotlin.js.definedExternally
 
 external interface CustomFormControl :
     FormControl {
 
-    interface WithFormCallbacks :
-        WithFormAssociatedCallback,
-        WithFormDisabledCallback,
-        WithFormResetCallback,
-        WithFormStateRestoreCallback
+    val formAssociatedCallback: FormAssociatedCallback?
+        get() = definedExternally
 
-    interface WithFormAssociatedCallback {
-        fun formAssociatedCallback(form: HTMLFormElement?)
-    }
+    val formDisabledCallback: FormDisabledCallback?
+        get() = definedExternally
 
-    interface WithFormDisabledCallback {
-        fun formDisabledCallback(disabled: Boolean)
-    }
+    val formResetCallback: FormResetCallback?
+        get() = definedExternally
 
-    interface WithFormResetCallback {
-        fun formResetCallback()
-    }
-
-    interface WithFormStateRestoreCallback {
-        fun formStateRestoreCallback(
-            state: JsAny?, /* File | string | FormData */
-            mode: FormStateRestoreMode,
-        )
-    }
+    val formStateRestoreCallback: FormStateRestoreCallback?
+        get() = definedExternally
 }
+
+typealias FormAssociatedCallback = (form: HTMLFormElement?) -> Unit
+
+typealias FormDisabledCallback = (disabled: Boolean) -> Unit
+
+typealias FormResetCallback = () -> Unit
+
+typealias FormStateRestoreCallback = (
+    state: JsAny?, /* File | string | FormData */
+    mode: FormStateRestoreMode,
+) -> Unit
