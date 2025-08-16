@@ -632,7 +632,6 @@ internal fun htmlDeclarations(
     return interfaces
         .plus(formTypes())
         .plus(popoverTypes())
-        .plus(customElementTypes())
         .plus(
             ConversionResult(
                 RENDERING_CONTEXT_ID,
