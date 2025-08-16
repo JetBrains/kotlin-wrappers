@@ -5,8 +5,6 @@ import karakum.common.CommonUnionConverter.unionBody
 internal const val VALIDATION_TARGET = "ValidationTarget"
 internal const val FORM_CONTROL = "FormControl"
 
-internal const val CUSTOM_FORM_CONTROL = "CustomFormControl"
-
 internal const val FORM_STATE_RESTORE_MODE = "FormStateRestoreMode"
 
 internal val WELL_KNOWN_FORM_CONTROL = listOf(
@@ -17,16 +15,6 @@ internal val WELL_KNOWN_FORM_CONTROL = listOf(
     "HTMLOutputElement",
     "HTMLSelectElement",
     "HTMLTextAreaElement",
-)
-
-private val CALLBACKS = mapOf(
-    "formAssociatedCallback" to "(form: HTMLFormElement?)",
-    "formDisabledCallback" to "(disabled: Boolean)",
-    "formResetCallback" to "()",
-    "formStateRestoreCallback" to """(
-        state: JsAny? /* File | string | FormData */,
-        mode: $FORM_STATE_RESTORE_MODE,
-    )""",
 )
 
 private val VALIDATION_TARGET_MEMBERS = """
@@ -90,39 +78,4 @@ internal fun formTypes(): Sequence<ConversionResult> =
             ),
             pkg = "web.form"
         ),
-        CustomFormControl(),
     )
-
-private fun CustomFormControl(): ConversionResult {
-    val mainInterface = """
-        interface WithFormCallbacks:
-            ${CALLBACKS.keys.joinToString(",\n") { interfaceName(it) }}
-        """.trimIndent()
-
-    val interfaces = CALLBACKS.entries.joinToString("\n") { (methodName, methodBody) ->
-        """
-        interface ${interfaceName(methodName)} {
-            fun ${methodName}${methodBody}
-        }
-        """.trimIndent()
-    }
-
-    val body = """
-    external interface $CUSTOM_FORM_CONTROL:
-        $FORM_CONTROL {
-
-        $mainInterface
-
-        $interfaces
-    }
-    """.trimIndent()
-
-    return ConversionResult(
-        name = CUSTOM_FORM_CONTROL,
-        body = body,
-        pkg = "web.form"
-    )
-}
-
-internal fun interfaceName(methodName: String): String =
-    """With${methodName.replaceFirstChar(Char::uppercase)}"""
