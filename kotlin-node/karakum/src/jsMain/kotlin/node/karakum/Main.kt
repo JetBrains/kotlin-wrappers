@@ -140,6 +140,8 @@ suspend fun main() {
         nameResolvers = manyOf(values = jsNameResolvers + arrayOf(
             ::resolveBufferConstantsName,
             ::resolveChildProcessOptionsName,
+            ::resolveClassMethodParameterItemName,
+            ::resolveFsOptionsName,
         ))
         inheritanceModifiers = manyOf(values = jsInheritanceModifiers + arrayOf())
         varianceModifiers = manyOf(values = jsVarianceModifiers + arrayOf())
