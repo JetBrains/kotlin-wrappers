@@ -42,8 +42,8 @@ fun resolveClassMethodParameterItemName(node: Node, context: Context) = nullable
     ensure(isClassDeclaration(classNode))
     var parentName = ensureNotNull(classNode.name).text
     if (
-        parentName === "Writable"
-        || parentName === "Duplex"
+        parentName == "Writable"
+        || parentName == "Duplex"
     ) {
         parentName = "Writable"
     }

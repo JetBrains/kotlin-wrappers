@@ -155,6 +155,11 @@ suspend fun main() {
             ::resolveInterfacePropertyPropertyItemName,
             ::resolveInterfacePropertyPropertyItemPropertyItemName,
             ::resolveInterfacePropertyPropertyName,
+            ::resolveMIMETypeInputName,
+            ::resolveOsOptionsName,
+            ::resolveParsedResultsPropertyName,
+            ::resolvePerformanceObserverOptionsName,
+            ::resolveV8OptionsName,
         ))
         inheritanceModifiers = manyOf(values = jsInheritanceModifiers + arrayOf())
         varianceModifiers = manyOf(values = jsVarianceModifiers + arrayOf())
