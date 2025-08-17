@@ -1,3 +1,5 @@
+@file:JsQualifier("Uint8Array")
+
 package js.typedarrays
 
 import js.array.MutableArrayLike
@@ -10,12 +12,11 @@ import js.collections.ListLike
 import js.core.JsAny
 import js.core.JsInt
 import js.iterable.JsIterator
-import js.typedarrays.internal.castOrConvertToByteArray
 import kotlin.js.JsName
+import kotlin.js.JsQualifier
 import kotlin.js.definedExternally
 
-// language=javascript
-@JsName("(Object.getPrototypeOf(Uint8Array))")
+@JsName("__proto__")
 sealed external class TypedArray<
         S : TypedArray<S, R, B, T>,
         R : TypedArray<R, R, ArrayBuffer, T>,
@@ -364,45 +365,4 @@ sealed external class TypedArray<
     override fun keys(): JsIterator<JsInt>
 
     override fun values(): JsIterator<T>
-}
-
-private fun <A : TypedArray<*, *, *, *>> A.toBuffer(): ArrayBufferLike =
-    buffer.slice(
-        begin = byteOffset,
-        end = byteOffset + byteLength,
-    )
-
-fun <A : TypedArray<*, *, *, *>> A.toInt8Array(): Int8Array<ArrayBuffer> {
-    if (this is Int8Array<*>)
-        return Int8Array(this)
-
-    return when (val sourceBuffer = toBuffer()) {
-        is ArrayBuffer -> Int8Array(sourceBuffer)
-        else -> Int8Array(sourceBuffer).slice()
-    }
-}
-
-fun <A : TypedArray<*, *, *, *>> A.toUint8Array(): Uint8Array<ArrayBuffer> {
-    if (this is Uint8Array<*>)
-        return Uint8Array(this)
-
-    return when (val sourceBuffer = toBuffer()) {
-        is ArrayBuffer -> Uint8Array(sourceBuffer)
-        else -> Uint8Array(sourceBuffer).slice()
-    }
-}
-
-fun <A : TypedArray<*, *, *, *>> A.toByteArray(): ByteArray =
-    toInt8Array().castOrConvertToByteArray()
-
-fun <A : TypedArray<*, *, *, *>> A.toUByteArray(): UByteArray =
-    toByteArray().asUByteArray()
-
-internal fun <A : TypedArray<*, *, ArrayBuffer, T>, T : JsAny /* Number? */> A.fill(
-    getValue: (index: Int) -> T,
-): A {
-    for (index in 0 until length) {
-        this[index] = getValue(index)
-    }
-    return this
 }

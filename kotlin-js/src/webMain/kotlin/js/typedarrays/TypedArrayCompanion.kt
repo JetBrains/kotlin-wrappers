@@ -1,12 +1,14 @@
+@file:JsQualifier("Uint8Array.__proto__")
+
 package js.typedarrays
 
 import js.array.ArrayLike
 import js.buffer.ArrayBuffer
 import js.core.JsAny
 import kotlin.js.JsName
+import kotlin.js.JsQualifier
 
-// language=javascript
-@JsName("(Object.getPrototypeOf(Uint8Array).constructor)")
+@JsName("constructor")
 sealed external class TypedArrayCompanion<S : TypedArray<S, S, ArrayBuffer, T>, T : JsAny /* Number? */> {
     val BYTES_PER_ELEMENT: Int
 
