@@ -6,5 +6,5 @@ sealed external interface AudioWorkletProcessorName
 
 inline fun AudioWorkletProcessorName(
     value: String,
-): AudioParamName =
+): AudioWorkletProcessorName =
     unsafeCast(value)
