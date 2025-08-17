@@ -2,14 +2,13 @@ package web.audio
 
 import js.array.ReadonlyArray
 import js.reflect.JsClass
-import js.reflect.JsClassReference
 import js.reflect.unsafeCast
 
-open class AudioWorkletProcessorReference<T : AudioWorkletProcessor>
+open class AudioWorkletProcessorReference
 protected constructor(
-    override val value: JsClass<T>,
+    val value: JsClass<out AudioWorkletProcessor>,
     parameterDescriptors: ReadonlyArray<AudioParamDescriptor>? = null,
-) : JsClassReference<T> {
+) {
     init {
         val static = unsafeCast<AudioWorkletProcessorStatic>(value)
 

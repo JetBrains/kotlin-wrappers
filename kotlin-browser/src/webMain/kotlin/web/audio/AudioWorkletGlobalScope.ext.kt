@@ -2,7 +2,7 @@ package web.audio
 
 inline fun AudioWorkletGlobalScope.registerProcessor(
     name: AudioWorkletProcessorName,
-    reference: AudioWorkletProcessorReference<*>,
+    reference: AudioWorkletProcessorReference,
 ) {
     registerProcessor(name, reference.value)
 }
