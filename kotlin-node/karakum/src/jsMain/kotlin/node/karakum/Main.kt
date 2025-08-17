@@ -137,7 +137,8 @@ suspend fun main() {
             convertWebStreamsQualifiedName
         )
         injections = manyOf(values = arrayOf(
-            DuplexMembersInjection()
+            DuplexMembersInjection(),
+            EventInjection(),
         ) + jsInjections)
         annotations = manyOf(values = jsAnnotations + arrayOf())
         nameResolvers = manyOf(
