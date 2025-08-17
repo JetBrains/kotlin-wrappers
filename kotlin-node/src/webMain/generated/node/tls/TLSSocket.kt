@@ -289,7 +289,7 @@ external class TLSSocket : node.net.Socket {
      * @since v13.10.0, v12.17.0
      * @param length number of bytes to retrieve from keying material
      * @param label an application specific label, typically this will be a value from the [IANA Exporter Label
-         * Registry](https://www.iana.org/assignments/tls-parameters/tls-parameters.xhtml#exporter-labels).
+     * Registry](https://www.iana.org/assignments/tls-parameters/tls-parameters.xhtml#exporter-labels).
      * @param context Optionally provide a context.
      * @return requested bytes of the keying material
      */

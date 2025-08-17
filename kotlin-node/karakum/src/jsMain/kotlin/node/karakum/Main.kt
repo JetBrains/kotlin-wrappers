@@ -10,6 +10,7 @@ import io.github.sgrishchenko.karakum.util.manyOf
 import io.github.sgrishchenko.karakum.util.ruleOf
 import js.import.import
 import js.objects.recordOf
+import node.karakum.injections.*
 import node.karakum.nameResolvers.*
 import node.karakum.plugins.*
 import node.path.path
@@ -135,7 +136,9 @@ suspend fun main() {
             convertWebCryptoQualifiedName,
             convertWebStreamsQualifiedName
         )
-        injections = manyOf(values = jsInjections + arrayOf())
+        injections = manyOf(values = arrayOf(
+            DuplexMembersInjection()
+        ) + jsInjections)
         annotations = manyOf(values = jsAnnotations + arrayOf())
         nameResolvers = manyOf(
             ::resolveBufferConstantsName,

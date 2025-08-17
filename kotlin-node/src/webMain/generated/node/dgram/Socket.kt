@@ -608,7 +608,7 @@ external class Socket : EventEmitter {
 
     /**
      * _All references to scope in this section are referring to [IPv6 Zone Indices](https://en.wikipedia.org/wiki/IPv6_address#Scoped_literal_IPv6_addresses), which are defined by [RFC
-         * 4007](https://tools.ietf.org/html/rfc4007). In string form, an IP_
+     * 4007](https://tools.ietf.org/html/rfc4007). In string form, an IP_
      * _with a scope index is written as `'IP%scope'` where scope is an interface name_
      * _or interface number._
      *
