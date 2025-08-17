@@ -16,7 +16,7 @@ import kotlin.js.definedExternally
  */
 open external class AudioWorkletNode(
     context: BaseAudioContext,
-    name: String,
+    name: AudioWorkletProcessorName,
     options: AudioWorkletNodeOptions = definedExternally,
 ) : AudioNode {
     /**

@@ -322,6 +322,10 @@ internal fun String.applyPatches(): String {
                 "postTask<T>(callback: SchedulerPostTaskCallback<T>, options?: SchedulerPostTaskOptions): Promise<T>;",
             )
         }
+        .replace(
+            "new(context: BaseAudioContext, name: string, options?: AudioWorkletNodeOptions): AudioWorkletNode;",
+            "new(context: BaseAudioContext, name: AudioWorkletProcessorName, options?: AudioWorkletNodeOptions): AudioWorkletNode;",
+        )
 }
 
 internal val DOM_GEOMETRY_ALIASES = listOf(

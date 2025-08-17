@@ -40,7 +40,7 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioWorkletGlobalScope/registerProcessor)
      */
     fun registerProcessor(
-        name: String,
+        name: AudioWorkletProcessorName,
         processorCtor: AudioWorkletProcessorConstructor,
     )
 }

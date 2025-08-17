@@ -19,6 +19,12 @@ internal fun audioWorkletDeclarations(
 ): Sequence<ConversionResult> {
     val content = definitionsFile.readText()
         .mergeAudioWorkletProcessorTypes()
+        .patchInterface("AudioWorkletGlobalScope") {
+            it.replace(
+                "  registerProcessor(name: string, ",
+                "  registerProcessor(name: AudioWorkletProcessorName, ",
+            )
+        }
 
     return Regex("""interface .+? \{[\s\S]*?\n}""")
         .findAll(content)
