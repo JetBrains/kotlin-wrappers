@@ -26,39 +26,15 @@ suspend fun main() {
 
     val cwd = process.cwd()
 
-    val jsInjections = loadExtensions(
-        "Injection",
-        arrayOf("kotlin/injections/*.js"),
-        cwd
-    ) { injection ->
-        if (injection is Function<*>) {
-            createInjection(injection.unsafeCast<SimpleInjection>())
-        } else {
-            injection.unsafeCast<Injection>()
-        }
-    }
-
     val jsAnnotations = loadExtensions<Annotation>(
         "Annotation",
         arrayOf("kotlin/annotations/*.js"),
         cwd,
     )
 
-    loadExtensions<NameResolver>(
-        "Name Resolver",
-        arrayOf("kotlin/nameResolvers/*.js"),
-        cwd,
-    )
-
     val jsInheritanceModifiers = loadExtensions<InheritanceModifier>(
         "Inheritance Modifier",
         arrayOf("kotlin/inheritanceModifiers/*.js"),
-        cwd,
-    )
-
-    val jsVarianceModifiers = loadExtensions<VarianceModifier>(
-        "Variance Modifier",
-        arrayOf("kotlin/varianceModifiers/*.js"),
         cwd,
     )
 
@@ -136,7 +112,7 @@ suspend fun main() {
             convertWebCryptoQualifiedName,
             convertWebStreamsQualifiedName
         )
-        injections = manyOf(values = arrayOf(
+        injections = manyOf(
             DuplexMembersInjection(),
             EventInjection(),
             EventMapInjection(),
@@ -148,7 +124,7 @@ suspend fun main() {
             WritableMembersInjection(),
 
             injectAgentOptionsPort,
-        ) + jsInjections)
+        )
         annotations = manyOf(values = jsAnnotations + arrayOf())
         nameResolvers = manyOf(
             ::resolveBufferConstantsName,
@@ -175,7 +151,6 @@ suspend fun main() {
             ::resolveV8OptionsName,
         )
         inheritanceModifiers = manyOf(values = jsInheritanceModifiers + arrayOf())
-        varianceModifiers = manyOf(values = jsVarianceModifiers + arrayOf())
 
         input = manyOf("$nodePackage/**/*.d.ts")
         ignoreInput = manyOf(
