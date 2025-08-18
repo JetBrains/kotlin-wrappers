@@ -13,8 +13,6 @@ open external class PresentationConnectionAvailableEvent(
     init: PresentationConnectionAvailableEventInit = definedExternally,
 ) : Event {
     /**
-     * The **`clipboardData`** property of the PresentationConnectionAvailableEvent interface holds a DataTransfer object, which can be used to:
-     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PresentationConnectionAvailableEvent/clipboardData)
      */
     val connection: PresentationConnection
