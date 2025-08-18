@@ -9,6 +9,7 @@ import js.core.JsAny
 import js.core.JsString
 import js.core.UInt53
 import web.blob.Blob
+import web.buffer.BinaryType
 import web.events.Event
 import web.events.EventHandler
 import web.events.EventInstance

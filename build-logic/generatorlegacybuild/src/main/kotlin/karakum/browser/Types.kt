@@ -125,7 +125,7 @@ private val PKG_MAP = mapOf(
 
     "WakeLockType" to "web.wakelock",
 
-    "BinaryType" to "web.sockets",
+    "BinaryType" to "web.buffer",
 
     "AutoKeyword" to "web.vtt",
 

@@ -22,6 +22,7 @@ object Includes {
         "web/assembly",
         "web/blob",
         "web/broadcast",
+        "web/buffer",
         "web/compression",
         "web/console",
         "web/crypto",
