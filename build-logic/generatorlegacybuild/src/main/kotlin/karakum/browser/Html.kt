@@ -1224,6 +1224,12 @@ internal fun convertInterface(
              */
             @ExperimentalWebApi
             val keyboard: Keyboard
+
+            /**
+             * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/presentation)
+             */
+            @ExperimentalWebApi
+            val presentation: Presentation
             """.trimIndent()
 
             else -> {

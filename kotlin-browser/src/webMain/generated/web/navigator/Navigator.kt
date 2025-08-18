@@ -22,6 +22,7 @@ import web.mediasession.MediaSession
 import web.midi.MIDIAccess
 import web.midi.MIDIOptions
 import web.permissions.Permissions
+import web.presentation.Presentation
 import web.serviceworker.ServiceWorkerContainer
 import web.share.ShareData
 import web.url.URL
@@ -212,6 +213,12 @@ private constructor() :
      */
     @ExperimentalWebApi
     val keyboard: Keyboard
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/presentation)
+     */
+    @ExperimentalWebApi
+    val presentation: Presentation
 }
 
 /**
