@@ -142,6 +142,9 @@ suspend fun main() {
             EventMapInjection(),
             FsStatsFsMembersInjection(),
             FsStatsMembersInjection(),
+            ModuleInjection(),
+            ReadableMembersInjection(),
+            WritableMembersInjection(),
         ) + jsInjections)
         annotations = manyOf(values = jsAnnotations + arrayOf())
         nameResolvers = manyOf(

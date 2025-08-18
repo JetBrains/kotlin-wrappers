@@ -1,54 +1,54 @@
 package node.karakum.injections
 
-import io.github.sgrishchenko.karakum.extension.Context
-import io.github.sgrishchenko.karakum.extension.GeneratedFile
-import io.github.sgrishchenko.karakum.extension.Injection
-import io.github.sgrishchenko.karakum.extension.InjectionContext
-import io.github.sgrishchenko.karakum.extension.InjectionType
-import io.github.sgrishchenko.karakum.extension.Render
-import io.github.sgrishchenko.karakum.extension.ifPresent
+import io.github.sgrishchenko.karakum.extension.*
 import io.github.sgrishchenko.karakum.extension.plugins.ParameterDeclarationStrategy
 import io.github.sgrishchenko.karakum.extension.plugins.ParameterDeclarationsConfiguration
 import io.github.sgrishchenko.karakum.extension.plugins.convertParameterDeclarations
-import io.github.sgrishchenko.karakum.extension.renderNullable
 import io.github.sgrishchenko.karakum.util.getParentOrNull
 import io.github.sgrishchenko.karakum.util.getSourceFileOrNull
+import node.karakum.util.Raise
 import node.karakum.util.impure
 import node.karakum.util.nullable
-import typescript.Node
-import typescript.SyntaxKind
-import typescript.asArray
-import typescript.isClassDeclaration
-import typescript.isInterfaceDeclaration
-import typescript.isMethodSignature
-import typescript.isPropertySignature
+import typescript.*
 
-class FsStatsMembersInjection : Injection {
-    private val statsBaseNodes = mutableListOf<Node>()
+class WritableMembersInjection : Injection {
+    private val writableStreamMemberNodes = mutableListOf<Node>()
 
     override fun setup(context: Context) = Unit
 
     override fun traverse(node: Node, context: Context) = impure {
         val sourceFileName = ensureNotNull(node.getSourceFileOrNull()).fileName
-        ensure(sourceFileName.endsWith("fs.d.ts"))
+        ensure(sourceFileName.endsWith("globals.d.ts"))
 
         nullable {
             ensure(isMethodSignature(node))
 
+            val name = ensureNotNull(node.name)
+            ensure(isIdentifier(name))
+            ensure(
+                name.text == "write"
+                        || (name.text == "end" && node.parameters.asArray().size > 1)
+            )
+
             val interfaceNode = ensureNotNull(node.getParentOrNull())
             ensure(isInterfaceDeclaration(interfaceNode))
-            ensure(interfaceNode.name.text == "StatsBase")
+            ensure(interfaceNode.name.text == "WritableStream")
 
-            statsBaseNodes += node
+            writableStreamMemberNodes += node
         } ?: nullable {
             ensure(isPropertySignature(node))
 
+            val name = ensureNotNull(node.name)
+            ensure(isIdentifier(name))
+            ensure(name.text == "writable")
+
             val interfaceNode = ensureNotNull(node.getParentOrNull())
             ensure(isInterfaceDeclaration(interfaceNode))
-            ensure(interfaceNode.name.text == "StatsBase")
+            ensure(interfaceNode.name.text == "WritableStream")
 
-            statsBaseNodes += node
+            writableStreamMemberNodes += node
         }
+
     }
 
     override fun render(node: Node, context: Context, next: Render<Node>) = null
@@ -57,31 +57,17 @@ class FsStatsMembersInjection : Injection {
         ensure(context.type == InjectionType.MEMBER)
 
         val sourceFileName = ensureNotNull(node.getSourceFileOrNull()).fileName
-        ensure(sourceFileName.endsWith("fs.d.ts"))
+        ensure(sourceFileName.endsWith("stream.d.ts"))
 
         ensure(isClassDeclaration(node))
-        ensure(node.name?.text == "Stats")
+        ensure(node.name?.text == "Writable")
 
-        statsBaseNodes
+        writableStreamMemberNodes
             .mapNotNull { member ->
                 nullable {
                     ensure(isPropertySignature(member))
 
-                    val readonly = member.modifiers?.asArray()?.find { it.kind == SyntaxKind.ReadonlyKeyword }
-
-                    val modifier = if (readonly != null) "val " else "var "
-
-                    val name = render(member.name)
-
-                    val isOptional = member.questionToken != null
-
-                    var type = renderNullable(member.type, isOptional, context, render)
-
-                    if (type == "T") {
-                        type = "Double"
-                    }
-
-                    "override ${modifier}${name}: $type"
+                    "override ${render(member)}"
                 } ?: nullable {
                     ensure(isMethodSignature(member))
 

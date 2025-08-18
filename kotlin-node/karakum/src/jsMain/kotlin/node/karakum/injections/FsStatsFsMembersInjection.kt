@@ -11,7 +11,7 @@ import node.karakum.util.nullable
 import typescript.*
 
 class FsStatsFsMembersInjection : Injection {
-    val statsFsBaseNodes = mutableListOf<Node>()
+    private val statsFsBaseNodes = mutableListOf<Node>()
 
     override fun setup(context: Context) = Unit
 
@@ -86,7 +86,6 @@ class FsStatsFsMembersInjection : Injection {
                             defaultValue = "",
                             template = { parameters, _ ->
                                 "override fun ${ifPresent(typeParameters) { "<${it}> " }}${name}(${parameters})${ifPresent(returnType) { ": $it" }}"
-
                             }
                         )
                     )
