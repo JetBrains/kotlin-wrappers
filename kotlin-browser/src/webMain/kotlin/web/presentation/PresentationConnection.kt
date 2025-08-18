@@ -4,13 +4,13 @@ import js.buffer.ArrayBuffer
 import js.buffer.ArrayBufferView
 import js.core.JsAny
 import web.blob.Blob
+import web.buffer.BinaryType
 import web.events.Event
 import web.events.EventHandler
 import web.events.EventInstance
 import web.events.EventTarget
 import web.experimental.ExperimentalWebApi
 import web.messaging.MessageEvent
-import web.sockets.BinaryType
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PresentationConnection)
