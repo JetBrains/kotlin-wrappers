@@ -6,7 +6,6 @@ import io.github.sgrishchenko.karakum.extension.plugins.ParameterDeclarationsCon
 import io.github.sgrishchenko.karakum.extension.plugins.convertParameterDeclarations
 import io.github.sgrishchenko.karakum.util.getParentOrNull
 import io.github.sgrishchenko.karakum.util.getSourceFileOrNull
-import node.karakum.util.Raise
 import node.karakum.util.impure
 import node.karakum.util.nullable
 import typescript.*

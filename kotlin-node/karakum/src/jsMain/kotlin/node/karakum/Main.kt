@@ -144,7 +144,10 @@ suspend fun main() {
             FsStatsMembersInjection(),
             ModuleInjection(),
             ReadableMembersInjection(),
+            TracingChannelSubscribersInjection(),
             WritableMembersInjection(),
+
+            injectAgentOptionsPort,
         ) + jsInjections)
         annotations = manyOf(values = jsAnnotations + arrayOf())
         nameResolvers = manyOf(
