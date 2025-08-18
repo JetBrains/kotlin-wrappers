@@ -5,13 +5,13 @@ import js.buffer.ArrayBufferLike
 import js.core.JsAny
 import js.typedarrays.internal.castOrConvertToByteArray
 
-private fun <A : TypedArray<*, *, *, *>> A.toBuffer(): ArrayBufferLike =
+private fun TypedArray<*, *, *, *>.toBuffer(): ArrayBufferLike =
     buffer.slice(
         begin = byteOffset,
         end = byteOffset + byteLength,
     )
 
-fun <A : TypedArray<*, *, *, *>> A.toInt8Array(): Int8Array<ArrayBuffer> {
+fun TypedArray<*, *, *, *>.toInt8Array(): Int8Array<ArrayBuffer> {
     if (this is Int8Array<*>)
         return Int8Array(this)
 
@@ -21,7 +21,7 @@ fun <A : TypedArray<*, *, *, *>> A.toInt8Array(): Int8Array<ArrayBuffer> {
     }
 }
 
-fun <A : TypedArray<*, *, *, *>> A.toUint8Array(): Uint8Array<ArrayBuffer> {
+fun TypedArray<*, *, *, *>.toUint8Array(): Uint8Array<ArrayBuffer> {
     if (this is Uint8Array<*>)
         return Uint8Array(this)
 
@@ -31,10 +31,10 @@ fun <A : TypedArray<*, *, *, *>> A.toUint8Array(): Uint8Array<ArrayBuffer> {
     }
 }
 
-fun <A : TypedArray<*, *, *, *>> A.toByteArray(): ByteArray =
+fun TypedArray<*, *, *, *>.toByteArray(): ByteArray =
     toInt8Array().castOrConvertToByteArray()
 
-fun <A : TypedArray<*, *, *, *>> A.toUByteArray(): UByteArray =
+fun TypedArray<*, *, *, *>.toUByteArray(): UByteArray =
     toByteArray().asUByteArray()
 
 internal fun <A : TypedArray<*, *, ArrayBuffer, T>, T : JsAny /* Number? */> A.fill(
