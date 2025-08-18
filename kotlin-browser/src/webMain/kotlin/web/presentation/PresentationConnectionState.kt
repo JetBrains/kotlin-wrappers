@@ -6,18 +6,18 @@ package web.presentation
 
 import js.reflect.unsafeCast
 
-sealed external interface PresentationStyle {
+sealed external interface PresentationConnectionState {
     companion object
 }
 
-inline val PresentationStyle.Companion.connecting: PresentationStyle
+inline val PresentationConnectionState.Companion.connecting: PresentationConnectionState
     get() = unsafeCast("connecting")
 
-inline val PresentationStyle.Companion.connected: PresentationStyle
+inline val PresentationConnectionState.Companion.connected: PresentationConnectionState
     get() = unsafeCast("connected")
 
-inline val PresentationStyle.Companion.closed: PresentationStyle
+inline val PresentationConnectionState.Companion.closed: PresentationConnectionState
     get() = unsafeCast("closed")
 
-inline val PresentationStyle.Companion.terminated: PresentationStyle
+inline val PresentationConnectionState.Companion.terminated: PresentationConnectionState
     get() = unsafeCast("terminated")
