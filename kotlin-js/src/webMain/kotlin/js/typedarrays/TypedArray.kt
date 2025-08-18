@@ -21,7 +21,7 @@ sealed external class TypedArray<
         S : TypedArray<S, R, B, T>,
         R : TypedArray<R, R, ArrayBuffer, T>,
         B : ArrayBufferLike,
-        T : JsAny, /* Number? */
+        T : JsAny,
         > :
     ArrayBufferView<B>,
     MutableArrayLike<T>,

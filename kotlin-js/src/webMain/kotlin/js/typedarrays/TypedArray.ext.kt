@@ -37,7 +37,7 @@ fun TypedArray<*, *, *, *>.toByteArray(): ByteArray =
 fun TypedArray<*, *, *, *>.toUByteArray(): UByteArray =
     toByteArray().asUByteArray()
 
-internal fun <A : TypedArray<*, *, ArrayBuffer, T>, T : JsAny /* Number? */> A.fill(
+internal fun <A : TypedArray<*, *, ArrayBuffer, T>, T : JsAny> A.fill(
     getValue: (index: Int) -> T,
 ): A {
     for (index in 0 until length) {

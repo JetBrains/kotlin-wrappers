@@ -9,7 +9,7 @@ import kotlin.js.JsName
 import kotlin.js.JsQualifier
 
 @JsName("constructor")
-sealed external class TypedArrayCompanion<S : TypedArray<S, S, ArrayBuffer, T>, T : JsAny /* Number? */> {
+sealed external class TypedArrayCompanion<S : TypedArray<S, S, ArrayBuffer, T>, T : JsAny> {
     val BYTES_PER_ELEMENT: Int
 
     fun of(
