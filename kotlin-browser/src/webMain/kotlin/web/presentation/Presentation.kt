@@ -13,5 +13,5 @@ private constructor() {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Presentation/receiver)
      */
-    val receiver: PresentationRequest?
+    val receiver: PresentationReceiver?
 }
