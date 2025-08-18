@@ -13,7 +13,7 @@ open external class PresentationConnectionAvailableEvent(
     init: PresentationConnectionAvailableEventInit = definedExternally,
 ) : Event {
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PresentationConnectionAvailableEvent/clipboardData)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PresentationConnectionAvailableEvent/connection)
      */
     val connection: PresentationConnection
 
