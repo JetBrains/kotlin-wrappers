@@ -140,6 +140,8 @@ suspend fun main() {
             DuplexMembersInjection(),
             EventInjection(),
             EventMapInjection(),
+            FsStatsFsMembersInjection(),
+            FsStatsMembersInjection(),
         ) + jsInjections)
         annotations = manyOf(values = jsAnnotations + arrayOf())
         nameResolvers = manyOf(
