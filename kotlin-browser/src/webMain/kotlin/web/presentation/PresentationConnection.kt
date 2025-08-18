@@ -8,12 +8,14 @@ import web.events.Event
 import web.events.EventHandler
 import web.events.EventInstance
 import web.events.EventTarget
+import web.experimental.ExperimentalWebApi
 import web.messaging.MessageEvent
 import web.sockets.BinaryType
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PresentationConnection)
  */
+@ExperimentalWebApi
 open external class PresentationConnection
 private constructor() :
     EventTarget {
@@ -94,24 +96,28 @@ private constructor() :
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PresentationConnection/connect_event)
  */
+@ExperimentalWebApi
 inline val <C : PresentationConnection> C.connectEvent: EventInstance<Event, C, C>
     get() = EventInstance(this, "connect")
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PresentationConnection/close_event)
  */
+@ExperimentalWebApi
 inline val <C : PresentationConnection> C.closeEvent: EventInstance<PresentationConnectionCloseEvent, C, C>
     get() = EventInstance(this, "close")
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PresentationConnection/terminate_event)
  */
+@ExperimentalWebApi
 inline val <C : PresentationConnection> C.terminateEvent: EventInstance<Event, C, C>
     get() = EventInstance(this, "terminate")
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PresentationConnection/message_event)
  */
+@ExperimentalWebApi
 inline val <C : PresentationConnection> C.messageEvent: EventInstance<MessageEvent<JsAny>, C, C>
     get() = EventInstance(this, "message")
 

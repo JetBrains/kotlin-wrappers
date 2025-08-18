@@ -4,10 +4,12 @@ import js.array.ReadonlyArray
 import web.events.EventHandler
 import web.events.EventInstance
 import web.events.EventTarget
+import web.experimental.ExperimentalWebApi
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PresentationConnectionList)
  */
+@ExperimentalWebApi
 open external class PresentationConnectionList
 private constructor() :
     EventTarget {
@@ -26,5 +28,6 @@ private constructor() :
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PresentationConnectionList/connectionavailable_event)
  */
+@ExperimentalWebApi
 inline val <C : PresentationConnectionList> C.connectionAvailableEvent: EventInstance<PresentationConnectionAvailableEvent, C, C>
     get() = EventInstance(this, "connectionavailable")
