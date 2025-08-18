@@ -18,7 +18,7 @@ private constructor() :
     val connections: ReadonlyArray<PresentationConnection>
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PresentationConnectionList/onconnectionavailable)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PresentationConnectionList/connectionavailable_event)
      */
     var onconnectionavailable: EventHandler<PresentationConnectionAvailableEvent, PresentationConnectionList, PresentationConnectionList>?
 }

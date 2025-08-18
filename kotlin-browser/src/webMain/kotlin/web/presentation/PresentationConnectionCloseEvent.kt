@@ -18,7 +18,7 @@ open external class PresentationConnectionCloseEvent(
     val reason: PresentationConnectionCloseReason
 
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PresentationConnectionCloseEvent/reason)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PresentationConnectionCloseEvent/message)
      */
     val message: String
 
