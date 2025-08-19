@@ -14,7 +14,7 @@ import typescript.isInterfaceDeclaration
 import typescript.isPropertyAccessExpression
 
 fun annotateHttpsServer(node: Node, context: AnnotationContext) = nullable {
-    val sourceFileName = Raise.ensureNotNull(node.getSourceFileOrNull()).fileName
+    val sourceFileName = ensureNotNull(node.getSourceFileOrNull()).fileName
 
     ensure(sourceFileName.endsWith("https.d.ts"))
 
@@ -37,7 +37,7 @@ fun annotateHttpsServer(node: Node, context: AnnotationContext) = nullable {
         ensure(isIdentifier(expressionName))
         ensure(expressionName.text == "Server")
 
-        val heritageClause = Raise.ensureNotNull(node.getParentOrNull())
+        val heritageClause = ensureNotNull(node.getParentOrNull())
         ensure(isHeritageClause(heritageClause))
 
         val interfaceNode = ensureNotNull(heritageClause.getParentOrNull())

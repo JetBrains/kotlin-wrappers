@@ -11,6 +11,7 @@ import io.github.sgrishchenko.karakum.util.ruleOf
 import js.import.import
 import js.objects.recordOf
 import node.karakum.annotations.*
+import node.karakum.inheritanceModifiers.*
 import node.karakum.injections.*
 import node.karakum.nameResolvers.*
 import node.karakum.plugins.*
@@ -33,7 +34,7 @@ suspend fun main() {
         cwd,
     )
 
-    val jsInheritanceModifiers = loadExtensions<InheritanceModifier>(
+    loadExtensions<InheritanceModifier>(
         "Inheritance Modifier",
         arrayOf("kotlin/inheritanceModifiers/*.js"),
         cwd,
@@ -159,7 +160,12 @@ suspend fun main() {
             ::resolvePerformanceObserverOptionsName,
             ::resolveV8OptionsName,
         )
-        inheritanceModifiers = manyOf(values = jsInheritanceModifiers + arrayOf())
+        inheritanceModifiers = manyOf(values = /*jsInheritanceModifiers + */arrayOf(
+            ::modifyClassInheritance,
+            ::modifyInterfaceInheritance,
+            ::modifyMethodInheritance,
+            ::modifyPropertyInheritance,
+        ))
 
         input = manyOf("$nodePackage/**/*.d.ts")
         ignoreInput = manyOf(

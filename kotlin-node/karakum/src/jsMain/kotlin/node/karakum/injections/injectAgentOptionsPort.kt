@@ -11,7 +11,7 @@ val injectAgentOptionsPort = createInjection { node, context, _ ->
     nullable {
         ensure(context.type == InjectionType.MEMBER)
 
-        val sourceFileName = Raise.ensureNotNull(node.getSourceFileOrNull()).fileName
+        val sourceFileName = ensureNotNull(node.getSourceFileOrNull()).fileName
         ensure(sourceFileName.endsWith("https.d.ts"))
 
         ensure(isInterfaceDeclaration(node))

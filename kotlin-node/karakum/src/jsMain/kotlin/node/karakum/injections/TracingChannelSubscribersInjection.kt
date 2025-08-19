@@ -22,7 +22,7 @@ class TracingChannelSubscribersInjection : Injection {
     override fun traverse(node: Node, context: Context) = Unit
 
     override fun render(node: Node, context: Context, next: Render<Node>) = nullable {
-        val sourceFileName = Raise.ensureNotNull(node.getSourceFileOrNull()).fileName
+        val sourceFileName = ensureNotNull(node.getSourceFileOrNull()).fileName
         ensure(sourceFileName.endsWith("diagnostics_channel.d.ts"))
 
         ensure(isTypeReferenceNode(node))
@@ -47,7 +47,7 @@ class TracingChannelSubscribersInjection : Injection {
     override fun inject(node: Node, context: InjectionContext, render: Render<Node>) = nullable {
         ensure(context.type == InjectionType.MEMBER)
 
-        val sourceFileName = Raise.ensureNotNull(node.getSourceFileOrNull()).fileName
+        val sourceFileName = ensureNotNull(node.getSourceFileOrNull()).fileName
         ensure(sourceFileName.endsWith("diagnostics_channel.d.ts"))
 
         ensure(isIntersectionTypeNode(node))
