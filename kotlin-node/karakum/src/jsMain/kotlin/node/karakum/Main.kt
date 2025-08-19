@@ -10,6 +10,7 @@ import io.github.sgrishchenko.karakum.util.manyOf
 import io.github.sgrishchenko.karakum.util.ruleOf
 import js.import.import
 import js.objects.recordOf
+import node.karakum.annotations.*
 import node.karakum.injections.*
 import node.karakum.nameResolvers.*
 import node.karakum.plugins.*
@@ -125,7 +126,15 @@ suspend fun main() {
 
             injectAgentOptionsPort,
         )
-        annotations = manyOf(values = jsAnnotations + arrayOf())
+        annotations = manyOf(values = jsAnnotations + arrayOf(
+            ::annotateConflictingEntityNames,
+            ::annotateDuplex,
+            ::annotateForceVarOverrides,
+            ::annotateHttpsServer,
+            ::annotateInterfaceWithSuperclass,
+            ::annotateJsPlainObject,
+            ::annotateUnusedTypealiasParameter,
+        ))
         nameResolvers = manyOf(
             ::resolveBufferConstantsName,
             ::resolveChildProcessOptionsName,
