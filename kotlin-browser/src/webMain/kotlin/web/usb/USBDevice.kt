@@ -5,6 +5,7 @@ import js.buffer.BufferSource
 import js.core.JsUInt
 import js.core.Void
 import js.promise.Promise
+import js.promise.await
 import web.experimental.ExperimentalWebApi
 import kotlin.js.JsName
 import kotlin.js.definedExternally
@@ -214,4 +215,192 @@ private constructor() {
      */
     @JsName("reset")
     fun resetAsync(): Promise<Void>
+}
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/USBDevice/open)
+ */
+@ExperimentalWebApi
+suspend inline fun USBDevice.open() {
+    openAsync().await()
+}
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/USBDevice/close)
+ */
+@ExperimentalWebApi
+suspend inline fun USBDevice.close() {
+    closeAsync().await()
+}
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/USBDevice/forget)
+ */
+@ExperimentalWebApi
+suspend inline fun USBDevice.forget() {
+    forgetAsync().await()
+}
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/USBDevice/selectConfiguration)
+ */
+@ExperimentalWebApi
+suspend inline fun USBDevice.selectConfiguration(configurationValue: Short /* unsigned byte */) {
+    selectConfigurationAsync(
+        configurationValue = configurationValue,
+    ).await()
+}
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/USBDevice/claimInterface)
+ */
+@ExperimentalWebApi
+suspend inline fun USBDevice.claimInterface(interfaceNumber: Short /* unsigned byte */) {
+    claimInterfaceAsync(
+        interfaceNumber = interfaceNumber,
+    ).await()
+}
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/USBDevice/releaseInterface)
+ */
+@ExperimentalWebApi
+suspend inline fun USBDevice.releaseInterface(interfaceNumber: Short /* unsigned byte */) {
+    releaseInterfaceAsync(
+        interfaceNumber = interfaceNumber,
+    ).await()
+}
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/USBDevice/selectAlternateInterface)
+ */
+@ExperimentalWebApi
+suspend inline fun USBDevice.selectAlternateInterface(
+    interfaceNumber: Short, /* unsigned byte */
+    alternateSetting: Short, /* unsigned byte */
+) {
+    selectAlternateInterfaceAsync(
+        interfaceNumber = interfaceNumber,
+        alternateSetting = alternateSetting,
+    ).await()
+}
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/USBDevice/controlTransferIn)
+ */
+@ExperimentalWebApi
+suspend inline fun USBDevice.controlTransferIn(
+    setup: USBControlTransferParameters,
+    length: Short, /* unsigned short */
+): USBInTransferResult {
+    return controlTransferInAsync(
+        setup = setup,
+        length = length,
+    ).await()
+}
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/USBDevice/controlTransferOut)
+ */
+@ExperimentalWebApi
+suspend inline fun USBDevice.controlTransferOut(
+    setup: USBControlTransferParameters,
+): USBOutTransferResult {
+    return controlTransferOutAsync(
+        setup = setup,
+    ).await()
+}
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/USBDevice/controlTransferOut)
+ */
+@ExperimentalWebApi
+suspend inline fun USBDevice.controlTransferOut(
+    setup: USBControlTransferParameters,
+    data: BufferSource,
+): USBOutTransferResult {
+    return controlTransferOutAsync(
+        setup = setup,
+        data = data,
+    ).await()
+}
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/USBDevice/clearHalt)
+ */
+@ExperimentalWebApi
+suspend inline fun USBDevice.clearHalt(
+    direction: USBDirection,
+    endpointNumber: Short, /* unsigned byte */
+) {
+    clearHaltAsync(
+        direction = direction,
+        endpointNumber = endpointNumber,
+    ).await()
+}
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/USBDevice/transferIn)
+ */
+@ExperimentalWebApi
+suspend inline fun USBDevice.transferIn(
+    endpointNumber: Short, /* unsigned byte */
+    length: Short, /* unsigned short */
+): USBInTransferResult {
+    return transferInAsync(
+        endpointNumber = endpointNumber,
+        length = length,
+    ).await()
+}
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/USBDevice/transferOut)
+ */
+@ExperimentalWebApi
+suspend inline fun USBDevice.transferOut(
+    endpointNumber: Short, /* unsigned byte */
+    data: BufferSource,
+): USBOutTransferResult {
+    return transferOutAsync(
+        endpointNumber = endpointNumber,
+        data = data,
+    ).await()
+}
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/USBDevice/isochronousTransferIn)
+ */
+@ExperimentalWebApi
+suspend inline fun USBDevice.isochronousTransferIn(
+    endpointNumber: Short, /* unsigned byte */
+    packetLengths: ReadonlyArray<JsUInt>,
+): USBIsochronousInTransferResult {
+    return isochronousTransferInAsync(
+        endpointNumber = endpointNumber,
+        packetLengths = packetLengths,
+    ).await()
+}
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/USBDevice/isochronousTransferOut)
+ */
+@ExperimentalWebApi
+suspend inline fun USBDevice.isochronousTransferOut(
+    endpointNumber: Short, /* unsigned byte */
+    data: BufferSource,
+    packetLengths: ReadonlyArray<JsUInt>,
+): USBIsochronousOutTransferResult {
+    return isochronousTransferOutAsync(
+        endpointNumber = endpointNumber,
+        data = data,
+        packetLengths = packetLengths,
+    ).await()
+}
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/USBDevice/reset)
+ */
+@ExperimentalWebApi
+suspend inline fun USBDevice.reset() {
+    resetAsync().await()
 }
