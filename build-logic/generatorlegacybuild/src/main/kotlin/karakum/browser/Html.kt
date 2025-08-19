@@ -1230,6 +1230,12 @@ internal fun convertInterface(
              */
             @ExperimentalWebApi
             val presentation: Presentation
+
+            /**
+             * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/usb)
+             */
+            @ExperimentalWebApi
+            val usb: USB
             """.trimIndent()
 
             else -> {
