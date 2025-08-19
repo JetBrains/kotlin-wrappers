@@ -265,7 +265,7 @@ internal fun kotlinType(
             }
 
     if (type.startsWith("() => "))
-        return "() -> ${kotlinType(type.removePrefix("() => "))}"
+        return "() -> ${kotlinType(type.removePrefix("() => "), name)}"
 
     if (type.endsWith(" | undefined") && type.indexOf("|") == type.lastIndexOf("|")) {
         return kotlinType(type.removeSuffix(" | undefined"), name) + "?"

@@ -14,4 +14,5 @@ external interface Retryer<TData> {
     val continueRetry: () -> Unit
     val canStart: () -> Boolean
     val start: () -> Promise<TData>
+    val status: () -> QueryStatus /* 'pending' | 'resolved' | 'rejected' */
 }
