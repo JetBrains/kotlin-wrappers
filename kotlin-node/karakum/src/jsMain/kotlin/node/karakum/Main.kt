@@ -3,8 +3,6 @@ package node.karakum
 import io.github.sgrishchenko.karakum.configuration.ConflictResolutionStrategy
 import io.github.sgrishchenko.karakum.configuration.Granularity
 import io.github.sgrishchenko.karakum.configuration.NamespaceStrategy
-import io.github.sgrishchenko.karakum.configuration.loadExtensions
-import io.github.sgrishchenko.karakum.extension.*
 import io.github.sgrishchenko.karakum.generate
 import io.github.sgrishchenko.karakum.util.manyOf
 import io.github.sgrishchenko.karakum.util.ruleOf
@@ -25,20 +23,6 @@ suspend fun main() {
         .let { path.dirname(it) }
 
     val outputPath = process.argv[2]
-
-    val cwd = process.cwd()
-
-    val jsAnnotations = loadExtensions<Annotation>(
-        "Annotation",
-        arrayOf("kotlin/annotations/*.js"),
-        cwd,
-    )
-
-    loadExtensions<InheritanceModifier>(
-        "Inheritance Modifier",
-        arrayOf("kotlin/inheritanceModifiers/*.js"),
-        cwd,
-    )
 
     generate {
         plugins = manyOf(
@@ -127,7 +111,7 @@ suspend fun main() {
 
             injectAgentOptionsPort,
         )
-        annotations = manyOf(values = jsAnnotations + arrayOf(
+        annotations = manyOf(
             ::annotateConflictingEntityNames,
             ::annotateDuplex,
             ::annotateForceVarOverrides,
@@ -135,7 +119,7 @@ suspend fun main() {
             ::annotateInterfaceWithSuperclass,
             ::annotateJsPlainObject,
             ::annotateUnusedTypealiasParameter,
-        ))
+        )
         nameResolvers = manyOf(
             ::resolveBufferConstantsName,
             ::resolveChildProcessOptionsName,
@@ -160,12 +144,12 @@ suspend fun main() {
             ::resolvePerformanceObserverOptionsName,
             ::resolveV8OptionsName,
         )
-        inheritanceModifiers = manyOf(values = /*jsInheritanceModifiers + */arrayOf(
+        inheritanceModifiers = manyOf(
             ::modifyClassInheritance,
             ::modifyInterfaceInheritance,
             ::modifyMethodInheritance,
             ::modifyPropertyInheritance,
-        ))
+        )
 
         input = manyOf("$nodePackage/**/*.d.ts")
         ignoreInput = manyOf(
