@@ -1238,6 +1238,15 @@ internal fun convertInterface(
             val usb: USB
             """.trimIndent()
 
+            "WorkerNavigator",
+                -> result + "\n" + """
+            /**
+             * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/usb)
+             */
+            @ExperimentalWebApi
+            val usb: USB
+            """.trimIndent()
+
             else -> {
                 if (abortable) {
                     result.replace("var signal: AbortSignal?", "override var signal: AbortSignal?")

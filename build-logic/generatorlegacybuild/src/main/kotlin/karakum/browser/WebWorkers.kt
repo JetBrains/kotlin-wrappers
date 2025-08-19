@@ -126,6 +126,11 @@ internal fun serviceWorkerContent(
             """ReadonlyArray<T["type"] extends "window" ? WindowClient : Client>""",
             "ReadonlyArray<Client /* | WindowClient */>"
         )
+        // TEMP
+        .replace(
+            ", NavigatorConcurrentHardware, NavigatorID",
+            ", NavigatorConcurrentHardware, NavigatorGPU, NavigatorID",
+        )
         .splitUnion("string | string[]")
         .splitUnion("string | URL")
         .splitUnion("(string | URL)[]", "string[] | URL[]")
