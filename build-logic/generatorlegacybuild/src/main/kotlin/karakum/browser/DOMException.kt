@@ -38,10 +38,12 @@ private fun parseErrorName(
 
     val name = nameSource.substringBefore(" {{")
         .removeSurrounding("`")
+        // QuotaExceededError
+        .removeSurrounding("{{domxref(\"", "\")}}")
 
     val description = descriptionSource
-        .replace("""{{ domxref("Range") }}""", "`Range`")
-        .replace("""{{ domxref("Document") }}""", "`Document`")
+        .replace("""{{ domxref("Range") }}""", "[Range]")
+        .replace("""{{ domxref("Document") }}""", "[Document]")
         .substringBefore(". (Legacy code ")
         .substringBefore(" (No legacy code ")
 

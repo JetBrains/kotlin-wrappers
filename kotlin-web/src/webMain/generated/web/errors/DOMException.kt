@@ -32,7 +32,7 @@ open external class DOMException(
 }
 
 /**
- * The index is not in the allowed range. For example, this can be thrown by the `Range` object
+ * The index is not in the allowed range. For example, this can be thrown by the [Range] object
  */
 inline val DOMException.Companion.IndexSizeError: JsErrorName
     get() = unsafeCast("IndexSizeError")
@@ -44,7 +44,7 @@ inline val DOMException.Companion.HierarchyRequestError: JsErrorName
     get() = unsafeCast("HierarchyRequestError")
 
 /**
- * The object is in the wrong `Document`
+ * The object is in the wrong [Document]
  */
 inline val DOMException.Companion.WrongDocumentError: JsErrorName
     get() = unsafeCast("WrongDocumentError")
@@ -74,16 +74,16 @@ inline val DOMException.Companion.NotSupportedError: JsErrorName
     get() = unsafeCast("NotSupportedError")
 
 /**
- * The object is in an invalid state
- */
-inline val DOMException.Companion.InvalidStateError: JsErrorName
-    get() = unsafeCast("InvalidStateError")
-
-/**
  * The attribute is in use
  */
 inline val DOMException.Companion.InUseAttributeError: JsErrorName
     get() = unsafeCast("InUseAttributeError")
+
+/**
+ * The object is in an invalid state
+ */
+inline val DOMException.Companion.InvalidStateError: JsErrorName
+    get() = unsafeCast("InvalidStateError")
 
 /**
  * The string did not match the expected pattern
