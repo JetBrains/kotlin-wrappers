@@ -18,6 +18,7 @@ private val modules = setOf(
     "Profiler",
     "Runtime",
     "Schema",
+    "Target",
 )
 
 val convertInspectorQualifiedName = createPlugin { node, _, render ->

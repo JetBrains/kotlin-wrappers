@@ -9,6 +9,7 @@ import typescript.isIdentifier
 import typescript.isModuleDeclaration
 import typescript.isSourceFile
 
+// TODO: consider removing
 val convertTopLevelGlobals = createPlugin { node, context, render ->
     nullable {
         val sourceFileName = ensureNotNull(node.getSourceFileOrNull()).fileName

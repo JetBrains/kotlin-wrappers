@@ -281,7 +281,6 @@ suspend fun main() {
             "**/querystring/decode.kt",
             "**/querystring/encode.kt",
             "**/readline/createInterface.kt",
-            "**/stream/internal.kt",
             "**/stream/promises.kt",
             "**/stream/consumers/consumers.kt",
             "**/test/FunctionPropertyNames.kt",
@@ -319,10 +318,10 @@ suspend fun main() {
             "(.+)" to "node:$1",
             "node:node/" to "node:",
             "node:node:" to "node:",
-            "assert(#assert)?" to "assert/strict",
+            "node:assert(#assert)?" to "node:assert/strict",
             "events#EventEmitter" to "events",
             "module#Module" to "module",
-            "stream#internal" to "stream"
+            // TODO: fix JsQualifier
         )
         packageNameMapper = recordOf(
             "promises/(.+)\\.kt" to "$1Async.kt",
@@ -420,35 +419,10 @@ suspend fun main() {
             "^stream/stream" to "node/stream",
             "^stream" to "node/stream",
 
-            "^node/test/Test.kt" to "node/test/Test.class.kt",
+            "^node/test/test/namespace.kt" to "node/test/test.namespace.kt",
+            "^node/test/test/(.+)\\.kt" to "node/test/$1.kt",
+            "^node/test/eventdata" to "node/test/eventData",
             "^node/test/mock.kt" to "node/test/mock.val.kt",
-            "^node/test/test.kt" to "node/test/test.fun.kt",
-            "^node/test/test/namespace.kt" to "node/test/test.fun.namespace.kt",
-            "TestComplete.kt" to "test/TestComplete.kt",
-            "TestCompleteDetails.kt" to "test/TestCompleteDetails.kt",
-            "TestCoverage.kt" to "test/TestCoverage.kt",
-            "TestCoverageSummary.kt" to "test/TestCoverageSummary.kt",
-            "TestCoverageSummaryTotals.kt" to "test/TestCoverageSummaryTotals.kt",
-            "TestCoverageSummaryThresholds.kt" to "test/TestCoverageSummaryThresholds.kt",
-            "TestCoverageSummaryFilesItem.kt" to "test/TestCoverageSummaryFilesItem.kt",
-            "TestCoverageSummaryFilesItemBranchesItem.kt" to "test/TestCoverageSummaryFilesItemBranchesItem.kt",
-            "TestCoverageSummaryFilesItemFunctionsItem.kt" to "test/TestCoverageSummaryFilesItemFunctionsItem.kt",
-            "TestCoverageSummaryFilesItemLinesItem.kt" to "test/TestCoverageSummaryFilesItemLinesItem.kt",
-            "TestLocationInfo.kt" to "test/TestLocationInfo.kt",
-            "TestSummary.kt" to "test/TestSummary.kt",
-            "TestSummaryCounts.kt" to "test/TestSummaryCounts.kt",
-            "DiagnosticData.kt" to "test/DiagnosticData.kt",
-            "TestError.kt" to "test/TestError.kt",
-            "TestFail.kt" to "test/TestFail.kt",
-            "TestFailDetails.kt" to "test/TestFailDetails.kt",
-            "TestPass.kt" to "test/TestPass.kt",
-            "TestPassDetails.kt" to "test/TestPassDetails.kt",
-            "TestPlan.kt" to "test/TestPlan.kt",
-            "TestStart.kt" to "test/TestStart.kt",
-            "TestStderr.kt" to "test/TestStderr.kt",
-            "TestStdout.kt" to "test/TestStdout.kt",
-            "TestEnqueue.kt" to "test/TestEnqueue.kt",
-            "TestDequeue.kt" to "test/TestDequeue.kt",
 
             "^tls" to "node/tls",
 
@@ -477,6 +451,8 @@ suspend fun main() {
             "^zlib/Zlib.kt" to "node/zlib/Zlib.interface.kt",
             "^zlib/brotliCompress.kt" to "node/zlib/brotliCompress.fun.kt",
             "^zlib/brotliDecompress.kt" to "node/zlib/brotliDecompress.fun.kt",
+            "^zlib/zstdCompress.kt" to "node/zlib/zstdCompress.fun.kt",
+            "^zlib/zstdDecompress.kt" to "node/zlib/zstdDecompress.fun.kt",
             "^zlib/gzip.kt" to "node/zlib/gzip.fun.kt",
             "^zlib/gunzip.kt" to "node/zlib/gunzip.fun.kt",
             "^zlib/deflate.kt" to "node/zlib/deflate.fun.kt",
@@ -537,6 +513,7 @@ suspend fun main() {
                 "NodeWorker" to "",
                 "Network" to "",
                 "NodeRuntime" to "",
+                "Target" to "",
                 ".+" to "node.inspector."
             ),
             "node:module" to ruleOf("node.module"),
@@ -1367,7 +1344,7 @@ suspend fun main() {
             "ClientHttp2StreamPrependOnceListenerListenerHeaders.kt" to ConflictResolutionStrategy.replace,
             "WritableOptionsWritevChunksItem.kt" to ConflictResolutionStrategy.replace,
             "WritableWritevChunksItem.kt" to ConflictResolutionStrategy.replace,
-            "FileHandleWriteResultPayloadAsync.kt" to ConflictResolutionStrategy.replace
+            "FileHandleWriteResultPayloadAsync.kt" to ConflictResolutionStrategy.replace,
         )
     }
 }
