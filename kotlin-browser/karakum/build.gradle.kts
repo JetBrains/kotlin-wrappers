@@ -39,6 +39,7 @@ object Includes {
         "web/gpu",
         "web/http",
         "web/images",
+        "web/locks",
         "web/messaging",
         "web/performance",
         "web/promise",
