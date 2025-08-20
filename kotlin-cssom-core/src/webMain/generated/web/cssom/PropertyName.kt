@@ -6,11 +6,11 @@
 
 package web.cssom
 
+import js.core.JsAny
 import seskar.js.JsValue
 
-// TEMP
-@Suppress("WRONG_JS_INTEROP_TYPE")
-sealed external interface PropertyName<T : Any> : Ident {
+sealed external interface PropertyName<T : JsAny> :
+    Ident {
     companion object {
         @JsValue("accent-color")
         val accentColor: PropertyName<AccentColor>
