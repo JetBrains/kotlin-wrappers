@@ -25,3 +25,17 @@ private constructor() :
      */
     val devicePixelRatio: Double
 }
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaintWorkletGlobalScope/registerPaint)
+ */
+@ExperimentalWebApi
+inline fun PaintWorkletGlobalScope.registerPaint(
+    name: PaintName,
+    reference: PaintReference,
+) {
+    registerPaint(
+        name = name,
+        classRef = reference.value,
+    )
+}
