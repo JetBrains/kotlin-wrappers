@@ -27,7 +27,7 @@ object Includes {
         "web/console",
         "web/crypto",
         "web/encoding",
-        "web/errors/DOMException.kt",
+        "web/errors",
         "web/events",
         "web/events/internal",
         "web/file/File.kt",
