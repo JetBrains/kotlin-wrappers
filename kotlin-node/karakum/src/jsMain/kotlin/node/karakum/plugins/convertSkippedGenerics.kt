@@ -50,6 +50,18 @@ val convertSkippedGenerics = createPlugin { node, _, render ->
 
             "${render(typeName)}<*>"
         } ?: nullable {
+            ensure(sourceFileName.endsWith("stream/consumers.d.ts"))
+
+            ensure(isTypeReferenceNode(node))
+
+            val typeName = node.typeName
+            ensure(isIdentifier(typeName))
+            ensure(typeName.text == "WebReadableStream")
+
+            ensure(node.typeArguments == null)
+
+            "${render(typeName)}<*>"
+        } ?: nullable {
             ensure(sourceFileName.endsWith("diagnostics_channel.d.ts"))
 
             ensure(isTypeReferenceNode(node))
@@ -252,6 +264,16 @@ val convertSkippedGenerics = createPlugin { node, _, render ->
                         || typeName.right.text == "WritableOptions"
                         || typeName.right.text == "TransformOptions"
             )
+
+            ensure(node.typeArguments == null)
+
+            "${render(typeName)}<*>"
+        } ?: nullable {
+            ensure(isTypeReferenceNode(node))
+
+            val typeName = node.typeName
+            ensure(isIdentifier(typeName))
+            ensure(typeName.text == "Dirent")
 
             ensure(node.typeArguments == null)
 

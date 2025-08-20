@@ -72,6 +72,7 @@ suspend fun main() {
             convertObjectParam,
             convertObjectTypeReferenceNode,
             convertOverriddenFsOptionPropertySignature,
+            convertOverriddenGcOptionPropertySignature,
             convertOverriddenMethodDeclaration,
             convertOverriddenPropertyDeclaration,
             convertOverriddenPropertySignature,
@@ -88,6 +89,7 @@ suspend fun main() {
             convertStreamOptionsTypeParameter,
             convertSymlinkType,
             convertTestContextHeritageClause,
+            convertTestQualifiedName,
             convertTopLevelGlobals,
             convertToPrimitiveSymbolHolder,
             convertTypealiasParameterBounds,
@@ -321,7 +323,7 @@ suspend fun main() {
             "node:assert(#assert)?" to "node:assert/strict",
             "events#EventEmitter" to "events",
             "module#Module" to "module",
-            // TODO: fix JsQualifier
+            // TODO: fix JsQualifier for test
         )
         packageNameMapper = recordOf(
             "promises/(.+)\\.kt" to "$1Async.kt",
@@ -437,7 +439,7 @@ suspend fun main() {
             "^util" to "node/util",
 
             "^v8/promiseHooks.kt" to "node/v8/promiseHooks.val.kt",
-            "^v8/startupSnapshot.kt" to "node/v8/startupSnapshot.val.kt",
+            "^v8/startupsnapshot" to "node/v8/startupSnapshot",
             "^v8" to "node/v8",
 
             "^vm" to "node/vm",
@@ -569,6 +571,7 @@ suspend fun main() {
             "node:util/types" to ruleOf(
                 "\\*" to ""
             ),
+            "node:v8" to ruleOf("node.v8"),
             "node:vm" to ruleOf("node.vm"),
             "(node:)?worker_threads" to ruleOf(
                 "BroadcastChannel" to "web.broadcast.BroadcastChannel",
@@ -591,6 +594,9 @@ suspend fun main() {
             "WritableStream.kt" to arrayOf(
                 "js.typedarrays.Uint8Array",
                 "node.events.EventEmitter"
+            ),
+            "GCFunction.kt" to arrayOf(
+                "js.promise.Promise"
             ),
             "assert/doesNotMatch.kt" to arrayOf(
                 "js.regexp.RegExp"
@@ -616,6 +622,12 @@ suspend fun main() {
                 "js.buffer.ArrayBufferLike",
                 "js.buffer.SharedArrayBuffer",
                 "js.typedarrays.Uint8Array"
+            ),
+            "buffer/AllowSharedBuffer.kt" to arrayOf(
+                "js.buffer.ArrayBufferLike"
+            ),
+            "buffer/NonSharedBuffer.kt" to arrayOf(
+                "js.buffer.ArrayBuffer"
             ),
             "buffer/File.kt" to arrayOf(
                 "web.blob.Blob"
@@ -708,6 +720,9 @@ suspend fun main() {
             "dns/setServers.kt" to arrayOf(
                 "js.array.ReadonlyArray"
             ),
+            "dns/TlsaRecord.kt" to arrayOf(
+                "js.buffer.ArrayBuffer"
+            ),
             "events/EventEmitter.kt" to arrayOf(
                 "js.array.Tuple",
                 "js.array.Tuple1",
@@ -774,6 +789,12 @@ suspend fun main() {
             ),
             "fs/openAsBlob.suspend.kt" to arrayOf(
                 "web.blob.Blob"
+            ),
+            "fs/readFile.kt" to arrayOf(
+                "node.buffer.NonSharedBuffer"
+            ),
+            "fs/readFileSync.kt" to arrayOf(
+                "node.buffer.NonSharedBuffer"
             ),
             "fs/readv.kt" to arrayOf(
                 "js.array.ReadonlyArray"
@@ -896,6 +917,9 @@ suspend fun main() {
             "process/UnhandledRejectionListener.kt" to arrayOf(
                 "js.promise.Promise"
             ),
+            "readline/Interface.kt" to arrayOf(
+                "js.disposable.Disposable"
+            ),
             "readline/ReadLineOptions.kt" to arrayOf(
                 "web.abort.AbortSignal"
             ),
@@ -912,10 +936,19 @@ suspend fun main() {
                 "js.buffer.ArrayBuffer"
             ),
             "sqlite/DatabaseSync.kt" to arrayOf(
-                "js.typedarrays.Uint8Array"
+                "js.disposable.Disposable",
+                "js.typedarrays.Uint8Array",
+                "web.url.URL"
             ),
             "sqlite/Session.kt" to arrayOf(
                 "js.typedarrays.Uint8Array"
+            ),
+            "sqlite/backup.kt" to arrayOf(
+                "js.promise.Promise",
+                "web.url.URL"
+            ),
+            "sqlite/backup.suspend.kt" to arrayOf(
+                "web.url.URL"
             ),
             "stream/ArrayOptions.kt" to arrayOf(
                 "web.abort.AbortSignal"
@@ -1007,6 +1040,9 @@ suspend fun main() {
             "test/HookOptions.kt" to arrayOf(
                 "web.abort.AbortSignal"
             ),
+            "test/MockTimersOptions.kt" to arrayOf(
+                "js.array.ReadonlyArray"
+            ),
             "test/RunOptions.kt" to arrayOf(
                 "web.abort.AbortSignal"
             ),
@@ -1014,6 +1050,7 @@ suspend fun main() {
                 "web.abort.AbortSignal"
             ),
             "test/TestContext.kt" to arrayOf(
+                "js.promise.Promise",
                 "web.abort.AbortSignal"
             ),
             "test/TestContextTest.kt" to arrayOf(
@@ -1127,7 +1164,7 @@ suspend fun main() {
             "test/skip.kt" to arrayOf(
                 "js.promise.Promise"
             ),
-            "test/test.fun.kt" to arrayOf(
+            "test/test.kt" to arrayOf(
                 "js.promise.Promise"
             ),
             "test/todo.kt" to arrayOf(
@@ -1283,6 +1320,15 @@ suspend fun main() {
             ),
             "v8/Settled.kt" to arrayOf(
                 "js.promise.Promise"
+            ),
+            "v8/startupSnapshot/addDeserializeCallback.kt" to arrayOf(
+                "node.v8.StartupSnapshotCallbackFn"
+            ),
+            "v8/startupSnapshot/addSerializeCallback.kt" to arrayOf(
+                "node.v8.StartupSnapshotCallbackFn"
+            ),
+            "v8/startupSnapshot/setDeserializeMainFunction.kt" to arrayOf(
+                "node.v8.StartupSnapshotCallbackFn"
             ),
             "vm/CompileFunctionResult.kt" to arrayOf(
                 "js.buffer.ArrayBufferLike",

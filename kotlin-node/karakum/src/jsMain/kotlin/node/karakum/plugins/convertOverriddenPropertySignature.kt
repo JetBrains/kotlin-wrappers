@@ -46,6 +46,18 @@ private val overriddenProps = mapOf(
     "ExecSyncOptionsWithStringEncoding" to mapOf(
         "encoding" to Alias("stringEncoding"),
     ),
+    "ExecFileOptionsWithBufferEncoding" to mapOf(
+        "encoding" to Alias("bufferEncoding"),
+    ),
+    "ExecFileOptionsWithStringEncoding" to mapOf(
+        "encoding" to Alias("stringEncoding"),
+    ),
+    "ExecOptionsWithBufferEncoding" to mapOf(
+        "encoding" to Alias("bufferEncoding"),
+    ),
+    "ExecOptionsWithStringEncoding" to mapOf(
+        "encoding" to Alias("stringEncoding"),
+    ),
     "SpawnSyncOptionsWithBufferEncoding" to mapOf(
         "encoding" to Alias("bufferEncoding"),
     ),

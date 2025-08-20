@@ -546,6 +546,18 @@ fun modifyMethodInheritance(node: Node, context: InheritanceModifierContext) = n
             ensure(isGenericEventEmitterSignature(context, symbolSignature = name.text == "emit"))
 
             "override"
+        } ?: nullable {
+            ensure(sourceFileName.endsWith("test.d.ts"))
+
+            ensure(isEventEmitterMethodName(name.text))
+
+            val interfaceNode = ensureNotNull(node.getParentOrNull())
+            ensure(isInterfaceDeclaration(interfaceNode))
+            ensure(interfaceNode.name.text == "TestsStream")
+
+            ensure(isGenericEventEmitterSignature(context))
+
+            "override"
         }
     }
 }

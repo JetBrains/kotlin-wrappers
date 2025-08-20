@@ -112,7 +112,25 @@ fun resolveFsOptionsName(node: Node, context: Context) = nullable {
                 } != null
             })
 
-            "${parentName.replaceFirstChar { it.titlecase() }}Buffer${postfix}${parameterName.replaceFirstChar { it.titlecase() }}"
+            nullable {
+                ensure(node.members.asArray().any { member ->
+                    nullable {
+                        ensure(isPropertySignature(member))
+
+                        val propertyName = member.name
+                        ensure(isIdentifier(propertyName))
+                        ensure(propertyName.text == "withFileTypes")
+
+                        val propertyType = ensureNotNull(member.type)
+                        ensure(isLiteralTypeNode(propertyType))
+                        ensure(propertyType.literal.kind == SyntaxKind.TrueKeyword)
+                    } != null
+                })
+
+                "${parentName.replaceFirstChar { it.titlecase() }}BufferWithFileTypes${postfix}${parameterName.replaceFirstChar { it.titlecase() }}"
+            } ?: run {
+                "${parentName.replaceFirstChar { it.titlecase() }}Buffer${postfix}${parameterName.replaceFirstChar { it.titlecase() }}"
+            }
         } ?: nullable {
             ensure(isIntersectionTypeNode(node))
 

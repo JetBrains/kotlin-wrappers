@@ -58,6 +58,7 @@ private val interfacesWithSuperclass = setOf(
 
     // test
     "TestError",
+    "TestsStream",
 
     // util
     "CustomPromisifySymbol",
@@ -73,6 +74,8 @@ private val interfacesWithSuperclass = setOf(
     "Inflate",
     "InflateRaw",
     "Unzip",
+    "ZstdCompress",
+    "ZstdDecompress",
 )
 
 fun annotateInterfaceWithSuperclass(node: Node, context: AnnotationContext) = nullable {
