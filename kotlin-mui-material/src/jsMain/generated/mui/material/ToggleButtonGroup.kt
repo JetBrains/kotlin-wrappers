@@ -6,6 +6,7 @@ package mui.material
 
 import mui.material.styles.Theme
 import mui.system.SxProps
+import web.html.HTMLElement
 
 external interface ToggleButtonGroupProps :
     mui.system.StandardProps,
@@ -56,7 +57,7 @@ external interface ToggleButtonGroupProps :
      * this is a single value; when false an array of selected values. If no value
      * is selected and `exclusive` is true the value is null; when false an empty array.
      */
-    var onChange: ((event: react.dom.events.MouseEvent<web.html.HTMLElement, *>, value: Any) -> Unit)?
+    var onChange: ((event: react.dom.events.MouseEvent<HTMLElement, *>, value: Any) -> Unit)?
 
     /**
      * The component orientation (layout flow direction).

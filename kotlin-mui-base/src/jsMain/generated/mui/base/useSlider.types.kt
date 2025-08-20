@@ -3,6 +3,7 @@
 package mui.base
 
 import js.array.ReadonlyArray
+import web.dom.Element
 import web.events.Event
 
 external interface UseSliderParameters {
@@ -89,7 +90,7 @@ external interface UseSliderParameters {
     /**
      * The ref attached to the root of the Slider.
      */
-    var rootRef: react.Ref<web.dom.Element>?
+    var rootRef: react.Ref<Element>?
 
     /**
      * A transformation function, to change the scale of the slider.
@@ -207,7 +208,7 @@ external interface UseSliderReturnValue {
     /**
      * Ref to the root slot's DOM node.
      */
-    var rootRef: react.RefCallback<web.dom.Element>?
+    var rootRef: react.RefCallback<Element>?
 
     /**
      * The track leap for the current value of the slider.

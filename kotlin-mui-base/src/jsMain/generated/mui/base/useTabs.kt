@@ -2,8 +2,10 @@
 
 package mui.base
 
+import web.dom.ElementId
+
 external interface TabMetadata {
     var disabled: Boolean
 
-    var id: String
+    var id: ElementId?
 }
