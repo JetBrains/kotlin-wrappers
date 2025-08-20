@@ -404,7 +404,7 @@ external interface UseAutocompleteReturnValue<Value> {
     /**
      * Id for the Autocomplete.
      */
-    var id: String
+    var id: ElementId?
 
     /**
      * The input value.

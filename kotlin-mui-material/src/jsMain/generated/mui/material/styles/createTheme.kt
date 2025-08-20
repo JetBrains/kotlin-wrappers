@@ -24,6 +24,8 @@ external interface ThemeOptions : mui.system.ThemeOptions {
     var unstable_strictMode: Boolean?
 
     override var unstable_sxConfig: dynamic
+
+    var modularCssLayers: Boolean?
 }
 
 external interface BaseTheme : mui.system.Theme {

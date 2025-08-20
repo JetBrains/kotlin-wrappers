@@ -7,6 +7,7 @@ package mui.material
 import js.array.ReadonlyArray
 import mui.material.styles.Theme
 import mui.system.SxProps
+import web.dom.ElementId
 
 external interface AutocompleteProps<Value> :
     mui.base.UseAutocompleteProps<Value>,
@@ -252,7 +253,7 @@ external interface AutocompleteRenderGroupParams : react.PropsWithChildren {
 }
 
 external interface AutocompleteRenderInputParams : react.Props {
-    var id: String
+    var id: ElementId?
 
     var disabled: Boolean
 

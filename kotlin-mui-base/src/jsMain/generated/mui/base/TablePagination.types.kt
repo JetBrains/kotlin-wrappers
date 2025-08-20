@@ -2,6 +2,8 @@
 
 package mui.base
 
+import web.html.HTMLElement
+
 external interface TablePaginationProps :
     TablePaginationOwnProps,
     react.dom.html.HTMLAttributes<web.html.HTMLTableCellElement>
@@ -103,7 +105,7 @@ external interface TablePaginationOwnProps : react.Props {
      *
      * @param {React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>} event The event source of the callback.
      */
-    var onRowsPerPageChange: react.dom.events.ChangeEventHandler<web.html.HTMLElement>?
+    var onRowsPerPageChange: react.dom.events.ChangeEventHandler<HTMLElement>?
 
     /**
      * The zero-based index of the current page.

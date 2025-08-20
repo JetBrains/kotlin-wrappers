@@ -3,6 +3,9 @@
 package mui.base
 
 import js.array.ReadonlyArray
+import web.dom.Element
+import web.dom.ElementId
+import web.html.HTMLElement
 
 external interface UseMenuParameters {
     /**
@@ -16,7 +19,7 @@ external interface UseMenuParameters {
     /**
      * The id of the menu. If not provided, it will be generated.
      */
-    var id: String?
+    var id: ElementId?
 
     /**
      * If `true`, it will be possible to highlight disabled items.
@@ -38,7 +41,7 @@ external interface UseMenuParameters {
     /**
      * The ref to the menu's listbox node.
      */
-    var listboxRef: react.Ref<web.dom.Element>?
+    var listboxRef: react.Ref<Element>?
 
     /**
      * The name of the component using useMenu.
@@ -75,7 +78,7 @@ external interface UseMenuReturnValue {
     /**
      * The ref to the menu's listbox node.
      */
-    var listboxRef: react.RefCallback<web.dom.Element>?
+    var listboxRef: react.RefCallback<Element>?
 
     /**
      * Items in the menu listbox.
@@ -90,5 +93,5 @@ external interface UseMenuReturnValue {
     /**
      * An element that triggers the visibility of the menu.
      */
-    var triggerElement: web.html.HTMLElement?
+    var triggerElement: HTMLElement?
 }

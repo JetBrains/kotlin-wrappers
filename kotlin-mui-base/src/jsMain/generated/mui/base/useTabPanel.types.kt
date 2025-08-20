@@ -2,16 +2,19 @@
 
 package mui.base
 
+import web.dom.ElementId
+import web.html.HTMLElement
+
 external interface UseTabPanelParameters {
     /**
      * The id of the TabPanel.
      */
-    var id: String?
+    var id: ElementId?
 
     /**
      * The ref of the TabPanel.
      */
-    var rootRef: react.Ref<web.html.HTMLElement>?
+    var rootRef: react.Ref<HTMLElement>?
 
     /**
      * The value of the TabPanel. It will be shown when the Tab with the corresponding value is selected.
@@ -32,5 +35,5 @@ external interface UseTabPanelReturnValue {
      */
     var getRootProps: react.Props /* <ExternalProps extends Record<string, unknown> = {}>(externalProps?: ExternalProps) => UseTabPanelRootSlotProps<ExternalProps> */
 
-    var rootRef: react.Ref<web.html.HTMLElement>
+    var rootRef: react.Ref<HTMLElement>
 }

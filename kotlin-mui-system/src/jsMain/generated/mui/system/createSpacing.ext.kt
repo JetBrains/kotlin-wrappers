@@ -35,6 +35,7 @@ inline fun SpacingOptions(
 typealias SpacingArgument = Int /* web.cssom.Auto */
 
 sealed external interface Spacing {
+
     operator fun invoke(): web.cssom.Length
 
     operator fun invoke(value: SpacingArgument): web.cssom.Length

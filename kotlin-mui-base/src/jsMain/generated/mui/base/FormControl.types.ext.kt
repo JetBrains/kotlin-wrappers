@@ -2,4 +2,6 @@
 
 package mui.base
 
-typealias NativeFormControlElement = web.html.HTMLElement /* HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement */
+import web.html.HTMLElement
+
+typealias NativeFormControlElement = HTMLElement /* HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement */
