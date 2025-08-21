@@ -3,7 +3,7 @@
 package remix.run.router
 
 
-inline fun <Context /* default is Any? */> ActionFunction(
+inline fun <Context /* default is Any? */> ActionFunctionAsync(
     noinline value: (args: ActionFunctionArgs<Context>, handlerCtx: Any? /* use undefined for default */) -> DataFunctionReturnValue,
 ): ActionFunction<Context> =
     js.reflect.unsafeCast(value)
