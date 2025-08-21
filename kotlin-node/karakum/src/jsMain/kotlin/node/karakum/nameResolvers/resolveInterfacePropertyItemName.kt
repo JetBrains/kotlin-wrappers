@@ -18,7 +18,10 @@ fun resolveInterfacePropertyItemName(node: Node, context: Context) = nullable {
 
     val typeName = typeReference.typeName
     ensure(isIdentifier(typeName))
-    ensure(typeName.text == "Array")
+    ensure(
+        typeName.text == "Array"
+                || typeName.text == "ReadonlyArray"
+    )
 
     val property = ensureNotNull(typeScriptService.getParent(typeReference))
     ensure(isPropertySignature(property))
