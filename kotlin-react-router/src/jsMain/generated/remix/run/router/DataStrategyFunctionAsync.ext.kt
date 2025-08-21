@@ -3,10 +3,10 @@
 package remix.run.router
 
 import js.promise.Promise
-import js.reflect.legacyUnsafeCast
+import js.reflect.unsafeCast
 
 
 inline fun DataStrategyFunctionAsync(
     noinline value: (args: DataStrategyFunctionArgs<*>) -> Promise<js.objects.ReadonlyRecord<String, DataStrategyResult>>,
 ): DataStrategyFunction =
-    legacyUnsafeCast(value)
+    unsafeCast(value)
