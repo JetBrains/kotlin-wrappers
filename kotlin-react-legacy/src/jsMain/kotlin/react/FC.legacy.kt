@@ -1,6 +1,6 @@
 package react
 
-import js.reflect.legacyUnsafeCast
+import js.reflect.unsafeCast
 
 
 /**
@@ -14,7 +14,7 @@ fun <P : Props> fc(
             func(props)
         }
     }
-    return legacyUnsafeCast(component)
+    return unsafeCast(component)
 }
 
 /**

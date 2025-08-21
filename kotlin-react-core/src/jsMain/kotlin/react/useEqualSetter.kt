@@ -1,6 +1,6 @@
 package react
 
-import js.reflect.legacyUnsafeCast
+import js.reflect.unsafeCast
 import js.reflect.unsafeSpecialCast
 
 fun <T> useEqualSetter(
@@ -13,9 +13,9 @@ fun <T> useEqualSetter(
 private fun <T> toEqualSetter(
     setter: StateSetter<T>,
 ): StateSetter<T> =
-    legacyUnsafeCast { source: Any? ->
+    unsafeCast { source: Any? ->
         if (source is Function<*>) {
-            val transform = legacyUnsafeCast<(T) -> T>(source)
+            val transform = unsafeCast<(T) -> T>(source)
             setter { oldValue ->
                 val newValue = transform(oldValue)
                 if (newValue != oldValue) newValue else oldValue
