@@ -1,9 +1,13 @@
 package remix.run.router
 
 import js.objects.ReadonlyRecord
-import js.promise.Promise
+import remix.run.router.internal.isolatedPromise
 
-inline fun DataStrategyFunction(
-    noinline value: (args: DataStrategyFunctionArgs<*>) -> Promise<ReadonlyRecord<String, DataStrategyResult>>,
+fun DataStrategyFunction(
+    block: suspend (args: DataStrategyFunctionArgs<*>) -> ReadonlyRecord<String, DataStrategyResult>,
 ): DataStrategyFunction =
-    DataStrategyFunctionAsync(value)
+    DataStrategyFunctionAsync { args ->
+        isolatedPromise(args) {
+            block(args)
+        }
+    }

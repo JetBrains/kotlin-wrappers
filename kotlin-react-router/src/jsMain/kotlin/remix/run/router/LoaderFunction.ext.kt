@@ -1,6 +1,12 @@
 package remix.run.router
 
-inline fun <Context> LoaderFunction(
-    noinline value: (args: LoaderFunctionArgs<Context>, handlerCtx: Any? /* use undefined for default */) -> DataFunctionReturnValue,
+import remix.run.router.internal.isolatedPromise
+
+fun <Context> LoaderFunction(
+    block: suspend (args: LoaderFunctionArgs<Context>, handlerCtx: Any?) -> DataFunctionValue,
 ): LoaderFunction<Context> =
-    LoaderFunctionAsync(value)
+    LoaderFunctionAsync { args, handlerCtx ->
+        isolatedPromise(args) {
+            block(args, handlerCtx)
+        }
+    }

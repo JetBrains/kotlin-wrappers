@@ -1,6 +1,12 @@
 package remix.run.router
 
-inline fun <Context> ActionFunction(
-    noinline value: (args: ActionFunctionArgs<Context>, handlerCtx: Any?) -> DataFunctionReturnValue,
+import remix.run.router.internal.isolatedPromise
+
+fun <Context> ActionFunction(
+    block: suspend (args: ActionFunctionArgs<Context>, handlerCtx: Any?) -> DataFunctionValue,
 ): ActionFunction<Context> =
-    ActionFunctionAsync(value)
+    ActionFunctionAsync { args, handlerCtx ->
+        isolatedPromise(args) {
+            block(args, handlerCtx)
+        }
+    }
