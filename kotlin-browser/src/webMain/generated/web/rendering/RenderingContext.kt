@@ -4,6 +4,10 @@ package web.rendering
 
 import js.internal.InternalApi
 import js.reflect.JsExternalInheritorsOnly
+import web.canvas.CanvasRenderingContext2D
+import web.gl.WebGL2RenderingContext
+import web.gl.WebGLRenderingContext
+import web.images.ImageBitmapRenderingContext
 
 /**
  * Union of:

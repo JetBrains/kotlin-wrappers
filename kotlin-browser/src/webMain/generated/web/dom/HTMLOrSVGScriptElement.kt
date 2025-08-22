@@ -3,6 +3,8 @@
 package web.dom
 
 import js.internal.InternalApi
+import web.html.HTMLScriptElement
+import web.svg.SVGScriptElement
 
 /**
  * Union of:
