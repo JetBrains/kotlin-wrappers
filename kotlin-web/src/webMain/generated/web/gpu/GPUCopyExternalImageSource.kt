@@ -2,6 +2,7 @@
 
 package web.gpu
 
+import js.internal.InternalApi
 import web.images.ImageBitmap
 import web.images.ImageData
 
@@ -15,4 +16,5 @@ import web.images.ImageData
  * - [HTMLCanvasElement]
  * - [OffscreenCanvas]
  */
+@SubclassOptInRequired(InternalApi::class)
 external interface GPUCopyExternalImageSource

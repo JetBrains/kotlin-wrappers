@@ -2,6 +2,7 @@
 
 package web.messaging
 
+import js.internal.InternalApi
 import js.reflect.JsExternalInheritorsOnly
 
 /**
@@ -11,4 +12,5 @@ import js.reflect.JsExternalInheritorsOnly
  * - [ServiceWorker]
  */
 @JsExternalInheritorsOnly
+@SubclassOptInRequired(InternalApi::class)
 external interface MessageEventSource

@@ -2,6 +2,7 @@
 
 package web.gl
 
+import js.internal.InternalApi
 import web.images.ImageBitmap
 import web.images.ImageData
 
@@ -15,4 +16,5 @@ import web.images.ImageData
  * - [OffscreenCanvas]
  * - [VideoFrame]
  */
+@SubclassOptInRequired(InternalApi::class)
 external interface TexImageSource

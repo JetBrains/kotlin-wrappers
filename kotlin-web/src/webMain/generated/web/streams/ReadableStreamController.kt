@@ -3,6 +3,7 @@
 package web.streams
 
 import js.core.JsAny
+import js.internal.InternalApi
 import js.reflect.JsExternalInheritorsOnly
 
 /**
@@ -11,4 +12,5 @@ import js.reflect.JsExternalInheritorsOnly
  * - [ReadableByteStreamController]
  */
 @JsExternalInheritorsOnly
-sealed external interface ReadableStreamController<T : JsAny?>
+@SubclassOptInRequired(InternalApi::class)
+external interface ReadableStreamController<T : JsAny?>

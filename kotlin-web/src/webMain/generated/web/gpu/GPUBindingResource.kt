@@ -2,6 +2,7 @@
 
 package web.gpu
 
+import js.internal.InternalApi
 import js.reflect.JsExternalInheritorsOnly
 
 /**
@@ -12,4 +13,5 @@ import js.reflect.JsExternalInheritorsOnly
  * - [GPUExternalTexture]
  */
 @JsExternalInheritorsOnly
-sealed external interface GPUBindingResource
+@SubclassOptInRequired(InternalApi::class)
+external interface GPUBindingResource

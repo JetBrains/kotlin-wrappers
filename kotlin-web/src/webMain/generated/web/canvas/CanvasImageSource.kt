@@ -2,6 +2,7 @@
 
 package web.canvas
 
+import js.internal.InternalApi
 import web.images.ImageBitmap
 import web.images.ImageBitmapSource
 
@@ -14,5 +15,6 @@ import web.images.ImageBitmapSource
  * - [OffscreenCanvas]
  * - [VideoFrame]
  */
+@SubclassOptInRequired(InternalApi::class)
 external interface CanvasImageSource :
     ImageBitmapSource

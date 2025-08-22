@@ -49,6 +49,7 @@ private val DEFAULT_IMPORTS = Imports(
     "js.errors.JsErrorName",
     "js.function.JsFunction",
     "js.globals.GlobalScope",
+    "js.internal.InternalApi",
     "js.intl.DateTimeFormatOptions",
     "js.intl.Locale",
     "js.intl.Localizable",

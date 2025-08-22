@@ -2,6 +2,7 @@
 
 package web.rendering
 
+import js.internal.InternalApi
 import js.reflect.JsExternalInheritorsOnly
 
 /**
@@ -12,4 +13,5 @@ import js.reflect.JsExternalInheritorsOnly
  * - [WebGL2RenderingContext]
  */
 @JsExternalInheritorsOnly
+@SubclassOptInRequired(InternalApi::class)
 external interface RenderingContext

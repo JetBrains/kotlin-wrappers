@@ -1,19 +1,16 @@
 package karakum.browser
 
-internal val SEALED_MARKER_DECLARATIONS = setOf(
-    "ReadableStreamController<T>",
-
-    "GPUBindingResource",
-)
-
 internal val NATIVE_ONLY_MARKER_DECLARATIONS = setOf(
+    "ReadableStreamController<T>",
+    "GPUBindingResource",
+
     "MessageEventSource",
 
     "Transferable",
 
     "OffscreenRenderingContext",
     "RenderingContext",
-) + SEALED_MARKER_DECLARATIONS
+)
 
 internal val MARKER_DECLARATIONS = setOf(
     "ImageBitmapSource",
@@ -25,7 +22,6 @@ internal val MARKER_DECLARATIONS = setOf(
 
     "GPUCopyExternalImageSource",
 ).plus(NATIVE_ONLY_MARKER_DECLARATIONS)
-    .plus(SEALED_MARKER_DECLARATIONS)
 
 private val BASE_TYPES = listOf(
     "Blob",

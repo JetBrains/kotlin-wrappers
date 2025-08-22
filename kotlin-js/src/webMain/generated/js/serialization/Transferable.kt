@@ -3,6 +3,7 @@
 package js.serialization
 
 import js.buffer.ArrayBuffer
+import js.internal.InternalApi
 import js.reflect.JsExternalInheritorsOnly
 
 /**
@@ -20,4 +21,5 @@ import js.reflect.JsExternalInheritorsOnly
  * - [ArrayBuffer]
  */
 @JsExternalInheritorsOnly
+@SubclassOptInRequired(InternalApi::class)
 external interface Transferable
