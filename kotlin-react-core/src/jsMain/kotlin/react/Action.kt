@@ -3,8 +3,9 @@ package react
 import js.core.Void
 import js.promise.Promise
 import js.promise.await
+import js.reflect.legacyUnsafeCast
 import js.reflect.unsafeCast
-import react.internal.isolatedVoidPromise
+import react.internal.isolatedPromise
 
 sealed external interface Action<in T> :
     ActionOrString<T>
@@ -25,8 +26,9 @@ inline fun Action(
 fun <T> Action(
     value: suspend (T) -> Unit,
 ): Action<T> =
-    unsafeCast { data: T ->
-        isolatedVoidPromise {
+    legacyUnsafeCast { data: T ->
+        isolatedPromise {
             value(data)
+            undefined
         }
     }
