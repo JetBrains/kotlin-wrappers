@@ -97,8 +97,10 @@ suspend fun main() {
             convertURL,
             convertUtilityTypes,
             convertUtilTypeHelpers,
+            convertWaitFor,
             convertWebCryptoQualifiedName,
-            convertWebStreamsQualifiedName
+            convertWebStreamsQualifiedName,
+            convertWithImplicitCoercion,
         )
         injections = manyOf(
             DuplexMembersInjection(),
@@ -231,6 +233,9 @@ suspend fun main() {
             "**/buffer/File.kt",
             "**/buffer/FileOptions.kt",
             "**/buffer/FileOptionsEndings.kt",
+            // TS meta programming
+            "**/buffer/WithImplicitCoercion.kt",
+            "**/buffer/ImplicitArrayBuffer.kt",
             "**/childProcess/exec/**",
             "**/childProcess/execfile/**",
             "**/crypto/generatekeypair/**",

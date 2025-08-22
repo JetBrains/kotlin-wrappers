@@ -138,7 +138,10 @@ fun modifyPropertyInheritance(node: Node, context: InheritanceModifierContext) =
 
             val interfaceNode = ensureNotNull(node.getParentOrNull())
             ensure(isInterfaceDeclaration(interfaceNode))
-            ensure(interfaceNode.name.text == "TestError")
+            ensure(
+                interfaceNode.name.text == "TestError"
+                        || interfaceNode.name.text == "Error"
+            )
 
             "override"
         } ?: nullable {

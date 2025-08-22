@@ -57,6 +57,7 @@ private val interfacesWithSuperclass = setOf(
     "Stream",
 
     // test
+    "Error",
     "TestError",
     "TestsStream",
 
