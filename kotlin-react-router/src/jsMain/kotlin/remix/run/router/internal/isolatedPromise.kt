@@ -5,14 +5,23 @@ import js.coroutines.promise
 import js.promise.Promise
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.CoroutineStart
+import kotlinx.coroutines.cancel
 import remix.run.router.DataFunctionArgs
+import web.abort.abortEvent
+import web.events.addHandler
 
 internal fun <T> isolatedPromise(
     args: DataFunctionArgs<*>,
     block: suspend CoroutineScope.() -> T,
-): Promise<T> =
-    IsolatedCoroutineScope()
-        .promise(
-            start = CoroutineStart.UNDISPATCHED,
-            block = block,
-        )
+): Promise<T> {
+    val scope = IsolatedCoroutineScope()
+
+    args.request.signal.abortEvent.addHandler {
+        scope.cancel()
+    }
+
+    return scope.promise(
+        start = CoroutineStart.UNDISPATCHED,
+        block = block,
+    )
+}
