@@ -44,6 +44,14 @@ external interface ServerOptions<Request : IncomingMessage, Response : ServerRes
     var connectionsCheckingInterval: Double?
 
     /**
+     * Sets the timeout value in milliseconds for receiving the complete HTTP headers from the client.
+     * See {@link Server.headersTimeout} for more information.
+     * @default 60000
+     * @since 18.0.0
+     */
+    var headersTimeout: Double?
+
+    /**
      * Optionally overrides all `socket`s' `readableHighWaterMark` and `writableHighWaterMark`.
      * This affects `highWaterMark` property of both `IncomingMessage` and `ServerResponse`.
      * Default: @see stream.getDefaultHighWaterMark().
@@ -75,6 +83,14 @@ external interface ServerOptions<Request : IncomingMessage, Response : ServerRes
     var noDelay: Boolean?
 
     /**
+     * If set to `true`, it forces the server to respond with a 400 (Bad Request) status code
+     * to any HTTP/1.1 request message that lacks a Host header (as mandated by the specification).
+     * @default true
+     * @since 20.0.0
+     */
+    var requireHostHeader: Boolean?
+
+    /**
      * If set to `true`, it enables keep-alive functionality on the socket immediately after a new incoming connection is received,
      * similarly on what is done in `socket.setKeepAlive([enable][, initialDelay])`.
      * @default false
@@ -94,4 +110,11 @@ external interface ServerOptions<Request : IncomingMessage, Response : ServerRes
      * If the header's value is an array, the items will be joined using `; `.
      */
     var uniqueHeaders: Array<Any /* string | string[] */>?
+
+    /**
+     * If set to `true`, an error is thrown when writing to an HTTP response which does not have a body.
+     * @default false
+     * @since v18.17.0, v20.2.0
+     */
+    var rejectNonStandardBodyWrites: Boolean?
 }

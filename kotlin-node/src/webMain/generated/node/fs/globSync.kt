@@ -5,24 +5,36 @@
 package node.fs
 
 /**
- * Retrieves the files matching the specified pattern.
+ * ```js
+ * import { globSync } from 'node:fs';
+ *
+ * console.log(globSync('*.js'));
+ * ```
+ * @since v22.0.0
+ * @returns paths of files that match the pattern.
  */
 external fun globSync(pattern: String): js.array.ReadonlyArray<String>
 
 /**
- * Retrieves the files matching the specified pattern.
+ * ```js
+ * import { globSync } from 'node:fs';
+ *
+ * console.log(globSync('*.js'));
+ * ```
+ * @since v22.0.0
+ * @returns paths of files that match the pattern.
  */
 external fun globSync(pattern: js.array.ReadonlyArray<String>): js.array.ReadonlyArray<String>
 
 external fun globSync(
     pattern: String,
     options: GlobOptionsWithFileTypes,
-): js.array.ReadonlyArray<Dirent>
+): js.array.ReadonlyArray<Dirent<*>>
 
 external fun globSync(
     pattern: js.array.ReadonlyArray<String>,
     options: GlobOptionsWithFileTypes,
-): js.array.ReadonlyArray<Dirent>
+): js.array.ReadonlyArray<Dirent<*>>
 
 external fun globSync(
     pattern: String,

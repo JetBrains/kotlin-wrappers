@@ -2,4 +2,5 @@
 
 package node.sqlite
 
-typealias SupportedValueType = Any? // null | number | bigint | string | Uint8Array
+/** @deprecated Use `SQLInputValue` or `SQLOutputValue` instead. */
+typealias SupportedValueType = SQLOutputValue

@@ -1804,6 +1804,18 @@ sealed external class Buffer<TArrayBuffer : ArrayBufferLike /* default is ArrayB
         encoding: BufferEncoding = definedExternally,
     ) // this
 
+    fun fill(value: String, offset: Number, encoding: BufferEncoding) // this
+
+    fun fill(value: Uint8Array<*>, offset: Number, encoding: BufferEncoding) // this
+
+    fun fill(value: Double, offset: Number, encoding: BufferEncoding) // this
+
+    fun fill(value: String, encoding: BufferEncoding) // this
+
+    fun fill(value: Uint8Array<*>, encoding: BufferEncoding) // this
+
+    fun fill(value: Double, encoding: BufferEncoding) // this
+
     /**
      * If `value` is:
      *
@@ -2026,6 +2038,21 @@ sealed external class Buffer<TArrayBuffer : ArrayBufferLike /* default is ArrayB
         encoding: BufferEncoding = definedExternally,
     ): Double
 
+    fun indexOf(
+        value: String,
+        encoding: BufferEncoding,
+    ): Double
+
+    fun indexOf(
+        value: Double,
+        encoding: BufferEncoding,
+    ): Double
+
+    fun indexOf(
+        value: Uint8Array<*>,
+        encoding: BufferEncoding,
+    ): Double
+
     /**
      * Identical to `buf.indexOf()`, except the last occurrence of `value` is found
      * rather than the first occurrence.
@@ -2243,6 +2270,21 @@ sealed external class Buffer<TArrayBuffer : ArrayBufferLike /* default is ArrayB
         value: Uint8Array<*>,
         byteOffset: Number = definedExternally,
         encoding: BufferEncoding = definedExternally,
+    ): Double
+
+    fun lastIndexOf(
+        value: String,
+        encoding: BufferEncoding,
+    ): Double
+
+    fun lastIndexOf(
+        value: Double,
+        encoding: BufferEncoding,
+    ): Double
+
+    fun lastIndexOf(
+        value: Uint8Array<*>,
+        encoding: BufferEncoding,
     ): Double
 
     /**
@@ -2350,6 +2392,21 @@ sealed external class Buffer<TArrayBuffer : ArrayBufferLike /* default is ArrayB
         encoding: BufferEncoding = definedExternally,
     ): Boolean
 
+    fun includes(
+        value: String,
+        encoding: BufferEncoding,
+    ): Boolean
+
+    fun includes(
+        value: Double,
+        encoding: BufferEncoding,
+    ): Boolean
+
+    fun includes(
+        value: Buffer<*>,
+        encoding: BufferEncoding,
+    ): Boolean
+
     companion object {
         /**
          * Allocates a new `Buffer` using an `array` of bytes in the range `0` – `255`.
@@ -2375,7 +2432,7 @@ sealed external class Buffer<TArrayBuffer : ArrayBufferLike /* default is ArrayB
          * `Buffer` pool like `Buffer.allocUnsafe()` does.
          * @since v5.10.0
          */
-        fun from(array: WithImplicitCoercion<ArrayLike<Double>>): Buffer<ArrayBuffer>
+        fun from(array: ArrayLike<Double>): Buffer<ArrayBuffer>
 
         /**
          * This creates a view of the `ArrayBuffer` without copying the underlying
@@ -2444,11 +2501,11 @@ sealed external class Buffer<TArrayBuffer : ArrayBufferLike /* default is ArrayB
          * @param length Number of bytes to expose. **Default:**
          * `arrayBuffer.byteLength - byteOffset`.
          */
-        fun <TArrayBuffer : WithImplicitCoercion<ArrayBufferLike>> from(
+        fun <TArrayBuffer : ArrayBufferLike> from(
             arrayBuffer: TArrayBuffer,
             byteOffset: Number = definedExternally,
             length: Number = definedExternally,
-        ): Buffer<ImplicitArrayBuffer<TArrayBuffer>>
+        ): Buffer<TArrayBuffer>
 
         /**
          * Creates a new `Buffer` containing `string`. The `encoding` parameter identifies
@@ -2478,9 +2535,11 @@ sealed external class Buffer<TArrayBuffer : ArrayBufferLike /* default is ArrayB
          * @param encoding The encoding of `string`. **Default:** `'utf8'`.
          */
         fun from(
-            string: WithImplicitCoercion<String>,
+            string: String,
             encoding: BufferEncoding = definedExternally,
         ): Buffer<ArrayBuffer>
+
+        fun from(arrayOrString: Any /* ArrayLike<number> | string */): Buffer<ArrayBuffer>
 
         /**
          * Creates a new Buffer using the passed {data}

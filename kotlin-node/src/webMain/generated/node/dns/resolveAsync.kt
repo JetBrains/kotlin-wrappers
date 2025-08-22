@@ -26,13 +26,7 @@ external fun resolveAsync(hostname: String): Promise<js.array.ReadonlyArray<Stri
 @JsName("resolve")
 external fun resolveAsync(
     hostname: String,
-    rrtype: ResourceRecordType.A,
-): Promise<js.array.ReadonlyArray<String>>
-
-@JsName("resolve")
-external fun resolveAsync(
-    hostname: String,
-    rrtype: ResourceRecordType.AAAA,
+    rrtype: ResourceRecordType.StringRecord,
 ): Promise<js.array.ReadonlyArray<String>>
 
 @JsName("resolve")
@@ -50,12 +44,6 @@ external fun resolveAsync(
 @JsName("resolve")
 external fun resolveAsync(
     hostname: String,
-    rrtype: ResourceRecordType.CNAME,
-): Promise<js.array.ReadonlyArray<String>>
-
-@JsName("resolve")
-external fun resolveAsync(
-    hostname: String,
     rrtype: ResourceRecordType.MX,
 ): Promise<js.array.ReadonlyArray<MxRecord>>
 
@@ -64,18 +52,6 @@ external fun resolveAsync(
     hostname: String,
     rrtype: ResourceRecordType.NAPTR,
 ): Promise<js.array.ReadonlyArray<NaptrRecord>>
-
-@JsName("resolve")
-external fun resolveAsync(
-    hostname: String,
-    rrtype: ResourceRecordType.NS,
-): Promise<js.array.ReadonlyArray<String>>
-
-@JsName("resolve")
-external fun resolveAsync(
-    hostname: String,
-    rrtype: ResourceRecordType.PTR,
-): Promise<js.array.ReadonlyArray<String>>
 
 @JsName("resolve")
 external fun resolveAsync(
@@ -92,6 +68,12 @@ external fun resolveAsync(
 @JsName("resolve")
 external fun resolveAsync(
     hostname: String,
+    rrtype: ResourceRecordType.TLSA,
+): Promise<js.array.ReadonlyArray<TlsaRecord>>
+
+@JsName("resolve")
+external fun resolveAsync(
+    hostname: String,
     rrtype: ResourceRecordType.TXT,
 ): Promise<js.array.ReadonlyArray<js.array.ReadonlyArray<String>>>
 
@@ -99,4 +81,4 @@ external fun resolveAsync(
 external fun resolveAsync(
     hostname: String,
     rrtype: String,
-): Promise<Any /* string[] | MxRecord[] | NaptrRecord[] | SoaRecord | SrvRecord[] | string[][] | AnyRecord[] */>
+): Promise<Any /* string[] | CaaRecord[] | MxRecord[] | NaptrRecord[] | SoaRecord | SrvRecord[] | TlsaRecord[] | string[][] | AnyRecord[] */>

@@ -23,4 +23,11 @@ sealed external interface CreateContextOptions {
      * If set to `afterEvaluate`, microtasks will be run immediately after the script has run.
      */
     var microtaskMode: String /* "afterEvaluate" */?
+
+    /**
+     * Used to specify how the modules should be loaded during the evaluation of this script when `import()` is called. This option is
+     * part of the experimental modules API. We do not recommend using it in a production environment. For detailed information, see
+     * [Support of dynamic `import()` in compilation APIs](https://nodejs.org/docs/latest-v22.x/api/vm.html#support-of-dynamic-import-in-compilation-apis).
+     */
+    var importModuleDynamically: Any? // DynamicModuleLoader<Context> | typeof constants.USE_MAIN_CONTEXT_DEFAULT_LOADER | undefined
 }

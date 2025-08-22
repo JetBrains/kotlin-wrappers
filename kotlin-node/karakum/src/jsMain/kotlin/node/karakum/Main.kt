@@ -328,7 +328,6 @@ suspend fun main() {
             "node:assert(#assert)?" to "node:assert/strict",
             "events#EventEmitter" to "events",
             "module#Module" to "module",
-            // TODO: fix JsQualifier for test
         )
         packageNameMapper = recordOf(
             "promises/(.+)\\.kt" to "$1Async.kt",
@@ -340,6 +339,7 @@ suspend fun main() {
             "^assert/assert" to "node/assert",
             "^assert" to "node/assert",
 
+            "^async_hooks/asyncwrapproviders" to "node/asyncHooks/asyncWrapProviders",
             "^async_hooks" to "node/asyncHooks",
 
             "^buffer/global/namespace.kt" to "node/buffer/global.namespace.kt",
@@ -385,6 +385,10 @@ suspend fun main() {
 
             "^https" to "node/https",
 
+            "^inspector/heapprofiler" to "node/inspector/heapProfiler",
+            "^inspector/noderuntime" to "node/inspector/nodeRuntime",
+            "^inspector/nodetracing" to "node/inspector/nodeTracing",
+            "^inspector/nodeworker" to "node/inspector/nodeWorker",
             "^inspector" to "node/inspector",
 
             "^module/global/nodejs/Require.kt" to "node/module/Require.interface.kt",
@@ -394,6 +398,7 @@ suspend fun main() {
             "^module/global/RequireResolve.kt" to "node/module/RequireResolve.legacy.kt",
             "^module/global/(.+)\\.kt" to "node/module/$1.kt",
             "^module/Module.kt" to "node/module/Module.class.kt",
+            "^module/module/constants/compilecachestatus" to "node/module/constants/compileCacheStatus",
             "^module/module" to "node/module",
             "^module" to "node/module",
 
@@ -553,7 +558,9 @@ suspend fun main() {
             ),
             "node:stream/web" to ruleOf(
                 "\\*" to "",
-                "ReadableStream" to "web.streams.ReadableStream"
+                "ReadableStream" to "web.streams.ReadableStream",
+                "WritableStream" to "web.streams.WritableStream",
+                "TransformStream" to "web.streams.TransformStream"
             ),
             "node:test" to ruleOf("node.test"),
             "node:tls" to ruleOf(

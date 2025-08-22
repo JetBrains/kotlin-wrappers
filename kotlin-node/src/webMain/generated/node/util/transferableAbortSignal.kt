@@ -15,7 +15,6 @@ import web.abort.AbortSignal
  * channel.port2.postMessage(signal, [signal]);
  * ```
  * @since v18.11.0
- * @experimental
  * @param signal The AbortSignal
  * @returns The same AbortSignal
  */

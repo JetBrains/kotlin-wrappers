@@ -6,6 +6,16 @@ package node.fs
 
 /**
  * Retrieves the files matching the specified pattern.
+ *
+ * ```js
+ * import { glob } from 'node:fs';
+ *
+ * glob('*.js', (err, matches) => {
+ *   if (err) throw err;
+ *   console.log(matches);
+ * });
+ * ```
+ * @since v22.0.0
  */
 external fun glob(
     pattern: String,
@@ -14,6 +24,16 @@ external fun glob(
 
 /**
  * Retrieves the files matching the specified pattern.
+ *
+ * ```js
+ * import { glob } from 'node:fs';
+ *
+ * glob('*.js', (err, matches) => {
+ *   if (err) throw err;
+ *   console.log(matches);
+ * });
+ * ```
+ * @since v22.0.0
  */
 external fun glob(
     pattern: js.array.ReadonlyArray<String>,
@@ -23,13 +43,13 @@ external fun glob(
 external fun glob(
     pattern: String,
     options: GlobOptionsWithFileTypes,
-    callback: (err: node.ErrnoException?, matches: js.array.ReadonlyArray<Dirent>) -> Unit,
+    callback: (err: node.ErrnoException?, matches: js.array.ReadonlyArray<Dirent<*>>) -> Unit,
 )
 
 external fun glob(
     pattern: js.array.ReadonlyArray<String>,
     options: GlobOptionsWithFileTypes,
-    callback: (err: node.ErrnoException?, matches: js.array.ReadonlyArray<Dirent>) -> Unit,
+    callback: (err: node.ErrnoException?, matches: js.array.ReadonlyArray<Dirent<*>>) -> Unit,
 )
 
 external fun glob(

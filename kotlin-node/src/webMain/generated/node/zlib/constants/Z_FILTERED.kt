@@ -5,5 +5,4 @@
 
 package node.zlib.constants
 
-// Compression strategy.
 external val Z_FILTERED: Double

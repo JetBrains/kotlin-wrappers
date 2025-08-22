@@ -8,8 +8,9 @@ package node.util
  * The `util.inspect()` method returns a string representation of `object` that is
  * intended for debugging. The output of `util.inspect` may change at any time
  * and should not be depended upon programmatically. Additional `options` may be
- * passed that alter the result. `util.inspect()` will use the constructor's name and/or `@@toStringTag` to make
- * an identifiable tag for an inspected value.
+ * passed that alter the result.
+ * `util.inspect()` will use the constructor's name and/or `Symbol.toStringTag`
+ * property to make an identifiable tag for an inspected value.
  *
  * ```js
  * class Foo {
@@ -56,7 +57,7 @@ package node.util
  * The following example highlights the effect of the `compact` option:
  *
  * ```js
- * import util from 'node:util';
+ * import { inspect } from 'node:util';
  *
  * const o = {
  *   a: [1, 2, [[
@@ -66,7 +67,7 @@ package node.util
  *     'foo']], 4],
  *   b: new Map([['za', 1], ['zb', 'test']]),
  * };
- * console.log(util.inspect(o, { compact: true, depth: 5, breakLength: 80 }));
+ * console.log(inspect(o, { compact: true, depth: 5, breakLength: 80 }));
  *
  * // { a:
  * //   [ 1,
@@ -78,7 +79,7 @@ package node.util
  * //   b: Map(2) { 'za' => 1, 'zb' => 'test' } }
  *
  * // Setting `compact` to false or an integer creates more reader friendly output.
- * console.log(util.inspect(o, { compact: false, depth: 5, breakLength: 80 }));
+ * console.log(inspect(o, { compact: false, depth: 5, breakLength: 80 }));
  *
  * // {
  * //   a: [
@@ -105,11 +106,10 @@ package node.util
  * // single line.
  * ```
  *
- * The `showHidden` option allows [`WeakMap`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakMap) and
- * [`WeakSet`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakSet) entries to be
+ * The `showHidden` option allows `WeakMap` and `WeakSet` entries to be
  * inspected. If there are more entries than `maxArrayLength`, there is no
- * guarantee which entries are displayed. That means retrieving the same [`WeakSet`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakSet) entries twice may
- * result in different output. Furthermore, entries
+ * guarantee which entries are displayed. That means retrieving the same
+ * `WeakSet` entries twice may result in different output. Furthermore, entries
  * with no remaining strong references may be garbage collected at any time.
  *
  * ```js
@@ -157,10 +157,10 @@ package node.util
  * ```js
  * import { inspect } from 'node:util';
  *
- * const thousand = 1_000;
- * const million = 1_000_000;
- * const bigNumber = 123_456_789n;
- * const bigDecimal = 1_234.123_45;
+ * const thousand = 1000;
+ * const million = 1000000;
+ * const bigNumber = 123456789n;
+ * const bigDecimal = 1234.12345;
  *
  * console.log(inspect(thousand, { numericSeparator: true }));
  * // 1_000

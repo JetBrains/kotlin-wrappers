@@ -17,7 +17,7 @@ sealed external interface ClientRequestArgs {
     )?
     var defaultPort: Any? // number | string | undefined
     var family: Double?
-    var headers: OutgoingHttpHeaders?
+    var headers: Any? // OutgoingHttpHeaders | readonly string[] | undefined
     var hints: Double?
     var host: String?
     var hostname: String?

@@ -994,7 +994,6 @@ open external class EventEmitter {
          * }
          * ```
          * @since v20.5.0
-         * @experimental
          * @return Disposable that removes the `abort` listener.
          */
         fun addAbortListener(

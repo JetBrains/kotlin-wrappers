@@ -12,11 +12,11 @@ import js.promise.Promise
  * that returns promises.
  *
  * ```js
- * import util from 'node:util';
- * import fs from 'node:fs';
+ * import { promisify } from 'node:util';
+ * import { stat } from 'node:fs';
  *
- * const stat = util.promisify(fs.stat);
- * stat('.').then((stats) => {
+ * const promisifiedStat = promisify(stat);
+ * promisifiedStat('.').then((stats) => {
  *   // Do something with `stats`
  * }).catch((error) => {
  *   // Handle the error.
@@ -26,23 +26,25 @@ import js.promise.Promise
  * Or, equivalently using `async function`s:
  *
  * ```js
- * import util from 'node:util';
- * import fs from 'node:fs';
+ * import { promisify } from 'node:util';
+ * import { stat } from 'node:fs';
  *
- * const stat = util.promisify(fs.stat);
+ * const promisifiedStat = promisify(stat);
  *
  * async function callStat() {
- *   const stats = await stat('.');
+ *   const stats = await promisifiedStat('.');
  *   console.log(`This directory is owned by ${stats.uid}`);
  * }
  *
  * callStat();
  * ```
  *
- * If there is an `original[util.promisify.custom]` property present, `promisify` will return its value, see `Custom promisified functions`.
+ * If there is an `original[util.promisify.custom]` property present, `promisify`
+ * will return its value, see [Custom promisified functions](https://nodejs.org/docs/latest-v22.x/api/util.html#custom-promisified-functions).
  *
  * `promisify()` assumes that `original` is a function taking a callback as its
- * final argument in all cases. If `original` is not a function, `promisify()` will throw an error. If `original` is a function but its last argument is not
+ * final argument in all cases. If `original` is not a function, `promisify()`
+ * will throw an error. If `original` is a function but its last argument is not
  * an error-first callback, it will still be passed an error-first
  * callback as its last argument.
  *
@@ -50,7 +52,7 @@ import js.promise.Promise
  * work as expected unless handled specially:
  *
  * ```js
- * import util from 'node:util';
+ * import { promisify } from 'node:util';
  *
  * class Foo {
  *   constructor() {
@@ -64,8 +66,8 @@ import js.promise.Promise
  *
  * const foo = new Foo();
  *
- * const naiveBar = util.promisify(foo.bar);
- * // TypeError: Cannot read property 'a' of undefined
+ * const naiveBar = promisify(foo.bar);
+ * // TypeError: Cannot read properties of undefined (reading 'a')
  * // naiveBar().then(a => console.log(a));
  *
  * naiveBar.call(foo).then((a) => console.log(a)); // '42'

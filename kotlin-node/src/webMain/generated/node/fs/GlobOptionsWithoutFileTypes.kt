@@ -2,8 +2,6 @@
 
 package node.fs
 
-sealed external interface GlobOptionsWithoutFileTypes : GlobOptionsBase {
-    @JsName("exclude")
-    var excludeWithoutFileTypes: ((fileName: String) -> Boolean)?
+sealed external interface GlobOptionsWithoutFileTypes : _GlobOptions<String> {
     override var withFileTypes: Boolean /* false */?
 }

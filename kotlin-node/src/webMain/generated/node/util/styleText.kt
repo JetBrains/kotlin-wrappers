@@ -5,15 +5,29 @@
 package node.util
 
 /**
- * This function returns a formatted text considering the `format` passed.
+ * This function returns a formatted text considering the `format` passed
+ * for printing in a terminal. It is aware of the terminal's capabilities
+ * and acts according to the configuration set via `NO_COLOR`,
+ * `NODE_DISABLE_COLORS` and `FORCE_COLOR` environment variables.
  *
  * ```js
  * import { styleText } from 'node:util';
- * const errorMessage = styleText('red', 'Error! Error!');
- * console.log(errorMessage);
+ * import { stderr } from 'node:process';
+ *
+ * const successMessage = styleText('green', 'Success!');
+ * console.log(successMessage);
+ *
+ * const errorMessage = styleText(
+ *   'red',
+ *   'Error! Error!',
+ *   // Validate if process.stderr has TTY
+ *   { stream: stderr },
+ * );
+ * console.error(errorMessage);
  * ```
  *
- * `util.inspect.colors` also provides text formats such as `italic`, and `underline` and you can combine both:
+ * `util.inspect.colors` also provides text formats such as `italic`, and
+ * `underline` and you can combine both:
  *
  * ```js
  * console.log(
@@ -21,14 +35,16 @@ package node.util
  * );
  * ```
  *
- * When passing an array of formats, the order of the format applied is left to right so the following style
- * might overwrite the previous one.
+ * When passing an array of formats, the order of the format applied
+ * is left to right so the following style might overwrite the previous one.
  *
  * ```js
  * console.log(
  *   util.styleText(['red', 'green'], 'text'), // green
  * );
  * ```
+ *
+ * The special format value `none` applies no additional styling to the text.
  *
  * The full list of formats can be found in [modifiers](https://nodejs.org/docs/latest-v22.x/api/util.html#modifiers).
  * @param format A text format or an Array of text formats defined in `util.inspect.colors`.
@@ -38,18 +54,33 @@ package node.util
 external fun styleText(
     format: ForegroundColors,
     text: String,
+    options: StyleTextOptions = definedExternally,
 ): String
 
 /**
- * This function returns a formatted text considering the `format` passed.
+ * This function returns a formatted text considering the `format` passed
+ * for printing in a terminal. It is aware of the terminal's capabilities
+ * and acts according to the configuration set via `NO_COLOR`,
+ * `NODE_DISABLE_COLORS` and `FORCE_COLOR` environment variables.
  *
  * ```js
  * import { styleText } from 'node:util';
- * const errorMessage = styleText('red', 'Error! Error!');
- * console.log(errorMessage);
+ * import { stderr } from 'node:process';
+ *
+ * const successMessage = styleText('green', 'Success!');
+ * console.log(successMessage);
+ *
+ * const errorMessage = styleText(
+ *   'red',
+ *   'Error! Error!',
+ *   // Validate if process.stderr has TTY
+ *   { stream: stderr },
+ * );
+ * console.error(errorMessage);
  * ```
  *
- * `util.inspect.colors` also provides text formats such as `italic`, and `underline` and you can combine both:
+ * `util.inspect.colors` also provides text formats such as `italic`, and
+ * `underline` and you can combine both:
  *
  * ```js
  * console.log(
@@ -57,14 +88,16 @@ external fun styleText(
  * );
  * ```
  *
- * When passing an array of formats, the order of the format applied is left to right so the following style
- * might overwrite the previous one.
+ * When passing an array of formats, the order of the format applied
+ * is left to right so the following style might overwrite the previous one.
  *
  * ```js
  * console.log(
  *   util.styleText(['red', 'green'], 'text'), // green
  * );
  * ```
+ *
+ * The special format value `none` applies no additional styling to the text.
  *
  * The full list of formats can be found in [modifiers](https://nodejs.org/docs/latest-v22.x/api/util.html#modifiers).
  * @param format A text format or an Array of text formats defined in `util.inspect.colors`.
@@ -74,18 +107,33 @@ external fun styleText(
 external fun styleText(
     format: BackgroundColors,
     text: String,
+    options: StyleTextOptions = definedExternally,
 ): String
 
 /**
- * This function returns a formatted text considering the `format` passed.
+ * This function returns a formatted text considering the `format` passed
+ * for printing in a terminal. It is aware of the terminal's capabilities
+ * and acts according to the configuration set via `NO_COLOR`,
+ * `NODE_DISABLE_COLORS` and `FORCE_COLOR` environment variables.
  *
  * ```js
  * import { styleText } from 'node:util';
- * const errorMessage = styleText('red', 'Error! Error!');
- * console.log(errorMessage);
+ * import { stderr } from 'node:process';
+ *
+ * const successMessage = styleText('green', 'Success!');
+ * console.log(successMessage);
+ *
+ * const errorMessage = styleText(
+ *   'red',
+ *   'Error! Error!',
+ *   // Validate if process.stderr has TTY
+ *   { stream: stderr },
+ * );
+ * console.error(errorMessage);
  * ```
  *
- * `util.inspect.colors` also provides text formats such as `italic`, and `underline` and you can combine both:
+ * `util.inspect.colors` also provides text formats such as `italic`, and
+ * `underline` and you can combine both:
  *
  * ```js
  * console.log(
@@ -93,14 +141,16 @@ external fun styleText(
  * );
  * ```
  *
- * When passing an array of formats, the order of the format applied is left to right so the following style
- * might overwrite the previous one.
+ * When passing an array of formats, the order of the format applied
+ * is left to right so the following style might overwrite the previous one.
  *
  * ```js
  * console.log(
  *   util.styleText(['red', 'green'], 'text'), // green
  * );
  * ```
+ *
+ * The special format value `none` applies no additional styling to the text.
  *
  * The full list of formats can be found in [modifiers](https://nodejs.org/docs/latest-v22.x/api/util.html#modifiers).
  * @param format A text format or an Array of text formats defined in `util.inspect.colors`.
@@ -110,18 +160,33 @@ external fun styleText(
 external fun styleText(
     format: Modifiers,
     text: String,
+    options: StyleTextOptions = definedExternally,
 ): String
 
 /**
- * This function returns a formatted text considering the `format` passed.
+ * This function returns a formatted text considering the `format` passed
+ * for printing in a terminal. It is aware of the terminal's capabilities
+ * and acts according to the configuration set via `NO_COLOR`,
+ * `NODE_DISABLE_COLORS` and `FORCE_COLOR` environment variables.
  *
  * ```js
  * import { styleText } from 'node:util';
- * const errorMessage = styleText('red', 'Error! Error!');
- * console.log(errorMessage);
+ * import { stderr } from 'node:process';
+ *
+ * const successMessage = styleText('green', 'Success!');
+ * console.log(successMessage);
+ *
+ * const errorMessage = styleText(
+ *   'red',
+ *   'Error! Error!',
+ *   // Validate if process.stderr has TTY
+ *   { stream: stderr },
+ * );
+ * console.error(errorMessage);
  * ```
  *
- * `util.inspect.colors` also provides text formats such as `italic`, and `underline` and you can combine both:
+ * `util.inspect.colors` also provides text formats such as `italic`, and
+ * `underline` and you can combine both:
  *
  * ```js
  * console.log(
@@ -129,8 +194,8 @@ external fun styleText(
  * );
  * ```
  *
- * When passing an array of formats, the order of the format applied is left to right so the following style
- * might overwrite the previous one.
+ * When passing an array of formats, the order of the format applied
+ * is left to right so the following style might overwrite the previous one.
  *
  * ```js
  * console.log(
@@ -138,9 +203,15 @@ external fun styleText(
  * );
  * ```
  *
+ * The special format value `none` applies no additional styling to the text.
+ *
  * The full list of formats can be found in [modifiers](https://nodejs.org/docs/latest-v22.x/api/util.html#modifiers).
  * @param format A text format or an Array of text formats defined in `util.inspect.colors`.
  * @param text The text to to be formatted.
  * @since v20.12.0
  */
-external fun styleText(format: Array<Any /* ForegroundColors | BackgroundColors | Modifiers */>, text: String): String
+external fun styleText(
+    format: Array<Any /* ForegroundColors | BackgroundColors | Modifiers */>,
+    text: String,
+    options: StyleTextOptions = definedExternally,
+): String

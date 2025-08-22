@@ -102,4 +102,14 @@ external fun readdirSync(
 external fun readdirSync(
     path: PathLike,
     options: ReaddirSyncWithFileTypesOptions,
-): js.array.ReadonlyArray<Dirent>
+): js.array.ReadonlyArray<Dirent<*>>
+
+/**
+ * Synchronous readdir(3) - read a directory.
+ * @param path A path to a file. If a URL is provided, it must use the `file:` protocol.
+ * @param options Must include `withFileTypes: true` and `encoding: 'buffer'`.
+ */
+external fun readdirSync(
+    path: PathLike,
+    options: ReaddirSyncBufferWithFileTypesOptions,
+): js.array.ReadonlyArray<Dirent<node.buffer.Buffer<*>>>

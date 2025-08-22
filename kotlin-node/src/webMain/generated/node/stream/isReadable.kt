@@ -8,13 +8,11 @@ package node.stream
 /**
  * Returns whether the stream is readable.
  * @since v17.4.0, v16.14.0
- * @experimental
  */
 external fun isReadable(stream: Readable): Boolean
 
 /**
  * Returns whether the stream is readable.
  * @since v17.4.0, v16.14.0
- * @experimental
  */
 external fun isReadable(stream: node.ReadableStream): Boolean

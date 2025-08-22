@@ -5,19 +5,23 @@
 package node.util
 
 /**
- * Usage of `util.inherits()` is discouraged. Please use the ES6 `class` and `extends` keywords to get language level inheritance support. Also note
+ * Usage of `util.inherits()` is discouraged. Please use the ES6 `class` and
+ * `extends` keywords to get language level inheritance support. Also note
  * that the two styles are [semantically incompatible](https://github.com/nodejs/node/issues/4179).
  *
- * Inherit the prototype methods from one [constructor](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/constructor) into another. The
- * prototype of `constructor` will be set to a new object created from `superConstructor`.
+ * Inherit the prototype methods from one
+ * [constructor](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/constructor) into another. The
+ * prototype of `constructor` will be set to a new object created from
+ * `superConstructor`.
  *
- * This mainly adds some input validation on top of`Object.setPrototypeOf(constructor.prototype, superConstructor.prototype)`.
+ * This mainly adds some input validation on top of
+ * `Object.setPrototypeOf(constructor.prototype, superConstructor.prototype)`.
  * As an additional convenience, `superConstructor` will be accessible
  * through the `constructor.super_` property.
  *
  * ```js
- * import util from 'node:util';
- * import EventEmitter from 'node:events';
+ * const util = require('node:util');
+ * const EventEmitter = require('node:events');
  *
  * function MyStream() {
  *   EventEmitter.call(this);

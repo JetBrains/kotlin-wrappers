@@ -3,13 +3,23 @@
 package node.stream.consumers
 
 import js.iterable.AsyncIterable
-import node.stream.Readable
+import web.streams.ReadableStream as WebReadableStream
 
+@seskar.js.JsAsync
+external suspend fun json(stream: WebReadableStream<*>): Any?
+
+/**
+ * @since v16.7.0
+ * @returns Fulfills with the contents of the stream parsed as a
+ * UTF-8 encoded string that is then passed through `JSON.parse()`.
+ */
 @seskar.js.JsAsync
 external suspend fun json(stream: node.ReadableStream): Any?
 
-@seskar.js.JsAsync
-external suspend fun json(stream: Readable): Any?
-
+/**
+ * @since v16.7.0
+ * @returns Fulfills with the contents of the stream parsed as a
+ * UTF-8 encoded string that is then passed through `JSON.parse()`.
+ */
 @seskar.js.JsAsync
 external suspend fun json(stream: AsyncIterable<Any?>): Any?

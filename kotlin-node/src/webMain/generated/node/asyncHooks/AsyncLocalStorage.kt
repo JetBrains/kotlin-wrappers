@@ -42,8 +42,8 @@ package node.asyncHooks
  * http.get('http://localhost:8080');
  * // Prints:
  * //   0: start
- * //   1: start
  * //   0: finish
+ * //   1: start
  * //   1: finish
  * ```
  *
@@ -200,7 +200,6 @@ external class AsyncLocalStorage<T> {
         /**
          * Binds the given function to the current execution context.
          * @since v19.8.0
-         * @experimental
          * @param fn The function to bind to the current execution context.
          * @return A new function that calls `fn` within the captured execution context.
          */
@@ -232,7 +231,6 @@ external class AsyncLocalStorage<T> {
          * console.log(asyncLocalStorage.run(321, () => foo.get())); // returns 123
          * ```
          * @since v19.8.0
-         * @experimental
          * @return A new function with the signature `(fn: (...args) : R, ...args) : R`.
          */
         fun snapshot(): Function<Any?> // <R, TArgs extends any[]>(fn: (...args: TArgs) => R, ...args: TArgs) => R

@@ -15,6 +15,13 @@ sealed external interface CallSiteObject {
     var scriptName: String
 
     /**
+     * Returns the unique id of the script, as in Chrome DevTools protocol
+     * [`Runtime.ScriptId`](https://chromedevtools.github.io/devtools-protocol/1-3/Runtime/#type-ScriptId).
+     * @since v22.14.0
+     */
+    var scriptId: String
+
+    /**
      * Returns the number, 1-based, of the line for the associate function call.
      */
     var lineNumber: Double
@@ -22,5 +29,5 @@ sealed external interface CallSiteObject {
     /**
      * Returns the 1-based column offset on the line for the associated function call.
      */
-    var column: Double
+    var columnNumber: Double
 }

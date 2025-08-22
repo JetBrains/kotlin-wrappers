@@ -6,7 +6,4 @@ import node.http.IncomingMessage
 import node.http.ServerResponse
 
 sealed external interface ServerOptions<Http1Request : IncomingMessage, Http1Response : ServerResponse<*>, Http2Request : Http2ServerRequest, Http2Response : Http2ServerResponse<*>> :
-    ServerSessionOptions<Http1Request, Http1Response, Http2Request, Http2Response> {
-    var streamResetBurst: Double?
-    var streamResetRate: Double?
-}
+    ServerSessionOptions<Http1Request, Http1Response, Http2Request, Http2Response>

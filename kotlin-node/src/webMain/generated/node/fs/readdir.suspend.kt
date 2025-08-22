@@ -98,4 +98,10 @@ external suspend fun readdir(
 external suspend fun readdir(
     path: PathLike,
     options: ReaddirWithFileTypesAsyncOptions,
-): js.array.ReadonlyArray<Dirent>
+): js.array.ReadonlyArray<Dirent<*>>
+
+@seskar.js.JsAsync
+external suspend fun readdir(
+    path: PathLike,
+    options: ReaddirBufferWithFileTypesAsyncOptions,
+): js.array.ReadonlyArray<Dirent<node.buffer.Buffer<*>>>

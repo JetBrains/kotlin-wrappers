@@ -70,97 +70,58 @@ import js.array.ReadonlyArray
  * @param args List of string arguments.
  * @param callback Called with the output when process terminates.
  */
-external fun execFile(file: String): ChildProcess
-
-external fun execFile(
-    file: String,
-    options: (ExecFileObjectEncodingOptions)?,
-): ChildProcess
-
-external fun execFile(
-    file: String,
-    args: (ReadonlyArray<String>)? = definedExternally,
-): ChildProcess
-
-external fun execFile(
-    file: String,
-    args: (ReadonlyArray<String>)?,
-    options: (ExecFileObjectEncodingOptions)?,
-): ChildProcess
-
 // no `options` definitely means stdout/stderr are `string`.
 external fun execFile(
     file: String,
-    callback: (error: ExecFileException?, stdout: String, stderr: String) -> Unit,
+    callback: (error: ExecFileException?, stdout: String, stderr: String) -> Unit = definedExternally,
 ): ChildProcess
 
 external fun execFile(
     file: String,
     args: (ReadonlyArray<String>)?,
-    callback: (error: ExecFileException?, stdout: String, stderr: String) -> Unit,
+    callback: (error: ExecFileException?, stdout: String, stderr: String) -> Unit = definedExternally,
 ): ChildProcess
 
 // `options` with `"buffer"` or `null` for `encoding` means stdout/stderr are definitely `Buffer`.
 external fun execFile(
     file: String,
     options: ExecFileOptionsWithBufferEncoding,
-    callback: (error: ExecFileException?, stdout: node.buffer.Buffer<*>, stderr: node.buffer.Buffer<*>) -> Unit,
+    callback: (
+        error: ExecFileException?,
+        stdout: node.buffer.Buffer<*>,
+        stderr: node.buffer.Buffer<*>,
+    ) -> Unit = definedExternally,
 ): ChildProcess
 
 external fun execFile(
     file: String,
     args: (ReadonlyArray<String>)?,
     options: ExecFileOptionsWithBufferEncoding,
-    callback: (error: ExecFileException?, stdout: node.buffer.Buffer<*>, stderr: node.buffer.Buffer<*>) -> Unit,
+    callback: (
+        error: ExecFileException?,
+        stdout: node.buffer.Buffer<*>,
+        stderr: node.buffer.Buffer<*>,
+    ) -> Unit = definedExternally,
 ): ChildProcess
 
-// `options` with well known `encoding` means stdout/stderr are definitely `string`.
+// `options` with well-known or absent `encoding` means stdout/stderr are definitely `string`.
 external fun execFile(
     file: String,
     options: ExecFileOptionsWithStringEncoding,
-    callback: (error: ExecFileException?, stdout: String, stderr: String) -> Unit,
+    callback: (error: ExecFileException?, stdout: String, stderr: String) -> Unit = definedExternally,
 ): ChildProcess
 
 external fun execFile(
     file: String,
     args: (ReadonlyArray<String>)?,
     options: ExecFileOptionsWithStringEncoding,
-    callback: (error: ExecFileException?, stdout: String, stderr: String) -> Unit,
-): ChildProcess
-
-// `options` with an `encoding` whose type is `string` means stdout/stderr could either be `Buffer` or `string`.
-// There is no guarantee the `encoding` is unknown as `string` is a superset of `BufferEncoding`.
-external fun execFile(
-    file: String,
-    options: ExecFileOptionsWithOtherEncoding,
-    callback: (error: ExecFileException?, stdout: Any /* string | Buffer */, stderr: Any /* string | Buffer */) -> Unit,
-): ChildProcess
-
-external fun execFile(
-    file: String,
-    args: (ReadonlyArray<String>)?,
-    options: ExecFileOptionsWithOtherEncoding,
-    callback: (error: ExecFileException?, stdout: Any /* string | Buffer */, stderr: Any /* string | Buffer */) -> Unit,
-): ChildProcess
-
-// `options` without an `encoding` means stdout/stderr are definitely `string`.
-external fun execFile(
-    file: String,
-    options: ExecFileOptions,
-    callback: (error: ExecFileException?, stdout: String, stderr: String) -> Unit,
-): ChildProcess
-
-external fun execFile(
-    file: String,
-    args: (ReadonlyArray<String>)?,
-    options: ExecFileOptions,
-    callback: (error: ExecFileException?, stdout: String, stderr: String) -> Unit,
+    callback: (error: ExecFileException?, stdout: String, stderr: String) -> Unit = definedExternally,
 ): ChildProcess
 
 // fallback if nothing else matches. Worst case is always `string | Buffer`.
 external fun execFile(
     file: String,
-    options: (ExecFileObjectEncodingOptions)?,
+    options: ExecFileOptions?,
     callback: (
         (error: ExecFileException?, stdout: Any /* string | Buffer */, stderr: Any /* string | Buffer */) -> Unit
     )?,
@@ -169,7 +130,7 @@ external fun execFile(
 external fun execFile(
     file: String,
     args: (ReadonlyArray<String>)?,
-    options: (ExecFileObjectEncodingOptions)?,
+    options: ExecFileOptions?,
     callback: (
         (error: ExecFileException?, stdout: Any /* string | Buffer */, stderr: Any /* string | Buffer */) -> Unit
     )?,

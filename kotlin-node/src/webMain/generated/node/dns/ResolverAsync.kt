@@ -70,25 +70,13 @@ external class Resolver {
     @JsName("resolve")
     fun resolveAsync(
         hostname: String,
-        rrtype: ResourceRecordType.A,
+        rrtype: ResourceRecordType.StringRecord,
     ): Promise<js.array.ReadonlyArray<String>>
 
     @seskar.js.JsAsync
     suspend fun resolve(
         hostname: String,
-        rrtype: ResourceRecordType.A,
-    ): js.array.ReadonlyArray<String>
-
-    @JsName("resolve")
-    fun resolveAsync(
-        hostname: String,
-        rrtype: ResourceRecordType.AAAA,
-    ): Promise<js.array.ReadonlyArray<String>>
-
-    @seskar.js.JsAsync
-    suspend fun resolve(
-        hostname: String,
-        rrtype: ResourceRecordType.AAAA,
+        rrtype: ResourceRecordType.StringRecord,
     ): js.array.ReadonlyArray<String>
 
     @JsName("resolve")
@@ -118,18 +106,6 @@ external class Resolver {
     @JsName("resolve")
     fun resolveAsync(
         hostname: String,
-        rrtype: ResourceRecordType.CNAME,
-    ): Promise<js.array.ReadonlyArray<String>>
-
-    @seskar.js.JsAsync
-    suspend fun resolve(
-        hostname: String,
-        rrtype: ResourceRecordType.CNAME,
-    ): js.array.ReadonlyArray<String>
-
-    @JsName("resolve")
-    fun resolveAsync(
-        hostname: String,
         rrtype: ResourceRecordType.MX,
     ): Promise<js.array.ReadonlyArray<MxRecord>>
 
@@ -150,30 +126,6 @@ external class Resolver {
         hostname: String,
         rrtype: ResourceRecordType.NAPTR,
     ): js.array.ReadonlyArray<NaptrRecord>
-
-    @JsName("resolve")
-    fun resolveAsync(
-        hostname: String,
-        rrtype: ResourceRecordType.NS,
-    ): Promise<js.array.ReadonlyArray<String>>
-
-    @seskar.js.JsAsync
-    suspend fun resolve(
-        hostname: String,
-        rrtype: ResourceRecordType.NS,
-    ): js.array.ReadonlyArray<String>
-
-    @JsName("resolve")
-    fun resolveAsync(
-        hostname: String,
-        rrtype: ResourceRecordType.PTR,
-    ): Promise<js.array.ReadonlyArray<String>>
-
-    @seskar.js.JsAsync
-    suspend fun resolve(
-        hostname: String,
-        rrtype: ResourceRecordType.PTR,
-    ): js.array.ReadonlyArray<String>
 
     @JsName("resolve")
     fun resolveAsync(
@@ -202,6 +154,18 @@ external class Resolver {
     @JsName("resolve")
     fun resolveAsync(
         hostname: String,
+        rrtype: ResourceRecordType.TLSA,
+    ): Promise<js.array.ReadonlyArray<TlsaRecord>>
+
+    @seskar.js.JsAsync
+    suspend fun resolve(
+        hostname: String,
+        rrtype: ResourceRecordType.TLSA,
+    ): js.array.ReadonlyArray<TlsaRecord>
+
+    @JsName("resolve")
+    fun resolveAsync(
+        hostname: String,
         rrtype: ResourceRecordType.TXT,
     ): Promise<js.array.ReadonlyArray<js.array.ReadonlyArray<String>>>
 
@@ -215,13 +179,13 @@ external class Resolver {
     fun resolveAsync(
         hostname: String,
         rrtype: String,
-    ): Promise<Any /* string[] | SoaRecord | MxRecord[] | NaptrRecord[] | SrvRecord[] | string[][] | AnyRecord[] */>
+    ): Promise<Any /* string[] | SoaRecord | CaaRecord[] | MxRecord[] | NaptrRecord[] | SrvRecord[] | TlsaRecord[] | string[][] | AnyRecord[] */>
 
     @seskar.js.JsAsync
     suspend fun resolve(
         hostname: String,
         rrtype: String,
-    ): Any // string[] | SoaRecord | MxRecord[] | NaptrRecord[] | SrvRecord[] | string[][] | AnyRecord[]
+    ): Any // string[] | SoaRecord | CaaRecord[] | MxRecord[] | NaptrRecord[] | SrvRecord[] | TlsaRecord[] | string[][] | AnyRecord[]
 
     @JsName("resolve4")
     fun resolve4Async(hostname: String): Promise<js.array.ReadonlyArray<String>>
@@ -324,6 +288,12 @@ external class Resolver {
 
     @seskar.js.JsAsync
     suspend fun resolveSrv(hostname: String): js.array.ReadonlyArray<SrvRecord>
+
+    @JsName("resolveTlsa")
+    fun resolveTlsaAsync(hostname: String): Promise<js.array.ReadonlyArray<TlsaRecord>>
+
+    @seskar.js.JsAsync
+    suspend fun resolveTlsa(hostname: String): js.array.ReadonlyArray<TlsaRecord>
 
     @JsName("resolveTxt")
     fun resolveTxtAsync(hostname: String): Promise<js.array.ReadonlyArray<js.array.ReadonlyArray<String>>>

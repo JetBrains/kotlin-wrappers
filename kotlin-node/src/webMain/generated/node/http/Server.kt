@@ -31,9 +31,12 @@ open external class Server<Request : IncomingMessage, Response : ServerResponse<
      * @since v0.9.12
      * @param [msecs=0 (no timeout)]
      */
-    fun setTimeout(msecs: Number = definedExternally, callback: () -> Unit = definedExternally) // this
+    fun setTimeout(
+        msecs: Number = definedExternally,
+        callback: (socket: Socket) -> Unit = definedExternally,
+    ) // this
 
-    fun setTimeout(callback: () -> Unit) // this
+    fun setTimeout(callback: (socket: Socket) -> Unit) // this
 
     /**
      * Limits maximum incoming headers count. If set to 0, no limit will be applied.

@@ -5,7 +5,8 @@
 package node.util.types
 
 /**
- * Returns `true` if the value was returned by the constructor of a [built-in `Error` type](https://tc39.es/ecma262/#sec-error-objects).
+ * Returns `true` if the value was returned by the constructor of a
+ * [built-in `Error` type](https://tc39.es/ecma262/#sec-error-objects).
  *
  * ```js
  * console.log(util.types.isNativeError(new Error()));  // true
@@ -20,14 +21,18 @@ package node.util.types
  * console.log(util.types.isNativeError(new MyError()));  // true
  * ```
  *
- * A value being `instanceof` a native error class is not equivalent to `isNativeError()` returning `true` for that value. `isNativeError()` returns `true` for errors
- * which come from a different [realm](https://tc39.es/ecma262/#realm) while `instanceof Error` returns `false` for these errors:
+ * A value being `instanceof` a native error class is not equivalent to `isNativeError()`
+ * returning `true` for that value. `isNativeError()` returns `true` for errors
+ * which come from a different [realm](https://tc39.es/ecma262/#realm) while `instanceof Error` returns `false`
+ * for these errors:
  *
  * ```js
- * import vm from 'node:vm';
- * const context = vm.createContext({});
- * const myError = vm.runInContext('new Error()', context);
- * console.log(util.types.isNativeError(myError)); // true
+ * import { createContext, runInContext } from 'node:vm';
+ * import { types } from 'node:util';
+ *
+ * const context = createContext({});
+ * const myError = runInContext('new Error()', context);
+ * console.log(types.isNativeError(myError)); // true
  * console.log(myError instanceof Error); // false
  * ```
  *

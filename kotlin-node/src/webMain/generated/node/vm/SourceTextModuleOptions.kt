@@ -10,6 +10,10 @@ sealed external interface SourceTextModuleOptions {
      * @default 'vm:module(i)' where i is a context-specific ascending index.
      */
     var identifier: String?
+
+    /**
+     * Provides an optional data with V8's code cache data for the supplied source.
+     */
     var cachedData: Any? // ScriptOptions["cachedData"] | undefined
     var context: Context?
     var lineOffset: Double?
@@ -19,5 +23,11 @@ sealed external interface SourceTextModuleOptions {
      * Called during evaluation of this module to initialize the `import.meta`.
      */
     var initializeImportMeta: ((meta: ImportMeta, module: SourceTextModule) -> Unit)?
-    var importModuleDynamically: Any? // ScriptOptions["importModuleDynamically"] | undefined
+
+    /**
+     * Used to specify how the modules should be loaded during the evaluation of this script when `import()` is called. This option is
+     * part of the experimental modules API. We do not recommend using it in a production environment. For detailed information, see
+     * [Support of dynamic `import()` in compilation APIs](https://nodejs.org/docs/latest-v22.x/api/vm.html#support-of-dynamic-import-in-compilation-apis).
+     */
+    var importModuleDynamically: DynamicModuleLoader<SourceTextModule>?
 }

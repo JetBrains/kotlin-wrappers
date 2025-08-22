@@ -240,5 +240,5 @@ open external class ServerResponse<Request : IncomingMessage /* default is Incom
      * the request body should be sent.
      * @since v10.0.0
      */
-    fun writeProcessing()
+    fun writeProcessing(callback: () -> Unit = definedExternally)
 }

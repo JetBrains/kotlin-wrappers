@@ -4,4 +4,6 @@
 
 package node.util
 
+// export { debuglog as debug };
+
 // export { types };

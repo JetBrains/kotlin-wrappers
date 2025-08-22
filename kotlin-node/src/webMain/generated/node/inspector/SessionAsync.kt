@@ -794,37 +794,37 @@ external class Session : EventEmitter {
     @JsName("post")
     fun postAsync(
         method: SessionMethod.HEAPPROFILER_STARTTRACKINGHEAPOBJECTS,
-        params: node.inspector.heapprofiler.StartTrackingHeapObjectsParameterType = definedExternally,
+        params: node.inspector.heapProfiler.StartTrackingHeapObjectsParameterType = definedExternally,
     ): Promise<js.core.Void>
 
     @seskar.js.JsAsync
     suspend fun post(
         method: SessionMethod.HEAPPROFILER_STARTTRACKINGHEAPOBJECTS,
-        params: node.inspector.heapprofiler.StartTrackingHeapObjectsParameterType = definedExternally,
+        params: node.inspector.heapProfiler.StartTrackingHeapObjectsParameterType = definedExternally,
     ): js.core.Void
 
     @JsName("post")
     fun postAsync(
         method: SessionMethod.HEAPPROFILER_STOPTRACKINGHEAPOBJECTS,
-        params: node.inspector.heapprofiler.StopTrackingHeapObjectsParameterType = definedExternally,
+        params: node.inspector.heapProfiler.StopTrackingHeapObjectsParameterType = definedExternally,
     ): Promise<js.core.Void>
 
     @seskar.js.JsAsync
     suspend fun post(
         method: SessionMethod.HEAPPROFILER_STOPTRACKINGHEAPOBJECTS,
-        params: node.inspector.heapprofiler.StopTrackingHeapObjectsParameterType = definedExternally,
+        params: node.inspector.heapProfiler.StopTrackingHeapObjectsParameterType = definedExternally,
     ): js.core.Void
 
     @JsName("post")
     fun postAsync(
         method: SessionMethod.HEAPPROFILER_TAKEHEAPSNAPSHOT,
-        params: node.inspector.heapprofiler.TakeHeapSnapshotParameterType = definedExternally,
+        params: node.inspector.heapProfiler.TakeHeapSnapshotParameterType = definedExternally,
     ): Promise<js.core.Void>
 
     @seskar.js.JsAsync
     suspend fun post(
         method: SessionMethod.HEAPPROFILER_TAKEHEAPSNAPSHOT,
-        params: node.inspector.heapprofiler.TakeHeapSnapshotParameterType = definedExternally,
+        params: node.inspector.heapProfiler.TakeHeapSnapshotParameterType = definedExternally,
     ): js.core.Void
 
     @JsName("post")
@@ -836,14 +836,14 @@ external class Session : EventEmitter {
     @JsName("post")
     fun postAsync(
         method: SessionMethod.HEAPPROFILER_GETOBJECTBYHEAPOBJECTID,
-        params: node.inspector.heapprofiler.GetObjectByHeapObjectIdParameterType = definedExternally,
-    ): Promise<node.inspector.heapprofiler.GetObjectByHeapObjectIdReturnType>
+        params: node.inspector.heapProfiler.GetObjectByHeapObjectIdParameterType = definedExternally,
+    ): Promise<node.inspector.heapProfiler.GetObjectByHeapObjectIdReturnType>
 
     @seskar.js.JsAsync
     suspend fun post(
         method: SessionMethod.HEAPPROFILER_GETOBJECTBYHEAPOBJECTID,
-        params: node.inspector.heapprofiler.GetObjectByHeapObjectIdParameterType = definedExternally,
-    ): node.inspector.heapprofiler.GetObjectByHeapObjectIdReturnType
+        params: node.inspector.heapProfiler.GetObjectByHeapObjectIdParameterType = definedExternally,
+    ): node.inspector.heapProfiler.GetObjectByHeapObjectIdReturnType
 
     /**
      * Enables console to refer to the node with given id via $x (see Command Line API for more details $x functions).
@@ -851,58 +851,58 @@ external class Session : EventEmitter {
     @JsName("post")
     fun postAsync(
         method: SessionMethod.HEAPPROFILER_ADDINSPECTEDHEAPOBJECT,
-        params: node.inspector.heapprofiler.AddInspectedHeapObjectParameterType = definedExternally,
+        params: node.inspector.heapProfiler.AddInspectedHeapObjectParameterType = definedExternally,
     ): Promise<js.core.Void>
 
     @seskar.js.JsAsync
     suspend fun post(
         method: SessionMethod.HEAPPROFILER_ADDINSPECTEDHEAPOBJECT,
-        params: node.inspector.heapprofiler.AddInspectedHeapObjectParameterType = definedExternally,
+        params: node.inspector.heapProfiler.AddInspectedHeapObjectParameterType = definedExternally,
     ): js.core.Void
 
     @JsName("post")
     fun postAsync(
         method: SessionMethod.HEAPPROFILER_GETHEAPOBJECTID,
-        params: node.inspector.heapprofiler.GetHeapObjectIdParameterType = definedExternally,
-    ): Promise<node.inspector.heapprofiler.GetHeapObjectIdReturnType>
+        params: node.inspector.heapProfiler.GetHeapObjectIdParameterType = definedExternally,
+    ): Promise<node.inspector.heapProfiler.GetHeapObjectIdReturnType>
 
     @seskar.js.JsAsync
     suspend fun post(
         method: SessionMethod.HEAPPROFILER_GETHEAPOBJECTID,
-        params: node.inspector.heapprofiler.GetHeapObjectIdParameterType = definedExternally,
-    ): node.inspector.heapprofiler.GetHeapObjectIdReturnType
+        params: node.inspector.heapProfiler.GetHeapObjectIdParameterType = definedExternally,
+    ): node.inspector.heapProfiler.GetHeapObjectIdReturnType
 
     @JsName("post")
     fun postAsync(
         method: SessionMethod.HEAPPROFILER_STARTSAMPLING,
-        params: node.inspector.heapprofiler.StartSamplingParameterType = definedExternally,
+        params: node.inspector.heapProfiler.StartSamplingParameterType = definedExternally,
     ): Promise<js.core.Void>
 
     @seskar.js.JsAsync
     suspend fun post(
         method: SessionMethod.HEAPPROFILER_STARTSAMPLING,
-        params: node.inspector.heapprofiler.StartSamplingParameterType = definedExternally,
+        params: node.inspector.heapProfiler.StartSamplingParameterType = definedExternally,
     ): js.core.Void
 
     @JsName("post")
     fun postAsync(
         method: SessionMethod.HEAPPROFILER_STOPSAMPLING,
-    ): Promise<node.inspector.heapprofiler.StopSamplingReturnType>
+    ): Promise<node.inspector.heapProfiler.StopSamplingReturnType>
 
     @seskar.js.JsAsync
     suspend fun post(
         method: SessionMethod.HEAPPROFILER_STOPSAMPLING,
-    ): node.inspector.heapprofiler.StopSamplingReturnType
+    ): node.inspector.heapProfiler.StopSamplingReturnType
 
     @JsName("post")
     fun postAsync(
         method: SessionMethod.HEAPPROFILER_GETSAMPLINGPROFILE,
-    ): Promise<node.inspector.heapprofiler.GetSamplingProfileReturnType>
+    ): Promise<node.inspector.heapProfiler.GetSamplingProfileReturnType>
 
     @seskar.js.JsAsync
     suspend fun post(
         method: SessionMethod.HEAPPROFILER_GETSAMPLINGPROFILE,
-    ): node.inspector.heapprofiler.GetSamplingProfileReturnType
+    ): node.inspector.heapProfiler.GetSamplingProfileReturnType
 
     /**
      * Gets supported tracing categories.
@@ -910,12 +910,12 @@ external class Session : EventEmitter {
     @JsName("post")
     fun postAsync(
         method: SessionMethod.NODETRACING_GETCATEGORIES,
-    ): Promise<node.inspector.nodetracing.GetCategoriesReturnType>
+    ): Promise<node.inspector.nodeTracing.GetCategoriesReturnType>
 
     @seskar.js.JsAsync
     suspend fun post(
         method: SessionMethod.NODETRACING_GETCATEGORIES,
-    ): node.inspector.nodetracing.GetCategoriesReturnType
+    ): node.inspector.nodeTracing.GetCategoriesReturnType
 
     /**
      * Start trace events collection.
@@ -923,13 +923,13 @@ external class Session : EventEmitter {
     @JsName("post")
     fun postAsync(
         method: SessionMethod.NODETRACING_START,
-        params: node.inspector.nodetracing.StartParameterType = definedExternally,
+        params: node.inspector.nodeTracing.StartParameterType = definedExternally,
     ): Promise<js.core.Void>
 
     @seskar.js.JsAsync
     suspend fun post(
         method: SessionMethod.NODETRACING_START,
-        params: node.inspector.nodetracing.StartParameterType = definedExternally,
+        params: node.inspector.nodeTracing.StartParameterType = definedExternally,
     ): js.core.Void
 
     /**
@@ -948,13 +948,13 @@ external class Session : EventEmitter {
     @JsName("post")
     fun postAsync(
         method: SessionMethod.NODEWORKER_SENDMESSAGETOWORKER,
-        params: node.inspector.nodeworker.SendMessageToWorkerParameterType = definedExternally,
+        params: node.inspector.nodeWorker.SendMessageToWorkerParameterType = definedExternally,
     ): Promise<js.core.Void>
 
     @seskar.js.JsAsync
     suspend fun post(
         method: SessionMethod.NODEWORKER_SENDMESSAGETOWORKER,
-        params: node.inspector.nodeworker.SendMessageToWorkerParameterType = definedExternally,
+        params: node.inspector.nodeWorker.SendMessageToWorkerParameterType = definedExternally,
     ): js.core.Void
 
     /**
@@ -964,13 +964,13 @@ external class Session : EventEmitter {
     @JsName("post")
     fun postAsync(
         method: SessionMethod.NODEWORKER_ENABLE,
-        params: node.inspector.nodeworker.EnableParameterType = definedExternally,
+        params: node.inspector.nodeWorker.EnableParameterType = definedExternally,
     ): Promise<js.core.Void>
 
     @seskar.js.JsAsync
     suspend fun post(
         method: SessionMethod.NODEWORKER_ENABLE,
-        params: node.inspector.nodeworker.EnableParameterType = definedExternally,
+        params: node.inspector.nodeWorker.EnableParameterType = definedExternally,
     ): js.core.Void
 
     /**
@@ -988,13 +988,13 @@ external class Session : EventEmitter {
     @JsName("post")
     fun postAsync(
         method: SessionMethod.NODEWORKER_DETACH,
-        params: node.inspector.nodeworker.DetachParameterType = definedExternally,
+        params: node.inspector.nodeWorker.DetachParameterType = definedExternally,
     ): Promise<js.core.Void>
 
     @seskar.js.JsAsync
     suspend fun post(
         method: SessionMethod.NODEWORKER_DETACH,
-        params: node.inspector.nodeworker.DetachParameterType = definedExternally,
+        params: node.inspector.nodeWorker.DetachParameterType = definedExternally,
     ): js.core.Void
 
     /**
@@ -1014,6 +1014,23 @@ external class Session : EventEmitter {
 
     @seskar.js.JsAsync
     suspend fun post(method: SessionMethod.NETWORK_ENABLE): js.core.Void
+
+    /**
+     * Enables streaming of the response for the given requestId.
+     * If enabled, the dataReceived event contains the data that was received during streaming.
+     * @experimental
+     */
+    @JsName("post")
+    fun postAsync(
+        method: SessionMethod.NETWORK_STREAMRESOURCECONTENT,
+        params: node.inspector.network.StreamResourceContentParameterType = definedExternally,
+    ): Promise<node.inspector.network.StreamResourceContentReturnType>
+
+    @seskar.js.JsAsync
+    suspend fun post(
+        method: SessionMethod.NETWORK_STREAMRESOURCECONTENT,
+        params: node.inspector.network.StreamResourceContentParameterType = definedExternally,
+    ): node.inspector.network.StreamResourceContentReturnType
 
     /**
      * Enable the NodeRuntime events except by `NodeRuntime.waitingForDisconnect`.
@@ -1039,13 +1056,25 @@ external class Session : EventEmitter {
     @JsName("post")
     fun postAsync(
         method: SessionMethod.NODERUNTIME_NOTIFYWHENWAITINGFORDISCONNECT,
-        params: node.inspector.noderuntime.NotifyWhenWaitingForDisconnectParameterType = definedExternally,
+        params: node.inspector.nodeRuntime.NotifyWhenWaitingForDisconnectParameterType = definedExternally,
     ): Promise<js.core.Void>
 
     @seskar.js.JsAsync
     suspend fun post(
         method: SessionMethod.NODERUNTIME_NOTIFYWHENWAITINGFORDISCONNECT,
-        params: node.inspector.noderuntime.NotifyWhenWaitingForDisconnectParameterType = definedExternally,
+        params: node.inspector.nodeRuntime.NotifyWhenWaitingForDisconnectParameterType = definedExternally,
+    ): js.core.Void
+
+    @JsName("post")
+    fun postAsync(
+        method: SessionMethod.TARGET_SETAUTOATTACH,
+        params: node.inspector.target.SetAutoAttachParameterType = definedExternally,
+    ): Promise<js.core.Void>
+
+    @seskar.js.JsAsync
+    suspend fun post(
+        method: SessionMethod.TARGET_SETAUTOATTACH,
+        params: node.inspector.target.SetAutoAttachParameterType = definedExternally,
     ): js.core.Void
 
     fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
@@ -1145,6 +1174,10 @@ external class Session : EventEmitter {
 
     /**
      * Fired when HTTP response is available.
+     */
+
+    /**
+     * Fired when data chunk was received over the network.
      */
 
     /**
@@ -1269,6 +1302,10 @@ external class Session : EventEmitter {
      */
 
     /**
+     * Fired when data chunk was received over the network.
+     */
+
+    /**
      * This event is fired instead of `Runtime.executionContextDestroyed` when
      * enabled.
      * It is fired when the Node process finished all code execution and is
@@ -1377,6 +1414,10 @@ external class Session : EventEmitter {
 
     /**
      * Fired when HTTP response is available.
+     */
+
+    /**
+     * Fired when data chunk was received over the network.
      */
 
     /**
@@ -1491,6 +1532,10 @@ external class Session : EventEmitter {
      */
 
     /**
+     * Fired when data chunk was received over the network.
+     */
+
+    /**
      * This event is fired instead of `Runtime.executionContextDestroyed` when
      * enabled.
      * It is fired when the Node process finished all code execution and is
@@ -1602,6 +1647,10 @@ external class Session : EventEmitter {
      */
 
     /**
+     * Fired when data chunk was received over the network.
+     */
+
+    /**
      * This event is fired instead of `Runtime.executionContextDestroyed` when
      * enabled.
      * It is fired when the Node process finished all code execution and is
@@ -1676,41 +1725,41 @@ external class Session : EventEmitter {
 
     @web.events.JsEvent("HeapProfiler.addHeapSnapshotChunk")
     val HeapProfilerAddHeapSnapshotChunkEvent:
-            node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.heapprofiler.AddHeapSnapshotChunkEventDataType>>>
+            node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.heapProfiler.AddHeapSnapshotChunkEventDataType>>>
 
     @web.events.JsEvent("HeapProfiler.resetProfiles")
     val HeapProfilerResetProfilesEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("HeapProfiler.reportHeapSnapshotProgress")
     val HeapProfilerReportHeapSnapshotProgressEvent:
-            node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.heapprofiler.ReportHeapSnapshotProgressEventDataType>>>
+            node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.heapProfiler.ReportHeapSnapshotProgressEventDataType>>>
 
     @web.events.JsEvent("HeapProfiler.lastSeenObjectId")
     val HeapProfilerLastSeenObjectIdEvent:
-            node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.heapprofiler.LastSeenObjectIdEventDataType>>>
+            node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.heapProfiler.LastSeenObjectIdEventDataType>>>
 
     @web.events.JsEvent("HeapProfiler.heapStatsUpdate")
     val HeapProfilerHeapStatsUpdateEvent:
-            node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.heapprofiler.HeapStatsUpdateEventDataType>>>
+            node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.heapProfiler.HeapStatsUpdateEventDataType>>>
 
     @web.events.JsEvent("NodeTracing.dataCollected")
     val NodeTracingDataCollectedEvent:
-            node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.nodetracing.DataCollectedEventDataType>>>
+            node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.nodeTracing.DataCollectedEventDataType>>>
 
     @web.events.JsEvent("NodeTracing.tracingComplete")
     val NodeTracingTracingCompleteEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("NodeWorker.attachedToWorker")
     val NodeWorkerAttachedToWorkerEvent:
-            node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.nodeworker.AttachedToWorkerEventDataType>>>
+            node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.nodeWorker.AttachedToWorkerEventDataType>>>
 
     @web.events.JsEvent("NodeWorker.detachedFromWorker")
     val NodeWorkerDetachedFromWorkerEvent:
-            node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.nodeworker.DetachedFromWorkerEventDataType>>>
+            node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.nodeWorker.DetachedFromWorkerEventDataType>>>
 
     @web.events.JsEvent("NodeWorker.receivedMessageFromWorker")
     val NodeWorkerReceivedMessageFromWorkerEvent:
-            node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.nodeworker.ReceivedMessageFromWorkerEventDataType>>>
+            node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.nodeWorker.ReceivedMessageFromWorkerEventDataType>>>
 
     @web.events.JsEvent("Network.requestWillBeSent")
     val NetworkRequestWillBeSentEvent:
@@ -1728,9 +1777,21 @@ external class Session : EventEmitter {
     val NetworkLoadingFinishedEvent:
             node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.network.LoadingFinishedEventDataType>>>
 
+    @web.events.JsEvent("Network.dataReceived")
+    val NetworkDataReceivedEvent:
+            node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.network.DataReceivedEventDataType>>>
+
     @web.events.JsEvent("NodeRuntime.waitingForDisconnect")
     val NodeRuntimeWaitingForDisconnectEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("NodeRuntime.waitingForDebugger")
     val NodeRuntimeWaitingForDebuggerEvent: node.events.EventInstance<js.array.Tuple>
+
+    @web.events.JsEvent("Target.targetCreated")
+    val TargetTargetCreatedEvent:
+            node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.target.TargetCreatedEventDataType>>>
+
+    @web.events.JsEvent("Target.attachedToTarget")
+    val TargetAttachedToTargetEvent:
+            node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.target.AttachedToTargetEventDataType>>>
 }

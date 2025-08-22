@@ -39,7 +39,7 @@ external fun writev(
 external fun writev(
     fd: Number,
     buffers: ReadonlyArray<js.buffer.ArrayBufferView<*>>,
-    position: Number,
+    position: Double?,
     cb: (
         err: node.ErrnoException?,
         bytesWritten: Double,

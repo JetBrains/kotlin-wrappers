@@ -155,7 +155,7 @@ external class Worker : EventEmitter {
      * @since v0.7.7
      * @return A reference to `worker`.
      */
-    fun disconnect()
+    fun disconnect() // this
 
     /**
      * This function returns `true` if the worker is connected to its primary via its

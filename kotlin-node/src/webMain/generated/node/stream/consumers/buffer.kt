@@ -6,13 +6,25 @@ package node.stream.consumers
 
 import js.iterable.AsyncIterable
 import js.promise.Promise
-import node.stream.Readable
+import web.streams.ReadableStream as WebReadableStream
 
+/**
+ * @since v16.7.0
+ * @returns Fulfills with a `Buffer` containing the full contents of the stream.
+ */
+@JsName("buffer")
+external fun bufferAsync(stream: WebReadableStream<*>): Promise<node.buffer.Buffer<*>>
+
+/**
+ * @since v16.7.0
+ * @returns Fulfills with a `Buffer` containing the full contents of the stream.
+ */
 @JsName("buffer")
 external fun bufferAsync(stream: node.ReadableStream): Promise<node.buffer.Buffer<*>>
 
-@JsName("buffer")
-external fun bufferAsync(stream: Readable): Promise<node.buffer.Buffer<*>>
-
+/**
+ * @since v16.7.0
+ * @returns Fulfills with a `Buffer` containing the full contents of the stream.
+ */
 @JsName("buffer")
 external fun bufferAsync(stream: AsyncIterable<Any?>): Promise<node.buffer.Buffer<*>>

@@ -11,6 +11,5 @@ package node.inspector.network
  * Broadcasts the `Network.requestWillBeSent` event to connected frontends. This event indicates that
  * the application is about to send an HTTP request.
  * @since v22.6.0
- * @experimental
  */
 external fun requestWillBeSent(params: RequestWillBeSentEventDataType)

@@ -10,4 +10,6 @@ sealed external interface Response {
     var status: Double
     var statusText: String
     var headers: Headers
+    var mimeType: String
+    var charset: String
 }

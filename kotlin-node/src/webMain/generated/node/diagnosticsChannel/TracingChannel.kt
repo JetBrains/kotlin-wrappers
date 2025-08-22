@@ -119,12 +119,12 @@ external class TracingChannel<StoreType /* default is Any? */, ContextType : Any
      * @param args Optional arguments to pass to the function
      * @return The return value of the given function
      */
-    fun <ThisArg /* default is Any? */, Args : js.array.ReadonlyArray<Any?> /* default is js.array.ReadonlyArray<Any?> */> traceSync(
-        fn: Function<Any?>, /* (this: ThisArg, ...args: Args) => any */
+    fun <ThisArg /* default is Any? */, Args : js.array.ReadonlyArray<Any?> /* default is js.array.ReadonlyArray<Any?> */, Result /* default is Any? */> traceSync(
+        fn: Function<Result>, /* (this: ThisArg, ...args: Args) => Result */
         context: ContextType = definedExternally,
         thisArg: ThisArg = definedExternally,
         vararg args: Any?, // Args
-    )
+    ): Result
 
     /**
      * Trace a promise-returning function call. This will always produce a `start event` and `end event` around the synchronous portion of the
@@ -155,12 +155,21 @@ external class TracingChannel<StoreType /* default is Any? */, ContextType : Any
      * @param args Optional arguments to pass to the function
      * @return Chained from promise returned by the given function
      */
-    fun <ThisArg /* default is Any? */, Args : js.array.ReadonlyArray<Any?> /* default is js.array.ReadonlyArray<Any?> */> tracePromise(
-        fn: Function<Promise<Any?>>, /* (this: ThisArg, ...args: Args) => Promise<any> */
+    @JsName("tracePromise")
+    fun <ThisArg /* default is Any? */, Args : js.array.ReadonlyArray<Any?> /* default is js.array.ReadonlyArray<Any?> */, Result /* default is Any? */> tracePromiseAsync(
+        fn: Function<Promise<Result>>, /* (this: ThisArg, ...args: Args) => Promise<Result> */
         context: ContextType = definedExternally,
         thisArg: ThisArg = definedExternally,
         vararg args: Any?, // Args
-    )
+    ): Promise<Result>
+
+    @seskar.js.JsAsync
+    suspend fun <ThisArg /* default is Any? */, Args : js.array.ReadonlyArray<Any?> /* default is js.array.ReadonlyArray<Any?> */, Result /* default is Any? */> tracePromise(
+        fn: Function<Promise<Result>>, /* (this: ThisArg, ...args: Args) => Promise<Result> */
+        context: ContextType = definedExternally,
+        thisArg: ThisArg = definedExternally,
+        vararg args: Any?, // Args
+    ): Result
 
     /**
      * Trace a callback-receiving function call. This will always produce a `start event` and `end event` around the synchronous portion of the
@@ -220,11 +229,31 @@ external class TracingChannel<StoreType /* default is Any? */, ContextType : Any
      * @param args Optional arguments to pass to the function
      * @return The return value of the given function
      */
-    fun <Fn : Function<Any?> /* (this: any, ...args: any[]) => any */> traceCallback(
-        fn: Fn,
+    fun <ThisArg /* default is Any? */, Args : js.array.ReadonlyArray<Any?> /* default is js.array.ReadonlyArray<Any?> */, Result /* default is Any? */> traceCallback(
+        fn: Function<Result>, /* (this: ThisArg, ...args: Args) => Result */
         position: Number = definedExternally,
         context: ContextType = definedExternally,
-        thisArg: Any? = definedExternally,
-        vararg args: Any?, // Parameters<Fn>
-    )
+        thisArg: ThisArg = definedExternally,
+        vararg args: Any?, // Args
+    ): Result
+
+    /**
+     * `true` if any of the individual channels has a subscriber, `false` if not.
+     *
+     * This is a helper method available on a {@link TracingChannel} instance to check
+     * if any of the [TracingChannel Channels](https://nodejs.org/api/diagnostics_channel.html#tracingchannel-channels) have subscribers.
+     * A `true` is returned if any of them have at least one subscriber, a `false` is returned otherwise.
+     *
+     * ```js
+     * const diagnostics_channel = require('node:diagnostics_channel');
+     *
+     * const channels = diagnostics_channel.tracingChannel('my-channel');
+     *
+     * if (channels.hasSubscribers) {
+     *   // Do something
+     * }
+     * ```
+     * @since v22.0.0, v20.13.0
+     */
+    val hasSubscribers: Boolean
 }

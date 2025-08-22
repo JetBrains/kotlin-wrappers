@@ -4,22 +4,22 @@ import node.karakum.util.nullable
 import io.github.sgrishchenko.karakum.extension.createPlugin
 import io.github.sgrishchenko.karakum.util.getParentOrNull
 import io.github.sgrishchenko.karakum.util.getSourceFileOrNull
-import typescript.MethodDeclaration
+import typescript.MethodSignature
 import typescript.asArray
-import typescript.isClassDeclaration
 import typescript.isConditionalTypeNode
 import typescript.isIdentifier
-import typescript.isMethodDeclaration
+import typescript.isInterfaceDeclaration
+import typescript.isMethodSignature
 import typescript.isParameter
 import typescript.isTypeOperatorNode
 import typescript.isTypeParameterDeclaration
 import typescript.isTypeReferenceNode
 import typescript.isUnionTypeNode
 
-private fun isMockTrackerMethod(node: MethodDeclaration) = nullable {
+private fun isMockTrackerMethod(node: MethodSignature) = nullable {
     val classNode = ensureNotNull(node.getParentOrNull())
-    ensure(isClassDeclaration(classNode))
-    ensure(classNode.name?.text == "MockTracker")
+    ensure(isInterfaceDeclaration(classNode))
+    ensure(classNode.name.text == "MockTracker")
 } != null
 
 val convertMockTrackerGenerics = createPlugin { node, _, _ ->
@@ -36,7 +36,7 @@ val convertMockTrackerGenerics = createPlugin { node, _, _ ->
             )
 
             val method = ensureNotNull(node.getParentOrNull())
-            ensure(isMethodDeclaration(method))
+            ensure(isMethodSignature(method))
             ensure(isMockTrackerMethod(method))
 
             ""
@@ -50,7 +50,7 @@ val convertMockTrackerGenerics = createPlugin { node, _, _ ->
             ensure(isParameter(parameter))
 
             val method = ensureNotNull(parameter.getParentOrNull())
-            ensure(isMethodDeclaration(method))
+            ensure(isMethodSignature(method))
             ensure(isMockTrackerMethod(method))
 
             when (typeName.text) {
@@ -81,7 +81,7 @@ val convertMockTrackerGenerics = createPlugin { node, _, _ ->
             ensure(isUnionTypeNode(typeArguments.asArray().first()))
 
             val method = ensureNotNull(node.getParentOrNull())
-            ensure(isMethodDeclaration(method))
+            ensure(isMethodSignature(method))
             ensure(isMockTrackerMethod(method))
             ensure(method.type === node)
 
@@ -90,7 +90,7 @@ val convertMockTrackerGenerics = createPlugin { node, _, _ ->
             ensure(isConditionalTypeNode(node))
 
             val method = ensureNotNull(node.getParentOrNull())
-            ensure(isMethodDeclaration(method))
+            ensure(isMethodSignature(method))
             ensure(isMockTrackerMethod(method))
             ensure(method.type === node)
 

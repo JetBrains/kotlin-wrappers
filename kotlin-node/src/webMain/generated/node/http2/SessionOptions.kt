@@ -4,14 +4,75 @@ package node.http2
 
 // Http2Server
 sealed external interface SessionOptions {
+    /**
+     * Sets the maximum dynamic table size for deflating header fields.
+     * @default 4Kib
+     */
     var maxDeflateDynamicTableSize: Double?
+
+    /**
+     * Sets the maximum number of settings entries per `SETTINGS` frame.
+     * The minimum value allowed is `1`.
+     * @default 32
+     */
+    var maxSettings: Double?
+
+    /**
+     * Sets the maximum memory that the `Http2Session` is permitted to use.
+     * The value is expressed in terms of number of megabytes, e.g. `1` equal 1 megabyte.
+     * The minimum value allowed is `1`.
+     * This is a credit based limit, existing `Http2Stream`s may cause this limit to be exceeded,
+     * but new `Http2Stream` instances will be rejected while this limit is exceeded.
+     * The current number of `Http2Stream` sessions, the current memory use of the header compression tables,
+     * current data queued to be sent, and unacknowledged `PING` and `SETTINGS` frames are all counted towards the current limit.
+     * @default 10
+     */
     var maxSessionMemory: Double?
+
+    /**
+     * Sets the maximum number of header entries.
+     * This is similar to `server.maxHeadersCount` or `request.maxHeadersCount` in the `node:http` module.
+     * The minimum value is `1`.
+     * @default 128
+     */
     var maxHeaderListPairs: Double?
+
+    /**
+     * Sets the maximum number of outstanding, unacknowledged pings.
+     * @default 10
+     */
     var maxOutstandingPings: Double?
+
+    /**
+     * Sets the maximum allowed size for a serialized, compressed block of headers.
+     * Attempts to send headers that exceed this limit will result in
+     * a `'frameError'` event being emitted and the stream being closed and destroyed.
+     */
     var maxSendHeaderBlockLength: Double?
+
+    /**
+     * Strategy used for determining the amount of padding to use for `HEADERS` and `DATA` frames.
+     * @default http2.constants.PADDING_STRATEGY_NONE
+     */
     var paddingStrategy: Double?
+
+    /**
+     * Sets the maximum number of concurrent streams for the remote peer as if a `SETTINGS` frame had been received.
+     * Will be overridden if the remote peer sets its own value for `maxConcurrentStreams`.
+     * @default 100
+     */
     var peerMaxConcurrentStreams: Double?
+
+    /**
+     * The initial settings to send to the remote peer upon connection.
+     */
     var settings: Settings?
+
+    /**
+     * The array of integer values determines the settings types,
+     * which are included in the `CustomSettings`-property of the received remoteSettings.
+     * Please see the `CustomSettings`-property of the `Http2Settings` object for more information, on the allowed setting types.
+     */
     var remoteCustomSettings: js.array.ReadonlyArray<Double>?
 
     /**
@@ -21,5 +82,13 @@ sealed external interface SessionOptions {
      * @default 100000
      */
     var unknownProtocolTimeout: Double?
-    val selectPadding: ((frameLen: Number, maxFrameLen: Number) -> Double)?
+
+    /**
+     * If `true`, it turns on strict leading
+     * and trailing whitespace validation for HTTP/2 header field names and values
+     * as per [RFC-9113](https://www.rfc-editor.org/rfc/rfc9113.html#section-8.2.1).
+     * @since v24.2.0
+     * @default true
+     */
+    var strictFieldWhitespaceValidation: Boolean?
 }

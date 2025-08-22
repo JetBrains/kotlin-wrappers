@@ -9,6 +9,7 @@ import js.promise.Promise
 import node.events.EventEmitter
 import node.stream.Readable
 import node.stream.Writable
+import node.v8.HeapInfo
 import web.url.URL
 
 /**
@@ -144,7 +145,7 @@ external class Worker : EventEmitter {
      */
     fun postMessage(
         value: Any?,
-        transferList: ReadonlyArray<TransferListItem> = definedExternally,
+        transferList: ReadonlyArray<Transferable> = definedExternally,
     )
 
     /**
@@ -176,7 +177,7 @@ external class Worker : EventEmitter {
     fun postMessageToThreadAsync(
         threadId: Number,
         value: Any?,
-        transferList: ReadonlyArray<TransferListItem>,
+        transferList: ReadonlyArray<Transferable>,
         timeout: Number = definedExternally,
     ): Promise<js.core.Void>
 
@@ -184,7 +185,7 @@ external class Worker : EventEmitter {
     suspend fun postMessageToThread(
         threadId: Number,
         value: Any?,
-        transferList: ReadonlyArray<TransferListItem>,
+        transferList: ReadonlyArray<Transferable>,
         timeout: Number = definedExternally,
     ): js.core.Void
 
@@ -228,6 +229,18 @@ external class Worker : EventEmitter {
 
     @seskar.js.JsAsync
     suspend fun getHeapSnapshot(): Readable
+
+    /**
+     * This method returns a `Promise` that will resolve to an object identical to `v8.getHeapStatistics()`,
+     * or reject with an `ERR_WORKER_NOT_RUNNING` error if the worker is no longer running.
+     * This methods allows the statistics to be observed from outside the actual thread.
+     * @since v22.16.0
+     */
+    @JsName("getHeapStatistics")
+    fun getHeapStatisticsAsync(): Promise<HeapInfo>
+
+    @seskar.js.JsAsync
+    suspend fun getHeapStatistics(): HeapInfo
 
     fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
 

@@ -3,7 +3,7 @@
 package node.module
 
 sealed external interface LoadFnOutput {
-    var format: ModuleFormat
+    var format: String?
 
     /**
      * A signal that this hook intends to terminate the chain of `resolve` hooks.

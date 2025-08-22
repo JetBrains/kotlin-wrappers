@@ -3,10 +3,10 @@
 package node.util
 
 sealed external interface ParseArgsOptionsConfig {
-    operator fun get(key: String): ParseArgsOptionConfig?
+    operator fun get(key: String): ParseArgsOptionDescriptor?
 
     operator fun set(
         key: String,
-        value: ParseArgsOptionConfig?,
+        value: ParseArgsOptionDescriptor?,
     )
 }

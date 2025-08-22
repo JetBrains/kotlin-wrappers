@@ -313,7 +313,7 @@ sealed external interface FileHandle {
         buffer: T,
         offset: Double? = definedExternally,
         length: Double? = definedExternally,
-        position: Double? = definedExternally,
+        position: ReadPosition? = definedExternally,
     ): Promise<FileReadResult<T>>
 
     @seskar.js.JsAsync
@@ -321,7 +321,7 @@ sealed external interface FileHandle {
         buffer: T,
         offset: Double? = definedExternally,
         length: Double? = definedExternally,
-        position: Double? = definedExternally,
+        position: ReadPosition? = definedExternally,
     ): FileReadResult<T>
 
     @JsName("read")
@@ -347,7 +347,8 @@ sealed external interface FileHandle {
     ): FileReadResult<T>
 
     /**
-     * Returns a `ReadableStream` that may be used to read the files data.
+     * Returns a byte-oriented `ReadableStream` that may be used to read the file's
+     * contents.
      *
      * An error will be thrown if this method is called more than once or is called
      * after the `FileHandle` is closed or closing.
@@ -368,7 +369,6 @@ sealed external interface FileHandle {
      * While the `ReadableStream` will read the file to completion, it will not
      * close the `FileHandle` automatically. User code must still call the`fileHandle.close()` method.
      * @since v17.0.0
-     * @experimental
      */
     fun readableWebStream(options: ReadableWebStreamOptions = definedExternally): ReadableStream<*>
 
@@ -395,8 +395,6 @@ sealed external interface FileHandle {
     /**
      * Asynchronously reads the entire contents of a file. The underlying file will _not_ be closed automatically.
      * The `FileHandle` must have been opened for reading.
-     * @param options An object that may contain an optional flag.
-     * If a flag is not provided, it defaults to `'r'`.
      */
     @JsName("readFile")
     fun readFileAsync(options: FileHandleReadFileStringAsyncOptions): Promise<String>
@@ -404,8 +402,6 @@ sealed external interface FileHandle {
     /**
      * Asynchronously reads the entire contents of a file. The underlying file will _not_ be closed automatically.
      * The `FileHandle` must have been opened for reading.
-     * @param options An object that may contain an optional flag.
-     * If a flag is not provided, it defaults to `'r'`.
      */
     @JsName("readFile")
     fun readFileAsync(options: node.buffer.BufferEncoding): Promise<String>
@@ -416,8 +412,6 @@ sealed external interface FileHandle {
     /**
      * Asynchronously reads the entire contents of a file. The underlying file will _not_ be closed automatically.
      * The `FileHandle` must have been opened for reading.
-     * @param options An object that may contain an optional flag.
-     * If a flag is not provided, it defaults to `'r'`.
      */
     @seskar.js.JsAsync
     suspend fun readFile(options: node.buffer.BufferEncoding): String
@@ -425,8 +419,6 @@ sealed external interface FileHandle {
     /**
      * Asynchronously reads the entire contents of a file. The underlying file will _not_ be closed automatically.
      * The `FileHandle` must have been opened for reading.
-     * @param options An object that may contain an optional flag.
-     * If a flag is not provided, it defaults to `'r'`.
      */
     @JsName("readFile")
     fun readFileAsync(): Promise<Any /* string | Buffer */>
@@ -434,8 +426,6 @@ sealed external interface FileHandle {
     /**
      * Asynchronously reads the entire contents of a file. The underlying file will _not_ be closed automatically.
      * The `FileHandle` must have been opened for reading.
-     * @param options An object that may contain an optional flag.
-     * If a flag is not provided, it defaults to `'r'`.
      */
     @JsName("readFile")
     fun readFileAsync(
@@ -445,8 +435,6 @@ sealed external interface FileHandle {
     /**
      * Asynchronously reads the entire contents of a file. The underlying file will _not_ be closed automatically.
      * The `FileHandle` must have been opened for reading.
-     * @param options An object that may contain an optional flag.
-     * If a flag is not provided, it defaults to `'r'`.
      */
     @JsName("readFile")
     fun readFileAsync(options: node.buffer.BufferEncoding? = definedExternally): Promise<Any /* string | Buffer */>
@@ -457,8 +445,6 @@ sealed external interface FileHandle {
     /**
      * Asynchronously reads the entire contents of a file. The underlying file will _not_ be closed automatically.
      * The `FileHandle` must have been opened for reading.
-     * @param options An object that may contain an optional flag.
-     * If a flag is not provided, it defaults to `'r'`.
      */
     @seskar.js.JsAsync
     suspend fun readFile(options: (FileHandleReadFileAsyncOptions)? = definedExternally): Any // string | Buffer
@@ -466,8 +452,6 @@ sealed external interface FileHandle {
     /**
      * Asynchronously reads the entire contents of a file. The underlying file will _not_ be closed automatically.
      * The `FileHandle` must have been opened for reading.
-     * @param options An object that may contain an optional flag.
-     * If a flag is not provided, it defaults to `'r'`.
      */
     @seskar.js.JsAsync
     suspend fun readFile(options: node.buffer.BufferEncoding? = definedExternally): Any // string | Buffer

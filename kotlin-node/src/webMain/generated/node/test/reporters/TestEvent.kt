@@ -4,40 +4,40 @@ package node.test.reporters
 
 typealias TestEvent = Any /* {
     type: "test:coverage";
-    data: TestCoverage;
+    data: EventData.TestCoverage;
 } | {
     type: "test:complete";
-    data: TestComplete;
+    data: EventData.TestComplete;
 } | {
     type: "test:dequeue";
-    data: TestDequeue;
+    data: EventData.TestDequeue;
 } | {
     type: "test:diagnostic";
-    data: DiagnosticData;
+    data: EventData.TestDiagnostic;
 } | {
     type: "test:enqueue";
-    data: TestEnqueue;
+    data: EventData.TestEnqueue;
 } | {
     type: "test:fail";
-    data: TestFail;
+    data: EventData.TestFail;
 } | {
     type: "test:pass";
-    data: TestPass;
+    data: EventData.TestPass;
 } | {
     type: "test:plan";
-    data: TestPlan;
+    data: EventData.TestPlan;
 } | {
     type: "test:start";
-    data: TestStart;
+    data: EventData.TestStart;
 } | {
     type: "test:stderr";
-    data: TestStderr;
+    data: EventData.TestStderr;
 } | {
     type: "test:stdout";
-    data: TestStdout;
+    data: EventData.TestStdout;
 } | {
     type: "test:summary";
-    data: TestSummary;
+    data: EventData.TestSummary;
 } | {
     type: "test:watch:drained";
     data: undefined;

@@ -17,4 +17,4 @@ package node.util
  * @param content The raw contents of a `.env` file.
  * @since v20.12.0
  */
-external fun parseEnv(content: String): Any
+external fun parseEnv(content: String): node.Dict<String>

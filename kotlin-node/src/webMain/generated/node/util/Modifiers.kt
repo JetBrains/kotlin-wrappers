@@ -29,6 +29,9 @@ sealed external interface Modifiers {
         @seskar.js.JsValue("italic")
         val italic: Modifiers
 
+        @seskar.js.JsValue("none")
+        val none: Modifiers
+
         @seskar.js.JsValue("overlined")
         val overlined: Modifiers
 

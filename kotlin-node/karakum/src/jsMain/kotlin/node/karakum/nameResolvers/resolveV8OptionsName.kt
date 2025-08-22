@@ -26,6 +26,9 @@ fun resolveV8OptionsName(node: Node, context: Context) = nullable {
     val sourceFileName = ensureNotNull(node.getSourceFileOrNull()).fileName
     ensure(sourceFileName.endsWith("v8.d.ts"))
 
+    // exclude literal types
+    ensure(!isLiteralTypeNode(node))
+
     val parameter = ensureNotNull(
         typeScriptService.getParent(node)
             ?.let {

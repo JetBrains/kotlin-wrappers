@@ -28,12 +28,23 @@ external class StatementSync {
      * @return An array of objects. Each object corresponds to a row returned by executing the prepared statement. The keys and values of each object correspond to the column names and values of
      * the row.
      */
-    fun all(vararg anonymousParameters: SupportedValueType): js.array.ReadonlyArray<Any?>
+    fun all(
+        vararg anonymousParameters: SQLInputValue,
+    ): js.array.ReadonlyArray<js.objects.ReadonlyRecord<String, SQLOutputValue>>
 
     fun all(
-        namedParameters: js.objects.ReadonlyRecord<String, SupportedValueType>,
-        vararg anonymousParameters: SupportedValueType,
-    ): js.array.ReadonlyArray<Any?>
+        namedParameters: js.objects.ReadonlyRecord<String, SQLInputValue>,
+        vararg anonymousParameters: SQLInputValue,
+    ): js.array.ReadonlyArray<js.objects.ReadonlyRecord<String, SQLOutputValue>>
+
+    /**
+     * This method is used to retrieve information about the columns returned by the
+     * prepared statement.
+     * @since v22.16.0
+     * @returns An array of objects. Each object corresponds to a column
+     * in the prepared statement, and contains the following properties:
+     */
+    fun columns(): js.array.ReadonlyArray<StatementColumnMetadata>
 
     /**
      * The source SQL text of the prepared statement with parameter
@@ -55,12 +66,12 @@ external class StatementSync {
      * @return An object corresponding to the first row returned by executing the prepared statement. The keys and values of the object correspond to the column names and values of the row. If no
      * rows were returned from the database then this method returns `undefined`.
      */
-    fun get(vararg anonymousParameters: SupportedValueType): Any?
+    fun get(vararg anonymousParameters: SQLInputValue): js.objects.ReadonlyRecord<String, SQLOutputValue>?
 
     fun get(
-        namedParameters: js.objects.ReadonlyRecord<String, SupportedValueType>,
-        vararg anonymousParameters: SupportedValueType,
-    ): Any?
+        namedParameters: js.objects.ReadonlyRecord<String, SQLInputValue>,
+        vararg anonymousParameters: SQLInputValue,
+    ): js.objects.ReadonlyRecord<String, SQLOutputValue>?
 
     /**
      * This method executes a prepared statement and returns an iterator of
@@ -75,12 +86,14 @@ external class StatementSync {
      * returned by executing the prepared statement. The keys and values of each
      * object correspond to the column names and values of the row.
      */
-    fun iterate(vararg anonymousParameters: SupportedValueType): js.iterable.JsIterator<Any?>
+    fun iterate(
+        vararg anonymousParameters: SQLInputValue,
+    ): js.iterable.JsIterator<js.objects.ReadonlyRecord<String, SQLOutputValue>>
 
     fun iterate(
-        namedParameters: js.objects.ReadonlyRecord<String, SupportedValueType>,
-        vararg anonymousParameters: SupportedValueType,
-    ): js.iterable.JsIterator<Any?>
+        namedParameters: js.objects.ReadonlyRecord<String, SQLInputValue>,
+        vararg anonymousParameters: SQLInputValue,
+    ): js.iterable.JsIterator<js.objects.ReadonlyRecord<String, SQLOutputValue>>
 
     /**
      * This method executes a prepared statement and returns an object summarizing the
@@ -90,11 +103,11 @@ external class StatementSync {
      * @param namedParameters An optional object used to bind named parameters. The keys of this object are used to configure the mapping.
      * @param anonymousParameters Zero or more values to bind to anonymous parameters.
      */
-    fun run(vararg anonymousParameters: SupportedValueType): StatementResultingChanges
+    fun run(vararg anonymousParameters: SQLInputValue): StatementResultingChanges
 
     fun run(
-        namedParameters: js.objects.ReadonlyRecord<String, SupportedValueType>,
-        vararg anonymousParameters: SupportedValueType,
+        namedParameters: js.objects.ReadonlyRecord<String, SQLInputValue>,
+        vararg anonymousParameters: SQLInputValue,
     ): StatementResultingChanges
 
     /**
@@ -116,6 +129,14 @@ external class StatementSync {
      * @param enabled Enables or disables support for binding named parameters without the prefix character.
      */
     fun setAllowBareNamedParameters(enabled: Boolean)
+
+    /**
+     * By default, if an unknown name is encountered while binding parameters, an
+     * exception is thrown. This method allows unknown named parameters to be ignored.
+     * @since v22.15.0
+     * @param enabled Enables or disables support for unknown named parameters.
+     */
+    fun setAllowUnknownNamedParameters(enabled: Boolean)
 
     /**
      * When reading from the database, SQLite `INTEGER`s are mapped to JavaScript

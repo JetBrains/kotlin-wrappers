@@ -7,13 +7,13 @@ sealed external interface CreateHistogramOptions {
      * The minimum recordable value. Must be an integer value greater than 0.
      * @default 1
      */
-    var min: Any? // number | bigint | undefined
+    var lowest: Any? // number | bigint | undefined
 
     /**
      * The maximum recordable value. Must be an integer value greater than min.
      * @default Number.MAX_SAFE_INTEGER
      */
-    var max: Any? // number | bigint | undefined
+    var highest: Any? // number | bigint | undefined
 
     /**
      * The number of accuracy digits. Must be a number between 1 and 5.

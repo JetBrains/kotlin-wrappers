@@ -34,7 +34,7 @@ external fun readv(
 external fun readv(
     fd: Number,
     buffers: ReadonlyArray<js.buffer.ArrayBufferView<*>>,
-    position: Number,
+    position: Double?,
     cb: (
         err: node.ErrnoException?,
         bytesRead: Double,

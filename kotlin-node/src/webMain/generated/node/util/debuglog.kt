@@ -6,14 +6,16 @@ package node.util
 
 /**
  * The `util.debuglog()` method is used to create a function that conditionally
- * writes debug messages to `stderr` based on the existence of the `NODE_DEBUG`environment variable. If the `section` name appears within the value of that
- * environment variable, then the returned function operates similar to `console.error()`. If not, then the returned function is a no-op.
+ * writes debug messages to `stderr` based on the existence of the `NODE_DEBUG`
+ * environment variable. If the `section` name appears within the value of that
+ * environment variable, then the returned function operates similar to
+ * `console.error()`. If not, then the returned function is a no-op.
  *
  * ```js
- * import util from 'node:util';
- * const debuglog = util.debuglog('foo');
+ * import { debuglog } from 'node:util';
+ * const log = debuglog('foo');
  *
- * debuglog('hello from foo [%d]', 123);
+ * log('hello from foo [%d]', 123);
  * ```
  *
  * If this program is run with `NODE_DEBUG=foo` in the environment, then
@@ -29,10 +31,10 @@ package node.util
  * The `section` supports wildcard also:
  *
  * ```js
- * import util from 'node:util';
- * const debuglog = util.debuglog('foo-bar');
+ * import { debuglog } from 'node:util';
+ * const log = debuglog('foo');
  *
- * debuglog('hi there, it\'s foo-bar [%d]', 2333);
+ * log('hi there, it\'s foo-bar [%d]', 2333);
  * ```
  *
  * if it is run with `NODE_DEBUG=foo*` in the environment, then it will output
@@ -42,18 +44,19 @@ package node.util
  * FOO-BAR 3257: hi there, it's foo-bar [2333]
  * ```
  *
- * Multiple comma-separated `section` names may be specified in the `NODE_DEBUG`environment variable: `NODE_DEBUG=fs,net,tls`.
+ * Multiple comma-separated `section` names may be specified in the `NODE_DEBUG`
+ * environment variable: `NODE_DEBUG=fs,net,tls`.
  *
  * The optional `callback` argument can be used to replace the logging function
  * with a different function that doesn't have any initialization or
  * unnecessary wrapping.
  *
  * ```js
- * import util from 'node:util';
- * let debuglog = util.debuglog('internals', (debug) => {
+ * import { debuglog } from 'node:util';
+ * let log = debuglog('internals', (debug) => {
  *   // Replace with a logging function that optimizes out
  *   // testing if the section is enabled
- *   debuglog = debug;
+ *   log = debug;
  * });
  * ```
  * @since v0.11.3

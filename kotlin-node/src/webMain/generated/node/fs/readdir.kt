@@ -103,5 +103,16 @@ external fun readdir(
 external fun readdir(
     path: PathLike,
     options: ReaddirWithFileTypesOptions,
-    callback: (err: node.ErrnoException?, files: js.array.ReadonlyArray<Dirent>) -> Unit,
+    callback: (err: node.ErrnoException?, files: js.array.ReadonlyArray<Dirent<*>>) -> Unit,
+)
+
+/**
+ * Asynchronous readdir(3) - read a directory.
+ * @param path A path to a file. If a URL is provided, it must use the `file:` protocol.
+ * @param options Must include `withFileTypes: true` and `encoding: 'buffer'`.
+ */
+external fun readdir(
+    path: PathLike,
+    options: ReaddirBufferWithFileTypesOptions,
+    callback: (err: node.ErrnoException?, files: js.array.ReadonlyArray<Dirent<node.buffer.Buffer<*>>>) -> Unit,
 )

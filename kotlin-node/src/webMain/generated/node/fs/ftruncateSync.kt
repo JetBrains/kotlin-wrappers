@@ -14,5 +14,5 @@ package node.fs
  */
 external fun ftruncateSync(
     fd: Number,
-    len: Double? = definedExternally,
+    len: Number = definedExternally,
 )

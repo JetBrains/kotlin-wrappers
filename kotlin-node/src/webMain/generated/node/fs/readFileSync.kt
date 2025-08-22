@@ -4,6 +4,8 @@
 
 package node.fs
 
+import node.buffer.NonSharedBuffer
+
 /**
  * Returns the contents of the `path`.
  *
@@ -31,7 +33,7 @@ package node.fs
 external fun readFileSync(
     path: PathOrFileDescriptor,
     options: (ReadFileSyncBufferOptions)? = definedExternally,
-): node.buffer.Buffer<*>
+): NonSharedBuffer
 
 /**
  * Synchronously reads the entire contents of a file.
@@ -64,7 +66,7 @@ external fun readFileSync(
  * @param options Either the encoding for the result, or an object that contains the encoding and an optional flag.
  * If a flag is not provided, it defaults to `'r'`.
  */
-external fun readFileSync(path: PathOrFileDescriptor): Any // string | Buffer
+external fun readFileSync(path: PathOrFileDescriptor): Any // string | NonSharedBuffer
 
 /**
  * Synchronously reads the entire contents of a file.
@@ -76,7 +78,7 @@ external fun readFileSync(path: PathOrFileDescriptor): Any // string | Buffer
 external fun readFileSync(
     path: PathOrFileDescriptor,
     options: (ReadFileSyncOptions)? = definedExternally,
-): Any // string | Buffer
+): Any // string | NonSharedBuffer
 
 /**
  * Synchronously reads the entire contents of a file.
@@ -88,4 +90,4 @@ external fun readFileSync(
 external fun readFileSync(
     path: PathOrFileDescriptor,
     options: node.buffer.BufferEncoding? = definedExternally,
-): Any // string | Buffer
+): Any // string | NonSharedBuffer

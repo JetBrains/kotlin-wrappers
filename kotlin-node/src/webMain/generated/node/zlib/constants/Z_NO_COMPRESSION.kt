@@ -5,5 +5,4 @@
 
 package node.zlib.constants
 
-// Compression levels.
 external val Z_NO_COMPRESSION: Double

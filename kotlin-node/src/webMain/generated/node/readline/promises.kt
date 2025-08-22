@@ -6,7 +6,6 @@ package node.readline
 
 /**
  * @since v17.0.0
- * @experimental
  */
 
 // export * from "readline/promises";

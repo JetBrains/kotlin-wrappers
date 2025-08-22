@@ -4,8 +4,8 @@
 
 package node.test
 
-/**
- * @since v22.3.0
- */
+// import TestFn = test.TestFn;
 
-// export { after, afterEach, before, beforeEach, describe, it, Mock, mock, only, run, skip, snapshot, suite, SuiteContext, test, test as default, TestContext, todo, };
+// import TestOptions = test.TestOptions;
+
+// export = test;

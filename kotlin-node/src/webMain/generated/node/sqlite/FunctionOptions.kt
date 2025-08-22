@@ -26,9 +26,10 @@ sealed external interface FunctionOptions {
     var useBigIntArguments: Boolean?
 
     /**
-     * If `true`, `function` can accept a variable number of
-     * arguments. If `false`, `function` must be invoked with exactly
-     * `function.length` arguments.
+     * If `true`, `function` may be invoked with any number of
+     * arguments (between zero and
+     * [`SQLITE_MAX_FUNCTION_ARG`](https://www.sqlite.org/limits.html#max_function_arg)). If `false`,
+     * `function` must be invoked with exactly `function.length` arguments.
      * @default false
      */
     var varargs: Boolean?

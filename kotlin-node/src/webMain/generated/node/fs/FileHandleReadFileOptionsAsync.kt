@@ -2,7 +2,9 @@
 
 package node.fs
 
+import web.abort.Abortable
+
 @js.objects.JsPlainObject
-sealed external interface FileHandleReadFileAsyncOptions : ObjectEncodingOptions {
-    var flag: OpenMode?
-}
+sealed external interface FileHandleReadFileAsyncOptions :
+    ObjectEncodingOptions,
+    Abortable

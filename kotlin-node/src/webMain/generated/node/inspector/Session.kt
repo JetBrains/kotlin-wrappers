@@ -835,7 +835,7 @@ external class _Session : EventEmitter {
 
     fun post(
         method: SessionMethod.HEAPPROFILER_STARTTRACKINGHEAPOBJECTS,
-        params: node.inspector.heapprofiler.StartTrackingHeapObjectsParameterType = definedExternally,
+        params: node.inspector.heapProfiler.StartTrackingHeapObjectsParameterType = definedExternally,
         callback: (err: js.errors.JsError?) -> Unit = definedExternally,
     )
 
@@ -846,7 +846,7 @@ external class _Session : EventEmitter {
 
     fun post(
         method: SessionMethod.HEAPPROFILER_STOPTRACKINGHEAPOBJECTS,
-        params: node.inspector.heapprofiler.StopTrackingHeapObjectsParameterType = definedExternally,
+        params: node.inspector.heapProfiler.StopTrackingHeapObjectsParameterType = definedExternally,
         callback: (err: js.errors.JsError?) -> Unit = definedExternally,
     )
 
@@ -857,7 +857,7 @@ external class _Session : EventEmitter {
 
     fun post(
         method: SessionMethod.HEAPPROFILER_TAKEHEAPSNAPSHOT,
-        params: node.inspector.heapprofiler.TakeHeapSnapshotParameterType = definedExternally,
+        params: node.inspector.heapProfiler.TakeHeapSnapshotParameterType = definedExternally,
         callback: (err: js.errors.JsError?) -> Unit = definedExternally,
     )
 
@@ -873,10 +873,10 @@ external class _Session : EventEmitter {
 
     fun post(
         method: SessionMethod.HEAPPROFILER_GETOBJECTBYHEAPOBJECTID,
-        params: node.inspector.heapprofiler.GetObjectByHeapObjectIdParameterType = definedExternally,
+        params: node.inspector.heapProfiler.GetObjectByHeapObjectIdParameterType = definedExternally,
         callback: (
             err: js.errors.JsError?,
-            params: node.inspector.heapprofiler.GetObjectByHeapObjectIdReturnType,
+            params: node.inspector.heapProfiler.GetObjectByHeapObjectIdReturnType,
         ) -> Unit = definedExternally,
     )
 
@@ -884,7 +884,7 @@ external class _Session : EventEmitter {
         method: SessionMethod.HEAPPROFILER_GETOBJECTBYHEAPOBJECTID,
         callback: (
             err: js.errors.JsError?,
-            params: node.inspector.heapprofiler.GetObjectByHeapObjectIdReturnType,
+            params: node.inspector.heapProfiler.GetObjectByHeapObjectIdReturnType,
         ) -> Unit = definedExternally,
     )
 
@@ -893,7 +893,7 @@ external class _Session : EventEmitter {
      */
     fun post(
         method: SessionMethod.HEAPPROFILER_ADDINSPECTEDHEAPOBJECT,
-        params: node.inspector.heapprofiler.AddInspectedHeapObjectParameterType = definedExternally,
+        params: node.inspector.heapProfiler.AddInspectedHeapObjectParameterType = definedExternally,
         callback: (err: js.errors.JsError?) -> Unit = definedExternally,
     )
 
@@ -904,10 +904,10 @@ external class _Session : EventEmitter {
 
     fun post(
         method: SessionMethod.HEAPPROFILER_GETHEAPOBJECTID,
-        params: node.inspector.heapprofiler.GetHeapObjectIdParameterType = definedExternally,
+        params: node.inspector.heapProfiler.GetHeapObjectIdParameterType = definedExternally,
         callback: (
             err: js.errors.JsError?,
-            params: node.inspector.heapprofiler.GetHeapObjectIdReturnType,
+            params: node.inspector.heapProfiler.GetHeapObjectIdReturnType,
         ) -> Unit = definedExternally,
     )
 
@@ -915,13 +915,13 @@ external class _Session : EventEmitter {
         method: SessionMethod.HEAPPROFILER_GETHEAPOBJECTID,
         callback: (
             err: js.errors.JsError?,
-            params: node.inspector.heapprofiler.GetHeapObjectIdReturnType,
+            params: node.inspector.heapProfiler.GetHeapObjectIdReturnType,
         ) -> Unit = definedExternally,
     )
 
     fun post(
         method: SessionMethod.HEAPPROFILER_STARTSAMPLING,
-        params: node.inspector.heapprofiler.StartSamplingParameterType = definedExternally,
+        params: node.inspector.heapProfiler.StartSamplingParameterType = definedExternally,
         callback: (err: js.errors.JsError?) -> Unit = definedExternally,
     )
 
@@ -934,7 +934,7 @@ external class _Session : EventEmitter {
         method: SessionMethod.HEAPPROFILER_STOPSAMPLING,
         callback: (
             err: js.errors.JsError?,
-            params: node.inspector.heapprofiler.StopSamplingReturnType,
+            params: node.inspector.heapProfiler.StopSamplingReturnType,
         ) -> Unit = definedExternally,
     )
 
@@ -942,7 +942,7 @@ external class _Session : EventEmitter {
         method: SessionMethod.HEAPPROFILER_GETSAMPLINGPROFILE,
         callback: (
             err: js.errors.JsError?,
-            params: node.inspector.heapprofiler.GetSamplingProfileReturnType,
+            params: node.inspector.heapProfiler.GetSamplingProfileReturnType,
         ) -> Unit = definedExternally,
     )
 
@@ -953,7 +953,7 @@ external class _Session : EventEmitter {
         method: SessionMethod.NODETRACING_GETCATEGORIES,
         callback: (
             err: js.errors.JsError?,
-            params: node.inspector.nodetracing.GetCategoriesReturnType,
+            params: node.inspector.nodeTracing.GetCategoriesReturnType,
         ) -> Unit = definedExternally,
     )
 
@@ -962,7 +962,7 @@ external class _Session : EventEmitter {
      */
     fun post(
         method: SessionMethod.NODETRACING_START,
-        params: node.inspector.nodetracing.StartParameterType = definedExternally,
+        params: node.inspector.nodeTracing.StartParameterType = definedExternally,
         callback: (err: js.errors.JsError?) -> Unit = definedExternally,
     )
 
@@ -985,7 +985,7 @@ external class _Session : EventEmitter {
      */
     fun post(
         method: SessionMethod.NODEWORKER_SENDMESSAGETOWORKER,
-        params: node.inspector.nodeworker.SendMessageToWorkerParameterType = definedExternally,
+        params: node.inspector.nodeWorker.SendMessageToWorkerParameterType = definedExternally,
         callback: (err: js.errors.JsError?) -> Unit = definedExternally,
     )
 
@@ -1000,7 +1000,7 @@ external class _Session : EventEmitter {
      */
     fun post(
         method: SessionMethod.NODEWORKER_ENABLE,
-        params: node.inspector.nodeworker.EnableParameterType = definedExternally,
+        params: node.inspector.nodeWorker.EnableParameterType = definedExternally,
         callback: (err: js.errors.JsError?) -> Unit = definedExternally,
     )
 
@@ -1022,7 +1022,7 @@ external class _Session : EventEmitter {
      */
     fun post(
         method: SessionMethod.NODEWORKER_DETACH,
-        params: node.inspector.nodeworker.DetachParameterType = definedExternally,
+        params: node.inspector.nodeWorker.DetachParameterType = definedExternally,
         callback: (err: js.errors.JsError?) -> Unit = definedExternally,
     )
 
@@ -1048,6 +1048,28 @@ external class _Session : EventEmitter {
     )
 
     /**
+     * Enables streaming of the response for the given requestId.
+     * If enabled, the dataReceived event contains the data that was received during streaming.
+     * @experimental
+     */
+    fun post(
+        method: SessionMethod.NETWORK_STREAMRESOURCECONTENT,
+        params: node.inspector.network.StreamResourceContentParameterType = definedExternally,
+        callback: (
+            err: js.errors.JsError?,
+            params: node.inspector.network.StreamResourceContentReturnType,
+        ) -> Unit = definedExternally,
+    )
+
+    fun post(
+        method: SessionMethod.NETWORK_STREAMRESOURCECONTENT,
+        callback: (
+            err: js.errors.JsError?,
+            params: node.inspector.network.StreamResourceContentReturnType,
+        ) -> Unit = definedExternally,
+    )
+
+    /**
      * Enable the NodeRuntime events except by `NodeRuntime.waitingForDisconnect`.
      */
     fun post(
@@ -1068,12 +1090,23 @@ external class _Session : EventEmitter {
      */
     fun post(
         method: SessionMethod.NODERUNTIME_NOTIFYWHENWAITINGFORDISCONNECT,
-        params: node.inspector.noderuntime.NotifyWhenWaitingForDisconnectParameterType = definedExternally,
+        params: node.inspector.nodeRuntime.NotifyWhenWaitingForDisconnectParameterType = definedExternally,
         callback: (err: js.errors.JsError?) -> Unit = definedExternally,
     )
 
     fun post(
         method: SessionMethod.NODERUNTIME_NOTIFYWHENWAITINGFORDISCONNECT,
+        callback: (err: js.errors.JsError?) -> Unit = definedExternally,
+    )
+
+    fun post(
+        method: SessionMethod.TARGET_SETAUTOATTACH,
+        params: node.inspector.target.SetAutoAttachParameterType = definedExternally,
+        callback: (err: js.errors.JsError?) -> Unit = definedExternally,
+    )
+
+    fun post(
+        method: SessionMethod.TARGET_SETAUTOATTACH,
         callback: (err: js.errors.JsError?) -> Unit = definedExternally,
     )
 
@@ -1174,6 +1207,10 @@ external class _Session : EventEmitter {
 
     /**
      * Fired when HTTP response is available.
+     */
+
+    /**
+     * Fired when data chunk was received over the network.
      */
 
     /**
@@ -1298,6 +1335,10 @@ external class _Session : EventEmitter {
      */
 
     /**
+     * Fired when data chunk was received over the network.
+     */
+
+    /**
      * This event is fired instead of `Runtime.executionContextDestroyed` when
      * enabled.
      * It is fired when the Node process finished all code execution and is
@@ -1406,6 +1447,10 @@ external class _Session : EventEmitter {
 
     /**
      * Fired when HTTP response is available.
+     */
+
+    /**
+     * Fired when data chunk was received over the network.
      */
 
     /**
@@ -1520,6 +1565,10 @@ external class _Session : EventEmitter {
      */
 
     /**
+     * Fired when data chunk was received over the network.
+     */
+
+    /**
      * This event is fired instead of `Runtime.executionContextDestroyed` when
      * enabled.
      * It is fired when the Node process finished all code execution and is
@@ -1631,6 +1680,10 @@ external class _Session : EventEmitter {
      */
 
     /**
+     * Fired when data chunk was received over the network.
+     */
+
+    /**
      * This event is fired instead of `Runtime.executionContextDestroyed` when
      * enabled.
      * It is fired when the Node process finished all code execution and is
@@ -1705,41 +1758,41 @@ external class _Session : EventEmitter {
 
     @web.events.JsEvent("HeapProfiler.addHeapSnapshotChunk")
     val HeapProfilerAddHeapSnapshotChunkEvent:
-            node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.heapprofiler.AddHeapSnapshotChunkEventDataType>>>
+            node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.heapProfiler.AddHeapSnapshotChunkEventDataType>>>
 
     @web.events.JsEvent("HeapProfiler.resetProfiles")
     val HeapProfilerResetProfilesEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("HeapProfiler.reportHeapSnapshotProgress")
     val HeapProfilerReportHeapSnapshotProgressEvent:
-            node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.heapprofiler.ReportHeapSnapshotProgressEventDataType>>>
+            node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.heapProfiler.ReportHeapSnapshotProgressEventDataType>>>
 
     @web.events.JsEvent("HeapProfiler.lastSeenObjectId")
     val HeapProfilerLastSeenObjectIdEvent:
-            node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.heapprofiler.LastSeenObjectIdEventDataType>>>
+            node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.heapProfiler.LastSeenObjectIdEventDataType>>>
 
     @web.events.JsEvent("HeapProfiler.heapStatsUpdate")
     val HeapProfilerHeapStatsUpdateEvent:
-            node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.heapprofiler.HeapStatsUpdateEventDataType>>>
+            node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.heapProfiler.HeapStatsUpdateEventDataType>>>
 
     @web.events.JsEvent("NodeTracing.dataCollected")
     val NodeTracingDataCollectedEvent:
-            node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.nodetracing.DataCollectedEventDataType>>>
+            node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.nodeTracing.DataCollectedEventDataType>>>
 
     @web.events.JsEvent("NodeTracing.tracingComplete")
     val NodeTracingTracingCompleteEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("NodeWorker.attachedToWorker")
     val NodeWorkerAttachedToWorkerEvent:
-            node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.nodeworker.AttachedToWorkerEventDataType>>>
+            node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.nodeWorker.AttachedToWorkerEventDataType>>>
 
     @web.events.JsEvent("NodeWorker.detachedFromWorker")
     val NodeWorkerDetachedFromWorkerEvent:
-            node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.nodeworker.DetachedFromWorkerEventDataType>>>
+            node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.nodeWorker.DetachedFromWorkerEventDataType>>>
 
     @web.events.JsEvent("NodeWorker.receivedMessageFromWorker")
     val NodeWorkerReceivedMessageFromWorkerEvent:
-            node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.nodeworker.ReceivedMessageFromWorkerEventDataType>>>
+            node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.nodeWorker.ReceivedMessageFromWorkerEventDataType>>>
 
     @web.events.JsEvent("Network.requestWillBeSent")
     val NetworkRequestWillBeSentEvent:
@@ -1757,9 +1810,21 @@ external class _Session : EventEmitter {
     val NetworkLoadingFinishedEvent:
             node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.network.LoadingFinishedEventDataType>>>
 
+    @web.events.JsEvent("Network.dataReceived")
+    val NetworkDataReceivedEvent:
+            node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.network.DataReceivedEventDataType>>>
+
     @web.events.JsEvent("NodeRuntime.waitingForDisconnect")
     val NodeRuntimeWaitingForDisconnectEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("NodeRuntime.waitingForDebugger")
     val NodeRuntimeWaitingForDebuggerEvent: node.events.EventInstance<js.array.Tuple>
+
+    @web.events.JsEvent("Target.targetCreated")
+    val TargetTargetCreatedEvent:
+            node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.target.TargetCreatedEventDataType>>>
+
+    @web.events.JsEvent("Target.attachedToTarget")
+    val TargetAttachedToTargetEvent:
+            node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.target.AttachedToTargetEventDataType>>>
 }

@@ -4,23 +4,50 @@
 
 package node.sqlite
 
+import js.disposable.Disposable
 import js.typedarrays.Uint8Array
+import web.url.URL
 
 /**
  * This class represents a single [connection](https://www.sqlite.org/c3ref/sqlite3.html) to a SQLite database. All APIs
  * exposed by this class execute synchronously.
  * @since v22.5.0
  */
-external class DatabaseSync {
+external class DatabaseSync : Disposable {
     /**
      * Constructs a new `DatabaseSync` instance.
-     * @param location The location of the database.
+     * @param path The path of the database.
      * A SQLite database can be stored in a file or completely [in memory](https://www.sqlite.org/inmemorydb.html).
-     * To use a file-backed database, the location should be a file path.
-     * To use an in-memory database, the location should be the special name `':memory:'`.
+     * To use a file-backed database, the path should be a file path.
+     * To use an in-memory database, the path should be the special name `':memory:'`.
      * @param options Configuration options for the database connection.
      */
-    constructor (location: String, options: DatabaseSyncOptions = definedExternally)
+    constructor (path: String, options: DatabaseSyncOptions = definedExternally)
+
+    /**
+     * Constructs a new `DatabaseSync` instance.
+     * @param path The path of the database.
+     * A SQLite database can be stored in a file or completely [in memory](https://www.sqlite.org/inmemorydb.html).
+     * To use a file-backed database, the path should be a file path.
+     * To use an in-memory database, the path should be the special name `':memory:'`.
+     * @param options Configuration options for the database connection.
+     */
+    constructor (path: node.buffer.Buffer<*>, options: DatabaseSyncOptions = definedExternally)
+
+    /**
+     * Constructs a new `DatabaseSync` instance.
+     * @param path The path of the database.
+     * A SQLite database can be stored in a file or completely [in memory](https://www.sqlite.org/inmemorydb.html).
+     * To use a file-backed database, the path should be a file path.
+     * To use an in-memory database, the path should be the special name `':memory:'`.
+     * @param options Configuration options for the database connection.
+     */
+    constructor (path: URL, options: DatabaseSyncOptions = definedExternally)
+
+    fun <T : SQLInputValue> aggregate(
+        name: String,
+        options: AggregateOptions<T>,
+    )
 
     /**
      * Closes the database connection. An exception is thrown if the database is not
@@ -48,6 +75,16 @@ external class DatabaseSync {
     fun enableLoadExtension(allow: Boolean)
 
     /**
+     * This method is a wrapper around [`sqlite3_db_filename()`](https://sqlite.org/c3ref/db_filename.html)
+     * @since v22.16.0
+     * @param dbName Name of the database. This can be `'main'` (the default primary database) or any other
+     * database that has been added with [`ATTACH DATABASE`](https://www.sqlite.org/lang_attach.html) **Default:** `'main'`.
+     * @returns The location of the database file. When using an in-memory database,
+     * this method returns null.
+     */
+    fun location(dbName: String = definedExternally): String?
+
+    /**
      * This method allows one or more SQL statements to be executed without returning
      * any results. This method is useful when executing SQL statements read from a
      * file. This method is a wrapper around [`sqlite3_exec()`](https://www.sqlite.org/c3ref/exec.html).
@@ -63,21 +100,34 @@ external class DatabaseSync {
      * @param name The name of the SQLite function to create.
      * @param options Optional configuration settings for the function.
      * @param func The JavaScript function to call when the SQLite
-     * function is invoked.
+     * function is invoked. The return value of this function should be a valid
+     * SQLite data type: see
+     * [Type conversion between JavaScript and SQLite](https://nodejs.org/docs/latest-v22.x/api/sqlite.html#type-conversion-between-javascript-and-sqlite).
+     * The result defaults to `NULL` if the return value is `undefined`.
      */
     fun function(
         name: String,
         options: FunctionOptions,
-        func: Function<SupportedValueType>, // (...args: SupportedValueType[]) => SupportedValueType
+        func: Function<SQLInputValue>, // (...args: SQLOutputValue[]) => SQLInputValue
     )
 
-    fun function(
-        name: String,
-        func: Function<SupportedValueType>, /* (...args: SupportedValueType[]) => SupportedValueType */
-    )
+    fun function(name: String, func: Function<SQLInputValue> /* (...args: SQLOutputValue[]) => SQLInputValue */)
 
     /**
-     * Opens the database specified in the `location` argument of the `DatabaseSync`constructor. This method should only be used when the database is not opened via
+     * Whether the database is currently open or not.
+     * @since v22.15.0
+     */
+    val isOpen: Boolean
+
+    /**
+     * Whether the database is currently within a transaction. This method
+     * is a wrapper around [`sqlite3_get_autocommit()`](https://sqlite.org/c3ref/get_autocommit.html).
+     * @since v22.16.0
+     */
+    val isTransaction: Boolean
+
+    /**
+     * Opens the database specified in the `path` argument of the `DatabaseSync`constructor. This method should only be used when the database is not opened via
      * the constructor. An exception is thrown if the database is already open.
      * @since v22.5.0
      */
@@ -126,7 +176,7 @@ external class DatabaseSync {
      * ```
      * @param changeset A binary changeset or patchset.
      * @param options The configuration options for how the changes will be applied.
-     * @returns Whether the changeset was applied succesfully without being aborted.
+     * @returns Whether the changeset was applied successfully without being aborted.
      * @since v22.12.0
      */
     fun applyChangeset(

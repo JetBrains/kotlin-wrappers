@@ -2,7 +2,4 @@
 
 package node.fs
 
-sealed external interface GlobOptions : GlobOptionsBase {
-    @JsName("exclude")
-    var globExclude: ((fileName: Any /* Dirent | string */) -> Boolean)?
-}
+sealed external interface GlobOptions : _GlobOptions<Any /* Dirent | string */>

@@ -4,7 +4,7 @@ package node.vm
 
 sealed external interface ScriptOptions : BaseOptions {
     /**
-     * V8's code cache data for the supplied source.
+     * Provides an optional data with V8's code cache data for the supplied source.
      */
     var cachedData: Any? // Buffer | NodeJS.ArrayBufferView | undefined
 
@@ -16,5 +16,5 @@ sealed external interface ScriptOptions : BaseOptions {
      * part of the experimental modules API. We do not recommend using it in a production environment. For detailed information, see
      * [Support of dynamic `import()` in compilation APIs](https://nodejs.org/docs/latest-v22.x/api/vm.html#support-of-dynamic-import-in-compilation-apis).
      */
-    var importModuleDynamically: Any? // ((specifier: string, script: Script, importAttributes: ImportAttributes) => Module | Promise<Module>) | typeof constants.USE_MAIN_CONTEXT_DEFAULT_LOADER | undefined
+    var importModuleDynamically: Any? // DynamicModuleLoader<Script> | typeof constants.USE_MAIN_CONTEXT_DEFAULT_LOADER | undefined
 }

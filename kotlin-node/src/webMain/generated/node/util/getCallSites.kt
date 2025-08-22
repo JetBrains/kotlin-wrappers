@@ -9,10 +9,10 @@ package node.util
  * the caller function.
  *
  * ```js
- * const util = require('node:util');
+ * import { getCallSites } from 'node:util';
  *
  * function exampleFunction() {
- *   const callSites = util.getCallSites();
+ *   const callSites = getCallSites();
  *
  *   console.log('Call Sites:');
  *   callSites.forEach((callSite, index) => {
@@ -51,13 +51,13 @@ package node.util
  * `sourceMap` will be true by default.
  *
  * ```ts
- * import util from 'node:util';
+ * import { getCallSites } from 'node:util';
  *
  * interface Foo {
  *   foo: string;
  * }
  *
- * const callSites = util.getCallSites({ sourceMap: true });
+ * const callSites = getCallSites({ sourceMap: true });
  *
  * // With sourceMap:
  * // Function Name: ''

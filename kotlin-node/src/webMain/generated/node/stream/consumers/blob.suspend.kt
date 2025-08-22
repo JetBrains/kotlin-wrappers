@@ -3,14 +3,22 @@
 package node.stream.consumers
 
 import js.iterable.AsyncIterable
-import node.stream.Readable
 import web.blob.Blob as NodeBlob
+import web.streams.ReadableStream as WebReadableStream
 
+@seskar.js.JsAsync
+external suspend fun blob(stream: WebReadableStream<*>): NodeBlob
+
+/**
+ * @since v16.7.0
+ * @returns Fulfills with a `Blob` containing the full contents of the stream.
+ */
 @seskar.js.JsAsync
 external suspend fun blob(stream: node.ReadableStream): NodeBlob
 
-@seskar.js.JsAsync
-external suspend fun blob(stream: Readable): NodeBlob
-
+/**
+ * @since v16.7.0
+ * @returns Fulfills with a `Blob` containing the full contents of the stream.
+ */
 @seskar.js.JsAsync
 external suspend fun blob(stream: AsyncIterable<Any?>): NodeBlob

@@ -45,6 +45,19 @@ external fun <TBuffer : js.buffer.ArrayBufferView<*>> read(
     callback: (err: node.ErrnoException?, bytesRead: Double, buffer: TBuffer) -> Unit,
 )
 
+external fun <TBuffer : js.buffer.ArrayBufferView<*>> read(
+    fd: Number,
+    buffer: TBuffer,
+    options: ReadSyncOptions,
+    callback: (err: node.ErrnoException?, bytesRead: Double, buffer: TBuffer) -> Unit,
+)
+
+external fun <TBuffer : js.buffer.ArrayBufferView<*>> read(
+    fd: Number,
+    buffer: TBuffer,
+    callback: (err: node.ErrnoException?, bytesRead: Double, buffer: TBuffer) -> Unit,
+)
+
 external fun read(
     fd: Number,
     callback: (err: node.ErrnoException?, bytesRead: Double, buffer: js.buffer.ArrayBufferView<*>) -> Unit,

@@ -6,6 +6,9 @@ package node.http
 external interface IncomingHttpHeaders : node.Dict<Any /* string | string[] */> {
     var accept: String?
 
+    @JsName("accept-encoding")
+    var acceptEncoding: String?
+
     @JsName("accept-language")
     var acceptLanguage: String?
 
@@ -109,6 +112,18 @@ external interface IncomingHttpHeaders : node.Dict<Any /* string | string[] */> 
 
     @JsName("retry-after")
     var retryAfter: String?
+
+    @JsName("sec-fetch-site")
+    var secFetchSite: String?
+
+    @JsName("sec-fetch-mode")
+    var secFetchMode: String?
+
+    @JsName("sec-fetch-user")
+    var secFetchUser: String?
+
+    @JsName("sec-fetch-dest")
+    var secFetchDest: String?
 
     @JsName("sec-websocket-accept")
     var secWebsocketAccept: String?

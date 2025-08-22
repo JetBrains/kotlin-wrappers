@@ -24,13 +24,7 @@ external fun resolve(
 
 external fun resolve(
     hostname: String,
-    rrtype: ResourceRecordType.A,
-    callback: (err: node.ErrnoException?, addresses: js.array.ReadonlyArray<String>) -> Unit,
-)
-
-external fun resolve(
-    hostname: String,
-    rrtype: ResourceRecordType.AAAA,
+    rrtype: ResourceRecordType.StringRecord,
     callback: (err: node.ErrnoException?, addresses: js.array.ReadonlyArray<String>) -> Unit,
 )
 
@@ -42,8 +36,8 @@ external fun resolve(
 
 external fun resolve(
     hostname: String,
-    rrtype: ResourceRecordType.CNAME,
-    callback: (err: node.ErrnoException?, addresses: js.array.ReadonlyArray<String>) -> Unit,
+    rrtype: ResourceRecordType.CAA,
+    callback: (err: node.ErrnoException?, address: js.array.ReadonlyArray<CaaRecord>) -> Unit,
 )
 
 external fun resolve(
@@ -60,18 +54,6 @@ external fun resolve(
 
 external fun resolve(
     hostname: String,
-    rrtype: ResourceRecordType.NS,
-    callback: (err: node.ErrnoException?, addresses: js.array.ReadonlyArray<String>) -> Unit,
-)
-
-external fun resolve(
-    hostname: String,
-    rrtype: ResourceRecordType.PTR,
-    callback: (err: node.ErrnoException?, addresses: js.array.ReadonlyArray<String>) -> Unit,
-)
-
-external fun resolve(
-    hostname: String,
     rrtype: ResourceRecordType.SOA,
     callback: (err: node.ErrnoException?, addresses: SoaRecord) -> Unit,
 )
@@ -80,6 +62,12 @@ external fun resolve(
     hostname: String,
     rrtype: ResourceRecordType.SRV,
     callback: (err: node.ErrnoException?, addresses: js.array.ReadonlyArray<SrvRecord>) -> Unit,
+)
+
+external fun resolve(
+    hostname: String,
+    rrtype: ResourceRecordType.TLSA,
+    callback: (err: node.ErrnoException?, addresses: js.array.ReadonlyArray<TlsaRecord>) -> Unit,
 )
 
 external fun resolve(
@@ -93,6 +81,6 @@ external fun resolve(
     rrtype: String,
     callback: (
         err: node.ErrnoException?,
-        addresses: Any, // string[] | MxRecord[] | NaptrRecord[] | SoaRecord | SrvRecord[] | string[][] | AnyRecord[]
+        addresses: Any, // string[] | CaaRecord[] | MxRecord[] | NaptrRecord[] | SoaRecord | SrvRecord[] | TlsaRecord[] | string[][] | AnyRecord[]
     ) -> Unit,
 )

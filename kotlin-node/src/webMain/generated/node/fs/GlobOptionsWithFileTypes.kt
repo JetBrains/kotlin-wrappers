@@ -2,10 +2,7 @@
 
 package node.fs
 
-sealed external interface GlobOptionsWithFileTypes : GlobOptionsBase {
-    @JsName("exclude")
-    var excludeWithFileTypes: ((fileName: Dirent) -> Boolean)?
-
+sealed external interface GlobOptionsWithFileTypes : _GlobOptions<Dirent<*>> {
     @JsName("withFileTypes")
     var requiredWithFileTypes: Boolean // true
 }

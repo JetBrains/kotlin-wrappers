@@ -29,6 +29,22 @@ open external class Server : node.net.Server {
     )
 
     /**
+     * The `server.addContext()` method adds a secure context that will be used if
+     * the client request's SNI name matches the supplied `hostname` (or wildcard).
+     *
+     * When there are multiple matching contexts, the most recently added one is
+     * used.
+     * @since v0.5.3
+     * @param hostname A SNI host name or wildcard (e.g. `'*'`)
+     * @param context An object containing any of the possible properties from the {@link createSecureContext} `options` arguments (e.g. `key`, `cert`, `ca`, etc), or a TLS context object created
+     * with {@link createSecureContext} itself.
+     */
+    fun addContext(
+        hostname: String,
+        context: SecureContext,
+    )
+
+    /**
      * Returns the session ticket keys.
      *
      * See `Session Resumption` for more information.

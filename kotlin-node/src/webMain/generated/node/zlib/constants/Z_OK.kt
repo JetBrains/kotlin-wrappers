@@ -5,6 +5,4 @@
 
 package node.zlib.constants
 
-// Return codes for the compression/decompression functions.
-// Negative values are errors, positive values are used for special but normal events.
 external val Z_OK: Double

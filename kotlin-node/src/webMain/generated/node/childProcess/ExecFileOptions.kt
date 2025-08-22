@@ -14,4 +14,5 @@ sealed external interface ExecFileOptions :
     var windowsVerbatimArguments: Boolean?
     var shell: Any? // boolean | string | undefined
     override var signal: AbortSignal?
+    var encoding: String?
 }

@@ -5,38 +5,54 @@
 package node.fs
 
 /**
- * Retrieves the files matching the specified pattern.
+ * ```js
+ * import { glob } from 'node:fs/promises';
+ *
+ * for await (const entry of glob('*.js'))
+ *   console.log(entry);
+ * ```
+ * @since v22.0.0
+ * @returns An AsyncIterator that yields the paths of files
+ * that match the pattern.
  */
 external fun glob(pattern: String): js.iterable.AsyncIterator<String>
 
 /**
- * Retrieves the files matching the specified pattern.
+ * ```js
+ * import { glob } from 'node:fs/promises';
+ *
+ * for await (const entry of glob('*.js'))
+ *   console.log(entry);
+ * ```
+ * @since v22.0.0
+ * @returns An AsyncIterator that yields the paths of files
+ * that match the pattern.
  */
 external fun glob(pattern: js.array.ReadonlyArray<String>): js.iterable.AsyncIterator<String>
 
 external fun glob(
     pattern: String,
-    opt: GlobOptionsWithFileTypes,
-): js.iterable.AsyncIterator<Dirent>
+    options: GlobOptionsWithFileTypes,
+): js.iterable.AsyncIterator<Dirent<*>>
 
 external fun glob(
     pattern: js.array.ReadonlyArray<String>,
-    opt: GlobOptionsWithFileTypes,
-): js.iterable.AsyncIterator<Dirent>
+    options: GlobOptionsWithFileTypes,
+): js.iterable.AsyncIterator<Dirent<*>>
 
 external fun glob(
     pattern: String,
-    opt: GlobOptionsWithoutFileTypes,
+    options: GlobOptionsWithoutFileTypes,
 ): js.iterable.AsyncIterator<String>
 
 external fun glob(
     pattern: js.array.ReadonlyArray<String>,
-    opt: GlobOptionsWithoutFileTypes,
+    options: GlobOptionsWithoutFileTypes,
 ): js.iterable.AsyncIterator<String>
 
-external fun glob(pattern: String, opt: GlobOptions): js.iterable.AsyncIterator<Any /* Dirent | string */>
+external fun glob(pattern: String, options: GlobOptions): js.iterable.AsyncIterator<Any /* Dirent | string */>
 
 external fun glob(
     pattern: js.array.ReadonlyArray<String>,
-    opt: GlobOptions,
+    options: GlobOptions,
 ): js.iterable.AsyncIterator<Any /* Dirent | string */>

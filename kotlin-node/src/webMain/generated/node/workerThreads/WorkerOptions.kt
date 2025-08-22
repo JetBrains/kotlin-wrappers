@@ -22,7 +22,7 @@ sealed external interface WorkerOptions {
     /**
      * Additional data to send in the first worker message.
      */
-    var transferList: js.array.ReadonlyArray<TransferListItem>?
+    var transferList: js.array.ReadonlyArray<Transferable>?
 
     /**
      * @default true

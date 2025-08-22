@@ -4,6 +4,38 @@ package node.test
 
 sealed external interface TestContextAssert {
     /**
+     * This function serializes `value` and writes it to the file specified by `path`.
+     *
+     * ```js
+     * test('snapshot test with default serialization', (t) => {
+     *   t.assert.fileSnapshot({ value1: 1, value2: 2 }, './snapshots/snapshot.json');
+     * });
+     * ```
+     *
+     * This function differs from `context.assert.snapshot()` in the following ways:
+     *
+     * * The snapshot file path is explicitly provided by the user.
+     * * Each snapshot file is limited to a single snapshot value.
+     * * No additional escaping is performed by the test runner.
+     *
+     * These differences allow snapshot files to better support features such as syntax
+     * highlighting.
+     * @since v22.14.0
+     * @param value A value to serialize to a string. If Node.js was started with
+     * the [`--test-update-snapshots`](https://nodejs.org/docs/latest-v22.x/api/cli.html#--test-update-snapshots)
+     * flag, the serialized value is written to
+     * `path`. Otherwise, the serialized value is compared to the contents of the
+     * existing snapshot file.
+     * @param path The file where the serialized `value` is written.
+     * @param options Optional configuration options.
+     */
+    fun fileSnapshot(
+        value: Any?,
+        path: String,
+        options: AssertSnapshotOptions = definedExternally,
+    )
+
+    /**
      * This function implements assertions for snapshot testing.
      * ```js
      * test('snapshot test with default serialization', (t) => {
@@ -17,9 +49,21 @@ sealed external interface TestContextAssert {
      * });
      * ```
      * @since v22.3.0
+     * @param value A value to serialize to a string. If Node.js was started with
+     * the [`--test-update-snapshots`](https://nodejs.org/docs/latest-v22.x/api/cli.html#--test-update-snapshots)
+     * flag, the serialized value is written to
+     * the snapshot file. Otherwise, the serialized value is compared to the
+     * corresponding value in the existing snapshot file.
      */
     fun snapshot(
         value: Any?,
         options: AssertSnapshotOptions = definedExternally,
     )
+
+    /**
+     * A custom assertion function registered with `assert.register()`.
+     */
+    operator fun get(key: String): (Function<Unit> /* (...args: any[]) => void */)?
+
+    operator fun set(key: String, value: (Function<Unit> /* (...args: any[]) => void */)?)
 }

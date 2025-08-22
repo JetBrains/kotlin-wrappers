@@ -24,6 +24,12 @@ open external class Writable :
     val readonlyWritable: Boolean
 
     /**
+     * Returns whether the stream was destroyed or errored before emitting `'finish'`.
+     * @since v18.0.0, v16.17.0
+     */
+    val writableAborted: Boolean
+
+    /**
      * Is `true` after `writable.end()` has been called. This property
      * does not indicate whether the data has been flushed, for this use `writable.writableFinished` instead.
      * @since v12.9.0
@@ -371,7 +377,6 @@ open external class Writable :
         /**
          * A utility method for creating a `Writable` from a web `WritableStream`.
          * @since v17.0.0
-         * @experimental
          */
         fun fromWeb(
             writableStream: web.streams.WritableStream<*>,
@@ -381,7 +386,6 @@ open external class Writable :
         /**
          * A utility method for creating a web `WritableStream` from a `Writable`.
          * @since v17.0.0
-         * @experimental
          */
         fun toWeb(streamWritable: Writable): web.streams.WritableStream<*>
     }

@@ -4,7 +4,7 @@
 
 package node.buffer
 
-// export { Buffer };
+// export { type AllowSharedBuffer, Buffer, type NonSharedBuffer };
 
 // export import atob = globalThis.atob;
 

@@ -410,7 +410,8 @@ open external class Socket : node.stream.Duplex {
     val connectionAttemptEvent: node.events.EventInstance<js.array.Tuple3<String, Double, Double>>
 
     @web.events.JsEvent("connectionAttemptFailed")
-    val connectionAttemptFailedEvent: node.events.EventInstance<js.array.Tuple3<String, Double, Double>>
+    val connectionAttemptFailedEvent:
+            node.events.EventInstance<js.array.Tuple4<String, Double, Double, js.errors.JsError>>
 
     @web.events.JsEvent("connectionAttemptTimeout")
     val connectionAttemptTimeoutEvent: node.events.EventInstance<js.array.Tuple3<String, Double, Double>>

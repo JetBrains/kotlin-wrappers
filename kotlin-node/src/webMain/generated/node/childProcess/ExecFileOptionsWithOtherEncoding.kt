@@ -2,7 +2,6 @@
 
 package node.childProcess
 
+/** @deprecated Use `ExecFileOptions` instead. */
 @js.objects.JsPlainObject
-sealed external interface ExecFileOptionsWithOtherEncoding : ExecFileOptions {
-    var encoding: node.buffer.BufferEncoding
-}
+sealed external interface ExecFileOptionsWithOtherEncoding : ExecFileOptions

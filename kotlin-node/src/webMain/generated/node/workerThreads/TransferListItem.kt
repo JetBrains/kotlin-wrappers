@@ -2,4 +2,5 @@
 
 package node.workerThreads
 
-typealias TransferListItem = Any // ArrayBuffer | MessagePort | FileHandle | X509Certificate | Blob
+/** @deprecated Use `import { Transferable } from "node:worker_threads"` instead. */
+typealias TransferListItem = Transferable

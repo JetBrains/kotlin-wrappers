@@ -17,5 +17,5 @@ sealed external interface FileReadOptions<T : js.buffer.ArrayBufferView<*> /* de
      * @default `buffer.byteLength`
      */
     var length: Double?
-    var position: Double?
+    var position: ReadPosition?
 }

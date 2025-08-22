@@ -33,7 +33,7 @@ val convertInspectorQualifiedName = createPlugin { node, _, render ->
             ensure(isIdentifier(left))
             ensure(left.text in modules)
 
-            "node.inspector.${left.text.lowercase()}.${render(node.right)}"
+            "node.inspector.${left.text.replaceFirstChar { it.lowercase() }}.${render(node.right)}"
         } ?: nullable {
             ensure(isPropertyAccessExpression(node))
 
@@ -41,7 +41,7 @@ val convertInspectorQualifiedName = createPlugin { node, _, render ->
             ensure(isIdentifier(expression))
             ensure(expression.text in modules)
 
-            "node.inspector.${expression.text.lowercase()}.${render(node.name)}"
+            "node.inspector.${expression.text.replaceFirstChar { it.lowercase() }}.${render(node.name)}"
         }
     }
 }

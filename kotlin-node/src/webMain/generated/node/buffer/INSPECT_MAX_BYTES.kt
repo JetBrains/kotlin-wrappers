@@ -4,4 +4,4 @@
 
 package node.buffer
 
-external val INSPECT_MAX_BYTES: Double
+external var INSPECT_MAX_BYTES: Double

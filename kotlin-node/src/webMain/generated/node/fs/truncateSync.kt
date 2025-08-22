@@ -15,5 +15,5 @@ package node.fs
  */
 external fun truncateSync(
     path: PathLike,
-    len: Double? = definedExternally,
+    len: Number = definedExternally,
 )

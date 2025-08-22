@@ -10,4 +10,5 @@ sealed external interface ExecOptions : CommonOptions {
     var signal: AbortSignal?
     var maxBuffer: Double?
     var killSignal: Any? // NodeJS.Signals | number | undefined
+    var encoding: String?
 }

@@ -3,7 +3,26 @@
 package node.http2
 
 sealed external interface ClientSessionOptions : SessionOptions {
+    /**
+     * Sets the maximum number of reserved push streams the client will accept at any given time.
+     * Once the current number of currently reserved push streams exceeds reaches this limit,
+     * new push streams sent by the server will be automatically rejected.
+     * The minimum allowed value is 0. The maximum allowed value is 2<sup>32</sup>-1.
+     * A negative value sets this option to the maximum allowed value.
+     * @default 200
+     */
     var maxReservedRemoteStreams: Double?
+
+    /**
+     * An optional callback that receives the `URL` instance passed to `connect` and the `options` object,
+     * and returns any `Duplex` stream that is to be used as the connection for this session.
+     */
     var createConnection: ((authority: web.url.URL, option: SessionOptions) -> node.stream.Duplex)?
+
+    /**
+     * The protocol to connect with, if not set in the `authority`.
+     * Value may be either `'http:'` or `'https:'`.
+     * @default 'https:'
+     */
     var protocol: ClientSessionOptionsProtocol?
 }

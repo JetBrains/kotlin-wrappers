@@ -4,13 +4,21 @@ package node.stream.consumers
 
 import js.buffer.ArrayBuffer
 import js.iterable.AsyncIterable
-import node.stream.Readable
+import web.streams.ReadableStream as WebReadableStream
 
+@seskar.js.JsAsync
+external suspend fun arrayBuffer(stream: WebReadableStream<*>): ArrayBuffer
+
+/**
+ * @since v16.7.0
+ * @returns Fulfills with an `ArrayBuffer` containing the full contents of the stream.
+ */
 @seskar.js.JsAsync
 external suspend fun arrayBuffer(stream: node.ReadableStream): ArrayBuffer
 
-@seskar.js.JsAsync
-external suspend fun arrayBuffer(stream: Readable): ArrayBuffer
-
+/**
+ * @since v16.7.0
+ * @returns Fulfills with an `ArrayBuffer` containing the full contents of the stream.
+ */
 @seskar.js.JsAsync
 external suspend fun arrayBuffer(stream: AsyncIterable<Any?>): ArrayBuffer

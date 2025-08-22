@@ -77,6 +77,21 @@ external fun <TBuffer : js.buffer.ArrayBufferView<*>> write(
 )
 
 /**
+ * Asynchronously writes `buffer` to the file referenced by the supplied file descriptor.
+ * @param fd A file descriptor.
+ * @param options An object with the following properties:
+ * * `offset` The part of the buffer to be written. If not supplied, defaults to `0`.
+ * * `length` The number of bytes to write. If not supplied, defaults to `buffer.length - offset`.
+ * * `position` The offset from the beginning of the file where this data should be written. If not supplied, defaults to the current position.
+ */
+external fun <TBuffer : js.buffer.ArrayBufferView<*>> write(
+    fd: Number,
+    buffer: TBuffer,
+    options: WriteOptions,
+    callback: (err: node.ErrnoException?, written: Double, buffer: TBuffer) -> Unit,
+)
+
+/**
  * Asynchronously writes `string` to the file referenced by the supplied file descriptor.
  * @param fd A file descriptor.
  * @param string A string to write.

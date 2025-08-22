@@ -147,7 +147,7 @@ external class Channel<StoreType /* default is Any? */, ContextType /* default i
      * @param store The store to unbind from the channel.
      * @return `true` if the store was found, `false` otherwise.
      */
-    fun unbindStore(store: Any?)
+    fun unbindStore(store: AsyncLocalStorage<StoreType>): Boolean
 
     /**
      * Applies the given data to any AsyncLocalStorage instances bound to the channel
@@ -186,5 +186,10 @@ external class Channel<StoreType /* default is Any? */, ContextType /* default i
      * @param thisArg The receiver to be used for the function call.
      * @param args Optional arguments to pass to the function.
      */
-    fun runStores()
+    fun <ThisArg /* default is Any? */, Args : js.array.ReadonlyArray<Any?> /* default is js.array.ReadonlyArray<Any?> */, Result /* default is Any? */> runStores(
+        context: ContextType,
+        fn: Function<Result>, /* (this: ThisArg, ...args: Args) => Result */
+        thisArg: ThisArg = definedExternally,
+        vararg args: Any?, // Args
+    ): Result
 }

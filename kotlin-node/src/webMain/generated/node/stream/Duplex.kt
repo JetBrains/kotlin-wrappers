@@ -359,14 +359,12 @@ open external class Duplex :
         /**
          * A utility method for creating a web `ReadableStream` and `WritableStream` from a `Duplex`.
          * @since v17.0.0
-         * @experimental
          */
         fun toWeb(streamDuplex: Duplex): DuplexToWebResult
 
         /**
          * A utility method for creating a `Duplex` from a web `ReadableStream` and `WritableStream`.
          * @since v17.0.0
-         * @experimental
          */
         fun fromWeb(
             duplexStream: DuplexFromWebDuplexStream,

@@ -13,5 +13,5 @@ package node.workerThreads
  */
 external fun setEnvironmentData(
     key: Serializable,
-    value: Serializable,
+    value: Serializable = definedExternally,
 )

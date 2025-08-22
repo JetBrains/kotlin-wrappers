@@ -146,7 +146,7 @@ open external class Server : EventEmitter {
      * Callback should take two arguments `err` and `count`.
      * @since v0.9.7
      */
-    fun getConnections(cb: (error: js.errors.JsError?, count: Double) -> Unit)
+    fun getConnections(cb: (error: js.errors.JsError?, count: Double) -> Unit) // this
 
     /**
      * Opposite of `unref()`, calling `ref()` on a previously `unref`ed server will _not_ let the program exit if it's the only server left (the default behavior).

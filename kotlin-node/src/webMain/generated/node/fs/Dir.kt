@@ -28,7 +28,7 @@ import js.promise.Promise
  * closed after the iterator exits.
  * @since v12.12.0
  */
-external class Dir : AsyncIterable<Dirent> {
+external class Dir : AsyncIterable<Dirent<*>> {
     /**
      * The read-only path of this directory as was provided to {@link opendir},{@link opendirSync}, or `fsPromises.opendir()`.
      * @since v12.12.0
@@ -71,12 +71,12 @@ external class Dir : AsyncIterable<Dirent> {
      * @return containing {fs.Dirent|null}
      */
     @JsName("read")
-    fun readAsync(): Promise<Dirent?>
+    fun readAsync(): Promise<Dirent<*>?>
 
     @seskar.js.JsAsync
-    suspend fun read(): Dirent?
+    suspend fun read(): Dirent<*>?
 
-    fun read(cb: (err: node.ErrnoException?, dirEnt: Dirent?) -> Unit)
+    fun read(cb: (err: node.ErrnoException?, dirEnt: Dirent<*>?) -> Unit)
 
     /**
      * Synchronously read the next directory entry as an `fs.Dirent`. See the
@@ -90,5 +90,5 @@ external class Dir : AsyncIterable<Dirent> {
      * included in the iteration results.
      * @since v12.12.0
      */
-    fun readSync(): Dirent?
+    fun readSync(): Dirent<*>?
 }

@@ -13,7 +13,7 @@ package node.fs
  * the `withFileTypes` option set to `true`, the resulting array is filled with `fs.Dirent` objects, rather than strings or `Buffer` s.
  * @since v10.10.0
  */
-external class Dirent {
+external class Dirent<Name : Any /* string | Buffer */ /* default is String */> {
     /**
      * Returns `true` if the `fs.Dirent` object describes a regular file.
      * @since v10.10.0
@@ -63,11 +63,11 @@ external class Dirent {
      * value is determined by the `options.encoding` passed to {@link readdir} or {@link readdirSync}.
      * @since v10.10.0
      */
-    var name: String
+    var name: Name
 
     /**
-     * The base path that this `fs.Dirent` object refers to.
-     * @since v20.12.0
+     * The path to the parent directory of the file this `fs.Dirent` object refers to.
+     * @since v20.12.0, v18.20.0
      */
     var parentPath: String
 

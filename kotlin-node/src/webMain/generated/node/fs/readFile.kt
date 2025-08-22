@@ -4,6 +4,8 @@
 
 package node.fs
 
+import node.buffer.NonSharedBuffer
+
 /**
  * Asynchronously reads the entire contents of a file.
  *
@@ -73,7 +75,7 @@ package node.fs
 external fun readFile(
     path: PathOrFileDescriptor,
     options: (ReadFileBufferOptions)?,
-    callback: (err: node.ErrnoException?, data: node.buffer.Buffer<*>) -> Unit,
+    callback: (err: node.ErrnoException?, data: NonSharedBuffer) -> Unit,
 )
 
 /**
@@ -112,7 +114,7 @@ external fun readFile(
 external fun readFile(
     path: PathOrFileDescriptor,
     options: (ReadFileOptions)?,
-    callback: (err: node.ErrnoException?, data: Any /* string | Buffer */) -> Unit,
+    callback: (err: node.ErrnoException?, data: Any /* string | NonSharedBuffer */) -> Unit,
 )
 
 /**
@@ -125,7 +127,7 @@ external fun readFile(
 external fun readFile(
     path: PathOrFileDescriptor,
     options: node.buffer.BufferEncoding?,
-    callback: (err: node.ErrnoException?, data: Any /* string | Buffer */) -> Unit,
+    callback: (err: node.ErrnoException?, data: Any /* string | NonSharedBuffer */) -> Unit,
 )
 
 /**
@@ -135,5 +137,5 @@ external fun readFile(
  */
 external fun readFile(
     path: PathOrFileDescriptor,
-    callback: (err: node.ErrnoException?, data: node.buffer.Buffer<*>) -> Unit,
+    callback: (err: node.ErrnoException?, data: NonSharedBuffer) -> Unit,
 )

@@ -5,5 +5,4 @@
 
 package node.zlib.constants
 
-// Allowed flush values.
 external val Z_NO_FLUSH: Double

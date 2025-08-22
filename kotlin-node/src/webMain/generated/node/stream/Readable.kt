@@ -22,7 +22,6 @@ open external class Readable :
     /**
      * Returns whether the stream was destroyed or errored before emitting `'end'`.
      * @since v16.8.0
-     * @experimental
      */
     val readableAborted: Boolean
 
@@ -36,7 +35,6 @@ open external class Readable :
     /**
      * Returns whether `'data'` has been emitted.
      * @since v16.7.0, v14.18.0
-     * @experimental
      */
     val readableDidRead: Boolean
 
@@ -776,7 +774,6 @@ open external class Readable :
         /**
          * A utility method for creating a `Readable` from a web `ReadableStream`.
          * @since v17.0.0
-         * @experimental
          */
         fun fromWeb(
             readableStream: web.streams.ReadableStream<*>,
@@ -786,7 +783,6 @@ open external class Readable :
         /**
          * A utility method for creating a web `ReadableStream` from a `Readable`.
          * @since v17.0.0
-         * @experimental
          */
         fun toWeb(
             streamReadable: Readable,

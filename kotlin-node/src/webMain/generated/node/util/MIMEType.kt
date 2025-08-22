@@ -15,7 +15,6 @@ package node.util
  * components. When parsed, a `MIMEType` object is returned containing
  * properties for each of these components.
  * @since v19.1.0, v18.13.0
- * @experimental
  */
 external class MIMEType {
     /**

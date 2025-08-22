@@ -3,9 +3,5 @@
 package node.fs
 
 sealed external interface ReadableWebStreamOptions {
-    /**
-     * Whether to open a normal or a `'bytes'` stream.
-     * @since v20.0.0
-     */
-    var type: String /* "bytes" */?
+    var autoClose: Boolean?
 }

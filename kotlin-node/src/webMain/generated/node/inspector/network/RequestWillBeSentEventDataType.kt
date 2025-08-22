@@ -14,6 +14,11 @@ sealed external interface RequestWillBeSentEventDataType {
     var request: Request
 
     /**
+     * Request initiator.
+     */
+    var initiator: Initiator
+
+    /**
      * Timestamp.
      */
     var timestamp: MonotonicTime

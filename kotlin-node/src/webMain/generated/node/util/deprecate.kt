@@ -9,14 +9,15 @@ package node.util
  * such a way that it is marked as deprecated.
  *
  * ```js
- * import util from 'node:util';
+ * import { deprecate } from 'node:util';
  *
- * exports.obsoleteFunction = util.deprecate(() => {
+ * export const obsoleteFunction = deprecate(() => {
  *   // Do something here.
  * }, 'obsoleteFunction() is deprecated. Use newShinyFunction() instead.');
  * ```
  *
- * When called, `util.deprecate()` will return a function that will emit a `DeprecationWarning` using the `'warning'` event. The warning will
+ * When called, `util.deprecate()` will return a function that will emit a
+ * `DeprecationWarning` using the `'warning'` event. The warning will
  * be emitted and printed to `stderr` the first time the returned function is
  * called. After the warning is emitted, the wrapped function is called without
  * emitting a warning.
@@ -25,16 +26,24 @@ package node.util
  * the warning will be emitted only once for that `code`.
  *
  * ```js
- * import util from 'node:util';
+ * import { deprecate } from 'node:util';
  *
- * const fn1 = util.deprecate(someFunction, someMessage, 'DEP0001');
- * const fn2 = util.deprecate(someOtherFunction, someOtherMessage, 'DEP0001');
+ * const fn1 = deprecate(
+ *   () => 'a value',
+ *   'deprecation message',
+ *   'DEP0001',
+ * );
+ * const fn2 = deprecate(
+ *   () => 'a  different value',
+ *   'other dep message',
+ *   'DEP0001',
+ * );
  * fn1(); // Emits a deprecation warning with code DEP0001
  * fn2(); // Does not emit a deprecation warning because it has the same code
  * ```
  *
  * If either the `--no-deprecation` or `--no-warnings` command-line flags are
- * used, or if the `process.noDeprecation` property is set to `true`_prior_ to
+ * used, or if the `process.noDeprecation` property is set to `true` _prior_ to
  * the first deprecation warning, the `util.deprecate()` method does nothing.
  *
  * If the `--trace-deprecation` or `--trace-warnings` command-line flags are set,
@@ -42,10 +51,13 @@ package node.util
  * stack trace are printed to `stderr` the first time the deprecated function is
  * called.
  *
- * If the `--throw-deprecation` command-line flag is set, or the `process.throwDeprecation` property is set to `true`, then an exception will be
+ * If the `--throw-deprecation` command-line flag is set, or the
+ * `process.throwDeprecation` property is set to `true`, then an exception will be
  * thrown when the deprecated function is called.
  *
- * The `--throw-deprecation` command-line flag and `process.throwDeprecation` property take precedence over `--trace-deprecation` and `process.traceDeprecation`.
+ * The `--throw-deprecation` command-line flag and `process.throwDeprecation`
+ * property take precedence over `--trace-deprecation` and
+ * `process.traceDeprecation`.
  * @since v0.8.0
  * @param fn The function that is being deprecated.
  * @param msg A warning message to display when the deprecated function is invoked.

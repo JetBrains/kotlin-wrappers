@@ -133,4 +133,73 @@ open external class Agent : EventEmitter {
      * @since v0.11.4
      */
     fun destroy()
+
+    /**
+     * Produces a socket/stream to be used for HTTP requests.
+     *
+     * By default, this function is the same as `net.createConnection()`. However,
+     * custom agents may override this method in case greater flexibility is desired.
+     *
+     * A socket/stream can be supplied in one of two ways: by returning the
+     * socket/stream from this function, or by passing the socket/stream to `callback`.
+     *
+     * This method is guaranteed to return an instance of the `net.Socket` class,
+     * a subclass of `stream.Duplex`, unless the user specifies a socket
+     * type other than `net.Socket`.
+     *
+     * `callback` has a signature of `(err, stream)`.
+     * @since v0.11.4
+     * @param options Options containing connection details. Check `createConnection` for the format of the options
+     * @param callback Callback function that receives the created socket
+     */
+    fun createConnection(
+        options: ClientRequestArgs,
+        callback: (err: js.errors.JsError?, stream: node.stream.Duplex) -> Unit = definedExternally,
+    ): node.stream.Duplex
+
+    /**
+     * Called when `socket` is detached from a request and could be persisted by the`Agent`. Default behavior is to:
+     *
+     * ```js
+     * socket.setKeepAlive(true, this.keepAliveMsecs);
+     * socket.unref();
+     * return true;
+     * ```
+     *
+     * This method can be overridden by a particular `Agent` subclass. If this
+     * method returns a falsy value, the socket will be destroyed instead of persisting
+     * it for use with the next request.
+     *
+     * The `socket` argument can be an instance of `net.Socket`, a subclass of `stream.Duplex`.
+     * @since v8.1.0
+     */
+    fun keepSocketAlive(socket: node.stream.Duplex)
+
+    /**
+     * Called when `socket` is attached to `request` after being persisted because of
+     * the keep-alive options. Default behavior is to:
+     *
+     * ```js
+     * socket.ref();
+     * ```
+     *
+     * This method can be overridden by a particular `Agent` subclass.
+     *
+     * The `socket` argument can be an instance of `net.Socket`, a subclass of `stream.Duplex`.
+     * @since v8.1.0
+     */
+    fun reuseSocket(
+        socket: node.stream.Duplex,
+        request: ClientRequest,
+    )
+
+    /**
+     * Get a unique name for a set of request options, to determine whether a
+     * connection can be reused. For an HTTP agent, this returns`host:port:localAddress` or `host:port:localAddress:family`. For an HTTPS agent,
+     * the name includes the CA, cert, ciphers, and other HTTPS/TLS-specific options
+     * that determine socket reusability.
+     * @since v0.11.4
+     * @param options A set of options providing information for name generation
+     */
+    fun getName(options: ClientRequestArgs = definedExternally): String
 }

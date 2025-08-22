@@ -98,7 +98,7 @@ external fun exec(
 // `options` with `"buffer"` or `null` for `encoding` means stdout/stderr are definitely `Buffer`.
 external fun exec(
     command: String,
-    options: ExecBufferOptions,
+    options: ExecOptionsWithBufferEncoding,
     callback: (
         error: ExecException?,
         stdout: node.buffer.Buffer<*>,
@@ -106,44 +106,20 @@ external fun exec(
     ) -> Unit = definedExternally,
 ): ChildProcess
 
-// `options` with well known `encoding` means stdout/stderr are definitely `string`.
+// `options` with well-known or absent `encoding` means stdout/stderr are definitely `string`.
 external fun exec(
     command: String,
-    options: ExecStringOptions,
-    callback: (error: ExecException?, stdout: String, stderr: String) -> Unit = definedExternally,
-): ChildProcess
-
-// `options` with an `encoding` whose type is `string` means stdout/stderr could either be `Buffer` or `string`.
-// There is no guarantee the `encoding` is unknown as `string` is a superset of `BufferEncoding`.
-external fun exec(
-    command: String,
-    options: ExecStringOptions,
-    callback: (
-        error: ExecException?,
-        stdout: Any, /* string | Buffer */
-        stderr: Any, // string | Buffer
-    ) -> Unit = definedExternally,
-): ChildProcess
-
-// `options` without an `encoding` means stdout/stderr are definitely `string`.
-external fun exec(
-    command: String,
-    options: ExecOptions,
+    options: ExecOptionsWithStringEncoding,
     callback: (error: ExecException?, stdout: String, stderr: String) -> Unit = definedExternally,
 ): ChildProcess
 
 // fallback if nothing else matches. Worst case is always `string | Buffer`.
 external fun exec(
     command: String,
-    options: (ExecObjectEncodingOptions)?,
+    options: ExecOptions?,
     callback: (
         error: ExecException?,
         stdout: Any, /* string | Buffer */
         stderr: Any, // string | Buffer
     ) -> Unit = definedExternally,
-): ChildProcess
-
-external fun exec(
-    command: String,
-    options: ExecStringOptions,
 ): ChildProcess
