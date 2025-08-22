@@ -5,7 +5,7 @@ import js.promise.Promise
 import js.promise.await
 import js.reflect.legacyUnsafeCast
 import js.reflect.unsafeCast
-import react.internal.isolatedPromise
+import react.internal.isolatedVoidPromise
 
 sealed external interface Action<in T> :
     ActionOrString<T>
@@ -27,8 +27,7 @@ fun <T> Action(
     value: suspend (T) -> Unit,
 ): Action<T> =
     legacyUnsafeCast { data: T ->
-        isolatedPromise {
+        isolatedVoidPromise {
             value(data)
-            undefined
         }
     }
