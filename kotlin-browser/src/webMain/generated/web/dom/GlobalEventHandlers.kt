@@ -294,7 +294,7 @@ external interface GlobalEventHandlers :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/input_event)
      */
-    var oninput: EventHandler<Event, GlobalEventHandlers, Node>?
+    var oninput: EventHandler<InputEvent, GlobalEventHandlers, Node>?
         get() = definedExternally
         set(value) = definedExternally
 
