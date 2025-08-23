@@ -254,8 +254,6 @@ private fun convertMembers(
     val staticMembers = mutableListOf<String>()
 
     source
-        // https://github.com/microsoft/vscode/pull/257930
-        .replace("/*\n *", "/**\n *")
         .splitToSequence("\n/**")
         .mapIndexed { index, it -> if (index > 0) "/**$it" else it }
         .map { it.trim() }
