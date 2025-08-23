@@ -30,6 +30,11 @@ private val conflictingEntities = recordOf(
     "stream.d.ts" to arrayOf(
         "FinishedOptions",
     ),
+    "fs.d.ts" to arrayOf(
+        "WatchOptions",
+        "WatchOptionsWithBufferEncoding",
+        "WatchOptionsWithStringEncoding",
+    ),
 )
 
 private fun extractDeclaration(node: Node, context: Context): Declaration? {

@@ -102,6 +102,12 @@ private val overriddenProps = mapOf(
         "exclude" to Alias("excludeWithoutFileTypes"),
         "withFileTypes" to Preserve
     ),
+    "WatchOptionsWithBufferEncoding" to mapOf(
+        "encoding" to Alias("stringEncoding"),
+    ),
+    "WatchOptionsWithStringEncoding" to mapOf(
+        "encoding" to Alias("stringEncoding"),
+    ),
 
     // http
     "AgentOptions" to mapOf(
