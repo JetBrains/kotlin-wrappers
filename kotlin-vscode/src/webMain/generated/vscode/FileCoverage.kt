@@ -78,7 +78,7 @@ open external class FileCoverage {
          * Creates a [FileCoverage] instance with counts filled in from
          * the coverage details.
          * @param uri Covered file URI
-         * @param detailed Detailed coverage information
+         * @param details Detailed coverage information
          *
          * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#FileCoverage.fromDetails)
          */

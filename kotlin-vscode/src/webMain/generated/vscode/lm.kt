@@ -85,7 +85,7 @@ external object lm {
      * any custom flow.
      *
      * In the former case, the caller shall pass the
-     * [toolInvocationToken][LanguageModelToolInvocationOptions.toolInvocationToken], which comes with the a
+     * [toolInvocationToken][LanguageModelToolInvocationOptions.toolInvocationToken], which comes from a
      * [chat request][ChatRequest.toolInvocationToken]. This makes sure the chat UI shows the tool invocation for the
      * correct conversation.
      *

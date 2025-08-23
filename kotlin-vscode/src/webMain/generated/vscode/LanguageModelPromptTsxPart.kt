@@ -23,7 +23,7 @@ open external class LanguageModelPromptTsxPart {
 
     /**
      * Construct a prompt-tsx part with the given content.
-     * @param value The value of the part, the result of `renderPromptElementJSON` from `@vscode/prompt-tsx`.
+     * @param value The value of the part, the result of `renderElementJSON` from `@vscode/prompt-tsx`.
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#LanguageModelPromptTsxPart.constructor)
      */
