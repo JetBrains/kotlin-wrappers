@@ -10,6 +10,7 @@ private data class EventData(
 }
 
 private val ADDITIONAL_EVENTS = listOf(
+    // TODO: remove
     EventData(
         name = "webkitfullscreenchange",
         type = "Event",
@@ -21,42 +22,7 @@ private val ADDITIONAL_EVENTS = listOf(
         type = "GPUUncapturedErrorEvent",
     ),
 
-    // Payment
-    EventData(
-        name = "shippingaddresschange",
-        type = "PaymentRequestUpdateEvent",
-    ),
-    EventData(
-        name = "shippingoptionchange",
-        type = "PaymentRequestUpdateEvent",
-    ),
-    EventData(
-        name = "payerdetailchange",
-        type = "PaymentRequestUpdateEvent",
-    ),
-
-    // Document
-    EventData(
-        name = "resume",
-        type = "Event",
-    ),
-    // HTMLMediaElement
-    EventData(
-        name = "progress",
-        type = "Event",
-    ),
-    EventData(
-        name = "input",
-        type = "InputEvent",
-    ),
-    EventData(
-        name = "toggle",
-        type = "ToggleEvent",
-    ),
-    EventData(
-        name = "beforetoggle",
-        type = "ToggleEvent",
-    ),
+    // TEMP
     EventData(
         name = "success",
         type = "IDBVersionChangeEvent",

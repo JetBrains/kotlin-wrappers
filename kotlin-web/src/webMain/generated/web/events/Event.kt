@@ -292,9 +292,6 @@ inline val Event.Companion.POINTER_LOCK_ERROR: EventType<Event>
 inline val Event.Companion.POINTER_RAW_UPDATE: EventType<Event>
     get() = EventType("pointerrawupdate")
 
-inline val Event.Companion.PROGRESS: EventType<Event>
-    get() = EventType("progress")
-
 inline val Event.Companion.RATE_CHANGE: EventType<Event>
     get() = EventType("ratechange")
 
