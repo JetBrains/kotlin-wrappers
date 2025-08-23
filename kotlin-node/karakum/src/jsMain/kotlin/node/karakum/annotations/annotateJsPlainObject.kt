@@ -70,6 +70,8 @@ private val jsoInterfaces = setOf(
     "CreateReadStreamOptions",
     "WriteStreamOptions",
     "WatchOptions",
+    "WatchOptionsWithBufferEncoding",
+    "WatchOptionsWithStringEncoding",
     "WatchFileOptions",
 
     // net

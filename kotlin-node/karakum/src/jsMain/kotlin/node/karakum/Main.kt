@@ -9,7 +9,10 @@ import io.github.sgrishchenko.karakum.util.ruleOf
 import js.import.import
 import js.objects.recordOf
 import node.karakum.annotations.*
-import node.karakum.inheritanceModifiers.*
+import node.karakum.inheritanceModifiers.modifyClassInheritance
+import node.karakum.inheritanceModifiers.modifyInterfaceInheritance
+import node.karakum.inheritanceModifiers.modifyMethodInheritance
+import node.karakum.inheritanceModifiers.modifyPropertyInheritance
 import node.karakum.injections.*
 import node.karakum.nameResolvers.*
 import node.karakum.plugins.*
@@ -176,6 +179,7 @@ suspend fun main() {
         output = outputPath
         ignoreOutput = manyOf(
             "**/_Blob.kt",
+            "**/_CloseEvent.kt",
             "**/_DOMException.kt",
             "**/_EventSource.kt",
             "**/_File.kt",
@@ -504,6 +508,7 @@ suspend fun main() {
                 ".+" to "node.events."
             ),
             "node:fs" to ruleOf(
+                "WatchOptions" to "node.fs._WatchOptions",
                 "\\*" to "",
                 ".+" to "node.fs."
             ),
@@ -686,10 +691,10 @@ suspend fun main() {
             "cluster/Worker.kt" to arrayOf(
                 "node.events.EventEmitter"
             ),
-            "crypto/Cipher.kt" to arrayOf(
+            "crypto/Cipheriv.kt" to arrayOf(
                 "node.stream.TransformOptions"
             ),
-            "crypto/Decipher.kt" to arrayOf(
+            "crypto/Decipheriv.kt" to arrayOf(
                 "node.stream.TransformOptions"
             ),
             "crypto/Hash.kt" to arrayOf(
@@ -1203,6 +1208,9 @@ suspend fun main() {
             "url/fileURLToPath.kt" to arrayOf(
                 "web.url.URL"
             ),
+            "url/fileURLToPathBuffer.kt" to arrayOf(
+                "web.url.URL"
+            ),
             "url/format.kt" to arrayOf(
                 "web.url.URL"
             ),
@@ -1269,6 +1277,9 @@ suspend fun main() {
             ),
             "util/types/isDate.contract.kt" to arrayOf(
                 "js.date.Date"
+            ),
+            "util/types/isFloat16Array.contract.kt" to arrayOf(
+                "js.typedarrays.Float16Array"
             ),
             "util/types/isFloat32Array.contract.kt" to arrayOf(
                 "js.typedarrays.Float32Array"
@@ -1403,6 +1414,7 @@ suspend fun main() {
             "WritableOptionsWritevChunksItem.kt" to ConflictResolutionStrategy.replace,
             "WritableWritevChunksItem.kt" to ConflictResolutionStrategy.replace,
             "FileHandleWriteResultPayloadAsync.kt" to ConflictResolutionStrategy.replace,
+            "DiffieHellmanOptions.kt" to ConflictResolutionStrategy.replace,
         )
     }
 }

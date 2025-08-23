@@ -25,6 +25,7 @@ val convertNodeJsQualifiedName = createPlugin { node, _, render ->
             "Signals" -> "node.process.Signals"
             "ProcessEnv" -> "node.process.ProcessEnv"
             "Platform" -> "node.process.Platform"
+            "Architecture" -> "node.process.Architecture"
             else -> "node.${render(node.right)}"
         }
     } ?: nullable {

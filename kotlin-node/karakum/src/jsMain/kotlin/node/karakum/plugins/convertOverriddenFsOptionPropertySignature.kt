@@ -48,18 +48,6 @@ val convertOverriddenFsOptionPropertySignature = createPlugin { node, context, r
                 val typeName = firstType.typeName
                 ensure(isIdentifier(typeName))
                 ensure(typeName.text == "MakeDirectoryOptions")
-            } ?: nullable {
-                ensure(propertyName.text == "encoding")
-
-                val intersection = ensureNotNull(typeLiteral.getParentOrNull())
-                ensure(isIntersectionTypeNode(intersection))
-
-                val firstType = ensureNotNull(intersection.types.asArray().firstOrNull())
-                ensure(isTypeReferenceNode(firstType))
-
-                val typeName = firstType.typeName
-                ensure(isIdentifier(typeName))
-                ensure(typeName.text == "WatchOptions")
             }
         )
 

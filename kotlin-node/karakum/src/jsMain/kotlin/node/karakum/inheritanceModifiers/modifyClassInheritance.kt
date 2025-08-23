@@ -14,8 +14,8 @@ fun modifyClassInheritance(node: Node, context: InheritanceModifierContext) = nu
     nullable {
         ensure(sourceFileName.endsWith("crypto.d.ts"))
         ensure(
-            node.name?.text == "Cipher"
-                    || node.name?.text == "Decipher"
+            node.name?.text == "Cipheriv"
+                    || node.name?.text == "Decipheriv"
         )
 
         "open"

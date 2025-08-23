@@ -17,7 +17,10 @@ fun modifyInterfaceInheritance(node: Node, context: InheritanceModifierContext) 
 
         nullable {
             ensure(sourceFileName.endsWith("fs.d.ts"))
-            ensure(node.name.text == "ObjectEncodingOptions")
+            ensure(
+                node.name.text == "ObjectEncodingOptions"
+                        || node.name.text == "WatchOptions"
+            )
 
             ""
         } ?: nullable {
@@ -66,15 +69,6 @@ fun modifyInterfaceInheritance(node: Node, context: InheritanceModifierContext) 
                         || node.name.text == "AgentOptions"
                         || node.name.text == "RequestOptions"
                         || node.name.text == "ServerOptions"
-            )
-
-            ""
-        } ?: nullable {
-            ensure(sourceFileName.endsWith("tls.d.ts"))
-            ensure(
-                node.name.text == "ConnectionOptions"
-                        || node.name.text == "SecureContextOptions"
-                        || node.name.text == "TlsOptions"
             )
 
             ""

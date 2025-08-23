@@ -155,16 +155,31 @@ private fun isConflictingOverload(node: FunctionDeclaration, signature: Signatur
                         val type = ensureNotNull(node.type)
                         ensure(isUnionTypeNode(type))
                     } ?: nullable {
-                        ensure(isLiteralTypeNode(parameterType))
-                        val parameterTypeLiteral = parameterType.literal
-                        ensure(isStringLiteral(parameterTypeLiteral))
-                        ensure(parameterTypeLiteral.text == "buffer")
+                        ensureNotNull(
+                            nullable {
+                                ensure(isLiteralTypeNode(parameterType))
+                                val parameterTypeLiteral = parameterType.literal
+                                ensure(isStringLiteral(parameterTypeLiteral))
+                                ensure(parameterTypeLiteral.text == "buffer")
+                            } ?: nullable {
+                                ensure(isTypeReferenceNode(parameterType))
+                                val parameterTypeName = parameterType.typeName
+                                ensure(isIdentifier(parameterTypeName))
+                                ensure(parameterTypeName.text == "BufferEncoding")
+                            }
+                        )
 
                         val type = ensureNotNull(node.type)
                         ensure(isTypeReferenceNode(type))
                         val typeName = type.typeName
-                        ensure(isIdentifier(typeName))
-                        ensure(typeName.text == "AsyncIterable")
+                        ensure(isQualifiedName(typeName))
+                        ensure(typeName.right.text == "AsyncIterator")
+                        val typeArguments = ensureNotNull(type.typeArguments)
+                        val firstTypeArgument = ensureNotNull(typeArguments.asArray().first())
+                        ensure(isTypeReferenceNode(firstTypeArgument))
+                        val firstTypeArgumentTypeArguments = ensureNotNull(firstTypeArgument.typeArguments)
+                        val firstTypeArgumentFirstTypeArgument = ensureNotNull(firstTypeArgumentTypeArguments.asArray().first())
+                        ensure(isUnionTypeNode(firstTypeArgumentFirstTypeArgument))
                     }
                 )
             }

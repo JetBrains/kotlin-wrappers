@@ -112,6 +112,7 @@ val convertSkippedGenerics = createPlugin { node, _, render ->
             ensure(isIdentifier(typeName))
             ensure(
                 typeName.text == "DataView"
+                    || typeName.text == "Float16Array"
                     || typeName.text == "Float32Array"
                     || typeName.text == "Float64Array"
                     || typeName.text == "Int8Array"
