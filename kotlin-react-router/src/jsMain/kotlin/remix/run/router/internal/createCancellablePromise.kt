@@ -4,7 +4,7 @@ import js.coroutines.internal.IsolatedCoroutineScope
 import js.coroutines.promise
 import js.promise.Promise
 import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.CoroutineStart
+import kotlinx.coroutines.CoroutineStart.UNDISPATCHED
 import kotlinx.coroutines.cancel
 import remix.run.router.DataFunctionArgs
 import web.abort.abortEvent
@@ -21,7 +21,7 @@ internal fun <T> createCancellablePromise(
     }
 
     return scope.promise(
-        start = CoroutineStart.UNDISPATCHED,
+        start = UNDISPATCHED,
         block = block,
     )
 }
