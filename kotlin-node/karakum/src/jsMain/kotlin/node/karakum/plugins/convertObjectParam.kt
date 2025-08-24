@@ -3,9 +3,9 @@ package node.karakum.plugins
 import node.karakum.util.nullable
 import io.github.sgrishchenko.karakum.extension.createPlugin
 import io.github.sgrishchenko.karakum.util.getParentOrNull
-import typescript.isClassDeclaration
 import typescript.isIdentifier
-import typescript.isMethodDeclaration
+import typescript.isInterfaceDeclaration
+import typescript.isMethodSignature
 import typescript.isParameter
 import typescript.isTypePredicateNode
 
@@ -18,11 +18,11 @@ val convertObjectParam = createPlugin { node, _, _ ->
         ensure(isParameter(parameter))
 
         val method = ensureNotNull(parameter.getParentOrNull())
-        ensure(isMethodDeclaration(method))
+        ensure(isMethodSignature(method))
 
         val classNode = ensureNotNull(method.getParentOrNull())
-        ensure(isClassDeclaration(classNode))
-        ensure(classNode.name?.text == "MockTracker")
+        ensure(isInterfaceDeclaration(classNode))
+        ensure(classNode.name.text == "MockTracker")
 
         "target"
     } ?: nullable {

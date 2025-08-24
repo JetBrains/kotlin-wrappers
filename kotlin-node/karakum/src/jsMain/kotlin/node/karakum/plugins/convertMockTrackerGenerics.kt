@@ -9,6 +9,7 @@ import typescript.asArray
 import typescript.isConditionalTypeNode
 import typescript.isIdentifier
 import typescript.isInterfaceDeclaration
+import typescript.isIntersectionTypeNode
 import typescript.isMethodSignature
 import typescript.isParameter
 import typescript.isTypeOperatorNode
@@ -22,7 +23,7 @@ private fun isMockTrackerMethod(node: MethodSignature) = nullable {
     ensure(classNode.name.text == "MockTracker")
 } != null
 
-val convertMockTrackerGenerics = createPlugin { node, _, _ ->
+val convertMockTrackerGenerics = createPlugin { node, _, render ->
     nullable {
         val sourceFileName = ensureNotNull(node.getSourceFileOrNull()).fileName
         ensure(sourceFileName.endsWith("test.d.ts"))
@@ -32,6 +33,7 @@ val convertMockTrackerGenerics = createPlugin { node, _, _ ->
             ensure(
                 node.name.text == "MockedObject"
                         || node.name.text == "MethodName"
+                        || node.name.text == "PropertyName"
                         || node.name.text == "Implementation"
             )
 
@@ -56,6 +58,7 @@ val convertMockTrackerGenerics = createPlugin { node, _, _ ->
             when (typeName.text) {
                 "MockedObject" -> "Any"
                 "MethodName" -> "String"
+                "PropertyName" -> "String"
                 "Implementation" -> "Function<*>"
                 else -> null
             }
@@ -95,6 +98,26 @@ val convertMockTrackerGenerics = createPlugin { node, _, _ ->
             ensure(method.type === node)
 
             "Mock<Function<*>>"
+        } ?: nullable {
+            ensure(isIntersectionTypeNode(node))
+
+            val fistType = node.types.asArray().first()
+            ensure(isTypeReferenceNode(fistType))
+
+            val firstTypeName = fistType.typeName
+            ensure(isIdentifier(firstTypeName))
+            ensure(firstTypeName.text == "MockedObject")
+
+            val method = ensureNotNull(node.getParentOrNull())
+            ensure(isMethodSignature(method))
+            ensure(isMockTrackerMethod(method))
+            ensure(method.type === node)
+
+            val secondType = node.types.asArray()[1]
+
+            render(secondType)
+                // remove generics
+                .removeSuffix("<MockedObject, PropertyName>")
         }
     }
 }
