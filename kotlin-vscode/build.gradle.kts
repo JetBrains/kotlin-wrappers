@@ -4,4 +4,6 @@ plugins {
 
 dependencies {
     commonMainApi(projects.kotlinJs)
+
+    commonMainImplementation(libs.coroutines.core)
 }
