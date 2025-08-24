@@ -10,7 +10,7 @@ import remix.run.router.DataFunctionArgs
 import web.abort.abortEvent
 import web.events.addHandler
 
-internal fun <T> isolatedPromise(
+internal fun <T> createCancellablePromise(
     args: DataFunctionArgs<*>,
     block: suspend CoroutineScope.() -> T,
 ): Promise<T> {
