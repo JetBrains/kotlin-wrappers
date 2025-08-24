@@ -1,11 +1,11 @@
 package react
 
 import js.core.Void
+import js.coroutines.internal.createIsolatedPromise
 import js.promise.Promise
 import js.promise.await
 import js.reflect.legacyUnsafeCast
 import js.reflect.unsafeCast
-import react.internal.isolatedVoidPromise
 
 sealed external interface Action<in T> :
     ActionOrString<T>
@@ -27,7 +27,6 @@ fun <T> Action(
     value: suspend (T) -> Unit,
 ): Action<T> =
     legacyUnsafeCast { data: T ->
-        isolatedVoidPromise {
-            value(data)
-        }
+        createIsolatedPromise { value(data) }
+            .then { undefined }
     }

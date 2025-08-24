@@ -1,6 +1,6 @@
 package react
 
-import react.internal.isolatedVoidPromise
+import js.coroutines.internal.createIsolatedPromise
 import react.raw.startTransitionRaw
 
 /**
@@ -10,6 +10,7 @@ fun startTransition(
     block: TransitionFunction,
 ) {
     startTransitionRaw {
-        isolatedVoidPromise(block)
+        createIsolatedPromise(block)
+            .then { undefined }
     }
 }
