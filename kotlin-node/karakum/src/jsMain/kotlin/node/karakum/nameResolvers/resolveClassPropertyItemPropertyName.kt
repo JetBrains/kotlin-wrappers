@@ -5,13 +5,14 @@ import io.github.sgrishchenko.karakum.extension.plugins.TypeScriptService
 import io.github.sgrishchenko.karakum.extension.plugins.typeScriptServiceKey
 import node.karakum.util.nullable
 import typescript.Node
+import typescript.isClassDeclaration
 import typescript.isIdentifier
-import typescript.isInterfaceDeclaration
+import typescript.isPropertyDeclaration
 import typescript.isPropertySignature
 import typescript.isTypeLiteralNode
 import typescript.isTypeReferenceNode
 
-fun resolveInterfacePropertyItemPropertyName(node: Node, context: Context) = nullable {
+fun resolveClassPropertyItemPropertyName(node: Node, context: Context) = nullable {
     val typeScriptService = ensureNotNull(context.lookupService<TypeScriptService>(typeScriptServiceKey))
 
     val subProperty = ensureNotNull(typeScriptService.getParent(node))
@@ -35,15 +36,15 @@ fun resolveInterfacePropertyItemPropertyName(node: Node, context: Context) = nul
     )
 
     val property = ensureNotNull(typeScriptService.getParent(typeReference))
-    ensure(isPropertySignature(property))
+    ensure(isPropertyDeclaration(property))
 
     val propertyNameNode = property.name
     ensure(isIdentifier(propertyNameNode))
     val propertyName = propertyNameNode.text
 
-    val interfaceNode = ensureNotNull(typeScriptService.getParent(property))
-    ensure(isInterfaceDeclaration(interfaceNode))
-    val parentName = interfaceNode.name.text
+    val classNode = ensureNotNull(typeScriptService.getParent(property))
+    ensure(isClassDeclaration(classNode))
+    val parentName = ensureNotNull(classNode.name).text
 
     "${parentName.replaceFirstChar { it.titlecase() }}${propertyName.replaceFirstChar { it.titlecase() }}Item${subPropertyName.replaceFirstChar { it.titlecase() }}"
 }
