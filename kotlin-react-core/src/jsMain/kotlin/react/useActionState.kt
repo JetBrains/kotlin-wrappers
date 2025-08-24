@@ -13,9 +13,7 @@ fun <S> useActionState(
     action: suspend CoroutineScope.(state: S) -> S,
 ): ActionStateInstance1<S> =
     useActionStateRaw(
-        action = async { state ->
-            action(state)
-        },
+        action = async(action),
         initialState = initialState,
         permalink = permalink,
     )
@@ -29,9 +27,7 @@ fun <S, P> useActionState(
     action: suspend CoroutineScope.(state: S, payload: P) -> S,
 ): ActionStateInstance2<S, P> =
     useActionStateRaw(
-        action = async { state, payload ->
-            action(state, payload)
-        },
+        action = async(action),
         initialState = initialState,
         permalink = permalink,
     )
