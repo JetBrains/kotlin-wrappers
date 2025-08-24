@@ -33,7 +33,7 @@ package node.perfHooks
  *   performance.measure('A to B', 'A', 'B');
  * });
  * ```
- * @see [source](https://github.com/nodejs/node/blob/v22.x/lib/perf_hooks.js)
+ * @see [source](https://github.com/nodejs/node/blob/v24.x/lib/perf_hooks.js)
  */
 
 // export * from "perf_hooks";

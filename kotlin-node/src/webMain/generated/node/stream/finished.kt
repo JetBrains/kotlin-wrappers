@@ -31,7 +31,7 @@ package node.stream
  * Especially useful in error handling scenarios where a stream is destroyed
  * prematurely (like an aborted HTTP request), and will not emit `'end'` or `'finish'`.
  *
- * The `finished` API provides [`promise version`](https://nodejs.org/docs/latest-v22.x/api/stream.html#streamfinishedstream-options).
+ * The `finished` API provides [`promise version`](https://nodejs.org/docs/latest-v24.x/api/stream.html#streamfinishedstream-options).
  *
  * `stream.finished()` leaves dangling event listeners (in particular `'error'`, `'end'`, `'finish'` and `'close'`) after `callback` has been
  * invoked. The reason for this is so that unexpected `'error'` events (due to
@@ -82,7 +82,7 @@ external fun finished(
  * Especially useful in error handling scenarios where a stream is destroyed
  * prematurely (like an aborted HTTP request), and will not emit `'end'` or `'finish'`.
  *
- * The `finished` API provides [`promise version`](https://nodejs.org/docs/latest-v22.x/api/stream.html#streamfinishedstream-options).
+ * The `finished` API provides [`promise version`](https://nodejs.org/docs/latest-v24.x/api/stream.html#streamfinishedstream-options).
  *
  * `stream.finished()` leaves dangling event listeners (in particular `'error'`, `'end'`, `'finish'` and `'close'`) after `callback` has been
  * invoked. The reason for this is so that unexpected `'error'` events (due to
@@ -133,7 +133,7 @@ external fun finished(
  * Especially useful in error handling scenarios where a stream is destroyed
  * prematurely (like an aborted HTTP request), and will not emit `'end'` or `'finish'`.
  *
- * The `finished` API provides [`promise version`](https://nodejs.org/docs/latest-v22.x/api/stream.html#streamfinishedstream-options).
+ * The `finished` API provides [`promise version`](https://nodejs.org/docs/latest-v24.x/api/stream.html#streamfinishedstream-options).
  *
  * `stream.finished()` leaves dangling event listeners (in particular `'error'`, `'end'`, `'finish'` and `'close'`) after `callback` has been
  * invoked. The reason for this is so that unexpected `'error'` events (due to

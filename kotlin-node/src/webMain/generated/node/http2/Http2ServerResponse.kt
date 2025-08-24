@@ -31,7 +31,7 @@ open external class Http2ServerResponse<Request : Http2ServerRequest /* default 
      * If there were no previous values for the header, this is equivalent to calling {@link setHeader}.
      *
      * Attempting to set a header field name or value that contains invalid characters will result in a
-     * [TypeError](https://nodejs.org/docs/latest-v22.x/api/errors.html#class-typeerror) being thrown.
+     * [TypeError](https://nodejs.org/docs/latest-v24.x/api/errors.html#class-typeerror) being thrown.
      *
      * ```js
      * // Returns headers including "set-cookie: a" and "set-cookie: b"
@@ -57,7 +57,7 @@ open external class Http2ServerResponse<Request : Http2ServerRequest /* default 
      * If there were no previous values for the header, this is equivalent to calling {@link setHeader}.
      *
      * Attempting to set a header field name or value that contains invalid characters will result in a
-     * [TypeError](https://nodejs.org/docs/latest-v22.x/api/errors.html#class-typeerror) being thrown.
+     * [TypeError](https://nodejs.org/docs/latest-v24.x/api/errors.html#class-typeerror) being thrown.
      *
      * ```js
      * // Returns headers including "set-cookie: a" and "set-cookie: b"

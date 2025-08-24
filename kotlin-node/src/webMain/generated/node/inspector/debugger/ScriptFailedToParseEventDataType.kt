@@ -46,7 +46,7 @@ sealed external interface ScriptFailedToParseEventDataType {
     /**
      * Embedder-specific auxiliary data.
      */
-    var executionContextAuxData: (Any)?
+    var executionContextAuxData: Any?
 
     /**
      * URL of source map associated with script (if any).

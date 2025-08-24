@@ -67,4 +67,4 @@ external fun createCipheriv(
     key: CipherKey,
     iv: BinaryLike?,
     options: node.stream.TransformOptions<*> = definedExternally,
-): Cipher
+): Cipheriv

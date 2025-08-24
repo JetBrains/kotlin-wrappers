@@ -134,4 +134,29 @@ sealed external interface ImportMeta {
         specifier: String,
         parent: URL = definedExternally,
     ): String
+
+    /**
+     * `true` when the current module is the entry point of the current process; `false` otherwise.
+     *
+     * Equivalent to `require.main === module` in CommonJS.
+     *
+     * Analogous to Python's `__name__ == "__main__"`.
+     *
+     * ```js
+     * export function foo() {
+     *   return 'Hello, world';
+     * }
+     *
+     * function main() {
+     *   const message = foo();
+     *   console.log(message);
+     * }
+     *
+     * if (import.meta.main) main();
+     * // `foo` can be imported from another module without possible side-effects from `main`
+     * ```
+     * @since v24.2.0
+     * @experimental
+     */
+    var main: Boolean
 }

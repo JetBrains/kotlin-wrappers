@@ -10,6 +10,8 @@ package node.inspector.network
  *
  * Broadcasts the `Network.dataReceived` event to connected frontends, or buffers the data if
  * `Network.streamResourceContent` command was not invoked for the given request yet.
- * @since v22.17.0
+ *
+ * Also enables `Network.getResponseBody` command to retrieve the response data.
+ * @since v24.2.0
  */
 external fun dataReceived(params: DataReceivedEventDataType)

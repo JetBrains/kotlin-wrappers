@@ -40,7 +40,7 @@ package node.vm
  *
  * console.log(x); // 1; y is not defined.
  * ```
- * @see [source](https://github.com/nodejs/node/blob/v22.x/lib/vm.js)
+ * @see [source](https://github.com/nodejs/node/blob/v24.x/lib/vm.js)
  */
 
 // export * from "vm";

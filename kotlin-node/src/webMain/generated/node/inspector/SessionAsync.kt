@@ -1016,6 +1016,36 @@ external class Session : EventEmitter {
     suspend fun post(method: SessionMethod.NETWORK_ENABLE): js.core.Void
 
     /**
+     * Returns post data sent with the request. Returns an error when no data was sent with the request.
+     */
+    @JsName("post")
+    fun postAsync(
+        method: SessionMethod.NETWORK_GETREQUESTPOSTDATA,
+        params: node.inspector.network.GetRequestPostDataParameterType = definedExternally,
+    ): Promise<node.inspector.network.GetRequestPostDataReturnType>
+
+    @seskar.js.JsAsync
+    suspend fun post(
+        method: SessionMethod.NETWORK_GETREQUESTPOSTDATA,
+        params: node.inspector.network.GetRequestPostDataParameterType = definedExternally,
+    ): node.inspector.network.GetRequestPostDataReturnType
+
+    /**
+     * Returns content served for the given request.
+     */
+    @JsName("post")
+    fun postAsync(
+        method: SessionMethod.NETWORK_GETRESPONSEBODY,
+        params: node.inspector.network.GetResponseBodyParameterType = definedExternally,
+    ): Promise<node.inspector.network.GetResponseBodyReturnType>
+
+    @seskar.js.JsAsync
+    suspend fun post(
+        method: SessionMethod.NETWORK_GETRESPONSEBODY,
+        params: node.inspector.network.GetResponseBodyParameterType = definedExternally,
+    ): node.inspector.network.GetResponseBodyReturnType
+
+    /**
      * Enables streaming of the response for the given requestId.
      * If enabled, the dataReceived event contains the data that was received during streaming.
      * @experimental

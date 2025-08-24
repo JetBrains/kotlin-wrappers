@@ -5,7 +5,7 @@ package node.fs
 import web.abort.Abortable
 
 @js.objects.JsPlainObject
-sealed external interface WatchOptions : Abortable {
+external interface _WatchOptions : Abortable {
     var encoding: Any? // BufferEncoding | "buffer" | undefined
     var persistent: Boolean?
     var recursive: Boolean?

@@ -12,7 +12,7 @@ package node.http2
  * import http2 from 'node:http2';
  * ```
  * @since v8.4.0
- * @see [source](https://github.com/nodejs/node/blob/v22.x/lib/http2.js)
+ * @see [source](https://github.com/nodejs/node/blob/v24.x/lib/http2.js)
  */
 
 // export * from "http2";

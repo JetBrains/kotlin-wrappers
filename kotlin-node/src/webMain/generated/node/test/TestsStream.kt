@@ -70,4 +70,7 @@ sealed external interface TestsStream : Readable {
 
     @web.events.JsEvent("test:watch:drained")
     val testWatchDrainedEvent: node.events.EventInstance<js.array.Tuple>
+
+    @web.events.JsEvent("test:watch:restarted")
+    val testWatchRestartedEvent: node.events.EventInstance<js.array.Tuple>
 }

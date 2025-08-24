@@ -13,7 +13,6 @@ package node.test
  * The `MockTracker` provides a top-level `timers` export
  * which is a `MockTimers` instance.
  * @since v20.4.0
- * @experimental
  */
 sealed external interface MockTimers {
     /**

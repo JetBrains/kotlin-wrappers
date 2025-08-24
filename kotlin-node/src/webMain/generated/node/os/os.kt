@@ -11,7 +11,7 @@ package node.os
  * ```js
  * import os from 'node:os';
  * ```
- * @see [source](https://github.com/nodejs/node/blob/v22.x/lib/os.js)
+ * @see [source](https://github.com/nodejs/node/blob/v24.x/lib/os.js)
  */
 
 // export * from "os";

@@ -11,7 +11,7 @@ package node.url
  * ```js
  * import url from 'node:url';
  * ```
- * @see [source](https://github.com/nodejs/node/blob/v22.x/lib/url.js)
+ * @see [source](https://github.com/nodejs/node/blob/v24.x/lib/url.js)
  */
 
 // export * from "url";

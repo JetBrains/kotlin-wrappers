@@ -22,7 +22,7 @@ sealed external interface TestContextAssert {
      * highlighting.
      * @since v22.14.0
      * @param value A value to serialize to a string. If Node.js was started with
-     * the [`--test-update-snapshots`](https://nodejs.org/docs/latest-v22.x/api/cli.html#--test-update-snapshots)
+     * the [`--test-update-snapshots`](https://nodejs.org/docs/latest-v24.x/api/cli.html#--test-update-snapshots)
      * flag, the serialized value is written to
      * `path`. Otherwise, the serialized value is compared to the contents of the
      * existing snapshot file.
@@ -50,7 +50,7 @@ sealed external interface TestContextAssert {
      * ```
      * @since v22.3.0
      * @param value A value to serialize to a string. If Node.js was started with
-     * the [`--test-update-snapshots`](https://nodejs.org/docs/latest-v22.x/api/cli.html#--test-update-snapshots)
+     * the [`--test-update-snapshots`](https://nodejs.org/docs/latest-v24.x/api/cli.html#--test-update-snapshots)
      * flag, the serialized value is written to
      * the snapshot file. Otherwise, the serialized value is compared to the
      * corresponding value in the existing snapshot file.

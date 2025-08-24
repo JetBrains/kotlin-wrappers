@@ -38,7 +38,7 @@ package node.events
  * });
  * myEmitter.emit('event');
  * ```
- * @see [source](https://github.com/nodejs/node/blob/v22.x/lib/events.js)
+ * @see [source](https://github.com/nodejs/node/blob/v24.x/lib/events.js)
  */
 
 // import events = require("events");

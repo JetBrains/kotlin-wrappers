@@ -5,15 +5,14 @@
 package node.util.types
 
 /**
- * Returns `true` if the value is a built-in `Float16Array` instance.
+ * Returns `true` if the value is a built-in [`Float16Array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float16Array) instance.
  *
  * ```js
  * util.types.isFloat16Array(new ArrayBuffer());  // Returns false
  * util.types.isFloat16Array(new Float16Array());  // Returns true
  * util.types.isFloat16Array(new Float32Array());  // Returns false
  * ```
- * @since v22.16.0
+ * @since v24.0.0
  */
-// This does NOT return a type predicate in v22.x.
-// The Float16Array feature does not yet exist in this version of Node.js.
-external fun isFloat16Array(value: Any?): Boolean
+@JsName("isFloat16Array")
+external fun isFloat16ArrayRaw(value: Any?): Boolean // object is Float16Array

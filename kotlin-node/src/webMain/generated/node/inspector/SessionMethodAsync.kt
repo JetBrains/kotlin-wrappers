@@ -157,6 +157,10 @@ sealed external interface SessionMethod {
 
     sealed interface NETWORK_ENABLE : SessionMethod
 
+    sealed interface NETWORK_GETREQUESTPOSTDATA : SessionMethod
+
+    sealed interface NETWORK_GETRESPONSEBODY : SessionMethod
+
     sealed interface NETWORK_STREAMRESOURCECONTENT : SessionMethod
 
     sealed interface NODERUNTIME_ENABLE : SessionMethod
@@ -398,6 +402,12 @@ sealed external interface SessionMethod {
 
         @seskar.js.JsValue("Network.enable")
         val NETWORK_ENABLE: NETWORK_ENABLE
+
+        @seskar.js.JsValue("Network.getRequestPostData")
+        val NETWORK_GETREQUESTPOSTDATA: NETWORK_GETREQUESTPOSTDATA
+
+        @seskar.js.JsValue("Network.getResponseBody")
+        val NETWORK_GETRESPONSEBODY: NETWORK_GETRESPONSEBODY
 
         @seskar.js.JsValue("Network.streamResourceContent")
         val NETWORK_STREAMRESOURCECONTENT: NETWORK_STREAMRESOURCECONTENT

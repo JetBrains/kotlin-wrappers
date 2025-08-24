@@ -35,10 +35,12 @@ external class CallTracker {
      */
     fun calls(exact: Number = definedExternally): () -> Unit
 
-    fun <Func : Function<Any?> /* (...args: any[]) => any */> calls(
-        fn: Func = definedExternally,
+    fun calls(
+        fn: Nothing?,
         exact: Number = definedExternally,
-    ): Func
+    ): () -> Unit
+
+    fun <Func : Function<Any?> /* (...args: any[]) => any */> calls(fn: Func, exact: Number = definedExternally): Func
 
     /**
      * Example:

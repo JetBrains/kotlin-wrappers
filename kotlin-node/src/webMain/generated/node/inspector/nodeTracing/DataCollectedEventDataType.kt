@@ -3,5 +3,5 @@
 package node.inspector.nodeTracing
 
 sealed external interface DataCollectedEventDataType {
-    var value: Array<Any>
+    var value: js.array.ReadonlyArray<Any>
 }

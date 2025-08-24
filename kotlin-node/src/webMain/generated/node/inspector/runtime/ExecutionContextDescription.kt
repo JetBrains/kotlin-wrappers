@@ -24,5 +24,5 @@ sealed external interface ExecutionContextDescription {
     /**
      * Embedder-specific auxiliary data.
      */
-    var auxData: (Any)?
+    var auxData: Any?
 }

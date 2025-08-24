@@ -24,7 +24,7 @@ import js.promise.Promise
  *   data: [ArrayBuffer]
  * }
  * ```
- * @since v22.15.0
+ * @since v23.9.0, v22.15.0
  */
 @JsName("resolveTlsa")
 external fun resolveTlsaAsync(hostname: String): Promise<js.array.ReadonlyArray<TlsaRecord>>

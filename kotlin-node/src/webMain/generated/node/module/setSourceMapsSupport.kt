@@ -16,7 +16,7 @@ package node.module
  * enabled will be parsed and loaded. Preferably, use the commandline options
  * `--enable-source-maps` to avoid losing track of source maps of modules loaded
  * before this API call.
- * @since v22.14.0
+ * @since v23.7.0, v22.14.0
  */
 external fun setSourceMapsSupport(
     enabled: Boolean,

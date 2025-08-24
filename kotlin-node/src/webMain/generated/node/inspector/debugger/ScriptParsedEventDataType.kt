@@ -46,7 +46,7 @@ sealed external interface ScriptParsedEventDataType {
     /**
      * Embedder-specific auxiliary data.
      */
-    var executionContextAuxData: (Any)?
+    var executionContextAuxData: Any?
 
     /**
      * True, if this script is generated as a result of the live edit operation.

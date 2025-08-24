@@ -3,7 +3,7 @@
 package node.crypto
 
 @Suppress("INTERFACE_WITH_SUPERCLASS")
-sealed external interface CipherGCM : Cipher {
+sealed external interface CipherGCM : Cipheriv {
     fun setAAD(buffer: js.buffer.ArrayBufferView<*>, options: CipherGCMSetAADOptions = definedExternally) // this
 
     fun getAuthTag(): node.buffer.Buffer<*>

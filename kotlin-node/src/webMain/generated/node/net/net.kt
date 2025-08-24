@@ -16,7 +16,7 @@ package node.net
  * ```js
  * import net from 'node:net';
  * ```
- * @see [source](https://github.com/nodejs/node/blob/v22.x/lib/net.js)
+ * @see [source](https://github.com/nodejs/node/blob/v24.x/lib/net.js)
  */
 
 // export * from "net";

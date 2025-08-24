@@ -18,7 +18,7 @@ sealed external interface RegisterOptions<Data> {
     var data: Data?
 
     /**
-     * [Transferable objects](https://nodejs.org/docs/latest-v22.x/api/worker_threads.html#portpostmessagevalue-transferlist)
+     * [Transferable objects](https://nodejs.org/docs/latest-v24.x/api/worker_threads.html#portpostmessagevalue-transferlist)
      * to be passed into the `initialize` hook.
      */
     var transferList: js.array.ReadonlyArray<Any?>?

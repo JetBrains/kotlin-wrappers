@@ -94,26 +94,26 @@ sealed external interface MockTracker {
      * behavior of the mocked method.
      */
     fun method(
-        value: Any,
+        target: Any,
         methodName: String,
         options: MockFunctionOptions = definedExternally,
     ): Mock<Function<*>>
 
     fun method(
-        value: Any,
+        target: Any,
         methodName: String,
         implementation: Function<*>,
         options: MockFunctionOptions = definedExternally,
     ): Mock<Function<*>>
 
     fun method(
-        value: Any,
+        target: Any,
         methodName: String,
         options: MockMethodOptions,
     ): Mock<Function<*>>
 
     fun method(
-        value: Any,
+        target: Any,
         methodName: String,
         implementation: Function<*>,
         options: MockMethodOptions,
@@ -124,13 +124,13 @@ sealed external interface MockTracker {
      * @since v19.3.0, v18.13.0
      */
     fun getter(
-        value: Any,
+        target: Any,
         methodName: String,
         options: MockFunctionOptions = definedExternally,
     ): Mock<() -> Any?>
 
     fun getter(
-        value: Any,
+        target: Any,
         methodName: String,
         implementation: Function<*> = definedExternally,
         options: MockFunctionOptions = definedExternally,
@@ -141,23 +141,56 @@ sealed external interface MockTracker {
      * @since v19.3.0, v18.13.0
      */
     fun setter(
-        value: Any,
+        target: Any,
         methodName: String,
         options: MockFunctionOptions = definedExternally,
     ): Mock<(value: Any?) -> Unit>
 
     fun setter(
-        value: Any,
+        target: Any,
         methodName: String,
         implementation: Function<*> = definedExternally,
         options: MockFunctionOptions = definedExternally,
     ): Mock<Function<*>>
 
     /**
-     * This function is used to mock the exports of ECMAScript modules, CommonJS modules, and Node.js builtin modules.
-     * Any references to the original module prior to mocking are not impacted.
+     * This function is used to mock the exports of ECMAScript modules, CommonJS modules, JSON modules, and
+     * Node.js builtin modules. Any references to the original module prior to mocking are not impacted. In
+     * order to enable module mocking, Node.js must be started with the
+     * [`--experimental-test-module-mocks`](https://nodejs.org/docs/latest-v24.x/api/cli.html#--experimental-test-module-mocks)
+     * command-line flag.
      *
-     * Only available through the [--experimental-test-module-mocks](https://nodejs.org/api/cli.html#--experimental-test-module-mocks) flag.
+     * The following example demonstrates how a mock is created for a module.
+     *
+     * ```js
+     * test('mocks a builtin module in both module systems', async (t) => {
+     *   // Create a mock of 'node:readline' with a named export named 'fn', which
+     *   // does not exist in the original 'node:readline' module.
+     *   const mock = t.mock.module('node:readline', {
+     *     namedExports: { fn() { return 42; } },
+     *   });
+     *
+     *   let esmImpl = await import('node:readline');
+     *   let cjsImpl = require('node:readline');
+     *
+     *   // cursorTo() is an export of the original 'node:readline' module.
+     *   assert.strictEqual(esmImpl.cursorTo, undefined);
+     *   assert.strictEqual(cjsImpl.cursorTo, undefined);
+     *   assert.strictEqual(esmImpl.fn(), 42);
+     *   assert.strictEqual(cjsImpl.fn(), 42);
+     *
+     *   mock.restore();
+     *
+     *   // The mock is restored, so the original builtin module is returned.
+     *   esmImpl = await import('node:readline');
+     *   cjsImpl = require('node:readline');
+     *
+     *   assert.strictEqual(typeof esmImpl.cursorTo, 'function');
+     *   assert.strictEqual(typeof cjsImpl.cursorTo, 'function');
+     *   assert.strictEqual(esmImpl.fn, undefined);
+     *   assert.strictEqual(cjsImpl.fn, undefined);
+     * });
+     * ```
      * @since v22.3.0
      * @experimental
      * @param specifier A string identifying the module to mock.
@@ -167,6 +200,44 @@ sealed external interface MockTracker {
         specifier: String,
         options: MockModuleOptions = definedExternally,
     ): MockModuleContext
+
+    /**
+     * Creates a mock for a property value on an object. This allows you to track and control access to a specific property,
+     * including how many times it is read (getter) or written (setter), and to restore the original value after mocking.
+     *
+     * ```js
+     * test('mocks a property value', (t) => {
+     *   const obj = { foo: 42 };
+     *   const prop = t.mock.property(obj, 'foo', 100);
+     *
+     *   assert.strictEqual(obj.foo, 100);
+     *   assert.strictEqual(prop.mock.accessCount(), 1);
+     *   assert.strictEqual(prop.mock.accesses[0].type, 'get');
+     *   assert.strictEqual(prop.mock.accesses[0].value, 100);
+     *
+     *   obj.foo = 200;
+     *   assert.strictEqual(prop.mock.accessCount(), 2);
+     *   assert.strictEqual(prop.mock.accesses[1].type, 'set');
+     *   assert.strictEqual(prop.mock.accesses[1].value, 200);
+     *
+     *   prop.mock.restore();
+     *   assert.strictEqual(obj.foo, 42);
+     * });
+     * ```
+     * @since v24.3.0
+     * @param object The object whose value is being mocked.
+     * @param propertyName The identifier of the property on `object` to mock.
+     * @param value An optional value used as the mock value
+     * for `object[propertyName]`. **Default:** The original property value.
+     * @returns A proxy to the mocked object. The mocked object contains a
+     * special `mock` property, which is an instance of [`MockPropertyContext`][], and
+     * can be used for inspecting and changing the behavior of the mocked property.
+     */
+    fun property(
+        target: Any,
+        property: String,
+        value: Any? = definedExternally,
+    ): MockTrackerPropertyResult
 
     /**
      * This function restores the default behavior of all mocks that were previously

@@ -6,9 +6,9 @@ package node.vm
 
 /**
  * If the given `contextObject` is an object, the `vm.createContext()` method will
- * [prepare that object](https://nodejs.org/docs/latest-v22.x/api/vm.html#what-does-it-mean-to-contextify-an-object)
+ * [prepare that object](https://nodejs.org/docs/latest-v24.x/api/vm.html#what-does-it-mean-to-contextify-an-object)
  * and return a reference to it so that it can be used in calls to {@link runInContext} or
- * [`script.runInContext()`](https://nodejs.org/docs/latest-v22.x/api/vm.html#scriptrunincontextcontextifiedobject-options).
+ * [`script.runInContext()`](https://nodejs.org/docs/latest-v24.x/api/vm.html#scriptrunincontextcontextifiedobject-options).
  * Inside such scripts, the global object will be wrapped by the `contextObject`, retaining all of its
  * existing properties but also having the built-in objects and functions any standard
  * [global object](https://es5.github.io/#x15.1) has. Outside of scripts run by the vm module, global
@@ -56,9 +56,9 @@ external fun createContext(): Context
 
 /**
  * If the given `contextObject` is an object, the `vm.createContext()` method will
- * [prepare that object](https://nodejs.org/docs/latest-v22.x/api/vm.html#what-does-it-mean-to-contextify-an-object)
+ * [prepare that object](https://nodejs.org/docs/latest-v24.x/api/vm.html#what-does-it-mean-to-contextify-an-object)
  * and return a reference to it so that it can be used in calls to {@link runInContext} or
- * [`script.runInContext()`](https://nodejs.org/docs/latest-v22.x/api/vm.html#scriptrunincontextcontextifiedobject-options).
+ * [`script.runInContext()`](https://nodejs.org/docs/latest-v24.x/api/vm.html#scriptrunincontextcontextifiedobject-options).
  * Inside such scripts, the global object will be wrapped by the `contextObject`, retaining all of its
  * existing properties but also having the built-in objects and functions any standard
  * [global object](https://es5.github.io/#x15.1) has. Outside of scripts run by the vm module, global
@@ -109,9 +109,9 @@ external fun createContext(
 
 /**
  * If the given `contextObject` is an object, the `vm.createContext()` method will
- * [prepare that object](https://nodejs.org/docs/latest-v22.x/api/vm.html#what-does-it-mean-to-contextify-an-object)
+ * [prepare that object](https://nodejs.org/docs/latest-v24.x/api/vm.html#what-does-it-mean-to-contextify-an-object)
  * and return a reference to it so that it can be used in calls to {@link runInContext} or
- * [`script.runInContext()`](https://nodejs.org/docs/latest-v22.x/api/vm.html#scriptrunincontextcontextifiedobject-options).
+ * [`script.runInContext()`](https://nodejs.org/docs/latest-v24.x/api/vm.html#scriptrunincontextcontextifiedobject-options).
  * Inside such scripts, the global object will be wrapped by the `contextObject`, retaining all of its
  * existing properties but also having the built-in objects and functions any standard
  * [global object](https://es5.github.io/#x15.1) has. Outside of scripts run by the vm module, global

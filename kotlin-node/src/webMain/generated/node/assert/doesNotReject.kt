@@ -13,7 +13,7 @@ import js.promise.Promise
  *
  * If `asyncFn` is a function and it throws an error synchronously, `assert.doesNotReject()` will return a rejected `Promise` with that error. If
  * the function does not return a promise, `assert.doesNotReject()` will return a
- * rejected `Promise` with an [ERR_INVALID_RETURN_VALUE](https://nodejs.org/docs/latest-v22.x/api/errors.html#err_invalid_return_value) error. In both cases
+ * rejected `Promise` with an [ERR_INVALID_RETURN_VALUE](https://nodejs.org/docs/latest-v24.x/api/errors.html#err_invalid_return_value) error. In both cases
  * the error handler is skipped.
  *
  * Using `assert.doesNotReject()` is actually not useful because there is little
@@ -58,7 +58,7 @@ external fun doesNotRejectAsync(block: () -> Promise<Any?>): Promise<js.core.Voi
  *
  * If `asyncFn` is a function and it throws an error synchronously, `assert.doesNotReject()` will return a rejected `Promise` with that error. If
  * the function does not return a promise, `assert.doesNotReject()` will return a
- * rejected `Promise` with an [ERR_INVALID_RETURN_VALUE](https://nodejs.org/docs/latest-v22.x/api/errors.html#err_invalid_return_value) error. In both cases
+ * rejected `Promise` with an [ERR_INVALID_RETURN_VALUE](https://nodejs.org/docs/latest-v24.x/api/errors.html#err_invalid_return_value) error. In both cases
  * the error handler is skipped.
  *
  * Using `assert.doesNotReject()` is actually not useful because there is little
@@ -106,7 +106,7 @@ external fun doesNotRejectAsync(
  *
  * If `asyncFn` is a function and it throws an error synchronously, `assert.doesNotReject()` will return a rejected `Promise` with that error. If
  * the function does not return a promise, `assert.doesNotReject()` will return a
- * rejected `Promise` with an [ERR_INVALID_RETURN_VALUE](https://nodejs.org/docs/latest-v22.x/api/errors.html#err_invalid_return_value) error. In both cases
+ * rejected `Promise` with an [ERR_INVALID_RETURN_VALUE](https://nodejs.org/docs/latest-v24.x/api/errors.html#err_invalid_return_value) error. In both cases
  * the error handler is skipped.
  *
  * Using `assert.doesNotReject()` is actually not useful because there is little
@@ -154,7 +154,7 @@ external fun doesNotRejectAsync(
  *
  * If `asyncFn` is a function and it throws an error synchronously, `assert.doesNotReject()` will return a rejected `Promise` with that error. If
  * the function does not return a promise, `assert.doesNotReject()` will return a
- * rejected `Promise` with an [ERR_INVALID_RETURN_VALUE](https://nodejs.org/docs/latest-v22.x/api/errors.html#err_invalid_return_value) error. In both cases
+ * rejected `Promise` with an [ERR_INVALID_RETURN_VALUE](https://nodejs.org/docs/latest-v24.x/api/errors.html#err_invalid_return_value) error. In both cases
  * the error handler is skipped.
  *
  * Using `assert.doesNotReject()` is actually not useful because there is little
@@ -199,7 +199,7 @@ external fun doesNotRejectAsync(block: Promise<Any?>): Promise<js.core.Void>
  *
  * If `asyncFn` is a function and it throws an error synchronously, `assert.doesNotReject()` will return a rejected `Promise` with that error. If
  * the function does not return a promise, `assert.doesNotReject()` will return a
- * rejected `Promise` with an [ERR_INVALID_RETURN_VALUE](https://nodejs.org/docs/latest-v22.x/api/errors.html#err_invalid_return_value) error. In both cases
+ * rejected `Promise` with an [ERR_INVALID_RETURN_VALUE](https://nodejs.org/docs/latest-v24.x/api/errors.html#err_invalid_return_value) error. In both cases
  * the error handler is skipped.
  *
  * Using `assert.doesNotReject()` is actually not useful because there is little
@@ -247,7 +247,7 @@ external fun doesNotRejectAsync(
  *
  * If `asyncFn` is a function and it throws an error synchronously, `assert.doesNotReject()` will return a rejected `Promise` with that error. If
  * the function does not return a promise, `assert.doesNotReject()` will return a
- * rejected `Promise` with an [ERR_INVALID_RETURN_VALUE](https://nodejs.org/docs/latest-v22.x/api/errors.html#err_invalid_return_value) error. In both cases
+ * rejected `Promise` with an [ERR_INVALID_RETURN_VALUE](https://nodejs.org/docs/latest-v24.x/api/errors.html#err_invalid_return_value) error. In both cases
  * the error handler is skipped.
  *
  * Using `assert.doesNotReject()` is actually not useful because there is little

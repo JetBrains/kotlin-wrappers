@@ -32,7 +32,7 @@ sealed external interface ProcessFeatures {
 
     /**
      * A boolean value that is `true` if the current Node.js build supports
-     * [loading ECMAScript modules using `require()`](https://nodejs.org/docs/latest-v22.x/api/modules.md#loading-ecmascript-modules-using-require).
+     * [loading ECMAScript modules using `require()`](https://nodejs.org/docs/latest-v24.x/api/modules.md#loading-ecmascript-modules-using-require).
      * @since v22.10.0
      */
     val require_module: Boolean
@@ -74,8 +74,9 @@ sealed external interface ProcessFeatures {
     val tls_sni: Boolean
 
     /**
-     * A value that is `"strip"` if Node.js is run with `--experimental-strip-types`,
-     * `"transform"` if Node.js is run with `--experimental-transform-types`, and `false` otherwise.
+     * A value that is `"strip"` by default,
+     * `"transform"` if Node.js is run with `--experimental-transform-types`, and `false` if
+     * Node.js is run with `--no-experimental-strip-types`.
      * @since v22.10.0
      */
     val typescript: ProcessFeaturesTypescript

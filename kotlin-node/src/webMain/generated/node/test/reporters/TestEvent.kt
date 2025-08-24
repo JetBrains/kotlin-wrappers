@@ -41,4 +41,7 @@ typealias TestEvent = Any /* {
 } | {
     type: "test:watch:drained";
     data: undefined;
+} | {
+    type: "test:watch:restarted";
+    data: undefined;
 } */

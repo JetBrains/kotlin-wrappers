@@ -22,17 +22,11 @@ sealed external interface Architecture {
         @seskar.js.JsValue("mipsel")
         val mipsel: Architecture
 
-        @seskar.js.JsValue("ppc")
-        val ppc: Architecture
-
         @seskar.js.JsValue("ppc64")
         val ppc64: Architecture
 
         @seskar.js.JsValue("riscv64")
         val riscv64: Architecture
-
-        @seskar.js.JsValue("s390")
-        val s390: Architecture
 
         @seskar.js.JsValue("s390x")
         val s390x: Architecture

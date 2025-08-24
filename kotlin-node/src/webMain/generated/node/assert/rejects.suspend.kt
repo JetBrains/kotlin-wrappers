@@ -13,7 +13,7 @@ external suspend fun rejects(block: () -> Promise<Any?>): js.core.Void
  * check that the promise is rejected.
  *
  * If `asyncFn` is a function and it throws an error synchronously, `assert.rejects()` will return a rejected `Promise` with that error. If the
- * function does not return a promise, `assert.rejects()` will return a rejected `Promise` with an [ERR_INVALID_RETURN_VALUE](https://nodejs.org/docs/latest-v22.x/api/errors.html#err_invalid_return_value)
+ * function does not return a promise, `assert.rejects()` will return a rejected `Promise` with an [ERR_INVALID_RETURN_VALUE](https://nodejs.org/docs/latest-v24.x/api/errors.html#err_invalid_return_value)
  * error. In both cases the error handler is skipped.
  *
  * Besides the async nature to await the completion behaves identically to {@link throws}.
@@ -82,7 +82,7 @@ external suspend fun rejects(
  * check that the promise is rejected.
  *
  * If `asyncFn` is a function and it throws an error synchronously, `assert.rejects()` will return a rejected `Promise` with that error. If the
- * function does not return a promise, `assert.rejects()` will return a rejected `Promise` with an [ERR_INVALID_RETURN_VALUE](https://nodejs.org/docs/latest-v22.x/api/errors.html#err_invalid_return_value)
+ * function does not return a promise, `assert.rejects()` will return a rejected `Promise` with an [ERR_INVALID_RETURN_VALUE](https://nodejs.org/docs/latest-v24.x/api/errors.html#err_invalid_return_value)
  * error. In both cases the error handler is skipped.
  *
  * Besides the async nature to await the completion behaves identically to {@link throws}.
@@ -151,7 +151,7 @@ external suspend fun rejects(
  * check that the promise is rejected.
  *
  * If `asyncFn` is a function and it throws an error synchronously, `assert.rejects()` will return a rejected `Promise` with that error. If the
- * function does not return a promise, `assert.rejects()` will return a rejected `Promise` with an [ERR_INVALID_RETURN_VALUE](https://nodejs.org/docs/latest-v22.x/api/errors.html#err_invalid_return_value)
+ * function does not return a promise, `assert.rejects()` will return a rejected `Promise` with an [ERR_INVALID_RETURN_VALUE](https://nodejs.org/docs/latest-v24.x/api/errors.html#err_invalid_return_value)
  * error. In both cases the error handler is skipped.
  *
  * Besides the async nature to await the completion behaves identically to {@link throws}.
@@ -217,7 +217,7 @@ external suspend fun rejects(block: Promise<Any?>): js.core.Void
  * check that the promise is rejected.
  *
  * If `asyncFn` is a function and it throws an error synchronously, `assert.rejects()` will return a rejected `Promise` with that error. If the
- * function does not return a promise, `assert.rejects()` will return a rejected `Promise` with an [ERR_INVALID_RETURN_VALUE](https://nodejs.org/docs/latest-v22.x/api/errors.html#err_invalid_return_value)
+ * function does not return a promise, `assert.rejects()` will return a rejected `Promise` with an [ERR_INVALID_RETURN_VALUE](https://nodejs.org/docs/latest-v24.x/api/errors.html#err_invalid_return_value)
  * error. In both cases the error handler is skipped.
  *
  * Besides the async nature to await the completion behaves identically to {@link throws}.
@@ -286,7 +286,7 @@ external suspend fun rejects(
  * check that the promise is rejected.
  *
  * If `asyncFn` is a function and it throws an error synchronously, `assert.rejects()` will return a rejected `Promise` with that error. If the
- * function does not return a promise, `assert.rejects()` will return a rejected `Promise` with an [ERR_INVALID_RETURN_VALUE](https://nodejs.org/docs/latest-v22.x/api/errors.html#err_invalid_return_value)
+ * function does not return a promise, `assert.rejects()` will return a rejected `Promise` with an [ERR_INVALID_RETURN_VALUE](https://nodejs.org/docs/latest-v24.x/api/errors.html#err_invalid_return_value)
  * error. In both cases the error handler is skipped.
  *
  * Besides the async nature to await the completion behaves identically to {@link throws}.

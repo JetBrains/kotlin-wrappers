@@ -22,7 +22,7 @@ package node.fs
  *
  * All file system operations have synchronous, callback, and promise-based
  * forms, and are accessible using both CommonJS syntax and ES6 Modules (ESM).
- * @see [source](https://github.com/nodejs/node/blob/v22.x/lib/fs.js)
+ * @see [source](https://github.com/nodejs/node/blob/v24.x/lib/fs.js)
  */
 
 // export * from "fs";
