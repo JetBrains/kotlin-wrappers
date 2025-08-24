@@ -1,7 +1,7 @@
 package react
 
+import js.function.async
 import kotlinx.coroutines.CoroutineScope
-import react.internal.isolatedPromise
 import react.raw.useActionStateRaw
 
 /**
@@ -13,8 +13,8 @@ fun <S> useActionState(
     action: suspend CoroutineScope.(state: S) -> S,
 ): ActionStateInstance1<S> =
     useActionStateRaw(
-        action = { state ->
-            isolatedPromise { action(state) }
+        action = async { state ->
+            action(state)
         },
         initialState = initialState,
         permalink = permalink,
@@ -29,8 +29,8 @@ fun <S, P> useActionState(
     action: suspend CoroutineScope.(state: S, payload: P) -> S,
 ): ActionStateInstance2<S, P> =
     useActionStateRaw(
-        action = { state, payload ->
-            isolatedPromise { action(state, payload) }
+        action = async { state, payload ->
+            action(state, payload)
         },
         initialState = initialState,
         permalink = permalink,
