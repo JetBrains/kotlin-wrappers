@@ -234,7 +234,7 @@ external class Worker : EventEmitter {
      * This method returns a `Promise` that will resolve to an object identical to `v8.getHeapStatistics()`,
      * or reject with an `ERR_WORKER_NOT_RUNNING` error if the worker is no longer running.
      * This methods allows the statistics to be observed from outside the actual thread.
-     * @since v22.16.0
+     * @since v24.0.0
      */
     @JsName("getHeapStatistics")
     fun getHeapStatisticsAsync(): Promise<HeapInfo>

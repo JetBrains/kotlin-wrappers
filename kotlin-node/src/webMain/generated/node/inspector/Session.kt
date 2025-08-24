@@ -1048,6 +1048,46 @@ external class _Session : EventEmitter {
     )
 
     /**
+     * Returns post data sent with the request. Returns an error when no data was sent with the request.
+     */
+    fun post(
+        method: SessionMethod.NETWORK_GETREQUESTPOSTDATA,
+        params: node.inspector.network.GetRequestPostDataParameterType = definedExternally,
+        callback: (
+            err: js.errors.JsError?,
+            params: node.inspector.network.GetRequestPostDataReturnType,
+        ) -> Unit = definedExternally,
+    )
+
+    fun post(
+        method: SessionMethod.NETWORK_GETREQUESTPOSTDATA,
+        callback: (
+            err: js.errors.JsError?,
+            params: node.inspector.network.GetRequestPostDataReturnType,
+        ) -> Unit = definedExternally,
+    )
+
+    /**
+     * Returns content served for the given request.
+     */
+    fun post(
+        method: SessionMethod.NETWORK_GETRESPONSEBODY,
+        params: node.inspector.network.GetResponseBodyParameterType = definedExternally,
+        callback: (
+            err: js.errors.JsError?,
+            params: node.inspector.network.GetResponseBodyReturnType,
+        ) -> Unit = definedExternally,
+    )
+
+    fun post(
+        method: SessionMethod.NETWORK_GETRESPONSEBODY,
+        callback: (
+            err: js.errors.JsError?,
+            params: node.inspector.network.GetResponseBodyReturnType,
+        ) -> Unit = definedExternally,
+    )
+
+    /**
      * Enables streaming of the response for the given requestId.
      * If enabled, the dataReceived event contains the data that was received during streaming.
      * @experimental

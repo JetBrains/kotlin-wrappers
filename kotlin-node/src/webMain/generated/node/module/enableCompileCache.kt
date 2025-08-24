@@ -5,7 +5,7 @@
 package node.module
 
 /**
- * Enable [module compile cache](https://nodejs.org/docs/latest-v22.x/api/module.html#module-compile-cache)
+ * Enable [module compile cache](https://nodejs.org/docs/latest-v24.x/api/module.html#module-compile-cache)
  * in the current Node.js instance.
  *
  * If `cacheDir` is not specified, Node.js will either use the directory specified by the
@@ -23,7 +23,7 @@ package node.module
  * contains the path to the directory where the compile cache is stored. The `status`
  * field in the returned object would be one of the `module.constants.compileCacheStatus`
  * values to indicate the result of the attempt to enable the
- * [module compile cache](https://nodejs.org/docs/latest-v22.x/api/module.html#module-compile-cache).
+ * [module compile cache](https://nodejs.org/docs/latest-v24.x/api/module.html#module-compile-cache).
  *
  * This method only affects the current Node.js instance. To enable it in child worker threads,
  * either call this method in child worker threads too, or set the

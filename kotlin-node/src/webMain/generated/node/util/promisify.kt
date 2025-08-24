@@ -40,7 +40,7 @@ import js.promise.Promise
  * ```
  *
  * If there is an `original[util.promisify.custom]` property present, `promisify`
- * will return its value, see [Custom promisified functions](https://nodejs.org/docs/latest-v22.x/api/util.html#custom-promisified-functions).
+ * will return its value, see [Custom promisified functions](https://nodejs.org/docs/latest-v24.x/api/util.html#custom-promisified-functions).
  *
  * `promisify()` assumes that `original` is a function taking a callback as its
  * final argument in all cases. If `original` is not a function, `promisify()`

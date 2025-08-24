@@ -5,5 +5,5 @@
 
 package node.crypto.constants
 
-// https://nodejs.org/dist/latest-v22.x/docs/api/crypto.html#crypto-constants
+// https://nodejs.org/dist/latest-v24.x/docs/api/crypto.html#crypto-constants
 external val OPENSSL_VERSION_NUMBER: Double

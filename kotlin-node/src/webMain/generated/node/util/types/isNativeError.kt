@@ -46,6 +46,7 @@ package node.util.types
  * console.log(myError instanceof Error); // true
  * ```
  * @since v10.0.0
+ * @deprecated The `util.types.isNativeError` API is deprecated. Please use `Error.isError` instead.
  */
 @JsName("isNativeError")
 external fun isNativeErrorRaw(value: Any?): Boolean // object is Error

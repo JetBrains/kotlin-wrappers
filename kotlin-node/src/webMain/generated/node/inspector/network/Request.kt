@@ -9,4 +9,5 @@ sealed external interface Request {
     var url: String
     var method: String
     var headers: Headers
+    var hasPostData: Boolean
 }

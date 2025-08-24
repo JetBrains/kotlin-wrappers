@@ -6,12 +6,12 @@ import web.abort.AbortSignal
 
 sealed external interface _ReadLineOptions {
     /**
-     * The [`Readable`](https://nodejs.org/docs/latest-v22.x/api/stream.html#readable-streams) stream to listen to
+     * The [`Readable`](https://nodejs.org/docs/latest-v24.x/api/stream.html#readable-streams) stream to listen to
      */
     var input: node.ReadableStream
 
     /**
-     * The [`Writable`](https://nodejs.org/docs/latest-v22.x/api/stream.html#writable-streams) stream to write readline data to.
+     * The [`Writable`](https://nodejs.org/docs/latest-v24.x/api/stream.html#writable-streams) stream to write readline data to.
      */
     var output: node.WritableStream?
 
@@ -63,7 +63,7 @@ sealed external interface _ReadLineOptions {
      * `crlfDelay` will be coerced to a number no less than `100`.
      * It can be set to `Infinity`, in which case
      * `\r` followed by `\n` will always be considered a single newline
-     * (which may be reasonable for [reading files](https://nodejs.org/docs/latest-v22.x/api/readline.html#example-read-file-stream-line-by-line) with `\r\n` line delimiter).
+     * (which may be reasonable for [reading files](https://nodejs.org/docs/latest-v24.x/api/readline.html#example-read-file-stream-line-by-line) with `\r\n` line delimiter).
      * @default 100
      */
     var crlfDelay: Double?

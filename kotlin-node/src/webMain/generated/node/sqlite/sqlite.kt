@@ -46,5 +46,5 @@ package node.sqlite
  * ```
  * @since v22.5.0
  * @experimental
- * @see [source](https://github.com/nodejs/node/blob/v22.x/lib/sqlite.js)
+ * @see [source](https://github.com/nodejs/node/blob/v24.x/lib/sqlite.js)
  */

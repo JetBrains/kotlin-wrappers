@@ -4,6 +4,9 @@ package node.module
 
 sealed external interface ModuleFormat {
     companion object {
+        @seskar.js.JsValue("addon")
+        val addon: ModuleFormat
+
         @seskar.js.JsValue("builtin")
         val builtin: ModuleFormat
 

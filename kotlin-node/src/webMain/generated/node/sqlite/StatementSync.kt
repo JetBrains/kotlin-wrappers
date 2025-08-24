@@ -40,7 +40,7 @@ external class StatementSync {
     /**
      * This method is used to retrieve information about the columns returned by the
      * prepared statement.
-     * @since v22.16.0
+     * @since v23.11.0
      * @returns An array of objects. Each object corresponds to a column
      * in the prepared statement, and contains the following properties:
      */

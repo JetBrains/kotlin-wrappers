@@ -117,5 +117,5 @@ package node.sea
  * ```
  * @since v19.7.0, v18.16.0
  * @experimental
- * @see [source](https://github.com/nodejs/node/blob/v22.x/src/node_sea.cc)
+ * @see [source](https://github.com/nodejs/node/blob/v24.x/src/node_sea.cc)
  */

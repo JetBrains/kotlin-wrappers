@@ -7,7 +7,7 @@ package node.crypto
 import node.stream.TransformOptions
 
 /**
- * Instances of the `Cipher` class are used to encrypt data. The class can be
+ * Instances of the `Cipheriv` class are used to encrypt data. The class can be
  * used in one of two ways:
  *
  * * As a `stream` that is both readable and writable, where plain unencrypted
@@ -16,10 +16,10 @@ import node.stream.TransformOptions
  * the encrypted data.
  *
  * The {@link createCipheriv} method is
- * used to create `Cipher` instances. `Cipher` objects are not to be created
+ * used to create `Cipheriv` instances. `Cipheriv` objects are not to be created
  * directly using the `new` keyword.
  *
- * Example: Using `Cipher` objects as streams:
+ * Example: Using `Cipheriv` objects as streams:
  *
  * ```js
  * const {
@@ -54,7 +54,7 @@ import node.stream.TransformOptions
  * });
  * ```
  *
- * Example: Using `Cipher` and piped streams:
+ * Example: Using `Cipheriv` and piped streams:
  *
  * ```js
  * import {
@@ -125,7 +125,7 @@ import node.stream.TransformOptions
  * ```
  * @since v0.1.94
  */
-open external class Cipher : node.stream.Transform {
+open external class Cipheriv : node.stream.Transform {
     constructor (opts: TransformOptions<*> = definedExternally)
 
     /**
@@ -162,7 +162,7 @@ open external class Cipher : node.stream.Transform {
     ): String
 
     /**
-     * Once the `cipher.final()` method has been called, the `Cipher` object can no
+     * Once the `cipher.final()` method has been called, the `Cipheriv` object can no
      * longer be used to encrypt data. Attempts to call `cipher.final()` more than
      * once will result in an error being thrown.
      * @since v0.1.94
@@ -174,7 +174,7 @@ open external class Cipher : node.stream.Transform {
     fun final(outputEncoding: node.buffer.BufferEncoding): String
 
     /**
-     * When using block encryption algorithms, the `Cipher` class will automatically
+     * When using block encryption algorithms, the `Cipheriv` class will automatically
      * add padding to the input data to the appropriate block size. To disable the
      * default padding call `cipher.setAutoPadding(false)`.
      *

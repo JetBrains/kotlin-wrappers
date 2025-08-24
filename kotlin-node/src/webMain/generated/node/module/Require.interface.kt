@@ -15,7 +15,7 @@ sealed external interface Require {
      * Modules are cached in this object when they are required. By deleting a key
      * value from this object, the next `require` will reload the module.
      * This does not apply to
-     * [native addons](https://nodejs.org/docs/latest-v22.x/api/addons.html),
+     * [native addons](https://nodejs.org/docs/latest-v24.x/api/addons.html),
      * for which reloading will result in an error.
      * @since v0.3.0
      */

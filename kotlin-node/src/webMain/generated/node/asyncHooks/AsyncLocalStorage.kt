@@ -54,6 +54,12 @@ package node.asyncHooks
  */
 external class AsyncLocalStorage<T> {
     /**
+     * Creates a new instance of `AsyncLocalStorage`. Store is only provided within a
+     * `run()` call or after an `enterWith()` call.
+     */
+    constructor (options: AsyncLocalStorageOptions = definedExternally)
+
+    /**
      * Disables the instance of `AsyncLocalStorage`. All subsequent calls
      * to `asyncLocalStorage.getStore()` will return `undefined` until `asyncLocalStorage.run()` or `asyncLocalStorage.enterWith()` is called again.
      *
@@ -79,6 +85,12 @@ external class AsyncLocalStorage<T> {
      * @since v13.10.0, v12.17.0
      */
     fun getStore(): T?
+
+    /**
+     * The name of the `AsyncLocalStorage` instance if provided.
+     * @since v24.0.0
+     */
+    val name: String
 
     /**
      * Runs a function synchronously within a context and returns its

@@ -8,7 +8,6 @@ sealed external interface ClientSessionRequestOptions {
     var endStream: Boolean?
     var exclusive: Boolean?
     var parent: Double?
-    var weight: Double?
     var waitForTrailers: Boolean?
     var signal: AbortSignal?
 }

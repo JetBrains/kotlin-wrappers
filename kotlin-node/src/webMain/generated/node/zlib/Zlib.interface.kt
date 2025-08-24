@@ -3,8 +3,6 @@
 package node.zlib
 
 sealed external interface Zlib {
-    /** @deprecated Use bytesWritten instead. */
-    val bytesRead: Double
     val bytesWritten: Double
     var shell: Any? // boolean | string | undefined
 

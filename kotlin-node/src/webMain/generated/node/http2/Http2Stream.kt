@@ -110,10 +110,9 @@ sealed external interface Http2Stream : node.stream.Duplex {
     )
 
     /**
-     * Updates the priority for this `Http2Stream` instance.
-     * @since v8.4.0
+     * @deprecated Priority signaling is no longer supported in Node.js.
      */
-    fun priority(options: StreamPriorityOptions)
+    fun priority(options: Any?)
 
     /**
      * ```js

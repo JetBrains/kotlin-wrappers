@@ -5,7 +5,7 @@
 package node.module
 
 /**
- * Flush the [module compile cache](https://nodejs.org/docs/latest-v22.x/api/module.html#module-compile-cache)
+ * Flush the [module compile cache](https://nodejs.org/docs/latest-v24.x/api/module.html#module-compile-cache)
  * accumulated from modules already loaded
  * in the current Node.js instance to disk. This returns after all the flushing
  * file system operations come to an end, no matter they succeed or not. If there

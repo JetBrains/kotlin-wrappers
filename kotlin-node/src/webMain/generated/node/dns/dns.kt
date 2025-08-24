@@ -47,8 +47,8 @@ package node.dns
  * });
  * ```
  *
- * See the [Implementation considerations section](https://nodejs.org/docs/latest-v22.x/api/dns.html#implementation-considerations) for more information.
- * @see [source](https://github.com/nodejs/node/blob/v22.x/lib/dns.js)
+ * See the [Implementation considerations section](https://nodejs.org/docs/latest-v24.x/api/dns.html#implementation-considerations) for more information.
+ * @see [source](https://github.com/nodejs/node/blob/v24.x/lib/dns.js)
  */
 
 // export * from "dns";

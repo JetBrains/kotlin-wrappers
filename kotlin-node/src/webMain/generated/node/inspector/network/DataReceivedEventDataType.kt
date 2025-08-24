@@ -27,5 +27,5 @@ sealed external interface DataReceivedEventDataType {
      * Data that was received.
      * @experimental
      */
-    var data: Nothing?
+    var data: String?
 }

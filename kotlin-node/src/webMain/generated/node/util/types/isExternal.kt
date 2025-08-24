@@ -43,7 +43,7 @@ package node.util.types
  * ```
  *
  * For further information on `napi_create_external`, refer to
- * [`napi_create_external()`](https://nodejs.org/docs/latest-v22.x/api/n-api.html#napi_create_external).
+ * [`napi_create_external()`](https://nodejs.org/docs/latest-v24.x/api/n-api.html#napi_create_external).
  * @since v10.0.0
  */
 external fun isExternal(value: Any?): Boolean

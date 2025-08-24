@@ -6,10 +6,10 @@ package node.os
 
 /**
  * Returns the operating system CPU architecture for which the Node.js binary was
- * compiled. Possible values are `'arm'`, `'arm64'`, `'ia32'`, `'loong64'`, `'mips'`, `'mipsel'`, `'ppc'`, `'ppc64'`, `'riscv64'`, `'s390'`, `'s390x'`,
- * and `'x64'`.
+ * compiled. Possible values are `'arm'`, `'arm64'`, `'ia32'`, `'loong64'`,
+ * `'mips'`, `'mipsel'`, `'ppc64'`, `'riscv64'`, `'s390x'`, and `'x64'`.
  *
- * The return value is equivalent to [process.arch](https://nodejs.org/docs/latest-v22.x/api/process.html#processarch).
+ * The return value is equivalent to [process.arch](https://nodejs.org/docs/latest-v24.x/api/process.html#processarch).
  * @since v0.5.0
  */
-external fun arch(): String
+external fun arch(): node.process.Architecture

@@ -34,7 +34,7 @@ external suspend fun backup(
  *
  * console.log('Backup completed', totalPagesTransferred);
  * ```
- * @since v22.16.0
+ * @since v23.8.0
  * @param sourceDb The database to backup. The source database must be open.
  * @param path The path where the backup will be created. If the file already exists,
  * the contents will be overwritten.
@@ -72,7 +72,7 @@ external suspend fun backup(
  *
  * console.log('Backup completed', totalPagesTransferred);
  * ```
- * @since v22.16.0
+ * @since v23.8.0
  * @param sourceDb The database to backup. The source database must be open.
  * @param path The path where the backup will be created. If the file already exists,
  * the contents will be overwritten.

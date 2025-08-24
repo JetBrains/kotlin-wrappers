@@ -3,7 +3,7 @@
 package node.fs
 
 @js.objects.JsPlainObject
-sealed external interface WatchBufferOptions : WatchOptions {
+sealed external interface _WatchOptionsWithBufferEncoding : _WatchOptions {
     @JsName("encoding")
-    var requiredEncoding: String // "buffer"
+    var stringEncoding: String // "buffer"
 }

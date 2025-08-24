@@ -56,21 +56,21 @@ external class REPLServer : _Interface {
     /**
      * A value indicating whether the REPL is currently in "editor mode".
      *
-     * @see https://nodejs.org/dist/latest-v22.x/docs/api/repl.html#repl_commands_and_special_keys
+     * @see https://nodejs.org/dist/latest-v24.x/docs/api/repl.html#repl_commands_and_special_keys
      */
     val editorMode: Boolean
 
     /**
      * A value indicating whether the `_` variable has been assigned.
      *
-     * @see https://nodejs.org/dist/latest-v22.x/docs/api/repl.html#repl_assignment_of_the_underscore_variable
+     * @see https://nodejs.org/dist/latest-v24.x/docs/api/repl.html#repl_assignment_of_the_underscore_variable
      */
     val underscoreAssigned: Boolean
 
     /**
      * The last evaluation result from the REPL (assigned to the `_` variable inside of the REPL).
      *
-     * @see https://nodejs.org/dist/latest-v22.x/docs/api/repl.html#repl_assignment_of_the_underscore_variable
+     * @see https://nodejs.org/dist/latest-v24.x/docs/api/repl.html#repl_assignment_of_the_underscore_variable
      */
     val last: Any?
 
@@ -78,7 +78,7 @@ external class REPLServer : _Interface {
      * A value indicating whether the `_error` variable has been assigned.
      *
      * @since v9.8.0
-     * @see https://nodejs.org/dist/latest-v22.x/docs/api/repl.html#repl_assignment_of_the_underscore_variable
+     * @see https://nodejs.org/dist/latest-v24.x/docs/api/repl.html#repl_assignment_of_the_underscore_variable
      */
     val underscoreErrAssigned: Boolean
 
@@ -86,7 +86,7 @@ external class REPLServer : _Interface {
      * The last error raised inside the REPL (assigned to the `_error` variable inside of the REPL).
      *
      * @since v9.8.0
-     * @see https://nodejs.org/dist/latest-v22.x/docs/api/repl.html#repl_assignment_of_the_underscore_variable
+     * @see https://nodejs.org/dist/latest-v24.x/docs/api/repl.html#repl_assignment_of_the_underscore_variable
      */
     val lastError: Any?
 
@@ -226,7 +226,7 @@ external class REPLServer : _Interface {
      * The `replServer.displayPrompt()` method readies the REPL instance for input
      * from the user, printing the configured `prompt` to a new line in the `output` and resuming the `input` to accept new input.
      *
-     * When multi-line input is being entered, an ellipsis is printed rather than the
+     * When multi-line input is being entered, a pipe `'|'` is printed rather than the
      * 'prompt'.
      *
      * When `preserveCursor` is `true`, the cursor placement will not be reset to `0`.
@@ -255,7 +255,12 @@ external class REPLServer : _Interface {
      * @param historyPath the path to the history file
      * @param callback called when history writes are ready or upon error
      */
-    fun setupHistory(path: String, callback: (err: js.errors.JsError?, repl: Unit /* this */) -> Unit)
+    fun setupHistory(historyPath: String, callback: (err: js.errors.JsError?, repl: Unit /* this */) -> Unit)
+
+    fun setupHistory(
+        historyConfig: REPLServerSetupHistoryOptions = definedExternally,
+        callback: (err: js.errors.JsError?, repl: Unit /* this */) -> Unit = definedExternally,
+    )
 
     /**
      * events.EventEmitter

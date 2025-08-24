@@ -48,4 +48,13 @@ sealed external interface DatabaseSyncOptions {
      * @default false
      */
     var allowExtension: Boolean?
+
+    /**
+     * The [busy timeout](https://sqlite.org/c3ref/busy_timeout.html) in milliseconds. This is the maximum amount of
+     * time that SQLite will wait for a database lock to be released before
+     * returning an error.
+     * @since v24.0.0
+     * @default 0
+     */
+    var timeout: Double?
 }

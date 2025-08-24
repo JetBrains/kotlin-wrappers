@@ -20,13 +20,13 @@ sealed external interface ZstdOptions {
 
     /**
      * Key-value object containing indexed
-     * [Zstd parameters](https://nodejs.org/docs/latest-v22.x/api/zlib.html#zstd-constants).
+     * [Zstd parameters](https://nodejs.org/docs/latest-v24.x/api/zlib.html#zstd-constants).
      */
     var params: (ZstdOptionsParams)?
 
     /**
      * Limits output size when using
-     * [convenience methods](https://nodejs.org/docs/latest-v22.x/api/zlib.html#convenience-methods).
+     * [convenience methods](https://nodejs.org/docs/latest-v24.x/api/zlib.html#convenience-methods).
      * @default buffer.kMaxLength
      */
     var maxOutputLength: Double?

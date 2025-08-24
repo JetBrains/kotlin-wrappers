@@ -22,7 +22,7 @@ package node.dns
  *   data: [ArrayBuffer]
  * }
  * ```
- * @since v22.15.0
+ * @since v23.9.0, v22.15.0
  */
 external fun resolveTlsa(
     hostname: String,

@@ -4,4 +4,4 @@ package node.vm
 
 import node.module.ImportAttributes
 
-typealias DynamicModuleLoader<T> = (specifier: String, referrer: T, importAttributes: ImportAttributes) -> js.promise.PromiseResult<Module>
+typealias DynamicModuleLoader<T> = (specifier: String, referrer: T, importAttributes: ImportAttributes, phase: DynamicModuleLoaderPhase) -> js.promise.PromiseResult<Module>

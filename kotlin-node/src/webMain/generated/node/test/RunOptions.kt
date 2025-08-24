@@ -13,8 +13,17 @@ sealed external interface RunOptions {
     var concurrency: Any? // number | boolean | undefined
 
     /**
+     * Specifies the current working directory to be used by the test runner.
+     * Serves as the base path for resolving files according to the
+     * [test runner execution model](https://nodejs.org/docs/latest-v24.x/api/test.html#test-runner-execution-model).
+     * @since v23.0.0
+     * @default process.cwd()
+     */
+    var cwd: String?
+
+    /**
      * An array containing the list of files to run. If omitted, files are run according to the
-     * [test runner execution model](https://nodejs.org/docs/latest-v22.x/api/test.html#test-runner-execution-model).
+     * [test runner execution model](https://nodejs.org/docs/latest-v24.x/api/test.html#test-runner-execution-model).
      */
     var files: (js.array.ReadonlyArray<String>)?
 
@@ -29,7 +38,7 @@ sealed external interface RunOptions {
     /**
      * An array containing the list of glob patterns to match test files.
      * This option cannot be used together with `files`. If omitted, files are run according to the
-     * [test runner execution model](https://nodejs.org/docs/latest-v22.x/api/test.html#test-runner-execution-model).
+     * [test runner execution model](https://nodejs.org/docs/latest-v24.x/api/test.html#test-runner-execution-model).
      * @since v22.6.0
      */
     var globPatterns: (js.array.ReadonlyArray<String>)?
@@ -123,7 +132,7 @@ sealed external interface RunOptions {
     var shard: TestShard?
 
     /**
-     * enable [code coverage](https://nodejs.org/docs/latest-v22.x/api/test.html#collecting-code-coverage) collection.
+     * enable [code coverage](https://nodejs.org/docs/latest-v24.x/api/test.html#collecting-code-coverage) collection.
      * @since v22.10.0
      * @default false
      */

@@ -7,6 +7,6 @@ package node.module
 /**
  * This method returns whether the [Source Map v3](https://tc39.es/ecma426/) support for stack
  * traces is enabled.
- * @since v22.14.0
+ * @since v23.7.0, v22.14.0
  */
 external fun getSourceMapsSupport(): SourceMapsSupport

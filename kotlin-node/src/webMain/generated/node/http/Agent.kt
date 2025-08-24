@@ -61,7 +61,7 @@ import node.net.Socket
  * });
  * ```
  *
- * `options` in [`socket.connect()`](https://nodejs.org/docs/latest-v22.x/api/net.html#socketconnectoptions-connectlistener) are also supported.
+ * `options` in [`socket.connect()`](https://nodejs.org/docs/latest-v24.x/api/net.html#socketconnectoptions-connectlistener) are also supported.
  *
  * To configure any of them, a custom {@link Agent} instance must be created.
  *

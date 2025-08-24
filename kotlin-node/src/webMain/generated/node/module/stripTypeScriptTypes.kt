@@ -10,9 +10,9 @@ package node.module
  * with `vm.runInContext()` or `vm.compileFunction()`.
  * By default, it will throw an error if the code contains TypeScript features
  * that require transformation such as `Enums`,
- * see [type-stripping](https://nodejs.org/docs/latest-v22.x/api/typescript.md#type-stripping) for more information.
+ * see [type-stripping](https://nodejs.org/docs/latest-v24.x/api/typescript.md#type-stripping) for more information.
  * When mode is `'transform'`, it also transforms TypeScript features to JavaScript,
- * see [transform TypeScript features](https://nodejs.org/docs/latest-v22.x/api/typescript.md#typescript-features) for more information.
+ * see [transform TypeScript features](https://nodejs.org/docs/latest-v24.x/api/typescript.md#typescript-features) for more information.
  * When mode is `'strip'`, source maps are not generated, because locations are preserved.
  * If `sourceMap` is provided, when mode is `'strip'`, an error will be thrown.
  *

@@ -205,7 +205,7 @@ sealed external interface Process : EventEmitter {
      * should not be used directly, except in special cases. In other words, `require()` should be preferred over `process.dlopen()`
      * unless there are specific reasons such as custom dlopen flags or loading from ES modules.
      *
-     * The `flags` argument is an integer that allows to specify dlopen behavior. See the `[os.constants.dlopen](https://nodejs.org/docs/latest-v22.x/api/os.html#dlopen-constants)`
+     * The `flags` argument is an integer that allows to specify dlopen behavior. See the `[os.constants.dlopen](https://nodejs.org/docs/latest-v24.x/api/os.html#dlopen-constants)`
      * documentation for details.
      *
      * An important requirement when calling `process.dlopen()` is that the `module` instance must be passed. Functions exported by the C++ Addon
@@ -1312,6 +1312,19 @@ sealed external interface Process : EventEmitter {
     val ppid: Double
 
     /**
+     * The `process.threadCpuUsage()` method returns the user and system CPU time usage of
+     * the current worker thread, in an object with properties `user` and `system`, whose
+     * values are microsecond values (millionth of a second).
+     *
+     * The result of a previous call to `process.threadCpuUsage()` can be passed as the
+     * argument to the function, to get a diff reading.
+     * @since v23.9.0
+     * @param previousValue A previous return value from calling
+     * `process.threadCpuUsage()`
+     */
+    fun threadCpuUsage(previousValue: CpuUsage = definedExternally): CpuUsage
+
+    /**
      * The `process.title` property returns the current process title (i.e. returns
      * the current value of `ps`). Assigning a new value to `process.title` modifies
      * the current value of `ps`.
@@ -1332,7 +1345,8 @@ sealed external interface Process : EventEmitter {
 
     /**
      * The operating system CPU architecture for which the Node.js binary was compiled.
-     * Possible values are: `'arm'`, `'arm64'`, `'ia32'`, `'loong64'`, `'mips'`, `'mipsel'`, `'ppc'`, `'ppc64'`, `'riscv64'`, `'s390'`, `'s390x'`, and `'x64'`.
+     * Possible values are: `'arm'`, `'arm64'`, `'ia32'`, `'loong64'`, `'mips'`,
+     * `'mipsel'`, `'ppc64'`, `'riscv64'`, `'s390x'`, and `'x64'`.
      *
      * ```js
      * import { arch } from 'node:process';
@@ -1396,7 +1410,7 @@ sealed external interface Process : EventEmitter {
 
     /**
      * Gets the amount of free memory that is still available to the process (in bytes).
-     * See [`uv_get_available_memory`](https://nodejs.org/docs/latest-v22.x/api/process.html#processavailablememory) for more information.
+     * See [`uv_get_available_memory`](https://nodejs.org/docs/latest-v24.x/api/process.html#processavailablememory) for more information.
      * @since v20.13.0
      */
     fun availableMemory(): Double
@@ -1680,7 +1694,7 @@ sealed external interface Process : EventEmitter {
 
     /**
      * `process.report` is an object whose methods are used to generate diagnostic reports for the current process.
-     * Additional documentation is available in the [report documentation](https://nodejs.org/docs/latest-v22.x/api/report.html).
+     * Additional documentation is available in the [report documentation](https://nodejs.org/docs/latest-v24.x/api/report.html).
      * @since v11.8.0
      */
     var report: ProcessReport

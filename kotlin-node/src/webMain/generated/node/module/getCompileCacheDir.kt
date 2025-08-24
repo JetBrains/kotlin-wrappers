@@ -6,7 +6,7 @@ package node.module
 
 /**
  * @since v22.8.0
- * @return Path to the [module compile cache](https://nodejs.org/docs/latest-v22.x/api/module.html#module-compile-cache)
+ * @return Path to the [module compile cache](https://nodejs.org/docs/latest-v24.x/api/module.html#module-compile-cache)
  * directory if it is enabled, or `undefined` otherwise.
  */
 external fun getCompileCacheDir(): String?

@@ -16,7 +16,7 @@ sealed external interface PausedEventDataType {
     /**
      * Object containing break-specific auxiliary properties.
      */
-    var data: (Any)?
+    var data: Any?
 
     /**
      * Hit breakpoints IDs

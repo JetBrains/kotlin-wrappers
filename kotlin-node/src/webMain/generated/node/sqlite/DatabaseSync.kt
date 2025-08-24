@@ -76,7 +76,7 @@ external class DatabaseSync : Disposable {
 
     /**
      * This method is a wrapper around [`sqlite3_db_filename()`](https://sqlite.org/c3ref/db_filename.html)
-     * @since v22.16.0
+     * @since v24.0.0
      * @param dbName Name of the database. This can be `'main'` (the default primary database) or any other
      * database that has been added with [`ATTACH DATABASE`](https://www.sqlite.org/lang_attach.html) **Default:** `'main'`.
      * @returns The location of the database file. When using an in-memory database,
@@ -102,7 +102,7 @@ external class DatabaseSync : Disposable {
      * @param func The JavaScript function to call when the SQLite
      * function is invoked. The return value of this function should be a valid
      * SQLite data type: see
-     * [Type conversion between JavaScript and SQLite](https://nodejs.org/docs/latest-v22.x/api/sqlite.html#type-conversion-between-javascript-and-sqlite).
+     * [Type conversion between JavaScript and SQLite](https://nodejs.org/docs/latest-v24.x/api/sqlite.html#type-conversion-between-javascript-and-sqlite).
      * The result defaults to `NULL` if the return value is `undefined`.
      */
     fun function(
@@ -122,7 +122,7 @@ external class DatabaseSync : Disposable {
     /**
      * Whether the database is currently within a transaction. This method
      * is a wrapper around [`sqlite3_get_autocommit()`](https://sqlite.org/c3ref/get_autocommit.html).
-     * @since v22.16.0
+     * @since v24.0.0
      */
     val isTransaction: Boolean
 

@@ -61,7 +61,7 @@ sealed external interface ServerHttp2Stream : Http2Stream {
 
     fun pushStream(
         headers: OutgoingHttpHeaders,
-        options: StreamPriorityOptions = definedExternally,
+        options: ClientSessionRequestOptions = definedExternally,
         callback: (
             err: js.errors.JsError?,
             pushStream: ServerHttp2Stream,

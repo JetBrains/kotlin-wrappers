@@ -7,7 +7,7 @@ package node.crypto
 import node.stream.TransformOptions
 
 /**
- * Instances of the `Decipher` class are used to decrypt data. The class can be
+ * Instances of the `Decipheriv` class are used to decrypt data. The class can be
  * used in one of two ways:
  *
  * * As a `stream` that is both readable and writable, where plain encrypted
@@ -16,10 +16,10 @@ import node.stream.TransformOptions
  * produce the unencrypted data.
  *
  * The {@link createDecipheriv} method is
- * used to create `Decipher` instances. `Decipher` objects are not to be created
+ * used to create `Decipheriv` instances. `Decipheriv` objects are not to be created
  * directly using the `new` keyword.
  *
- * Example: Using `Decipher` objects as streams:
+ * Example: Using `Decipheriv` objects as streams:
  *
  * ```js
  * import { Buffer } from 'node:buffer';
@@ -58,7 +58,7 @@ import node.stream.TransformOptions
  * decipher.end();
  * ```
  *
- * Example: Using `Decipher` and piped streams:
+ * Example: Using `Decipheriv` and piped streams:
  *
  * ```js
  * import {
@@ -114,7 +114,7 @@ import node.stream.TransformOptions
  * ```
  * @since v0.1.94
  */
-open external class Decipher : node.stream.Transform {
+open external class Decipheriv : node.stream.Transform {
     constructor (opts: TransformOptions<*> = definedExternally)
 
     /**
@@ -151,7 +151,7 @@ open external class Decipher : node.stream.Transform {
     ): String
 
     /**
-     * Once the `decipher.final()` method has been called, the `Decipher` object can
+     * Once the `decipher.final()` method has been called, the `Decipheriv` object can
      * no longer be used to decrypt data. Attempts to call `decipher.final()` more
      * than once will result in an error being thrown.
      * @since v0.1.94

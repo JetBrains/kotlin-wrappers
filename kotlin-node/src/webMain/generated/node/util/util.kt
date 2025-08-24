@@ -12,7 +12,7 @@ package node.util
  * ```js
  * import util from 'node:util';
  * ```
- * @see [source](https://github.com/nodejs/node/blob/v22.x/lib/util.js)
+ * @see [source](https://github.com/nodejs/node/blob/v24.x/lib/util.js)
  */
 
 // export * from "util";

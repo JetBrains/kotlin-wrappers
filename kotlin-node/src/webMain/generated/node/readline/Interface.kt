@@ -10,7 +10,7 @@ import web.abort.Abortable
 
 /**
  * Instances of the `readline.Interface` class are constructed using the `readline.createInterface()` method. Every instance is associated with a
- * single `input` [Readable](https://nodejs.org/docs/latest-v22.x/api/stream.html#readable-streams) stream and a single `output` [Writable](https://nodejs.org/docs/latest-v22.x/api/stream.html#writable-streams) stream.
+ * single `input` [Readable](https://nodejs.org/docs/latest-v24.x/api/stream.html#readable-streams) stream and a single `output` [Writable](https://nodejs.org/docs/latest-v24.x/api/stream.html#writable-streams) stream.
  * The `output` stream is used to print prompts for user input that arrives on,
  * and is read from, the `input` stream.
  * @since v0.1.104
@@ -25,7 +25,7 @@ open external class _Interface :
      * > Instances of the `readline.Interface` class are constructed using the
      * > `readline.createInterface()` method.
      *
-     * @see https://nodejs.org/dist/latest-v22.x/docs/api/readline.html#class-interfaceconstructor
+     * @see https://nodejs.org/dist/latest-v24.x/docs/api/readline.html#class-interfaceconstructor
      */
     constructor (
         input: node.ReadableStream,
@@ -40,7 +40,7 @@ open external class _Interface :
      * > Instances of the `readline.Interface` class are constructed using the
      * > `readline.createInterface()` method.
      *
-     * @see https://nodejs.org/dist/latest-v22.x/docs/api/readline.html#class-interfaceconstructor
+     * @see https://nodejs.org/dist/latest-v24.x/docs/api/readline.html#class-interfaceconstructor
      */
     constructor (
         input: node.ReadableStream,
@@ -55,7 +55,7 @@ open external class _Interface :
      * > Instances of the `readline.Interface` class are constructed using the
      * > `readline.createInterface()` method.
      *
-     * @see https://nodejs.org/dist/latest-v22.x/docs/api/readline.html#class-interfaceconstructor
+     * @see https://nodejs.org/dist/latest-v24.x/docs/api/readline.html#class-interfaceconstructor
      */
     constructor (options: _ReadLineOptions)
 

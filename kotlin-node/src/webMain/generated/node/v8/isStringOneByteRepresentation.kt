@@ -34,6 +34,6 @@ package node.v8
  * writeString('hello');
  * writeString('你好');
  * ```
- * @since v22.15.0
+ * @since v23.10.0, v22.15.0
  */
 external fun isStringOneByteRepresentation(content: String): Boolean

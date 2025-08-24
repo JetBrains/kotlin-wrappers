@@ -12,7 +12,7 @@ package node.repl
  * ```js
  * import repl from 'node:repl';
  * ```
- * @see [source](https://github.com/nodejs/node/blob/v22.x/lib/repl.js)
+ * @see [source](https://github.com/nodejs/node/blob/v24.x/lib/repl.js)
  */
 
 // export * from "repl";
