@@ -1,6 +1,6 @@
 package react
 
-import js.function.async
+import js.function.unsafeAsync
 import kotlinx.coroutines.CoroutineScope
 import react.raw.useActionStateRaw
 
@@ -13,7 +13,7 @@ fun <S> useActionState(
     action: suspend CoroutineScope.(state: S) -> S,
 ): ActionStateInstance1<S> =
     useActionStateRaw(
-        action = async(action),
+        action = unsafeAsync(action),
         initialState = initialState,
         permalink = permalink,
     )
@@ -27,7 +27,7 @@ fun <S, P> useActionState(
     action: suspend CoroutineScope.(state: S, payload: P) -> S,
 ): ActionStateInstance2<S, P> =
     useActionStateRaw(
-        action = async(action),
+        action = unsafeAsync(action),
         initialState = initialState,
         permalink = permalink,
     )
