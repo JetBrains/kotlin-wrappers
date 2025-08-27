@@ -1913,6 +1913,7 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/text-anchor)
      */
     var textAnchor: String
+    var textAutospace: String
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/text-box)

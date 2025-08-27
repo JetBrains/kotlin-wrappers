@@ -601,6 +601,10 @@ private val REPORTING_TYPES = listOf(
     "ReportingObserverOptions",
 )
 
+private val POPOVER_TYPES = setOf(
+    "PopoverTargetAttributes",
+)
+
 private const val XSLT_PROCESSOR = "XSLTProcessor"
 
 internal fun htmlDeclarations(
@@ -1331,6 +1335,7 @@ internal fun convertInterface(
                 || name == "AbstractWorker"
                 || name == "MessageEventTarget"
                 || name == "FontFaceSource"
+                || name == "PopoverTargetAttributes"
                 || name == "XPathEvaluatorBase"
                 || name == "ARIAMixin"
                 || name == "HTMLOrSVGElement"
@@ -1582,6 +1587,7 @@ internal fun convertInterface(
 
         name in URL_TYPES -> "web.url"
         name in REPORTING_TYPES -> "web.reporting"
+        name in POPOVER_TYPES -> "web.popover"
         name == XSLT_PROCESSOR -> "web.xslt"
 
         else -> "web.html"
@@ -2214,6 +2220,7 @@ private fun convertFunction(
         .replace(": Promise<CryptoKeyPair | CryptoKey>", ": Promise<JsAny /* CryptoKeyPair | CryptoKey */>")
         .replace(": Promise<CryptoKeyPair | CryptoKey>", ": Promise<JsAny /* CryptoKeyPair | CryptoKey */>")
         .replace(": Promise<WritableStream>", ": Promise<WritableStream<*>>")
+        .replace(": Promise<Awaited<T>>", ": Promise<T /* Awaited<T> */>")
         .replace("<string[]", "<ReadonlyArray<String>")
         .replace(": StaticRange[]", ": ReadonlyArray<StaticRange>")
         .replace(": CookieStoreGetOptions[]", ": ReadonlyArray<CookieStoreGetOptions>")

@@ -4,15 +4,13 @@
     "NON_ABSTRACT_MEMBER_OF_EXTERNAL_INTERFACE",
 )
 
-package web.html
+package web.popover
 
 import web.dom.Element
-import web.popover.PopoverTargetAction
 import kotlin.js.definedExternally
 
 /* mixin */
-sealed
-external interface PopoverInvokerElement {
+external interface PopoverTargetAttributes {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLButtonElement/popoverTargetAction)
      */

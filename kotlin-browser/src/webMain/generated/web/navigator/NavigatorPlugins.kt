@@ -17,4 +17,9 @@ external interface NavigatorPlugins {
      */
     val pdfViewerEnabled: Boolean
         get() = definedExternally
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/javaEnabled)
+     */
+    fun javaEnabled(): Boolean = definedExternally
 }

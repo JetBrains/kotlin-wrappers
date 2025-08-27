@@ -36,6 +36,8 @@ private constructor() :
     val loadTime: DOMHighResTimeStamp
 
     /**
+     * The **`renderTime`** read-only property of the LargestContentfulPaint interface represents the time that the element was rendered to the screen.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/LargestContentfulPaint/renderTime)
      */
     val renderTime: DOMHighResTimeStamp

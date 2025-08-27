@@ -14,6 +14,7 @@ import web.form.FormControl
 import web.form.FormEncType
 import web.form.FormMethod
 import web.fs.FileSystemEntry
+import web.popover.PopoverTargetAttributes
 import web.validation.ValidityState
 import web.window.WindowName
 import kotlin.js.definedExternally
@@ -26,7 +27,7 @@ import kotlin.js.definedExternally
 open external class HTMLInputElement
 protected constructor() :
     HTMLElement,
-    PopoverInvokerElement,
+    PopoverTargetAttributes,
     FormControl {
     /**
      * The **`accept`** property of the HTMLInputElement interface reflects the input element's `accept` attribute, generally a comma-separated list of unique file type specifiers providing a hint for the expected file type for an `<input>` of type `file`.

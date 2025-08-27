@@ -23,7 +23,7 @@ internal fun String.applyPatches(): String {
         .patchInterface("HTMLElement") {
             it.replace("    popover: string | null;", "    popover: $POPOVER | null;")
         }
-        .patchInterface("PopoverInvokerElement") {
+        .patchInterface("PopoverTargetAttributes") {
             it.replace(
                 "    popoverTargetAction: string;",
                 "    popoverTargetAction: $POPOVER_TARGET_ACTION;",

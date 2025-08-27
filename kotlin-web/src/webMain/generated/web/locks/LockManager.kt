@@ -32,14 +32,14 @@ private constructor() {
     fun <T : JsAny?> requestAsync(
         name: String,
         callback: LockGrantedCallback<T>,
-    ): Promise<T>
+    ): Promise<T /* Awaited<T> */>
 
     @JsName("request")
     fun <T : JsAny?> requestAsync(
         name: String,
         options: LockOptions,
         callback: LockGrantedCallback<T>,
-    ): Promise<T>
+    ): Promise<T /* Awaited<T> */>
 }
 
 /**
@@ -59,7 +59,7 @@ suspend inline fun LockManager.query(): LockManagerSnapshot {
 suspend inline fun <T : JsAny?> LockManager.request(
     name: String,
     noinline callback: LockGrantedCallback<T>,
-): T {
+): T /* Awaited<T> */ {
     return requestAsync(
         name = name,
         callback = callback,
@@ -70,7 +70,7 @@ suspend inline fun <T : JsAny?> LockManager.request(
     name: String,
     options: LockOptions,
     noinline callback: LockGrantedCallback<T>,
-): T {
+): T /* Awaited<T> */ {
     return requestAsync(
         name = name,
         options = options,

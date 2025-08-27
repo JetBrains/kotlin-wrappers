@@ -100,6 +100,13 @@ open external class FontFace(
     var unicodeRange: String
 
     /**
+     * The **`variationSettings`** property of the FontFace interface retrieves or sets low-level OpenType or TrueType font variations.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FontFace/variationSettings)
+     */
+    var variationSettings: String
+
+    /**
      * The **`weight`** property of the FontFace interface retrieves or sets the weight of the font.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FontFace/weight)

@@ -131,6 +131,10 @@ internal class TypeProvider(
         if (parentType == "WorkerGlobalScope")
             return name != "self"
 
+        // TEMP?
+        if (parentType == "NavigatorPlugins")
+            return name != "mimeTypes" && name != "plugins"
+
         return true
     }
 

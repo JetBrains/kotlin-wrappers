@@ -8,6 +8,7 @@ import web.events.EventInstance
 import web.form.FormControl
 import web.form.FormEncType
 import web.form.FormMethod
+import web.popover.PopoverTargetAttributes
 import web.validation.ValidityState
 import web.window.WindowName
 
@@ -19,7 +20,7 @@ import web.window.WindowName
 open external class HTMLButtonElement
 protected constructor() :
     HTMLElement,
-    PopoverInvokerElement,
+    PopoverTargetAttributes,
     FormControl {
     /**
      * The **`HTMLButtonElement.disabled`** property indicates whether the control is disabled, meaning that it does not accept any clicks.
