@@ -2,10 +2,12 @@
 
 package web.workers
 
+import web.experimental.ExperimentalWebApi
 import web.mediacapabilities.MediaCapabilities
 import web.navigator.*
 import web.permissions.Permissions
 import web.serviceworker.ServiceWorkerContainer
+import web.usb.USB
 
 /**
  * The **`WorkerNavigator`** interface represents a subset of the Navigator interface allowed to be accessed from a Worker.
@@ -43,4 +45,10 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WorkerNavigator/serviceWorker)
      */
     val serviceWorker: ServiceWorkerContainer
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/usb)
+     */
+    @ExperimentalWebApi
+    val usb: USB
 }

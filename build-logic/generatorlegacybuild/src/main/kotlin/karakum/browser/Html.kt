@@ -1217,6 +1217,36 @@ internal fun convertInterface(
             "FileSystemFileHandle",
                 -> result.replace("val kind:", "override val kind:")
 
+            "Navigator",
+                -> result + "\n" + """
+            /**
+             * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/keyboard)
+             */
+            @ExperimentalWebApi
+            val keyboard: Keyboard
+
+            /**
+             * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/presentation)
+             */
+            @ExperimentalWebApi
+            val presentation: Presentation
+
+            /**
+             * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/usb)
+             */
+            @ExperimentalWebApi
+            val usb: USB
+            """.trimIndent()
+
+            "WorkerNavigator",
+                -> result + "\n" + """
+            /**
+             * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/usb)
+             */
+            @ExperimentalWebApi
+            val usb: USB
+            """.trimIndent()
+
             else -> {
                 if (abortable) {
                     result.replace("var signal: AbortSignal?", "override var signal: AbortSignal?")
