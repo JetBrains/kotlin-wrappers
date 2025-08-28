@@ -3,11 +3,13 @@ package js.observable
 import js.core.JsAny
 import js.errors.JsError
 import web.abort.AbortSignal
+import web.abort.AbortableLike
 import web.function.VoidFunction
 
-external class Subscriber<T : JsAny?> {
+external class Subscriber<T : JsAny?> :
+    AbortableLike {
     val active: Boolean
-    val signal: AbortSignal
+    override val signal: AbortSignal
 
     fun next(value: T)
     fun error(error: JsError)
