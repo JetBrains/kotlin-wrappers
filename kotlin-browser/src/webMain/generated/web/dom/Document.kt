@@ -593,7 +593,7 @@ open external class Document :
 
     companion object {
         /**
-         * The **`parseHTMLUnsafe()`** static method of the Document object is used to parse an HTML input, optionally filtering unwanted HTML elements and attributes, in order to create a new Document instance.
+         * The **`parseHTMLUnsafe()`** static method of the Document object is used to parse HTML input, optionally filtering unwanted HTML elements and attributes, in order to create a new Document instance.
          *
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/parseHTMLUnsafe_static)
          */

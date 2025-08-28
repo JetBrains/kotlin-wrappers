@@ -16,7 +16,7 @@ open external class Highlight(
     vararg initialRanges: AbstractRange,
 ) : MutableSetLike<AbstractRange> {
     /**
-     * It is possible to create Range objects that overlap in a document.
+     * The `priority` property of the Highlight interface is a number used to determine which highlight's styles should be used to resolve style conflicts in overlapping parts.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Highlight/priority)
      */

@@ -331,7 +331,7 @@ protected constructor() :
     val webkitEntries: ReadonlyArray<FileSystemEntry>
 
     /**
-     * The **`webkitdirectory`** property of the HTMLInputElement interface reflects the `webkitdirectory` HTML attribute, which indicates that `<input type='file'>` elements should let the user select directories instead of files.
+     * The **`webkitdirectory`** property of the HTMLInputElement interface reflects the `webkitdirectory` HTML attribute, which indicates that `<input type='file'>` elements can only select directories instead of files.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLInputElement/webkitdirectory)
      */

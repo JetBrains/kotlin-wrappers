@@ -488,6 +488,12 @@ private fun String.patchQuerySelectors(): String =
 
             it + "\n" + register.replaceFirst("scriptURL: string | URL", "module: ServiceWorkerModule")
         }
+        .patchInterface("WebSocket") {
+            it.replace(
+                "    readonly readyState: 0 | 1 | 2 | 3;",
+                "    readonly readyState: ReadyState;",
+            )
+        }
 
 private fun String.patchDecodeAudioData(): String =
     patchInterface("BaseAudioContext") {

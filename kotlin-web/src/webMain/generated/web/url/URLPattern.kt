@@ -131,7 +131,7 @@ open external class URLPattern(
     ): URLPatternResult?
 
     /**
-     * The **`test()`** method of the URLPattern interface takes a URL or object of URL parts, and returns a boolean indicating if the given input matches the current pattern.
+     * The **`test()`** method of the URLPattern interface takes a URL string or object of URL parts, and returns a boolean indicating if the given input matches the current pattern.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/URLPattern/test)
      */
