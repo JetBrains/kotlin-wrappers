@@ -95,6 +95,12 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerContainer/startMessages)
      */
     fun startMessages()
+
+    @JsName("register")
+    fun registerAsync(
+        module: ServiceWorkerModule,
+        options: RegistrationOptions = definedExternally,
+    ): Promise<ServiceWorkerRegistration>
 }
 
 /**
@@ -175,6 +181,24 @@ suspend inline fun ServiceWorkerContainer.register(
 ): ServiceWorkerRegistration {
     return registerAsync(
         scriptURL = scriptURL,
+    ).await()
+}
+
+suspend inline fun ServiceWorkerContainer.register(
+    module: ServiceWorkerModule,
+    options: RegistrationOptions,
+): ServiceWorkerRegistration {
+    return registerAsync(
+        module = module,
+        options = options,
+    ).await()
+}
+
+suspend inline fun ServiceWorkerContainer.register(
+    module: ServiceWorkerModule,
+): ServiceWorkerRegistration {
+    return registerAsync(
+        module = module,
     ).await()
 }
 

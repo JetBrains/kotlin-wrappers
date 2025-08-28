@@ -482,6 +482,12 @@ private fun String.patchQuerySelectors(): String =
             "\ninterface AudioWorklet extends Worklet {",
             "\ninterface AudioWorklet extends Worklet<AudioWorkletModule> {",
         )
+        .patchInterface("ServiceWorkerContainer") {
+            val register = it.splitToSequence("\n")
+                .first { it.startsWith("    register(scriptURL: string | URL, ") }
+
+            it + "\n" + register.replaceFirst("scriptURL: string | URL", "module: ServiceWorkerModule")
+        }
 
 private fun String.patchDecodeAudioData(): String =
     patchInterface("BaseAudioContext") {
