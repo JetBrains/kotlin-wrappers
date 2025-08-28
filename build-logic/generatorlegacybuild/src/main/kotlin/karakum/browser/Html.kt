@@ -700,7 +700,6 @@ internal fun htmlDeclarations(
                 pkg = "web.streams",
             )
         )
-        .plus(Abortable())
         .plus(Ed25519())
 }
 
@@ -934,7 +933,7 @@ internal fun convertInterface(
         .filterNotNull()
         .flatten()
         .plus(additionalIterableParent)
-        .plus(ABORTABLE.takeIf { abortable })
+        .plus("Abortable".takeIf { abortable })
         .plus("StartInDirectory".takeIf { name == "FileSystemHandle" })
         .plus(SERIALIZABLE.takeIf { IDLRegistry.isSerializable(name) })
         .filterNotNull()
