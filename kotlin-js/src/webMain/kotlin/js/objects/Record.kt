@@ -18,11 +18,11 @@ external interface Record<K : JsAny, V : JsAny?> :
     ): Unit = definedExternally
 }
 
-operator fun <V : JsAny?> Record<JsAny, V>.set(key: String, value: V) {
+inline operator fun <V : JsAny?> Record<JsAny, V>.set(key: String, value: V) {
     set(key.toJsString(), value)
 }
 
-operator fun <V : JsAny?> Record<JsString, V>.set(key: String, value: V) {
+inline operator fun <V : JsAny?> Record<JsString, V>.set(key: String, value: V) {
     set(key.toJsString(), value)
 }
 

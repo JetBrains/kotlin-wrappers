@@ -15,8 +15,8 @@ external interface ReadonlyRecord<K : JsAny, out V : JsAny?> {
     ): V? = definedExternally
 }
 
-operator fun <V : JsAny?> ReadonlyRecord<JsAny, V>.get(key: String): V? =
+inline operator fun <V : JsAny?> ReadonlyRecord<JsAny, V>.get(key: String): V? =
     get(key.toJsString())
 
-operator fun <V : JsAny?> ReadonlyRecord<JsString, V>.get(key: String): V? =
+inline operator fun <V : JsAny?> ReadonlyRecord<JsString, V>.get(key: String): V? =
     get(key.toJsString())
