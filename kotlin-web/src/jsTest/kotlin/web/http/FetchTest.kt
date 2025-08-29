@@ -1,7 +1,9 @@
 package web.http
 
+import js.core.JsAny
 import js.errors.TypeError
 import js.errors.toJsError
+import js.errors.toJsErrorLike
 import js.globals.globalThis
 import js.promise.Promise
 import js.promise.invoke
@@ -11,6 +13,7 @@ import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.test.runTest
 import web.abort.abortEvent
+import web.errors.DOMException
 import web.events.ABORT
 import web.events.Event
 import web.events.addEventHandler
@@ -42,13 +45,14 @@ class FetchTest {
 
     @Test
     fun should_throw_exception_on_error() = runTest {
-        globalThis[FETCH] = { Promise.reject(IllegalStateException("Test error")) }
+        globalThis[FETCH] = { Promise.reject(DOMException("Test error")) }
 
-        assertFailsWith<IllegalStateException> {
+        val error: JsAny = assertFailsWith<Throwable> {
             fetch(request)
-        }.also {
-            assertEquals("Test error", it.message)
-        }
+        }.toJsErrorLike()
+
+        assertIs<DOMException>(error)
+        assertEquals("Test error", error.message)
     }
 
     @Test
