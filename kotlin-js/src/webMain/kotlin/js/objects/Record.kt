@@ -5,6 +5,8 @@
 package js.objects
 
 import js.core.JsAny
+import js.core.JsPrimitives.toJsString
+import js.core.JsString
 import kotlin.js.definedExternally
 
 external interface Record<K : JsAny, V : JsAny?> :
@@ -15,6 +17,15 @@ external interface Record<K : JsAny, V : JsAny?> :
         value: V,
     ): Unit = definedExternally
 }
+
+operator fun <V : JsAny?> Record<JsAny, V>.set(key: String, value: V) {
+    set(key.toJsString(), value)
+}
+
+operator fun <V : JsAny?> Record<JsString, V>.set(key: String, value: V) {
+    set(key.toJsString(), value)
+}
+
 
 fun <K : JsAny, V : JsAny?> Record(): Record<K, V> =
     unsafeJso()

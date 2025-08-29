@@ -5,6 +5,8 @@
 package js.objects
 
 import js.core.JsAny
+import js.core.JsPrimitives.toJsString
+import js.core.JsString
 import kotlin.js.definedExternally
 
 external interface ReadonlyRecord<K : JsAny, out V : JsAny?> {
@@ -12,3 +14,9 @@ external interface ReadonlyRecord<K : JsAny, out V : JsAny?> {
         key: K,
     ): V? = definedExternally
 }
+
+operator fun <V : JsAny?> ReadonlyRecord<JsAny, V>.get(key: String): V? =
+    get(key.toJsString())
+
+operator fun <V : JsAny?> ReadonlyRecord<JsString, V>.get(key: String): V? =
+    get(key.toJsString())
