@@ -1,12 +1,12 @@
 package remix.run.router
 
-import remix.run.router.internal.createCancellablePromise
+import web.abort.internal.createCancellablePromise
 
 fun <Context> LoaderFunction(
     block: suspend (args: LoaderFunctionArgs<Context>, handlerCtx: Any?) -> DataFunctionValue,
 ): LoaderFunction<Context> =
     LoaderFunctionAsync { args, handlerCtx ->
-        createCancellablePromise(args) {
+        createCancellablePromise(args.request) {
             block(args, handlerCtx)
         }
     }
