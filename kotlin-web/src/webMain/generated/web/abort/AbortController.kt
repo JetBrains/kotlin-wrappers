@@ -10,13 +10,14 @@ import kotlin.js.definedExternally
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AbortController)
  */
-open external class AbortController {
+open external class AbortController :
+    AbortableLike {
     /**
      * The **`signal`** read-only property of the AbortController interface returns an AbortSignal object instance, which can be used to communicate with/abort an asynchronous operation as desired.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AbortController/signal)
      */
-    val signal: AbortSignal
+    override val signal: AbortSignal
 
     /**
      * The **`abort()`** method of the AbortController interface aborts an asynchronous operation before it has completed.

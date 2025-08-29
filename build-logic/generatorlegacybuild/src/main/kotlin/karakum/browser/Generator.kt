@@ -96,6 +96,7 @@ private val DEFAULT_IMPORTS = Imports(
     "web.abort.AbortController",
     "web.abort.AbortSignal",
     "web.abort.Abortable",
+    "web.abort.AbortableLike",
     "web.abort.internal.awaitCancellable",
     "web.abort.internal.createAbortable",
     "web.abort.internal.patchAbortOptions",

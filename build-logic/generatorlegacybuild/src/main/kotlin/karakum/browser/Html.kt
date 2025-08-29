@@ -884,6 +884,9 @@ internal fun convertInterface(
         .removePrefix(" | null")
         .let { it.startsWith(";") || it.isEmpty() }
 
+    val abortableLike = memberSource.substringAfter("readonly signal: AbortSignal", "-")
+        .let { it.startsWith(";") || it.isEmpty() }
+
     val mapLikeParameters = if (iterableTypeParameter != null) {
         mapLikeParameters(iterableTypeParameter)
     } else null
@@ -934,6 +937,7 @@ internal fun convertInterface(
         .flatten()
         .plus(additionalIterableParent)
         .plus("Abortable".takeIf { abortable })
+        .plus("AbortableLike".takeIf { abortableLike })
         .plus("StartInDirectory".takeIf { name == "FileSystemHandle" })
         .plus(SERIALIZABLE.takeIf { IDLRegistry.isSerializable(name) })
         .filterNotNull()
@@ -1251,9 +1255,15 @@ internal fun convertInterface(
             """.trimIndent()
 
             else -> {
-                if (abortable) {
-                    result.replace("var signal: AbortSignal?", "override var signal: AbortSignal?")
-                } else result
+                when {
+                    abortable
+                        -> result.replace("var signal: AbortSignal?", "override var signal: AbortSignal?")
+
+                    abortableLike
+                        -> result.replace("val signal: AbortSignal", "override val signal: AbortSignal")
+
+                    else -> result
+                }
             }
         }
 

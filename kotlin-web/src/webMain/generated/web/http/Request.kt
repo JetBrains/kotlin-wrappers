@@ -3,6 +3,7 @@
 package web.http
 
 import web.abort.AbortSignal
+import web.abort.AbortableLike
 import web.url.URL
 import kotlin.js.definedExternally
 
@@ -19,7 +20,8 @@ open external class Request(
      */
     val url: String,
     init: RequestInit = definedExternally,
-) : Body {
+) : Body,
+    AbortableLike {
     constructor(
         url: URL,
         init: RequestInit = definedExternally,
@@ -112,7 +114,7 @@ open external class Request(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/signal)
      */
-    val signal: AbortSignal
+    override val signal: AbortSignal
 
     /**
      * The **`clone()`** method of the Request interface creates a copy of the current `Request` object.
