@@ -1,6 +1,7 @@
 package styled
 
 import js.array.asList
+import js.core.asString
 import js.globals.globalThis
 import web.blob.Blob
 import web.blob.BlobPart

@@ -1,13 +1,10 @@
 package web.dom
 
+import js.core.StringLike
 import js.reflect.unsafeCast
-import seskar.js.JsAlias
-import seskar.js.JsAlias.Companion.THIS
 
-sealed external interface ElementId {
-    @JsAlias(THIS)
-    fun asString(): String
-}
+external interface ElementId :
+    StringLike
 
 inline fun ElementId(
     value: String,
