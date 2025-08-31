@@ -7,9 +7,7 @@
 
 package react
 
-import js.array.ReadonlyArray
 import js.reflect.unsafeCast
-import seskar.js.JsAlias
 import kotlin.reflect.KProperty
 
 /**
@@ -17,24 +15,24 @@ import kotlin.reflect.KProperty
  * @see <a href="https://reactjs.org/docs/hooks-state.html#hooks-and-function-components">Hooks and Function Components</a>
  */
 sealed external interface StateInstance<T> {
-    @JsAlias("[0]")
-    operator fun component1(): T
+    inline operator fun component1(): T =
+        asDynamic()[0]
 
-    @JsAlias("[1]")
-    operator fun component2(): StateSetter<T>
+    inline operator fun component2(): StateSetter<T> =
+        asDynamic()[1]
 
-    @JsAlias("[0]")
-    operator fun getValue(
+    inline operator fun getValue(
         thisRef: Nothing?,
         property: KProperty<*>,
-    ): T
+    ): T =
+        asDynamic()[0]
 
     inline operator fun setValue(
         thisRef: Nothing?,
         property: KProperty<*>,
         value: T,
     ) {
-        unsafeCast<ReadonlyArray<StateSetter<T>>>(this)[1](value)
+        asDynamic()[1](value)
     }
 }
 
