@@ -128,17 +128,18 @@ internal object CommonUnionConverter : UnionConverter {
         val interfaceName = name.substringBefore('<')
         val hasGenerics = interfaceName != name
 
-        val extensions = constants
-            .joinToString("\n\n") {
-                require(!hasGenerics || it.type != null) {
-                    "You should specify types for all generic unions. Wrong constant: $it."
-                }
-
-                """
-                inline val $interfaceName.Companion.${it.name}: ${it.type ?: name}
-                    get() = unsafeCast("${it.value}")
-                """.trimIndent()
+        val extensions = constants.joinToString("\n\n") {
+            require(!hasGenerics || it.type != null) {
+                "You should specify types for all generic unions. Wrong constant: $it."
             }
+
+            it.withComment(
+                """
+            inline val $interfaceName.Companion.${it.name}: ${it.type ?: name}
+                get() = unsafeCast(${it.jsValue})
+            """,
+            )
+        }
 
         return """
                sealed external interface $name {
@@ -158,12 +159,12 @@ internal object CommonUnionConverter : UnionConverter {
         val extensions = constants.joinToString("\n\n") {
             """
             inline val $name.Companion.${it.name}: $name
-                get() = unsafeCast("${it.value}")
+                get() = unsafeCast(${it.jsValue})
             """.trimIndent()
         }
 
         return """
-                sealed external interface $name {
+        sealed external interface $name {
             companion object
         }
 
@@ -181,7 +182,7 @@ internal object CommonUnionConverter : UnionConverter {
         val extensions = constants.joinToString("\n") {
             """
             inline val $name.Companion.${it.name}: $parentType.${it.name.replaceFirstChar(Char::uppercase)}
-                get() = unsafeCast("${it.value}")
+                get() = unsafeCast(${it.jsValue})
             """.trimIndent()
         }
 
@@ -201,7 +202,7 @@ internal object CommonUnionConverter : UnionConverter {
         val extensions = constants.joinToString("\n\n") {
             """
             inline val $name.Companion.${it.name}: $name.${it.name}
-                get() = unsafeCast("${it.value}")
+                get() = unsafeCast(${it.jsValue})
             """.trimIndent()
         }
 
@@ -228,6 +229,9 @@ internal data class UnionConstant(
     private val originalValue: Boolean = false,
     val comment: String? = null,
 ) {
+    val jsValue: String
+        get() = if (originalValue) value else """"$value""""
+
     val jsValueAnnotation: String
         get() {
             val annotation = if (originalValue) {
@@ -243,9 +247,12 @@ internal data class UnionConstant(
                 """@JsValue("$escapedValue")"""
             }
 
-            return listOfNotNull(comment, annotation)
-                .joinToString("\n")
+            return withComment(annotation)
         }
+
+    fun withComment(valueExpression: String): String =
+        listOfNotNull(comment, valueExpression.trimIndent())
+            .joinToString("\n")
 }
 
 internal fun unionConstant(

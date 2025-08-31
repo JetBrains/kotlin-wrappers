@@ -86,8 +86,6 @@ private val DEFAULT_IMPORTS = Imports(
     "kotlin.js.definedExternally",
     "kotlin.js.undefined",
 
-    "seskar.js.JsRawValue",
-
     "web.abort.AbortController",
     "web.abort.AbortSignal",
     "web.abort.Abortable",
