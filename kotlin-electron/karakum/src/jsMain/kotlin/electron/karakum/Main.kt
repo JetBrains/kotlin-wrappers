@@ -1,5 +1,6 @@
 package electron.karakum
 
+import electron.karakum.plugins.*
 import io.github.sgrishchenko.karakum.configuration.ConflictResolutionStrategy
 import io.github.sgrishchenko.karakum.configuration.Granularity
 import io.github.sgrishchenko.karakum.configuration.NamespaceStrategy
@@ -22,18 +23,6 @@ suspend fun main() {
     val outputPath = process.argv[2]
 
     val cwd = process.cwd()
-
-    val jsPlugins = loadExtensions(
-        "Plugin",
-        arrayOf("kotlin/plugins/*.js"),
-        cwd
-    ) { plugin ->
-        if (plugin is Function<*>) {
-            createPlugin(plugin.unsafeCast<SimplePlugin>())
-        } else {
-            plugin.unsafeCast<Plugin>()
-        }
-    }
 
     val jsInjections = loadExtensions(
         "Injection",
@@ -73,8 +62,20 @@ suspend fun main() {
 
     generate {
         plugins = manyOf(
-            values = jsPlugins + arrayOf(
-            )
+            convertCollections,
+            convertElectronQualifiedName,
+            convertErrorTypeReferenceNode,
+            convertEvent,
+            convertFileHeritageClause,
+            convertNodeJsNamespace,
+            convertNodeJsQualifiedName,
+            convertNodeRequire,
+            convertOverriddenPropertySignature,
+            convertSkippedGenerics,
+            convertStringGenericMethods,
+            convertTypealiasParameterBounds,
+            convertUtilityTypes,
+            convertWebviewGenericEventMethods,
         )
         injections = manyOf(values = jsInjections + arrayOf())
         annotations = manyOf(values = jsAnnotations + arrayOf())
