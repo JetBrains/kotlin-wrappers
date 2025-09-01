@@ -38,12 +38,12 @@ class FetchTest {
 
     @Test
     fun should_return_result_on_success() = runTest {
-        val expectedResult = 42
-        val response = Response.json(expectedResult)
+        val expectedResult = "--42--"
+        val response = Response(BodyInit(expectedResult))
 
         globalThis[FETCH] = FetchFunction { Promise.resolve(response) }
 
-        val actualResult = fetch(request).json() as Int
+        val actualResult = fetch(request).text()
 
         assertEquals(expectedResult, actualResult)
     }
