@@ -14,9 +14,6 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.test.runTest
 import web.abort.abortEvent
 import web.errors.DOMException
-import web.events.ABORT
-import web.events.Event
-import web.events.addEventHandler
 import web.events.addHandler
 import kotlin.test.*
 
@@ -108,7 +105,7 @@ class FetchTest {
         var isCanceled = false
 
         globalThis[FETCH] = { request: Request ->
-            request.signal.addEventHandler(Event.ABORT) {
+            request.signal.abortEvent.addHandler {
                 isCanceled = true
             }
 
