@@ -121,14 +121,14 @@ class FetchTest {
             Promise<Nothing> { _ -> }
         }
 
-        assertFailsWith<IllegalStateException> {
+        val exception = assertFailsWith<IllegalStateException> {
             coroutineScope {
                 launch { fetch(request) }
                 launch { error("Test error") }
             }
-        }.also {
-            assertEquals("Test error", it.message)
         }
+
+        assertEquals("Test error", exception.message)
 
         assertTrue(isCanceled)
     }
