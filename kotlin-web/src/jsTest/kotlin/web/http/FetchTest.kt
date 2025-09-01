@@ -7,6 +7,7 @@ import js.errors.toJsErrorLike
 import js.globals.globalThis
 import js.promise.Promise
 import js.promise.invoke
+import js.reflect.unsafeCast
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.async
 import kotlinx.coroutines.coroutineScope
@@ -18,6 +19,13 @@ import web.events.addHandler
 import kotlin.test.*
 
 private const val FETCH = "fetch"
+
+private external interface FetchFunction
+
+private inline fun FetchFunction(
+    noinline value: (Request) -> Promise<Response>,
+): FetchFunction =
+    unsafeCast(provider = value)
 
 class FetchTest {
     private val request = Request("localhost:8080")
@@ -33,7 +41,7 @@ class FetchTest {
         val expectedResult = 42
         val response = Response.json(expectedResult)
 
-        globalThis[FETCH] = { Promise.resolve(response) }
+        globalThis[FETCH] = FetchFunction { Promise.resolve(response) }
 
         val actualResult = fetch(request).json() as Int
 
@@ -42,7 +50,7 @@ class FetchTest {
 
     @Test
     fun should_throw_exception_on_error() = runTest {
-        globalThis[FETCH] = { Promise.reject(DOMException("Test error")) }
+        globalThis[FETCH] = FetchFunction { Promise.reject(DOMException("Test error")) }
 
         val error: JsAny = assertFailsWith<Throwable> {
             fetch(request)
@@ -56,7 +64,7 @@ class FetchTest {
     fun should_be_canceled_on_parent_job_cancellation() = runTest {
         var isCanceled = false
 
-        globalThis[FETCH] = { request: Request ->
+        globalThis[FETCH] = FetchFunction { request ->
             request.signal.abortEvent.addHandler {
                 isCanceled = true
             }
@@ -76,7 +84,7 @@ class FetchTest {
     fun emulate_real_fetch_which_throws_error_on_cancellation() = runTest {
         var isCanceled = false
 
-        globalThis[FETCH] = { request: Request ->
+        globalThis[FETCH] = FetchFunction { request ->
             Promise<Nothing> { _, reject ->
                 request.signal.abortEvent.addHandler {
                     isCanceled = true
@@ -104,7 +112,7 @@ class FetchTest {
     fun should_be_canceled_on_parent_job_error() = runTest {
         var isCanceled = false
 
-        globalThis[FETCH] = { request: Request ->
+        globalThis[FETCH] = FetchFunction { request ->
             request.signal.abortEvent.addHandler {
                 isCanceled = true
             }
