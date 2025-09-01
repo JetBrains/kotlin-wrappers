@@ -326,6 +326,12 @@ internal fun String.applyPatches(): String {
             "new(context: BaseAudioContext, name: string, options?: AudioWorkletNodeOptions): AudioWorkletNode;",
             "new(context: BaseAudioContext, name: AudioWorkletProcessorName, options?: AudioWorkletNodeOptions): AudioWorkletNode;",
         )
+        .patchInterface("Document") {
+            it.replace(
+                "(unused1?: string, unused2?: string): ",
+                "(): ",
+            )
+        }
 }
 
 internal val DOM_GEOMETRY_ALIASES = listOf(

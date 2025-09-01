@@ -558,11 +558,7 @@ open external class Document :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/open)
      */
-    fun open(
-        unused1: String = definedExternally,
-        unused2: String = definedExternally,
-    ): Document
-
+    fun open(): Document
     fun open(
         url: String,
         name: String,
