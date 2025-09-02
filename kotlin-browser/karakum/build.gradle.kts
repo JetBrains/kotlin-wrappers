@@ -50,6 +50,7 @@ object Includes {
         "web/scheduling/queueMicrotask.kt",
         "web/serialization",
         "web/sockets",
+        "web/sse",
         "web/storage/localStorage.val.kt",
         "web/storage/sessionStorage.val.kt",
         "web/storage/Storage.kt",
