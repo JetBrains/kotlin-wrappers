@@ -4,4 +4,4 @@
 
 package tanstack.query.core
 
-external fun isPlainArray(value: Any?): Boolean
+external fun isPlainArray(value: Any?): Boolean /* value is Array<unknown> */

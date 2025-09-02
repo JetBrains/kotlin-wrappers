@@ -4,4 +4,4 @@
 
 package tanstack.query.core
 
-external fun isPlainObject(o: Any): Boolean /* o is Object */
+external fun isPlainObject(o: Any): Boolean /* o is Record<PropertyKey, unknown> */
