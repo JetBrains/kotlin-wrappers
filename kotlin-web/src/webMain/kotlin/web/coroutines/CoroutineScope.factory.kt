@@ -13,8 +13,12 @@ fun CoroutineScope(
 ): CoroutineScope {
     val scope = IsolatedCoroutineScope()
 
-    signal.abortEvent.addHandler {
+    if (signal.aborted) {
         scope.cancel()
+    } else {
+        signal.abortEvent.addHandler {
+            scope.cancel()
+        }
     }
 
     return scope
