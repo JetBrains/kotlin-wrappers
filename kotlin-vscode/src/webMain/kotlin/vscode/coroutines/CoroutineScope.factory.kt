@@ -1,22 +1,21 @@
 package vscode.coroutines
 
-import js.coroutines.internal.IsolatedCoroutineScope
 import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.cancel
+import kotlinx.coroutines.Job
 import vscode.CancellationToken
 
 fun CoroutineScope(
     token: CancellationToken,
 ): CoroutineScope {
-    val scope = IsolatedCoroutineScope()
+    val job = Job()
 
     if (token.isCancellationRequested) {
-        scope.cancel()
+        job.cancel()
     } else {
         token.onCancellationRequested {
-            scope.cancel()
+            job.cancel()
         }
     }
 
-    return scope
+    return CoroutineScope(job)
 }
