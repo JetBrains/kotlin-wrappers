@@ -1,8 +1,7 @@
 package web.coroutines
 
-import js.coroutines.internal.IsolatedCoroutineScope
 import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.cancel
+import kotlinx.coroutines.Job
 import web.abort.AbortSignal
 import web.abort.AbortableLike
 import web.abort.abortEvent
@@ -11,17 +10,17 @@ import web.events.addHandler
 fun CoroutineScope(
     signal: AbortSignal,
 ): CoroutineScope {
-    val scope = IsolatedCoroutineScope()
+    val job = Job()
 
     if (signal.aborted) {
-        scope.cancel()
+        job.cancel()
     } else {
         signal.abortEvent.addHandler {
-            scope.cancel()
+            job.cancel()
         }
     }
 
-    return scope
+    return CoroutineScope(job)
 }
 
 fun CoroutineScope(
