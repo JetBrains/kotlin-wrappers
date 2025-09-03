@@ -8,6 +8,7 @@ import kotlinx.coroutines.test.runTest
 import kotlin.test.Test
 import kotlin.test.assertFalse
 import kotlin.test.assertTrue
+import kotlin.time.Duration.Companion.milliseconds
 import kotlin.time.Duration.Companion.seconds
 
 class SuspendAutoCloseableTest {
@@ -16,7 +17,7 @@ class SuspendAutoCloseableTest {
         var isClosed = false
         val resource = SuspendAutoCloseable {
             // emulate asynchronous cleanup
-            delay(1)
+            delay(1.milliseconds)
             isClosed = true
         }
 
@@ -30,7 +31,7 @@ class SuspendAutoCloseableTest {
         var isClosed = false
         val resource = SuspendAutoCloseable {
             // emulate asynchronous cleanup
-            delay(1)
+            delay(1.milliseconds)
             isClosed = true
         }
 
@@ -49,7 +50,7 @@ class SuspendAutoCloseableTest {
         var isClosed = false
         val resource = SuspendAutoCloseable {
             // emulate asynchronous cleanup
-            delay(1)
+            delay(1.milliseconds)
             isClosed = true
         }
 
