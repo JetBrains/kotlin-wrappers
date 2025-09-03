@@ -10,8 +10,12 @@ fun CoroutineScope(
 ): CoroutineScope {
     val scope = IsolatedCoroutineScope()
 
-    token.onCancellationRequested {
+    if (token.isCancellationRequested) {
         scope.cancel()
+    } else {
+        token.onCancellationRequested {
+            scope.cancel()
+        }
     }
 
     return scope
