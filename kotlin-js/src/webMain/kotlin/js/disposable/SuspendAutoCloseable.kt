@@ -1,5 +1,7 @@
 package js.disposable
 
+import kotlinx.coroutines.NonCancellable
+import kotlinx.coroutines.withContext
 import kotlin.contracts.InvocationKind
 import kotlin.contracts.contract
 
@@ -26,7 +28,9 @@ internal suspend inline fun <R> SuspendAutoCloseable.use(
         exception = e
         throw e
     } finally {
-        closeFinally(exception)
+        withContext(NonCancellable) {
+            closeFinally(exception)
+        }
     }
 }
 
