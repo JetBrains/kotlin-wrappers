@@ -56,6 +56,9 @@ external object ITwinData {
      *
      * If the `type` or `rootDocument` are not provided this function
      * will first request the full metadata for the specified reality data to fill these values.
+     *
+     * The `maximumScreenSpaceError` of the resulting tileset will default to 4,
+     * unless it is explicitly overridden with the given tileset options.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ITwinData.html#.createTilesetForRealityDataId">Online Documentation</a>
      */
     @JsAsync
@@ -70,6 +73,8 @@ external object ITwinData {
      * @property [realityDataId] The id of the reality data to load
      * @property [type] The type of this reality data
      * @property [rootDocument] The path of the root document for this reality data
+     * @property [tilesetOptions] Object containing
+     *   options to pass to the internally created [Cesium3DTileset].
      */
     @JsPlainObject
     interface CreateTilesetForRealityDataIdOptions {
@@ -77,6 +82,7 @@ external object ITwinData {
         val realityDataId: String
         val type: ITwinPlatform.RealityDataType?
         val rootDocument: String?
+        val tilesetOptions: Cesium3DTileset.ConstructorOptions?
     }
 
     /**

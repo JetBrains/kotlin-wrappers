@@ -334,6 +334,13 @@ external class Ellipsoid(
         val MOON: Ellipsoid
 
         /**
+         * An Ellipsoid instance initialized to a sphere with the mean radii of Mars.
+         * Source: https://epsg.io/104905
+         * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Ellipsoid.html#.MARS">Online Documentation</a>
+         */
+        val MARS: Ellipsoid
+
+        /**
          * The default ellipsoid used when not otherwise specified.
          * ```
          * Ellipsoid.default = Ellipsoid.MOON;

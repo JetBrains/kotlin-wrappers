@@ -14,8 +14,9 @@ import seskar.js.JsAsync
 /**
  * Provides tiled imagery hosted by a Web Map Service (WMS) server.
  * ```
+ * // WMS servers operated by the US government https://apps.nationalmap.gov/services/
  * const provider = new WebMapServiceImageryProvider({
- *     url : 'https://sampleserver1.arcgisonline.com/ArcGIS/services/Specialty/ESRI_StatesCitiesRivers_USA/MapServer/WMSServer',
+ *     url : 'https://basemap.nationalmap.gov:443/arcgis/services/USGSHydroCached/MapServer/WMSServer',
  *     layers : '0',
  *     proxy: new DefaultProxy('/proxy/')
  * });
