@@ -1,6 +1,11 @@
-import ts from "typescript"
+package electron.karakum.annotations
 
-const interfacesWithSuperclass = [
+import electron.karakum.util.nullable
+import io.github.sgrishchenko.karakum.extension.AnnotationContext
+import typescript.Node
+import typescript.isInterfaceDeclaration
+
+private val interfacesWithSuperclass = setOf(
     "App",
     "AutoUpdater",
     "InAppPurchase",
@@ -38,15 +43,11 @@ const interfacesWithSuperclass = [
     "UpdateTargetUrlEvent",
     "WillFrameNavigateEvent",
     "WillNavigateEvent",
-]
+)
 
-export default (node) => {
-    if (
-        ts.isInterfaceDeclaration(node)
-        && interfacesWithSuperclass.some(name => node.name.text === name)
-    ) {
-        return `@Suppress("INTERFACE_WITH_SUPERCLASS")`
-    }
+fun annotateInterfaceWithSuperclass(node: Node, context: AnnotationContext) = nullable {
+    ensure(isInterfaceDeclaration(node))
+    ensure(node.name.text in interfacesWithSuperclass)
 
-    return null
+    "@Suppress(\"INTERFACE_WITH_SUPERCLASS\")"
 }

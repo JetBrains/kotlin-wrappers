@@ -1,12 +1,23 @@
 package electron.karakum
 
+import electron.karakum.annotations.annotateInterfaceWithSuperclass
+import electron.karakum.annotations.annotateJsPlainObject
+import electron.karakum.inheritanceModifiers.modifyClassInheritance
+import electron.karakum.inheritanceModifiers.modifyMethodInheritance
+import electron.karakum.inheritanceModifiers.modifyPropertyInheritance
+import electron.karakum.nameResolvers.resolveDownloadItemListenerStateName
+import electron.karakum.nameResolvers.resolveInterfaceArrayFieldName
+import electron.karakum.nameResolvers.resolveInterfaceMethodNullableCallbackParameterName
+import electron.karakum.nameResolvers.resolveSessionListenerCallbackActionName
 import electron.karakum.plugins.*
 import io.github.sgrishchenko.karakum.configuration.ConflictResolutionStrategy
 import io.github.sgrishchenko.karakum.configuration.Granularity
 import io.github.sgrishchenko.karakum.configuration.NamespaceStrategy
 import io.github.sgrishchenko.karakum.configuration.loadExtensions
-import io.github.sgrishchenko.karakum.extension.*
-import io.github.sgrishchenko.karakum.extension.Annotation
+import io.github.sgrishchenko.karakum.extension.Injection
+import io.github.sgrishchenko.karakum.extension.SimpleInjection
+import io.github.sgrishchenko.karakum.extension.VarianceModifier
+import io.github.sgrishchenko.karakum.extension.createInjection
 import io.github.sgrishchenko.karakum.generate
 import io.github.sgrishchenko.karakum.util.manyOf
 import js.import.import
@@ -36,24 +47,6 @@ suspend fun main() {
         }
     }
 
-    val jsAnnotations = loadExtensions<Annotation>(
-        "Annotation",
-        arrayOf("kotlin/annotations/*.js"),
-        cwd,
-    )
-
-    val jsNameResolvers = loadExtensions<NameResolver>(
-        "Name Resolver",
-        arrayOf("kotlin/nameResolvers/*.js"),
-        cwd,
-    )
-
-    val jsInheritanceModifiers = loadExtensions<InheritanceModifier>(
-        "Inheritance Modifier",
-        arrayOf("kotlin/inheritanceModifiers/*.js"),
-        cwd,
-    )
-
     val jsVarianceModifiers = loadExtensions<VarianceModifier>(
         "Variance Modifier",
         arrayOf("kotlin/varianceModifiers/*.js"),
@@ -78,9 +71,21 @@ suspend fun main() {
             convertWebviewGenericEventMethods,
         )
         injections = manyOf(values = jsInjections + arrayOf())
-        annotations = manyOf(values = jsAnnotations + arrayOf())
-        nameResolvers = manyOf(values = jsNameResolvers + arrayOf())
-        inheritanceModifiers = manyOf(values = jsInheritanceModifiers + arrayOf())
+        annotations = manyOf(
+            ::annotateInterfaceWithSuperclass,
+            ::annotateJsPlainObject,
+        )
+        nameResolvers = manyOf(
+            ::resolveDownloadItemListenerStateName,
+            ::resolveInterfaceArrayFieldName,
+            ::resolveInterfaceMethodNullableCallbackParameterName,
+            ::resolveSessionListenerCallbackActionName,
+        )
+        inheritanceModifiers = manyOf(
+            ::modifyClassInheritance,
+            ::modifyMethodInheritance,
+            ::modifyPropertyInheritance,
+        )
         varianceModifiers = manyOf(values = jsVarianceModifiers + arrayOf())
 
         input = manyOf("$electronPackage/electron.d.ts")
