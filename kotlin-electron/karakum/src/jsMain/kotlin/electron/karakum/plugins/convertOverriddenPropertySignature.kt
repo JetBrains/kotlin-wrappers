@@ -3,7 +3,7 @@ package electron.karakum.plugins
 import electron.karakum.plugins.SignatureOverrideConfig.Alias
 import electron.karakum.plugins.SignatureOverrideConfig.Overlap
 import electron.karakum.plugins.SignatureOverrideConfig.Preserve
-import electron.karakum.util.nullable
+import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.createPlugin
 import io.github.sgrishchenko.karakum.extension.renderNullable
 import io.github.sgrishchenko.karakum.util.getParentOrNull

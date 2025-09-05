@@ -3,7 +3,7 @@ package node.karakum.annotations
 import io.github.sgrishchenko.karakum.extension.AnnotationContext
 import io.github.sgrishchenko.karakum.util.getParentOrNull
 import io.github.sgrishchenko.karakum.util.getSourceFileOrNull
-import node.karakum.util.nullable
+import arrow.core.raise.nullable
 import typescript.Node
 import typescript.isClassDeclaration
 import typescript.isExpressionWithTypeArguments

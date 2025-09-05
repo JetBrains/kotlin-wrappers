@@ -12,8 +12,8 @@ import io.github.sgrishchenko.karakum.util.camelize
 import io.github.sgrishchenko.karakum.util.getParentOrNull
 import io.github.sgrishchenko.karakum.util.getSourceFileOrNull
 import js.array.ReadonlyArray
-import node.karakum.util.impure
-import node.karakum.util.nullable
+import arrow.core.raise.impure
+import arrow.core.raise.nullable
 import typescript.DeclarationStatement
 import typescript.Node
 import typescript.ParameterDeclaration

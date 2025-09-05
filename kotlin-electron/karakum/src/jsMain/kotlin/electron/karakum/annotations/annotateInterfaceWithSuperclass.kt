@@ -1,6 +1,6 @@
 package electron.karakum.annotations
 
-import electron.karakum.util.nullable
+import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.AnnotationContext
 import typescript.Node
 import typescript.isInterfaceDeclaration

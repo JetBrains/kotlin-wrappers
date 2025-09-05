@@ -2,7 +2,7 @@ package node.karakum.plugins
 
 import io.github.sgrishchenko.karakum.extension.createPlugin
 import io.github.sgrishchenko.karakum.util.getParentOrNull
-import node.karakum.util.nullable
+import arrow.core.raise.nullable
 import typescript.isClassDeclaration
 import typescript.isIdentifier
 import typescript.isMethodDeclaration

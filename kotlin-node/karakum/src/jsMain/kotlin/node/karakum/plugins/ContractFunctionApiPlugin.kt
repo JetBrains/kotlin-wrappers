@@ -15,7 +15,7 @@ import io.github.sgrishchenko.karakum.structure.derived.generateDerivedDeclarati
 import io.github.sgrishchenko.karakum.util.escapeIdentifier
 import io.github.sgrishchenko.karakum.util.getSourceFileOrNull
 import js.array.ReadonlyArray
-import node.karakum.util.nullable
+import arrow.core.raise.nullable
 import typescript.FunctionDeclaration
 import typescript.Node
 import typescript.asArray

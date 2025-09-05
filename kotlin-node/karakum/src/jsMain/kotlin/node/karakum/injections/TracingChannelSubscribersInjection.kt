@@ -8,8 +8,8 @@ import io.github.sgrishchenko.karakum.extension.InjectionType
 import io.github.sgrishchenko.karakum.extension.Render
 import io.github.sgrishchenko.karakum.util.getParentOrNull
 import io.github.sgrishchenko.karakum.util.getSourceFileOrNull
-import node.karakum.util.Raise
-import node.karakum.util.nullable
+import arrow.core.raise.Raise
+import arrow.core.raise.nullable
 import typescript.Node
 import typescript.isIdentifier
 import typescript.isIntersectionTypeNode

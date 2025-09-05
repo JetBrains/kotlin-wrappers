@@ -3,7 +3,7 @@ package node.karakum.nameResolvers
 import io.github.sgrishchenko.karakum.extension.Context
 import io.github.sgrishchenko.karakum.extension.plugins.TypeScriptService
 import io.github.sgrishchenko.karakum.extension.plugins.typeScriptServiceKey
-import node.karakum.util.nullable
+import arrow.core.raise.nullable
 import typescript.Node
 import typescript.isConditionalTypeNode
 import typescript.isIdentifier

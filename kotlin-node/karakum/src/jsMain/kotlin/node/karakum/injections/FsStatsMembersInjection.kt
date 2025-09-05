@@ -13,8 +13,8 @@ import io.github.sgrishchenko.karakum.extension.plugins.convertParameterDeclarat
 import io.github.sgrishchenko.karakum.extension.renderNullable
 import io.github.sgrishchenko.karakum.util.getParentOrNull
 import io.github.sgrishchenko.karakum.util.getSourceFileOrNull
-import node.karakum.util.impure
-import node.karakum.util.nullable
+import arrow.core.raise.impure
+import arrow.core.raise.nullable
 import typescript.Node
 import typescript.SyntaxKind
 import typescript.asArray

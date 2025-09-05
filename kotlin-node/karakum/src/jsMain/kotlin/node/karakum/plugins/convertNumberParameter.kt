@@ -1,6 +1,6 @@
 package node.karakum.plugins
 
-import node.karakum.util.nullable
+import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.createPlugin
 import io.github.sgrishchenko.karakum.util.getParentOrNull
 import typescript.SyntaxKind

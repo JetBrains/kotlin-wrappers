@@ -4,8 +4,8 @@ import io.github.sgrishchenko.karakum.extension.*
 import io.github.sgrishchenko.karakum.extension.plugins.InheritanceModifierService
 import io.github.sgrishchenko.karakum.extension.plugins.inheritanceModifierServiceKey
 import js.array.ReadonlyArray
-import node.karakum.util.impure
-import node.karakum.util.nullable
+import arrow.core.raise.impure
+import arrow.core.raise.nullable
 import typescript.*
 
 class DiffieHellmanGroupPlugin : Plugin {

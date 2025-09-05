@@ -1,6 +1,6 @@
 package electron.karakum.nameResolvers
 
-import electron.karakum.util.nullable
+import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.Context
 import io.github.sgrishchenko.karakum.extension.plugins.TypeScriptService
 import io.github.sgrishchenko.karakum.extension.plugins.typeScriptServiceKey

@@ -4,7 +4,7 @@ import io.github.sgrishchenko.karakum.extension.Context
 import io.github.sgrishchenko.karakum.extension.plugins.TypeScriptService
 import io.github.sgrishchenko.karakum.extension.plugins.typeScriptServiceKey
 import io.github.sgrishchenko.karakum.util.getSourceFileOrNull
-import node.karakum.util.nullable
+import arrow.core.raise.nullable
 import typescript.Node
 import typescript.asArray
 import typescript.isCallSignatureDeclaration

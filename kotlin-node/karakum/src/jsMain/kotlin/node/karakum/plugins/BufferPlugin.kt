@@ -2,8 +2,8 @@ package node.karakum.plugins
 
 import io.github.sgrishchenko.karakum.extension.*
 import io.github.sgrishchenko.karakum.extension.plugins.*
-import node.karakum.util.impure
-import node.karakum.util.nullable
+import arrow.core.raise.impure
+import arrow.core.raise.nullable
 import typescript.*
 
 private fun convertConstructSignatureDeclaration(

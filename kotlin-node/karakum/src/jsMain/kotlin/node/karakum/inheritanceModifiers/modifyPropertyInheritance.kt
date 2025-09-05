@@ -3,7 +3,7 @@ package node.karakum.inheritanceModifiers
 import io.github.sgrishchenko.karakum.extension.InheritanceModifierContext
 import io.github.sgrishchenko.karakum.util.getParentOrNull
 import io.github.sgrishchenko.karakum.util.getSourceFileOrNull
-import node.karakum.util.nullable
+import arrow.core.raise.nullable
 import typescript.Node
 import typescript.isClassDeclaration
 import typescript.isIdentifier

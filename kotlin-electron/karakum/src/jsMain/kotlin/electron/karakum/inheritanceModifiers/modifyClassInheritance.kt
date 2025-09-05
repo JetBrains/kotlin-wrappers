@@ -1,6 +1,6 @@
 package electron.karakum.inheritanceModifiers
 
-import electron.karakum.util.nullable
+import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.InheritanceModifierContext
 import typescript.Node
 import typescript.isClassDeclaration

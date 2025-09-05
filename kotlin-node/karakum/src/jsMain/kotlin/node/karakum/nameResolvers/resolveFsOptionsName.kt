@@ -4,8 +4,8 @@ import io.github.sgrishchenko.karakum.extension.Context
 import io.github.sgrishchenko.karakum.extension.plugins.TypeScriptService
 import io.github.sgrishchenko.karakum.extension.plugins.typeScriptServiceKey
 import io.github.sgrishchenko.karakum.util.getSourceFileOrNull
-import node.karakum.util.impure
-import node.karakum.util.nullable
+import arrow.core.raise.impure
+import arrow.core.raise.nullable
 import typescript.Node
 import typescript.SyntaxKind
 import typescript.asArray

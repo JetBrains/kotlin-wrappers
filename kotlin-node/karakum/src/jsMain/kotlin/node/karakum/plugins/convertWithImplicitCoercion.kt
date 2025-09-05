@@ -1,7 +1,7 @@
 package node.karakum.plugins
 
 import io.github.sgrishchenko.karakum.extension.createPlugin
-import node.karakum.util.nullable
+import arrow.core.raise.nullable
 import typescript.asArray
 import typescript.isIdentifier
 import typescript.isTypeReferenceNode
