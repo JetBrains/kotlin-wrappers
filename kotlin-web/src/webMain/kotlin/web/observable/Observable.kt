@@ -3,12 +3,15 @@ package web.observable
 import js.array.ReadonlyArray
 import js.core.JsAny
 import js.core.JsBoolean
+import js.core.JsPrimitives.toBoolean
 import js.core.Void
 import js.errors.JsErrorLike
 import js.iterable.AsyncIterable
 import js.iterable.JsIterable
 import js.promise.Promise
-import seskar.js.JsAsync
+import web.abort.AbortController
+import web.abort.internal.awaitCancellable
+import web.abort.internal.createAbortable
 import web.function.VoidFunction
 import kotlin.js.JsName
 import kotlin.js.definedExternally
@@ -38,13 +41,6 @@ external class Observable<out T : JsAny?>(
 
     fun drop(n: Int): Observable<T>
 
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun every(
-        predicate: (T) -> Boolean,
-        options: SubscribeOptions? = definedExternally,
-    ): Boolean
-
     @JsName("every")
     fun everyAsync(
         predicate: (T) -> Boolean,
@@ -55,22 +51,11 @@ external class Observable<out T : JsAny?>(
 
     fun finally(callback: VoidFunction): Observable<T>
 
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun find(
-        predicate: (T) -> Boolean,
-        options: SubscribeOptions? = definedExternally,
-    ): T
-
     @JsName("find")
     fun findAsync(
         predicate: (T) -> Boolean,
         options: SubscribeOptions? = definedExternally,
     ): Promise<T>
-
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun first(options: SubscribeOptions? = definedExternally): T
 
     @JsName("first")
     fun firstAsync(options: SubscribeOptions? = definedExternally): Promise<T>
@@ -80,13 +65,6 @@ external class Observable<out T : JsAny?>(
     fun <R : JsAny?> flatMap(transform: (T) -> ReadonlyArray<R>): Observable<R>
     fun <R : JsAny?> flatMap(transform: (T) -> AsyncIterable<R>): Observable<R>
     fun <R : JsAny?> flatMap(transform: (T) -> Observable<R>): Observable<R>
-
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    fun forEach(
-        action: (item: T) -> Unit,
-        options: SubscribeOptions? = definedExternally,
-    )
 
     @JsName("forEach")
     fun forEachAsync(
@@ -98,22 +76,10 @@ external class Observable<out T : JsAny?>(
     fun inspect(callback: (value: T) -> Unit): Observable<T>
     fun inspect(): Observable<T>
 
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun last(options: SubscribeOptions? = definedExternally): T
-
     @JsName("last")
     fun lastAsync(options: SubscribeOptions? = definedExternally): Promise<T>
 
     fun <R : JsAny?> map(transform: (T) -> R): Observable<R>
-
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun <U : JsAny?> reduce(
-        operation: (previousValue: U, currentValue: T, currentIndex: Int) -> U,
-        initialValue: U,
-        options: SubscribeOptions? = definedExternally,
-    ): U
 
     @JsName("reduce")
     fun <U : JsAny?> reduceAsync(
@@ -121,13 +87,6 @@ external class Observable<out T : JsAny?>(
         initialValue: U,
         options: SubscribeOptions? = definedExternally,
     ): Promise<U>
-
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun some(
-        predicate: (T) -> Boolean,
-        options: SubscribeOptions? = definedExternally,
-    ): Boolean
 
     @JsName("some")
     fun someAsync(
@@ -164,10 +123,6 @@ external class Observable<out T : JsAny?>(
     fun takeUntil(notifier: ReadonlyArray<*>): Observable<T>
     fun takeUntil(notifier: AsyncIterable<*>): Observable<T>
     fun takeUntil(notifier: Observable<*>): Observable<T>
-
-    @JsAsync
-    @Suppress("WRONG_EXTERNAL_DECLARATION")
-    suspend fun toArray(options: SubscribeOptions? = definedExternally): ReadonlyArray<T>
 
     @JsName("toArray")
     fun toArrayAsync(options: SubscribeOptions? = definedExternally): Promise<ReadonlyArray<T>>
@@ -219,3 +174,76 @@ inline fun <T : JsAny?> Observable<T>.catch(
     noinline transform: (JsErrorLike?) -> Observable<T>,
 ): Observable<T> =
     catchInternal(transform)
+
+suspend fun <T : JsAny?> Observable<T>.every(
+    predicate: (T) -> Boolean,
+): Boolean {
+    val controller = AbortController()
+    return everyAsync(
+        predicate = predicate,
+        options = createAbortable(controller),
+    ).awaitCancellable(controller).toBoolean()
+}
+
+suspend fun <T : JsAny?> Observable<T>.find(
+    predicate: (T) -> Boolean,
+): T {
+    val controller = AbortController()
+    return findAsync(
+        predicate = predicate,
+        options = createAbortable(controller),
+    ).awaitCancellable(controller)
+}
+
+suspend fun <T : JsAny?> Observable<T>.first(): T {
+    val controller = AbortController()
+    return firstAsync(
+        options = createAbortable(controller),
+    ).awaitCancellable(controller)
+}
+
+suspend fun <T : JsAny?> Observable<T>.forEach(
+    action: (item: T) -> Unit,
+) {
+    val controller = AbortController()
+    forEachAsync(
+        action = action,
+        options = createAbortable(controller),
+    ).awaitCancellable(controller)
+}
+
+suspend fun <T : JsAny?> Observable<T>.last(): T {
+    val controller = AbortController()
+    return lastAsync(
+        options = createAbortable(controller),
+    ).awaitCancellable(controller)
+}
+
+suspend fun <T : JsAny?, U : JsAny?> Observable<T>.reduce(
+    operation: (previousValue: U, currentValue: T, currentIndex: Int) -> U,
+    initialValue: U,
+): U {
+    val controller = AbortController()
+    return reduceAsync(
+        operation = operation,
+        initialValue = initialValue,
+        options = createAbortable(controller),
+    ).awaitCancellable(controller)
+}
+
+suspend fun <T : JsAny?> Observable<T>.some(
+    predicate: (T) -> Boolean,
+): Boolean {
+    val controller = AbortController()
+    return someAsync(
+        predicate = predicate,
+        options = createAbortable(controller),
+    ).awaitCancellable(controller).toBoolean()
+}
+
+suspend fun <T : JsAny?> Observable<T>.toArray(): ReadonlyArray<T> {
+    val controller = AbortController()
+    return toArrayAsync(
+        options = createAbortable(controller),
+    ).awaitCancellable(controller)
+}
