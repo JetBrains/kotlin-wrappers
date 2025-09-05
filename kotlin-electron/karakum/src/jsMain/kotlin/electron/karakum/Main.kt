@@ -5,6 +5,8 @@ import electron.karakum.annotations.annotateJsPlainObject
 import electron.karakum.inheritanceModifiers.modifyClassInheritance
 import electron.karakum.inheritanceModifiers.modifyMethodInheritance
 import electron.karakum.inheritanceModifiers.modifyPropertyInheritance
+import electron.karakum.injections.BrowserEventInjection
+import electron.karakum.injections.EventInjection
 import electron.karakum.nameResolvers.resolveDownloadItemListenerStateName
 import electron.karakum.nameResolvers.resolveInterfaceArrayFieldName
 import electron.karakum.nameResolvers.resolveInterfaceMethodNullableCallbackParameterName
@@ -13,11 +15,6 @@ import electron.karakum.plugins.*
 import io.github.sgrishchenko.karakum.configuration.ConflictResolutionStrategy
 import io.github.sgrishchenko.karakum.configuration.Granularity
 import io.github.sgrishchenko.karakum.configuration.NamespaceStrategy
-import io.github.sgrishchenko.karakum.configuration.loadExtensions
-import io.github.sgrishchenko.karakum.extension.Injection
-import io.github.sgrishchenko.karakum.extension.SimpleInjection
-import io.github.sgrishchenko.karakum.extension.VarianceModifier
-import io.github.sgrishchenko.karakum.extension.createInjection
 import io.github.sgrishchenko.karakum.generate
 import io.github.sgrishchenko.karakum.util.manyOf
 import js.import.import
@@ -33,26 +30,6 @@ suspend fun main() {
 
     val outputPath = process.argv[2]
 
-    val cwd = process.cwd()
-
-    val jsInjections = loadExtensions(
-        "Injection",
-        arrayOf("kotlin/injections/*.js"),
-        cwd
-    ) { injection ->
-        if (injection is Function<*>) {
-            createInjection(injection.unsafeCast<SimpleInjection>())
-        } else {
-            injection.unsafeCast<Injection>()
-        }
-    }
-
-    val jsVarianceModifiers = loadExtensions<VarianceModifier>(
-        "Variance Modifier",
-        arrayOf("kotlin/varianceModifiers/*.js"),
-        cwd,
-    )
-
     generate {
         plugins = manyOf(
             convertCollections,
@@ -67,10 +44,14 @@ suspend fun main() {
             convertSkippedGenerics,
             convertStringGenericMethods,
             convertTypealiasParameterBounds,
+            convertUnknownRecordKeyType,
             convertUtilityTypes,
             convertWebviewGenericEventMethods,
         )
-        injections = manyOf(values = jsInjections + arrayOf())
+        injections = manyOf(
+            BrowserEventInjection(),
+            EventInjection(),
+        )
         annotations = manyOf(
             ::annotateInterfaceWithSuperclass,
             ::annotateJsPlainObject,
@@ -86,7 +67,6 @@ suspend fun main() {
             ::modifyMethodInheritance,
             ::modifyPropertyInheritance,
         )
-        varianceModifiers = manyOf(values = jsVarianceModifiers + arrayOf())
 
         input = manyOf("$electronPackage/electron.d.ts")
         output = outputPath

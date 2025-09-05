@@ -47,5 +47,5 @@ fun resolveInterfaceArrayFieldName(node: Node, context: Context) = nullable {
 
     val mappedPropertyName = propertyNames[propertyName] ?: propertyName
 
-    "${parentName.replaceFirstChar { it.titlecase() }}${mappedPropertyName.replaceFirstChar { it.titlecase() }}Item"
+    "${parentName.replaceFirstChar { it.titlecase() }}${mappedPropertyName.replaceFirstChar { it.titlecase() }}"
 }

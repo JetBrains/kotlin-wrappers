@@ -291,7 +291,7 @@ private fun extractEventPayload(node: Node, context: Context) = nullable {
 
             val methodName = ensureNotNull(method.name)
             ensure(isIdentifier(methodName))
-            ensure(methodName.text in "addListener")
+            ensure(methodName.text == "addListener")
 
             val interfaceNode = ensureNotNull(method.getParentOrNull())
             ensure(isInterfaceDeclaration(interfaceNode))

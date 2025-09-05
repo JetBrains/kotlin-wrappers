@@ -1,5 +1,7 @@
-package node.karakum.injections
+package electron.karakum.injections
 
+import electron.karakum.util.impure
+import electron.karakum.util.nullable
 import io.github.sgrishchenko.karakum.extension.Context
 import io.github.sgrishchenko.karakum.extension.GeneratedFile
 import io.github.sgrishchenko.karakum.extension.Injection
@@ -12,8 +14,6 @@ import io.github.sgrishchenko.karakum.util.camelize
 import io.github.sgrishchenko.karakum.util.getParentOrNull
 import io.github.sgrishchenko.karakum.util.getSourceFileOrNull
 import js.array.ReadonlyArray
-import node.karakum.util.impure
-import node.karakum.util.nullable
 import typescript.DeclarationStatement
 import typescript.Node
 import typescript.ParameterDeclaration
@@ -23,62 +23,38 @@ import typescript.isClassDeclaration
 import typescript.isFunctionTypeNode
 import typescript.isIdentifier
 import typescript.isInterfaceDeclaration
-import typescript.isIntersectionTypeNode
+import typescript.isLiteralTypeNode
 import typescript.isMethodDeclaration
 import typescript.isMethodSignature
 import typescript.isParameter
-import typescript.isPropertySignature
+import typescript.isStringLiteral
 import typescript.isTypeAliasDeclaration
-import typescript.isTypeLiteralNode
-import typescript.isTypeOperatorNode
 import typescript.isTypeReferenceNode
 
 private val eventHandlerMethods = setOf(
-    "on",
-    "off",
-    "once",
-    "emit",
-    "addListener",
-    "removeListener",
-    "prependListener",
-    "prependOnceListener",
-    "listeners",
+    "addEventListener",
+    "removeEventListener",
 )
 
-private val openEvents = mapOf<String, Map<String, Set<String>>>()
+private val openEvents = emptyMap<String, Map<String, Set<String>>>()
 
-private val overriddenEvents = mapOf(
-    "fs.d.ts" to mapOf(
-        "ReadStream" to setOf(
-            "close",
-            "data",
-            "end",
-            "error",
-            "pause",
-            "readable",
-            "resume",
-        ),
-        "WriteStream" to setOf(
-            "close",
-            "drain",
-            "error",
-            "finish",
-            "pipe",
-            "unpipe",
-        ),
-    ),
+private val overriddenEvents = emptyMap<String, Map<String, Set<String>>>()
+
+private val ignoredEvents = mapOf(
+    "electron.d.ts" to mapOf(
+        "WebviewTag" to setOf(
+            "context-menu",
+        )
+    )
 )
 
-private val ignoredEvents = mapOf<String, Map<String, Set<String>>>()
+private val eventContainerMap = emptyMap<String, String>()
 
 private fun extractEventContainer(node: Node): DeclarationStatement? = nullable {
-    ensure(isIdentifier(node))
-    ensure(node.text == "K")
+    val literalType = ensureNotNull(node.getParentOrNull())
+    ensure(isLiteralTypeNode(literalType))
 
-    val typeReference = ensureNotNull(node.getParentOrNull())
-    ensure(isTypeReferenceNode(typeReference))
-
-    val parameter = ensureNotNull(typeReference.getParentOrNull())
+    val parameter = ensureNotNull(literalType.getParentOrNull())
     ensure(isParameter(parameter))
 
     val parameterName = parameter.name
@@ -112,14 +88,11 @@ private fun extractEventContainer(node: Node): DeclarationStatement? = nullable 
     }
 }
 
-private fun extractEventPayloads(node: Node, context: Context) = nullable {
-    ensure(isIdentifier(node))
-    ensure(node.text == "K")
+private fun extractEventPayload(node: Node, context: Context) = nullable {
+    val literalType = ensureNotNull(node.getParentOrNull())
+    ensure(isLiteralTypeNode(literalType))
 
-    val typeReference = ensureNotNull(node.getParentOrNull())
-    ensure(isTypeReferenceNode(typeReference))
-
-    val parameter = ensureNotNull(typeReference.getParentOrNull())
+    val parameter = ensureNotNull(literalType.getParentOrNull())
     ensure(isParameter(parameter))
 
     val parameterName = parameter.name
@@ -133,7 +106,7 @@ private fun extractEventPayloads(node: Node, context: Context) = nullable {
 
             val methodName = ensureNotNull(method.name)
             ensure(isIdentifier(methodName))
-            ensure(methodName.text == "addListener")
+            ensure(methodName.text == "addEventListener")
 
             val classNode = ensureNotNull(method.getParentOrNull())
             ensure(isClassDeclaration(classNode))
@@ -145,7 +118,7 @@ private fun extractEventPayloads(node: Node, context: Context) = nullable {
 
             val methodName = ensureNotNull(method.name)
             ensure(isIdentifier(methodName))
-            ensure(methodName.text == "addListener")
+            ensure(methodName.text == "addEventListener")
 
             val interfaceNode = ensureNotNull(method.getParentOrNull())
             ensure(isInterfaceDeclaration(interfaceNode))
@@ -154,59 +127,57 @@ private fun extractEventPayloads(node: Node, context: Context) = nullable {
         }
     )
 
-    val typeParameter = method.typeParameters?.asArray()
-        ?.find { it.name.text == "K" }
-        .let { ensureNotNull(it) }
+    val listener = ensureNotNull(method.parameters.asArray().getOrNull(1))
 
-    val typeParameterConstraint = ensureNotNull(typeParameter.constraint)
-    ensure(isTypeOperatorNode(typeParameterConstraint))
+    val listenerType = ensureNotNull(listener.type)
 
-    val typeReferenceConstraintType = typeParameterConstraint.type
-    ensure(isTypeReferenceNode(typeReferenceConstraintType))
+    nullable {
+        ensure(isFunctionTypeNode(listenerType))
 
-    val typeScriptService = ensureNotNull(context.lookupService<TypeScriptService>(typeScriptServiceKey))
-    val typeChecker = typeScriptService.program.getTypeChecker()
+        listenerType.parameters.asArray()
+    } ?: nullable {
+        ensure(isTypeReferenceNode(listenerType))
 
-    val symbol = ensureNotNull(typeChecker.getSymbolAtLocation(typeReferenceConstraintType.typeName))
+        nullable {
+            val listenerTypeName = listenerType.typeName
 
-    val declaration = ensureNotNull(symbol.declarations?.firstOrNull())
-    ensure(isTypeAliasDeclaration(declaration))
+            ensure(isIdentifier(listenerTypeName))
+            ensure(listenerTypeName.text == "Function")
 
-    val declarationType = declaration.type
-    ensure(isIntersectionTypeNode(declarationType))
+            emptyArray()
+        } ?: nullable {
+            val typeScriptService = ensureNotNull(context.lookupService<TypeScriptService>(typeScriptServiceKey))
+            val typeChecker = typeScriptService.program.getTypeChecker()
 
-    val eventMap = declarationType.types.asArray()
-        .find { isTypeLiteralNode(it) }
-        .let { ensureNotNull(it) }
-    ensure(isTypeLiteralNode(eventMap))
+            val symbol = ensureNotNull(typeChecker.getSymbolAtLocation(listenerType.typeName))
 
-    eventMap.members.asArray()
-        .mapNotNull { member ->
-            nullable {
-                ensure(isPropertySignature(member))
+            val declaration = ensureNotNull(symbol.declarations?.firstOrNull())
+            ensure(isTypeAliasDeclaration(declaration))
 
-                val propertyName = member.name
-                ensure(isIdentifier(propertyName))
+            val declarationType = declaration.type
+            ensure(isFunctionTypeNode(declarationType))
 
-                val propertyType = ensureNotNull(member.type)
-                ensure(isFunctionTypeNode(propertyType))
-
-                propertyName.text to propertyType.parameters.asArray()
-            }
+            declarationType.parameters.asArray()
         }
-        .toMap()
+    } ?: run {
+        val typeScriptService = ensureNotNull(context.lookupService<TypeScriptService>(typeScriptServiceKey))
+
+        console.error("Suspicious listener: ${typeScriptService.printNode(listener)}")
+
+        null
+    }
 }
 
-class EventMapInjection : Injection {
-    private val events = mutableMapOf<Symbol, Map<String, ReadonlyArray<ParameterDeclaration>>>()
+class BrowserEventInjection : Injection {
+    private val events = mutableMapOf<Symbol, MutableMap<String, ReadonlyArray<ParameterDeclaration>>>()
 
     override fun setup(context: Context) = Unit
 
     override fun traverse(node: Node, context: Context) = impure {
-        ensureNotNull(isIdentifier(node))
+        ensure(isStringLiteral(node))
 
         val eventContainer = ensureNotNull(extractEventContainer(node))
-        val eventPayloads = ensureNotNull(extractEventPayloads(node, context))
+        val eventPayload = ensureNotNull(extractEventPayload(node, context))
 
         val name = ensureNotNull(eventContainer.name)
 
@@ -215,7 +186,11 @@ class EventMapInjection : Injection {
 
         val symbol = ensureNotNull(typeChecker.getSymbolAtLocation(name))
 
-        events[symbol] = eventPayloads
+        val symbolEvents = events[symbol] ?: mutableMapOf()
+
+        symbolEvents[node.text] = eventPayload
+
+        events[symbol] = symbolEvents
     }
 
     override fun render(node: Node, context: Context, next: Render<Node>) = nullable {
@@ -232,19 +207,6 @@ class EventMapInjection : Injection {
         val name = ensureNotNull(method.name)
         ensure(isIdentifier(name))
         ensure(name.text in eventHandlerMethods)
-
-        val firstParameter = ensureNotNull(method.parameters.asArray().firstOrNull())
-
-        val firstParameterName = firstParameter.name
-        ensure(isIdentifier(firstParameterName))
-        ensure(firstParameterName.text == "event")
-
-        val firstParameterType = ensureNotNull(firstParameter.type)
-        ensure(isTypeReferenceNode(firstParameterType))
-
-        val firstParameterTypeName = firstParameterType.typeName
-        ensure(isIdentifier(firstParameterTypeName))
-        ensure(firstParameterTypeName.text == "K")
 
         ""
     }
@@ -267,7 +229,23 @@ class EventMapInjection : Injection {
 
         val symbol = ensureNotNull(typeChecker.getSymbolAtLocation(name))
 
-        val symbolEvents = ensureNotNull(events[symbol])
+        val mappedContainerName = eventContainerMap[name.text]
+
+        val symbolEvents = ensureNotNull(
+            if (mappedContainerName != null) {
+                events.firstNotNullOfOrNull { (eventSymbol, it) ->
+                    nullable {
+                        val valueDeclaration = ensureNotNull(eventSymbol.valueDeclaration)
+                        ensure(isClassDeclaration(valueDeclaration))
+                        ensure(valueDeclaration.name?.text == mappedContainerName)
+
+                        it
+                    }
+                }
+            } else {
+                events[symbol]
+            }
+        )
 
         val sourceFileName = ensureNotNull(node.getSourceFileOrNull()).fileName
 
@@ -306,15 +284,9 @@ class EventMapInjection : Injection {
                         eventName.replace("\\W".toRegex(), "-")
                     )
 
-                    val tuple = if (parameters.isNotEmpty()) {
-                        "js.array.Tuple${parameters.size}<${payload}>"
-                    } else {
-                        "js.array.Tuple"
-                    }
-
                     """
                         @web.events.JsEvent("$eventName")
-                        ${modifier}val ${key}Event: node.events.EventInstance<${tuple}>
+                        ${modifier}val ${key}Event: web.events.EventInstance<${payload}, ${name.text}, web.dom.Node>
                     """.trimIndent()
                 }
             }
