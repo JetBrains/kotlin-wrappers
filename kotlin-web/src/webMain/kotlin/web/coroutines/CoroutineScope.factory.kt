@@ -1,5 +1,7 @@
 package web.coroutines
 
+import js.errors.toThrowable
+import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Job
 import web.abort.AbortSignal
@@ -12,11 +14,19 @@ fun CoroutineScope(
 ): CoroutineScope {
     val job = Job()
 
+    fun cancel() {
+        val cause = signal.reason
+            ?.toThrowable()
+            ?.let { CancellationException(it.message, it) }
+
+        job.cancel(cause)
+    }
+
     if (signal.aborted) {
-        job.cancel()
+        cancel()
     } else {
         signal.abortEvent.addHandler {
-            job.cancel()
+            cancel()
         }
     }
 
