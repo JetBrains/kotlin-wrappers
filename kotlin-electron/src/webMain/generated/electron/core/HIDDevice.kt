@@ -5,6 +5,11 @@ package electron.core
 external interface HIDDevice {
 // Docs: https://electronjs.org/docs/api/structures/hid-device
     /**
+     * an array of report formats. See MDN documentation for more.
+     */
+    var collections: Array<Collections>
+
+    /**
      * Unique identifier for the device.
      */
     var deviceId: String

@@ -98,7 +98,7 @@ external interface Clipboard {
     /**
      * Writes the `title` (macOS only) and `url` into the clipboard as a bookmark.
      *
-     * **Note:** Most apps on Windows don't support pasting bookmarks into them so you
+     * > [!NOTE] Most apps on Windows don't support pasting bookmarks into them so you
      * can use `clipboard.write` to write both a bookmark and fallback text to the
      * clipboard.
      *

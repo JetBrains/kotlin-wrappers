@@ -29,13 +29,11 @@ external class NativeImage {
     fun getAspectRatio(scaleFactor: Double = definedExternally): Double
 
     /**
-     * A Buffer that contains the image's raw bitmap pixel data.
+     * Legacy alias for `image.toBitmap()`.
      *
-     * The difference between `getBitmap()` and `toBitmap()` is that `getBitmap()` does
-     * not copy the bitmap data, so you have to use the returned Buffer immediately in
-     * current event loop tick; otherwise the data might be changed or destroyed.
+     * @deprecated
      */
-    fun getBitmap(options: BitmapOptions = definedExternally): Buffer<*>
+    fun getBitmap(options: BitmapOptions = definedExternally)
 
     /**
      * A Buffer that stores C pointer to underlying native handle of the image. On
@@ -180,16 +178,16 @@ external class NativeImage {
         ): NativeImage
 
         /**
-         * Creates a new `NativeImage` instance from a file located at `path`. This method
-         * returns an empty image if the `path` does not exist, cannot be read, or is not a
-         * valid image.
+         * Creates a new `NativeImage` instance from an image file (e.g., PNG or JPEG)
+         * located at `path`. This method returns an empty image if the `path` does not
+         * exist, cannot be read, or is not a valid image.
          */
         fun createFromPath(path: String): NativeImage
 
         /**
          * fulfilled with the file's thumbnail preview image, which is a NativeImage.
          *
-         * Note: The Windows implementation will ignore `size.height` and scale the height
+         * > [!NOTE] Windows implementation will ignore `size.height` and scale the height
          * according to `size.width`.
          *
          * @platform darwin,win32

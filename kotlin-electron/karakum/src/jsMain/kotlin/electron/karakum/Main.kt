@@ -145,6 +145,10 @@ suspend fun main() {
                 "node.buffer.Buffer",
                 "node.events.EventEmitter as NodeEventEmitter"
             ),
+            "Extensions.kt" to arrayOf(
+                "js.promise.Promise",
+                "node.events.EventEmitter as NodeEventEmitter"
+            ),
             "IncomingMessage.kt" to arrayOf(
                 "node.buffer.Buffer",
                 "node.events.EventEmitter as NodeEventEmitter"
@@ -154,6 +158,9 @@ suspend fun main() {
             ),
             "InAppPurchase.kt" to arrayOf(
                 "js.promise.Promise"
+            ),
+            "IpcMainServiceWorker.kt" to arrayOf(
+                "node.events.EventEmitter as NodeEventEmitter"
             ),
             "IpcRenderer.kt" to arrayOf(
                 "js.promise.Promise",
@@ -182,6 +189,9 @@ suspend fun main() {
             ),
             "MimeTypedBuffer.kt" to arrayOf(
                 "node.buffer.Buffer"
+            ),
+            "NavigationHistory.kt" to arrayOf(
+                "js.promise.Promise",
             ),
             "NativeImage.kt" to arrayOf(
                 "js.promise.Promise",
@@ -212,6 +222,7 @@ suspend fun main() {
                 "node.buffer.Buffer"
             ),
             "ServiceWorkers.kt" to arrayOf(
+                "js.promise.Promise",
                 "node.events.EventEmitter as NodeEventEmitter"
             ),
             "Session.kt" to arrayOf(
@@ -221,6 +232,9 @@ suspend fun main() {
             ),
             "SessionFetchInit.kt" to arrayOf(
                 "web.http.RequestInit"
+            ),
+            "SharedDictionaryInfo.kt" to arrayOf(
+                "js.date.Date"
             ),
             "Shell.kt" to arrayOf(
                 "js.promise.Promise"
@@ -290,6 +304,9 @@ suspend fun main() {
                 "js.promise.Promise",
                 "js.typedarrays.Uint8Array",
                 "web.html.HTMLElement"
+            ),
+            "WebUtils.kt" to arrayOf(
+                "web.file.File"
             )
         )
         namespaceStrategy = recordOf(

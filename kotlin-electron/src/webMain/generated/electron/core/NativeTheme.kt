@@ -37,6 +37,18 @@ external interface NativeTheme : node.events.EventEmitter {
     val shouldUseDarkColors: Boolean
 
     /**
+     * A `boolean` property indicating whether or not the system theme has been set to
+     * dark or light.
+     *
+     * On Windows this property distinguishes between system and app light/dark theme,
+     * returning `true` if the system theme is set to dark theme and `false` otherwise.
+     * On macOS the return value will be the same as `nativeTheme.shouldUseDarkColors`.
+     *
+     * @platform darwin,win32
+     */
+    val shouldUseDarkColorsForSystemIntegratedUI: Boolean
+
+    /**
      * A `boolean` for if the OS / Chromium currently has high-contrast mode enabled or
      * is being instructed to show a high-contrast UI.
      *

@@ -11,7 +11,7 @@ external interface GlobalShortcut {
      * still return `false`. This behavior is intended by operating systems, since they
      * don't want applications to fight for global shortcuts.
      */
-    fun isRegistered(accelerator: Accelerator): Boolean
+    fun isRegistered(accelerator: String): Boolean
 
     /**
      * Whether or not the shortcut was registered successfully.
@@ -32,7 +32,7 @@ external interface GlobalShortcut {
      * * "Media Stop"
      */
     fun register(
-        accelerator: Accelerator,
+        accelerator: String,
         callback: () -> Unit,
     ): Boolean
 
@@ -54,14 +54,14 @@ external interface GlobalShortcut {
      * * "Media Stop"
      */
     fun registerAll(
-        accelerators: js.array.ReadonlyArray<Accelerator>,
+        accelerators: js.array.ReadonlyArray<String>,
         callback: () -> Unit,
     )
 
     /**
      * Unregisters the global shortcut of `accelerator`.
      */
-    fun unregister(accelerator: Accelerator)
+    fun unregister(accelerator: String)
 
     /**
      * Unregisters all of the global shortcuts.

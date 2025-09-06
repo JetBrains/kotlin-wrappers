@@ -37,11 +37,11 @@ external interface App : node.events.EventEmitter {
      * `event.preventDefault()` will prevent the default behavior, which is terminating
      * the application.
      *
-     * **Note:** If application quit was initiated by `autoUpdater.quitAndInstall()`,
+     * > [!NOTE] If application quit was initiated by `autoUpdater.quitAndInstall()`,
      * then `before-quit` is emitted _after_ emitting `close` event on all windows and
      * closing them.
      *
-     * **Note:** On Windows, this event will not be emitted if the app is closed due to
+     * > [!NOTE] On Windows, this event will not be emitted if the app is closed due to
      * a shutdown/restart of the system or a user logout.
      */
 
@@ -160,7 +160,7 @@ external interface App : node.events.EventEmitter {
     /**
      * Emitted when the application is quitting.
      *
-     * **Note:** On Windows, this event will not be emitted if the app is closed due to
+     * > [!NOTE] On Windows, this event will not be emitted if the app is closed due to
      * a shutdown/restart of the system or a user logout.
      */
 
@@ -172,7 +172,7 @@ external interface App : node.events.EventEmitter {
      * this event has already fired and `app.whenReady()` to get a Promise that is
      * fulfilled when Electron is initialized.
      *
-     * **Note**: The `ready` event is only fired after the main process has finished
+     * > [!NOTE] The `ready` event is only fired after the main process has finished
      * running the first tick of the event loop. If an Electron API needs to be called
      * before the `ready` event, ensure that it is called synchronously in the
      * top-level context of the main process.
@@ -191,18 +191,18 @@ external interface App : node.events.EventEmitter {
      * `workingDirectory` is its current working directory. Usually applications
      * respond to this by making their primary window focused and non-minimized.
      *
-     * **Note:** `argv` will not be exactly the same list of arguments as those passed
+     * > [!NOTE] `argv` will not be exactly the same list of arguments as those passed
      * to the second instance. The order might change and additional arguments might be
      * appended. If you need to maintain the exact same arguments, it's advised to use
      * `additionalData` instead.
      *
-     * **Note:** If the second instance is started by a different user than the first,
+     * > [!NOTE] If the second instance is started by a different user than the first,
      * the `argv` array will not include the arguments.
      *
      * This event is guaranteed to be emitted after the `ready` event of `app` gets
      * emitted.
      *
-     * **Note:** Extra command line arguments might be added by Chromium, such as
+     * > [!NOTE] Extra command line arguments might be added by Chromium, such as
      * `--original-process-start-time`.
      */
 
@@ -258,7 +258,7 @@ external interface App : node.events.EventEmitter {
      * See the description of the `window-all-closed` event for the differences between
      * the `will-quit` and `window-all-closed` events.
      *
-     * **Note:** On Windows, this event will not be emitted if the app is closed due to
+     * > [!NOTE] On Windows, this event will not be emitted if the app is closed due to
      * a shutdown/restart of the system or a user logout.
      */
 
@@ -616,7 +616,7 @@ external interface App : node.events.EventEmitter {
     /**
      * The Graphics Feature Status from `chrome://gpu/`.
      *
-     * **Note:** This information is only usable after the `gpu-info-update` event is
+     * > [!NOTE] This information is only usable after the `gpu-info-update` event is
      * emitted.
      */
     fun getGPUFeatureStatus(): GPUFeatureStatus
@@ -655,12 +655,12 @@ external interface App : node.events.EventEmitter {
      * To set the locale, you'll want to use a command line switch at app startup,
      * which may be found here.
      *
-     * **Note:** When distributing your packaged app, you have to also ship the
+     * > [!NOTE] When distributing your packaged app, you have to also ship the
      * `locales` folder.
      *
-     * **Note:** This API must be called after the `ready` event is emitted.
+     * > [!NOTE] This API must be called after the `ready` event is emitted.
      *
-     * **Note:** To see example return values of this API compared to other locale and
+     * > [!NOTE] To see example return values of this API compared to other locale and
      * language APIs, see `app.getPreferredSystemLanguages()`.
      */
     fun getLocale(): String
@@ -669,7 +669,7 @@ external interface App : node.events.EventEmitter {
      * User operating system's locale two-letter ISO 3166 country code. The value is
      * taken from native OS APIs.
      *
-     * **Note:** When unable to detect locale country code, it returns empty string.
+     * > [!NOTE] When unable to detect locale country code, it returns empty string.
      */
     fun getLocaleCountryCode(): String
 
@@ -772,6 +772,13 @@ external interface App : node.events.EventEmitter {
     fun getPreferredSystemLanguages(): js.array.ReadonlyArray<String>
 
     /**
+     * An array containing documents in the most recent documents list.
+     *
+     * @platform darwin,win32
+     */
+    fun getRecentDocuments(): js.array.ReadonlyArray<String>
+
+    /**
      * The current system locale. On Windows and Linux, it is fetched using Chromium's
      * `i18n` library. On macOS, `[NSLocale currentLocale]` is used instead. To get the
      * user's current system language, which is not always the same as the locale, it
@@ -787,9 +794,9 @@ external interface App : node.events.EventEmitter {
      * rendering dates and times in a calendar app, especially when the developer wants
      * the format to be consistent with the OS.
      *
-     * **Note:** This API must be called after the `ready` event is emitted.
+     * > [!NOTE] This API must be called after the `ready` event is emitted.
      *
-     * **Note:** To see example return values of this API compared to other locale and
+     * > [!NOTE] To see example return values of this API compared to other locale and
      * language APIs, see `app.getPreferredSystemLanguages()`.
      */
     fun getSystemLocale(): String
@@ -851,7 +858,7 @@ external interface App : node.events.EventEmitter {
      * Whether the current executable is the default handler for a protocol (aka URI
      * scheme).
      *
-     * **Note:** On macOS, you can use this method to check if the app has been
+     * > [!NOTE] On macOS, you can use this method to check if the app has been
      * registered as the default protocol handler for a protocol. You can also verify
      * this by checking `~/Library/Preferences/com.apple.LaunchServices.plist` on the
      * macOS machine. Please refer to Apple's documentation for details.
@@ -954,21 +961,22 @@ external interface App : node.events.EventEmitter {
     fun quit()
 
     /**
-     * Relaunches the app when current instance exits.
+     * Relaunches the app when the current instance exits.
      *
      * By default, the new instance will use the same working directory and command
-     * line arguments with current instance. When `args` is specified, the `args` will
-     * be passed as command line arguments instead. When `execPath` is specified, the
-     * `execPath` will be executed for relaunch instead of current app.
+     * line arguments as the current instance. When `args` is specified, the `args`
+     * will be passed as the command line arguments instead. When `execPath` is
+     * specified, the `execPath` will be executed for the relaunch instead of the
+     * current app.
      *
-     * Note that this method does not quit the app when executed, you have to call
+     * Note that this method does not quit the app when executed. You have to call
      * `app.quit` or `app.exit` after calling `app.relaunch` to make the app restart.
      *
-     * When `app.relaunch` is called for multiple times, multiple instances will be
-     * started after current instance exited.
+     * When `app.relaunch` is called multiple times, multiple instances will be started
+     * after the current instance exits.
      *
-     * An example of restarting current instance immediately and adding a new command
-     * line argument to the new instance:
+     * An example of restarting the current instance immediately and adding a new
+     * command line argument to the new instance:
      */
     fun relaunch(options: RelaunchOptions = definedExternally)
 
@@ -1047,7 +1055,7 @@ external interface App : node.events.EventEmitter {
      *
      * This API must be called after the `ready` event is emitted.
      *
-     * **Note:** Rendering accessibility tree can significantly affect the performance
+     * > [!NOTE] Rendering accessibility tree can significantly affect the performance
      * of your app. It should not be enabled by default.
      *
      * @platform darwin,win32
@@ -1097,13 +1105,13 @@ external interface App : node.events.EventEmitter {
      * current executable. The whole link, including protocol, will be passed to your
      * application as a parameter.
      *
-     * **Note:** On macOS, you can only register protocols that have been added to your
+     * > [!NOTE] On macOS, you can only register protocols that have been added to your
      * app's `info.plist`, which cannot be modified at runtime. However, you can change
      * the file during build time via Electron Forge, Electron Packager, or by editing
      * `info.plist` with a text editor. Please refer to Apple's documentation for
      * details.
      *
-     * **Note:** In a Windows Store environment (when packaged as an `appx`) this API
+     * > [!NOTE] In a Windows Store environment (when packaged as an `appx`) this API
      * will return `true` for all calls but the registry key it sets won't be
      * accessible by other applications.  In order to register your Windows Store
      * application as a default protocol handler you must declare the protocol in your
@@ -1126,10 +1134,10 @@ external interface App : node.events.EventEmitter {
      *
      * On macOS, it shows on the dock icon. On Linux, it only works for Unity launcher.
      *
-     * **Note:** Unity launcher requires a `.desktop` file to work. For more
+     * > [!NOTE] Unity launcher requires a `.desktop` file to work. For more
      * information, please read the Unity integration documentation.
      *
-     * **Note:** On macOS, you need to ensure that your application has the permission
+     * > [!NOTE] On macOS, you need to ensure that your application has the permission
      * to display notifications for this method to work.
      *
      * @platform linux,darwin
@@ -1162,19 +1170,19 @@ external interface App : node.events.EventEmitter {
      * If `categories` is `null` the previously set custom Jump List (if any) will be
      * replaced by the standard Jump List for the app (managed by Windows).
      *
-     * **Note:** If a `JumpListCategory` object has neither the `type` nor the `name`
+     * > [!NOTE] If a `JumpListCategory` object has neither the `type` nor the `name`
      * property set then its `type` is assumed to be `tasks`. If the `name` property is
      * set but the `type` property is omitted then the `type` is assumed to be
      * `custom`.
      *
-     * **Note:** Users can remove items from custom categories, and Windows will not
+     * > [!NOTE] Users can remove items from custom categories, and Windows will not
      * allow a removed item to be added back into a custom category until **after** the
      * next successful call to `app.setJumpList(categories)`. Any attempt to re-add a
      * removed item to a custom category earlier than that will result in the entire
      * custom category being omitted from the Jump List. The list of removed items can
      * be obtained using `app.getJumpListSettings()`.
      *
-     * **Note:** The maximum length of a Jump List item's `description` property is 260
+     * > [!NOTE] The maximum length of a Jump List item's `description` property is 260
      * characters. Beyond this limit, the item will not be added to the Jump List, nor
      * will it be displayed.
      *
@@ -1188,8 +1196,9 @@ external interface App : node.events.EventEmitter {
      * Set the app's login item settings.
      *
      * To work with Electron's `autoUpdater` on Windows, which uses Squirrel, you'll
-     * want to set the launch path to Update.exe, and pass arguments that specify your
-     * application name. For example:
+     * want to set the launch path to your executable's name but a directory up, which
+     * is a stub application automatically generated by Squirrel which will
+     * automatically launch the latest version.
      *
      * For more information about setting different services as login items on macOS 13
      * and up, see `SMAppService`.
@@ -1201,7 +1210,7 @@ external interface App : node.events.EventEmitter {
     /**
      * Overrides the current application's name.
      *
-     * **Note:** This function overrides the name used internally by Electron; it does
+     * > [!NOTE] This function overrides the name used internally by Electron; it does
      * not affect the name that the OS uses.
      */
     fun setName(name: String)
@@ -1222,7 +1231,16 @@ external interface App : node.events.EventEmitter {
         path: String,
     )
 
-    fun setProxy(config: ProxyConfig)
+    /**
+     * Resolves when the proxy setting process is complete.
+     *
+     * Sets the proxy settings for networks requests made without an associated
+     * Session. Currently this will affect requests made with Net in the utility
+     * process and internal requests made by the runtime (ex: geolocation queries).
+     *
+     * This method can only be called after app is ready.
+     */
+    fun setProxy(config: ProxyConfig): Promise<js.core.Void>
 
     /**
      * Set the `Secure Keyboard Entry` is enabled in your application.
@@ -1232,7 +1250,7 @@ external interface App : node.events.EventEmitter {
      *
      * See Apple's documentation for more details.
      *
-     * **Note:** Enable `Secure Keyboard Entry` only when it is needed and disable it
+     * > [!NOTE] Enable `Secure Keyboard Entry` only when it is needed and disable it
      * when it is no longer needed.
      *
      * @platform darwin
@@ -1258,7 +1276,7 @@ external interface App : node.events.EventEmitter {
      *
      * Whether the call succeeded.
      *
-     * **Note:** If you'd like to customize the Jump List even more use
+     * > [!NOTE] If you'd like to customize the Jump List even more use
      * `app.setJumpList(categories)` instead.
      *
      * @platform win32
@@ -1330,7 +1348,7 @@ external interface App : node.events.EventEmitter {
      *
      * This API must be called after the `ready` event is emitted.
      *
-     * **Note:** Rendering accessibility tree can significantly affect the performance
+     * > [!NOTE] Rendering accessibility tree can significantly affect the performance
      * of your app. It should not be enabled by default.
      *
      * @platform darwin,win32
@@ -1350,10 +1368,10 @@ external interface App : node.events.EventEmitter {
      * On macOS, setting this with any nonzero integer shows on the dock icon. On
      * Linux, this property only works for Unity launcher.
      *
-     * **Note:** Unity launcher requires a `.desktop` file to work. For more
+     * > [!NOTE] Unity launcher requires a `.desktop` file to work. For more
      * information, please read the Unity integration documentation.
      *
-     * **Note:** On macOS, you need to ensure that your application has the permission
+     * > [!NOTE] On macOS, you need to ensure that your application has the permission
      * to display notifications for this property to take effect.
      *
      * @platform linux,darwin
@@ -1368,12 +1386,13 @@ external interface App : node.events.EventEmitter {
     val commandLine: CommandLine
 
     /**
-     * A `Dock` `| undefined` object that allows you to perform actions on your app
-     * icon in the user's dock on macOS.
+     * A `Dock | undefined` property (`Dock` on macOS, `undefined` on all other
+     * platforms) that allows you to perform actions on your app icon in the user's
+     * dock.
      *
      * @platform darwin
      */
-    val dock: Dock
+    val dock: Dock?
 
     /**
      * A `boolean` property that returns  `true` if the app is packaged, `false`

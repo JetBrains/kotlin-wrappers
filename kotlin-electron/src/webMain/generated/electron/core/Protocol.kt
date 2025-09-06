@@ -176,7 +176,7 @@ external interface Protocol {
     ): Boolean
 
     /**
-     * **Note:** This method can only be used before the `ready` event of the `app`
+     * > [!NOTE] This method can only be used before the `ready` event of the `app`
      * module gets emitted and can be called only once.
      *
      * Registers the `scheme` as standard, secure, bypasses content security policy for

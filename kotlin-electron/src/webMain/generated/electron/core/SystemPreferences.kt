@@ -172,16 +172,6 @@ external interface SystemPreferences : node.events.EventEmitter {
     ): Any?
 
     /**
-     * `true` if DWM composition (Aero Glass) is enabled, and `false` otherwise.
-     *
-     * An example of using it to determine if you should create a transparent window or
-     * not (transparent windows won't work correctly when DWM composition is disabled):
-     *
-     * @platform win32
-     */
-    fun isAeroGlassEnabled(): Boolean
-
-    /**
      * Whether the Swipe between pages setting is on.
      *
      * @platform darwin

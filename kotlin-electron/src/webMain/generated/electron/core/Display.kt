@@ -31,7 +31,7 @@ external interface Display {
     var depthPerComponent: Double
 
     /**
-     * `true`` if the display is detected by the system.
+     * `true` if the display is detected by the system.
      */
     var detected: Boolean
 

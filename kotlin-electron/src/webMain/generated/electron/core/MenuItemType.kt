@@ -18,5 +18,11 @@ sealed external interface MenuItemType {
 
         @seskar.js.JsValue("radio")
         val radio: MenuItemType
+
+        @seskar.js.JsValue("header")
+        val header: MenuItemType
+
+        @seskar.js.JsValue("palette")
+        val palette: MenuItemType
     }
 }

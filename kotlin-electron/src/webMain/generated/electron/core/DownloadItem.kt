@@ -62,7 +62,7 @@ external class DownloadItem : NodeEventEmitter {
     /**
      * The file name of the download item.
      *
-     * **Note:** The file name is not always the same as the actual one saved in local
+     * > [!NOTE] The file name is not always the same as the actual one saved in local
      * disk. If user changes the file name in a prompted download saving dialog, the
      * actual name of saved file will be different.
      */
@@ -110,7 +110,7 @@ external class DownloadItem : NodeEventEmitter {
      * The current state. Can be `progressing`, `completed`, `cancelled` or
      * `interrupted`.
      *
-     * **Note:** The following methods are useful specifically to resume a `cancelled`
+     * > [!NOTE] The following methods are useful specifically to resume a `cancelled`
      * item when session is restarted.
      */
     fun getState(): (DownloadItemGetStateResult)
@@ -150,7 +150,7 @@ external class DownloadItem : NodeEventEmitter {
     /**
      * Resumes the download that has been paused.
      *
-     * **Note:** To enable resumable downloads the server you are downloading from must
+     * > [!NOTE] To enable resumable downloads the server you are downloading from must
      * support range requests and provide both `Last-Modified` and `ETag` header
      * values. Otherwise `resume()` will dismiss previously received bytes and restart
      * the download from the beginning.

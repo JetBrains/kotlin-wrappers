@@ -23,12 +23,14 @@ external interface MenuItemConstructorOptions {
      * be ignored. See roles.
      */
     var role: (MenuItemConstructorOptionsRole)?
-
-    /**
-     * Can be `normal`, `separator`, `submenu`, `checkbox` or `radio`.
-     */
     var type: (MenuItemConstructorOptionsType)?
     var label: String?
+
+    /**
+     * Available in macOS >= 14.4
+     *
+     * @platform darwin
+     */
     var sublabel: String?
 
     /**
@@ -37,7 +39,11 @@ external interface MenuItemConstructorOptions {
      * @platform darwin
      */
     var toolTip: String?
-    var accelerator: Accelerator?
+
+    /**
+     * An Accelerator string.
+     */
+    var accelerator: String?
     var icon: (Any /* (NativeImage) | (string) */)?
 
     /**

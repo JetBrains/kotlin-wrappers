@@ -156,10 +156,6 @@ external interface WebviewTag : HTMLElement {
      */
 
     /**
-     * Fired when a plugin process is crashed.
-     */
-
-    /**
      * Fired when the WebContents is destroyed.
      */
 
@@ -582,10 +578,9 @@ external interface WebviewTag : HTMLElement {
      * limits of 300% and 50% of original size, respectively. The formula for this is
      * `scale := 1.2 ^ level`.
      *
-     * > **NOTE**: The zoom policy at the Chromium level is same-origin, meaning that
-     * the zoom level for a specific domain propagates across all instances of windows
-     * with the same domain. Differentiating the window URLs will make zoom work
-     * per-window.
+     * > [!NOTE] The zoom policy at the Chromium level is same-origin, meaning that the
+     * zoom level for a specific domain propagates across all instances of windows with
+     * the same domain. Differentiating the window URLs will make zoom work per-window.
      */
     fun setZoomLevel(level: Double)
 
@@ -799,9 +794,6 @@ external interface WebviewTag : HTMLElement {
 
     @web.events.JsEvent("render-process-gone")
     val renderProcessGoneEvent: web.events.EventInstance<RenderProcessGoneEvent, WebviewTag, web.dom.Node>
-
-    @web.events.JsEvent("plugin-crashed")
-    val pluginCrashedEvent: web.events.EventInstance<PluginCrashedEvent, WebviewTag, web.dom.Node>
 
     @web.events.JsEvent("destroyed")
     val destroyedEvent: web.events.EventInstance<DOMEvent, WebviewTag, web.dom.Node>

@@ -119,7 +119,7 @@ open external class Tray : NodeEventEmitter {
     /**
      * Emitted when the mouse is released from clicking the tray icon.
      *
-     * Note: This will not be emitted if you have set a context menu for your Tray
+     * > [!NOTE] This will not be emitted if you have set a context menu for your Tray
      * using `tray.setContextMenu`, as a result of macOS-level constraints.
      *
      * @platform darwin
@@ -440,6 +440,14 @@ open external class Tray : NodeEventEmitter {
     fun getBounds(): Rectangle
 
     /**
+     * The GUID used to uniquely identify the tray icon and allow it to retain its
+     * position between relaunches, or null if none is set.
+     *
+     * @platform darwin,win32
+     */
+    fun getGUID(): String?
+
+    /**
      * Whether double click events will be ignored.
      *
      * @platform darwin
@@ -529,7 +537,8 @@ open external class Tray : NodeEventEmitter {
     )
 
     /**
-     * Sets the hover text for this tray icon.
+     * Sets the hover text for this tray icon. Setting the text to an empty string will
+     * remove the tooltip.
      */
     fun setToolTip(toolTip: String)
 

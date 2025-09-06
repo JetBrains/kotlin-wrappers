@@ -5,6 +5,15 @@ package electron.core
 external interface BaseWindowConstructorOptions {
 // Docs: https://electronjs.org/docs/api/structures/base-window-options
     /**
+     * The accent color for the window. By default, follows user preference in System
+     * Settings. Set to `false` to explicitly disable, or set the color in Hex, RGB,
+     * RGBA, HSL, HSLA or named CSS color format. Alpha values will be ignored.
+     *
+     * @platform win32
+     */
+    var accentColor: (Any /* (boolean) | (string) */)?
+
+    /**
      * Whether clicking an inactive window will also click through to the web contents.
      * Default is `false` on macOS. This option is not configurable on other platforms.
      *
@@ -20,6 +29,8 @@ external interface BaseWindowConstructorOptions {
 
     /**
      * Auto hide the menu bar unless the `Alt` key is pressed. Default is `false`.
+     *
+     * @platform linux,win32
      */
     var autoHideMenuBar: Boolean?
 
@@ -194,11 +205,12 @@ external interface BaseWindowConstructorOptions {
     var resizable: Boolean?
 
     /**
-     * Whether frameless window should have rounded corners on macOS. Default is
-     * `true`. Setting this property to `false` will prevent the window from being
-     * fullscreenable.
+     * Whether frameless window should have rounded corners. Default is `true`. Setting
+     * this property to `false` will prevent the window from being fullscreenable on
+     * macOS. On Windows versions older than Windows 11 Build 22000 this property has
+     * no effect, and frameless windows will not have rounded corners.
      *
-     * @platform darwin
+     * @platform darwin,win32
      */
     var roundedCorners: Boolean?
 

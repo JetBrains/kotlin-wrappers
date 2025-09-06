@@ -25,4 +25,9 @@ external interface IpcMainInvokeEvent : Event<Any> {
      *
      */
     val senderFrame: WebFrameMain?
+
+    /**
+     * Possible values include `frame`
+     */
+    var type: (String /* 'frame' */)
 }

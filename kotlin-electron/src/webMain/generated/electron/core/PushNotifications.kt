@@ -42,7 +42,11 @@ external interface PushNotifications : node.events.EventEmitter {
     fun registerForAPNSNotifications(): Promise<String>
 
     /**
-     * Unregisters the app from notifications received from APNS. See:
+     * Unregisters the app from notifications received from APNS.
+     *
+     * Apps unregistered through this method can always reregister.
+     *
+     * See:
      * https://developer.apple.com/documentation/appkit/nsapplication/1428747-unregisterforremotenotifications?language=objc
      *
      * @platform darwin

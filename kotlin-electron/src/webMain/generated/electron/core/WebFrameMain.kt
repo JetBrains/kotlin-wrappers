@@ -13,6 +13,19 @@ external class WebFrameMain : NodeEventEmitter {
      */
 
     /**
+     * A promise that resolves with the currently running JavaScript call stack. If no
+     * JavaScript runs in the frame, the promise will never resolve. In cases where the
+     * call stack is otherwise unable to be collected, it will return `undefined`.
+     *
+     * This can be useful to determine why the frame is unresponsive in cases where
+     * there's long-running JavaScript. For more information, see the proposed Crash
+     * Reporting API.
+     *
+     * @experimental
+     */
+    fun collectJavaScriptCallStack(): Any // (Promise<string>) | (Promise<void>)
+
+    /**
      * A promise that resolves with the result of the executed code or is rejected if
      * execution throws or results in a rejected promise.
      *
@@ -89,6 +102,13 @@ external class WebFrameMain : NodeEventEmitter {
      *
      */
     val framesInSubtree: js.array.ReadonlyArray<WebFrameMain>
+
+    /**
+     * A `string` which uniquely identifies the frame within its associated renderer
+     * process. This is equivalent to `webFrame.frameToken`.
+     *
+     */
+    val frameToken: String
 
     /**
      * An `Integer` representing the id of the frame's internal FrameTreeNode instance.
@@ -199,6 +219,15 @@ external class WebFrameMain : NodeEventEmitter {
 
     companion object {
 // Docs: https://electronjs.org/docs/api/web-frame-main
+        /**
+         * A frame with the given process and frame token, or `null` if there is no
+         * WebFrameMain associated with the given IDs.
+         */
+        fun fromFrameToken(
+            processId: Double,
+            frameToken: String,
+        ): WebFrameMain?
+
         /**
          * A frame with the given process and routing IDs, or `undefined` if there is no
          * WebFrameMain associated with the given IDs.

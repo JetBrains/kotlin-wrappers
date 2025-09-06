@@ -5,6 +5,11 @@ package electron.core
 external interface WebRequestFilter {
 // Docs: https://electronjs.org/docs/api/structures/web-request-filter
     /**
+     * Array of URL patterns used to exclude requests that match these patterns.
+     */
+    var excludeUrls: js.array.ReadonlyArray<String>?
+
+    /**
      * Array of types that will be used to filter out the requests that do not match
      * the types. When not specified, all types will be matched. Can be `mainFrame`,
      * `subFrame`, `stylesheet`, `script`, `image`, `font`, `object`, `xhr`, `ping`,
@@ -13,8 +18,8 @@ external interface WebRequestFilter {
     var types: Array<WebRequestFilterType>?
 
     /**
-     * Array of URL patterns that will be used to filter out the requests that do not
-     * match the URL patterns.
+     * Array of URL patterns used to include requests that match these patterns. Use
+     * the pattern `<all_urls>` to match all URLs.
      */
     var urls: js.array.ReadonlyArray<String>
 }

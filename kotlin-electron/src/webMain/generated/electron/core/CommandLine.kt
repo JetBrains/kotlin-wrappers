@@ -13,7 +13,7 @@ external class CommandLine {
      * If you're appending an argument like `--switch=value`, consider using
      * `appendSwitch('switch', 'value')` instead.
      *
-     * **Note:** This will not affect `process.argv`. The intended usage of this
+     * > [!NOTE] This will not affect `process.argv`. The intended usage of this
      * function is to control Chromium's behavior.
      */
     fun appendArgument(value: String)
@@ -21,7 +21,7 @@ external class CommandLine {
     /**
      * Append a switch (with optional `value`) to Chromium's command line.
      *
-     * **Note:** This will not affect `process.argv`. The intended usage of this
+     * > [!NOTE] This will not affect `process.argv`. The intended usage of this
      * function is to control Chromium's behavior.
      */
     fun appendSwitch(
@@ -32,7 +32,11 @@ external class CommandLine {
     /**
      * The command-line switch value.
      *
-     * **Note:** When the switch is not present or has no value, it returns empty
+     * This function is meant to obtain Chromium command line switches. It is not meant
+     * to be used for application-specific command line arguments. For the latter,
+     * please use `process.argv`.
+     *
+     * > [!NOTE] When the switch is not present or has no value, it returns empty
      * string.
      */
     fun getSwitchValue(the_switch: String): String
@@ -45,7 +49,7 @@ external class CommandLine {
     /**
      * Removes the specified switch from Chromium's command line.
      *
-     * **Note:** This will not affect `process.argv`. The intended usage of this
+     * > [!NOTE] This will not affect `process.argv`. The intended usage of this
      * function is to control Chromium's behavior.
      */
     fun removeSwitch(the_switch: String)

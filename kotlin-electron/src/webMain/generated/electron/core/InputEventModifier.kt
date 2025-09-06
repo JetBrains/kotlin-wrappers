@@ -25,26 +25,26 @@ sealed external interface InputEventModifier {
         @seskar.js.JsValue("cmd")
         val cmd: InputEventModifier
 
-        @seskar.js.JsValue("isKeypad")
-        val isKeypad: InputEventModifier
+        @seskar.js.JsValue("iskeypad")
+        val iskeypad: InputEventModifier
 
-        @seskar.js.JsValue("isAutoRepeat")
-        val isAutoRepeat: InputEventModifier
+        @seskar.js.JsValue("isautorepeat")
+        val isautorepeat: InputEventModifier
 
-        @seskar.js.JsValue("leftButtonDown")
-        val leftButtonDown: InputEventModifier
+        @seskar.js.JsValue("leftbuttondown")
+        val leftbuttondown: InputEventModifier
 
-        @seskar.js.JsValue("middleButtonDown")
-        val middleButtonDown: InputEventModifier
+        @seskar.js.JsValue("middlebuttondown")
+        val middlebuttondown: InputEventModifier
 
-        @seskar.js.JsValue("rightButtonDown")
-        val rightButtonDown: InputEventModifier
+        @seskar.js.JsValue("rightbuttondown")
+        val rightbuttondown: InputEventModifier
 
-        @seskar.js.JsValue("capsLock")
-        val capsLock: InputEventModifier
+        @seskar.js.JsValue("capslock")
+        val capslock: InputEventModifier
 
-        @seskar.js.JsValue("numLock")
-        val numLock: InputEventModifier
+        @seskar.js.JsValue("numlock")
+        val numlock: InputEventModifier
 
         @seskar.js.JsValue("left")
         val left: InputEventModifier

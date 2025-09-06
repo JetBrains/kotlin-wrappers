@@ -54,5 +54,8 @@ sealed external interface SessionSetPermissionCheckHandlerHandlerPermission {
 
         @seskar.js.JsValue("usb")
         val usb: SessionSetPermissionCheckHandlerHandlerPermission
+
+        @seskar.js.JsValue("deprecated-sync-clipboard-read")
+        val deprecatedSyncClipboardRead: SessionSetPermissionCheckHandlerHandlerPermission
     }
 }

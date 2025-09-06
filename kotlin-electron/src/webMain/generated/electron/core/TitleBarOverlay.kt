@@ -15,7 +15,7 @@ external interface TitleBarOverlay {
      * The CSS color of the symbols on the Window Controls Overlay when enabled.
      * Default is the system color.
      *
-     * @platform win32
+     * @platform win32,linux
      */
     var symbolColor: String?
 

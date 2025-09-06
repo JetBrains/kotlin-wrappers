@@ -20,4 +20,9 @@ external interface ServiceWorkerInfo {
      * The full URL to the script that this service worker runs
      */
     var scriptUrl: String
+
+    /**
+     * ID of the service worker version
+     */
+    var versionId: Double
 }

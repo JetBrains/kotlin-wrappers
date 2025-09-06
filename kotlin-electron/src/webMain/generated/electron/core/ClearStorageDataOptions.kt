@@ -16,8 +16,8 @@ external interface ClearStorageDataOptions {
     var storages: Array<ClearStorageDataOptionsStorage>?
 
     /**
-     * The types of quotas to clear, can be `temporary`, `syncable`. If not specified,
-     * clear all quotas.
+     * The types of quotas to clear, can be `temporary`. If not specified, clear all
+     * quotas.
      */
-    var quotas: Array<ClearStorageDataOptionsQuota>?
+    var quotas: Array<String /* 'temporary' */>?
 }

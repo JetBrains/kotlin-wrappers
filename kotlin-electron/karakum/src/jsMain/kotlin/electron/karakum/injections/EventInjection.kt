@@ -56,6 +56,7 @@ private val openEvents = mapOf(
             "move",
             "moved",
             "new-window-for-tab",
+            "query-session-end",
             "resize",
             "resized",
             "restore",
@@ -93,6 +94,7 @@ private val overriddenEvents = mapOf(
             "move",
             "moved",
             "new-window-for-tab",
+            "query-session-end",
             "resize",
             "resized",
             "restore",
@@ -109,7 +111,10 @@ private val overriddenEvents = mapOf(
         ),
         "WebContentsView" to setOf(
             "bounds-changed"
-        )
+        ),
+        "ImageView" to setOf(
+            "bounds-changed",
+        ),
     )
 )
 

@@ -7,6 +7,9 @@ import js.promise.Promise
 @Suppress("INTERFACE_WITH_SUPERCLASS")
 external interface InAppPurchase : node.events.EventEmitter {
 // Docs: https://electronjs.org/docs/api/in-app-purchase
+    /**
+     * Emitted when one or more transactions have been updated.
+     */
 
     /**
      * whether a user can make a payment.
@@ -77,5 +80,6 @@ external interface InAppPurchase : node.events.EventEmitter {
     fun restoreCompletedTransactions()
 
     @web.events.JsEvent("transactions-updated")
-    val transactionsUpdatedEvent: node.events.EventInstance<js.array.Tuple>
+    val transactionsUpdatedEvent:
+            node.events.EventInstance<js.array.Tuple2<Event<*>, js.array.ReadonlyArray<Transaction>>>
 }

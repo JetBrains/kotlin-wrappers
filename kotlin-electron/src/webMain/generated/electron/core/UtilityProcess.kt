@@ -70,7 +70,7 @@ external class UtilityProcess : NodeEventEmitter {
      * `undefined`. When the child process exits, then the value is `undefined` after
      * the `exit` event is emitted.
      *
-     * **Note:** You can use the `pid` to determine if the process is currently
+     * > [!NOTE] You can use the `pid` to determine if the process is currently
      * running.
      */
     var pid: Double?
@@ -104,7 +104,11 @@ external class UtilityProcess : NodeEventEmitter {
     val spawnEvent: node.events.EventInstance<js.array.Tuple>
 
     companion object {
-        // Docs: https://electronjs.org/docs/api/utility-process
+// Docs: https://electronjs.org/docs/api/utility-process
+        /**
+         * > [!NOTE] `utilityProcess.fork` can only be called after the `ready` event has
+         * been emitted on `App`.
+         */
         fun fork(
             modulePath: String,
             args: js.array.ReadonlyArray<String> = definedExternally,

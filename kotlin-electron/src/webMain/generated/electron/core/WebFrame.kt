@@ -56,19 +56,28 @@ external interface WebFrame {
      * A child of `webFrame` with the supplied `name`, `null` would be returned if
      * there's no such frame or if the frame is not in the current renderer process.
      */
-    fun findFrameByName(name: String): WebFrame
+    fun findFrameByName(name: String): WebFrame?
 
     /**
      * that has the supplied `routingId`, `null` if not found.
+     *
+     * **Deprecated:** Use the new `webFrame.findFrameByToken` API.
+     *
+     * @deprecated
      */
-    fun findFrameByRoutingId(routingId: Double): WebFrame
+    fun findFrameByRoutingId(routingId: Double): WebFrame?
+
+    /**
+     * that has the supplied `frameToken`, `null` if not found.
+     */
+    fun findFrameByToken(frameToken: String): WebFrame?
 
     /**
      * The frame element in `webFrame's` document selected by `selector`, `null` would
      * be returned if `selector` does not select a frame or if the frame is not in the
      * current renderer process.
      */
-    fun getFrameForSelector(selector: String): WebFrame
+    fun getFrameForSelector(selector: String): WebFrame?
 
     /**
      * * `images` MemoryUsageDetails
@@ -132,7 +141,8 @@ external interface WebFrame {
 
     /**
      * Set the security origin, content security policy and name of the isolated world.
-     * Note: If the `csp` is specified, then the `securityOrigin` also has to be
+     *
+     * > [!NOTE] If the `csp` is specified, then the `securityOrigin` also has to be
      * specified.
      */
     fun setIsolatedWorldInfo(
@@ -161,10 +171,9 @@ external interface WebFrame {
     /**
      * Sets the maximum and minimum pinch-to-zoom level.
      *
-     * > **NOTE**: Visual zoom is disabled by default in Electron. To re-enable it,
-     * call:
+     * > [!NOTE] Visual zoom is disabled by default in Electron. To re-enable it, call:
      *
-     * > **NOTE**: Visual zoom only applies to pinch-to-zoom behavior. Cmd+/-/0 zoom
+     * > [!NOTE] Visual zoom only applies to pinch-to-zoom behavior. Cmd+/-/0 zoom
      * shortcuts are controlled by the 'zoomIn', 'zoomOut', and 'resetZoom' MenuItem
      * roles in the application Menu. To disable shortcuts, manually define the Menu
      * and omit zoom roles from the definition.
@@ -187,10 +196,9 @@ external interface WebFrame {
      * increment above or below represents zooming 20% larger or smaller to default
      * limits of 300% and 50% of original size, respectively.
      *
-     * > **NOTE**: The zoom policy at the Chromium level is same-origin, meaning that
-     * the zoom level for a specific domain propagates across all instances of windows
-     * with the same domain. Differentiating the window URLs will make zoom work
-     * per-window.
+     * > [!NOTE] The zoom policy at the Chromium level is same-origin, meaning that the
+     * zoom level for a specific domain propagates across all instances of windows with
+     * the same domain. Differentiating the window URLs will make zoom work per-window.
      */
     fun setZoomLevel(level: Double)
 
@@ -201,6 +209,14 @@ external interface WebFrame {
      *
      */
     val firstChild: WebFrame?
+
+    /**
+     * A `string` representing the unique frame token in the current renderer process.
+     * Distinct WebFrame instances that refer to the same underlying frame will have
+     * the same `frameToken`.
+     *
+     */
+    val frameToken: String
 
     /**
      * A `WebFrame | null` representing next sibling frame, the property would be
@@ -230,6 +246,9 @@ external interface WebFrame {
      * Distinct WebFrame instances that refer to the same underlying frame will have
      * the same `routingId`.
      *
+     * **Deprecated:** Use the new `webFrame.frameToken` API.
+     *
+     * @deprecated
      */
     val routingId: Double
 

@@ -12,6 +12,14 @@ external interface ConfigureHostResolverOptions {
     var enableBuiltInResolver: Boolean?
 
     /**
+     * Whether the Happy Eyeballs V3 algorithm should be used in creating network
+     * connections. When enabled, hostnames resolving to multiple IP addresses will be
+     * attempted in parallel to have a chance at establishing a connection more
+     * quickly.
+     */
+    var enableHappyEyeballs: Boolean?
+
+    /**
      * Can be 'off', 'automatic' or 'secure'. Configures the DNS-over-HTTP mode. When
      * 'off', no DoH lookups will be performed. When 'automatic', DoH lookups will be
      * performed first if DoH is available, and insecure DNS lookups will be performed

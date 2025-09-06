@@ -17,7 +17,7 @@ open external class MenuItem {
     var accelerator: Accelerator?
 
     /**
-     * A `boolean` indicating whether the item is checked, this property can be
+     * A `boolean` indicating whether the item is checked. This property can be
      * dynamically changed.
      *
      * A `checkbox` menu item will toggle the `checked` property on and off when
@@ -46,7 +46,7 @@ open external class MenuItem {
     var commandId: Double
 
     /**
-     * A `boolean` indicating whether the item is enabled, this property can be
+     * A `boolean` indicating whether the item is enabled. This property can be
      * dynamically changed.
      */
     var enabled: Boolean
@@ -57,7 +57,7 @@ open external class MenuItem {
     var icon: (Any /* (NativeImage) | (string) */)?
 
     /**
-     * A `string` indicating the item's unique id, this property can be dynamically
+     * A `string` indicating the item's unique id. This property can be dynamically
      * changed.
      */
     var id: String
@@ -121,7 +121,9 @@ open external class MenuItem {
 
     /**
      * A `string` indicating the type of the item. Can be `normal`, `separator`,
-     * `submenu`, `checkbox` or `radio`.
+     * `submenu`, `checkbox`, `radio`, `header` or `palette`.
+     *
+     * > [!NOTE] `header` and `palette` are only available on macOS 14 and up.
      */
     var type: (MenuItemType)
 
@@ -129,7 +131,7 @@ open external class MenuItem {
      * An `Accelerator | null` indicating the item's user-assigned accelerator for the
      * menu item.
      *
-     * **Note:** This property is only initialized after the `MenuItem` has been added
+     * > [!NOTE] This property is only initialized after the `MenuItem` has been added
      * to a `Menu`. Either via `Menu.buildFromTemplate` or via
      * `Menu.append()/insert()`.  Accessing before initialization will just return
      * `null`.
@@ -139,7 +141,7 @@ open external class MenuItem {
     val userAccelerator: Accelerator?
 
     /**
-     * A `boolean` indicating whether the item is visible, this property can be
+     * A `boolean` indicating whether the item is visible. This property can be
      * dynamically changed.
      */
     var visible: Boolean

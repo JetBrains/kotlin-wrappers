@@ -15,11 +15,6 @@ external interface PrinterInfo {
     var displayName: String
 
     /**
-     * whether or not a given printer is set as the default printer on the OS.
-     */
-    var isDefault: Boolean
-
-    /**
      * the name of the printer as understood by the OS.
      */
     var name: String
@@ -28,9 +23,4 @@ external interface PrinterInfo {
      * an object containing a variable number of platform-specific printer information.
      */
     var options: Options
-
-    /**
-     * the current status of the printer.
-     */
-    var status: Double
 }

@@ -16,7 +16,7 @@ external interface CrashReporter {
      * parameters in a renderer process will not result in those parameters being sent
      * with crashes that occur in other renderer processes or in the main process.
      *
-     * **Note:** Parameters have limits on the length of the keys and values. Key names
+     * > [!NOTE] Parameters have limits on the length of the keys and values. Key names
      * must be no longer than 39 bytes, and values must be no longer than 20320 bytes.
      * Keys with names longer than the maximum will be silently ignored. Key values
      * longer than the maximum length will be truncated.
@@ -32,7 +32,7 @@ external interface CrashReporter {
      * be returned until it is uploaded. In the case that there are no uploaded
      * reports, `null` is returned.
      *
-     * **Note:** This method is only available in the main process.
+     * > [!NOTE] This method is only available in the main process.
      */
     fun getLastCrashReport(): CrashReport?
 
@@ -45,7 +45,7 @@ external interface CrashReporter {
      * Returns all uploaded crash reports. Each report contains the date and uploaded
      * ID.
      *
-     * **Note:** This method is only available in the main process.
+     * > [!NOTE] This method is only available in the main process.
      */
     fun getUploadedReports(): js.array.ReadonlyArray<CrashReport>
 
@@ -53,7 +53,7 @@ external interface CrashReporter {
      * Whether reports should be submitted to the server. Set through the `start`
      * method or `setUploadToServer`.
      *
-     * **Note:** This method is only available in the main process.
+     * > [!NOTE] This method is only available in the main process.
      */
     fun getUploadToServer(): Boolean
 
@@ -67,7 +67,7 @@ external interface CrashReporter {
      * This would normally be controlled by user preferences. This has no effect if
      * called before `start` is called.
      *
-     * **Note:** This method is only available in the main process.
+     * > [!NOTE] This method is only available in the main process.
      */
     fun setUploadToServer(uploadToServer: Boolean)
 
@@ -82,19 +82,19 @@ external interface CrashReporter {
      * renderer process is created, then that renderer process will not be monitored by
      * the crash reporter.
      *
-     * **Note:** You can test out the crash reporter by generating a crash using
+     * > [!NOTE] You can test out the crash reporter by generating a crash using
      * `process.crash()`.
      *
-     * **Note:** If you need to send additional/updated `extra` parameters after your
+     * > [!NOTE] If you need to send additional/updated `extra` parameters after your
      * first call `start` you can call `addExtraParameter`.
      *
-     * **Note:** Parameters passed in `extra`, `globalExtra` or set with
+     * > [!NOTE] Parameters passed in `extra`, `globalExtra` or set with
      * `addExtraParameter` have limits on the length of the keys and values. Key names
      * must be at most 39 bytes long, and values must be no longer than 127 bytes. Keys
      * with names longer than the maximum will be silently ignored. Key values longer
      * than the maximum length will be truncated.
      *
-     * **Note:** This method is only available in the main process.
+     * > [!NOTE] This method is only available in the main process.
      */
     fun start(options: CrashReporterStartOptions)
 }

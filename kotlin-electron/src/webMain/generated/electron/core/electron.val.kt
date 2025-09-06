@@ -56,7 +56,7 @@ package electron.core
         throwDeprecation: boolean;
         traceDeprecation: boolean;
         traceProcessWarnings: boolean;
-        readonly type: ('browser' | 'renderer' | 'worker' | 'utility');
+        readonly type: ('browser' | 'renderer' | 'service-worker' | 'worker' | 'utility');
         readonly windowsStore: boolean;
     }
     interface ProcessVersions {

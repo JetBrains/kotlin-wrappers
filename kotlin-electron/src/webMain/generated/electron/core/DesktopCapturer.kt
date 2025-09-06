@@ -11,7 +11,7 @@ external interface DesktopCapturer {
      * `DesktopCapturerSource` represents a screen or an individual window that can be
      * captured.
      *
-     * **Note** Capturing the screen contents requires user consent on macOS 10.15
+     * > [!NOTE] Capturing the screen contents requires user consent on macOS 10.15
      * Catalina or higher, which can detected by
      * `systemPreferences.getMediaAccessStatus`.
      */

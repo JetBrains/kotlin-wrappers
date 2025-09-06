@@ -15,7 +15,7 @@ external interface PowerSaveBlocker {
      * Starts preventing the system from entering lower-power mode. Returns an integer
      * identifying the power save blocker.
      *
-     * **Note:** `prevent-display-sleep` has higher precedence over
+     * > [!NOTE] `prevent-display-sleep` has higher precedence over
      * `prevent-app-suspension`. Only the highest precedence type takes effect. In
      * other words, `prevent-display-sleep` always takes precedence over
      * `prevent-app-suspension`.

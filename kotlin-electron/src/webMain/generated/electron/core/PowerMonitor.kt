@@ -284,13 +284,15 @@ external interface PowerMonitor : node.events.EventEmitter {
     val shutdownEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("speed-limit-change")
-    val speedLimitChangeEvent: node.events.EventInstance<js.array.Tuple>
+    val speedLimitChangeEvent:
+            node.events.EventInstance<js.array.Tuple1<Event<PowerMonitorSpeedLimitChangeEventParams>>>
 
     @web.events.JsEvent("suspend")
     val suspendEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("thermal-state-change")
-    val thermalStateChangeEvent: node.events.EventInstance<js.array.Tuple>
+    val thermalStateChangeEvent:
+            node.events.EventInstance<js.array.Tuple1<Event<PowerMonitorThermalStateChangeEventParams>>>
 
     @web.events.JsEvent("unlock-screen")
     val unlockScreenEvent: node.events.EventInstance<js.array.Tuple>

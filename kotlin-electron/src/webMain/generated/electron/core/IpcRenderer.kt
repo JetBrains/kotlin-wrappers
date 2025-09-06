@@ -34,7 +34,7 @@ external interface IpcRenderer : node.events.EventEmitter {
      *
      * If you do not need a response to the message, consider using `ipcRenderer.send`.
      *
-     * > **Note** Sending non-standard JavaScript types such as DOM objects or special
+     * > [!NOTE] Sending non-standard JavaScript types such as DOM objects or special
      * Electron objects will throw an exception.
      *
      * Since the main process does not have support for DOM objects such as
@@ -42,7 +42,7 @@ external interface IpcRenderer : node.events.EventEmitter {
      * Electron's IPC to the main process, as the main process would have no way to
      * decode them. Attempting to send such objects over IPC will result in an error.
      *
-     * > **Note** If the handler in the main process throws an error, the promise
+     * > [!NOTE] If the handler in the main process throws an error, the promise
      * returned by `invoke` will reject. However, the `Error` object in the renderer
      * process will not be the same as the one thrown in the main process.
      */
@@ -63,6 +63,13 @@ external interface IpcRenderer : node.events.EventEmitter {
     /**
      * Listens to `channel`, when a new message arrives `listener` would be called with
      * `listener(event, args...)`.
+     *
+     * :::warning Do not expose the `event` argument to the renderer for security
+     * reasons! Wrap any callback that you receive from the renderer in another
+     * function like this: `ipcRenderer.on('my-channel', (event, ...args) =>
+     * callback(...args))`. Not wrapping the callback in such a function would expose
+     * dangerous Electron APIs to the renderer process. See the security guide for more
+     * info. :::
      */
     fun on(
         channel: String,
@@ -160,9 +167,9 @@ external interface IpcRenderer : node.events.EventEmitter {
      * The main process handles it by listening for `channel` with `ipcMain` module,
      * and replies by setting `event.returnValue`.
      *
-     * > :warning: **WARNING**: Sending a synchronous message will block the whole
-     * renderer process until the reply is received, so use this method only as a last
-     * resort. It's much better to use the asynchronous version, `invoke()`.
+     * > [!WARNING] Sending a synchronous message will block the whole renderer process
+     * until the reply is received, so use this method only as a last resort. It's much
+     * better to use the asynchronous version, `invoke()`.
      */
     fun sendSync(
         channel: String,

@@ -48,11 +48,11 @@ open external class BaseWindow : NodeEventEmitter {
      * In Electron, returning any value other than `undefined` would cancel the close.
      * For example:
      *
-     * _**Note**: There is a subtle difference between the behaviors of
+     * > [!NOTE] There is a subtle difference between the behaviors of
      * `window.onbeforeunload = handler` and `window.addEventListener('beforeunload',
      * handler)`. It is recommended to always set the `event.returnValue` explicitly,
      * instead of only returning a value, as the former works more consistently within
-     * Electron._
+     * Electron.
      */
 
     /**
@@ -91,7 +91,7 @@ open external class BaseWindow : NodeEventEmitter {
     /**
      * Emitted once when the window is moved to a new position.
      *
-     * **Note**: On macOS this event is an alias of `move`.
+     * > [!NOTE] On macOS, this event is an alias of `move`.
      *
      * @platform darwin,win32
      */
@@ -100,6 +100,16 @@ open external class BaseWindow : NodeEventEmitter {
      * Emitted when the native new tab button is clicked.
      *
      * @platform darwin
+     */
+
+    /**
+     * Emitted when a session is about to end due to a shutdown, machine restart, or
+     * user log-off. Calling `event.preventDefault()` can delay the system shutdown,
+     * though it’s generally best to respect the user’s choice to end the session.
+     * However, you may choose to use it if ending the session puts the user at risk of
+     * losing data.
+     *
+     * @platform win32
      */
 
     /**
@@ -131,8 +141,9 @@ open external class BaseWindow : NodeEventEmitter {
      */
 
     /**
-     * Emitted when window session is going to end due to force shutdown or machine
-     * restart or session log off.
+     * Emitted when a session is about to end due to a shutdown, machine restart, or
+     * user log-off. Once this event fires, there is no way to prevent the session from
+     * ending.
      *
      * @platform win32
      */
@@ -175,7 +186,9 @@ open external class BaseWindow : NodeEventEmitter {
      *
      * Calling `event.preventDefault()` will prevent the menu from being displayed.
      *
-     * @platform win32
+     * To convert `point` to DIP, use `screen.screenToDipPoint(point)`.
+     *
+     * @platform win32,linux
      */
 
     /**
@@ -224,6 +237,10 @@ open external class BaseWindow : NodeEventEmitter {
      */
 
     /**
+     * @platform win32
+     */
+
+    /**
      * @platform darwin,win32
      */
 
@@ -248,7 +265,7 @@ open external class BaseWindow : NodeEventEmitter {
      */
 
     /**
-     * @platform win32
+     * @platform win32,linux
      */
 
     /**
@@ -272,6 +289,10 @@ open external class BaseWindow : NodeEventEmitter {
      */
 
     /**
+     * @platform win32
+     */
+
+    /**
      * @platform darwin,win32
      */
 
@@ -296,7 +317,7 @@ open external class BaseWindow : NodeEventEmitter {
      */
 
     /**
-     * @platform win32
+     * @platform win32,linux
      */
 
     /**
@@ -320,6 +341,10 @@ open external class BaseWindow : NodeEventEmitter {
      */
 
     /**
+     * @platform win32
+     */
+
+    /**
      * @platform darwin,win32
      */
 
@@ -344,7 +369,7 @@ open external class BaseWindow : NodeEventEmitter {
      */
 
     /**
-     * @platform win32
+     * @platform win32,linux
      */
 
     /**
@@ -368,6 +393,10 @@ open external class BaseWindow : NodeEventEmitter {
      */
 
     /**
+     * @platform win32
+     */
+
+    /**
      * @platform darwin,win32
      */
 
@@ -392,7 +421,7 @@ open external class BaseWindow : NodeEventEmitter {
      */
 
     /**
-     * @platform win32
+     * @platform win32,linux
      */
 
     /**
@@ -452,11 +481,25 @@ open external class BaseWindow : NodeEventEmitter {
     open fun focus()
 
     /**
+     * the system accent color and highlighting of active window border in Hex RGB
+     * format.
+     *
+     * If a color has been set for the window that differs from the system accent
+     * color, the window accent color will be returned. Otherwise, a boolean will be
+     * returned, with `true` indicating that the window uses the global system accent
+     * color, and `false` indicating that accent color highlighting is disabled for
+     * this window.
+     *
+     * @platform win32
+     */
+    open fun getAccentColor(): Any // (string) | (boolean)
+
+    /**
      * Gets the background color of the window in Hex (`#RRGGBB`) format.
      *
      * See Setting `backgroundColor`.
      *
-     * **Note:** The alpha value is _not_ returned alongside the red, green, and blue
+     * > [!NOTE] The alpha value is _not_ returned alongside the red, green, and blue
      * values.
      */
     open fun getBackgroundColor(): String
@@ -464,7 +507,7 @@ open external class BaseWindow : NodeEventEmitter {
     /**
      * The `bounds` of the window as `Object`.
      *
-     * **Note:** On macOS, the y-coordinate value returned will be at minimum the Tray
+     * > [!NOTE] On macOS, the y-coordinate value returned will be at minimum the Tray
      * height. For example, calling `win.setBounds({ x: 25, y: 20, width: 800, height:
      * 600 })` with a tray height of 38 means that `win.getBounds()` will return `{ x:
      * 25, y: 38, width: 800, height: 600 }`.
@@ -523,7 +566,7 @@ open external class BaseWindow : NodeEventEmitter {
     /**
      * Contains the window bounds of the normal state
      *
-     * **Note:** whatever the current state of the window : maximized, minimized or in
+     * > [!NOTE] Whatever the current state of the window : maximized, minimized or in
      * fullscreen, this function always returns the position and size of the window in
      * normal state. In normal state, getBounds and getNormalBounds returns the same
      * `Rectangle`.
@@ -561,7 +604,7 @@ open external class BaseWindow : NodeEventEmitter {
     /**
      * The title of the native window.
      *
-     * **Note:** The title of the web page can be different from the title of the
+     * > [!NOTE] The title of the web page can be different from the title of the
      * native window.
      */
     open fun getTitle(): String
@@ -620,6 +663,13 @@ open external class BaseWindow : NodeEventEmitter {
      * @platform darwin,win32
      */
     open fun isClosable(): Boolean
+
+    /**
+     * whether or not content protection is currently enabled.
+     *
+     * @platform darwin,win32
+     */
+    open fun isContentProtected(): Boolean
 
     /**
      * Whether the window is destroyed.
@@ -748,6 +798,16 @@ open external class BaseWindow : NodeEventEmitter {
     open fun isSimpleFullScreen(): Boolean
 
     /**
+     * whether the window is arranged via Snap.
+     *
+     * The window is snapped via buttons shown when the mouse is hovered over window
+     * maximize button, or by dragging it to the edges of the screen.
+     *
+     * @platform win32
+     */
+    open fun isSnapped(): Boolean
+
+    /**
      * Whether the window is in Windows 10 tablet mode.
      *
      * Since Windows 10 users can use their PC as tablet, under this mode apps can
@@ -769,7 +829,7 @@ open external class BaseWindow : NodeEventEmitter {
     /**
      * Whether the window is visible on all workspaces.
      *
-     * **Note:** This API always returns false on Windows.
+     * > [!NOTE] This API always returns false on Windows.
      *
      * @platform darwin,linux
      */
@@ -861,6 +921,42 @@ open external class BaseWindow : NodeEventEmitter {
     open fun selectPreviousTab()
 
     /**
+     * Sets the system accent color and highlighting of active window border.
+     *
+     * The `accentColor` parameter accepts the following values:
+     *
+     * * **Color string** - Sets a custom accent color using standard CSS color formats
+     * (Hex, RGB, RGBA, HSL, HSLA, or named colors). Alpha values in RGBA/HSLA formats
+     * are ignored and the color is treated as fully opaque.
+     * * **`true`** - Uses the system's default accent color from user preferences in
+     * System Settings.
+     * * **`false`** - Explicitly disables accent color highlighting for the window.
+     *
+     * Examples:
+     *
+     * @platform win32
+     */
+    open fun setAccentColor(accentColor: Boolean)
+
+    /**
+     * Sets the system accent color and highlighting of active window border.
+     *
+     * The `accentColor` parameter accepts the following values:
+     *
+     * * **Color string** - Sets a custom accent color using standard CSS color formats
+     * (Hex, RGB, RGBA, HSL, HSLA, or named colors). Alpha values in RGBA/HSLA formats
+     * are ignored and the color is treated as fully opaque.
+     * * **`true`** - Uses the system's default accent color from user preferences in
+     * System Settings.
+     * * **`false`** - Explicitly disables accent color highlighting for the window.
+     *
+     * Examples:
+     *
+     * @platform win32
+     */
+    open fun setAccentColor(accentColor: String)
+
+    /**
      * Sets whether the window should show always on top of other windows. After
      * setting this, the window is still a normal window, not a toolbox window which
      * can not be focused on.
@@ -874,7 +970,7 @@ open external class BaseWindow : NodeEventEmitter {
     /**
      * Sets the properties for the window's taskbar button.
      *
-     * **Note:** `relaunchCommand` and `relaunchDisplayName` must always be set
+     * > [!NOTE] `relaunchCommand` and `relaunchDisplayName` must always be set
      * together. If one of those properties is not set, then neither will be used.
      *
      * @platform win32
@@ -960,7 +1056,7 @@ open external class BaseWindow : NodeEventEmitter {
      *
      * See the Windows documentation for more details.
      *
-     * **Note:** This method is only supported on Windows 11 22H2 and up.
+     * > [!NOTE] This method is only supported on Windows 11 22H2 and up.
      *
      * @platform win32
      */
@@ -970,7 +1066,7 @@ open external class BaseWindow : NodeEventEmitter {
      * Resizes and moves the window to the supplied bounds. Any properties that are not
      * supplied will default to their current values.
      *
-     * **Note:** On macOS, the y-coordinate value cannot be smaller than the Tray
+     * > [!NOTE] On macOS, the y-coordinate value cannot be smaller than the Tray
      * height. The tray height has changed over time and depends on the operating
      * system, but is between 20-40px. Passing a value lower than the tray height will
      * result in a window that is flush to the tray.
@@ -1047,8 +1143,8 @@ open external class BaseWindow : NodeEventEmitter {
     /**
      * Sets whether the window should be in fullscreen mode.
      *
-     * **Note:** On macOS, fullscreen transitions take place asynchronously. If further
-     * actions depend on the fullscreen state, use the 'enter-full-screen' or
+     * > [!NOTE] On macOS, fullscreen transitions take place asynchronously. If further
+     * actions depend on the fullscreen state, use the 'enter-full-screen' or >
      * 'leave-full-screen' events.
      */
     open fun setFullScreen(flag: Boolean)
@@ -1350,7 +1446,7 @@ open external class BaseWindow : NodeEventEmitter {
      * `undefined` clears the touch bar. This method only has an effect if the machine
      * has a touch bar.
      *
-     * **Note:** The TouchBar API is currently experimental and may change or be
+     * > [!NOTE] The TouchBar API is currently experimental and may change or be
      * removed in future Electron releases.
      *
      * @platform darwin
@@ -1368,7 +1464,7 @@ open external class BaseWindow : NodeEventEmitter {
     /**
      * Sets whether the window should be visible on all workspaces.
      *
-     * **Note:** This API does nothing on Windows.
+     * > [!NOTE] This API does nothing on Windows.
      *
      * @platform darwin,linux
      */
@@ -1450,6 +1546,8 @@ open external class BaseWindow : NodeEventEmitter {
      *
      * If the menu bar is already visible, setting this property to `true` won't hide
      * it immediately.
+     *
+     * @platform linux,win32
      */
     open var autoHideMenuBar: Boolean
 
@@ -1529,7 +1627,7 @@ open external class BaseWindow : NodeEventEmitter {
     /**
      * A `boolean` property that determines whether the menu bar should be visible.
      *
-     * **Note:** If the menu bar is auto-hide, users can still bring up the menu bar by
+     * > [!NOTE] If the menu bar is auto-hide, users can still bring up the menu bar by
      * pressing the single `Alt` key.
      *
      * @platform win32,linux
@@ -1581,6 +1679,13 @@ open external class BaseWindow : NodeEventEmitter {
     open var simpleFullScreen: Boolean
 
     /**
+     * A `boolean` property that indicates whether the window is arranged via Snap.
+     *
+     * @platform win32
+     */
+    open val snapped: Boolean
+
+    /**
      * A `string` (optional) property that is equal to the `tabbingIdentifier` passed
      * to the `BrowserWindow` constructor or `undefined` if none was set.
      *
@@ -1591,7 +1696,7 @@ open external class BaseWindow : NodeEventEmitter {
     /**
      * A `string` property that determines the title of the native window.
      *
-     * **Note:** The title of the web page can be different from the title of the
+     * > [!NOTE] The title of the web page can be different from the title of the
      * native window.
      */
     open var title: String
@@ -1600,7 +1705,7 @@ open external class BaseWindow : NodeEventEmitter {
      * A `boolean` property that determines whether the window is visible on all
      * workspaces.
      *
-     * **Note:** Always returns false on Windows.
+     * > [!NOTE] Always returns false on Windows.
      *
      * @platform darwin,linux
      */
@@ -1648,6 +1753,9 @@ open external class BaseWindow : NodeEventEmitter {
     @web.events.JsEvent("new-window-for-tab")
     open val newWindowForTabEvent: node.events.EventInstance<js.array.Tuple>
 
+    @web.events.JsEvent("query-session-end")
+    open val querySessionEndEvent: node.events.EventInstance<js.array.Tuple1<WindowSessionEndEvent>>
+
     @web.events.JsEvent("resize")
     open val resizeEvent: node.events.EventInstance<js.array.Tuple>
 
@@ -1661,7 +1769,7 @@ open external class BaseWindow : NodeEventEmitter {
     open val rotateGestureEvent: node.events.EventInstance<js.array.Tuple2<Event<*>, Double>>
 
     @web.events.JsEvent("session-end")
-    open val sessionEndEvent: node.events.EventInstance<js.array.Tuple>
+    open val sessionEndEvent: node.events.EventInstance<js.array.Tuple1<WindowSessionEndEvent>>
 
     @web.events.JsEvent("sheet-begin")
     open val sheetBeginEvent: node.events.EventInstance<js.array.Tuple>

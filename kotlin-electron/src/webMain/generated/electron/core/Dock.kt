@@ -18,7 +18,7 @@ external class Dock {
      * However, the request remains active until either the application becomes active
      * or the request is canceled.
      *
-     * **Note:** This method can only be used while the app is not focused; when the
+     * > [!NOTE] This method can only be used while the app is not focused; when the
      * app is focused it will return -1.
      *
      * @platform darwin
@@ -69,6 +69,9 @@ external class Dock {
 
     /**
      * Sets the string to be displayed in the dock’s badging area.
+     *
+     * > [!IMPORTANT] You need to ensure that your application has the permission to
+     * display notifications for this method to work.
      *
      * @platform darwin
      */

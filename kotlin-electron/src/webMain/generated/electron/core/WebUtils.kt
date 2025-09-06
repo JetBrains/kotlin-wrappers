@@ -2,6 +2,8 @@
 
 package electron.core
 
+import web.file.File
+
 external interface WebUtils {
 // Docs: https://electronjs.org/docs/api/web-utils
     /**

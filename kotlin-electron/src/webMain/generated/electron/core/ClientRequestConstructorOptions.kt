@@ -102,4 +102,16 @@ external interface ClientRequestConstructorOptions {
      * `only-if-cached`.
      */
     var cache: (ClientRequestConstructorOptionsCache)?
+
+    /**
+     * can be `throttled`, `idle`, `lowest`, `low`, `medium`, or `highest`. Defaults to
+     * `idle`.
+     */
+    var priority: (ClientRequestConstructorOptionsPriority)?
+
+    /**
+     * the incremental loading flag as part of HTTP extensible priorities (RFC 9218).
+     * Default is `true`.
+     */
+    var priorityIncremental: Boolean?
 }

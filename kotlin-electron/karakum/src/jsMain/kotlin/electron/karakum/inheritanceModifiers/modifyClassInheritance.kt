@@ -20,7 +20,8 @@ fun modifyClassInheritance(node: Node, context: InheritanceModifierContext) = nu
                 || node.name?.text == "BaseWindow"
                 || node.name?.text == "View"
                 || node.name?.text == "WebContentsView"
-                || node.name?.text == "BrowserWindow"
+                || node.name?.text == "ImageView"
+                || node.name?.text == "IpcMainServiceWorker"
     )
 
     "open"

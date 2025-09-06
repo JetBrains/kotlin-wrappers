@@ -6,7 +6,15 @@ external interface PopupOptions {
     /**
      * Default is the focused window.
      */
-    var window: BrowserWindow?
+    var window: BaseWindow?
+
+    /**
+     * Provide the relevant frame if you want certain OS-level features such as Writing
+     * Tools on macOS to function correctly. Typically, this should be `params.frame`
+     * from the `context-menu` event on a WebContents, or the `focusedFrame` property
+     * of a WebContents.
+     */
+    var frame: WebFrameMain?
 
     /**
      * Default is the current mouse cursor position. Must be declared if `y` is

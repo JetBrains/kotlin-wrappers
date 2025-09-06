@@ -26,9 +26,9 @@ open external class Menu : NodeEventEmitter {
     fun append(menuItem: MenuItem)
 
     /**
-     * Closes the context menu in the `browserWindow`.
+     * Closes the context menu in the `window`.
      */
-    fun closePopup(browserWindow: BrowserWindow = definedExternally)
+    fun closePopup(window: BaseWindow = definedExternally)
 
     /**
      * the item with the specified `id`
@@ -44,15 +44,17 @@ open external class Menu : NodeEventEmitter {
     )
 
     /**
-     * Pops up this menu as a context menu in the `BrowserWindow`.
+     * Pops up this menu as a context menu in the `BaseWindow`.
+     *
+     * > [!TIP] For more details, see the Context Menu guide.
      */
     fun popup(options: PopupOptions = definedExternally)
 
     /**
      * A `MenuItem[]` array containing the menu's items.
      *
-     * Each `Menu` consists of multiple `MenuItem`s and each `MenuItem` can have a
-     * submenu.
+     * Each `Menu` consists of multiple `MenuItem` instances and each `MenuItem` can
+     * nest a `Menu` into its `submenu` property.
      */
     var items: js.array.ReadonlyArray<MenuItem>
 
@@ -75,7 +77,7 @@ open external class Menu : NodeEventEmitter {
         /**
          * The application menu, if set, or `null`, if not set.
          *
-         * **Note:** The returned `Menu` instance doesn't support dynamic addition or
+         * > [!NOTE] The returned `Menu` instance doesn't support dynamic addition or
          * removal of menu items. Instance properties can still be dynamically modified.
          */
         fun getApplicationMenu(): Menu?
@@ -108,7 +110,7 @@ open external class Menu : NodeEventEmitter {
          * Passing `null` will suppress the default menu. On Windows and Linux, this has
          * the additional effect of removing the menu bar from the window.
          *
-         * **Note:** The default menu will be created automatically if the app does not set
+         * > [!NOTE] The default menu will be created automatically if the app does not set
          * one. It contains standard items such as `File`, `Edit`, `View`, `Window` and
          * `Help`.
          */

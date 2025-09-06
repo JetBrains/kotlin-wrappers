@@ -4,6 +4,8 @@
 
 package electron.core
 
+import js.promise.Promise
+
 external class NavigationHistory {
 // Docs: https://electronjs.org/docs/api/navigation-history
     /**
@@ -17,7 +19,8 @@ external class NavigationHistory {
     fun canGoForward(): Boolean
 
     /**
-     * Whether the web page can go to the specified `offset` from the current entry.
+     * Whether the web page can go to the specified relative `offset` from the current
+     * entry.
      */
     fun canGoToOffset(offset: Double): Boolean
 
@@ -60,7 +63,7 @@ external class NavigationHistory {
     fun goToIndex(index: Double)
 
     /**
-     * Navigates to the specified offset from the current entry.
+     * Navigates to the specified relative offset from the current entry.
      */
     fun goToOffset(offset: Double)
 
@@ -76,4 +79,12 @@ external class NavigationHistory {
      * Whether the navigation entry was removed from the webContents history.
      */
     fun removeEntryAtIndex(index: Double): Boolean
+
+    /**
+     * the promise will resolve when the page has finished loading the selected
+     * navigation entry (see `did-finish-load`), and rejects if the page fails to load
+     * (see `did-fail-load`). A noop rejection handler is already attached, which
+     * avoids unhandled rejection errors.
+     */
+    fun restore(options: RestoreOptions): Promise<js.core.Void>
 }

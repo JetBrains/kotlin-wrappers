@@ -155,8 +155,8 @@ external class Session : NodeEventEmitter {
      * Whether the word was successfully written to the custom dictionary. This API
      * will not work on non-persistent (in-memory) sessions.
      *
-     * **Note:** On macOS and Windows 10 this word will be written to the OS custom
-     * dictionary as well
+     * > [!NOTE] On macOS and Windows, this word will be written to the OS custom
+     * dictionary as well.
      */
     fun addWordToSpellCheckerDictionary(word: String): Boolean
 
@@ -191,13 +191,18 @@ external class Session : NodeEventEmitter {
      * This method clears more types of data and is more thorough than the
      * `clearStorageData` method.
      *
-     * **Note:** Cookies are stored at a broader scope than origins. When removing
+     * > [!NOTE] Cookies are stored at a broader scope than origins. When removing
      * cookies and filtering by `origins` (or `excludeOrigins`), the cookies will be
      * removed at the registrable domain level. For example, clearing cookies for the
      * origin `https://really.specific.origin.example.com/` will end up clearing all
      * cookies for `example.com`. Clearing cookies for the origin
      * `https://my.website.example.co.uk/` will end up clearing all cookies for
      * `example.co.uk`.
+     *
+     * > [!NOTE] Clearing cache data will also clear the shared dictionary cache. This
+     * means that any dictionaries used for compression may be reloaded after clearing
+     * the cache. If you wish to clear the shared dictionary cache but leave other
+     * cached data intact, you may want to use the `clearSharedDictionaryCache` method.
      *
      * For more information, refer to Chromium's `BrowsingDataRemover` interface.
      */
@@ -211,6 +216,19 @@ external class Session : NodeEventEmitter {
     fun clearHostResolverCache(): Promise<js.core.Void>
 
     /**
+     * resolves when the dictionary cache has been cleared, both in memory and on disk.
+     */
+    fun clearSharedDictionaryCache(): Promise<js.core.Void>
+
+    /**
+     * resolves when the dictionary cache has been cleared for the specified isolation
+     * key, both in memory and on disk.
+     */
+    fun clearSharedDictionaryCacheForIsolationKey(
+        options: ClearSharedDictionaryCacheForIsolationKeyOptions,
+    ): Promise<js.core.Void>
+
+    /**
      * resolves when the storage data has been cleared.
      */
     fun clearStorageData(options: ClearStorageDataOptions = definedExternally): Promise<js.core.Void>
@@ -218,7 +236,7 @@ external class Session : NodeEventEmitter {
     /**
      * Resolves when all connections are closed.
      *
-     * **Note:** It will terminate / fail all requests currently in flight.
+     * > [!NOTE] It will terminate / fail all requests currently in flight.
      */
     fun closeAllConnections(): Promise<js.core.Void>
 
@@ -241,7 +259,7 @@ external class Session : NodeEventEmitter {
      * Initiates a download of the resource at `url`. The API will generate a
      * DownloadItem that can be accessed with the will-download event.
      *
-     * **Note:** This does not perform any security checks that relate to a page's
+     * > [!NOTE] This does not perform any security checks that relate to a page's
      * origin, unlike `webContents.downloadURL`.
      */
     fun downloadURL(
@@ -333,8 +351,12 @@ external class Session : NodeEventEmitter {
     /**
      * A list of all loaded extensions.
      *
-     * **Note:** This API cannot be called before the `ready` event of the `app` module
+     * > [!NOTE] This API cannot be called before the `ready` event of the `app` module
      * is emitted.
+     *
+     * **Deprecated:** Use the new `ses.extensions.getAllExtensions` API.
+     *
+     * @deprecated
      */
     fun getAllExtensions(): js.array.ReadonlyArray<Extension>
 
@@ -351,15 +373,55 @@ external class Session : NodeEventEmitter {
     /**
      * The loaded extension with the given ID.
      *
-     * **Note:** This API cannot be called before the `ready` event of the `app` module
+     * > [!NOTE] This API cannot be called before the `ready` event of the `app` module
      * is emitted.
+     *
+     * **Deprecated:** Use the new `ses.extensions.getExtension` API.
+     *
+     * @deprecated
      */
     fun getExtension(extensionId: String): Extension?
 
     /**
      * an array of paths to preload scripts that have been registered.
+     *
+     * **Deprecated:** Use the new `ses.getPreloadScripts` API. This will only return
+     * preload script paths for `frame` context types.
+     *
+     * @deprecated
      */
     fun getPreloads(): js.array.ReadonlyArray<String>
+
+    /**
+     * An array of paths to preload scripts that have been registered.
+     */
+    fun getPreloadScripts(): js.array.ReadonlyArray<PreloadScript>
+
+    /**
+     * an array of shared dictionary information entries in Chromium's networking
+     * service's storage.
+     *
+     * To get information about all present shared dictionaries, call
+     * `getSharedDictionaryUsageInfo()`.
+     */
+    fun getSharedDictionaryInfo(
+        options: SharedDictionaryInfoOptions,
+    ): Promise<js.array.ReadonlyArray<SharedDictionaryInfo>>
+
+    /**
+     * an array of shared dictionary information entries in Chromium's networking
+     * service's storage.
+     *
+     * Shared dictionaries are used to power advanced compression of data sent over the
+     * wire, specifically with Brotli and ZStandard. You don't need to call any of the
+     * shared dictionary APIs in Electron to make use of this advanced web feature, but
+     * if you do, they allow deeper control and inspection of the shared dictionaries
+     * used during decompression.
+     *
+     * To get detailed information about a specific shared dictionary entry, call
+     * `getSharedDictionaryInfo(options)`.
+     */
+    fun getSharedDictionaryUsageInfo(): Promise<js.array.ReadonlyArray<SharedDictionaryUsageInfo>>
 
     /**
      * An array of language codes the spellchecker is enabled for.  If this list is
@@ -367,7 +429,7 @@ external class Session : NodeEventEmitter {
      * this setting is an empty list Electron will try to populate this setting with
      * the current OS locale.  This setting is persisted across restarts.
      *
-     * **Note:** On macOS the OS spellchecker is used and has its own list of
+     * > [!NOTE] On macOS, the OS spellchecker is used and has its own list of
      * languages. On macOS, this API will return whichever languages have been
      * configured by the OS.
      */
@@ -420,11 +482,15 @@ external class Session : NodeEventEmitter {
      *
      * This API does not support loading packed (.crx) extensions.
      *
-     * **Note:** This API cannot be called before the `ready` event of the `app` module
+     * > [!NOTE] This API cannot be called before the `ready` event of the `app` module
      * is emitted.
      *
-     * **Note:** Loading extensions into in-memory (non-persistent) sessions is not
+     * > [!NOTE] Loading extensions into in-memory (non-persistent) sessions is not
      * supported and will throw an error.
+     *
+     * **Deprecated:** Use the new `ses.extensions.loadExtension` API.
+     *
+     * @deprecated
      */
     fun loadExtension(
         path: String,
@@ -437,10 +503,23 @@ external class Session : NodeEventEmitter {
     fun preconnect(options: PreconnectOptions)
 
     /**
+     * Registers preload script that will be executed in its associated context type in
+     * this session. For `frame` contexts, this will run prior to any preload defined
+     * in the web preferences of a WebContents.
+     *
+     * The ID of the registered preload script.
+     */
+    fun registerPreloadScript(script: PreloadScriptRegistration): String
+
+    /**
      * Unloads an extension.
      *
-     * **Note:** This API cannot be called before the `ready` event of the `app` module
+     * > [!NOTE] This API cannot be called before the `ready` event of the `app` module
      * is emitted.
+     *
+     * **Deprecated:** Use the new `ses.extensions.removeExtension` API.
+     *
+     * @deprecated
      */
     fun removeExtension(extensionId: String)
 
@@ -448,8 +527,8 @@ external class Session : NodeEventEmitter {
      * Whether the word was successfully removed from the custom dictionary. This API
      * will not work on non-persistent (in-memory) sessions.
      *
-     * **Note:** On macOS and Windows 10 this word will be removed from the OS custom
-     * dictionary as well
+     * > [!NOTE] On macOS and Windows, this word will be removed from the OS custom
+     * dictionary as well.
      */
     fun removeWordFromSpellCheckerDictionary(word: String): Boolean
 
@@ -592,6 +671,10 @@ external class Session : NodeEventEmitter {
     /**
      * Adds scripts that will be executed on ALL web contents that are associated with
      * this session just before normal `preload` scripts run.
+     *
+     * **Deprecated:** Use the new `ses.registerPreloadScript` API.
+     *
+     * @deprecated
      */
     fun setPreloads(preloads: js.array.ReadonlyArray<String>)
 
@@ -624,8 +707,8 @@ external class Session : NodeEventEmitter {
      *  Please note the trailing slash.  The URL to the dictionaries is formed as
      * `${url}${filename}`.
      *
-     * **Note:** On macOS the OS spellchecker is used and therefore we do not download
-     * any dictionary files.  This API is a no-op on macOS.
+     * > [!NOTE] On macOS, the OS spellchecker is used and therefore we do not download
+     * any dictionary files. This API is a no-op on macOS.
      */
     fun setSpellCheckerDictionaryDownloadURL(url: String)
 
@@ -640,8 +723,8 @@ external class Session : NodeEventEmitter {
      * must call this API with an array of language codes.  You can get the list of
      * supported language codes with the `ses.availableSpellCheckerLanguages` property.
      *
-     * **Note:** On macOS the OS spellchecker is used and will detect your language
-     * automatically.  This API is a no-op on macOS.
+     * > [!NOTE] On macOS, the OS spellchecker is used and will detect your language
+     * automatically. This API is a no-op on macOS.
      */
     fun setSpellCheckerLanguages(languages: js.array.ReadonlyArray<String>)
 
@@ -691,6 +774,11 @@ external class Session : NodeEventEmitter {
     )
 
     /**
+     * Unregisters script.
+     */
+    fun unregisterPreloadScript(id: String)
+
+    /**
      * A `string[]` array which consists of all the known available spell checker
      * languages.  Providing a language code to the `setSpellCheckerLanguages` API that
      * isn't in this array will result in an error.
@@ -703,6 +791,12 @@ external class Session : NodeEventEmitter {
      *
      */
     val cookies: Cookies
+
+    /**
+     * A `Extensions` object for this session.
+     *
+     */
+    val extensions: Extensions
 
     /**
      * A `NetLog` object for this session.

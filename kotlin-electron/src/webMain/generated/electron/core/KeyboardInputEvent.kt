@@ -5,8 +5,8 @@ package electron.core
 external interface KeyboardInputEvent : InputEvent {
 // Docs: https://electronjs.org/docs/api/structures/keyboard-input-event
     /**
-     * The character that will be sent as the keyboard event. Should only use the valid
-     * key codes in Accelerator.
+     * The character that will be sent as the keyboard event. Should only use valid
+     * Accelerator key codes.
      */
     var keyCode: String
 

@@ -10,6 +10,9 @@ sealed external interface AppGetPathName {
         @seskar.js.JsValue("appData")
         val appData: AppGetPathName
 
+        @seskar.js.JsValue("assets")
+        val assets: AppGetPathName
+
         @seskar.js.JsValue("userData")
         val userData: AppGetPathName
 

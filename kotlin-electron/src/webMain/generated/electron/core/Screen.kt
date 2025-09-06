@@ -23,7 +23,9 @@ external interface Screen : node.events.EventEmitter {
      * Converts a screen DIP point to a screen physical point. The DPI scale is
      * performed relative to the display containing the DIP point.
      *
-     * @platform win32
+     * Not currently supported on Wayland.
+     *
+     * @platform win32,linux
      */
     fun dipToScreenPoint(point: Point): Point
 
@@ -47,7 +49,7 @@ external interface Screen : node.events.EventEmitter {
     /**
      * The current absolute position of the mouse pointer.
      *
-     * **Note:** The return value is a DIP point, not a screen physical point.
+     * > [!NOTE] The return value is a DIP point, not a screen physical point.
      */
     fun getCursorScreenPoint(): Point
 
@@ -70,7 +72,10 @@ external interface Screen : node.events.EventEmitter {
      * Converts a screen physical point to a screen DIP point. The DPI scale is
      * performed relative to the display containing the physical point.
      *
-     * @platform win32
+     * Not currently supported on Wayland - if used there it will return the point
+     * passed in with no changes.
+     *
+     * @platform win32,linux
      */
     fun screenToDipPoint(point: Point): Point
 

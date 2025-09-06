@@ -17,7 +17,7 @@ external interface AutoUpdater : node.events.EventEmitter {
      */
 
     /**
-     * Emitted when checking if an update has started.
+     * Emitted when checking for an available update has started.
      */
 
     /**
@@ -34,7 +34,7 @@ external interface AutoUpdater : node.events.EventEmitter {
      *
      * On Windows only `releaseName` is available.
      *
-     * **Note:** It is not strictly necessary to handle this event. A successfully
+     * > [!NOTE] It is not strictly necessary to handle this event. A successfully
      * downloaded update will still be applied the next time the application starts.
      */
 
@@ -46,7 +46,7 @@ external interface AutoUpdater : node.events.EventEmitter {
      * Asks the server whether there is an update. You must call `setFeedURL` before
      * using this API.
      *
-     * **Note:** If an update is available it will be downloaded automatically. Calling
+     * > [!NOTE] If an update is available it will be downloaded automatically. Calling
      * `autoUpdater.checkForUpdates()` twice will download the update two times.
      */
     fun checkForUpdates()
@@ -64,7 +64,7 @@ external interface AutoUpdater : node.events.EventEmitter {
      * windows first, and automatically call `app.quit()` after all windows have been
      * closed.
      *
-     * **Note:** It is not strictly necessary to call this function to apply an update,
+     * > [!NOTE] It is not strictly necessary to call this function to apply an update,
      * as a successfully downloaded update will always be applied the next time the
      * application starts.
      */

@@ -32,6 +32,12 @@ open external class View : NodeEventEmitter {
     fun getBounds(): Rectangle
 
     /**
+     * Whether the view should be drawn. Note that this is different from whether the
+     * view is visible on screen—it may still be obscured or out of view.
+     */
+    fun getVisible(): Boolean
+
+    /**
      * If the view passed as a parameter is not a child of this view, this method is a
      * no-op.
      */
@@ -62,13 +68,13 @@ open external class View : NodeEventEmitter {
      *   * Similar to CSS Color Module Level 3 keywords, but case-sensitive.
      *     * e.g. `blueviolet` or `red`
      *
-     * **Note:** Hex format with alpha takes `AARRGGBB` or `ARGB`, _not_ `RRGGBBAA` or
+     * > [!NOTE] Hex format with alpha takes `AARRGGBB` or `ARGB`, _not_ `RRGGBBAA` or
      * `RGB`.
      */
     fun setBackgroundColor(color: String)
 
     /**
-     * **Note:** The area cutout of the view's border still captures clicks.
+     * > [!NOTE] The area cutout of the view's border still captures clicks.
      */
     fun setBorderRadius(radius: Double)
 

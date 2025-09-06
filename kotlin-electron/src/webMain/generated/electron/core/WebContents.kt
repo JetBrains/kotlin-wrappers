@@ -22,6 +22,12 @@ external class WebContents : NodeEventEmitter {
      */
 
     /**
+     * Emitted before dispatching mouse events in the page.
+     *
+     * Calling `event.preventDefault` will prevent the page mouse events.
+     */
+
+    /**
      * Emitted when the `WebContents` loses focus.
      */
 
@@ -266,10 +272,10 @@ external class WebContents : NodeEventEmitter {
      * that you call `texture.release()` as soon as you're done with the texture. By
      * managing the texture lifecycle by yourself, you can safely pass the
      * `texture.textureInfo` to other processes through IPC.
-     */
-
-    /**
-     * Emitted when a plugin process has crashed.
+     *
+     * More details can be found in the offscreen rendering tutorial. To learn about
+     * how to handle the texture in native code, refer to offscreen rendering's code
+     * documentation..
      */
 
     /**
@@ -299,9 +305,11 @@ external class WebContents : NodeEventEmitter {
      * the `deviceId` of the device to be selected.  Passing an empty string to
      * `callback` will cancel the request.
      *
-     * If an event listener is not added for this event, or if `event.preventDefault`
-     * is not called when handling this event, the first available device will be
-     * automatically selected.
+     * If no event listener is added for this event, all bluetooth requests will be
+     * cancelled.
+     *
+     * If `event.preventDefault` is not called when handling this event, the first
+     * available device will be automatically selected.
      *
      * Due to the nature of bluetooth, scanning for devices when
      * `navigator.bluetooth.requestDevice` is called may take time and will cause
@@ -373,7 +381,7 @@ external class WebContents : NodeEventEmitter {
      * Calling `event.preventDefault()` will ignore the `beforeunload` event handler
      * and allow the page to be unloaded.
      *
-     * **Note:** This will be emitted for `BrowserViews` but will _not_ be respected -
+     * > [!NOTE] This will be emitted for `BrowserViews` but will _not_ be respected -
      * this is because we have chosen not to tie the `BrowserView` lifecycle to its
      * owning BrowserWindow should one exist per the specification.
      */
@@ -943,6 +951,12 @@ external class WebContents : NodeEventEmitter {
      * system's default printer if `deviceName` is empty and the default settings for
      * printing.
      *
+     * Some possible `failureReason`s for print failure include:
+     *
+     * * "Invalid printer settings"
+     * * "Print job canceled"
+     * * "Print job failed"
+     *
      * Use `page-break-before: always;` CSS style to force to print to a new page.
      *
      * Example usage:
@@ -1047,20 +1061,26 @@ external class WebContents : NodeEventEmitter {
     )
 
     /**
-     * Sends an input `event` to the page. **Note:** The `BrowserWindow` containing the
-     * contents needs to be focused for `sendInputEvent()` to work.
+     * Sends an input `event` to the page.
+     *
+     * > [!NOTE] The `BrowserWindow` containing the contents needs to be focused for
+     * `sendInputEvent()` to work.
      */
     fun sendInputEvent(inputEvent: MouseInputEvent)
 
     /**
-     * Sends an input `event` to the page. **Note:** The `BrowserWindow` containing the
-     * contents needs to be focused for `sendInputEvent()` to work.
+     * Sends an input `event` to the page.
+     *
+     * > [!NOTE] The `BrowserWindow` containing the contents needs to be focused for
+     * `sendInputEvent()` to work.
      */
     fun sendInputEvent(inputEvent: MouseWheelInputEvent)
 
     /**
-     * Sends an input `event` to the page. **Note:** The `BrowserWindow` containing the
-     * contents needs to be focused for `sendInputEvent()` to work.
+     * Sends an input `event` to the page.
+     *
+     * > [!NOTE] The `BrowserWindow` containing the contents needs to be focused for
+     * `sendInputEvent()` to work.
      */
     fun sendInputEvent(inputEvent: KeyboardInputEvent)
 
@@ -1180,8 +1200,7 @@ external class WebContents : NodeEventEmitter {
     /**
      * Sets the maximum and minimum pinch-to-zoom level.
      *
-     * > **NOTE**: Visual zoom is disabled by default in Electron. To re-enable it,
-     * call:
+     * > [!NOTE] Visual zoom is disabled by default in Electron. To re-enable it, call:
      */
     fun setVisualZoomLevelLimits(
         minimumLevel: Double,
@@ -1196,8 +1215,10 @@ external class WebContents : NodeEventEmitter {
 
     /**
      * Setting the WebRTC UDP Port Range allows you to restrict the udp port range used
-     * by WebRTC. By default the port range is unrestricted. **Note:** To reset to an
-     * unrestricted port range this value should be set to `{ min: 0, max: 0 }`.
+     * by WebRTC. By default the port range is unrestricted.
+     *
+     * > [!NOTE] To reset to an unrestricted port range this value should be set to `{
+     * min: 0, max: 0 }`.
      */
     fun setWebRTCUDPPortRange(udpPortRange: UdpPortRange)
 
@@ -1226,10 +1247,9 @@ external class WebContents : NodeEventEmitter {
      * limits of 300% and 50% of original size, respectively. The formula for this is
      * `scale := 1.2 ^ level`.
      *
-     * > **NOTE**: The zoom policy at the Chromium level is same-origin, meaning that
-     * the zoom level for a specific domain propagates across all instances of windows
-     * with the same domain. Differentiating the window URLs will make zoom work
-     * per-window.
+     * > [!NOTE] The zoom policy at the Chromium level is same-origin, meaning that the
+     * zoom level for a specific domain propagates across all instances of windows with
+     * the same domain. Differentiating the window URLs will make zoom work per-window.
      */
     fun setZoomLevel(level: Double)
 
@@ -1311,11 +1331,19 @@ external class WebContents : NodeEventEmitter {
      * A `WebContents | null` property that represents the of DevTools `WebContents`
      * associated with a given `WebContents`.
      *
-     * **Note:** Users should never store this object because it may become `null` when
+     * > [!NOTE] Users should never store this object because it may become `null` when
      * the DevTools has been closed.
      *
      */
     val devToolsWebContents: WebContents?
+
+    /**
+     * A `WebFrameMain | null` property that represents the currently focused frame in
+     * this WebContents. Can be the top frame, an inner `<iframe>`, or `null` if
+     * nothing is focused.
+     *
+     */
+    val focusedFrame: WebFrameMain?
 
     /**
      * An `Integer` property that sets the frame rate of the web contents to the
@@ -1382,12 +1410,12 @@ external class WebContents : NodeEventEmitter {
     val navigationHistory: NavigationHistory
 
     /**
-     * A `WebFrameMain` property that represents the frame that opened this
+     * A `WebFrameMain | null` property that represents the frame that opened this
      * WebContents, either with open(), or by navigating a link with a target
      * attribute.
      *
      */
-    val opener: WebFrameMain
+    val opener: WebFrameMain?
 
     /**
      * A `Session` used by this webContents.
@@ -1423,6 +1451,9 @@ external class WebContents : NodeEventEmitter {
     @web.events.JsEvent("before-input-event")
     val beforeInputEventEvent: node.events.EventInstance<js.array.Tuple2<Event<*>, Input>>
 
+    @web.events.JsEvent("before-mouse-event")
+    val beforeMouseEventEvent: node.events.EventInstance<js.array.Tuple2<Event<*>, MouseInputEvent>>
+
     @web.events.JsEvent("blur")
     val blurEvent: node.events.EventInstance<js.array.Tuple>
 
@@ -1441,7 +1472,8 @@ external class WebContents : NodeEventEmitter {
             >
 
     @web.events.JsEvent("console-message")
-    val consoleMessageEvent: node.events.EventInstance<js.array.Tuple5<Event<*>, Double, String, Double, String>>
+    val consoleMessageEvent:
+            node.events.EventInstance<js.array.Tuple5<Event<WebContentsConsoleMessageEventParams>, Double, String, Double, String>>
 
     @web.events.JsEvent("content-bounds-updated")
     val contentBoundsUpdatedEvent: node.events.EventInstance<js.array.Tuple2<Event<*>, Rectangle>>
@@ -1577,9 +1609,6 @@ external class WebContents : NodeEventEmitter {
     @web.events.JsEvent("paint")
     val paintEvent:
             node.events.EventInstance<js.array.Tuple3<Event<WebContentsPaintEventParams>, Rectangle, NativeImage>>
-
-    @web.events.JsEvent("plugin-crashed")
-    val pluginCrashedEvent: node.events.EventInstance<js.array.Tuple3<Event<*>, String, String>>
 
     @web.events.JsEvent("preferred-size-changed")
     val preferredSizeChangedEvent: node.events.EventInstance<js.array.Tuple2<Event<*>, Size>>

@@ -53,9 +53,8 @@ external interface ProtocolResponse {
     var referrer: String?
 
     /**
-     * The session used for requesting URL, by default the HTTP request will reuse the
-     * current session. Setting `session` to `null` would use a random independent
-     * session. This is only used for URL responses.
+     * The session used for requesting URL. The HTTP request will reuse the current
+     * session by default.
      */
     var session: Session?
 

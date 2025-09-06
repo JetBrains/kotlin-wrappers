@@ -33,7 +33,7 @@ external interface Net {
      * intercepted request to the built-in handler. webRequest handlers will still be
      * triggered when bypassing custom protocols.
      *
-     * Note: in the utility process custom protocols are not supported.
+     * > [!NOTE] In the utility process, custom protocols are not supported.
      */
     fun fetch(
         input: String,
@@ -69,7 +69,7 @@ external interface Net {
      * intercepted request to the built-in handler. webRequest handlers will still be
      * triggered when bypassing custom protocols.
      *
-     * Note: in the utility process custom protocols are not supported.
+     * > [!NOTE] In the utility process, custom protocols are not supported.
      */
     fun fetch(
         input: GlobalRequest,
