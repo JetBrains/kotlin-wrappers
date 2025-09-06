@@ -165,6 +165,7 @@ suspend fun main() {
         input = manyOf("$nodePackage/**/*.d.ts")
         ignoreInput = manyOf(
             "$nodePackage/ts*/**",
+            "$nodePackage/web-globals/**",
             "$nodePackage/assert/strict.d.ts",
             "$nodePackage/constants.d.ts",
             "$nodePackage/compatibility/disposable.d.ts",
@@ -196,6 +197,7 @@ suspend fun main() {
             "**/_ResponseInit.kt",
             "**/_Storage.kt",
             "**/_WebSocket.kt",
+            "**/ErrorConstructor.kt",
             "**/NodeDOMException.kt",
             "**/NodeDOMExceptionConstructor.kt",
             "**/Dict.kt",
@@ -246,6 +248,7 @@ suspend fun main() {
             "**/buffer/ImplicitArrayBuffer.kt",
             "**/childProcess/exec/**",
             "**/childProcess/execfile/**",
+            "**/console/console.kt",
             "**/crypto/generatekeypair/**",
             "**/crypto/global/**",
             "**/crypto/webcrypto/**",
@@ -272,6 +275,7 @@ suspend fun main() {
             "**/events/Listener.kt",
             "**/events/Listener1.kt",
             "**/events/Listener2.kt",
+            "**/global/global.kt",
             "**/http/WebSocket.kt",
             "**/http/CloseEvent.kt",
             "**/http/MessageEvent.kt",
@@ -334,6 +338,7 @@ suspend fun main() {
             "node:node/" to "node:",
             "node:node:" to "node:",
             "node:assert(#assert)?" to "node:assert/strict",
+            "node:globals" to "",
             "events#EventEmitter" to "events",
             "module#Module" to "module",
         )
@@ -486,7 +491,8 @@ suspend fun main() {
             "^node/([^/]+)\\.kt" to "node/$1/$1.kt",
             "^node/stream/consumers.kt" to "node/stream/consumers/consumers.kt",
             "^node/globals/globals.kt" to "node/globals.kt",
-            "^global/nodejs" to "node"
+            "^node/gc/gc.kt" to "node/gc.kt",
+            "^nodejs" to "node"
         )
         importMapper = recordOf(
             "node:async_hooks" to ruleOf("node.asyncHooks"),

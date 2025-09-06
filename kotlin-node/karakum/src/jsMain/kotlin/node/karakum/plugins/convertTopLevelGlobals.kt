@@ -2,32 +2,33 @@ package node.karakum.plugins
 
 import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.createPlugin
-import io.github.sgrishchenko.karakum.util.getParentOrNull
 import io.github.sgrishchenko.karakum.util.getSourceFileOrNull
-import typescript.Node
 import typescript.isIdentifier
-import typescript.isModuleDeclaration
-import typescript.isSourceFile
+import typescript.isInterfaceDeclaration
+import typescript.isVariableDeclaration
 
-// TODO: consider removing
-val convertTopLevelGlobals = createPlugin { node, context, render ->
+val convertTopLevelGlobals = createPlugin { node, _, _ ->
     nullable {
         val sourceFileName = ensureNotNull(node.getSourceFileOrNull()).fileName
         ensure(sourceFileName.endsWith("globals.d.ts"))
 
-        val sourceFile = ensureNotNull(node.getParentOrNull())
-        ensure(isSourceFile(sourceFile))
+        nullable {
+            ensure(isInterfaceDeclaration(node))
+            ensure(node.name.text == "ErrorConstructor")
 
-        ensure(!isNodeJsModuleDeclaration(node))
+            ""
+        } ?: nullable {
+            ensure(isVariableDeclaration(node))
 
-        ""
+            val name = node.name
+            ensure(isIdentifier(name))
+            ensure(
+                name.text == "global"
+                        || name.text == "process"
+                        || name.text == "console"
+            )
+
+            ""
+        }
     }
 }
-
-private fun isNodeJsModuleDeclaration(node: Node): Boolean = nullable {
-    ensure(isModuleDeclaration(node))
-
-    val identifier = node.name
-    ensure(isIdentifier(identifier))
-    ensure(identifier.text == "NodeJS")
-} != null
