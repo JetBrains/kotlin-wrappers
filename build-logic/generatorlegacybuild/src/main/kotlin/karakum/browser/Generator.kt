@@ -478,6 +478,7 @@ fun generateKotlinDeclarations(
             import web.authn.PublicKeyCredentialRequestOptions
             """.trimIndent()
 
+            "DigitalCredential",
             "PublicKeyCredential",
                 -> """
             import web.credentials.Credential
