@@ -12,6 +12,7 @@ import js.objects.recordOf
 import node.path.path
 import node.process.process
 import node.url.fileURLToPath
+import typescript.karakum.plugins.*
 
 suspend fun main() {
     val typescriptPackage = import.meta.resolve("typescript/package.json")
@@ -21,18 +22,6 @@ suspend fun main() {
     val outputPath = process.argv[2]
 
     val cwd = process.cwd()
-
-    val jsPlugins = loadExtensions(
-        "Plugin",
-        arrayOf("kotlin/plugins/*.js"),
-        cwd
-    ) { plugin ->
-        if (plugin is Function<*>) {
-            createPlugin(plugin.unsafeCast<SimplePlugin>())
-        } else {
-            plugin.unsafeCast<Plugin>()
-        }
-    }
 
     val jsInjections = loadExtensions(
         "Injection",
@@ -72,8 +61,18 @@ suspend fun main() {
 
     generate {
         plugins = manyOf(
-            values = jsPlugins + arrayOf(
-            )
+            ContractFunctionApiPlugin(),
+
+            convertArrayInheritance,
+            convertCollections,
+            convertConflictingOverloads,
+            convertIncompatibleParameterName,
+            convertJSDocAugmentsTagClassReference,
+            convertKindEnums,
+            convertSkippedGenerics,
+            convertTypealiasParameterBounds,
+            convertUtilityTypes,
+            convertWithMetadata,
         )
         injections = manyOf(values = jsInjections + arrayOf())
         annotations = manyOf(values = jsAnnotations + arrayOf())

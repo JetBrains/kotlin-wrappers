@@ -5,6 +5,5 @@
 package typescript
 
 /** @deprecated */
-
 @JsName("isAssertEntry")
 external fun isAssertEntryRaw(node: Node): Boolean // node is AssertEntry

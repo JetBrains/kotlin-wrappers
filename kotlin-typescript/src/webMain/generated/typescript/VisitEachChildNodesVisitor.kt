@@ -14,7 +14,9 @@ sealed external interface VisitEachChildNodesVisitor {
     operator fun <TIn : Node, TInArray : NodeArray<TIn>?> invoke(
         nodes: TInArray,
         visitor: Visitor<TIn, Node?>,
-        test: ((node: Node) -> Boolean)? = definedExternally,
+        test: (
+            (node: Node) -> Boolean
+        )? = definedExternally,
         start: Double? = definedExternally,
         count: Double? = definedExternally,
     ): Any // NodeArray<Node> | (TInArray & undefined)

@@ -9,6 +9,5 @@ package typescript
  * This differs from the `isPartOfTypeNode` function which determines whether a node is *part*
  * of a TypeNode.
  */
-
 @JsName("isTypeNode")
 external fun isTypeNodeRaw(node: Node): Boolean // node is TypeNode
