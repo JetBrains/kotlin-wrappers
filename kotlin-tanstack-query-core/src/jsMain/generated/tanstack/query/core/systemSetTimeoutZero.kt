@@ -4,4 +4,4 @@
 
 package tanstack.query.core
 
-external fun systemSetTimeoutZero(callback: TimeoutCallback)
+external fun systemSetTimeoutZero(callback: () -> Unit)

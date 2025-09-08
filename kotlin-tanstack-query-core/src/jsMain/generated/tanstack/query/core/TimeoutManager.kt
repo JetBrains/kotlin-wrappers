@@ -7,13 +7,13 @@ package tanstack.query.core
 open external class TimeoutManager {
     open fun <TTimerId : ManagedTimerId> setTimeoutProvider(provider: TimeoutProvider<TTimerId>)
     open fun setTimeout(
-        callback: TimeoutCallback,
+        callback: () -> Unit,
         delay: Int,
     ): ManagedTimerId
 
     open fun clearTimeout(timeoutId: ManagedTimerId?)
     open fun setInterval(
-        callback: TimeoutCallback,
+        callback: () -> Unit,
         delay: Int,
     ): ManagedTimerId
 

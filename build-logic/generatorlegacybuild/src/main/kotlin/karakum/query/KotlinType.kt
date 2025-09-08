@@ -112,6 +112,8 @@ private val STANDARD_TYPE_MAP = mapOf(
     "UseQueryResult<NoInfer<TData>, TError>" to "UseQueryResult<TData, TError>",
 
     "DehydratedState | null | undefined" to "DehydratedState?",
+
+    "TimeoutCallback" to "() -> Unit",
 )
 
 private val SAFE_PREFIXES = setOf(
