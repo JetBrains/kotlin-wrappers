@@ -4,4 +4,4 @@
 
 package tanstack.query.core
 
-external fun <TQueryFnData, TQueryKey : QueryKey> streamedQuery(options: StreamedQueryOptions<TQueryFnData, TQueryKey>): QueryFunction<Array<TQueryFnData>, TQueryKey, *>
+external fun <TQueryFnData, TData, TQueryKey : QueryKey> streamedQuery(options: StreamedQueryParams<TQueryFnData, TData, TQueryKey>): QueryFunction<Array<TQueryFnData>, TQueryKey, *>

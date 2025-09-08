@@ -169,22 +169,37 @@ fun toDeclarations(
         )
         .replace(
             """
-                declare function streamedQuery<TQueryFnData = unknown, TQueryKey extends QueryKey = QueryKey>({ queryFn, refetchMode, maxChunks, }: {
-                    queryFn: (context: QueryFunctionContext<TQueryKey>) => AsyncIterable<TQueryFnData> | Promise<AsyncIterable<TQueryFnData>>;
+                type BaseStreamedQueryParams<TQueryFnData, TQueryKey extends QueryKey> = {
+                    streamFn: (context: QueryFunctionContext<TQueryKey>) => AsyncIterable<TQueryFnData> | Promise<AsyncIterable<TQueryFnData>>;
                     refetchMode?: 'append' | 'reset' | 'replace';
-                    maxChunks?: number;
-                }): QueryFunction<Array<TQueryFnData>, TQueryKey>;
+                };
+                type SimpleStreamedQueryParams<TQueryFnData, TQueryKey extends QueryKey> = BaseStreamedQueryParams<TQueryFnData, TQueryKey> & {
+                    reducer?: never;
+                    initialValue?: never;
+                };
+                type ReducibleStreamedQueryParams<TQueryFnData, TData, TQueryKey extends QueryKey> = BaseStreamedQueryParams<TQueryFnData, TQueryKey> & {
+                    reducer: (acc: TData, chunk: TQueryFnData) => TData;
+                    initialValue: TData;
+                };
+                type StreamedQueryParams<TQueryFnData, TData, TQueryKey extends QueryKey> = SimpleStreamedQueryParams<TQueryFnData, TQueryKey> | ReducibleStreamedQueryParams<TQueryFnData, TData, TQueryKey>;
             """.trimIndent(),
             """
-                declare function streamedQuery<TQueryFnData, TQueryKey extends QueryKey>(options: StreamedQueryOptions<TQueryFnData, TQueryKey>): QueryFunction<Array<TQueryFnData>, TQueryKey, *>
-
                 type RefetchMode = 'append' | 'reset' | 'replace';
 
-                interface StreamedQueryOptions<TQueryFnData, TQueryKey extends QueryKey> {
-                    queryFn: (QueryFunctionContext<TQueryKey, *>) => AsyncIterable<TQueryFnData>
+                interface StreamedQueryParams<TQueryFnData, TData, TQueryKey extends QueryKey> {
+                    streamFn: (QueryFunctionContext<TQueryKey, *>) => AsyncIterable<TQueryFnData>
                     refetchMode?: RefetchMode
-                    maxChunks?: Int
+                    reducer?: (acc: TData, chunk: TQueryFnData) => TData
+                    initialValue?: TData
                 }
+            """.trimIndent(),
+        )
+        .replace(
+            """
+                declare function streamedQuery<TQueryFnData = unknown, TData = Array<TQueryFnData>, TQueryKey extends QueryKey = QueryKey>({ streamFn, refetchMode, reducer, initialValue, }: StreamedQueryParams<TQueryFnData, TData, TQueryKey>): QueryFunction<TData, TQueryKey>;
+            """.trimIndent(),
+            """
+                declare function streamedQuery<TQueryFnData, TData, TQueryKey extends QueryKey>(options: StreamedQueryParams<TQueryFnData, TData, TQueryKey>): QueryFunction<Array<TQueryFnData>, TQueryKey, *>
             """.trimIndent(),
         )
         .replace(
@@ -195,6 +210,24 @@ fun toDeclarations(
     content = when (definitionFile.name) {
         "focusManager.d.ts" -> content.replace("SetupFn", "FocusManagerSetupFn")
         "onlineManager.d.ts" -> content.replace("SetupFn", "OnlineManagerSetupFn")
+        "timeoutManager.d.ts" -> content
+            .replace("TimeoutProvider<ReturnType<typeof setTimeout>>", "TimeoutProvider<Function<Any?>>")
+            .replace(
+                """
+                number | {
+                    [Symbol.toPrimitive]: () => number;
+                }
+            """.trimIndent(), "number"
+            )
+            .replace(
+                "type TimeoutProvider<TTimerId extends ManagedTimerId = ManagedTimerId> = {",
+                "interface TimeoutProvider<TTimerId extends ManagedTimerId> {",
+            )
+            .replace(
+                "TimeoutManager implements Omit<TimeoutProvider, 'name'>",
+                "TimeoutManager implements TimeoutProvider",
+            )
+            .replace(";", "")
 
         "useIsFetching.d.ts" -> content.replace(" Options", " UseIsFetchingOptions")
         "useIsMutating.d.ts" -> content.replace(" Options", " UseIsMutatingOptions")
