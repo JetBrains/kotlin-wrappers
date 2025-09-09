@@ -3,8 +3,9 @@ package js.reflect
 import js.core.BigInt
 import js.core.n
 import js.globals.globalThis
-import kotlin.test.Ignore
+import js.objects.set
 import kotlin.test.Test
+import kotlin.test.Ignore
 import kotlin.test.assertEquals
 
 external fun externalFunctionWithUnitReturn()
