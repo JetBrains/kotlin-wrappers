@@ -12,6 +12,7 @@ import js.objects.recordOf
 import node.path.path
 import node.process.process
 import node.url.fileURLToPath
+import typescript.karakum.nameResolvers.*
 import typescript.karakum.plugins.*
 
 suspend fun main() {
@@ -76,7 +77,18 @@ suspend fun main() {
         )
         injections = manyOf(values = jsInjections + arrayOf())
         annotations = manyOf(values = jsAnnotations + arrayOf())
-        nameResolvers = manyOf(values = jsNameResolvers + arrayOf())
+        nameResolvers = manyOf(
+            values = arrayOf(
+                ::resolveChangePropertyTypesPropertyName,
+                ::resolveCustomTransformersAfterDeclarationsItemTypeArgumentName,
+                ::resolveFunctionReturnTypeItemName,
+                ::resolveFunctionReturnTypePredicateName,
+                ::resolveInterfaceMethodParameterItemName,
+                ::resolveInterfaceMethodReturnTypeNullableUnionName,
+                ::resolveInterfaceMethodTypeParameterConstraintName,
+                ::resolveInterfacePropertyConflictingName,
+            ) + jsNameResolvers
+        )
         inheritanceModifiers = manyOf(values = jsInheritanceModifiers + arrayOf())
         varianceModifiers = manyOf(values = jsVarianceModifiers + arrayOf())
 
