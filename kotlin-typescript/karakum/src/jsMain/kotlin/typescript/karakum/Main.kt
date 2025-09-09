@@ -42,12 +42,6 @@ suspend fun main() {
         cwd,
     )
 
-    val jsNameResolvers = loadExtensions<NameResolver>(
-        "Name Resolver",
-        arrayOf("kotlin/nameResolvers/*.js"),
-        cwd,
-    )
-
     val jsInheritanceModifiers = loadExtensions<InheritanceModifier>(
         "Inheritance Modifier",
         arrayOf("kotlin/inheritanceModifiers/*.js"),
@@ -78,16 +72,22 @@ suspend fun main() {
         injections = manyOf(values = jsInjections + arrayOf())
         annotations = manyOf(values = jsAnnotations + arrayOf())
         nameResolvers = manyOf(
-            values = arrayOf(
-                ::resolveChangePropertyTypesPropertyName,
-                ::resolveCustomTransformersAfterDeclarationsItemTypeArgumentName,
-                ::resolveFunctionReturnTypeItemName,
-                ::resolveFunctionReturnTypePredicateName,
-                ::resolveInterfaceMethodParameterItemName,
-                ::resolveInterfaceMethodReturnTypeNullableUnionName,
-                ::resolveInterfaceMethodTypeParameterConstraintName,
-                ::resolveInterfacePropertyConflictingName,
-            ) + jsNameResolvers
+            ::resolveChangePropertyTypesPropertyName,
+            ::resolveCustomTransformersAfterDeclarationsItemTypeArgumentName,
+            ::resolveFunctionReturnTypeItemName,
+            ::resolveFunctionReturnTypePredicateName,
+            ::resolveInterfaceMethodParameterItemName,
+            ::resolveInterfaceMethodReturnTypeNullableUnionName,
+            ::resolveInterfaceMethodTypeParameterConstraintName,
+            ::resolveInterfacePropertyConflictingName,
+            ::resolveInterfacePropertyIntersectionPropertyName,
+            ::resolveInterfacePropertyTypeReferenceItemName,
+            ::resolveInterfacePropertyArrayTypeItemName,
+            ::resolveInterfacePropertyNullableUnionName,
+            ::resolveInterfacePropertyPropertyName,
+            ::resolveTypeAliasIntersectionPropertyName,
+            ::resolveTypeAliasNullableUnionName,
+            ::resolveTypeAliasNullableUnionPropertyName,
         )
         inheritanceModifiers = manyOf(values = jsInheritanceModifiers + arrayOf())
         varianceModifiers = manyOf(values = jsVarianceModifiers + arrayOf())
