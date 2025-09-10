@@ -2,6 +2,6 @@
 
 package web.assembly
 
-import js.core.JsAny
+import kotlin.js.JsAny
 
 typealias ExportValue = JsAny /* Function | Global | Memory | Table */

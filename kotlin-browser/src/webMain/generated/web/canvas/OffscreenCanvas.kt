@@ -2,7 +2,6 @@
 
 package web.canvas
 
-import js.core.JsAny
 import js.core.UInt53
 import js.promise.Promise
 import js.promise.await
@@ -17,6 +16,7 @@ import web.gpu.GPUCopyExternalImageSource
 import web.images.ImageBitmap
 import web.rendering.OffscreenRenderingContext
 import web.rendering.RenderingContextId
+import kotlin.js.JsAny
 import kotlin.js.JsName
 import kotlin.js.definedExternally
 

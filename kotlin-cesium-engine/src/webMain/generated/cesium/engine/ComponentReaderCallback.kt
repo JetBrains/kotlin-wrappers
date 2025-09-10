@@ -3,7 +3,6 @@
 package cesium.engine
 
 import js.buffer.DataView
-import js.core.JsAny
 
 /**
  * Reads and returns a value with the given type

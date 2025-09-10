@@ -1,6 +1,5 @@
 package emotion.cache
 
-import js.core.JsAny
 import js.objects.JsPlainObject
 
 @JsPlainObject

@@ -2,7 +2,7 @@
 
 package vscode
 
-import js.core.JsAny
+import kotlin.js.JsAny
 
 /**
  * The completion item provider interface defines the contract between extensions and

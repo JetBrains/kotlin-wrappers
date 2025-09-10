@@ -2,7 +2,7 @@
 
 package vscode
 
-import js.core.JsAny
+import kotlin.js.JsAny
 
 /**
  * A channel for containing log output.

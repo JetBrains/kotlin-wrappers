@@ -2,11 +2,11 @@
 
 package web.broadcast
 
-import js.core.JsAny
 import web.events.EventHandler
 import web.events.EventInstance
 import web.events.EventTarget
 import web.messaging.MessageEvent
+import kotlin.js.JsAny
 
 /**
  * The **`BroadcastChannel`** interface represents a named channel that any browsing context of a given origin can subscribe to.

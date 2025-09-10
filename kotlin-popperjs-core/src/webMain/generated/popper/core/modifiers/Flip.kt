@@ -3,9 +3,9 @@
 package popper.core.modifiers
 
 import js.array.ReadonlyArray
-import js.core.JsAny
 import js.objects.JsPlainObject
 import seskar.js.JsValue
+import kotlin.js.JsAny
 
 @JsPlainObject
 external interface FlipOptions {

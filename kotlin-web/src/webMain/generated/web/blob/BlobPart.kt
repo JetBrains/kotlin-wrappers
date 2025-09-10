@@ -2,6 +2,6 @@
 
 package web.blob
 
-import js.core.JsAny
+import kotlin.js.JsAny
 
 typealias BlobPart = JsAny /* BufferSource | Blob | string */

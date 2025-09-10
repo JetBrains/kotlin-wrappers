@@ -4,8 +4,6 @@
 
 package cesium.engine
 
-import js.core.JsAny
-
 /**
  * Functions for computing the intersection between geometries such as rays, planes, triangles, and ellipsoids.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/IntersectionTests.html">Online Documentation</a>

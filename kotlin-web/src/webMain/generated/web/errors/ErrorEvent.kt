@@ -2,10 +2,10 @@
 
 package web.errors
 
-import js.core.JsAny
 import js.reflect.unsafeCast
 import web.events.Event
 import web.events.EventType
+import kotlin.js.JsAny
 import kotlin.js.definedExternally
 
 /**

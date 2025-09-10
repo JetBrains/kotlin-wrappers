@@ -6,7 +6,6 @@ package cesium.engine
 
 import cesium.engine.BoundingSphere.Companion.transform
 import js.array.ReadonlyArray
-import js.core.JsAny
 import js.core.JsDouble
 
 /**

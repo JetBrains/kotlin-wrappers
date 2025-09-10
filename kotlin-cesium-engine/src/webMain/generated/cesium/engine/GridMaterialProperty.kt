@@ -4,8 +4,6 @@
 
 package cesium.engine
 
-import js.core.JsAny
-
 /**
  * A [MaterialProperty] that maps to grid [Material] uniforms.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GridMaterialProperty.html">Online Documentation</a>

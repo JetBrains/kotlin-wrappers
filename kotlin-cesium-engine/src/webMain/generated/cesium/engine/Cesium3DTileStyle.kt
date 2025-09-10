@@ -4,8 +4,6 @@
 
 package cesium.engine
 
-import js.core.JsAny
-
 /**
  * A style that is applied to a [Cesium3DTileset].
  *

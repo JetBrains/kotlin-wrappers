@@ -1,7 +1,7 @@
 package js.iterable
 
-import js.core.JsAny
 import kotlinx.coroutines.channels.ChannelIterator
+import kotlin.js.JsAny
 
 interface SuspendIterator<out T : JsAny?> {
     suspend operator fun hasNext(): Boolean

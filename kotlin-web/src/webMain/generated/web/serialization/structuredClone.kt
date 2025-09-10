@@ -2,7 +2,7 @@
 
 package web.serialization
 
-import js.core.JsAny
+import kotlin.js.JsAny
 import kotlin.js.definedExternally
 
 /**

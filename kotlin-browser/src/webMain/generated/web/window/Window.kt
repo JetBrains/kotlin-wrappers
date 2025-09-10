@@ -4,7 +4,6 @@ package web.window
 
 import js.array.ArrayLike
 import js.array.ReadonlyArray
-import js.core.JsAny
 import js.globals.GlobalScope
 import js.serialization.Transferable
 import web.animations.AnimationEvent
@@ -47,6 +46,7 @@ import web.touch.TouchEvent
 import web.url.URL
 import web.viewtransition.PageRevealEvent
 import web.viewtransition.PageSwapEvent
+import kotlin.js.JsAny
 import kotlin.js.definedExternally
 
 /**

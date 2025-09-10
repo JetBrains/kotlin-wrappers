@@ -2,7 +2,6 @@
 
 package cesium.engine
 
-import js.core.JsAny
 import js.objects.JsPlainObject
 
 /**

@@ -6,12 +6,12 @@ package jszip
 
 import js.array.ReadonlyArray
 import js.buffer.ArrayBuffer
-import js.core.JsAny
 import js.core.JsString
 import js.core.JsUByte
 import js.reflect.unsafeCast
 import js.typedarrays.Uint8Array
 import web.blob.Blob
+import kotlin.js.JsAny
 
 sealed external interface InputType<T : JsAny> {
     companion object

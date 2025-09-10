@@ -2,7 +2,7 @@
 
 package vscode
 
-import js.core.JsAny
+import kotlin.js.JsAny
 
 /**
  * The type definition provider defines the contract between extensions and

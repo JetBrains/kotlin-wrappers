@@ -3,9 +3,9 @@
 package web.serviceworker
 
 import js.array.ReadonlyArray
-import js.core.JsAny
 import js.objects.JsPlainObject
 import web.messaging.MessagePort
+import kotlin.js.JsAny
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ExtendableMessageEvent/ExtendableMessageEvent#options)

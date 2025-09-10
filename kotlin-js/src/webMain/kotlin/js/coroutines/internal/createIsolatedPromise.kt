@@ -1,9 +1,9 @@
 package js.coroutines.internal
 
-import js.core.JsAny
 import js.internal.InternalApi
 import js.promise.Promise
 import kotlinx.coroutines.CoroutineScope
+import kotlin.js.JsAny
 
 @InternalApi
 fun <R : JsAny?> createIsolatedPromise(

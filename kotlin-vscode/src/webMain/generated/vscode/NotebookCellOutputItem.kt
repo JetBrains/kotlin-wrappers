@@ -4,9 +4,9 @@
 
 package vscode
 
-import js.core.JsAny
 import js.errors.JsError
 import js.typedarrays.Uint8Array
+import kotlin.js.JsAny
 import kotlin.js.JsModule
 import kotlin.js.definedExternally
 

@@ -5,7 +5,6 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
-import js.core.JsAny
 
 /**
  * A [Property] whose value is a key-value mapping of property names to the computed value of other properties.

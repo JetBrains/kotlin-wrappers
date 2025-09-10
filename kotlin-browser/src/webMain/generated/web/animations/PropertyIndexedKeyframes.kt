@@ -3,8 +3,8 @@
 package web.animations
 
 import js.array.ReadonlyArray
-import js.core.JsAny
 import js.core.JsDouble
+import kotlin.js.JsAny
 
 external interface PropertyIndexedKeyframes {
     var composite: ReadonlyArray<CompositeOperationOrAuto> /* | CompositeOperationOrAuto */?

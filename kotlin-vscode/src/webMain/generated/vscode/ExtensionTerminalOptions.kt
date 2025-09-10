@@ -2,8 +2,8 @@
 
 package vscode
 
-import js.core.JsAny
 import js.objects.JsPlainObject
+import kotlin.js.JsAny
 
 /**
  * Value-object describing what options a virtual process terminal should use.

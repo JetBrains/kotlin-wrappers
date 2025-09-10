@@ -2,9 +2,9 @@
 
 package vscode
 
-import js.core.JsAny
 import js.core.Void
 import js.promise.PromiseLike
+import kotlin.js.JsAny
 
 /**
  * Provider for editable custom editors that use a custom document model.

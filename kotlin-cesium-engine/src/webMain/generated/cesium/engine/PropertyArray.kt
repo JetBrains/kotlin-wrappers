@@ -5,7 +5,6 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
-import js.core.JsAny
 
 /**
  * A [Property] whose value is an array whose items are the computed value

@@ -4,8 +4,6 @@
 
 package cesium.engine
 
-import js.core.JsAny
-
 /**
  * Clones an object, returning a new object containing the same properties.
  * @param [object] The object to clone.

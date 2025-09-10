@@ -3,9 +3,9 @@
 package vscode
 
 import js.array.ReadonlyArray
-import js.core.JsAny
 import js.date.Date
 import js.objects.JsPlainObject
+import kotlin.js.JsAny
 
 /**
  * A comment is displayed within the editor or the Comments Panel, depending on how it is provided.

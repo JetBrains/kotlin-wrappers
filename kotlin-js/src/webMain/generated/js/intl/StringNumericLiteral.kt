@@ -2,6 +2,6 @@
 
 package js.intl
 
-import js.core.JsAny
+import kotlin.js.JsAny
 
 typealias StringNumericLiteral = JsAny /* `${number}` | "Infinity" | "-Infinity" | "+Infinity" */

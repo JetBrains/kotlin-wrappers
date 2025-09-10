@@ -4,7 +4,6 @@
 
 package cesium.widgets
 
-import js.core.JsAny
 import js.objects.JsPlainObject
 
 /**

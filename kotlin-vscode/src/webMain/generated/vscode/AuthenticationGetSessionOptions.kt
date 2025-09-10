@@ -2,8 +2,8 @@
 
 package vscode
 
-import js.core.JsAny
 import js.objects.JsPlainObject
+import kotlin.js.JsAny
 
 /**
  * Options to be used when getting an [AuthenticationSession] from an [AuthenticationProvider].

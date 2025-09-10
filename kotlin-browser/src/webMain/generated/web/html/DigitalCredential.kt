@@ -2,9 +2,8 @@
 
 package web.html
 
-import js.core.JsAny
-
 import web.credentials.Credential
+import kotlin.js.JsAny
 
 /**
  * Available only in secure contexts.

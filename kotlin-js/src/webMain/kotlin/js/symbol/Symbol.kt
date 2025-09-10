@@ -1,7 +1,7 @@
 package js.symbol
 
-import js.core.JsAny
 import js.reflect.JsExternalInheritorsOnly
+import kotlin.js.JsAny
 import kotlin.js.definedExternally
 
 @JsExternalInheritorsOnly

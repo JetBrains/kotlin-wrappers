@@ -6,7 +6,7 @@
 
 package js.temporal
 
-import js.core.JsAny
+import kotlin.js.JsAny
 import kotlin.js.definedExternally
 
 sealed external interface HasArithmeticOperations<T : HasArithmeticOperations<T, L, U>, in L : JsAny, U : DateTimeUnit<U>> :

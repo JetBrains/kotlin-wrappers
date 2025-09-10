@@ -3,9 +3,9 @@
 package web.push
 
 import js.buffer.ArrayBuffer
-import js.core.JsAny
 import js.typedarrays.Uint8Array
 import web.blob.Blob
+import kotlin.js.JsAny
 
 /**
  * The **`PushMessageData`** interface of the Push API provides methods which let you retrieve the push data sent by a server in various formats.

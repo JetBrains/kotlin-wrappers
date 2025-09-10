@@ -2,6 +2,6 @@
 
 package web.cssom
 
-import js.core.JsAny
+import kotlin.js.JsAny
 
 typealias CSSUnparsedSegment = JsAny /* string | CSSVariableReferenceValue */

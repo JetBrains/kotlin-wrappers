@@ -1,6 +1,6 @@
 package js.objects
 
-import js.core.JsAny
+import kotlin.js.JsAny
 
 inline fun <T : JsAny> unsafeJso(
     block: @JsoDsl T.() -> Unit,

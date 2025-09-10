@@ -1,7 +1,5 @@
 package js.reflect
 
-import js.core.JsAny
-
 actual typealias JsClass<T> = kotlin.js.JsClass<T>
 
 internal actual inline fun <T : JsAny> isInstanceOf(

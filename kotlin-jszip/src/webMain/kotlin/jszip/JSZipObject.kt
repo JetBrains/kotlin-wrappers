@@ -2,12 +2,16 @@ package jszip
 
 import js.buffer.ArrayBuffer
 import js.buffer.internal.convertToByteArray
-import js.core.JsAny
 import js.date.Date
 import js.promise.Promise
 import js.promise.await
 import js.typedarrays.Uint8Array
 import web.blob.Blob
+import kotlin.Boolean
+import kotlin.ByteArray
+import kotlin.Int
+import kotlin.String
+import kotlin.js.JsAny
 import kotlin.js.definedExternally
 
 /**

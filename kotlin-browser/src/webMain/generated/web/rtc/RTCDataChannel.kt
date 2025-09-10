@@ -4,7 +4,6 @@ package web.rtc
 
 import js.buffer.ArrayBuffer
 import js.buffer.ArrayBufferView
-import js.core.JsAny
 import js.serialization.Transferable
 import web.blob.Blob
 import web.buffer.BinaryType
@@ -13,6 +12,7 @@ import web.events.EventHandler
 import web.events.EventInstance
 import web.events.EventTarget
 import web.messaging.MessageEvent
+import kotlin.js.JsAny
 
 /**
  * The **`RTCDataChannel`** interface represents a network channel which can be used for bidirectional peer-to-peer transfers of arbitrary data.

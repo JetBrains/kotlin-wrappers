@@ -1,8 +1,8 @@
 package web.css.painting
 
 import js.collections.MapLike
-import js.core.JsAny
 import web.experimental.ExperimentalWebApi
+import kotlin.js.JsAny
 
 @ExperimentalWebApi
 external interface Paint {

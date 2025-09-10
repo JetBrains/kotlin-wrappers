@@ -1,9 +1,9 @@
 package js.collections
 
 import js.array.Tuple2
-import js.core.JsAny
 import js.iterable.JsIterable
 import js.iterable.JsIterator
+import kotlin.js.JsAny
 
 external interface CollectionLike<K : JsAny?, out V : JsAny?> :
     JsIterable<V> {

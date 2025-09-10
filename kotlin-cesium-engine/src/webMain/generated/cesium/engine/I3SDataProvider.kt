@@ -5,7 +5,6 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
-import js.core.JsAny
 import js.core.JsString
 import js.core.Void
 import js.objects.JsPlainObject

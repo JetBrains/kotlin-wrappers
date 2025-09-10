@@ -3,9 +3,9 @@
 package web.serviceworker
 
 import js.array.ReadonlyArray
-import js.core.JsAny
 import js.serialization.Transferable
 import web.serialization.StructuredSerializeOptions
+import kotlin.js.JsAny
 import kotlin.js.definedExternally
 
 /**

@@ -2,8 +2,8 @@
 
 package web.cssom
 
-import js.core.JsAny
 import js.reflect.unsafeCast
+import kotlin.js.JsAny
 
 inline fun attr(
     name: String,

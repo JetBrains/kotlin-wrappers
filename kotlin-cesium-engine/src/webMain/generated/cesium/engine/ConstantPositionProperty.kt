@@ -4,8 +4,6 @@
 
 package cesium.engine
 
-import js.core.JsAny
-
 /**
  * A [PositionProperty] whose value does not change in respect to the
  * [ReferenceFrame] in which is it defined.

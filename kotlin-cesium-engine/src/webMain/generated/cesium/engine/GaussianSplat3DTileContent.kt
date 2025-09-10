@@ -5,7 +5,6 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
-import js.core.JsAny
 
 /**
  * Represents the contents of a glTF or glb using the [ KHR_gaussian_splatting](https://github.com/CesiumGS/glTF/tree/draft-splat-spz/extensions/2.0/Khronos/KHR_gaussian_splatting ) and [ KHR_gaussian_splatting_compression_spz_2](https://github.com/CesiumGS/glTF/tree/draft-splat-spz/extensions/2.0/Khronos/KHR_gaussian_splatting_compression_spz_2 ) extensions.

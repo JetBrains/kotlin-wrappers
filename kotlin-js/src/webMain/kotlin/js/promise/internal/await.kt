@@ -1,12 +1,12 @@
 package js.promise.internal
 
-import js.core.JsAny
 import js.internal.InternalApi
 import js.promise.PromiseLike
 import js.promise.PromiseResult
 import js.promise.thenTo
 import js.promise.toPromise
 import kotlin.coroutines.suspendCoroutine
+import kotlin.js.JsAny
 
 @InternalApi
 @PublishedApi

@@ -5,7 +5,6 @@
 package cesium.engine
 
 import js.buffer.ArrayBuffer
-import js.core.JsAny
 import js.promise.Promise
 import seskar.js.JsAsync
 

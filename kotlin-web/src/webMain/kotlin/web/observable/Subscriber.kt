@@ -1,10 +1,10 @@
 package js.observable
 
-import js.core.JsAny
 import js.errors.JsError
 import web.abort.AbortSignal
 import web.abort.AbortableLike
 import web.function.VoidFunction
+import kotlin.js.JsAny
 
 external class Subscriber<T : JsAny?> :
     AbortableLike {

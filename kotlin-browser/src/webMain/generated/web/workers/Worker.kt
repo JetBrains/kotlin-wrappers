@@ -3,7 +3,6 @@
 package web.workers
 
 import js.array.ReadonlyArray
-import js.core.JsAny
 import js.serialization.Transferable
 import web.events.Event
 import web.events.EventInstance
@@ -12,6 +11,7 @@ import web.messaging.MessageEvent
 import web.messaging.MessageEventTarget
 import web.serialization.StructuredSerializeOptions
 import web.url.URL
+import kotlin.js.JsAny
 import kotlin.js.definedExternally
 
 /**

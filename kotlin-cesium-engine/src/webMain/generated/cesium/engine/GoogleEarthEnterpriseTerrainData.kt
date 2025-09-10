@@ -6,7 +6,6 @@ package cesium.engine
 
 import js.array.ReadonlyArray
 import js.buffer.ArrayBuffer
-import js.core.JsAny
 import js.objects.JsPlainObject
 import js.promise.Promise
 

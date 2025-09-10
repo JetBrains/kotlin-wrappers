@@ -2,8 +2,8 @@
 
 package web.geometry
 
-import js.core.JsAny
 import js.serialization.Serializable
+import kotlin.js.JsAny
 import kotlin.js.definedExternally
 
 /**

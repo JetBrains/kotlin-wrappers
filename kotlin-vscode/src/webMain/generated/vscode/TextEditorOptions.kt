@@ -2,8 +2,8 @@
 
 package vscode
 
-import js.core.JsAny
 import js.objects.JsPlainObject
+import kotlin.js.JsAny
 
 /**
  * Represents a [text editor}'s {@link TextEditor.options options][TextEditor].

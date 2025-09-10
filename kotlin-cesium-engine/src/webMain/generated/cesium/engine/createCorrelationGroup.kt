@@ -4,8 +4,6 @@
 
 package cesium.engine
 
-import js.core.JsAny
-
 /**
  * Creates a `CorrelationGroup` from the given JSON representation
  * @param [correlationGroupJson] The input JSON

@@ -5,7 +5,6 @@ package web.sockets
 import js.array.ReadonlyArray
 import js.buffer.ArrayBufferLike
 import js.buffer.ArrayBufferView
-import js.core.JsAny
 import js.core.JsString
 import js.core.UInt53
 import web.blob.Blob
@@ -16,6 +15,7 @@ import web.events.EventInstance
 import web.events.EventTarget
 import web.messaging.MessageEvent
 import web.url.URL
+import kotlin.js.JsAny
 import kotlin.js.definedExternally
 
 /**

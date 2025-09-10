@@ -1,6 +1,5 @@
 package js.promise
 
-import js.core.JsAny
 import js.reflect.unsafeCast
 import kotlinx.coroutines.Deferred
 

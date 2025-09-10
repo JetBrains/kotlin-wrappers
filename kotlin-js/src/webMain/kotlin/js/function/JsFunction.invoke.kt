@@ -1,7 +1,7 @@
 package js.function
 
 import js.array.*
-import js.core.JsAny
+import kotlin.js.JsAny
 
 inline operator fun <R : JsAny?> JsFunction<Tuple, R>.invoke(): R =
     unsafeInvoke(this)

@@ -4,8 +4,6 @@
 
 package cesium.engine
 
-import js.core.JsAny
-
 /**
  * Draws the axes of a reference frame defined by a matrix that transforms to world
  * coordinates, i.e., Earth's WGS84 coordinates.  The most prominent example is

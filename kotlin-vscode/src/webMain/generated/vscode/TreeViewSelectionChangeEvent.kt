@@ -3,8 +3,8 @@
 package vscode
 
 import js.array.ReadonlyArray
-import js.core.JsAny
 import js.objects.JsPlainObject
+import kotlin.js.JsAny
 
 /**
  * The event that is fired when there is a change in [tree view's selection][TreeView.selection]

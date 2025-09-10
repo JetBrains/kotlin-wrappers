@@ -5,8 +5,8 @@
 
 package js.reflect
 
-import js.core.JsAny
 import js.internal.InternalApi
+import kotlin.js.JsAny
 
 expect external interface JsClass<T : JsAny> :
     JsAny {

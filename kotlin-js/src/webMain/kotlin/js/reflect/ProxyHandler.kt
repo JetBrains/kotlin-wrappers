@@ -1,11 +1,11 @@
 package js.reflect
 
 import js.array.ReadonlyArray
-import js.core.JsAny
 import js.function.JsFunction
 import js.objects.JsPlainObject
 import js.objects.PropertyKey
 import js.objects.TypedPropertyDescriptor
+import kotlin.js.JsAny
 
 @JsPlainObject
 external interface ProxyHandler<T : JsAny> {

@@ -3,8 +3,8 @@
 package web.rtc
 
 import js.array.ReadonlyArray
-import js.core.JsAny
 import web.workers.Worker
+import kotlin.js.JsAny
 import kotlin.js.definedExternally
 
 /**

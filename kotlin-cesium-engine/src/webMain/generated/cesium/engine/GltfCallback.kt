@@ -2,8 +2,6 @@
 
 package cesium.engine
 
-import js.core.JsAny
-
 /**
  * Interface for the function that is called with the loaded gltf object once loaded.
  * @param [gltf] The gltf object

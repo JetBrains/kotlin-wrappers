@@ -4,8 +4,6 @@
 
 package cesium.engine
 
-import js.core.JsAny
-
 /**
  * The interface for all [Property] objects that represent [Material] uniforms.
  * This type defines an interface and cannot be instantiated directly.

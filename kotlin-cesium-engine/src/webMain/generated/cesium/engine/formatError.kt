@@ -4,8 +4,6 @@
 
 package cesium.engine
 
-import js.core.JsAny
-
 /**
  * Formats an error object into a String.  If available, uses name, message, and stack
  * properties, otherwise, falls back on toString().

@@ -1,10 +1,10 @@
 package web.function
 
-import js.core.JsAny
 import js.promise.Promise
 import kotlinx.coroutines.CoroutineScope
 import web.abort.AbortableLike
 import web.abort.internal.createCancellablePromise
+import kotlin.js.JsAny
 
 fun <P1 : AbortableLike, R : JsAny?> async(
     block: suspend CoroutineScope.(P1) -> R,

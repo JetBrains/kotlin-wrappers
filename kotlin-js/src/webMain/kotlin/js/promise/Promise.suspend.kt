@@ -1,10 +1,10 @@
 package js.promise
 
-import js.core.JsAny
 import js.coroutines.internal.IsolatedCoroutineScope
 import kotlinx.coroutines.CoroutineStart
 import kotlinx.coroutines.Deferred
 import kotlinx.coroutines.async
+import kotlin.js.JsAny
 
 /**
  * Converts this promise value to the instance of [Deferred].

@@ -2,8 +2,6 @@
 
 package cesium.engine
 
-import js.core.JsAny
-
 /**
  * This callback is displayed as part of the GeoJsonDataSource class.
  * @param [properties] The properties of the feature.

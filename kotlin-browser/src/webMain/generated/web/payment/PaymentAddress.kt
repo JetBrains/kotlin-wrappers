@@ -3,8 +3,8 @@
 package web.payment
 
 import js.array.ReadonlyArray
-import js.core.JsAny
 import js.core.JsString
+import kotlin.js.JsAny
 
 /**
  * The **`ContactAddress`** interface of the Contact Picker API represents a physical address.

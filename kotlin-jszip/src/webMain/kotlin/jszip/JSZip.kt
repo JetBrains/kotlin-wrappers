@@ -2,7 +2,6 @@ package jszip
 
 import js.array.ReadonlyArray
 import js.buffer.ArrayBuffer
-import js.core.JsAny
 import js.core.JsString
 import js.core.Void
 import js.objects.ReadonlyRecord
@@ -11,6 +10,7 @@ import js.promise.await
 import js.regexp.RegExp
 import js.typedarrays.Uint8Array
 import web.blob.Blob
+import kotlin.js.JsAny
 import kotlin.js.JsModule
 import kotlin.js.definedExternally
 import kotlin.js.undefined

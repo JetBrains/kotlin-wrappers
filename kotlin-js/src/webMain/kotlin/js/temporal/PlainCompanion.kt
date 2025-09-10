@@ -1,6 +1,6 @@
 package js.temporal
 
-import js.core.JsAny
+import kotlin.js.JsAny
 
 sealed external interface PlainCompanion<T : JsAny, in L : JsAny> :
     Factory<T, L, AssignmentOptions>,

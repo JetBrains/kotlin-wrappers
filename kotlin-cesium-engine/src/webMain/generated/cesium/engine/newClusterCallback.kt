@@ -3,7 +3,6 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
-import js.core.JsAny
 
 /**
  * A event listener function used to style clusters.

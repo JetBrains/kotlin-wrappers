@@ -2,9 +2,9 @@
 
 package web.payment
 
-import js.core.JsAny
 import js.reflect.unsafeCast
 import web.events.EventType
+import kotlin.js.JsAny
 import kotlin.js.definedExternally
 
 /**

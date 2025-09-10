@@ -1,7 +1,7 @@
 package js.collections
 
-import js.core.JsAny
 import js.iterable.JsIterator
+import kotlin.js.JsAny
 
 external interface ReadonlySetLike<out T : JsAny?> {
     val size: Int

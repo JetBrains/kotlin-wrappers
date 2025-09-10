@@ -4,7 +4,7 @@ package js.typedarrays
 
 import js.array.ArrayLike
 import js.buffer.ArrayBuffer
-import js.core.JsAny
+import kotlin.js.JsAny
 import kotlin.js.JsName
 import kotlin.js.JsQualifier
 

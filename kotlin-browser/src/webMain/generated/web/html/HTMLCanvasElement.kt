@@ -2,7 +2,6 @@
 
 package web.html
 
-import js.core.JsAny
 import web.canvas.CanvasImageSource
 import web.canvas.OffscreenCanvas
 import web.events.Event
@@ -12,6 +11,7 @@ import web.gpu.GPUCopyExternalImageSource
 import web.mediastreams.MediaStream
 import web.rendering.RenderingContext
 import web.rendering.RenderingContextId
+import kotlin.js.JsAny
 import kotlin.js.definedExternally
 
 /**

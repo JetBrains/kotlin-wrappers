@@ -2,7 +2,6 @@
 
 package web.rtc
 
-import js.core.JsAny
 import js.core.JsInt
 import js.core.JsPrimitives.toInt
 import js.core.Void
@@ -11,6 +10,7 @@ import js.promise.await
 import web.events.EventTarget
 import web.streams.ReadableStream
 import web.streams.WritableStream
+import kotlin.js.JsAny
 import kotlin.js.JsName
 import kotlin.js.definedExternally
 

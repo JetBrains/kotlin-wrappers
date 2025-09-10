@@ -2,8 +2,6 @@
 
 package cesium.engine
 
-import js.core.JsAny
-
 /**
  * A function used to compare two items while performing a binary search.
  * ```

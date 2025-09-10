@@ -3,7 +3,6 @@
 package web.streams
 
 import js.array.Tuple2
-import js.core.JsAny
 import js.core.Void
 import js.disposable.internal.AsyncCloseableDisposable
 import js.errors.JsError
@@ -16,6 +15,7 @@ import web.abort.AbortController
 import web.abort.internal.awaitCancellable
 import web.abort.internal.createAbortable
 import web.abort.internal.patchAbortOptions
+import kotlin.js.JsAny
 import kotlin.js.JsName
 import kotlin.js.definedExternally
 

@@ -1,7 +1,7 @@
 package js.promise
 
-import js.core.JsAny
 import js.promise.internal.awaitPromiseResult
+import kotlin.js.JsAny
 
 // T | PromiseLike<T>
 sealed external interface PromiseResult<out T : JsAny?>

@@ -1,5 +1,5 @@
 package js.reflect
 
-import js.core.JsAny
+import kotlin.js.JsAny
 
 typealias HasInstance = (instance: JsAny?) -> Boolean

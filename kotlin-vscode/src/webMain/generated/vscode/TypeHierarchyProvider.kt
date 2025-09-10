@@ -3,7 +3,7 @@
 package vscode
 
 import js.array.ReadonlyArray
-import js.core.JsAny
+import kotlin.js.JsAny
 
 /**
  * The type hierarchy provider interface describes the contract between extensions

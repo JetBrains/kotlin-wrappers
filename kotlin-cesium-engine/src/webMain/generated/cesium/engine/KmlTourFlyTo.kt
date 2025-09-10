@@ -4,8 +4,6 @@
 
 package cesium.engine
 
-import js.core.JsAny
-
 /**
  * Transitions the KmlTour to the next destination. This transition is facilitated
  * using a specified flyToMode over a given number of seconds.

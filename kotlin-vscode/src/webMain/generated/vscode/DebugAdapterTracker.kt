@@ -2,9 +2,9 @@
 
 package vscode
 
-import js.core.JsAny
 import js.errors.JsError
 import js.objects.JsPlainObject
+import kotlin.js.JsAny
 
 /**
  * A Debug Adapter Tracker is a means to track the communication between the editor and a Debug Adapter.

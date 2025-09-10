@@ -2,8 +2,8 @@
 
 package vscode
 
-import js.core.JsAny
 import js.objects.JsPlainObject
+import kotlin.js.JsAny
 
 /**
  * Represents options for a specific decoration in a [decoration set][TextEditorDecorationType].

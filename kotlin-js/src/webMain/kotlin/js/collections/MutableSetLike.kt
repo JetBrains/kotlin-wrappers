@@ -1,6 +1,6 @@
 package js.collections
 
-import js.core.JsAny
+import kotlin.js.JsAny
 
 external interface MutableSetLike<T : JsAny?> :
     ReadonlySet<T> {

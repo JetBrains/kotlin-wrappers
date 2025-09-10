@@ -2,8 +2,8 @@
 
 package popper.core
 
-import js.core.JsAny
 import js.objects.JsPlainObject
+import kotlin.js.JsAny
 
 @JsPlainObject
 external interface ModifierArguments<Options : JsAny?> {

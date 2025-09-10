@@ -5,7 +5,6 @@
 package cesium.engine
 
 import cesium.engine.RequestScheduler.requestsByServer
-import js.core.JsAny
 
 /**
  * The request scheduler is used to track and constrain the number of active requests in order to prioritize incoming requests. The ability

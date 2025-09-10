@@ -2,7 +2,7 @@
 
 package web.idb
 
-import js.core.JsAny
+import kotlin.js.JsAny
 import kotlin.js.definedExternally
 
 /**

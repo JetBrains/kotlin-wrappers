@@ -3,11 +3,11 @@
 package vscode
 
 import js.array.ReadonlyArray
-import js.core.JsAny
 import js.core.JsString
 import js.core.Void
 import js.objects.JsPlainObject
 import js.promise.PromiseLike
+import kotlin.js.JsAny
 
 /**
  * Provides support for drag and drop in `TreeView`.

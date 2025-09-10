@@ -3,7 +3,7 @@
 package vscode
 
 import js.array.ReadonlyArray
-import js.core.JsAny
+import kotlin.js.JsAny
 
 /**
  * A collection of [comments][Comment] representing a conversation at a particular range in a document.

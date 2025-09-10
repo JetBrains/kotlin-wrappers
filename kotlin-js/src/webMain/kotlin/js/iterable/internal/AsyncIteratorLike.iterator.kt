@@ -1,12 +1,12 @@
 package js.iterable.internal
 
-import js.core.JsAny
 import js.internal.InternalApi
 import js.iterable.AsyncIteratorLike
 import js.iterable.IteratorResult
 import js.iterable.SuspendIterator
 import js.iterable.isYield
 import js.promise.await
+import kotlin.js.JsAny
 
 @InternalApi
 @PublishedApi

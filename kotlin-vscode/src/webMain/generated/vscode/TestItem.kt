@@ -3,8 +3,8 @@
 package vscode
 
 import js.array.ReadonlyArray
-import js.core.JsAny
 import js.objects.JsPlainObject
+import kotlin.js.JsAny
 
 /**
  * An item shown in the "test explorer" view.

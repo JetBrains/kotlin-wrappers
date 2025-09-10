@@ -5,9 +5,9 @@
 package js.intl
 
 import js.array.ReadonlyArray
-import js.core.JsAny
 import js.core.JsString
 import js.iterable.JsIterable
+import kotlin.js.JsAny
 import kotlin.js.JsQualifier
 import kotlin.js.definedExternally
 

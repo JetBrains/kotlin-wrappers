@@ -2,6 +2,6 @@
 
 package web.codecs
 
-import js.core.JsAny
+import kotlin.js.JsAny
 
 typealias ImageBufferSource = JsAny /* AllowSharedBufferSource | ReadableStream */

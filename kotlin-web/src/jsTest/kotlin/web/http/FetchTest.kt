@@ -1,6 +1,5 @@
 package web.http
 
-import js.core.JsAny
 import js.errors.TypeError
 import js.errors.toJsError
 import js.errors.toJsErrorLike

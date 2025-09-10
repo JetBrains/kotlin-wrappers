@@ -3,9 +3,9 @@
 package vscode
 
 import js.array.ReadonlyArray
-import js.core.JsAny
 import js.core.JsInt
 import js.promise.PromiseLike
+import kotlin.js.JsAny
 import kotlin.js.definedExternally
 
 /**

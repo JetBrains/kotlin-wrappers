@@ -1,9 +1,9 @@
 package js.promise
 
-import js.core.JsAny
 import js.errors.toThrowable
 import js.objects.JsPlainObject
 import kotlin.contracts.contract
+import kotlin.js.JsAny
 
 @JsPlainObject
 external interface PromiseSettledResult<T : JsAny?> {

@@ -2,8 +2,6 @@
 
 package cesium.engine
 
-import js.core.JsAny
-
 /**
  * Function interface for comparing interval data.
  * @param [leftData] The first data instance.

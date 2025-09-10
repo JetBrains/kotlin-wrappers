@@ -2,10 +2,10 @@
 
 package web.streams
 
-import js.core.JsAny
 import js.core.Void
 import js.objects.JsPlainObject
 import js.promise.PromiseLike
+import kotlin.js.JsAny
 
 @JsPlainObject
 external interface UnderlyingDefaultSource<R : JsAny?> {

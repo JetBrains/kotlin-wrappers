@@ -2,10 +2,10 @@
 
 package web.xslt
 
-import js.core.JsAny
 import web.dom.Document
 import web.dom.DocumentFragment
 import web.dom.Node
+import kotlin.js.JsAny
 
 /**
  * An **`XSLTProcessor`** applies an XSLT stylesheet transformation to an XML document to produce a new XML document as output.

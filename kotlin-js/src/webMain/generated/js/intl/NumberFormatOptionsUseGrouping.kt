@@ -2,6 +2,6 @@
 
 package js.intl
 
-import js.core.JsAny
+import kotlin.js.JsAny
 
 typealias NumberFormatOptionsUseGrouping = JsAny /* {} extends NumberFormatOptionsUseGroupingRegistry ? boolean : keyof NumberFormatOptionsUseGroupingRegistry | "true" | "false" | boolean */

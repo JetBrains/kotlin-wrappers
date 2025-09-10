@@ -3,7 +3,6 @@
 package web.xhr
 
 import js.buffer.BufferSource
-import js.core.JsAny
 import web.blob.Blob
 import web.dom.Document
 import web.events.Event
@@ -14,6 +13,7 @@ import web.form.FormData
 import web.http.RequestMethod
 import web.url.URL
 import web.url.URLSearchParams
+import kotlin.js.JsAny
 import kotlin.js.definedExternally
 
 /**

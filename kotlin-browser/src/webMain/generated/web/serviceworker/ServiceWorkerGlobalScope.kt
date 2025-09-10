@@ -2,7 +2,6 @@
 
 package web.serviceworker
 
-import js.core.JsAny
 import js.core.Void
 import js.promise.Promise
 import js.promise.await
@@ -14,6 +13,7 @@ import web.messaging.MessageEvent
 import web.push.PushEvent
 import web.push.PushSubscriptionChangeEvent
 import web.workers.WorkerGlobalScope
+import kotlin.js.JsAny
 import kotlin.js.JsName
 
 /**

@@ -4,8 +4,6 @@
 
 package cesium.engine
 
-import js.core.JsAny
-
 /**
  * Destroys an object.  Each of the object's functions, including functions in its prototype,
  * is replaced with a function that throws a [DeveloperError], except for the object's

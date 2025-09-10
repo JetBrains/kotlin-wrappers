@@ -2,6 +2,6 @@
 
 package web.push
 
-import js.core.JsAny
+import kotlin.js.JsAny
 
 typealias PushMessageDataInit = JsAny /* BufferSource | string */

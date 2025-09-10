@@ -1,5 +1,5 @@
 package js.objects
 
-import js.core.JsAny
+import kotlin.js.JsAny
 
 typealias PropertyKey = JsAny /* string | number | symbol */

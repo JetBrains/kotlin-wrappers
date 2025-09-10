@@ -1,10 +1,10 @@
 package js.promise
 
-import js.core.JsAny
 import js.errors.JsErrorLike
 import js.promise.internal.awaitPromiseLike
 import js.promise.internal.thenToContinuation
 import kotlin.coroutines.Continuation
+import kotlin.js.JsAny
 import kotlin.js.JsName
 
 external interface PromiseLike<out T : JsAny?> :

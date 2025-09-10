@@ -3,7 +3,6 @@
 package web.serviceworker
 
 import js.array.ReadonlyArray
-import js.core.JsAny
 import js.serialization.Transferable
 import web.events.Event
 import web.events.EventHandler
@@ -12,6 +11,7 @@ import web.events.EventTarget
 import web.messaging.MessageEventSource
 import web.serialization.StructuredSerializeOptions
 import web.workers.AbstractWorker
+import kotlin.js.JsAny
 import kotlin.js.definedExternally
 
 /**

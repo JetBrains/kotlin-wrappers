@@ -5,7 +5,6 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
-import js.core.JsAny
 
 /**
  * Non-destructively composites multiple [EntityCollection] instances into a single collection.

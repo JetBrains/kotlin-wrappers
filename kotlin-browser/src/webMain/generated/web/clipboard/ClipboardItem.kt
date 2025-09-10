@@ -3,12 +3,12 @@
 package web.clipboard
 
 import js.array.ReadonlyArray
-import js.core.JsAny
 import js.core.JsString
 import js.objects.ReadonlyRecord
 import js.promise.Promise
 import js.promise.await
 import web.blob.Blob
+import kotlin.js.JsAny
 import kotlin.js.JsName
 import kotlin.js.definedExternally
 

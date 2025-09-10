@@ -3,12 +3,12 @@
 package web.messaging
 
 import js.array.ReadonlyArray
-import js.core.JsAny
 import js.serialization.Transferable
 import web.events.Event
 import web.events.EventInstance
 import web.events.EventTarget
 import web.serialization.StructuredSerializeOptions
+import kotlin.js.JsAny
 import kotlin.js.definedExternally
 
 /**

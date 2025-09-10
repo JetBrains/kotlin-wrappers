@@ -2,8 +2,8 @@
 
 package vscode
 
-import js.core.JsAny
 import js.objects.JsPlainObject
+import kotlin.js.JsAny
 
 /**
  * Represents theme specific rendering styles for [before][ThemableDecorationRenderOptions.before] and

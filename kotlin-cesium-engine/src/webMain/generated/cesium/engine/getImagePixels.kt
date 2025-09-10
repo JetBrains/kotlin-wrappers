@@ -4,7 +4,6 @@
 
 package cesium.engine
 
-import js.core.JsAny
 import web.images.ImageData
 
 /**

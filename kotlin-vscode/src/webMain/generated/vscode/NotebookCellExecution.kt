@@ -2,10 +2,10 @@
 
 package vscode
 
-import js.core.JsAny
 import js.core.JsInt53
 import js.core.Void
 import js.promise.PromiseLike
+import kotlin.js.JsAny
 import kotlin.js.definedExternally
 
 /**

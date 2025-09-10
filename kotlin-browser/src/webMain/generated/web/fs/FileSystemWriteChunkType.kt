@@ -2,6 +2,6 @@
 
 package web.fs
 
-import js.core.JsAny
+import kotlin.js.JsAny
 
 typealias FileSystemWriteChunkType = JsAny /* BufferSource | Blob | string | WriteParams */

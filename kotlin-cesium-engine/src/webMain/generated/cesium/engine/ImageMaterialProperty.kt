@@ -4,8 +4,6 @@
 
 package cesium.engine
 
-import js.core.JsAny
-
 /**
  * A [MaterialProperty] that maps to image [Material] uniforms.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ImageMaterialProperty.html">Online Documentation</a>

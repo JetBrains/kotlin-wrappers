@@ -1,7 +1,7 @@
 package js.function
 
 import js.array.*
-import js.core.JsAny
+import kotlin.js.JsAny
 import kotlin.js.JsName
 
 @JsName(FUNCTION)

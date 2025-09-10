@@ -2,7 +2,7 @@
 
 package web.performance
 
-import js.core.JsAny
+import kotlin.js.JsAny
 import kotlin.js.definedExternally
 
 /**

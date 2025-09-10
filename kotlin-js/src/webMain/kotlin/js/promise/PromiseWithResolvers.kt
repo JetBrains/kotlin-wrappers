@@ -1,6 +1,6 @@
 package js.promise
 
-import js.core.JsAny
+import kotlin.js.JsAny
 
 sealed external interface PromiseWithResolvers<T : JsAny?> {
     val promise: Promise<T>

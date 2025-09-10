@@ -2,7 +2,7 @@
 
 package web.cssom
 
-import js.core.JsAny
+import kotlin.js.JsAny
 
 external interface CustomProperties {
     operator fun <T : JsAny> get(

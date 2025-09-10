@@ -1,6 +1,6 @@
 package js.iterable
 
-import js.core.JsAny
+import kotlin.js.JsAny
 
 external interface JsIteratorLike<out T : JsAny?> {
 

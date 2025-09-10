@@ -2,6 +2,6 @@
 
 package web.html
 
-import js.core.JsAny
+import kotlin.js.JsAny
 
 typealias MediaProvider = JsAny /* MediaStream | MediaSource | Blob */

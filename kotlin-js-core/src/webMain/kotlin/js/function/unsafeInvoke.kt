@@ -1,6 +1,6 @@
 package js.function
 
-import js.core.JsAny
+import kotlin.js.JsAny
 
 expect fun <R : JsAny?> unsafeInvoke(
     f: JsAny,

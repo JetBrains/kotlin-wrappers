@@ -4,7 +4,6 @@
 
 package cesium.engine
 
-import js.core.JsAny
 import js.date.Date
 import web.html.HTMLCanvasElement
 

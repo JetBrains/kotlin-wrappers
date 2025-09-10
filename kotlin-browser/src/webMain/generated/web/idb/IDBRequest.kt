@@ -2,12 +2,12 @@
 
 package web.idb
 
-import js.core.JsAny
 import web.errors.DOMException
 import web.events.Event
 import web.events.EventHandler
 import web.events.EventInstance
 import web.events.EventTarget
+import kotlin.js.JsAny
 
 /**
  * The **`IDBRequest`** interface of the IndexedDB API provides access to results of asynchronous requests to databases and database objects using event handler attributes.

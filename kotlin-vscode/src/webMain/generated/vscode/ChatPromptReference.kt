@@ -3,9 +3,9 @@
 package vscode
 
 import js.array.Tuple2
-import js.core.JsAny
 import js.core.JsInt
 import js.objects.JsPlainObject
+import kotlin.js.JsAny
 
 /**
  * A reference to a value that the user added to their chat request.

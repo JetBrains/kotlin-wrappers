@@ -2,8 +2,6 @@
 
 package cesium.widgets
 
-import js.core.JsAny
-
 /**
  * A function that handles the result of a successful geocode.
  * @param [viewModel] The view model.

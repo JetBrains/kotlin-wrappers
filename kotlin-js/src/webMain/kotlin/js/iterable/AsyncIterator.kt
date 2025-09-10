@@ -1,9 +1,9 @@
 package js.iterable
 
-import js.core.JsAny
 import js.disposable.AsyncDisposable
 import js.iterable.internal.iteratorFromAsyncIteratorLike
 import js.reflect.JsExternalInheritorsOnly
+import kotlin.js.JsAny
 
 // TODO: add `@JsName`
 @JsExternalInheritorsOnly

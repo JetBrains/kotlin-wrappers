@@ -6,8 +6,8 @@
 
 package web.cssom
 
-import js.core.JsAny
 import seskar.js.JsValue
+import kotlin.js.JsAny
 
 sealed external interface PropertyName<T : JsAny> :
     Ident {

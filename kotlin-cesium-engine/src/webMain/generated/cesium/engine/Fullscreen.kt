@@ -4,8 +4,6 @@
 
 package cesium.engine
 
-import js.core.JsAny
-
 /**
  * Browser-independent functions for working with the standard fullscreen API.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Fullscreen.html">Online Documentation</a>

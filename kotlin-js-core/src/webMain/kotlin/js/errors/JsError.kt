@@ -4,7 +4,7 @@
 
 package js.errors
 
-import js.core.JsAny
+import kotlin.js.JsAny
 
 expect open external class JsError :
     JsAny {

@@ -2,8 +2,6 @@
 
 package cesium.engine
 
-import js.core.JsAny
-
 /**
  * Since KML does not support glTF models, this callback is required to specify what URL to use for the model in the KML document.
  * It can also be used to add additional files to the `externalFiles` object, which is the list of files embedded in the exported KMZ,

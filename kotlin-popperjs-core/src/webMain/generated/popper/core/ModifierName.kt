@@ -2,9 +2,9 @@
 
 package popper.core
 
-import js.core.JsAny
 import js.reflect.JsExternalInheritorsOnly
+import kotlin.js.JsAny
 
 @JsExternalInheritorsOnly
 external interface ModifierName<Options : JsAny?> :
-    Name    
+    Name

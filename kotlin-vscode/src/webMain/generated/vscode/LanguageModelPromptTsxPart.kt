@@ -4,7 +4,7 @@
 
 package vscode
 
-import js.core.JsAny
+import kotlin.js.JsAny
 import kotlin.js.JsModule
 
 /**

@@ -1,9 +1,9 @@
 package web.observable
 
-import js.core.JsAny
 import js.errors.JsError
 import js.objects.JsPlainObject
 import web.function.VoidFunction
+import kotlin.js.JsAny
 
 @JsPlainObject
 external interface SubscriptionObserver<in T : JsAny?> {

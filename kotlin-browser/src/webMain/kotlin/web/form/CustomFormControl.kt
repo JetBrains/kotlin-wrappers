@@ -1,8 +1,8 @@
 package web.form
 
-import js.core.JsAny
 import web.components.CustomElement
 import web.html.HTMLFormElement
+import kotlin.js.JsAny
 import kotlin.js.definedExternally
 
 external interface CustomFormControl :

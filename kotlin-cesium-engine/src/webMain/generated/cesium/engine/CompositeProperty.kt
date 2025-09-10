@@ -4,8 +4,6 @@
 
 package cesium.engine
 
-import js.core.JsAny
-
 /**
  * A [Property] which is defined by a [TimeIntervalCollection], where the
  * data property of each [TimeInterval] is another Property instance which is

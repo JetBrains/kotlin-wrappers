@@ -3,10 +3,10 @@
 package web.serviceworker
 
 import js.array.ReadonlyArray
-import js.core.JsAny
 import js.reflect.unsafeCast
 import web.events.EventType
 import web.messaging.MessagePort
+import kotlin.js.JsAny
 import kotlin.js.definedExternally
 
 /**

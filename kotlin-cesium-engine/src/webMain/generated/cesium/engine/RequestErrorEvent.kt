@@ -4,8 +4,6 @@
 
 package cesium.engine
 
-import js.core.JsAny
-
 /**
  * An event that is raised when a request encounters an error.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/RequestErrorEvent.html">Online Documentation</a>

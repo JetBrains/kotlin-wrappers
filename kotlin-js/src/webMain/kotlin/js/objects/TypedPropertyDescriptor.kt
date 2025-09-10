@@ -1,6 +1,6 @@
 package js.objects
 
-import js.core.JsAny
+import kotlin.js.JsAny
 
 @JsPlainObject
 external interface TypedPropertyDescriptor<T : JsAny?> {

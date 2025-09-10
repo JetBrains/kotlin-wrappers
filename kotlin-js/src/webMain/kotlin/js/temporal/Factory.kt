@@ -6,7 +6,7 @@
 
 package js.temporal
 
-import js.core.JsAny
+import kotlin.js.JsAny
 import kotlin.js.definedExternally
 
 sealed external interface Factory<T : JsAny, in L : JsAny, in O : JsAny> {

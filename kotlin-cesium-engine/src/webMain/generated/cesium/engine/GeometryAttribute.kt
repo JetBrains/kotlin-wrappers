@@ -4,8 +4,6 @@
 
 package cesium.engine
 
-import js.core.JsAny
-
 /**
  * Values and type information for geometry attributes.  A [Geometry]
  * generally contains one or more attributes.  All attributes together form

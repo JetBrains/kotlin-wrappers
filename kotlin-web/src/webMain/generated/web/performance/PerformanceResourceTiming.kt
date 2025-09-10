@@ -3,9 +3,9 @@
 package web.performance
 
 import js.array.ReadonlyArray
-import js.core.JsAny
 import js.core.UInt53
 import web.time.DOMHighResTimeStamp
+import kotlin.js.JsAny
 
 /**
  * The **`PerformanceResourceTiming`** interface enables retrieval and analysis of detailed network timing data regarding the loading of an application's resources.

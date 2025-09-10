@@ -1,8 +1,8 @@
 package js.iterable
 
-import js.core.JsAny
 import js.objects.JsPlainObject
 import kotlin.contracts.contract
+import kotlin.js.JsAny
 
 @JsPlainObject
 external interface IteratorResult<out T : JsAny?, out TReturn : JsAny?> {

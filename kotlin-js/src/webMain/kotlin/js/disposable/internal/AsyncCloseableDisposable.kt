@@ -1,6 +1,5 @@
 package js.disposable.internal
 
-import js.core.JsAny
 import js.core.JsPrimitives.toJsString
 import js.function.unsafeInvoke
 import js.internal.InternalApi
@@ -9,6 +8,7 @@ import js.promise.Promise
 import js.promise.await
 import js.reflect.unsafeCast
 import js.symbol.Symbol
+import kotlin.js.JsAny
 
 @SubclassOptInRequired(InternalApi::class)
 external interface AsyncCloseableDisposable

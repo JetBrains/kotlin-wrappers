@@ -1,6 +1,6 @@
 package js.reflect
 
-import js.core.JsAny
+import kotlin.js.JsAny
 
 external class Proxy<T : JsAny>(
     target: T,

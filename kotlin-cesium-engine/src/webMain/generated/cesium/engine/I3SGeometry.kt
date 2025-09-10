@@ -4,8 +4,6 @@
 
 package cesium.engine
 
-import js.core.JsAny
-
 /**
  * This class implements an I3S Geometry. Each I3SGeometry
  * generates an in memory glTF to be used as content for a Cesium3DTile

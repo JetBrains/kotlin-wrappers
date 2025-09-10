@@ -2,9 +2,9 @@
 
 package popper.core.modifiers
 
-import js.core.JsAny
 import js.objects.JsPlainObject
 import seskar.js.JsValue
+import kotlin.js.JsAny
 
 sealed external interface TetherOffsetType
 

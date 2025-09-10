@@ -2,6 +2,6 @@
 
 package web.authn
 
-import js.core.JsAny
+import kotlin.js.JsAny
 
 typealias PublicKeyCredentialJSON = JsAny

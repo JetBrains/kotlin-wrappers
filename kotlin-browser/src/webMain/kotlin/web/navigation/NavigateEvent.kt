@@ -1,11 +1,11 @@
 package web.navigation
 
-import js.core.JsAny
 import web.abort.AbortSignal
 import web.dom.Element
 import web.events.Event
 import web.events.EventType
 import web.form.FormData
+import kotlin.js.JsAny
 import kotlin.js.definedExternally
 
 /**

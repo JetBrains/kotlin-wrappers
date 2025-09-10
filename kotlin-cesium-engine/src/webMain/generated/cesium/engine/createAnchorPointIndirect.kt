@@ -4,8 +4,6 @@
 
 package cesium.engine
 
-import js.core.JsAny
-
 /**
  * Creates an `AnchorPointIndirect` from the given JSON representation
  * @param [anchorPointIndirectJson] The input JSON

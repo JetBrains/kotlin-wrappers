@@ -1,10 +1,10 @@
 package js.promise.internal
 
-import js.core.JsAny
 import js.coroutines.resumeWithError
 import js.promise.PromiseLike
 import kotlin.coroutines.Continuation
 import kotlin.coroutines.resume
+import kotlin.js.JsAny
 
 @PublishedApi
 internal fun <T : JsAny?> thenToContinuation(

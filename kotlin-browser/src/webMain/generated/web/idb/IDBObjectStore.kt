@@ -3,11 +3,11 @@
 package web.idb
 
 import js.array.ReadonlyArray
-import js.core.JsAny
 import js.core.JsInt
 import js.core.JsString
 import js.core.Void
 import web.dom.DOMStringList
+import kotlin.js.JsAny
 import kotlin.js.definedExternally
 
 /**

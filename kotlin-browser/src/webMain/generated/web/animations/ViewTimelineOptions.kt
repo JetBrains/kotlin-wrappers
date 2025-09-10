@@ -2,9 +2,9 @@
 
 package web.animations
 
-import js.core.JsAny
 import js.objects.JsPlainObject
 import web.dom.Element
+import kotlin.js.JsAny
 
 @JsPlainObject
 external interface ViewTimelineOptions {

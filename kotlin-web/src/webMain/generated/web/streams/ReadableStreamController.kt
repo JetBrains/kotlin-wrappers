@@ -2,9 +2,9 @@
 
 package web.streams
 
-import js.core.JsAny
 import js.internal.InternalApi
 import js.reflect.JsExternalInheritorsOnly
+import kotlin.js.JsAny
 
 /**
  * Union of:

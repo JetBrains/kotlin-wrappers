@@ -2,8 +2,8 @@
 
 package vscode
 
-import js.core.JsAny
 import js.errors.JsError
+import kotlin.js.JsAny
 import kotlin.js.definedExternally
 
 /**

@@ -5,7 +5,6 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
-import js.core.JsAny
 
 /**
  * A tile in a [Cesium3DTileset].  When a tile is first created, its content is not loaded;

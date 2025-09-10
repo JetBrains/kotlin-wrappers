@@ -4,8 +4,6 @@
 
 package cesium.engine
 
-import js.core.JsAny
-
 /**
  * A spline that evaluates to a constant value. Although this follows the [Spline] interface,
  * it does not maintain an internal array of times since its value never changes.

@@ -2,9 +2,9 @@
 
 package ajv
 
-import js.core.JsAny
 import js.core.JsString
 import js.objects.ReadonlyRecord
+import kotlin.js.JsAny
 import kotlin.js.JsModule
 import kotlin.js.definedExternally
 

@@ -29,7 +29,7 @@ private val DEFAULT_IMPORTS = Imports(
     "js.core.BigInt",
     "js.core.Bitmask",
     "js.core.Int53",
-    "js.core.JsAny",
+    "kotlin.js.JsAny",
     "js.core.JsBoolean",
     "js.core.JsDouble",
     "js.core.JsFloat",

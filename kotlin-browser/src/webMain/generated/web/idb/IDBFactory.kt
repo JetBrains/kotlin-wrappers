@@ -3,10 +3,10 @@
 package web.idb
 
 import js.array.ReadonlyArray
-import js.core.JsAny
 import js.core.UInt53
 import js.promise.Promise
 import js.promise.await
+import kotlin.js.JsAny
 import kotlin.js.JsName
 import kotlin.js.definedExternally
 

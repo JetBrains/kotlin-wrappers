@@ -1,7 +1,7 @@
 package js.array
 
-import js.core.JsAny
 import js.reflect.unsafeCast
+import kotlin.js.JsAny
 import kotlin.js.JsName
 
 sealed external interface Tuple {

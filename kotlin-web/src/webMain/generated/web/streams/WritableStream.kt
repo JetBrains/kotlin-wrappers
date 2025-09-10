@@ -2,13 +2,13 @@
 
 package web.streams
 
-import js.core.JsAny
 import js.core.Void
 import js.disposable.internal.AsyncCloseableDisposable
 import js.errors.JsError
 import js.promise.Promise
 import js.promise.await
 import js.serialization.Transferable
+import kotlin.js.JsAny
 import kotlin.js.JsName
 import kotlin.js.definedExternally
 

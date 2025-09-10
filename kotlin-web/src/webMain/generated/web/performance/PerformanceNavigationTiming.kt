@@ -2,8 +2,8 @@
 
 package web.performance
 
-import js.core.JsAny
 import web.time.DOMHighResTimeStamp
+import kotlin.js.JsAny
 
 /**
  * The **`PerformanceNavigationTiming`** interface provides methods and properties to store and retrieve metrics regarding the browser's document navigation events.

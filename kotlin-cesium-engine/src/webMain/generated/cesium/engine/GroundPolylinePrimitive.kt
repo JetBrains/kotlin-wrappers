@@ -4,7 +4,6 @@
 
 package cesium.engine
 
-import js.core.JsAny
 import js.core.Void
 import js.objects.JsPlainObject
 import js.promise.Promise

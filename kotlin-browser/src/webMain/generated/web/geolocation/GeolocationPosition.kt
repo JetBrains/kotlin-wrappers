@@ -2,8 +2,8 @@
 
 package web.geolocation
 
-import js.core.JsAny
 import web.time.EpochTimeStamp
+import kotlin.js.JsAny
 
 /**
  * The **`GeolocationPosition`** interface represents the position of the concerned device at a given time.

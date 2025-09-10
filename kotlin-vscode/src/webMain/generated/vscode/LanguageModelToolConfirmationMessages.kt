@@ -2,8 +2,8 @@
 
 package vscode
 
-import js.core.JsAny
 import js.objects.JsPlainObject
+import kotlin.js.JsAny
 
 /**
  * When this is returned in [PreparedToolInvocation], the user will be asked to confirm before running the tool. These

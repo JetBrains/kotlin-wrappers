@@ -1,9 +1,9 @@
 package web.css.painting
 
 import js.array.ReadonlyArray
-import js.core.JsAny
 import js.core.JsString
 import web.experimental.ExperimentalWebApi
+import kotlin.js.JsAny
 
 @ExperimentalWebApi
 internal external interface PaintStatic {

@@ -2,7 +2,7 @@
 
 package web.performance
 
-import js.core.JsAny
+import kotlin.js.JsAny
 
 /**
  * **`PerformanceMeasure`** is an _abstract_ interface for PerformanceEntry objects with an PerformanceEntry.entryType of `'measure'`.

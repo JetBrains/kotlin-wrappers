@@ -6,8 +6,8 @@
 
 package web.canvas
 
-import js.core.JsAny
 import js.reflect.JsExternalInheritorsOnly
+import kotlin.js.JsAny
 import kotlin.js.definedExternally
 
 /* mixin */

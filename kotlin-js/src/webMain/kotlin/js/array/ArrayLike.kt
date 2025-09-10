@@ -4,7 +4,7 @@
 
 package js.array
 
-import js.core.JsAny
+import kotlin.js.JsAny
 import kotlin.js.definedExternally
 
 external interface ArrayLike<out T : JsAny?> {

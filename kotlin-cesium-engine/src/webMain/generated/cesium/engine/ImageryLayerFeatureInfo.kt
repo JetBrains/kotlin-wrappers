@@ -4,8 +4,6 @@
 
 package cesium.engine
 
-import js.core.JsAny
-
 /**
  * Describes a rasterized feature, such as a point, polygon, polyline, etc., in an imagery layer.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ImageryLayerFeatureInfo.html">Online Documentation</a>

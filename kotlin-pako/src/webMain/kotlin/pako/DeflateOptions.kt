@@ -1,7 +1,7 @@
 package pako
 
-import js.core.JsAny
 import js.objects.JsPlainObject
+import kotlin.js.JsAny
 
 @JsPlainObject
 external interface DeflateOptions {

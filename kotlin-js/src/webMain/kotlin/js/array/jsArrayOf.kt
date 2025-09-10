@@ -1,6 +1,6 @@
 package js.array
 
-import js.core.JsAny
+import kotlin.js.JsAny
 
 expect fun <T : JsAny?> jsArrayOf(
     vararg elements: T,

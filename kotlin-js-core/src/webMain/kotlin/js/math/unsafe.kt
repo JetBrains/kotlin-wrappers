@@ -1,6 +1,6 @@
 package js.math
 
-import js.core.JsAny
+import kotlin.js.JsAny
 
 expect fun <T : JsAny> unsafeNegate(a: T): T
 

@@ -4,8 +4,8 @@
 
 package js.json
 
-import js.core.JsAny
 import kotlin.contracts.contract
+import kotlin.js.JsAny
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/JSON/isRawJSON)

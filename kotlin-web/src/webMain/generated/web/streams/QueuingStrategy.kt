@@ -2,7 +2,7 @@
 
 package web.streams
 
-import js.core.JsAny
+import kotlin.js.JsAny
 
 // @JsPlainObject
 external interface QueuingStrategy<T : JsAny?> {

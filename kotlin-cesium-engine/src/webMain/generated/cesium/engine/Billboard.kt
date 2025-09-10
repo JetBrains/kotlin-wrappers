@@ -4,7 +4,6 @@
 
 package cesium.engine
 
-import js.core.JsAny
 import js.objects.JsPlainObject
 import web.html.HTMLCanvasElement
 import web.html.HTMLImageElement

@@ -2,8 +2,8 @@
 
 package js.decorators
 
-import js.core.JsAny
 import js.objects.PropertyKey
+import kotlin.js.JsAny
 
 /**
  * Context provided to a class setter decorator.

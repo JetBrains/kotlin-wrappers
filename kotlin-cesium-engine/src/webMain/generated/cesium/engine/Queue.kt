@@ -4,8 +4,6 @@
 
 package cesium.engine
 
-import js.core.JsAny
-
 /**
  * A queue that can enqueue items at the end, and dequeue items from the front.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Queue.html">Online Documentation</a>

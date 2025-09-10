@@ -2,13 +2,13 @@
 
 package web.sse
 
-import js.core.JsAny
 import web.events.Event
 import web.events.EventHandler
 import web.events.EventInstance
 import web.events.EventTarget
 import web.messaging.MessageEvent
 import web.url.URL
+import kotlin.js.JsAny
 import kotlin.js.definedExternally
 
 /**

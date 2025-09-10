@@ -4,9 +4,9 @@
 
 package vscode
 
-import js.core.JsAny
 import js.core.JsString
 import js.promise.PromiseLike
+import kotlin.js.JsAny
 import kotlin.js.JsModule
 import kotlin.js.JsName
 

@@ -3,10 +3,10 @@
 package popper.core
 
 import js.array.ReadonlyArray
-import js.core.JsAny
 import js.core.JsString
 import js.objects.JsPlainObject
 import js.objects.Record
+import kotlin.js.JsAny
 
 @JsPlainObject
 external interface Modifier<Options : JsAny?> {

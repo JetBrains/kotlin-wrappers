@@ -1,7 +1,7 @@
 package js.collections
 
 import js.array.ReadonlyArray
-import js.core.JsAny
+import kotlin.js.JsAny
 import kotlin.js.definedExternally
 
 open external class WeakSet<in T : JsAny?>(

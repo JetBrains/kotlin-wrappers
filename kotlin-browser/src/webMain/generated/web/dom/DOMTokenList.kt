@@ -4,9 +4,9 @@ package web.dom
 
 import js.array.Tuple2
 import js.collections.ListLike
-import js.core.JsAny
 import js.core.JsInt
 import js.iterable.JsIterator
+import kotlin.js.JsAny
 import kotlin.js.definedExternally
 
 /**

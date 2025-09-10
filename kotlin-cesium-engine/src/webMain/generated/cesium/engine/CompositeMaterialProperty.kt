@@ -4,8 +4,6 @@
 
 package cesium.engine
 
-import js.core.JsAny
-
 /**
  * A [CompositeProperty] which is also a [MaterialProperty].
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CompositeMaterialProperty.html">Online Documentation</a>

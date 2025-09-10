@@ -1,6 +1,6 @@
 package js.collections
 
-import js.core.JsAny
+import kotlin.js.JsAny
 
 external interface MutableMapLike<K : JsAny?, V : JsAny?> :
     ReadonlyMap<K, V> {

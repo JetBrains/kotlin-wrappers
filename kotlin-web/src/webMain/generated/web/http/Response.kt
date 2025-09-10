@@ -2,8 +2,8 @@
 
 package web.http
 
-import js.core.JsAny
 import web.url.URL
+import kotlin.js.JsAny
 import kotlin.js.definedExternally
 
 /**

@@ -2,8 +2,8 @@
 
 package web.streams
 
-import js.core.JsAny
 import js.objects.JsPlainObject
+import kotlin.js.JsAny
 
 @JsPlainObject
 external interface ReadableWritablePair<R : JsAny?, W : JsAny?> {

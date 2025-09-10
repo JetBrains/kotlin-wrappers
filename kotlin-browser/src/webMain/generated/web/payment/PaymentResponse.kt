@@ -2,13 +2,13 @@
 
 package web.payment
 
-import js.core.JsAny
 import js.core.Void
 import js.promise.Promise
 import js.promise.await
 import web.events.EventHandler
 import web.events.EventInstance
 import web.events.EventTarget
+import kotlin.js.JsAny
 import kotlin.js.JsName
 import kotlin.js.definedExternally
 

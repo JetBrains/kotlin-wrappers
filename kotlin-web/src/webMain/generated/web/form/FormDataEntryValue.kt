@@ -2,6 +2,6 @@
 
 package web.form
 
-import js.core.JsAny
+import kotlin.js.JsAny
 
 typealias FormDataEntryValue = JsAny /* File | string */

@@ -4,8 +4,6 @@
 
 package cesium.engine
 
-import js.core.JsAny
-
 /**
  * An expression for a style applied to a [Cesium3DTileset].
  *

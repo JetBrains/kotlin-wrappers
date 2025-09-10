@@ -8,7 +8,6 @@ import cesium.engine.DefaultEvent
 import cesium.engine.GeocoderService
 import cesium.engine.Scene
 import js.array.ReadonlyArray
-import js.core.JsAny
 import js.objects.JsPlainObject
 
 /**

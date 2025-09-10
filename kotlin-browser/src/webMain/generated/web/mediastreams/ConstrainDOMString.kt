@@ -2,6 +2,6 @@
 
 package web.mediastreams
 
-import js.core.JsAny
+import kotlin.js.JsAny
 
 typealias ConstrainDOMString = JsAny /* string | string[] | ConstrainDOMStringParameters */

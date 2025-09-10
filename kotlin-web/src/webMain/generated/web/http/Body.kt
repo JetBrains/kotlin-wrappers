@@ -7,7 +7,6 @@
 package web.http
 
 import js.buffer.ArrayBuffer
-import js.core.JsAny
 import js.core.JsString
 import js.promise.Promise
 import js.promise.await
@@ -15,6 +14,7 @@ import js.typedarrays.Uint8Array
 import web.blob.Blob
 import web.form.FormData
 import web.streams.ReadableStream
+import kotlin.js.JsAny
 import kotlin.js.JsName
 import kotlin.js.definedExternally
 

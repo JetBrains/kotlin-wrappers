@@ -2,8 +2,8 @@
 
 package vscode
 
-import js.core.JsAny
 import js.core.Void
+import kotlin.js.JsAny
 
 /**
  * The document semantic tokens provider interface defines the contract between extensions and

@@ -1,11 +1,11 @@
 package js.generator
 
-import js.core.JsAny
 import js.errors.JsError
 import js.iterable.AsyncIterator
 import js.iterable.IteratorResult
 import js.promise.Promise
 import js.promise.PromiseLike
+import kotlin.js.JsAny
 import kotlin.js.JsName
 import kotlin.js.definedExternally
 

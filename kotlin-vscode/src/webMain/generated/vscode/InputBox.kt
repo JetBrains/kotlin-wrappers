@@ -4,10 +4,10 @@ package vscode
 
 import js.array.ReadonlyArray
 import js.array.Tuple2
-import js.core.JsAny
 import js.core.JsInt
 import js.core.JsString
 import js.core.Void
+import kotlin.js.JsAny
 
 /**
  * A concrete [QuickInput] to let the user input a text value.

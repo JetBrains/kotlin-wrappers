@@ -1,7 +1,5 @@
 package js.function
 
-import js.core.JsAny
-
 actual fun <R : JsAny?> unsafeInvoke(
     f: JsAny,
 ): R =

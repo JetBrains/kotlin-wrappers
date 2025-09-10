@@ -2,6 +2,6 @@
 
 package web.vtt
 
-import js.core.JsAny
+import kotlin.js.JsAny
 
 typealias LineAndPositionSetting = JsAny /* number | AutoKeyword */

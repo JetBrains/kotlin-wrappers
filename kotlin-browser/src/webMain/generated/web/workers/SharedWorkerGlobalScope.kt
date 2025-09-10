@@ -2,10 +2,10 @@
 
 package web.workers
 
-import js.core.JsAny
 import web.events.EventHandler
 import web.events.EventInstance
 import web.messaging.MessageEvent
+import kotlin.js.JsAny
 
 /**
  * The **`SharedWorkerGlobalScope`** object (the SharedWorker global scope) is accessible through the window.self keyword.

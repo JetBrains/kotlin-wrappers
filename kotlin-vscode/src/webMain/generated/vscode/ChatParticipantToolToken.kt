@@ -2,7 +2,7 @@
 
 package vscode
 
-import js.core.JsAny
+import kotlin.js.JsAny
 
 /**
  * A token that can be passed to [lm.invokeTool] when invoking a tool inside the context of handling a chat request.

@@ -1,7 +1,5 @@
 package js.math
 
-import js.core.JsAny
-
 actual inline fun <T : JsAny> unsafeNegate(a: T): T =
     js("-a")
 

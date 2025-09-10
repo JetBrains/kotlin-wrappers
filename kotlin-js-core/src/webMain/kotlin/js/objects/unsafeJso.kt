@@ -1,5 +1,5 @@
 package js.objects
 
-import js.core.JsAny
+import kotlin.js.JsAny
 
 expect fun <T : JsAny> unsafeJso(): T

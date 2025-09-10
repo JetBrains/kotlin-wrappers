@@ -2,10 +2,10 @@ package js.reflect
 
 import js.array.ReadonlyArray
 import js.array.Tuple
-import js.core.JsAny
 import js.function.ConstructorFunction
 import js.objects.PropertyKey
 import js.objects.TypedPropertyDescriptor
+import kotlin.js.JsAny
 
 external object Reflect {
     /**

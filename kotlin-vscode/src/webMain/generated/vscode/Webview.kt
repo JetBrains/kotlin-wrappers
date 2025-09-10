@@ -2,9 +2,9 @@
 
 package vscode
 
-import js.core.JsAny
 import js.core.JsBoolean
 import js.promise.PromiseLike
+import kotlin.js.JsAny
 
 /**
  * Displays html content, similarly to an iframe.

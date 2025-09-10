@@ -4,8 +4,6 @@
 
 package cesium.engine
 
-import js.core.JsAny
-
 /**
  * A collection of primitives.  This is most often used with [Scene.primitives],
  * but `PrimitiveCollection` is also a primitive itself so collections can

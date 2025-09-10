@@ -1,6 +1,6 @@
 package js.disposable
 
-import js.core.JsAny
+import kotlin.js.JsAny
 
 open external class DisposableStack :
     Disposable {

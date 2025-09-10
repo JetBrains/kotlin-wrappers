@@ -5,11 +5,11 @@ package web.crypto
 import js.array.ReadonlyArray
 import js.buffer.ArrayBuffer
 import js.buffer.BufferSource
-import js.core.JsAny
 import js.core.JsBoolean
 import js.core.JsPrimitives.toBoolean
 import js.promise.Promise
 import js.promise.await
+import kotlin.js.JsAny
 import kotlin.js.JsName
 import kotlin.js.definedExternally
 

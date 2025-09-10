@@ -5,7 +5,6 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
-import js.core.JsAny
 
 /**
  * Describes a KmlTour, which uses KmlTourFlyTo, and KmlTourWait to

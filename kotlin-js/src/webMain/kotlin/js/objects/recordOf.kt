@@ -1,6 +1,6 @@
 package js.objects
 
-import js.core.JsAny
+import kotlin.js.JsAny
 
 fun <K : JsAny, V : JsAny?> recordOf(
     vararg pairs: Pair<K, V>,

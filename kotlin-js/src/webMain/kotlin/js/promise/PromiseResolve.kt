@@ -1,8 +1,8 @@
 package js.promise
 
-import js.core.JsAny
 import js.core.Void
 import js.function.unsafeInvoke
+import kotlin.js.JsAny
 
 sealed external interface PromiseResolve<T : JsAny?>
 

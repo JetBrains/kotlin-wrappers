@@ -2,13 +2,13 @@
 
 package web.file
 
-import js.core.JsAny
 import web.blob.Blob
 import web.errors.DOMException
 import web.events.EventHandler
 import web.events.EventInstance
 import web.events.EventTarget
 import web.events.ProgressEvent
+import kotlin.js.JsAny
 import kotlin.js.definedExternally
 
 /**

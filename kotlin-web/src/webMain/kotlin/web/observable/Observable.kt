@@ -1,7 +1,6 @@
 package web.observable
 
 import js.array.ReadonlyArray
-import js.core.JsAny
 import js.core.JsBoolean
 import js.core.JsPrimitives.toBoolean
 import js.core.Void
@@ -13,6 +12,7 @@ import web.abort.AbortController
 import web.abort.internal.awaitCancellable
 import web.abort.internal.createAbortable
 import web.function.VoidFunction
+import kotlin.js.JsAny
 import kotlin.js.JsName
 import kotlin.js.definedExternally
 

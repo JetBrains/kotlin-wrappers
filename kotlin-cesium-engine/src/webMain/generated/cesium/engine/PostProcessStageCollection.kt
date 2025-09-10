@@ -4,8 +4,6 @@
 
 package cesium.engine
 
-import js.core.JsAny
-
 /**
  * A collection of [PostProcessStage]s and/or [PostProcessStageComposite]s.
  *

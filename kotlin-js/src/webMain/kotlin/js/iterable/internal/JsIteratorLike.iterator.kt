@@ -1,9 +1,9 @@
 package js.iterable.internal
 
-import js.core.JsAny
 import js.internal.InternalApi
 import js.iterable.JsIteratorLike
 import js.iterable.isYield
+import kotlin.js.JsAny
 
 @InternalApi
 @PublishedApi

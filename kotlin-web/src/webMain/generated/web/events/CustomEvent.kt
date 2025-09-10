@@ -2,8 +2,8 @@
 
 package web.events
 
-import js.core.JsAny
 import js.reflect.unsafeCast
+import kotlin.js.JsAny
 import kotlin.js.definedExternally
 
 /**

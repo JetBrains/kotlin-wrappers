@@ -4,8 +4,6 @@
 
 package cesium.engine
 
-import js.core.JsAny
-
 /**
  * Monitors the frame rate (frames per second) in a [Scene] and raises an event if the frame rate is
  * lower than a threshold.  Later, if the frame rate returns to the required level, a separate event is raised.

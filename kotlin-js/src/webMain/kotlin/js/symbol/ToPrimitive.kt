@@ -1,6 +1,6 @@
 package js.symbol
 
-import js.core.JsAny
+import kotlin.js.JsAny
 
 typealias ToPrimitive = (
     hint: PrimitiveHint?,

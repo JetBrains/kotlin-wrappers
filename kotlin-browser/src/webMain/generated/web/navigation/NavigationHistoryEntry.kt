@@ -3,11 +3,11 @@
 package web.navigation
 
 import js.core.Int53
-import js.core.JsAny
 import web.events.Event
 import web.events.EventHandler
 import web.events.EventInstance
 import web.events.EventTarget
+import kotlin.js.JsAny
 
 /**
  * The **`NavigationHistoryEntry`** interface of the Navigation API represents a single navigation history entry.

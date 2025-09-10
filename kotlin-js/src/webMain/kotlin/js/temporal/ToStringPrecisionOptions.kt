@@ -1,7 +1,7 @@
 package js.temporal
 
-import js.core.JsAny
 import js.objects.JsPlainObject
+import kotlin.js.JsAny
 
 /**
  * Options for outputting precision in toString() on types with seconds

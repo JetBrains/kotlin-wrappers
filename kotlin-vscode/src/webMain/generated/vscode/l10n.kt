@@ -5,10 +5,10 @@
 package vscode
 
 import js.array.ReadonlyArray
-import js.core.JsAny
 import js.core.JsString
 import js.objects.JsPlainObject
 import js.objects.Record
+import kotlin.js.JsAny
 import kotlin.js.JsModule
 
 /**

@@ -4,8 +4,6 @@
 
 package cesium.engine
 
-import js.core.JsAny
-
 /**
  * Creates a shader statement that returns the value of the specified
  * component of the given property, normalized to the range [0, 1].

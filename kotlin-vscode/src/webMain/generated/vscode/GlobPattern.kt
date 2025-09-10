@@ -2,7 +2,7 @@
 
 package vscode
 
-import js.core.JsAny
+import kotlin.js.JsAny
 
 /**
  * A file glob pattern to match file paths against. This can either be a glob pattern string

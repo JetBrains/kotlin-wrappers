@@ -1,7 +1,5 @@
 package js.reflect
 
-import js.core.JsAny
-
 actual inline fun <T : Any> unsafeCast(
     noinline value: () -> Unit,
 ): T =
