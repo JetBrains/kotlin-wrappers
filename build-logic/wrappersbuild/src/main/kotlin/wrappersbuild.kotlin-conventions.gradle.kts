@@ -9,7 +9,6 @@ plugins {
     kotlin("multiplatform")
     kotlin("plugin.js-plain-objects")
     id("wrappersbuild.tools-conventions")
-    id("wrappersbuild.kotlin-test-conventions")
 }
 
 val COMMON_FREE_COMPILER_ARGS = listOf(
