@@ -5,6 +5,7 @@ import io.github.sgrishchenko.karakum.configuration.NamespaceStrategy
 import io.github.sgrishchenko.karakum.configuration.loadExtensions
 import io.github.sgrishchenko.karakum.extension.*
 import io.github.sgrishchenko.karakum.extension.Annotation
+import io.github.sgrishchenko.karakum.extension.plugins.configurable.UnionInjection
 import io.github.sgrishchenko.karakum.generate
 import io.github.sgrishchenko.karakum.util.manyOf
 import js.import.import
@@ -12,6 +13,8 @@ import js.objects.recordOf
 import node.path.path
 import node.process.process
 import node.url.fileURLToPath
+import typescript.karakum.injections.decorateUnionInjection
+import typescript.karakum.injections.injectCommonUnionParents
 import typescript.karakum.nameResolvers.*
 import typescript.karakum.plugins.*
 
@@ -23,18 +26,6 @@ suspend fun main() {
     val outputPath = process.argv[2]
 
     val cwd = process.cwd()
-
-    val jsInjections = loadExtensions(
-        "Injection",
-        arrayOf("kotlin/injections/*.js"),
-        cwd
-    ) { injection ->
-        if (injection is Function<*>) {
-            createInjection(injection.unsafeCast<SimpleInjection>())
-        } else {
-            injection.unsafeCast<Injection>()
-        }
-    }
 
     val jsAnnotations = loadExtensions<Annotation>(
         "Annotation",
@@ -69,7 +60,10 @@ suspend fun main() {
             convertUtilityTypes,
             convertWithMetadata,
         )
-        injections = manyOf(values = jsInjections + arrayOf())
+        injections = manyOf(
+            injectCommonUnionParents,
+            decorateUnionInjection(UnionInjection()),
+        )
         annotations = manyOf(values = jsAnnotations + arrayOf())
         nameResolvers = manyOf(
             ::resolveChangePropertyTypesPropertyName,
