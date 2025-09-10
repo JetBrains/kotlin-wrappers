@@ -1,5 +1,5 @@
 @file:Suppress(
-    "EXPECTED_EXTERNAL_DECLARATION",
+    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
 )
 
 package js.core
@@ -15,8 +15,10 @@ internal val POW = JsFunction<BigInt, BigInt, BigInt>(
     "return base ** exponent"
 )
 
-external class BigInt
-private constructor() {
+// WA for Kotlin `2.2.20`
+// Should be class with private constructor
+sealed /* final */
+external interface BigInt {
 
     /**
      * Returns a string representation of an object.
