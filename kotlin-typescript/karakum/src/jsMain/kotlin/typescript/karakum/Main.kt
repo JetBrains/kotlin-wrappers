@@ -2,9 +2,6 @@ package typescript.karakum
 
 import io.github.sgrishchenko.karakum.configuration.Granularity
 import io.github.sgrishchenko.karakum.configuration.NamespaceStrategy
-import io.github.sgrishchenko.karakum.configuration.loadExtensions
-import io.github.sgrishchenko.karakum.extension.*
-import io.github.sgrishchenko.karakum.extension.Annotation
 import io.github.sgrishchenko.karakum.extension.plugins.configurable.UnionInjection
 import io.github.sgrishchenko.karakum.generate
 import io.github.sgrishchenko.karakum.util.manyOf
@@ -13,10 +10,16 @@ import js.objects.recordOf
 import node.path.path
 import node.process.process
 import node.url.fileURLToPath
+import typescript.karakum.annotations.annotateUnusedTypealiasParameter
+import typescript.karakum.annotations.annotateVarOverrides
+import typescript.karakum.inheritanceModifiers.modifyInterfaceInheritance
+import typescript.karakum.inheritanceModifiers.modifyMethodInheritance
+import typescript.karakum.inheritanceModifiers.modifyPropertyInheritance
 import typescript.karakum.injections.decorateUnionInjection
 import typescript.karakum.injections.injectCommonUnionParents
 import typescript.karakum.nameResolvers.*
 import typescript.karakum.plugins.*
+import typescript.karakum.varianceModifiers.modifyInterfaceVariance
 
 suspend fun main() {
     val typescriptPackage = import.meta.resolve("typescript/package.json")
@@ -24,26 +27,6 @@ suspend fun main() {
         .let { path.dirname(it) }
 
     val outputPath = process.argv[2]
-
-    val cwd = process.cwd()
-
-    val jsAnnotations = loadExtensions<Annotation>(
-        "Annotation",
-        arrayOf("kotlin/annotations/*.js"),
-        cwd,
-    )
-
-    val jsInheritanceModifiers = loadExtensions<InheritanceModifier>(
-        "Inheritance Modifier",
-        arrayOf("kotlin/inheritanceModifiers/*.js"),
-        cwd,
-    )
-
-    val jsVarianceModifiers = loadExtensions<VarianceModifier>(
-        "Variance Modifier",
-        arrayOf("kotlin/varianceModifiers/*.js"),
-        cwd,
-    )
 
     generate {
         plugins = manyOf(
@@ -64,7 +47,10 @@ suspend fun main() {
             injectCommonUnionParents,
             decorateUnionInjection(UnionInjection()),
         )
-        annotations = manyOf(values = jsAnnotations + arrayOf())
+        annotations = manyOf(
+            ::annotateUnusedTypealiasParameter,
+            ::annotateVarOverrides,
+        )
         nameResolvers = manyOf(
             ::resolveChangePropertyTypesPropertyName,
             ::resolveCustomTransformersAfterDeclarationsItemTypeArgumentName,
@@ -83,8 +69,14 @@ suspend fun main() {
             ::resolveTypeAliasNullableUnionName,
             ::resolveTypeAliasNullableUnionPropertyName,
         )
-        inheritanceModifiers = manyOf(values = jsInheritanceModifiers + arrayOf())
-        varianceModifiers = manyOf(values = jsVarianceModifiers + arrayOf())
+        inheritanceModifiers = manyOf(
+            ::modifyInterfaceInheritance,
+            ::modifyMethodInheritance,
+            ::modifyPropertyInheritance,
+        )
+        varianceModifiers = manyOf(
+            ::modifyInterfaceVariance,
+        )
 
         input = manyOf("$typescriptPackage/lib/typescript.d.ts")
         output = outputPath
