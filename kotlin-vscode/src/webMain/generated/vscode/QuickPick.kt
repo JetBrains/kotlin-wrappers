@@ -3,8 +3,8 @@
 package vscode
 
 import js.array.ReadonlyArray
-import js.core.JsString
 import js.core.Void
+import kotlin.js.JsString
 
 /**
  * A concrete [QuickInput] to let the user pick an item from a

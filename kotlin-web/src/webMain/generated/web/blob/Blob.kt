@@ -5,7 +5,6 @@ package web.blob
 import js.array.ReadonlyArray
 import js.buffer.ArrayBuffer
 import js.core.Int53
-import js.core.JsString
 import js.core.UInt53
 import js.promise.Promise
 import js.promise.await
@@ -13,7 +12,9 @@ import js.serialization.Serializable
 import js.typedarrays.Uint8Array
 import web.images.ImageBitmapSource
 import web.streams.ReadableStream
+import kotlin.String
 import kotlin.js.JsName
+import kotlin.js.JsString
 import kotlin.js.definedExternally
 
 /**

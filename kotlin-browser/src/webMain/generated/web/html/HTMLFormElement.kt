@@ -3,7 +3,6 @@
 package web.html
 
 import js.array.ArrayLike
-import js.core.JsString
 import js.iterable.JsIterable
 import web.autofill.AutoFillBase
 import web.dom.DOMTokenList
@@ -16,6 +15,7 @@ import web.form.FormEncType
 import web.form.FormMethod
 import web.form.SubmitEvent
 import web.window.WindowTarget
+import kotlin.js.JsString
 import kotlin.js.definedExternally
 
 /**

@@ -5,10 +5,10 @@ package web.form
 import js.array.ReadonlyArray
 import js.array.Tuple2
 import js.collections.MapLike
-import js.core.JsString
 import js.iterable.JsIterator
 import web.blob.Blob
 import web.events.EventTarget
+import kotlin.js.JsString
 import kotlin.js.definedExternally
 
 /**

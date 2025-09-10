@@ -1,8 +1,8 @@
 package ajv
 
-import js.core.JsString
 import js.objects.ReadonlyRecord
 import kotlin.js.JsAny
+import kotlin.js.JsString
 
 external interface ErrorObject {
     val keyword: String

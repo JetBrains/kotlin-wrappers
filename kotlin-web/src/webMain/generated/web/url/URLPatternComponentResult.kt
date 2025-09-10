@@ -2,9 +2,9 @@
 
 package web.url
 
-import js.core.JsString
 import js.objects.JsPlainObject
 import js.objects.ReadonlyRecord
+import kotlin.js.JsString
 
 @JsPlainObject
 external interface URLPatternComponentResult {

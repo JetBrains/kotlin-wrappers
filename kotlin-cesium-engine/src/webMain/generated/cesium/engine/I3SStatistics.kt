@@ -5,7 +5,6 @@
 package cesium.engine
 
 import js.array.ReadonlyArray
-import js.core.JsString
 
 /**
  * This class implements an I3S statistics for Building Scene Layer.

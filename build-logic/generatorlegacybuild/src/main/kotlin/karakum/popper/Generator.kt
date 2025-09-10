@@ -12,7 +12,7 @@ private val DEFAULT_IMPORTS = listOf(
 
     "js.array.ReadonlyArray",
     "kotlin.js.JsAny",
-    "js.core.JsString",
+    "kotlin.js.JsString",
     "js.core.Void",
     "js.objects.JsPlainObject",
     "js.objects.Record",

@@ -5,9 +5,9 @@ package web.url
 import js.array.ReadonlyArray
 import js.array.Tuple2
 import js.collections.ReadonlyMap
-import js.core.JsString
 import js.iterable.JsIterator
 import js.objects.ReadonlyRecord
+import kotlin.js.JsString
 import kotlin.js.definedExternally
 
 /**

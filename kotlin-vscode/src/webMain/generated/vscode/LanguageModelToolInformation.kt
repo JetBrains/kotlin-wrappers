@@ -3,9 +3,9 @@
 package vscode
 
 import js.array.ReadonlyArray
-import js.core.JsString
 import js.objects.JsPlainObject
 import kotlin.js.JsAny
+import kotlin.js.JsString
 
 /**
  * Information about a registered tool available in [lm.tools].

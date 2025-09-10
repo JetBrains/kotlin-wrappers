@@ -2,8 +2,8 @@
 
 package vscode
 
-import js.core.JsString
 import js.iterable.AsyncIterable
+import kotlin.js.JsString
 
 /**
  * A command that was executed in a terminal.

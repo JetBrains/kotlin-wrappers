@@ -2,9 +2,9 @@
 
 package vscode
 
-import js.core.JsString
 import js.objects.JsPlainObject
 import js.objects.Record
+import kotlin.js.JsString
 
 /**
  * Options for a debug adapter executable.

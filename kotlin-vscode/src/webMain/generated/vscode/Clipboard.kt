@@ -2,9 +2,9 @@
 
 package vscode
 
-import js.core.JsString
 import js.core.Void
 import js.promise.PromiseLike
+import kotlin.js.JsString
 
 /**
  * The clipboard provides read and write access to the system's clipboard.

@@ -2,10 +2,10 @@
 
 package web.push
 
-import js.core.JsString
 import js.objects.JsPlainObject
 import js.objects.ReadonlyRecord
 import web.time.EpochTimeStamp
+import kotlin.js.JsString
 
 @JsPlainObject
 external interface PushSubscriptionJSON {

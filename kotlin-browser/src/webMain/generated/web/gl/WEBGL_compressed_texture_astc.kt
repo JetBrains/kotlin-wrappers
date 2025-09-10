@@ -3,7 +3,7 @@
 package web.gl
 
 import js.array.ReadonlyArray
-import js.core.JsString
+import kotlin.js.JsString
 
 sealed external interface WEBGL_compressed_texture_astc {
     /**

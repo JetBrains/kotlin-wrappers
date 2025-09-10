@@ -2,9 +2,9 @@
 
 package vscode
 
-import js.core.JsString
 import js.core.Void
 import js.promise.PromiseLike
+import kotlin.js.JsString
 
 /**
  * Represents a storage utility for secrets (or any information that is sensitive)

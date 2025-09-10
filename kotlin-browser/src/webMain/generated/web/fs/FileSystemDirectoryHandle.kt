@@ -4,12 +4,12 @@ package web.fs
 
 import js.array.ReadonlyArray
 import js.collections.AsyncMapLike
-import js.core.JsString
 import js.core.Void
 import js.promise.Promise
 import js.promise.await
 import js.serialization.Serializable
 import kotlin.js.JsName
+import kotlin.js.JsString
 import kotlin.js.definedExternally
 
 /**

@@ -2,6 +2,6 @@
 
 package web.authn
 
-import js.core.JsString
+import kotlin.js.JsString
 
 typealias Base64URLString = JsString

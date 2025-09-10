@@ -2,10 +2,10 @@ package js.regexp
 
 import js.array.ArrayLike
 import js.array.ReadonlyArray
-import js.core.JsString
 import js.objects.ReadonlyRecord
 import js.reflect.JsExternalInheritorsOnly
 import js.reflect.unsafeCast
+import kotlin.js.JsString
 
 @JsExternalInheritorsOnly
 external interface RegExpExecArray :

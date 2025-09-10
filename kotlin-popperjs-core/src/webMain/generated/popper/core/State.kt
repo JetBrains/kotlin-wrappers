@@ -3,10 +3,10 @@
 package popper.core
 
 import js.array.ReadonlyArray
-import js.core.JsString
 import js.objects.JsPlainObject
 import js.objects.ReadonlyRecord
 import kotlin.js.JsAny
+import kotlin.js.JsString
 
 @JsPlainObject
 external interface State {

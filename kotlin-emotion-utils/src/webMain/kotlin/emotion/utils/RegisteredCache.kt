@@ -1,6 +1,6 @@
 package emotion.utils
 
-import js.core.JsString
 import js.objects.Record
+import kotlin.js.JsString
 
 typealias RegisteredCache = Record<JsString, JsString>

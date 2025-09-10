@@ -3,11 +3,11 @@
 package web.push
 
 import js.array.ReadonlyArray
-import js.core.JsString
 import js.promise.Promise
 import js.promise.await
 import web.permissions.PermissionState
 import kotlin.js.JsName
+import kotlin.js.JsString
 import kotlin.js.definedExternally
 
 /**

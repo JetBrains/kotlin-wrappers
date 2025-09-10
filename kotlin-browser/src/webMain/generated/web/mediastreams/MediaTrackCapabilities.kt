@@ -4,8 +4,8 @@ package web.mediastreams
 
 import js.array.ReadonlyArray
 import js.core.JsBoolean
-import js.core.JsString
 import js.objects.JsPlainObject
+import kotlin.js.JsString
 
 @JsPlainObject
 external interface MediaTrackCapabilities {

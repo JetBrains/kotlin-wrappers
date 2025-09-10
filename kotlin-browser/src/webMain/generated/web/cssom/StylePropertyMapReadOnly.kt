@@ -5,8 +5,8 @@ package web.cssom
 import js.array.ReadonlyArray
 import js.collections.MapLike
 import js.collections.ReadonlySetLike
-import js.core.JsString
 import js.iterable.JsIterable
+import kotlin.js.JsString
 
 /**
  * The **`StylePropertyMapReadOnly`** interface of the CSS Typed Object Model API provides a read-only representation of a CSS declaration block that is an alternative to CSSStyleDeclaration.

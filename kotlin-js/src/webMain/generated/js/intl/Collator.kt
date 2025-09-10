@@ -5,8 +5,8 @@
 package js.intl
 
 import js.array.ReadonlyArray
-import js.core.JsString
 import kotlin.js.JsQualifier
+import kotlin.js.JsString
 import kotlin.js.definedExternally
 
 open external class Collator(

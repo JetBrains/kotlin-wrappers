@@ -3,8 +3,8 @@
 package web.mutation
 
 import js.array.ReadonlyArray
-import js.core.JsString
 import js.objects.JsPlainObject
+import kotlin.js.JsString
 
 @JsPlainObject
 external interface MutationObserverInit {

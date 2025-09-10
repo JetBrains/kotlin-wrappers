@@ -5,8 +5,8 @@
 package js.objects
 
 import js.core.JsPrimitives.toJsString
-import js.core.JsString
 import kotlin.js.JsAny
+import kotlin.js.JsString
 import kotlin.js.definedExternally
 
 external interface Record<K : JsAny, V : JsAny?> :

@@ -3,9 +3,9 @@
 package web.data
 
 import js.array.ReadonlyArray
-import js.core.JsString
 import web.dom.Element
 import web.file.FileList
+import kotlin.js.JsString
 import kotlin.js.definedExternally
 
 /**

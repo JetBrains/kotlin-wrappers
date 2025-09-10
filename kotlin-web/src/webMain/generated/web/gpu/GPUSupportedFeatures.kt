@@ -3,7 +3,7 @@
 package web.gpu
 
 import js.collections.ReadonlySet
-import js.core.JsString
+import kotlin.js.JsString
 
 /**
  * Available only in secure contexts.

@@ -3,10 +3,10 @@
 package vscode
 
 import js.core.JsBoolean
-import js.core.JsString
 import js.objects.JsPlainObject
 import js.objects.Record
 import kotlin.js.JsAny
+import kotlin.js.JsString
 
 /**
  * Value-object describing what options a terminal should use.

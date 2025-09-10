@@ -1,8 +1,8 @@
 package emotion.utils
 
-import js.core.JsString
 import js.objects.Record
 import kotlin.js.JsAny
+import kotlin.js.JsString
 
 external interface EmotionCache {
     val inserted: Record<JsString, JsAny /* string | true */>

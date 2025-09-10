@@ -4,11 +4,11 @@ package vscode
 
 import js.array.ReadonlyArray
 import js.array.Tuple2
-import js.core.JsString
 import js.core.Void
 import js.objects.JsPlainObject
 import js.promise.PromiseLike
 import js.typedarrays.Uint8Array
+import kotlin.js.JsString
 import kotlin.js.definedExternally
 
 /**

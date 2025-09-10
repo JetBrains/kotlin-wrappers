@@ -3,7 +3,7 @@
 package web.components
 
 import js.collections.MutableSetLike
-import js.core.JsString
+import kotlin.js.JsString
 
 /**
  * The **`CustomStateSet`** interface of the Document Object Model stores a list of states for an autonomous custom element, and allows states to be added and removed from the set.

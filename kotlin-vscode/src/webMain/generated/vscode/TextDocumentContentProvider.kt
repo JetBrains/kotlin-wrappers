@@ -2,7 +2,7 @@
 
 package vscode
 
-import js.core.JsString
+import kotlin.js.JsString
 
 /**
  * A text document content provider allows to add readonly documents

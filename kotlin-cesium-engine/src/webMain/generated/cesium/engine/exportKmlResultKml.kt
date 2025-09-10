@@ -2,7 +2,6 @@
 
 package cesium.engine
 
-import js.core.JsString
 import js.objects.JsPlainObject
 import js.objects.ReadonlyRecord
 import web.blob.Blob

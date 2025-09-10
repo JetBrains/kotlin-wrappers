@@ -8,7 +8,7 @@ import kotlin.js.JsAny
 import js.core.JsBoolean
 import js.core.JsDouble
 import js.core.JsInt
-import js.core.JsString
+import kotlin.js.JsString
 import js.core.Void
 import js.date.Date
 import js.errors.JsError

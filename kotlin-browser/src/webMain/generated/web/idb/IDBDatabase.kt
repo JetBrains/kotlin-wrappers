@@ -3,13 +3,13 @@
 package web.idb
 
 import js.array.ReadonlyArray
-import js.core.JsString
 import js.core.UInt53
 import web.dom.DOMStringList
 import web.events.Event
 import web.events.EventHandler
 import web.events.EventInstance
 import web.events.EventTarget
+import kotlin.js.JsString
 import kotlin.js.definedExternally
 
 /**

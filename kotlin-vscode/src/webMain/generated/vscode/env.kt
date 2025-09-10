@@ -5,10 +5,10 @@
 package vscode
 
 import js.core.JsBoolean
-import js.core.JsString
 import js.promise.PromiseLike
 import kotlin.js.JsModule
 import kotlin.js.JsName
+import kotlin.js.JsString
 import kotlin.js.definedExternally
 
 /**

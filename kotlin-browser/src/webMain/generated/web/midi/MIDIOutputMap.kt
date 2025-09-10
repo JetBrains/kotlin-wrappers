@@ -3,7 +3,7 @@
 package web.midi
 
 import js.collections.ReadonlyMap
-import js.core.JsString
+import kotlin.js.JsString
 
 /**
  * The **`MIDIOutputMap`** read-only interface of the Web MIDI API provides the set of MIDI output ports that are currently available.

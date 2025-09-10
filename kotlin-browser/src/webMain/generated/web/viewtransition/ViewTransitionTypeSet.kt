@@ -3,7 +3,7 @@
 package web.viewtransition
 
 import js.collections.MutableSetLike
-import js.core.JsString
+import kotlin.js.JsString
 
 sealed /* final */
 external class ViewTransitionTypeSet

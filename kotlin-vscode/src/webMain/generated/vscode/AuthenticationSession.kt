@@ -3,8 +3,8 @@
 package vscode
 
 import js.array.ReadonlyArray
-import js.core.JsString
 import js.objects.JsPlainObject
+import kotlin.js.JsString
 
 /**
  * Represents a session of a currently logged in user.

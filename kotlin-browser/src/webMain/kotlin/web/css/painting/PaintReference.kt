@@ -1,11 +1,11 @@
 package web.css.painting
 
 import js.array.ReadonlyArray
-import js.core.JsString
 import js.reflect.JsClass
 import js.reflect.unsafeCast
 import web.experimental.ExperimentalWebApi
 import kotlin.js.JsAny
+import kotlin.js.JsString
 
 @ExperimentalWebApi
 open class PaintReference

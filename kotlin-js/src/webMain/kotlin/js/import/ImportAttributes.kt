@@ -1,6 +1,6 @@
 package js.import
 
-import js.core.JsString
 import js.objects.ReadonlyRecord
+import kotlin.js.JsString
 
 typealias ImportAttributes = ReadonlyRecord<JsString, JsString>

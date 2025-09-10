@@ -3,7 +3,6 @@
 package web.dom
 
 import js.array.ReadonlyArray
-import js.core.JsString
 import js.core.Void
 import js.promise.Promise
 import js.promise.await
@@ -30,6 +29,7 @@ import web.scroll.ScrollIntoViewOptions
 import web.scroll.ScrollToOptions
 import web.touch.TouchEvent
 import kotlin.js.JsName
+import kotlin.js.JsString
 import kotlin.js.definedExternally
 
 /**

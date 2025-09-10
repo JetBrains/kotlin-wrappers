@@ -3,10 +3,10 @@
 package web.rtc
 
 import js.core.JsDouble
-import js.core.JsString
 import js.core.UInt53
 import js.objects.JsPlainObject
 import js.objects.ReadonlyRecord
+import kotlin.js.JsString
 
 @JsPlainObject
 external interface RTCOutboundRtpStreamStats :

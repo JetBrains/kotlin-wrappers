@@ -2,11 +2,11 @@
 
 package web.html
 
-import js.core.JsString
 import web.dom.DOMTokenList
 import web.dom.Document
 import web.http.ReferrerPolicy
 import web.window.WindowProxy
+import kotlin.js.JsString
 
 /**
  * The **`HTMLIFrameElement`** interface provides special properties and methods (beyond those of the HTMLElement interface it also has available to it by inheritance) for manipulating the layout and presentation of inline frame elements.

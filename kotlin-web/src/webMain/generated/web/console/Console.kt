@@ -3,8 +3,8 @@
 package web.console
 
 import js.array.ReadonlyArray
-import js.core.JsString
 import kotlin.js.JsAny
+import kotlin.js.JsString
 import kotlin.js.definedExternally
 
 /**

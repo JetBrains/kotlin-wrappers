@@ -4,7 +4,7 @@ package web.authn
 
 import js.array.ReadonlyArray
 import js.buffer.ArrayBuffer
-import js.core.JsString
+import kotlin.js.JsString
 
 /**
  * The **`AuthenticatorAttestationResponse`** interface of the Web Authentication API is the result of a WebAuthn credential registration.

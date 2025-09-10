@@ -2,8 +2,8 @@
 
 package web.svg
 
-import js.core.JsString
 import web.dom.DOMTokenList
+import kotlin.js.JsString
 
 /**
  * The **`SVGAElement`** interface provides access to the properties of an a element, as well as methods to manipulate them.

@@ -2,9 +2,9 @@
 
 package vscode
 
-import js.core.JsString
 import js.objects.JsPlainObject
 import js.objects.ReadonlyRecord
+import kotlin.js.JsString
 
 /**
  * The result of a chat request.

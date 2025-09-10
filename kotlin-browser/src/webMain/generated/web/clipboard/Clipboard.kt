@@ -2,12 +2,13 @@
 
 package web.clipboard
 
-import js.core.JsString
 import js.core.Void
 import js.promise.Promise
 import js.promise.await
 import web.events.EventTarget
+import kotlin.String
 import kotlin.js.JsName
+import kotlin.js.JsString
 
 /**
  * The **`Clipboard`** interface of the Clipboard API provides read and write access to the contents of the system clipboard.

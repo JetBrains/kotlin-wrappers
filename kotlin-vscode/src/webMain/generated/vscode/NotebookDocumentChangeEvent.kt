@@ -3,9 +3,9 @@
 package vscode
 
 import js.array.ReadonlyArray
-import js.core.JsString
 import js.objects.JsPlainObject
 import js.objects.Record
+import kotlin.js.JsString
 
 /**
  * An event describing a transactional [notebook][NotebookDocument] change.

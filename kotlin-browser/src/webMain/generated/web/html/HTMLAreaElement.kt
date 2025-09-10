@@ -2,10 +2,10 @@
 
 package web.html
 
-import js.core.JsString
 import web.dom.DOMTokenList
 import web.http.ReferrerPolicy
 import web.window.WindowTarget
+import kotlin.js.JsString
 
 /**
  * The **`HTMLAreaElement`** interface provides special properties and methods (beyond those of the regular object HTMLElement interface it also has available to it by inheritance) for manipulating the layout and presentation of area elements.

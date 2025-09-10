@@ -4,9 +4,9 @@
 
 package vscode
 
-import js.core.JsString
 import js.objects.Record
 import kotlin.js.JsModule
+import kotlin.js.JsString
 import kotlin.js.definedExternally
 
 /**

@@ -3,9 +3,9 @@
 package vscode
 
 import js.core.JsBoolean
-import js.core.JsString
 import js.objects.JsPlainObject
 import js.objects.Record
+import kotlin.js.JsString
 
 /**
  * Notebook content options define what parts of a notebook are persisted. Note

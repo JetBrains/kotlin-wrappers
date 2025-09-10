@@ -7,8 +7,8 @@
 package web.navigator
 
 import js.array.ReadonlyArray
-import js.core.JsString
 import js.reflect.JsExternalInheritorsOnly
+import kotlin.js.JsString
 import kotlin.js.definedExternally
 
 /* mixin */

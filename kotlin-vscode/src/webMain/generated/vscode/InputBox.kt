@@ -5,9 +5,9 @@ package vscode
 import js.array.ReadonlyArray
 import js.array.Tuple2
 import js.core.JsInt
-import js.core.JsString
 import js.core.Void
 import kotlin.js.JsAny
+import kotlin.js.JsString
 
 /**
  * A concrete [QuickInput] to let the user input a text value.

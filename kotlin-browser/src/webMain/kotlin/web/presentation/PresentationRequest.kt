@@ -1,7 +1,6 @@
 package web.presentation
 
 import js.array.ReadonlyArray
-import js.core.JsString
 import js.promise.Promise
 import js.promise.await
 import web.events.EventHandler
@@ -9,6 +8,7 @@ import web.events.EventInstance
 import web.events.EventTarget
 import web.experimental.ExperimentalWebApi
 import kotlin.js.JsName
+import kotlin.js.JsString
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PresentationRequest)

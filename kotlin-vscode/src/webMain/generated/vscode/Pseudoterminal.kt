@@ -3,7 +3,7 @@
 package vscode
 
 import js.core.JsInt
-import js.core.JsString
+import kotlin.js.JsString
 
 /**
  * Defines the interface of a terminal pty, enabling extensions to control a terminal.

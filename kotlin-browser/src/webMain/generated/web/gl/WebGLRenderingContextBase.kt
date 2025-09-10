@@ -3,10 +3,10 @@
 package web.gl
 
 import js.array.ReadonlyArray
-import js.core.JsString
 import web.events.EventTarget
 import web.images.PredefinedColorSpace
 import kotlin.js.JsAny
+import kotlin.js.JsString
 
 sealed external interface WebGLRenderingContextBase {
     /**

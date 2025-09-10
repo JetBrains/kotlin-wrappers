@@ -76,7 +76,7 @@ private fun fileContent(
         import js.core.JsDouble
         import js.core.JsInt
         import js.core.JsInt53
-        import js.core.JsString
+        import kotlin.js.JsString
         import js.core.Void
         import js.date.Date
         import js.iterable.AsyncIterable

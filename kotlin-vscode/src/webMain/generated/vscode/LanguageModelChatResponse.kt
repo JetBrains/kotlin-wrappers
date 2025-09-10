@@ -2,10 +2,10 @@
 
 package vscode
 
-import js.core.JsString
 import js.iterable.AsyncIterable
 import js.objects.JsPlainObject
 import kotlin.js.JsAny
+import kotlin.js.JsString
 
 /**
  * Represents a language model response.

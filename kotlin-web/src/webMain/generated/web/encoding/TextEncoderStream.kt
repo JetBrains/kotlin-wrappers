@@ -3,11 +3,11 @@
 package web.encoding
 
 import js.buffer.ArrayBuffer
-import js.core.JsString
 import js.typedarrays.Uint8Array
 import web.streams.GenericTransformStream
 import web.streams.ReadableStream
 import web.streams.WritableStream
+import kotlin.js.JsString
 
 /**
  * The **`TextEncoderStream`** interface of the Encoding API converts a stream of strings into bytes in the UTF-8 encoding.

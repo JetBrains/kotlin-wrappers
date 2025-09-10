@@ -2,13 +2,13 @@
 
 package web.html
 
-import js.core.JsString
 import web.cssom.LinkStyle
 import web.cssom.MediaQuery
 import web.dom.DOMTokenList
 import web.http.CrossOrigin
 import web.http.FetchPriority
 import web.http.ReferrerPolicy
+import kotlin.js.JsString
 
 /**
  * The **`HTMLLinkElement`** interface represents reference information for external resources and the relationship of those resources to a document and vice versa (corresponds to `<link>` element; not to be confused with `<a>`, which is represented by `HTMLAnchorElement`).

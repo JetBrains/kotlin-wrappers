@@ -5,11 +5,11 @@
 package vscode
 
 import js.array.ReadonlyArray
-import js.core.JsString
 import js.promise.PromiseLike
 import kotlin.js.JsAny
 import kotlin.js.JsModule
 import kotlin.js.JsName
+import kotlin.js.JsString
 import kotlin.js.definedExternally
 
 /**

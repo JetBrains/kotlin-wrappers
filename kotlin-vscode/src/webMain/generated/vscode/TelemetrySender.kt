@@ -2,11 +2,11 @@
 
 package vscode
 
-import js.core.JsString
 import js.core.Void
 import js.errors.JsError
 import js.objects.Record
 import js.promise.PromiseLike
+import kotlin.js.JsString
 import kotlin.js.definedExternally
 
 /**

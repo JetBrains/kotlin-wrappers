@@ -3,10 +3,10 @@
 package web.encoding
 
 import js.buffer.BufferSource
-import js.core.JsString
 import web.streams.GenericTransformStream
 import web.streams.ReadableStream
 import web.streams.WritableStream
+import kotlin.js.JsString
 import kotlin.js.definedExternally
 
 /**

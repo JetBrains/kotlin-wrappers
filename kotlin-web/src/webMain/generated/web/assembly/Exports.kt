@@ -2,7 +2,7 @@
 
 package web.assembly
 
-import js.core.JsString
 import js.objects.ReadonlyRecord
+import kotlin.js.JsString
 
 typealias Exports = ReadonlyRecord<JsString, ExportValue>

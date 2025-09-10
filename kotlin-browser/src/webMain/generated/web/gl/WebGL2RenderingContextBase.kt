@@ -5,8 +5,8 @@ package web.gl
 import js.array.ReadonlyArray
 import js.buffer.ArrayBufferLike
 import js.buffer.ArrayBufferView
-import js.core.JsString
 import kotlin.js.JsAny
+import kotlin.js.JsString
 
 sealed external interface WebGL2RenderingContextBase {
     /**

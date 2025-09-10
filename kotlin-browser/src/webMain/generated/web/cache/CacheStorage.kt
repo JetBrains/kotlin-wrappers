@@ -5,13 +5,13 @@ package web.cache
 import js.array.ReadonlyArray
 import js.core.JsBoolean
 import js.core.JsPrimitives.toBoolean
-import js.core.JsString
 import js.promise.Promise
 import js.promise.await
 import web.http.Request
 import web.http.Response
 import web.url.URL
 import kotlin.js.JsName
+import kotlin.js.JsString
 import kotlin.js.definedExternally
 
 /**

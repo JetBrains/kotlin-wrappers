@@ -2,6 +2,6 @@
 
 package js.intl
 
-import js.core.JsString
+import kotlin.js.JsString
 
 typealias NumberFormatPartType = JsString /* keyof NumberFormatPartTypeRegistry */
