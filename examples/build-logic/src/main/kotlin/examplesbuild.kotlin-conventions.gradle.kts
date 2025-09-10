@@ -18,6 +18,7 @@ kotlin {
 
         optIn.addAll(
             "kotlin.js.ExperimentalJsExport",
+            "kotlin.js.ExperimentalWasmJsInterop",
         )
     }
 
