@@ -4,10 +4,10 @@
 
 package js.objects
 
-import js.core.JsPrimitives.toJsString
 import kotlin.js.JsAny
 import kotlin.js.JsString
 import kotlin.js.definedExternally
+import kotlin.js.toJsString
 
 external interface Record<K : JsAny, V : JsAny?> :
     ReadonlyRecord<K, V> {

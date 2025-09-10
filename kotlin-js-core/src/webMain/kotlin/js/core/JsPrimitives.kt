@@ -4,8 +4,6 @@ expect object JsPrimitives {
     inline fun JsBoolean.toBoolean(): Boolean
     inline fun Boolean.toJsBoolean(): JsBoolean
 
-    inline fun String.toJsString(): JsString
-
     inline fun JsFloat.toFloat(): Float
     inline fun Float.toJsFloat(): JsFloat
 

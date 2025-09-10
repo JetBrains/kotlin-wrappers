@@ -4,7 +4,6 @@ import kotlin.js.toBoolean as toKotlinBoolean
 import kotlin.js.toDouble as toKotlinDouble
 import kotlin.js.toInt as toKotlinInt
 import kotlin.js.toJsBoolean as toJavaScriptBoolean
-import kotlin.js.toJsString as toJavaScriptString
 
 actual object JsPrimitives {
     actual inline fun JsBoolean.toBoolean(): Boolean =
@@ -12,9 +11,6 @@ actual object JsPrimitives {
 
     actual inline fun Boolean.toJsBoolean(): JsBoolean =
         toJavaScriptBoolean()
-
-    actual inline fun String.toJsString(): JsString =
-        toJavaScriptString()
 
     actual inline fun JsFloat.toFloat(): Float =
         toKotlinDouble().toFloat()
