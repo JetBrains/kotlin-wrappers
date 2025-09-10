@@ -2,10 +2,10 @@
 
 package vscode
 
-import js.core.JsBoolean
 import js.objects.JsPlainObject
 import js.objects.Record
 import kotlin.js.JsAny
+import kotlin.js.JsBoolean
 import kotlin.js.JsString
 
 /**

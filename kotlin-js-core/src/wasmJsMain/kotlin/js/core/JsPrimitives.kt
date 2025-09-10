@@ -1,17 +1,9 @@
 package js.core
 
-import kotlin.js.toBoolean as toKotlinBoolean
 import kotlin.js.toDouble as toKotlinDouble
 import kotlin.js.toInt as toKotlinInt
-import kotlin.js.toJsBoolean as toJavaScriptBoolean
 
 actual object JsPrimitives {
-    actual inline fun JsBoolean.toBoolean(): Boolean =
-        toKotlinBoolean()
-
-    actual inline fun Boolean.toJsBoolean(): JsBoolean =
-        toJavaScriptBoolean()
-
     actual inline fun JsFloat.toFloat(): Float =
         toKotlinDouble().toFloat()
 

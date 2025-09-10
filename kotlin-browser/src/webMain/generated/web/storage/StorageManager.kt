@@ -2,12 +2,12 @@
 
 package web.storage
 
-import js.core.JsBoolean
-import js.core.JsPrimitives.toBoolean
 import js.promise.Promise
 import js.promise.await
 import web.fs.FileSystemDirectoryHandle
+import kotlin.js.JsBoolean
 import kotlin.js.JsName
+import kotlin.js.toBoolean
 
 /**
  * The **`StorageManager`** interface of the Storage API provides an interface for managing persistence permissions and estimating available storage.

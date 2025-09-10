@@ -5,12 +5,12 @@
 package vscode
 
 import js.array.ReadonlyArray
-import js.core.JsBoolean
 import js.core.Void
 import js.promise.PromiseLike
 import js.typedarrays.Uint8Array
 import vscode.workspace.notebookDocuments
 import kotlin.js.JsAny
+import kotlin.js.JsBoolean
 import kotlin.js.JsModule
 import kotlin.js.JsName
 import kotlin.js.JsString

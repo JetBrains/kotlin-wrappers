@@ -5,7 +5,7 @@ import js.array.ReadonlyArray
 import js.buffer.ArrayBuffer
 import js.buffer.DataView
 import kotlin.js.JsAny
-import js.core.JsBoolean
+import kotlin.js.JsBoolean
 import js.core.JsDouble
 import js.core.JsInt
 import kotlin.js.JsString

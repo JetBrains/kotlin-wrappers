@@ -1,9 +1,6 @@
 package js.core
 
 expect object JsPrimitives {
-    inline fun JsBoolean.toBoolean(): Boolean
-    inline fun Boolean.toJsBoolean(): JsBoolean
-
     inline fun JsFloat.toFloat(): Float
     inline fun Float.toJsFloat(): JsFloat
 

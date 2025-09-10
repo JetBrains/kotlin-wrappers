@@ -5,13 +5,13 @@ package web.crypto
 import js.array.ReadonlyArray
 import js.buffer.ArrayBuffer
 import js.buffer.BufferSource
-import js.core.JsBoolean
-import js.core.JsPrimitives.toBoolean
 import js.promise.Promise
 import js.promise.await
 import kotlin.js.JsAny
+import kotlin.js.JsBoolean
 import kotlin.js.JsName
 import kotlin.js.definedExternally
+import kotlin.js.toBoolean
 
 /**
  * The **`SubtleCrypto`** interface of the Web Crypto API provides a number of low-level cryptographic functions.

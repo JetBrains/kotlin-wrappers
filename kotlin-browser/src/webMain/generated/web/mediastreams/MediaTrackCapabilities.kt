@@ -3,8 +3,8 @@
 package web.mediastreams
 
 import js.array.ReadonlyArray
-import js.core.JsBoolean
 import js.objects.JsPlainObject
+import kotlin.js.JsBoolean
 import kotlin.js.JsString
 
 @JsPlainObject

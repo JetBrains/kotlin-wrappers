@@ -2,9 +2,9 @@
 
 package vscode
 
-import js.core.JsBoolean
 import js.promise.PromiseLike
 import js.regexp.RegExp
+import kotlin.js.JsBoolean
 import kotlin.js.definedExternally
 
 /**

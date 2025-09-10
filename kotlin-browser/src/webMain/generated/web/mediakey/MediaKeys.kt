@@ -3,12 +3,12 @@
 package web.mediakey
 
 import js.buffer.BufferSource
-import js.core.JsBoolean
-import js.core.JsPrimitives.toBoolean
 import js.promise.Promise
 import js.promise.await
+import kotlin.js.JsBoolean
 import kotlin.js.JsName
 import kotlin.js.definedExternally
+import kotlin.js.toBoolean
 
 /**
  * The **`MediaKeys`** interface of Encrypted Media Extensions API represents a set of keys that an associated HTMLMediaElement can use for decryption of media data during playback.

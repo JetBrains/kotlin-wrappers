@@ -72,7 +72,7 @@ private fun fileContent(
         import js.array.ReadonlyArray
         import js.array.Tuple2
         import kotlin.js.JsAny
-        import js.core.JsBoolean
+        import kotlin.js.JsBoolean
         import js.core.JsDouble
         import js.core.JsInt
         import js.core.JsInt53

@@ -2,7 +2,6 @@
 
 package cesium.engine
 
-import js.core.JsBoolean
 import js.promise.PromiseResult
 
 /**

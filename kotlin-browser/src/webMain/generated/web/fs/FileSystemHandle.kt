@@ -2,12 +2,12 @@
 
 package web.fs
 
-import js.core.JsBoolean
-import js.core.JsPrimitives.toBoolean
 import js.promise.Promise
 import js.promise.await
 import js.serialization.Serializable
+import kotlin.js.JsBoolean
 import kotlin.js.JsName
+import kotlin.js.toBoolean
 
 /**
  * The **`FileSystemHandle`** interface of the File System API is an object which represents a file or directory entry.

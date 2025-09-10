@@ -3,13 +3,13 @@
 package web.authn
 
 import js.buffer.ArrayBuffer
-import js.core.JsBoolean
-import js.core.JsPrimitives.toBoolean
 import js.core.Void
 import js.promise.Promise
 import js.promise.await
 import web.credentials.Credential
+import kotlin.js.JsBoolean
 import kotlin.js.JsName
+import kotlin.js.toBoolean
 
 /**
  * The **`PublicKeyCredential`** interface provides information about a public key / private key pair, which is a credential for logging in to a service using an un-phishable and data-breach resistant asymmetric key pair instead of a password.

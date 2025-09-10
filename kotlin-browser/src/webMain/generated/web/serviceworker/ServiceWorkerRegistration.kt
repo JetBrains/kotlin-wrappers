@@ -3,8 +3,6 @@
 package web.serviceworker
 
 import js.array.ReadonlyArray
-import js.core.JsBoolean
-import js.core.JsPrimitives.toBoolean
 import js.core.Void
 import js.promise.Promise
 import js.promise.await
@@ -16,8 +14,10 @@ import web.events.EventTarget
 import web.notifications.Notification
 import web.notifications.NotificationOptions
 import web.push.PushManager
+import kotlin.js.JsBoolean
 import kotlin.js.JsName
 import kotlin.js.definedExternally
+import kotlin.js.toBoolean
 
 /**
  * The **`ServiceWorkerRegistration`** interface of the Service Worker API represents the service worker registration.

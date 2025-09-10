@@ -3,8 +3,8 @@
 package vscode
 
 import js.array.ReadonlyArray
-import js.core.JsBoolean
 import js.promise.PromiseLike
+import kotlin.js.JsBoolean
 import kotlin.js.definedExternally
 
 /**

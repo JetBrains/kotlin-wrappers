@@ -4,8 +4,8 @@
 
 package vscode
 
-import js.core.JsBoolean
 import js.promise.PromiseLike
+import kotlin.js.JsBoolean
 import kotlin.js.JsModule
 import kotlin.js.JsName
 import kotlin.js.JsString

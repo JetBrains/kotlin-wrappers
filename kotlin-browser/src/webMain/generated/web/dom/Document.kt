@@ -2,8 +2,6 @@
 
 package web.dom
 
-import js.core.JsBoolean
-import js.core.JsPrimitives.toBoolean
 import js.core.Void
 import js.promise.Promise
 import js.promise.await
@@ -40,8 +38,10 @@ import web.viewtransition.ViewTransitionUpdateCallback
 import web.window.Window
 import web.window.WindowProxy
 import web.xpath.XPathEvaluatorBase
+import kotlin.js.JsBoolean
 import kotlin.js.JsName
 import kotlin.js.definedExternally
+import kotlin.js.toBoolean
 
 /**
  * The **`Document`** interface represents any web page loaded in the browser and serves as an entry point into the web page's content, which is the DOM tree.

@@ -3,9 +3,6 @@ package js.core
 import kotlin.toUByte as toKotlinUByte
 
 actual object JsPrimitives {
-    actual inline fun JsBoolean.toBoolean(): Boolean = this
-    actual inline fun Boolean.toJsBoolean(): JsBoolean = this
-
     actual inline fun JsFloat.toFloat(): Float = this
     actual inline fun Float.toJsFloat(): JsFloat = this
 
