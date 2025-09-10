@@ -6,5 +6,5 @@ dependencies {
     jsMainApi(projects.kotlinPopperjsCore)
     jsMainApi(projects.kotlinReactCore)
 
-    commonMainApi(npm(jspkg.reactPopper))
+    webMainApi(npm(jspkg.reactPopper))
 }

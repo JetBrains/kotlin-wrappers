@@ -3,11 +3,11 @@ plugins {
 }
 
 dependencies {
-    commonMainApi(projects.kotlinCsstype)
-    commonMainApi(projects.kotlinBrowser)
-    commonMainApi(projects.kotlinEmotionCss)
-    commonMainApi(projects.kotlinEmotionUtils)
-    commonMainApi(projects.kotlinReactCore)
+    webMainApi(projects.kotlinCsstype)
+    webMainApi(projects.kotlinBrowser)
+    webMainApi(projects.kotlinEmotionCss)
+    webMainApi(projects.kotlinEmotionUtils)
+    webMainApi(projects.kotlinReactCore)
 
-    commonMainApi(npm(jspkg.emotion.react))
+    webMainApi(npm(jspkg.emotion.react))
 }

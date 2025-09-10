@@ -4,7 +4,7 @@ plugins {
 
 dependencies {
     jsMainApi(projects.kotlinNode)
-    commonMainApi(projects.kotlinBrowser)
+    webMainApi(projects.kotlinBrowser)
 
-    commonMainApi(npm(jspkg.electron))
+    webMainApi(npm(jspkg.electron))
 }

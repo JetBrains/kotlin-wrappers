@@ -5,5 +5,5 @@ plugins {
 dependencies {
     jsMainApi(projects.kotlinMuiMaterial)
 
-    commonMainApi(npm(jspkg.mui.iconsMaterial))
+    webMainApi(npm(jspkg.mui.iconsMaterial))
 }

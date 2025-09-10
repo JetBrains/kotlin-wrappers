@@ -3,9 +3,9 @@ plugins {
 }
 
 dependencies {
-    commonMainApi(projects.kotlinJs)
-    commonMainApi(projects.kotlinBrowser)
+    webMainApi(projects.kotlinJs)
+    webMainApi(projects.kotlinBrowser)
     jsMainApi(projects.kotlinTanstackVirtualCore)
 
-    commonMainApi(npm(jspkg.tanstack.reactVirtual))
+    webMainApi(npm(jspkg.tanstack.reactVirtual))
 }

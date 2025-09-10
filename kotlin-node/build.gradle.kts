@@ -3,12 +3,12 @@ plugins {
 }
 
 dependencies {
-    commonMainApi(projects.kotlinJs)
-    commonMainApi(projects.kotlinWeb)
+    webMainApi(projects.kotlinJs)
+    webMainApi(projects.kotlinWeb)
 
-    commonMainImplementation(libs.coroutines.core)
+    webMainImplementation(libs.coroutines.core)
 
-    commonMainApi(devNpm(jspkg.types.node))
+    webMainApi(devNpm(jspkg.types.node))
 
     commonTestImplementation(libs.kotlin.test)
     commonTestImplementation(libs.coroutines.test)

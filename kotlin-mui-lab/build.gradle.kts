@@ -6,5 +6,5 @@ dependencies {
     jsMainApi(projects.kotlinMuiMaterial)
     jsMainApi(projects.kotlinMuixTreeView)
 
-    commonMainApi(npm(jspkg.mui.lab))
+    webMainApi(npm(jspkg.mui.lab))
 }

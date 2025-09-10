@@ -3,6 +3,6 @@ plugins {
 }
 
 dependencies {
-    commonMainApi(projects.kotlinJs)
-    commonMainApi(npm(jspkg.ajv))
+    webMainApi(projects.kotlinJs)
+    webMainApi(npm(jspkg.ajv))
 }

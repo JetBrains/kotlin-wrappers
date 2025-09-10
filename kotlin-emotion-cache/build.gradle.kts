@@ -3,8 +3,8 @@ plugins {
 }
 
 dependencies {
-    commonMainApi(projects.kotlinBrowser)
-    commonMainApi(projects.kotlinEmotionUtils)
+    webMainApi(projects.kotlinBrowser)
+    webMainApi(projects.kotlinEmotionUtils)
 
-    commonMainApi(npm(jspkg.emotion.cache))
+    webMainApi(npm(jspkg.emotion.cache))
 }

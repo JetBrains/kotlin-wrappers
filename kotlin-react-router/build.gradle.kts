@@ -3,11 +3,11 @@ plugins {
 }
 
 dependencies {
-    commonMainApi(projects.kotlinBrowser)
+    webMainApi(projects.kotlinBrowser)
     jsMainApi(projects.kotlinReactCore)
     jsMainApi(projects.kotlinReactDom)
 
-    commonMainApi(npm(jspkg.remixRun.router))
-    commonMainApi(npm(jspkg.reactRouter))
-    commonMainApi(npm(jspkg.reactRouterDom))
+    webMainApi(npm(jspkg.remixRun.router))
+    webMainApi(npm(jspkg.reactRouter))
+    webMainApi(npm(jspkg.reactRouterDom))
 }

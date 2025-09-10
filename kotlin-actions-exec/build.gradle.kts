@@ -3,7 +3,7 @@ plugins {
 }
 
 dependencies {
-    commonMainApi(projects.kotlinNode)
+    webMainApi(projects.kotlinNode)
 
-    commonMainApi(npm(jspkg.actions.exec))
+    webMainApi(npm(jspkg.actions.exec))
 }

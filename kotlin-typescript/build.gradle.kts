@@ -4,7 +4,7 @@ plugins {
 }
 
 dependencies {
-    commonMainApi(projects.kotlinJs)
+    webMainApi(projects.kotlinJs)
 
-    commonMainApi(npm(jspkg.typescript))
+    webMainApi(npm(jspkg.typescript))
 }

@@ -3,8 +3,8 @@ plugins {
 }
 
 dependencies {
-    commonMainApi(projects.kotlinJs)
-    commonMainApi(projects.kotlinBrowser)
+    webMainApi(projects.kotlinJs)
+    webMainApi(projects.kotlinBrowser)
 
-    commonMainApi(npm(jspkg.popperjs.core))
+    webMainApi(npm(jspkg.popperjs.core))
 }

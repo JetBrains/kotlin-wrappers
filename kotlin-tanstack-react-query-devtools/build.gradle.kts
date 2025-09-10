@@ -5,5 +5,5 @@ plugins {
 dependencies {
     jsMainApi(projects.kotlinReactCore)
 
-    commonMainApi(npm(jspkg.tanstack.reactQueryDevtools))
+    webMainApi(npm(jspkg.tanstack.reactQueryDevtools))
 }

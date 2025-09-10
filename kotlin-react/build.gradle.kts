@@ -3,6 +3,6 @@ plugins {
 }
 
 dependencies {
-    commonMainApi(projects.kotlinJs)
+    webMainApi(projects.kotlinJs)
     jsMainApi(projects.kotlinReactCore)
 }

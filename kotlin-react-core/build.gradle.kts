@@ -3,7 +3,7 @@ plugins {
 }
 
 dependencies {
-    commonMainApi(projects.kotlinJs)
+    webMainApi(projects.kotlinJs)
     jsMainApi(projects.kotlinCsstype)
 
     jsMainApi(libs.coroutines.core)
@@ -11,5 +11,5 @@ dependencies {
     commonTestImplementation(libs.kotlin.test)
     commonTestImplementation(libs.coroutines.test)
 
-    commonMainApi(npm(jspkg.react))
+    webMainApi(npm(jspkg.react))
 }

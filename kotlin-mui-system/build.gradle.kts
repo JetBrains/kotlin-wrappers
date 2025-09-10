@@ -5,5 +5,5 @@ plugins {
 dependencies {
     jsMainApi(projects.kotlinReactDom)
 
-    commonMainApi(npm(jspkg.mui.system))
+    webMainApi(npm(jspkg.mui.system))
 }

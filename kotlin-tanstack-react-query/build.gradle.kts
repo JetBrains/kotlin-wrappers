@@ -6,5 +6,5 @@ dependencies {
     jsMainApi(projects.kotlinReactCore)
     jsMainApi(projects.kotlinTanstackQueryCore)
 
-    commonMainApi(npm(jspkg.tanstack.reactQuery))
+    webMainApi(npm(jspkg.tanstack.reactQuery))
 }

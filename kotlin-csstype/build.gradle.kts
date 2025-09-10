@@ -3,9 +3,9 @@ plugins {
 }
 
 dependencies {
-    commonMainApi(projects.kotlinCssomCore)
-    commonMainApi(projects.kotlinJs)
-    commonMainApi(projects.kotlinBrowser)
+    webMainApi(projects.kotlinCssomCore)
+    webMainApi(projects.kotlinJs)
+    webMainApi(projects.kotlinBrowser)
 
-    commonMainApi(devNpm(jspkg.csstype))
+    webMainApi(devNpm(jspkg.csstype))
 }

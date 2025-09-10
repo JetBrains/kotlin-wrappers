@@ -3,13 +3,13 @@ plugins {
 }
 
 dependencies {
-    commonMainApi(projects.kotlinJs)
-    commonMainApi(projects.kotlinBrowser)
+    webMainApi(projects.kotlinJs)
+    webMainApi(projects.kotlinBrowser)
     jsMainApi(projects.kotlinReact)
     jsMainApi(projects.kotlinReactDom)
 
-    commonMainImplementation(libs.coroutines.core)
-    commonMainImplementation(libs.coroutines.test)
+    webMainImplementation(libs.coroutines.core)
+    webMainImplementation(libs.coroutines.test)
 
-    commonMainApi(npm(jspkg.reactDom))
+    webMainApi(npm(jspkg.reactDom))
 }

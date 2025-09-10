@@ -3,9 +3,9 @@ plugins {
 }
 
 dependencies {
-    commonMainApi(projects.kotlinJs)
-    commonMainApi(projects.kotlinBrowser)
-    commonMainApi(projects.kotlinCesiumEngine)
+    webMainApi(projects.kotlinJs)
+    webMainApi(projects.kotlinBrowser)
+    webMainApi(projects.kotlinCesiumEngine)
 
-    commonMainApi(npm(jspkg.cesium.widgets))
+    webMainApi(npm(jspkg.cesium.widgets))
 }

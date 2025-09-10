@@ -3,9 +3,9 @@ plugins {
 }
 
 dependencies {
-    commonMainApi(projects.kotlinJs)
+    webMainApi(projects.kotlinJs)
     jsMainApi(projects.kotlinReactCore)
     jsMainApi(projects.kotlinPreactSignalsCore)
 
-    commonMainApi(npm(jspkg.preact.signalsReact))
+    webMainApi(npm(jspkg.preact.signalsReact))
 }

@@ -3,9 +3,9 @@ plugins {
 }
 
 dependencies {
-    commonMainApi(projects.kotlinJs)
-    commonMainApi(projects.kotlinBrowser)
+    webMainApi(projects.kotlinJs)
+    webMainApi(projects.kotlinBrowser)
     jsMainApi(projects.kotlinReactCore)
 
-    commonMainApi(npm(jspkg.reactDom))
+    webMainApi(npm(jspkg.reactDom))
 }

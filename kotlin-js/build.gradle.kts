@@ -5,9 +5,9 @@ plugins {
 }
 
 dependencies {
-    commonMainApi(projects.kotlinJsCore)
+    webMainApi(projects.kotlinJsCore)
 
-    commonMainImplementation(libs.coroutines.core)
+    webMainImplementation(libs.coroutines.core)
 
     commonTestImplementation(libs.coroutines.test)
     commonTestImplementation(libs.kotlin.test)

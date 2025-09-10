@@ -3,7 +3,7 @@ plugins {
 }
 
 dependencies {
-    commonMainApi(projects.kotlinJs)
-    commonMainApi(npm(jspkg.semver))
-    commonMainImplementation(devNpm(jspkg.types.semver))
+    webMainApi(projects.kotlinJs)
+    webMainApi(npm(jspkg.semver))
+    webMainImplementation(devNpm(jspkg.types.semver))
 }
