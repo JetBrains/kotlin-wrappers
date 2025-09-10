@@ -1,7 +1,4 @@
-@file:JsQualifier(
-    /* `globalThis` - workaround for KT-76509 */
-    "globalThis.Temporal",
-)
+@file:JsQualifier("Temporal")
 
 package js.temporal
 
