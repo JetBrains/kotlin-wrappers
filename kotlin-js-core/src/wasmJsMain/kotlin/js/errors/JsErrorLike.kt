@@ -5,6 +5,7 @@ import js.reflect.unsafeCast
 actual fun JsErrorLike?.toThrowable(): Throwable =
     createJsException(this)
 
-// TODO: check implementation
-actual fun Throwable.toJsErrorLike(): JsErrorLike =
-    unsafeCast(toJsReference())
+actual fun Throwable.toJsErrorLike(): JsErrorLike {
+    val jsError = if (this is JsException) thrownValue else null
+    return unsafeCast(jsError ?: toJsReference<Throwable>())
+}
