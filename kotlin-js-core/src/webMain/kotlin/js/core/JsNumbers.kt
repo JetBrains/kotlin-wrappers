@@ -4,6 +4,8 @@
 
 package js.core
 
+import kotlin.js.JsAny
+
 expect external class JsFloat16 : JsAny
 expect external class JsFloat : JsAny
 expect external class JsDouble : JsAny

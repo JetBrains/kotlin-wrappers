@@ -9,6 +9,7 @@ package web.assembly
 import js.core.*
 import js.function.JsFunction
 import js.reflect.unsafeCast
+import kotlin.js.JsAny
 
 sealed external interface ValueType<T : JsAny?> {
     companion object

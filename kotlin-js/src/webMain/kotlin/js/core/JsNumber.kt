@@ -4,6 +4,7 @@ import js.array.ReadonlyArray
 import js.intl.Localizable
 import js.intl.NumberFormatOptions
 import js.intl.UnicodeBCP47LocaleIdentifier
+import kotlin.js.JsAny
 import kotlin.js.JsName
 import kotlin.js.definedExternally
 
