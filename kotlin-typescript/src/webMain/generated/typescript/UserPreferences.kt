@@ -156,4 +156,11 @@ sealed external interface UserPreferences {
     val displayPartsForJSDoc: Boolean?
     val generateReturnInDocTemplate: Boolean?
     val disableLineTextInReferences: Boolean?
+
+    /**
+     * A positive integer indicating the maximum length of a hover text before it is truncated.
+     *
+     * Default: `500`
+     */
+    val maximumHoverLength: Double?
 }

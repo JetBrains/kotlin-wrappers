@@ -7,4 +7,5 @@ sealed external interface IndexInfo {
     var type: Type
     var isReadonly: Boolean
     var declaration: IndexSignatureDeclaration?
+    var components: js.array.ReadonlyArray<ElementWithComputedPropertyName>?
 }

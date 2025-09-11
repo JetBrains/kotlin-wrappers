@@ -66,6 +66,7 @@ suspend fun main() {
             ::resolveInterfacePropertyNullableUnionName,
             ::resolveInterfacePropertyPropertyName,
             ::resolveTypeAliasIntersectionPropertyName,
+            ::resolveTypeAliasIntersectionBaseName,
             ::resolveTypeAliasNullableUnionName,
             ::resolveTypeAliasNullableUnionPropertyName,
         )

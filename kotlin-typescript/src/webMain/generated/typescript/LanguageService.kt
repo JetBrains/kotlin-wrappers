@@ -174,10 +174,12 @@ sealed external interface LanguageService {
      *
      * @param fileName The path to the file
      * @param position A zero-based index of the character where you want the quick info
+     * @param maximumLength Maximum length of a quickinfo text before it is truncated.
      */
     fun getQuickInfoAtPosition(
         fileName: String,
         position: Double,
+        maximumLength: Double = definedExternally,
     ): QuickInfo?
 
     fun getNameOrDottedNameSpan(

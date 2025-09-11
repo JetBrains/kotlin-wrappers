@@ -45,6 +45,7 @@ sealed external interface CompilerOptions {
     /** @deprecated */
     var keyofStringsOnly: Boolean?
     var lib: js.array.ReadonlyArray<String>?
+    var libReplacement: Boolean?
     var locale: String?
     var mapRoot: String?
     var maxNodeModuleJsDepth: Double?
@@ -128,6 +129,7 @@ sealed external interface CompilerOptions {
     /** Paths used to compute primary types search locations */
     var typeRoots: js.array.ReadonlyArray<String>?
     var verbatimModuleSyntax: Boolean?
+    var erasableSyntaxOnly: Boolean?
     var esModuleInterop: Boolean?
     var useDefineForClassFields: Boolean?
 

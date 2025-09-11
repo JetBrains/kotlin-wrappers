@@ -315,6 +315,8 @@ sealed external interface TypeChecker {
 
     fun getBooleanType(): Type
 
+    fun getUnknownType(): Type
+
     fun getFalseType(): Type
 
     fun getTrueType(): Type
@@ -343,6 +345,11 @@ sealed external interface TypeChecker {
      * is `never`. Instead, use `type.flags & TypeFlags.Never`.
      */
     fun getNeverType(): Type
+
+    /**
+     * Gets the intrinsic `object` type.
+     */
+    fun getNonPrimitiveType(): Type
 
     /**
      * Returns true if the "source" type is assignable to the "target" type.
@@ -398,4 +405,6 @@ sealed external interface TypeChecker {
         token: CancellationToken,
         cb: (checker: TypeChecker) -> T,
     ): T
+
+    fun getTypeArgumentsForResolvedSignature(signature: Signature): (js.array.ReadonlyArray<Type>)?
 }

@@ -225,6 +225,24 @@ val injectCommonUnionParents = createInjection { node, context, _, ->
         ensure(context.type == InjectionType.HERITAGE_CLAUSE)
         ensure(isUnionTypeNode(node))
 
+        val property = ensureNotNull(node.getParentOrNull())
+        ensure(isPropertySignature(property))
+
+        val propertyName = property.name
+        ensure(isIdentifier(propertyName))
+        ensure(propertyName.text == "expression")
+
+        val interfaceNode = ensureNotNull(property.getParentOrNull())
+        ensure(isInterfaceDeclaration(interfaceNode))
+        ensure(interfaceNode.name.text == "ImportCall")
+
+        result.add("LeftHandSideExpression")
+    }
+
+    impure {
+        ensure(context.type == InjectionType.HERITAGE_CLAUSE)
+        ensure(isUnionTypeNode(node))
+
         val subProperty = ensureNotNull(node.getParentOrNull())
         ensure(isPropertySignature(subProperty))
 
@@ -276,6 +294,7 @@ fun decorateUnionInjection(unionInjection: Injection): Injection {
                             && it != "WatchOptionsWatchDirectory"
                             && it != "WatchOptionsWatchFile"
                             && it != "CustomTransformersAfterDeclarationsItemTypeArgument"
+                            && it != "ElementWithComputedPropertyNameBase"
                 }
                 ?.toTypedArray()
     }

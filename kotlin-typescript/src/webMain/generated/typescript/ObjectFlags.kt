@@ -22,10 +22,10 @@ sealed external interface ObjectFlags {
         val JSLiteral: ObjectFlags
         val FreshLiteral: ObjectFlags
         val ArrayLiteral: ObjectFlags
+        val SingleSignatureType: ObjectFlags
         val ClassOrInterface: ObjectFlags
         val ContainsSpread: ObjectFlags
         val ObjectRestType: ObjectFlags
         val InstantiationExpressionType: ObjectFlags
-        val SingleSignatureType: ObjectFlags
     }
 }

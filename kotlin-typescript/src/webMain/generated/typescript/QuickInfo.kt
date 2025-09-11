@@ -9,4 +9,5 @@ sealed external interface QuickInfo {
     var displayParts: js.array.ReadonlyArray<SymbolDisplayPart>?
     var documentation: js.array.ReadonlyArray<SymbolDisplayPart>?
     var tags: js.array.ReadonlyArray<JSDocTagInfo>?
+    var canIncreaseVerbosityLevel: Boolean?
 }

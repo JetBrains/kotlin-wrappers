@@ -735,7 +735,8 @@ sealed external interface SyntaxKind {
 
     sealed interface TypeKeyword :
         SyntaxKind,
-        KeywordSyntaxKind
+        KeywordSyntaxKind,
+        ImportPhaseModifierSyntaxKind
 
     sealed interface UndefinedKeyword :
         SyntaxKind,
@@ -777,6 +778,11 @@ sealed external interface SyntaxKind {
     sealed interface OfKeyword :
         SyntaxKind,
         KeywordSyntaxKind
+
+    sealed interface DeferKeyword :
+        SyntaxKind,
+        KeywordSyntaxKind,
+        ImportPhaseModifierSyntaxKind
 
     sealed interface QualifiedName : SyntaxKind
 
@@ -1410,6 +1416,7 @@ sealed external interface SyntaxKind {
         val BigIntKeyword: BigIntKeyword
         val OverrideKeyword: OverrideKeyword
         val OfKeyword: OfKeyword
+        val DeferKeyword: DeferKeyword
         val QualifiedName: QualifiedName
         val ComputedPropertyName: ComputedPropertyName
         val TypeParameter: TypeParameter

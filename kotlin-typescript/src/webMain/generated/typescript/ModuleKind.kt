@@ -16,6 +16,8 @@ sealed external interface ModuleKind {
         val ES2022: ModuleKind
         val ESNext: ModuleKind
         val Node16: ModuleKind
+        val Node18: ModuleKind
+        val Node20: ModuleKind
         val NodeNext: ModuleKind
         val Preserve: ModuleKind
     }

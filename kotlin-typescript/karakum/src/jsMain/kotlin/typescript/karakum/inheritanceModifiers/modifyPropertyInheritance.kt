@@ -786,6 +786,30 @@ fun modifyPropertyInheritance(node: Node, context: InheritanceModifierContext) =
             ensure(interfaceNode.name.text == "VariableDeclaration")
 
             "override"
+        } ?: nullable {
+            ensure(
+                name.text == "name"
+                        || name.text == "keywordToken"
+            )
+
+            val interfaceNode = ensureNotNull(node.getParentOrNull())
+            ensure(isInterfaceDeclaration(interfaceNode))
+            ensure(interfaceNode.name.text == "ImportDeferProperty")
+
+            "override"
+        } ?: nullable {
+            ensure(name.text == "escapedText")
+
+            val typeAlias = node
+                .getParentOrNull() // TypeLiteral
+                ?.getParentOrNull() // IntersectionType
+                ?.getParentOrNull() // PropertySignature
+                ?.getParentOrNull() // InterfaceDeclaration
+                .let { ensureNotNull(it) }
+            ensure(isInterfaceDeclaration(typeAlias))
+            ensure(typeAlias.name.text == "ImportDeferProperty")
+
+            "override"
         }
     }
 }

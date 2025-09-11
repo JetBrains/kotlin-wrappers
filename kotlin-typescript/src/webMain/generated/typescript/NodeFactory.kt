@@ -1882,11 +1882,26 @@ sealed external interface NodeFactory {
     ): ImportDeclaration
 
     fun createImportClause(
+        phaseModifier: ImportPhaseModifierSyntaxKind?,
+        name: Identifier?,
+        namedBindings: NamedImportBindings?,
+    ): ImportClause
+
+    /** @deprecated */
+    fun createImportClause(
         isTypeOnly: Boolean,
         name: Identifier?,
         namedBindings: NamedImportBindings?,
     ): ImportClause
 
+    fun updateImportClause(
+        node: ImportClause,
+        phaseModifier: ImportPhaseModifierSyntaxKind?,
+        name: Identifier?,
+        namedBindings: NamedImportBindings?,
+    ): ImportClause
+
+    /** @deprecated */
     fun updateImportClause(
         node: ImportClause,
         isTypeOnly: Boolean,
