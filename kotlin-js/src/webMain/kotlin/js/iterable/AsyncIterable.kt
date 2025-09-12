@@ -4,9 +4,12 @@
 
 package js.iterable
 
-import js.iterable.internal.flowFromAsyncIterable
+import js.disposable.internal.SuspendCloseable
+import js.disposable.internal.use
+import js.promise.await
 import js.symbol.Symbol
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.flow
 import kotlin.js.JsAny
 import kotlin.js.definedExternally
 
@@ -16,5 +19,23 @@ external interface AsyncIterable<out T : JsAny?> {
     ): () -> AsyncIterator<T> = definedExternally
 }
 
-inline fun <T : JsAny?> AsyncIterable<T>.asFlow(): Flow<T> =
-    flowFromAsyncIterable(this)
+fun <T : JsAny?> AsyncIterable<T>.asFlow(): Flow<T> =
+    flow {
+        val iterator = this@asFlow[Symbol.asyncIterator]()
+
+        val closable = SuspendCloseable {
+            iterator.`return`().await()
+        }
+
+        closable.use {
+            do {
+                val result = iterator.next().await()
+                val done = if (isYield(result)) {
+                    emit(result.value)
+                    true
+                } else {
+                    false
+                }
+            } while (done)
+        }
+    }
