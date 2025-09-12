@@ -1,8 +1,9 @@
 package js.iterable
 
 import js.disposable.AsyncDisposable
-import js.iterable.internal.iteratorFromAsyncIteratorLike
+import js.iterable.internal.flowFromAsyncIteratorLike
 import js.reflect.JsExternalInheritorsOnly
+import kotlinx.coroutines.flow.Flow
 import kotlin.js.JsAny
 
 // TODO: add `@JsName`
@@ -12,5 +13,5 @@ abstract external class AsyncIterator<out T : JsAny?> :
     AsyncIterable<T>,
     AsyncDisposable
 
-inline operator fun <T : JsAny?> AsyncIterator<T>.iterator(): SuspendIterator<T> =
-    iteratorFromAsyncIteratorLike(this)
+inline fun <T : JsAny?> AsyncIterator<T>.asFlow(): Flow<T> =
+    flowFromAsyncIteratorLike(this)

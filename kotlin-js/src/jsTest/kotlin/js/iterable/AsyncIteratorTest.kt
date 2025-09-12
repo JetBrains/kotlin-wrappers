@@ -3,6 +3,7 @@ package js.iterable
 import js.function.invoke
 import js.generator.AsyncGenerator
 import js.generator.AsyncGeneratorFunction
+import kotlinx.coroutines.flow.toList
 import kotlinx.coroutines.test.runTest
 import kotlin.test.Test
 import kotlin.test.assertEquals
@@ -22,10 +23,8 @@ class AsyncIteratorTest {
         )
         val asyncGenerator = createAsyncGenerator()
 
-        val actualList = mutableListOf<Int>()
-        for (element in asyncGenerator) {
-            actualList.add(element)
-        }
+        val actualList = asyncGenerator.asFlow()
+            .toList(mutableListOf())
 
         assertEquals(expectedList, actualList)
     }
