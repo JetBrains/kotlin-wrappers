@@ -37,7 +37,7 @@ internal fun <T : JsAny?> flowFromAsyncIteratorLike(
 private suspend fun safeDispose(
     source: AsyncIteratorLike<*>,
 ) {
-    unsafeCast<HasReturn>(source).`return`
+    val dispose = unsafeCast<HasReturn>(source).`return`
         ?: return
 
     dispose().await()
