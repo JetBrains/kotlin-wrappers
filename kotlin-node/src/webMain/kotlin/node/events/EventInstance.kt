@@ -3,16 +3,12 @@ package node.events
 import js.array.Tuple
 import js.array.Tuple1
 import js.array.asArray
-import js.coroutines.internal.internalSubscribeJob
 import js.function.JsFunction
 import js.function.invoke
-import js.promise.thenTo
-import kotlinx.coroutines.*
-import kotlinx.coroutines.channels.Channel
-import kotlinx.coroutines.channels.ReceiveChannel
+import kotlinx.coroutines.channels.awaitClose
 import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.flow
-import web.abort.toAbortSignal
+import kotlinx.coroutines.flow.FlowCollector
+import kotlinx.coroutines.flow.channelFlow
 
 private val toNodeListener = JsFunction<Tuple1<Function<Unit>>, EventListener>(
     parameterNames = arrayOf("handler"),
@@ -23,7 +19,7 @@ private val toNodeListener = JsFunction<Tuple1<Function<Unit>>, EventListener>(
 class EventInstance<out P : Tuple>(
     internal val emitter: EventEmitter,
     internal val type: EventType,
-) {
+) : Flow<P> {
     fun addHandler(
         handler: (P) -> Unit,
     ): () -> Unit {
@@ -42,6 +38,18 @@ class EventInstance<out P : Tuple>(
         }
     }
 
+    override suspend fun collect(
+        collector: FlowCollector<P>,
+    ) {
+        channelFlow {
+            val unsubscribe = addHandler { payload ->
+                trySend(payload)
+            }
+
+            awaitClose(unsubscribe)
+        }.collect(collector)
+    }
+
     fun emit(
         payload: @UnsafeVariance P,
     ) {
@@ -51,35 +59,3 @@ class EventInstance<out P : Tuple>(
         )
     }
 }
-
-suspend fun <P : Tuple> EventInstance<P>.subscribe(
-    handler: (P) -> Unit,
-): Job =
-    internalSubscribeJob {
-        addHandler(handler)
-    }
-
-suspend fun <P : Tuple> EventInstance<P>.once(): P =
-    suspendCancellableCoroutine { continuation ->
-        EventEmitter.once<P>(
-            emitter = emitter,
-            type = type,
-            options = StaticEventEmitterOptions(
-                signal = continuation.toAbortSignal(),
-            ),
-        ).thenTo(continuation)
-    }
-
-internal suspend fun <P : Tuple> EventInstance<P>.asChannel(): ReceiveChannel<P> {
-    val channel = Channel<P>()
-    val job = subscribe(channel::trySend)
-    channel.invokeOnClose { job.cancel() }
-    return channel
-}
-
-fun <P : Tuple> EventInstance<P>.asFlow(): Flow<P> =
-    flow {
-        for (event in asChannel()) {
-            emit(event)
-        }
-    }
