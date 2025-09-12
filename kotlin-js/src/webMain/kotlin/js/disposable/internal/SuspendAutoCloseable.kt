@@ -1,4 +1,4 @@
-package js.disposable
+package js.disposable.internal
 
 import kotlinx.coroutines.NonCancellable
 import kotlinx.coroutines.withContext

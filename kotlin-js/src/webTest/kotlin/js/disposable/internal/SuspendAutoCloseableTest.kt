@@ -1,4 +1,4 @@
-package js.disposable
+package js.disposable.internal
 
 import kotlinx.coroutines.CoroutineStart
 import kotlinx.coroutines.cancelAndJoin

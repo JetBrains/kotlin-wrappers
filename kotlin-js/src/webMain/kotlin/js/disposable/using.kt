@@ -1,5 +1,7 @@
 package js.disposable
 
+import js.disposable.internal.SuspendAutoCloseable
+import js.disposable.internal.use
 import js.promise.await
 import js.symbol.Symbol
 import kotlin.contracts.InvocationKind
