@@ -6,7 +6,6 @@ import js.array.asArray
 import js.coroutines.internal.internalSubscribeJob
 import js.function.JsFunction
 import js.function.invoke
-import js.iterable.SuspendIterator
 import js.promise.thenTo
 import kotlinx.coroutines.*
 import kotlinx.coroutines.channels.Channel
@@ -70,9 +69,6 @@ suspend fun <P : Tuple> EventInstance<P>.once(): P =
             ),
         ).thenTo(continuation)
     }
-
-suspend operator fun <P : Tuple> EventInstance<P>.iterator(): SuspendIterator<P> =
-    SuspendIterator(asChannel().iterator())
 
 internal suspend fun <P : Tuple> EventInstance<P>.asChannel(): ReceiveChannel<P> {
     val channel = Channel<P>()

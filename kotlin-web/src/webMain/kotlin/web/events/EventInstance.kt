@@ -5,7 +5,6 @@
 package web.events
 
 import js.coroutines.internal.internalSubscribeJob
-import js.iterable.SuspendIterator
 import js.objects.unsafeJso
 import kotlinx.coroutines.*
 import kotlinx.coroutines.channels.Channel
@@ -104,12 +103,6 @@ suspend fun <E : Event, C : EventTarget, T : EventTarget, D> EventInstance<E, C,
         }
     }
 }
-
-// iterator
-suspend operator fun <E : Event, T : EventTarget, D> EventInstance<E, *, T>.iterator(): SuspendIterator<D>
-        where D : E,
-              D : HasTargets<*, T> =
-    SuspendIterator(asChannel<_, _, D>().iterator())
 
 // channel
 internal suspend fun <E : Event, T : EventTarget, D> EventInstance<E, *, T>.asChannel(): ReceiveChannel<D>
