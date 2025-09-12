@@ -4,7 +4,7 @@
 
 package js.iterable
 
-import js.iterable.internal.flowFromAsyncIterator
+import js.iterable.internal.flowFromAsyncIterable
 import js.symbol.Symbol
 import kotlinx.coroutines.flow.Flow
 import kotlin.js.JsAny
@@ -17,4 +17,4 @@ external interface AsyncIterable<out T : JsAny?> {
 }
 
 inline fun <T : JsAny?> AsyncIterable<T>.asFlow(): Flow<T> =
-    flowFromAsyncIterator(this[Symbol.asyncIterator]())
+    flowFromAsyncIterable(this[Symbol.asyncIterator]())

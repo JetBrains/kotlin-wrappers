@@ -2,7 +2,7 @@ package js.iterable
 
 import js.core.Void
 import js.disposable.AsyncDisposable
-import js.iterable.internal.flowFromAsyncIterator
+import js.iterable.internal.flowFromAsyncIterable
 import js.promise.Promise
 import js.reflect.JsExternalInheritorsOnly
 import kotlinx.coroutines.flow.Flow
@@ -18,4 +18,4 @@ abstract external class AsyncIterator<out T : JsAny?> :
 }
 
 inline fun <T : JsAny?> AsyncIterator<T>.asFlow(): Flow<T> =
-    flowFromAsyncIterator(this)
+    flowFromAsyncIterable(this)
