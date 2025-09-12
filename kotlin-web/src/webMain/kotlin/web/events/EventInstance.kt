@@ -23,13 +23,8 @@ class EventInstance<out E : Event, out C : EventTarget, out T : EventTarget>(
         collector: FlowCollector<E>,
     ) {
         channelFlow {
-            val unsubscribe = target.addEventHandler(type) { event ->
-                trySend(event)
-            }
-
-            awaitClose {
-                unsubscribe()
-            }
+            val unsubscribe = addHandler(::trySend)
+            awaitClose(unsubscribe)
         }.collect(collector)
     }
 }
