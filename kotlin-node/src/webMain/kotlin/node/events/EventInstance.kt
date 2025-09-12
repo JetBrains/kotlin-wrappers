@@ -5,10 +5,9 @@ import js.array.Tuple1
 import js.array.asArray
 import js.function.JsFunction
 import js.function.invoke
-import kotlinx.coroutines.channels.awaitClose
+import js.iterable.asFlow
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.FlowCollector
-import kotlinx.coroutines.flow.channelFlow
 
 private val toNodeListener = JsFunction<Tuple1<Function<Unit>>, EventListener>(
     parameterNames = arrayOf("handler"),
@@ -41,13 +40,9 @@ class EventInstance<out P : Tuple>(
     override suspend fun collect(
         collector: FlowCollector<P>,
     ) {
-        channelFlow {
-            val unsubscribe = addHandler { payload ->
-                trySend(payload)
-            }
-
-            awaitClose(unsubscribe)
-        }.collect(collector)
+        EventEmitter.on<P>(emitter, type)
+            .asFlow()
+            .collect(collector)
     }
 
     fun emit(
