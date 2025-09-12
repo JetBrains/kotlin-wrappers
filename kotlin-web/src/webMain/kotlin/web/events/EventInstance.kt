@@ -6,18 +6,33 @@ package web.events
 
 import js.coroutines.internal.internalSubscribeJob
 import js.objects.unsafeJso
-import kotlinx.coroutines.*
-import kotlinx.coroutines.channels.Channel
-import kotlinx.coroutines.channels.ReceiveChannel
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.channels.awaitClose
 import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.flow
+import kotlinx.coroutines.flow.FlowCollector
+import kotlinx.coroutines.flow.channelFlow
+import kotlinx.coroutines.suspendCancellableCoroutine
 import kotlin.coroutines.resume
 import kotlin.js.undefined
 
 class EventInstance<out E : Event, out C : EventTarget, out T : EventTarget>(
     internal val target: C,
     internal val type: EventType<E>,
-)
+) : Flow<E> {
+    override suspend fun collect(
+        collector: FlowCollector<E>,
+    ) {
+        channelFlow {
+            val unsubscribe = target.addEventHandler(type) { event ->
+                trySend(event)
+            }
+
+            awaitClose {
+                unsubscribe()
+            }
+        }.collect(collector)
+    }
+}
 
 inline fun <E : Event, C : EventTarget, T : EventTarget> EventInstance(
     target: C,
@@ -103,23 +118,3 @@ suspend fun <E : Event, C : EventTarget, T : EventTarget, D> EventInstance<E, C,
         }
     }
 }
-
-// channel
-internal suspend fun <E : Event, T : EventTarget, D> EventInstance<E, *, T>.asChannel(): ReceiveChannel<D>
-        where D : E,
-              D : HasTargets<*, T> {
-    val channel = Channel<D>()
-    val job = subscribe(channel::trySend)
-    channel.invokeOnClose { job.cancel() }
-    return channel
-}
-
-// asFlow
-fun <E : Event, T : EventTarget, D> EventInstance<E, *, T>.asFlow(): Flow<D>
-        where D : E,
-              D : HasTargets<*, T> =
-    flow {
-        for (event in asChannel<_, _, D>()) {
-            emit(event)
-        }
-    }
