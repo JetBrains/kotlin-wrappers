@@ -17,4 +17,4 @@ external interface AsyncIterable<out T : JsAny?> {
 }
 
 inline fun <T : JsAny?> AsyncIterable<T>.asFlow(): Flow<T> =
-    flowFromAsyncIterable(this[Symbol.asyncIterator]())
+    flowFromAsyncIterable(this)
