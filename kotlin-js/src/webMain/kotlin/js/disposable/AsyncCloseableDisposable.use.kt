@@ -1,7 +1,7 @@
 package js.disposable
 
 import js.disposable.internal.AsyncCloseableDisposable
-import js.disposable.internal.SuspendAutoCloseable
+import js.disposable.internal.SuspendCloseable
 import js.disposable.internal.close
 import js.disposable.internal.use
 import kotlin.contracts.InvocationKind
@@ -14,7 +14,7 @@ suspend inline fun <T : AsyncCloseableDisposable, R> T.use(
         callsInPlace(block, InvocationKind.EXACTLY_ONCE)
     }
 
-    val closeable = SuspendAutoCloseable {
+    val closeable = SuspendCloseable {
         close()
     }
 

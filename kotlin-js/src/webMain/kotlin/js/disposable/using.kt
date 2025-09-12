@@ -1,6 +1,6 @@
 package js.disposable
 
-import js.disposable.internal.SuspendAutoCloseable
+import js.disposable.internal.SuspendCloseable
 import js.disposable.internal.use
 import js.promise.await
 import js.symbol.Symbol
@@ -15,7 +15,7 @@ suspend inline fun <R> using(
     }
 
     val stack = AsyncDisposableStack()
-    val closeable = SuspendAutoCloseable {
+    val closeable = SuspendCloseable {
         stack[Symbol.asyncDispose]().await()
     }
 

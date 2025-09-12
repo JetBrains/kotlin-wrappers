@@ -15,7 +15,7 @@ class SuspendCloseableTest {
     @Test
     fun testResourceCleanup() = runTest {
         var isClosed = false
-        val resource = SuspendAutoCloseable {
+        val resource = SuspendCloseable {
             // emulate asynchronous cleanup
             delay(1.milliseconds)
             isClosed = true
@@ -29,7 +29,7 @@ class SuspendCloseableTest {
     @Test
     fun testResourceCleanupAfterException() = runTest {
         var isClosed = false
-        val resource = SuspendAutoCloseable {
+        val resource = SuspendCloseable {
             // emulate asynchronous cleanup
             delay(1.milliseconds)
             isClosed = true
@@ -48,7 +48,7 @@ class SuspendCloseableTest {
         var isStarted = false
         var isEnded = false
         var isClosed = false
-        val resource = SuspendAutoCloseable {
+        val resource = SuspendCloseable {
             // emulate asynchronous cleanup
             delay(1.milliseconds)
             isClosed = true

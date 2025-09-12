@@ -11,12 +11,12 @@ import kotlin.contracts.contract
 // WA for Kotlin `2.2.20`
 // Should be internal
 // @PublishedApi
-fun interface SuspendAutoCloseable {
+fun interface SuspendCloseable {
     suspend fun close()
 }
 
 @PublishedApi
-internal suspend inline fun <R> SuspendAutoCloseable.use(
+internal suspend inline fun <R> SuspendCloseable.use(
     block: () -> R,
 ): R {
     contract {
@@ -37,7 +37,7 @@ internal suspend inline fun <R> SuspendAutoCloseable.use(
 }
 
 @PublishedApi
-internal suspend fun SuspendAutoCloseable.closeFinally(
+internal suspend fun SuspendCloseable.closeFinally(
     cause: Throwable?,
 ) {
     when {
