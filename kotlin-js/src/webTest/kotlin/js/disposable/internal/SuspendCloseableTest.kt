@@ -11,7 +11,7 @@ import kotlin.test.assertTrue
 import kotlin.time.Duration.Companion.milliseconds
 import kotlin.time.Duration.Companion.seconds
 
-class SuspendAutoCloseableTest {
+class SuspendCloseableTest {
     @Test
     fun testResourceCleanup() = runTest {
         var isClosed = false
