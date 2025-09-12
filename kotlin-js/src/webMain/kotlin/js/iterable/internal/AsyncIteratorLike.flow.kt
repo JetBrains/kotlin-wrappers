@@ -30,12 +30,18 @@ internal fun <T : JsAny?> flowFromAsyncIteratorLike(
         } while (done)
     }.onCompletion { cause ->
         if (cause is CancellationException) {
-            val dispose = unsafeCast<HasReturn>(source).`return`
-            if (dispose != null) {
-                dispose().await()
-            }
+            safeDispose(source)
         }
     }
+
+private suspend fun safeDispose(
+    source: AsyncIteratorLike<*>,
+) {
+    unsafeCast<HasReturn>(source).`return`
+        ?: return
+
+    dispose().await()
+}
 
 private external interface HasReturn {
     val `return`: (() -> Promise<Void>)?
