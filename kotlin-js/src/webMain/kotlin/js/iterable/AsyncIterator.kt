@@ -14,7 +14,7 @@ abstract external class AsyncIterator<out T : JsAny?> :
     AsyncIteratorLike<T>,
     AsyncIterable<T>,
     AsyncDisposable {
-    internal fun `return`(): Promise<IteratorReturnResult<Void>>
+    fun `return`(): Promise<IteratorReturnResult<Void>>
 }
 
 inline fun <T : JsAny?> AsyncIterator<T>.asFlow(): Flow<T> =
