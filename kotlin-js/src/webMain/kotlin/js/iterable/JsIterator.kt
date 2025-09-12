@@ -2,7 +2,6 @@ package js.iterable
 
 import js.array.ReadonlyArray
 import js.disposable.Disposable
-import js.iterable.internal.iteratorFromJsIteratorLike
 import kotlin.js.JsAny
 import kotlin.js.JsName
 
@@ -32,6 +31,3 @@ abstract external class JsIterator<out T : JsAny?> :
         fun <T : JsAny?> from(source: JsIterable<T>): JsIterator<T>
     }
 }
-
-inline fun <T : JsAny?> JsIterator<T>.iterator(): Iterator<T> =
-    iteratorFromJsIteratorLike(this)
