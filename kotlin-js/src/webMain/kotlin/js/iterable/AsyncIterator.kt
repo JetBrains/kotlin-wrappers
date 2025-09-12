@@ -1,6 +1,5 @@
 package js.iterable
 
-import js.core.Void
 import js.disposable.AsyncDisposable
 import js.promise.Promise
 import js.reflect.JsExternalInheritorsOnly
@@ -12,5 +11,5 @@ abstract external class AsyncIterator<out T : JsAny?> :
     AsyncIteratorLike<T>,
     AsyncIterable<T>,
     AsyncDisposable {
-    fun `return`(): Promise<IteratorResult<T, Void>>
+    fun `return`(): Promise<IteratorResult<T, *>>
 }
