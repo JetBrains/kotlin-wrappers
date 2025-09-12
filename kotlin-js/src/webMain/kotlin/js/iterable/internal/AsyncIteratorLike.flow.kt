@@ -10,7 +10,6 @@ import js.reflect.unsafeCast
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.onCompletion
-import kotlin.coroutines.cancellation.CancellationException
 import kotlin.js.JsAny
 
 @InternalApi
@@ -29,9 +28,7 @@ internal fun <T : JsAny?> flowFromAsyncIteratorLike(
             }
         } while (done)
     }.onCompletion { cause ->
-        if (cause is CancellationException) {
-            safeDispose(source)
-        }
+        safeDispose(source)
     }
 
 private suspend fun safeDispose(
