@@ -1,12 +1,9 @@
 package js.iterable.internal
 
-import js.core.Void
 import js.internal.InternalApi
-import js.iterable.AsyncIteratorLike
+import js.iterable.AsyncIterator
 import js.iterable.isYield
-import js.promise.Promise
 import js.promise.await
-import js.reflect.unsafeCast
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.onCompletion
@@ -14,8 +11,8 @@ import kotlin.js.JsAny
 
 @InternalApi
 @PublishedApi
-internal fun <T : JsAny?> flowFromAsyncIteratorLike(
-    source: AsyncIteratorLike<T>,
+internal fun <T : JsAny?> flowFromAsyncIterator(
+    source: AsyncIterator<T>,
 ): Flow<T> =
     flow {
         do {
@@ -27,19 +24,6 @@ internal fun <T : JsAny?> flowFromAsyncIteratorLike(
                 false
             }
         } while (done)
-    }.onCompletion { cause ->
-        safeDispose(source)
+    }.onCompletion {
+        source.`return`().await()
     }
-
-private suspend fun safeDispose(
-    source: AsyncIteratorLike<*>,
-) {
-    val dispose = unsafeCast<HasReturn>(source).`return`
-        ?: return
-
-    dispose().await()
-}
-
-private external interface HasReturn {
-    val `return`: (() -> Promise<Void>)?
-}
