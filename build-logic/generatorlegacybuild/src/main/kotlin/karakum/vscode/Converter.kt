@@ -18,6 +18,7 @@ internal fun parseDeclarations(
         .replace("/**'", "/\u200B**'")
         .replace("/*`", "/\u200B*`")
         .replace("/*.", "/\u200B*.")
+        // TODO: remove after https://github.com/microsoft/vscode/pull/266485
         .replace("\n\t*/\n", "\n\t */\n")
         .replace("dispose: () => any;", "dispose(): void;")
         .replace("dispose(): any;", "dispose(): void;")
