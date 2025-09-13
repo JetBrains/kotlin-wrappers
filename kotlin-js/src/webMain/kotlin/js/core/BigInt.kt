@@ -15,10 +15,9 @@ internal val POW = JsFunction<BigInt, BigInt, BigInt>(
     "return base ** exponent"
 )
 
-// WA for Kotlin `2.2.20`
-// Should be class with private constructor
-sealed /* final */
-external interface BigInt {
+@JsPrimitive("bigint")
+external class BigInt
+private constructor() {
 
     /**
      * Returns a string representation of an object.
