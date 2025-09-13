@@ -1,5 +1,6 @@
 package example.react
 
+import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.first
 import react.FC
 import react.dom.html.ReactHTML.span
@@ -36,9 +37,8 @@ val SubscribeExample = FC {
 
     // after
     useEffect(myInput) {
-        myInput.changeEvent.subscribe { event ->
-            myText = event.currentTarget.value
-        }
+        myInput.changeEvent()
+            .collect { myText = it.currentTarget.value }
     }
 }
 
