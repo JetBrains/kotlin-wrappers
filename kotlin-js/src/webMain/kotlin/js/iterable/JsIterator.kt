@@ -11,6 +11,8 @@ abstract external class JsIterator<out T : JsAny?> :
     JsIterable<T>,
     Disposable {
 
+    fun `return`(): IteratorResult<T, *>
+
     fun drop(n: Int): JsIterator<T>
     fun every(predicate: (T) -> Boolean): Boolean
     fun filter(predicate: (T) -> Boolean): JsIterator<T>
