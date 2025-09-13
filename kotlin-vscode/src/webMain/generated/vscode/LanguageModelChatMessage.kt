@@ -28,7 +28,7 @@ open external class LanguageModelChatMessage {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#LanguageModelChatMessage.content)
      */
-    var content: ReadonlyArray<JsAny /* LanguageModelTextPart | LanguageModelToolResultPart | LanguageModelToolCallPart */>
+    var content: ReadonlyArray<LanguageModelInputPart>
 
     /**
      * The optional name of a user for this message.
@@ -48,7 +48,7 @@ open external class LanguageModelChatMessage {
      */
     constructor(
         role: LanguageModelChatMessageRole,
-        content: JsAny, /* string | Array<LanguageModelTextPart | LanguageModelToolResultPart | LanguageModelToolCallPart> */
+        content: JsAny, /* string | Array<LanguageModelInputPart> */
         name: String = definedExternally,
     )
 

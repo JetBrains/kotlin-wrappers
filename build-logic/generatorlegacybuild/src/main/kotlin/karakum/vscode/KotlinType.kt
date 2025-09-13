@@ -52,6 +52,7 @@ private val STANDARD_TYPE_MAP = mapOf(
     "[Uri, TextEdit[]]" to "Tuple2<Uri, ReadonlyArray<TextEdit>>",
 
     "{ readonly [key: string]: any }" to "ReadonlyRecord<String, *>",
+    "{ readonly [name: string]: any }" to "ReadonlyRecord<String, *>",
     "{ [key: string]: string }" to "Record<String, String>",
     "{ [key: string]: any }" to "Record<String, *>",
     "{ [name: string]: any }" to "Record<String, *>",
@@ -70,6 +71,7 @@ private val STANDARD_TYPE_MAP = mapOf(
     "TabGroup | readonly TabGroup[]" to "ReadonlyArray<TabGroup> /* TabGroup */",
 
     "LanguageModelToolInvocationOptions<object>" to "LanguageModelToolInvocationOptions<* /* object */>",
+    "LanguageModelChatProvider" to "LanguageModelChatProvider<*>",
 )
 
 private val GENERIC_REQUIRED = setOf(
@@ -208,6 +210,8 @@ internal fun kotlinType(
             "hideAfterTimeout",
             "match",
             "maxResults",
+            "maxOutputTokens",
+            "provideTokenCount",
 
                 // ???
             "value",

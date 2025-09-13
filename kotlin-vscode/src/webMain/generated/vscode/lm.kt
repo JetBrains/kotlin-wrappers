@@ -144,4 +144,18 @@ external object lm {
         id: String,
         provider: McpServerDefinitionProvider<*>,
     ): Disposable
+
+    /**
+     * Registers a {@linkcode LanguageModelChatProvider}
+     * Note: You must also define the language model chat provider via the `languageModelChatProviders` contribution point in package.json
+     * @param vendor The vendor for this provider. Must be globally unique. An example is `copilot` or `openai`.
+     * @param provider The provider to register
+     * @returns A disposable that unregisters the provider when disposed
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#lm.registerLanguageModelChatProvider)
+     */
+    fun registerLanguageModelChatProvider(
+        vendor: String,
+        provider: LanguageModelChatProvider<*>,
+    ): Disposable
 }
