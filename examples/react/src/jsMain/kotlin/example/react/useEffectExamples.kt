@@ -16,7 +16,6 @@ import web.dom.document
 import web.dom.loadEvent
 import web.events.addHandler
 import web.events.invoke
-import web.events.subscribe
 import web.html.HTMLScriptElement
 import web.html.HtmlTagName.input
 import web.html.HtmlTagName.script
