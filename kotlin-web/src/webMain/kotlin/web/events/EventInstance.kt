@@ -5,6 +5,7 @@
 package web.events
 
 import js.coroutines.internal.internalSubscribeJob
+import js.objects.unsafeJso
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.channels.awaitClose
 import kotlinx.coroutines.flow.Flow
@@ -25,13 +26,36 @@ inline fun <E : Event, C : EventTarget, T : EventTarget> EventInstance(
         type = EventType(type),
     )
 
-operator fun <E : Event, C : EventTarget, T : EventTarget, D> EventInstance<E, C, T>.invoke(): Flow<D>
+operator fun <E : Event, C : EventTarget, T : EventTarget, D> EventInstance<E, C, T>.invoke(
+    capture: Boolean? = null,
+    passive: Boolean? = null,
+): Flow<D>
         where D : E,
-              D : HasTargets<C, T> =
-    channelFlow {
-        val unsubscribe = addHandler(::trySend)
+              D : HasTargets<C, T> {
+    val options = listenerOptions(
+        capture = capture,
+        passive = passive,
+    )
+
+    return channelFlow {
+        val unsubscribe = addHandler(options, ::trySend)
         awaitClose(unsubscribe)
     }
+}
+
+private fun listenerOptions(
+    capture: Boolean?,
+    passive: Boolean?,
+): AddEventListenerOptions {
+    val options: AddEventListenerOptions = unsafeJso()
+    if (capture != null)
+        options.capture = capture
+
+    if (passive != null)
+        options.passive = passive
+
+    return options
+}
 
 // addHandler
 fun <E : Event, C : EventTarget, T : EventTarget> EventInstance<E, C, T>.addHandler(
