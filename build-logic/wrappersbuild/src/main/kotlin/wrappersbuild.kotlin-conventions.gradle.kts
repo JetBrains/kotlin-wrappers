@@ -21,6 +21,7 @@ val COMMON_FREE_COMPILER_ARGS = listOf(
 val COMMON_OPT_INS = listOf(
     "kotlin.ExperimentalStdlibApi",
     "kotlin.ExperimentalUnsignedTypes",
+    "kotlin.ExperimentalMultiplatform",
     "kotlin.contracts.ExperimentalContracts",
     "kotlin.js.ExperimentalJsExport",
 )
