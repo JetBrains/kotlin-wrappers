@@ -14,6 +14,7 @@ import web.animations.requestAnimationFrame
 import web.dom.document
 import web.dom.loadEvent
 import web.events.addHandler
+import web.events.invoke
 import web.events.subscribe
 import web.html.HTMLScriptElement
 import web.html.HtmlTagName.input
@@ -59,7 +60,7 @@ val OnceExample = FC {
 
     // after
     useEffect(script) {
-        script.loadEvent.first()
+        script.loadEvent().first()
         status = "loaded"
     }
 }

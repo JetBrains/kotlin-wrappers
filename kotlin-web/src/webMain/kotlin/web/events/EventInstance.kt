@@ -8,23 +8,13 @@ import js.coroutines.internal.internalSubscribeJob
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.channels.awaitClose
 import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.FlowCollector
 import kotlinx.coroutines.flow.channelFlow
 import kotlin.js.undefined
 
 class EventInstance<out E : Event, out C : EventTarget, out T : EventTarget>(
     internal val target: C,
     internal val type: EventType<E>,
-) : Flow<E> {
-    override suspend fun collect(
-        collector: FlowCollector<E>,
-    ) {
-        channelFlow {
-            val unsubscribe = addHandler(::trySend)
-            awaitClose(unsubscribe)
-        }.collect(collector)
-    }
-}
+)
 
 inline fun <E : Event, C : EventTarget, T : EventTarget> EventInstance(
     target: C,
@@ -34,6 +24,14 @@ inline fun <E : Event, C : EventTarget, T : EventTarget> EventInstance(
         target = target,
         type = EventType(type),
     )
+
+operator fun <E : Event, C : EventTarget, T : EventTarget, D> EventInstance<E, C, T>.invoke(): Flow<D>
+        where D : E,
+              D : HasTargets<C, T> =
+    channelFlow {
+        val unsubscribe = addHandler(::trySend)
+        awaitClose(unsubscribe)
+    }
 
 // addHandler
 fun <E : Event, C : EventTarget, T : EventTarget> EventInstance<E, C, T>.addHandler(
