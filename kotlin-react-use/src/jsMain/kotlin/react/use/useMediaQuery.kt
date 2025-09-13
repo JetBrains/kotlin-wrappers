@@ -6,7 +6,7 @@ import react.useState
 import web.cssom.MediaQuery
 import web.cssom.changeEvent
 import web.cssom.matchMedia
-import web.events.subscribe
+import web.events.invoke
 
 /**
  * [Original](https://mui.com/material-ui/react-use-media-query/)
@@ -23,9 +23,8 @@ fun useMediaQuery(
     useEffect(queryList) {
         setMatches(queryList.matches)
 
-        queryList.changeEvent.subscribe { event ->
-            setMatches(event.matches)
-        }
+        queryList.changeEvent()
+            .collect { setMatches(it.matches) }
     }
 
     return matches
