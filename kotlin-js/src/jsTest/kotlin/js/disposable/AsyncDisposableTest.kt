@@ -4,45 +4,15 @@ import js.coroutines.internal.IsolatedCoroutineScope
 import js.coroutines.promise
 import js.function.JsFunction
 import js.function.invoke
-import js.globals.globalThis
 import js.promise.Promise
 import kotlinx.coroutines.test.runTest
-import kotlin.test.AfterTest
-import kotlin.test.BeforeTest
 import kotlin.test.Test
 import kotlin.test.assertTrue
 
 class AsyncDisposableTest {
-    @BeforeTest
-    fun setUp() {
-        // TODO: remove polyfill after proposal release
-        globalThis["AsyncDisposableStack"] = JsFunction<AsyncDisposableStack>(
-            // language=javascript
-            """
-                return class AsyncDisposableStack {
-                  #stack = []
-
-                  use(disposable) {
-                    this.#stack.push(disposable)
-                    return disposable
-                  }
-
-                  async [Symbol.asyncDispose]() {
-                    for (const disposable of this.#stack) {
-                      await disposable[Symbol.asyncDispose]()
-                    }
-                  }
-                }
-            """.trimIndent()
-        )()
-    }
-
-    @AfterTest
-    fun tearDown() {
-        globalThis["AsyncDisposableStack"] = undefined
-    }
-
-    private fun createDisposable(onDispose: suspend () -> Unit): AsyncDisposable {
+    private fun createDisposable(
+        onDispose: suspend () -> Unit,
+    ): AsyncDisposable {
         val onDisposeAsync = {
             IsolatedCoroutineScope().promise { onDispose() }
         }

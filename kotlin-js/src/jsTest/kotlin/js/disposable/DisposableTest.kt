@@ -2,43 +2,13 @@ package js.disposable
 
 import js.function.JsFunction
 import js.function.invoke
-import js.globals.globalThis
-import kotlin.test.AfterTest
-import kotlin.test.BeforeTest
 import kotlin.test.Test
 import kotlin.test.assertTrue
 
 class DisposableTest {
-    @BeforeTest
-    fun setUp() {
-        // TODO: remove polyfill after proposal release
-        globalThis["DisposableStack"] = JsFunction<DisposableStack>(
-            // language=javascript
-            """
-                return class DisposableStack {
-                  #stack = []
-
-                  use(disposable) {
-                    this.#stack.push(disposable)
-                    return disposable
-                  }
-
-                  [Symbol.dispose]() {
-                    for (const disposable of this.#stack) {
-                      disposable[Symbol.dispose]()
-                    }
-                  }
-                }
-            """.trimIndent()
-        )()
-    }
-
-    @AfterTest
-    fun tearDown() {
-        globalThis["DisposableStack"] = undefined
-    }
-
-    private fun createDisposable(onDispose: () -> Unit): Disposable {
+    private fun createDisposable(
+        onDispose: () -> Unit,
+    ): Disposable {
         return JsFunction<() -> Unit, Disposable>(
             "onDispose",
             // language=javascript
