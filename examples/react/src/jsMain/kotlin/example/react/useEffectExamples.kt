@@ -1,5 +1,6 @@
 package example.react
 
+import kotlinx.coroutines.flow.first
 import react.FC
 import react.dom.html.ReactHTML.span
 import react.use.useConstant
@@ -13,12 +14,11 @@ import web.animations.requestAnimationFrame
 import web.dom.document
 import web.dom.loadEvent
 import web.events.addHandler
-import web.events.once
 import web.events.subscribe
-import web.html.changeEvent
+import web.html.HTMLScriptElement
 import web.html.HtmlTagName.input
 import web.html.HtmlTagName.script
-import web.html.HTMLScriptElement
+import web.html.changeEvent
 
 val SubscribeExample = FC {
     val myInput = document.createElement(input)
@@ -59,7 +59,7 @@ val OnceExample = FC {
 
     // after
     useEffect(script) {
-        script.loadEvent.once()
+        script.loadEvent.first()
         status = "loaded"
     }
 }

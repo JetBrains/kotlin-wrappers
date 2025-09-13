@@ -5,14 +5,11 @@
 package web.events
 
 import js.coroutines.internal.internalSubscribeJob
-import js.objects.unsafeJso
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.channels.awaitClose
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.FlowCollector
 import kotlinx.coroutines.flow.channelFlow
-import kotlinx.coroutines.suspendCancellableCoroutine
-import kotlin.coroutines.resume
 import kotlin.js.undefined
 
 class EventInstance<out E : Event, out C : EventTarget, out T : EventTarget>(
@@ -97,19 +94,3 @@ suspend fun <E : Event, C : EventTarget, T : EventTarget, D> EventInstance<E, C,
         handler = EventHandler(handler),
         options = options,
     )
-
-// once
-suspend fun <E : Event, C : EventTarget, T : EventTarget, D> EventInstance<E, C, T>.once(): D
-        where D : E,
-              D : HasTargets<C, T> {
-    return suspendCancellableCoroutine { continuation ->
-        val unsubscribe = addHandler(
-            handler = continuation::resume,
-            options = unsafeJso { once = true },
-        )
-
-        continuation.invokeOnCancellation {
-            unsubscribe()
-        }
-    }
-}
