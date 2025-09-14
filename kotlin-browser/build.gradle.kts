@@ -6,7 +6,8 @@ dependencies {
     webMainApi(projects.kotlinJs)
     webMainApi(projects.kotlinCssomCore)
     webMainApi(projects.kotlinWeb)
-    webMainApi(libs.coroutines.core)
+
+    webMainImplementation(libs.coroutines.core)
 
     commonTestImplementation(libs.kotlin.test)
 }
