@@ -4,9 +4,7 @@
 
 package web.events
 
-import js.coroutines.internal.internalSubscribeJob
 import js.objects.unsafeJso
-import kotlinx.coroutines.Job
 import kotlinx.coroutines.channels.awaitClose
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.channelFlow
@@ -84,35 +82,6 @@ fun <E : Event, C : EventTarget, T : EventTarget, D> EventInstance<E, C, T>.addH
         where D : E,
               D : HasTargets<C, T> =
     addHandler(
-        handler = EventHandler(handler),
-        options = options,
-    )
-
-// subscribe
-suspend fun <E : Event, C : EventTarget, T : EventTarget> EventInstance<E, C, T>.subscribe(
-    handler: EventHandler<E, C, T>,
-    options: AddEventListenerOptions? = undefined,
-): Job =
-    internalSubscribeJob {
-        addHandler(handler, options)
-    }
-
-suspend fun <E : Event, C : EventTarget, T : EventTarget, D> EventInstance<E, C, T>.subscribe(
-    handler: (D) -> Unit,
-): Job
-        where D : E,
-              D : HasTargets<C, T> =
-    subscribe(
-        handler = EventHandler(handler),
-    )
-
-suspend fun <E : Event, C : EventTarget, T : EventTarget, D> EventInstance<E, C, T>.subscribe(
-    options: AddEventListenerOptions?,
-    handler: (D) -> Unit,
-): Job
-        where D : E,
-              D : HasTargets<C, T> =
-    subscribe(
         handler = EventHandler(handler),
         options = options,
     )
