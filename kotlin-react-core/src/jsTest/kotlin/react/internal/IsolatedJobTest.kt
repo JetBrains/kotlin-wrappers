@@ -25,8 +25,8 @@ class IsolatedJobTest {
         var a = 13
 
         isolatedJob {
-            window.clickEvent.subscribe { /* do nothing */ }
-            window.mouseUpEvent.subscribe { /* do nothing */ }
+            window.clickEvent().subscribe { /* do nothing */ }
+            window.mouseUpEvent().subscribe { /* do nothing */ }
 
             a = 42
         }
@@ -44,7 +44,7 @@ class IsolatedJobTest {
         val target = EventTarget()
 
         isolatedJob {
-            target.changeEvent.subscribe { a++ }
+            target.changeEvent().subscribe { a++ }
 
             a = 42
         }
