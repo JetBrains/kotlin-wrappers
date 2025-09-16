@@ -7,6 +7,6 @@ dependencies {
 
     webMainImplementation(libs.coroutines.core)
 
-    commonTestImplementation(libs.coroutines.test)
-    commonTestImplementation(libs.kotlin.test)
+    webTestImplementation(libs.coroutines.test)
+    webTestImplementation(libs.kotlin.test)
 }

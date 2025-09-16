@@ -10,6 +10,6 @@ dependencies {
 
     webMainApi(devNpm(jspkg.types.node))
 
-    commonTestImplementation(libs.kotlin.test)
-    commonTestImplementation(libs.coroutines.test)
+    webTestImplementation(libs.kotlin.test)
+    webTestImplementation(libs.coroutines.test)
 }

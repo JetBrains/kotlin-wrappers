@@ -8,8 +8,8 @@ dependencies {
 
     jsMainApi(libs.coroutines.core)
 
-    commonTestImplementation(libs.kotlin.test)
-    commonTestImplementation(libs.coroutines.test)
+    webTestImplementation(libs.kotlin.test)
+    webTestImplementation(libs.coroutines.test)
 
     webMainApi(npm(jspkg.react))
 }

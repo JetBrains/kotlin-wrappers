@@ -36,6 +36,8 @@ val JS_FREE_COMPILER_ARGS = listOf(
 )
 
 kotlin {
+    applyDefaultHierarchyTemplate()
+
     compilerOptions {
         allWarningsAsErrors = true
         freeCompilerArgs.addAll(COMMON_FREE_COMPILER_ARGS)

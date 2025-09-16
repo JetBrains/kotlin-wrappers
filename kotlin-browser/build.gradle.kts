@@ -9,5 +9,5 @@ dependencies {
 
     webMainImplementation(libs.coroutines.core)
 
-    commonTestImplementation(libs.kotlin.test)
+    webTestImplementation(libs.kotlin.test)
 }
