@@ -18,16 +18,16 @@ kotlin {
 }
 
 dependencies {
-    webMainApi(projects.kotlinJs)
+    jsMainApi(projects.kotlinJs)
     jsMainApi(projects.kotlinCss)
     jsMainApi(projects.kotlinReactLegacy)
     jsMainApi(projects.kotlinReactDomLegacy)
 
     jsMainApi(libs.kotlinx.html)
 
-    webMainApi(npm(jspkg.inlineStylePrefixer))
+    jsMainApi(npm(jspkg.inlineStylePrefixer))
 
-    commonTestImplementation(libs.kotlin.test)
+    jsTestImplementation(libs.kotlin.test)
     jsTestImplementation(libs.coroutines.core)
 
     jsTestImplementation(devNpm(jspkg.puppeteer))
