@@ -2,7 +2,7 @@
 
 package web.performance
 
-import web.events.EventTarget
+import web.dom.Node
 import web.time.DOMHighResTimeStamp
 import kotlin.js.JsAny
 
@@ -40,7 +40,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceEventTiming/target)
      */
-    val target: EventTarget /* Node */?
+    val target: Node?
 
     /**
      * The **`toJSON()`** method of the PerformanceEventTiming interface is a Serialization; it returns a JSON representation of the PerformanceEventTiming object.

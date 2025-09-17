@@ -1203,10 +1203,6 @@ internal fun convertInterface(
             "PerformancePaintTiming",
             "PerformanceResourceTiming",
             "LargestContentfulPaint",
-                -> result
-                .replace("val target: Node?", "val target: EventTarget /* Node */?")
-                .replace("fun toJSON()", "override fun toJSON()")
-
             "CSPViolationReportBody",
                 -> result
                 .replace("fun toJSON()", "override fun toJSON()")
