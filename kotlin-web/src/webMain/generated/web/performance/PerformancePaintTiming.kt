@@ -2,6 +2,8 @@
 
 package web.performance
 
+import kotlin.js.JsAny
+
 /**
  * The **`PerformancePaintTiming`** interface provides timing information about 'paint' (also called 'render') operations during web page construction.
  *
@@ -9,4 +11,6 @@ package web.performance
  */
 open external class PerformancePaintTiming
 private constructor() :
-    PerformanceEntry
+    PerformanceEntry {
+    override fun toJSON(): JsAny
+}

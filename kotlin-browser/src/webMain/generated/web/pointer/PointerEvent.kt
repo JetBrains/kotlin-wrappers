@@ -53,7 +53,7 @@ open external class PointerEvent(
     val persistentDeviceId: Int
 
     /**
-     * The **`pointerId`** read-only property of the PointerEvent interface is an identifier assigned to a given pointer event.
+     * The **`pointerId`** read-only property of the PointerEvent interface is an identifier assigned to the pointer that triggered the event.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PointerEvent/pointerId)
      */

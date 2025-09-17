@@ -50,7 +50,7 @@ protected constructor() :
     var autocomplete: AutoFillBase
 
     /**
-     * The HTMLFormElement property **`elements`** returns an HTMLFormControlsCollection listing all the form controls contained in the form element.
+     * The **`elements`** property of the HTMLFormElement interface returns an HTMLFormControlsCollection listing all the listed form controls associated with the form element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFormElement/elements)
      */

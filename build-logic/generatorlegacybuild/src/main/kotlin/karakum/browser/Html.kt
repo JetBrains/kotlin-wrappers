@@ -1200,6 +1200,7 @@ internal fun convertInterface(
 
             "PerformanceEventTiming",
             "PerformanceNavigationTiming",
+            "PerformancePaintTiming",
             "PerformanceResourceTiming",
             "LargestContentfulPaint",
                 -> result

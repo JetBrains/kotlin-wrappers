@@ -2,8 +2,6 @@
 
 package web.rtc
 
-import js.core.JsInt
-import js.core.JsPrimitives.toInt
 import js.core.Void
 import js.promise.Promise
 import js.promise.await
@@ -49,7 +47,7 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCRtpScriptTransformer/generateKeyFrame)
      */
     @JsName("generateKeyFrame")
-    fun generateKeyFrameAsync(rid: String = definedExternally): Promise<JsInt>
+    fun generateKeyFrameAsync(rid: String = definedExternally): Promise<Void>
 
     /**
      * The **`sendKeyFrameRequest()`** method of the RTCRtpScriptTransformer interface may be called by a WebRTC Encoded Transform that is processing incoming encoded video frames, in order to request a key frame from the sender.
@@ -65,10 +63,10 @@ private constructor() :
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCRtpScriptTransformer/generateKeyFrame)
  */
-suspend inline fun RTCRtpScriptTransformer.generateKeyFrame(rid: String): Int {
-    return generateKeyFrameAsync(
+suspend inline fun RTCRtpScriptTransformer.generateKeyFrame(rid: String) {
+    generateKeyFrameAsync(
         rid = rid,
-    ).await().toInt()
+    ).await()
 }
 
 /**
@@ -76,8 +74,8 @@ suspend inline fun RTCRtpScriptTransformer.generateKeyFrame(rid: String): Int {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCRtpScriptTransformer/generateKeyFrame)
  */
-suspend inline fun RTCRtpScriptTransformer.generateKeyFrame(): Int {
-    return generateKeyFrameAsync().await().toInt()
+suspend inline fun RTCRtpScriptTransformer.generateKeyFrame() {
+    generateKeyFrameAsync().await()
 }
 
 /**
