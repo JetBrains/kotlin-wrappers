@@ -11,6 +11,16 @@ internal fun String.applyPatches(): String {
         .replace(" extends HTMLCollectionOf<", " extends HTMLCollection<")
         .replace(": HTMLCollectionOf<", ": HTMLCollection<")
         .patchQuerySelectors()
+        .patchInterface("Element") {
+            it.replace(
+                """
+            matches<K extends keyof HTMLElementTagNameMap>(selectors: K): this is HTMLElementTagNameMap[K];
+            matches<K extends keyof SVGElementTagNameMap>(selectors: K): this is SVGElementTagNameMap[K];
+            matches<K extends keyof MathMLElementTagNameMap>(selectors: K): this is MathMLElementTagNameMap[K];
+            """.trimIndent().prependIndent("    ") + "\n",
+                "",
+            )
+        }
         .replace(Regex("""(\n\s+)get (.+)\(\)(: string;)\n\s+set .+\(.+: string \| null\);"""), "$1$2$3")
         .replace(Regex("""(\n\s+)get (.+)\(\)(: .+;)"""), "$1readonly $2$3")
         .replace(Regex("""\n\s+set .+\(.+: string\);"""), "")
