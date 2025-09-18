@@ -34,10 +34,6 @@ class IsolatedJobTest {
         assertEquals(42, a)
     }
 
-    // TODO: use common
-    private val EventTarget.changeEvent: EventInstance<Event, EventTarget, EventTarget>
-        get() = EventInstance(this, Event.CHANGE)
-
     @Test
     fun launchWithSubscribeCheck() = runTest {
         var a = 13
