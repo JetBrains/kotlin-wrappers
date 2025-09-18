@@ -17,6 +17,7 @@ import kotlinx.coroutines.test.runTest
 import web.abort.abortEvent
 import web.errors.DOMException
 import web.events.addHandler
+import kotlin.js.JsAny
 import kotlin.test.*
 
 private const val FETCH = "fetch"
@@ -38,7 +39,7 @@ class FetchTest {
     }
 
     @Test
-    fun should_return_result_on_success() = runTest {
+    fun `should return result on success`() = runTest {
         val expectedResult = "--42--"
         val response = Response(BodyInit(expectedResult))
 
@@ -50,7 +51,7 @@ class FetchTest {
     }
 
     @Test
-    fun should_throw_exception_on_error() = runTest {
+    fun `should throw exception on error`() = runTest {
         globalThis[FETCH] = FetchFunction { Promise.reject(DOMException("Test error")) }
 
         val error: JsAny = assertFailsWith<Throwable> {
@@ -62,7 +63,7 @@ class FetchTest {
     }
 
     @Test
-    fun should_be_canceled_on_parent_job_cancellation() = runTest {
+    fun `should be canceled on parent job cancellation`() = runTest {
         var isCanceled = false
 
         globalThis[FETCH] = FetchFunction { request ->
@@ -82,7 +83,7 @@ class FetchTest {
     }
 
     @Test
-    fun emulate_real_fetch_which_throws_error_on_cancellation() = runTest {
+    fun `emulate real fetch which throws error on cancellation`() = runTest {
         var isCanceled = false
 
         globalThis[FETCH] = FetchFunction { request ->
@@ -110,7 +111,7 @@ class FetchTest {
     }
 
     @Test
-    fun should_be_canceled_on_parent_job_error() = runTest {
+    fun `should be canceled on parent job error`() = runTest {
         var isCanceled = false
 
         globalThis[FETCH] = FetchFunction { request ->
