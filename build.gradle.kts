@@ -4,5 +4,5 @@ plugins {
 }
 
 tasks.wrapper {
-    gradleVersion = "9.0.0"
+    gradleVersion = "9.1.0"
 }
