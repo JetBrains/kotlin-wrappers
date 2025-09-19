@@ -10,7 +10,8 @@ class EventInstanceTest {
         var a = 13
         val target = EventTarget()
 
-        val job = target.changeEvent().subscribe { a++ }
+        val job = target.changeEvent()
+            .subscribe { a++ }
 
         assertEquals(13, a)
 
