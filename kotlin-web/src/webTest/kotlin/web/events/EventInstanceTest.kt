@@ -1,5 +1,7 @@
 package web.events
 
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 import kotlinx.coroutines.test.runTest
 import kotlin.test.Test
 import kotlin.test.assertEquals
@@ -26,6 +28,28 @@ class EventInstanceTest {
     }
 
     @Test
+    fun `1 launch.collect`() = runTest {
+        var a = 13
+        val target = EventTarget()
+
+        val job1 = launch(Dispatchers.Unconfined) {
+            target.changeEvent()
+                .subscribe { a++ }
+        }
+
+        assertEquals(13, a)
+
+        target.dispatchEvent(Event(Event.CHANGE))
+        assertEquals(14, a)
+
+        target.dispatchEvent(Event(Event.CHANGE))
+        assertEquals(15, a)
+
+        // stop
+        job1.cancel()
+    }
+
+    @Test
     fun `2 subscribe`() = runTest {
         val payloads = mutableListOf<Int>()
         val target = EventTarget()
@@ -35,6 +59,34 @@ class EventInstanceTest {
 
         val job2 = target.changeEvent()
             .subscribe { payloads.add(2) }
+
+        assertEquals(listOf(), payloads)
+
+        target.dispatchEvent(Event(Event.CHANGE))
+        assertEquals(listOf(1, 2), payloads)
+
+        target.dispatchEvent(Event(Event.CHANGE))
+        assertEquals(listOf(1, 2, 1, 2), payloads)
+
+        // stop
+        job1.cancel()
+        job2.cancel()
+    }
+
+    @Test
+    fun `2 launch.collect`() = runTest {
+        val payloads = mutableListOf<Int>()
+        val target = EventTarget()
+
+        val job1 = launch(Dispatchers.Unconfined) {
+            target.changeEvent()
+                .subscribe { payloads.add(1) }
+        }
+
+        val job2 = launch(Dispatchers.Unconfined) {
+            target.changeEvent()
+                .subscribe { payloads.add(2) }
+        }
 
         assertEquals(listOf(), payloads)
 
@@ -76,6 +128,36 @@ class EventInstanceTest {
     }
 
     @Test
+    fun `launch.collect -> handler -> launch.collect`() = runTest {
+        val payloads = mutableListOf<Int>()
+        val target = EventTarget()
+
+        val job1 = launch(Dispatchers.Unconfined) {
+            target.changeEvent()
+                .subscribe { payloads.add(1) }
+        }
+
+        target.changeEvent.addHandler { payloads.add(48) }
+
+        val job2 = launch(Dispatchers.Unconfined) {
+            target.changeEvent()
+                .subscribe { payloads.add(2) }
+        }
+
+        assertEquals(listOf(), payloads)
+
+        target.dispatchEvent(Event(Event.CHANGE))
+        assertEquals(listOf(1, 48, 2), payloads)
+
+        target.dispatchEvent(Event(Event.CHANGE))
+        assertEquals(listOf(1, 48, 2, 1, 48, 2), payloads)
+
+        // stop
+        job1.cancel()
+        job2.cancel()
+    }
+
+    @Test
     fun `subscribe -> handler -> subscribe -> handler`() = runTest {
         val payloads = mutableListOf<Int>()
         val target = EventTarget()
@@ -87,6 +169,38 @@ class EventInstanceTest {
 
         val job2 = target.changeEvent()
             .subscribe { payloads.add(2) }
+
+        target.changeEvent.addHandler { payloads.add(17) }
+
+        assertEquals(listOf(), payloads)
+
+        target.dispatchEvent(Event(Event.CHANGE))
+        assertEquals(listOf(1, 48, 2, 17), payloads)
+
+        target.dispatchEvent(Event(Event.CHANGE))
+        assertEquals(listOf(1, 48, 2, 17, 1, 48, 2, 17), payloads)
+
+        // stop
+        job1.cancel()
+        job2.cancel()
+    }
+
+    @Test
+    fun `launch.collect -> handler -> launch.collect -> handler`() = runTest {
+        val payloads = mutableListOf<Int>()
+        val target = EventTarget()
+
+        val job1 = launch(Dispatchers.Unconfined) {
+            target.changeEvent()
+                .subscribe { payloads.add(1) }
+        }
+
+        target.changeEvent.addHandler { payloads.add(48) }
+
+        val job2 = launch(Dispatchers.Unconfined) {
+            target.changeEvent()
+                .subscribe { payloads.add(2) }
+        }
 
         target.changeEvent.addHandler { payloads.add(17) }
 
