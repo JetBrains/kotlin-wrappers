@@ -1,17 +1,16 @@
 package web.events
 
-import kotlinx.coroutines.cancel
 import kotlinx.coroutines.test.runTest
 import kotlin.test.Test
 import kotlin.test.assertEquals
 
 class EventInstanceTest {
     @Test
-    fun `simple subscribe`() = runTest {
+    fun `1 subscribe`() = runTest {
         var a = 13
         val target = EventTarget()
 
-        target.changeEvent()
+        val job1 = target.changeEvent()
             .subscribe { a++ }
 
         assertEquals(13, a)
@@ -23,6 +22,30 @@ class EventInstanceTest {
         assertEquals(15, a)
 
         // stop
-        coroutineContext.cancel()
+        job1.cancel()
+    }
+
+    @Test
+    fun `2 subscribe`() = runTest {
+        val payloads = mutableListOf<Int>()
+        val target = EventTarget()
+
+        val job1 = target.changeEvent()
+            .subscribe { payloads.add(1) }
+
+        val job2 = target.changeEvent()
+            .subscribe { payloads.add(2) }
+
+        assertEquals(listOf(), payloads)
+
+        target.dispatchEvent(Event(Event.CHANGE))
+        assertEquals(listOf(1, 2), payloads)
+
+        target.dispatchEvent(Event(Event.CHANGE))
+        assertEquals(listOf(1, 2, 1, 2), payloads)
+
+        // stop
+        job1.cancel()
+        job2.cancel()
     }
 }
