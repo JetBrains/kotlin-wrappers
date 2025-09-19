@@ -74,4 +74,32 @@ class EventInstanceTest {
         job1.cancel()
         job2.cancel()
     }
+
+    @Test
+    fun `subscribe -> handler -> subscribe -> handler`() = runTest {
+        val payloads = mutableListOf<Int>()
+        val target = EventTarget()
+
+        val job1 = target.changeEvent()
+            .subscribe { payloads.add(1) }
+
+        target.changeEvent.addHandler { payloads.add(48) }
+
+        val job2 = target.changeEvent()
+            .subscribe { payloads.add(2) }
+
+        target.changeEvent.addHandler { payloads.add(17) }
+
+        assertEquals(listOf(), payloads)
+
+        target.dispatchEvent(Event(Event.CHANGE))
+        assertEquals(listOf(1, 48, 2, 17), payloads)
+
+        target.dispatchEvent(Event(Event.CHANGE))
+        assertEquals(listOf(1, 48, 2, 17, 1, 48, 2, 17), payloads)
+
+        // stop
+        job1.cancel()
+        job2.cancel()
+    }
 }
