@@ -1,5 +1,6 @@
 package web.events
 
+import kotlinx.coroutines.cancel
 import kotlinx.coroutines.test.runTest
 import kotlin.test.Test
 import kotlin.test.assertEquals
@@ -10,7 +11,7 @@ class EventInstanceTest {
         var a = 13
         val target = EventTarget()
 
-        val job = target.changeEvent()
+        target.changeEvent()
             .subscribe { a++ }
 
         assertEquals(13, a)
@@ -21,6 +22,7 @@ class EventInstanceTest {
         target.dispatchEvent(Event(Event.CHANGE))
         assertEquals(15, a)
 
-        job.cancel()
+        // stop
+        coroutineContext.cancel()
     }
 }
