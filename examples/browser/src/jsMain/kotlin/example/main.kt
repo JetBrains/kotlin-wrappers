@@ -41,7 +41,7 @@ suspend fun main() {
                 if (propagationToggle.checked) {
                     it.stopPropagation()
                 }
-                println("Click is clicked!")
+                println("Button is clicked!")
             }
         }
     }
