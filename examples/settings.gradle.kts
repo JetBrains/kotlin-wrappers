@@ -16,6 +16,9 @@ dependencyResolutionManagement {
             library("serialization-json", "org.jetbrains.kotlinx", "kotlinx-serialization-json").version(
                 serializationVersion
             )
+
+            val coroutinesVersion = extra["kotlinx-coroutines.version"] as String
+            library("coroutines-core", "org.jetbrains.kotlinx", "kotlinx-coroutines-core").version(coroutinesVersion)
         }
 
         create("kotlinWrappers") {
