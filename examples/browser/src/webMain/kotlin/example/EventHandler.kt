@@ -1,13 +1,12 @@
 package example
 
-import web.console.console
+import web.dnd.DRAG_OVER
+import web.dnd.DragEvent
 import web.dom.Document
 import web.dom.document
 import web.dom.dragOverEvent
 import web.events.addEventHandler
 import web.events.addHandler
-import web.dnd.DRAG_OVER
-import web.dnd.DragEvent
 
 private fun preventDefaultExample_handler() {
     document.addEventHandler(DragEvent.DRAG_OVER) { event ->
@@ -15,7 +14,7 @@ private fun preventDefaultExample_handler() {
 
         event.preventDefault()
 
-        console.log(doc === document)
+        println(doc === document)
     }
 }
 
@@ -25,6 +24,6 @@ private fun preventDefaultExample_instance() {
 
         event.preventDefault()
 
-        console.log(doc === document)
+        println(doc === document)
     }
 }
