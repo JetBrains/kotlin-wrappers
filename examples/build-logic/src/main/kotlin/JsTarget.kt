@@ -4,7 +4,7 @@ internal enum class JsTarget(
     val js: Boolean = false,
     val wasm: Boolean = false,
 ) {
-    COMMON(js = true, wasm = true),
+    WEB(js = true, wasm = true),
     JS(js = true),
     WASM(wasm = true),
 
