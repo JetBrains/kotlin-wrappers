@@ -4,5 +4,4 @@ plugins {
 
 dependencies {
     jsMainImplementation(kotlinWrappers.browser)
-    jsMainImplementation(libs.coroutines.core)
 }

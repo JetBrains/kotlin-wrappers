@@ -33,6 +33,7 @@ includeBuild("build-logic")
 includeBuild("../")
 
 include("browser")
+include("event-flow")
 include("react")
 include("react-svg")
 include("react-lazy-modules-webpack")
