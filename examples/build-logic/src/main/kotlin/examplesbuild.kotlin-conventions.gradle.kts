@@ -13,6 +13,8 @@ plugins {
 }
 
 kotlin {
+    applyDefaultHierarchyTemplate()
+
     compilerOptions {
         allWarningsAsErrors = true
 
