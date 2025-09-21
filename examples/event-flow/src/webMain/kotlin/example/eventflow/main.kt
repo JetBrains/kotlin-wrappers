@@ -13,18 +13,16 @@ import web.html.InputType
 import web.html.checkbox
 
 suspend fun main() {
-    val body = requireNotNull(document.body)
-
     val propagationToggleLabel = document.createElement(label)
     propagationToggleLabel.innerText = "Stop propagation"
-    body.append(propagationToggleLabel)
+    document.body.append(propagationToggleLabel)
 
     val propagationToggle = document.createElement(input)
     propagationToggle.type = InputType.checkbox
     propagationToggleLabel.prepend(propagationToggle)
 
     val parent = document.createElement(div)
-    body.append(parent)
+    document.body.append(parent)
 
     val child = document.createElement(button)
     child.innerText = "Click me!"
