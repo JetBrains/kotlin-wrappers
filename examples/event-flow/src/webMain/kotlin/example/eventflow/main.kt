@@ -12,7 +12,7 @@ import web.html.HtmlTagName.label
 import web.html.InputType
 import web.html.checkbox
 
-suspend fun main() {
+suspend fun main(): Unit = coroutineScope {
     val propagationToggleLabel = document.createElement(label)
     propagationToggleLabel.innerText = "Stop propagation"
     document.body.append(propagationToggleLabel)
@@ -28,20 +28,18 @@ suspend fun main() {
     child.innerText = "Click me!"
     parent.append(child)
 
-    coroutineScope {
-        launch {
-            parent.clickEvent().collect {
-                println("Click is propagated to parent!")
-            }
+    launch {
+        parent.clickEvent().collect {
+            println("Click is propagated to parent!")
         }
+    }
 
-        launch {
-            child.clickEvent().collect {
-                if (propagationToggle.checked) {
-                    it.stopPropagation()
-                }
-                println("Button is clicked!")
+    launch {
+        child.clickEvent().collect {
+            if (propagationToggle.checked) {
+                it.stopPropagation()
             }
+            println("Button is clicked!")
         }
     }
 }
