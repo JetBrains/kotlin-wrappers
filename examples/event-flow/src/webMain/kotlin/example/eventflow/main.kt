@@ -1,6 +1,8 @@
 package example.eventflow
 
 import kotlinx.coroutines.coroutineScope
+import kotlinx.coroutines.flow.filter
+import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.launch
 import web.dom.clickEvent
 import web.dom.document
@@ -35,11 +37,9 @@ suspend fun main(): Unit = coroutineScope {
     }
 
     launch {
-        child.clickEvent().collect {
-            if (propagationToggle.checked) {
-                it.stopPropagation()
-            }
-            println("Button is clicked!")
-        }
+        child.clickEvent()
+            .onEach { println("Button is clicked!") }
+            .filter { propagationToggle.checked }
+            .collect { it.stopPropagation() }
     }
 }
