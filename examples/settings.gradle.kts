@@ -2,7 +2,6 @@ rootProject.name = "examples"
 
 dependencyResolutionManagement {
     repositories {
-        mavenLocal()
         mavenCentral()
     }
 
@@ -29,6 +28,7 @@ dependencyResolutionManagement {
 }
 
 includeBuild("build-logic")
+includeBuild("../")
 
 include("browser")
 include("react")
