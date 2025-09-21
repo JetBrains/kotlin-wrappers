@@ -14,5 +14,5 @@ dependencies {
     jsMainImplementation(kotlinWrappers.preact.signalsCore)
     jsMainImplementation(kotlinWrappers.preact.signalsReact)
 
-    jsMainImplementation(project(":tanstack-table-common"))
+    jsMainImplementation(projects.tanstackTableCommon)
 }
