@@ -31,9 +31,8 @@ suspend fun main(): Unit = coroutineScope {
     parent.append(child)
 
     launch {
-        parent.clickEvent().collect {
-            println("Click is propagated to parent!")
-        }
+        parent.clickEvent()
+            .collect { println("Click is propagated to parent!") }
     }
 
     launch {
