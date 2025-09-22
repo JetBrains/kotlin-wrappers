@@ -41,4 +41,6 @@ suspend fun main(): Unit = coroutineScope {
             .filter { propagationToggle.checked }
             .collect { it.stopPropagation() }
     }
+
+    eventFlowTest()
 }
