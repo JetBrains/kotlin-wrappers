@@ -19,9 +19,13 @@ val convertNodeJsQualifiedName = createPlugin { node, _, render ->
             "AsyncIterator" -> "js.iterable.AsyncIterator"
             "ArrayBufferView" -> "js.buffer.ArrayBufferView"
             "TypedArray" -> "js.typedarrays.TypedArray"
+
             "EventEmitter" -> "node.events.EventEmitter"
+
             "Module" -> "node.module.Module"
             "Require" -> "node.module.Require"
+
+            "Process" -> "node.process.Process"
             "Signals" -> "node.process.Signals"
             "ProcessEnv" -> "node.process.ProcessEnv"
             "Platform" -> "node.process.Platform"

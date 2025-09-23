@@ -4,5 +4,8 @@
 
 package node.process
 
+@JsName("default")
+external var process: Process
+
 // import process = require("process");
 // export = process;

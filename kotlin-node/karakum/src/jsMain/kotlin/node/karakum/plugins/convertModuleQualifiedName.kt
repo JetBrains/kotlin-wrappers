@@ -14,6 +14,7 @@ private val modules = setOf(
     "tls",
     "fs",
     "http",
+    "path",
 )
 
 val convertModuleQualifiedName = createPlugin { node, _, render ->

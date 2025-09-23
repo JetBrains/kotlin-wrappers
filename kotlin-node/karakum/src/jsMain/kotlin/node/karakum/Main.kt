@@ -290,14 +290,12 @@ suspend fun main() {
             "**/module/exports.kt",
             "**/module/module.val.kt",
             "**/path/namespace.kt",
-            "**/path/path.kt",
             "**/path/PlatformPathDelimiter.kt",
             "**/path/PlatformPathSep.kt",
             "**/path/posix/**",
             "**/path/win32/**",
             "**/perfHooks/global/**",
             "**/process/global/namespace.kt",
-            "**/process/global/process.kt",
             "**/querystring/decode.kt",
             "**/querystring/encode.kt",
             "**/readline/createInterface.kt",
@@ -340,6 +338,7 @@ suspend fun main() {
             "node:node:" to "node:",
             "node:assert(#assert)?" to "node:assert/strict",
             "node:globals" to "",
+            "node:process#global" to "node:process",
             "events#EventEmitter" to "events",
             "module#Module" to "module",
         )
@@ -429,6 +428,7 @@ suspend fun main() {
 
             "^process/global/nodejs/Process.kt" to "node/process/Process.interface.kt",
             "^process/global/nodejs/(.+)\\.kt" to "node/process/$1.kt",
+            "^process/global/(.+)\\.kt" to "node/process/$1.kt",
             "^process" to "node/process",
 
             "^querystring" to "node/querystring",

@@ -28,5 +28,25 @@ fun annotateDefaultExports(node: Node, context: AnnotationContext) = nullable {
         ensure(name.text == "cluster")
 
         "@JsName(\"default\")"
+    } ?: nullable {
+        ensure(sourceFileName.endsWith("path.d.ts"))
+
+        ensure(isVariableDeclaration(node))
+
+        val name = node.name
+        ensure(isIdentifier(name))
+        ensure(name.text == "path")
+
+        "@JsName(\"default\")"
+    } ?: nullable {
+        ensure(sourceFileName.endsWith("process.d.ts"))
+
+        ensure(isVariableDeclaration(node))
+
+        val name = node.name
+        ensure(isIdentifier(name))
+        ensure(name.text == "process")
+
+        "@JsName(\"default\")"
     }
 }
