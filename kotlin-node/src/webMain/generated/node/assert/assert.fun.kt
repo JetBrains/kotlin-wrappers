@@ -9,6 +9,7 @@ package node.assert
  * @since v0.5.9
  * @param value The input that is checked for being truthy.
  */
+@JsName("default")
 external fun assert(value: Any?) // asserts value
 
 /**
@@ -16,6 +17,7 @@ external fun assert(value: Any?) // asserts value
  * @since v0.5.9
  * @param value The input that is checked for being truthy.
  */
+@JsName("default")
 external fun assert(value: Any?, message: String = definedExternally) // asserts value
 
 /**
@@ -23,4 +25,8 @@ external fun assert(value: Any?, message: String = definedExternally) // asserts
  * @since v0.5.9
  * @param value The input that is checked for being truthy.
  */
-external fun assert(value: Any?, message: js.errors.JsError = definedExternally) // asserts value
+@JsName("default")
+external fun assert(
+    value: Any?,
+    message: js.errors.JsError = definedExternally,
+) // asserts value

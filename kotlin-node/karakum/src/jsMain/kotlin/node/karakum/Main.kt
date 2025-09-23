@@ -121,6 +121,7 @@ suspend fun main() {
         )
         annotations = manyOf(
             ::annotateConflictingEntityNames,
+            ::annotateDefaultExports,
             ::annotateDuplex,
             ::annotateForceVarOverrides,
             ::annotateHttpsServer,
