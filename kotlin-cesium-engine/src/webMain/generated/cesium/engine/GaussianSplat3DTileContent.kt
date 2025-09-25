@@ -12,7 +12,7 @@ import js.array.ReadonlyArray
  * Implements the [Cesium3DTileContent] interface.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GaussianSplat3DTileContent.html">Online Documentation</a>
  */
-external class GaussianSplat3DTileContent() {
+external class GaussianSplat3DTileContent {
     /**
      * Gets the number of features in the tile. Currently this is always zero.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GaussianSplat3DTileContent.html#featuresLength">Online Documentation</a>

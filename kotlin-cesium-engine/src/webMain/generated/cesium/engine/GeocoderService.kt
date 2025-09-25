@@ -14,7 +14,7 @@ import seskar.js.JsAsync
  * is not intended to be used.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GeocoderService.html">Online Documentation</a>
  */
-external class GeocoderService() {
+external class GeocoderService {
     /**
      * Gets the credit to display after a geocode is performed. Typically this is used to credit
      * the geocoder service.

@@ -8,7 +8,7 @@ package cesium.engine
  * Describes a two dimensional icon located at the position of the containing [Entity].
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BillboardGraphics.html">Online Documentation</a>
  */
-external class BillboardGraphics() {
+external class BillboardGraphics {
     /**
      * Gets the event that is raised whenever a property or sub-property is changed or modified.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BillboardGraphics.html#definitionChanged">Online Documentation</a>

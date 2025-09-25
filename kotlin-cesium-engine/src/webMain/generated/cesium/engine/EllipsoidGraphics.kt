@@ -8,7 +8,7 @@ package cesium.engine
  * Describe an ellipsoid or sphere.  The center position and orientation are determined by the containing [Entity].
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/EllipsoidGraphics.html">Online Documentation</a>
  */
-external class EllipsoidGraphics() {
+external class EllipsoidGraphics {
     /**
      * Gets the event that is raised whenever a property or sub-property is changed or modified.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/EllipsoidGraphics.html#definitionChanged">Online Documentation</a>

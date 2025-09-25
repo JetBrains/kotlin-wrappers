@@ -30,7 +30,7 @@ package cesium.engine
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CompositeProperty.html">Online Documentation</a>
  */
-external class CompositeProperty() {
+external class CompositeProperty {
     /**
      * Gets a value indicating if this property is constant.  A property is considered
      * constant if getValue always returns the same result for the current definition.

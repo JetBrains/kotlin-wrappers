@@ -9,7 +9,7 @@ package cesium.engine
  * The center position and orientation are determined by the containing [Entity].
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CylinderGraphics.html">Online Documentation</a>
  */
-external class CylinderGraphics() {
+external class CylinderGraphics {
     /**
      * Gets the event that is raised whenever a property or sub-property is changed or modified.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CylinderGraphics.html#definitionChanged">Online Documentation</a>

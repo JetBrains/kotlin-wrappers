@@ -8,7 +8,7 @@ package cesium.engine
  * Describes a box. The center position and orientation are determined by the containing [Entity].
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BoxGraphics.html">Online Documentation</a>
  */
-external class BoxGraphics() {
+external class BoxGraphics {
     /**
      * Gets the event that is raised whenever a property or sub-property is changed or modified.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/BoxGraphics.html#definitionChanged">Online Documentation</a>

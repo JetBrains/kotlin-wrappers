@@ -9,7 +9,7 @@ package cesium.engine
  * performance improvements by rendering less geometry and dispatching less terrain requests.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Fog.html">Online Documentation</a>
  */
-external class Fog() {
+external class Fog {
     /**
      * `true` if fog is enabled, `false` otherwise.
      * ```

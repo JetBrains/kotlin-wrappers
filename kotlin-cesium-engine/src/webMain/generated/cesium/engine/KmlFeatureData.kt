@@ -10,7 +10,7 @@ import js.objects.JsPlainObject
  * Contains KML Feature data loaded into the `Entity.kml` property by [KmlDataSource].
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/KmlFeatureData.html">Online Documentation</a>
  */
-external class KmlFeatureData() {
+external class KmlFeatureData {
     /**
      * Gets the atom syndication format author field.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/KmlFeatureData.html#author">Online Documentation</a>

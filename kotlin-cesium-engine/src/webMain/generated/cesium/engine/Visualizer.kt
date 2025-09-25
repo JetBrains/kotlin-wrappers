@@ -12,7 +12,7 @@ package cesium.engine
  * to be instantiated directly.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Visualizer.html">Online Documentation</a>
  */
-abstract external class Visualizer() {
+abstract external class Visualizer {
     /**
      * Updates the visualization to the provided time.
      * @param [time] The time.

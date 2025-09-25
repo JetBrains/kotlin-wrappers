@@ -29,7 +29,7 @@ package cesium.engine
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Atmosphere.html">Online Documentation</a>
  */
-external class Atmosphere() {
+external class Atmosphere {
     /**
      * The intensity of the light that is used for computing the ground atmosphere color.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Atmosphere.html#lightIntensity">Online Documentation</a>

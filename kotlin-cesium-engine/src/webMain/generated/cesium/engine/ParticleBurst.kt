@@ -8,7 +8,7 @@ package cesium.engine
  * Represents a burst of [Particle]s from a [ParticleSystem] at a given time in the systems lifetime.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ParticleBurst.html">Online Documentation</a>
  */
-external class ParticleBurst() {
+external class ParticleBurst {
     /**
      * The time in seconds after the beginning of the particle system's lifetime that the burst will occur.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ParticleBurst.html#time">Online Documentation</a>

@@ -32,7 +32,7 @@ package cesium.engine
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PolylineCollection.html">Online Documentation</a>
  */
-external class PolylineCollection() {
+external class PolylineCollection {
     /**
      * Determines if polylines in this collection will be shown.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PolylineCollection.html#show">Online Documentation</a>

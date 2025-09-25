@@ -21,7 +21,7 @@ import js.core.JsDouble
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/OrthographicFrustum.html">Online Documentation</a>
  */
-external class OrthographicFrustum() {
+external class OrthographicFrustum {
     /**
      * The horizontal width of the frustum in meters.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/OrthographicFrustum.html#width">Online Documentation</a>

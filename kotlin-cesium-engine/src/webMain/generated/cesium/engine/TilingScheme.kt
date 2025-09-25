@@ -12,7 +12,7 @@ package cesium.engine
  * This continues for as many levels as are present in the geometry or imagery source.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/TilingScheme.html">Online Documentation</a>
  */
-abstract external class TilingScheme() {
+abstract external class TilingScheme {
     /**
      * Gets the ellipsoid that is tiled by the tiling scheme.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/TilingScheme.html#ellipsoid">Online Documentation</a>

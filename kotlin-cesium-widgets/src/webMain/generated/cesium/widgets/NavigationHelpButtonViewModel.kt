@@ -8,7 +8,7 @@ package cesium.widgets
  * The view model for [NavigationHelpButton].
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/NavigationHelpButtonViewModel.html">Online Documentation</a>
  */
-external class NavigationHelpButtonViewModel() {
+external class NavigationHelpButtonViewModel {
     /**
      * Gets or sets whether the instructions are currently shown.  This property is observable.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/NavigationHelpButtonViewModel.html#showInstructions">Online Documentation</a>

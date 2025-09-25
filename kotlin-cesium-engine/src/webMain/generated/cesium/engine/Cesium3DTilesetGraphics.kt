@@ -10,7 +10,7 @@ package cesium.engine
  * or is left unset if position is undefined.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTilesetGraphics.html">Online Documentation</a>
  */
-external class Cesium3DTilesetGraphics() {
+external class Cesium3DTilesetGraphics {
     /**
      * Gets the event that is raised whenever a property or sub-property is changed or modified.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTilesetGraphics.html#definitionChanged">Online Documentation</a>

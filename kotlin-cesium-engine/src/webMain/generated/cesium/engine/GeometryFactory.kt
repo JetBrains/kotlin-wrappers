@@ -9,7 +9,7 @@ package cesium.engine
  * for asynchronous geometry creation.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GeometryFactory.html">Online Documentation</a>
  */
-external class GeometryFactory() {
+external class GeometryFactory {
 
 
     companion object {

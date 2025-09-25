@@ -12,7 +12,7 @@ package cesium.engine
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Sun.html">Online Documentation</a>
  */
-external class Sun() {
+external class Sun {
     /**
      * Determines if the sun will be shown.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Sun.html#show">Online Documentation</a>

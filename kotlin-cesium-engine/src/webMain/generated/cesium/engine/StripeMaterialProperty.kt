@@ -8,7 +8,7 @@ package cesium.engine
  * A [MaterialProperty] that maps to stripe [Material] uniforms.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/StripeMaterialProperty.html">Online Documentation</a>
  */
-external class StripeMaterialProperty() :
+external class StripeMaterialProperty :
     MaterialProperty {
     /**
      * Gets a value indicating if this property is constant.  A property is considered

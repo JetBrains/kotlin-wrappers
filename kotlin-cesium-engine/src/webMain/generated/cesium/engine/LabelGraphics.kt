@@ -8,7 +8,7 @@ package cesium.engine
  * Describes a two dimensional label located at the position of the containing [Entity].
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/LabelGraphics.html">Online Documentation</a>
  */
-external class LabelGraphics() {
+external class LabelGraphics {
     /**
      * Gets the event that is raised whenever a property or sub-property is changed or modified.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/LabelGraphics.html#definitionChanged">Online Documentation</a>

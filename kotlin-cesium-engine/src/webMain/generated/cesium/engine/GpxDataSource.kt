@@ -16,7 +16,7 @@ import seskar.js.JsAsync
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GpxDataSource.html">Online Documentation</a>
  */
-external class GpxDataSource() {
+external class GpxDataSource {
     /**
      * Gets a human-readable name for this instance.
      * This will be automatically be set to the GPX document name on load.

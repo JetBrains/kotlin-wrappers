@@ -8,7 +8,7 @@ package cesium.engine
  * A light source. This type describes an interface and is not intended to be instantiated directly. Together, `color` and `intensity` produce a high-dynamic-range light color. `intensity` can also be used individually to dim or brighten the light without changing the hue.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Light.html">Online Documentation</a>
  */
-abstract external class Light() {
+abstract external class Light {
     /**
      * The color of the light.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Light.html#color">Online Documentation</a>

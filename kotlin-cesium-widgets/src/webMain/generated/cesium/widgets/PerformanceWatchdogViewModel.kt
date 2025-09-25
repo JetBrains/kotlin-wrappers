@@ -10,7 +10,7 @@ import cesium.engine.Scene
  * The view model for [PerformanceWatchdog].
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PerformanceWatchdogViewModel.html">Online Documentation</a>
  */
-external class PerformanceWatchdogViewModel() {
+external class PerformanceWatchdogViewModel {
     /**
      * Gets or sets the message to display when a low frame rate is detected.  This string will be interpreted as HTML.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PerformanceWatchdogViewModel.html#lowFrameRateMessage">Online Documentation</a>

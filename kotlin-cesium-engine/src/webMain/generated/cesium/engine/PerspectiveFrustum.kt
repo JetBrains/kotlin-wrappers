@@ -22,7 +22,7 @@ import js.core.JsDouble
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PerspectiveFrustum.html">Online Documentation</a>
  */
-external class PerspectiveFrustum() {
+external class PerspectiveFrustum {
     /**
      * The angle of the field of view (FOV), in radians.  This angle will be used
      * as the horizontal FOV if the width is greater than the height, otherwise

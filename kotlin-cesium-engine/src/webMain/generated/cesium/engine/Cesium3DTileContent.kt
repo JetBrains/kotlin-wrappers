@@ -15,7 +15,7 @@ import js.array.ReadonlyArray
  * This type describes an interface and is not intended to be instantiated directly.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTileContent.html">Online Documentation</a>
  */
-abstract external class Cesium3DTileContent() {
+abstract external class Cesium3DTileContent {
     /**
      * Gets the number of features in the tile.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Cesium3DTileContent.html#featuresLength">Online Documentation</a>
