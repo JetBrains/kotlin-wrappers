@@ -6,7 +6,7 @@ package tanstack.query.core
 
 import js.collections.JsSet
 
-open external class Subscribable<TListener : Function<*>>() {
+open external class Subscribable<TListener : Function<*>> {
     protected open var listeners: JsSet<TListener>
     open fun subscribe(listener: TListener): () -> Unit
     open fun hasListeners(): Boolean

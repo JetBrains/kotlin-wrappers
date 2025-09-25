@@ -4,7 +4,7 @@
 
 package tanstack.query.core
 
-open external class FocusManager() :
+open external class FocusManager :
     Subscribable<Listener> {
     override fun onSubscribe()
     override fun onUnsubscribe()
