@@ -11,5 +11,6 @@ import web.dom.ParentNode
 external interface IntersectionObserverInit {
     var root: ParentNode /* Element | Document */?
     var rootMargin: String?
+    var scrollMargin: String?
     var threshold: ReadonlyArray<JsDouble>?
 }
