@@ -10,7 +10,7 @@ import web.http.RequestMethod
 typealias UpdateUser = (User) -> Unit
 
 fun useUpdateUser(): UpdateUser =
-    useMutateUser { user, _ ->
+    useMutateUser { user ->
         updateUser(user)
     }
 

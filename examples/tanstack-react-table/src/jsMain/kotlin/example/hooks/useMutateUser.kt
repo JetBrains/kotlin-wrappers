@@ -12,12 +12,12 @@ import tanstack.react.query.useMutation
 import tanstack.react.query.useQueryClient
 
 fun <O, R> useMutateUser(
-    action: suspend CoroutineScope.(O, Any) -> R,
+    action: suspend CoroutineScope.(O) -> R,
 ): (O) -> Unit {
     val queryClient = useQueryClient()
     val mutate = useMutation<R, JsError, O, QueryKey>(
         options = UseMutationOptions(
-            mutationFn = unsafeAsync(action),
+            mutationFn = unsafeAsync { o, _ -> action(o) },
             onSuccess = { _, _, _, _ ->
                 queryClient.invalidateQueries(
                     filters = InvalidateQueryFilters(

@@ -8,7 +8,7 @@ import web.http.RequestMethod
 typealias DeleteUser = (User) -> Unit
 
 fun useDeleteUser(): DeleteUser =
-    useMutateUser { user, _ ->
+    useMutateUser { user ->
         deleteUser(user)
     }
 

@@ -11,7 +11,7 @@ import web.http.RequestMethod
 typealias CreateUser = (CreateUserOptions) -> Unit
 
 fun useCreateUser(): CreateUser =
-    useMutateUser { options, _ ->
+    useMutateUser { options ->
         createUser(options)
     }
 
