@@ -32,6 +32,7 @@ val COMMON_INTERNAL_OPT_INS = listOf(
 )
 
 val JS_FREE_COMPILER_ARGS = listOf(
+    "-Xes-long-as-bigint",
     "-Xir-generate-inline-anonymous-functions",
 )
 

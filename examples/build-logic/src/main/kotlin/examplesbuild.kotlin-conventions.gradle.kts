@@ -12,6 +12,11 @@ plugins {
     id("io.github.turansky.seskar")
 }
 
+val JS_FREE_COMPILER_ARGS = listOf(
+    "-Xes-long-as-bigint",
+    "-Xir-generate-inline-anonymous-functions",
+)
+
 kotlin {
     applyDefaultHierarchyTemplate()
 
@@ -73,5 +78,7 @@ fun KotlinJsTargetDsl.configureJsTarget() {
 
     compilerOptions {
         target = "es2015"
+
+        freeCompilerArgs.addAll(JS_FREE_COMPILER_ARGS)
     }
 }
