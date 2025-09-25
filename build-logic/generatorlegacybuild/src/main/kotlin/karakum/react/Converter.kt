@@ -30,7 +30,10 @@ internal fun convertDefinitions(
         .replace("    autoComplete?: string | undefined;", "    autoComplete?: AutoFill | undefined;")
         .replace(""": boolean | "false"""", """: "false"""")
         .replace("""blocking?: "render" | (string & {}) | undefined;""", """blocking?: Blocking | undefined;""")
-        .replace("""fetchPriority?: "high" | "low" | "auto";""", """fetchPriority?: FetchPriority;""")
+        .replace(
+            Regex("""fetchPriority\?: "high" \| "low" \| "auto"( \| undefined)?;"""),
+            """fetchPriority?: FetchPriority;"""
+        )
         .replace(" |  undefined", " | undefined")
         .replace(" | (string & {})", "")
         .replace("((formData: FormData) => void | Promise<void>) |", "")

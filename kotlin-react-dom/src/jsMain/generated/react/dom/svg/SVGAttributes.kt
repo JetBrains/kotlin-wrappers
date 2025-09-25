@@ -79,7 +79,7 @@ external interface SVGAttributes<T : Element> :
     var direction: String?
     var display: String?
     var divisor: Double?
-    var dominantBaseline: String?
+    var dominantBaseline: DominantBaseline?
     var dur: String?
     var dx: Double?
     var dy: Double?
@@ -226,7 +226,7 @@ external interface SVGAttributes<T : Element> :
     var tableValues: String?
     var targetX: Double?
     var targetY: Double?
-    var textAnchor: String?
+    var textAnchor: TextAnchor?
     var textDecoration: String?
     var textLength: String?
     var textRendering: String?
