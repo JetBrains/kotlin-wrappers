@@ -309,7 +309,7 @@ internal fun kotlinType(
             }
         } else {
             val sourceType = type
-                .replace("Promise<TContext | undefined> | TContext | undefined", "Promise<TContext?>?")
+                .replace("Promise<TOnMutateResult> | TOnMutateResult", "Promise<TOnMutateResult>?")
                 .replace(" | undefined", "?")
                 .replace(" | null", "?")
                 .replace(" | void", "?")

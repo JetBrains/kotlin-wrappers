@@ -6,8 +6,8 @@ import js.objects.JsPlainObject
 import web.time.EpochTimeStamp
 
 @JsPlainObject
-external interface MutationState<TData, TError, TVariables, TContext> {
-    val context: TContext?
+external interface MutationState<TData, TError, TVariables, TOnMutateResult> {
+    val context: TOnMutateResult?
     val data: TData?
     val error: TError?
     val failureCount: Int

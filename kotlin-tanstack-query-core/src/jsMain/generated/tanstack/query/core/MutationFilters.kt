@@ -5,9 +5,9 @@ package tanstack.query.core
 import js.objects.JsPlainObject
 
 @JsPlainObject
-external interface MutationFilters<TData, TError, TVariables, TContext> {
+external interface MutationFilters<TData, TError, TVariables, TOnMutateResult> {
     val exact: Boolean?
-    val predicate: ((mutation: Mutation<TData, TError, TVariables, TContext>) -> Boolean)?
+    val predicate: ((mutation: Mutation<TData, TError, TVariables, TOnMutateResult>) -> Boolean)?
     val mutationKey: MutationKey?
     val status: MutationStatus?
 }

@@ -69,9 +69,9 @@ open external class QueryClient(
     )
 
     open fun getQueryDefaults(queryKey: QueryKey): QueryObserverOptions<*, *, *, *, *, *>
-    open fun <TData, TError, TVariables, TContext> setMutationDefaults(
+    open fun <TData, TError, TVariables, TOnMutateResult> setMutationDefaults(
         mutationKey: MutationKey,
-        options: MutationObserverOptions<TData, TError, TVariables, TContext>,
+        options: MutationObserverOptions<TData, TError, TVariables, TOnMutateResult>,
     )
 
     open fun getMutationDefaults(mutationKey: MutationKey): MutationObserverOptions<*, *, *, *>

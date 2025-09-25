@@ -6,4 +6,4 @@
 
 package tanstack.react.query
 
-typealias UseMutateFunction<TData, TError, TVariables, TContext> = Function<Unit> /* (...args: Parameters<MutateFunction<TData, TError, TVariables, TContext>>) => void */
+typealias UseMutateFunction<TData, TError, TVariables, TOnMutateResult> = Function<Unit> /* (...args: Parameters<MutateFunction<TData, TError, TVariables, TOnMutateResult>>) => void */

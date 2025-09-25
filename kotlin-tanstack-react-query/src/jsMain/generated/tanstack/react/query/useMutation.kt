@@ -6,7 +6,7 @@ package tanstack.react.query
 
 import tanstack.query.core.QueryClient
 
-external fun <TData, TError, TVariables, TContext> useMutation(
-    options: UseMutationOptions<TData, TError, TVariables, TContext>,
+external fun <TData, TError, TVariables, TOnMutateResult> useMutation(
+    options: UseMutationOptions<TData, TError, TVariables, TOnMutateResult>,
     queryClient: QueryClient = definedExternally,
-): UseMutationResult<TData, TError, TVariables, TContext>
+): UseMutationResult<TData, TError, TVariables, TOnMutateResult>

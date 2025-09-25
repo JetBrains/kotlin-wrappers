@@ -4,4 +4,4 @@
 
 package tanstack.query.core
 
-external fun <TData, TError, TVariables, TContext> getDefaultState(): MutationState<TData, TError, TVariables, TContext>
+external fun <TData, TError, TVariables, TOnMutateResult> getDefaultState(): MutationState<TData, TError, TVariables, TOnMutateResult>

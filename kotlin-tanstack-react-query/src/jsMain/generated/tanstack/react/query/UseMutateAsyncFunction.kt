@@ -4,4 +4,4 @@ package tanstack.react.query
 
 import tanstack.query.core.MutateFunction
 
-typealias UseMutateAsyncFunction<TData, TError, TVariables, TContext> = MutateFunction<TData, TError, TVariables, TContext>
+typealias UseMutateAsyncFunction<TData, TError, TVariables, TOnMutateResult> = MutateFunction<TData, TError, TVariables, TOnMutateResult>

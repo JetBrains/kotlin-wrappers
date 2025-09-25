@@ -6,4 +6,4 @@
 
 package tanstack.query.core
 
-typealias Action<TData, TError, TVariables, TContext> = Union /* ContinueAction | ErrorAction<TError> | FailedAction<TError> | PendingAction<TVariables, TContext> | PauseAction | SuccessAction<TData> */
+typealias Action<TData, TError, TVariables, TOnMutateResult> = Union /* ContinueAction | ErrorAction<TError> | FailedAction<TError> | PendingAction<TVariables, TOnMutateResult> | PauseAction | SuccessAction<TData> */

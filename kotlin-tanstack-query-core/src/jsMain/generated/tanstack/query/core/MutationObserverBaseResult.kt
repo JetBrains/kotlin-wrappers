@@ -5,8 +5,8 @@ package tanstack.query.core
 import js.objects.JsPlainObject
 
 @JsPlainObject
-external interface MutationObserverBaseResult<TData, TError, TVariables, TContext> :
-    MutationState<TData, TError, TVariables, TContext> {
+external interface MutationObserverBaseResult<TData, TError, TVariables, TOnMutateResult> :
+    MutationState<TData, TError, TVariables, TOnMutateResult> {
     override val data: TData?
     override val variables: TVariables?
     override val error: TError?
@@ -15,6 +15,6 @@ external interface MutationObserverBaseResult<TData, TError, TVariables, TContex
     val isPending: Boolean
     val isSuccess: Boolean
     override val status: MutationStatus
-    val mutate: MutateFunction<TData, TError, TVariables, TContext>
+    val mutate: MutateFunction<TData, TError, TVariables, TOnMutateResult>
     val reset: () -> Unit
 }

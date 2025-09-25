@@ -5,8 +5,8 @@ package tanstack.query.core
 import js.objects.JsPlainObject
 
 @JsPlainObject
-external interface MutateOptions<TData, TError, TVariables, TContext> {
-    val onSuccess: ((data: TData, variables: TVariables, context: TContext) -> Unit)?
-    val onError: ((error: TError, variables: TVariables, context: TContext?) -> Unit)?
-    val onSettled: ((data: TData?, error: TError?, variables: TVariables, context: TContext?) -> Unit)?
+external interface MutateOptions<TData, TError, TVariables, TOnMutateResult> {
+    val onSuccess: ((data: TData, variables: TVariables, onMutateResult: TOnMutateResult?, context: MutationFunctionContext) -> Unit)?
+    val onError: ((error: TError, variables: TVariables, onMutateResult: TOnMutateResult?, context: MutationFunctionContext) -> Unit)?
+    val onSettled: ((data: TData?, error: TError?, variables: TVariables, onMutateResult: TOnMutateResult?, context: MutationFunctionContext) -> Unit)?
 }

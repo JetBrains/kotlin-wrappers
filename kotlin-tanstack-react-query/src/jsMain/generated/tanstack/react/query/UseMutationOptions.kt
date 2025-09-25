@@ -6,5 +6,5 @@ import js.objects.JsPlainObject
 import tanstack.query.core.MutationObserverOptions
 
 @JsPlainObject
-external interface UseMutationOptions<TData, TError, TVariables, TContext> :
-    MutationObserverOptions<TData, TError, TVariables, TContext>
+external interface UseMutationOptions<TData, TError, TVariables, TOnMutateResult> :
+    MutationObserverOptions<TData, TError, TVariables, TOnMutateResult>

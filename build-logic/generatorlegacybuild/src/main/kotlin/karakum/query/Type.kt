@@ -113,8 +113,8 @@ class Type(
                     .replace("mutation?: Mutation", "mutation: Mutation<*, *, *, *>?")
                     .replace("event?: QueryCacheNotifyEvent", "event: QueryCacheNotifyEvent?")
                     .replace(
-                        "options?: MutateOptions<TData, TError, TVariables, TContext>",
-                        "options: MutateOptions<TData, TError, TVariables, TContext>?"
+                        "options?: MutateOptions<TData, TError, TVariables, TOnMutateResult>",
+                        "options: MutateOptions<TData, TError, TVariables, TOnMutateResult>?"
                     )
             }
 
@@ -188,8 +188,8 @@ class Type(
             return """
             @JsPlainObject
             external interface $name${formatParameters(typeParameters)} : $body {
-                // override val mutate: UseMutateFunction<TData, TError, TVariables, TContext>
-                val mutateAsync: UseMutateAsyncFunction<TData, TError, TVariables, TContext>
+                // override val mutate: UseMutateFunction<TData, TError, TVariables, TOnMutateResult>
+                val mutateAsync: UseMutateAsyncFunction<TData, TError, TVariables, TOnMutateResult>
             }
             """.trimIndent()
         }
