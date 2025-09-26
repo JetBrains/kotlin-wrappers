@@ -2,4 +2,11 @@
 
 package tanstack.query.core
 
-typealias MutationFunctionContext = Any
+import js.objects.JsPlainObject
+
+@JsPlainObject
+external interface MutationFunctionContext {
+    val client: QueryClient
+    val meta: MutationMeta?
+    val mutationKey: MutationKey?
+}

@@ -206,6 +206,10 @@ fun toDeclarations(
             "shouldThrowError<T extends (...args: Array<any>) => boolean>",
             "shouldThrowError<T extends Function<Boolean>>",
         )
+        .replace(
+            Regex("""type (MutationFunctionContext = \{\n.+\n});""", RegexOption.DOT_MATCHES_ALL),
+            "interface $1",
+        )
 
     content = when (definitionFile.name) {
         "focusManager.d.ts" -> content.replace("SetupFn", "FocusManagerSetupFn")
