@@ -212,18 +212,18 @@ fun toDeclarations(
         )
         .replace(
             """
-                |type MutationKey = Register extends {
-                |    mutationKey: infer TMutationKey;
-                |} ? TMutationKey extends Array<unknown> ? TMutationKey : TMutationKey extends Array<unknown> ? TMutationKey : ReadonlyArray<unknown> : ReadonlyArray<unknown>;
-            """.trimMargin(),
+                type MutationKey = Register extends {
+                    mutationKey: infer TMutationKey;
+                } ? TMutationKey extends Array<unknown> ? TMutationKey : TMutationKey extends Array<unknown> ? TMutationKey : ReadonlyArray<unknown> : ReadonlyArray<unknown>;
+            """.trimIndent(),
             "type MutationKey = ReadonlyArray<unknown>;",
         )
         .replace(
             """
-                |type MutationMeta = Register extends {
-                |    mutationMeta: infer TMutationMeta;
-                |} ? TMutationMeta extends Record<string, unknown> ? TMutationMeta : Record<string, unknown> : Record<string, unknown>;
-            """.trimMargin(),
+                type MutationMeta = Register extends {
+                    mutationMeta: infer TMutationMeta;
+                } ? TMutationMeta extends Record<string, unknown> ? TMutationMeta : Record<string, unknown> : Record<string, unknown>;
+            """.trimIndent(),
             "type MutationMeta = Record<string, unknown>",
         )
 
