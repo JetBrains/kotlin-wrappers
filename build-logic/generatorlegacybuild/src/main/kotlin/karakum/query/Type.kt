@@ -73,6 +73,8 @@ class Type(
             body.toIntOrNull() != null -> body
 
             name == QUERY_KEY -> body
+            name == "MutationKey" -> body
+                .replace("unknown", "Any")
 
             name == "UseErrorBoundary" -> body
                 .removeSurrounding("boolean | (", ")")

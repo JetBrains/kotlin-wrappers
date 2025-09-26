@@ -2,4 +2,6 @@
 
 package tanstack.query.core
 
-typealias MutationKey = Any
+import js.array.ReadonlyArray
+
+typealias MutationKey = ReadonlyArray<Any>

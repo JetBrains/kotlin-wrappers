@@ -2,4 +2,6 @@
 
 package tanstack.query.core
 
-typealias MutationMeta = Any
+import js.objects.Record
+
+typealias MutationMeta = Record<String, *>

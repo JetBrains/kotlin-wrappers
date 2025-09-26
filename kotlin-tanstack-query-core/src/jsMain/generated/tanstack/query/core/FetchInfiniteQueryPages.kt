@@ -6,4 +6,9 @@
 
 package tanstack.query.core
 
-typealias FetchInfiniteQueryPages<TQueryFnData, TPageParam> = Any
+typealias FetchInfiniteQueryPages<TQueryFnData, TPageParam> = Union /* {
+    pages?: never;
+} | {
+    pages: number;
+    getNextPageParam: GetNextPageParamFunction<TPageParam, TQueryFnData>;
+} */

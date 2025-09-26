@@ -210,6 +210,22 @@ fun toDeclarations(
             Regex("""type (MutationFunctionContext = \{\n.+\n});""", RegexOption.DOT_MATCHES_ALL),
             "interface $1",
         )
+        .replace(
+            """
+                |type MutationKey = Register extends {
+                |    mutationKey: infer TMutationKey;
+                |} ? TMutationKey extends Array<unknown> ? TMutationKey : TMutationKey extends Array<unknown> ? TMutationKey : ReadonlyArray<unknown> : ReadonlyArray<unknown>;
+            """.trimMargin(),
+            "type MutationKey = ReadonlyArray<unknown>;",
+        )
+        .replace(
+            """
+                |type MutationMeta = Register extends {
+                |    mutationMeta: infer TMutationMeta;
+                |} ? TMutationMeta extends Record<string, unknown> ? TMutationMeta : Record<string, unknown> : Record<string, unknown>;
+            """.trimMargin(),
+            "type MutationMeta = Record<string, unknown>",
+        )
 
     content = when (definitionFile.name) {
         "focusManager.d.ts" -> content.replace("SetupFn", "FocusManagerSetupFn")
@@ -273,14 +289,26 @@ private fun getBlocks(
             when (keyword) {
                 JsTypeKeyword.CONST,
                 JsTypeKeyword.FUNCTION,
-                JsTypeKeyword.TYPE,
                     -> result.add(keyword to line)
 
                 JsTypeKeyword.INTERFACE,
                 JsTypeKeyword.CLASS,
+                JsTypeKeyword.TYPE,
                     -> {
                     val startIndex = index
-                    while (lines[++index] != "}");
+
+                    var depth = 0
+                    while (true) {
+                        depth += lines[index].count { it == '{' }
+                        depth -= lines[index].count { it == '}' }
+
+                        if (depth == 0) {
+                            break
+                        }
+
+                        index++
+                    }
+
                     val body = lines.subList(startIndex, index + 1).joinToString("\n")
                     result.add(keyword to body)
                 }
