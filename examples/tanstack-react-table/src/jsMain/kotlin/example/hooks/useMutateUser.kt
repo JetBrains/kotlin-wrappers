@@ -17,7 +17,9 @@ fun <O, R> useMutateUser(
     val queryClient = useQueryClient()
     val mutate = useMutation<R, JsError, O, QueryKey>(
         options = UseMutationOptions(
-            mutationFn = unsafeAsync { o, _ -> action(o) },
+            mutationFn = unsafeAsync { options, _ ->
+                action(options)
+            },
             onSuccess = { _, _, _, _ ->
                 queryClient.invalidateQueries(
                     filters = InvalidateQueryFilters(
