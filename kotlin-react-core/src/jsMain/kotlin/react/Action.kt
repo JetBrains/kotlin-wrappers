@@ -4,7 +4,6 @@ import js.core.Void
 import js.coroutines.internal.createIsolatedPromise
 import js.promise.Promise
 import js.promise.await
-import js.reflect.legacyUnsafeCast
 import js.reflect.unsafeCast
 
 sealed external interface Action<in T> :
@@ -26,7 +25,9 @@ inline fun Action(
 fun <T> Action(
     value: suspend (T) -> Unit,
 ): Action<T> =
-    legacyUnsafeCast { data: T ->
-        createIsolatedPromise { value(data) }
-            .then { undefined }
-    }
+    unsafeCast(
+        provider = { data: T ->
+            createIsolatedPromise { value(data) }
+                .then { undefined }
+        }
+    )
