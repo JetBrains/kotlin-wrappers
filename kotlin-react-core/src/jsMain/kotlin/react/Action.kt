@@ -1,7 +1,7 @@
 package react
 
 import js.core.Void
-import js.coroutines.internal.createIsolatedPromise
+import js.function.unsafeAsync
 import js.promise.Promise
 import js.promise.await
 import js.reflect.unsafeCast
@@ -24,10 +24,11 @@ inline fun Action(
 
 fun <T> Action(
     value: suspend (T) -> Unit,
-): Action<T> =
-    unsafeCast(
-        provider = { data: T ->
-            createIsolatedPromise { value(data) }
-                .then { undefined }
-        }
-    )
+): Action<T> {
+    val action = unsafeAsync<T, Void> { data ->
+        value(data)
+        undefined
+    }
+
+    return unsafeCast(action)
+}
