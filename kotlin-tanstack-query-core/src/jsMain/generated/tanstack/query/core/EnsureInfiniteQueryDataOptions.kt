@@ -6,4 +6,6 @@
 
 package tanstack.query.core
 
-typealias EnsureInfiniteQueryDataOptions<TQueryFnData, TError, TData, TQueryKey, TPageParam> = Any
+typealias EnsureInfiniteQueryDataOptions<TQueryFnData, TError, TData, TQueryKey, TPageParam> = Any /* FetchInfiniteQueryOptions<TQueryFnData, TError, TData, TQueryKey, TPageParam> & {
+    revalidateIfStale?: boolean;
+} */

@@ -2,4 +2,6 @@
 
 package tanstack.query.core
 
-typealias MutationScope = Any
+typealias MutationScope = Any /* {
+    id: string;
+} */

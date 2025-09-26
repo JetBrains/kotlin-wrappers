@@ -2,4 +2,6 @@
 
 package tanstack.query.core
 
-typealias DefaultError = Any
+typealias DefaultError = Any /* Register extends {
+    defaultError: infer TError;
+} ? TError : Error */

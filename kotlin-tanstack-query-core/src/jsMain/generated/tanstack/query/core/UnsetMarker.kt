@@ -2,4 +2,4 @@
 
 package tanstack.query.core
 
-typealias UnsetMarker = Any
+typealias UnsetMarker = Any /* typeof unsetMarker */

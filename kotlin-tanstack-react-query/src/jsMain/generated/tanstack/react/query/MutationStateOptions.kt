@@ -6,4 +6,7 @@
 
 package tanstack.react.query
 
-typealias MutationStateOptions<TResult> = Any
+typealias MutationStateOptions<TResult> = Any /* {
+    filters?: MutationFilters;
+    select?: (mutation: Mutation) => TResult;
+} */

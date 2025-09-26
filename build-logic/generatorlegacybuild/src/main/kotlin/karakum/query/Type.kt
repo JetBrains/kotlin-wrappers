@@ -120,7 +120,7 @@ class Type(
                     )
             }
 
-            else -> "Any"
+            else -> "Any /* $body */"
         }
     }
 

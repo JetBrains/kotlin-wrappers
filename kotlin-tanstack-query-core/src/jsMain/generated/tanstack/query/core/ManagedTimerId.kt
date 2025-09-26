@@ -2,4 +2,4 @@
 
 package tanstack.query.core
 
-typealias ManagedTimerId = Any
+typealias ManagedTimerId = Any /* number */
