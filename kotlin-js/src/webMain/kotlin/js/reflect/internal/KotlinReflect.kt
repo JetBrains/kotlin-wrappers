@@ -11,7 +11,7 @@ import kotlin.js.toJsReference
 internal fun kotlinGet(
     target: JsAny,
     propertyKey: PropertyKey,
-): JsAny? {
+): Any? {
     val value = Reflect.get(target, propertyKey)
         ?: return null
 
