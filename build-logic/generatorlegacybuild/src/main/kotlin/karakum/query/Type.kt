@@ -17,7 +17,6 @@ private val SKIPPED_TYPES = setOf(
     "DistributiveOmit",
     "ReplaceReturnType",
     "DataTag",
-    "AnyDataTag",
     "InferDataFromTag",
     "InferErrorFromTag",
 )

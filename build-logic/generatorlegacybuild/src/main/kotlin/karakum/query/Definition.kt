@@ -207,7 +207,7 @@ fun toDeclarations(
             "shouldThrowError<T extends Function<Boolean>>",
         )
         .replace(
-            Regex("""type (MutationFunctionContext = \{\n.+\n});""", RegexOption.DOT_MATCHES_ALL),
+            Regex("""type (\w+? = \{\n.+?\n});""", RegexOption.DOT_MATCHES_ALL),
             "interface $1",
         )
         .replace(

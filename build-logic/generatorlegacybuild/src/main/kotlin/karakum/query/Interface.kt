@@ -1,5 +1,9 @@
 package karakum.query
 
+private val SKIPPED_INTERFACES = setOf(
+    "AnyDataTag",
+)
+
 private enum class InterfaceType {
     PROPS,
     JSO,
@@ -29,6 +33,9 @@ class Interface(
         get() = super.immutable || type == InterfaceType.JSO
 
     override fun toCode(): String {
+        if (name in SKIPPED_INTERFACES)
+            return ""
+
         val extends = parentType?.let {
             val parent = it
                 .replace("BaseResult<", "Result<")

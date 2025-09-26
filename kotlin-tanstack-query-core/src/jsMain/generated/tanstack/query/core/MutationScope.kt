@@ -2,6 +2,9 @@
 
 package tanstack.query.core
 
-typealias MutationScope = Any /* {
-    id: string;
-} */
+import js.objects.JsPlainObject
+
+@JsPlainObject
+external interface MutationScope {
+    val id: String
+}
