@@ -18,7 +18,7 @@ package cesium.engine
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Clock.html">Online Documentation</a>
  */
-external class Clock {
+external class Clock() {
     /**
      * The start time of the clock.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Clock.html#startTime">Online Documentation</a>

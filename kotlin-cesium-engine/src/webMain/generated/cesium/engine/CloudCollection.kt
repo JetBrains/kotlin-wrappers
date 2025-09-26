@@ -24,7 +24,7 @@ package cesium.engine
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CloudCollection.html">Online Documentation</a>
  */
-external class CloudCollection {
+external class CloudCollection() {
     /**
      * Controls the amount of detail captured in the precomputed noise texture
      * used to render the cumulus clouds. In order for the texture to be tileable,

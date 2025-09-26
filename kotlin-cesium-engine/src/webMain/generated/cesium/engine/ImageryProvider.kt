@@ -13,7 +13,7 @@ import seskar.js.JsAsync
  * interface and is not intended to be instantiated directly.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ImageryProvider.html">Online Documentation</a>
  */
-abstract external class ImageryProvider {
+abstract external class ImageryProvider() {
     /**
      * Gets the rectangle, in radians, of the imagery provided by the instance.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ImageryProvider.html#rectangle">Online Documentation</a>

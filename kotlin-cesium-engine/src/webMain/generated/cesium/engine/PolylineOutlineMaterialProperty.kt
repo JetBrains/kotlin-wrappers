@@ -8,7 +8,7 @@ package cesium.engine
  * A [MaterialProperty] that maps to polyline outline [Material] uniforms.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PolylineOutlineMaterialProperty.html">Online Documentation</a>
  */
-external class PolylineOutlineMaterialProperty :
+external class PolylineOutlineMaterialProperty() :
     MaterialProperty {
     /**
      * Gets a value indicating if this property is constant.  A property is considered

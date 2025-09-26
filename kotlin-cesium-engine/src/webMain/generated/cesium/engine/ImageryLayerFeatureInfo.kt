@@ -8,7 +8,7 @@ package cesium.engine
  * Describes a rasterized feature, such as a point, polygon, polyline, etc., in an imagery layer.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ImageryLayerFeatureInfo.html">Online Documentation</a>
  */
-external class ImageryLayerFeatureInfo {
+external class ImageryLayerFeatureInfo() {
     /**
      * Gets or sets the name of the feature.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ImageryLayerFeatureInfo.html#name">Online Documentation</a>

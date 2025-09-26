@@ -19,7 +19,7 @@ package cesium.engine
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/EventHelper.html">Online Documentation</a>
  */
-external class EventHelper {
+external class EventHelper() {
     /**
      * Adds a listener to an event, and records the registration to be cleaned up later.
      * @param [event] The event to attach to.

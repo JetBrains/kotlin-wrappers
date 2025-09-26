@@ -12,7 +12,7 @@ import js.array.ReadonlyArray
  * data sources, such as [CzmlDataSource] and [GeoJsonDataSource].
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Entity.html">Online Documentation</a>
  */
-external class Entity {
+external class Entity() {
     /**
      * Gets or sets the entity collection that this entity belongs to.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Entity.html#entityCollection">Online Documentation</a>

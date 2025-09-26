@@ -15,7 +15,7 @@ import seskar.js.JsAsync
  * This type describes an interface and is not intended to be instantiated directly.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/VoxelProvider.html">Online Documentation</a>
  */
-abstract external class VoxelProvider {
+abstract external class VoxelProvider() {
     /**
      * A transform from local space to global space.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/VoxelProvider.html#globalTransform">Online Documentation</a>

@@ -12,7 +12,7 @@ import js.core.JsDouble
  * and is not intended to be instantiated directly.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Spline.html">Online Documentation</a>
  */
-abstract external class Spline {
+abstract external class Spline() {
     /**
      * An array of times for the control points.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Spline.html#times">Online Documentation</a>

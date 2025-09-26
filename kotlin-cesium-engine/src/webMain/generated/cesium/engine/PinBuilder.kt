@@ -11,7 +11,7 @@ import web.html.HTMLCanvasElement
  * A utility class for generating custom map pins as canvas elements.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PinBuilder.html">Online Documentation</a>
  */
-external class PinBuilder {
+external class PinBuilder() {
     /**
      * Creates an empty pin of the specified color and size.
      * @param [color] The color of the pin.

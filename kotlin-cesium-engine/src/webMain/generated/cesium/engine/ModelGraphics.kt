@@ -12,7 +12,7 @@ package cesium.engine
  * Cameras and lights are not currently supported.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ModelGraphics.html">Online Documentation</a>
  */
-external class ModelGraphics {
+external class ModelGraphics() {
     /**
      * Gets the event that is raised whenever a property or sub-property is changed or modified.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ModelGraphics.html#definitionChanged">Online Documentation</a>

@@ -23,7 +23,7 @@ package cesium.engine
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PointPrimitiveCollection.html">Online Documentation</a>
  */
-external class PointPrimitiveCollection {
+external class PointPrimitiveCollection() {
     /**
      * Determines if primitives in this collection will be shown.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PointPrimitiveCollection.html#show">Online Documentation</a>

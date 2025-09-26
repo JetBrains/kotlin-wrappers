@@ -9,7 +9,7 @@ package cesium.engine
  * to the [Clock] when the DataSource is loaded.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/DataSourceClock.html">Online Documentation</a>
  */
-external class DataSourceClock {
+external class DataSourceClock() {
     /**
      * Gets the event that is raised whenever a new property is assigned.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/DataSourceClock.html#definitionChanged">Online Documentation</a>

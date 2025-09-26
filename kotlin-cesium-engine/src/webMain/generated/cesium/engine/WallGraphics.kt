@@ -9,7 +9,7 @@ package cesium.engine
  * The wall conforms to the curvature of the globe and can be placed along the surface or at altitude.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/WallGraphics.html">Online Documentation</a>
  */
-external class WallGraphics {
+external class WallGraphics() {
     /**
      * Gets the event that is raised whenever a property or sub-property is changed or modified.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/WallGraphics.html#definitionChanged">Online Documentation</a>

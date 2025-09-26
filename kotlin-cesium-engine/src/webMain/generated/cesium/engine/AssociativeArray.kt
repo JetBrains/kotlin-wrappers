@@ -11,7 +11,7 @@ import js.array.ReadonlyArray
  * lookup but also provides an array for fast iteration.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/AssociativeArray.html">Online Documentation</a>
  */
-external class AssociativeArray {
+external class AssociativeArray() {
     /**
      * Gets the number of items in the collection.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/AssociativeArray.html#length">Online Documentation</a>

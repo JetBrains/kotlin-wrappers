@@ -13,7 +13,7 @@ import seskar.js.JsAsync
  * Query format: `longitude latitude (height)` with longitude/latitude in degrees and height in meters.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/CartographicGeocoderService.html">Online Documentation</a>
  */
-external class CartographicGeocoderService {
+external class CartographicGeocoderService() {
     /**
      * Gets the credit to display after a geocode is performed. Typically this is used to credit
      * the geocoder service.

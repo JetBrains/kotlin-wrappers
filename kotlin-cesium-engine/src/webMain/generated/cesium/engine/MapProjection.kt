@@ -9,7 +9,7 @@ package cesium.engine
  * flat map like Cesium's 2D and Columbus View modes.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/MapProjection.html">Online Documentation</a>
  */
-external class MapProjection {
+external class MapProjection() {
     /**
      * Gets the [Ellipsoid].
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/MapProjection.html#ellipsoid">Online Documentation</a>

@@ -8,7 +8,7 @@ package cesium.engine
  * Defines how screen space objects (billboards, points, labels) are clustered.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/EntityCluster.html">Online Documentation</a>
  */
-external class EntityCluster {
+external class EntityCluster() {
     /**
      * Determines if entities in this collection will be shown.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/EntityCluster.html#show">Online Documentation</a>

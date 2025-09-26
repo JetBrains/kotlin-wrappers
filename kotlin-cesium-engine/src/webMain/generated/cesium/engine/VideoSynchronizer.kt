@@ -10,7 +10,7 @@ import web.html.HTMLVideoElement
  * Synchronizes a video element with a simulation clock.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/VideoSynchronizer.html">Online Documentation</a>
  */
-external class VideoSynchronizer {
+external class VideoSynchronizer() {
     /**
      * Gets or sets the simulation time that marks the start of the video.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/VideoSynchronizer.html#epoch">Online Documentation</a>

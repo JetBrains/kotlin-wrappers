@@ -13,7 +13,7 @@ import seskar.js.JsAsync
  * to nodes
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/I3SField.html">Online Documentation</a>
  */
-external class I3SField {
+external class I3SField() {
     /**
      * Gets the resource for the fields
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/I3SField.html#resource">Online Documentation</a>

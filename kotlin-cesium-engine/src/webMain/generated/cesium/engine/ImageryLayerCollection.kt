@@ -12,7 +12,7 @@ import seskar.js.JsAsync
  * An ordered collection of imagery layers for rendering raster imagery on a [Globe] or [Cesium3DTileset].
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ImageryLayerCollection.html">Online Documentation</a>
  */
-external class ImageryLayerCollection {
+external class ImageryLayerCollection() {
     /**
      * An event that is raised when a layer is added to the collection.  Event handlers are passed the layer that
      * was added and the index at which it was added.
