@@ -3,7 +3,7 @@
     "INVISIBLE_REFERENCE",
 )
 
-package js.errors
+package js.errors.internal
 
 @PublishedApi
 internal fun createJsException(

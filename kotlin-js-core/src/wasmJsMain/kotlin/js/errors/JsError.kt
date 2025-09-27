@@ -1,5 +1,7 @@
 package js.errors
 
+import js.errors.internal.createJsException
+
 @JsName("Error")
 actual open external class JsError :
     JsAny {

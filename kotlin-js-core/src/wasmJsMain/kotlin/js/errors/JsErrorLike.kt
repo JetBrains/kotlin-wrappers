@@ -1,5 +1,6 @@
 package js.errors
 
+import js.errors.internal.createJsException
 import js.reflect.unsafeCast
 
 actual fun JsErrorLike?.toThrowable(): Throwable =
