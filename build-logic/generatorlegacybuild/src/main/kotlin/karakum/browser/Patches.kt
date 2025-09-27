@@ -342,6 +342,14 @@ internal fun String.applyPatches(): String {
                 "(): ",
             )
         }
+        .patchInterfaces(
+            "HTMLButtonElement",
+            "CommandEvent",
+            "CommandEventInit",
+        ) {
+            it.replace("command: string", "command: Command")
+                .replace("command?: string", "command?: Command")
+        }
 }
 
 internal val DOM_GEOMETRY_ALIASES = listOf(

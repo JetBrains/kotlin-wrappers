@@ -12,6 +12,6 @@ import web.events.EventInit
 @JsPlainObject
 external interface CommandEventInit :
     EventInit {
-    var command: String?
+    var command: Command?
     var source: Element?
 }

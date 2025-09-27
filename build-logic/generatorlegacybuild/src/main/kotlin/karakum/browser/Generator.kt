@@ -109,6 +109,7 @@ private val DEFAULT_IMPORTS = Imports(
     "web.canvas.CanvasRenderingContext2D",
     "web.canvas.OffscreenCanvas",
     "web.canvas.OffscreenCanvasRenderingContext2D",
+    "web.command.Command",
     "web.command.CommandEvent",
     "web.components.CustomElementCallbacks",
     "web.components.CustomElementRegistry",

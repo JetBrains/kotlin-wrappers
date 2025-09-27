@@ -2,6 +2,7 @@
 
 package web.html
 
+import web.command.Command
 import web.dom.Element
 import web.dom.NodeList
 import web.events.Event
@@ -28,7 +29,7 @@ protected constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLButtonElement/command)
      */
-    var command: String
+    var command: Command
 
     /**
      * The **`commandForElement`** property of the HTMLButtonElement interface gets and sets the element to control via a button.
