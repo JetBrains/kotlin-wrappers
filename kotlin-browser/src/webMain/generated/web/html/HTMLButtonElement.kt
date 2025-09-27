@@ -2,6 +2,7 @@
 
 package web.html
 
+import web.dom.Element
 import web.dom.NodeList
 import web.events.Event
 import web.events.EventInstance
@@ -22,6 +23,20 @@ protected constructor() :
     HTMLElement,
     PopoverTargetAttributes,
     FormControl {
+    /**
+     * The **`command`** property of the HTMLButtonElement interface gets and sets the action to be performed on an element being controlled by this button.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLButtonElement/command)
+     */
+    var command: String
+
+    /**
+     * The **`commandForElement`** property of the HTMLButtonElement interface gets and sets the element to control via a button.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLButtonElement/commandForElement)
+     */
+    var commandForElement: Element?
+
     /**
      * The **`HTMLButtonElement.disabled`** property indicates whether the control is disabled, meaning that it does not accept any clicks.
      *

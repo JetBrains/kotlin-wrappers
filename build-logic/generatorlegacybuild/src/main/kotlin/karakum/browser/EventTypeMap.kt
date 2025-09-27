@@ -15,6 +15,7 @@ internal val EVENT_DATA = listOf(
     EventInfo("web.animations.AnimationPlaybackEvent"),
     EventInfo("web.clipboard.ClipboardEvent"),
     EventInfo("web.input.CompositionEvent"),
+    EventInfo("web.command.CommandEvent"),
     EventInfo("web.dnd.DragEvent"),
     EventInfo("web.focus.FocusEvent"),
     EventInfo("web.keyboard.KeyboardEvent"),

@@ -2,6 +2,7 @@
 
 package web.performance
 
+import js.core.UInt53
 import web.dom.Node
 import web.time.DOMHighResTimeStamp
 import kotlin.js.JsAny
@@ -20,6 +21,13 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceEventTiming/cancelable)
      */
     val cancelable: Boolean
+
+    /**
+     * The read-only **`interactionId`** property returns an ID that uniquely identifies a user interaction which triggered a series of associated events.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceEventTiming/interactionId)
+     */
+    val interactionId: UInt53
 
     /**
      * The read-only **`processingEnd`** property returns the time the last event handler finished executing.

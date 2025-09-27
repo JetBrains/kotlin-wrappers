@@ -2,10 +2,14 @@
 
 package web.screen
 
+import js.core.Void
+import js.promise.Promise
+import js.promise.await
 import web.events.Event
 import web.events.EventHandler
 import web.events.EventInstance
 import web.events.EventTarget
+import kotlin.js.JsName
 
 /**
  * The **`ScreenOrientation`** interface of the Screen Orientation API provides information about the current orientation of the document.
@@ -35,11 +39,30 @@ private constructor() :
     val type: OrientationType
 
     /**
+     * The **`lock()`** method of the ScreenOrientation interface locks the orientation of the containing document to the specified orientation.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ScreenOrientation/lock)
+     */
+    @JsName("lock")
+    fun lockAsync(orientation: OrientationLockType): Promise<Void>
+
+    /**
      * The **`unlock()`** method of the ScreenOrientation interface unlocks the orientation of the containing document from its default orientation.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ScreenOrientation/unlock)
      */
     fun unlock()
+}
+
+/**
+ * The **`lock()`** method of the ScreenOrientation interface locks the orientation of the containing document to the specified orientation.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ScreenOrientation/lock)
+ */
+suspend inline fun ScreenOrientation.lock(orientation: OrientationLockType) {
+    lockAsync(
+        orientation = orientation,
+    ).await()
 }
 
 /**

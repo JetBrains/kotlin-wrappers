@@ -33,6 +33,10 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBDatabase/objectStoreNames)
      */
     val objectStoreNames: DOMStringList
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBTransaction/abort_event)
+     */
     var onabort: EventHandler<Event, IDBDatabase, IDBDatabase>?
 
     /**

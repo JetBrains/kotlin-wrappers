@@ -55,6 +55,14 @@ external interface ParentNode :
     fun append(vararg nodes: String): Unit = definedExternally
 
     /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/moveBefore)
+     */
+    fun moveBefore(
+        node: Node,
+        child: Node?,
+    ): Unit = definedExternally
+
+    /**
      * Inserts nodes before the first child of node, while replacing strings in nodes with equivalent Text nodes.
      *
      * Throws a "HierarchyRequestError" DOMException if the constraints of the node tree are violated.
