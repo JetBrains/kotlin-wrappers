@@ -27,5 +27,5 @@ open external class Memory(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/WebAssembly/Reference/JavaScript_interface/Memory/grow)
      */
-    fun grow(delta: Int): Int
+    fun grow(delta: Int /* AddressValue */): Int /* AddressValue */
 }

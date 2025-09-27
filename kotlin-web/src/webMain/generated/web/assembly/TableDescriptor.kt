@@ -7,6 +7,6 @@ import js.objects.JsPlainObject
 @JsPlainObject
 external interface TableDescriptor {
     var element: TableKind
-    var initial: Int
-    var maximum: Int?
+    var initial: Int /* AddressValue */
+    var maximum: Int /* AddressValue */?
 }

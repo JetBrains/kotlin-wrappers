@@ -6,7 +6,7 @@ import js.objects.JsPlainObject
 
 @JsPlainObject
 external interface MemoryDescriptor {
-    var initial: Int
-    var maximum: Int?
+    var initial: Int /* AddressValue */
+    var maximum: Int /* AddressValue */?
     var shared: Boolean?
 }
