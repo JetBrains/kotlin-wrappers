@@ -7,12 +7,17 @@ import js.objects.PropertyKey
 import js.objects.TypedPropertyDescriptor
 import kotlin.js.JsAny
 
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Reflect)
+ */
 external object Reflect {
     /**
      * Constructs the target with the elements of specified array as the arguments
      * and the specified constructor as the `new.target` value.
      * @param target The constructor to invoke.
      * @param argumentsList An array of argument values to be passed to the constructor.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Reflect/construct)
      */
     fun <T : JsAny, A : Tuple> construct(
         target: ConstructorFunction<A, T>,
@@ -30,6 +35,8 @@ external object Reflect {
      *        (that is, a user-defined object or a built in object) or a DOM object.
      * @param propertyKey The property name.
      * @param attributes Descriptor for the property. It can be for a data property or an accessor property.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Reflect/defineProperty)
      */
     fun defineProperty(
         target: JsAny,
@@ -42,6 +49,8 @@ external object Reflect {
      * except it won't throw if `target[propertyKey]` is non-configurable.
      * @param target Object from which to remove the own property.
      * @param propertyKey The property name.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Reflect/deleteProperty)
      */
     fun deleteProperty(
         target: JsAny,
@@ -52,6 +61,8 @@ external object Reflect {
      * Gets the property of target, equivalent to `target[propertyKey]` when `receiver === target`.
      * @param target Object that contains the property on itself or in its prototype chain.
      * @param propertyKey The property name.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Reflect/get)
      */
     fun get(
         target: JsAny,
@@ -63,6 +74,8 @@ external object Reflect {
      * An own property descriptor is one that is defined directly on the object and is not inherited from the object's prototype.
      * @param target Object that contains the property.
      * @param propertyKey The property name.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Reflect/getOwnPropertyDescriptor)
      */
     fun getOwnPropertyDescriptor(
         target: JsAny,
@@ -72,6 +85,8 @@ external object Reflect {
     /**
      * Returns the prototype of an object.
      * @param target The object that references the prototype.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Reflect/getPrototypeOf)
      */
     fun getPrototypeOf(target: JsAny): JsAny?
 
@@ -79,12 +94,16 @@ external object Reflect {
      * Equivalent to `propertyKey in target`.
      * @param target Object that contains the property on itself or in its prototype chain.
      * @param propertyKey Name of the property.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Reflect/has)
      */
     fun has(target: JsAny, propertyKey: PropertyKey): Boolean
 
     /**
      * Returns a value that indicates whether new properties can be added to an object.
      * @param target Object to test.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Reflect/isExtensible)
      */
     fun isExtensible(target: JsAny): Boolean
 
@@ -92,6 +111,8 @@ external object Reflect {
      * Returns the string and symbol keys of the own properties of an object. The own properties of an object
      * are those that are defined directly on that object, and are not inherited from the object's prototype.
      * @param target Object that contains the own properties.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Reflect/ownKeys)
      */
     fun ownKeys(target: JsAny): ReadonlyArray<PropertyKey>
 
@@ -99,6 +120,8 @@ external object Reflect {
      * Prevents the addition of new properties to an object.
      * @param target Object to make non-extensible.
      * @return Whether the object has been made non-extensible.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Reflect/preventExtensions)
      */
     fun preventExtensions(target: JsAny): Boolean
 
@@ -106,6 +129,8 @@ external object Reflect {
      * Sets the property of target, equivalent to `target[propertyKey] = value` when `receiver === target`.
      * @param target Object that contains the property on itself or in its prototype chain.
      * @param propertyKey Name of the property.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Reflect/set)
      */
     fun set(
         target: JsAny,
@@ -118,6 +143,8 @@ external object Reflect {
      * @param target The object to change its prototype.
      * @param proto The value of the new prototype or null.
      * @return Whether setting the prototype was successful.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Reflect/setPrototypeOf)
      */
     fun setPrototypeOf(
         target: JsAny,
