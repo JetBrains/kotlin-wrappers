@@ -1,5 +1,6 @@
 package js.errors
 
+import js.errors.internal.wrapRawError
 import js.reflect.JsExternalInheritorsOnly
 import js.reflect.upcast
 
@@ -10,7 +11,7 @@ inline fun JsErrorLike?.toJsErrorOrNull(): JsError? =
     upcast<Any?>() as? JsError
 
 fun JsErrorLike?.toJsError(): JsError =
-    toJsErrorOrNull() ?: JsError("Non-Kotlin exception $this")
+    toJsErrorOrNull() ?: wrapRawError(this)
 
 expect fun JsErrorLike?.toThrowable(): Throwable
 
