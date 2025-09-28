@@ -5,5 +5,5 @@ import js.reflect.unsafeCast
 actual inline fun JsErrorLike?.toThrowable(): Throwable =
     toJsError()
 
-actual fun Throwable.toJsErrorLike(): JsErrorLike =
+actual fun Throwable.toJsErrorLike(): JsErrorLike? =
     unsafeCast(this)

@@ -15,4 +15,4 @@ fun JsErrorLike?.toJsError(): JsError =
 
 expect fun JsErrorLike?.toThrowable(): Throwable
 
-expect fun Throwable.toJsErrorLike(): JsErrorLike
+expect fun Throwable.toJsErrorLike(): JsErrorLike?
