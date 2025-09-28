@@ -6,6 +6,7 @@ import js.errors.JsErrorName
 import js.errors.name
 import js.reflect.Reflect
 import js.reflect.unsafeCast
+import kotlin.js.JsAny
 
 private val RAW_ERROR_WRAPPER_TYPE: JsErrorName = JsErrorName("KotlinRawErrorWrapper")
 private const val RAW_ERROR_WRAPPER_MESSAGE: String =
@@ -23,9 +24,9 @@ internal fun wrapRawError(
 }
 
 internal fun unwrapRawError(
-    value: JsError,
+    value: JsAny?,
 ): JsErrorLike? {
-    val result = if (value.name == RAW_ERROR_WRAPPER_TYPE) {
+    val result = if (value is JsError && value.name == RAW_ERROR_WRAPPER_TYPE) {
         Reflect.get(value, CAUSE)
     } else value
 
