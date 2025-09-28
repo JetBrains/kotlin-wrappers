@@ -44,6 +44,12 @@ external object Reflect {
         attributes: TypedPropertyDescriptor<*>,
     ): Boolean
 
+    fun defineProperty(
+        target: JsAny,
+        propertyKey: String,
+        attributes: TypedPropertyDescriptor<*>,
+    ): Boolean
+
     /**
      * Removes a property from an object, equivalent to `delete target[propertyKey]`,
      * except it won't throw if `target[propertyKey]` is non-configurable.
@@ -55,6 +61,11 @@ external object Reflect {
     fun deleteProperty(
         target: JsAny,
         propertyKey: PropertyKey,
+    ): Boolean
+
+    fun deleteProperty(
+        target: JsAny,
+        propertyKey: String,
     ): Boolean
 
     /**
@@ -69,6 +80,11 @@ external object Reflect {
         propertyKey: PropertyKey,
     ): JsAny?
 
+    fun get(
+        target: JsAny,
+        propertyKey: String,
+    ): JsAny?
+
     /**
      * Gets the own property descriptor of the specified object.
      * An own property descriptor is one that is defined directly on the object and is not inherited from the object's prototype.
@@ -80,6 +96,11 @@ external object Reflect {
     fun getOwnPropertyDescriptor(
         target: JsAny,
         propertyKey: PropertyKey,
+    ): TypedPropertyDescriptor<*>
+
+    fun getOwnPropertyDescriptor(
+        target: JsAny,
+        propertyKey: String,
     ): TypedPropertyDescriptor<*>
 
     /**
@@ -97,7 +118,15 @@ external object Reflect {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Reflect/has)
      */
-    fun has(target: JsAny, propertyKey: PropertyKey): Boolean
+    fun has(
+        target: JsAny,
+        propertyKey: PropertyKey,
+    ): Boolean
+
+    fun has(
+        target: JsAny,
+        propertyKey: String,
+    ): Boolean
 
     /**
      * Returns a value that indicates whether new properties can be added to an object.
@@ -135,6 +164,12 @@ external object Reflect {
     fun set(
         target: JsAny,
         propertyKey: PropertyKey,
+        value: JsAny?,
+    ): Boolean
+
+    fun set(
+        target: JsAny,
+        propertyKey: String,
         value: JsAny?,
     ): Boolean
 
