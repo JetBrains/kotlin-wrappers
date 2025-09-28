@@ -12,7 +12,7 @@ inline operator fun PromiseReject.invoke() {
 }
 
 inline operator fun PromiseReject.invoke(
-    reason: JsErrorLike,
+    reason: JsErrorLike?,
 ) {
     unsafeInvoke<Void>(this, reason)
 }
