@@ -1,9 +1,9 @@
 package js.errors
 
-import js.reflect.unsafeCast
+import js.errors.internal.unwrapRawError
 
 actual inline fun JsErrorLike?.toThrowable(): Throwable =
     toJsError()
 
 actual fun Throwable.toJsErrorLike(): JsErrorLike? =
-    unsafeCast(this)
+    unwrapRawError(this)
