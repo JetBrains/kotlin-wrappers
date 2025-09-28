@@ -54,7 +54,7 @@ class FetchTest {
     fun `should throw exception on error`() = runTest {
         globalThis[FETCH] = FetchFunction { Promise.reject(DOMException("Test error")) }
 
-        val error: JsAny = assertFailsWith<Throwable> {
+        val error: JsAny? = assertFailsWith<Throwable> {
             fetch(request)
         }.toJsErrorLike()
 
