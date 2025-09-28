@@ -6,14 +6,11 @@ import js.errors.JsErrorName
 import js.errors.name
 import js.reflect.Reflect
 import js.reflect.unsafeCast
-import kotlin.js.JsString
-import kotlin.js.toJsString
 
 private val RAW_ERROR_WRAPPER_TYPE: JsErrorName = JsErrorName("KotlinRawErrorWrapper")
-private val RAW_ERROR_WRAPPER_MESSAGE: String = "Please check 'cause' for the original error"
+private const val RAW_ERROR_WRAPPER_MESSAGE: String = "Please check 'cause' for the original error"
 
-// TODO: use `String`
-private val CAUSE: JsString = "cause".toJsString()
+private const val CAUSE: String = "cause"
 
 internal fun wrapRawError(
     value: JsErrorLike?,
