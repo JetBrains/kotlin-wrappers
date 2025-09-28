@@ -8,7 +8,8 @@ import js.reflect.Reflect
 import js.reflect.unsafeCast
 
 private val RAW_ERROR_WRAPPER_TYPE: JsErrorName = JsErrorName("KotlinRawErrorWrapper")
-private const val RAW_ERROR_WRAPPER_MESSAGE: String = "Please check 'cause' for the original error"
+private const val RAW_ERROR_WRAPPER_MESSAGE: String =
+    "Kotlin raw error wrapper. Please check 'cause' for the original error"
 
 private const val CAUSE: String = "cause"
 
