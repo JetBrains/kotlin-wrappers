@@ -72,7 +72,7 @@ class FetchTest {
             }
 
             // infinite promise
-            Promise /* <Nothing> */ { _ -> }
+            Promise<Nothing> { _ -> }
         }
 
         val parentJob = launch { fetch(request) }
@@ -87,7 +87,7 @@ class FetchTest {
         var isCanceled = false
 
         globalThis[FETCH] = FetchFunction { request ->
-            Promise /* <Nothing> */ { _, reject ->
+            Promise<Nothing> { _, reject ->
                 request.signal.abortEvent.addHandler {
                     isCanceled = true
 
@@ -120,7 +120,7 @@ class FetchTest {
             }
 
             // infinite promise
-            Promise /* <Nothing> */ { _ -> }
+            Promise<Nothing> { _ -> }
         }
 
         val exception = assertFailsWith<IllegalStateException> {
