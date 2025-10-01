@@ -1,20 +1,10 @@
-package react
+@file:JsModule("react")
 
-import react.internal.functionRefToFunction
+package react
 
 /**
  * [Online Documentation](https://react.dev/learn/separating-events-from-effects#declaring-an-effect-event)
  */
-fun <T : Function<Unit>> useEffectEvent(
+external fun <T : Function<Unit>> useEffectEvent(
     handler: T,
-): T {
-    val handlerRef = useRef<T>()
-
-    useLayoutEffect {
-        handlerRef.current = handler
-    }
-
-    return useMemo {
-        functionRefToFunction(handlerRef)
-    }
-}
+): T
