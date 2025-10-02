@@ -70,12 +70,10 @@ internal class Method(
                 val originalMethodName = CLASHING_ASYNC_METHODS.find { it in name }
                     ?: name
 
-                val annotation = "@JsName(\"${originalMethodName}\")\n"
-
                 listOf(
                     sourceDeclaration.replace(
                         "fun ${originalMethodName}(",
-                        "$annotation fun ${originalMethodName}Sync(",
+                        "@JsName(\"${originalMethodName}\")\n fun ${originalMethodName}Sync(",
                     ),
                 )
             }
