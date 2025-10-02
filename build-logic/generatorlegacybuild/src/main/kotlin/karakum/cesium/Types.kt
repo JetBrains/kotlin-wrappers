@@ -74,6 +74,7 @@ private fun optionsBody(
         .substringBeforeLast("\n")
         .trimIndent()
         // TODO: Remove when Google2DImageryProvider.ConstructorOptions is fixed
+        //  GitHub issue: https://github.com/CesiumGS/cesium/pull/12942
         .removePrefix("options: {\n")
         .removeSuffix("};")
 
