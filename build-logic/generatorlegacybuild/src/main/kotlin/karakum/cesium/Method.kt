@@ -3,6 +3,10 @@ package karakum.cesium
 import karakum.common.replaceSuffix
 import karakum.common.withSuspendAdapter
 
+private val CLASHING_ASYNC_METHODS = setOf(
+    "fromType",
+)
+
 internal class Method(
     override val source: Definition,
 ) : Member() {
@@ -50,7 +54,6 @@ internal class Method(
             .let { if (it.isNotEmpty()) "$it\n" else "" }
 
         var params = parameters.toCode(multilinePreferred = false)
-        var annotations = ""
         if (overridden) {
             params = params.replace(" = definedExternally", "")
         }
@@ -63,9 +66,18 @@ internal class Method(
                     .toList()
             }
 
-            "fromType" -> {
-                annotations += "@JsName(\"fromType\")\n"
-                listOf(sourceDeclaration.replace("fromType", "createFromType"))
+            in CLASHING_ASYNC_METHODS -> {
+                val originalMethodName = CLASHING_ASYNC_METHODS.find { it in name }
+                    ?: name
+
+                val annotation = "@JsName(\"${originalMethodName}\")\n"
+
+                listOf(
+                    sourceDeclaration.replace(
+                        "fun ${originalMethodName}(",
+                        "$annotation fun ${originalMethodName}Sync(",
+                    ),
+                )
             }
 
             else -> withSuspendAdapter(sourceDeclaration).toList()
@@ -73,7 +85,7 @@ internal class Method(
 
         if (declarations.size == 1) {
             val modifiers = modifierList.joinToString(" ", "", " ")
-            return doc + annotations + modifiers + declarations.single()
+            return doc + modifiers + declarations.single()
         }
 
         val declaration = declarations

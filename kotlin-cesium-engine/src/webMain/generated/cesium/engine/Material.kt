@@ -138,7 +138,7 @@ external class Material(
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Material.html#.fromType">Online Documentation</a>
          */
         @JsName("fromType")
-        fun createFromType(
+        fun fromTypeSync(
             type: String,
             uniforms: JsAny? = definedExternally,
         ): Material
