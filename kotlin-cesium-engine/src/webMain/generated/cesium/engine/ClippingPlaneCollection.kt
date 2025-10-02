@@ -89,14 +89,14 @@ external class ClippingPlaneCollection(
      * are passed the new plane and the index at which it was added.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ClippingPlaneCollection.html#planeAdded">Online Documentation</a>
      */
-    var planeAdded: DefaultEvent
+    val planeAdded: DefaultEvent
 
     /**
      * An event triggered when a new clipping plane is removed from the collection.  Event handlers
      * are passed the new plane and the index from which it was removed.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ClippingPlaneCollection.html#planeRemoved">Online Documentation</a>
      */
-    var planeRemoved: DefaultEvent
+    val planeRemoved: DefaultEvent
 
     /**
      * Returns the number of planes in this collection.  This is commonly used with

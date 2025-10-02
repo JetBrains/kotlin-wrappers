@@ -50,20 +50,30 @@ internal class Method(
             .let { if (it.isNotEmpty()) "$it\n" else "" }
 
         var params = parameters.toCode(multilinePreferred = false)
+        var annotations = ""
         if (overridden) {
             params = params.replace(" = definedExternally", "")
         }
 
         val sourceDeclaration = "fun $name$params$returnExpression"
-        val declarations = if (name == "loadTileDataAvailability" && sourceDeclaration.endsWith("): Void")) {
-            withSuspendAdapter(sourceDeclaration.replaceSuffix("): Void", "): Promise<Void>"))
-                .map { if ("Async" in it) it.replace("): Promise<Void>", "): Void") else it }
-                .toList()
-        } else withSuspendAdapter(sourceDeclaration).toList()
+        val declarations = when (name) {
+            "loadTileDataAvailability" if sourceDeclaration.endsWith("): Void") -> {
+                withSuspendAdapter(sourceDeclaration.replaceSuffix("): Void", "): Promise<Void>"))
+                    .map { if ("Async" in it) it.replace("): Promise<Void>", "): Void") else it }
+                    .toList()
+            }
+
+            "fromType" -> {
+                annotations += "@JsName(\"fromType\")\n"
+                listOf(sourceDeclaration.replace("fromType", "createFromType"))
+            }
+
+            else -> withSuspendAdapter(sourceDeclaration).toList()
+        }
 
         if (declarations.size == 1) {
             val modifiers = modifierList.joinToString(" ", "", " ")
-            return doc + modifiers + declarations.single()
+            return doc + annotations + modifiers + declarations.single()
         }
 
         val declaration = declarations

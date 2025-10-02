@@ -5,6 +5,8 @@
 package cesium.engine
 
 import js.objects.JsPlainObject
+import js.promise.Promise
+import seskar.js.JsAsync
 
 /**
  * A Material defines surface appearance through a combination of diffuse, specular,
@@ -135,10 +137,36 @@ external class Material(
          * @return New material object.
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Material.html#.fromType">Online Documentation</a>
          */
-        fun fromType(
+        @JsName("fromType")
+        fun createFromType(
             type: String,
             uniforms: JsAny? = definedExternally,
         ): Material
+
+        /**
+         * Creates a new material using an existing material type and returns a promise that resolves when
+         * all of the material's resources have been loaded.
+         * ```
+         * const material = await Material.fromTypeAsync('Image', {
+         *    image: '../Images/Cesium_Logo_overlay.png'
+         * });
+         * ```
+         * @param [type] The base material type.
+         * @param [uniforms] Overrides for the default uniforms.
+         * @return A promise that resolves to a new material object when all resources are loaded.
+         * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Material.html#.fromTypeAsync">Online Documentation</a>
+         */
+        @JsAsync
+        @Suppress("WRONG_EXTERNAL_DECLARATION")
+        suspend fun fromType(
+            type: String,
+            uniforms: JsAny? = definedExternally,
+        ): Material
+
+        fun fromTypeAsync(
+            type: String,
+            uniforms: JsAny? = definedExternally,
+        ): Promise<Material>
 
         /**
          * Gets or sets the default texture uniform value.

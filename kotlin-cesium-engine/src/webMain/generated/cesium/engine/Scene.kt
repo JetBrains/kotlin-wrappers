@@ -31,8 +31,8 @@ external class Scene(
     /**
      * @property [canvas] The HTML canvas element to create the scene for.
      * @property [contextOptions] Context and WebGL creation properties.
-     * @property [creditContainer] The HTML element in which the credits will be displayed.
-     * @property [creditViewport] The HTML element in which to display the credit popup.  If not specified, the viewport will be a added as a sibling of the canvas.
+     * @property [creditContainer] The HTML element in which the credits will be displayed. If not specified, a credit container will be created and added as a sibling of the canvas.
+     * @property [creditViewport] The HTML element in which to display the credit popup.  If not specified, the viewport will be added as a sibling of the canvas.
      * @property [ellipsoid] The default ellipsoid. If not specified, the default ellipsoid is used.
      *   Default value - [Ellipsoid.default]
      * @property [mapProjection] The map projection to use in 2D and Columbus View modes.

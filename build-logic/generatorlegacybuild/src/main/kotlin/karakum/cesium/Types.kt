@@ -73,6 +73,9 @@ private fun optionsBody(
     val source = body.removePrefix("{\n")
         .substringBeforeLast("\n")
         .trimIndent()
+        // TODO: Remove when Google2DImageryProvider.ConstructorOptions is fixed
+        .removePrefix("options: {\n")
+        .removeSuffix("};")
 
     if ("[key: string]: UniformSpecifier;" in source)
         println(source)

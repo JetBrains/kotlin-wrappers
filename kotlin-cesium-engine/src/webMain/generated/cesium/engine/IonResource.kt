@@ -104,7 +104,7 @@ external class IonResource(
          *   });
          * ```
          * @param [assetId] The Cesium ion asset id.
-         * @return A Promise to am instance representing the Cesium ion Asset.
+         * @return A Promise to an instance representing the Cesium ion Asset.
          * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/IonResource.html#.fromAssetId">Online Documentation</a>
          */
         @JsAsync
