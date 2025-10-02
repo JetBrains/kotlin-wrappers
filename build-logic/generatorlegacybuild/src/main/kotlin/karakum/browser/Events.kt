@@ -10,12 +10,6 @@ private data class EventData(
 }
 
 private val ADDITIONAL_EVENTS = listOf(
-    // TODO: remove
-    EventData(
-        name = "webkitfullscreenchange",
-        type = "Event",
-    ),
-
     // TEMP
     EventData(
         name = "uncapturederror",
@@ -335,6 +329,7 @@ private class EventDataMap(
         .flatMap { parseEvents(it.value) }
         .filter { it.name != "orientationchange" }
         .filter { it.name != "pushsubscriptionchange" }
+        .filter { !it.name.startsWith("webkit") }
         .plus(ADDITIONAL_EVENTS)
         .distinct()
         .groupBy { it.typeName }

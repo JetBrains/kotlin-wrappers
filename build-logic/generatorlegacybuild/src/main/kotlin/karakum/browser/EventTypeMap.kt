@@ -226,11 +226,6 @@ internal val EVENT_CORRECTION_MAP = mapOf(
     "voiceschanged" to "voices_changed",
     "volumechange" to "volume_change",
     "waitingforkey" to "waiting_for_key",
-    "webkitanimationend" to "webkit_animation_end",
-    "webkitanimationiteration" to "webkit_animation_iteration",
-    "webkitanimationstart" to "webkit_animation_start",
-    "webkitfullscreenchange" to "webkit_fullscreen_change",
-    "webkittransitionend" to "webkit_transition_end",
 
     // OffscreenCanvas
     "contextlost" to "context_lost",

@@ -411,18 +411,3 @@ inline val Event.Companion.WAITING: EventType<Event>
 
 inline val Event.Companion.WAITING_FOR_KEY: EventType<Event>
     get() = EventType("waitingforkey")
-
-inline val Event.Companion.WEBKIT_ANIMATION_END: EventType<Event>
-    get() = EventType("webkitanimationend")
-
-inline val Event.Companion.WEBKIT_ANIMATION_ITERATION: EventType<Event>
-    get() = EventType("webkitanimationiteration")
-
-inline val Event.Companion.WEBKIT_ANIMATION_START: EventType<Event>
-    get() = EventType("webkitanimationstart")
-
-inline val Event.Companion.WEBKIT_FULLSCREEN_CHANGE: EventType<Event>
-    get() = EventType("webkitfullscreenchange")
-
-inline val Event.Companion.WEBKIT_TRANSITION_END: EventType<Event>
-    get() = EventType("webkittransitionend")
