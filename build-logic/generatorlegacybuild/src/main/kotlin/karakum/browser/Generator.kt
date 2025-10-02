@@ -125,6 +125,7 @@ private val DEFAULT_IMPORTS = Imports(
     "web.crypto.Algorithm",
     "web.csp.SecurityPolicyViolationEventDisposition",
     "web.cssom.CSSNumericValue",
+    "web.cssom.CSSStyleDeclaration",
     "web.cssom.CSSStyleProperties",
     "web.cssom.CSSStyleSheet",
     "web.cssom.ClassName",

@@ -19,6 +19,6 @@ external interface ElementCSSInlineStyle {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/style)
      */
-    val style: CSSStyleProperties
+    val style: CSSStyleDeclaration
         get() = definedExternally
 }

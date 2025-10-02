@@ -93,6 +93,8 @@ internal object IDLRegistry {
             }
             // TEMP ?
             .map { if (it == "PopoverInvokerElement") "PopoverTargetAttributes" else it }
+            // TEMP ?
+            .plus("CSSStyleDeclarationBase")
             .toSet()
     }
 
@@ -148,6 +150,7 @@ internal object IDLRegistry {
 
                         "HTMLCollection" -> listOf(className, "HTMLCollectionBase")
                         "NodeList" -> listOf(className, "NodeListOf")
+                        "CSSStyleDeclaration" -> listOf(className, "CSSStyleDeclarationBase")
 
                         "WebTransportSendStreamOptions" -> listOf(className, "WebTransportSendOptions")
 

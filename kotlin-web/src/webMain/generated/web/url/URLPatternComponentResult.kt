@@ -8,6 +8,6 @@ import kotlin.js.JsString
 
 @JsPlainObject
 external interface URLPatternComponentResult {
-    var groups: ReadonlyRecord<JsString, JsString?>?
-    var input: String?
+    var groups: ReadonlyRecord<JsString, JsString?>
+    var input: String
 }

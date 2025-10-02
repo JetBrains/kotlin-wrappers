@@ -4,7 +4,7 @@ package web.cssom
 
 open external class CSSStyleProperties
 private constructor() :
-    CSSStyleDeclaration {
+    CSSStyleDeclarationBase {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/accent-color)
      */

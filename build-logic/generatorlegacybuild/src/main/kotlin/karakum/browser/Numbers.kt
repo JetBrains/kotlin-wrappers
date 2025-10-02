@@ -27,7 +27,7 @@ internal val LENGTH_REQUIRED = setOf(
     "CSSKeyframesRule",
     "CSSNumericArray",
     "CSSRuleList",
-    "CSSStyleDeclaration",
+    "CSSStyleDeclarationBase",
     "CSSTransformValue",
     "CSSUnparsedValue",
 
