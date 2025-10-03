@@ -3,10 +3,6 @@ package karakum.cesium
 import karakum.common.replaceSuffix
 import karakum.common.withSuspendAdapter
 
-private val CLASHING_ASYNC_METHODS = setOf(
-    "fromType",
-)
-
 internal class Method(
     override val source: Definition,
 ) : Member() {
@@ -66,9 +62,8 @@ internal class Method(
                     .toList()
             }
 
-            in CLASHING_ASYNC_METHODS -> {
-                val originalMethodName = CLASHING_ASYNC_METHODS.find { it in name }
-                    ?: name
+            "fromType" if (sourceDeclaration == "fun fromType(\n type: String,\n uniforms: JsAny? = definedExternally\n): Material") -> {
+                val originalMethodName = "fromType"
 
                 listOf(
                     sourceDeclaration.replace(
