@@ -38,6 +38,7 @@ internal fun mapLikeParameters(
         .removeSurrounding("[", "]")
         .replace("string", "String")
         .replace(", Iterable<", ", JsIterable<")
+        .replace(", CSSStyleValue[]", ", ReadonlyArray<CSSStyleValue>")
         .split(", ")
 
     return MapLikeParameters(

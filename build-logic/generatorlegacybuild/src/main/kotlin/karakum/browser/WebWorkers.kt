@@ -1,7 +1,5 @@
 package karakum.browser
 
-import java.io.File
-
 private val WORKER_TYPES = setOf(
     "DedicatedWorkerGlobalScope",
     "SharedWorkerGlobalScope",
@@ -54,16 +52,16 @@ private val PKG_MAP = mapOf(
 )
 
 internal fun webWorkersDeclarations(
-    definitionsFile: File,
+    source: String,
 ): Sequence<ConversionResult> {
-    val content = webWorkerContent(definitionsFile)
+    val content = webWorkerContent(source)
     return workersDeclarations(content, typeFilter = { it in WEB_WORKER_TYPES })
 }
 
 internal fun serviceWorkersDeclarations(
-    definitionsFile: File,
+    source: String,
 ): Sequence<ConversionResult> {
-    val content = serviceWorkerContent(definitionsFile)
+    val content = serviceWorkerContent(source)
     val interfaces = workersDeclarations(content, typeFilter = { it !in WEB_WORKER_TYPES })
 
     val types = convertTypes(
@@ -109,18 +107,16 @@ private fun workersDeclarations(
         }
 
 internal fun webWorkerContent(
-    definitionsFile: File,
+    content: String,
 ): String =
-    definitionsFile
-        .readText()
+    content
         .replace(", MessageEventTarget<DedicatedWorkerGlobalScope>", ", MessageEventTarget")
         .addStrictPostMessageSupport()
 
 internal fun serviceWorkerContent(
-    definitionsFile: File,
+    content: String,
 ): String =
-    definitionsFile
-        .readText()
+    content
         .replace(", WindowOrWorkerGlobalScope", "")
         .replace(
             """ReadonlyArray<T["type"] extends "window" ? WindowClient : Client>""",

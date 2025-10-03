@@ -1,7 +1,6 @@
 package karakum.browser
 
 import karakum.common.loadContent
-import java.io.File
 import java.net.URI
 
 private val WEB_GPU_URI =
@@ -10,19 +9,13 @@ private val WEB_GPU_URI =
 private val WEB_GPU_ITERABLE_URI =
     URI("https://raw.githubusercontent.com/microsoft/TypeScript-DOM-lib-generator/2d91b29eb0ebddd40f310c5fa0fc56696bb0b034/baselines/dom.iterable.generated.d.ts")
 
-private val WEB_GPU_CONTENT by lazy {
+internal val WEB_GPU_CONTENT by lazy {
     getWebGPUContent(loadContent(WEB_GPU_URI))
 }
 
-private val WEB_GPU_ITERABLE_CONTENT by lazy {
+internal val WEB_GPU_ITERABLE_CONTENT by lazy {
     getWebGPUContent(loadContent(WEB_GPU_ITERABLE_URI))
 }
-
-internal fun File.withWebGPU_patch(): String =
-    readText() + "\n\n" + WEB_GPU_CONTENT
-
-internal fun File.withWebGPU_iterablePatch(): String =
-    readText() + "\n\n" + WEB_GPU_ITERABLE_CONTENT
 
 private fun getWebGPUContent(
     content: String,

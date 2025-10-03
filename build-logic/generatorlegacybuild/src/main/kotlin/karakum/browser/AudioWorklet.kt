@@ -1,7 +1,5 @@
 package karakum.browser
 
-import java.io.File
-
 private val WEB_AUDIO_TYPES = listOf(
     "AudioWorkletGlobalScope",
     "AudioWorkletProcessor",
@@ -15,9 +13,9 @@ private val WORKLETS_TYPES = listOf(
 )
 
 internal fun audioWorkletDeclarations(
-    definitionsFile: File,
+    source: String,
 ): Sequence<ConversionResult> {
-    val content = definitionsFile.readText()
+    val content = source
         .mergeAudioWorkletProcessorTypes()
         .patchInterface("AudioWorkletGlobalScope") {
             it.replace(

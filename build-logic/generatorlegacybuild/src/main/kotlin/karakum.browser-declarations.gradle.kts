@@ -21,11 +21,8 @@ tasks.named("generateDeclarations") {
             eventsSourceFile = eventsSourceFile,
             definitionsDir = definitionsDir,
             webDefinitionsFile = webDefinitionsDir.resolve("index.d.ts"),
-            webIterableDefinitionsFile = webDefinitionsDir.resolve("iterable.d.ts"),
             webworkerDefinitionsFile = webworkerDefinitionsDir.resolve("index.d.ts"),
-            webworkerIterableDefinitionsFile = webworkerDefinitionsDir.resolve("iterable.d.ts"),
             serviceworkerDefinitionsFile = serviceworkerDefinitionsDir.resolve("index.d.ts"),
-            serviceworkerIterableDefinitionsFile = serviceworkerDefinitionsDir.resolve("iterable.d.ts"),
             audioWorkletDefinitionsFile = audioWorkletDefinitionsDir.resolve("index.d.ts"),
             sourceDir = sourceDir.asFile,
         )

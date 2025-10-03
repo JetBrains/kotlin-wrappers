@@ -317,30 +317,39 @@ private val DEFAULT_IMPORTS = Imports(
     "web.xml.XMLDocument",
 )
 
+private fun File.parts(): Pair<String, String> {
+    val parts = readText()
+        .split("\n/////////////////////////////\n")
+    return parts[2] to parts[4]
+}
+
 fun generateKotlinDeclarations(
     idlDir: File,
     eventsSourceFile: File,
     definitionsDir: File,
     webDefinitionsFile: File,
-    webIterableDefinitionsFile: File,
     webworkerDefinitionsFile: File,
-    webworkerIterableDefinitionsFile: File,
     serviceworkerDefinitionsFile: File,
-    serviceworkerIterableDefinitionsFile: File,
     audioWorkletDefinitionsFile: File,
     sourceDir: File,
 ) {
     IDLRegistry.rootDirectory = idlDir
     EventDataRegistry.sourceFile = eventsSourceFile
 
+    val webDefinitionsParts = webDefinitionsFile.parts()
+    val webworkerDefinitionsParts = webworkerDefinitionsFile.parts()
+    val serviceworkerDefinitionsParts = serviceworkerDefinitionsFile.parts()
+    val audioWorkletDefinitionsParts = audioWorkletDefinitionsFile.parts()
+
     IterableRegistry.fill(
         definitionsDir,
-        webIterableDefinitionsFile.withWebGPU_iterablePatch(),
-        webworkerIterableDefinitionsFile.readText(),
-        serviceworkerIterableDefinitionsFile.readText(),
+        webDefinitionsParts.second,
+        WEB_GPU_ITERABLE_CONTENT,
+        webworkerDefinitionsParts.second,
+        serviceworkerDefinitionsParts.second,
     )
 
-    val webDefinitionsContent = webDefinitionsFile.withWebGPU_patch()
+    val webDefinitionsContent = webDefinitionsParts.first + WEB_GPU_CONTENT
 
     MarkerRegistry.fill(webDefinitionsContent)
     RenderingContextRegistry.fill(webDefinitionsContent)
@@ -351,8 +360,8 @@ fun generateKotlinDeclarations(
         .resolve("web/gl")
         .also { it.mkdirs() }
 
-    val webWorkerContent = webWorkerContent(webworkerDefinitionsFile)
-    val serviceWorkerContent = serviceWorkerContent(serviceworkerDefinitionsFile)
+    val webWorkerContent = webWorkerContent(webworkerDefinitionsParts.first)
+    val serviceWorkerContent = serviceWorkerContent(serviceworkerDefinitionsParts.first)
     val (mainEventDeclarations, knownEventTypes) = eventDeclarations(content, webWorkerContent, serviceWorkerContent)
     val eventDeclarations = mainEventDeclarations +
             webWorkersEventDeclarations(webWorkerContent) +
@@ -406,10 +415,10 @@ fun generateKotlinDeclarations(
         .plus(intlDeclarations(definitionsDir))
         .plus(atomicsDeclarations(definitionsDir))
         .plus(webAssemblyDeclarations(content))
-        .plus(webWorkersDeclarations(webworkerDefinitionsFile))
-        .plus(serviceWorkersDeclarations(serviceworkerDefinitionsFile))
+        .plus(webWorkersDeclarations(webworkerDefinitionsParts.first))
+        .plus(serviceWorkersDeclarations(serviceworkerDefinitionsParts.first))
         .plus(workerFunctions(serviceWorkerContent))
-        .plus(audioWorkletDeclarations(audioWorkletDefinitionsFile))
+        .plus(audioWorkletDeclarations(audioWorkletDefinitionsParts.first))
         .withEventInstances(knownEventTypes)
 
     for ((name, body, pkg) in aliases) {
