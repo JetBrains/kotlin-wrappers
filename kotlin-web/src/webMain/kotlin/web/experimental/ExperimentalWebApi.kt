@@ -7,6 +7,7 @@ import kotlin.annotation.AnnotationTarget.*
 @Retention(AnnotationRetention.BINARY)
 @Target(
     CLASS,
+    TYPEALIAS,
     PROPERTY,
     FIELD,
     FUNCTION,
