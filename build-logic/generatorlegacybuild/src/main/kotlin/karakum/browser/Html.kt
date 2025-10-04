@@ -1251,6 +1251,15 @@ internal fun convertInterface(
             val usb: USB
             """.trimIndent()
 
+            "Screen",
+                -> result + "\n" + """
+            /**
+             * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Screen/isExtended)
+             */
+            @ExperimentalWebApi
+            val isExtended: Boolean
+            """.trimIndent()
+
             else -> {
                 when {
                     abortable
