@@ -12,5 +12,5 @@ actual open external class JsError :
     actual open val message: String?
 }
 
-actual inline fun JsError.toThrowable(): Throwable =
+actual fun JsError.toThrowable(): Throwable =
     createThrowable(this)

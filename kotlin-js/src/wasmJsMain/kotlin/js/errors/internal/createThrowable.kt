@@ -7,7 +7,6 @@ package js.errors.internal
 
 import kotlin.js.JsError as InternalJsError
 
-@PublishedApi
 internal fun createThrowable(
     thrownValue: JsAny?,
 ): Throwable {
