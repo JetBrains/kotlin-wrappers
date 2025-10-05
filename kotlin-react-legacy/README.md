@@ -15,16 +15,6 @@ See [CHANGELOG.md](../CHANGELOG.md#pre282) for more details.
 > [!WARNING]
 > `kotlin-react-legacy` is deprecated
 
-### Gradle
-
-```kotlin
-repositories {
-    mavenCentral()
-}
-
-implementation("org.jetbrains.kotlin-wrappers:kotlin-react-legacy:VERSION")
-```
-
 ### Getting started
 
 #### Defining an entry point

@@ -15,13 +15,3 @@ directly. They are therefore more complete and up-to-date.
 `kotlin-react-dom-legacy` depends on `kolinx.html` and its HTML typings are maintained manually.
 
 See [CHANGELOG.md](../CHANGELOG.md#pre282) for more details.
-
-### Gradle
-
-```kotlin
-repositories {
-    mavenCentral()
-}
-
-implementation("org.jetbrains.kotlin-wrappers:kotlin-react-dom-legacy:VERSION")
-```

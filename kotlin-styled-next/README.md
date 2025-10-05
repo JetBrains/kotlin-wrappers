@@ -15,16 +15,6 @@ To sum it up, if you're using `kotlin-styled`, we recommend switching to `kotlin
 
 However, please do note that `kotlin-styled-next` is only compatible with `kotlin-react-legacy`. If you are using `kotlin-react`, use `kotlin-emotion` instead.
 
-### Gradle
-
-```kotlin
-repositories {
-    mavenCentral()
-}
-
-implementation("org.jetbrains.kotlin-wrappers:kotlin-styled-next:VERSION")
-```
-
 ### Getting Started
 
 `kotlin-styled-next` is a great fit for applications built using `kotlin-react`. It gives you not only a type-safe way

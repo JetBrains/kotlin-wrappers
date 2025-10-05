@@ -11,18 +11,6 @@ while `kotlin-react-legacy` provides the familiar `RBuilder` DSL.
 
 See [CHANGELOG.md](../CHANGELOG.md#pre282) for more details.
 
-## Setup
-
-### Gradle
-
-```kotlin
-repositories {
-    mavenCentral()
-}
-
-implementation("org.jetbrains.kotlin-wrappers:kotlin-react:VERSION")
-```
-
 ## Usage
 
 Please refer to the [Kotlin React guide](../docs/guide/react.md) for how to use the Kotlin React DSL.

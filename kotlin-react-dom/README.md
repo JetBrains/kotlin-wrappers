@@ -13,16 +13,6 @@ directly. They are therefore more complete and up-to-date.
 
 See [CHANGELOG.md](../CHANGELOG.md#pre282) for more details.
 
-### Gradle
-
-```kotlin
-repositories {
-    mavenCentral()
-}
-
-implementation("org.jetbrains.kotlin-wrappers:kotlin-react-dom:VERSION")
-```
-
 ### Internals
 
 Declarations in [src/jsMain/generated](./src/jsMain/generated) are generated.

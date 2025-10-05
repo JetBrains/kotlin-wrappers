@@ -4,16 +4,6 @@
 
 Platform-agnostic CSS primitives.
 
-### Gradle
-
-```kotlin
-repositories {
-    mavenCentral()
-}
-
-implementation("org.jetbrains.kotlin-wrappers:kotlin-css:VERSION")
-```
-
 ### Getting Started
 
 `kotlin-css` is a DSL for authoring stylesheets in Kotlin. The DSL supports most common CSS properties and values,
