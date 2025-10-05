@@ -1,6 +1,5 @@
 package example.react
 
-import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.first
 import react.FC
 import react.dom.html.ReactHTML.span
