@@ -1,9 +1,11 @@
 package example.eventflow
 
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.flow.filter
+import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
-import kotlinx.coroutines.launch
+import kotlinx.coroutines.plus
 import web.dom.clickEvent
 import web.dom.document
 import web.events.invoke
@@ -26,21 +28,21 @@ suspend fun main(): Unit = coroutineScope {
     val parent = document.createElement(div)
     document.body.append(parent)
 
+    parent.clickEvent()
+        // or `subscribe` as shorthand
+        .onEach { println("Click is propagated to parent!") }
+        .launchIn(this + Dispatchers.Unconfined)
+
     val child = document.createElement(button)
     child.innerText = "Click me!"
     parent.append(child)
 
-    launch {
-        parent.clickEvent()
-            .collect { println("Click is propagated to parent!") }
-    }
-
-    launch {
-        child.clickEvent()
-            .onEach { println("Button is clicked!") }
-            .filter { propagationToggle.checked }
-            .collect { it.stopPropagation() }
-    }
+    child.clickEvent()
+        .onEach { println("Button is clicked!") }
+        .filter { propagationToggle.checked }
+        // or `subscribe` as shorthand
+        .onEach { it.stopPropagation() }
+        .launchIn(this + Dispatchers.Unconfined)
 
     eventFlowTest()
 }
