@@ -1,6 +1,6 @@
 package js.errors
 
-import js.errors.internal.createJsException
+import js.errors.internal.createThrowable
 
 @JsName("Error")
 actual open external class JsError :
@@ -13,4 +13,4 @@ actual open external class JsError :
 }
 
 actual inline fun JsError.toThrowable(): Throwable =
-    createJsException(this)
+    createThrowable(this)

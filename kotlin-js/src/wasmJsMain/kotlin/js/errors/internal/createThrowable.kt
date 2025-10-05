@@ -6,7 +6,7 @@
 package js.errors.internal
 
 @PublishedApi
-internal fun createJsException(
+internal fun createThrowable(
     thrownValue: JsAny?,
 ): Throwable =
     JsException(thrownValue)
