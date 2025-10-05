@@ -5,8 +5,16 @@
 
 package js.errors.internal
 
+import kotlin.js.JsError as InternalJsError
+
 @PublishedApi
 internal fun createThrowable(
     thrownValue: JsAny?,
-): Throwable =
-    JsException(thrownValue)
+): Throwable {
+    val linkedException = if (thrownValue is InternalJsError) {
+        thrownValue.kotlinException?.get()
+    } else null
+
+    return linkedException
+        ?: JsException(thrownValue)
+}
