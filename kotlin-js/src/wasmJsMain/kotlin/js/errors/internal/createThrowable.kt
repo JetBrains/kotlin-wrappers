@@ -1,5 +1,4 @@
 @file:Suppress(
-    "INVISIBLE_MEMBER",
     "INVISIBLE_REFERENCE",
 )
 
@@ -15,5 +14,5 @@ internal fun createThrowable(
     } else null
 
     return linkedException
-        ?: JsException(thrownValue)
+        ?: createJsException(thrownValue)
 }
