@@ -4,21 +4,7 @@
 
 2. [React lazy modules (webpack)](react-lazy-modules-webpack/README.md)
 
-# Old examples
+3. [Tic-Tac-Toe example](tic-tac-toe/src/jsMain/kotlin/example/TicTacToe.kt)
 
-1. [To-do list example](please-split-me/src/jsMain/kotlin/example/Todo.kt)
-
-2. [Tic-Tac-Toe example](please-split-me/src/jsMain/kotlin/example/TicTacToe.kt)
-
-3. A port of "Thinking in React" [example](please-split-me/src/jsMain/kotlin/example/Product.kt)
-
-4. An [example of using axios](please-split-me/src/jsMain/kotlin/example/AxiosSearch.kt) to fetch remote data. It also
-   demonstrates how to add typings for an external library.
-
-5. An [example of using Quill](please-split-me/src/jsMain/kotlin/example/Quill.kt) that shows how to use an external
-   React
-   component.
-
-6. An [example of using react-router-dom](please-split-me/src/jsMain/kotlin/example/ReactRouterDom.kt) that shows how to
-   use
-   react-route-dom with hooks API.
+4. [React Router example](react-router/src/jsMain/kotlin/example/ReactRouterDom.kt)
+   Shows how to use `react-router` with hooks API.
