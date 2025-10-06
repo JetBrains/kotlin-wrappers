@@ -14,6 +14,8 @@ open external class SVGAElement
 private constructor() :
     SVGGraphicsElement,
     SVGURIReference {
+    var download: String
+
     /**
      * The **`rel`** property of the SVGAElement returns a string reflecting the value of the `rel` attribute of the SVG a element.
      *

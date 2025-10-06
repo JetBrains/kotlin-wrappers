@@ -2119,6 +2119,7 @@ private fun convertProperty(
                 arrayType = when (arrayType) {
                     "string" -> "String"
                     "boolean" -> "Boolean"
+                    "ValueType" -> "ValueType<*>"
                     "URLPatternInput" -> "JsAny /* URLPatternInput */"
                     else -> arrayType
                 }
@@ -2272,7 +2273,7 @@ private fun convertFunction(
         .replace(" | undefined", "?")
 
     var safeName = when (name) {
-        "continue" -> "`$name`"
+        "continue", "is" -> "`$name`"
         else -> name
     }
 

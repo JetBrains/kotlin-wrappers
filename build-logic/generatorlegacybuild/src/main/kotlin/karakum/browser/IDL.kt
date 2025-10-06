@@ -41,8 +41,6 @@ private val NUMBER_TYPE_MAP = mapOf(
 
     "long long" to "Int53",
     "unsigned long long" to "UInt53",
-
-    "AddressValue" to "Int /* AddressValue */",
 )
 
 internal object IDLRegistry {

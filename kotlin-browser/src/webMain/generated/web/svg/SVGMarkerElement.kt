@@ -79,6 +79,7 @@ private constructor() :
     val SVG_MARKER_ORIENT_UNKNOWN: OrientType
     val SVG_MARKER_ORIENT_AUTO: OrientType
     val SVG_MARKER_ORIENT_ANGLE: OrientType
+    val SVG_MARKER_ORIENT_AUTO_START_REVERSE: OrientType
 
     companion object {
         val SVG_MARKERUNITS_UNKNOWN: MarkerUnits
@@ -87,6 +88,7 @@ private constructor() :
         val SVG_MARKER_ORIENT_UNKNOWN: OrientType
         val SVG_MARKER_ORIENT_AUTO: OrientType
         val SVG_MARKER_ORIENT_ANGLE: OrientType
+        val SVG_MARKER_ORIENT_AUTO_START_REVERSE: OrientType
     }
 
     sealed interface MarkerUnits

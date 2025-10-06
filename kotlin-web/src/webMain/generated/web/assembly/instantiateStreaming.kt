@@ -19,7 +19,21 @@ import kotlin.js.definedExternally
 external fun instantiateStreamingAsync(
     source: Response,
     importObject: Imports = definedExternally,
+    options: WebAssemblyCompileOptions? = definedExternally,
 ): Promise<WebAssemblyInstantiatedSource>
+
+@Suppress("NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE")
+suspend inline fun instantiateStreaming(
+    source: Response,
+    importObject: Imports,
+    options: WebAssemblyCompileOptions?,
+): WebAssemblyInstantiatedSource {
+    return instantiateStreamingAsync(
+        source = source,
+        importObject = importObject,
+        options = options,
+    ).await()
+}
 
 @Suppress("NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE")
 suspend inline fun instantiateStreaming(
@@ -45,7 +59,21 @@ suspend inline fun instantiateStreaming(
 external fun instantiateStreamingAsync(
     source: PromiseLike<Response>,
     importObject: Imports = definedExternally,
+    options: WebAssemblyCompileOptions? = definedExternally,
 ): Promise<WebAssemblyInstantiatedSource>
+
+@Suppress("NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE")
+suspend inline fun instantiateStreaming(
+    source: PromiseLike<Response>,
+    importObject: Imports,
+    options: WebAssemblyCompileOptions?,
+): WebAssemblyInstantiatedSource {
+    return instantiateStreamingAsync(
+        source = source,
+        importObject = importObject,
+        options = options,
+    ).await()
+}
 
 @Suppress("NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE")
 suspend inline fun instantiateStreaming(

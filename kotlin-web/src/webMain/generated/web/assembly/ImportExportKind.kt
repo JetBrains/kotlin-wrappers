@@ -23,3 +23,6 @@ inline val ImportExportKind.Companion.memory: ImportExportKind
 
 inline val ImportExportKind.Companion.table: ImportExportKind
     get() = unsafeCast("table")
+
+inline val ImportExportKind.Companion.tag: ImportExportKind
+    get() = unsafeCast("tag")

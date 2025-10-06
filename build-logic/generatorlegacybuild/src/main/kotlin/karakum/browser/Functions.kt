@@ -197,6 +197,7 @@ private fun convertFunctionResult(
         .replace("options?: ImageBitmapOptions", "options: ImageBitmapOptions? = definedExternally")
         .replace("options?: StructuredSerializeOptions", "options: StructuredSerializeOptions? = definedExternally")
         .replace("options?: IdleRequestOptions", "options: IdleRequestOptions? = definedExternally")
+        .replace("options?: WebAssemblyCompileOptions", "options: WebAssemblyCompileOptions? = definedExternally")
         .replace("...urls: string[]", "vararg urls: String")
         .replace("...urls: URL[]", "vararg urls: URL")
         .replace("?: string", ": String = definedExternally")

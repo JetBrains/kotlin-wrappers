@@ -177,6 +177,8 @@ private val ALIAS_MAP = mapOf(
 )
 
 private val NUMBER_TYPE_MAP = mapOf(
+    "AddressValue" to "Int /* i32 | i64 */",
+
     "COSEAlgorithmIdentifier" to "JsInt",
     "EpochTimeStamp" to "Int53",
 

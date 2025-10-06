@@ -10,6 +10,7 @@ import js.promise.await
 import web.http.Response
 import kotlin.js.JsName
 import kotlin.js.JsQualifier
+import kotlin.js.definedExternally
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/WebAssembly/Reference/JavaScript_interface/compileStreaming_static)
@@ -17,7 +18,19 @@ import kotlin.js.JsQualifier
 @JsName("compileStreaming")
 external fun compileStreamingAsync(
     source: Response,
+    options: WebAssemblyCompileOptions? = definedExternally,
 ): Promise<Module>
+
+@Suppress("NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE")
+suspend inline fun compileStreaming(
+    source: Response,
+    options: WebAssemblyCompileOptions?,
+): Module {
+    return compileStreamingAsync(
+        source = source,
+        options = options,
+    ).await()
+}
 
 @Suppress("NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE")
 suspend inline fun compileStreaming(
@@ -31,7 +44,19 @@ suspend inline fun compileStreaming(
 @JsName("compileStreaming")
 external fun compileStreamingAsync(
     source: PromiseLike<Response>,
+    options: WebAssemblyCompileOptions? = definedExternally,
 ): Promise<Module>
+
+@Suppress("NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE")
+suspend inline fun compileStreaming(
+    source: PromiseLike<Response>,
+    options: WebAssemblyCompileOptions?,
+): Module {
+    return compileStreamingAsync(
+        source = source,
+        options = options,
+    ).await()
+}
 
 @Suppress("NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE")
 suspend inline fun compileStreaming(

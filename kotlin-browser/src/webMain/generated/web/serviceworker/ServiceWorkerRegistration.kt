@@ -13,7 +13,6 @@ import web.events.EventInstance
 import web.events.EventTarget
 import web.notifications.Notification
 import web.notifications.NotificationOptions
-import web.push.PushManager
 import kotlin.js.JsBoolean
 import kotlin.js.JsName
 import kotlin.js.definedExternally
@@ -60,13 +59,6 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/updatefound_event)
      */
     var onupdatefound: EventHandler<Event, ServiceWorkerRegistration, ServiceWorkerRegistration>?
-
-    /**
-     * The **`pushManager`** read-only property of the ServiceWorkerRegistration interface returns a reference to the PushManager interface for managing push subscriptions; this includes support for subscribing, getting an active subscription, and accessing push permission status.
-     *
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/pushManager)
-     */
-    val pushManager: PushManager
 
     /**
      * The **`scope`** read-only property of the ServiceWorkerRegistration interface returns a string representing a URL that defines a service worker's registration scope; that is, the range of URLs a service worker can control.

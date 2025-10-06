@@ -14,6 +14,11 @@ open external class SVGStyleElement
 private constructor() :
     SVGElement,
     LinkStyle {
+    /**
+     * The **`SVGStyleElement.disabled`** property can be used to get and set whether the stylesheet is disabled (`true`) or not (`false`).
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGStyleElement/disabled)
+     */
     var disabled: Boolean
 
     /**

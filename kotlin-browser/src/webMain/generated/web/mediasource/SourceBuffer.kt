@@ -43,10 +43,30 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SourceBuffer/mode)
      */
     var mode: AppendMode
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SourceBuffer/abort_event)
+     */
     var onabort: EventHandler<Event, SourceBuffer, SourceBuffer>?
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SourceBuffer/error_event)
+     */
     var onerror: EventHandler<Event, SourceBuffer, SourceBuffer>?
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SourceBuffer/update_event)
+     */
     var onupdate: EventHandler<Event, SourceBuffer, SourceBuffer>?
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SourceBuffer/updateend_event)
+     */
     var onupdateend: EventHandler<Event, SourceBuffer, SourceBuffer>?
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SourceBuffer/updatestart_event)
+     */
     var onupdatestart: EventHandler<Event, SourceBuffer, SourceBuffer>?
 
     /**

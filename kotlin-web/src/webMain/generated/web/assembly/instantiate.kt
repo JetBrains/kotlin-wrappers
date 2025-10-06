@@ -18,7 +18,21 @@ import kotlin.js.definedExternally
 external fun instantiateAsync(
     bytes: BufferSource,
     importObject: Imports = definedExternally,
+    options: WebAssemblyCompileOptions? = definedExternally,
 ): Promise<WebAssemblyInstantiatedSource>
+
+@Suppress("NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE")
+suspend inline fun instantiate(
+    bytes: BufferSource,
+    importObject: Imports,
+    options: WebAssemblyCompileOptions?,
+): WebAssemblyInstantiatedSource {
+    return instantiateAsync(
+        bytes = bytes,
+        importObject = importObject,
+        options = options,
+    ).await()
+}
 
 @Suppress("NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE")
 suspend inline fun instantiate(

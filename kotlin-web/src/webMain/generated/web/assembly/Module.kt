@@ -8,6 +8,7 @@ import js.array.ReadonlyArray
 import js.buffer.ArrayBuffer
 import js.buffer.BufferSource
 import kotlin.js.JsQualifier
+import kotlin.js.definedExternally
 
 /**
  * A **`WebAssembly.Module`** object contains stateless WebAssembly code that has already been compiled by the browser — this can be efficiently shared with Workers, and instantiated multiple times.
@@ -16,6 +17,7 @@ import kotlin.js.JsQualifier
  */
 open external class Module(
     bytes: BufferSource,
+    options: WebAssemblyCompileOptions = definedExternally,
 ) {
     companion object {
         /**
