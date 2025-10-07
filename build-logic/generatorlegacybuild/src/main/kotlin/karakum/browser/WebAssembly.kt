@@ -68,7 +68,12 @@ internal fun webAssemblyDeclarations(
         getPkg = { "web.assembly" },
     )
 
-    return (types + interfaces + functions)
+    val constants = browserConstants(
+        content = content,
+        getPkg = { "web.assembly" },
+    )
+
+    return (types + interfaces + functions + constants)
 }
 
 private fun convertValueType(

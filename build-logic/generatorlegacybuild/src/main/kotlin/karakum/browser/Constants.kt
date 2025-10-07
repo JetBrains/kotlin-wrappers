@@ -32,27 +32,33 @@ private val PKG_MAP = mapOf(
 
 internal fun browserConstants(
     content: String,
-): Sequence<ConversionResult> =
-    content
+    getPkg: (String) -> String? = PKG_MAP::get,
+): Sequence<ConversionResult> {
+    val newContent = content
+        .replace(Regex("\n(var .+;)"), "\ndeclare $1")
+
+    return newContent
         .splitToSequence("\ndeclare var ")
         .drop(1)
         .map { it.substringBefore(";\n") }
         .mapNotNull { source ->
-            convertConstant(source)
+            convertConstant(source, getPkg)
                 ?.withComment(
-                    fullSource = content,
+                    fullSource = newContent,
                     source = "declare var $source;\n"
                 )
         }
+}
 
 private fun convertConstant(
     source: String,
+    getPkg: (String) -> String?,
 ): ConversionResult? {
     val (name, typeSource) = source
         .substringBefore(" & ")
         .split(": ")
 
-    val pkg = PKG_MAP[name]
+    val pkg = getPkg(name)
         ?: return null
 
     val type = when (typeSource) {
@@ -66,6 +72,6 @@ private fun convertConstant(
     return ConversionResult(
         name = "$name.val",
         body = "external val $name: $type",
-        pkg = pkg
+        pkg = pkg,
     )
 }
