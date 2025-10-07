@@ -3,6 +3,7 @@
 package web.popover
 
 import js.objects.JsPlainObject
+import web.dom.Element
 import web.events.EventInit
 
 /**
@@ -13,4 +14,5 @@ external interface ToggleEventInit :
     EventInit {
     var newState: ToggleState?
     var oldState: ToggleState?
+    var source: Element?
 }

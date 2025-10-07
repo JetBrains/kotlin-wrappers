@@ -18,8 +18,5 @@ inline val NavigationTimingType.Companion.back_forward: NavigationTimingType
 inline val NavigationTimingType.Companion.navigate: NavigationTimingType
     get() = unsafeCast("navigate")
 
-inline val NavigationTimingType.Companion.prerender: NavigationTimingType
-    get() = unsafeCast("prerender")
-
 inline val NavigationTimingType.Companion.reload: NavigationTimingType
     get() = unsafeCast("reload")

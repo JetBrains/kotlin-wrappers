@@ -81,7 +81,7 @@ protected constructor() :
     var src: String
 
     /**
-     * The **`text`** property of the HTMLScriptElement interface is a string that reflects the text content inside the script element.
+     * The **`text`** property of the HTMLScriptElement interface represents the inline text content of the script element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLScriptElement/text)
      */

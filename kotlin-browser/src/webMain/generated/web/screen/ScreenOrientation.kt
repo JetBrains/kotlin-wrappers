@@ -47,7 +47,7 @@ private constructor() :
     fun lockAsync(orientation: OrientationLockType): Promise<Void>
 
     /**
-     * The **`unlock()`** method of the ScreenOrientation interface unlocks the orientation of the containing document from its default orientation.
+     * The **`unlock()`** method of the ScreenOrientation interface unlocks the orientation of the containing document, effectively locking it to the default screen orientation.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ScreenOrientation/unlock)
      */

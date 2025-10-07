@@ -17,6 +17,8 @@ private constructor() {
     val currentTime: CSSNumberish?
 
     /**
+     * The **`duration`** read-only property of the Web Animations API's AnimationTimeline interface returns the maximum value for this timeline or `null`.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AnimationTimeline/duration)
      */
     val duration: CSSNumberish?

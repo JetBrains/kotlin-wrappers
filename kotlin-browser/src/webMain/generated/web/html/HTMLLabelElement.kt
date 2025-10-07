@@ -18,7 +18,7 @@ protected constructor() :
     val control: HTMLElement?
 
     /**
-     * The **`form`** read-only property of the HTMLLabelElement interface returns an HTMLFormElement object that owns the HTMLLabelElement.control associated with this label, or `null` if this label is not associated with a control owned by a form.
+     * The **`form`** read-only property of the HTMLLabelElement interface returns an HTMLFormElement object that owns the HTMLLabelElement.control associated with this label, or `null` if this label is not associated with a labelable form-associated element (button, input, output, select, textarea, or form-associated custom elements) that is owned by a form.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLLabelElement/form)
      */
