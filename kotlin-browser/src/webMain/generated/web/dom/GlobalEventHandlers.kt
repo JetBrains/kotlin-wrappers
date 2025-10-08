@@ -527,14 +527,14 @@ external interface GlobalEventHandlers :
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/scroll_event)
      */
-    var onscroll: EventHandler<Event, GlobalEventHandlers, Node>?
+    var onscroll: EventHandler<Event, GlobalEventHandlers, GlobalEventHandlers>?
         get() = definedExternally
         set(value) = definedExternally
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/scrollend_event)
      */
-    var onscrollend: EventHandler<Event, GlobalEventHandlers, Node>?
+    var onscrollend: EventHandler<Event, GlobalEventHandlers, GlobalEventHandlers>?
         get() = definedExternally
         set(value) = definedExternally
 

@@ -990,13 +990,13 @@ inline val <C : Document> C.resumeEvent: EventInstance<Event, C, C>
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/scroll_event)
  */
-inline val <C : Document> C.scrollEvent: EventInstance<Event, C, Node>
+inline val <C : Document> C.scrollEvent: EventInstance<Event, C, Window>
     get() = EventInstance(this, "scroll")
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/scrollend_event)
  */
-inline val <C : Document> C.scrollEndEvent: EventInstance<Event, C, Node>
+inline val <C : Document> C.scrollEndEvent: EventInstance<Event, C, Window>
     get() = EventInstance(this, "scrollend")
 
 /**

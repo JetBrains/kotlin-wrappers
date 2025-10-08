@@ -757,13 +757,13 @@ inline val <C : Element> C.mouseUpEvent: EventInstance<MouseEvent, C, Node>
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/scroll_event)
  */
-inline val <C : Element> C.scrollEvent: EventInstance<Event, C, Node>
+inline val <C : Element> C.scrollEvent: EventInstance<Event, C, C>
     get() = EventInstance(this, "scroll")
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/scrollend_event)
  */
-inline val <C : Element> C.scrollEndEvent: EventInstance<Event, C, Node>
+inline val <C : Element> C.scrollEndEvent: EventInstance<Event, C, C>
     get() = EventInstance(this, "scrollend")
 
 /**

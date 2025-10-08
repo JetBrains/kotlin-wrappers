@@ -910,13 +910,13 @@ inline val <C : Window> C.resizeEvent: EventInstance<Event, C, C>
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/scroll_event)
  */
-inline val <C : Window> C.scrollEvent: EventInstance<Event, C, Node>
+inline val <C : Window> C.scrollEvent: EventInstance<Event, C, Window>
     get() = EventInstance(this, "scroll")
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/scrollend_event)
  */
-inline val <C : Window> C.scrollEndEvent: EventInstance<Event, C, Node>
+inline val <C : Window> C.scrollEndEvent: EventInstance<Event, C, Window>
     get() = EventInstance(this, "scrollend")
 
 /**
