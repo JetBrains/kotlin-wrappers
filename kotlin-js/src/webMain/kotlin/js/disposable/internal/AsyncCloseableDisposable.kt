@@ -1,13 +1,7 @@
 package js.disposable.internal
 
-import js.function.unsafeInvoke
 import js.internal.InternalApi
-import js.objects.ReadonlyRecord
-import js.promise.Promise
-import js.promise.await
-import js.reflect.unsafeCast
 import js.symbol.Symbol
-import kotlin.js.JsAny
 import kotlin.js.toJsString
 
 @SubclassOptInRequired(InternalApi::class)
@@ -15,15 +9,9 @@ external interface AsyncCloseableDisposable
 
 @PublishedApi
 internal suspend fun AsyncCloseableDisposable.close() {
-    val record = unsafeCast<ReadonlyRecord<JsAny, JsAny?>>(this)
-
-    val dispose = listOfNotNull(
+    awaitFirst(
         Symbol.asyncDispose,
         "close".toJsString(),
         "cancel".toJsString(),
-    ).firstNotNullOf { record[it] }
-
-    val result = unsafeInvoke<JsAny?>(dispose)
-    result as Promise<*>
-    result.await()
+    )
 }
