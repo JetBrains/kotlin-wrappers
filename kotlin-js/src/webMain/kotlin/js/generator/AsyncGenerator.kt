@@ -18,6 +18,8 @@ private constructor() :
     override fun next(): Promise<IteratorResult<T, TReturn>>
     fun next(value: TNext = definedExternally): Promise<IteratorResult<T, TReturn>>
 
+    fun `return`(): Promise<IteratorResult<T, TReturn?>>
+
     fun `return`(value: TReturn): Promise<IteratorResult<T, TReturn>>
 
     fun `return`(value: PromiseLike<TReturn>): Promise<IteratorResult<T, TReturn>>
