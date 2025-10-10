@@ -34,6 +34,10 @@ internal fun convertDefinitions(
             Regex("""fetchPriority\?: "high" \| "low" \| "auto"( \| undefined)?;"""),
             """fetchPriority?: FetchPriority;"""
         )
+        .replace(
+            """closedby?: "any" | "closerequest" | "none" | undefined;""",
+            """closedby?: ClosedBy | undefined;"""
+        )
         .replace(" |  undefined", " | undefined")
         .replace(" | (string & {})", "")
         .replace("((formData: FormData) => void | Promise<void>) |", "")
