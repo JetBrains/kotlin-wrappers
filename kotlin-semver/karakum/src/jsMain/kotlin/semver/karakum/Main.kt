@@ -13,6 +13,7 @@ import semver.karakum.annotations.annotateJsPlainObject
 import semver.karakum.inheritanceModifiers.modifyMethodInheritance
 import semver.karakum.plugins.convertCoerceParameterType
 import semver.karakum.plugins.convertComparisonResultType
+import semver.karakum.plugins.convertConflictingOverloads
 import semver.karakum.plugins.convertIdentifierBasePackage
 import semver.karakum.plugins.convertVersionPartTypes
 
@@ -27,6 +28,7 @@ suspend fun main() {
         plugins = manyOf(
             convertCoerceParameterType,
             convertComparisonResultType,
+            convertConflictingOverloads,
             convertIdentifierBasePackage,
             convertVersionPartTypes,
         )

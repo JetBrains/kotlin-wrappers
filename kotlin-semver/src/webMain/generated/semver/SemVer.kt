@@ -117,6 +117,7 @@ external class SemVer {
     fun inc(
         release: ReleaseType,
         identifier: String = definedExternally,
+        identifierBase: IdentifierBase = definedExternally,
     ): SemVer
 
     override fun toString(): String

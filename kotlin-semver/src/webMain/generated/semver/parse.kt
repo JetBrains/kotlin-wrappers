@@ -9,45 +9,54 @@ package semver
 // import semver = require("../index");
 
 /**
- * Return the parsed version as a SemVer object, or null if it's not valid.
+ * Return the parsed version as a `SemVer` object.
+ *
+ * In case `version` is invalid, the function will
+ * - throw if `throwErrors` is `true`.
+ * - return `null` otherwise.
  */
-external fun parse(version: String?): SemVer?
+external fun parse(): SemVer?
 
 /**
- * Return the parsed version as a SemVer object, or null if it's not valid.
+ * Return the parsed version as a `SemVer` object.
+ *
+ * In case `version` is invalid, the function will
+ * - throw if `throwErrors` is `true`.
+ * - return `null` otherwise.
  */
+external fun parse(version: String? = definedExternally): SemVer?
+
+/**
+ * Return the parsed version as a `SemVer` object.
+ *
+ * In case `version` is invalid, the function will
+ * - throw if `throwErrors` is `true`.
+ * - return `null` otherwise.
+ */
+external fun parse(version: SemVer? = definedExternally): SemVer?
+
 external fun parse(
     version: String?,
-    optionsOrLoose: Boolean = definedExternally,
+    optionsOrLoose: Boolean,
+    throwErrors: Boolean = definedExternally,
 ): SemVer?
 
-/**
- * Return the parsed version as a SemVer object, or null if it's not valid.
- */
 external fun parse(
     version: String?,
-    optionsOrLoose: Options = definedExternally,
+    optionsOrLoose: Options,
+    throwErrors: Boolean = definedExternally,
 ): SemVer?
 
-/**
- * Return the parsed version as a SemVer object, or null if it's not valid.
- */
-external fun parse(version: SemVer?): SemVer?
-
-/**
- * Return the parsed version as a SemVer object, or null if it's not valid.
- */
 external fun parse(
     version: SemVer?,
-    optionsOrLoose: Boolean = definedExternally,
+    optionsOrLoose: Boolean,
+    throwErrors: Boolean = definedExternally,
 ): SemVer?
 
-/**
- * Return the parsed version as a SemVer object, or null if it's not valid.
- */
 external fun parse(
     version: SemVer?,
-    optionsOrLoose: Options = definedExternally,
+    optionsOrLoose: Options,
+    throwErrors: Boolean = definedExternally,
 ): SemVer?
 
 // export = parse;

@@ -24,5 +24,8 @@ sealed external interface ReleaseType {
 
         @seskar.js.JsValue("prerelease")
         val prerelease: ReleaseType
+
+        @seskar.js.JsValue("release")
+        val release: ReleaseType
     }
 }

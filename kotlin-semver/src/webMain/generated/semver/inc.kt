@@ -11,6 +11,9 @@ package semver
 /** Base number to be used for the prerelease identifier */
 sealed external interface IdentifierBase {
     companion object {
+        @seskar.js.JsRawValue("false")
+        val `false`: IdentifierBase
+
         @seskar.js.JsValue("0")
         val `0`: IdentifierBase
 
@@ -35,6 +38,7 @@ external fun inc(
     release: ReleaseType,
     optionsOrLoose: Boolean = definedExternally,
     identifier: String = definedExternally,
+    identifierBase: IdentifierBase = definedExternally,
 ): String?
 
 /**
@@ -45,6 +49,7 @@ external fun inc(
     release: ReleaseType,
     optionsOrLoose: Options = definedExternally,
     identifier: String = definedExternally,
+    identifierBase: IdentifierBase = definedExternally,
 ): String?
 
 /**
@@ -63,6 +68,7 @@ external fun inc(
     release: ReleaseType,
     optionsOrLoose: Boolean = definedExternally,
     identifier: String = definedExternally,
+    identifierBase: IdentifierBase = definedExternally,
 ): String?
 
 /**
@@ -73,34 +79,21 @@ external fun inc(
     release: ReleaseType,
     optionsOrLoose: Options = definedExternally,
     identifier: String = definedExternally,
-): String?
-
-external fun inc(
-    version: String,
-    release: ReleaseType,
-    identifier: String = definedExternally,
     identifierBase: IdentifierBase = definedExternally,
 ): String?
 
 external fun inc(
     version: String,
     release: ReleaseType,
-    identifier: String = definedExternally,
-    identifierBase: Boolean /* false */ = definedExternally,
-): String?
-
-external fun inc(
-    version: SemVer,
-    release: ReleaseType,
-    identifier: String = definedExternally,
+    identifier: String,
     identifierBase: IdentifierBase = definedExternally,
 ): String?
 
 external fun inc(
     version: SemVer,
     release: ReleaseType,
-    identifier: String = definedExternally,
-    identifierBase: Boolean /* false */ = definedExternally,
+    identifier: String,
+    identifierBase: IdentifierBase = definedExternally,
 ): String?
 
 // export = inc;
