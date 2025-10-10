@@ -25,14 +25,14 @@ fun <T : JsAny?> AsyncIterable<T>.asFlow(): Flow<T> =
     flow {
         val iterator = this@asFlow[Symbol.asyncIterator]()
 
-        val closable = SuspendCloseable {
+        val closeable = SuspendCloseable {
             iterator.awaitFirst(
                 "return".toJsString(),
                 Symbol.asyncDispose,
             )
         }
 
-        closable.use {
+        closeable.use {
             do {
                 val result = iterator.next().await()
                 val done = if (isYield(result)) {

@@ -13,11 +13,11 @@ internal inline fun <T : Disposable, R> usingSync(
         callsInPlace(block, InvocationKind.EXACTLY_ONCE)
     }
 
-    val closable = AutoCloseable {
+    val closeable = AutoCloseable {
         disposable[Symbol.dispose]()
     }
 
-    return closable.use { block(disposable) }
+    return closeable.use { block(disposable) }
 }
 
 inline fun <R> usingSync(
