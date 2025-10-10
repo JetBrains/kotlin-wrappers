@@ -637,6 +637,9 @@ external class Session : NodeEventEmitter {
      * get complete permission handling. Most web APIs do a permission check and then
      * make a permission request if the check is denied. To clear the handler, call
      * `setPermissionCheckHandler(null)`.
+     *
+     * > [!NOTE] `isMainFrame` will always be `false` for a `fileSystem` request as a
+     * result of Chromium limitations.
      */
     fun setPermissionCheckHandler(
         handler: (

@@ -57,5 +57,8 @@ sealed external interface SessionSetPermissionCheckHandlerHandlerPermission {
 
         @seskar.js.JsValue("deprecated-sync-clipboard-read")
         val deprecatedSyncClipboardRead: SessionSetPermissionCheckHandlerHandlerPermission
+
+        @seskar.js.JsValue("fileSystem")
+        val fileSystem: SessionSetPermissionCheckHandlerHandlerPermission
     }
 }

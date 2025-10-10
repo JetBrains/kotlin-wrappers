@@ -15,7 +15,7 @@ external interface PermissionCheckHandlerHandlerDetails {
     var securityOrigin: String?
 
     /**
-     * The type of media access being requested, can be `video`, `audio` or `unknown`
+     * The type of media access being requested, can be `video`, `audio` or `unknown`.
      */
     var mediaType: (PermissionCheckHandlerHandlerDetailsMediaType)?
 
@@ -26,7 +26,22 @@ external interface PermissionCheckHandlerHandlerDetails {
     var requestingUrl: String?
 
     /**
-     * Whether the frame making the request is the main frame
+     * Whether the frame making the request is the main frame.
      */
     var isMainFrame: Boolean
+
+    /**
+     * The path of a `fileSystem` request.
+     */
+    var filePath: String?
+
+    /**
+     * Whether a `fileSystem` request is a directory.
+     */
+    var isDirectory: Boolean?
+
+    /**
+     * The access type of a `fileSystem` request. Can be `writable` or `readable`.
+     */
+    var fileAccessType: (PermissionCheckHandlerHandlerDetailsFileAccessType)?
 }
