@@ -26,5 +26,7 @@ open external class TerminalProfile {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TerminalProfile.constructor)
      */
-    constructor(options: JsAny /* TerminalOptions | ExtensionTerminalOptions */)
+    constructor(options: TerminalOptions)
+
+    constructor(options: ExtensionTerminalOptions)
 }

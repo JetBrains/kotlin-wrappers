@@ -839,7 +839,13 @@ external object window {
     fun createTerminal(
         name: String = definedExternally,
         shellPath: String = definedExternally,
-        shellArgs: JsAny /* string[] | string */ = definedExternally,
+        shellArgs: ReadonlyArray<JsString> = definedExternally,
+    ): Terminal
+
+    fun createTerminal(
+        name: String = definedExternally,
+        shellPath: String = definedExternally,
+        shellArgs: String = definedExternally,
     ): Terminal
 
     /**

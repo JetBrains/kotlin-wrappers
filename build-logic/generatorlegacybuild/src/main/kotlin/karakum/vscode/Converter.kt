@@ -414,6 +414,10 @@ private val UNIONS = listOf(
     "Range[] | readonly DecorationOptions[]",
     "string | TreeItemLabel",
     // "CustomTextEditorProvider | CustomReadonlyEditorProvider | CustomEditorProvider",
+    "TerminalOptions | ExtensionTerminalOptions",
+    "string | string[]",
+    "string[] | string",
+    "ConfigurationTarget | boolean",
 )
 
 private fun multipleSources(

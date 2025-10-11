@@ -36,7 +36,16 @@ open external class Task {
         name: String,
         source: String,
         execution: ProcessExecution = definedExternally,
-        problemMatchers: JsAny /* string | string[] */ = definedExternally,
+        problemMatchers: String = definedExternally,
+    )
+
+    constructor(
+        taskDefinition: TaskDefinition,
+        scope: JsAny, /* WorkspaceFolder | TaskScope.Global | TaskScope.Workspace */
+        name: String,
+        source: String,
+        execution: ProcessExecution = definedExternally,
+        problemMatchers: ReadonlyArray<JsString>,
     )
 
     constructor(
@@ -45,7 +54,16 @@ open external class Task {
         name: String,
         source: String,
         execution: ShellExecution,
-        problemMatchers: JsAny /* string | string[] */ = definedExternally,
+        problemMatchers: String = definedExternally,
+    )
+
+    constructor(
+        taskDefinition: TaskDefinition,
+        scope: JsAny, /* WorkspaceFolder | TaskScope.Global | TaskScope.Workspace */
+        name: String,
+        source: String,
+        execution: ShellExecution,
+        problemMatchers: ReadonlyArray<JsString>,
     )
 
     constructor(
@@ -54,7 +72,16 @@ open external class Task {
         name: String,
         source: String,
         execution: CustomExecution,
-        problemMatchers: JsAny /* string | string[] */ = definedExternally,
+        problemMatchers: String = definedExternally,
+    )
+
+    constructor(
+        taskDefinition: TaskDefinition,
+        scope: JsAny, /* WorkspaceFolder | TaskScope.Global | TaskScope.Workspace */
+        name: String,
+        source: String,
+        execution: CustomExecution,
+        problemMatchers: ReadonlyArray<JsString>,
     )
 
     /**
