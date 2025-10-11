@@ -83,7 +83,7 @@ fun <E : Event, C : EventTarget, T : EventTarget> C.addEventListener(
 fun <E : Event, C : EventTarget, T : EventTarget> C.removeEventListener(
     type: EventType<E>,
     handler: EventHandler<E, C, T>,
-    options: AddEventListenerOptions? = undefined,
+    options: EventListenerOptions? = undefined,
 ) {
     removeEventListener(
         type = type,
@@ -149,7 +149,7 @@ fun <E : Event, C : EventTarget> C.addEventListener(
 fun <E : Event, C : EventTarget> C.removeEventListener(
     type: EventType<E>,
     handler: (E) -> Unit,
-    options: AddEventListenerOptions? = undefined,
+    options: EventListenerOptions? = undefined,
 ) {
     removeEventListener(
         type = type,
