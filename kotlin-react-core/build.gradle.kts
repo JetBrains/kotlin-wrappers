@@ -4,6 +4,7 @@ plugins {
 
 dependencies {
     jsMainApi(projects.kotlinBrowser)
+    jsMainApi(projects.kotlinCsstype)
     jsMainApi(libs.coroutines.core)
 
     webTestImplementation(libs.kotlin.test)
