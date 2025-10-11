@@ -23,7 +23,9 @@ external interface ChatResponseStream {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#ChatResponseStream.markdown)
      */
-    fun markdown(value: JsAny /* string | MarkdownString */)
+    fun markdown(value: String)
+
+    fun markdown(value: MarkdownString)
 
     /**
      * Push an anchor part to this stream. Short-hand for

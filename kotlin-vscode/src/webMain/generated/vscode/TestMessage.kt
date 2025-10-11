@@ -101,7 +101,13 @@ open external class TestMessage {
          * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TestMessage.diff)
          */
         fun diff(
-            message: JsAny, /* string | MarkdownString */
+            message: String,
+            expected: String,
+            actual: String,
+        ): TestMessage
+
+        fun diff(
+            message: MarkdownString,
             expected: String,
             actual: String,
         ): TestMessage

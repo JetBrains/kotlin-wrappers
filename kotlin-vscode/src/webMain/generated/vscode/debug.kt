@@ -165,8 +165,29 @@ external object debug {
     @JsName("startDebugging")
     fun startDebuggingAsync(
         folder: WorkspaceFolder?,
-        nameOrConfiguration: JsAny, /* string | DebugConfiguration */
-        parentSessionOrOptions: JsAny /* DebugSession | DebugSessionOptions */ = definedExternally,
+        nameOrConfiguration: String,
+        parentSessionOrOptions: DebugSession = definedExternally,
+    ): PromiseLike<JsBoolean>
+
+    @JsName("startDebugging")
+    fun startDebuggingAsync(
+        folder: WorkspaceFolder?,
+        nameOrConfiguration: String,
+        parentSessionOrOptions: DebugSessionOptions,
+    ): PromiseLike<JsBoolean>
+
+    @JsName("startDebugging")
+    fun startDebuggingAsync(
+        folder: WorkspaceFolder?,
+        nameOrConfiguration: DebugConfiguration,
+        parentSessionOrOptions: DebugSession = definedExternally,
+    ): PromiseLike<JsBoolean>
+
+    @JsName("startDebugging")
+    fun startDebuggingAsync(
+        folder: WorkspaceFolder?,
+        nameOrConfiguration: DebugConfiguration,
+        parentSessionOrOptions: DebugSessionOptions,
     ): PromiseLike<JsBoolean>
 
     /**

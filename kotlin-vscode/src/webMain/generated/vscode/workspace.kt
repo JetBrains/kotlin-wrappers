@@ -9,7 +9,6 @@ import js.core.Void
 import js.promise.PromiseLike
 import js.typedarrays.Uint8Array
 import vscode.workspace.notebookDocuments
-import kotlin.js.JsAny
 import kotlin.js.JsBoolean
 import kotlin.js.JsModule
 import kotlin.js.JsName
@@ -142,7 +141,12 @@ external object workspace {
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#workspace.asRelativePath)
      */
     fun asRelativePath(
-        pathOrUri: JsAny, /* string | Uri */
+        pathOrUri: String,
+        includeWorkspaceFolder: Boolean = definedExternally,
+    ): String
+
+    fun asRelativePath(
+        pathOrUri: Uri,
         includeWorkspaceFolder: Boolean = definedExternally,
     ): String
 

@@ -45,7 +45,9 @@ open external class FileSystemError :
          *
          * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#FileSystemError.FileNotFound)
          */
-        fun FileNotFound(messageOrUri: JsAny /* string | Uri */ = definedExternally): FileSystemError
+        fun FileNotFound(messageOrUri: String = definedExternally): FileSystemError
+
+        fun FileNotFound(messageOrUri: Uri): FileSystemError
 
         /**
          * Create an error to signal that a file or folder already exists, e.g. when
@@ -54,7 +56,9 @@ open external class FileSystemError :
          *
          * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#FileSystemError.FileExists)
          */
-        fun FileExists(messageOrUri: JsAny /* string | Uri */ = definedExternally): FileSystemError
+        fun FileExists(messageOrUri: String = definedExternally): FileSystemError
+
+        fun FileExists(messageOrUri: Uri): FileSystemError
 
         /**
          * Create an error to signal that a file is not a folder.
@@ -62,7 +66,9 @@ open external class FileSystemError :
          *
          * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#FileSystemError.FileNotADirectory)
          */
-        fun FileNotADirectory(messageOrUri: JsAny /* string | Uri */ = definedExternally): FileSystemError
+        fun FileNotADirectory(messageOrUri: String = definedExternally): FileSystemError
+
+        fun FileNotADirectory(messageOrUri: Uri): FileSystemError
 
         /**
          * Create an error to signal that a file is a folder.
@@ -70,7 +76,9 @@ open external class FileSystemError :
          *
          * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#FileSystemError.FileIsADirectory)
          */
-        fun FileIsADirectory(messageOrUri: JsAny /* string | Uri */ = definedExternally): FileSystemError
+        fun FileIsADirectory(messageOrUri: String = definedExternally): FileSystemError
+
+        fun FileIsADirectory(messageOrUri: Uri): FileSystemError
 
         /**
          * Create an error to signal that an operation lacks required permissions.
@@ -78,7 +86,9 @@ open external class FileSystemError :
          *
          * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#FileSystemError.NoPermissions)
          */
-        fun NoPermissions(messageOrUri: JsAny /* string | Uri */ = definedExternally): FileSystemError
+        fun NoPermissions(messageOrUri: String = definedExternally): FileSystemError
+
+        fun NoPermissions(messageOrUri: Uri): FileSystemError
 
         /**
          * Create an error to signal that the file system is unavailable or too busy to
@@ -87,6 +97,8 @@ open external class FileSystemError :
          *
          * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#FileSystemError.Unavailable)
          */
-        fun Unavailable(messageOrUri: JsAny /* string | Uri */ = definedExternally): FileSystemError
+        fun Unavailable(messageOrUri: String = definedExternally): FileSystemError
+
+        fun Unavailable(messageOrUri: Uri): FileSystemError
     }
 }

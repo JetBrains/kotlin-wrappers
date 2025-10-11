@@ -443,11 +443,30 @@ private fun convertFunction(
 
     val union = listOf(
         "ReadonlyArray<string> | AuthenticationWwwAuthenticateRequest",
+        // "Position | Range | readonly Position[] | readonly Range[]",
+        // "Position | Range",
+        "string | MarkdownString",
+        "string | DebugConfiguration",
+        "DebugSession | DebugSessionOptions",
+        "ProcessExecution | ShellExecution | CustomExecution",
+        "string | Uri",
     ).firstOrNull { it in source }
 
     if (union != null) {
-        return union.splitToSequence(" | ")
-            .joinToString("\n\n") { convertFunction(source.replace(union, it), asyncSupport) }
+        val unionParts = union.split(" | ")
+
+        val optionalUnion = "?: $union"
+        val newSources = if (optionalUnion in source) {
+            unionParts.mapIndexed { index, unionPart ->
+                source.replace(optionalUnion, if (index == 0) "?: $unionPart" else ": $unionPart")
+            }
+        } else {
+            unionParts.map { source.replace(union, it) }
+        }
+
+        return newSources.joinToString("\n\n") {
+            convertFunction(it, asyncSupport)
+        }
     }
 
     when (source) {
