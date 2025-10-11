@@ -3,10 +3,10 @@ package web.abort.internal
 import js.errors.toJsError
 import web.abort.AbortController
 import web.abort.AbortSignal
-import web.events.ABORT
+import web.abort.abortEvent
 import web.events.Event
 import web.events.EventHandler
-import web.events.addEventHandler
+import web.events.addHandler
 
 internal fun safeAny(
     signal1: AbortSignal?,
@@ -29,8 +29,8 @@ internal fun safeAny(
         controller.abort(event.currentTarget.reason?.toJsError())
     }
 
-    sequenceOf(signal1, signal2)
-        .mapTo(handlers) { it.addEventHandler(Event.ABORT, abortHandler) }
+    handlers += signal1.abortEvent.addHandler(abortHandler)
+    handlers += signal2.abortEvent.addHandler(abortHandler)
 
     return controller.signal
 }
