@@ -15,7 +15,7 @@ external interface LanguageModelAccessInformation {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#LanguageModelAccessInformation.onDidChange)
      */
-    var onDidChange: Event<Void>
+    val onDidChange: Event<Void>
 
     /**
      * Checks if a request can be made to a language model.

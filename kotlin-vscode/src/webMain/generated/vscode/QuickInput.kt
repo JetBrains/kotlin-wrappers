@@ -104,7 +104,7 @@ external interface QuickInput :
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#QuickInput.onDidHide)
      */
-    var onDidHide: Event<Void>
+    val onDidHide: Event<Void>
 
     /**
      * Dispose of this input UI and any associated resources. If it is still

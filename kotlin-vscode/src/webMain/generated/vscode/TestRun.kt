@@ -145,5 +145,5 @@ external interface TestRun {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TestRun.onDidDispose)
      */
-    var onDidDispose: Event<Void>
+    val onDidDispose: Event<Void>
 }

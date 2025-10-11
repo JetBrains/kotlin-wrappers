@@ -19,15 +19,19 @@ import kotlin.js.definedExternally
  */
 external object authentication {
     /**
-     * Get an authentication session matching the desired scopes. Rejects if a provider with providerId is not
-     * registered, or if the user does not consent to sharing authentication information with
-     * the extension. If there are multiple sessions with the same scopes, the user will be shown a
-     * quickpick to select which account they would like to use.
+     * Get an authentication session matching the desired scopes or satisfying the WWW-Authenticate request. Rejects if
+     * a provider with providerId is not registered, or if the user does not consent to sharing authentication information
+     * with the extension. If there are multiple sessions with the same scopes, the user will be shown a quickpick to
+     * select which account they would like to use.
      *
-     * Currently, there are only two authentication providers that are contributed from built in extensions
-     * to the editor that implement GitHub and Microsoft authentication: their providerId's are 'github' and 'microsoft'.
+     * Built-in auth providers include:
+     * * 'github' - For GitHub.com
+     * * 'microsoft' For both personal & organizational Microsoft accounts
+     * * (less common) 'github-enterprise' - for alternative GitHub hostings, GHE.com, GitHub Enterprise Server
+     * * (less common) 'microsoft-sovereign-cloud' - for alternative Microsoft clouds
+     *
      * @param providerId The id of the provider to use
-     * @param scopes A list of scopes representing the permissions requested. These are dependent on the authentication provider
+     * @param scopeListOrRequest A scope list of permissions requested or a WWW-Authenticate request. These are dependent on the authentication provider.
      * @param options The [AuthenticationGetSessionOptions] to use
      * @returns A thenable that resolves to an authentication session
      *
@@ -36,46 +40,66 @@ external object authentication {
     @JsName("getSession")
     fun getSessionAsync(
         providerId: String,
-        scopes: ReadonlyArray<JsString>,
+        scopeListOrRequest: ReadonlyArray<JsString>,
+        options: JsAny, /* AuthenticationGetSessionOptions & { /** */createIfNone: true | AuthenticationGetSessionPresentationOptions } */
+    ): PromiseLike<AuthenticationSession>
+
+    @JsName("getSession")
+    fun getSessionAsync(
+        providerId: String,
+        scopeListOrRequest: AuthenticationWwwAuthenticateRequest,
         options: JsAny, /* AuthenticationGetSessionOptions & { /** */createIfNone: true | AuthenticationGetSessionPresentationOptions } */
     ): PromiseLike<AuthenticationSession>
 
     /**
-     * Get an authentication session matching the desired scopes. Rejects if a provider with providerId is not
-     * registered, or if the user does not consent to sharing authentication information with
-     * the extension. If there are multiple sessions with the same scopes, the user will be shown a
-     * quickpick to select which account they would like to use.
+     * Get an authentication session matching the desired scopes or request. Rejects if a provider with providerId is not
+     * registered, or if the user does not consent to sharing authentication information with the extension. If there
+     * are multiple sessions with the same scopes, the user will be shown a quickpick to select which account they would like to use.
      *
-     * Currently, there are only two authentication providers that are contributed from built in extensions
-     * to the editor that implement GitHub and Microsoft authentication: their providerId's are 'github' and 'microsoft'.
+     * Built-in auth providers include:
+     * * 'github' - For GitHub.com
+     * * 'microsoft' For both personal & organizational Microsoft accounts
+     * * (less common) 'github-enterprise' - for alternative GitHub hostings, GHE.com, GitHub Enterprise Server
+     * * (less common) 'microsoft-sovereign-cloud' - for alternative Microsoft clouds
+     *
      * @param providerId The id of the provider to use
-     * @param scopes A list of scopes representing the permissions requested. These are dependent on the authentication provider
+     * @param scopeListOrRequest A scope list of permissions requested or a WWW-Authenticate request. These are dependent on the authentication provider.
      * @param options The [AuthenticationGetSessionOptions] to use
      * @returns A thenable that resolves to an authentication session
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#authentication.getSession)
      */
-    // getSession(providerId: string, scopes: readonly string[], options: AuthenticationGetSessionOptions & { /** literal-type defines return type */forceNewSession: true | AuthenticationGetSessionPresentationOptions | AuthenticationForceNewSessionOptions }): Thenable<AuthenticationSession>
+    // getSession(providerId: string, scopeListOrRequest: ReadonlyArray<string> | AuthenticationWwwAuthenticateRequest, options: AuthenticationGetSessionOptions & { /** literal-type defines return type */forceNewSession: true | AuthenticationGetSessionPresentationOptions | AuthenticationForceNewSessionOptions }): Thenable<AuthenticationSession>
 
     /**
-     * Get an authentication session matching the desired scopes. Rejects if a provider with providerId is not
-     * registered, or if the user does not consent to sharing authentication information with
-     * the extension. If there are multiple sessions with the same scopes, the user will be shown a
-     * quickpick to select which account they would like to use.
+     * Get an authentication session matching the desired scopes or request. Rejects if a provider with providerId is not
+     * registered, or if the user does not consent to sharing authentication information with the extension. If there
+     * are multiple sessions with the same scopes, the user will be shown a quickpick to select which account they would like to use.
      *
-     * Currently, there are only two authentication providers that are contributed from built in extensions
-     * to the editor that implement GitHub and Microsoft authentication: their providerId's are 'github' and 'microsoft'.
+     * Built-in auth providers include:
+     * * 'github' - For GitHub.com
+     * * 'microsoft' For both personal & organizational Microsoft accounts
+     * * (less common) 'github-enterprise' - for alternative GitHub hostings, GHE.com, GitHub Enterprise Server
+     * * (less common) 'microsoft-sovereign-cloud' - for alternative Microsoft clouds
+     *
      * @param providerId The id of the provider to use
-     * @param scopes A list of scopes representing the permissions requested. These are dependent on the authentication provider
+     * @param scopeListOrRequest A scope list of permissions requested or a WWW-Authenticate request. These are dependent on the authentication provider.
      * @param options The [AuthenticationGetSessionOptions] to use
-     * @returns A thenable that resolves to an authentication session if available, or undefined if there are no sessions
+     * @returns A thenable that resolves to an authentication session or undefined if a silent flow was used and no session was found
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#authentication.getSession)
      */
     @JsName("getSession")
     fun getSessionAsync(
         providerId: String,
-        scopes: ReadonlyArray<JsString>,
+        scopeListOrRequest: ReadonlyArray<JsString>,
+        options: AuthenticationGetSessionOptions = definedExternally,
+    ): PromiseLike<AuthenticationSession?>
+
+    @JsName("getSession")
+    fun getSessionAsync(
+        providerId: String,
+        scopeListOrRequest: AuthenticationWwwAuthenticateRequest,
         options: AuthenticationGetSessionOptions = definedExternally,
     ): PromiseLike<AuthenticationSession?>
 

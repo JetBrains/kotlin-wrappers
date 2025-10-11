@@ -2,6 +2,7 @@
 
 package vscode
 
+import js.array.ReadonlyArray
 import js.core.Void
 import js.promise.PromiseLike
 import kotlin.js.JsString
@@ -15,6 +16,13 @@ import kotlin.js.JsString
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#SecretStorage)
  */
 external interface SecretStorage {
+    /**
+     * Retrieve the keys of all the secrets stored by this extension.
+     *
+     * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#SecretStorage.keys)
+     */
+    fun keys(): PromiseLike<ReadonlyArray<JsString>>
+
     /**
      * Retrieve a secret that was stored with key. Returns undefined if there
      * is no password matching that key.
@@ -50,5 +58,5 @@ external interface SecretStorage {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#SecretStorage.onDidChange)
      */
-    var onDidChange: Event<SecretStorageChangeEvent>
+    val onDidChange: Event<SecretStorageChangeEvent>
 }

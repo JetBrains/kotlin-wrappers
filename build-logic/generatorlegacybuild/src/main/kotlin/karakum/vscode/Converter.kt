@@ -441,6 +441,15 @@ private fun convertFunction(
             asyncSupport,
         )
 
+    val union = listOf(
+        "ReadonlyArray<string> | AuthenticationWwwAuthenticateRequest",
+    ).firstOrNull { it in source }
+
+    if (union != null) {
+        return union.splitToSequence(" | ")
+            .joinToString("\n\n") { convertFunction(source.replace(union, it), asyncSupport) }
+    }
+
     when (source) {
         "createRunProfile(label: string, kind: TestRunProfileKind, runHandler: (request: TestRunRequest, token: CancellationToken) => Thenable<void> | void, isDefault?: boolean, tag?: TestTag, supportsContinuousRun?: boolean): TestRunProfile",
             ->

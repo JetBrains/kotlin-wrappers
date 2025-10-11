@@ -47,7 +47,7 @@ external interface ChatParticipant :
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#ChatParticipant.onDidReceiveFeedback)
      */
-    var onDidReceiveFeedback: Event<ChatResultFeedback>
+    val onDidReceiveFeedback: Event<ChatResultFeedback>
 
     /**
      * Dispose this participant and free resources.

@@ -55,7 +55,7 @@ external interface TestRunProfile :
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TestRunProfile.onDidChangeDefault)
      */
-    var onDidChangeDefault: Event<JsBoolean>
+    val onDidChangeDefault: Event<JsBoolean>
 
     /**
      * Whether this profile supports continuous running of requests. If so,

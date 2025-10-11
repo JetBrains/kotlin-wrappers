@@ -29,5 +29,5 @@ external interface CancellationToken {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#CancellationToken.onCancellationRequested)
      */
-    var onCancellationRequested: Event<JsAny?>
+    val onCancellationRequested: Event<JsAny?>
 }
