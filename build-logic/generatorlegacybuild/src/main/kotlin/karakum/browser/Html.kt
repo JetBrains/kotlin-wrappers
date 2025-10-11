@@ -665,6 +665,7 @@ internal fun htmlDeclarations(
         )
         .plus(
             sequenceOf(
+                "web.dom" to NODE_POSITION,
                 "web.dom" to NODE_TYPE,
                 "web.events" to EVENT_PHASE,
                 "web.html" to VIDEO_FRAME_REQUEST_ID,

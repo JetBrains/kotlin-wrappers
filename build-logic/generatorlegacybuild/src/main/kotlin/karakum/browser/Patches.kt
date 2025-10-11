@@ -350,6 +350,12 @@ internal fun String.applyPatches(): String {
             it.replace("command: string", "command: Command")
                 .replace("command?: string", "command?: Command")
         }
+        .patchInterface("Node") {
+            it.replace(
+                "compareDocumentPosition(other: Node): number;",
+                "compareDocumentPosition(other: Node): $NODE_POSITION;",
+            )
+        }
 }
 
 internal val DOM_GEOMETRY_ALIASES = listOf(

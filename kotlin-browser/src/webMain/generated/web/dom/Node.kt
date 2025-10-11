@@ -131,7 +131,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Node/compareDocumentPosition)
      */
-    fun compareDocumentPosition(other: Node): Short
+    fun compareDocumentPosition(other: Node): NodePosition
 
     /**
      * The **`contains()`** method of the Node interface returns a boolean value indicating whether a node is a descendant of a given node, that is the node itself, one of its direct children (Node.childNodes), one of the children's direct children, and so on.
@@ -270,28 +270,28 @@ private constructor() :
     /**
      * Set when node and other are not in the same tree.
      */
-    val DOCUMENT_POSITION_DISCONNECTED: NodeType
+    val DOCUMENT_POSITION_DISCONNECTED: NodePosition
 
     /**
      * Set when other is preceding node.
      */
-    val DOCUMENT_POSITION_PRECEDING: NodeType
+    val DOCUMENT_POSITION_PRECEDING: NodePosition
 
     /**
      * Set when other is following node.
      */
-    val DOCUMENT_POSITION_FOLLOWING: NodeType
+    val DOCUMENT_POSITION_FOLLOWING: NodePosition
 
     /**
      * Set when other is an ancestor of node.
      */
-    val DOCUMENT_POSITION_CONTAINS: NodeType
+    val DOCUMENT_POSITION_CONTAINS: NodePosition
 
     /**
      * Set when other is a descendant of node.
      */
-    val DOCUMENT_POSITION_CONTAINED_BY: NodeType
-    val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: NodeType
+    val DOCUMENT_POSITION_CONTAINED_BY: NodePosition
+    val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: NodePosition
 
     companion object {
         /**
@@ -341,27 +341,27 @@ private constructor() :
         /**
          * Set when node and other are not in the same tree.
          */
-        val DOCUMENT_POSITION_DISCONNECTED: NodeType
+        val DOCUMENT_POSITION_DISCONNECTED: NodePosition
 
         /**
          * Set when other is preceding node.
          */
-        val DOCUMENT_POSITION_PRECEDING: NodeType
+        val DOCUMENT_POSITION_PRECEDING: NodePosition
 
         /**
          * Set when other is following node.
          */
-        val DOCUMENT_POSITION_FOLLOWING: NodeType
+        val DOCUMENT_POSITION_FOLLOWING: NodePosition
 
         /**
          * Set when other is an ancestor of node.
          */
-        val DOCUMENT_POSITION_CONTAINS: NodeType
+        val DOCUMENT_POSITION_CONTAINS: NodePosition
 
         /**
          * Set when other is a descendant of node.
          */
-        val DOCUMENT_POSITION_CONTAINED_BY: NodeType
-        val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: NodeType
+        val DOCUMENT_POSITION_CONTAINED_BY: NodePosition
+        val DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: NodePosition
     }
 }

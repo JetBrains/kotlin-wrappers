@@ -1,6 +1,7 @@
 package karakum.browser
 
 internal const val EVENT_PHASE = "EventPhase"
+internal const val NODE_POSITION = "NodePosition"
 internal const val NODE_TYPE = "NodeType"
 internal const val DELTA_MODE = "DeltaMode"
 internal const val KEY_LOCATION = "KeyLocation"
@@ -23,6 +24,7 @@ private val CORRECTION_MAP = listOf(
     StateCorrection("XPathResult", "resultType"),
 
     StateCorrection("Event", "eventPhase", existedAliasName = EVENT_PHASE),
+    StateCorrection("Node", null, existedAliasName = NODE_POSITION, constantPrefix = "DOCUMENT_POSITION_"),
     StateCorrection("Node", "nodeType", existedAliasName = NODE_TYPE),
     StateCorrection("KeyboardEvent", "location", existedAliasName = KEY_LOCATION),
     StateCorrection("WheelEvent", "deltaMode", existedAliasName = DELTA_MODE),
@@ -131,6 +133,9 @@ private fun applyCorrection(
         }
 
         result
+    } else if (correction.existedAliasName != null && correction.constantPrefix.isNotEmpty()) {
+        val aliasName = correction.existedAliasName
+        source.replace(constantRegex(correction.constantPrefix), "$1$aliasName$2")
     } else {
         source.replace(constantRegex(), "")
     }
