@@ -57,4 +57,35 @@ sealed external interface DatabaseSyncOptions {
      * @default 0
      */
     var timeout: Double?
+
+    /**
+     * If `true`, integer fields are read as JavaScript `BigInt` values. If `false`,
+     * integer fields are read as JavaScript numbers.
+     * @since v24.4.0
+     * @default false
+     */
+    var readBigInts: Boolean?
+
+    /**
+     * If `true`, query results are returned as arrays instead of objects.
+     * @since v24.4.0
+     * @default false
+     */
+    var returnArrays: Boolean?
+
+    /**
+     * If `true`, allows binding named parameters without the prefix
+     * character (e.g., `foo` instead of `:foo`).
+     * @since v24.4.40
+     * @default true
+     */
+    var allowBareNamedParameters: Boolean?
+
+    /**
+     * If `true`, unknown named parameters are ignored when binding.
+     * If `false`, an exception is thrown for unknown named parameters.
+     * @since v24.4.40
+     * @default false
+     */
+    var allowUnknownNamedParameters: Boolean?
 }

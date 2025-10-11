@@ -103,15 +103,6 @@ import js.promise.Promise
  */
 open external class Module {
     /**
-     * The specifiers of all dependencies of this module. The returned array is frozen
-     * to disallow any changes to it.
-     *
-     * Corresponds to the `[[RequestedModules]]` field of [Cyclic Module Record](https://tc39.es/ecma262/#sec-cyclic-module-records) s in
-     * the ECMAScript specification.
-     */
-    var dependencySpecifiers: js.array.ReadonlyArray<String>
-
-    /**
      * If the `module.status` is `'errored'`, this property contains the exception
      * thrown by the module during evaluation. If the status is anything else,
      * accessing this property will result in a thrown exception.

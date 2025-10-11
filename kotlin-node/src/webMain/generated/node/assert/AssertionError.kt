@@ -8,7 +8,7 @@ package node.assert
  * Indicates the failure of an assertion. All errors thrown by the `node:assert` module will be instances of the `AssertionError` class.
  */
 external class AssertionError : js.errors.JsError {
-    constructor (options: AssertionErrorOptions = definedExternally)
+    constructor (options: AssertionErrorOptions)
 
     /**
      * Set to the `actual` argument for methods such as {@link assert.strictEqual()}.
@@ -21,11 +21,6 @@ external class AssertionError : js.errors.JsError {
     var expected: Any?
 
     /**
-     * Set to the passed in operator value.
-     */
-    var operator: String
-
-    /**
      * Indicates if the message was auto-generated (`true`) or not.
      */
     var generatedMessage: Boolean
@@ -34,4 +29,9 @@ external class AssertionError : js.errors.JsError {
      * Value is always `ERR_ASSERTION` to show that the error is an assertion error.
      */
     var code: String // "ERR_ASSERTION"
+
+    /**
+     * Set to the passed in operator value.
+     */
+    var operator: String
 }

@@ -78,6 +78,12 @@ private val overriddenProps = mapOf(
     "GeneratePrimeOptionsBigInt" to mapOf(
         "bigint" to Alias("requiredBigInt"),
     ),
+    "OneShotDigestOptionsWithBufferEncoding" to mapOf(
+        "outputEncoding" to Alias("bufferOutputEncoding"),
+    ),
+    "OneShotDigestOptionsWithStringEncoding" to mapOf(
+        "outputEncoding" to Alias("stringOutputEncoding"),
+    ),
 
     // dns
     "LookupAllOptions" to mapOf(

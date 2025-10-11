@@ -99,8 +99,75 @@ sealed external interface ServerHttp2Stream : Http2Stream {
      * ```
      * @since v8.4.0
      */
+    fun respond()
+
+    /**
+     * ```js
+     * import http2 from 'node:http2';
+     * const server = http2.createServer();
+     * server.on('stream', (stream) => {
+     *   stream.respond({ ':status': 200 });
+     *   stream.end('some data');
+     * });
+     * ```
+     *
+     * Initiates a response. When the `options.waitForTrailers` option is set, the `'wantTrailers'` event
+     * will be emitted immediately after queuing the last chunk of payload data to be sent.
+     * The `http2stream.sendTrailers()` method can then be used to send trailing header fields to the peer.
+     *
+     * When `options.waitForTrailers` is set, the `Http2Stream` will not automatically
+     * close when the final `DATA` frame is transmitted. User code must call either `http2stream.sendTrailers()` or `http2stream.close()` to close the `Http2Stream`.
+     *
+     * ```js
+     * import http2 from 'node:http2';
+     * const server = http2.createServer();
+     * server.on('stream', (stream) => {
+     *   stream.respond({ ':status': 200 }, { waitForTrailers: true });
+     *   stream.on('wantTrailers', () => {
+     *     stream.sendTrailers({ ABC: 'some value to send' });
+     *   });
+     *   stream.end('some data');
+     * });
+     * ```
+     * @since v8.4.0
+     */
     fun respond(
         headers: OutgoingHttpHeaders = definedExternally,
+        options: ServerStreamResponseOptions = definedExternally,
+    )
+
+    /**
+     * ```js
+     * import http2 from 'node:http2';
+     * const server = http2.createServer();
+     * server.on('stream', (stream) => {
+     *   stream.respond({ ':status': 200 });
+     *   stream.end('some data');
+     * });
+     * ```
+     *
+     * Initiates a response. When the `options.waitForTrailers` option is set, the `'wantTrailers'` event
+     * will be emitted immediately after queuing the last chunk of payload data to be sent.
+     * The `http2stream.sendTrailers()` method can then be used to send trailing header fields to the peer.
+     *
+     * When `options.waitForTrailers` is set, the `Http2Stream` will not automatically
+     * close when the final `DATA` frame is transmitted. User code must call either `http2stream.sendTrailers()` or `http2stream.close()` to close the `Http2Stream`.
+     *
+     * ```js
+     * import http2 from 'node:http2';
+     * const server = http2.createServer();
+     * server.on('stream', (stream) => {
+     *   stream.respond({ ':status': 200 }, { waitForTrailers: true });
+     *   stream.on('wantTrailers', () => {
+     *     stream.sendTrailers({ ABC: 'some value to send' });
+     *   });
+     *   stream.end('some data');
+     * });
+     * ```
+     * @since v8.4.0
+     */
+    fun respond(
+        headers: js.array.ReadonlyArray<String> = definedExternally,
         options: ServerStreamResponseOptions = definedExternally,
     )
 

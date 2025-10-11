@@ -38,6 +38,14 @@ external interface ServerOptions<Request : IncomingMessage, Response : ServerRes
     var keepAliveTimeout: Double?
 
     /**
+     * An additional buffer time added to the
+     * `server.keepAliveTimeout` to extend the internal socket timeout.
+     * @since 24.6.0
+     * @default 1000
+     */
+    var keepAliveTimeoutBuffer: Double?
+
+    /**
      * Sets the interval value in milliseconds to check for request and headers timeout in incomplete requests.
      * @default 30000
      */

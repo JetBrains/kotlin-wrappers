@@ -17,5 +17,12 @@ sealed external interface TestFailDetails {
      * The type of the test, used to denote whether this is a suite.
      * @since v20.0.0, v19.9.0, v18.17.0
      */
-    var type: String /* "suite" */?
+    var type: (TestFailDetailsType)?
+
+    /**
+     * The attempt number of the test run,
+     * present only when using the `--test-rerun-failures` flag.
+     * @since v24.7.0
+     */
+    var attempt: Double?
 }

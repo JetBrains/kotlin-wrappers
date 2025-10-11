@@ -5,8 +5,12 @@
 package node.crypto
 
 /**
- * Verifies the given signature for `data` using the given key and algorithm. If `algorithm` is `null` or `undefined`, then the algorithm is dependent upon the
- * key type (especially Ed25519 and Ed448).
+ * Verifies the given signature for `data` using the given key and algorithm. If
+ * `algorithm` is `null` or `undefined`, then the algorithm is dependent upon the
+ * key type.
+ *
+ * `algorithm` is required to be `null` or `undefined` for Ed25519, Ed448, and
+ * ML-DSA.
  *
  * If `key` is not a `KeyObject`, this function behaves as if `key` had been
  * passed to {@link createPublicKey}. If it is an object, the following
@@ -28,8 +32,12 @@ external fun verify(
 ): Boolean
 
 /**
- * Verifies the given signature for `data` using the given key and algorithm. If `algorithm` is `null` or `undefined`, then the algorithm is dependent upon the
- * key type (especially Ed25519 and Ed448).
+ * Verifies the given signature for `data` using the given key and algorithm. If
+ * `algorithm` is `null` or `undefined`, then the algorithm is dependent upon the
+ * key type.
+ *
+ * `algorithm` is required to be `null` or `undefined` for Ed25519, Ed448, and
+ * ML-DSA.
  *
  * If `key` is not a `KeyObject`, this function behaves as if `key` had been
  * passed to {@link createPublicKey}. If it is an object, the following
@@ -51,8 +59,12 @@ external fun verify(
 ): Boolean
 
 /**
- * Verifies the given signature for `data` using the given key and algorithm. If `algorithm` is `null` or `undefined`, then the algorithm is dependent upon the
- * key type (especially Ed25519 and Ed448).
+ * Verifies the given signature for `data` using the given key and algorithm. If
+ * `algorithm` is `null` or `undefined`, then the algorithm is dependent upon the
+ * key type.
+ *
+ * `algorithm` is required to be `null` or `undefined` for Ed25519, Ed448, and
+ * ML-DSA.
  *
  * If `key` is not a `KeyObject`, this function behaves as if `key` had been
  * passed to {@link createPublicKey}. If it is an object, the following
@@ -74,8 +86,12 @@ external fun verify(
 ): Boolean
 
 /**
- * Verifies the given signature for `data` using the given key and algorithm. If `algorithm` is `null` or `undefined`, then the algorithm is dependent upon the
- * key type (especially Ed25519 and Ed448).
+ * Verifies the given signature for `data` using the given key and algorithm. If
+ * `algorithm` is `null` or `undefined`, then the algorithm is dependent upon the
+ * key type.
+ *
+ * `algorithm` is required to be `null` or `undefined` for Ed25519, Ed448, and
+ * ML-DSA.
  *
  * If `key` is not a `KeyObject`, this function behaves as if `key` had been
  * passed to {@link createPublicKey}. If it is an object, the following

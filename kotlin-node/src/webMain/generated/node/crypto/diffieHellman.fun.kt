@@ -5,9 +5,9 @@
 package node.crypto
 
 /**
- * Computes the Diffie-Hellman secret based on a `privateKey` and a `publicKey`.
- * Both keys must have the same `asymmetricKeyType`, which must be one of `'dh'`
- * (for Diffie-Hellman), `'ec'`, `'x448'`, or `'x25519'` (for ECDH).
+ * Computes the Diffie-Hellman shared secret based on a `privateKey` and a `publicKey`.
+ * Both keys must have the same `asymmetricKeyType` and must support either the DH or
+ * ECDH operation.
  *
  * If the `callback` function is provided this function uses libuv's threadpool.
  * @since v13.9.0, v12.17.0

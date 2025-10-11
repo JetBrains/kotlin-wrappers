@@ -5,7 +5,7 @@
 package node.assert
 
 /**
- * An alias of {@link ok}.
+ * An alias of {@link assert.ok}.
  * @since v0.5.9
  * @param value The input that is checked for being truthy.
  */
@@ -13,7 +13,7 @@ package node.assert
 external fun assert(value: Any?) // asserts value
 
 /**
- * An alias of {@link ok}.
+ * An alias of {@link assert.ok}.
  * @since v0.5.9
  * @param value The input that is checked for being truthy.
  */
@@ -21,7 +21,7 @@ external fun assert(value: Any?) // asserts value
 external fun assert(value: Any?, message: String = definedExternally) // asserts value
 
 /**
- * An alias of {@link ok}.
+ * An alias of {@link assert.ok}.
  * @since v0.5.9
  * @param value The input that is checked for being truthy.
  */

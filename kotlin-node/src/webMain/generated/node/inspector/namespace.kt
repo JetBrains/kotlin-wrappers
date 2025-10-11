@@ -4,6 +4,6 @@
 
 package node.inspector
 
-// import EventEmitter = require('node:events');
+// import EventEmitter = require("node:events");
 
 // DevTools protocol event broadcast methods

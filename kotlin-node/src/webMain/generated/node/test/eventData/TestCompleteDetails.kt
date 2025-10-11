@@ -21,5 +21,5 @@ sealed external interface TestCompleteDetails {
     /**
      * The type of the test, used to denote whether this is a suite.
      */
-    var type: String /* "suite" */?
+    var type: (TestCompleteDetailsType)?
 }

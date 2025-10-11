@@ -36,14 +36,15 @@ import web.url.URL
  * the contents will be overwritten.
  * @param options Optional configuration for the backup. The
  * following properties are supported:
- * @returns A promise that resolves when the backup is completed and rejects if an error occurs.
+ * @returns A promise that fulfills with the total number of backed-up pages upon completion, or rejects if an
+ * error occurs.
  */
 @JsName("backup")
 external fun backupAsync(
     sourceDb: DatabaseSync,
     path: String,
     options: BackupOptions = definedExternally,
-): Promise<js.core.Void>
+): Promise<Double>
 
 /**
  * This method makes a database backup. This method abstracts the
@@ -74,14 +75,15 @@ external fun backupAsync(
  * the contents will be overwritten.
  * @param options Optional configuration for the backup. The
  * following properties are supported:
- * @returns A promise that resolves when the backup is completed and rejects if an error occurs.
+ * @returns A promise that fulfills with the total number of backed-up pages upon completion, or rejects if an
+ * error occurs.
  */
 @JsName("backup")
 external fun backupAsync(
     sourceDb: DatabaseSync,
     path: node.buffer.Buffer<*>,
     options: BackupOptions = definedExternally,
-): Promise<js.core.Void>
+): Promise<Double>
 
 /**
  * This method makes a database backup. This method abstracts the
@@ -112,11 +114,12 @@ external fun backupAsync(
  * the contents will be overwritten.
  * @param options Optional configuration for the backup. The
  * following properties are supported:
- * @returns A promise that resolves when the backup is completed and rejects if an error occurs.
+ * @returns A promise that fulfills with the total number of backed-up pages upon completion, or rejects if an
+ * error occurs.
  */
 @JsName("backup")
 external fun backupAsync(
     sourceDb: DatabaseSync,
     path: URL,
     options: BackupOptions = definedExternally,
-): Promise<js.core.Void>
+): Promise<Double>

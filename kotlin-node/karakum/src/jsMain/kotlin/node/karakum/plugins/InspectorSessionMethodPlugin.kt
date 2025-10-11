@@ -1,5 +1,7 @@
 package node.karakum.plugins
 
+import arrow.core.raise.impure
+import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.Context
 import io.github.sgrishchenko.karakum.extension.GeneratedFile
 import io.github.sgrishchenko.karakum.extension.Plugin
@@ -12,16 +14,7 @@ import io.github.sgrishchenko.karakum.util.constIdentifier
 import io.github.sgrishchenko.karakum.util.getParentOrNull
 import io.github.sgrishchenko.karakum.util.getSourceFileOrNull
 import js.array.ReadonlyArray
-import arrow.core.raise.impure
-import arrow.core.raise.nullable
-import typescript.ModuleDeclaration
-import typescript.Node
-import typescript.isClassDeclaration
-import typescript.isIdentifier
-import typescript.isLiteralTypeNode
-import typescript.isMethodDeclaration
-import typescript.isParameter
-import typescript.isStringLiteral
+import typescript.*
 
 private fun isSessionPostMethod(node: Node) = nullable {
     val literalType = ensureNotNull(node.getParentOrNull())
@@ -35,15 +28,15 @@ private fun isSessionPostMethod(node: Node) = nullable {
     ensure(parameterName.text == "method")
 
     val method = ensureNotNull(parameter.getParentOrNull())
-    ensure(isMethodDeclaration(method))
+    ensure(isMethodSignature(method))
 
     val methodName = ensureNotNull(method.name)
     ensure(isIdentifier(methodName))
     ensure(methodName.text == "post")
 
-    val classNode = ensureNotNull(method.getParentOrNull())
-    ensure(isClassDeclaration(classNode))
-    ensure(classNode.name?.text == "Session")
+    val interfaceNode = ensureNotNull(method.getParentOrNull())
+    ensure(isInterfaceDeclaration(interfaceNode))
+    ensure(interfaceNode.name.text == "Session")
 } != null
 
 class InspectorSessionMethodPlugin : Plugin {

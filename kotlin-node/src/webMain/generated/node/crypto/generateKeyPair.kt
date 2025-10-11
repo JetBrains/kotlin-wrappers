@@ -41,7 +41,8 @@ package node.crypto
  * If this method is invoked as its `util.promisify()` ed version, it returns
  * a `Promise` for an `Object` with `publicKey` and `privateKey` properties.
  * @since v10.12.0
- * @param type Must be `'rsa'`, `'rsa-pss'`, `'dsa'`, `'ec'`, `'ed25519'`, `'ed448'`, `'x25519'`, `'x448'`, or `'dh'`.
+ * @param type The asymmetric key type to generate. See the
+ * supported [asymmetric key types](https://nodejs.org/docs/latest-v24.x/api/crypto.html#asymmetric-key-types).
  */
 external fun generateKeyPair(
     type: KeyType.rsa,
@@ -280,5 +281,65 @@ external fun generateKeyPair(
 external fun generateKeyPair(
     type: KeyType.x448,
     options: X448KeyPairKeyObjectOptions?,
+    callback: (err: js.errors.JsError?, publicKey: KeyObject, privateKey: KeyObject) -> Unit,
+)
+
+external fun generateKeyPair(
+    type: KeyType.mlDsa,
+    options: MLDSAKeyPairPemPemOptions,
+    callback: (err: js.errors.JsError?, publicKey: String, privateKey: String) -> Unit,
+)
+
+external fun generateKeyPair(
+    type: KeyType.mlDsa,
+    options: MLDSAKeyPairPemDerOptions,
+    callback: (err: js.errors.JsError?, publicKey: String, privateKey: node.buffer.Buffer<*>) -> Unit,
+)
+
+external fun generateKeyPair(
+    type: KeyType.mlDsa,
+    options: MLDSAKeyPairDerPemOptions,
+    callback: (err: js.errors.JsError?, publicKey: node.buffer.Buffer<*>, privateKey: String) -> Unit,
+)
+
+external fun generateKeyPair(
+    type: KeyType.mlDsa,
+    options: MLDSAKeyPairDerDerOptions,
+    callback: (err: js.errors.JsError?, publicKey: node.buffer.Buffer<*>, privateKey: node.buffer.Buffer<*>) -> Unit,
+)
+
+external fun generateKeyPair(
+    type: KeyType.mlDsa,
+    options: MLDSAKeyPairKeyObjectOptions?,
+    callback: (err: js.errors.JsError?, publicKey: KeyObject, privateKey: KeyObject) -> Unit,
+)
+
+external fun generateKeyPair(
+    type: KeyType.mlKem,
+    options: MLKEMKeyPairPemPemOptions,
+    callback: (err: js.errors.JsError?, publicKey: String, privateKey: String) -> Unit,
+)
+
+external fun generateKeyPair(
+    type: KeyType.mlKem,
+    options: MLKEMKeyPairPemDerOptions,
+    callback: (err: js.errors.JsError?, publicKey: String, privateKey: node.buffer.Buffer<*>) -> Unit,
+)
+
+external fun generateKeyPair(
+    type: KeyType.mlKem,
+    options: MLKEMKeyPairDerPemOptions,
+    callback: (err: js.errors.JsError?, publicKey: node.buffer.Buffer<*>, privateKey: String) -> Unit,
+)
+
+external fun generateKeyPair(
+    type: KeyType.mlKem,
+    options: MLKEMKeyPairDerDerOptions,
+    callback: (err: js.errors.JsError?, publicKey: node.buffer.Buffer<*>, privateKey: node.buffer.Buffer<*>) -> Unit,
+)
+
+external fun generateKeyPair(
+    type: KeyType.mlKem,
+    options: MLKEMKeyPairKeyObjectOptions?,
     callback: (err: js.errors.JsError?, publicKey: KeyObject, privateKey: KeyObject) -> Unit,
 )

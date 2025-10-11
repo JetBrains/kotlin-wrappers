@@ -122,6 +122,13 @@ external class Worker : EventEmitter {
     val threadId: Double
 
     /**
+     * A string identifier for the referenced thread or null if the thread is not running.
+     * Inside the worker thread, it is available as `require('node:worker_threads').threadName`.
+     * @since v24.6.0
+     */
+    val threadName: String?
+
+    /**
      * Provides the set of JS engine resource constraints for this Worker thread.
      * If the `resourceLimits` option was passed to the `Worker` constructor,
      * this matches its values.
@@ -149,47 +156,6 @@ external class Worker : EventEmitter {
     )
 
     /**
-     * Sends a value to another worker, identified by its thread ID.
-     * @param threadId The target thread ID. If the thread ID is invalid, a `ERR_WORKER_MESSAGING_FAILED` error will be thrown.
-     * If the target thread ID is the current thread ID, a `ERR_WORKER_MESSAGING_SAME_THREAD` error will be thrown.
-     * @param value The value to send.
-     * @param transferList If one or more `MessagePort`-like objects are passed in value, a `transferList` is required for those items
-     * or `ERR_MISSING_MESSAGE_PORT_IN_TRANSFER_LIST` is thrown. See `port.postMessage()` for more information.
-     * @param timeout Time to wait for the message to be delivered in milliseconds. By default it's `undefined`, which means wait forever.
-     * If the operation times out, a `ERR_WORKER_MESSAGING_TIMEOUT` error is thrown.
-     * @since v22.5.0
-     */
-    @JsName("postMessageToThread")
-    fun postMessageToThreadAsync(
-        threadId: Number,
-        value: Any?,
-        timeout: Number = definedExternally,
-    ): Promise<js.core.Void>
-
-    @seskar.js.JsAsync
-    suspend fun postMessageToThread(
-        threadId: Number,
-        value: Any?,
-        timeout: Number = definedExternally,
-    ): js.core.Void
-
-    @JsName("postMessageToThread")
-    fun postMessageToThreadAsync(
-        threadId: Number,
-        value: Any?,
-        transferList: ReadonlyArray<Transferable>,
-        timeout: Number = definedExternally,
-    ): Promise<js.core.Void>
-
-    @seskar.js.JsAsync
-    suspend fun postMessageToThread(
-        threadId: Number,
-        value: Any?,
-        transferList: ReadonlyArray<Transferable>,
-        timeout: Number = definedExternally,
-    ): js.core.Void
-
-    /**
      * Opposite of `unref()`, calling `ref()` on a previously `unref()`ed worker does _not_ let the program exit if it's the only active handle left (the default
      * behavior). If the worker is `ref()`ed, calling `ref()` again has
      * no effect.
@@ -214,6 +180,18 @@ external class Worker : EventEmitter {
 
     @seskar.js.JsAsync
     suspend fun terminate(): Double
+
+    /**
+     * This method returns a `Promise` that will resolve to an object identical to `process.threadCpuUsage()`,
+     * or reject with an `ERR_WORKER_NOT_RUNNING` error if the worker is no longer running.
+     * This methods allows the statistics to be observed from outside the actual thread.
+     * @since v24.6.0
+     */
+    @JsName("cpuUsage")
+    fun cpuUsageAsync(prev: node.process.CpuUsage = definedExternally): Promise<node.process.CpuUsage>
+
+    @seskar.js.JsAsync
+    suspend fun cpuUsage(prev: node.process.CpuUsage = definedExternally): node.process.CpuUsage
 
     /**
      * Returns a readable stream for a V8 snapshot of the current state of the Worker.

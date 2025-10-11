@@ -13,4 +13,10 @@ sealed external interface ResolverOptions {
      * @default 4
      */
     var tries: Double?
+
+    /**
+     * The max retry timeout, in milliseconds.
+     * @default 0
+     */
+    var maxTimeout: Double?
 }

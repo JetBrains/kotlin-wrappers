@@ -35,4 +35,11 @@ sealed external interface ZstdOptions {
      * If `true`, returns an object with `buffer` and `engine`.
      */
     var info: Boolean?
+
+    /**
+     * Optional dictionary used to improve compression efficiency when compressing or decompressing data that
+     * shares common patterns with the dictionary.
+     * @since v24.6.0
+     */
+    var dictionary: js.buffer.ArrayBufferView<*>?
 }

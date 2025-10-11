@@ -26,19 +26,26 @@ val convertNodeJsQualifiedName = createPlugin { node, _, render ->
             "Require" -> "node.module.Require"
 
             "Process" -> "node.process.Process"
-            "Signals" -> "node.process.Signals"
-            "ProcessEnv" -> "node.process.ProcessEnv"
-            "Platform" -> "node.process.Platform"
             "Architecture" -> "node.process.Architecture"
+            "CpuUsage" -> "node.process.CpuUsage"
+            "Platform" -> "node.process.Platform"
+            "ProcessEnv" -> "node.process.ProcessEnv"
+            "Signals" -> "node.process.Signals"
             else -> "node.${render(node.right)}"
         }
     } ?: nullable {
         ensure(isPropertyAccessExpression(node))
 
-        val expression =  node.expression
+        val expression = node.expression
         ensure(isIdentifier(expression))
         ensure(expression.text == "NodeJS")
 
-        "node.${render(node.name)}"
+        val name = node.name
+        ensure(isIdentifier(name))
+
+        when (name.text) {
+            "ProcessEnv" -> "node.process.ProcessEnv"
+            else -> "node.${render(node.name)}"
+        }
     }
 }

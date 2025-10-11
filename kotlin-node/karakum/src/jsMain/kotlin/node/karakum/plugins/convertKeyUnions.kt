@@ -2,9 +2,15 @@ package node.karakum.plugins
 
 import arrow.core.raise.nullable
 import io.github.sgrishchenko.karakum.extension.createPlugin
+import io.github.sgrishchenko.karakum.extension.ifPresent
 import io.github.sgrishchenko.karakum.util.camelize
 import io.github.sgrishchenko.karakum.util.getSourceFileOrNull
 import typescript.*
+
+private val keyGroups = setOf(
+    "mlDsa",
+    "mlKem",
+)
 
 val convertKeyUnions = createPlugin { node, _, render ->
     nullable {
@@ -39,7 +45,15 @@ val convertKeyUnions = createPlugin { node, _, render ->
 
         val keys = entries.map { (key) -> key }
 
-        val body = keys.joinToString("\n") { "sealed interface $it : $name" }
+        val typeGroups = keyGroups.joinToString("\n") {
+            "sealed interface $it : $name"
+        }
+
+        val types = keys.joinToString("\n") { key ->
+            val group = keyGroups.find { key.startsWith(it) }
+
+            "sealed interface $key : $name${ifPresent(group) { ", $group" }}"
+        }
 
         val companionBody = entries.joinToString("\n") { (key, value) ->
             """
@@ -50,7 +64,8 @@ val convertKeyUnions = createPlugin { node, _, render ->
 
         """
             sealed external interface $name {
-            $body
+            $typeGroups
+            $types
 
             companion object {
             $companionBody

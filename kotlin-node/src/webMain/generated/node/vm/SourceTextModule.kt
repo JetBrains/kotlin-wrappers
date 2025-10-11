@@ -19,4 +19,58 @@ external class SourceTextModule : Module {
      * @param code JavaScript Module code to parse
      */
     constructor (code: String, options: SourceTextModuleOptions = definedExternally)
+
+    /**
+     * @deprecated Use `sourceTextModule.moduleRequests` instead.
+     */
+    val dependencySpecifiers: js.array.ReadonlyArray<String>
+
+    /**
+     * The requested import dependencies of this module. The returned array is frozen
+     * to disallow any changes to it.
+     *
+     * For example, given a source text:
+     *
+     * ```js
+     * import foo from 'foo';
+     * import fooAlias from 'foo';
+     * import bar from './bar.js';
+     * import withAttrs from '../with-attrs.ts' with { arbitraryAttr: 'attr-val' };
+     * import source Module from 'wasm-mod.wasm';
+     * ```
+     *
+     * The value of the `sourceTextModule.moduleRequests` will be:
+     *
+     * ```js
+     * [
+     *   {
+     *     specifier: 'foo',
+     *     attributes: {},
+     *     phase: 'evaluation',
+     *   },
+     *   {
+     *     specifier: 'foo',
+     *     attributes: {},
+     *     phase: 'evaluation',
+     *   },
+     *   {
+     *     specifier: './bar.js',
+     *     attributes: {},
+     *     phase: 'evaluation',
+     *   },
+     *   {
+     *     specifier: '../with-attrs.ts',
+     *     attributes: { arbitraryAttr: 'attr-val' },
+     *     phase: 'evaluation',
+     *   },
+     *   {
+     *     specifier: 'wasm-mod.wasm',
+     *     attributes: {},
+     *     phase: 'source',
+     *   },
+     * ];
+     * ```
+     * @since v24.4.0
+     */
+    val moduleRequests: js.array.ReadonlyArray<ModuleRequest>
 }

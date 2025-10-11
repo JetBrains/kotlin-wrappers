@@ -24,8 +24,9 @@ sealed external interface BackupOptions {
     var rate: Double?
 
     /**
-     * Callback function that will be called with the number of pages copied and the total number of
-     * pages.
+     * An optional callback function that will be called after each backup step. The argument passed
+     * to this callback is an `Object` with `remainingPages` and `totalPages` properties, describing the current progress
+     * of the backup operation.
      */
     var progress: ((progressInfo: BackupProgressInfo) -> Unit)?
 }

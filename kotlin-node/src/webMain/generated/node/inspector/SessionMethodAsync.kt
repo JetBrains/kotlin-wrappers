@@ -163,6 +163,8 @@ sealed external interface SessionMethod {
 
     sealed interface NETWORK_STREAMRESOURCECONTENT : SessionMethod
 
+    sealed interface NETWORK_LOADNETWORKRESOURCE : SessionMethod
+
     sealed interface NODERUNTIME_ENABLE : SessionMethod
 
     sealed interface NODERUNTIME_DISABLE : SessionMethod
@@ -170,6 +172,10 @@ sealed external interface SessionMethod {
     sealed interface NODERUNTIME_NOTIFYWHENWAITINGFORDISCONNECT : SessionMethod
 
     sealed interface TARGET_SETAUTOATTACH : SessionMethod
+
+    sealed interface IO_READ : SessionMethod
+
+    sealed interface IO_CLOSE : SessionMethod
 
     companion object {
         @seskar.js.JsValue("Schema.getDomains")
@@ -412,6 +418,9 @@ sealed external interface SessionMethod {
         @seskar.js.JsValue("Network.streamResourceContent")
         val NETWORK_STREAMRESOURCECONTENT: NETWORK_STREAMRESOURCECONTENT
 
+        @seskar.js.JsValue("Network.loadNetworkResource")
+        val NETWORK_LOADNETWORKRESOURCE: NETWORK_LOADNETWORKRESOURCE
+
         @seskar.js.JsValue("NodeRuntime.enable")
         val NODERUNTIME_ENABLE: NODERUNTIME_ENABLE
 
@@ -423,5 +432,11 @@ sealed external interface SessionMethod {
 
         @seskar.js.JsValue("Target.setAutoAttach")
         val TARGET_SETAUTOATTACH: TARGET_SETAUTOATTACH
+
+        @seskar.js.JsValue("IO.read")
+        val IO_READ: IO_READ
+
+        @seskar.js.JsValue("IO.close")
+        val IO_CLOSE: IO_CLOSE
     }
 }

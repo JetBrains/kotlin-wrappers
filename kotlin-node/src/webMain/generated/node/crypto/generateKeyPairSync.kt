@@ -6,7 +6,7 @@ package node.crypto
 
 /**
  * Generates a new asymmetric key pair of the given `type`. RSA, RSA-PSS, DSA, EC,
- * Ed25519, Ed448, X25519, X448, and DH are currently supported.
+ * Ed25519, Ed448, X25519, X448, DH, and ML-DSA are currently supported.
  *
  * If a `publicKeyEncoding` or `privateKeyEncoding` was specified, this function
  * behaves as if `keyObject.export()` had been called on its result. Otherwise,
@@ -43,7 +43,8 @@ package node.crypto
  * When PEM encoding was selected, the respective key will be a string, otherwise
  * it will be a buffer containing the data encoded as DER.
  * @since v10.12.0
- * @param type Must be `'rsa'`, `'rsa-pss'`, `'dsa'`, `'ec'`, `'ed25519'`, `'ed448'`, `'x25519'`, `'x448'`, or `'dh'`.
+ * @param type The asymmetric key type to generate. See the
+ * supported [asymmetric key types](https://nodejs.org/docs/latest-v24.x/api/crypto.html#asymmetric-key-types).
  */
 external fun generateKeyPairSync(
     type: KeyType.rsa,
@@ -243,4 +244,54 @@ external fun generateKeyPairSync(
 external fun generateKeyPairSync(
     type: KeyType.x448,
     options: X448KeyPairKeyObjectOptions = definedExternally,
+): KeyPairKeyObjectResult
+
+external fun generateKeyPairSync(
+    type: KeyType.mlDsa,
+    options: MLDSAKeyPairPemPemOptions,
+): KeyPairSyncResult<String, String>
+
+external fun generateKeyPairSync(
+    type: KeyType.mlDsa,
+    options: MLDSAKeyPairPemDerOptions,
+): KeyPairSyncResult<String, node.buffer.Buffer<*>>
+
+external fun generateKeyPairSync(
+    type: KeyType.mlDsa,
+    options: MLDSAKeyPairDerPemOptions,
+): KeyPairSyncResult<node.buffer.Buffer<*>, String>
+
+external fun generateKeyPairSync(
+    type: KeyType.mlDsa,
+    options: MLDSAKeyPairDerDerOptions,
+): KeyPairSyncResult<node.buffer.Buffer<*>, node.buffer.Buffer<*>>
+
+external fun generateKeyPairSync(
+    type: KeyType.mlDsa,
+    options: MLDSAKeyPairKeyObjectOptions = definedExternally,
+): KeyPairKeyObjectResult
+
+external fun generateKeyPairSync(
+    type: KeyType.mlKem,
+    options: MLKEMKeyPairPemPemOptions,
+): KeyPairSyncResult<String, String>
+
+external fun generateKeyPairSync(
+    type: KeyType.mlKem,
+    options: MLKEMKeyPairPemDerOptions,
+): KeyPairSyncResult<String, node.buffer.Buffer<*>>
+
+external fun generateKeyPairSync(
+    type: KeyType.mlKem,
+    options: MLKEMKeyPairDerPemOptions,
+): KeyPairSyncResult<node.buffer.Buffer<*>, String>
+
+external fun generateKeyPairSync(
+    type: KeyType.mlKem,
+    options: MLKEMKeyPairDerDerOptions,
+): KeyPairSyncResult<node.buffer.Buffer<*>, node.buffer.Buffer<*>>
+
+external fun generateKeyPairSync(
+    type: KeyType.mlKem,
+    options: MLKEMKeyPairKeyObjectOptions = definedExternally,
 ): KeyPairKeyObjectResult

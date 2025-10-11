@@ -35,6 +35,7 @@ sealed external interface TestContext {
      * @since v22.2.0, v20.15.0
      */
     val assert: TestContextAssert
+    val attempt: Double
 
     /**
      * This function is used to create a hook running before subtest of the current test.

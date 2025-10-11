@@ -3,9 +3,11 @@
 package node.crypto
 
 sealed external interface KeyType {
-    sealed interface rsa : KeyType
+    sealed interface mlDsa : KeyType
 
-    sealed interface rsaPss : KeyType
+    sealed interface mlKem : KeyType
+
+    sealed interface dh : KeyType
 
     sealed interface dsa : KeyType
 
@@ -15,16 +17,41 @@ sealed external interface KeyType {
 
     sealed interface ed448 : KeyType
 
+    sealed interface mlDsa44 :
+        KeyType,
+        mlDsa
+
+    sealed interface mlDsa65 :
+        KeyType,
+        mlDsa
+
+    sealed interface mlDsa87 :
+        KeyType,
+        mlDsa
+
+    sealed interface mlKem1024 :
+        KeyType,
+        mlKem
+
+    sealed interface mlKem512 :
+        KeyType,
+        mlKem
+
+    sealed interface mlKem768 :
+        KeyType,
+        mlKem
+
+    sealed interface rsaPss : KeyType
+
+    sealed interface rsa : KeyType
+
     sealed interface x25519 : KeyType
 
     sealed interface x448 : KeyType
 
     companion object {
-        @seskar.js.JsValue("rsa")
-        val rsa: rsa
-
-        @seskar.js.JsValue("rsa-pss")
-        val rsaPss: rsaPss
+        @seskar.js.JsValue("dh")
+        val dh: dh
 
         @seskar.js.JsValue("dsa")
         val dsa: dsa
@@ -37,6 +64,30 @@ sealed external interface KeyType {
 
         @seskar.js.JsValue("ed448")
         val ed448: ed448
+
+        @seskar.js.JsValue("ml-dsa-44")
+        val mlDsa44: mlDsa44
+
+        @seskar.js.JsValue("ml-dsa-65")
+        val mlDsa65: mlDsa65
+
+        @seskar.js.JsValue("ml-dsa-87")
+        val mlDsa87: mlDsa87
+
+        @seskar.js.JsValue("ml-kem-1024")
+        val mlKem1024: mlKem1024
+
+        @seskar.js.JsValue("ml-kem-512")
+        val mlKem512: mlKem512
+
+        @seskar.js.JsValue("ml-kem-768")
+        val mlKem768: mlKem768
+
+        @seskar.js.JsValue("rsa-pss")
+        val rsaPss: rsaPss
+
+        @seskar.js.JsValue("rsa")
+        val rsa: rsa
 
         @seskar.js.JsValue("x25519")
         val x25519: x25519

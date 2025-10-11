@@ -155,7 +155,7 @@ open external class Agent : EventEmitter {
     fun createConnection(
         options: ClientRequestArgs,
         callback: (err: js.errors.JsError?, stream: node.stream.Duplex) -> Unit = definedExternally,
-    ): node.stream.Duplex
+    ): node.stream.Duplex?
 
     /**
      * Called when `socket` is detached from a request and could be persisted by the`Agent`. Default behavior is to:

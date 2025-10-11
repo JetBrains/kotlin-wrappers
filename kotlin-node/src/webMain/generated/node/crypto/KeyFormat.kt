@@ -3,6 +3,10 @@
 package node.crypto
 
 sealed external interface KeyFormat {
+    sealed interface mlDsa : KeyFormat
+
+    sealed interface mlKem : KeyFormat
+
     sealed interface pem : KeyFormat
 
     sealed interface der : KeyFormat

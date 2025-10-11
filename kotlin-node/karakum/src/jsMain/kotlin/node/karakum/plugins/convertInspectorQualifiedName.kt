@@ -7,24 +7,25 @@ import typescript.isIdentifier
 import typescript.isPropertyAccessExpression
 import typescript.isQualifiedName
 
-private val modules = setOf(
-    "Console",
-    "Debugger",
-    "HeapProfiler",
-    "Network",
-    "NodeRuntime",
-    "NodeTracing",
-    "NodeWorker",
-    "Profiler",
-    "Runtime",
-    "Schema",
-    "Target",
+private val modules = mapOf(
+    "Console" to "console",
+    "Debugger" to "debugger",
+    "HeapProfiler" to "heapProfiler",
+    "IO" to "io",
+    "Network" to "network",
+    "NodeRuntime" to "nodeRuntime",
+    "NodeTracing" to "nodeTracing",
+    "NodeWorker" to "nodeWorker",
+    "Profiler" to "profiler",
+    "Runtime" to "runtime",
+    "Schema" to "schema",
+    "Target" to "target",
 )
 
 val convertInspectorQualifiedName = createPlugin { node, _, render ->
     nullable {
         val sourceFileName = ensureNotNull(node.getSourceFileOrNull()).fileName
-        ensure(sourceFileName.endsWith("inspector.d.ts"))
+        ensure(sourceFileName.endsWith("inspector.generated.d.ts"))
 
         nullable {
             ensure(isQualifiedName(node))
@@ -33,7 +34,7 @@ val convertInspectorQualifiedName = createPlugin { node, _, render ->
             ensure(isIdentifier(left))
             ensure(left.text in modules)
 
-            "node.inspector.${left.text.replaceFirstChar { it.lowercase() }}.${render(node.right)}"
+            "node.inspector.${modules[left.text]}.${render(node.right)}"
         } ?: nullable {
             ensure(isPropertyAccessExpression(node))
 
@@ -41,7 +42,7 @@ val convertInspectorQualifiedName = createPlugin { node, _, render ->
             ensure(isIdentifier(expression))
             ensure(expression.text in modules)
 
-            "node.inspector.${expression.text.replaceFirstChar { it.lowercase() }}.${render(node.name)}"
+            "node.inspector.${modules[expression.text]}.${render(node.name)}"
         }
     }
 }

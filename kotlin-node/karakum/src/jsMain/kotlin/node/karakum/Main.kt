@@ -136,6 +136,7 @@ suspend fun main() {
             ::resolveClassPropertyItemName,
             ::resolveClassPropertyItemPropertyName,
             ::resolveFsOptionsName,
+            ::resolveFunctionCallbackParameterName,
             ::resolveFunctionReturnTypeNullableUnionName,
             ::resolveFunctionReturnTypePromisePayloadName,
             ::resolveHttpStatusCodesName,
@@ -203,6 +204,7 @@ suspend fun main() {
             "**/NodeDOMExceptionConstructor.kt",
             "**/Dict.kt",
             "**/ReadOnlyDict.kt",
+            "**/PartialOptions.kt",
             "**/AbortController.kt",
             "**/AbortSignal.kt",
             "**/Array.kt",
@@ -227,6 +229,8 @@ suspend fun main() {
             "**/__promisify__.kt",
             "**/__promisify__*.kt",
             "**/CustomPromisifyLegacy.kt",
+            "**/assert/Assert.kt",
+            "**/assert/AssertStrict.kt",
             "**/assert/equal.kt",
             "**/assert/notEqual.kt",
             "**/assert/deepEqual.kt",
@@ -385,6 +389,7 @@ suspend fun main() {
             "^events/eventemitter/EventEmitterAsyncResource.kt" to "node/events/EventEmitterAsyncResource.kt",
             "^events/eventemitter/EventEmitterAsyncResourceOptions.kt" to "node/events/EventEmitterAsyncResourceOptions.kt",
             "^events/eventemitter/EventEmitterReferencingAsyncResource.kt" to "node/events/EventEmitterReferencingAsyncResource.kt",
+            "^events/eventemitter/NodeEventTarget.kt" to "node/events/NodeEventTarget.kt",
             "^events" to "node/events",
 
             "^fs/StatfsOptions.kt" to "node/fs/StatfsOptions.fun.kt",
@@ -399,9 +404,11 @@ suspend fun main() {
             "^https" to "node/https",
 
             "^inspector/heapprofiler" to "node/inspector/heapProfiler",
+            "^inspector/networkresources" to "node/inspector/networkResources",
             "^inspector/noderuntime" to "node/inspector/nodeRuntime",
             "^inspector/nodetracing" to "node/inspector/nodeTracing",
             "^inspector/nodeworker" to "node/inspector/nodeWorker",
+            "^node/inspector.generated.kt" to "node/inspector/generated.kt",
             "^inspector" to "node/inspector",
 
             "^module/global/nodejs/Require.kt" to "node/module/Require.interface.kt",
@@ -496,6 +503,7 @@ suspend fun main() {
             "^nodejs" to "node"
         )
         importMapper = recordOf(
+            "node:assert" to ruleOf("node.assert"),
             "node:async_hooks" to ruleOf("node.asyncHooks"),
             "(node:)?buffer" to ruleOf(
                 "Blob" to "web.blob.Blob"
@@ -531,16 +539,17 @@ suspend fun main() {
                 "Session" to "node.inspector._Session"
             ),
             "(node:)?inspector" to ruleOf(
-                "Schema" to "",
-                "Runtime" to "",
-                "Debugger" to "",
                 "Console" to "",
-                "Profiler" to "",
+                "Debugger" to "",
                 "HeapProfiler" to "",
-                "NodeTracing" to "",
-                "NodeWorker" to "",
+                "IO" to "",
                 "Network" to "",
                 "NodeRuntime" to "",
+                "NodeTracing" to "",
+                "NodeWorker" to "",
+                "Profiler" to "",
+                "Runtime" to "",
+                "Schema" to "",
                 "Target" to "",
                 ".+" to "node.inspector."
             ),
@@ -606,6 +615,10 @@ suspend fun main() {
                 "MessageChannel" to "web.messaging.MessageChannel",
                 "MessagePort" to "web.messaging.MessagePort",
                 ".+" to "node.workerThreads."
+            ),
+
+            "undici-types" to ruleOf(
+                ".+" to ""
             )
         )
         importInjector = recordOf(
@@ -723,6 +736,9 @@ suspend fun main() {
             "crypto/createDiffieHellman.kt" to arrayOf(
                 "js.buffer.ArrayBuffer"
             ),
+            "crypto/decapsulate.kt" to arrayOf(
+                "js.buffer.ArrayBuffer"
+            ),
             "crypto/generatePrime.kt" to arrayOf(
                 "js.buffer.ArrayBuffer"
             ),
@@ -764,11 +780,19 @@ suspend fun main() {
             "events/EventEmitter.ext.kt" to arrayOf(
                 "js.array.Tuple"
             ),
+            "events/NodeEventTarget.kt" to arrayOf(
+                "web.events.EventListenerOptions",
+                "web.events.EventTarget",
+            ),
             "events/StaticEventEmitterOptions.kt" to arrayOf(
                 "web.abort.AbortSignal"
             ),
             "fs/Dir.kt" to arrayOf(
                 "js.iterable.AsyncIterable",
+                "js.promise.Promise"
+            ),
+            "fs/DisposableTempDir.kt" to arrayOf(
+                "js.disposable.AsyncDisposable",
                 "js.promise.Promise"
             ),
             "fs/FileHandleAsync.kt" to arrayOf(
@@ -1213,7 +1237,7 @@ suspend fun main() {
             "test/snapshot/setDefaultSnapshotSerializers.kt" to arrayOf(
                 "js.array.ReadonlyArray"
             ),
-            "tls/namespace.kt" to arrayOf(
+            "tls/setDefaultCACertificates.kt" to arrayOf(
                 "js.array.ReadonlyArray"
             ),
             "url/fileURLToPath.kt" to arrayOf(
@@ -1380,6 +1404,12 @@ suspend fun main() {
             "vm/measureMemory.kt" to arrayOf(
                 "js.promise.Promise"
             ),
+            "workerThreads/LockManager.kt" to arrayOf(
+                "js.promise.Promise"
+            ),
+            "workerThreads/LockOptions.kt" to arrayOf(
+                "web.abort.AbortSignal"
+            ),
             "workerThreads/Worker.kt" to arrayOf(
                 "js.array.ReadonlyArray",
                 "js.promise.Promise"
@@ -1389,6 +1419,9 @@ suspend fun main() {
             ),
             "workerThreads/parentPort.kt" to arrayOf(
                 "web.messaging.MessagePort"
+            ),
+            "workerThreads/postMessageToThread.kt" to arrayOf(
+                "js.promise.Promise"
             ),
             "workerThreads/receiveMessageOnPort.kt" to arrayOf(
                 "web.messaging.MessagePort"
@@ -1426,6 +1459,8 @@ suspend fun main() {
             "WritableWritevChunksItem.kt" to ConflictResolutionStrategy.replace,
             "FileHandleWriteResultPayloadAsync.kt" to ConflictResolutionStrategy.replace,
             "DiffieHellmanOptions.kt" to ConflictResolutionStrategy.replace,
+//            TODO
+//            "GenerateKeyPairSyncType.kt" to ConflictResolutionStrategy.replace,
         )
     }
 }

@@ -14,7 +14,7 @@ import node.events.EventEmitter
  */
 external class Session : EventEmitter {
     /**
-     * Create a new instance of the `inspector.Session` class.
+     * Create a new instance of the inspector.Session class.
      * The inspector session needs to be connected through `session.connect()` before the messages can be dispatched to the inspector backend.
      */
     constructor ()
@@ -27,6 +27,7 @@ external class Session : EventEmitter {
     /**
      * Connects a session to the inspector back-end.
      * An exception will be thrown if this API was not called on a Worker thread.
+     * @since v12.11.0
      */
     fun connectToMainThread()
 
@@ -1063,6 +1064,21 @@ external class Session : EventEmitter {
     ): node.inspector.network.StreamResourceContentReturnType
 
     /**
+     * Fetches the resource and returns the content.
+     */
+    @JsName("post")
+    fun postAsync(
+        method: SessionMethod.NETWORK_LOADNETWORKRESOURCE,
+        params: node.inspector.network.LoadNetworkResourceParameterType = definedExternally,
+    ): Promise<node.inspector.network.LoadNetworkResourceReturnType>
+
+    @seskar.js.JsAsync
+    suspend fun post(
+        method: SessionMethod.NETWORK_LOADNETWORKRESOURCE,
+        params: node.inspector.network.LoadNetworkResourceParameterType = definedExternally,
+    ): node.inspector.network.LoadNetworkResourceReturnType
+
+    /**
      * Enable the NodeRuntime events except by `NodeRuntime.waitingForDisconnect`.
      */
     @JsName("post")
@@ -1105,6 +1121,33 @@ external class Session : EventEmitter {
     suspend fun post(
         method: SessionMethod.TARGET_SETAUTOATTACH,
         params: node.inspector.target.SetAutoAttachParameterType = definedExternally,
+    ): js.core.Void
+
+    /**
+     * Read a chunk of the stream
+     */
+    @JsName("post")
+    fun postAsync(
+        method: SessionMethod.IO_READ,
+        params: node.inspector.io.ReadParameterType = definedExternally,
+    ): Promise<node.inspector.io.ReadReturnType>
+
+    @seskar.js.JsAsync
+    suspend fun post(
+        method: SessionMethod.IO_READ,
+        params: node.inspector.io.ReadParameterType = definedExternally,
+    ): node.inspector.io.ReadReturnType
+
+    @JsName("post")
+    fun postAsync(
+        method: SessionMethod.IO_CLOSE,
+        params: node.inspector.io.CloseParameterType = definedExternally,
+    ): Promise<js.core.Void>
+
+    @seskar.js.JsAsync
+    suspend fun post(
+        method: SessionMethod.IO_CLOSE,
+        params: node.inspector.io.CloseParameterType = definedExternally,
     ): js.core.Void
 
     fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
@@ -1208,6 +1251,18 @@ external class Session : EventEmitter {
 
     /**
      * Fired when data chunk was received over the network.
+     */
+
+    /**
+     * Fired upon WebSocket creation.
+     */
+
+    /**
+     * Fired when WebSocket is closed.
+     */
+
+    /**
+     * Fired when WebSocket handshake response becomes available.
      */
 
     /**
@@ -1336,6 +1391,18 @@ external class Session : EventEmitter {
      */
 
     /**
+     * Fired upon WebSocket creation.
+     */
+
+    /**
+     * Fired when WebSocket is closed.
+     */
+
+    /**
+     * Fired when WebSocket handshake response becomes available.
+     */
+
+    /**
      * This event is fired instead of `Runtime.executionContextDestroyed` when
      * enabled.
      * It is fired when the Node process finished all code execution and is
@@ -1448,6 +1515,18 @@ external class Session : EventEmitter {
 
     /**
      * Fired when data chunk was received over the network.
+     */
+
+    /**
+     * Fired upon WebSocket creation.
+     */
+
+    /**
+     * Fired when WebSocket is closed.
+     */
+
+    /**
+     * Fired when WebSocket handshake response becomes available.
      */
 
     /**
@@ -1566,6 +1645,18 @@ external class Session : EventEmitter {
      */
 
     /**
+     * Fired upon WebSocket creation.
+     */
+
+    /**
+     * Fired when WebSocket is closed.
+     */
+
+    /**
+     * Fired when WebSocket handshake response becomes available.
+     */
+
+    /**
      * This event is fired instead of `Runtime.executionContextDestroyed` when
      * enabled.
      * It is fired when the Node process finished all code execution and is
@@ -1678,6 +1769,18 @@ external class Session : EventEmitter {
 
     /**
      * Fired when data chunk was received over the network.
+     */
+
+    /**
+     * Fired upon WebSocket creation.
+     */
+
+    /**
+     * Fired when WebSocket is closed.
+     */
+
+    /**
+     * Fired when WebSocket handshake response becomes available.
      */
 
     /**
@@ -1811,6 +1914,18 @@ external class Session : EventEmitter {
     val NetworkDataReceivedEvent:
             node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.network.DataReceivedEventDataType>>>
 
+    @web.events.JsEvent("Network.webSocketCreated")
+    val NetworkWebSocketCreatedEvent:
+            node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.network.WebSocketCreatedEventDataType>>>
+
+    @web.events.JsEvent("Network.webSocketClosed")
+    val NetworkWebSocketClosedEvent:
+            node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.network.WebSocketClosedEventDataType>>>
+
+    @web.events.JsEvent("Network.webSocketHandshakeResponseReceived")
+    val NetworkWebSocketHandshakeResponseReceivedEvent:
+            node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.network.WebSocketHandshakeResponseReceivedEventDataType>>>
+
     @web.events.JsEvent("NodeRuntime.waitingForDisconnect")
     val NodeRuntimeWaitingForDisconnectEvent: node.events.EventInstance<js.array.Tuple>
 
@@ -1825,3 +1940,9 @@ external class Session : EventEmitter {
     val TargetAttachedToTargetEvent:
             node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.target.AttachedToTargetEventDataType>>>
 }
+
+/**
+ * The `inspector.Session` is used for dispatching messages to the V8 inspector
+ * back-end and receiving message responses and notifications.
+ * @since v19.0.0
+ */

@@ -55,6 +55,25 @@ external class WASI {
     fun initialize(instance: Any) // TODO: avoid DOM dependency until WASM moved to own lib.
 
     /**
+     * Set up WASI host bindings to `instance` without calling `initialize()`
+     * or `start()`. This method is useful when the WASI module is instantiated in
+     * child threads for sharing the memory across threads.
+     *
+     * `finalizeBindings()` requires that either `instance` exports a
+     * [`WebAssembly.Memory`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WebAssembly/Memory) named `memory` or user specify a
+     * [`WebAssembly.Memory`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WebAssembly/Memory) object in `options.memory`. If the `memory` is invalid
+     * an exception is thrown.
+     *
+     * `start()` and `initialize()` will call `finalizeBindings()` internally.
+     * If `finalizeBindings()` is called more than once, an exception is thrown.
+     * @since v24.4.0
+     */
+    fun finalizeBindings(
+        instance: Any,
+        options: FinalizeBindingsOptions = definedExternally,
+    )
+
+    /**
      * `wasiImport` is an object that implements the WASI system call API. This object
      * should be passed as the `wasi_snapshot_preview1` import during the instantiation
      * of a [`WebAssembly.Instance`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WebAssembly/Instance).

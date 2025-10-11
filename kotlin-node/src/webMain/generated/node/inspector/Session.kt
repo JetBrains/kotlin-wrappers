@@ -1110,6 +1110,26 @@ external class _Session : EventEmitter {
     )
 
     /**
+     * Fetches the resource and returns the content.
+     */
+    fun post(
+        method: SessionMethod.NETWORK_LOADNETWORKRESOURCE,
+        params: node.inspector.network.LoadNetworkResourceParameterType = definedExternally,
+        callback: (
+            err: js.errors.JsError?,
+            params: node.inspector.network.LoadNetworkResourceReturnType,
+        ) -> Unit = definedExternally,
+    )
+
+    fun post(
+        method: SessionMethod.NETWORK_LOADNETWORKRESOURCE,
+        callback: (
+            err: js.errors.JsError?,
+            params: node.inspector.network.LoadNetworkResourceReturnType,
+        ) -> Unit = definedExternally,
+    )
+
+    /**
      * Enable the NodeRuntime events except by `NodeRuntime.waitingForDisconnect`.
      */
     fun post(
@@ -1147,6 +1167,31 @@ external class _Session : EventEmitter {
 
     fun post(
         method: SessionMethod.TARGET_SETAUTOATTACH,
+        callback: (err: js.errors.JsError?) -> Unit = definedExternally,
+    )
+
+    /**
+     * Read a chunk of the stream
+     */
+    fun post(
+        method: SessionMethod.IO_READ,
+        params: node.inspector.io.ReadParameterType = definedExternally,
+        callback: (err: js.errors.JsError?, params: node.inspector.io.ReadReturnType) -> Unit = definedExternally,
+    )
+
+    fun post(
+        method: SessionMethod.IO_READ,
+        callback: (err: js.errors.JsError?, params: node.inspector.io.ReadReturnType) -> Unit = definedExternally,
+    )
+
+    fun post(
+        method: SessionMethod.IO_CLOSE,
+        params: node.inspector.io.CloseParameterType = definedExternally,
+        callback: (err: js.errors.JsError?) -> Unit = definedExternally,
+    )
+
+    fun post(
+        method: SessionMethod.IO_CLOSE,
         callback: (err: js.errors.JsError?) -> Unit = definedExternally,
     )
 
@@ -1251,6 +1296,18 @@ external class _Session : EventEmitter {
 
     /**
      * Fired when data chunk was received over the network.
+     */
+
+    /**
+     * Fired upon WebSocket creation.
+     */
+
+    /**
+     * Fired when WebSocket is closed.
+     */
+
+    /**
+     * Fired when WebSocket handshake response becomes available.
      */
 
     /**
@@ -1379,6 +1436,18 @@ external class _Session : EventEmitter {
      */
 
     /**
+     * Fired upon WebSocket creation.
+     */
+
+    /**
+     * Fired when WebSocket is closed.
+     */
+
+    /**
+     * Fired when WebSocket handshake response becomes available.
+     */
+
+    /**
      * This event is fired instead of `Runtime.executionContextDestroyed` when
      * enabled.
      * It is fired when the Node process finished all code execution and is
@@ -1491,6 +1560,18 @@ external class _Session : EventEmitter {
 
     /**
      * Fired when data chunk was received over the network.
+     */
+
+    /**
+     * Fired upon WebSocket creation.
+     */
+
+    /**
+     * Fired when WebSocket is closed.
+     */
+
+    /**
+     * Fired when WebSocket handshake response becomes available.
      */
 
     /**
@@ -1609,6 +1690,18 @@ external class _Session : EventEmitter {
      */
 
     /**
+     * Fired upon WebSocket creation.
+     */
+
+    /**
+     * Fired when WebSocket is closed.
+     */
+
+    /**
+     * Fired when WebSocket handshake response becomes available.
+     */
+
+    /**
      * This event is fired instead of `Runtime.executionContextDestroyed` when
      * enabled.
      * It is fired when the Node process finished all code execution and is
@@ -1721,6 +1814,18 @@ external class _Session : EventEmitter {
 
     /**
      * Fired when data chunk was received over the network.
+     */
+
+    /**
+     * Fired upon WebSocket creation.
+     */
+
+    /**
+     * Fired when WebSocket is closed.
+     */
+
+    /**
+     * Fired when WebSocket handshake response becomes available.
      */
 
     /**
@@ -1853,6 +1958,18 @@ external class _Session : EventEmitter {
     @web.events.JsEvent("Network.dataReceived")
     val NetworkDataReceivedEvent:
             node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.network.DataReceivedEventDataType>>>
+
+    @web.events.JsEvent("Network.webSocketCreated")
+    val NetworkWebSocketCreatedEvent:
+            node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.network.WebSocketCreatedEventDataType>>>
+
+    @web.events.JsEvent("Network.webSocketClosed")
+    val NetworkWebSocketClosedEvent:
+            node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.network.WebSocketClosedEventDataType>>>
+
+    @web.events.JsEvent("Network.webSocketHandshakeResponseReceived")
+    val NetworkWebSocketHandshakeResponseReceivedEvent:
+            node.events.EventInstance<js.array.Tuple1<InspectorNotification<node.inspector.network.WebSocketHandshakeResponseReceivedEventDataType>>>
 
     @web.events.JsEvent("NodeRuntime.waitingForDisconnect")
     val NodeRuntimeWaitingForDisconnectEvent: node.events.EventInstance<js.array.Tuple>

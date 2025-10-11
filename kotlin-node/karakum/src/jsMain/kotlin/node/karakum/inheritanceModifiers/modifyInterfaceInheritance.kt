@@ -44,6 +44,11 @@ fun modifyInterfaceInheritance(node: Node, context: InheritanceModifierContext) 
 
             ""
         } ?: nullable {
+            ensure(sourceFileName.endsWith("process.d.ts"))
+            ensure(node.name.text == "ProcessEnv")
+
+            ""
+        }  ?: nullable {
             ensure(sourceFileName.endsWith("stream.d.ts"))
             ensure(node.name.text == "TransformOptions")
 

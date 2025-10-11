@@ -3,7 +3,7 @@
 package node.dns
 
 sealed external interface ResourceRecordType {
-    sealed interface StringRecord
+    sealed interface StringRecord : ResourceRecordType
 
     sealed interface A :
         ResourceRecordType,

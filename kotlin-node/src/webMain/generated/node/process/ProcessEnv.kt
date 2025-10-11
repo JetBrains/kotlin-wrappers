@@ -5,7 +5,7 @@ package node.process
 import node.Dict
 
 // Alias for compatibility
-sealed external interface ProcessEnv : Dict<String> {
+external interface ProcessEnv : Dict<String> {
     /**
      * Can be used to change the default timezone at runtime
      */

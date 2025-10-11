@@ -94,6 +94,46 @@ external class BlockList {
      */
     var rules: js.array.ReadonlyArray<String>
 
+    /**
+     * ```js
+     * const blockList = new net.BlockList();
+     * const data = [
+     *   'Subnet: IPv4 192.168.1.0/24',
+     *   'Address: IPv4 10.0.0.5',
+     *   'Range: IPv4 192.168.2.1-192.168.2.10',
+     *   'Range: IPv4 10.0.0.1-10.0.0.10',
+     * ];
+     * blockList.fromJSON(data);
+     * blockList.fromJSON(JSON.stringify(data));
+     * ```
+     * @since v24.5.0
+     * @experimental
+     */
+    fun fromJSON(data: String)
+
+    /**
+     * ```js
+     * const blockList = new net.BlockList();
+     * const data = [
+     *   'Subnet: IPv4 192.168.1.0/24',
+     *   'Address: IPv4 10.0.0.5',
+     *   'Range: IPv4 192.168.2.1-192.168.2.10',
+     *   'Range: IPv4 10.0.0.1-10.0.0.10',
+     * ];
+     * blockList.fromJSON(data);
+     * blockList.fromJSON(JSON.stringify(data));
+     * ```
+     * @since v24.5.0
+     * @experimental
+     */
+    fun fromJSON(data: js.array.ReadonlyArray<String>)
+
+    /**
+     * @since v24.5.0
+     * @experimental
+     */
+    fun toJSON(): js.array.ReadonlyArray<String>
+
     companion object {
         /**
          * Returns `true` if the `value` is a `net.BlockList`.

@@ -117,7 +117,7 @@ class ResourceRecordTypePlugin : Plugin {
         val fileBody = """
             sealed external interface $name {
 
-            sealed interface StringRecord
+            sealed interface StringRecord : $name
 
             $body
 

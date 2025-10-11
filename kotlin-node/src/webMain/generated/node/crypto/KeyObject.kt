@@ -19,18 +19,8 @@ package node.crypto
  */
 external class KeyObject {
     /**
-     * For asymmetric keys, this property represents the type of the key. Supported key
-     * types are:
-     *
-     * * `'rsa'` (OID 1.2.840.113549.1.1.1)
-     * * `'rsa-pss'` (OID 1.2.840.113549.1.1.10)
-     * * `'dsa'` (OID 1.2.840.10040.4.1)
-     * * `'ec'` (OID 1.2.840.10045.2.1)
-     * * `'x25519'` (OID 1.3.101.110)
-     * * `'x448'` (OID 1.3.101.111)
-     * * `'ed25519'` (OID 1.3.101.112)
-     * * `'ed448'` (OID 1.3.101.113)
-     * * `'dh'` (OID 1.2.840.113549.1.3.1)
+     * For asymmetric keys, this property represents the type of the key. See the
+     * supported [asymmetric key types](https://nodejs.org/docs/latest-v24.x/api/crypto.html#asymmetric-key-types).
      *
      * This property is `undefined` for unrecognized `KeyObject` types and symmetric
      * keys.

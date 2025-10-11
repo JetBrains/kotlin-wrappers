@@ -16,11 +16,28 @@ import arrow.core.raise.impure
 import arrow.core.raise.nullable
 import typescript.*
 
-private fun isGenerateKeyPairType(node: Node) = nullable {
-    val literalType = ensureNotNull(node.getParentOrNull())
-    ensure(isLiteralTypeNode(literalType))
+private val keyGroups = setOf(
+    "mlDsa",
+    "mlKem",
+)
 
-    val parameter = ensureNotNull(literalType.getParentOrNull())
+private fun isGenerateKeyPairType(node: Node) = nullable {
+    ensureNotNull(
+        nullable {
+            ensure(
+                isLiteralTypeNode(node)
+                        && isStringLiteral(node.literal)
+            )
+        } ?: nullable {
+            ensure(isUnionTypeNode(node))
+            ensure(node.types.asArray().all {
+                isLiteralTypeNode(it)
+                        && isStringLiteral(it.literal)
+            })
+        }
+    )
+
+    val parameter = ensureNotNull(node.getParentOrNull())
     ensure(isParameter(parameter))
 
     val parameterName = parameter.name
@@ -103,10 +120,33 @@ class GenerateKeyPairTypePlugin : Plugin {
 
     override fun render(node: Node, context: Context, next: Render<Node>) = nullable {
         nullable {
-            ensure(isStringLiteral(node))
             ensure(isGenerateKeyPairType(node))
 
-            "KeyType.${camelize(node.text)}"
+            nullable {
+                ensure(isLiteralTypeNode(node))
+
+                val literal = node.literal
+                ensure(isStringLiteral(literal))
+
+                "KeyType.${camelize(literal.text)}"
+            } ?: nullable {
+                ensure(isUnionTypeNode(node))
+
+                val keyTypes = node.types.asArray().mapNotNull {
+                    nullable {
+                        ensure(isLiteralTypeNode(it))
+
+                        val literal = it.literal
+                        ensure(isStringLiteral(literal))
+
+                        camelize(literal.text)
+                    }
+                }
+
+                val keyGroup = keyGroups.first { keyGroup -> keyTypes.all { it.startsWith(keyGroup) } }
+
+                "KeyType.${keyGroup}"
+            }
         } ?: nullable {
             ensure(isTypeReferenceNode(node))
             ensure(isGenerateKeyPairOptions(node))

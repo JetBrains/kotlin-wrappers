@@ -37,6 +37,7 @@ private val interfacesWithSuperclass = setOf(
 
     // events
     "EventEmitterReferencingAsyncResource",
+    "NodeEventTarget",
 
     // fs
     "FSWatcher",

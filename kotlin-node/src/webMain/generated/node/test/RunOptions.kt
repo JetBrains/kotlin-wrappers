@@ -132,6 +132,14 @@ sealed external interface RunOptions {
     var shard: TestShard?
 
     /**
+     * A file path where the test runner will
+     * store the state of the tests to allow rerunning only the failed tests on a next run.
+     * @since v24.7.0
+     * @default undefined
+     */
+    var rerunFailuresFilePath: String?
+
+    /**
      * enable [code coverage](https://nodejs.org/docs/latest-v24.x/api/test.html#collecting-code-coverage) collection.
      * @since v22.10.0
      * @default false
