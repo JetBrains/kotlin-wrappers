@@ -20,6 +20,7 @@ internal fun parseDeclarations(
         .replace("/*.", "/\u200B*.")
         .replace("dispose: () => any;", "dispose(): void;")
         .replace("dispose(): any;", "dispose(): void;")
+        .replace("TaskScope.Global | TaskScope.Workspace", "TaskScope")
 
     return content
         .splitToSequence("\n/**")
@@ -422,6 +423,7 @@ private val UNIONS = listOf(
     "ConfigurationTarget | boolean",
     "string[] | Thenable<readonly string[]>",
     "T[] | Thenable<readonly T[]>",
+    "WorkspaceFolder | TaskScope",
 )
 
 private fun multipleSources(

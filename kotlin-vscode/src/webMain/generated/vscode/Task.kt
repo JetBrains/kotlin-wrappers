@@ -32,7 +32,7 @@ open external class Task {
      */
     constructor(
         taskDefinition: TaskDefinition,
-        scope: JsAny, /* WorkspaceFolder | TaskScope.Global | TaskScope.Workspace */
+        scope: WorkspaceFolder,
         name: String,
         source: String,
         execution: ProcessExecution = definedExternally,
@@ -41,7 +41,16 @@ open external class Task {
 
     constructor(
         taskDefinition: TaskDefinition,
-        scope: JsAny, /* WorkspaceFolder | TaskScope.Global | TaskScope.Workspace */
+        scope: TaskScope,
+        name: String,
+        source: String,
+        execution: ProcessExecution = definedExternally,
+        problemMatchers: String = definedExternally,
+    )
+
+    constructor(
+        taskDefinition: TaskDefinition,
+        scope: WorkspaceFolder,
         name: String,
         source: String,
         execution: ProcessExecution = definedExternally,
@@ -50,7 +59,16 @@ open external class Task {
 
     constructor(
         taskDefinition: TaskDefinition,
-        scope: JsAny, /* WorkspaceFolder | TaskScope.Global | TaskScope.Workspace */
+        scope: TaskScope,
+        name: String,
+        source: String,
+        execution: ProcessExecution = definedExternally,
+        problemMatchers: ReadonlyArray<JsString>,
+    )
+
+    constructor(
+        taskDefinition: TaskDefinition,
+        scope: WorkspaceFolder,
         name: String,
         source: String,
         execution: ShellExecution,
@@ -59,7 +77,16 @@ open external class Task {
 
     constructor(
         taskDefinition: TaskDefinition,
-        scope: JsAny, /* WorkspaceFolder | TaskScope.Global | TaskScope.Workspace */
+        scope: TaskScope,
+        name: String,
+        source: String,
+        execution: ShellExecution,
+        problemMatchers: String = definedExternally,
+    )
+
+    constructor(
+        taskDefinition: TaskDefinition,
+        scope: WorkspaceFolder,
         name: String,
         source: String,
         execution: ShellExecution,
@@ -68,7 +95,16 @@ open external class Task {
 
     constructor(
         taskDefinition: TaskDefinition,
-        scope: JsAny, /* WorkspaceFolder | TaskScope.Global | TaskScope.Workspace */
+        scope: TaskScope,
+        name: String,
+        source: String,
+        execution: ShellExecution,
+        problemMatchers: ReadonlyArray<JsString>,
+    )
+
+    constructor(
+        taskDefinition: TaskDefinition,
+        scope: WorkspaceFolder,
         name: String,
         source: String,
         execution: CustomExecution,
@@ -77,7 +113,25 @@ open external class Task {
 
     constructor(
         taskDefinition: TaskDefinition,
-        scope: JsAny, /* WorkspaceFolder | TaskScope.Global | TaskScope.Workspace */
+        scope: TaskScope,
+        name: String,
+        source: String,
+        execution: CustomExecution,
+        problemMatchers: String = definedExternally,
+    )
+
+    constructor(
+        taskDefinition: TaskDefinition,
+        scope: WorkspaceFolder,
+        name: String,
+        source: String,
+        execution: CustomExecution,
+        problemMatchers: ReadonlyArray<JsString>,
+    )
+
+    constructor(
+        taskDefinition: TaskDefinition,
+        scope: TaskScope,
         name: String,
         source: String,
         execution: CustomExecution,
@@ -96,7 +150,7 @@ open external class Task {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#Task.scope)
      */
-    val scope: JsAny /* TaskScope.Global | TaskScope.Workspace | WorkspaceFolder */?
+    val scope: JsAny /* TaskScope | WorkspaceFolder */?
 
     /**
      * The task's name
