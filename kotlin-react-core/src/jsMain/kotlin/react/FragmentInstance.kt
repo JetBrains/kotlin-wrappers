@@ -1,5 +1,3 @@
-@file:JsModule("react")
-
 package react
 
 import js.array.ReadonlyArray
