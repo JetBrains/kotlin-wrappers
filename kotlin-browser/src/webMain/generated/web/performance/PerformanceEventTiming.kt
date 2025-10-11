@@ -23,7 +23,7 @@ private constructor() :
     val cancelable: Boolean
 
     /**
-     * The read-only **`interactionId`** property returns an ID that uniquely identifies a user interaction which triggered a series of associated events.
+     * The read-only **`interactionId`** property of the PerformanceEventTiming interface returns an ID that uniquely identifies a user interaction which triggered a series of associated events.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceEventTiming/interactionId)
      */

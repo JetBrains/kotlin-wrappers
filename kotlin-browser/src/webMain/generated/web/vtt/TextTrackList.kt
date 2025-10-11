@@ -10,7 +10,7 @@ import web.events.EventInstance
 import web.events.EventTarget
 
 /**
- * The **`TextTrackList`** interface is used to represent a list of the text tracks defined for the associated video or audio element, with each track represented by a separate textTrack object in the list.
+ * The **`TextTrackList`** interface is used to represent a list of the text tracks defined for the associated video or audio element, with each track represented by a separate TextTrack object in the list.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextTrackList)
  */

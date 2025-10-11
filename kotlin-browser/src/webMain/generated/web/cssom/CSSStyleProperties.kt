@@ -742,6 +742,10 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/dominant-baseline)
      */
     var dominantBaseline: String
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/dynamic-range-limit)
+     */
     var dynamicRangeLimit: String
 
     /**
