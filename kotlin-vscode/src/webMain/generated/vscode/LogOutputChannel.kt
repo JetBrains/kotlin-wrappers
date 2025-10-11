@@ -2,6 +2,7 @@
 
 package vscode
 
+import js.errors.JsError
 import kotlin.js.JsAny
 
 /**
@@ -94,7 +95,12 @@ external interface LogOutputChannel :
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#LogOutputChannel.error)
      */
     fun error(
-        error: JsAny, /* string | Error */
+        error: String,
+        vararg args: JsAny?,
+    )
+
+    fun error(
+        error: JsError,
         vararg args: JsAny?,
     )
 }

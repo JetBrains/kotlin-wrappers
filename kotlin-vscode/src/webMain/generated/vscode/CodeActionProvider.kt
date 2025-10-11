@@ -46,7 +46,14 @@ external interface CodeActionProvider<T : CodeAction> {
      */
     fun provideCodeActions(
         document: TextDocument,
-        range: JsAny, /* Range | Selection */
+        range: Range,
+        context: CodeActionContext,
+        token: CancellationToken,
+    ): ProviderResult<ReadonlyArray<JsAny /* Command | T */>>
+
+    fun provideCodeActions(
+        document: TextDocument,
+        range: Selection,
         context: CodeActionContext,
         token: CancellationToken,
     ): ProviderResult<ReadonlyArray<JsAny /* Command | T */>>

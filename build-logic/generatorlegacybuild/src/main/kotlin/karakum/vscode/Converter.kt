@@ -445,11 +445,21 @@ private fun convertFunction(
         "ReadonlyArray<string> | AuthenticationWwwAuthenticateRequest",
         // "Position | Range | readonly Position[] | readonly Range[]",
         // "Position | Range",
+        "Position | Range | Selection",
+        "Range | Selection",
+        "string | CompletionItemLabel",
         "string | MarkdownString",
+        "string | SnippetString",
         "string | DebugConfiguration",
+        "string | InlayHintLabelPart[]",
+        "string | LanguageModelChatMessage",
+        "string | Array<LanguageModelInputPart>",
+        "string | LanguageModelChatRequestMessage",
+        "string | Error",
         "DebugSession | DebugSessionOptions",
         "ProcessExecution | ShellExecution | CustomExecution",
         "string | Uri",
+        "Uri | Location",
     ).firstOrNull { it in source }
 
     if (union != null) {

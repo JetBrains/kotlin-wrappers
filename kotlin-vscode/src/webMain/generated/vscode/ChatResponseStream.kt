@@ -3,7 +3,6 @@
 package vscode
 
 import js.array.ReadonlyArray
-import kotlin.js.JsAny
 import kotlin.js.definedExternally
 
 /**
@@ -38,7 +37,12 @@ external interface ChatResponseStream {
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#ChatResponseStream.anchor)
      */
     fun anchor(
-        value: JsAny, /* Uri | Location */
+        value: Uri,
+        title: String = definedExternally,
+    )
+
+    fun anchor(
+        value: Location,
         title: String = definedExternally,
     )
 
@@ -88,7 +92,12 @@ external interface ChatResponseStream {
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#ChatResponseStream.reference)
      */
     fun reference(
-        value: JsAny, /* Uri | Location */
+        value: Uri,
+        iconPath: IconPath = definedExternally,
+    )
+
+    fun reference(
+        value: Location,
         iconPath: IconPath = definedExternally,
     )
 

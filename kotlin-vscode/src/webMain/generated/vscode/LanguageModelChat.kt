@@ -5,7 +5,6 @@ package vscode
 import js.array.ReadonlyArray
 import js.core.JsInt
 import js.promise.PromiseLike
-import kotlin.js.JsAny
 import kotlin.js.definedExternally
 
 /**
@@ -104,7 +103,12 @@ external interface LanguageModelChat {
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#LanguageModelChat.countTokens)
      */
     fun countTokens(
-        text: JsAny, /* string | LanguageModelChatMessage */
+        text: String,
+        token: CancellationToken = definedExternally,
+    ): PromiseLike<JsInt>
+
+    fun countTokens(
+        text: LanguageModelChatMessage,
         token: CancellationToken = definedExternally,
     ): PromiseLike<JsInt>
 }

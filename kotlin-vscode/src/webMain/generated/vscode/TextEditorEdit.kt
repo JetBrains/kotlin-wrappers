@@ -2,8 +2,6 @@
 
 package vscode
 
-import kotlin.js.JsAny
-
 /**
  * A complex edit that will be applied in one transaction on a TextEditor.
  * This holds a description of the edits and if the edits are valid (i.e. no overlapping regions, document was not changed in the meantime, etc.)
@@ -22,7 +20,17 @@ external interface TextEditorEdit {
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TextEditorEdit.replace)
      */
     fun replace(
-        location: JsAny, /* Position | Range | Selection */
+        location: Position,
+        value: String,
+    )
+
+    fun replace(
+        location: Range,
+        value: String,
+    )
+
+    fun replace(
+        location: Selection,
         value: String,
     )
 
@@ -48,7 +56,9 @@ external interface TextEditorEdit {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TextEditorEdit.delete)
      */
-    fun delete(location: JsAny /* Range | Selection */)
+    fun delete(location: Range)
+
+    fun delete(location: Selection)
 
     /**
      * Set the end of line sequence.

@@ -6,7 +6,6 @@ import js.array.ReadonlyArray
 import js.core.JsInt
 import js.core.Void
 import js.promise.PromiseLike
-import kotlin.js.JsAny
 
 /**
  * A LanguageModelChatProvider implements access to language models, which users can then use through the chat view, or through extension API by acquiring a LanguageModelChat.
@@ -66,7 +65,13 @@ external interface LanguageModelChatProvider<T : LanguageModelChatInformation> {
      */
     fun provideTokenCount(
         model: T,
-        text: JsAny, /* string | LanguageModelChatRequestMessage */
+        text: String,
+        token: CancellationToken,
+    ): PromiseLike<JsInt>
+
+    fun provideTokenCount(
+        model: T,
+        text: LanguageModelChatRequestMessage,
         token: CancellationToken,
     ): PromiseLike<JsInt>
 }
