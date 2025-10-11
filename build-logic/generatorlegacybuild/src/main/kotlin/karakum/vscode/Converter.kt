@@ -385,6 +385,45 @@ private fun convertProperty(
     return "$modifier $name: $type"
 }
 
+private val UNIONS = listOf(
+    "ReadonlyArray<string> | AuthenticationWwwAuthenticateRequest",
+    // "Position | Range | readonly Position[] | readonly Range[]",
+    // "Position | Range",
+    "Position | Range | Selection",
+    "Range | Selection",
+    "string | CompletionItemLabel",
+    "string | MarkdownString",
+    "string | SnippetString",
+    "string | DebugConfiguration",
+    "string | InlayHintLabelPart[]",
+    "string | LanguageModelChatMessage",
+    "string | Array<LanguageModelInputPart>",
+    "string | LanguageModelChatRequestMessage",
+    "string | Error",
+    "DebugSession | DebugSessionOptions",
+    "ProcessExecution | ShellExecution | CustomExecution",
+    "string | Uri",
+    "Uri | Location",
+)
+
+private fun multipleSources(
+    source: String,
+): List<String>? {
+    val union = UNIONS.firstOrNull { it in source }
+        ?: return null
+
+    val unionParts = union.split(" | ")
+
+    val optionalUnion = "?: $union"
+    return if (optionalUnion in source) {
+        unionParts.mapIndexed { index, unionPart ->
+            source.replace(optionalUnion, if (index == 0) "?: $unionPart" else ": $unionPart")
+        }
+    } else {
+        unionParts.map { source.replace(union, it) }
+    }
+}
+
 private fun convertConstructor(
     source: String,
 ): String {
@@ -393,6 +432,12 @@ private fun convertConstructor(
 
     if (source == "constructor()") {
         return source
+    }
+
+    multipleSources(source)?.let {
+        return it.joinToString("\n\n") {
+            convertConstructor(it)
+        }
     }
 
     return source
@@ -441,40 +486,8 @@ private fun convertFunction(
             asyncSupport,
         )
 
-    val union = listOf(
-        "ReadonlyArray<string> | AuthenticationWwwAuthenticateRequest",
-        // "Position | Range | readonly Position[] | readonly Range[]",
-        // "Position | Range",
-        "Position | Range | Selection",
-        "Range | Selection",
-        "string | CompletionItemLabel",
-        "string | MarkdownString",
-        "string | SnippetString",
-        "string | DebugConfiguration",
-        "string | InlayHintLabelPart[]",
-        "string | LanguageModelChatMessage",
-        "string | Array<LanguageModelInputPart>",
-        "string | LanguageModelChatRequestMessage",
-        "string | Error",
-        "DebugSession | DebugSessionOptions",
-        "ProcessExecution | ShellExecution | CustomExecution",
-        "string | Uri",
-        "Uri | Location",
-    ).firstOrNull { it in source }
-
-    if (union != null) {
-        val unionParts = union.split(" | ")
-
-        val optionalUnion = "?: $union"
-        val newSources = if (optionalUnion in source) {
-            unionParts.mapIndexed { index, unionPart ->
-                source.replace(optionalUnion, if (index == 0) "?: $unionPart" else ": $unionPart")
-            }
-        } else {
-            unionParts.map { source.replace(union, it) }
-        }
-
-        return newSources.joinToString("\n\n") {
+    multipleSources(source)?.let {
+        return it.joinToString("\n\n") {
             convertFunction(it, asyncSupport)
         }
     }
