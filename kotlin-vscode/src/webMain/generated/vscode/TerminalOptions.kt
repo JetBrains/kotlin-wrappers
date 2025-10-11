@@ -3,7 +3,7 @@
 package vscode
 
 import js.objects.JsPlainObject
-import js.objects.Record
+import js.objects.ReadonlyRecord
 import kotlin.js.JsAny
 import kotlin.js.JsBoolean
 import kotlin.js.JsString
@@ -49,7 +49,7 @@ external interface TerminalOptions {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TerminalOptions.env)
      */
-    var env: Record<JsString, JsBoolean?>?
+    var env: ReadonlyRecord<JsString, JsBoolean?>?
 
     /**
      * Whether the terminal process environment should be exactly as provided in

@@ -5,7 +5,7 @@
 package vscode
 
 import js.array.ReadonlyArray
-import js.objects.Record
+import js.objects.ReadonlyRecord
 import kotlin.js.JsModule
 import kotlin.js.JsString
 
@@ -32,7 +32,7 @@ open external class NotebookData {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#NotebookData.metadata)
      */
-    var metadata: Record<JsString, *>?
+    var metadata: ReadonlyRecord<JsString, *>?
 
     /**
      * Create new notebook data.

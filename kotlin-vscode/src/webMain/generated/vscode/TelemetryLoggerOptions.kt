@@ -3,7 +3,7 @@
 package vscode
 
 import js.objects.JsPlainObject
-import js.objects.Record
+import js.objects.ReadonlyRecord
 import kotlin.js.JsString
 
 /**
@@ -34,5 +34,5 @@ external interface TelemetryLoggerOptions {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TelemetryLoggerOptions.additionalCommonProperties)
      */
-    val additionalCommonProperties: Record<JsString, *>?
+    val additionalCommonProperties: ReadonlyRecord<JsString, *>?
 }

@@ -5,7 +5,7 @@
 package vscode
 
 import js.array.ReadonlyArray
-import js.objects.Record
+import js.objects.ReadonlyRecord
 import kotlin.js.JsModule
 import kotlin.js.JsString
 import kotlin.js.definedExternally
@@ -55,7 +55,7 @@ open external class McpStdioServerDefinition {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#McpStdioServerDefinition.env)
      */
-    var env: Record<JsString, JsString?>
+    var env: ReadonlyRecord<JsString, JsString?>
 
     /**
      * Optional version identification for the server. If this changes, the
@@ -78,7 +78,7 @@ open external class McpStdioServerDefinition {
         label: String,
         command: String,
         args: ReadonlyArray<JsString> = definedExternally,
-        env: Record<JsString, JsString?> = definedExternally,
+        env: ReadonlyRecord<JsString, JsString?> = definedExternally,
         version: String = definedExternally,
     )
 }

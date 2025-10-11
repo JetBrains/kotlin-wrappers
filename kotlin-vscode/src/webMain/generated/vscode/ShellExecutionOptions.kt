@@ -4,7 +4,7 @@ package vscode
 
 import js.array.ReadonlyArray
 import js.objects.JsPlainObject
-import js.objects.Record
+import js.objects.ReadonlyRecord
 import kotlin.js.JsString
 
 /**
@@ -53,5 +53,5 @@ external interface ShellExecutionOptions {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#ShellExecutionOptions.env)
      */
-    var env: Record<JsString, JsString>?
+    var env: ReadonlyRecord<JsString, JsString>?
 }

@@ -4,7 +4,7 @@ package vscode
 
 import js.array.ReadonlyArray
 import js.objects.JsPlainObject
-import js.objects.Record
+import js.objects.ReadonlyRecord
 import kotlin.js.JsString
 
 /**
@@ -26,7 +26,7 @@ external interface NotebookDocumentChangeEvent {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#NotebookDocumentChangeEvent.metadata)
      */
-    val metadata: Record<JsString, *>?
+    val metadata: ReadonlyRecord<JsString, *>?
 
     /**
      * An array of content changes describing added or removed [cells][NotebookCell].

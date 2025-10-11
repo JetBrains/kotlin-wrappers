@@ -3,7 +3,7 @@
 package vscode
 
 import js.array.ReadonlyArray
-import js.objects.Record
+import js.objects.ReadonlyRecord
 import js.promise.PromiseLike
 import kotlin.js.JsBoolean
 import kotlin.js.JsString
@@ -70,7 +70,7 @@ external interface NotebookDocument {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#NotebookDocument.metadata)
      */
-    val metadata: Record<JsString, *>
+    val metadata: ReadonlyRecord<JsString, *>
 
     /**
      * The number of cells in the notebook.

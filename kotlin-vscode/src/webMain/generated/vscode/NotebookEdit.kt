@@ -5,7 +5,7 @@
 package vscode
 
 import js.array.ReadonlyArray
-import js.objects.Record
+import js.objects.ReadonlyRecord
 import kotlin.js.JsModule
 import kotlin.js.JsString
 
@@ -34,14 +34,14 @@ open external class NotebookEdit {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#NotebookEdit.newCellMetadata)
      */
-    var newCellMetadata: Record<JsString, *>?
+    var newCellMetadata: ReadonlyRecord<JsString, *>?
 
     /**
      * Optional new metadata for the notebook.
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#NotebookEdit.newNotebookMetadata)
      */
-    var newNotebookMetadata: Record<JsString, *>?
+    var newNotebookMetadata: ReadonlyRecord<JsString, *>?
 
     /**
      * Create a new notebook edit.
@@ -102,7 +102,7 @@ open external class NotebookEdit {
          */
         fun updateCellMetadata(
             index: Int,
-            newCellMetadata: Record<JsString, *>,
+            newCellMetadata: ReadonlyRecord<JsString, *>,
         ): NotebookEdit
 
         /**
@@ -112,6 +112,6 @@ open external class NotebookEdit {
          *
          * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#NotebookEdit.updateNotebookMetadata)
          */
-        fun updateNotebookMetadata(newNotebookMetadata: Record<JsString, *>): NotebookEdit
+        fun updateNotebookMetadata(newNotebookMetadata: ReadonlyRecord<JsString, *>): NotebookEdit
     }
 }

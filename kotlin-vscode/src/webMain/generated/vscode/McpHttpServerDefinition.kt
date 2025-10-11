@@ -4,7 +4,7 @@
 
 package vscode
 
-import js.objects.Record
+import js.objects.ReadonlyRecord
 import kotlin.js.JsModule
 import kotlin.js.JsString
 import kotlin.js.definedExternally
@@ -36,7 +36,7 @@ open external class McpHttpServerDefinition {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#McpHttpServerDefinition.headers)
      */
-    var headers: Record<JsString, JsString>
+    var headers: ReadonlyRecord<JsString, JsString>
 
     /**
      * Optional version identification for the server. If this changes, the
@@ -56,7 +56,7 @@ open external class McpHttpServerDefinition {
     constructor(
         label: String,
         uri: Uri,
-        headers: Record<JsString, JsString> = definedExternally,
+        headers: ReadonlyRecord<JsString, JsString> = definedExternally,
         version: String = definedExternally,
     )
 }

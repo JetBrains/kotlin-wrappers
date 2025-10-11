@@ -5,7 +5,7 @@
 package vscode
 
 import js.array.ReadonlyArray
-import js.objects.Record
+import js.objects.ReadonlyRecord
 import kotlin.js.JsModule
 import kotlin.js.JsString
 
@@ -49,7 +49,7 @@ open external class NotebookCellData {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#NotebookCellData.metadata)
      */
-    var metadata: Record<JsString, *>?
+    var metadata: ReadonlyRecord<JsString, *>?
 
     /**
      * The execution summary of this cell data.

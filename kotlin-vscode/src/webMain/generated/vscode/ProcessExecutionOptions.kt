@@ -3,7 +3,7 @@
 package vscode
 
 import js.objects.JsPlainObject
-import js.objects.Record
+import js.objects.ReadonlyRecord
 import kotlin.js.JsString
 
 /**
@@ -28,5 +28,5 @@ external interface ProcessExecutionOptions {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#ProcessExecutionOptions.env)
      */
-    var env: Record<JsString, JsString>?
+    var env: ReadonlyRecord<JsString, JsString>?
 }

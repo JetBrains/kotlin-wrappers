@@ -4,7 +4,7 @@ package vscode
 
 import js.array.ReadonlyArray
 import js.objects.JsPlainObject
-import js.objects.Record
+import js.objects.ReadonlyRecord
 import kotlin.js.JsString
 
 /**
@@ -66,7 +66,7 @@ external interface OpenDialogOptions {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#OpenDialogOptions.filters)
      */
-    var filters: Record<JsString, ReadonlyArray<JsString>>?
+    var filters: ReadonlyRecord<JsString, ReadonlyArray<JsString>>?
 
     /**
      * Dialog title.

@@ -4,7 +4,7 @@ package vscode
 
 import js.core.Void
 import js.errors.JsError
-import js.objects.Record
+import js.objects.ReadonlyRecord
 import js.promise.PromiseLike
 import kotlin.js.JsString
 import kotlin.js.definedExternally
@@ -37,7 +37,7 @@ external interface TelemetrySender {
      */
     fun sendEventData(
         eventName: String,
-        data: Record<JsString, *> = definedExternally,
+        data: ReadonlyRecord<JsString, *> = definedExternally,
     )
 
     /**
@@ -50,7 +50,7 @@ external interface TelemetrySender {
      */
     fun sendErrorData(
         error: JsError,
-        data: Record<JsString, *> = definedExternally,
+        data: ReadonlyRecord<JsString, *> = definedExternally,
     )
 
     /**

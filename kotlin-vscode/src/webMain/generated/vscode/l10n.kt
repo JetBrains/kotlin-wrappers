@@ -6,7 +6,7 @@ package vscode
 
 import js.array.ReadonlyArray
 import js.objects.JsPlainObject
-import js.objects.Record
+import js.objects.ReadonlyRecord
 import kotlin.js.JsAny
 import kotlin.js.JsModule
 import kotlin.js.JsString
@@ -63,7 +63,7 @@ external object l10n {
      */
     fun t(
         message: String,
-        args: Record<JsString, *>,
+        args: ReadonlyRecord<JsString, *>,
     ): String
 
     /**
@@ -109,7 +109,7 @@ external object l10n {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#l10n.bundle)
      */
-    val bundle: Record<JsString, JsString>?
+    val bundle: ReadonlyRecord<JsString, JsString>?
 
     /**
      * The URI of the localization bundle that has been loaded for the extension.

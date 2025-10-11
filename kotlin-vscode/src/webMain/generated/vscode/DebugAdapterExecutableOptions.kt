@@ -3,7 +3,7 @@
 package vscode
 
 import js.objects.JsPlainObject
-import js.objects.Record
+import js.objects.ReadonlyRecord
 import kotlin.js.JsString
 
 /**
@@ -20,7 +20,7 @@ external interface DebugAdapterExecutableOptions {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#DebugAdapterExecutableOptions.env)
      */
-    var env: Record<JsString, JsString>?
+    var env: ReadonlyRecord<JsString, JsString>?
 
     /**
      * The current working directory for the executed debug adapter.

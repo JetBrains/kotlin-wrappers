@@ -3,7 +3,7 @@
 package vscode
 
 import js.objects.JsPlainObject
-import js.objects.Record
+import js.objects.ReadonlyRecord
 import kotlin.js.JsBoolean
 import kotlin.js.JsString
 
@@ -34,7 +34,7 @@ external interface NotebookDocumentContentOptions {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#NotebookDocumentContentOptions.transientCellMetadata)
      */
-    var transientCellMetadata: Record<JsString, JsBoolean?>?
+    var transientCellMetadata: ReadonlyRecord<JsString, JsBoolean?>?
 
     /**
      * Controls if a document metadata property change event will trigger notebook document
@@ -44,5 +44,5 @@ external interface NotebookDocumentContentOptions {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#NotebookDocumentContentOptions.transientDocumentMetadata)
      */
-    var transientDocumentMetadata: Record<JsString, JsBoolean?>?
+    var transientDocumentMetadata: ReadonlyRecord<JsString, JsBoolean?>?
 }

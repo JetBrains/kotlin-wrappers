@@ -4,7 +4,7 @@ package vscode
 
 import js.array.ReadonlyArray
 import js.objects.JsPlainObject
-import js.objects.Record
+import js.objects.ReadonlyRecord
 import kotlin.js.JsString
 
 /**
@@ -29,7 +29,7 @@ external interface LanguageModelChatRequestOptions {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#LanguageModelChatRequestOptions.modelOptions)
      */
-    var modelOptions: Record<JsString, *>?
+    var modelOptions: ReadonlyRecord<JsString, *>?
 
     /**
      * An optional list of tools that are available to the language model. These could be registered tools available via

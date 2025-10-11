@@ -3,7 +3,8 @@
 package vscode
 
 import js.errors.JsError
-import kotlin.js.JsAny
+import js.objects.ReadonlyRecord
+import kotlin.js.JsString
 import kotlin.js.definedExternally
 
 /**
@@ -56,7 +57,7 @@ external interface TelemetryLogger :
      */
     fun logUsage(
         eventName: String,
-        data: JsAny /* Record<string, any | TelemetryTrustedValue> */ = definedExternally,
+        data: ReadonlyRecord<JsString, TelemetryTrustedValue<*>> = definedExternally,
     )
 
     /**
@@ -71,7 +72,7 @@ external interface TelemetryLogger :
      */
     fun logError(
         eventName: String,
-        data: JsAny /* Record<string, any | TelemetryTrustedValue> */ = definedExternally,
+        data: ReadonlyRecord<JsString, TelemetryTrustedValue<*>> = definedExternally,
     )
 
     /**
@@ -87,7 +88,7 @@ external interface TelemetryLogger :
      */
     fun logError(
         error: JsError,
-        data: JsAny /* Record<string, any | TelemetryTrustedValue> */ = definedExternally,
+        data: ReadonlyRecord<JsString, TelemetryTrustedValue<*>> = definedExternally,
     )
 
     /**

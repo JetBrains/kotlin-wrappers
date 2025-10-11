@@ -5,7 +5,7 @@
 package vscode
 
 import js.array.ReadonlyArray
-import js.objects.Record
+import js.objects.ReadonlyRecord
 import kotlin.js.JsModule
 import kotlin.js.JsString
 import kotlin.js.definedExternally
@@ -40,7 +40,7 @@ open external class NotebookCellOutput {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#NotebookCellOutput.metadata)
      */
-    var metadata: Record<JsString, *>?
+    var metadata: ReadonlyRecord<JsString, *>?
 
     /**
      * Create new notebook output.
@@ -52,6 +52,6 @@ open external class NotebookCellOutput {
      */
     constructor(
         items: ReadonlyArray<NotebookCellOutputItem>,
-        metadata: Record<JsString, *> = definedExternally,
+        metadata: ReadonlyRecord<JsString, *> = definedExternally,
     )
 }
