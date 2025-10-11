@@ -388,8 +388,8 @@ private fun convertProperty(
 private val UNIONS = listOf(
     "ReadonlyArray<string> | AuthenticationWwwAuthenticateRequest",
     // "Position | Range | readonly Position[] | readonly Range[]",
-    // "Position | Range",
     "Position | Range | Selection",
+    "Position | Range",
     "Range | Selection",
     "string | CompletionItemLabel",
     "string | MarkdownString",
@@ -409,7 +409,7 @@ private val UNIONS = listOf(
 private fun multipleSources(
     source: String,
 ): List<String>? {
-    val union = UNIONS.firstOrNull { it in source }
+    val union = UNIONS.firstOrNull { "$it, " in source || "$it)" in source }
         ?: return null
 
     val unionParts = union.split(" | ")

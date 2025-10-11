@@ -51,7 +51,13 @@ open external class StatementCoverage {
      */
     constructor(
         executed: JsAny, /* number | boolean */
-        location: JsAny, /* Position | Range */
+        location: Position,
+        branches: ReadonlyArray<BranchCoverage> = definedExternally,
+    )
+
+    constructor(
+        executed: JsAny, /* number | boolean */
+        location: Range,
         branches: ReadonlyArray<BranchCoverage> = definedExternally,
     )
 }

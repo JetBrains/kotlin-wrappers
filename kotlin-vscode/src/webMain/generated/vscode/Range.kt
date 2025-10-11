@@ -5,7 +5,6 @@
 package vscode
 
 import js.objects.JsPlainObject
-import kotlin.js.JsAny
 import kotlin.js.JsModule
 import kotlin.js.definedExternally
 
@@ -89,7 +88,9 @@ open external class Range {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#Range.contains)
      */
-    fun contains(positionOrRange: JsAny /* Position | Range */): Boolean
+    fun contains(positionOrRange: Position): Boolean
+
+    fun contains(positionOrRange: Range): Boolean
 
     /**
      * Check if `other` equals this range.

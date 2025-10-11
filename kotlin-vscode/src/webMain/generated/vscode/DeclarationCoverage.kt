@@ -48,6 +48,12 @@ open external class DeclarationCoverage {
     constructor(
         name: String,
         executed: JsAny, /* number | boolean */
-        location: JsAny, /* Position | Range */
+        location: Position,
+    )
+
+    constructor(
+        name: String,
+        executed: JsAny, /* number | boolean */
+        location: Range,
     )
 }

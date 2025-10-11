@@ -48,7 +48,13 @@ open external class BranchCoverage {
      */
     constructor(
         executed: JsAny, /* number | boolean */
-        location: JsAny /* Position | Range */ = definedExternally,
+        location: Position = definedExternally,
+        label: String = definedExternally,
+    )
+
+    constructor(
+        executed: JsAny, /* number | boolean */
+        location: Range,
         label: String = definedExternally,
     )
 }
