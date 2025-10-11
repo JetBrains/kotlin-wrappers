@@ -50,13 +50,25 @@ open external class StatementCoverage {
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#StatementCoverage.constructor)
      */
     constructor(
-        executed: JsAny, /* number | boolean */
+        executed: Int,
         location: Position,
         branches: ReadonlyArray<BranchCoverage> = definedExternally,
     )
 
     constructor(
-        executed: JsAny, /* number | boolean */
+        executed: Boolean,
+        location: Position,
+        branches: ReadonlyArray<BranchCoverage> = definedExternally,
+    )
+
+    constructor(
+        executed: Int,
+        location: Range,
+        branches: ReadonlyArray<BranchCoverage> = definedExternally,
+    )
+
+    constructor(
+        executed: Boolean,
         location: Range,
         branches: ReadonlyArray<BranchCoverage> = definedExternally,
     )

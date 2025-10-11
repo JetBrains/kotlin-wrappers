@@ -542,7 +542,14 @@ external object window {
      */
     @JsName("showQuickPick")
     fun showQuickPickAsync(
-        items: JsAny, /* string[] | Thenable<readonly string[]> */
+        items: ReadonlyArray<JsString>,
+        options: QuickPickOptions = definedExternally,
+        token: CancellationToken = definedExternally,
+    ): PromiseLike<JsString?>
+
+    @JsName("showQuickPick")
+    fun showQuickPickAsync(
+        items: PromiseLike<ReadonlyArray<JsString>>,
         options: QuickPickOptions = definedExternally,
         token: CancellationToken = definedExternally,
     ): PromiseLike<JsString?>
@@ -571,7 +578,14 @@ external object window {
      */
     @JsName("showQuickPick")
     fun <T : QuickPickItem> showQuickPickAsync(
-        items: JsAny, /* T[] | Thenable<readonly T[]> */
+        items: ReadonlyArray<T>,
+        options: QuickPickOptions = definedExternally,
+        token: CancellationToken = definedExternally,
+    ): PromiseLike<T?>
+
+    @JsName("showQuickPick")
+    fun <T : QuickPickItem> showQuickPickAsync(
+        items: PromiseLike<ReadonlyArray<T>>,
         options: QuickPickOptions = definedExternally,
         token: CancellationToken = definedExternally,
     ): PromiseLike<T?>

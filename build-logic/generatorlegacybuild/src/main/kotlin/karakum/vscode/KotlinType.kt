@@ -205,6 +205,7 @@ internal fun kotlinType(
             "duration",
             "position",
             "offset",
+            "executed",
 
             "countTokens",
             "offsetAt",

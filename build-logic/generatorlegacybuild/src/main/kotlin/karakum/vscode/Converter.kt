@@ -392,6 +392,7 @@ private val UNIONS = listOf(
     "Position | Range",
     "Range | Position",
     "Range | Selection",
+    "number | boolean",
     "string | CompletionItemLabel",
     "string | MarkdownString",
     "string | SnippetString",
@@ -401,6 +402,7 @@ private val UNIONS = listOf(
     "string | Array<LanguageModelInputPart>",
     "string | LanguageModelChatRequestMessage",
     "string | Error",
+    "string | [number, number]",
     "DebugSession | DebugSessionOptions",
     "ProcessExecution | ShellExecution | CustomExecution",
     "string | Uri",
@@ -418,6 +420,8 @@ private val UNIONS = listOf(
     "string | string[]",
     "string[] | string",
     "ConfigurationTarget | boolean",
+    "string[] | Thenable<readonly string[]>",
+    "T[] | Thenable<readonly T[]>",
 )
 
 private fun multipleSources(

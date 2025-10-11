@@ -47,13 +47,25 @@ open external class BranchCoverage {
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#BranchCoverage.constructor)
      */
     constructor(
-        executed: JsAny, /* number | boolean */
+        executed: Int,
         location: Position = definedExternally,
         label: String = definedExternally,
     )
 
     constructor(
-        executed: JsAny, /* number | boolean */
+        executed: Boolean,
+        location: Position = definedExternally,
+        label: String = definedExternally,
+    )
+
+    constructor(
+        executed: Int,
+        location: Range,
+        label: String = definedExternally,
+    )
+
+    constructor(
+        executed: Boolean,
         location: Range,
         label: String = definedExternally,
     )

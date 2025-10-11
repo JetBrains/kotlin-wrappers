@@ -4,6 +4,8 @@
 
 package vscode
 
+import js.array.Tuple2
+import js.core.JsInt
 import kotlin.js.JsAny
 import kotlin.js.JsModule
 import kotlin.js.definedExternally
@@ -43,12 +45,22 @@ open external class ParameterInformation {
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#ParameterInformation.constructor)
      */
     constructor(
-        label: JsAny, /* string | [number, number] */
+        label: String,
         documentation: String = definedExternally,
     )
 
     constructor(
-        label: JsAny, /* string | [number, number] */
+        label: Tuple2<JsInt, JsInt>,
+        documentation: String = definedExternally,
+    )
+
+    constructor(
+        label: String,
+        documentation: MarkdownString,
+    )
+
+    constructor(
+        label: Tuple2<JsInt, JsInt>,
         documentation: MarkdownString,
     )
 }
