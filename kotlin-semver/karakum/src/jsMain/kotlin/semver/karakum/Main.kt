@@ -43,14 +43,10 @@ suspend fun main() {
         ignoreInput = manyOf("$semverPackage/internals/*")
         output = outputPath
         ignoreOutput = manyOf(
-            "**/semver/range.kt",
-            "**/semver/comparator.kt",
-            "**/semver/semver.kt",
             "**/semver/ComparatorOperator.kt",
             "**/semver/OutsideHilo.kt",
             "**/semver/Operator.kt",
             "**/semver/preload.kt",
-            "**/semver/valid.kt",
         )
         libraryName = "semver"
         libraryNameOutputPrefix = true
@@ -59,10 +55,11 @@ suspend fun main() {
             "^.*$" to "semver"
         )
         packageNameMapper = recordOf(
-            "^.*/([^/]+\\.kt)$" to "semver/$1"
+            "^.*/([^/]+\\.kt)$" to "semver/$1",
+            "semver/(Range|SemVer|Comparator)\\.kt" to "semver/$1.class.kt",
         )
         importInjector = recordOf(
-            "^semver/(Range|SemVer|prerelease)\\.kt$" to arrayOf(
+            "^semver/(Range\\.class|SemVer\\.class|prerelease)\\.kt$" to arrayOf(
                 "js.array.ReadonlyArray"
             )
         )
