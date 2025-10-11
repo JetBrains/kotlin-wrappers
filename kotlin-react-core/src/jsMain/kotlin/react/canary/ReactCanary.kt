@@ -6,6 +6,7 @@ import kotlin.annotation.AnnotationTarget.*
 @RequiresOptIn(level = ERROR)
 @Retention(AnnotationRetention.BINARY)
 @Target(
+    CLASS,
     TYPEALIAS,
     PROPERTY,
     FIELD,
