@@ -1459,8 +1459,6 @@ suspend fun main() {
             "WritableWritevChunksItem.kt" to ConflictResolutionStrategy.replace,
             "FileHandleWriteResultPayloadAsync.kt" to ConflictResolutionStrategy.replace,
             "DiffieHellmanOptions.kt" to ConflictResolutionStrategy.replace,
-//            TODO
-//            "GenerateKeyPairSyncType.kt" to ConflictResolutionStrategy.replace,
         )
     }
 }
