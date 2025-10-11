@@ -2,10 +2,10 @@
 
 package vscode
 
+import js.array.ReadonlyArray
 import js.core.JsInt53
 import js.core.Void
 import js.promise.PromiseLike
-import kotlin.js.JsAny
 import kotlin.js.definedExternally
 
 /**
@@ -91,7 +91,12 @@ external interface NotebookCellExecution {
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#NotebookCellExecution.replaceOutput)
      */
     fun replaceOutput(
-        out: JsAny, /* NotebookCellOutput | readonly NotebookCellOutput[] */
+        out: NotebookCellOutput,
+        cell: NotebookCell = definedExternally,
+    ): PromiseLike<Void>
+
+    fun replaceOutput(
+        out: ReadonlyArray<NotebookCellOutput>,
         cell: NotebookCell = definedExternally,
     ): PromiseLike<Void>
 
@@ -106,7 +111,12 @@ external interface NotebookCellExecution {
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#NotebookCellExecution.appendOutput)
      */
     fun appendOutput(
-        out: JsAny, /* NotebookCellOutput | readonly NotebookCellOutput[] */
+        out: NotebookCellOutput,
+        cell: NotebookCell = definedExternally,
+    ): PromiseLike<Void>
+
+    fun appendOutput(
+        out: ReadonlyArray<NotebookCellOutput>,
         cell: NotebookCell = definedExternally,
     ): PromiseLike<Void>
 
@@ -120,7 +130,12 @@ external interface NotebookCellExecution {
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#NotebookCellExecution.replaceOutputItems)
      */
     fun replaceOutputItems(
-        items: JsAny, /* NotebookCellOutputItem | readonly NotebookCellOutputItem[] */
+        items: NotebookCellOutputItem,
+        output: NotebookCellOutput,
+    ): PromiseLike<Void>
+
+    fun replaceOutputItems(
+        items: ReadonlyArray<NotebookCellOutputItem>,
         output: NotebookCellOutput,
     ): PromiseLike<Void>
 
@@ -134,7 +149,12 @@ external interface NotebookCellExecution {
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#NotebookCellExecution.appendOutputItems)
      */
     fun appendOutputItems(
-        items: JsAny, /* NotebookCellOutputItem | readonly NotebookCellOutputItem[] */
+        items: NotebookCellOutputItem,
+        output: NotebookCellOutput,
+    ): PromiseLike<Void>
+
+    fun appendOutputItems(
+        items: ReadonlyArray<NotebookCellOutputItem>,
         output: NotebookCellOutput,
     ): PromiseLike<Void>
 }

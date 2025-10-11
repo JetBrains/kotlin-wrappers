@@ -143,7 +143,12 @@ open external class TreeItem {
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TreeItem.constructor)
      */
     constructor(
-        label: JsAny, /* string | TreeItemLabel */
+        label: String,
+        collapsibleState: TreeItemCollapsibleState = definedExternally,
+    )
+
+    constructor(
+        label: TreeItemLabel,
         collapsibleState: TreeItemCollapsibleState = definedExternally,
     )
 

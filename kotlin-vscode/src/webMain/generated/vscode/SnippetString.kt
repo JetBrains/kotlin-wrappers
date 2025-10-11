@@ -5,7 +5,6 @@
 package vscode
 
 import js.array.ReadonlyArray
-import kotlin.js.JsAny
 import kotlin.js.JsModule
 import kotlin.js.JsString
 import kotlin.js.definedExternally
@@ -75,7 +74,12 @@ open external class SnippetString {
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#SnippetString.appendPlaceholder)
      */
     fun appendPlaceholder(
-        value: JsAny, /* string | ((snippet: SnippetString) => any) */
+        value: String,
+        number: Int = definedExternally,
+    ): SnippetString
+
+    fun appendPlaceholder(
+        value: ((snippet: SnippetString) -> Unit),
         number: Int = definedExternally,
     ): SnippetString
 
@@ -108,6 +112,11 @@ open external class SnippetString {
      */
     fun appendVariable(
         name: String,
-        defaultValue: JsAny, /* string | ((snippet: SnippetString) => any) */
+        defaultValue: String,
+    ): SnippetString
+
+    fun appendVariable(
+        name: String,
+        defaultValue: ((snippet: SnippetString) -> Unit),
     ): SnippetString
 }

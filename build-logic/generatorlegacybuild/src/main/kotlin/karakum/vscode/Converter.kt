@@ -390,6 +390,7 @@ private val UNIONS = listOf(
     // "Position | Range | readonly Position[] | readonly Range[]",
     "Position | Range | Selection",
     "Position | Range",
+    "Range | Position",
     "Range | Selection",
     "string | CompletionItemLabel",
     "string | MarkdownString",
@@ -404,6 +405,15 @@ private val UNIONS = listOf(
     "ProcessExecution | ShellExecution | CustomExecution",
     "string | Uri",
     "Uri | Location",
+    "NotebookCellOutput | readonly NotebookCellOutput[]",
+    "NotebookCellOutputItem | readonly NotebookCellOutputItem[]",
+    "WorkspaceFolder | Uri | string",
+    "string | ((snippet: SnippetString) => any)",
+    // "WorkspaceFolder | TaskScope.Global | TaskScope.Workspace",
+    "TestMessage | readonly TestMessage[]",
+    "Range[] | readonly DecorationOptions[]",
+    "string | TreeItemLabel",
+    // "CustomTextEditorProvider | CustomReadonlyEditorProvider | CustomEditorProvider",
 )
 
 private fun multipleSources(

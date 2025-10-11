@@ -4,7 +4,6 @@
 
 package vscode
 
-import kotlin.js.JsAny
 import kotlin.js.JsModule
 
 /**
@@ -61,7 +60,17 @@ open external class RelativePattern {
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#RelativePattern.constructor)
      */
     constructor(
-        base: JsAny, /* WorkspaceFolder | Uri | string */
+        base: WorkspaceFolder,
+        pattern: String,
+    )
+
+    constructor(
+        base: Uri,
+        pattern: String,
+    )
+
+    constructor(
+        base: String,
         pattern: String,
     )
 }

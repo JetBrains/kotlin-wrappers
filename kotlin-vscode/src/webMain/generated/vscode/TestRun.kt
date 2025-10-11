@@ -2,8 +2,8 @@
 
 package vscode
 
+import js.array.ReadonlyArray
 import js.core.Void
-import kotlin.js.JsAny
 import kotlin.js.definedExternally
 
 /**
@@ -72,7 +72,13 @@ external interface TestRun {
      */
     fun failed(
         test: TestItem,
-        message: JsAny, /* TestMessage | readonly TestMessage[] */
+        message: TestMessage,
+        duration: Int = definedExternally,
+    )
+
+    fun failed(
+        test: TestItem,
+        message: ReadonlyArray<TestMessage>,
         duration: Int = definedExternally,
     )
 
@@ -89,7 +95,13 @@ external interface TestRun {
      */
     fun errored(
         test: TestItem,
-        message: JsAny, /* TestMessage | readonly TestMessage[] */
+        message: TestMessage,
+        duration: Int = definedExternally,
+    )
+
+    fun errored(
+        test: TestItem,
+        message: ReadonlyArray<TestMessage>,
         duration: Int = definedExternally,
     )
 

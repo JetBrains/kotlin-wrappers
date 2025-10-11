@@ -4,7 +4,6 @@
 
 package vscode
 
-import kotlin.js.JsAny
 import kotlin.js.JsModule
 
 /**
@@ -38,6 +37,11 @@ open external class Location {
      */
     constructor(
         uri: Uri,
-        rangeOrPosition: JsAny, /* Range | Position */
+        rangeOrPosition: Range,
+    )
+
+    constructor(
+        uri: Uri,
+        rangeOrPosition: Position,
     )
 }

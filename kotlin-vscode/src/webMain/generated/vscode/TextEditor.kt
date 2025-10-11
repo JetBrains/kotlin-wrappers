@@ -145,7 +145,12 @@ external interface TextEditor {
      */
     fun setDecorations(
         decorationType: TextEditorDecorationType,
-        rangesOrOptions: JsAny, /* Range[] | readonly DecorationOptions[] */
+        rangesOrOptions: ReadonlyArray<Range>,
+    )
+
+    fun setDecorations(
+        decorationType: TextEditorDecorationType,
+        rangesOrOptions: ReadonlyArray<DecorationOptions>,
     )
 
     /**
