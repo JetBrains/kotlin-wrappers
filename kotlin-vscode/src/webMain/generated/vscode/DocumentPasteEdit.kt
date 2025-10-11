@@ -63,7 +63,13 @@ open external class DocumentPasteEdit {
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#DocumentPasteEdit.constructor)
      */
     constructor(
-        insertText: JsAny, /* string | SnippetString */
+        insertText: String,
+        title: String,
+        kind: DocumentDropOrPasteEditKind,
+    )
+
+    constructor(
+        insertText: SnippetString,
         title: String,
         kind: DocumentDropOrPasteEditKind,
     )

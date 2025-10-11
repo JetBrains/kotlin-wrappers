@@ -48,7 +48,13 @@ open external class LanguageModelChatMessage {
      */
     constructor(
         role: LanguageModelChatMessageRole,
-        content: JsAny, /* string | Array<LanguageModelInputPart> */
+        content: String,
+        name: String = definedExternally,
+    )
+
+    constructor(
+        role: LanguageModelChatMessageRole,
+        content: ReadonlyArray<LanguageModelInputPart>,
         name: String = definedExternally,
     )
 

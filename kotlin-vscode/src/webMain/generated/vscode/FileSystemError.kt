@@ -5,7 +5,6 @@
 package vscode
 
 import js.errors.JsError
-import kotlin.js.JsAny
 import kotlin.js.JsModule
 import kotlin.js.definedExternally
 
@@ -26,7 +25,9 @@ open external class FileSystemError :
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#FileSystemError.constructor)
      */
-    constructor(messageOrUri: JsAny /* string | Uri */ = definedExternally)
+    constructor(messageOrUri: String = definedExternally)
+
+    constructor(messageOrUri: Uri)
 
     /**
      * A code that identifies this error.

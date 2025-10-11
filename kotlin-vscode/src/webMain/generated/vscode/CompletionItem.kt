@@ -187,7 +187,12 @@ open external class CompletionItem {
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#CompletionItem.constructor)
      */
     constructor(
-        label: JsAny, /* string | CompletionItemLabel */
+        label: String,
+        kind: CompletionItemKind = definedExternally,
+    )
+
+    constructor(
+        label: CompletionItemLabel,
         kind: CompletionItemKind = definedExternally,
     )
 }

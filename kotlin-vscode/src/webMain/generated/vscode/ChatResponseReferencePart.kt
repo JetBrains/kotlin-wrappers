@@ -36,7 +36,12 @@ open external class ChatResponseReferencePart {
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#ChatResponseReferencePart.constructor)
      */
     constructor(
-        value: JsAny, /* Uri | Location */
+        value: Uri,
+        iconPath: IconPath = definedExternally,
+    )
+
+    constructor(
+        value: Location,
         iconPath: IconPath = definedExternally,
     )
 }

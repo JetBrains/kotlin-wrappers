@@ -4,7 +4,6 @@
 
 package vscode
 
-import kotlin.js.JsAny
 import kotlin.js.JsModule
 
 /**
@@ -27,5 +26,7 @@ open external class ChatResponseMarkdownPart {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#ChatResponseMarkdownPart.constructor)
      */
-    constructor(value: JsAny /* string | MarkdownString */)
+    constructor(value: String)
+
+    constructor(value: MarkdownString)
 }

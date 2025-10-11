@@ -44,6 +44,11 @@ open external class ParameterInformation {
      */
     constructor(
         label: JsAny, /* string | [number, number] */
-        documentation: JsAny /* string | MarkdownString */ = definedExternally,
+        documentation: String = definedExternally,
+    )
+
+    constructor(
+        label: JsAny, /* string | [number, number] */
+        documentation: MarkdownString,
     )
 }

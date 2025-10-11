@@ -58,7 +58,13 @@ open external class DocumentDropEdit {
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#DocumentDropEdit.constructor)
      */
     constructor(
-        insertText: JsAny, /* string | SnippetString */
+        insertText: String,
+        title: String = definedExternally,
+        kind: DocumentDropOrPasteEditKind = definedExternally,
+    )
+
+    constructor(
+        insertText: SnippetString,
         title: String = definedExternally,
         kind: DocumentDropOrPasteEditKind = definedExternally,
     )

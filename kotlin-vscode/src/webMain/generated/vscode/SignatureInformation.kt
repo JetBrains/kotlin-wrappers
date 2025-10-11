@@ -59,6 +59,11 @@ open external class SignatureInformation {
      */
     constructor(
         label: String,
-        documentation: JsAny /* string | MarkdownString */ = definedExternally,
+        documentation: String = definedExternally,
+    )
+
+    constructor(
+        label: String,
+        documentation: MarkdownString,
     )
 }

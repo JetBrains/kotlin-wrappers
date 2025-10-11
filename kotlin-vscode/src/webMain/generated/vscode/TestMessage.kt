@@ -89,7 +89,9 @@ open external class TestMessage {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#TestMessage.constructor)
      */
-    constructor(message: JsAny /* string | MarkdownString */)
+    constructor(message: String)
+
+    constructor(message: MarkdownString)
 
     companion object {
         /**

@@ -91,7 +91,13 @@ open external class InlayHint {
      */
     constructor(
         position: Position,
-        label: JsAny, /* string | InlayHintLabelPart[] */
+        label: String,
+        kind: InlayHintKind = definedExternally,
+    )
+
+    constructor(
+        position: Position,
+        label: ReadonlyArray<InlayHintLabelPart>,
         kind: InlayHintKind = definedExternally,
     )
 }

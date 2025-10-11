@@ -36,7 +36,12 @@ open external class ChatResponseAnchorPart {
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#ChatResponseAnchorPart.constructor)
      */
     constructor(
-        value: JsAny, /* Uri | Location */
+        value: Uri,
+        title: String = definedExternally,
+    )
+
+    constructor(
+        value: Location,
         title: String = definedExternally,
     )
 }

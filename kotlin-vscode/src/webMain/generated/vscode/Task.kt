@@ -35,7 +35,25 @@ open external class Task {
         scope: JsAny, /* WorkspaceFolder | TaskScope.Global | TaskScope.Workspace */
         name: String,
         source: String,
-        execution: JsAny /* ProcessExecution | ShellExecution | CustomExecution */ = definedExternally,
+        execution: ProcessExecution = definedExternally,
+        problemMatchers: JsAny /* string | string[] */ = definedExternally,
+    )
+
+    constructor(
+        taskDefinition: TaskDefinition,
+        scope: JsAny, /* WorkspaceFolder | TaskScope.Global | TaskScope.Workspace */
+        name: String,
+        source: String,
+        execution: ShellExecution,
+        problemMatchers: JsAny /* string | string[] */ = definedExternally,
+    )
+
+    constructor(
+        taskDefinition: TaskDefinition,
+        scope: JsAny, /* WorkspaceFolder | TaskScope.Global | TaskScope.Workspace */
+        name: String,
+        source: String,
+        execution: CustomExecution,
         problemMatchers: JsAny /* string | string[] */ = definedExternally,
     )
 

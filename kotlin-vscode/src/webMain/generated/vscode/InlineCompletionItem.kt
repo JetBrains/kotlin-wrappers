@@ -61,7 +61,13 @@ open external class InlineCompletionItem {
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#InlineCompletionItem.constructor)
      */
     constructor(
-        insertText: JsAny, /* string | SnippetString */
+        insertText: String,
+        range: Range = definedExternally,
+        command: Command = definedExternally,
+    )
+
+    constructor(
+        insertText: SnippetString,
         range: Range = definedExternally,
         command: Command = definedExternally,
     )
