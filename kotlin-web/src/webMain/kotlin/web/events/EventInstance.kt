@@ -5,22 +5,41 @@
 package web.events
 
 import js.objects.unsafeJso
+import js.reflect.upcast
 import kotlinx.coroutines.channels.awaitClose
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.callbackFlow
 import kotlin.js.undefined
 
 class EventInstance<out E : Event, out C : EventTarget, out T : EventTarget>(
-    internal val target: C,
+    internal val target: EventTargetLike,
     internal val type: EventType<E>,
 )
+
+inline fun <E : Event, C : EventTarget, T : EventTarget> EventInstance(
+    target: EventTargetLike,
+    type: String,
+): EventInstance<E, C, T> =
+    EventInstance(
+        target = target,
+        type = EventType(type),
+    )
+
+inline fun <E : Event, C : EventTarget, T : EventTarget> EventInstance(
+    target: C,
+    type: EventType<E>,
+): EventInstance<E, C, T> =
+    EventInstance(
+        target = target.upcast<EventTargetLike>(),
+        type = type,
+    )
 
 inline fun <E : Event, C : EventTarget, T : EventTarget> EventInstance(
     target: C,
     type: String,
 ): EventInstance<E, C, T> =
     EventInstance(
-        target = target,
+        target = target.upcast<EventTargetLike>(),
         type = EventType(type),
     )
 
@@ -59,12 +78,21 @@ private fun listenerOptions(
 fun <E : Event, C : EventTarget, T : EventTarget> EventInstance<E, C, T>.addHandler(
     handler: EventHandler<E, C, T>,
     options: AddEventListenerOptions? = undefined,
-): () -> Unit =
-    target.addEventHandler(
+): () -> Unit {
+    target.addEventListener(
         type = type,
+        callback = handler,
         options = options,
-        handler = handler,
     )
+
+    return {
+        target.removeEventListener(
+            type = type,
+            callback = handler,
+            options = options,
+        )
+    }
+}
 
 fun <E : Event, C : EventTarget, T : EventTarget, D> EventInstance<E, C, T>.addHandler(
     handler: (D) -> Unit,
