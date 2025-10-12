@@ -13,39 +13,8 @@ import kotlin.js.undefined
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/EventTarget)
  */
-open external class EventTarget {
-    internal fun <E : Event> addEventListener(
-        type: EventType<E>,
-        callback: EventHandler<E, *, *>,
-        options: AddEventListenerOptions? = definedExternally,
-    )
-
-    internal fun <E : Event> addEventListener(
-        type: EventType<*>,
-        callback: (E) -> Unit,
-        options: AddEventListenerOptions? = definedExternally,
-    )
-
-    internal fun <E : Event> removeEventListener(
-        type: EventType<E>,
-        callback: EventHandler<E, *, *>,
-        options: EventListenerOptions? = definedExternally,
-    )
-
-    internal fun <E : Event> removeEventListener(
-        type: EventType<*>,
-        callback: (E) -> Unit,
-        options: EventListenerOptions? = definedExternally,
-    )
-
-    /**
-     * The **`dispatchEvent()`** method of the EventTarget sends an Event to the object, (synchronously) invoking the affected event listeners in the appropriate order.
-     *
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/EventTarget/dispatchEvent)
-     */
-    fun dispatchEvent(
-        event: Event,
-    ): Boolean
+open external class EventTarget :
+    EventTargetLike {
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/EventTarget/when)
@@ -120,42 +89,6 @@ fun <E : Event, C : EventTarget, T : EventTarget> C.addEventHandler(
             options = options,
         )
     }
-}
-
-// event
-
-/**
- * The **`addEventListener()`** method of the EventTarget interface sets up a function that will be called whenever the specified event is delivered to the target.
- *
- * [MDN Reference](https://developer.mozilla.org/docs/Web/API/EventTarget/addEventListener)
- */
-fun <E : Event, C : EventTarget> C.addEventListener(
-    type: EventType<E>,
-    handler: (E) -> Unit,
-    options: AddEventListenerOptions? = undefined,
-) {
-    addEventListener(
-        type = type,
-        callback = handler,
-        options = options,
-    )
-}
-
-/**
- * The **`removeEventListener()`** method of the EventTarget interface removes an event listener previously registered with EventTarget.addEventListener() from the target.
- *
- * [MDN Reference](https://developer.mozilla.org/docs/Web/API/EventTarget/removeEventListener)
- */
-fun <E : Event, C : EventTarget> C.removeEventListener(
-    type: EventType<E>,
-    handler: (E) -> Unit,
-    options: EventListenerOptions? = undefined,
-) {
-    removeEventListener(
-        type = type,
-        callback = handler,
-        options = options,
-    )
 }
 
 // event + targets
