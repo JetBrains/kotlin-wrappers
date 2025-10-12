@@ -7,7 +7,7 @@ package web.events
 import js.objects.unsafeJso
 import kotlinx.coroutines.channels.awaitClose
 import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.channelFlow
+import kotlinx.coroutines.flow.callbackFlow
 import kotlin.js.undefined
 
 class EventInstance<out E : Event, out C : EventTarget, out T : EventTarget>(
@@ -35,7 +35,7 @@ operator fun <E : Event, C : EventTarget, T : EventTarget, D> EventInstance<E, C
         passive = passive,
     )
 
-    return channelFlow {
+    return callbackFlow {
         val unsubscribe = addHandler(options, ::trySend)
         awaitClose(unsubscribe)
     }
