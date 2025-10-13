@@ -7,6 +7,7 @@ import web.canvas.OffscreenCanvas
 import web.events.Event
 import web.events.EventInstance
 import web.gl.TexImageSource
+import web.gl.WebGLContextEvent
 import web.gpu.GPUCopyExternalImageSource
 import web.mediastreams.MediaStream
 import web.rendering.RenderingContext
@@ -96,3 +97,21 @@ inline val <C : HTMLCanvasElement> C.contextLostEvent: EventInstance<Event, C, C
  */
 inline val <C : HTMLCanvasElement> C.contextRestoredEvent: EventInstance<Event, C, C>
     get() = EventInstance(this, "contextrestored")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLCanvasElement/webglcontextcreationerror_event)
+ */
+inline val <C : HTMLCanvasElement> C.webglContextCreationErrorEvent: EventInstance<WebGLContextEvent, C, C>
+    get() = EventInstance(this, "webglcontextcreationerror")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLCanvasElement/webglcontextlost_event)
+ */
+inline val <C : HTMLCanvasElement> C.webglContextLostEvent: EventInstance<WebGLContextEvent, C, C>
+    get() = EventInstance(this, "webglcontextlost")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLCanvasElement/webglcontextrestored_event)
+ */
+inline val <C : HTMLCanvasElement> C.webglContextRestoredEvent: EventInstance<WebGLContextEvent, C, C>
+    get() = EventInstance(this, "webglcontextrestored")

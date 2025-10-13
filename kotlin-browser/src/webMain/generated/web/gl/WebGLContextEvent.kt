@@ -22,7 +22,18 @@ open external class WebGLContextEvent(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLContextEvent/statusMessage)
      */
     val statusMessage: String
+
+    companion object
 }
 
 inline fun WebGLContextEvent.asInit(): WebGLContextEventInit =
     unsafeCast(this)
+
+inline val WebGLContextEvent.Companion.WEBGL_CONTEXT_CREATION_ERROR: EventType<WebGLContextEvent>
+    get() = EventType("webglcontextcreationerror")
+
+inline val WebGLContextEvent.Companion.WEBGL_CONTEXT_LOST: EventType<WebGLContextEvent>
+    get() = EventType("webglcontextlost")
+
+inline val WebGLContextEvent.Companion.WEBGL_CONTEXT_RESTORED: EventType<WebGLContextEvent>
+    get() = EventType("webglcontextrestored")

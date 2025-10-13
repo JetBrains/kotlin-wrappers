@@ -21,6 +21,22 @@ private val ADDITIONAL_EVENTS = listOf(
         name = "success",
         type = "IDBVersionChangeEvent",
     ),
+
+    // TODO: report
+    EventData(
+        name = "webglcontextcreationerror",
+        type = "WebGLContextEvent",
+    ),
+
+    EventData(
+        name = "webglcontextlost",
+        type = "WebGLContextEvent",
+    ),
+
+    EventData(
+        name = "webglcontextrestored",
+        type = "WebGLContextEvent",
+    ),
 )
 
 private val EXCLUDED = setOf(
