@@ -5,14 +5,15 @@
 package js.iterable
 
 import js.disposable.internal.SuspendCloseable
+import js.disposable.internal.awaitFirst
 import js.disposable.internal.use
-import js.iterable.internal.safeDispose
 import js.promise.await
 import js.symbol.Symbol
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import kotlin.js.JsAny
 import kotlin.js.definedExternally
+import kotlin.js.toJsString
 
 external interface AsyncIterable<out T : JsAny?> {
     operator fun get(
@@ -25,7 +26,10 @@ fun <T : JsAny?> AsyncIterable<T>.asFlow(): Flow<T> =
         val iterator = this@asFlow[Symbol.asyncIterator]()
 
         val closeable = SuspendCloseable {
-            iterator.safeDispose()
+            iterator.awaitFirst(
+                "return".toJsString(),
+                Symbol.asyncDispose,
+            )
         }
 
         closeable.use {

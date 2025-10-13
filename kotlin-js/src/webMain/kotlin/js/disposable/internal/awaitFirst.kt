@@ -12,13 +12,18 @@ import kotlin.js.JsAny
 internal suspend fun JsAny.awaitFirst(
     vararg methodKeys: JsAny?,
 ) {
-    val record = unsafeCast<ReadonlyRecord<JsAny, JsAny?>>(this)
+    val record = unsafeCast<ReadonlyRecord<JsAny, AsyncDispose?>>(this)
 
     val dispose = methodKeys
         .filterNotNull()
         .firstNotNullOf { record[it] }
+        .bind(this)
 
     val result = unsafeInvoke<JsAny?>(dispose)
     result as Promise<*>
     result.await()
+}
+
+private external interface AsyncDispose {
+    fun bind(thisArg: JsAny): AsyncDispose
 }
