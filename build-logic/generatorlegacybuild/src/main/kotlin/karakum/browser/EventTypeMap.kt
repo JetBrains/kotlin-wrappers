@@ -113,10 +113,12 @@ internal val EVENT_CORRECTION_MAP = mapOf(
     "bufferedamountlow" to "buffered_amount_low",
     "canplay" to "can_play",
     "canplaythrough" to "can_play_through",
+    "clipboardchange" to "clipboard_change",
     "compositionend" to "composition_end",
     "compositionstart" to "composition_start",
     "compositionupdate" to "composition_update",
     "connectionstatechange" to "connection_state_change",
+    "contentvisibilityautostatechange" to "content_visibility_auto_state_change",
     "contextmenu" to "context_menu",
     "controllerchange" to "controller_change",
     "cuechange" to "cue_change",
@@ -245,5 +247,9 @@ internal val EVENT_CORRECTION_MAP = mapOf(
     "pagereveal" to "page_reveal",
     "pageswap" to "page_swap",
 
-    "prioritychange" to "priority_change"
+    "prioritychange" to "priority_change",
+
+    "webglcontextcreationerror" to "webgl_context_creation_error",
+    "webglcontextlost" to "webgl_context_lost",
+    "webglcontextrestored" to "webgl_context_restored",
 )

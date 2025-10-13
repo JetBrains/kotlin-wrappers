@@ -46,6 +46,33 @@ object EventDataRegistry {
             }
     }
 
+    fun isDomNodeTarget(
+        target: String,
+    ): Boolean =
+        when {
+            target == "Text" -> true
+            target == "Element" -> true
+            target == "MathMLElement" -> true
+
+            // TEMP
+            target == "HTMLPortalElement" -> false
+
+            !target.endsWith("Element") -> false
+            else -> target.startsWith("HTML") || target.startsWith("SVG")
+        }
+
+    fun getMergedDomDataList(): List<EventData> {
+        return dataList.asSequence()
+            .filter { !it.type.startsWith("DOM") }
+            .filter { it.`interface` !in EXCLUDED_EVENTS }
+            .filter { data ->
+                data.targets.asSequence()
+                    .map { it.target }
+                    .any(::isDomNodeTarget)
+            }
+            .toList()
+    }
+
     private fun Target.targetWithAliases(
         eventType: String,
     ): Sequence<String> {
