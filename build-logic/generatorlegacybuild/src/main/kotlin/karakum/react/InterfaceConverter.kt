@@ -3,9 +3,9 @@ package karakum.react
 private val TYPE_CONTAINER_IMPORTS = """
 import web.components.HTMLSlotElement
 import web.components.HTMLTemplateElement
-import web.html.*    
-import web.svg.*    
-import react.IntrinsicType    
+import web.html.*
+import web.svg.*
+import react.IntrinsicType
 """.trimIndent()
 
 private const val ORIGINAL_DANGEROUSLY_SET_INNER_HTML_BODY = """{
@@ -163,7 +163,7 @@ private fun convertAttributesInterface(
                         set(value) {
                             asDynamic().onChange = value
                         }
-                    """
+                    """.trimEnd()
 
         result
     }
