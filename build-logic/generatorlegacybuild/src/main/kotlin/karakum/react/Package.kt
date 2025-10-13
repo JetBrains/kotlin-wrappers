@@ -3,6 +3,7 @@ package karakum.react
 internal enum class Package(
     id: String,
 ) {
+    REACT("react"),
     DOM("react.dom"),
     ARIA("react.dom.aria"),
     EVENTS("react.dom.events"),
