@@ -2,6 +2,7 @@ package karakum.react
 
 import karakum.common.GENERATOR_COMMENT
 import karakum.common.writeCode
+import karakum.events.EventDataRegistry
 import java.io.File
 
 private val ARIA_IMPORTS = """
@@ -66,8 +67,11 @@ private val EXCLUDED_TYPES = setOf(
 
 fun generateKotlinDeclarations(
     definitionsFile: File,
+    eventsSourceFile: File,
     sourceDir: File,
 ) {
+    EventDataRegistry.sourceFile = eventsSourceFile
+
     for ((name, body, pkg) in convertDefinitions(definitionsFile)) {
         if (name in EXCLUDED_TYPES) {
             continue
