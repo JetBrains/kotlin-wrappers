@@ -1354,6 +1354,7 @@ internal fun convertInterface(
                 || name == "PopoverTargetAttributes"
                 || name == "XPathEvaluatorBase"
                 || name == "ARIAMixin"
+                || name == "Animatable"
                 || name == "HTMLOrSVGElement"
                 || name == "DocumentOrShadowRoot"
                 || name == "Slottable"
