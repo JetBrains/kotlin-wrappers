@@ -1,6 +1,7 @@
 package js.disposable.internal
 
 import js.function.unsafeInvoke
+import js.objects.PropertyKey
 import js.objects.ReadonlyRecord
 import js.promise.Promise
 import js.promise.await
@@ -10,9 +11,9 @@ import kotlin.collections.firstNotNullOf
 import kotlin.js.JsAny
 
 internal suspend fun JsAny.awaitFirst(
-    vararg methodKeys: JsAny?,
+    vararg methodKeys: PropertyKey?,
 ) {
-    val record = unsafeCast<ReadonlyRecord<JsAny, AsyncDispose?>>(this)
+    val record = unsafeCast<ReadonlyRecord<PropertyKey, AsyncDispose?>>(this)
 
     val dispose = methodKeys
         .filterNotNull()

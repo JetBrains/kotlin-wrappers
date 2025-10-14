@@ -1,8 +1,8 @@
 package js.disposable.internal
 
 import js.internal.InternalApi
+import js.objects.PropertyKey
 import js.symbol.Symbol
-import kotlin.js.toJsString
 
 @SubclassOptInRequired(InternalApi::class)
 external interface AsyncCloseableDisposable
@@ -11,7 +11,7 @@ external interface AsyncCloseableDisposable
 internal suspend fun AsyncCloseableDisposable.close() {
     awaitFirst(
         Symbol.asyncDispose,
-        "close".toJsString(),
-        "cancel".toJsString(),
+        PropertyKey("close"),
+        PropertyKey("cancel"),
     )
 }
