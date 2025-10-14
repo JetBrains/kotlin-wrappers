@@ -1,15 +1,13 @@
 package js.symbol
 
 import js.core.JsPrimitive
-import js.reflect.JsExternalInheritorsOnly
-import kotlin.js.JsAny
+import js.objects.PropertyKey
 import kotlin.js.definedExternally
 
-@JsExternalInheritorsOnly
 @JsPrimitive("symbol")
 open external class Symbol
 private constructor() :
-    JsAny {
+    PropertyKey {
 
     val description: String?
 

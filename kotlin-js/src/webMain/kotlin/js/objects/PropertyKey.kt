@@ -1,5 +1,12 @@
 package js.objects
 
-import kotlin.js.JsAny
+import js.reflect.JsExternalInheritorsOnly
+import js.reflect.unsafeCast
 
-typealias PropertyKey = JsAny /* string | number | symbol */
+@JsExternalInheritorsOnly
+external interface PropertyKey
+
+inline fun PropertyKey(
+    value: String,
+): PropertyKey =
+    unsafeCast(value)
