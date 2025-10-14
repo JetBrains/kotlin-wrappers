@@ -4,8 +4,6 @@ import js.errors.TypeError
 import js.errors.toJsError
 import js.errors.toJsErrorLike
 import js.globals.globalThis
-import js.objects.get
-import js.objects.set
 import js.promise.Promise
 import js.promise.invoke
 import js.reflect.unsafeCast
