@@ -11,7 +11,7 @@ import kotlin.js.JsString
 import kotlin.js.definedExternally
 
 /**
- * The **`CSSStyleDeclaration`** interface represents an object that is a CSS declaration block, and exposes style information and various style-related methods and properties.
+ * The **`CSSStyleDeclaration`** interface is the base class for objects that represent CSS declaration blocks with different supported sets of CSS style information:
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleDeclaration)
  */

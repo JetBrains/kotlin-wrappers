@@ -2,6 +2,11 @@
 
 package web.cssom
 
+/**
+ * The **`CSSStyleProperties`** interface of the CSS Object Model (CSSOM) represents inline or computed styles available on an element, or the styles associated with a CSS style rule.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleProperties)
+ */
 open external class CSSStyleProperties
 private constructor() :
     CSSStyleDeclarationBase {
@@ -704,6 +709,8 @@ private constructor() :
     var counterSet: String
 
     /**
+     * The **`cssFloat`** property of the CSSStyleProperties interface returns the CSS float property.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleDeclaration/cssFloat)
      */
     var cssFloat: String

@@ -18,7 +18,7 @@ private constructor() :
     var selectorText: String
 
     /**
-     * The read-only **`style`** property is the CSSStyleDeclaration interface for the declaration block of the CSSStyleRule.
+     * The read-only **`style`** property is a CSSStyleProperties object that represents the inline styles of a style rule (CSSStyleRule).
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleRule/style)
      */

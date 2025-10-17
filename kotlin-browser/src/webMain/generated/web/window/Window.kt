@@ -391,33 +391,33 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/scroll)
      */
-    fun scroll(options: ScrollToOptions = definedExternally)
+    fun scroll(options: ScrollToOptions = definedExternally) /* : Promise<Void> */
     fun scroll(
         x: Double,
         y: Double,
-    )
+    ) /* : Promise<Void> */
 
     /**
      * The **`Window.scrollBy()`** method scrolls the document in the window by the given amount.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/scrollBy)
      */
-    fun scrollBy(options: ScrollToOptions = definedExternally)
+    fun scrollBy(options: ScrollToOptions = definedExternally) /* : Promise<Void> */
     fun scrollBy(
         x: Double,
         y: Double,
-    )
+    ) /* : Promise<Void> */
 
     /**
      * **`Window.scrollTo()`** scrolls to a particular set of coordinates in the document.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/scrollTo)
      */
-    fun scrollTo(options: ScrollToOptions = definedExternally)
+    fun scrollTo(options: ScrollToOptions = definedExternally) /* : Promise<Void> */
     fun scrollTo(
         x: Double,
         y: Double,
-    )
+    ) /* : Promise<Void> */
 
     /**
      * The **`window.stop()`** stops further resource loading in the current browsing context, equivalent to the stop button in the browser.

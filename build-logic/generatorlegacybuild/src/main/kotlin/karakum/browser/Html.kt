@@ -2210,7 +2210,7 @@ private fun convertFunction(
 
     val parameters = convertFunctionParameters(parametersSource, typeProvider)
 
-    val result = (": " + source.substringAfter("): "))
+    var result = (": " + source.substringAfter("): "))
         .removeSuffix(": void")
         .replace(
             ": [ReadableStream<R>, ReadableStream<R>]",
@@ -2273,6 +2273,11 @@ private fun convertFunction(
         .replace("<void>", "<Void>")
         .replace(" | null", "?")
         .replace(" | undefined", "?")
+
+    // TODO: report issue
+    if (result == ": Promise<Void>" && !typeProvider.acceptedAsyncFunction(name)) {
+        result = " /* : Promise<Void> */"
+    }
 
     var safeName = when (name) {
         "continue", "is" -> "`$name`"

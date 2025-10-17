@@ -11,7 +11,7 @@ import web.dom.Document
  */
 open external class DOMParser {
     /**
-     * The **`parseFromString()`** method of the DOMParser interface parses a string containing either HTML or XML, returning an HTMLDocument or an XMLDocument.
+     * The **`parseFromString()`** method of the DOMParser interface parses an input containing either HTML or XML, returning a Document with the type given in the Document/contentType property.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMParser/parseFromString)
      */

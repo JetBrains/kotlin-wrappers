@@ -169,6 +169,9 @@ inline val Event.Companion.CLOSE: EventType<Event>
 inline val Event.Companion.CLOSING: EventType<Event>
     get() = EventType("closing")
 
+inline val Event.Companion.COMMAND: EventType<Event>
+    get() = EventType("command")
+
 inline val Event.Companion.COMPLETE: EventType<Event>
     get() = EventType("complete")
 

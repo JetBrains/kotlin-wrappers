@@ -4,6 +4,7 @@ package web.html
 
 import web.animations.AnimationEvent
 import web.clipboard.ClipboardEvent
+import web.command.CommandEvent
 import web.components.ElementInternals
 import web.cssom.ElementCSSInlineStyle
 import web.cssom.TransitionEvent
@@ -249,6 +250,12 @@ inline val <C : HTMLElement> C.beforeMatchEvent: EventInstance<Event, C, Node>
  */
 inline val <C : HTMLElement> C.beforeToggleEvent: EventInstance<ToggleEvent, C, C>
     get() = EventInstance(this, "beforetoggle")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/command_event)
+ */
+inline val <C : HTMLElement> C.commandEvent: EventInstance<CommandEvent, C, C>
+    get() = EventInstance(this, "command")
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/copy_event)

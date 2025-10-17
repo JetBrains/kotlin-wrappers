@@ -138,6 +138,20 @@ internal class TypeProvider(
         return true
     }
 
+    fun acceptedAsyncFunction(
+        name: String,
+    ): Boolean =
+        when (parentType) {
+            "Element",
+            "Window",
+                -> name != "scroll"
+                    && name != "scrollTo"
+                    && name != "scrollBy"
+                    && name != "scrollIntoView"
+
+            else -> true
+        }
+
     fun getParameterType(name: String): String =
         IDLRegistry.getParameterType(parentType, name)
 
