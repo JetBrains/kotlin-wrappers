@@ -2,6 +2,5 @@
 
 package tanstack.query.core
 
-import js.array.ReadonlyArray
-
-typealias MutationKey = ReadonlyArray<Any>
+// ReadonlyArray<Any?>
+external interface MutationKey

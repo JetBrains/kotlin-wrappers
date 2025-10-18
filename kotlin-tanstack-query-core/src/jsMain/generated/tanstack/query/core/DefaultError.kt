@@ -2,6 +2,6 @@
 
 package tanstack.query.core
 
-typealias DefaultError = Any /* Register extends {
-    defaultError: infer TError;
-} ? TError : Error */
+import js.errors.JsError
+
+typealias DefaultError = JsError

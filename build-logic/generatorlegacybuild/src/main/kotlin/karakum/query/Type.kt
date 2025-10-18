@@ -27,7 +27,7 @@ class Type(
 ) : Declaration() {
     private val originalTypeParameters: List<String> by lazy {
         if ("> = " !in source) {
-            return@lazy emptyList<String>()
+            return@lazy emptyList()
         }
 
         parseTypeParameters(source.substringBefore("> = ") + ">")
@@ -71,9 +71,12 @@ class Type(
 
             body.toIntOrNull() != null -> body
 
-            name == QUERY_KEY -> body
-            name == "MutationKey" -> body
-                .replace("unknown", "Any")
+            body.startsWith("Register extends {")
+                -> body.substringAfterLast(" : ")
+                .replace("Record<", "ReadonlyRecord<")
+                .replace("string", "String")
+                .replace("unknown", "Any?")
+                .let { if (it == "Error") "JsError" else it }
 
             name == "UseErrorBoundary" -> body
                 .removeSurrounding("boolean | (", ")")
@@ -179,9 +182,9 @@ class Type(
         if (body.toIntOrNull() != null)
             return "const val $name = $body"
 
-        if (name == QUERY_KEY)
+        if (name == QUERY_KEY || name == "MutationKey")
             return """
-                // ReadonlyArray<unknown>
+                // $body
                 external interface $name
                 """.trimIndent()
 
