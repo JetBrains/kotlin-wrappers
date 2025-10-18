@@ -138,7 +138,7 @@ internal class TypeProvider(
         return true
     }
 
-    fun acceptedAsyncFunction(
+    fun optionalAsyncFunction(
         name: String,
     ): Boolean =
         when (parentType) {

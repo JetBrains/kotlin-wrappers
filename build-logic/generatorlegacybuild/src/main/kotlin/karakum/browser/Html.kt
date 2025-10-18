@@ -2274,9 +2274,9 @@ private fun convertFunction(
         .replace(" | null", "?")
         .replace(" | undefined", "?")
 
-    // TODO: report issue
-    if (result == ": Promise<Void>" && !typeProvider.acceptedAsyncFunction(name)) {
-        result = " /* : Promise<Void> */"
+    // TEMP - adapter for https://github.com/microsoft/TypeScript-DOM-lib-generator/issues/2197
+    if (result == ": Promise<Void>" && !typeProvider.optionalAsyncFunction(name)) {
+        result = " $result?"
     }
 
     var safeName = when (name) {
