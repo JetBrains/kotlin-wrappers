@@ -182,7 +182,7 @@ class Type(
         if (body.toIntOrNull() != null)
             return "const val $name = $body"
 
-        if (name == QUERY_KEY || name == "MutationKey")
+        if (name == "QueryKey" || name == "MutationKey")
             return """
                 // $body
                 external interface $name

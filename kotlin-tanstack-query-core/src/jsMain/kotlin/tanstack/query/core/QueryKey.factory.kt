@@ -1,14 +1,4 @@
-package karakum.query
-
-import karakum.common.GENERATOR_COMMENT
-
-internal const val QUERY_KEY = "QueryKey"
-
-// language=Kotlin
-internal val QUERY_KEY_BODY = """
-// $GENERATOR_COMMENT
-
-${Package.CORE.pkg}
+package tanstack.query.core
 
 import js.array.ReadonlyArray
 import js.reflect.unsafeCast
@@ -23,4 +13,3 @@ fun <T : QueryKey> QueryKey(
     vararg keys: Comparable<*>,
 ): T =
     unsafeCast(unsafeCast<ReadonlyArray<*>>(parentKey) + keys)
-"""

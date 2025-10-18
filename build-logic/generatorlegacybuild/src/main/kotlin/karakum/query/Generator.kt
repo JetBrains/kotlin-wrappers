@@ -47,9 +47,6 @@ fun generateKotlinDeclarations(
     coreTargetDir.resolve("aliases.kt")
         .writeText(ALIASES_BODY)
 
-    coreTargetDir.resolve("$QUERY_KEY.ext.kt")
-        .writeText(QUERY_KEY_BODY)
-
     generate(coreTypesDir, coreTargetDir, Package.CORE)
     generate(reactTypesDir, reactTargetDir, Package.REACT)
 }
