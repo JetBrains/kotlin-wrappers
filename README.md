@@ -122,10 +122,7 @@ dependencies {
 
 1. [Internal examples](examples/README.md)
 
-2. [Building Web Applications with React and Kotlin/JS](https://play.kotlinlang.org/hands-on/Building%20Web%20Applications%20with%20React%20and%20Kotlin%20JS/01_Introduction),
-   a tutorial by JetBrains.
-
-3. An [example of using Material UI](https://github.com/karakum-team/kotlin-mui-showcase).
+2. An [example of using Material UI](https://github.com/karakum-team/kotlin-mui-showcase).
 
 Follow these examples to learn how to start developing your Kotlin/JS apps. Good luck and have fun!
 
