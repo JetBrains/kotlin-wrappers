@@ -85,9 +85,7 @@ This repository hosts a number of [Kotlin](https://kotlinlang.org) wrappers for 
 | `kotlin-wrappers-catalog`                    |                            ![Gradle](https://img.shields.io/badge/gradle-02303a)                             | [API](https://jetbrains.github.io/kotlin-wrappers/kotlin-wrappers-catalog)              | [README](kotlin-wrappers-catalog/README.md)              |                                  | [![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-wrappers-catalog)](https://search.maven.org/artifact/org.jetbrains.kotlin-wrappers/kotlin-wrappers-catalog/)                           |
 | `kotlin-yaml`                                | ![JavaScript](https://img.shields.io/badge/js-f7df1e)&nbsp;![WASM](https://img.shields.io/badge/wasm-654ff0) | [API](https://jetbrains.github.io/kotlin-wrappers/kotlin-yaml)                          | [README](kotlin-yaml/README.md)                          |                                  | [![Maven Central](https://img.shields.io/maven-central/v/org.jetbrains.kotlin-wrappers/kotlin-yaml)](https://search.maven.org/artifact/org.jetbrains.kotlin-wrappers/kotlin-yaml/)                                                   |
 
-Artifacts are published to Maven Central, see the corresponding README files for package coordinates.
-
-**All packages require JDK 11 to be installed.**
+Artifacts are published to Maven Central.
 
 ## Using In Your Projects
 
