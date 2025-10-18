@@ -2,6 +2,7 @@
 
 package web.codecs
 
+import js.closeable.JsCloseable
 import js.core.Void
 import js.promise.Promise
 import js.promise.await
@@ -20,7 +21,8 @@ import kotlin.js.definedExternally
  */
 open external class VideoEncoder(
     init: VideoEncoderInit,
-) : EventTarget {
+) : EventTarget,
+    JsCloseable {
     /**
      * The **`encodeQueueSize`** read-only property of the VideoEncoder interface returns the number of pending encode requests in the queue.
      *
@@ -45,7 +47,7 @@ open external class VideoEncoder(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoEncoder/close)
      */
-    fun close()
+    override fun close()
 
     /**
      * The **`configure()`** method of the VideoEncoder interface changes the VideoEncoder.state of the encoder to 'configured' and asynchronously prepares the encoder to accept VideoEncoders for encoding with the specified parameters.

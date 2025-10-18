@@ -2,6 +2,7 @@
 
 package web.images
 
+import js.closeable.JsCloseable
 import js.serialization.Serializable
 import js.serialization.Transferable
 import web.canvas.CanvasImageSource
@@ -19,7 +20,8 @@ private constructor() :
     TexImageSource,
     GPUCopyExternalImageSource,
     Transferable,
-    Serializable {
+    Serializable,
+    JsCloseable {
     /**
      * The **`ImageBitmap.height`** read-only property returns the ImageBitmap object's height in CSS pixels.
      *
@@ -39,5 +41,5 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageBitmap/close)
      */
-    fun close()
+    override fun close()
 }

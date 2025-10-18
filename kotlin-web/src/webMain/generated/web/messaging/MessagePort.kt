@@ -3,6 +3,7 @@
 package web.messaging
 
 import js.array.ReadonlyArray
+import js.closeable.JsCloseable
 import js.serialization.Transferable
 import web.events.Event
 import web.events.EventInstance
@@ -21,13 +22,14 @@ private constructor() :
     EventTarget,
     MessageEventTarget,
     MessageEventSource,
-    Transferable {
+    Transferable,
+    JsCloseable {
     /**
      * The **`close()`** method of the MessagePort interface disconnects the port, so it is no longer active.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MessagePort/close)
      */
-    fun close()
+    override fun close()
 
     /**
      * The **`postMessage()`** method of the MessagePort interface sends a message from the port, and optionally, transfers ownership of objects to other browsing contexts.

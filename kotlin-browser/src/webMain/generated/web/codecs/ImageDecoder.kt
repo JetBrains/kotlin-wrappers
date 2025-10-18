@@ -2,6 +2,7 @@
 
 package web.codecs
 
+import js.closeable.JsCloseable
 import js.core.Void
 import js.promise.Promise
 import js.promise.await
@@ -18,7 +19,7 @@ import kotlin.js.toBoolean
  */
 open external class ImageDecoder(
     init: ImageDecoderInit,
-) {
+) : JsCloseable {
     /**
      * The **`complete`** read-only property of the ImageDecoder interface returns true if encoded data has completed buffering.
      *
@@ -52,7 +53,7 @@ open external class ImageDecoder(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageDecoder/close)
      */
-    fun close()
+    override fun close()
 
     /**
      * The **`decode()`** method of the ImageDecoder interface enqueues a control message to decode the frame of an image.

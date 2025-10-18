@@ -17,6 +17,7 @@ private val DEFAULT_IMPORTS = Imports(
     "js.buffer.ArrayBufferLike",
     "js.buffer.ArrayBufferView",
     "js.buffer.BufferSource",
+    "js.closeable.JsCloseable",
     "js.collections.AsyncMapLike",
     "js.collections.JsSet",
     "js.collections.ListLike",

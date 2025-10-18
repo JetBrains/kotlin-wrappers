@@ -2,6 +2,7 @@
 
 package web.codecs
 
+import js.closeable.JsCloseable
 import js.core.Void
 import js.promise.Promise
 import js.promise.await
@@ -19,7 +20,8 @@ import kotlin.js.JsName
  */
 open external class VideoDecoder(
     init: VideoDecoderInit,
-) : EventTarget {
+) : EventTarget,
+    JsCloseable {
     /**
      * The **`decodeQueueSize`** read-only property of the VideoDecoder interface returns the number of pending decode requests in the queue.
      *
@@ -44,7 +46,7 @@ open external class VideoDecoder(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoDecoder/close)
      */
-    fun close()
+    override fun close()
 
     /**
      * The **`configure()`** method of the VideoDecoder interface enqueues a control message to configure the video decoder for decoding chunks.

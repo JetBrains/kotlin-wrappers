@@ -2,6 +2,7 @@
 
 package web.broadcast
 
+import js.closeable.JsCloseable
 import web.events.EventHandler
 import web.events.EventInstance
 import web.events.EventTarget
@@ -20,7 +21,8 @@ open external class BroadcastChannel(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BroadcastChannel/name)
      */
     val name: String,
-) : EventTarget {
+) : EventTarget,
+    JsCloseable {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BroadcastChannel/message_event)
      */
@@ -36,7 +38,7 @@ open external class BroadcastChannel(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BroadcastChannel/close)
      */
-    fun close()
+    override fun close()
 
     /**
      * The **`postMessage()`** method of the BroadcastChannel interface sends a message, which can be of any kind of Object, to each listener in any browsing context with the same origin.

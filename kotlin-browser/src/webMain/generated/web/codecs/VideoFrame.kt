@@ -4,6 +4,7 @@ package web.codecs
 
 import js.array.ReadonlyArray
 import js.buffer.AllowSharedBufferSource
+import js.closeable.JsCloseable
 import js.core.Int53
 import js.core.UInt53
 import js.promise.Promise
@@ -29,7 +30,8 @@ open external class VideoFrame(
     TexImageSource,
     GPUCopyExternalImageSource,
     Transferable,
-    Serializable {
+    Serializable,
+    JsCloseable {
     constructor(
         data: AllowSharedBufferSource,
         init: VideoFrameBufferInit,
@@ -124,7 +126,7 @@ open external class VideoFrame(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoFrame/close)
      */
-    fun close()
+    override fun close()
 
     /**
      * The **`copyTo()`** method of the VideoFrame interface copies the contents of the `VideoFrame` to an `ArrayBuffer`.

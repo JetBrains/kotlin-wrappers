@@ -3,6 +3,7 @@
 package web.codecs
 
 import js.buffer.AllowSharedBufferSource
+import js.closeable.JsCloseable
 import js.core.Int53
 import js.core.UInt53
 import js.serialization.Serializable
@@ -16,7 +17,8 @@ import js.serialization.Transferable
 open external class AudioData(
     init: AudioDataInit,
 ) : Transferable,
-    Serializable {
+    Serializable,
+    JsCloseable {
     /**
      * The **`duration`** read-only property of the AudioData interface returns the duration in microseconds of this `AudioData` object.
      *
@@ -78,7 +80,7 @@ open external class AudioData(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioData/close)
      */
-    fun close()
+    override fun close()
 
     /**
      * The **`copyTo()`** method of the AudioData interface copies a plane of an `AudioData` object to a destination buffer.

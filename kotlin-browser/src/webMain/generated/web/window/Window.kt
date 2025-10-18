@@ -4,6 +4,7 @@ package web.window
 
 import js.array.ArrayLike
 import js.array.ReadonlyArray
+import js.closeable.JsCloseable
 import js.core.Void
 import js.globals.GlobalScope
 import js.promise.Promise
@@ -62,7 +63,8 @@ private constructor() :
     GlobalScope,
     GlobalEventHandlers,
     WindowEventHandlers,
-    MessageEventSource {
+    MessageEventSource,
+    JsCloseable {
     /**
      * The **`Window.closed`** read-only property indicates whether the referenced window is closed or not.
      *
@@ -281,7 +283,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/close)
      */
-    fun close()
+    override fun close()
 
     /**
      * Makes a request to bring the window to the front.

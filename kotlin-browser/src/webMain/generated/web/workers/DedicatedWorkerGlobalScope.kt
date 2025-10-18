@@ -3,6 +3,7 @@
 package web.workers
 
 import js.array.ReadonlyArray
+import js.closeable.JsCloseable
 import js.serialization.Transferable
 import web.events.EventHandler
 import web.events.EventInstance
@@ -21,7 +22,8 @@ import kotlin.js.definedExternally
 open external class DedicatedWorkerGlobalScope
 private constructor() :
     WorkerGlobalScope,
-    MessageEventTarget {
+    MessageEventTarget,
+    JsCloseable {
     /**
      * The **`name`** read-only property of the DedicatedWorkerGlobalScope interface returns the name that the Worker was (optionally) given when it was created.
      *
@@ -39,7 +41,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DedicatedWorkerGlobalScope/close)
      */
-    fun close()
+    override fun close()
 
     /**
      * The **`postMessage()`** method of the DedicatedWorkerGlobalScope interface sends a message to the main thread that spawned it.

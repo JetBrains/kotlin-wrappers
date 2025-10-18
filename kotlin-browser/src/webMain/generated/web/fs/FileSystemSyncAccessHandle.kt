@@ -3,6 +3,7 @@
 package web.fs
 
 import js.buffer.AllowSharedBufferSource
+import js.closeable.JsCloseable
 import js.core.UInt53
 import kotlin.js.definedExternally
 
@@ -13,13 +14,14 @@ import kotlin.js.definedExternally
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemSyncAccessHandle)
  */
 open external class FileSystemSyncAccessHandle
-private constructor() {
+private constructor() :
+    JsCloseable {
     /**
      * The **`close()`** method of the FileSystemSyncAccessHandle interface closes an open synchronous file handle, disabling any further operations on it and releasing the exclusive lock previously put on the file associated with the file handle.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemSyncAccessHandle/close)
      */
-    fun close()
+    override fun close()
 
     /**
      * The **`flush()`** method of the FileSystemSyncAccessHandle interface persists any changes made to the file associated with the handle via the FileSystemSyncAccessHandle.write method to disk.

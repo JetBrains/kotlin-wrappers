@@ -2,6 +2,7 @@
 
 package web.workers
 
+import js.closeable.JsCloseable
 import web.events.EventHandler
 import web.events.EventInstance
 import web.messaging.MessageEvent
@@ -14,7 +15,8 @@ import kotlin.js.JsAny
  */
 open external class SharedWorkerGlobalScope
 private constructor() :
-    WorkerGlobalScope {
+    WorkerGlobalScope,
+    JsCloseable {
     /**
      * The **`name`** read-only property of the SharedWorkerGlobalScope interface returns the name that the SharedWorker was (optionally) given when it was created.
      *
@@ -32,7 +34,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SharedWorkerGlobalScope/close)
      */
-    fun close()
+    override fun close()
 }
 
 /**

@@ -4,6 +4,7 @@ package web.rtc
 
 import js.buffer.ArrayBuffer
 import js.buffer.ArrayBufferView
+import js.closeable.JsCloseable
 import js.serialization.Transferable
 import web.blob.Blob
 import web.buffer.BinaryType
@@ -22,7 +23,8 @@ import kotlin.js.JsAny
 open external class RTCDataChannel
 private constructor() :
     EventTarget,
-    Transferable {
+    Transferable,
+    JsCloseable {
     /**
      * The property **`binaryType`** on the RTCDataChannel interface is a string which specifies the type of object which should be used to represent binary data received on the RTCDataChannel.
      *
@@ -135,7 +137,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDataChannel/close)
      */
-    fun close()
+    override fun close()
 
     /**
      * The **`send()`** method of the RTCDataChannel interface sends data across the data channel to the remote peer.

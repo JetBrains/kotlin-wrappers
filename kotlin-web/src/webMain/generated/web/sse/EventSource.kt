@@ -2,6 +2,7 @@
 
 package web.sse
 
+import js.closeable.JsCloseable
 import web.events.Event
 import web.events.EventHandler
 import web.events.EventInstance
@@ -24,7 +25,8 @@ open external class EventSource(
      */
     val url: String,
     init: EventSourceInit = definedExternally,
-) : EventTarget {
+) : EventTarget,
+    JsCloseable {
     constructor(
         url: URL,
         init: EventSourceInit = definedExternally,
@@ -64,7 +66,7 @@ open external class EventSource(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/EventSource/close)
      */
-    fun close()
+    override fun close()
     val CONNECTING: ReadyState
     val OPEN: ReadyState
     val CLOSED: ReadyState

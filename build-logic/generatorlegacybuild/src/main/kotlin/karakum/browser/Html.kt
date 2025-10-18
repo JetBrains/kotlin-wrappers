@@ -954,6 +954,9 @@ internal fun convertInterface(
         in WELL_KNOWN_FORM_CONTROL,
             -> declaration += ",\n$FORM_CONTROL"
 
+        in JS_CLOSABLE_INHERITORS,
+            -> declaration += if (":" in declaration) ",\nJsCloseable" else ":\nJsCloseable"
+
         "ReadableStream",
         "WritableStream",
             -> declaration += ",\nAsyncCloseableDisposable"
@@ -1101,6 +1104,9 @@ internal fun convertInterface(
                     it.replace("fun remove()", "override fun remove()")
                 } else it
             }
+
+            in JS_CLOSABLE_INHERITORS,
+                -> result.replace("fun close()", "override fun close()")
 
             "ElementInternals",
                 -> result.applyValidationTargetPatch()

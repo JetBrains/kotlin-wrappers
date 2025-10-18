@@ -2,6 +2,7 @@
 
 package web.codecs
 
+import js.closeable.JsCloseable
 import js.core.Void
 import js.promise.Promise
 import js.promise.await
@@ -19,7 +20,8 @@ import kotlin.js.JsName
  */
 open external class AudioEncoder(
     init: AudioEncoderInit,
-) : EventTarget {
+) : EventTarget,
+    JsCloseable {
     /**
      * The **`encodeQueueSize`** read-only property of the AudioEncoder interface returns the number of pending encode requests in the queue.
      *
@@ -44,7 +46,7 @@ open external class AudioEncoder(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioEncoder/close)
      */
-    fun close()
+    override fun close()
 
     /**
      * The **`configure()`** method of the AudioEncoder interface enqueues a control message to configure the audio encoder for encoding chunks.

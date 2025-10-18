@@ -3,6 +3,7 @@
 package web.idb
 
 import js.array.ReadonlyArray
+import js.closeable.JsCloseable
 import js.core.UInt53
 import web.dom.DOMStringList
 import web.events.Event
@@ -19,7 +20,8 @@ import kotlin.js.definedExternally
  */
 open external class IDBDatabase
 private constructor() :
-    EventTarget {
+    EventTarget,
+    JsCloseable {
     /**
      * The **`name`** read-only property of the `IDBDatabase` interface is a string that contains the name of the connected database.
      *
@@ -62,7 +64,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBDatabase/close)
      */
-    fun close()
+    override fun close()
 
     /**
      * The **`createObjectStore()`** method of the IDBDatabase interface creates and returns a new IDBObjectStore.

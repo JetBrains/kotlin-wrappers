@@ -3,6 +3,7 @@
 package web.rtc
 
 import js.array.ReadonlyArray
+import js.closeable.JsCloseable
 import js.core.Void
 import js.promise.Promise
 import js.promise.await
@@ -23,7 +24,8 @@ import kotlin.js.definedExternally
  */
 open external class RTCPeerConnection(
     configuration: RTCConfiguration = definedExternally,
-) : EventTarget {
+) : EventTarget,
+    JsCloseable {
     /**
      * The **`canTrickleIceCandidates`** read-only property of the RTCPeerConnection interface returns a boolean value which indicates whether or not the remote peer can accept trickled ICE candidates.
      *
@@ -191,7 +193,7 @@ open external class RTCPeerConnection(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/close)
      */
-    fun close()
+    override fun close()
 
     /**
      * The **`createAnswer()`** method of the RTCPeerConnection interface creates an SDP answer to an offer received from a remote peer during the offer/answer negotiation of a WebRTC connection.
