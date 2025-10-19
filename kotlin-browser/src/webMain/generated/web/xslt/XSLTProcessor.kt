@@ -28,7 +28,7 @@ open external class XSLTProcessor {
     fun getParameter(
         namespaceURI: String?,
         localName: String,
-    ): JsAny
+    ): JsAny?
 
     /**
      * The `importStylesheet()` method of the XSLTProcessor interface imports an XSLT stylesheet for the processor.

@@ -29,7 +29,7 @@ open external class Table(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/WebAssembly/Reference/JavaScript_interface/Table/get)
      */
-    fun get(index: AddressValue): JsAny
+    fun get(index: AddressValue): JsAny?
 
     /**
      * The **`grow()`** prototype method of the `WebAssembly.Table` object increases the size of the `Table` instance by a specified number of elements, filled with the provided value.

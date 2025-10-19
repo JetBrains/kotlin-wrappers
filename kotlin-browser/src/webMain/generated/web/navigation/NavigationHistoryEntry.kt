@@ -62,7 +62,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigationHistoryEntry/getState)
      */
-    fun getState(): JsAny
+    fun getState(): JsAny?
 }
 
 /**

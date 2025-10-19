@@ -41,7 +41,7 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PushMessageData/json)
      */
-    fun json(): JsAny
+    fun json(): JsAny?
 
     /**
      * The **`text()`** method of the PushMessageData interface extracts push message data as a plain text string.
