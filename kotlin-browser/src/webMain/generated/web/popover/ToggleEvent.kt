@@ -3,6 +3,7 @@
 package web.popover
 
 import js.reflect.unsafeCast
+import web.dom.Element
 import web.events.Event
 import web.events.EventType
 import kotlin.js.definedExternally
@@ -29,6 +30,13 @@ open external class ToggleEvent(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ToggleEvent/oldState)
      */
     val oldState: ToggleState
+
+    /**
+     * The **`source`** read-only property of the ToggleEvent interface is an Element object instance representing the HTML popover control element that initiated the toggle.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ToggleEvent/source)
+     */
+    val source: Element?
 
     companion object
 }
