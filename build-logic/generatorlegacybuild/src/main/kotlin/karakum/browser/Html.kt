@@ -1506,6 +1506,7 @@ internal fun convertInterface(
 
         name.startsWith("Document") -> "web.dom"
         name in RANGES_TYPES -> "web.ranges"
+        name.startsWith("Trusted") -> "web.trustedtypes"
         name in DOM_TYPES -> "web.dom"
         name in WEB_COMPONENTS_TYPES -> "web.components"
         name in VALIDATION_TYPES -> "web.validation"

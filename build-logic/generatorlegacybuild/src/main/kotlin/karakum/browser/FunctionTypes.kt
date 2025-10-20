@@ -42,6 +42,10 @@ private fun convertFunctionType(
 
         name in STREAMS_FUNCTION_TYPES -> "web.streams"
 
+        name == "CreateHTMLCallback" -> "web.trustedtypes"
+        name == "CreateScriptCallback" -> "web.trustedtypes"
+        name == "CreateScriptURLCallback" -> "web.trustedtypes"
+
         name == "PerformanceObserverCallback" -> "web.performance"
 
         name == "FunctionStringCallback" -> "web.data"
@@ -85,6 +89,7 @@ private fun convertFunctionType(
     var bodySource = source.substringAfter("\n    ")
         .substringBefore(";")
         .replace(": boolean", ": Boolean")
+        .replace("): string", ") -> String")
         .replace(": string", ": String")
         .replace("?: JsError | undefined)", ": JsError?)")
         .replace("?: JsError)", ": JsError?)")
@@ -103,6 +108,7 @@ private fun convertFunctionType(
         .replace("): T", ") -> T")
         .replace("?: any", ": JsAny?")
         .replace(" | null", "?")
+        .replace("...arguments: any[]", "    /* vararg arguments: Any? */\n")
 
     if ("()" !in bodySource)
         bodySource = bodySource

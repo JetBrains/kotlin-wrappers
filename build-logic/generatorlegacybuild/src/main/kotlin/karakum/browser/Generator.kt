@@ -350,7 +350,9 @@ fun generateKotlinDeclarations(
         serviceworkerDefinitionsParts.second,
     )
 
-    val webDefinitionsContent = webDefinitionsParts.first + WEB_GPU_CONTENT
+    val webDefinitionsContent = webDefinitionsParts.first
+        .plus(WEB_GPU_CONTENT)
+        .withTrustedTypes()
 
     MarkerRegistry.fill(webDefinitionsContent)
     RenderingContextRegistry.fill(webDefinitionsContent)
