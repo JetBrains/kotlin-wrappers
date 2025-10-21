@@ -65,7 +65,6 @@ internal fun convertDefinitions(
         .substringAfter("declare namespace React {\n")
         .substringBefore("\n}\n")
         .trimIndent()
-        .plus(ADDITIONAL_TYPES)
         .plus("\ninterface ReactSVG {\n$svgIntrinsics\n}")
         .plus("\ninterface ReactHTML {\n$htmlIntrinsics\n}")
         .trimIndent()
