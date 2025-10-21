@@ -28,6 +28,12 @@ dokka {
         addSourceLink("src/wasmJsMain/kotlin")
         addSourceLink("src/webMain/generated")
         addSourceLink("src/webMain/kotlin")
+
+        externalDocumentationLinks {
+            register("kotlinx.coroutines") {
+                url("https://kotlinlang.org/api/kotlinx.coroutines/")
+            }
+        }
     }
 
     dokkaGeneratorIsolation = ProcessIsolation {
