@@ -2077,6 +2077,9 @@ private fun convertProperty(
             -> "BufferSource /* | String */"
 
         // TEMP
+        "TrustedHTML | string",
+            -> "JsAny /* $type */"
+
         "DateTimeFormatPartTypes",
             -> "String /* $type */"
 

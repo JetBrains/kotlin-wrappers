@@ -10,6 +10,7 @@ import web.events.EventTarget
 import web.messaging.MessageEvent
 import web.messaging.MessageEventTarget
 import web.serialization.StructuredSerializeOptions
+import web.trustedtypes.TrustedScriptURL
 import web.url.URL
 import kotlin.js.JsAny
 import kotlin.js.definedExternally
@@ -20,11 +21,16 @@ import kotlin.js.definedExternally
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Worker)
  */
 open external class Worker(
-    scriptURL: String,
+    scriptURL: TrustedScriptURL,
     options: WorkerOptions = definedExternally,
 ) : EventTarget,
     AbstractWorker,
     MessageEventTarget {
+    constructor(
+        scriptURL: String,
+        options: WorkerOptions = definedExternally,
+    )
+
     constructor(
         scriptURL: URL,
         options: WorkerOptions = definedExternally,

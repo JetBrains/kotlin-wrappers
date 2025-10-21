@@ -30,6 +30,7 @@ import web.pointer.PointerEvent
 import web.ranges.Range
 import web.selection.Selection
 import web.touch.TouchEvent
+import web.trustedtypes.TrustedHTML
 import web.url.FragmentDirective
 import web.url.URL
 import web.viewtransition.StartViewTransitionOptions
@@ -593,6 +594,7 @@ open external class Document :
          *
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/parseHTMLUnsafe_static)
          */
+        fun parseHTMLUnsafe(html: TrustedHTML): Document
         fun parseHTMLUnsafe(html: String): Document
     }
 }

@@ -3,6 +3,7 @@
 package web.parsing
 
 import web.dom.Document
+import web.trustedtypes.TrustedHTML
 
 /**
  * The **`DOMParser`** interface provides the ability to parse XML or HTML source code from a string into a DOM Document.
@@ -15,6 +16,11 @@ open external class DOMParser {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMParser/parseFromString)
      */
+    fun parseFromString(
+        string: TrustedHTML,
+        type: DOMParserSupportedType,
+    ): Document
+
     fun parseFromString(
         string: String,
         type: DOMParserSupportedType,

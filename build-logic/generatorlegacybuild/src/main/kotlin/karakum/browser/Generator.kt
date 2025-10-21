@@ -286,6 +286,8 @@ private val DEFAULT_IMPORTS = Imports(
     "web.time.DOMHighResTimeStamp",
     "web.time.EpochTimeStamp",
     "web.touch.TouchEvent",
+    "web.trustedtypes.TrustedHTML",
+    "web.trustedtypes.TrustedScriptURL",
     "web.uievents.EventModifierInit",
     "web.uievents.UIEvent",
     "web.uievents.UIEventInit",

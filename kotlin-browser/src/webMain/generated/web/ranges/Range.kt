@@ -6,6 +6,7 @@ import web.dom.DocumentFragment
 import web.dom.Node
 import web.geometry.DOMRect
 import web.geometry.DOMRectList
+import web.trustedtypes.TrustedHTML
 import kotlin.js.definedExternally
 
 /**
@@ -68,6 +69,7 @@ open external class Range :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Range/createContextualFragment)
      */
+    fun createContextualFragment(string: TrustedHTML): DocumentFragment
     fun createContextualFragment(string: String): DocumentFragment
 
     /**

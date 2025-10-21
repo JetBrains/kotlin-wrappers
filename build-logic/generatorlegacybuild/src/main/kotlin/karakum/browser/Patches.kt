@@ -110,6 +110,51 @@ internal fun String.applyPatches(): String {
         .patchInterface("ReadableStream") {
             "$it\n    values(options?: ReadableStreamIteratorOptions): AsyncIterator<R>"
         }
+        // TRUSTED TYPES START
+        .replace(
+            "parseFromString(string: string,",
+            "parseFromString(string: TrustedHTML | string,",
+        )
+        .replace(
+            "innerHTML: string;",
+            "innerHTML: TrustedHTML | string;",
+        )
+        .replace(
+            "outerHTML: string;",
+            "outerHTML: TrustedHTML | string;",
+        )
+        .replace(
+            "srcdoc: string;",
+            "srcdoc: TrustedHTML | string;",
+        )
+        .replace(
+            "parseHTMLUnsafe(html: string)",
+            "parseHTMLUnsafe(html: TrustedHTML | string)",
+        )
+        .replace(
+            "setHTMLUnsafe(html: string): void;",
+            "setHTMLUnsafe(html: TrustedHTML | string): void;",
+        )
+        .replace(
+            "insertAdjacentHTML(position: InsertPosition, string: string): void;",
+            "insertAdjacentHTML(position: InsertPosition, string: TrustedHTML | string): void;",
+        )
+        .replace(
+            "createContextualFragment(string: string)",
+            "createContextualFragment(string: TrustedHTML | string)",
+        )
+        .replace(
+            "register(scriptURL: string | URL,",
+            "register(scriptURL: TrustedScriptURL | string | URL,",
+        )
+        .replace(
+            "new(scriptURL: string | URL,",
+            "new(scriptURL: TrustedScriptURL | string | URL,",
+        )
+        .splitUnion("TrustedHTML | string")
+        .splitUnion("TrustedScriptURL | string | URL")
+        .splitUnion("(TrustedHTML | string)[]", "TrustedHTML[] | string[]")
+        // TRUSTED TYPES END
         .replace(""""Ed25519" | { name: "Ed25519" }""", "${ED25519}Algorithm")
         .replace("    reason?: any;", "    reason?: JsError | undefined;")
         .replace("readonly reason: any;", "readonly reason: JsErrorLike | undefined;")

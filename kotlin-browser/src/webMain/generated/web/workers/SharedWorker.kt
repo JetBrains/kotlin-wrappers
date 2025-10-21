@@ -6,6 +6,7 @@ import web.events.Event
 import web.events.EventInstance
 import web.events.EventTarget
 import web.messaging.MessagePort
+import web.trustedtypes.TrustedScriptURL
 import web.url.URL
 import kotlin.js.definedExternally
 
@@ -15,18 +16,28 @@ import kotlin.js.definedExternally
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SharedWorker)
  */
 open external class SharedWorker(
-    scriptURL: String,
+    scriptURL: TrustedScriptURL,
     options: String = definedExternally,
 ) : EventTarget,
     AbstractWorker {
     constructor(
-        scriptURL: URL,
+        scriptURL: TrustedScriptURL,
+        options: WorkerOptions,
+    )
+
+    constructor(
+        scriptURL: String,
         options: String = definedExternally,
     )
 
     constructor(
         scriptURL: String,
         options: WorkerOptions,
+    )
+
+    constructor(
+        scriptURL: URL,
+        options: String = definedExternally,
     )
 
     constructor(

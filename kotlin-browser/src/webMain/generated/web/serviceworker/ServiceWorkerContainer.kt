@@ -10,6 +10,7 @@ import web.events.EventHandler
 import web.events.EventInstance
 import web.events.EventTarget
 import web.messaging.MessageEvent
+import web.trustedtypes.TrustedScriptURL
 import web.url.URL
 import kotlin.js.JsAny
 import kotlin.js.JsName
@@ -79,6 +80,12 @@ private constructor() :
      */
     @JsName("register")
     fun registerAsync(
+        scriptURL: TrustedScriptURL,
+        options: RegistrationOptions = definedExternally,
+    ): Promise<ServiceWorkerRegistration>
+
+    @JsName("register")
+    fun registerAsync(
         scriptURL: String,
         options: RegistrationOptions = definedExternally,
     ): Promise<ServiceWorkerRegistration>
@@ -144,7 +151,7 @@ suspend inline fun ServiceWorkerContainer.getRegistrations(): ReadonlyArray<Serv
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerContainer/register)
  */
 suspend inline fun ServiceWorkerContainer.register(
-    scriptURL: String,
+    scriptURL: TrustedScriptURL,
     options: RegistrationOptions,
 ): ServiceWorkerRegistration {
     return registerAsync(
@@ -158,6 +165,24 @@ suspend inline fun ServiceWorkerContainer.register(
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerContainer/register)
  */
+suspend inline fun ServiceWorkerContainer.register(
+    scriptURL: TrustedScriptURL,
+): ServiceWorkerRegistration {
+    return registerAsync(
+        scriptURL = scriptURL,
+    ).await()
+}
+
+suspend inline fun ServiceWorkerContainer.register(
+    scriptURL: String,
+    options: RegistrationOptions,
+): ServiceWorkerRegistration {
+    return registerAsync(
+        scriptURL = scriptURL,
+        options = options,
+    ).await()
+}
+
 suspend inline fun ServiceWorkerContainer.register(
     scriptURL: String,
 ): ServiceWorkerRegistration {
