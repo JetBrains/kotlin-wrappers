@@ -941,6 +941,7 @@ internal fun convertInterface(
         .plus("AbortableLike".takeIf { abortableLike })
         .plus("StartInDirectory".takeIf { name == "FileSystemHandle" })
         .plus(SERIALIZABLE.takeIf { IDLRegistry.isSerializable(name) })
+        .plus("HtmlSource".takeIf { name == "TrustedHTML" })
         .filterNotNull()
         .forEach { additionalParent ->
             declaration += if (":" in declaration) "," else ":"
@@ -2076,10 +2077,10 @@ private fun convertProperty(
         "BufferSource | string",
             -> "BufferSource /* | String */"
 
-        // TEMP
         "TrustedHTML | string",
-            -> "JsAny /* $type */"
+            -> "HtmlSource"
 
+        // TEMP
         "DateTimeFormatPartTypes",
             -> "String /* $type */"
 

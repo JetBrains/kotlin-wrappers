@@ -5,8 +5,8 @@ package web.components
 import web.dom.*
 import web.events.Event
 import web.events.EventHandler
+import web.html.HtmlSource
 import web.trustedtypes.TrustedHTML
-import kotlin.js.JsAny
 import kotlin.js.definedExternally
 
 /**
@@ -44,7 +44,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ShadowRoot/innerHTML)
      */
-    var innerHTML: JsAny /* TrustedHTML | string */
+    var innerHTML: HtmlSource
 
     /**
      * The **`mode`** read-only property of the ShadowRoot specifies its mode — either `open` or `closed`.

@@ -6,7 +6,6 @@ import web.dom.DOMTokenList
 import web.dom.Document
 import web.http.ReferrerPolicy
 import web.window.WindowProxy
-import kotlin.js.JsAny
 import kotlin.js.JsString
 
 /**
@@ -92,7 +91,7 @@ protected constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLIFrameElement/srcdoc)
      */
-    var srcdoc: JsAny /* TrustedHTML | string */
+    var srcdoc: HtmlSource
 
     /**
      * The **`width`** property of the HTMLIFrameElement interface returns a string that reflects the `width` attribute of the iframe element, indicating the width of the frame in CSS pixels.

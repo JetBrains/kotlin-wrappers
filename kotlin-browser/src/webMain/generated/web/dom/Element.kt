@@ -20,6 +20,7 @@ import web.fullscreen.FullscreenOptions
 import web.geometry.DOMRect
 import web.geometry.DOMRectList
 import web.html.HTMLCollection
+import web.html.HtmlSource
 import web.input.CompositionEvent
 import web.input.InputEvent
 import web.keyboard.KeyboardEvent
@@ -29,7 +30,6 @@ import web.scroll.ScrollIntoViewOptions
 import web.scroll.ScrollToOptions
 import web.touch.TouchEvent
 import web.trustedtypes.TrustedHTML
-import kotlin.js.JsAny
 import kotlin.js.JsName
 import kotlin.js.JsString
 import kotlin.js.definedExternally
@@ -116,7 +116,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/innerHTML)
      */
-    var innerHTML: JsAny /* TrustedHTML | string */
+    var innerHTML: HtmlSource
 
     /**
      * The **`Element.localName`** read-only property returns the local part of the qualified name of an element.
@@ -147,7 +147,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/outerHTML)
      */
-    var outerHTML: JsAny /* TrustedHTML | string */
+    var outerHTML: HtmlSource
     override val ownerDocument: Document
 
     /**

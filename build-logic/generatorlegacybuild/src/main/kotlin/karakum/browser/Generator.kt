@@ -201,6 +201,7 @@ private val DEFAULT_IMPORTS = Imports(
     "web.html.HTMLLabelElement",
     "web.html.HTMLMediaElement",
     "web.html.HTMLScriptElement",
+    "web.html.HtmlSource",
     "web.http.BodyInit",
     "web.http.CrossOrigin",
     "web.http.FetchPriority",
