@@ -19,8 +19,8 @@ external interface NavigateEventInit :
     var userInitiated: Boolean?
     var hashChange: Boolean?
     var signal: AbortSignal
-    var formData: FormData??
-    var downloadRequest: String??
+    var formData: FormData?
+    var downloadRequest: String?
     var info: JsAny?
     var hasUAVisualTransition: Boolean?
     var sourceElement: Element?
