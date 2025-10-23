@@ -43,7 +43,7 @@ external interface CoreOptions<TData : RowData> {
     /**
      * Set this option to `true` to output cell debugging information to the console.
      * [API Docs](https://tanstack.com/table/v8/docs/api/core/table#debugcells]
- * [Guide](https://tanstack.com/table/v8/docs/guide/tables)
+     * [Guide](https://tanstack.com/table/v8/docs/guide/tables)
      */
     val debugCells: Boolean?
 

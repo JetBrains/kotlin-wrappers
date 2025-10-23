@@ -507,9 +507,11 @@ private fun convertMember(
         .let { kotlinType(it, name) }
 
     if (optional) {
-        type = if (type.startsWith("(")) {
-            "($type)?"
-        } else "$type?"
+        type = when {
+            type.startsWith("(") -> "($type)?"
+            !type.endsWith("?") -> "$type?"
+            else -> type
+        }
     }
 
     return "var $name: $type"
