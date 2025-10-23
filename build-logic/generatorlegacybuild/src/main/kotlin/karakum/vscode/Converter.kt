@@ -112,6 +112,11 @@ private fun convertType(
         .split(" = ")
         .also { check(it.size == 2) }
 
+    if (bodySource == "never")
+        return "$comment\n" +
+                "@JsExternalInheritorsOnly\n" +
+                "external interface $declaration /* never */"
+
     val body = when {
         bodySource.startsWith("(") ->
             bodySource
@@ -123,7 +128,6 @@ private fun convertType(
             -> "PromiseResult<T?>"
 
         bodySource == "[string, string]" -> "Tuple2<String, String>"
-        bodySource == "never" -> "JsAny? /* Nothing? */"
         " | " in bodySource -> "JsAny /* $bodySource */"
 
         else -> bodySource

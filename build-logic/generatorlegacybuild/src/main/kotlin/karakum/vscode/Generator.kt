@@ -87,6 +87,7 @@ private fun fileContent(
         import js.objects.Record
         import js.promise.PromiseLike
         import js.promise.PromiseResult
+        import js.reflect.JsExternalInheritorsOnly
         import js.regexp.RegExp
         import js.typedarrays.Uint32Array
         import js.typedarrays.Uint8Array
