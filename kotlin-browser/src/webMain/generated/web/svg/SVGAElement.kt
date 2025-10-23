@@ -14,6 +14,9 @@ open external class SVGAElement
 private constructor() :
     SVGGraphicsElement,
     SVGURIReference {
+    /**
+     * The **`download`** property of the SVGAElement interface returns a string indicating that the browser should treat the linked URL as a download.
+     */
     var download: String
 
     /**
