@@ -25,7 +25,7 @@ internal class Parameter(
     fun toCode(): String =
         (if (vararg) "vararg " else "") +
                 " $name: $type" +
-                (if (nullable) "?" else "") +
+                (if (nullable && !type.endsWith("?")) "?" else "") +
                 (if (optional && supportDefault) " = definedExternally" else "")
 }
 
