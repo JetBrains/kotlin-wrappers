@@ -16,6 +16,8 @@ private constructor() :
     SVGURIReference {
     /**
      * The **`download`** property of the SVGAElement interface returns a string indicating that the browser should treat the linked URL as a download.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAElement/download)
      */
     var download: String
 
