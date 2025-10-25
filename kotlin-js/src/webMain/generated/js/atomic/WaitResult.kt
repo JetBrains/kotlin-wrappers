@@ -8,10 +8,7 @@ external interface WaitResult {
     val async: Boolean
 }
 
-@Suppress(
-    "CANNOT_CHECK_FOR_EXTERNAL_INTERFACE",
-    "CANNOT_CHECK_FOR_ERASED",
-)
+@Suppress("CANNOT_CHECK_FOR_EXTERNAL_INTERFACE")
 inline fun isAsync(
     result: WaitResult,
 ): Boolean {
@@ -22,4 +19,3 @@ inline fun isAsync(
 
     return result.async
 }
-
