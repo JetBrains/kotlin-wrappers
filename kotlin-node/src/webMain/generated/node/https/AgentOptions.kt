@@ -6,5 +6,7 @@ sealed external interface AgentOptions :
     node.http.AgentOptions,
     node.tls.ConnectionOptions {
     var maxCachedSessions: Double?
-    override var port: dynamic
+
+    @Suppress("VAR_TYPE_MISMATCH_ON_OVERRIDE")
+    override var port: Double
 }

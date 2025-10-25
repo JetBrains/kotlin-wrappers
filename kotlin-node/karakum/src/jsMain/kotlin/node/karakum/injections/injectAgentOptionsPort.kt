@@ -17,6 +17,11 @@ val injectAgentOptionsPort = createInjection { node, context, _ ->
         ensure(isInterfaceDeclaration(node))
         ensure(node.name.text == "AgentOptions")
 
-        arrayOf("override var port: dynamic")
+        arrayOf(
+            """
+                @Suppress("VAR_TYPE_MISMATCH_ON_OVERRIDE")
+                override var port: Double
+            """.trimIndent()
+        )
     }
 }

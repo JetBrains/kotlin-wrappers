@@ -122,16 +122,6 @@ fun modifyPropertyInheritance(node: Node, context: InheritanceModifierContext) =
 
             "override"
         } ?: nullable {
-            ensure(sourceFileName.endsWith("https.d.ts"))
-
-            ensure(name.text == "rejectUnauthorized")
-
-            val interfaceNode = ensureNotNull(node.getParentOrNull())
-            ensure(isInterfaceDeclaration(interfaceNode))
-            ensure(interfaceNode.name.text == "AgentOptions")
-
-            "override"
-        } ?: nullable {
             ensure(sourceFileName.endsWith("test.d.ts"))
 
             ensure(name.text == "cause")
