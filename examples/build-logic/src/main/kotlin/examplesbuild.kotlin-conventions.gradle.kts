@@ -27,6 +27,9 @@ kotlin {
             "kotlin.js.ExperimentalJsExport",
             "kotlin.js.ExperimentalWasmJsInterop",
         )
+
+        // TEMP compilation fix
+        freeCompilerArgs.add("-Xskip-prerelease-check")
     }
 
     val jsTarget = project.jsTarget
