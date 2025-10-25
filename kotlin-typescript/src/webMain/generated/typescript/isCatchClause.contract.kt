@@ -4,7 +4,7 @@ package typescript
 
 import kotlin.contracts.contract
 
-@Suppress("CANNOT_CHECK_FOR_EXTERNAL_INTERFACE", "CANNOT_CHECK_FOR_ERASED", "ERROR_IN_CONTRACT_DESCRIPTION")
+@Suppress("CANNOT_CHECK_FOR_EXTERNAL_INTERFACE")
 inline fun isCatchClause(node: Node): Boolean /* node is CatchClause */ {
     contract {
         returns(true) implies (node is CatchClause)
