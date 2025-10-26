@@ -52,7 +52,7 @@ suspend inline fun DocumentPictureInPicture.requestWindow(
     requestWindowAsync(options).await()
 
 /**
- * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DocumentPictureInPicture/close_event)
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DocumentPictureInPicture/enter_event)
  */
 @ExperimentalWebApi
 inline val <C : DocumentPictureInPicture> C.enterEvent: EventInstance<DocumentPictureInPictureEvent, C, C>
