@@ -4,6 +4,9 @@ import js.objects.JsPlainObject
 import web.events.EventInit
 import web.experimental.ExperimentalWebApi
 
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextUpdateEventInit/TextUpdateEventInit#options)
+ */
 @JsPlainObject
 @ExperimentalWebApi
 external interface TextUpdateEventInit :

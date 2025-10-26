@@ -10,37 +10,77 @@ import web.html.HTMLElement
 import web.input.CompositionEvent
 import kotlin.js.definedExternally
 
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/EditContext)
+ */
 @ExperimentalWebApi
 open external class EditContext(
     options: EditContextInit = definedExternally,
 ) : EventTarget {
 
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/EditContext/updateText)
+     */
     fun updateText(
         rangeStart: Int,
         rangeEnd: Int,
         text: String,
     )
 
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/EditContext/updateSelection)
+     */
     fun updateSelection(
         start: Int,
         end: Int,
     )
 
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/EditContext/updateControlBounds)
+     */
     fun updateControlBounds(controlBounds: DOMRect)
 
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/EditContext/updateSelectionBounds)
+     */
     fun updateSelectionBounds(selectionBounds: DOMRect)
 
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/EditContext/updateCharacterBounds)
+     */
     fun updateCharacterBounds(
         rangeStart: Int,
         characterBounds: ReadonlyArray<DOMRect>,
     )
 
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/EditContext/attachedElements)
+     */
     fun attachedElements(): ReadonlyArray<HTMLElement>
 
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/EditContext/text)
+     */
     val text: String
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/EditContext/selectionStart)
+     */
     val selectionStart: Int
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/EditContext/selectionEnd)
+     */
     val selectionEnd: Int
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/EditContext/characterBoundsRangeStart)
+     */
     val characterBoundsRangeStart: Int
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/EditContext/characterBounds)
+     */
     fun characterBounds(): ReadonlyArray<DOMRect>
 
     /**

@@ -3,6 +3,9 @@ package web.editcontext
 import js.objects.JsPlainObject
 import web.experimental.ExperimentalWebApi
 
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextFormat/TextFormat#options)
+ */
 @JsPlainObject
 @ExperimentalWebApi
 external interface TextFormatInit {
