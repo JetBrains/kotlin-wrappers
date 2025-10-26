@@ -15,7 +15,7 @@ open external class DocumentPictureInPictureEvent(
     init: DocumentPictureInPictureEventInit = definedExternally,
 ) : Event {
     /**
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DocumentPictureInPictureEvent/data)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DocumentPictureInPictureEvent/window)
      */
     val window: Window
 }
