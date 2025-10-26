@@ -234,10 +234,8 @@ private constructor() :
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/requestMIDIAccess)
  */
-suspend inline fun Navigator.requestMIDIAccess(options: MIDIOptions): MIDIAccess {
-    return requestMIDIAccessAsync(
-        options = options,
-    ).await()
+suspend inline fun Navigator.requestMIDIAccess(): MIDIAccess {
+    return requestMIDIAccessAsync().await()
 }
 
 /**
@@ -246,8 +244,10 @@ suspend inline fun Navigator.requestMIDIAccess(options: MIDIOptions): MIDIAccess
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/requestMIDIAccess)
  */
-suspend inline fun Navigator.requestMIDIAccess(): MIDIAccess {
-    return requestMIDIAccessAsync().await()
+suspend inline fun Navigator.requestMIDIAccess(options: MIDIOptions): MIDIAccess {
+    return requestMIDIAccessAsync(
+        options = options,
+    ).await()
 }
 
 /**
@@ -272,10 +272,8 @@ suspend inline fun Navigator.requestMediaKeySystemAccess(
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/share)
  */
-suspend inline fun Navigator.share(data: ShareData) {
-    shareAsync(
-        data = data,
-    ).await()
+suspend inline fun Navigator.share() {
+    shareAsync().await()
 }
 
 /**
@@ -284,6 +282,8 @@ suspend inline fun Navigator.share(data: ShareData) {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/share)
  */
-suspend inline fun Navigator.share() {
-    shareAsync().await()
+suspend inline fun Navigator.share(data: ShareData) {
+    shareAsync(
+        data = data,
+    ).await()
 }

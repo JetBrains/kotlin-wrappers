@@ -24,20 +24,20 @@ external fun compileStreamingAsync(
 @Suppress("NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE")
 suspend inline fun compileStreaming(
     source: Response,
-    options: WebAssemblyCompileOptions?,
 ): Module {
     return compileStreamingAsync(
         source = source,
-        options = options,
     ).await()
 }
 
 @Suppress("NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE")
 suspend inline fun compileStreaming(
     source: Response,
+    options: WebAssemblyCompileOptions?,
 ): Module {
     return compileStreamingAsync(
         source = source,
+        options = options,
     ).await()
 }
 
@@ -50,19 +50,19 @@ external fun compileStreamingAsync(
 @Suppress("NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE")
 suspend inline fun compileStreaming(
     source: PromiseLike<Response>,
-    options: WebAssemblyCompileOptions?,
 ): Module {
     return compileStreamingAsync(
         source = source,
-        options = options,
     ).await()
 }
 
 @Suppress("NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE")
 suspend inline fun compileStreaming(
     source: PromiseLike<Response>,
+    options: WebAssemblyCompileOptions?,
 ): Module {
     return compileStreamingAsync(
         source = source,
+        options = options,
     ).await()
 }

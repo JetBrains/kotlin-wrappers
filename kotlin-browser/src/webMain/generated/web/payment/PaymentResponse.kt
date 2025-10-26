@@ -111,10 +111,8 @@ private constructor() :
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentResponse/complete)
  */
-suspend inline fun PaymentResponse.complete(result: PaymentComplete) {
-    completeAsync(
-        result = result,
-    ).await()
+suspend inline fun PaymentResponse.complete() {
+    completeAsync().await()
 }
 
 /**
@@ -122,8 +120,19 @@ suspend inline fun PaymentResponse.complete(result: PaymentComplete) {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentResponse/complete)
  */
-suspend inline fun PaymentResponse.complete() {
-    completeAsync().await()
+suspend inline fun PaymentResponse.complete(result: PaymentComplete) {
+    completeAsync(
+        result = result,
+    ).await()
+}
+
+/**
+ * The PaymentResponse interface's **`retry()`** method makes it possible to ask the user to retry a payment after an error occurs during processing.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentResponse/retry)
+ */
+suspend inline fun PaymentResponse.retry() {
+    retryAsync().await()
 }
 
 /**
@@ -135,15 +144,6 @@ suspend inline fun PaymentResponse.retry(errorFields: PaymentValidationErrors) {
     retryAsync(
         errorFields = errorFields,
     ).await()
-}
-
-/**
- * The PaymentResponse interface's **`retry()`** method makes it possible to ask the user to retry a payment after an error occurs during processing.
- *
- * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentResponse/retry)
- */
-suspend inline fun PaymentResponse.retry() {
-    retryAsync().await()
 }
 
 /**

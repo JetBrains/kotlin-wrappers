@@ -116,11 +116,9 @@ suspend inline fun CacheStorage.keys(): ReadonlyArray<JsString> {
  */
 suspend inline fun CacheStorage.match(
     url: String,
-    options: MultiCacheQueryOptions,
 ): Response? {
     return matchAsync(
         url = url,
-        options = options,
     ).await()
 }
 
@@ -131,14 +129,6 @@ suspend inline fun CacheStorage.match(
  */
 suspend inline fun CacheStorage.match(
     url: String,
-): Response? {
-    return matchAsync(
-        url = url,
-    ).await()
-}
-
-suspend inline fun CacheStorage.match(
-    url: URL,
     options: MultiCacheQueryOptions,
 ): Response? {
     return matchAsync(
@@ -156,11 +146,11 @@ suspend inline fun CacheStorage.match(
 }
 
 suspend inline fun CacheStorage.match(
-    request: Request,
+    url: URL,
     options: MultiCacheQueryOptions,
 ): Response? {
     return matchAsync(
-        request = request,
+        url = url,
         options = options,
     ).await()
 }
@@ -170,6 +160,16 @@ suspend inline fun CacheStorage.match(
 ): Response? {
     return matchAsync(
         request = request,
+    ).await()
+}
+
+suspend inline fun CacheStorage.match(
+    request: Request,
+    options: MultiCacheQueryOptions,
+): Response? {
+    return matchAsync(
+        request = request,
+        options = options,
     ).await()
 }
 

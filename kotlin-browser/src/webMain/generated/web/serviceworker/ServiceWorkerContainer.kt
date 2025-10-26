@@ -115,10 +115,8 @@ private constructor() :
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerContainer/getRegistration)
  */
-suspend inline fun ServiceWorkerContainer.getRegistration(clientURL: String): ServiceWorkerRegistration? {
-    return getRegistrationAsync(
-        clientURL = clientURL,
-    ).await()
+suspend inline fun ServiceWorkerContainer.getRegistration(): ServiceWorkerRegistration? {
+    return getRegistrationAsync().await()
 }
 
 /**
@@ -126,8 +124,10 @@ suspend inline fun ServiceWorkerContainer.getRegistration(clientURL: String): Se
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerContainer/getRegistration)
  */
-suspend inline fun ServiceWorkerContainer.getRegistration(): ServiceWorkerRegistration? {
-    return getRegistrationAsync().await()
+suspend inline fun ServiceWorkerContainer.getRegistration(clientURL: String): ServiceWorkerRegistration? {
+    return getRegistrationAsync(
+        clientURL = clientURL,
+    ).await()
 }
 
 suspend inline fun ServiceWorkerContainer.getRegistration(clientURL: URL): ServiceWorkerRegistration? {
@@ -152,11 +152,9 @@ suspend inline fun ServiceWorkerContainer.getRegistrations(): ReadonlyArray<Serv
  */
 suspend inline fun ServiceWorkerContainer.register(
     scriptURL: TrustedScriptURL,
-    options: RegistrationOptions,
 ): ServiceWorkerRegistration {
     return registerAsync(
         scriptURL = scriptURL,
-        options = options,
     ).await()
 }
 
@@ -167,14 +165,6 @@ suspend inline fun ServiceWorkerContainer.register(
  */
 suspend inline fun ServiceWorkerContainer.register(
     scriptURL: TrustedScriptURL,
-): ServiceWorkerRegistration {
-    return registerAsync(
-        scriptURL = scriptURL,
-    ).await()
-}
-
-suspend inline fun ServiceWorkerContainer.register(
-    scriptURL: String,
     options: RegistrationOptions,
 ): ServiceWorkerRegistration {
     return registerAsync(
@@ -192,7 +182,7 @@ suspend inline fun ServiceWorkerContainer.register(
 }
 
 suspend inline fun ServiceWorkerContainer.register(
-    scriptURL: URL,
+    scriptURL: String,
     options: RegistrationOptions,
 ): ServiceWorkerRegistration {
     return registerAsync(
@@ -210,11 +200,11 @@ suspend inline fun ServiceWorkerContainer.register(
 }
 
 suspend inline fun ServiceWorkerContainer.register(
-    module: ServiceWorkerModule,
+    scriptURL: URL,
     options: RegistrationOptions,
 ): ServiceWorkerRegistration {
     return registerAsync(
-        module = module,
+        scriptURL = scriptURL,
         options = options,
     ).await()
 }
@@ -224,6 +214,16 @@ suspend inline fun ServiceWorkerContainer.register(
 ): ServiceWorkerRegistration {
     return registerAsync(
         module = module,
+    ).await()
+}
+
+suspend inline fun ServiceWorkerContainer.register(
+    module: ServiceWorkerModule,
+    options: RegistrationOptions,
+): ServiceWorkerRegistration {
+    return registerAsync(
+        module = module,
+        options = options,
     ).await()
 }
 

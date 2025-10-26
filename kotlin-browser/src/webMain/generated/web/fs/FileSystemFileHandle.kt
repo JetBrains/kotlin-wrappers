@@ -60,10 +60,8 @@ suspend inline fun FileSystemFileHandle.createSyncAccessHandle(): FileSystemSync
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemFileHandle/createWritable)
  */
-suspend inline fun FileSystemFileHandle.createWritable(options: FileSystemCreateWritableOptions): FileSystemWritableFileStream {
-    return createWritableAsync(
-        options = options,
-    ).await()
+suspend inline fun FileSystemFileHandle.createWritable(): FileSystemWritableFileStream {
+    return createWritableAsync().await()
 }
 
 /**
@@ -71,8 +69,10 @@ suspend inline fun FileSystemFileHandle.createWritable(options: FileSystemCreate
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemFileHandle/createWritable)
  */
-suspend inline fun FileSystemFileHandle.createWritable(): FileSystemWritableFileStream {
-    return createWritableAsync().await()
+suspend inline fun FileSystemFileHandle.createWritable(options: FileSystemCreateWritableOptions): FileSystemWritableFileStream {
+    return createWritableAsync(
+        options = options,
+    ).await()
 }
 
 /**

@@ -1208,12 +1208,10 @@ suspend inline fun SubtleCrypto.decrypt(
 suspend inline fun SubtleCrypto.deriveBits(
     algorithm: Algorithm,
     baseKey: CryptoKey,
-    length: Int?,
 ): ArrayBuffer {
     return deriveBitsAsync(
         algorithm = algorithm,
         baseKey = baseKey,
-        length = length,
     ).await()
 }
 
@@ -1225,16 +1223,6 @@ suspend inline fun SubtleCrypto.deriveBits(
 suspend inline fun SubtleCrypto.deriveBits(
     algorithm: Algorithm,
     baseKey: CryptoKey,
-): ArrayBuffer {
-    return deriveBitsAsync(
-        algorithm = algorithm,
-        baseKey = baseKey,
-    ).await()
-}
-
-suspend inline fun SubtleCrypto.deriveBits(
-    algorithm: String,
-    baseKey: CryptoKey,
     length: Int?,
 ): ArrayBuffer {
     return deriveBitsAsync(
@@ -1255,7 +1243,7 @@ suspend inline fun SubtleCrypto.deriveBits(
 }
 
 suspend inline fun SubtleCrypto.deriveBits(
-    algorithm: EcdhKeyDeriveParams,
+    algorithm: String,
     baseKey: CryptoKey,
     length: Int?,
 ): ArrayBuffer {
@@ -1277,7 +1265,7 @@ suspend inline fun SubtleCrypto.deriveBits(
 }
 
 suspend inline fun SubtleCrypto.deriveBits(
-    algorithm: HkdfParams,
+    algorithm: EcdhKeyDeriveParams,
     baseKey: CryptoKey,
     length: Int?,
 ): ArrayBuffer {
@@ -1299,7 +1287,7 @@ suspend inline fun SubtleCrypto.deriveBits(
 }
 
 suspend inline fun SubtleCrypto.deriveBits(
-    algorithm: Pbkdf2Params,
+    algorithm: HkdfParams,
     baseKey: CryptoKey,
     length: Int?,
 ): ArrayBuffer {
@@ -1317,6 +1305,18 @@ suspend inline fun SubtleCrypto.deriveBits(
     return deriveBitsAsync(
         algorithm = algorithm,
         baseKey = baseKey,
+    ).await()
+}
+
+suspend inline fun SubtleCrypto.deriveBits(
+    algorithm: Pbkdf2Params,
+    baseKey: CryptoKey,
+    length: Int?,
+): ArrayBuffer {
+    return deriveBitsAsync(
+        algorithm = algorithm,
+        baseKey = baseKey,
+        length = length,
     ).await()
 }
 

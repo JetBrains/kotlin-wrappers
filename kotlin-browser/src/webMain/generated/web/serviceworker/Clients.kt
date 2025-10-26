@@ -78,10 +78,8 @@ suspend inline fun Clients.get(id: String): Client? {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Clients/matchAll)
  */
-suspend inline fun <T : ClientQueryOptions> Clients.matchAll(options: T): ReadonlyArray<Client /* | WindowClient */> {
-    return matchAllAsync(
-        options = options,
-    ).await()
+suspend inline fun <T : ClientQueryOptions> Clients.matchAll(): ReadonlyArray<Client /* | WindowClient */> {
+    return matchAllAsync<T>().await()
 }
 
 /**
@@ -89,8 +87,10 @@ suspend inline fun <T : ClientQueryOptions> Clients.matchAll(options: T): Readon
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Clients/matchAll)
  */
-suspend inline fun <T : ClientQueryOptions> Clients.matchAll(): ReadonlyArray<Client /* | WindowClient */> {
-    return matchAllAsync<T>().await()
+suspend inline fun <T : ClientQueryOptions> Clients.matchAll(options: T): ReadonlyArray<Client /* | WindowClient */> {
+    return matchAllAsync(
+        options = options,
+    ).await()
 }
 
 /**

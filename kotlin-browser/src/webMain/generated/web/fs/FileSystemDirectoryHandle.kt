@@ -75,11 +75,9 @@ protected /* private */ constructor() :
  */
 suspend inline fun FileSystemDirectoryHandle.getDirectoryHandle(
     name: String,
-    options: FileSystemGetDirectoryOptions,
 ): FileSystemDirectoryHandle {
     return getDirectoryHandleAsync(
         name = name,
-        options = options,
     ).await()
 }
 
@@ -90,8 +88,23 @@ suspend inline fun FileSystemDirectoryHandle.getDirectoryHandle(
  */
 suspend inline fun FileSystemDirectoryHandle.getDirectoryHandle(
     name: String,
+    options: FileSystemGetDirectoryOptions,
 ): FileSystemDirectoryHandle {
     return getDirectoryHandleAsync(
+        name = name,
+        options = options,
+    ).await()
+}
+
+/**
+ * The **`getFileHandle()`** method of the FileSystemDirectoryHandle interface returns a FileSystemFileHandle for a file with the specified name, within the directory the method is called.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemDirectoryHandle/getFileHandle)
+ */
+suspend inline fun FileSystemDirectoryHandle.getFileHandle(
+    name: String,
+): FileSystemFileHandle {
+    return getFileHandleAsync(
         name = name,
     ).await()
 }
@@ -112,14 +125,14 @@ suspend inline fun FileSystemDirectoryHandle.getFileHandle(
 }
 
 /**
- * The **`getFileHandle()`** method of the FileSystemDirectoryHandle interface returns a FileSystemFileHandle for a file with the specified name, within the directory the method is called.
+ * The **`removeEntry()`** method of the FileSystemDirectoryHandle interface attempts to remove an entry if the directory handle contains a file or directory called the name specified.
  *
- * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemDirectoryHandle/getFileHandle)
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemDirectoryHandle/removeEntry)
  */
-suspend inline fun FileSystemDirectoryHandle.getFileHandle(
+suspend inline fun FileSystemDirectoryHandle.removeEntry(
     name: String,
-): FileSystemFileHandle {
-    return getFileHandleAsync(
+) {
+    removeEntryAsync(
         name = name,
     ).await()
 }
@@ -136,19 +149,6 @@ suspend inline fun FileSystemDirectoryHandle.removeEntry(
     removeEntryAsync(
         name = name,
         options = options,
-    ).await()
-}
-
-/**
- * The **`removeEntry()`** method of the FileSystemDirectoryHandle interface attempts to remove an entry if the directory handle contains a file or directory called the name specified.
- *
- * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemDirectoryHandle/removeEntry)
- */
-suspend inline fun FileSystemDirectoryHandle.removeEntry(
-    name: String,
-) {
-    removeEntryAsync(
-        name = name,
     ).await()
 }
 

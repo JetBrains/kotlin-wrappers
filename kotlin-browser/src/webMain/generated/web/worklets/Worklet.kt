@@ -48,11 +48,9 @@ private constructor() {
  */
 suspend inline fun <M : WorkletModule> Worklet<M>.addModule(
     moduleURL: String,
-    options: WorkletOptions,
 ) {
     addModuleAsync(
         moduleURL = moduleURL,
-        options = options,
     ).await()
 }
 
@@ -63,14 +61,6 @@ suspend inline fun <M : WorkletModule> Worklet<M>.addModule(
  */
 suspend inline fun <M : WorkletModule> Worklet<M>.addModule(
     moduleURL: String,
-) {
-    addModuleAsync(
-        moduleURL = moduleURL,
-    ).await()
-}
-
-suspend inline fun <M : WorkletModule> Worklet<M>.addModule(
-    moduleURL: URL,
     options: WorkletOptions,
 ) {
     addModuleAsync(
@@ -88,11 +78,11 @@ suspend inline fun <M : WorkletModule> Worklet<M>.addModule(
 }
 
 suspend inline fun <M : WorkletModule> Worklet<M>.addModule(
-    module: M,
+    moduleURL: URL,
     options: WorkletOptions,
 ) {
     addModuleAsync(
-        module = module,
+        moduleURL = moduleURL,
         options = options,
     ).await()
 }
@@ -102,5 +92,15 @@ suspend inline fun <M : WorkletModule> Worklet<M>.addModule(
 ) {
     addModuleAsync(
         module = module,
+    ).await()
+}
+
+suspend inline fun <M : WorkletModule> Worklet<M>.addModule(
+    module: M,
+    options: WorkletOptions,
+) {
+    addModuleAsync(
+        module = module,
+        options = options,
     ).await()
 }

@@ -123,11 +123,9 @@ suspend inline fun RTCRtpSender.replaceTrack(withTrack: MediaStreamTrack?) {
  */
 suspend inline fun RTCRtpSender.setParameters(
     parameters: RTCRtpSendParameters,
-    setParameterOptions: RTCSetParameterOptions,
 ) {
     setParametersAsync(
         parameters = parameters,
-        setParameterOptions = setParameterOptions,
     ).await()
 }
 
@@ -138,8 +136,10 @@ suspend inline fun RTCRtpSender.setParameters(
  */
 suspend inline fun RTCRtpSender.setParameters(
     parameters: RTCRtpSendParameters,
+    setParameterOptions: RTCSetParameterOptions,
 ) {
     setParametersAsync(
         parameters = parameters,
+        setParameterOptions = setParameterOptions,
     ).await()
 }

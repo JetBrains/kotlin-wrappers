@@ -41,11 +41,9 @@ private constructor() {
  */
 suspend inline fun GamepadHapticActuator.playEffect(
     type: GamepadHapticEffectType,
-    params: GamepadEffectParameters,
 ): GamepadHapticsResult {
     return playEffectAsync(
         type = type,
-        params = params,
     ).await()
 }
 
@@ -56,9 +54,11 @@ suspend inline fun GamepadHapticActuator.playEffect(
  */
 suspend inline fun GamepadHapticActuator.playEffect(
     type: GamepadHapticEffectType,
+    params: GamepadEffectParameters,
 ): GamepadHapticsResult {
     return playEffectAsync(
         type = type,
+        params = params,
     ).await()
 }
 

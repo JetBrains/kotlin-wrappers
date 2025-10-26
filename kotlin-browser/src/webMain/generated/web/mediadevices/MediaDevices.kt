@@ -74,10 +74,8 @@ suspend inline fun MediaDevices.enumerateDevices(): ReadonlyArray<MediaDeviceInf
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaDevices/getDisplayMedia)
  */
-suspend inline fun MediaDevices.getDisplayMedia(options: DisplayMediaStreamOptions): MediaStream {
-    return getDisplayMediaAsync(
-        options = options,
-    ).await()
+suspend inline fun MediaDevices.getDisplayMedia(): MediaStream {
+    return getDisplayMediaAsync().await()
 }
 
 /**
@@ -85,8 +83,19 @@ suspend inline fun MediaDevices.getDisplayMedia(options: DisplayMediaStreamOptio
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaDevices/getDisplayMedia)
  */
-suspend inline fun MediaDevices.getDisplayMedia(): MediaStream {
-    return getDisplayMediaAsync().await()
+suspend inline fun MediaDevices.getDisplayMedia(options: DisplayMediaStreamOptions): MediaStream {
+    return getDisplayMediaAsync(
+        options = options,
+    ).await()
+}
+
+/**
+ * The **`getUserMedia()`** method of the MediaDevices interface prompts the user for permission to use a media input which produces a MediaStream with tracks containing the requested types of media.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaDevices/getUserMedia)
+ */
+suspend inline fun MediaDevices.getUserMedia(): MediaStream {
+    return getUserMediaAsync().await()
 }
 
 /**
@@ -98,13 +107,4 @@ suspend inline fun MediaDevices.getUserMedia(constraints: MediaStreamConstraints
     return getUserMediaAsync(
         constraints = constraints,
     ).await()
-}
-
-/**
- * The **`getUserMedia()`** method of the MediaDevices interface prompts the user for permission to use a media input which produces a MediaStream with tracks containing the requested types of media.
- *
- * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaDevices/getUserMedia)
- */
-suspend inline fun MediaDevices.getUserMedia(): MediaStream {
-    return getUserMediaAsync().await()
 }

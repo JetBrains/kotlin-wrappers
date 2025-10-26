@@ -101,14 +101,14 @@ suspend inline fun CookieStore.get(name: String): CookieListItem? {
     ).await()
 }
 
+suspend inline fun CookieStore.get(): CookieListItem? {
+    return getAsync().await()
+}
+
 suspend inline fun CookieStore.get(options: CookieStoreGetOptions): CookieListItem? {
     return getAsync(
         options = options,
     ).await()
-}
-
-suspend inline fun CookieStore.get(): CookieListItem? {
-    return getAsync().await()
 }
 
 /**
@@ -122,14 +122,14 @@ suspend inline fun CookieStore.getAll(name: String): CookieList {
     ).await()
 }
 
+suspend inline fun CookieStore.getAll(): CookieList {
+    return getAllAsync().await()
+}
+
 suspend inline fun CookieStore.getAll(options: CookieStoreGetOptions): CookieList {
     return getAllAsync(
         options = options,
     ).await()
-}
-
-suspend inline fun CookieStore.getAll(): CookieList {
-    return getAllAsync().await()
 }
 
 /**

@@ -44,15 +44,15 @@ private constructor() {
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUAdapter/requestDevice)
  */
-suspend inline fun GPUAdapter.requestDevice(descriptor: GPUDeviceDescriptor): GPUDevice {
-    return requestDeviceAsync(
-        descriptor = descriptor,
-    ).await()
+suspend inline fun GPUAdapter.requestDevice(): GPUDevice {
+    return requestDeviceAsync().await()
 }
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUAdapter/requestDevice)
  */
-suspend inline fun GPUAdapter.requestDevice(): GPUDevice {
-    return requestDeviceAsync().await()
+suspend inline fun GPUAdapter.requestDevice(descriptor: GPUDeviceDescriptor): GPUDevice {
+    return requestDeviceAsync(
+        descriptor = descriptor,
+    ).await()
 }

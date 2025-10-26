@@ -63,10 +63,8 @@ private constructor() :
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCRtpScriptTransformer/generateKeyFrame)
  */
-suspend inline fun RTCRtpScriptTransformer.generateKeyFrame(rid: String) {
-    generateKeyFrameAsync(
-        rid = rid,
-    ).await()
+suspend inline fun RTCRtpScriptTransformer.generateKeyFrame() {
+    generateKeyFrameAsync().await()
 }
 
 /**
@@ -74,8 +72,10 @@ suspend inline fun RTCRtpScriptTransformer.generateKeyFrame(rid: String) {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCRtpScriptTransformer/generateKeyFrame)
  */
-suspend inline fun RTCRtpScriptTransformer.generateKeyFrame() {
-    generateKeyFrameAsync().await()
+suspend inline fun RTCRtpScriptTransformer.generateKeyFrame(rid: String) {
+    generateKeyFrameAsync(
+        rid = rid,
+    ).await()
 }
 
 /**

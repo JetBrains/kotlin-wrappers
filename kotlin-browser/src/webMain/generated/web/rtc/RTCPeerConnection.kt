@@ -313,10 +313,8 @@ open external class RTCPeerConnection(
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/addIceCandidate)
  */
-suspend inline fun RTCPeerConnection.addIceCandidate(candidate: RTCIceCandidateInit?) {
-    addIceCandidateAsync(
-        candidate = candidate,
-    ).await()
+suspend inline fun RTCPeerConnection.addIceCandidate() {
+    addIceCandidateAsync().await()
 }
 
 /**
@@ -324,8 +322,19 @@ suspend inline fun RTCPeerConnection.addIceCandidate(candidate: RTCIceCandidateI
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/addIceCandidate)
  */
-suspend inline fun RTCPeerConnection.addIceCandidate() {
-    addIceCandidateAsync().await()
+suspend inline fun RTCPeerConnection.addIceCandidate(candidate: RTCIceCandidateInit?) {
+    addIceCandidateAsync(
+        candidate = candidate,
+    ).await()
+}
+
+/**
+ * The **`createAnswer()`** method of the RTCPeerConnection interface creates an SDP answer to an offer received from a remote peer during the offer/answer negotiation of a WebRTC connection.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/createAnswer)
+ */
+suspend inline fun RTCPeerConnection.createAnswer(): RTCSessionDescriptionInit {
+    return createAnswerAsync().await()
 }
 
 /**
@@ -340,12 +349,12 @@ suspend inline fun RTCPeerConnection.createAnswer(options: RTCAnswerOptions): RT
 }
 
 /**
- * The **`createAnswer()`** method of the RTCPeerConnection interface creates an SDP answer to an offer received from a remote peer during the offer/answer negotiation of a WebRTC connection.
+ * The **`createOffer()`** method of the RTCPeerConnection interface initiates the creation of an SDP offer for the purpose of starting a new WebRTC connection to a remote peer.
  *
- * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/createAnswer)
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/createOffer)
  */
-suspend inline fun RTCPeerConnection.createAnswer(): RTCSessionDescriptionInit {
-    return createAnswerAsync().await()
+suspend inline fun RTCPeerConnection.createOffer(): RTCSessionDescriptionInit {
+    return createOfferAsync().await()
 }
 
 /**
@@ -360,12 +369,12 @@ suspend inline fun RTCPeerConnection.createOffer(options: RTCOfferOptions): RTCS
 }
 
 /**
- * The **`createOffer()`** method of the RTCPeerConnection interface initiates the creation of an SDP offer for the purpose of starting a new WebRTC connection to a remote peer.
+ * The **`getStats()`** method of the RTCPeerConnection interface returns a promise which resolves with data providing statistics about either the overall connection or about the specified MediaStreamTrack.
  *
- * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/createOffer)
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/getStats)
  */
-suspend inline fun RTCPeerConnection.createOffer(): RTCSessionDescriptionInit {
-    return createOfferAsync().await()
+suspend inline fun RTCPeerConnection.getStats(): RTCStatsReport {
+    return getStatsAsync().await()
 }
 
 /**
@@ -380,12 +389,12 @@ suspend inline fun RTCPeerConnection.getStats(selector: MediaStreamTrack?): RTCS
 }
 
 /**
- * The **`getStats()`** method of the RTCPeerConnection interface returns a promise which resolves with data providing statistics about either the overall connection or about the specified MediaStreamTrack.
+ * The **`setLocalDescription()`** method of the RTCPeerConnection interface changes the local description associated with the connection.
  *
- * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/getStats)
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/setLocalDescription)
  */
-suspend inline fun RTCPeerConnection.getStats(): RTCStatsReport {
-    return getStatsAsync().await()
+suspend inline fun RTCPeerConnection.setLocalDescription() {
+    setLocalDescriptionAsync().await()
 }
 
 /**
@@ -397,15 +406,6 @@ suspend inline fun RTCPeerConnection.setLocalDescription(description: RTCLocalSe
     setLocalDescriptionAsync(
         description = description,
     ).await()
-}
-
-/**
- * The **`setLocalDescription()`** method of the RTCPeerConnection interface changes the local description associated with the connection.
- *
- * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/setLocalDescription)
- */
-suspend inline fun RTCPeerConnection.setLocalDescription() {
-    setLocalDescriptionAsync().await()
 }
 
 /**

@@ -90,10 +90,8 @@ open external class WebTransport(
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebTransport/createBidirectionalStream)
  */
-suspend inline fun WebTransport.createBidirectionalStream(options: WebTransportSendStreamOptions): WebTransportBidirectionalStream {
-    return createBidirectionalStreamAsync(
-        options = options,
-    ).await()
+suspend inline fun WebTransport.createBidirectionalStream(): WebTransportBidirectionalStream {
+    return createBidirectionalStreamAsync().await()
 }
 
 /**
@@ -101,17 +99,8 @@ suspend inline fun WebTransport.createBidirectionalStream(options: WebTransportS
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebTransport/createBidirectionalStream)
  */
-suspend inline fun WebTransport.createBidirectionalStream(): WebTransportBidirectionalStream {
-    return createBidirectionalStreamAsync().await()
-}
-
-/**
- * The **`createUnidirectionalStream()`** method of the WebTransport interface asynchronously opens a unidirectional stream.
- *
- * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebTransport/createUnidirectionalStream)
- */
-suspend inline fun WebTransport.createUnidirectionalStream(options: WebTransportSendStreamOptions): WritableStream<*> {
-    return createUnidirectionalStreamAsync(
+suspend inline fun WebTransport.createBidirectionalStream(options: WebTransportSendStreamOptions): WebTransportBidirectionalStream {
+    return createBidirectionalStreamAsync(
         options = options,
     ).await()
 }
@@ -123,4 +112,15 @@ suspend inline fun WebTransport.createUnidirectionalStream(options: WebTransport
  */
 suspend inline fun WebTransport.createUnidirectionalStream(): WritableStream<*> {
     return createUnidirectionalStreamAsync().await()
+}
+
+/**
+ * The **`createUnidirectionalStream()`** method of the WebTransport interface asynchronously opens a unidirectional stream.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebTransport/createUnidirectionalStream)
+ */
+suspend inline fun WebTransport.createUnidirectionalStream(options: WebTransportSendStreamOptions): WritableStream<*> {
+    return createUnidirectionalStreamAsync(
+        options = options,
+    ).await()
 }

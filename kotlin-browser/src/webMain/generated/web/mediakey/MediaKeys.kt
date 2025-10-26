@@ -47,10 +47,8 @@ private constructor() {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeys/getStatusForPolicy)
  */
-suspend inline fun MediaKeys.getStatusForPolicy(policy: MediaKeysPolicy): MediaKeyStatus {
-    return getStatusForPolicyAsync(
-        policy = policy,
-    ).await()
+suspend inline fun MediaKeys.getStatusForPolicy(): MediaKeyStatus {
+    return getStatusForPolicyAsync().await()
 }
 
 /**
@@ -58,8 +56,10 @@ suspend inline fun MediaKeys.getStatusForPolicy(policy: MediaKeysPolicy): MediaK
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeys/getStatusForPolicy)
  */
-suspend inline fun MediaKeys.getStatusForPolicy(): MediaKeyStatus {
-    return getStatusForPolicyAsync().await()
+suspend inline fun MediaKeys.getStatusForPolicy(policy: MediaKeysPolicy): MediaKeyStatus {
+    return getStatusForPolicyAsync(
+        policy = policy,
+    ).await()
 }
 
 /**

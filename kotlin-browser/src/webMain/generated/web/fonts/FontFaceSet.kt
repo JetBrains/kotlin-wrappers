@@ -80,11 +80,9 @@ protected /* private */ constructor() :
  */
 suspend inline fun FontFaceSet.load(
     font: String,
-    text: String,
 ): ReadonlyArray<FontFace> {
     return loadAsync(
         font = font,
-        text = text,
     ).await()
 }
 
@@ -95,9 +93,11 @@ suspend inline fun FontFaceSet.load(
  */
 suspend inline fun FontFaceSet.load(
     font: String,
+    text: String,
 ): ReadonlyArray<FontFace> {
     return loadAsync(
         font = font,
+        text = text,
     ).await()
 }
 

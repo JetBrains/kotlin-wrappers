@@ -122,10 +122,8 @@ private constructor() :
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/getNotifications)
  */
-suspend inline fun ServiceWorkerRegistration.getNotifications(filter: GetNotificationOptions): ReadonlyArray<Notification> {
-    return getNotificationsAsync(
-        filter = filter,
-    ).await()
+suspend inline fun ServiceWorkerRegistration.getNotifications(): ReadonlyArray<Notification> {
+    return getNotificationsAsync().await()
 }
 
 /**
@@ -133,8 +131,23 @@ suspend inline fun ServiceWorkerRegistration.getNotifications(filter: GetNotific
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/getNotifications)
  */
-suspend inline fun ServiceWorkerRegistration.getNotifications(): ReadonlyArray<Notification> {
-    return getNotificationsAsync().await()
+suspend inline fun ServiceWorkerRegistration.getNotifications(filter: GetNotificationOptions): ReadonlyArray<Notification> {
+    return getNotificationsAsync(
+        filter = filter,
+    ).await()
+}
+
+/**
+ * The **`showNotification()`** method of the ServiceWorkerRegistration interface creates a notification on an active service worker.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/showNotification)
+ */
+suspend inline fun ServiceWorkerRegistration.showNotification(
+    title: String,
+) {
+    showNotificationAsync(
+        title = title,
+    ).await()
 }
 
 /**
@@ -149,19 +162,6 @@ suspend inline fun ServiceWorkerRegistration.showNotification(
     showNotificationAsync(
         title = title,
         options = options,
-    ).await()
-}
-
-/**
- * The **`showNotification()`** method of the ServiceWorkerRegistration interface creates a notification on an active service worker.
- *
- * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/showNotification)
- */
-suspend inline fun ServiceWorkerRegistration.showNotification(
-    title: String,
-) {
-    showNotificationAsync(
-        title = title,
     ).await()
 }
 

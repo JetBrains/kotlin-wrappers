@@ -24,6 +24,26 @@ external fun instantiateAsync(
 @Suppress("NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE")
 suspend inline fun instantiate(
     bytes: BufferSource,
+): WebAssemblyInstantiatedSource {
+    return instantiateAsync(
+        bytes = bytes,
+    ).await()
+}
+
+@Suppress("NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE")
+suspend inline fun instantiate(
+    bytes: BufferSource,
+    importObject: Imports,
+): WebAssemblyInstantiatedSource {
+    return instantiateAsync(
+        bytes = bytes,
+        importObject = importObject,
+    ).await()
+}
+
+@Suppress("NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE")
+suspend inline fun instantiate(
+    bytes: BufferSource,
     importObject: Imports,
     options: WebAssemblyCompileOptions?,
 ): WebAssemblyInstantiatedSource {
@@ -31,26 +51,6 @@ suspend inline fun instantiate(
         bytes = bytes,
         importObject = importObject,
         options = options,
-    ).await()
-}
-
-@Suppress("NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE")
-suspend inline fun instantiate(
-    bytes: BufferSource,
-    importObject: Imports,
-): WebAssemblyInstantiatedSource {
-    return instantiateAsync(
-        bytes = bytes,
-        importObject = importObject,
-    ).await()
-}
-
-@Suppress("NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE")
-suspend inline fun instantiate(
-    bytes: BufferSource,
-): WebAssemblyInstantiatedSource {
-    return instantiateAsync(
-        bytes = bytes,
     ).await()
 }
 
@@ -63,19 +63,19 @@ external fun instantiateAsync(
 @Suppress("NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE")
 suspend inline fun instantiate(
     moduleObject: Module,
-    importObject: Imports,
 ): Instance {
     return instantiateAsync(
         moduleObject = moduleObject,
-        importObject = importObject,
     ).await()
 }
 
 @Suppress("NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE")
 suspend inline fun instantiate(
     moduleObject: Module,
+    importObject: Imports,
 ): Instance {
     return instantiateAsync(
         moduleObject = moduleObject,
+        importObject = importObject,
     ).await()
 }

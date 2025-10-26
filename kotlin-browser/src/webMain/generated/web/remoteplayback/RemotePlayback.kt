@@ -74,10 +74,8 @@ private constructor() :
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RemotePlayback/cancelWatchAvailability)
  */
-suspend inline fun RemotePlayback.cancelWatchAvailability(id: Int) {
-    cancelWatchAvailabilityAsync(
-        id = id,
-    ).await()
+suspend inline fun RemotePlayback.cancelWatchAvailability() {
+    cancelWatchAvailabilityAsync().await()
 }
 
 /**
@@ -85,8 +83,10 @@ suspend inline fun RemotePlayback.cancelWatchAvailability(id: Int) {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RemotePlayback/cancelWatchAvailability)
  */
-suspend inline fun RemotePlayback.cancelWatchAvailability() {
-    cancelWatchAvailabilityAsync().await()
+suspend inline fun RemotePlayback.cancelWatchAvailability(id: Int) {
+    cancelWatchAvailabilityAsync(
+        id = id,
+    ).await()
 }
 
 /**

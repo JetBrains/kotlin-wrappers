@@ -89,10 +89,8 @@ suspend inline fun PaymentRequest.canMakePayment(): Boolean {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentRequest/show)
  */
-suspend inline fun PaymentRequest.show(detailsPromise: PaymentDetailsUpdate): PaymentResponse {
-    return showAsync(
-        detailsPromise = detailsPromise,
-    ).await()
+suspend inline fun PaymentRequest.show(): PaymentResponse {
+    return showAsync().await()
 }
 
 /**
@@ -100,8 +98,10 @@ suspend inline fun PaymentRequest.show(detailsPromise: PaymentDetailsUpdate): Pa
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentRequest/show)
  */
-suspend inline fun PaymentRequest.show(): PaymentResponse {
-    return showAsync().await()
+suspend inline fun PaymentRequest.show(detailsPromise: PaymentDetailsUpdate): PaymentResponse {
+    return showAsync(
+        detailsPromise = detailsPromise,
+    ).await()
 }
 
 suspend inline fun PaymentRequest.show(detailsPromise: PromiseLike<PaymentDetailsUpdate>): PaymentResponse {

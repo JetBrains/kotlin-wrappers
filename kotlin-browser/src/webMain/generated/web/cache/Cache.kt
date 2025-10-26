@@ -211,11 +211,9 @@ suspend inline fun Cache.addAll(urls: ReadonlyArray<JsString>) {
  */
 suspend inline fun Cache.delete(
     url: String,
-    options: CacheQueryOptions,
 ): Boolean {
     return deleteAsync(
         url = url,
-        options = options,
     ).await().toBoolean()
 }
 
@@ -226,14 +224,6 @@ suspend inline fun Cache.delete(
  */
 suspend inline fun Cache.delete(
     url: String,
-): Boolean {
-    return deleteAsync(
-        url = url,
-    ).await().toBoolean()
-}
-
-suspend inline fun Cache.delete(
-    url: URL,
     options: CacheQueryOptions,
 ): Boolean {
     return deleteAsync(
@@ -251,11 +241,11 @@ suspend inline fun Cache.delete(
 }
 
 suspend inline fun Cache.delete(
-    request: Request,
+    url: URL,
     options: CacheQueryOptions,
 ): Boolean {
     return deleteAsync(
-        request = request,
+        url = url,
         options = options,
     ).await().toBoolean()
 }
@@ -268,32 +258,14 @@ suspend inline fun Cache.delete(
     ).await().toBoolean()
 }
 
-/**
- * The **`keys()`** method of the Cache interface returns a Promise that resolves to an array of Request objects representing the keys of the Cache.
- *
- * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/keys)
- */
-suspend inline fun Cache.keys(
-    url: String,
+suspend inline fun Cache.delete(
+    request: Request,
     options: CacheQueryOptions,
-): ReadonlyArray<Request> {
-    return keysAsync(
-        url = url,
+): Boolean {
+    return deleteAsync(
+        request = request,
         options = options,
-    ).await()
-}
-
-/**
- * The **`keys()`** method of the Cache interface returns a Promise that resolves to an array of Request objects representing the keys of the Cache.
- *
- * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/keys)
- */
-suspend inline fun Cache.keys(
-    url: String,
-): ReadonlyArray<Request> {
-    return keysAsync(
-        url = url,
-    ).await()
+    ).await().toBoolean()
 }
 
 /**
@@ -305,8 +277,26 @@ suspend inline fun Cache.keys(): ReadonlyArray<Request> {
     return keysAsync().await()
 }
 
+/**
+ * The **`keys()`** method of the Cache interface returns a Promise that resolves to an array of Request objects representing the keys of the Cache.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/keys)
+ */
 suspend inline fun Cache.keys(
-    url: URL,
+    url: String,
+): ReadonlyArray<Request> {
+    return keysAsync(
+        url = url,
+    ).await()
+}
+
+/**
+ * The **`keys()`** method of the Cache interface returns a Promise that resolves to an array of Request objects representing the keys of the Cache.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/keys)
+ */
+suspend inline fun Cache.keys(
+    url: String,
     options: CacheQueryOptions,
 ): ReadonlyArray<Request> {
     return keysAsync(
@@ -324,11 +314,11 @@ suspend inline fun Cache.keys(
 }
 
 suspend inline fun Cache.keys(
-    request: Request,
+    url: URL,
     options: CacheQueryOptions,
 ): ReadonlyArray<Request> {
     return keysAsync(
-        request = request,
+        url = url,
         options = options,
     ).await()
 }
@@ -338,6 +328,29 @@ suspend inline fun Cache.keys(
 ): ReadonlyArray<Request> {
     return keysAsync(
         request = request,
+    ).await()
+}
+
+suspend inline fun Cache.keys(
+    request: Request,
+    options: CacheQueryOptions,
+): ReadonlyArray<Request> {
+    return keysAsync(
+        request = request,
+        options = options,
+    ).await()
+}
+
+/**
+ * The **`match()`** method of the Cache interface returns a Promise that resolves to the Response associated with the first matching request in the Cache object.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/match)
+ */
+suspend inline fun Cache.match(
+    url: String,
+): Response? {
+    return matchAsync(
+        url = url,
     ).await()
 }
 
@@ -356,13 +369,8 @@ suspend inline fun Cache.match(
     ).await()
 }
 
-/**
- * The **`match()`** method of the Cache interface returns a Promise that resolves to the Response associated with the first matching request in the Cache object.
- *
- * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/match)
- */
 suspend inline fun Cache.match(
-    url: String,
+    url: URL,
 ): Response? {
     return matchAsync(
         url = url,
@@ -380,10 +388,10 @@ suspend inline fun Cache.match(
 }
 
 suspend inline fun Cache.match(
-    url: URL,
+    request: Request,
 ): Response? {
     return matchAsync(
-        url = url,
+        request = request,
     ).await()
 }
 
@@ -394,42 +402,6 @@ suspend inline fun Cache.match(
     return matchAsync(
         request = request,
         options = options,
-    ).await()
-}
-
-suspend inline fun Cache.match(
-    request: Request,
-): Response? {
-    return matchAsync(
-        request = request,
-    ).await()
-}
-
-/**
- * The **`matchAll()`** method of the Cache interface returns a Promise that resolves to an array of all matching responses in the Cache object.
- *
- * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/matchAll)
- */
-suspend inline fun Cache.matchAll(
-    url: String,
-    options: CacheQueryOptions,
-): ReadonlyArray<Response> {
-    return matchAllAsync(
-        url = url,
-        options = options,
-    ).await()
-}
-
-/**
- * The **`matchAll()`** method of the Cache interface returns a Promise that resolves to an array of all matching responses in the Cache object.
- *
- * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/matchAll)
- */
-suspend inline fun Cache.matchAll(
-    url: String,
-): ReadonlyArray<Response> {
-    return matchAllAsync(
-        url = url,
     ).await()
 }
 
@@ -442,8 +414,26 @@ suspend inline fun Cache.matchAll(): ReadonlyArray<Response> {
     return matchAllAsync().await()
 }
 
+/**
+ * The **`matchAll()`** method of the Cache interface returns a Promise that resolves to an array of all matching responses in the Cache object.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/matchAll)
+ */
 suspend inline fun Cache.matchAll(
-    url: URL,
+    url: String,
+): ReadonlyArray<Response> {
+    return matchAllAsync(
+        url = url,
+    ).await()
+}
+
+/**
+ * The **`matchAll()`** method of the Cache interface returns a Promise that resolves to an array of all matching responses in the Cache object.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/matchAll)
+ */
+suspend inline fun Cache.matchAll(
+    url: String,
     options: CacheQueryOptions,
 ): ReadonlyArray<Response> {
     return matchAllAsync(
@@ -461,11 +451,11 @@ suspend inline fun Cache.matchAll(
 }
 
 suspend inline fun Cache.matchAll(
-    request: Request,
+    url: URL,
     options: CacheQueryOptions,
 ): ReadonlyArray<Response> {
     return matchAllAsync(
-        request = request,
+        url = url,
         options = options,
     ).await()
 }
@@ -475,6 +465,16 @@ suspend inline fun Cache.matchAll(
 ): ReadonlyArray<Response> {
     return matchAllAsync(
         request = request,
+    ).await()
+}
+
+suspend inline fun Cache.matchAll(
+    request: Request,
+    options: CacheQueryOptions,
+): ReadonlyArray<Response> {
+    return matchAllAsync(
+        request = request,
+        options = options,
     ).await()
 }
 

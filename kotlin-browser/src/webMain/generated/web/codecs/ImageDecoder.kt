@@ -86,10 +86,8 @@ open external class ImageDecoder(
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageDecoder/decode)
  */
-suspend inline fun ImageDecoder.decode(options: ImageDecodeOptions): ImageDecodeResult {
-    return decodeAsync(
-        options = options,
-    ).await()
+suspend inline fun ImageDecoder.decode(): ImageDecodeResult {
+    return decodeAsync().await()
 }
 
 /**
@@ -97,8 +95,10 @@ suspend inline fun ImageDecoder.decode(options: ImageDecodeOptions): ImageDecode
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageDecoder/decode)
  */
-suspend inline fun ImageDecoder.decode(): ImageDecodeResult {
-    return decodeAsync().await()
+suspend inline fun ImageDecoder.decode(options: ImageDecodeOptions): ImageDecodeResult {
+    return decodeAsync(
+        options = options,
+    ).await()
 }
 
 /**

@@ -147,11 +147,9 @@ open external class VideoFrame(
  */
 suspend inline fun VideoFrame.copyTo(
     destination: AllowSharedBufferSource,
-    options: VideoFrameCopyToOptions,
 ): ReadonlyArray<PlaneLayout> {
     return copyToAsync(
         destination = destination,
-        options = options,
     ).await()
 }
 
@@ -162,8 +160,10 @@ suspend inline fun VideoFrame.copyTo(
  */
 suspend inline fun VideoFrame.copyTo(
     destination: AllowSharedBufferSource,
+    options: VideoFrameCopyToOptions,
 ): ReadonlyArray<PlaneLayout> {
     return copyToAsync(
         destination = destination,
+        options = options,
     ).await()
 }

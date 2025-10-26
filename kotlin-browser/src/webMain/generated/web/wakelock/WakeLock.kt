@@ -29,10 +29,8 @@ private constructor() {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WakeLock/request)
  */
-suspend inline fun WakeLock.request(type: WakeLockType): WakeLockSentinel {
-    return requestAsync(
-        type = type,
-    ).await()
+suspend inline fun WakeLock.request(): WakeLockSentinel {
+    return requestAsync().await()
 }
 
 /**
@@ -40,6 +38,8 @@ suspend inline fun WakeLock.request(type: WakeLockType): WakeLockSentinel {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WakeLock/request)
  */
-suspend inline fun WakeLock.request(): WakeLockSentinel {
-    return requestAsync().await()
+suspend inline fun WakeLock.request(type: WakeLockType): WakeLockSentinel {
+    return requestAsync(
+        type = type,
+    ).await()
 }

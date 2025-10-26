@@ -559,10 +559,8 @@ private constructor() :
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/requestFullscreen)
  */
-suspend inline fun Element.requestFullscreen(options: FullscreenOptions) {
-    requestFullscreenAsync(
-        options = options,
-    ).await()
+suspend inline fun Element.requestFullscreen() {
+    requestFullscreenAsync().await()
 }
 
 /**
@@ -570,17 +568,8 @@ suspend inline fun Element.requestFullscreen(options: FullscreenOptions) {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/requestFullscreen)
  */
-suspend inline fun Element.requestFullscreen() {
-    requestFullscreenAsync().await()
-}
-
-/**
- * The **`requestPointerLock()`** method of the Element interface lets you asynchronously ask for the pointer to be locked on the given element.
- *
- * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/requestPointerLock)
- */
-suspend inline fun Element.requestPointerLock(options: PointerLockOptions) {
-    requestPointerLockAsync(
+suspend inline fun Element.requestFullscreen(options: FullscreenOptions) {
+    requestFullscreenAsync(
         options = options,
     ).await()
 }
@@ -592,6 +581,17 @@ suspend inline fun Element.requestPointerLock(options: PointerLockOptions) {
  */
 suspend inline fun Element.requestPointerLock() {
     requestPointerLockAsync().await()
+}
+
+/**
+ * The **`requestPointerLock()`** method of the Element interface lets you asynchronously ask for the pointer to be locked on the given element.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/requestPointerLock)
+ */
+suspend inline fun Element.requestPointerLock(options: PointerLockOptions) {
+    requestPointerLockAsync(
+        options = options,
+    ).await()
 }
 
 /**

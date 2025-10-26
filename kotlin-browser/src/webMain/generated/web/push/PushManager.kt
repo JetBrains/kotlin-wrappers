@@ -66,10 +66,8 @@ suspend inline fun PushManager.getSubscription(): PushSubscription? {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PushManager/permissionState)
  */
-suspend inline fun PushManager.permissionState(options: PushSubscriptionOptionsInit): PermissionState {
-    return permissionStateAsync(
-        options = options,
-    ).await()
+suspend inline fun PushManager.permissionState(): PermissionState {
+    return permissionStateAsync().await()
 }
 
 /**
@@ -77,17 +75,8 @@ suspend inline fun PushManager.permissionState(options: PushSubscriptionOptionsI
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PushManager/permissionState)
  */
-suspend inline fun PushManager.permissionState(): PermissionState {
-    return permissionStateAsync().await()
-}
-
-/**
- * The **`subscribe()`** method of the PushManager interface subscribes to a push service.
- *
- * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PushManager/subscribe)
- */
-suspend inline fun PushManager.subscribe(options: PushSubscriptionOptionsInit): PushSubscription {
-    return subscribeAsync(
+suspend inline fun PushManager.permissionState(options: PushSubscriptionOptionsInit): PermissionState {
+    return permissionStateAsync(
         options = options,
     ).await()
 }
@@ -99,4 +88,15 @@ suspend inline fun PushManager.subscribe(options: PushSubscriptionOptionsInit): 
  */
 suspend inline fun PushManager.subscribe(): PushSubscription {
     return subscribeAsync().await()
+}
+
+/**
+ * The **`subscribe()`** method of the PushManager interface subscribes to a push service.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PushManager/subscribe)
+ */
+suspend inline fun PushManager.subscribe(options: PushSubscriptionOptionsInit): PushSubscription {
+    return subscribeAsync(
+        options = options,
+    ).await()
 }

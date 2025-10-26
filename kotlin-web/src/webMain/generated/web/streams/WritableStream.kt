@@ -58,10 +58,8 @@ open external class WritableStream<W : JsAny?>(
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WritableStream/abort)
  */
-suspend inline fun <W : JsAny?> WritableStream<W>.abort(reason: JsError?) {
-    abortAsync(
-        reason = reason,
-    ).await()
+suspend inline fun <W : JsAny?> WritableStream<W>.abort() {
+    abortAsync().await()
 }
 
 /**
@@ -69,8 +67,10 @@ suspend inline fun <W : JsAny?> WritableStream<W>.abort(reason: JsError?) {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WritableStream/abort)
  */
-suspend inline fun <W : JsAny?> WritableStream<W>.abort() {
-    abortAsync().await()
+suspend inline fun <W : JsAny?> WritableStream<W>.abort(reason: JsError?) {
+    abortAsync(
+        reason = reason,
+    ).await()
 }
 
 /**

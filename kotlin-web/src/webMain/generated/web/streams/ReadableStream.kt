@@ -98,10 +98,8 @@ open external class ReadableStream<R : JsAny?>(
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStream/cancel)
  */
-suspend inline fun <R : JsAny?> ReadableStream<R>.cancel(reason: JsError?) {
-    cancelAsync(
-        reason = reason,
-    ).await()
+suspend inline fun <R : JsAny?> ReadableStream<R>.cancel() {
+    cancelAsync().await()
 }
 
 /**
@@ -109,8 +107,25 @@ suspend inline fun <R : JsAny?> ReadableStream<R>.cancel(reason: JsError?) {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStream/cancel)
  */
-suspend inline fun <R : JsAny?> ReadableStream<R>.cancel() {
-    cancelAsync().await()
+suspend inline fun <R : JsAny?> ReadableStream<R>.cancel(reason: JsError?) {
+    cancelAsync(
+        reason = reason,
+    ).await()
+}
+
+/**
+ * The **`pipeTo()`** method of the ReadableStream interface pipes the current `ReadableStream` to a given WritableStream and returns a Promise that fulfills when the piping process completes successfully, or rejects if any errors were encountered.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStream/pipeTo)
+ */
+suspend fun <R : JsAny?> ReadableStream<R>.pipeTo(
+    destination: WritableStream<R>,
+) {
+    val controller = AbortController()
+    pipeToAsync(
+        destination = destination,
+        options = createAbortable(controller),
+    ).awaitCancellable(controller)
 }
 
 /**
@@ -126,20 +141,5 @@ suspend fun <R : JsAny?> ReadableStream<R>.pipeTo(
     pipeToAsync(
         destination = destination,
         options = patchAbortOptions(options, controller),
-    ).awaitCancellable(controller)
-}
-
-/**
- * The **`pipeTo()`** method of the ReadableStream interface pipes the current `ReadableStream` to a given WritableStream and returns a Promise that fulfills when the piping process completes successfully, or rejects if any errors were encountered.
- *
- * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStream/pipeTo)
- */
-suspend fun <R : JsAny?> ReadableStream<R>.pipeTo(
-    destination: WritableStream<R>,
-) {
-    val controller = AbortController()
-    pipeToAsync(
-        destination = destination,
-        options = createAbortable(controller),
     ).awaitCancellable(controller)
 }

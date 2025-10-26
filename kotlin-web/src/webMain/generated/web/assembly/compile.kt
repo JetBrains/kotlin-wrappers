@@ -23,19 +23,19 @@ external fun compileAsync(
 @Suppress("NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE")
 suspend inline fun compile(
     bytes: BufferSource,
-    options: WebAssemblyCompileOptions?,
 ): Module {
     return compileAsync(
         bytes = bytes,
-        options = options,
     ).await()
 }
 
 @Suppress("NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE")
 suspend inline fun compile(
     bytes: BufferSource,
+    options: WebAssemblyCompileOptions?,
 ): Module {
     return compileAsync(
         bytes = bytes,
+        options = options,
     ).await()
 }

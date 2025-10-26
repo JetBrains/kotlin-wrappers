@@ -47,12 +47,11 @@ private constructor() {
  */
 suspend fun <T : JsAny?> Scheduler.postTask(
     callback: SchedulerPostTaskCallback<T>,
-    options: SchedulerPostTaskOptions,
 ): T {
     val controller = AbortController()
     return postTaskAsync(
         callback = callback,
-        options = patchAbortOptions(options, controller),
+        options = createAbortable(controller),
     ).awaitCancellable(controller)
 }
 
@@ -63,11 +62,12 @@ suspend fun <T : JsAny?> Scheduler.postTask(
  */
 suspend fun <T : JsAny?> Scheduler.postTask(
     callback: SchedulerPostTaskCallback<T>,
+    options: SchedulerPostTaskOptions,
 ): T {
     val controller = AbortController()
     return postTaskAsync(
         callback = callback,
-        options = createAbortable(controller),
+        options = patchAbortOptions(options, controller),
     ).awaitCancellable(controller)
 }
 

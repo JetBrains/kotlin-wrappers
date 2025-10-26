@@ -58,18 +58,6 @@ private constructor() {
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CredentialsContainer/create)
  */
-suspend fun CredentialsContainer.create(options: CredentialCreationOptions): Credential? {
-    val controller = AbortController()
-    return createAsync(
-        options = patchAbortOptions(options, controller),
-    ).awaitCancellable(controller)
-}
-
-/**
- * The **`create()`** method of the CredentialsContainer interface creates a new credential, which can then be stored and later retrieved using the CredentialsContainer.get method.
- *
- * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CredentialsContainer/create)
- */
 suspend fun CredentialsContainer.create(): Credential? {
     val controller = AbortController()
     return createAsync(
@@ -78,13 +66,13 @@ suspend fun CredentialsContainer.create(): Credential? {
 }
 
 /**
- * The **`get()`** method of the CredentialsContainer interface returns a Promise that fulfills with a single credential, which can then be used to authenticate a user to a website.
+ * The **`create()`** method of the CredentialsContainer interface creates a new credential, which can then be stored and later retrieved using the CredentialsContainer.get method.
  *
- * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CredentialsContainer/get)
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CredentialsContainer/create)
  */
-suspend fun CredentialsContainer.get(options: CredentialRequestOptions): Credential? {
+suspend fun CredentialsContainer.create(options: CredentialCreationOptions): Credential? {
     val controller = AbortController()
-    return getAsync(
+    return createAsync(
         options = patchAbortOptions(options, controller),
     ).awaitCancellable(controller)
 }
@@ -98,6 +86,18 @@ suspend fun CredentialsContainer.get(): Credential? {
     val controller = AbortController()
     return getAsync(
         options = createAbortable(controller),
+    ).awaitCancellable(controller)
+}
+
+/**
+ * The **`get()`** method of the CredentialsContainer interface returns a Promise that fulfills with a single credential, which can then be used to authenticate a user to a website.
+ *
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CredentialsContainer/get)
+ */
+suspend fun CredentialsContainer.get(options: CredentialRequestOptions): Credential? {
+    val controller = AbortController()
+    return getAsync(
+        options = patchAbortOptions(options, controller),
     ).awaitCancellable(controller)
 }
 

@@ -44,11 +44,9 @@ open external class ReadableStreamBYOBReader(
  */
 suspend inline fun <T : ArrayBufferView<*>> ReadableStreamBYOBReader.read(
     view: T,
-    options: ReadableStreamBYOBReaderReadOptions,
 ): ReadableStreamReadResult<T> {
     return readAsync(
         view = view,
-        options = options,
     ).await()
 }
 
@@ -59,8 +57,10 @@ suspend inline fun <T : ArrayBufferView<*>> ReadableStreamBYOBReader.read(
  */
 suspend inline fun <T : ArrayBufferView<*>> ReadableStreamBYOBReader.read(
     view: T,
+    options: ReadableStreamBYOBReaderReadOptions,
 ): ReadableStreamReadResult<T> {
     return readAsync(
         view = view,
+        options = options,
     ).await()
 }

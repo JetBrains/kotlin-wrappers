@@ -19,20 +19,20 @@ external fun createImageBitmapAsync(
 @Suppress("NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE")
 suspend inline fun createImageBitmap(
     image: ImageBitmapSource,
-    options: ImageBitmapOptions?,
 ): ImageBitmap {
     return createImageBitmapAsync(
         image = image,
-        options = options,
     ).await()
 }
 
 @Suppress("NON_EXTERNAL_DECLARATION_IN_INAPPROPRIATE_FILE")
 suspend inline fun createImageBitmap(
     image: ImageBitmapSource,
+    options: ImageBitmapOptions?,
 ): ImageBitmap {
     return createImageBitmapAsync(
         image = image,
+        options = options,
     ).await()
 }
 
@@ -53,7 +53,6 @@ suspend inline fun createImageBitmap(
     sy: Int,
     sw: Int,
     sh: Int,
-    options: ImageBitmapOptions?,
 ): ImageBitmap {
     return createImageBitmapAsync(
         image = image,
@@ -61,7 +60,6 @@ suspend inline fun createImageBitmap(
         sy = sy,
         sw = sw,
         sh = sh,
-        options = options,
     ).await()
 }
 
@@ -72,6 +70,7 @@ suspend inline fun createImageBitmap(
     sy: Int,
     sw: Int,
     sh: Int,
+    options: ImageBitmapOptions?,
 ): ImageBitmap {
     return createImageBitmapAsync(
         image = image,
@@ -79,5 +78,6 @@ suspend inline fun createImageBitmap(
         sy = sy,
         sw = sw,
         sh = sh,
+        options = options,
     ).await()
 }
