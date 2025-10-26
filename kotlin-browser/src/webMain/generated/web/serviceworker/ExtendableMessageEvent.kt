@@ -61,3 +61,6 @@ inline fun ExtendableMessageEvent.asInit(): ExtendableMessageEventInit =
 
 inline val ExtendableMessageEvent.Companion.MESSAGE: EventType<ExtendableMessageEvent>
     get() = EventType("message")
+
+inline val ExtendableMessageEvent.Companion.MESSAGE_ERROR: EventType<ExtendableMessageEvent>
+    get() = EventType("messageerror")
