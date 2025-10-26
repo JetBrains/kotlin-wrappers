@@ -327,6 +327,9 @@ internal fun String.applyPatches(): String {
         .patchInterface("Element") {
             it.replace("id: string;", "id: ElementId;")
         }
+        .patchInterface("HTMLLabelElement") {
+            it.replace("htmlFor: string;", "htmlFor: ElementId;")
+        }
         .patchInterface("SVGAnimatedEnumeration") {
             it.replace("Val: number;", "Val: T;")
         }
