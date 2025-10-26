@@ -108,20 +108,6 @@ fun modifyPropertyInheritance(node: Node, context: InheritanceModifierContext) =
         ensure(isIdentifier(name))
 
         nullable {
-            ensure(sourceFileName.endsWith("child_process.d.ts"))
-
-            ensure(name.text == "code")
-
-            val typeAlias = node
-                .getParentOrNull() // TypeLiteral
-                ?.getParentOrNull() // IntersectionType
-                ?.getParentOrNull() // TypeAliasDeclaration
-                .let { ensureNotNull(it) }
-            ensure(isTypeAliasDeclaration(typeAlias))
-            ensure(typeAlias.name.text == "ExecFileException")
-
-            "override"
-        } ?: nullable {
             ensure(sourceFileName.endsWith("test.d.ts"))
 
             ensure(name.text == "cause")

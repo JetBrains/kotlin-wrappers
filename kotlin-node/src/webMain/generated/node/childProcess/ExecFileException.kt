@@ -2,8 +2,15 @@
 
 package node.childProcess
 
-sealed external interface ExecFileException :
-    ExecException,
-    node.ErrnoException {
-    override var code: dynamic
+@Suppress("INTERFACE_WITH_SUPERCLASS")
+sealed external interface ExecFileException : js.errors.JsError {
+    var cmd: String?
+    var killed: Boolean?
+    var signal: node.process.Signals?
+    var stdout: String?
+    var stderr: String?
+    var errno: Double?
+    var path: String?
+    var syscall: String?
+    var code: Any? // string | number | undefined | null
 }

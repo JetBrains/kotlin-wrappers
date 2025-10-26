@@ -8,6 +8,7 @@ import typescript.isFunctionDeclaration
 import typescript.isIdentifier
 import typescript.isInterfaceDeclaration
 import typescript.isIntersectionTypeNode
+import typescript.isTypeAliasDeclaration
 import typescript.isVariableDeclaration
 
 private val interfacesWithSuperclass = setOf(
@@ -84,6 +85,11 @@ fun annotateInterfaceWithSuperclass(node: Node, context: AnnotationContext) = nu
     nullable {
         ensure(isInterfaceDeclaration(node))
         ensure(node.name.text in interfacesWithSuperclass)
+
+        "@Suppress(\"INTERFACE_WITH_SUPERCLASS\")"
+    } ?: nullable {
+        ensure(isTypeAliasDeclaration(node))
+        ensure(node.name.text == "ExecFileException")
 
         "@Suppress(\"INTERFACE_WITH_SUPERCLASS\")"
     } ?: nullable {
