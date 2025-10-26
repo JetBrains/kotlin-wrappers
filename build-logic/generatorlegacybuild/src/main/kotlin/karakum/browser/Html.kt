@@ -1230,6 +1230,15 @@ internal fun convertInterface(
             "FileSystemFileHandle",
                 -> result.replace("val kind:", "override val kind:")
 
+            "HTMLElement",
+                -> result + "\n" + """
+            /**
+             * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/editContext)
+             */
+            @ExperimentalWebApi
+            var editContext: EditContext?
+            """.trimIndent()
+
             "Navigator",
                 -> result + "\n" + """
             /**

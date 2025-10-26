@@ -155,6 +155,7 @@ private val DEFAULT_IMPORTS = Imports(
     "web.dom.TagName",
     "web.dom.TagNamespace",
     "web.dom.Text",
+    "web.editcontext.EditContext",
     "web.errors.DOMException",
     "web.errors.ErrorEvent",
     "web.events.AddEventListenerOptions",

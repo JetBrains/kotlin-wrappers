@@ -13,8 +13,10 @@ import web.dom.Element
 import web.dom.GlobalEventHandlers
 import web.dom.HTMLOrSVGElement
 import web.dom.Node
+import web.editcontext.EditContext
 import web.events.Event
 import web.events.EventInstance
+import web.experimental.ExperimentalWebApi
 import web.pointer.PointerEvent
 import web.popover.Popover
 import web.popover.ToggleEvent
@@ -213,6 +215,12 @@ protected constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/togglePopover)
      */
     fun togglePopover(options: Boolean = definedExternally): Boolean
+
+    /**
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/editContext)
+     */
+    @ExperimentalWebApi
+    var editContext: EditContext?
 }
 
 /**
