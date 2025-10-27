@@ -10,7 +10,10 @@ external interface PromiseSettledResult<T : JsAny?> {
     val status: PromiseSettledStatus
 }
 
-@Suppress("CANNOT_CHECK_FOR_EXTERNAL_INTERFACE")
+@Suppress(
+    "CANNOT_CHECK_FOR_EXTERNAL_INTERFACE",
+    "CANNOT_CHECK_FOR_ERASED",
+)
 inline fun <T : JsAny?> isFulfilled(
     result: PromiseSettledResult<T>,
 ): Boolean {
