@@ -100,7 +100,7 @@ class GenerateKeyPairTypePlugin : Plugin {
 
         val originalName = typeName.text
 
-        val typeScriptService = ensureNotNull(context.lookupService<TypeScriptService>(typeScriptServiceKey))
+        val typeScriptService = ensureNotNull(context.lookupService(typeScriptServiceKey))
 
         val sourceFileName = node.getSourceFileOrNull()?.fileName ?: "generated.d.ts"
         val namespace = typeScriptService.findClosestNamespace(node)

@@ -27,7 +27,7 @@ val convertMock = createPlugin { node, context, render ->
         ensure(isTypeLiteralNode(firstType))
 
         val inheritanceModifierService =
-            ensureNotNull(context.lookupService<InheritanceModifierService>(inheritanceModifierServiceKey))
+            ensureNotNull(context.lookupService(inheritanceModifierServiceKey))
 
         val inheritanceModifier = inheritanceModifierService.resolveInheritanceModifier(node, context)
 

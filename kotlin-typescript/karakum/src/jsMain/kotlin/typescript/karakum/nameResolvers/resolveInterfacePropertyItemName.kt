@@ -14,7 +14,7 @@ import typescript.isTypeOperatorNode
 import typescript.isTypeReferenceNode
 
 fun resolveInterfacePropertyTypeReferenceItemName(node: Node, context: Context) = nullable {
-    val typeScriptService = ensureNotNull(context.lookupService<TypeScriptService>(typeScriptServiceKey))
+    val typeScriptService = ensureNotNull(context.lookupService(typeScriptServiceKey))
 
     val typeReference = ensureNotNull(typeScriptService.getParent(node))
     ensure(isTypeReferenceNode(typeReference))
@@ -41,7 +41,7 @@ fun resolveInterfacePropertyTypeReferenceItemName(node: Node, context: Context) 
 }
 
 fun resolveInterfacePropertyArrayTypeItemName(node: Node, context: Context) = nullable {
-    val typeScriptService = ensureNotNull(context.lookupService<TypeScriptService>(typeScriptServiceKey))
+    val typeScriptService = ensureNotNull(context.lookupService(typeScriptServiceKey))
 
     val arrayType = ensureNotNull(
         typeScriptService.getParent(node)

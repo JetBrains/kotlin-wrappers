@@ -43,7 +43,7 @@ val convertCompareResultType = createPlugin { node, context, _ ->
         ensure(isNumericLiteral(oneLiteral))
         ensure(oneLiteral.text == "1")
 
-        val typeScriptService = ensureNotNull(context.lookupService<TypeScriptService>(typeScriptServiceKey))
+        val typeScriptService = ensureNotNull(context.lookupService(typeScriptServiceKey))
 
         "Int /* ${typeScriptService.printNode(node)} */"
     }

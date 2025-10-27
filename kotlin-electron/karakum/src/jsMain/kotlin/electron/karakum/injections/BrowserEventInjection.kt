@@ -146,7 +146,7 @@ private fun extractEventPayload(node: Node, context: Context) = nullable {
 
             emptyArray()
         } ?: nullable {
-            val typeScriptService = ensureNotNull(context.lookupService<TypeScriptService>(typeScriptServiceKey))
+            val typeScriptService = ensureNotNull(context.lookupService(typeScriptServiceKey))
             val typeChecker = typeScriptService.program.getTypeChecker()
 
             val symbol = ensureNotNull(typeChecker.getSymbolAtLocation(listenerType.typeName))
@@ -160,7 +160,7 @@ private fun extractEventPayload(node: Node, context: Context) = nullable {
             declarationType.parameters.asArray()
         }
     } ?: run {
-        val typeScriptService = ensureNotNull(context.lookupService<TypeScriptService>(typeScriptServiceKey))
+        val typeScriptService = ensureNotNull(context.lookupService(typeScriptServiceKey))
 
         console.error("Suspicious listener: ${typeScriptService.printNode(listener)}")
 
@@ -181,7 +181,7 @@ class BrowserEventInjection : Injection {
 
         val name = ensureNotNull(eventContainer.name)
 
-        val typeScriptService = ensureNotNull(context.lookupService<TypeScriptService>(typeScriptServiceKey))
+        val typeScriptService = ensureNotNull(context.lookupService(typeScriptServiceKey))
         val typeChecker = typeScriptService.program.getTypeChecker()
 
         val symbol = ensureNotNull(typeChecker.getSymbolAtLocation(name))
@@ -224,7 +224,7 @@ class BrowserEventInjection : Injection {
             }
         )
 
-        val typeScriptService = ensureNotNull(context.lookupService<TypeScriptService>(typeScriptServiceKey))
+        val typeScriptService = ensureNotNull(context.lookupService(typeScriptServiceKey))
         val typeChecker = typeScriptService.program.getTypeChecker()
 
         val symbol = ensureNotNull(typeChecker.getSymbolAtLocation(name))

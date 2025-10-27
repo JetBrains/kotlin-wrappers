@@ -11,7 +11,7 @@ import typescript.isParenthesizedTypeNode
 import typescript.isTypeOperatorNode
 
 fun resolveFunctionReturnTypeItemName(node: Node, context: Context) = nullable {
-    val typeScriptService = ensureNotNull(context.lookupService<TypeScriptService>(typeScriptServiceKey))
+    val typeScriptService = ensureNotNull(context.lookupService(typeScriptServiceKey))
 
     val arrayType = ensureNotNull(
         typeScriptService.getParent(node)

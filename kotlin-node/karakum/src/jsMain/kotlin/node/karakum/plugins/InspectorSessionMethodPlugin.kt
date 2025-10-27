@@ -52,7 +52,7 @@ class InspectorSessionMethodPlugin : Plugin {
 
         methods += node.text
 
-        val typeScriptService = ensureNotNull(context.lookupService<TypeScriptService>(typeScriptServiceKey))
+        val typeScriptService = ensureNotNull(context.lookupService(typeScriptServiceKey))
 
         sourceFileName = node.getSourceFileOrNull()?.fileName ?: "generated.d.ts"
         namespace = typeScriptService.findClosestNamespace(node)

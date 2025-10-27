@@ -13,7 +13,7 @@ import typescript.isMethodSignature
 import typescript.isUnionTypeNode
 
 fun resolveInterfaceMethodReturnTypeNullableUnionName(node: Node, context: Context) = nullable {
-    val typeScriptService = ensureNotNull(context.lookupService<TypeScriptService>(typeScriptServiceKey))
+    val typeScriptService = ensureNotNull(context.lookupService(typeScriptServiceKey))
 
     val union = ensureNotNull(typeScriptService.getParent(node))
     ensure(isUnionTypeNode(union))

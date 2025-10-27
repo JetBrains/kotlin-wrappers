@@ -22,7 +22,7 @@ private val conflictingEntities = mapOf(
 private fun checkNameByNamespace(node: Node, context: Context) = nullable {
     ensure(isClassDeclaration(node))
 
-    val typeScriptService = ensureNotNull(context.lookupService<TypeScriptService>(typeScriptServiceKey))
+    val typeScriptService = ensureNotNull(context.lookupService(typeScriptServiceKey))
     val namespace = ensureNotNull(typeScriptService.findClosestNamespace(node))
 
     val namespaceName = namespace.name

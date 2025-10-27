@@ -22,7 +22,7 @@ private val propertyNames = mapOf(
 )
 
 fun resolveInterfaceArrayFieldName(node: Node, context: Context) = nullable {
-    val typeScriptService = ensureNotNull(context.lookupService<TypeScriptService>(typeScriptServiceKey))
+    val typeScriptService = ensureNotNull(context.lookupService(typeScriptServiceKey))
 
     val typeReference = ensureNotNull(typeScriptService.getParent(node))
     ensure(isTypeReferenceNode(typeReference))

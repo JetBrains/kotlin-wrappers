@@ -15,7 +15,7 @@ val convertNodeJsNamespace = createPlugin { node, context, _ ->
         ensure(isIdentifier(name))
         ensure(name.text == "NodeJS")
 
-        val typeScriptService = ensureNotNull(context.lookupService<TypeScriptService>(typeScriptServiceKey))
+        val typeScriptService = ensureNotNull(context.lookupService(typeScriptServiceKey))
 
         "/* ${typeScriptService.printNode(node)} */"
     }

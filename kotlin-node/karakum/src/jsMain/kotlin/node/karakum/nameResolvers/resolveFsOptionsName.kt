@@ -25,7 +25,7 @@ import typescript.isTypeReferenceNode
 import typescript.isUnionTypeNode
 
 fun resolveFsOptionsName(node: Node, context: Context) = nullable {
-    val typeScriptService = ensureNotNull(context.lookupService<TypeScriptService>(typeScriptServiceKey))
+    val typeScriptService = ensureNotNull(context.lookupService(typeScriptServiceKey))
 
     val sourceFileName = ensureNotNull(node.getSourceFileOrNull()).fileName
     ensure(

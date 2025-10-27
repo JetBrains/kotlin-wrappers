@@ -21,7 +21,7 @@ import typescript.isTypeLiteralNode
 import typescript.isUnionTypeNode
 
 fun resolveV8OptionsName(node: Node, context: Context) = nullable {
-    val typeScriptService = ensureNotNull(context.lookupService<TypeScriptService>(typeScriptServiceKey))
+    val typeScriptService = ensureNotNull(context.lookupService(typeScriptServiceKey))
 
     val sourceFileName = ensureNotNull(node.getSourceFileOrNull()).fileName
     ensure(sourceFileName.endsWith("v8.d.ts"))

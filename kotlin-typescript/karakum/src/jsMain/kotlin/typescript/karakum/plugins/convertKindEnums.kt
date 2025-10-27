@@ -23,7 +23,7 @@ val convertKindEnums = createPlugin { node, context, render ->
 
         val name = render(node.name)
 
-        val injectionService = ensureNotNull(context.lookupService<InjectionService>(injectionServiceKey))
+        val injectionService = ensureNotNull(context.lookupService(injectionServiceKey))
 
         val heritageInjections = injectionService.resolveInjections(node, InjectionType.HERITAGE_CLAUSE, context, render)
 

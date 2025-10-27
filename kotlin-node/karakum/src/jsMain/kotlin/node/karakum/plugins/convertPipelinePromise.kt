@@ -20,7 +20,7 @@ val convertPipelinePromise = createPlugin { node, context, _ ->
         ensure(isTypeAliasDeclaration(typeAlias))
         ensure(typeAlias.name.text == "PipelinePromise")
 
-        val typeScriptService = ensureNotNull(context.lookupService<TypeScriptService>(typeScriptServiceKey))
+        val typeScriptService = ensureNotNull(context.lookupService(typeScriptServiceKey))
 
         "js.promise.Promise<*> /* ${typeScriptService.printNode(node)} */"
     }

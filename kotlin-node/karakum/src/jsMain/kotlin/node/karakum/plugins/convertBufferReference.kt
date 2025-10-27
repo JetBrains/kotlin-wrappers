@@ -21,7 +21,7 @@ val convertBufferReference = createPlugin { node, context, render ->
                     || typeName.text == "BufferEncoding"
         )
 
-        val typeScriptService = ensureNotNull(context.lookupService<TypeScriptService>(typeScriptServiceKey))
+        val typeScriptService = ensureNotNull(context.lookupService(typeScriptServiceKey))
         val typeChecker = typeScriptService.program.getTypeChecker()
 
         val symbol = ensureNotNull(typeChecker.getSymbolAtLocation(typeName))

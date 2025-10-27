@@ -12,7 +12,7 @@ import typescript.isParameter
 import typescript.isUnionTypeNode
 
 fun resolveMIMETypeInputName(node: Node, context: Context) = nullable {
-    val typeScriptService = ensureNotNull(context.lookupService<TypeScriptService>(typeScriptServiceKey))
+    val typeScriptService = ensureNotNull(context.lookupService(typeScriptServiceKey))
 
     val parameter = ensureNotNull(
         typeScriptService.getParent(node)

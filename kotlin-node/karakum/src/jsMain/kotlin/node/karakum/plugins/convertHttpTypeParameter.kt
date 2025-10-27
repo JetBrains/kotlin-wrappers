@@ -169,7 +169,7 @@ val convertHttpTypeParameter = createPlugin { node, context, render ->
 
             ensure(!isTypeArgumentOfTypeWithTypeofBound(node))
 
-            val typeScriptService = ensureNotNull(context.lookupService<TypeScriptService>(typeScriptServiceKey))
+            val typeScriptService = ensureNotNull(context.lookupService(typeScriptServiceKey))
             val typeChecker = typeScriptService.program.getTypeChecker()
 
             val symbol = ensureNotNull(typeChecker.getSymbolAtLocation(name))

@@ -76,7 +76,7 @@ class ResourceRecordTypePlugin : Plugin {
         rrtypes += types
         if (types.size > 1) stringRrtypes += types
 
-        val typeScriptService = ensureNotNull(context.lookupService<TypeScriptService>(typeScriptServiceKey))
+        val typeScriptService = ensureNotNull(context.lookupService(typeScriptServiceKey))
 
         val sourceFileName = ensureNotNull(node.getSourceFileOrNull()).fileName
         // generate the same entity for promise and callback API

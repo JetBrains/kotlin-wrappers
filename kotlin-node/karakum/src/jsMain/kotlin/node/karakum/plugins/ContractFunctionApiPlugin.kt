@@ -37,7 +37,7 @@ class ContractFunctionApiPlugin : Plugin {
     override fun render(node: Node, context: Context, next: Render<Node>) = nullable {
         val sourceFileName = node.getSourceFileOrNull()?.fileName ?: "generated.d.ts"
 
-        val typeScriptService = ensureNotNull(context.lookupService<TypeScriptService>(typeScriptServiceKey))
+        val typeScriptService = ensureNotNull(context.lookupService(typeScriptServiceKey))
 
         val namespace = typeScriptService.findClosestNamespace(node)
 

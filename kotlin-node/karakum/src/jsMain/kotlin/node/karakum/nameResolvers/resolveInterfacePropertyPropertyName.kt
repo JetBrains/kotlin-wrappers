@@ -11,7 +11,7 @@ import typescript.isPropertySignature
 import typescript.isTypeLiteralNode
 
 fun resolveInterfacePropertyPropertyName(node: Node, context: Context) = nullable {
-    val typeScriptService = ensureNotNull(context.lookupService<TypeScriptService>(typeScriptServiceKey))
+    val typeScriptService = ensureNotNull(context.lookupService(typeScriptServiceKey))
 
     val subProperty = ensureNotNull(typeScriptService.getParent(node))
     ensure(isPropertySignature(subProperty))

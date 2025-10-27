@@ -38,7 +38,7 @@ private val conflictingEntities = recordOf(
 )
 
 private fun extractDeclaration(node: Node, context: Context): Declaration? {
-    val typeScriptService = context.lookupService<TypeScriptService>(typeScriptServiceKey)
+    val typeScriptService = context.lookupService(typeScriptServiceKey)
 
     val typeChecker = typeScriptService?.program?.getTypeChecker()
 
@@ -57,7 +57,7 @@ private fun extractDeclaration(node: Node, context: Context): Declaration? {
 private fun convertNameByNamespace(node: Identifier, context: Context) = nullable {
     val declaration = ensureNotNull(extractDeclaration(node, context))
 
-    val typeScriptService = ensureNotNull(context.lookupService<TypeScriptService>(typeScriptServiceKey))
+    val typeScriptService = ensureNotNull(context.lookupService(typeScriptServiceKey))
     val namespace = ensureNotNull(typeScriptService.findClosestNamespace(declaration))
     val namespaceName = namespace.name
     ensure(isStringLiteral(namespaceName))

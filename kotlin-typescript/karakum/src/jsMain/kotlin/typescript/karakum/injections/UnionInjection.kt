@@ -21,7 +21,7 @@ private fun isNodeSuccessor(node: Node, context: Context): Boolean = nullable {
         ensure(isIdentifier(name))
         ensure(name.text == "Node")
     } ?: nullable {
-        val typeScriptService = ensureNotNull(context.lookupService<TypeScriptService>(typeScriptServiceKey))
+        val typeScriptService = ensureNotNull(context.lookupService(typeScriptServiceKey))
         val typeChecker = typeScriptService.program.getTypeChecker()
 
         val symbol = ensureNotNull(typeChecker.getSymbolAtLocation(name))
@@ -68,7 +68,7 @@ private fun isEnumMemberType(node: Node, context: Context, enumName: String): Bo
         ensure(isIdentifier(left))
         ensure(left.text == enumName)
     } ?: nullable {
-        val typeScriptService = ensureNotNull(context.lookupService<TypeScriptService>(typeScriptServiceKey))
+        val typeScriptService = ensureNotNull(context.lookupService(typeScriptServiceKey))
         val typeChecker = typeScriptService.program.getTypeChecker()
 
         val symbol = ensureNotNull(typeChecker.getSymbolAtLocation(name))

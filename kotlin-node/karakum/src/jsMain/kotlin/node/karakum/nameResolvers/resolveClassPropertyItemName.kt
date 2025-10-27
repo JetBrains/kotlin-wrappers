@@ -11,7 +11,7 @@ import typescript.isPropertyDeclaration
 import typescript.isTypeReferenceNode
 
 fun resolveClassPropertyItemName(node: Node, context: Context) = nullable {
-    val typeScriptService = ensureNotNull(context.lookupService<TypeScriptService>(typeScriptServiceKey))
+    val typeScriptService = ensureNotNull(context.lookupService(typeScriptServiceKey))
 
     val typeReference = ensureNotNull(typeScriptService.getParent(node))
     ensure(isTypeReferenceNode(typeReference))

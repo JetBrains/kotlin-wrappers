@@ -33,7 +33,7 @@ private fun extractMembersAndHeritageTypes(
     reference: String? = null,
     omitKeys: Set<String>,
 ): Pair<List<String>, Set<String>> {
-    val typeScriptService = context.lookupService<TypeScriptService>(typeScriptServiceKey)
+    val typeScriptService = context.lookupService(typeScriptServiceKey)
 
     return nullable {
         ensure(isTypeReferenceNode(node))
@@ -110,16 +110,11 @@ private fun extractMembersAndHeritageTypes(
     } ?: nullable {
         ensure(isInterfaceDeclaration(node))
 
-        val namespaceInfoService =
-            ensureNotNull(context.lookupService<NamespaceInfoService>(namespaceInfoServiceKey))
-
         val declarationMergingService =
-            ensureNotNull(context.lookupService<DeclarationMergingService>(declarationMergingServiceKey))
+            ensureNotNull(context.lookupService(declarationMergingServiceKey))
 
-        val members = declarationMergingService
-            .getMembers(node) { namespaceInfoService.resolveNamespaceStrategy(it) }
-            // TODO: fix in Karakum
-            .unsafeCast<ReadonlyArray<NamedDeclaration>>()
+        val members = declarationMergingService.getMembers(node, context)
+            ?: node.members.asArray()
 
         val filteredMembers = filterMembers(members, omitKeys)
 
@@ -172,10 +167,10 @@ val convertOmittedTypeAlias = createPlugin { node, context, render ->
 
         val name = render(node.name)
 
-        val inheritanceModifierService = context.lookupService<InheritanceModifierService>(inheritanceModifierServiceKey)
+        val inheritanceModifierService = context.lookupService(inheritanceModifierServiceKey)
         val inheritanceModifier = inheritanceModifierService?.resolveInheritanceModifier(node, context)
 
-        val injectionService = context.lookupService<InjectionService>(injectionServiceKey)
+        val injectionService = context.lookupService(injectionServiceKey)
         val heritageInjections = injectionService?.resolveInjections(node, InjectionType.HERITAGE_CLAUSE, context, render)
         val injections = injectionService?.resolveInjections(node, InjectionType.MEMBER, context, render)
 

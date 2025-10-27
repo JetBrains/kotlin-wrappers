@@ -13,7 +13,7 @@ import typescript.isTypeLiteralNode
 import typescript.isUnionTypeNode
 
 fun resolveTypeAliasIntersectionBaseName(node: Node, context: Context) = nullable {
-    val typeScriptService = ensureNotNull(context.lookupService<TypeScriptService>(typeScriptServiceKey))
+    val typeScriptService = ensureNotNull(context.lookupService(typeScriptServiceKey))
 
     ensure(isUnionTypeNode(node))
 

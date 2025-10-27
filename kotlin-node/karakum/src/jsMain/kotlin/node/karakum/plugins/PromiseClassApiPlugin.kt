@@ -78,7 +78,7 @@ val PromiseClassApiPlugin = createPlugin { node, context, render ->
 
         val type = ensureNotNull(node.type)
 
-        val typeScriptService = ensureNotNull(context.lookupService<TypeScriptService>(typeScriptServiceKey))
+        val typeScriptService = ensureNotNull(context.lookupService(typeScriptServiceKey))
 
         val name = escapeIdentifier(render(node.name))
 

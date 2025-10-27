@@ -11,7 +11,7 @@ private val comparisonResultType = listOf("1", "0", "-1")
 
 val convertComparisonResultType = createPlugin { node, context, _ ->
     nullable {
-        val typeScriptService = ensureNotNull(context.lookupService<TypeScriptService>(typeScriptServiceKey))
+        val typeScriptService = ensureNotNull(context.lookupService(typeScriptServiceKey))
 
         ensure(isUnionTypeNode(node))
         ensure(node.types.asArray().all { type ->

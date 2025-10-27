@@ -12,7 +12,7 @@ import typescript.isTypeAliasDeclaration
 import typescript.isTypeLiteralNode
 
 fun resolveParsedResultsPropertyName(node: Node, context: Context) = nullable {
-    val typeScriptService = ensureNotNull(context.lookupService<TypeScriptService>(typeScriptServiceKey))
+    val typeScriptService = ensureNotNull(context.lookupService(typeScriptServiceKey))
 
     val property = ensureNotNull(typeScriptService.getParent(node))
     ensure(isPropertySignature(property))

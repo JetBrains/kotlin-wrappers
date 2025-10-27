@@ -12,7 +12,7 @@ import typescript.isTypeLiteralNode
 import typescript.isTypeReferenceNode
 
 fun resolveInterfacePropertyPropertyItemPropertyItemName(node: Node, context: Context) = nullable {
-    val typeScriptService = ensureNotNull(context.lookupService<TypeScriptService>(typeScriptServiceKey))
+    val typeScriptService = ensureNotNull(context.lookupService(typeScriptServiceKey))
 
     val subTypeReference = ensureNotNull(typeScriptService.getParent(node))
     ensure(isTypeReferenceNode(subTypeReference))

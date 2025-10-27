@@ -11,7 +11,7 @@ import typescript.isMethodSignature
 import typescript.isTypeParameterDeclaration
 
 fun resolveInterfaceMethodTypeParameterConstraintName(node: Node, context: Context) = nullable {
-    val typeScriptService = ensureNotNull(context.lookupService<TypeScriptService>(typeScriptServiceKey))
+    val typeScriptService = ensureNotNull(context.lookupService(typeScriptServiceKey))
 
     val typeParameter = ensureNotNull(typeScriptService.getParent(node))
     ensure(isTypeParameterDeclaration(typeParameter))

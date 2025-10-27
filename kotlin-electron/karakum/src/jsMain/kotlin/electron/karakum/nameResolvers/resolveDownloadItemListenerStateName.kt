@@ -16,7 +16,7 @@ import typescript.isParenthesizedTypeNode
 import typescript.isStringLiteral
 
 fun resolveDownloadItemListenerStateName(node: Node, context: Context) = nullable {
-    val typeScriptService = ensureNotNull(context.lookupService<TypeScriptService>(typeScriptServiceKey))
+    val typeScriptService = ensureNotNull(context.lookupService(typeScriptServiceKey))
 
     val parenthesizedCallbackParameter = ensureNotNull(typeScriptService.getParent(node))
     ensure(isParenthesizedTypeNode(parenthesizedCallbackParameter))

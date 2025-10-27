@@ -61,7 +61,7 @@ class AmbiguousSignaturePlugin : Plugin {
 
         val name = ensureNotNull(node.name)
 
-        val typeScriptService = ensureNotNull(context.lookupService<TypeScriptService>(typeScriptServiceKey))
+        val typeScriptService = ensureNotNull(context.lookupService(typeScriptServiceKey))
         val typeChecker = typeScriptService.program.getTypeChecker()
         val symbol = ensureNotNull(typeChecker.getSymbolAtLocation(name))
 
@@ -71,7 +71,7 @@ class AmbiguousSignaturePlugin : Plugin {
     override fun render(node: Node, context: Context, next: Render<Node>) = null
 
     override fun generate(context: Context, render: Render<Node>): ReadonlyArray<GeneratedFile> {
-        val typeScriptService = context.lookupService<TypeScriptService>(typeScriptServiceKey) ?: return emptyArray()
+        val typeScriptService = context.lookupService(typeScriptServiceKey) ?: return emptyArray()
         val typeChecker = typeScriptService.program.getTypeChecker()
 
         val declarations = functionSymbols

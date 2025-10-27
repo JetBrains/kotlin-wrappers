@@ -39,7 +39,7 @@ class DiffieHellmanGroupPlugin : Plugin {
             ensure(node.name.text == "DiffieHellmanGroupConstructor")
 
             val inheritanceModifierService =
-                ensureNotNull(context.lookupService<InheritanceModifierService>(inheritanceModifierServiceKey))
+                ensureNotNull(context.lookupService(inheritanceModifierServiceKey))
 
             val inheritanceModifier = inheritanceModifierService.resolveInheritanceModifier(node, context)
 

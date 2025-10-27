@@ -51,7 +51,7 @@ class BufferPlugin : Plugin {
             ensure(node.name.text == "Buffer")
 
             val declarationMergingService =
-                ensureNotNull(context.lookupService<DeclarationMergingService>(declarationMergingServiceKey))
+                ensureNotNull(context.lookupService(declarationMergingServiceKey))
 
             nullable {
                 ensure(declarationMergingService.isCovered(node))
@@ -59,11 +59,8 @@ class BufferPlugin : Plugin {
             } ?: nullable {
                 declarationMergingService.cover(node)
 
-                val namespaceInfoService =
-                    ensureNotNull(context.lookupService<NamespaceInfoService>(namespaceInfoServiceKey))
-
                 val inheritanceModifierService =
-                    ensureNotNull(context.lookupService<InheritanceModifierService>(inheritanceModifierServiceKey))
+                    ensureNotNull(context.lookupService(inheritanceModifierServiceKey))
 
                 val inheritanceModifier = inheritanceModifierService.resolveInheritanceModifier(node, context)
 
@@ -93,10 +90,8 @@ class BufferPlugin : Plugin {
                     }
                     .joinToString("\n")
 
-                val resolveNamespaceStrategy = namespaceInfoService::resolveNamespaceStrategy
-
                 val members = (
-                        declarationMergingService.getMembers(node, resolveNamespaceStrategy)
+                        declarationMergingService.getMembers(node, context)
                             ?: node.members.asArray()
                         )
                     .map { member ->

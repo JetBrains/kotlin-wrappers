@@ -82,7 +82,7 @@ class EventEmitterPlugin : Plugin {
         val sourceFileName = ensureNotNull(node.getSourceFileOrNull()).fileName
         ensure(sourceFileName.endsWith("events.d.ts"))
 
-        val typeScriptService = ensureNotNull(context.lookupService<TypeScriptService>(typeScriptServiceKey))
+        val typeScriptService = ensureNotNull(context.lookupService(typeScriptServiceKey))
 
         nullable {
             ensure(isTypeReferenceNode(node))

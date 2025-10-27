@@ -10,7 +10,7 @@ import typescript.isInterfaceDeclaration
 import typescript.isPropertySignature
 
 fun resolveInterfacePropertyConflictingName(node: Node, context: Context) = nullable {
-    val typeScriptService = ensureNotNull(context.lookupService<TypeScriptService>(typeScriptServiceKey))
+    val typeScriptService = ensureNotNull(context.lookupService(typeScriptServiceKey))
 
     val property = ensureNotNull(typeScriptService.getParent(node))
     ensure(isPropertySignature(property))

@@ -9,7 +9,7 @@ import typescript.isFunctionDeclaration
 import typescript.isTypePredicateNode
 
 fun resolveFunctionReturnTypePredicateName(node: Node, context: Context) = nullable {
-    val typeScriptService = ensureNotNull(context.lookupService<TypeScriptService>(typeScriptServiceKey))
+    val typeScriptService = ensureNotNull(context.lookupService(typeScriptServiceKey))
 
     val typePredicate = ensureNotNull(typeScriptService.getParent(node))
     ensure(isTypePredicateNode(typePredicate))

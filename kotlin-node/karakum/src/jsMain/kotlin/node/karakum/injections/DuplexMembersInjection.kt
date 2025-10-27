@@ -93,7 +93,7 @@ class DuplexMembersInjection : Injection {
                     nullable {
                         ensureNotNull(member.questionToken)
 
-                        val typeScriptService = ensureNotNull(context.lookupService<TypeScriptService>(typeScriptServiceKey))
+                        val typeScriptService = ensureNotNull(context.lookupService(typeScriptServiceKey))
 
                         convertParameterDeclarations(
                             member, context, render,

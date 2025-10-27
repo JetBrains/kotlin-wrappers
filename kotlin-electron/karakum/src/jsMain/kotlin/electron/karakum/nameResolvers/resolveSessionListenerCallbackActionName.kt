@@ -17,7 +17,7 @@ import typescript.isParameter
 import typescript.isStringLiteral
 
 fun resolveSessionListenerCallbackActionName(node: Node, context: Context) = nullable {
-    val typeScriptService = ensureNotNull(context.lookupService<TypeScriptService>(typeScriptServiceKey))
+    val typeScriptService = ensureNotNull(context.lookupService(typeScriptServiceKey))
 
     val callbackParameterCallbackParameter = ensureNotNull(typeScriptService.getParent(node))
     ensure(isParameter(callbackParameterCallbackParameter))

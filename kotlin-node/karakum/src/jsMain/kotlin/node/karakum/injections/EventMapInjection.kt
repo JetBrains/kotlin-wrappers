@@ -164,7 +164,7 @@ private fun extractEventPayloads(node: Node, context: Context) = nullable {
     val typeReferenceConstraintType = typeParameterConstraint.type
     ensure(isTypeReferenceNode(typeReferenceConstraintType))
 
-    val typeScriptService = ensureNotNull(context.lookupService<TypeScriptService>(typeScriptServiceKey))
+    val typeScriptService = ensureNotNull(context.lookupService(typeScriptServiceKey))
     val typeChecker = typeScriptService.program.getTypeChecker()
 
     val symbol = ensureNotNull(typeChecker.getSymbolAtLocation(typeReferenceConstraintType.typeName))
@@ -210,7 +210,7 @@ class EventMapInjection : Injection {
 
         val name = ensureNotNull(eventContainer.name)
 
-        val typeScriptService = ensureNotNull(context.lookupService<TypeScriptService>(typeScriptServiceKey))
+        val typeScriptService = ensureNotNull(context.lookupService(typeScriptServiceKey))
         val typeChecker = typeScriptService.program.getTypeChecker()
 
         val symbol = ensureNotNull(typeChecker.getSymbolAtLocation(name))
@@ -262,7 +262,7 @@ class EventMapInjection : Injection {
             }
         )
 
-        val typeScriptService = ensureNotNull(context.lookupService<TypeScriptService>(typeScriptServiceKey))
+        val typeScriptService = ensureNotNull(context.lookupService(typeScriptServiceKey))
         val typeChecker = typeScriptService.program.getTypeChecker()
 
         val symbol = ensureNotNull(typeChecker.getSymbolAtLocation(name))

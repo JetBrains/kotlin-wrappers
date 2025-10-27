@@ -20,7 +20,7 @@ val convertReadableSymbol = createPlugin { node, context, _ ->
         ensure(isClassDeclaration(classNode))
         ensure(classNode.name?.text == "Readable")
 
-        val typeScriptService = ensureNotNull(context.lookupService<TypeScriptService>(typeScriptServiceKey))
+        val typeScriptService = ensureNotNull(context.lookupService(typeScriptServiceKey))
 
         "/* ${typeScriptService.printNode(node)} */"
     }

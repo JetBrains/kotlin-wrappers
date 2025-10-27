@@ -49,7 +49,7 @@ val convertOverriddenMethodDeclaration = createPlugin { node, context, render ->
         val returnType = node.type?.let {render(it) }
 
         val inheritanceModifierService =
-            context.lookupService<InheritanceModifierService>(inheritanceModifierServiceKey)
+            context.lookupService(inheritanceModifierServiceKey)
 
         convertParameterDeclarations(node, context, render, ParameterDeclarationsConfiguration(
             strategy = ParameterDeclarationStrategy.function,

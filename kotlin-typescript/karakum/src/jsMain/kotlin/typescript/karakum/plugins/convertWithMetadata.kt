@@ -23,7 +23,7 @@ val convertWithMetadata = createPlugin { node, context, render ->
         ensure(isTypeLiteralNode(secondType))
 
         val inheritanceModifierService =
-            ensureNotNull(context.lookupService<InheritanceModifierService>(inheritanceModifierServiceKey))
+            ensureNotNull(context.lookupService(inheritanceModifierServiceKey))
 
         val inheritanceModifier = inheritanceModifierService.resolveInheritanceModifier(node, context)
 

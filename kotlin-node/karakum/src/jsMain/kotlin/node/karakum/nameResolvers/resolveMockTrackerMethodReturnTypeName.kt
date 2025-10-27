@@ -11,7 +11,7 @@ import typescript.isIntersectionTypeNode
 import typescript.isMethodSignature
 
 fun resolveMockTrackerMethodReturnTypeName(node: Node, context: Context) = nullable {
-    val typeScriptService = ensureNotNull(context.lookupService<TypeScriptService>(typeScriptServiceKey))
+    val typeScriptService = ensureNotNull(context.lookupService(typeScriptServiceKey))
 
     val intersection = ensureNotNull(typeScriptService.getParent(node))
     ensure(isIntersectionTypeNode(intersection))

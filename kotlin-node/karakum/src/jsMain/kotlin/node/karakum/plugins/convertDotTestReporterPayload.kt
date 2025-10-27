@@ -31,7 +31,7 @@ val convertDotTestReporterPayload = createPlugin { node, context, _ ->
         val functionName = ensureNotNull(function.name)
         ensure(functionName.text == "dot")
 
-        val typeScriptService = context.lookupService<TypeScriptService>(typeScriptServiceKey)
+        val typeScriptService = context.lookupService(typeScriptServiceKey)
 
         "String /* ${typeScriptService?.printNode(node)} */"
     }

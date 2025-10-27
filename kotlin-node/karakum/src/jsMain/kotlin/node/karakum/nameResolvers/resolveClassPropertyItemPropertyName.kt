@@ -13,7 +13,7 @@ import typescript.isTypeLiteralNode
 import typescript.isTypeReferenceNode
 
 fun resolveClassPropertyItemPropertyName(node: Node, context: Context) = nullable {
-    val typeScriptService = ensureNotNull(context.lookupService<TypeScriptService>(typeScriptServiceKey))
+    val typeScriptService = ensureNotNull(context.lookupService(typeScriptServiceKey))
 
     val subProperty = ensureNotNull(typeScriptService.getParent(node))
     ensure(isPropertySignature(subProperty))

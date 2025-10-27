@@ -20,7 +20,7 @@ val convertImplicitArrayBuffer = createPlugin { node, context, _ ->
         ensure(isTypeAliasDeclaration(typeAlias))
         ensure(typeAlias.name.text == "ImplicitArrayBuffer")
 
-        val typeScriptService = ensureNotNull(context.lookupService<TypeScriptService>(typeScriptServiceKey))
+        val typeScriptService = ensureNotNull(context.lookupService(typeScriptServiceKey))
 
         "js.buffer.ArrayBufferLike /* ${typeScriptService.printNode(node)} */"
     }

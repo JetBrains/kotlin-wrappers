@@ -20,7 +20,7 @@ val convertErrorTypeReferenceNode = createPlugin { node, context, _ ->
         ensure(isIdentifier(name))
         ensure(name.text == "Error")
 
-        val typeScriptService = ensureNotNull(context.lookupService<TypeScriptService>(typeScriptServiceKey))
+        val typeScriptService = ensureNotNull(context.lookupService(typeScriptServiceKey))
 
         val namespace = ensureNotNull(typeScriptService.findClosestNamespace(node))
 

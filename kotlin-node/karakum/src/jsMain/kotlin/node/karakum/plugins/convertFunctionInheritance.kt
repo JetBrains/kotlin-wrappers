@@ -11,7 +11,7 @@ import typescript.isIntersectionTypeNode
 import typescript.isTypeReferenceNode
 
 val convertFunctionInheritance = createPlugin { node, context, _ ->
-    val typeScriptService = context.lookupService<TypeScriptService>(typeScriptServiceKey)
+    val typeScriptService = context.lookupService(typeScriptServiceKey)
 
     nullable {
         ensure(isExpressionWithTypeArguments(node))

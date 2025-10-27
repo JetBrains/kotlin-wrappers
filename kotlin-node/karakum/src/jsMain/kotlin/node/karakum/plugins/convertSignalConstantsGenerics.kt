@@ -43,7 +43,7 @@ val convertSignalConstantsGenerics = createPlugin { node, context, render ->
             ensure(isMappedTypeNode(typeAliasType))
 
             val inheritanceModifierService =
-                ensureNotNull(context.lookupService<InheritanceModifierService>(inheritanceModifierServiceKey))
+                ensureNotNull(context.lookupService(inheritanceModifierServiceKey))
 
             val inheritanceModifier = inheritanceModifierService.resolveInheritanceModifier(node, context)
             val accessorsInheritanceModifier = inheritanceModifierService.resolveInheritanceModifier(node.type, context)

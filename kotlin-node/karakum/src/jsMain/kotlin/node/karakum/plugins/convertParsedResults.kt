@@ -29,7 +29,7 @@ val convertParsedResults = createPlugin { node, context, render ->
         ensure(isTypeLiteralNode(trueType))
 
         val inheritanceModifierService =
-            ensureNotNull(context.lookupService<InheritanceModifierService>(inheritanceModifierServiceKey))
+            ensureNotNull(context.lookupService(inheritanceModifierServiceKey))
 
         val inheritanceModifier = inheritanceModifierService.resolveInheritanceModifier(trueType, context)
 
@@ -40,7 +40,7 @@ val convertParsedResults = createPlugin { node, context, render ->
             ?.filter { it.isNotEmpty() }
             ?.joinToString(", ")
 
-        val injectionService = ensureNotNull(context.lookupService<InjectionService>(injectionServiceKey))
+        val injectionService = ensureNotNull(context.lookupService(injectionServiceKey))
 
         val injections = injectionService.resolveInjections(trueType, InjectionType.MEMBER, context, render)
 

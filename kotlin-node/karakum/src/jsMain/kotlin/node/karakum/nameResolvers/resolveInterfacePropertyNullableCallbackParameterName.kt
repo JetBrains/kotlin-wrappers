@@ -16,7 +16,7 @@ import typescript.isPropertySignature
 import typescript.isUnionTypeNode
 
 fun resolveInterfacePropertyNullableCallbackParameterName(node: Node, context: Context) = nullable {
-    val typeScriptService = ensureNotNull(context.lookupService<TypeScriptService>(typeScriptServiceKey))
+    val typeScriptService = ensureNotNull(context.lookupService(typeScriptServiceKey))
 
     val callbackParameter = ensureNotNull(typeScriptService.getParent(node))
     ensure(isParameter(callbackParameter))
