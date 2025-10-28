@@ -4,6 +4,9 @@ import kotlin.js.toDouble as toKotlinDouble
 import kotlin.js.toInt as toKotlinInt
 
 actual object JsPrimitives {
+    actual inline fun JsString.toKotlinString(): String =
+        toString()
+
     actual inline fun JsFloat.toFloat(): Float =
         toKotlinDouble().toFloat()
 
