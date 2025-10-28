@@ -1,9 +1,9 @@
 package web.html
 
+import js.core.JsPrimitives.toKotlinString
 import js.reflect.JsExternalInheritorsOnly
 import js.reflect.unsafeCast
 import js.reflect.upcast
-import kotlin.String
 import kotlin.js.JsAny
 import kotlin.js.JsString
 
@@ -16,4 +16,4 @@ inline fun HtmlSource(
     unsafeCast(value)
 
 fun HtmlSource.asStringOrNull(): String? =
-    (upcast<JsAny>() as? JsString)?.toString()
+    (upcast<JsAny>() as? JsString)?.toKotlinString()
