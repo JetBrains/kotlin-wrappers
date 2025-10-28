@@ -2,11 +2,11 @@
 
 package web.clipboard
 
+import js.core.JsPrimitives.toKotlinString
 import js.core.Void
 import js.promise.Promise
 import js.promise.await
 import web.events.EventTarget
-import kotlin.String
 import kotlin.js.JsName
 import kotlin.js.JsString
 
@@ -67,7 +67,7 @@ suspend inline fun Clipboard.read(): ClipboardItems {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Clipboard/readText)
  */
 suspend inline fun Clipboard.readText(): String {
-    return readTextAsync().await().toString()
+    return readTextAsync().await().toKotlinString()
 }
 
 /**

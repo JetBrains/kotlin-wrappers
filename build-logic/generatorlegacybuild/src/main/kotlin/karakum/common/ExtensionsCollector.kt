@@ -129,7 +129,7 @@ internal open class SuspendExtensionsCollector(
         val promiseCall = "${functionName}Async($arguments)"
         val resultCast = when (returnType) {
             ": Boolean" -> ".toBoolean()"
-            ": String" -> ".toString()"
+            ": String" -> ".toKotlinString()"
             ": Int" -> ".toInt()"
             else -> ""
         }

@@ -7,15 +7,13 @@
 package web.http
 
 import js.buffer.ArrayBuffer
+import js.core.JsPrimitives.toKotlinString
 import js.promise.Promise
 import js.promise.await
 import js.typedarrays.Uint8Array
 import web.blob.Blob
 import web.form.FormData
 import web.streams.ReadableStream
-import kotlin.Boolean
-import kotlin.String
-import kotlin.Suppress
 import kotlin.js.JsAny
 import kotlin.js.JsName
 import kotlin.js.JsString
@@ -112,5 +110,5 @@ suspend inline fun Body.json(): JsAny? {
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/text)
  */
 suspend inline fun Body.text(): String {
-    return textAsync().await().toString()
+    return textAsync().await().toKotlinString()
 }
