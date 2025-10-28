@@ -438,7 +438,7 @@ open external class Document :
     ): ProcessingInstruction
 
     /**
-     * The **`Document.createRange()`** method returns a new Range object.
+     * The **`Document.createRange()`** method returns a new Range object whose start and end are offset 0 of the Document object on which it was called.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/createRange)
      */
