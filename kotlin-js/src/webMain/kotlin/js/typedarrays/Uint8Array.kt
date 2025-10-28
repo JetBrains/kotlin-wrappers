@@ -3,7 +3,7 @@ package js.typedarrays
 import js.array.ReadonlyArray
 import js.buffer.ArrayBuffer
 import js.buffer.ArrayBufferLike
-import js.core.JsPrimitives.toUByte
+import js.core.JsPrimitives.toKotlinUByte
 import js.core.JsUByte
 import js.iterable.JsIterable
 import js.serialization.Serializable
@@ -52,5 +52,5 @@ inline fun Uint8Array<*>.toUint8Array(): Uint8Array<ArrayBuffer> =
 
 fun Uint8Array<*>.toUByteArray(): UByteArray =
     UByteArray(size = length) { index ->
-        get(index).toUByte()
+        get(index).toKotlinUByte()
     }

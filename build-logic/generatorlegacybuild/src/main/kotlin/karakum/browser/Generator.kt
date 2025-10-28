@@ -34,7 +34,7 @@ private val DEFAULT_IMPORTS = Imports(
     "js.core.JsFloat",
     "js.core.JsInt",
     "js.core.JsInt53",
-    "js.core.JsPrimitives.toInt",
+    "js.core.JsPrimitives.toKotlinInt",
     "js.core.JsPrimitives.toKotlinString",
     "js.core.JsUInt",
     "js.core.JsUInt53",

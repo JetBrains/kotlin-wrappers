@@ -130,7 +130,7 @@ internal open class SuspendExtensionsCollector(
         val resultCast = when (returnType) {
             ": Boolean" -> ".toBoolean()"
             ": String" -> ".toKotlinString()"
-            ": Int" -> ".toInt()"
+            ": Int" -> ".toKotlinInt()"
             else -> ""
         }
         val returnKeyword = when {

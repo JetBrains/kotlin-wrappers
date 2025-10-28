@@ -3,7 +3,7 @@
 package web.remoteplayback
 
 import js.core.JsInt
-import js.core.JsPrimitives.toInt
+import js.core.JsPrimitives.toKotlinInt
 import js.core.Void
 import js.promise.Promise
 import js.promise.await
@@ -106,7 +106,7 @@ suspend inline fun RemotePlayback.prompt() {
 suspend inline fun RemotePlayback.watchAvailability(noinline callback: RemotePlaybackAvailabilityCallback): Int {
     return watchAvailabilityAsync(
         callback = callback,
-    ).await().toInt()
+    ).await().toKotlinInt()
 }
 
 /**
