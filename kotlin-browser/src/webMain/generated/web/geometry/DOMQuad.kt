@@ -60,7 +60,14 @@ open external class DOMQuad(
     fun toJSON(): JsAny
 
     companion object {
+        /**
+         * The **`fromQuad()`** static method of the DOMQuad interface returns a new `DOMQuad` object based on the provided set of coordinates in the shape of another `DOMQuad` object.
+         */
         fun fromQuad(other: DOMQuad = definedExternally): DOMQuad
+
+        /**
+         * The **`fromRect()`** static method of the DOMQuad interface returns a new `DOMQuad` object based on the provided set of coordinates in the shape of a DOMRect object.
+         */
         fun fromRect(other: DOMRectReadOnly = definedExternally): DOMQuad
     }
 }

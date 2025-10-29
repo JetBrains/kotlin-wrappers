@@ -286,8 +286,19 @@ open external class DOMMatrixReadOnly(
     ): DOMMatrix
 
     companion object {
+        /**
+         * The **`fromFloat32Array()`** static method of the DOMMatrixReadOnly interface creates a new DOMMatrixReadOnly object given an array of single-precision (32-bit) floating-point values.
+         */
         fun fromFloat32Array(array32: Float32Array<ArrayBuffer>): DOMMatrixReadOnly
+
+        /**
+         * The **`fromFloat64Array()`** static method of the DOMMatrixReadOnly interface creates a new DOMMatrixReadOnly object given an array of double-precision (64-bit) floating-point values.
+         */
         fun fromFloat64Array(array64: Float64Array<ArrayBuffer>): DOMMatrixReadOnly
+
+        /**
+         * The **`fromMatrix()`** static method of the DOMMatrixReadOnly interface creates a new DOMMatrixReadOnly object given an existing matrix or an object which provides the values for its properties.
+         */
         fun fromMatrix(other: DOMMatrixReadOnly = definedExternally): DOMMatrixReadOnly
     }
 }

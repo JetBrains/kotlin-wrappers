@@ -9,7 +9,7 @@ import web.events.EventType
 import kotlin.js.definedExternally
 
 /**
- * The **`ToggleEvent`** interface represents an event notifying the user an Element's state has changed.
+ * The **`ToggleEvent`** interface represents an event that fires when a popover element is toggled between being shown and hidden.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ToggleEvent)
  */

@@ -244,8 +244,19 @@ open external class DOMMatrix(
     ): DOMMatrix
 
     companion object {
+        /**
+         * The **`fromFloat32Array()`** static method of the DOMMatrix interface creates a new DOMMatrix object given an array of single-precision (32-bit) floating-point values.
+         */
         fun fromFloat32Array(array32: Float32Array<ArrayBuffer>): DOMMatrix
+
+        /**
+         * The **`fromFloat64Array()`** static method of the DOMMatrix interface creates a new DOMMatrix object given an array of double-precision (64-bit) floating-point values.
+         */
         fun fromFloat64Array(array64: Float64Array<ArrayBuffer>): DOMMatrix
+
+        /**
+         * The **`fromMatrix()`** static method of the DOMMatrix interface creates a new DOMMatrix object given an existing matrix or an object which provides the values for its properties.
+         */
         fun fromMatrix(other: DOMMatrixReadOnly = definedExternally): DOMMatrix
     }
 }
