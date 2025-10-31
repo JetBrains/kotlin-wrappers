@@ -3,7 +3,6 @@
 package web.serviceworker
 
 import js.promise.Promise
-import js.reflect.unsafeCast
 import web.events.Event
 import web.events.EventType
 import kotlin.js.definedExternally
@@ -26,9 +25,6 @@ open external class ExtendableEvent(
 
     companion object
 }
-
-inline fun ExtendableEvent.asInit(): ExtendableEventInit =
-    unsafeCast(this)
 
 inline val ExtendableEvent.Companion.ACTIVATE: EventType<ExtendableEvent>
     get() = EventType("activate")

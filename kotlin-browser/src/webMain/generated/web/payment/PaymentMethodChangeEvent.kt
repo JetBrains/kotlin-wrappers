@@ -2,7 +2,6 @@
 
 package web.payment
 
-import js.reflect.unsafeCast
 import web.events.EventType
 import kotlin.js.JsAny
 import kotlin.js.definedExternally
@@ -33,9 +32,6 @@ open external class PaymentMethodChangeEvent(
 
     companion object
 }
-
-inline fun PaymentMethodChangeEvent.asInit(): PaymentMethodChangeEventInit =
-    unsafeCast(this)
 
 inline val PaymentMethodChangeEvent.Companion.PAYMENT_METHOD_CHANGE: EventType<PaymentMethodChangeEvent>
     get() = EventType("paymentmethodchange")

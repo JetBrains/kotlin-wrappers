@@ -3,7 +3,6 @@
 package web.input
 
 import js.array.ReadonlyArray
-import js.reflect.unsafeCast
 import web.data.DataTransfer
 import web.events.EventType
 import web.ranges.StaticRange
@@ -56,9 +55,6 @@ open external class InputEvent(
 
     companion object
 }
-
-inline fun InputEvent.asInit(): InputEventInit =
-    unsafeCast(this)
 
 inline val InputEvent.Companion.BEFORE_INPUT: EventType<InputEvent>
     get() = EventType("beforeinput")

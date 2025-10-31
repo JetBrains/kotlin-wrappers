@@ -2,7 +2,6 @@
 
 package web.device
 
-import js.reflect.unsafeCast
 import web.events.Event
 import web.events.EventType
 import kotlin.js.definedExternally
@@ -47,9 +46,6 @@ open external class DeviceMotionEvent(
 
     companion object
 }
-
-inline fun DeviceMotionEvent.asInit(): DeviceMotionEventInit =
-    unsafeCast(this)
 
 inline val DeviceMotionEvent.Companion.DEVICE_MOTION: EventType<DeviceMotionEvent>
     get() = EventType("devicemotion")

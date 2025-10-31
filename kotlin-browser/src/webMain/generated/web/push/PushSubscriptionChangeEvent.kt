@@ -2,7 +2,6 @@
 
 package web.push
 
-import js.reflect.unsafeCast
 import web.events.EventType
 import web.serviceworker.ExtendableEvent
 import kotlin.js.definedExternally
@@ -17,6 +16,3 @@ open external class PushSubscriptionChangeEvent(
     val newSubscription: PushSubscription?
     val oldSubscription: PushSubscription?
 }
-
-inline fun PushSubscriptionChangeEvent.asInit(): PushSubscriptionChangeEventInit =
-    unsafeCast(this)

@@ -2,7 +2,6 @@
 
 package web.keyboard
 
-import js.reflect.unsafeCast
 import web.events.EventType
 import web.uievents.UIEvent
 import kotlin.js.definedExternally
@@ -97,9 +96,6 @@ open external class KeyboardEvent(
         val DOM_KEY_LOCATION_NUMPAD: KeyLocation
     }
 }
-
-inline fun KeyboardEvent.asInit(): KeyboardEventInit =
-    unsafeCast(this)
 
 inline val KeyboardEvent.Companion.KEY_DOWN: EventType<KeyboardEvent>
     get() = EventType("keydown")

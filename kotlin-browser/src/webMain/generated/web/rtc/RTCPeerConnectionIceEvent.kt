@@ -2,7 +2,6 @@
 
 package web.rtc
 
-import js.reflect.unsafeCast
 import web.events.Event
 import web.events.EventType
 import kotlin.js.definedExternally
@@ -25,9 +24,6 @@ open external class RTCPeerConnectionIceEvent(
 
     companion object
 }
-
-inline fun RTCPeerConnectionIceEvent.asInit(): RTCPeerConnectionIceEventInit =
-    unsafeCast(this)
 
 inline val RTCPeerConnectionIceEvent.Companion.ICE_CANDIDATE: EventType<RTCPeerConnectionIceEvent>
     get() = EventType("icecandidate")

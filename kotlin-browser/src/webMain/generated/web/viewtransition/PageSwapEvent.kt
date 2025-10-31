@@ -2,7 +2,6 @@
 
 package web.viewtransition
 
-import js.reflect.unsafeCast
 import web.events.Event
 import web.events.EventType
 import web.navigation.NavigationActivation
@@ -33,9 +32,6 @@ open external class PageSwapEvent(
 
     companion object
 }
-
-inline fun PageSwapEvent.asInit(): PageSwapEventInit =
-    unsafeCast(this)
 
 inline val PageSwapEvent.Companion.PAGE_SWAP: EventType<PageSwapEvent>
     get() = EventType("pageswap")

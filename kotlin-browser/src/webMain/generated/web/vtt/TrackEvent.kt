@@ -2,7 +2,6 @@
 
 package web.vtt
 
-import js.reflect.unsafeCast
 import web.events.Event
 import web.events.EventType
 import kotlin.js.definedExternally
@@ -25,9 +24,6 @@ open external class TrackEvent(
 
     companion object
 }
-
-inline fun TrackEvent.asInit(): TrackEventInit =
-    unsafeCast(this)
 
 inline val TrackEvent.Companion.ADD_TRACK: EventType<TrackEvent>
     get() = EventType("addtrack")

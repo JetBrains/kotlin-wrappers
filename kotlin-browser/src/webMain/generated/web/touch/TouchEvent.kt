@@ -2,7 +2,6 @@
 
 package web.touch
 
-import js.reflect.unsafeCast
 import web.events.EventType
 import web.uievents.UIEvent
 import kotlin.js.definedExternally
@@ -67,9 +66,6 @@ open external class TouchEvent(
 
     companion object
 }
-
-inline fun TouchEvent.asInit(): TouchEventInit =
-    unsafeCast(this)
 
 inline val TouchEvent.Companion.TOUCH_CANCEL: EventType<TouchEvent>
     get() = EventType("touchcancel")

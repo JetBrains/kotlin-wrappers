@@ -2,7 +2,6 @@
 
 package web.popover
 
-import js.reflect.unsafeCast
 import web.dom.Element
 import web.events.Event
 import web.events.EventType
@@ -40,9 +39,6 @@ open external class ToggleEvent(
 
     companion object
 }
-
-inline fun ToggleEvent.asInit(): ToggleEventInit =
-    unsafeCast(this)
 
 inline val ToggleEvent.Companion.BEFORE_TOGGLE: EventType<ToggleEvent>
     get() = EventType("beforetoggle")

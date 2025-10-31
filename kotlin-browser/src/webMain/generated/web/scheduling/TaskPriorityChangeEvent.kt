@@ -2,7 +2,6 @@
 
 package web.scheduling
 
-import js.reflect.unsafeCast
 import web.events.Event
 import web.events.EventType
 
@@ -24,9 +23,6 @@ open external class TaskPriorityChangeEvent(
 
     companion object
 }
-
-inline fun TaskPriorityChangeEvent.asInit(): TaskPriorityChangeEventInit =
-    unsafeCast(this)
 
 inline val TaskPriorityChangeEvent.Companion.PRIORITY_CHANGE: EventType<TaskPriorityChangeEvent>
     get() = EventType("prioritychange")

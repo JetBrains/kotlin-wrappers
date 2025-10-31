@@ -2,7 +2,6 @@
 
 package web.clipboard
 
-import js.reflect.unsafeCast
 import web.data.DataTransfer
 import web.events.Event
 import web.events.EventType
@@ -26,9 +25,6 @@ open external class ClipboardEvent(
 
     companion object
 }
-
-inline fun ClipboardEvent.asInit(): ClipboardEventInit =
-    unsafeCast(this)
 
 inline val ClipboardEvent.Companion.COPY: EventType<ClipboardEvent>
     get() = EventType("copy")

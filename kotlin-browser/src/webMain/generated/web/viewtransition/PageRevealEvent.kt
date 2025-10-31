@@ -2,7 +2,6 @@
 
 package web.viewtransition
 
-import js.reflect.unsafeCast
 import web.events.Event
 import web.events.EventType
 import kotlin.js.definedExternally
@@ -25,9 +24,6 @@ open external class PageRevealEvent(
 
     companion object
 }
-
-inline fun PageRevealEvent.asInit(): PageRevealEventInit =
-    unsafeCast(this)
 
 inline val PageRevealEvent.Companion.PAGE_REVEAL: EventType<PageRevealEvent>
     get() = EventType("pagereveal")

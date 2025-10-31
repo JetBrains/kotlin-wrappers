@@ -2,7 +2,6 @@
 
 package web.speech
 
-import js.reflect.unsafeCast
 import web.events.Event
 import web.events.EventType
 
@@ -30,6 +29,3 @@ open external class SpeechRecognitionErrorEvent(
      */
     val message: String
 }
-
-inline fun SpeechRecognitionErrorEvent.asInit(): SpeechRecognitionErrorEventInit =
-    unsafeCast(this)

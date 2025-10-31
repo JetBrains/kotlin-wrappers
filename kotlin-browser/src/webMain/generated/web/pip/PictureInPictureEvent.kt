@@ -2,7 +2,6 @@
 
 package web.pip
 
-import js.reflect.unsafeCast
 import web.events.Event
 import web.events.EventType
 
@@ -24,9 +23,6 @@ open external class PictureInPictureEvent(
 
     companion object
 }
-
-inline fun PictureInPictureEvent.asInit(): PictureInPictureEventInit =
-    unsafeCast(this)
 
 inline val PictureInPictureEvent.Companion.ENTER_PICTURE_IN_PICTURE: EventType<PictureInPictureEvent>
     get() = EventType("enterpictureinpicture")

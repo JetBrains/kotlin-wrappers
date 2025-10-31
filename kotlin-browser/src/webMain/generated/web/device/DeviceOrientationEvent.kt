@@ -2,7 +2,6 @@
 
 package web.device
 
-import js.reflect.unsafeCast
 import web.events.Event
 import web.events.EventType
 import kotlin.js.definedExternally
@@ -47,9 +46,6 @@ open external class DeviceOrientationEvent(
 
     companion object
 }
-
-inline fun DeviceOrientationEvent.asInit(): DeviceOrientationEventInit =
-    unsafeCast(this)
 
 inline val DeviceOrientationEvent.Companion.DEVICE_ORIENTATION: EventType<DeviceOrientationEvent>
     get() = EventType("deviceorientation")

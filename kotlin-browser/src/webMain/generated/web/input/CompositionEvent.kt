@@ -2,7 +2,6 @@
 
 package web.input
 
-import js.reflect.unsafeCast
 import web.events.EventType
 import web.uievents.UIEvent
 import kotlin.js.definedExternally
@@ -25,9 +24,6 @@ open external class CompositionEvent(
 
     companion object
 }
-
-inline fun CompositionEvent.asInit(): CompositionEventInit =
-    unsafeCast(this)
 
 inline val CompositionEvent.Companion.COMPOSITION_END: EventType<CompositionEvent>
     get() = EventType("compositionend")

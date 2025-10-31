@@ -2,7 +2,6 @@
 
 package web.storage
 
-import js.reflect.unsafeCast
 import web.events.Event
 import web.events.EventType
 import kotlin.js.definedExternally
@@ -53,9 +52,6 @@ open external class StorageEvent(
 
     companion object
 }
-
-inline fun StorageEvent.asInit(): StorageEventInit =
-    unsafeCast(this)
 
 inline val StorageEvent.Companion.STORAGE: EventType<StorageEvent>
     get() = EventType("storage")

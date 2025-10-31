@@ -2,7 +2,6 @@
 
 package web.rtc
 
-import js.reflect.unsafeCast
 import web.events.Event
 import web.events.EventType
 import kotlin.js.definedExternally
@@ -25,9 +24,6 @@ open external class RTCDTMFToneChangeEvent(
 
     companion object
 }
-
-inline fun RTCDTMFToneChangeEvent.asInit(): RTCDTMFToneChangeEventInit =
-    unsafeCast(this)
 
 inline val RTCDTMFToneChangeEvent.Companion.TONE_CHANGE: EventType<RTCDTMFToneChangeEvent>
     get() = EventType("tonechange")

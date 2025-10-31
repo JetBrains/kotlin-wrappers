@@ -2,7 +2,6 @@
 
 package web.gl
 
-import js.reflect.unsafeCast
 import web.events.Event
 import web.events.EventType
 import kotlin.js.definedExternally
@@ -25,9 +24,6 @@ open external class WebGLContextEvent(
 
     companion object
 }
-
-inline fun WebGLContextEvent.asInit(): WebGLContextEventInit =
-    unsafeCast(this)
 
 inline val WebGLContextEvent.Companion.WEBGL_CONTEXT_CREATION_ERROR: EventType<WebGLContextEvent>
     get() = EventType("webglcontextcreationerror")

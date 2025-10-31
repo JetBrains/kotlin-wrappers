@@ -2,7 +2,6 @@
 
 package web.animations
 
-import js.reflect.unsafeCast
 import web.events.Event
 import web.events.EventType
 import kotlin.js.definedExternally
@@ -39,9 +38,6 @@ open external class AnimationEvent(
 
     companion object
 }
-
-inline fun AnimationEvent.asInit(): AnimationEventInit =
-    unsafeCast(this)
 
 inline val AnimationEvent.Companion.ANIMATION_CANCEL: EventType<AnimationEvent>
     get() = EventType("animationcancel")

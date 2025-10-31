@@ -2,7 +2,6 @@
 
 package web.mouse
 
-import js.reflect.unsafeCast
 import web.events.EventType
 import kotlin.js.definedExternally
 
@@ -52,9 +51,6 @@ open external class WheelEvent(
         val DOM_DELTA_PAGE: DeltaMode
     }
 }
-
-inline fun WheelEvent.asInit(): WheelEventInit =
-    unsafeCast(this)
 
 inline val WheelEvent.Companion.WHEEL: EventType<WheelEvent>
     get() = EventType("wheel")

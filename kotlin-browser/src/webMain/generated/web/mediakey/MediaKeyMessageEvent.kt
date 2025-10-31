@@ -3,7 +3,6 @@
 package web.mediakey
 
 import js.buffer.ArrayBuffer
-import js.reflect.unsafeCast
 import web.events.Event
 import web.events.EventType
 
@@ -33,9 +32,6 @@ open external class MediaKeyMessageEvent(
 
     companion object
 }
-
-inline fun MediaKeyMessageEvent.asInit(): MediaKeyMessageEventInit =
-    unsafeCast(this)
 
 inline val MediaKeyMessageEvent.Companion.MESSAGE: EventType<MediaKeyMessageEvent>
     get() = EventType("message")

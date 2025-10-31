@@ -2,7 +2,6 @@
 
 package web.dnd
 
-import js.reflect.unsafeCast
 import web.data.DataTransfer
 import web.events.EventType
 import web.mouse.MouseEvent
@@ -26,9 +25,6 @@ open external class DragEvent(
 
     companion object
 }
-
-inline fun DragEvent.asInit(): DragEventInit =
-    unsafeCast(this)
 
 inline val DragEvent.Companion.DRAG: EventType<DragEvent>
     get() = EventType("drag")

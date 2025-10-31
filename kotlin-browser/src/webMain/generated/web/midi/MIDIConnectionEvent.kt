@@ -2,7 +2,6 @@
 
 package web.midi
 
-import js.reflect.unsafeCast
 import web.events.Event
 import web.events.EventType
 import kotlin.js.definedExternally
@@ -26,9 +25,6 @@ open external class MIDIConnectionEvent(
 
     companion object
 }
-
-inline fun MIDIConnectionEvent.asInit(): MIDIConnectionEventInit =
-    unsafeCast(this)
 
 inline val MIDIConnectionEvent.Companion.STATE_CHANGE: EventType<MIDIConnectionEvent>
     get() = EventType("statechange")

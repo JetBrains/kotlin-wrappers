@@ -2,7 +2,6 @@
 
 package web.mediastreams
 
-import js.reflect.unsafeCast
 import web.events.Event
 import web.events.EventType
 
@@ -24,9 +23,6 @@ open external class MediaStreamTrackEvent(
 
     companion object
 }
-
-inline fun MediaStreamTrackEvent.asInit(): MediaStreamTrackEventInit =
-    unsafeCast(this)
 
 inline val MediaStreamTrackEvent.Companion.ADD_TRACK: EventType<MediaStreamTrackEvent>
     get() = EventType("addtrack")

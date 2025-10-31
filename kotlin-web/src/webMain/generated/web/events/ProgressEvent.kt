@@ -2,7 +2,6 @@
 
 package web.events
 
-import js.reflect.unsafeCast
 import kotlin.js.definedExternally
 
 /**
@@ -37,9 +36,6 @@ open external class ProgressEvent(
 
     companion object
 }
-
-inline fun ProgressEvent.asInit(): ProgressEventInit =
-    unsafeCast(this)
 
 inline val ProgressEvent.Companion.ABORT: EventType<ProgressEvent>
     get() = EventType("abort")

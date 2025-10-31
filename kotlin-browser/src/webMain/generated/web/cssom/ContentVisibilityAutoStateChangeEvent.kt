@@ -2,7 +2,6 @@
 
 package web.cssom
 
-import js.reflect.unsafeCast
 import web.events.Event
 import web.events.EventType
 import kotlin.js.definedExternally
@@ -23,6 +22,3 @@ open external class ContentVisibilityAutoStateChangeEvent(
      */
     val skipped: Boolean
 }
-
-inline fun ContentVisibilityAutoStateChangeEvent.asInit(): ContentVisibilityAutoStateChangeEventInit =
-    unsafeCast(this)

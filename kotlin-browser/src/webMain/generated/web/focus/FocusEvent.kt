@@ -2,7 +2,6 @@
 
 package web.focus
 
-import js.reflect.unsafeCast
 import web.events.EventTarget
 import web.events.EventType
 import web.uievents.UIEvent
@@ -26,9 +25,6 @@ open external class FocusEvent(
 
     companion object
 }
-
-inline fun FocusEvent.asInit(): FocusEventInit =
-    unsafeCast(this)
 
 inline val FocusEvent.Companion.BLUR: EventType<FocusEvent>
     get() = EventType("blur")

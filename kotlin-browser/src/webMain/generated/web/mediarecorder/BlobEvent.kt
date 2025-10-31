@@ -2,7 +2,6 @@
 
 package web.mediarecorder
 
-import js.reflect.unsafeCast
 import web.blob.Blob
 import web.events.Event
 import web.events.EventType
@@ -33,9 +32,6 @@ open external class BlobEvent(
 
     companion object
 }
-
-inline fun BlobEvent.asInit(): BlobEventInit =
-    unsafeCast(this)
 
 inline val BlobEvent.Companion.DATA_AVAILABLE: EventType<BlobEvent>
     get() = EventType("dataavailable")

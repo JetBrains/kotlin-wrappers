@@ -3,7 +3,6 @@
 package web.payment
 
 import js.promise.PromiseLike
-import js.reflect.unsafeCast
 import web.events.Event
 import web.events.EventType
 import kotlin.js.definedExternally
@@ -28,9 +27,6 @@ open external class PaymentRequestUpdateEvent(
 
     companion object
 }
-
-inline fun PaymentRequestUpdateEvent.asInit(): PaymentRequestUpdateEventInit =
-    unsafeCast(this)
 
 inline val PaymentRequestUpdateEvent.Companion.PAYER_DETAIL_CHANGE: EventType<PaymentRequestUpdateEvent>
     get() = EventType("payerdetailchange")

@@ -2,7 +2,6 @@
 
 package web.rtc
 
-import js.reflect.unsafeCast
 import web.events.Event
 import web.events.EventType
 
@@ -24,9 +23,6 @@ open external class RTCErrorEvent(
 
     companion object
 }
-
-inline fun RTCErrorEvent.asInit(): RTCErrorEventInit =
-    unsafeCast(this)
 
 inline val RTCErrorEvent.Companion.ERROR: EventType<RTCErrorEvent>
     get() = EventType("error")

@@ -2,7 +2,6 @@
 
 package web.errors
 
-import js.reflect.unsafeCast
 import web.events.Event
 import web.events.EventType
 import kotlin.js.JsAny
@@ -54,9 +53,6 @@ open external class ErrorEvent(
 
     companion object
 }
-
-inline fun ErrorEvent.asInit(): ErrorEventInit =
-    unsafeCast(this)
 
 inline val ErrorEvent.Companion.ERROR: EventType<ErrorEvent>
     get() = EventType("error")

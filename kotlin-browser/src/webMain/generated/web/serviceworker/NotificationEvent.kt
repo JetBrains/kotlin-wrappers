@@ -2,7 +2,6 @@
 
 package web.serviceworker
 
-import js.reflect.unsafeCast
 import web.events.EventType
 import web.notifications.Notification
 
@@ -31,9 +30,6 @@ open external class NotificationEvent(
 
     companion object
 }
-
-inline fun NotificationEvent.asInit(): NotificationEventInit =
-    unsafeCast(this)
 
 inline val NotificationEvent.Companion.NOTIFICATION_CLICK: EventType<NotificationEvent>
     get() = EventType("notificationclick")

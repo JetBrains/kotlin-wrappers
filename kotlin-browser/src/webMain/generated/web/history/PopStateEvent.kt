@@ -2,7 +2,6 @@
 
 package web.history
 
-import js.reflect.unsafeCast
 import web.events.Event
 import web.events.EventType
 import kotlin.js.JsAny
@@ -33,9 +32,6 @@ open external class PopStateEvent(
 
     companion object
 }
-
-inline fun PopStateEvent.asInit(): PopStateEventInit =
-    unsafeCast(this)
 
 inline val PopStateEvent.Companion.POP_STATE: EventType<PopStateEvent>
     get() = EventType("popstate")

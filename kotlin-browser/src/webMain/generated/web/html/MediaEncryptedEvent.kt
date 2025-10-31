@@ -3,7 +3,6 @@
 package web.html
 
 import js.buffer.ArrayBuffer
-import js.reflect.unsafeCast
 import web.events.Event
 import web.events.EventType
 import kotlin.js.definedExternally
@@ -33,9 +32,6 @@ open external class MediaEncryptedEvent(
 
     companion object
 }
-
-inline fun MediaEncryptedEvent.asInit(): MediaEncryptedEventInit =
-    unsafeCast(this)
 
 inline val MediaEncryptedEvent.Companion.ENCRYPTED: EventType<MediaEncryptedEvent>
     get() = EventType("encrypted")

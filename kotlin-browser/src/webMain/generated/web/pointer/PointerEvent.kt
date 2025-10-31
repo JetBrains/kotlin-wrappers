@@ -3,7 +3,6 @@
 package web.pointer
 
 import js.array.ReadonlyArray
-import js.reflect.unsafeCast
 import web.events.EventType
 import web.mouse.MouseEvent
 import kotlin.js.definedExternally
@@ -125,9 +124,6 @@ open external class PointerEvent(
 
     companion object
 }
-
-inline fun PointerEvent.asInit(): PointerEventInit =
-    unsafeCast(this)
 
 inline val PointerEvent.Companion.AUX_CLICK: EventType<PointerEvent>
     get() = EventType("auxclick")

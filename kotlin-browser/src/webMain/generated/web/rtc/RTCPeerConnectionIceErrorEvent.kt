@@ -2,7 +2,6 @@
 
 package web.rtc
 
-import js.reflect.unsafeCast
 import web.events.Event
 import web.events.EventType
 
@@ -28,9 +27,6 @@ open external class RTCPeerConnectionIceErrorEvent(
 
     companion object
 }
-
-inline fun RTCPeerConnectionIceErrorEvent.asInit(): RTCPeerConnectionIceErrorEventInit =
-    unsafeCast(this)
 
 inline val RTCPeerConnectionIceErrorEvent.Companion.ICE_CANDIDATE_ERROR: EventType<RTCPeerConnectionIceErrorEvent>
     get() = EventType("icecandidateerror")

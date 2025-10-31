@@ -4,7 +4,6 @@ package web.promise
 
 import js.errors.JsErrorLike
 import js.promise.Promise
-import js.reflect.unsafeCast
 import web.events.Event
 import web.events.EventType
 
@@ -33,9 +32,6 @@ open external class PromiseRejectionEvent(
 
     companion object
 }
-
-inline fun PromiseRejectionEvent.asInit(): PromiseRejectionEventInit =
-    unsafeCast(this)
 
 inline val PromiseRejectionEvent.Companion.REJECTION_HANDLED: EventType<PromiseRejectionEvent>
     get() = EventType("rejectionhandled")

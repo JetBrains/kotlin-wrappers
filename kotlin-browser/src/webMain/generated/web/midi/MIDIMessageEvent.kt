@@ -3,7 +3,6 @@
 package web.midi
 
 import js.buffer.ArrayBuffer
-import js.reflect.unsafeCast
 import js.typedarrays.Uint8Array
 import web.events.Event
 import web.events.EventType
@@ -28,9 +27,6 @@ open external class MIDIMessageEvent(
 
     companion object
 }
-
-inline fun MIDIMessageEvent.asInit(): MIDIMessageEventInit =
-    unsafeCast(this)
 
 inline val MIDIMessageEvent.Companion.MIDI_MESSAGE: EventType<MIDIMessageEvent>
     get() = EventType("midimessage")

@@ -2,7 +2,6 @@
 
 package web.command
 
-import js.reflect.unsafeCast
 import web.dom.Element
 import web.events.Event
 import web.events.EventType
@@ -31,6 +30,3 @@ open external class CommandEvent(
      */
     val source: Element?
 }
-
-inline fun CommandEvent.asInit(): CommandEventInit =
-    unsafeCast(this)

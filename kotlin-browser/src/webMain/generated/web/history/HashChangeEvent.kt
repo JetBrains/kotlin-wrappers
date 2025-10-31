@@ -2,7 +2,6 @@
 
 package web.history
 
-import js.reflect.unsafeCast
 import web.events.Event
 import web.events.EventType
 import kotlin.js.definedExternally
@@ -32,9 +31,6 @@ open external class HashChangeEvent(
 
     companion object
 }
-
-inline fun HashChangeEvent.asInit(): HashChangeEventInit =
-    unsafeCast(this)
 
 inline val HashChangeEvent.Companion.HASH_CHANGE: EventType<HashChangeEvent>
     get() = EventType("hashchange")

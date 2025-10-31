@@ -177,7 +177,6 @@ private fun event(
         .substringBefore(";\n}\n")
 
     val eventParent = eventSource.substringBefore(" {\n")
-    val eventIsInitLike = initBody.isNotEmpty()
 
     val eventParents = listOfNotNull(
         eventParent.takeIf { name != EVENT },
@@ -299,18 +298,6 @@ private fun event(
             fullSource = source,
             source = "interface $name<",
         )
-
-    if (eventIsInitLike) {
-        val receiver = name + (if (typeParameters.isNotEmpty()) "<D>" else "")
-        val extensionTypeParameters = typeParameters.replace("<out ", "<")
-
-        val resultType = initName.replace("<D = any>", "<D>")
-
-        eventBody += "\n\n" + """
-                inline fun $extensionTypeParameters $receiver.asInit(): $resultType =
-                    unsafeCast(this)
-                """.trimIndent()
-    }
 
     if (types != null) {
         eventBody += "\n\n$types"

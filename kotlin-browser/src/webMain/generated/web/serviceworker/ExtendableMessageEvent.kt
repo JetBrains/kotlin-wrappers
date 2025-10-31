@@ -3,7 +3,6 @@
 package web.serviceworker
 
 import js.array.ReadonlyArray
-import js.reflect.unsafeCast
 import web.events.EventType
 import web.messaging.MessagePort
 import kotlin.js.JsAny
@@ -55,9 +54,6 @@ open external class ExtendableMessageEvent(
 
     companion object
 }
-
-inline fun ExtendableMessageEvent.asInit(): ExtendableMessageEventInit =
-    unsafeCast(this)
 
 inline val ExtendableMessageEvent.Companion.MESSAGE: EventType<ExtendableMessageEvent>
     get() = EventType("message")

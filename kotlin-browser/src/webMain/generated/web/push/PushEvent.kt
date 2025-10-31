@@ -2,7 +2,6 @@
 
 package web.push
 
-import js.reflect.unsafeCast
 import web.events.EventType
 import web.serviceworker.ExtendableEvent
 import kotlin.js.definedExternally
@@ -26,9 +25,6 @@ open external class PushEvent(
 
     companion object
 }
-
-inline fun PushEvent.asInit(): PushEventInit =
-    unsafeCast(this)
 
 inline val PushEvent.Companion.PUSH: EventType<PushEvent>
     get() = EventType("push")

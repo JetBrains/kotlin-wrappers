@@ -2,7 +2,6 @@
 
 package web.audio
 
-import js.reflect.unsafeCast
 import web.events.Event
 import web.events.EventType
 
@@ -24,9 +23,6 @@ open external class OfflineAudioCompletionEvent(
 
     companion object
 }
-
-inline fun OfflineAudioCompletionEvent.asInit(): OfflineAudioCompletionEventInit =
-    unsafeCast(this)
 
 inline val OfflineAudioCompletionEvent.Companion.COMPLETE: EventType<OfflineAudioCompletionEvent>
     get() = EventType("complete")

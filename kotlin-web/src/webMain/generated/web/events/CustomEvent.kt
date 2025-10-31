@@ -2,7 +2,6 @@
 
 package web.events
 
-import js.reflect.unsafeCast
 import kotlin.js.JsAny
 import kotlin.js.definedExternally
 
@@ -22,6 +21,3 @@ open external class CustomEvent<out D : JsAny?>(
      */
     val detail: D
 }
-
-inline fun <D : JsAny?> CustomEvent<D>.asInit(): CustomEventInit<D> =
-    unsafeCast(this)

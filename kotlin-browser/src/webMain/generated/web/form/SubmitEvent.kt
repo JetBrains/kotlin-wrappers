@@ -2,7 +2,6 @@
 
 package web.form
 
-import js.reflect.unsafeCast
 import web.events.Event
 import web.events.EventType
 import web.html.HTMLElement
@@ -26,9 +25,6 @@ open external class SubmitEvent(
 
     companion object
 }
-
-inline fun SubmitEvent.asInit(): SubmitEventInit =
-    unsafeCast(this)
 
 inline val SubmitEvent.Companion.SUBMIT: EventType<SubmitEvent>
     get() = EventType("submit")

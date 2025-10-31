@@ -5,7 +5,6 @@ package web.serviceworker
 import js.core.Void
 import js.promise.Promise
 import js.promise.PromiseLike
-import js.reflect.unsafeCast
 import web.events.EventType
 import web.http.Request
 import web.http.Response
@@ -64,9 +63,6 @@ open external class FetchEvent(
 
     companion object
 }
-
-inline fun FetchEvent.asInit(): FetchEventInit =
-    unsafeCast(this)
 
 inline val FetchEvent.Companion.FETCH: EventType<FetchEvent>
     get() = EventType("fetch")

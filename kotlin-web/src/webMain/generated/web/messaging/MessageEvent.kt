@@ -3,7 +3,6 @@
 package web.messaging
 
 import js.array.ReadonlyArray
-import js.reflect.unsafeCast
 import web.events.Event
 import web.events.EventType
 import kotlin.js.JsAny
@@ -55,9 +54,6 @@ open external class MessageEvent<out D : JsAny?>(
 
     companion object
 }
-
-inline fun <D : JsAny?> MessageEvent<D>.asInit(): MessageEventInit<D> =
-    unsafeCast(this)
 
 inline val MessageEvent.Companion.CONNECT: EventType<MessageEvent<*>>
     get() = EventType("connect")

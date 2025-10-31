@@ -2,7 +2,6 @@
 
 package web.cssom
 
-import js.reflect.unsafeCast
 import web.events.Event
 import web.events.EventType
 import kotlin.js.definedExternally
@@ -39,9 +38,6 @@ open external class TransitionEvent(
 
     companion object
 }
-
-inline fun TransitionEvent.asInit(): TransitionEventInit =
-    unsafeCast(this)
 
 inline val TransitionEvent.Companion.TRANSITION_CANCEL: EventType<TransitionEvent>
     get() = EventType("transitioncancel")

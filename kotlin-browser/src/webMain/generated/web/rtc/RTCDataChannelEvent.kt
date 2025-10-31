@@ -2,7 +2,6 @@
 
 package web.rtc
 
-import js.reflect.unsafeCast
 import web.events.Event
 import web.events.EventType
 
@@ -24,9 +23,6 @@ open external class RTCDataChannelEvent(
 
     companion object
 }
-
-inline fun RTCDataChannelEvent.asInit(): RTCDataChannelEventInit =
-    unsafeCast(this)
 
 inline val RTCDataChannelEvent.Companion.DATA_CHANNEL: EventType<RTCDataChannelEvent>
     get() = EventType("datachannel")

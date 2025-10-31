@@ -3,7 +3,6 @@
 package web.idb
 
 import js.core.UInt53
-import js.reflect.unsafeCast
 import web.events.Event
 import web.events.EventType
 import kotlin.js.definedExternally
@@ -33,9 +32,6 @@ open external class IDBVersionChangeEvent(
 
     companion object
 }
-
-inline fun IDBVersionChangeEvent.asInit(): IDBVersionChangeEventInit =
-    unsafeCast(this)
 
 inline val IDBVersionChangeEvent.Companion.BLOCKED: EventType<IDBVersionChangeEvent>
     get() = EventType("blocked")

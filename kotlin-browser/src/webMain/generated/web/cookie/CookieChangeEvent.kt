@@ -3,7 +3,6 @@
 package web.cookie
 
 import js.array.ReadonlyArray
-import js.reflect.unsafeCast
 import web.events.Event
 import web.events.EventType
 import kotlin.js.definedExternally
@@ -34,9 +33,6 @@ open external class CookieChangeEvent(
 
     companion object
 }
-
-inline fun CookieChangeEvent.asInit(): CookieChangeEventInit =
-    unsafeCast(this)
 
 inline val CookieChangeEvent.Companion.CHANGE: EventType<CookieChangeEvent>
     get() = EventType("change")

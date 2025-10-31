@@ -2,7 +2,6 @@
 
 package web.speech
 
-import js.reflect.unsafeCast
 import web.events.EventType
 
 /**
@@ -23,9 +22,6 @@ open external class SpeechSynthesisErrorEvent(
 
     companion object
 }
-
-inline fun SpeechSynthesisErrorEvent.asInit(): SpeechSynthesisErrorEventInit =
-    unsafeCast(this)
 
 inline val SpeechSynthesisErrorEvent.Companion.ERROR: EventType<SpeechSynthesisErrorEvent>
     get() = EventType("error")

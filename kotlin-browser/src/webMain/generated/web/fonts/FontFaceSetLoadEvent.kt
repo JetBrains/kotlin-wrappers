@@ -3,7 +3,6 @@
 package web.fonts
 
 import js.array.ReadonlyArray
-import js.reflect.unsafeCast
 import web.events.Event
 import web.events.EventType
 import kotlin.js.definedExternally
@@ -26,9 +25,6 @@ open external class FontFaceSetLoadEvent(
 
     companion object
 }
-
-inline fun FontFaceSetLoadEvent.asInit(): FontFaceSetLoadEventInit =
-    unsafeCast(this)
 
 inline val FontFaceSetLoadEvent.Companion.LOADING: EventType<FontFaceSetLoadEvent>
     get() = EventType("loading")

@@ -3,7 +3,6 @@
 package web.events
 
 import js.array.ReadonlyArray
-import js.reflect.unsafeCast
 import web.time.DOMHighResTimeStamp
 import kotlin.js.definedExternally
 
@@ -123,9 +122,6 @@ open external class Event(
         val BUBBLING_PHASE: EventPhase
     }
 }
-
-inline fun Event.asInit(): EventInit =
-    unsafeCast(this)
 
 inline val Event.Companion.DOM_CONTENT_LOADED: EventType<Event>
     get() = EventType("DOMContentLoaded")

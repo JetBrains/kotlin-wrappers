@@ -2,7 +2,6 @@
 
 package web.uievents
 
-import js.reflect.unsafeCast
 import web.events.Event
 import web.events.EventType
 import web.window.Window
@@ -33,9 +32,6 @@ open external class UIEvent(
 
     companion object
 }
-
-inline fun UIEvent.asInit(): UIEventInit =
-    unsafeCast(this)
 
 inline val UIEvent.Companion.ABORT: EventType<UIEvent>
     get() = EventType("abort")

@@ -2,7 +2,6 @@
 
 package web.history
 
-import js.reflect.unsafeCast
 import web.events.Event
 import web.events.EventType
 import kotlin.js.definedExternally
@@ -25,9 +24,6 @@ open external class PageTransitionEvent(
 
     companion object
 }
-
-inline fun PageTransitionEvent.asInit(): PageTransitionEventInit =
-    unsafeCast(this)
 
 inline val PageTransitionEvent.Companion.PAGE_HIDE: EventType<PageTransitionEvent>
     get() = EventType("pagehide")

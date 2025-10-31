@@ -2,7 +2,6 @@
 
 package web.mouse
 
-import js.reflect.unsafeCast
 import web.events.EventTarget
 import web.events.EventType
 import web.keyboard.ModifierKeyCode
@@ -174,9 +173,6 @@ open external class MouseEvent(
 
     companion object
 }
-
-inline fun MouseEvent.asInit(): MouseEventInit =
-    unsafeCast(this)
 
 inline val MouseEvent.Companion.DBL_CLICK: EventType<MouseEvent>
     get() = EventType("dblclick")

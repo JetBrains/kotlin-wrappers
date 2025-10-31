@@ -2,7 +2,6 @@
 
 package web.speech
 
-import js.reflect.unsafeCast
 import web.events.Event
 import web.events.EventType
 
@@ -52,9 +51,6 @@ open external class SpeechSynthesisEvent(
 
     companion object
 }
-
-inline fun SpeechSynthesisEvent.asInit(): SpeechSynthesisEventInit =
-    unsafeCast(this)
 
 inline val SpeechSynthesisEvent.Companion.BOUNDARY: EventType<SpeechSynthesisEvent>
     get() = EventType("boundary")

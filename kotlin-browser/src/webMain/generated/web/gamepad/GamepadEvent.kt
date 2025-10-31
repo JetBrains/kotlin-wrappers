@@ -2,7 +2,6 @@
 
 package web.gamepad
 
-import js.reflect.unsafeCast
 import web.events.Event
 import web.events.EventType
 
@@ -24,9 +23,6 @@ open external class GamepadEvent(
 
     companion object
 }
-
-inline fun GamepadEvent.asInit(): GamepadEventInit =
-    unsafeCast(this)
 
 inline val GamepadEvent.Companion.GAMEPAD_CONNECTED: EventType<GamepadEvent>
     get() = EventType("gamepadconnected")
