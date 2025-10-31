@@ -39,7 +39,7 @@ inline val IDBVersionChangeEvent.Companion.BLOCKED: EventType<IDBVersionChangeEv
 inline val IDBVersionChangeEvent.Companion.SUCCESS: EventType<IDBVersionChangeEvent>
     get() = EventType("success")
 
-inline val IDBVersionChangeEvent.Companion.UPGRADENEEDED: EventType<IDBVersionChangeEvent>
+inline val IDBVersionChangeEvent.Companion.UPGRADE_NEEDED: EventType<IDBVersionChangeEvent>
     get() = EventType("upgradeneeded")
 
 inline val IDBVersionChangeEvent.Companion.VERSION_CHANGE: EventType<IDBVersionChangeEvent>

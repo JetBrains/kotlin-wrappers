@@ -39,5 +39,5 @@ inline val <C : IDBOpenDBRequest> C.successEvent: EventInstance<IDBVersionChange
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBOpenDBRequest/upgradeneeded_event)
  */
-inline val <C : IDBOpenDBRequest> C.upgradeneededEvent: EventInstance<IDBVersionChangeEvent, C, C>
+inline val <C : IDBOpenDBRequest> C.upgradeNeededEvent: EventInstance<IDBVersionChangeEvent, C, C>
     get() = EventInstance(this, "upgradeneeded")

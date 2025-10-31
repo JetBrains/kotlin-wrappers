@@ -223,7 +223,7 @@ internal val EVENT_CORRECTION_MAP = mapOf(
     "updateend" to "update_end",
     "updatefound" to "update_found",
     "updatestart" to "update_start",
-    "upgradeneeded" to "upgradeneeded",
+    "upgradeneeded" to "upgrade_needed",
     "versionchange" to "version_change",
     "visibilitychange" to "visibility_change",
     "voiceschanged" to "voices_changed",
