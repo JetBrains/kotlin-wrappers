@@ -33,5 +33,5 @@ open external class ExtendableCookieChangeEvent(
     companion object
 }
 
-inline val ExtendableCookieChangeEvent.Companion.COOKIECHANGE: EventType<ExtendableCookieChangeEvent>
+inline val ExtendableCookieChangeEvent.Companion.COOKIE_CHANGE: EventType<ExtendableCookieChangeEvent>
     get() = EventType("cookiechange")

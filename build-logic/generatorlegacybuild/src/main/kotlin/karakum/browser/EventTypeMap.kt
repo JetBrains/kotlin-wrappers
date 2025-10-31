@@ -121,6 +121,7 @@ internal val EVENT_CORRECTION_MAP = mapOf(
     "contentvisibilityautostatechange" to "content_visibility_auto_state_change",
     "contextmenu" to "context_menu",
     "controllerchange" to "controller_change",
+    "cookiechange" to "cookie_change",
     "cuechange" to "cue_change",
     "dataavailable" to "data_available",
     "datachannel" to "data_channel",
