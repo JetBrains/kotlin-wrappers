@@ -62,11 +62,15 @@ open external class DOMQuad(
     companion object {
         /**
          * The **`fromQuad()`** static method of the DOMQuad interface returns a new `DOMQuad` object based on the provided set of coordinates in the shape of another `DOMQuad` object.
+         *
+         * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMQuad/fromQuad_static)
          */
         fun fromQuad(other: DOMQuad = definedExternally): DOMQuad
 
         /**
          * The **`fromRect()`** static method of the DOMQuad interface returns a new `DOMQuad` object based on the provided set of coordinates in the shape of a DOMRect object.
+         *
+         * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMQuad/fromRect_static)
          */
         fun fromRect(other: DOMRectReadOnly = definedExternally): DOMQuad
     }
