@@ -1,6 +1,5 @@
 package web.presentation
 
-import js.reflect.unsafeCast
 import web.events.Event
 import web.events.EventType
 import web.experimental.ExperimentalWebApi
@@ -21,10 +20,6 @@ open external class PresentationConnectionAvailableEvent(
 
     companion object
 }
-
-@ExperimentalWebApi
-inline fun PresentationConnectionAvailableEvent.asInit(): PresentationConnectionAvailableEventInit =
-    unsafeCast(this)
 
 @ExperimentalWebApi
 inline val PresentationConnectionAvailableEvent.Companion.CONNECTION_AVAILABLE: EventType<PresentationConnectionAvailableEvent>

@@ -1,6 +1,5 @@
 package web.usb
 
-import js.reflect.unsafeCast
 import web.events.Event
 import web.events.EventType
 import web.experimental.ExperimentalWebApi
@@ -21,10 +20,6 @@ open external class USBConnectionEvent(
 
     companion object
 }
-
-@ExperimentalWebApi
-inline fun USBConnectionEvent.asInit(): USBConnectionEventInit =
-    unsafeCast(this)
 
 @ExperimentalWebApi
 inline val USBConnectionEvent.Companion.CONNECT: EventType<USBConnectionEvent>

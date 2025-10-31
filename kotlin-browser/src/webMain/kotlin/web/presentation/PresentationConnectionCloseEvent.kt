@@ -1,6 +1,5 @@
 package web.presentation
 
-import js.reflect.unsafeCast
 import web.events.Event
 import web.events.EventType
 import web.experimental.ExperimentalWebApi
@@ -26,10 +25,6 @@ open external class PresentationConnectionCloseEvent(
 
     companion object
 }
-
-@ExperimentalWebApi
-inline fun PresentationConnectionCloseEvent.asInit(): PresentationConnectionCloseEventInit =
-    unsafeCast(this)
 
 @ExperimentalWebApi
 inline val PresentationConnectionCloseEvent.Companion.CLOSE: EventType<PresentationConnectionCloseEvent>
