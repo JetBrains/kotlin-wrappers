@@ -11,10 +11,12 @@ import seskar.js.JsAsync
 external suspend fun streamExtractExternal(
     url: String,
     directory: String,
+    opts: StreamExtractExternalOptions = definedExternally,
 ): StreamExtractResponse
 
 @JsName("streamExtractExternal")
 external fun streamExtractExternalAsync(
     url: String,
     directory: String,
+    opts: StreamExtractExternalOptions = definedExternally,
 ): Promise<StreamExtractResponse>

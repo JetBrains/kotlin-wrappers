@@ -50,11 +50,19 @@ internal fun convertLibrary(
                 .removeSuffix(".d.ts")
 
             // WA for `RequestHandler`
-            val content = file.readText()
+            var content = file.readText()
                 .replace(
                     "handleAuthentication(httpClient: HttpClient, requestInfo: RequestInfo, data: string | NodeJS.ReadableStream | null): Promise<HttpClientResponse>;",
                     "handleAuthentication(httpClient: HttpClient, requestInfo: RequestInfo, data: string | node.ReadableStream | null): Promise<HttpClientResponse>;",
                 )
+
+            val STREAM_EXTRACT_EXTERNAL_BODY = "{\n    timeout: number;\n}"
+            if (STREAM_EXTRACT_EXTERNAL_BODY in content) {
+                content = "declare interface StreamExtractExternalOptions " +
+                        STREAM_EXTRACT_EXTERNAL_BODY + "\n" +
+                        content.replace(STREAM_EXTRACT_EXTERNAL_BODY, "StreamExtractExternalOptions")
+            }
+
             convert(content)
                 .onEach { pathMap[it.name] = filePath }
         }
