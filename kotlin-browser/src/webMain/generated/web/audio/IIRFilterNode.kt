@@ -6,7 +6,7 @@ import js.buffer.ArrayBuffer
 import js.typedarrays.Float32Array
 
 /**
- * The **`IIRFilterNode`** interface of the Web Audio API is a AudioNode processor which implements a general **infinite impulse response** (IIR) filter; this type of filter can be used to implement tone control devices and graphic equalizers as well.
+ * The **`IIRFilterNode`** interface of the Web Audio API is an AudioNode processor which implements a general **infinite impulse response** (IIR) filter; this type of filter can be used to implement tone control devices and graphic equalizers as well.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IIRFilterNode)
  */

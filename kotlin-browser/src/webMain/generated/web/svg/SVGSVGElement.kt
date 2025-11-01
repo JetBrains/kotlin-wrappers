@@ -124,7 +124,7 @@ private constructor() :
     fun createSVGPoint(): DOMPoint
 
     /**
-     * The `createSVGRect()` method of the SVGSVGElement interface creates an DOMRect object outside of any document trees.
+     * The `createSVGRect()` method of the SVGSVGElement interface creates a DOMRect object outside of any document trees.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGSVGElement/createSVGRect)
      */

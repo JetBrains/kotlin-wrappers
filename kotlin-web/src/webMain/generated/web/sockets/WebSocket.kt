@@ -3,8 +3,7 @@
 package web.sockets
 
 import js.array.ReadonlyArray
-import js.buffer.ArrayBufferLike
-import js.buffer.ArrayBufferView
+import js.buffer.BufferSource
 import js.core.UInt53
 import web.blob.Blob
 import web.buffer.BinaryType
@@ -115,10 +114,9 @@ open external class WebSocket(
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebSocket/send)
      */
-    fun send(data: String)
-    fun send(data: ArrayBufferLike)
+    fun send(data: BufferSource)
     fun send(data: Blob)
-    fun send(data: ArrayBufferView<*>)
+    fun send(data: String)
     val CONNECTING: ReadyState
     val OPEN: ReadyState
     val CLOSING: ReadyState

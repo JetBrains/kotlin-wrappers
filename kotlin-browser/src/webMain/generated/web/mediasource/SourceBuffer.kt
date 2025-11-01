@@ -77,7 +77,7 @@ private constructor() :
     var timestampOffset: Double
 
     /**
-     * The **`updating`** read-only property of the SourceBuffer interface indicates whether the `SourceBuffer` is currently being updated — i.e., whether an SourceBuffer.appendBuffer() or SourceBuffer.remove() operation is currently in progress.
+     * The **`updating`** read-only property of the SourceBuffer interface indicates whether the `SourceBuffer` is currently being updated — i.e., whether an SourceBuffer.appendBuffer or SourceBuffer.remove operation is currently in progress.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SourceBuffer/updating)
      */

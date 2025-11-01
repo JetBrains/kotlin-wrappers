@@ -2212,6 +2212,7 @@ private fun convertFunction(
         .removePrefix(name)
         .replace(" extends ", " : ")
         .replace(": ArrayBufferView", ": ArrayBufferView<*>")
+        .replace(": Exclude<BufferSource, ArrayBuffer>", ": BufferSource /* except `ArrayBuffer` */")
         .replace(" | null", "?")
 
     if (typeParameters.isNotEmpty()) {

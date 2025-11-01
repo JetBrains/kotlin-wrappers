@@ -213,7 +213,7 @@ internal fun String.applyPatches(): String {
         .splitUnion("MediaStreamTrack | string")
         .splitUnion("Path2D | string")
         .splitUnion("string | PerformanceMeasureOptions")
-        .splitUnion("string | ArrayBufferLike | Blob | ArrayBufferView")
+        .splitUnion("BufferSource | Blob | string")
         .splitUnion("AlgorithmIdentifier | AesDerivedKeyParams | HmacImportParams | HkdfParams | Pbkdf2Params")
         .splitUnion("AlgorithmIdentifier | EcdhKeyDeriveParams | HkdfParams | Pbkdf2Params")
         .splitUnion("AlgorithmIdentifier | RsaHashedImportParams | EcKeyImportParams | HmacImportParams | AesKeyAlgorithm")

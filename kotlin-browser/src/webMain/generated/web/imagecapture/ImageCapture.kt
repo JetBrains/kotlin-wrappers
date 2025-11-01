@@ -43,7 +43,7 @@ open external class ImageCapture(
     fun getPhotoSettingsAsync(): Promise<PhotoSettings>
 
     /**
-     * The **`grabFrame()`** method of the ImageCapture interface takes a snapshot of the live video in a MediaStreamTrack and returns a Promise that resolves with a ImageBitmap containing the snapshot.
+     * The **`grabFrame()`** method of the ImageCapture interface takes a snapshot of the live video in a MediaStreamTrack and returns a Promise that resolves with an ImageBitmap containing the snapshot.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageCapture/grabFrame)
      */
@@ -78,7 +78,7 @@ suspend inline fun ImageCapture.getPhotoSettings(): PhotoSettings {
 }
 
 /**
- * The **`grabFrame()`** method of the ImageCapture interface takes a snapshot of the live video in a MediaStreamTrack and returns a Promise that resolves with a ImageBitmap containing the snapshot.
+ * The **`grabFrame()`** method of the ImageCapture interface takes a snapshot of the live video in a MediaStreamTrack and returns a Promise that resolves with an ImageBitmap containing the snapshot.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageCapture/grabFrame)
  */

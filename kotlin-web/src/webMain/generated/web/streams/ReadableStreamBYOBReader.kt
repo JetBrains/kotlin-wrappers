@@ -3,7 +3,7 @@
 package web.streams
 
 import js.buffer.ArrayBuffer
-import js.buffer.ArrayBufferView
+import js.buffer.BufferSource
 import js.promise.Promise
 import js.promise.await
 import js.typedarrays.Uint8Array
@@ -24,7 +24,7 @@ open external class ReadableStreamBYOBReader(
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStreamBYOBReader/read)
      */
     @JsName("read")
-    fun <T : ArrayBufferView<*>> readAsync(
+    fun <T : BufferSource /* except `ArrayBuffer` */> readAsync(
         view: T,
         options: ReadableStreamBYOBReaderReadOptions = definedExternally,
     ): Promise<ReadableStreamReadResult<T>>
@@ -42,7 +42,7 @@ open external class ReadableStreamBYOBReader(
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStreamBYOBReader/read)
  */
-suspend inline fun <T : ArrayBufferView<*>> ReadableStreamBYOBReader.read(
+suspend inline fun <T : BufferSource /* except `ArrayBuffer` */> ReadableStreamBYOBReader.read(
     view: T,
 ): ReadableStreamReadResult<T> {
     return readAsync(
@@ -55,7 +55,7 @@ suspend inline fun <T : ArrayBufferView<*>> ReadableStreamBYOBReader.read(
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStreamBYOBReader/read)
  */
-suspend inline fun <T : ArrayBufferView<*>> ReadableStreamBYOBReader.read(
+suspend inline fun <T : BufferSource /* except `ArrayBuffer` */> ReadableStreamBYOBReader.read(
     view: T,
     options: ReadableStreamBYOBReaderReadOptions,
 ): ReadableStreamReadResult<T> {
