@@ -25,7 +25,7 @@ private constructor() :
     Transferable,
     JsCloseable {
     /**
-     * The **`close()`** method of the MessagePort interface disconnects the port, so it is no longer active.
+     * The **`close()`** method of the MessagePort interface disconnects the port, so it is no longer active. This stops the flow of messages to that port.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MessagePort/close)
      */
@@ -57,7 +57,7 @@ private constructor() :
     )
 
     /**
-     * The **`start()`** method of the MessagePort interface starts the sending of messages queued on the port.
+     * The **`start()`** method of the MessagePort interface starts the sending of messages queued on the port. This method is only needed when using EventTarget.addEventListener; it is implied when using onmessage.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MessagePort/start)
      */

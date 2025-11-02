@@ -26,7 +26,7 @@ open external class ServiceWorkerContainer
 private constructor() :
     EventTarget {
     /**
-     * The **`controller`** read-only property of the ServiceWorkerContainer interface represents the active ServiceWorker controlling the current page (associated with this `ServiceWorkerContainer`), or `null` if the page has no active or activating service worker.
+     * The **`controller`** read-only property of the ServiceWorkerContainer interface represents the active service worker controlling the current page (associated with this ServiceWorkerContainer), or null if the page has no active or activating service worker.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerContainer/controller)
      */
@@ -55,7 +55,7 @@ private constructor() :
     val ready: Promise<ServiceWorkerRegistration>
 
     /**
-     * The **`getRegistration()`** method of the ServiceWorkerContainer interface gets a ServiceWorkerRegistration object whose scope URL matches the provided client URL.
+     * The **`getRegistration()`** method of the ServiceWorkerContainer interface gets a ServiceWorkerRegistration object whose scope URL matches the provided client URL. The method returns a Promise that resolves to a ServiceWorkerRegistration or undefined.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerContainer/getRegistration)
      */
@@ -66,7 +66,7 @@ private constructor() :
     fun getRegistrationAsync(clientURL: URL): Promise<ServiceWorkerRegistration?>
 
     /**
-     * The **`getRegistrations()`** method of the ServiceWorkerContainer interface gets all ServiceWorkerRegistrations associated with a `ServiceWorkerContainer`, in an array.
+     * The **`getRegistrations()`** method of the ServiceWorkerContainer interface gets all ServiceWorkerRegistrations associated with a ServiceWorkerContainer, in an array. The method returns a Promise that resolves to an array of ServiceWorkerRegistration.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerContainer/getRegistrations)
      */
@@ -74,7 +74,7 @@ private constructor() :
     fun getRegistrationsAsync(): Promise<ReadonlyArray<ServiceWorkerRegistration>>
 
     /**
-     * The **`register()`** method of the ServiceWorkerContainer interface creates or updates a ServiceWorkerRegistration for the given scope.
+     * The **`register()`** method of the ServiceWorkerContainer interface creates or updates a ServiceWorkerRegistration for the given scope. If successful, the registration associates the provided script URL to a scope, which is subsequently used for matching documents to a specific service worker.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerContainer/register)
      */
@@ -97,7 +97,7 @@ private constructor() :
     ): Promise<ServiceWorkerRegistration>
 
     /**
-     * The **`startMessages()`** method of the ServiceWorkerContainer interface explicitly starts the flow of messages being dispatched from a service worker to pages under its control (e.g., sent via Client.postMessage()).
+     * The **`startMessages()`** method of the ServiceWorkerContainer interface explicitly starts the flow of messages being dispatched from a service worker to pages under its control (e.g., sent via Client.postMessage()). This can be used to react to sent messages earlier, even before that page's content has finished loading.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerContainer/startMessages)
      */
@@ -111,7 +111,7 @@ private constructor() :
 }
 
 /**
- * The **`getRegistration()`** method of the ServiceWorkerContainer interface gets a ServiceWorkerRegistration object whose scope URL matches the provided client URL.
+ * The **`getRegistration()`** method of the ServiceWorkerContainer interface gets a ServiceWorkerRegistration object whose scope URL matches the provided client URL. The method returns a Promise that resolves to a ServiceWorkerRegistration or undefined.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerContainer/getRegistration)
  */
@@ -120,7 +120,7 @@ suspend inline fun ServiceWorkerContainer.getRegistration(): ServiceWorkerRegist
 }
 
 /**
- * The **`getRegistration()`** method of the ServiceWorkerContainer interface gets a ServiceWorkerRegistration object whose scope URL matches the provided client URL.
+ * The **`getRegistration()`** method of the ServiceWorkerContainer interface gets a ServiceWorkerRegistration object whose scope URL matches the provided client URL. The method returns a Promise that resolves to a ServiceWorkerRegistration or undefined.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerContainer/getRegistration)
  */
@@ -137,7 +137,7 @@ suspend inline fun ServiceWorkerContainer.getRegistration(clientURL: URL): Servi
 }
 
 /**
- * The **`getRegistrations()`** method of the ServiceWorkerContainer interface gets all ServiceWorkerRegistrations associated with a `ServiceWorkerContainer`, in an array.
+ * The **`getRegistrations()`** method of the ServiceWorkerContainer interface gets all ServiceWorkerRegistrations associated with a ServiceWorkerContainer, in an array. The method returns a Promise that resolves to an array of ServiceWorkerRegistration.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerContainer/getRegistrations)
  */
@@ -146,7 +146,7 @@ suspend inline fun ServiceWorkerContainer.getRegistrations(): ReadonlyArray<Serv
 }
 
 /**
- * The **`register()`** method of the ServiceWorkerContainer interface creates or updates a ServiceWorkerRegistration for the given scope.
+ * The **`register()`** method of the ServiceWorkerContainer interface creates or updates a ServiceWorkerRegistration for the given scope. If successful, the registration associates the provided script URL to a scope, which is subsequently used for matching documents to a specific service worker.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerContainer/register)
  */
@@ -159,7 +159,7 @@ suspend inline fun ServiceWorkerContainer.register(
 }
 
 /**
- * The **`register()`** method of the ServiceWorkerContainer interface creates or updates a ServiceWorkerRegistration for the given scope.
+ * The **`register()`** method of the ServiceWorkerContainer interface creates or updates a ServiceWorkerRegistration for the given scope. If successful, the registration associates the provided script URL to a scope, which is subsequently used for matching documents to a specific service worker.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerContainer/register)
  */

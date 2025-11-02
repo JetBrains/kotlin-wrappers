@@ -30,7 +30,7 @@ private constructor() :
 
     companion object {
         /**
-         * The **`TaskSignal.any()`** static method takes an iterable of AbortSignal objects and returns a TaskSignal.
+         * The **`TaskSignal.any()`** static method takes an iterable of AbortSignal objects and returns a TaskSignal. The returned task signal is aborted when any of the abort signals is aborted.
          *
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TaskSignal/any_static)
          */

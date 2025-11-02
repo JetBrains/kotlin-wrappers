@@ -3,7 +3,7 @@
 package web.svg
 
 /**
- * The **`SVGViewElement`** interface provides access to the properties of view elements, as well as methods to manipulate them.
+ * The **`SVGViewElement`** interface provides access to the properties of <view> elements, as well as methods to manipulate them.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGViewElement)
  */

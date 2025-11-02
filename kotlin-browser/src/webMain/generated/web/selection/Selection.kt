@@ -9,14 +9,14 @@ import web.ranges.StaticRange
 import kotlin.js.definedExternally
 
 /**
- * A **`Selection`** object represents the range of text selected by the user or the current position of the caret.
+ * A **`Selection`** object represents the range of text selected by the user or the current position of the caret. Each document is associated with a unique selection object, which can be retrieved by document.getSelection() or window.getSelection() and then be examined and modified.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Selection)
  */
 open external class Selection
 private constructor() {
     /**
-     * The **`Selection.anchorNode`** read-only property returns the Node in which the selection begins.
+     * The **`Selection.anchorNode`** read-only property returns the Node in which the selection begins. It can return null if selection never existed in the document (e.g., an iframe that was never clicked on, or the node belongs to another document tree).
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Selection/anchorNode)
      */
@@ -37,7 +37,7 @@ private constructor() {
     val direction: String
 
     /**
-     * The **`Selection.focusNode`** read-only property returns the Node in which the selection ends.
+     * The **`Selection.focusNode`** read-only property returns the Node in which the selection ends. It can return null if selection never existed in the document (e.g., an iframe that was never clicked on, or the node belongs to another document tree).
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Selection/focusNode)
      */
@@ -51,7 +51,7 @@ private constructor() {
     val focusOffset: Int
 
     /**
-     * The **`Selection.isCollapsed`** read-only property returns a boolean value which indicates whether or not there is currently any text selected.
+     * The **`Selection.isCollapsed`** read-only property returns a boolean value which indicates whether or not there is currently any text selected. No text is selected when the selection's start and end points are at the same position in the content.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Selection/isCollapsed)
      */
@@ -79,7 +79,7 @@ private constructor() {
     fun addRange(range: Range)
 
     /**
-     * The **`Selection.collapse()`** method collapses the current selection to a single point.
+     * The **`Selection.collapse()`** method collapses the current selection to a single point. The document is not modified. If the content is focused and editable, the caret will blink there.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Selection/collapse)
      */
@@ -89,14 +89,14 @@ private constructor() {
     )
 
     /**
-     * The **`Selection.collapseToEnd()`** method collapses the selection to the end of the last range in the selection.
+     * The **`Selection.collapseToEnd()`** method collapses the selection to the end of the last range in the selection. If the content of the selection is focused and editable, the caret will blink there.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Selection/collapseToEnd)
      */
     fun collapseToEnd()
 
     /**
-     * The **`Selection.collapseToStart()`** method collapses the selection to the start of the first range in the selection.
+     * The **`Selection.collapseToStart()`** method collapses the selection to the start of the first range in the selection. If the content of the selection is focused and editable, the caret will blink there.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Selection/collapseToStart)
      */
@@ -120,14 +120,14 @@ private constructor() {
     fun deleteFromDocument()
 
     /**
-     * The **`Selection.empty()`** method removes all ranges from the selection, leaving the Selection.anchorNode and Selection.focusNode properties equal to `null` and nothing selected.
+     * The **`Selection.empty()`** method removes all ranges from the selection, leaving the anchorNode and focusNode properties equal to null and nothing selected. When this method is called, a selectionchange event is fired at the document.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Selection/empty)
      */
     fun empty()
 
     /**
-     * The **`Selection.extend()`** method moves the focus of the selection to a specified point.
+     * The **`Selection.extend()`** method moves the focus of the selection to a specified point. The anchor of the selection does not move. The selection will be from the anchor to the new focus, regardless of direction.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Selection/extend)
      */
@@ -162,7 +162,7 @@ private constructor() {
     )
 
     /**
-     * The **`Selection.removeAllRanges()`** method removes all ranges from the selection, leaving the Selection.anchorNode and Selection.focusNode properties equal to `null` and nothing selected.
+     * The **`Selection.removeAllRanges()`** method removes all ranges from the selection, leaving the anchorNode and focusNode properties equal to null and nothing selected. When this method is called, a selectionchange event is fired at the document.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Selection/removeAllRanges)
      */
@@ -176,7 +176,7 @@ private constructor() {
     fun removeRange(range: Range)
 
     /**
-     * The **`Selection.selectAllChildren()`** method adds all the children of the specified node to the selection.
+     * The **`Selection.selectAllChildren()`** method adds all the children of the specified node to the selection. Previous selection is lost.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Selection/selectAllChildren)
      */
@@ -195,7 +195,7 @@ private constructor() {
     )
 
     /**
-     * The **`Selection.setPosition()`** method collapses the current selection to a single point.
+     * The **`Selection.setPosition()`** method collapses the current selection to a single point. The document is not modified. If the content is focused and editable, the caret will blink there.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Selection/setPosition)
      */

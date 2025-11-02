@@ -3,7 +3,7 @@
 package web.cssom
 
 /**
- * The **`CSSSkew`** interface of the CSS Typed Object Model API is part of the CSSTransformValue interface.
+ * The **`CSSSkew`** interface of the CSS Typed Object Model API is part of the CSSTransformValue interface. It represents the skew() value of the individual transform property in CSS.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSSkew)
  */

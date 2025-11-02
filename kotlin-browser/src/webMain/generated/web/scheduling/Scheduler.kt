@@ -32,7 +32,7 @@ private constructor() {
     ): Promise<T>
 
     /**
-     * The **`yield()`** method of the Scheduler interface is used for yielding to the main thread during a task and continuing execution later, with the continuation scheduled as a prioritized task (see the Prioritized Task Scheduling API for more information).
+     * The **`yield()`** method of the Scheduler interface is used for yielding to the main thread during a task and continuing execution later, with the continuation scheduled as a prioritized task (see the Prioritized Task Scheduling API for more information). This allows long-running work to be broken up so the browser stays responsive.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Scheduler/yield)
      */
@@ -72,7 +72,7 @@ suspend fun <T : JsAny?> Scheduler.postTask(
 }
 
 /**
- * The **`yield()`** method of the Scheduler interface is used for yielding to the main thread during a task and continuing execution later, with the continuation scheduled as a prioritized task (see the Prioritized Task Scheduling API for more information).
+ * The **`yield()`** method of the Scheduler interface is used for yielding to the main thread during a task and continuing execution later, with the continuation scheduled as a prioritized task (see the Prioritized Task Scheduling API for more information). This allows long-running work to be broken up so the browser stays responsive.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Scheduler/yield)
  */

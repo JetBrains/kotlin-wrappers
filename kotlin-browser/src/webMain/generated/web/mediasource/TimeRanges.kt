@@ -3,7 +3,7 @@
 package web.mediasource
 
 /**
- * When loading a media resource for use by an audio or video element, the **`TimeRanges`** interface is used for representing the time ranges of the media resource that have been buffered, the time ranges that have been played, and the time ranges that are seekable.
+ * When loading a media resource for use by an <audio> or <video> element, the **`TimeRanges`** interface is used for representing the time ranges of the media resource that have been buffered, the time ranges that have been played, and the time ranges that are seekable.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TimeRanges)
  */

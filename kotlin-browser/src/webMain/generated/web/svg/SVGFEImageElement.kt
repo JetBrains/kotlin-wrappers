@@ -3,7 +3,7 @@
 package web.svg
 
 /**
- * The **`SVGFEImageElement`** interface corresponds to the feImage element.
+ * The **`SVGFEImageElement`** interface corresponds to the <feImage> element.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFEImageElement)
  */
@@ -13,7 +13,7 @@ private constructor() :
     SVGFilterPrimitiveStandardAttributes,
     SVGURIReference {
     /**
-     * The **`preserveAspectRatio`** read-only property of the SVGFEImageElement interface reflects the preserveAspectRatio attribute of the given feImage element.
+     * The **`preserveAspectRatio`** read-only property of the SVGFEImageElement interface reflects the preserveAspectRatio attribute of the given <feImage> element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFEImageElement/preserveAspectRatio)
      */

@@ -5,7 +5,7 @@ package web.html
 import web.window.WindowTarget
 
 /**
- * The **`HTMLBaseElement`** interface contains the base URI for a document.
+ * The **`HTMLBaseElement`** interface contains the base URI for a document. This object inherits all of the properties and methods as described in the HTMLElement interface.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLBaseElement)
  */
@@ -20,7 +20,7 @@ protected constructor() :
     var href: String
 
     /**
-     * The `target` property of the HTMLBaseElement interface is a string that represents the default target tab to show the resulting output for hyperlinks and form elements.
+     * The **`target`** property of the HTMLBaseElement interface is a string that represents the default target tab to show the resulting output for hyperlinks and form elements.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLBaseElement/target)
      */

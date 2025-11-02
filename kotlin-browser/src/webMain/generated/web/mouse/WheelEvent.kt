@@ -15,28 +15,28 @@ open external class WheelEvent(
     init: WheelEventInit = definedExternally,
 ) : MouseEvent {
     /**
-     * The **`WheelEvent.deltaMode`** read-only property returns an `unsigned long` representing the unit of the delta values scroll amount.
+     * The **`WheelEvent.deltaMode`** read-only property returns an unsigned long representing the unit of the delta values scroll amount. Permitted values are:
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WheelEvent/deltaMode)
      */
     val deltaMode: DeltaMode
 
     /**
-     * The **`WheelEvent.deltaX`** read-only property is a `double` representing the horizontal scroll amount in the WheelEvent.deltaMode unit.
+     * The **`WheelEvent.deltaX`** read-only property is a double representing the horizontal scroll amount in the WheelEvent.deltaMode unit.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WheelEvent/deltaX)
      */
     val deltaX: Double
 
     /**
-     * The **`WheelEvent.deltaY`** read-only property is a `double` representing the vertical scroll amount in the WheelEvent.deltaMode unit.
+     * The **`WheelEvent.deltaY`** read-only property is a double representing the vertical scroll amount in the WheelEvent.deltaMode unit.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WheelEvent/deltaY)
      */
     val deltaY: Double
 
     /**
-     * The **`WheelEvent.deltaZ`** read-only property is a `double` representing the scroll amount along the z-axis, in the WheelEvent.deltaMode unit.
+     * The **`WheelEvent.deltaZ`** read-only property is a double representing the scroll amount along the z-axis, in the WheelEvent.deltaMode unit.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WheelEvent/deltaZ)
      */

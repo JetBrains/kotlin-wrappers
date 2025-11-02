@@ -5,7 +5,7 @@ package web.cssom
 import js.array.ReadonlyArray
 
 /**
- * The **`CSSStyleValue`** interface of the CSS Typed Object Model API is the base class of all CSS values accessible through the Typed OM API.
+ * The **`CSSStyleValue`** interface of the CSS Typed Object Model API is the base class of all CSS values accessible through the Typed OM API. An instance of this class may be used anywhere a string is expected.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleValue)
  */

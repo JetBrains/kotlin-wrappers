@@ -8,7 +8,7 @@ import web.gpu.GPUCopyExternalImageSource
 import kotlin.js.definedExternally
 
 /**
- * The **`ImageData`** interface represents the underlying pixel data of an area of a canvas element.
+ * The **`ImageData`** interface represents the underlying pixel data of an area of a <canvas> element.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageData)
  */
@@ -35,7 +35,7 @@ open external class ImageData(
     val colorSpace: PredefinedColorSpace
 
     /**
-     * The readonly **`ImageData.data`** property returns a Uint8ClampedArray or Float16Array that contains the ImageData object's pixel data.
+     * The readonly **`ImageData.data`** property returns a Uint8ClampedArray or Float16Array that contains the ImageData object's pixel data. Data is stored as a one-dimensional array in the RGBA order.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageData/data)
      */

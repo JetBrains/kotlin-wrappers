@@ -7,7 +7,7 @@ import kotlin.js.JsAny
 import kotlin.js.definedExternally
 
 /**
- * A `DOMQuad` is a collection of four `DOMPoint`s defining the corners of an arbitrary quadrilateral.
+ * A **`DOMQuad`** is a collection of four DOMPoints defining the corners of an arbitrary quadrilateral. Returning DOMQuads lets getBoxQuads() return accurate information even when arbitrary 2D or 3D transforms are present. It has a handy bounds attribute returning a DOMRectReadOnly for those cases where you just want an axis-aligned bounding rectangle.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMQuad)
  */
@@ -18,42 +18,42 @@ open external class DOMQuad(
     p4: DOMPointReadOnly = definedExternally,
 ) : Serializable {
     /**
-     * The **`DOMQuad`** interface's **`p1`** property holds the DOMPoint object that represents one of the four corners of the `DOMQuad`.
+     * The DOMQuad interface's **`p1`** property holds the DOMPoint object that represents one of the four corners of the DOMQuad. When created from DOMQuad.fromRect(), it is the point (x, y).
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMQuad/p1)
      */
     val p1: DOMPoint
 
     /**
-     * The **`DOMQuad`** interface's **`p2`** property holds the DOMPoint object that represents one of the four corners of the `DOMQuad`.
+     * The DOMQuad interface's **`p2`** property holds the DOMPoint object that represents one of the four corners of the DOMQuad. When created from DOMQuad.fromRect(), it is the point (x + width, y).
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMQuad/p2)
      */
     val p2: DOMPoint
 
     /**
-     * The **`DOMQuad`** interface's **`p3`** property holds the DOMPoint object that represents one of the four corners of the `DOMQuad`.
+     * The DOMQuad interface's **`p3`** property holds the DOMPoint object that represents one of the four corners of the DOMQuad. When created from DOMQuad.fromRect(), it is the point (x + width, y + height).
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMQuad/p3)
      */
     val p3: DOMPoint
 
     /**
-     * The **`DOMQuad`** interface's **`p4`** property holds the DOMPoint object that represents one of the four corners of the `DOMQuad`.
+     * The DOMQuad interface's **`p4`** property holds the DOMPoint object that represents one of the four corners of the DOMQuad. When created from DOMQuad.fromRect(), it is the point (x, y + height).
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMQuad/p4)
      */
     val p4: DOMPoint
 
     /**
-     * The DOMQuad method `getBounds()` returns a DOMRect object representing the smallest rectangle that fully contains the `DOMQuad` object.
+     * The DOMQuad method **`getBounds()`** returns a DOMRect object representing the smallest rectangle that fully contains the DOMQuad object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMQuad/getBounds)
      */
     fun getBounds(): DOMRect
 
     /**
-     * The DOMQuad method `toJSON()` returns a JSON representation of the `DOMQuad` object.
+     * The DOMQuad method **`toJSON()`** returns a JSON representation of the DOMQuad object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMQuad/toJSON)
      */
@@ -61,14 +61,14 @@ open external class DOMQuad(
 
     companion object {
         /**
-         * The **`fromQuad()`** static method of the DOMQuad interface returns a new `DOMQuad` object based on the provided set of coordinates in the shape of another `DOMQuad` object.
+         * The **`fromQuad()`** static method of the DOMQuad interface returns a new DOMQuad object based on the provided set of coordinates in the shape of another DOMQuad object.
          *
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMQuad/fromQuad_static)
          */
         fun fromQuad(other: DOMQuad = definedExternally): DOMQuad
 
         /**
-         * The **`fromRect()`** static method of the DOMQuad interface returns a new `DOMQuad` object based on the provided set of coordinates in the shape of a DOMRect object.
+         * The **`fromRect()`** static method of the DOMQuad interface returns a new DOMQuad object based on the provided set of coordinates in the shape of a DOMRect object.
          *
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMQuad/fromRect_static)
          */

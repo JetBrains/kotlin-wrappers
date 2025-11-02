@@ -10,7 +10,7 @@ import web.events.EventInstance
 import web.events.EventTarget
 
 /**
- * The **`RTCDtlsTransport`** interface provides access to information about the Datagram Transport Layer Security (**DTLS**) transport over which a RTCPeerConnection's RTP and RTCP packets are sent and received by its RTCRtpSender and RTCRtpReceiver objects.
+ * The **`RTCDtlsTransport`** interface provides access to information about the Datagram Transport Layer Security (DTLS) transport over which a RTCPeerConnection's RTP and RTCP packets are sent and received by its RTCRtpSender and RTCRtpReceiver objects.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDtlsTransport)
  */
@@ -18,7 +18,7 @@ open external class RTCDtlsTransport
 private constructor() :
     EventTarget {
     /**
-     * The **`iceTransport`** read-only property of the **RTCDtlsTransport** interface contains a reference to the underlying RTCIceTransport.
+     * The **`iceTransport`** read-only property of the RTCDtlsTransport interface contains a reference to the underlying RTCIceTransport.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDtlsTransport/iceTransport)
      */
@@ -31,7 +31,7 @@ private constructor() :
     var onstatechange: EventHandler<Event, RTCDtlsTransport, RTCDtlsTransport>?
 
     /**
-     * The **`state`** read-only property of the RTCDtlsTransport interface provides information which describes a Datagram Transport Layer Security (**DTLS**) transport state.
+     * The **`state`** read-only property of the RTCDtlsTransport interface provides information which describes a Datagram Transport Layer Security (DTLS) transport state.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDtlsTransport/state)
      */

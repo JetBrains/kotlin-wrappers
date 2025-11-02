@@ -46,7 +46,7 @@ open external class MessageEvent<out D : JsAny?>(
     val ports: ReadonlyArray<MessagePort>
 
     /**
-     * The **`source`** read-only property of the MessageEvent interface is a `MessageEventSource` (which can be a WindowProxy, MessagePort, or ServiceWorker object) representing the message emitter.
+     * The **`source`** read-only property of the MessageEvent interface is a MessageEventSource (which can be a WindowProxy, MessagePort, or ServiceWorker object) representing the message emitter.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MessageEvent/source)
      */

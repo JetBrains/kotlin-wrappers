@@ -17,14 +17,14 @@ open external class MediaKeyMessageEvent(
     init: MediaKeyMessageEventInit,
 ) : Event {
     /**
-     * The **`MediaKeyMessageEvent.message`** read-only property returns an ArrayBuffer with a message from the content decryption module.
+     * The **`MediaKeyMessageEvent.message`** read-only property returns an ArrayBuffer with a message from the content decryption module. Messages vary by key system.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeyMessageEvent/message)
      */
     val message: ArrayBuffer
 
     /**
-     * The **`MediaKeyMessageEvent.messageType`** read-only property indicates the type of message.
+     * The **`MediaKeyMessageEvent.messageType`** read-only property indicates the type of message. It may be one of license-request, license-renewal, license-release, or individualization-request.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeyMessageEvent/messageType)
      */

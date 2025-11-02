@@ -3,7 +3,7 @@
 package web.cssom
 
 /**
- * The **`CSSMathProduct`** interface of the CSS Typed Object Model API represents the result obtained by calling CSSNumericValue.add, CSSNumericValue.sub, or CSSNumericValue.toSum on CSSNumericValue.
+ * The **`CSSMathProduct`** interface of the CSS Typed Object Model API represents the result obtained by calling add(), sub(), or toSum() on CSSNumericValue. It inherits properties and methods from its parent CSSNumericValue.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSMathProduct)
  */

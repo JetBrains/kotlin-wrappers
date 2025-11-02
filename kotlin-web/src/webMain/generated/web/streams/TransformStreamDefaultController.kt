@@ -28,7 +28,7 @@ private constructor() {
     fun enqueue(chunk: O = definedExternally)
 
     /**
-     * The **`error()`** method of the TransformStreamDefaultController interface errors both sides of the stream.
+     * The **`error()`** method of the TransformStreamDefaultController interface errors both sides of the stream. Any further interactions with it will fail with the given error message, and any chunks in the queue will be discarded.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TransformStreamDefaultController/error)
      */

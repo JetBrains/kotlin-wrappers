@@ -7,7 +7,7 @@ import web.events.EventType
 import kotlin.js.definedExternally
 
 /**
- * A `CloseEvent` is sent to clients using WebSockets when the connection is closed.
+ * A **`CloseEvent`** is sent to clients using WebSockets when the connection is closed. This is delivered to the listener indicated by the WebSocket object's onclose attribute.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CloseEvent)
  */
@@ -30,7 +30,7 @@ open external class CloseEvent(
     val reason: String
 
     /**
-     * The **`wasClean`** read-only property of the CloseEvent interface returns `true` if the connection closed cleanly.
+     * The **`wasClean`** read-only property of the CloseEvent interface returns true if the connection closed cleanly.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CloseEvent/wasClean)
      */

@@ -9,14 +9,14 @@ import kotlin.js.JsAny
 import kotlin.js.definedExternally
 
 /**
- * The `Client` interface represents an executable context such as a Worker, or a SharedWorker.
+ * The **`Client`** interface represents an executable context such as a Worker, or a SharedWorker. Window clients are represented by the more-specific WindowClient. You can get Client/WindowClient objects from methods such as Clients.matchAll() and Clients.get().
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Client)
  */
 open external class Client
 private constructor() {
     /**
-     * The **`frameType`** read-only property of the Client interface indicates the type of browsing context of the current Client.
+     * The **`frameType`** read-only property of the Client interface indicates the type of browsing context of the current Client. This value can be one of "auxiliary", "top-level", "nested", or "none".
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Client/frameType)
      */
@@ -44,7 +44,7 @@ private constructor() {
     val url: String
 
     /**
-     * The **`postMessage()`** method of the Client interface allows a service worker to send a message to a client (a Window, Worker, or SharedWorker).
+     * The **`postMessage()`** method of the Client interface allows a service worker to send a message to a client (a Window, Worker, or SharedWorker). The message is received in the message event on navigator.serviceWorker.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Client/postMessage)
      */

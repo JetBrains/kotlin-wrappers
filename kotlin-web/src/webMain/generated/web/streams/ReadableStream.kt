@@ -20,7 +20,7 @@ import kotlin.js.JsName
 import kotlin.js.definedExternally
 
 /**
- * The `ReadableStream` interface of the Streams API represents a readable stream of byte data.
+ * The **`ReadableStream`** interface of the Streams API represents a readable stream of byte data. The Fetch API offers a concrete instance of a ReadableStream through the body property of a Response object.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStream)
  */
@@ -56,7 +56,7 @@ open external class ReadableStream<R : JsAny?>(
     fun cancelAsync(reason: JsError? = definedExternally): Promise<Void>
 
     /**
-     * The **`getReader()`** method of the ReadableStream interface creates a reader and locks the stream to it.
+     * The **`getReader()`** method of the ReadableStream interface creates a reader and locks the stream to it. While the stream is locked, no other reader can be acquired until this one is released.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStream/getReader)
      */
@@ -74,7 +74,7 @@ open external class ReadableStream<R : JsAny?>(
     ): ReadableStream<T>
 
     /**
-     * The **`pipeTo()`** method of the ReadableStream interface pipes the current `ReadableStream` to a given WritableStream and returns a Promise that fulfills when the piping process completes successfully, or rejects if any errors were encountered.
+     * The **`pipeTo()`** method of the ReadableStream interface pipes the current ReadableStream to a given WritableStream and returns a Promise that fulfills when the piping process completes successfully, or rejects if any errors were encountered.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStream/pipeTo)
      */
@@ -114,7 +114,7 @@ suspend inline fun <R : JsAny?> ReadableStream<R>.cancel(reason: JsError?) {
 }
 
 /**
- * The **`pipeTo()`** method of the ReadableStream interface pipes the current `ReadableStream` to a given WritableStream and returns a Promise that fulfills when the piping process completes successfully, or rejects if any errors were encountered.
+ * The **`pipeTo()`** method of the ReadableStream interface pipes the current ReadableStream to a given WritableStream and returns a Promise that fulfills when the piping process completes successfully, or rejects if any errors were encountered.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStream/pipeTo)
  */
@@ -129,7 +129,7 @@ suspend fun <R : JsAny?> ReadableStream<R>.pipeTo(
 }
 
 /**
- * The **`pipeTo()`** method of the ReadableStream interface pipes the current `ReadableStream` to a given WritableStream and returns a Promise that fulfills when the piping process completes successfully, or rejects if any errors were encountered.
+ * The **`pipeTo()`** method of the ReadableStream interface pipes the current ReadableStream to a given WritableStream and returns a Promise that fulfills when the piping process completes successfully, or rejects if any errors were encountered.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStream/pipeTo)
  */

@@ -24,7 +24,7 @@ private constructor() :
     override fun close()
 
     /**
-     * The **`flush()`** method of the FileSystemSyncAccessHandle interface persists any changes made to the file associated with the handle via the FileSystemSyncAccessHandle.write method to disk.
+     * The **`flush()`** method of the FileSystemSyncAccessHandle interface persists any changes made to the file associated with the handle via the write() method to disk.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemSyncAccessHandle/flush)
      */

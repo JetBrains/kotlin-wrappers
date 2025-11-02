@@ -10,21 +10,21 @@ package web.device
  */
 external interface DeviceMotionEventAcceleration {
     /**
-     * The **`x`** read-only property of the DeviceMotionEventAcceleration interface indicates the amount of acceleration that occurred along the X axis in a `DeviceMotionEventAcceleration` object.
+     * The **`x`** read-only property of the DeviceMotionEventAcceleration interface indicates the amount of acceleration that occurred along the X axis in a DeviceMotionEventAcceleration object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DeviceMotionEventAcceleration/x)
      */
     val x: Double?
 
     /**
-     * The **`y`** read-only property of the DeviceMotionEventAcceleration interface indicates the amount of acceleration that occurred along the Y axis in a `DeviceMotionEventAcceleration` object.
+     * The **`y`** read-only property of the DeviceMotionEventAcceleration interface indicates the amount of acceleration that occurred along the Y axis in a DeviceMotionEventAcceleration object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DeviceMotionEventAcceleration/y)
      */
     val y: Double?
 
     /**
-     * The **`z`** read-only property of the DeviceMotionEventAcceleration interface indicates the amount of acceleration that occurred along the Z axis in a `DeviceMotionEventAcceleration` object.
+     * The **`z`** read-only property of the DeviceMotionEventAcceleration interface indicates the amount of acceleration that occurred along the Z axis in a DeviceMotionEventAcceleration object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DeviceMotionEventAcceleration/z)
      */

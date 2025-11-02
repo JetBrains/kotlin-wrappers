@@ -35,7 +35,7 @@ import kotlin.js.JsString
 import kotlin.js.definedExternally
 
 /**
- * **`Element`** is the most general base class from which all element objects (i.e., objects that represent elements) in a Document inherit.
+ * **`Element`** is the most general base class from which all element objects (i.e., objects that represent elements) in a Document inherit. It only has methods and properties common to all kinds of elements. More specific classes inherit from Element.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element)
  */
@@ -49,35 +49,35 @@ private constructor() :
     ParentNode,
     Slottable {
     /**
-     * The **`Element.attributes`** property returns a live collection of all attribute nodes registered to the specified node.
+     * The **`Element.attributes`** property returns a live collection of all attribute nodes registered to the specified node. It is a NamedNodeMap, not an Array, so it has no Array methods and the Attr nodes' indexes may differ among browsers. To be more specific, attributes is a key/value pair of strings that represents any information regarding that attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/attributes)
      */
     val attributes: NamedNodeMap
 
     /**
-     * The **`Element.classList`** is a read-only property that returns a live DOMTokenList collection of the `class` attributes of the element.
+     * The **`Element.classList`** is a read-only property that returns a live DOMTokenList collection of the class attributes of the element. This can then be used to manipulate the class list.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/classList)
      */
     val classList: DOMTokenList<ClassName>
 
     /**
-     * The **`className`** property of the Element interface gets and sets the value of the `class` attribute of the specified element.
+     * The **`className`** property of the Element interface gets and sets the value of the class attribute of the specified element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/className)
      */
     var className: ClassName
 
     /**
-     * The **`clientHeight`** read-only property of the Element interface is zero for elements with no CSS or inline layout boxes; otherwise, it's the inner height of an element in pixels.
+     * The **`clientHeight`** read-only property of the Element interface is zero for elements with no CSS or inline layout boxes; otherwise, it's the inner height of an element in pixels. It includes padding but excludes borders, margins, and horizontal scrollbars (if present).
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/clientHeight)
      */
     val clientHeight: Int
 
     /**
-     * The **`clientLeft`** read-only property of the Element interface returns the width of the left border of an element in pixels.
+     * The **`clientLeft`** read-only property of the Element interface returns the width of the left border of an element in pixels. It includes the width of the vertical scrollbar if the text direction of the element is right-to-left and if there is an overflow causing a left vertical scrollbar to be rendered. clientLeft does not include the left margin or the left padding.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/clientLeft)
      */
@@ -91,28 +91,28 @@ private constructor() :
     val clientTop: Int
 
     /**
-     * The **`clientWidth`** read-only property of the Element interface is zero for inline elements and elements with no CSS; otherwise, it's the inner width of an element in pixels.
+     * The **`clientWidth`** read-only property of the Element interface is zero for inline elements and elements with no CSS; otherwise, it's the inner width of an element in pixels. It includes padding but excludes borders, margins, and vertical scrollbars (if present).
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/clientWidth)
      */
     val clientWidth: Int
 
     /**
-     * The **`currentCSSZoom`** read-only property of the Element interface provides the 'effective' CSS `zoom` of an element, taking into account the zoom applied to the element and all its parent elements.
+     * The **`currentCSSZoom`** read-only property of the Element interface provides the "effective" CSS zoom of an element, taking into account the zoom applied to the element and all its parent elements.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/currentCSSZoom)
      */
     val currentCSSZoom: Double
 
     /**
-     * The **`id`** property of the Element interface represents the element's identifier, reflecting the **`id`** global attribute.
+     * The **`id`** property of the Element interface represents the element's identifier, reflecting the id global attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/id)
      */
     var id: ElementId
 
     /**
-     * The **`innerHTML`** property of the Element interface gets or sets the HTML or XML markup contained within the element, omitting any shadow tree in both cases.
+     * The **`innerHTML`** property of the Element interface gets or sets the HTML or XML markup contained within the element, omitting any shadow roots in both cases.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/innerHTML)
      */
@@ -126,7 +126,7 @@ private constructor() :
     val localName: String
 
     /**
-     * The **`Element.namespaceURI`** read-only property returns the namespace URI of the element, or `null` if the element is not in a namespace.
+     * The **`Element.namespaceURI`** read-only property returns the namespace URI of the element, or null if the element is not in a namespace.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/namespaceURI)
      */
@@ -143,7 +143,7 @@ private constructor() :
     var onfullscreenerror: EventHandler<Event, Element, Node>?
 
     /**
-     * The **`outerHTML`** attribute of the Element interface gets or sets the HTML or XML markup of the element and its descendants, omitting any shadow tree in both cases.
+     * The **`outerHTML`** attribute of the Element interface gets or sets the HTML or XML markup of the element and its descendants, omitting any shadow roots in both cases.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/outerHTML)
      */
@@ -151,14 +151,14 @@ private constructor() :
     override val ownerDocument: Document
 
     /**
-     * The **`part`** property of the Element interface represents the part identifier(s) of the element (i.e., set using the `part` attribute), returned as a DOMTokenList.
+     * The **`part`** property of the Element interface represents the part identifier(s) of the element (i.e., set using the part attribute), returned as a DOMTokenList. These can be used to style parts of a shadow DOM, via the ::part pseudo-element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/part)
      */
     val part: DOMTokenList<JsString>
 
     /**
-     * The **`Element.prefix`** read-only property returns the namespace prefix of the specified element, or `null` if no prefix is specified.
+     * The **`Element.prefix`** read-only property returns the namespace prefix of the specified element, or null if no prefix is specified.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/prefix)
      */
@@ -172,14 +172,14 @@ private constructor() :
     val scrollHeight: Int
 
     /**
-     * The **`scrollLeft`** property of the Element interface gets or sets the number of pixels by which an element's content is scrolled from its left edge.
+     * The **`scrollLeft`** property of the Element interface gets or sets the number of pixels by which an element's content is scrolled from its left edge. This value is subpixel precise in modern browsers, meaning that it isn't necessarily a whole number.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/scrollLeft)
      */
     var scrollLeft: Double
 
     /**
-     * The **`scrollTop`** property of the Element interface gets or sets the number of pixels by which an element's content is scrolled from its top edge.
+     * The **`scrollTop`** property of the Element interface gets or sets the number of pixels by which an element's content is scrolled from its top edge. This value is subpixel precise in modern browsers, meaning that it isn't necessarily a whole number.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/scrollTop)
      */
@@ -193,7 +193,7 @@ private constructor() :
     val scrollWidth: Int
 
     /**
-     * The `Element.shadowRoot` read-only property represents the shadow root hosted by the element.
+     * The **`Element.shadowRoot`** read-only property represents the shadow root hosted by the element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/shadowRoot)
      */
@@ -250,7 +250,7 @@ private constructor() :
     fun getAttribute(qualifiedName: String): String?
 
     /**
-     * The **`getAttributeNS()`** method of the Element interface returns the string value of the attribute with the specified namespace and name.
+     * The **`getAttributeNS()`** method of the Element interface returns the string value of the attribute with the specified namespace and name. If the named attribute does not exist, the value returned will either be null or "" (the empty string); see Notes for details.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/getAttributeNS)
      */
@@ -260,7 +260,7 @@ private constructor() :
     ): String?
 
     /**
-     * The **`getAttributeNames()`** method of the Element interface returns the attribute names of the element as an Array of strings.
+     * The **`getAttributeNames()`** method of the Element interface returns the attribute names of the element as an Array of strings. If the element has no attributes it returns an empty array.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/getAttributeNames)
      */
@@ -329,7 +329,7 @@ private constructor() :
     fun getHTML(options: GetHTMLOptions = definedExternally): String
 
     /**
-     * The **`Element.hasAttribute()`** method returns a **Boolean** value indicating whether the specified element has the specified attribute or not.
+     * The **`Element.hasAttribute()`** method returns a Boolean value indicating whether the specified element has the specified attribute or not.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/hasAttribute)
      */
@@ -402,7 +402,7 @@ private constructor() :
     fun matches(selectors: String): Boolean
 
     /**
-     * The **`releasePointerCapture()`** method of the Element interface releases (stops) _pointer capture_ that was previously set for a specific (PointerEvent) _pointer_.
+     * The **`releasePointerCapture()`** method of the Element interface releases (stops) pointer capture that was previously set for a specific (PointerEvent) pointer.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/releasePointerCapture)
      */
@@ -471,7 +471,7 @@ private constructor() :
     ): Promise<Void>?
 
     /**
-     * The Element interface's **`scrollIntoView()`** method scrolls the element's ancestor containers such that the element on which `scrollIntoView()` is called is visible to the user.
+     * The Element interface's **`scrollIntoView()`** method scrolls the element's ancestor containers such that the element on which scrollIntoView() is called is visible to the user.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/scrollIntoView)
      */
@@ -489,7 +489,7 @@ private constructor() :
     ): Promise<Void>?
 
     /**
-     * The **`setAttribute()`** method of the Element interface sets the value of an attribute on the specified element.
+     * The **`setAttribute()`** method of the Element interface sets the value of an attribute on the specified element. If the attribute already exists, the value is updated; otherwise a new attribute is added with the specified name and value.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/setAttribute)
      */
@@ -499,7 +499,7 @@ private constructor() :
     )
 
     /**
-     * `setAttributeNS` adds a new attribute or changes the value of an attribute with the given namespace and name.
+     * **`setAttributeNS`** adds a new attribute or changes the value of an attribute with the given namespace and name.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/setAttributeNS)
      */
@@ -532,7 +532,7 @@ private constructor() :
     fun setHTMLUnsafe(html: String)
 
     /**
-     * The **`setPointerCapture()`** method of the Element interface is used to designate a specific element as the _capture target_ of future pointer events.
+     * The **`setPointerCapture()`** method of the Element interface is used to designate a specific element as the capture target of future pointer events. Subsequent events for the pointer will be targeted at the capture element until capture is released (via Element.releasePointerCapture() or the pointerup event is fired).
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/setPointerCapture)
      */

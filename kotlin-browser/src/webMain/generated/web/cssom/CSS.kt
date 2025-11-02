@@ -6,7 +6,7 @@ import web.highlight.HighlightRegistry
 
 external object CSS {
     /**
-     * The static, read-only **`highlights`** property of the CSS interface provides access to the `HighlightRegistry` used to style arbitrary text ranges using the css_custom_highlight_api.
+     * The static, read-only **`highlights`** property of the CSS interface provides access to the HighlightRegistry used to style arbitrary text ranges using the CSS Custom Highlight API.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSS/highlights_static)
      */

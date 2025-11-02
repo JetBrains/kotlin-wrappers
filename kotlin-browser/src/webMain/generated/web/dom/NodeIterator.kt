@@ -10,14 +10,14 @@ package web.dom
 open external class NodeIterator
 private constructor() {
     /**
-     * The **`NodeIterator.filter`** read-only property returns a `NodeFilter` object, that is an object which implements an `acceptNode(node)` method, used to screen nodes.
+     * The **`NodeIterator.filter`** read-only property returns a NodeFilter object, that is an object which implements an acceptNode(node) method, used to screen nodes.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NodeIterator/filter)
      */
     val filter: NodeFilter?
 
     /**
-     * The **`NodeIterator.pointerBeforeReferenceNode`** read-only property returns a boolean flag that indicates whether the `NodeFilter` is anchored before (if this value is `true`) or after (if this value is `false`) the anchor node indicated by the NodeIterator.referenceNode property.
+     * The **`NodeIterator.pointerBeforeReferenceNode`** read-only property returns a boolean flag that indicates whether the NodeFilter is anchored before (if this value is true) or after (if this value is false) the anchor node indicated by the NodeIterator.referenceNode property.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NodeIterator/pointerBeforeReferenceNode)
      */
@@ -38,14 +38,14 @@ private constructor() {
     val root: Node
 
     /**
-     * The **`NodeIterator.whatToShow`** read-only property represents an `unsigned integer` representing a bitmask signifying what types of nodes should be returned by the NodeIterator.
+     * The **`NodeIterator.whatToShow`** read-only property represents an unsigned integer representing a bitmask signifying what types of nodes should be returned by the NodeIterator.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NodeIterator/whatToShow)
      */
     val whatToShow: Int
 
     /**
-     * The **`NodeIterator.nextNode()`** method returns the next node in the set represented by the NodeIterator and advances the position of the iterator within the set.
+     * The **`NodeIterator.nextNode()`** method returns the next node in the set represented by the NodeIterator and advances the position of the iterator within the set. The first call to nextNode() returns the first node in the set.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NodeIterator/nextNode)
      */

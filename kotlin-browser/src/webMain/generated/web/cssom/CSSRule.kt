@@ -3,7 +3,7 @@
 package web.cssom
 
 /**
- * The **`CSSRule`** interface represents a single CSS rule.
+ * The **`CSSRule`** interface represents a single CSS rule. There are several types of rules which inherit properties from CSSRule.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSRule)
  */

@@ -21,14 +21,14 @@ open external class MediaStreamTrack
 private constructor() :
     EventTarget {
     /**
-     * The **`contentHint`** property of the MediaStreamTrack interface is a string that hints at the type of content the track contains.
+     * The **`contentHint`** property of the MediaStreamTrack interface is a string that hints at the type of content the track contains. Allowable values depend on the value of the MediaStreamTrack.kind property.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStreamTrack/contentHint)
      */
     var contentHint: String
 
     /**
-     * The **`enabled`** property of the MediaStreamTrack interface is a Boolean value which is `true` if the track is allowed to render the source stream or `false` if it is not.
+     * The **`enabled`** property of the MediaStreamTrack interface is a Boolean value which is true if the track is allowed to render the source stream or false if it is not. This can be used to intentionally mute a track.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStreamTrack/enabled)
      */
@@ -42,14 +42,14 @@ private constructor() :
     val id: String
 
     /**
-     * The **`kind`** read-only property of the MediaStreamTrack interface returns a string set to `'audio'` if the track is an audio track and to `'video'` if it is a video track.
+     * The **`kind`** read-only property of the MediaStreamTrack interface returns a string set to "audio" if the track is an audio track and to "video" if it is a video track. It doesn't change if the track is disassociated from its source.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStreamTrack/kind)
      */
     val kind: String
 
     /**
-     * The **`label`** read-only property of the MediaStreamTrack interface returns a string containing a user agent-assigned label that identifies the track source, as in `'internal microphone'`.
+     * The **`label`** read-only property of the MediaStreamTrack interface returns a string containing a user agent-assigned label that identifies the track source, as in "internal microphone".
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStreamTrack/label)
      */
@@ -93,28 +93,28 @@ private constructor() :
     fun applyConstraintsAsync(constraints: MediaTrackConstraints = definedExternally): Promise<Void>
 
     /**
-     * The **`clone()`** method of the MediaStreamTrack interface creates a duplicate of the `MediaStreamTrack`.
+     * The **`clone()`** method of the MediaStreamTrack interface creates a duplicate of the MediaStreamTrack. This new MediaStreamTrack object is identical except for its unique id.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStreamTrack/clone)
      */
     fun clone(): MediaStreamTrack
 
     /**
-     * The **`getCapabilities()`** method of the MediaStreamTrack interface returns an object detailing the accepted values or value range for each constrainable property of the associated `MediaStreamTrack`, based upon the platform and user agent.
+     * The **`getCapabilities()`** method of the MediaStreamTrack interface returns an object detailing the accepted values or value range for each constrainable property of the associated MediaStreamTrack, based upon the platform and user agent.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStreamTrack/getCapabilities)
      */
     fun getCapabilities(): MediaTrackCapabilities
 
     /**
-     * The **`getConstraints()`** method of the MediaStreamTrack interface returns a MediaTrackConstraints object containing the set of constraints most recently established for the track using a prior call to MediaStreamTrack.applyConstraints.
+     * The **`getConstraints()`** method of the MediaStreamTrack interface returns a MediaTrackConstraints object containing the set of constraints most recently established for the track using a prior call to applyConstraints(). These constraints indicate values and ranges of values that the website or application has specified are required or acceptable for the included constrainable properties.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStreamTrack/getConstraints)
      */
     fun getConstraints(): MediaTrackConstraints
 
     /**
-     * The **`getSettings()`** method of the MediaStreamTrack interface returns a MediaTrackSettings object containing the current values of each of the constrainable properties for the current `MediaStreamTrack`.
+     * The **`getSettings()`** method of the MediaStreamTrack interface returns a MediaTrackSettings object containing the current values of each of the constrainable properties for the current MediaStreamTrack.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaStreamTrack/getSettings)
      */

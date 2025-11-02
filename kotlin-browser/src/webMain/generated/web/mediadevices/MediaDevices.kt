@@ -15,7 +15,7 @@ import kotlin.js.JsName
 import kotlin.js.definedExternally
 
 /**
- * The **`MediaDevices`** interface of the Media Capture and Streams API provides access to connected media input devices like cameras and microphones, as well as screen sharing.
+ * The **`MediaDevices`** interface of the Media Capture and Streams API provides access to connected media input devices like cameras and microphones, as well as screen sharing. In essence, it lets you obtain access to any hardware source of media data.
  * Available only in secure contexts.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaDevices)
@@ -29,7 +29,7 @@ private constructor() :
     var ondevicechange: EventHandler<Event, MediaDevices, MediaDevices>?
 
     /**
-     * The **`enumerateDevices()`** method of the MediaDevices interface requests a list of the currently available media input and output devices, such as microphones, cameras, headsets, and so forth.
+     * The **`enumerateDevices()`** method of the MediaDevices interface requests a list of the currently available media input and output devices, such as microphones, cameras, headsets, and so forth. The returned Promise is resolved with an array of MediaDeviceInfo objects describing the devices.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaDevices/enumerateDevices)
      */
@@ -61,7 +61,7 @@ private constructor() :
 }
 
 /**
- * The **`enumerateDevices()`** method of the MediaDevices interface requests a list of the currently available media input and output devices, such as microphones, cameras, headsets, and so forth.
+ * The **`enumerateDevices()`** method of the MediaDevices interface requests a list of the currently available media input and output devices, such as microphones, cameras, headsets, and so forth. The returned Promise is resolved with an array of MediaDeviceInfo objects describing the devices.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaDevices/enumerateDevices)
  */

@@ -27,35 +27,35 @@ open external class HTMLMediaElement
 private constructor() :
     HTMLElement {
     /**
-     * The **`HTMLMediaElement.autoplay`** property reflects the `autoplay` HTML attribute, indicating whether playback should automatically begin as soon as enough media is available to do so without interruption.
+     * The **`HTMLMediaElement.autoplay`** property reflects the autoplay HTML attribute, indicating whether playback should automatically begin as soon as enough media is available to do so without interruption.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/autoplay)
      */
     var autoplay: Boolean
 
     /**
-     * The **`buffered`** read-only property of HTMLMediaElement objects returns a new static normalized `TimeRanges` object that represents the ranges of the media resource, if any, that the user agent has buffered at the moment the `buffered` property is accessed.
+     * The **`buffered`** read-only property of HTMLMediaElement objects returns a new static normalized TimeRanges object that represents the ranges of the media resource, if any, that the user agent has buffered at the moment the buffered property is accessed.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/buffered)
      */
     val buffered: TimeRanges
 
     /**
-     * The **`HTMLMediaElement.controls`** property reflects the `controls` HTML attribute, which controls whether user interface controls for playing the media item will be displayed.
+     * The **`HTMLMediaElement.controls`** property reflects the controls HTML attribute, which controls whether user interface controls for playing the media item will be displayed.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/controls)
      */
     var controls: Boolean
 
     /**
-     * The **`HTMLMediaElement.crossOrigin`** property is the CORS setting for this media element.
+     * The **`HTMLMediaElement.crossOrigin`** property is the CORS setting for this media element. See CORS settings attributes for details.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/crossOrigin)
      */
     var crossOrigin: CrossOrigin?
 
     /**
-     * The **`HTMLMediaElement.currentSrc`** property contains the absolute URL of the chosen media resource.
+     * The **`HTMLMediaElement.currentSrc`** property contains the absolute URL of the chosen media resource. This could happen, for example, if the web server selects a media file based on the resolution of the user's display. The value is an empty string if the networkState property is EMPTY.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/currentSrc)
      */
@@ -69,7 +69,7 @@ private constructor() :
     var currentTime: Double
 
     /**
-     * The **`HTMLMediaElement.defaultMuted`** property reflects the `muted` HTML attribute, which indicates whether the media element's audio output should be muted by default.
+     * The **`HTMLMediaElement.defaultMuted`** property reflects the muted HTML attribute, which indicates whether the media element's audio output should be muted by default. This property has no dynamic effect. To mute and unmute the audio output, use the muted property.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/defaultMuted)
      */
@@ -90,7 +90,7 @@ private constructor() :
     var disableRemotePlayback: Boolean
 
     /**
-     * The _read-only_ HTMLMediaElement property **`duration`** indicates the length of the element's media in seconds.
+     * The read-only HTMLMediaElement property **`duration`** indicates the length of the element's media in seconds.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/duration)
      */
@@ -104,14 +104,14 @@ private constructor() :
     val ended: Boolean
 
     /**
-     * The **`HTMLMediaElement.error`** property is the MediaError object for the most recent error, or `null` if there has not been an error.
+     * The **`HTMLMediaElement.error`** property is the MediaError object for the most recent error, or null if there has not been an error. When an error event is received by the element, you can determine details about what happened by examining this object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/error)
      */
     val error: MediaError?
 
     /**
-     * The **`HTMLMediaElement.loop`** property reflects the `loop` HTML attribute, which controls whether the media element should start over when it reaches the end.
+     * The **`HTMLMediaElement.loop`** property reflects the loop HTML attribute, which controls whether the media element should start over when it reaches the end.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/loop)
      */
@@ -157,14 +157,14 @@ private constructor() :
     val paused: Boolean
 
     /**
-     * The **`HTMLMediaElement.playbackRate`** property sets the rate at which the media is being played back.
+     * The **`HTMLMediaElement.playbackRate`** property sets the rate at which the media is being played back. This is used to implement user controls for fast forward, slow motion, and so forth. The normal playback rate is multiplied by this value to obtain the current rate, so a value of 1.0 indicates normal speed.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/playbackRate)
      */
     var playbackRate: Double
 
     /**
-     * The **`played`** read-only property of the HTMLMediaElement interface indicates the time ranges the resource, an audio or video media file, has played.
+     * The **`played`** read-only property of the HTMLMediaElement interface indicates the time ranges the resource, an <audio> or <video> media file, has played. It returns a new TimeRanges object that contains the ranges of the media source that the browser has played, if any, at the time the attribute is evaluated.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/played)
      */
@@ -192,21 +192,21 @@ private constructor() :
     val readyState: ReadyState
 
     /**
-     * The **`remote`** read-only property of the HTMLMediaElement interface returns the RemotePlayback object associated with the media element.
+     * The **`remote`** read-only property of the HTMLMediaElement interface returns the RemotePlayback object associated with the media element. The RemotePlayback object allow the control of remote devices playing the media.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/remote)
      */
     val remote: RemotePlayback
 
     /**
-     * The **`seekable`** read-only property of HTMLMediaElement objects returns a new static normalized `TimeRanges` object that represents the ranges of the media resource, if any, that the user agent is able to seek to at the time `seekable` property is accessed.
+     * The **`seekable`** read-only property of HTMLMediaElement objects returns a new static normalized TimeRanges object that represents the ranges of the media resource, if any, that the user agent is able to seek to at the time seekable property is accessed.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/seekable)
      */
     val seekable: TimeRanges
 
     /**
-     * The **`seeking`** read-only property of the HTMLMediaElement interface is a Boolean indicating whether the resource, the audio or video, is in the process of seeking to a new position.
+     * The **`seeking`** read-only property of the HTMLMediaElement interface is a Boolean indicating whether the resource, the <audio> or <video>, is in the process of seeking to a new position.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/seeking)
      */
@@ -221,14 +221,14 @@ private constructor() :
     val sinkId: String
 
     /**
-     * The **`HTMLMediaElement.src`** property reflects the value of the HTML media element's `src` attribute, which indicates the URL of a media resource to use in the element.
+     * The **`HTMLMediaElement.src`** property reflects the value of the HTML media element's src attribute, which indicates the URL of a media resource to use in the element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/src)
      */
     var src: String
 
     /**
-     * The **`srcObject`** property of the HTMLMediaElement interface sets or returns the object which serves as the source of the media associated with the HTMLMediaElement, or `null` if not assigned.
+     * The **`srcObject`** property of the HTMLMediaElement interface sets or returns the object which serves as the source of the media associated with the HTMLMediaElement, or null if not assigned.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/srcObject)
      */
@@ -249,7 +249,7 @@ private constructor() :
     var volume: Double
 
     /**
-     * The **`addTextTrack()`** method of the HTMLMediaElement interface creates a new TextTrack object and adds it to the media element.
+     * The **`addTextTrack()`** method of the HTMLMediaElement interface creates a new TextTrack object and adds it to the media element. It fires an addtrack event on this media element's textTracks. This method can't be used on a TextTrackList interface, only an HTMLMediaElement.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/addTextTrack)
      */
@@ -288,7 +288,7 @@ private constructor() :
     fun pause()
 
     /**
-     * The HTMLMediaElement **`play()`** method attempts to begin playback of the media.
+     * The HTMLMediaElement **`play()`** method attempts to begin playback of the media. It returns a Promise which is resolved when playback has been successfully started.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/play)
      */
@@ -339,7 +339,7 @@ private constructor() :
 }
 
 /**
- * The HTMLMediaElement **`play()`** method attempts to begin playback of the media.
+ * The HTMLMediaElement **`play()`** method attempts to begin playback of the media. It returns a Promise which is resolved when playback has been successfully started.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/play)
  */

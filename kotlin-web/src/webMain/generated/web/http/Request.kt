@@ -33,21 +33,21 @@ open external class Request(
     )
 
     /**
-     * The **`cache`** read-only property of the Request interface contains the cache mode of the request.
+     * The **`cache`** read-only property of the Request interface contains the cache mode of the request. It controls how the request will interact with the browser's HTTP cache.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/cache)
      */
     val cache: RequestCache
 
     /**
-     * The **`credentials`** read-only property of the Request interface reflects the value given to the Request.Request() constructor in the `credentials` option.
+     * The **`credentials`** read-only property of the Request interface reflects the value given to the Request() constructor in the credentials option. It determines whether or not the browser sends credentials with the request, as well as whether any Set-Cookie response headers are respected.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/credentials)
      */
     val credentials: RequestCredentials
 
     /**
-     * The **`destination`** read-only property of the **Request** interface returns a string describing the type of content being requested.
+     * The **`destination`** read-only property of the Request interface returns a string describing the type of content being requested.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/destination)
      */
@@ -68,21 +68,21 @@ open external class Request(
     val integrity: String
 
     /**
-     * The **`keepalive`** read-only property of the Request interface contains the request's `keepalive` setting (`true` or `false`), which indicates whether the browser will keep the associated request alive if the page that initiated it is unloaded before the request is complete.
+     * The **`keepalive`** read-only property of the Request interface contains the request's keepalive setting (true or false), which indicates whether the browser will keep the associated request alive if the page that initiated it is unloaded before the request is complete.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/keepalive)
      */
     val keepalive: Boolean
 
     /**
-     * The **`method`** read-only property of the Request interface contains the request's method (`GET`, `POST`, etc.)
+     * The **`method`** read-only property of the Request interface contains the request's method (GET, POST, etc.)
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/method)
      */
     val method: RequestMethod
 
     /**
-     * The **`mode`** read-only property of the Request interface contains the mode of the request (e.g., `cors`, `no-cors`, `same-origin`, or `navigate`.) This is used to determine if cross-origin requests lead to valid responses, and which properties of the response are readable.
+     * The **`mode`** read-only property of the Request interface contains the mode of the request (e.g., cors, no-cors, same-origin, or navigate.) This is used to determine if cross-origin requests lead to valid responses, and which properties of the response are readable.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/mode)
      */
@@ -96,7 +96,7 @@ open external class Request(
     val redirect: RequestRedirect
 
     /**
-     * The **`referrer`** read-only property of the Request interface is set by the user agent to be the referrer of the Request.
+     * The **`referrer`** read-only property of the Request interface is set by the user agent to be the referrer of the Request. (e.g., client, no-referrer, or a URL.)
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/referrer)
      */
@@ -117,7 +117,7 @@ open external class Request(
     override val signal: AbortSignal
 
     /**
-     * The **`clone()`** method of the Request interface creates a copy of the current `Request` object.
+     * The **`clone()`** method of the Request interface creates a copy of the current Request object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Request/clone)
      */

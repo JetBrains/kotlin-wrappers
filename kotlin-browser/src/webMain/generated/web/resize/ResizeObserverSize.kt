@@ -10,14 +10,14 @@ package web.resize
 open external class ResizeObserverSize
 private constructor() {
     /**
-     * The **`blockSize`** read-only property of the ResizeObserverSize interface returns the length of the observed element's border box in the block dimension.
+     * The **`blockSize`** read-only property of the ResizeObserverSize interface returns the length of the observed element's border box in the block dimension. For boxes with a horizontal writing-mode, this is the vertical dimension, or height; if the writing-mode is vertical, this is the horizontal dimension, or width.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ResizeObserverSize/blockSize)
      */
     val blockSize: Double
 
     /**
-     * The **`inlineSize`** read-only property of the ResizeObserverSize interface returns the length of the observed element's border box in the inline dimension.
+     * The **`inlineSize`** read-only property of the ResizeObserverSize interface returns the length of the observed element's border box in the inline dimension. For boxes with a horizontal writing-mode, this is the horizontal dimension, or width; if the writing-mode is vertical, this is the vertical dimension, or height.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ResizeObserverSize/inlineSize)
      */

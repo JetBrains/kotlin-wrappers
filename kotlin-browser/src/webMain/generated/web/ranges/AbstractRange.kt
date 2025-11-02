@@ -5,14 +5,14 @@ package web.ranges
 import web.dom.Node
 
 /**
- * The **`AbstractRange`** abstract interface is the base class upon which all DOM range types are defined.
+ * The **`AbstractRange`** abstract interface is the base class upon which all DOM range types are defined. A range is an object that indicates the start and end points of a section of content within the document.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AbstractRange)
  */
 open external class AbstractRange
 private constructor() {
     /**
-     * The read-only **`collapsed`** property of the AbstractRange interface returns `true` if the range's start position and end position are the same.
+     * The read-only **`collapsed`** property of the AbstractRange interface returns true if the range's start position and end position are the same.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AbstractRange/collapsed)
      */

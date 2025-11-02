@@ -7,7 +7,7 @@ import web.geometry.DOMPointReadOnly
 import kotlin.js.definedExternally
 
 /**
- * The `SVGGeometryElement` interface represents SVG elements whose rendering is defined by geometry with an equivalent path, and which can be filled and stroked.
+ * The **`SVGGeometryElement`** interface represents SVG elements whose rendering is defined by geometry with an equivalent path, and which can be filled and stroked. This includes paths and the basic shapes.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGGeometryElement)
  */
@@ -36,14 +36,14 @@ private constructor() :
     open fun getTotalLength(): Float
 
     /**
-     * The **`isPointInFill()`** method of the SVGGeometryElement interface determines whether a given point is within the fill shape of an element.
+     * The **`isPointInFill()`** method of the SVGGeometryElement interface determines whether a given point is within the fill shape of an element. The point argument is interpreted as a point in the local coordinate system of the element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGGeometryElement/isPointInFill)
      */
     fun isPointInFill(point: DOMPointReadOnly = definedExternally): Boolean
 
     /**
-     * The **`isPointInStroke()`** method of the SVGGeometryElement interface determines whether a given point is within the stroke shape of an element.
+     * The **`isPointInStroke()`** method of the SVGGeometryElement interface determines whether a given point is within the stroke shape of an element. The point argument is interpreted as a point in the local coordinate system of the element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGGeometryElement/isPointInStroke)
      */

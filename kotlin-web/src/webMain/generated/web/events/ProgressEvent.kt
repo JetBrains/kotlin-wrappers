@@ -5,7 +5,7 @@ package web.events
 import kotlin.js.definedExternally
 
 /**
- * The **`ProgressEvent`** interface represents events that measure the progress of an underlying process, like an HTTP request (e.g., an `XMLHttpRequest`, or the loading of the underlying resource of an img, audio, video, style or link).
+ * The **`ProgressEvent`** interface represents events that measure the progress of an underlying process, like an HTTP request (e.g., an XMLHttpRequest, or the loading of the underlying resource of an <img>, <audio>, <video>, <style> or <link>).
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ProgressEvent)
  */
@@ -14,14 +14,14 @@ open external class ProgressEvent(
     init: ProgressEventInit = definedExternally,
 ) : Event {
     /**
-     * The **`ProgressEvent.lengthComputable`** read-only property is a boolean flag indicating if the resource concerned by the ProgressEvent has a length that can be calculated.
+     * The **`ProgressEvent.lengthComputable`** read-only property is a boolean flag indicating if the resource concerned by the ProgressEvent has a length that can be calculated. If not, the ProgressEvent.total property has no significant value.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ProgressEvent/lengthComputable)
      */
     val lengthComputable: Boolean
 
     /**
-     * The **`ProgressEvent.loaded`** read-only property is a number indicating the size of the data already transmitted or processed.
+     * The **`ProgressEvent.loaded`** read-only property is a number indicating the size of the data already transmitted or processed. The progress ratio can be calculated by dividing the value of this property by ProgressEvent.total.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ProgressEvent/loaded)
      */

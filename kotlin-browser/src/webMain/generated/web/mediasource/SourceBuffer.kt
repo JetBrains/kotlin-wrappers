@@ -9,7 +9,7 @@ import web.events.EventInstance
 import web.events.EventTarget
 
 /**
- * The **`SourceBuffer`** interface represents a chunk of media to be passed into an HTMLMediaElement and played, via a MediaSource object.
+ * The **`SourceBuffer`** interface represents a chunk of media to be passed into an HTMLMediaElement and played, via a MediaSource object. This can be made up of one or several media segments.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SourceBuffer)
  */
@@ -17,28 +17,28 @@ open external class SourceBuffer
 private constructor() :
     EventTarget {
     /**
-     * The **`appendWindowEnd`** property of the SourceBuffer interface controls the timestamp for the end of the append window, a timestamp range that can be used to filter what media data is appended to the `SourceBuffer`.
+     * The **`appendWindowEnd`** property of the SourceBuffer interface controls the timestamp for the end of the append window, a timestamp range that can be used to filter what media data is appended to the SourceBuffer. Coded media frames with timestamps within this range will be appended, whereas those outside the range will be filtered out.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SourceBuffer/appendWindowEnd)
      */
     var appendWindowEnd: Double
 
     /**
-     * The **`appendWindowStart`** property of the SourceBuffer interface controls the timestamp for the start of the append window, a timestamp range that can be used to filter what media data is appended to the `SourceBuffer`.
+     * The **`appendWindowStart`** property of the SourceBuffer interface controls the timestamp for the start of the append window, a timestamp range that can be used to filter what media data is appended to the SourceBuffer. Coded media frames with timestamps within this range will be appended, whereas those outside the range will be filtered out.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SourceBuffer/appendWindowStart)
      */
     var appendWindowStart: Double
 
     /**
-     * The **`buffered`** read-only property of the SourceBuffer interface returns the time ranges that are currently buffered in the `SourceBuffer` as a normalized TimeRanges object.
+     * The **`buffered`** read-only property of the SourceBuffer interface returns the time ranges that are currently buffered in the SourceBuffer as a normalized TimeRanges object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SourceBuffer/buffered)
      */
     val buffered: TimeRanges
 
     /**
-     * The **`mode`** property of the SourceBuffer interface controls whether media segments can be appended to the `SourceBuffer` in any order, or in a strict sequence.
+     * The **`mode`** property of the SourceBuffer interface controls whether media segments can be appended to the SourceBuffer in any order, or in a strict sequence.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SourceBuffer/mode)
      */
@@ -70,14 +70,14 @@ private constructor() :
     var onupdatestart: EventHandler<Event, SourceBuffer, SourceBuffer>?
 
     /**
-     * The **`timestampOffset`** property of the SourceBuffer interface controls the offset applied to timestamps inside media segments that are appended to the `SourceBuffer`.
+     * The **`timestampOffset`** property of the SourceBuffer interface controls the offset applied to timestamps inside media segments that are appended to the SourceBuffer.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SourceBuffer/timestampOffset)
      */
     var timestampOffset: Double
 
     /**
-     * The **`updating`** read-only property of the SourceBuffer interface indicates whether the `SourceBuffer` is currently being updated — i.e., whether an SourceBuffer.appendBuffer or SourceBuffer.remove operation is currently in progress.
+     * The **`updating`** read-only property of the SourceBuffer interface indicates whether the SourceBuffer is currently being updated — i.e., whether an appendBuffer() or remove() operation is currently in progress.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SourceBuffer/updating)
      */
@@ -91,21 +91,21 @@ private constructor() :
     fun abort()
 
     /**
-     * The **`appendBuffer()`** method of the SourceBuffer interface appends media segment data from an ArrayBuffer, a TypedArray or a DataView object to the `SourceBuffer`.
+     * The **`appendBuffer()`** method of the SourceBuffer interface appends media segment data from an ArrayBuffer, a TypedArray or a DataView object to the SourceBuffer.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SourceBuffer/appendBuffer)
      */
     fun appendBuffer(data: BufferSource)
 
     /**
-     * The **`changeType()`** method of the SourceBuffer interface sets the MIME type that future calls to SourceBuffer.appendBuffer should expect the new media data to conform to.
+     * The **`changeType()`** method of the SourceBuffer interface sets the MIME type that future calls to appendBuffer() should expect the new media data to conform to. This makes it possible to change codecs or container type mid-stream.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SourceBuffer/changeType)
      */
     fun changeType(type: String)
 
     /**
-     * The **`remove()`** method of the SourceBuffer interface removes media segments within a specific time range from the `SourceBuffer`.
+     * The **`remove()`** method of the SourceBuffer interface removes media segments within a specific time range from the SourceBuffer. This method can only be called when SourceBuffer.updating equals false. If SourceBuffer.updating is not equal to false, call SourceBuffer.abort().
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SourceBuffer/remove)
      */

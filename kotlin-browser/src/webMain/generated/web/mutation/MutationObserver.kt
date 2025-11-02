@@ -7,7 +7,7 @@ import web.dom.Node
 import kotlin.js.definedExternally
 
 /**
- * The **`MutationObserver`** interface provides the ability to watch for changes being made to the DOM tree.
+ * The **`MutationObserver`** interface provides the ability to watch for changes being made to the DOM tree. It is designed as a replacement for the older Mutation Events feature, which was part of the DOM3 Events specification.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MutationObserver)
  */
@@ -22,7 +22,7 @@ open external class MutationObserver(
     fun disconnect()
 
     /**
-     * The MutationObserver method **`observe()`** configures the `MutationObserver` callback to begin receiving notifications of changes to the DOM that match the given options.
+     * The MutationObserver method **`observe()`** configures the MutationObserver callback to begin receiving notifications of changes to the DOM that match the given options.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MutationObserver/observe)
      */

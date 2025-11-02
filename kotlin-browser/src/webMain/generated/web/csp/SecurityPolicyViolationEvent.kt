@@ -7,7 +7,7 @@ import web.events.EventType
 import kotlin.js.definedExternally
 
 /**
- * The **`SecurityPolicyViolationEvent`** interface inherits from Event, and represents the event object of a `securitypolicyviolation` event sent on an Element/securitypolicyviolation_event, Document/securitypolicyviolation_event, or WorkerGlobalScope/securitypolicyviolation_event when its Content Security Policy (CSP) is violated.
+ * The **`SecurityPolicyViolationEvent`** interface inherits from Event, and represents the event object of a securitypolicyviolation event sent on an Element, Document, or worker when its Content Security Policy (CSP) is violated.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SecurityPolicyViolationEvent)
  */
@@ -65,7 +65,7 @@ open external class SecurityPolicyViolationEvent(
     val originalPolicy: String
 
     /**
-     * The **`referrer`** read-only property of the SecurityPolicyViolationEvent interface is a string representing the referrer for the resources whose Content Security Policy (CSP) was violated.
+     * The **`referrer`** read-only property of the SecurityPolicyViolationEvent interface is a string representing the referrer for the resources whose Content Security Policy (CSP) was violated. This will be a URL or null.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SecurityPolicyViolationEvent/referrer)
      */

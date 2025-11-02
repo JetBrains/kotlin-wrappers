@@ -3,7 +3,7 @@
 package web.rtc
 
 /**
- * The **`RTCSessionDescription`** interface describes one end of a connection—or potential connection—and how it's configured.
+ * The **`RTCSessionDescription`** interface describes one end of a connection—or potential connection—and how it's configured. Each RTCSessionDescription consists of a description type indicating which part of the offer/answer negotiation process it describes and of the SDP descriptor of the session.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCSessionDescription)
  */
@@ -25,7 +25,7 @@ open external class RTCSessionDescription(
     val type: RTCSdpType
 
     /**
-     * The **`RTCSessionDescription.toJSON()`** method generates a JSON description of the object.
+     * The **`RTCSessionDescription.toJSON()`** method generates a JSON description of the object. Both properties, type and sdp, are contained in the generated JSON.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCSessionDescription/toJSON)
      */

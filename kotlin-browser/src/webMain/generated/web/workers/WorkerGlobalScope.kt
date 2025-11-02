@@ -13,7 +13,7 @@ import web.fonts.FontFaceSource
 import web.promise.PromiseRejectionEvent
 
 /**
- * The **`WorkerGlobalScope`** interface of the Web Workers API is an interface representing the scope of any worker.
+ * The **`WorkerGlobalScope`** interface of the Web Workers API is an interface representing the scope of any worker. Workers have no browsing context; this scope contains the information usually conveyed by Window objects — in this case event handlers, the console or the associated WorkerNavigator object. Each WorkerGlobalScope has its own event loop.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WorkerGlobalScope)
  */
@@ -23,14 +23,14 @@ private constructor() :
     GlobalScope,
     FontFaceSource {
     /**
-     * The **`location`** read-only property of the WorkerGlobalScope interface returns the WorkerLocation associated with the worker.
+     * The **`location`** read-only property of the WorkerGlobalScope interface returns the WorkerLocation associated with the worker. It is a specific location object, mostly a subset of the Location for browsing scopes, but adapted to workers.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WorkerGlobalScope/location)
      */
     val location: WorkerLocation
 
     /**
-     * The **`navigator`** read-only property of the WorkerGlobalScope interface returns the WorkerNavigator associated with the worker.
+     * The **`navigator`** read-only property of the WorkerGlobalScope interface returns the WorkerNavigator associated with the worker. It is a specific navigator object, mostly a subset of the Navigator for browsing scopes, but adapted to workers.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WorkerGlobalScope/navigator)
      */

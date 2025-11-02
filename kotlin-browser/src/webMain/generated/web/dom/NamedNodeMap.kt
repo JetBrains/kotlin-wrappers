@@ -6,7 +6,7 @@ import js.array.ArrayLike
 import js.iterable.JsIterable
 
 /**
- * The **`NamedNodeMap`** interface represents a collection of Attr objects.
+ * The **`NamedNodeMap`** interface represents a collection of Attr objects. Objects inside a NamedNodeMap are not in any particular order, unlike NodeList, although they may be accessed by an index as in an array.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NamedNodeMap)
  */
@@ -22,14 +22,14 @@ private constructor() :
     override val length: Int
 
     /**
-     * The **`getNamedItem()`** method of the NamedNodeMap interface returns the Attr corresponding to the given name, or `null` if there is no corresponding attribute.
+     * The **`getNamedItem()`** method of the NamedNodeMap interface returns the Attr corresponding to the given name, or null if there is no corresponding attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NamedNodeMap/getNamedItem)
      */
     fun getNamedItem(qualifiedName: String): Attr?
 
     /**
-     * The **`getNamedItemNS()`** method of the NamedNodeMap interface returns the Attr corresponding to the given local name in the given namespace, or `null` if there is no corresponding attribute.
+     * The **`getNamedItemNS()`** method of the NamedNodeMap interface returns the Attr corresponding to the given local name in the given namespace, or null if there is no corresponding attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NamedNodeMap/getNamedItemNS)
      */
@@ -63,14 +63,14 @@ private constructor() :
     ): Attr
 
     /**
-     * The **`setNamedItem()`** method of the NamedNodeMap interface puts the Attr identified by its name in the map.
+     * The **`setNamedItem()`** method of the NamedNodeMap interface puts the Attr identified by its name in the map. If there is already an Attr with the same name in the map, it is replaced.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NamedNodeMap/setNamedItem)
      */
     fun setNamedItem(attr: Attr): Attr?
 
     /**
-     * The **`setNamedItemNS()`** method of the NamedNodeMap interface puts the Attr identified by its name in the map.
+     * The **`setNamedItemNS()`** method of the NamedNodeMap interface puts the Attr identified by its name in the map. If there was already an Attr with the same name in the map, it is replaced.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NamedNodeMap/setNamedItemNS)
      */

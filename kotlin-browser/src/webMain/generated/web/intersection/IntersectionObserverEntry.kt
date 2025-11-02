@@ -35,14 +35,14 @@ private constructor() {
     val intersectionRect: DOMRectReadOnly
 
     /**
-     * The **`isIntersecting`** read-only property of the IntersectionObserverEntry interface is a Boolean value which is `true` if the target element intersects with the intersection observer's root.
+     * The **`isIntersecting`** read-only property of the IntersectionObserverEntry interface is a Boolean value which is true if the target element intersects with the intersection observer's root.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IntersectionObserverEntry/isIntersecting)
      */
     val isIntersecting: Boolean
 
     /**
-     * The **`rootBounds`** read-only property of the IntersectionObserverEntry interface is a DOMRectReadOnly corresponding to the IntersectionObserverEntry.target's root intersection rectangle, offset by the IntersectionObserver.rootMargin if one is specified.
+     * The **`rootBounds`** read-only property of the IntersectionObserverEntry interface is a DOMRectReadOnly corresponding to the target's root intersection rectangle, offset by the IntersectionObserver.rootMargin if one is specified.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IntersectionObserverEntry/rootBounds)
      */

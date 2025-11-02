@@ -9,7 +9,7 @@ import web.pointer.PointerEvent
 import kotlin.js.definedExternally
 
 /**
- * The **`Text`** interface represents a text Node in a DOM tree.
+ * The **`Text`** interface represents a text node in a DOM tree.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Text)
  */
@@ -18,7 +18,7 @@ open external class Text(
 ) : CharacterData,
     Slottable {
     /**
-     * The read-only **`wholeText`** property of the Text interface returns the full text of all Text nodes logically adjacent to the node.
+     * The read-only **`wholeText`** property of the Text interface returns the full text of all Text nodes logically adjacent to the node. The text is concatenated in document order. This allows specifying any text node and obtaining all adjacent text as a single string.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Text/wholeText)
      */

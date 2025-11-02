@@ -3,7 +3,7 @@
 package web.cssom
 
 /**
- * The **`CSSPerspective`** interface of the CSS Typed Object Model API represents the perspective() value of the individual transform property in CSS.
+ * The **`CSSPerspective`** interface of the CSS Typed Object Model API represents the perspective() value of the individual transform property in CSS. It inherits properties and methods from its parent CSSTransformValue.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSPerspective)
  */

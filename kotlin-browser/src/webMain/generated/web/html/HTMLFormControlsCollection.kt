@@ -6,7 +6,7 @@ import web.dom.Element
 import kotlin.js.JsAny
 
 /**
- * The **`HTMLFormControlsCollection`** interface represents a _collection_ of HTML _form control elements_, returned by the HTMLFormElement interface's HTMLFormElement.elements property.
+ * The **`HTMLFormControlsCollection`** interface represents a collection of HTML form control elements, returned by the HTMLFormElement interface's elements property.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFormControlsCollection)
  */
@@ -17,7 +17,7 @@ private constructor() :
     override fun item(index: Int): Element?
 
     /**
-     * The **`HTMLFormControlsCollection.namedItem()`** method returns the RadioNodeList or the Element in the collection whose `name` or `id` match the specified name, or `null` if no node matches.
+     * The **`HTMLFormControlsCollection.namedItem()`** method returns the RadioNodeList or the Element in the collection whose name or id match the specified name, or null if no node matches.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFormControlsCollection/namedItem)
      */

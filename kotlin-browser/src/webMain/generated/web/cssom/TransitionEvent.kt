@@ -16,7 +16,7 @@ open external class TransitionEvent(
     init: TransitionEventInit = definedExternally,
 ) : Event {
     /**
-     * The **`TransitionEvent.elapsedTime`** read-only property is a `float` giving the amount of time the animation has been running, in seconds, when this event fired.
+     * The **`TransitionEvent.elapsedTime`** read-only property is a float giving the amount of time the animation has been running, in seconds, when this event fired. This value is not affected by the transition-delay property.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TransitionEvent/elapsedTime)
      */
@@ -30,7 +30,7 @@ open external class TransitionEvent(
     val propertyName: String
 
     /**
-     * The **`TransitionEvent.pseudoElement`** read-only property is a string, starting with `'::'`, containing the name of the pseudo-element the animation runs on.
+     * The **`TransitionEvent.pseudoElement`** read-only property is a string, starting with '::', containing the name of the pseudo-element the animation runs on. If the transition doesn't run on a pseudo-element but on the element, an empty string: "".
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TransitionEvent/pseudoElement)
      */

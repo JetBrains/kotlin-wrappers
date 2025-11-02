@@ -10,7 +10,7 @@ import kotlin.js.JsName
 import kotlin.js.definedExternally
 
 /**
- * The **`FileSystemFileHandle`** interface of the File System API represents a handle to a file system entry.
+ * The **`FileSystemFileHandle`** interface of the File System API represents a handle to a file system entry. The interface is accessed through the window.showOpenFilePicker() method.
  * Available only in secure contexts.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemFileHandle)
@@ -22,7 +22,7 @@ private constructor() :
     override val kind: FileSystemHandleKind.file
 
     /**
-     * The **`createSyncAccessHandle()`** method of the FileSystemFileHandle interface returns a Promise which resolves to a FileSystemSyncAccessHandle object that can be used to synchronously read from and write to a file.
+     * The **`createSyncAccessHandle()`** method of the FileSystemFileHandle interface returns a Promise which resolves to a FileSystemSyncAccessHandle object that can be used to synchronously read from and write to a file. The synchronous nature of this method brings performance advantages, but it is only usable inside dedicated Web Workers for files within the origin private file system.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemFileHandle/createSyncAccessHandle)
      */
@@ -30,7 +30,7 @@ private constructor() :
     fun createSyncAccessHandleAsync(): Promise<FileSystemSyncAccessHandle>
 
     /**
-     * The **`createWritable()`** method of the FileSystemFileHandle interface creates a FileSystemWritableFileStream that can be used to write to a file.
+     * The **`createWritable()`** method of the FileSystemFileHandle interface creates a FileSystemWritableFileStream that can be used to write to a file. The method returns a Promise which resolves to this created stream.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemFileHandle/createWritable)
      */
@@ -47,7 +47,7 @@ private constructor() :
 }
 
 /**
- * The **`createSyncAccessHandle()`** method of the FileSystemFileHandle interface returns a Promise which resolves to a FileSystemSyncAccessHandle object that can be used to synchronously read from and write to a file.
+ * The **`createSyncAccessHandle()`** method of the FileSystemFileHandle interface returns a Promise which resolves to a FileSystemSyncAccessHandle object that can be used to synchronously read from and write to a file. The synchronous nature of this method brings performance advantages, but it is only usable inside dedicated Web Workers for files within the origin private file system.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemFileHandle/createSyncAccessHandle)
  */
@@ -56,7 +56,7 @@ suspend inline fun FileSystemFileHandle.createSyncAccessHandle(): FileSystemSync
 }
 
 /**
- * The **`createWritable()`** method of the FileSystemFileHandle interface creates a FileSystemWritableFileStream that can be used to write to a file.
+ * The **`createWritable()`** method of the FileSystemFileHandle interface creates a FileSystemWritableFileStream that can be used to write to a file. The method returns a Promise which resolves to this created stream.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemFileHandle/createWritable)
  */
@@ -65,7 +65,7 @@ suspend inline fun FileSystemFileHandle.createWritable(): FileSystemWritableFile
 }
 
 /**
- * The **`createWritable()`** method of the FileSystemFileHandle interface creates a FileSystemWritableFileStream that can be used to write to a file.
+ * The **`createWritable()`** method of the FileSystemFileHandle interface creates a FileSystemWritableFileStream that can be used to write to a file. The method returns a Promise which resolves to this created stream.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemFileHandle/createWritable)
  */

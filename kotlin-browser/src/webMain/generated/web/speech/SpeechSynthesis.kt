@@ -22,21 +22,21 @@ private constructor() :
     var onvoiceschanged: EventHandler<Event, SpeechSynthesis, SpeechSynthesis>?
 
     /**
-     * The **`paused`** read-only property of the SpeechSynthesis interface is a boolean value that returns `true` if the `SpeechSynthesis` object is in a paused state, or `false` if not.
+     * The **`paused`** read-only property of the SpeechSynthesis interface is a boolean value that returns true if the SpeechSynthesis object is in a paused state, or false if not.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechSynthesis/paused)
      */
     val paused: Boolean
 
     /**
-     * The **`pending`** read-only property of the SpeechSynthesis interface is a boolean value that returns `true` if the utterance queue contains as-yet-unspoken utterances.
+     * The **`pending`** read-only property of the SpeechSynthesis interface is a boolean value that returns true if the utterance queue contains as-yet-unspoken utterances.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechSynthesis/pending)
      */
     val pending: Boolean
 
     /**
-     * The **`speaking`** read-only property of the SpeechSynthesis interface is a boolean value that returns `true` if an utterance is currently in the process of being spoken — even if `SpeechSynthesis` is in a SpeechSynthesis/pause() state.
+     * The **`speaking`** read-only property of the SpeechSynthesis interface is a boolean value that returns true if an utterance is currently in the process of being spoken — even if SpeechSynthesis is in a paused state.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechSynthesis/speaking)
      */
@@ -57,21 +57,21 @@ private constructor() :
     fun getVoices(): ReadonlyArray<SpeechSynthesisVoice>
 
     /**
-     * The **`pause()`** method of the SpeechSynthesis interface puts the `SpeechSynthesis` object into a paused state.
+     * The **`pause()`** method of the SpeechSynthesis interface puts the SpeechSynthesis object into a paused state.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechSynthesis/pause)
      */
     fun pause()
 
     /**
-     * The **`resume()`** method of the SpeechSynthesis interface puts the `SpeechSynthesis` object into a non-paused state: resumes it if it was already paused.
+     * The **`resume()`** method of the SpeechSynthesis interface puts the SpeechSynthesis object into a non-paused state: resumes it if it was already paused.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechSynthesis/resume)
      */
     fun resume()
 
     /**
-     * The **`speak()`** method of the SpeechSynthesis interface adds an SpeechSynthesisUtterance to the utterance queue; it will be spoken when any other utterances queued before it have been spoken.
+     * The **`speak()`** method of the SpeechSynthesis interface adds an utterance to the utterance queue; it will be spoken when any other utterances queued before it have been spoken.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechSynthesis/speak)
      */

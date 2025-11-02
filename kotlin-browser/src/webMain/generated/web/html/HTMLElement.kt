@@ -23,7 +23,7 @@ import web.popover.ToggleEvent
 import kotlin.js.definedExternally
 
 /**
- * The **`HTMLElement`** interface represents any HTML element.
+ * The **`HTMLElement`** interface represents any HTML element. Some elements directly implement this interface, while others implement it via an interface that inherits it.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement)
  */
@@ -49,7 +49,7 @@ protected constructor() :
     val accessKeyLabel: String
 
     /**
-     * The **`autocapitalize`** property of the HTMLElement interface represents the element's capitalization behavior for user input.
+     * The **`autocapitalize`** property of the HTMLElement interface represents the element's capitalization behavior for user input. It is available on all HTML elements, though it doesn't affect all of them, including:
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/autocapitalize)
      */
@@ -63,7 +63,7 @@ protected constructor() :
     var autocorrect: Boolean
 
     /**
-     * The **`HTMLElement.dir`** property indicates the text writing directionality of the content of the current element.
+     * The **`HTMLElement.dir`** property indicates the text writing directionality of the content of the current element. It reflects the element's dir attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/dir)
      */
@@ -77,14 +77,14 @@ protected constructor() :
     var draggable: Boolean
 
     /**
-     * The HTMLElement property **`hidden`** reflects the value of the element's `hidden` attribute.
+     * The HTMLElement property **`hidden`** reflects the value of the element's hidden attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/hidden)
      */
     var hidden: Boolean
 
     /**
-     * The HTMLElement property **`inert`** reflects the value of the element's `inert` attribute.
+     * The HTMLElement property **`inert`** reflects the value of the element's inert attribute. It is a boolean value that, when present, makes the browser "ignore" user input events for the element, including focus events and events from assistive technologies. The browser may also ignore page search and text selection in the element. This can be useful when building UIs such as modals where you would want to "trap" the focus inside the modal when it's visible.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/inert)
      */
@@ -98,7 +98,7 @@ protected constructor() :
     var innerText: String
 
     /**
-     * The **`lang`** property of the HTMLElement interface indicates the base language of an element's attribute values and text content, in the form of a BCP 47 language tag.
+     * The **`lang`** property of the HTMLElement interface indicates the base language of an element's attribute values and text content, in the form of a BCP 47 language tag. It reflects the element's lang attribute; the xml:lang attribute does not affect this property.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/lang)
      */
@@ -112,7 +112,7 @@ protected constructor() :
     val offsetHeight: Int
 
     /**
-     * The **`offsetLeft`** read-only property of the HTMLElement interface returns the number of pixels that the _upper left corner_ of the current element is offset to the left within the HTMLElement.offsetParent node.
+     * The **`offsetLeft`** read-only property of the HTMLElement interface returns the number of pixels that the upper left corner of the current element is offset to the left within the HTMLElement.offsetParent node.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/offsetLeft)
      */
@@ -126,7 +126,7 @@ protected constructor() :
     val offsetParent: Element?
 
     /**
-     * The **`offsetTop`** read-only property of the HTMLElement interface returns the distance from the outer border of the current element (including its margin) to the top padding edge of the HTMLelement.offsetParent, the _closest positioned_ ancestor element.
+     * The **`offsetTop`** read-only property of the HTMLElement interface returns the distance from the outer border of the current element (including its margin) to the top padding edge of the offsetParent, the closest positioned ancestor element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/offsetTop)
      */
@@ -140,21 +140,21 @@ protected constructor() :
     val offsetWidth: Int
 
     /**
-     * The **`outerText`** property of the HTMLElement interface returns the same value as HTMLElement.innerText.
+     * The **`outerText`** property of the HTMLElement interface returns the same value as HTMLElement.innerText. When used as a setter it replaces the whole current node with the given text (this differs from innerText, which replaces the content inside the current node).
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/outerText)
      */
     var outerText: String
 
     /**
-     * The **`popover`** property of the HTMLElement interface gets and sets an element's popover state via JavaScript (`'auto'`, `'hint'`, or `'manual'`), and can be used for feature detection.
+     * The **`popover`** property of the HTMLElement interface gets and sets an element's popover state via JavaScript ("auto", "hint", or "manual"), and can be used for feature detection.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/popover)
      */
     var popover: Popover?
 
     /**
-     * The **`spellcheck`** property of the HTMLElement interface represents a boolean value that controls the spell-checking hint.
+     * The **`spellcheck`** property of the HTMLElement interface represents a boolean value that controls the spell-checking hint. It is available on all HTML elements, though it doesn't affect all of them.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/spellcheck)
      */
@@ -182,35 +182,35 @@ protected constructor() :
     var writingSuggestions: String
 
     /**
-     * The **`HTMLElement.attachInternals()`** method returns an ElementInternals object.
+     * The **`HTMLElement.attachInternals()`** method returns an ElementInternals object. This method allows a custom element to participate in HTML forms. The ElementInternals interface provides utilities for working with these elements in the same way you would work with any standard HTML form element, and also exposes the Accessibility Object Model to the element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/attachInternals)
      */
     fun attachInternals(): ElementInternals
 
     /**
-     * The **`HTMLElement.click()`** method simulates a mouse click on an element.
+     * The **`HTMLElement.click()`** method simulates a mouse click on an element. When called on an element, the element's click event is fired (unless its disabled attribute is set).
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/click)
      */
     fun click()
 
     /**
-     * The **`hidePopover()`** method of the HTMLElement interface hides a popover element (i.e., one that has a valid `popover` attribute) by removing it from the top layer and styling it with `display: none`.
+     * The **`hidePopover()`** method of the HTMLElement interface hides a popover element (i.e., one that has a valid popover attribute) by removing it from the top layer and styling it with display: none.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/hidePopover)
      */
     fun hidePopover()
 
     /**
-     * The **`showPopover()`** method of the HTMLElement interface shows a Popover_API element (i.e., one that has a valid `popover` attribute) by adding it to the top layer.
+     * The **`showPopover()`** method of the HTMLElement interface shows a popover element (i.e., one that has a valid popover attribute) by adding it to the top layer.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/showPopover)
      */
     fun showPopover()
 
     /**
-     * The **`togglePopover()`** method of the HTMLElement interface toggles a Popover_API element (i.e., one that has a valid `popover` attribute) between the hidden and showing states.
+     * The **`togglePopover()`** method of the HTMLElement interface toggles a popover element (i.e., one that has a valid popover attribute) between the hidden and showing states.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/togglePopover)
      */

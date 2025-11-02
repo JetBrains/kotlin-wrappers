@@ -55,14 +55,14 @@ open external class EventSource(
     val readyState: ReadyState
 
     /**
-     * The **`withCredentials`** read-only property of the EventSource interface returns a boolean value indicating whether the `EventSource` object was instantiated with CORS credentials set.
+     * The **`withCredentials`** read-only property of the EventSource interface returns a boolean value indicating whether the EventSource object was instantiated with CORS credentials set.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/EventSource/withCredentials)
      */
     val withCredentials: Boolean
 
     /**
-     * The **`close()`** method of the EventSource interface closes the connection, if one is made, and sets the EventSource.readyState attribute to `2` (closed).
+     * The **`close()`** method of the EventSource interface closes the connection, if one is made, and sets the EventSource.readyState attribute to 2 (closed).
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/EventSource/close)
      */

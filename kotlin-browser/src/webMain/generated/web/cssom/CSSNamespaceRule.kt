@@ -18,7 +18,7 @@ private constructor() :
     val namespaceURI: String
 
     /**
-     * The read-only **`prefix`** property of the CSSNamespaceRule returns a string with the name of the prefix associated to this namespace.
+     * The read-only **`prefix`** property of the CSSNamespaceRule returns a string with the name of the prefix associated to this namespace. If there is no such prefix, it returns an empty string.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSNamespaceRule/prefix)
      */

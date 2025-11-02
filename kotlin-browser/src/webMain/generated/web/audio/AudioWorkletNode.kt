@@ -9,7 +9,7 @@ import web.messaging.MessagePort
 import kotlin.js.definedExternally
 
 /**
- * The **`AudioWorkletNode`** interface of the Web Audio API represents a base class for a user-defined AudioNode, which can be connected to an audio routing graph along with other nodes.
+ * The **`AudioWorkletNode`** interface of the Web Audio API represents a base class for a user-defined AudioNode, which can be connected to an audio routing graph along with other nodes. It has an associated AudioWorkletProcessor, which does the actual audio processing in a Web Audio rendering thread.
  * Available only in secure contexts.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioWorkletNode)
@@ -25,14 +25,14 @@ open external class AudioWorkletNode(
     var onprocessorerror: EventHandler<ErrorEvent, AudioWorkletNode, AudioWorkletNode>?
 
     /**
-     * The read-only **`parameters`** property of the AudioWorkletNode interface returns the associated AudioParamMap — that is, a `Map`-like collection of AudioParam objects.
+     * The read-only **`parameters`** property of the AudioWorkletNode interface returns the associated AudioParamMap — that is, a Map-like collection of AudioParam objects. They are instantiated during creation of the underlying AudioWorkletProcessor according to its parameterDescriptors static getter.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioWorkletNode/parameters)
      */
     val parameters: AudioParamMap
 
     /**
-     * The read-only **`port`** property of the AudioWorkletNode interface returns the associated MessagePort.
+     * The read-only **`port`** property of the AudioWorkletNode interface returns the associated MessagePort. It can be used to communicate between the node and its associated AudioWorkletProcessor.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioWorkletNode/port)
      */

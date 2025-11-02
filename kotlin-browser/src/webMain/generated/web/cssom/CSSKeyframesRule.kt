@@ -6,7 +6,7 @@ import js.array.ArrayLike
 import js.iterable.JsIterable
 
 /**
- * The **`CSSKeyframesRule`** interface describes an object representing a complete set of keyframes for a CSS animation.
+ * The **`CSSKeyframesRule`** interface describes an object representing a complete set of keyframes for a CSS animation. It corresponds to the contents of a whole @keyframes at-rule.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSKeyframesRule)
  */
@@ -23,7 +23,7 @@ private constructor() :
     val cssRules: CSSRuleList
 
     /**
-     * The read-only **`length`** property of the CSSKeyframeRule interface returns the number of CSSKeyframeRule objects in its list.
+     * The read-only **`length`** property of the CSSKeyframeRule interface returns the number of CSSKeyframeRule objects in its list. You can then access each keyframe rule by its index directly on the CSSKeyframeRule object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSKeyframesRule/length)
      */

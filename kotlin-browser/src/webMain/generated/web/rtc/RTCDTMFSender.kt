@@ -8,7 +8,7 @@ import web.events.EventTarget
 import kotlin.js.definedExternally
 
 /**
- * The **`RTCDTMFSender`** interface provides a mechanism for transmitting DTMF codes on a WebRTC RTCPeerConnection.
+ * The **`RTCDTMFSender`** interface provides a mechanism for transmitting DTMF codes on a WebRTC RTCPeerConnection. You gain access to the connection's RTCDTMFSender through the RTCRtpSender.dtmf property on the audio track you wish to send DTMF with.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDTMFSender)
  */
@@ -16,7 +16,7 @@ open external class RTCDTMFSender
 private constructor() :
     EventTarget {
     /**
-     * The **`canInsertDTMF`** read-only property of the RTCDTMFSender interface returns a boolean value which indicates whether the `RTCDTMFSender` is capable of sending DTMF tones over the RTCPeerConnection.
+     * The **`canInsertDTMF`** read-only property of the RTCDTMFSender interface returns a boolean value which indicates whether the RTCDTMFSender is capable of sending DTMF tones over the RTCPeerConnection.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDTMFSender/canInsertDTMF)
      */
@@ -28,7 +28,7 @@ private constructor() :
     var ontonechange: EventHandler<RTCDTMFToneChangeEvent, RTCDTMFSender, RTCDTMFSender>?
 
     /**
-     * The RTCDTMFSender interface's toneBuffer property returns a string containing a list of the DTMF tones currently queued for sending to the remote peer over the RTCPeerConnection.
+     * The RTCDTMFSender interface's **`toneBuffer`** property returns a string containing a list of the DTMF tones currently queued for sending to the remote peer over the RTCPeerConnection. To place tones into the buffer, call insertDTMF().
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCDTMFSender/toneBuffer)
      */

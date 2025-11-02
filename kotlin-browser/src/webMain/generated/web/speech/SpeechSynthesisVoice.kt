@@ -3,14 +3,14 @@
 package web.speech
 
 /**
- * The **`SpeechSynthesisVoice`** interface of the Web Speech API represents a voice that the system supports.
+ * The **`SpeechSynthesisVoice`** interface of the Web Speech API represents a voice that the system supports. Every SpeechSynthesisVoice has its own relative speech service including information about language, name and URI.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechSynthesisVoice)
  */
 open external class SpeechSynthesisVoice
 private constructor() {
     /**
-     * The **`default`** read-only property of the SpeechSynthesisVoice interface returns a boolean value indicating whether the voice is the default voice for the current app (`true`), or not (`false`.)
+     * The **`default`** read-only property of the SpeechSynthesisVoice interface returns a boolean value indicating whether the voice is the default voice for the current app (true), or not (false.)
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechSynthesisVoice/default)
      */
@@ -24,7 +24,7 @@ private constructor() {
     val lang: String
 
     /**
-     * The **`localService`** read-only property of the SpeechSynthesisVoice interface returns a boolean value indicating whether the voice is supplied by a local speech synthesizer service (`true`), or a remote speech synthesizer service (`false`.)
+     * The **`localService`** read-only property of the SpeechSynthesisVoice interface returns a boolean value indicating whether the voice is supplied by a local speech synthesizer service (true), or a remote speech synthesizer service (false.)
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechSynthesisVoice/localService)
      */

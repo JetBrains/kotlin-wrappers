@@ -11,7 +11,7 @@ open external class CSSStyleRule
 private constructor() :
     CSSGroupingRule {
     /**
-     * The **`selectorText`** property of the CSSStyleRule interface gets and sets the selectors associated with the `CSSStyleRule`.
+     * The **`selectorText`** property of the CSSStyleRule interface gets and sets the selectors associated with the CSSStyleRule.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleRule/selectorText)
      */

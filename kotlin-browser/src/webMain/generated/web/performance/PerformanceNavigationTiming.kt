@@ -6,7 +6,7 @@ import web.time.DOMHighResTimeStamp
 import kotlin.js.JsAny
 
 /**
- * The **`PerformanceNavigationTiming`** interface provides methods and properties to store and retrieve metrics regarding the browser's document navigation events.
+ * The **`PerformanceNavigationTiming`** interface provides methods and properties to store and retrieve metrics regarding the browser's document navigation events. For example, this interface can be used to determine how much time it takes to load or unload a document.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceNavigationTiming)
  */
@@ -14,42 +14,42 @@ open external class PerformanceNavigationTiming
 private constructor() :
     PerformanceResourceTiming {
     /**
-     * The **`domComplete`** read-only property returns a DOMHighResTimeStamp representing the time immediately before the user agent sets the document's `readyState` to `'complete'`.
+     * The **`domComplete`** read-only property returns a DOMHighResTimeStamp representing the time immediately before the user agent sets the document's readyState to "complete".
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceNavigationTiming/domComplete)
      */
     val domComplete: DOMHighResTimeStamp
 
     /**
-     * The **`domContentLoadedEventEnd`** read-only property returns a DOMHighResTimeStamp representing the time immediately after the current document's `DOMContentLoaded` event handler completes.
+     * The **`domContentLoadedEventEnd`** read-only property returns a DOMHighResTimeStamp representing the time immediately after the current document's DOMContentLoaded event handler completes.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceNavigationTiming/domContentLoadedEventEnd)
      */
     val domContentLoadedEventEnd: DOMHighResTimeStamp
 
     /**
-     * The **`domContentLoadedEventStart`** read-only property returns a DOMHighResTimeStamp representing the time immediately before the current document's `DOMContentLoaded` event handler starts.
+     * The **`domContentLoadedEventStart`** read-only property returns a DOMHighResTimeStamp representing the time immediately before the current document's DOMContentLoaded event handler starts.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceNavigationTiming/domContentLoadedEventStart)
      */
     val domContentLoadedEventStart: DOMHighResTimeStamp
 
     /**
-     * The **`domInteractive`** read-only property returns a DOMHighResTimeStamp representing the time immediately before the user agent sets the document's `readyState` to `'interactive'`.
+     * The **`domInteractive`** read-only property returns a DOMHighResTimeStamp representing the time immediately before the user agent sets the document's readyState to "interactive".
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceNavigationTiming/domInteractive)
      */
     val domInteractive: DOMHighResTimeStamp
 
     /**
-     * The **`loadEventEnd`** read-only property returns a DOMHighResTimeStamp representing the time immediately after the current document's `load` event handler completes.
+     * The **`loadEventEnd`** read-only property returns a DOMHighResTimeStamp representing the time immediately after the current document's load event handler completes.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceNavigationTiming/loadEventEnd)
      */
     val loadEventEnd: DOMHighResTimeStamp
 
     /**
-     * The **`loadEventStart`** read-only property returns a DOMHighResTimeStamp representing the time immediately before the current document's `load` event handler starts.
+     * The **`loadEventStart`** read-only property returns a DOMHighResTimeStamp representing the time immediately before the current document's load event handler starts.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceNavigationTiming/loadEventStart)
      */
@@ -70,21 +70,21 @@ private constructor() :
     val type: NavigationTimingType
 
     /**
-     * The **`unloadEventEnd`** read-only property returns a DOMHighResTimeStamp representing the time immediately after the previous document's `unload` event handler completes.
+     * The **`unloadEventEnd`** read-only property returns a DOMHighResTimeStamp representing the time immediately after the previous document's unload event handler completes.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceNavigationTiming/unloadEventEnd)
      */
     val unloadEventEnd: DOMHighResTimeStamp
 
     /**
-     * The **`unloadEventStart`** read-only property returns a DOMHighResTimeStamp representing the time immediately before the previous document's `unload` event handler starts.
+     * The **`unloadEventStart`** read-only property returns a DOMHighResTimeStamp representing the time immediately before the previous document's unload event handler starts.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceNavigationTiming/unloadEventStart)
      */
     val unloadEventStart: DOMHighResTimeStamp
 
     /**
-     * The **`toJSON()`** method of the PerformanceNavigationTiming interface is a Serialization; it returns a JSON representation of the PerformanceNavigationTiming object.
+     * The **`toJSON()`** method of the PerformanceNavigationTiming interface is a serializer; it returns a JSON representation of the PerformanceNavigationTiming object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceNavigationTiming/toJSON)
      */

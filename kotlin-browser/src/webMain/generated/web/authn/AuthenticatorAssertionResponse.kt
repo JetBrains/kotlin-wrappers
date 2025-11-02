@@ -5,7 +5,7 @@ package web.authn
 import js.buffer.ArrayBuffer
 
 /**
- * The **`AuthenticatorAssertionResponse`** interface of the Web Authentication API contains a digital signature from the private key of a particular WebAuthn credential.
+ * The **`AuthenticatorAssertionResponse`** interface of the Web Authentication API contains a digital signature from the private key of a particular WebAuthn credential. The relying party's server can verify this signature to authenticate a user, for example when they sign in.
  * Available only in secure contexts.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AuthenticatorAssertionResponse)
@@ -21,14 +21,14 @@ private constructor() :
     val authenticatorData: ArrayBuffer
 
     /**
-     * The **`signature`** read-only property of the AuthenticatorAssertionResponse interface is an ArrayBuffer object which is the signature of the authenticator for both AuthenticatorAssertionResponse.authenticatorData and a SHA-256 hash of the client data (AuthenticatorResponse.clientDataJSON).
+     * The **`signature`** read-only property of the AuthenticatorAssertionResponse interface is an ArrayBuffer object which is the signature of the authenticator for both AuthenticatorAssertionResponse.authenticatorData and a SHA-256 hash of the client data (AuthenticatorAssertionResponse.clientDataJSON).
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AuthenticatorAssertionResponse/signature)
      */
     val signature: ArrayBuffer
 
     /**
-     * The **`userHandle`** read-only property of the AuthenticatorAssertionResponse interface is an ArrayBuffer object providing an opaque identifier for the given user.
+     * The **`userHandle`** read-only property of the AuthenticatorAssertionResponse interface is an ArrayBuffer object providing an opaque identifier for the given user. Such an identifier can be used by the relying party's server to link the user account with its corresponding credentials and other data.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AuthenticatorAssertionResponse/userHandle)
      */

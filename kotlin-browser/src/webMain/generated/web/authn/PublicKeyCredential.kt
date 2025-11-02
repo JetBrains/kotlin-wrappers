@@ -12,7 +12,7 @@ import kotlin.js.JsName
 import kotlin.js.toBoolean
 
 /**
- * The **`PublicKeyCredential`** interface provides information about a public key / private key pair, which is a credential for logging in to a service using an un-phishable and data-breach resistant asymmetric key pair instead of a password.
+ * The **`PublicKeyCredential`** interface provides information about a public key / private key pair, which is a credential for logging in to a service using an un-phishable and data-breach resistant asymmetric key pair instead of a password. It inherits from Credential, and is part of the Web Authentication API extension to the Credential Management API.
  * Available only in secure contexts.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PublicKeyCredential)
@@ -21,7 +21,7 @@ open external class PublicKeyCredential
 private constructor() :
     Credential {
     /**
-     * The **`authenticatorAttachment`** read-only property of the PublicKeyCredential interface is a string that indicates the general category of authenticator used during the associated CredentialsContainer.create() or CredentialsContainer.get() call.
+     * The **`authenticatorAttachment`** read-only property of the PublicKeyCredential interface is a string that indicates the general category of authenticator used during the associated navigator.credentials.create() or navigator.credentials.get() call.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PublicKeyCredential/authenticatorAttachment)
      */
@@ -35,7 +35,7 @@ private constructor() :
     val rawId: ArrayBuffer
 
     /**
-     * The **`response`** read-only property of the PublicKeyCredential interface is an AuthenticatorResponse object which is sent from the authenticator to the user agent for the creation/fetching of credentials.
+     * The **`response`** read-only property of the PublicKeyCredential interface is an AuthenticatorResponse object which is sent from the authenticator to the user agent for the creation/fetching of credentials. The information contained in this response will be used by the relying party's server to verify the demand is legitimate.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PublicKeyCredential/response)
      */
@@ -65,7 +65,7 @@ private constructor() :
         fun getClientCapabilitiesAsync(): Promise<PublicKeyCredentialClientCapabilities>
 
         /**
-         * The **`isConditionalMediationAvailable()`** static method of the PublicKeyCredential interface returns a Promise which resolves to `true` if conditional mediation is available.
+         * The **`isConditionalMediationAvailable()`** static method of the PublicKeyCredential interface returns a Promise which resolves to true if conditional mediation is available.
          *
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PublicKeyCredential/isConditionalMediationAvailable_static)
          */
@@ -73,7 +73,7 @@ private constructor() :
         fun isConditionalMediationAvailableAsync(): Promise<JsBoolean>
 
         /**
-         * The **`isUserVerifyingPlatformAuthenticatorAvailable()`** static method of the PublicKeyCredential interface returns a Promise which resolves to `true` if a user-verifying platform authenticator is present.
+         * The **`isUserVerifyingPlatformAuthenticatorAvailable()`** static method of the PublicKeyCredential interface returns a Promise which resolves to true if a user-verifying platform authenticator is present.
          *
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PublicKeyCredential/isUserVerifyingPlatformAuthenticatorAvailable_static)
          */
@@ -130,7 +130,7 @@ suspend inline fun PublicKeyCredential.Companion.getClientCapabilities(): Public
 }
 
 /**
- * The **`isConditionalMediationAvailable()`** static method of the PublicKeyCredential interface returns a Promise which resolves to `true` if conditional mediation is available.
+ * The **`isConditionalMediationAvailable()`** static method of the PublicKeyCredential interface returns a Promise which resolves to true if conditional mediation is available.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PublicKeyCredential/isConditionalMediationAvailable_static)
  */
@@ -139,7 +139,7 @@ suspend inline fun PublicKeyCredential.Companion.isConditionalMediationAvailable
 }
 
 /**
- * The **`isUserVerifyingPlatformAuthenticatorAvailable()`** static method of the PublicKeyCredential interface returns a Promise which resolves to `true` if a user-verifying platform authenticator is present.
+ * The **`isUserVerifyingPlatformAuthenticatorAvailable()`** static method of the PublicKeyCredential interface returns a Promise which resolves to true if a user-verifying platform authenticator is present.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PublicKeyCredential/isUserVerifyingPlatformAuthenticatorAvailable_static)
  */

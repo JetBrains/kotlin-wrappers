@@ -8,7 +8,7 @@ import kotlin.js.JsAny
 import kotlin.js.definedExternally
 
 /**
- * **`PopStateEvent`** is an interface for the Window/popstate_event event.
+ * **`PopStateEvent`** is an interface for the popstate event.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PopStateEvent)
  */
@@ -17,7 +17,7 @@ open external class PopStateEvent(
     init: PopStateEventInit = definedExternally,
 ) : Event {
     /**
-     * The **`hasUAVisualTransition`** read-only property of the PopStateEvent interface returns `true` if the user agent performed a visual transition for this navigation before dispatching this event, or `false` otherwise.
+     * The **`hasUAVisualTransition`** read-only property of the PopStateEvent interface returns true if the user agent performed a visual transition for this navigation before dispatching this event, or false otherwise.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PopStateEvent/hasUAVisualTransition)
      */

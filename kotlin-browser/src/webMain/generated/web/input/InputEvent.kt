@@ -19,7 +19,7 @@ open external class InputEvent(
     init: InputEventInit = definedExternally,
 ) : UIEvent {
     /**
-     * The **`data`** read-only property of the InputEvent interface returns a string with inserted characters.
+     * The **`data`** read-only property of the InputEvent interface returns a string with inserted characters. This may be an empty string if the change doesn't insert text, such as when characters are deleted.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/InputEvent/data)
      */
@@ -33,14 +33,14 @@ open external class InputEvent(
     val dataTransfer: DataTransfer?
 
     /**
-     * The **`inputType`** read-only property of the InputEvent interface returns the type of change made to editable content.
+     * The **`inputType`** read-only property of the InputEvent interface returns the type of change made to editable content. Possible changes include for example inserting, deleting, and formatting text.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/InputEvent/inputType)
      */
     val inputType: String
 
     /**
-     * The **`InputEvent.isComposing`** read-only property returns a boolean value indicating if the event is fired after Element/compositionstart_event and before Element/compositionend_event.
+     * The **`InputEvent.isComposing`** read-only property returns a boolean value indicating if the event is fired after compositionstart and before compositionend.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/InputEvent/isComposing)
      */

@@ -20,7 +20,7 @@ open external class AbortController :
     override val signal: AbortSignal
 
     /**
-     * The **`abort()`** method of the AbortController interface aborts an asynchronous operation before it has completed.
+     * The **`abort()`** method of the AbortController interface aborts an asynchronous operation before it has completed. This is able to abort fetch requests, the consumption of any response bodies, or streams.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AbortController/abort)
      */

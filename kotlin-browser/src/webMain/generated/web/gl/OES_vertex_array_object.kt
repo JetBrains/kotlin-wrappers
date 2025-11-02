@@ -25,7 +25,7 @@ sealed external interface OES_vertex_array_object {
     fun deleteVertexArrayOES(arrayObject: WebGLVertexArrayObjectOES?)
 
     /**
-     * The **`OES_vertex_array_object.isVertexArrayOES()`** method of the WebGL API returns `true` if the passed object is a WebGLVertexArrayObject object.
+     * The **`OES_vertex_array_object.isVertexArrayOES()`** method of the WebGL API returns true if the passed object is a WebGLVertexArrayObject object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OES_vertex_array_object/isVertexArrayOES)
      */

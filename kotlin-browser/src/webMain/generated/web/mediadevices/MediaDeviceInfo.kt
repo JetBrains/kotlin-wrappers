@@ -27,21 +27,21 @@ private constructor() {
     val groupId: String
 
     /**
-     * The **`kind`** read-only property of the MediaDeviceInfo interface returns an enumerated value, that is either `'videoinput'`, `'audioinput'` or `'audiooutput'`.
+     * The **`kind`** read-only property of the MediaDeviceInfo interface returns an enumerated value, that is either "videoinput", "audioinput" or "audiooutput".
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaDeviceInfo/kind)
      */
     val kind: MediaDeviceKind
 
     /**
-     * The **`label`** read-only property of the MediaDeviceInfo interface returns a string describing this device (for example 'External USB Webcam').
+     * The **`label`** read-only property of the MediaDeviceInfo interface returns a string describing this device (for example "External USB Webcam").
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaDeviceInfo/label)
      */
     val label: String
 
     /**
-     * The **`toJSON()`** method of the MediaDeviceInfo interface is a Serialization; it returns a JSON representation of the MediaDeviceInfo object.
+     * The **`toJSON()`** method of the MediaDeviceInfo interface is a serializer; it returns a JSON representation of the MediaDeviceInfo object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaDeviceInfo/toJSON)
      */

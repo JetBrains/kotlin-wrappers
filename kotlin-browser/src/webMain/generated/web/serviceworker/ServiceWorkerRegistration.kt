@@ -19,7 +19,7 @@ import kotlin.js.definedExternally
 import kotlin.js.toBoolean
 
 /**
- * The **`ServiceWorkerRegistration`** interface of the Service Worker API represents the service worker registration.
+ * The **`ServiceWorkerRegistration`** interface of the Service Worker API represents the service worker registration. You register a service worker to control one or more pages that share the same origin.
  * Available only in secure contexts.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration)
@@ -28,21 +28,21 @@ open external class ServiceWorkerRegistration
 private constructor() :
     EventTarget {
     /**
-     * The **`active`** read-only property of the ServiceWorkerRegistration interface returns a service worker whose ServiceWorker.state is `activating` or `activated`.
+     * The **`active`** read-only property of the ServiceWorkerRegistration interface returns a service worker whose ServiceWorker.state is activating or activated. This property is initially set to null.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/active)
      */
     val active: ServiceWorker?
 
     /**
-     * The **`cookies`** read-only property of the ServiceWorkerRegistration interface returns a reference to the CookieStoreManager interface, which enables a web app to subscribe to and unsubscribe from cookie change events in a service worker.
+     * The **`cookies`** read-only property of the ServiceWorkerRegistration interface returns a reference to the CookieStoreManager interface, which enables a web app to subscribe to and unsubscribe from cookie change events in a service worker. This is an entry point for the Cookie Store API.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/cookies)
      */
     val cookies: CookieStoreManager
 
     /**
-     * The **`installing`** read-only property of the ServiceWorkerRegistration interface returns a service worker whose ServiceWorker.state is `installing`.
+     * The **`installing`** read-only property of the ServiceWorkerRegistration interface returns a service worker whose ServiceWorker.state is installing. This property is initially set to null.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/installing)
      */
@@ -61,28 +61,28 @@ private constructor() :
     var onupdatefound: EventHandler<Event, ServiceWorkerRegistration, ServiceWorkerRegistration>?
 
     /**
-     * The **`scope`** read-only property of the ServiceWorkerRegistration interface returns a string representing a URL that defines a service worker's registration scope; that is, the range of URLs a service worker can control.
+     * The **`scope`** read-only property of the ServiceWorkerRegistration interface returns a string representing a URL that defines a service worker's registration scope; that is, the range of URLs a service worker can control. This is set using the scope parameter specified in the call to ServiceWorkerContainer.register() which registered the service worker.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/scope)
      */
     val scope: String
 
     /**
-     * The **`updateViaCache`** read-only property of the ServiceWorkerRegistration interface returns the value of the setting used to determine the circumstances in which the browser will consult the HTTP cache when it tries to update the service worker or any scripts that are imported via WorkerGlobalScope.importScripts.
+     * The **`updateViaCache`** read-only property of the ServiceWorkerRegistration interface returns the value of the setting used to determine the circumstances in which the browser will consult the HTTP cache when it tries to update the service worker or any scripts that are imported via importScripts().
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/updateViaCache)
      */
     val updateViaCache: ServiceWorkerUpdateViaCache
 
     /**
-     * The **`waiting`** read-only property of the ServiceWorkerRegistration interface returns a service worker whose ServiceWorker.state is `installed`.
+     * The **`waiting`** read-only property of the ServiceWorkerRegistration interface returns a service worker whose ServiceWorker.state is installed. This property is initially set to null.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/waiting)
      */
     val waiting: ServiceWorker?
 
     /**
-     * The **`getNotifications()`** method of the ServiceWorkerRegistration interface returns a list of the notifications in the order that they were created from the current origin via the current service worker registration.
+     * The **`getNotifications()`** method of the ServiceWorkerRegistration interface returns a list of the notifications in the order that they were created from the current origin via the current service worker registration. Origins can have many active but differently-scoped service worker registrations. Notifications created by one service worker on the same origin will not be available to other active service workers on that same origin.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/getNotifications)
      */
@@ -101,7 +101,7 @@ private constructor() :
     ): Promise<Void>
 
     /**
-     * The **`unregister()`** method of the ServiceWorkerRegistration interface unregisters the service worker registration and returns a Promise.
+     * The **`unregister()`** method of the ServiceWorkerRegistration interface unregisters the service worker registration and returns a Promise. The promise will resolve to false if no registration was found, otherwise it resolves to true irrespective of whether unregistration happened or not (it may not unregister if someone else just called ServiceWorkerContainer.register() with the same scope.) The service worker will finish any ongoing operations before it is unregistered.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/unregister)
      */
@@ -109,7 +109,7 @@ private constructor() :
     fun unregisterAsync(): Promise<JsBoolean>
 
     /**
-     * The **`update()`** method of the ServiceWorkerRegistration interface attempts to update the service worker.
+     * The **`update()`** method of the ServiceWorkerRegistration interface attempts to update the service worker. It fetches the worker's script URL, and if the new worker is not byte-by-byte identical to the current worker, it installs the new worker. The fetch of the worker bypasses any browser caches if the previous fetch occurred over 24 hours ago.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/update)
      */
@@ -118,7 +118,7 @@ private constructor() :
 }
 
 /**
- * The **`getNotifications()`** method of the ServiceWorkerRegistration interface returns a list of the notifications in the order that they were created from the current origin via the current service worker registration.
+ * The **`getNotifications()`** method of the ServiceWorkerRegistration interface returns a list of the notifications in the order that they were created from the current origin via the current service worker registration. Origins can have many active but differently-scoped service worker registrations. Notifications created by one service worker on the same origin will not be available to other active service workers on that same origin.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/getNotifications)
  */
@@ -127,7 +127,7 @@ suspend inline fun ServiceWorkerRegistration.getNotifications(): ReadonlyArray<N
 }
 
 /**
- * The **`getNotifications()`** method of the ServiceWorkerRegistration interface returns a list of the notifications in the order that they were created from the current origin via the current service worker registration.
+ * The **`getNotifications()`** method of the ServiceWorkerRegistration interface returns a list of the notifications in the order that they were created from the current origin via the current service worker registration. Origins can have many active but differently-scoped service worker registrations. Notifications created by one service worker on the same origin will not be available to other active service workers on that same origin.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/getNotifications)
  */
@@ -166,7 +166,7 @@ suspend inline fun ServiceWorkerRegistration.showNotification(
 }
 
 /**
- * The **`unregister()`** method of the ServiceWorkerRegistration interface unregisters the service worker registration and returns a Promise.
+ * The **`unregister()`** method of the ServiceWorkerRegistration interface unregisters the service worker registration and returns a Promise. The promise will resolve to false if no registration was found, otherwise it resolves to true irrespective of whether unregistration happened or not (it may not unregister if someone else just called ServiceWorkerContainer.register() with the same scope.) The service worker will finish any ongoing operations before it is unregistered.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/unregister)
  */
@@ -175,7 +175,7 @@ suspend inline fun ServiceWorkerRegistration.unregister(): Boolean {
 }
 
 /**
- * The **`update()`** method of the ServiceWorkerRegistration interface attempts to update the service worker.
+ * The **`update()`** method of the ServiceWorkerRegistration interface attempts to update the service worker. It fetches the worker's script URL, and if the new worker is not byte-by-byte identical to the current worker, it installs the new worker. The fetch of the worker bypasses any browser caches if the previous fetch occurred over 24 hours ago.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/update)
  */

@@ -3,7 +3,7 @@
 package web.svg
 
 /**
- * The **`SVGGElement`** interface corresponds to the g element.
+ * The **`SVGGElement`** interface corresponds to the <g> element.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGGElement)
  */

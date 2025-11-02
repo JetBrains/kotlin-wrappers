@@ -22,7 +22,7 @@ open external class SpeechSynthesisEvent(
     val charIndex: Int
 
     /**
-     * The read-only **`charLength`** property of the SpeechSynthesisEvent interface returns the number of characters left to be spoken after the character at the SpeechSynthesisEvent.charIndex position.
+     * The read-only **`charLength`** property of the SpeechSynthesisEvent interface returns the number of characters left to be spoken after the character at the charIndex position.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechSynthesisEvent/charLength)
      */
@@ -36,7 +36,7 @@ open external class SpeechSynthesisEvent(
     val elapsedTime: Float
 
     /**
-     * The **`name`** read-only property of the SpeechSynthesisUtterance interface returns the name associated with certain types of events occurring as the SpeechSynthesisUtterance.text is being spoken: the name of the SSML marker reached in the case of a SpeechSynthesisUtterance.mark_event event, or the type of boundary reached in the case of a SpeechSynthesisUtterance.boundary_event event.
+     * The **`name`** read-only property of the SpeechSynthesisUtterance interface returns the name associated with certain types of events occurring as the SpeechSynthesisUtterance.text is being spoken: the name of the SSML marker reached in the case of a mark event, or the type of boundary reached in the case of a boundary event.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechSynthesisEvent/name)
      */

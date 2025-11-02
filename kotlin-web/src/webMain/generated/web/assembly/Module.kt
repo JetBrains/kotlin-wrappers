@@ -21,7 +21,7 @@ open external class Module(
 ) {
     companion object {
         /**
-         * The **`WebAssembly.Module.customSections()`** static method returns a copy of the contents of all custom sections in the given module with the given string name.
+         * The WebAssembly.**`Module.customSections()`** static method returns a copy of the contents of all custom sections in the given module with the given string name.
          *
          * [MDN Reference](https://developer.mozilla.org/docs/WebAssembly/Reference/JavaScript_interface/Module/customSections_static)
          */
@@ -31,14 +31,14 @@ open external class Module(
         ): ReadonlyArray<ArrayBuffer>
 
         /**
-         * The **`WebAssembly.Module.exports()`** static method returns an array containing descriptions of all the declared exports of the given `Module`.
+         * The WebAssembly.**`Module.exports()`** static method returns an array containing descriptions of all the declared exports of the given Module.
          *
          * [MDN Reference](https://developer.mozilla.org/docs/WebAssembly/Reference/JavaScript_interface/Module/exports_static)
          */
         fun exports(moduleObject: Module): ReadonlyArray<ModuleExportDescriptor>
 
         /**
-         * The **`WebAssembly.Module.imports()`** static method returns an array containing descriptions of all the declared imports of the given `Module`.
+         * The WebAssembly.**`Module.imports()`** static method returns an array containing descriptions of all the declared imports of the given Module.
          *
          * [MDN Reference](https://developer.mozilla.org/docs/WebAssembly/Reference/JavaScript_interface/Module/imports_static)
          */

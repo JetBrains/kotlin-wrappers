@@ -11,7 +11,7 @@ import kotlin.js.JsName
 import kotlin.js.definedExternally
 
 /**
- * The **`CustomElementRegistry`** interface provides methods for registering custom elements and querying registered elements.
+ * The **`CustomElementRegistry`** interface provides methods for registering custom elements and querying registered elements. To get an instance of it, use the window.customElements property.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CustomElementRegistry)
  */

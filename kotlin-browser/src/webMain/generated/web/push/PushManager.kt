@@ -27,7 +27,7 @@ private constructor() {
     fun getSubscriptionAsync(): Promise<PushSubscription?>
 
     /**
-     * The **`permissionState()`** method of the PushManager interface returns a Promise that resolves to a string indicating the permission state of the push manager.
+     * The **`permissionState()`** method of the PushManager interface returns a Promise that resolves to a string indicating the permission state of the push manager. Possible values are 'prompt', 'denied', or 'granted'.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PushManager/permissionState)
      */
@@ -62,7 +62,7 @@ suspend inline fun PushManager.getSubscription(): PushSubscription? {
 }
 
 /**
- * The **`permissionState()`** method of the PushManager interface returns a Promise that resolves to a string indicating the permission state of the push manager.
+ * The **`permissionState()`** method of the PushManager interface returns a Promise that resolves to a string indicating the permission state of the push manager. Possible values are 'prompt', 'denied', or 'granted'.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PushManager/permissionState)
  */
@@ -71,7 +71,7 @@ suspend inline fun PushManager.permissionState(): PermissionState {
 }
 
 /**
- * The **`permissionState()`** method of the PushManager interface returns a Promise that resolves to a string indicating the permission state of the push manager.
+ * The **`permissionState()`** method of the PushManager interface returns a Promise that resolves to a string indicating the permission state of the push manager. Possible values are 'prompt', 'denied', or 'granted'.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PushManager/permissionState)
  */

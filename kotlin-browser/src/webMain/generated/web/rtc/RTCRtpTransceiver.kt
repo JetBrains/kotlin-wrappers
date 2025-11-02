@@ -19,14 +19,14 @@ private constructor() {
     val currentDirection: RTCRtpTransceiverDirection?
 
     /**
-     * The RTCRtpTransceiver property **`direction`** is a string that indicates the transceiver's _preferred_ directionality.
+     * The RTCRtpTransceiver property **`direction`** is a string that indicates the transceiver's preferred directionality.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCRtpTransceiver/direction)
      */
     var direction: RTCRtpTransceiverDirection
 
     /**
-     * The read-only RTCRtpTransceiver interface's **`mid`** property specifies the negotiated media ID (`mid`) which the local and remote peers have agreed upon to uniquely identify the stream's pairing of sender and receiver.
+     * The read-only RTCRtpTransceiver interface's **`mid`** property specifies the negotiated media ID (mid) which the local and remote peers have agreed upon to uniquely identify the stream's pairing of sender and receiver.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCRtpTransceiver/mid)
      */
@@ -47,7 +47,7 @@ private constructor() {
     val sender: RTCRtpSender
 
     /**
-     * The **`setCodecPreferences()`** method of the RTCRtpTransceiver interface is used to set the codecs that the transceiver allows for decoding _received_ data, in order of decreasing preference.
+     * The **`setCodecPreferences()`** method of the RTCRtpTransceiver interface is used to set the codecs that the transceiver allows for decoding received data, in order of decreasing preference.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCRtpTransceiver/setCodecPreferences)
      */

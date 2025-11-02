@@ -10,7 +10,7 @@ import web.serviceworker.ServiceWorkerContainer
 import web.usb.USB
 
 /**
- * The **`WorkerNavigator`** interface represents a subset of the Navigator interface allowed to be accessed from a Worker.
+ * The **`WorkerNavigator`** interface represents a subset of the Navigator interface allowed to be accessed from a Worker. Such an object is initialized for each worker and is available via the self.navigator property.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WorkerNavigator)
  */

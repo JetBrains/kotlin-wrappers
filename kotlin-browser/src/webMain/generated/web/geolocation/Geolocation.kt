@@ -5,7 +5,7 @@ package web.geolocation
 import kotlin.js.definedExternally
 
 /**
- * The **`Geolocation`** interface represents an object able to obtain the position of the device programmatically.
+ * The **`Geolocation`** interface represents an object able to obtain the position of the device programmatically. It gives Web content access to the location of the device. This allows a website or app to offer customized results based on the user's location.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Geolocation)
  */
@@ -30,7 +30,7 @@ private constructor() {
     )
 
     /**
-     * The **`watchPosition()`** method of the Geolocation interface is used to register a handler function that will be called automatically each time the position of the device changes.
+     * The **`watchPosition()`** method of the Geolocation interface is used to register a handler function that will be called automatically each time the position of the device changes. You can also, optionally, specify an error handling callback function.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Geolocation/watchPosition)
      */

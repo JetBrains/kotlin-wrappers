@@ -5,7 +5,7 @@ package web.idb
 import kotlin.js.JsAny
 
 /**
- * The **`IDBCursorWithValue`** interface of the IndexedDB API represents a cursor for traversing or iterating over multiple records in a database.
+ * The **`IDBCursorWithValue`** interface of the IndexedDB API represents a cursor for traversing or iterating over multiple records in a database. It is the same as the IDBCursor, except that it includes the value property.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBCursorWithValue)
  */

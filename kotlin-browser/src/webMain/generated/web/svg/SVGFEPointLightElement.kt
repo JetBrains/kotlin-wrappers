@@ -3,7 +3,7 @@
 package web.svg
 
 /**
- * The **`SVGFEPointLightElement`** interface corresponds to the fePointLight element.
+ * The **`SVGFEPointLightElement`** interface corresponds to the <fePointLight> element.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFEPointLightElement)
  */
@@ -25,7 +25,7 @@ private constructor() :
     val y: SVGAnimatedNumber
 
     /**
-     * The **`z`** read-only property of the SVGFEPointLightElement interface describes the z-axis value of the position of an SVG filter primitive as a SVGAnimatedNumber.
+     * The **`z`** read-only property of the SVGFEPointLightElement interface describes the z-axis value of the position of an SVG filter primitive as a SVGAnimatedNumber. A positive Z-axis comes out towards the person viewing the content.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFEPointLightElement/z)
      */

@@ -53,7 +53,7 @@ import kotlin.js.JsAny
 import kotlin.js.definedExternally
 
 /**
- * The **`Window`** interface represents a window containing a DOM document; the `document` property points to the DOM document loaded in that window.
+ * The **`Window`** interface represents a window containing a DOM document; the document property points to the DOM document loaded in that window.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window)
  */
@@ -73,21 +73,21 @@ private constructor() :
     val closed: Boolean
 
     /**
-     * The **`cookieStore`** read-only property of the Window interface returns a reference to the CookieStore object for the current document context.
+     * The **`cookieStore`** read-only property of the Window interface returns a reference to the CookieStore object for the current document context. This is an entry point for the Cookie Store API.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/cookieStore)
      */
     val cookieStore: CookieStore
 
     /**
-     * The **`Window.frameElement`** property returns the element (such as iframe or object) in which the window is embedded.
+     * The **`Window.frameElement`** property returns the element (such as <iframe> or <object>) in which the window is embedded.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/frameElement)
      */
     val frameElement: Element?
 
     /**
-     * Returns the window itself, which is an array-like object, listing the direct sub-frames of the current window.
+     * Returns the window itself, which is an array-like object, listing the direct sub-**`frames`** of the current window.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/frames)
      */
@@ -101,7 +101,7 @@ private constructor() :
     val innerHeight: Int
 
     /**
-     * The read-only Window property **`innerWidth`** returns the interior width of the window in pixels (that is, the width of the window's layout viewport).
+     * The read-only Window property **`innerWidth`** returns the interior width of the window in pixels (that is, the width of the window's layout viewport). That includes the width of the vertical scroll bar, if one is present.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/innerWidth)
      */
@@ -115,21 +115,21 @@ private constructor() :
     val location: Location
 
     /**
-     * Returns the `locationbar` object.
+     * Returns the **`locationbar`** object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/locationbar)
      */
     val locationbar: BarProp
 
     /**
-     * Returns the `menubar` object.
+     * Returns the **`menubar`** object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/menubar)
      */
     val menubar: BarProp
 
     /**
-     * The `Window.name` property gets/sets the name of the window's browsing context.
+     * The **`Window.name`** property gets/sets the name of the window's browsing context.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/name)
      */
@@ -157,14 +157,14 @@ private constructor() :
     var ondeviceorientationabsolute: EventHandler<DeviceOrientationEvent, Window, Window>?
 
     /**
-     * The Window interface's **`opener`** property returns a reference to the window that opened the window, either with Window.open, or by navigating a link with a `target` attribute.
+     * The Window interface's **`opener`** property returns a reference to the window that opened the window, either with open(), or by navigating a link with a target attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/opener)
      */
     var opener: JsAny?
 
     /**
-     * The **`originAgentCluster`** read-only property of the Window interface returns `true` if this window belongs to an _origin-keyed agent cluster_: this means that the operating system has provided dedicated resources (for example an operating system process) to this window's origin that are not shared with windows from other origins.
+     * The **`originAgentCluster`** read-only property of the Window interface returns true if this window belongs to an origin-keyed agent cluster: this means that the operating system has provided dedicated resources (for example an operating system process) to this window's origin that are not shared with windows from other origins.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/originAgentCluster)
      */
@@ -178,7 +178,7 @@ private constructor() :
     val outerHeight: Int
 
     /**
-     * **`Window.outerWidth`** read-only property returns the width of the outside of the browser window.
+     * **`Window.outerWidth`** read-only property returns the width of the outside of the browser window. It represents the width of the whole browser window including sidebar (if expanded), window chrome and window resizing borders/handles.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/outerWidth)
      */
@@ -202,7 +202,7 @@ private constructor() :
     val parent: WindowProxy
 
     /**
-     * Returns the `personalbar` object.
+     * Returns the **`personalbar`** object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/personalbar)
      */
@@ -237,42 +237,42 @@ private constructor() :
     val screenY: Int
 
     /**
-     * The read-only **`scrollX`** property of the Window interface returns the number of pixels by which the document is currently scrolled horizontally.
+     * The read-only **`scrollX`** property of the Window interface returns the number of pixels by which the document is currently scrolled horizontally. This value is subpixel precise in modern browsers, meaning that it isn't necessarily a whole number. You can get the number of pixels the document is scrolled vertically from the scrollY property.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/scrollX)
      */
     val scrollX: Double
 
     /**
-     * The read-only **`scrollY`** property of the Window interface returns the number of pixels by which the document is currently scrolled vertically.
+     * The read-only **`scrollY`** property of the Window interface returns the number of pixels by which the document is currently scrolled vertically. This value is subpixel precise in modern browsers, meaning that it isn't necessarily a whole number. You can get the number of pixels the document is scrolled horizontally from the scrollX property.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/scrollY)
      */
     val scrollY: Double
 
     /**
-     * Returns the `scrollbars` object.
+     * Returns the **`scrollbars`** object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/scrollbars)
      */
     val scrollbars: BarProp
 
     /**
-     * Returns the `statusbar` object.
+     * Returns the **`statusbar`** object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/statusbar)
      */
     val statusbar: BarProp
 
     /**
-     * Returns the `toolbar` object.
+     * Returns the **`toolbar`** object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/toolbar)
      */
     val toolbar: BarProp
 
     /**
-     * Returns a reference to the topmost window in the window hierarchy.
+     * Returns a reference to the **`top`**most window in the window hierarchy.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/top)
      */
@@ -286,7 +286,7 @@ private constructor() :
     override fun close()
 
     /**
-     * Makes a request to bring the window to the front.
+     * Makes a request to bring the window to the front. It may fail due to user settings and the window isn't guaranteed to be frontmost before this method returns.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/focus)
      */
@@ -320,7 +320,7 @@ private constructor() :
     )
 
     /**
-     * The **`open()`** method of the `Window` interface loads a specified resource into a new or existing browsing context (that is, a tab, a window, or an iframe) under a specified name.
+     * The **`open()`** method of the Window interface loads a specified resource into a new or existing browsing context (that is, a tab, a window, or an iframe) under a specified name.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/open)
      */
@@ -337,7 +337,7 @@ private constructor() :
     ): WindowProxy?
 
     /**
-     * The **`window.postMessage()`** method safely enables cross-origin communication between Window objects; _e.g.,_ between a page and a pop-up that it spawned, or between a page and an iframe embedded within it.
+     * The **`window.postMessage()`** method safely enables cross-origin communication between Window objects; e.g., between a page and a pop-up that it spawned, or between a page and an iframe embedded within it.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/postMessage)
      */
@@ -364,7 +364,7 @@ private constructor() :
     )
 
     /**
-     * Opens the print dialog to print the current document.
+     * Opens the **`print`** dialog to print the current document.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/print)
      */

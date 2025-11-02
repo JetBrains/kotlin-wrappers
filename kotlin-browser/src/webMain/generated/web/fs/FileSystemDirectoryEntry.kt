@@ -6,7 +6,7 @@ import kotlin.js.JsName
 import kotlin.js.definedExternally
 
 /**
- * The **`FileSystemDirectoryEntry`** interface of the File and Directory Entries API represents a directory in a file system.
+ * The **`FileSystemDirectoryEntry`** interface of the File and Directory Entries API represents a directory in a file system. It provides methods which make it possible to access and manipulate the files in a directory, as well as to access the entries within the directory.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileSystemDirectoryEntry)
  */

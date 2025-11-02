@@ -17,7 +17,7 @@ open external class PointerEvent(
     init: PointerEventInit = definedExternally,
 ) : MouseEvent {
     /**
-     * The **`altitudeAngle`** read-only property of the PointerEvent interface represents the angle between a transducer (a pointer or stylus) axis and the X-Y plane of a device screen.
+     * The **`altitudeAngle`** read-only property of the PointerEvent interface represents the angle between a transducer (a pointer or stylus) axis and the X-Y plane of a device screen. The altitude angle describes whether the transducer is perpendicular to the screen, parallel, or at some angle in between.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PointerEvent/altitudeAngle)
      */
@@ -31,28 +31,28 @@ open external class PointerEvent(
     val azimuthAngle: Double
 
     /**
-     * The **`height`** read-only property of the PointerEvent interface represents the height of the pointer's contact geometry, along the y-axis (in CSS pixels).
+     * The **`height`** read-only property of the PointerEvent interface represents the height of the pointer's contact geometry, along the y-axis (in CSS pixels). Depending on the source of the pointer device (for example a finger), for a given pointer, each event may produce a different value.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PointerEvent/height)
      */
     val height: Double
 
     /**
-     * The **`isPrimary`** read-only property of the PointerEvent interface indicates whether or not the pointer device that created the event is the _primary_ pointer.
+     * The **`isPrimary`** read-only property of the PointerEvent interface indicates whether or not the pointer device that created the event is the primary pointer. It returns true if the pointer that caused the event to be fired is the primary one and returns false otherwise.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PointerEvent/isPrimary)
      */
     val isPrimary: Boolean
 
     /**
-     * The **`persistentDeviceId`** read-only property of the PointerEvent interface is a unique identifier for the pointing device generating the `PointerEvent`.
+     * The **`persistentDeviceId`** read-only property of the PointerEvent interface is a unique identifier for the pointing device generating the PointerEvent. This provides a secure, reliable way to identify multiple pointing devices (such as pens) interacting with the screen simultaneously.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PointerEvent/persistentDeviceId)
      */
     val persistentDeviceId: Int
 
     /**
-     * The **`pointerId`** read-only property of the PointerEvent interface is an identifier assigned to the pointer that triggered the event.
+     * The **`pointerId`** read-only property of the PointerEvent interface is an identifier assigned to the pointer that triggered the event. The identifier is unique, being different from the identifiers of all other active pointer events.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PointerEvent/pointerId)
      */
@@ -80,14 +80,14 @@ open external class PointerEvent(
     val tangentialPressure: Float
 
     /**
-     * The **`tiltX`** read-only property of the PointerEvent interface is the angle (in degrees) between the _Y-Z plane_ of the pointer and the screen.
+     * The **`tiltX`** read-only property of the PointerEvent interface is the angle (in degrees) between the Y-Z plane of the pointer and the screen. This property is typically only useful for a pen/stylus pointer type.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PointerEvent/tiltX)
      */
     val tiltX: Int
 
     /**
-     * The **`tiltY`** read-only property of the PointerEvent interface is the angle (in degrees) between the _X-Z plane_ of the pointer and the screen.
+     * The **`tiltY`** read-only property of the PointerEvent interface is the angle (in degrees) between the X-Z plane of the pointer and the screen. This property is typically only useful for a pen/stylus pointer type.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PointerEvent/tiltY)
      */
@@ -101,14 +101,14 @@ open external class PointerEvent(
     val twist: Int
 
     /**
-     * The **`width`** read-only property of the PointerEvent interface represents the width of the pointer's contact geometry along the x-axis, measured in CSS pixels.
+     * The **`width`** read-only property of the PointerEvent interface represents the width of the pointer's contact geometry along the x-axis, measured in CSS pixels. Depending on the source of the pointer device (such as a finger), for a given pointer, each event may produce a different value.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PointerEvent/width)
      */
     val width: Double
 
     /**
-     * The **`getCoalescedEvents()`** method of the PointerEvent interface returns a sequence of `PointerEvent` instances that were coalesced (merged) into a single Element/pointermove_event or Element/pointerrawupdate_event event.
+     * The **`getCoalescedEvents()`** method of the PointerEvent interface returns a sequence of PointerEvent instances that were coalesced (merged) into a single pointermove or pointerrawupdate event. Instead of a stream of many pointermove events, user agents coalesce multiple updates into a single event. This helps with performance as the user agent has less event handling to perform, but there is a reduction in the granularity and accuracy when tracking, especially with fast and large movements.
      * Available only in secure contexts.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PointerEvent/getCoalescedEvents)
@@ -116,7 +116,7 @@ open external class PointerEvent(
     fun getCoalescedEvents(): ReadonlyArray<PointerEvent>
 
     /**
-     * The **`getPredictedEvents()`** method of the PointerEvent interface returns a sequence of `PointerEvent` instances that are estimated future pointer positions.
+     * The **`getPredictedEvents()`** method of the PointerEvent interface returns a sequence of PointerEvent instances that are estimated future pointer positions. How the predicted positions are calculated depends on the user agent, but they are based on past points, current velocity, and trajectory.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PointerEvent/getPredictedEvents)
      */

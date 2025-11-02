@@ -7,7 +7,7 @@ import web.events.EventType
 import kotlin.js.definedExternally
 
 /**
- * The `MediaQueryListEvent` object stores information on the changes that have happened to a MediaQueryList object — instances are available as the event object on a function referenced by a MediaQueryList.change_event event.
+ * The **`MediaQueryListEvent`** object stores information on the changes that have happened to a MediaQueryList object — instances are available as the event object on a function referenced by a change event.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaQueryListEvent)
  */
@@ -16,7 +16,7 @@ open external class MediaQueryListEvent(
     init: MediaQueryListEventInit = definedExternally,
 ) : Event {
     /**
-     * The **`matches`** read-only property of the MediaQueryListEvent interface is a boolean value that is `true` if the document currently matches the media query list, or `false` if not.
+     * The **`matches`** read-only property of the MediaQueryListEvent interface is a boolean value that is true if the document currently matches the media query list, or false if not.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaQueryListEvent/matches)
      */

@@ -7,7 +7,7 @@ import js.iterable.JsIterable
 import kotlin.js.JsString
 
 /**
- * The **`DOMStringList`** interface is a legacy type returned by some APIs and represents a non-modifiable list of strings (`DOMString`).
+ * The **`DOMStringList`** interface is a legacy type returned by some APIs and represents a non-modifiable list of strings (DOMString).
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMStringList)
  */
@@ -30,7 +30,7 @@ private constructor() :
     fun contains(string: String): Boolean
 
     /**
-     * The **`item()`** method returns a string from a `DOMStringList` by index.
+     * The **`item()`** method returns a string from a DOMStringList by index.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMStringList/item)
      */

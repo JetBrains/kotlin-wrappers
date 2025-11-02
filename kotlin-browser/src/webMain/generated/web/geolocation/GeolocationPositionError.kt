@@ -13,7 +13,7 @@ open external class GeolocationPositionError
 private constructor() :
     JsErrorLike {
     /**
-     * The **`code`** read-only property of the GeolocationPositionError interface is an `unsigned short` representing the error code.
+     * The **`code`** read-only property of the GeolocationPositionError interface is an unsigned short representing the error code.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GeolocationPositionError/code)
      */

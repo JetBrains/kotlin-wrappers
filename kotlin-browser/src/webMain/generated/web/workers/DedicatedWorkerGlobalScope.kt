@@ -15,7 +15,7 @@ import kotlin.js.JsAny
 import kotlin.js.definedExternally
 
 /**
- * The **`DedicatedWorkerGlobalScope`** object (the Worker global scope) is accessible through the WorkerGlobalScope.self keyword.
+ * The **`DedicatedWorkerGlobalScope`** object (the Worker global scope) is accessible through the self keyword. Some additional global functions, namespaces objects, and constructors, not typically associated with the worker global scope, but available on it, are listed in the JavaScript Reference. See also: Functions available to workers.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DedicatedWorkerGlobalScope)
  */
@@ -25,7 +25,7 @@ private constructor() :
     MessageEventTarget,
     JsCloseable {
     /**
-     * The **`name`** read-only property of the DedicatedWorkerGlobalScope interface returns the name that the Worker was (optionally) given when it was created.
+     * The **`name`** read-only property of the DedicatedWorkerGlobalScope interface returns the name that the Worker was (optionally) given when it was created. This is the name that the Worker() constructor can pass to get a reference to the DedicatedWorkerGlobalScope.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DedicatedWorkerGlobalScope/name)
      */
@@ -37,7 +37,7 @@ private constructor() :
     var onrtctransform: EventHandler<RTCTransformEvent, DedicatedWorkerGlobalScope, DedicatedWorkerGlobalScope>?
 
     /**
-     * The **`close()`** method of the DedicatedWorkerGlobalScope interface discards any tasks queued in the `DedicatedWorkerGlobalScope`'s event loop, effectively closing this particular scope.
+     * The **`close()`** method of the DedicatedWorkerGlobalScope interface discards any tasks queued in the DedicatedWorkerGlobalScope's event loop, effectively closing this particular scope.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DedicatedWorkerGlobalScope/close)
      */

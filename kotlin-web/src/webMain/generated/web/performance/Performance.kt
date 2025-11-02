@@ -19,7 +19,7 @@ open external class Performance
 private constructor() :
     EventTarget {
     /**
-     * The read-only `performance.eventCounts` property is an EventCounts map containing the number of events which have been dispatched per event type.
+     * The read-only **`performance.eventCounts`** property is an EventCounts map containing the number of events which have been dispatched per event type.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Performance/eventCounts)
      */
@@ -52,7 +52,7 @@ private constructor() :
     fun clearMeasures(measureName: String = definedExternally)
 
     /**
-     * The **`clearResourceTimings()`** method removes all performance entries with an PerformanceEntry.entryType of `'resource'` from the browser's performance timeline and sets the size of the performance resource data buffer to zero.
+     * The **`clearResourceTimings()`** method removes all performance entries with an entryType of "resource" from the browser's performance timeline and sets the size of the performance resource data buffer to zero.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Performance/clearResourceTimings)
      */
@@ -66,7 +66,7 @@ private constructor() :
     fun getEntries(): PerformanceEntryList
 
     /**
-     * The **`getEntriesByName()`** method returns an array of PerformanceEntry objects currently present in the performance timeline with the given _name_ and _type_.
+     * The **`getEntriesByName()`** method returns an array of PerformanceEntry objects currently present in the performance timeline with the given name and type.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Performance/getEntriesByName)
      */
@@ -76,7 +76,7 @@ private constructor() :
     ): PerformanceEntryList
 
     /**
-     * The **`getEntriesByType()`** method returns an array of PerformanceEntry objects currently present in the performance timeline for a given _type_.
+     * The **`getEntriesByType()`** method returns an array of PerformanceEntry objects currently present in the performance timeline for a given type.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Performance/getEntriesByType)
      */
@@ -110,21 +110,21 @@ private constructor() :
     ): PerformanceMeasure
 
     /**
-     * The **`performance.now()`** method returns a high resolution timestamp in milliseconds.
+     * The **`performance.now()`** method returns a high resolution timestamp in milliseconds. It represents the time elapsed since Performance.timeOrigin (the time when navigation has started in window contexts, or the time when the worker is run in Worker and ServiceWorker contexts).
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Performance/now)
      */
     fun now(): DOMHighResTimeStamp
 
     /**
-     * The **`setResourceTimingBufferSize()`** method sets the desired size of the browser's resource timing buffer which stores the `'resource'` performance entries.
+     * The **`setResourceTimingBufferSize()`** method sets the desired size of the browser's resource timing buffer which stores the "resource" performance entries.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Performance/setResourceTimingBufferSize)
      */
     fun setResourceTimingBufferSize(maxSize: Int)
 
     /**
-     * The **`toJSON()`** method of the Performance interface is a Serialization; it returns a JSON representation of the Performance object.
+     * The **`toJSON()`** method of the Performance interface is a serializer; it returns a JSON representation of the Performance object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Performance/toJSON)
      */

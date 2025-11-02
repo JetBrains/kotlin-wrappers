@@ -5,7 +5,7 @@ package web.reporting
 import kotlin.js.definedExternally
 
 /**
- * The `ReportingObserver` interface of the Reporting API allows you to collect and access reports.
+ * The **`ReportingObserver`** interface of the Reporting API allows you to collect and access reports.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReportingObserver)
  */

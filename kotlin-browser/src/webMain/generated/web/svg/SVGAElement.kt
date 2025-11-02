@@ -6,7 +6,7 @@ import web.dom.DOMTokenList
 import kotlin.js.JsString
 
 /**
- * The **`SVGAElement`** interface provides access to the properties of an a element, as well as methods to manipulate them.
+ * The **`SVGAElement`** interface provides access to the properties of an <a> element, as well as methods to manipulate them.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAElement)
  */
@@ -22,14 +22,14 @@ private constructor() :
     var download: String
 
     /**
-     * The **`rel`** property of the SVGAElement returns a string reflecting the value of the `rel` attribute of the SVG a element.
+     * The **`rel`** property of the SVGAElement returns a string reflecting the value of the rel attribute of the SVG <a> element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAElement/rel)
      */
     var rel: String
 
     /**
-     * The **`relList`** read-only property of the SVGAElement returns a live DOMTokenList reflecting the space-separated string `<list-of-Link-Types>` values of the `rel` attribute of the SVG a element.
+     * The **`relList`** read-only property of the SVGAElement returns a live DOMTokenList reflecting the space-separated string <list-of-Link-Types> values of the rel attribute of the SVG <a> element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAElement/relList)
      */

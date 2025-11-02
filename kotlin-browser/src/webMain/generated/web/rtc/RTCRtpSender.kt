@@ -18,21 +18,21 @@ import kotlin.js.definedExternally
 open external class RTCRtpSender
 private constructor() {
     /**
-     * The read-only **`dtmf`** property on the **RTCRtpSender** interface returns a RTCDTMFSender object which can be used to send DTMF tones over the RTCPeerConnection.
+     * The read-only **`dtmf`** property on the RTCRtpSender interface returns a RTCDTMFSender object which can be used to send DTMF tones over the RTCPeerConnection. See Using DTMF for details on how to make use of the returned RTCDTMFSender object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCRtpSender/dtmf)
      */
     val dtmf: RTCDTMFSender?
 
     /**
-     * The **`track`** read-only property of the RTCRtpSender interface returns the MediaStreamTrack which is being handled by the `RTCRtpSender`.
+     * The **`track`** read-only property of the RTCRtpSender interface returns the MediaStreamTrack which is being handled by the RTCRtpSender.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCRtpSender/track)
      */
     val track: MediaStreamTrack?
 
     /**
-     * The **`transform`** property of the RTCRtpSender object is used to insert a transform stream (TransformStream) running in a worker thread into the sender pipeline.
+     * The **`transform`** property of the RTCRtpSender object is used to insert a transform stream (TransformStream) running in a worker thread into the sender pipeline. This allows stream transforms to be applied to encoded video and audio frames after they are output by a codec, and before they are sent.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCRtpSender/transform)
      */
@@ -46,7 +46,7 @@ private constructor() {
     val transport: RTCDtlsTransport?
 
     /**
-     * The **`getParameters()`** method of the RTCRtpSender interface returns an object describing the current configuration for how the sender's RTCRtpSender.track will be encoded and transmitted to a remote RTCRtpReceiver.
+     * The **`getParameters()`** method of the RTCRtpSender interface returns an object describing the current configuration for how the sender's track will be encoded and transmitted to a remote RTCRtpReceiver.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCRtpSender/getParameters)
      */
@@ -69,7 +69,7 @@ private constructor() {
     fun replaceTrackAsync(withTrack: MediaStreamTrack?): Promise<Void>
 
     /**
-     * The **`setParameters()`** method of the RTCRtpSender interface applies changes the configuration of sender's RTCRtpSender.track, which is the MediaStreamTrack for which the `RTCRtpSender` is responsible.
+     * The **`setParameters()`** method of the RTCRtpSender interface applies changes the configuration of sender's track, which is the MediaStreamTrack for which the RTCRtpSender is responsible.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCRtpSender/setParameters)
      */
@@ -80,7 +80,7 @@ private constructor() {
     ): Promise<Void>
 
     /**
-     * The RTCRtpSender method **`setStreams()`** associates the sender's RTCRtpSender.track with the specified MediaStream objects.
+     * The RTCRtpSender method **`setStreams()`** associates the sender's track with the specified MediaStream objects.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCRtpSender/setStreams)
      */
@@ -88,7 +88,7 @@ private constructor() {
 
     companion object {
         /**
-         * The _static method_ **`RTCRtpSender.getCapabilities()`** returns an object describing the codec and header extension capabilities supported by the RTCRtpSender.
+         * The static method **`RTCRtpSender.getCapabilities()`** returns an object describing the codec and header extension capabilities supported by the RTCRtpSender.
          *
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCRtpSender/getCapabilities_static)
          */
@@ -117,7 +117,7 @@ suspend inline fun RTCRtpSender.replaceTrack(withTrack: MediaStreamTrack?) {
 }
 
 /**
- * The **`setParameters()`** method of the RTCRtpSender interface applies changes the configuration of sender's RTCRtpSender.track, which is the MediaStreamTrack for which the `RTCRtpSender` is responsible.
+ * The **`setParameters()`** method of the RTCRtpSender interface applies changes the configuration of sender's track, which is the MediaStreamTrack for which the RTCRtpSender is responsible.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCRtpSender/setParameters)
  */
@@ -130,7 +130,7 @@ suspend inline fun RTCRtpSender.setParameters(
 }
 
 /**
- * The **`setParameters()`** method of the RTCRtpSender interface applies changes the configuration of sender's RTCRtpSender.track, which is the MediaStreamTrack for which the `RTCRtpSender` is responsible.
+ * The **`setParameters()`** method of the RTCRtpSender interface applies changes the configuration of sender's track, which is the MediaStreamTrack for which the RTCRtpSender is responsible.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCRtpSender/setParameters)
  */

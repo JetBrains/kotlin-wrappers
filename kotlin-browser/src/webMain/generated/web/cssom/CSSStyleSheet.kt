@@ -8,7 +8,7 @@ import kotlin.js.JsName
 import kotlin.js.definedExternally
 
 /**
- * The **`CSSStyleSheet`** interface represents a single CSS stylesheet, and lets you inspect and modify the list of rules contained in the stylesheet.
+ * The **`CSSStyleSheet`** interface represents a single CSS stylesheet, and lets you inspect and modify the list of rules contained in the stylesheet. It inherits properties and methods from its parent, StyleSheet.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleSheet)
  */
@@ -16,14 +16,14 @@ open external class CSSStyleSheet(
     options: CSSStyleSheetInit = definedExternally,
 ) : StyleSheet {
     /**
-     * The read-only CSSStyleSheet property **`cssRules`** returns a live CSSRuleList which provides a real-time, up-to-date list of every CSS rule which comprises the stylesheet.
+     * The read-only CSSStyleSheet property **`cssRules`** returns a live CSSRuleList which provides a real-time, up-to-date list of every CSS rule which comprises the stylesheet. Each item in the list is a CSSRule defining a single rule.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleSheet/cssRules)
      */
     val cssRules: CSSRuleList
 
     /**
-     * The read-only CSSStyleSheet property **`ownerRule`** returns the CSSImportRule corresponding to the @import at-rule which imported the stylesheet into the document.
+     * The read-only CSSStyleSheet property **`ownerRule`** returns the CSSImportRule corresponding to the @import at-rule which imported the stylesheet into the document. If the stylesheet wasn't imported into the document using @import, the returned value is null.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleSheet/ownerRule)
      */
@@ -47,7 +47,7 @@ open external class CSSStyleSheet(
     ): Int
 
     /**
-     * The **`replace()`** method of the CSSStyleSheet interface asynchronously replaces the content of the stylesheet with the content passed into it.
+     * The **`replace()`** method of the CSSStyleSheet interface asynchronously replaces the content of the stylesheet with the content passed into it. The method returns a promise that resolves with the CSSStyleSheet object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleSheet/replace)
      */
@@ -63,7 +63,7 @@ open external class CSSStyleSheet(
 }
 
 /**
- * The **`replace()`** method of the CSSStyleSheet interface asynchronously replaces the content of the stylesheet with the content passed into it.
+ * The **`replace()`** method of the CSSStyleSheet interface asynchronously replaces the content of the stylesheet with the content passed into it. The method returns a promise that resolves with the CSSStyleSheet object.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleSheet/replace)
  */

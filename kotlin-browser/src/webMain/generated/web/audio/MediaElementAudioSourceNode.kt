@@ -5,7 +5,7 @@ package web.audio
 import web.html.HTMLMediaElement
 
 /**
- * The `MediaElementAudioSourceNode` interface represents an audio source consisting of an HTML audio or video element.
+ * The **`MediaElementAudioSourceNode`** interface represents an audio source consisting of an HTML <audio> or <video> element. It is an AudioNode that acts as an audio source.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaElementAudioSourceNode)
  */

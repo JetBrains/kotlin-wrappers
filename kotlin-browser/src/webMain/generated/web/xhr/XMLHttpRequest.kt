@@ -17,7 +17,7 @@ import kotlin.js.JsAny
 import kotlin.js.definedExternally
 
 /**
- * `XMLHttpRequest` (XHR) objects are used to interact with servers.
+ * **`XMLHttpRequest`** (XHR) objects are used to interact with servers. You can retrieve data from a URL without having to do a full page refresh. This enables a Web page to update just part of a page without disrupting what the user is doing.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest)
  */
@@ -29,14 +29,14 @@ open external class XMLHttpRequest :
     var onreadystatechange: EventHandler<Event, XMLHttpRequest, XMLHttpRequest>?
 
     /**
-     * The **XMLHttpRequest.readyState** property returns the state an XMLHttpRequest client is in.
+     * The **`XMLHttpRequest.readyState`** property returns the state an XMLHttpRequest client is in. An XHR client exists in one of the following states:
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest/readyState)
      */
     val readyState: ReadyState
 
     /**
-     * The XMLHttpRequest **`response`** property returns the response's body content as an ArrayBuffer, a Blob, a Document, a JavaScript Object, or a string, depending on the value of the request's XMLHttpRequest.responseType property.
+     * The XMLHttpRequest **`response`** property returns the response's body content as an ArrayBuffer, a Blob, a Document, a JavaScript Object, or a string, depending on the value of the request's responseType property.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest/response)
      */
@@ -57,63 +57,63 @@ open external class XMLHttpRequest :
     var responseType: XMLHttpRequestResponseType
 
     /**
-     * The read-only **`XMLHttpRequest.responseURL`** property returns the serialized URL of the response or the empty string if the URL is `null`.
+     * The read-only **`XMLHttpRequest.responseURL`** property returns the serialized URL of the response or the empty string if the URL is null. If the URL is returned, any URL fragment present in the URL will be stripped away. The value of responseURL will be the final URL obtained after any redirects.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest/responseURL)
      */
     val responseURL: String
 
     /**
-     * The **`XMLHttpRequest.responseXML`** read-only property returns a Document containing the HTML or XML retrieved by the request; or `null` if the request was unsuccessful, has not yet been sent, or if the data can't be parsed as XML or HTML.
+     * The **`XMLHttpRequest.responseXML`** read-only property returns a Document containing the HTML or XML retrieved by the request; or null if the request was unsuccessful, has not yet been sent, or if the data can't be parsed as XML or HTML.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest/responseXML)
      */
     val responseXML: Document?
 
     /**
-     * The read-only **`XMLHttpRequest.status`** property returns the numerical HTTP status code of the `XMLHttpRequest`'s response.
+     * The read-only **`XMLHttpRequest.status`** property returns the numerical HTTP status code of the XMLHttpRequest's response.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest/status)
      */
     val status: Short
 
     /**
-     * The read-only **`XMLHttpRequest.statusText`** property returns a string containing the response's status message as returned by the HTTP server.
+     * The read-only **`XMLHttpRequest.statusText`** property returns a string containing the response's status message as returned by the HTTP server. Unlike XMLHttpRequest.status which indicates a numerical status code, this property contains the text of the response status, such as "OK" or "Not Found". If the request's readyState is in UNSENT or OPENED state, the value of statusText will be an empty string.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest/statusText)
      */
     val statusText: String
 
     /**
-     * The **`XMLHttpRequest.timeout`** property is an `unsigned long` representing the number of milliseconds a request can take before automatically being terminated.
+     * The **`XMLHttpRequest.timeout`** property is an unsigned long representing the number of milliseconds a request can take before automatically being terminated. The default value is 0, which means there is no timeout. Timeout shouldn't be used for synchronous XMLHttpRequests requests used in a document environment or it will throw an InvalidAccessError exception. When a timeout happens, a timeout event is fired.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest/timeout)
      */
     var timeout: Int
 
     /**
-     * The XMLHttpRequest `upload` property returns an XMLHttpRequestUpload object that can be observed to monitor an upload's progress.
+     * The XMLHttpRequest **`upload`** property returns an XMLHttpRequestUpload object that can be observed to monitor an upload's progress.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest/upload)
      */
     val upload: XMLHttpRequestUpload
 
     /**
-     * The **`XMLHttpRequest.withCredentials`** property is a boolean value that indicates whether or not cross-site `Access-Control` requests should be made using credentials such as cookies, authentication headers or TLS client certificates.
+     * The **`XMLHttpRequest.withCredentials`** property is a boolean value that indicates whether or not cross-site Access-Control requests should be made using credentials such as cookies, authentication headers or TLS client certificates. Setting withCredentials has no effect on same-origin requests.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest/withCredentials)
      */
     var withCredentials: Boolean
 
     /**
-     * The **`XMLHttpRequest.abort()`** method aborts the request if it has already been sent.
+     * The **`XMLHttpRequest.abort()`** method aborts the request if it has already been sent. When a request is aborted, its readyState is changed to XMLHttpRequest.UNSENT (0) and the request's status code is set to 0.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest/abort)
      */
     fun abort()
 
     /**
-     * The XMLHttpRequest method **`getAllResponseHeaders()`** returns all the response headers, separated by CRLF, as a string, or returns `null` if no response has been received.
+     * The XMLHttpRequest method **`getAllResponseHeaders()`** returns all the response headers, separated by CRLF, as a string, or returns null if no response has been received.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest/getAllResponseHeaders)
      */
@@ -177,7 +177,7 @@ open external class XMLHttpRequest :
     fun send(body: String?)
 
     /**
-     * The XMLHttpRequest method **`setRequestHeader()`** sets the value of an HTTP request header.
+     * The XMLHttpRequest method **`setRequestHeader()`** sets the value of an HTTP request header. When using setRequestHeader(), you must call it after calling open(), but before calling send(). If this method is called several times with the same header, the values are merged into one single request header.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest/setRequestHeader)
      */

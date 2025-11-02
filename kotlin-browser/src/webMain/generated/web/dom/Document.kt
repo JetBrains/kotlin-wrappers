@@ -65,7 +65,7 @@ open external class Document :
     val URL: String
 
     /**
-     * The **`Document.body`** property represents the body or frameset node of the current document, or `null` if no such element exists.
+     * The **`Document.body`** property represents the <body> or <frameset> node of the current document, or null if no such element exists.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/body)
      */
@@ -86,56 +86,56 @@ open external class Document :
     val compatMode: String
 
     /**
-     * The **`Document.contentType`** read-only property returns the MIME type that the document is being rendered as.
+     * The **`Document.contentType`** read-only property returns the MIME type that the document is being rendered as. This may come from HTTP headers or other sources of MIME information, and might be affected by automatic type conversions performed by either the browser or extensions.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/contentType)
      */
     val contentType: String
 
     /**
-     * The Document property `cookie` lets you read and write cookies associated with the document.
+     * The Document property **`cookie`** lets you read and write cookies associated with the document. It serves as a getter and setter for the actual values of the cookies.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/cookie)
      */
     var cookie: String
 
     /**
-     * The **`Document.currentScript`** property returns the script element whose script is currently being processed and isn't a JavaScript module.
+     * The **`Document.currentScript`** property returns the <script> element whose script is currently being processed and isn't a JavaScript module. (For modules use import.meta instead.)
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/currentScript)
      */
     val currentScript: HTMLOrSVGScriptElement?
 
     /**
-     * In browsers, **`document.defaultView`** returns the Window object associated with Browsing_context, or `null` if none is available.
+     * In browsers, **`document.defaultView`** returns the window object associated with a document, or null if none is available.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/defaultView)
      */
     val defaultView: WindowProxy?
 
     /**
-     * **`document.designMode`** controls whether the entire document is editable.
+     * **`document.designMode`** controls whether the entire document is editable. Valid values are "on" and "off". According to the specification, this property is meant to default to "off". Firefox follows this standard. The earlier versions of Chrome and IE default to "inherit". Starting in Chrome 43, the default is "off" and "inherit" is no longer supported. In IE6-10, the value is capitalized.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/designMode)
      */
     var designMode: String
 
     /**
-     * The **`Document.dir`** property is a string representing the directionality of the text of the document, whether left to right (default) or right to left.
+     * The **`Document.dir`** property is a string representing the directionality of the text of the document, whether left to right (default) or right to left. Possible values are 'rtl', right to left, and 'ltr', left to right.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/dir)
      */
     var dir: String
 
     /**
-     * The **`doctype`** read-only property of the Document interface is a DocumentType object representing the Doctype associated with the current document.
+     * The **`doctype`** read-only property of the Document interface is a DocumentType object representing the Document Type Declaration (DTD) associated with the current document.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/doctype)
      */
     val doctype: DocumentType?
 
     /**
-     * The **`documentElement`** read-only property of the Document interface returns the Element that is the root element of the document (for example, the html element for HTML documents).
+     * The **`documentElement`** read-only property of the Document interface returns the Element that is the root element of the document (for example, the <html> element for HTML documents).
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/documentElement)
      */
@@ -149,14 +149,14 @@ open external class Document :
     val documentURI: String
 
     /**
-     * The **`embeds`** read-only property of the Document interface returns a list of the embedded embed elements within the current document.
+     * The **`embeds`** read-only property of the Document interface returns a list of the embedded <embed> elements within the current document.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/embeds)
      */
     val embeds: HTMLCollection<HTMLEmbedElement>
 
     /**
-     * The **`forms`** read-only property of the Document interface returns an HTMLCollection listing all the form elements contained in the document.
+     * The **`forms`** read-only property of the Document interface returns an HTMLCollection listing all the <form> elements contained in the document.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/forms)
      */
@@ -177,7 +177,7 @@ open external class Document :
     val fullscreenEnabled: Boolean
 
     /**
-     * The **`head`** read-only property of the Document interface returns the head element of the current document.
+     * The **`head`** read-only property of the Document interface returns the <head> element of the current document.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/head)
      */
@@ -212,7 +212,7 @@ open external class Document :
     val lastModified: String
 
     /**
-     * The **`links`** read-only property of the Document interface returns a collection of all area elements and a elements in a document with a value for the href attribute.
+     * The **`links`** read-only property of the Document interface returns a collection of all <area> elements and <a> elements in a document with a value for the href attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/links)
      */
@@ -266,14 +266,14 @@ open external class Document :
     val pictureInPictureEnabled: Boolean
 
     /**
-     * The **`plugins`** read-only property of the Document interface returns an HTMLCollection object containing one or more HTMLEmbedElements representing the embed elements in the current document.
+     * The **`plugins`** read-only property of the Document interface returns an HTMLCollection object containing one or more HTMLEmbedElements representing the <embed> elements in the current document.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/plugins)
      */
     val plugins: HTMLCollection<HTMLEmbedElement>
 
     /**
-     * The **`Document.readyState`** property describes the loading state of the document.
+     * The **`Document.readyState`** property describes the loading state of the document. When the value of this property changes, a readystatechange event fires on the document object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/readyState)
      */
@@ -287,42 +287,42 @@ open external class Document :
     val referrer: String
 
     /**
-     * The **`scripts`** property of the Document interface returns a list of the script elements in the document.
+     * The **`scripts`** property of the Document interface returns a list of the <script> elements in the document. The returned object is an HTMLCollection.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/scripts)
      */
     val scripts: HTMLCollection<HTMLScriptElement>
 
     /**
-     * The **`scrollingElement`** read-only property of the Document interface returns a reference to the Element that scrolls the document.
+     * The **`scrollingElement`** read-only property of the Document interface returns a reference to the Element that scrolls the document. In standards mode, this is the root element of the document, document.documentElement.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/scrollingElement)
      */
     val scrollingElement: Element?
 
     /**
-     * The `timeline` readonly property of the Document interface represents the default timeline of the current document.
+     * The **`timeline`** readonly property of the Document interface represents the default timeline of the current document. This timeline is a special instance of DocumentTimeline.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/timeline)
      */
     val timeline: DocumentTimeline
 
     /**
-     * The **`document.title`** property gets or sets the current title of the document.
+     * The **`document.title`** property gets or sets the current title of the document. When present, it defaults to the value of the <title>.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/title)
      */
     var title: String
 
     /**
-     * The **`Document.visibilityState`** read-only property returns the visibility of the document.
+     * The **`Document.visibilityState`** read-only property returns the visibility of the document. It can be used to check whether the document is in the background or in a minimized window, or is otherwise not visible to the user.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/visibilityState)
      */
     val visibilityState: DocumentVisibilityState
 
     /**
-     * **`Document.adoptNode()`** transfers a node/dom from another Document into the method's document.
+     * **`Document.adoptNode()`** transfers a node from another document into the method's document. The adopted node and its subtree are removed from their original document (if any), and their ownerDocument is changed to the current document. The node can then be inserted into the current document.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/adoptNode)
      */
@@ -347,14 +347,14 @@ open external class Document :
     fun close()
 
     /**
-     * The **`Document.createAttribute()`** method creates a new attribute node, and returns it.
+     * The **`Document.createAttribute()`** method creates a new attribute node, and returns it. The object created is a node implementing the Attr interface. The DOM does not enforce what sort of attributes can be added to a particular element in this manner.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/createAttribute)
      */
     fun createAttribute(localName: String): Attr
 
     /**
-     * The **`Document.createAttributeNS()`** method creates a new attribute node with the specified namespace URI and qualified name, and returns it.
+     * The **`Document.createAttributeNS()`** method creates a new attribute node with the specified namespace URI and qualified name, and returns it. The object created is a node implementing the Attr interface. The DOM does not enforce what sort of attributes can be added to a particular element in this manner.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/createAttributeNS)
      */
@@ -385,7 +385,7 @@ open external class Document :
     fun createDocumentFragment(): DocumentFragment
 
     /**
-     * In an HTML document, the **`document.createElement()`** method creates the HTML element specified by `localName`, or an HTMLUnknownElement if `localName` isn't recognized.
+     * In an HTML document, the **`document.createElement()`** method creates the HTML element specified by localName, or an HTMLUnknownElement if localName isn't recognized.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/createElement)
      */
@@ -417,7 +417,7 @@ open external class Document :
     ): Element
 
     /**
-     * The **`Document.createNodeIterator()`** method returns a new `NodeIterator` object.
+     * The **`Document.createNodeIterator()`** method returns a new NodeIterator object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/createNodeIterator)
      */
@@ -428,7 +428,7 @@ open external class Document :
     ): NodeIterator
 
     /**
-     * `createProcessingInstruction()` generates a new processing instruction node and returns it.
+     * **`createProcessingInstruction()`** generates a new processing instruction node and returns it.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/createProcessingInstruction)
      */
@@ -445,7 +445,7 @@ open external class Document :
     fun createRange(): Range
 
     /**
-     * Creates a new Text node.
+     * Creates a new Text node. This method can be used to escape HTML characters.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/createTextNode)
      */
@@ -463,7 +463,7 @@ open external class Document :
     ): TreeWalker
 
     /**
-     * The Document method **`exitFullscreen()`** requests that the element on this document which is currently being presented in fullscreen mode be taken out of fullscreen mode, restoring the previous state of the screen.
+     * The Document method **`exitFullscreen()`** requests that the element on this document which is currently being presented in fullscreen mode be taken out of fullscreen mode, restoring the previous state of the screen. This usually reverses the effects of a previous call to Element.requestFullscreen().
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/exitFullscreen)
      */
@@ -471,7 +471,7 @@ open external class Document :
     fun exitFullscreenAsync(): Promise<Void>
 
     /**
-     * The **`exitPictureInPicture()`** method of the Document interface requests that a video contained in this document, which is currently floating, be taken out of picture-in-picture mode, restoring the previous state of the screen.
+     * The **`exitPictureInPicture()`** method of the Document interface requests that a video contained in this document, which is currently floating, be taken out of picture-in-picture mode, restoring the previous state of the screen. This usually reverses the effects of a previous call to HTMLVideoElement.requestPictureInPicture().
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/exitPictureInPicture)
      */
@@ -494,7 +494,7 @@ open external class Document :
     fun getElementsByClassName(classNames: ClassName): HTMLCollection<Element>
 
     /**
-     * The **`getElementsByName()`** method of the Document object returns a NodeList Collection of elements with a given `name` attribute in the document.
+     * The **`getElementsByName()`** method of the Document object returns a NodeList Collection of elements with a given name attribute in the document.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/getElementsByName)
      */
@@ -525,7 +525,7 @@ open external class Document :
     fun getSelection(): Selection?
 
     /**
-     * The **`hasFocus()`** method of the Document interface returns a boolean value indicating whether the document or any element inside the document has focus.
+     * The **`hasFocus()`** method of the Document interface returns a boolean value indicating whether the document or any element inside the document has focus. This method can be used to determine whether the active element in a document has focus.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/hasFocus)
      */
@@ -555,7 +555,7 @@ open external class Document :
     ): T
 
     /**
-     * The **`Document.open()`** method opens a document for Document.write.
+     * The **`Document.open()`** method opens a document for writing.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/open)
      */
@@ -573,7 +573,7 @@ open external class Document :
     ): WindowProxy?
 
     /**
-     * The **`requestStorageAccess()`** method of the Document interface allows content loaded in a third-party context (i.e., embedded in an iframe) to request access to third-party cookies and unpartitioned state.
+     * The **`requestStorageAccess()`** method of the Document interface allows content loaded in a third-party context (i.e., embedded in an <iframe>) to request access to third-party cookies and unpartitioned state. This is relevant to user agents that, by default, block access to third-party, unpartitioned cookies to improve privacy (e.g., to prevent tracking), and is part of the Storage Access API.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/requestStorageAccess)
      */
@@ -600,7 +600,7 @@ open external class Document :
 }
 
 /**
- * The Document method **`exitFullscreen()`** requests that the element on this document which is currently being presented in fullscreen mode be taken out of fullscreen mode, restoring the previous state of the screen.
+ * The Document method **`exitFullscreen()`** requests that the element on this document which is currently being presented in fullscreen mode be taken out of fullscreen mode, restoring the previous state of the screen. This usually reverses the effects of a previous call to Element.requestFullscreen().
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/exitFullscreen)
  */
@@ -609,7 +609,7 @@ suspend inline fun Document.exitFullscreen() {
 }
 
 /**
- * The **`exitPictureInPicture()`** method of the Document interface requests that a video contained in this document, which is currently floating, be taken out of picture-in-picture mode, restoring the previous state of the screen.
+ * The **`exitPictureInPicture()`** method of the Document interface requests that a video contained in this document, which is currently floating, be taken out of picture-in-picture mode, restoring the previous state of the screen. This usually reverses the effects of a previous call to HTMLVideoElement.requestPictureInPicture().
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/exitPictureInPicture)
  */
@@ -627,7 +627,7 @@ suspend inline fun Document.hasStorageAccess(): Boolean {
 }
 
 /**
- * The **`requestStorageAccess()`** method of the Document interface allows content loaded in a third-party context (i.e., embedded in an iframe) to request access to third-party cookies and unpartitioned state.
+ * The **`requestStorageAccess()`** method of the Document interface allows content loaded in a third-party context (i.e., embedded in an <iframe>) to request access to third-party cookies and unpartitioned state. This is relevant to user agents that, by default, block access to third-party, unpartitioned cookies to improve privacy (e.g., to prevent tracking), and is part of the Storage Access API.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/requestStorageAccess)
  */

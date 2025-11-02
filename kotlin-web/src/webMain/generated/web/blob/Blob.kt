@@ -58,7 +58,7 @@ open external class Blob(
     fun bytesAsync(): Promise<Uint8Array<ArrayBuffer>>
 
     /**
-     * The **`slice()`** method of the Blob interface creates and returns a new `Blob` object which contains data from a subset of the blob on which it's called.
+     * The **`slice()`** method of the Blob interface creates and returns a new Blob object which contains data from a subset of the blob on which it's called.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Blob/slice)
      */
@@ -69,7 +69,7 @@ open external class Blob(
     ): Blob
 
     /**
-     * The **`stream()`** method of the Blob interface returns a ReadableStream which upon reading returns the data contained within the `Blob`.
+     * The **`stream()`** method of the Blob interface returns a ReadableStream which upon reading returns the data contained within the Blob.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Blob/stream)
      */

@@ -6,7 +6,7 @@ import web.errors.DOMException
 import kotlin.js.definedExternally
 
 /**
- * The **`OverconstrainedError`** interface of the Media Capture and Streams API indicates that the set of desired capabilities for the current MediaStreamTrack cannot currently be met.
+ * The **`OverconstrainedError`** interface of the Media Capture and Streams API indicates that the set of desired capabilities for the current MediaStreamTrack cannot currently be met. When this event is thrown on a MediaStreamTrack, it is muted until either the current constraints can be established or until satisfiable constraints are applied.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OverconstrainedError)
  */

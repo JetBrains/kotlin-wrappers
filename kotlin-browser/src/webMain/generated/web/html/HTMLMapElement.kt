@@ -11,14 +11,14 @@ open external class HTMLMapElement
 protected constructor() :
     HTMLElement {
     /**
-     * The **`areas`** read-only property of the HTMLMapElement interface returns a collection of area elements associated with the map element.
+     * The **`areas`** read-only property of the HTMLMapElement interface returns a collection of <area> elements associated with the <map> element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMapElement/areas)
      */
     val areas: HTMLCollection<*>
 
     /**
-     * The **`name`** property of the HTMLMapElement represents the unique name `<map>` element.
+     * The **`name`** property of the HTMLMapElement represents the unique name <map> element. Its value can be used with the useMap attribute of the <img> element to reference a <map> element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMapElement/name)
      */

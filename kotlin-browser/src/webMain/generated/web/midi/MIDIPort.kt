@@ -73,7 +73,7 @@ private constructor() :
     val version: String?
 
     /**
-     * The **`close()`** method of the MIDIPort interface makes the access to the MIDI device connected to this `MIDIPort` unavailable.
+     * The **`close()`** method of the MIDIPort interface makes the access to the MIDI device connected to this MIDIPort unavailable.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MIDIPort/close)
      */
@@ -81,7 +81,7 @@ private constructor() :
     fun closeAsync(): Promise<MIDIPort>
 
     /**
-     * The **`open()`** method of the MIDIPort interface makes the MIDI device connected to this `MIDIPort` explicitly available.
+     * The **`open()`** method of the MIDIPort interface makes the MIDI device connected to this MIDIPort explicitly available.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MIDIPort/open)
      */
@@ -90,7 +90,7 @@ private constructor() :
 }
 
 /**
- * The **`close()`** method of the MIDIPort interface makes the access to the MIDI device connected to this `MIDIPort` unavailable.
+ * The **`close()`** method of the MIDIPort interface makes the access to the MIDI device connected to this MIDIPort unavailable.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MIDIPort/close)
  */
@@ -99,7 +99,7 @@ suspend inline fun MIDIPort.close(): MIDIPort {
 }
 
 /**
- * The **`open()`** method of the MIDIPort interface makes the MIDI device connected to this `MIDIPort` explicitly available.
+ * The **`open()`** method of the MIDIPort interface makes the MIDI device connected to this MIDIPort explicitly available.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MIDIPort/open)
  */

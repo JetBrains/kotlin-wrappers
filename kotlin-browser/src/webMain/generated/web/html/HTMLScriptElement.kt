@@ -9,7 +9,7 @@ import web.http.FetchPriority
 import web.http.ReferrerPolicy
 
 /**
- * HTML script elements expose the **`HTMLScriptElement`** interface, which provides special properties and methods for manipulating the behavior and execution of `<script>` elements (beyond the inherited HTMLElement interface).
+ * HTML <script> elements expose the **`HTMLScriptElement`** interface, which provides special properties and methods for manipulating the behavior and execution of <script> elements (beyond the inherited HTMLElement interface).
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLScriptElement)
  */
@@ -18,7 +18,7 @@ protected constructor() :
     HTMLElement,
     HTMLOrSVGScriptElement {
     /**
-     * The **`async`** property of the HTMLScriptElement interface is a boolean value that controls how the script should be executed.
+     * The **`async`** property of the HTMLScriptElement interface is a boolean value that controls how the script should be executed. For classic scripts, if the async property is set to true, the external script will be fetched in parallel to parsing and evaluated as soon as it is available. For module scripts, if the async property is set to true, the script and all their dependencies will be fetched in parallel to parsing and evaluated as soon as they are available.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLScriptElement/async)
      */
@@ -32,21 +32,21 @@ protected constructor() :
     val blocking: DOMTokenList<Blocking>
 
     /**
-     * The **`crossOrigin`** property of the HTMLScriptElement interface reflects the CORS settings for the script element.
+     * The **`crossOrigin`** property of the HTMLScriptElement interface reflects the Cross-Origin Resource Sharing settings for the script element. For classic scripts from other origins, this controls if full error information will be exposed. For module scripts, it controls the script itself and any script it imports. See CORS settings attributes for details.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLScriptElement/crossOrigin)
      */
     var crossOrigin: CrossOrigin?
 
     /**
-     * The **`defer`** property of the HTMLScriptElement interface is a boolean value that controls how the script should be executed.
+     * The **`defer`** property of the HTMLScriptElement interface is a boolean value that controls how the script should be executed. For classic scripts, if the defer property is set to true, the external script will be executed after the document has been parsed, but before firing DOMContentLoaded event. For module scripts, the defer property has no effect.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLScriptElement/defer)
      */
     var defer: Boolean
 
     /**
-     * The **`fetchPriority`** property of the HTMLScriptElement interface represents a hint to the browser indicating how it should prioritize fetching an external script relative to other external scripts.
+     * The **`fetchPriority`** property of the HTMLScriptElement interface represents a hint to the browser indicating how it should prioritize fetching an external script relative to other external scripts. It reflects the fetchpriority attribute of the <script> element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLScriptElement/fetchPriority)
      */
@@ -60,14 +60,14 @@ protected constructor() :
     var integrity: String
 
     /**
-     * The **`noModule`** property of the HTMLScriptElement interface is a boolean value that indicates whether the script should be executed in browsers that support ES modules.
+     * The **`noModule`** property of the HTMLScriptElement interface is a boolean value that indicates whether the script should be executed in browsers that support ES modules. Practically, this can be used to serve fallback scripts to older browsers that do not support JavaScript modules.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLScriptElement/noModule)
      */
     var noModule: Boolean
 
     /**
-     * The **`referrerPolicy`** property of the HTMLScriptElement interface reflects the HTML `referrerpolicy` of the script element, which defines how the referrer is set when fetching the script and any scripts it imports.
+     * The **`referrerPolicy`** property of the HTMLScriptElement interface reflects the HTML referrerpolicy of the <script> element, which defines how the referrer is set when fetching the script and any scripts it imports.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLScriptElement/referrerPolicy)
      */
@@ -81,7 +81,7 @@ protected constructor() :
     var src: String
 
     /**
-     * The **`text`** property of the HTMLScriptElement interface represents the inline text content of the script element.
+     * The **`text`** property of the HTMLScriptElement interface represents the inline text content of the <script> element. It behaves in the same way as the textContent and innerText property.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLScriptElement/text)
      */

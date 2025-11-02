@@ -11,7 +11,7 @@ import kotlin.js.JsName
 import kotlin.js.definedExternally
 
 /**
- * The **`WritableStreamDefaultWriter`** interface of the Streams API is the object returned by WritableStream.getWriter() and once created locks the writer to the `WritableStream` ensuring that no other streams can write to the underlying sink.
+ * The **`WritableStreamDefaultWriter`** interface of the Streams API is the object returned by WritableStream.getWriter() and once created locks the writer to the WritableStream ensuring that no other streams can write to the underlying sink.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WritableStreamDefaultWriter)
  */
@@ -56,7 +56,7 @@ open external class WritableStreamDefaultWriter<W : JsAny?>(
     fun closeAsync(): Promise<Void>
 
     /**
-     * The **`releaseLock()`** method of the WritableStreamDefaultWriter interface releases the writer's lock on the corresponding stream.
+     * The **`releaseLock()`** method of the WritableStreamDefaultWriter interface releases the writer's lock on the corresponding stream. After the lock is released, the writer is no longer active. If the associated stream is errored when the lock is released, the writer will appear errored in the same way from now on; otherwise, the writer will appear closed.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WritableStreamDefaultWriter/releaseLock)
      */

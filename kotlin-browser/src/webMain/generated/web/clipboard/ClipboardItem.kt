@@ -30,7 +30,7 @@ open external class ClipboardItem(
     val presentationStyle: PresentationStyle
 
     /**
-     * The read-only **`types`** property of the ClipboardItem interface returns an Array of MIME type available within the ClipboardItem.
+     * The read-only **`types`** property of the ClipboardItem interface returns an Array of MIME types available within the ClipboardItem.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ClipboardItem/types)
      */
@@ -46,7 +46,7 @@ open external class ClipboardItem(
 
     companion object {
         /**
-         * The **`supports()`** static method of the ClipboardItem interface returns `true` if the given MIME type is supported by the clipboard, and `false` otherwise.
+         * The **`supports()`** static method of the ClipboardItem interface returns true if the given MIME type is supported by the clipboard, and false otherwise.
          *
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ClipboardItem/supports_static)
          */

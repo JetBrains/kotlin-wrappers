@@ -44,7 +44,7 @@ private constructor() :
     val inBandMetadataTrackDispatchType: String
 
     /**
-     * The **`kind`** read-only property of the TextTrack interface returns the kind of text track this object represents.
+     * The **`kind`** read-only property of the TextTrack interface returns the kind of text track this object represents. This decides how the track will be handled by a user agent.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextTrack/kind)
      */
@@ -65,7 +65,7 @@ private constructor() :
     val language: String
 
     /**
-     * The TextTrack interface's **`mode`** property is a string specifying and controlling the text track's mode: `disabled`, `hidden`, or `showing`.
+     * The TextTrack interface's **`mode`** property is a string specifying and controlling the text track's mode: disabled, hidden, or showing. You can read this value to determine the current mode, and you can change this value to switch modes.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextTrack/mode)
      */

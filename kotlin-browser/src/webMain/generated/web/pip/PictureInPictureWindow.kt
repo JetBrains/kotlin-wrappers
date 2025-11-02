@@ -8,7 +8,7 @@ import web.events.EventInstance
 import web.events.EventTarget
 
 /**
- * The **`PictureInPictureWindow`** interface represents an object able to programmatically obtain the **`width`** and **`height`** and **`resize event`** of the floating video window.
+ * The **`PictureInPictureWindow`** interface represents an object able to programmatically obtain the width and height and resize event of the floating video window.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PictureInPictureWindow)
  */

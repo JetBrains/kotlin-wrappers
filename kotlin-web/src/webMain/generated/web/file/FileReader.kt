@@ -56,42 +56,42 @@ open external class FileReader :
     var onprogress: EventHandler<ProgressEvent, FileReader, FileReader>?
 
     /**
-     * The **`readyState`** read-only property of the FileReader interface provides the current state of the reading operation.
+     * The **`readyState`** read-only property of the FileReader interface provides the current state of the reading operation. This will be one of the states: EMPTY, LOADING, or DONE.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileReader/readyState)
      */
     val readyState: ReadyState
 
     /**
-     * The **`result`** read-only property of the FileReader interface returns the file's contents.
+     * The **`result`** read-only property of the FileReader interface returns the file's contents. This property is only valid after the read operation is complete, and the format of the data depends on which of the methods was used to initiate the read operation.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileReader/result)
      */
     val result: JsAny /* string | ArrayBuffer */?
 
     /**
-     * The **`abort()`** method of the FileReader interface aborts the read operation.
+     * The **`abort()`** method of the FileReader interface aborts the read operation. Upon return, the readyState will be DONE.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileReader/abort)
      */
     fun abort()
 
     /**
-     * The **`readAsArrayBuffer()`** method of the FileReader interface is used to start reading the contents of a specified Blob or File.
+     * The **`readAsArrayBuffer()`** method of the FileReader interface is used to start reading the contents of a specified Blob or File. When the read operation is finished, the readyState property becomes DONE, and the loadend event is triggered. At that time, the result property contains an ArrayBuffer representing the file's data.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileReader/readAsArrayBuffer)
      */
     fun readAsArrayBuffer(blob: Blob)
 
     /**
-     * The **`readAsDataURL()`** method of the FileReader interface is used to read the contents of the specified Blob or File.
+     * The **`readAsDataURL()`** method of the FileReader interface is used to read the contents of the specified Blob or File. When the read operation is finished, the readyState property becomes DONE, and the loadend event is triggered. At that time, the result attribute contains the data as a data: URL representing the file's data as a base64 encoded string.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileReader/readAsDataURL)
      */
     fun readAsDataURL(blob: Blob)
 
     /**
-     * The **`readAsText()`** method of the FileReader interface is used to read the contents of the specified Blob or File.
+     * The **`readAsText()`** method of the FileReader interface is used to read the contents of the specified Blob or File. When the read operation is complete, the readyState property is changed to DONE, the loadend event is triggered, and the result property contains the contents of the file as a text string.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FileReader/readAsText)
      */

@@ -9,7 +9,7 @@ import kotlin.js.JsAny
 import kotlin.js.definedExternally
 
 /**
- * The **`ExtendableMessageEvent`** interface of the Service Worker API represents the event object of a ServiceWorkerGlobalScope/message_event event fired on a service worker (when a message is received on the ServiceWorkerGlobalScope from another context) — extends the lifetime of such events.
+ * The **`ExtendableMessageEvent`** interface of the Service Worker API represents the event object of a message event fired on a service worker (when a message is received on the ServiceWorkerGlobalScope from another context) — extends the lifetime of such events.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ExtendableMessageEvent)
  */
@@ -18,14 +18,14 @@ open external class ExtendableMessageEvent(
     init: ExtendableMessageEventInit = definedExternally,
 ) : ExtendableEvent {
     /**
-     * The **`data`** read-only property of the ExtendableMessageEvent interface returns the event's data.
+     * The **`data`** read-only property of the ExtendableMessageEvent interface returns the event's data. It can be any data type.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ExtendableMessageEvent/data)
      */
     val data: JsAny?
 
     /**
-     * The **`lastEventID`** read-only property of the ExtendableMessageEvent interface represents, in server-sent events, the last event ID of the event source.
+     * The lastEventID read-only property of the ExtendableMessageEvent interface represents, in server-sent events, the last event ID of the event source. This is an empty string.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ExtendableMessageEvent/lastEventId)
      */

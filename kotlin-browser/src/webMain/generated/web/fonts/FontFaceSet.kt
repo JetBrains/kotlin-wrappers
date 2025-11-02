@@ -38,7 +38,7 @@ protected /* private */ constructor() :
     var onloadingerror: EventHandler<FontFaceSetLoadEvent, FontFaceSet, FontFaceSet>?
 
     /**
-     * The `ready` read-only property of the FontFaceSet interface returns a Promise that resolves to the given FontFaceSet.
+     * The **`ready`** read-only property of the FontFaceSet interface returns a Promise that resolves to the given FontFaceSet.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FontFaceSet/ready)
      */
@@ -52,7 +52,7 @@ protected /* private */ constructor() :
     val status: FontFaceSetLoadStatus
 
     /**
-     * The `check()` method of the FontFaceSet returns `true` if you can render some text using the given font specification without attempting to use any fonts in this `FontFaceSet` that are not yet fully loaded.
+     * The **`check()`** method of the FontFaceSet returns true if you can render some text using the given font specification without attempting to use any fonts in this FontFaceSet that are not yet fully loaded. This means you can use the font specification without causing a font swap.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FontFaceSet/check)
      */
@@ -62,7 +62,7 @@ protected /* private */ constructor() :
     ): Boolean
 
     /**
-     * The `load()` method of the FontFaceSet forces all the fonts given in parameters to be loaded.
+     * The **`load()`** method of the FontFaceSet forces all the fonts given in parameters to be loaded.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FontFaceSet/load)
      */
@@ -74,7 +74,7 @@ protected /* private */ constructor() :
 }
 
 /**
- * The `load()` method of the FontFaceSet forces all the fonts given in parameters to be loaded.
+ * The **`load()`** method of the FontFaceSet forces all the fonts given in parameters to be loaded.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FontFaceSet/load)
  */
@@ -87,7 +87,7 @@ suspend inline fun FontFaceSet.load(
 }
 
 /**
- * The `load()` method of the FontFaceSet forces all the fonts given in parameters to be loaded.
+ * The **`load()`** method of the FontFaceSet forces all the fonts given in parameters to be loaded.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FontFaceSet/load)
  */

@@ -14,7 +14,7 @@ open external class InputDeviceInfo
 private constructor() :
     MediaDeviceInfo {
     /**
-     * The **`getCapabilities()`** method of the InputDeviceInfo interface returns a `MediaTrackCapabilities` object describing the primary audio or video track of the device's MediaStream.
+     * The **`getCapabilities()`** method of the InputDeviceInfo interface returns a MediaTrackCapabilities object describing the primary audio or video track of the device's MediaStream.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/InputDeviceInfo/getCapabilities)
      */

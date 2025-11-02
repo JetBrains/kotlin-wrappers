@@ -6,7 +6,7 @@ import web.errors.DOMException
 import kotlin.js.definedExternally
 
 /**
- * The **`RTCError`** interface describes an error which has occurred while handling WebRTC operations.
+ * The **`RTCError`** interface describes an error which has occurred while handling WebRTC operations. It's based upon the standard DOMException interface that describes general DOM errors.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCError)
  */
@@ -29,7 +29,7 @@ open external class RTCError(
     val receivedAlert: Int?
 
     /**
-     * The read-only **`sctpCauseCode`** property in an RTCError object provides the SCTP cause code explaining why the SCTP negotiation failed, if the `RTCError` represents an SCTP error.
+     * The read-only **`sctpCauseCode`** property in an RTCError object provides the SCTP cause code explaining why the SCTP negotiation failed, if the RTCError represents an SCTP error.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCError/sctpCauseCode)
      */

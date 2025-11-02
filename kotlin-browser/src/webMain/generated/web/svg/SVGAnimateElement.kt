@@ -3,7 +3,7 @@
 package web.svg
 
 /**
- * The **`SVGAnimateElement`** interface corresponds to the animate element.
+ * The **`SVGAnimateElement`** interface corresponds to the <animate> element.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimateElement)
  */

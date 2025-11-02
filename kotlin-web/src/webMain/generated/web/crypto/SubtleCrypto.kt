@@ -22,7 +22,7 @@ import kotlin.js.toBoolean
 open external class SubtleCrypto
 private constructor() {
     /**
-     * The **`decrypt()`** method of the SubtleCrypto interface decrypts some encrypted data.
+     * The **`decrypt()`** method of the SubtleCrypto interface decrypts some encrypted data. It takes as arguments a key to decrypt with, some optional extra parameters, and the data to decrypt (also known as "ciphertext"). It returns a Promise which will be fulfilled with the decrypted data (also known as "plaintext").
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/decrypt)
      */
@@ -366,7 +366,7 @@ private constructor() {
     ): Promise<CryptoKey>
 
     /**
-     * The **`digest()`** method of the SubtleCrypto interface generates a _digest_ of the given data, using the specified hash function.
+     * The **`digest()`** method of the SubtleCrypto interface generates a digest of the given data, using the specified hash function. A digest is a short fixed-length value derived from some variable-length input. Cryptographic digests should exhibit collision-resistance, meaning that it's hard to come up with two different inputs that have the same digest value.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/digest)
      */
@@ -654,7 +654,7 @@ private constructor() {
     ): Promise<ArrayBuffer>
 
     /**
-     * The **`unwrapKey()`** method of the SubtleCrypto interface 'unwraps' a key.
+     * The **`unwrapKey()`** method of the SubtleCrypto interface "unwraps" a key. This means that it takes as its input a key that has been exported and then encrypted (also called "wrapped"). It decrypts the key and then imports it, returning a CryptoKey object that can be used in the Web Crypto API.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/unwrapKey)
      */
@@ -1070,7 +1070,7 @@ private constructor() {
     ): Promise<JsBoolean>
 
     /**
-     * The **`wrapKey()`** method of the SubtleCrypto interface 'wraps' a key.
+     * The **`wrapKey()`** method of the SubtleCrypto interface "wraps" a key. This means that it exports the key in an external, portable format, then encrypts the exported key. Wrapping a key helps protect it in untrusted environments, such as inside an otherwise unprotected data store or in transmission over an unprotected network.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/wrapKey)
      */
@@ -1124,7 +1124,7 @@ private constructor() {
 }
 
 /**
- * The **`decrypt()`** method of the SubtleCrypto interface decrypts some encrypted data.
+ * The **`decrypt()`** method of the SubtleCrypto interface decrypts some encrypted data. It takes as arguments a key to decrypt with, some optional extra parameters, and the data to decrypt (also known as "ciphertext"). It returns a Promise which will be fulfilled with the decrypted data (also known as "plaintext").
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/decrypt)
  */
@@ -1774,7 +1774,7 @@ suspend inline fun SubtleCrypto.deriveKey(
 }
 
 /**
- * The **`digest()`** method of the SubtleCrypto interface generates a _digest_ of the given data, using the specified hash function.
+ * The **`digest()`** method of the SubtleCrypto interface generates a digest of the given data, using the specified hash function. A digest is a short fixed-length value derived from some variable-length input. Cryptographic digests should exhibit collision-resistance, meaning that it's hard to come up with two different inputs that have the same digest value.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/digest)
  */
@@ -2252,7 +2252,7 @@ suspend inline fun SubtleCrypto.sign(
 }
 
 /**
- * The **`unwrapKey()`** method of the SubtleCrypto interface 'unwraps' a key.
+ * The **`unwrapKey()`** method of the SubtleCrypto interface "unwraps" a key. This means that it takes as its input a key that has been exported and then encrypted (also called "wrapped"). It decrypts the key and then imports it, returning a CryptoKey object that can be used in the Web Crypto API.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/unwrapKey)
  */
@@ -2998,7 +2998,7 @@ suspend inline fun SubtleCrypto.verify(
 }
 
 /**
- * The **`wrapKey()`** method of the SubtleCrypto interface 'wraps' a key.
+ * The **`wrapKey()`** method of the SubtleCrypto interface "wraps" a key. This means that it exports the key in an external, portable format, then encrypts the exported key. Wrapping a key helps protect it in untrusted environments, such as inside an otherwise unprotected data store or in transmission over an unprotected network.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SubtleCrypto/wrapKey)
  */

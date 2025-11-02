@@ -10,7 +10,7 @@ import web.gl.TexImageSource
 import web.gpu.GPUCopyExternalImageSource
 
 /**
- * The **`ImageBitmap`** interface represents a bitmap image which can be drawn to a canvas without undue latency.
+ * The **`ImageBitmap`** interface represents a bitmap image which can be drawn to a <canvas> without undue latency. It can be created from a variety of source objects using the Window.createImageBitmap() or WorkerGlobalScope.createImageBitmap() factory method. ImageBitmap provides an asynchronous and resource efficient pathway to prepare textures for rendering in WebGL.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageBitmap)
  */
@@ -37,7 +37,7 @@ private constructor() :
     val width: Int
 
     /**
-     * The **`ImageBitmap.close()`** method disposes of all graphical resources associated with an `ImageBitmap`.
+     * The **`ImageBitmap.close()`** method disposes of all graphical resources associated with an ImageBitmap.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageBitmap/close)
      */

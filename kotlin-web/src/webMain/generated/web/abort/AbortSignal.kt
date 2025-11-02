@@ -21,7 +21,7 @@ open external class AbortSignal
 private constructor() :
     EventTarget {
     /**
-     * The **`aborted`** read-only property returns a value that indicates whether the asynchronous operations the signal is communicating with are aborted (`true`) or not (`false`).
+     * The **`aborted`** read-only property returns a value that indicates whether the asynchronous operations the signal is communicating with are aborted (true) or not (false).
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AbortSignal/aborted)
      */
@@ -40,7 +40,7 @@ private constructor() :
     val reason: JsErrorLike?
 
     /**
-     * The **`throwIfAborted()`** method throws the signal's abort AbortSignal.reason if the signal has been aborted; otherwise it does nothing.
+     * The **`throwIfAborted()`** method throws the signal's abort reason if the signal has been aborted; otherwise it does nothing.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AbortSignal/throwIfAborted)
      */
@@ -48,14 +48,14 @@ private constructor() :
 
     companion object {
         /**
-         * The **`AbortSignal.abort()`** static method returns an AbortSignal that is already set as aborted (and which does not trigger an AbortSignal/abort_event event).
+         * The **`AbortSignal.abort()`** static method returns an AbortSignal that is already set as aborted (and which does not trigger an abort event).
          *
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AbortSignal/abort_static)
          */
         fun abort(reason: JsError? = definedExternally): AbortSignal
 
         /**
-         * The **`AbortSignal.any()`** static method takes an iterable of abort signals and returns an AbortSignal.
+         * The **`AbortSignal.any()`** static method takes an iterable of abort signals and returns an AbortSignal. The returned abort signal is aborted when any of the input iterable abort signals are aborted. The abort reason will be set to the reason of the first signal that is aborted. If any of the given abort signals are already aborted then so will be the returned AbortSignal.
          *
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AbortSignal/any_static)
          */

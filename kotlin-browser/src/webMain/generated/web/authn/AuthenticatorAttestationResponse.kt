@@ -7,7 +7,7 @@ import js.buffer.ArrayBuffer
 import kotlin.js.JsString
 
 /**
- * The **`AuthenticatorAttestationResponse`** interface of the Web Authentication API is the result of a WebAuthn credential registration.
+ * The **`AuthenticatorAttestationResponse`** interface of the Web Authentication API is the result of a WebAuthn credential registration. It contains information about the credential that the server needs to perform WebAuthn assertions, such as its credential ID and public key.
  * Available only in secure contexts.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AuthenticatorAttestationResponse)
@@ -16,7 +16,7 @@ open external class AuthenticatorAttestationResponse
 private constructor() :
     AuthenticatorResponse {
     /**
-     * The **`attestationObject`** property of the AuthenticatorAttestationResponse interface returns an ArrayBuffer containing the new public key, as well as signature over the entire `attestationObject` with a private key that is stored in the authenticator when it is manufactured.
+     * The **`attestationObject`** property of the AuthenticatorAttestationResponse interface returns an ArrayBuffer containing the new public key, as well as signature over the entire attestationObject with a private key that is stored in the authenticator when it is manufactured.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AuthenticatorAttestationResponse/attestationObject)
      */
@@ -30,7 +30,7 @@ private constructor() :
     fun getAuthenticatorData(): ArrayBuffer
 
     /**
-     * The **`getPublicKey()`** method of the AuthenticatorAttestationResponse interface returns an ArrayBuffer containing the DER `SubjectPublicKeyInfo` of the new credential (see Subject Public Key Info), or `null` if this is not available.
+     * The **`getPublicKey()`** method of the AuthenticatorAttestationResponse interface returns an ArrayBuffer containing the DER SubjectPublicKeyInfo of the new credential (see Subject Public Key Info), or null if this is not available.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AuthenticatorAttestationResponse/getPublicKey)
      */

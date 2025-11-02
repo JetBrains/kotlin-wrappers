@@ -53,7 +53,7 @@ private constructor() :
     val tableValues: SVGAnimatedNumberList
 
     /**
-     * The **`type`** read-only property of the SVGComponentTransferFunctionElement interface reflects the type attribute of the given element.
+     * The **`type`** read-only property of the SVGComponentTransferFunctionElement interface reflects the type attribute of the given element. It takes one of the SVG_FECOMPONENTTRANSFER_TYPE_* constants defined on this interface.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGComponentTransferFunctionElement/type)
      */

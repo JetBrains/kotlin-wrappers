@@ -3,7 +3,7 @@
 package web.dom
 
 /**
- * The **`CharacterData`** abstract interface represents a Node object that contains characters.
+ * The **`CharacterData`** abstract interface represents a Node object that contains characters. This is an abstract interface, meaning there aren't any objects of type CharacterData: it is implemented by other interfaces like Text, Comment, CDATASection, or ProcessingInstruction, which aren't abstract.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CharacterData)
  */
@@ -35,7 +35,7 @@ private constructor() :
     fun appendData(data: String)
 
     /**
-     * The **`deleteData()`** method of the CharacterData interface removes all or part of the data from this `CharacterData` node.
+     * The **`deleteData()`** method of the CharacterData interface removes all or part of the data from this CharacterData node.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CharacterData/deleteData)
      */
@@ -45,7 +45,7 @@ private constructor() :
     )
 
     /**
-     * The **`insertData()`** method of the CharacterData interface inserts the provided data into this `CharacterData` node's current data, at the provided offset from the start of the existing data.
+     * The **`insertData()`** method of the CharacterData interface inserts the provided data into this CharacterData node's current data, at the provided offset from the start of the existing data. The provided data is spliced into the existing data.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CharacterData/insertData)
      */
@@ -55,7 +55,7 @@ private constructor() :
     )
 
     /**
-     * The **`replaceData()`** method of the CharacterData interface removes a certain number of characters of the existing text in a given `CharacterData` node and replaces those characters with the text provided.
+     * The **`replaceData()`** method of the CharacterData interface removes a certain number of characters of the existing text in a given CharacterData node and replaces those characters with the text provided.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CharacterData/replaceData)
      */

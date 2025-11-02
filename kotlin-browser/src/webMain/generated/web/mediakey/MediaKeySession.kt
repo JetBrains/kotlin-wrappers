@@ -25,7 +25,7 @@ open external class MediaKeySession
 private constructor() :
     EventTarget {
     /**
-     * The **`closed`** read-only property of the MediaKeySession interface returns a Promise signaling when a MediaKeySession closes.
+     * The **`closed`** read-only property of the MediaKeySession interface returns a Promise signaling when a MediaKeySession closes. This promise can only be fulfilled and is never rejected. Closing a session means that licenses and keys associated with it are no longer valid for decrypting media data.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeySession/closed)
      */
@@ -63,7 +63,7 @@ private constructor() :
     val sessionId: String
 
     /**
-     * The `close()` method of the MediaKeySession interface notifies that the current media session is no longer needed, and that the content decryption module should release any resources associated with this object and close it.
+     * The **`close()`** method of the MediaKeySession interface notifies that the current media session is no longer needed, and that the content decryption module should release any resources associated with this object and close it. Then, it returns a Promise.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeySession/close)
      */
@@ -71,7 +71,7 @@ private constructor() :
     fun closeAsync(): Promise<Void>
 
     /**
-     * The `generateRequest()` method of the MediaKeySession interface returns a Promise after generating a license request based on initialization data.
+     * The **`generateRequest()`** method of the MediaKeySession interface returns a Promise after generating a license request based on initialization data.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeySession/generateRequest)
      */
@@ -82,7 +82,7 @@ private constructor() :
     ): Promise<Void>
 
     /**
-     * The `load()` method of the MediaKeySession interface returns a Promise that resolves to a boolean value after loading data for a specified session object.
+     * The **`load()`** method of the MediaKeySession interface returns a Promise that resolves to a boolean value after loading data for a specified session object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeySession/load)
      */
@@ -90,7 +90,7 @@ private constructor() :
     fun loadAsync(sessionId: String): Promise<JsBoolean>
 
     /**
-     * The `remove()` method of the MediaKeySession interface returns a Promise after removing any session data associated with the current object.
+     * The **`remove()`** method of the MediaKeySession interface returns a Promise after removing any session data associated with the current object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeySession/remove)
      */
@@ -98,7 +98,7 @@ private constructor() :
     fun removeAsync(): Promise<Void>
 
     /**
-     * The `update()` method of the MediaKeySession interface loads messages and licenses to the CDM, and then returns a Promise.
+     * The **`update()`** method of the MediaKeySession interface loads messages and licenses to the CDM, and then returns a Promise.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeySession/update)
      */
@@ -107,7 +107,7 @@ private constructor() :
 }
 
 /**
- * The `close()` method of the MediaKeySession interface notifies that the current media session is no longer needed, and that the content decryption module should release any resources associated with this object and close it.
+ * The **`close()`** method of the MediaKeySession interface notifies that the current media session is no longer needed, and that the content decryption module should release any resources associated with this object and close it. Then, it returns a Promise.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeySession/close)
  */
@@ -116,7 +116,7 @@ suspend inline fun MediaKeySession.close() {
 }
 
 /**
- * The `generateRequest()` method of the MediaKeySession interface returns a Promise after generating a license request based on initialization data.
+ * The **`generateRequest()`** method of the MediaKeySession interface returns a Promise after generating a license request based on initialization data.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeySession/generateRequest)
  */
@@ -131,7 +131,7 @@ suspend inline fun MediaKeySession.generateRequest(
 }
 
 /**
- * The `load()` method of the MediaKeySession interface returns a Promise that resolves to a boolean value after loading data for a specified session object.
+ * The **`load()`** method of the MediaKeySession interface returns a Promise that resolves to a boolean value after loading data for a specified session object.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeySession/load)
  */
@@ -142,7 +142,7 @@ suspend inline fun MediaKeySession.load(sessionId: String): Boolean {
 }
 
 /**
- * The `remove()` method of the MediaKeySession interface returns a Promise after removing any session data associated with the current object.
+ * The **`remove()`** method of the MediaKeySession interface returns a Promise after removing any session data associated with the current object.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeySession/remove)
  */
@@ -151,7 +151,7 @@ suspend inline fun MediaKeySession.remove() {
 }
 
 /**
- * The `update()` method of the MediaKeySession interface loads messages and licenses to the CDM, and then returns a Promise.
+ * The **`update()`** method of the MediaKeySession interface loads messages and licenses to the CDM, and then returns a Promise.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeySession/update)
  */

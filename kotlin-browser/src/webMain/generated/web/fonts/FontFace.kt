@@ -37,14 +37,14 @@ open external class FontFace(
     var ascentOverride: String
 
     /**
-     * The **`descentOverride`** property of the FontFace interface returns and sets the value of the @font-face/descent-override descriptor.
+     * The **`descentOverride`** property of the FontFace interface returns and sets the value of the descent-override descriptor. The possible values are normal, indicating that the metric used should be obtained from the font file, or a percentage.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FontFace/descentOverride)
      */
     var descentOverride: String
 
     /**
-     * The **`display`** property of the FontFace interface determines how a font face is displayed based on whether and when it is downloaded and ready to use.
+     * The **`display`** property of the FontFace interface determines how a font face is displayed based on whether and when it is downloaded and ready to use. This property is equivalent to the CSS font-display descriptor.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FontFace/display)
      */
@@ -58,21 +58,21 @@ open external class FontFace(
     var featureSettings: String
 
     /**
-     * The **`lineGapOverride`** property of the FontFace interface returns and sets the value of the @font-face/line-gap-override descriptor.
+     * The **`lineGapOverride`** property of the FontFace interface returns and sets the value of the line-gap-override descriptor. The possible values are normal, indicating that the metric used should be obtained from the font file, or a percentage.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FontFace/lineGapOverride)
      */
     var lineGapOverride: String
 
     /**
-     * The **`loaded`** read-only property of the FontFace interface returns a Promise that resolves with the current `FontFace` object when the font specified in the object's constructor is done loading or rejects with a `SyntaxError`.
+     * The **`loaded`** read-only property of the FontFace interface returns a Promise that resolves with the current FontFace object when the font specified in the object's constructor is done loading or rejects with a SyntaxError.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FontFace/loaded)
      */
     val loaded: Promise<FontFace>
 
     /**
-     * The **`status`** read-only property of the FontFace interface returns an enumerated value indicating the status of the font, one of `'unloaded'`, `'loading'`, `'loaded'`, or `'error'`.
+     * The **`status`** read-only property of the FontFace interface returns an enumerated value indicating the status of the font, one of "unloaded", "loading", "loaded", or "error".
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FontFace/status)
      */
@@ -114,7 +114,7 @@ open external class FontFace(
     var weight: String
 
     /**
-     * The **`load()`** method of the FontFace interface requests and loads a font whose `source` was specified as a URL.
+     * The **`load()`** method of the FontFace interface requests and loads a font whose source was specified as a URL. It returns a Promise that resolves with the current FontFace object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FontFace/load)
      */
@@ -123,7 +123,7 @@ open external class FontFace(
 }
 
 /**
- * The **`load()`** method of the FontFace interface requests and loads a font whose `source` was specified as a URL.
+ * The **`load()`** method of the FontFace interface requests and loads a font whose source was specified as a URL. It returns a Promise that resolves with the current FontFace object.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FontFace/load)
  */

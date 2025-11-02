@@ -3,21 +3,21 @@
 package web.animations
 
 /**
- * The `AnimationTimeline` interface of the Web Animations API represents the timeline of an animation.
+ * The **`AnimationTimeline`** interface of the Web Animations API represents the timeline of an animation. This interface exists to define timeline features, inherited by other timeline types:
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AnimationTimeline)
  */
 open external class AnimationTimeline
 private constructor() {
     /**
-     * The **`currentTime`** read-only property of the Web Animations API's AnimationTimeline interface returns the timeline's current time in milliseconds, or `null` if the timeline is inactive.
+     * The **`currentTime`** read-only property of the Web Animations API's AnimationTimeline interface returns the timeline's current time in milliseconds, or null if the timeline is inactive.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AnimationTimeline/currentTime)
      */
     val currentTime: CSSNumberish?
 
     /**
-     * The **`duration`** read-only property of the Web Animations API's AnimationTimeline interface returns the maximum value for this timeline or `null`.
+     * The **`duration`** read-only property of the Web Animations API's AnimationTimeline interface returns the maximum value for this timeline or null.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AnimationTimeline/duration)
      */

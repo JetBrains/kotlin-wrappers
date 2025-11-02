@@ -13,7 +13,7 @@ import kotlin.js.JsName
 import kotlin.js.definedExternally
 
 /**
- * The **`WritableStream`** interface of the Streams API provides a standard abstraction for writing streaming data to a destination, known as a sink.
+ * The **`WritableStream`** interface of the Streams API provides a standard abstraction for writing streaming data to a destination, known as a sink. This object comes with built-in backpressure and queuing.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WritableStream)
  */
@@ -23,7 +23,7 @@ open external class WritableStream<W : JsAny?>(
 ) : Transferable,
     AsyncCloseableDisposable {
     /**
-     * The **`locked`** read-only property of the WritableStream interface returns a boolean indicating whether the `WritableStream` is locked to a writer.
+     * The **`locked`** read-only property of the WritableStream interface returns a boolean indicating whether the WritableStream is locked to a writer.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WritableStream/locked)
      */
@@ -38,7 +38,7 @@ open external class WritableStream<W : JsAny?>(
     fun abortAsync(reason: JsError? = definedExternally): Promise<Void>
 
     /**
-     * The **`close()`** method of the WritableStream interface closes the associated stream.
+     * The **`close()`** method of the WritableStream interface closes the associated stream. All chunks written before this method is called are sent before the returned promise is fulfilled.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WritableStream/close)
      */
@@ -46,7 +46,7 @@ open external class WritableStream<W : JsAny?>(
     fun closeAsync(): Promise<Void>
 
     /**
-     * The **`getWriter()`** method of the WritableStream interface returns a new instance of WritableStreamDefaultWriter and locks the stream to that instance.
+     * The **`getWriter()`** method of the WritableStream interface returns a new instance of WritableStreamDefaultWriter and locks the stream to that instance. While the stream is locked, no other writer can be acquired until this one is released.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WritableStream/getWriter)
      */
@@ -74,7 +74,7 @@ suspend inline fun <W : JsAny?> WritableStream<W>.abort(reason: JsError?) {
 }
 
 /**
- * The **`close()`** method of the WritableStream interface closes the associated stream.
+ * The **`close()`** method of the WritableStream interface closes the associated stream. All chunks written before this method is called are sent before the returned promise is fulfilled.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WritableStream/close)
  */

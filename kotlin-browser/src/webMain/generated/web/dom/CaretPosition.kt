@@ -5,7 +5,7 @@ package web.dom
 import web.geometry.DOMRect
 
 /**
- * The `CaretPosition` interface represents the caret position, an indicator for the text insertion point.
+ * The **`CaretPosition`** interface represents the caret position, an indicator for the text insertion point. You can get a CaretPosition using the Document.caretPositionFromPoint() method.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CaretPosition)
  */
@@ -26,7 +26,7 @@ private constructor() {
     val offsetNode: Node
 
     /**
-     * The `getClientRect()` method of the CaretPosition interface returns the client rectangle for the caret range.
+     * The **`getClientRect()`** method of the CaretPosition interface returns the client rectangle for the caret range.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CaretPosition/getClientRect)
      */

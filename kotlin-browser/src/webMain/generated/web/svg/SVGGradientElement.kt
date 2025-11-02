@@ -3,7 +3,7 @@
 package web.svg
 
 /**
- * The **`SVGGradient`** interface is a base interface used by SVGLinearGradientElement and SVGRadialGradientElement.
+ * The SVGGradient interface is a base interface used by SVGLinearGradientElement and SVGRadialGradientElement.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGGradientElement)
  */
@@ -19,14 +19,14 @@ private constructor() :
     val gradientTransform: SVGAnimatedTransformList
 
     /**
-     * The **`gradientUnits`** read-only property of the SVGGradientElement interface reflects the gradientUnits attribute of the given element.
+     * The **`gradientUnits`** read-only property of the SVGGradientElement interface reflects the gradientUnits attribute of the given element. It takes one of the SVG_UNIT_TYPE_* constants defined in SVGUnitTypes.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGGradientElement/gradientUnits)
      */
     val gradientUnits: SVGAnimatedEnumeration<SVGUnitTypes.Type>
 
     /**
-     * The **`spreadMethod`** read-only property of the SVGGradientElement interface reflects the spreadMethod attribute of the given element.
+     * The **`spreadMethod`** read-only property of the SVGGradientElement interface reflects the spreadMethod attribute of the given element. It takes one of the SVG_SPREADMETHOD_* constants defined on this interface.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGGradientElement/spreadMethod)
      */

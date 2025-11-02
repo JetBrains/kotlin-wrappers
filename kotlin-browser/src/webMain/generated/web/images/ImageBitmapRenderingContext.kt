@@ -9,7 +9,7 @@ import web.rendering.RenderingContext
 import web.rendering.RenderingContextId
 
 /**
- * The **`ImageBitmapRenderingContext`** interface is a canvas rendering context that provides the functionality to replace the canvas's contents with the given ImageBitmap.
+ * The **`ImageBitmapRenderingContext`** interface is a canvas rendering context that provides the functionality to replace the canvas's contents with the given ImageBitmap. Its context id (the first argument to HTMLCanvasElement.getContext() or OffscreenCanvas.getContext()) is "bitmaprenderer".
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageBitmapRenderingContext)
  */
@@ -25,7 +25,7 @@ private constructor() :
     val canvas: EventTarget /* HTMLCanvasElement | OffscreenCanvas */
 
     /**
-     * The **`ImageBitmapRenderingContext.transferFromImageBitmap()`** method displays the given ImageBitmap in the canvas associated with this rendering context.
+     * The **`ImageBitmapRenderingContext.transferFromImageBitmap()`** method displays the given ImageBitmap in the canvas associated with this rendering context. The ownership of the ImageBitmap is transferred to the canvas as well.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageBitmapRenderingContext/transferFromImageBitmap)
      */

@@ -10,7 +10,7 @@ package web.codecs
 open external class ImageTrack
 private constructor() {
     /**
-     * The **`animated`** property of the ImageTrack interface returns `true` if the track is animated and therefore has multiple frames.
+     * The **`animated`** property of the ImageTrack interface returns true if the track is animated and therefore has multiple frames.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageTrack/animated)
      */
@@ -31,7 +31,7 @@ private constructor() {
     val repetitionCount: Float
 
     /**
-     * The **`selected`** property of the ImageTrack interface returns `true` if the track is selected for decoding.
+     * The **`selected`** property of the ImageTrack interface returns true if the track is selected for decoding.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageTrack/selected)
      */

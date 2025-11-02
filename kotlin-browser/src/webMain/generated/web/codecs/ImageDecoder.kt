@@ -64,7 +64,7 @@ open external class ImageDecoder(
     fun decodeAsync(options: ImageDecodeOptions = definedExternally): Promise<ImageDecodeResult>
 
     /**
-     * The **`reset()`** method of the ImageDecoder interface aborts all pending `decode()` operations; rejecting all pending promises.
+     * The **`reset()`** method of the ImageDecoder interface aborts all pending decode() operations; rejecting all pending promises. All other state will be unchanged. Class methods can continue to be invoked after reset(). E.g., calling decode() after reset() is permitted.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageDecoder/reset)
      */

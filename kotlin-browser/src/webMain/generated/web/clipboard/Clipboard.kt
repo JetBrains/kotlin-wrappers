@@ -11,7 +11,7 @@ import kotlin.js.JsName
 import kotlin.js.JsString
 
 /**
- * The **`Clipboard`** interface of the Clipboard API provides read and write access to the contents of the system clipboard.
+ * The **`Clipboard`** interface of the Clipboard API provides read and write access to the contents of the system clipboard. This allows a web application to implement cut, copy, and paste features.
  * Available only in secure contexts.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Clipboard)
@@ -36,7 +36,7 @@ private constructor() :
     fun readTextAsync(): Promise<JsString>
 
     /**
-     * The **`write()`** method of the Clipboard interface writes arbitrary ClipboardItem data such as images and text to the clipboard, fulfilling the returned Promise on completion.
+     * The **`write()`** method of the Clipboard interface writes arbitrary ClipboardItem data such as images and text to the clipboard, fulfilling the returned Promise on completion. This can be used to implement cut and copy functionality.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Clipboard/write)
      */
@@ -71,7 +71,7 @@ suspend inline fun Clipboard.readText(): String {
 }
 
 /**
- * The **`write()`** method of the Clipboard interface writes arbitrary ClipboardItem data such as images and text to the clipboard, fulfilling the returned Promise on completion.
+ * The **`write()`** method of the Clipboard interface writes arbitrary ClipboardItem data such as images and text to the clipboard, fulfilling the returned Promise on completion. This can be used to implement cut and copy functionality.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Clipboard/write)
  */

@@ -11,7 +11,7 @@ open external class CSSMathValue
 private constructor() :
     CSSNumericValue {
     /**
-     * The **`CSSMathValue.operator`** read-only property of the CSSMathValue interface indicates the operator that the current subtype represents.
+     * The **`CSSMathValue.operator`** read-only property of the CSSMathValue interface indicates the operator that the current subtype represents. For example, if the current CSSMathValue subtype is CSSMathSum, this property will return the string "sum".
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSMathValue/operator)
      */

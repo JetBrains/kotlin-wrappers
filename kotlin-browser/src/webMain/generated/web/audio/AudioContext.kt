@@ -13,7 +13,7 @@ import kotlin.js.JsName
 import kotlin.js.definedExternally
 
 /**
- * The `AudioContext` interface represents an audio-processing graph built from audio modules linked together, each represented by an AudioNode.
+ * The **`AudioContext`** interface represents an audio-processing graph built from audio modules linked together, each represented by an AudioNode.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioContext)
  */
@@ -21,7 +21,7 @@ open external class AudioContext(
     contextOptions: AudioContextOptions = definedExternally,
 ) : BaseAudioContext {
     /**
-     * The **`baseLatency`** read-only property of the AudioContext interface returns a double that represents the number of seconds of processing latency incurred by the `AudioContext` passing an audio buffer from the AudioDestinationNode — i.e., the end of the audio graph — into the host system's audio subsystem ready for playing.
+     * The **`baseLatency`** read-only property of the AudioContext interface returns a double that represents the number of seconds of processing latency incurred by the AudioContext passing an audio buffer from the AudioDestinationNode — i.e., the end of the audio graph — into the host system's audio subsystem ready for playing.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioContext/baseLatency)
      */
@@ -35,7 +35,7 @@ open external class AudioContext(
     val outputLatency: Double
 
     /**
-     * The `close()` method of the AudioContext Interface closes the audio context, releasing any system audio resources that it uses.
+     * The **`close()`** method of the AudioContext Interface closes the audio context, releasing any system audio resources that it uses.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioContext/close)
      */
@@ -43,28 +43,28 @@ open external class AudioContext(
     fun closeAsync(): Promise<Void>
 
     /**
-     * The `createMediaElementSource()` method of the AudioContext Interface is used to create a new MediaElementAudioSourceNode object, given an existing HTML audio or video element, the audio from which can then be played and manipulated.
+     * The **`createMediaElementSource()`** method of the AudioContext Interface is used to create a new MediaElementAudioSourceNode object, given an existing HTML <audio> or <video> element, the audio from which can then be played and manipulated.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioContext/createMediaElementSource)
      */
     fun createMediaElementSource(mediaElement: HTMLMediaElement): MediaElementAudioSourceNode
 
     /**
-     * The `createMediaStreamDestination()` method of the AudioContext Interface is used to create a new MediaStreamAudioDestinationNode object associated with a WebRTC MediaStream representing an audio stream, which may be stored in a local file or sent to another computer.
+     * The **`createMediaStreamDestination()`** method of the AudioContext Interface is used to create a new MediaStreamAudioDestinationNode object associated with a WebRTC MediaStream representing an audio stream, which may be stored in a local file or sent to another computer.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioContext/createMediaStreamDestination)
      */
     fun createMediaStreamDestination(): MediaStreamAudioDestinationNode
 
     /**
-     * The `createMediaStreamSource()` method of the AudioContext Interface is used to create a new MediaStreamAudioSourceNode object, given a media stream (say, from a MediaDevices.getUserMedia instance), the audio from which can then be played and manipulated.
+     * The **`createMediaStreamSource()`** method of the AudioContext Interface is used to create a new MediaStreamAudioSourceNode object, given a media stream (say, from a MediaDevices.getUserMedia instance), the audio from which can then be played and manipulated.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioContext/createMediaStreamSource)
      */
     fun createMediaStreamSource(mediaStream: MediaStream): MediaStreamAudioSourceNode
 
     /**
-     * The **`getOutputTimestamp()`** method of the AudioContext interface returns a new `AudioTimestamp` object containing two audio timestamp values relating to the current audio context.
+     * The **`getOutputTimestamp()`** method of the AudioContext interface returns a new AudioTimestamp object containing two audio timestamp values relating to the current audio context.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioContext/getOutputTimestamp)
      */
@@ -79,7 +79,7 @@ open external class AudioContext(
     fun resumeAsync(): Promise<Void>
 
     /**
-     * The `suspend()` method of the AudioContext Interface suspends the progression of time in the audio context, temporarily halting audio hardware access and reducing CPU/battery usage in the process — this is useful if you want an application to power down the audio hardware when it will not be using an audio context for a while.
+     * The **`suspend()`** method of the AudioContext Interface suspends the progression of time in the audio context, temporarily halting audio hardware access and reducing CPU/battery usage in the process — this is useful if you want an application to power down the audio hardware when it will not be using an audio context for a while.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioContext/suspend)
      */
@@ -88,7 +88,7 @@ open external class AudioContext(
 }
 
 /**
- * The `close()` method of the AudioContext Interface closes the audio context, releasing any system audio resources that it uses.
+ * The **`close()`** method of the AudioContext Interface closes the audio context, releasing any system audio resources that it uses.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioContext/close)
  */
@@ -106,7 +106,7 @@ suspend inline fun AudioContext.resume() {
 }
 
 /**
- * The `suspend()` method of the AudioContext Interface suspends the progression of time in the audio context, temporarily halting audio hardware access and reducing CPU/battery usage in the process — this is useful if you want an application to power down the audio hardware when it will not be using an audio context for a while.
+ * The **`suspend()`** method of the AudioContext Interface suspends the progression of time in the audio context, temporarily halting audio hardware access and reducing CPU/battery usage in the process — this is useful if you want an application to power down the audio hardware when it will not be using an audio context for a while.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioContext/suspend)
  */

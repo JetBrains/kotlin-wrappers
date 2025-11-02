@@ -9,14 +9,14 @@ import web.events.EventTarget
 import kotlin.js.definedExternally
 
 /**
- * The **`MediaSource`** interface of the Media Source Extensions API represents a source of media data for an HTMLMediaElement object.
+ * The **`MediaSource`** interface of the Media Source Extensions API represents a source of media data for an HTMLMediaElement object. A MediaSource object can be attached to a HTMLMediaElement to be played in the user agent.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaSource)
  */
 open external class MediaSource :
     EventTarget {
     /**
-     * The **`activeSourceBuffers`** read-only property of the MediaSource interface returns a SourceBufferList object containing a subset of the SourceBuffer objects contained within MediaSource.sourceBuffers — the list of objects providing the selected video track, enabled audio tracks, and shown/hidden text tracks.
+     * The **`activeSourceBuffers`** read-only property of the MediaSource interface returns a SourceBufferList object containing a subset of the SourceBuffer objects contained within sourceBuffers — the list of objects providing the selected video track, enabled audio tracks, and shown/hidden text tracks.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaSource/activeSourceBuffers)
      */
@@ -45,28 +45,28 @@ open external class MediaSource :
     var onsourceopen: EventHandler<Event, MediaSource, MediaSource>?
 
     /**
-     * The **`readyState`** read-only property of the MediaSource interface returns an enum representing the state of the current `MediaSource`.
+     * The **`readyState`** read-only property of the MediaSource interface returns an enum representing the state of the current MediaSource. The three possible values are:
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaSource/readyState)
      */
     val readyState: ReadyState
 
     /**
-     * The **`sourceBuffers`** read-only property of the MediaSource interface returns a SourceBufferList object containing the list of SourceBuffer objects associated with this `MediaSource`.
+     * The **`sourceBuffers`** read-only property of the MediaSource interface returns a SourceBufferList object containing the list of SourceBuffer objects associated with this MediaSource.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaSource/sourceBuffers)
      */
     val sourceBuffers: SourceBufferList
 
     /**
-     * The **`addSourceBuffer()`** method of the MediaSource interface creates a new SourceBuffer of the given MIME type and adds it to the `MediaSource`'s MediaSource.sourceBuffers list.
+     * The **`addSourceBuffer()`** method of the MediaSource interface creates a new SourceBuffer of the given MIME type and adds it to the MediaSource's sourceBuffers list. The new SourceBuffer is also returned.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaSource/addSourceBuffer)
      */
     fun addSourceBuffer(type: String): SourceBuffer
 
     /**
-     * The **`clearLiveSeekableRange()`** method of the MediaSource interface clears a seekable range previously set with a call to MediaSource.setLiveSeekableRange().
+     * The **`clearLiveSeekableRange()`** method of the MediaSource interface clears a seekable range previously set with a call to setLiveSeekableRange().
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaSource/clearLiveSeekableRange)
      */
@@ -80,7 +80,7 @@ open external class MediaSource :
     fun endOfStream(error: EndOfStreamError = definedExternally)
 
     /**
-     * The **`removeSourceBuffer()`** method of the MediaSource interface removes the given SourceBuffer from the SourceBufferList associated with this `MediaSource` object.
+     * The **`removeSourceBuffer()`** method of the MediaSource interface removes the given SourceBuffer from the SourceBufferList associated with this MediaSource object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaSource/removeSourceBuffer)
      */
@@ -98,14 +98,14 @@ open external class MediaSource :
 
     companion object {
         /**
-         * The **`canConstructInDedicatedWorker`** static property of the MediaSource interface returns `true` if `MediaSource` worker support is implemented, providing a low-latency feature detection mechanism.
+         * The **`canConstructInDedicatedWorker`** static property of the MediaSource interface returns true if MediaSource worker support is implemented, providing a low-latency feature detection mechanism.
          *
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaSource/canConstructInDedicatedWorker_static)
          */
         val canConstructInDedicatedWorker: Boolean
 
         /**
-         * The **`MediaSource.isTypeSupported()`** static method returns a boolean value which is `true` if the given MIME type and (optional) codec are _likely_ to be supported by the current user agent.
+         * The **`MediaSource.isTypeSupported()`** static method returns a boolean value which is true if the given MIME type and (optional) codec are likely to be supported by the current user agent.
          *
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaSource/isTypeSupported_static)
          */

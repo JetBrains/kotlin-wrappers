@@ -23,7 +23,7 @@ import kotlin.js.toBoolean
 open external class CacheStorage
 private constructor() {
     /**
-     * The **`delete()`** method of the CacheStorage interface finds the Cache object matching the `cacheName`, and if found, deletes the Cache object and returns a Promise that resolves to `true`.
+     * The **`delete()`** method of the CacheStorage interface finds the Cache object matching the cacheName, and if found, deletes the Cache object and returns a Promise that resolves to true. If no Cache object is found, it resolves to false.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CacheStorage/delete)
      */
@@ -31,7 +31,7 @@ private constructor() {
     fun deleteAsync(cacheName: String): Promise<JsBoolean>
 
     /**
-     * The **`has()`** method of the CacheStorage interface returns a Promise that resolves to `true` if a Cache object matches the `cacheName`.
+     * The **`has()`** method of the CacheStorage interface returns a Promise that resolves to true if a Cache object matches the cacheName.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CacheStorage/has)
      */
@@ -39,7 +39,7 @@ private constructor() {
     fun hasAsync(cacheName: String): Promise<JsBoolean>
 
     /**
-     * The **`keys()`** method of the CacheStorage interface returns a Promise that will resolve with an array containing strings corresponding to all of the named Cache objects tracked by the CacheStorage object in the order they were created.
+     * The **`keys()`** method of the CacheStorage interface returns a Promise that will resolve with an array containing strings corresponding to all of the named Cache objects tracked by the CacheStorage object in the order they were created. Use this method to iterate over a list of all Cache objects.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CacheStorage/keys)
      */
@@ -47,7 +47,7 @@ private constructor() {
     fun keysAsync(): Promise<ReadonlyArray<JsString>>
 
     /**
-     * The **`match()`** method of the CacheStorage interface checks if a given Request or URL string is a key for a stored Response.
+     * The **`match()`** method of the CacheStorage interface checks if a given Request or URL string is a key for a stored Response. This method returns a Promise for a Response, or a Promise which resolves to undefined if no match is found.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CacheStorage/match)
      */
@@ -70,7 +70,7 @@ private constructor() {
     ): Promise<Response?>
 
     /**
-     * The **`open()`** method of the CacheStorage interface returns a Promise that resolves to the Cache object matching the `cacheName`.
+     * The **`open()`** method of the CacheStorage interface returns a Promise that resolves to the Cache object matching the cacheName.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CacheStorage/open)
      */
@@ -79,7 +79,7 @@ private constructor() {
 }
 
 /**
- * The **`delete()`** method of the CacheStorage interface finds the Cache object matching the `cacheName`, and if found, deletes the Cache object and returns a Promise that resolves to `true`.
+ * The **`delete()`** method of the CacheStorage interface finds the Cache object matching the cacheName, and if found, deletes the Cache object and returns a Promise that resolves to true. If no Cache object is found, it resolves to false.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CacheStorage/delete)
  */
@@ -90,7 +90,7 @@ suspend inline fun CacheStorage.delete(cacheName: String): Boolean {
 }
 
 /**
- * The **`has()`** method of the CacheStorage interface returns a Promise that resolves to `true` if a Cache object matches the `cacheName`.
+ * The **`has()`** method of the CacheStorage interface returns a Promise that resolves to true if a Cache object matches the cacheName.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CacheStorage/has)
  */
@@ -101,7 +101,7 @@ suspend inline fun CacheStorage.has(cacheName: String): Boolean {
 }
 
 /**
- * The **`keys()`** method of the CacheStorage interface returns a Promise that will resolve with an array containing strings corresponding to all of the named Cache objects tracked by the CacheStorage object in the order they were created.
+ * The **`keys()`** method of the CacheStorage interface returns a Promise that will resolve with an array containing strings corresponding to all of the named Cache objects tracked by the CacheStorage object in the order they were created. Use this method to iterate over a list of all Cache objects.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CacheStorage/keys)
  */
@@ -110,7 +110,7 @@ suspend inline fun CacheStorage.keys(): ReadonlyArray<JsString> {
 }
 
 /**
- * The **`match()`** method of the CacheStorage interface checks if a given Request or URL string is a key for a stored Response.
+ * The **`match()`** method of the CacheStorage interface checks if a given Request or URL string is a key for a stored Response. This method returns a Promise for a Response, or a Promise which resolves to undefined if no match is found.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CacheStorage/match)
  */
@@ -123,7 +123,7 @@ suspend inline fun CacheStorage.match(
 }
 
 /**
- * The **`match()`** method of the CacheStorage interface checks if a given Request or URL string is a key for a stored Response.
+ * The **`match()`** method of the CacheStorage interface checks if a given Request or URL string is a key for a stored Response. This method returns a Promise for a Response, or a Promise which resolves to undefined if no match is found.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CacheStorage/match)
  */
@@ -174,7 +174,7 @@ suspend inline fun CacheStorage.match(
 }
 
 /**
- * The **`open()`** method of the CacheStorage interface returns a Promise that resolves to the Cache object matching the `cacheName`.
+ * The **`open()`** method of the CacheStorage interface returns a Promise that resolves to the Cache object matching the cacheName.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CacheStorage/open)
  */

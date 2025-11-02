@@ -6,7 +6,7 @@ import js.array.ArrayLike
 import js.iterable.JsIterable
 
 /**
- * A `CSSRuleList` represents an ordered collection of read-only CSSRule objects.
+ * A **`CSSRuleList`** represents an ordered collection of read-only CSSRule objects.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSRuleList)
  */
@@ -22,7 +22,7 @@ private constructor() :
     override val length: Int
 
     /**
-     * The **`item()`** method of the CSSRuleList interface returns the CSSRule object at the specified `index` or `null` if the specified `index` doesn't exist.
+     * The **`item()`** method of the CSSRuleList interface returns the CSSRule object at the specified index or null if the specified index doesn't exist.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSRuleList/item)
      */

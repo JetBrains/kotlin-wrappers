@@ -3,7 +3,7 @@
 package web.svg
 
 /**
- * The **`SVGFEBlendElement`** interface corresponds to the feBlend element.
+ * The **`SVGFEBlendElement`** interface corresponds to the <feBlend> element.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFEBlendElement)
  */
@@ -26,7 +26,7 @@ private constructor() :
     val in2: SVGAnimatedString
 
     /**
-     * The **`mode`** read-only property of the SVGFEBlendElement interface reflects the mode attribute of the given element.
+     * The **`mode`** read-only property of the SVGFEBlendElement interface reflects the mode attribute of the given element. It takes one of the SVG_FEBLEND_MODE_* constants defined on this interface.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFEBlendElement/mode)
      */

@@ -18,7 +18,7 @@ import kotlin.js.JsString
 import kotlin.js.definedExternally
 
 /**
- * The `WebSocket` object provides the API for creating and managing a WebSocket connection to a server, as well as for sending and receiving data on the connection.
+ * The **`WebSocket`** object provides the API for creating and managing a WebSocket connection to a server, as well as for sending and receiving data on the connection.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebSocket)
  */
@@ -30,7 +30,7 @@ open external class WebSocket(
      */
     val url: String,
     /**
-     * The **`WebSocket.protocol`** read-only property returns the name of the sub-protocol the server selected; this will be one of the strings specified in the `protocols` parameter when creating the WebSocket object, or the empty string if no connection is established.
+     * The **`WebSocket.protocol`** read-only property returns the name of the sub-protocol the server selected; this will be one of the strings specified in the protocols parameter when creating the WebSocket object, or the empty string if no connection is established.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebSocket/protocol)
      */
@@ -59,14 +59,14 @@ open external class WebSocket(
     var binaryType: BinaryType
 
     /**
-     * The **`WebSocket.bufferedAmount`** read-only property returns the number of bytes of data that have been queued using calls to `send()` but not yet transmitted to the network.
+     * The **`WebSocket.bufferedAmount`** read-only property returns the number of bytes of data that have been queued using calls to send() but not yet transmitted to the network. This value resets to zero once all queued data has been sent. This value does not reset to zero when the connection is closed; if you keep calling send(), this will continue to climb.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebSocket/bufferedAmount)
      */
     val bufferedAmount: UInt53
 
     /**
-     * The **`WebSocket.extensions`** read-only property returns the extensions selected by the server.
+     * The **`WebSocket.extensions`** read-only property returns the extensions selected by the server. This is currently only the empty string or a list of extensions as negotiated by the connection.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebSocket/extensions)
      */
@@ -100,7 +100,7 @@ open external class WebSocket(
     val readyState: ReadyState
 
     /**
-     * The **`WebSocket.close()`** method closes the WebSocket connection or connection attempt, if any.
+     * The **`WebSocket.close()`** method closes the WebSocket connection or connection attempt, if any. If the connection is already CLOSED, this method does nothing.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebSocket/close)
      */
@@ -110,7 +110,7 @@ open external class WebSocket(
     )
 
     /**
-     * The **`WebSocket.send()`** method enqueues the specified data to be transmitted to the server over the WebSocket connection, increasing the value of `bufferedAmount` by the number of bytes needed to contain the data.
+     * The **`WebSocket.send()`** method enqueues the specified data to be transmitted to the server over the WebSocket connection, increasing the value of bufferedAmount by the number of bytes needed to contain the data. If the data can't be sent (for example, because it needs to be buffered but the buffer is full), the socket is closed automatically. The browser will throw an exception if you call send() when the connection is in the CONNECTING state. If you call send() when the connection is in the CLOSING or CLOSED states, the browser will silently discard the data.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebSocket/send)
      */

@@ -8,7 +8,7 @@ import web.events.EventTarget
 import web.experimental.ExperimentalWebApi
 
 /**
- * The `Screen` interface represents a screen, usually the one on which the current window is being rendered, and is obtained using window.screen.
+ * The **`Screen`** interface represents a screen, usually the one on which the current window is being rendered, and is obtained using window.screen.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Screen)
  */
@@ -16,7 +16,7 @@ open external class Screen
 private constructor() :
     EventTarget {
     /**
-     * The read-only Screen interface's **`availHeight`** property returns the height, in CSS pixels, of the space available for Web content on the screen.
+     * The read-only Screen interface's **`availHeight`** property returns the height, in CSS pixels, of the space available for Web content on the screen. Since Screen is exposed on the Window interface's window.screen property, you access availHeight using window.screen.availHeight.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Screen/availHeight)
      */
@@ -30,7 +30,7 @@ private constructor() :
     val availWidth: Int
 
     /**
-     * The **`Screen.colorDepth`** read-only property returns the color depth of the screen.
+     * The **`Screen.colorDepth`** read-only property returns the color depth of the screen. Per the CSSOM, some implementations return 24 for compatibility reasons. See the browser compatibility section for those that don't.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Screen/colorDepth)
      */
@@ -51,7 +51,7 @@ private constructor() :
     val orientation: ScreenOrientation
 
     /**
-     * Returns the bit depth of the screen.
+     * Returns the bit depth of the screen. Per the CSSOM, some implementations return 24 for compatibility reasons. See the browser compatibility section for those that don't.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Screen/pixelDepth)
      */

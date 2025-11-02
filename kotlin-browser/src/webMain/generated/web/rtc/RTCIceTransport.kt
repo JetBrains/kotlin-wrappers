@@ -8,7 +8,7 @@ import web.events.EventInstance
 import web.events.EventTarget
 
 /**
- * The **`RTCIceTransport`** interface provides access to information about the ICE transport layer over which the data is being sent and received.
+ * The **`RTCIceTransport`** interface provides access to information about the ICE transport layer over which the data is being sent and received. This is particularly useful if you need to access state information about the connection.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCIceTransport)
  */
@@ -16,7 +16,7 @@ open external class RTCIceTransport
 private constructor() :
     EventTarget {
     /**
-     * The **`gatheringState`** read-only property of the RTCIceTransport interface returns a string that indicates the current gathering state of the ICE agent for this transport: `'new'`, `'gathering'`, or `'complete'`.
+     * The **`gatheringState`** read-only property of the RTCIceTransport interface returns a string that indicates the current gathering state of the ICE agent for this transport: "new", "gathering", or "complete".
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCIceTransport/gatheringState)
      */

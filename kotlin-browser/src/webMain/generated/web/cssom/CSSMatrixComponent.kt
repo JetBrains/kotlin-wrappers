@@ -7,7 +7,7 @@ import web.geometry.DOMMatrixReadOnly
 import kotlin.js.definedExternally
 
 /**
- * The **`CSSMatrixComponent`** interface of the CSS Typed Object Model API represents the matrix() and matrix3d() values of the individual transform property in CSS.
+ * The **`CSSMatrixComponent`** interface of the CSS Typed Object Model API represents the matrix() and matrix3d() values of the individual transform property in CSS. It inherits properties and methods from its parent CSSTransformValue.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSMatrixComponent)
  */

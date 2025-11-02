@@ -7,7 +7,7 @@ import web.dom.Element
 import web.geometry.DOMRectReadOnly
 
 /**
- * The **`ResizeObserverEntry`** interface represents the object passed to the ResizeObserver.ResizeObserver constructor's callback function, which allows you to access the new dimensions of the Element or SVGElement being observed.
+ * The **`ResizeObserverEntry`** interface represents the object passed to the ResizeObserver() constructor's callback function, which allows you to access the new dimensions of the Element or SVGElement being observed.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ResizeObserverEntry)
  */
@@ -28,7 +28,7 @@ private constructor() {
     val contentBoxSize: ReadonlyArray<ResizeObserverSize>
 
     /**
-     * The `contentRect` read-only property of the ResizeObserverEntry interface returns a DOMRectReadOnly object containing the new size of the observed element when the callback is run.
+     * The **`contentRect`** read-only property of the ResizeObserverEntry interface returns a DOMRectReadOnly object containing the new size of the observed element when the callback is run. Note that this is better supported than ResizeObserverEntry.borderBoxSize or ResizeObserverEntry.contentBoxSize, but it is left over from an earlier implementation of the Resize Observer API, is still included in the spec for web compat reasons, and may be deprecated in future versions.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ResizeObserverEntry/contentRect)
      */

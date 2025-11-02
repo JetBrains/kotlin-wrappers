@@ -9,7 +9,7 @@ import js.promise.await
 import kotlin.js.JsName
 
 /**
- * The **`CookieStoreManager`** interface of the Cookie Store API allows service workers to subscribe to cookie change events.
+ * The **`CookieStoreManager`** interface of the Cookie Store API allows service workers to subscribe to cookie change events. Call subscribe() on a particular service worker registration to receive change events.
  * Available only in secure contexts.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CookieStoreManager)

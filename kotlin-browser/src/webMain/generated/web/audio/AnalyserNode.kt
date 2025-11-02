@@ -8,7 +8,7 @@ import js.typedarrays.Uint8Array
 import kotlin.js.definedExternally
 
 /**
- * The **`AnalyserNode`** interface represents a node able to provide real-time frequency and time-domain analysis information.
+ * The **`AnalyserNode`** interface represents a node able to provide real-time frequency and time-domain analysis information. It is an AudioNode that passes the audio stream unchanged from the input to the output, but allows you to take the generated data, process it, and create audio visualizations.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AnalyserNode)
  */
@@ -24,28 +24,28 @@ open external class AnalyserNode(
     var fftSize: Int
 
     /**
-     * The **`frequencyBinCount`** read-only property of the AnalyserNode interface contains the total number of data points available to AudioContext BaseAudioContext.sampleRate.
+     * The **`frequencyBinCount`** read-only property of the AnalyserNode interface contains the total number of data points available to AudioContext sampleRate. This is half of the value of the AnalyserNode.fftSize. The two methods' indices have a linear relationship with the frequencies they represent, between 0 and the Nyquist frequency.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AnalyserNode/frequencyBinCount)
      */
     val frequencyBinCount: Int
 
     /**
-     * The **`maxDecibels`** property of the AnalyserNode interface is a double value representing the maximum power value in the scaling range for the FFT analysis data, for conversion to unsigned byte values — basically, this specifies the maximum value for the range of results when using `getByteFrequencyData()`.
+     * The **`maxDecibels`** property of the AnalyserNode interface is a double value representing the maximum power value in the scaling range for the FFT analysis data, for conversion to unsigned byte values — basically, this specifies the maximum value for the range of results when using getByteFrequencyData().
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AnalyserNode/maxDecibels)
      */
     var maxDecibels: Double
 
     /**
-     * The **`minDecibels`** property of the AnalyserNode interface is a double value representing the minimum power value in the scaling range for the FFT analysis data, for conversion to unsigned byte values — basically, this specifies the minimum value for the range of results when using `getByteFrequencyData()`.
+     * The **`minDecibels`** property of the AnalyserNode interface is a double value representing the minimum power value in the scaling range for the FFT analysis data, for conversion to unsigned byte values — basically, this specifies the minimum value for the range of results when using getByteFrequencyData().
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AnalyserNode/minDecibels)
      */
     var minDecibels: Double
 
     /**
-     * The **`smoothingTimeConstant`** property of the AnalyserNode interface is a double value representing the averaging constant with the last analysis frame.
+     * The **`smoothingTimeConstant`** property of the AnalyserNode interface is a double value representing the averaging constant with the last analysis frame. It's basically an average between the current buffer and the last buffer the AnalyserNode processed, and results in a much smoother set of value changes over time.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AnalyserNode/smoothingTimeConstant)
      */
@@ -73,7 +73,7 @@ open external class AnalyserNode(
     fun getFloatFrequencyData(array: Float32Array<ArrayBuffer>)
 
     /**
-     * The **`getFloatTimeDomainData()`** method of the AnalyserNode Interface copies the current waveform, or time-domain, data into a Float32Array array passed into it.
+     * The **`getFloatTimeDomainData()`** method of the AnalyserNode Interface copies the current waveform, or time-domain, data into a Float32Array array passed into it. Each array value is a sample, the magnitude of the signal at a particular time.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AnalyserNode/getFloatTimeDomainData)
      */

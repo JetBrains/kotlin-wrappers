@@ -8,7 +8,7 @@ import web.events.EventType
 import kotlin.js.definedExternally
 
 /**
- * The **`CommandEvent`** interface represents an event notifying the user when a HTMLButtonElement element with valid HTMLButtonElement.commandForElement and HTMLButtonElement.command attributes is about to invoke an interactive element.
+ * The **`CommandEvent`** interface represents an event notifying the user when a button element with valid commandForElement and command attributes is about to invoke an interactive element.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CommandEvent)
  */
@@ -17,7 +17,7 @@ open external class CommandEvent(
     init: CommandEventInit = definedExternally,
 ) : Event {
     /**
-     * The **`command`** read-only property of the CommandEvent interface returns a string containing the value of the HTMLButtonElement.command property at the time the event was dispatched.
+     * The **`command`** read-only property of the CommandEvent interface returns a string containing the value of the command property at the time the event was dispatched.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CommandEvent/command)
      */

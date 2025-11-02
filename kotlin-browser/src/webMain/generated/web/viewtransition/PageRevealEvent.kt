@@ -7,7 +7,7 @@ import web.events.EventType
 import kotlin.js.definedExternally
 
 /**
- * The **`PageRevealEvent`** event object is made available inside handler functions for the Window.pagereveal_event event.
+ * The **`PageRevealEvent`** event object is made available inside handler functions for the pagereveal event.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PageRevealEvent)
  */

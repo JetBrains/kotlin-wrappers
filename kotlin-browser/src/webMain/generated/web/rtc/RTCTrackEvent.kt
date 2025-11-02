@@ -9,7 +9,7 @@ import web.mediastreams.MediaStream
 import web.mediastreams.MediaStreamTrack
 
 /**
- * The WebRTC API interface **`RTCTrackEvent`** represents the RTCPeerConnection.track_event event, which is sent when a new MediaStreamTrack is added to an RTCRtpReceiver which is part of the RTCPeerConnection.
+ * The WebRTC API interface **`RTCTrackEvent`** represents the track event, which is sent when a new MediaStreamTrack is added to an RTCRtpReceiver which is part of the RTCPeerConnection.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCTrackEvent)
  */
@@ -18,7 +18,7 @@ open external class RTCTrackEvent(
     init: RTCTrackEventInit,
 ) : Event {
     /**
-     * The read-only **`receiver`** property of the RTCTrackEvent interface indicates the RTCRtpReceiver which is used to receive data containing media for the RTCTrackEvent.track to which the event refers.
+     * The read-only **`receiver`** property of the RTCTrackEvent interface indicates the RTCRtpReceiver which is used to receive data containing media for the track to which the event refers.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCTrackEvent/receiver)
      */
@@ -39,7 +39,7 @@ open external class RTCTrackEvent(
     val track: MediaStreamTrack
 
     /**
-     * The WebRTC API interface RTCTrackEvent's read-only **`transceiver`** property indicates the RTCRtpTransceiver affiliated with the event's RTCTrackEvent.track.
+     * The WebRTC API interface RTCTrackEvent's read-only **`transceiver`** property indicates the RTCRtpTransceiver affiliated with the event's track.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCTrackEvent/transceiver)
      */

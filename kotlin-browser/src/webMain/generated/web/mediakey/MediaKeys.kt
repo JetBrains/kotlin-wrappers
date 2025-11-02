@@ -19,14 +19,14 @@ import kotlin.js.toBoolean
 open external class MediaKeys
 private constructor() {
     /**
-     * The `createSession()` method of the MediaKeys interface returns a new MediaKeySession object, which represents a context for message exchange with a content decryption module (CDM).
+     * The **`createSession()`** method of the MediaKeys interface returns a new MediaKeySession object, which represents a context for message exchange with a content decryption module (CDM).
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeys/createSession)
      */
     fun createSession(sessionType: MediaKeySessionType = definedExternally): MediaKeySession
 
     /**
-     * The `getStatusForPolicy()` method of the MediaKeys interface is used to check whether the Content Decryption Module (CDM) would allow the presentation of encrypted media data using the keys, based on the specified policy requirements.
+     * The **`getStatusForPolicy()`** method of the MediaKeys interface is used to check whether the Content Decryption Module (CDM) would allow the presentation of encrypted media data using the keys, based on the specified policy requirements.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeys/getStatusForPolicy)
      */
@@ -43,7 +43,7 @@ private constructor() {
 }
 
 /**
- * The `getStatusForPolicy()` method of the MediaKeys interface is used to check whether the Content Decryption Module (CDM) would allow the presentation of encrypted media data using the keys, based on the specified policy requirements.
+ * The **`getStatusForPolicy()`** method of the MediaKeys interface is used to check whether the Content Decryption Module (CDM) would allow the presentation of encrypted media data using the keys, based on the specified policy requirements.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeys/getStatusForPolicy)
  */
@@ -52,7 +52,7 @@ suspend inline fun MediaKeys.getStatusForPolicy(): MediaKeyStatus {
 }
 
 /**
- * The `getStatusForPolicy()` method of the MediaKeys interface is used to check whether the Content Decryption Module (CDM) would allow the presentation of encrypted media data using the keys, based on the specified policy requirements.
+ * The **`getStatusForPolicy()`** method of the MediaKeys interface is used to check whether the Content Decryption Module (CDM) would allow the presentation of encrypted media data using the keys, based on the specified policy requirements.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeys/getStatusForPolicy)
  */

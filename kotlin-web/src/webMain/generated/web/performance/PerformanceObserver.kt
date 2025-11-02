@@ -7,7 +7,7 @@ import kotlin.js.JsString
 import kotlin.js.definedExternally
 
 /**
- * The **`PerformanceObserver`** interface is used to observe performance measurement events and be notified of new PerformanceEntry as they are recorded in the browser's _performance timeline_.
+ * The **`PerformanceObserver`** interface is used to observe performance measurement events and be notified of new performance entries as they are recorded in the browser's performance timeline.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceObserver)
  */
@@ -15,14 +15,14 @@ open external class PerformanceObserver(
     callback: PerformanceObserverCallback,
 ) {
     /**
-     * The **`disconnect()`** method of the PerformanceObserver interface is used to stop the performance observer from receiving any PerformanceEntry events.
+     * The **`disconnect()`** method of the PerformanceObserver interface is used to stop the performance observer from receiving any performance entry events.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceObserver/disconnect)
      */
     fun disconnect()
 
     /**
-     * The **`observe()`** method of the **PerformanceObserver** interface is used to specify the set of performance entry types to observe.
+     * The **`observe()`** method of the PerformanceObserver interface is used to specify the set of performance entry types to observe.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceObserver/observe)
      */
@@ -37,7 +37,7 @@ open external class PerformanceObserver(
 
     companion object {
         /**
-         * The static **`supportedEntryTypes`** read-only property of the PerformanceObserver interface returns an array of the PerformanceEntry.entryType values supported by the user agent.
+         * The static **`supportedEntryTypes`** read-only property of the PerformanceObserver interface returns an array of the entryType values supported by the user agent.
          *
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceObserver/supportedEntryTypes_static)
          */

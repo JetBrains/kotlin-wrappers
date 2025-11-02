@@ -3,7 +3,7 @@
 package web.svg
 
 /**
- * The **`SVGTSpanElement`** interface represents a tspan element.
+ * The **`SVGTSpanElement`** interface represents a <tspan> element.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGTSpanElement)
  */

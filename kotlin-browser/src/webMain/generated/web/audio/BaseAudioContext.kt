@@ -16,7 +16,7 @@ import kotlin.js.JsName
 import kotlin.js.definedExternally
 
 /**
- * The `BaseAudioContext` interface of the Web Audio API acts as a base definition for online and offline audio-processing graphs, as represented by AudioContext and OfflineAudioContext respectively.
+ * The **`BaseAudioContext`** interface of the Web Audio API acts as a base definition for online and offline audio-processing graphs, as represented by AudioContext and OfflineAudioContext respectively. You wouldn't use BaseAudioContext directly — you'd use its features via one of these two inheriting interfaces.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BaseAudioContext)
  */
@@ -24,7 +24,7 @@ open external class BaseAudioContext
 private constructor() :
     EventTarget {
     /**
-     * The `audioWorklet` read-only property of the BaseAudioContext interface returns an instance of AudioWorklet that can be used for adding AudioWorkletProcessor-derived classes which implement custom audio processing.
+     * The **`audioWorklet`** read-only property of the BaseAudioContext interface returns an instance of AudioWorklet that can be used for adding AudioWorkletProcessor-derived classes which implement custom audio processing.
      * Available only in secure contexts.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BaseAudioContext/audioWorklet)
@@ -32,21 +32,21 @@ private constructor() :
     val audioWorklet: AudioWorklet
 
     /**
-     * The `currentTime` read-only property of the BaseAudioContext interface returns a double representing an ever-increasing hardware timestamp in seconds that can be used for scheduling audio playback, visualizing timelines, etc.
+     * The **`currentTime`** read-only property of the BaseAudioContext interface returns a double representing an ever-increasing hardware timestamp in seconds that can be used for scheduling audio playback, visualizing timelines, etc. It starts at 0.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BaseAudioContext/currentTime)
      */
     val currentTime: Double
 
     /**
-     * The `destination` property of the BaseAudioContext interface returns an AudioDestinationNode representing the final destination of all audio in the context.
+     * The **`destination`** property of the BaseAudioContext interface returns an AudioDestinationNode representing the final destination of all audio in the context. It often represents an actual audio-rendering device such as your device's speakers.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BaseAudioContext/destination)
      */
     val destination: AudioDestinationNode
 
     /**
-     * The `listener` property of the BaseAudioContext interface returns an AudioListener object that can then be used for implementing 3D audio spatialization.
+     * The **`listener`** property of the BaseAudioContext interface returns an AudioListener object that can then be used for implementing 3D audio spatialization.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BaseAudioContext/listener)
      */
@@ -58,35 +58,35 @@ private constructor() :
     var onstatechange: EventHandler<Event, BaseAudioContext, BaseAudioContext>?
 
     /**
-     * The `sampleRate` property of the BaseAudioContext interface returns a floating point number representing the sample rate, in samples per second, used by all nodes in this audio context.
+     * The **`sampleRate`** property of the BaseAudioContext interface returns a floating point number representing the sample rate, in samples per second, used by all nodes in this audio context. This limitation means that sample-rate converters are not supported.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BaseAudioContext/sampleRate)
      */
     val sampleRate: Float
 
     /**
-     * The `state` read-only property of the BaseAudioContext interface returns the current state of the `AudioContext`.
+     * The **`state`** read-only property of the BaseAudioContext interface returns the current state of the AudioContext.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BaseAudioContext/state)
      */
     val state: AudioContextState
 
     /**
-     * The `createAnalyser()` method of the BaseAudioContext interface creates an AnalyserNode, which can be used to expose audio time and frequency data and create data visualizations.
+     * The **`createAnalyser()`** method of the BaseAudioContext interface creates an AnalyserNode, which can be used to expose audio time and frequency data and create data visualizations.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BaseAudioContext/createAnalyser)
      */
     fun createAnalyser(): AnalyserNode
 
     /**
-     * The `createBiquadFilter()` method of the BaseAudioContext interface creates a BiquadFilterNode, which represents a second order filter configurable as several different common filter types.
+     * The **`createBiquadFilter()`** method of the BaseAudioContext interface creates a BiquadFilterNode, which represents a second order filter configurable as several different common filter types.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BaseAudioContext/createBiquadFilter)
      */
     fun createBiquadFilter(): BiquadFilterNode
 
     /**
-     * The `createBuffer()` method of the BaseAudioContext Interface is used to create a new, empty AudioBuffer object, which can then be populated by data, and played via an AudioBufferSourceNode.
+     * The **`createBuffer()`** method of the BaseAudioContext Interface is used to create a new, empty AudioBuffer object, which can then be populated by data, and played via an AudioBufferSourceNode.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BaseAudioContext/createBuffer)
      */
@@ -97,21 +97,21 @@ private constructor() :
     ): AudioBuffer
 
     /**
-     * The `createBufferSource()` method of the BaseAudioContext Interface is used to create a new AudioBufferSourceNode, which can be used to play audio data contained within an AudioBuffer object.
+     * The **`createBufferSource()`** method of the BaseAudioContext Interface is used to create a new AudioBufferSourceNode, which can be used to play audio data contained within an AudioBuffer object. AudioBuffers are created using BaseAudioContext.createBuffer or returned by BaseAudioContext.decodeAudioData when it successfully decodes an audio track.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BaseAudioContext/createBufferSource)
      */
     fun createBufferSource(): AudioBufferSourceNode
 
     /**
-     * The `createChannelMerger()` method of the BaseAudioContext interface creates a ChannelMergerNode, which combines channels from multiple audio streams into a single audio stream.
+     * The **`createChannelMerger()`** method of the BaseAudioContext interface creates a ChannelMergerNode, which combines channels from multiple audio streams into a single audio stream.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BaseAudioContext/createChannelMerger)
      */
     fun createChannelMerger(numberOfInputs: Int = definedExternally): ChannelMergerNode
 
     /**
-     * The `createChannelSplitter()` method of the BaseAudioContext Interface is used to create a ChannelSplitterNode, which is used to access the individual channels of an audio stream and process them separately.
+     * The **`createChannelSplitter()`** method of the BaseAudioContext Interface is used to create a ChannelSplitterNode, which is used to access the individual channels of an audio stream and process them separately.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BaseAudioContext/createChannelSplitter)
      */
@@ -125,35 +125,35 @@ private constructor() :
     fun createConstantSource(): ConstantSourceNode
 
     /**
-     * The `createConvolver()` method of the BaseAudioContext interface creates a ConvolverNode, which is commonly used to apply reverb effects to your audio.
+     * The **`createConvolver()`** method of the BaseAudioContext interface creates a ConvolverNode, which is commonly used to apply reverb effects to your audio. See the spec definition of Convolution for more information.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BaseAudioContext/createConvolver)
      */
     fun createConvolver(): ConvolverNode
 
     /**
-     * The `createDelay()` method of the BaseAudioContext Interface is used to create a DelayNode, which is used to delay the incoming audio signal by a certain amount of time.
+     * The **`createDelay()`** method of the BaseAudioContext Interface is used to create a DelayNode, which is used to delay the incoming audio signal by a certain amount of time.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BaseAudioContext/createDelay)
      */
     fun createDelay(maxDelayTime: Double = definedExternally): DelayNode
 
     /**
-     * The `createDynamicsCompressor()` method of the BaseAudioContext Interface is used to create a DynamicsCompressorNode, which can be used to apply compression to an audio signal.
+     * The **`createDynamicsCompressor()`** method of the BaseAudioContext Interface is used to create a DynamicsCompressorNode, which can be used to apply compression to an audio signal.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BaseAudioContext/createDynamicsCompressor)
      */
     fun createDynamicsCompressor(): DynamicsCompressorNode
 
     /**
-     * The `createGain()` method of the BaseAudioContext interface creates a GainNode, which can be used to control the overall gain (or volume) of the audio graph.
+     * The **`createGain()`** method of the BaseAudioContext interface creates a GainNode, which can be used to control the overall gain (or volume) of the audio graph.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BaseAudioContext/createGain)
      */
     fun createGain(): GainNode
 
     /**
-     * The **`createIIRFilter()`** method of the BaseAudioContext interface creates an IIRFilterNode, which represents a general **infinite impulse response** (IIR) filter which can be configured to serve as various types of filter.
+     * The **`createIIRFilter()`** method of the BaseAudioContext interface creates an IIRFilterNode, which represents a general infinite impulse response (IIR) filter which can be configured to serve as various types of filter.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BaseAudioContext/createIIRFilter)
      */
@@ -163,21 +163,21 @@ private constructor() :
     ): IIRFilterNode
 
     /**
-     * The `createOscillator()` method of the BaseAudioContext interface creates an OscillatorNode, a source representing a periodic waveform.
+     * The **`createOscillator()`** method of the BaseAudioContext interface creates an OscillatorNode, a source representing a periodic waveform. It basically generates a constant tone.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BaseAudioContext/createOscillator)
      */
     fun createOscillator(): OscillatorNode
 
     /**
-     * The `createPanner()` method of the BaseAudioContext Interface is used to create a new PannerNode, which is used to spatialize an incoming audio stream in 3D space.
+     * The **`createPanner()`** method of the BaseAudioContext Interface is used to create a new PannerNode, which is used to spatialize an incoming audio stream in 3D space.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BaseAudioContext/createPanner)
      */
     fun createPanner(): PannerNode
 
     /**
-     * The `createPeriodicWave()` method of the BaseAudioContext interface is used to create a PeriodicWave.
+     * The **`createPeriodicWave()`** method of the BaseAudioContext interface is used to create a PeriodicWave. This wave is used to define a periodic waveform that can be used to shape the output of an OscillatorNode.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BaseAudioContext/createPeriodicWave)
      */
@@ -194,21 +194,21 @@ private constructor() :
     ): PeriodicWave
 
     /**
-     * The `createStereoPanner()` method of the BaseAudioContext interface creates a StereoPannerNode, which can be used to apply stereo panning to an audio source.
+     * The **`createStereoPanner()`** method of the BaseAudioContext interface creates a StereoPannerNode, which can be used to apply stereo panning to an audio source. It positions an incoming audio stream in a stereo image using a low-cost panning algorithm.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BaseAudioContext/createStereoPanner)
      */
     fun createStereoPanner(): StereoPannerNode
 
     /**
-     * The `createWaveShaper()` method of the BaseAudioContext interface creates a WaveShaperNode, which represents a non-linear distortion.
+     * The **`createWaveShaper()`** method of the BaseAudioContext interface creates a WaveShaperNode, which represents a non-linear distortion. It is used to apply distortion effects to your audio.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BaseAudioContext/createWaveShaper)
      */
     fun createWaveShaper(): WaveShaperNode
 
     /**
-     * The `decodeAudioData()` method of the BaseAudioContext Interface is used to asynchronously decode audio file data contained in an ArrayBuffer that is loaded from Window/fetch, XMLHttpRequest, or FileReader.
+     * The **`decodeAudioData()`** method of the BaseAudioContext Interface is used to asynchronously decode audio file data contained in an ArrayBuffer that is loaded from fetch(), XMLHttpRequest, or FileReader. The decoded AudioBuffer is resampled to the AudioContext's sampling rate, then passed to a callback or promise.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BaseAudioContext/decodeAudioData)
      */
@@ -217,7 +217,7 @@ private constructor() :
 }
 
 /**
- * The `decodeAudioData()` method of the BaseAudioContext Interface is used to asynchronously decode audio file data contained in an ArrayBuffer that is loaded from Window/fetch, XMLHttpRequest, or FileReader.
+ * The **`decodeAudioData()`** method of the BaseAudioContext Interface is used to asynchronously decode audio file data contained in an ArrayBuffer that is loaded from fetch(), XMLHttpRequest, or FileReader. The decoded AudioBuffer is resampled to the AudioContext's sampling rate, then passed to a callback or promise.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/BaseAudioContext/decodeAudioData)
  */

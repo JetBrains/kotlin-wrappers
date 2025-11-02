@@ -39,7 +39,7 @@ open external class PaymentRequest(
     var onpaymentmethodchange: EventHandler<PaymentMethodChangeEvent, PaymentRequest, PaymentRequest>?
 
     /**
-     * The `PaymentRequest.abort()` method of the PaymentRequest interface causes the user agent to end the payment request and to remove any user interface that might be shown.
+     * The **`PaymentRequest.abort()`** method of the PaymentRequest interface causes the user agent to end the payment request and to remove any user interface that might be shown.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentRequest/abort)
      */
@@ -55,7 +55,7 @@ open external class PaymentRequest(
     fun canMakePaymentAsync(): Promise<JsBoolean>
 
     /**
-     * The **PaymentRequest** interface's **`show()`** method instructs the user agent to begin the process of showing and handling the user interface for the payment request to the user.
+     * The PaymentRequest interface's **`show()`** method instructs the user agent to begin the process of showing and handling the user interface for the payment request to the user.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentRequest/show)
      */
@@ -67,7 +67,7 @@ open external class PaymentRequest(
 }
 
 /**
- * The `PaymentRequest.abort()` method of the PaymentRequest interface causes the user agent to end the payment request and to remove any user interface that might be shown.
+ * The **`PaymentRequest.abort()`** method of the PaymentRequest interface causes the user agent to end the payment request and to remove any user interface that might be shown.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentRequest/abort)
  */
@@ -85,7 +85,7 @@ suspend inline fun PaymentRequest.canMakePayment(): Boolean {
 }
 
 /**
- * The **PaymentRequest** interface's **`show()`** method instructs the user agent to begin the process of showing and handling the user interface for the payment request to the user.
+ * The PaymentRequest interface's **`show()`** method instructs the user agent to begin the process of showing and handling the user interface for the payment request to the user.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentRequest/show)
  */
@@ -94,7 +94,7 @@ suspend inline fun PaymentRequest.show(): PaymentResponse {
 }
 
 /**
- * The **PaymentRequest** interface's **`show()`** method instructs the user agent to begin the process of showing and handling the user interface for the payment request to the user.
+ * The PaymentRequest interface's **`show()`** method instructs the user agent to begin the process of showing and handling the user interface for the payment request to the user.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentRequest/show)
  */

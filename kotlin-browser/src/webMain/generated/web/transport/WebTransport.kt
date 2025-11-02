@@ -41,14 +41,14 @@ open external class WebTransport(
     val datagrams: WebTransportDatagramDuplexStream
 
     /**
-     * The **`incomingBidirectionalStreams`** read-only property of the WebTransport interface represents one or more bidirectional streams opened by the server.
+     * The **`incomingBidirectionalStreams`** read-only property of the WebTransport interface represents one or more bidirectional streams opened by the server. Returns a ReadableStream of WebTransportBidirectionalStream objects. Each one can be used to reliably read data from the server and write data back to it.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebTransport/incomingBidirectionalStreams)
      */
     val incomingBidirectionalStreams: ReadableStream<*>
 
     /**
-     * The **`incomingUnidirectionalStreams`** read-only property of the WebTransport interface represents one or more unidirectional streams opened by the server.
+     * The **`incomingUnidirectionalStreams`** read-only property of the WebTransport interface represents one or more unidirectional streams opened by the server. Returns a ReadableStream of WebTransportReceiveStream objects. Each one can be used to reliably read data from the server.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebTransport/incomingUnidirectionalStreams)
      */

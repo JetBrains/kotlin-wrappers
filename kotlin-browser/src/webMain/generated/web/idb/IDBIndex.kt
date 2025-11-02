@@ -8,14 +8,14 @@ import kotlin.js.JsAny
 import kotlin.js.definedExternally
 
 /**
- * `IDBIndex` interface of the IndexedDB API provides asynchronous access to an index in a database.
+ * **`IDBIndex`** interface of the IndexedDB API provides asynchronous access to an index in a database. An index is a kind of object store for looking up records in another object store, called the referenced object store. You use this interface to retrieve data.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBIndex)
  */
 open external class IDBIndex
 private constructor() {
     /**
-     * The **`keyPath`** property of the IDBIndex interface returns the key path of the current index.
+     * The **`keyPath`** property of the IDBIndex interface returns the key path of the current index. If null, this index is not auto-populated.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBIndex/keyPath)
      */
@@ -58,7 +58,7 @@ private constructor() {
     fun count(query: IDBKeyRange): IDBRequest<JsInt>
 
     /**
-     * The **`get()`** method of the IDBIndex interface returns an IDBRequest object, and, in a separate thread, finds either the value in the referenced object store that corresponds to the given key or the first corresponding value, if `key` is set to an IDBKeyRange.
+     * The **`get()`** method of the IDBIndex interface returns an IDBRequest object, and, in a separate thread, finds either the value in the referenced object store that corresponds to the given key or the first corresponding value, if key is set to an IDBKeyRange.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBIndex/get)
      */
@@ -81,7 +81,7 @@ private constructor() {
     ): IDBRequest<ReadonlyArray<*>>
 
     /**
-     * The **`getAllKeys()`** method of the IDBIndex interface asynchronously retrieves the primary keys of all objects inside the index, setting them as the `result` of the request object.
+     * The **`getAllKeys()`** method of the IDBIndex interface asynchronously retrieves the primary keys of all objects inside the index, setting them as the result of the request object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBIndex/getAllKeys)
      */
@@ -96,7 +96,7 @@ private constructor() {
     ): IDBRequest<ReadonlyArray<IDBValidKey>>
 
     /**
-     * The **`getKey()`** method of the IDBIndex interface returns an IDBRequest object, and, in a separate thread, finds either the primary key that corresponds to the given key in this index or the first corresponding primary key, if `key` is set to an IDBKeyRange.
+     * The **`getKey()`** method of the IDBIndex interface returns an IDBRequest object, and, in a separate thread, finds either the primary key that corresponds to the given key in this index or the first corresponding primary key, if key is set to an IDBKeyRange.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBIndex/getKey)
      */

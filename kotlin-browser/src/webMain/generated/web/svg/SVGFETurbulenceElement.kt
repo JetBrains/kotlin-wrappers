@@ -3,7 +3,7 @@
 package web.svg
 
 /**
- * The **`SVGFETurbulenceElement`** interface corresponds to the feTurbulence element.
+ * The **`SVGFETurbulenceElement`** interface corresponds to the <feTurbulence> element.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFETurbulenceElement)
  */
@@ -12,42 +12,42 @@ private constructor() :
     SVGElement,
     SVGFilterPrimitiveStandardAttributes {
     /**
-     * The **`baseFrequencyX`** read-only property of the SVGFETurbulenceElement interface reflects the X component of the baseFrequency attribute of the given feTurbulence element.
+     * The **`baseFrequencyX`** read-only property of the SVGFETurbulenceElement interface reflects the X component of the baseFrequency attribute of the given <feTurbulence> element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFETurbulenceElement/baseFrequencyX)
      */
     val baseFrequencyX: SVGAnimatedNumber
 
     /**
-     * The **`baseFrequencyY`** read-only property of the SVGFETurbulenceElement interface reflects the Y component of the baseFrequency attribute of the given feTurbulence element.
+     * The **`baseFrequencyY`** read-only property of the SVGFETurbulenceElement interface reflects the Y component of the baseFrequency attribute of the given <feTurbulence> element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFETurbulenceElement/baseFrequencyY)
      */
     val baseFrequencyY: SVGAnimatedNumber
 
     /**
-     * The **`numOctaves`** read-only property of the SVGFETurbulenceElement interface reflects the numOctaves attribute of the given feTurbulence element.
+     * The **`numOctaves`** read-only property of the SVGFETurbulenceElement interface reflects the numOctaves attribute of the given <feTurbulence> element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFETurbulenceElement/numOctaves)
      */
     val numOctaves: SVGAnimatedInteger
 
     /**
-     * The **`seed`** read-only property of the SVGFETurbulenceElement interface reflects the seed attribute of the given feTurbulence element.
+     * The **`seed`** read-only property of the SVGFETurbulenceElement interface reflects the seed attribute of the given <feTurbulence> element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFETurbulenceElement/seed)
      */
     val seed: SVGAnimatedNumber
 
     /**
-     * The **`stitchTiles`** read-only property of the SVGFETurbulenceElement interface reflects the stitchTiles attribute of the given feTurbulence element.
+     * The **`stitchTiles`** read-only property of the SVGFETurbulenceElement interface reflects the stitchTiles attribute of the given <feTurbulence> element. It takes one of the SVG_STITCHTYPE_* constants defined on this interface.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFETurbulenceElement/stitchTiles)
      */
     val stitchTiles: SVGAnimatedEnumeration<StitchTiles>
 
     /**
-     * The **`type`** read-only property of the SVGFETurbulenceElement interface reflects the type attribute of the given feTurbulence element.
+     * The **`type`** read-only property of the SVGFETurbulenceElement interface reflects the type attribute of the given <feTurbulence> element. It takes one of the SVG_TURBULENCE_TYPE_* constants defined on this interface.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFETurbulenceElement/type)
      */

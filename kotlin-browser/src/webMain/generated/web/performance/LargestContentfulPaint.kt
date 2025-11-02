@@ -7,7 +7,7 @@ import web.time.DOMHighResTimeStamp
 import kotlin.js.JsAny
 
 /**
- * The `LargestContentfulPaint` interface provides timing information about the largest image or text paint before user input on a web page.
+ * The **`LargestContentfulPaint`** interface provides timing information about the largest image or text paint before user input on a web page.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/LargestContentfulPaint)
  */
@@ -57,7 +57,7 @@ private constructor() :
     val url: String
 
     /**
-     * The **`toJSON()`** method of the LargestContentfulPaint interface is a Serialization; it returns a JSON representation of the LargestContentfulPaint object.
+     * The **`toJSON()`** method of the LargestContentfulPaint interface is a serializer; it returns a JSON representation of the LargestContentfulPaint object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/LargestContentfulPaint/toJSON)
      */

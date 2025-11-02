@@ -75,7 +75,7 @@ open external class URLSearchParams(
     ): Boolean
 
     /**
-     * The **`set()`** method of the URLSearchParams interface sets the value associated with a given search parameter to the given value.
+     * The **`set()`** method of the URLSearchParams interface sets the value associated with a given search parameter to the given value. If there were several matching values, this method deletes the others. If the search parameter doesn't exist, this method creates it.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/URLSearchParams/set)
      */
@@ -85,7 +85,7 @@ open external class URLSearchParams(
     )
 
     /**
-     * The **`URLSearchParams.sort()`** method sorts all key/value pairs contained in this object in place and returns `undefined`.
+     * The **`URLSearchParams.sort()`** method sorts all key/value pairs contained in this object in place and returns undefined. Key/value pairs are sorted by the values of the UTF-16 code units of the keys. This method uses a stable sorting algorithm (i.e., the relative order between key/value pairs with equal keys will be preserved).
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/URLSearchParams/sort)
      */

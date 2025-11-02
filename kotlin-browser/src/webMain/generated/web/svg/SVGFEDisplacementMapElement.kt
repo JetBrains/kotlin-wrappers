@@ -3,7 +3,7 @@
 package web.svg
 
 /**
- * The **`SVGFEDisplacementMapElement`** interface corresponds to the feDisplacementMap element.
+ * The **`SVGFEDisplacementMapElement`** interface corresponds to the <feDisplacementMap> element.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFEDisplacementMapElement)
  */
@@ -12,35 +12,35 @@ private constructor() :
     SVGElement,
     SVGFilterPrimitiveStandardAttributes {
     /**
-     * The **`in1`** read-only property of the SVGFEDisplacementMapElement interface reflects the in attribute of the given feDisplacementMap element.
+     * The **`in1`** read-only property of the SVGFEDisplacementMapElement interface reflects the in attribute of the given <feDisplacementMap> element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFEDisplacementMapElement/in1)
      */
     val in1: SVGAnimatedString
 
     /**
-     * The **`in2`** read-only property of the SVGFEDisplacementMapElement interface reflects the in2 attribute of the given feDisplacementMap element.
+     * The **`in2`** read-only property of the SVGFEDisplacementMapElement interface reflects the in2 attribute of the given <feDisplacementMap> element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFEDisplacementMapElement/in2)
      */
     val in2: SVGAnimatedString
 
     /**
-     * The **`scale`** read-only property of the SVGFEDisplacementMapElement interface reflects the scale attribute of the given feDisplacementMap element.
+     * The **`scale`** read-only property of the SVGFEDisplacementMapElement interface reflects the scale attribute of the given <feDisplacementMap> element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFEDisplacementMapElement/scale)
      */
     val scale: SVGAnimatedNumber
 
     /**
-     * The **`xChannelSelector`** read-only property of the SVGFEDisplacementMapElement interface reflects the xChannelSelector attribute of the given feDisplacementMap element.
+     * The **`xChannelSelector`** read-only property of the SVGFEDisplacementMapElement interface reflects the xChannelSelector attribute of the given <feDisplacementMap> element. It takes one of the SVG_CHANNEL_* constants defined on this interface.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFEDisplacementMapElement/xChannelSelector)
      */
     val xChannelSelector: SVGAnimatedEnumeration<ChannelSelector>
 
     /**
-     * The **`yChannelSelector`** read-only property of the SVGFEDisplacementMapElement interface reflects the yChannelSelector attribute of the given feDisplacementMap element.
+     * The **`yChannelSelector`** read-only property of the SVGFEDisplacementMapElement interface reflects the yChannelSelector attribute of the given <feDisplacementMap> element. It takes one of the SVG_CHANNEL_* constants defined on this interface.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFEDisplacementMapElement/yChannelSelector)
      */

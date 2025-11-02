@@ -22,7 +22,7 @@ private constructor() :
     override val length: Int
 
     /**
-     * The **`getCueById()`** method of the TextTrackCueList interface returns the first VTTCue in the list represented by the `TextTrackCueList` object whose identifier matches the value of `id`.
+     * The **`getCueById()`** method of the TextTrackCueList interface returns the first VTTCue in the list represented by the TextTrackCueList object whose identifier matches the value of id.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextTrackCueList/getCueById)
      */

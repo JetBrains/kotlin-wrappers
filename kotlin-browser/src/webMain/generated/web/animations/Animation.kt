@@ -15,13 +15,13 @@ import kotlin.js.definedExternally
  */
 open external class Animation(
     /**
-     * The **`Animation.effect`** property of the Web Animations API gets and sets the target effect of an animation.
+     * The **`Animation.effect`** property of the Web Animations API gets and sets the target effect of an animation. The target effect may be either an effect object of a type based on AnimationEffect, such as KeyframeEffect, or null.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Animation/effect)
      */
     var effect: AnimationEffect? = definedExternally,
     /**
-     * The **`Animation.timeline`** property of the Animation interface returns or sets the AnimationTimeline associated with this animation.
+     * The **`Animation.timeline`** property of the Animation interface returns or sets the timeline associated with this animation. A timeline is a source of time values for synchronization purposes, and is an AnimationTimeline-based object. By default, the animation's timeline and the Document's timeline are the same.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Animation/timeline)
      */
@@ -64,7 +64,7 @@ open external class Animation(
     var onremove: EventHandler<AnimationPlaybackEvent, Animation, Animation>?
 
     /**
-     * The **`overallProgress`** read-only property of the Animation interface returns a number between `0` and `1` indicating the animation's overall progress towards its finished state.
+     * The **`overallProgress`** read-only property of the Animation interface returns a number between 0 and 1 indicating the animation's overall progress towards its finished state. This is the overall progress across all of the animation's iterations, not each individual iteration.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Animation/overallProgress)
      */
@@ -92,7 +92,7 @@ open external class Animation(
     var playbackRate: Double
 
     /**
-     * The read-only **`Animation.ready`** property of the Web Animations API returns a Promise which resolves when the animation is ready to play.
+     * The read-only **`Animation.ready`** property of the Web Animations API returns a Promise which resolves when the animation is ready to play. A new promise is created every time the animation enters the "pending" play state as well as when the animation is canceled, since in both of those scenarios, the animation is ready to be started again.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Animation/ready)
      */
@@ -120,7 +120,7 @@ open external class Animation(
     fun cancel()
 
     /**
-     * The `commitStyles()` method of the Web Animations API's Animation interface writes the computed values of the animation's current styles into its target element's `style` attribute.
+     * The **`commitStyles()`** method of the Web Animations API's Animation interface writes the computed values of the animation's current styles into its target element's style attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Animation/commitStyles)
      */
@@ -141,21 +141,21 @@ open external class Animation(
     fun pause()
 
     /**
-     * The `persist()` method of the Web Animations API's Animation interface explicitly persists an animation, preventing it from being automatically removed when it is replaced by another animation.
+     * The **`persist()`** method of the Web Animations API's Animation interface explicitly persists an animation, preventing it from being automatically removed when it is replaced by another animation.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Animation/persist)
      */
     fun persist()
 
     /**
-     * The **`play()`** method of the Web Animations API's Animation Interface starts or resumes playing of an animation.
+     * The **`play()`** method of the Web Animations API's Animation Interface starts or resumes playing of an animation. If the animation is finished, calling play() restarts the animation, playing it from the beginning.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Animation/play)
      */
     fun play()
 
     /**
-     * The **`Animation.reverse()`** method of the Animation Interface reverses the playback direction, meaning the animation ends at its beginning.
+     * The **`Animation.reverse()`** method of the Animation Interface reverses the playback direction, meaning the animation ends at its beginning. If called on an unplayed animation, the whole animation is played backwards. If called on a paused animation, the animation will continue in reverse.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Animation/reverse)
      */

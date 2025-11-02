@@ -8,7 +8,7 @@ import web.navigation.NavigationActivation
 import kotlin.js.definedExternally
 
 /**
- * The **`PageSwapEvent`** event object is made available inside handler functions for the Window.pageswap_event event.
+ * The **`PageSwapEvent`** event object is made available inside handler functions for the pageswap event.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PageSwapEvent)
  */

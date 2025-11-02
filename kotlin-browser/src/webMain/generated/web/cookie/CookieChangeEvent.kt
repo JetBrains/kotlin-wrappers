@@ -8,7 +8,7 @@ import web.events.EventType
 import kotlin.js.definedExternally
 
 /**
- * The **`CookieChangeEvent`** interface of the Cookie Store API is the event type of the CookieStore/change_event event fired at a CookieStore when any cookies are created or deleted.
+ * The **`CookieChangeEvent`** interface of the Cookie Store API is the event type of the change event fired at a CookieStore when any cookies are created or deleted.
  * Available only in secure contexts.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CookieChangeEvent)
@@ -25,7 +25,7 @@ open external class CookieChangeEvent(
     val changed: ReadonlyArray<CookieListItem>
 
     /**
-     * The **`deleted`** read-only property of the CookieChangeEvent interface returns an array of the cookies that have been deleted by the given `CookieChangeEvent` instance.
+     * The **`deleted`** read-only property of the CookieChangeEvent interface returns an array of the cookies that have been deleted by the given CookieChangeEvent instance.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CookieChangeEvent/deleted)
      */

@@ -12,21 +12,21 @@ import web.dom.Node
 open external class XPathResult
 private constructor() {
     /**
-     * The read-only **`booleanValue`** property of the XPathResult interface returns the boolean value of a result with XPathResult.resultType being `BOOLEAN_TYPE`.
+     * The read-only **`booleanValue`** property of the XPathResult interface returns the boolean value of a result with XPathResult.resultType being BOOLEAN_TYPE.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XPathResult/booleanValue)
      */
     val booleanValue: Boolean
 
     /**
-     * The read-only **`invalidIteratorState`** property of the XPathResult interface signifies that the iterator has become invalid.
+     * The read-only **`invalidIteratorState`** property of the XPathResult interface signifies that the iterator has become invalid. It is true if XPathResult.resultType is UNORDERED_NODE_ITERATOR_TYPE or ORDERED_NODE_ITERATOR_TYPE and the document has been modified since this result was returned.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XPathResult/invalidIteratorState)
      */
     val invalidIteratorState: Boolean
 
     /**
-     * The read-only **`numberValue`** property of the XPathResult interface returns the numeric value of a result with XPathResult.resultType being `NUMBER_TYPE`.
+     * The read-only **`numberValue`** property of the XPathResult interface returns the numeric value of a result with XPathResult.resultType being NUMBER_TYPE.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XPathResult/numberValue)
      */
@@ -40,7 +40,7 @@ private constructor() {
     val resultType: ResultType
 
     /**
-     * The read-only **`singleNodeValue`** property of the XPathResult interface returns a Node value or `null` in case no node was matched of a result with XPathResult.resultType being `ANY_UNORDERED_NODE_TYPE` or `FIRST_ORDERED_NODE_TYPE`.
+     * The read-only **`singleNodeValue`** property of the XPathResult interface returns a Node value or null in case no node was matched of a result with XPathResult.resultType being ANY_UNORDERED_NODE_TYPE or FIRST_ORDERED_NODE_TYPE.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XPathResult/singleNodeValue)
      */
@@ -54,21 +54,21 @@ private constructor() {
     val snapshotLength: Int
 
     /**
-     * The read-only **`stringValue`** property of the XPathResult interface returns the string value of a result with XPathResult.resultType being `STRING_TYPE`.
+     * The read-only **`stringValue`** property of the XPathResult interface returns the string value of a result with XPathResult.resultType being STRING_TYPE.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XPathResult/stringValue)
      */
     val stringValue: String
 
     /**
-     * The **`iterateNext()`** method of the XPathResult interface iterates over a node set result and returns the next node from it or `null` if there are no more nodes.
+     * The **`iterateNext()`** method of the XPathResult interface iterates over a node set result and returns the next node from it or null if there are no more nodes.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XPathResult/iterateNext)
      */
     fun iterateNext(): Node?
 
     /**
-     * The **`snapshotItem()`** method of the XPathResult interface returns an item of the snapshot collection or `null` in case the index is not within the range of nodes.
+     * The **`snapshotItem()`** method of the XPathResult interface returns an item of the snapshot collection or null in case the index is not within the range of nodes. Unlike the iterator result, the snapshot does not become invalid, but may not correspond to the current document if it is mutated.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XPathResult/snapshotItem)
      */

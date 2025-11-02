@@ -6,7 +6,7 @@ import web.dom.Node
 import web.dom.NodeList
 
 /**
- * The **`MutationRecord`** is a read-only interface that represents an individual DOM mutation observed by a MutationObserver.
+ * The **`MutationRecord`** is a read-only interface that represents an individual DOM mutation observed by a MutationObserver. It is the object inside the array passed to the callback of a MutationObserver.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MutationRecord)
  */
@@ -34,7 +34,7 @@ private constructor() {
     val attributeNamespace: String?
 
     /**
-     * The MutationRecord read-only property **`nextSibling`** is the next sibling of an added or removed child node of the `target` of a MutationObserver.
+     * The MutationRecord read-only property **`nextSibling`** is the next sibling of an added or removed child node of the target of a MutationObserver.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MutationRecord/nextSibling)
      */
@@ -48,7 +48,7 @@ private constructor() {
     val oldValue: String?
 
     /**
-     * The MutationRecord read-only property **`previousSibling`** is the previous sibling of an added or removed child node of the `target` of a MutationObserver.
+     * The MutationRecord read-only property **`previousSibling`** is the previous sibling of an added or removed child node of the target of a MutationObserver.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MutationRecord/previousSibling)
      */

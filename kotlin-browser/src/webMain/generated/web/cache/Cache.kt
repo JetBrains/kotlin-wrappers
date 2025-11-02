@@ -16,7 +16,7 @@ import kotlin.js.definedExternally
 import kotlin.js.toBoolean
 
 /**
- * The **`Cache`** interface provides a persistent storage mechanism for Request / Response object pairs that are cached in long lived memory.
+ * The **`Cache`** interface provides a persistent storage mechanism for Request / Response object pairs that are cached in long lived memory. How long a Cache object lives is browser dependent, but a single origin's scripts can typically rely on the presence of a previously populated Cache object. Note that the Cache interface is exposed to windowed scopes as well as workers. You don't have to use it in conjunction with service workers, even though it is defined in the service worker spec.
  * Available only in secure contexts.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache)
@@ -38,7 +38,7 @@ private constructor() {
     fun addAsync(request: Request): Promise<Void>
 
     /**
-     * The **`addAll()`** method of the Cache interface takes an array of URLs, retrieves them, and adds the resulting response objects to the given cache.
+     * The **`addAll()`** method of the Cache interface takes an array of URLs, retrieves them, and adds the resulting response objects to the given cache. The request objects created during retrieval become keys to the stored response operations.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/addAll)
      */
@@ -49,7 +49,7 @@ private constructor() {
     fun addAllAsync(urls: ReadonlyArray<JsString>): Promise<Void>
 
     /**
-     * The **`delete()`** method of the Cache interface finds the Cache entry whose key is the request, and if found, deletes the Cache entry and returns a Promise that resolves to `true`.
+     * The **`delete()`** method of the Cache interface finds the Cache entry whose key is the request, and if found, deletes the Cache entry and returns a Promise that resolves to true. If no Cache entry is found, it resolves to false.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/delete)
      */
@@ -95,7 +95,7 @@ private constructor() {
     ): Promise<ReadonlyArray<Request>>
 
     /**
-     * The **`match()`** method of the Cache interface returns a Promise that resolves to the Response associated with the first matching request in the Cache object.
+     * The **`match()`** method of the Cache interface returns a Promise that resolves to the Response associated with the first matching request in the Cache object. If no match is found, the Promise resolves to undefined.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/match)
      */
@@ -188,7 +188,7 @@ suspend inline fun Cache.add(request: Request) {
 }
 
 /**
- * The **`addAll()`** method of the Cache interface takes an array of URLs, retrieves them, and adds the resulting response objects to the given cache.
+ * The **`addAll()`** method of the Cache interface takes an array of URLs, retrieves them, and adds the resulting response objects to the given cache. The request objects created during retrieval become keys to the stored response operations.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/addAll)
  */
@@ -205,7 +205,7 @@ suspend inline fun Cache.addAll(urls: ReadonlyArray<JsString>) {
 }
 
 /**
- * The **`delete()`** method of the Cache interface finds the Cache entry whose key is the request, and if found, deletes the Cache entry and returns a Promise that resolves to `true`.
+ * The **`delete()`** method of the Cache interface finds the Cache entry whose key is the request, and if found, deletes the Cache entry and returns a Promise that resolves to true. If no Cache entry is found, it resolves to false.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/delete)
  */
@@ -218,7 +218,7 @@ suspend inline fun Cache.delete(
 }
 
 /**
- * The **`delete()`** method of the Cache interface finds the Cache entry whose key is the request, and if found, deletes the Cache entry and returns a Promise that resolves to `true`.
+ * The **`delete()`** method of the Cache interface finds the Cache entry whose key is the request, and if found, deletes the Cache entry and returns a Promise that resolves to true. If no Cache entry is found, it resolves to false.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/delete)
  */
@@ -342,7 +342,7 @@ suspend inline fun Cache.keys(
 }
 
 /**
- * The **`match()`** method of the Cache interface returns a Promise that resolves to the Response associated with the first matching request in the Cache object.
+ * The **`match()`** method of the Cache interface returns a Promise that resolves to the Response associated with the first matching request in the Cache object. If no match is found, the Promise resolves to undefined.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/match)
  */
@@ -355,7 +355,7 @@ suspend inline fun Cache.match(
 }
 
 /**
- * The **`match()`** method of the Cache interface returns a Promise that resolves to the Response associated with the first matching request in the Cache object.
+ * The **`match()`** method of the Cache interface returns a Promise that resolves to the Response associated with the first matching request in the Cache object. If no match is found, the Promise resolves to undefined.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Cache/match)
  */

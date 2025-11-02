@@ -7,7 +7,7 @@ import web.html.HTMLElement
 import kotlin.js.definedExternally
 
 /**
- * The DOM **`Node`** interface is an abstract base class upon which many other DOM API objects are based, thus letting those object types be used similarly and often interchangeably.
+ * The DOM **`Node`** interface is an abstract base class upon which many other DOM API objects are based, thus letting those object types be used similarly and often interchangeably. As an abstract class, there is no such thing as a plain Node object. All objects that implement Node functionality are based on one of its subclasses. Most notable are Document, Element, and DocumentFragment.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Node)
  */
@@ -22,14 +22,14 @@ private constructor() :
     val baseURI: String
 
     /**
-     * The read-only **`childNodes`** property of the Node interface returns a live NodeList of child Node of the given element where the first child node is assigned index `0`.
+     * The read-only **`childNodes`** property of the Node interface returns a live NodeList of child nodes of the given element where the first child node is assigned index 0. Child nodes include elements, text and comments.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Node/childNodes)
      */
     val childNodes: NodeList<ChildNode>
 
     /**
-     * The read-only **`firstChild`** property of the Node interface returns the node's first child in the tree, or `null` if the node has no children.
+     * The read-only **`firstChild`** property of the Node interface returns the node's first child in the tree, or null if the node has no children.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Node/firstChild)
      */
@@ -43,14 +43,14 @@ private constructor() :
     val isConnected: Boolean
 
     /**
-     * The read-only **`lastChild`** property of the Node interface returns the last child of the node, or `null` if there are no child nodes.
+     * The read-only **`lastChild`** property of the Node interface returns the last child of the node, or null if there are no child nodes.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Node/lastChild)
      */
     val lastChild: ChildNode?
 
     /**
-     * The read-only **`nextSibling`** property of the Node interface returns the node immediately following the specified one in their parent's Node.childNodes, or returns `null` if the specified node is the last child in the parent element.
+     * The read-only **`nextSibling`** property of the Node interface returns the node immediately following the specified one in their parent's childNodes, or returns null if the specified node is the last child in the parent element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Node/nextSibling)
      */
@@ -64,7 +64,7 @@ private constructor() :
     val nodeName: String
 
     /**
-     * The read-only **`nodeType`** property of a Node interface is an integer that identifies what the node is.
+     * The read-only **`nodeType`** property of a Node interface is an integer that identifies what the node is. It distinguishes different kinds of nodes from each other, such as elements, text, and comments.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Node/nodeType)
      */
@@ -85,7 +85,7 @@ private constructor() :
     open val ownerDocument: Document?
 
     /**
-     * The read-only **`parentElement`** property of Node interface returns the DOM node's parent Element, or `null` if the node either has no parent, or its parent isn't a DOM Element.
+     * The read-only **`parentElement`** property of Node interface returns the DOM node's parent Element, or null if the node either has no parent, or its parent isn't a DOM Element. Node.parentNode on the other hand returns any kind of parent, regardless of its type.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Node/parentElement)
      */
@@ -99,7 +99,7 @@ private constructor() :
     val parentNode: ParentNode?
 
     /**
-     * The read-only **`previousSibling`** property of the Node interface returns the node immediately preceding the specified one in its parent's Node.childNodes list, or `null` if the specified node is the first in that list.
+     * The read-only **`previousSibling`** property of the Node interface returns the node immediately preceding the specified one in its parent's childNodes list, or null if the specified node is the first in that list.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Node/previousSibling)
      */
@@ -120,7 +120,7 @@ private constructor() :
     fun <T : Node> appendChild(node: T): T
 
     /**
-     * The **`cloneNode()`** method of the Node interface returns a duplicate of the node on which this method was called.
+     * The **`cloneNode()`** method of the Node interface returns a duplicate of the node on which this method was called. Its parameter controls if the subtree contained in a node is also cloned or not.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Node/cloneNode)
      */
@@ -134,7 +134,7 @@ private constructor() :
     fun compareDocumentPosition(other: Node): NodePosition
 
     /**
-     * The **`contains()`** method of the Node interface returns a boolean value indicating whether a node is a descendant of a given node, that is the node itself, one of its direct children (Node.childNodes), one of the children's direct children, and so on.
+     * The **`contains()`** method of the Node interface returns a boolean value indicating whether a node is a descendant of a given node, that is the node itself, one of its direct children (childNodes), one of the children's direct children, and so on.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Node/contains)
      */
@@ -155,7 +155,7 @@ private constructor() :
     fun hasChildNodes(): Boolean
 
     /**
-     * The **`insertBefore()`** method of the Node interface inserts a node before a _reference node_ as a child of a specified _parent node_.
+     * The **`insertBefore()`** method of the Node interface inserts a node before a reference node as a child of a specified parent node.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Node/insertBefore)
      */
@@ -165,42 +165,42 @@ private constructor() :
     ): T
 
     /**
-     * The **`isDefaultNamespace()`** method of the Node interface accepts a namespace URI as an argument.
+     * The **`isDefaultNamespace()`** method of the Node interface accepts a namespace URI as an argument. It returns a boolean value that is true if the namespace is the default namespace on the given node and false if not. The default namespace can be retrieved with Node.lookupNamespaceURI() by passing null as the argument.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Node/isDefaultNamespace)
      */
     fun isDefaultNamespace(namespace: String?): Boolean
 
     /**
-     * The **`isEqualNode()`** method of the Node interface tests whether two nodes are equal.
+     * The **`isEqualNode()`** method of the Node interface tests whether two nodes are equal. Two nodes are equal when they have the same type, defining characteristics (for elements, this would be their ID, number of children, and so forth), its attributes match, and so on. The specific set of data points that must match varies depending on the types of the nodes.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Node/isEqualNode)
      */
     fun isEqualNode(otherNode: Node?): Boolean
 
     /**
-     * The **`isSameNode()`** method of the Node interface is a legacy alias the for the `===` strict equality operator.
+     * The **`isSameNode()`** method of the Node interface is a legacy alias the for the === strict equality operator. That is, it tests whether two nodes are the same (in other words, whether they reference the same object).
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Node/isSameNode)
      */
     fun isSameNode(otherNode: Node?): Boolean
 
     /**
-     * The **`lookupNamespaceURI()`** method of the Node interface takes a prefix as parameter and returns the namespace URI associated with it on the given node if found (and `null` if not).
+     * The **`lookupNamespaceURI()`** method of the Node interface takes a prefix as parameter and returns the namespace URI associated with it on the given node if found (and null if not). This method's existence allows Node objects to be passed as a namespace resolver to XPathEvaluator.createExpression() and XPathEvaluator.evaluate().
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Node/lookupNamespaceURI)
      */
     fun lookupNamespaceURI(prefix: String?): String?
 
     /**
-     * The **`lookupPrefix()`** method of the Node interface returns a string containing the prefix for a given namespace URI, if present, and `null` if not.
+     * The **`lookupPrefix()`** method of the Node interface returns a string containing the prefix for a given namespace URI, if present, and null if not. When multiple prefixes are possible, the first prefix is returned.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Node/lookupPrefix)
      */
     fun lookupPrefix(namespace: String?): String?
 
     /**
-     * The **`normalize()`** method of the Node interface puts the specified node and all of its sub-tree into a _normalized_ form.
+     * The **`normalize()`** method of the Node interface puts the specified node and all of its sub-tree into a normalized form. In a normalized sub-tree, no text nodes in the sub-tree are empty and there are no adjacent text nodes.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Node/normalize)
      */

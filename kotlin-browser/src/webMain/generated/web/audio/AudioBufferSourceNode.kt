@@ -28,14 +28,14 @@ open external class AudioBufferSourceNode(
     val detune: AudioParam
 
     /**
-     * The `loop` property of the AudioBufferSourceNode interface is a Boolean indicating if the audio asset must be replayed when the end of the AudioBuffer is reached.
+     * The **`loop`** property of the AudioBufferSourceNode interface is a Boolean indicating if the audio asset must be replayed when the end of the AudioBuffer is reached.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioBufferSourceNode/loop)
      */
     var loop: Boolean
 
     /**
-     * The `loopEnd` property of the AudioBufferSourceNode interface specifies is a floating point number specifying, in seconds, at what offset into playing the AudioBuffer playback should loop back to the time indicated by the AudioBufferSourceNode.loopStart property.
+     * The **`loopEnd`** property of the AudioBufferSourceNode interface specifies is a floating point number specifying, in seconds, at what offset into playing the AudioBuffer playback should loop back to the time indicated by the loopStart property. This is only used if the loop property is true.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioBufferSourceNode/loopEnd)
      */
@@ -56,7 +56,7 @@ open external class AudioBufferSourceNode(
     val playbackRate: AudioParam
 
     /**
-     * The `start()` method of the AudioBufferSourceNode Interface is used to schedule playback of the audio data contained in the buffer, or to begin playback immediately.
+     * The **`start()`** method of the AudioBufferSourceNode Interface is used to schedule playback of the audio data contained in the buffer, or to begin playback immediately.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioBufferSourceNode/start)
      */

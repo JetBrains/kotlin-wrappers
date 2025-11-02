@@ -11,7 +11,7 @@ import js.typedarrays.Float64Array
 import kotlin.js.definedExternally
 
 /**
- * The **`DOMMatrix`** interface represents 4×4 matrices, suitable for 2D and 3D operations including rotation and translation.
+ * The **`DOMMatrix`** interface represents 4×4 matrices, suitable for 2D and 3D operations including rotation and translation. It is a mutable version of the DOMMatrixReadOnly interface. The interface is available inside web workers.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrix)
  */
@@ -132,28 +132,28 @@ open external class DOMMatrix(
     override var m44: Double
 
     /**
-     * The **`invertSelf()`** method of the DOMMatrix interface inverts the original matrix.
+     * The **`invertSelf()`** method of the DOMMatrix interface inverts the original matrix. If the matrix cannot be inverted, the new matrix's components are all set to NaN and its is2D property is set to false.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrix/invertSelf)
      */
     fun invertSelf(): DOMMatrix
 
     /**
-     * The **`multiplySelf()`** method of the DOMMatrix interface multiplies a matrix by the `otherMatrix` parameter, computing the dot product of the original matrix and the specified matrix: `A⋅B`.
+     * The **`multiplySelf()`** method of the DOMMatrix interface multiplies a matrix by the otherMatrix parameter, computing the dot product of the original matrix and the specified matrix: A⋅B. If no matrix is specified as the multiplier, the matrix is multiplied by a matrix in which every element is 0 except the bottom-right corner and the element immediately above and to its left: m33 and m34. These have the default value of 1.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrix/multiplySelf)
      */
     fun multiplySelf(other: DOMMatrixReadOnly = definedExternally): DOMMatrix
 
     /**
-     * The **`preMultiplySelf()`** method of the DOMMatrix interface modifies the matrix by pre-multiplying it with the specified `DOMMatrix`.
+     * The **`preMultiplySelf()`** method of the DOMMatrix interface modifies the matrix by pre-multiplying it with the specified DOMMatrix. This is equivalent to the dot product B⋅A, where matrix A is the source matrix and B is the matrix given as an input to the method. If no matrix is specified as the multiplier, the matrix is multiplied by a matrix in which every element is 0 except the bottom-right corner and the element immediately above and to its left: m33 and m34. These have the default value of 1.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrix/preMultiplySelf)
      */
     fun preMultiplySelf(other: DOMMatrixReadOnly = definedExternally): DOMMatrix
 
     /**
-     * The `rotateAxisAngleSelf()` method of the DOMMatrix interface is a transformation method that rotates the source matrix by the given vector and angle, returning the altered matrix.
+     * The **`rotateAxisAngleSelf()`** method of the DOMMatrix interface is a transformation method that rotates the source matrix by the given vector and angle, returning the altered matrix.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrix/rotateAxisAngleSelf)
      */
@@ -165,7 +165,7 @@ open external class DOMMatrix(
     ): DOMMatrix
 
     /**
-     * The `rotateFromVectorSelf()` method of the DOMMatrix interface is a mutable transformation method that modifies a matrix by rotating the matrix by the angle between the specified vector and `(1, 0)`.
+     * The **`rotateFromVectorSelf()`** method of the DOMMatrix interface is a mutable transformation method that modifies a matrix by rotating the matrix by the angle between the specified vector and (1, 0). The rotation angle is determined by the angle between the vector (1,0)T and (x,y)T in the clockwise direction, or (+/-)arctan(y/x). If x and y are both 0, the angle is specified as 0, and the matrix is not altered.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrix/rotateFromVectorSelf)
      */
@@ -175,7 +175,7 @@ open external class DOMMatrix(
     ): DOMMatrix
 
     /**
-     * The `rotateSelf()` method of the DOMMatrix interface is a mutable transformation method that modifies a matrix.
+     * The **`rotateSelf()`** method of the DOMMatrix interface is a mutable transformation method that modifies a matrix. It rotates the source matrix around each of its axes by the specified number of degrees and returns the rotated matrix.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrix/rotateSelf)
      */
@@ -186,7 +186,7 @@ open external class DOMMatrix(
     ): DOMMatrix
 
     /**
-     * The **`scale3dSelf()`** method of the DOMMatrix interface is a mutable transformation method that modifies a matrix by applying a specified scaling factor to all three axes, centered on the given origin, with a default origin of `(0, 0, 0)`, returning the 3D-scaled matrix.
+     * The **`scale3dSelf()`** method of the DOMMatrix interface is a mutable transformation method that modifies a matrix by applying a specified scaling factor to all three axes, centered on the given origin, with a default origin of (0, 0, 0), returning the 3D-scaled matrix.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrix/scale3dSelf)
      */
@@ -198,7 +198,7 @@ open external class DOMMatrix(
     ): DOMMatrix
 
     /**
-     * The **`scaleSelf()`** method of the DOMMatrix interface is a mutable transformation method that modifies a matrix by applying a specified scaling factor, centered on the given origin, with a default origin of `(0, 0)`, returning the scaled matrix.
+     * The **`scaleSelf()`** method of the DOMMatrix interface is a mutable transformation method that modifies a matrix by applying a specified scaling factor, centered on the given origin, with a default origin of (0, 0), returning the scaled matrix.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrix/scaleSelf)
      */
@@ -219,21 +219,21 @@ open external class DOMMatrix(
     fun setMatrixValue(transformList: String): DOMMatrix
 
     /**
-     * The `skewXSelf()` method of the DOMMatrix interface is a mutable transformation method that modifies a matrix.
+     * The **`skewXSelf()`** method of the DOMMatrix interface is a mutable transformation method that modifies a matrix. It skews the source matrix by applying the specified skew transformation along the X-axis and returns the skewed matrix.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrix/skewXSelf)
      */
     fun skewXSelf(sx: Double = definedExternally): DOMMatrix
 
     /**
-     * The `skewYSelf()` method of the DOMMatrix interface is a mutable transformation method that modifies a matrix.
+     * The **`skewYSelf()`** method of the DOMMatrix interface is a mutable transformation method that modifies a matrix. It skews the source matrix by applying the specified skew transformation along the Y-axis and returns the skewed matrix.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrix/skewYSelf)
      */
     fun skewYSelf(sy: Double = definedExternally): DOMMatrix
 
     /**
-     * The `translateSelf()` method of the DOMMatrix interface is a mutable transformation method that modifies a matrix.
+     * The **`translateSelf()`** method of the DOMMatrix interface is a mutable transformation method that modifies a matrix. It applies the specified vectors and returns the updated matrix. The default vector is [0, 0, 0].
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMMatrix/translateSelf)
      */

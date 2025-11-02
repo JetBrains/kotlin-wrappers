@@ -9,7 +9,7 @@ import web.uievents.UIEvent
 import kotlin.js.definedExternally
 
 /**
- * The **`MouseEvent`** interface represents events that occur due to the user interacting with a pointing device (such as a mouse).
+ * The **`MouseEvent`** interface represents events that occur due to the user interacting with a pointing device (such as a mouse). Common events using this interface include click, dblclick, mouseup, mousedown.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MouseEvent)
  */
@@ -18,7 +18,7 @@ open external class MouseEvent(
     init: MouseEventInit = definedExternally,
 ) : UIEvent {
     /**
-     * The **`MouseEvent.altKey`** read-only property is a boolean value that indicates whether the <kbd>alt</kbd> key was pressed or not when a given mouse event occurs.
+     * The **`MouseEvent.altKey`** read-only property is a boolean value that indicates whether the alt key was pressed or not when a given mouse event occurs.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MouseEvent/altKey)
      */
@@ -53,7 +53,7 @@ open external class MouseEvent(
     val clientY: Int
 
     /**
-     * The **`MouseEvent.ctrlKey`** read-only property is a boolean value that indicates whether the <kbd>ctrl</kbd> key was pressed or not when a given mouse event occurs.
+     * The **`MouseEvent.ctrlKey`** read-only property is a boolean value that indicates whether the ctrl key was pressed or not when a given mouse event occurs.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MouseEvent/ctrlKey)
      */
@@ -74,21 +74,21 @@ open external class MouseEvent(
     val layerY: Int
 
     /**
-     * The **`MouseEvent.metaKey`** read-only property is a boolean value that indicates whether the <kbd>meta</kbd> key was pressed or not when a given mouse event occurs.
+     * The **`MouseEvent.metaKey`** read-only property is a boolean value that indicates whether the meta key was pressed or not when a given mouse event occurs.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MouseEvent/metaKey)
      */
     val metaKey: Boolean
 
     /**
-     * The **`movementX`** read-only property of the MouseEvent interface provides the difference in the X coordinate of the mouse pointer between the given event and the previous Element/mousemove_event event.
+     * The **`movementX`** read-only property of the MouseEvent interface provides the difference in the X coordinate of the mouse pointer between the given event and the previous mousemove event. In other words, the value of the property is computed like this: currentEvent.movementX = currentEvent.screenX - previousEvent.screenX.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MouseEvent/movementX)
      */
     val movementX: Double
 
     /**
-     * The **`movementY`** read-only property of the MouseEvent interface provides the difference in the Y coordinate of the mouse pointer between the given event and the previous Element/mousemove_event event.
+     * The **`movementY`** read-only property of the MouseEvent interface provides the difference in the Y coordinate of the mouse pointer between the given event and the previous mousemove event. In other words, the value of the property is computed like this: currentEvent.movementY = currentEvent.screenY - previousEvent.screenY.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MouseEvent/movementY)
      */
@@ -109,14 +109,14 @@ open external class MouseEvent(
     val offsetY: Double
 
     /**
-     * The **`pageX`** read-only property of the MouseEvent interface returns the X (horizontal) coordinate (in pixels) at which the mouse was clicked, relative to the left edge of the entire document.
+     * The **`pageX`** read-only property of the MouseEvent interface returns the X (horizontal) coordinate (in pixels) at which the mouse was clicked, relative to the left edge of the entire document. This includes any portion of the document not currently visible.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MouseEvent/pageX)
      */
     val pageX: Double
 
     /**
-     * The **`pageY`** read-only property of the MouseEvent interface returns the Y (vertical) coordinate (in pixels) at which the mouse was clicked, relative to the top edge of the entire document.
+     * The **`pageY`** read-only property of the MouseEvent interface returns the Y (vertical) coordinate (in pixels) at which the mouse was clicked, relative to the top edge of the entire document. This includes any portion of the document not currently visible.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MouseEvent/pageY)
      */
@@ -144,7 +144,7 @@ open external class MouseEvent(
     val screenY: Int
 
     /**
-     * The **`MouseEvent.shiftKey`** read-only property is a boolean value that indicates whether the <kbd>shift</kbd> key was pressed or not when a given mouse event occurs.
+     * The **`MouseEvent.shiftKey`** read-only property is a boolean value that indicates whether the shift key was pressed or not when a given mouse event occurs.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MouseEvent/shiftKey)
      */
@@ -165,7 +165,7 @@ open external class MouseEvent(
     val y: Double
 
     /**
-     * The **`MouseEvent.getModifierState()`** method returns the current state of the specified modifier key: `true` if the modifier is active (i.e., the modifier key is pressed or locked), otherwise, `false`.
+     * The **`MouseEvent.getModifierState()`** method returns the current state of the specified modifier key: true if the modifier is active (i.e., the modifier key is pressed or locked), otherwise, false.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MouseEvent/getModifierState)
      */

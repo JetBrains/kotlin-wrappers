@@ -7,7 +7,7 @@ import js.typedarrays.Int32Array
 
 sealed external interface WEBGL_multi_draw {
     /**
-     * The **`WEBGL_multi_draw.multiDrawArraysInstancedWEBGL()`** method of the WebGL API renders multiple primitives from array data.
+     * The **`WEBGL_multi_draw.multiDrawArraysInstancedWEBGL()`** method of the WebGL API renders multiple primitives from array data. It is identical to multiple calls to the gl.drawArraysInstanced() method.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WEBGL_multi_draw/multiDrawArraysInstancedWEBGL)
      */
@@ -23,7 +23,7 @@ sealed external interface WEBGL_multi_draw {
     )
 
     /**
-     * The **`WEBGL_multi_draw.multiDrawArraysWEBGL()`** method of the WebGL API renders multiple primitives from array data.
+     * The **`WEBGL_multi_draw.multiDrawArraysWEBGL()`** method of the WebGL API renders multiple primitives from array data. It is identical to multiple calls to the gl.drawArrays() method.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WEBGL_multi_draw/multiDrawArraysWEBGL)
      */
@@ -37,7 +37,7 @@ sealed external interface WEBGL_multi_draw {
     )
 
     /**
-     * The **`WEBGL_multi_draw.multiDrawElementsInstancedWEBGL()`** method of the WebGL API renders multiple primitives from array data.
+     * The **`WEBGL_multi_draw.multiDrawElementsInstancedWEBGL()`** method of the WebGL API renders multiple primitives from array data. It is identical to multiple calls to the gl.drawElementsInstanced() method.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WEBGL_multi_draw/multiDrawElementsInstancedWEBGL)
      */
@@ -54,7 +54,7 @@ sealed external interface WEBGL_multi_draw {
     )
 
     /**
-     * The **`WEBGL_multi_draw.multiDrawElementsWEBGL()`** method of the WebGL API renders multiple primitives from array data.
+     * The **`WEBGL_multi_draw.multiDrawElementsWEBGL()`** method of the WebGL API renders multiple primitives from array data. It is identical to multiple calls to the gl.drawElements() method.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WEBGL_multi_draw/multiDrawElementsWEBGL)
      */

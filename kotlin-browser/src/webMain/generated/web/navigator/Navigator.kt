@@ -34,7 +34,7 @@ import kotlin.js.JsName
 import kotlin.js.definedExternally
 
 /**
- * The **`Navigator`** interface represents the state and the identity of the user agent.
+ * The **`Navigator`** interface represents the state and the identity of the user agent. It allows scripts to query it and to register themselves to carry on some activities.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator)
  */
@@ -61,7 +61,7 @@ private constructor() :
     val clipboard: Clipboard
 
     /**
-     * The **`credentials`** read-only property of the Navigator interface returns the CredentialsContainer object associated with the current document, which exposes methods to request credentials.
+     * The **`credentials`** read-only property of the Navigator interface returns the CredentialsContainer object associated with the current document, which exposes methods to request credentials. The CredentialsContainer interface also notifies the user agent when an interesting event occurs, such as a successful sign-in or sign-out. This interface can be used for feature detection.
      * Available only in secure contexts.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/credentials)
@@ -70,7 +70,7 @@ private constructor() :
     val doNotTrack: String?
 
     /**
-     * The **`Navigator.geolocation`** read-only property returns a Geolocation object that gives Web content access to the location of the device.
+     * The **`Navigator.geolocation`** read-only property returns a Geolocation object that gives Web content access to the location of the device. This allows a website or app to offer customized results based on the user's location.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/geolocation)
      */
@@ -136,14 +136,14 @@ private constructor() :
     val userActivation: UserActivation
 
     /**
-     * The **`wakeLock`** read-only property of the Navigator interface returns a WakeLock interface that allows a document to acquire a screen wake lock.
+     * The **`wakeLock`** read-only property of the Navigator interface returns a WakeLock interface that allows a document to acquire a screen wake lock. While a screen wake lock is active, the user agent will try to prevent the device from dimming the screen, turning it off completely, or showing a screensaver.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/wakeLock)
      */
     val wakeLock: WakeLock
 
     /**
-     * The **`canShare()`** method of the Navigator interface returns `true` if the equivalent call to navigator.share() would succeed.
+     * The **`canShare()`** method of the Navigator interface returns true if the equivalent call to navigator.share() would succeed.
      * Available only in secure contexts.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/canShare)
@@ -158,7 +158,7 @@ private constructor() :
     fun getGamepads(): ReadonlyArray<Gamepad?>
 
     /**
-     * The **`requestMIDIAccess()`** method of the Navigator interface returns a Promise representing a request for access to MIDI devices on a user's system.
+     * The **`requestMIDIAccess()`** method of the Navigator interface returns a Promise representing a request for access to MIDI devices on a user's system. This method is part of the Web MIDI API, which provides a means for accessing, enumerating, and manipulating MIDI devices.
      * Available only in secure contexts.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/requestMIDIAccess)
@@ -179,7 +179,7 @@ private constructor() :
     ): Promise<MediaKeySystemAccess>
 
     /**
-     * The **`navigator.sendBeacon()`** method Asynchronous sends an HTTP POST request containing a small amount of data to a web server.
+     * The **`navigator.sendBeacon()`** method asynchronously sends an HTTP POST request containing a small amount of data to a web server.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/sendBeacon)
      */
@@ -194,7 +194,7 @@ private constructor() :
     ): Boolean
 
     /**
-     * The **`share()`** method of the Navigator interface invokes the native sharing mechanism of the device to share data such as text, URLs, or files.
+     * The **`share()`** method of the Navigator interface invokes the native sharing mechanism of the device to share data such as text, URLs, or files. The available share targets depend on the device, but might include the clipboard, contacts and email applications, websites, Bluetooth, etc.
      * Available only in secure contexts.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/share)
@@ -203,7 +203,7 @@ private constructor() :
     fun shareAsync(data: ShareData = definedExternally): Promise<Void>
 
     /**
-     * The **`vibrate()`** method of the Navigator interface pulses the vibration hardware on the device, if such hardware exists.
+     * The **`vibrate()`** method of the Navigator interface pulses the vibration hardware on the device, if such hardware exists. If the device doesn't support vibration, this method has no effect. If a vibration pattern is already in progress when this method is called, the previous pattern is halted and the new one begins instead.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/vibrate)
      */
@@ -229,7 +229,7 @@ private constructor() :
 }
 
 /**
- * The **`requestMIDIAccess()`** method of the Navigator interface returns a Promise representing a request for access to MIDI devices on a user's system.
+ * The **`requestMIDIAccess()`** method of the Navigator interface returns a Promise representing a request for access to MIDI devices on a user's system. This method is part of the Web MIDI API, which provides a means for accessing, enumerating, and manipulating MIDI devices.
  * Available only in secure contexts.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/requestMIDIAccess)
@@ -239,7 +239,7 @@ suspend inline fun Navigator.requestMIDIAccess(): MIDIAccess {
 }
 
 /**
- * The **`requestMIDIAccess()`** method of the Navigator interface returns a Promise representing a request for access to MIDI devices on a user's system.
+ * The **`requestMIDIAccess()`** method of the Navigator interface returns a Promise representing a request for access to MIDI devices on a user's system. This method is part of the Web MIDI API, which provides a means for accessing, enumerating, and manipulating MIDI devices.
  * Available only in secure contexts.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/requestMIDIAccess)
@@ -267,7 +267,7 @@ suspend inline fun Navigator.requestMediaKeySystemAccess(
 }
 
 /**
- * The **`share()`** method of the Navigator interface invokes the native sharing mechanism of the device to share data such as text, URLs, or files.
+ * The **`share()`** method of the Navigator interface invokes the native sharing mechanism of the device to share data such as text, URLs, or files. The available share targets depend on the device, but might include the clipboard, contacts and email applications, websites, Bluetooth, etc.
  * Available only in secure contexts.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/share)
@@ -277,7 +277,7 @@ suspend inline fun Navigator.share() {
 }
 
 /**
- * The **`share()`** method of the Navigator interface invokes the native sharing mechanism of the device to share data such as text, URLs, or files.
+ * The **`share()`** method of the Navigator interface invokes the native sharing mechanism of the device to share data such as text, URLs, or files. The available share targets depend on the device, but might include the clipboard, contacts and email applications, websites, Bluetooth, etc.
  * Available only in secure contexts.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/share)

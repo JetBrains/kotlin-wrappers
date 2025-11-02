@@ -23,7 +23,7 @@ protected /* private */ constructor() :
     override val size: Int
 
     /**
-     * The **`get()`** method of the MediaKeyStatusMap interface returns the status value associated with the given key, or `undefined` if there is none.
+     * The **`get()`** method of the MediaKeyStatusMap interface returns the status value associated with the given key, or undefined if there is none.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeyStatusMap/get)
      */

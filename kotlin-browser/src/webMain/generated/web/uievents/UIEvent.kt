@@ -8,7 +8,7 @@ import web.window.Window
 import kotlin.js.definedExternally
 
 /**
- * The **`UIEvent`** interface represents simple user interface events.
+ * The **`UIEvent`** interface represents simple user interface events. It is part of the UI Events API, which includes various event types and interfaces related to user interactions.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/UIEvent)
  */
@@ -24,7 +24,7 @@ open external class UIEvent(
     val detail: Int
 
     /**
-     * The **`UIEvent.view`** read-only property returns the WindowProxy object from which the event was generated.
+     * The **`UIEvent.view`** read-only property returns the WindowProxy object from which the event was generated. In browsers, this is the Window object the event happened in.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/UIEvent/view)
      */

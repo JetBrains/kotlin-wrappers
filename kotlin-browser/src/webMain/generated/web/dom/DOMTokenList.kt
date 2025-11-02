@@ -10,7 +10,7 @@ import kotlin.js.JsAny
 import kotlin.js.definedExternally
 
 /**
- * The **`DOMTokenList`** interface represents a set of space-separated tokens.
+ * The **`DOMTokenList`** interface represents a set of space-separated tokens. Such a set is returned by Element.classList or HTMLLinkElement.relList, and many others.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMTokenList)
  */
@@ -18,7 +18,7 @@ open external class DOMTokenList<T : JsAny>
 private constructor() :
     ListLike<T> {
     /**
-     * The read-only **`length`** property of the DOMTokenList interface is an `integer` representing the number of objects stored in the object.
+     * The read-only **`length`** property of the DOMTokenList interface is an integer representing the number of objects stored in the object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMTokenList/length)
      */
@@ -39,7 +39,7 @@ private constructor() :
     fun add(vararg tokens: T)
 
     /**
-     * The **`contains()`** method of the DOMTokenList interface returns a boolean value — `true` if the underlying list contains the given token, otherwise `false`.
+     * The **`contains()`** method of the DOMTokenList interface returns a boolean value — true if the underlying list contains the given token, otherwise false.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMTokenList/contains)
      */
@@ -53,14 +53,14 @@ private constructor() :
     fun item(index: Int): T?
 
     /**
-     * The **`remove()`** method of the DOMTokenList interface removes the specified _tokens_ from the list.
+     * The **`remove()`** method of the DOMTokenList interface removes the specified tokens from the list.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMTokenList/remove)
      */
     fun remove(vararg tokens: T)
 
     /**
-     * The **`replace()`** method of the DOMTokenList interface replaces an existing token with a new token.
+     * The **`replace()`** method of the DOMTokenList interface replaces an existing token with a new token. If the first token doesn't exist, replace() returns false immediately, without adding the new token to the token list.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMTokenList/replace)
      */
@@ -70,14 +70,14 @@ private constructor() :
     ): Boolean
 
     /**
-     * The **`supports()`** method of the DOMTokenList interface returns `true` if a given `token` is in the associated attribute's supported tokens.
+     * The **`supports()`** method of the DOMTokenList interface returns true if a given token is in the associated attribute's supported tokens. This method is intended to support feature detection.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMTokenList/supports)
      */
     fun supports(token: T): Boolean
 
     /**
-     * The **`toggle()`** method of the DOMTokenList interface removes an existing token from the list and returns `false`.
+     * The **`toggle()`** method of the DOMTokenList interface removes an existing token from the list and returns false. If the token doesn't exist it's added and the function returns true.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMTokenList/toggle)
      */

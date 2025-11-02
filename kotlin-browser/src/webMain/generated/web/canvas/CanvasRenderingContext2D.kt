@@ -8,7 +8,7 @@ import web.rendering.RenderingContext
 import web.rendering.RenderingContextId
 
 /**
- * The **`CanvasRenderingContext2D`** interface, part of the Canvas API, provides the 2D rendering context for the drawing surface of a canvas element.
+ * The **`CanvasRenderingContext2D`** interface, part of the Canvas API, provides the 2D rendering context for the drawing surface of a <canvas> element. It is used for drawing shapes, text, images, and other objects.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D)
  */
@@ -33,7 +33,7 @@ private constructor() :
     CanvasUserInterface,
     RenderingContext {
     /**
-     * The **`CanvasRenderingContext2D.canvas`** property, part of the Canvas API, is a read-only reference to the HTMLCanvasElement object that is associated with a given context.
+     * The **`CanvasRenderingContext2D.canvas`** property, part of the Canvas API, is a read-only reference to the HTMLCanvasElement object that is associated with a given context. It might be null if there is no associated <canvas> element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/canvas)
      */

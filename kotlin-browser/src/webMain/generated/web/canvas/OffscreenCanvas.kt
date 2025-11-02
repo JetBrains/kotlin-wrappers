@@ -22,7 +22,7 @@ import kotlin.js.JsName
 import kotlin.js.definedExternally
 
 /**
- * When using the canvas element or the Canvas API, rendering, animation, and user interaction usually happen on the main execution thread of a web application.
+ * When using the <canvas> element or the Canvas API, rendering, animation, and user interaction usually happen on the main execution thread of a web application. The computation relating to canvas animations and rendering can have a significant impact on application performance.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OffscreenCanvas)
  */
@@ -63,7 +63,7 @@ open external class OffscreenCanvas(
     fun convertToBlobAsync(options: ImageEncodeOptions = definedExternally): Promise<Blob>
 
     /**
-     * The **`OffscreenCanvas.getContext()`** method returns a drawing context for an offscreen canvas, or `null` if the context identifier is not supported, or the offscreen canvas has already been set to a different context mode.
+     * The **`OffscreenCanvas.getContext()`** method returns a drawing context for an offscreen canvas, or null if the context identifier is not supported, or the offscreen canvas has already been set to a different context mode.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OffscreenCanvas/getContext)
      */
@@ -73,7 +73,7 @@ open external class OffscreenCanvas(
     ): T?
 
     /**
-     * The **`OffscreenCanvas.transferToImageBitmap()`** method creates an ImageBitmap object from the most recently rendered image of the `OffscreenCanvas`.
+     * The **`OffscreenCanvas.transferToImageBitmap()`** method creates an ImageBitmap object from the most recently rendered image of the OffscreenCanvas. The OffscreenCanvas allocates a new image for its subsequent rendering.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/OffscreenCanvas/transferToImageBitmap)
      */

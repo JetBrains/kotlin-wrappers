@@ -10,7 +10,7 @@ import web.events.EventTarget
 import kotlin.js.JsAny
 
 /**
- * The **`IDBRequest`** interface of the IndexedDB API provides access to results of asynchronous requests to databases and database objects using event handler attributes.
+ * The **`IDBRequest`** interface of the IndexedDB API provides access to results of asynchronous requests to databases and database objects using event handler attributes. Each reading and writing operation on a database is done using a request.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBRequest)
  */
@@ -49,7 +49,7 @@ private constructor() :
     val result: T
 
     /**
-     * The **`source`** read-only property of the IDBRequest interface returns the source of the request, such as an Index or an object store.
+     * The **`source`** read-only property of the IDBRequest interface returns the source of the request, such as an Index or an object store. If no source exists (such as when calling IDBFactory.open), it returns null.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBRequest/source)
      */

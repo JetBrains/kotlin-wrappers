@@ -15,7 +15,7 @@ import web.validation.ValidityStateFlags
 import kotlin.js.definedExternally
 
 /**
- * The **`ElementInternals`** interface of the Document Object Model gives web developers a way to allow custom elements to fully participate in HTML forms.
+ * The **`ElementInternals`** interface of the Document Object Model gives web developers a way to allow custom elements to fully participate in HTML forms. It provides utilities for working with these elements in the same way you would work with any standard HTML form element, and also exposes the Accessibility Object Model to the element.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals)
  */
@@ -66,7 +66,7 @@ private constructor() :
     override val validity: ValidityState
 
     /**
-     * The **`willValidate`** read-only property of the ElementInternals interface returns `true` if the element is a submittable element that is a candidate for constraint validation.
+     * The **`willValidate`** read-only property of the ElementInternals interface returns true if the element is a submittable element that is a candidate for constraint validation.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ElementInternals/willValidate)
      */

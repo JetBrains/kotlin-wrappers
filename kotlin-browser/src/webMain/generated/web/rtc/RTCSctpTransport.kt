@@ -8,7 +8,7 @@ import web.events.EventInstance
 import web.events.EventTarget
 
 /**
- * The **`RTCSctpTransport`** interface provides information which describes a Stream Control Transmission Protocol (**SCTP**) transport.
+ * The **`RTCSctpTransport`** interface provides information which describes a Stream Control Transmission Protocol (SCTP) transport. This provides information about limitations of the transport, but also provides a way to access the underlying Datagram Transport Layer Security (DTLS) transport over which SCTP packets for all of an RTCPeerConnection's data channels are sent and received.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCSctpTransport)
  */

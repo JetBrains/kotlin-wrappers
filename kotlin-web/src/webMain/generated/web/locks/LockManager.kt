@@ -8,7 +8,7 @@ import kotlin.js.JsAny
 import kotlin.js.JsName
 
 /**
- * The **`LockManager`** interface of the Web Locks API provides methods for requesting a new Lock object and querying for an existing `Lock` object.
+ * The **`LockManager`** interface of the Web Locks API provides methods for requesting a new Lock object and querying for an existing Lock object. To get an instance of LockManager, call navigator.locks.
  * Available only in secure contexts.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/LockManager)
@@ -24,7 +24,7 @@ private constructor() {
     fun queryAsync(): Promise<LockManagerSnapshot>
 
     /**
-     * The **`request()`** method of the LockManager interface requests a Lock object with parameters specifying its name and characteristics.
+     * The **`request()`** method of the LockManager interface requests a Lock object with parameters specifying its name and characteristics. The requested Lock is passed to a callback, while the function itself returns a Promise that resolves (or rejects) with the result of the callback after the lock is released, or rejects if the request is aborted.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/LockManager/request)
      */
@@ -52,7 +52,7 @@ suspend inline fun LockManager.query(): LockManagerSnapshot {
 }
 
 /**
- * The **`request()`** method of the LockManager interface requests a Lock object with parameters specifying its name and characteristics.
+ * The **`request()`** method of the LockManager interface requests a Lock object with parameters specifying its name and characteristics. The requested Lock is passed to a callback, while the function itself returns a Promise that resolves (or rejects) with the result of the callback after the lock is released, or rejects if the request is aborted.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/LockManager/request)
  */

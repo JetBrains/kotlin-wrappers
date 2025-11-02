@@ -17,21 +17,21 @@ open external class HTMLIFrameElement
 protected constructor() :
     HTMLElement {
     /**
-     * The **`allow`** property of the HTMLIFrameElement interface indicates the Permissions Policy specified for this `<iframe>` element.
+     * The **`allow`** property of the HTMLIFrameElement interface indicates the Permissions Policy specified for this <iframe> element. The policy defines what features are available to the <iframe> element (for example, access to the microphone, camera, battery, web-share, etc.) based on the origin of the request.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLIFrameElement/allow)
      */
     var allow: String
 
     /**
-     * The **`allowFullscreen`** property of the HTMLIFrameElement interface is a boolean value that reflects the `allowfullscreen` attribute of the iframe element, indicating whether to allow the iframe's contents to use Element.requestFullscreen.
+     * The **`allowFullscreen`** property of the HTMLIFrameElement interface is a boolean value that reflects the allowfullscreen attribute of the <iframe> element, indicating whether to allow the iframe's contents to use requestFullscreen().
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLIFrameElement/allowFullscreen)
      */
     var allowFullscreen: Boolean
 
     /**
-     * If the iframe and the iframe's parent document are Same Origin, returns a `Document` (that is, the active document in the inline frame's nested browsing context), else returns `null`.
+     * If the iframe and the iframe's parent document are Same Origin, returns a Document (that is, the active document in the inline frame's nested browsing context), else returns null.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLIFrameElement/contentDocument)
      */
@@ -45,7 +45,7 @@ protected constructor() :
     val contentWindow: WindowProxy?
 
     /**
-     * The **`height`** property of the HTMLIFrameElement interface returns a string that reflects the `height` attribute of the iframe element, indicating the height of the frame in CSS pixels.
+     * The **`height`** property of the HTMLIFrameElement interface returns a string that reflects the height attribute of the <iframe> element, indicating the height of the frame in CSS pixels.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLIFrameElement/height)
      */
@@ -59,14 +59,14 @@ protected constructor() :
     var loading: Loading
 
     /**
-     * The **`name`** property of the HTMLIFrameElement interface is a string value that reflects the `name` attribute of the iframe element, indicating the specific name of the `<iframe>` element.
+     * The **`name`** property of the HTMLIFrameElement interface is a string value that reflects the name attribute of the <iframe> element, indicating the specific name of the <iframe> element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLIFrameElement/name)
      */
     var name: String
 
     /**
-     * The **`HTMLIFrameElement.referrerPolicy`** property reflects the HTML `referrerpolicy` attribute of the iframe element defining which referrer is sent when fetching the resource.
+     * The **`HTMLIFrameElement.referrerPolicy`** property reflects the HTML referrerpolicy attribute of the <iframe> element defining which referrer is sent when fetching the resource.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLIFrameElement/referrerPolicy)
      */
@@ -80,7 +80,7 @@ protected constructor() :
     val sandbox: DOMTokenList<JsString>
 
     /**
-     * The **`HTMLIFrameElement.src`** A string that reflects the `src` HTML attribute, containing the address of the content to be embedded.
+     * The **`HTMLIFrameElement.src`** A string that reflects the src HTML attribute, containing the address of the content to be embedded.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLIFrameElement/src)
      */
@@ -94,7 +94,7 @@ protected constructor() :
     var srcdoc: HtmlSource
 
     /**
-     * The **`width`** property of the HTMLIFrameElement interface returns a string that reflects the `width` attribute of the iframe element, indicating the width of the frame in CSS pixels.
+     * The **`width`** property of the HTMLIFrameElement interface returns a string that reflects the width attribute of the <iframe> element, indicating the width of the frame in CSS pixels.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLIFrameElement/width)
      */

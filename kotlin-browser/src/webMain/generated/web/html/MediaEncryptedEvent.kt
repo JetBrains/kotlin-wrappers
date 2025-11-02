@@ -8,7 +8,7 @@ import web.events.EventType
 import kotlin.js.definedExternally
 
 /**
- * The **`MediaEncryptedEvent`** interface of the Encrypted Media Extensions API contains the information associated with an HTMLMediaElement/encrypted_event event sent to a HTMLMediaElement when some initialization data is encountered in the media.
+ * The **`MediaEncryptedEvent`** interface of the Encrypted Media Extensions API contains the information associated with an encrypted event sent to a HTMLMediaElement when some initialization data is encountered in the media.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaEncryptedEvent)
  */

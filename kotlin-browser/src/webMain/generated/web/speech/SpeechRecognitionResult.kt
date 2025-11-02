@@ -16,14 +16,14 @@ private constructor() :
     ArrayLike<SpeechRecognitionAlternative>,
     JsIterable<SpeechRecognitionAlternative> {
     /**
-     * The **`isFinal`** read-only property of the SpeechRecognitionResult interface is a boolean value that states whether this result is final (`true`) or not (`false`) — if so, then this is the final time this result will be returned; if not, then this result is an interim result, and may be updated later on.
+     * The **`isFinal`** read-only property of the SpeechRecognitionResult interface is a boolean value that states whether this result is final (true) or not (false) — if so, then this is the final time this result will be returned; if not, then this result is an interim result, and may be updated later on.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechRecognitionResult/isFinal)
      */
     val isFinal: Boolean
 
     /**
-     * The **`length`** read-only property of the SpeechRecognitionResult interface returns the length of the 'array' — the number of SpeechRecognitionAlternative objects contained in the result (also referred to as 'n-best alternatives'.)
+     * The **`length`** read-only property of the SpeechRecognitionResult interface returns the length of the "array" — the number of SpeechRecognitionAlternative objects contained in the result (also referred to as "n-best alternatives".)
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SpeechRecognitionResult/length)
      */

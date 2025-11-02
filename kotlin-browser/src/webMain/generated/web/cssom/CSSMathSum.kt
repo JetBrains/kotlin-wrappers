@@ -3,7 +3,7 @@
 package web.cssom
 
 /**
- * The **`CSSMathSum`** interface of the CSS Typed Object Model API represents the result obtained by calling CSSNumericValue.add, CSSNumericValue.sub, or CSSNumericValue.toSum on CSSNumericValue.
+ * The **`CSSMathSum`** interface of the CSS Typed Object Model API represents the result obtained by calling add(), sub(), or toSum() on CSSNumericValue.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSMathSum)
  */

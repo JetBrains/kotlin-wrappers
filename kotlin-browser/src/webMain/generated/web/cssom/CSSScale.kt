@@ -5,7 +5,7 @@ package web.cssom
 import kotlin.js.definedExternally
 
 /**
- * The **`CSSScale`** interface of the CSS Typed Object Model API represents the scale() and scale3d() values of the individual transform property in CSS.
+ * The **`CSSScale`** interface of the CSS Typed Object Model API represents the scale() and scale3d() values of the individual transform property in CSS. It inherits properties and methods from its parent CSSTransformValue.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSScale)
  */
@@ -23,7 +23,7 @@ open external class CSSScale(
      */
     var y: CSSNumberish,
     /**
-     * The **`z`** property of the CSSScale interface representing the z-component of the translating vector.
+     * The **`z`** property of the CSSScale interface representing the z-component of the translating vector. A positive value moves the element towards the viewer, and a negative value farther away.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSScale/z)
      */

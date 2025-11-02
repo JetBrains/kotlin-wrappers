@@ -6,7 +6,7 @@ import web.dom.HTMLOrSVGImageElement
 import web.http.CrossOrigin
 
 /**
- * The **`SVGImageElement`** interface corresponds to the image element.
+ * The **`SVGImageElement`** interface corresponds to the <image> element.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGImageElement)
  */
@@ -16,42 +16,42 @@ private constructor() :
     SVGURIReference,
     HTMLOrSVGImageElement {
     /**
-     * The **`crossOrigin`** property of the SVGImageElement interface is a string which specifies the Cross-Origin Resource Sharing (CORS) setting to use when retrieving the image.
+     * The **`crossOrigin`** property of the SVGImageElement interface is a string which specifies the Cross-Origin Resource Sharing (CORS) setting to use when retrieving the image. It reflects the crossorigin content attribute of the given <image> element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGImageElement/crossOrigin)
      */
     var crossOrigin: CrossOrigin?
 
     /**
-     * The **`height`** read-only property of the SVGImageElement interface returns an SVGAnimatedLength corresponding to the height attribute of the given image element.
+     * The **`height`** read-only property of the SVGImageElement interface returns an SVGAnimatedLength corresponding to the height attribute of the given <image> element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGImageElement/height)
      */
     val height: SVGAnimatedLength
 
     /**
-     * The **`preserveAspectRatio`** read-only property of the SVGImageElement interface returns an SVGAnimatedPreserveAspectRatio corresponding to the preserveAspectRatio attribute of the given image element.
+     * The **`preserveAspectRatio`** read-only property of the SVGImageElement interface returns an SVGAnimatedPreserveAspectRatio corresponding to the preserveAspectRatio attribute of the given <image> element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGImageElement/preserveAspectRatio)
      */
     val preserveAspectRatio: SVGAnimatedPreserveAspectRatio
 
     /**
-     * The **`width`** read-only property of the SVGImageElement interface returns an SVGAnimatedLength corresponding to the width attribute of the given image element.
+     * The **`width`** read-only property of the SVGImageElement interface returns an SVGAnimatedLength corresponding to the width attribute of the given <image> element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGImageElement/width)
      */
     val width: SVGAnimatedLength
 
     /**
-     * The **`x`** read-only property of the SVGImageElement interface returns an SVGAnimatedLength corresponding to the x attribute of the given image element.
+     * The **`x`** read-only property of the SVGImageElement interface returns an SVGAnimatedLength corresponding to the x attribute of the given <image> element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGImageElement/x)
      */
     val x: SVGAnimatedLength
 
     /**
-     * The **`y`** read-only property of the SVGImageElement interface returns an SVGAnimatedLength corresponding to the y attribute of the given image element.
+     * The **`y`** read-only property of the SVGImageElement interface returns an SVGAnimatedLength corresponding to the y attribute of the given <image> element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGImageElement/y)
      */

@@ -6,7 +6,7 @@ import web.events.Event
 import web.events.EventType
 
 /**
- * The GamepadEvent interface of the Gamepad API contains references to gamepads connected to the system, which is what the gamepad events Window.gamepadconnected_event and Window.gamepaddisconnected_event are fired in response to.
+ * The **`GamepadEvent`** interface of the Gamepad API contains references to gamepads connected to the system, which is what the gamepad events gamepadconnected and gamepaddisconnected are fired in response to.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GamepadEvent)
  */
@@ -15,7 +15,7 @@ open external class GamepadEvent(
     init: GamepadEventInit,
 ) : Event {
     /**
-     * The **`GamepadEvent.gamepad`** property of the **GamepadEvent interface** returns a Gamepad object, providing access to the associated gamepad data for fired Window.gamepadconnected_event and Window.gamepaddisconnected_event events.
+     * The **`GamepadEvent.gamepad`** property of the GamepadEvent interface returns a Gamepad object, providing access to the associated gamepad data for fired gamepadconnected and gamepaddisconnected events.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GamepadEvent/gamepad)
      */

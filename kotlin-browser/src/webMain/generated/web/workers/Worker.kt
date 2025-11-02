@@ -37,7 +37,7 @@ open external class Worker(
     )
 
     /**
-     * The **`postMessage()`** method of the Worker interface sends a message to the worker.
+     * The **`postMessage()`** method of the Worker interface sends a message to the worker. The first parameter is the data to send to the worker. The data may be any JavaScript object that can be handled by the structured clone algorithm.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Worker/postMessage)
      */
@@ -62,7 +62,7 @@ open external class Worker(
     )
 
     /**
-     * The **`terminate()`** method of the Worker interface immediately terminates the Worker.
+     * The **`terminate()`** method of the Worker interface immediately terminates the Worker. This does not offer the worker an opportunity to finish its operations; it is stopped at once.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Worker/terminate)
      */

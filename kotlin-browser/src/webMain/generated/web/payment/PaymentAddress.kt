@@ -7,14 +7,14 @@ import kotlin.js.JsAny
 import kotlin.js.JsString
 
 /**
- * The **`ContactAddress`** interface of the Contact Picker API represents a physical address.
+ * The **`ContactAddress`** interface of the Contact Picker API represents a physical address. Instances of this interface are retrieved from the address property of the objects returned by ContactsManager.getProperties().
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ContactAddress)
  */
 open external class PaymentAddress
 private constructor() {
     /**
-     * The **`addressLine`** read-only property of the ContactAddress interface is an array of strings, each specifying a line of the address that is not covered by one of the other properties of `ContactAddress`.
+     * The **`addressLine`** read-only property of the ContactAddress interface is an array of strings, each specifying a line of the address that is not covered by one of the other properties of ContactAddress. The array may include the street name, the house number, apartment number, the rural delivery route, descriptive instructions, or the post office box.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ContactAddress/addressLine)
      */
@@ -28,14 +28,14 @@ private constructor() {
     val city: String
 
     /**
-     * The **`country`** read-only property of the ContactAddress interface is a string identifying the address's country using the ISO 3166-1 alpha-2 standard.
+     * The **`country`** read-only property of the ContactAddress interface is a string identifying the address's country using the ISO 3166-1 alpha-2 standard. The string is always in its canonical upper-case form.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ContactAddress/country)
      */
     val country: String
 
     /**
-     * The read-only **`dependentLocality`** property of the ContactAddress interface is a string containing a locality or sublocality designation within a city, such as a neighborhood, borough, district, or, in the United Kingdom, a dependent locality.
+     * The read-only **`dependentLocality`** property of the ContactAddress interface is a string containing a locality or sublocality designation within a city, such as a neighborhood, borough, district, or, in the United Kingdom, a dependent locality. Also known as a post town.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ContactAddress/dependentLocality)
      */
@@ -70,7 +70,7 @@ private constructor() {
     val recipient: String
 
     /**
-     * The read-only **`region`** property of the ContactAddress interface returns a string containing the top-level administrative subdivision of the country in which the address is located.
+     * The read-only **`region`** property of the ContactAddress interface returns a string containing the top-level administrative subdivision of the country in which the address is located. This may be a state, province, oblast, or prefecture.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ContactAddress/region)
      */
@@ -84,7 +84,7 @@ private constructor() {
     val sortingCode: String
 
     /**
-     * The **`toJSON()`** method of the ContactAddress interface is a standard serializer that returns a JSON representation of the `ContactAddress` object's properties.
+     * The **`toJSON()`** method of the ContactAddress interface is a standard serializer that returns a JSON representation of the ContactAddress object's properties.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ContactAddress/toJSON)
      */

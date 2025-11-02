@@ -17,7 +17,7 @@ open external class MIDIOutput
 private constructor() :
     MIDIPort {
     /**
-     * The **`send()`** method of the MIDIOutput interface queues messages for the corresponding MIDI port.
+     * The **`send()`** method of the MIDIOutput interface queues messages for the corresponding MIDI port. The message can be sent immediately, or with an optional timestamp to delay sending.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MIDIOutput/send)
      */

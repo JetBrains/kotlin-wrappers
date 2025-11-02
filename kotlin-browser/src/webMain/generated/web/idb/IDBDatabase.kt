@@ -14,7 +14,7 @@ import kotlin.js.JsString
 import kotlin.js.definedExternally
 
 /**
- * The **`IDBDatabase`** interface of the IndexedDB API provides a connection to a database; you can use an `IDBDatabase` object to open a transaction on your database then create, manipulate, and delete objects (data) in that database.
+ * The **`IDBDatabase`** interface of the IndexedDB API provides a connection to a database; you can use an IDBDatabase object to open a transaction on your database then create, manipulate, and delete objects (data) in that database. The interface provides the only way to get and manage versions of the database.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBDatabase)
  */
@@ -23,7 +23,7 @@ private constructor() :
     EventTarget,
     JsCloseable {
     /**
-     * The **`name`** read-only property of the `IDBDatabase` interface is a string that contains the name of the connected database.
+     * The **`name`** read-only property of the IDBDatabase interface is a string that contains the name of the connected database.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBDatabase/name)
      */
@@ -53,7 +53,7 @@ private constructor() :
     var onversionchange: EventHandler<IDBVersionChangeEvent, IDBDatabase, IDBDatabase>?
 
     /**
-     * The **`version`** property of the IDBDatabase interface is a 64-bit integer that contains the version of the connected database.
+     * The **`version`** property of the IDBDatabase interface is a 64-bit integer that contains the version of the connected database. When a database is first created, this attribute is an empty string.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBDatabase/version)
      */

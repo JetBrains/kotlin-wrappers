@@ -6,7 +6,7 @@ import js.buffer.ArrayBuffer
 import js.buffer.ArrayBufferView
 
 /**
- * The **`Crypto`** interface represents basic cryptography features available in the current context.
+ * The **`Crypto`** interface represents basic cryptography features available in the current context. It allows access to a cryptographically strong random number generator and to cryptographic primitives.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Crypto)
  */
@@ -21,7 +21,7 @@ private constructor() {
     val subtle: SubtleCrypto
 
     /**
-     * The **`Crypto.getRandomValues()`** method lets you get cryptographically strong random values.
+     * The **`Crypto.getRandomValues()`** method lets you get cryptographically strong random values. The array given as the parameter is filled with random numbers (random in its cryptographic meaning).
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Crypto/getRandomValues)
      */

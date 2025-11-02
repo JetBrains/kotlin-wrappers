@@ -7,7 +7,7 @@ import js.typedarrays.Float32Array
 import kotlin.js.definedExternally
 
 /**
- * The **`AudioBuffer`** interface represents a short audio asset residing in memory, created from an audio file using the BaseAudioContext/decodeAudioData method, or from raw data using BaseAudioContext/createBuffer.
+ * The **`AudioBuffer`** interface represents a short audio asset residing in memory, created from an audio file using the AudioContext.decodeAudioData() method, or from raw data using AudioContext.createBuffer(). Once put into an AudioBuffer, the audio can then be played by being passed into an AudioBufferSourceNode.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioBuffer)
  */
@@ -29,7 +29,7 @@ open external class AudioBuffer(
     val length: Int
 
     /**
-     * The `numberOfChannels` property of the AudioBuffer interface returns an integer representing the number of discrete audio channels described by the PCM data stored in the buffer.
+     * The **`numberOfChannels`** property of the AudioBuffer interface returns an integer representing the number of discrete audio channels described by the PCM data stored in the buffer.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioBuffer/numberOfChannels)
      */
@@ -43,7 +43,7 @@ open external class AudioBuffer(
     val sampleRate: Float
 
     /**
-     * The **`copyFromChannel()`** method of the AudioBuffer interface copies the audio sample data from the specified channel of the `AudioBuffer` to a specified Float32Array.
+     * The **`copyFromChannel()`** method of the AudioBuffer interface copies the audio sample data from the specified channel of the AudioBuffer to a specified Float32Array.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioBuffer/copyFromChannel)
      */
@@ -54,7 +54,7 @@ open external class AudioBuffer(
     )
 
     /**
-     * The `copyToChannel()` method of the AudioBuffer interface copies the samples to the specified channel of the `AudioBuffer`, from the source array.
+     * The **`copyToChannel()`** method of the AudioBuffer interface copies the samples to the specified channel of the AudioBuffer, from the source array.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/AudioBuffer/copyToChannel)
      */

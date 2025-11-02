@@ -24,13 +24,13 @@ open external class DOMRect(
      */
     override var y: Double = definedExternally,
     /**
-     * The **`width`** property of the DOMRect interface represents the width of the rectangle.
+     * The **`width`** property of the DOMRect interface represents the width of the rectangle. The value can be negative.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMRect/width)
      */
     override var width: Double = definedExternally,
     /**
-     * The **`height`** property of the DOMRect interface represents the height of the rectangle.
+     * The **`height`** property of the DOMRect interface represents the height of the rectangle. The value can be negative.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMRect/height)
      */
@@ -39,7 +39,7 @@ open external class DOMRect(
     Serializable {
     companion object {
         /**
-         * The **`fromRect()`** static method of the DOMRect object creates a new `DOMRect` object with a given location and dimensions.
+         * The **`fromRect()`** static method of the DOMRect object creates a new DOMRect object with a given location and dimensions.
          *
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DOMRect/fromRect_static)
          */

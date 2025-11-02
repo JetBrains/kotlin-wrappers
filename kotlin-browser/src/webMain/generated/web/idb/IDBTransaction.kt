@@ -10,7 +10,7 @@ import web.events.EventInstance
 import web.events.EventTarget
 
 /**
- * The **`IDBTransaction`** interface of the IndexedDB API provides a static, asynchronous transaction on a database using event handler attributes.
+ * The **`IDBTransaction`** interface of the IndexedDB API provides a static, asynchronous transaction on a database using event handler attributes. All reading and writing of data is done within transactions. You use IDBDatabase to start transactions, IDBTransaction to set the mode of the transaction (e.g., is it readonly or readwrite), and you access an IDBObjectStore to make a request. You can also use an IDBTransaction object to abort transactions.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBTransaction)
  */
@@ -25,7 +25,7 @@ private constructor() :
     val db: IDBDatabase
 
     /**
-     * The **`durability`** read-only property of the IDBTransaction interface returns the durability hint the transaction was created with.
+     * The **`durability`** read-only property of the IDBTransaction interface returns the durability hint the transaction was created with. This is a hint to the user agent of whether to prioritize performance or durability when committing the transaction.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBTransaction/durability)
      */
@@ -39,7 +39,7 @@ private constructor() :
     val error: DOMException?
 
     /**
-     * The **`mode`** read-only property of the IDBTransaction interface returns the current mode for accessing the data in the object stores in the scope of the transaction (i.e., is the mode to be read-only, or do you want to write to the object stores?) The default value is `readonly`.
+     * The **`mode`** read-only property of the IDBTransaction interface returns the current mode for accessing the data in the object stores in the scope of the transaction (i.e., is the mode to be read-only, or do you want to write to the object stores?) The default value is readonly.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBTransaction/mode)
      */

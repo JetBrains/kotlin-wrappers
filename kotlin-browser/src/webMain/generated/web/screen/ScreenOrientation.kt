@@ -32,7 +32,7 @@ private constructor() :
     var onchange: EventHandler<Event, ScreenOrientation, ScreenOrientation>?
 
     /**
-     * The **`type`** read-only property of the ScreenOrientation interface returns the document's current orientation type, one of `portrait-primary`, `portrait-secondary`, `landscape-primary`, or `landscape-secondary`.
+     * The **`type`** read-only property of the ScreenOrientation interface returns the document's current orientation type, one of portrait-primary, portrait-secondary, landscape-primary, or landscape-secondary.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ScreenOrientation/type)
      */

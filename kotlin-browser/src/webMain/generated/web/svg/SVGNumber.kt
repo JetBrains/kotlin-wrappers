@@ -3,7 +3,7 @@
 package web.svg
 
 /**
- * The **`SVGNumber`** interface corresponds to the &lt;number&gt; basic data type.
+ * The **`SVGNumber`** interface corresponds to the <number> basic data type.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGNumber)
  */

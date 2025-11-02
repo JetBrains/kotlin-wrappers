@@ -12,7 +12,7 @@ import web.html.HTMLElement
 import kotlin.js.definedExternally
 
 /**
- * The **`HTMLSlotElement`** interface of the Shadow DOM API enables access to the name and assigned nodes of an HTML slot element.
+ * The **`HTMLSlotElement`** interface of the Shadow DOM API enables access to the name and assigned nodes of an HTML <slot> element.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSlotElement)
  */
@@ -20,14 +20,14 @@ open external class HTMLSlotElement
 protected constructor() :
     HTMLElement {
     /**
-     * The **`name`** property of the HTMLSlotElement interface returns or sets the slot name.
+     * The **`name`** property of the HTMLSlotElement interface returns or sets the slot name. A slot is a placeholder inside a web component that users can fill with their own markup.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSlotElement/name)
      */
     var name: String
 
     /**
-     * The **`assign()`** method of the HTMLSlotElement interface sets the slot's _manually assigned nodes_ to an ordered set of slottables.
+     * The **`assign()`** method of the HTMLSlotElement interface sets the slot's manually assigned nodes to an ordered set of slottables. The manually assigned nodes set is initially empty until nodes are assigned using assign().
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSlotElement/assign)
      */

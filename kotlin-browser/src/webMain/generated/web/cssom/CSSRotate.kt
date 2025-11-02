@@ -3,7 +3,7 @@
 package web.cssom
 
 /**
- * The **`CSSRotate`** interface of the CSS Typed Object Model API represents the rotate value of the individual transform property in CSS.
+ * The **`CSSRotate`** interface of the CSS Typed Object Model API represents the rotate value of the individual transform property in CSS. It inherits properties and methods from its parent CSSTransformValue.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSRotate)
  */
@@ -21,13 +21,13 @@ open external class CSSRotate(
      */
     var y: CSSNumberish,
     /**
-     * The **`z`** property of the CSSRotate interface representing the z-component of the translating vector.
+     * The **`z`** property of the CSSRotate interface representing the z-component of the translating vector. A positive value moves the element towards the viewer, and a negative value farther away.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSRotate/z)
      */
     var z: CSSNumberish,
     /**
-     * The **`angle`** property of the CSSRotate interface gets and sets the angle of rotation.
+     * The **`angle`** property of the CSSRotate interface gets and sets the angle of rotation. A positive angle denotes a clockwise rotation, a negative angle a counter-clockwise one.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSRotate/angle)
      */

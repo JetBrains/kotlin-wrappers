@@ -5,7 +5,7 @@ package web.parsing
 import web.dom.Node
 
 /**
- * The `XMLSerializer` interface provides the XMLSerializer.serializeToString method to construct an XML string representing a DOM tree.
+ * The **`XMLSerializer`** interface provides the serializeToString() method to construct an XML string representing a DOM tree.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/XMLSerializer)
  */

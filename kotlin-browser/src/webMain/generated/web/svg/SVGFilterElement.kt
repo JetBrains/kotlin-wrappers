@@ -3,7 +3,7 @@
 package web.svg
 
 /**
- * The **`SVGFilterElement`** interface provides access to the properties of filter elements, as well as methods to manipulate them.
+ * The **`SVGFilterElement`** interface provides access to the properties of <filter> elements, as well as methods to manipulate them.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFilterElement)
  */
@@ -12,7 +12,7 @@ private constructor() :
     SVGElement,
     SVGURIReference {
     /**
-     * The **`filterUnits`** read-only property of the SVGFilterElement interface reflects the filterUnits attribute of the given filter element.
+     * The **`filterUnits`** read-only property of the SVGFilterElement interface reflects the filterUnits attribute of the given <filter> element. It takes one of the SVG_UNIT_TYPE_* constants defined in SVGUnitTypes.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFilterElement/filterUnits)
      */
@@ -26,7 +26,7 @@ private constructor() :
     val height: SVGAnimatedLength
 
     /**
-     * The **`primitiveUnits`** read-only property of the SVGFilterElement interface reflects the primitiveUnits attribute of the given filter element.
+     * The **`primitiveUnits`** read-only property of the SVGFilterElement interface reflects the primitiveUnits attribute of the given <filter> element. It takes one of the SVG_UNIT_TYPE_* constants defined in SVGUnitTypes.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFilterElement/primitiveUnits)
      */

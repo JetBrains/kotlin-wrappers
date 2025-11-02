@@ -10,7 +10,7 @@ import kotlin.js.JsName
 import kotlin.js.toBoolean
 
 /**
- * The **`StorageManager`** interface of the Storage API provides an interface for managing persistence permissions and estimating available storage.
+ * The **`StorageManager`** interface of the Storage API provides an interface for managing persistence permissions and estimating available storage. You can get a reference to this interface using either navigator.storage or WorkerNavigator.storage.
  * Available only in secure contexts.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/StorageManager)
@@ -18,7 +18,7 @@ import kotlin.js.toBoolean
 open external class StorageManager
 private constructor() {
     /**
-     * The **`estimate()`** method of the StorageManager interface asks the Storage Manager for how much storage the current origin takes up (`usage`), and how much space is available (`quota`).
+     * The **`estimate()`** method of the StorageManager interface asks the Storage Manager for how much storage the current origin takes up (usage), and how much space is available (quota).
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/StorageManager/estimate)
      */
@@ -34,7 +34,7 @@ private constructor() {
     fun getDirectoryAsync(): Promise<FileSystemDirectoryHandle>
 
     /**
-     * The **`persist()`** method of the StorageManager interface requests permission to use persistent storage, and returns a Promise that resolves to `true` if permission is granted and bucket mode is persistent, and `false` otherwise.
+     * The **`persist()`** method of the StorageManager interface requests permission to use persistent storage, and returns a Promise that resolves to true if permission is granted and bucket mode is persistent, and false otherwise. The browser may or may not honor the request, depending on browser-specific rules. (For more details, see the guide to Storage quotas and eviction criteria.)
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/StorageManager/persist)
      */
@@ -42,7 +42,7 @@ private constructor() {
     fun persistAsync(): Promise<JsBoolean>
 
     /**
-     * The **`persisted()`** method of the StorageManager interface returns a Promise that resolves to `true` if your site's storage bucket is persistent.
+     * The **`persisted()`** method of the StorageManager interface returns a Promise that resolves to true if your site's storage bucket is persistent.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/StorageManager/persisted)
      */
@@ -51,7 +51,7 @@ private constructor() {
 }
 
 /**
- * The **`estimate()`** method of the StorageManager interface asks the Storage Manager for how much storage the current origin takes up (`usage`), and how much space is available (`quota`).
+ * The **`estimate()`** method of the StorageManager interface asks the Storage Manager for how much storage the current origin takes up (usage), and how much space is available (quota).
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/StorageManager/estimate)
  */
@@ -69,7 +69,7 @@ suspend inline fun StorageManager.getDirectory(): FileSystemDirectoryHandle {
 }
 
 /**
- * The **`persist()`** method of the StorageManager interface requests permission to use persistent storage, and returns a Promise that resolves to `true` if permission is granted and bucket mode is persistent, and `false` otherwise.
+ * The **`persist()`** method of the StorageManager interface requests permission to use persistent storage, and returns a Promise that resolves to true if permission is granted and bucket mode is persistent, and false otherwise. The browser may or may not honor the request, depending on browser-specific rules. (For more details, see the guide to Storage quotas and eviction criteria.)
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/StorageManager/persist)
  */
@@ -78,7 +78,7 @@ suspend inline fun StorageManager.persist(): Boolean {
 }
 
 /**
- * The **`persisted()`** method of the StorageManager interface returns a Promise that resolves to `true` if your site's storage bucket is persistent.
+ * The **`persisted()`** method of the StorageManager interface returns a Promise that resolves to true if your site's storage bucket is persistent.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/StorageManager/persisted)
  */

@@ -6,7 +6,7 @@ import js.serialization.Serializable
 import web.errors.DOMException
 
 /**
- * The **`GPUPipelineError`** interface of the WebGPU API describes a pipeline failure.
+ * The **`GPUPipelineError`** interface of the WebGPU API describes a pipeline failure. This is the value received when a Promise returned by a GPUDevice.createComputePipelineAsync() or GPUDevice.createRenderPipelineAsync() call rejects.
  * Available only in secure contexts.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/GPUPipelineError)

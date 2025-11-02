@@ -41,42 +41,42 @@ private constructor() :
     var onpayerdetailchange: EventHandler<PaymentRequestUpdateEvent, PaymentResponse, PaymentResponse>?
 
     /**
-     * The `payerEmail` read-only property of the PaymentResponse interface returns the email address supplied by the user.
+     * The **`payerEmail`** read-only property of the PaymentResponse interface returns the email address supplied by the user. This option is only present when the requestPayerEmail option is set to true in the options object passed to the PaymentRequest constructor.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentResponse/payerEmail)
      */
     val payerEmail: String?
 
     /**
-     * The **`payerName`** read-only property of the PaymentResponse interface returns the name supplied by the user.
+     * The **`payerName`** read-only property of the PaymentResponse interface returns the name supplied by the user. This option is only present when the requestPayerName option is set to true in the options parameter of the PaymentRequest() constructor.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentResponse/payerName)
      */
     val payerName: String?
 
     /**
-     * The `payerPhone` read-only property of the PaymentResponse interface returns the phone number supplied by the user.
+     * The **`payerPhone`** read-only property of the PaymentResponse interface returns the phone number supplied by the user. This option is only present when the requestPayerPhone option is set to true in the options object passed to the PaymentRequest constructor.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentResponse/payerPhone)
      */
     val payerPhone: String?
 
     /**
-     * The **`requestId`** read-only property of the PaymentResponse interface returns the free-form identifier supplied by the `PaymentResponse()` constructor by details.id.
+     * The **`requestId`** read-only property of the PaymentResponse interface returns the free-form identifier supplied by the PaymentResponse() constructor by details.id.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentResponse/requestId)
      */
     val requestId: String
 
     /**
-     * The **`shippingAddress`** read-only property of the `PaymentRequest` interface returns a PaymentAddress object containing the shipping address provided by the user.
+     * The **`shippingAddress`** read-only property of the PaymentRequest interface returns a PaymentAddress object containing the shipping address provided by the user.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentResponse/shippingAddress)
      */
     val shippingAddress: PaymentAddress?
 
     /**
-     * The **`shippingOption`** read-only property of the `PaymentRequest` interface returns the ID attribute of the shipping option selected by the user.
+     * The **`shippingOption`** read-only property of the PaymentRequest interface returns the ID attribute of the shipping option selected by the user. This option is only present when the requestShipping option is set to true in the options object passed to the PaymentRequest constructor.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentResponse/shippingOption)
      */
@@ -99,7 +99,7 @@ private constructor() :
     fun retryAsync(errorFields: PaymentValidationErrors = definedExternally): Promise<Void>
 
     /**
-     * The **`toJSON()`** method of the PaymentResponse interface is a Serialization; it returns a JSON representation of the PaymentResponse object.
+     * The **`toJSON()`** method of the PaymentResponse interface is a serializer; it returns a JSON representation of the PaymentResponse object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PaymentResponse/toJSON)
      */

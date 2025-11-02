@@ -26,7 +26,7 @@ private constructor() :
     var onchange: EventHandler<CookieChangeEvent, CookieStore, CookieStore>?
 
     /**
-     * The **`delete()`** method of the CookieStore interface deletes a cookie that matches the given `name` or `options` object.
+     * The **`delete()`** method of the CookieStore interface deletes a cookie that matches the given name or options object. The method expires the cookie by changing its date to one in the past.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CookieStore/delete)
      */
@@ -37,7 +37,7 @@ private constructor() :
     fun deleteAsync(options: CookieStoreDeleteOptions): Promise<Void>
 
     /**
-     * The **`get()`** method of the CookieStore interface returns a Promise that resolves to a single cookie matching the given `name` or `options` object.
+     * The **`get()`** method of the CookieStore interface returns a Promise that resolves to a single cookie matching the given name or options object. The method will return the first cookie that matches.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CookieStore/get)
      */
@@ -48,7 +48,7 @@ private constructor() :
     fun getAsync(options: CookieStoreGetOptions = definedExternally): Promise<CookieListItem?>
 
     /**
-     * The **`getAll()`** method of the CookieStore interface returns a Promise that resolves as an array of cookies that match the `name` or `options` passed to it.
+     * The **`getAll()`** method of the CookieStore interface returns a Promise that resolves as an array of cookies that match the name or options passed to it. Passing no parameters will return all cookies for the current context.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CookieStore/getAll)
      */
@@ -59,7 +59,7 @@ private constructor() :
     fun getAllAsync(options: CookieStoreGetOptions = definedExternally): Promise<CookieList>
 
     /**
-     * The **`set()`** method of the CookieStore interface sets a cookie with the given `name` and `value` or `options` object.
+     * The **`set()`** method of the CookieStore interface sets a cookie with the given name and value or options object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CookieStore/set)
      */
@@ -74,7 +74,7 @@ private constructor() :
 }
 
 /**
- * The **`delete()`** method of the CookieStore interface deletes a cookie that matches the given `name` or `options` object.
+ * The **`delete()`** method of the CookieStore interface deletes a cookie that matches the given name or options object. The method expires the cookie by changing its date to one in the past.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CookieStore/delete)
  */
@@ -91,7 +91,7 @@ suspend inline fun CookieStore.delete(options: CookieStoreDeleteOptions) {
 }
 
 /**
- * The **`get()`** method of the CookieStore interface returns a Promise that resolves to a single cookie matching the given `name` or `options` object.
+ * The **`get()`** method of the CookieStore interface returns a Promise that resolves to a single cookie matching the given name or options object. The method will return the first cookie that matches.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CookieStore/get)
  */
@@ -112,7 +112,7 @@ suspend inline fun CookieStore.get(options: CookieStoreGetOptions): CookieListIt
 }
 
 /**
- * The **`getAll()`** method of the CookieStore interface returns a Promise that resolves as an array of cookies that match the `name` or `options` passed to it.
+ * The **`getAll()`** method of the CookieStore interface returns a Promise that resolves as an array of cookies that match the name or options passed to it. Passing no parameters will return all cookies for the current context.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CookieStore/getAll)
  */
@@ -133,7 +133,7 @@ suspend inline fun CookieStore.getAll(options: CookieStoreGetOptions): CookieLis
 }
 
 /**
- * The **`set()`** method of the CookieStore interface sets a cookie with the given `name` and `value` or `options` object.
+ * The **`set()`** method of the CookieStore interface sets a cookie with the given name and value or options object.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CookieStore/set)
  */

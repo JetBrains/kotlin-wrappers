@@ -14,21 +14,21 @@ import kotlin.js.definedExternally
 open external class IDBCursor
 private constructor() {
     /**
-     * The **`direction`** read-only property of the IDBCursor interface is a string that returns the direction of traversal of the cursor (set using IDBObjectStore.openCursor for example).
+     * The **`direction`** read-only property of the IDBCursor interface is a string that returns the direction of traversal of the cursor (set using IDBObjectStore.openCursor for example). See the Value section below for possible values.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBCursor/direction)
      */
     val direction: IDBCursorDirection
 
     /**
-     * The **`key`** read-only property of the IDBCursor interface returns the key for the record at the cursor's position.
+     * The **`key`** read-only property of the IDBCursor interface returns the key for the record at the cursor's position. If the cursor is outside its range, this is set to undefined. The cursor's key can be any data type.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBCursor/key)
      */
     val key: IDBValidKey
 
     /**
-     * The **`primaryKey`** read-only property of the IDBCursor interface returns the cursor's current effective key.
+     * The **`primaryKey`** read-only property of the IDBCursor interface returns the cursor's current effective key. If the cursor is currently being iterated or has iterated outside its range, this is set to undefined. The cursor's primary key can be any data type.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBCursor/primaryKey)
      */
@@ -42,7 +42,7 @@ private constructor() {
     val request: IDBRequest<*>
 
     /**
-     * The **`source`** read-only property of the IDBCursor interface returns the IDBObjectStore or IDBIndex that the cursor is iterating over.
+     * The **`source`** read-only property of the IDBCursor interface returns the IDBObjectStore or IDBIndex that the cursor is iterating over. This function never returns null or throws an exception, even if the cursor is currently being iterated, has iterated past its end, or its transaction is not active.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBCursor/source)
      */
@@ -56,7 +56,7 @@ private constructor() {
     fun advance(count: Int)
 
     /**
-     * The **`continue()`** method of the IDBCursor interface advances the cursor to the next position along its direction, to the item whose key matches the optional key parameter.
+     * The **`continue()`** method of the IDBCursor interface advances the cursor to the next position along its direction, to the item whose key matches the optional key parameter. If no key is specified, the cursor advances to the immediate next position, based on its direction.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBCursor/continue)
      */
@@ -73,14 +73,14 @@ private constructor() {
     )
 
     /**
-     * The **`delete()`** method of the IDBCursor interface returns an IDBRequest object, and, in a separate thread, deletes the record at the cursor's position, without changing the cursor's position.
+     * The **`delete()`** method of the IDBCursor interface returns an IDBRequest object, and, in a separate thread, deletes the record at the cursor's position, without changing the cursor's position. Once the record is deleted, the cursor's value is set to null.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBCursor/delete)
      */
     fun delete(): IDBRequest<Void>
 
     /**
-     * The **`update()`** method of the IDBCursor interface returns an IDBRequest object, and, in a separate thread, updates the value at the current position of the cursor in the object store.
+     * The **`update()`** method of the IDBCursor interface returns an IDBRequest object, and, in a separate thread, updates the value at the current position of the cursor in the object store. If the cursor points to a record that has just been deleted, a new record is created.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBCursor/update)
      */

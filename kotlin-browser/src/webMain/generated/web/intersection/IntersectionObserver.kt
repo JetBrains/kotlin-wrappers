@@ -9,7 +9,7 @@ import web.dom.ParentNode
 import kotlin.js.definedExternally
 
 /**
- * The **`IntersectionObserver`** interface of the Intersection Observer API provides a way to asynchronously observe changes in the intersection of a target element with an ancestor element or with a top-level document's viewport.
+ * The **`IntersectionObserver`** interface of the Intersection Observer API provides a way to asynchronously observe changes in the intersection of a target element with an ancestor element or with a top-level document's viewport. The ancestor element or viewport is referred to as the root.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IntersectionObserver)
  */
@@ -32,14 +32,14 @@ open external class IntersectionObserver(
     val rootMargin: String
 
     /**
-     * The **`scrollMargin`** read-only property of the IntersectionObserver interface adds a margin to all nested scroll container within the root element, including the root element if it is a scroll container.
+     * The **`scrollMargin`** read-only property of the IntersectionObserver interface adds a margin to all nested scroll containers within the root element, including the root element if it is a scroll container.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IntersectionObserver/scrollMargin)
      */
     val scrollMargin: String
 
     /**
-     * The **`thresholds`** read-only property of the IntersectionObserver interface returns the list of intersection thresholds that was specified when the observer was instantiated with IntersectionObserver.IntersectionObserver.
+     * The **`thresholds`** read-only property of the IntersectionObserver interface returns the list of intersection thresholds that was specified when the observer was instantiated with IntersectionObserver().
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IntersectionObserver/thresholds)
      */
@@ -53,7 +53,7 @@ open external class IntersectionObserver(
     fun disconnect()
 
     /**
-     * The **`observe()`** method of the IntersectionObserver interface adds an element to the set of target elements being watched by the `IntersectionObserver`.
+     * The **`observe()`** method of the IntersectionObserver interface adds an element to the set of target elements being watched by the IntersectionObserver. One observer has one set of thresholds and one root, but can watch multiple target elements for visibility changes in keeping with those.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IntersectionObserver/observe)
      */
@@ -67,7 +67,7 @@ open external class IntersectionObserver(
     fun takeRecords(): ReadonlyArray<IntersectionObserverEntry>
 
     /**
-     * The **`unobserve()`** method of the IntersectionObserver interface instructs the `IntersectionObserver` to stop observing the specified target element.
+     * The **`unobserve()`** method of the IntersectionObserver interface instructs the IntersectionObserver to stop observing the specified target element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IntersectionObserver/unobserve)
      */

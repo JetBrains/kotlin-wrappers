@@ -10,7 +10,7 @@ import kotlin.js.JsString
 import kotlin.js.definedExternally
 
 /**
- * The **`TextDecoderStream`** interface of the Encoding API converts a stream of text in a binary encoding, such as UTF-8 etc., to a stream of strings.
+ * The **`TextDecoderStream`** interface of the Encoding API converts a stream of text in a binary encoding, such as UTF-8 etc., to a stream of strings. It is the streaming equivalent of TextDecoder.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/TextDecoderStream)
  */

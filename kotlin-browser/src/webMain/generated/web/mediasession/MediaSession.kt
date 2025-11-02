@@ -16,7 +16,7 @@ import kotlin.js.definedExternally
 open external class MediaSession
 private constructor() {
     /**
-     * The **`metadata`** property of the MediaSession interface contains a MediaMetadata object providing descriptive information about the currently playing media, or `null` if the metadata has not been set.
+     * The **`metadata`** property of the MediaSession interface contains a MediaMetadata object providing descriptive information about the currently playing media, or null if the metadata has not been set. This metadata is provided by the browser to the device for presentation in any standard media control user interface the device might offer.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaSession/metadata)
      */
@@ -30,7 +30,7 @@ private constructor() {
     var playbackState: MediaSessionPlaybackState
 
     /**
-     * The **`setActionHandler()`** method of the MediaSession interface sets a handler for a media session action.
+     * The **`setActionHandler()`** method of the MediaSession interface sets a handler for a media session action. These actions let a web app receive notifications when the user engages a device's built-in physical or onscreen media controls, such as play, stop, or seek buttons.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaSession/setActionHandler)
      */
@@ -56,7 +56,7 @@ private constructor() {
     fun setMicrophoneActiveAsync(active: Boolean): Promise<Void>
 
     /**
-     * The **`setPositionState()`** method of the MediaSession interface is used to update the current document's media playback position and speed for presentation by user's device in any kind of interface that provides details about ongoing media.
+     * The **`setPositionState()`** method of the MediaSession interface is used to update the current document's media playback position and speed for presentation by user's device in any kind of interface that provides details about ongoing media. This can be particularly useful if your code implements a player for type of media not directly supported by the browser.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaSession/setPositionState)
      */

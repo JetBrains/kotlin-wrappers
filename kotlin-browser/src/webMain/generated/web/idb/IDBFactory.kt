@@ -11,7 +11,7 @@ import kotlin.js.JsName
 import kotlin.js.definedExternally
 
 /**
- * The **`IDBFactory`** interface of the IndexedDB API lets applications asynchronously access the indexed databases.
+ * The **`IDBFactory`** interface of the IndexedDB API lets applications asynchronously access the indexed databases. The object that implements the interface is window.indexedDB. You open — that is, create and access — and delete a database with this object, and not directly with IDBFactory.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBFactory)
  */
@@ -36,7 +36,7 @@ private constructor() {
     fun databasesAsync(): Promise<ReadonlyArray<IDBDatabaseInfo>>
 
     /**
-     * The **`deleteDatabase()`** method of the IDBFactory interface requests the deletion of a database.
+     * The **`deleteDatabase()`** method of the IDBFactory interface requests the deletion of a database. The method returns an IDBOpenDBRequest object immediately, and performs the deletion operation asynchronously.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBFactory/deleteDatabase)
      */

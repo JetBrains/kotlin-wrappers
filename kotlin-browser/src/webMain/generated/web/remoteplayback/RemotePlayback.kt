@@ -38,7 +38,7 @@ private constructor() :
     var ondisconnect: EventHandler<Event, RemotePlayback, RemotePlayback>?
 
     /**
-     * The **`state`** read-only property of the RemotePlayback interface returns the current state of the `RemotePlayback` connection.
+     * The **`state`** read-only property of the RemotePlayback interface returns the current state of the RemotePlayback connection.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RemotePlayback/state)
      */
@@ -61,7 +61,7 @@ private constructor() :
     fun promptAsync(): Promise<Void>
 
     /**
-     * The **`watchAvailability()`** method of the RemotePlayback interface watches the list of available remote playback devices and returns a Promise that resolves with the `callbackId` of a remote playback device.
+     * The **`watchAvailability()`** method of the RemotePlayback interface watches the list of available remote playback devices and returns a Promise that resolves with the callbackId of a remote playback device.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RemotePlayback/watchAvailability)
      */
@@ -99,7 +99,7 @@ suspend inline fun RemotePlayback.prompt() {
 }
 
 /**
- * The **`watchAvailability()`** method of the RemotePlayback interface watches the list of available remote playback devices and returns a Promise that resolves with the `callbackId` of a remote playback device.
+ * The **`watchAvailability()`** method of the RemotePlayback interface watches the list of available remote playback devices and returns a Promise that resolves with the callbackId of a remote playback device.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RemotePlayback/watchAvailability)
  */

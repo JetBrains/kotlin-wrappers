@@ -5,7 +5,7 @@ package web.url
 import kotlin.js.definedExternally
 
 /**
- * The **`URLPattern`** interface of the URL Pattern API matches URLs or parts of URLs against a pattern.
+ * The **`URLPattern`** interface of the URL Pattern API matches URLs or parts of URLs against a pattern. The pattern can contain capturing groups that extract parts of the matched URL.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/URLPattern)
  */
@@ -43,7 +43,7 @@ open external class URLPattern(
     )
 
     /**
-     * The **`hasRegExpGroups`** read-only property of the URLPattern interface is a boolean indicating whether or not any of the `URLPattern` components contain regular expression capturing groups.
+     * The **`hasRegExpGroups`** read-only property of the URLPattern interface is a boolean indicating whether or not any of the URLPattern components contain regular expression capturing groups.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/URLPattern/hasRegExpGroups)
      */
@@ -106,7 +106,7 @@ open external class URLPattern(
     val username: String
 
     /**
-     * The **`exec()`** method of the URLPattern interface takes a URL or object of URL parts, and returns either an object containing the results of matching the URL to the pattern, or `null` if the URL does not match the pattern.
+     * The **`exec()`** method of the URLPattern interface takes a URL or object of URL parts, and returns either an object containing the results of matching the URL to the pattern, or null if the URL does not match the pattern.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/URLPattern/exec)
      */

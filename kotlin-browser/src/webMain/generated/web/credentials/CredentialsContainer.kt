@@ -13,7 +13,7 @@ import kotlin.js.JsName
 import kotlin.js.definedExternally
 
 /**
- * The **`CredentialsContainer`** interface of the Credential Management API exposes methods to request credentials and notify the user agent when events such as successful sign in or sign out happen.
+ * The **`CredentialsContainer`** interface of the Credential Management API exposes methods to request credentials and notify the user agent when events such as successful sign in or sign out happen. This interface is accessible from Navigator.credentials.
  * Available only in secure contexts.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CredentialsContainer)
@@ -21,7 +21,7 @@ import kotlin.js.definedExternally
 open external class CredentialsContainer
 private constructor() {
     /**
-     * The **`create()`** method of the CredentialsContainer interface creates a new credential, which can then be stored and later retrieved using the CredentialsContainer.get method.
+     * The **`create()`** method of the CredentialsContainer interface creates a new credential, which can then be stored and later retrieved using the navigator.credentials.get() method. The retrieved credential can then be used by a website to authenticate a user.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CredentialsContainer/create)
      */
@@ -37,7 +37,7 @@ private constructor() {
     fun getAsync(options: CredentialRequestOptions = definedExternally): Promise<Credential?>
 
     /**
-     * The **`preventSilentAccess()`** method of the CredentialsContainer interface sets a flag that specifies whether automatic log in is allowed for future visits to the current origin, then returns a Promise that resolves to `undefined`.
+     * The **`preventSilentAccess()`** method of the CredentialsContainer interface sets a flag that specifies whether automatic log in is allowed for future visits to the current origin, then returns a Promise that resolves to undefined. For example, you might call this, after a user signs out of a website to ensure that they aren't automatically signed in on the next site visit. Mediation varies by origin, and is an added check point of browser stored credentials, informing a user of an account login status. This method is typically called after a user signs out of a website, ensuring this user's login information is not automatically passed on the next site visit.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CredentialsContainer/preventSilentAccess)
      */
@@ -54,7 +54,7 @@ private constructor() {
 }
 
 /**
- * The **`create()`** method of the CredentialsContainer interface creates a new credential, which can then be stored and later retrieved using the CredentialsContainer.get method.
+ * The **`create()`** method of the CredentialsContainer interface creates a new credential, which can then be stored and later retrieved using the navigator.credentials.get() method. The retrieved credential can then be used by a website to authenticate a user.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CredentialsContainer/create)
  */
@@ -66,7 +66,7 @@ suspend fun CredentialsContainer.create(): Credential? {
 }
 
 /**
- * The **`create()`** method of the CredentialsContainer interface creates a new credential, which can then be stored and later retrieved using the CredentialsContainer.get method.
+ * The **`create()`** method of the CredentialsContainer interface creates a new credential, which can then be stored and later retrieved using the navigator.credentials.get() method. The retrieved credential can then be used by a website to authenticate a user.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CredentialsContainer/create)
  */
@@ -102,7 +102,7 @@ suspend fun CredentialsContainer.get(options: CredentialRequestOptions): Credent
 }
 
 /**
- * The **`preventSilentAccess()`** method of the CredentialsContainer interface sets a flag that specifies whether automatic log in is allowed for future visits to the current origin, then returns a Promise that resolves to `undefined`.
+ * The **`preventSilentAccess()`** method of the CredentialsContainer interface sets a flag that specifies whether automatic log in is allowed for future visits to the current origin, then returns a Promise that resolves to undefined. For example, you might call this, after a user signs out of a website to ensure that they aren't automatically signed in on the next site visit. Mediation varies by origin, and is an added check point of browser stored credentials, informing a user of an account login status. This method is typically called after a user signs out of a website, ensuring this user's login information is not automatically passed on the next site visit.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CredentialsContainer/preventSilentAccess)
  */

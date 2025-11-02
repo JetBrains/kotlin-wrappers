@@ -7,7 +7,7 @@ import web.events.Event
 import web.events.EventInstance
 
 /**
- * The **`HTMLSourceElement`** interface provides special properties (beyond the regular HTMLElement object interface it also has available to it by inheritance) for manipulating source elements.
+ * The **`HTMLSourceElement`** interface provides special properties (beyond the regular HTMLElement object interface it also has available to it by inheritance) for manipulating <source> elements.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSourceElement)
  */
@@ -22,7 +22,7 @@ protected constructor() :
     var height: Int
 
     /**
-     * The **`media`** property of the HTMLSourceElement interface is a string representing the intended destination medium for the resource.
+     * The **`media`** property of the HTMLSourceElement interface is a string representing the intended destination medium for the resource. The value is a media query, which is a comma separated list of media-types, media-features, and logical operators.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLSourceElement/media)
      */

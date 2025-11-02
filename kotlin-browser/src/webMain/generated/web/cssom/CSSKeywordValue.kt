@@ -9,7 +9,7 @@ package web.cssom
  */
 open external class CSSKeywordValue(
     /**
-     * The **`value`** property of the CSSKeywordValue interface returns or sets the value of the `CSSKeywordValue`.
+     * The **`value`** property of the CSSKeywordValue interface returns or sets the value of the CSSKeywordValue.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSKeywordValue/value)
      */

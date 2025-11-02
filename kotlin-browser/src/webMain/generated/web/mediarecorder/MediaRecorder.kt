@@ -11,13 +11,13 @@ import web.mediastreams.MediaStream
 import kotlin.js.definedExternally
 
 /**
- * The **`MediaRecorder`** interface of the MediaStream Recording API provides functionality to easily record media.
+ * The **`MediaRecorder`** interface of the MediaStream Recording API provides functionality to easily record media. It is created using the MediaRecorder() constructor.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaRecorder)
  */
 open external class MediaRecorder(
     /**
-     * The **`stream`** read-only property of the MediaRecorder interface returns the stream that was passed into the MediaRecorder.MediaRecorder constructor when the `MediaRecorder` was created.
+     * The **`stream`** read-only property of the MediaRecorder interface returns the stream that was passed into the MediaRecorder() constructor when the MediaRecorder was created.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaRecorder/stream)
      */
@@ -32,7 +32,7 @@ open external class MediaRecorder(
     val audioBitsPerSecond: Int
 
     /**
-     * The **`mimeType`** read-only property of the MediaRecorder interface returns the MIME media type that was specified when creating the MediaRecorder object, or, if none was specified, which was chosen by the browser.
+     * The **`mimeType`** read-only property of the MediaRecorder interface returns the MIME media type that was specified when creating the MediaRecorder object, or, if none was specified, which was chosen by the browser. This is the file format of the file that would result from writing all of the recorded data to disk.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaRecorder/mimeType)
      */
@@ -69,7 +69,7 @@ open external class MediaRecorder(
     var onstop: EventHandler<Event, MediaRecorder, MediaRecorder>?
 
     /**
-     * The **`state`** read-only property of the MediaRecorder interface returns the current state of the current `MediaRecorder` object.
+     * The **`state`** read-only property of the MediaRecorder interface returns the current state of the current MediaRecorder object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaRecorder/state)
      */
@@ -90,7 +90,7 @@ open external class MediaRecorder(
     fun pause()
 
     /**
-     * The **`requestData()`** method of the MediaRecorder interface is used to raise a MediaRecorder.dataavailable_event event containing a Blob object of the captured media as it was when the method was called.
+     * The **`requestData()`** method of the MediaRecorder interface is used to raise a dataavailable event containing a Blob object of the captured media as it was when the method was called. This can then be grabbed and manipulated as you wish.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaRecorder/requestData)
      */
@@ -119,7 +119,7 @@ open external class MediaRecorder(
 
     companion object {
         /**
-         * The **`isTypeSupported()`** static method of the MediaRecorder interface returns a Boolean which is `true` if the MIME media type specified is one the user agent should be able to successfully record.
+         * The **`isTypeSupported()`** static method of the MediaRecorder interface returns a Boolean which is true if the MIME media type specified is one the user agent should be able to successfully record.
          *
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaRecorder/isTypeSupported_static)
          */

@@ -7,7 +7,7 @@ import kotlin.js.JsAny
 import kotlin.js.definedExternally
 
 /**
- * The **`ReadableStreamDefaultController`** interface of the Streams API represents a controller allowing control of a ReadableStream's state and internal queue.
+ * The **`ReadableStreamDefaultController`** interface of the Streams API represents a controller allowing control of a ReadableStream's state and internal queue. Default controllers are for streams that are not byte streams.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ReadableStreamDefaultController)
  */

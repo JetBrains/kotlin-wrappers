@@ -51,14 +51,14 @@ open external class Response(
     val statusText: String
 
     /**
-     * The **`type`** read-only property of the Response interface contains the type of the response.
+     * The **`type`** read-only property of the Response interface contains the type of the response. The type determines whether scripts are able to access the response body and headers.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Response/type)
      */
     val type: ResponseType
 
     /**
-     * The **`url`** read-only property of the Response interface contains the URL of the response.
+     * The **`url`** read-only property of the Response interface contains the URL of the response. The value of the url property will be the final URL obtained after any redirects.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Response/url)
      */
@@ -73,14 +73,14 @@ open external class Response(
 
     companion object {
         /**
-         * The **`error()`** static method of the Response interface returns a new `Response` object associated with a network error.
+         * The **`error()`** static method of the Response interface returns a new Response object associated with a network error.
          *
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Response/error_static)
          */
         fun error(): Response
 
         /**
-         * The **`json()`** static method of the Response interface returns a `Response` that contains the provided JSON data as body, and a Content-Type header which is set to `application/json`.
+         * The **`json()`** method of the Response interface takes a Response stream and reads it to completion. It returns a promise which resolves with the result of parsing the body text as JSON.
          *
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Response/json_static)
          */
@@ -90,7 +90,7 @@ open external class Response(
         ): Response
 
         /**
-         * The **`redirect()`** static method of the Response interface returns a `Response` resulting in a redirect to the specified URL.
+         * The **`redirect()`** static method of the Response interface returns a Response resulting in a redirect to the specified URL.
          *
          * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Response/redirect_static)
          */

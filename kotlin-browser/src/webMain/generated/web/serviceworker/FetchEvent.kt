@@ -10,7 +10,7 @@ import web.http.Request
 import web.http.Response
 
 /**
- * This is the event type for `fetch` events dispatched on the ServiceWorkerGlobalScope.
+ * This is the event type for fetch events dispatched on the service worker global scope. It contains information about the fetch, including the request and how the receiver will treat the response. It provides the event.respondWith() method, which allows us to provide a response to this fetch.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FetchEvent)
  */
@@ -26,14 +26,14 @@ open external class FetchEvent(
     val clientId: String
 
     /**
-     * The **`handled`** property of the FetchEvent interface returns a promise indicating if the event has been handled by the fetch algorithm or not.
+     * The **`handled`** property of the FetchEvent interface returns a promise indicating if the event has been handled by the fetch algorithm or not. This property allows executing code after the browser has consumed a response, and is usually used together with the waitUntil() method.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FetchEvent/handled)
      */
     val handled: Promise<Void>
 
     /**
-     * The **`preloadResponse`** read-only property of the FetchEvent interface returns a Promise that resolves to the navigation preload Response if navigation preload was triggered, or `undefined` otherwise.
+     * The **`preloadResponse`** read-only property of the FetchEvent interface returns a Promise that resolves to the navigation preload Response if navigation preload was triggered, or undefined otherwise.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FetchEvent/preloadResponse)
      */
@@ -47,7 +47,7 @@ open external class FetchEvent(
     val request: Request
 
     /**
-     * The **`resultingClientId`** read-only property of the FetchEvent interface is the Client.id of the Client that replaces the previous client during a page navigation.
+     * The **`resultingClientId`** read-only property of the FetchEvent interface is the id of the client that replaces the previous client during a page navigation.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/FetchEvent/resultingClientId)
      */

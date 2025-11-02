@@ -5,7 +5,7 @@ package web.cssom
 import kotlin.js.JsAny
 
 /**
- * An object implementing the `StyleSheet` interface represents a single style sheet.
+ * An object implementing the **`StyleSheet`** interface represents a single style sheet. CSS style sheets will further implement the more specialized CSSStyleSheet interface.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/StyleSheet)
  */
@@ -26,7 +26,7 @@ private constructor() {
     val href: String?
 
     /**
-     * The **`media`** property of the StyleSheet interface specifies the intended destination media for style information.
+     * The **`media`** property of the StyleSheet interface specifies the intended destination media for style information. It is a read-only, array-like MediaList object and can be removed with deleteMedium() and added with appendMedium().
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/StyleSheet/media)
      */

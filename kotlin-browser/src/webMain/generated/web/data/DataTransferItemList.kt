@@ -7,7 +7,7 @@ import js.iterable.JsIterable
 import web.file.File
 
 /**
- * The **`DataTransferItemList`** object is a list of DataTransferItem objects representing items being dragged.
+ * The **`DataTransferItemList`** object is a list of DataTransferItem objects representing items being dragged. During a drag operation, each DragEvent has a dataTransfer property and that property is a DataTransferItemList.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DataTransferItemList)
  */
@@ -23,7 +23,7 @@ private constructor() :
     override val length: Int
 
     /**
-     * The **`DataTransferItemList.add()`** method creates a new DataTransferItem using the specified data and adds it to the drag data list.
+     * The **`DataTransferItemList.add()`** method creates a new DataTransferItem using the specified data and adds it to the drag data list. The item may be a File or a string of a given type. If the item is successfully added to the list, the newly-created DataTransferItem object is returned.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DataTransferItemList/add)
      */
@@ -42,7 +42,7 @@ private constructor() :
     fun clear()
 
     /**
-     * The **`DataTransferItemList.remove()`** method removes the DataTransferItem at the specified index from the list.
+     * The **`DataTransferItemList.remove()`** method removes the DataTransferItem at the specified index from the list. If the index is less than zero or greater than one less than the length of the list, the list will not be changed.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/DataTransferItemList/remove)
      */

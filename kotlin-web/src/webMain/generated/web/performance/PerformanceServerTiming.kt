@@ -20,7 +20,7 @@ private constructor() {
     val description: String
 
     /**
-     * The **`duration`** read-only property returns a double that contains the server-specified metric duration, or the value `0.0`.
+     * The **`duration`** read-only property returns a double that contains the server-specified metric duration, or the value 0.0.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceServerTiming/duration)
      */
@@ -34,7 +34,7 @@ private constructor() {
     val name: String
 
     /**
-     * The **`toJSON()`** method of the PerformanceServerTiming interface is a Serialization; it returns a JSON representation of the PerformanceServerTiming object.
+     * The **`toJSON()`** method of the PerformanceServerTiming interface is a serializer; it returns a JSON representation of the PerformanceServerTiming object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PerformanceServerTiming/toJSON)
      */

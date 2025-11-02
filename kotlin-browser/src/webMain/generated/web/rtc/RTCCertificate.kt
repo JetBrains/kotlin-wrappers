@@ -22,7 +22,7 @@ private constructor() :
     val expires: EpochTimeStamp
 
     /**
-     * The **`getFingerprints()`** method of the **RTCCertificate** interface is used to get an array of certificate fingerprints.
+     * The **`getFingerprints()`** method of the RTCCertificate interface is used to get an array of certificate fingerprints.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCCertificate/getFingerprints)
      */

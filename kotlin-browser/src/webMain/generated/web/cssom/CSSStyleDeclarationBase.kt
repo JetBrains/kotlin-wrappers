@@ -20,7 +20,7 @@ sealed
 external interface CSSStyleDeclarationBase :
     ArrayLike<JsString> {
     /**
-     * The **`cssText`** property of the CSSStyleDeclaration interface returns or sets the text of the element's **inline** style declaration only.
+     * The **`cssText`** property of the CSSStyleDeclaration interface returns or sets the text of the element's inline style declaration only.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleDeclaration/cssText)
      */
@@ -37,7 +37,7 @@ external interface CSSStyleDeclarationBase :
         get() = definedExternally
 
     /**
-     * The **CSSStyleDeclaration.parentRule** read-only property returns a CSSRule that is the parent of this style block, e.g., a CSSStyleRule representing the style for a CSS selector.
+     * The **`CSSStyleDeclaration.parentRule`** read-only property returns a CSSRule that is the parent of this style block, e.g., a CSSStyleRule representing the style for a CSS selector.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleDeclaration/parentRule)
      */
@@ -45,21 +45,21 @@ external interface CSSStyleDeclarationBase :
         get() = definedExternally
 
     /**
-     * The **CSSStyleDeclaration.getPropertyPriority()** method interface returns a string that provides all explicitly set priorities on the CSS property.
+     * The **`CSSStyleDeclaration.getPropertyPriority()`** method interface returns a string that provides all explicitly set priorities on the CSS property.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleDeclaration/getPropertyPriority)
      */
     fun getPropertyPriority(property: String): String = definedExternally
 
     /**
-     * The **CSSStyleDeclaration.getPropertyValue()** method interface returns a string containing the value of a specified CSS property.
+     * The **`CSSStyleDeclaration.getPropertyValue()`** method interface returns a string containing the value of a specified CSS property.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleDeclaration/getPropertyValue)
      */
     fun getPropertyValue(property: String): String = definedExternally
 
     /**
-     * The `CSSStyleDeclaration.item()` method interface returns a CSS property name from a CSSStyleDeclaration by index.
+     * The **`CSSStyleDeclaration.item()`** method interface returns a CSS property name from a CSSStyleDeclaration by index.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleDeclaration/item)
      */

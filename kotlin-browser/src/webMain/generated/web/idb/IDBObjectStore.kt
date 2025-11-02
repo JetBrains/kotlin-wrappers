@@ -11,7 +11,7 @@ import kotlin.js.JsString
 import kotlin.js.definedExternally
 
 /**
- * The **`IDBObjectStore`** interface of the IndexedDB API represents an object store in a database.
+ * The **`IDBObjectStore`** interface of the IndexedDB API represents an object store in a database. Records within an object store are sorted according to their keys. This sorting enables fast insertion, look-up, and ordered retrieval.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBObjectStore)
  */
@@ -53,7 +53,7 @@ private constructor() {
     val transaction: IDBTransaction
 
     /**
-     * The **`add()`** method of the IDBObjectStore interface returns an IDBRequest object, and, in a separate thread, creates a structured clone of the value, and stores the cloned value in the object store.
+     * The **`add()`** method of the IDBObjectStore interface returns an IDBRequest object, and, in a separate thread, creates a structured clone of the value, and stores the cloned value in the object store. This is for adding new records to an object store.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBObjectStore/add)
      */
@@ -63,14 +63,14 @@ private constructor() {
     ): IDBRequest<IDBValidKey>
 
     /**
-     * The **`clear()`** method of the IDBObjectStore interface creates and immediately returns an IDBRequest object, and clears this object store in a separate thread.
+     * The **`clear()`** method of the IDBObjectStore interface creates and immediately returns an IDBRequest object, and clears this object store in a separate thread. This is for deleting all the current data out of an object store.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBObjectStore/clear)
      */
     fun clear(): IDBRequest<Void>
 
     /**
-     * The **`count()`** method of the IDBObjectStore interface returns an IDBRequest object, and, in a separate thread, returns the total number of records that match the provided key or IDBKeyRange.
+     * The **`count()`** method of the IDBObjectStore interface returns an IDBRequest object, and, in a separate thread, returns the total number of records that match the provided key or IDBKeyRange. If no arguments are provided, it returns the total number of records in the store.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBObjectStore/count)
      */
@@ -78,7 +78,7 @@ private constructor() {
     fun count(query: IDBKeyRange): IDBRequest<JsInt>
 
     /**
-     * The **`createIndex()`** method of the IDBObjectStore interface creates and returns a new IDBIndex object in the connected database.
+     * The **`createIndex()`** method of the IDBObjectStore interface creates and returns a new IDBIndex object in the connected database. It creates a new field/column defining a new data point for each database record to contain.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBObjectStore/createIndex)
      */
@@ -110,7 +110,7 @@ private constructor() {
     fun deleteIndex(name: String)
 
     /**
-     * The **`get()`** method of the IDBObjectStore interface returns an IDBRequest object, and, in a separate thread, returns the object selected by the specified key.
+     * The **`get()`** method of the IDBObjectStore interface returns an IDBRequest object, and, in a separate thread, returns the object selected by the specified key. This is for retrieving specific records from an object store.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBObjectStore/get)
      */
@@ -133,7 +133,7 @@ private constructor() {
     ): IDBRequest<ReadonlyArray<*>>
 
     /**
-     * The `getAllKeys()` method of the IDBObjectStore interface returns an IDBRequest object retrieves record keys for all objects in the object store matching the specified parameter or all objects in the store if no parameters are given.
+     * The **`getAllKeys()`** method of the IDBObjectStore interface returns an IDBRequest object retrieves record keys for all objects in the object store matching the specified parameter or all objects in the store if no parameters are given.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBObjectStore/getAllKeys)
      */
@@ -148,7 +148,7 @@ private constructor() {
     ): IDBRequest<ReadonlyArray<IDBValidKey>>
 
     /**
-     * The **`getKey()`** method of the IDBObjectStore interface returns an IDBRequest object, and, in a separate thread, returns the key selected by the specified query.
+     * The **`getKey()`** method of the IDBObjectStore interface returns an IDBRequest object, and, in a separate thread, returns the key selected by the specified query. This is for retrieving specific records from an object store.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBObjectStore/getKey)
      */
@@ -163,7 +163,7 @@ private constructor() {
     fun index(name: String): IDBIndex
 
     /**
-     * The **`openCursor()`** method of the IDBObjectStore interface returns an IDBRequest object, and, in a separate thread, returns a new IDBCursorWithValue object.
+     * The **`openCursor()`** method of the IDBObjectStore interface returns an IDBRequest object, and, in a separate thread, returns a new IDBCursorWithValue object. Used for iterating through an object store with a cursor.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBObjectStore/openCursor)
      */
@@ -178,7 +178,7 @@ private constructor() {
     ): IDBRequest<IDBCursorWithValue?>
 
     /**
-     * The **`openKeyCursor()`** method of the IDBObjectStore interface returns an IDBRequest object whose result will be set to an IDBCursor that can be used to iterate through matching results.
+     * The **`openKeyCursor()`** method of the IDBObjectStore interface returns an IDBRequest object whose result will be set to an IDBCursor that can be used to iterate through matching results. Used for iterating through the keys of an object store with a cursor.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/IDBObjectStore/openKeyCursor)
      */

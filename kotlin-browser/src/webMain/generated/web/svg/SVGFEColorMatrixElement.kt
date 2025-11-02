@@ -3,7 +3,7 @@
 package web.svg
 
 /**
- * The **`SVGFEColorMatrixElement`** interface corresponds to the feColorMatrix element.
+ * The **`SVGFEColorMatrixElement`** interface corresponds to the <feColorMatrix> element.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFEColorMatrixElement)
  */
@@ -19,7 +19,7 @@ private constructor() :
     val in1: SVGAnimatedString
 
     /**
-     * The **`type`** read-only property of the SVGFEColorMatrixElement interface reflects the type attribute of the given element.
+     * The **`type`** read-only property of the SVGFEColorMatrixElement interface reflects the type attribute of the given element. It takes one of the SVG_FECOLORMATRIX_TYPE_* constants defined on this interface.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGFEColorMatrixElement/type)
      */

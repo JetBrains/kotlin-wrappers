@@ -17,14 +17,14 @@ import kotlin.js.definedExternally
 open external class Range :
     AbstractRange {
     /**
-     * The **`Range.commonAncestorContainer`** read-only property returns the deepest — or furthest down the document tree — Node that contains both boundary points of the Range.
+     * The **`Range.commonAncestorContainer`** read-only property returns the deepest — or furthest down the document tree — Node that contains both boundary points of the Range. This means that if Range.startContainer and Range.endContainer both refer to the same node, this node is the common ancestor container.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Range/commonAncestorContainer)
      */
     val commonAncestorContainer: Node
 
     /**
-     * The **`cloneContents()`** method of the Range interface copies the selected Node children of the range's Range/commonAncestorContainer and puts them in a new DocumentFragment object.
+     * The **`cloneContents()`** method of the Range interface copies the selected Node children of the range's commonAncestorContainer and puts them in a new DocumentFragment object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Range/cloneContents)
      */
@@ -55,7 +55,7 @@ open external class Range :
     ): Short
 
     /**
-     * The **`comparePoint()`** method of the Range interface determines whether a specified point is before, within, or after the Range.
+     * The **`comparePoint()`** method of the Range interface determines whether a specified point is before, within, or after the Range. The point is specified by a reference node and an offset within that node.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Range/comparePoint)
      */
@@ -65,7 +65,7 @@ open external class Range :
     ): Short
 
     /**
-     * The **`Range.createContextualFragment()`** method returns a DocumentFragment by invoking the HTML fragment parsing algorithm or the XML fragment parsing algorithm with the start of the range (the _parent_ of the selected node) as the context node.
+     * The **`Range.createContextualFragment()`** method returns a DocumentFragment by invoking the HTML fragment parsing algorithm or the XML fragment parsing algorithm with the start of the range (the parent of the selected node) as the context node. The HTML fragment parsing algorithm is used if the range belongs to a Document whose HTMLness bit is set. In the HTML case, if the context node would be html, for historical reasons the fragment parsing algorithm is invoked with body as the context instead.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Range/createContextualFragment)
      */
@@ -73,21 +73,21 @@ open external class Range :
     fun createContextualFragment(string: String): DocumentFragment
 
     /**
-     * The **`Range.deleteContents()`** method removes all completely-selected Node within this range from the document.
+     * The **`Range.deleteContents()`** method removes all completely-selected nodes within this range from the document. For the partially selected nodes at the start or end of the range, only the selected portion of the text is deleted, while the node itself remains intact. Afterwards, the range is collapsed to the end of the last selected node.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Range/deleteContents)
      */
     fun deleteContents()
 
     /**
-     * The **`Range.detach()`** method does nothing.
+     * The **`Range.detach()`** method does nothing. It used to disable the Range object and enable the browser to release associated resources. The method has been kept for compatibility.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Range/detach)
      */
     fun detach()
 
     /**
-     * The **`extractContents()`** method of the Range interface is similar to a combination of Range.cloneContents() and Range.deleteContents().
+     * The **`extractContents()`** method of the Range interface is similar to a combination of Range.cloneContents() and Range.deleteContents(). It removes the child Nodes of the range from the document, clones them, and returns them as a new DocumentFragment object. For partially selected nodes, only the selected text is deleted, but all containing parent nodes up to the common ancestor are cloned as well, resulting in two copies of these nodes, one in the original document and one in the extracted fragment.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Range/extractContents)
      */
@@ -101,7 +101,7 @@ open external class Range :
     fun getBoundingClientRect(): DOMRect
 
     /**
-     * The **`Range.getClientRects()`** method returns a list of DOMRect objects representing the area of the screen occupied by the range.
+     * The **`Range.getClientRects()`** method returns a list of DOMRect objects representing the area of the screen occupied by the range. This is created by aggregating the results of calls to Element.getClientRects() for all the elements in the range.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Range/getClientRects)
      */
@@ -122,7 +122,7 @@ open external class Range :
     fun intersectsNode(node: Node): Boolean
 
     /**
-     * The **`isPointInRange()`** method of the Range interface determines whether a specified point is within the Range.
+     * The **`isPointInRange()`** method of the Range interface determines whether a specified point is within the Range. The point is specified by a reference node and an offset within that node. It is equivalent to calling Range.comparePoint() and checking if the result is 0.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Range/isPointInRange)
      */
@@ -132,7 +132,7 @@ open external class Range :
     ): Boolean
 
     /**
-     * The **`Range.selectNode()`** method sets the Range to contain the Node and its contents.
+     * The **`Range.selectNode()`** method sets the Range to contain the Node and its contents. The parent Node of the start and end of the Range will be the same as the parent of the referenceNode.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Range/selectNode)
      */
@@ -146,7 +146,7 @@ open external class Range :
     fun selectNodeContents(node: Node)
 
     /**
-     * The **`Range.setEnd()`** method sets the end position of a Range to be located at the given offset into the specified node.
+     * The **`Range.setEnd()`** method sets the end position of a Range to be located at the given offset into the specified node. Setting the end point above (higher in the document) than the start point will result in a collapsed range with the start and end points both set to the specified end position.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Range/setEnd)
      */
@@ -156,14 +156,14 @@ open external class Range :
     )
 
     /**
-     * The **`Range.setEndAfter()`** method sets the end position of a Range relative to another Node.
+     * The **`Range.setEndAfter()`** method sets the end position of a Range relative to another Node. The parent Node of end of the Range will be the same as that for the referenceNode.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Range/setEndAfter)
      */
     fun setEndAfter(node: Node)
 
     /**
-     * The **`Range.setEndBefore()`** method sets the end position of a `Range` relative to another Node.
+     * The **`Range.setEndBefore()`** method sets the end position of a Range relative to another Node. The parent Node of end of the Range will be the same as that for the referenceNode.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Range/setEndBefore)
      */
@@ -180,21 +180,21 @@ open external class Range :
     )
 
     /**
-     * The **`Range.setStartAfter()`** method sets the start position of a Range relative to a Node.
+     * The **`Range.setStartAfter()`** method sets the start position of a Range relative to a Node. The parent Node of the start of the Range will be the same as that for the referenceNode.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Range/setStartAfter)
      */
     fun setStartAfter(node: Node)
 
     /**
-     * The **`Range.setStartBefore()`** method sets the start position of a Range relative to another Node.
+     * The **`Range.setStartBefore()`** method sets the start position of a Range relative to another Node. The parent Node of the start of the Range will be the same as that for the referenceNode.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Range/setStartBefore)
      */
     fun setStartBefore(node: Node)
 
     /**
-     * The **`surroundContents()`** method of the Range interface surrounds the selected content by a provided node.
+     * The **`surroundContents()`** method of the Range interface surrounds the selected content by a provided node. It extracts the contents of the range, replaces the children of newParent with the extracted contents, inserts newParent at the location of the extracted contents, and makes the range select newParent.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Range/surroundContents)
      */

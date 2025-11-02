@@ -7,7 +7,7 @@ import js.promise.await
 import kotlin.js.JsName
 
 /**
- * The **`MediaKeySystemAccess`** interface of the Encrypted Media Extensions API provides access to a Key System for decryption and/or a content protection provider.
+ * The **`MediaKeySystemAccess`** interface of the Encrypted Media Extensions API provides access to a Key System for decryption and/or a content protection provider. You can request an instance of this object using the Navigator.requestMediaKeySystemAccess() method.
  * Available only in secure contexts.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeySystemAccess)
@@ -22,7 +22,7 @@ private constructor() {
     val keySystem: String
 
     /**
-     * The `MediaKeySystemAccess.createMediaKeys()` method returns a Promise that resolves to a new MediaKeys object.
+     * The **`MediaKeySystemAccess.createMediaKeys()`** method returns a Promise that resolves to a new MediaKeys object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeySystemAccess/createMediaKeys)
      */
@@ -38,7 +38,7 @@ private constructor() {
 }
 
 /**
- * The `MediaKeySystemAccess.createMediaKeys()` method returns a Promise that resolves to a new MediaKeys object.
+ * The **`MediaKeySystemAccess.createMediaKeys()`** method returns a Promise that resolves to a new MediaKeys object.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MediaKeySystemAccess/createMediaKeys)
  */

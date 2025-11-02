@@ -21,7 +21,7 @@ open external class ScrollTimeline(
     val axis: ScrollAxis
 
     /**
-     * The **`source`** read-only property of the ScrollTimeline interface returns a reference to the scrollable element (_scroller_) whose scroll position is driving the progress of the timeline and therefore the animation.
+     * The **`source`** read-only property of the ScrollTimeline interface returns a reference to the scrollable element (scroller) whose scroll position is driving the progress of the timeline and therefore the animation.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ScrollTimeline/source)
      */

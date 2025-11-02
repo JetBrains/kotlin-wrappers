@@ -52,7 +52,7 @@ open external class VideoFrame(
     val codedRect: DOMRectReadOnly?
 
     /**
-     * The **`codedWidth`** property of the VideoFrame interface returns the width of the `VideoFrame` in pixels, potentially including non-visible padding, and prior to considering potential ratio adjustments.
+     * The **`codedWidth`** property of the VideoFrame interface returns the width of the VideoFrame in pixels, potentially including non-visible padding, and prior to considering potential ratio adjustments.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoFrame/codedWidth)
      */
@@ -66,14 +66,14 @@ open external class VideoFrame(
     val colorSpace: VideoColorSpace
 
     /**
-     * The **`displayHeight`** property of the VideoFrame interface returns the height of the `VideoFrame` after applying aspect ratio adjustments.
+     * The **`displayHeight`** property of the VideoFrame interface returns the height of the VideoFrame after applying aspect ratio adjustments.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoFrame/displayHeight)
      */
     val displayHeight: Int
 
     /**
-     * The **`displayWidth`** property of the VideoFrame interface returns the width of the `VideoFrame` after applying aspect ratio adjustments.
+     * The **`displayWidth`** property of the VideoFrame interface returns the width of the VideoFrame after applying aspect ratio adjustments.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoFrame/displayWidth)
      */
@@ -87,7 +87,7 @@ open external class VideoFrame(
     val duration: UInt53?
 
     /**
-     * The **`format`** property of the VideoFrame interface returns the pixel format of the `VideoFrame`.
+     * The **`format`** property of the VideoFrame interface returns the pixel format of the VideoFrame.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoFrame/format)
      */
@@ -101,7 +101,7 @@ open external class VideoFrame(
     val timestamp: Int53
 
     /**
-     * The **`visibleRect`** property of the VideoFrame interface returns a DOMRectReadOnly describing the visible rectangle of pixels for this `VideoFrame`.
+     * The **`visibleRect`** property of the VideoFrame interface returns a DOMRectReadOnly describing the visible rectangle of pixels for this VideoFrame.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoFrame/visibleRect)
      */
@@ -115,7 +115,7 @@ open external class VideoFrame(
     fun allocationSize(options: VideoFrameCopyToOptions = definedExternally): Int
 
     /**
-     * The **`clone()`** method of the VideoFrame interface creates a new `VideoFrame` object referencing the same media resource as the original.
+     * The **`clone()`** method of the VideoFrame interface creates a new VideoFrame object referencing the same media resource as the original.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoFrame/clone)
      */
@@ -129,7 +129,7 @@ open external class VideoFrame(
     override fun close()
 
     /**
-     * The **`copyTo()`** method of the VideoFrame interface copies the contents of the `VideoFrame` to an `ArrayBuffer`.
+     * The **`copyTo()`** method of the VideoFrame interface copies the contents of the VideoFrame to an ArrayBuffer.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoFrame/copyTo)
      */
@@ -141,7 +141,7 @@ open external class VideoFrame(
 }
 
 /**
- * The **`copyTo()`** method of the VideoFrame interface copies the contents of the `VideoFrame` to an `ArrayBuffer`.
+ * The **`copyTo()`** method of the VideoFrame interface copies the contents of the VideoFrame to an ArrayBuffer.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoFrame/copyTo)
  */
@@ -154,7 +154,7 @@ suspend inline fun VideoFrame.copyTo(
 }
 
 /**
- * The **`copyTo()`** method of the VideoFrame interface copies the contents of the `VideoFrame` to an `ArrayBuffer`.
+ * The **`copyTo()`** method of the VideoFrame interface copies the contents of the VideoFrame to an ArrayBuffer.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/VideoFrame/copyTo)
  */

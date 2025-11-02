@@ -9,7 +9,7 @@ import web.url.URL
 import kotlin.js.JsName
 
 /**
- * The `WindowClient` interface of the ServiceWorker API represents the scope of a service worker client that is a document in a browsing context, controlled by an active worker.
+ * The **`WindowClient`** interface of the ServiceWorker API represents the scope of a service worker client that is a document in a browsing context, controlled by an active worker. The service worker client independently selects and uses a service worker for its own loading and sub-resources.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WindowClient)
  */
@@ -24,7 +24,7 @@ private constructor() :
     val focused: Boolean
 
     /**
-     * The **`visibilityState`** read-only property of the WindowClient interface indicates the visibility of the current client.
+     * The **`visibilityState`** read-only property of the WindowClient interface indicates the visibility of the current client. This value can be one of "hidden", "visible", or "prerender".
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WindowClient/visibilityState)
      */

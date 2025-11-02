@@ -10,14 +10,14 @@ package web.useractivation
 open external class UserActivation
 private constructor() {
     /**
-     * The read-only **`hasBeenActive`** property of the UserActivation interface indicates whether the current window has sticky activation.
+     * The read-only **`hasBeenActive`** property of the UserActivation interface indicates whether the current window has sticky user activation.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/UserActivation/hasBeenActive)
      */
     val hasBeenActive: Boolean
 
     /**
-     * The read-only **`isActive`** property of the UserActivation interface indicates whether the current window has transient activation.
+     * The read-only **`isActive`** property of the UserActivation interface indicates whether the current window has transient user activation.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/UserActivation/isActive)
      */

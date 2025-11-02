@@ -5,7 +5,7 @@ package web.html
 import web.dom.Document
 
 /**
- * The **`HTMLEmbedElement`** interface provides special properties (beyond the regular HTMLElement interface it also has available to it by inheritance) for manipulating embed elements.
+ * The **`HTMLEmbedElement`** interface provides special properties (beyond the regular HTMLElement interface it also has available to it by inheritance) for manipulating <embed> elements.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLEmbedElement)
  */
@@ -13,7 +13,7 @@ open external class HTMLEmbedElement
 protected constructor() :
     HTMLElement {
     /**
-     * The **`height`** property of the HTMLEmbedElement interface returns a string that reflects the `height` attribute of the embed element, indicating the displayed height of the resource in CSS pixels.
+     * The **`height`** property of the HTMLEmbedElement interface returns a string that reflects the height attribute of the <embed> element, indicating the displayed height of the resource in CSS pixels.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLEmbedElement/height)
      */
@@ -27,14 +27,14 @@ protected constructor() :
     var src: String
 
     /**
-     * The **`type`** property of the HTMLEmbedElement interface returns a string that reflects the `type` attribute of the embed element, indicating the MIME type of the resource.
+     * The **`type`** property of the HTMLEmbedElement interface returns a string that reflects the type attribute of the <embed> element, indicating the MIME type of the resource. It reflects the <embed> element's type attribute
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLEmbedElement/type)
      */
     var type: String
 
     /**
-     * The **`width`** property of the HTMLEmbedElement interface returns a string that reflects the `width` attribute of the embed element, indicating the displayed width of the resource in CSS pixels.
+     * The **`width`** property of the HTMLEmbedElement interface returns a string that reflects the width attribute of the <embed> element, indicating the displayed width of the resource in CSS pixels.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLEmbedElement/width)
      */

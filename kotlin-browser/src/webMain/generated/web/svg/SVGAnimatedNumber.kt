@@ -3,7 +3,7 @@
 package web.svg
 
 /**
- * The **`SVGAnimatedNumber`** interface represents attributes of type \<number> which can be animated.
+ * The **`SVGAnimatedNumber`** interface represents attributes of type <number> which can be animated.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAnimatedNumber)
  */
