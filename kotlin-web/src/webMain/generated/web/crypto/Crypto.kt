@@ -2,7 +2,8 @@
 
 package web.crypto
 
-import js.buffer.BufferSource
+import js.buffer.ArrayBuffer
+import js.buffer.ArrayBufferView
 
 /**
  * The **`Crypto`** interface represents basic cryptography features available in the current context.
@@ -24,7 +25,7 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Crypto/getRandomValues)
      */
-    fun <T : BufferSource /* except `ArrayBuffer` */> getRandomValues(array: T): T
+    fun <T : ArrayBufferView<ArrayBuffer> /* Exclude<BufferSource, ArrayBuffer> */> getRandomValues(array: T): T
 
     /**
      * The **`randomUUID()`** method of the Crypto interface is used to generate a v4 UUID using a cryptographically secure random number generator.

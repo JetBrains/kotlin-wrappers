@@ -2212,10 +2212,13 @@ private fun convertFunction(
         .removePrefix(name)
         .replace(" extends ", " : ")
         .replace(": ArrayBufferView", ": ArrayBufferView<*>")
-        .replace(": Exclude<BufferSource, ArrayBuffer>", ": BufferSource /* except `ArrayBuffer` */")
+        .replace(
+            ": Exclude<BufferSource, ArrayBuffer>",
+            ": ArrayBufferView<ArrayBuffer> /* Exclude<BufferSource, ArrayBuffer> */"
+        )
         .replace(" | null", "?")
 
-    if (typeParameters.isNotEmpty()) {
+    if (typeParameters.isNotEmpty() && "/* Exclude<" !in typeParameters) {
         typeParameters = typeParameters
             .removeSurrounding("<", ">")
             .splitToSequence(",")
