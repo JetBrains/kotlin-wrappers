@@ -4,6 +4,7 @@ internal val DEFAULT_PACKAGE: String = """
 import js.array.ReadonlyArray
 import js.buffer.ArrayBuffer
 import js.buffer.DataView
+import js.collections.ReadonlyMap
 import kotlin.js.JsAny
 import kotlin.js.JsBoolean
 import js.core.JsDouble

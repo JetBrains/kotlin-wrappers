@@ -36,6 +36,8 @@ private val STANDARD_TYPE_MAP = mapOf(
 
     JS_FUNCTION to "Function<*>",
     "DataView" to "DataView<*>",
+    "any[] | Int8Array | Uint8Array | Int16Array | Uint16Array | Int32Array | Uint32Array | Float32Array | Float64Array" to
+            "ReadonlyArray<JsAny>",
     "Int8Array[] | Uint8Array[] | Int16Array[] | Uint16Array[] | Int32Array[] | Uint32Array[] | Float32Array[] | Float64Array[]" to
             "ReadonlyArray<TypedArray<*, *, *, *>> /* Int8Array[] | Uint8Array[] | Int16Array[] | Uint16Array[] | Int32Array[] | Uint32Array[] | Float32Array[] | Float64Array[] */",
 
@@ -77,7 +79,9 @@ private val STANDARD_TYPE_MAP = mapOf(
     "ModelAnimation.AnimationTimeCallback" to "AnimationTimeCallback",
     "ModelExperimentalAnimation.AnimationTimeCallback" to "AnimationTimeCallback",
 
-    """"default" | "low-power" | "high-performance"""" to "WebGLPowerPreference"
+    """"default" | "low-power" | "high-performance"""" to "WebGLPowerPreference",
+
+    "Map<number_object>" to "ReadonlyMap<Int, JsAny>",
 )
 
 internal fun kotlinType(

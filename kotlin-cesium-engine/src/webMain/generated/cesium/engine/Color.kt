@@ -388,6 +388,14 @@ external class Color(
         ): Boolean
 
         /**
+         * Converts RGBA values in bytes to a single numeric unsigned 32-bit RGBA value, using the endianness
+         * of the system.
+         * @return A single numeric unsigned 32-bit RGBA value.
+         * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Color.html#.bytesToRgba">Online Documentation</a>
+         */
+        fun bytesToRgba(): Double
+
+        /**
          * Computes the componentwise sum of two Colors.
          * @param [left] The first Color.
          * @param [right] The second Color.

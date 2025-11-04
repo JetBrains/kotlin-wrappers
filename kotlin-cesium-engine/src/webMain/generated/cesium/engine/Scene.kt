@@ -376,6 +376,14 @@ external class Scene(
     var light: Light
 
     /**
+     * Whether or not to enable edge visibility rendering for 3D tiles.
+     * When enabled, creates a framebuffer with multiple render targets
+     * for advanced edge detection and visibility techniques.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Scene.html#_enableEdgeVisibility">Online Documentation</a>
+     */
+    var _enableEdgeVisibility: Boolean
+
+    /**
      * Gets the canvas element to which this scene is bound.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Scene.html#canvas">Online Documentation</a>
      */

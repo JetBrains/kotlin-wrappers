@@ -159,6 +159,19 @@ private fun readDeclarations(
         .replace("type ErrorEventCallback = (this: Terrain, ", "type TerrainErrorEventCallback = (")
         .replace("type ReadyEventCallback = (this: Terrain, ", "type TerrainReadyEventCallback = (")
         .replace("this: TerrainProvider, ", "")
+        .replace(
+            "export function PickId(pickObjects: Map<number, object>, key: number, color: Color): void;",
+            """|/**
+                          |  * TODO: Missing description
+                          |  */
+                          |export function PickId(pickObjects: Map<number_object>, key: number, color: Color): void;
+                        """.trimMargin(),
+        )
+        .replace(
+            "interpolateHeight(rectangle: Rectangle, longitude: number, latitude: number): number | undefined;",
+            "interpolateHeight(rectangle: Rectangle, longitude: number, latitude: number): number;"
+        )
+        .replace("credits: Credit[] | undefined;", "credits: Credit[];")
         // For version `1.103.0`
         .replace(" readonly targetPropertyNames: any;", " readonly targetPropertyNames: string[];")
         .replace("};\n    type UpdaterFunction ", "};\n    /**\n     * Function\n     */\n    type UpdaterFunction ")
@@ -187,7 +200,12 @@ private fun readDeclarations(
         .toList()
 
 private fun record(valueType: String): String {
-    return "Record<String, $valueType>"
+    var type = valueType
+
+    if (type == "any")
+        type = "JsAny"
+
+    return "Record<String, $type>"
 }
 
 private fun String.applyTypeAliasCorrection(): String =

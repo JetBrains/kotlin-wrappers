@@ -17,7 +17,7 @@ import web.canvas.CanvasImageSource
  *
  * @constructor
  * @param [endpoint] The result of the Cesium ion asset endpoint service.
- * @param [endpointResource] The resource used to retrieve the endpoint.
+ * @param [endpointResource] The original resource used to retrieve the endpoint.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/IonResource.html">Online Documentation</a>
  */
 external class IonResource(

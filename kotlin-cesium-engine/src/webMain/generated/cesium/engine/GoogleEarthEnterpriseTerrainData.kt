@@ -105,7 +105,7 @@ external class GoogleEarthEnterpriseTerrainData(
 
     /**
      * Determines if a given child tile is available, based on the
-     * [HeightmapTerrainData.childTileMask].  The given child tile coordinates are assumed
+     * [GoogleEarthEnterpriseTerrainData.childTileMask].  The given child tile coordinates are assumed
      * to be one of the four children of this tile.  If non-child tile coordinates are
      * given, the availability of the southeast child tile is returned.
      * @param [thisX] The tile X coordinate of this (the parent) tile.

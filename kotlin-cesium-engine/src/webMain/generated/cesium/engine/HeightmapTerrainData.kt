@@ -121,7 +121,7 @@ external class HeightmapTerrainData(
      * Values in between 0 and 255 are allowed as well to smoothly blend between land and water.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/HeightmapTerrainData.html#waterMask">Online Documentation</a>
      */
-    override var waterMask: JsAny? /* Uint8Array | HTMLImageElement | HTMLCanvasElement | undefined */
+    override var waterMask: JsAny? /* Uint8Array | HTMLImageElement | HTMLCanvasElement | ImageBitmap | undefined */
 
     /**
      * Computes the terrain height at a specified longitude and latitude.

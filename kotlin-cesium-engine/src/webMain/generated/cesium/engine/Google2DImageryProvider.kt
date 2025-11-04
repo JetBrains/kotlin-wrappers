@@ -184,21 +184,20 @@ external class Google2DImageryProvider(
 
     /**
      * Initialization options for the Google2DImageryProvider constructor
-     * @property [options] Object with the following properties:
-     * @property [options.key] The Google api key to send with tile requests.
-     * @property [options.session] The Google session token that tracks the current state of your map and viewport.
-     * @property [options.url] The Google 2D maps endpoint.
-     * @property [options.tileWidth] The width of each tile in pixels.
-     * @property [options.tileHeight] The height of each tile in pixels.
-     * @property [options.ellipsoid] The ellipsoid.  If not specified, the default ellipsoid is used.
+     * @property [key] The Google api key to send with tile requests.
+     * @property [session] The Google session token that tracks the current state of your map and viewport.
+     * @property [url] The Google 2D maps endpoint.
+     * @property [tileWidth] The width of each tile in pixels.
+     * @property [tileHeight] The height of each tile in pixels.
+     * @property [ellipsoid] The ellipsoid.  If not specified, the default ellipsoid is used.
      *   Default value - [Ellipsoid.default]
-     * @property [options.minimumLevel] The minimum level-of-detail supported by the imagery provider.  Take care when specifying
+     * @property [minimumLevel] The minimum level-of-detail supported by the imagery provider.  Take care when specifying
      *   this that the number of tiles at the minimum level is small, such as four or less.  A larger number is likely
      *   to result in rendering problems.
      *   Default value - `0`
-     * @property [options.maximumLevel] The maximum level-of-detail supported by the imagery provider.
+     * @property [maximumLevel] The maximum level-of-detail supported by the imagery provider.
      *   Default value - `22`
-     * @property [options.rectangle] The rectangle, in radians, covered by the image.
+     * @property [rectangle] The rectangle, in radians, covered by the image.
      *   Default value - [Rectangle.MAX_VALUE]
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Google2DImageryProvider.html#.ConstructorOptions">Online Documentation</a>
      */

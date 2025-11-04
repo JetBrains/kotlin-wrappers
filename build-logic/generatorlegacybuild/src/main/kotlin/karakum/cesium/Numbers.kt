@@ -7,6 +7,7 @@ private val INTEGER_NAMES = setOf(
     "index",
     "key",
     "level",
+    "_level",
     "length",
 
     "retryAttempts",
