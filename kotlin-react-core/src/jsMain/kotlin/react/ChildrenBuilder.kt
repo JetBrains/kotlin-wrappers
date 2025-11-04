@@ -101,11 +101,14 @@ private fun <P : Props> ChildrenBuilder.addChildElement(
     props: P = unsafeJso(),
     defaultKey: Key?,
 ) {
+    val key = props.key ?: defaultKey
+    deleteProperty(props, "key")
+
     // TODO: use `jsx` if no children?
     val element = jsxs(
         type = type,
         props = props,
-        key = defaultKey,
+        key = key,
     )
 
     addChildNode(element)
