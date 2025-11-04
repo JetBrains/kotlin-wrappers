@@ -11,6 +11,7 @@ package react
 
 import js.array.ReadonlyArray
 import js.internal.InternalApi
+import js.objects.Object
 import js.objects.unsafeJso
 import js.reflect.Reflect.deleteProperty
 import js.symbol.Symbol
@@ -131,7 +132,7 @@ internal fun <P : Props> ChildrenBuilder.addChild(
 ) {
     addChildElement(
         type = type,
-        props = props,
+        props = Object.assign(unsafeJso(), props),
         defaultKey = getDefaultKey(),
     )
 }
