@@ -10,24 +10,11 @@
 package react
 
 import js.array.ReadonlyArray
+import js.internal.InternalApi
 import js.objects.unsafeJso
 import js.reflect.Reflect.deleteProperty
 import js.symbol.Symbol
-
-// child array
-private val CHILD_ARRAY: Symbol = Symbol("@@child-array")
-
-private inline var ChildrenBuilder.childArray: ReadonlyArray<ReactNode?>?
-    get() = asDynamic()[CHILD_ARRAY]
-    set(value) {
-        asDynamic()[CHILD_ARRAY] = value
-    }
-
-fun ChildrenBuilder.getChildArray(): ReadonlyArray<ReactNode?>? =
-    asDynamic()[CHILD_ARRAY]
-
-fun Props.getChildArray(): ReadonlyArray<ReactNode?>? =
-    asDynamic()[CHILD_ARRAY]
+import react.jsx.runtime.jsxs
 
 // default key
 private val DEFAULT_KEY: Symbol = Symbol("@@default-key")
@@ -47,6 +34,10 @@ internal fun setDefaultKey(
 }
 
 sealed external interface ChildrenBuilder {
+    @InternalApi
+    @JsName("children")
+    var __children__: ReadonlyArray<ReactNode?>?
+
     inline operator fun ReactNode?.unaryPlus() {
         addChildNode(this)
     }
@@ -98,52 +89,24 @@ sealed external interface ChildrenBuilder {
 internal fun ChildrenBuilder.addChildNode(
     node: ReactNode?,
 ) {
-    if (childArray != null) {
-        childArray.asDynamic().push(node)
+    if (__children__ != null) {
+        __children__.asDynamic().push(node)
     } else {
-        childArray = arrayOf(node)
-    }
-}
-
-private fun <P : Props> childProps(
-    props: P?,
-    defaultKey: Key?,
-): P? {
-    defaultKey ?: return props
-
-    props ?: return unsafeJso {
-        key = defaultKey
-    }
-
-    if (props.key != null)
-        return props
-
-    return unsafeJso {
-        +props
-
-        key = defaultKey
+        __children__ = arrayOf(node)
     }
 }
 
 private fun <P : Props> ChildrenBuilder.addChildElement(
     type: ElementType<P>,
-    props: P? = null,
-    children: ReadonlyArray<ReactNode?>? = null,
+    props: P? = undefined,
     defaultKey: Key?,
 ) {
-    val childProps = childProps(props, defaultKey)
-    val element = if (children != null) {
-        createElement(
-            type = type,
-            props = childProps,
-            children = children,
-        )
-    } else {
-        createElement(
-            type = type,
-            props = childProps,
-        )
-    }
+    // TODO: use `jsx` if no children?
+    val element = jsxs(
+        type = type,
+        props = props,
+        key = defaultKey,
+    )
 
     addChildNode(element)
 }
@@ -176,12 +139,10 @@ internal fun <P : Props> ChildrenBuilder.addChild(
     block: P.() -> Unit,
 ) {
     val defaultKey = getDefaultKey()
-    val props: P = unsafeJso(block)
 
     addChildElement(
         type = type,
-        props = props,
-        children = props.getChildArray(),
+        props = unsafeJso(block),
         defaultKey = defaultKey,
     )
 }

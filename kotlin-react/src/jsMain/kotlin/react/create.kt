@@ -1,19 +1,16 @@
 package react
 
 import js.objects.unsafeJso
+import react.jsx.runtime.jsx
+import react.jsx.runtime.jsxs
 
 fun <P : Props> ElementType<P>.create(): ReactElement<P> =
-    createElement(this)
+    jsx(this)
 
 fun <P : Props> ElementType<P>.create(
     block: @ReactDsl P.() -> Unit,
-): ReactElement<P> {
-    val props: P = unsafeJso(block)
-    val children = props.getChildArray() ?: emptyArray()
-
-    return createElement(
+): ReactElement<P> =
+    jsxs(
         type = this,
-        props = props,
-        children = children,
+        props = unsafeJso(block),
     )
-}
