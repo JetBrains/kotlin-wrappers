@@ -200,12 +200,7 @@ private fun readDeclarations(
         .toList()
 
 private fun record(valueType: String): String {
-    var type = valueType
-
-    if (type == "any")
-        type = "JsAny"
-
-    return "Record<String, $type>"
+    return "Record<String, ${kotlinType(valueType)}>"
 }
 
 private fun String.applyTypeAliasCorrection(): String =
