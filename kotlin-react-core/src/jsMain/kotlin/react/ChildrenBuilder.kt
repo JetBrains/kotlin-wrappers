@@ -117,7 +117,7 @@ internal fun <P : Props> ChildrenBuilder.addChild(
 ) {
     addChildElement(
         type = type,
-        defaultKey = getDefaultKey()
+        defaultKey = getDefaultKey(),
     )
 }
 
@@ -129,7 +129,7 @@ internal fun <P : Props> ChildrenBuilder.addChild(
     addChildElement(
         type = type,
         props = props,
-        defaultKey = getDefaultKey()
+        defaultKey = getDefaultKey(),
     )
 }
 
