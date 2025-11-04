@@ -5,12 +5,11 @@ import js.objects.unsafeJso
 internal fun createElementOrNull(
     block: @ReactDsl ChildrenBuilder.() -> Unit,
 ): ReactElement<*>? {
-    val children = unsafeJso(block)
+    val childNodes = unsafeJso(block)
         .__children__
         ?: return null
 
-    return createElement(
-        type = Fragment,
-        children = children,
-    )
+    return Fragment.create {
+        children = ReactNode(childNodes)
+    }
 }
