@@ -2333,6 +2333,11 @@ private fun convertFunction(
             safeName = "${name}WithCallbacks"
         }
 
+        "callback: BlobCallback" in parameters -> {
+            jsName = """@JsName("$name")"""
+            safeName = "${name}WithCallback"
+        }
+
         else -> jsName = null
     }
 

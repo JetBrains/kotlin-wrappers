@@ -13,6 +13,7 @@ import web.mediastreams.MediaStream
 import web.rendering.RenderingContext
 import web.rendering.RenderingContextId
 import kotlin.js.JsAny
+import kotlin.js.JsName
 import kotlin.js.definedExternally
 
 /**
@@ -62,7 +63,8 @@ protected constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLCanvasElement/toBlob)
      */
-    fun toBlob(
+    @JsName("toBlob")
+    fun toBlobWithCallback(
         callback: BlobCallback,
         type: String = definedExternally,
         quality: Double = definedExternally,
