@@ -8,8 +8,13 @@ import js.reflect.upcast
 sealed external interface ReactNode
 
 inline fun ReactNode(
-    source: ReadonlyArray<ReactNode>,
+    source: ReadonlyArray<ReactNode?>,
 ): ReactNode =
+    unsafeCast(source)
+
+inline fun ReactNode(
+    source: ReadonlyArray<ReactNode?>?,
+): ReactNode? =
     unsafeCast(source)
 
 inline fun ReactNode(
