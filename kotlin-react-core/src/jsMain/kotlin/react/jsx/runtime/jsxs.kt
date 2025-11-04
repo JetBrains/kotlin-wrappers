@@ -12,6 +12,6 @@ import react.ReactElement
  */
 external fun <P : Props> jsxs(
     type: ElementType<P>,
-    props: P? = definedExternally,
+    props: P,
     key: Key? = definedExternally,
 ): ReactElement<P>

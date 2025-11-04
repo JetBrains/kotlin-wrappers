@@ -98,7 +98,7 @@ internal fun ChildrenBuilder.addChildNode(
 
 private fun <P : Props> ChildrenBuilder.addChildElement(
     type: ElementType<P>,
-    props: P? = undefined,
+    props: P = unsafeJso(),
     defaultKey: Key?,
 ) {
     // TODO: use `jsx` if no children?
