@@ -54,13 +54,6 @@ internal class Method(
             params = params.replace(" = definedExternally", "")
         }
 
-        if (name == "loadTileDataAvailability") {
-            params = params
-                .replace("_x", "x")
-                .replace("_y", "y")
-                .replace("_level", "level")
-        }
-
         val sourceDeclaration = "fun $name$params$returnExpression"
         val declarations = when (name) {
             "loadTileDataAvailability" if sourceDeclaration.endsWith("): Void") -> {

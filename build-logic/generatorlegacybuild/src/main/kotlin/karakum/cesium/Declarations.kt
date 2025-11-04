@@ -172,6 +172,10 @@ private fun readDeclarations(
             "interpolateHeight(rectangle: Rectangle, longitude: number, latitude: number): number;"
         )
         .replace("credits: Credit[] | undefined;", "credits: Credit[];")
+        .replace(
+            "loadTileDataAvailability(_x: number, _y: number, _level: number): Promise<void> | undefined;",
+            "loadTileDataAvailability(x: number, y: number, level: number): Promise<void> | undefined;",
+        )
         // For version `1.103.0`
         .replace(" readonly targetPropertyNames: any;", " readonly targetPropertyNames: string[];")
         .replace("};\n    type UpdaterFunction ", "};\n    /**\n     * Function\n     */\n    type UpdaterFunction ")
