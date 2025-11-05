@@ -1,7 +1,6 @@
 package example.table.base
 
 import react.FC
-import react.Key
 import react.PropsWithValue
 import react.dom.html.ReactHTML.tr
 import tanstack.table.core.Row
@@ -14,7 +13,7 @@ internal val TableRow: FC<TableRowProps> = FC { props ->
     tr {
         for (cell in row.getVisibleCells()) {
             TableCell {
-                key = Key(cell.id)
+                key = cell.id
                 value = cell
             }
         }

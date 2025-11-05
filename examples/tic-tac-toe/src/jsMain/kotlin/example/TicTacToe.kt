@@ -2,7 +2,6 @@ package example
 
 import js.array.ReadonlyArray
 import react.FC
-import react.Key
 import react.Props
 import react.dom.html.ReactHTML.button
 import react.dom.html.ReactHTML.div
@@ -185,7 +184,7 @@ val TicTacToeApp = FC<TicTacToeProps> {
                 for (step in 0..totalStep) {
                     val desc = if (step == 0) "Go to game start" else "Go to step #$step"
                     li {
-                        key = Key(step)
+                        key = step.toString()
                         button {
                             onClick = { jumpTo(step) }
 

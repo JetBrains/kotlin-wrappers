@@ -5,7 +5,6 @@ import example.table.base.TableInstance
 import example.theme.Theme
 import react.ChildrenBuilder
 import react.FC
-import react.Key
 import react.PropsWithValue
 import react.dom.html.ReactHTML.table
 import react.dom.html.ReactHTML.tbody
@@ -50,11 +49,11 @@ private fun <D : Any> ChildrenBuilder.SimpleTable(props: SimpleTableProps<D>) {
 
             for (headerGroup in table.headerGroups) {
                 tr {
-                    key = Key(headerGroup.id)
+                    key = headerGroup.id
 
                     for (header in headerGroup.headers) {
                         th {
-                            key = Key(header.id)
+                            key = header.id
 
                             css {
                                 fontWeight = FontWeight.normal
@@ -83,7 +82,7 @@ private fun <D : Any> ChildrenBuilder.SimpleTable(props: SimpleTableProps<D>) {
 
             for (row in table.rows) {
                 tr {
-                    key = Key(row.id)
+                    key = row.id
 
                     css {
                         fontSize = 16.px
@@ -101,7 +100,7 @@ private fun <D : Any> ChildrenBuilder.SimpleTable(props: SimpleTableProps<D>) {
 
                     for (cell in row.getVisibleCells()) {
                         td {
-                            key = Key(cell.id)
+                            key = cell.id
 
                             css {
                                 padding = Padding(10.px, 12.px)

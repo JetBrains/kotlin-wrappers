@@ -2,7 +2,6 @@ package example.table.base
 
 import js.array.ReadonlyArray
 import react.FC
-import react.Key
 import react.PropsWithValue
 import react.dom.html.ReactHTML.tbody
 import tanstack.table.core.Row
@@ -15,7 +14,7 @@ internal val TableBody: FC<TableBodyProps> = FC { props ->
     tbody {
         for (row in rows) {
             TableRow {
-                key = Key(row.id)
+                key = row.id
                 value = row
             }
         }

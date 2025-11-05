@@ -2,7 +2,6 @@ package example.table.base
 
 import js.array.ReadonlyArray
 import react.FC
-import react.Key
 import react.PropsWithValue
 import react.dom.html.ReactHTML.thead
 import react.dom.html.ReactHTML.tr
@@ -16,11 +15,11 @@ internal val TableHead: FC<TableHeadProps> = FC { props ->
     thead {
         for (headerGroup in headerGroups) {
             tr {
-                key = Key(headerGroup.id)
+                key = headerGroup.id
 
                 for (header in headerGroup.headers) {
                     TableHeader {
-                        key = Key(header.id)
+                        key = header.id
                         value = header
                     }
                 }
