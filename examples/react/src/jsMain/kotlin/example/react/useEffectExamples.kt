@@ -19,6 +19,8 @@ import web.html.HTMLScriptElement
 import web.html.HtmlTagName.input
 import web.html.HtmlTagName.script
 import web.html.changeEvent
+import react.invoke
+import react.unaryPlus
 
 val SubscribeExample = FC {
     val myInput = document.createElement(input)

@@ -5,6 +5,7 @@ import react.FC
 import react.PropsWithValue
 import react.dom.html.ReactHTML.thead
 import react.dom.html.ReactHTML.tr
+import react.invoke
 import tanstack.table.core.HeaderGroup
 
 internal external interface TableHeadProps : PropsWithValue<ReadonlyArray<HeaderGroup<*>>>

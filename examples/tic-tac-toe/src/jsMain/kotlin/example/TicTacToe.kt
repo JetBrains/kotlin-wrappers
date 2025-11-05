@@ -1,13 +1,11 @@
 package example
 
 import js.array.ReadonlyArray
-import react.FC
-import react.Props
+import react.*
 import react.dom.html.ReactHTML.button
 import react.dom.html.ReactHTML.div
 import react.dom.html.ReactHTML.li
 import react.dom.html.ReactHTML.ol
-import react.useState
 import web.cssom.ClassName
 
 /**

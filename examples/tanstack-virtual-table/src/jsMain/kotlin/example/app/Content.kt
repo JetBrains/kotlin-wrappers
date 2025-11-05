@@ -5,6 +5,7 @@ import example.components.LoadingIndicator
 import example.table.PhotoTable
 import react.FC
 import react.dom.html.ReactHTML.div
+import react.invoke
 import web.cssom.Display
 import web.cssom.GridAutoFlow
 import web.cssom.px

@@ -7,6 +7,8 @@ import react.dom.svg.ReactSVG.animateMotion
 import react.dom.svg.ReactSVG.circle
 import react.dom.svg.ReactSVG.rect
 import react.dom.svg.ReactSVG.svg
+import react.invoke
+import react.unaryPlus
 import web.svg.RepeatCount
 import web.svg.indefinite
 

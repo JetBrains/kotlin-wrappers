@@ -3,9 +3,7 @@ package example.table.simple
 import emotion.react.css
 import example.table.base.TableInstance
 import example.theme.Theme
-import react.ChildrenBuilder
-import react.FC
-import react.PropsWithValue
+import react.*
 import react.dom.html.ReactHTML.table
 import react.dom.html.ReactHTML.tbody
 import react.dom.html.ReactHTML.td
@@ -27,7 +25,8 @@ internal val SimpleTable: FC<SimpleTableProps<*>> = FC { props ->
     SimpleTable(props)
 }
 
-private fun <D : Any> ChildrenBuilder.SimpleTable(props: SimpleTableProps<D>) {
+context(builder: ChildrenBuilder)
+private fun <D : Any> SimpleTable(props: SimpleTableProps<D>) {
     val table = props.value
 
     table {

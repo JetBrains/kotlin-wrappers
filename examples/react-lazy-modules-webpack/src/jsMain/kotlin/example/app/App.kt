@@ -7,6 +7,7 @@ import example.header.Header
 import react.FC
 import react.Suspense
 import react.dom.html.ReactHTML.div
+import react.invoke
 import web.cssom.Display
 
 val App = FC {

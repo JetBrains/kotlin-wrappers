@@ -2,6 +2,7 @@ package example.table.selection
 
 import react.FC
 import react.PropsWithValue
+import react.invoke
 
 internal val SelectionCell: FC<PropsWithValue<SelectedKeys>> = FC { props ->
     val keys = props.value

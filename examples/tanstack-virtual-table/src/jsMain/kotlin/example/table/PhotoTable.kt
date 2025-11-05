@@ -13,6 +13,7 @@ import react.dom.html.ReactHTML.td
 import react.dom.html.ReactHTML.th
 import react.dom.html.ReactHTML.thead
 import react.dom.html.ReactHTML.tr
+import react.invoke
 import web.cssom.*
 import web.cssom.Auto.Companion.auto
 import web.cssom.LineStyle.Companion.solid
@@ -49,7 +50,7 @@ private val Table = TableBase.styled {
                 borderBottom = Border(1.px, solid, Theme.Stroke.Gray)
 
                 lastChild {
-                    borderRight = None.Companion.none
+                    borderRight = None.none
                 }
             }
         }

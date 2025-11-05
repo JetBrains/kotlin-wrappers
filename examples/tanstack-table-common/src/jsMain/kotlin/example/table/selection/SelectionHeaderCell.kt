@@ -3,6 +3,7 @@ package example.table.selection
 import js.array.ReadonlyArray
 import react.FC
 import react.PropsWithValue
+import react.invoke
 import react.useMemo
 import tanstack.table.core.Row
 

@@ -2,6 +2,7 @@ package example.table.selection
 
 import react.FC
 import react.PropsWithValue
+import react.invoke
 import react.useMemo
 import tanstack.table.core.Row
 

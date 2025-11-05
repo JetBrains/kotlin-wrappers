@@ -23,6 +23,8 @@ kotlin {
     compilerOptions {
         allWarningsAsErrors = true
 
+        freeCompilerArgs.add("-Xcontext-parameters")
+
         optIn.addAll(
             "kotlin.js.ExperimentalJsExport",
             "kotlin.js.ExperimentalWasmJsInterop",

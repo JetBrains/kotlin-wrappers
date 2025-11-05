@@ -3,6 +3,8 @@ package example.table.base
 import react.FC
 import react.PropsWithValue
 import react.dom.html.ReactHTML.th
+import react.invoke
+import react.unaryPlus
 import tanstack.react.table.renderHeader
 import tanstack.table.core.Header
 

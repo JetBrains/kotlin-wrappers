@@ -5,6 +5,7 @@ import react.ChildrenBuilder
 import react.FC
 import react.PropsWithClassName
 import react.dom.html.ReactHTML.table
+import react.invoke
 import tanstack.table.core.HeaderGroup
 import tanstack.table.core.Row
 
@@ -17,7 +18,8 @@ val TableBase: FC<TableBaseProps<*>> = FC { props ->
     TableBase(props)
 }
 
-private fun <D : Any> ChildrenBuilder.TableBase(props: TableBaseProps<D>) {
+context(builder: ChildrenBuilder)
+private fun <D : Any> TableBase(props: TableBaseProps<D>) {
     table {
         className = props.className
 

@@ -6,6 +6,7 @@ import example.table.selection.selection
 import example.table.simple.SimpleTable
 import example.table.simple.SimpleTableProps
 import react.FC
+import react.invoke
 
 internal val UserTable = FC {
     val table = useUsersTable()
