@@ -2,6 +2,7 @@
 
 package web.geolocation
 
+import kotlin.js.JsName
 import kotlin.js.definedExternally
 
 /**
@@ -23,7 +24,8 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Geolocation/getCurrentPosition)
      */
-    fun getCurrentPosition(
+    @JsName("getCurrentPosition")
+    fun getCurrentPositionWithCallbacks(
         successCallback: PositionCallback,
         errorCallback: PositionErrorCallback? = definedExternally,
         options: PositionOptions = definedExternally,
@@ -34,7 +36,8 @@ private constructor() {
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Geolocation/watchPosition)
      */
-    fun watchPosition(
+    @JsName("watchPosition")
+    fun watchPositionWithCallbacks(
         successCallback: PositionCallback,
         errorCallback: PositionErrorCallback? = definedExternally,
         options: PositionOptions = definedExternally,

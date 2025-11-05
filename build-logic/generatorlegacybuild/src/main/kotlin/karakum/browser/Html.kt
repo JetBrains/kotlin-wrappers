@@ -2326,9 +2326,7 @@ private fun convertFunction(
             safeName = "${name}Sync"
         }
 
-        "successCallback: " in parameters &&
-                // Geolocation needs research
-                !name.endsWith("Position") -> {
+        "successCallback: " in parameters -> {
             jsName = """@JsName("$name")"""
             safeName = "${name}WithCallbacks"
         }
