@@ -574,6 +574,12 @@ private fun String.patchQuerySelectors(): String =
                 "    readonly readyState: ReadyState;",
             )
         }
+        .patchInterface("FileReader") {
+            it.replace(
+                "    readonly readyState: 0 | 1 | 2;",
+                "    readonly readyState: ReadyState;",
+            )
+        }
 
 private fun String.patchDecodeAudioData(): String =
     patchInterface("BaseAudioContext") {

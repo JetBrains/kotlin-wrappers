@@ -9,6 +9,7 @@ import js.promise.Promise
 
 /**
  * The **`ImageTrackList`** interface of the WebCodecs API represents a list of image tracks.
+ * Available only in secure contexts.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ImageTrackList)
  */
