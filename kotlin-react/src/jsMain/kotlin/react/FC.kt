@@ -3,26 +3,26 @@ package react
 import js.reflect.unsafeCast
 
 fun FC(
-    block: @ReactDsl ChildrenBuilder.() -> Unit,
+    block: context(ChildrenBuilder) () -> Unit,
 ): FC<Props> =
     unsafeCast(
         provider = { ->
-            createElementOrNull(block)
+            createElement(block)
         },
     )
 
 fun <P : Props> FC(
-    block: @ReactDsl ChildrenBuilder.(props: P) -> Unit,
+    block: context(ChildrenBuilder) (props: P) -> Unit,
 ): FC<P> =
     unsafeCast(
         provider = { props: P ->
-            createElementOrNull { block(props) }
+            createElement { block(props) }
         },
     )
 
 fun FC(
     displayName: String,
-    block: @ReactDsl ChildrenBuilder.() -> Unit,
+    block: context(ChildrenBuilder) () -> Unit,
 ): FC<Props> {
     val component = FC(block)
     component.displayName = displayName
@@ -31,7 +31,7 @@ fun FC(
 
 fun <P : Props> FC(
     displayName: String,
-    block: @ReactDsl ChildrenBuilder.(props: P) -> Unit,
+    block: context(ChildrenBuilder) (props: P) -> Unit,
 ): FC<P> {
     val component = FC(block)
     component.displayName = displayName
