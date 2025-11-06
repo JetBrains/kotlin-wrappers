@@ -10,6 +10,7 @@
 package react
 
 import js.array.ReadonlyArray
+import js.internal.InternalApi
 import js.objects.Object
 import js.objects.unsafeJso
 import js.reflect.Reflect.deleteProperty
@@ -34,9 +35,9 @@ internal fun setDefaultKey(
 }
 
 sealed external interface ChildrenBuilder {
+    @InternalApi
     @JsName("children")
-    @Suppress("WRONG_MODIFIER_CONTAINING_DECLARATION")
-    internal var __children__: ReadonlyArray<ReactNode?>?
+    var __children__: ReadonlyArray<ReactNode?>?
 
     inline operator fun ReactNode?.unaryPlus() {
         addChildNode(this)
