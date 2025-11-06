@@ -1,8 +1,7 @@
-package vscode.coroutines
+package vscode
 
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Job
-import vscode.CancellationToken
 
 fun CancellationToken.toCoroutineScope(): CoroutineScope {
     val job = Job()
