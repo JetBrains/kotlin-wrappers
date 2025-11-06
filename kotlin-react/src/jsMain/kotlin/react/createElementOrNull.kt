@@ -10,6 +10,6 @@ internal fun createElementOrNull(
         ?: return null
 
     return Fragment.create {
-        children = ReactNode(childNodes)
+        children = childNodes
     }
 }

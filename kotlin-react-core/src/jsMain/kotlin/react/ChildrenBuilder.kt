@@ -9,7 +9,6 @@
 
 package react
 
-import js.array.ReadonlyArray
 import js.internal.InternalApi
 import js.objects.Object
 import js.objects.unsafeJso
@@ -37,7 +36,7 @@ internal fun setDefaultKey(
 sealed external interface ChildrenBuilder {
     @InternalApi
     @JsName("children")
-    var __children__: ReadonlyArray<ReactNode?>?
+    var __children__: ReactNodeArray?
 
     inline operator fun ReactNode?.unaryPlus() {
         addChildNode(this)
@@ -90,10 +89,11 @@ sealed external interface ChildrenBuilder {
 internal fun ChildrenBuilder.addChildNode(
     node: ReactNode?,
 ) {
-    if (__children__ != null) {
-        __children__.asDynamic().push(node)
+    val children = __children__
+    if (children != null) {
+        children.push(node)
     } else {
-        __children__ = arrayOf(node)
+        __children__ = ReactNodeArray(node)
     }
 }
 
