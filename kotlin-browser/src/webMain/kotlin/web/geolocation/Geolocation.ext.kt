@@ -3,21 +3,18 @@ package web.geolocation
 import js.coroutines.resumeWithError
 import js.errors.toThrowable
 import js.objects.unsafeJso
-import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.cancel
 import kotlinx.coroutines.channels.awaitClose
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.callbackFlow
 import kotlin.coroutines.resume
 import kotlin.coroutines.suspendCoroutine
-import kotlin.js.JsName
 
 /**
  * The **`getCurrentPosition()`** method of the Geolocation interface is used to get the current position of the device.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Geolocation/getCurrentPosition)
  */
-@JsName("getCurrentPosition")
 suspend fun Geolocation.getCurrentPosition(
     options: PositionOptions = unsafeJso(),
 ): GeolocationPosition =
@@ -40,7 +37,7 @@ fun Geolocation.watchPosition(
     callbackFlow {
         val watchId = watchPositionWithCallbacks(
             successCallback = ::trySend,
-            errorCallback = { error -> cancel(CancellationException(error.message, error.toThrowable())) },
+            errorCallback = { error -> cancel(error.message, error.toThrowable()) },
             options = options,
         )
 
