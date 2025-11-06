@@ -453,40 +453,40 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/scroll)
      */
-    fun scroll(options: ScrollToOptions = definedExternally): Promise<Void>?
+    fun scroll(options: ScrollToOptions = definedExternally)
     fun scroll(
         x: Double,
         y: Double,
-    ): Promise<Void>?
+    )
 
     /**
      * The **`scrollBy()`** method of the Element interface scrolls an element by the given amount.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/scrollBy)
      */
-    fun scrollBy(options: ScrollToOptions = definedExternally): Promise<Void>?
+    fun scrollBy(options: ScrollToOptions = definedExternally)
     fun scrollBy(
         x: Double,
         y: Double,
-    ): Promise<Void>?
+    )
 
     /**
      * The Element interface's **`scrollIntoView()`** method scrolls the element's ancestor containers such that the element on which scrollIntoView() is called is visible to the user.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/scrollIntoView)
      */
-    fun scrollIntoView(options: ScrollIntoViewOptions = definedExternally): Promise<Void>?
+    fun scrollIntoView(options: ScrollIntoViewOptions = definedExternally)
 
     /**
      * The **`scrollTo()`** method of the Element interface scrolls to a particular set of coordinates inside a given element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/scrollTo)
      */
-    fun scrollTo(options: ScrollToOptions = definedExternally): Promise<Void>?
+    fun scrollTo(options: ScrollToOptions = definedExternally)
     fun scrollTo(
         x: Double,
         y: Double,
-    ): Promise<Void>?
+    )
 
     /**
      * The **`setAttribute()`** method of the Element interface sets the value of an attribute on the specified element. If the attribute already exists, the value is updated; otherwise a new attribute is added with the specified name and value.

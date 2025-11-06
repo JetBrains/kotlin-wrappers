@@ -989,7 +989,7 @@ private constructor() :
     /**
      * The **`cssFloat`** property of the CSSStyleProperties interface returns the CSS float property.
      *
-     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleDeclaration/cssFloat)
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSStyleProperties/cssFloat)
      */
     var cssFloat: String
 
@@ -1466,6 +1466,13 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/hyphens)
      */
     var hyphens: String
+
+    /**
+     * The image-orientation CSS property specifies a layout-independent correction to the orientation of an image.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/image-orientation)
+     */
+    var imageOrientation: String
 
     /**
      * The image-rendering CSS property sets an image scaling algorithm. The property applies to an element itself, to any images set in its other properties, and to its descendants.
