@@ -4,15 +4,13 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Job
 import vscode.CancellationToken
 
-fun CoroutineScope(
-    token: CancellationToken,
-): CoroutineScope {
+fun CancellationToken.toCoroutineScope(): CoroutineScope {
     val job = Job()
 
-    if (token.isCancellationRequested) {
+    if (isCancellationRequested) {
         job.cancel()
     } else {
-        token.onCancellationRequested {
+        onCancellationRequested {
             job.cancel()
         }
     }
