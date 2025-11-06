@@ -5,7 +5,7 @@ import js.internal.InternalApi
 import js.promise.Promise
 import kotlinx.coroutines.CoroutineScope
 import web.abort.AbortableLike
-import web.coroutines.CoroutineScope
+import web.abort.toCoroutineScope
 import kotlin.js.JsAny
 
 @InternalApi
@@ -13,5 +13,5 @@ fun <T : JsAny?> createCancellablePromise(
     abortable: AbortableLike,
     block: suspend CoroutineScope.() -> T,
 ): Promise<T> =
-    CoroutineScope(abortable)
+    abortable.toCoroutineScope()
         .safePromise(block)
