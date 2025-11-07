@@ -14,7 +14,7 @@ import js.objects.Object
 import js.objects.unsafeJso
 import js.reflect.Reflect.deleteProperty
 import js.symbol.Symbol
-import react.jsx.runtime.raw.jsxsRaw
+import react.jsx.runtime.jsx
 
 // default key
 private val DEFAULT_KEY: Symbol = Symbol("@@default-key")
@@ -99,17 +99,13 @@ internal fun ChildrenBuilder.addChildNode(
 
 private fun <P : Props> ChildrenBuilder.addChildElement(
     type: ElementType<P>,
-    props: P = unsafeJso(),
+    props: P?,
     defaultKey: Key?,
 ) {
-    val key = props.key ?: defaultKey
-    deleteProperty(props, "key")
-
-    // TODO: use `jsx` if no children?
-    val element = jsxsRaw(
+    val element = jsx(
         type = type,
         props = props,
-        key = key,
+        defaultKey = defaultKey,
     )
 
     addChildNode(element)
@@ -121,6 +117,7 @@ internal fun <P : Props> ChildrenBuilder.addChild(
 ) {
     addChildElement(
         type = type,
+        props = null,
         defaultKey = getDefaultKey(),
     )
 }
