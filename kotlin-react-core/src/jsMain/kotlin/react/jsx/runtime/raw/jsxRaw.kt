@@ -11,7 +11,7 @@ import react.ReactElement
  * [Online Documentation](https://react.dev/reference/react)
  */
 @JsName("jsx")
-external fun <P : Props> jsxRaw(
+internal external fun <P : Props> jsxRaw(
     type: ElementType<P>,
     props: P,
     key: Key? = definedExternally,

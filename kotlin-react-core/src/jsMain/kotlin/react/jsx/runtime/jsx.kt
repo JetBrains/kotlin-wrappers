@@ -1,5 +1,6 @@
 package react.jsx.runtime
 
+import js.internal.InternalApi
 import js.objects.unsafeJso
 import js.reflect.Reflect.deleteProperty
 import react.ElementType
@@ -9,6 +10,7 @@ import react.ReactElement
 import react.jsx.runtime.raw.jsxRaw
 import react.jsx.runtime.raw.jsxsRaw
 
+@InternalApi
 fun <P : Props> jsx(
     type: ElementType<P>,
 ): ReactElement<P> =
@@ -17,6 +19,7 @@ fun <P : Props> jsx(
         props = unsafeJso(),
     )
 
+@InternalApi
 fun <P : Props> jsx(
     type: ElementType<P>,
     props: P,
@@ -27,6 +30,7 @@ fun <P : Props> jsx(
         defaultKey = null,
     )
 
+@InternalApi
 fun <P : Props> jsx(
     type: ElementType<P>,
     props: P?,
