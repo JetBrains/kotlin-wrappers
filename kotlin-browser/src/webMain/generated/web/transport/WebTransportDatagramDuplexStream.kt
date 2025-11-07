@@ -56,6 +56,8 @@ private constructor() {
     val readable: ReadableStream<*>
 
     /**
+     * The **`writable`** read-only property of the WebTransportDatagramDuplexStream interface returns a WritableStream instance that can be used to unreliably write outgoing datagrams to the stream.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebTransportDatagramDuplexStream/writable)
      */
     val writable: WritableStream<*>

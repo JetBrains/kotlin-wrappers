@@ -17,6 +17,13 @@ import kotlin.js.JsString
 open external class TextEncoderStream :
     GenericTransformStream,
     TextEncoderCommon {
+    /**
+     * The **`readable`** read-only property of the TextEncoderStream interface returns a ReadableStream.
+     */
     override val readable: ReadableStream<Uint8Array<ArrayBuffer>>
+
+    /**
+     * The **`writable`** read-only property of the TextEncoderStream interface returns a WritableStream.
+     */
     override val writable: WritableStream<JsString>
 }

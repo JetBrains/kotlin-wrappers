@@ -151,6 +151,9 @@ external interface Console {
         vararg data: JsAny?,
     )
 
+    /**
+     * The **`console.timeStamp()`** static method adds a single marker to the browser's Performance tool (Firefox bug 1387528, Chrome). This lets you correlate a point in your code with the other events recorded in the timeline, such as layout and paint events.
+     */
     fun timeStamp(label: String = definedExternally)
 
     /**

@@ -67,6 +67,10 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Navigator/credentials)
      */
     val credentials: CredentialsContainer
+
+    /**
+     * The **`Navigator.doNotTrack`** property returns the user's Do Not Track setting, which indicates whether the user is requesting websites and advertisers to not track them.
+     */
     val doNotTrack: String?
 
     /**

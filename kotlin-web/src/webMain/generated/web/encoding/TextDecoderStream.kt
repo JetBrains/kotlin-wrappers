@@ -19,6 +19,13 @@ open external class TextDecoderStream(
     options: TextDecoderOptions = definedExternally,
 ) : GenericTransformStream,
     TextDecoderCommon {
+    /**
+     * The **`readable`** read-only property of the TextDecoderStream interface returns a ReadableStream.
+     */
     override val readable: ReadableStream<JsString>
+
+    /**
+     * The **`writable`** read-only property of the TextDecoderStream interface returns a WritableStream.
+     */
     override val writable: WritableStream<BufferSource>
 }

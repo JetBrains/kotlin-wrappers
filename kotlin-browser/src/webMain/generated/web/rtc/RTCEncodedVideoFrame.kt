@@ -22,6 +22,8 @@ private constructor() :
     var data: ArrayBuffer
 
     /**
+     * The **`timestamp`** read-only property of the RTCEncodedVideoFrame interface indicates the time at which frame sampling started.
+     *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCEncodedVideoFrame/timestamp)
      */
     val timestamp: Int53
