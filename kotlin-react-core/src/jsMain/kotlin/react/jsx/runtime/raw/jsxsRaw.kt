@@ -1,6 +1,6 @@
 @file:JsModule("react/jsx-runtime")
 
-package react.jsx.runtime
+package react.jsx.runtime.raw
 
 import react.ElementType
 import react.Key
@@ -10,7 +10,8 @@ import react.ReactElement
 /**
  * [Online Documentation](https://react.dev/reference/react)
  */
-external fun <P : Props> jsxs(
+@JsName("jsxs")
+external fun <P : Props> jsxsRaw(
     type: ElementType<P>,
     props: P,
     key: Key? = definedExternally,

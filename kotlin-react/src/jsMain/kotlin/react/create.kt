@@ -1,16 +1,16 @@
 package react
 
 import js.objects.unsafeJso
-import react.jsx.runtime.jsx
-import react.jsx.runtime.jsxs
+import react.jsx.runtime.raw.jsxRaw
+import react.jsx.runtime.raw.jsxsRaw
 
 fun <P : Props> ElementType<P>.create(): ReactElement<P> =
-    jsx(this, unsafeJso())
+    jsxRaw(this, unsafeJso())
 
 fun <P : Props> ElementType<P>.create(
     block: @ReactDsl P.() -> Unit,
 ): ReactElement<P> =
-    jsxs(
+    jsxsRaw(
         type = this,
         props = unsafeJso(block),
     )

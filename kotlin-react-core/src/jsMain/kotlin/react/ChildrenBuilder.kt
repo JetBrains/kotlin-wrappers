@@ -14,7 +14,7 @@ import js.objects.Object
 import js.objects.unsafeJso
 import js.reflect.Reflect.deleteProperty
 import js.symbol.Symbol
-import react.jsx.runtime.jsxs
+import react.jsx.runtime.raw.jsxsRaw
 
 // default key
 private val DEFAULT_KEY: Symbol = Symbol("@@default-key")
@@ -106,7 +106,7 @@ private fun <P : Props> ChildrenBuilder.addChildElement(
     deleteProperty(props, "key")
 
     // TODO: use `jsx` if no children?
-    val element = jsxs(
+    val element = jsxsRaw(
         type = type,
         props = props,
         key = key,
