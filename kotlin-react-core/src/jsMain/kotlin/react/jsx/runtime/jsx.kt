@@ -19,6 +19,16 @@ fun <P : Props> jsx(
 
 fun <P : Props> jsx(
     type: ElementType<P>,
+    props: P,
+): ReactElement<P> =
+    jsx(
+        type = type,
+        props = props,
+        defaultKey = null,
+    )
+
+fun <P : Props> jsx(
+    type: ElementType<P>,
     props: P?,
     defaultKey: Key?,
 ): ReactElement<P> {
