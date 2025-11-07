@@ -10,7 +10,6 @@
 package react
 
 import js.internal.InternalApi
-import js.objects.Object
 import js.objects.unsafeJso
 import js.reflect.Reflect.deleteProperty
 import js.symbol.Symbol
@@ -129,7 +128,7 @@ internal fun <P : Props> ChildrenBuilder.addChild(
 ) {
     addChildElement(
         type = type,
-        props = Object.assign(unsafeJso(), props),
+        props = props,
         defaultKey = getDefaultKey(),
     )
 }

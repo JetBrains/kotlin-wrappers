@@ -1,6 +1,7 @@
 package react.jsx.runtime
 
 import js.internal.InternalApi
+import js.objects.Object
 import js.objects.unsafeJso
 import js.reflect.Reflect.deleteProperty
 import react.ElementType
@@ -43,13 +44,17 @@ fun <P : Props> jsx(
             key = defaultKey,
         )
 
-    val key = props.key ?: defaultKey
-    deleteProperty(props, "key")
+    val finalKey = props.key ?: defaultKey
+    var finalProps = props
+    if (props.key != null) {
+        finalProps = Object.assign(unsafeJso(), props)
+        deleteProperty(props, "key")
+    }
 
     // TODO: use `jsx` if no children?
     return jsxsRaw(
         type = type,
-        props = props,
-        key = key,
+        props = finalProps,
+        key = finalKey,
     )
 }
