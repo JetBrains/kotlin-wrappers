@@ -5,4 +5,6 @@ plugins {
 dependencies {
     webMainApi(projects.kotlinJs)
     jsMainApi(projects.kotlinReactCore)
+
+    webTestImplementation(libs.kotlin.test)
 }
