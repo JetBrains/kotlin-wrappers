@@ -46,20 +46,35 @@ fun <P : Props> jsx(
     val finalKey = props.key ?: defaultKey
 
     val builderChildren = props.getBuilderChildren()
+    var jsxMode = true
+
     if (props.key != null || builderChildren != null) {
         finalProps = Object.assign(unsafeJso(), props)
         deleteProperty(finalProps, "key")
 
         if (builderChildren != null) {
+            val singleBuilderChild = builderChildren
+                .asNodeArrayOrNull()
+                ?.singleOrNull()
+
+            jsxMode = singleBuilderChild != null
+
             unsafeCast<PropsWithChildren>(finalProps)
-                .children = builderChildren
+                .children = singleBuilderChild ?: builderChildren
         }
     }
 
-    // TODO: use `jsx` if no children?
-    return jsxsRaw(
-        type = type,
-        props = finalProps,
-        key = finalKey,
-    )
+    return if (jsxMode) {
+        jsxRaw(
+            type = type,
+            props = finalProps,
+            key = finalKey,
+        )
+    } else {
+        jsxsRaw(
+            type = type,
+            props = finalProps,
+            key = finalKey,
+        )
+    }
 }

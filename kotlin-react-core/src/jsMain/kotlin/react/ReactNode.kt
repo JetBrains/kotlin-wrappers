@@ -39,3 +39,7 @@ fun ReactNode.asElementOrNull(): ReactElement<*>? =
     if (isValidElement(this)) {
         unsafeCast<ReactElement<*>>(this)
     } else null
+
+@Suppress("UNCHECKED_CAST")
+fun ReactNode.asNodeArrayOrNull(): ReadonlyArray<ReactNode?>? =
+    upcast<Any>() as? ReadonlyArray<ReactNode?>
