@@ -423,6 +423,7 @@ sealed external interface WebGLRenderingContextBase {
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/getExtension)
      */
+    fun getExtension(name: String): JsAny?
     fun getExtension(extensionName: WebGLExtension.ANGLE_instanced_arrays): ANGLE_instanced_arrays?
     fun getExtension(extensionName: WebGLExtension.EXT_blend_minmax): EXT_blend_minmax?
     fun getExtension(extensionName: WebGLExtension.EXT_color_buffer_float): EXT_color_buffer_float?
@@ -457,7 +458,6 @@ sealed external interface WebGLRenderingContextBase {
     fun getExtension(extensionName: WebGLExtension.WEBGL_draw_buffers): WEBGL_draw_buffers?
     fun getExtension(extensionName: WebGLExtension.WEBGL_lose_context): WEBGL_lose_context?
     fun getExtension(extensionName: WebGLExtension.WEBGL_multi_draw): WEBGL_multi_draw?
-    fun getExtension(name: String): JsAny?
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/getFramebufferAttachmentParameter)
