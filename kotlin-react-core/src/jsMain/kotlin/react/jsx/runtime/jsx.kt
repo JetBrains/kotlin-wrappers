@@ -4,10 +4,8 @@ import js.internal.InternalApi
 import js.objects.Object
 import js.objects.unsafeJso
 import js.reflect.Reflect.deleteProperty
-import react.ElementType
-import react.Key
-import react.Props
-import react.ReactElement
+import js.reflect.unsafeCast
+import react.*
 import react.jsx.runtime.raw.jsxRaw
 import react.jsx.runtime.raw.jsxsRaw
 
@@ -44,11 +42,18 @@ fun <P : Props> jsx(
             key = defaultKey,
         )
 
-    val finalKey = props.key ?: defaultKey
     var finalProps = props
-    if (props.key != null) {
+    val finalKey = props.key ?: defaultKey
+
+    val builderChildren = props.getBuilderChildren()
+    if (props.key != null || builderChildren != null) {
         finalProps = Object.assign(unsafeJso(), props)
-        deleteProperty(props, "key")
+        deleteProperty(finalProps, "key")
+
+        if (builderChildren != null) {
+            unsafeCast<PropsWithChildren>(finalProps)
+                .children = builderChildren
+        }
     }
 
     // TODO: use `jsx` if no children?

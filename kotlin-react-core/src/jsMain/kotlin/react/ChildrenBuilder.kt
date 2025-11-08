@@ -9,11 +9,25 @@
 
 package react
 
-import js.internal.InternalApi
 import js.objects.unsafeJso
 import js.reflect.Reflect.deleteProperty
 import js.symbol.Symbol
 import react.jsx.runtime.jsx
+
+// builder children
+private val BUILDER_CHILDREN: Symbol = Symbol("@@builder-children")
+
+private inline var ChildrenBuilder.builderChildren: ReactNodeArray?
+    get() = asDynamic()[BUILDER_CHILDREN]
+    set(value) {
+        asDynamic()[BUILDER_CHILDREN] = value
+    }
+
+fun ChildrenBuilder.getBuilderChildren(): ReactNode? =
+    asDynamic()[BUILDER_CHILDREN]
+
+internal fun Props.getBuilderChildren(): ReactNode? =
+    asDynamic()[BUILDER_CHILDREN]
 
 // default key
 private val DEFAULT_KEY: Symbol = Symbol("@@default-key")
@@ -33,10 +47,6 @@ internal fun setDefaultKey(
 }
 
 sealed external interface ChildrenBuilder {
-    @InternalApi
-    @JsName("children")
-    var __children__: ReactNodeArray?
-
     inline operator fun ReactNode?.unaryPlus() {
         addChildNode(this)
     }
@@ -88,11 +98,11 @@ sealed external interface ChildrenBuilder {
 internal fun ChildrenBuilder.addChildNode(
     node: ReactNode?,
 ) {
-    val children = __children__
+    val children = builderChildren
     if (children != null) {
         children.push(node)
     } else {
-        __children__ = ReactNodeArray(node)
+        builderChildren = ReactNodeArray(node)
     }
 }
 
