@@ -43,12 +43,14 @@ fun <P : Props> jsx(
         )
 
     var finalProps = props
-    val finalKey = props.key ?: defaultKey
+    val finalKey = props.key
+        ?: defaultKey
+        ?: undefined
 
     val builderChildren = props.getBuilderChildren()
     var jsxMode = true
 
-    if (props.key != null || builderChildren != null) {
+    if (props.key !== undefined || builderChildren != null) {
         finalProps = Object.assign(unsafeJso(), props)
         deleteProperty(finalProps, "key")
 
