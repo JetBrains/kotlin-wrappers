@@ -39,7 +39,7 @@ fun <P : Props> jsx(
         return jsxRaw(
             type = type,
             props = unsafeJso(),
-            key = defaultKey,
+            key = defaultKey ?: undefined,
         )
 
     var finalProps = props
