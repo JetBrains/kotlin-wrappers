@@ -52,7 +52,7 @@ fun <P : Props> jsx(
 
     if (props.key !== undefined || builderChildren != null) {
         finalProps = Object.assign(unsafeJso(), props)
-        deleteProperty(finalProps, "key")
+        deleteProperty(finalProps, Props::key.name)
 
         if (builderChildren != null) {
             val singleBuilderChild = builderChildren
