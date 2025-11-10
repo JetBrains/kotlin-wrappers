@@ -2,17 +2,8 @@
 
 package react.jsx.runtime.raw
 
-import react.ElementType
-import react.Key
-import react.Props
-import react.ReactElement
-
 /**
  * [Online Documentation](https://react.dev/reference/react)
  */
 @JsName("jsx")
-internal external fun <P : Props> jsxRaw(
-    type: ElementType<P>,
-    props: P,
-    key: Key? = definedExternally,
-): ReactElement<P>
+internal external val jsxRaw: JsxFunction

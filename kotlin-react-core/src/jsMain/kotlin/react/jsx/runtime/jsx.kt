@@ -66,17 +66,11 @@ fun <P : Props> jsx(
         }
     }
 
-    return if (jsxMode) {
-        jsxRaw(
-            type = type,
-            props = finalProps,
-            key = finalKey,
-        )
-    } else {
-        jsxsRaw(
-            type = type,
-            props = finalProps,
-            key = finalKey,
-        )
-    }
+    val create = if (jsxMode) jsxRaw else jsxsRaw
+
+    return create(
+        type = type,
+        props = finalProps,
+        key = finalKey,
+    )
 }
