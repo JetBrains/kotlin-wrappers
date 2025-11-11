@@ -15,7 +15,7 @@ external interface Abortable {
     var signal: AbortSignal?
 }
 
-fun AbortSignal.toCoroutineScope(): CoroutineScope {
+fun AbortSignal.asCoroutineScope(): CoroutineScope {
     val job = Job()
 
     fun cancel() {

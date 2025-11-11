@@ -8,6 +8,6 @@ external interface AbortableLike {
     val signal: AbortSignal
 }
 
-fun AbortableLike.toCoroutineScope(): CoroutineScope =
-    signal.toCoroutineScope()
+fun AbortableLike.asCoroutineScope(): CoroutineScope =
+    signal.asCoroutineScope()
 
