@@ -1,0 +1,29 @@
+/* CSS files add styling rules to your content */
+
+body {
+    font-family: helvetica, arial, sans-serif;
+    margin: 2em;
+}
+
+h1 {
+    font-style: bold;
+    color: #330000;
+}
+
+.control-box {
+    margin-top: 1em;
+    width: 20em;
+    border: 2px solid #333;
+    border-radius: 2em;
+    padding: 1em;
+}
+
+.control {
+    margin-bottom: 1em;
+}
+
+.control input {
+    width: 14em;
+    left: 20em;
+    float: right;
+}

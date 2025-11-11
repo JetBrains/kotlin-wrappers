@@ -34,6 +34,7 @@ includeBuild("../")
 
 include("browser")
 include("event-flow")
+include("mdn-audioworklet-example")
 include("react")
 include("react-svg")
 include("react-lazy-modules-webpack")

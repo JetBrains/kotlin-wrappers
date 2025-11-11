@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>AudioWorklet Demo</title>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <!-- import the webpage's stylesheet -->
+    <link rel="stylesheet" href="style.css"/>
+
+    <!-- import the webpage's javascript file -->
+    <script src="mdn-audioworklet-example.mjs" type="module" defer></script>
+</head>
+<body>
+<h1>AudioWorklet Demo</h1>
+
+<p>
+    This page is a demo for the <code>AudioWorklet</code> API, which lets you
+    process audio in the background using a worklet.
+</p>
+
+<button id="toggle">Toggle Sound</button>
+
+<div class="control-box">
+    <div class="control">
+        <span class="control-label">
+          <label for="osc-gain">Oscillator gain:</label>
+        </span>
+        <input
+                type="range"
+                id="osc-gain"
+                name="osc-gain"
+                min="0.0"
+                max="1.0"
+                step="0.05"
+                value="0.1"
+        />
+    </div>
+
+    <div class="control">
+        <span class="control-label">
+          <label for="hiss-gain">Hiss gain:</label>
+        </span>
+        <input
+                type="range"
+                id="hiss-gain"
+                name="hiss-gain"
+                min="0.0"
+                max="1.0"
+                step="0.05"
+                value="0.2"
+        />
+    </div>
+</div>
+</body>
+</html>
