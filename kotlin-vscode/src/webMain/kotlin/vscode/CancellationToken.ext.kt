@@ -3,7 +3,7 @@ package vscode
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Job
 
-fun CancellationToken.toCoroutineScope(): CoroutineScope {
+fun CancellationToken.asCoroutineScope(): CoroutineScope {
     val job = Job()
 
     if (isCancellationRequested) {
