@@ -187,6 +187,9 @@ internal fun kotlinType(
         return "$baseType /* Partial */"
     }
 
+    if (type.startsWith("TuplePrefixes"))
+        return kotlinType(type.removeSurrounding("TuplePrefixes<", ">"))
+
     if (" is " in type)
         return "Boolean /* $type */"
 

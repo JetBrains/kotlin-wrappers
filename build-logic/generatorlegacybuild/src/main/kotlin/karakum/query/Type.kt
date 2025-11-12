@@ -19,6 +19,8 @@ private val SKIPPED_TYPES = setOf(
     "DataTag",
     "InferDataFromTag",
     "InferErrorFromTag",
+    "TuplePrefixes",
+    "DropLast",
 )
 
 class Type(
