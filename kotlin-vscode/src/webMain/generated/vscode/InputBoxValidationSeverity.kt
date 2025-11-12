@@ -11,24 +11,23 @@ package vscode
 import kotlin.js.JsModule
 
 /**
- * Impacts the behavior and appearance of the validation message.
- * The severity level for input box validation.
+ * Severity levels for input box validation messages.
  */
 sealed /* enum */
 external interface InputBoxValidationSeverity {
     companion object {
         /**
-         * Informational severity level.
+         * Indicates an informational message that does not prevent input acceptance.
          */
         val Info: InputBoxValidationSeverity // 1
 
         /**
-         * Warning severity level.
+         * Indicates a warning message that does not prevent input acceptance.
          */
         val Warning: InputBoxValidationSeverity // 2
 
         /**
-         * Error severity level.
+         * Indicates an error message that prevents the user from accepting the input.
          */
         val Error: InputBoxValidationSeverity // 3
     }

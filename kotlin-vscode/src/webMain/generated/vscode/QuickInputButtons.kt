@@ -21,10 +21,10 @@ open external class QuickInputButtons {
 
     companion object {
         /**
-         * A back button for [QuickPick] and [InputBox].
+         * A predefined back button for [QuickPick] and [InputBox].
          *
-         * When a navigation 'back' button is needed this one should be used for consistency.
-         * It comes with a predefined icon, tooltip and location.
+         * This button should be used for consistency when a navigation back button is needed. It comes
+         * with a predefined icon, tooltip, and location.
          *
          * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#QuickInputButtons.Back)
          */

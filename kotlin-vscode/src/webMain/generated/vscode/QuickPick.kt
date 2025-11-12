@@ -7,14 +7,14 @@ import js.core.Void
 import kotlin.js.JsString
 
 /**
- * A concrete [QuickInput] to let the user pick an item from a
- * list of items of type T. The items can be filtered through a filter text field and
- * there is an option [canSelectMany][QuickPick.canSelectMany] to allow for
- * selecting multiple items.
+ * A concrete [QuickInput] to let the user pick an item from a list of items of type `T`.
  *
- * Note that in many cases the more convenient [window.showQuickPick]
- * is easier to use. [window.createQuickPick] should be used
- * when [window.showQuickPick] does not offer the required flexibility.
+ * The items can be filtered through a filter text field and there is an option
+ * [canSelectMany][QuickPick.canSelectMany] to allow for selecting multiple items.
+ *
+ * Note that in many cases the more convenient [window.showQuickPick] is easier to use.
+ * [window.createQuickPick] should be used when [window.showQuickPick] does not offer
+ * the required flexibility.
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#QuickPick)
  */
@@ -24,14 +24,14 @@ external interface QuickPick<
         > :
     QuickInput {
     /**
-     * Current value of the filter text.
+     * The current value of the filter text.
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#QuickPick.value)
      */
     var value: String
 
     /**
-     * Optional placeholder shown in the filter textbox when no filter has been entered.
+     * Optional placeholder text displayed in the filter text box when no value has been entered.
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#QuickPick.placeholder)
      */
@@ -59,8 +59,10 @@ external interface QuickPick<
     var buttons: ReadonlyArray<QuickInputButton>
 
     /**
-     * An event signaling when a top level button (buttons stored in [buttons]) was triggered.
-     * This event does not fire for buttons on a [QuickPickItem].
+     * An event signaling when a button was triggered.
+     *
+     * This event fires for buttons stored in the [buttons][QuickPick.buttons] array. This event does
+     * not fire for buttons on a [QuickPickItem].
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#QuickPick.onDidTriggerButton)
      */
@@ -68,7 +70,8 @@ external interface QuickPick<
 
     /**
      * An event signaling when a button in a particular [QuickPickItem] was triggered.
-     * This event does not fire for buttons in the title bar.
+     *
+     * This event does not fire for buttons in the title bar which are part of [buttons][QuickPick.buttons].
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#QuickPick.onDidTriggerItemButton)
      */
@@ -82,28 +85,28 @@ external interface QuickPick<
     var items: ReadonlyArray<T>
 
     /**
-     * If multiple items can be selected at the same time. Defaults to false.
+     * Determines if multiple items can be selected at the same time. Defaults to `false`.
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#QuickPick.canSelectMany)
      */
     var canSelectMany: Boolean
 
     /**
-     * If the filter text should also be matched against the description of the items. Defaults to false.
+     * Determines if the filter text should also be matched against the [description][QuickPickItem.description] of the items. Defaults to `false`.
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#QuickPick.matchOnDescription)
      */
     var matchOnDescription: Boolean
 
     /**
-     * If the filter text should also be matched against the detail of the items. Defaults to false.
+     * Determines if the filter text should also be matched against the [detail][QuickPickItem.detail] of the items. Defaults to `false`.
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#QuickPick.matchOnDetail)
      */
     var matchOnDetail: Boolean
 
     /**
-     * An optional flag to maintain the scroll position of the quick pick when the quick pick items are updated. Defaults to false.
+     * Determines if the scroll position is maintained when the quick pick items are updated. Defaults to `false`.
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#QuickPick.keepScrollPosition)
      */

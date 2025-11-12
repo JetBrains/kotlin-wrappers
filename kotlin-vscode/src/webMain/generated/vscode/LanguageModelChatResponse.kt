@@ -49,7 +49,7 @@ external interface LanguageModelChatResponse {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#LanguageModelChatResponse.stream)
      */
-    var stream: AsyncIterable<JsAny /* LanguageModelTextPart | LanguageModelToolCallPart | unknown */>
+    var stream: AsyncIterable<JsAny /* LanguageModelTextPart | LanguageModelToolCallPart | LanguageModelDataPart | unknown */>
 
     /**
      * This is equivalent to filtering everything except for text parts from a [LanguageModelChatResponse.stream].

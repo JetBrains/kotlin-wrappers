@@ -21,7 +21,7 @@ open external class LanguageModelToolResult {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#LanguageModelToolResult.content)
      */
-    var content: ReadonlyArray<JsAny /* LanguageModelTextPart | LanguageModelPromptTsxPart | unknown */>
+    var content: ReadonlyArray<JsAny /* LanguageModelTextPart | LanguageModelPromptTsxPart | LanguageModelDataPart | unknown */>
 
     /**
      * Create a LanguageModelToolResult
@@ -29,5 +29,5 @@ open external class LanguageModelToolResult {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#LanguageModelToolResult.constructor)
      */
-    constructor(content: ReadonlyArray<JsAny /* LanguageModelTextPart | LanguageModelPromptTsxPart */>)
+    constructor(content: ReadonlyArray<JsAny /* LanguageModelTextPart | LanguageModelPromptTsxPart | LanguageModelDataPart | unknown */>)
 }

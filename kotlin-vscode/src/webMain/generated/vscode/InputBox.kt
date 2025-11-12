@@ -12,43 +12,44 @@ import kotlin.js.JsString
 /**
  * A concrete [QuickInput] to let the user input a text value.
  *
- * Note that in many cases the more convenient [window.showInputBox]
- * is easier to use. [window.createInputBox] should be used
- * when [window.showInputBox] does not offer the required flexibility.
+ * Note that in many cases the more convenient [window.showInputBox] is easier to use.
+ * [window.createInputBox] should be used when [window.showInputBox] does not offer
+ * the required flexibility.
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#InputBox)
  */
 external interface InputBox :
     QuickInput {
     /**
-     * Current input value.
+     * The current input value.
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#InputBox.value)
      */
     var value: String
 
     /**
-     * Selection range in the input value. Defined as tuple of two number where the
-     * first is the inclusive start index and the second the exclusive end index. When `undefined` the whole
-     * pre-filled value will be selected, when empty (start equals end) only the cursor will be set,
-     * otherwise the defined range will be selected.
+     * Selection range in the input value.
      *
-     * This property does not get updated when the user types or makes a selection,
-     * but it can be updated by the extension.
+     * Defined as tuple of two numbers where the first is the inclusive start index and the second the
+     * exclusive end index. When `undefined` the whole pre-filled value will be selected, when empty
+     * (start equals end) only the cursor will be set, otherwise the defined range will be selected.
+     *
+     * This property does not get updated when the user types or makes a selection, but it can be updated
+     * by the extension.
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#InputBox.valueSelection)
      */
     var valueSelection: Tuple2<JsInt, JsInt>?
 
     /**
-     * Optional placeholder shown when no value has been input.
+     * Optional placeholder text shown when no value has been input.
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#InputBox.placeholder)
      */
     var placeholder: String?
 
     /**
-     * If the input value should be hidden. Defaults to false.
+     * Determines if the input value should be hidden. Defaults to `false`.
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#InputBox.password)
      */
@@ -91,8 +92,9 @@ external interface InputBox :
 
     /**
      * An optional validation message indicating a problem with the current input value.
-     * By returning a string, the InputBox will use a default [InputBoxValidationSeverity] of Error.
-     * Returning undefined clears the validation message.
+     *
+     * By setting a string, the InputBox will use a default [InputBoxValidationSeverity] of Error.
+     * Returning `undefined` clears the validation message.
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#InputBox.validationMessage)
      */

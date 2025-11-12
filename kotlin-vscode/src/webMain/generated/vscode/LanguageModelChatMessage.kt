@@ -68,7 +68,7 @@ open external class LanguageModelChatMessage {
          * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#LanguageModelChatMessage.User)
          */
         fun User(
-            content: JsAny, /* string | Array<LanguageModelTextPart | LanguageModelToolResultPart> */
+            content: JsAny, /* string | Array<LanguageModelTextPart | LanguageModelToolResultPart | LanguageModelDataPart> */
             name: String = definedExternally,
         ): LanguageModelChatMessage
 
@@ -81,7 +81,7 @@ open external class LanguageModelChatMessage {
          * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#LanguageModelChatMessage.Assistant)
          */
         fun Assistant(
-            content: JsAny, /* string | Array<LanguageModelTextPart | LanguageModelToolCallPart> */
+            content: JsAny, /* string | Array<LanguageModelTextPart | LanguageModelToolCallPart | LanguageModelDataPart> */
             name: String = definedExternally,
         ): LanguageModelChatMessage
     }

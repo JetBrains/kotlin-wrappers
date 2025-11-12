@@ -524,7 +524,7 @@ external object window {
      * @param items An array of strings, or a promise that resolves to an array of strings.
      * @param options Configures the behavior of the selection list.
      * @param token A token that can be used to signal cancellation.
-     * @returns A promise that resolves to the selected items or `undefined`.
+     * @returns A thenable that resolves to the selected items or `undefined`.
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#window.showQuickPick)
      */
@@ -536,7 +536,7 @@ external object window {
      * @param items An array of strings, or a promise that resolves to an array of strings.
      * @param options Configures the behavior of the selection list.
      * @param token A token that can be used to signal cancellation.
-     * @returns A promise that resolves to the selection or `undefined`.
+     * @returns A thenable that resolves to the selected string or `undefined`.
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#window.showQuickPick)
      */
@@ -560,7 +560,7 @@ external object window {
      * @param items An array of items, or a promise that resolves to an array of items.
      * @param options Configures the behavior of the selection list.
      * @param token A token that can be used to signal cancellation.
-     * @returns A promise that resolves to the selected items or `undefined`.
+     * @returns A thenable that resolves to the selected items or `undefined`.
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#window.showQuickPick)
      */
@@ -572,7 +572,7 @@ external object window {
      * @param items An array of items, or a promise that resolves to an array of items.
      * @param options Configures the behavior of the selection list.
      * @param token A token that can be used to signal cancellation.
-     * @returns A promise that resolves to the selected item or `undefined`.
+     * @returns A thenable that resolves to the selected item or `undefined`.
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#window.showQuickPick)
      */
@@ -629,13 +629,13 @@ external object window {
     /**
      * Opens an input box to ask the user for input.
      *
-     * The returned value will be `undefined` if the input box was canceled (e.g. pressing ESC). Otherwise the
+     * The returned value will be `undefined` if the input box was canceled (e.g., pressing ESC). Otherwise the
      * returned value will be the string typed by the user or an empty string if the user did not type
      * anything but dismissed the input box with OK.
      *
      * @param options Configures the behavior of the input box.
      * @param token A token that can be used to signal cancellation.
-     * @returns A promise that resolves to a string the user provided or to `undefined` in case of dismissal.
+     * @returns A thenable that resolves to a string the user provided or to `undefined` in case of dismissal.
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#window.showInputBox)
      */
@@ -646,12 +646,11 @@ external object window {
     ): PromiseLike<JsString?>
 
     /**
-     * Creates a [QuickPick] to let the user pick an item from a list
-     * of items of type T.
+     * Creates a [QuickPick] to let the user pick an item from a list of items of type `T`.
      *
-     * Note that in many cases the more convenient [window.showQuickPick]
-     * is easier to use. [window.createQuickPick] should be used
-     * when [window.showQuickPick] does not offer the required flexibility.
+     * Note that in many cases the more convenient [window.showQuickPick] is easier to use.
+     * [window.createQuickPick] should be used when [window.showQuickPick] does not offer
+     * the required flexibility.
      *
      * @returns A new [QuickPick].
      *
@@ -662,9 +661,9 @@ external object window {
     /**
      * Creates a [InputBox] to let the user enter some text input.
      *
-     * Note that in many cases the more convenient [window.showInputBox]
-     * is easier to use. [window.createInputBox] should be used
-     * when [window.showInputBox] does not offer the required flexibility.
+     * Note that in many cases the more convenient [window.showInputBox] is easier to use.
+     * [window.createInputBox] should be used when [window.showInputBox] does not offer
+     * the required flexibility.
      *
      * @returns A new [InputBox].
      *

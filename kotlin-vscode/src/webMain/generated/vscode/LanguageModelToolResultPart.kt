@@ -29,7 +29,7 @@ open external class LanguageModelToolResultPart {
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#LanguageModelToolResultPart.content)
      */
-    var content: ReadonlyArray<JsAny /* LanguageModelTextPart | LanguageModelPromptTsxPart | unknown */>
+    var content: ReadonlyArray<JsAny /* LanguageModelTextPart | LanguageModelPromptTsxPart | LanguageModelDataPart | unknown */>
 
     /**
      * @param callId The ID of the tool call.
@@ -39,6 +39,6 @@ open external class LanguageModelToolResultPart {
      */
     constructor(
         callId: String,
-        content: ReadonlyArray<JsAny /* LanguageModelTextPart | LanguageModelPromptTsxPart | unknown */>,
+        content: ReadonlyArray<JsAny /* LanguageModelTextPart | LanguageModelPromptTsxPart | LanguageModelDataPart | unknown */>,
     )
 }

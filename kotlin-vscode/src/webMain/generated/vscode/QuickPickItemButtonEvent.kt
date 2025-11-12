@@ -5,8 +5,7 @@ package vscode
 import js.objects.JsPlainObject
 
 /**
- * An event signaling when a button in a particular [QuickPickItem] was triggered.
- * This event does not fire for buttons in the title bar.
+ * An event describing a button that was pressed on a [QuickPickItem].
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#QuickPickItemButtonEvent)
  */
@@ -16,7 +15,7 @@ external interface QuickPickItemButtonEvent<
         QuickPickItem,
         > {
     /**
-     * The button that was clicked.
+     * The button that was pressed.
      *
      * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#QuickPickItemButtonEvent.button)
      */

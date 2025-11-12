@@ -9,4 +9,4 @@ import kotlin.js.JsAny
  *
  * [Online Documentation](https://code.visualstudio.com/api/references/vscode-api#LanguageModelResponsePart)
  */
-typealias LanguageModelResponsePart = JsAny /* LanguageModelTextPart | LanguageModelToolResultPart | LanguageModelToolCallPart */
+typealias LanguageModelResponsePart = JsAny /* LanguageModelTextPart | LanguageModelToolResultPart | LanguageModelToolCallPart | LanguageModelDataPart */
