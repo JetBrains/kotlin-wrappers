@@ -6,7 +6,7 @@ internal fun createElementOrNull(
     block: @ReactDsl ChildrenBuilder.() -> Unit,
 ): ReactElement<*>? {
     val childNodes = unsafeJso(block)
-        .getBuilderChildren()
+        .buildChildren()
         ?: return null
 
     return Fragment.create {

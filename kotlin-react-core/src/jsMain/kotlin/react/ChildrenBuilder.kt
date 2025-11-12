@@ -9,6 +9,7 @@
 
 package react
 
+import js.internal.InternalApi
 import js.objects.unsafeJso
 import js.reflect.Reflect.deleteProperty
 import js.symbol.Symbol
@@ -23,11 +24,18 @@ private inline var ChildrenBuilder.builderChildren: ReactNodeArray?
         asDynamic()[BUILDER_CHILDREN] = value
     }
 
-fun ChildrenBuilder.getBuilderChildren(): ReactNode? =
-    asDynamic()[BUILDER_CHILDREN]
+private fun buildChildren(builder: Any): ReactNode? {
+    val children: ReactNode? = builder.asDynamic()[BUILDER_CHILDREN]
+    deleteProperty(builder, BUILDER_CHILDREN)
+    return children
+}
 
-internal fun Props.getBuilderChildren(): ReactNode? =
-    asDynamic()[BUILDER_CHILDREN]
+@InternalApi
+fun ChildrenBuilder.buildChildren(): ReactNode? =
+    buildChildren(this)
+
+internal fun Props.buildChildren(): ReactNode? =
+    buildChildren(this)
 
 // default key
 private val DEFAULT_KEY: Symbol = Symbol("@@default-key")

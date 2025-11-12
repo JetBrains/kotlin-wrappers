@@ -47,7 +47,7 @@ fun <P : Props> jsx(
         ?: defaultKey
         ?: undefined
 
-    val builderChildren = props.getBuilderChildren()
+    val builderChildren = props.buildChildren()
     var jsxMode = true
 
     if (props.key !== undefined || builderChildren != null) {
