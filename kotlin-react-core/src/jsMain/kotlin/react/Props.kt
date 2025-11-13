@@ -8,10 +8,13 @@
 
 package react
 
+import js.objects.Destructible
 import js.objects.Object
 
 @JsExternalInheritorsOnly
-external interface Props {
+external interface Props :
+    Destructible<Props> {
+
     var key: Key?
 
     inline operator fun Props?.unaryPlus() {
