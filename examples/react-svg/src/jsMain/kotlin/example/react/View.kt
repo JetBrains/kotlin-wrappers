@@ -1,7 +1,6 @@
 package example.react
 
 import react.FC
-import react.Props
 import react.dom.html.ReactHTML.title
 import react.dom.svg.ReactSVG.animateMotion
 import react.dom.svg.ReactSVG.circle
@@ -12,7 +11,7 @@ import web.svg.indefinite
 
 // Kotlin example for React SVG animation
 // https://developer.mozilla.org/en-US/docs/Web/SVG/Guides/SVG_animation_with_SMIL#example_1_linear_motion
-internal val View: FC<Props> = FC {
+internal val View = FC {
     svg {
         xmlns = "http://www.w3.org/2000/svg"
         width = 300.0

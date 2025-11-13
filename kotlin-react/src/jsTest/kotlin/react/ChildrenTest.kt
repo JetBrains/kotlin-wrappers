@@ -5,7 +5,7 @@ import kotlin.test.*
 
 private val Container = FC<PropsWithChildren> {}
 
-private val Part = FC<Props> {}
+private val Part = FC {}
 
 class ChildrenTest {
     @Test
