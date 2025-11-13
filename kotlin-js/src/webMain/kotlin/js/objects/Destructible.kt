@@ -28,6 +28,7 @@ fun <T : Destructible<R>, P1, P2, R : JsAny> T.destruct(
 
     val rest: R = Object.assign(unsafeJso(), this)
     deleteProperty(rest, p1.name)
+    deleteProperty(rest, p2.name)
 
     return Triple(v1, v2, rest)
 }
