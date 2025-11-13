@@ -89,8 +89,6 @@ val Board = FC<BoardProps> { props ->
     }
 }
 
-external interface TicTacToeProps : Props
-
 private fun calculateWinner(squares: ReadonlyArray<String?>): String? {
     val lines = arrayOf(
         intArrayOf(0, 1, 2),
@@ -120,7 +118,7 @@ private fun calculateWinner(squares: ReadonlyArray<String?>): String? {
 
 // Make sure to include the CSS in your index.kt, e.g.
 // require("TicTacToe.css")
-val TicTacToeApp = FC<TicTacToeProps> {
+val TicTacToeApp = FC {
     var history by useState(arrayOf(arrayOfNulls<String?>(9)))
     var xIsNext by useState(true)
     var stepNumber by useState(0)
