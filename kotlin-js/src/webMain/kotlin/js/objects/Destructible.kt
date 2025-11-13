@@ -2,13 +2,12 @@ package js.objects
 
 import js.reflect.JsExternalInheritorsOnly
 import js.reflect.Reflect.deleteProperty
-import kotlin.js.JsAny
 import kotlin.reflect.KProperty1
 
 @JsExternalInheritorsOnly
 external interface Destructible<R : Destructible<R>>
 
-fun <T : Destructible<R>, P1, R : JsAny> T.destruct(
+fun <T : R, P1, R : Destructible<R>> T.destruct(
     p1: KProperty1<in T, P1>,
 ): Pair<P1, R> {
     val v1 = p1.get(this)
@@ -19,7 +18,7 @@ fun <T : Destructible<R>, P1, R : JsAny> T.destruct(
     return Pair(v1, rest)
 }
 
-fun <T : Destructible<R>, P1, P2, R : JsAny> T.destruct(
+fun <T : R, P1, P2, R : Destructible<R>> T.destruct(
     p1: KProperty1<in T, P1>,
     p2: KProperty1<in T, P2>,
 ): Triple<P1, P2, R> {
