@@ -10,7 +10,40 @@ import seskar.js.JsValue
 
 sealed external interface Offset {
     companion object {
+        @JsValue("bottom")
+        val bottom: Offset
+
+        @JsValue("center")
+        val center: Offset
+
+        @JsValue("left")
+        val left: Offset
+
+        @JsValue("right")
+        val right: Offset
+
+        @JsValue("top")
+        val top: Offset
+
+        @JsValue("border-box")
+        val borderBox: Offset
+
+        @JsValue("content-box")
+        val contentBox: Offset
+
+        @JsValue("padding-box")
+        val paddingBox: Offset
+
+        @JsValue("fill-box")
+        val fillBox: Offset
+
+        @JsValue("stroke-box")
+        val strokeBox: Offset
+
         @JsValue("normal")
         val normal: Offset
+
+        @JsValue("view-box")
+        val viewBox: Offset
     }
 }
