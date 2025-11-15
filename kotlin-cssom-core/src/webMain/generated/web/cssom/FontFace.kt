@@ -11,7 +11,6 @@ external interface FontFace {
     var fontFeatureSettings: FontFeatureSettings?
     var fontStretch: FontStretch?
     var fontStyle: FontStyle?
-    var fontVariant: FontVariant?
     var fontVariationSettings: FontVariationSettings?
     var fontWeight: FontWeight?
     var lineGapOverride: LineGapOverride?
