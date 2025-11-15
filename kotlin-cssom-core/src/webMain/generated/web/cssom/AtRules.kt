@@ -13,6 +13,9 @@ sealed external interface AtRules {
         @JsValue("@charset")
         val charset: AtRules
 
+        @JsValue("@container")
+        val container: AtRules
+
         @JsValue("@counter-style")
         val counterStyle: AtRules
 
@@ -46,14 +49,14 @@ sealed external interface AtRules {
         @JsValue("@page")
         val page: AtRules
 
+        @JsValue("@position-try")
+        val positionTry: AtRules
+
         @JsValue("@property")
         val property: AtRules
 
         @JsValue("@scope")
         val scope: AtRules
-
-        @JsValue("@scroll-timeline")
-        val scrollTimeline: AtRules
 
         @JsValue("@starting-style")
         val startingStyle: AtRules
@@ -61,7 +64,7 @@ sealed external interface AtRules {
         @JsValue("@supports")
         val supports: AtRules
 
-        @JsValue("@viewport")
-        val viewport: AtRules
+        @JsValue("@view-transition")
+        val viewTransition: AtRules
     }
 }

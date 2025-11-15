@@ -16,6 +16,9 @@ sealed external interface Overflow {
         @JsValue("hidden")
         val hidden: Overflow
 
+        @JsValue("overlay")
+        val overlay: Overflow
+
         @JsValue("scroll")
         val scroll: Overflow
 

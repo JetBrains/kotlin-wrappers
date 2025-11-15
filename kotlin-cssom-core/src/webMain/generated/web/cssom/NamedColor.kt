@@ -433,9 +433,6 @@ sealed external interface NamedColor {
         @JsValue("#FF6347")
         val tomato: Color
 
-        @JsValue("rgba(0,0,0,0)")
-        val transparent: Color
-
         @JsValue("#40E0D0")
         val turquoise: Color
 

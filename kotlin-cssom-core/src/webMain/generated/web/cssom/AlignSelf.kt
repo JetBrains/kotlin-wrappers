@@ -31,6 +31,9 @@ sealed external interface AlignSelf {
         @JsValue("start")
         val start: AlignSelf
 
+        @JsValue("anchor-center")
+        val anchorCenter: AlignSelf
+
         @JsValue("baseline")
         val baseline: AlignSelf
 

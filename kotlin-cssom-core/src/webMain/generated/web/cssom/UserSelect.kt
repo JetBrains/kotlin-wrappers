@@ -13,12 +13,6 @@ sealed external interface UserSelect {
         @JsValue("all")
         val all: UserSelect
 
-        @JsValue("contain")
-        val contain: UserSelect
-
-        @JsValue("element")
-        val element: UserSelect
-
         @JsValue("text")
         val text: UserSelect
     }

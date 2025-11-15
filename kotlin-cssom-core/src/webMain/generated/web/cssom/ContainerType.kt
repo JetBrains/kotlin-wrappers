@@ -16,6 +16,9 @@ sealed external interface ContainerType {
         @JsValue("normal")
         val normal: ContainerType
 
+        @JsValue("scroll-state")
+        val scrollState: ContainerType
+
         @JsValue("size")
         val size: ContainerType
     }

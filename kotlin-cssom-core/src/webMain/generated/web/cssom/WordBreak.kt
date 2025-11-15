@@ -10,6 +10,9 @@ import seskar.js.JsValue
 
 sealed external interface WordBreak {
     companion object {
+        @JsValue("auto-phrase")
+        val autoPhrase: WordBreak
+
         @JsValue("break-all")
         val breakAll: WordBreak
 

@@ -22,6 +22,9 @@ sealed external interface TextTransform {
         @JsValue("lowercase")
         val lowercase: TextTransform
 
+        @JsValue("math-auto")
+        val mathAuto: TextTransform
+
         @JsValue("uppercase")
         val uppercase: TextTransform
     }

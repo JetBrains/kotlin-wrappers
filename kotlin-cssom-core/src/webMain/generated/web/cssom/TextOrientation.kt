@@ -16,6 +16,9 @@ sealed external interface TextOrientation {
         @JsValue("sideways")
         val sideways: TextOrientation
 
+        @JsValue("sideways-right")
+        val sidewaysRight: TextOrientation
+
         @JsValue("upright")
         val upright: TextOrientation
     }

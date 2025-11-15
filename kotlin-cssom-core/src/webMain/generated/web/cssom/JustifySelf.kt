@@ -31,6 +31,9 @@ sealed external interface JustifySelf {
         @JsValue("start")
         val start: JustifySelf
 
+        @JsValue("anchor-center")
+        val anchorCenter: JustifySelf
+
         @JsValue("baseline")
         val baseline: JustifySelf
 

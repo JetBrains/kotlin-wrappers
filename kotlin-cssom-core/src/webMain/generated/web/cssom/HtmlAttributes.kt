@@ -40,14 +40,26 @@ sealed external interface HtmlAttributes {
         @JsValue("[allowpaymentrequest]")
         val allowpaymentrequest: HtmlAttributes
 
+        @JsValue("[alpha]")
+        val alpha: HtmlAttributes
+
         @JsValue("[alt]")
         val alt: HtmlAttributes
+
+        @JsValue("[anchor]")
+        val anchor: HtmlAttributes
 
         @JsValue("[archive]")
         val archive: HtmlAttributes
 
+        @JsValue("[as]")
+        val `as`: HtmlAttributes
+
         @JsValue("[async]")
         val async: HtmlAttributes
+
+        @JsValue("[attributionsourceid]")
+        val attributionsourceid: HtmlAttributes
 
         @JsValue("[attributionsrc]")
         val attributionsrc: HtmlAttributes
@@ -60,6 +72,9 @@ sealed external interface HtmlAttributes {
 
         @JsValue("[autocomplete]")
         val autocomplete: HtmlAttributes
+
+        @JsValue("[autocorrect]")
+        val autocorrect: HtmlAttributes
 
         @JsValue("[autofocus]")
         val autofocus: HtmlAttributes
@@ -124,6 +139,9 @@ sealed external interface HtmlAttributes {
         @JsValue("[clear]")
         val clear: HtmlAttributes
 
+        @JsValue("[closedby]")
+        val closedby: HtmlAttributes
+
         @JsValue("[codebase]")
         val codebase: HtmlAttributes
 
@@ -133,11 +151,20 @@ sealed external interface HtmlAttributes {
         @JsValue("[color]")
         val color: HtmlAttributes
 
+        @JsValue("[colorspace]")
+        val colorspace: HtmlAttributes
+
         @JsValue("[cols]")
         val cols: HtmlAttributes
 
         @JsValue("[colspan]")
         val colspan: HtmlAttributes
+
+        @JsValue("[command]")
+        val command: HtmlAttributes
+
+        @JsValue("[commandfor]")
+        val commandfor: HtmlAttributes
 
         @JsValue("[compact]")
         val compact: HtmlAttributes
@@ -148,11 +175,11 @@ sealed external interface HtmlAttributes {
         @JsValue("[contenteditable]")
         val contenteditable: HtmlAttributes
 
-        @JsValue("[contextmenu]")
-        val contextmenu: HtmlAttributes
-
         @JsValue("[controls]")
         val controls: HtmlAttributes
+
+        @JsValue("[controlslist]")
+        val controlslist: HtmlAttributes
 
         @JsValue("[coords]")
         val coords: HtmlAttributes
@@ -160,8 +187,14 @@ sealed external interface HtmlAttributes {
         @JsValue("[credentialless]")
         val credentialless: HtmlAttributes
 
+        @JsValue("[cross-origin-top-navigation-by-user-activation]")
+        val crossOriginTopNavigationByUserActivation: HtmlAttributes
+
         @JsValue("[crossorigin]")
         val crossorigin: HtmlAttributes
+
+        @JsValue("[csp]")
+        val csp: HtmlAttributes
 
         @JsValue("[data]")
         val data: HtmlAttributes
@@ -192,6 +225,12 @@ sealed external interface HtmlAttributes {
 
         @JsValue("[disabled]")
         val disabled: HtmlAttributes
+
+        @JsValue("[disablepictureinpicture]")
+        val disablepictureinpicture: HtmlAttributes
+
+        @JsValue("[disableremoteplayback]")
+        val disableremoteplayback: HtmlAttributes
 
         @JsValue("[download]")
         val download: HtmlAttributes
@@ -259,6 +298,9 @@ sealed external interface HtmlAttributes {
         @JsValue("[hreflang]")
         val hreflang: HtmlAttributes
 
+        @JsValue("[hreftranslate]")
+        val hreftranslate: HtmlAttributes
+
         @JsValue("[hspace]")
         val hspace: HtmlAttributes
 
@@ -289,21 +331,6 @@ sealed external interface HtmlAttributes {
         @JsValue("[ismap]")
         val ismap: HtmlAttributes
 
-        @JsValue("[itemid]")
-        val itemid: HtmlAttributes
-
-        @JsValue("[itemprop]")
-        val itemprop: HtmlAttributes
-
-        @JsValue("[itemref]")
-        val itemref: HtmlAttributes
-
-        @JsValue("[itemscope]")
-        val itemscope: HtmlAttributes
-
-        @JsValue("[itemtype]")
-        val itemtype: HtmlAttributes
-
         @JsValue("[kind]")
         val kind: HtmlAttributes
 
@@ -312,9 +339,6 @@ sealed external interface HtmlAttributes {
 
         @JsValue("[lang]")
         val lang: HtmlAttributes
-
-        @JsValue("[language]")
-        val language: HtmlAttributes
 
         @JsValue("[leftmargin]")
         val leftmargin: HtmlAttributes
@@ -337,9 +361,6 @@ sealed external interface HtmlAttributes {
         @JsValue("[low]")
         val low: HtmlAttributes
 
-        @JsValue("[manifest]")
-        val manifest: HtmlAttributes
-
         @JsValue("[marginheight]")
         val marginheight: HtmlAttributes
 
@@ -358,9 +379,6 @@ sealed external interface HtmlAttributes {
         @JsValue("[method]")
         val method: HtmlAttributes
 
-        @JsValue("[methods]")
-        val methods: HtmlAttributes
-
         @JsValue("[min]")
         val min: HtmlAttributes
 
@@ -369,9 +387,6 @@ sealed external interface HtmlAttributes {
 
         @JsValue("[moz-opaque]")
         val mozOpaque: HtmlAttributes
-
-        @JsValue("[mozactionhint]")
-        val mozactionhint: HtmlAttributes
 
         @JsValue("[mozallowfullscreen]")
         val mozallowfullscreen: HtmlAttributes
@@ -406,12 +421,6 @@ sealed external interface HtmlAttributes {
         @JsValue("[novalidate]")
         val novalidate: HtmlAttributes
 
-        @JsValue("[nowrap]")
-        val nowrap: HtmlAttributes
-
-        @JsValue("[onerror]")
-        val onerror: HtmlAttributes
-
         @JsValue("[open]")
         val open: HtmlAttributes
 
@@ -430,6 +439,9 @@ sealed external interface HtmlAttributes {
         @JsValue("[placeholder]")
         val placeholder: HtmlAttributes
 
+        @JsValue("[playsinline]")
+        val playsinline: HtmlAttributes
+
         @JsValue("[popover]")
         val popover: HtmlAttributes
 
@@ -445,8 +457,8 @@ sealed external interface HtmlAttributes {
         @JsValue("[preload]")
         val preload: HtmlAttributes
 
-        @JsValue("[profile]")
-        val profile: HtmlAttributes
+        @JsValue("[privateToken]")
+        val privateToken: HtmlAttributes
 
         @JsValue("[readonly]")
         val readonly: HtmlAttributes
@@ -481,6 +493,9 @@ sealed external interface HtmlAttributes {
         @JsValue("[sandbox]")
         val sandbox: HtmlAttributes
 
+        @JsValue("[scheme]")
+        val scheme: HtmlAttributes
+
         @JsValue("[scope]")
         val scope: HtmlAttributes
 
@@ -499,8 +514,17 @@ sealed external interface HtmlAttributes {
         @JsValue("[shadowroot]")
         val shadowroot: HtmlAttributes
 
+        @JsValue("[shadowrootclonable]")
+        val shadowrootclonable: HtmlAttributes
+
+        @JsValue("[shadowrootdelegatesfocus]")
+        val shadowrootdelegatesfocus: HtmlAttributes
+
         @JsValue("[shadowrootmode]")
         val shadowrootmode: HtmlAttributes
+
+        @JsValue("[shadowrootserializable]")
+        val shadowrootserializable: HtmlAttributes
 
         @JsValue("[shape]")
         val shape: HtmlAttributes
@@ -595,8 +619,14 @@ sealed external interface HtmlAttributes {
         @JsValue("[vspace]")
         val vspace: HtmlAttributes
 
+        @JsValue("[webkit-playsinline]")
+        val webkitPlaysinline: HtmlAttributes
+
         @JsValue("[webkitallowfullscreen]")
         val webkitallowfullscreen: HtmlAttributes
+
+        @JsValue("[webkitdirectory]")
+        val webkitdirectory: HtmlAttributes
 
         @JsValue("[width]")
         val width: HtmlAttributes
@@ -604,8 +634,8 @@ sealed external interface HtmlAttributes {
         @JsValue("[wrap]")
         val wrap: HtmlAttributes
 
-        @JsValue("[x-moz-errormessage]")
-        val xMozErrormessage: HtmlAttributes
+        @JsValue("[writingsuggestions]")
+        val writingsuggestions: HtmlAttributes
 
         @JsValue("[xmlns]")
         val xmlns: HtmlAttributes

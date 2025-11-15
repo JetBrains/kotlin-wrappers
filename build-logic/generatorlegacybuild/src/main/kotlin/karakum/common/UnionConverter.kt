@@ -296,6 +296,7 @@ internal fun unionName(
         "class",
         "for",
         "is",
+        "as",
         "object",
         "super",
             -> "`${name}`"

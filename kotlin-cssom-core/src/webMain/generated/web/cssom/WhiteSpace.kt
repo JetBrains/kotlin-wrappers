@@ -10,26 +10,11 @@ import seskar.js.JsValue
 
 sealed external interface WhiteSpace {
     companion object {
-        @JsValue("balance")
-        val balance: WhiteSpace
-
         @JsValue("break-spaces")
         val breakSpaces: WhiteSpace
 
         @JsValue("collapse")
         val collapse: WhiteSpace
-
-        @JsValue("discard")
-        val discard: WhiteSpace
-
-        @JsValue("discard-after")
-        val discardAfter: WhiteSpace
-
-        @JsValue("discard-before")
-        val discardBefore: WhiteSpace
-
-        @JsValue("discard-inner")
-        val discardInner: WhiteSpace
 
         @JsValue("normal")
         val normal: WhiteSpace
@@ -54,12 +39,6 @@ sealed external interface WhiteSpace {
 
         @JsValue("preserve-spaces")
         val preserveSpaces: WhiteSpace
-
-        @JsValue("pretty")
-        val pretty: WhiteSpace
-
-        @JsValue("stable")
-        val stable: WhiteSpace
 
         @JsValue("wrap")
         val wrap: WhiteSpace

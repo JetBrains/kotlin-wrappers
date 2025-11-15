@@ -31,6 +31,9 @@ sealed external interface PlaceSelf {
         @JsValue("start")
         val start: PlaceSelf
 
+        @JsValue("anchor-center")
+        val anchorCenter: PlaceSelf
+
         @JsValue("baseline")
         val baseline: PlaceSelf
 

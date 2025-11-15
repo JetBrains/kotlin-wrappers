@@ -12,8 +12,5 @@ sealed external interface ColumnFill {
     companion object {
         @JsValue("balance")
         val balance: ColumnFill
-
-        @JsValue("balance-all")
-        val balanceAll: ColumnFill
     }
 }

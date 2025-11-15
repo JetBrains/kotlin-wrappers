@@ -31,6 +31,9 @@ sealed external interface PlaceItems {
         @JsValue("start")
         val start: PlaceItems
 
+        @JsValue("anchor-center")
+        val anchorCenter: PlaceItems
+
         @JsValue("baseline")
         val baseline: PlaceItems
 

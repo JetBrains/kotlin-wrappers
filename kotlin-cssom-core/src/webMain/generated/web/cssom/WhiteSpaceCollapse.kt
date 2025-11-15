@@ -16,9 +16,6 @@ sealed external interface WhiteSpaceCollapse {
         @JsValue("collapse")
         val collapse: WhiteSpaceCollapse
 
-        @JsValue("discard")
-        val discard: WhiteSpaceCollapse
-
         @JsValue("preserve")
         val preserve: WhiteSpaceCollapse
 

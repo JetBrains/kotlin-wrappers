@@ -15,5 +15,8 @@ sealed external interface ImageRendering {
 
         @JsValue("pixelated")
         val pixelated: ImageRendering
+
+        @JsValue("smooth")
+        val smooth: ImageRendering
     }
 }

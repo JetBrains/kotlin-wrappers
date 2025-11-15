@@ -37,6 +37,9 @@ sealed external interface FontSize {
         @JsValue("larger")
         val larger: FontSize
 
+        @JsValue("math")
+        val math: FontSize
+
         @JsValue("smaller")
         val smaller: FontSize
     }

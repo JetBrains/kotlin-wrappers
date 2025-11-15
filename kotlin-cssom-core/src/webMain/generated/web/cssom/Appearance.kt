@@ -28,20 +28,11 @@ sealed external interface Appearance {
         @JsValue("progress-bar")
         val progressBar: Appearance
 
-        @JsValue("push-button")
-        val pushButton: Appearance
-
         @JsValue("radio")
         val radio: Appearance
 
         @JsValue("searchfield")
         val searchfield: Appearance
-
-        @JsValue("slider-horizontal")
-        val sliderHorizontal: Appearance
-
-        @JsValue("square-button")
-        val squareButton: Appearance
 
         @JsValue("textarea")
         val textarea: Appearance

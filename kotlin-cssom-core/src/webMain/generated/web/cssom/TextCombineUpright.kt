@@ -12,5 +12,8 @@ sealed external interface TextCombineUpright {
     companion object {
         @JsValue("all")
         val all: TextCombineUpright
+
+        @JsValue("digits")
+        val digits: TextCombineUpright
     }
 }

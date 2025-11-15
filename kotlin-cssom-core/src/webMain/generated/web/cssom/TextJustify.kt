@@ -10,6 +10,9 @@ import seskar.js.JsValue
 
 sealed external interface TextJustify {
     companion object {
+        @JsValue("distribute")
+        val distribute: TextJustify
+
         @JsValue("inter-character")
         val interCharacter: TextJustify
 

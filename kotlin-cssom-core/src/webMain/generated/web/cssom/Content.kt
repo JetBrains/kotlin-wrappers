@@ -22,9 +22,6 @@ sealed external interface Content {
         @JsValue("open-quote")
         val openQuote: Content
 
-        @JsValue("contents")
-        val contents: Content
-
         @JsValue("normal")
         val normal: Content
     }

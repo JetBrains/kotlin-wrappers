@@ -31,6 +31,9 @@ sealed external interface JustifyItems {
         @JsValue("start")
         val start: JustifyItems
 
+        @JsValue("anchor-center")
+        val anchorCenter: JustifyItems
+
         @JsValue("baseline")
         val baseline: JustifyItems
 

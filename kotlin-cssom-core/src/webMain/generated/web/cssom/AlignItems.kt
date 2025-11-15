@@ -31,6 +31,9 @@ sealed external interface AlignItems {
         @JsValue("start")
         val start: AlignItems
 
+        @JsValue("anchor-center")
+        val anchorCenter: AlignItems
+
         @JsValue("baseline")
         val baseline: AlignItems
 
