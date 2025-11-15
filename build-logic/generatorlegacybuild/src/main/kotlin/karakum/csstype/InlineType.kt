@@ -9,6 +9,8 @@ internal fun String.inlineTypes(): String =
         .inlineType("DisplayInside")
         .inlineType("DisplayInternal")
         .inlineType("DisplayLegacy")
+        .inlineType("GenericComplete")
+        .inlineType("GenericIncomplete")
         .inlineType("SelfPosition")
         .inlineType("ContentDistribution")
         .inlineType("ContentPosition")

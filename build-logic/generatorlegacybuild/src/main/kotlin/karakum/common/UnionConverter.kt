@@ -274,6 +274,10 @@ internal fun unionName(
         .removeSuffix("()")
         .replace(":", "-")
 
+    if (name != "-" && name.startsWith("-")) {
+        name = name.removePrefix("-")
+    }
+
     name = when (name) {
         "" -> "none"
         "1" -> "D"
