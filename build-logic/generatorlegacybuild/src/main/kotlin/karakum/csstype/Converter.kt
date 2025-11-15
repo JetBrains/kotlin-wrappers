@@ -207,7 +207,6 @@ private val AT_RULE_TYPES = setOf(
     "AlignContent",
     "Hyphens",
     "Range",
-    "SpeakAs",
     "System",
 
     "AscentOverride",
@@ -219,7 +218,6 @@ private val AT_RULE_TYPES = setOf(
 
 private val EXCLUDED_DATA_TYPES = setOf(
     "Paint",
-    "Position",
 
     "Dasharray",
     "ViewportLength",
@@ -393,7 +391,7 @@ private fun convertUnion(
         OUTLINE,
             -> return tryToUnion(
             name = name,
-            body = body.replace("DataType.Color | DataType.LineStyle | DataType.LineWidth | ", ""),
+            body = body.replace("DataType.LineWidth | DataType.OutlineLineStyle | DataType.Color | ", ""),
             enumMode = false,
         )!!.let { it.copy(body = it.body + "\n\n" + borderFactories(name)) }
     }

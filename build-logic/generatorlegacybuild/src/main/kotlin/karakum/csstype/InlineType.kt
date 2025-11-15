@@ -1,7 +1,8 @@
 package karakum.csstype
 
 internal fun String.inlineTypes(): String =
-    inlineType("CompatAuto")
+    inlineType("Autospace")
+        .inlineType("CompatAuto")
         .inlineType("DisplayOutside")
         .inlineType("DisplayInside")
         .inlineType("DisplayInternal")
@@ -30,8 +31,13 @@ internal fun String.inlineTypes(): String =
         .inlineType("BgPosition")
         .inlineType("BgSize")
         .inlineType("AbsoluteSize")
+        .inlineType("PaintBox")
         .inlineType("Position")
+        .inlineType("PositionArea")
+        .inlineType("TextEdge")
         .inlineType("TrackBreadth")
+        .inlineType("TrySize")
+        .inlineType("TryTactic")
         .inlineType("VisualBox")
         .inlineType("FontWeightAbsolute")
         .inlineType("FinalBgLayer")
