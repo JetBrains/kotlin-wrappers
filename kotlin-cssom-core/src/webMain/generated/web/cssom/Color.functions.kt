@@ -1,10 +1,5 @@
 // Automatically generated - do not modify!
 
-// TEMP
-@file:Suppress(
-    "INFERRED_TYPE_VARIABLE_INTO_POSSIBLE_EMPTY_INTERSECTION",
-)
-
 package web.cssom
 
 import js.reflect.unsafeCast
