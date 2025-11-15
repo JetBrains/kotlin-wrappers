@@ -152,7 +152,7 @@ private fun contentMap(
     definitionsFile.readText()
         .removePrefix("export {};\n")
         .inlineTypes()
-        .replace("DeprecatedSystemColor | ", "")
+        .replace("SystemColor | DeprecatedSystemColor | ", "")
         // for `PointerEvents`
         .replace(Regex("""( = Globals \| .+) \| "inherit""""), "$1")
         .splitToSequence("\nexport ", "\ndeclare ")
@@ -223,6 +223,7 @@ private val EXCLUDED_DATA_TYPES = setOf(
     "ViewportLength",
 
     "DeprecatedSystemColor",
+    "SystemColor",
 )
 
 private fun convertNamespaceTypes(

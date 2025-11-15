@@ -1,6 +1,8 @@
 package karakum.csstype
+
 internal fun String.inlineTypes(): String =
     inlineType("Autospace")
+        .inlineType("ColorBase")
         .inlineType("CompatAuto")
         .inlineType("DisplayOutside")
         .inlineType("DisplayInside")

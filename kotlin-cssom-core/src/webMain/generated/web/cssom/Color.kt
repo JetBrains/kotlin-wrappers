@@ -15,7 +15,10 @@ import seskar.js.JsValue
 external class Color
 private constructor() : ColorType {
     companion object {
-        @JsValue("currentcolor")
-        val currentcolor: Color
+        @JsValue("transparent")
+        val transparent: Color
+
+        @JsValue("currentColor")
+        val currentColor: Color
     }
 }
