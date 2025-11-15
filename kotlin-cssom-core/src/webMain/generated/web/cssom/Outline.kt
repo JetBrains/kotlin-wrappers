@@ -1,20 +1,10 @@
 // Automatically generated - do not modify!
 
-@file:Suppress(
-    "NESTED_CLASS_IN_EXTERNAL_INTERFACE",
-)
-
 package web.cssom
 
 import js.reflect.unsafeCast
-import seskar.js.JsValue
 
-sealed external interface Outline {
-    companion object {
-        @JsValue("invert")
-        val invert: Outline
-    }
-}
+sealed external interface Outline
 
 inline fun Outline(
     width: Length,
