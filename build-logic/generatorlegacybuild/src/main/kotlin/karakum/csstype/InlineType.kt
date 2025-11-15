@@ -4,6 +4,7 @@ internal fun String.inlineTypes(): String =
     inlineType("Autospace")
         .inlineType("ColorBase")
         .inlineType("CompatAuto")
+        .inlineType("CursorPredefined")
         .inlineType("DisplayOutside")
         .inlineType("DisplayInside")
         .inlineType("DisplayInternal")
