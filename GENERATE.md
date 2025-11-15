@@ -12,6 +12,13 @@ Cesium
 ./gradlew :kotlin-cesium-widgets:build
 ```
 
+CSSType
+
+```sh
+./gradlew :kotlin-csstype-karakum:generate
+./gradlew :kotlin-csstype:build
+```
+
 React DOM
 
 ```sh
