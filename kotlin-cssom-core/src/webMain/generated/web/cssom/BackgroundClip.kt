@@ -18,5 +18,11 @@ sealed external interface BackgroundClip {
 
         @JsValue("padding-box")
         val paddingBox: BackgroundClip
+
+        @JsValue("border-area")
+        val borderArea: BackgroundClip
+
+        @JsValue("text")
+        val text: BackgroundClip
     }
 }

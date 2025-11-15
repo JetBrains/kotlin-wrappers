@@ -31,6 +31,7 @@ internal fun String.inlineTypes(): String =
         .inlineType("StepTimingFunction")
         .inlineType("EasingFunction")
         .inlineType("SingleTransition")
+        .inlineType("BgClip")
         .inlineType("BgPosition")
         .inlineType("BgSize")
         .inlineType("AbsoluteSize")
