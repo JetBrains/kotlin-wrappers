@@ -47,7 +47,7 @@ internal fun function(
     delimiter: String = ",",
 ): String {
     val typeParameters = when (returnType) {
-        "T", "T?" -> "<T: Any>"
+        "T", "T?" -> "<T: JsAny>"
         else -> ""
     }
 

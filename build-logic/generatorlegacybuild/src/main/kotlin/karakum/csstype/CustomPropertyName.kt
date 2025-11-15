@@ -6,9 +6,9 @@ internal const val CUSTOM_PROPERTY_NAME = "CustomPropertyName"
 
 // language=Kotlin
 private val BODY = """
-sealed external interface $CUSTOM_PROPERTY_NAME<T : Any>
+sealed external interface $CUSTOM_PROPERTY_NAME<T : JsAny>
 
-inline fun <T: Any> $CUSTOM_PROPERTY_NAME(
+inline fun <T: JsAny> $CUSTOM_PROPERTY_NAME(
     value: String,
 ): $CUSTOM_PROPERTY_NAME<T> =
     unsafeCast(value)

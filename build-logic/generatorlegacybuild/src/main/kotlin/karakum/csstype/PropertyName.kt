@@ -30,7 +30,7 @@ internal fun PropertyName(
     }
 
     val body = unionBodyByConstants(PROPERTY_NAME, constants)
-        .replaceFirst(PROPERTY_NAME, "$PROPERTY_NAME<T: Any> : $IDENT")
+        .replaceFirst(PROPERTY_NAME, "$PROPERTY_NAME<T: JsAny> :\n$IDENT")
 
     return ConversionResult(PROPERTY_NAME, body)
 }

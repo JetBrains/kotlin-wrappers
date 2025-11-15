@@ -7,11 +7,11 @@ internal const val CustomProperties = "CustomProperties"
 // language=Kotlin
 private val BODY = """
 external interface $CustomProperties {
-    operator fun <T : Any> get(
+    operator fun <T : JsAny> get(
         name: $CUSTOM_PROPERTY_NAME<T>,
     ): T?
 
-    operator fun <T : Any> set(
+    operator fun <T : JsAny> set(
         name: $CUSTOM_PROPERTY_NAME<T>,
         value: T?,
     )
