@@ -2,4 +2,4 @@
 
 package web.cssom
 
-typealias AnimationDuration = TimeProperty
+sealed external interface AnimationDuration
