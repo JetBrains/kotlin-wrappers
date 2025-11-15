@@ -214,6 +214,9 @@ private val AT_RULE_TYPES = setOf(
     "LineGapOverride",
     "Bleed",
     "Marks",
+
+    "Navigation",
+    "Types",
 )
 
 private val EXCLUDED_DATA_TYPES = setOf(
