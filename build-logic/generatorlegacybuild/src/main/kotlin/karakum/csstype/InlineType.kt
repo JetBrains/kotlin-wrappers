@@ -1,5 +1,4 @@
 package karakum.csstype
-
 internal fun String.inlineTypes(): String =
     inlineType("Autospace")
         .inlineType("CompatAuto")
@@ -32,8 +31,8 @@ internal fun String.inlineTypes(): String =
         .inlineType("BgSize")
         .inlineType("AbsoluteSize")
         .inlineType("PaintBox")
-        .inlineType("Position")
         .inlineType("PositionArea")
+        .inlineType("Position")
         .inlineType("TextEdge")
         .inlineType("TrackBreadth")
         .inlineType("TrySize")
@@ -45,6 +44,7 @@ internal fun String.inlineTypes(): String =
         .inlineType("SingleAnimationComposition")
         .inlineType("SingleAnimationTimeline")
         .inlineType("TimelineRangeName")
+
 
 private fun String.inlineType(
     name: String,
