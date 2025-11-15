@@ -22,9 +22,6 @@ sealed external interface MaskOrigin {
         @JsValue("fill-box")
         val fillBox: MaskOrigin
 
-        @JsValue("margin-box")
-        val marginBox: MaskOrigin
-
         @JsValue("stroke-box")
         val strokeBox: MaskOrigin
 

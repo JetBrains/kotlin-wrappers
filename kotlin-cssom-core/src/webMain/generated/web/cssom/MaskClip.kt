@@ -22,16 +22,13 @@ sealed external interface MaskClip {
         @JsValue("fill-box")
         val fillBox: MaskClip
 
-        @JsValue("margin-box")
-        val marginBox: MaskClip
-
         @JsValue("stroke-box")
         val strokeBox: MaskClip
 
-        @JsValue("view-box")
-        val viewBox: MaskClip
-
         @JsValue("no-clip")
         val noClip: MaskClip
+
+        @JsValue("view-box")
+        val viewBox: MaskClip
     }
 }
