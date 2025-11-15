@@ -13,5 +13,5 @@ external interface PropsWithChildren :
     var children: ReactNode?
 }
 
-fun PropsWithChildren.childrenAndRest(): Pair<ReactNode?, Props> =
+private fun PropsWithChildren.childrenAndRest(): Pair<ReactNode?, Props> =
     destruct(CHILDREN_PROP)
