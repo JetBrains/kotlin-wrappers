@@ -27,8 +27,17 @@ sealed external interface PropertyName<T : JsAny> :
         @JsValue("align-tracks")
         val alignTracks: PropertyName<AlignTracks>
 
+        @JsValue("alignment-baseline")
+        val alignmentBaseline: PropertyName<AlignmentBaseline>
+
         @JsValue("all")
         val all: PropertyName<All>
+
+        @JsValue("anchor-name")
+        val anchorName: PropertyName<AnchorName>
+
+        @JsValue("anchor-scope")
+        val anchorScope: PropertyName<AnchorScope>
 
         @JsValue("animation")
         val animation: PropertyName<Animation>
@@ -120,8 +129,8 @@ sealed external interface PropertyName<T : JsAny> :
         @JsValue("background-size")
         val backgroundSize: PropertyName<BackgroundSize>
 
-        @JsValue("block-overflow")
-        val blockOverflow: PropertyName<BlockOverflow>
+        @JsValue("baseline-shift")
+        val baselineShift: PropertyName<BaselineShift>
 
         @JsValue("block-size")
         val blockSize: PropertyName<BlockSize>
@@ -348,11 +357,17 @@ sealed external interface PropertyName<T : JsAny> :
         @JsValue("clip-path")
         val clipPath: PropertyName<ClipPath>
 
+        @JsValue("clip-rule")
+        val clipRule: PropertyName<ClipRule>
+
         @JsValue("color")
         val color: PropertyName<ColorProperty>
 
         @JsValue("color-adjust")
         val colorAdjust: PropertyName<PrintColorAdjust>
+
+        @JsValue("color-interpolation-filters")
+        val colorInterpolationFilters: PropertyName<ColorInterpolationFilters>
 
         @JsValue("color-scheme")
         val colorScheme: PropertyName<ColorScheme>
@@ -432,14 +447,38 @@ sealed external interface PropertyName<T : JsAny> :
         @JsValue("cursor")
         val cursor: PropertyName<Cursor>
 
+        @JsValue("cx")
+        val cx: PropertyName<Cx>
+
+        @JsValue("cy")
+        val cy: PropertyName<Cy>
+
+        @JsValue("d")
+        val d: PropertyName<D>
+
         @JsValue("direction")
         val direction: PropertyName<Direction>
 
         @JsValue("display")
         val display: PropertyName<Display>
 
+        @JsValue("dominant-baseline")
+        val dominantBaseline: PropertyName<DominantBaseline>
+
         @JsValue("empty-cells")
         val emptyCells: PropertyName<EmptyCells>
+
+        @JsValue("field-sizing")
+        val fieldSizing: PropertyName<FieldSizing>
+
+        @JsValue("fill")
+        val fill: PropertyName<Fill>
+
+        @JsValue("fill-opacity")
+        val fillOpacity: PropertyName<FillOpacity>
+
+        @JsValue("fill-rule")
+        val fillRule: PropertyName<FillRule>
 
         @JsValue("filter")
         val filter: PropertyName<Filter>
@@ -467,6 +506,12 @@ sealed external interface PropertyName<T : JsAny> :
 
         @JsValue("float")
         val float: PropertyName<Float>
+
+        @JsValue("flood-color")
+        val floodColor: PropertyName<FloodColor>
+
+        @JsValue("flood-opacity")
+        val floodOpacity: PropertyName<FloodOpacity>
 
         @JsValue("font")
         val font: PropertyName<Font>
@@ -497,9 +542,6 @@ sealed external interface PropertyName<T : JsAny> :
 
         @JsValue("font-smooth")
         val fontSmooth: PropertyName<FontSmooth>
-
-        @JsValue("font-stretch")
-        val fontStretch: PropertyName<FontStretch>
 
         @JsValue("font-style")
         val fontStyle: PropertyName<FontStyle>
@@ -548,6 +590,9 @@ sealed external interface PropertyName<T : JsAny> :
 
         @JsValue("font-weight")
         val fontWeight: PropertyName<FontWeight>
+
+        @JsValue("font-width")
+        val fontWidth: PropertyName<FontWidth>
 
         @JsValue("forced-color-adjust")
         val forcedColorAdjust: PropertyName<ForcedColorAdjust>
@@ -627,11 +672,11 @@ sealed external interface PropertyName<T : JsAny> :
         @JsValue("initial-letter")
         val initialLetter: PropertyName<InitialLetter>
 
+        @JsValue("initial-letter-align")
+        val initialLetterAlign: PropertyName<InitialLetterAlign>
+
         @JsValue("inline-size")
         val inlineSize: PropertyName<InlineSize>
-
-        @JsValue("input-security")
-        val inputSecurity: PropertyName<InputSecurity>
 
         @JsValue("inset")
         val inset: PropertyName<Inset>
@@ -654,6 +699,9 @@ sealed external interface PropertyName<T : JsAny> :
         @JsValue("inset-inline-start")
         val insetInlineStart: PropertyName<InsetInlineStart>
 
+        @JsValue("interpolate-size")
+        val interpolateSize: PropertyName<InterpolateSize>
+
         @JsValue("isolation")
         val isolation: PropertyName<Isolation>
 
@@ -674,6 +722,9 @@ sealed external interface PropertyName<T : JsAny> :
 
         @JsValue("letter-spacing")
         val letterSpacing: PropertyName<LetterSpacing>
+
+        @JsValue("lighting-color")
+        val lightingColor: PropertyName<LightingColor>
 
         @JsValue("line-break")
         val lineBreak: PropertyName<LineBreak>
@@ -734,6 +785,18 @@ sealed external interface PropertyName<T : JsAny> :
 
         @JsValue("margin-trim")
         val marginTrim: PropertyName<MarginTrim>
+
+        @JsValue("marker")
+        val marker: PropertyName<Marker>
+
+        @JsValue("marker-end")
+        val markerEnd: PropertyName<MarkerEnd>
+
+        @JsValue("marker-mid")
+        val markerMid: PropertyName<MarkerMid>
+
+        @JsValue("marker-start")
+        val markerStart: PropertyName<MarkerStart>
 
         @JsValue("mask")
         val mask: PropertyName<Mask>
@@ -845,6 +908,9 @@ sealed external interface PropertyName<T : JsAny> :
 
         @JsValue("object-position")
         val objectPosition: PropertyName<ObjectPosition>
+
+        @JsValue("object-view-box")
+        val objectViewBox: PropertyName<ObjectViewBox>
 
         @JsValue("offset")
         val offset: PropertyName<Offset>
@@ -972,15 +1038,6 @@ sealed external interface PropertyName<T : JsAny> :
         @JsValue("page")
         val page: PropertyName<Page>
 
-        @JsValue("page-break-after")
-        val pageBreakAfter: PropertyName<PageBreakAfter>
-
-        @JsValue("page-break-before")
-        val pageBreakBefore: PropertyName<PageBreakBefore>
-
-        @JsValue("page-break-inside")
-        val pageBreakInside: PropertyName<PageBreakInside>
-
         @JsValue("paint-order")
         val paintOrder: PropertyName<PaintOrder>
 
@@ -1005,11 +1062,32 @@ sealed external interface PropertyName<T : JsAny> :
         @JsValue("position")
         val position: PropertyName<Position>
 
+        @JsValue("position-anchor")
+        val positionAnchor: PropertyName<PositionAnchor>
+
+        @JsValue("position-area")
+        val positionArea: PropertyName<PositionArea>
+
+        @JsValue("position-try")
+        val positionTry: PropertyName<PositionTry>
+
+        @JsValue("position-try-fallbacks")
+        val positionTryFallbacks: PropertyName<PositionTryFallbacks>
+
+        @JsValue("position-try-order")
+        val positionTryOrder: PropertyName<PositionTryOrder>
+
+        @JsValue("position-visibility")
+        val positionVisibility: PropertyName<PositionVisibility>
+
         @JsValue("print-color-adjust")
         val printColorAdjust: PropertyName<PrintColorAdjust>
 
         @JsValue("quotes")
         val quotes: PropertyName<Quotes>
+
+        @JsValue("r")
+        val r: PropertyName<R>
 
         @JsValue("resize")
         val resize: PropertyName<Resize>
@@ -1029,14 +1107,26 @@ sealed external interface PropertyName<T : JsAny> :
         @JsValue("ruby-merge")
         val rubyMerge: PropertyName<RubyMerge>
 
+        @JsValue("ruby-overhang")
+        val rubyOverhang: PropertyName<RubyOverhang>
+
         @JsValue("ruby-position")
         val rubyPosition: PropertyName<RubyPosition>
+
+        @JsValue("rx")
+        val rx: PropertyName<Rx>
+
+        @JsValue("ry")
+        val ry: PropertyName<Ry>
 
         @JsValue("scale")
         val scale: PropertyName<Scale>
 
         @JsValue("scroll-behavior")
         val scrollBehavior: PropertyName<ScrollBehavior>
+
+        @JsValue("scroll-initial-target")
+        val scrollInitialTarget: PropertyName<ScrollInitialTarget>
 
         @JsValue("scroll-margin")
         val scrollMargin: PropertyName<ScrollMargin>
@@ -1155,6 +1245,45 @@ sealed external interface PropertyName<T : JsAny> :
         @JsValue("shape-outside")
         val shapeOutside: PropertyName<ShapeOutside>
 
+        @JsValue("shape-rendering")
+        val shapeRendering: PropertyName<ShapeRendering>
+
+        @JsValue("speak-as")
+        val speakAs: PropertyName<SpeakAs>
+
+        @JsValue("stop-color")
+        val stopColor: PropertyName<StopColor>
+
+        @JsValue("stop-opacity")
+        val stopOpacity: PropertyName<StopOpacity>
+
+        @JsValue("stroke")
+        val stroke: PropertyName<Stroke>
+
+        @JsValue("stroke-color")
+        val strokeColor: PropertyName<StrokeColor>
+
+        @JsValue("stroke-dasharray")
+        val strokeDasharray: PropertyName<StrokeDasharray>
+
+        @JsValue("stroke-dashoffset")
+        val strokeDashoffset: PropertyName<StrokeDashoffset>
+
+        @JsValue("stroke-linecap")
+        val strokeLinecap: PropertyName<StrokeLinecap>
+
+        @JsValue("stroke-linejoin")
+        val strokeLinejoin: PropertyName<StrokeLinejoin>
+
+        @JsValue("stroke-miterlimit")
+        val strokeMiterlimit: PropertyName<StrokeMiterlimit>
+
+        @JsValue("stroke-opacity")
+        val strokeOpacity: PropertyName<StrokeOpacity>
+
+        @JsValue("stroke-width")
+        val strokeWidth: PropertyName<StrokeWidth>
+
         @JsValue("tab-size")
         val tabSize: PropertyName<TabSize>
 
@@ -1166,6 +1295,21 @@ sealed external interface PropertyName<T : JsAny> :
 
         @JsValue("text-align-last")
         val textAlignLast: PropertyName<TextAlignLast>
+
+        @JsValue("text-anchor")
+        val textAnchor: PropertyName<TextAnchor>
+
+        @JsValue("text-autospace")
+        val textAutospace: PropertyName<TextAutospace>
+
+        @JsValue("text-box")
+        val textBox: PropertyName<TextBox>
+
+        @JsValue("text-box-edge")
+        val textBoxEdge: PropertyName<TextBoxEdge>
+
+        @JsValue("text-box-trim")
+        val textBoxTrim: PropertyName<TextBoxTrim>
 
         @JsValue("text-combine-upright")
         val textCombineUpright: PropertyName<TextCombineUpright>
@@ -1224,6 +1368,9 @@ sealed external interface PropertyName<T : JsAny> :
         @JsValue("text-size-adjust")
         val textSizeAdjust: PropertyName<TextSizeAdjust>
 
+        @JsValue("text-spacing-trim")
+        val textSpacingTrim: PropertyName<TextSpacingTrim>
+
         @JsValue("text-transform")
         val textTransform: PropertyName<TextTransform>
 
@@ -1235,6 +1382,12 @@ sealed external interface PropertyName<T : JsAny> :
 
         @JsValue("text-wrap")
         val textWrap: PropertyName<TextWrap>
+
+        @JsValue("text-wrap-mode")
+        val textWrapMode: PropertyName<TextWrapMode>
+
+        @JsValue("text-wrap-style")
+        val textWrapStyle: PropertyName<TextWrapStyle>
 
         @JsValue("timeline-scope")
         val timelineScope: PropertyName<TimelineScope>
@@ -1284,6 +1437,9 @@ sealed external interface PropertyName<T : JsAny> :
         @JsValue("user-select")
         val userSelect: PropertyName<UserSelect>
 
+        @JsValue("vector-effect")
+        val vectorEffect: PropertyName<VectorEffect>
+
         @JsValue("vertical-align")
         val verticalAlign: PropertyName<VerticalAlign>
 
@@ -1299,6 +1455,9 @@ sealed external interface PropertyName<T : JsAny> :
         @JsValue("view-timeline-name")
         val viewTimelineName: PropertyName<ViewTimelineName>
 
+        @JsValue("view-transition-class")
+        val viewTransitionClass: PropertyName<ViewTransitionClass>
+
         @JsValue("view-transition-name")
         val viewTransitionName: PropertyName<ViewTransitionName>
 
@@ -1310,9 +1469,6 @@ sealed external interface PropertyName<T : JsAny> :
 
         @JsValue("white-space-collapse")
         val whiteSpaceCollapse: PropertyName<WhiteSpaceCollapse>
-
-        @JsValue("white-space-trim")
-        val whiteSpaceTrim: PropertyName<WhiteSpaceTrim>
 
         @JsValue("widows")
         val widows: PropertyName<Widows>
@@ -1334,6 +1490,12 @@ sealed external interface PropertyName<T : JsAny> :
 
         @JsValue("writing-mode")
         val writingMode: PropertyName<WritingMode>
+
+        @JsValue("x")
+        val x: PropertyName<X>
+
+        @JsValue("y")
+        val y: PropertyName<Y>
 
         @JsValue("z-index")
         val zIndex: PropertyName<ZIndex>
