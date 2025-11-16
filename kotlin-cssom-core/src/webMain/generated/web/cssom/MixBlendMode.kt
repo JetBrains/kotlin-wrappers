@@ -2,5 +2,5 @@
 
 package web.cssom
 
-// Globals | DataType.BlendMode | "plus-lighter"
+// Globals | DataType.BlendMode | "plus-darker" | "plus-lighter"
 sealed external interface MixBlendMode
