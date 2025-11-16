@@ -11,6 +11,7 @@ sealed external interface NoneType :
     AnimationTimeline,
     Appearance,
     BackdropFilter,
+    Background,
     BackgroundImage,
     BorderImageSource,
     BoxShadow,
