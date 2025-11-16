@@ -221,6 +221,7 @@ private val AT_RULE_TYPES = setOf(
 
 private val EXCLUDED_DATA_TYPES = setOf(
     "Paint",
+    "OutlineLineStyle",
 
     "Dasharray",
     "ViewportLength",
