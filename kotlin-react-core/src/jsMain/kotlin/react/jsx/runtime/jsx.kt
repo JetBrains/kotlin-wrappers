@@ -8,6 +8,7 @@ import js.reflect.unsafeCast
 import react.*
 import react.jsx.runtime.raw.jsxRaw
 import react.jsx.runtime.raw.jsxsRaw
+import web.errors.reportError
 
 @InternalApi
 fun <P : Props> jsx(
@@ -55,14 +56,18 @@ fun <P : Props> jsx(
         deleteProperty(finalProps, Props::key.name)
 
         if (builderChildren != null) {
+            val container = unsafeCast<PropsWithChildren>(finalProps)
+            if (container.children != null) {
+                reportError(IllegalStateException("Both `children` source options used. Prop `children` will be ignored."))
+            }
+
             val singleBuilderChild = builderChildren
                 .asNodeArrayOrNull()
                 ?.singleOrNull()
 
             jsxMode = singleBuilderChild != null
 
-            unsafeCast<PropsWithChildren>(finalProps)
-                .children = singleBuilderChild ?: builderChildren
+            container.children = singleBuilderChild ?: builderChildren
         }
     }
 
