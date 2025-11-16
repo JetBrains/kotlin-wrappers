@@ -27,6 +27,9 @@ sealed external interface LengthType :
         MinWidth,
         Width
 
+    sealed interface Baseline :
+        BaselineShift
+
     sealed interface FitContent :
         BlockSize,
         Height,
@@ -98,4 +101,10 @@ sealed external interface LengthType :
 
     sealed interface Normal :
         LineHeight
+
+    sealed interface Sub :
+        BaselineShift
+
+    sealed interface Super :
+        BaselineShift
 }

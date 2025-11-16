@@ -193,7 +193,6 @@ private fun convertNamespace(
 
                 name.contains("Fallback") -> emptySequence()
                 name in DEPRECATED_TYPES -> emptySequence()
-                name in SVG_TYPES -> emptySequence()
                 else -> convertDefinition(name, content)
             }
         }
@@ -438,6 +437,9 @@ private val INT_TYPES = setOf(
 
     "FontWeight",
     "HyphenateLimitChars",
+
+    "GlyphOrientationVertical",
+    "StrokeMiterlimit",
 )
 
 private val DOUBLE_TYPES = setOf(
