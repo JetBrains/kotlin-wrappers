@@ -180,6 +180,7 @@ sealed external interface GlobalsType :
     PositionAnchor,
     PositionArea,
     PositionTry,
+    PositionTryFallbacks,
     PositionTryOrder,
     PositionVisibility,
     PrintColorAdjust,

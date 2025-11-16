@@ -72,6 +72,7 @@ sealed external interface NoneType :
     PointerEvents,
     PositionArea,
     PositionTry,
+    PositionTryFallbacks,
     Quotes,
     Resize,
     Rotate,

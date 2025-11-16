@@ -191,7 +191,7 @@ private fun convertNamespace(
                         && name != "HyphenateLimitChars"
                     -> emptySequence()
 
-                name.contains("Fallback") -> emptySequence()
+                name.contains("Fallback") && name != "PositionTryFallbacks" -> emptySequence()
                 name in DEPRECATED_TYPES -> emptySequence()
                 else -> convertDefinition(name, content)
             }
