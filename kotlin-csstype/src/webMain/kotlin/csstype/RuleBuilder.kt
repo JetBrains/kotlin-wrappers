@@ -1,5 +1,3 @@
-// Automatically generated - do not modify!
-
 @file:Suppress(
     "DECLARATION_CANT_BE_INLINED",
 )

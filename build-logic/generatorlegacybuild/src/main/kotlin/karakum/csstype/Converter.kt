@@ -133,7 +133,6 @@ internal fun convertDefinitions(
     val builderTypes = listOf(
         ClassName(),
         CssDsl(),
-        RuleBuilder(),
         Rules(),
         Selector(),
         CustomPropertyName(),
