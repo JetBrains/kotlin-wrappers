@@ -35,6 +35,7 @@ internal fun String.inlineTypes(): String =
         .inlineType("EasingFunction")
         .inlineType("SingleTransition")
         .inlineType("BgClip")
+        .inlineType("BgLayer")
         .inlineType("BgPosition")
         .inlineType("BgSize")
         .inlineType("AbsoluteSize")
@@ -59,6 +60,7 @@ private fun String.inlineType(
     name: String,
 ): String {
     val declaration = when (name) {
+        "BgLayer",
         "BgPosition",
         "BgSize",
         "Position",
