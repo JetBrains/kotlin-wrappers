@@ -1,5 +1,4 @@
 plugins {
-    id("wrappersbuild.security-overrides")
     id("wrappersbuild.react-npm-overrides")
 }
 
