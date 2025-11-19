@@ -34,7 +34,4 @@ fun NpmVersions.configureVersions() {
 
     // https://www.npmjs.com/package/webpack-dev-server
     webpackDevServer.version = "5.2.2"
-
-    // https://www.npmjs.com/package/karma
-    karma.version = "6.4.4"
 }
