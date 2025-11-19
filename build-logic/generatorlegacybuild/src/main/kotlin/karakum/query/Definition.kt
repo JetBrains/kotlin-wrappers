@@ -226,6 +226,10 @@ fun toDeclarations(
             """.trimIndent(),
             "type MutationMeta = Record<string, unknown>",
         )
+        .replace(
+            "queryKey?: TQueryKey | TuplePrefixes<TQueryKey>",
+            "queryKey?: TQueryKey",
+        )
 
     content = when (definitionFile.name) {
         "focusManager.d.ts" -> content.replace("SetupFn", "FocusManagerSetupFn")
