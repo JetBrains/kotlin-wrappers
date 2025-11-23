@@ -8,6 +8,12 @@ external interface SuspenseProps :
     var fallback: ReactNode?
 
     /**
+     * A name for this Suspense boundary for instrumentation purposes.
+     * The name will help identify this boundary in React DevTools.
+     */
+    var name: String?
+
+    /**
      * The presence of this prop indicates that the content is computationally expensive to render.
      * In other words, the tree is CPU bound and not I/O bound (e.g. due to fetching data).
      *
