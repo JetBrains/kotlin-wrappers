@@ -112,6 +112,7 @@ import web.animations.AnimationEvent
 import web.clipboard.ClipboardEvent
 import web.command.CommandEvent
 import web.components.HTMLSlotElement
+import web.csp.SecurityPolicyViolationEvent
 import web.cssom.ContentVisibilityAutoStateChangeEvent
 import web.cssom.TransitionEvent
 import web.dnd.DragEvent
