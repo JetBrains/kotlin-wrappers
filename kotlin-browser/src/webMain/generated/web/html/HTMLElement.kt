@@ -6,6 +6,7 @@ import web.animations.AnimationEvent
 import web.clipboard.ClipboardEvent
 import web.command.CommandEvent
 import web.components.ElementInternals
+import web.csp.SecurityPolicyViolationEvent
 import web.cssom.ElementCSSInlineStyle
 import web.cssom.TransitionEvent
 import web.dnd.DragEvent
@@ -17,6 +18,7 @@ import web.editcontext.EditContext
 import web.events.Event
 import web.events.EventInstance
 import web.experimental.ExperimentalWebApi
+import web.focus.FocusEvent
 import web.pointer.PointerEvent
 import web.popover.Popover
 import web.popover.ToggleEvent
@@ -260,6 +262,12 @@ inline val <C : HTMLElement> C.beforeToggleEvent: EventInstance<ToggleEvent, C, 
     get() = EventInstance(this, "beforetoggle")
 
 /**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/blur_event)
+ */
+inline val <C : HTMLElement> C.blurEvent: EventInstance<FocusEvent, C, C>
+    get() = EventInstance(this, "blur")
+
+/**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/command_event)
  */
 inline val <C : HTMLElement> C.commandEvent: EventInstance<CommandEvent, C, C>
@@ -320,10 +328,28 @@ inline val <C : HTMLElement> C.dropEvent: EventInstance<DragEvent, C, Node>
     get() = EventInstance(this, "drop")
 
 /**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/error_event)
+ */
+inline val <C : HTMLElement> C.errorEvent: EventInstance<Event, C, C>
+    get() = EventInstance(this, "error")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/focus_event)
+ */
+inline val <C : HTMLElement> C.focusEvent: EventInstance<FocusEvent, C, C>
+    get() = EventInstance(this, "focus")
+
+/**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/gotpointercapture_event)
  */
 inline val <C : HTMLElement> C.gotPointerCaptureEvent: EventInstance<PointerEvent, C, Node>
     get() = EventInstance(this, "gotpointercapture")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/load_event)
+ */
+inline val <C : HTMLElement> C.loadEvent: EventInstance<Event, C, C>
+    get() = EventInstance(this, "load")
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/lostpointercapture_event)
@@ -390,6 +416,12 @@ inline val <C : HTMLElement> C.pointerRawUpdateEvent: EventInstance<PointerEvent
  */
 inline val <C : HTMLElement> C.pointerUpEvent: EventInstance<PointerEvent, C, Node>
     get() = EventInstance(this, "pointerup")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/securitypolicyviolation_event)
+ */
+inline val <C : HTMLElement> C.securityPolicyViolationEvent: EventInstance<SecurityPolicyViolationEvent, C, Node>
+    get() = EventInstance(this, "securitypolicyviolation")
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/selectionchange_event)

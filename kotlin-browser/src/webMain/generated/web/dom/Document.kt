@@ -8,6 +8,7 @@ import js.promise.await
 import web.animations.AnimationEvent
 import web.animations.DocumentTimeline
 import web.clipboard.ClipboardEvent
+import web.csp.SecurityPolicyViolationEvent
 import web.cssom.ClassName
 import web.cssom.TransitionEvent
 import web.dnd.DragEvent
@@ -1004,6 +1005,12 @@ inline val <C : Document> C.scrollEvent: EventInstance<Event, C, Window>
  */
 inline val <C : Document> C.scrollEndEvent: EventInstance<Event, C, Window>
     get() = EventInstance(this, "scrollend")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/securitypolicyviolation_event)
+ */
+inline val <C : Document> C.securityPolicyViolationEvent: EventInstance<SecurityPolicyViolationEvent, C, Node>
+    get() = EventInstance(this, "securitypolicyviolation")
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/select_event)

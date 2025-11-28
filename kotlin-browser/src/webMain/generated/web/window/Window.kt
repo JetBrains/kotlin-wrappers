@@ -924,7 +924,7 @@ inline val <C : Window> C.scrollEndEvent: EventInstance<Event, C, Window>
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Window/securitypolicyviolation_event)
  */
-inline val <C : Window> C.securityPolicyViolationEvent: EventInstance<SecurityPolicyViolationEvent, C, C>
+inline val <C : Window> C.securityPolicyViolationEvent: EventInstance<SecurityPolicyViolationEvent, C, Node>
     get() = EventInstance(this, "securitypolicyviolation")
 
 /**

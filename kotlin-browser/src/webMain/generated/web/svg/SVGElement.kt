@@ -4,6 +4,7 @@ package web.svg
 
 import web.animations.AnimationEvent
 import web.clipboard.ClipboardEvent
+import web.csp.SecurityPolicyViolationEvent
 import web.cssom.ElementCSSInlineStyle
 import web.cssom.TransitionEvent
 import web.dnd.DragEvent
@@ -190,6 +191,12 @@ inline val <C : SVGElement> C.pointerRawUpdateEvent: EventInstance<PointerEvent,
  */
 inline val <C : SVGElement> C.pointerUpEvent: EventInstance<PointerEvent, C, Node>
     get() = EventInstance(this, "pointerup")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGElement/securitypolicyviolation_event)
+ */
+inline val <C : SVGElement> C.securityPolicyViolationEvent: EventInstance<SecurityPolicyViolationEvent, C, Node>
+    get() = EventInstance(this, "securitypolicyviolation")
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGElement/selectionchange_event)

@@ -4,6 +4,7 @@ package web.mathml
 
 import web.animations.AnimationEvent
 import web.clipboard.ClipboardEvent
+import web.csp.SecurityPolicyViolationEvent
 import web.cssom.ElementCSSInlineStyle
 import web.cssom.TransitionEvent
 import web.dnd.DragEvent
@@ -176,6 +177,12 @@ inline val <C : MathMLElement> C.pointerRawUpdateEvent: EventInstance<PointerEve
  */
 inline val <C : MathMLElement> C.pointerUpEvent: EventInstance<PointerEvent, C, Node>
     get() = EventInstance(this, "pointerup")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MathMLElement/securitypolicyviolation_event)
+ */
+inline val <C : MathMLElement> C.securityPolicyViolationEvent: EventInstance<SecurityPolicyViolationEvent, C, Node>
+    get() = EventInstance(this, "securitypolicyviolation")
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MathMLElement/selectionchange_event)
