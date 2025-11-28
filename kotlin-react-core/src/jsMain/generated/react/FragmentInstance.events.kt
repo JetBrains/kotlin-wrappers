@@ -135,13 +135,6 @@ inline val FragmentInstance.clickEvent: EventInstance<MouseEvent, Element, Node>
     get() = EventInstance(this, "click")
 
 /**
- * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/clipboardchange_event)
- */
-@ReactCanary
-inline val FragmentInstance.clipboardChangeEvent: EventInstance<ClipboardEvent, Element, Node>
-    get() = EventInstance(this, "clipboardchange")
-
-/**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLDialogElement/close_event)
  */
 @ReactCanary
@@ -637,6 +630,13 @@ inline val FragmentInstance.scrollEvent: EventInstance<Event, Element, Element>
 @ReactCanary
 inline val FragmentInstance.scrollEndEvent: EventInstance<Event, Element, Element>
     get() = EventInstance(this, "scrollend")
+
+/**
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/securitypolicyviolation_event)
+ */
+@ReactCanary
+inline val FragmentInstance.securityPolicyViolationEvent: EventInstance<SecurityPolicyViolationEvent, Element, Node>
+    get() = EventInstance(this, "securitypolicyviolation")
 
 /**
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/seeked_event)

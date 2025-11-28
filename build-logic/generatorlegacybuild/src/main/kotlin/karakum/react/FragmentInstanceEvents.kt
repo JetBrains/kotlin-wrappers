@@ -93,16 +93,17 @@ private fun getDocTarget(
 }
 
 private val TARGET_MAP = mapOf(
+    setOf("Element", "HTMLElement") to "Element",
     setOf("Element", "HTMLMediaElement") to "Element",
     setOf("HTMLElement", "MathMLElement", "SVGElement") to "Element",
     setOf("HTMLDialogElement", "HTMLInputElement") to "HTMLElement",
     setOf("HTMLDialogElement", "Node") to "Node",
     setOf("HTMLInputElement", "HTMLSelectElement") to "HTMLElement",
     setOf("HTMLElement", "MathMLElement", "SVGElement", "Text") to "Node",
-    setOf("Element", "HTMLMediaElement", "HTMLSourceElement", "HTMLTrackElement") to "Element",
+    setOf("Element", "HTMLElement", "HTMLMediaElement", "HTMLSourceElement", "HTMLTrackElement") to "Element",
     setOf("HTMLButtonElement", "HTMLInputElement", "HTMLSelectElement", "HTMLTextAreaElement") to "HTMLElement",
     setOf("Element", "HTMLInputElement", "HTMLTextAreaElement") to "Element",
-    setOf("Element", "HTMLTrackElement") to "Element",
+    setOf("Element", "HTMLElement", "HTMLTrackElement") to "Element",
 )
 
 private val IMPORTS = """
