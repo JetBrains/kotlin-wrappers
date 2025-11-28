@@ -8,21 +8,21 @@ import js.objects.unsafeJso
 import web.cssom.*
 
 interface RuleBuilder<T : Any> : Rules {
-    inline fun media(
+    inline fun `@media`(
         query: MediaQuery,
         block: T.() -> Unit,
     ) {
         set(Selector("@media $query"), unsafeJso(block))
     }
 
-    inline fun container(
+    inline fun `@container`(
         query: ContainerQuery,
         block: T.() -> Unit,
     ) {
         set(Selector("@container $query"), unsafeJso(block))
     }
 
-    inline fun container(
+    inline fun `@container`(
         containerName: ContainerName,
         query: ContainerQuery,
         block: T.() -> Unit,
@@ -30,7 +30,7 @@ interface RuleBuilder<T : Any> : Rules {
         set(Selector("@container $containerName $query"), unsafeJso(block))
     }
 
-    inline fun fontFace(
+    inline fun `@font-face`(
         block: FontFace.() -> Unit,
     ) {
         set(Selector("@font-face"), unsafeJso(block))
