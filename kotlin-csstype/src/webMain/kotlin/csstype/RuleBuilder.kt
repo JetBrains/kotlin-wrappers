@@ -36,6 +36,12 @@ interface RuleBuilder<T : Any> : Rules {
         set(Selector("@media $query"), unsafeJso(block))
     }
 
+    inline fun `@view-transition`(
+        block: ViewTransition.() -> Unit,
+    ) {
+        set(Selector("@view-transition"), unsafeJso(block))
+    }
+
     inline operator fun Selector.invoke(
         block: T.() -> Unit,
     ) {
