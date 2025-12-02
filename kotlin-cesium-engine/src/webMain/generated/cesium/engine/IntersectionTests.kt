@@ -136,6 +136,19 @@ external object IntersectionTests {
     ): Interval
 
     /**
+     * Computes the intersection points of a ray with an axis-aligned bounding box. (axis-aligned in the same space as the ray)
+     * @param [ray] The ray.
+     * @param [box] The axis-aligned bounding box.
+     * @param [result] The interval containing scalar points along the ray or undefined if there are no intersections.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/IntersectionTests.html#.rayAxisAlignedBoundingBox">Online Documentation</a>
+     */
+    fun rayAxisAlignedBoundingBox(
+        ray: Ray,
+        box: AxisAlignedBoundingBox,
+        result: Interval?,
+    )
+
+    /**
      * Provides the point along the ray which is nearest to the ellipsoid.
      * @param [ray] The ray.
      * @param [ellipsoid] The ellipsoid.

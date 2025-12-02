@@ -55,6 +55,15 @@ internal class Method(
         }
 
         val sourceDeclaration = "fun $name$params$returnExpression"
+        val replacedSyncDeclarations by lazy {
+            listOf(
+                sourceDeclaration.replace(
+                    "fun ${name}(",
+                    "@JsName(\"${name}\")\n fun ${name}Sync(",
+                ),
+            )
+        }
+
         val declarations = when (name) {
             "loadTileDataAvailability" if sourceDeclaration.endsWith("): Void") -> {
                 withSuspendAdapter(sourceDeclaration.replaceSuffix("): Void", "): Promise<Void>"))
@@ -62,16 +71,11 @@ internal class Method(
                     .toList()
             }
 
-            "fromType" if (sourceDeclaration == "fun fromType(\n type: String,\n uniforms: JsAny? = definedExternally\n): Material") -> {
-                val originalMethodName = "fromType"
+            "fromType" if (sourceDeclaration == "fun fromType(\n type: String,\n uniforms: JsAny? = definedExternally\n): Material")
+                -> replacedSyncDeclarations
 
-                listOf(
-                    sourceDeclaration.replace(
-                        "fun ${originalMethodName}(",
-                        "@JsName(\"${originalMethodName}\")\n fun ${originalMethodName}Sync(",
-                    ),
-                )
-            }
+            "pick" if (sourceDeclaration == "fun pick(\n windowPosition: Cartesian2,\n width: Double? = definedExternally,\n height: Double? = definedExternally\n): JsAny?")
+                -> replacedSyncDeclarations
 
             else -> withSuspendAdapter(sourceDeclaration).toList()
         }

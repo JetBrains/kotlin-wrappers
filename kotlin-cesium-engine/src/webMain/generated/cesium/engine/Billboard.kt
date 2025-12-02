@@ -415,7 +415,7 @@ private constructor() {
         val position: Cartesian3
         val id: JsAny?
         val show: Boolean?
-        val image: HTMLCanvasElement?
+        val image: JsAny /* string | HTMLImageElement | HTMLCanvasElement */?
         val scale: Double?
         val pixelOffset: Cartesian2?
         val eyeOffset: Cartesian3?

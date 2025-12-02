@@ -225,7 +225,7 @@ external class Google2DImageryProvider(
          * ```
          * ```
          * // Google 2D roadmap overlay with custom styles
-         * const googleTileProvider = Google2DImageryProvider.fromIonAssetId({
+         * const googleTilesProvider = Google2DImageryProvider.fromIonAssetId({
          *     assetId: 3830184,
          *     overlayLayerType: "layerRoadmap",
          *     styles: [
@@ -301,7 +301,7 @@ external class Google2DImageryProvider(
          * // Google 2D roadmap overlay with custom styles
          * GoogleMaps.defaultApiKey = "your-api-key";
          *
-         * const googleTileProvider = Google2DImageryProvider.fromUrl({
+         * const googleTilesProvider = Google2DImageryProvider.fromUrl({
          *     overlayLayerType: "layerRoadmap",
          *     styles: [
          *         {

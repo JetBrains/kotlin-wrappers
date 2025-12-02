@@ -42,6 +42,14 @@ external class AxisAlignedBoundingBox(
      */
     fun intersectPlane(plane: Plane): Intersect
 
+    /**
+     * Determines whether some other axis aligned bounding box intersects this box.
+     * @param [other] The other axis aligned bounding box.
+     * @return `true` if the boxes intersect; otherwise, `false`.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/AxisAlignedBoundingBox.html#intersectAxisAlignedBoundingBox">Online Documentation</a>
+     */
+    fun intersectAxisAlignedBoundingBox(other: AxisAlignedBoundingBox): Boolean
+
     companion object {
         /**
          * Creates an instance of an AxisAlignedBoundingBox from its corners.
@@ -117,5 +125,17 @@ external class AxisAlignedBoundingBox(
             box: AxisAlignedBoundingBox,
             plane: Plane,
         ): Intersect
+
+        /**
+         * Determines whether two axis aligned bounding boxes intersect.
+         * @param [box] first box
+         * @param [other] second box
+         * @return `true` if the boxes intersect; otherwise, `false`.
+         * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/AxisAlignedBoundingBox.html#.intersectAxisAlignedBoundingBox">Online Documentation</a>
+         */
+        fun intersectAxisAlignedBoundingBox(
+            box: AxisAlignedBoundingBox,
+            other: AxisAlignedBoundingBox,
+        ): Boolean
     }
 }

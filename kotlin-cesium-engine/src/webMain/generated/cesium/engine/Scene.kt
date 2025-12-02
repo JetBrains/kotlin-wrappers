@@ -705,11 +705,47 @@ external class Scene(
      * @return Object containing the picked primitive or `undefined` if nothing is at the location.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Scene.html#pick">Online Documentation</a>
      */
-    fun pick(
+    @JsName("pick")
+    fun pickSync(
         windowPosition: Cartesian2,
         width: Double? = definedExternally,
         height: Double? = definedExternally,
     ): JsAny?
+
+    /**
+     * Performs the same operation as Scene.pick but asynchonosly without blocking the main render thread.
+     * Requires WebGL2 else using fallback.
+     * ```
+     * // On mouse over, color the feature yellow.
+     * handler.setInputAction(function(movement) {
+     *     const feature = scene.pickAsync(movement.endPosition).then(function(feature) {
+     *        if (feature instanceof Cesium3DTileFeature) {
+     *            feature.color = Color.YELLOW;
+     *        }
+     *     });
+     * }, ScreenSpaceEventType.MOUSE_MOVE);
+     * ```
+     * @param [windowPosition] Window coordinates to perform picking on.
+     * @param [width] Width of the pick rectangle.
+     *   Default value - `3`
+     * @param [height] Height of the pick rectangle.
+     *   Default value - `3`
+     * @return Object containing the picked primitive or `undefined` if nothing is at the location.
+     * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/Scene.html#pickAsync">Online Documentation</a>
+     */
+    @JsAsync
+    @Suppress("WRONG_EXTERNAL_DECLARATION")
+    suspend fun pick(
+        windowPosition: Cartesian2,
+        width: Double? = definedExternally,
+        height: Double? = definedExternally,
+    ): JsAny?
+
+    fun pickAsync(
+        windowPosition: Cartesian2,
+        width: Double? = definedExternally,
+        height: Double? = definedExternally,
+    ): Promise<JsAny?>
 
     /**
      * Returns a [VoxelCell] for the voxel sample rendered at a particular window coordinate,
