@@ -1,6 +1,8 @@
 package karakum.browser
 
 import karakum.common.CommonUnionConverter.sealedUnionBody
+import karakum.common.CommonUnionConverter.unionBodyByConstants
+import karakum.common.unionConstant
 
 internal const val AUTO_CAPITALIZE = "AutoCapitalize"
 internal const val BLOCKING = "Blocking"
@@ -8,6 +10,7 @@ internal const val PRELOAD = "Preload"
 internal const val FETCH_PRIORITY = "FetchPriority"
 internal const val FORM_ENCTYPE = "FormEncType"
 internal const val FORM_METHOD = "FormMethod"
+internal const val HIDDEN = "Hidden"
 internal const val REQUEST_METHOD = "RequestMethod"
 
 internal val UNION_DATA_LIST = listOf(
@@ -96,6 +99,18 @@ internal fun htmlUnions(): Sequence<ConversionResult> =
                 name = BLOCKING,
                 values = listOf(
                     "render",
+                ),
+            ),
+            pkg = "web.html",
+        ),
+        ConversionResult(
+            name = HIDDEN,
+            body = unionBodyByConstants(
+                name = HIDDEN,
+                constants = listOf(
+                    unionConstant(false),
+                    unionConstant(true),
+                    unionConstant("until-found"),
                 ),
             ),
             pkg = "web.html",

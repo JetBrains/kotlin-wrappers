@@ -28,6 +28,7 @@ internal fun String.applyPatches(): String {
         .replace(Regex("""\n\s+set .+\(.+: string\);"""), "")
         .replace("    autocapitalize: string;", "    autocapitalize: $AUTO_CAPITALIZE;")
         .replace("""    fetchPriority: "high" | "low" | "auto";""", "    fetchPriority: $FETCH_PRIORITY;")
+        .replace("""    hidden: boolean | "until-found";""", "    hidden: $HIDDEN;")
         .replace(Regex("""(\ninterface \w+Error) \{"""), "$1 extends JsErrorLike {")
         .patchInterfaces("Request", "RequestInit", "XMLHttpRequest") {
             it.replace(Regex("""([( ]method\??: )string([;,])"""), "$1$REQUEST_METHOD$2")

@@ -263,6 +263,15 @@ internal fun unionConstant(
         value = value,
     )
 
+internal fun unionConstant(
+    value: Boolean,
+): UnionConstant =
+    UnionConstant(
+        name = unionName(value.toString()),
+        value = value.toString(),
+        originalValue = true,
+    )
+
 internal fun unionName(
     value: String,
 ): String {
