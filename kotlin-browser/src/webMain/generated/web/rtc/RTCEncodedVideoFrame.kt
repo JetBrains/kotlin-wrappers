@@ -5,6 +5,7 @@ package web.rtc
 import js.buffer.ArrayBuffer
 import js.core.Int53
 import js.serialization.Serializable
+import web.codecs.EncodedVideoChunkType
 
 /**
  * The **`RTCEncodedVideoFrame`** of the WebRTC API represents an encoded video frame in the WebRTC receiver or sender pipeline, which may be modified using a WebRTC Encoded Transform.
@@ -33,7 +34,7 @@ private constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/RTCEncodedVideoFrame/type)
      */
-    val type: RTCEncodedVideoFrameType
+    val type: EncodedVideoChunkType
 
     /**
      * The **`getMetadata()`** method of the RTCEncodedVideoFrame interface returns an object containing the metadata associated with the frame.
