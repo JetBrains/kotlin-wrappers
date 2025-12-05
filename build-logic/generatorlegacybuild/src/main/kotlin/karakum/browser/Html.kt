@@ -604,6 +604,8 @@ private val REPORTING_TYPES = listOf(
 
 private val POPOVER_TYPES = setOf(
     "PopoverTargetAttributes",
+    "ShowPopoverOptions",
+    "TogglePopoverOptions",
 )
 
 private const val XSLT_PROCESSOR = "XSLTProcessor"

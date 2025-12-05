@@ -18,7 +18,7 @@ private constructor() :
     var keyText: String
 
     /**
-     * The read-only **`CSSKeyframeRule.style`** property is the CSSStyleDeclaration interface for the declaration block of the CSSKeyframeRule.
+     * The read-only **`style`** property of the CSSKeyframeRule interface contains a CSSStyleDeclaration object representing the descriptors available in the @keyframes rule's body.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSKeyframeRule/style)
      */

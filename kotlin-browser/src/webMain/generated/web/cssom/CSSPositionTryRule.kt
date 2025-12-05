@@ -18,7 +18,7 @@ private constructor() :
     val name: String
 
     /**
-     * The **`style`** read-only property of the CSSPositionTryRule interface returns a CSSPositionTryDescriptors object representing the declarations set in the body of the @position-try at-rule.
+     * The read-only **`style`** property of the CSSPositionTryRule interface contains a CSSPositionTryDescriptors object representing the descriptors available in the @position-try rule's body.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSPositionTryRule/style)
      */

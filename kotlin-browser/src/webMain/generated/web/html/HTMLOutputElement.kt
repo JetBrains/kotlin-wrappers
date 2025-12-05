@@ -32,7 +32,7 @@ protected constructor() :
     override val form: HTMLFormElement?
 
     /**
-     * The **`htmlFor`** property of the HTMLOutputElement interface is a string containing a space-separated list of other elements' ids, indicating that those elements contributed input values to (or otherwise affected) the calculation. It reflects the for attribute of the <output> element.
+     * The read-only **`htmlFor`** property of the HTMLOutputElement returns a live DOMTokenList object containing a list of ids of those elements contributing input values to (or otherwise affected) the calculation. It reflects the <output> element's for content attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLOutputElement/htmlFor)
      */

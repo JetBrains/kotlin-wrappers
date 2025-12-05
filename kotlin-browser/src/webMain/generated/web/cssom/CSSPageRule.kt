@@ -18,7 +18,7 @@ private constructor() :
     var selectorText: String
 
     /**
-     * The **`style`** read-only property of the CSSPageRule interface returns a CSSPageDescriptors object. This represents a CSS declaration block for a CSS @page at-rule, and exposes style information and various style-related methods and properties for the page.
+     * The read-only **`style`** property of the CSSPageRule interface contains a CSSPageDescriptors object representing the descriptors available in the @page rule's body.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSPageRule/style)
      */

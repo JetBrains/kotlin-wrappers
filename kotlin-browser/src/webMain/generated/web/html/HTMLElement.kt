@@ -21,7 +21,9 @@ import web.experimental.ExperimentalWebApi
 import web.focus.FocusEvent
 import web.pointer.PointerEvent
 import web.popover.Popover
+import web.popover.ShowPopoverOptions
 import web.popover.ToggleEvent
+import web.popover.TogglePopoverOptions
 import kotlin.js.definedExternally
 
 /**
@@ -209,14 +211,15 @@ protected constructor() :
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/showPopover)
      */
-    fun showPopover()
+    fun showPopover(options: ShowPopoverOptions = definedExternally)
 
     /**
      * The **`togglePopover()`** method of the HTMLElement interface toggles a popover element (i.e., one that has a valid popover attribute) between the hidden and showing states.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/togglePopover)
      */
-    fun togglePopover(options: Boolean = definedExternally): Boolean
+    fun togglePopover(options: TogglePopoverOptions = definedExternally): Boolean
+    fun togglePopover(options: Boolean): Boolean
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLElement/editContext)

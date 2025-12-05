@@ -30,7 +30,7 @@ private constructor() {
     fun blob(): Blob
 
     /**
-     * The **`bytes()`** method of the PushMessageData interface extracts push message data as an Uint8Array object.
+     * The **`bytes()`** method of the PushMessageData interface extracts push message data as a Uint8Array object.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/PushMessageData/bytes)
      */

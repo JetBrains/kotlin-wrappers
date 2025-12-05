@@ -56,7 +56,7 @@ private constructor() :
     val attributes: NamedNodeMap
 
     /**
-     * The **`Element.classList`** is a read-only property that returns a live DOMTokenList collection of the class attributes of the element. This can then be used to manipulate the class list.
+     * The read-only **`classList`** property of the Element interface contains a live DOMTokenList collection representing the class attribute of the element. This can then be used to manipulate the class list.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/classList)
      */
@@ -151,7 +151,7 @@ private constructor() :
     override val ownerDocument: Document
 
     /**
-     * The **`part`** property of the Element interface represents the part identifier(s) of the element (i.e., set using the part attribute), returned as a DOMTokenList. These can be used to style parts of a shadow DOM, via the ::part pseudo-element.
+     * The read-only **`part`** property of the Element interface contains a DOMTokenList object representing the part identifier(s) of the element. It reflects the element's part content attribute. These can be used to style parts of a shadow DOM, via the ::part pseudo-element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/part)
      */

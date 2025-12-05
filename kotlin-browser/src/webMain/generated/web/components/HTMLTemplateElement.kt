@@ -14,7 +14,7 @@ open external class HTMLTemplateElement
 protected constructor() :
     HTMLElement {
     /**
-     * The **`HTMLTemplateElement.content`** property returns a <template> element's template contents (a DocumentFragment).
+     * The **`content`** property of the HTMLTemplateElement interface returns the <template> element's template contents as a DocumentFragment. This content's ownerDocument is a separate Document from the one that contains the <template> element itself — unless the containing document is itself constructed for the purpose of holding template content.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLTemplateElement/content)
      */

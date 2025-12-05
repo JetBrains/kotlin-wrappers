@@ -167,6 +167,7 @@ internal fun String.applyPatches(): String {
         .splitUnion("number[] | Float32Array")
         .splitUnion("string | WorkerOptions")
         .splitUnion("string | ElementCreationOptions")
+        .splitUnion("TogglePopoverOptions | boolean")
         .splitUnion("(Element | Text)[]", "Element[] | Text[]")
         .splitUnion("(Node | string)[]", "Node[] | string[]")
         .patchInterface("ParentNode") {

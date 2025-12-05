@@ -16,7 +16,7 @@ protected constructor() :
     HTMLElement,
     LinkStyle {
     /**
-     * The **`blocking`** property of the HTMLStyleElement interface is a string indicating that certain operations should be blocked on the fetching of critical subresources.
+     * The read-only **`blocking`** property of the HTMLStyleElement returns a live DOMTokenList object containing the operations that should be blocked on the fetching of an external resource. It reflects the <style> element's blocking content attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLStyleElement/blocking)
      */

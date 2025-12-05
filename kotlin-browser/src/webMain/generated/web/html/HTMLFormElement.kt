@@ -106,7 +106,7 @@ protected constructor() :
     var rel: String
 
     /**
-     * The **`relList`** read-only property of the HTMLFormElement interface reflects the rel attribute. It is a live DOMTokenList containing the set of link types indicating the relationship between the resource represented by the <form> element and the current document.
+     * The read-only **`relList`** property of the HTMLFormElement returns a live DOMTokenList object containing the set of link types indicating the relationship between the resource represented by the <form> element and the current document. It reflects the <form> element's rel content attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLFormElement/relList)
      */

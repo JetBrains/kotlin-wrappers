@@ -27,7 +27,7 @@ protected constructor() :
     var `as`: String
 
     /**
-     * The **`blocking`** property of the HTMLLinkElement interface is a string indicating that certain operations should be blocked on the fetching of an external resource.
+     * The read-only **`blocking`** property of the HTMLLinkElement returns a live DOMTokenList object containing the operations that should be blocked on the fetching of an external resource. It reflects the <link> element's blocking content attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLLinkElement/blocking)
      */
@@ -48,7 +48,7 @@ protected constructor() :
     var disabled: Boolean
 
     /**
-     * The **`fetchPriority`** property of the HTMLLinkElement interface represents a hint to the browser indicating how it should prioritize fetching a particular resource relative to other resources of the same type. It reflects the fetchpriority attribute of the corresponding <link> element.
+     * The **`fetchPriority`** property of the HTMLLinkElement interface represents a hint to the browser indicating how it should prioritize fetching a particular resource relative to other resources of the same type. It reflects the <link> element's fetchpriority content attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLLinkElement/fetchPriority)
      */
@@ -111,14 +111,14 @@ protected constructor() :
     var rel: String
 
     /**
-     * The **`relList`** read-only property of the HTMLLinkElement interface reflects the rel attribute. It is a live DOMTokenList containing the set of link types indicating the relationship between the resource represented by the <link> element and the current document.
+     * The read-only **`relList`** property of the HTMLLinkElement returns a live DOMTokenList object containing the set of link types indicating the relationship between the resource represented by the <link> element and the current document. It reflects the <link> element's rel content attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLLinkElement/relList)
      */
     val relList: DOMTokenList<JsString>
 
     /**
-     * The **`sizes`** read-only property of the HTMLLinkElement interfaces defines the sizes of the icons for visual media contained in the resource. It reflects the <link> element's sizes attribute, which takes a list of space-separated sizes, each in the format <width in pixels>x<height in pixels>, or the keyword any.
+     * The read-only **`sizes`** property of the HTMLLinkElement interface defines the sizes of the icons for visual media contained in the resource. It reflects the <link> element's sizes attribute, which takes a list of space-separated sizes, each in the format <width in pixels>x<height in pixels>, or the keyword any.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLLinkElement/sizes)
      */

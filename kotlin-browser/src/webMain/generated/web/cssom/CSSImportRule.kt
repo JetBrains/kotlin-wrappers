@@ -25,7 +25,7 @@ private constructor() :
     val layerName: String?
 
     /**
-     * The read-only **`media`** property of the CSSImportRule interface returns a MediaList object, containing the value of the media attribute of the associated stylesheet.
+     * The read-only **`media`** property of the CSSImportRule interface returns a MediaList object representing the media query list of the @import rule.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/CSSImportRule/media)
      */

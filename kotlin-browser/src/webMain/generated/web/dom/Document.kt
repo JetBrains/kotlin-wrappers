@@ -220,7 +220,7 @@ open external class Document :
     val links: HTMLCollection<HTMLElement /* HTMLAnchorElement | HTMLAreaElement */>
 
     /**
-     * The **`Document.location`** read-only property returns a Location object, which contains information about the URL of the document and provides methods for changing that URL and loading another URL.
+     * The read-only **`location`** property of the Document interface returns a Location object, which contains information about the URL of the document and provides methods for changing that URL and loading another URL.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/location)
      */
@@ -545,7 +545,7 @@ open external class Document :
     fun hasStorageAccessAsync(): Promise<JsBoolean>
 
     /**
-     * The Document object's **`importNode()`** method creates a copy of a Node or DocumentFragment from another document, to be inserted into the current document later.
+     * The **`importNode()`** method of the Document interface creates a copy of a Node or DocumentFragment from another document, to be inserted into the current document later.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/importNode)
      */

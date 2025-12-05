@@ -73,7 +73,7 @@ protected constructor() :
     var referrerPolicy: ReferrerPolicy
 
     /**
-     * The **`sandbox`** read-only property of the HTMLIFrameElement interface returns a DOMTokenList indicating extra restrictions on the behavior of the nested content.
+     * The read-only **`sandbox`** property of the HTMLIFrameElement returns a live DOMTokenList object indicating extra restrictions on the behavior of the nested content. It reflects the <iframe> element's sandbox content attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLIFrameElement/sandbox)
      */

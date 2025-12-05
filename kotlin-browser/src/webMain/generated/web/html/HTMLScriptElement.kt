@@ -25,7 +25,7 @@ protected constructor() :
     var async: Boolean
 
     /**
-     * The **`blocking`** property of the HTMLScriptElement interface is a string indicating that certain operations should be blocked on the fetching of the script.
+     * The read-only **`blocking`** property of the HTMLScriptElement returns a live DOMTokenList object containing the operations that should be blocked on the fetching of an external resource. It reflects the <script> element's blocking content attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLScriptElement/blocking)
      */
@@ -46,7 +46,7 @@ protected constructor() :
     var defer: Boolean
 
     /**
-     * The **`fetchPriority`** property of the HTMLScriptElement interface represents a hint to the browser indicating how it should prioritize fetching an external script relative to other external scripts. It reflects the fetchpriority attribute of the <script> element.
+     * The **`fetchPriority`** property of the HTMLScriptElement interface represents a hint to the browser indicating how it should prioritize fetching an external script relative to other external scripts. It reflects the <script> element's fetchpriority content attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/HTMLScriptElement/fetchPriority)
      */

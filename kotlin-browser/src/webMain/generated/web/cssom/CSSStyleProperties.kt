@@ -145,7 +145,7 @@ private constructor() :
     var animationRangeStart: String
 
     /**
-     * The animation-timeline CSS property specifies the timeline that is used to control the progress of a CSS animation.
+     * The animation-timeline CSS property specifies the timeline used to control the progress of a CSS animation.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/animation-timeline)
      */
@@ -1811,6 +1811,13 @@ private constructor() :
     var mathDepth: String
 
     /**
+     * The math-shift property indicates whether superscripts inside MathML formulas should be raised by a normal or compact shift.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/math-shift)
+     */
+    var mathShift: String
+
+    /**
      * The math-style property indicates whether MathML equations should render with normal or compact height.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/math-style)
@@ -2525,14 +2532,14 @@ private constructor() :
     var scrollSnapType: String
 
     /**
-     * The scroll-timeline CSS shorthand property is used to define a named scroll progress timeline, which is progressed through by scrolling a scrollable element (scroller) between top and bottom (or left and right). scroll-timeline is set on the scroller that will provide the timeline. The starting scroll position represents 0% progress and the ending scroll position represents 100% progress. If the 0% position and 100% position coincide (i.e., the scroll container has no overflow to scroll), the timeline is inactive.
+     * The scroll-timeline CSS shorthand property is used to define a named scroll progress timeline, which is progressed through by scrolling a scrollable element (scroller) between top and bottom (or left and right).
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/scroll-timeline)
      */
     var scrollTimeline: String
 
     /**
-     * The scroll-timeline-axis CSS property is used to specify the scrollbar direction that will be used to provide the timeline for a named scroll progress timeline animation, which is progressed through by scrolling a scrollable element (scroller) between top and bottom (or left and right). scroll-timeline is set on the scroller that will provide the timeline. See CSS scroll-driven animations for more details.
+     * The scroll-timeline-axis CSS property is used to specify the scrollbar direction that will be used to provide the timeline for a scroll driven animation animation, which is progressed through by scrolling a scrollable element (scroller).
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/scroll-timeline-axis)
      */
@@ -3008,7 +3015,7 @@ private constructor() :
     var verticalAlign: String
 
     /**
-     * The view-timeline CSS shorthand property is used to define a named view progress timeline, which is progressed through based on the change in visibility of an element (known as the subject) inside a scrollable element (scroller). view-timeline is set on the subject.
+     * The view-timeline CSS shorthand property defines a named view progress timeline's name, direction, and inset values.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/view-timeline)
      */

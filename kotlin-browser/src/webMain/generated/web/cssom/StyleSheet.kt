@@ -26,7 +26,7 @@ private constructor() {
     val href: String?
 
     /**
-     * The **`media`** property of the StyleSheet interface specifies the intended destination media for style information. It is a read-only, array-like MediaList object and can be removed with deleteMedium() and added with appendMedium().
+     * The read-only **`media`** property of the StyleSheet interface contains a MediaList object representing the intended destination media for style information.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/StyleSheet/media)
      */
