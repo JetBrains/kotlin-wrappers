@@ -9,6 +9,7 @@ import web.dom.Element
 import web.dom.ElementId
 import web.html.AutoCapitalize
 import web.html.EnterKeyHint
+import web.html.Hidden
 import web.html.InputMode
 import web.popover.Popover
 import web.popover.PopoverTargetAction
@@ -32,7 +33,7 @@ external interface HTMLAttributes<T : Element> :
     var dir: String?
     var draggable: Boolean?
     var enterKeyHint: EnterKeyHint?
-    var hidden: Boolean?
+    var hidden: Hidden?
     var id: ElementId?
     var lang: String?
     var nonce: String?

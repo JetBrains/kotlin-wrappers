@@ -28,6 +28,7 @@ internal fun convertDefinitions(
         .replace("    formEncType?: string | undefined;", "    formEncType?: FormEncType | undefined;")
         .replace("    encType?: string | undefined;", "    encType?: FormEncType | undefined;")
         .replace("    autoComplete?: string | undefined;", "    autoComplete?: AutoFill | undefined;")
+        .replace("    hidden?: boolean | undefined;", "    hidden?: Hidden | undefined;")
         .replace(""": boolean | "false"""", """: "false"""")
         .replace("""blocking?: "render" | (string & {}) | undefined;""", """blocking?: Blocking | undefined;""")
         .replace(
