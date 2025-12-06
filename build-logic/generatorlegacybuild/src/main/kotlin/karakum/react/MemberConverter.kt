@@ -87,7 +87,7 @@ private fun convertProperty(
     var sourceType = source.substringAfter(": ")
         .replace("EventTarget & T", "T")
 
-    if (name == "id" || name == "htmlFor") {
+    if (name == "id" || name == "htmlFor" || name == "popoverTarget") {
         require(sourceType == "string | undefined")
         sourceType = "ElementId | undefined"
     }

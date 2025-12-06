@@ -78,7 +78,7 @@ external interface HTMLAttributes<T : Element> :
     // Popover API
     var popover: Popover?
     var popoverTargetAction: PopoverTargetAction?
-    var popoverTarget: String?
+    var popoverTarget: ElementId?
 // Living Standard
     /**
      * @see https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/inert
