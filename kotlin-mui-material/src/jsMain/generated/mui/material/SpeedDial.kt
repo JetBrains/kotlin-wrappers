@@ -6,6 +6,7 @@ package mui.material
 
 import mui.material.styles.Theme
 import mui.system.SxProps
+import web.html.Hidden
 
 external interface SpeedDialProps :
     mui.system.StandardProps,
@@ -38,7 +39,7 @@ external interface SpeedDialProps :
      * If `true`, the SpeedDial is hidden.
      * @default false
      */
-    override var hidden: Boolean?
+    override var hidden: Hidden?
 
     /**
      * Props applied to the [`Fab`](/material-ui/api/fab/) element.
