@@ -48,6 +48,9 @@ private val PKG_MAP = mapOf(
 
     "WriteCommandType" to "web.fs",
 
+    "NavigationFocusReset" to "web.navigation",
+    "NavigationHistoryBehavior" to "web.navigation",
+    "NavigationScrollBehavior" to "web.navigation",
     "NavigationType" to "web.navigation",
 
     "ColorGamut" to "web.mediacapabilities",

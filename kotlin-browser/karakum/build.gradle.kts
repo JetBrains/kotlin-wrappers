@@ -72,6 +72,7 @@ object Includes {
         "web/images/ImageBitmapRenderingContext.kt",
         "web/images/ImageBitmapRenderingContextSettings.kt",
         "web/performance/LargestContentfulPaint.kt",
+        "web/performance/PaintTimingMixin.kt",
         "web/performance/PerformanceEventTiming.kt",
         "web/performance/PerformanceNavigationTiming.kt",
         "web/performance/PerformancePaintTiming.kt",

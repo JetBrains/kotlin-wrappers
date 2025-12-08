@@ -1,3 +1,5 @@
+// Automatically generated - do not modify!
+
 package web.navigation
 
 import js.objects.JsPlainObject
@@ -8,20 +10,20 @@ import web.form.FormData
 import kotlin.js.JsAny
 
 /**
- * [MDN Reference](https://developer.mozilla.org/docs/Web/API/MouseEvent/NavigateEvent#options)
+ * [MDN Reference](https://developer.mozilla.org/docs/Web/API/NavigateEvent/NavigateEvent#options)
  */
 @JsPlainObject
 external interface NavigateEventInit :
     EventInit {
-    var navigationType: NavigationType?
-    var destination: NavigationDestination
     var canIntercept: Boolean?
-    var userInitiated: Boolean?
-    var hashChange: Boolean?
-    var signal: AbortSignal
-    var formData: FormData?
+    var destination: NavigationDestination
     var downloadRequest: String?
-    var info: JsAny?
+    var formData: FormData?
     var hasUAVisualTransition: Boolean?
+    var hashChange: Boolean?
+    var info: JsAny?
+    var navigationType: NavigationType?
+    var signal: AbortSignal
     var sourceElement: Element?
+    var userInitiated: Boolean?
 }

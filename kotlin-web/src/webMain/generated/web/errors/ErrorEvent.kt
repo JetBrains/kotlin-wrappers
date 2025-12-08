@@ -57,5 +57,8 @@ open external class ErrorEvent(
 inline val ErrorEvent.Companion.ERROR: EventType<ErrorEvent>
     get() = EventType("error")
 
+inline val ErrorEvent.Companion.NAVIGATE_ERROR: EventType<ErrorEvent>
+    get() = EventType("navigateerror")
+
 inline val ErrorEvent.Companion.PROCESSOR_ERROR: EventType<ErrorEvent>
     get() = EventType("processorerror")

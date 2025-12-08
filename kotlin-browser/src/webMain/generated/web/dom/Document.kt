@@ -66,6 +66,13 @@ open external class Document :
     val URL: String
 
     /**
+     * The **`activeViewTransition`** read-only property of the Document interface returns a ViewTransition instance representing the view transition currently active on the document.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/activeViewTransition)
+     */
+    val activeViewTransition: ViewTransition?
+
+    /**
      * The **`Document.body`** property represents the <body> or <frameset> node of the current document, or null if no such element exists.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Document/body)

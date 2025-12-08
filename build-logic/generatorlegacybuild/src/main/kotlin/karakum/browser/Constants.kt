@@ -20,6 +20,7 @@ private val PKG_MAP = mapOf(
     "history" to "web.history",
     "location" to "web.location",
     "navigator" to "web.navigator",
+    "navigation" to "web.navigation",
     "trustedTypes" to "web.trustedtypes",
     "scheduler" to "web.scheduling",
     "screen" to "web.screen",

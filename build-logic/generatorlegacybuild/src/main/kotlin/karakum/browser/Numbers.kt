@@ -7,6 +7,7 @@ private val WINDOW_EXCLUDED = setOf(
     "devicePixelRatio",
     "history",
     "navigator",
+    "navigation",
     "screen",
     "self",
     "speechSynthesis",

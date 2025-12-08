@@ -37,6 +37,24 @@ private val ADDITIONAL_EVENTS = listOf(
         name = "webglcontextrestored",
         type = "WebGLContextEvent",
     ),
+
+    // TEMP for Navigation
+    EventData(
+        name = "navigate",
+        type = "NavigateEvent",
+    ),
+    EventData(
+        name = "navigatesuccess",
+        type = "Event",
+    ),
+    EventData(
+        name = "navigateerror",
+        type = "ErrorEvent",
+    ),
+    EventData(
+        name = "currententrychange",
+        type = "NavigationCurrentEntryChangeEvent",
+    ),
 )
 
 private val EXCLUDED = setOf(

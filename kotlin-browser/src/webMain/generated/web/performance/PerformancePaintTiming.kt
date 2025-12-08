@@ -11,6 +11,7 @@ import kotlin.js.JsAny
  */
 open external class PerformancePaintTiming
 private constructor() :
-    PerformanceEntry {
+    PerformanceEntry,
+    PaintTimingMixin {
     override fun toJSON(): JsAny
 }

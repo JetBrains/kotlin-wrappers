@@ -79,6 +79,9 @@ private fun convertFunctionType(
 
         name == "NotificationPermissionCallback" -> "web.notifications"
 
+        name == "NavigationInterceptHandler" -> "web.navigation"
+        name == "NavigationPrecommitHandler" -> "web.navigation"
+
         name == "ReportingObserverCallback" -> "web.reporting"
 
         name.startsWith("RTC") -> "web.rtc"

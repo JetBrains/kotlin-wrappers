@@ -1057,6 +1057,13 @@ private constructor() :
     var emptyCells: String
 
     /**
+     * The field-sizing CSS property enables you to control the sizing behavior of elements that are given a default preferred size, such as form control elements. This property enables you to override the default sizing behavior, allowing form controls to adjust in size to fit their contents.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/field-sizing)
+     */
+    var fieldSizing: String
+
+    /**
      * The **`fill`** CSS property defines how SVG text content and the interior canvas of SVG shapes are filled or painted. If present, it overrides the element's fill attribute.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/fill)
@@ -2264,6 +2271,13 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/position-try-order)
      */
     var positionTryOrder: String
+
+    /**
+     * The position-visibility CSS property enables conditionally hiding an anchor-positioned element depending on, for example, whether it is overflowing its containing element or the viewport.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/position-visibility)
+     */
+    var positionVisibility: String
 
     /**
      * The print-color-adjust CSS property sets what, if anything, the user agent may do to optimize the appearance of the element on the output device. By default, the browser is allowed to make any adjustments to the element's appearance it determines to be necessary and prudent given the type and capabilities of the output device.

@@ -13,7 +13,8 @@ import kotlin.js.JsAny
  */
 open external class LargestContentfulPaint
 private constructor() :
-    PerformanceEntry {
+    PerformanceEntry,
+    PaintTimingMixin {
     /**
      * The **`element`** read-only property of the LargestContentfulPaint interface returns an object representing the Element that is the largest contentful paint.
      *

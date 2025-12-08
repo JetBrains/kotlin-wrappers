@@ -75,6 +75,9 @@ internal val EVENT_DATA = listOf(
     EventInfo("web.viewtransition.PageRevealEvent"),
     EventInfo("web.viewtransition.PageSwapEvent"),
     EventInfo("web.cookie.CookieChangeEvent"),
+
+    EventInfo("web.navigation.NavigateEvent"),
+    EventInfo("web.navigation.NavigationCurrentEntryChangeEvent"),
 )
 
 internal val WEB_WORKER_EVENT_DATA = listOf(
@@ -253,4 +256,8 @@ internal val EVENT_CORRECTION_MAP = mapOf(
     "webglcontextcreationerror" to "webgl_context_creation_error",
     "webglcontextlost" to "webgl_context_lost",
     "webglcontextrestored" to "webgl_context_restored",
+
+    "navigatesuccess" to "navigate_success",
+    "navigateerror" to "navigate_error",
+    "currententrychange" to "current_entry_change",
 )

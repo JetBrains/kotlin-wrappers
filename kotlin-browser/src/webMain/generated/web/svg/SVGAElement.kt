@@ -3,6 +3,7 @@
 package web.svg
 
 import web.dom.DOMTokenList
+import web.http.ReferrerPolicy
 import kotlin.js.JsString
 
 /**
@@ -20,6 +21,21 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAElement/download)
      */
     var download: String
+
+    /**
+     * The **`hreflang`** property of the SVGAElement interface returns a string indicating the language of the linked resource.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAElement/hreflang)
+     */
+    var hreflang: String
+
+    /**
+     * The **`ping`** property of the SVGAElement interface returns a string that reflects the ping attribute, containing a space-separated list of URLs to which, when the hyperlink is followed, POST requests with the body PING will be sent by the browser (in the background). Typically used for tracking.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAElement/ping)
+     */
+    var ping: String
+    var referrerPolicy: ReferrerPolicy
 
     /**
      * The **`rel`** property of the SVGAElement returns a string reflecting the value of the rel attribute of the SVG <a> element.
@@ -41,4 +57,11 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAElement/target)
      */
     val target: SVGAnimatedString
+
+    /**
+     * The **`type`** property of the SVGAElement interface returns a string indicating the MIME type of the linked resource.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/SVGAElement/type)
+     */
+    var type: String
 }

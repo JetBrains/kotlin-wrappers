@@ -5,4 +5,6 @@ package web.navigation
 import js.core.Void
 import js.promise.PromiseLike
 
-typealias NavigationInterceptHandler = () -> PromiseLike<Void>?
+typealias NavigationPrecommitHandler = (
+    controller: NavigationPrecommitController,
+) -> PromiseLike<Void>?

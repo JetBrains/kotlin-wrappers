@@ -2,6 +2,7 @@
 
 package web.performance
 
+import js.core.UInt53
 import web.events.Event
 import web.events.EventHandler
 import web.events.EventInstance
@@ -24,6 +25,7 @@ private constructor() :
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Performance/eventCounts)
      */
     val eventCounts: EventCounts
+    val interactionCount: UInt53
 
     /**
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Performance/resourcetimingbufferfull_event)

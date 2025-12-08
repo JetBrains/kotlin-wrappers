@@ -261,6 +261,9 @@ inline val Event.Companion.LOAD_START: EventType<Event>
 inline val Event.Companion.MUTE: EventType<Event>
     get() = EventType("mute")
 
+inline val Event.Companion.NAVIGATE_SUCCESS: EventType<Event>
+    get() = EventType("navigatesuccess")
+
 inline val Event.Companion.NEGOTIATION_NEEDED: EventType<Event>
     get() = EventType("negotiationneeded")
 
