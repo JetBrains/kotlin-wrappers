@@ -4,8 +4,8 @@ import example.app.App
 import react.create
 import react.dom.client.createRoot
 import web.dom.document
-import web.html.HtmlTagName.div
 import web.html.HTMLElement
+import web.html.HtmlTagName.div
 
 fun main() {
     val container = createContainer()
