@@ -8,11 +8,7 @@ import js.promise.await
 import web.http.Request
 import web.http.Response
 import web.url.URL
-import kotlin.js.JsBoolean
-import kotlin.js.JsName
-import kotlin.js.JsString
-import kotlin.js.definedExternally
-import kotlin.js.toBoolean
+import kotlin.js.*
 
 /**
  * The **`CacheStorage`** interface represents the storage for Cache objects.
