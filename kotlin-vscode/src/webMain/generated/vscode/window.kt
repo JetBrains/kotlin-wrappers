@@ -8,11 +8,7 @@ import js.array.ReadonlyArray
 import js.objects.JsPlainObject
 import js.promise.PromiseLike
 import vscode.window.createStatusBarItem
-import kotlin.js.JsAny
-import kotlin.js.JsModule
-import kotlin.js.JsName
-import kotlin.js.JsString
-import kotlin.js.definedExternally
+import kotlin.js.*
 
 /**
  * Namespace for dealing with the current window of the editor. That is visible

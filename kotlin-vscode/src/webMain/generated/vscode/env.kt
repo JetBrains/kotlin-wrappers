@@ -5,11 +5,7 @@
 package vscode
 
 import js.promise.PromiseLike
-import kotlin.js.JsBoolean
-import kotlin.js.JsModule
-import kotlin.js.JsName
-import kotlin.js.JsString
-import kotlin.js.definedExternally
+import kotlin.js.*
 
 /**
  * Namespace describing the environment the editor runs in.

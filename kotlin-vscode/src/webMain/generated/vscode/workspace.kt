@@ -9,11 +9,7 @@ import js.core.Void
 import js.promise.PromiseLike
 import js.typedarrays.Uint8Array
 import vscode.workspace.notebookDocuments
-import kotlin.js.JsBoolean
-import kotlin.js.JsModule
-import kotlin.js.JsName
-import kotlin.js.JsString
-import kotlin.js.definedExternally
+import kotlin.js.*
 
 /**
  * Namespace for dealing with the current workspace. A workspace is the collection of one
