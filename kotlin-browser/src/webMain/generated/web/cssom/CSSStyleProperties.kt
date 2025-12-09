@@ -270,6 +270,10 @@ private constructor() :
      */
     var backgroundSize: String
     var baselineShift: String
+
+    /**
+     * The baseline-source CSS property defines which baseline to use when inline-level boxes have multiple possible baselines, such as multi-line inline blocks or inline flex containers. The values allow for choosing between aligning to the box's first baseline, last baseline, or letting the browser decide automatically based on the box type.
+     */
     var baselineSource: String
 
     /**
@@ -2854,7 +2858,7 @@ private constructor() :
     var textRendering: String
 
     /**
-     * The text-shadow CSS property adds shadows to text. It accepts a comma-separated list of shadows to be applied to the text and any of its decorations. Each shadow is described by some combination of X and Y offsets from the element, blur radius, and color.
+     * The text-shadow CSS property adds shadows to text. It accepts a comma-separated list of shadows to be applied to the text and any of its text-decoration. Each shadow is described by some combination of X and Y offsets from the element, blur radius, and color.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/text-shadow)
      */
