@@ -3,7 +3,6 @@ package js.reflect
 import js.core.BigInt
 import js.core.n
 import js.globals.globalThis
-import js.objects.set
 import kotlin.test.Test
 import kotlin.test.assertEquals
 
