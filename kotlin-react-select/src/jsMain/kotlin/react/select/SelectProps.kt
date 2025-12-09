@@ -1,7 +1,6 @@
 package react.select
 
 import js.objects.JsPlainObject
-import react.ComponentType
 import react.Key
 import react.PropsWithClassName
 import react.PropsWithRef
