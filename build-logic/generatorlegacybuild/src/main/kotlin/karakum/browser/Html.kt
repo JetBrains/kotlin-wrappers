@@ -645,7 +645,7 @@ internal fun htmlDeclarations(
                 body = """
                     sealed /* final */
                     external class EventCounts
-                    protected /* private */ constructor():
+                    private constructor():
                     ReadonlyMap<EventType<*>, Int>
                 """.trimIndent(),
                 pkg = "web.performance",
@@ -1344,12 +1344,7 @@ internal fun convertInterface(
                         || name == "WGSLLanguageFeatures"
                         || name == "FontFaceSet"
                 )
-            -> {
-            declaration = declaration
-                .replace("private constructor()", "protected /* private */ constructor()")
-
-            "sealed /* final */\n"
-        }
+            -> "sealed /* final */\n"
 
         isClass
             -> "open"

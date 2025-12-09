@@ -10,5 +10,5 @@ import kotlin.js.JsString
 @ExperimentalWebApi
 sealed /* final */
 external class KeyboardLayoutMap
-protected /* private */ constructor() :
+private constructor() :
     ReadonlyMap<KeyCode, JsString>

@@ -7,5 +7,5 @@ import kotlin.js.JsString
 
 sealed /* final */
 external class ViewTransitionTypeSet
-protected /* private */ constructor() :
+private constructor() :
     MutableSetLike<JsString>

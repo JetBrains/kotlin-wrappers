@@ -14,7 +14,7 @@ import kotlin.js.JsString
  */
 sealed /* final */
 external class StylePropertyMapReadOnly
-protected /* private */ constructor() :
+private constructor() :
     MapLike<JsString, ReadonlyArray<CSSStyleValue>>,
     ReadonlySetLike<JsString> {
     /**

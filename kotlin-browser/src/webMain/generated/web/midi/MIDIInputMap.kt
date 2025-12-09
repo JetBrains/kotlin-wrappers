@@ -13,5 +13,5 @@ import kotlin.js.JsString
  */
 sealed /* final */
 external class MIDIInputMap
-protected /* private */ constructor() :
+private constructor() :
     ReadonlyMap<JsString, MIDIInput>

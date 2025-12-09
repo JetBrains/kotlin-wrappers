@@ -20,7 +20,7 @@ import kotlin.js.definedExternally
  */
 sealed /* final */
 external class FileSystemDirectoryHandle
-protected /* private */ constructor() :
+private constructor() :
     FileSystemHandle,
     AsyncMapLike<JsString, FileSystemHandle>,
     Serializable {

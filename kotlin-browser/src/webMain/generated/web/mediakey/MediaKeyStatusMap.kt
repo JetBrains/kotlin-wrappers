@@ -13,7 +13,7 @@ import js.collections.ReadonlyMap
  */
 sealed /* final */
 external class MediaKeyStatusMap
-protected /* private */ constructor() :
+private constructor() :
     ReadonlyMap<BufferSource, MediaKeyStatus> {
     /**
      * The **`size`** read-only property of the MediaKeyStatusMap interface returns the number of key/value paIrs in the status map.

@@ -12,7 +12,7 @@ import kotlin.js.JsString
  */
 sealed /* final */
 external class GPUSupportedFeatures
-protected /* private */ constructor() :
+private constructor() :
     ReadonlySet<JsString> {
     override fun forEach(action: (item: JsString) -> Unit)
 }

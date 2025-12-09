@@ -8,5 +8,5 @@ import web.events.EventType
 
 sealed /* final */
 external class EventCounts
-protected /* private */ constructor() :
+private constructor() :
     ReadonlyMap<EventType<*>, JsInt>

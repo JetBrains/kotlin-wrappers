@@ -9,7 +9,7 @@ import web.rendering.RenderingContextId
 
 sealed /* final */
 external class WebGL2RenderingContext
-protected /* private */ constructor() :
+private constructor() :
     WebGL2RenderingContextBase,
     WebGL2RenderingContextOverloads,
     WebGLRenderingContextBase,

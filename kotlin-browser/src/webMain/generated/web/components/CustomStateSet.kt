@@ -12,5 +12,5 @@ import kotlin.js.JsString
  */
 sealed /* final */
 external class CustomStateSet
-protected /* private */ constructor() :
+private constructor() :
     MutableSetLike<JsString>

@@ -19,7 +19,7 @@ import kotlin.js.definedExternally
  */
 sealed /* final */
 external class FontFaceSet
-protected /* private */ constructor() :
+private constructor() :
     EventTarget,
     MutableSetLike<FontFace> {
     /**

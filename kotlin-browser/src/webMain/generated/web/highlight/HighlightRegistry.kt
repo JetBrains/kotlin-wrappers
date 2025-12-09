@@ -12,5 +12,5 @@ import kotlin.js.JsString
  */
 sealed /* final */
 external class HighlightRegistry
-protected /* private */ constructor() :
+private constructor() :
     MutableMapLike<JsString, Highlight>

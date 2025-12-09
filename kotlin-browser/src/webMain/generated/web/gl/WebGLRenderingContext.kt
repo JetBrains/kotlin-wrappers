@@ -9,7 +9,7 @@ import web.rendering.RenderingContextId
 
 sealed /* final */
 external class WebGLRenderingContext
-protected /* private */ constructor() :
+private constructor() :
     WebGLRenderingContextBase,
     WebGLRenderingContextOverloads,
     OffscreenRenderingContext,

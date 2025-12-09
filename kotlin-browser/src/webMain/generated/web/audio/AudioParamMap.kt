@@ -11,5 +11,5 @@ import js.collections.ReadonlyMap
  */
 sealed /* final */
 external class AudioParamMap
-protected /* private */ constructor() :
+private constructor() :
     ReadonlyMap<AudioParamName, AudioParam>

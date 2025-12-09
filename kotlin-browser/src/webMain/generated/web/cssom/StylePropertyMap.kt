@@ -9,7 +9,7 @@ package web.cssom
  */
 sealed /* final */
 external class StylePropertyMap
-protected /* private */ constructor() :
+private constructor() :
     StylePropertyMapReadOnly {
     /**
      * The **`append()`** method of the StylePropertyMap interface adds the passed CSS value to the StylePropertyMap with the given property.
