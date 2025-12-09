@@ -20,7 +20,7 @@ package cesium.engine
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PrimitiveCollection.html">Online Documentation</a>
  */
-external class PrimitiveCollection() {
+external class PrimitiveCollection {
     /**
      * Determines if primitives in this collection will be shown.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PrimitiveCollection.html#show">Online Documentation</a>

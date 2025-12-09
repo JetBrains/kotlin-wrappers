@@ -11,7 +11,7 @@ import web.html.HTMLImageElement
  * interface and is not intended to be instantiated directly.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/TileDiscardPolicy.html">Online Documentation</a>
  */
-abstract external class TileDiscardPolicy() {
+abstract external class TileDiscardPolicy {
     /**
      * Determines if the discard policy is ready to process images.
      * @return True if the discard policy is ready to process images; otherwise, false.

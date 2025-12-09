@@ -50,7 +50,7 @@ import js.objects.JsPlainObject
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/TimeInterval.html">Online Documentation</a>
  */
-external class TimeInterval() {
+external class TimeInterval {
     /**
      * Gets or sets the start time of this interval.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/TimeInterval.html#start">Online Documentation</a>

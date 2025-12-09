@@ -12,7 +12,7 @@ import seskar.js.JsAsync
  * A collection of [DataSource] instances.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/DataSourceCollection.html">Online Documentation</a>
  */
-external class DataSourceCollection() {
+external class DataSourceCollection {
     /**
      * Gets the number of data sources in this collection.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/DataSourceCollection.html#length">Online Documentation</a>

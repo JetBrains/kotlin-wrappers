@@ -10,7 +10,7 @@ package cesium.engine
  * can be linear connected points, great arcs, or clamped to terrain.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PolylineGraphics.html">Online Documentation</a>
  */
-external class PolylineGraphics() {
+external class PolylineGraphics {
     /**
      * Gets the event that is raised whenever a property or sub-property is changed or modified.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PolylineGraphics.html#definitionChanged">Online Documentation</a>

@@ -9,7 +9,7 @@ package cesium.engine
  * point clouds using 3D Tiles.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PointCloudShading.html">Online Documentation</a>
  */
-external class PointCloudShading() {
+external class PointCloudShading {
     /**
      * Perform point attenuation based on geometric error.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PointCloudShading.html#attenuation">Online Documentation</a>

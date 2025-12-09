@@ -10,7 +10,7 @@ package cesium.engine
  * for documentation purposes and is not intended to be instantiated directly.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/DataSource.html">Online Documentation</a>
  */
-abstract external class DataSource() {
+abstract external class DataSource {
     /**
      * Gets a human-readable name for this instance.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/DataSource.html#name">Online Documentation</a>

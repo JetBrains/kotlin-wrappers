@@ -8,7 +8,7 @@ package cesium.engine
  * A [Property] that produces [TranslationRotationScale] data.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/NodeTransformationProperty.html">Online Documentation</a>
  */
-external class NodeTransformationProperty() {
+external class NodeTransformationProperty {
     /**
      * Gets a value indicating if this property is constant.  A property is considered
      * constant if getValue always returns the same result for the current definition.

@@ -10,7 +10,7 @@ package cesium.engine
  * at altitude and can optionally be extruded into a volume.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/RectangleGraphics.html">Online Documentation</a>
  */
-external class RectangleGraphics() {
+external class RectangleGraphics {
     /**
      * Gets the event that is raised whenever a property or sub-property is changed or modified.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/RectangleGraphics.html#definitionChanged">Online Documentation</a>

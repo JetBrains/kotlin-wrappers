@@ -8,7 +8,7 @@ package cesium.engine
  * Describes a polyline defined as the path made by an [Entity] as it moves over time.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PathGraphics.html">Online Documentation</a>
  */
-external class PathGraphics() {
+external class PathGraphics {
     /**
      * Gets the event that is raised whenever a property or sub-property is changed or modified.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PathGraphics.html#definitionChanged">Online Documentation</a>

@@ -13,7 +13,7 @@ import seskar.js.JsAsync
  * interface and is not intended to be instantiated directly.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/TerrainData.html">Online Documentation</a>
  */
-abstract external class TerrainData() {
+abstract external class TerrainData {
     /**
      * An array of credits for this tile.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/TerrainData.html#credits">Online Documentation</a>

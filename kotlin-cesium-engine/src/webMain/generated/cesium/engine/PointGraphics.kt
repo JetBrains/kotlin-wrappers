@@ -8,7 +8,7 @@ package cesium.engine
  * Describes a graphical point located at the position of the containing [Entity].
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PointGraphics.html">Online Documentation</a>
  */
-external class PointGraphics() {
+external class PointGraphics {
     /**
      * Gets the event that is raised whenever a property or sub-property is changed or modified.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PointGraphics.html#definitionChanged">Online Documentation</a>

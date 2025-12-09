@@ -22,7 +22,7 @@ package cesium.engine
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/OrthographicOffCenterFrustum.html">Online Documentation</a>
  */
-external class OrthographicOffCenterFrustum() {
+external class OrthographicOffCenterFrustum {
     /**
      * The left clipping plane.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/OrthographicOffCenterFrustum.html#left">Online Documentation</a>

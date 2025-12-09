@@ -21,7 +21,7 @@ package cesium.engine
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/DebugModelMatrixPrimitive.html">Online Documentation</a>
  */
-external class DebugModelMatrixPrimitive() {
+external class DebugModelMatrixPrimitive {
     /**
      * The length of the axes in meters.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/DebugModelMatrixPrimitive.html#length">Online Documentation</a>

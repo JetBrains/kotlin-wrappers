@@ -16,7 +16,7 @@ import js.array.ReadonlyArray
  * Otherwise, the application is responsible for calling destroy().
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ImageBasedLighting.html">Online Documentation</a>
  */
-external class ImageBasedLighting() {
+external class ImageBasedLighting {
     /**
      * Cesium adds lighting from the earth, sky, atmosphere, and star skybox.
      * This cartesian is used to scale the final diffuse and specular lighting

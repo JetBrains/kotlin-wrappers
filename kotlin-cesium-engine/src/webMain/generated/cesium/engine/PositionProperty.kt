@@ -10,7 +10,7 @@ package cesium.engine
  * This type defines an interface and cannot be instantiated directly.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PositionProperty.html">Online Documentation</a>
  */
-abstract external class PositionProperty() {
+abstract external class PositionProperty {
     /**
      * Gets a value indicating if this property is constant.  A property is considered
      * constant if getValue always returns the same result for the current definition.

@@ -26,7 +26,7 @@ package cesium.engine
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/GeometryAttribute.html">Online Documentation</a>
  */
-external class GeometryAttribute() {
+external class GeometryAttribute {
     /**
      * The datatype of each component in the attribute, e.g., individual elements in
      * [GeometryAttribute.values].

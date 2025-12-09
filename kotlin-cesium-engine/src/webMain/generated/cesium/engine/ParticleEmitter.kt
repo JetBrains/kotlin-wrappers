@@ -10,4 +10,4 @@ package cesium.engine
  * This type describes an interface and is not intended to be instantiated directly.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/ParticleEmitter.html">Online Documentation</a>
  */
-abstract external class ParticleEmitter()
+abstract external class ParticleEmitter

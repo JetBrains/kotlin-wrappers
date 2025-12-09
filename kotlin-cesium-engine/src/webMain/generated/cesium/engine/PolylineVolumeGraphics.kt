@@ -9,7 +9,7 @@ package cesium.engine
  * The resulting volume conforms to the curvature of the globe.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PolylineVolumeGraphics.html">Online Documentation</a>
  */
-external class PolylineVolumeGraphics() {
+external class PolylineVolumeGraphics {
     /**
      * Gets the event that is raised whenever a property or sub-property is changed or modified.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PolylineVolumeGraphics.html#definitionChanged">Online Documentation</a>

@@ -21,7 +21,7 @@ package cesium.engine
  * ```
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PerspectiveOffCenterFrustum.html">Online Documentation</a>
  */
-external class PerspectiveOffCenterFrustum() {
+external class PerspectiveOffCenterFrustum {
     /**
      * Defines the left clipping plane.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PerspectiveOffCenterFrustum.html#left">Online Documentation</a>

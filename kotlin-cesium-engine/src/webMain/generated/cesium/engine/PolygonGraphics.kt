@@ -10,7 +10,7 @@ package cesium.engine
  * at altitude and can optionally be extruded into a volume.
  * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PolygonGraphics.html">Online Documentation</a>
  */
-external class PolygonGraphics() {
+external class PolygonGraphics {
     /**
      * Gets the event that is raised whenever a property or sub-property is changed or modified.
      * @see <a href="https://cesium.com/docs/cesiumjs-ref-doc/PolygonGraphics.html#definitionChanged">Online Documentation</a>
