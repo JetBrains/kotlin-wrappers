@@ -19,7 +19,7 @@ package node.tls
  * A key is _required_ for ciphers that use certificates. Either `key` or `pfx` can be used to provide it.
  *
  * If the `ca` option is not given, then Node.js will default to using [Mozilla's publicly trusted list of
-     * CAs](https://hg.mozilla.org/mozilla-central/raw-file/tip/security/nss/lib/ckfw/builtins/certdata.txt).
+ * CAs](https://hg.mozilla.org/mozilla-central/raw-file/tip/security/nss/lib/ckfw/builtins/certdata.txt).
  *
  * Custom DHE parameters are discouraged in favor of the new `dhparam: 'auto' `option. When set to `'auto'`, well-known DHE parameters of sufficient strength
  * will be selected automatically. Otherwise, if necessary, `openssl dhparam` can
