@@ -499,7 +499,7 @@ private constructor() :
     )
 
     /**
-     * **`setAttributeNS`** adds a new attribute or changes the value of an attribute with the given namespace and name.
+     * If you are working with HTML documents and you don't need to specify the requested attribute as being part of a specific namespace, use the setAttribute() method instead.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/Element/setAttributeNS)
      */

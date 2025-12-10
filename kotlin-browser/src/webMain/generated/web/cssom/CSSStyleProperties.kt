@@ -131,14 +131,14 @@ private constructor() :
     var animationRange: String
 
     /**
-     * The animation-range-end CSS property is used to set the end of an animation's attachment range along its timeline, i.e., where along the timeline an animation will end.
+     * The animation-range-end CSS property sets the point on the timeline where an animation should end.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/animation-range-end)
      */
     var animationRangeEnd: String
 
     /**
-     * The animation-range-start CSS property is used to set the start of an animation's attachment range along its timeline, i.e., where along the timeline an animation will start.
+     * The animation-range-start CSS property sets the point on the timeline where an animation should start.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/animation-range-start)
      */
@@ -2557,7 +2557,7 @@ private constructor() :
     var scrollTimeline: String
 
     /**
-     * The scroll-timeline-axis CSS property is used to specify the scrollbar direction that will be used to provide the timeline for a scroll driven animation animation, which is progressed through by scrolling a scrollable element (scroller).
+     * The scroll-timeline-axis CSS property is used to specify the scrollbar direction that will be used to provide the timeline for a scroll driven animation, which is progressed through by scrolling a scrollable element (scroller).
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/scroll-timeline-axis)
      */
