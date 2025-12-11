@@ -53,6 +53,10 @@ external interface FileSystemProvider {
      * - a relative path to exclude (for example `build/output`)
      * - a simple glob pattern (for example `**​/build`, `output/​**`)
      *
+     * *Note* that case-sensitivity of the [excludes] patterns for built-in file system providers
+     * will depend on the underlying file system: on Windows and macOS the matching will be case-insensitive and
+     * on Linux it will be case-sensitive.
+     *
      * It is the file system provider's job to call {@linkcode FileSystemProvider.onDidChangeFile onDidChangeFile}
      * for every change given these rules. No event should be emitted for files that match any of the provided
      * excludes.

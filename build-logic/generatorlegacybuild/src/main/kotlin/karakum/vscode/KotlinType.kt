@@ -66,6 +66,7 @@ private val STANDARD_TYPE_MAP = mapOf(
     "Record<string, any>" to "ReadonlyRecord<String, *>",
     "Record<string, string>" to "ReadonlyRecord<String, String>",
     "Record<string, string | number | null>" to "ReadonlyRecord<String, String?>",
+    "Record<string, string | number | boolean>" to "ReadonlyRecord<String, String?>",
     "Record<string, any | TelemetryTrustedValue>" to "ReadonlyRecord<String, TelemetryTrustedValue<*>>",
 
     "Tab | readonly Tab[]" to "ReadonlyArray<Tab> /* Tab */",
