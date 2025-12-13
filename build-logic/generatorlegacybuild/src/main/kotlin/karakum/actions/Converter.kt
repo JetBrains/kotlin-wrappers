@@ -17,6 +17,11 @@ private val EXCLUDED_NAMES = setOf(
     "internalArtifactTwirpClient",
 ).flatMap { sequenceOf(it, "${it}Async") }
 
+private val PRIVATE_MEMBER_WITH_COMMENT = Regex(
+    """\n\s+/\*\*\n.+?\*/\n\s+private _.+?;""",
+    RegexOption.DOT_MATCHES_ALL,
+)
+
 private val REDUNDANT_CONTEXT = """
 export declare const context: Context.Context;
 export declare const defaults: OctokitOptions;
@@ -42,6 +47,7 @@ private fun cleanup(
     content: String,
 ): String =
     content.replace(REDUNDANT_CONTEXT, "")
+        .replace(PRIVATE_MEMBER_WITH_COMMENT, { result -> result.value.substringBeforeLast("\n    /**\n") })
         .splitToSequence("\n")
         .filter { line -> !line.startsWith("/// ") }
         .filter { line -> !line.startsWith("import ") }
