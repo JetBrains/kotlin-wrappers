@@ -1,3 +1,18 @@
+Actions
+
+```sh
+./gradlew :kotlin-actions-karakum:generate
+./gradlew :kotlin-actions-artifact:build
+./gradlew :kotlin-actions-cache:build
+./gradlew :kotlin-actions-core:build
+./gradlew :kotlin-actions-exec:build
+./gradlew :kotlin-actions-github:build
+./gradlew :kotlin-actions-glob:build
+./gradlew :kotlin-actions-http-client:build
+./gradlew :kotlin-actions-io:build
+./gradlew :kotlin-actions-tool-cache:build
+```
+
 Browser
 
 ```sh
