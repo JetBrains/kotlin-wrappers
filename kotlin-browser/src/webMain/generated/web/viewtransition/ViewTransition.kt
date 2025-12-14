@@ -25,6 +25,12 @@ private constructor() {
      * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ViewTransition/ready)
      */
     val ready: Promise<Void>
+
+    /**
+     * The **`types`** read-only property of the ViewTransition interface is a ViewTransitionTypeSet that allows the types set on the view transition to be accessed and modified.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/API/ViewTransition/types)
+     */
     var types: ViewTransitionTypeSet
 
     /**

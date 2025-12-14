@@ -273,6 +273,8 @@ private constructor() :
 
     /**
      * The baseline-source CSS property defines which baseline to use when inline-level boxes have multiple possible baselines, such as multi-line inline blocks or inline flex containers. The values allow for choosing between aligning to the box's first baseline, last baseline, or letting the browser decide automatically based on the box type.
+     *
+     * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/baseline-source)
      */
     var baselineSource: String
 
@@ -3054,7 +3056,7 @@ private constructor() :
     var viewTimelineInset: String
 
     /**
-     * The view-timeline-name CSS property is used to define the name of a named view progress timeline, which is progressed through based on the change in visibility of an element (known as the subject) inside a scrollable element (scroller). view-timeline is set on the subject.
+     * The view-timeline-name CSS property specifies the names of one or more named view progress timelines associated with the element.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/view-timeline-name)
      */
