@@ -3042,7 +3042,7 @@ private constructor() :
     var viewTimeline: String
 
     /**
-     * The view-timeline-axis CSS property is used to specify the scrollbar direction that will be used to provide the timeline for a named view progress timeline animation, which is progressed through based on the change in visibility of an element (known as the subject) inside a scrollable element (scroller). view-timeline-axis is set on the subject. See CSS scroll-driven animations for more details.
+     * The view-timeline-axis CSS property specifies the scroll direction to be  used for a named view progress timeline.
      *
      * [MDN Reference](https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/view-timeline-axis)
      */
