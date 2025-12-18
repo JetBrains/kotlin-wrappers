@@ -14,5 +14,6 @@ external interface FontFaceDescriptors {
     var stretch: String?
     var style: String?
     var unicodeRange: String?
+    var variationSettings: String?
     var weight: String?
 }
