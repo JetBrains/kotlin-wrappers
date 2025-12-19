@@ -8,4 +8,5 @@ sealed external interface NetworkInterfaceBase {
     var mac: String
     var internal: Boolean
     var cidr: String?
+    var scopeid: Double?
 }

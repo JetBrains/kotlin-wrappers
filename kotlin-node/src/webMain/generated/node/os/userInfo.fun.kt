@@ -4,6 +4,8 @@
 
 package node.os
 
+import node.buffer.NonSharedBuffer
+
 /**
  * Returns information about the currently effective user. On POSIX platforms,
  * this is typically a subset of the password file. The returned object includes
@@ -17,6 +19,8 @@ package node.os
  * Throws a [`SystemError`](https://nodejs.org/docs/latest-v24.x/api/errors.html#class-systemerror) if a user has no `username` or `homedir`.
  * @since v6.0.0
  */
-external fun userInfo(options: UserInfoBufferOptions): UserInfo<node.buffer.Buffer<*>>
+external fun userInfo(options: UserInfoOptionsWithStringEncoding = definedExternally): UserInfo<String>
 
-external fun userInfo(options: UserInfoStringOptions = definedExternally): UserInfo<String>
+external fun userInfo(options: UserInfoOptionsWithBufferEncoding): UserInfo<NonSharedBuffer>
+
+external fun userInfo(options: UserInfoOptions): UserInfo<Any /* string | NonSharedBuffer */>

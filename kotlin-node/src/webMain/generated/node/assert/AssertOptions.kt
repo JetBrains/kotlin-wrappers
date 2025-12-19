@@ -15,4 +15,12 @@ sealed external interface AssertOptions {
      * @default true
      */
     var strict: Boolean?
+
+    /**
+     * If set to `true`, skips prototype and constructor
+     * comparison in deep equality checks.
+     * @since v24.9.0
+     * @default false
+     */
+    var skipPrototype: Boolean?
 }

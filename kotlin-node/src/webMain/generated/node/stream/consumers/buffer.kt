@@ -6,6 +6,7 @@ package node.stream.consumers
 
 import js.iterable.AsyncIterable
 import js.promise.Promise
+import node.buffer.NonSharedBuffer
 import web.streams.ReadableStream as WebReadableStream
 
 /**
@@ -13,18 +14,18 @@ import web.streams.ReadableStream as WebReadableStream
  * @returns Fulfills with a `Buffer` containing the full contents of the stream.
  */
 @JsName("buffer")
-external fun bufferAsync(stream: WebReadableStream<*>): Promise<node.buffer.Buffer<*>>
+external fun bufferAsync(stream: WebReadableStream<*>): Promise<NonSharedBuffer>
 
 /**
  * @since v16.7.0
  * @returns Fulfills with a `Buffer` containing the full contents of the stream.
  */
 @JsName("buffer")
-external fun bufferAsync(stream: node.ReadableStream): Promise<node.buffer.Buffer<*>>
+external fun bufferAsync(stream: node.ReadableStream): Promise<NonSharedBuffer>
 
 /**
  * @since v16.7.0
  * @returns Fulfills with a `Buffer` containing the full contents of the stream.
  */
 @JsName("buffer")
-external fun bufferAsync(stream: AsyncIterable<Any?>): Promise<node.buffer.Buffer<*>>
+external fun bufferAsync(stream: AsyncIterable<Any?>): Promise<NonSharedBuffer>

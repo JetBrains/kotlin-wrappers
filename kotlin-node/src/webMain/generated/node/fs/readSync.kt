@@ -27,5 +27,5 @@ external fun readSync(
 external fun readSync(
     fd: Number,
     buffer: js.buffer.ArrayBufferView<*>,
-    opts: ReadSyncOptions = definedExternally,
+    opts: ReadOptions = definedExternally,
 ): Double

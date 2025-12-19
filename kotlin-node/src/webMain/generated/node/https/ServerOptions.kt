@@ -6,6 +6,5 @@ import node.http.IncomingMessage
 import node.http.ServerResponse
 
 sealed external interface ServerOptions<Request : IncomingMessage, Response : ServerResponse<*>> :
-    node.tls.SecureContextOptions,
-    node.tls.TlsOptions,
-    node.http.ServerOptions<Request, Response>
+    node.http.ServerOptions<Request, Response>,
+    node.tls.TlsOptions

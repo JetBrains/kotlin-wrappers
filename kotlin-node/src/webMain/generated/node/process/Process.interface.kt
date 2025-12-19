@@ -5,10 +5,13 @@ package node.process
 import js.array.ReadonlyArray
 import js.collections.ReadonlySet
 import js.promise.Promise
+import node.childProcess.Control
+import node.childProcess.MessageOptions
+import node.childProcess.SendHandle
 import node.events.EventEmitter
+import node.fs.PathLike
 import node.module.Module
 import node.workerThreads.Worker
-import web.url.URL
 
 @Suppress("INTERFACE_WITH_SUPERCLASS")
 sealed external interface Process : EventEmitter {
@@ -710,7 +713,7 @@ sealed external interface Process : EventEmitter {
      * @default undefined
      * @since v0.11.8
      */
-    var exitCode: Any? // number | string | number | undefined
+    var exitCode: Any? // number | string | null | undefined
     var finalization: ProcessFinalization
 
     /**
@@ -1236,55 +1239,7 @@ sealed external interface Process : EventEmitter {
      * @since v20.12.0
      * @param path The path to the .env file
      */
-    fun loadEnvFile()
-
-    /**
-     * Loads the environment configuration from a `.env` file into `process.env`. If
-     * the file is not found, error will be thrown.
-     *
-     * To load a specific .env file by specifying its path, use the following code:
-     *
-     * ```js
-     * import { loadEnvFile } from 'node:process';
-     *
-     * loadEnvFile('./development.env')
-     * ```
-     * @since v20.12.0
-     * @param path The path to the .env file
-     */
-    fun loadEnvFile(path: String = definedExternally)
-
-    /**
-     * Loads the environment configuration from a `.env` file into `process.env`. If
-     * the file is not found, error will be thrown.
-     *
-     * To load a specific .env file by specifying its path, use the following code:
-     *
-     * ```js
-     * import { loadEnvFile } from 'node:process';
-     *
-     * loadEnvFile('./development.env')
-     * ```
-     * @since v20.12.0
-     * @param path The path to the .env file
-     */
-    fun loadEnvFile(path: URL = definedExternally)
-
-    /**
-     * Loads the environment configuration from a `.env` file into `process.env`. If
-     * the file is not found, error will be thrown.
-     *
-     * To load a specific .env file by specifying its path, use the following code:
-     *
-     * ```js
-     * import { loadEnvFile } from 'node:process';
-     *
-     * loadEnvFile('./development.env')
-     * ```
-     * @since v20.12.0
-     * @param path The path to the .env file
-     */
-    fun loadEnvFile(path: node.buffer.Buffer<*> = definedExternally)
+    fun loadEnvFile(path: PathLike = definedExternally)
 
     /**
      * The `process.pid` property returns the PID of the process.
@@ -1537,6 +1492,12 @@ sealed external interface Process : EventEmitter {
     )
 
     /**
+     * The process.noDeprecation property indicates whether the --no-deprecation flag is set on the current Node.js process.
+     * See the documentation for the ['warning' event](https://nodejs.org/docs/latest/api/process.html#event-warning) and the [emitWarning()](https://nodejs.org/docs/latest/api/process.html#processemitwarningwarning-type-code-ctor) method for more information about this flag's behavior.
+     */
+    var noDeprecation: Boolean?
+
+    /**
      * This API is available through the [--permission](https://nodejs.org/api/cli.html#--permission) flag.
      *
      * `process.permission` is an object whose methods are used to manage permissions for the current process.
@@ -1605,7 +1566,7 @@ sealed external interface Process : EventEmitter {
      * If no IPC channel exists, this property is undefined.
      * @since v7.1.0
      */
-    var channel: (ProcessChannel)?
+    var channel: Control?
 
     /**
      * If Node.js is spawned with an IPC channel, the `process.send()` method can be
@@ -1621,8 +1582,8 @@ sealed external interface Process : EventEmitter {
     val send: (
         (
         message: Any?,
-        sendHandle: Any?, /* use undefined for default */
-        options: (ProcessSendOptions)?, /* use undefined for default */
+        sendHandle: SendHandle, /* use undefined for default */
+        options: MessageOptions?, /* use undefined for default */
         callback: ((error: js.errors.JsError?) -> Unit)?, // use undefined for default
     ) -> Boolean
     )?
@@ -1874,7 +1835,10 @@ sealed external interface Process : EventEmitter {
     val warningEvent: node.events.EventInstance<js.array.Tuple1<js.errors.JsError>>
 
     @web.events.JsEvent("message")
-    val messageEvent: node.events.EventInstance<js.array.Tuple2<Any?, Any?>>
+    val messageEvent: node.events.EventInstance<js.array.Tuple2<Any?, SendHandle>>
+
+    @web.events.JsEvent("workerMessage")
+    val workerMessageEvent: node.events.EventInstance<js.array.Tuple2<Any?, Double>>
 
     @web.events.JsEvent("multipleResolves")
     val multipleResolvesEvent: node.events.EventInstance<js.array.Tuple3<MultipleResolveType, Promise<Any?>, Any?>>

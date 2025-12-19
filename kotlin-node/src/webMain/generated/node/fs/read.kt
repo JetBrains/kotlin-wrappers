@@ -4,6 +4,8 @@
 
 package node.fs
 
+import node.buffer.NonSharedBuffer
+
 /**
  * Read data from the file specified by `fd`.
  *
@@ -39,16 +41,16 @@ external fun <TBuffer : js.buffer.ArrayBufferView<*>> read(
  * `position` defaults to `null`
  * @since v12.17.0, 13.11.0
  */
-external fun <TBuffer : js.buffer.ArrayBufferView<*>> read(
+external fun <TBuffer : js.buffer.ArrayBufferView<*> /* default is NonSharedBuffer */> read(
     fd: Number,
-    options: ReadAsyncOptions<TBuffer>,
+    options: ReadOptionsWithBuffer<TBuffer>,
     callback: (err: node.ErrnoException?, bytesRead: Double, buffer: TBuffer) -> Unit,
 )
 
 external fun <TBuffer : js.buffer.ArrayBufferView<*>> read(
     fd: Number,
     buffer: TBuffer,
-    options: ReadSyncOptions,
+    options: ReadOptions,
     callback: (err: node.ErrnoException?, bytesRead: Double, buffer: TBuffer) -> Unit,
 )
 
@@ -60,5 +62,5 @@ external fun <TBuffer : js.buffer.ArrayBufferView<*>> read(
 
 external fun read(
     fd: Number,
-    callback: (err: node.ErrnoException?, bytesRead: Double, buffer: js.buffer.ArrayBufferView<*>) -> Unit,
+    callback: (err: node.ErrnoException?, bytesRead: Double, buffer: NonSharedBuffer) -> Unit,
 )

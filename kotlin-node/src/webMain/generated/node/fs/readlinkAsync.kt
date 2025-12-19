@@ -5,6 +5,7 @@
 package node.fs
 
 import js.promise.Promise
+import node.buffer.NonSharedBuffer
 
 /**
  * Reads the contents of the symbolic link referred to by `path`. See the POSIX [`readlink(2)`](http://man7.org/linux/man-pages/man2/readlink.2.html) documentation for more detail. The promise is
@@ -63,7 +64,7 @@ external fun readlinkAsync(
 external fun readlinkAsync(
     path: PathLike,
     options: BufferEncodingOption,
-): Promise<node.buffer.Buffer<*>>
+): Promise<NonSharedBuffer>
 
 /**
  * Asynchronous readlink(2) - read value of a symbolic link.
@@ -83,4 +84,7 @@ external fun readlinkAsync(
  * @param options The encoding (or an object specifying the encoding), used as the encoding of the result. If not provided, `'utf8'` is used.
  */
 @JsName("readlink")
-external fun readlinkAsync(path: PathLike, options: String? = definedExternally): Promise<Any /* string | Buffer */>
+external fun readlinkAsync(
+    path: PathLike,
+    options: String? = definedExternally,
+): Promise<Any /* string | NonSharedBuffer */>

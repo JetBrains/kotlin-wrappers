@@ -7,5 +7,5 @@ sealed external interface CopySyncOptions : CopyOptionsBase {
      * Function to filter copied files/directories. Return
      * `true` to copy the item, `false` to ignore it.
      */
-    val filter: ((source: String, destination: String) -> Boolean)?
+    var filter: ((source: String, destination: String) -> Boolean)?
 }

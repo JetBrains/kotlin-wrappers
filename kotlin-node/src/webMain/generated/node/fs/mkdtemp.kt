@@ -4,6 +4,8 @@
 
 package node.fs
 
+import node.buffer.NonSharedBuffer
+
 /**
  * Creates a unique temporary directory.
  *
@@ -76,19 +78,8 @@ external fun mkdtemp(
  */
 external fun mkdtemp(
     prefix: String,
-    options: String, /* "buffer" */
-    callback: (err: node.ErrnoException?, folder: node.buffer.Buffer<*>) -> Unit,
-)
-
-/**
- * Asynchronously creates a unique temporary directory.
- * Generates six random characters to be appended behind a required prefix to create a unique temporary directory.
- * @param options The encoding (or an object specifying the encoding), used as the encoding of the result. If not provided, `'utf8'` is used.
- */
-external fun mkdtemp(
-    prefix: String,
-    options: MkdtempOptions,
-    callback: (err: node.ErrnoException?, folder: node.buffer.Buffer<*>) -> Unit,
+    options: BufferEncodingOption,
+    callback: (err: node.ErrnoException?, folder: NonSharedBuffer) -> Unit,
 )
 
 /**
@@ -99,7 +90,7 @@ external fun mkdtemp(
 external fun mkdtemp(
     prefix: String,
     options: EncodingOption,
-    callback: (err: node.ErrnoException?, folder: Any /* string | Buffer */) -> Unit,
+    callback: (err: node.ErrnoException?, folder: Any /* string | NonSharedBuffer */) -> Unit,
 )
 
 /**

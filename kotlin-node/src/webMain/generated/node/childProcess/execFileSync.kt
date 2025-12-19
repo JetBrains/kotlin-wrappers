@@ -5,6 +5,7 @@
 package node.childProcess
 
 import js.array.ReadonlyArray
+import node.buffer.NonSharedBuffer
 
 /**
  * The `child_process.execFileSync()` method is generally identical to {@link execFile} with the exception that the method will not
@@ -26,7 +27,7 @@ import js.array.ReadonlyArray
  * @param args List of string arguments.
  * @return The stdout from the command.
  */
-external fun execFileSync(file: String): node.buffer.Buffer<*>
+external fun execFileSync(file: String): NonSharedBuffer
 
 external fun execFileSync(
     file: String,
@@ -36,14 +37,17 @@ external fun execFileSync(
 external fun execFileSync(
     file: String,
     options: ExecFileSyncOptionsWithBufferEncoding,
-): node.buffer.Buffer<*>
+): NonSharedBuffer
 
-external fun execFileSync(file: String, options: ExecFileSyncOptions = definedExternally): Any // string | Buffer
+external fun execFileSync(
+    file: String,
+    options: ExecFileSyncOptions = definedExternally,
+): Any // string | NonSharedBuffer
 
 external fun execFileSync(
     file: String,
     args: ReadonlyArray<String>,
-): node.buffer.Buffer<*>
+): NonSharedBuffer
 
 external fun execFileSync(
     file: String,
@@ -55,10 +59,10 @@ external fun execFileSync(
     file: String,
     args: ReadonlyArray<String>,
     options: ExecFileSyncOptionsWithBufferEncoding,
-): node.buffer.Buffer<*>
+): NonSharedBuffer
 
 external fun execFileSync(
     file: String,
     args: ReadonlyArray<String> = definedExternally,
     options: ExecFileSyncOptions = definedExternally,
-): Any // string | Buffer
+): Any // string | NonSharedBuffer

@@ -4,6 +4,8 @@
 
 package node.zlib
 
+import node.buffer.NonSharedBuffer
+
 /**
  * Decompress a chunk of data with `BrotliDecompress`.
  * @since v11.7.0, v10.16.0
@@ -11,4 +13,4 @@ package node.zlib
 external fun brotliDecompressSync(
     buf: InputType,
     options: BrotliOptions = definedExternally,
-): node.buffer.Buffer<*>
+): NonSharedBuffer

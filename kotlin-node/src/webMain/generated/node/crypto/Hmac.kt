@@ -4,6 +4,7 @@
 
 package node.crypto
 
+import node.buffer.NonSharedBuffer
 import node.stream.TransformOptions
 
 /**
@@ -103,7 +104,7 @@ external class Hmac : node.stream.Transform {
      * @since v0.1.94
      * @param encoding The `encoding` of the return value.
      */
-    fun digest(): node.buffer.Buffer<*>
+    fun digest(): NonSharedBuffer
 
     fun digest(encoding: BinaryToTextEncoding): String
 }

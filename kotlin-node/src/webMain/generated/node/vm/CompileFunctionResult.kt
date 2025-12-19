@@ -2,12 +2,8 @@
 
 package node.vm
 
-import js.buffer.ArrayBufferLike
-import node.buffer.Buffer
-
-@Suppress("INTERFACE_WITH_SUPERCLASS")
-sealed external interface CompileFunctionResult : js.function.JsFunction<Nothing, Any?> {
-    var cachedData: Buffer<ArrayBufferLike>?
-    var cachedDataProduced: Boolean?
-    var cachedDataRejected: Boolean?
-}
+@Suppress("INTERFACE_WITH_SUPERCLASS", "MANY_CLASSES_IN_SUPERTYPE_LIST")
+sealed external interface CompileFunctionResult :
+    js.function.JsFunction<Nothing, Any?>,
+    @seskar.js.JsMixin
+    Script

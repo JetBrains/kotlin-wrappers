@@ -6,7 +6,7 @@ sealed external interface X509CheckOptions {
     /**
      * @default 'always'
      */
-    var subject: (X509CheckOptionsSubject)?
+    var subject: X509CheckOptionsSubject?
 
     /**
      * @default true

@@ -4,6 +4,7 @@
 
 package node.https
 
+import node.buffer.NonSharedBuffer
 import node.http.IncomingMessage
 import node.http.ServerResponse
 import node.stream.Duplex
@@ -51,16 +52,16 @@ external class Server<Request : IncomingMessage, Response : ServerResponse<*>> :
     override fun prependOnceListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
 
     @web.events.JsEvent("keylog")
-    override val keylogEvent: node.events.EventInstance<js.array.Tuple2<node.buffer.Buffer<*>, node.tls.TLSSocket>>
+    override val keylogEvent: node.events.EventInstance<js.array.Tuple2<NonSharedBuffer, node.tls.TLSSocket>>
 
     @web.events.JsEvent("OCSPRequest")
     override val OCSPRequestEvent: node.events.EventInstance<
             js.array.Tuple3<
-                    node.buffer.Buffer<*>,
-                    node.buffer.Buffer<*>,
+                    NonSharedBuffer,
+                    NonSharedBuffer,
                         (
                 err: js.errors.JsError?,
-                resp: node.buffer.Buffer<*>,
+                resp: node.buffer.Buffer<*>?,
             ) -> Unit
                     >
             >
@@ -90,11 +91,11 @@ external class Server<Request : IncomingMessage, Response : ServerResponse<*>> :
     override val clientErrorEvent: node.events.EventInstance<js.array.Tuple2<js.errors.JsError, Duplex>>
 
     @web.events.JsEvent("connect")
-    override val connectEvent: node.events.EventInstance<js.array.Tuple3<Request, Duplex, node.buffer.Buffer<*>>>
+    override val connectEvent: node.events.EventInstance<js.array.Tuple3<Request, Duplex, NonSharedBuffer>>
 
     @web.events.JsEvent("request")
     override val requestEvent: node.events.EventInstance<js.array.Tuple2<Request, Response>>
 
     @web.events.JsEvent("upgrade")
-    override val upgradeEvent: node.events.EventInstance<js.array.Tuple3<Request, Duplex, node.buffer.Buffer<*>>>
+    override val upgradeEvent: node.events.EventInstance<js.array.Tuple3<Request, Duplex, NonSharedBuffer>>
 }

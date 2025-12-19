@@ -8,12 +8,12 @@ sealed external interface NodeGCPerformanceDetail {
      * the type of garbage collection operation that occurred.
      * See perf_hooks.constants for valid values.
      */
-    val kind: Double?
+    val kind: Double
 
     /**
      * When `performanceEntry.entryType` is equal to 'gc', the `performance.flags`
      * property contains additional information about garbage collection operation.
      * See perf_hooks.constants for valid values.
      */
-    val flags: Double?
+    val flags: Double
 }

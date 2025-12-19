@@ -4,6 +4,8 @@
 
 package node.crypto
 
+import node.buffer.NonSharedBuffer
+
 /**
  * The `ECDH` class is a utility for creating Elliptic Curve Diffie-Hellman (ECDH)
  * key exchanges.
@@ -47,7 +49,7 @@ external class ECDH {
      * @param encoding The `encoding` of the return value.
      * @param [format='uncompressed']
      */
-    fun generateKeys(): node.buffer.Buffer<*>
+    fun generateKeys(): NonSharedBuffer
 
     fun generateKeys(
         encoding: BinaryToTextEncoding,
@@ -71,7 +73,7 @@ external class ECDH {
      * @param inputEncoding The `encoding` of the `otherPublicKey` string.
      * @param outputEncoding The `encoding` of the return value.
      */
-    fun computeSecret(otherPublicKey: js.buffer.ArrayBufferView<*>): node.buffer.Buffer<*>
+    fun computeSecret(otherPublicKey: js.buffer.ArrayBufferView<*>): NonSharedBuffer
 
     fun computeSecret(
         otherPublicKey: js.buffer.ArrayBufferView<*>,
@@ -81,7 +83,7 @@ external class ECDH {
     fun computeSecret(
         otherPublicKey: String,
         inputEncoding: BinaryToTextEncoding,
-    ): node.buffer.Buffer<*>
+    ): NonSharedBuffer
 
     fun computeSecret(
         otherPublicKey: String,
@@ -96,7 +98,7 @@ external class ECDH {
      * @param encoding The `encoding` of the return value.
      * @return The EC Diffie-Hellman in the specified `encoding`.
      */
-    fun getPrivateKey(): node.buffer.Buffer<*>
+    fun getPrivateKey(): NonSharedBuffer
 
     fun getPrivateKey(encoding: BinaryToTextEncoding): String
 
@@ -113,7 +115,7 @@ external class ECDH {
     fun getPublicKey(
         encoding: Nothing? = definedExternally,
         format: ECDHKeyFormat = definedExternally,
-    ): node.buffer.Buffer<*>
+    ): NonSharedBuffer
 
     fun getPublicKey(
         encoding: BinaryToTextEncoding,
@@ -187,6 +189,6 @@ external class ECDH {
             inputEncoding: BinaryToTextEncoding = definedExternally,
             outputEncoding: ECDHConvertKeyOutputEncoding = definedExternally,
             format: ECDHConvertKeyFormat = definedExternally,
-        ): Any // Buffer | string
+        ): Any // NonSharedBuffer | string
     }
 }

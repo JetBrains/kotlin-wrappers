@@ -5,6 +5,7 @@
 package node.crypto
 
 import js.date.Date
+import node.buffer.NonSharedBuffer
 import node.tls.PeerCertificate
 
 /**
@@ -130,7 +131,7 @@ external class X509Certificate {
      * A `Buffer` containing the DER encoding of this certificate.
      * @since v15.6.0
      */
-    val raw: node.buffer.Buffer<*>
+    val raw: NonSharedBuffer
 
     /**
      * The serial number of this certificate.
@@ -141,6 +142,18 @@ external class X509Certificate {
      * @since v15.6.0
      */
     val serialNumber: String
+
+    /**
+     * The algorithm used to sign the certificate or `undefined` if the signature algorithm is unknown by OpenSSL.
+     * @since v24.9.0
+     */
+    val signatureAlgorithm: String?
+
+    /**
+     * The OID of the algorithm used to sign the certificate.
+     * @since v24.9.0
+     */
+    val signatureAlgorithmOid: String
 
     /**
      * The date/time from which this certificate is considered valid.

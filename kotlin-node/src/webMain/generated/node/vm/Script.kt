@@ -4,12 +4,14 @@
 
 package node.vm
 
+import node.buffer.NonSharedBuffer
+
 /**
  * Instances of the `vm.Script` class contain precompiled scripts that can be
  * executed in specific contexts.
  * @since v0.3.1
  */
-external class Script {
+open external class Script {
     constructor (code: String)
 
     constructor (code: String, options: ScriptOptions = definedExternally)
@@ -248,7 +250,7 @@ external class Script {
      * ```
      * @since v10.6.0
      */
-    fun createCachedData(): node.buffer.Buffer<*>
+    fun createCachedData(): NonSharedBuffer
 
     /** @deprecated in favor of `script.createCachedData()` */
     var cachedDataProduced: Boolean?
@@ -260,7 +262,7 @@ external class Script {
      * @since v5.7.0
      */
     var cachedDataRejected: Boolean?
-    var cachedData: node.buffer.Buffer<*>?
+    var cachedData: NonSharedBuffer?
 
     /**
      * When the script is compiled from a source that contains a source map magic

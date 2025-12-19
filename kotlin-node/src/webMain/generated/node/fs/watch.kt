@@ -4,6 +4,8 @@
 
 package node.fs
 
+import node.buffer.NonSharedBuffer
+
 /**
  * Watch for changes on `filename`, where `filename` is either a file or a
  * directory.
@@ -80,31 +82,31 @@ external fun watch(
 external fun watch(
     filename: PathLike,
     options: _WatchOptionsWithBufferEncoding,
-    listener: WatchListener<node.buffer.Buffer<*>>,
+    listener: WatchListener<NonSharedBuffer>,
 ): FSWatcher
 
 external fun watch(
     filename: PathLike,
     options: String, /* "buffer" */
-    listener: WatchListener<node.buffer.Buffer<*>>,
+    listener: WatchListener<NonSharedBuffer>,
 ): FSWatcher
 
 external fun watch(
     filename: PathLike,
     options: _WatchOptions?,
-    listener: WatchListener<Any /* string | Buffer */>,
+    listener: WatchListener<Any /* string | NonSharedBuffer */>,
 ): FSWatcher
 
 external fun watch(
     filename: PathLike,
     options: node.buffer.BufferEncoding?,
-    listener: WatchListener<Any /* string | Buffer */>,
+    listener: WatchListener<Any /* string | NonSharedBuffer */>,
 ): FSWatcher
 
 external fun watch(
     filename: PathLike,
     options: String /* "buffer" */?,
-    listener: WatchListener<Any /* string | Buffer */>,
+    listener: WatchListener<Any /* string | NonSharedBuffer */>,
 ): FSWatcher
 
 external fun watch(

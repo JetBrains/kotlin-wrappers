@@ -2,6 +2,8 @@
 
 package node.fs
 
+import node.buffer.NonSharedBuffer
+
 @seskar.js.JsAsync
 external suspend fun readlink(path: PathLike): String
 
@@ -43,7 +45,7 @@ external suspend fun readlink(
 external suspend fun readlink(
     path: PathLike,
     options: BufferEncodingOption,
-): node.buffer.Buffer<*>
+): NonSharedBuffer
 
 /**
  * Asynchronous readlink(2) - read value of a symbolic link.
@@ -57,4 +59,4 @@ external suspend fun readlink(
  * @param options The encoding (or an object specifying the encoding), used as the encoding of the result. If not provided, `'utf8'` is used.
  */
 @seskar.js.JsAsync
-external suspend fun readlink(path: PathLike, options: String? = definedExternally): Any // string | Buffer
+external suspend fun readlink(path: PathLike, options: String? = definedExternally): Any // string | NonSharedBuffer

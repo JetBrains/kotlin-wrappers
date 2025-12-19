@@ -4,6 +4,8 @@
 
 package node.zlib
 
+import node.buffer.NonSharedBuffer
+
 /**
  * Compress a chunk of data with `Gzip`.
  * @since v0.11.12
@@ -11,4 +13,4 @@ package node.zlib
 external fun gzipSync(
     buf: InputType,
     options: ZlibOptions = definedExternally,
-): node.buffer.Buffer<*>
+): NonSharedBuffer

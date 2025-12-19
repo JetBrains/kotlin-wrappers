@@ -120,6 +120,7 @@ suspend fun main() {
             injectAgentOptionsPort,
         )
         annotations = manyOf(
+            ::annotateCompileFunctionResult,
             ::annotateConflictingEntityNames,
             ::annotateDefaultExports,
             ::annotateDuplex,
@@ -147,6 +148,8 @@ suspend fun main() {
             ::resolveInterfacePropertyItemPropertyName,
             ::resolveInterfacePropertyNullableCallbackParameterName,
             ::resolveInterfacePropertyNullableUnionName,
+            ::resolveInterfacePropertyNullableUnionNullableUnionName,
+            ::resolveInterfacePropertyNullableUnionParameterItemName,
             ::resolveInterfacePropertyPropertyItemName,
             ::resolveInterfacePropertyPropertyItemPropertyItemName,
             ::resolveInterfacePropertyPropertyName,
@@ -176,7 +179,6 @@ suspend fun main() {
             "$nodePackage/console.d.ts",
             "$nodePackage/dom-events.d.ts",
             "$nodePackage/domain.d.ts",
-            "$nodePackage/globals.typedarray.d.ts",
             "$nodePackage/punycode.d.ts",
             "$nodePackage/stream/web.d.ts",
             "$nodePackage/string_decoder.d.ts",
@@ -281,6 +283,7 @@ suspend fun main() {
             "**/events/Listener1.kt",
             "**/events/Listener2.kt",
             "**/global/global.kt",
+            "**/globals.typedarray.kt",
             "**/http/WebSocket.kt",
             "**/http/CloseEvent.kt",
             "**/http/MessageEvent.kt",
@@ -500,16 +503,19 @@ suspend fun main() {
             "^node/stream/consumers.kt" to "node/stream/consumers/consumers.kt",
             "^node/globals/globals.kt" to "node/globals.kt",
             "^node/gc/gc.kt" to "node/gc.kt",
-            "^nodejs" to "node"
+            "^nodejs" to "node",
+            "^global/nodejs" to "node",
         )
         importMapper = recordOf(
             "node:assert" to ruleOf("node.assert"),
             "node:async_hooks" to ruleOf("node.asyncHooks"),
             "(node:)?buffer" to ruleOf(
-                "Blob" to "web.blob.Blob"
+                "Blob" to "web.blob.Blob",
+                "NonSharedBuffer" to "node.buffer.NonSharedBuffer",
             ),
             "node:child_process" to ruleOf(
-                "\\*" to ""
+                "\\*" to "",
+                ".+" to "node.childProcess."
             ),
             "node:crypto" to ruleOf("node.crypto"),
             "node:dgram" to ruleOf(
@@ -638,6 +644,66 @@ suspend fun main() {
             ),
             "GCFunction.kt" to arrayOf(
                 "js.promise.Promise"
+            ),
+            "NonSharedArrayBufferView" to arrayOf(
+                "js.buffer.ArrayBuffer",
+                "js.buffer.ArrayBufferView",
+            ),
+            "NonSharedBigInt64Array" to arrayOf(
+                "js.buffer.ArrayBuffer",
+                "js.typedarrays.BigInt64Array",
+            ),
+            "NonSharedBigUint64Array" to arrayOf(
+                "js.buffer.ArrayBuffer",
+                "js.typedarrays.BigUint64Array",
+            ),
+            "NonSharedDataView" to arrayOf(
+                "js.buffer.ArrayBuffer",
+                "js.buffer.DataView",
+            ),
+            "NonSharedFloat16Array" to arrayOf(
+                "js.buffer.ArrayBuffer",
+                "js.typedarrays.Float16Array",
+            ),
+            "NonSharedFloat32Array" to arrayOf(
+                "js.buffer.ArrayBuffer",
+                "js.typedarrays.Float32Array",
+            ),
+            "NonSharedFloat64Array" to arrayOf(
+                "js.buffer.ArrayBuffer",
+                "js.typedarrays.Float64Array",
+            ),
+            "NonSharedInt8Array" to arrayOf(
+                "js.buffer.ArrayBuffer",
+                "js.typedarrays.Int8Array",
+            ),
+            "NonSharedInt16Array" to arrayOf(
+                "js.buffer.ArrayBuffer",
+                "js.typedarrays.Int16Array",
+            ),
+            "NonSharedInt32Array" to arrayOf(
+                "js.buffer.ArrayBuffer",
+                "js.typedarrays.Int32Array",
+            ),
+            "NonSharedTypedArray" to arrayOf(
+                "js.buffer.ArrayBuffer",
+                "js.typedarrays.TypedArray",
+            ),
+            "NonSharedUint8Array" to arrayOf(
+                "js.buffer.ArrayBuffer",
+                "js.typedarrays.Uint8Array",
+            ),
+            "NonSharedUint8ClampedArray" to arrayOf(
+                "js.buffer.ArrayBuffer",
+                "js.typedarrays.Uint8ClampedArray",
+            ),
+            "NonSharedUint16Array" to arrayOf(
+                "js.buffer.ArrayBuffer",
+                "js.typedarrays.Uint16Array",
+            ),
+            "NonSharedUint32Array" to arrayOf(
+                "js.buffer.ArrayBuffer",
+                "js.typedarrays.Uint32Array",
             ),
             "assert/doesNotMatch.kt" to arrayOf(
                 "js.regexp.RegExp"
@@ -991,6 +1057,9 @@ suspend fun main() {
                 "js.disposable.Disposable",
                 "js.typedarrays.Uint8Array",
                 "web.url.URL"
+            ),
+            "sqlite/SQLTagStore.kt" to arrayOf(
+                "js.array.TemplateStringsArray",
             ),
             "sqlite/Session.kt" to arrayOf(
                 "js.typedarrays.Uint8Array"
@@ -1367,8 +1436,14 @@ suspend fun main() {
             "v8/Before.kt" to arrayOf(
                 "js.promise.Promise"
             ),
+            "v8/CPUProfileHandle.kt" to arrayOf(
+                "js.promise.Promise"
+            ),
             "v8/Deserializer.kt" to arrayOf(
                 "js.buffer.ArrayBuffer"
+            ),
+            "v8/HeapProfileHandle.kt" to arrayOf(
+                "js.promise.Promise"
             ),
             "v8/Init.kt" to arrayOf(
                 "js.promise.Promise"

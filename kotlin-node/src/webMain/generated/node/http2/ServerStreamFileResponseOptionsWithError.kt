@@ -3,5 +3,5 @@
 package node.http2
 
 sealed external interface ServerStreamFileResponseOptionsWithError : ServerStreamFileResponseOptions {
-    val onError: ((err: node.ErrnoException) -> Unit)?
+    var onError: ((err: node.ErrnoException) -> Unit)?
 }

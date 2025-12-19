@@ -200,5 +200,5 @@ sealed external interface ClientHttp2Session : Http2Session {
 
     @web.events.JsEvent("stream")
     val streamEvent:
-            node.events.EventInstance<js.array.Tuple3<ClientHttp2Stream, ClientHttp2SessionAddListenerListenerHeaders, Double>>
+            node.events.EventInstance<js.array.Tuple4<ClientHttp2Stream, ClientHttp2SessionAddListenerListenerHeaders, Double, js.array.ReadonlyArray<String>>>
 }

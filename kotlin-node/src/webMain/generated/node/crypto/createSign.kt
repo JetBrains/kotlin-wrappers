@@ -16,6 +16,7 @@ package node.crypto
  * @since v0.1.92
  * @param options `stream.Writable` options
  */
+// TODO: signing algorithm type
 external fun createSign(
     algorithm: String,
     options: node.stream.WritableOptions<*> = definedExternally,

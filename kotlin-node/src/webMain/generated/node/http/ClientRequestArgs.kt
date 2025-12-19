@@ -2,10 +2,11 @@
 
 package node.http
 
+import node.dns.LookupOptions
 import node.net.LookupFunction
 import web.abort.AbortSignal
 
-sealed external interface ClientRequestArgs {
+sealed external interface ClientRequestArgs : LookupOptions {
     var _defaultAgent: Agent?
     var agent: Any? // Agent | boolean | undefined
     var auth: String?
@@ -15,10 +16,12 @@ sealed external interface ClientRequestArgs {
         oncreate: (err: js.errors.JsError?, socket: node.stream.Duplex) -> Unit,
     ) -> node.stream.Duplex?
     )?
-    var defaultPort: Any? // number | string | undefined
-    var family: Double?
+    var defaultPort: Any?
+
+    // number | string | undefined
+    @Suppress("VAR_TYPE_MISMATCH_ON_OVERRIDE")
+    override var family: Double?
     var headers: Any? // OutgoingHttpHeaders | readonly string[] | undefined
-    var hints: Double?
     var host: String?
     var hostname: String?
     var insecureHTTPParser: Boolean?

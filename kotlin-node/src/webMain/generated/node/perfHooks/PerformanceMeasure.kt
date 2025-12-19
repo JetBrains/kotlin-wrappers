@@ -13,6 +13,8 @@ package node.perfHooks
 external class PerformanceMeasure : PerformanceEntry {
     constructor ()
 
+    val detail: Any?
+
     @Deprecated(message = "use measureEntryType", level = DeprecationLevel.HIDDEN)
     override val entryType: EntryType
 

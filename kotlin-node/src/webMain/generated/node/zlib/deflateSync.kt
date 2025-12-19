@@ -4,6 +4,8 @@
 
 package node.zlib
 
+import node.buffer.NonSharedBuffer
+
 /**
  * Compress a chunk of data with `Deflate`.
  * @since v0.11.12
@@ -11,4 +13,4 @@ package node.zlib
 external fun deflateSync(
     buf: InputType,
     options: ZlibOptions = definedExternally,
-): node.buffer.Buffer<*>
+): NonSharedBuffer

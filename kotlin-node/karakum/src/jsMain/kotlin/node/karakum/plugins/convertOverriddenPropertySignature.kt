@@ -97,19 +97,14 @@ private val overriddenProps = mapOf(
     ),
 
     // fs
-    "GlobOptions" to mapOf(
-        "exclude" to Alias("globExclude"),
-    ),
     "GlobOptionsWithFileTypes" to mapOf(
-        "exclude" to Alias("excludeWithFileTypes"),
         "withFileTypes" to Alias("requiredWithFileTypes")
     ),
     "GlobOptionsWithoutFileTypes" to mapOf(
-        "exclude" to Alias("excludeWithoutFileTypes"),
         "withFileTypes" to Preserve
     ),
     "WatchOptionsWithBufferEncoding" to mapOf(
-        "encoding" to Alias("stringEncoding"),
+        "encoding" to Alias("bufferEncoding"),
     ),
     "WatchOptionsWithStringEncoding" to mapOf(
         "encoding" to Alias("stringEncoding"),
@@ -119,11 +114,25 @@ private val overriddenProps = mapOf(
     "AgentOptions" to mapOf(
         "keepAlive" to Preserve
     ),
+    "ClientRequestArgs" to mapOf(
+        "family" to Preserve
+    ),
 
     // http2
     "Http2Stream" to mapOf(
         "closed" to Preserve,
         "destroyed" to Alias("readonlyDestroyed")
+    ),
+
+    // os
+    "NetworkInterfaceInfoIPv6" to mapOf(
+        "scopeid" to Alias("requiredScopeid")
+    ),
+    "UserInfoOptionsWithBufferEncoding" to mapOf(
+        "encoding" to Alias("bufferEncoding"),
+    ),
+    "UserInfoOptionsWithStringEncoding" to mapOf(
+        "encoding" to Alias("stringEncoding"),
     ),
 
     // tls
@@ -138,6 +147,20 @@ private val overriddenProps = mapOf(
     ),
     "UrlWithStringQuery" to mapOf(
         "query" to Alias("stringQuery"),
+    ),
+
+    // vm
+    "CompileFunctionOptions" to mapOf(
+        "importModuleDynamically" to Preserve,
+    ),
+    "RunningCodeInNewContextOptions" to mapOf(
+        "importModuleDynamically" to Preserve,
+    ),
+    "RunningCodeOptions" to mapOf(
+        "importModuleDynamically" to Preserve,
+    ),
+    "SourceTextModuleOptions" to mapOf(
+        "importModuleDynamically" to Alias("sourceTextImportModuleDynamically"),
     ),
 )
 

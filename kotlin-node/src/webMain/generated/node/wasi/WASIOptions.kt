@@ -9,7 +9,7 @@ sealed external interface WASIOptions {
      * WASI command itself.
      * @default []
      */
-    var args: js.array.ReadonlyArray<String>?
+    var args: (js.array.ReadonlyArray<String>)?
 
     /**
      * An object similar to `process.env` that the WebAssembly

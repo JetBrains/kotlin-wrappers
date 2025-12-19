@@ -5,7 +5,6 @@
 package node.childProcess
 
 import node.events.EventEmitter
-import node.stream.Pipe
 import node.stream.Readable
 import node.stream.Writable
 
@@ -78,7 +77,7 @@ open external class ChildProcess : EventEmitter {
      * no IPC channel exists, this property is `undefined`.
      * @since v7.1.0
      */
-    val channel: Pipe?
+    val channel: Control?
 
     /**
      * A sparse array of pipes to the child process, corresponding with positions in

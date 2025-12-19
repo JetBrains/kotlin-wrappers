@@ -4,6 +4,8 @@
 
 package node.zlib
 
+import node.buffer.NonSharedBuffer
+
 /**
  * Decompress a chunk of data with `Unzip`.
  * @since v0.11.12
@@ -11,4 +13,4 @@ package node.zlib
 external fun unzipSync(
     buf: InputType,
     options: ZlibOptions = definedExternally,
-): node.buffer.Buffer<*>
+): NonSharedBuffer

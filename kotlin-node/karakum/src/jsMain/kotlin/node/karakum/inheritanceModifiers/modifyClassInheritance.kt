@@ -87,7 +87,10 @@ fun modifyClassInheritance(node: Node, context: InheritanceModifierContext) = nu
         "open"
     } ?: nullable {
         ensure(sourceFileName.endsWith("vm.d.ts"))
-        ensure(node.name?.text == "Module")
+        ensure(
+            node.name?.text == "Module"
+                    || node.name?.text == "Script"
+        )
 
         "open"
     } ?: nullable {

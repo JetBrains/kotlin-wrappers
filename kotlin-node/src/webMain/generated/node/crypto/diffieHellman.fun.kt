@@ -4,6 +4,8 @@
 
 package node.crypto
 
+import node.buffer.NonSharedBuffer
+
 /**
  * Computes the Diffie-Hellman shared secret based on a `privateKey` and a `publicKey`.
  * Both keys must have the same `asymmetricKeyType` and must support either the DH or
@@ -12,9 +14,9 @@ package node.crypto
  * If the `callback` function is provided this function uses libuv's threadpool.
  * @since v13.9.0, v12.17.0
  */
-external fun diffieHellman(options: DiffieHellmanOptions): node.buffer.Buffer<*>
+external fun diffieHellman(options: DiffieHellmanOptions): NonSharedBuffer
 
 external fun diffieHellman(
     options: DiffieHellmanOptions,
-    callback: (err: js.errors.JsError?, secret: node.buffer.Buffer<*>) -> Unit,
+    callback: (err: js.errors.JsError?, secret: NonSharedBuffer) -> Unit,
 )

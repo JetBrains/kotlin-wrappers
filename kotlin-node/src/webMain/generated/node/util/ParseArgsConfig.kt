@@ -6,7 +6,7 @@ sealed external interface ParseArgsConfig {
     /**
      * Array of argument strings.
      */
-    var args: js.array.ReadonlyArray<String>?
+    var args: (js.array.ReadonlyArray<String>)?
 
     /**
      * Used to describe arguments known to the parser.

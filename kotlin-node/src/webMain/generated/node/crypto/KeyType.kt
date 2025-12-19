@@ -7,6 +7,8 @@ sealed external interface KeyType {
 
     sealed interface mlKem : KeyType
 
+    sealed interface slhDsa : KeyType
+
     sealed interface dh : KeyType
 
     sealed interface dsa : KeyType
@@ -44,6 +46,54 @@ sealed external interface KeyType {
     sealed interface rsaPss : KeyType
 
     sealed interface rsa : KeyType
+
+    sealed interface slhDsaSha2128f :
+        KeyType,
+        slhDsa
+
+    sealed interface slhDsaSha2128s :
+        KeyType,
+        slhDsa
+
+    sealed interface slhDsaSha2192f :
+        KeyType,
+        slhDsa
+
+    sealed interface slhDsaSha2192s :
+        KeyType,
+        slhDsa
+
+    sealed interface slhDsaSha2256f :
+        KeyType,
+        slhDsa
+
+    sealed interface slhDsaSha2256s :
+        KeyType,
+        slhDsa
+
+    sealed interface slhDsaShake128f :
+        KeyType,
+        slhDsa
+
+    sealed interface slhDsaShake128s :
+        KeyType,
+        slhDsa
+
+    sealed interface slhDsaShake192f :
+        KeyType,
+        slhDsa
+
+    sealed interface slhDsaShake192s :
+        KeyType,
+        slhDsa
+
+    sealed interface slhDsaShake256f :
+        KeyType,
+        slhDsa
+
+    sealed interface slhDsaShake256s :
+        KeyType,
+        slhDsa
 
     sealed interface x25519 : KeyType
 
@@ -88,6 +138,42 @@ sealed external interface KeyType {
 
         @seskar.js.JsValue("rsa")
         val rsa: rsa
+
+        @seskar.js.JsValue("slh-dsa-sha2-128f")
+        val slhDsaSha2128f: slhDsaSha2128f
+
+        @seskar.js.JsValue("slh-dsa-sha2-128s")
+        val slhDsaSha2128s: slhDsaSha2128s
+
+        @seskar.js.JsValue("slh-dsa-sha2-192f")
+        val slhDsaSha2192f: slhDsaSha2192f
+
+        @seskar.js.JsValue("slh-dsa-sha2-192s")
+        val slhDsaSha2192s: slhDsaSha2192s
+
+        @seskar.js.JsValue("slh-dsa-sha2-256f")
+        val slhDsaSha2256f: slhDsaSha2256f
+
+        @seskar.js.JsValue("slh-dsa-sha2-256s")
+        val slhDsaSha2256s: slhDsaSha2256s
+
+        @seskar.js.JsValue("slh-dsa-shake-128f")
+        val slhDsaShake128f: slhDsaShake128f
+
+        @seskar.js.JsValue("slh-dsa-shake-128s")
+        val slhDsaShake128s: slhDsaShake128s
+
+        @seskar.js.JsValue("slh-dsa-shake-192f")
+        val slhDsaShake192f: slhDsaShake192f
+
+        @seskar.js.JsValue("slh-dsa-shake-192s")
+        val slhDsaShake192s: slhDsaShake192s
+
+        @seskar.js.JsValue("slh-dsa-shake-256f")
+        val slhDsaShake256f: slhDsaShake256f
+
+        @seskar.js.JsValue("slh-dsa-shake-256s")
+        val slhDsaShake256s: slhDsaShake256s
 
         @seskar.js.JsValue("x25519")
         val x25519: x25519

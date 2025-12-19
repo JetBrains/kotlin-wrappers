@@ -7,6 +7,8 @@ sealed external interface KeyFormat {
 
     sealed interface mlKem : KeyFormat
 
+    sealed interface slhDsa : KeyFormat
+
     sealed interface pem : KeyFormat
 
     sealed interface der : KeyFormat

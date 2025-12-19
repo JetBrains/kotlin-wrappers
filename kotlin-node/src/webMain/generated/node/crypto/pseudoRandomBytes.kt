@@ -4,9 +4,11 @@
 
 package node.crypto
 
-external fun pseudoRandomBytes(size: Number): node.buffer.Buffer<*>
+import node.buffer.NonSharedBuffer
+
+external fun pseudoRandomBytes(size: Number): NonSharedBuffer
 
 external fun pseudoRandomBytes(
     size: Number,
-    callback: (err: js.errors.JsError?, buf: node.buffer.Buffer<*>) -> Unit,
+    callback: (err: js.errors.JsError?, buf: NonSharedBuffer) -> Unit,
 )

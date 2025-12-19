@@ -10,6 +10,7 @@ import typescript.asArray
 import typescript.isIdentifier
 import typescript.isInterfaceDeclaration
 import typescript.isMethodSignature
+import typescript.isQualifiedName
 import typescript.isTypeReferenceNode
 
 fun resolveInterfaceMethodReturnTypePromisePayloadName(node: Node, context: Context) = nullable {
@@ -38,12 +39,25 @@ fun resolveInterfaceMethodReturnTypePromisePayloadName(node: Node, context: Cont
         ensure(methodName == "write")
         ensure(parentName == "FileHandle")
 
-        val firstParameter = ensureNotNull(method.parameters.asArray().firstOrNull())
+        nullable {
+            val typeParameter = ensureNotNull(method.typeParameters?.asArray()?.firstOrNull())
 
-        val firstParameterType = ensureNotNull(firstParameter.type)
-        ensure(firstParameterType.kind == SyntaxKind.StringKeyword)
+            val constraint = ensureNotNull(typeParameter.constraint)
+            ensure(isTypeReferenceNode(constraint))
 
-        "${parentName.replaceFirstChar { it.titlecase() }}${methodName.replaceFirstChar { it.titlecase() }}StringResultPayload"
+            val constraintTypeName = constraint.typeName
+            ensure(isQualifiedName(constraintTypeName))
+            ensure(constraintTypeName.right.text == "ArrayBufferView")
+
+            "${parentName.replaceFirstChar { it.titlecase() }}${methodName.replaceFirstChar { it.titlecase() }}ViewResultPayload"
+        } ?: nullable {
+            val firstParameter = ensureNotNull(method.parameters.asArray().firstOrNull())
+
+            val firstParameterType = ensureNotNull(firstParameter.type)
+            ensure(firstParameterType.kind == SyntaxKind.StringKeyword)
+
+            "${parentName.replaceFirstChar { it.titlecase() }}${methodName.replaceFirstChar { it.titlecase() }}StringResultPayload"
+        }
     } ?: nullable {
         "${parentName.replaceFirstChar { it.titlecase() }}${methodName.replaceFirstChar { it.titlecase() }}ResultPayload"
     }

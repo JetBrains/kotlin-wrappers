@@ -2,6 +2,8 @@
 
 package node.fs
 
+import node.buffer.NonSharedBuffer
+
 @seskar.js.JsAsync
 external suspend fun readdir(path: PathLike): js.array.ReadonlyArray<String>
 
@@ -69,7 +71,7 @@ external suspend fun readdir(
 external suspend fun readdir(
     path: PathLike,
     options: ReaddirBufferAsyncOptions,
-): js.array.ReadonlyArray<node.buffer.Buffer<*>>
+): js.array.ReadonlyArray<NonSharedBuffer>
 
 /**
  * Asynchronous readdir(3) - read a directory.
@@ -77,10 +79,7 @@ external suspend fun readdir(
  * @param options The encoding (or an object specifying the encoding), used as the encoding of the result. If not provided, `'utf8'` is used.
  */
 @seskar.js.JsAsync
-external suspend fun readdir(
-    path: PathLike,
-    options: String, // "buffer"
-): js.array.ReadonlyArray<node.buffer.Buffer<*>>
+external suspend fun readdir(path: PathLike, options: String /* "buffer" */): js.array.ReadonlyArray<NonSharedBuffer>
 
 /**
  * Asynchronous readdir(3) - read a directory.
@@ -104,4 +103,4 @@ external suspend fun readdir(
 external suspend fun readdir(
     path: PathLike,
     options: ReaddirBufferWithFileTypesAsyncOptions,
-): js.array.ReadonlyArray<Dirent<node.buffer.Buffer<*>>>
+): js.array.ReadonlyArray<Dirent<NonSharedBuffer>>

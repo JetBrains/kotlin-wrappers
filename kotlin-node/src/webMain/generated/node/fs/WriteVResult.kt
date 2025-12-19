@@ -2,7 +2,9 @@
 
 package node.fs
 
-sealed external interface WriteVResult {
+// Providing a default type parameter doesn't provide true BC for userland consumers, but at least suppresses TS2314
+// TODO: remove default in future major version
+sealed external interface WriteVResult<T : js.array.ReadonlyArray<js.buffer.ArrayBufferView<*>> /* default is js.array.ReadonlyArray<js.buffer.ArrayBufferView<*>> */> {
     var bytesWritten: Double
-    var buffers: js.array.ReadonlyArray<js.buffer.ArrayBufferView<*>>
+    var buffers: T
 }

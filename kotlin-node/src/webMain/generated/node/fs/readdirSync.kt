@@ -4,6 +4,8 @@
 
 package node.fs
 
+import node.buffer.NonSharedBuffer
+
 /**
  * Reads the contents of the directory.
  *
@@ -63,14 +65,14 @@ external fun readdirSync(
 external fun readdirSync(
     path: PathLike,
     options: ReaddirSyncBufferOptions,
-): js.array.ReadonlyArray<node.buffer.Buffer<*>>
+): js.array.ReadonlyArray<NonSharedBuffer>
 
 /**
  * Synchronous readdir(3) - read a directory.
  * @param path A path to a file. If a URL is provided, it must use the `file:` protocol.
  * @param options The encoding (or an object specifying the encoding), used as the encoding of the result. If not provided, `'utf8'` is used.
  */
-external fun readdirSync(path: PathLike, options: String /* "buffer" */): js.array.ReadonlyArray<node.buffer.Buffer<*>>
+external fun readdirSync(path: PathLike, options: String /* "buffer" */): js.array.ReadonlyArray<NonSharedBuffer>
 
 /**
  * Synchronous readdir(3) - read a directory.
@@ -86,7 +88,7 @@ external fun readdirSync(path: PathLike, options: String /* "buffer" */): js.arr
 external fun readdirSync(
     path: PathLike,
     options: (ReaddirSyncOptions)? = definedExternally,
-): Any // string[] | Buffer[]
+): Any // string[] | NonSharedBuffer[]
 
 /**
  * Synchronous readdir(3) - read a directory.
@@ -112,4 +114,4 @@ external fun readdirSync(
 external fun readdirSync(
     path: PathLike,
     options: ReaddirSyncBufferWithFileTypesOptions,
-): js.array.ReadonlyArray<Dirent<node.buffer.Buffer<*>>>
+): js.array.ReadonlyArray<Dirent<NonSharedBuffer>>

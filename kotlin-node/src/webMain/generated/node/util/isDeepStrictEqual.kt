@@ -15,4 +15,5 @@ package node.util
 external fun isDeepStrictEqual(
     val1: Any?,
     val2: Any?,
+    options: IsDeepStrictEqualOptions = definedExternally,
 ): Boolean

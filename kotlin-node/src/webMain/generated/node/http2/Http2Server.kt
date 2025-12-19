@@ -53,7 +53,8 @@ sealed external interface Http2Server<Http1Request : IncomingMessage, Http1Respo
     val sessionErrorEvent: node.events.EventInstance<js.array.Tuple1<js.errors.JsError>>
 
     @web.events.JsEvent("stream")
-    val streamEvent: node.events.EventInstance<js.array.Tuple3<ServerHttp2Stream, IncomingHttpHeaders, Double>>
+    val streamEvent:
+            node.events.EventInstance<js.array.Tuple4<ServerHttp2Stream, IncomingHttpHeaders, Double, js.array.ReadonlyArray<String>>>
 
     @web.events.JsEvent("timeout")
     val timeoutEvent: node.events.EventInstance<js.array.Tuple>

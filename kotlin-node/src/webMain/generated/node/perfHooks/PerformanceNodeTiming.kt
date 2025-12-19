@@ -4,6 +4,8 @@
 
 package node.perfHooks
 
+// TODO: PerformanceNodeEntry is missing
+
 /**
  * _This property is an extension by Node.js. It is not available in Web browsers._
  *

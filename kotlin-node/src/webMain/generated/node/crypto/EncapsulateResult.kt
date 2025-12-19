@@ -2,7 +2,9 @@
 
 package node.crypto
 
+import node.buffer.NonSharedBuffer
+
 sealed external interface EncapsulateResult {
-    var sharedKey: node.buffer.Buffer<*>
-    var ciphertext: node.buffer.Buffer<*>
+    var sharedKey: NonSharedBuffer
+    var ciphertext: NonSharedBuffer
 }

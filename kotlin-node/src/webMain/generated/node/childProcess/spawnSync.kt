@@ -5,6 +5,7 @@
 package node.childProcess
 
 import js.array.ReadonlyArray
+import node.buffer.NonSharedBuffer
 
 /**
  * The `child_process.spawnSync()` method is generally identical to {@link spawn} with the exception that the function will not return
@@ -21,7 +22,7 @@ import js.array.ReadonlyArray
  * @param command The command to run.
  * @param args List of string arguments.
  */
-external fun spawnSync(command: String): SpawnSyncReturns<node.buffer.Buffer<*>>
+external fun spawnSync(command: String): SpawnSyncReturns<NonSharedBuffer>
 
 external fun spawnSync(
     command: String,
@@ -31,17 +32,17 @@ external fun spawnSync(
 external fun spawnSync(
     command: String,
     options: SpawnSyncOptionsWithBufferEncoding,
-): SpawnSyncReturns<node.buffer.Buffer<*>>
+): SpawnSyncReturns<NonSharedBuffer>
 
 external fun spawnSync(
     command: String,
     options: SpawnSyncOptions = definedExternally,
-): SpawnSyncReturns<Any /* string | Buffer */>
+): SpawnSyncReturns<Any /* string | NonSharedBuffer */>
 
 external fun spawnSync(
     command: String,
     args: ReadonlyArray<String>,
-): SpawnSyncReturns<node.buffer.Buffer<*>>
+): SpawnSyncReturns<NonSharedBuffer>
 
 external fun spawnSync(
     command: String,
@@ -53,10 +54,10 @@ external fun spawnSync(
     command: String,
     args: ReadonlyArray<String>,
     options: SpawnSyncOptionsWithBufferEncoding,
-): SpawnSyncReturns<node.buffer.Buffer<*>>
+): SpawnSyncReturns<NonSharedBuffer>
 
 external fun spawnSync(
     command: String,
     args: ReadonlyArray<String> = definedExternally,
     options: SpawnSyncOptions = definedExternally,
-): SpawnSyncReturns<Any /* string | Buffer */>
+): SpawnSyncReturns<Any /* string | NonSharedBuffer */>

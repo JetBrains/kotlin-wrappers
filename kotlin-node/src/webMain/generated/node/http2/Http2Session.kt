@@ -2,6 +2,7 @@
 
 package node.http2
 
+import node.buffer.NonSharedBuffer
 import node.events.EventEmitter
 
 @Suppress("INTERFACE_WITH_SUPERCLASS")
@@ -172,11 +173,11 @@ sealed external interface Http2Session : EventEmitter {
      * @since v8.9.3
      * @param payload Optional ping payload.
      */
-    fun ping(callback: (err: js.errors.JsError?, duration: Double, payload: node.buffer.Buffer<*>) -> Unit): Boolean
+    fun ping(callback: (err: js.errors.JsError?, duration: Double, payload: NonSharedBuffer) -> Unit): Boolean
 
     fun ping(
         payload: js.buffer.ArrayBufferView<*>,
-        callback: (err: js.errors.JsError?, duration: Double, payload: node.buffer.Buffer<*>) -> Unit,
+        callback: (err: js.errors.JsError?, duration: Double, payload: NonSharedBuffer) -> Unit,
     ): Boolean
 
     /**
@@ -279,7 +280,7 @@ sealed external interface Http2Session : EventEmitter {
     val frameErrorEvent: node.events.EventInstance<js.array.Tuple3<Double, Double, Double>>
 
     @web.events.JsEvent("goaway")
-    val goawayEvent: node.events.EventInstance<js.array.Tuple3<Double, Double, node.buffer.Buffer<*>>>
+    val goawayEvent: node.events.EventInstance<js.array.Tuple3<Double, Double, NonSharedBuffer>>
 
     @web.events.JsEvent("localSettings")
     val localSettingsEvent: node.events.EventInstance<js.array.Tuple1<Settings>>

@@ -2,7 +2,7 @@
 
 package node.dns
 
-sealed external interface LookupOptions {
+external interface LookupOptions {
     /**
      * The record family. Must be `4`, `6`, or `0`. For backward compatibility reasons, `'IPv4'` and `'IPv6'` are interpreted
      * as `4` and `6` respectively. The value 0 indicates that either an IPv4 or IPv6 address is returned. If the value `0` is used

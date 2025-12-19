@@ -5,6 +5,7 @@
 package node.crypto
 
 import js.buffer.ArrayBuffer
+import node.buffer.NonSharedBuffer
 
 /**
  * Key decapsulation using a KEM algorithm with a private key.
@@ -28,7 +29,7 @@ import js.buffer.ArrayBuffer
 external fun decapsulate(
     key: KeyLike,
     ciphertext: ArrayBuffer,
-): node.buffer.Buffer<*>
+): NonSharedBuffer
 
 /**
  * Key decapsulation using a KEM algorithm with a private key.
@@ -52,7 +53,7 @@ external fun decapsulate(
 external fun decapsulate(
     key: KeyLike,
     ciphertext: js.buffer.ArrayBufferView<*>,
-): node.buffer.Buffer<*>
+): NonSharedBuffer
 
 /**
  * Key decapsulation using a KEM algorithm with a private key.
@@ -76,7 +77,7 @@ external fun decapsulate(
 external fun decapsulate(
     key: PrivateKeyInput,
     ciphertext: ArrayBuffer,
-): node.buffer.Buffer<*>
+): NonSharedBuffer
 
 /**
  * Key decapsulation using a KEM algorithm with a private key.
@@ -100,7 +101,7 @@ external fun decapsulate(
 external fun decapsulate(
     key: PrivateKeyInput,
     ciphertext: js.buffer.ArrayBufferView<*>,
-): node.buffer.Buffer<*>
+): NonSharedBuffer
 
 /**
  * Key decapsulation using a KEM algorithm with a private key.
@@ -124,7 +125,7 @@ external fun decapsulate(
 external fun decapsulate(
     key: JsonWebKeyInput,
     ciphertext: ArrayBuffer,
-): node.buffer.Buffer<*>
+): NonSharedBuffer
 
 /**
  * Key decapsulation using a KEM algorithm with a private key.
@@ -148,40 +149,40 @@ external fun decapsulate(
 external fun decapsulate(
     key: JsonWebKeyInput,
     ciphertext: js.buffer.ArrayBufferView<*>,
-): node.buffer.Buffer<*>
+): NonSharedBuffer
 
 external fun decapsulate(
     key: KeyLike,
     ciphertext: ArrayBuffer,
-    callback: (err: js.errors.JsError, sharedKey: node.buffer.Buffer<*>) -> Unit,
+    callback: (err: js.errors.JsError, sharedKey: NonSharedBuffer) -> Unit,
 )
 
 external fun decapsulate(
     key: KeyLike,
     ciphertext: js.buffer.ArrayBufferView<*>,
-    callback: (err: js.errors.JsError, sharedKey: node.buffer.Buffer<*>) -> Unit,
+    callback: (err: js.errors.JsError, sharedKey: NonSharedBuffer) -> Unit,
 )
 
 external fun decapsulate(
     key: PrivateKeyInput,
     ciphertext: ArrayBuffer,
-    callback: (err: js.errors.JsError, sharedKey: node.buffer.Buffer<*>) -> Unit,
+    callback: (err: js.errors.JsError, sharedKey: NonSharedBuffer) -> Unit,
 )
 
 external fun decapsulate(
     key: PrivateKeyInput,
     ciphertext: js.buffer.ArrayBufferView<*>,
-    callback: (err: js.errors.JsError, sharedKey: node.buffer.Buffer<*>) -> Unit,
+    callback: (err: js.errors.JsError, sharedKey: NonSharedBuffer) -> Unit,
 )
 
 external fun decapsulate(
     key: JsonWebKeyInput,
     ciphertext: ArrayBuffer,
-    callback: (err: js.errors.JsError, sharedKey: node.buffer.Buffer<*>) -> Unit,
+    callback: (err: js.errors.JsError, sharedKey: NonSharedBuffer) -> Unit,
 )
 
 external fun decapsulate(
     key: JsonWebKeyInput,
     ciphertext: js.buffer.ArrayBufferView<*>,
-    callback: (err: js.errors.JsError, sharedKey: node.buffer.Buffer<*>) -> Unit,
+    callback: (err: js.errors.JsError, sharedKey: NonSharedBuffer) -> Unit,
 )

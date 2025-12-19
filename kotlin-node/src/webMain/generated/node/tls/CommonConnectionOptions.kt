@@ -26,7 +26,7 @@ sealed external interface CommonConnectionOptions {
      * An array of strings or a Buffer naming possible ALPN protocols.
      * (Protocols should be ordered by their priority.)
      */
-    var ALPNProtocols: Any? // string[] | Uint8Array[] | Uint8Array | undefined
+    var ALPNProtocols: Any? // readonly string[] | NodeJS.ArrayBufferView | undefined
 
     /**
      * SNICallback(servername, cb) <Function> A function that will be

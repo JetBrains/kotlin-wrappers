@@ -26,19 +26,6 @@ external fun crc32(
  * @since v22.2.0
  */
 external fun crc32(
-    data: node.buffer.Buffer<*>,
-    value: Number = definedExternally,
-): Double
-
-/**
- * Computes a 32-bit [Cyclic Redundancy Check](https://en.wikipedia.org/wiki/Cyclic_redundancy_check) checksum of `data`.
- * If `value` is specified, it is used as the starting value of the checksum, otherwise, 0 is used as the starting value.
- * @param data When `data` is a string, it will be encoded as UTF-8 before being used for computation.
- * @param value An optional starting value. It must be a 32-bit unsigned integer. @default 0
- * @returns A 32-bit unsigned integer containing the checksum.
- * @since v22.2.0
- */
-external fun crc32(
     data: js.buffer.ArrayBufferView<*>,
     value: Number = definedExternally,
 ): Double

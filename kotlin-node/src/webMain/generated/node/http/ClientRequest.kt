@@ -4,6 +4,7 @@
 
 package node.http
 
+import node.buffer.NonSharedBuffer
 import node.net.Socket
 import web.url.URL
 
@@ -232,7 +233,7 @@ external class ClientRequest : OutgoingMessage<IncomingMessage> {
     val abortEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("connect")
-    val connectEvent: node.events.EventInstance<js.array.Tuple3<IncomingMessage, Socket, node.buffer.Buffer<*>>>
+    val connectEvent: node.events.EventInstance<js.array.Tuple3<IncomingMessage, Socket, NonSharedBuffer>>
 
     @web.events.JsEvent("continue")
     val continueEvent: node.events.EventInstance<js.array.Tuple>
@@ -250,7 +251,7 @@ external class ClientRequest : OutgoingMessage<IncomingMessage> {
     val timeoutEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("upgrade")
-    val upgradeEvent: node.events.EventInstance<js.array.Tuple3<IncomingMessage, Socket, node.buffer.Buffer<*>>>
+    val upgradeEvent: node.events.EventInstance<js.array.Tuple3<IncomingMessage, Socket, NonSharedBuffer>>
 
     @web.events.JsEvent("close")
     override val closeEvent: node.events.EventInstance<js.array.Tuple>

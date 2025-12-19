@@ -4,6 +4,8 @@
 
 package node.childProcess
 
+import node.buffer.NonSharedBuffer
+
 /**
  * Spawns a shell then executes the `command` within that shell, buffering any
  * generated output. The `command` string passed to the exec function is processed
@@ -99,11 +101,7 @@ external fun exec(
 external fun exec(
     command: String,
     options: ExecOptionsWithBufferEncoding,
-    callback: (
-        error: ExecException?,
-        stdout: node.buffer.Buffer<*>,
-        stderr: node.buffer.Buffer<*>,
-    ) -> Unit = definedExternally,
+    callback: (error: ExecException?, stdout: NonSharedBuffer, stderr: NonSharedBuffer) -> Unit = definedExternally,
 ): ChildProcess
 
 // `options` with well-known or absent `encoding` means stdout/stderr are definitely `string`.
@@ -119,7 +117,7 @@ external fun exec(
     options: ExecOptions?,
     callback: (
         error: ExecException?,
-        stdout: Any, /* string | Buffer */
-        stderr: Any, // string | Buffer
+        stdout: Any, /* string | NonSharedBuffer */
+        stderr: Any, // string | NonSharedBuffer
     ) -> Unit = definedExternally,
 ): ChildProcess

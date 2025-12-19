@@ -19,6 +19,7 @@ import typescript.*
 private val keyGroups = setOf(
     "mlDsa",
     "mlKem",
+    "slhDsa",
 )
 
 private fun isGenerateKeyPairType(node: Node) = nullable {

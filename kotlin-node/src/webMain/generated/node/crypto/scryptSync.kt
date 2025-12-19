@@ -4,6 +4,8 @@
 
 package node.crypto
 
+import node.buffer.NonSharedBuffer
+
 /**
  * Provides a synchronous [scrypt](https://en.wikipedia.org/wiki/Scrypt) implementation. Scrypt is a password-based
  * key derivation function that is designed to be expensive computationally and
@@ -39,4 +41,4 @@ external fun scryptSync(
     salt: BinaryLike,
     keylen: Number,
     options: ScryptOptions = definedExternally,
-): node.buffer.Buffer<*>
+): NonSharedBuffer

@@ -4,6 +4,8 @@
 
 package node.crypto
 
+import node.buffer.NonSharedBuffer
+
 /**
  * Decrypts `buffer` with `privateKey`. `buffer` was previously encrypted using
  * the corresponding public key, for example using {@link publicEncrypt}.
@@ -15,7 +17,7 @@ package node.crypto
 external fun privateDecrypt(
     privateKey: RsaPrivateKey,
     buffer: js.buffer.ArrayBufferView<*>,
-): node.buffer.Buffer<*>
+): NonSharedBuffer
 
 /**
  * Decrypts `buffer` with `privateKey`. `buffer` was previously encrypted using
@@ -28,7 +30,7 @@ external fun privateDecrypt(
 external fun privateDecrypt(
     privateKey: RsaPrivateKey,
     buffer: String,
-): node.buffer.Buffer<*>
+): NonSharedBuffer
 
 /**
  * Decrypts `buffer` with `privateKey`. `buffer` was previously encrypted using
@@ -41,7 +43,7 @@ external fun privateDecrypt(
 external fun privateDecrypt(
     privateKey: KeyLike,
     buffer: js.buffer.ArrayBufferView<*>,
-): node.buffer.Buffer<*>
+): NonSharedBuffer
 
 /**
  * Decrypts `buffer` with `privateKey`. `buffer` was previously encrypted using
@@ -54,4 +56,4 @@ external fun privateDecrypt(
 external fun privateDecrypt(
     privateKey: KeyLike,
     buffer: String,
-): node.buffer.Buffer<*>
+): NonSharedBuffer

@@ -2,4 +2,6 @@
 
 package node.process
 
-typealias MessageListener = (message: Any?, sendHandle: Any?) -> Unit
+import node.childProcess.SendHandle
+
+typealias MessageListener = (message: Any?, sendHandle: SendHandle) -> Unit

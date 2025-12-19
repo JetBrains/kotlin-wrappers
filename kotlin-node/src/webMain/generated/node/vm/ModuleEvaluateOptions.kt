@@ -2,7 +2,4 @@
 
 package node.vm
 
-sealed external interface ModuleEvaluateOptions {
-    var timeout: Double?
-    var breakOnSigint: Boolean?
-}
+sealed external interface ModuleEvaluateOptions : RunningScriptOptions

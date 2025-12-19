@@ -4,6 +4,8 @@
 
 package node.crypto
 
+import node.buffer.NonSharedBuffer
+
 /**
  * Calculates and returns the signature for `data` using the given private key and
  * algorithm. If `algorithm` is `null` or `undefined`, then the algorithm is
@@ -23,7 +25,7 @@ external fun sign(
     algorithm: String?,
     data: js.buffer.ArrayBufferView<*>,
     key: KeyLike,
-): node.buffer.Buffer<*>
+): NonSharedBuffer
 
 /**
  * Calculates and returns the signature for `data` using the given private key and
@@ -44,7 +46,7 @@ external fun sign(
     algorithm: String?,
     data: js.buffer.ArrayBufferView<*>,
     key: SignKeyObjectInput,
-): node.buffer.Buffer<*>
+): NonSharedBuffer
 
 /**
  * Calculates and returns the signature for `data` using the given private key and
@@ -65,7 +67,7 @@ external fun sign(
     algorithm: String?,
     data: js.buffer.ArrayBufferView<*>,
     key: SignPrivateKeyInput,
-): node.buffer.Buffer<*>
+): NonSharedBuffer
 
 /**
  * Calculates and returns the signature for `data` using the given private key and
@@ -86,32 +88,32 @@ external fun sign(
     algorithm: String?,
     data: js.buffer.ArrayBufferView<*>,
     key: SignJsonWebKeyInput,
-): node.buffer.Buffer<*>
+): NonSharedBuffer
 
 external fun sign(
     algorithm: String?,
     data: js.buffer.ArrayBufferView<*>,
     key: KeyLike,
-    callback: (error: js.errors.JsError?, data: node.buffer.Buffer<*>) -> Unit,
+    callback: (error: js.errors.JsError?, data: NonSharedBuffer) -> Unit,
 )
 
 external fun sign(
     algorithm: String?,
     data: js.buffer.ArrayBufferView<*>,
     key: SignKeyObjectInput,
-    callback: (error: js.errors.JsError?, data: node.buffer.Buffer<*>) -> Unit,
+    callback: (error: js.errors.JsError?, data: NonSharedBuffer) -> Unit,
 )
 
 external fun sign(
     algorithm: String?,
     data: js.buffer.ArrayBufferView<*>,
     key: SignPrivateKeyInput,
-    callback: (error: js.errors.JsError?, data: node.buffer.Buffer<*>) -> Unit,
+    callback: (error: js.errors.JsError?, data: NonSharedBuffer) -> Unit,
 )
 
 external fun sign(
     algorithm: String?,
     data: js.buffer.ArrayBufferView<*>,
     key: SignJsonWebKeyInput,
-    callback: (error: js.errors.JsError?, data: node.buffer.Buffer<*>) -> Unit,
+    callback: (error: js.errors.JsError?, data: NonSharedBuffer) -> Unit,
 )

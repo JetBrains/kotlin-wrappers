@@ -2,6 +2,8 @@
 
 package node.tls
 
+import node.buffer.NonSharedBuffer
+
 sealed external interface PeerCertificate {
     /**
      * `true` if a Certificate Authority (CA), `false` otherwise.
@@ -12,7 +14,7 @@ sealed external interface PeerCertificate {
     /**
      * The DER encoded X.509 certificate data.
      */
-    var raw: node.buffer.Buffer<*>
+    var raw: NonSharedBuffer
 
     /**
      * The certificate subject.
@@ -93,7 +95,7 @@ sealed external interface PeerCertificate {
     /**
      * The public key.
      */
-    var pubkey: node.buffer.Buffer<*>?
+    var pubkey: NonSharedBuffer?
 
     /**
      * The ASN.1 name of the OID of the elliptic curve.

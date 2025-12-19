@@ -200,7 +200,7 @@ sealed external interface Http2Stream : node.stream.Duplex {
     override val closeEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("data")
-    override val dataEvent: node.events.EventInstance<js.array.Tuple1<Any /* Buffer | string */>>
+    override val dataEvent: node.events.EventInstance<js.array.Tuple1<Any /* NonSharedBuffer | string */>>
 
     @web.events.JsEvent("drain")
     override val drainEvent: node.events.EventInstance<js.array.Tuple>

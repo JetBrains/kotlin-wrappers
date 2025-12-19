@@ -9,7 +9,9 @@ import js.promise.Promise
 import node.events.EventEmitter
 import node.stream.Readable
 import node.stream.Writable
+import node.v8.CPUProfileHandle
 import node.v8.HeapInfo
+import node.v8.HeapProfileHandle
 import web.url.URL
 
 /**
@@ -219,6 +221,91 @@ external class Worker : EventEmitter {
 
     @seskar.js.JsAsync
     suspend fun getHeapStatistics(): HeapInfo
+
+    /**
+     * Starting a CPU profile then return a Promise that fulfills with an error
+     * or an `CPUProfileHandle` object. This API supports `await using` syntax.
+     *
+     * ```js
+     * const { Worker } = require('node:worker_threads');
+     *
+     * const worker = new Worker(`
+     *   const { parentPort } = require('worker_threads');
+     *   parentPort.on('message', () => {});
+     *   `, { eval: true });
+     *
+     * worker.on('online', async () => {
+     *   const handle = await worker.startCpuProfile();
+     *   const profile = await handle.stop();
+     *   console.log(profile);
+     *   worker.terminate();
+     * });
+     * ```
+     *
+     * `await using` example.
+     *
+     * ```js
+     * const { Worker } = require('node:worker_threads');
+     *
+     * const w = new Worker(`
+     *   const { parentPort } = require('node:worker_threads');
+     *   parentPort.on('message', () => {});
+     *   `, { eval: true });
+     *
+     * w.on('online', async () => {
+     *   // Stop profile automatically when return and profile will be discarded
+     *   await using handle = await w.startCpuProfile();
+     * });
+     * ```
+     * @since v24.8.0
+     */
+    @JsName("startCpuProfile")
+    fun startCpuProfileAsync(): Promise<CPUProfileHandle>
+
+    @seskar.js.JsAsync
+    suspend fun startCpuProfile(): CPUProfileHandle
+
+    /**
+     * Starting a Heap profile then return a Promise that fulfills with an error
+     * or an `HeapProfileHandle` object. This API supports `await using` syntax.
+     *
+     * ```js
+     * const { Worker } = require('node:worker_threads');
+     *
+     * const worker = new Worker(`
+     *   const { parentPort } = require('worker_threads');
+     *   parentPort.on('message', () => {});
+     *   `, { eval: true });
+     *
+     * worker.on('online', async () => {
+     *   const handle = await worker.startHeapProfile();
+     *   const profile = await handle.stop();
+     *   console.log(profile);
+     *   worker.terminate();
+     * });
+     * ```
+     *
+     * `await using` example.
+     *
+     * ```js
+     * const { Worker } = require('node:worker_threads');
+     *
+     * const w = new Worker(`
+     *   const { parentPort } = require('node:worker_threads');
+     *   parentPort.on('message', () => {});
+     *   `, { eval: true });
+     *
+     * w.on('online', async () => {
+     *   // Stop profile automatically when return and profile will be discarded
+     *   await using handle = await w.startHeapProfile();
+     * });
+     * ```
+     */
+    @JsName("startHeapProfile")
+    fun startHeapProfileAsync(): Promise<HeapProfileHandle>
+
+    @seskar.js.JsAsync
+    suspend fun startHeapProfile(): HeapProfileHandle
 
     fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
 

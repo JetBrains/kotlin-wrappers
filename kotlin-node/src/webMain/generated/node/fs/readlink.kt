@@ -4,6 +4,8 @@
 
 package node.fs
 
+import node.buffer.NonSharedBuffer
+
 /**
  * Reads the contents of the symbolic link referred to by `path`. The callback gets
  * two arguments `(err, linkString)`.
@@ -30,7 +32,7 @@ external fun readlink(
 external fun readlink(
     path: PathLike,
     options: BufferEncodingOption,
-    callback: (err: node.ErrnoException?, linkString: node.buffer.Buffer<*>) -> Unit,
+    callback: (err: node.ErrnoException?, linkString: NonSharedBuffer) -> Unit,
 )
 
 /**
@@ -41,7 +43,7 @@ external fun readlink(
 external fun readlink(
     path: PathLike,
     options: EncodingOption,
-    callback: (err: node.ErrnoException?, linkString: Any /* string | Buffer */) -> Unit,
+    callback: (err: node.ErrnoException?, linkString: Any /* string | NonSharedBuffer */) -> Unit,
 )
 
 /**

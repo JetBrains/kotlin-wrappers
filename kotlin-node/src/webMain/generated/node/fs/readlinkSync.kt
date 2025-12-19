@@ -4,6 +4,8 @@
 
 package node.fs
 
+import node.buffer.NonSharedBuffer
+
 /**
  * Returns the symbolic link's string value.
  *
@@ -28,7 +30,7 @@ external fun readlinkSync(
 external fun readlinkSync(
     path: PathLike,
     options: BufferEncodingOption,
-): node.buffer.Buffer<*>
+): NonSharedBuffer
 
 /**
  * Synchronous readlink(2) - read value of a symbolic link.

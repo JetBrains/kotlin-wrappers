@@ -40,9 +40,7 @@ external class SyntheticModule : Module {
     )
 
     /**
-     * This method is used after the module is linked to set the values of exports. If
-     * it is called before the module is linked, an `ERR_VM_MODULE_STATUS` error
-     * will be thrown.
+     * This method sets the module export binding slots with the given value.
      *
      * ```js
      * import vm from 'node:vm';
@@ -51,7 +49,6 @@ external class SyntheticModule : Module {
      *   m.setExport('x', 1);
      * });
      *
-     * await m.link(() => {});
      * await m.evaluate();
      *
      * assert.strictEqual(m.namespace.x, 1);

@@ -4,6 +4,8 @@
 
 package node.zlib
 
+import node.buffer.NonSharedBuffer
+
 /**
  * Decompress a chunk of data with `ZstdDecompress`.
  * @since v22.15.0
@@ -12,4 +14,4 @@ package node.zlib
 external fun zstdDecompressSync(
     buf: InputType,
     options: ZstdOptions = definedExternally,
-): node.buffer.Buffer<*>
+): NonSharedBuffer

@@ -99,6 +99,18 @@ val convertSkippedGenerics = createPlugin { node, _, render ->
             ensure(isTypeReferenceNode(node))
 
             val typeName = node.typeName
+            ensure(isIdentifier(typeName))
+            ensure(typeName.text == "TypedArray")
+
+            ensure(node.typeArguments?.asArray()?.size == 1)
+
+            val typeArguments = node.typeArguments?.asArray()?.joinToString(", ") { render(it) }
+
+            "${render(typeName)}<*, *, ${typeArguments}, *>"
+        } ?: nullable {
+            ensure(isTypeReferenceNode(node))
+
+            val typeName = node.typeName
             ensure(isQualifiedName(typeName))
             ensure(typeName.right.text == "ArrayBufferView")
 

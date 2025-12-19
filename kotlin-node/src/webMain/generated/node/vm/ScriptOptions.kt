@@ -6,7 +6,7 @@ sealed external interface ScriptOptions : BaseOptions {
     /**
      * Provides an optional data with V8's code cache data for the supplied source.
      */
-    var cachedData: Any? // Buffer | NodeJS.ArrayBufferView | undefined
+    var cachedData: js.buffer.ArrayBufferView<*>?
 
     /** @deprecated in favor of `script.createCachedData()` */
     var produceCachedData: Boolean?

@@ -163,8 +163,6 @@ sealed external interface Cluster : EventEmitter {
 
     fun prependListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
 
-// the handle is a net.Socket or net.Server object, or undefined.
-
     fun prependOnceListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
 
 // the handle is a net.Socket or net.Server object, or undefined.

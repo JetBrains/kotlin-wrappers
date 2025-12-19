@@ -5,5 +5,5 @@ package node.fs
 @js.objects.JsPlainObject
 sealed external interface _WatchOptionsWithBufferEncoding : _WatchOptions {
     @JsName("encoding")
-    var stringEncoding: String // "buffer"
+    var bufferEncoding: String // "buffer"
 }

@@ -50,7 +50,7 @@ sealed external interface FSWatcher : EventEmitter {
     fun prependOnceListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
 
     @web.events.JsEvent("change")
-    val changeEvent: node.events.EventInstance<js.array.Tuple2<String, Any /* string | Buffer */>>
+    val changeEvent: node.events.EventInstance<js.array.Tuple2<String, Any /* string | NonSharedBuffer */>>
 
     @web.events.JsEvent("close")
     val closeEvent: node.events.EventInstance<js.array.Tuple>

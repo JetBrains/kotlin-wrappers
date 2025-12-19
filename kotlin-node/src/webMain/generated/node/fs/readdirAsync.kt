@@ -5,6 +5,7 @@
 package node.fs
 
 import js.promise.Promise
+import node.buffer.NonSharedBuffer
 
 /**
  * Reads the contents of a directory.
@@ -102,7 +103,7 @@ external fun readdirAsync(
 external fun readdirAsync(
     path: PathLike,
     options: ReaddirBufferAsyncOptions,
-): Promise<js.array.ReadonlyArray<node.buffer.Buffer<*>>>
+): Promise<js.array.ReadonlyArray<NonSharedBuffer>>
 
 /**
  * Asynchronous readdir(3) - read a directory.
@@ -113,7 +114,7 @@ external fun readdirAsync(
 external fun readdirAsync(
     path: PathLike,
     options: String, // "buffer"
-): Promise<js.array.ReadonlyArray<node.buffer.Buffer<*>>>
+): Promise<js.array.ReadonlyArray<NonSharedBuffer>>
 
 /**
  * Asynchronous readdir(3) - read a directory.
@@ -153,4 +154,4 @@ external fun readdirAsync(
 external fun readdirAsync(
     path: PathLike,
     options: ReaddirBufferWithFileTypesAsyncOptions,
-): Promise<js.array.ReadonlyArray<Dirent<node.buffer.Buffer<*>>>>
+): Promise<js.array.ReadonlyArray<Dirent<NonSharedBuffer>>>

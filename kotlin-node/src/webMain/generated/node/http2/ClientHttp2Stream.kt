@@ -43,11 +43,13 @@ sealed external interface ClientHttp2Stream : Http2Stream {
     val continueEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("headers")
-    val headersEvent: node.events.EventInstance<js.array.Tuple2<ClientHttp2StreamAddListenerListenerHeaders, Double>>
+    val headersEvent:
+            node.events.EventInstance<js.array.Tuple3<ClientHttp2StreamAddListenerListenerHeaders, Double, js.array.ReadonlyArray<String>>>
 
     @web.events.JsEvent("push")
     val pushEvent: node.events.EventInstance<js.array.Tuple2<IncomingHttpHeaders, Double>>
 
     @web.events.JsEvent("response")
-    val responseEvent: node.events.EventInstance<js.array.Tuple2<ClientHttp2StreamAddListenerListenerHeaders, Double>>
+    val responseEvent:
+            node.events.EventInstance<js.array.Tuple3<ClientHttp2StreamAddListenerListenerHeaders, Double, js.array.ReadonlyArray<String>>>
 }

@@ -4,6 +4,8 @@
 
 package node.v8
 
+import node.buffer.NonSharedBuffer
+
 /**
  * Uses a `DefaultSerializer` to serialize `value` into a buffer.
  *
@@ -12,4 +14,4 @@ package node.v8
  * larger than `buffer.constants.MAX_LENGTH`.
  * @since v8.0.0
  */
-external fun serialize(value: Any?): node.buffer.Buffer<*>
+external fun serialize(value: Any?): NonSharedBuffer

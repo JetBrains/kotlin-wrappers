@@ -274,5 +274,6 @@ sealed external interface ServerHttp2Session<Http1Request : IncomingMessage, Htt
             node.events.EventInstance<js.array.Tuple2<ServerHttp2Session<Http1Request, Http1Response, Http2Request, Http2Response>, Any /* net.Socket | tls.TLSSocket */>>
 
     @web.events.JsEvent("stream")
-    val streamEvent: node.events.EventInstance<js.array.Tuple3<ServerHttp2Stream, IncomingHttpHeaders, Double>>
+    val streamEvent:
+            node.events.EventInstance<js.array.Tuple4<ServerHttp2Stream, IncomingHttpHeaders, Double, js.array.ReadonlyArray<String>>>
 }

@@ -2,18 +2,9 @@
 
 package node.vm
 
-sealed external interface CompileFunctionOptions : BaseOptions {
-    /**
-     * Provides an optional data with V8's code cache data for the supplied source.
-     */
-    var cachedData: Any? // ScriptOptions["cachedData"] | undefined
-
-    /**
-     * Specifies whether to produce new cache data.
-     * @default false
-     */
-    var produceCachedData: Boolean?
-
+sealed external interface CompileFunctionOptions :
+    BaseOptions,
+    ScriptOptions {
     /**
      * The sandbox/context in which the said function should be compiled in.
      */
@@ -30,5 +21,5 @@ sealed external interface CompileFunctionOptions : BaseOptions {
      * [Support of dynamic `import()` in compilation APIs](https://nodejs.org/docs/latest-v24.x/api/vm.html#support-of-dynamic-import-in-compilation-apis).
      * @experimental
      */
-    var importModuleDynamically: Any? // DynamicModuleLoader<ReturnType<typeof compileFunction>> | typeof constants.USE_MAIN_CONTEXT_DEFAULT_LOADER | undefined
+    override var importModuleDynamically: Any? // DynamicModuleLoader<ReturnType<typeof compileFunction>> | typeof constants.USE_MAIN_CONTEXT_DEFAULT_LOADER | undefined
 }

@@ -8,11 +8,13 @@ package node.stream
 /**
  * Returns whether the stream is readable.
  * @since v17.4.0, v16.14.0
+ * @returns Only returns `null` if `stream` is not a valid `Readable`, `Duplex` or `ReadableStream`.
  */
-external fun isReadable(stream: Readable): Boolean
+external fun isReadable(stream: Readable): Boolean?
 
 /**
  * Returns whether the stream is readable.
  * @since v17.4.0, v16.14.0
+ * @returns Only returns `null` if `stream` is not a valid `Readable`, `Duplex` or `ReadableStream`.
  */
-external fun isReadable(stream: node.ReadableStream): Boolean
+external fun isReadable(stream: node.ReadableStream): Boolean?

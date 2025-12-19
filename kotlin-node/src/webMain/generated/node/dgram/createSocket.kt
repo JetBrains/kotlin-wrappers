@@ -4,6 +4,8 @@
 
 package node.dgram
 
+import node.buffer.NonSharedBuffer
+
 /**
  * Creates a `dgram.Socket` object. Once the socket is created, calling `socket.bind()` will instruct the socket to begin listening for datagram
  * messages. When `address` and `port` are not passed to `socket.bind()` the
@@ -29,10 +31,10 @@ package node.dgram
  */
 external fun createSocket(
     type: SocketType,
-    callback: (msg: node.buffer.Buffer<*>, rinfo: RemoteInfo) -> Unit = definedExternally,
+    callback: (msg: NonSharedBuffer, rinfo: RemoteInfo) -> Unit = definedExternally,
 ): Socket
 
 external fun createSocket(
     options: SocketOptions,
-    callback: (msg: node.buffer.Buffer<*>, rinfo: RemoteInfo) -> Unit = definedExternally,
+    callback: (msg: NonSharedBuffer, rinfo: RemoteInfo) -> Unit = definedExternally,
 ): Socket

@@ -4,6 +4,8 @@
 
 package node.fs
 
+import node.buffer.NonSharedBuffer
+
 /**
  * Returns an async iterator that watches for changes on `filename`, where `filename`is either a file or a directory.
  *
@@ -109,14 +111,14 @@ external fun watch(
 external fun watch(
     filename: PathLike,
     options: WatchOptionsWithBufferEncoding,
-): js.iterable.AsyncIterator<FileChangeInfo<node.buffer.Buffer<*>>>
+): js.iterable.AsyncIterator<FileChangeInfo<NonSharedBuffer>>
 
 external fun watch(
     filename: PathLike,
     options: String, /* "buffer" */
-): js.iterable.AsyncIterator<FileChangeInfo<node.buffer.Buffer<*>>>
+): js.iterable.AsyncIterator<FileChangeInfo<NonSharedBuffer>>
 
 external fun watch(
     filename: PathLike,
     options: WatchOptions,
-): js.iterable.AsyncIterator<FileChangeInfo<Any /* string | Buffer */>>
+): js.iterable.AsyncIterator<FileChangeInfo<Any /* string | NonSharedBuffer */>>

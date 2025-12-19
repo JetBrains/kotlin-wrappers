@@ -4,6 +4,8 @@
 
 package node.crypto
 
+import node.buffer.NonSharedBuffer
+
 /**
  * SPKAC is a Certificate Signing Request mechanism originally implemented by
  * Netscape and was specified formally as part of HTML5's `keygen` element.
@@ -23,7 +25,7 @@ external class Certificate {
      * @returns The challenge component of the `spkac` data structure,
      * which includes a public key and a challenge.
      */
-    fun exportChallenge(spkac: BinaryLike): node.buffer.Buffer<*>
+    fun exportChallenge(spkac: BinaryLike): NonSharedBuffer
 
     /**
      * @deprecated
@@ -35,7 +37,7 @@ external class Certificate {
     fun exportPublicKey(
         spkac: BinaryLike,
         encoding: String = definedExternally,
-    ): node.buffer.Buffer<*>
+    ): NonSharedBuffer
 
     /**
      * @deprecated
@@ -58,7 +60,7 @@ external class Certificate {
          * @param encoding The `encoding` of the `spkac` string.
          * @return The challenge component of the `spkac` data structure, which includes a public key and a challenge.
          */
-        fun exportChallenge(spkac: BinaryLike): node.buffer.Buffer<*>
+        fun exportChallenge(spkac: BinaryLike): NonSharedBuffer
 
         /**
          * ```js
@@ -75,7 +77,7 @@ external class Certificate {
         fun exportPublicKey(
             spkac: BinaryLike,
             encoding: String = definedExternally,
-        ): node.buffer.Buffer<*>
+        ): NonSharedBuffer
 
         /**
          * ```js

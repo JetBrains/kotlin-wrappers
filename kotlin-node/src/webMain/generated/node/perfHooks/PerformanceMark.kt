@@ -11,6 +11,7 @@ package node.perfHooks
 external class PerformanceMark : PerformanceEntry {
     constructor ()
 
+    val detail: Any?
     override val duration: Double
 
     // 0

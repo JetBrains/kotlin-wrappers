@@ -4,6 +4,7 @@
 
 package node.url
 
+import node.buffer.NonSharedBuffer
 import web.url.URL
 
 /**
@@ -19,7 +20,7 @@ import web.url.URL
 external fun fileURLToPathBuffer(
     url: String,
     options: FileUrlToPathOptions = definedExternally,
-): node.buffer.Buffer<*>
+): NonSharedBuffer
 
 /**
  * Like `url.fileURLToPath(...)` except that instead of returning a string
@@ -34,4 +35,4 @@ external fun fileURLToPathBuffer(
 external fun fileURLToPathBuffer(
     url: URL,
     options: FileUrlToPathOptions = definedExternally,
-): node.buffer.Buffer<*>
+): NonSharedBuffer

@@ -6,7 +6,7 @@ package node.stream
 sealed external interface WritableOptions<T : Writable /* default is Writable */> : StreamOptions<T> {
     var decodeStrings: Boolean?
     var defaultEncoding: node.buffer.BufferEncoding?
-    val write: (
+    var write: (
         (
         // this: T,
         chunk: Any?,
@@ -14,12 +14,12 @@ sealed external interface WritableOptions<T : Writable /* default is Writable */
         callback: (error: js.errors.JsError? /* use undefined for default */) -> Unit,
     ) -> Unit
     )?
-    val writev: (
+    var writev: (
         (
         // this: T,
         chunks: Array<WritableOptionsWritevChunksItem>,
         callback: (error: js.errors.JsError? /* use undefined for default */) -> Unit,
     ) -> Unit
     )?
-    val final: ((/* this: T, */ callback: (error: js.errors.JsError? /* use undefined for default */) -> Unit) -> Unit)?
+    var final: ((/* this: T, */ callback: (error: js.errors.JsError? /* use undefined for default */) -> Unit) -> Unit)?
 }

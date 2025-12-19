@@ -4,6 +4,8 @@
 
 package node.fs
 
+import node.buffer.NonSharedBuffer
+
 /**
  * Asynchronously computes the canonical pathname by resolving `.`, `..`, and
  * symbolic links.
@@ -44,7 +46,7 @@ external fun realpath(
 external fun realpath(
     path: PathLike,
     options: BufferEncodingOption,
-    callback: (err: node.ErrnoException?, resolvedPath: node.buffer.Buffer<*>) -> Unit,
+    callback: (err: node.ErrnoException?, resolvedPath: NonSharedBuffer) -> Unit,
 )
 
 /**
@@ -55,7 +57,7 @@ external fun realpath(
 external fun realpath(
     path: PathLike,
     options: EncodingOption,
-    callback: (err: node.ErrnoException?, resolvedPath: Any /* string | Buffer */) -> Unit,
+    callback: (err: node.ErrnoException?, resolvedPath: Any /* string | NonSharedBuffer */) -> Unit,
 )
 
 /**

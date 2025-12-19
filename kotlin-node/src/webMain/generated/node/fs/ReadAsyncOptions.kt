@@ -2,6 +2,6 @@
 
 package node.fs
 
-sealed external interface ReadAsyncOptions<TBuffer : js.buffer.ArrayBufferView<*>> : ReadSyncOptions {
-    var buffer: TBuffer?
-}
+/** @deprecated Use `ReadOptionsWithBuffer` instead. */
+// TODO: remove in future major
+sealed external interface ReadAsyncOptions<T : js.buffer.ArrayBufferView<*>> : ReadOptionsWithBuffer<T>

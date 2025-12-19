@@ -4,6 +4,8 @@
 
 package node.crypto
 
+import node.buffer.NonSharedBuffer
+
 /**
  * The `DiffieHellman` class is a utility for creating Diffie-Hellman key
  * exchanges.
@@ -48,7 +50,7 @@ external class DiffieHellman {
      * @since v0.5.0
      * @param encoding The `encoding` of the return value.
      */
-    fun generateKeys(): node.buffer.Buffer<*>
+    fun generateKeys(): NonSharedBuffer
 
     fun generateKeys(encoding: BinaryToTextEncoding): String
 
@@ -69,7 +71,7 @@ external class DiffieHellman {
         otherPublicKey: js.buffer.ArrayBufferView<*>,
         inputEncoding: Nothing? = definedExternally,
         outputEncoding: Nothing? = definedExternally,
-    ): node.buffer.Buffer<*>
+    ): NonSharedBuffer
 
     fun computeSecret(
         otherPublicKey: js.buffer.ArrayBufferView<*>,
@@ -81,7 +83,7 @@ external class DiffieHellman {
         otherPublicKey: String,
         inputEncoding: BinaryToTextEncoding,
         outputEncoding: Nothing? = definedExternally,
-    ): node.buffer.Buffer<*>
+    ): NonSharedBuffer
 
     fun computeSecret(
         otherPublicKey: String,
@@ -96,7 +98,7 @@ external class DiffieHellman {
      * @since v0.5.0
      * @param encoding The `encoding` of the return value.
      */
-    fun getPrime(): node.buffer.Buffer<*>
+    fun getPrime(): NonSharedBuffer
 
     fun getPrime(encoding: BinaryToTextEncoding): String
 
@@ -107,7 +109,7 @@ external class DiffieHellman {
      * @since v0.5.0
      * @param encoding The `encoding` of the return value.
      */
-    fun getGenerator(): node.buffer.Buffer<*>
+    fun getGenerator(): NonSharedBuffer
 
     fun getGenerator(encoding: BinaryToTextEncoding): String
 
@@ -118,7 +120,7 @@ external class DiffieHellman {
      * @since v0.5.0
      * @param encoding The `encoding` of the return value.
      */
-    fun getPublicKey(): node.buffer.Buffer<*>
+    fun getPublicKey(): NonSharedBuffer
 
     fun getPublicKey(encoding: BinaryToTextEncoding): String
 
@@ -129,7 +131,7 @@ external class DiffieHellman {
      * @since v0.5.0
      * @param encoding The `encoding` of the return value.
      */
-    fun getPrivateKey(): node.buffer.Buffer<*>
+    fun getPrivateKey(): NonSharedBuffer
 
     fun getPrivateKey(encoding: BinaryToTextEncoding): String
 

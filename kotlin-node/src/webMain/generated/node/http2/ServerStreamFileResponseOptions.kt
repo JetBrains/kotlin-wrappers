@@ -5,10 +5,7 @@ package node.http2
 import node.http.OutgoingHttpHeaders
 
 sealed external interface ServerStreamFileResponseOptions {
-    // eslint-disable-next-line @typescript-eslint/no-invalid-void-type
-    val statCheck: (
-        (stats: node.fs.Stats, headers: OutgoingHttpHeaders, statOptions: StatOptions) -> Any // void | boolean
-    )?
+    var statCheck: ((stats: node.fs.Stats, headers: OutgoingHttpHeaders, statOptions: StatOptions) -> Unit)?
     var waitForTrailers: Boolean?
     var offset: Double?
     var length: Double?

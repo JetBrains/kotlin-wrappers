@@ -4,6 +4,8 @@
 
 package node.crypto
 
+import node.buffer.NonSharedBuffer
+
 /**
  * Provides a synchronous [Argon2][] implementation. Argon2 is a password-based
  * key derivation function that is designed to be expensive computationally and
@@ -42,4 +44,4 @@ package node.crypto
 external fun argon2Sync(
     algorithm: Argon2Algorithm,
     parameters: Argon2Parameters,
-): node.buffer.Buffer<*>
+): NonSharedBuffer

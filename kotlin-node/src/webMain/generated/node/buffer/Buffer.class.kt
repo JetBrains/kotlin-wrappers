@@ -5,7 +5,6 @@ package node.buffer
 import js.array.ArrayLike
 import js.buffer.ArrayBuffer
 import js.buffer.ArrayBufferLike
-import js.buffer.SharedArrayBuffer
 import js.typedarrays.Uint8Array
 
 sealed external class Buffer<TArrayBuffer : ArrayBufferLike /* default is ArrayBufferLike */> :
@@ -3010,40 +3009,6 @@ sealed external class Buffer<TArrayBuffer : ArrayBufferLike /* default is ArrayB
          * @return The number of bytes contained within `string`.
          */
         fun byteLength(
-            string: Buffer<*>,
-            encoding: BufferEncoding = definedExternally,
-        ): Double
-
-        /**
-         * Returns the byte length of a string when encoded using `encoding`.
-         * This is not the same as [`String.prototype.length`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/length), which does not account
-         * for the encoding that is used to convert the string into bytes.
-         *
-         * For `'base64'`, `'base64url'`, and `'hex'`, this function assumes valid input.
-         * For strings that contain non-base64/hex-encoded data (e.g. whitespace), the
-         * return value might be greater than the length of a `Buffer` created from the
-         * string.
-         *
-         * ```js
-         * import { Buffer } from 'node:buffer';
-         *
-         * const str = '\u00bd + \u00bc = \u00be';
-         *
-         * console.log(`${str}: ${str.length} characters, ` +
-         *             `${Buffer.byteLength(str, 'utf8')} bytes`);
-         * // Prints: ½ + ¼ = ¾: 9 characters, 12 bytes
-         * ```
-         *
-         * When `string` is a
-         * `Buffer`/[`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView)/[`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/-
-         * Reference/Global_Objects/TypedArray)/[`ArrayBuffer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer)/[`SharedArrayBuffer`](https://develop-
-         * er.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer), the byte length as reported by `.byteLength`is returned.
-         * @since v0.1.90
-         * @param string A value to calculate the length of.
-         * @param [encoding='utf8'] If `string` is a string, this is its encoding.
-         * @return The number of bytes contained within `string`.
-         */
-        fun byteLength(
             string: js.buffer.ArrayBufferView<*>,
             encoding: BufferEncoding = definedExternally,
         ): Double
@@ -3078,41 +3043,7 @@ sealed external class Buffer<TArrayBuffer : ArrayBufferLike /* default is ArrayB
          * @return The number of bytes contained within `string`.
          */
         fun byteLength(
-            string: ArrayBuffer,
-            encoding: BufferEncoding = definedExternally,
-        ): Double
-
-        /**
-         * Returns the byte length of a string when encoded using `encoding`.
-         * This is not the same as [`String.prototype.length`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/length), which does not account
-         * for the encoding that is used to convert the string into bytes.
-         *
-         * For `'base64'`, `'base64url'`, and `'hex'`, this function assumes valid input.
-         * For strings that contain non-base64/hex-encoded data (e.g. whitespace), the
-         * return value might be greater than the length of a `Buffer` created from the
-         * string.
-         *
-         * ```js
-         * import { Buffer } from 'node:buffer';
-         *
-         * const str = '\u00bd + \u00bc = \u00be';
-         *
-         * console.log(`${str}: ${str.length} characters, ` +
-         *             `${Buffer.byteLength(str, 'utf8')} bytes`);
-         * // Prints: ½ + ¼ = ¾: 9 characters, 12 bytes
-         * ```
-         *
-         * When `string` is a
-         * `Buffer`/[`DataView`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView)/[`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/-
-         * Reference/Global_Objects/TypedArray)/[`ArrayBuffer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer)/[`SharedArrayBuffer`](https://develop-
-         * er.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer), the byte length as reported by `.byteLength`is returned.
-         * @since v0.1.90
-         * @param string A value to calculate the length of.
-         * @param [encoding='utf8'] If `string` is a string, this is its encoding.
-         * @return The number of bytes contained within `string`.
-         */
-        fun byteLength(
-            string: SharedArrayBuffer,
+            string: ArrayBufferLike,
             encoding: BufferEncoding = definedExternally,
         ): Double
 

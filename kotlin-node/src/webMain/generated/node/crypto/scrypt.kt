@@ -4,6 +4,8 @@
 
 package node.crypto
 
+import node.buffer.NonSharedBuffer
+
 /**
  * Provides an asynchronous [scrypt](https://en.wikipedia.org/wiki/Scrypt) implementation. Scrypt is a password-based
  * key derivation function that is designed to be expensive computationally and
@@ -42,7 +44,7 @@ external fun scrypt(
     password: BinaryLike,
     salt: BinaryLike,
     keylen: Number,
-    callback: (err: js.errors.JsError?, derivedKey: node.buffer.Buffer<*>) -> Unit,
+    callback: (err: js.errors.JsError?, derivedKey: NonSharedBuffer) -> Unit,
 )
 
 external fun scrypt(
@@ -50,5 +52,5 @@ external fun scrypt(
     salt: BinaryLike,
     keylen: Number,
     options: ScryptOptions,
-    callback: (err: js.errors.JsError?, derivedKey: node.buffer.Buffer<*>) -> Unit,
+    callback: (err: js.errors.JsError?, derivedKey: NonSharedBuffer) -> Unit,
 )

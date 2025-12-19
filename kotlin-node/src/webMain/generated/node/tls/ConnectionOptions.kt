@@ -36,5 +36,5 @@ external interface ConnectionOptions :
      * compatible with the selected cipher's digest.
      * `identity` must use UTF-8 encoding.
      */
-    val pskCallback: ((hint: String?) -> PSKCallbackNegotation?)?
+    var pskCallback: ((hint: String?) -> PSKCallbackNegotation?)?
 }

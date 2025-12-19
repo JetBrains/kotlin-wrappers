@@ -32,6 +32,11 @@ fun modifyInterfaceInheritance(node: Node, context: InheritanceModifierContext) 
 
             ""
         } ?: nullable {
+            ensure(sourceFileName.endsWith("dns.d.ts"))
+            ensure(node.name.text == "LookupOptions")
+
+            ""
+        } ?: nullable {
             ensure(sourceFileName.endsWith("globals.d.ts"))
             ensure(
                 node.name.text == "ErrnoException"

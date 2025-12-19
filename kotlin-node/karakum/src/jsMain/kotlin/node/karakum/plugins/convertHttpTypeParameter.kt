@@ -14,6 +14,7 @@ import typescript.isFunctionDeclaration
 import typescript.isIdentifier
 import typescript.isInterfaceDeclaration
 import typescript.isIntersectionTypeNode
+import typescript.isPropertyAccessExpression
 import typescript.isQualifiedName
 import typescript.isTypeAliasDeclaration
 import typescript.isTypeParameterDeclaration
@@ -59,12 +60,21 @@ private fun isTypeArgumentOfTypeWithTypeofBound(node: Node) = nullable {
         val expressionWithTypeArguments = ensureNotNull(node.getParentOrNull())
         ensure(isExpressionWithTypeArguments(expressionWithTypeArguments))
 
-        val expression = expressionWithTypeArguments.expression
-        ensure(isIdentifier(expression))
-        ensure(
-            expression.text == "ServerSessionOptions"
-                    || expression.text == "SecureServerSessionOptions"
-        )
+        nullable {
+            val expression = expressionWithTypeArguments.expression
+            ensure(isIdentifier(expression))
+            ensure(
+                expression.text == "ServerSessionOptions"
+                        || expression.text == "SecureServerSessionOptions"
+            )
+        } ?: nullable {
+            val expression = expressionWithTypeArguments.expression
+            ensure(isPropertyAccessExpression(expression))
+
+            val expressionName = expression.name
+            ensure(isIdentifier(expressionName))
+            ensure(expressionName.text == "ServerOptions")
+        }
     }
 } != null
 

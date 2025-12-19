@@ -2,11 +2,13 @@
 
 package node.fs
 
+import node.buffer.NonSharedBuffer
+
 @seskar.js.JsAsync
 external suspend fun readFile(
     path: PathLike,
     options: (ReadFileBufferAsyncOptions)? = definedExternally,
-): node.buffer.Buffer<*>
+): NonSharedBuffer
 
 /**
  * Asynchronously reads the entire contents of a file.
@@ -68,7 +70,7 @@ external suspend fun readFile(
 external suspend fun readFile(
     path: FileHandle,
     options: (ReadFileBufferAsyncOptions)? = definedExternally,
-): node.buffer.Buffer<*>
+): NonSharedBuffer
 
 @seskar.js.JsAsync
 external suspend fun readFile(
@@ -116,7 +118,7 @@ external suspend fun readFile(
 ): String
 
 @seskar.js.JsAsync
-external suspend fun readFile(path: PathLike): Any // string | Buffer
+external suspend fun readFile(path: PathLike): Any // string | NonSharedBuffer
 
 /**
  * Asynchronously reads the entire contents of a file.
@@ -129,7 +131,7 @@ external suspend fun readFile(path: PathLike): Any // string | Buffer
 external suspend fun readFile(
     path: PathLike,
     options: (ReadFileAsyncOptions)? = definedExternally,
-): Any // string | Buffer
+): Any // string | NonSharedBuffer
 
 /**
  * Asynchronously reads the entire contents of a file.
@@ -142,7 +144,7 @@ external suspend fun readFile(
 external suspend fun readFile(
     path: PathLike,
     options: node.buffer.BufferEncoding? = definedExternally,
-): Any // string | Buffer
+): Any // string | NonSharedBuffer
 
 /**
  * Asynchronously reads the entire contents of a file.
@@ -152,7 +154,7 @@ external suspend fun readFile(
  * If a flag is not provided, it defaults to `'r'`.
  */
 @seskar.js.JsAsync
-external suspend fun readFile(path: FileHandle): Any // string | Buffer
+external suspend fun readFile(path: FileHandle): Any // string | NonSharedBuffer
 
 /**
  * Asynchronously reads the entire contents of a file.
@@ -165,7 +167,7 @@ external suspend fun readFile(path: FileHandle): Any // string | Buffer
 external suspend fun readFile(
     path: FileHandle,
     options: (ReadFileAsyncOptions)? = definedExternally,
-): Any // string | Buffer
+): Any // string | NonSharedBuffer
 
 /**
  * Asynchronously reads the entire contents of a file.
@@ -178,4 +180,4 @@ external suspend fun readFile(
 external suspend fun readFile(
     path: FileHandle,
     options: node.buffer.BufferEncoding? = definedExternally,
-): Any // string | Buffer
+): Any // string | NonSharedBuffer

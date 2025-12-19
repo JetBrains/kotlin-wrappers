@@ -9,4 +9,5 @@ sealed external interface SigningOptions {
     var padding: Double?
     var saltLength: Double?
     var dsaEncoding: DSAEncoding?
+    var context: Any? // ArrayBuffer | NodeJS.ArrayBufferView | undefined
 }

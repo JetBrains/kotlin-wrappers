@@ -44,7 +44,7 @@ external interface TlsOptions :
      * requires explicitly specifying a cipher suite with the `ciphers` option.
      * More information can be found in the RFC 4279.
      */
-    val pskCallback: ((socket: TLSSocket, identity: String) -> Any? /* DataView | NodeJS.TypedArray | null */)?
+    var pskCallback: ((socket: TLSSocket, identity: String) -> js.buffer.ArrayBufferView<*>?)?
 
     /**
      * hint to send to a client to help

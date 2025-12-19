@@ -4,6 +4,8 @@
 
 package node.tls
 
+import node.buffer.NonSharedBuffer
+
 /**
  * Accepts encrypted connections using TLS or SSL.
  * @since v0.3.2
@@ -51,7 +53,7 @@ open external class Server : node.net.Server {
      * @since v3.0.0
      * @return A 48-byte buffer containing the session ticket keys.
      */
-    fun getTicketKeys(): node.buffer.Buffer<*>
+    fun getTicketKeys(): NonSharedBuffer
 
     /**
      * The `server.setSecureContext()` method replaces the secure context of an
@@ -106,17 +108,16 @@ open external class Server : node.net.Server {
     open val tlsClientErrorEvent: node.events.EventInstance<js.array.Tuple2<js.errors.JsError, TLSSocket>>
 
     @web.events.JsEvent("newSession")
-    val newSessionEvent:
-            node.events.EventInstance<js.array.Tuple3<node.buffer.Buffer<*>, node.buffer.Buffer<*>, () -> Unit>>
+    val newSessionEvent: node.events.EventInstance<js.array.Tuple3<NonSharedBuffer, NonSharedBuffer, () -> Unit>>
 
     @web.events.JsEvent("OCSPRequest")
     open val OCSPRequestEvent: node.events.EventInstance<
             js.array.Tuple3<
-                    node.buffer.Buffer<*>,
-                    node.buffer.Buffer<*>,
+                    NonSharedBuffer,
+                    NonSharedBuffer,
                         (
                 err: js.errors.JsError?,
-                resp: node.buffer.Buffer<*>,
+                resp: node.buffer.Buffer<*>?,
             ) -> Unit
                     >
             >
@@ -124,7 +125,7 @@ open external class Server : node.net.Server {
     @web.events.JsEvent("resumeSession")
     val resumeSessionEvent: node.events.EventInstance<
             js.array.Tuple2<
-                    node.buffer.Buffer<*>,
+                    NonSharedBuffer,
                         (
                 err: js.errors.JsError?,
                 sessionData: node.buffer.Buffer<*>?,
@@ -136,5 +137,5 @@ open external class Server : node.net.Server {
     open val secureConnectionEvent: node.events.EventInstance<js.array.Tuple1<TLSSocket>>
 
     @web.events.JsEvent("keylog")
-    open val keylogEvent: node.events.EventInstance<js.array.Tuple2<node.buffer.Buffer<*>, TLSSocket>>
+    open val keylogEvent: node.events.EventInstance<js.array.Tuple2<NonSharedBuffer, TLSSocket>>
 }

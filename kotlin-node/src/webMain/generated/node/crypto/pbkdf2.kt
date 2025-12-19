@@ -4,6 +4,8 @@
 
 package node.crypto
 
+import node.buffer.NonSharedBuffer
+
 /**
  * Provides an asynchronous Password-Based Key Derivation Function 2 (PBKDF2)
  * implementation. A selected HMAC digest algorithm specified by `digest` is
@@ -45,5 +47,5 @@ external fun pbkdf2(
     iterations: Number,
     keylen: Number,
     digest: String,
-    callback: (err: js.errors.JsError?, derivedKey: node.buffer.Buffer<*>) -> Unit,
+    callback: (err: js.errors.JsError?, derivedKey: NonSharedBuffer) -> Unit,
 )

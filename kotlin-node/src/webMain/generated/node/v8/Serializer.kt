@@ -5,6 +5,7 @@
 package node.v8
 
 import js.buffer.ArrayBuffer
+import node.buffer.NonSharedBuffer
 
 /**
  * @since v8.0.0
@@ -28,7 +29,7 @@ open external class Serializer {
      * the buffer is released. Calling this method results in undefined behavior
      * if a previous write has failed.
      */
-    fun releaseBuffer(): node.buffer.Buffer<*>
+    fun releaseBuffer(): NonSharedBuffer
 
     /**
      * Marks an `ArrayBuffer` as having its contents transferred out of band.
@@ -67,5 +68,5 @@ open external class Serializer {
      * will require a way to compute the length of the buffer.
      * For use inside of a custom `serializer._writeHostObject()`.
      */
-    fun writeRawBytes(buffer: js.typedarrays.TypedArray<*, *, *, *>)
+    fun writeRawBytes(buffer: js.buffer.ArrayBufferView<*>)
 }

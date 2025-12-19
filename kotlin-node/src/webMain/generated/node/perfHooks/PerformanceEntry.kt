@@ -45,11 +45,5 @@ open external class PerformanceEntry {
      */
     open val entryType: EntryType
 
-    /**
-     * Additional detail specific to the `entryType`.
-     * @since v16.0.0
-     */
-    val detail: Any? /* NodeGCPerformanceDetail | unknown | undefined */ // TODO: Narrow this based on entry type.
-
     open fun toJSON(): Any?
 }

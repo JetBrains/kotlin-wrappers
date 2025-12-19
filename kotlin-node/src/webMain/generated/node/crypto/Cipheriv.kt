@@ -4,6 +4,7 @@
 
 package node.crypto
 
+import node.buffer.NonSharedBuffer
 import node.stream.TransformOptions
 
 /**
@@ -142,12 +143,12 @@ open external class Cipheriv : node.stream.Transform {
      * @param inputEncoding The `encoding` of the data.
      * @param outputEncoding The `encoding` of the return value.
      */
-    fun update(data: BinaryLike): node.buffer.Buffer<*>
+    fun update(data: BinaryLike): NonSharedBuffer
 
     fun update(
         data: String,
         inputEncoding: Encoding,
-    ): node.buffer.Buffer<*>
+    ): NonSharedBuffer
 
     fun update(
         data: String,
@@ -169,7 +170,7 @@ open external class Cipheriv : node.stream.Transform {
      * @param outputEncoding The `encoding` of the return value.
      * @return Any remaining enciphered contents. If `outputEncoding` is specified, a string is returned. If an `outputEncoding` is not provided, a {@link Buffer} is returned.
      */
-    fun final(): node.buffer.Buffer<*>
+    fun final(): NonSharedBuffer
 
     fun final(outputEncoding: node.buffer.BufferEncoding): String
 

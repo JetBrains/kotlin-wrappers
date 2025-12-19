@@ -4,6 +4,8 @@
 
 package node.fs
 
+import node.buffer.NonSharedBuffer
+
 /**
  * Returns the created directory path.
  *
@@ -27,7 +29,7 @@ external fun mkdtempSync(
 external fun mkdtempSync(
     prefix: String,
     options: BufferEncodingOption,
-): node.buffer.Buffer<*>
+): NonSharedBuffer
 
 /**
  * Synchronously creates a unique temporary directory.

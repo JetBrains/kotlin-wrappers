@@ -4,6 +4,8 @@
 
 package node.crypto
 
+import node.buffer.NonSharedBuffer
+
 /**
  * Generates cryptographically strong pseudorandom data. The `size` argument
  * is a number indicating the number of bytes to generate.
@@ -56,9 +58,9 @@ package node.crypto
  * @param size The number of bytes to generate. The `size` must not be larger than `2**31 - 1`.
  * @return if the `callback` function is not provided.
  */
-external fun randomBytes(size: Number): node.buffer.Buffer<*>
+external fun randomBytes(size: Number): NonSharedBuffer
 
 external fun randomBytes(
     size: Number,
-    callback: (err: js.errors.JsError?, buf: node.buffer.Buffer<*>) -> Unit,
+    callback: (err: js.errors.JsError?, buf: NonSharedBuffer) -> Unit,
 )

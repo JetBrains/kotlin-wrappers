@@ -10,6 +10,7 @@ import typescript.*
 private val keyGroups = setOf(
     "mlDsa",
     "mlKem",
+    "slhDsa",
 )
 
 val convertKeyUnions = createPlugin { node, _, render ->

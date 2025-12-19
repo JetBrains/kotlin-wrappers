@@ -5,6 +5,7 @@
 package node.fs
 
 import js.promise.Promise
+import node.buffer.NonSharedBuffer
 
 /**
  * Determines the actual location of `path` using the same semantics as the `fs.realpath.native()` function.
@@ -78,7 +79,7 @@ external fun realpathAsync(
 external fun realpathAsync(
     path: PathLike,
     options: BufferEncodingOption,
-): Promise<node.buffer.Buffer<*>>
+): Promise<NonSharedBuffer>
 
 /**
  * Asynchronous realpath(3) - return the canonicalized absolute pathname.

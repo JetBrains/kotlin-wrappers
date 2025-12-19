@@ -26,23 +26,15 @@ import js.array.ReadonlyArray
  * @since v12.9.0
  * @param [position='null']
  */
-external fun writev(
+external fun <TBuffers : ReadonlyArray<js.buffer.ArrayBufferView<*>>> writev(
     fd: Number,
-    buffers: ReadonlyArray<js.buffer.ArrayBufferView<*>>,
-    cb: (
-        err: node.ErrnoException?,
-        bytesWritten: Double,
-        buffers: ReadonlyArray<js.buffer.ArrayBufferView<*>>,
-    ) -> Unit,
+    buffers: TBuffers,
+    cb: (err: node.ErrnoException?, bytesWritten: Double, buffers: TBuffers) -> Unit,
 )
 
-external fun writev(
+external fun <TBuffers : ReadonlyArray<js.buffer.ArrayBufferView<*>>> writev(
     fd: Number,
-    buffers: ReadonlyArray<js.buffer.ArrayBufferView<*>>,
+    buffers: TBuffers,
     position: Double?,
-    cb: (
-        err: node.ErrnoException?,
-        bytesWritten: Double,
-        buffers: ReadonlyArray<js.buffer.ArrayBufferView<*>>,
-    ) -> Unit,
+    cb: (err: node.ErrnoException?, bytesWritten: Double, buffers: TBuffers) -> Unit,
 )

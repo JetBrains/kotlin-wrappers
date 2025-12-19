@@ -2,6 +2,8 @@
 
 package node.fs
 
+import node.buffer.NonSharedBuffer
+
 @seskar.js.JsAsync
 external suspend fun mkdtemp(prefix: String): String
 
@@ -79,7 +81,7 @@ external suspend fun mkdtemp(
 external suspend fun mkdtemp(
     prefix: String,
     options: BufferEncodingOption,
-): node.buffer.Buffer<*>
+): NonSharedBuffer
 
 /**
  * Asynchronously creates a unique temporary directory.

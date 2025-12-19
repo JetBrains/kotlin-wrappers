@@ -2,6 +2,8 @@
 
 package node.fs
 
+import node.buffer.NonSharedBuffer
+
 @seskar.js.JsAsync
 external suspend fun realpath(path: PathLike): String
 
@@ -53,7 +55,7 @@ external suspend fun realpath(
 external suspend fun realpath(
     path: PathLike,
     options: BufferEncodingOption,
-): node.buffer.Buffer<*>
+): NonSharedBuffer
 
 /**
  * Asynchronous realpath(3) - return the canonicalized absolute pathname.

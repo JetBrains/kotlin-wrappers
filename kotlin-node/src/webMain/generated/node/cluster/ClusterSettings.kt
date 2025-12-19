@@ -19,7 +19,7 @@ sealed external interface ClusterSettings {
      * String arguments passed to worker.
      * @default process.argv.slice(2)
      */
-    var args: js.array.ReadonlyArray<String>?
+    var args: (js.array.ReadonlyArray<String>)?
 
     /**
      * Whether or not to send output to parent's stdio.

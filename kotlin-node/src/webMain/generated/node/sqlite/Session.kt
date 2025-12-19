@@ -2,8 +2,6 @@
 
 package node.sqlite
 
-import js.typedarrays.Uint8Array
-
 /**
  * @since v22.12.0
  */
@@ -15,7 +13,7 @@ sealed external interface Session {
      * @returns Binary changeset that can be applied to other databases.
      * @since v22.12.0
      */
-    fun changeset(): Uint8Array<*>
+    fun changeset(): node.NonSharedUint8Array
 
     /**
      * Similar to the method above, but generates a more compact patchset. See
@@ -26,7 +24,7 @@ sealed external interface Session {
      * @returns Binary patchset that can be applied to other databases.
      * @since v22.12.0
      */
-    fun patchset(): Uint8Array<*>
+    fun patchset(): node.NonSharedUint8Array
 
     /**
      * Closes the session. An exception is thrown if the database or the session is not open. This method is a

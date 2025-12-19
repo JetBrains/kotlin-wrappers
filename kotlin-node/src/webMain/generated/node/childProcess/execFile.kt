@@ -5,6 +5,7 @@
 package node.childProcess
 
 import js.array.ReadonlyArray
+import node.buffer.NonSharedBuffer
 
 /**
  * The `child_process.execFile()` function is similar to {@link exec} except that it does not spawn a shell by default. Rather, the specified
@@ -86,22 +87,14 @@ external fun execFile(
 external fun execFile(
     file: String,
     options: ExecFileOptionsWithBufferEncoding,
-    callback: (
-        error: ExecFileException?,
-        stdout: node.buffer.Buffer<*>,
-        stderr: node.buffer.Buffer<*>,
-    ) -> Unit = definedExternally,
+    callback: (error: ExecFileException?, stdout: NonSharedBuffer, stderr: NonSharedBuffer) -> Unit = definedExternally,
 ): ChildProcess
 
 external fun execFile(
     file: String,
     args: (ReadonlyArray<String>)?,
     options: ExecFileOptionsWithBufferEncoding,
-    callback: (
-        error: ExecFileException?,
-        stdout: node.buffer.Buffer<*>,
-        stderr: node.buffer.Buffer<*>,
-    ) -> Unit = definedExternally,
+    callback: (error: ExecFileException?, stdout: NonSharedBuffer, stderr: NonSharedBuffer) -> Unit = definedExternally,
 ): ChildProcess
 
 // `options` with well-known or absent `encoding` means stdout/stderr are definitely `string`.
@@ -123,7 +116,11 @@ external fun execFile(
     file: String,
     options: ExecFileOptions?,
     callback: (
-        (error: ExecFileException?, stdout: Any /* string | Buffer */, stderr: Any /* string | Buffer */) -> Unit
+        (
+        error: ExecFileException?,
+        stdout: Any, /* string | NonSharedBuffer */
+        stderr: Any, // string | NonSharedBuffer
+    ) -> Unit
     )?,
 ): ChildProcess
 
@@ -132,6 +129,10 @@ external fun execFile(
     args: (ReadonlyArray<String>)?,
     options: ExecFileOptions?,
     callback: (
-        (error: ExecFileException?, stdout: Any /* string | Buffer */, stderr: Any /* string | Buffer */) -> Unit
+        (
+        error: ExecFileException?,
+        stdout: Any, /* string | NonSharedBuffer */
+        stderr: Any, // string | NonSharedBuffer
+    ) -> Unit
     )?,
 ): ChildProcess

@@ -2,13 +2,15 @@
 
 package node.crypto
 
+import node.buffer.NonSharedBuffer
+
 sealed external class DiffieHellmanGroup {
     // new (name: string): DiffieHellmanGroup;
     operator fun invoke(name: String): DiffieHellmanGroup
 
     constructor ()
 
-    fun generateKeys(): node.buffer.Buffer<*>
+    fun generateKeys(): NonSharedBuffer
 
     fun generateKeys(encoding: BinaryToTextEncoding): String
 
@@ -16,13 +18,13 @@ sealed external class DiffieHellmanGroup {
         otherPublicKey: js.buffer.ArrayBufferView<*>,
         inputEncoding: Nothing? = definedExternally,
         outputEncoding: Nothing? = definedExternally,
-    ): node.buffer.Buffer<*>
+    ): NonSharedBuffer
 
     fun computeSecret(
         otherPublicKey: String,
         inputEncoding: BinaryToTextEncoding,
         outputEncoding: Nothing? = definedExternally,
-    ): node.buffer.Buffer<*>
+    ): NonSharedBuffer
 
     fun computeSecret(
         otherPublicKey: js.buffer.ArrayBufferView<*>,
@@ -36,19 +38,19 @@ sealed external class DiffieHellmanGroup {
         outputEncoding: BinaryToTextEncoding,
     ): String
 
-    fun getPrime(): node.buffer.Buffer<*>
+    fun getPrime(): NonSharedBuffer
 
     fun getPrime(encoding: BinaryToTextEncoding): String
 
-    fun getGenerator(): node.buffer.Buffer<*>
+    fun getGenerator(): NonSharedBuffer
 
     fun getGenerator(encoding: BinaryToTextEncoding): String
 
-    fun getPublicKey(): node.buffer.Buffer<*>
+    fun getPublicKey(): NonSharedBuffer
 
     fun getPublicKey(encoding: BinaryToTextEncoding): String
 
-    fun getPrivateKey(): node.buffer.Buffer<*>
+    fun getPrivateKey(): NonSharedBuffer
 
     fun getPrivateKey(encoding: BinaryToTextEncoding): String
 

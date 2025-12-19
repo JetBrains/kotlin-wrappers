@@ -12,18 +12,33 @@ import typescript.isPropertySignature
 fun annotateForceVarOverrides(node: Node, context: AnnotationContext) = nullable {
     val sourceFileName = ensureNotNull(node.getSourceFileOrNull()).fileName
 
-    ensure(sourceFileName.endsWith("readline/promises.d.ts"))
+    nullable {
+        ensure(sourceFileName.endsWith("readline/promises.d.ts"))
 
-    ensure(isPropertySignature(node))
+        ensure(isPropertySignature(node))
 
-    val name = node.name
-    ensure(isIdentifier(name))
-    ensure(name.text == "completer")
+        val name = node.name
+        ensure(isIdentifier(name))
+        ensure(name.text == "completer")
 
+        val interfaceNode = ensureNotNull(node.getParentOrNull())
+        ensure(isInterfaceDeclaration(interfaceNode))
+        ensure(interfaceNode.name.text == "ReadLineOptions")
 
-    val interfaceNode = ensureNotNull(node.getParentOrNull())
-    ensure(isInterfaceDeclaration(interfaceNode))
-    ensure(interfaceNode.name.text == "ReadLineOptions")
+        "@Suppress(\"VAR_TYPE_MISMATCH_ON_OVERRIDE\")"
+    } ?: nullable {
+        ensure(sourceFileName.endsWith("http.d.ts"))
 
-    "@Suppress(\"VAR_TYPE_MISMATCH_ON_OVERRIDE\")"
+        ensure(isPropertySignature(node))
+
+        val name = node.name
+        ensure(isIdentifier(name))
+        ensure(name.text == "family")
+
+        val interfaceNode = ensureNotNull(node.getParentOrNull())
+        ensure(isInterfaceDeclaration(interfaceNode))
+        ensure(interfaceNode.name.text == "ClientRequestArgs")
+
+        "@Suppress(\"VAR_TYPE_MISMATCH_ON_OVERRIDE\")"
+    }
 }

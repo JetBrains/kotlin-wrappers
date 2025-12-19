@@ -2,7 +2,9 @@
 
 package node.vm
 
-sealed external interface RunningScriptInNewContextOptions : RunningScriptOptions {
+sealed external interface RunningScriptInNewContextOptions :
+    RunningScriptOptions,
+    CreateContextOptions {
     /**
      * Human-readable name of the newly created context.
      */
@@ -15,9 +17,4 @@ sealed external interface RunningScriptInNewContextOptions : RunningScriptOption
      */
     var contextOrigin: String?
     var contextCodeGeneration: (RunningScriptInNewContextOptionsContextCodeGeneration)?
-
-    /**
-     * If set to `afterEvaluate`, microtasks will be run immediately after the script has run.
-     */
-    var microtaskMode: String /* "afterEvaluate" */?
 }

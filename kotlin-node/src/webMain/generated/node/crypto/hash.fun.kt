@@ -4,6 +4,8 @@
 
 package node.crypto
 
+import node.buffer.NonSharedBuffer
+
 /**
  * A utility for creating one-shot hash digests of data. It can be faster than
  * the object-based `crypto.createHash()` when hashing a smaller amount of data
@@ -133,8 +135,8 @@ external fun hash(
     algorithm: String,
     data: BinaryLike,
     options: OneShotDigestOptionsWithBufferEncoding,
-): node.buffer.Buffer<*>
+): NonSharedBuffer
 
-external fun hash(algorithm: String, data: BinaryLike, options: String /* "buffer" */): node.buffer.Buffer<*>
+external fun hash(algorithm: String, data: BinaryLike, options: String /* "buffer" */): NonSharedBuffer
 
-external fun hash(algorithm: String, data: BinaryLike, options: OneShotDigestOptions): Any // string | Buffer
+external fun hash(algorithm: String, data: BinaryLike, options: OneShotDigestOptions): Any // string | NonSharedBuffer

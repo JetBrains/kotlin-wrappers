@@ -4,6 +4,8 @@
 
 package node.crypto
 
+import node.buffer.NonSharedBuffer
+
 /**
  * Provides an asynchronous [Argon2](https://www.rfc-editor.org/rfc/rfc9106.html) implementation. Argon2 is a password-based
  * key derivation function that is designed to be expensive computationally and
@@ -46,5 +48,5 @@ package node.crypto
 external fun argon2(
     algorithm: Argon2Algorithm,
     parameters: Argon2Parameters,
-    callback: (err: js.errors.JsError?, derivedKey: node.buffer.Buffer<*>) -> Unit,
+    callback: (err: js.errors.JsError?, derivedKey: NonSharedBuffer) -> Unit,
 )

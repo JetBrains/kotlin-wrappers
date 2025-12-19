@@ -5,6 +5,7 @@
 
 package node.fs.realpathSync
 
+import node.buffer.NonSharedBuffer
 import node.fs.BufferEncodingOption
 import node.fs.EncodingOption
 import node.fs.PathLike
@@ -17,6 +18,6 @@ external fun native(
 external fun native(
     path: PathLike,
     options: BufferEncodingOption,
-): node.buffer.Buffer<*>
+): NonSharedBuffer
 
 external fun native(path: PathLike): String

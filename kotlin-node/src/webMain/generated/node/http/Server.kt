@@ -4,6 +4,7 @@
 
 package node.http
 
+import node.buffer.NonSharedBuffer
 import node.net.Socket
 import node.net.Server as NetServer
 
@@ -183,8 +184,7 @@ open external class Server<Request : IncomingMessage, Response : ServerResponse<
     open val clientErrorEvent: node.events.EventInstance<js.array.Tuple2<js.errors.JsError, node.stream.Duplex>>
 
     @web.events.JsEvent("connect")
-    open val connectEvent:
-            node.events.EventInstance<js.array.Tuple3<Request, node.stream.Duplex, node.buffer.Buffer<*>>>
+    open val connectEvent: node.events.EventInstance<js.array.Tuple3<Request, node.stream.Duplex, NonSharedBuffer>>
 
     @web.events.JsEvent("dropRequest")
     val dropRequestEvent: node.events.EventInstance<js.array.Tuple2<Request, node.stream.Duplex>>
@@ -193,6 +193,5 @@ open external class Server<Request : IncomingMessage, Response : ServerResponse<
     open val requestEvent: node.events.EventInstance<js.array.Tuple2<Request, Response>>
 
     @web.events.JsEvent("upgrade")
-    open val upgradeEvent:
-            node.events.EventInstance<js.array.Tuple3<Request, node.stream.Duplex, node.buffer.Buffer<*>>>
+    open val upgradeEvent: node.events.EventInstance<js.array.Tuple3<Request, node.stream.Duplex, NonSharedBuffer>>
 }

@@ -220,7 +220,7 @@ open external class Http2ServerRequest : node.stream.Readable {
         callback: () -> Unit = definedExternally,
     )
 
-    override fun readOrNull(size: Number): Any? // Buffer | string | null
+    override fun readOrNull(size: Number): Any? // NonSharedBuffer | string | null
 
     override fun addListener(event: String, listener: Function<Unit> /* (...args: any[]) => void */) // this
 
@@ -265,7 +265,7 @@ open external class Http2ServerRequest : node.stream.Readable {
     override val closeEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("data")
-    override val dataEvent: node.events.EventInstance<js.array.Tuple1<Any /* Buffer | string */>>
+    override val dataEvent: node.events.EventInstance<js.array.Tuple1<Any /* NonSharedBuffer | string */>>
 
     @web.events.JsEvent("end")
     override val endEvent: node.events.EventInstance<js.array.Tuple>

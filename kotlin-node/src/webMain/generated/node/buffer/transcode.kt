@@ -37,4 +37,4 @@ external fun transcode(
     source: Uint8Array<*>,
     fromEnc: TranscodeEncoding,
     toEnc: TranscodeEncoding,
-): Buffer<*>
+): NonSharedBuffer

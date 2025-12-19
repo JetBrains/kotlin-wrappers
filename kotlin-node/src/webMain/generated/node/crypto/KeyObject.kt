@@ -4,6 +4,8 @@
 
 package node.crypto
 
+import node.buffer.NonSharedBuffer
+
 /**
  * Node.js uses a `KeyObject` class to represent a symmetric or asymmetric key,
  * and each kind of key exposes different functions. The {@link createSecretKey}, {@link createPublicKey} and {@link createPrivateKey} methods are used to create `KeyObject`instances. `KeyObject`
@@ -43,7 +45,7 @@ external class KeyObject {
      */
     var asymmetricKeyDetails: AsymmetricKeyDetails?
 
-    fun export(options: KeyExportOptions<KeyFormat.der> = definedExternally): node.buffer.Buffer<*>
+    fun export(options: KeyExportOptions<KeyFormat.der> = definedExternally): NonSharedBuffer
 
     fun export(options: JwkKeyExportOptions = definedExternally): JsonWebKey
 

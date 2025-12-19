@@ -18,6 +18,7 @@ private val interfacesWithSuperclass = setOf(
     "WritableStream",
 
     // child_process
+    "Control",
     "ChildProcessByStdio",
     "ChildProcessWithoutNullStreams",
     "ExecException",
@@ -90,18 +91,6 @@ fun annotateInterfaceWithSuperclass(node: Node, context: AnnotationContext) = nu
     } ?: nullable {
         ensure(isTypeAliasDeclaration(node))
         ensure(node.name.text == "ExecFileException")
-
-        "@Suppress(\"INTERFACE_WITH_SUPERCLASS\")"
-    } ?: nullable {
-        ensure(context.isAnonymousDeclaration)
-
-        ensure(isIntersectionTypeNode(node))
-
-        val function = ensureNotNull(node.getParentOrNull())
-        ensure(isFunctionDeclaration(function))
-
-        val functionName = ensureNotNull(function.name)
-        ensure(functionName.text == "compileFunction")
 
         "@Suppress(\"INTERFACE_WITH_SUPERCLASS\")"
     } ?: nullable {

@@ -21,23 +21,15 @@ import js.array.ReadonlyArray
  * @since v13.13.0, v12.17.0
  * @param [position='null']
  */
-external fun readv(
+external fun <TBuffers : ReadonlyArray<js.buffer.ArrayBufferView<*>>> readv(
     fd: Number,
-    buffers: ReadonlyArray<js.buffer.ArrayBufferView<*>>,
-    cb: (
-        err: node.ErrnoException?,
-        bytesRead: Double,
-        buffers: ReadonlyArray<js.buffer.ArrayBufferView<*>>,
-    ) -> Unit,
+    buffers: TBuffers,
+    cb: (err: node.ErrnoException?, bytesRead: Double, buffers: TBuffers) -> Unit,
 )
 
-external fun readv(
+external fun <TBuffers : ReadonlyArray<js.buffer.ArrayBufferView<*>>> readv(
     fd: Number,
-    buffers: ReadonlyArray<js.buffer.ArrayBufferView<*>>,
+    buffers: TBuffers,
     position: Double?,
-    cb: (
-        err: node.ErrnoException?,
-        bytesRead: Double,
-        buffers: ReadonlyArray<js.buffer.ArrayBufferView<*>>,
-    ) -> Unit,
+    cb: (err: node.ErrnoException?, bytesRead: Double, buffers: TBuffers) -> Unit,
 )

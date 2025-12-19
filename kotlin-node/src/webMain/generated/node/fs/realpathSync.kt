@@ -4,6 +4,8 @@
 
 package node.fs
 
+import node.buffer.NonSharedBuffer
+
 /**
  * Returns the resolved pathname.
  *
@@ -24,7 +26,7 @@ external fun realpathSync(
 external fun realpathSync(
     path: PathLike,
     options: BufferEncodingOption,
-): node.buffer.Buffer<*>
+): NonSharedBuffer
 
 /**
  * Synchronous realpath(3) - return the canonicalized absolute pathname.

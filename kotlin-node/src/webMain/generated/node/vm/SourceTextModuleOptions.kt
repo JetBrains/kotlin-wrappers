@@ -4,20 +4,13 @@ package node.vm
 
 import js.import.ImportMeta
 
-sealed external interface SourceTextModuleOptions {
+sealed external interface SourceTextModuleOptions : ScriptOptions {
     /**
      * String used in stack traces.
      * @default 'vm:module(i)' where i is a context-specific ascending index.
      */
     var identifier: String?
-
-    /**
-     * Provides an optional data with V8's code cache data for the supplied source.
-     */
-    var cachedData: Any? // ScriptOptions["cachedData"] | undefined
     var context: Context?
-    var lineOffset: Double?
-    var columnOffset: Double?
 
     /**
      * Called during evaluation of this module to initialize the `import.meta`.
@@ -30,5 +23,6 @@ sealed external interface SourceTextModuleOptions {
      * [Support of dynamic `import()` in compilation APIs](https://nodejs.org/docs/latest-v24.x/api/vm.html#support-of-dynamic-import-in-compilation-apis).
      * @experimental
      */
-    var importModuleDynamically: DynamicModuleLoader<SourceTextModule>?
+    @JsName("importModuleDynamically")
+    var sourceTextImportModuleDynamically: DynamicModuleLoader<SourceTextModule>?
 }

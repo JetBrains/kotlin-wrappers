@@ -4,6 +4,8 @@
 
 package node.childProcess
 
+import node.buffer.NonSharedBuffer
+
 /**
  * The `child_process.execSync()` method is generally identical to {@link exec} with the exception that the method will not return
  * until the child process has fully closed. When a timeout has been encountered
@@ -20,7 +22,7 @@ package node.childProcess
  * @param command The command to run.
  * @return The stdout from the command.
  */
-external fun execSync(command: String): node.buffer.Buffer<*>
+external fun execSync(command: String): NonSharedBuffer
 
 external fun execSync(
     command: String,
@@ -30,6 +32,6 @@ external fun execSync(
 external fun execSync(
     command: String,
     options: ExecSyncOptionsWithBufferEncoding,
-): node.buffer.Buffer<*>
+): NonSharedBuffer
 
-external fun execSync(command: String, options: ExecSyncOptions = definedExternally): Any // string | Buffer
+external fun execSync(command: String, options: ExecSyncOptions = definedExternally): Any // string | NonSharedBuffer

@@ -39,7 +39,7 @@ val convertUtilityTypes = createPlugin { node, context, render ->
         val expression = node.expression
         ensure(isIdentifier(expression))
 
-        ensure(expression.text == "Partial" || expression.text == "Omit")
+        ensure(expression.text == "Partial" || expression.text == "Pick" || expression.text == "Omit")
 
         val typeArguments = ensureNotNull(node.typeArguments?.asArray())
 

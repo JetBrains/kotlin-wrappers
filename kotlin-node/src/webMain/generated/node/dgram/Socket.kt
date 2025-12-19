@@ -5,6 +5,7 @@
 package node.dgram
 
 import js.array.ReadonlyArray
+import node.buffer.NonSharedBuffer
 import node.events.EventEmitter
 import node.net.AddressInfo
 
@@ -809,5 +810,5 @@ external class Socket : EventEmitter {
     val listeningEvent: node.events.EventInstance<js.array.Tuple>
 
     @web.events.JsEvent("message")
-    val messageEvent: node.events.EventInstance<js.array.Tuple2<node.buffer.Buffer<*>, RemoteInfo>>
+    val messageEvent: node.events.EventInstance<js.array.Tuple2<NonSharedBuffer, RemoteInfo>>
 }

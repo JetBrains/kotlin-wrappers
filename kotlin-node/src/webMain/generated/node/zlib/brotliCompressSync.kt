@@ -4,6 +4,8 @@
 
 package node.zlib
 
+import node.buffer.NonSharedBuffer
+
 /**
  * Compress a chunk of data with `BrotliCompress`.
  * @since v11.7.0, v10.16.0
@@ -11,4 +13,4 @@ package node.zlib
 external fun brotliCompressSync(
     buf: InputType,
     options: BrotliOptions = definedExternally,
-): node.buffer.Buffer<*>
+): NonSharedBuffer

@@ -5,6 +5,7 @@
 package node.net
 
 import js.typedarrays.Uint8Array
+import node.buffer.NonSharedBuffer
 
 /**
  * This class is an abstraction of a TCP socket or a streaming `IPC` endpoint
@@ -417,7 +418,7 @@ open external class Socket : node.stream.Duplex {
     val connectionAttemptTimeoutEvent: node.events.EventInstance<js.array.Tuple3<String, Double, Double>>
 
     @web.events.JsEvent("data")
-    override val dataEvent: node.events.EventInstance<js.array.Tuple1<node.buffer.Buffer<*>>>
+    override val dataEvent: node.events.EventInstance<js.array.Tuple1<NonSharedBuffer>>
 
     @web.events.JsEvent("drain")
     override val drainEvent: node.events.EventInstance<js.array.Tuple>

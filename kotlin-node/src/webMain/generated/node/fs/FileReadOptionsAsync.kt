@@ -2,6 +2,7 @@
 
 package node.fs
 
+/** @deprecated This interface will be removed in a future version. Use `import { ReadOptionsWithBuffer } from "node:fs"` instead. */
 sealed external interface FileReadOptions<T : js.buffer.ArrayBufferView<*> /* default is node.buffer.Buffer<*> */> {
     /**
      * @default `Buffer.alloc(0xffff)`

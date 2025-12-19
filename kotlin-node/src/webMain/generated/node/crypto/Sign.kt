@@ -4,6 +4,7 @@
 
 package node.crypto
 
+import node.buffer.NonSharedBuffer
 import node.stream.WritableOptions
 
 /**
@@ -98,7 +99,7 @@ external class Sign : node.stream.Writable {
      * called. Multiple calls to `sign.sign()` will result in an error being thrown.
      * @since v0.1.92
      */
-    fun sign(privateKey: KeyLike): node.buffer.Buffer<*>
+    fun sign(privateKey: KeyLike): NonSharedBuffer
 
     /**
      * Calculates the signature on all the data passed through using either `sign.update()` or `sign.write()`.
@@ -112,7 +113,7 @@ external class Sign : node.stream.Writable {
      * called. Multiple calls to `sign.sign()` will result in an error being thrown.
      * @since v0.1.92
      */
-    fun sign(privateKey: SignKeyObjectInput): node.buffer.Buffer<*>
+    fun sign(privateKey: SignKeyObjectInput): NonSharedBuffer
 
     /**
      * Calculates the signature on all the data passed through using either `sign.update()` or `sign.write()`.
@@ -126,7 +127,7 @@ external class Sign : node.stream.Writable {
      * called. Multiple calls to `sign.sign()` will result in an error being thrown.
      * @since v0.1.92
      */
-    fun sign(privateKey: SignPrivateKeyInput): node.buffer.Buffer<*>
+    fun sign(privateKey: SignPrivateKeyInput): NonSharedBuffer
 
     /**
      * Calculates the signature on all the data passed through using either `sign.update()` or `sign.write()`.
@@ -140,7 +141,7 @@ external class Sign : node.stream.Writable {
      * called. Multiple calls to `sign.sign()` will result in an error being thrown.
      * @since v0.1.92
      */
-    fun sign(privateKey: SignJsonWebKeyInput): node.buffer.Buffer<*>
+    fun sign(privateKey: SignJsonWebKeyInput): NonSharedBuffer
 
     fun sign(
         privateKey: KeyLike,

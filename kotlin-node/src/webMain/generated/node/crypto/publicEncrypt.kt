@@ -4,6 +4,8 @@
 
 package node.crypto
 
+import node.buffer.NonSharedBuffer
+
 /**
  * Encrypts the content of `buffer` with `key` and returns a new `Buffer` with encrypted content. The returned data can be decrypted using
  * the corresponding private key, for example using {@link privateDecrypt}.
@@ -18,7 +20,7 @@ package node.crypto
 external fun publicEncrypt(
     key: RsaPublicKey,
     buffer: js.buffer.ArrayBufferView<*>,
-): node.buffer.Buffer<*>
+): NonSharedBuffer
 
 /**
  * Encrypts the content of `buffer` with `key` and returns a new `Buffer` with encrypted content. The returned data can be decrypted using
@@ -34,7 +36,7 @@ external fun publicEncrypt(
 external fun publicEncrypt(
     key: RsaPublicKey,
     buffer: String,
-): node.buffer.Buffer<*>
+): NonSharedBuffer
 
 /**
  * Encrypts the content of `buffer` with `key` and returns a new `Buffer` with encrypted content. The returned data can be decrypted using
@@ -50,7 +52,7 @@ external fun publicEncrypt(
 external fun publicEncrypt(
     key: RsaPrivateKey,
     buffer: js.buffer.ArrayBufferView<*>,
-): node.buffer.Buffer<*>
+): NonSharedBuffer
 
 /**
  * Encrypts the content of `buffer` with `key` and returns a new `Buffer` with encrypted content. The returned data can be decrypted using
@@ -66,7 +68,7 @@ external fun publicEncrypt(
 external fun publicEncrypt(
     key: RsaPrivateKey,
     buffer: String,
-): node.buffer.Buffer<*>
+): NonSharedBuffer
 
 /**
  * Encrypts the content of `buffer` with `key` and returns a new `Buffer` with encrypted content. The returned data can be decrypted using
@@ -82,7 +84,7 @@ external fun publicEncrypt(
 external fun publicEncrypt(
     key: KeyLike,
     buffer: js.buffer.ArrayBufferView<*>,
-): node.buffer.Buffer<*>
+): NonSharedBuffer
 
 /**
  * Encrypts the content of `buffer` with `key` and returns a new `Buffer` with encrypted content. The returned data can be decrypted using
@@ -98,4 +100,4 @@ external fun publicEncrypt(
 external fun publicEncrypt(
     key: KeyLike,
     buffer: String,
-): node.buffer.Buffer<*>
+): NonSharedBuffer

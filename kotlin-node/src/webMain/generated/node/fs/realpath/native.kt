@@ -5,6 +5,7 @@
 
 package node.fs.realpath
 
+import node.buffer.NonSharedBuffer
 import node.fs.BufferEncodingOption
 import node.fs.EncodingOption
 import node.fs.PathLike
@@ -35,13 +36,13 @@ external fun native(
 external fun native(
     path: PathLike,
     options: BufferEncodingOption,
-    callback: (err: node.ErrnoException?, resolvedPath: node.buffer.Buffer<*>) -> Unit,
+    callback: (err: node.ErrnoException?, resolvedPath: NonSharedBuffer) -> Unit,
 )
 
 external fun native(
     path: PathLike,
     options: EncodingOption,
-    callback: (err: node.ErrnoException?, resolvedPath: Any /* string | Buffer */) -> Unit,
+    callback: (err: node.ErrnoException?, resolvedPath: Any /* string | NonSharedBuffer */) -> Unit,
 )
 
 external fun native(
